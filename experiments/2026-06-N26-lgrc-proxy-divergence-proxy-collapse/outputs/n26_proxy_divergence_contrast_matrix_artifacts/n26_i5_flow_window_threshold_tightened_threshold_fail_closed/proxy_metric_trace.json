@@ -1,0 +1,8 @@
+{
+  "metric_family": "n26_i4_proxy_basin_coupling_gap",
+  "peer_proxy_gap": 0.03125,
+  "proxy_gap_delta_reference_minus_peer": 0.05208333333333337,
+  "proxy_improvement_observed": false,
+  "reference_proxy_gap": 0.08333333333333337,
+  "trace_id": "n26_i5_flow_window_threshold_tightened_threshold_fail_closed_proxy_metric"
+}

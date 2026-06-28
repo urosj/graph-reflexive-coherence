@@ -1,0 +1,11 @@
+{
+  "basin_capacity_delta_reference_minus_peer": 0.0,
+  "basin_stall_or_degradation_observed": false,
+  "peer_capacity_ratio": 1.0,
+  "reference_capacity_ratio": 1.0,
+  "source_statuses": [
+    "passed",
+    "passed"
+  ],
+  "trace_id": "n26_i5_merge_leakage_pressure_source_merge_leakage_ceiling_basin_capacity"
+}

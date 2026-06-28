@@ -1,0 +1,11 @@
+{
+  "basin_capacity_delta_reference_minus_peer": -0.05208333333333337,
+  "basin_stall_or_degradation_observed": true,
+  "peer_capacity_ratio": 0.96875,
+  "reference_capacity_ratio": 0.9166666666666666,
+  "source_statuses": [
+    "failed_closed",
+    "failed_closed"
+  ],
+  "trace_id": "n26_i5_flow_window_threshold_tightened_threshold_fail_closed_basin_capacity"
+}

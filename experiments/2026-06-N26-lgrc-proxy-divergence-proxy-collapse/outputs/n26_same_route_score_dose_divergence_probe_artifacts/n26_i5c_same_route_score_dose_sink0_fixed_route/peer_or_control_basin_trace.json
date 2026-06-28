@@ -1,0 +1,7 @@
+{
+  "control_kind": "same_route_score_dose_pair",
+  "control_role": "The low-score selected run is the control basin trace for the high-score selected run under the same selected sink and packet schedule.",
+  "multi_basin_peer_required": false,
+  "same_selected_sink_control_passed": true,
+  "trace_id": "n26_i5c_same_route_score_dose_sink0_fixed_route_peer_or_control_basin"
+}

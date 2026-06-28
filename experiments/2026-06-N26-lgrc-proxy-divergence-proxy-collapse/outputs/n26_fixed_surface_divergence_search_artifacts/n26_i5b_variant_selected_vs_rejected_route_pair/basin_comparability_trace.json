@@ -1,0 +1,9 @@
+{
+  "rejected_route_child_basin_present": false,
+  "rejected_route_child_basin_state_digest": null,
+  "same_basin_metric_available": false,
+  "same_threshold_control_envelope_available": true,
+  "selected_route_child_basin_present": true,
+  "selected_route_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+  "trace_id": "n26_i5b_variant_selected_vs_rejected_route_pair_basin_comparability"
+}

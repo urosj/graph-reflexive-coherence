@@ -1,0 +1,8 @@
+{
+  "n25_2_consumption_scope": "scoped multi-basin substrate evidence only",
+  "peer_source_json_pointer": "#/stress_rows/1/persistence_window_stress_rows/2",
+  "peer_source_status": "passed",
+  "reference_source_json_pointer": "#/stress_rows/0/persistence_window_stress_rows/2",
+  "reference_source_status": "passed",
+  "trace_id": "n26_i5_child_basin_persistence_window_multi_window_3_persistence_replay_lower_stack_input"
+}

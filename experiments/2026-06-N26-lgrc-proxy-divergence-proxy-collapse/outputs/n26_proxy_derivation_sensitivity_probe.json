@@ -1,0 +1,969 @@
+{
+  "acceptance_state": "accepted_pd2_proxy_derivation_sensitivity_probe_no_pd3_no_divergence",
+  "ap5_bridge_status": "not_supported_i4a_sensitivity_only",
+  "artifact_id": "n26_proxy_derivation_sensitivity_probe",
+  "bounded_degraded_positive_row_status": "not_present_in_consumed_N25_2_stress_sources; nonzero gaps are fail-closed blocker evidence only",
+  "bounded_degraded_positive_row_supported": false,
+  "candidate_pd_ladder_rung": "PD2",
+  "checks": [
+    {
+      "check": "source_chain_ready",
+      "detail": {
+        "i3": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+        "i4": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+        "n25_2_closeout": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+        "n25_2_stress": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627"
+      },
+      "passed": true
+    },
+    {
+      "check": "stress_rows_are_source_current_derived",
+      "detail": {
+        "runtime_implementation_modified": false,
+        "stress_axes": [
+          "flow_window_threshold_variation",
+          "merge_leakage_pressure",
+          "child_basin_persistence_window_variation",
+          "front_capacity_boundary_birth_provenance",
+          "source_backed_route_variant"
+        ],
+        "stress_rows_are_derived_from_source_current_runtime_records": true,
+        "stress_rows_are_not_new_runtime_implementation": true
+      },
+      "passed": true
+    },
+    {
+      "check": "sensitivity_rows_include_zero_and_nonzero_gaps",
+      "detail": {
+        "nonzero_gap_row_count": 4,
+        "zero_supported_row_count": 12
+      },
+      "passed": true
+    },
+    {
+      "check": "nonzero_gap_rows_fail_closed",
+      "detail": {
+        "nonzero_rows": [
+          {
+            "gap": 0.08333333333333337,
+            "row_decision": "rejected",
+            "row_id": "n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_tightened_threshold_fail_closed"
+          },
+          {
+            "gap": 1.0,
+            "row_decision": "rejected",
+            "row_id": "n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed"
+          },
+          {
+            "gap": 0.03125,
+            "row_decision": "rejected",
+            "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_tightened_threshold_fail_closed"
+          },
+          {
+            "gap": 1.0,
+            "row_decision": "rejected",
+            "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "i4_not_replaced_or_widened",
+      "detail": {
+        "candidate_pd_ladder_rung": "PD2",
+        "i4_replaced": false
+      },
+      "passed": true
+    },
+    {
+      "check": "scoped_mb6_boundary_preserved",
+      "detail": {
+        "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_handoff_status": "ready_with_scoped_mb6_substrate_consumption",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "required_n26_boundary": [
+          "consume N25.2 as scoped multi-basin substrate evidence only",
+          "do not treat MB6 as native support",
+          "do not treat MB6 as agency, sentience, or ant ecology implementation",
+          "do not use front-capacity companion evidence as an unscoped backfill",
+          "preserve source-current runtime and replay/control discipline"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256_match_file_contents",
+      "detail": {
+        "row_count": 16
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": {
+        "claim_count": 13
+      },
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths_in_records",
+      "detail": {
+        "absolute_path_policy": "repository_relative_paths_only"
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "proxy_divergence",
+      "proxy_collapse",
+      "final_AP5",
+      "native_support",
+      "agency",
+      "semantic_goal",
+      "semantic_choice",
+      "sentience",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate"
+    ],
+    "claim_ceiling": "PD2 source-current proxy derivation sensitivity observation; no PD3 replay-backed contrast, no PD4 divergence, no PD5 collapse"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/build_n26_proxy_derivation_sensitivity_probe.py",
+  "experiment": "N26",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "i4_output_digest_preserved": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+  "i4_replaced": false,
+  "iteration": "I4-A",
+  "n26_closeout_ceiling": "N26-C3_active_nulls_fail_closed_with_PD2_sensitivity_checked_derivation_candidate",
+  "n26_closeout_ladder_rung_assigned": false,
+  "output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+  "pd3_or_stronger_supported": false,
+  "positive_proxy_evidence_opened": true,
+  "proxy_collapse_opened": false,
+  "proxy_derivation_opened": true,
+  "proxy_derivation_sensitivity_opened": true,
+  "proxy_divergence_opened": false,
+  "ready_for_iteration_5_proxy_divergence_contrast_matrix": true,
+  "sensitivity_metric": {
+    "declared_before_use": true,
+    "formula": "max(0.0, 1.0 - weakest_stress_normalized_capacity_ratio)",
+    "i4a_variant": "stress_normalized_proxy_basin_coupling_gap",
+    "metric_family": "n26_i4_proxy_basin_coupling_gap",
+    "scope": "PD2_sensitivity_only",
+    "target_relation": "<=",
+    "target_value": 0.0
+  },
+  "sensitivity_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_source_threshold_replay/stress_metric_trace.json",
+          "sha256": "3381a2da3697f52a5e68ecfd2c6615a63ec3b4dc20844658b0a366ae11bdeb01"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_source_threshold_replay/sensitivity_trace.json",
+          "sha256": "a7a8e12c09563622f788ae8d028f0287085cba87079c66f37bc20d767b2cb51c"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_source_threshold_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/threshold_stress_rows/0",
+      "source_status": "passed",
+      "stress_axis": "flow_window_threshold",
+      "stress_id": "source_threshold_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_relaxed_threshold_replay/stress_metric_trace.json",
+          "sha256": "c15ec60c8d1038311bfb837214af6fc1f41f1a18ece1c7c787143f91ebeb4fc4"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_relaxed_threshold_replay/sensitivity_trace.json",
+          "sha256": "6940654e6e356ed3da00086f64b3c7b2f511b67ca96e209fc4fa49b3aa8b00e6"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_relaxed_threshold_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/threshold_stress_rows/1",
+      "source_status": "passed",
+      "stress_axis": "flow_window_threshold",
+      "stress_id": "relaxed_threshold_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_tightened_threshold_fail_closed/stress_metric_trace.json",
+          "sha256": "1eb3a52733c20170442992429886da4c8078c7d4e96e636a85407169784103ab"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_tightened_threshold_fail_closed/sensitivity_trace.json",
+          "sha256": "f6a39f9bd2548520e47da4aac5980ef640581d184f2368c9a344c19e516da2ab"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "not_supported_failed_closed_sensitivity_row",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": false,
+      "proxy_basin_coupling_gap": 0.08333333333333337,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_tightened_threshold_fail_closed",
+      "sensitivity_class": "nonzero_gap_failed_closed",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/threshold_stress_rows/2",
+      "source_status": "failed_closed",
+      "stress_axis": "flow_window_threshold",
+      "stress_id": "tightened_threshold_fail_closed",
+      "stress_normalized_capacity_ratio": 0.9166666666666666,
+      "target_met": false,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_source_merge_leakage_ceiling/stress_metric_trace.json",
+          "sha256": "d571161732236df4f3a31fd898b9f9e98ec27966f8a3119abd1a2da18e028ee4"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_source_merge_leakage_ceiling/sensitivity_trace.json",
+          "sha256": "97cde97f708e405f8673a0baa5f8ce199030f11302e4a1104846409b739ce28b"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_source_merge_leakage_ceiling",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/merge_leakage_stress_rows/0",
+      "source_status": "passed",
+      "stress_axis": "merge_leakage_pressure",
+      "stress_id": "source_merge_leakage_ceiling",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed/stress_metric_trace.json",
+          "sha256": "89f1b0eaa82ab37d12dd451dec0c04ae8a950ff93f8131c24a292aece299e136"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed/sensitivity_trace.json",
+          "sha256": "05dab7abe04c1d29ecd8723ed9264205aaec8b39a83c47684584227bec87619c"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "not_supported_failed_closed_sensitivity_row",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": false,
+      "proxy_basin_coupling_gap": 1.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed",
+      "sensitivity_class": "nonzero_gap_failed_closed",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/merge_leakage_stress_rows/1",
+      "source_status": "failed_closed",
+      "stress_axis": "merge_leakage_pressure",
+      "stress_id": "injected_merge_leakage_pressure_fail_closed",
+      "stress_normalized_capacity_ratio": 0.0,
+      "target_met": false,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_source_one_window_replay/stress_metric_trace.json",
+          "sha256": "80761f73c97fc3cb8904871cac624bfa8ead48db2b7a6088b6634e931644c015"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_source_one_window_replay/sensitivity_trace.json",
+          "sha256": "5b2b95530d26ea4060229570d94eb5d9d39af760d38d2e4ca8cec34394146f26"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_source_one_window_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/persistence_window_stress_rows/0",
+      "source_status": "passed",
+      "stress_axis": "child_basin_persistence_window",
+      "stress_id": "source_one_window_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_2_persistence_replay/stress_metric_trace.json",
+          "sha256": "551a28620160e871f4119791207c759fcbca30dde5f3cb43858c7892e742c4ae"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_2_persistence_replay/sensitivity_trace.json",
+          "sha256": "98ea7166727697b7049e822bef8c64be18c415140729769150c01bf331f2c6d9"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_2_persistence_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/persistence_window_stress_rows/1",
+      "source_status": "passed",
+      "stress_axis": "child_basin_persistence_window",
+      "stress_id": "multi_window_2_persistence_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_3_persistence_replay/stress_metric_trace.json",
+          "sha256": "ee98c283cd628f15e9768dca6c0d51d05b3fea1c872df33c690608bbaf13fb20"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_3_persistence_replay/sensitivity_trace.json",
+          "sha256": "a3ebe6394dda43d171de173a2231df18f7b4423d7e5b84d6d1f9d00b0ae21e38"
+        }
+      ],
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_3_persistence_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_json_pointer": "#/stress_rows/0/persistence_window_stress_rows/2",
+      "source_status": "passed",
+      "stress_axis": "child_basin_persistence_window",
+      "stress_id": "multi_window_3_persistence_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_source_threshold_replay/stress_metric_trace.json",
+          "sha256": "2401de79bb991f4dc6946f255f2b626812cc336619e959d6a9e02db05237e786"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_source_threshold_replay/sensitivity_trace.json",
+          "sha256": "b9cebc1a81f92d77b1e6c4cc24f759d5910cb966e5a81e30c99db34ddd214a8f"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_source_threshold_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/threshold_stress_rows/0",
+      "source_status": "passed",
+      "stress_axis": "flow_window_threshold",
+      "stress_id": "source_threshold_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_relaxed_threshold_replay/stress_metric_trace.json",
+          "sha256": "f716a107ffc59a3bfb6b56b17973cd3a52a64f4036fb9ad7b7678063ba5edd42"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_relaxed_threshold_replay/sensitivity_trace.json",
+          "sha256": "cf5ee89902087cefac568ce21a9c7d98d0c5f381f359210a8443edb538a32e7c"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_relaxed_threshold_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/threshold_stress_rows/1",
+      "source_status": "passed",
+      "stress_axis": "flow_window_threshold",
+      "stress_id": "relaxed_threshold_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_tightened_threshold_fail_closed/stress_metric_trace.json",
+          "sha256": "c72dcedc8a4832287c1ca5c89d9df473ed8b5cfe433e240fe087322d12faeba9"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_tightened_threshold_fail_closed/sensitivity_trace.json",
+          "sha256": "8c54db41912cf0d29d193c47f169ba365d5e9f224764812c2fc1a939a448db9e"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "not_supported_failed_closed_sensitivity_row",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": false,
+      "proxy_basin_coupling_gap": 0.03125,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_tightened_threshold_fail_closed",
+      "sensitivity_class": "nonzero_gap_failed_closed",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/threshold_stress_rows/2",
+      "source_status": "failed_closed",
+      "stress_axis": "flow_window_threshold",
+      "stress_id": "tightened_threshold_fail_closed",
+      "stress_normalized_capacity_ratio": 0.96875,
+      "target_met": false,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_source_merge_leakage_ceiling/stress_metric_trace.json",
+          "sha256": "140d140a7005e134b3834c6ba5dac6faddf6f20e1e82f9f5a2178291e01e0e0f"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_source_merge_leakage_ceiling/sensitivity_trace.json",
+          "sha256": "34b90a71b4d957de9e3d8c8c945875a0d86a9317fb17f1fbe5e99f6c8daaa37b"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_source_merge_leakage_ceiling",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/merge_leakage_stress_rows/0",
+      "source_status": "passed",
+      "stress_axis": "merge_leakage_pressure",
+      "stress_id": "source_merge_leakage_ceiling",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed/stress_metric_trace.json",
+          "sha256": "68c77b4d3df5e80bb98a706c3b80b387cf548be5d373a43b4501aa5a930a0495"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed/sensitivity_trace.json",
+          "sha256": "6819875927a2e2b14b6aa5304a0165bfee94d5c5aa74402a019ac1d367a92352"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "not_supported_failed_closed_sensitivity_row",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": false,
+      "proxy_basin_coupling_gap": 1.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed",
+      "sensitivity_class": "nonzero_gap_failed_closed",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/merge_leakage_stress_rows/1",
+      "source_status": "failed_closed",
+      "stress_axis": "merge_leakage_pressure",
+      "stress_id": "injected_merge_leakage_pressure_fail_closed",
+      "stress_normalized_capacity_ratio": 0.0,
+      "target_met": false,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_source_one_window_replay/stress_metric_trace.json",
+          "sha256": "195121eb36e1c24d4a84513ba145eb36486b1f827a96cbe4c282f2bacbc93032"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_source_one_window_replay/sensitivity_trace.json",
+          "sha256": "daeaf7bb5dc8024ff21b85ee1291352f7bd7d9fc49521146295912c3ab53c2fe"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_source_one_window_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/persistence_window_stress_rows/0",
+      "source_status": "passed",
+      "stress_axis": "child_basin_persistence_window",
+      "stress_id": "source_one_window_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_multi_window_2_persistence_replay/stress_metric_trace.json",
+          "sha256": "5c7764c799a9931fb1710435474b2ce72e60e5959b9e6d78fbccd6f9bf487d01"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_multi_window_2_persistence_replay/sensitivity_trace.json",
+          "sha256": "5fc1c5b7cbf1296f10ad0297f520e3b2fbc4467fc207ef5c4ad430a3c73a1d40"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_multi_window_2_persistence_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/persistence_window_stress_rows/1",
+      "source_status": "passed",
+      "stress_axis": "child_basin_persistence_window",
+      "stress_id": "multi_window_2_persistence_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_multi_window_3_persistence_replay/stress_metric_trace.json",
+          "sha256": "e9fecb36fea90f5bf48e027e0bd33fd45bbadd18c397c49499754a4550f2b0ac"
+        },
+        {
+          "artifact_role": "sensitivity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe_artifacts/n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_multi_window_3_persistence_replay/sensitivity_trace.json",
+          "sha256": "1ef439ab98316c1d7ce7a4ff904f2516467f1d40b932a4cbdf22e34f002df21c"
+        }
+      ],
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "PD2",
+      "claim_ceiling": "PD2 sensitivity observation only; nonzero stress gaps can block positive support but do not establish proxy divergence or collapse",
+      "positive_proxy_support_allowed": true,
+      "proxy_basin_coupling_gap": 0.0,
+      "proxy_collapse_supported": false,
+      "proxy_derivation_sensitivity_supported": true,
+      "proxy_divergence_supported": false,
+      "row_decision": "supported",
+      "row_decision_scope": "PD2_sensitivity_observation_only",
+      "row_id": "n26_i4a_i4a_route_variant_child_basin_core_2_child_basin_persistence_window_multi_window_3_persistence_replay",
+      "sensitivity_class": "zero_gap_source_pass",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_json_pointer": "#/stress_rows/1/persistence_window_stress_rows/2",
+      "source_status": "passed",
+      "stress_axis": "child_basin_persistence_window",
+      "stress_id": "multi_window_3_persistence_replay",
+      "stress_normalized_capacity_ratio": 1.0,
+      "target_met": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "source_active_null_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+  "source_i4_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+  "source_n25_2_closeout_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+  "source_n25_2_stress_output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+  "status": "passed"
+}

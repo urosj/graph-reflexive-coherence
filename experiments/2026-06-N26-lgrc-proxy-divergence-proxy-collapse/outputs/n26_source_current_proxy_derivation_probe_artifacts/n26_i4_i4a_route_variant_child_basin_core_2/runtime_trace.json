@@ -1,0 +1,158 @@
+{
+  "derived_report_only": false,
+  "runtime_snapshot_window_count": 3,
+  "source_current_inputs": [
+    {
+      "consumed_as": "source_current_multi_window_child_basin_replay_trace",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+      "source_output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+      "source_row_id": "i4a_route_variant_child_basin_core_2"
+    },
+    {
+      "consumed_as": "scoped_child_basin_runtime_source_trace",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_variant_probe.json",
+      "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+      "source_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07"
+    },
+    {
+      "consumed_as": "scoped_mb6_handoff_boundary",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+      "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03"
+    }
+  ],
+  "source_replay_records": [
+    {
+      "artifact_kind": "lgrc9v3_multi_basin_replay_validation_record",
+      "artifact_replay_result": "passed",
+      "artifact_schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "boundary_persistence_ratio": 1.0,
+      "causal_layer_mode": "topology_changing_causal_history",
+      "claim_flags": {
+        "BF6_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "independent_new_basin_claim_allowed": false,
+        "native_multi_basin_formation_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "coherence_persistence_ratio": 1.0,
+      "duplicate_replay_result": "passed",
+      "evidence_class": "multi_basin_formation",
+      "flux_persistence_ratio": 1.0,
+      "lgrc_runtime_level": "lgrc3",
+      "membership_persistence_ratio": 1.0,
+      "mode_version": "lgrc3_topology_contract_v1",
+      "native_multi_basin_enabled": true,
+      "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+      "replay_failure_modes": [],
+      "replay_validation_digest": "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+      "replay_validation_id": "multi-basin-replay:51a23e105d32a15f61f794b2901ab3a4",
+      "replay_window": {
+        "window_count": 1.0,
+        "window_end_event_time_key": 1.0,
+        "window_start_event_time_key": 1.0
+      },
+      "runtime_family": "LGRC9V3",
+      "schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "snapshot_load_replay_result": "passed",
+      "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+      "support_persistence_ratio": 1.0,
+      "time_order_replay_result": "passed"
+    },
+    {
+      "artifact_kind": "lgrc9v3_multi_basin_replay_validation_record",
+      "artifact_replay_result": "passed",
+      "artifact_schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "boundary_persistence_ratio": 1.0,
+      "causal_layer_mode": "topology_changing_causal_history",
+      "claim_flags": {
+        "BF6_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "independent_new_basin_claim_allowed": false,
+        "native_multi_basin_formation_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "coherence_persistence_ratio": 1.0,
+      "duplicate_replay_result": "passed",
+      "evidence_class": "multi_basin_formation",
+      "flux_persistence_ratio": 1.0,
+      "lgrc_runtime_level": "lgrc3",
+      "membership_persistence_ratio": 1.0,
+      "mode_version": "lgrc3_topology_contract_v1",
+      "native_multi_basin_enabled": true,
+      "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+      "replay_failure_modes": [],
+      "replay_validation_digest": "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+      "replay_validation_id": "multi-basin-replay:51a23e105d32a15f61f794b2901ab3a4",
+      "replay_window": {
+        "window_count": 1.0,
+        "window_end_event_time_key": 1.0,
+        "window_start_event_time_key": 1.0
+      },
+      "runtime_family": "LGRC9V3",
+      "schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "snapshot_load_replay_result": "passed",
+      "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+      "support_persistence_ratio": 1.0,
+      "time_order_replay_result": "passed"
+    },
+    {
+      "artifact_kind": "lgrc9v3_multi_basin_replay_validation_record",
+      "artifact_replay_result": "passed",
+      "artifact_schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "boundary_persistence_ratio": 1.0,
+      "causal_layer_mode": "topology_changing_causal_history",
+      "claim_flags": {
+        "BF6_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "independent_new_basin_claim_allowed": false,
+        "native_multi_basin_formation_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "coherence_persistence_ratio": 1.0,
+      "duplicate_replay_result": "passed",
+      "evidence_class": "multi_basin_formation",
+      "flux_persistence_ratio": 1.0,
+      "lgrc_runtime_level": "lgrc3",
+      "membership_persistence_ratio": 1.0,
+      "mode_version": "lgrc3_topology_contract_v1",
+      "native_multi_basin_enabled": true,
+      "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+      "replay_failure_modes": [],
+      "replay_validation_digest": "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+      "replay_validation_id": "multi-basin-replay:51a23e105d32a15f61f794b2901ab3a4",
+      "replay_window": {
+        "window_count": 1.0,
+        "window_end_event_time_key": 1.0,
+        "window_start_event_time_key": 1.0
+      },
+      "runtime_family": "LGRC9V3",
+      "schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "snapshot_load_replay_result": "passed",
+      "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+      "support_persistence_ratio": 1.0,
+      "time_order_replay_result": "passed"
+    }
+  ],
+  "trace_id": "n26_i4_i4a_route_variant_child_basin_core_2_runtime"
+}

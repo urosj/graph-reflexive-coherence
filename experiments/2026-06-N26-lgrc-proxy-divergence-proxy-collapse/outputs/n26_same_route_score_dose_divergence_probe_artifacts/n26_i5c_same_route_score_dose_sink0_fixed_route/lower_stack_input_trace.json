@@ -1,0 +1,18 @@
+{
+  "competitor_sink_id": 2,
+  "fixture": "examples/lgrc9v3/multi_basin_formation_bundle.py",
+  "packet_schedule": {
+    "amount": 0.1,
+    "departure_event_time_key": 1.0,
+    "edge_id": 1,
+    "scheduler_event_index": 1,
+    "source_node_id": 1,
+    "target_node_id": 2
+  },
+  "runtime_family": "LGRC9V3",
+  "same_fixture": true,
+  "same_packet_schedule": true,
+  "same_selected_sink": true,
+  "selected_sink_id": 0,
+  "trace_id": "n26_i5c_same_route_score_dose_sink0_fixed_route_lower_stack_input"
+}

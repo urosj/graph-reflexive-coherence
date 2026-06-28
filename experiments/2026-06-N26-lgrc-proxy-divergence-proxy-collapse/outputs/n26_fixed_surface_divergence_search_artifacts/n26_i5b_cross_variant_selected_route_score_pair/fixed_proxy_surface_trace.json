@@ -1,0 +1,10 @@
+{
+  "candidate_a": "i4_reference_child_basin_core_0",
+  "candidate_a_route_score": 0.75,
+  "candidate_b": "i4a_route_variant_child_basin_core_2",
+  "candidate_b_route_score": 0.75,
+  "proxy_delta_candidate_b_minus_candidate_a": 0.0,
+  "proxy_surface": "native_route_arbitration_score",
+  "proxy_surface_changed": false,
+  "trace_id": "n26_i5b_cross_variant_selected_route_score_pair_fixed_proxy_surface"
+}

@@ -1,0 +1,345 @@
+{
+  "acceptance_state": "accepted_alternative_proxy_surface_divergence_shape_detected_pd4_blocked",
+  "alternative_proxy_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "alternative_proxy_surface": "threshold_margin",
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_proxy_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_threshold_margin_i4_reference_child_basin_core_0/alternative_proxy_metric_trace.json",
+          "sha256": "ea4bdb48c4c2993e6fef57385f65093f032f7d572b43b2f1a7146bd72543762c"
+        },
+        {
+          "artifact_role": "basin_state_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_threshold_margin_i4_reference_child_basin_core_0/basin_state_trace.json",
+          "sha256": "851fbdc95c82408f7c0d0e45ab78fd3b807d329c0c07d85608e67fcaaa49b7c2"
+        },
+        {
+          "artifact_role": "blocker_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_threshold_margin_i4_reference_child_basin_core_0/blocker_trace.json",
+          "sha256": "4db2dd9202d52824a294c74d8d0568fb718c9722ffd27f9d30783304170fc166"
+        }
+      ],
+      "basin_deepening_observed": false,
+      "basin_delta": 0.0,
+      "basin_stall_observed": true,
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "not_supported_PD4_blocked",
+      "claim_ceiling": "alternative proxy false-positive control; not controlled proxy divergence",
+      "divergence_shaped_signal_observed": true,
+      "pd4_blocker": "threshold_policy_relaxation_mediated_proxy_improvement",
+      "positive_proxy_divergence_allowed": false,
+      "proxy_delta": 0.10000000000000009,
+      "proxy_improvement_observed": true,
+      "row_decision": "rejected_for_PD4_supported_as_false_positive_control",
+      "row_id": "n26_i5a_threshold_margin_i4_reference_child_basin_core_0",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_rows": [
+        "source_threshold_replay",
+        "relaxed_threshold_replay"
+      ],
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "alternative_proxy_surface": "window_surplus",
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_proxy_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_window_surplus_i4_reference_child_basin_core_0/alternative_proxy_metric_trace.json",
+          "sha256": "4938af066671ff1a9e86859744c5d4ff38a8e643aab07f9039ca00f06669455c"
+        },
+        {
+          "artifact_role": "basin_state_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_window_surplus_i4_reference_child_basin_core_0/basin_state_trace.json",
+          "sha256": "defbd4f15cb09071f574b2e7aad2babf027d2eeb951fde9d65c45629db1166f2"
+        },
+        {
+          "artifact_role": "blocker_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_window_surplus_i4_reference_child_basin_core_0/blocker_trace.json",
+          "sha256": "9ed24ae90b1e1995bcadd472d78fdf9ffd46a874af0b2b3819dee7f91c9e8957"
+        }
+      ],
+      "basin_deepening_observed": false,
+      "basin_delta": 0.0,
+      "basin_stall_observed": false,
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "candidate_pd_ladder_rung": "not_supported_PD4_blocked",
+      "claim_ceiling": "alternative proxy false-positive control; not controlled proxy divergence",
+      "divergence_shaped_signal_observed": true,
+      "pd4_blocker": "evaluation_window_requirement_shift_mediated_proxy_improvement",
+      "positive_proxy_divergence_allowed": false,
+      "proxy_delta": 1.0,
+      "proxy_improvement_observed": true,
+      "row_decision": "rejected_for_PD4_supported_as_false_positive_control",
+      "row_id": "n26_i5a_window_surplus_i4_reference_child_basin_core_0",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4",
+      "source_rows": [
+        "source_one_window_replay",
+        "multi_window_2_persistence_replay"
+      ],
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "alternative_proxy_surface": "threshold_margin",
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_proxy_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_threshold_margin_i4a_route_variant_child_basin_core_2/alternative_proxy_metric_trace.json",
+          "sha256": "02bb4f36f31c29fc4d0b7b62a7669c6a841ded5cd9442b4efa2fae71bf75521d"
+        },
+        {
+          "artifact_role": "basin_state_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_threshold_margin_i4a_route_variant_child_basin_core_2/basin_state_trace.json",
+          "sha256": "33afc61a93477e4312da421a0a9611e5ec684a0911530731ca5f645110a8e05f"
+        },
+        {
+          "artifact_role": "blocker_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_threshold_margin_i4a_route_variant_child_basin_core_2/blocker_trace.json",
+          "sha256": "60490b548fdf6383c7d5e66776c5cf860e002c64ebab91f8babdae02c02274d1"
+        }
+      ],
+      "basin_deepening_observed": false,
+      "basin_delta": 0.0,
+      "basin_stall_observed": true,
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "not_supported_PD4_blocked",
+      "claim_ceiling": "alternative proxy false-positive control; not controlled proxy divergence",
+      "divergence_shaped_signal_observed": true,
+      "pd4_blocker": "threshold_policy_relaxation_mediated_proxy_improvement",
+      "positive_proxy_divergence_allowed": false,
+      "proxy_delta": 0.10000000000000009,
+      "proxy_improvement_observed": true,
+      "row_decision": "rejected_for_PD4_supported_as_false_positive_control",
+      "row_id": "n26_i5a_threshold_margin_i4a_route_variant_child_basin_core_2",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_rows": [
+        "source_threshold_replay",
+        "relaxed_threshold_replay"
+      ],
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "alternative_proxy_surface": "window_surplus",
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_proxy_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_window_surplus_i4a_route_variant_child_basin_core_2/alternative_proxy_metric_trace.json",
+          "sha256": "66bc1ee8a9224e3a5105afb98f70a79c6a1bdac097683d903f509ca41dde5fe9"
+        },
+        {
+          "artifact_role": "basin_state_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_window_surplus_i4a_route_variant_child_basin_core_2/basin_state_trace.json",
+          "sha256": "65450b9d4f8856e687779f639640a90b56ea6507fc28984325677bc95fea260e"
+        },
+        {
+          "artifact_role": "blocker_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/n26_i5a_window_surplus_i4a_route_variant_child_basin_core_2/blocker_trace.json",
+          "sha256": "f3e0c3de11f7a8468ac7860140093dd7d20384801832a5652d804b442778f5fb"
+        }
+      ],
+      "basin_deepening_observed": false,
+      "basin_delta": 0.0,
+      "basin_stall_observed": false,
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "candidate_pd_ladder_rung": "not_supported_PD4_blocked",
+      "claim_ceiling": "alternative proxy false-positive control; not controlled proxy divergence",
+      "divergence_shaped_signal_observed": true,
+      "pd4_blocker": "evaluation_window_requirement_shift_mediated_proxy_improvement",
+      "positive_proxy_divergence_allowed": false,
+      "proxy_delta": 1.0,
+      "proxy_improvement_observed": true,
+      "row_decision": "rejected_for_PD4_supported_as_false_positive_control",
+      "row_id": "n26_i5a_window_surplus_i4a_route_variant_child_basin_core_2",
+      "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "source_iteration": "I4-A",
+      "source_rows": [
+        "source_one_window_replay",
+        "multi_window_2_persistence_replay"
+      ],
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "alternative_proxy_surface_probe_opened": true,
+  "ap5_bridge_status": "not_supported_i5a_alternative_surface_blocked",
+  "artifact_id": "n26_alternative_proxy_surface_divergence_probe",
+  "candidate_pd_ladder_rung": "PD3",
+  "checks": [
+    {
+      "check": "source_chain_ready",
+      "detail": {
+        "i4": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+        "i4a": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+        "i5": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+        "n25_2_stress": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627"
+      },
+      "passed": true
+    },
+    {
+      "check": "divergence_shaped_signal_observed",
+      "detail": {
+        "row_count": 4
+      },
+      "passed": true
+    },
+    {
+      "check": "all_divergence_shaped_rows_fail_closed_for_PD4",
+      "detail": [
+        "evaluation_window_requirement_shift_mediated_proxy_improvement",
+        "threshold_policy_relaxation_mediated_proxy_improvement"
+      ],
+      "passed": true
+    },
+    {
+      "check": "i5_conclusion_not_overwritten",
+      "detail": {
+        "i5_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5"
+      },
+      "passed": true
+    },
+    {
+      "check": "scoped_mb6_boundary_preserved",
+      "detail": {
+        "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_handoff_status": "ready_with_scoped_mb6_substrate_consumption",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "required_n26_boundary": [
+          "consume N25.2 as scoped multi-basin substrate evidence only",
+          "do not treat MB6 as native support",
+          "do not treat MB6 as agency, sentience, or ant ecology implementation",
+          "do not use front-capacity companion evidence as an unscoped backfill",
+          "preserve source-current runtime and replay/control discipline"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256_match_file_contents",
+      "detail": {
+        "row_count": 4
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": {
+        "claim_count": 13
+      },
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths_in_records",
+      "detail": {
+        "absolute_path_policy": "repository_relative_paths_only"
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "controlled_proxy_divergence",
+      "proxy_collapse",
+      "final_AP5",
+      "native_support",
+      "agency",
+      "semantic_goal",
+      "semantic_choice",
+      "sentience",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate"
+    ],
+    "claim_ceiling": "alternative proxy-surface false-positive evidence; no controlled proxy divergence, no proxy collapse, no AP5 bridge closeout"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/build_n26_alternative_proxy_surface_divergence_probe.py",
+  "controlled_proxy_divergence_candidate_supported": false,
+  "divergence_shaped_signal_observed": true,
+  "experiment": "N26",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I5-A",
+  "n26_closeout_ceiling": "N26-C4_source_current_proxy_derivation_and_replay_backed_contrast_supported",
+  "n26_closeout_ladder_rung_assigned": false,
+  "output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+  "pd4_blockers": [
+    "threshold_policy_relaxation_mediated_proxy_improvement",
+    "evaluation_window_requirement_shift_mediated_proxy_improvement",
+    "i5_pd3_contrast_result_not_overwritten"
+  ],
+  "pd4_or_stronger_supported": false,
+  "proxy_collapse_opened": false,
+  "proxy_collapse_supported": false,
+  "ready_for_iteration_6_proxy_collapse_perturbation_matrix": true,
+  "row_count": 4,
+  "source_i4_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+  "source_i4a_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+  "source_i5_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+  "source_n25_2_closeout_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+  "source_n25_2_stress_output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+  "status": "passed"
+}

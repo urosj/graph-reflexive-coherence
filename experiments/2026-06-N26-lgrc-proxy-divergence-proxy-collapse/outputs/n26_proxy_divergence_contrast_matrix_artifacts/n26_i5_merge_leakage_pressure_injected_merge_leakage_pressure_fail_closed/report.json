@@ -1,0 +1,7 @@
+{
+  "candidate_pd_ladder_rung": "PD3",
+  "contrast_class": "aligned_nonzero_gap_fail_closed",
+  "controlled_proxy_divergence_supported": false,
+  "interpretation": "Replay-backed proxy/basin contrast is present, but the row does not satisfy controlled proxy divergence because proxy improvement does not separate from basin stress status.",
+  "row_id": "n26_i5_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed"
+}

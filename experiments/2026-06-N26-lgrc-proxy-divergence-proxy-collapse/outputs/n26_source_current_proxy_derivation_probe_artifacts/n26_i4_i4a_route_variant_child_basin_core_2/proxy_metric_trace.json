@@ -1,0 +1,9 @@
+{
+  "metric_definition_digest": "17b67302fe4612c0f043d0843515770cb94ac99669d2daa6bc9d827b4e209a09",
+  "proxy_basin_coupling_gap": 0.0,
+  "proxy_target_digest_declared_before_use": "6ac18f2ae861fa4c21493a21757c0cd2523b652292525ad1f0af3d43c992e61c",
+  "proxy_target_met": true,
+  "semantic_goal_or_target_ownership_claim_allowed": false,
+  "trace_id": "n26_i4_i4a_route_variant_child_basin_core_2_proxy_metric",
+  "weakest_source_current_persistence_ratio": 1.0
+}

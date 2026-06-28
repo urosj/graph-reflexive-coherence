@@ -1,0 +1,8 @@
+{
+  "peer_source_status": "passed",
+  "peer_target_met": true,
+  "reference_source_status": "passed",
+  "reference_target_met": true,
+  "stress_axis": "merge_leakage_pressure",
+  "trace_id": "n26_i5_merge_leakage_pressure_source_merge_leakage_ceiling_support_coherence_floor"
+}

@@ -1,0 +1,6 @@
+{
+  "controlled_proxy_divergence_allowed": false,
+  "geometric_reading": "The fixed route-score proxy separates selected from rejected route candidates, but only the selected route emits a child-basin state. There is no source-current basin persistence surface for the rejected route, so the pair cannot support controlled proxy/basin divergence.",
+  "pd4_blocker": "rejected_route_lacks_child_basin_state_trace",
+  "trace_id": "n26_i5b_reference_selected_vs_rejected_route_pair_blocker"
+}

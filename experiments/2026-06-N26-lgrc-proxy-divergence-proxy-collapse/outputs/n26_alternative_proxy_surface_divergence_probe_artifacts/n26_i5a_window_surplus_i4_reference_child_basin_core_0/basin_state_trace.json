@@ -1,0 +1,9 @@
+{
+  "alternative_observed_window_count": 3.0,
+  "baseline_observed_window_count": 1.0,
+  "basin_deepening_observed": false,
+  "basin_delta": 0.0,
+  "evaluation_window_count_delta": 2.0,
+  "replay_window_scope_changed": true,
+  "trace_id": "n26_i5a_window_surplus_i4_reference_child_basin_core_0_basin_state"
+}

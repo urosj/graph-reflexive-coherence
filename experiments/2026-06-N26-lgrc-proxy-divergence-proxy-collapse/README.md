@@ -193,7 +193,11 @@ Iteration 1 - Source Inventory And Scoped Substrate Admission
 Iteration 2 - Proxy Divergence / Collapse Schema Freeze
 Iteration 3 - Active Nulls And Failure Baselines
 Iteration 4 - Source-Current Proxy Derivation Probe
+Iteration 4-A - Proxy Derivation Sensitivity Probe
 Iteration 5 - Proxy Divergence Contrast Matrix
+Iteration 5-A - Alternative Proxy Surface Divergence Probe
+Iteration 5-B - Fixed-Surface Divergence Search
+Iteration 5-C - Same-Route Score-Dose Divergence Probe
 Iteration 6 - Proxy Collapse Perturbation Matrix
 Iteration 7 - Replay, Controls, And AP5 Classification Gate
 Iteration 8 - Closeout And N27 Handoff

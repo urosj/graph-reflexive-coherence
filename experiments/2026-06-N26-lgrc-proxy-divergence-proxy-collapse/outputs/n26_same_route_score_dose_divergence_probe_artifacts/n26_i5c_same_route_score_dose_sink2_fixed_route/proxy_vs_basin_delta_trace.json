@@ -1,0 +1,6 @@
+{
+  "basin_delta": 0.0,
+  "proxy_delta": 0.3999999999999999,
+  "proxy_improves_while_basin_stalls": true,
+  "trace_id": "n26_i5c_same_route_score_dose_sink2_fixed_route_proxy_vs_basin_delta"
+}

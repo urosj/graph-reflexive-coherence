@@ -1,0 +1,8 @@
+{
+  "alternative_required_window_count": 2.0,
+  "baseline_required_window_count": 1.0,
+  "blocker": "evaluation_window_requirement_shift_mediated_proxy_improvement",
+  "controlled_proxy_divergence_allowed": false,
+  "requirement_changed": true,
+  "trace_id": "n26_i5a_window_surplus_i4a_route_variant_child_basin_core_2_blocker"
+}

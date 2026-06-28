@@ -1,0 +1,10 @@
+{
+  "proxy_delta_selected_minus_rejected": 0.5,
+  "proxy_surface": "native_route_arbitration_score",
+  "proxy_surface_changed": false,
+  "rejected_route_id": "candidate:sink0-low",
+  "rejected_route_score": 0.25,
+  "selected_route_id": "candidate:sink2-high",
+  "selected_route_score": 0.75,
+  "trace_id": "n26_i5b_variant_selected_vs_rejected_route_pair_fixed_proxy_surface"
+}

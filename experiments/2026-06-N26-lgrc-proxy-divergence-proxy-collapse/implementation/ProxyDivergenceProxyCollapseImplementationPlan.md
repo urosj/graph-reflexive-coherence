@@ -316,11 +316,88 @@ Build the first source-current proxy derivation candidate on scoped MB6
 substrate. This can reach PD2/PD3 only if lower-stack inputs, target digest,
 proxy trace, basin persistence trace, and replay are present.
 
+### Iteration 4-A. Proxy Derivation Sensitivity Probe
+
+Consume the existing N25.2 stress variant matrix to check whether the I4 proxy
+derivation responds to lower-stack stress conditions. I4-A may strengthen PD2
+derivation sensitivity, but it must not replace I4, widen the positive
+envelope, or claim PD3/PD4/PD5.
+
+Required result:
+
+```text
+source-passing stress rows keep proxy gap at 0.0
+tightened-threshold and injected-leakage rows produce nonzero gaps
+nonzero-gap rows fail closed as positive proxy support
+bounded degraded positive row remains unsupported unless source-backed
+proxy divergence and collapse remain false
+```
+
 ### Iteration 5. Proxy Divergence Contrast Matrix
 
 Compare proxy metric improvement against basin persistence/deepening. A PD4
 candidate requires proxy improvement while basin persistence capacity stalls or
 degrades under declared controls.
+
+### Iteration 5-A. Alternative Proxy Surface Divergence Probe
+
+Try alternative proxy surfaces over the same scoped N25.2 substrate before
+moving to collapse testing. I5-A may record divergence-shaped signals, but must
+fail closed if the signal is caused by threshold relaxation, evaluation-window
+changes, hidden policy, or any surface change that is not source-current basin
+state separation.
+
+Required result:
+
+```text
+alternative proxy surface declared before use
+proxy improvement checked against basin-state delta
+threshold/window-mediated proxy improvements fail closed
+I5 PD3 contrast result is not overwritten
+PD4 remains blocked unless controlled divergence is source-backed
+```
+
+### Iteration 5-B. Fixed-Surface Divergence Search
+
+Hold the proxy surface, basin metric, threshold policy, and control envelope
+fixed while searching the current native N25.2 route/runtime sources for an
+admissible PD4 pair. I5-B may record route-score contrast and failed search
+rows, but it must not manufacture a basin comparison where a rejected route did
+not emit child-basin state.
+
+Required result:
+
+```text
+fixed proxy surface declared before use
+selected-vs-rejected route pairs checked for paired basin traces
+cross-route selected pairs checked for same child scope and threshold surface
+missing rejected-route basin traces fail closed
+scope/threshold mismatches fail closed
+I5/I5-A PD3 ceiling is not overwritten
+PD4 remains blocked unless a same-surface proxy/basin divergence pair exists
+```
+
+### Iteration 5-C. Same-Route Score-Dose Divergence Probe
+
+Use the I5-B blocker as a design constraint: produce paired source-current
+runtime rows with the same selected route family, same packet schedule, same
+basin metric, same threshold/control envelope, and different route-score proxy
+doses. I5-C may support a provisional PD4 candidate only if the route-score
+proxy improves while child-basin membership, support, coherence, boundary, and
+flux remain fixed.
+
+Required result:
+
+```text
+same selected route family in paired rows
+same packet schedule and fixture
+same basin metric and threshold/control envelope
+route-score proxy delta positive
+basin geometry delta zero
+replay passes for both score-dose rows
+route score remains producer-mediated and cannot count as native AP5
+proxy collapse remains unopened
+```
 
 ### Iteration 6. Proxy Collapse Perturbation Matrix
 

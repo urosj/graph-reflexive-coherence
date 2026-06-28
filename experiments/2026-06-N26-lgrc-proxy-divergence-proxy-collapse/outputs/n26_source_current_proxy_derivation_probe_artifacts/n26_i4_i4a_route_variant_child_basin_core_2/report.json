@@ -1,0 +1,7 @@
+{
+  "basin_persistence_capacity_score": 1.0,
+  "candidate_pd_ladder_rung": "PD2",
+  "interpretation": "The row derives a proxy coupling-gap metric from source-current scoped MB6 child-basin replay. It supports derivation only; divergence, collapse, and AP5 bridge closeout remain pending.",
+  "proxy_basin_coupling_gap": 0.0,
+  "row_id": "n26_i4_i4a_route_variant_child_basin_core_2"
+}

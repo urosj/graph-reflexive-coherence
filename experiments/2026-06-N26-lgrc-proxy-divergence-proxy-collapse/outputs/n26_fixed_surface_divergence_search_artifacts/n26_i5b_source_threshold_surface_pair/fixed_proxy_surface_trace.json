@@ -1,0 +1,8 @@
+{
+  "candidate_a_proxy_gap": 0.0,
+  "candidate_b_proxy_gap": 0.0,
+  "proxy_delta_candidate_b_minus_candidate_a": 0.0,
+  "proxy_surface": "I4_coupling_gap_under_source_threshold_replay",
+  "proxy_surface_changed": false,
+  "trace_id": "n26_i5b_source_threshold_surface_pair_fixed_proxy_surface"
+}

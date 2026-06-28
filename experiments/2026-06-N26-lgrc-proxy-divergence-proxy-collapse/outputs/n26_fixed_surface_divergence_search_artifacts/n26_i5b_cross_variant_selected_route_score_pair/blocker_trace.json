@@ -1,0 +1,6 @@
+{
+  "controlled_proxy_divergence_allowed": false,
+  "geometric_reading": "Both selected routes have the same native route-score proxy, but the emitted child-basin scopes and declared threshold surfaces differ. The support delta is therefore a scoped substrate difference, not same-surface proxy divergence.",
+  "pd4_blocker": "cross_variant_child_scope_and_threshold_surface_mismatch",
+  "trace_id": "n26_i5b_cross_variant_selected_route_score_pair_blocker"
+}

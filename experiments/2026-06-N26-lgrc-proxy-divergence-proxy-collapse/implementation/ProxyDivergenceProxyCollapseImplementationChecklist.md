@@ -301,22 +301,442 @@ scripts/build_n26_active_nulls_and_failure_baselines.py
 
 ## Iteration 4 - Source-Current Proxy Derivation Probe
 
-- [ ] Produce or consume source-current lower-stack input trace.
-- [ ] Record proxy metric definition digest.
-- [ ] Record proxy derivation policy digest.
-- [ ] Declare proxy target digest before use.
-- [ ] Record proxy metric trace.
-- [ ] Record basin persistence capacity trace.
-- [ ] Record support/coherence floor trace.
-- [ ] Keep PD ceiling at PD2/PD3 pending divergence/collapse controls.
+- [x] Produce or consume source-current lower-stack input trace.
+- [x] Record proxy metric definition digest.
+- [x] Record proxy derivation policy digest.
+- [x] Declare proxy target digest before use.
+- [x] Record proxy metric trace.
+- [x] Record basin persistence capacity trace.
+- [x] Record support/coherence floor trace.
+- [x] Keep PD ceiling at PD2 pending divergence/collapse controls.
+
+### Iteration 4 Result
+
+```text
+status = passed
+acceptance_state = accepted_source_current_pd2_proxy_derivation_candidate_pending_contrast_controls
+source_schema_output_digest = bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070
+source_active_null_output_digest = 90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd
+source_n25_2_closeout_output_digest = b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03
+candidate_pd_ladder_rung = PD2
+n26_closeout_ceiling = N26-C3_active_nulls_fail_closed_with_PD2_derivation_candidate
+n26_closeout_ladder_rung_assigned = false
+positive_proxy_evidence_opened = true
+proxy_derivation_opened = true
+proxy_divergence_opened = false
+proxy_collapse_opened = false
+pd3_or_stronger_supported = false
+ap5_bridge_status = not_supported_i4_row_local_dependency_recorded
+candidate_row_count = 2
+failed_checks = []
+output_digest = b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680
+```
+
+Candidate rows:
+
+```text
+n26_i4_i4_reference_child_basin_core_0:
+  source = N25.2 I4 reference child-basin core 0
+  proxy_basin_coupling_gap = 0.0
+  basin_persistence_capacity_score = 1.0
+  rung = PD2
+
+n26_i4_i4a_route_variant_child_basin_core_2:
+  source = N25.2 I4-A route-variant child-basin core 2
+  proxy_basin_coupling_gap = 0.0
+  basin_persistence_capacity_score = 1.0
+  rung = PD2
+```
+
+Interpretation: I4 derives a local proxy metric from scoped, source-current
+N25.2 MB6 child-basin replay traces. The proxy is the coupling gap between
+perfect scoped child-basin persistence and the weakest observed support,
+coherence, boundary, flux, or membership replay ratio. Both source rows have
+all ratios at `1.0`, so the derived gap is `0.0`.
+
+This supports only a source-current PD2 proxy derivation candidate. It does not
+yet support replay-backed proxy/basin contrast, controlled proxy divergence,
+proxy collapse, an AP5 bridge closeout, semantic goal or choice, agency, native
+support, sentience, Phase 8 completion, ant ecology, or unscoped multi-basin
+substrate. The AP5 dependency is recorded row-locally because proxy target
+derivation participates, but N15/N19 remain gap context and are not consumed as
+native AP5 evidence.
+
+Artifacts:
+
+```text
+outputs/n26_source_current_proxy_derivation_probe.json
+outputs/n26_source_current_proxy_derivation_probe_artifacts/
+reports/n26_source_current_proxy_derivation_probe.md
+scripts/build_n26_source_current_proxy_derivation_probe.py
+```
+
+## Iteration 4-A - Proxy Derivation Sensitivity Probe
+
+- [x] Consume existing N25.2 stress matrix rows without new runtime behavior.
+- [x] Keep the I4 proxy derivation record unchanged.
+- [x] Apply the same coupling-gap proxy family to stress-normalized source-current rows.
+- [x] Confirm source-passing stress rows keep proxy gap at `0.0`.
+- [x] Confirm tightened-threshold and injected-leakage rows produce nonzero gaps.
+- [x] Reject all nonzero-gap failed-closed rows as positive proxy support.
+- [x] Keep PD ceiling at PD2 and leave PD3+ pending I5/I6.
+
+### Iteration 4-A Result
+
+```text
+status = passed
+acceptance_state = accepted_pd2_proxy_derivation_sensitivity_probe_no_pd3_no_divergence
+source_i4_output_digest = b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680
+source_n25_2_stress_output_digest = 1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627
+candidate_pd_ladder_rung = PD2
+n26_closeout_ceiling = N26-C3_active_nulls_fail_closed_with_PD2_sensitivity_checked_derivation_candidate
+n26_closeout_ladder_rung_assigned = false
+positive_proxy_evidence_opened = true
+proxy_derivation_opened = true
+proxy_derivation_sensitivity_opened = true
+proxy_divergence_opened = false
+proxy_collapse_opened = false
+pd3_or_stronger_supported = false
+ap5_bridge_status = not_supported_i4a_sensitivity_only
+i4_replaced = false
+sensitivity_row_count = 16
+bounded_degraded_positive_row_supported = false
+failed_checks = []
+output_digest = 5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414
+```
+
+Interpretation: I4-A checks that the I4 proxy is not just a success label. It
+reuses the same coupling-gap proxy family over source-current N25.2 stress rows:
+
+```text
+stress_normalized_proxy_basin_coupling_gap =
+  max(0.0, 1.0 - weakest_stress_normalized_capacity_ratio)
+```
+
+Passing source/relaxed threshold, source merge/leakage ceiling, and persistence
+window rows keep the gap at `0.0`. Tightened-threshold rows produce nonzero
+gaps (`0.083333...` for the reference row and `0.03125` for the route variant),
+and injected merge/leakage rows produce gap `1.0`. Those nonzero rows fail
+closed and are not counted as positive proxy support.
+
+This strengthens PD2 by showing source-current sensitivity: the derived proxy
+responds to lower-stack stress conditions. It does not provide a passing
+bounded-degradation positive row in the consumed N25.2 sources, and it does not
+support replay-backed proxy/basin contrast, proxy divergence, proxy collapse,
+AP5 bridge closeout, semantic goal or choice, agency, native support, sentience,
+Phase 8 completion, ant ecology, or unscoped multi-basin substrate.
+
+Artifacts:
+
+```text
+outputs/n26_proxy_derivation_sensitivity_probe.json
+outputs/n26_proxy_derivation_sensitivity_probe_artifacts/
+reports/n26_proxy_derivation_sensitivity_probe.md
+scripts/build_n26_proxy_derivation_sensitivity_probe.py
+```
 
 ## Iteration 5 - Proxy Divergence Contrast Matrix
 
-- [ ] Compare proxy metric delta with basin persistence/deepening delta.
-- [ ] Require peer or control basin where applicable.
-- [ ] Require proxy improvement and basin persistence stall/degradation for PD4.
-- [ ] Reject proxy-only success.
-- [ ] Preserve AP5 gap discipline.
+- [x] Compare proxy metric delta with basin persistence/deepening delta.
+- [x] Require peer or control basin where applicable.
+- [x] Require proxy improvement and basin persistence stall/degradation for PD4.
+- [x] Reject proxy-only success.
+- [x] Preserve AP5 gap discipline.
+
+### Iteration 5 Result
+
+```text
+status = passed
+acceptance_state = accepted_replay_backed_pd3_proxy_basin_contrast_no_controlled_divergence
+source_i4_output_digest = b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680
+source_i4a_output_digest = 5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414
+candidate_pd_ladder_rung = PD3
+n26_closeout_ceiling = N26-C4_source_current_proxy_derivation_and_replay_backed_contrast_supported
+n26_closeout_ladder_rung_assigned = false
+positive_proxy_evidence_opened = true
+proxy_derivation_opened = true
+proxy_derivation_sensitivity_opened = true
+proxy_divergence_contrast_opened = true
+proxy_divergence_opened = true
+proxy_divergence_supported = false
+controlled_proxy_divergence_candidate_supported = false
+pd4_or_stronger_supported = false
+proxy_collapse_opened = false
+proxy_collapse_supported = false
+ap5_bridge_status = not_supported_i5_contrast_only
+contrast_row_count = 8
+failed_checks = []
+output_digest = 52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5
+```
+
+Interpretation: I5 pairs the two scoped N25.2 child-basin candidates across
+the I4-A stress axes and supports a replay-backed proxy/basin contrast matrix
+at PD3. The matrix does not support controlled proxy divergence. Passing stress
+rows keep both proxy gaps at `0.0`; tightened-threshold and injected-leakage
+rows produce nonzero gaps only where the source stress row already fails
+closed. No row shows proxy improvement while basin persistence/deepening stalls
+or degrades under independent measurement.
+
+PD4 remains blocked by:
+
+```text
+no_proxy_improvement_observed
+proxy_and_basin_measurement_not_independent_enough_for_PD4
+nonzero_proxy_gap_rows_are_fail_closed_blockers_not_positive_support
+basin_deepening_not_observed
+```
+
+This supports contrast, not divergence or collapse. It does not support AP5
+bridge closeout, semantic goal or choice, agency, native support, sentience,
+Phase 8 completion, ant ecology, or unscoped multi-basin substrate.
+
+Artifacts:
+
+```text
+outputs/n26_proxy_divergence_contrast_matrix.json
+outputs/n26_proxy_divergence_contrast_matrix_artifacts/
+reports/n26_proxy_divergence_contrast_matrix.md
+scripts/build_n26_proxy_divergence_contrast_matrix.py
+```
+
+## Iteration 5-A - Alternative Proxy Surface Divergence Probe
+
+- [x] Declare alternative proxy surfaces before use.
+- [x] Compare alternative proxy delta with basin-state delta.
+- [x] Test threshold-margin proxy surface.
+- [x] Test replay-window-surplus proxy surface.
+- [x] Confirm divergence-shaped signals are observed.
+- [x] Reject threshold-policy-mediated proxy improvement as PD4 evidence.
+- [x] Reject evaluation-window-mediated proxy improvement as PD4 evidence.
+- [x] Preserve the I5 PD3 contrast result without upgrade.
+
+### Iteration 5-A Result
+
+```text
+status = passed
+acceptance_state = accepted_alternative_proxy_surface_divergence_shape_detected_pd4_blocked
+source_i5_output_digest = 52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5
+candidate_pd_ladder_rung = PD3
+n26_closeout_ceiling = N26-C4_source_current_proxy_derivation_and_replay_backed_contrast_supported
+n26_closeout_ladder_rung_assigned = false
+alternative_proxy_surface_probe_opened = true
+divergence_shaped_signal_observed = true
+controlled_proxy_divergence_candidate_supported = false
+pd4_or_stronger_supported = false
+proxy_collapse_opened = false
+proxy_collapse_supported = false
+ap5_bridge_status = not_supported_i5a_alternative_surface_blocked
+row_count = 4
+failed_checks = []
+output_digest = 108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda
+```
+
+Interpretation: I5-A tries two alternative proxy surfaces over the same scoped
+N25.2 substrate:
+
+```text
+threshold_margin = min(observed support, observed coherence) - declared threshold
+window_surplus = observed replay window count - required replay window count
+```
+
+Both surfaces can produce divergence-shaped signals:
+
+```text
+threshold_margin proxy_delta = 0.1 with basin_delta = 0.0
+window_surplus proxy_delta = 1.0 with basin_delta = 0.0
+```
+
+These signals fail closed for PD4. The threshold-margin improvement is mediated
+by relaxed threshold policy, and the window-surplus improvement is mediated by a
+changed evaluation-window requirement. They are useful false-positive evidence:
+N26 can induce proxy-looking separation, but controlled proxy divergence still
+requires a source-backed basin/proxy separation that is not created by changing
+the proxy or evaluation surface.
+
+This does not overwrite I5. It preserves:
+
+```text
+PD3 replay-backed contrast supported
+PD4 controlled proxy divergence blocked
+proxy collapse not opened
+AP5 bridge closeout not supported
+```
+
+Artifacts:
+
+```text
+outputs/n26_alternative_proxy_surface_divergence_probe.json
+outputs/n26_alternative_proxy_surface_divergence_probe_artifacts/
+reports/n26_alternative_proxy_surface_divergence_probe.md
+scripts/build_n26_alternative_proxy_surface_divergence_probe.py
+```
+
+## Iteration 5-B - Fixed-Surface Divergence Search
+
+- [x] Hold the proxy surface fixed as native route arbitration score.
+- [x] Hold basin comparison requirements fixed before searching.
+- [x] Check selected-vs-rejected route pairs for paired basin-state traces.
+- [x] Check cross-route selected pairs for same child scope and threshold surface.
+- [x] Reject missing rejected-route basin traces as PD4 evidence.
+- [x] Reject cross-route scope/threshold mismatches as PD4 evidence.
+- [x] Preserve the I5/I5-A PD3 ceiling without upgrade.
+
+### Iteration 5-B Result
+
+```text
+status = passed
+acceptance_state = accepted_fixed_surface_divergence_search_no_admissible_pd4_pair
+source_i5_output_digest = 52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5
+source_i5a_output_digest = 108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda
+candidate_pd_ladder_rung = PD3
+n26_closeout_ceiling = N26-C4_source_current_proxy_derivation_and_replay_backed_contrast_supported
+n26_closeout_ladder_rung_assigned = false
+fixed_surface_divergence_search_opened = true
+eligible_fixed_surface_pair_count = 0
+controlled_proxy_divergence_candidate_supported = false
+pd4_or_stronger_supported = false
+proxy_collapse_opened = false
+proxy_collapse_supported = false
+ap5_bridge_status = not_supported_i5b_no_admissible_fixed_surface_pd4_pair
+row_count = 4
+failed_checks = []
+output_digest = cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73
+```
+
+Interpretation: I5-B asks the stricter PD4 question that I5-A could not
+answer: can existing native N25.2 route/runtime sources show proxy improvement
+while the basin metric stalls or degrades without changing the proxy surface,
+basin metric, threshold policy, or control envelope?
+
+The answer is no for the current sources. The selected-vs-rejected native route
+pairs show route-score proxy contrast:
+
+```text
+selected route score = 0.75
+rejected route score = 0.25
+proxy_delta = 0.5
+```
+
+but the rejected routes do not emit child-basin state traces. That means there
+is no paired source-current basin persistence surface for the rejected route,
+so the row cannot support controlled proxy/basin divergence.
+
+The cross-route selected pairs both emit child-basin state, but they do not
+share the same basin surface:
+
+```text
+core 0 source threshold = 1.1
+core 2 source threshold = 3.1
+route-score proxy delta = 0.0
+basin support/coherence delta = 2.0
+```
+
+This is a scoped substrate difference, not same-surface proxy divergence. The
+child scope and threshold surfaces differ, and no route-score proxy improvement
+appears between the two selected routes.
+
+I5-B therefore strengthens the negative result. I5-A showed that
+proxy-looking divergence can be induced by changing proxy/evaluation surfaces.
+I5-B holds the surface fixed and shows that the current native sources still do
+not contain an admissible PD4 pair.
+
+The correct ceiling remains:
+
+```text
+PD3 replay-backed proxy/basin contrast supported
+PD4 controlled proxy divergence blocked
+proxy collapse not opened
+AP5 bridge closeout not supported
+```
+
+Artifacts:
+
+```text
+outputs/n26_fixed_surface_divergence_search.json
+outputs/n26_fixed_surface_divergence_search_artifacts/
+reports/n26_fixed_surface_divergence_search.md
+scripts/build_n26_fixed_surface_divergence_search.py
+```
+
+## Iteration 5-C - Same-Route Score-Dose Divergence Probe
+
+- [x] Run paired same-route source-current LGRC9V3 score-dose rows.
+- [x] Keep selected sink, fixture, packet schedule, basin metric, and threshold/control envelope fixed.
+- [x] Vary route-score proxy dose under the same proxy surface.
+- [x] Confirm proxy score improves while basin geometry stalls.
+- [x] Confirm child-basin membership, support, coherence, boundary, and flux remain fixed.
+- [x] Replay both score-dose rows.
+- [x] Mark the PD4 result provisional pending I7 replay/control classification.
+- [x] Preserve producer-mediated route-score boundary and keep native AP5 blocked.
+
+### Iteration 5-C Result
+
+```text
+status = passed
+acceptance_state = accepted_provisional_pd4_same_route_score_dose_divergence_candidate_pending_i7
+source_i5b_output_digest = cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73
+candidate_pd_ladder_rung = PD4_candidate_pending_I7
+n26_closeout_ceiling = N26-C5_provisional_controlled_proxy_divergence_candidate_pending_controls
+n26_closeout_ladder_rung_assigned = false
+same_route_score_dose_probe_opened = true
+provisional_pd4_candidate_supported = true
+controlled_proxy_divergence_candidate_supported = true
+controlled_proxy_divergence_status = provisional_pending_I7_replay_controls_and_AP5_gate
+pd4_or_stronger_supported = false
+final_pd4_supported = false
+pd4_support_scope = producer_mediated_route_score_surface_only
+proxy_collapse_opened = false
+proxy_collapse_supported = false
+native_ap5_bridge_supported = false
+ap5_bridge_status = not_supported_i5c_producer_mediated_score_surface
+row_count = 2
+failed_checks = []
+output_digest = 5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab
+```
+
+Interpretation: I5-C addresses the I5-B blocker by producing paired basin
+traces directly. It runs two mirrored same-route score-dose families:
+
+```text
+sink0 fixed route:
+  low score = 0.55
+  high score = 0.95
+  proxy_delta = 0.4
+  basin_delta = 0.0
+
+sink2 fixed route:
+  low score = 0.55
+  high score = 0.95
+  proxy_delta = 0.4
+  basin_delta = 0.0
+```
+
+Geometrically, the selected route family, packet schedule, child-basin
+membership, support floor, coherence floor, boundary value, and flux value stay
+fixed. The route-score proxy improves; the basin does not deepen. This is the
+first positive controlled proxy-divergence shape in N26.
+
+The claim is deliberately bounded:
+
+```text
+supports: provisional producer-mediated PD4 proxy-divergence candidate
+pending: I7 replay/control/AP5 classification
+blocked: proxy collapse, native AP5, native support, agency, semantic goal,
+         sentience, Phase 8 completion, ant ecology
+```
+
+The route-score proxy is runtime-visible and source-current, but it is still a
+producer-mediated route-candidate score. I5-C therefore does not convert the
+score into native AP5 target formation or native support evidence.
+
+Artifacts:
+
+```text
+outputs/n26_same_route_score_dose_divergence_probe.json
+outputs/n26_same_route_score_dose_divergence_probe_artifacts/
+reports/n26_same_route_score_dose_divergence_probe.md
+scripts/build_n26_same_route_score_dose_divergence_probe.py
+```
 
 ## Iteration 6 - Proxy Collapse Perturbation Matrix
 

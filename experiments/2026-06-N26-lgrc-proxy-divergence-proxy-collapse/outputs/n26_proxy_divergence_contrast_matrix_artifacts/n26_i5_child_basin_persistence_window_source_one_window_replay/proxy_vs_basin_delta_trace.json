@@ -1,0 +1,9 @@
+{
+  "basin_stall_or_degradation_observed": false,
+  "contrast_class": "aligned_zero_gap_pass",
+  "controlled_proxy_divergence_supported": false,
+  "independent_measurement_status": "contrast_present_not_independent_enough_for_PD4",
+  "pd4_blocker": "no_proxy_improvement_and_no_independent_positive_divergence_row",
+  "proxy_improvement_observed": false,
+  "trace_id": "n26_i5_child_basin_persistence_window_source_one_window_replay_proxy_vs_basin_delta"
+}

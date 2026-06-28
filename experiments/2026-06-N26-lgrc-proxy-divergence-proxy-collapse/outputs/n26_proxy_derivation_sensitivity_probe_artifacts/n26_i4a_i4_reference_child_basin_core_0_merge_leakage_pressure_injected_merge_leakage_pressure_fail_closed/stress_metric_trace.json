@@ -1,0 +1,13 @@
+{
+  "axis": "merge_leakage_pressure",
+  "i4a_metric_variant": "stress_normalized_proxy_basin_coupling_gap",
+  "metric_family": "n26_i4_proxy_basin_coupling_gap",
+  "proxy_basin_coupling_gap": 1.0,
+  "source_status": "failed_closed",
+  "source_stress_id": "injected_merge_leakage_pressure_fail_closed",
+  "stress_normalized_capacity_ratio": 0.0,
+  "target_met": false,
+  "target_relation": "<=",
+  "target_value": 0.0,
+  "trace_id": "n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed_stress_metric"
+}

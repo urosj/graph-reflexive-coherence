@@ -1,0 +1,11 @@
+{
+  "consumption_scope": "scoped_MB6_child_basin_substrate_only",
+  "n25_2_candidate_id": "i4_reference_child_basin_core_0",
+  "runtime_snapshot_window_count": 3,
+  "scoped_child_basin_core": 0,
+  "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+  "source_child_basin_state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+  "source_current_replay_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+  "source_iteration": "I4",
+  "trace_id": "n26_i4_i4_reference_child_basin_core_0_lower_stack_input"
+}

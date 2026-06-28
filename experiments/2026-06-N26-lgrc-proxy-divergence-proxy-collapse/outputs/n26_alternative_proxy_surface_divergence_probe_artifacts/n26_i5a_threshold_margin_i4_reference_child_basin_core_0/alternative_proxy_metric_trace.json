@@ -1,0 +1,12 @@
+{
+  "alternative_proxy_margin": 0.10000000000000009,
+  "baseline_proxy_margin": 0.0,
+  "proxy_delta": 0.10000000000000009,
+  "proxy_improvement_observed": true,
+  "proxy_surface": "threshold_margin",
+  "source_rows": [
+    "source_threshold_replay",
+    "relaxed_threshold_replay"
+  ],
+  "trace_id": "n26_i5a_threshold_margin_i4_reference_child_basin_core_0_alternative_proxy_metric"
+}

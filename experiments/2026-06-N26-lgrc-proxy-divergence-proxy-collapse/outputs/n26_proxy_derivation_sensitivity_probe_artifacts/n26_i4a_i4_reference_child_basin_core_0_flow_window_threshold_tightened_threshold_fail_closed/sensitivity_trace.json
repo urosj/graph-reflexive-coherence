@@ -1,0 +1,21 @@
+{
+  "candidate_id": "i4_reference_child_basin_core_0",
+  "derived_proxy_gap": 0.08333333333333337,
+  "interpretation": "The proxy remains zero for source-passing stress rows and becomes nonzero when a declared stress gate fails closed.",
+  "positive_support_allowed": false,
+  "row_decision": "rejected",
+  "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+  "source_iteration": "I4",
+  "source_json_pointer": "#/stress_rows/0/threshold_stress_rows/2",
+  "stress_axis": "flow_window_threshold",
+  "stress_row": {
+    "claim_effect": "tightened threshold blocks stronger claim",
+    "declared_threshold": 1.2000000000000002,
+    "observed_coherence_floor": 1.1,
+    "observed_support_floor": 1.1,
+    "status": "failed_closed",
+    "stress_axis": "flow_window_threshold",
+    "stress_id": "tightened_threshold_fail_closed"
+  },
+  "trace_id": "n26_i4a_i4_reference_child_basin_core_0_flow_window_threshold_tightened_threshold_fail_closed_sensitivity"
+}
