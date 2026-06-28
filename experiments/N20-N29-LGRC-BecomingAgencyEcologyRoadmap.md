@@ -8,7 +8,9 @@ susceptibility-update / durable geometry modification experiment, N23 is closed
 as bounded live-continuation collapse / selection-geometry evidence, N24 is
 closed as bounded surplus-supported optionality evidence, N25 is closed as
 scoped BF5 high-margin core / sub-basin formation evidence, and N25.1 is closed
-as the LGRC9V3 multi-basin formation extension requirements bridge.
+as the LGRC9V3 multi-basin formation extension requirements bridge. The Phase 8
+multi-basin implementation tranche is closed at MB5, and N25.2 is initialized
+as the validation bridge for MB6 / N26-ready substrate evidence.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
@@ -29,8 +31,8 @@ claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
 
 Therefore N20-N29 must not assume that the AP3-AP8 stack is natively
 generatable. AP4/N14 and AP5/N15 remain the key native-readiness gaps. Phase 8
-stays outside this roadmap except where explicitly branched from N25.1 as the
-next implementation tranche for LGRC9V3 multi-basin formation.
+stays outside this roadmap except where explicitly branched from N25.1 and
+returned as MB5 implementation evidence for N25.2 validation.
 
 The next question is not:
 
@@ -110,7 +112,9 @@ replay and digest practice
 ```
 
 N20-N28 should remain here and test becoming primitives close to existing LGRC
-implementation surfaces.
+implementation surfaces. After the Phase 8 MB5 closeout, N25.2 validates
+whether that implementation evidence can reach MB6 before N26 consumes
+multi-basin substrate evidence.
 
 ### 3. Agentic Ecology / Ants Project
 
@@ -556,10 +560,47 @@ Its role is to define the Phase 8 extension contract for:
 LGRC9V3 multi-basin formation from causal refinement
 ```
 
-N26 may consume N25 scoped BF5 context and N25.1 requirements context, but
-unscoped multi-basin substrate, independent new-basin substrate, native
-LGRC9V3 multi-basin formation, and BF6 remain blocked until a future Phase 8
-extension supplies MB6 runtime evidence.
+The Phase 8 LGRC9V3 multi-basin implementation tranche now supplies MB5
+candidate evidence, but not MB6. N26 may consume N25 scoped BF5 context and
+N25.1 requirements context, but unscoped multi-basin substrate, independent
+new-basin substrate, native LGRC9V3 multi-basin formation, and BF6 remain
+blocked until N25.2 validates MB6 or records a narrower N26 consumption rule.
+
+## N25.2. LGRC9V3 MB6 Validation Bridge
+
+Status:
+
+```text
+initialized
+experiment_kind = validation_bridge
+phase8_implementation_already_closed = true
+starting_phase8_mb_ceiling = MB5_control_backed_native_multi_basin_formation_candidate
+starting_mb6_status = blocked
+n26_unscoped_consumption_allowed = false
+```
+
+Question:
+
+```text
+Does the Phase 8 LGRC9V3 multi-basin formation tranche provide source-backed,
+replay-clean, control-clean, claim-clean evidence that N26 may consume as
+N26-ready multi-basin substrate evidence?
+```
+
+Expected output:
+
+```text
+source inventory and admissibility audit
+MB6 gate schema and controls
+Phase 8 MB5 evidence-chain audit
+MB6 support/blocker matrix
+N26 consumption classification
+closeout and N26 handoff
+```
+
+N25.2 should not add new runtime producer code by default. If MB6 is blocked,
+that is still a valid closeout if exact blockers and N26 consumption limits are
+recorded.
 
 ## N26. Proxy Divergence / Proxy Collapse
 

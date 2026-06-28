@@ -1,0 +1,1234 @@
+{
+  "acceptance_state": "accepted_source_inventory_admissibility_audit_ready_for_i2_no_mb6",
+  "artifact_id": "n25_2_source_inventory_and_admissibility_audit",
+  "checks": [
+    {
+      "check_id": "all_declared_sources_exist",
+      "detail": {
+        "source_count": 23
+      },
+      "passed": true
+    },
+    {
+      "check_id": "json_sources_parse",
+      "detail": [
+        "n25_closeout_json",
+        "n25_1_closeout_json",
+        "phase8_closeout_json",
+        "phase8_contract_schema_json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n25_consumed_as_scoped_bf5_not_mb6",
+      "detail": {
+        "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+        "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+        "final_n25_closeout_rung": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+        "independent_new_basin_supported": false,
+        "lgrc9v3_multi_basin_native_formation_supported": false,
+        "native_bf5_supported": true,
+        "native_bf6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_1_consumed_as_requirements_not_runtime",
+      "detail": {
+        "BF6_supported": false,
+        "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+        "final_mb_ladder_ceiling": "MB0_requirements_bridge_only_no_runtime_evidence",
+        "multi_basin_evidence_opened": false,
+        "phase8_extension_ready_to_implement": true,
+        "runtime_implementation_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_closeout_starts_n25_2_at_mb5_not_mb6",
+      "detail": {
+        "mb5_control_backed_candidate_allowed": true,
+        "mb6_or_stronger_supported": false,
+        "n26_unscoped_consumption_allowed": false,
+        "native_lgrc_multi_basin_formation_supported": false,
+        "producer_audit_status": "passed",
+        "status": "closed",
+        "supported_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n26_unscoped_consumption_still_blocked",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "source_consumption_rules_nonempty",
+      "detail": {
+        "source_count": 23
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_admissibility_decisions_present",
+      "detail": {
+        "autonomy_contract_tests": "admissible_for_inventory",
+        "contract_tests": "admissible_for_inventory",
+        "examples_readme": "corroboration_only",
+        "lgrc9v3_spec": "admissible_for_mb6_gate_context",
+        "n25_1_closeout_json": "admissible_for_mb6_gate_context",
+        "n25_1_closeout_report": "admissible_for_inventory",
+        "n25_closeout_json": "admissible_for_mb6_gate_context",
+        "n25_closeout_report": "admissible_for_inventory",
+        "phase8_checklist": "admissible_for_inventory",
+        "phase8_closeout_json": "admissible_for_mb5_chain_audit",
+        "phase8_closeout_report": "admissible_for_inventory",
+        "phase8_contract_schema_json": "admissible_for_mb6_gate_context",
+        "phase8_contract_schema_report": "admissible_for_inventory",
+        "phase8_handoff": "admissible_for_inventory",
+        "phase8_plan": "admissible_for_inventory",
+        "runtime_code": "admissible_for_inventory",
+        "runtime_contract_code": "admissible_for_inventory",
+        "runtime_state_code": "admissible_for_inventory",
+        "runtime_tests": "admissible_for_inventory",
+        "source_inventory_scaffold": "admissible_for_inventory",
+        "telemetry_code": "admissible_for_inventory",
+        "telemetry_tests": "admissible_for_inventory",
+        "visualization_tests": "admissible_for_inventory"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_role_separation_frozen",
+      "detail": {
+        "collapse_reabsorption_telemetry_is_not_independent_new_basin_formation": true,
+        "front_capacity_companion_is_not_blanket_mb6_upgrade": true,
+        "n25_1_requirements_contract_is_not_runtime_evidence": true,
+        "n25_2_c6_closeout_is_not_mb6_support_by_itself": true,
+        "n25_bf5_scoped_sub_basin_evidence_is_not_mb6": true,
+        "phase8_mb5_candidate_is_not_mb6": true,
+        "producer_scheduling_is_not_native_support": true,
+        "visual_topology_growth_is_not_multi_basin_substrate_persistence": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_mb5_admissibility_precheck_passes",
+      "detail": {
+        "phase8_closeout_artifact_exists": true,
+        "phase8_closeout_parses": true,
+        "phase8_closeout_reports_mb5_not_mb6": true,
+        "producer_compatibility_audit_referenced": true,
+        "replay_control_evidence_referenced": true,
+        "runtime_surfaces_claimed_default_off": true,
+        "unsafe_flags_false": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb6_inference_blocked_in_i1",
+      "detail": {
+        "mb6_gate_applied": false,
+        "mb6_gate_schema_frozen": false,
+        "mb6_supported": false,
+        "mb6_validation_opened": false,
+        "n26_consumption_effect": "blocked_pending_mb6_gate",
+        "n26_unscoped_consumption_allowed": false,
+        "phase8_mb5_evidence_admissible_for_i2_schema": true,
+        "ready_for_iteration_2_mb6_gate_schema": true,
+        "runtime_implementation_opened": false,
+        "source_inventory_opened": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n26_scope_blocked_pending_mb6_gate",
+      "detail": {
+        "n26_blocked_consumption": [
+          "unscoped_multi_basin_substrate",
+          "MB6_without_gate",
+          "visual_topology_growth_as_substrate",
+          "producer_success_as_native_support"
+        ],
+        "n26_consumable_context": [],
+        "n26_scoped_context_consumption_allowed": "pending",
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "runtime_implementation_discipline_closed",
+      "detail": {
+        "existing_lgrc9v3_runtime_execution_allowed_in_later_iterations": true,
+        "implementation_defect_disposition": "record_as_blocker_or_repair_target_only",
+        "implementation_defect_fix_allowed_in_n25_2": false,
+        "implementation_files_read_for_audit_only": true,
+        "implementation_modification_allowed": false,
+        "no_src_specs_tests_examples_or_implementation_source_changes_allowed": true,
+        "runtime_implementation_opened": false,
+        "src_diff_expected": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_native_discipline_present_per_source",
+      "detail": "producer scheduling cannot be consumed as native support",
+      "passed": true
+    },
+    {
+      "check_id": "visual_example_sources_are_corroboration_only",
+      "detail": [
+        "examples_readme"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "producer_audit_present",
+      "detail": "passed",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_implementation_not_opened_by_n25_2",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "mb6_claim_allowed": false,
+    "n26_unscoped_consumption_allowed": false,
+    "native_support_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_source_inventory_and_admissibility_audit.py",
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "i1_ladder_ceiling": {
+    "mb5_demoted": false,
+    "mb6_gate_status": "not_applied",
+    "mb_ladder_candidate": "MB5_input_only_not_assigned",
+    "n25_2_closeout_ceiling": "N25.2-C1_source_inventory_and_admissibility_audit_passed",
+    "n25_2_closeout_ladder_rung_assigned": false,
+    "starting_mb6_status": "blocked"
+  },
+  "initial_admissibility": {
+    "mb6_gate_applied": false,
+    "mb6_gate_schema_frozen": false,
+    "mb6_supported": false,
+    "mb6_validation_opened": false,
+    "n26_consumption_effect": "blocked_pending_mb6_gate",
+    "n26_unscoped_consumption_allowed": false,
+    "phase8_mb5_evidence_admissible_for_i2_schema": true,
+    "ready_for_iteration_2_mb6_gate_schema": true,
+    "runtime_implementation_opened": false,
+    "source_inventory_opened": true
+  },
+  "iteration": 1,
+  "mb5_evidence_admissible_for_validation": true,
+  "mb6_gate_applied": false,
+  "mb6_gate_schema_frozen": false,
+  "mb6_supported": false,
+  "mb_ladder_state": {
+    "mb5_evidence_admissible_for_validation": true,
+    "mb6_gate_applied": false,
+    "mb6_gate_schema_frozen": false,
+    "mb6_supported": false,
+    "mb6_validation_pending_iteration_2_and_later": true,
+    "starting_mb6_status": "blocked",
+    "starting_phase8_mb_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate"
+  },
+  "n25_1_summary": {
+    "BF6_supported": false,
+    "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+    "final_mb_ladder_ceiling": "MB0_requirements_bridge_only_no_runtime_evidence",
+    "multi_basin_evidence_opened": false,
+    "phase8_extension_ready_to_implement": true,
+    "runtime_implementation_opened": false
+  },
+  "n25_summary": {
+    "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+    "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+    "final_n25_closeout_rung": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+    "independent_new_basin_supported": false,
+    "lgrc9v3_multi_basin_native_formation_supported": false,
+    "native_bf5_supported": true,
+    "native_bf6_supported": false
+  },
+  "n26_consumption_effect": "blocked_pending_mb6_gate",
+  "n26_consumption_scope": {
+    "n26_blocked_consumption": [
+      "unscoped_multi_basin_substrate",
+      "MB6_without_gate",
+      "visual_topology_growth_as_substrate",
+      "producer_success_as_native_support"
+    ],
+    "n26_consumable_context": [],
+    "n26_scoped_context_consumption_allowed": "pending",
+    "n26_unscoped_multi_basin_consumption_allowed": false
+  },
+  "n26_unscoped_consumption_allowed": false,
+  "output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26",
+  "phase8_mb5_admissibility_precheck": {
+    "phase8_closeout_artifact_exists": true,
+    "phase8_closeout_parses": true,
+    "phase8_closeout_reports_mb5_not_mb6": true,
+    "producer_compatibility_audit_referenced": true,
+    "replay_control_evidence_referenced": true,
+    "runtime_surfaces_claimed_default_off": true,
+    "unsafe_flags_false": true
+  },
+  "phase8_summary": {
+    "mb5_control_backed_candidate_allowed": true,
+    "mb6_or_stronger_supported": false,
+    "n26_unscoped_consumption_allowed": false,
+    "native_lgrc_multi_basin_formation_supported": false,
+    "producer_audit_status": "passed",
+    "status": "closed",
+    "supported_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate"
+  },
+  "ready_for_iteration_2_mb6_gate_schema": true,
+  "runtime_implementation_discipline": {
+    "existing_lgrc9v3_runtime_execution_allowed_in_later_iterations": true,
+    "implementation_defect_disposition": "record_as_blocker_or_repair_target_only",
+    "implementation_defect_fix_allowed_in_n25_2": false,
+    "implementation_files_read_for_audit_only": true,
+    "implementation_modification_allowed": false,
+    "no_src_specs_tests_examples_or_implementation_source_changes_allowed": true,
+    "runtime_implementation_opened": false,
+    "src_diff_expected": false
+  },
+  "runtime_implementation_opened": false,
+  "schema_summary": {
+    "default_flags": {
+      "native_lgrc_multi_basin_formation_enabled": false,
+      "native_lgrc_multi_basin_formation_policy": "disabled",
+      "native_lgrc_multi_basin_formation_supported": false,
+      "native_lgrc_multi_basin_formation_validated": false
+    },
+    "purpose": "freeze_default_off_multi_basin_contract_schema_before_runtime_emission",
+    "runtime_record_emission_opened": false,
+    "status": "passed"
+  },
+  "source_consumption_rules": {
+    "autonomy_contract_tests": {
+      "may_consume_as": [
+        "producer_contract_test_context"
+      ],
+      "must_not_consume_as": [
+        "native_support_evidence"
+      ]
+    },
+    "contract_tests": {
+      "may_consume_as": [
+        "contract_test_context"
+      ],
+      "must_not_consume_as": [
+        "MB6_support_by_itself"
+      ]
+    },
+    "examples_readme": {
+      "may_consume_as": [
+        "telemetry_visual_corroboration_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_visualization"
+      ]
+    },
+    "lgrc9v3_spec": {
+      "may_consume_as": [
+        "contract_context",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "experiment_result_by_itself"
+      ]
+    },
+    "n25_1_closeout_json": {
+      "may_consume_as": [
+        "MB0_to_MB6_ladder_context",
+        "Phase_8_requirements_bridge_context",
+        "N26_consumption_constraint_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB5",
+        "MB6"
+      ]
+    },
+    "n25_1_closeout_report": {
+      "may_consume_as": [
+        "requirements_interpretation",
+        "N26_scope_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB5",
+        "MB6"
+      ]
+    },
+    "n25_closeout_json": {
+      "may_consume_as": [
+        "scoped_BF5_high_margin_core_sub_basin_context",
+        "N25_C6_bounded_formation_handoff_context",
+        "native_BF6_and_independent_new_basin_blocker_context"
+      ],
+      "must_not_consume_as": [
+        "independent_multi_basin_formation",
+        "native_LGRC9V3_multi_basin_formation",
+        "MB6",
+        "native_support"
+      ]
+    },
+    "n25_closeout_report": {
+      "may_consume_as": [
+        "claim_boundary_context",
+        "BF6_blocker_interpretation"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "native_support_evidence"
+      ]
+    },
+    "phase8_checklist": {
+      "may_consume_as": [
+        "verification_context",
+        "iteration_record_context"
+      ],
+      "must_not_consume_as": [
+        "automatic_MB6"
+      ]
+    },
+    "phase8_closeout_json": {
+      "may_consume_as": [
+        "MB5_control_backed_candidate_evidence",
+        "Phase_8_runtime_surface_evidence",
+        "producer_compatibility_audit_evidence",
+        "N25_2_transition_context"
+      ],
+      "must_not_consume_as": [
+        "automatic_MB6",
+        "N26_unscoped_consumption",
+        "native_support",
+        "agency"
+      ]
+    },
+    "phase8_closeout_report": {
+      "may_consume_as": [
+        "MB5_interpretation",
+        "remaining_MB6_blocker_context"
+      ],
+      "must_not_consume_as": [
+        "automatic_MB6",
+        "N26_unscoped_consumption"
+      ]
+    },
+    "phase8_contract_schema_json": {
+      "may_consume_as": [
+        "schema_admissibility_context"
+      ],
+      "must_not_consume_as": [
+        "positive_runtime_result_by_itself"
+      ]
+    },
+    "phase8_contract_schema_report": {
+      "may_consume_as": [
+        "schema_interpretation"
+      ],
+      "must_not_consume_as": [
+        "positive_runtime_result_by_itself"
+      ]
+    },
+    "phase8_handoff": {
+      "may_consume_as": [
+        "current_phase8_state_context"
+      ],
+      "must_not_consume_as": [
+        "MB6_support_by_itself"
+      ]
+    },
+    "phase8_plan": {
+      "may_consume_as": [
+        "planned_gate_context",
+        "source_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "final_result_evidence"
+      ]
+    },
+    "runtime_code": {
+      "may_consume_as": [
+        "producer_runtime_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "claim_support_without_artifacts"
+      ]
+    },
+    "runtime_contract_code": {
+      "may_consume_as": [
+        "contract_code_audit_context"
+      ],
+      "must_not_consume_as": [
+        "claim_support_without_artifacts"
+      ]
+    },
+    "runtime_state_code": {
+      "may_consume_as": [
+        "runtime_state_surface_context"
+      ],
+      "must_not_consume_as": [
+        "claim_support_without_artifacts"
+      ]
+    },
+    "runtime_tests": {
+      "may_consume_as": [
+        "runtime_test_context"
+      ],
+      "must_not_consume_as": [
+        "MB6_support_by_itself"
+      ]
+    },
+    "source_inventory_scaffold": {
+      "may_consume_as": [
+        "I1_source_inventory_seed"
+      ],
+      "must_not_consume_as": [
+        "validated_source_inventory_by_itself"
+      ]
+    },
+    "telemetry_code": {
+      "may_consume_as": [
+        "telemetry_export_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_telemetry_alone"
+      ]
+    },
+    "telemetry_tests": {
+      "may_consume_as": [
+        "telemetry_test_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_telemetry_alone"
+      ]
+    },
+    "visualization_tests": {
+      "may_consume_as": [
+        "visualization_test_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_visualization_alone"
+      ]
+    }
+  },
+  "source_records": [
+    {
+      "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+      "may_consume_as": [
+        "scoped_BF5_high_margin_core_sub_basin_context",
+        "N25_C6_bounded_formation_handoff_context",
+        "native_BF6_and_independent_new_basin_blocker_context"
+      ],
+      "must_not_consume_as": [
+        "independent_multi_basin_formation",
+        "native_LGRC9V3_multi_basin_formation",
+        "MB6",
+        "native_support"
+      ],
+      "output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+      "parseable_json": true,
+      "parseable_json_or_markdown_context_only": "parseable_json",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+      "source_admissibility_decision": "admissible_for_mb6_gate_context",
+      "source_artifact_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "source_evidence_kind": "closeout",
+      "source_group": "primary_evidence_source",
+      "source_id": "n25_closeout_json",
+      "source_role": "scoped_bf5_n25_c6_context",
+      "status": "passed"
+    },
+    {
+      "may_consume_as": [
+        "claim_boundary_context",
+        "BF6_blocker_interpretation"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "native_support_evidence"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/reports/n25_closeout_and_n26_handoff.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "757aacfd6ebaf6f588d1ea5f0b352c83f07021d46b74575206ee07ffe26ddaee",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/reports/n25_closeout_and_n26_handoff.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "n25_closeout_report",
+      "source_role": "scoped_bf5_interpretation",
+      "status": "text_or_code_source"
+    },
+    {
+      "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+      "may_consume_as": [
+        "MB0_to_MB6_ladder_context",
+        "Phase_8_requirements_bridge_context",
+        "N26_consumption_constraint_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB5",
+        "MB6"
+      ],
+      "output_digest": "396692475de004ddc8a586a501e1518b8316eebbf8f651304a76abeae25ae09e",
+      "parseable_json": true,
+      "parseable_json_or_markdown_context_only": "parseable_json",
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+      "source_admissibility_decision": "admissible_for_mb6_gate_context",
+      "source_artifact_path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+      "source_evidence_kind": "requirements_contract",
+      "source_group": "requirements_source",
+      "source_id": "n25_1_closeout_json",
+      "source_role": "mb_ladder_and_requirements_context",
+      "status": "passed"
+    },
+    {
+      "may_consume_as": [
+        "requirements_interpretation",
+        "N26_scope_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB5",
+        "MB6"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/reports/n25_1_closeout_and_phase8_extension_handoff.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "769146f3557760468f095629e9fac00255844ac02a5d80b1965e509b86dc87e4",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/reports/n25_1_closeout_and_phase8_extension_handoff.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "n25_1_closeout_report",
+      "source_role": "mb_ladder_interpretation",
+      "status": "text_or_code_source"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "may_consume_as": [
+        "MB5_control_backed_candidate_evidence",
+        "Phase_8_runtime_surface_evidence",
+        "producer_compatibility_audit_evidence",
+        "N25_2_transition_context"
+      ],
+      "must_not_consume_as": [
+        "automatic_MB6",
+        "N26_unscoped_consumption",
+        "native_support",
+        "agency"
+      ],
+      "output_digest": "not_recorded",
+      "parseable_json": true,
+      "parseable_json_or_markdown_context_only": "parseable_json",
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "627c28111f771db3d62b83935d49596a1d981bb9d35c17688dfc9a0154f9dfa9",
+      "source_admissibility_decision": "admissible_for_mb5_chain_audit",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json",
+      "source_evidence_kind": "implementation_closeout",
+      "source_group": "primary_phase8_evidence_source",
+      "source_id": "phase8_closeout_json",
+      "source_role": "phase8_mb5_implementation_closeout",
+      "status": "closed"
+    },
+    {
+      "may_consume_as": [
+        "MB5_interpretation",
+        "remaining_MB6_blocker_context"
+      ],
+      "must_not_consume_as": [
+        "automatic_MB6",
+        "N26_unscoped_consumption"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "4189ceb9437f4a8a819d2f58d6f7cc009c70ba6e0ff8180fb28e0113ab8d472f",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "phase8_closeout_report",
+      "source_role": "phase8_mb5_interpretation",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "planned_gate_context",
+        "source_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "final_result_evidence"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationPlan.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "9719de469866cdb731a4d879a4658c802fe0d28a5650ce6ee145b46a07145334",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationPlan.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "phase8_plan",
+      "source_role": "implementation_plan_context",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "verification_context",
+        "iteration_record_context"
+      ],
+      "must_not_consume_as": [
+        "automatic_MB6"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationChecklist.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "131fac96961decf595d735135ab8647e96cf10d6f03aef2688a77e39238b53f6",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationChecklist.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "phase8_checklist",
+      "source_role": "implementation_record_context",
+      "status": "text_or_code_source"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "may_consume_as": [
+        "schema_admissibility_context"
+      ],
+      "must_not_consume_as": [
+        "positive_runtime_result_by_itself"
+      ],
+      "output_digest": "not_recorded",
+      "parseable_json": true,
+      "parseable_json_or_markdown_context_only": "parseable_json",
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.json",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "1c320db0fc2fcebbd1ce72c1aae92e57fc76a603332a54b590492e250d881948",
+      "source_admissibility_decision": "admissible_for_mb6_gate_context",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.json",
+      "source_evidence_kind": "implementation_schema",
+      "source_group": "schema_or_runtime_audit_source",
+      "source_id": "phase8_contract_schema_json",
+      "source_role": "contract_schema_context",
+      "status": "passed"
+    },
+    {
+      "may_consume_as": [
+        "schema_interpretation"
+      ],
+      "must_not_consume_as": [
+        "positive_runtime_result_by_itself"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "06699407d084e30934c2089487e9ee0404c4b5f735073f3cfdee1ff5daf2e2d9",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "phase8_contract_schema_report",
+      "source_role": "contract_schema_interpretation",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "current_phase8_state_context"
+      ],
+      "must_not_consume_as": [
+        "MB6_support_by_itself"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "implementation/Phase-8-LGRC9-Handoff.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "8e139a108f63d4bb39d2c542603ac19a210b897b903d8e7ac17d3b34bd3b4010",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-Handoff.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "phase8_handoff",
+      "source_role": "phase8_state_pointer",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "contract_context",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "experiment_result_by_itself"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "specs/lgrc-9-v3-spec.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "da6e78bcb84253c124d16d25ff154cac4ca8193cdfb585383fe6851ab97ccc60",
+      "source_admissibility_decision": "admissible_for_mb6_gate_context",
+      "source_artifact_path": "specs/lgrc-9-v3-spec.md",
+      "source_evidence_kind": "implementation_schema",
+      "source_group": "schema_or_runtime_audit_source",
+      "source_id": "lgrc9v3_spec",
+      "source_role": "implementation_contract_and_claim_boundary",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "telemetry_visual_corroboration_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_visualization"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "examples/lgrc9v3/README.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "1d479c3b3b7c7c8adaaca23b6371914717f73c408b6f9b735f89cbf18858f6b4",
+      "source_admissibility_decision": "corroboration_only",
+      "source_artifact_path": "examples/lgrc9v3/README.md",
+      "source_evidence_kind": "example_visual_corroboration",
+      "source_group": "visual_corroboration_source",
+      "source_id": "examples_readme",
+      "source_role": "example_interpretation_boundary",
+      "status": "text_or_code_source",
+      "visual_evidence_limits": {
+        "may_consume_as": "telemetry_or_visual_corroboration_only",
+        "must_not_consume_as": [
+          "runtime_evidence",
+          "replay_evidence",
+          "MB6_support"
+        ]
+      }
+    },
+    {
+      "may_consume_as": [
+        "contract_code_audit_context"
+      ],
+      "must_not_consume_as": [
+        "claim_support_without_artifacts"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "source_evidence_kind": "runtime_source_audit",
+      "source_group": "runtime_audit_source",
+      "source_id": "runtime_contract_code",
+      "source_role": "implementation_boundary_audit",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "producer_runtime_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "claim_support_without_artifacts"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "source_evidence_kind": "runtime_source_audit",
+      "source_group": "runtime_audit_source",
+      "source_id": "runtime_code",
+      "source_role": "producer_runtime_mutation_boundary_audit",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "runtime_state_surface_context"
+      ],
+      "must_not_consume_as": [
+        "claim_support_without_artifacts"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "source_evidence_kind": "runtime_source_audit",
+      "source_group": "runtime_audit_source",
+      "source_id": "runtime_state_code",
+      "source_role": "runtime_state_surface_audit",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "telemetry_export_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_telemetry_alone"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "source_evidence_kind": "runtime_source_audit",
+      "source_group": "runtime_audit_source",
+      "source_id": "telemetry_code",
+      "source_role": "telemetry_export_audit",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "contract_test_context"
+      ],
+      "must_not_consume_as": [
+        "MB6_support_by_itself"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "tests/models/test_lgrc_9_v3_contract.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "tests/models/test_lgrc_9_v3_contract.py",
+      "source_evidence_kind": "test_audit",
+      "source_group": "test_audit_source",
+      "source_id": "contract_tests",
+      "source_role": "test_admissibility_evidence",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "runtime_test_context"
+      ],
+      "must_not_consume_as": [
+        "MB6_support_by_itself"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "tests/models/test_lgrc_9_v3_runtime.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "tests/models/test_lgrc_9_v3_runtime.py",
+      "source_evidence_kind": "test_audit",
+      "source_group": "test_audit_source",
+      "source_id": "runtime_tests",
+      "source_role": "test_admissibility_evidence",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "producer_contract_test_context"
+      ],
+      "must_not_consume_as": [
+        "native_support_evidence"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+      "source_evidence_kind": "test_audit",
+      "source_group": "test_audit_source",
+      "source_id": "autonomy_contract_tests",
+      "source_role": "producer_discipline_evidence",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "telemetry_test_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_telemetry_alone"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "tests/telemetry/test_lgrc9v3_contract.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "6331bf72bc41fc3545f5f6cef4b8a8bfc767a89b9c5d9d426b013ffc75884a2c",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "tests/telemetry/test_lgrc9v3_contract.py",
+      "source_evidence_kind": "test_audit",
+      "source_group": "test_audit_source",
+      "source_id": "telemetry_tests",
+      "source_role": "telemetry_contract_evidence",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "visualization_test_context"
+      ],
+      "must_not_consume_as": [
+        "proof_by_visualization_alone"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "tests/visualization/test_visualization.py",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "4989acf0758049edac897bb1702d0358c4afed89ae9b4e031faa505babd137b3",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "tests/visualization/test_visualization.py",
+      "source_evidence_kind": "test_audit",
+      "source_group": "test_audit_source",
+      "source_id": "visualization_tests",
+      "source_role": "visualization_contract_evidence",
+      "status": "text_or_code_source"
+    },
+    {
+      "may_consume_as": [
+        "I1_source_inventory_seed"
+      ],
+      "must_not_consume_as": [
+        "validated_source_inventory_by_itself"
+      ],
+      "parseable_json": false,
+      "parseable_json_or_markdown_context_only": "context_only",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/source_inventory.md",
+      "producer_native_discipline": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "row_decision": "admissible_source_context",
+      "sha256": "c1422f8488e32773473d4d16500df2dc88c3cb840da21e571354acceeaad04df",
+      "source_admissibility_decision": "admissible_for_inventory",
+      "source_artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/source_inventory.md",
+      "source_evidence_kind": "markdown_context",
+      "source_group": "context_source",
+      "source_id": "source_inventory_scaffold",
+      "source_role": "local_source_inventory_scaffold",
+      "status": "text_or_code_source"
+    }
+  ],
+  "source_role_separation": {
+    "collapse_reabsorption_telemetry_is_not_independent_new_basin_formation": true,
+    "front_capacity_companion_is_not_blanket_mb6_upgrade": true,
+    "n25_1_requirements_contract_is_not_runtime_evidence": true,
+    "n25_2_c6_closeout_is_not_mb6_support_by_itself": true,
+    "n25_bf5_scoped_sub_basin_evidence_is_not_mb6": true,
+    "phase8_mb5_candidate_is_not_mb6": true,
+    "producer_scheduling_is_not_native_support": true,
+    "visual_topology_growth_is_not_multi_basin_substrate_persistence": true
+  },
+  "source_row_count": 23,
+  "starting_mb6_status": "blocked",
+  "starting_phase8_mb_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate",
+  "status": "passed"
+}

@@ -51,6 +51,7 @@ machine-local state.
 | [N24 abundance and surplus-supported optionality](2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md) | Closed bounded artifact-level AB5 surplus-supported optionality candidate with native N24-C5 closeout, explicit flux/leakage debt, and a separate producer-mediated flux-conditioning scaffold for N25. | README, then closeout handoff, native and producer flux probes, replay/control matrices, optional-continuation probes, implementation checklist, and hypotheses. |
 | [N25 spark / sub-basin / new-basin formation](2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md) | Closed scoped native BF5 high-margin core / sub-basin formation with N25-C6 handoff readiness and producer-assisted BF5 scaffold context; independent new-basin, BF6, and native LGRC9V3 multi-basin formation remain blocked. | README, then closeout handoff, native BF5 core probes, producer-assisted scaffold probe, replay/control matrices, implementation checklist, and hypotheses. |
 | [N25.1 LGRC9V3 multi-basin formation extension requirements](2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md) | Closed requirements/spec bridge that opened the Phase 8 LGRC9V3 multi-basin formation tranche; the implementation tranche now closes at MB5 while MB6/N26-ready unscoped substrate evidence remains blocked pending N25.2. | README, then closeout handoff, extension requirement matrix, active-null matrix, source crosswalk, implementation checklist, hypotheses, and Phase 8 multi-basin closeout. |
+| [N25.2 LGRC9V3 MB6 validation bridge](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md) | Initialized validation bridge after the Phase 8 multi-basin tranche: tests whether MB5 evidence can support MB6 / N26-ready substrate evidence, or records exact blockers while preserving claim boundaries. | README, then source inventory, MB6 gate schema, Phase 8 MB5 evidence audit, MB6 support/blocker matrix, closeout handoff, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -332,8 +333,8 @@ core/sub-basin formation with N25-C6 handoff readiness, and N25.1 closed the
 requirements bridge for Phase 8 LGRC9V3 multi-basin formation. The Phase 8
 implementation tranche now closes at MB5: control-backed native multi-basin
 formation candidate evidence is available, while MB6 and N26-ready unscoped
-multi-basin substrate evidence remain blocked. The next branch should be a
-scoped N25.2 bridge that consumes N25 BF5, N25.1 requirements, Phase 8
+multi-basin substrate evidence remain blocked. N25.2 is initialized as the
+scoped validation bridge that consumes N25 BF5, N25.1 requirements, Phase 8
 MB5/I88-A evidence, and remaining MB6 blockers before N26. N29 is the first
 formal convergence bridge
 into the agentic ecology project, where producer residue, medium debt, and

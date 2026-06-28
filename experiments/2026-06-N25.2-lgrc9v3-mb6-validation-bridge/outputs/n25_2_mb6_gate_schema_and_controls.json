@@ -1,0 +1,1331 @@
+{
+  "acceptance_state": "accepted_mb6_gate_schema_and_controls_frozen_no_mb6_evidence",
+  "artifact_id": "n25_2_mb6_gate_schema_and_controls",
+  "checks": [
+    {
+      "check_id": "i1_source_inventory_passed",
+      "detail": {
+        "i1_output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i1_ready_for_iteration_2",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "mb6_gate_schema_frozen",
+      "detail": [
+        "source_inventory_admissible",
+        "phase8_mb5_chain_validated",
+        "source_backed_multi_basin_runtime_surfaces",
+        "source_backed_child_basin_state_records",
+        "replay_backed_child_basin_persistence",
+        "artifact_snapshot_duplicate_replay_clean",
+        "merge_leakage_controls_fail_closed",
+        "producer_native_mutation_ownership_clean",
+        "front_capacity_boundary_birth_provenance_when_used",
+        "hidden_producer_basin_insertion_rejected",
+        "label_only_basin_formation_rejected",
+        "old_basin_thickening_relabel_rejected",
+        "transient_flow_sink_relabel_rejected",
+        "graph_visual_only_success_rejected",
+        "visual_evidence_corroboration_only",
+        "n26_consumption_rule_explicit",
+        "unsafe_claim_flags_false"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "candidate_required_fields_present",
+      "detail": [
+        "row_id",
+        "source_artifact_path",
+        "source_artifact_digest",
+        "source_role",
+        "source_admissibility_decision",
+        "source_evidence_kind",
+        "may_consume_as",
+        "must_not_consume_as",
+        "mb_ladder_input",
+        "mb_ladder_candidate",
+        "n25_2_closeout_candidate",
+        "source_current_inputs",
+        "native_runtime_execution_evidence",
+        "runtime_execution_trace",
+        "runtime_surface_evidence",
+        "child_basin_state_records",
+        "child_basin_state_record_schema",
+        "multi_basin_substrate_persistence",
+        "replay_evidence",
+        "control_evidence",
+        "producer_audit_evidence",
+        "telemetry_example_evidence",
+        "artifact_manifest",
+        "artifact_role",
+        "implementation_digest_bundle",
+        "implementation_no_mutation_proof",
+        "mb6_gate_status",
+        "mb6_gate_results",
+        "mb6_blockers",
+        "mb5_demotion_status",
+        "n26_consumption_effect",
+        "n26_consumption_scope",
+        "producer_native_discipline",
+        "runtime_mutation_owner",
+        "runtime_execution_from_closed_implementation",
+        "defect_fix_attempted",
+        "defect_disposition",
+        "visual_evidence_limits",
+        "variant_comparability",
+        "unsafe_claim_flags",
+        "row_decision",
+        "claim_ceiling"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n26_consumption_rules_freeze_scope",
+      "detail": {
+        "before_mb6_gate": {
+          "n26_consumption_blocker": "blocked_pending_mb6_gate",
+          "n26_consumption_effect": "unscoped_consumption_blocked",
+          "n26_scoped_context_consumption_allowed": "pending",
+          "n26_unscoped_multi_basin_consumption_allowed": false
+        },
+        "if_mb5_demoted": {
+          "n26_consumption_effect": "mb5_demoted_blocks_n26",
+          "n26_scoped_context_consumption_allowed": false,
+          "n26_unscoped_multi_basin_consumption_allowed": false
+        },
+        "if_mb6_blocked": {
+          "n26_consumption_effect": "scoped_provisional_context_only",
+          "n26_scoped_context_consumption_allowed": true,
+          "n26_unscoped_multi_basin_consumption_allowed": false
+        },
+        "if_mb6_supported": {
+          "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+          "n26_scoped_context_consumption_allowed": true,
+          "n26_unscoped_multi_basin_consumption_allowed": false
+        },
+        "if_repair_required": {
+          "n26_consumption_effect": "blocked_pending_repair",
+          "n26_scoped_context_consumption_allowed": false,
+          "n26_unscoped_multi_basin_consumption_allowed": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "fail_closed_controls_frozen",
+      "detail": [
+        "label_only_multi_basin_relabel",
+        "old_basin_thickening_as_new_basin",
+        "transient_flow_sink_as_child_basin",
+        "collapse_reabsorption_relabel",
+        "graph_visual_only_success",
+        "hidden_producer_basin_insertion",
+        "producer_success_as_native_support",
+        "front_capacity_backfill_control",
+        "mb5_as_mb6_relabel",
+        "n25_bf5_as_independent_multi_basin",
+        "n25_1_requirements_as_runtime_evidence",
+        "n25_2_c6_as_mb6_support",
+        "phase8_completion_relabel_control",
+        "semantic_learning_relabel_control",
+        "semantic_choice_relabel_control",
+        "agency_relabel_control",
+        "native_support_relabel_control",
+        "sentience_relabel_control",
+        "ant_ecology_relabel_control",
+        "organism_life_relabel_control",
+        "unrestricted_autonomy_relabel_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "mb5_mb6_invariants_frozen",
+      "detail": {
+        "mb6_requires_independent_n25_2_gate": true,
+        "n25_2_c6_closeout_does_not_imply_mb6": true,
+        "phase8_mb5_validated_does_not_imply_mb6": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb5_demotion_policy_frozen",
+      "detail": {
+        "mb5_demoted_if": [
+          "phase8_closeout_missing_or_unparseable",
+          "mb5_asserted_without_replay_control_evidence",
+          "runtime_surface_mismatch",
+          "child_basin_state_records_missing",
+          "merge_leakage_controls_missing_or_failed_open",
+          "producer_audit_missing",
+          "unsafe_claim_flag_true",
+          "mb6_already_claimed_without_n25_2_gate"
+        ],
+        "mb5_demotion_effect": [
+          "repair_required",
+          "n26_consumption_blocked",
+          "phase8_evidence_chain_invalid"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_role_categories_frozen",
+      "detail": [
+        "n25_bf5_context",
+        "n25_1_requirements_context",
+        "phase8_mb5_closeout_evidence",
+        "phase8_plan_context",
+        "phase8_contract_schema_context",
+        "runtime_source_audit",
+        "test_audit",
+        "telemetry_example_corroboration",
+        "visual_corroboration_only",
+        "report_context_only"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "runtime_artifact_roles_frozen",
+      "detail": [
+        "runtime_execution_trace",
+        "flow_window_records",
+        "child_basin_state_records",
+        "topology_refinement_provenance",
+        "producer_native_mutation_ownership_ledger",
+        "runtime_config",
+        "runtime_snapshot",
+        "artifact_replay_trace",
+        "snapshot_load_replay_trace",
+        "duplicate_replay_trace",
+        "multi_window_persistence_replay_trace",
+        "fail_closed_control_trace",
+        "stress_variant_trace",
+        "closeout",
+        "report"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "implementation_digest_fields_frozen",
+      "detail": [
+        "runtime_source_digest",
+        "runtime_config_digest",
+        "implementation_contract_schema_digest",
+        "lgrc9v3_runtime_file_sha256",
+        "lgrc9v3_runtime_state_file_sha256",
+        "lgrc9v3_contract_file_sha256",
+        "telemetry_contract_file_sha256",
+        "focused_test_digest_or_test_result_digest"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "implementation_no_mutation_proof_frozen",
+      "detail": [
+        "implementation_modification_allowed",
+        "implementation_source_modification_observed",
+        "src_diff_expected",
+        "src_diff_observed",
+        "spec_diff_observed",
+        "test_diff_observed",
+        "example_diff_observed",
+        "runtime_execution_from_closed_implementation",
+        "defect_fix_attempted",
+        "defect_disposition"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "child_basin_state_record_schema_frozen",
+      "detail": [
+        "child_basin_id",
+        "birth_or_detection_step",
+        "parent_or_source_basin_id",
+        "boundary_birth_or_refinement_provenance",
+        "support_core_nodes",
+        "coherence_core_nodes",
+        "basin_signature_digest",
+        "topology_signature_before",
+        "topology_signature_after",
+        "flow_window_id",
+        "merge_leakage_status",
+        "persistence_window_status",
+        "producer_native_mutation_owner",
+        "trace_origin",
+        "trace_digest"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "reconstruction_policy_subordinate_to_runtime",
+      "detail": {
+        "reconstruction_can_create_original_child_basin_evidence": false,
+        "reconstruction_can_validate_runtime_records": true,
+        "replay_without_runtime_execution_blocks_MB6": true,
+        "runtime_execution_required_for_positive_candidate": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb5_runtime_evidence_separation_frozen",
+      "detail": {
+        "i3_question": "does_closed_phase8_mb5_remain_admissible",
+        "i4_positive_runtime_evidence_cannot_retroactively_fix_i3_mb5_chain": true,
+        "i4_question": "can_closed_runtime_emit_new_source_current_multi_basin_candidate_evidence",
+        "i8_question": "does_combined_i3_to_i7_evidence_pass_MB6",
+        "phase8_mb5_chain_defect_with_runtime_probe_support_status": "phase8_mb5_chain_has_defect_but_n25_2_runtime_probe_supports_repair_target"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "variant_probe_comparability_frozen",
+      "detail": {
+        "variant_cannot_backfill_unrelated_MB5_rows": true,
+        "variant_changes_declared_axis_enum": [
+          "fixture",
+          "seed",
+          "topology",
+          "front_capacity_boundary_birth"
+        ],
+        "variant_comparability_digest_required": true,
+        "variant_may_support_generalization": "bounded",
+        "variant_probe_is_not_retuned_copy": true,
+        "variant_uses_closed_runtime": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_native_discipline_frozen",
+      "detail": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_compatibility_audit_required": true,
+        "producer_scheduling_may_consume_as": "audit_context_only",
+        "producer_scheduling_must_not_consume_as": "native_support",
+        "producer_scheduling_present": "row_local_boolean_required",
+        "producer_scheduling_role_enum": [
+          "context_only",
+          "compatibility_audit",
+          "blocker_if_used_as_native_support"
+        ],
+        "producer_success_can_upgrade_native": false,
+        "producer_success_overwrites_native_failure": false,
+        "runtime_mutation_owner_enum": [
+          "LGRC9V3_runtime_transition",
+          "producer_surface",
+          "hidden_producer_blocks_row",
+          "not_recorded_blocks_row"
+        ],
+        "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "visual_evidence_limits_frozen",
+      "detail": {
+        "examples_support_mb6_without_runtime_replay": false,
+        "graph_visual_only_success_allowed": false,
+        "may_consume_as": [
+          "telemetry_or_visual_corroboration_only"
+        ],
+        "must_not_consume_as": [
+          "runtime_evidence",
+          "replay_evidence",
+          "MB6_support"
+        ],
+        "visual_evidence_role": "corroboration_only",
+        "visual_graph_growth_supports_mb6": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "validation_runtime_policy_frozen",
+      "detail": {
+        "artifact_reconstruction_is_replay_validation_not_replacement": true,
+        "defect_disposition": "record_as_blocker_or_repair_target_only",
+        "existing_lgrc9v3_runtime_execution_allowed": true,
+        "implementation_source_modification_allowed": false,
+        "replay_cannot_replace_original_runtime_execution": true,
+        "replay_reconstructs_or_validates_runtime_records_only": true,
+        "runtime_execution_artifact_roles_frozen": true,
+        "runtime_execution_does_not_open_implementation_tranche": true,
+        "runtime_execution_is_primary_positive_evidence": true,
+        "runtime_execution_required_for_I4_positive_candidate": true,
+        "src_specs_tests_examples_or_implementation_edits_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "closeout_ladder_frozen_no_closeout_assignment",
+      "detail": {
+        "N25.2-C0": "initialized_validation_bridge_only",
+        "N25.2-C1": "source_inventory_and_admissibility_audit_passed",
+        "N25.2-C2": "Phase_8_MB5_evidence_chain_validated_or_demotion_recorded",
+        "N25.2-C3": "MB6_gate_schema_and_active_blockers_frozen",
+        "N25.2-C4": "MB6_support_blocker_matrix_complete",
+        "N25.2-C5": "N26_consumption_classification_complete",
+        "N25.2-C6": "closeout_and_N26_handoff_complete"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_mb6_gate_schema_and_controls.py",
+  "control_status_enum": [
+    "passed",
+    "failed_closed",
+    "failed_open",
+    "blocked",
+    "not_run",
+    "not_applicable"
+  ],
+  "defect_disposition": "record_as_blocker_or_repair_target_only",
+  "existing_lgrc9v3_runtime_execution_allowed": true,
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "gate_result_status_enum": [
+    "passed",
+    "failed_closed",
+    "failed_open",
+    "blocked",
+    "not_run",
+    "not_applicable"
+  ],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "implementation_source_modification_allowed": false,
+  "iteration": 2,
+  "mb5_demoted": false,
+  "mb6_claim_allowed": false,
+  "mb6_gate_applied": false,
+  "mb6_gate_schema_frozen": true,
+  "mb6_gate_status": "not_applied",
+  "mb6_gate_status_enum": [
+    "not_applied",
+    "supported",
+    "blocked",
+    "demotes_mb5",
+    "not_applicable"
+  ],
+  "mb6_support_matrix_deferred_to_iteration_4": true,
+  "mb6_supported": false,
+  "n25_2_closeout_ceiling": "N25.2-C3_MB6_gate_schema_and_active_blockers_frozen",
+  "n25_2_closeout_ladder": {
+    "N25.2-C0": "initialized_validation_bridge_only",
+    "N25.2-C1": "source_inventory_and_admissibility_audit_passed",
+    "N25.2-C2": "Phase_8_MB5_evidence_chain_validated_or_demotion_recorded",
+    "N25.2-C3": "MB6_gate_schema_and_active_blockers_frozen",
+    "N25.2-C4": "MB6_support_blocker_matrix_complete",
+    "N25.2-C5": "N26_consumption_classification_complete",
+    "N25.2-C6": "closeout_and_N26_handoff_complete"
+  },
+  "n25_2_closeout_ladder_rung_assigned": false,
+  "n26_consumption_blocker": "blocked_pending_mb6_gate",
+  "n26_consumption_effect": "unscoped_consumption_blocked",
+  "n26_unscoped_consumption_allowed": false,
+  "output_digest": "fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f",
+  "phase8_mb5_chain_audit_deferred_to_iteration_3": true,
+  "phase8_mb5_evidence_chain_audited": false,
+  "ready_for_iteration_3_phase8_mb5_evidence_chain_audit": true,
+  "row_decision_policy": {
+    "blocked": "required gate missing or not run",
+    "not_applicable": "outside row scope with explicit reason required",
+    "partial": "some evidence present but MB6 or N26 substrate gates remain blocked",
+    "rejected": "false-positive or relabel path failed closed",
+    "supported": "local row gates passed within declared scope"
+  },
+  "runtime_execution_is_primary_positive_evidence": true,
+  "runtime_implementation_opened": false,
+  "schema_sections": {
+    "candidate_row_schema": [
+      {
+        "field": "row_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "field": "source_artifact_path",
+        "required": true,
+        "type": "repo_relative_path"
+      },
+      {
+        "field": "source_artifact_digest",
+        "required": true,
+        "type": "sha256"
+      },
+      {
+        "enum": [
+          "n25_bf5_context",
+          "n25_1_requirements_context",
+          "phase8_mb5_closeout_evidence",
+          "phase8_plan_context",
+          "phase8_contract_schema_context",
+          "runtime_source_audit",
+          "test_audit",
+          "telemetry_example_corroboration",
+          "visual_corroboration_only",
+          "report_context_only"
+        ],
+        "field": "source_role",
+        "type": "enum"
+      },
+      {
+        "enum": [
+          "admissible_for_inventory",
+          "admissible_for_mb5_chain_audit",
+          "admissible_for_mb6_gate_context",
+          "corroboration_only",
+          "blocked_missing_or_unparseable"
+        ],
+        "field": "source_admissibility_decision",
+        "type": "enum"
+      },
+      {
+        "field": "source_evidence_kind",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "field": "may_consume_as",
+        "required": true,
+        "type": "list[string]"
+      },
+      {
+        "field": "must_not_consume_as",
+        "required": true,
+        "type": "list[string]"
+      },
+      {
+        "field": "mb_ladder_input",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "field": "mb_ladder_candidate",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "field": "n25_2_closeout_candidate",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "field": "source_current_inputs",
+        "required": true,
+        "type": "list[object]"
+      },
+      {
+        "field": "native_runtime_execution_evidence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "runtime_execution_trace",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "runtime_surface_evidence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "child_basin_state_records",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "child_basin_state_record_schema",
+        "required": true,
+        "type": "schema_reference"
+      },
+      {
+        "field": "multi_basin_substrate_persistence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "replay_evidence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "control_evidence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "producer_audit_evidence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "telemetry_example_evidence",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "artifact_manifest",
+        "required": true,
+        "type": "list[object]"
+      },
+      {
+        "enum": [
+          "runtime_execution_trace",
+          "flow_window_records",
+          "child_basin_state_records",
+          "topology_refinement_provenance",
+          "producer_native_mutation_ownership_ledger",
+          "runtime_config",
+          "runtime_snapshot",
+          "artifact_replay_trace",
+          "snapshot_load_replay_trace",
+          "duplicate_replay_trace",
+          "multi_window_persistence_replay_trace",
+          "fail_closed_control_trace",
+          "stress_variant_trace",
+          "closeout",
+          "report"
+        ],
+        "field": "artifact_role",
+        "type": "enum"
+      },
+      {
+        "field": "implementation_digest_bundle",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "implementation_no_mutation_proof",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "enum": [
+          "not_applied",
+          "supported",
+          "blocked",
+          "demotes_mb5",
+          "not_applicable"
+        ],
+        "field": "mb6_gate_status",
+        "type": "enum"
+      },
+      {
+        "field": "mb6_gate_results",
+        "required": true,
+        "type": "list[object]"
+      },
+      {
+        "field": "mb6_blockers",
+        "required": true,
+        "type": "list[string]"
+      },
+      {
+        "field": "mb5_demotion_status",
+        "required": true,
+        "type": "enum"
+      },
+      {
+        "enum": [
+          "unscoped_consumption_blocked",
+          "scoped_mb6_substrate_consumption_allowed",
+          "scoped_provisional_context_only",
+          "blocked_pending_repair",
+          "mb5_demoted_blocks_n26"
+        ],
+        "field": "n26_consumption_effect",
+        "type": "enum"
+      },
+      {
+        "field": "n26_consumption_scope",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "producer_native_discipline",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "enum": [
+          "LGRC9V3_runtime_transition",
+          "producer_surface",
+          "hidden_producer_blocks_row",
+          "not_recorded_blocks_row"
+        ],
+        "field": "runtime_mutation_owner",
+        "type": "enum"
+      },
+      {
+        "field": "runtime_execution_from_closed_implementation",
+        "required": true,
+        "type": "boolean"
+      },
+      {
+        "field": "defect_fix_attempted",
+        "required": true,
+        "type": "boolean_false"
+      },
+      {
+        "field": "defect_disposition",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "field": "visual_evidence_limits",
+        "required": true,
+        "type": "object"
+      },
+      {
+        "field": "variant_comparability",
+        "required": "I4-A_and_variants",
+        "type": "object"
+      },
+      {
+        "field": "unsafe_claim_flags",
+        "required": true,
+        "type": "object[bool_false]"
+      },
+      {
+        "field": "row_decision",
+        "required": true,
+        "type": "enum"
+      },
+      {
+        "field": "claim_ceiling",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "child_basin_state_record_schema": {
+      "missing_required_field_effect": "blocks_MB6",
+      "required_fields": [
+        "child_basin_id",
+        "birth_or_detection_step",
+        "parent_or_source_basin_id",
+        "boundary_birth_or_refinement_provenance",
+        "support_core_nodes",
+        "coherence_core_nodes",
+        "basin_signature_digest",
+        "topology_signature_before",
+        "topology_signature_after",
+        "flow_window_id",
+        "merge_leakage_status",
+        "persistence_window_status",
+        "producer_native_mutation_owner",
+        "trace_origin",
+        "trace_digest"
+      ]
+    },
+    "control_requirements": {
+      "fail_closed_controls": [
+        {
+          "blocked_condition": "multi-basin label appears without runtime state records",
+          "control_id": "label_only_multi_basin_relabel",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "old basin thickens locally but no separable child basin persists",
+          "control_id": "old_basin_thickening_as_new_basin",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "one-window flow sink is interpreted as persistent child basin",
+          "control_id": "transient_flow_sink_as_child_basin",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "collapse/reabsorption telemetry is relabeled as independent basin birth",
+          "control_id": "collapse_reabsorption_relabel",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "visual topology growth is used without source-current replay evidence",
+          "control_id": "graph_visual_only_success",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "producer inserts basin content that runtime transitions do not own",
+          "control_id": "hidden_producer_basin_insertion",
+          "rung_effect": "blocks_MB6_and_N26_substrate_consumption"
+        },
+        {
+          "blocked_condition": "producer-assisted success is consumed as native support",
+          "control_id": "producer_success_as_native_support",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "front-capacity companion evidence is used to backfill missing MB6 runtime evidence",
+          "control_id": "front_capacity_backfill_control",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "Phase 8 MB5 is promoted to MB6 without N25.2 gate pass",
+          "control_id": "mb5_as_mb6_relabel",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "N25 scoped BF5 sub-basin is consumed as independent multi-basin evidence",
+          "control_id": "n25_bf5_as_independent_multi_basin",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "N25.1 requirements are consumed as runtime evidence",
+          "control_id": "n25_1_requirements_as_runtime_evidence",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "bridge closeout rung is treated as MB6 support by itself",
+          "control_id": "n25_2_c6_as_mb6_support",
+          "rung_effect": "blocks_MB6"
+        },
+        {
+          "blocked_condition": "Phase 8 completion is claimed from N25.2 validation evidence",
+          "control_id": "phase8_completion_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence is relabeled as semantic learning",
+          "control_id": "semantic_learning_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence is relabeled as semantic choice",
+          "control_id": "semantic_choice_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence is relabeled as agency",
+          "control_id": "agency_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence or producer success is relabeled as native support",
+          "control_id": "native_support_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence is relabeled as sentience",
+          "control_id": "sentience_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "N25.2 evidence is relabeled as ant ecology implementation",
+          "control_id": "ant_ecology_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence is relabeled as organism/life",
+          "control_id": "organism_life_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        },
+        {
+          "blocked_condition": "multi-basin evidence is relabeled as unrestricted autonomy",
+          "control_id": "unrestricted_autonomy_relabel_control",
+          "rung_effect": "blocks_claim_and_MB6"
+        }
+      ],
+      "failed_open_effect": "invalidates_row_and_blocks_MB6",
+      "not_run_effect": "blocks_dependent_gate",
+      "status_enum": [
+        "passed",
+        "failed_closed",
+        "failed_open",
+        "blocked",
+        "not_run",
+        "not_applicable"
+      ],
+      "status_semantics": {
+        "failed_closed": "blocker triggered and claim correctly rejected",
+        "failed_open": "blocker triggered but claim still passed",
+        "not_applicable": "requires scope reason",
+        "not_run": "blocks dependent rung"
+      }
+    },
+    "i3_mb5_chain_status_enum": [
+      "mb5_chain_validated_for_runtime_probe",
+      "mb5_chain_validated_with_blockers",
+      "mb5_demoted_repair_required",
+      "mb5_chain_unreadable_blocks_runtime_probe"
+    ],
+    "implementation_digest_fields": [
+      "runtime_source_digest",
+      "runtime_config_digest",
+      "implementation_contract_schema_digest",
+      "lgrc9v3_runtime_file_sha256",
+      "lgrc9v3_runtime_state_file_sha256",
+      "lgrc9v3_contract_file_sha256",
+      "telemetry_contract_file_sha256",
+      "focused_test_digest_or_test_result_digest"
+    ],
+    "implementation_no_mutation_proof_fields": [
+      "implementation_modification_allowed",
+      "implementation_source_modification_observed",
+      "src_diff_expected",
+      "src_diff_observed",
+      "spec_diff_observed",
+      "test_diff_observed",
+      "example_diff_observed",
+      "runtime_execution_from_closed_implementation",
+      "defect_fix_attempted",
+      "defect_disposition"
+    ],
+    "mb5_demotion_policy": {
+      "mb5_demoted_if": [
+        "phase8_closeout_missing_or_unparseable",
+        "mb5_asserted_without_replay_control_evidence",
+        "runtime_surface_mismatch",
+        "child_basin_state_records_missing",
+        "merge_leakage_controls_missing_or_failed_open",
+        "producer_audit_missing",
+        "unsafe_claim_flag_true",
+        "mb6_already_claimed_without_n25_2_gate"
+      ],
+      "mb5_demotion_effect": [
+        "repair_required",
+        "n26_consumption_blocked",
+        "phase8_evidence_chain_invalid"
+      ]
+    },
+    "mb5_mb6_invariants": {
+      "mb6_requires_independent_n25_2_gate": true,
+      "n25_2_c6_closeout_does_not_imply_mb6": true,
+      "phase8_mb5_validated_does_not_imply_mb6": true
+    },
+    "mb5_runtime_evidence_separation_policy": {
+      "i3_question": "does_closed_phase8_mb5_remain_admissible",
+      "i4_positive_runtime_evidence_cannot_retroactively_fix_i3_mb5_chain": true,
+      "i4_question": "can_closed_runtime_emit_new_source_current_multi_basin_candidate_evidence",
+      "i8_question": "does_combined_i3_to_i7_evidence_pass_MB6",
+      "phase8_mb5_chain_defect_with_runtime_probe_support_status": "phase8_mb5_chain_has_defect_but_n25_2_runtime_probe_supports_repair_target"
+    },
+    "mb6_gate_status_schema": {
+      "gate_result_status_enum": [
+        "passed",
+        "failed_closed",
+        "failed_open",
+        "blocked",
+        "not_run",
+        "not_applicable"
+      ],
+      "mb6_gate_applied_in_iteration_2": false,
+      "mb6_gate_status_enum": [
+        "not_applied",
+        "supported",
+        "blocked",
+        "demotes_mb5",
+        "not_applicable"
+      ]
+    },
+    "mb6_support_gates": [
+      {
+        "gate_id": "source_inventory_admissible",
+        "missing_effect": "blocked",
+        "required_evidence": "I1 source inventory passed with no failed checks.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "phase8_mb5_chain_validated",
+        "missing_effect": "blocked",
+        "required_evidence": "I3 validates Phase 8 MB5 evidence chain without demotion.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "source_backed_multi_basin_runtime_surfaces",
+        "missing_effect": "blocked",
+        "required_evidence": "source-backed runtime surfaces for multi-basin formation, not report-only or visual-only evidence",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "source_backed_child_basin_state_records",
+        "missing_effect": "blocked",
+        "required_evidence": "child-basin records include core ids, membership, boundary edges, support/coherence margins, and parent/neighbor relations",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "replay_backed_child_basin_persistence",
+        "missing_effect": "blocked",
+        "required_evidence": "multi-basin state persists across declared replay windows.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "artifact_snapshot_duplicate_replay_clean",
+        "missing_effect": "blocked",
+        "required_evidence": "artifact replay, snapshot/load replay, and duplicate replay all pass",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "merge_leakage_controls_fail_closed",
+        "missing_effect": "blocked",
+        "required_evidence": "merge, leakage, and old-basin-thickening controls reject false positives.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "producer_native_mutation_ownership_clean",
+        "missing_effect": "blocked",
+        "required_evidence": "producer audit passes, runtime mutation is LGRC9V3-owned, and producer success is not native support",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "front_capacity_boundary_birth_provenance_when_used",
+        "missing_effect": "blocked",
+        "required_evidence": "front-capacity or boundary-birth companion evidence is recorded when used and cannot backfill MB6 by label",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "hidden_producer_basin_insertion_rejected",
+        "missing_effect": "blocked",
+        "required_evidence": "hidden producer basin insertion control fails closed.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "label_only_basin_formation_rejected",
+        "missing_effect": "blocked",
+        "required_evidence": "label-only basin formation control fails closed.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "old_basin_thickening_relabel_rejected",
+        "missing_effect": "blocked",
+        "required_evidence": "old-basin thickening relabel control fails closed.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "transient_flow_sink_relabel_rejected",
+        "missing_effect": "blocked",
+        "required_evidence": "transient flow-sink relabel control fails closed.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "graph_visual_only_success_rejected",
+        "missing_effect": "blocked",
+        "required_evidence": "graph visual-only success control fails closed.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "visual_evidence_corroboration_only",
+        "missing_effect": "blocked",
+        "required_evidence": "visual examples are corroboration only and cannot satisfy gates.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "n26_consumption_rule_explicit",
+        "missing_effect": "blocked",
+        "required_evidence": "N26 consumption scope is explicit and derived from gate result.",
+        "required_for_mb6": true
+      },
+      {
+        "gate_id": "unsafe_claim_flags_false",
+        "missing_effect": "blocked",
+        "required_evidence": "all unsafe claim flags remain false.",
+        "required_for_mb6": true
+      }
+    ],
+    "n26_consumption_rules": {
+      "before_mb6_gate": {
+        "n26_consumption_blocker": "blocked_pending_mb6_gate",
+        "n26_consumption_effect": "unscoped_consumption_blocked",
+        "n26_scoped_context_consumption_allowed": "pending",
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      },
+      "if_mb5_demoted": {
+        "n26_consumption_effect": "mb5_demoted_blocks_n26",
+        "n26_scoped_context_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      },
+      "if_mb6_blocked": {
+        "n26_consumption_effect": "scoped_provisional_context_only",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      },
+      "if_mb6_supported": {
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      },
+      "if_repair_required": {
+        "n26_consumption_effect": "blocked_pending_repair",
+        "n26_scoped_context_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      }
+    },
+    "producer_native_discipline": {
+      "hidden_producer_basin_insertion_allowed": false,
+      "producer_compatibility_audit_required": true,
+      "producer_scheduling_may_consume_as": "audit_context_only",
+      "producer_scheduling_must_not_consume_as": "native_support",
+      "producer_scheduling_present": "row_local_boolean_required",
+      "producer_scheduling_role_enum": [
+        "context_only",
+        "compatibility_audit",
+        "blocker_if_used_as_native_support"
+      ],
+      "producer_success_can_upgrade_native": false,
+      "producer_success_overwrites_native_failure": false,
+      "runtime_mutation_owner_enum": [
+        "LGRC9V3_runtime_transition",
+        "producer_surface",
+        "hidden_producer_blocks_row",
+        "not_recorded_blocks_row"
+      ],
+      "runtime_mutation_ownership_required": "LGRC9V3_transitions"
+    },
+    "reconstruction_policy": {
+      "reconstruction_can_create_original_child_basin_evidence": false,
+      "reconstruction_can_validate_runtime_records": true,
+      "replay_without_runtime_execution_blocks_MB6": true,
+      "runtime_execution_required_for_positive_candidate": true
+    },
+    "replay_requirements": {
+      "child_basin_persistence_requires_replay": true,
+      "control_failed_open_blocks_mb6": true,
+      "control_not_run_blocks_mb6": true,
+      "failed_or_not_run_effect": "blocks_MB6",
+      "merge_leakage_controls_required": true,
+      "required_for_mb6": [
+        "artifact_replay",
+        "snapshot_load_replay",
+        "duplicate_replay",
+        "multi_window_child_basin_persistence_replay"
+      ]
+    },
+    "runtime_artifact_role_enum": [
+      "runtime_execution_trace",
+      "flow_window_records",
+      "child_basin_state_records",
+      "topology_refinement_provenance",
+      "producer_native_mutation_ownership_ledger",
+      "runtime_config",
+      "runtime_snapshot",
+      "artifact_replay_trace",
+      "snapshot_load_replay_trace",
+      "duplicate_replay_trace",
+      "multi_window_persistence_replay_trace",
+      "fail_closed_control_trace",
+      "stress_variant_trace",
+      "closeout",
+      "report"
+    ],
+    "source_admissibility_rules": {
+      "blocked_missing_or_unparseable_effect": "blocks_dependent_gate",
+      "corroboration_only_cannot_satisfy_mb6": true,
+      "source_admissibility_enum": [
+        "admissible_for_inventory",
+        "admissible_for_mb5_chain_audit",
+        "admissible_for_mb6_gate_context",
+        "corroboration_only",
+        "blocked_missing_or_unparseable"
+      ],
+      "source_role_consumption_rules": {
+        "n25_1_requirements_context": {
+          "may_support": [
+            "requirements_context",
+            "MB_ladder_context"
+          ],
+          "must_not_support": [
+            "runtime_evidence",
+            "MB5",
+            "MB6"
+          ]
+        },
+        "n25_bf5_context": {
+          "may_support": [
+            "scoped_sub_basin_context"
+          ],
+          "must_not_support": [
+            "MB6",
+            "independent_multi_basin_formation"
+          ]
+        },
+        "phase8_contract_schema_context": {
+          "may_support": [
+            "schema_admissibility_context"
+          ],
+          "must_not_support": [
+            "positive_runtime_result_by_itself"
+          ]
+        },
+        "phase8_mb5_closeout_evidence": {
+          "may_support": [
+            "MB5_evidence_input"
+          ],
+          "must_not_support": [
+            "automatic_MB6",
+            "native_support"
+          ]
+        },
+        "phase8_plan_context": {
+          "may_support": [
+            "planned_gate_context"
+          ],
+          "must_not_support": [
+            "final_result_evidence"
+          ]
+        },
+        "report_context_only": {
+          "may_support": [
+            "interpretation_context"
+          ],
+          "must_not_support": [
+            "runtime_evidence_by_itself"
+          ]
+        },
+        "runtime_source_audit": {
+          "may_support": [
+            "audit_runtime_surface_verification"
+          ],
+          "must_not_support": [
+            "new_implementation",
+            "claim_support_without_artifacts"
+          ]
+        },
+        "telemetry_example_corroboration": {
+          "may_support": [
+            "telemetry_corroboration_only"
+          ],
+          "must_not_support": [
+            "runtime_evidence",
+            "replay_evidence",
+            "MB6_support"
+          ]
+        },
+        "test_audit": {
+          "may_support": [
+            "admissibility_context"
+          ],
+          "must_not_support": [
+            "MB6_support_by_itself"
+          ]
+        },
+        "visual_corroboration_only": {
+          "may_support": [
+            "visual_corroboration_only"
+          ],
+          "must_not_support": [
+            "runtime_evidence",
+            "replay_evidence",
+            "MB6_support"
+          ]
+        }
+      },
+      "source_role_enum": [
+        "n25_bf5_context",
+        "n25_1_requirements_context",
+        "phase8_mb5_closeout_evidence",
+        "phase8_plan_context",
+        "phase8_contract_schema_context",
+        "runtime_source_audit",
+        "test_audit",
+        "telemetry_example_corroboration",
+        "visual_corroboration_only",
+        "report_context_only"
+      ]
+    },
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    },
+    "validation_runtime_policy": {
+      "artifact_reconstruction_is_replay_validation_not_replacement": true,
+      "defect_disposition": "record_as_blocker_or_repair_target_only",
+      "existing_lgrc9v3_runtime_execution_allowed": true,
+      "implementation_source_modification_allowed": false,
+      "replay_cannot_replace_original_runtime_execution": true,
+      "replay_reconstructs_or_validates_runtime_records_only": true,
+      "runtime_execution_artifact_roles_frozen": true,
+      "runtime_execution_does_not_open_implementation_tranche": true,
+      "runtime_execution_is_primary_positive_evidence": true,
+      "runtime_execution_required_for_I4_positive_candidate": true,
+      "src_specs_tests_examples_or_implementation_edits_allowed": false
+    },
+    "variant_probe_comparability_schema": {
+      "variant_cannot_backfill_unrelated_MB5_rows": true,
+      "variant_changes_declared_axis_enum": [
+        "fixture",
+        "seed",
+        "topology",
+        "front_capacity_boundary_birth"
+      ],
+      "variant_comparability_digest_required": true,
+      "variant_may_support_generalization": "bounded",
+      "variant_probe_is_not_retuned_copy": true,
+      "variant_uses_closed_runtime": true
+    },
+    "visual_evidence_limits": {
+      "examples_support_mb6_without_runtime_replay": false,
+      "graph_visual_only_success_allowed": false,
+      "may_consume_as": [
+        "telemetry_or_visual_corroboration_only"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "replay_evidence",
+        "MB6_support"
+      ],
+      "visual_evidence_role": "corroboration_only",
+      "visual_graph_growth_supports_mb6": false
+    }
+  },
+  "source_inventory": {
+    "acceptance_state": "accepted_source_inventory_admissibility_audit_ready_for_i2_no_mb6",
+    "all_i1_source_roles_consumed_without_reclassification": true,
+    "output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26",
+    "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_source_inventory_and_admissibility_audit.json",
+    "sha256": "585accaf91af0dc4d569912bb3e5b0d436fe9f54642578436e1e694b9b583d70",
+    "status": "passed"
+  },
+  "src_diff_expected": false,
+  "status": "passed"
+}

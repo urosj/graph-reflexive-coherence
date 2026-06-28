@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N25.1. It replaces the
+This handoff is the current pickup note for N25.2. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -20,9 +20,10 @@ N23 live-continuation collapse and selection geometry = closed
 N24 abundance and surplus-supported optionality = closed
 N25 spark / sub-basin / new-basin formation = closed
 N25.1 LGRC9V3 multi-basin formation extension requirements = closed
-current next implementation tranche = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement = closed_at_MB5
+current validation bridge = N25.2_LGRC9V3_MB6_validation_bridge
 downstream primitive experiment = N26_proxy_divergence_proxy_collapse
-N26_unscoped_multi_basin_mode = blocked_until_future_MB6
+N26_unscoped_multi_basin_mode = blocked_until_N25_2_MB6
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -150,8 +151,8 @@ N25 supports scoped native high-margin core / sub-basin formation and a
 separate producer-assisted BF5 scaffold. It does not support independent
 new-basin formation, BF6, or native LGRC9V3 multi-basin formation.
 
-N25.1 closed as a requirements/spec bridge for a future Phase 8 LGRC9V3
-multi-basin formation extension:
+N25.1 closed as a requirements/spec bridge for a Phase 8 LGRC9V3 multi-basin
+formation extension:
 
 ```text
 status = passed
@@ -170,9 +171,23 @@ ready_for_n26_scoped_mode = true
 
 N25.1 does not implement the runtime extension and does not claim multi-basin
 evidence. It defines the Phase 8 extension requirements, MB0...MB6 ladder,
-replay/control contract, and N26 consumption constraints. The immediate next
-branch should be a Phase 8 implementation tranche that consumes N25/N25.1 as
-frozen source evidence before unscoped N26 multi-basin use is allowed.
+replay/control contract, and N26 consumption constraints.
+
+The Phase 8 LGRC9V3 multi-basin implementation tranche is now closed at MB5:
+
+```text
+status = closed
+supported_ceiling = MB5_control_backed_native_multi_basin_formation_candidate
+mb5_control_backed_candidate_allowed = true
+mb6_or_stronger_supported = false
+native_lgrc_multi_basin_formation_supported = false
+n26_unscoped_consumption_allowed = false
+next_step = N25.2_scoped_missing_mechanism_bridge_before_N26
+```
+
+N25.2 is the current validation bridge. It must decide whether the Phase 8 MB5
+evidence can support MB6 / N26-ready multi-basin substrate evidence, or record
+the exact blockers and keep N26 unscoped multi-basin consumption closed.
 
 ## Active Roadmap Source
 
@@ -200,6 +215,9 @@ Use this handoff together with:
 - `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md`
 - `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/reports/n25_1_closeout_and_phase8_extension_handoff.md`
 - `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json`
+- `implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md`
+- `implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json`
+- `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md`
 
 Historical prerequisite context remains in:
 
