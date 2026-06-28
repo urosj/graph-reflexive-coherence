@@ -46,6 +46,7 @@ from tests.models.test_lgrc_9_v3_runtime import (
     _active_topology_params,
     _active_topology_with_surface_lineage_params,
     _active_topology_with_state_reabsorption_params,
+    _route_arbitration_model_with_candidate_set,
     _route_arbitration_model_with_full_chain,
     _saturated_sink_state,
     _three_node_state,
@@ -248,10 +249,15 @@ class LGRC9V3TelemetryContractTest(unittest.TestCase):
             "causal_pulse_substrate_surface",
             extension[LGRC9V3_TELEMETRY_FAMILY],
         )
+        self.assertNotIn(
+            "multi_basin_formation",
+            extension[LGRC9V3_TELEMETRY_FAMILY],
+        )
         run_summary = lgrc9v3_run_summary_family_extensions(model)[
             LGRC9V3_TELEMETRY_FAMILY
         ]
         self.assertNotIn("final_causal_pulse_substrate_surface", run_summary)
+        self.assertNotIn("final_multi_basin_formation", run_summary)
 
         checkpoint = build_lgrc9v3_graph_checkpoint(
             model,
@@ -266,6 +272,11 @@ class LGRC9V3TelemetryContractTest(unittest.TestCase):
             "causal_pulse_substrate_surface_lineage_log",
             checkpoint_extension,
         )
+        self.assertNotIn("multi_basin_formation", checkpoint_extension)
+        self.assertNotIn("post_refinement_flow_window_log", checkpoint_extension)
+        self.assertNotIn("child_basin_state_log", checkpoint_extension)
+        self.assertNotIn("multi_basin_replay_validation_log", checkpoint_extension)
+        self.assertNotIn("merge_leakage_control_matrix_log", checkpoint_extension)
         self.assertNotIn("topology_state_reabsorption", checkpoint_extension)
         self.assertNotIn("topology_state_reabsorption_log", checkpoint_extension)
 
@@ -547,6 +558,84 @@ class LGRC9V3TelemetryContractTest(unittest.TestCase):
         self.assertIn("native_route_arbitration_log", checkpoint_extension)
         self.assertEqual(2, len(checkpoint_extension["native_route_candidate_log"]))
         self.assertEqual(1, len(checkpoint_extension["native_route_arbitration_log"]))
+
+    def test_multi_basin_formation_exports_summary_logs_and_claim_boundary(
+        self,
+    ) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+        model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+        )
+
+        step_extension = lgrc9v3_step_family_extensions(model)[
+            LGRC9V3_TELEMETRY_FAMILY
+        ]
+        summary = step_extension["multi_basin_formation"]
+        self.assertTrue(summary["native_lgrc_multi_basin_formation_enabled"])
+        self.assertTrue(summary["native_lgrc_multi_basin_formation_validated"])
+        self.assertFalse(summary["native_lgrc_multi_basin_formation_supported"])
+        self.assertEqual(1, summary["flow_window_record_count"])
+        self.assertEqual(1, summary["child_basin_state_record_count"])
+        self.assertEqual(1, summary["replay_validation_record_count"])
+        self.assertEqual(
+            summary["required_fail_closed_control_count"],
+            summary["control_record_count"],
+        )
+        self.assertEqual(
+            summary["required_fail_closed_control_count"],
+            summary["failed_closed_control_count"],
+        )
+        self.assertEqual(0, summary["failed_open_control_count"])
+        self.assertEqual(1, summary["clean_replay_record_count"])
+        self.assertTrue(summary["mb5_control_backed_candidate_allowed"])
+        self.assertFalse(summary["mb6_or_stronger_supported"])
+        self.assertFalse(summary["native_support_claim_allowed"])
+        self.assertFalse(summary["agency_claim_allowed"])
+        self.assertFalse(summary["phase8_completion_claim_allowed"])
+
+        run_summary = lgrc9v3_run_summary_family_extensions(model)[
+            LGRC9V3_TELEMETRY_FAMILY
+        ]
+        self.assertEqual(
+            summary,
+            run_summary["final_multi_basin_formation"],
+        )
+
+        checkpoint = build_lgrc9v3_graph_checkpoint(
+            model,
+            identity=_identity(),
+            checkpoint_id="multi-basin-formation-checkpoint",
+            checkpoint_label="after-multi-basin-controls",
+        )
+        checkpoint_extension = checkpoint.family_extensions[LGRC9V3_TELEMETRY_FAMILY]
+        checkpoint_summary = dict(checkpoint_extension["multi_basin_formation"])
+        checkpoint_summary["missing_required_control_ids"] = list(
+            checkpoint_summary["missing_required_control_ids"]
+        )
+        self.assertEqual(summary, checkpoint_summary)
+        self.assertEqual(1, len(checkpoint_extension["post_refinement_flow_window_log"]))
+        self.assertEqual(1, len(checkpoint_extension["child_basin_state_log"]))
+        self.assertEqual(1, len(checkpoint_extension["multi_basin_replay_validation_log"]))
+        self.assertEqual(
+            summary["required_fail_closed_control_count"],
+            len(checkpoint_extension["merge_leakage_control_matrix_log"]),
+        )
 
 
 if __name__ == "__main__":

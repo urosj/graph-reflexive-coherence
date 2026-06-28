@@ -37,6 +37,8 @@ Use these examples when you want to see:
 - how active LGRC-3 processors compose proper-time inheritance,
   collapse/reabsorption evidence, collapse packet transport, proper-time
   identity evaluation, identity acceptance, and replay validation;
+- how to distinguish a multi-basin telemetry/control surface over an unchanged
+  graph from a visible topology birth/refinement checkpoint sequence;
 - what artifact labels prevent overclaiming full LGRC dynamics.
 
 ## LGRC-2 Versus Active LGRC-3
@@ -123,11 +125,79 @@ PYTHONPATH=src ./.venv/bin/python examples/lgrc9v3/native_packet_loop.py
 | `executable_packet_queue.py` | Configure packetized local-update routes and process a routed executable event queue. |
 | `causal_spark_diagnostics.py` | Trigger opt-in Lane B candidate evidence at a causal arrival/local-update boundary. |
 | `telemetry_visual_bundle.py` | Capture LGRC9V3 telemetry/checkpoint artifacts and render graph visuals under `outputs/examples/lgrc9v3/`. |
+| `multi_basin_formation_bundle.py` | Run the opt-in multi-basin formation chain through flow-window, child-basin, replay, and fail-closed controls, then save telemetry/checkpoints and render graph visuals. This is a collapse/reabsorption telemetry/control example over an unchanged three-node graph, not visible node birth. |
+| `topology_birth_refinement_visual_bundle.py` | Run the existing saturated-sink boundary-birth/refinement path and save checkpoints that visibly change node/edge structure. This is a topology-growth visualization companion, not an MB5/MB6 closeout claim. |
+| `front_capacity_topology_birth_visual_bundle.py` | Run a GRCL9V3-source-backed front-capacity boundary-birth path and save checkpoints that visibly change node/edge structure. This is the corrected front-capacity visual companion to the diagnostic topology-growth fixture. |
 | `corrected_cascade_comparison.py` | Reproduce the corrected front-capacity GRC9V3/LGRC9V3 comparison: 20 synchronous GRC9V3 steps versus 100 native LGRC9V3 queue events, with matching final topology and different runtime code paths. |
 | `causal_history_surfaces.py` | Build a small GRC9V3 fixture, compute LGRC-0 and LGRC-1 evidence, and print the safe interpretation. |
 | `packetized_causal_flux.py` | Use the lower-level helper API to process one fixed-topology LGRC-2 packet departure/arrival cycle, derive compact pending-flux evidence, and print the budget audit. |
 | `refinement_packet_transport.py` | Create one in-flight LGRC-2 packet, trigger a GRC9V3 Lane B mechanical expansion, transport the packet evidence through refinement, and print the LGRC-3 budget/lineage audit. |
 | `active_lgrc3_causal_history.py` | Compose the active LGRC-3 helper chain: refinement packet transport, proper-time inheritance, collapse/reabsorption, collapse packet transport, identity evaluation/acceptance, and replay validation. |
+
+## Multi-Basin Versus Visible Topology Growth
+
+`multi_basin_formation_bundle.py` demonstrates the Phase 8 multi-basin
+telemetry/control surface. The generated graph checkpoints remain three nodes
+and three edges:
+
+```text
+initial_node_count = 3
+final_node_count = 3
+initial_edge_count = 3
+final_edge_count = 3
+```
+
+The topology-history records in that example are both
+`lgrc9v3_causal_collapse` records: one collapse/reabsorption result and one
+associated packet-transport result. Both report `topology_mutated = false`.
+The child-basin state is intentionally narrow:
+
+```text
+child_basin_core_ids = [0]
+child_basin_membership_by_core = {"0": [0, 1, 2]}
+```
+
+That example is useful for inspecting MB5 telemetry/replay/control artifacts,
+but it is not a visible new-node or independent new-basin birth example.
+
+Use `topology_birth_refinement_visual_bundle.py` when the goal is to inspect a
+checkpoint sequence where topology visibly changes through the existing
+saturated-sink boundary-birth/refinement fixture. This fixture is intentionally
+kept as a diagnostic visual companion because it exercises an explicit,
+aggressive topology-growth path rather than the corrected front-capacity
+eligibility surface:
+
+```text
+checkpoint_node_counts = [10, 10, 11, 15]
+checkpoint_edge_counts = [9, 9, 10, 14]
+topology_event_kinds = [
+    "lgrc9v3_causal_boundary_birth",
+    "hybrid_mechanical_expansion",
+    "lgrc9v3_refinement_packet_transport",
+    "lgrc9v3_proper_time_inheritance",
+]
+```
+
+The topology-growth bundle is a visualization and telemetry example. It does
+not upgrade MB5/MB6, native support, semantic learning, agency, or Phase 8
+completion claims.
+
+Use `front_capacity_topology_birth_visual_bundle.py` when the goal is to inspect
+visible topology growth through the corrected front-capacity boundary-birth
+surface. It lowers a GRCL9V3 front-growth source, consumes
+`grcl9v3_front_growth_eligible_ports` and
+`grcl9v3_growth_parent_capacity_sources`, schedules a boundary-birth trial only
+through that front-capacity metadata, and records a visible node/edge increase:
+
+```text
+causal_boundary_birth_parent_eligibility = grcl9v3_front_capacity
+front_capacity_source = spark_expansion_front
+visible_topology_growth = true
+```
+
+This corrected-front-capacity visual remains a topology-birth example, not an
+MB5/MB6 closeout, native support, semantic learning, agency, or Phase 8
+completion claim.
 
 ## Corrected Cascade Comparison
 

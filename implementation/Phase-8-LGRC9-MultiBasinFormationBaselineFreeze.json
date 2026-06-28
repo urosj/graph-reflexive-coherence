@@ -1,0 +1,196 @@
+{
+  "artifact": "Phase-8-LGRC9-MultiBasinFormationBaselineFreeze",
+  "schema_version": "phase8_lgrc9_multi_basin_formation_baseline_freeze_v1",
+  "date": "2026-06-28",
+  "status": "passed",
+  "iteration": 83,
+  "purpose": "freeze_multi_basin_formation_boundary_before_contract_and_runtime_changes",
+  "source_commit": "f0b1970af99e1e512a6951af898509534a27e5f9",
+  "baseline_boundary": {
+    "n25_1_final_mb_ladder_ceiling": "MB0_requirements_bridge_only_no_runtime_evidence",
+    "phase8_extension_ready_to_implement": true,
+    "runtime_implementation_opened": false,
+    "native_multi_basin_formation_supported": false,
+    "BF6_supported": false,
+    "runtime_multi_basin_evidence_opened": false
+  },
+  "existing_source_context": {
+    "grc9v3_child_stabilization_present": true,
+    "grc9v3_child_stabilization_functions": [
+      "evaluate_child_basin_stabilization",
+      "register_completed_hybrid_spark"
+    ],
+    "grc9v3_completed_spark_event": "hybrid_spark_completed",
+    "grc9v3_cached_child_evidence": "last_child_basin_stabilization",
+    "interpretation": "source_context_only_not_lgrc9v3_replayable_multi_basin_runtime_surface"
+  },
+  "dedicated_lgrc9v3_multi_basin_surfaces": {
+    "post_refinement_flow_window_log": false,
+    "child_basin_state_record_log": false,
+    "multi_basin_replay_validation_log": false,
+    "merge_leakage_control_matrix_log": false,
+    "native_lgrc_multi_basin_formation_supported": false
+  },
+  "change_boundary": {
+    "baseline_source_behavior_changes_opened": false,
+    "source_spec_test_example_diff_empty": true,
+    "source_spec_test_example_diff_command": "git diff --name-only -- src specs tests examples",
+    "source_spec_test_example_diff_result": [],
+    "iteration_83_allowed_repository_changes": [
+      "implementation/Phase-8-LGRC9-MultiBasinFormationPlan.md",
+      "implementation/Phase-8-LGRC9-MultiBasinFormationChecklist.md",
+      "implementation/Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.md",
+      "implementation/Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.json",
+      "implementation/Phase-8-LGRC9-Handoff.md",
+      "implementation/Phase-8-LGRC9-ImplementationChecklist.md"
+    ],
+    "iteration_84_initial_source_change_envelope": [
+      "src/pygrc/models/lgrc_9_v3_contract.py",
+      "src/pygrc/models/__init__.py",
+      "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "src/pygrc/models/lgrc_9_v3_topology.py",
+      "specs/lgrc-9-v3-spec.md",
+      "tests/models/test_lgrc_9_v3_contract.py",
+      "tests/models/test_lgrc_9_v3_runtime.py"
+    ],
+    "later_optional_change_envelope": [
+      "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "tests/telemetry/test_lgrc9v3_contract.py",
+      "examples/lgrc9v3/"
+    ],
+    "out_of_envelope_change_requires_checklist_dependency_reason": true,
+    "protected_invariants": [
+      "existing_GRC9V3_spark_behavior",
+      "LGRC9V3_default_off_behavior",
+      "packet_processing_budget_invariants",
+      "topology_integration_invariants",
+      "surface_lineage_invariants",
+      "topology_state_reabsorption_invariants",
+      "native_route_arbitration_invariants",
+      "node_plus_packet_budget_invariants"
+    ]
+  },
+  "required_surfaces_from_n25_1": [
+    {
+      "surface_id": "causal_refinement_event_surface",
+      "implementation_role": "reuse_existing_surface",
+      "surface_status": "required_specifiable",
+      "enabled_mb_rungs_if_implemented": [
+        "MB1"
+      ]
+    },
+    {
+      "surface_id": "topology_integration_processor",
+      "implementation_role": "new_default_off_processor",
+      "surface_status": "required_missing",
+      "enabled_mb_rungs_if_implemented": [
+        "MB2"
+      ]
+    },
+    {
+      "surface_id": "post_refinement_flow_window",
+      "implementation_role": "new_default_off_surface",
+      "surface_status": "required_missing",
+      "enabled_mb_rungs_if_implemented": [
+        "MB3"
+      ]
+    },
+    {
+      "surface_id": "child_basin_state_record_surface",
+      "implementation_role": "new_default_off_surface",
+      "surface_status": "required_missing",
+      "enabled_mb_rungs_if_implemented": [
+        "MB3",
+        "MB4"
+      ]
+    },
+    {
+      "surface_id": "replay_and_persistence_validator",
+      "implementation_role": "new_validator",
+      "surface_status": "required_missing",
+      "enabled_mb_rungs_if_implemented": [
+        "MB4",
+        "MB6"
+      ]
+    },
+    {
+      "surface_id": "merge_leakage_control_matrix",
+      "implementation_role": "new_control_matrix",
+      "surface_status": "required_missing",
+      "enabled_mb_rungs_if_implemented": [
+        "MB5",
+        "MB6"
+      ]
+    },
+    {
+      "surface_id": "n26_handoff_gate",
+      "implementation_role": "handoff_constraint",
+      "surface_status": "required_specifiable",
+      "enabled_mb_rungs_if_implemented": [
+        "MB6"
+      ]
+    }
+  ],
+  "source_artifacts": {
+    "n25_closeout": {
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+      "status": "passed",
+      "consumed_as": "scoped_BF5_and_blocked_BF6_boundary_context"
+    },
+    "n25_1_requirement_matrix": {
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_phase8_extension_requirements_matrix.json",
+      "sha256": "44fa27eba5f3bed4d940d84b30828c44423188e384928cb0a686ccaed8bb22b3",
+      "status": "passed",
+      "consumed_as": "phase8_extension_requirement_matrix"
+    },
+    "n25_1_closeout": {
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+      "sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+      "status": "passed",
+      "consumed_as": "phase8_ready_requirements_bridge_not_runtime_evidence"
+    }
+  },
+  "source_code_baseline": {
+    "src/pygrc/models/grc_9_v3_sparks.py": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+    "src/pygrc/models/lgrc_9_v3_runtime.py": "70c065b003ebdd4351fad7b5089abc27557dee9a04b6e1c7834e1d01bd5fa6ee",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py": "e939fc363898dfa8b7c64ced1ba6159dbd7320ad7c69fa0f695c90a2aac2312b",
+    "src/pygrc/models/lgrc_9_v3_contract.py": "0c50cffe638ff18ada4375f8e3acd897e054eb48d75137da735d6d5a4cdafe8a",
+    "src/pygrc/models/__init__.py": "a350250eee0aa6fac1cd483748d7f7ceae97c170c59bb6d19c4613a2d7c95bb3"
+  },
+  "verification": {
+    "commands": [
+      {
+        "command": "git diff --name-only -- src specs tests examples",
+        "status": "passed",
+        "result": "no output"
+      },
+      {
+        "command": ".venv/bin/python -m pytest tests/models/test_grc_9_v3_sparks.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"child_basin or active_topology_integration_expands_causal_lane_b_candidate or stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs or snapshot_round_trip\"",
+        "status": "passed",
+        "result": "7 passed, 151 deselected"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed"
+      }
+    ]
+  },
+  "claim_flags": {
+    "native_multi_basin_formation_claim_allowed": false,
+    "BF6_claim_allowed": false,
+    "independent_new_basin_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false,
+    "phase8_completion_claim_allowed": false
+  },
+  "next_iteration": "84_contract_and_policy_schema"
+}

@@ -1,0 +1,296 @@
+{
+  "artifact": "Phase-8-LGRC9-MultiBasinFormationContractSchema",
+  "schema_version": "phase8_lgrc9_multi_basin_formation_contract_schema_v1",
+  "date": "2026-06-28",
+  "status": "passed",
+  "iteration": 84,
+  "purpose": "freeze_default_off_multi_basin_contract_schema_before_runtime_emission",
+  "source_baseline_artifact": "implementation/Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.json",
+  "source_commit": "f0b1970af99e1e512a6951af898509534a27e5f9",
+  "baseline_boundary": {
+    "n25_1_final_mb_ladder_ceiling": "MB0_requirements_bridge_only_no_runtime_evidence",
+    "runtime_implementation_opened_before_iteration_84": false,
+    "dedicated_lgrc9v3_multi_basin_surfaces_absent_before_iteration_84": true,
+    "existing_spark_context_consumed_as_source_context_only": true
+  },
+  "change_boundary": {
+    "iteration_84_change_class": "contract_schema_only",
+    "runtime_record_emission_opened": false,
+    "packet_scheduling_changed": false,
+    "topology_event_processing_changed": false,
+    "runtime_state_mutation_changed": false,
+    "source_change_files_used": [
+      "src/pygrc/models/lgrc_9_v3_contract.py",
+      "src/pygrc/models/__init__.py",
+      "specs/lgrc-9-v3-spec.md",
+      "tests/models/test_lgrc_9_v3_contract.py",
+      "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.md",
+      "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.json",
+      "implementation/Phase-8-LGRC9-MultiBasinFormationChecklist.md"
+    ],
+    "out_of_envelope_change_requires_checklist_dependency_reason": true
+  },
+  "default_causal_mode_flags": {
+    "native_lgrc_multi_basin_formation_enabled": false,
+    "native_lgrc_multi_basin_formation_policy": "disabled",
+    "native_lgrc_multi_basin_formation_validated": false,
+    "native_lgrc_multi_basin_formation_supported": false
+  },
+  "policy_ids": {
+    "disabled": "disabled",
+    "active_v1": "post_refinement_child_basin_replay",
+    "allowed_values": [
+      "disabled",
+      "post_refinement_child_basin_replay"
+    ]
+  },
+  "mode_gate_rules": {
+    "enabled_requires_active_policy": true,
+    "active_policy_requires_enabled": true,
+    "validated_requires_enabled": true,
+    "supported_requires_validated": true,
+    "enabled_requires_lgrc3_runtime_level": true,
+    "enabled_requires_topology_changing_causal_history": true,
+    "enabled_requires_causal_topology_integration_allowed": true
+  },
+  "contract_record_types": {
+    "post_refinement_flow_window": {
+      "kind": "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+      "schema_version": "lgrc9v3_multi_basin_post_refinement_flow_window_record_v1",
+      "digest_field": "post_refinement_flow_window_digest",
+      "minimum_fields": [
+        "artifact_kind",
+        "artifact_schema_version",
+        "post_refinement_flow_window_id",
+        "schema_version",
+        "native_multi_basin_policy_id",
+        "native_multi_basin_enabled",
+        "source_topology_event_id",
+        "source_topology_event_digest",
+        "source_expansion_id",
+        "pre_refinement_topology_signature",
+        "post_refinement_topology_signature",
+        "refinement_lineage_map",
+        "refinement_lineage_map_digest",
+        "window_start_event_time_key",
+        "window_end_event_time_key",
+        "window_scheduler_indices",
+        "node_support_trace",
+        "node_coherence_trace",
+        "edge_flux_trace",
+        "packet_flux_trace",
+        "node_plus_packet_budget_trace",
+        "runtime_visible_inputs",
+        "lgrc_runtime_level",
+        "causal_layer_mode",
+        "claim_flags"
+      ]
+    },
+    "child_basin_state": {
+      "kind": "lgrc9v3_child_basin_state_record",
+      "schema_version": "lgrc9v3_child_basin_state_record_v1",
+      "digest_field": "child_basin_state_digest",
+      "membership_digest_field": "child_basin_membership_digest",
+      "minimum_fields": [
+        "artifact_kind",
+        "artifact_schema_version",
+        "child_basin_state_record_id",
+        "schema_version",
+        "native_multi_basin_policy_id",
+        "native_multi_basin_enabled",
+        "source_flow_window_digest",
+        "child_basin_core_ids",
+        "child_basin_membership_by_core",
+        "child_basin_membership_digest",
+        "child_basin_support_floor_records",
+        "child_basin_coherence_floor_records",
+        "child_basin_boundary_records",
+        "child_basin_flux_records",
+        "old_basin_relation_trace",
+        "merge_leakage_trace",
+        "producer_residue_classification",
+        "runtime_visible_inputs",
+        "lgrc_runtime_level",
+        "causal_layer_mode",
+        "claim_flags"
+      ]
+    },
+    "replay_validation": {
+      "kind": "lgrc9v3_multi_basin_replay_validation_record",
+      "schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+      "digest_field": "replay_validation_digest",
+      "minimum_fields": [
+        "artifact_kind",
+        "artifact_schema_version",
+        "replay_validation_id",
+        "schema_version",
+        "native_multi_basin_policy_id",
+        "native_multi_basin_enabled",
+        "source_child_basin_state_digest",
+        "artifact_replay_result",
+        "snapshot_load_replay_result",
+        "duplicate_replay_result",
+        "time_order_replay_result",
+        "membership_persistence_ratio",
+        "support_persistence_ratio",
+        "coherence_persistence_ratio",
+        "boundary_persistence_ratio",
+        "flux_persistence_ratio",
+        "replay_window",
+        "replay_failure_modes",
+        "lgrc_runtime_level",
+        "causal_layer_mode",
+        "claim_flags"
+      ],
+      "allowed_status_values": [
+        "passed",
+        "failed_closed",
+        "failed_open",
+        "not_run"
+      ]
+    },
+    "merge_leakage_control": {
+      "kind": "lgrc9v3_multi_basin_merge_leakage_control_record",
+      "schema_version": "lgrc9v3_multi_basin_merge_leakage_control_record_v1",
+      "digest_field": "control_record_digest",
+      "minimum_fields": [
+        "artifact_kind",
+        "artifact_schema_version",
+        "control_record_id",
+        "schema_version",
+        "native_multi_basin_policy_id",
+        "native_multi_basin_enabled",
+        "source_child_basin_state_digest",
+        "control_id",
+        "control_status",
+        "blocked_condition",
+        "expected_result",
+        "actual_result",
+        "claim_allowed_when_control_triggers",
+        "rung_effect",
+        "merge_leakage_metrics",
+        "lgrc_runtime_level",
+        "causal_layer_mode",
+        "claim_flags"
+      ],
+      "allowed_status_values": [
+        "passed",
+        "failed_closed",
+        "failed_open"
+      ]
+    }
+  },
+  "producer_residue_classes": [
+    "native_source_current",
+    "producer_assisted",
+    "naturalization_debt"
+  ],
+  "forbidden_runtime_visible_inputs": [
+    "hidden_fixture_basin",
+    "label_only_child_basin",
+    "old_basin_thickening_as_child_basin",
+    "transient_flow_sink_as_child_basin",
+    "merge_leakage_as_success",
+    "hidden_producer_basin_insertion",
+    "producer_assisted_success_as_native_upgrade",
+    "post_hoc_membership_selection"
+  ],
+  "implementation_defensive_forbidden_runtime_visible_inputs": [
+    "experiment_if_else",
+    "hidden_fixture_array",
+    "hidden_fixture_basin",
+    "hidden_fixture_state",
+    "hidden_producer_basin_insertion",
+    "label_only_child_basin",
+    "merge_leakage_as_success",
+    "old_basin_thickening_as_child_basin",
+    "old_basin_thickening_only",
+    "post_hoc_membership_selection",
+    "posthoc_membership_selection",
+    "posthoc_threshold",
+    "preselected_sink_id",
+    "producer_assisted_success_as_native_upgrade",
+    "producer_success_as_native_upgrade",
+    "report_code",
+    "transient_flow_sink",
+    "transient_flow_sink_as_child_basin"
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags_rejected": true,
+    "blocked_claim_keys": [
+      "native_support",
+      "agency",
+      "semantic_learning",
+      "semantic_choice",
+      "independent_new_basin",
+      "BF6",
+      "sentience",
+      "organism_life",
+      "ant_ecology",
+      "unrestricted_autonomy",
+      "phase8_completion"
+    ],
+    "implementation_forbidden_claim_flag_keys": [
+      "BF6_claim_allowed",
+      "adaptive_topology_entry_allowed",
+      "agency_claim_allowed",
+      "ant_ecology_claim_allowed",
+      "biological_claim_allowed",
+      "choice_or_agency_claim_allowed",
+      "claim_promotion",
+      "identity_acceptance_claim_allowed",
+      "independent_new_basin_claim_allowed",
+      "locomotion_like_claim_allowed",
+      "loop_driven_movement_claim_allowed",
+      "movement_claim_allowed",
+      "native_lgrc_choice_selection_claim_allowed",
+      "native_m6",
+      "native_multi_basin_formation_claim_allowed",
+      "native_support_claim_allowed",
+      "organism_life_claim_allowed",
+      "phase8_completion_claim_allowed",
+      "rc_identity_collapse_claim_allowed",
+      "rc_identity_through_topology_claim_allowed",
+      "semantic_choice_claim_allowed",
+      "semantic_learning_claim_allowed",
+      "sentience_claim_allowed",
+      "topology_mutating_movement_claim_allowed",
+      "unrestricted_autonomy_claim_allowed",
+      "unrestricted_movement_claim_allowed"
+    ],
+    "native_multi_basin_formation_claim_allowed": false,
+    "BF6_claim_allowed": false,
+    "independent_new_basin_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "phase8_completion_claim_allowed": false
+  },
+  "verification": {
+    "commands": [
+      {
+        "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q",
+        "status": "passed",
+        "result": "133 passed, 81 subtests passed"
+      },
+      {
+        "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"multi_basin or native_route or child_basin or active_topology_integration_expands_causal_lane_b_candidate or stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs or snapshot_round_trip\"",
+        "status": "passed",
+        "result": "64 passed, 220 deselected, 42 subtests passed"
+      },
+      {
+        "command": ".venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_contract.py src/pygrc/models/__init__.py tests/models/test_lgrc_9_v3_contract.py",
+        "status": "passed"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed"
+      }
+    ]
+  },
+  "next_iteration": "85_flow_window_and_child_basin_emission"
+}

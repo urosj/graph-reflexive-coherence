@@ -166,6 +166,22 @@ from pygrc.models import (
     LGRC9V3_NATIVE_ROUTE_CANDIDATE_SET_RECORD_SCHEMA_VERSION,
     LGRC9V3_NATIVE_ROUTE_INTENT_COLLAPSE,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
+    LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
+    LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION,
+    LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND,
+    LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+    LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_KIND,
+    LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION,
+    LGRC9V3_MULTI_BASIN_FORBIDDEN_INPUTS,
+    LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+    LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_KIND,
+    LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION,
+    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED,
+    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY,
     LGRC9V3PacketArrivalEligibility,
     LGRC9V3CausalPulseSubstrateSurfacePolicy,
     LGRC9V3CausalPulseSubstrateSurfaceLineageRecord,
@@ -173,6 +189,10 @@ from pygrc.models import (
     LGRC9V3NativeRouteArbitrationRecord,
     LGRC9V3NativeRouteCandidateRecord,
     LGRC9V3NativeRouteCandidateSetRecord,
+    LGRC9V3ChildBasinStateRecord,
+    LGRC9V3MultiBasinControlRecord,
+    LGRC9V3MultiBasinFlowWindowRecord,
+    LGRC9V3MultiBasinReplayValidationRecord,
     LGRC9V3TopologyStateReabsorptionRecord,
     LGRC9V3PendingFluxLedger,
     LGRC9V3PacketLedger,
@@ -199,6 +219,10 @@ from pygrc.models import (
     build_lgrc9v3_native_route_arbitration_record_digest,
     build_lgrc9v3_native_route_candidate_record_digest,
     build_lgrc9v3_native_route_candidate_set_record_digest,
+    build_lgrc9v3_child_basin_state_record_digest,
+    build_lgrc9v3_multi_basin_control_record_digest,
+    build_lgrc9v3_multi_basin_flow_window_record_digest,
+    build_lgrc9v3_multi_basin_replay_validation_record_digest,
     build_lgrc9v3_packet_event_id,
     build_lgrc9v3_packet_id,
     build_lgrc9v3_packet_contract_artifact,
@@ -236,6 +260,10 @@ from pygrc.models import (
     restore_lgrc9v3_native_route_arbitration_record_artifact,
     restore_lgrc9v3_native_route_candidate_record_artifact,
     restore_lgrc9v3_native_route_candidate_set_record_artifact,
+    restore_lgrc9v3_child_basin_state_record_artifact,
+    restore_lgrc9v3_multi_basin_control_record_artifact,
+    restore_lgrc9v3_multi_basin_flow_window_record_artifact,
+    restore_lgrc9v3_multi_basin_replay_validation_record_artifact,
     restore_lgrc9v3_collapse_reabsorption_artifact,
     restore_lgrc9v3_collapse_packet_transport_artifact,
     restore_lgrc9v3_lgrc3_policy_contract_artifact,
@@ -713,6 +741,151 @@ def _valid_native_route_arbitration_record(
     }
     values.update(overrides)
     return LGRC9V3NativeRouteArbitrationRecord(**values)  # type: ignore[arg-type]
+
+
+def _valid_multi_basin_flow_window_record(
+    **overrides: object,
+) -> LGRC9V3MultiBasinFlowWindowRecord:
+    values: dict[str, object] = {
+        "post_refinement_flow_window_id": "flow-window-1",
+        "native_multi_basin_policy_id": (
+            LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+        ),
+        "native_multi_basin_enabled": True,
+        "source_topology_event_id": "topology-event-1",
+        "source_topology_event_digest": "topology-event-digest",
+        "source_expansion_id": "expansion-1",
+        "pre_refinement_topology_signature": "pre-topology",
+        "post_refinement_topology_signature": "post-topology",
+        "refinement_lineage_map": {"1": "10", "2": "11"},
+        "window_start_event_time_key": 3.0,
+        "window_end_event_time_key": 5.0,
+        "window_scheduler_indices": (4, 5),
+        "node_support_trace": {"10": 1.0, "11": 0.9},
+        "node_coherence_trace": {"10": 1.0, "11": 0.95},
+        "edge_flux_trace": {"50": 0.08},
+        "packet_flux_trace": {"packet-a": 0.02},
+        "node_plus_packet_budget_trace": {
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_error": 0.0,
+        },
+        "runtime_visible_inputs": (
+            "source_topology_event_digest",
+            "refinement_lineage_map",
+            "post_refinement_flow_window",
+        ),
+        "claim_flags": {
+            "native_support_claim_allowed": False,
+            "agency_claim_allowed": False,
+        },
+    }
+    values.update(overrides)
+    return LGRC9V3MultiBasinFlowWindowRecord(**values)  # type: ignore[arg-type]
+
+
+def _valid_child_basin_state_record(
+    **overrides: object,
+) -> LGRC9V3ChildBasinStateRecord:
+    flow_window = _valid_multi_basin_flow_window_record()
+    values: dict[str, object] = {
+        "child_basin_state_record_id": "child-basin-state-1",
+        "native_multi_basin_policy_id": (
+            LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+        ),
+        "native_multi_basin_enabled": True,
+        "source_flow_window_digest": flow_window.post_refinement_flow_window_digest,
+        "child_basin_core_ids": (10, 11),
+        "child_basin_membership_by_core": {"10": (10, 12), "11": (11, 13)},
+        "child_basin_support_floor_records": {"10": 0.9, "11": 0.88},
+        "child_basin_coherence_floor_records": {"10": 0.95, "11": 0.92},
+        "child_basin_boundary_records": {"10": 0.7, "11": 0.72},
+        "child_basin_flux_records": {"10": 0.04, "11": 0.05},
+        "old_basin_relation_trace": {
+            "relation": "post_refinement_child_relation",
+            "old_basin_thickening_rejected": "true",
+        },
+        "merge_leakage_trace": {
+            "neighbor_leakage": 0.01,
+            "merge_pressure": 0.02,
+        },
+        "producer_residue_classification": (
+            LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT
+        ),
+        "runtime_visible_inputs": (
+            "source_flow_window_digest",
+            "child_basin_membership_by_core",
+            "merge_leakage_trace",
+        ),
+        "claim_flags": {
+            "native_support_claim_allowed": False,
+            "agency_claim_allowed": False,
+        },
+    }
+    values.update(overrides)
+    return LGRC9V3ChildBasinStateRecord(**values)  # type: ignore[arg-type]
+
+
+def _valid_multi_basin_replay_record(
+    **overrides: object,
+) -> LGRC9V3MultiBasinReplayValidationRecord:
+    child_state = _valid_child_basin_state_record()
+    values: dict[str, object] = {
+        "replay_validation_id": "multi-basin-replay-1",
+        "native_multi_basin_policy_id": (
+            LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+        ),
+        "native_multi_basin_enabled": True,
+        "source_child_basin_state_digest": child_state.child_basin_state_digest,
+        "artifact_replay_result": LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+        "snapshot_load_replay_result": LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+        "duplicate_replay_result": LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+        "time_order_replay_result": LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+        "membership_persistence_ratio": 1.0,
+        "support_persistence_ratio": 0.98,
+        "coherence_persistence_ratio": 0.97,
+        "boundary_persistence_ratio": 0.96,
+        "flux_persistence_ratio": 0.95,
+        "replay_window": {"start": 5.0, "end": 8.0, "windows": 3.0},
+        "replay_failure_modes": (),
+        "claim_flags": {
+            "native_support_claim_allowed": False,
+            "agency_claim_allowed": False,
+        },
+    }
+    values.update(overrides)
+    return LGRC9V3MultiBasinReplayValidationRecord(**values)  # type: ignore[arg-type]
+
+
+def _valid_multi_basin_control_record(
+    **overrides: object,
+) -> LGRC9V3MultiBasinControlRecord:
+    child_state = _valid_child_basin_state_record()
+    values: dict[str, object] = {
+        "control_record_id": "multi-basin-control-1",
+        "native_multi_basin_policy_id": (
+            LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+        ),
+        "native_multi_basin_enabled": True,
+        "source_child_basin_state_digest": child_state.child_basin_state_digest,
+        "control_id": "label_only_child_basin_control",
+        "control_status": LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+        "blocked_condition": "label_only_child_basin",
+        "expected_result": "claim_rejected",
+        "actual_result": "claim_rejected",
+        "claim_allowed_when_control_triggers": False,
+        "rung_effect": "blocks_MB5_and_MB6",
+        "merge_leakage_metrics": {
+            "neighbor_leakage": 0.01,
+            "merge_pressure": 0.02,
+        },
+        "claim_flags": {
+            "native_support_claim_allowed": False,
+            "agency_claim_allowed": False,
+        },
+    }
+    values.update(overrides)
+    return LGRC9V3MultiBasinControlRecord(**values)  # type: ignore[arg-type]
 
 
 class LGRC9V3ContractTest(unittest.TestCase):
@@ -1518,6 +1691,266 @@ class LGRC9V3ContractTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     _valid_native_route_arbitration_record(**overrides)
 
+    def test_multi_basin_default_modes_are_disabled(self) -> None:
+        modes = validate_lgrc9v3_causal_modes()
+
+        self.assertFalse(modes["native_lgrc_multi_basin_formation_enabled"])
+        self.assertEqual(
+            LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED,
+            modes["native_lgrc_multi_basin_formation_policy"],
+        )
+        self.assertFalse(modes["native_lgrc_multi_basin_formation_validated"])
+        self.assertFalse(modes["native_lgrc_multi_basin_formation_supported"])
+
+    def test_multi_basin_contract_exports_are_on_model_facade(self) -> None:
+        import pygrc.models as model_facade
+        import pygrc.models.lgrc_9_v3_contract as contract_module
+
+        contract_names = {
+            name
+            for name in contract_module.__all__
+            if (
+                "MULTI_BASIN" in name
+                or "MultiBasin" in name
+                or "multi_basin" in name
+                or "CHILD_BASIN" in name
+                or "ChildBasin" in name
+                or "child_basin" in name
+            )
+        }
+
+        self.assertLessEqual(contract_names, set(model_facade.__all__))
+
+    def test_causal_modes_gate_multi_basin_to_lgrc3(self) -> None:
+        with self.assertRaisesRegex(
+            InvalidParamsError,
+            "native_lgrc_multi_basin_formation_requires_lgrc3",
+        ):
+            validate_lgrc9v3_causal_modes(
+                {
+                    "causal_layer_mode": CAUSAL_LAYER_MODE_PACKETIZED_FIXED_TOPOLOGY,
+                    "lgrc_runtime_level": LGRC_RUNTIME_LEVEL_LGRC2,
+                    "native_lgrc_multi_basin_formation_enabled": True,
+                    "native_lgrc_multi_basin_formation_policy": (
+                        LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+                    ),
+                }
+            )
+
+        modes = validate_lgrc9v3_causal_modes(
+            {
+                "causal_layer_mode": (
+                    CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+                ),
+                "lgrc_runtime_level": LGRC_RUNTIME_LEVEL_LGRC3,
+                "proper_time_accumulation_policy": PROPER_TIME_POLICY_GLOBAL_SCHEDULER,
+                "causal_topology_integration_allowed": True,
+                "native_lgrc_multi_basin_formation_enabled": True,
+                "native_lgrc_multi_basin_formation_policy": (
+                    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+                ),
+            }
+        )
+
+        self.assertTrue(modes["native_lgrc_multi_basin_formation_enabled"])
+
+    def test_causal_modes_reject_multi_basin_flag_mismatches(self) -> None:
+        bad_modes = (
+            {
+                "native_lgrc_multi_basin_formation_policy": (
+                    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+                ),
+            },
+            {"native_lgrc_multi_basin_formation_validated": True},
+            {"native_lgrc_multi_basin_formation_supported": True},
+            {
+                "causal_layer_mode": (
+                    CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+                ),
+                "lgrc_runtime_level": LGRC_RUNTIME_LEVEL_LGRC3,
+                "native_lgrc_multi_basin_formation_enabled": True,
+                "native_lgrc_multi_basin_formation_policy": (
+                    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+                ),
+            },
+        )
+        for modes in bad_modes:
+            with self.subTest(modes=modes):
+                with self.assertRaises(InvalidParamsError):
+                    validate_lgrc9v3_causal_modes(modes)
+
+    def test_multi_basin_flow_window_record_round_trips(self) -> None:
+        record = _valid_multi_basin_flow_window_record()
+        artifact = record.to_artifact()
+        restored = restore_lgrc9v3_multi_basin_flow_window_record_artifact(
+            json.loads(json.dumps(artifact))
+        )
+
+        self.assertEqual(LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_KIND, artifact["artifact_kind"])
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION,
+            artifact["artifact_schema_version"],
+        )
+        self.assertEqual(record, restored)
+        self.assertEqual(
+            artifact["post_refinement_flow_window_digest"],
+            build_lgrc9v3_multi_basin_flow_window_record_digest(
+                record.to_artifact(include_digest=False)
+            ),
+        )
+
+    def test_child_basin_state_record_round_trips(self) -> None:
+        record = _valid_child_basin_state_record()
+        artifact = record.to_artifact()
+        restored = restore_lgrc9v3_child_basin_state_record_artifact(
+            json.loads(json.dumps(artifact))
+        )
+
+        self.assertEqual(LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND, artifact["artifact_kind"])
+        self.assertEqual(
+            LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION,
+            artifact["artifact_schema_version"],
+        )
+        self.assertEqual(record, restored)
+        self.assertEqual(
+            artifact["child_basin_state_digest"],
+            build_lgrc9v3_child_basin_state_record_digest(
+                record.to_artifact(include_digest=False)
+            ),
+        )
+
+    def test_multi_basin_replay_validation_record_round_trips(self) -> None:
+        record = _valid_multi_basin_replay_record()
+        artifact = record.to_artifact()
+        restored = restore_lgrc9v3_multi_basin_replay_validation_record_artifact(
+            json.loads(json.dumps(artifact))
+        )
+
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_KIND,
+            artifact["artifact_kind"],
+        )
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION,
+            artifact["artifact_schema_version"],
+        )
+        self.assertEqual(record, restored)
+        self.assertEqual(
+            artifact["replay_validation_digest"],
+            build_lgrc9v3_multi_basin_replay_validation_record_digest(
+                record.to_artifact(include_digest=False)
+            ),
+        )
+
+    def test_multi_basin_control_record_round_trips(self) -> None:
+        record = _valid_multi_basin_control_record()
+        artifact = record.to_artifact()
+        restored = restore_lgrc9v3_multi_basin_control_record_artifact(
+            json.loads(json.dumps(artifact))
+        )
+
+        self.assertEqual(LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND, artifact["artifact_kind"])
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION,
+            artifact["artifact_schema_version"],
+        )
+        self.assertEqual(record, restored)
+        self.assertEqual(
+            artifact["control_record_digest"],
+            build_lgrc9v3_multi_basin_control_record_digest(
+                record.to_artifact(include_digest=False)
+            ),
+        )
+
+    def test_multi_basin_digests_are_stable_and_sensitive(self) -> None:
+        flow = _valid_multi_basin_flow_window_record()
+        same_flow = _valid_multi_basin_flow_window_record()
+        changed_flow = _valid_multi_basin_flow_window_record(
+            node_support_trace={"10": 0.8, "11": 0.9}
+        )
+        child = _valid_child_basin_state_record()
+        same_child = _valid_child_basin_state_record()
+        changed_child = _valid_child_basin_state_record(
+            child_basin_flux_records={"10": 0.08, "11": 0.05}
+        )
+        replay = _valid_multi_basin_replay_record()
+        same_replay = _valid_multi_basin_replay_record()
+        changed_replay = _valid_multi_basin_replay_record(
+            support_persistence_ratio=0.9
+        )
+        control = _valid_multi_basin_control_record()
+        same_control = _valid_multi_basin_control_record()
+        changed_control = _valid_multi_basin_control_record(
+            actual_result="claim_failed_open"
+        )
+
+        self.assertEqual(
+            flow.post_refinement_flow_window_digest,
+            same_flow.post_refinement_flow_window_digest,
+        )
+        self.assertNotEqual(
+            flow.post_refinement_flow_window_digest,
+            changed_flow.post_refinement_flow_window_digest,
+        )
+        self.assertEqual(child.child_basin_state_digest, same_child.child_basin_state_digest)
+        self.assertNotEqual(
+            child.child_basin_state_digest,
+            changed_child.child_basin_state_digest,
+        )
+        self.assertEqual(
+            replay.replay_validation_digest,
+            same_replay.replay_validation_digest,
+        )
+        self.assertNotEqual(
+            replay.replay_validation_digest,
+            changed_replay.replay_validation_digest,
+        )
+        self.assertEqual(control.control_record_digest, same_control.control_record_digest)
+        self.assertNotEqual(
+            control.control_record_digest,
+            changed_control.control_record_digest,
+        )
+
+    def test_multi_basin_schema_rejects_bad_inputs(self) -> None:
+        for forbidden_input in LGRC9V3_MULTI_BASIN_FORBIDDEN_INPUTS:
+            with self.subTest(forbidden_input=forbidden_input):
+                with self.assertRaises(ValueError):
+                    _valid_multi_basin_flow_window_record(
+                        runtime_visible_inputs=(forbidden_input,)
+                    )
+        with self.assertRaises(ValueError):
+            _valid_multi_basin_flow_window_record(
+                node_plus_packet_budget_trace={
+                    "node_plus_packet_budget_before": 6.0,
+                    "node_plus_packet_budget_after": 6.1,
+                    "node_plus_packet_budget_error": 0.0,
+                }
+            )
+        with self.assertRaises(ValueError):
+            _valid_child_basin_state_record(
+                child_basin_membership_by_core={"10": (12,), "11": (11, 13)}
+            )
+        with self.assertRaises(ValueError):
+            _valid_child_basin_state_record(
+                producer_residue_classification="producer_success_as_native_upgrade"
+            )
+        with self.assertRaises(ValueError):
+            _valid_multi_basin_replay_record(
+                artifact_replay_result="passed_by_report_label"
+            )
+        with self.assertRaises(ValueError):
+            _valid_multi_basin_replay_record(membership_persistence_ratio=1.1)
+        with self.assertRaises(ValueError):
+            _valid_multi_basin_control_record(control_status="ignored_control")
+        with self.assertRaises(ValueError):
+            _valid_multi_basin_control_record(
+                claim_allowed_when_control_triggers=True
+            )
+        with self.assertRaises(ValueError):
+            _valid_multi_basin_control_record(
+                claim_flags={"native_support_claim_allowed": True}
+            )
+
     def test_timing_field_names_are_stable_and_distinct(self) -> None:
         fields = LGRC9V3_TIMING_FIELD_NAMES
 
@@ -1556,6 +1989,23 @@ class LGRC9V3ContractTest(unittest.TestCase):
             "derived_from_synchronous_step",
             modes["event_time_policy"],
         )
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
+            modes["causal_boundary_birth_parent_eligibility"],
+        )
+
+    def test_boundary_birth_front_capacity_eligibility_requires_enabled_birth(
+        self,
+    ) -> None:
+        with self.assertRaises(InvalidParamsError):
+            validate_lgrc9v3_causal_modes(
+                {
+                    "causal_boundary_birth_allowed": False,
+                    "causal_boundary_birth_parent_eligibility": (
+                        LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+                    ),
+                }
+            )
 
     def test_lgrc1_semicausal_fixed_topology_config_is_accepted(self) -> None:
         modes = validate_lgrc9v3_causal_modes(

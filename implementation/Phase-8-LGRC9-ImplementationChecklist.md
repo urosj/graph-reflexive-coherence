@@ -3309,6 +3309,19 @@ That continuation owns route-aspect semantics, source-pole surplus trigger
 production, and native self-rearm causality evidence. It should not be tracked
 as a loose long-range item here.
 
+The N25.1-driven multi-basin formation continuation has now been promoted into
+a dedicated Phase 8 plan/checklist:
+
+```text
+Phase-8-LGRC9-MultiBasinFormationPlan.md
+Phase-8-LGRC9-MultiBasinFormationChecklist.md
+```
+
+That continuation owns the missing LGRC9V3 runtime surfaces between existing
+causal refinement / child-stabilization source context and replayable
+multi-basin formation evidence. It should not be treated as a loose
+long-range item or as already-supported BF6 evidence.
+
 - [ ] Standalone executable `LGRC9` runtime:
       decide whether pure nine-port causal history needs behavior beyond
       `GRC9V3`-backed annotation.

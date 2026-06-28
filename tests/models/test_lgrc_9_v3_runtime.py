@@ -32,6 +32,7 @@ from pygrc.models import (
     LGRC9V3,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EVENT_KIND,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EVENT_SCHEMA_VERSION,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX,
     LGRC9V3_AUTONOMOUS_PRODUCTION_LOG_KEY,
     LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_PACKET_DEPARTURE_FROM_FEEDBACK_ELIGIBILITY,
@@ -73,6 +74,12 @@ from pygrc.models import (
     LGRC9V3_NATIVE_ROUTE_CANDIDATE_SET_ORDER_DIGEST_ASCENDING,
     LGRC9V3_NATIVE_ROUTE_CANDIDATE_SET_ORDER_SCORE_DESC_THEN_CANDIDATE_ID,
     LGRC9V3_NATIVE_ROUTE_INTENT_COLLAPSE,
+    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_DECLARED_TIEBREAKER,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
     LGRC9V3NativeRouteCandidateSetRecord,
@@ -99,6 +106,7 @@ from pygrc.models import (
     validate_lgrc9v3_causal_pulse_substrate_surface_artifacts,
     validate_lgrc9v3_causal_pulse_substrate_surface_lineage_artifacts,
     validate_lgrc9v3_native_route_arbitration_artifacts,
+    restore_lgrc9v3_multi_basin_control_record_artifact,
 )
 from pygrc.telemetry import (
     LGRC9V3_TELEMETRY_FAMILY,
@@ -153,6 +161,16 @@ def _boundary_birth_params(*, enabled: bool = True) -> dict[str, object]:
                 LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX
             ),
         }
+    return params
+
+
+def _front_capacity_boundary_birth_params() -> dict[str, object]:
+    params = _boundary_birth_params()
+    causal_modes = dict(params["causal_modes"])  # type: ignore[index]
+    causal_modes["causal_boundary_birth_parent_eligibility"] = (
+        LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+    )
+    params["causal_modes"] = causal_modes
     return params
 
 
@@ -344,10 +362,25 @@ def _route_arbitration_model_with_candidate_set(
     *,
     scores: tuple[float, float] = (0.25, 0.75),
     unresolved_tie_policy: str = LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
+    multi_basin_enabled: bool = False,
 ) -> tuple[LGRC9V3, object]:
+    params = _active_topology_with_route_arbitration_params()
+    if multi_basin_enabled:
+        causal_modes = dict(params["causal_modes"])  # type: ignore[index]
+        causal_modes.update(
+            {
+                "native_lgrc_multi_basin_formation_enabled": True,
+                "native_lgrc_multi_basin_formation_policy": (
+                    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+                ),
+                "native_lgrc_multi_basin_formation_validated": False,
+                "native_lgrc_multi_basin_formation_supported": False,
+            }
+        )
+        params["causal_modes"] = causal_modes
     model = LGRC9V3.from_state(
         _three_node_state(),
-        _active_topology_with_route_arbitration_params(),
+        params,
     )
     model.schedule_packet_departure(
         source_node_id=1,
@@ -517,6 +550,26 @@ def _three_node_state() -> GRC9V3State:
 def _boundary_birth_state() -> GRC9V3State:
     state = _three_node_state()
     state.nodes[0] = GRC9V3NodeState(coherence=4.0)
+    return state
+
+
+def _front_capacity_boundary_birth_state() -> GRC9V3State:
+    state = _boundary_birth_state()
+    state.cached_quantities["grcl9v3_front_growth_eligible_ports"] = {"0": [3]}
+    state.cached_quantities["grcl9v3_growth_parent_capacity_sources"] = {
+        "0": {
+            "construct_id": "test-front-capacity-construct",
+            "growth_semantics": "front_capacity",
+            "front_capacity_source": "spark_expansion_front",
+            "inactive_parent_port": 3,
+        }
+    }
+    return state
+
+
+def _front_capacity_boundary_birth_state_without_source() -> GRC9V3State:
+    state = _boundary_birth_state()
+    state.cached_quantities["grcl9v3_front_growth_eligible_ports"] = {"0": [3]}
     return state
 
 
@@ -2821,6 +2874,98 @@ class LGRC9V3RuntimeTest(unittest.TestCase):
         self.assertEqual(payload["child_node_id"], restored["child_node_id"])
         runtime = model.snapshot()["dynamics"]["lgrc9v3_runtime"]
         self.assertEqual(1, len(runtime["topology_event_log"]))
+
+    def test_causal_boundary_birth_can_require_front_capacity_eligibility(
+        self,
+    ) -> None:
+        model = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        events = model.apply_causal_boundary_birth_trial(
+            parent_node_id=0,
+            parent_port_id=3,
+            outward_flux_pressure=2.0,
+            rng_sample=0.1,
+            event_time_key=4.0,
+            scheduler_event_index=4,
+        )
+
+        self.assertEqual(1, len(events))
+        payload = events[0].payload
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            payload["causal_boundary_birth_parent_eligibility"],
+        )
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            payload["growth_parent_eligibility_mode"],
+        )
+        self.assertEqual(
+            "spark_expansion_front",
+            payload["growth_parent_capacity_source"],
+        )
+
+    def test_causal_boundary_birth_front_capacity_rejects_missing_or_wrong_port(
+        self,
+    ) -> None:
+        missing = LGRC9V3.from_state(
+            _boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        self.assertEqual(
+            [],
+            missing.apply_causal_boundary_birth_trial(
+                parent_node_id=0,
+                outward_flux_pressure=2.0,
+                rng_sample=0.1,
+                event_time_key=4.0,
+                scheduler_event_index=4,
+            ),
+        )
+        self.assertEqual(
+            "no_front_capacity_eligible_port",
+            missing.get_state().base_state.cached_quantities[
+                "last_causal_boundary_birth_status"
+            ],
+        )
+
+        partial_metadata = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state_without_source(),
+            _front_capacity_boundary_birth_params(),
+        )
+        self.assertEqual(
+            [],
+            partial_metadata.apply_causal_boundary_birth_trial(
+                parent_node_id=0,
+                outward_flux_pressure=2.0,
+                rng_sample=0.1,
+                event_time_key=4.0,
+                scheduler_event_index=4,
+            ),
+        )
+        self.assertEqual(
+            "no_front_capacity_eligible_port",
+            partial_metadata.get_state().base_state.cached_quantities[
+                "last_causal_boundary_birth_status"
+            ],
+        )
+
+        wrong_port = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+        with self.assertRaises(InvalidStateTransitionError):
+            wrong_port.apply_causal_boundary_birth_trial(
+                parent_node_id=0,
+                parent_port_id=4,
+                outward_flux_pressure=2.0,
+                rng_sample=0.1,
+                event_time_key=4.0,
+                scheduler_event_index=4,
+            )
 
     def test_causal_boundary_birth_rejects_when_rng_does_not_accept(self) -> None:
         model = LGRC9V3.from_state(
@@ -6036,6 +6181,8 @@ class LGRC9V3RuntimeTest(unittest.TestCase):
         )
 
         self.assertTrue(commit["committed"])
+        self.assertEqual((), commit["post_refinement_flow_window_records"])
+        self.assertEqual((), commit["child_basin_state_records"])
         topology_event = commit["topology_events"][0]
         selected_candidate = commit["selected_candidate_route_record"]
         self.assertIsNotNone(selected_candidate)
@@ -6081,6 +6228,8 @@ class LGRC9V3RuntimeTest(unittest.TestCase):
         )
         self.assertEqual(1, len(state.causal_pulse_substrate_surface_lineage_log))
         self.assertEqual(1, len(state.topology_state_reabsorption_log))
+        self.assertEqual([], state.post_refinement_flow_window_log)
+        self.assertEqual([], state.child_basin_state_log)
         lineage = state.causal_pulse_substrate_surface_lineage_log[-1]
         reabsorption = state.topology_state_reabsorption_log[-1]
         self.assertEqual(arbitration.selected_topology_event_id, lineage.topology_event_id)
@@ -6178,6 +6327,753 @@ class LGRC9V3RuntimeTest(unittest.TestCase):
         self.assertAlmostEqual(active_total, ledger.node_coherence_total)  # type: ignore[union-attr]
         self.assertAlmostEqual(6.0, active_total + ledger.in_flight_packet_total)  # type: ignore[union-attr]
         self.assertAlmostEqual(6.0, ledger.conserved_budget_total)  # type: ignore[union-attr]
+
+    def test_native_route_commit_emits_multi_basin_candidate_records_when_enabled(
+        self,
+    ) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+
+        self.assertTrue(commit["committed"])
+        flow_records = commit["post_refinement_flow_window_records"]
+        child_records = commit["child_basin_state_records"]
+        self.assertEqual(1, len(flow_records))
+        self.assertEqual(1, len(child_records))
+        flow = flow_records[0]
+        child = child_records[0]
+        state = model.get_state()
+        self.assertEqual([flow], state.post_refinement_flow_window_log)
+        self.assertEqual([child], state.child_basin_state_log)
+        self.assertEqual(
+            arbitration.selected_topology_event_digest,
+            flow.source_topology_event_digest,
+        )
+        self.assertTrue(flow.source_expansion_id.startswith("native-route-candidate:"))
+        self.assertTrue(
+            any(
+                value.startswith("topology_state_reabsorption_record_digest:")
+                for value in flow.runtime_visible_inputs
+            )
+        )
+        self.assertEqual(
+            flow.post_refinement_flow_window_digest,
+            child.source_flow_window_digest,
+        )
+        self.assertTrue(flow.refinement_lineage_map)
+        self.assertTrue(child.child_basin_membership_by_core)
+        child_artifact = child.to_artifact()
+        self.assertEqual(
+            child.child_basin_membership_digest,
+            child_artifact["child_basin_membership_digest"],
+        )
+        self.assertTrue(child.child_basin_support_floor_records)
+        self.assertTrue(child.child_basin_coherence_floor_records)
+        self.assertTrue(child.child_basin_boundary_records)
+        self.assertTrue(child.child_basin_flux_records)
+        self.assertEqual(
+            "MB3_candidate_emission_only",
+            child.old_basin_relation_trace["candidate_ceiling"],
+        )
+        self.assertEqual(
+            "false",
+            child.old_basin_relation_trace["mb4_or_stronger_supported"],
+        )
+        self.assertFalse(
+            state.causal_modes["native_lgrc_multi_basin_formation_validated"]
+        )
+        self.assertFalse(
+            state.causal_modes["native_lgrc_multi_basin_formation_supported"]
+        )
+        self.assertFalse(any(flow.claim_flags.values()))
+        self.assertFalse(any(child.claim_flags.values()))
+        snapshot_runtime = model.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        self.assertEqual(
+            flow.to_artifact(),
+            snapshot_runtime["post_refinement_flow_window_log"][0],
+        )
+        self.assertEqual(
+            child.to_artifact(),
+            snapshot_runtime["child_basin_state_log"][0],
+        )
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "multi-basin-candidate.snapshot.json"
+            model.save(str(path))
+            loaded = LGRC9V3.load(str(path))
+
+        loaded_runtime = loaded.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        self.assertEqual(
+            snapshot_runtime["post_refinement_flow_window_log"],
+            loaded_runtime["post_refinement_flow_window_log"],
+        )
+        self.assertEqual(
+            snapshot_runtime["child_basin_state_log"],
+            loaded_runtime["child_basin_state_log"],
+        )
+
+    def test_native_route_multi_basin_duplicate_commit_is_idempotent(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+
+        first = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        flow_count = len(model.get_state().post_refinement_flow_window_log)
+        child_count = len(model.get_state().child_basin_state_log)
+        second = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+
+        self.assertTrue(first["committed"])
+        self.assertEqual(1, flow_count)
+        self.assertEqual(1, child_count)
+        self.assertFalse(second["committed"])
+        self.assertEqual((), second["post_refinement_flow_window_records"])
+        self.assertEqual((), second["child_basin_state_records"])
+        self.assertEqual(
+            flow_count,
+            len(model.get_state().post_refinement_flow_window_log),
+        )
+        self.assertEqual(child_count, len(model.get_state().child_basin_state_log))
+
+    def test_native_route_multi_basin_wrong_policy_emits_no_records(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        model.get_state().causal_modes[
+            "native_lgrc_multi_basin_formation_policy"
+        ] = "disabled"
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+
+        self.assertTrue(commit["committed"])
+        self.assertEqual((), commit["post_refinement_flow_window_records"])
+        self.assertEqual((), commit["child_basin_state_records"])
+        self.assertEqual([], model.get_state().post_refinement_flow_window_log)
+        self.assertEqual([], model.get_state().child_basin_state_log)
+
+    def test_native_route_multi_basin_emitter_fails_closed_on_malformed_event(
+        self,
+    ) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        candidate = next(
+            record
+            for record in model.get_state().native_route_candidate_log
+            if record.candidate_route_digest
+            == arbitration.selected_candidate_route_digest
+        )
+
+        with self.assertRaisesRegex(
+            InvalidStateTransitionError,
+            "requires committed topology event",
+        ):
+            model._emit_multi_basin_records_for_committed_topology(  # noqa: SLF001
+                topology_event=GRCEvent(
+                    kind=LGRC9V3_TOPOLOGY_EVENT_KIND_COLLAPSE,
+                    step_index=0,
+                    payload={"lineage_transfer_map": {"1": "0"}},
+                    source_family=None,
+                ),
+                topology_event_digest="malformed-topology-event",
+                candidate=candidate,
+            )
+        self.assertEqual([], model.get_state().post_refinement_flow_window_log)
+        self.assertEqual([], model.get_state().child_basin_state_log)
+
+    def test_runtime_loads_snapshot_without_multi_basin_logs(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        snapshot = deepcopy(model.snapshot())
+        runtime = snapshot["dynamics"]["lgrc9v3_runtime"]
+        runtime.pop("post_refinement_flow_window_log")
+        runtime.pop("child_basin_state_log")
+        runtime.pop("multi_basin_replay_validation_log", None)
+        runtime.pop("merge_leakage_control_matrix_log", None)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "legacy-without-multi-basin-logs.snapshot.json"
+            save_snapshot(str(path), snapshot)
+            loaded = LGRC9V3.load(str(path))
+
+        loaded_runtime = loaded.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        self.assertEqual([], loaded_runtime["post_refinement_flow_window_log"])
+        self.assertEqual([], loaded_runtime["child_basin_state_log"])
+        self.assertEqual([], loaded_runtime["multi_basin_replay_validation_log"])
+        self.assertEqual([], loaded_runtime["merge_leakage_control_matrix_log"])
+
+    def test_multi_basin_replay_validation_passes_with_loaded_snapshot(
+        self,
+    ) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "multi-basin-before-replay.snapshot.json"
+            model.save(str(path))
+            loaded = LGRC9V3.load(str(path))
+
+        result = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=loaded.snapshot(),
+        )
+
+        self.assertTrue(result["emitted"])
+        self.assertTrue(result["mb4_replay_candidate_allowed"])
+        self.assertFalse(result["mb5_or_stronger_supported"])
+        self.assertFalse(result["native_multi_basin_formation_supported"])
+        record = result["replay_validation_record"]
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+            record.artifact_replay_result,
+        )
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+            record.snapshot_load_replay_result,
+        )
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+            record.duplicate_replay_result,
+        )
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+            record.time_order_replay_result,
+        )
+        self.assertEqual(1.0, record.membership_persistence_ratio)
+        self.assertEqual(1.0, record.support_persistence_ratio)
+        self.assertEqual(1.0, record.coherence_persistence_ratio)
+        self.assertEqual(1.0, record.boundary_persistence_ratio)
+        self.assertEqual(1.0, record.flux_persistence_ratio)
+        self.assertFalse(any(record.claim_flags.values()))
+        self.assertEqual([record], model.get_state().multi_basin_replay_validation_log)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "multi-basin-after-replay.snapshot.json"
+            model.save(str(path))
+            reloaded = LGRC9V3.load(str(path))
+
+        runtime = model.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        reloaded_runtime = reloaded.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        self.assertEqual(
+            runtime["multi_basin_replay_validation_log"],
+            reloaded_runtime["multi_basin_replay_validation_log"],
+        )
+
+    def test_multi_basin_replay_missing_snapshot_blocks_mb4(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+
+        result = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+        )
+
+        record = result["replay_validation_record"]
+        self.assertFalse(result["mb4_replay_candidate_allowed"])
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN,
+            record.snapshot_load_replay_result,
+        )
+        self.assertIn("snapshot_load_replay_not_run", record.replay_failure_modes)
+
+    def test_multi_basin_replay_duplicate_validation_is_stable(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        loaded_snapshot = model.snapshot()
+
+        first = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=loaded_snapshot,
+        )
+        second = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=loaded_snapshot,
+        )
+
+        self.assertTrue(first["emitted"])
+        self.assertFalse(second["emitted"])
+        self.assertEqual(
+            first["replay_validation_digest"],
+            second["replay_validation_digest"],
+        )
+        self.assertEqual(1, len(model.get_state().multi_basin_replay_validation_log))
+
+    def test_multi_basin_replay_tampered_snapshot_fails_closed(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        snapshot = deepcopy(model.snapshot())
+        child_artifact = snapshot["dynamics"]["lgrc9v3_runtime"][
+            "child_basin_state_log"
+        ][0]
+        first_flux_key = next(iter(child_artifact["child_basin_flux_records"]))
+        child_artifact["child_basin_flux_records"][first_flux_key] = 999.0
+
+        result = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=snapshot,
+        )
+
+        record = result["replay_validation_record"]
+        self.assertFalse(result["mb4_replay_candidate_allowed"])
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED,
+            record.snapshot_load_replay_result,
+        )
+        self.assertEqual(0.0, record.flux_persistence_ratio)
+        self.assertIn(
+            "snapshot_persistence_ratio_below_one",
+            record.replay_failure_modes,
+        )
+
+    def test_multi_basin_replay_order_inversion_fails_closed(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+
+        result = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+            time_order_inversion_control=True,
+        )
+
+        record = result["replay_validation_record"]
+        self.assertFalse(result["mb4_replay_candidate_allowed"])
+        self.assertEqual(
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED,
+            record.time_order_replay_result,
+        )
+        self.assertIn(
+            "time_order_inversion_control_failed_closed",
+            record.replay_failure_modes,
+        )
+
+    def test_multi_basin_merge_leakage_controls_support_mb5_candidate(
+        self,
+    ) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+
+        result = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+        )
+
+        expected_control_ids = {
+            "label_only_child_basin",
+            "old_basin_thickening_as_child_basin",
+            "transient_flow_sink_as_child_basin",
+            "merge_leakage_as_multi_basin_success",
+            "missing_flow_window",
+            "missing_child_basin_state",
+            "missing_replay",
+            "hidden_producer_basin_insertion",
+            "producer_assisted_success_as_native_upgrade",
+            "post_hoc_threshold_or_membership_selection",
+            "semantic_learning_choice_agency_relabel",
+            "native_support_relabel",
+            "identity_acceptance_relabel",
+            "sentience_relabel",
+            "organism_life_relabel",
+            "ant_ecology_relabel",
+            "phase8_completion_relabel",
+        }
+        records = result["control_records"]
+        self.assertTrue(result["emitted"])
+        self.assertTrue(result["clean_replay_present"])
+        self.assertTrue(result["mb5_control_backed_candidate_allowed"])
+        self.assertFalse(result["mb6_or_stronger_supported"])
+        self.assertFalse(result["native_multi_basin_formation_supported"])
+        self.assertEqual((), result["missing_required_control_ids"])
+        self.assertEqual(expected_control_ids, {record.control_id for record in records})
+        self.assertTrue(
+            all(
+                record.control_status
+                == LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED
+                for record in records
+            )
+        )
+        self.assertTrue(
+            all(not record.claim_allowed_when_control_triggers for record in records)
+        )
+        self.assertFalse(any(any(record.claim_flags.values()) for record in records))
+        state = model.get_state()
+        self.assertTrue(
+            state.causal_modes["native_lgrc_multi_basin_formation_validated"]
+        )
+        self.assertFalse(
+            state.causal_modes["native_lgrc_multi_basin_formation_supported"]
+        )
+        self.assertEqual(list(records), state.merge_leakage_control_matrix_log)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "multi-basin-after-controls.snapshot.json"
+            model.save(str(path))
+            reloaded = LGRC9V3.load(str(path))
+
+        runtime = model.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        reloaded_runtime = reloaded.snapshot()["dynamics"]["lgrc9v3_runtime"]
+        self.assertEqual(
+            runtime["merge_leakage_control_matrix_log"],
+            reloaded_runtime["merge_leakage_control_matrix_log"],
+        )
+        restored = restore_lgrc9v3_multi_basin_control_record_artifact(
+            records[0].to_artifact()
+        )
+        self.assertEqual(records[0].to_artifact(), restored.to_artifact())
+
+    def test_multi_basin_merge_leakage_controls_are_idempotent(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+
+        first = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+        )
+        second = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+        )
+
+        self.assertTrue(first["emitted"])
+        self.assertFalse(second["emitted"])
+        self.assertEqual(
+            first["control_record_digests"],
+            second["control_record_digests"],
+        )
+        self.assertEqual(
+            len(first["required_control_ids"]),
+            len(model.get_state().merge_leakage_control_matrix_log),
+        )
+
+    def test_multi_basin_controls_block_mb5_without_clean_replay(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+
+        result = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+        )
+
+        self.assertFalse(result["clean_replay_present"])
+        self.assertFalse(result["mb5_control_backed_candidate_allowed"])
+        self.assertEqual((), result["missing_required_control_ids"])
+        self.assertFalse(
+            model.get_state().causal_modes[
+                "native_lgrc_multi_basin_formation_validated"
+            ]
+        )
+
+    def test_multi_basin_controls_block_mb5_with_incomplete_matrix(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+
+        result = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+            control_scenarios=(
+                {
+                    "control_id": "label_only_child_basin",
+                    "blocked_condition": "label-only child-basin assignment",
+                },
+            ),
+        )
+
+        self.assertTrue(result["clean_replay_present"])
+        self.assertFalse(result["mb5_control_backed_candidate_allowed"])
+        self.assertIn(
+            "old_basin_thickening_as_child_basin",
+            result["missing_required_control_ids"],
+        )
+        self.assertFalse(
+            model.get_state().causal_modes[
+                "native_lgrc_multi_basin_formation_validated"
+            ]
+        )
+
+    def test_multi_basin_controls_block_mb5_with_failed_open_control(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+        required_control_ids = (
+            "label_only_child_basin",
+            "old_basin_thickening_as_child_basin",
+            "transient_flow_sink_as_child_basin",
+            "merge_leakage_as_multi_basin_success",
+            "missing_flow_window",
+            "missing_child_basin_state",
+            "missing_replay",
+            "hidden_producer_basin_insertion",
+            "producer_assisted_success_as_native_upgrade",
+            "post_hoc_threshold_or_membership_selection",
+            "semantic_learning_choice_agency_relabel",
+            "native_support_relabel",
+            "identity_acceptance_relabel",
+            "sentience_relabel",
+            "organism_life_relabel",
+            "ant_ecology_relabel",
+            "phase8_completion_relabel",
+        )
+        result = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+            control_scenarios=tuple(
+                {
+                    "control_id": control_id,
+                    "control_status": LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN
+                    if control_id == "merge_leakage_as_multi_basin_success"
+                    else LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+                    "blocked_condition": control_id,
+                }
+                for control_id in required_control_ids
+            ),
+        )
+
+        self.assertTrue(result["clean_replay_present"])
+        self.assertFalse(result["mb5_control_backed_candidate_allowed"])
+        self.assertIn(
+            "merge_leakage_as_multi_basin_success",
+            result["failed_open_control_ids"],
+        )
+        self.assertIn(
+            "merge_leakage_as_multi_basin_success",
+            result["missing_required_control_ids"],
+        )
+        self.assertFalse(
+            model.get_state().causal_modes[
+                "native_lgrc_multi_basin_formation_validated"
+            ]
+        )
+
+    def test_multi_basin_failed_open_control_cannot_be_bypassed_by_rerun(
+        self,
+    ) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+        model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+            control_scenarios=(
+                {
+                    "control_id": "merge_leakage_as_multi_basin_success",
+                    "control_status": LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN,
+                    "blocked_condition": "merge/leakage treated as success",
+                },
+            ),
+        )
+
+        rerun = model.validate_multi_basin_merge_leakage_controls(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            replay_validation_digest=str(replay["replay_validation_digest"]),
+        )
+
+        self.assertTrue(rerun["clean_replay_present"])
+        self.assertEqual((), rerun["missing_required_control_ids"])
+        self.assertIn(
+            "merge_leakage_as_multi_basin_success",
+            rerun["failed_open_control_ids"],
+        )
+        self.assertFalse(rerun["mb5_control_backed_candidate_allowed"])
+        self.assertFalse(
+            model.get_state().causal_modes[
+                "native_lgrc_multi_basin_formation_validated"
+            ]
+        )
+
+    def test_multi_basin_control_claim_promotion_is_rejected(self) -> None:
+        model, candidate_set = _route_arbitration_model_with_candidate_set(
+            multi_basin_enabled=True,
+        )
+        arbitration = model.arbitrate_native_route_candidate_set(
+            candidate_set_digest=str(candidate_set.candidate_set_digest),
+        )["route_arbitration_record"]
+        commit = model.commit_native_route_arbitration_selection(
+            native_route_arbitration_reference=str(
+                arbitration.native_route_arbitration_digest
+            ),
+        )
+        child = commit["child_basin_state_records"][0]
+        replay = model.validate_multi_basin_child_basin_replay(
+            source_child_basin_state_digest=str(child.child_basin_state_digest),
+            snapshot_replay_artifact=model.snapshot(),
+        )
+
+        with self.assertRaisesRegex(
+            InvalidStateTransitionError,
+            "triggered controls cannot allow multi-basin claims",
+        ):
+            model.validate_multi_basin_merge_leakage_controls(
+                source_child_basin_state_digest=str(child.child_basin_state_digest),
+                replay_validation_digest=str(replay["replay_validation_digest"]),
+                control_scenarios=(
+                    {
+                        "control_id": "producer_assisted_success_as_native_upgrade",
+                        "claim_allowed_when_control_triggers": True,
+                    },
+                ),
+            )
 
     def test_native_route_arbitration_commit_duplicate_is_idempotent(self) -> None:
         model, candidate_set = _route_arbitration_model_with_candidate_set()

@@ -23,6 +23,11 @@ from pygrc.models.lgrc_9_v3 import (
     LGRC9V3_CAUSAL_PULSE_SUBSTRATE_KIND_FEEDBACK_ELIGIBILITY,
     LGRC9V3_CAUSAL_PULSE_SUBSTRATE_KIND_ROUTE_LOCAL_PULSE_CONTACT,
     LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_ROW_KIND,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_PASSED,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED,
     LGRC9V3_PACKET_ARRIVAL_ELIGIBILITY_KIND,
     LGRC9V3_PACKET_EVENT_KIND_ARRIVAL,
     LGRC9V3_PACKET_EVENT_KIND_DEPARTURE,
@@ -39,6 +44,7 @@ from pygrc.models.lgrc_9_v3_runtime import (
     LGRC9V3_AUTONOMOUS_PRODUCTION_LOG_KEY,
     LGRC9V3_CAUSAL_SPARK_CANDIDATE_EVENT_KIND,
     LGRC9V3_LOCAL_UPDATE_EVENT_KIND,
+    LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS,
     LGRC9V3_ROUTE_ASPECT_SURPLUS_TRIGGER_CONFIG_KEY,
     LGRC9V3_SELF_REARM_EVIDENCE_EVENT_KIND,
     LGRC9V3_SELF_REARM_EVIDENCE_LOG_KEY,
@@ -722,6 +728,119 @@ def _native_route_arbitration_surface(state: LGRC9V3RuntimeState) -> Mapping[str
     }
 
 
+def _multi_basin_replay_record_is_clean(record: Any) -> bool:
+    return (
+        record.artifact_replay_result == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+        and record.snapshot_load_replay_result
+        == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+        and record.duplicate_replay_result == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+        and record.time_order_replay_result == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+        and float(record.membership_persistence_ratio) >= 1.0
+        and float(record.support_persistence_ratio) >= 1.0
+        and float(record.coherence_persistence_ratio) >= 1.0
+        and float(record.boundary_persistence_ratio) >= 1.0
+        and float(record.flux_persistence_ratio) >= 1.0
+    )
+
+
+def _multi_basin_formation_surface(state: LGRC9V3RuntimeState) -> Mapping[str, Any]:
+    flow_log = state.post_refinement_flow_window_log
+    child_log = state.child_basin_state_log
+    replay_log = state.multi_basin_replay_validation_log
+    control_log = state.merge_leakage_control_matrix_log
+    latest_flow = flow_log[-1] if flow_log else None
+    latest_child = child_log[-1] if child_log else None
+    latest_replay = replay_log[-1] if replay_log else None
+    latest_control = control_log[-1] if control_log else None
+    failed_closed_ids = {
+        record.control_id
+        for record in control_log
+        if record.control_status == LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED
+    }
+    failed_open_ids = {
+        record.control_id
+        for record in control_log
+        if record.control_status == LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN
+    }
+    passed_ids = {
+        record.control_id
+        for record in control_log
+        if record.control_status == LGRC9V3_MULTI_BASIN_CONTROL_STATUS_PASSED
+    }
+    missing_required_ids = tuple(
+        control_id
+        for control_id in LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS
+        if control_id not in failed_closed_ids
+    )
+    clean_replay_count = sum(
+        1 for record in replay_log if _multi_basin_replay_record_is_clean(record)
+    )
+    membership_count = 0
+    if latest_child is not None:
+        membership_count = sum(
+            len(tuple(members))
+            for members in latest_child.child_basin_membership_by_core.values()
+        )
+    mb5_candidate_allowed = (
+        bool(child_log)
+        and clean_replay_count > 0
+        and not missing_required_ids
+        and not failed_open_ids
+    )
+    return {
+        "native_lgrc_multi_basin_formation_enabled": bool(
+            state.causal_modes.get("native_lgrc_multi_basin_formation_enabled", False)
+        ),
+        "native_lgrc_multi_basin_formation_validated": bool(
+            state.causal_modes.get("native_lgrc_multi_basin_formation_validated", False)
+        ),
+        "native_lgrc_multi_basin_formation_supported": bool(
+            state.causal_modes.get("native_lgrc_multi_basin_formation_supported", False)
+        ),
+        "native_multi_basin_policy": _optional_string(
+            state.causal_modes.get("native_lgrc_multi_basin_formation_policy")
+        ),
+        "flow_window_record_count": len(flow_log),
+        "child_basin_state_record_count": len(child_log),
+        "replay_validation_record_count": len(replay_log),
+        "control_record_count": len(control_log),
+        "required_fail_closed_control_count": len(
+            LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS
+        ),
+        "failed_closed_control_count": len(failed_closed_ids),
+        "failed_open_control_count": len(failed_open_ids),
+        "passed_control_count": len(passed_ids),
+        "missing_required_control_ids": list(missing_required_ids),
+        "clean_replay_record_count": clean_replay_count,
+        "latest_flow_window_digest": None
+        if latest_flow is None
+        else latest_flow.post_refinement_flow_window_digest,
+        "latest_child_basin_state_digest": None
+        if latest_child is None
+        else latest_child.child_basin_state_digest,
+        "latest_child_basin_membership_digest": None
+        if latest_child is None
+        else latest_child.child_basin_membership_digest,
+        "latest_replay_validation_digest": None
+        if latest_replay is None
+        else latest_replay.replay_validation_digest,
+        "latest_control_record_digest": None
+        if latest_control is None
+        else latest_control.control_record_digest,
+        "latest_child_basin_core_count": 0
+        if latest_child is None
+        else len(latest_child.child_basin_core_ids),
+        "latest_child_basin_membership_count": membership_count,
+        "mb5_control_backed_candidate_allowed": mb5_candidate_allowed,
+        "mb6_or_stronger_supported": False,
+        "native_support_claim_allowed": False,
+        "semantic_learning_claim_allowed": False,
+        "agency_claim_allowed": False,
+        "identity_acceptance_claim_allowed": False,
+        "phase8_completion_claim_allowed": False,
+    }
+
+
 def _topology_state_reabsorption_should_emit(state: LGRC9V3RuntimeState) -> bool:
     if bool(state.causal_modes.get("causal_topology_state_reabsorption_enabled", False)):
         return True
@@ -741,6 +860,22 @@ def _native_route_arbitration_should_emit(state: LGRC9V3RuntimeState) -> bool:
     ):
         return True
     return False
+
+
+def _multi_basin_formation_should_emit(state: LGRC9V3RuntimeState) -> bool:
+    if bool(state.causal_modes.get("native_lgrc_multi_basin_formation_enabled", False)):
+        return True
+    if (
+        state.post_refinement_flow_window_log
+        or state.child_basin_state_log
+        or state.multi_basin_replay_validation_log
+        or state.merge_leakage_control_matrix_log
+    ):
+        return True
+    policy = state.causal_modes.get("native_lgrc_multi_basin_formation_policy")
+    return bool(
+        policy and policy != LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED
+    )
 
 
 def _pulse_substrate_surface_should_emit(state: LGRC9V3RuntimeState) -> bool:
@@ -805,6 +940,8 @@ def classify_lgrc9v3_step_extension(
         extension["native_route_arbitration"] = _native_route_arbitration_surface(
             state
         )
+    if _multi_basin_formation_should_emit(state):
+        extension["multi_basin_formation"] = _multi_basin_formation_surface(state)
     return extension
 
 
@@ -854,6 +991,10 @@ def lgrc9v3_run_summary_family_extensions(
     if "native_route_arbitration" in step_extension:
         summary["final_native_route_arbitration"] = step_extension[
             "native_route_arbitration"
+        ]
+    if "multi_basin_formation" in step_extension:
+        summary["final_multi_basin_formation"] = step_extension[
+            "multi_basin_formation"
         ]
     return {
         LGRC9V3_TELEMETRY_FAMILY: summary
@@ -1037,6 +1178,22 @@ def build_lgrc9v3_graph_checkpoint(
         ]
         family_extension["native_route_arbitration_log"] = runtime_artifact[
             "native_route_arbitration_log"
+        ]
+    if _multi_basin_formation_should_emit(state):
+        family_extension["multi_basin_formation"] = (
+            _multi_basin_formation_surface(state)
+        )
+        family_extension["post_refinement_flow_window_log"] = runtime_artifact[
+            "post_refinement_flow_window_log"
+        ]
+        family_extension["child_basin_state_log"] = runtime_artifact[
+            "child_basin_state_log"
+        ]
+        family_extension["multi_basin_replay_validation_log"] = runtime_artifact[
+            "multi_basin_replay_validation_log"
+        ]
+        family_extension["merge_leakage_control_matrix_log"] = runtime_artifact[
+            "merge_leakage_control_matrix_log"
         ]
     return GraphCheckpointArtifact(
         identity=identity,

@@ -14,9 +14,10 @@ This is a runtime-support closeout, not a movement, M6, agency, biological, or
 identity-acceptance closeout.
 
 Later Phase 8 continuations added separate closeouts for surface lineage,
-topology-state reabsorption, time-scoped lineage replay, and native route
-arbitration. Those continuations remain runtime-support closeouts and do not
-promote movement, semantic choice, agency, or identity claims.
+topology-state reabsorption, time-scoped lineage replay, native route
+arbitration, and multi-basin formation. Those continuations remain
+runtime-support closeouts and do not promote movement, semantic choice, agency,
+identity, native support, sentience, ant ecology, or Phase 8 completion claims.
 
 ## Closeout Links
 
@@ -37,6 +38,7 @@ Later Phase 8 LGRC9 continuations:
 - [Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md](./Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md)
 - [Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md](./Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md)
 - [Phase-8-LGRC9-NativeRouteArbitrationCloseout.md](./Phase-8-LGRC9-NativeRouteArbitrationCloseout.md)
+- [Phase-8-LGRC9-MultiBasinFormationCloseout.md](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
 
 ## Final Verification
 
@@ -70,4 +72,25 @@ adaptive_topology_entry_allowed = false
 biological_claim_allowed = false
 agency_claim_allowed = false
 identity_acceptance_claim_allowed = false
+```
+
+The multi-basin formation continuation closes at:
+
+```text
+MB5 = control-backed native multi-basin formation candidate
+```
+
+It does not support:
+
+```text
+MB6
+N26-ready unscoped multi-basin substrate evidence
+BF6
+native support
+semantic learning
+semantic choice
+agency
+sentience
+ant ecology
+Phase 8 completion
 ```

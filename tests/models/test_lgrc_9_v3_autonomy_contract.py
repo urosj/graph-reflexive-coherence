@@ -18,6 +18,7 @@ from pygrc.models import (
     LGRC_RUNTIME_LEVEL_LGRC3,
     LGRC9V3,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EVENT_KIND,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX,
     PortEdge,
 )
@@ -102,6 +103,36 @@ def _boundary_birth_params(*, enabled: bool = True) -> dict[str, object]:
             ),
         }
     return params
+
+
+def _front_capacity_boundary_birth_params() -> dict[str, object]:
+    params = _boundary_birth_params()
+    causal_modes = dict(params["causal_modes"])  # type: ignore[index]
+    causal_modes["causal_boundary_birth_parent_eligibility"] = (
+        LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+    )
+    params["causal_modes"] = causal_modes
+    return params
+
+
+def _front_capacity_boundary_birth_state() -> GRC9V3State:
+    state = _boundary_birth_state()
+    state.cached_quantities["grcl9v3_front_growth_eligible_ports"] = {"0": [3]}
+    state.cached_quantities["grcl9v3_growth_parent_capacity_sources"] = {
+        "0": {
+            "construct_id": "test-front-capacity-construct",
+            "growth_semantics": "front_capacity",
+            "front_capacity_source": "spark_expansion_front",
+            "inactive_parent_port": 3,
+        }
+    }
+    return state
+
+
+def _front_capacity_boundary_birth_state_without_source() -> GRC9V3State:
+    state = _boundary_birth_state()
+    state.cached_quantities["grcl9v3_front_growth_eligible_ports"] = {"0": [3]}
+    return state
 
 
 class LGRC9V3AutonomyContractTest(unittest.TestCase):
@@ -341,6 +372,86 @@ class LGRC9V3AutonomyContractTest(unittest.TestCase):
         self.assertAlmostEqual(1.0 - math.exp(-2.0), record.thresholds["birth_probability"])
         self.assertEqual(record.thresholds["rng_sample"], trial["rng_sample"])
         self.assertTrue(record.observed_evidence["birth_acceptance_deferred_to_step"])
+
+    def test_boundary_birth_producer_uses_front_capacity_eligibility(self) -> None:
+        model = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        produced = model.produce_events(
+            policy=LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_BOUNDARY_BIRTH_TRIAL
+        )
+        record = produced.production_records[0]
+        trial = model.get_state().boundary_birth_trial_queue[0]
+
+        self.assertTrue(produced.state_mutated)
+        self.assertEqual(1, produced.scheduled_event_count)
+        self.assertEqual(
+            LGRC9V3_AUTONOMOUS_PRODUCER_REASON_BOUNDARY_BIRTH_TRIAL_SCHEDULED,
+            record.reason_code,
+        )
+        self.assertEqual(0, record.trigger_node_id)
+        self.assertEqual(3, record.observed_evidence["parent_port_id"])
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            record.observed_evidence["parent_eligibility_mode"],
+        )
+        self.assertEqual(
+            "spark_expansion_front",
+            record.observed_evidence["front_capacity_source"],
+        )
+        self.assertEqual(3, trial["parent_port_id"])
+
+    def test_boundary_birth_producer_front_capacity_missing_metadata_fails_closed(
+        self,
+    ) -> None:
+        model = LGRC9V3.from_state(
+            _boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        produced = model.produce_events(
+            policy=LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_BOUNDARY_BIRTH_TRIAL
+        )
+        record = produced.production_records[0]
+
+        self.assertFalse(produced.state_mutated)
+        self.assertEqual(0, produced.scheduled_event_count)
+        self.assertEqual(
+            LGRC9V3_AUTONOMOUS_PRODUCER_REASON_NO_ELIGIBLE_WORK,
+            record.reason_code,
+        )
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            record.observed_evidence["parent_eligibility_mode"],
+        )
+        self.assertEqual([], model.get_state().boundary_birth_trial_queue)
+
+    def test_boundary_birth_producer_front_capacity_partial_metadata_fails_closed(
+        self,
+    ) -> None:
+        model = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state_without_source(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        produced = model.produce_events(
+            policy=LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_BOUNDARY_BIRTH_TRIAL
+        )
+        record = produced.production_records[0]
+
+        self.assertFalse(produced.state_mutated)
+        self.assertEqual(0, produced.scheduled_event_count)
+        self.assertEqual(
+            LGRC9V3_AUTONOMOUS_PRODUCER_REASON_NO_ELIGIBLE_WORK,
+            record.reason_code,
+        )
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            record.observed_evidence["parent_eligibility_mode"],
+        )
+        self.assertEqual([], model.get_state().boundary_birth_trial_queue)
 
     def test_boundary_birth_producer_is_idempotent_on_same_surface(self) -> None:
         model = LGRC9V3.from_state(
