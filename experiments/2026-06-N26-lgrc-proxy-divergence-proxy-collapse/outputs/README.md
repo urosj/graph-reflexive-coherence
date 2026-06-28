@@ -20,17 +20,16 @@ n26_fixed_surface_divergence_search.json
 n26_fixed_surface_divergence_search_artifacts/
 n26_same_route_score_dose_divergence_probe.json
 n26_same_route_score_dose_divergence_probe_artifacts/
+n26_proxy_collapse_perturbation_matrix.json
+n26_proxy_collapse_perturbation_matrix_artifacts/
+n26_replay_controls_and_ap5_gate.json
+n26_closeout_and_n27_handoff.json
 ```
 
 Planned outputs:
 
 ```text
-n26_source_inventory_and_scoped_substrate_admission.json
-n26_proxy_divergence_collapse_schema_and_controls.json
-n26_active_nulls_and_failure_baselines.json
-n26_proxy_collapse_perturbation_matrix.json
-n26_replay_controls_and_ap5_gate.json
-n26_closeout_and_n27_handoff.json
+none
 ```
 
 Outputs must use repository-relative paths only. Visuals, summaries, labels,

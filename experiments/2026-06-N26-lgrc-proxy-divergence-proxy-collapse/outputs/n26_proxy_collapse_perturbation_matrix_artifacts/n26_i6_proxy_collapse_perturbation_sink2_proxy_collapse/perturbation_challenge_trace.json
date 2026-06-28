@@ -1,0 +1,11 @@
+{
+  "base_selected_sink_coherence": 3.0,
+  "challenge_floor": 3.35,
+  "challenge_kind": "support_coherence_floor_required_above_proxy_base",
+  "challenge_margin_above_proxy_base": 0.25,
+  "declared_before_use": true,
+  "formula": "base_selected_sink_coherence + packet_amount + challenge_margin_above_proxy_base",
+  "packet_amount": 0.1,
+  "same_challenge_for_proxy_and_basin_paths": true,
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse_perturbation_challenge"
+}

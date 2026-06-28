@@ -740,31 +740,277 @@ scripts/build_n26_same_route_score_dose_divergence_probe.py
 
 ## Iteration 6 - Proxy Collapse Perturbation Matrix
 
-- [ ] Define shared perturbation challenge before use.
-- [ ] Run proxy-optimized path.
-- [ ] Run basin-deepened contrast path.
-- [ ] Confirm proxy-optimized success fails under perturbation.
-- [ ] Confirm basin-deepened contrast survives under the same envelope.
-- [ ] Keep semantic goal/choice/agency claims blocked.
+- [x] Define shared perturbation challenge before use.
+- [x] Run proxy-optimized path.
+- [x] Run basin-deepened contrast path.
+- [x] Confirm proxy-optimized success fails under perturbation.
+- [x] Confirm basin-deepened contrast survives under the same envelope.
+- [x] Keep semantic goal/choice/agency claims blocked.
+
+### Iteration 6 Result
+
+```text
+status = passed
+acceptance_state = accepted_provisional_pd5_proxy_collapse_candidate_pending_i7
+source_i5c_output_digest = 5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab
+source_n25_2_closeout_output_digest = b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03
+candidate_pd_ladder_rung = PD5_candidate_pending_I7
+n26_closeout_ceiling = N26-C5_provisional_controlled_proxy_divergence_and_collapse_candidate_pending_controls
+n26_closeout_ladder_rung_assigned = false
+proxy_collapse_perturbation_matrix_opened = true
+provisional_pd5_candidate_supported = true
+controlled_proxy_divergence_candidate_supported = true
+controlled_proxy_collapse_candidate_supported = true
+proxy_collapse_candidate_supported = true
+proxy_collapse_supported = false
+pd5_or_stronger_supported = false
+final_pd5_supported = false
+pd5_support_scope = producer_mediated_route_score_and_source_current_fixture_geometry_variant
+native_ap5_bridge_supported = false
+ap5_bridge_status = not_supported_i6_producer_mediated_proxy_and_basin_deepening_surfaces
+row_count = 2
+failed_checks = []
+output_digest = 12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e
+```
+
+Candidate rows:
+
+```text
+n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse:
+  proxy_score_advantage = 0.4
+  basin_support_advantage = 0.5
+  proxy_path_survives_challenge = false
+  basin_deepened_path_survives_challenge = true
+  rung = PD5_candidate_pending_I7
+
+n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse:
+  proxy_score_advantage = 0.4
+  basin_support_advantage = 0.5
+  proxy_path_survives_challenge = false
+  basin_deepened_path_survives_challenge = true
+  rung = PD5_candidate_pending_I7
+```
+
+Interpretation: I6 takes the I5-C same-route score-dose divergence result and
+adds the collapse contrast that PD5 needs. In both mirrored route families,
+the proxy-optimized path has the higher route score but fails the declared
+support/coherence perturbation floor. The basin-deepened path has the lower
+route score but survives the same perturbation envelope.
+
+Geometrically, this separates route-score optimization from basin capacity:
+the score surface can improve without adding enough support/coherence depth to
+survive a shared challenge, while the source-current basin-deepened fixture
+variant raises the emitted child-basin support/coherence floor enough to
+survive. That is the collapse-shaped evidence: the proxy wins as proxy, but the
+basin loses under perturbation.
+
+The claim remains bounded:
+
+```text
+supports: provisional producer-mediated PD5 proxy-collapse candidate
+pending: I7 replay/control/AP5 classification
+blocked: final PD5, native AP5, native support, semantic goal, choice, agency,
+         sentience, Phase 8 completion, ant ecology, unscoped MB6 substrate
+```
+
+The route score remains a producer-mediated route-candidate score, and the
+basin-deepening contrast is a declared source-current fixture geometry variant.
+Neither is counted as native AP5 target formation, native support, agency, or
+semantic goal ownership.
+
+Artifacts:
+
+```text
+outputs/n26_proxy_collapse_perturbation_matrix.json
+outputs/n26_proxy_collapse_perturbation_matrix_artifacts/
+reports/n26_proxy_collapse_perturbation_matrix.md
+scripts/build_n26_proxy_collapse_perturbation_matrix.py
+```
 
 ## Iteration 7 - Replay, Controls, And AP5 Classification Gate
 
-- [ ] Replay all positive rows.
-- [ ] Run negative control matrix.
-- [ ] Confirm target derivation is not post-hoc.
-- [ ] Confirm hidden proxy policy is absent or fails closed.
-- [ ] Classify scoped AP5 bridge status.
-- [ ] Keep final N26 closeout pending I8.
+- [x] Replay all positive rows.
+- [x] Run negative control matrix.
+- [x] Confirm target derivation is not post-hoc.
+- [x] Confirm hidden proxy policy is absent or fails closed.
+- [x] Classify scoped AP5 bridge status.
+- [x] Keep final N26 closeout pending I8.
+
+### Iteration 7 Result
+
+```text
+status = passed
+acceptance_state = accepted_controlled_pd5_with_scoped_artifact_ap5_bridge_candidate_pending_i8
+candidate_pd_ladder_rung = PD5
+n26_closeout_ceiling = N26-C5_controlled_proxy_divergence_and_collapse_supported_pending_i8_closeout
+n26_closeout_ladder_rung_assigned = false
+controlled_proxy_divergence_supported = true
+controlled_proxy_collapse_supported = true
+proxy_divergence_supported = true
+proxy_collapse_supported = true
+pd5_supported = true
+pd6_or_stronger_supported = false
+final_n26_supported = false
+scoped_artifact_ap5_bridge_candidate_supported = true
+native_ap5_bridge_supported = false
+ap5_nat4_gap_resolved = false
+ap5_bridge_status = scoped_artifact_ap5_bridge_candidate_supported_native_ap5_blocked
+positive_row_count = 6
+supported_positive_row_count = 6
+failed_checks = []
+output_digest = a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9
+```
+
+Row classifications:
+
+```text
+n26_i4_i4_reference_child_basin_core_0:
+  source_iteration = I4
+  final_consumable_rung = PD2
+  replay_gate_passed = true
+  control_gate_passed = true
+
+n26_i4_i4a_route_variant_child_basin_core_2:
+  source_iteration = I4
+  final_consumable_rung = PD2
+  replay_gate_passed = true
+  control_gate_passed = true
+
+n26_i5c_same_route_score_dose_sink0_fixed_route:
+  source_iteration = I5-C
+  final_consumable_rung = PD4
+  replay_gate_passed = true
+  control_gate_passed = true
+
+n26_i5c_same_route_score_dose_sink2_fixed_route:
+  source_iteration = I5-C
+  final_consumable_rung = PD4
+  replay_gate_passed = true
+  control_gate_passed = true
+
+n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse:
+  source_iteration = I6
+  final_consumable_rung = PD5
+  replay_gate_passed = true
+  control_gate_passed = true
+
+n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse:
+  source_iteration = I6
+  final_consumable_rung = PD5
+  replay_gate_passed = true
+  control_gate_passed = true
+```
+
+Interpretation: I7 upgrades the provisional I5-C/I6 result into controlled
+artifact-level PD5 evidence. The I5-C score-dose rows pass as controlled PD4
+proxy-divergence rows, and the I6 perturbation rows pass as controlled PD5
+proxy-collapse rows. The I4 derivation rows remain valid PD2 source-current
+inputs.
+
+The AP5 classification is deliberately bounded:
+
+```text
+scoped artifact AP5 bridge candidate = supported
+native AP5 bridge = blocked
+AP5 NAT4 gap = not resolved
+```
+
+This means N26 now has source-current proxy divergence/collapse evidence
+whose AP5 dependency is row-local and replay/control clean, but the decisive
+route-score and basin-deepening surfaces are still producer-mediated or
+declared fixture variants. They therefore do not close native AP5, native
+support, semantic goal ownership, choice, agency, sentience, Phase 8, ant
+ecology, or unscoped MB6 substrate claims.
+
+PD6 and final N26 closeout remain pending I8.
+
+Artifacts:
+
+```text
+outputs/n26_replay_controls_and_ap5_gate.json
+reports/n26_replay_controls_and_ap5_gate.md
+scripts/build_n26_replay_controls_and_ap5_gate.py
+```
 
 ## Iteration 8 - Closeout And N27 Handoff
 
-- [ ] Freeze final PD rung.
-- [ ] Freeze final N26-C rung.
-- [ ] Record AP5 bridge status.
-- [ ] Record claim ceiling.
-- [ ] Record all blocked claims.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Record N27 handoff.
+- [x] Freeze final PD rung.
+- [x] Freeze final N26-C rung.
+- [x] Record AP5 bridge status.
+- [x] Record claim ceiling.
+- [x] Record all blocked claims.
+- [x] Confirm `src_diff_empty`.
+- [x] Record N27 handoff.
+
+### Iteration 8 Result
+
+```text
+status = passed
+acceptance_state = accepted_n26_c6_pd6_closeout_and_n27_handoff
+final_supported_pd_ladder_rung = PD6_N27_ready_bounded_proxy_divergence_collapse_evidence
+final_n26_closeout_rung = N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout
+pd6_supported = true
+n26_c6_supported = true
+final_n26_supported = true
+scoped_artifact_ap5_bridge_candidate_supported = true
+native_ap5_bridge_supported = false
+ap5_nat4_gap_resolved = false
+src_diff_empty = true
+ready_for_n27 = true
+failed_checks = []
+output_digest = bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31
+```
+
+Interpretation: N26 closes at `PD6` / `N26-C6`. The strongest supported claim
+is bounded artifact-level proxy divergence / proxy collapse evidence on scoped
+multi-basin LGRC substrate. I5-C supplies controlled PD4 proxy divergence, I6
+supplies controlled PD5 proxy collapse, and I7 supplies replay/control/AP5
+classification.
+
+The AP5 bridge remains scoped and bounded:
+
+```text
+scoped artifact AP5 bridge candidate = supported
+native AP5 bridge = blocked
+AP5 NAT4 gap resolved = false
+```
+
+The decisive route-score and basin-deepening surfaces are runtime-visible and
+source-current for the N26 artifact evidence, but they remain
+producer-mediated or declared fixture variants. They must not be promoted into
+native AP5, native support, semantic goal ownership, choice, agency, sentience,
+Phase 8 completion, ant ecology, or unscoped multi-basin substrate.
+
+N27 handoff:
+
+```text
+next_experiment = N27_configuration_substrate_transfer
+handoff_status = ready
+may_consume_n26_as =
+  bounded_PD6_proxy_divergence_collapse_evidence
+  scoped_artifact_AP5_bridge_candidate_context
+  proxy_pressure_control_context
+  source_current_proxy_basin_contrast_context
+
+must_not_consume_n26_as =
+  native_AP5
+  AP5_NAT4_gap_resolution
+  semantic_goal_or_choice
+  agency
+  native_support
+  sentience
+  Phase_8_completion
+  ant_ecology
+  unscoped_multi_basin_substrate
+```
+
+Artifacts:
+
+```text
+outputs/n26_closeout_and_n27_handoff.json
+reports/n26_closeout_and_n27_handoff.md
+scripts/build_n26_closeout_and_n27_handoff.py
+```
 
 ## Claim Boundary
 

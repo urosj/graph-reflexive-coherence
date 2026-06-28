@@ -1,0 +1,9 @@
+{
+  "basin_deepened_path_score": 0.55,
+  "proxy_optimized_path_has_higher_proxy": true,
+  "proxy_path_score": 0.95,
+  "proxy_policy_owner": "producer_mediated_route_candidate_score_runtime_visible",
+  "proxy_score_advantage": 0.3999999999999999,
+  "proxy_surface": "native_route_arbitration_score",
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_proxy_metric"
+}

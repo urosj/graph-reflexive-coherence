@@ -1,0 +1,6 @@
+{
+  "basin_deepened_path_support_advantage": 0.5,
+  "divergence_shape": "proxy_path_higher_score_basin_path_higher_basin_capacity",
+  "proxy_path_score_advantage": 0.3999999999999999,
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_proxy_vs_basin_delta"
+}

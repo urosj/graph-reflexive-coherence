@@ -1,0 +1,824 @@
+{
+  "acceptance_state": "accepted_n26_c6_pd6_closeout_and_n27_handoff",
+  "artifact_id": "n26_closeout_and_n27_handoff",
+  "checks": [
+    {
+      "check": "source_chain_digests_match_expected",
+      "detail": [
+        {
+          "actual_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_inventory_and_scoped_substrate_admission.json",
+          "artifact_sha256": "75159bbd2584ab7b97fcce2ece2501df1c14d9ea16793ba48f4115d3e920a31d",
+          "digest_matches_expected": true,
+          "expected_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+          "failed_checks": [],
+          "iteration": "I1",
+          "source_role": "source_inventory_and_scoped_substrate_admission",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_schema_and_controls.json",
+          "artifact_sha256": "333cad25f0cc156229c7b61de74c1d30ce0ad7b4c3b150fc8acb958aa1b9c6f4",
+          "digest_matches_expected": true,
+          "expected_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+          "failed_checks": [],
+          "iteration": "I2",
+          "source_role": "proxy_divergence_collapse_schema_and_controls",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_active_nulls_and_failure_baselines.json",
+          "artifact_sha256": "0ca2d57ccfdb077a3ec8493bd70555c2bb0ffa95006ef266d392a53a0b5bbdf8",
+          "digest_matches_expected": true,
+          "expected_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+          "failed_checks": [],
+          "iteration": "I3",
+          "source_role": "active_nulls_and_failure_baselines",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe.json",
+          "artifact_sha256": "b33353bd0fcdb41ade28ed2fc2249b1cb8c7ba940dcbda388b0445de461ca548",
+          "digest_matches_expected": true,
+          "expected_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+          "failed_checks": [],
+          "iteration": "I4",
+          "source_role": "source_current_proxy_derivation_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe.json",
+          "artifact_sha256": "00f8a3ccb244c3eb32de4bc83039f82aa5e1e3ed69db47ce58e56988c6508039",
+          "digest_matches_expected": true,
+          "expected_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+          "failed_checks": [],
+          "iteration": "I4-A",
+          "source_role": "proxy_derivation_sensitivity_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_contrast_matrix.json",
+          "artifact_sha256": "09a391bddc9b7d900261e2861f25479f8c71d9a56efb56170e0b6e6c84fc244c",
+          "digest_matches_expected": true,
+          "expected_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+          "failed_checks": [],
+          "iteration": "I5",
+          "source_role": "proxy_divergence_contrast_matrix",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe.json",
+          "artifact_sha256": "d0fef3bad9785c2c692393a7ac36d24e7e8dab67aff37f05caf51c76e7813912",
+          "digest_matches_expected": true,
+          "expected_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+          "failed_checks": [],
+          "iteration": "I5-A",
+          "source_role": "alternative_proxy_surface_divergence_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_fixed_surface_divergence_search.json",
+          "artifact_sha256": "f75de998d2e24f4ff5d380c81afbcd7e1f0cbd55da4c1dd2d68016fb3264d66d",
+          "digest_matches_expected": true,
+          "expected_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+          "failed_checks": [],
+          "iteration": "I5-B",
+          "source_role": "fixed_surface_divergence_search",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe.json",
+          "artifact_sha256": "ed9eab572197a9de2d13b7a549659f65ea56c7eb135666943f06b7399af2bbb0",
+          "digest_matches_expected": true,
+          "expected_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+          "failed_checks": [],
+          "iteration": "I5-C",
+          "source_role": "same_route_score_dose_divergence_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+          "artifact_sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f",
+          "digest_matches_expected": true,
+          "expected_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+          "failed_checks": [],
+          "iteration": "I6",
+          "source_role": "proxy_collapse_perturbation_matrix",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_replay_controls_and_ap5_gate.json",
+          "artifact_sha256": "b2892b7bdae9d8536e1a42c3fb91f08a3ff4ea1bb168b3eb862198bffd56b065",
+          "digest_matches_expected": true,
+          "expected_output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+          "failed_checks": [],
+          "iteration": "I7",
+          "source_role": "replay_controls_and_ap5_gate",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check": "all_source_artifacts_passed",
+      "detail": [
+        {
+          "actual_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_inventory_and_scoped_substrate_admission.json",
+          "artifact_sha256": "75159bbd2584ab7b97fcce2ece2501df1c14d9ea16793ba48f4115d3e920a31d",
+          "digest_matches_expected": true,
+          "expected_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+          "failed_checks": [],
+          "iteration": "I1",
+          "source_role": "source_inventory_and_scoped_substrate_admission",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_schema_and_controls.json",
+          "artifact_sha256": "333cad25f0cc156229c7b61de74c1d30ce0ad7b4c3b150fc8acb958aa1b9c6f4",
+          "digest_matches_expected": true,
+          "expected_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+          "failed_checks": [],
+          "iteration": "I2",
+          "source_role": "proxy_divergence_collapse_schema_and_controls",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_active_nulls_and_failure_baselines.json",
+          "artifact_sha256": "0ca2d57ccfdb077a3ec8493bd70555c2bb0ffa95006ef266d392a53a0b5bbdf8",
+          "digest_matches_expected": true,
+          "expected_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+          "failed_checks": [],
+          "iteration": "I3",
+          "source_role": "active_nulls_and_failure_baselines",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe.json",
+          "artifact_sha256": "b33353bd0fcdb41ade28ed2fc2249b1cb8c7ba940dcbda388b0445de461ca548",
+          "digest_matches_expected": true,
+          "expected_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+          "failed_checks": [],
+          "iteration": "I4",
+          "source_role": "source_current_proxy_derivation_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe.json",
+          "artifact_sha256": "00f8a3ccb244c3eb32de4bc83039f82aa5e1e3ed69db47ce58e56988c6508039",
+          "digest_matches_expected": true,
+          "expected_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+          "failed_checks": [],
+          "iteration": "I4-A",
+          "source_role": "proxy_derivation_sensitivity_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_contrast_matrix.json",
+          "artifact_sha256": "09a391bddc9b7d900261e2861f25479f8c71d9a56efb56170e0b6e6c84fc244c",
+          "digest_matches_expected": true,
+          "expected_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+          "failed_checks": [],
+          "iteration": "I5",
+          "source_role": "proxy_divergence_contrast_matrix",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe.json",
+          "artifact_sha256": "d0fef3bad9785c2c692393a7ac36d24e7e8dab67aff37f05caf51c76e7813912",
+          "digest_matches_expected": true,
+          "expected_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+          "failed_checks": [],
+          "iteration": "I5-A",
+          "source_role": "alternative_proxy_surface_divergence_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_fixed_surface_divergence_search.json",
+          "artifact_sha256": "f75de998d2e24f4ff5d380c81afbcd7e1f0cbd55da4c1dd2d68016fb3264d66d",
+          "digest_matches_expected": true,
+          "expected_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+          "failed_checks": [],
+          "iteration": "I5-B",
+          "source_role": "fixed_surface_divergence_search",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe.json",
+          "artifact_sha256": "ed9eab572197a9de2d13b7a549659f65ea56c7eb135666943f06b7399af2bbb0",
+          "digest_matches_expected": true,
+          "expected_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+          "failed_checks": [],
+          "iteration": "I5-C",
+          "source_role": "same_route_score_dose_divergence_probe",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+          "artifact_sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f",
+          "digest_matches_expected": true,
+          "expected_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+          "failed_checks": [],
+          "iteration": "I6",
+          "source_role": "proxy_collapse_perturbation_matrix",
+          "status": "passed"
+        },
+        {
+          "actual_output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+          "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_replay_controls_and_ap5_gate.json",
+          "artifact_sha256": "b2892b7bdae9d8536e1a42c3fb91f08a3ff4ea1bb168b3eb862198bffd56b065",
+          "digest_matches_expected": true,
+          "expected_output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+          "failed_checks": [],
+          "iteration": "I7",
+          "source_role": "replay_controls_and_ap5_gate",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check": "i7_controlled_pd5_ready",
+      "detail": {
+        "ap5_nat4_gap_resolved": false,
+        "candidate_pd_ladder_rung": "PD5",
+        "failed_checks": [],
+        "native_ap5_bridge_supported": false,
+        "output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+        "pd5_supported": true,
+        "pd6_or_stronger_supported": false,
+        "scoped_artifact_ap5_bridge_candidate_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check": "final_pd6_assigned",
+      "detail": {
+        "controlled_proxy_collapse_supported": true,
+        "controlled_proxy_divergence_supported": true,
+        "final_supported_pd_ladder_rung": "PD6_N27_ready_bounded_proxy_divergence_collapse_evidence",
+        "pd5_evidence_source_iteration": "I7",
+        "pd5_supported": true,
+        "pd6_scope": "bounded artifact-level proxy divergence / proxy collapse evidence on scoped multi-basin LGRC substrate",
+        "pd6_source_iteration": "I8",
+        "pd6_supported": true,
+        "replay_controls_passed": true,
+        "source_current_proxy_derivation_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check": "final_n26_c6_assigned",
+      "detail": {
+        "closeout_does_not_expand_claim_ceiling": true,
+        "closeout_source_iteration": "I8",
+        "final_n26_closeout_rung": "N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout",
+        "final_n26_supported": true,
+        "n26_c6_supported": true,
+        "n26_closeout_ladder_rung_assigned": true
+      },
+      "passed": true
+    },
+    {
+      "check": "ap5_bridge_scoped_native_ap5_blocked",
+      "detail": {
+        "ap5_boundary_reason": "route-score and basin-deepening surfaces remain producer-mediated or declared fixture variants, so they cannot close native AP5",
+        "ap5_bridge_status": "scoped_artifact_ap5_bridge_candidate_supported_native_ap5_blocked",
+        "ap5_dependency_role": "row-local AP5 dependency recorded and replay/control clean for scoped artifact bridge use",
+        "ap5_nat4_gap_resolved": false,
+        "final_global_ap5_supported": false,
+        "native_ap5_bridge_supported": false,
+        "scoped_artifact_ap5_bridge_candidate_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check": "src_diff_empty",
+      "detail": {
+        "src_diff_empty": true,
+        "src_diff_paths": [],
+        "src_status_lines": []
+      },
+      "passed": true
+    },
+    {
+      "check": "n27_handoff_ready_with_constraints",
+      "detail": {
+        "handoff_input_artifacts": [
+          "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/reports/n26_closeout_and_n27_handoff.md"
+        ],
+        "handoff_question": "Can a basin signature transfer across a declared configuration or substrate mapping without being reduced to proxy divergence, hidden producer state, or semantic identity?",
+        "handoff_status": "ready",
+        "may_consume_n26_as": [
+          "bounded_PD6_proxy_divergence_collapse_evidence",
+          "scoped_artifact_AP5_bridge_candidate_context",
+          "proxy_pressure_control_context",
+          "source_current_proxy_basin_contrast_context"
+        ],
+        "must_not_consume_n26_as": [
+          "native_AP5",
+          "AP5_NAT4_gap_resolution",
+          "semantic_goal_or_choice",
+          "agency",
+          "native_support",
+          "sentience",
+          "Phase_8_completion",
+          "ant_ecology",
+          "unscoped_multi_basin_substrate"
+        ],
+        "next_experiment": "N27_configuration_substrate_transfer",
+        "required_n27_controls": [
+          "transfer_not_proxy_score_relabel",
+          "configuration_mapping_declared_before_use",
+          "same_basin_signature_preserved_under_mapping",
+          "hidden_producer_state_blocks_transfer_claim",
+          "source_current_geometry_required",
+          "AP4_AP5_dependency_carried_row_locally_when_selection_or_proxy_participates",
+          "unsafe_semantic_agency_native_support_claims_blocked"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check": "embedded_manifest_valid",
+      "detail": [
+        {
+          "artifact_role": "final_pd_status",
+          "digest": "f91c3e16686bb7b82813efbf5305d6bf306fe4d3872e1129d8e9c4549bddf3a2",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/final_pd_status"
+        },
+        {
+          "artifact_role": "final_closeout_status",
+          "digest": "98f9c1bb2ee48a07f306280cc8794eaf44a6815340e564485a0b28f5e095a501",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/final_closeout_status"
+        },
+        {
+          "artifact_role": "final_ap5_status",
+          "digest": "115f65230f1ff60673b6cf290a190806983c064c94fe9add7081ca816e06f779",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/final_ap5_status"
+        },
+        {
+          "artifact_role": "source_roles",
+          "digest": "a9e7a0edc58ca8d548a6d61c38d217dc16e7fab76a7cbce887991245b58b5f40",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/source_roles"
+        },
+        {
+          "artifact_role": "claim_boundary",
+          "digest": "b13e3f4f2ceec36f57f8729a452cde9a188ae390d2a90a81d5ea173a7c3be3d5",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/claim_boundary"
+        },
+        {
+          "artifact_role": "n27_handoff",
+          "digest": "01dfb2af40038f4acd45406373edea5ef0bafe6f0b919e935b392e675abc39f2",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/n27_handoff"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths_in_records",
+      "detail": "repo-relative records only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "N27-ready bounded artifact-level proxy divergence / proxy collapse evidence on scoped multi-basin LGRC substrate",
+    "blocked_claims": [
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "native_support",
+      "semantic_goal",
+      "semantic_target_ownership",
+      "semantic_choice",
+      "semantic_learning",
+      "agency",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "controlled artifact-level PD6 proxy divergence / proxy collapse closeout with scoped artifact AP5 bridge candidate; not native AP5, native support, semantic goal, choice, agency, sentience, Phase 8 completion, ant ecology, or unscoped multi-basin substrate",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "controlled artifact-level PD6 proxy divergence / proxy collapse closeout with scoped artifact AP5 bridge candidate; not native AP5, native support, semantic goal, choice, agency, sentience, Phase 8 completion, ant ecology, or unscoped multi-basin substrate",
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/build_n26_closeout_and_n27_handoff.py",
+  "embedded_closeout_manifest": [
+    {
+      "artifact_role": "final_pd_status",
+      "digest": "f91c3e16686bb7b82813efbf5305d6bf306fe4d3872e1129d8e9c4549bddf3a2",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/final_pd_status"
+    },
+    {
+      "artifact_role": "final_closeout_status",
+      "digest": "98f9c1bb2ee48a07f306280cc8794eaf44a6815340e564485a0b28f5e095a501",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/final_closeout_status"
+    },
+    {
+      "artifact_role": "final_ap5_status",
+      "digest": "115f65230f1ff60673b6cf290a190806983c064c94fe9add7081ca816e06f779",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/final_ap5_status"
+    },
+    {
+      "artifact_role": "source_roles",
+      "digest": "a9e7a0edc58ca8d548a6d61c38d217dc16e7fab76a7cbce887991245b58b5f40",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/source_roles"
+    },
+    {
+      "artifact_role": "claim_boundary",
+      "digest": "b13e3f4f2ceec36f57f8729a452cde9a188ae390d2a90a81d5ea173a7c3be3d5",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/claim_boundary"
+    },
+    {
+      "artifact_role": "n27_handoff",
+      "digest": "01dfb2af40038f4acd45406373edea5ef0bafe6f0b919e935b392e675abc39f2",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/n27_handoff"
+    }
+  ],
+  "experiment": "N26",
+  "failed_checks": [],
+  "final_ap5_status": {
+    "ap5_boundary_reason": "route-score and basin-deepening surfaces remain producer-mediated or declared fixture variants, so they cannot close native AP5",
+    "ap5_bridge_status": "scoped_artifact_ap5_bridge_candidate_supported_native_ap5_blocked",
+    "ap5_dependency_role": "row-local AP5 dependency recorded and replay/control clean for scoped artifact bridge use",
+    "ap5_nat4_gap_resolved": false,
+    "final_global_ap5_supported": false,
+    "native_ap5_bridge_supported": false,
+    "scoped_artifact_ap5_bridge_candidate_supported": true
+  },
+  "final_closeout_status": {
+    "closeout_does_not_expand_claim_ceiling": true,
+    "closeout_source_iteration": "I8",
+    "final_n26_closeout_rung": "N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout",
+    "final_n26_supported": true,
+    "n26_c6_supported": true,
+    "n26_closeout_ladder_rung_assigned": true
+  },
+  "final_pd_status": {
+    "controlled_proxy_collapse_supported": true,
+    "controlled_proxy_divergence_supported": true,
+    "final_supported_pd_ladder_rung": "PD6_N27_ready_bounded_proxy_divergence_collapse_evidence",
+    "pd5_evidence_source_iteration": "I7",
+    "pd5_supported": true,
+    "pd6_scope": "bounded artifact-level proxy divergence / proxy collapse evidence on scoped multi-basin LGRC substrate",
+    "pd6_source_iteration": "I8",
+    "pd6_supported": true,
+    "replay_controls_passed": true,
+    "source_current_proxy_derivation_supported": true
+  },
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I8",
+  "n27_handoff": {
+    "handoff_input_artifacts": [
+      "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+      "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/reports/n26_closeout_and_n27_handoff.md"
+    ],
+    "handoff_question": "Can a basin signature transfer across a declared configuration or substrate mapping without being reduced to proxy divergence, hidden producer state, or semantic identity?",
+    "handoff_status": "ready",
+    "may_consume_n26_as": [
+      "bounded_PD6_proxy_divergence_collapse_evidence",
+      "scoped_artifact_AP5_bridge_candidate_context",
+      "proxy_pressure_control_context",
+      "source_current_proxy_basin_contrast_context"
+    ],
+    "must_not_consume_n26_as": [
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "semantic_goal_or_choice",
+      "agency",
+      "native_support",
+      "sentience",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate"
+    ],
+    "next_experiment": "N27_configuration_substrate_transfer",
+    "required_n27_controls": [
+      "transfer_not_proxy_score_relabel",
+      "configuration_mapping_declared_before_use",
+      "same_basin_signature_preserved_under_mapping",
+      "hidden_producer_state_blocks_transfer_claim",
+      "source_current_geometry_required",
+      "AP4_AP5_dependency_carried_row_locally_when_selection_or_proxy_participates",
+      "unsafe_semantic_agency_native_support_claims_blocked"
+    ]
+  },
+  "output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+  "ready_for_n27": true,
+  "row_decision": "supported",
+  "source_chain": [
+    {
+      "actual_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_inventory_and_scoped_substrate_admission.json",
+      "artifact_sha256": "75159bbd2584ab7b97fcce2ece2501df1c14d9ea16793ba48f4115d3e920a31d",
+      "digest_matches_expected": true,
+      "expected_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+      "failed_checks": [],
+      "iteration": "I1",
+      "source_role": "source_inventory_and_scoped_substrate_admission",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_schema_and_controls.json",
+      "artifact_sha256": "333cad25f0cc156229c7b61de74c1d30ce0ad7b4c3b150fc8acb958aa1b9c6f4",
+      "digest_matches_expected": true,
+      "expected_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+      "failed_checks": [],
+      "iteration": "I2",
+      "source_role": "proxy_divergence_collapse_schema_and_controls",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_active_nulls_and_failure_baselines.json",
+      "artifact_sha256": "0ca2d57ccfdb077a3ec8493bd70555c2bb0ffa95006ef266d392a53a0b5bbdf8",
+      "digest_matches_expected": true,
+      "expected_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+      "failed_checks": [],
+      "iteration": "I3",
+      "source_role": "active_nulls_and_failure_baselines",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe.json",
+      "artifact_sha256": "b33353bd0fcdb41ade28ed2fc2249b1cb8c7ba940dcbda388b0445de461ca548",
+      "digest_matches_expected": true,
+      "expected_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+      "failed_checks": [],
+      "iteration": "I4",
+      "source_role": "source_current_proxy_derivation_probe",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe.json",
+      "artifact_sha256": "00f8a3ccb244c3eb32de4bc83039f82aa5e1e3ed69db47ce58e56988c6508039",
+      "digest_matches_expected": true,
+      "expected_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+      "failed_checks": [],
+      "iteration": "I4-A",
+      "source_role": "proxy_derivation_sensitivity_probe",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_contrast_matrix.json",
+      "artifact_sha256": "09a391bddc9b7d900261e2861f25479f8c71d9a56efb56170e0b6e6c84fc244c",
+      "digest_matches_expected": true,
+      "expected_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+      "failed_checks": [],
+      "iteration": "I5",
+      "source_role": "proxy_divergence_contrast_matrix",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe.json",
+      "artifact_sha256": "d0fef3bad9785c2c692393a7ac36d24e7e8dab67aff37f05caf51c76e7813912",
+      "digest_matches_expected": true,
+      "expected_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+      "failed_checks": [],
+      "iteration": "I5-A",
+      "source_role": "alternative_proxy_surface_divergence_probe",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_fixed_surface_divergence_search.json",
+      "artifact_sha256": "f75de998d2e24f4ff5d380c81afbcd7e1f0cbd55da4c1dd2d68016fb3264d66d",
+      "digest_matches_expected": true,
+      "expected_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+      "failed_checks": [],
+      "iteration": "I5-B",
+      "source_role": "fixed_surface_divergence_search",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe.json",
+      "artifact_sha256": "ed9eab572197a9de2d13b7a549659f65ea56c7eb135666943f06b7399af2bbb0",
+      "digest_matches_expected": true,
+      "expected_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+      "failed_checks": [],
+      "iteration": "I5-C",
+      "source_role": "same_route_score_dose_divergence_probe",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+      "artifact_sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f",
+      "digest_matches_expected": true,
+      "expected_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+      "failed_checks": [],
+      "iteration": "I6",
+      "source_role": "proxy_collapse_perturbation_matrix",
+      "status": "passed"
+    },
+    {
+      "actual_output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+      "artifact_path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_replay_controls_and_ap5_gate.json",
+      "artifact_sha256": "b2892b7bdae9d8536e1a42c3fb91f08a3ff4ea1bb168b3eb862198bffd56b065",
+      "digest_matches_expected": true,
+      "expected_output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+      "failed_checks": [],
+      "iteration": "I7",
+      "source_role": "replay_controls_and_ap5_gate",
+      "status": "passed"
+    }
+  ],
+  "source_diff_status": {
+    "src_diff_empty": true,
+    "src_diff_paths": [],
+    "src_status_lines": []
+  },
+  "source_i7_summary": {
+    "ap5_nat4_gap_resolved": false,
+    "candidate_pd_ladder_rung": "PD5",
+    "failed_checks": [],
+    "native_ap5_bridge_supported": false,
+    "output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+    "pd5_supported": true,
+    "pd6_or_stronger_supported": false,
+    "scoped_artifact_ap5_bridge_candidate_supported": true
+  },
+  "source_roles": [
+    {
+      "consumable_by_n27": true,
+      "final_role": "PD2 source-current proxy derivation input",
+      "must_not_consume_as": [
+        "native_AP5",
+        "native_support",
+        "semantic_goal"
+      ],
+      "source_iteration": "I4"
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "proxy derivation sensitivity context",
+      "must_not_consume_as": [
+        "controlled_proxy_divergence",
+        "proxy_collapse"
+      ],
+      "source_iteration": "I4-A"
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "PD3 replay-backed contrast context",
+      "must_not_consume_as": [
+        "controlled_proxy_divergence"
+      ],
+      "source_iteration": "I5"
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "alternative-surface false-positive context",
+      "must_not_consume_as": [
+        "controlled_proxy_divergence"
+      ],
+      "source_iteration": "I5-A"
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "fixed-surface search blocker context",
+      "must_not_consume_as": [
+        "controlled_proxy_divergence"
+      ],
+      "source_iteration": "I5-B"
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "PD4 controlled proxy-divergence evidence",
+      "must_not_consume_as": [
+        "native_AP5",
+        "native_support",
+        "agency"
+      ],
+      "source_iteration": "I5-C",
+      "supporting_rows": [
+        "n26_i5c_same_route_score_dose_sink0_fixed_route",
+        "n26_i5c_same_route_score_dose_sink2_fixed_route"
+      ]
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "PD5 controlled proxy-collapse evidence",
+      "must_not_consume_as": [
+        "native_AP5",
+        "native_support",
+        "agency"
+      ],
+      "source_iteration": "I6",
+      "supporting_rows": [
+        "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse",
+        "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse"
+      ]
+    },
+    {
+      "consumable_by_n27": true,
+      "final_role": "replay/control/AP5 classification gate",
+      "must_not_consume_as": [
+        "native_AP5_closeout",
+        "AP5_NAT4_resolution"
+      ],
+      "source_iteration": "I7"
+    }
+  ],
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "semantic_target_ownership_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false,
+    "unscoped_multi_basin_claim_allowed": false
+  }
+}

@@ -9,7 +9,7 @@ success collapses under perturbation where a basin-deepened path survives.
 Current state:
 
 ```text
-status = initialized
+status = closed
 source_contract_row = n20_i4_row_07_proxy_divergence_proxy_collapse
 source_consumable_contract_row = n20_i5_row_07_proxy_divergence_proxy_collapse
 n20_contract_status = complete
@@ -19,9 +19,16 @@ target_primitive = proxy_divergence_proxy_collapse
 target_reading = proxy divergence / proxy collapse
 local_ladder = PD0...PD6
 closeout_ladder = N26-C0...N26-C6
-positive_proxy_evidence_opened = false
-final_n26_supported = false
-ready_for_iteration_1 = true
+final_supported_pd_ladder_rung = PD6_N27_ready_bounded_proxy_divergence_collapse_evidence
+final_n26_closeout_rung = N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout
+positive_proxy_evidence_opened = true
+controlled_proxy_divergence_supported = true
+controlled_proxy_collapse_supported = true
+scoped_artifact_ap5_bridge_candidate_supported = true
+native_ap5_bridge_supported = false
+ap5_nat4_gap_resolved = false
+final_n26_supported = true
+ready_for_n27 = true
 ```
 
 Core question:

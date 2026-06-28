@@ -1,0 +1,6 @@
+{
+  "basin_deepened_path_survives_same_perturbation": true,
+  "pd5_candidate_supported_pending_i7": true,
+  "proxy_optimized_path_collapses_under_perturbation": true,
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse_proxy_collapse_result"
+}
