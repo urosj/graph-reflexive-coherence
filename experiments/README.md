@@ -306,6 +306,45 @@ not widen above the frozen `1e-9` bound. I7-C adds a separate producer-mediated
 flux-conditioning scaffold, useful as N25 naturalization debt, but it does not
 retroactively upgrade native N24-C6.
 
+N25 closes as the bounded spark / sub-basin / new-basin formation experiment:
+
+```text
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+n25_1_requirements_bridge_needed = true
+```
+
+N25 supports scoped native high-margin core/sub-basin formation evidence under
+the existing LGRC9V3 spark/refinement surfaces, with replay/control and stress
+discipline sufficient for an N25-C6 bounded basin-formation closeout. It does
+not support independent new-basin formation, native LGRC9V3 multi-basin
+formation, native support, agency, sentience, Phase 8 completion, or ant
+ecology implementation. Its producer-assisted lane is useful as a missing
+mechanism/naturalization target only; it cannot overwrite native lane limits.
+Those limits motivate N25.1 and the Phase 8 multi-basin extension that N25.2
+then validates as scoped MB6 substrate evidence.
+
+N23-N25.2 supporting visualizations:
+
+| Experiment | Static image linked to animation | Sequence image |
+| --- | --- | --- |
+| N23 selection/collapse | [![N23 selection/collapse graph](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_graph.png)](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_animation.gif) | ![N23 selection/collapse sequence](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_sequence.png) |
+| N24 surplus/optionality | [![N24 abundance/optionality graph](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_graph.png)](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_animation.gif) | ![N24 abundance/optionality sequence](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_sequence.png) |
+| N25.2 MB6 validation bridge | MB5 surface: [![N25.2 native MB5 final snapshot](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_after_controls.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_animation.gif)<br>Topology-birth companion: [![N25.2 front-capacity topology-birth final snapshot](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_after_birth.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_animation.gif) | MB5 surface: ![N25.2 native MB5 multi-basin sequence](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_sequence.png)<br>Topology-birth companion: ![N25.2 front-capacity topology-birth sequence](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_sequence.png) |
+
+Click a static image to open its animation. N23 and N24 use N18-style
+artifact-level explanatory visuals generated from source-backed experiment
+records. N25.2 uses copied native LGRC9V3 visual outputs with source/copy
+hashes recorded in the gallery manifest. These visuals are inspection aids; the
+supporting claims remain grounded in the JSON artifacts, replay/control
+records, and closeout gates.
+
 The N20-N29 arc keeps three paths distinct until N29:
 
 ```text

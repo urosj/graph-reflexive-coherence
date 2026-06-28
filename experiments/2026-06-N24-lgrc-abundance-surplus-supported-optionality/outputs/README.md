@@ -1,6 +1,7 @@
 # N24 Outputs
 
-This directory will hold selected JSON artifacts for N24.
+This directory will hold selected JSON artifacts and supporting visual assets
+for N24.
 
 Planned outputs:
 
@@ -13,7 +14,8 @@ n24_optional_continuation_set_probe.json
 n24_replay_and_control_matrix.json
 n24_stress_threshold_matrix.json
 n24_closeout_and_n25_handoff.json
+n24_abundance_optionality_visualization.json
+n24_abundance_optionality_visualization/
 ```
 
 Outputs must use relative paths only and must keep claim flags explicit.
-
