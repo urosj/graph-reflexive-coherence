@@ -1,0 +1,955 @@
+{
+  "acceptance_state": "accepted_source_inventory_scoped_substrate_admission_no_proxy_evidence",
+  "ap5_bridge_status": "not_supported_inventory_only",
+  "ap5_gap_ledger": {
+    "claimed_ap_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+    "n15_artifact_context_acceptance_state": "closed_claim_clean_ap5_artifact_level_endogenous_proxy_formation",
+    "n19_ap5_nat_level": "NAT3",
+    "n19_ap5_row_id": "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+    "row_local_ap5_dependency_required_for_future_proxy_rows": true
+  },
+  "artifact_id": "n26_source_inventory_and_scoped_substrate_admission",
+  "candidate_pd_ladder_rung": "not_assigned_inventory_only",
+  "checks": [
+    {
+      "check_id": "all_sources_exist",
+      "detail": {
+        "source_count": 13
+      },
+      "passed": true
+    },
+    {
+      "check_id": "json_sources_parseable",
+      "detail": "all JSON source records parsed",
+      "passed": true
+    },
+    {
+      "check_id": "n20_proxy_contract_row_present",
+      "detail": {
+        "primitive_id": "proxy_divergence_proxy_collapse",
+        "row_id": "n20_i4_row_07_proxy_divergence_proxy_collapse"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n20_same_basin_contract_complete",
+      "detail": {
+        "contract_status": "complete",
+        "row_id": "n20_i5_row_07_proxy_divergence_proxy_collapse",
+        "source_contract_row": "n20_i4_row_07_proxy_divergence_proxy_collapse"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n15_ap5_artifact_context_present",
+      "detail": {
+        "acceptance_state": "closed_claim_clean_ap5_artifact_level_endogenous_proxy_formation"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n19_ap5_nat4_gap_recorded",
+      "detail": {
+        "claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+        "n19_ap5_row_id": "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+        "nat_level": "NAT3"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_context_is_scoped_bf5_not_bf6",
+      "detail": {
+        "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+        "independent_new_basin_supported": false,
+        "native_bf5_supported": true,
+        "native_bf6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_1_requirements_bridge_present",
+      "detail": {
+        "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_2_scoped_consumption_allowed",
+      "detail": {
+        "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "required_n26_boundary": [
+          "consume N25.2 as scoped multi-basin substrate evidence only",
+          "do not treat MB6 as native support",
+          "do not treat MB6 as agency, sentience, or ant ecology implementation",
+          "do not use front-capacity companion evidence as an unscoped backfill",
+          "preserve source-current runtime and replay/control discipline"
+        ],
+        "source_id": "n25_2_closeout"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_2_unscoped_consumption_blocked",
+      "detail": {
+        "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "required_n26_boundary": [
+          "consume N25.2 as scoped multi-basin substrate evidence only",
+          "do not treat MB6 as native support",
+          "do not treat MB6 as agency, sentience, or ant ecology implementation",
+          "do not use front-capacity companion evidence as an unscoped backfill",
+          "preserve source-current runtime and replay/control discipline"
+        ],
+        "source_id": "n25_2_closeout"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_rows_have_positive_and_negative_consumption_rules",
+      "detail": {
+        "source_count": 13
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_pd_rung_assigned",
+      "detail": "Iteration 1 is inventory/admission only",
+      "passed": true
+    },
+    {
+      "check_id": "positive_proxy_evidence_not_opened",
+      "detail": "No proxy derivation, divergence, or collapse rows are produced in I1",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "all source paths are repository-relative",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "N26 I1 source inventory and scoped-substrate admission only; no proxy derivation, proxy divergence, proxy collapse, AP5 bridge, semantic goal, agency, native support, sentience, Phase 8, or ant ecology evidence",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/build_n26_source_inventory_and_scoped_substrate_admission.py",
+  "experiment": "N26_proxy_divergence_proxy_collapse",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "1",
+  "n25_2_scoped_substrate_admission": {
+    "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+    "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+    "n26_scoped_context_consumption_allowed": true,
+    "n26_unscoped_consumption_allowed": false,
+    "n26_unscoped_multi_basin_consumption_allowed": false,
+    "required_n26_boundary": [
+      "consume N25.2 as scoped multi-basin substrate evidence only",
+      "do not treat MB6 as native support",
+      "do not treat MB6 as agency, sentience, or ant ecology implementation",
+      "do not use front-capacity companion evidence as an unscoped backfill",
+      "preserve source-current runtime and replay/control discipline"
+    ],
+    "source_id": "n25_2_closeout"
+  },
+  "n25_context_boundary": {
+    "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+    "final_n25_closeout_rung": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+    "independent_new_basin_supported": false,
+    "lgrc9v3_multi_basin_native_formation_supported": false,
+    "native_bf5_supported": true,
+    "native_bf6_supported": false
+  },
+  "n26_closeout_ceiling": "N26-C1_source_inventory_and_scoped_substrate_admission_passed",
+  "n26_closeout_ladder_rung_assigned": false,
+  "output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+  "pd_ladder_rung_assigned": false,
+  "positive_proxy_evidence_opened": false,
+  "proxy_collapse_opened": false,
+  "proxy_derivation_opened": false,
+  "proxy_divergence_opened": false,
+  "purpose": "source inventory and scoped substrate admission only",
+  "schema_version": "1.0",
+  "source_consumable_contract_row": "n20_i5_row_07_proxy_divergence_proxy_collapse",
+  "source_consumable_contract_row_digest": "99d2db29122734ca4de5ca7b4599f6a35a442d21a7b4983477eac6ddc75b48ec",
+  "source_consumption_rows": [
+    {
+      "may_consume_as": [
+        "N20_i4_proxy_contract",
+        "contract_fields_context"
+      ],
+      "must_not_consume_as": [
+        "primitive_evidence",
+        "positive_proxy_result"
+      ],
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_01_n20_native_function_proxy_contract",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_classification": "contract_source",
+      "source_id": "n20_native_function_proxy_contract",
+      "source_role": "proxy_divergence_proxy_collapse_schema_source",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "N20_i5_complete_proxy_same_basin_contract"
+      ],
+      "must_not_consume_as": [
+        "primitive_evidence",
+        "positive_proxy_result"
+      ],
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_02_n20_same_basin_continuation_contract",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_classification": "contract_source",
+      "source_id": "n20_same_basin_continuation_contract",
+      "source_role": "same_basin_rule_and_controls_source",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "historic_artifact_level_AP5_context",
+        "proxy_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "native_AP5",
+        "semantic_goal",
+        "agency",
+        "native_support"
+      ],
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_03_n15_ap5_closeout",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "source_classification": "historical_ap5_context",
+      "source_id": "n15_ap5_closeout",
+      "source_role": "artifact_level_ap5_proxy_formation_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "claim_boundary_context",
+        "AP5_relabel_blocker_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence",
+        "native_AP5"
+      ],
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_04_n15_claim_boundary_record",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87",
+      "source_classification": "claim_boundary_context",
+      "source_id": "n15_claim_boundary_record",
+      "source_role": "ap5_unsafe_promotion_boundary",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "AP5_NAT4_gap_boundary",
+        "N19_native_readiness_context"
+      ],
+      "must_not_consume_as": [
+        "native_AP5_evidence",
+        "proxy_divergence_evidence"
+      ],
+      "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_candidate_classification_matrix.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_05_n19_candidate_classification_matrix",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "b08c533cb7977f82008b1f1d803f00993d3b04fb00f9b2a7d157454ece270e40",
+      "source_classification": "ap5_nat_gap_boundary",
+      "source_id": "n19_candidate_classification_matrix",
+      "source_role": "current_AP5_NAT3_gap_classification",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "AP4_AP5_NAT4_gap_boundary",
+        "Phase8_readiness_review_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence",
+        "native_AP5_evidence"
+      ],
+      "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_06_n19_closeout",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+      "source_classification": "ap_ladder_generation_boundary",
+      "source_id": "n19_closeout",
+      "source_role": "AP4_AP5_gap_closeout_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "scoped_BF5_high_margin_core_sub_basin_context",
+        "N25_C6_bounded_formation_context"
+      ],
+      "must_not_consume_as": [
+        "independent_new_basin_evidence",
+        "native_multi_basin_evidence",
+        "native_support"
+      ],
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_07_n25_closeout",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+      "source_classification": "historical_sub_basin_context",
+      "source_id": "n25_closeout",
+      "source_role": "scoped_BF5_core_sub_basin_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "MB_ladder_context",
+        "N26_consumption_constraint_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB6_support_by_itself"
+      ],
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_multi_basin_extension_schema.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_08_n25_1_multi_basin_schema",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "209b26a5aca7db6949e1fa0c8e51c0006cd9814bb1b62eece07a795fcff46ece",
+      "source_classification": "requirements_context",
+      "source_id": "n25_1_multi_basin_schema",
+      "source_role": "MB0_MB6_schema_and_N26_constraints_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "requirements_bridge_context",
+        "N26_scope_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB6_support_by_itself"
+      ],
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_09_n25_1_closeout",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+      "source_classification": "requirements_bridge_context",
+      "source_id": "n25_1_closeout",
+      "source_role": "phase8_extension_requirements_closeout_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "scoped_MB6_multi_basin_substrate_evidence"
+      ],
+      "must_not_consume_as": [
+        "unscoped_multi_basin_substrate",
+        "native_support",
+        "agency",
+        "sentience",
+        "ant_ecology_implementation"
+      ],
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_10_n25_2_closeout",
+      "scoped_substrate_consumption_effect": "scoped_MB6_admission_source",
+      "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+      "source_classification": "scoped_substrate_evidence_source",
+      "source_id": "n25_2_closeout",
+      "source_role": "scoped_MB6_multi_basin_substrate_admission_source",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "MB6_gate_context",
+        "blocked_relabel_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence",
+        "semantic_goal_context"
+      ],
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_support_blocker_matrix.json",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_11_n25_2_mb6_support_blocker_matrix",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "c05826b383c2df29b565eee22138ee2cc8587bcdd4452f38cde16db65467e199",
+      "source_classification": "scoped_substrate_gate_context",
+      "source_id": "n25_2_mb6_support_blocker_matrix",
+      "source_role": "MB6_support_and_blocker_matrix_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "roadmap_handoff_context",
+        "N26_scope_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence"
+      ],
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_12_n20_n29_handoff",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "0c3e505648933418db6a86a4bfd19871a0d6250564c0d8dac6e2e0902667102b",
+      "source_classification": "handoff_context",
+      "source_id": "n20_n29_handoff",
+      "source_role": "current_N26_pickup_note",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "may_consume_as": [
+        "roadmap_context",
+        "N26_question_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence"
+      ],
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "pd_ladder_rung_assigned": false,
+      "positive_proxy_evidence_opened": false,
+      "row_decision": "supported_as_source_inventory_only",
+      "row_id": "n26_i1_source_13_n20_n29_roadmap",
+      "scoped_substrate_consumption_effect": "context_or_boundary_only",
+      "sha256": "f463038c2b263d92163e45313e1f83b7ac1377285b6e700b1268e5fa79cf20e8",
+      "source_classification": "roadmap_context",
+      "source_id": "n20_n29_roadmap",
+      "source_role": "N26_question_and_iteration_context",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "source_contract_row": "n20_i4_row_07_proxy_divergence_proxy_collapse",
+  "source_contract_row_digest": "5746a2e7a792b7cc8eab716833a2e232f2ce6ef6ccd84a54dd21cf38c0308e61",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "N20_i4_proxy_contract",
+        "contract_fields_context"
+      ],
+      "must_not_consume_as": [
+        "primitive_evidence",
+        "positive_proxy_result"
+      ],
+      "output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "path_is_repo_relative": true,
+      "sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_classification": "contract_source",
+      "source_id": "n20_native_function_proxy_contract",
+      "source_role": "proxy_divergence_proxy_collapse_schema_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "N20_i5_complete_proxy_same_basin_contract"
+      ],
+      "must_not_consume_as": [
+        "primitive_evidence",
+        "positive_proxy_result"
+      ],
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "path_is_repo_relative": true,
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_classification": "contract_source",
+      "source_id": "n20_same_basin_continuation_contract",
+      "source_role": "same_basin_rule_and_controls_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "closed_claim_clean_ap5_artifact_level_endogenous_proxy_formation",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "historic_artifact_level_AP5_context",
+        "proxy_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "native_AP5",
+        "semantic_goal",
+        "agency",
+        "native_support"
+      ],
+      "output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+      "path_is_repo_relative": true,
+      "sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "source_classification": "historical_ap5_context",
+      "source_id": "n15_ap5_closeout",
+      "source_role": "artifact_level_ap5_proxy_formation_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_ap5_classification_claim_boundary_clean_pending_closeout",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "claim_boundary_context",
+        "AP5_relabel_blocker_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence",
+        "native_AP5"
+      ],
+      "output_digest": "76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json",
+      "path_is_repo_relative": true,
+      "sha256": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87",
+      "source_classification": "claim_boundary_context",
+      "source_id": "n15_claim_boundary_record",
+      "source_role": "ap5_unsafe_promotion_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "AP5_NAT4_gap_boundary",
+        "N19_native_readiness_context"
+      ],
+      "must_not_consume_as": [
+        "native_AP5_evidence",
+        "proxy_divergence_evidence"
+      ],
+      "output_digest": "46e8675c62ee399c840844a7f5aee04108c9ba35eaf194a11de6d1e956bae266",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_candidate_classification_matrix.json",
+      "path_is_repo_relative": true,
+      "sha256": "b08c533cb7977f82008b1f1d803f00993d3b04fb00f9b2a7d157454ece270e40",
+      "source_classification": "ap5_nat_gap_boundary",
+      "source_id": "n19_candidate_classification_matrix",
+      "source_role": "current_AP5_NAT3_gap_classification",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "AP4_AP5_NAT4_gap_boundary",
+        "Phase8_readiness_review_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence",
+        "native_AP5_evidence"
+      ],
+      "output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+      "path_is_repo_relative": true,
+      "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+      "source_classification": "ap_ladder_generation_boundary",
+      "source_id": "n19_closeout",
+      "source_role": "AP4_AP5_gap_closeout_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "scoped_BF5_high_margin_core_sub_basin_context",
+        "N25_C6_bounded_formation_context"
+      ],
+      "must_not_consume_as": [
+        "independent_new_basin_evidence",
+        "native_multi_basin_evidence",
+        "native_support"
+      ],
+      "output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "path_is_repo_relative": true,
+      "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+      "source_classification": "historical_sub_basin_context",
+      "source_id": "n25_closeout",
+      "source_role": "scoped_BF5_core_sub_basin_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_basin_extension_schema_frozen_no_runtime_evidence",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "MB_ladder_context",
+        "N26_consumption_constraint_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB6_support_by_itself"
+      ],
+      "output_digest": "a8a9f42ed03ff9ff54830a15f9c49a1016ffdd7c22864fcf225758fd539e028b",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_multi_basin_extension_schema.json",
+      "path_is_repo_relative": true,
+      "sha256": "209b26a5aca7db6949e1fa0c8e51c0006cd9814bb1b62eece07a795fcff46ece",
+      "source_classification": "requirements_context",
+      "source_id": "n25_1_multi_basin_schema",
+      "source_role": "MB0_MB6_schema_and_N26_constraints_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "requirements_bridge_context",
+        "N26_scope_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "MB6_support_by_itself"
+      ],
+      "output_digest": "396692475de004ddc8a586a501e1518b8316eebbf8f651304a76abeae25ae09e",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+      "path_is_repo_relative": true,
+      "sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+      "source_classification": "requirements_bridge_context",
+      "source_id": "n25_1_closeout",
+      "source_role": "phase8_extension_requirements_closeout_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n25_2_c6_closeout_scoped_n26_handoff",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "scoped_MB6_multi_basin_substrate_evidence"
+      ],
+      "must_not_consume_as": [
+        "unscoped_multi_basin_substrate",
+        "native_support",
+        "agency",
+        "sentience",
+        "ant_ecology_implementation"
+      ],
+      "output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+      "path_is_repo_relative": true,
+      "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+      "source_classification": "scoped_substrate_evidence_source",
+      "source_id": "n25_2_closeout",
+      "source_role": "scoped_MB6_multi_basin_substrate_admission_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_mb6_supported_scoped_n26_consumption",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "MB6_gate_context",
+        "blocked_relabel_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence",
+        "semantic_goal_context"
+      ],
+      "output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_support_blocker_matrix.json",
+      "path_is_repo_relative": true,
+      "sha256": "c05826b383c2df29b565eee22138ee2cc8587bcdd4452f38cde16db65467e199",
+      "source_classification": "scoped_substrate_gate_context",
+      "source_id": "n25_2_mb6_support_blocker_matrix",
+      "source_role": "MB6_support_and_blocker_matrix_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_applicable_markdown_context",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "roadmap_handoff_context",
+        "N26_scope_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "parseable_json": true,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "path_is_repo_relative": true,
+      "sha256": "0c3e505648933418db6a86a4bfd19871a0d6250564c0d8dac6e2e0902667102b",
+      "source_classification": "handoff_context",
+      "source_id": "n20_n29_handoff",
+      "source_role": "current_N26_pickup_note",
+      "status": "context_only"
+    },
+    {
+      "acceptance_state": "not_applicable_markdown_context",
+      "artifact_exists": true,
+      "may_consume_as": [
+        "roadmap_context",
+        "N26_question_context"
+      ],
+      "must_not_consume_as": [
+        "positive_proxy_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "parseable_json": true,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "path_is_repo_relative": true,
+      "sha256": "f463038c2b263d92163e45313e1f83b7ac1377285b6e700b1268e5fa79cf20e8",
+      "source_classification": "roadmap_context",
+      "source_id": "n20_n29_roadmap",
+      "source_role": "N26_question_and_iteration_context",
+      "status": "context_only"
+    }
+  ],
+  "status": "passed",
+  "target_primitive": "proxy_divergence_proxy_collapse"
+}

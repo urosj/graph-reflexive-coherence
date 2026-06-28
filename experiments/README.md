@@ -50,6 +50,7 @@ machine-local state.
 | [N23 live-continuation collapse and selection geometry](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md) | Closed bounded artifact-level LC6 live-continuation collapse / selection-geometry evidence with N23-C6/N24 handoff and AP4 bridge candidate support, while final AP4, semantic choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked. | README, then closeout handoff, replay/control matrix, AP4 selection geometry probes, live-branch collapse probes, implementation checklist, and hypotheses. |
 | [N24 abundance and surplus-supported optionality](2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md) | Closed bounded artifact-level AB5 surplus-supported optionality candidate with native N24-C5 closeout, explicit flux/leakage debt, and a separate producer-mediated flux-conditioning scaffold for N25. | README, then closeout handoff, native and producer flux probes, replay/control matrices, optional-continuation probes, implementation checklist, and hypotheses. |
 | N25 basin formation arc: [N25](2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md), [N25.1](2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md), [N25.2](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md) | Closed three-step formation arc: N25 reached scoped native BF5 high-margin core/sub-basin evidence, N25.1 specified the missing LGRC9V3 multi-basin runtime surfaces, and the Phase 8 plus N25.2 validation path closed MB6 as scoped N26-ready multi-basin substrate evidence. Unscoped N26 consumption, native support, agency, sentience, ant ecology implementation, and Phase 8 completion remain blocked. | Read N25 for BF5 formation evidence, N25.1 for the extension contract, N25.2 for MB6 validation and N26 handoff, plus the Phase 8 multi-basin closeout. |
+| [N26 proxy divergence and proxy collapse](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md) | Initialized becoming-primitive experiment for source-current proxy derivation, proxy divergence, and proxy collapse on scoped N25.2 MB6 multi-basin substrate. No positive proxy evidence is opened yet; semantic goal, choice, agency, native support, sentience, Phase 8 completion, ant ecology, and unscoped multi-basin consumption remain blocked. | README, hypotheses, implementation plan/checklist, and source/scoped-substrate admission scaffold. |
 
 ## Current Roadmap State
 
@@ -344,6 +345,11 @@ records. N25.2 uses copied native LGRC9V3 visual outputs with source/copy
 hashes recorded in the gallery manifest. These visuals are inspection aids; the
 supporting claims remain grounded in the JSON artifacts, replay/control
 records, and closeout gates.
+
+N26 is initialized as the proxy divergence / proxy collapse experiment. It may
+consume N25.2 only as scoped MB6 multi-basin substrate evidence and starts with
+no positive proxy evidence, no AP5 closeout, no native support, no agency, no
+sentience, no Phase 8 completion, and no ant-ecology implementation.
 
 The N20-N29 arc keeps three paths distinct until N29:
 
