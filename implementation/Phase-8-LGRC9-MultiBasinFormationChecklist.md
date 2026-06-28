@@ -209,7 +209,7 @@ passed
 
 ## Iteration 85. Flow Window And Child-Basin Emission
 
-Status: pending.
+Status: complete.
 
 ### Goal
 
@@ -218,14 +218,113 @@ from committed topology integration evidence.
 
 ### Checks
 
-- [ ] Emission is default-off.
-- [ ] Flow-window records cite committed topology integration and refinement
+- [x] Emission is default-off.
+- [x] Flow-window records cite committed topology integration and refinement
       lineage evidence.
-- [ ] Child-basin state records cite flow-window digests.
-- [ ] Child-basin membership is source-current and digest-backed.
-- [ ] Support, coherence, boundary, and flux records are serialized.
-- [ ] Candidate emission alone cannot support MB4+.
-- [ ] No semantic or identity claim is opened.
+- [x] Child-basin state records cite flow-window digests.
+- [x] Child-basin membership is source-current and digest-backed.
+- [x] Support, coherence, boundary, and flux records are serialized.
+- [x] Candidate emission alone cannot support MB4+.
+- [x] No semantic or identity claim is opened.
+
+### Implementation Record
+
+- Added default-off runtime logs to `LGRC9V3RuntimeState`:
+
+```text
+post_refinement_flow_window_log
+child_basin_state_log
+```
+
+- Old snapshots remain compatible because missing logs restore as empty lists.
+- Added a passive runtime emitter on committed native route arbitration topology
+  events. The emitter runs only when:
+
+```text
+native_lgrc_multi_basin_formation_enabled = true
+native_lgrc_multi_basin_formation_policy = post_refinement_child_basin_replay
+```
+
+- Default route-arbitration commits still emit no multi-basin records.
+- Enabled commits emit:
+
+```text
+LGRC9V3MultiBasinFlowWindowRecord
+LGRC9V3ChildBasinStateRecord
+```
+
+- Flow-window records cite the committed topology event digest, selected route
+  candidate, topology-state reabsorption digest context, lineage transfer map,
+  active node/edge state, packet ledger, and node-plus-packet budget trace.
+- Child-basin state records cite the flow-window digest, source-current child
+  core ids, digest-backed membership, support/coherence records, boundary
+  records, flux records, old-basin relation trace, and merge/leakage trace.
+- Digest-based idempotency keys suppress duplicate flow-window and child-state
+  appends.
+
+### Interpretation
+
+Iteration 85 changes the runtime from "schema exists only" to "candidate
+multi-basin surfaces can be emitted from committed topology integration
+evidence." The emitted child-basin record is still a candidate extraction
+surface:
+
+```text
+candidate_ceiling = MB3_candidate_emission_only
+mb4_or_stronger_supported = false
+```
+
+It does not provide replay validation, persistence ratios, merge/leakage
+controls, MB4, MB5, MB6, BF6, independent new-basin formation, native support,
+semantic learning, semantic choice, agency, identity acceptance, sentience, ant
+ecology, or Phase 8 completion.
+
+Geometrically, the flow window serializes the post-refinement live substrate:
+the committed topology event, lineage map, active node support/coherence
+values, edge fluxes, packet flux summary, and conserved node-plus-packet budget.
+The child-basin state then extracts a source-current local candidate around the
+selected target core and records its membership, incident boundary conductance,
+and incident flux. This is a runtime-visible geometric surface for later replay
+and controls, not a final multi-basin proof.
+
+Current LGRC9V3 node state exposes coherence as the source-current scalar used
+for support accounting in this surface. Therefore `node_support_trace` and
+`node_coherence_trace`, and the child-basin support/coherence floor records, are
+coherence-derived in Iteration 85. This is a substrate-limited representation,
+not evidence for an independent native support channel. If a later Phase 8
+implementation adds a distinct source-current support field, these records
+should separate the two traces without changing the I85 claim ceiling.
+
+`old_basin_relation_trace` is a string-valued trace map, so the MB4 blocker is
+serialized as:
+
+```text
+mb4_or_stronger_supported = "false"
+```
+
+Downstream consumers should treat this as a trace value, not as a support flag.
+
+### Verification
+
+```text
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin or native_route_arbitration_commit"
+10 passed, 146 deselected
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q
+156 passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin or native_route or child_basin or active_topology_integration_expands_causal_lane_b_candidate or stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs or snapshot_round_trip"
+69 passed, 220 deselected, 42 subtests passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q
+133 passed, 81 subtests passed
+
+.venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/lgrc_9_v3_runtime_state.py tests/models/test_lgrc_9_v3_runtime.py
+All checks passed
+
+git diff --check
+passed
+```
 
 ## Iteration 86. Replay And Persistence Validator
 

@@ -1053,6 +1053,32 @@ claim_flags
 child_basin_state_digest
 ```
 
+The runtime stores emitted candidate records under:
+
+```text
+post_refinement_flow_window_log
+child_basin_state_log
+```
+
+Both logs are empty when the policy is disabled. Missing log fields in older
+snapshots restore as empty lists. When the policy is enabled, committed native
+route arbitration topology events may emit one post-refinement flow-window
+record and one child-basin state record from the committed topology event,
+lineage transfer map, topology-state reabsorption state signatures, active
+node/edge state, and packet ledger. For route-arbitration collapse/reabsorption
+sources, `source_expansion_id` is namespaced as a native-route candidate source;
+it is not relabeled as a GRC spark expansion event. This emission is a
+candidate surface only:
+it does not set `native_lgrc_multi_basin_formation_validated`, does not set
+`native_lgrc_multi_basin_formation_supported`, and cannot support MB4+ without
+later replay and merge/leakage controls.
+
+In the current LGRC9V3 substrate, node state exposes coherence as the
+source-current scalar available for local support accounting. I85 therefore
+populates support traces and coherence traces from the same source-current
+coherence value. This preserves the contract fields while keeping the claim
+bounded: I85 does not establish an independent native support channel.
+
 The replay validation record cites the child-basin state digest and serializes
 artifact replay, snapshot/load replay, duplicate replay, time-order replay,
 persistence ratios, replay window, and replay failure modes. Replay result

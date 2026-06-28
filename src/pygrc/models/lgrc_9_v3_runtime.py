@@ -48,6 +48,8 @@ from .lgrc_9_v3_contract import (
     LGRC9V3AutonomousProductionRecord,
     LGRC9V3CausalPulseSubstrateSurfaceLineageRecord,
     LGRC9V3CausalPulseSubstrateSurfaceRow,
+    LGRC9V3ChildBasinStateRecord,
+    LGRC9V3MultiBasinFlowWindowRecord,
     LGRC9V3NativeRouteArbitrationRecord,
     LGRC9V3NativeRouteCandidateRecord,
     LGRC9V3NativeRouteCandidateSetRecord,
@@ -115,6 +117,8 @@ from .lgrc_9_v3_contract import (
     LGRC9V3_NATIVE_ROUTE_INTENT_COLLAPSE,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_DECLARED_TIEBREAKER,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
+    LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY,
+    LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT,
     PROPER_TIME_POLICY_LOCAL_EVENT_FRONTIER,
     build_lgrc9v3_autonomous_production_record_id,
     build_lgrc9v3_autonomous_surface_digest,
@@ -2250,6 +2254,51 @@ class LGRC9V3(GRCModel):
             "lgrc9v3_causal_pulse_substrate_surface_lineage_idempotency_keys"
         ] = sorted(keys)
 
+    def _native_multi_basin_formation_enabled(self) -> bool:
+        return bool(
+            self._state.causal_modes.get(
+                "native_lgrc_multi_basin_formation_enabled",
+                False,
+            )
+        ) and (
+            self._state.causal_modes.get(
+                "native_lgrc_multi_basin_formation_policy"
+            )
+            == LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY
+        )
+
+    def _post_refinement_flow_window_keys(self) -> set[str]:
+        raw_keys = self._state.cached_quantities.get(
+            "lgrc9v3_post_refinement_flow_window_idempotency_keys",
+            [],
+        )
+        if not isinstance(raw_keys, Sequence) or isinstance(raw_keys, str):
+            raise InvalidStateTransitionError(
+                "post-refinement flow-window idempotency cache must be a sequence"
+            )
+        return {str(key) for key in raw_keys}
+
+    def _store_post_refinement_flow_window_keys(self, keys: set[str]) -> None:
+        self._state.cached_quantities[
+            "lgrc9v3_post_refinement_flow_window_idempotency_keys"
+        ] = sorted(keys)
+
+    def _child_basin_state_keys(self) -> set[str]:
+        raw_keys = self._state.cached_quantities.get(
+            "lgrc9v3_child_basin_state_idempotency_keys",
+            [],
+        )
+        if not isinstance(raw_keys, Sequence) or isinstance(raw_keys, str):
+            raise InvalidStateTransitionError(
+                "child-basin state idempotency cache must be a sequence"
+            )
+        return {str(key) for key in raw_keys}
+
+    def _store_child_basin_state_keys(self, keys: set[str]) -> None:
+        self._state.cached_quantities[
+            "lgrc9v3_child_basin_state_idempotency_keys"
+        ] = sorted(keys)
+
     def _topology_event_payload(self, topology_event: GRCEvent | Mapping[str, Any]) -> dict[str, Any]:
         if isinstance(topology_event, GRCEvent):
             return {"topology_event_kind": topology_event.kind, **dict(topology_event.payload)}
@@ -3254,6 +3303,8 @@ class LGRC9V3(GRCModel):
                     "route_arbitration_record": record,
                     "selected_candidate_route_record": None,
                     "topology_events": (),
+                    "post_refinement_flow_window_records": (),
+                    "child_basin_state_records": (),
                 }
         candidates = self._native_route_candidates_by_digest()
         candidate = candidates.get(str(record.selected_candidate_route_digest))
@@ -3338,6 +3389,13 @@ class LGRC9V3(GRCModel):
             raise InvalidStateTransitionError(
                 "native route arbitration committed topology digest mismatch"
             )
+        flow_records, child_basin_records = (
+            self._emit_multi_basin_records_for_committed_topology(
+                topology_event=topology_events[0],
+                topology_event_digest=committed_event_digest,
+                candidate=candidate,
+            )
+        )
         return {
             "committed": True,
             "reason_code": record.arbitration_reason_code,
@@ -3345,6 +3403,8 @@ class LGRC9V3(GRCModel):
             "selected_candidate_route_record": candidate,
             "topology_events": tuple(topology_events),
             "selected_topology_event_digest": committed_event_digest,
+            "post_refinement_flow_window_records": flow_records,
+            "child_basin_state_records": child_basin_records,
             "surface_lineage_records": tuple(
                 self._state.causal_pulse_substrate_surface_lineage_log
             ),
@@ -3412,6 +3472,365 @@ class LGRC9V3(GRCModel):
                     )
                 )
         return tuple(sorted(edge_ids))
+
+    def _multi_basin_claim_flags(self) -> dict[str, bool]:
+        return {
+            "native_multi_basin_formation_claim_allowed": False,
+            "BF6_claim_allowed": False,
+            "independent_new_basin_claim_allowed": False,
+            "semantic_learning_claim_allowed": False,
+            "semantic_choice_claim_allowed": False,
+            "agency_claim_allowed": False,
+            "native_support_claim_allowed": False,
+            "identity_acceptance_claim_allowed": False,
+            "sentience_claim_allowed": False,
+            "organism_life_claim_allowed": False,
+            "ant_ecology_claim_allowed": False,
+            "phase8_completion_claim_allowed": False,
+        }
+
+    def _topology_state_reabsorption_for_digest(
+        self,
+        topology_event_digest: str,
+    ) -> LGRC9V3TopologyStateReabsorptionRecord | None:
+        for record in reversed(self._state.topology_state_reabsorption_log):
+            if record.topology_event_digest == topology_event_digest:
+                return record
+        return None
+
+    def _multi_basin_edge_flux_trace(self) -> dict[str, float]:
+        if not self._state.base_state.port_edges:
+            return {"no_live_edges": 0.0}
+        return {
+            str(int(edge_id)): float(edge.flux_uv)
+            for edge_id, edge in sorted(self._state.base_state.port_edges.items())
+        }
+
+    def _multi_basin_packet_flux_trace(self) -> dict[str, float]:
+        ledger = self._state.packet_ledger
+        if ledger is None:
+            return {
+                "packet_record_count": 0.0,
+                "event_queue_record_count": 0.0,
+                "in_flight_packet_total": 0.0,
+            }
+        return {
+            "packet_record_count": float(len(ledger.packet_records)),
+            "event_queue_record_count": float(len(ledger.event_queue_records)),
+            "in_flight_packet_total": float(ledger.in_flight_packet_total),
+        }
+
+    def _multi_basin_budget_trace(
+        self,
+        reabsorption_record: LGRC9V3TopologyStateReabsorptionRecord | None,
+    ) -> dict[str, float]:
+        if reabsorption_record is not None:
+            return {
+                "node_plus_packet_budget_before": float(
+                    reabsorption_record.node_plus_packet_budget_before
+                ),
+                "node_plus_packet_budget_after": float(
+                    reabsorption_record.node_plus_packet_budget_after
+                ),
+                "node_plus_packet_budget_error": float(
+                    reabsorption_record.node_plus_packet_budget_error
+                ),
+            }
+        budget = self._runtime_budget_surface()
+        return {
+            "node_plus_packet_budget_before": budget,
+            "node_plus_packet_budget_after": budget,
+            "node_plus_packet_budget_error": 0.0,
+        }
+
+    def _multi_basin_membership_by_core(
+        self,
+        core_ids: Sequence[int],
+    ) -> dict[str, tuple[int, ...]]:
+        live_nodes = {int(node_id) for node_id in self._state.base_state.nodes}
+        membership: dict[str, set[int]] = {
+            str(int(core_id)): {int(core_id)}
+            for core_id in core_ids
+            if int(core_id) in live_nodes
+        }
+        for edge in self._state.base_state.port_edges.values():
+            node_u = int(edge.node_u)
+            node_v = int(edge.node_v)
+            if node_u not in live_nodes or node_v not in live_nodes:
+                continue
+            for core_id in tuple(membership):
+                core = int(core_id)
+                if node_u == core:
+                    membership[core_id].add(node_v)
+                if node_v == core:
+                    membership[core_id].add(node_u)
+        return {
+            core_id: tuple(sorted(values))
+            for core_id, values in sorted(membership.items())
+        }
+
+    def _multi_basin_child_metric_records(
+        self,
+        core_ids: Sequence[int],
+    ) -> tuple[
+        dict[str, float],
+        dict[str, float],
+        dict[str, float],
+        dict[str, float],
+        dict[str, float],
+    ]:
+        support_records: dict[str, float] = {}
+        coherence_records: dict[str, float] = {}
+        boundary_records: dict[str, float] = {}
+        flux_records: dict[str, float] = {}
+        merge_leakage_trace: dict[str, float] = {}
+        for core_id in sorted({int(value) for value in core_ids}):
+            node = self._state.base_state.nodes.get(core_id)
+            if node is None:
+                continue
+            edge_ids = self._incident_edge_ids_for_nodes((core_id,))
+            incident_edges = [
+                self._state.base_state.port_edges[edge_id]
+                for edge_id in edge_ids
+                if edge_id in self._state.base_state.port_edges
+            ]
+            support_records[str(core_id)] = float(node.coherence)
+            coherence_records[str(core_id)] = float(node.coherence)
+            boundary_records[str(core_id)] = float(
+                sum(float(edge.conductance) for edge in incident_edges)
+            )
+            flux_records[str(core_id)] = float(
+                sum(abs(float(edge.flux_uv)) for edge in incident_edges)
+            )
+            merge_leakage_trace[f"{core_id}:incident_edge_count"] = float(
+                len(incident_edges)
+            )
+            merge_leakage_trace[f"{core_id}:absolute_incident_flux"] = flux_records[
+                str(core_id)
+            ]
+        if not merge_leakage_trace:
+            merge_leakage_trace["no_live_child_core"] = 0.0
+        return (
+            support_records,
+            coherence_records,
+            boundary_records,
+            flux_records,
+            merge_leakage_trace,
+        )
+
+    def _build_multi_basin_flow_window_record(
+        self,
+        *,
+        topology_event: GRCEvent,
+        topology_event_digest: str,
+        candidate: LGRC9V3NativeRouteCandidateRecord,
+        reabsorption_record: LGRC9V3TopologyStateReabsorptionRecord | None,
+    ) -> LGRC9V3MultiBasinFlowWindowRecord:
+        topology_artifact = self._topology_event_payload(topology_event)
+        topology_event_id = str(topology_artifact.get("topology_event_id") or "")
+        if not topology_event_id:
+            raise InvalidStateTransitionError(
+                "multi-basin flow-window emission requires committed topology event"
+            )
+        lineage_map = self._topology_event_lineage_transfer_map(topology_artifact)
+        node_state = self._active_node_state_map()
+        pre_signature = (
+            str(reabsorption_record.active_state_digest_before)
+            if reabsorption_record is not None
+            else str(topology_event_digest)
+        )
+        post_signature = (
+            str(reabsorption_record.active_state_digest_after)
+            if reabsorption_record is not None
+            else self._active_state_digest()
+        )
+        runtime_inputs = (
+            "committed_topology_event",
+            "native_route_arbitration_record",
+            "native_route_candidate_record",
+            "refinement_lineage_map",
+            "topology_state_reabsorption_record",
+            "packet_ledger",
+            "active_node_state",
+            "active_edge_state",
+        )
+        if reabsorption_record is not None:
+            runtime_inputs = (
+                *runtime_inputs,
+                "topology_state_reabsorption_record_digest:"
+                f"{reabsorption_record.topology_state_reabsorption_digest}",
+            )
+        try:
+            return LGRC9V3MultiBasinFlowWindowRecord(
+                post_refinement_flow_window_id=(
+                    f"post-refinement-flow-window:{topology_event_digest[:32]}"
+                ),
+                native_multi_basin_policy_id=str(
+                    self._state.causal_modes.get(
+                        "native_lgrc_multi_basin_formation_policy"
+                    )
+                ),
+                native_multi_basin_enabled=True,
+                source_topology_event_id=topology_event_id,
+                source_topology_event_digest=topology_event_digest,
+                source_expansion_id=(
+                    f"native-route-candidate:{candidate.candidate_route_id}"
+                ),
+                pre_refinement_topology_signature=pre_signature,
+                post_refinement_topology_signature=post_signature,
+                refinement_lineage_map=lineage_map,
+                window_start_event_time_key=float(
+                    topology_artifact.get("event_time_key", self._state.event_time_key)
+                ),
+                window_end_event_time_key=float(self._state.event_time_key),
+                window_scheduler_indices=(
+                    int(
+                        topology_artifact.get(
+                            "scheduler_event_index",
+                            self._state.scheduler_event_index,
+                        )
+                    ),
+                    int(self._state.scheduler_event_index),
+                ),
+                node_support_trace=node_state,
+                node_coherence_trace=node_state,
+                edge_flux_trace=self._multi_basin_edge_flux_trace(),
+                packet_flux_trace=self._multi_basin_packet_flux_trace(),
+                node_plus_packet_budget_trace=self._multi_basin_budget_trace(
+                    reabsorption_record
+                ),
+                runtime_visible_inputs=runtime_inputs,
+                lgrc_runtime_level=str(self._state.lgrc_runtime_level),
+                causal_layer_mode=str(self._state.causal_layer_mode),
+                claim_flags=self._multi_basin_claim_flags(),
+            )
+        except ValueError as exc:
+            raise InvalidStateTransitionError(str(exc)) from exc
+
+    def _build_child_basin_state_record(
+        self,
+        *,
+        flow_window_record: LGRC9V3MultiBasinFlowWindowRecord,
+        topology_event_digest: str,
+        candidate: LGRC9V3NativeRouteCandidateRecord,
+    ) -> LGRC9V3ChildBasinStateRecord:
+        core_ids = tuple(
+            sorted(
+                {
+                    int(value)
+                    for value in candidate.candidate_target_node_ids
+                    if int(value) in self._state.base_state.nodes
+                }
+            )
+        )
+        if not core_ids:
+            raise InvalidStateTransitionError(
+                "child-basin state emission requires a live target core"
+            )
+        membership = self._multi_basin_membership_by_core(core_ids)
+        (
+            support_records,
+            coherence_records,
+            boundary_records,
+            flux_records,
+            merge_leakage_trace,
+        ) = self._multi_basin_child_metric_records(core_ids)
+        if not support_records or not coherence_records:
+            raise InvalidStateTransitionError(
+                "child-basin state emission requires live support/coherence records"
+            )
+        source_flow_digest = str(
+            flow_window_record.post_refinement_flow_window_digest
+        )
+        try:
+            return LGRC9V3ChildBasinStateRecord(
+                child_basin_state_record_id=(
+                    f"child-basin-state:{source_flow_digest[:32]}"
+                ),
+                native_multi_basin_policy_id=str(
+                    self._state.causal_modes.get(
+                        "native_lgrc_multi_basin_formation_policy"
+                    )
+                ),
+                native_multi_basin_enabled=True,
+                source_flow_window_digest=source_flow_digest,
+                child_basin_core_ids=core_ids,
+                child_basin_membership_by_core=membership,
+                child_basin_support_floor_records=support_records,
+                child_basin_coherence_floor_records=coherence_records,
+                child_basin_boundary_records=boundary_records,
+                child_basin_flux_records=flux_records,
+                old_basin_relation_trace={
+                    "source_topology_event_digest": topology_event_digest,
+                    "source_flow_window_digest": source_flow_digest,
+                    "relation": (
+                        "post_refinement_child_candidate_from_committed_topology_event"
+                    ),
+                    "candidate_ceiling": "MB3_candidate_emission_only",
+                    "mb4_or_stronger_supported": "false",
+                },
+                merge_leakage_trace=merge_leakage_trace,
+                producer_residue_classification=(
+                    LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT
+                ),
+                runtime_visible_inputs=(
+                    "post_refinement_flow_window_digest",
+                    "child_basin_core_ids",
+                    "source_current_child_membership",
+                    "active_node_state",
+                    "active_edge_state",
+                    "packet_ledger",
+                ),
+                lgrc_runtime_level=str(self._state.lgrc_runtime_level),
+                causal_layer_mode=str(self._state.causal_layer_mode),
+                claim_flags=self._multi_basin_claim_flags(),
+            )
+        except ValueError as exc:
+            raise InvalidStateTransitionError(str(exc)) from exc
+
+    def _emit_multi_basin_records_for_committed_topology(
+        self,
+        *,
+        topology_event: GRCEvent,
+        topology_event_digest: str,
+        candidate: LGRC9V3NativeRouteCandidateRecord,
+    ) -> tuple[
+        tuple[LGRC9V3MultiBasinFlowWindowRecord, ...],
+        tuple[LGRC9V3ChildBasinStateRecord, ...],
+    ]:
+        if not self._native_multi_basin_formation_enabled():
+            return (), ()
+        reabsorption_record = self._topology_state_reabsorption_for_digest(
+            topology_event_digest
+        )
+        flow_window_record = self._build_multi_basin_flow_window_record(
+            topology_event=topology_event,
+            topology_event_digest=topology_event_digest,
+            candidate=candidate,
+            reabsorption_record=reabsorption_record,
+        )
+        child_basin_record = self._build_child_basin_state_record(
+            flow_window_record=flow_window_record,
+            topology_event_digest=topology_event_digest,
+            candidate=candidate,
+        )
+        flow_keys = self._post_refinement_flow_window_keys()
+        child_keys = self._child_basin_state_keys()
+        new_flow_records: list[LGRC9V3MultiBasinFlowWindowRecord] = []
+        new_child_records: list[LGRC9V3ChildBasinStateRecord] = []
+        flow_digest = str(flow_window_record.post_refinement_flow_window_digest)
+        child_digest = str(child_basin_record.child_basin_state_digest)
+        if flow_digest not in flow_keys:
+            flow_keys.add(flow_digest)
+            self._state.post_refinement_flow_window_log.append(flow_window_record)
+            new_flow_records.append(flow_window_record)
+        if child_digest not in child_keys:
+            child_keys.add(child_digest)
+            self._state.child_basin_state_log.append(child_basin_record)
+            new_child_records.append(child_basin_record)
+        self._store_post_refinement_flow_window_keys(flow_keys)
+        self._store_child_basin_state_keys(child_keys)
+        return tuple(new_flow_records), tuple(new_child_records)
 
     def _emit_topology_state_reabsorption_record(
         self,

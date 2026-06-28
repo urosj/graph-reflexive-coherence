@@ -24,12 +24,16 @@ from .lgrc_9_v3_contract import (
     LGRC9V3_PACKETIZED_EVIDENCE_CLASS,
     LGRC9V3CausalPulseSubstrateSurfaceLineageRecord,
     LGRC9V3CausalPulseSubstrateSurfaceRow,
+    LGRC9V3ChildBasinStateRecord,
+    LGRC9V3MultiBasinFlowWindowRecord,
     LGRC9V3NativeRouteArbitrationRecord,
     LGRC9V3NativeRouteCandidateRecord,
     LGRC9V3NativeRouteCandidateSetRecord,
     LGRC9V3TopologyStateReabsorptionRecord,
     restore_lgrc9v3_causal_pulse_substrate_surface_lineage_record_artifact,
     restore_lgrc9v3_causal_pulse_substrate_surface_row_artifact,
+    restore_lgrc9v3_child_basin_state_record_artifact,
+    restore_lgrc9v3_multi_basin_flow_window_record_artifact,
     restore_lgrc9v3_native_route_arbitration_record_artifact,
     restore_lgrc9v3_native_route_candidate_record_artifact,
     restore_lgrc9v3_native_route_candidate_set_record_artifact,
@@ -500,6 +504,27 @@ def restore_lgrc9v3_runtime_state_artifact(
                 context="topology_state_reabsorption_log",
             )
         ],
+        post_refinement_flow_window_log=[
+            restore_lgrc9v3_multi_basin_flow_window_record_artifact(
+                _artifact_mapping(
+                    record,
+                    context="post_refinement_flow_window_log.record",
+                )
+            )
+            for record in _artifact_sequence(
+                mapping.get("post_refinement_flow_window_log", []),
+                context="post_refinement_flow_window_log",
+            )
+        ],
+        child_basin_state_log=[
+            restore_lgrc9v3_child_basin_state_record_artifact(
+                _artifact_mapping(record, context="child_basin_state_log.record")
+            )
+            for record in _artifact_sequence(
+                mapping.get("child_basin_state_log", []),
+                context="child_basin_state_log",
+            )
+        ],
         native_route_candidate_log=[
             restore_lgrc9v3_native_route_candidate_record_artifact(
                 _artifact_mapping(
@@ -613,6 +638,12 @@ class LGRC9V3RuntimeState(GRCState):
     topology_state_reabsorption_log: list[
         LGRC9V3TopologyStateReabsorptionRecord
     ] = field(default_factory=list)
+    post_refinement_flow_window_log: list[
+        LGRC9V3MultiBasinFlowWindowRecord
+    ] = field(default_factory=list)
+    child_basin_state_log: list[LGRC9V3ChildBasinStateRecord] = (
+        field(default_factory=list)
+    )
     native_route_candidate_log: list[LGRC9V3NativeRouteCandidateRecord] = (
         field(default_factory=list)
     )
@@ -696,6 +727,13 @@ class LGRC9V3RuntimeState(GRCState):
             "topology_state_reabsorption_log": [
                 record.to_artifact()
                 for record in self.topology_state_reabsorption_log
+            ],
+            "post_refinement_flow_window_log": [
+                record.to_artifact()
+                for record in self.post_refinement_flow_window_log
+            ],
+            "child_basin_state_log": [
+                record.to_artifact() for record in self.child_basin_state_log
             ],
             "native_route_candidate_log": [
                 record.to_artifact() for record in self.native_route_candidate_log
