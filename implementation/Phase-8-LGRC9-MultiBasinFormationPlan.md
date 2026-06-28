@@ -35,6 +35,7 @@ causal spark or boundary-birth event
 -> child-basin state records
 -> replay-backed persistence validator
 -> merge/leakage control matrix
+-> N25.2 scoped missing-mechanism bridge
 -> N26 handoff gate
 ```
 
@@ -416,15 +417,39 @@ or when an explicit parent port is not eligible.
 Add a corrected topology-growth visual companion that lowers a GRCL9V3
 front-growth source, schedules boundary birth only through
 `grcl9v3_front_growth_eligible_ports` and
-`grcl9v3_growth_parent_capacity_sources`, and saves saved-checkpoint visuals.
+`grcl9v3_growth_parent_capacity_sources`, and saves checkpoint visuals.
 This companion must be recorded beside, not instead of, the diagnostic
 saturated-sink topology-growth fixture from Iteration 88.
 
-### Iteration 89. Closeout And N26 Gate
+### Iteration 89. Closeout And N25.2 Transition Gate
 
-Close the extension only if runtime evidence, replay, controls, snapshot/load,
-telemetry, and claim boundaries pass. Record whether N26 may consume MB6 or
-must remain scoped to N25 BF5 / N25.1 requirements context.
+Before assigning the closeout ceiling, run a producer-compatibility validation
+over the producers added or exercised in this branch. The audit must confirm
+that producers remain in line with existing LGRC9V3 producer discipline and RC
+theory:
+
+```text
+producers may:
+  observe declared runtime-visible LGRC/RC surfaces;
+  record declared evidence;
+  schedule declared events for LGRC9V3 runtime transitions to consume.
+
+producers must not:
+  directly mutate coherence, topology, packet ledgers, child-basin records,
+  replay/control records, or claim flags;
+  inject semantic content or basin content from outside the reflexive loop;
+  act as third-party observers that manage formation success above the RC
+  reflexive mechanics;
+  turn producer-mediated scheduling into native support.
+```
+
+Only after that producer audit passes, close the extension if runtime evidence,
+replay, controls, snapshot/load, telemetry, and claim boundaries pass. Record
+the closeout as a transition back to a smaller N25.2 experiment before N26.
+N25.2 should show, more narrowly than N26, what N25 and N25.1 were missing and
+what this Phase 8 implementation tranche did or did not supply. N26 remains
+blocked from unscoped multi-basin substrate consumption unless MB6 is supported
+and the N25.2 bridge explicitly carries that result forward.
 
 ## Initial Baseline
 

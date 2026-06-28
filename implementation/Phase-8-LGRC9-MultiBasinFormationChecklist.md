@@ -34,7 +34,9 @@ requirements_contract != runtime_evidence
 - Producers may observe, record, and schedule only through declared producer
   surfaces. Mutation remains owned by LGRC9V3 runtime transitions.
 - Producer-assisted success cannot upgrade native rows.
-- N26 unscoped multi-basin consumption remains blocked unless MB6 passes.
+- N26 unscoped multi-basin consumption remains blocked unless MB6 passes and a
+  follow-up N25.2 bridge records what N25/N25.1 and this Phase 8 tranche still
+  leave unresolved.
 - Unsafe claim flags must stay false in every artifact.
 - Baseline freeze means no `src`, `specs`, `tests`, or `examples` behavior
   changes before the source-change envelope is opened and recorded.
@@ -885,26 +887,146 @@ git diff --check
 passed
 ```
 
-## Iteration 89. Closeout And N26 Gate
+## Iteration 89. Closeout And N25.2 Transition Gate
 
-Status: pending.
+Status: complete.
 
 ### Goal
 
-Close or block native multi-basin formation support and record N26 consumption
-rules.
+First validate that producers added or exercised in this branch remain
+compatible with existing LGRC9V3 producer discipline and RC theory. Then close
+or block native multi-basin formation support and record a scoped N25.2
+transition before any N26 handoff.
 
 ### Checks
 
-- [ ] Focused runtime, contract, telemetry, and example tests pass.
-- [ ] `git diff --check` passes.
-- [ ] Support flags are true only if positive replay and negative controls pass.
-- [ ] MB ladder ceiling is recorded.
-- [ ] N26 handoff is scoped:
+- [x] Producer compatibility audit passes before closeout classification.
+- [x] Every producer touched by this tranche declares observed runtime-visible
+      inputs, scheduled event kind, mutation owner, and forbidden direct
+      mutations.
+- [x] Producers observe, record, and schedule only through declared LGRC/RC
+      surfaces.
+- [x] Producers do not inject semantic content, basin content, hidden support,
+      or success criteria from outside the reflexive loop.
+- [x] Producers do not act as third-party observers that manage formation
+      content above the RC reflexive mechanics.
+- [x] Native LGRC capacity claims are not upgraded from producer-mediated
+      scheduling alone.
+- [x] Focused runtime, contract, telemetry, and example tests pass.
+- [x] `git diff --check` passes.
+- [x] Support flags are true only if positive replay and negative controls pass.
+- [x] MB ladder ceiling is recorded.
+- [x] N25.2 transition is scoped:
 
 ```text
-MB6 supported -> N26 may consume multi-basin substrate evidence.
-MB6 not supported -> N26 remains scoped to N25 BF5 / N25.1 requirements context.
+MB6 supported ->
+  N25.2 records how this tranche supplies the missing multi-basin mechanism
+  before N26 consumes unscoped multi-basin substrate evidence.
+
+MB6 not supported ->
+  N25.2 consumes N25 BF5, N25.1 requirements, Phase 8 MB5/I88-A evidence,
+  and remaining MB6 blockers to show what is still missing before N26.
 ```
 
-- [ ] Unsafe claims remain false.
+- [x] Unsafe claims remain false.
+
+### Artifacts
+
+- [`Phase-8-LGRC9-MultiBasinFormationCloseout.md`](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
+- [`Phase-8-LGRC9-MultiBasinFormationCloseout.json`](./Phase-8-LGRC9-MultiBasinFormationCloseout.json)
+
+### Producer Compatibility Audit
+
+The I89 audit validates the same producer/executor split used by prior
+LGRC9V3 Phase 8 work:
+
+```text
+producers observe declared runtime-visible LGRC/RC surfaces
+producers record declared evidence
+producers schedule declared work
+LGRC9V3 runtime transitions own mutation
+```
+
+Audited producers:
+
+```text
+packet_departure_from_flux_route
+packet_departure_from_route_surplus
+packet_departure_from_pulse_substrate_coupling
+packet_departure_from_feedback_eligibility
+boundary_birth_trial
+```
+
+The packet producers schedule packet-departure events from declared route,
+surface-lineage, feedback, or route-surplus evidence. Packet coherence mutation
+remains owned by packet event processing in `step()`.
+
+The boundary-birth producer schedules
+`lgrc9v3_causal_boundary_birth_trial` records. Topology mutation remains owned
+by `apply_causal_boundary_birth_trial(...)` when the runtime consumes the
+queued trial. In front-capacity mode the producer consumes:
+
+```text
+grcl9v3_front_growth_eligible_ports
+grcl9v3_growth_parent_capacity_sources
+```
+
+Partial or mismatched front-capacity metadata fails closed. No producer is
+allowed to inject semantic content, basin content, hidden support, or success
+criteria above the LGRC/RC runtime loop.
+
+### Closeout Result
+
+Supported ceiling:
+
+```text
+mb_ladder_ceiling = MB5_control_backed_native_multi_basin_formation_candidate
+mb5_control_backed_candidate_allowed = true
+```
+
+Blocked:
+
+```text
+MB6
+N26-ready unscoped multi-basin substrate evidence
+BF6
+independent new-basin formation as a general native capacity
+native support
+semantic learning
+semantic choice
+agency
+identity acceptance
+sentience
+organism/life
+ant ecology
+Phase 8 completion
+```
+
+N25.2 is the next scoped bridge before N26. Because MB6 is not supported,
+N25.2 should consume N25 BF5, N25.1 requirements, Phase 8 MB5/I88-A evidence,
+and the remaining MB6 blockers to state exactly what is still missing.
+
+### Verification
+
+```text
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py -q
+333 passed, 81 subtests passed
+
+.venv/bin/python -m pytest tests/visualization/test_visualization.py -q -k "lgrc9v3"
+5 passed, 63 deselected
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/multi_basin_formation_bundle.py
+passed
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/topology_birth_refinement_visual_bundle.py
+passed
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py
+passed
+
+.venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_contract.py src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/__init__.py src/pygrc/telemetry/lgrc9v3_contract.py src/pygrc/visualization/render.py src/pygrc/visualization/graph_render.py tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py tests/visualization/test_visualization.py examples/lgrc9v3/multi_basin_formation_bundle.py examples/lgrc9v3/topology_birth_refinement_visual_bundle.py examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py
+All checks passed
+
+git diff --check
+passed
+```

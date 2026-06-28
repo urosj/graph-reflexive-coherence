@@ -1250,6 +1250,7 @@ handoff as the current Phase 8 continuation index:
 - [`Phase-8-LGRC9-NativeRouteArbitrationCloseout.md`](./Phase-8-LGRC9-NativeRouteArbitrationCloseout.md)
 - [`Phase-8-LGRC9-MultiBasinFormationPlan.md`](./Phase-8-LGRC9-MultiBasinFormationPlan.md)
 - [`Phase-8-LGRC9-MultiBasinFormationChecklist.md`](./Phase-8-LGRC9-MultiBasinFormationChecklist.md)
+- [`Phase-8-LGRC9-MultiBasinFormationCloseout.md`](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
 
 Current N04 return target after the route-arbitration closeout:
 
@@ -1262,19 +1263,23 @@ semantic choice, agency, RC identity collapse, identity acceptance,
 locomotion-like behavior, biological behavior, unrestricted movement, or
 claim-promotion flags.
 
-The current N25.1-driven continuation is open as the multi-basin formation
-implementation tranche. Iteration 83 freezes the baseline in:
+The N25.1-driven multi-basin formation implementation tranche is closed at
+Iteration 89. Iteration 83 freezes the baseline in:
 
 ```text
 Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.md
 Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.json
 ```
 
-The baseline records that GRC9V3 already has child-stabilization source context
-through `evaluate_child_basin_stabilization(...)` and
-`hybrid_spark_completed`, while LGRC9V3 still lacks dedicated replayable
-multi-basin runtime surfaces. Native multi-basin formation, BF6, independent
-new-basin formation, native support, agency, semantic learning, semantic
-choice, sentience, ant ecology, and Phase 8 completion remain blocked until the
-multi-basin extension passes contract, runtime emission, replay, controls, and
-closeout.
+The closeout supports an MB5 control-backed native multi-basin formation
+candidate through default-off runtime surfaces, replay validation,
+merge/leakage controls, telemetry, visual examples, and a front-capacity-gated
+boundary-birth companion. It does not support MB6, N26-ready unscoped
+multi-basin substrate evidence, BF6, independent new-basin formation as a
+general native capacity, native support, agency, semantic learning, semantic
+choice, sentience, ant ecology, or Phase 8 completion.
+
+The next step is a scoped N25.2 bridge before N26. N25.2 should consume N25
+BF5, N25.1 requirements, Phase 8 MB5/I88-A evidence, and remaining MB6 blockers
+to state exactly what is still missing for N26-ready multi-basin substrate
+evidence.

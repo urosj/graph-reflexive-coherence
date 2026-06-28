@@ -1,0 +1,146 @@
+{
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false
+  },
+  "closed_iterations": [
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    "88-A",
+    89
+  ],
+  "date": "2026-06-28",
+  "mb_ladder_closeout": {
+    "mb5_control_backed_candidate_allowed": true,
+    "mb6_or_stronger_supported": false,
+    "native_lgrc_multi_basin_formation_supported": false,
+    "n26_unscoped_consumption_allowed": false,
+    "supported_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate"
+  },
+  "n25_2_transition": {
+    "next_step": "N25.2_scoped_missing_mechanism_bridge_before_N26",
+    "n25_2_consumes": [
+      "N25_BF5_scoped_native_and_producer_assisted_basin_formation_evidence",
+      "N25.1_multi_basin_requirement_and_missing_surface_inventory",
+      "Phase_8_MB5_control_backed_runtime_replay_control_evidence",
+      "Iteration_88_A_front_capacity_boundary_birth_companion_evidence",
+      "remaining_MB6_blockers"
+    ],
+    "n25_2_question": "what remains missing for N26-ready multi-basin substrate evidence after the Phase 8 MB5 tranche",
+    "n26_direct_consumption_allowed": false
+  },
+  "producer_compatibility_audit": {
+    "audited_producers": [
+      {
+        "direct_claim_write_allowed": false,
+        "direct_coherence_mutation_allowed": false,
+        "direct_topology_mutation_allowed": false,
+        "mutation_owner": "packet_event_processing_in_step",
+        "observed_runtime_surfaces": [
+          "causal_flux_routes",
+          "source_node_coherence",
+          "packet_ledger_event_queue"
+        ],
+        "producer_policy": "packet_departure_from_flux_route",
+        "scheduled_event_kind": "lgrc9v3_packet_departure"
+      },
+      {
+        "direct_claim_write_allowed": false,
+        "direct_coherence_mutation_allowed": false,
+        "direct_topology_mutation_allowed": false,
+        "mutation_owner": "packet_event_processing_in_step",
+        "observed_runtime_surfaces": [
+          "route_aspect_surplus_trigger_config",
+          "route_aspect_pole_mass",
+          "eligible_channel"
+        ],
+        "producer_policy": "packet_departure_from_route_surplus",
+        "scheduled_event_kind": "lgrc9v3_packet_departure"
+      },
+      {
+        "direct_claim_write_allowed": false,
+        "direct_coherence_mutation_allowed": false,
+        "direct_topology_mutation_allowed": false,
+        "mutation_owner": "packet_event_processing_in_step",
+        "observed_runtime_surfaces": [
+          "committed_causal_pulse_substrate_surface_row",
+          "surface_lineage_currentness",
+          "topology_state_reabsorption_record"
+        ],
+        "producer_policy": "packet_departure_from_pulse_substrate_coupling",
+        "scheduled_event_kind": "lgrc9v3_packet_departure"
+      },
+      {
+        "direct_claim_write_allowed": false,
+        "direct_coherence_mutation_allowed": false,
+        "direct_topology_mutation_allowed": false,
+        "mutation_owner": "packet_event_processing_in_step",
+        "observed_runtime_surfaces": [
+          "committed_feedback_eligibility_surface_row",
+          "feedback_coupled_pulse_config",
+          "surface_lineage_currentness"
+        ],
+        "producer_policy": "packet_departure_from_feedback_eligibility",
+        "scheduled_event_kind": "lgrc9v3_packet_departure"
+      },
+      {
+        "direct_claim_write_allowed": false,
+        "direct_coherence_mutation_allowed": false,
+        "direct_topology_mutation_allowed": false,
+        "front_capacity_partial_metadata_fails_closed": true,
+        "mutation_owner": "apply_causal_boundary_birth_trial_consumed_by_step",
+        "observed_runtime_surfaces": [
+          "causal_boundary_birth_allowed",
+          "causal_boundary_birth_policy",
+          "causal_boundary_birth_parent_eligibility",
+          "inactive_ports",
+          "outward_flux_pressure",
+          "grcl9v3_front_growth_eligible_ports",
+          "grcl9v3_growth_parent_capacity_sources"
+        ],
+        "producer_policy": "boundary_birth_trial",
+        "scheduled_event_kind": "lgrc9v3_causal_boundary_birth_trial"
+      }
+    ],
+    "native_capacity_upgraded_from_producer_schedule": false,
+    "producer_audit_status": "passed",
+    "producer_rule": "producers observe declared runtime-visible LGRC/RC surfaces, record evidence, and schedule declared work; LGRC9V3 runtime transitions own coherence, topology, packet-ledger, replay/control, and claim-state mutation",
+    "semantic_content_injection_allowed": false,
+    "third_party_observer_content_management_opened": false
+  },
+  "report_kind": "phase8_lgrc9_multi_basin_formation_closeout_v1",
+  "status": "closed",
+  "supported_capability": {
+    "front_capacity_boundary_birth_companion_available": true,
+    "merge_leakage_control_matrix_available": true,
+    "multi_basin_replay_validation_available": true,
+    "multi_basin_runtime_surfaces_exposed": true,
+    "support_scope": "MB5 control-backed candidate only; not MB6, not N26-ready unscoped multi-basin substrate evidence, not native support, agency, sentience, ant ecology, or Phase 8 completion"
+  },
+  "verification": {
+    "diff_check": "passed",
+    "diff_check_command": "git diff --check",
+    "examples": {
+      "front_capacity_topology_birth_visual_bundle": "passed",
+      "multi_basin_formation_bundle": "passed",
+      "topology_birth_refinement_visual_bundle": "passed"
+    },
+    "focused_suite_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py -q",
+    "focused_suite_result": "333 passed, 81 subtests passed",
+    "ruff_command": ".venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_contract.py src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/__init__.py src/pygrc/telemetry/lgrc9v3_contract.py src/pygrc/visualization/render.py src/pygrc/visualization/graph_render.py tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py tests/visualization/test_visualization.py examples/lgrc9v3/multi_basin_formation_bundle.py examples/lgrc9v3/topology_birth_refinement_visual_bundle.py examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py",
+    "ruff_result": "All checks passed",
+    "visualization_suite_command": ".venv/bin/python -m pytest tests/visualization/test_visualization.py -q -k \"lgrc9v3\"",
+    "visualization_suite_result": "5 passed, 63 deselected"
+  }
+}
