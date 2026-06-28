@@ -169,6 +169,10 @@ DEFAULT_LGRC9V3_RUN_OBSERVABLES: tuple[str, ...] = (
     "family_extensions.lgrc9v3.causal_spark_evaluation_index",
     "family_extensions.lgrc9v3.causal_spark_diagnostic_count",
     "family_extensions.lgrc9v3.topology_event_count",
+    "family_extensions.lgrc9v3.multi_basin_formation.child_basin_state_record_count",
+    "family_extensions.lgrc9v3.multi_basin_formation.clean_replay_record_count",
+    "family_extensions.lgrc9v3.multi_basin_formation.failed_closed_control_count",
+    "family_extensions.lgrc9v3.multi_basin_formation.failed_open_control_count",
 )
 
 

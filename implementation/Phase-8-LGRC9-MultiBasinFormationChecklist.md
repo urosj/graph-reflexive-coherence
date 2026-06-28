@@ -521,8 +521,8 @@ rejected, not that those blocker paths are positive evidence.
 ### Verification
 
 ```text
-.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin"
-17 passed, 151 deselected
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin or stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs"
+18 passed, 150 deselected
 
 .venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q
 168 passed
@@ -542,7 +542,7 @@ passed
 
 ## Iteration 88. Snapshot, Telemetry, Examples
 
-Status: pending.
+Status: complete.
 
 ### Goal
 
@@ -551,12 +551,339 @@ changing default runtime behavior.
 
 ### Checks
 
-- [ ] Default-off snapshots and telemetry remain backward-compatible.
-- [ ] Enabled snapshots preserve flow-window, child-basin, replay, and control
+- [x] Default-off snapshots and telemetry remain backward-compatible.
+- [x] Enabled snapshots preserve flow-window, child-basin, replay, and control
       records.
-- [ ] Enabled telemetry exports summaries only when policy/logs are active.
-- [ ] Add a focused example under `examples/lgrc9v3/`.
-- [ ] The example states what the extension does and what it is not.
+- [x] Enabled telemetry exports summaries only when policy/logs are active.
+- [x] Add a focused example under `examples/lgrc9v3/`.
+- [x] The example states what the extension does and what it is not.
+
+### Implementation Record
+
+- Added an optional `multi_basin_formation` LGRC9V3 telemetry family-extension
+  summary in `src/pygrc/telemetry/lgrc9v3_contract.py`.
+- Default-off telemetry remains backward-compatible: the summary and raw
+  multi-basin logs are absent when the policy is disabled and no logs exist.
+- Enabled telemetry emits compact counts, latest digests, replay/control
+  status counts, MB5 candidate admission, and explicit false stronger-claim
+  flags.
+- Graph checkpoints now carry the compact `multi_basin_formation` summary plus
+  the raw `post_refinement_flow_window_log`, `child_basin_state_log`,
+  `multi_basin_replay_validation_log`, and
+  `merge_leakage_control_matrix_log` only when the policy/logs are active.
+- Added LGRC9V3 default visual observable paths for child-basin count, clean
+  replay count, failed-closed control count, and failed-open control count.
+- Added
+  `examples/lgrc9v3/multi_basin_formation_bundle.py`, which runs the opt-in
+  route-arbitration -> flow-window -> child-basin -> replay -> control chain,
+  saves telemetry/checkpoint artifacts, and renders graph visuals from saved
+  checkpoints.
+- Added an explicit geometry note to the multi-basin bundle: this fixture is a
+  collapse/reabsorption telemetry/control example over an unchanged three-node
+  graph. Its two topology-history records are `lgrc9v3_causal_collapse`
+  collapse/reabsorption and packet-transport records with
+  `topology_mutated = false`; its child-basin state has
+  `child_basin_core_ids = [0]` and
+  `child_basin_membership_by_core = {"0": [0, 1, 2]}`.
+- Added
+  `examples/lgrc9v3/topology_birth_refinement_visual_bundle.py`, which uses
+  the existing saturated-sink boundary-birth/refinement path to save
+  initial/after-each-event checkpoints where topology visibly changes.
+- Updated `examples/lgrc9v3/README.md` to list the focused multi-basin bundle.
+  The README now distinguishes the MB telemetry/control bundle from the
+  topology-growth visualization bundle.
+
+Generated example artifacts are under:
+
+```text
+outputs/examples/lgrc9v3/lgrc9v3-multi-basin-formation-bundle/
+outputs/examples/lgrc9v3/lgrc9v3-topology-birth-refinement-visual-bundle/
+```
+
+### Interpretation
+
+Iteration 88 closes the snapshot/telemetry/example surface for the I85-I87
+multi-basin runtime records. The Phase-T-style telemetry extension exports the
+new surface only as an LGRC9V3 family-extension payload; the Phase-V-style
+visual bundle renders saved graph-checkpoint artifacts and does not inspect
+live runtime internals.
+
+The example summary records:
+
+```text
+flow_window_record_count = 1
+child_basin_state_record_count = 1
+replay_validation_record_count = 1
+control_record_count = 17
+failed_closed_control_count = 17
+failed_open_control_count = 0
+clean_replay_record_count = 1
+mb5_control_backed_candidate_allowed = true
+mb6_or_stronger_supported = false
+native_lgrc_multi_basin_formation_supported = false
+```
+
+The MB telemetry/control example is intentionally not a visible node-birth
+fixture:
+
+```text
+initial_node_count = 3
+final_node_count = 3
+initial_edge_count = 3
+final_edge_count = 3
+topology_history = [
+  lgrc9v3_causal_collapse / collapse_reabsorption / topology_mutated=false,
+  lgrc9v3_causal_collapse / packet_transport / topology_mutated=false,
+]
+child_basin_core_ids = [0]
+child_basin_membership_by_core = {"0": [0, 1, 2]}
+```
+
+The separate topology-growth visualization example records visible topology
+expansion through the existing boundary-birth/refinement path:
+
+```text
+checkpoint_node_counts = [10, 10, 11, 15]
+checkpoint_edge_counts = [9, 9, 10, 14]
+topology_event_kinds = [
+  "lgrc9v3_causal_boundary_birth",
+  "hybrid_mechanical_expansion",
+  "lgrc9v3_refinement_packet_transport",
+  "lgrc9v3_proper_time_inheritance",
+]
+```
+
+The I88 result supports telemetry and visualization readiness for:
+
+```text
+MB5 control-backed native multi-basin formation candidate
+```
+
+It still does not support:
+
+```text
+MB6
+N26-ready unscoped multi-basin substrate evidence
+BF6
+independent new-basin formation
+native support
+semantic learning
+agency
+identity acceptance
+sentience
+organism/life
+ant ecology
+Phase 8 completion
+```
+
+### Verification
+
+```text
+.venv/bin/python -m pytest tests/telemetry/test_lgrc9v3_contract.py -q
+8 passed
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/multi_basin_formation_bundle.py
+passed
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/topology_birth_refinement_visual_bundle.py
+passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin"
+17 passed, 151 deselected
+
+.venv/bin/python -m pytest tests/visualization/test_visualization.py -q -k "lgrc9v3"
+5 passed, 63 deselected
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/telemetry/test_lgrc9v3_contract.py -q
+309 passed, 81 subtests passed
+
+.venv/bin/python -m ruff check src/pygrc/telemetry/lgrc9v3_contract.py src/pygrc/visualization/render.py src/pygrc/visualization/graph_render.py tests/telemetry/test_lgrc9v3_contract.py tests/visualization/test_visualization.py examples/lgrc9v3/multi_basin_formation_bundle.py examples/lgrc9v3/topology_birth_refinement_visual_bundle.py
+All checks passed
+
+git diff --check
+passed
+```
+
+## Iteration 88-A. Front-Capacity-Gated Boundary Birth Companion
+
+Status: complete.
+
+### Goal
+
+Add a corrected LGRC9V3 boundary-birth path that can require GRCL9V3/GRC9V3
+front-capacity eligibility, then add a visual topology-growth example that uses
+that corrected path rather than the diagnostic saturated-sink fixture.
+
+### Checks
+
+- [x] Keep legacy inactive-port boundary birth as the default for backward
+      compatibility.
+- [x] Add explicit
+      `causal_boundary_birth_parent_eligibility =
+      legacy_any_inactive_port | grcl9v3_front_capacity`.
+- [x] Require `grcl9v3_front_capacity` mode to consume
+      `grcl9v3_front_growth_eligible_ports` and
+      `grcl9v3_growth_parent_capacity_sources`.
+- [x] Make missing front-capacity metadata fail closed.
+- [x] Reject explicit parent ports that are inactive but not front-capacity
+      eligible.
+- [x] Record front-capacity provenance in producer records and boundary-birth
+      event payloads.
+- [x] Add a corrected front-capacity topology-growth visual example.
+- [x] Preserve the diagnostic topology-growth fixture as diagnostic, not as the
+      corrected front-capacity result.
+- [x] Preserve MB6, native support, agency, semantic learning, sentience, ant
+      ecology, and Phase 8 completion blockers.
+
+### Implementation Record
+
+- Added LGRC9V3 causal-mode constants:
+
+```text
+LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT
+LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+```
+
+- Added default causal mode:
+
+```text
+causal_boundary_birth_parent_eligibility = legacy_any_inactive_port
+```
+
+- Updated LGRC9V3 causal-mode validation so active
+  `grcl9v3_front_capacity` parent eligibility requires
+  `causal_boundary_birth_allowed = true`.
+- Updated the LGRC9V3 boundary-birth producer so
+  `grcl9v3_front_capacity` mode filters inactive ports through the lowered
+  front-capacity cache:
+
+```text
+grcl9v3_front_growth_eligible_ports
+grcl9v3_growth_parent_capacity_sources
+```
+
+- Updated explicit boundary-birth execution so missing front-capacity metadata
+  returns:
+
+```text
+last_causal_boundary_birth_status = no_front_capacity_eligible_port
+```
+
+  and an explicitly supplied inactive but non-front-capacity port raises a
+  fail-closed state-transition error.
+- Tightened the front-capacity cache reader so an eligible-port entry without a
+  matching `grcl9v3_growth_parent_capacity_sources` record is treated as
+  incomplete metadata and fails closed rather than scheduling a birth.
+- Added front-capacity provenance to scheduled producer records and accepted
+  boundary-birth event payloads:
+
+```text
+parent_eligibility_mode = grcl9v3_front_capacity
+growth_parent_eligibility_mode = grcl9v3_front_capacity
+front_capacity_source = spark_expansion_front
+growth_parent_capacity_source = spark_expansion_front
+```
+
+- Added
+  `examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py`, which
+  lowers a GRCL9V3 front-growth source, consumes the lowered front-capacity
+  metadata, schedules one boundary-birth trial through the producer, executes
+  the trial, saves telemetry/checkpoint artifacts, and renders graph visuals.
+- Updated `examples/lgrc9v3/README.md` to distinguish:
+
+```text
+multi_basin_formation_bundle.py
+  collapse/reabsorption telemetry/control surface over unchanged graph
+
+topology_birth_refinement_visual_bundle.py
+  diagnostic visible topology-growth fixture using explicit/aggressive path
+
+front_capacity_topology_birth_visual_bundle.py
+  corrected front-capacity-gated visible topology-growth companion
+```
+
+Generated example artifacts are under:
+
+```text
+outputs/examples/lgrc9v3/lgrc9v3-front-capacity-topology-birth-visual-bundle/
+```
+
+### Interpretation
+
+Iteration 88-A resolves the immediate I88 visual ambiguity without relabeling
+the diagnostic fixture. LGRC9V3 still does not inherit GRC9V3 front capacity
+implicitly; it now has an explicit, opt-in boundary-birth parent-eligibility
+mode that consumes the GRCL9V3/GRC9V3 lowered front-capacity cache.
+
+The corrected visual companion records:
+
+```text
+causal_boundary_birth_parent_eligibility = grcl9v3_front_capacity
+front_capacity_source = spark_expansion_front
+scheduled_event_count = 1
+event_counts_by_kind = {"lgrc9v3_causal_boundary_birth": 1}
+checkpoint_node_counts = [13, 14]
+checkpoint_edge_counts = [12, 13]
+visible_topology_growth = true
+```
+
+This supports:
+
+```text
+front-capacity-gated LGRC9V3 boundary-birth producer/executor evidence
+corrected visible topology-growth visual companion
+```
+
+It does not support:
+
+```text
+MB6
+N26-ready unscoped multi-basin substrate evidence
+BF6
+independent new-basin formation
+native support
+semantic learning
+agency
+identity acceptance
+sentience
+organism/life
+ant ecology
+Phase 8 completion
+```
+
+### Verification
+
+```text
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q -k "causal_modes or boundary_birth"
+9 passed, 125 deselected, 12 subtests passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "causal_boundary_birth"
+7 passed, 163 deselected
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_autonomy_contract.py -q -k "boundary_birth"
+8 passed, 13 deselected
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py
+passed
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/topology_birth_refinement_visual_bundle.py
+passed
+
+PYTHONPATH=src .venv/bin/python examples/lgrc9v3/multi_basin_formation_bundle.py
+passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py -q
+333 passed, 81 subtests passed
+
+.venv/bin/python -m pytest tests/visualization/test_visualization.py -q -k "lgrc9v3"
+5 passed, 63 deselected
+
+.venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_contract.py src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/__init__.py tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py examples/lgrc9v3/topology_birth_refinement_visual_bundle.py examples/lgrc9v3/multi_basin_formation_bundle.py
+All checks passed
+
+git diff --check
+passed
+```
 
 ## Iteration 89. Closeout And N26 Gate
 

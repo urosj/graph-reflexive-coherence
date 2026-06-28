@@ -95,6 +95,12 @@ Phase 8 inputs:
 - [`Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md`](./Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md)
 - [`Phase-8-LGRC9-NativeRouteArbitrationCloseout.md`](./Phase-8-LGRC9-NativeRouteArbitrationCloseout.md)
 
+Telemetry and visualization inputs:
+
+- [`Phase-T-GRC9V3-TelemetryContract.md`](./Phase-T-GRC9V3-TelemetryContract.md)
+- [`Phase-V-GRC9V3-ImplementationPlan.md`](./Phase-V-GRC9V3-ImplementationPlan.md)
+- [`Phase-V-GraphEvolutionContract.md`](./Phase-V-GraphEvolutionContract.md)
+
 Source-code context:
 
 - `src/pygrc/models/grc_9_v3_sparks.py`
@@ -391,6 +397,28 @@ claim relabels.
 
 Persist and export the new surfaces only when the policy is enabled. Add a
 minimal example that states what the extension does and what it does not claim.
+When visual inspection would otherwise confuse collapse/reabsorption telemetry
+with visible node birth, add a separate topology-growth companion example
+using the existing boundary-birth/refinement path.
+Telemetry must remain under the LGRC9V3 family extension pattern established by
+Phase T, and visualization must consume saved telemetry/checkpoint artifacts in
+the Phase V style rather than reading live runtime internals.
+
+### Iteration 88-A. Front-Capacity-Gated Boundary Birth Companion
+
+Add LGRC9V3 front-capacity parent eligibility for causal boundary birth so the
+LGRC producer/executor path can consume the corrected GRCL9V3/GRC9V3
+front-growth surface instead of scanning any inactive port. Keep the legacy
+inactive-port behavior as the default for backward compatibility, and require
+`grcl9v3_front_capacity` to fail closed when front-capacity metadata is missing
+or when an explicit parent port is not eligible.
+
+Add a corrected topology-growth visual companion that lowers a GRCL9V3
+front-growth source, schedules boundary birth only through
+`grcl9v3_front_growth_eligible_ports` and
+`grcl9v3_growth_parent_capacity_sources`, and saves saved-checkpoint visuals.
+This companion must be recorded beside, not instead of, the diagnostic
+saturated-sink topology-growth fixture from Iteration 88.
 
 ### Iteration 89. Closeout And N26 Gate
 

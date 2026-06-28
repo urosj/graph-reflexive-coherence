@@ -167,6 +167,8 @@ from pygrc.models import (
     LGRC9V3_NATIVE_ROUTE_INTENT_COLLAPSE,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
     LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
     LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION,
     LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND,
     LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION,
@@ -1987,6 +1989,23 @@ class LGRC9V3ContractTest(unittest.TestCase):
             "derived_from_synchronous_step",
             modes["event_time_policy"],
         )
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
+            modes["causal_boundary_birth_parent_eligibility"],
+        )
+
+    def test_boundary_birth_front_capacity_eligibility_requires_enabled_birth(
+        self,
+    ) -> None:
+        with self.assertRaises(InvalidParamsError):
+            validate_lgrc9v3_causal_modes(
+                {
+                    "causal_boundary_birth_allowed": False,
+                    "causal_boundary_birth_parent_eligibility": (
+                        LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+                    ),
+                }
+            )
 
     def test_lgrc1_semicausal_fixed_topology_config_is_accepted(self) -> None:
         modes = validate_lgrc9v3_causal_modes(

@@ -1597,6 +1597,14 @@ class VisualizationTest(unittest.TestCase):
             "family_extensions.lgrc9v3.topology_event_count",
             visualization.DEFAULT_LGRC9V3_RUN_OBSERVABLES,
         )
+        self.assertIn(
+            "family_extensions.lgrc9v3.multi_basin_formation.child_basin_state_record_count",
+            visualization.DEFAULT_LGRC9V3_RUN_OBSERVABLES,
+        )
+        self.assertIn(
+            "family_extensions.lgrc9v3.multi_basin_formation.failed_closed_control_count",
+            visualization.DEFAULT_LGRC9V3_RUN_OBSERVABLES,
+        )
         self.assertEqual(
             "checkpoint/event row",
             render_module._trajectory_x_label("LGRC9V3"),

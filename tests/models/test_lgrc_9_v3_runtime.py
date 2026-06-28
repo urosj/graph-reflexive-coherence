@@ -32,6 +32,7 @@ from pygrc.models import (
     LGRC9V3,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EVENT_KIND,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EVENT_SCHEMA_VERSION,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX,
     LGRC9V3_AUTONOMOUS_PRODUCTION_LOG_KEY,
     LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_PACKET_DEPARTURE_FROM_FEEDBACK_ELIGIBILITY,
@@ -160,6 +161,16 @@ def _boundary_birth_params(*, enabled: bool = True) -> dict[str, object]:
                 LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX
             ),
         }
+    return params
+
+
+def _front_capacity_boundary_birth_params() -> dict[str, object]:
+    params = _boundary_birth_params()
+    causal_modes = dict(params["causal_modes"])  # type: ignore[index]
+    causal_modes["causal_boundary_birth_parent_eligibility"] = (
+        LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+    )
+    params["causal_modes"] = causal_modes
     return params
 
 
@@ -539,6 +550,26 @@ def _three_node_state() -> GRC9V3State:
 def _boundary_birth_state() -> GRC9V3State:
     state = _three_node_state()
     state.nodes[0] = GRC9V3NodeState(coherence=4.0)
+    return state
+
+
+def _front_capacity_boundary_birth_state() -> GRC9V3State:
+    state = _boundary_birth_state()
+    state.cached_quantities["grcl9v3_front_growth_eligible_ports"] = {"0": [3]}
+    state.cached_quantities["grcl9v3_growth_parent_capacity_sources"] = {
+        "0": {
+            "construct_id": "test-front-capacity-construct",
+            "growth_semantics": "front_capacity",
+            "front_capacity_source": "spark_expansion_front",
+            "inactive_parent_port": 3,
+        }
+    }
+    return state
+
+
+def _front_capacity_boundary_birth_state_without_source() -> GRC9V3State:
+    state = _boundary_birth_state()
+    state.cached_quantities["grcl9v3_front_growth_eligible_ports"] = {"0": [3]}
     return state
 
 
@@ -2843,6 +2874,98 @@ class LGRC9V3RuntimeTest(unittest.TestCase):
         self.assertEqual(payload["child_node_id"], restored["child_node_id"])
         runtime = model.snapshot()["dynamics"]["lgrc9v3_runtime"]
         self.assertEqual(1, len(runtime["topology_event_log"]))
+
+    def test_causal_boundary_birth_can_require_front_capacity_eligibility(
+        self,
+    ) -> None:
+        model = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        events = model.apply_causal_boundary_birth_trial(
+            parent_node_id=0,
+            parent_port_id=3,
+            outward_flux_pressure=2.0,
+            rng_sample=0.1,
+            event_time_key=4.0,
+            scheduler_event_index=4,
+        )
+
+        self.assertEqual(1, len(events))
+        payload = events[0].payload
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            payload["causal_boundary_birth_parent_eligibility"],
+        )
+        self.assertEqual(
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+            payload["growth_parent_eligibility_mode"],
+        )
+        self.assertEqual(
+            "spark_expansion_front",
+            payload["growth_parent_capacity_source"],
+        )
+
+    def test_causal_boundary_birth_front_capacity_rejects_missing_or_wrong_port(
+        self,
+    ) -> None:
+        missing = LGRC9V3.from_state(
+            _boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+
+        self.assertEqual(
+            [],
+            missing.apply_causal_boundary_birth_trial(
+                parent_node_id=0,
+                outward_flux_pressure=2.0,
+                rng_sample=0.1,
+                event_time_key=4.0,
+                scheduler_event_index=4,
+            ),
+        )
+        self.assertEqual(
+            "no_front_capacity_eligible_port",
+            missing.get_state().base_state.cached_quantities[
+                "last_causal_boundary_birth_status"
+            ],
+        )
+
+        partial_metadata = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state_without_source(),
+            _front_capacity_boundary_birth_params(),
+        )
+        self.assertEqual(
+            [],
+            partial_metadata.apply_causal_boundary_birth_trial(
+                parent_node_id=0,
+                outward_flux_pressure=2.0,
+                rng_sample=0.1,
+                event_time_key=4.0,
+                scheduler_event_index=4,
+            ),
+        )
+        self.assertEqual(
+            "no_front_capacity_eligible_port",
+            partial_metadata.get_state().base_state.cached_quantities[
+                "last_causal_boundary_birth_status"
+            ],
+        )
+
+        wrong_port = LGRC9V3.from_state(
+            _front_capacity_boundary_birth_state(),
+            _front_capacity_boundary_birth_params(),
+        )
+        with self.assertRaises(InvalidStateTransitionError):
+            wrong_port.apply_causal_boundary_birth_trial(
+                parent_node_id=0,
+                parent_port_id=4,
+                outward_flux_pressure=2.0,
+                rng_sample=0.1,
+                event_time_key=4.0,
+                scheduler_event_index=4,
+            )
 
     def test_causal_boundary_birth_rejects_when_rng_does_not_accept(self) -> None:
         model = LGRC9V3.from_state(

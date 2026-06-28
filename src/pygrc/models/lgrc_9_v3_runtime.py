@@ -84,6 +84,8 @@ from .lgrc_9_v3_contract import (
     LGRC9V3_AUTONOMY_MODE_VERSION,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCE_PARENT_DEBIT,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EDGE_DELAY_POLICY_EXPLICIT_OR_TAU0,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+    LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
     LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX,
     LGRC9V3_CAUSAL_PULSE_SUBSTRATE_KIND_FEEDBACK_ELIGIBILITY,
     LGRC9V3_CAUSAL_PULSE_SUBSTRATE_KIND_ROUTE_LOCAL_PULSE_CONTACT,
@@ -7372,6 +7374,97 @@ class LGRC9V3(GRCModel):
             if trial.get("parent_port_id") is not None
         )
 
+    def _boundary_birth_parent_eligibility_mode(self) -> str:
+        return str(
+            self._state.causal_modes.get(
+                "causal_boundary_birth_parent_eligibility",
+                LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
+            )
+        )
+
+    def _front_capacity_eligible_ports(self) -> dict[int, tuple[int, ...]]:
+        raw = self._state.base_state.cached_quantities.get(
+            "grcl9v3_front_growth_eligible_ports",
+            {},
+        )
+        if not isinstance(raw, Mapping):
+            return {}
+        raw_sources = self._state.base_state.cached_quantities.get(
+            "grcl9v3_growth_parent_capacity_sources",
+            {},
+        )
+        if not isinstance(raw_sources, Mapping):
+            return {}
+        result: dict[int, tuple[int, ...]] = {}
+        for raw_node_id, ports in raw.items():
+            if isinstance(raw_node_id, bool):
+                continue
+            try:
+                node_id = int(raw_node_id)
+            except (TypeError, ValueError):
+                continue
+            if not self._state.base_state.topology.has_node(node_id):
+                continue
+            source_record = raw_sources.get(str(node_id)) or raw_sources.get(node_id)
+            if not isinstance(source_record, Mapping):
+                continue
+            source_record_port = source_record.get("inactive_parent_port")
+            if isinstance(source_record_port, bool) or not isinstance(
+                source_record_port,
+                int,
+            ):
+                continue
+            activation_step = source_record.get("front_activation_step_index")
+            if (
+                isinstance(activation_step, int)
+                and self._state.base_state.step_index < activation_step
+            ):
+                continue
+            if not isinstance(ports, Sequence) or isinstance(ports, str | bytes):
+                continue
+            clean_ports: list[int] = []
+            for port in ports:
+                if isinstance(port, bool) or not isinstance(port, int):
+                    continue
+                if port == source_record_port and 1 <= port <= 9:
+                    clean_ports.append(port)
+            if clean_ports:
+                result[node_id] = tuple(sorted(set(clean_ports)))
+        return result
+
+    def _front_capacity_source(self, *, parent_node_id: int, parent_port_id: int) -> str:
+        raw = self._state.base_state.cached_quantities.get(
+            "grcl9v3_growth_parent_capacity_sources",
+            {},
+        )
+        if not isinstance(raw, Mapping):
+            return "missing_front_capacity_source"
+        record = raw.get(str(parent_node_id)) or raw.get(parent_node_id)
+        if not isinstance(record, Mapping):
+            return "missing_front_capacity_source"
+        record_port = record.get("inactive_parent_port")
+        if isinstance(record_port, int) and int(record_port) != int(parent_port_id):
+            return "wrong_front_capacity_port"
+        source = record.get("front_capacity_source")
+        return str(source) if source is not None else "unknown"
+
+    def _boundary_birth_capacity_source(
+        self,
+        *,
+        parent_node_id: int,
+        parent_port_id: int,
+        parent_eligibility_mode: str,
+    ) -> str:
+        if (
+            parent_eligibility_mode
+            == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT
+        ):
+            return parent_eligibility_mode
+        return self._front_capacity_source(
+            parent_node_id=parent_node_id,
+            parent_port_id=parent_port_id,
+        )
+
     def _produce_boundary_birth_trials(
         self,
         *,
@@ -7434,10 +7527,25 @@ class LGRC9V3(GRCModel):
 
         candidates: list[tuple[int, int, float, float, str]] = []
         skipped_count = 0
+        parent_eligibility_mode = self._boundary_birth_parent_eligibility_mode()
+        front_capacity_ports = (
+            self._front_capacity_eligible_ports()
+            if parent_eligibility_mode
+            == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+            else {}
+        )
         for parent_node_id in sorted(
             self._state.base_state.topology.iter_live_node_ids()
         ):
             inactive_ports = self._inactive_port_ids(int(parent_node_id))
+            if (
+                parent_eligibility_mode
+                == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+            ):
+                eligible_ports = front_capacity_ports.get(int(parent_node_id), ())
+                inactive_ports = tuple(
+                    port_id for port_id in inactive_ports if port_id in eligible_ports
+                )
             if not inactive_ports:
                 continue
             outward_flux = self._outward_flux_pressure(int(parent_node_id))
@@ -7473,7 +7581,13 @@ class LGRC9V3(GRCModel):
                             "birth_probability": birth_probability,
                         },
                         observed_evidence={
+                            "parent_eligibility_mode": parent_eligibility_mode,
                             "parent_port_id": parent_port_id,
+                            "front_capacity_source": self._boundary_birth_capacity_source(
+                                parent_node_id=int(parent_node_id),
+                                parent_port_id=parent_port_id,
+                                parent_eligibility_mode=parent_eligibility_mode,
+                            ),
                             "outward_flux_pressure": outward_flux,
                             "queued_trial_exists": True,
                         },
@@ -7500,6 +7614,7 @@ class LGRC9V3(GRCModel):
                     observed_evidence={
                         "lambda_birth": lambda_birth,
                         "eligible_parent_count": 0,
+                        "parent_eligibility_mode": parent_eligibility_mode,
                     },
                 )
             )
@@ -7563,7 +7678,13 @@ class LGRC9V3(GRCModel):
                             "rng_sample": rng_sample,
                         },
                         observed_evidence={
+                            "parent_eligibility_mode": parent_eligibility_mode,
                             "parent_port_id": parent_port_id,
+                            "front_capacity_source": self._boundary_birth_capacity_source(
+                                parent_node_id=parent_node_id,
+                                parent_port_id=parent_port_id,
+                                parent_eligibility_mode=parent_eligibility_mode,
+                            ),
                             "outward_flux_pressure": outward_flux,
                             "tau_0": 1.0,
                             "birth_acceptance_deferred_to_step": True,
@@ -8138,19 +8259,52 @@ class LGRC9V3(GRCModel):
             raise InvalidStateTransitionError("parent_node_id is not live")
 
         inactive_ports = self._inactive_port_ids(resolved_parent_id)
+        parent_eligibility_mode = self._boundary_birth_parent_eligibility_mode()
+        front_capacity_ports = (
+            self._front_capacity_eligible_ports()
+            if parent_eligibility_mode
+            == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+            else {}
+        )
+        if (
+            parent_eligibility_mode
+            == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+        ):
+            eligible_ports = front_capacity_ports.get(resolved_parent_id, ())
+            inactive_ports = tuple(
+                port_id for port_id in inactive_ports if port_id in eligible_ports
+            )
         if parent_port_id is None:
             if not inactive_ports:
+                status = (
+                    "no_front_capacity_eligible_port"
+                    if parent_eligibility_mode
+                    == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+                    else "no_inactive_port"
+                )
                 base_state.cached_quantities[
                     "last_causal_boundary_birth_status"
-                ] = "no_inactive_port"
+                ] = status
                 return []
             resolved_parent_port_id = inactive_ports[0]
         else:
             resolved_parent_port_id = int(parent_port_id)
             if resolved_parent_port_id not in inactive_ports:
+                if (
+                    parent_eligibility_mode
+                    == LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY
+                ):
+                    raise InvalidStateTransitionError(
+                        "parent_port_id must be front-capacity eligible"
+                    )
                 raise InvalidStateTransitionError(
                     "parent_port_id must be an inactive canonical 1..9 port"
                 )
+        front_capacity_source = self._boundary_birth_capacity_source(
+            parent_node_id=resolved_parent_id,
+            parent_port_id=resolved_parent_port_id,
+            parent_eligibility_mode=parent_eligibility_mode,
+        )
 
         lambda_birth = float(self._params.evolution.get("lambda_birth", 0.0))
         if lambda_birth <= 0.0:
@@ -8323,6 +8477,10 @@ class LGRC9V3(GRCModel):
             "causal_boundary_birth_policy": (
                 LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX
             ),
+            "causal_boundary_birth_parent_eligibility": parent_eligibility_mode,
+            "growth_parent_eligibility_mode": parent_eligibility_mode,
+            "growth_parent_capacity_source": front_capacity_source,
+            "front_capacity_source": front_capacity_source,
             "causal_boundary_birth_coherence_source": (
                 LGRC9V3_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCE_PARENT_DEBIT
             ),

@@ -290,6 +290,12 @@ LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_DISABLED: Final[str] = "disabled"
 LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX: Final[str] = (
     "grc9v3_outward_flux_probability"
 )
+LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT: Final[str] = (
+    "legacy_any_inactive_port"
+)
+LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY: Final[str] = (
+    "grcl9v3_front_capacity"
+)
 LGRC9V3_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCE_PARENT_DEBIT: Final[str] = (
     "parent_debit"
 )
@@ -680,6 +686,14 @@ _ALLOWED_CAUSAL_BOUNDARY_BIRTH_POLICIES: Final[frozenset[str]] = frozenset(
         LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_DISABLED,
         LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX,
     }
+)
+_ALLOWED_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITIES: Final[frozenset[str]] = (
+    frozenset(
+        {
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT,
+            LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY,
+        }
+    )
 )
 _ALLOWED_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCES: Final[frozenset[str]] = (
     frozenset({LGRC9V3_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCE_PARENT_DEBIT})
@@ -1713,6 +1727,9 @@ LGRC9V3_DEFAULT_CAUSAL_MODES: Final[dict[str, Any]] = {
     "require_fixed_topology_for_lgrc2": True,
     "causal_boundary_birth_allowed": False,
     "causal_boundary_birth_policy": LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_DISABLED,
+    "causal_boundary_birth_parent_eligibility": (
+        LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT
+    ),
     "causal_boundary_birth_coherence_source": (
         LGRC9V3_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCE_PARENT_DEBIT
     ),
@@ -1850,6 +1867,11 @@ def validate_lgrc9v3_causal_modes(
         key="causal_boundary_birth_policy",
         allowed=_ALLOWED_CAUSAL_BOUNDARY_BIRTH_POLICIES,
     )
+    boundary_birth_parent_eligibility = _require_choice(
+        resolved,
+        key="causal_boundary_birth_parent_eligibility",
+        allowed=_ALLOWED_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITIES,
+    )
     _require_choice(
         resolved,
         key="causal_boundary_birth_coherence_source",
@@ -1874,6 +1896,15 @@ def validate_lgrc9v3_causal_modes(
     ):
         raise InvalidParamsError(
             "active causal_boundary_birth_policy requires "
+            "causal_boundary_birth_allowed=true"
+        )
+    if (
+        not boundary_birth_allowed
+        and boundary_birth_parent_eligibility
+        != LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT
+    ):
+        raise InvalidParamsError(
+            "active causal_boundary_birth_parent_eligibility requires "
             "causal_boundary_birth_allowed=true"
         )
     topology_integration_allowed = resolved["causal_topology_integration_allowed"]
@@ -7887,6 +7918,8 @@ __all__ = [
     'LGRC9V3_CAUSAL_ARTIFACT_SCHEMA_VERSION',
     'LGRC9V3_CAUSAL_BOUNDARY_BIRTH_COHERENCE_SOURCE_PARENT_DEBIT',
     'LGRC9V3_CAUSAL_BOUNDARY_BIRTH_EDGE_DELAY_POLICY_EXPLICIT_OR_TAU0',
+    'LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_GRCL9V3_FRONT_CAPACITY',
+    'LGRC9V3_CAUSAL_BOUNDARY_BIRTH_PARENT_ELIGIBILITY_LEGACY_ANY_INACTIVE_PORT',
     'LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_DISABLED',
     'LGRC9V3_CAUSAL_BOUNDARY_BIRTH_POLICY_GRC9V3_OUTWARD_FLUX',
     'LGRC9V3_CAUSAL_MODES_KEY',

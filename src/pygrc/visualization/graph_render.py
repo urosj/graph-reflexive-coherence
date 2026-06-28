@@ -647,7 +647,7 @@ def _edge_width(edge_record: Mapping[str, Any], *, context: _GraphRenderContext)
 def _structural_edge_color(
     edge_record: Mapping[str, Any], *, context: _GraphRenderContext
 ) -> str:
-    value = abs(float(edge_record.get("base_conductance", 0.0)))
+    value = _edge_base_conductance(edge_record)
     normalized = min(max(value / context.conductance_max, 0.0), 1.0)
     rgba = colormaps["Greys"](0.30 + 0.40 * normalized)
     return mpl_colors.to_hex(rgba)
@@ -656,9 +656,18 @@ def _structural_edge_color(
 def _structural_edge_width(
     edge_record: Mapping[str, Any], *, context: _GraphRenderContext
 ) -> float:
-    value = abs(float(edge_record.get("base_conductance", 0.0)))
+    value = _edge_base_conductance(edge_record)
     normalized = min(max(value / context.conductance_max, 0.0), 1.0)
     return 0.7 + 2.1 * normalized
+
+
+def _edge_base_conductance(edge_record: Mapping[str, Any]) -> float:
+    """Return finite base conductance, treating unavailable values as absent."""
+
+    raw_value = edge_record.get("base_conductance")
+    if _is_finite_number(raw_value):
+        return abs(float(raw_value))
+    return 0.0
 
 
 def _draw_flow_overlays(
@@ -856,8 +865,10 @@ def _render_final_graph_html(
     )
     network.toggle_physics(False)
 
+    live_node_ids: set[int] = set()
     for node_record in checkpoint.node_records:
         node_id = int(node_record["node_id"])
+        live_node_ids.add(node_id)
         x_value, y_value = positions[node_id]
         border_width = _node_linewidth(node_record, checkpoint=checkpoint)
         border_color = _node_edgecolor(node_record, checkpoint=checkpoint)
@@ -902,6 +913,8 @@ def _render_final_graph_html(
         checkpoint,
         positions=positions,
     ):
+        if int(source_node_id) not in live_node_ids or int(target_node_id) not in live_node_ids:
+            continue
         network.add_edge(
             int(source_node_id),
             int(target_node_id),
@@ -920,6 +933,8 @@ def _render_final_graph_html(
         target_node_id = packet.get("target_node_id")
         if not _is_int_like(source_node_id) or not _is_int_like(target_node_id):
             continue
+        if int(source_node_id) not in live_node_ids or int(target_node_id) not in live_node_ids:
+            continue
         network.add_edge(
             int(source_node_id),
             int(target_node_id),
@@ -936,6 +951,8 @@ def _render_final_graph_html(
             continue
         collapsed_sink_id = node_record.get("collapsed_sink_id")
         if not _is_int_like(collapsed_sink_id):
+            continue
+        if int(collapsed_sink_id) not in live_node_ids:
             continue
         network.add_edge(
             int(node_record["node_id"]),
