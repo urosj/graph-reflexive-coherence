@@ -973,11 +973,14 @@ refinement_packet_transport_is_identity_transfer = false
 
 ### LGRC-3: Default-Off Multi-Basin Formation Contract
 
-The N25.1-driven Phase 8 continuation defines a default-off contract surface for
-multi-basin formation from causal refinement. The contract does not emit runtime
-evidence by itself. It freezes the artifact names, policy flags, digest fields,
-and fail-closed guards required before LGRC9V3 can expose replayable
-multi-basin formation evidence.
+The N25.1-driven Phase 8 continuation first defined a default-off contract
+surface for multi-basin formation from causal refinement. The requirement bridge
+itself did not emit runtime evidence. Phase 8 Iterations 83-89 now implement
+that contract as runtime-visible LGRC9V3 surfaces and close at MB5:
+control-backed native multi-basin formation candidate evidence. MB6,
+N26-ready unscoped multi-basin substrate evidence, BF6, native support, agency,
+semantic learning, semantic choice, sentience, ant ecology, and Phase 8
+completion remain blocked.
 
 Default flags:
 

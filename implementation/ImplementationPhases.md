@@ -235,6 +235,15 @@ Phase 8 LGRC9 time-scoped lineage replay closeout:
 Phase 8 LGRC9 native route-arbitration closeout:
 [Phase-8-LGRC9-NativeRouteArbitrationCloseout.md](./Phase-8-LGRC9-NativeRouteArbitrationCloseout.md)
 
+Phase 8 LGRC9 multi-basin formation continuation plan:
+[Phase-8-LGRC9-MultiBasinFormationPlan.md](./Phase-8-LGRC9-MultiBasinFormationPlan.md)
+
+Phase 8 LGRC9 multi-basin formation continuation checklist:
+[Phase-8-LGRC9-MultiBasinFormationChecklist.md](./Phase-8-LGRC9-MultiBasinFormationChecklist.md)
+
+Phase 8 LGRC9 multi-basin formation closeout:
+[Phase-8-LGRC9-MultiBasinFormationCloseout.md](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
+
 LGRC9V3 executable target specification:
 [lgrc-9-v3-spec.md](../specs/lgrc-9-v3-spec.md)
 
