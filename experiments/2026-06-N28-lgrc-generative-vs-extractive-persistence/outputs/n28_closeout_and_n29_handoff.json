@@ -1,0 +1,388 @@
+{
+  "acceptance_state": "accepted_n28_c6_closeout_n29_handoff_ready",
+  "all_artifact_sha256_match_file_contents": true,
+  "ant_ecology_implementation_supported": false,
+  "ap4_nat4_gap_resolved": false,
+  "ap5_nat4_gap_resolved": false,
+  "artifact_id": "n28_closeout_and_n29_handoff",
+  "artifact_manifest": [
+    {
+      "artifact_role": "source_lineage_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/source_lineage_trace.json",
+      "sha256": "e66e3edd889af48b78b300c7df207a61a6e869e046fe75ad18e47f71b893cab8"
+    },
+    {
+      "artifact_role": "claim_boundary_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/claim_boundary_trace.json",
+      "sha256": "f74d6eac7bf963957c25fa0dd3de255c6d113db6a3ffca3a550750b3eafa3402"
+    },
+    {
+      "artifact_role": "closeout_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/closeout_trace.json",
+      "sha256": "cf31912b8a1c7f04e275913aa40944731c46275ae3e350da68e654dfdfee4d97"
+    },
+    {
+      "artifact_role": "n29_handoff_record",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/n29_handoff_record.json",
+      "sha256": "e3111c28cda91da18b9718c436972089c13bf305c9fabeabd0e349cf82d3bcb5"
+    }
+  ],
+  "broad_margin_robustness_supported": false,
+  "checks": [
+    {
+      "check_id": "i7_classification_passed_and_ready_for_i8",
+      "detail": "accepted_ge5_controls_ap_claim_classification_pending_i8_closeout",
+      "passed": true
+    },
+    {
+      "check_id": "i7_output_digest_matches_expected",
+      "detail": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+      "passed": true
+    },
+    {
+      "check_id": "ge5_supported_before_closeout",
+      "detail": "N28-C5_replay_control_stress_backed_generative_extractive_candidate_supported",
+      "passed": true
+    },
+    {
+      "check_id": "paired_regime_basis_present",
+      "detail": {
+        "ap4_nat4_gap_resolved": false,
+        "ap5_nat4_gap_resolved": false,
+        "broad_margin_robustness_supported": false,
+        "classification_row_count": 10,
+        "competitive_neutral_contrast_row_count": 4,
+        "extractive_contrast_row_count": 3,
+        "final_n28_supported": false,
+        "focused_margin_row_count": 2,
+        "ge5_supported": true,
+        "ge6_supported": false,
+        "generative_row_count": 3,
+        "shared_regime_policy_status": "supported",
+        "trace_id": "n28_i7_controls_ap_claim_classification_summary"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "same_rule_classification_supported",
+      "detail": {
+        "label_specific_thresholds_used": false,
+        "policy_retuned_for_label": false,
+        "shared_regime_policy_status": "supported"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "focused_margin_not_promoted_to_broad_robustness",
+      "detail": {
+        "broad_margin_robustness_supported": false,
+        "order_of_magnitude_robustness_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_gaps_preserved",
+      "detail": {
+        "ap4_nat4_gap_resolved": false,
+        "ap5_nat4_gap_resolved": false,
+        "native_ap5_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_implementation_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "broad_margin_robustness_claim_allowed": false,
+        "choice_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ant_agency_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_colony_agency_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "order_of_magnitude_robustness_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_substrate_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n29_handoff_present_and_bounded",
+      "detail": {
+        "consumed_i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+        "handoff_id": "n28_to_n29_bounded_generative_extractive_persistence_handoff",
+        "n28_final_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+        "n28_final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+        "n29_may_consume_as": [
+          "bounded_artifact_level_generative_extractive_persistence_evidence",
+          "paired_generative_extractive_competitive_neutral_regime_separation",
+          "claim_clean_environment_exchange_capacity_context",
+          "same_policy_transition_surface_context",
+          "focused_current_multiplier_margin_context",
+          "margin_bottleneck_diagnostic_context",
+          "ap4_ap5_gap_records_for_dependency_tracking"
+        ],
+        "n29_must_not_consume_as": [
+          "semantic_cooperation",
+          "semantic_choice",
+          "semantic_goal_ownership",
+          "semantic_learning",
+          "agency",
+          "native_support",
+          "sentience",
+          "organism_life",
+          "ant_ecology_implementation",
+          "native_ant_agency",
+          "native_colony_agency",
+          "Phase_8_completion",
+          "native_AP5",
+          "AP5_NAT4_gap_resolution",
+          "broad_margin_robustness",
+          "order_of_magnitude_robustness",
+          "unscoped_multi_basin_substrate"
+        ],
+        "n29_starting_question": "Can bounded generative/extractive persistence become a claim-clean bridge into agentic ecology without relabeling persistence, environment exchange, or medium effects as semantic agency?",
+        "required_n29_starting_controls": [
+          "generative_extractive_evidence_as_semantic_cooperation_control",
+          "environment_exchange_as_agency_control",
+          "focused_margin_as_broad_robustness_control",
+          "ap4_ap5_gap_erasure_control",
+          "ant_ecology_specification_by_relabel_control",
+          "native_support_by_persistence_relabel_control",
+          "phase8_completion_by_handoff_relabel_control"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "closeout_artifacts_present",
+      "detail": [
+        {
+          "artifact_role": "source_lineage_trace",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/source_lineage_trace.json",
+          "sha256": "e66e3edd889af48b78b300c7df207a61a6e869e046fe75ad18e47f71b893cab8"
+        },
+        {
+          "artifact_role": "claim_boundary_trace",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/claim_boundary_trace.json",
+          "sha256": "f74d6eac7bf963957c25fa0dd3de255c6d113db6a3ffca3a550750b3eafa3402"
+        },
+        {
+          "artifact_role": "closeout_trace",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/closeout_trace.json",
+          "sha256": "cf31912b8a1c7f04e275913aa40944731c46275ae3e350da68e654dfdfee4d97"
+        },
+        {
+          "artifact_role": "n29_handoff_record",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff_artifacts/n29_handoff_record.json",
+          "sha256": "e3111c28cda91da18b9718c436972089c13bf305c9fabeabd0e349cf82d3bcb5"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": [],
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "final_claim_ceiling": "bounded artifact-level generative/extractive persistence evidence over LGRC-visible focal-basin and neighborhood capacity traces",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_implementation_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "broad_margin_robustness_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_ant_agency_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_colony_agency_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "order_of_magnitude_robustness_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_cooperation_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_substrate_claim_allowed": false
+    }
+  },
+  "claim_boundary_trace": {
+    "ant_ecology_implementation_supported": false,
+    "ap4_nat4_gap_resolved": false,
+    "ap5_nat4_gap_resolved": false,
+    "broad_margin_robustness_supported": false,
+    "final_claim_ceiling": "bounded artifact-level generative/extractive persistence evidence over LGRC-visible focal-basin and neighborhood capacity traces",
+    "ge6_is_handoff_rung_not_agency_claim": true,
+    "native_ap5_supported": false,
+    "native_support_supported": false,
+    "order_of_magnitude_robustness_supported": false,
+    "phase8_completion_supported": false,
+    "trace_id": "n28_i8_claim_boundary_trace",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_implementation_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "broad_margin_robustness_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_ant_agency_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_colony_agency_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "order_of_magnitude_robustness_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_cooperation_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_substrate_claim_allowed": false
+    }
+  },
+  "claim_boundary_trace_digest": "8392985ba0ae212ba66c1c8233582558fa32c3e8c5f778c36f86cb1eec8b7029",
+  "closeout_trace": {
+    "final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+    "final_n28_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+    "focused_margin_context_preserved": true,
+    "focused_margin_promoted_to_broad_robustness": false,
+    "i7_acceptance_state": "accepted_ge5_controls_ap_claim_classification_pending_i8_closeout",
+    "i7_ge5_supported": true,
+    "i7_ge6_supported_before_closeout": false,
+    "i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+    "paired_regime_evidence_present": true,
+    "ready_for_n29": true,
+    "same_rule_classification_status": "supported",
+    "trace_id": "n28_i8_closeout_trace"
+  },
+  "closeout_trace_digest": "520824b304fa59414a908e3a8c666c24a9cee0bd07243eb352f47931f7bd93ce",
+  "command": ".venv/bin/python experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/scripts/build_n28_closeout_and_n29_handoff.py",
+  "controls_ap_dependency_claim_classification_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+  "experiment": "N28",
+  "failed_checks": [],
+  "final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+  "final_n28_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+  "final_n28_supported": true,
+  "final_supported_status": "bounded_artifact_level_generative_extractive_persistence_evidence",
+  "ge5_or_stronger_supported": true,
+  "ge6_or_stronger_supported": true,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "8",
+  "n28_closeout_supported": true,
+  "n29_handoff": {
+    "consumed_i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+    "handoff_id": "n28_to_n29_bounded_generative_extractive_persistence_handoff",
+    "n28_final_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+    "n28_final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+    "n29_may_consume_as": [
+      "bounded_artifact_level_generative_extractive_persistence_evidence",
+      "paired_generative_extractive_competitive_neutral_regime_separation",
+      "claim_clean_environment_exchange_capacity_context",
+      "same_policy_transition_surface_context",
+      "focused_current_multiplier_margin_context",
+      "margin_bottleneck_diagnostic_context",
+      "ap4_ap5_gap_records_for_dependency_tracking"
+    ],
+    "n29_must_not_consume_as": [
+      "semantic_cooperation",
+      "semantic_choice",
+      "semantic_goal_ownership",
+      "semantic_learning",
+      "agency",
+      "native_support",
+      "sentience",
+      "organism_life",
+      "ant_ecology_implementation",
+      "native_ant_agency",
+      "native_colony_agency",
+      "Phase_8_completion",
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "broad_margin_robustness",
+      "order_of_magnitude_robustness",
+      "unscoped_multi_basin_substrate"
+    ],
+    "n29_starting_question": "Can bounded generative/extractive persistence become a claim-clean bridge into agentic ecology without relabeling persistence, environment exchange, or medium effects as semantic agency?",
+    "required_n29_starting_controls": [
+      "generative_extractive_evidence_as_semantic_cooperation_control",
+      "environment_exchange_as_agency_control",
+      "focused_margin_as_broad_robustness_control",
+      "ap4_ap5_gap_erasure_control",
+      "ant_ecology_specification_by_relabel_control",
+      "native_support_by_persistence_relabel_control",
+      "phase8_completion_by_handoff_relabel_control"
+    ]
+  },
+  "native_ap5_supported": false,
+  "native_support_supported": false,
+  "order_of_magnitude_robustness_supported": false,
+  "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+  "paired_regime_evidence_status": "supported",
+  "paired_regime_summary": {
+    "ap4_nat4_gap_resolved": false,
+    "ap5_nat4_gap_resolved": false,
+    "broad_margin_robustness_supported": false,
+    "classification_row_count": 10,
+    "competitive_neutral_contrast_row_count": 4,
+    "extractive_contrast_row_count": 3,
+    "final_n28_supported": false,
+    "focused_margin_row_count": 2,
+    "ge5_supported": true,
+    "ge6_supported": false,
+    "generative_row_count": 3,
+    "shared_regime_policy_status": "supported",
+    "trace_id": "n28_i7_controls_ap_claim_classification_summary"
+  },
+  "phase8_completion_supported": false,
+  "purpose": "Close N28 and hand bounded generative/extractive persistence evidence to N29.",
+  "ready_for_n29": true,
+  "same_rule_classification_status": "supported",
+  "schema_version": "1.0",
+  "source_lineage_trace": {
+    "i7_artifact_manifest_count": 11,
+    "i7_classification_row_count": 10,
+    "i7_expected_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+    "i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+    "i7_output_digest_matches_expected": true,
+    "i7_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_controls_ap_dependency_claim_classification.json",
+    "i7_source_record_count": 10,
+    "probe_digests_checked_in_i7": true,
+    "source_digests_checked_in_i7": true,
+    "trace_id": "n28_i8_source_lineage_trace"
+  },
+  "source_lineage_trace_digest": "5d3e9f43698f85d33b0ac7b6a15bf1aabb5c40347c9e6f31b71590b95febec2b",
+  "source_records": [
+    {
+      "expected_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+      "output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+      "output_digest_matches_expected": true,
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_controls_ap_dependency_claim_classification.json",
+      "sha256": "68b713c0f2bb7ecaae4f4238637231223cecbe7f03bc49954ccba4a90dce4201",
+      "source_id": "n28_i7_controls_ap_dependency_claim_classification",
+      "source_role": "ge5_controls_ap_claim_classification"
+    }
+  ],
+  "src_diff_empty": true,
+  "src_diff_paths": [],
+  "status": "passed"
+}

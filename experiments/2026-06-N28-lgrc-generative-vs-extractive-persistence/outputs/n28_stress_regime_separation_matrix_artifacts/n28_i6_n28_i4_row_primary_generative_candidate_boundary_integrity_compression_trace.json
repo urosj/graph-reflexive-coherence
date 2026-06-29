@@ -1,0 +1,87 @@
+{
+  "base_metrics": {
+    "environment_capacity_delta": 0.123,
+    "extractive_flattening": 0.014,
+    "extractive_flattening_ceiling": 0.03,
+    "focal_extraction_cost": 0.018,
+    "focal_extraction_cost_ceiling": 0.035,
+    "merge_leakage": 0.012,
+    "merge_leakage_ceiling": 0.025,
+    "neighbor_boundary_delta": 0.126,
+    "neighbor_distinguishability_delta": 0.133,
+    "neighbor_support_delta": 0.082
+  },
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "source_iteration": "4",
+  "source_regime_evidence_role": "positive_candidate",
+  "source_regime_label": "generative",
+  "source_row_digest": "19ee59190cf78e413f61a1264744187f1f832e64802b72abe4ae381fc8e6ce69",
+  "source_row_id": "n28_i4_row_primary_generative_candidate",
+  "source_row_mutated": false,
+  "stress_effect": {
+    "source_row_mutated": false,
+    "stress_axis": "boundary_integrity",
+    "stress_id": "boundary_integrity_compression",
+    "stress_scope": "bounded boundary and lobe-separation compression",
+    "stressed_boundary_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "stressed_focal_digest": "7ec75d3a15f6fd82f538358573a3de12e5fe5b0eef0dc928fa6c7d192b5ee40c",
+    "stressed_metrics_digest": "90ecfa7900c90eb546517c6c5d953dbeb611fb7ad3faefd725577d568811f47b",
+    "thresholds_retuned_for_stress": false
+  },
+  "stress_evidence": {
+    "competitive_redistribution": false,
+    "extraction_below": true,
+    "extraction_present": false,
+    "extractive_loss": false,
+    "generative_gain": true,
+    "metric_margins": {
+      "environment_capacity_margin": 0.033,
+      "extraction_cost_margin": 0.017,
+      "flattening_margin": 0.016,
+      "focal_coherence_margin": 0.039,
+      "focal_support_margin": 0.028,
+      "merge_leakage_margin": 0.013,
+      "minimum_margin": 0.013,
+      "neighbor_boundary_margin": 0.036,
+      "neighbor_distinguishability_margin": 0.053,
+      "neighbor_support_margin": 0.032
+    },
+    "near_neutral": false,
+    "neutral_circulation": false,
+    "stable": true
+  },
+  "stress_passed": true,
+  "stress_variant": {
+    "extractive_boundary_relief": 0.006,
+    "generative_boundary_reduction": 0.01,
+    "mixed_lobe_reduction": 0.004,
+    "stress_axis": "boundary_integrity",
+    "stress_id": "boundary_integrity_compression",
+    "stress_scope": "bounded boundary and lobe-separation compression"
+  },
+  "stressed_boundary_record": {},
+  "stressed_focal_state": {
+    "coherence_floor": 0.84,
+    "floors_preserved": true,
+    "focal_stability_preserved": true,
+    "post_coherence_min": 0.879,
+    "post_stability_score": 0.878,
+    "post_support_min": 0.868,
+    "support_floor": 0.84
+  },
+  "stressed_metrics": {
+    "environment_capacity_delta": 0.123,
+    "extractive_flattening": 0.014,
+    "extractive_flattening_ceiling": 0.03,
+    "focal_extraction_cost": 0.018,
+    "focal_extraction_cost_ceiling": 0.035,
+    "merge_leakage": 0.012,
+    "merge_leakage_ceiling": 0.025,
+    "neighbor_boundary_delta": 0.116,
+    "neighbor_distinguishability_delta": 0.133,
+    "neighbor_support_delta": 0.082
+  },
+  "stressed_regime_label": "generative",
+  "thresholds_retuned_for_stress": false,
+  "trace_id": "n28_i6_n28_i4_row_primary_generative_candidate_boundary_integrity_compression_trace"
+}

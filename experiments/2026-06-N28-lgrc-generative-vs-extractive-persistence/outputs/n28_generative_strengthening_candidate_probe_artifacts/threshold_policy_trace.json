@@ -1,0 +1,18 @@
+{
+  "declared_before_use": true,
+  "environment_capacity_delta_min": 0.09,
+  "extractive_flattening_ceiling": 0.03,
+  "focal_coherence_floor": 0.84,
+  "focal_extraction_cost_ceiling": 0.035,
+  "focal_stability_min": 0.86,
+  "focal_support_floor": 0.84,
+  "label_specific_thresholds_used": false,
+  "merge_leakage_ceiling": 0.025,
+  "neighbor_boundary_delta_min": 0.08,
+  "neighbor_distinguishability_delta_min": 0.08,
+  "neighbor_support_delta_min": 0.05,
+  "policy_id": "n28_i4a_generative_strengthening_policy_v1",
+  "policy_retuned_for_label": false,
+  "post_hoc_boundary_shift_used": false,
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1"
+}

@@ -1,0 +1,18 @@
+{
+  "capacity_attribution_digest": "7e9b379fe9ed843e420c04f7f2d5705bd3d71e7d811acf07362a9e8e0c03f403",
+  "classification_policy_digest": "1241ec387e94f019ba006a9fbbb033e0f740b4319dbb46146017f7f39d47f1a9",
+  "classification_result": "neutral",
+  "environment_capacity_digest": "1f11c793d698e0a092c9de096fbcf8213fab44bf8fa3ae0619dfd75f371b6734",
+  "extraction_cost_digest": "d5e82a6d70e211b74966a365f7a0847c121ce2a1d88b74240fa21b87b9b7e183",
+  "extractive_flattening_digest": "8417b2da67cc391db959c02ad4234b5f5efbf39423c70a7247805104fb61677c",
+  "focal_basin_id": "n28_i4e_focal_basin_theta",
+  "focal_signature_digest": "3408c45f5c63fd4f6402c1af82d33b5f19917f5c0d46fc838f9f93646dc66ddf",
+  "focal_stability_digest": "a21ce4e0e22c60c0544a4d6a7bac21d50a90e74bbd0ffd1bf03e9e12c94c9a0f",
+  "merge_leakage_digest": "dfa2914dbf3c484262052ead0b71aba71c00316763153f073d1048da89b4a4e0",
+  "neighbor_boundary_digest": "ef7ef493b3ba2276b51fe716739f59083548c2135662dcd61109947c3d9a9a91",
+  "neighbor_distinguishability_digest": "45946c441a45442c733213fc18e09ee1833a4d5a1623f712f8faea94629b053c",
+  "neighbor_scope_digest": "005b457e416c3fc5d87ef7b8f6b13447d0144d9ca245ab51414f9198108d6675",
+  "neighbor_support_digest": "db2c39ec393542ea589f3f35dbee06e3f7ffbd8de08f5dbb53311b50dfaece01",
+  "neighborhood_capacity_delta_digest": "484c58e16f060215c28a18fcf35991ca0172df3167e60e8a83a234d599ce446d",
+  "regime_evidence_role": "measured_contrast_alternative"
+}

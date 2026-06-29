@@ -1,0 +1,44 @@
+{
+  "consumed_i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+  "handoff_id": "n28_to_n29_bounded_generative_extractive_persistence_handoff",
+  "n28_final_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+  "n28_final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+  "n29_may_consume_as": [
+    "bounded_artifact_level_generative_extractive_persistence_evidence",
+    "paired_generative_extractive_competitive_neutral_regime_separation",
+    "claim_clean_environment_exchange_capacity_context",
+    "same_policy_transition_surface_context",
+    "focused_current_multiplier_margin_context",
+    "margin_bottleneck_diagnostic_context",
+    "ap4_ap5_gap_records_for_dependency_tracking"
+  ],
+  "n29_must_not_consume_as": [
+    "semantic_cooperation",
+    "semantic_choice",
+    "semantic_goal_ownership",
+    "semantic_learning",
+    "agency",
+    "native_support",
+    "sentience",
+    "organism_life",
+    "ant_ecology_implementation",
+    "native_ant_agency",
+    "native_colony_agency",
+    "Phase_8_completion",
+    "native_AP5",
+    "AP5_NAT4_gap_resolution",
+    "broad_margin_robustness",
+    "order_of_magnitude_robustness",
+    "unscoped_multi_basin_substrate"
+  ],
+  "n29_starting_question": "Can bounded generative/extractive persistence become a claim-clean bridge into agentic ecology without relabeling persistence, environment exchange, or medium effects as semantic agency?",
+  "required_n29_starting_controls": [
+    "generative_extractive_evidence_as_semantic_cooperation_control",
+    "environment_exchange_as_agency_control",
+    "focused_margin_as_broad_robustness_control",
+    "ap4_ap5_gap_erasure_control",
+    "ant_ecology_specification_by_relabel_control",
+    "native_support_by_persistence_relabel_control",
+    "phase8_completion_by_handoff_relabel_control"
+  ]
+}

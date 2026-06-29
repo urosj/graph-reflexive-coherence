@@ -1,0 +1,87 @@
+{
+  "base_metrics": {
+    "environment_capacity_delta": -0.069,
+    "extractive_flattening": 0.041,
+    "extractive_flattening_ceiling": 0.03,
+    "focal_extraction_cost": 0.046,
+    "focal_extraction_cost_ceiling": 0.035,
+    "merge_leakage": 0.033,
+    "merge_leakage_ceiling": 0.025,
+    "neighbor_boundary_delta": -0.081,
+    "neighbor_distinguishability_delta": -0.077,
+    "neighbor_support_delta": -0.063
+  },
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "source_iteration": "4-B",
+  "source_regime_evidence_role": "measured_contrast",
+  "source_regime_label": "extractive",
+  "source_row_digest": "ead612a1a7e357a2082947d47ebad9ee643e678af57aa7864642e9de7a69426b",
+  "source_row_id": "n28_i4b_row_primary_extractive_contrast",
+  "source_row_mutated": false,
+  "stress_effect": {
+    "source_row_mutated": false,
+    "stress_axis": "focal_stability",
+    "stress_id": "focal_stability_softening",
+    "stress_scope": "bounded focal support/coherence/stability softening",
+    "stressed_boundary_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "stressed_focal_digest": "8bd9fd5715d7991bfb31fa5ab9d3d83bbcbd633f82331a5cdde95cd59f56e504",
+    "stressed_metrics_digest": "92df0cbbd9e5b6bc932aae40e7c119ed1f3fd879411b6faa17fcb1a1305461c3",
+    "thresholds_retuned_for_stress": false
+  },
+  "stress_evidence": {
+    "competitive_redistribution": false,
+    "extraction_below": false,
+    "extraction_present": true,
+    "extractive_loss": true,
+    "generative_gain": false,
+    "metric_margins": {
+      "environment_capacity_loss_margin": 0.019,
+      "extraction_cost_excess_margin": 0.011,
+      "flattening_excess_margin": 0.011,
+      "focal_coherence_margin": 0.03,
+      "focal_support_margin": 0.023,
+      "merge_leakage_excess_margin": 0.008,
+      "minimum_margin": 0.008,
+      "neighbor_boundary_loss_margin": 0.021,
+      "neighbor_distinguishability_loss_margin": 0.027,
+      "neighbor_support_loss_margin": 0.023
+    },
+    "near_neutral": false,
+    "neutral_circulation": false,
+    "stable": true
+  },
+  "stress_passed": true,
+  "stress_variant": {
+    "focal_coherence_reduction": 0.006,
+    "focal_stability_reduction": 0.006,
+    "focal_support_reduction": 0.006,
+    "stress_axis": "focal_stability",
+    "stress_id": "focal_stability_softening",
+    "stress_scope": "bounded focal support/coherence/stability softening"
+  },
+  "stressed_boundary_record": {},
+  "stressed_focal_state": {
+    "coherence_floor": 0.84,
+    "floors_preserved": true,
+    "focal_stability_preserved": true,
+    "post_coherence_min": 0.87,
+    "post_stability_score": 0.867,
+    "post_support_min": 0.863,
+    "support_floor": 0.84
+  },
+  "stressed_metrics": {
+    "environment_capacity_delta": -0.069,
+    "extractive_flattening": 0.041,
+    "extractive_flattening_ceiling": 0.03,
+    "focal_extraction_cost": 0.046,
+    "focal_extraction_cost_ceiling": 0.035,
+    "merge_leakage": 0.033,
+    "merge_leakage_ceiling": 0.025,
+    "neighbor_boundary_delta": -0.081,
+    "neighbor_distinguishability_delta": -0.077,
+    "neighbor_support_delta": -0.063
+  },
+  "stressed_regime_label": "extractive",
+  "thresholds_retuned_for_stress": false,
+  "trace_id": "n28_i6_n28_i4b_row_primary_extractive_contrast_focal_stability_softening_trace"
+}

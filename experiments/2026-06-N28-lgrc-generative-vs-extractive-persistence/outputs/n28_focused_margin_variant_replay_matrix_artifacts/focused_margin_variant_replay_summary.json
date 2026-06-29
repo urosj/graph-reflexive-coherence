@@ -1,0 +1,17 @@
+{
+  "all_artifact_replay_passed": true,
+  "all_capacity_attribution_controls_passed": true,
+  "all_duplicate_replay_passed": true,
+  "all_regime_labels_stable_under_replay": true,
+  "all_rows_consumable_as_ge4": true,
+  "all_snapshot_load_replay_passed": true,
+  "focused_variant_ge4_supported": true,
+  "ge5_or_stronger_supported": false,
+  "rows_demoted": [],
+  "shared_policy_ids": [
+    "n28_shared_regime_policy_v1"
+  ],
+  "single_shared_policy_family_preserved": true,
+  "source_row_count": 2,
+  "trace_id": "n28_i5b_focused_margin_variant_replay_summary"
+}

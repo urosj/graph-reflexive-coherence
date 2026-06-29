@@ -1,0 +1,39 @@
+{
+  "derived_report_only": false,
+  "fixture_kind": "source_current_geometric_trace_fixture",
+  "focal_basin_id": "n28_i4a_focal_basin_beta",
+  "neighbor_scope_id": "n28_i4a_neighbor_capacity_shell_beta",
+  "run_artifact_id": "n28_i4a_generative_strengthening_runtime_trace",
+  "runtime_config_digest": "f0a400df1ade21fbe29a2ae000ee4205a70e7dd97e82acfbddc170f5496f2164",
+  "runtime_config_id": "n28_i4a_strengthening_fixture_v1",
+  "source_inventory_output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985",
+  "source_schema_output_digest": "ddd8234d8f3b5fb424c8160d65e90adbe755916c6e4e1b26bd8574a48dc6e8a4",
+  "steps": [
+    {
+      "environment_basin_forming_capacity": 0.572,
+      "extractive_flattening_score": 0.011,
+      "focal_coherence_min": 0.889,
+      "focal_extraction_cost": 0.014,
+      "focal_stability_score": 0.887,
+      "focal_support_min": 0.881,
+      "merge_leakage_score": 0.01,
+      "neighbor_boundary_integrity": 0.579,
+      "neighbor_distinguishability": 0.604,
+      "neighbor_support_floor": 0.664,
+      "step": 0
+    },
+    {
+      "environment_basin_forming_capacity": 0.706,
+      "extractive_flattening_score": 0.013,
+      "focal_coherence_min": 0.887,
+      "focal_extraction_cost": 0.016,
+      "focal_stability_score": 0.889,
+      "focal_support_min": 0.879,
+      "merge_leakage_score": 0.011,
+      "neighbor_boundary_integrity": 0.724,
+      "neighbor_distinguishability": 0.758,
+      "neighbor_support_floor": 0.751,
+      "step": 1
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "actual_result": "failed_closed",
+  "available_inputs": [
+    "matrix_summary",
+    "shared_policy_ids",
+    "rows_demoted"
+  ],
+  "blocked_reason": "I5 matrix summary confirms replay outcome but cannot replace per-row source-current evidence for a new positive claim",
+  "expected_result": "positive_N28_GE_support_rejected",
+  "missing_inputs": [
+    "per-row source-current traces",
+    "per-row replay traces",
+    "per-row control results"
+  ],
+  "reconstruction_mode": "i5_matrix_summary_only",
+  "regime_metrics_reconstructable": false,
+  "shared_policy_replay_reconstructable": false,
+  "source_basis": {
+    "matrix_summary_digest": "9d8ae752b53f21190fb28dde3a272297e311f37379df1880a5f17040273cb93c",
+    "single_shared_policy_family_preserved": true
+  },
+  "source_current_n28_trace_available": false,
+  "trace_id": "n28_i5a_matrix_summary_only_reconstruction_control_trace"
+}

@@ -1,0 +1,169 @@
+{
+  "critical_margin_at_current": false,
+  "current_i6_classification_preserved": true,
+  "current_i6_limiting_field": "merge_leakage_margin",
+  "current_i6_minimum_margin": 0.003,
+  "current_i6_multiplier": 1.0,
+  "first_failed_multiplier": 2.5,
+  "max_passed_multiplier": 2.0,
+  "narrow_margin_at_current": true,
+  "new_source_current_evidence_opened": false,
+  "source_iteration": "4-D",
+  "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_competitive_neutral_contrast_probe.json",
+  "source_regime_label": "competitive",
+  "source_row_digest": "a3f9a912682c099a7be25d69041a22a59494dba15ae1dc4f993bd19a780e2ffa",
+  "source_row_id": "n28_i4d_row_primary_competitive_neutral_contrast",
+  "source_row_mutated": false,
+  "stress_axis": "merge_leakage",
+  "stress_id": "merge_leakage_pressure",
+  "sweep_multipliers": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "sweep_points": [
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.006,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 0.0,
+      "observed_label": "competitive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.0045,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 0.5,
+      "observed_label": "competitive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.003,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 1.0,
+      "observed_label": "competitive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.00225,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 1.25,
+      "observed_label": "competitive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.0015,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 1.5,
+      "observed_label": "competitive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.0,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 2.0,
+      "observed_label": "competitive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": false,
+      "minimum_margin": -0.0015,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 2.5,
+      "observed_label": "unclassified"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": true,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": false,
+        "generative_gain": false,
+        "near_neutral": true,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": false,
+      "minimum_margin": -0.003,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 3.0,
+      "observed_label": "unclassified"
+    }
+  ],
+  "thresholds_retuned_for_sweep": false,
+  "trace_id": "n28_i6b_n28_i4d_row_primary_competitive_neutral_contrast_merge_leakage_pressure_envelope"
+}

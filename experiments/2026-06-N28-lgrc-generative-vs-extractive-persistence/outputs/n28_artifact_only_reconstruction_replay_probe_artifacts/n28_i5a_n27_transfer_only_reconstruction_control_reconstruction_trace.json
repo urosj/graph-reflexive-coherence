@@ -1,0 +1,24 @@
+{
+  "actual_result": "failed_closed",
+  "available_inputs": [
+    "n27_closeout_output_digest",
+    "n27_side_effect_precursor_output_digest"
+  ],
+  "blocked_reason": "N27 transfer success is prerequisite context and cannot recreate N28 generative/extractive regime evidence",
+  "expected_result": "positive_N28_GE_support_rejected",
+  "missing_inputs": [
+    "N28 source-current regime rows",
+    "N28 replay rows",
+    "N28 capacity attribution traces"
+  ],
+  "reconstruction_mode": "n27_transfer_context_only",
+  "regime_metrics_reconstructable": false,
+  "shared_policy_replay_reconstructable": false,
+  "source_basis": {
+    "n27_closeout_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+    "n27_context_consumed_as_n28_evidence_allowed": false,
+    "n27_side_effect_precursor_output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af"
+  },
+  "source_current_n28_trace_available": false,
+  "trace_id": "n28_i5a_n27_transfer_only_reconstruction_control_trace"
+}

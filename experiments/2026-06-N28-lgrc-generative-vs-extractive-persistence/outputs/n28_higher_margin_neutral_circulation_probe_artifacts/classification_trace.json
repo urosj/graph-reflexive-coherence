@@ -1,0 +1,16 @@
+{
+  "classification_declared_before_use": true,
+  "classification_policy_id": "n28_i4f_higher_margin_neutral_circulation_policy_v1",
+  "classification_reason": "stable focal basin + near-neutral three-lobe capacity circulation with wider lobe margins + bounded extraction/leakage below ceiling",
+  "classification_result": "neutral",
+  "extraction_leakage_axis": "bounded_below_extractive_ceiling",
+  "focal_persistence_axis": "stable",
+  "label_specific_thresholds_used": false,
+  "neighborhood_capacity_axis": "near_neutral_higher_margin_circulatory_exchange",
+  "policy_retuned_for_label": false,
+  "post_hoc_boundary_shift_used": false,
+  "regime_evidence_role": "measured_contrast_margin_strengthening",
+  "regime_label": "neutral",
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "trace_id": "n28_i4f_higher_margin_neutral_circulation_classification_trace"
+}

@@ -1,0 +1,12 @@
+{
+  "i7_artifact_manifest_count": 11,
+  "i7_classification_row_count": 10,
+  "i7_expected_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+  "i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+  "i7_output_digest_matches_expected": true,
+  "i7_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_controls_ap_dependency_claim_classification.json",
+  "i7_source_record_count": 10,
+  "probe_digests_checked_in_i7": true,
+  "source_digests_checked_in_i7": true,
+  "trace_id": "n28_i8_source_lineage_trace"
+}

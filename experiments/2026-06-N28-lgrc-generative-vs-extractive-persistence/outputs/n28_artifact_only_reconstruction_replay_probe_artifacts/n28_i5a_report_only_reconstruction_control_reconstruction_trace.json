@@ -1,0 +1,24 @@
+{
+  "actual_result": "failed_closed",
+  "available_inputs": [
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/reports/n28_replay_capacity_attribution_matrix.md"
+  ],
+  "blocked_reason": "report text summarizes the result but cannot satisfy source-current N28 trace requirements",
+  "expected_result": "positive_N28_GE_support_rejected",
+  "missing_inputs": [
+    "source_current_runtime_trace",
+    "neighbor_capacity_trace",
+    "extraction_leakage_trace",
+    "classification_trace",
+    "generative_extractive_core"
+  ],
+  "reconstruction_mode": "report_only_summary",
+  "regime_metrics_reconstructable": false,
+  "shared_policy_replay_reconstructable": false,
+  "source_basis": {
+    "i5_report_sha256": "ba344753ab2e979ce877f9a7a8f7fe01774e51177992fad9f5392e337e89f544",
+    "report_used_as_evidence_allowed": false
+  },
+  "source_current_n28_trace_available": false,
+  "trace_id": "n28_i5a_report_only_reconstruction_control_trace"
+}

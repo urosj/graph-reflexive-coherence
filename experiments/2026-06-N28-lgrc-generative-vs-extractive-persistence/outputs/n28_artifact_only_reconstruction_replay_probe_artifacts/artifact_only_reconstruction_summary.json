@@ -1,0 +1,12 @@
+{
+  "control_row_count": 5,
+  "failed_closed_row_count": 5,
+  "failed_open_row_count": 0,
+  "ge5_or_stronger_supported": false,
+  "i5_ge4_result_preserved": true,
+  "new_ge_support_opened": false,
+  "positive_support_allowed_rows": [],
+  "source_current_n28_trace_missing_blocks_support": true,
+  "source_current_n28_trace_required": true,
+  "trace_id": "n28_i5a_artifact_only_reconstruction_summary"
+}

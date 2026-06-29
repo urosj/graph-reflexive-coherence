@@ -1,0 +1,41 @@
+{
+  "all_artifact_replay_passed": true,
+  "all_capacity_attribution_controls_passed": true,
+  "all_duplicate_replay_passed": true,
+  "all_focal_survival_only_controls_passed": true,
+  "all_merge_leakage_controls_passed": true,
+  "all_regime_labels_stable_under_replay": true,
+  "all_snapshot_load_replay_passed": true,
+  "claim_boundary_pending_iteration_7": true,
+  "competitive_neutral_rows_replayed": [
+    "4-D",
+    "4-E"
+  ],
+  "extractive_rows_replayed": [
+    "4-B",
+    "4-C",
+    "4-C2"
+  ],
+  "ge4_replay_control_candidate_supported": true,
+  "ge5_or_stronger_supported": false,
+  "ge6_or_stronger_supported": false,
+  "generative_rows_replayed": [
+    "4",
+    "4-A",
+    "4-A2"
+  ],
+  "regime_counts": {
+    "competitive": 1,
+    "extractive": 3,
+    "generative": 3,
+    "neutral": 1
+  },
+  "rows_demoted": [],
+  "shared_policy_ids": [
+    "n28_shared_regime_policy_v1"
+  ],
+  "single_shared_policy_family_preserved": true,
+  "source_row_count": 8,
+  "stress_matrix_pending": true,
+  "trace_id": "n28_i5_replay_capacity_attribution_matrix_summary"
+}

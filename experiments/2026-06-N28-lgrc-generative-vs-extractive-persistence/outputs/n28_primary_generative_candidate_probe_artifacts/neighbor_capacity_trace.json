@@ -1,0 +1,18 @@
+{
+  "environment_capacity_delta": 0.123,
+  "neighbor_boundary_delta": 0.126,
+  "neighbor_count_only": false,
+  "neighbor_distinguishability_delta": 0.133,
+  "neighbor_label_only": false,
+  "neighbor_scope_id": "n28_i4_neighbor_capacity_shell_alpha",
+  "neighbor_support_delta": 0.082,
+  "post_environment_basin_forming_capacity": 0.707,
+  "post_neighbor_boundary_integrity": 0.718,
+  "post_neighbor_distinguishability": 0.751,
+  "post_neighbor_support_floor": 0.758,
+  "pre_environment_basin_forming_capacity": 0.584,
+  "pre_neighbor_boundary_integrity": 0.592,
+  "pre_neighbor_distinguishability": 0.618,
+  "pre_neighbor_support_floor": 0.676,
+  "trace_id": "n28_i4_neighbor_capacity_trace"
+}

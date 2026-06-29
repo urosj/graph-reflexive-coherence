@@ -1,0 +1,51 @@
+{
+  "competitive_redistribution_used": true,
+  "derived_report_only": false,
+  "direct_two_lobe_pair_used": true,
+  "fixture_kind": "source_current_geometric_trace_fixture",
+  "focal_basin_id": "n28_i4g_focal_basin_kappa",
+  "mechanism_class": "higher_margin_competitive_capacity_redistribution",
+  "mechanism_distinction_from_i4d": "I4-D establishes a competitive two-lobe redistribution with narrow flattening margin; I4-G preserves the same competitive mechanism class while widening opposed lobe and extraction/flattening margins.",
+  "neighbor_scope_id": "n28_i4g_wide_competitive_neighbor_field_kappa",
+  "neutral_circulation_used": false,
+  "run_artifact_id": "n28_i4g_higher_margin_competitive_redistribution_runtime_trace",
+  "runtime_config_digest": "656247c70840e54878134799bd2a8539e9aa4c62e1ed55c153f6f457348a4391",
+  "runtime_config_id": "n28_i4g_wide_competitive_redistribution_fixture_v1",
+  "source_i4d_output_digest": "f124a1afe8aff1a54a44157290e053d748e5545e1a9afcff1d1accbebef6c173",
+  "steps": [
+    {
+      "environment_basin_forming_capacity": 0.653,
+      "extractive_flattening_score": 0.016,
+      "focal_coherence_min": 0.888,
+      "focal_extraction_cost": 0.019,
+      "focal_stability_score": 0.885,
+      "focal_support_min": 0.879,
+      "merge_leakage_score": 0.015,
+      "neighbor_boundary_integrity": 0.676,
+      "neighbor_distinguishability": 0.692,
+      "neighbor_lobes": {
+        "route_lobe_a_capacity": 0.612,
+        "route_lobe_b_capacity": 0.616
+      },
+      "neighbor_support_floor": 0.72,
+      "step": 0
+    },
+    {
+      "environment_basin_forming_capacity": 0.656,
+      "extractive_flattening_score": 0.019,
+      "focal_coherence_min": 0.885,
+      "focal_extraction_cost": 0.022,
+      "focal_stability_score": 0.883,
+      "focal_support_min": 0.876,
+      "merge_leakage_score": 0.017,
+      "neighbor_boundary_integrity": 0.666,
+      "neighbor_distinguishability": 0.708,
+      "neighbor_lobes": {
+        "route_lobe_a_capacity": 0.682,
+        "route_lobe_b_capacity": 0.548
+      },
+      "neighbor_support_floor": 0.728,
+      "step": 1
+    }
+  ]
+}

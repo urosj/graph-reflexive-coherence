@@ -1,0 +1,16 @@
+{
+  "classification_declared_before_use": true,
+  "classification_policy_id": "n28_i4c2_extractive_mechanism_diversity_policy_v1",
+  "classification_reason": "stable focal basin + degraded neighborhood capacity + merge/leakage-dominant boundary flattening mechanism",
+  "classification_result": "extractive",
+  "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+  "focal_persistence_axis": "stable",
+  "label_specific_thresholds_used": false,
+  "neighborhood_capacity_axis": "degrades",
+  "policy_retuned_for_label": false,
+  "post_hoc_boundary_shift_used": false,
+  "regime_evidence_role": "measured_contrast_alternative",
+  "regime_label": "extractive",
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "trace_id": "n28_i4c2_extractive_mechanism_diversity_classification_trace"
+}

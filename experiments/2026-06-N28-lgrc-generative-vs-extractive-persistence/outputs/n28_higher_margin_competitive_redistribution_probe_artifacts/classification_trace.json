@@ -1,0 +1,16 @@
+{
+  "classification_declared_before_use": true,
+  "classification_policy_id": "n28_i4g_higher_margin_competitive_redistribution_policy_v1",
+  "classification_reason": "stable focal basin + near-neutral aggregate neighbor capacity + wider opposed route-lobe redistribution + bounded extraction/leakage",
+  "classification_result": "competitive",
+  "extraction_leakage_axis": "bounded_below_extractive_ceiling",
+  "focal_persistence_axis": "stable",
+  "label_specific_thresholds_used": false,
+  "neighborhood_capacity_axis": "near_neutral_higher_margin_competitive_redistribution",
+  "policy_retuned_for_label": false,
+  "post_hoc_boundary_shift_used": false,
+  "regime_evidence_role": "measured_contrast_margin_strengthening",
+  "regime_label": "competitive",
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "trace_id": "n28_i4g_higher_margin_competitive_redistribution_classification_trace"
+}

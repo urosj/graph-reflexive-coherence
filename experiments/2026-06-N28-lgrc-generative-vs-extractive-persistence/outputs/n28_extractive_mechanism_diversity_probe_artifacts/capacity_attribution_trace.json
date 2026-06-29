@@ -1,0 +1,19 @@
+{
+  "attribution_result": "source_current_neighbor_capacity_degradation_by_merge_leakage_boundary_flattening",
+  "boundary_flattening_dominant": true,
+  "capacity_attribution_basis": [
+    "neighbor_distinguishability_delta",
+    "neighbor_support_delta",
+    "neighbor_boundary_delta",
+    "environment_capacity_delta"
+  ],
+  "cross_shell_directional_drain_used": false,
+  "environment_capacity_budget_mismatch": false,
+  "hidden_capacity_attribution_policy_used": false,
+  "mechanism_class": "merge_leakage_dominant_boundary_flattening",
+  "medium_segmentation_policy_hidden": false,
+  "merge_leakage_dominant": true,
+  "n27_transfer_success_used_as_n28_success": false,
+  "producer_generativity_label_used_as_evidence": false,
+  "trace_id": "n28_i4c2_capacity_attribution_trace"
+}

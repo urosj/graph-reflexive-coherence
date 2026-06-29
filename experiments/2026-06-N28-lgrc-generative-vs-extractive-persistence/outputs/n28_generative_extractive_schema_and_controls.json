@@ -1,0 +1,768 @@
+{
+  "acceptance_state": "accepted_generative_extractive_schema_and_controls_frozen_no_positive_evidence",
+  "ap_dependency_schema": {
+    "ap4_dependency_status_enum": [
+      "required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "ap4_nat4_gap_resolution_supported": false,
+    "ap5_dependency_status_enum": [
+      "conditional_required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "ap5_nat4_gap_resolution_supported": false,
+    "native_ap5_supported": false,
+    "not_applicable_requires_row_local_reason": true
+  },
+  "artifact_id": "n28_generative_extractive_schema_and_controls",
+  "checks": [
+    {
+      "check_id": "i1_source_inventory_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_precedence_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "source_digest_pins_present",
+      "passed": true
+    },
+    {
+      "check_id": "ge_ladder_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "n28_closeout_ladder_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "paired_regime_evidence_requirement_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "three_axis_classifier_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "required_evidence_fields_present",
+      "passed": true
+    },
+    {
+      "check_id": "core_schema_and_digest_policy_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "formulas_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "regime_policy_enums_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "medium_debt_and_producer_residue_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_roles_replay_ap_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "control_families_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "schema_control_freeze_only_no_N28_positive_evidence",
+  "classification_policy_schema": {
+    "policy_divergence_record_required_fields": [
+      "policy_id",
+      "divergence_status",
+      "affected_regimes",
+      "same_policy_failed_reason",
+      "split_policy_allowed",
+      "post_hoc_retuning_used",
+      "claim_effect"
+    ],
+    "regime_evidence_roles": [
+      "positive_candidate",
+      "positive_candidate_alternative",
+      "measured_contrast",
+      "measured_contrast_alternative",
+      "active_null",
+      "control"
+    ],
+    "regime_labels": [
+      "generative",
+      "extractive",
+      "competitive",
+      "neutral",
+      "blocked"
+    ],
+    "shared_regime_policy_status_enum": [
+      "supported",
+      "partially_supported",
+      "split_policy_required",
+      "blocked"
+    ]
+  },
+  "command": ".venv/bin/python experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/scripts/build_n28_generative_extractive_schema_and_controls.py",
+  "control_families": [
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "source_digest_mismatch_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "derived_report_only_positive_row_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "artifact_manifest_failure_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "threshold_declared_after_outcome_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_focal_stability_digest_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_neighbor_capacity_digest_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_extraction_cost_digest_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_merge_leakage_digest_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_capacity_attribution_digest_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "malformed_generative_extractive_core_digest_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "policy_retuning_to_fit_label_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "label_specific_threshold_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "post_hoc_regime_boundary_shift_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "focal_survival_only_as_generative_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "neighbor_label_only_as_capacity_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "neighbor_count_only_as_capacity_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "merge_leakage_as_support_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "extractive_flattening_masked_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "competitive_persistence_as_generative_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "transfer_success_as_n28_success_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "hidden_capacity_attribution_policy_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "producer_generativity_label_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "medium_segmentation_policy_hidden_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "environment_capacity_budget_mismatch_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "neighbor_support_floor_missing_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "neighbor_boundary_integrity_missing_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "replay_failure_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "stress_variant_failure_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "semantic_cooperation_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "semantic_choice_goal_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "native_support_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "ant_ecology_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "phase8_completion_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "native_ap5_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    },
+    {
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "ap5_nat4_gap_resolution_relabel_control",
+      "expected_result": "failed_closed_when_blocked_condition_present",
+      "rung_effect": "blocks_GE3_or_stronger_unless_scope_limited_to_active_null"
+    }
+  ],
+  "evidence_state": {
+    "ant_ecology_opened": false,
+    "candidate_rows_classified": false,
+    "ge_ladder_rung_assigned": false,
+    "n28_closeout_ladder_rung_assigned": false,
+    "native_support_opened": false,
+    "phase8_completion_opened": false,
+    "positive_extractive_evidence_opened": false,
+    "positive_generative_evidence_opened": false,
+    "ready_for_iteration_3": true
+  },
+  "experiment": "N28",
+  "failed_checks": [],
+  "formula_schema": {
+    "capacity_attribution_formula": {
+      "pass_condition": "capacity change is attributed to source-current traces, not producer labels or hidden medium segmentation",
+      "source_current_inputs": [
+        "capacity_attribution_trace"
+      ]
+    },
+    "extraction_flattening_merge_leakage_formula": {
+      "extractive_condition": "cost, flattening, merge, or leakage explains focal persistence while neighborhood capacity degrades",
+      "pass_condition": "cost, flattening, merge, and leakage remain below declared ceilings for generative rows",
+      "source_current_inputs": [
+        "focal_extraction_cost_trace",
+        "extractive_flattening_trace",
+        "merge_leakage_trace"
+      ]
+    },
+    "focal_stability_formula": {
+      "pass_condition": "focal basin remains stable above declared support/coherence floor",
+      "source_current_inputs": [
+        "focal_basin_signature_trace",
+        "focal_basin_stability_trace",
+        "focal_support_coherence_floor_trace"
+      ]
+    },
+    "neighborhood_capacity_formula": {
+      "pass_condition": "capacity improves by declared delta without label-only or merge/leakage substitution",
+      "source_current_inputs": [
+        "neighbor_basin_distinguishability_trace",
+        "neighbor_support_floor_trace",
+        "neighbor_boundary_integrity_trace",
+        "environment_basin_forming_capacity_trace"
+      ]
+    }
+  },
+  "ge_ladder": [
+    {
+      "definition": "no source-current generative/extractive persistence evidence",
+      "name": "no_source_current_generative_extractive_persistence_evidence",
+      "rung": "GE0",
+      "support_allowed": false
+    },
+    {
+      "definition": "focal persistence trace present; environment-side effect not measured",
+      "name": "focal_persistence_trace_present",
+      "rung": "GE1",
+      "support_allowed": false
+    },
+    {
+      "definition": "focal persistence plus source-current neighborhood capacity metrics observed",
+      "name": "source_current_neighborhood_capacity_metrics_observed",
+      "rung": "GE2",
+      "support_allowed": false
+    },
+    {
+      "definition": "provisional source-current regime classification candidate",
+      "name": "provisional_source_current_regime_classification_candidate",
+      "rung": "GE3",
+      "support_allowed": "provisional_only"
+    },
+    {
+      "definition": "replay/control-backed regime-separation candidate",
+      "name": "replay_control_backed_regime_separation_candidate",
+      "rung": "GE4",
+      "support_allowed": "candidate_only"
+    },
+    {
+      "definition": "stress/variant-backed paired-regime separation candidate",
+      "name": "stress_variant_backed_paired_regime_separation_candidate",
+      "rung": "GE5",
+      "support_allowed": "candidate_only"
+    },
+    {
+      "definition": "N29-ready bounded generative/extractive persistence evidence with claim-clean handoff",
+      "name": "n29_ready_bounded_generative_extractive_persistence_evidence",
+      "rung": "GE6",
+      "support_allowed": "handoff_candidate_only"
+    }
+  ],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "generative_extractive_core_schema": {
+    "canonicalization_policy": "sha256_of_canonical_json_sorted_keys_excluding_generated_timestamps_and_local_paths",
+    "digest_field": "generative_extractive_core_digest",
+    "fail_closed_conditions": [
+      "focal_survival_only",
+      "neighbor_label_only",
+      "neighbor_count_only",
+      "transfer_success_only",
+      "visual_similarity_only",
+      "merge_leakage_as_support",
+      "producer_attribution_without_source_current_trace"
+    ],
+    "object_name": "generative_extractive_core",
+    "replay_reference_policy": "replay_control_and_stress_rows_reference_core_by_digest",
+    "required_fields": [
+      "focal_basin_id",
+      "focal_signature_digest",
+      "focal_stability_digest",
+      "neighbor_scope_digest",
+      "neighbor_distinguishability_digest",
+      "neighbor_support_digest",
+      "neighbor_boundary_digest",
+      "environment_capacity_digest",
+      "neighborhood_capacity_delta_digest",
+      "extraction_cost_digest",
+      "extractive_flattening_digest",
+      "merge_leakage_digest",
+      "capacity_attribution_digest",
+      "classification_policy_digest",
+      "classification_result",
+      "regime_evidence_role"
+    ]
+  },
+  "iteration": "2",
+  "medium_debt_and_residue_schema": {
+    "capacity_attribution_trace_required": true,
+    "direct_message_scaffold_as_native_medium_allowed": false,
+    "medium_debt_as_success_allowed": false,
+    "medium_debt_fields": [
+      "generative_extractive_persistence.source_current_neighbor_basin_birth_telemetry",
+      "generative_extractive_persistence.medium_debt_deferred_to_n28_n29",
+      "generative_extractive_persistence.environment_capacity_budget_replay"
+    ],
+    "medium_debt_record_required": true,
+    "producer_generativity_label_as_source_current_capacity_allowed": false,
+    "producer_residue_as_substrate_carried_allowed": false,
+    "producer_residue_fields": [
+      "generative_extractive_persistence.generativity_label",
+      "generative_extractive_persistence.neighbor_attribution_policy",
+      "generative_extractive_persistence.medium_segmentation_policy"
+    ],
+    "producer_residue_record_required": true,
+    "shared_medium_label_only_success_allowed": false
+  },
+  "n28_closeout_ceiling": "N28-C2_schema_controls_and_classification_policy_frozen",
+  "n28_closeout_ladder": [
+    {
+      "definition": "initialized contract only",
+      "rung": "N28-C0"
+    },
+    {
+      "definition": "source inventory and generative/extractive contract admission passed",
+      "rung": "N28-C1"
+    },
+    {
+      "definition": "schema, controls, and classification policy frozen",
+      "rung": "N28-C2"
+    },
+    {
+      "definition": "active nulls fail closed",
+      "rung": "N28-C3"
+    },
+    {
+      "definition": "source-current generative/extractive candidate supported",
+      "rung": "N28-C4"
+    },
+    {
+      "definition": "replay/control/stress-backed generative/extractive candidate supported",
+      "rung": "N28-C5"
+    },
+    {
+      "definition": "N29-ready bounded generative/extractive closeout",
+      "rung": "N28-C6"
+    }
+  ],
+  "output_digest": "e118496c025e1a36aac7e4337adcacd869715a5ce5ec6aaaf1558ef0d6576c18",
+  "paired_regime_evidence_requirement": {
+    "contrast_rows_are_measured_regime_evidence": true,
+    "extractive_or_competitive_promoted_to_generative_effect": "failed_open_blocker",
+    "required_before_GE5_or_N28_C5": [
+      "primary_generative_candidate",
+      "alternative_generative_candidate",
+      "primary_extractive_contrast",
+      "alternative_extractive_contrast",
+      "primary_competitive_or_neutral_contrast",
+      "alternative_competitive_or_neutral_contrast"
+    ],
+    "single_positive_row_closeout_allowed": false
+  },
+  "replay_schema": {
+    "failed_open_invalidates_row": true,
+    "not_run_blocks_dependent_rung": true,
+    "required_replay_modes_for_GE4_plus": [
+      "artifact_only_replay",
+      "snapshot_load_replay",
+      "duplicate_replay",
+      "core_digest_replay"
+    ],
+    "required_stress_modes_for_GE5_plus": [
+      "focal_stability_stress",
+      "neighbor_capacity_stress",
+      "extraction_cost_stress",
+      "merge_leakage_stress",
+      "boundary_integrity_stress"
+    ]
+  },
+  "report_sha256": "a21e7f43322781a37d5d19f983f9257d4eec1ac2d0c84a75bcb1f273c48a114d",
+  "required_evidence_fields": [
+    "row_id",
+    "iteration",
+    "row_decision",
+    "ge_ladder_rung",
+    "n28_closeout_ceiling",
+    "regime_label",
+    "regime_evidence_role",
+    "shared_regime_policy_id",
+    "shared_regime_policy_status",
+    "policy_divergence_record",
+    "source_current_inputs",
+    "source_inventory_output_digest",
+    "source_ledger_row_digest",
+    "descriptor_contract_row_digest",
+    "consumable_contract_row_digest",
+    "source_output_digest",
+    "n20_producer_residue_row_digest",
+    "n20_native_function_proxy_row_digest",
+    "n20_same_basin_continuation_row_digest",
+    "n27_closeout_output_digest",
+    "n27_side_effect_precursor_output_digest",
+    "run_artifact_id",
+    "runtime_config_digest",
+    "artifact_manifest",
+    "all_artifact_sha256_match_file_contents",
+    "derived_report_only",
+    "row_specific_thresholds_declared_before_use",
+    "focal_basin_id",
+    "focal_basin_signature_trace",
+    "focal_basin_stability_trace",
+    "focal_support_coherence_floor_trace",
+    "neighbor_or_sub_basin_scope",
+    "neighbor_basin_distinguishability_trace",
+    "neighbor_support_floor_trace",
+    "neighbor_boundary_integrity_trace",
+    "environment_basin_forming_capacity_trace",
+    "neighborhood_capacity_delta_trace",
+    "focal_extraction_cost_trace",
+    "extractive_flattening_trace",
+    "merge_leakage_trace",
+    "capacity_attribution_trace",
+    "medium_debt_record",
+    "producer_residue_record",
+    "generative_classification_policy_digest",
+    "generative_classification_declared_before_use",
+    "generative_classification_result",
+    "regime_boundary_trace",
+    "policy_retuned_for_label",
+    "label_specific_thresholds_used",
+    "post_hoc_boundary_shift_used",
+    "generative_extractive_core",
+    "generative_extractive_core_digest",
+    "focal_survival_only_rejected",
+    "neighbor_label_only_rejected",
+    "merge_leakage_as_support_rejected",
+    "extractive_flattening_masked_rejected",
+    "transfer_success_as_n28_success_rejected",
+    "semantic_cooperation_relabel_rejected",
+    "replay_result",
+    "control_results",
+    "ap4_dependency_status",
+    "ap4_condition_reason",
+    "ap5_dependency_status",
+    "ap5_condition_reason",
+    "claim_ceiling",
+    "unsafe_claim_flags"
+  ],
+  "rung_specific_artifact_roles": {
+    "GE1": [
+      "focal_basin_stability_trace"
+    ],
+    "GE2": [
+      "focal_basin_stability_trace",
+      "neighborhood_capacity_trace",
+      "extraction_leakage_trace"
+    ],
+    "GE3": [
+      "generative_extractive_core",
+      "classification_policy_trace",
+      "regime_boundary_trace"
+    ],
+    "GE4": [
+      "replay_trace",
+      "control_trace",
+      "core_digest_replay_trace"
+    ],
+    "GE5": [
+      "stress_trace",
+      "variant_trace",
+      "paired_regime_trace"
+    ],
+    "GE6": [
+      "closeout_trace",
+      "N29_handoff_trace",
+      "claim_boundary_trace"
+    ]
+  },
+  "script_sha256": "ecf8cc5fadc8dcf28f28f79a4ed51da7bde0db31bff97626c8f7b5140c03a0ff",
+  "source_digest_pins": {
+    "n20_i3_row_digest": "2108f86e21cbf795a2ab0ef089a1f25f641c60865d97c0fb983119a4f34d50a0",
+    "n20_i4_row_digest": "c08025d24b89807fc5ad245302f33ae4286ed8ad89bf7db450a94eb08c27d99b",
+    "n20_i5_row_digest": "240de0c58bf066a6fb1ff610f13dbecb4f76a3f187ac08012927005de91563b7",
+    "n27_closeout_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+    "n27_side_effect_claim_classification_output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+    "n27_side_effect_precursor_output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+    "source_inventory_output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985"
+  },
+  "source_inventory": {
+    "acceptance_state": "accepted_source_inventory_generative_extractive_contract_admission_no_positive_evidence",
+    "output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985",
+    "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_source_inventory_and_contract_admission.json",
+    "source_artifact_sha256": "7dd6e93a14bf08af6541be9a6f7bc58f53cd3426b13b4a3b63350b770953fa4b",
+    "status": "passed"
+  },
+  "source_precedence": {
+    "n20_i3_producer_residue_ledger": {
+      "consumption_rule": "producer_residue_debt_and_blocked_relabel_boundary",
+      "role": "residue_and_naturalization_debt_context",
+      "row_digest": "2108f86e21cbf795a2ab0ef089a1f25f641c60865d97c0fb983119a4f34d50a0"
+    },
+    "n20_i4_native_function_proxy_descriptor": {
+      "consumption_rule": "descriptor_and_proxy_boundary_not_evidence",
+      "role": "descriptor_context_only",
+      "row_digest": "c08025d24b89807fc5ad245302f33ae4286ed8ad89bf7db450a94eb08c27d99b"
+    },
+    "n20_i5_same_basin_continuation_contract": {
+      "consumption_rule": "same_basin_rule_and_minimum_control_contract",
+      "role": "normative",
+      "row_digest": "240de0c58bf066a6fb1ff610f13dbecb4f76a3f187ac08012927005de91563b7"
+    },
+    "n27_closeout": {
+      "consumption_rule": "may_not_be_consumed_as_N28_generativity",
+      "output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+      "role": "bounded_ct6_precursor_context_only"
+    },
+    "n27_side_effect_rows": {
+      "consumption_rule": "metrics_context_not_N28_support",
+      "output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+      "role": "context_and_comparison_baseline_only"
+    },
+    "roadmap_handoff": {
+      "consumption_rule": "scope_text_not_evidence",
+      "role": "context_only"
+    }
+  },
+  "status": "passed",
+  "three_axis_classifier": {
+    "axes": {
+      "extraction_leakage_axis": [
+        "low_preserved_medium",
+        "high_extraction_flattening_leakage_or_merge",
+        "missing"
+      ],
+      "focal_persistence_axis": [
+        "stable",
+        "unstable",
+        "missing"
+      ],
+      "neighborhood_capacity_axis": [
+        "improves",
+        "degrades",
+        "neutral_or_mixed",
+        "label_only",
+        "missing"
+      ]
+    },
+    "label_specific_thresholds_allowed": false,
+    "policy_retuning_to_fit_label_allowed": false,
+    "post_hoc_boundary_shift_allowed": false,
+    "rules": [
+      {
+        "classification": "generative",
+        "requires": [
+          "focal_persistence_axis = stable",
+          "neighborhood_capacity_axis = improves",
+          "extraction_leakage_axis = low_preserved_medium"
+        ]
+      },
+      {
+        "classification": "extractive",
+        "requires": [
+          "focal_persistence_axis = stable",
+          "neighborhood_capacity_axis = degrades",
+          "extraction_leakage_axis = high_extraction_flattening_leakage_or_merge"
+        ]
+      },
+      {
+        "classification": "competitive_or_neutral",
+        "requires": [
+          "focal_persistence_axis = stable",
+          "neighborhood_capacity_axis = neutral_or_mixed"
+        ]
+      },
+      {
+        "classification": "blocked",
+        "requires_any": [
+          "focal_persistence_axis = unstable",
+          "neighborhood_capacity_axis = label_only",
+          "missing source-current axis",
+          "post-hoc label or threshold retuning"
+        ]
+      }
+    ]
+  },
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "ap5_nat4_gap_resolution_claim_allowed": false,
+    "generative_persistence_claim_allowed": false,
+    "n28_claim_allowed": false,
+    "native_ap5_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_cooperation_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_identity_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

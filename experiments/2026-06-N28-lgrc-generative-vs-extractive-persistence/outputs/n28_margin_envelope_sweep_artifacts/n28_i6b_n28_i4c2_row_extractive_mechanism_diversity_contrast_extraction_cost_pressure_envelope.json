@@ -1,0 +1,169 @@
+{
+  "critical_margin_at_current": false,
+  "current_i6_classification_preserved": true,
+  "current_i6_limiting_field": "extraction_cost_excess_margin",
+  "current_i6_minimum_margin": 0.007,
+  "current_i6_multiplier": 1.0,
+  "first_failed_multiplier": "not_failed_within_sweep",
+  "max_passed_multiplier": 3.0,
+  "narrow_margin_at_current": false,
+  "new_source_current_evidence_opened": false,
+  "source_iteration": "4-C2",
+  "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe.json",
+  "source_regime_label": "extractive",
+  "source_row_digest": "653698de931037e832c2964766eef7644a78505f2775f15ddbe79e6adbf95204",
+  "source_row_id": "n28_i4c2_row_extractive_mechanism_diversity_contrast",
+  "source_row_mutated": false,
+  "stress_axis": "extraction_cost",
+  "stress_id": "extraction_cost_pressure",
+  "sweep_multipliers": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "sweep_points": [
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.003,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 0.0,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.005,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 0.5,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.007,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 1.0,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.008,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 1.25,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.009,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 1.5,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.011,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 2.0,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.013,
+      "minimum_margin_field": "extraction_cost_excess_margin",
+      "multiplier": 2.5,
+      "observed_label": "extractive"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": false,
+        "extraction_present": true,
+        "extractive_loss": true,
+        "generative_gain": false,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.015,
+      "minimum_margin_field": "neighbor_support_loss_margin",
+      "multiplier": 3.0,
+      "observed_label": "extractive"
+    }
+  ],
+  "thresholds_retuned_for_sweep": false,
+  "trace_id": "n28_i6b_n28_i4c2_row_extractive_mechanism_diversity_contrast_extraction_cost_pressure_envelope"
+}

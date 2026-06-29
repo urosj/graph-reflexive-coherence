@@ -1,0 +1,24 @@
+{
+  "actual_result": "failed_closed",
+  "available_inputs": [
+    "source_output_digest",
+    "source_row_digest",
+    "artifact_sha256"
+  ],
+  "blocked_reason": "digests prove provenance but do not by themselves replay the regime classifier",
+  "expected_result": "positive_N28_GE_support_rejected",
+  "missing_inputs": [
+    "loaded trace payloads",
+    "metric sign checks",
+    "regime-specific attribution controls"
+  ],
+  "reconstruction_mode": "digest_and_hashes_only",
+  "regime_metrics_reconstructable": false,
+  "shared_policy_replay_reconstructable": false,
+  "source_basis": {
+    "i5_output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+    "source_row_count": 8
+  },
+  "source_current_n28_trace_available": false,
+  "trace_id": "n28_i5a_digest_only_reconstruction_control_trace"
+}

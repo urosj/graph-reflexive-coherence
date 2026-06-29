@@ -1,0 +1,89 @@
+{
+  "artifact_replay": {
+    "artifact_replay_digest": "5072bfcdffc200cbde3a4ca5a219efbae8e119345e9ee579581ac71c7a8ab133",
+    "manifest_file_count": 8,
+    "status": "passed"
+  },
+  "classification_replay": {
+    "expected_regime_label": "competitive",
+    "original_regime_label": "competitive",
+    "regime_label_stable": true,
+    "replay_evidence": {
+      "competitive_redistribution": true,
+      "extraction_below": true,
+      "metrics": {
+        "environment_capacity_delta": 0.003,
+        "extractive_flattening": 0.019,
+        "extractive_flattening_ceiling": 0.03,
+        "focal_extraction_cost": 0.022,
+        "focal_extraction_cost_ceiling": 0.035,
+        "merge_leakage": 0.017,
+        "merge_leakage_ceiling": 0.025,
+        "neighbor_boundary_delta": -0.01,
+        "neighbor_distinguishability_delta": 0.016,
+        "neighbor_support_delta": 0.008
+      },
+      "near_neutral": true,
+      "neutral_circulation": false,
+      "stable": true
+    },
+    "replayed_regime_label": "competitive",
+    "status": "passed"
+  },
+  "control_results": [
+    {
+      "actual_result": "competitive_redistribution_lobes_present_not_focal_survival_only",
+      "blocked_condition": "focal stability exists without competitive/neutral lobe evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "focal_survival_only_as_regime_control",
+      "control_status": "passed",
+      "expected_result": "row blocked if only focal survival is present",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "replayed_regime=competitive",
+      "blocked_condition": "capacity attribution does not reproduce the source regime label",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "capacity_attribution_control",
+      "control_status": "passed",
+      "expected_result": "row demoted if replay classifier changes the regime",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "merge_leakage_below_extractive_ceiling",
+      "blocked_condition": "merge/leakage is treated as competitive/neutral support",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "merge_leakage_as_support_control",
+      "control_status": "passed",
+      "expected_result": "merge/leakage cannot masquerade as support",
+      "rung_effect": "GE4_preserved"
+    }
+  ],
+  "duplicate_replay": {
+    "duplicate_positive_row_created": false,
+    "duplicate_replay_digest_stable": true,
+    "duplicate_replay_first_emitted": true,
+    "duplicate_replay_second_emitted": false,
+    "first_replay_digest": "addb5faa96433e63bd9ff3a7713080cf13f477545a63a3e97cc101bf1a3b1391",
+    "second_replay_digest": "addb5faa96433e63bd9ff3a7713080cf13f477545a63a3e97cc101bf1a3b1391",
+    "status": "passed"
+  },
+  "replay_passed": true,
+  "snapshot_load_replay": {
+    "core_digest_replayed": "96c6c40662251389b8a5f0291810515adfdca6617e314612696cdf7ed074a1a7",
+    "snapshot_load_digest_stable": true,
+    "snapshot_payload_digest": "ba75a7f29ef074ae8188a6188850096d695d1c9c64b0c2804eef74d1881cef9e",
+    "status": "passed"
+  },
+  "source_artifact_manifest_valid": true,
+  "source_artifact_sha256": "de0abbae9f90df2485f7c04abd79df9db836cdac511a36109210d54ca5e6bc00",
+  "source_iteration": "4-G",
+  "source_output_digest": "8bc907a97b07c09c72fd7ceda63811555c335c0d45d6dbef6cfb29489f463e72",
+  "source_output_digest_matches_expected": true,
+  "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_competitive_redistribution_probe.json",
+  "source_role": "higher_margin_competitive_redistribution",
+  "source_row_digest": "562c54897ed86326c1bd4b01291258658561eac9ad08f3aee347354a1e853e5b",
+  "source_row_digest_recomputed": true,
+  "source_row_id": "n28_i4g_row_higher_margin_competitive_redistribution_contrast",
+  "trace_id": "n28_i5b_n28_i4g_row_higher_margin_competitive_redistribution_contrast_replay_trace"
+}

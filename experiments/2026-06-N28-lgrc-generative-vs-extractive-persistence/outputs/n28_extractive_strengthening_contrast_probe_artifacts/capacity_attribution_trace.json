@@ -1,0 +1,15 @@
+{
+  "attribution_result": "source_current_cross_shell_neighbor_capacity_degradation_with_extractive_mechanism",
+  "capacity_attribution_basis": [
+    "neighbor_distinguishability_delta",
+    "neighbor_support_delta",
+    "neighbor_boundary_delta",
+    "environment_capacity_delta"
+  ],
+  "environment_capacity_budget_mismatch": false,
+  "hidden_capacity_attribution_policy_used": false,
+  "medium_segmentation_policy_hidden": false,
+  "n27_transfer_success_used_as_n28_success": false,
+  "producer_generativity_label_used_as_evidence": false,
+  "trace_id": "n28_i4c_capacity_attribution_trace"
+}

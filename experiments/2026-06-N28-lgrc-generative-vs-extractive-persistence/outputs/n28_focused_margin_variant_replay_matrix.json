@@ -1,0 +1,180 @@
+{
+  "acceptance_state": "accepted_focused_margin_variants_ge4_replay_control_backed_pending_stress",
+  "artifact_id": "n28_focused_margin_variant_replay_matrix",
+  "artifact_manifest": [
+    {
+      "artifact_role": "n28_i5b_n28_i4f_row_higher_margin_neutral_circulation_contrast_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix_artifacts/n28_i5b_n28_i4f_row_higher_margin_neutral_circulation_contrast_trace.json",
+      "sha256": "4e2e2f54b3115215fe3d67f1bb52f61319d96ebf418d30b4953307c2f2b4faa3"
+    },
+    {
+      "artifact_role": "n28_i5b_n28_i4g_row_higher_margin_competitive_redistribution_contrast_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix_artifacts/n28_i5b_n28_i4g_row_higher_margin_competitive_redistribution_contrast_trace.json",
+      "sha256": "71c03c36b036bad9fac6577d1000adcf4b2181b9b30b8f4046f699c520c6a917"
+    },
+    {
+      "artifact_role": "focused_margin_variant_replay_summary",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix_artifacts/focused_margin_variant_replay_summary.json",
+      "sha256": "85cad69c7909540c2ce262b7270c3adc5b466c9d3c48793d37ccab779dbc9533"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "all_focused_sources_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_source_digests_match_expected",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_snapshot_duplicate_replay_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_regime_labels_stable_under_replay",
+      "passed": true
+    },
+    {
+      "check_id": "all_capacity_attribution_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "single_shared_policy_family_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_consumable_as_ge4",
+      "passed": true
+    },
+    {
+      "check_id": "ge5_still_pending_i6c",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "GE4_focused_margin_variant_replay_control_backed_pending_stress",
+  "command": ".venv/bin/python experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/scripts/build_n28_focused_margin_variant_replay_matrix.py",
+  "experiment": "N28",
+  "failed_checks": [],
+  "final_generative_persistence_supported": false,
+  "final_n28_supported": false,
+  "focused_variant_ge4_supported": true,
+  "ge4_or_stronger_supported": true,
+  "ge5_or_stronger_supported": false,
+  "ge6_or_stronger_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "5-B",
+  "matrix_summary": {
+    "all_artifact_replay_passed": true,
+    "all_capacity_attribution_controls_passed": true,
+    "all_duplicate_replay_passed": true,
+    "all_regime_labels_stable_under_replay": true,
+    "all_rows_consumable_as_ge4": true,
+    "all_snapshot_load_replay_passed": true,
+    "focused_variant_ge4_supported": true,
+    "ge5_or_stronger_supported": false,
+    "rows_demoted": [],
+    "shared_policy_ids": [
+      "n28_shared_regime_policy_v1"
+    ],
+    "single_shared_policy_family_preserved": true,
+    "source_row_count": 2,
+    "trace_id": "n28_i5b_focused_margin_variant_replay_summary"
+  },
+  "output_digest": "0ce6c4dcb35f4c7bef0f2e17c8ab2ff87bde958706c390fd05e016b5092fb08e",
+  "provisional_ge_ladder_rung": "GE4",
+  "ready_for_i6c_focused_stress": true,
+  "replay_rows": [
+    {
+      "artifact_replay_result": "passed",
+      "capacity_attribution_controls_result": "passed",
+      "demoted_rung_if_any": "none",
+      "duplicate_replay_digest_stable": true,
+      "duplicate_replay_first_emitted": true,
+      "duplicate_replay_result": "passed",
+      "duplicate_replay_second_emitted": false,
+      "final_consumable_rung": "GE4",
+      "focal_survival_only_controls_result": "passed",
+      "merge_leakage_controls_result": "passed",
+      "regime_label_stable_under_replay": true,
+      "replay_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix_artifacts/n28_i5b_n28_i4f_row_higher_margin_neutral_circulation_contrast_trace.json",
+      "replay_trace_artifact_sha256": "4e2e2f54b3115215fe3d67f1bb52f61319d96ebf418d30b4953307c2f2b4faa3",
+      "replay_trace_digest": "94c9b893fde7293136a4ce8620017137fb04bb1a03060e3fa29191a9293b2a73",
+      "replayed_regime_label": "neutral",
+      "row_decision": "supported",
+      "row_decision_scope": "consumable_GE4_focused_margin_variant_replay_control_row",
+      "row_digest": "1f1436519f06126dd0210f125aee13dfd3fcab3ea0ac6226238e7902ced5eafa",
+      "row_id": "n28_i5b_replay_n28_i4f_row_higher_margin_neutral_circulation_contrast",
+      "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+      "snapshot_load_replay_result": "passed",
+      "source_artifact_sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+      "source_iteration": "4-F",
+      "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+      "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+      "source_regime_evidence_role": "measured_contrast_margin_strengthening",
+      "source_regime_label": "neutral",
+      "source_role": "higher_margin_neutral_circulation",
+      "source_row_digest": "df88f2b368ffea217ca289ad81e58131e00ffa85f1f12ae51fe7e888a2369124",
+      "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast"
+    },
+    {
+      "artifact_replay_result": "passed",
+      "capacity_attribution_controls_result": "passed",
+      "demoted_rung_if_any": "none",
+      "duplicate_replay_digest_stable": true,
+      "duplicate_replay_first_emitted": true,
+      "duplicate_replay_result": "passed",
+      "duplicate_replay_second_emitted": false,
+      "final_consumable_rung": "GE4",
+      "focal_survival_only_controls_result": "passed",
+      "merge_leakage_controls_result": "passed",
+      "regime_label_stable_under_replay": true,
+      "replay_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix_artifacts/n28_i5b_n28_i4g_row_higher_margin_competitive_redistribution_contrast_trace.json",
+      "replay_trace_artifact_sha256": "71c03c36b036bad9fac6577d1000adcf4b2181b9b30b8f4046f699c520c6a917",
+      "replay_trace_digest": "2839b379fb68c0b8690c9a1cea12eee8bff36c09dfe13a29dbeaa680e83b1c02",
+      "replayed_regime_label": "competitive",
+      "row_decision": "supported",
+      "row_decision_scope": "consumable_GE4_focused_margin_variant_replay_control_row",
+      "row_digest": "3ce04230a374078435b7482e06827ac99d3294cac606dddb633bfa10c46e1883",
+      "row_id": "n28_i5b_replay_n28_i4g_row_higher_margin_competitive_redistribution_contrast",
+      "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+      "snapshot_load_replay_result": "passed",
+      "source_artifact_sha256": "de0abbae9f90df2485f7c04abd79df9db836cdac511a36109210d54ca5e6bc00",
+      "source_iteration": "4-G",
+      "source_output_digest": "8bc907a97b07c09c72fd7ceda63811555c335c0d45d6dbef6cfb29489f463e72",
+      "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_competitive_redistribution_probe.json",
+      "source_regime_evidence_role": "measured_contrast_margin_strengthening",
+      "source_regime_label": "competitive",
+      "source_role": "higher_margin_competitive_redistribution",
+      "source_row_digest": "562c54897ed86326c1bd4b01291258658561eac9ad08f3aee347354a1e853e5b",
+      "source_row_id": "n28_i4g_row_higher_margin_competitive_redistribution_contrast"
+    }
+  ],
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "ap5_nat4_gap_resolution_claim_allowed": false,
+    "final_generative_persistence_claim_allowed": false,
+    "final_n28_claim_allowed": false,
+    "native_ap5_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_cooperation_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_identity_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

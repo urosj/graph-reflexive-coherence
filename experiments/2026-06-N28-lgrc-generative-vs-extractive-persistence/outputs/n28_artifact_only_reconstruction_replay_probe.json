@@ -1,0 +1,401 @@
+{
+  "acceptance_state": "accepted_artifact_only_reconstruction_controls_fail_closed_no_new_ge_support",
+  "artifact_id": "n28_artifact_only_reconstruction_replay_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "n28_i5a_report_only_reconstruction_control_reconstruction_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_report_only_reconstruction_control_reconstruction_trace.json",
+      "sha256": "a9d9905f2effa9782468bd4c1d646868030febd00072314d20aa892e978f1c67"
+    },
+    {
+      "artifact_role": "n28_i5a_label_only_regime_reconstruction_control_reconstruction_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_label_only_regime_reconstruction_control_reconstruction_trace.json",
+      "sha256": "b9fdfb5e724c8d73a072af92e8e9d343967351266a67b1a190ec40f212d6f9fd"
+    },
+    {
+      "artifact_role": "n28_i5a_n27_transfer_only_reconstruction_control_reconstruction_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_n27_transfer_only_reconstruction_control_reconstruction_trace.json",
+      "sha256": "4f810f505870ba48003594f514ea59ba43b23e33182274d5e5127eee89466466"
+    },
+    {
+      "artifact_role": "n28_i5a_digest_only_reconstruction_control_reconstruction_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_digest_only_reconstruction_control_reconstruction_trace.json",
+      "sha256": "dd8d621ecd7395e656340bd2c0b81b7ea733c6d9c0470c54412cbe75c15074b0"
+    },
+    {
+      "artifact_role": "n28_i5a_matrix_summary_only_reconstruction_control_reconstruction_trace",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_matrix_summary_only_reconstruction_control_reconstruction_trace.json",
+      "sha256": "b1cedc9b05bd58e573c6279ce716f546f833c19182c76d8c5ee5831690ec6e30"
+    },
+    {
+      "artifact_role": "artifact_only_reconstruction_summary",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/artifact_only_reconstruction_summary.json",
+      "sha256": "99d0171a470820a4e70e18059702bc0fe14201afc294e6b6ca9a8959c72e7ad1"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i5_replay_matrix_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "no_controls_failed_open",
+      "passed": true
+    },
+    {
+      "check_id": "no_artifact_only_positive_support",
+      "passed": true
+    },
+    {
+      "check_id": "report_only_reconstruction_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "label_only_reconstruction_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "n27_transfer_only_reconstruction_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "digest_only_reconstruction_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "matrix_summary_only_reconstruction_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "ge5_and_ge6_still_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "artifact_only_reconstruction_controls_fail_closed; GE4 remains sourced only to I5 replay/control matrix pending stress",
+  "command": ".venv/bin/python experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/scripts/build_n28_artifact_only_reconstruction_replay_probe.py",
+  "control_rows": [
+    {
+      "available_inputs": [
+        "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/reports/n28_replay_capacity_attribution_matrix.md"
+      ],
+      "blocked_reason": "report text summarizes the result but cannot satisfy source-current N28 trace requirements",
+      "claim_allowed_when_control_triggers": false,
+      "control_status": "failed_closed",
+      "derived_report_only": true,
+      "final_n28_support_allowed": false,
+      "ge4_support_allowed": false,
+      "ge_ladder_rung": "GE0",
+      "iteration": "5-A",
+      "missing_inputs": [
+        "source_current_runtime_trace",
+        "neighbor_capacity_trace",
+        "extraction_leakage_trace",
+        "classification_trace",
+        "generative_extractive_core"
+      ],
+      "reconstruction_mode": "report_only_summary",
+      "regime_label_reconstructed": "not_admissible",
+      "regime_metrics_reconstructable": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "artifact_only_reconstruction_control_failed_closed",
+      "row_digest": "30114d0bceb51769f446a96e1b97b986f7d17cc54963c48dfc6efd15686ab58c",
+      "row_id": "n28_i5a_report_only_reconstruction_control",
+      "source_current_inputs": [],
+      "source_current_n28_trace_available": false,
+      "source_current_n28_trace_required": true,
+      "trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_report_only_reconstruction_control_reconstruction_trace.json",
+      "trace_artifact_sha256": "a9d9905f2effa9782468bd4c1d646868030febd00072314d20aa892e978f1c67",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "final_generative_persistence_claim_allowed": false,
+        "final_n28_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    },
+    {
+      "available_inputs": [
+        "regime_counts",
+        "source_iteration_labels",
+        "source_regime_labels"
+      ],
+      "blocked_reason": "regime labels and counts cannot replace source-current geometric deltas",
+      "claim_allowed_when_control_triggers": false,
+      "control_status": "failed_closed",
+      "derived_report_only": true,
+      "final_n28_support_allowed": false,
+      "ge4_support_allowed": false,
+      "ge_ladder_rung": "GE0",
+      "iteration": "5-A",
+      "missing_inputs": [
+        "focal_stability_trace",
+        "neighbor_capacity_delta_trace",
+        "merge_leakage_trace",
+        "capacity_attribution_trace"
+      ],
+      "reconstruction_mode": "regime_labels_and_counts_only",
+      "regime_label_reconstructed": "not_admissible",
+      "regime_metrics_reconstructable": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "artifact_only_reconstruction_control_failed_closed",
+      "row_digest": "67d1fa81023403304acc138cb9718b492dc3374b76ae462d323299ce1e971a1c",
+      "row_id": "n28_i5a_label_only_regime_reconstruction_control",
+      "source_current_inputs": [],
+      "source_current_n28_trace_available": false,
+      "source_current_n28_trace_required": true,
+      "trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_label_only_regime_reconstruction_control_reconstruction_trace.json",
+      "trace_artifact_sha256": "b9fdfb5e724c8d73a072af92e8e9d343967351266a67b1a190ec40f212d6f9fd",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "final_generative_persistence_claim_allowed": false,
+        "final_n28_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    },
+    {
+      "available_inputs": [
+        "n27_closeout_output_digest",
+        "n27_side_effect_precursor_output_digest"
+      ],
+      "blocked_reason": "N27 transfer success is prerequisite context and cannot recreate N28 generative/extractive regime evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_status": "failed_closed",
+      "derived_report_only": true,
+      "final_n28_support_allowed": false,
+      "ge4_support_allowed": false,
+      "ge_ladder_rung": "GE0",
+      "iteration": "5-A",
+      "missing_inputs": [
+        "N28 source-current regime rows",
+        "N28 replay rows",
+        "N28 capacity attribution traces"
+      ],
+      "reconstruction_mode": "n27_transfer_context_only",
+      "regime_label_reconstructed": "not_admissible",
+      "regime_metrics_reconstructable": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "artifact_only_reconstruction_control_failed_closed",
+      "row_digest": "c6b3df92f20d03d78fc2726f62ed0959f85738751b62aa54257de45953c01b81",
+      "row_id": "n28_i5a_n27_transfer_only_reconstruction_control",
+      "source_current_inputs": [],
+      "source_current_n28_trace_available": false,
+      "source_current_n28_trace_required": true,
+      "trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_n27_transfer_only_reconstruction_control_reconstruction_trace.json",
+      "trace_artifact_sha256": "4f810f505870ba48003594f514ea59ba43b23e33182274d5e5127eee89466466",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "final_generative_persistence_claim_allowed": false,
+        "final_n28_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    },
+    {
+      "available_inputs": [
+        "source_output_digest",
+        "source_row_digest",
+        "artifact_sha256"
+      ],
+      "blocked_reason": "digests prove provenance but do not by themselves replay the regime classifier",
+      "claim_allowed_when_control_triggers": false,
+      "control_status": "failed_closed",
+      "derived_report_only": true,
+      "final_n28_support_allowed": false,
+      "ge4_support_allowed": false,
+      "ge_ladder_rung": "GE0",
+      "iteration": "5-A",
+      "missing_inputs": [
+        "loaded trace payloads",
+        "metric sign checks",
+        "regime-specific attribution controls"
+      ],
+      "reconstruction_mode": "digest_and_hashes_only",
+      "regime_label_reconstructed": "not_admissible",
+      "regime_metrics_reconstructable": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "artifact_only_reconstruction_control_failed_closed",
+      "row_digest": "2b5c4232a92eaa938d8cdc2619ce6779d59c7f32122cbd07e4385935a998546b",
+      "row_id": "n28_i5a_digest_only_reconstruction_control",
+      "source_current_inputs": [],
+      "source_current_n28_trace_available": false,
+      "source_current_n28_trace_required": true,
+      "trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_digest_only_reconstruction_control_reconstruction_trace.json",
+      "trace_artifact_sha256": "dd8d621ecd7395e656340bd2c0b81b7ea733c6d9c0470c54412cbe75c15074b0",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "final_generative_persistence_claim_allowed": false,
+        "final_n28_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    },
+    {
+      "available_inputs": [
+        "matrix_summary",
+        "shared_policy_ids",
+        "rows_demoted"
+      ],
+      "blocked_reason": "I5 matrix summary confirms replay outcome but cannot replace per-row source-current evidence for a new positive claim",
+      "claim_allowed_when_control_triggers": false,
+      "control_status": "failed_closed",
+      "derived_report_only": true,
+      "final_n28_support_allowed": false,
+      "ge4_support_allowed": false,
+      "ge_ladder_rung": "GE0",
+      "iteration": "5-A",
+      "missing_inputs": [
+        "per-row source-current traces",
+        "per-row replay traces",
+        "per-row control results"
+      ],
+      "reconstruction_mode": "i5_matrix_summary_only",
+      "regime_label_reconstructed": "not_admissible",
+      "regime_metrics_reconstructable": false,
+      "row_decision": "rejected",
+      "row_decision_scope": "artifact_only_reconstruction_control_failed_closed",
+      "row_digest": "33a90068d69977b4f8fe74978c8971bef92c9f33fbe2dfbd53bfe6347a57cb69",
+      "row_id": "n28_i5a_matrix_summary_only_reconstruction_control",
+      "source_current_inputs": [],
+      "source_current_n28_trace_available": false,
+      "source_current_n28_trace_required": true,
+      "trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_matrix_summary_only_reconstruction_control_reconstruction_trace.json",
+      "trace_artifact_sha256": "b1cedc9b05bd58e573c6279ce716f546f833c19182c76d8c5ee5831690ec6e30",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "final_generative_persistence_claim_allowed": false,
+        "final_n28_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    }
+  ],
+  "experiment": "N28",
+  "failed_checks": [],
+  "final_generative_persistence_supported": false,
+  "final_n28_supported": false,
+  "ge4_or_stronger_supported": true,
+  "ge4_support_source": "I5 replay/control matrix only",
+  "ge5_or_stronger_supported": false,
+  "ge6_or_stronger_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "i5a_new_ge_support_opened": false,
+  "iteration": "5-A",
+  "output_digest": "c88d2605b60f272ab4fd50bc062c09ab5059f26bf236e7339309196f47863646",
+  "provisional_ge_ladder_rung": "GE4",
+  "ready_for_iteration_6_stress_regime_separation_matrix": true,
+  "report_sha256": "946f2190448ac218854059ab4ea20ac7ba900f2395065d4ded3b0e69e8fc3a17",
+  "script_sha256": "03eeb52082938d4a6670231ded0eeffbfc4c12f6ba0ae211093406a8f2dcf6a9",
+  "source_i3_active_nulls": {
+    "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_generative_evidence",
+    "artifact_sha256": "dd12a22c7ac4497ac39980a41c13a6a567c5438269b5e744ba0ed49720eb3152",
+    "output_digest": "ddd8234d8f3b5fb424c8160d65e90adbe755916c6e4e1b26bd8574a48dc6e8a4",
+    "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_active_nulls_and_failure_baselines.json",
+    "status": "passed"
+  },
+  "source_i5_replay_matrix": {
+    "acceptance_state": "accepted_replay_control_backed_ge4_regime_separation_candidate_pending_stress",
+    "artifact_sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+    "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+    "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+    "status": "passed"
+  },
+  "status": "passed",
+  "summary": {
+    "control_row_count": 5,
+    "failed_closed_row_count": 5,
+    "failed_open_row_count": 0,
+    "ge5_or_stronger_supported": false,
+    "i5_ge4_result_preserved": true,
+    "new_ge_support_opened": false,
+    "positive_support_allowed_rows": [],
+    "source_current_n28_trace_missing_blocks_support": true,
+    "source_current_n28_trace_required": true,
+    "trace_id": "n28_i5a_artifact_only_reconstruction_summary"
+  },
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "ap5_nat4_gap_resolution_claim_allowed": false,
+    "final_generative_persistence_claim_allowed": false,
+    "final_n28_claim_allowed": false,
+    "native_ap5_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_cooperation_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_identity_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

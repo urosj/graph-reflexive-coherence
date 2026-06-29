@@ -1,0 +1,15 @@
+{
+  "ap4_nat4_gap_resolved": false,
+  "ap5_nat4_gap_resolved": false,
+  "broad_margin_robustness_supported": false,
+  "classification_row_count": 10,
+  "competitive_neutral_contrast_row_count": 4,
+  "extractive_contrast_row_count": 3,
+  "final_n28_supported": false,
+  "focused_margin_row_count": 2,
+  "ge5_supported": true,
+  "ge6_supported": false,
+  "generative_row_count": 3,
+  "shared_regime_policy_status": "supported",
+  "trace_id": "n28_i7_controls_ap_claim_classification_summary"
+}
