@@ -83,6 +83,33 @@ focal basin survived, therefore it was generative
 That is false. N28 must show source-current neighborhood capacity improvement,
 not just focal survival.
 
+## Three-Axis Regime Classifier
+
+N28 should classify persistence regimes through three source-current axes:
+
+```text
+focal persistence axis:
+  focal basin stable or not
+
+neighborhood capacity axis:
+  neighbor / sub-basin / environment capacity improves, degrades, or remains neutral
+
+extraction / leakage axis:
+  focal persistence preserves the medium or drains, flattens, leaks, or merges it
+```
+
+The shared classification rule is:
+
+```text
+stable focal + improved neighborhood + low extraction/leakage = generative
+stable focal + degraded neighborhood + high extraction/flattening/leakage = extractive
+stable focal + unchanged/mixed neighborhood = neutral or competitive
+unstable focal = no persistence regime
+```
+
+This is the classifier N28 should try to freeze in Iteration 2 and then test
+without retuning labels, thresholds, or boundaries to fit desired outcomes.
+
 Generative and extractive persistence are not separate experiment targets.
 They are complementary outcomes in one regime space. Splitting them into
 separate experiments would risk proving isolated cases while missing the
@@ -337,6 +364,8 @@ regime_boundary_trace
 policy_retuned_for_label
 label_specific_thresholds_used
 post_hoc_boundary_shift_used
+generative_extractive_core
+generative_extractive_core_digest
 focal_survival_only_rejected
 neighbor_label_only_rejected
 merge_leakage_as_support_rejected
@@ -418,6 +447,12 @@ source_digest_mismatch_control
 derived_report_only_positive_row_control
 artifact_manifest_failure_control
 threshold_declared_after_outcome_control
+missing_focal_stability_digest_control
+missing_neighbor_capacity_digest_control
+missing_extraction_cost_digest_control
+missing_merge_leakage_digest_control
+missing_capacity_attribution_digest_control
+malformed_generative_extractive_core_digest_control
 policy_retuning_to_fit_label_control
 label_specific_threshold_control
 post_hoc_regime_boundary_shift_control

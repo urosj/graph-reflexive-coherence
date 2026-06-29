@@ -1,0 +1,685 @@
+{
+  "acceptance_state": "accepted_source_inventory_generative_extractive_contract_admission_no_positive_evidence",
+  "artifact_id": "n28_source_inventory_and_contract_admission",
+  "checks": [
+    {
+      "check_id": "all_required_sources_exist",
+      "passed": true
+    },
+    {
+      "check_id": "n20_i3_i4_i5_rows_found",
+      "passed": true
+    },
+    {
+      "check_id": "n20_i5_normative_contract_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "n27_closeout_ready_for_n28",
+      "passed": true
+    },
+    {
+      "check_id": "n27_not_consumed_as_n28_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "n27_precursor_metrics_context_only",
+      "passed": true
+    },
+    {
+      "check_id": "medium_debt_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "source_inventory_and_contract_admission_only_no_N28_evidence",
+  "command": ".venv/bin/python experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/scripts/build_n28_source_inventory_and_contract_admission.py",
+  "evidence_state": {
+    "ant_ecology_opened": false,
+    "candidate_rows_classified": false,
+    "ge_ladder_rung_assigned": false,
+    "n27_consumed_as_n28_evidence": false,
+    "n27_transfer_success_as_n28_success_allowed": false,
+    "n28_closeout_ladder_rung_assigned": false,
+    "native_support_opened": false,
+    "phase8_completion_opened": false,
+    "positive_extractive_evidence_opened": false,
+    "positive_generative_evidence_opened": false,
+    "ready_for_iteration_2": true
+  },
+  "experiment": "N28",
+  "failed_checks": [],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "1",
+  "medium_debt_record": {
+    "direct_message_scaffold_as_native_medium_allowed": false,
+    "medium_debt_as_success_allowed": false,
+    "medium_debt_fields": [
+      "generative_extractive_persistence.source_current_neighbor_basin_birth_telemetry",
+      "generative_extractive_persistence.medium_debt_deferred_to_n28_n29",
+      "generative_extractive_persistence.environment_capacity_budget_replay"
+    ],
+    "medium_debt_status": "recorded_for_N28_schema_and_later_N29_ecology_bridge",
+    "shared_medium_label_only_success_allowed": false
+  },
+  "n20_contract_admission": {
+    "blocked_relabel_fields": [
+      "generative_extractive_persistence.blocked.agency",
+      "generative_extractive_persistence.blocked.consciousness",
+      "generative_extractive_persistence.blocked.identity_acceptance",
+      "generative_extractive_persistence.blocked.native_ant_agency",
+      "generative_extractive_persistence.blocked.native_colony_agency",
+      "generative_extractive_persistence.blocked.native_support",
+      "generative_extractive_persistence.blocked.organism_life",
+      "generative_extractive_persistence.blocked.phase8_implementation",
+      "generative_extractive_persistence.blocked.selfhood",
+      "generative_extractive_persistence.blocked.semantic_action",
+      "generative_extractive_persistence.blocked.semantic_choice",
+      "generative_extractive_persistence.blocked.semantic_goal",
+      "generative_extractive_persistence.blocked.semantic_goal_ownership",
+      "generative_extractive_persistence.blocked.semantic_intention",
+      "generative_extractive_persistence.blocked.semantic_perception",
+      "generative_extractive_persistence.blocked.sentience",
+      "generative_extractive_persistence.blocked.unrestricted_autonomy"
+    ],
+    "claim_ceiling": "complete N20 contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+    "continuation_function_descriptor": {
+      "basin_signature": [
+        "focal_basin_stability_trace",
+        "neighbor_basin_distinguishability_trace",
+        "neighbor_support_floor_trace"
+      ],
+      "boundary_condition": "neighbor structures do not merge into focal basin",
+      "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+      "coherence_floor": "focal and neighbor coherence remain distinguishable",
+      "continuation_condition": "focal basin persists while neighborhood basin-forming capacity increases or remains distinguishable",
+      "descriptor_id": "n20_i4_generative_extractive_persistence_continuation_function",
+      "descriptor_kind": "bounded_geometric_continuation_condition",
+      "flux_condition": "environment capacity gain is not focal extraction or leakage",
+      "native_function_descriptor_alias_allowed": true,
+      "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+      "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+      "proxy_metric": "n20_i4_generative_extractive_persistence_generative_capacity_delta_margin",
+      "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence",
+      "support_floor": "focal and neighbor support floors remain visible",
+      "transfer_condition": "ecology-specific transfer deferred until N29",
+      "withdrawal_condition": "producer generativity label can be removed"
+    },
+    "contract_consumption_status": "admitted_as_contract_only_no_positive_N28_evidence",
+    "minimum_controls": {
+      "all_controls_fail_closed": true,
+      "primitive_specific_controls": [
+        {
+          "blocked_condition": "generativity_label_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "generativity_label_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "extractive_persistence_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "extractive_persistence_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "merge_leakage_as_generation_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_as_generation_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "medium_debt_placeholder_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_debt_placeholder_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "medium_debt_as_success_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_debt_as_success_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "direct_message_scaffold_as_native_medium_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "direct_message_scaffold_as_native_medium_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "shared_medium_label_only_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "shared_medium_label_only_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        }
+      ],
+      "shared_control_template_ids": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control"
+      ],
+      "shared_controls": [
+        {
+          "blocked_condition": "continuation label changes or persists while basin signature, support, coherence, boundary, flux, or replay criteria fail",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_success_control",
+          "control_kind": "label_relabel_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "proxy metric improves while same-basin continuation criteria fail",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "proxy_only_success_control",
+          "control_kind": "proxy_replacement_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "undeclared producer support preserves the row after declared support or scaffold is withdrawn",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_support_control",
+          "control_kind": "hidden_support_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "continuation trace is assembled after the fact instead of replaying from declared source-current fields",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction_control",
+          "control_kind": "trace_order_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "agency, choice, goal, intention, sentience, selfhood, identity, or life labels are used as evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_relabel_control",
+          "control_kind": "semantic_overclaim_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "producer-mediated or naturalization-debt state is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_kind": "native_support_overclaim_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        },
+        {
+          "blocked_condition": "contract artifact is relabeled as Phase 8 implementation or source mutation support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_kind": "phase8_overclaim_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+        }
+      ],
+      "source_contract_row": "n20_i4_row_09_generative_extractive_persistence",
+      "status": "defined"
+    },
+    "n20_i3_row_digest": "2108f86e21cbf795a2ab0ef089a1f25f641c60865d97c0fb983119a4f34d50a0",
+    "n20_i3_row_id": "n20_i3_row_09_generative_extractive_persistence",
+    "n20_i4_row_digest": "c08025d24b89807fc5ad245302f33ae4286ed8ad89bf7db450a94eb08c27d99b",
+    "n20_i4_row_id": "n20_i4_row_09_generative_extractive_persistence",
+    "n20_i5_row_digest": "240de0c58bf066a6fb1ff610f13dbecb4f76a3f187ac08012927005de91563b7",
+    "n20_i5_row_id": "n20_i5_row_09_generative_extractive_persistence",
+    "naturalization_debt_fields": [
+      "generative_extractive_persistence.source_current_neighbor_basin_birth_telemetry",
+      "generative_extractive_persistence.medium_debt_deferred_to_n28_n29",
+      "generative_extractive_persistence.environment_capacity_budget_replay"
+    ],
+    "primitive_id": "generative_extractive_persistence",
+    "producer_residue_fields": [
+      "generative_extractive_persistence.generativity_label",
+      "generative_extractive_persistence.neighbor_attribution_policy",
+      "generative_extractive_persistence.medium_segmentation_policy"
+    ],
+    "proxy_metric_definition": {
+      "blocked_proxy_terms": [
+        "agency",
+        "choice",
+        "goal",
+        "intention",
+        "sentience",
+        "identity",
+        "native_support",
+        "selfhood",
+        "consciousness",
+        "organism_life"
+      ],
+      "blocked_relabels_as_proxy_metrics_allowed": false,
+      "collapse_condition": "apparent generation is explained by extraction cost or medium segmentation",
+      "divergence_condition": "capacity score improves while neighbor support degrades or merge pressure rises",
+      "expected_relation_to_continuation_function": "capacity delta is a sign only if focal persistence and neighbor distinguishability both remain source-visible",
+      "measured_quantity": "generative_capacity_delta_margin",
+      "producer_inputs": [
+        "generative_extractive_persistence.generativity_label",
+        "generative_extractive_persistence.neighbor_attribution_policy",
+        "generative_extractive_persistence.medium_segmentation_policy"
+      ],
+      "proxy_id": "n20_i4_generative_extractive_persistence_generative_capacity_delta_margin",
+      "proxy_kind": "bounded_indicator_not_replacement",
+      "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+      "proxy_success_replaces_continuation": false,
+      "source_current_inputs": [
+        "generative_extractive_persistence.focal_basin_stability_trace",
+        "generative_extractive_persistence.neighbor_basin_distinguishability_trace",
+        "generative_extractive_persistence.neighbor_support_floor_trace",
+        "generative_extractive_persistence.extraction_cost_trace"
+      ],
+      "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence"
+    },
+    "same_basin_continuation_rule": {
+      "allowed_drift": "focal persistence may affect neighborhood only without reducing neighbor distinguishability below floor",
+      "basin_signature_fields": [
+        "generative_extractive_persistence.focal_basin_stability_trace",
+        "generative_extractive_persistence.neighbor_basin_distinguishability_trace",
+        "generative_extractive_persistence.neighbor_support_floor_trace"
+      ],
+      "blocked_relabels": [
+        "generative_extractive_persistence.blocked.agency",
+        "generative_extractive_persistence.blocked.consciousness",
+        "generative_extractive_persistence.blocked.identity_acceptance",
+        "generative_extractive_persistence.blocked.native_ant_agency",
+        "generative_extractive_persistence.blocked.native_colony_agency",
+        "generative_extractive_persistence.blocked.native_support",
+        "generative_extractive_persistence.blocked.organism_life",
+        "generative_extractive_persistence.blocked.phase8_implementation",
+        "generative_extractive_persistence.blocked.selfhood",
+        "generative_extractive_persistence.blocked.semantic_action",
+        "generative_extractive_persistence.blocked.semantic_choice",
+        "generative_extractive_persistence.blocked.semantic_goal",
+        "generative_extractive_persistence.blocked.semantic_goal_ownership",
+        "generative_extractive_persistence.blocked.semantic_intention",
+        "generative_extractive_persistence.blocked.semantic_perception",
+        "generative_extractive_persistence.blocked.sentience",
+        "generative_extractive_persistence.blocked.unrestricted_autonomy"
+      ],
+      "boundary_integrity_floor": "neighbor structures do not merge into focal basin",
+      "failure_modes": [
+        "generativity label only",
+        "neighbor support degraded while focal persists",
+        "merge/leakage masquerading as support",
+        "medium debt relabeled as ecology proof"
+      ],
+      "flux_balance_bounds": "environment capacity gain cannot be extraction, leakage, or merge pressure",
+      "hidden_producer_support_allowed": false,
+      "label_only_continuation_allowed": false,
+      "proxy_only_success_allowed": false,
+      "replay_requirement": "focal and environment-side traces replay under same medium-debt boundary",
+      "required_coherence_floor": "focal and neighbor coherence distinguishable",
+      "required_support_floor": "focal and neighbor support floors visible",
+      "rule_id": "n20_i5_generative_extractive_persistence_same_basin_rule",
+      "source_contract_row": "n20_i4_row_09_generative_extractive_persistence"
+    },
+    "substrate_carried_fields": [
+      "generative_extractive_persistence.focal_basin_stability_trace",
+      "generative_extractive_persistence.neighbor_basin_distinguishability_trace",
+      "generative_extractive_persistence.neighbor_support_floor_trace",
+      "generative_extractive_persistence.extraction_cost_trace"
+    ],
+    "support_scaffold_declaration": {
+      "declared_supports": [
+        "generative_extractive_persistence.focal_basin_stability_trace",
+        "generative_extractive_persistence.neighbor_support_floor_trace"
+      ],
+      "hidden_support_allowed": false,
+      "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+      "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+      "naturalization_debt": [
+        "generative_extractive_persistence.source_current_neighbor_basin_birth_telemetry",
+        "generative_extractive_persistence.medium_debt_deferred_to_n28_n29"
+      ],
+      "optional_supports": [
+        "medium debt placeholder"
+      ],
+      "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+      "producer_supplied_scaffolds": [
+        "generative_extractive_persistence.generativity_label",
+        "generative_extractive_persistence.neighbor_attribution_policy",
+        "generative_extractive_persistence.medium_segmentation_policy"
+      ],
+      "required_supports": [
+        "neighbor distinguishability",
+        "environment basin-forming capacity",
+        "extraction cost trace"
+      ],
+      "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence",
+      "support_id": "n20_i4_generative_extractive_persistence_support_scaffold",
+      "support_source": "declared source-current or producer-mediated support surface",
+      "support_surface": "support/coherence/boundary/flux contract surface",
+      "withdrawable_supports": [
+        "generativity label"
+      ],
+      "withdrawal_condition": "environment-side effects remain after label removal"
+    }
+  },
+  "n27_handoff_admission": {
+    "n27_closeout_supported": true,
+    "n27_consumed_as_n28_evidence": false,
+    "n27_final_closeout_rung": "N27-C6_N28_ready_bounded_transfer_closeout",
+    "n27_final_ct_ladder_rung": "CT6_N28_ready_bounded_transfer_evidence",
+    "n28_generative_persistence_supported": false,
+    "n28_may_consume_as": [
+      "bounded_configuration_topology_transfer_evidence",
+      "claim_clean_ct5_transfer_candidate_closeout",
+      "n28_ready_side_effect_precursor_evaluation",
+      "focal_stability_with_neighbor_capacity_metrics_context"
+    ],
+    "n28_must_not_consume_as": [
+      "N28_generative_persistence_evidence",
+      "semantic_identity",
+      "semantic_cooperation",
+      "agency",
+      "native_support",
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "Phase_8_completion",
+      "ant_ecology",
+      "organism_life"
+    ],
+    "n28_precursor_evaluation_supported": true,
+    "precursor_claim_classification_failed_open_control_count": 0,
+    "precursor_classification_acceptance_state": "accepted_n28_ready_side_effect_precursor_claim_clean_no_n28_claim",
+    "precursor_metrics_context_only": {
+      "extractive_flattening_score": 0.022,
+      "focal_extraction_cost": 0.018,
+      "focal_stability_preserved": true,
+      "merge_leakage_score": 0.018,
+      "neighbor_capacity_delta": 0.1,
+      "neighbor_distinguishability_delta": 0.1,
+      "neighbor_support_delta": 0.04
+    },
+    "precursor_policy_context_only": {
+      "declared_before_use": true,
+      "extractive_flattening_ceiling": 0.05,
+      "focal_extraction_cost_ceiling": 0.04,
+      "focal_stability_required": true,
+      "merge_leakage_ceiling": 0.04,
+      "neighbor_capacity_delta_min": 0.05,
+      "neighbor_distinguishability_delta_min": 0.05,
+      "neighbor_support_delta_min": 0.02,
+      "policy_id": "n27_i6a_n28_precursor_side_effect_policy"
+    },
+    "required_n28_starting_controls": [
+      "focal_survival_only_as_generative_control",
+      "neighbor_label_only_as_capacity_control",
+      "merge_leakage_as_support_control",
+      "extractive_flattening_masked_control",
+      "transfer_success_as_n28_success_control"
+    ],
+    "side_effect_precursor_role": "context_only_not_positive_N28_evidence",
+    "transfer_success_as_n28_success_allowed": false
+  },
+  "output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985",
+  "report_sha256": "8db7a44c5be27b9af3cdf4fbbe93f32ce46c78bc6b0647a1e4f8f131587a237b",
+  "script_sha256": "c12e69108e4aacf126c3000477356ce5fbeacbf5bcbbdc783748c408d2d23369",
+  "source_record_count": 8,
+  "source_records": [
+    {
+      "acceptance_state": "accepted_producer_residue_naturalization_debt_ledger_no_primitive_evidence",
+      "artifact_id": "n20_producer_residue_ledger",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "producer_residue_classification",
+        "naturalization_debt_boundary",
+        "blocked_relabel_boundary"
+      ],
+      "must_not_consume_as": [
+        "positive_generative_evidence",
+        "positive_extractive_evidence",
+        "source_current_neighbor_capacity_probe",
+        "native_support_evidence",
+        "semantic_cooperation_evidence"
+      ],
+      "output_digest": "0d7193fa14e9a3f299f0ff941f7424a944d6de963578eb9fc566a5244653d69f",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_producer_residue_ledger.json",
+      "row_decision": "supported",
+      "row_digest": "2108f86e21cbf795a2ab0ef089a1f25f641c60865d97c0fb983119a4f34d50a0",
+      "row_id": "n20_i3_row_09_generative_extractive_persistence",
+      "sha256": "cfb4a0f00d75fe99924ccfacd37c86565cf459c7ab01150fd3761c54526dea70",
+      "source_classification": "contract_source",
+      "source_id": "n20_i3_generative_extractive_producer_residue_ledger",
+      "source_role": "producer_residue_and_naturalization_debt_ledger",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+      "artifact_id": "n20_native_function_proxy_contract",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "bounded_continuation_descriptor",
+        "proxy_metric_boundary_context",
+        "support_scaffold_boundary"
+      ],
+      "must_not_consume_as": [
+        "positive_generative_evidence",
+        "proxy_metric_success_as_primitive_support",
+        "semantic_function_or_goal_evidence",
+        "native_support_evidence"
+      ],
+      "output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "row_decision": "supported",
+      "row_digest": "c08025d24b89807fc5ad245302f33ae4286ed8ad89bf7db450a94eb08c27d99b",
+      "row_id": "n20_i4_row_09_generative_extractive_persistence",
+      "sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_classification": "contract_source",
+      "source_id": "n20_i4_generative_extractive_native_function_proxy_contract",
+      "source_role": "native_function_proxy_descriptor_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "artifact_id": "n20_same_basin_continuation_contract",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "same_basin_rule",
+        "required_floor_and_failure_mode_contract",
+        "minimum_control_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_generative_evidence",
+        "positive_extractive_evidence",
+        "runtime_probe_result",
+        "native_support_evidence"
+      ],
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "row_decision": "supported",
+      "row_digest": "240de0c58bf066a6fb1ff610f13dbecb4f76a3f187ac08012927005de91563b7",
+      "row_id": "n20_i5_row_09_generative_extractive_persistence",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_classification": "contract_source",
+      "source_id": "n20_i5_generative_extractive_same_basin_contract",
+      "source_role": "normative_same_basin_continuation_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n27_c6_closeout_n28_handoff_ready",
+      "artifact_id": "n27_closeout_and_n28_handoff",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "bounded_configuration_topology_transfer_evidence",
+        "claim_clean_ct5_transfer_candidate_closeout",
+        "n28_ready_side_effect_precursor_evaluation",
+        "focal_stability_with_neighbor_capacity_metrics_context"
+      ],
+      "must_not_consume_as": [
+        "N28_generative_persistence_evidence",
+        "semantic_identity",
+        "semantic_cooperation",
+        "agency",
+        "native_support",
+        "native_AP5",
+        "AP5_NAT4_gap_resolution",
+        "Phase_8_completion",
+        "ant_ecology",
+        "organism_life"
+      ],
+      "output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+      "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+      "source_classification": "handoff_source",
+      "source_id": "n27_closeout_and_n28_handoff",
+      "source_role": "bounded_ct6_transfer_and_n28_precursor_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n28_precursor_side_effect_evaluation_no_n28_claim",
+      "artifact_id": "n27_n28_precursor_side_effect_evaluation_matrix",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "focal_stability_metric_context",
+        "neighbor_capacity_metric_context",
+        "starting_threshold_context"
+      ],
+      "must_not_consume_as": [
+        "N28_generative_persistence_evidence",
+        "source_current_N28_probe_result",
+        "final_regime_classification",
+        "native_support_evidence"
+      ],
+      "output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_evaluation_matrix.json",
+      "sha256": "04424eda2a6a2dea59543cd0474cefab8f74c800d0ec58d20c8349d736aa2e79",
+      "source_classification": "precursor_context",
+      "source_id": "n27_n28_precursor_side_effect_evaluation",
+      "source_role": "side_effect_metric_context_no_n28_claim",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n28_ready_side_effect_precursor_claim_clean_no_n28_claim",
+      "artifact_id": "n27_n28_precursor_side_effect_claim_classification",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "starting_control_context",
+        "claim_boundary_context",
+        "precursor_ready_context"
+      ],
+      "must_not_consume_as": [
+        "N28_generative_persistence_evidence",
+        "N28_claim_support",
+        "semantic_cooperation",
+        "native_support",
+        "Phase_8_completion",
+        "ant_ecology"
+      ],
+      "output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_claim_classification.json",
+      "sha256": "a2967d4716a6705fc493dd92a22fcb3399bfcb431db58fa3a8bc8b00e2f8c330",
+      "source_classification": "claim_boundary_context",
+      "source_id": "n27_n28_precursor_claim_classification",
+      "source_role": "n28_precursor_claim_clean_no_n28_claim",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "context_only",
+      "artifact_id": "markdown_source",
+      "digest_policy": "existence_only_active_roadmap_context",
+      "exists": true,
+      "may_consume_as": [
+        "roadmap_handoff_context",
+        "N28_scope_context"
+      ],
+      "must_not_consume_as": [
+        "positive_generative_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "sha256": "not_pinned_active_context_document",
+      "source_classification": "handoff_context",
+      "source_id": "n20_n29_handoff",
+      "source_role": "current_N28_pickup_note",
+      "status": "context_only"
+    },
+    {
+      "acceptance_state": "context_only",
+      "artifact_id": "markdown_source",
+      "digest_policy": "existence_only_active_roadmap_context",
+      "exists": true,
+      "may_consume_as": [
+        "roadmap_context",
+        "N28_question_context"
+      ],
+      "must_not_consume_as": [
+        "positive_generative_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "sha256": "not_pinned_active_context_document",
+      "source_classification": "roadmap_context",
+      "source_id": "n20_n29_roadmap",
+      "source_role": "N28_question_and_iteration_context",
+      "status": "context_only"
+    }
+  ],
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "generative_persistence_claim_allowed": false,
+    "n28_claim_allowed": false,
+    "native_ap5_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_cooperation_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_identity_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

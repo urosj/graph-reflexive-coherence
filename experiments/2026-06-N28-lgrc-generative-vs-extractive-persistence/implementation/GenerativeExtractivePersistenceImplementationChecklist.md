@@ -26,16 +26,16 @@ ready_for_iteration_1 = true
 
 ## Iteration 1 - Source Inventory And Generative / Extractive Contract Admission
 
-- [ ] Consume N20 I3 generative/extractive producer-residue and naturalization-debt ledger.
-- [ ] Consume N20 I4 native-function / proxy descriptor for generative/extractive persistence.
-- [ ] Consume N20 I5 same-basin continuation contract as the normative downstream contract.
-- [ ] Consume N27 closeout as bounded CT6 transfer and N28 precursor context only.
-- [ ] Record N27 side-effect precursor metrics without promoting them to N28 evidence.
-- [ ] Record N27 `n28_generative_persistence_supported = false`.
-- [ ] Record source roles, source digests, and source consumption boundaries.
-- [ ] Record medium-debt fields deferred to N28/N29.
-- [ ] Confirm no positive generative/extractive evidence opens.
-- [ ] Confirm no semantic cooperation, native support, agency, sentience, Phase 8, or ant ecology claim opens.
+- [x] Consume N20 I3 generative/extractive producer-residue and naturalization-debt ledger.
+- [x] Consume N20 I4 native-function / proxy descriptor for generative/extractive persistence.
+- [x] Consume N20 I5 same-basin continuation contract as the normative downstream contract.
+- [x] Consume N27 closeout as bounded CT6 transfer and N28 precursor context only.
+- [x] Record N27 side-effect precursor metrics without promoting them to N28 evidence.
+- [x] Record N27 `n28_generative_persistence_supported = false`.
+- [x] Record source roles, source digests, and source consumption boundaries.
+- [x] Record medium-debt fields deferred to N28/N29.
+- [x] Confirm no positive generative/extractive evidence opens.
+- [x] Confirm no semantic cooperation, native support, agency, sentience, Phase 8, or ant ecology claim opens.
 
 Expected result:
 
@@ -62,33 +62,73 @@ reports/n28_source_inventory_and_contract_admission.md
 scripts/build_n28_source_inventory_and_contract_admission.py
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_source_inventory_generative_extractive_contract_admission_no_positive_evidence
+output_digest = f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985
+source_record_count = 8
+failed_checks = []
+positive_generative_evidence_opened = false
+positive_extractive_evidence_opened = false
+candidate_rows_classified = false
+ge_ladder_rung_assigned = false
+n28_closeout_ladder_rung_assigned = false
+n27_consumed_as_n28_evidence = false
+n27_transfer_success_as_n28_success_allowed = false
+n27_precursor_metrics_context_only = true
+n27_generative_persistence_supported = false
+medium_debt_recorded = true
+native_support_opened = false
+phase8_completion_opened = false
+ant_ecology_opened = false
+ready_for_iteration_2 = true
+```
+
+Interpretation:
+
+```text
+I1 admits the N20 generative/extractive contract stack and the N27
+side-effect precursor as context only. N27 supplies useful starting metrics
+for focal stability, neighbor capacity, extraction cost, and merge/leakage,
+but N27 explicitly keeps N28 generative persistence unsupported. The medium
+debt fields are carried forward for schema/control work; they are not
+success evidence.
+```
+
 ## Iteration 2 - Generative / Extractive Schema And Control Freeze
 
-- [ ] Freeze GE0...GE6 ladder.
-- [ ] Freeze N28-C0...N28-C6 closeout ladder.
-- [ ] Freeze paired-regime evidence requirement: primary and alternative rows for generative, extractive, and competitive/neutral regimes.
-- [ ] Freeze N20 I5 same-basin continuation contract as normative.
-- [ ] Freeze N20 I4 native-function / proxy descriptor as descriptor context.
-- [ ] Freeze N20 I3 producer-residue ledger as residue / debt context.
-- [ ] Freeze N27 closeout and side-effect rows as context-only.
-- [ ] Freeze required evidence fields.
-- [ ] Freeze reusable `generative_extractive_core` object.
-- [ ] Freeze `generative_extractive_core_digest` canonicalization policy.
-- [ ] Freeze focal stability and neighbor capacity formulas.
-- [ ] Freeze extraction, flattening, merge/leakage formulas.
-- [ ] Freeze regime labels and evidence roles.
-- [ ] Freeze regime-boundary trace requirements.
-- [ ] Freeze `shared_regime_policy_status` enum.
-- [ ] Freeze policy-divergence record fields.
-- [ ] Freeze policy-retuning / label-specific-threshold / post-hoc-boundary controls.
-- [ ] Freeze medium-debt and producer-residue record fields.
-- [ ] Freeze rung-specific artifact role requirements.
-- [ ] Freeze replay requirements.
-- [ ] Freeze AP4/AP5 dependency statuses.
-- [ ] Require row-local reason when AP4/AP5 status is `not_applicable`.
-- [ ] Freeze active-null/control families.
-- [ ] Freeze claim boundary and unsafe claim flags.
-- [ ] Confirm no positive N28 evidence opens.
+- [x] Freeze GE0...GE6 ladder.
+- [x] Freeze N28-C0...N28-C6 closeout ladder.
+- [x] Freeze paired-regime evidence requirement: primary and alternative rows for generative, extractive, and competitive/neutral regimes.
+- [x] Freeze the three-axis classifier: focal persistence, neighborhood capacity, and extraction/leakage.
+- [x] Freeze source precedence as immutable from I1 onward.
+- [x] Pin I1 output digest and consumed N20/N27 row/output digests for later rows.
+- [x] Freeze N20 I5 same-basin continuation contract as normative.
+- [x] Freeze N20 I4 native-function / proxy descriptor as descriptor context.
+- [x] Freeze N20 I3 producer-residue ledger as residue / debt context.
+- [x] Freeze N27 closeout and side-effect rows as context-only.
+- [x] Freeze required evidence fields.
+- [x] Freeze reusable `generative_extractive_core` object.
+- [x] Freeze `generative_extractive_core_digest` canonicalization policy.
+- [x] Freeze focal stability and neighbor capacity formulas.
+- [x] Freeze extraction, flattening, merge/leakage formulas.
+- [x] Freeze regime labels and evidence roles.
+- [x] Freeze regime-boundary trace requirements.
+- [x] Freeze `shared_regime_policy_status` enum.
+- [x] Freeze policy-divergence record fields.
+- [x] Freeze policy-retuning / label-specific-threshold / post-hoc-boundary controls.
+- [x] Freeze medium-debt and producer-residue record fields.
+- [x] Require `medium_debt_record`, `producer_residue_record`, `capacity_attribution_trace`, `shared_regime_policy_id`, `shared_regime_policy_status`, and `policy_divergence_record` in positive rows.
+- [x] Freeze `medium_debt_as_success_allowed = false`.
+- [x] Freeze rung-specific artifact role requirements.
+- [x] Freeze replay requirements.
+- [x] Freeze AP4/AP5 dependency statuses.
+- [x] Require row-local reason when AP4/AP5 status is `not_applicable`.
+- [x] Freeze active-null/control families.
+- [x] Freeze claim boundary and unsafe claim flags.
+- [x] Confirm no positive N28 evidence opens.
 
 Expected result:
 
@@ -111,30 +151,62 @@ reports/n28_generative_extractive_schema_and_controls.md
 scripts/build_n28_generative_extractive_schema_and_controls.py
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_generative_extractive_schema_and_controls_frozen_no_positive_evidence
+n28_closeout_ceiling = N28-C2_schema_controls_and_classification_policy_frozen
+output_digest = e118496c025e1a36aac7e4337adcacd869715a5ce5ec6aaaf1558ef0d6576c18
+source_inventory_output_digest = f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985
+required_evidence_field_count = 66
+failed_checks = []
+positive_generative_evidence_opened = false
+positive_extractive_evidence_opened = false
+candidate_rows_classified = false
+ge_ladder_rung_assigned = false
+n28_closeout_ladder_rung_assigned = false
+native_support_opened = false
+phase8_completion_opened = false
+ant_ecology_opened = false
+ready_for_iteration_3 = true
+```
+
+Interpretation:
+
+```text
+I2 freezes the N28 regime classifier as a three-axis source-current policy:
+focal persistence, neighborhood capacity, and extraction/leakage. It also
+freezes the reusable generative_extractive_core and core digest policy so
+later replay, controls, and stress rows can reference a canonical object
+instead of reconstructing claims in prose. Medium debt, producer residue,
+N27 transfer success, and N27 side-effect metrics remain context only.
+```
+
 ## Iteration 3 - Active Nulls And Failure Baselines
 
-- [ ] Run focal-survival-only-as-generative control.
-- [ ] Run neighbor-label-only-as-capacity control.
-- [ ] Run neighbor-count-only-as-capacity control.
-- [ ] Run merge/leakage-as-support control.
-- [ ] Run extractive-flattening-masked control.
-- [ ] Run competitive-persistence-as-generative control.
-- [ ] Run transfer-success-as-N28-success control.
-- [ ] Run hidden-capacity-attribution-policy control.
-- [ ] Run producer-generativity-label control.
-- [ ] Run medium-segmentation-policy-hidden control.
-- [ ] Run environment-capacity-budget-mismatch control.
-- [ ] Run neighbor-support-floor-missing control.
-- [ ] Run neighbor-boundary-integrity-missing control.
-- [ ] Run replay-failure control.
-- [ ] Run stress-variant-failure control.
-- [ ] Run semantic-cooperation relabel control.
-- [ ] Run native-support relabel control.
-- [ ] Run ant-ecology relabel control.
-- [ ] Run Phase 8 completion relabel control.
-- [ ] Run native-AP5 / AP5-NAT4-gap relabel controls.
-- [ ] Confirm failed-open control count is zero.
-- [ ] Confirm no positive GE rung is assigned.
+- [x] Run focal-survival-only-as-generative control.
+- [x] Run neighbor-label-only-as-capacity control.
+- [x] Run neighbor-count-only-as-capacity control.
+- [x] Run merge/leakage-as-support control.
+- [x] Run extractive-flattening-masked control.
+- [x] Run competitive-persistence-as-generative control.
+- [x] Run transfer-success-as-N28-success control.
+- [x] Run hidden-capacity-attribution-policy control.
+- [x] Run producer-generativity-label control.
+- [x] Run medium-segmentation-policy-hidden control.
+- [x] Run environment-capacity-budget-mismatch control.
+- [x] Run neighbor-support-floor-missing control.
+- [x] Run neighbor-boundary-integrity-missing control.
+- [x] Run replay-failure control.
+- [x] Run stress-variant-failure control.
+- [x] Run semantic-cooperation relabel control.
+- [x] Run native-support relabel control.
+- [x] Run ant-ecology relabel control.
+- [x] Run Phase 8 completion relabel control.
+- [x] Run native-AP5 / AP5-NAT4-gap relabel controls.
+- [x] Confirm failed-open control count is zero.
+- [x] Confirm no positive GE rung is assigned.
 
 Expected result:
 
@@ -153,6 +225,42 @@ Artifacts:
 outputs/n28_active_nulls_and_failure_baselines.json
 reports/n28_active_nulls_and_failure_baselines.md
 scripts/build_n28_active_nulls_and_failure_baselines.py
+```
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_generative_evidence
+n28_closeout_ceiling = N28-C3_active_nulls_fail_closed
+output_digest = ddd8234d8f3b5fb424c8160d65e90adbe755916c6e4e1b26bd8574a48dc6e8a4
+source_schema_output_digest = e118496c025e1a36aac7e4337adcacd869715a5ce5ec6aaaf1558ef0d6576c18
+active_null_row_count = 35
+failed_closed_control_count = 35
+failed_open_control_count = 0
+failed_checks = []
+positive_generative_evidence_opened = false
+positive_extractive_evidence_opened = false
+candidate_rows_classified = false
+ge_ladder_rung_assigned = false
+n28_closeout_ladder_rung_assigned = false
+native_support_opened = false
+phase8_completion_opened = false
+ant_ecology_opened = false
+ready_for_iteration_4_minimal_generativity_probe = true
+```
+
+Interpretation:
+
+```text
+I3 instantiates every I2 control family as an active null. The nulls show
+that source/artifact hygiene failures, malformed or missing canonical core
+digests, focal survival alone, neighbor labels/counts, merge/leakage,
+extraction masking, transfer success, hidden attribution, producer labels,
+medium segmentation, missing floors/boundaries, replay/stress failures, AP5
+relabels, semantic relabels, native support, Phase 8, and ant ecology all fail
+closed. The rows are control fixtures only; they do not provide source-current
+N28 positive evidence and do not assign a GE rung.
 ```
 
 ## Iteration 4 - Primary Generative Candidate Probe
