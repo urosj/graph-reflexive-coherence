@@ -14,6 +14,9 @@ n27_transfer_schema_and_controls.md
 n27_active_nulls_and_failure_baselines.md
 n27_minimal_configuration_transfer_probe.md
 n27_topology_fixture_variant_transfer_probe.md
+n27_replay_same_basin_mapping_matrix.md
+n27_artifact_only_reconstruction_replay_probe.md
+n27_stress_mapping_variant_transfer_matrix.md
 ```
 
 Planned reports mirror `outputs/`.

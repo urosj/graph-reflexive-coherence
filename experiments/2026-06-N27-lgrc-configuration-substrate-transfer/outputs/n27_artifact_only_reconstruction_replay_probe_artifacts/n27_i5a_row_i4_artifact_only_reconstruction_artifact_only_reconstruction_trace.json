@@ -1,0 +1,71 @@
+{
+  "artifact_only_policy": {
+    "i5_row_used_only_for_replay_context": true,
+    "new_transfer_evidence_created": false,
+    "source_candidate_manifest_used_as_artifact_index": true,
+    "source_candidate_summary_used_only_for_expected_digest": true,
+    "source_row_body_used_for_reconstruction": false
+  },
+  "artifact_roles_loaded": [
+    "transfer_mapping_trace",
+    "pre_transfer_basin_signature_trace",
+    "post_transfer_basin_signature_trace",
+    "boundary_mapping_trace",
+    "support_preservation_trace",
+    "coherence_preservation_trace",
+    "flux_balance_trace",
+    "reconstructed_support_ledger"
+  ],
+  "artifact_sha256_match_file_contents": true,
+  "artifact_sha256_mismatches": [],
+  "ct3_hygiene_supported": true,
+  "ct4_or_stronger_supported": false,
+  "ct5_or_stronger_supported": false,
+  "final_transfer_supported": false,
+  "first_reconstruction_digest": "78f6871db877ba52d649e0405fc78728b4f5adf8ada66127f15e19f927b6e940",
+  "i5_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+  "i5_replay_row_output_digest": "70af2df7a3de98c39bf420c621e6226116476ffbd43e0d445529f3a2b1b89d11",
+  "i5_source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+  "mapping_order_reconstructed": {
+    "mapping_declaration_order": 0,
+    "mapping_digest_excludes_outcome": true,
+    "mapping_precedes_pre_and_post_observation": true,
+    "post_observation_order": 2,
+    "pre_observation_order": 1
+  },
+  "post_frame_id": "fixture_beta_frame",
+  "pre_frame_id": "fixture_alpha_frame",
+  "reconstructed_core_matches_i5_replay_source": true,
+  "reconstructed_core_matches_source": true,
+  "reconstructed_transfer_core": {
+    "boundary_mapping_digest": "19eda5427b090da77ac54a195c031d249b0645651cb97a232ccebad6c847c358",
+    "coherence_preservation_digest": "baa12fb2139198810beb8bba1d7542776749f137455183cd88fd148dde5ff2ee",
+    "flux_balance_digest": "0baf2b6876a3b767966d725b5613534ed4756e8eb4b5f323f4d3be84de99a34f",
+    "mapping_declared_before_use": true,
+    "mapping_source_backed": true,
+    "post_signature_digest": "cef3d47fa45a4e6c052e9726f33aaafd26d6143f34363c2719aa7841ec04d996",
+    "pre_signature_digest": "735348581363d2ef7d351e858840fc1a61d723836f97b001d3c1cf06c2e88809",
+    "support_preservation_digest": "fd1367c568c54360e257bbd0f44262d9695e42fe6c7eb0c8503a47b8b95e23a8",
+    "transfer_mapping_digest": "5d26566b0ddb52e42b2648277764367f8daaa599a84bc79a1ef542939da7fa12",
+    "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+    "transfer_scope": "configuration"
+  },
+  "reconstructed_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+  "reconstruction_digest_stable": true,
+  "same_basin_metrics_reconstructed": {
+    "boundary_mapping_preserved": true,
+    "coherence_preserved_above_floor": true,
+    "flux_balance_preserved_within_bound": true,
+    "hidden_support_reconstruction_absent": true,
+    "same_basin_signature_preserved_under_mapping": true,
+    "support_preserved_above_floor": true,
+    "support_reconstruction_events": []
+  },
+  "same_frame_movement_claimed": false,
+  "second_reconstruction_digest": "78f6871db877ba52d649e0405fc78728b4f5adf8ada66127f15e19f927b6e940",
+  "source_iteration": "4",
+  "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+  "source_row_id": "n27_i4_row_01_minimal_configuration_transfer_probe",
+  "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+  "trace_id": "n27_i5a_i4_artifact_only_reconstruction_trace"
+}

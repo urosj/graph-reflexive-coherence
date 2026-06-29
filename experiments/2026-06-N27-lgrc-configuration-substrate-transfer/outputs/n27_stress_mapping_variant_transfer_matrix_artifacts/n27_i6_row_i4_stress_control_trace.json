@@ -1,0 +1,8 @@
+{
+  "ct5_assignment_allowed_before_i7_controls": false,
+  "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+  "stress_variant_failure_control_meaning": "stress blocker triggered and stronger stress claim was rejected",
+  "stress_variant_failure_control_status": "failed_closed",
+  "trace_id": "n27_i6_i4_stress_control_trace",
+  "trace_scope": "stress_control_trace_only_not_full_i7_control_matrix"
+}

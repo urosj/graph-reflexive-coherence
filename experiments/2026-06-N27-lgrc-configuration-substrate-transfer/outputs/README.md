@@ -12,13 +12,17 @@ n27_minimal_configuration_transfer_probe.json
 n27_minimal_configuration_transfer_probe_artifacts/
 n27_topology_fixture_variant_transfer_probe.json
 n27_topology_fixture_variant_transfer_probe_artifacts/
+n27_replay_same_basin_mapping_matrix.json
+n27_replay_same_basin_mapping_matrix_artifacts/
+n27_artifact_only_reconstruction_replay_probe.json
+n27_artifact_only_reconstruction_replay_probe_artifacts/
+n27_stress_mapping_variant_transfer_matrix.json
+n27_stress_mapping_variant_transfer_matrix_artifacts/
 ```
 
 Planned outputs:
 
 ```text
-n27_replay_same_basin_mapping_matrix.json
-n27_stress_mapping_variant_transfer_matrix.json
 n27_controls_ap_dependency_claim_classification.json
 n27_closeout_and_n28_handoff.json
 ```

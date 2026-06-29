@@ -429,23 +429,239 @@ scripts/build_n27_topology_fixture_variant_transfer_probe.py
 
 ## Iteration 5 - Replay And Same-Basin Mapping Matrix
 
-- [ ] Run artifact replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run duplicate replay.
-- [ ] Verify same-basin signature preservation under mapping.
-- [ ] Verify support/coherence floors.
-- [ ] Verify boundary mapping.
-- [ ] Verify hidden support reconstruction is absent.
-- [ ] Demote rows that pass only by support reconstruction.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Verify same-basin signature preservation under mapping.
+- [x] Verify support/coherence floors.
+- [x] Verify boundary mapping.
+- [x] Verify hidden support reconstruction is absent.
+- [x] Demote rows that pass only by support reconstruction.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_replay_same_basin_mapping_matrix_CT3_candidates_pending_controls_stress
+n27_closeout_ceiling = N27-C4_source_current_transfer_candidate_supported
+positive_transfer_evidence_opened = true
+candidate_rows_classified = true
+provisional_ct_ladder_rung = CT3
+ct_ladder_rung_assigned = false
+ct_assignment_scope = replay_backed_candidate_only_pending_controls_stress_closeout
+ct3_replay_candidate_supported = true
+ct4_or_stronger_supported = false
+ct5_or_stronger_supported = false
+ct6_or_stronger_supported = false
+final_transfer_supported = false
+replay_row_count = 2
+ready_for_iteration_6_stress_mapping_variant_transfer_matrix = true
+failed_checks = []
+output_digest = de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6
+```
+
+Interpretation: I5 replays the two existing CT2 candidates: the I4
+alpha/beta minimal configuration-frame transfer and the I4-A gamma/delta
+topology/fixture variant transfer. It runs the frozen CT3 replay modes:
+
+```text
+artifact_replay = passed
+snapshot_load_replay = passed
+duplicate_replay = passed
+mapping_order_replay = passed
+```
+
+Duplicate replay is interpreted as idempotent replay: the digest remains
+stable and no second positive transfer row is created. Mapping-order replay
+checks that the declared mapping precedes the pre/post observations and that
+the mapping digest excludes the post-transfer outcome.
+
+Geometrically, I5 does not introduce a new transfer geometry. It verifies that
+the already observed I4 and I4-A basin signatures, boundary mappings,
+support/coherence floors, flux bounds, and empty reconstruction ledgers remain
+stable when replayed. That moves the strongest local evidence from CT2
+source-current transfer candidate to CT3 replay-backed same-basin transfer
+candidate.
+
+This is not final transfer. I5 does not run stress/variant testing, does not
+complete full claim classification, does not resolve AP4/AP5 NAT4 gaps, does
+not support native support, and does not open Phase 8 or ant ecology.
+
+Artifacts:
+
+```text
+outputs/n27_replay_same_basin_mapping_matrix.json
+outputs/n27_replay_same_basin_mapping_matrix_artifacts/
+reports/n27_replay_same_basin_mapping_matrix.md
+scripts/build_n27_replay_same_basin_mapping_matrix.py
+```
+
+## Iteration 5-A - Artifact-Only Reconstruction Replay Probe
+
+- [x] Reconstruct I4 transfer core from artifact files only.
+- [x] Reconstruct I4-A transfer core from artifact files only.
+- [x] Use source manifests only as artifact indexes.
+- [x] Use source row summaries only as expected digest targets.
+- [x] Verify reconstructed transfer cores match source and I5 digests.
+- [x] Verify reconstruction digest stability.
+- [x] Verify mapping order from artifact traces.
+- [x] Verify same-basin metrics from artifact traces.
+- [x] Confirm no new transfer evidence is created.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_artifact_only_reconstruction_replay_hygiene_for_CT3_candidates_no_new_transfer
+n27_closeout_ceiling = N27-C4_source_current_transfer_candidate_supported
+positive_transfer_evidence_opened = true
+new_transfer_evidence_created = false
+candidate_rows_classified = true
+provisional_ct_ladder_rung = CT3
+ct_ladder_rung_assigned = false
+ct_assignment_scope = artifact_only_reconstruction_hygiene_for_existing_CT3_candidates
+ct3_replay_hygiene_supported = true
+ct4_or_stronger_supported = false
+ct5_or_stronger_supported = false
+ct6_or_stronger_supported = false
+final_transfer_supported = false
+reconstruction_row_count = 2
+ready_for_iteration_6_stress_mapping_variant_transfer_matrix = true
+failed_checks = []
+output_digest = 5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36
+```
+
+Interpretation: I5-A strengthens I5 replay hygiene by reconstructing the I4
+and I4-A transfer cores from emitted artifact files only. The reconstruction
+uses the source candidate manifest as an artifact index and the source/I5
+transfer-core digests as comparison targets, but it does not trust candidate
+row summary fields to build the core.
+
+Both rows pass:
+
+```text
+I4 artifact-only reconstructed core =
+  205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4
+
+I4-A artifact-only reconstructed core =
+  e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9
+```
+
+The reconstructed cores match the source candidate digests and the I5 replay
+source digests. Mapping order, same-basin preservation, boundary mapping,
+support/coherence floors, flux bounds, and empty support-reconstruction ledgers
+are all reconstructed from artifact traces.
+
+This is not new transfer evidence. I5-A does not add a mapping, does not
+create a post-transfer basin signature, does not run stress, does not complete
+full controls, and does not support final transfer, semantic identity, native
+support, native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology.
+
+Artifacts:
+
+```text
+outputs/n27_artifact_only_reconstruction_replay_probe.json
+outputs/n27_artifact_only_reconstruction_replay_probe_artifacts/
+reports/n27_artifact_only_reconstruction_replay_probe.md
+scripts/build_n27_artifact_only_reconstruction_replay_probe.py
+```
 
 ## Iteration 6 - Stress / Mapping-Variant Transfer Matrix
 
-- [ ] Stress boundary mapping tolerance.
-- [ ] Stress support preservation.
-- [ ] Stress coherence preservation.
-- [ ] Stress flux balance.
-- [ ] Stress mapping variants.
-- [ ] Distinguish narrow single-mapping transfer from variant-backed transfer.
+- [x] Stress boundary mapping tolerance.
+- [x] Stress support preservation.
+- [x] Stress coherence preservation.
+- [x] Stress flux balance.
+- [x] Stress mapping variants.
+- [x] Distinguish narrow single-mapping transfer from variant-backed transfer.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_stress_mapping_variant_candidate_pending_i7_controls_no_final_transfer
+n27_closeout_ceiling = N27-C4_source_current_transfer_candidate_supported
+positive_transfer_evidence_opened = true
+new_transfer_evidence_created = false
+candidate_rows_classified = true
+provisional_ct_ladder_rung = CT5_candidate_pending_controls
+ct_ladder_rung_assigned = false
+ct_assignment_scope = stress_variant_candidate_pending_i7_controls_and_closeout
+ct3_replay_candidate_supported = true
+ct5_stress_variant_candidate_supported = true
+ct5_assignment_allowed = false
+ct5_assignment_blocker = full_control_trace_pending_iteration_7
+ct5_or_stronger_supported = false
+ct6_or_stronger_supported = false
+final_transfer_supported = false
+stress_pass_count = 1
+stress_limited_count = 1
+ready_for_iteration_7_controls_ap_dependency_claim_classification = true
+failed_checks = []
+output_digest = 3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a
+```
+
+Interpretation: I6 stress-tests the two replay-backed CT3 candidates under a
+declared boundary/support/coherence/flux stress policy. It keeps I4 and I4-A
+separate rather than merging their outcomes.
+
+I4 remains valid CT3 replay-backed evidence, but it is stress-limited:
+
+```text
+source = I4 alpha/beta minimal configuration transfer
+boundary_margin = 0.0
+failed_stress_rows =
+  boundary_tightening_0_05
+  combined_moderate_mapping_stress
+row_decision = partial
+```
+
+This does not invalidate I4. It records that the minimal configuration
+transfer sits exactly at the boundary floor and should not be overread as broad
+stress robustness.
+
+I4-A supplies the stronger stress result:
+
+```text
+source = I4-A gamma/delta topology fixture variant
+boundary_margin = 0.1
+support_margin = 0.015
+coherence_margin = 0.025
+flux_margin = 0.028
+failed_stress_rows = none
+row_decision = supported
+```
+
+The I4-A row survives boundary tightening, support drawdown, coherence
+drawdown, flux pressure, and combined moderate mapping stress. This supports a
+bounded stress/variant candidate. However, the frozen CT5 artifact role also
+requires a full control trace, so I6 records
+`ct5_assignment_allowed = false` pending I7.
+
+I7 must consume I6 asymmetrically:
+
+```text
+I4   = CT3 replay-backed stress-limited candidate; no CT5 contribution
+I4-A = CT5-candidate evidence pending I7 controls
+```
+
+The I6 control trace is only a stress-control trace, not the full I7 control
+matrix. I7 must still validate the frozen controls, AP4/AP5 row-local
+dependency statuses, N26/N25.2 consumption boundaries, and unsafe claim
+blockers before assigning any stronger CT rung.
+
+This is not final transfer. I6 does not complete full claim classification,
+does not resolve AP4/AP5 NAT4 gaps, does not support native support, and does
+not open Phase 8 or ant ecology.
+
+Artifacts:
+
+```text
+outputs/n27_stress_mapping_variant_transfer_matrix.json
+outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/
+reports/n27_stress_mapping_variant_transfer_matrix.md
+scripts/build_n27_stress_mapping_variant_transfer_matrix.py
+```
 
 ## Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
 

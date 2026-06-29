@@ -1,0 +1,159 @@
+{
+  "all_stress_rows_passed": true,
+  "artifact_only_reconstruction_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+  "base_margins": {
+    "boundary": 0.1,
+    "coherence": 0.025,
+    "flux": 0.028,
+    "signature": 0.04,
+    "support": 0.015
+  },
+  "baseline_boundary_at_floor": false,
+  "failed_stress_ids": [],
+  "new_transfer_evidence_created": false,
+  "source_iteration": "4-A",
+  "source_reconstruction_row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+  "source_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+  "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+  "stress_failure_mode": "none",
+  "stress_policy": {
+    "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+    "declaration_order": 0,
+    "declared_before_use": true,
+    "pass_rule": "all residual margins must remain greater than or equal to zero",
+    "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+    "stress_rows": [
+      {
+        "boundary_margin_cost": 0.05,
+        "coherence_margin_cost": 0.0,
+        "flux_margin_cost": 0.0,
+        "stress_id": "boundary_tightening_0_05",
+        "support_margin_cost": 0.0
+      },
+      {
+        "boundary_margin_cost": 0.0,
+        "coherence_margin_cost": 0.0,
+        "flux_margin_cost": 0.0,
+        "stress_id": "support_drawdown_0_008",
+        "support_margin_cost": 0.008
+      },
+      {
+        "boundary_margin_cost": 0.0,
+        "coherence_margin_cost": 0.012,
+        "flux_margin_cost": 0.0,
+        "stress_id": "coherence_drawdown_0_012",
+        "support_margin_cost": 0.0
+      },
+      {
+        "boundary_margin_cost": 0.0,
+        "coherence_margin_cost": 0.0,
+        "flux_margin_cost": 0.02,
+        "stress_id": "flux_pressure_0_02",
+        "support_margin_cost": 0.0
+      },
+      {
+        "boundary_margin_cost": 0.03,
+        "coherence_margin_cost": 0.006,
+        "flux_margin_cost": 0.01,
+        "stress_id": "combined_moderate_mapping_stress",
+        "support_margin_cost": 0.005
+      }
+    ]
+  },
+  "stress_results": [
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.05,
+        "coherence": 0.025,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "stress_costs": {
+        "boundary": 0.05,
+        "coherence": 0.0,
+        "flux": 0.0,
+        "support": 0.0
+      },
+      "stress_id": "boundary_tightening_0_05",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.1,
+        "coherence": 0.025,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.007
+      },
+      "stress_costs": {
+        "boundary": 0.0,
+        "coherence": 0.0,
+        "flux": 0.0,
+        "support": 0.008
+      },
+      "stress_id": "support_drawdown_0_008",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.1,
+        "coherence": 0.013,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "stress_costs": {
+        "boundary": 0.0,
+        "coherence": 0.012,
+        "flux": 0.0,
+        "support": 0.0
+      },
+      "stress_id": "coherence_drawdown_0_012",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.1,
+        "coherence": 0.025,
+        "flux": 0.008,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "stress_costs": {
+        "boundary": 0.0,
+        "coherence": 0.0,
+        "flux": 0.02,
+        "support": 0.0
+      },
+      "stress_id": "flux_pressure_0_02",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.07,
+        "coherence": 0.019,
+        "flux": 0.018,
+        "signature": 0.04,
+        "support": 0.01
+      },
+      "stress_costs": {
+        "boundary": 0.03,
+        "coherence": 0.006,
+        "flux": 0.01,
+        "support": 0.005
+      },
+      "stress_id": "combined_moderate_mapping_stress",
+      "stress_passed": true
+    }
+  ],
+  "stress_variant_trace_role": "stress_existing_replay_backed_transfer_candidate",
+  "trace_id": "n27_i6_i4a_stress_variant_trace",
+  "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+  "transfer_scope": "topology"
+}
