@@ -1,0 +1,31 @@
+{
+  "handoff_id": "n27_to_n28_bounded_transfer_and_side_effect_precursor_handoff",
+  "n27_final_closeout_rung": "N27-C6_N28_ready_bounded_transfer_closeout",
+  "n27_final_ct_ladder_rung": "CT6_N28_ready_bounded_transfer_evidence",
+  "n28_may_consume_as": [
+    "bounded_configuration_topology_transfer_evidence",
+    "claim_clean_ct5_transfer_candidate_closeout",
+    "n28_ready_side_effect_precursor_evaluation",
+    "focal_stability_with_neighbor_capacity_metrics_context"
+  ],
+  "n28_must_not_consume_as": [
+    "N28_generative_persistence_evidence",
+    "semantic_identity",
+    "semantic_cooperation",
+    "agency",
+    "native_support",
+    "native_AP5",
+    "AP5_NAT4_gap_resolution",
+    "Phase_8_completion",
+    "ant_ecology",
+    "organism_life"
+  ],
+  "n28_starting_question": "Can one basin persist while increasing the basin-forming capacity of its environment or neighborhood?",
+  "required_n28_starting_controls": [
+    "focal_survival_only_as_generative_control",
+    "neighbor_label_only_as_capacity_control",
+    "merge_leakage_as_support_control",
+    "extractive_flattening_masked_control",
+    "transfer_success_as_n28_success_control"
+  ]
+}

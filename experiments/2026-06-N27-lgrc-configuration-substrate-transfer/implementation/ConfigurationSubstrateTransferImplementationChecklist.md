@@ -937,14 +937,84 @@ scripts/build_n27_n28_precursor_side_effect_claim_classification.py
 
 ## Iteration 8 - Closeout And N28 Handoff
 
-- [ ] Assign final CT rung if warranted.
-- [ ] Assign final N27-C rung if warranted.
-- [ ] Record final claim ceiling.
-- [ ] Record final source roles.
-- [ ] Record final controls and blockers.
-- [ ] Confirm no absolute paths.
-- [ ] Confirm `src_diff_empty` unless implementation changes were explicitly opened.
-- [ ] Record N28 handoff.
+- [x] Assign final CT rung if warranted.
+- [x] Assign final N27-C rung if warranted.
+- [x] Record final claim ceiling.
+- [x] Record final source roles.
+- [x] Record final controls and blockers.
+- [x] Confirm no absolute paths.
+- [x] Confirm `src_diff_empty` unless implementation changes were explicitly opened.
+- [x] Record N28 handoff.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_n27_c6_closeout_n28_handoff_ready
+final_supported_status = bounded_artifact_level_configuration_topology_transfer_candidate
+final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+final_n27_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+n27_closeout_supported = true
+ct5_or_stronger_supported = true
+ct6_or_stronger_supported = true
+final_transfer_supported = true
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
+native_ap5_supported = false
+ap5_nat4_gap_resolution_supported = false
+native_support_supported = false
+phase8_completion_supported = false
+ant_ecology_supported = false
+ready_for_n28 = true
+failed_checks = []
+output_digest = 818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716
+```
+
+Interpretation: N27 closes as bounded artifact-level configuration/topology
+transfer evidence. The strongest positive row remains the I4-A gamma/delta
+topology / fixture variant. I7 classified it as CT5 after replay, controls,
+stress, AP4/AP5 boundary handling, and unsafe-claim checks. I8 adds the
+closeout and N28 handoff records, so the final N27 transfer rung is CT6.
+
+N28 may consume N27 as:
+
+```text
+bounded_configuration_topology_transfer_evidence
+claim_clean_ct5_transfer_candidate_closeout
+n28_ready_side_effect_precursor_evaluation
+focal_stability_with_neighbor_capacity_metrics_context
+```
+
+N28 must not consume N27 as:
+
+```text
+N28_generative_persistence_evidence
+semantic_identity
+semantic_cooperation
+agency
+native_support
+native_AP5
+AP5_NAT4_gap_resolution
+Phase_8_completion
+ant_ecology
+organism_life
+```
+
+The final claim ceiling is:
+
+```text
+bounded artifact-level configuration/topology transfer evidence with
+N28-ready side-effect precursor evaluation
+```
+
+Artifacts:
+
+```text
+outputs/n27_closeout_and_n28_handoff.json
+outputs/n27_closeout_and_n28_handoff_artifacts/
+reports/n27_closeout_and_n28_handoff.md
+scripts/build_n27_closeout_and_n28_handoff.py
+```
 
 ## Claim Boundary
 

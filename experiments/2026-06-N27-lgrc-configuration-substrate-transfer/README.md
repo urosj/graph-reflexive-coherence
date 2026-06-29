@@ -8,7 +8,7 @@ unscoped multi-basin consumption.
 Current state:
 
 ```text
-status = iteration_7a_passed
+status = closed
 source_contract_row = n20_i5_row_08_configuration_substrate_transfer
 n20_contract_status = complete
 n26_consumption = bounded_PD6_proxy_divergence_collapse_evidence_only
@@ -30,10 +30,14 @@ ct4_control_backed_candidate_supported = true
 ct5_stress_variant_candidate_supported = true
 ct5_or_stronger_supported = true
 ct6_or_stronger_supported = false
-final_transfer_supported = false
+final_supported_status = bounded_artifact_level_configuration_topology_transfer_candidate
+final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+final_n27_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+final_transfer_supported = true
 n28_precursor_evaluation_supported = true
 n28_generative_persistence_supported = false
 n28_experiment_ready = true
+ready_for_n28 = true
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
 active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
@@ -47,7 +51,7 @@ stress_mapping_variant_transfer_output_digest = 3335a4a6017a96b6d71c6e1f386bb2d1
 n28_precursor_side_effect_evaluation_output_digest = 2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af
 controls_ap_dependency_claim_classification_output_digest = d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c
 n28_precursor_side_effect_claim_classification_output_digest = 10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb
-ready_for_iteration_8 = true
+closeout_and_n28_handoff_output_digest = 818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716
 ```
 
 Core question:

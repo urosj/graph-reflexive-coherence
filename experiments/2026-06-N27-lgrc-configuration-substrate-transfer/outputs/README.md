@@ -28,12 +28,8 @@ n27_controls_ap_dependency_claim_classification.json
 n27_controls_ap_dependency_claim_classification_artifacts/
 n27_n28_precursor_side_effect_claim_classification.json
 n27_n28_precursor_side_effect_claim_classification_artifacts/
-```
-
-Planned outputs:
-
-```text
 n27_closeout_and_n28_handoff.json
+n27_closeout_and_n28_handoff_artifacts/
 ```
 
 Outputs must use repository-relative paths only. Visuals, summaries, labels,

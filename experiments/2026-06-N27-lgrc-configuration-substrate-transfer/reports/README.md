@@ -22,6 +22,7 @@ n27_stress_mapping_variant_transfer_matrix.md
 n27_n28_precursor_side_effect_evaluation_matrix.md
 n27_controls_ap_dependency_claim_classification.md
 n27_n28_precursor_side_effect_claim_classification.md
+n27_closeout_and_n28_handoff.md
 ```
 
 Planned reports mirror `outputs/`.

@@ -1,0 +1,206 @@
+{
+  "acceptance_state": "accepted_n27_c6_closeout_n28_handoff_ready",
+  "all_artifact_sha256_match_file_contents": true,
+  "ant_ecology_supported": false,
+  "ap5_nat4_gap_resolution_supported": false,
+  "artifact_id": "n27_closeout_and_n28_handoff",
+  "artifact_manifest": [
+    {
+      "artifact_role": "closeout_trace",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff_artifacts/closeout_trace.json",
+      "sha256": "0884ec66adbc2c54150e941656e05f2442ea79cf1c4c76e2f73b4d14115448c8"
+    },
+    {
+      "artifact_role": "n28_handoff_record",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff_artifacts/n28_handoff_record.json",
+      "sha256": "e36caa0894fcf3a4359f842181d641bc7eec60e638250950a5e75c300b4bdaa1"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i7_ct5_classification_passed",
+      "detail": "accepted_ct5_controls_ap_claim_classification_pending_i8_closeout",
+      "passed": true
+    },
+    {
+      "check_id": "i7a_n28_precursor_passed",
+      "detail": "accepted_n28_ready_side_effect_precursor_claim_clean_no_n28_claim",
+      "passed": true
+    },
+    {
+      "check_id": "ct6_handoff_artifacts_present",
+      "detail": [
+        {
+          "artifact_role": "closeout_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff_artifacts/closeout_trace.json",
+          "sha256": "0884ec66adbc2c54150e941656e05f2442ea79cf1c4c76e2f73b4d14115448c8"
+        },
+        {
+          "artifact_role": "n28_handoff_record",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff_artifacts/n28_handoff_record.json",
+          "sha256": "e36caa0894fcf3a4359f842181d641bc7eec60e638250950a5e75c300b4bdaa1"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n28_generative_persistence_remains_blocked",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "generative_persistence_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "n28_generative_persistence_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": [],
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "final_claim_ceiling": "bounded artifact-level configuration/topology transfer evidence with N28-ready side-effect precursor evaluation",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "n28_generative_persistence_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "closeout_trace": {
+    "ct5_supported": true,
+    "ct6_supported": true,
+    "final_transfer_supported": true,
+    "i7_ct_classification_output_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+    "i7a_n28_precursor_output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+    "n28_generative_persistence_supported": false,
+    "n28_precursor_evaluation_supported": true,
+    "trace_id": "n27_i8_closeout_trace",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "n28_generative_persistence_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "closeout_trace_digest": "31545729b23199131446229f49109fbaa15c1356af01bf94986d1911582e27b8",
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_closeout_and_n28_handoff.py",
+  "controls_ap_dependency_claim_classification_output_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+  "ct5_or_stronger_supported": true,
+  "ct6_or_stronger_supported": true,
+  "experiment": "N27",
+  "failed_checks": [],
+  "final_ct_ladder_rung": "CT6_N28_ready_bounded_transfer_evidence",
+  "final_n27_closeout_rung": "N27-C6_N28_ready_bounded_transfer_closeout",
+  "final_supported_status": "bounded_artifact_level_configuration_topology_transfer_candidate",
+  "final_transfer_supported": true,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "8",
+  "n27_closeout_supported": true,
+  "n28_generative_persistence_supported": false,
+  "n28_handoff": {
+    "handoff_id": "n27_to_n28_bounded_transfer_and_side_effect_precursor_handoff",
+    "n27_final_closeout_rung": "N27-C6_N28_ready_bounded_transfer_closeout",
+    "n27_final_ct_ladder_rung": "CT6_N28_ready_bounded_transfer_evidence",
+    "n28_may_consume_as": [
+      "bounded_configuration_topology_transfer_evidence",
+      "claim_clean_ct5_transfer_candidate_closeout",
+      "n28_ready_side_effect_precursor_evaluation",
+      "focal_stability_with_neighbor_capacity_metrics_context"
+    ],
+    "n28_must_not_consume_as": [
+      "N28_generative_persistence_evidence",
+      "semantic_identity",
+      "semantic_cooperation",
+      "agency",
+      "native_support",
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "Phase_8_completion",
+      "ant_ecology",
+      "organism_life"
+    ],
+    "n28_starting_question": "Can one basin persist while increasing the basin-forming capacity of its environment or neighborhood?",
+    "required_n28_starting_controls": [
+      "focal_survival_only_as_generative_control",
+      "neighbor_label_only_as_capacity_control",
+      "merge_leakage_as_support_control",
+      "extractive_flattening_masked_control",
+      "transfer_success_as_n28_success_control"
+    ]
+  },
+  "n28_precursor_evaluation_supported": true,
+  "n28_precursor_side_effect_claim_classification_output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+  "native_ap5_supported": false,
+  "native_support_supported": false,
+  "output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+  "phase8_completion_supported": false,
+  "purpose": "Close N27 and hand bounded transfer evidence to N28.",
+  "ready_for_n28": true,
+  "schema_version": "1.0",
+  "source_records": [
+    {
+      "output_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_controls_ap_dependency_claim_classification.json",
+      "sha256": "d6b995fdf3747976841d144ce37f88310c962809b9f80ed985c62babe9f86242",
+      "source_id": "n27_i7_ct_classification",
+      "source_role": "ct5_transfer_classification"
+    },
+    {
+      "output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_claim_classification.json",
+      "sha256": "a2967d4716a6705fc493dd92a22fcb3399bfcb431db58fa3a8bc8b00e2f8c330",
+      "source_id": "n27_i7a_n28_precursor_side_effect_classification",
+      "source_role": "n28_precursor_side_effect_classification"
+    }
+  ],
+  "status": "passed"
+}
