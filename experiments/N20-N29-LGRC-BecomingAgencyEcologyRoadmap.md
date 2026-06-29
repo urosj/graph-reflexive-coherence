@@ -14,8 +14,9 @@ the validation bridge supporting MB6 / scoped N26-ready substrate evidence.
 N26 is closed as bounded PD6 proxy divergence / proxy collapse evidence with a
 scoped artifact AP5 bridge candidate, and N27 is closed as bounded CT6
 configuration/topology transfer evidence with a claim-clean N28 side-effect
-precursor handoff. N28 generative versus extractive persistence is the next
-primitive experiment.
+precursor handoff. N28 is closed as bounded GE6 generative/extractive
+persistence evidence with a claim-clean N29 handoff. N29 is now the next
+convergence bridge into agentic ecology.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
@@ -782,6 +783,25 @@ competitive persistence
 extractive persistence
 merge/leakage masquerading as support
 ```
+
+Closed result:
+
+```text
+final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persistence_evidence
+final_n28_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
+final_n28_supported = true
+ready_for_n29 = true
+broad_margin_robustness_supported = false
+ap4_nat4_gap_resolved = false
+ap5_nat4_gap_resolved = false
+```
+
+N29 may consume N28 as bounded artifact-level generative/extractive persistence
+evidence and claim-clean environment-exchange context. It must not consume N28
+as semantic cooperation, semantic choice, agency, native support, native AP5,
+AP5 NAT4-gap resolution, Phase 8 completion, ant ecology implementation, broad
+margin robustness, order-of-magnitude robustness, or unscoped multi-basin
+substrate evidence.
 
 ## N29. Agentic Ecology Convergence Bridge
 

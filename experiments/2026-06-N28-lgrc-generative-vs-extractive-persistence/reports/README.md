@@ -47,3 +47,6 @@
   replay/stress-backed N28 evidence stack.
 - `n28_closeout_and_n29_handoff.md` - Markdown summary for Iteration 8
   closeout and N29 handoff.
+- `n28_generative_extractive_visualization.md` - Markdown summary for the
+  supporting N28 visualization manifest, static graph, sequence panel, and
+  animation.

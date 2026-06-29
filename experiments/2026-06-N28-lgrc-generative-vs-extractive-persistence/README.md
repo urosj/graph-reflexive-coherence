@@ -35,6 +35,17 @@ ant_ecology_opened = false
 ready_for_n29 = true
 ```
 
+## Supporting Visualization
+
+| Static image linked to animation | Sequence image |
+| --- | --- |
+| [![N28 generative/extractive pattern graph](outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_graph.png)](outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_animation.gif) | [![N28 generative/extractive sequence](outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_sequence.png)](outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_sequence.png) |
+
+Click the static image to open the animation; click the sequence image to open
+the full panel for zooming. This visualization is a source-backed diagnostic
+projection from N28 row metrics, not a proof layer and not a full runtime
+geometry replay.
+
 Core question:
 
 ```text

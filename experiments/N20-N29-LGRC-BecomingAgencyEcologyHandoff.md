@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note for N28. It replaces the
+This handoff is the current pickup note for N29. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -23,14 +23,19 @@ N25.1 LGRC9V3 multi-basin formation extension requirements = closed
 Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement = closed_at_MB5
 N25.2 LGRC9V3 MB6 validation bridge = closed
 N26 proxy divergence / proxy collapse = closed
-current primitive experiment = N28_generative_vs_extractive_persistence
 N27 configuration / topology transfer = closed
 N27_final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
 N27_final_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
 N27_final_transfer_supported = true
 N27_n28_precursor_evaluation_supported = true
 N27_n28_generative_persistence_supported = false
-N28_next_iteration = I1_source_inventory_and_generative_extractiveness_contract_admission
+N28 generative / extractive persistence = closed
+N28_final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persistence_evidence
+N28_final_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
+N28_final_supported = true
+N28_ready_for_n29 = true
+current primitive experiment = N29_agentic_ecology_convergence_bridge
+N29_next_iteration = I1_source_inventory_and_bridge_contract_admission
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -190,6 +195,7 @@ mb6_or_stronger_supported = false
 native_lgrc_multi_basin_formation_supported = false
 n26_unscoped_consumption_allowed = false
 phase8_closeout_next_step = N25.2_scoped_missing_mechanism_bridge_before_N26
+phase8_closeout_followup_status = completed_by_N25.2_MB6_validation_bridge
 n25_2_consumer_status = closed_at_MB6_scoped_N26_handoff
 ```
 
@@ -375,6 +381,18 @@ Use this handoff together with:
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_n28_precursor_side_effect_claim_classification.md`
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json`
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_closeout_and_n28_handoff.md`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/implementation/GenerativeExtractivePersistenceImplementationPlan.md`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/implementation/GenerativeExtractivePersistenceImplementationChecklist.md`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_source_inventory_and_contract_admission.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_schema_and_controls.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_active_nulls_and_failure_baselines.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_controls_ap_dependency_claim_classification.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/reports/n28_controls_ap_dependency_claim_classification.md`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json`
+- `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/reports/n28_closeout_and_n29_handoff.md`
 
 Historical prerequisite context remains in:
 
@@ -865,10 +883,10 @@ native_n24_c6
 general_abundance_robustness
 ```
 
-## Blocked Claims Carried Into N25
+## Blocked Claims Carried Through N29
 
-N25 must keep these blocked unless a later source-backed experiment explicitly
-supports a narrower claim:
+N29 must continue to keep these blocked unless a later source-backed experiment
+explicitly supports a narrower claim:
 
 ```text
 agency
@@ -894,9 +912,12 @@ unrestricted autonomy
 
 ## N22-N29 Context
 
-N20-N28 remain in this repository and test becoming primitives close to LGRC
-implementation surfaces. N29 is the first formal convergence bridge into the
-agentic ecology project.
+N20-N28 remain closed in this repository as LGRC-visible becoming-primitive
+evidence and control discipline. N29 is now the first formal convergence bridge
+into the agentic ecology project.
 
-Do not specify formal ant-ecology implementation inside N22-N28. The agentic
-ecology project remains context until N29.
+Do not retroactively treat N20-N28 as ant-ecology implementation. N29 may begin
+formal bridge specifications, but native ant agency, native colony agency,
+biological agency, organism/life, unrestricted autonomy, native support, and
+Phase 8 completion remain blocked unless a later source-backed experiment
+explicitly supports a narrower claim.

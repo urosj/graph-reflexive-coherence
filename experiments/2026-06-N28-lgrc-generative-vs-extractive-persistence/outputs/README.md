@@ -153,3 +153,10 @@
   consumption rules.
 - `n28_closeout_and_n29_handoff_artifacts/` - Iteration 8 trace bundle
   containing source-lineage, claim-boundary, closeout, and N29 handoff records.
+- `n28_generative_extractive_visualization.json` - Supporting visualization
+  manifest for the N28 generative/extractive pattern graph, sequence panel,
+  animation, and frame bundle. This is a diagnostic projection from source
+  row metrics, not a proof layer.
+- `n28_generative_extractive_visualization/` - Static graph, sequence panel,
+  GIF animation, and frame images for the N28 generative, extractive,
+  competitive redistribution, and neutral circulation pattern classes.

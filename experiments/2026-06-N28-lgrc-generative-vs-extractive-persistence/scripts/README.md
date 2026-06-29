@@ -60,5 +60,9 @@
   classification record over the I4-family and focused-margin evidence stack.
 - `build_n28_closeout_and_n29_handoff.py` - Builds the deterministic
   Iteration 8 closeout and N29 handoff record.
+- `render_n28_generative_extractive_visualization.py` - Renders the
+  supporting N28 generative/extractive pattern graph, sequence panel, GIF
+  animation, frame bundle, manifest, and report from existing source-backed
+  N28 row artifacts.
 
 The N28 implementation script set is complete through closeout.
