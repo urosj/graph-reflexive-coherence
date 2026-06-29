@@ -655,16 +655,17 @@ substrate.
 Status:
 
 ```text
-iteration_2_passed
+iteration_3_passed
 source_contract_row = n20_i5_row_08_configuration_substrate_transfer
 local_ladder = CT0...CT6
 closeout_ladder = N27-C0...N27-C6
 positive_transfer_evidence_opened = false
 ct_ladder_rung_assigned = false
-n27_closeout_ceiling = N27-C2_transfer_schema_and_controls_frozen
+n27_closeout_ceiling = N27-C3_active_nulls_fail_closed
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
-ready_for_iteration_3 = true
+active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
+ready_for_iteration_4 = true
 ```
 
 Question:
@@ -708,7 +709,10 @@ direct N25.2 transfer backfill = blocked
 AP4/AP5 dependency handling = row-local
 ```
 
-Iteration 3 should run active nulls and failure baselines only.
+Iteration 3 ran active nulls and failure baselines only. All 22 frozen controls
+failed closed with zero failed-open rows. Iteration 4 may now attempt the first
+minimal configuration-transfer probe, while keeping CT1/CT2 below transfer
+support until replay/control validation.
 
 ## N28. Generative Vs Extractive Persistence
 

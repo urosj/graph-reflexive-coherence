@@ -7,12 +7,12 @@ Current scripts:
 ```text
 build_n27_source_inventory_and_transfer_contract_admission.py
 build_n27_transfer_schema_and_controls.py
+build_n27_active_nulls_and_failure_baselines.py
 ```
 
 Planned scripts:
 
 ```text
-build_n27_active_nulls_and_failure_baselines.py
 build_n27_minimal_configuration_transfer_probe.py
 build_n27_topology_fixture_variant_transfer_probe.py
 build_n27_replay_same_basin_mapping_matrix.py

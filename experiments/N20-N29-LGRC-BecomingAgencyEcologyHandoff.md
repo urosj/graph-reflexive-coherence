@@ -24,11 +24,11 @@ Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement = closed_at_MB5
 N25.2 LGRC9V3 MB6 validation bridge = closed
 N26 proxy divergence / proxy collapse = closed
 current primitive experiment = N27_configuration_substrate_transfer
-N27 configuration / substrate transfer = iteration_2_schema_controls_frozen
+N27 configuration / substrate transfer = iteration_3_active_nulls_fail_closed
 N27_may_consume_N26_as = bounded_PD6_proxy_divergence_collapse_evidence
 N27_must_not_consume_N26_as = native_AP5_or_AP5_NAT4_gap_resolution
 N27_positive_transfer_evidence_opened = false
-N27_next_iteration = I3_active_nulls_and_failure_baselines
+N27_next_iteration = I4_minimal_configuration_transfer_probe
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -263,18 +263,20 @@ question, not as a proxy-score relabel or hidden producer carryover.
 N27 current state:
 
 ```text
-status = iteration_2_passed
-acceptance_state = accepted_transfer_schema_and_controls_frozen_no_positive_evidence
-n27_closeout_ceiling = N27-C2_transfer_schema_and_controls_frozen
+status = iteration_3_passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_transfer_evidence
+n27_closeout_ceiling = N27-C3_active_nulls_fail_closed
 positive_transfer_evidence_opened = false
 ct_ladder_rung_assigned = false
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
-ready_for_iteration_3 = true
+active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
+ready_for_iteration_4 = true
 ```
 
-N27 I3 should instantiate active nulls and failure baselines. It should not
-open positive transfer evidence.
+N27 I4 may now start the first minimal configuration-transfer probe. It should
+not overread CT1/CT2 evidence as transfer support before replay/control
+validation.
 
 ## Active Roadmap Source
 
@@ -317,6 +319,8 @@ Use this handoff together with:
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_source_inventory_and_transfer_contract_admission.md`
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_schema_and_controls.json`
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_transfer_schema_and_controls.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_active_nulls_and_failure_baselines.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_active_nulls_and_failure_baselines.md`
 
 Historical prerequisite context remains in:
 

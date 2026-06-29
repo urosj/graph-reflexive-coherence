@@ -154,32 +154,88 @@ scripts/build_n27_transfer_schema_and_controls.py
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
-- [ ] Run same-label/different-basin control.
-- [ ] Run fixture-equivalence-label-only control.
-- [ ] Run mapping-declared-after-outcome control.
-- [ ] Run proxy-score-relabel-as-transfer control.
-- [ ] Run hidden-support-reconstruction control.
-- [ ] Run support-reconstruction-as-transfer control.
-- [ ] Run boundary-mapping-missing control.
-- [ ] Run post-transfer-signature-missing control.
-- [ ] Run source-current-inputs-missing control.
-- [ ] Run cross-substrate-mapping-missing control.
-- [ ] Run artifact-manifest-failure control.
-- [ ] Run replay-failure control.
-- [ ] Run stress-variant-failure control.
-- [ ] Run AP4-dependency-omitted control.
-- [ ] Run AP5-dependency-omitted control.
-- [ ] Run N26-proxy-as-transfer-evidence control.
-- [ ] Run N26-scoped-AP5-as-native-AP5 control.
-- [ ] Run N25.2-direct-transfer-consumption control.
-- [ ] Run semantic-identity-relabel control.
-- [ ] Run semantic-choice/goal-relabel control.
-- [ ] Run native-support-relabel control.
-- [ ] Run Phase 8 / ant ecology relabel control.
-- [ ] Confirm controls remain orthogonal and each null has a distinct blocker.
-- [ ] Confirm failed-open control count is zero.
-- [ ] Confirm all active nulls fail closed.
-- [ ] Confirm no positive CT rung is assigned.
+- [x] Run same-label/different-basin control.
+- [x] Run fixture-equivalence-label-only control.
+- [x] Run mapping-declared-after-outcome control.
+- [x] Run proxy-score-relabel-as-transfer control.
+- [x] Run hidden-support-reconstruction control.
+- [x] Run support-reconstruction-as-transfer control.
+- [x] Run boundary-mapping-missing control.
+- [x] Run post-transfer-signature-missing control.
+- [x] Run source-current-inputs-missing control.
+- [x] Run cross-substrate-mapping-missing control.
+- [x] Run artifact-manifest-failure control.
+- [x] Run replay-failure control.
+- [x] Run stress-variant-failure control.
+- [x] Run AP4-dependency-omitted control.
+- [x] Run AP5-dependency-omitted control.
+- [x] Run N26-proxy-as-transfer-evidence control.
+- [x] Run N26-scoped-AP5-as-native-AP5 control.
+- [x] Run N25.2-direct-transfer-consumption control.
+- [x] Run semantic-identity-relabel control.
+- [x] Run semantic-choice/goal-relabel control.
+- [x] Run native-support-relabel control.
+- [x] Run Phase 8 / ant ecology relabel control.
+- [x] Confirm controls remain orthogonal and each null has a distinct blocker.
+- [x] Confirm failed-open control count is zero.
+- [x] Confirm all active nulls fail closed.
+- [x] Confirm no positive CT rung is assigned.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_transfer_evidence
+n27_closeout_ceiling = N27-C3_active_nulls_fail_closed
+positive_transfer_evidence_opened = false
+candidate_rows_classified = false
+ct_ladder_rung_assigned = false
+n27_closeout_ladder_rung_assigned = false
+required_control_count = 22
+instantiated_control_count = 22
+failed_closed_control_count = 22
+failed_open_control_count = 0
+ready_for_iteration_4_minimal_configuration_transfer_probe = true
+failed_checks = []
+output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
+```
+
+Interpretation: I3 instantiates every frozen I2 false-transfer control before
+positive probes. All 22 controls fail closed, with zero failed-open controls.
+The rows reject label identity, fixture-label equivalence, post-hoc mapping,
+proxy-score transfer relabels, hidden support reconstruction, support
+reconstruction as preservation, missing boundary mapping, missing post-transfer
+signature, report-only source inputs, unmapped substrate transfer, artifact
+manifest failure, replay failure, stress failure, AP4/AP5 omission, N26 proxy
+or AP5 overconsumption, direct N25.2 backfill, and semantic/native/Phase-8
+relabels.
+
+I3 supports only fail-closed blocker discipline. It does not support CT1, CT2,
+CT3, transfer, identity, native support, native AP5, AP5 NAT4-gap resolution,
+Phase 8, or ant ecology.
+
+Revision note: the negative set is intentionally orthogonal. Each row records
+one `primary_blocker_control_id`, marks that blocker as isolated by schema, and
+keeps non-target positive gates at `not_evaluated_active_null`. This prevents a
+null row from being accepted because unrelated transfer gates were forced to
+fail.
+
+Final boundary check: I3 also records every row as a negative-control row, not a
+source-current positive probe. The report table now exposes
+`control_id | blocker_triggered | expected_status | actual_status |
+rung_effect | claim_allowed`, and the artifact records source precedence,
+artifact-manifest failure subcases, and `implementation_patch_opened = false`.
+That makes the I3 negative surface consumable by I4 without allowing label,
+movement, proxy, support reconstruction, AP-gap, N26/N25.2, or unsafe relabel
+shortcuts.
+
+Artifacts:
+
+```text
+outputs/n27_active_nulls_and_failure_baselines.json
+reports/n27_active_nulls_and_failure_baselines.md
+scripts/build_n27_active_nulls_and_failure_baselines.py
+```
 
 ## Iteration 4 - Minimal Configuration Transfer Probe
 
