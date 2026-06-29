@@ -1,0 +1,14 @@
+{
+  "extractive_flattening_below_ceiling": true,
+  "extractive_flattening_ceiling": 0.03,
+  "extractive_flattening_masked": false,
+  "extractive_flattening_score": 0.014,
+  "focal_extraction_cost": 0.018,
+  "focal_extraction_cost_below_ceiling": true,
+  "focal_extraction_cost_ceiling": 0.035,
+  "merge_leakage_below_ceiling": true,
+  "merge_leakage_ceiling": 0.025,
+  "merge_leakage_score": 0.012,
+  "merge_or_leakage_masquerading_as_support": false,
+  "trace_id": "n28_i4_extraction_leakage_trace"
+}

@@ -1,0 +1,15 @@
+{
+  "coherence_floor": 0.84,
+  "focal_basin_id": "n28_i4c_focal_basin_delta",
+  "focal_coherence_floor_preserved": true,
+  "focal_stability_preserved": true,
+  "focal_support_floor_preserved": true,
+  "post_coherence_min": 0.878,
+  "post_stability_score": 0.878,
+  "post_support_min": 0.87,
+  "pre_coherence_min": 0.886,
+  "pre_stability_score": 0.884,
+  "pre_support_min": 0.879,
+  "support_floor": 0.84,
+  "trace_id": "n28_i4c_focal_basin_stability_trace"
+}

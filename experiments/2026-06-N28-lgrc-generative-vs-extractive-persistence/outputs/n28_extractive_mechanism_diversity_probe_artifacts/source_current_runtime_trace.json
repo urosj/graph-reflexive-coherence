@@ -1,0 +1,45 @@
+{
+  "cross_shell_directional_drain_used": false,
+  "derived_report_only": false,
+  "fixture_kind": "source_current_geometric_trace_fixture",
+  "focal_basin_id": "n28_i4c2_focal_basin_zeta",
+  "mechanism_class": "merge_leakage_dominant_boundary_flattening",
+  "mechanism_distinction_from_i4b": "I4-B uses a gamma local shell drain; I4-C2 is dominated by merge/leakage and boundary flattening.",
+  "mechanism_distinction_from_i4c": "I4-C uses a delta cross-shell directional drain; I4-C2 tests boundary-flattening extractive loss.",
+  "neighbor_scope_id": "n28_i4c2_neighbor_capacity_shell_zeta",
+  "run_artifact_id": "n28_i4c2_extractive_mechanism_diversity_runtime_trace",
+  "runtime_config_digest": "b219226bb3b9103a94687d102e80cd7fe27021154ed736cfaf712fa2eedfa76c",
+  "runtime_config_id": "n28_i4c2_merge_leakage_flattening_fixture_v1",
+  "source_inventory_output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985",
+  "source_schema_output_digest": "ddd8234d8f3b5fb424c8160d65e90adbe755916c6e4e1b26bd8574a48dc6e8a4",
+  "steps": [
+    {
+      "boundary_flattening_band_width": 0.041,
+      "environment_basin_forming_capacity": 0.687,
+      "extractive_flattening_score": 0.018,
+      "focal_coherence_min": 0.882,
+      "focal_extraction_cost": 0.017,
+      "focal_stability_score": 0.879,
+      "focal_support_min": 0.875,
+      "merge_leakage_score": 0.017,
+      "neighbor_boundary_integrity": 0.716,
+      "neighbor_distinguishability": 0.721,
+      "neighbor_support_floor": 0.742,
+      "step": 0
+    },
+    {
+      "boundary_flattening_band_width": 0.096,
+      "environment_basin_forming_capacity": 0.622,
+      "extractive_flattening_score": 0.048,
+      "focal_coherence_min": 0.875,
+      "focal_extraction_cost": 0.038,
+      "focal_stability_score": 0.871,
+      "focal_support_min": 0.868,
+      "merge_leakage_score": 0.043,
+      "neighbor_boundary_integrity": 0.612,
+      "neighbor_distinguishability": 0.646,
+      "neighbor_support_floor": 0.687,
+      "step": 1
+    }
+  ]
+}

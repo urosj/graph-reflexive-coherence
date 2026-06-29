@@ -222,11 +222,13 @@ Iteration 1 - Source Inventory And Generative / Extractive Contract Admission
 Iteration 2 - Generative / Extractive Schema And Control Freeze
 Iteration 3 - Active Nulls And Failure Baselines
 Iteration 4 - Primary Generative Candidate Probe
-Iteration 4-A - Alternative Generative Candidate Probe
+Iteration 4-A - Generative Strengthening Candidate Probe
+Iteration 4-A2 - Generative Mechanism-Diversity Probe
 Iteration 4-B - Primary Extractive Persistence Contrast Probe
-Iteration 4-C - Alternative Extractive Persistence Contrast Probe
+Iteration 4-C - Extractive Strengthening Contrast Probe
+Iteration 4-C2 - Extractive Mechanism-Diversity Probe
 Iteration 4-D - Primary Competitive / Neutral Persistence Contrast Probe
-Iteration 4-E - Alternative Competitive / Neutral Persistence Contrast Probe
+Iteration 4-E - Competitive / Neutral Mechanism-Diversity Probe
 Iteration 5 - Replay And Capacity Attribution Matrix
 Iteration 5-A - Artifact-Only Reconstruction Replay Probe
 Iteration 6 - Stress / Regime-Separation Matrix

@@ -188,18 +188,21 @@ primary generative candidate:
   neighborhood / sub-basin capacity improves
   extraction, flattening, merge, and leakage stay below ceiling
 
-alternative generative candidate:
-  a distinct setup or neighborhood variant reaches the same classification
-  without threshold retuning or relabeling the primary row
+strengthening generative candidate:
+  a distinct setup or neighborhood variant strengthens the I4 generative
+  evidence by reaching the same classification under the same frozen policy
+  family, without threshold retuning or relabeling the primary row
 
 primary extractive contrast:
   focal basin remains stable
   neighborhood / sub-basin capacity degrades
   extraction, flattening, merge, or leakage explains the focal persistence
 
-alternative extractive contrast:
-  a distinct degradation mechanism or neighborhood variant is classified as
-  extractive without being promoted to generative persistence
+strengthening extractive contrast:
+  a distinct degradation mechanism or neighborhood variant strengthens the I4-B
+  extractive evidence by reaching the same extractive classification under the
+  same frozen policy family, without threshold retuning or being promoted to
+  generative persistence
 
 primary competitive_or_neutral contrast:
   focal basin remains stable
@@ -228,8 +231,8 @@ N28-C5 / GE5 should require all of the following unless an explicit blocker is
 recorded:
 
 ```text
-primary and alternative generative candidates survive replay and stress
-primary and alternative extractive contrasts are source-current and classified distinctly
+primary and strengthening generative candidates survive replay and stress
+primary and strengthening extractive contrasts are source-current and classified distinctly
 primary and alternative competitive_or_neutral contrasts are source-current and classified distinctly
 regime boundary stays stable under replay, controls, and stress
 transfer success alone does not classify as generative
@@ -535,13 +538,36 @@ stability is preserved while neighbor capacity metrics improve and
 extraction/flattening/merge/leakage remain below ceiling. Keep the row
 provisional below replay/control closeout.
 
-### Iteration 4-A. Alternative Generative Candidate Probe
+### Iteration 4-A. Generative Strengthening Candidate Probe
 
-Generate a distinct source-current generative candidate under a different
-neighborhood, schedule, fixture, or capacity-formation setup. It must use the
-same frozen policy family if possible. If the same family cannot classify the
-alternative row, record a policy-divergence blocker instead of widening
-thresholds, importing I4 outcomes, or relabeling the primary row.
+Generate a distinct source-current generative candidate whose job is to
+strengthen I4, not merely provide variety. The row should test whether the I4
+generative predicate repeats under a different neighborhood, schedule, fixture,
+or capacity-formation setup while preserving the same frozen policy family.
+
+I4-A should record whether its margins are comparable to or stronger than I4 on
+the load-bearing axes: focal stability, neighbor distinguishability, neighbor
+support, neighbor boundary integrity, environment basin-forming capacity,
+extraction cost, flattening, and merge/leakage. It must not replace I4, import
+I4 outcomes, widen thresholds, or relabel the primary row. If the same policy
+family cannot classify the strengthening row, record a policy-divergence blocker
+instead of retuning.
+
+### Iteration 4-A2. Generative Mechanism-Diversity Probe
+
+Generate a source-current generative candidate through a different geometric
+mechanism, not by optimizing the I4 or I4-A trace. The row should test whether
+the generative predicate holds when neighboring capacity is produced by split
+shell capacity growth, delayed boundary thickening, or another declared
+mechanism that differs from the single-shell/local-shell capacity increase used
+by I4 and I4-A.
+
+I4-A2 should pass only if the same frozen policy family is preserved, the
+mechanism class is source-current and differs from I4/I4-A, focal persistence
+and neighbor capacity gain remain trace-backed, extraction/flattening/leakage
+stay below ceiling, and no thresholds are retuned. This strengthens the
+generative side by mechanism diversity, not by replacing I4/I4-A or requiring
+every margin to be larger than the previous best row.
 
 ### Iteration 4-B. Primary Extractive Persistence Contrast Probe
 
@@ -550,11 +576,37 @@ preserved while neighborhood capacity degrades or flattening/extraction rises.
 The row is valid contrast evidence only if it is classified as extractive and
 not promoted to generative persistence.
 
-### Iteration 4-C. Alternative Extractive Persistence Contrast Probe
+### Iteration 4-C. Extractive Strengthening Contrast Probe
 
-Generate a second source-current extractive contrast using a distinct
-degradation mechanism or neighborhood variant. It must classify as extractive
-without being a relabeled copy of I4-B.
+Generate a distinct source-current extractive contrast whose job is to
+strengthen I4-B, not merely provide variety. The row should test whether the
+I4-B extractive predicate repeats under a different degradation mechanism,
+neighborhood, fixture, schedule, or capacity-attribution route while preserving
+the same frozen policy family.
+
+I4-C should record whether its extractive margins are comparable to or stronger
+than I4-B on the load-bearing axes: focal stability preservation, neighbor
+distinguishability loss, neighbor support loss, neighbor boundary loss,
+environment capacity loss, extraction cost, flattening, and merge/leakage. It
+must not replace I4-B, import I4-B outcomes, widen thresholds, or relabel the
+primary extractive contrast. If the same policy family cannot classify the
+strengthening contrast, record a policy-divergence blocker instead of retuning.
+
+### Iteration 4-C2. Extractive Mechanism-Diversity Probe
+
+Generate a source-current extractive contrast through a different degradation
+mechanism, not by optimizing I4-B or I4-C margins. The row should test whether
+the extractive predicate holds when neighborhood degradation is produced by
+merge/leakage-dominant boundary flattening or another declared mechanism that
+differs from the local shell drain and cross-shell directional drain already
+used by I4-B and I4-C.
+
+I4-C2 should pass only if the same frozen policy family is preserved, the
+mechanism class is source-current and differs from I4-B/I4-C, focal persistence
+and neighbor capacity loss remain trace-backed, extraction/flattening/leakage
+expose the degrading mechanism, and no thresholds are retuned. This strengthens
+the extractive side by mechanism diversity, not by replacing I4-B/I4-C or
+requiring every extractive margin to be larger than the previous best row.
 
 ### Iteration 4-D. Primary Competitive / Neutral Persistence Contrast Probe
 
@@ -563,20 +615,27 @@ persists but neighborhood capacity does not materially improve. The row should
 be classified below generative support while remaining useful for regime
 separation.
 
-### Iteration 4-E. Alternative Competitive / Neutral Persistence Contrast Probe
+### Iteration 4-E. Competitive / Neutral Mechanism-Diversity Probe
 
-Generate a second competitive or neutral contrast with a distinct mixed,
-redistributed, or no-material-improvement setup. It should stay non-generative
-without becoming label-only, extractive by hidden drain, or a retuned primary
-contrast.
+Generate a second competitive or neutral contrast through a distinct mechanism,
+not merely a tuned copy of I4-D. The target is a source-current neutral or
+competitive processing regime, such as balanced multi-lobe circulation, where
+the focal basin persists and local capacity is redistributed without material
+aggregate enrichment or depletion.
+
+I4-E should pass only if it preserves the same frozen policy family, records
+source-current mechanism fields that differ from I4-D, stays non-generative
+without becoming label-only or extractive by hidden drain, and does not retune
+thresholds to force a neutral label. This strengthens the competitive/neutral
+side by mechanism diversity, not by replacing I4-D.
 
 ### Iteration 5. Replay And Capacity Attribution Matrix
 
-Replay I4 through I4-E regime rows and test whether both generative candidates,
-both extractive contrasts, and both competitive/neutral contrasts survive
-artifact-only, snapshot/load, duplicate, and attribution-specific controls.
-Record whether one shared policy still classifies the replayed rows or whether
-split policies are required.
+Replay I4 through I4-E regime rows, including I4-A2 and I4-C2, and test whether
+the generative candidates, extractive contrasts, and competitive/neutral
+contrasts survive artifact-only, snapshot/load, duplicate, and
+attribution-specific controls. Record whether one shared policy still
+classifies the replayed rows or whether split policies are required.
 
 ### Iteration 5-A. Artifact-Only Reconstruction Replay Probe
 

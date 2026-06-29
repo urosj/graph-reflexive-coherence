@@ -1,0 +1,16 @@
+{
+  "classification_declared_before_use": true,
+  "classification_policy_id": "n28_i4a2_generative_mechanism_diversity_policy_v1",
+  "classification_reason": "stable focal basin + split-shell neighborhood capacity improvement + low extraction/leakage",
+  "classification_result": "generative",
+  "extraction_leakage_axis": "low_preserved_medium",
+  "focal_persistence_axis": "stable",
+  "label_specific_thresholds_used": false,
+  "neighborhood_capacity_axis": "improves",
+  "policy_retuned_for_label": false,
+  "post_hoc_boundary_shift_used": false,
+  "regime_evidence_role": "positive_candidate_alternative",
+  "regime_label": "generative",
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "trace_id": "n28_i4a2_generative_mechanism_diversity_classification_trace"
+}

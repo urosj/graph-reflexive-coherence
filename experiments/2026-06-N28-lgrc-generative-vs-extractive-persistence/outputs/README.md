@@ -10,3 +10,71 @@
 - `n28_active_nulls_and_failure_baselines.json` - Iteration 3 active-null
   matrix. Instantiates every I2 control family as a fail-closed false-positive
   blocker without opening positive evidence.
+- `n28_primary_generative_candidate_probe.json` - Iteration 4 primary
+  source-current generative candidate probe. Opens a provisional GE3 row where
+  focal stability is preserved, neighboring capacity improves, and
+  extraction/flattening/merge-leakage remain below ceiling.
+- `n28_primary_generative_candidate_probe_artifacts/` - Iteration 4 trace
+  bundle containing the frozen threshold policy, source-current runtime trace,
+  focal stability trace, neighbor capacity trace, extraction/leakage trace,
+  capacity attribution trace, classification trace, and canonical core.
+- `n28_generative_strengthening_candidate_probe.json` - Iteration 4-A
+  source-current generative strengthening probe. Produces a distinct GE3 row
+  under the same frozen policy family and compares every load-bearing margin
+  against I4 without replacing I4.
+- `n28_generative_strengthening_candidate_probe_artifacts/` - Iteration 4-A
+  trace bundle containing the frozen threshold policy, source-current runtime
+  trace, focal stability trace, neighbor capacity trace, extraction/leakage
+  trace, capacity attribution trace, classification trace, and canonical core.
+- `n28_generative_mechanism_diversity_probe.json` - Iteration 4-A2
+  source-current generative mechanism-diversity probe. Tests split-shell
+  capacity growth with delayed boundary thickening rather than another
+  single-shell margin-strengthening row.
+- `n28_generative_mechanism_diversity_probe_artifacts/` - Iteration 4-A2
+  trace bundle containing the frozen threshold policy, source-current runtime
+  trace, focal stability trace, split-shell neighbor capacity trace,
+  extraction/leakage trace, capacity attribution trace, classification trace,
+  and canonical core.
+- `n28_primary_extractive_contrast_probe.json` - Iteration 4-B primary
+  source-current extractive measured contrast. Preserves focal stability while
+  neighboring capacity degrades and exposed extraction/flattening/merge-leakage
+  explain the contrast without promoting it to generative evidence.
+- `n28_primary_extractive_contrast_probe_artifacts/` - Iteration 4-B trace
+  bundle containing the frozen threshold policy, source-current runtime trace,
+  focal stability trace, neighbor degradation trace, extraction/leakage trace,
+  capacity attribution trace, classification trace, and canonical core.
+- `n28_extractive_strengthening_contrast_probe.json` - Iteration 4-C
+  source-current extractive strengthening contrast. Repeats the I4-B
+  extractive predicate in a distinct delta cross-shell setup with comparable or
+  stronger extractive margins, without replacing I4-B or promoting the row to
+  generative evidence.
+- `n28_extractive_strengthening_contrast_probe_artifacts/` - Iteration 4-C
+  trace bundle containing the frozen threshold policy, source-current runtime
+  trace, focal stability trace, neighbor degradation trace, extraction/leakage
+  trace, capacity attribution trace, classification trace, and canonical core.
+- `n28_extractive_mechanism_diversity_probe.json` - Iteration 4-C2
+  source-current extractive mechanism-diversity probe. Tests
+  merge/leakage-dominant boundary flattening rather than another local-shell
+  or cross-shell drain row.
+- `n28_extractive_mechanism_diversity_probe_artifacts/` - Iteration 4-C2
+  trace bundle containing the frozen threshold policy, source-current runtime
+  trace, focal stability trace, neighbor degradation trace, extraction/leakage
+  trace, capacity attribution trace, classification trace, and canonical core.
+- `n28_primary_competitive_neutral_contrast_probe.json` - Iteration 4-D
+  source-current competitive/neutral measured contrast. Preserves focal
+  stability while neighbor capacity is mixed rather than broadly enriched or
+  depleted, keeping the row out of both generative and extractive support.
+- `n28_primary_competitive_neutral_contrast_probe_artifacts/` - Iteration 4-D
+  trace bundle containing the frozen threshold policy, source-current runtime
+  trace, focal stability trace, mixed neighbor capacity trace,
+  extraction/leakage trace, capacity attribution trace, classification trace,
+  and canonical core.
+- `n28_competitive_neutral_mechanism_diversity_probe.json` - Iteration 4-E
+  source-current competitive/neutral mechanism-diversity probe. Tests
+  three-lobe neutral capacity circulation rather than another direct
+  two-lobe competitive redistribution row.
+- `n28_competitive_neutral_mechanism_diversity_probe_artifacts/` - Iteration
+  4-E trace bundle containing the frozen threshold policy, source-current
+  runtime trace, focal stability trace, neutral/circulatory neighbor capacity
+  trace, extraction/leakage trace, capacity attribution trace, classification
+  trace, and canonical core.

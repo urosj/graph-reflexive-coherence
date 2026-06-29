@@ -1,0 +1,50 @@
+{
+  "competitive_redistribution_used": true,
+  "derived_report_only": false,
+  "fixture_kind": "source_current_geometric_trace_fixture",
+  "focal_basin_id": "n28_i4d_focal_basin_eta",
+  "mechanism_class": "competitive_capacity_redistribution",
+  "mechanism_distinction": "I4-D keeps focal persistence while neighbor capacity is redistributed across lobes rather than clearly gained or depleted.",
+  "neighbor_scope_id": "n28_i4d_competitive_neighbor_field_eta",
+  "run_artifact_id": "n28_i4d_primary_competitive_neutral_runtime_trace",
+  "runtime_config_digest": "273a3cc20cf155f4c9f4886d4000a841cdaaa0f60fd061060ef50d16a686eb30",
+  "runtime_config_id": "n28_i4d_competitive_redistribution_fixture_v1",
+  "source_inventory_output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985",
+  "source_schema_output_digest": "ddd8234d8f3b5fb424c8160d65e90adbe755916c6e4e1b26bd8574a48dc6e8a4",
+  "steps": [
+    {
+      "environment_basin_forming_capacity": 0.642,
+      "extractive_flattening_score": 0.019,
+      "focal_coherence_min": 0.881,
+      "focal_extraction_cost": 0.022,
+      "focal_stability_score": 0.876,
+      "focal_support_min": 0.872,
+      "merge_leakage_score": 0.018,
+      "neighbor_boundary_integrity": 0.668,
+      "neighbor_distinguishability": 0.681,
+      "neighbor_lobes": {
+        "route_lobe_a_capacity": 0.604,
+        "route_lobe_b_capacity": 0.608
+      },
+      "neighbor_support_floor": 0.711,
+      "step": 0
+    },
+    {
+      "environment_basin_forming_capacity": 0.646,
+      "extractive_flattening_score": 0.024,
+      "focal_coherence_min": 0.879,
+      "focal_extraction_cost": 0.028,
+      "focal_stability_score": 0.874,
+      "focal_support_min": 0.87,
+      "merge_leakage_score": 0.019,
+      "neighbor_boundary_integrity": 0.656,
+      "neighbor_distinguishability": 0.699,
+      "neighbor_lobes": {
+        "route_lobe_a_capacity": 0.659,
+        "route_lobe_b_capacity": 0.558
+      },
+      "neighbor_support_floor": 0.717,
+      "step": 1
+    }
+  ]
+}

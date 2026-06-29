@@ -1,0 +1,54 @@
+{
+  "competitive_redistribution_used": false,
+  "derived_report_only": false,
+  "direct_two_lobe_pair_used": false,
+  "fixture_kind": "source_current_geometric_trace_fixture",
+  "focal_basin_id": "n28_i4e_focal_basin_theta",
+  "mechanism_class": "three_lobe_circulatory_capacity_exchange",
+  "mechanism_distinction_from_i4d": "I4-D uses a direct two-lobe competitive gain/loss pair; I4-E uses a three-lobe circulation where capacity is routed through gain, loss, and buffer lobes with near-neutral aggregate change.",
+  "neighbor_scope_id": "n28_i4e_circulatory_neighbor_field_theta",
+  "neutral_circulation_used": true,
+  "run_artifact_id": "n28_i4e_competitive_neutral_mechanism_diversity_runtime_trace",
+  "runtime_config_digest": "393c6522c61f3a8fc29247795e251c524ef2d92b547502c31ff6515a61ebda1b",
+  "runtime_config_id": "n28_i4e_three_lobe_circulatory_exchange_fixture_v1",
+  "source_inventory_output_digest": "f30af50b1e1209039b82454b510f4765de7ee8befe214d96218dec3207db5985",
+  "source_schema_output_digest": "ddd8234d8f3b5fb424c8160d65e90adbe755916c6e4e1b26bd8574a48dc6e8a4",
+  "steps": [
+    {
+      "environment_basin_forming_capacity": 0.651,
+      "extractive_flattening_score": 0.018,
+      "focal_coherence_min": 0.883,
+      "focal_extraction_cost": 0.021,
+      "focal_stability_score": 0.878,
+      "focal_support_min": 0.874,
+      "merge_leakage_score": 0.017,
+      "neighbor_boundary_integrity": 0.671,
+      "neighbor_distinguishability": 0.693,
+      "neighbor_lobes": {
+        "buffer_lobe_capacity": 0.611,
+        "inflow_lobe_capacity": 0.613,
+        "outflow_lobe_capacity": 0.617
+      },
+      "neighbor_support_floor": 0.719,
+      "step": 0
+    },
+    {
+      "environment_basin_forming_capacity": 0.649,
+      "extractive_flattening_score": 0.023,
+      "focal_coherence_min": 0.881,
+      "focal_extraction_cost": 0.027,
+      "focal_stability_score": 0.876,
+      "focal_support_min": 0.872,
+      "merge_leakage_score": 0.02,
+      "neighbor_boundary_integrity": 0.678,
+      "neighbor_distinguishability": 0.701,
+      "neighbor_lobes": {
+        "buffer_lobe_capacity": 0.613,
+        "inflow_lobe_capacity": 0.66,
+        "outflow_lobe_capacity": 0.572
+      },
+      "neighbor_support_floor": 0.713,
+      "step": 1
+    }
+  ]
+}
