@@ -50,4 +50,3 @@ N27 is not a basin-movement experiment. Movement is within-frame continuity; tra
 ## Claim Boundary
 
 source inventory and transfer contract admission only; no positive transfer evidence, semantic identity, agency, native support, sentience, Phase 8 completion, ant ecology, native AP5, or AP5 NAT4 gap resolution
-

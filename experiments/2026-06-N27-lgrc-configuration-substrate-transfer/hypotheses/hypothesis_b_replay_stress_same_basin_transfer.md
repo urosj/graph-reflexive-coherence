@@ -36,4 +36,3 @@ stress matrix demotes the transfer below declared floor
 
 Hypothesis B supports only bounded same-basin transfer evidence if Hypothesis C
 also passes.
-

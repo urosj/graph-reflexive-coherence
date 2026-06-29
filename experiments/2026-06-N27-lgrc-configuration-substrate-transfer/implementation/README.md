@@ -12,4 +12,3 @@ ConfigurationSubstrateTransferImplementationChecklist.md
 N27 must use repository-relative paths only and must keep transfer evidence
 separate from semantic identity, native support, agency, sentience, Phase 8
 completion, and ant ecology claims.
-

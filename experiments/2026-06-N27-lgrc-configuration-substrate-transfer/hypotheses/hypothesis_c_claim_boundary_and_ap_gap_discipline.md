@@ -39,4 +39,3 @@ AP5 NAT4 gap resolution by relabel
 
 If this hypothesis fails, N27 cannot close even if local transfer margins look
 positive.
-

@@ -11,4 +11,3 @@ C = claim boundary, producer-residue, and AP4/AP5 discipline
 Hypothesis A or B may support N27 only if Hypothesis C also passes. If
 Hypothesis C fails, transfer rows are demoted or blocked regardless of local
 signature margins.
-

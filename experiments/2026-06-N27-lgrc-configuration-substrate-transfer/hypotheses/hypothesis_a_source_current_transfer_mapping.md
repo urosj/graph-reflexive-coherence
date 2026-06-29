@@ -38,4 +38,3 @@ cross-substrate transfer claimed without declared source-backed substrate mappin
 
 Hypothesis A cannot by itself support semantic identity, agency, native support,
 sentience, Phase 8 completion, or ant ecology.
-
