@@ -1,0 +1,3082 @@
+{
+  "acceptance_state": "accepted_bridge_motif_library",
+  "artifact_id": "n29_bridge_motif_library_i8",
+  "biological_agency_opened": false,
+  "bridge_motif_library_opened": true,
+  "bridge_motif_library_supported": true,
+  "bridge_motif_rows": [
+    {
+      "capability_sources": [
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.GENERAL.PERTURBATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_perturbation",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n09_goal_proxy_regulation",
+          "coverage_id": "COV.GENERAL.PERTURBATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_perturbation",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-only goal-proxy regulation candidate; semantic goal ownership blocked",
+          "source_experiment": "N09"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.GENERAL.PERTURBATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_perturbation",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n13_support_seeking_regulation",
+          "coverage_id": "COV.GENERAL.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_pressure",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP3 support-seeking regulation candidate",
+          "source_experiment": "N13"
+        },
+        {
+          "capability_id": "n09_goal_proxy_regulation",
+          "coverage_id": "COV.GENERAL.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_pressure",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-only goal-proxy regulation candidate; semantic goal ownership blocked",
+          "source_experiment": "N09"
+        },
+        {
+          "capability_id": "n05_coherence_waves_oscillators",
+          "coverage_id": "COV.GENERAL.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_pressure",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded self-sustained oscillator / coherence-wave candidate; route-coupled trail memory remains blocked",
+          "source_experiment": "N05"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.GENERAL.CO.RESPONSE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_co_response",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.GENERAL.CO.RESPONSE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_co_response",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n05_coherence_waves_oscillators",
+          "coverage_id": "COV.GENERAL.CO.RESPONSE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_co_response",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded self-sustained oscillator / coherence-wave candidate; route-coupled trail memory remains blocked",
+          "source_experiment": "N05"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_reserve_hunger_pressure",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n09_goal_proxy_regulation",
+          "coverage_id": "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_reserve_hunger_pressure",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-only goal-proxy regulation candidate; semantic goal ownership blocked",
+          "source_experiment": "N09"
+        },
+        {
+          "capability_id": "n13_support_seeking_regulation",
+          "coverage_id": "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_reserve_hunger_pressure",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP3 support-seeking regulation candidate",
+          "source_experiment": "N13"
+        },
+        {
+          "capability_id": "n09_goal_proxy_regulation",
+          "coverage_id": "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_alarm_threat_pressure",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-only goal-proxy regulation candidate; semantic goal ownership blocked",
+          "source_experiment": "N09"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_alarm_threat_pressure",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n13_support_seeking_regulation",
+          "coverage_id": "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_alarm_threat_pressure",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP3 support-seeking regulation candidate",
+          "source_experiment": "N13"
+        },
+        {
+          "capability_id": "n22_susceptibility_update",
+          "coverage_id": "COV.RC.ANT.NURSERY.DEMAND.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_nursery_demand",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "producer-mediated bounded SU5 susceptibility-update / durable geometry modification candidate",
+          "source_experiment": "N22"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.NURSERY.DEMAND.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_nursery_demand",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.NURSERY.DEMAND.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_nursery_demand",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        }
+      ],
+      "claim_ceiling": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [
+        "general_perturbation",
+        "general_pressure",
+        "general_co_response",
+        "rc_ant_reserve_hunger_pressure",
+        "rc_ant_alarm_threat_pressure",
+        "rc_ant_nursery_demand"
+      ],
+      "expected_dynamic": "Prior activity leaves an auditable trace or pressure aftereffect that later biases continuation without becoming semantic memory or intention.",
+      "first_probe_relevance": "candidate for I11 trace/pressure/loop prototype admission",
+      "medium_debt": [
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology pressure medium by itself",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "no ecology parent basin or colony medium by itself",
+        "does not define ecology medium",
+        "no shared ecology medium; local circuit only",
+        "no shared ecology or colony surface by itself",
+        "no ecology shared medium by itself",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "does not by itself provide shared-medium coordination",
+        "no ecology role or shared medium by itself",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology reward or resource medium by itself"
+      ],
+      "motif_family": "trace_pressure_loop",
+      "motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "naturalization_debt": [
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "broad margin robustness and ecology composition deferred",
+        "identity acceptance, selfhood, and native support blocked",
+        "native support-generation not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "native integrated agentic-like behavior not established",
+        "semantic choice and native route selection blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "native learning and source mutation remain blocked",
+        "unscoped ecology/ant use remains blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "naturalization_gap": [
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "broad margin robustness and ecology composition deferred",
+        "identity acceptance, selfhood, and native support blocked",
+        "native support-generation not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "native integrated agentic-like behavior not established",
+        "semantic choice and native route selection blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "native learning and source mutation remain blocked",
+        "unscoped ecology/ant use remains blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "ordered_composition": [
+        "trace_or_aftereffect_surface",
+        "pressure_or_support_surface",
+        "later_reentry_or_response_surface"
+      ],
+      "producer_residue": [
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "declared target/proxy surfaces may remain producer-defined",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "identity classification remains artifact-mediated",
+        "support thresholds and response policies remain artifact-mediated",
+        "route coupling and memory policy not supplied by N05 itself",
+        "composition ledger and some policy surfaces remain explicit",
+        "branch fixtures and collapse probes remain artifact-scoped",
+        "producer flux conditioning marks missing native mechanism",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "carrier/producers remain visible and load-bearing",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "proxy surfaces and perturbation regimes remain declared/audited"
+      ],
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "source_artifacts_consumed": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n09_goal_proxy_regulation",
+          "exists": true,
+          "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json",
+          "sha256": "4beae1d67f34819c52d70593f2be99d79961447dd3cd2243975a705bc3acf6ba",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n13_support_seeking_regulation",
+          "exists": true,
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+          "sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n22_susceptibility_update",
+          "exists": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+          "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+          "source_output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        }
+      ],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [
+        "message_payload_as_medium_change",
+        "post_hoc_causality",
+        "semantic_action",
+        "semantic_perception",
+        "native_shared_medium_coordination",
+        "semantic_goal",
+        "reward_maximization",
+        "intention",
+        "cooperation",
+        "altruism",
+        "ant_ecology",
+        "biological_agency",
+        "selfhood",
+        "identity_acceptance",
+        "organism_identity",
+        "semantic_goal_as_pressure",
+        "central_command_as_pressure",
+        "self_maintenance_as_selfhood",
+        "support_seeking_as_intention",
+        "choice",
+        "agency",
+        "ant_movement",
+        "pheromone_memory",
+        "native_colony_behavior",
+        "native_coordination_without_medium",
+        "semantic_cooperation",
+        "free_will",
+        "producer_preference_as_selection",
+        "colony_hunger_as_semantic_goal",
+        "broadcast_as_pressure",
+        "reward",
+        "semantic_choice",
+        "unbounded_abundance",
+        "independent_new_basin",
+        "native_multi_basin_by_label",
+        "reproduction",
+        "semantic_alarm_understanding",
+        "native_defense_agency",
+        "ant_foraging_choice",
+        "semantic_nursing_intention",
+        "task_label_as_role_basin",
+        "learning",
+        "semantic_adaptation",
+        "native_support",
+        "ant_ecology_implementation",
+        "organism_life",
+        "Phase8_completion",
+        "reward_as_goal",
+        "proxy_success_as_agency"
+      ],
+      "x_i8_coverage_ids": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7"
+      ],
+      "x_i8_coverage_status_counts": {
+        "medium_debt": 1,
+        "source_backed": 5
+      },
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 6,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "capability_sources": [
+        {
+          "capability_id": "n26_proxy_divergence_collapse",
+          "coverage_id": "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_food_resource_coupling",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "PD6 bounded proxy divergence / proxy collapse evidence with scoped artifact AP5 bridge candidate; native AP5 unresolved",
+          "source_experiment": "N26"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_food_resource_coupling",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_scoped_basin_formation",
+          "coverage_id": "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_food_resource_coupling",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "N25-C6 scoped BF5 core/sub-basin formation with producer scaffold context; BF6 and independent new basin blocked",
+          "source_experiment": "N25"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_surplus_supported_split_reproduction",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_surplus_supported_split_reproduction",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n25_scoped_basin_formation",
+          "coverage_id": "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_surplus_supported_split_reproduction",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "N25-C6 scoped BF5 core/sub-basin formation with producer scaffold context; BF6 and independent new basin blocked",
+          "source_experiment": "N25"
+        }
+      ],
+      "claim_ceiling": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [
+        "rc_ant_food_resource_coupling",
+        "rc_ant_surplus_supported_split_reproduction"
+      ],
+      "expected_dynamic": "A surplus or reserve condition creates optional continuation or formation potential while maintenance floors remain explicit.",
+      "first_probe_relevance": "candidate for reserve-supported formation or split prototype admission",
+      "medium_debt": [
+        "no ecology reward or resource medium by itself",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology-wide medium or role surface by itself"
+      ],
+      "motif_family": "reserve_optionality_formation",
+      "motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "naturalization_debt": [
+        "native AP5 proxy formation remains blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "unscoped ecology/ant use remains blocked",
+        "fully native general integration blocked"
+      ],
+      "naturalization_gap": [
+        "native AP5 proxy formation remains blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "unscoped ecology/ant use remains blocked",
+        "fully native general integration blocked"
+      ],
+      "ordered_composition": [
+        "reserve_or_surplus_floor",
+        "optional_continuation_surface",
+        "bounded_formation_or_split_surface"
+      ],
+      "producer_residue": [
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "producer flux conditioning marks missing native mechanism",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "generalization remains artifact-level and policy-mediated"
+      ],
+      "prototype_candidate": "source_backed_reconstruction_candidate",
+      "runtime_or_reconstruction_status": "source_backed_reconstruction",
+      "source_artifacts_consumed": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n11_general_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+          "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+          "source_output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+          "source_status": "passed"
+        }
+      ],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [
+        "semantic_food_goal",
+        "resource_counter_as_basin",
+        "reward_as_goal",
+        "proxy_success_as_agency",
+        "semantic_goal",
+        "reward",
+        "semantic_choice",
+        "unbounded_abundance",
+        "independent_new_basin",
+        "native_multi_basin_by_label",
+        "reproduction",
+        "ant_ecology_implementation",
+        "organism_life",
+        "Phase8_completion",
+        "biological_reproduction_claim",
+        "producer_spawn_as_native_split",
+        "general_agency",
+        "colony_agency"
+      ],
+      "x_i8_coverage_ids": [
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "x_i8_coverage_status_counts": {
+        "source_backed": 2
+      },
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 2,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "capability_sources": [
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.GENERAL.PARENT.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_parent_basin",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n07_identity_attractor_invariance",
+          "coverage_id": "COV.GENERAL.PARENT.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_parent_basin",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-only ID6 bounded identity-attractor / non-destructive exchange candidate",
+          "source_experiment": "N07"
+        },
+        {
+          "capability_id": "n16_self_environment_boundary",
+          "coverage_id": "COV.GENERAL.PARENT.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_parent_basin",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP6 self/environment boundary candidate",
+          "source_experiment": "N16"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.GENERAL.SHARED.MEDIUM.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_shared_medium",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n18_limited_long_horizon_closure",
+          "coverage_id": "COV.GENERAL.SHARED.MEDIUM.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_shared_medium",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "limited artifact-level AP8 h4/L5 long-horizon agentic-like closure candidate",
+          "source_experiment": "N18"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.GENERAL.SHARED.MEDIUM.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_shared_medium",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.GENERAL.MEDIUM.SURFACE.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_surface",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.GENERAL.MEDIUM.SURFACE.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_surface",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.GENERAL.MEDIUM.SURFACE.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_surface",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n11_general_agentic_like_integration",
+          "coverage_id": "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_parent_basin_modulation",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "broader general artifact-only agentic-like integration candidate",
+          "source_experiment": "N11"
+        },
+        {
+          "capability_id": "n10_agentic_like_integration",
+          "coverage_id": "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_parent_basin_modulation",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded artifact-only agentic-like integration candidate",
+          "source_experiment": "N10"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_parent_basin_modulation",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n20_becoming_primitive_contract",
+          "coverage_id": "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "general_message_scaffold",
+          "review_gate_status": "contract_gate_for_N21_N28",
+          "source_claim_ceiling": "artifact-level becoming primitive translation contract only",
+          "source_experiment": "N20"
+        },
+        {
+          "capability_id": "n25_1_multi_basin_requirements_bridge",
+          "coverage_id": "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "general_message_scaffold",
+          "review_gate_status": "requirements_bridge_after_N25_before_phase8_runtime_validation",
+          "source_claim_ceiling": "requirements bridge for LGRC9V3 multi-basin extension; no runtime evidence",
+          "source_experiment": "N25.1"
+        },
+        {
+          "capability_id": "n11_general_agentic_like_integration",
+          "coverage_id": "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "general_message_scaffold",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "broader general artifact-only agentic-like integration candidate",
+          "source_experiment": "N11"
+        },
+        {
+          "capability_id": "n25_1_multi_basin_requirements_bridge",
+          "coverage_id": "COV.GENERAL.MEDIUM.DEBT.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_debt",
+          "review_gate_status": "requirements_bridge_after_N25_before_phase8_runtime_validation",
+          "source_claim_ceiling": "requirements bridge for LGRC9V3 multi-basin extension; no runtime evidence",
+          "source_experiment": "N25.1"
+        },
+        {
+          "capability_id": "n11_general_agentic_like_integration",
+          "coverage_id": "COV.GENERAL.MEDIUM.DEBT.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_debt",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "broader general artifact-only agentic-like integration candidate",
+          "source_experiment": "N11"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.GENERAL.MEDIUM.DEBT.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_debt",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n20_becoming_primitive_contract",
+          "coverage_id": "COV.GENERAL.PRODUCER.RESIDUE.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "general_producer_residue",
+          "review_gate_status": "contract_gate_for_N21_N28",
+          "source_claim_ceiling": "artifact-level becoming primitive translation contract only",
+          "source_experiment": "N20"
+        },
+        {
+          "capability_id": "n25_1_multi_basin_requirements_bridge",
+          "coverage_id": "COV.GENERAL.PRODUCER.RESIDUE.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "general_producer_residue",
+          "review_gate_status": "requirements_bridge_after_N25_before_phase8_runtime_validation",
+          "source_claim_ceiling": "requirements bridge for LGRC9V3 multi-basin extension; no runtime evidence",
+          "source_experiment": "N25.1"
+        },
+        {
+          "capability_id": "n12_native_producer_review_gate",
+          "coverage_id": "COV.GENERAL.PRODUCER.RESIDUE.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "general_producer_residue",
+          "review_gate_status": "review_gate_for_N05_N11",
+          "source_claim_ceiling": "native/producers review gate for N05-N11; no agency and no native support opened",
+          "source_experiment": "N12"
+        },
+        {
+          "capability_id": "n21_withdrawal_naturalization",
+          "coverage_id": "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "general_naturalization_condition",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "bounded artifact-level WR6 withdrawal candidate plus N21-local ND5 naturalization-depth candidate",
+          "source_experiment": "N21"
+        },
+        {
+          "capability_id": "n20_becoming_primitive_contract",
+          "coverage_id": "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "general_naturalization_condition",
+          "review_gate_status": "contract_gate_for_N21_N28",
+          "source_claim_ceiling": "artifact-level becoming primitive translation contract only",
+          "source_experiment": "N20"
+        },
+        {
+          "capability_id": "n11_general_agentic_like_integration",
+          "coverage_id": "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "general_naturalization_condition",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "broader general artifact-only agentic-like integration candidate",
+          "source_experiment": "N11"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_colony_parent_basin",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n16_self_environment_boundary",
+          "coverage_id": "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_colony_parent_basin",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP6 self/environment boundary candidate",
+          "source_experiment": "N16"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_colony_parent_basin",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n27_configuration_substrate_transfer",
+          "coverage_id": "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_mobile_boundary_expression",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "CT6 bounded configuration/topology transfer evidence; semantic identity transfer blocked",
+          "source_experiment": "N27"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_mobile_boundary_expression",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n16_self_environment_boundary",
+          "coverage_id": "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_mobile_boundary_expression",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP6 self/environment boundary candidate",
+          "source_experiment": "N16"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.NEST.HOME.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_nest_home_basin",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.NEST.HOME.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_nest_home_basin",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n16_self_environment_boundary",
+          "coverage_id": "COV.RC.ANT.NEST.HOME.BASIN.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "rc_ant_nest_home_basin",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP6 self/environment boundary candidate",
+          "source_experiment": "N16"
+        },
+        {
+          "capability_id": "n26_proxy_divergence_collapse",
+          "coverage_id": "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_food_resource_coupling",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "PD6 bounded proxy divergence / proxy collapse evidence with scoped artifact AP5 bridge candidate; native AP5 unresolved",
+          "source_experiment": "N26"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_food_resource_coupling",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_scoped_basin_formation",
+          "coverage_id": "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_food_resource_coupling",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "N25-C6 scoped BF5 core/sub-basin formation with producer scaffold context; BF6 and independent new basin blocked",
+          "source_experiment": "N25"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.RC.ANT.WASTE.ISOLATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_waste_isolation",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.WASTE.ISOLATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_waste_isolation",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n11_general_agentic_like_integration",
+          "coverage_id": "COV.RC.ANT.WASTE.ISOLATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_waste_isolation",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "broader general artifact-only agentic-like integration candidate",
+          "source_experiment": "N11"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "rc_ant_construction_tension",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "rc_ant_construction_tension",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "rc_ant_construction_tension",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_surplus_supported_split_reproduction",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_surplus_supported_split_reproduction",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n25_scoped_basin_formation",
+          "coverage_id": "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_surplus_supported_split_reproduction",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "N25-C6 scoped BF5 core/sub-basin formation with producer scaffold context; BF6 and independent new basin blocked",
+          "source_experiment": "N25"
+        }
+      ],
+      "claim_ceiling": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [
+        "general_parent_basin",
+        "general_shared_medium",
+        "general_medium_surface",
+        "general_parent_basin_modulation",
+        "general_message_scaffold",
+        "general_medium_debt",
+        "general_producer_residue",
+        "general_naturalization_condition",
+        "rc_ant_colony_parent_basin",
+        "rc_ant_mobile_boundary_expression",
+        "rc_ant_nest_home_basin",
+        "rc_ant_food_resource_coupling",
+        "rc_ant_waste_isolation",
+        "rc_ant_construction_tension",
+        "rc_ant_surplus_supported_split_reproduction"
+      ],
+      "expected_dynamic": "Local basin identity or multi-basin structure is related through a shared medium or parent surface while medium debt remains visible.",
+      "first_probe_relevance": "candidate for I12 boundary/shared-medium prototype admission",
+      "medium_debt": [
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology parent basin or colony medium by itself",
+        "shared-medium separability candidate, not ecology coordination",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "shared-medium evidence remains narrow and bottleneck-aware",
+        "paired-perspective shared medium remains bounded and scoped",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "abundance not yet ecology medium or reproduction",
+        "no ecology-wide medium or role surface by itself",
+        "no shared ecology or colony surface by itself",
+        "records medium-related debt for later primitives",
+        "defines shared child-basin substrate requirements, not evidence",
+        "not a shared-medium evidence source",
+        "no ecology medium evidence by itself",
+        "no shared ecology medium by itself",
+        "does not create ecology role relocation by itself",
+        "no ecology reward or resource medium by itself"
+      ],
+      "motif_family": "boundary_shared_medium_unit",
+      "motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "naturalization_debt": [
+        "unscoped ecology/ant use remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "general long-horizon native closure blocked",
+        "semantic action/perception and native agency blocked",
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "defines debt; does not resolve it",
+        "runtime validation deferred to Phase 8 and N25.2",
+        "native absorption candidates require later implementation validation",
+        "AP4/AP5 native evidence gaps propagate to dependent rows",
+        "ND6 durable source mutation deferred to N22 bridge",
+        "cross-substrate generality and semantic role transfer blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "naturalization_gap": [
+        "unscoped ecology/ant use remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "general long-horizon native closure blocked",
+        "semantic action/perception and native agency blocked",
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "defines debt; does not resolve it",
+        "runtime validation deferred to Phase 8 and N25.2",
+        "native absorption candidates require later implementation validation",
+        "AP4/AP5 native evidence gaps propagate to dependent rows",
+        "ND6 durable source mutation deferred to N22 bridge",
+        "cross-substrate generality and semantic role transfer blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "ordered_composition": [
+        "boundary_or_multi_basin_unit",
+        "shared_medium_or_parent_surface",
+        "debt_visible_relation_between_local_and_medium_state"
+      ],
+      "producer_residue": [
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "identity classification remains artifact-mediated",
+        "boundary classification remains artifact/control mediated",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "validation telemetry does not become native implementation",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "producer flux conditioning marks missing native mechanism",
+        "generalization remains artifact-level and policy-mediated",
+        "composition ledger and some policy surfaces remain explicit",
+        "explicit ledger of producer-mediated fields and naturalization debt",
+        "records what must not be backfilled by labels or producers",
+        "records which older surfaces remain producer scaffolds",
+        "records AP-stack implementation gaps and scaffolds",
+        "declared supports and probes remain audited surfaces",
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "proxy surfaces and perturbation regimes remain declared/audited"
+      ],
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "source_artifacts_consumed": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n16_self_environment_boundary",
+          "exists": true,
+          "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+          "sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n18_limited_long_horizon_closure",
+          "exists": true,
+          "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_closeout_and_handoff.json",
+          "sha256": "d4b2bacfec3fbb5684cf8aec5aeb3cbc9b2409969ae94ae53ac436191c75407c",
+          "source_output_digest": "09c0987d19e372d3df86377a843367a8bae8c85b0bc925f8328948b17a743af1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n11_general_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+          "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+          "source_output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n20_becoming_primitive_contract",
+          "exists": true,
+          "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+          "sha256": "f6897b0bd39d716e3f8de33ff1818d7b71cf59d9da957197dccd247e7ec438e9",
+          "source_output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_1_multi_basin_requirements_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+          "sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+          "source_output_digest": "396692475de004ddc8a586a501e1518b8316eebbf8f651304a76abeae25ae09e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n12_native_producer_review_gate",
+          "exists": true,
+          "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json",
+          "sha256": "fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e",
+          "source_output_digest": "e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n19_native_readiness_review_gate",
+          "exists": true,
+          "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+          "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+          "source_output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n21_withdrawal_naturalization",
+          "exists": true,
+          "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_closeout_and_n22_handoff.json",
+          "sha256": "91e7799c1a75ff2839cd5c64b0ca89ba584e8f1e69395f03b69f3565791fd47d",
+          "source_output_digest": "dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n27_configuration_substrate_transfer",
+          "exists": true,
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+          "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+          "source_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        }
+      ],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [
+        "native_colony_agency",
+        "central_manager_as_parent_basin",
+        "ant_ecology_implementation",
+        "organism_life",
+        "Phase8_completion",
+        "selfhood",
+        "identity_acceptance",
+        "organism_identity",
+        "organism_boundary",
+        "ant_body",
+        "independent_new_basin",
+        "native_multi_basin_by_label",
+        "reproduction",
+        "native_shared_medium_coordination",
+        "message_bus_as_medium",
+        "general_AP8",
+        "agency",
+        "unrestricted_autonomy",
+        "semantic_action",
+        "semantic_perception",
+        "surface_annotation_as_native_medium",
+        "visual_surface_as_evidence",
+        "cooperation",
+        "altruism",
+        "ant_ecology",
+        "biological_agency",
+        "reward",
+        "semantic_choice",
+        "unbounded_abundance",
+        "colony_intention",
+        "central_manager_as_parent_modulation",
+        "general_agency",
+        "colony_agency",
+        "native_colony_behavior",
+        "direct_message_as_native_coordination",
+        "protocol_as_shared_medium",
+        "contract_as_evidence",
+        "native_support_by_schema",
+        "requirements_as_runtime_evidence",
+        "scaffold_as_native_relation",
+        "medium_debt_erased_by_success",
+        "producer_scaffold_as_native_behavior",
+        "native_agency_by_producer",
+        "N05_N11_as_native_agency",
+        "native_support_by_review",
+        "AP_stack_as_native_agency",
+        "partial_scaffold_as_native",
+        "implementation_success_as_naturalization",
+        "willpower",
+        "native_support",
+        "biological_colony_life",
+        "native_ant_agency",
+        "identity_transfer",
+        "semantic_role_relocation",
+        "semantic_home_goal",
+        "native_colony_home_identity",
+        "semantic_food_goal",
+        "resource_counter_as_basin",
+        "reward_as_goal",
+        "proxy_success_as_agency",
+        "semantic_goal",
+        "semantic_cleaning_goal",
+        "cleanup_policy_as_native_waste_basin",
+        "semantic_building_intention",
+        "producer_topology_edit_as_native_construction",
+        "biological_reproduction_claim",
+        "producer_spawn_as_native_split"
+      ],
+      "x_i8_coverage_ids": [
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "x_i8_coverage_status_counts": {
+        "medium_debt": 7,
+        "naturalization_debt": 1,
+        "producer_mediated": 3,
+        "source_backed": 4
+      },
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 15,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "capability_sources": [
+        {
+          "capability_id": "n08_memory_trail_affordance",
+          "coverage_id": "COV.GENERAL.TRACE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_trace",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "route memory / trail-affordance candidate with producer-vs-native distinction preserved",
+          "source_experiment": "N08"
+        },
+        {
+          "capability_id": "n10_agentic_like_integration",
+          "coverage_id": "COV.GENERAL.TRACE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_trace",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded artifact-only agentic-like integration candidate",
+          "source_experiment": "N10"
+        },
+        {
+          "capability_id": "n05_coherence_waves_oscillators",
+          "coverage_id": "COV.GENERAL.TRACE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_trace",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded self-sustained oscillator / coherence-wave candidate; route-coupled trail memory remains blocked",
+          "source_experiment": "N05"
+        },
+        {
+          "capability_id": "n22_susceptibility_update",
+          "coverage_id": "COV.GENERAL.SUSCEPTIBILITY.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "general_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "producer-mediated bounded SU5 susceptibility-update / durable geometry modification candidate",
+          "source_experiment": "N22"
+        },
+        {
+          "capability_id": "n15_endogenous_proxy_formation",
+          "coverage_id": "COV.GENERAL.SUSCEPTIBILITY.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "general_susceptibility",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP5 runtime-derived proxy / target candidate",
+          "source_experiment": "N15"
+        },
+        {
+          "capability_id": "n26_proxy_divergence_collapse",
+          "coverage_id": "COV.GENERAL.SUSCEPTIBILITY.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "general_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "PD6 bounded proxy divergence / proxy collapse evidence with scoped artifact AP5 bridge candidate; native AP5 unresolved",
+          "source_experiment": "N26"
+        },
+        {
+          "capability_id": "n05_coherence_waves_oscillators",
+          "coverage_id": "COV.GENERAL.RESONANCE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_resonance",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded self-sustained oscillator / coherence-wave candidate; route-coupled trail memory remains blocked",
+          "source_experiment": "N05"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.GENERAL.RESONANCE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_resonance",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n18_limited_long_horizon_closure",
+          "coverage_id": "COV.GENERAL.RESONANCE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_resonance",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "limited artifact-level AP8 h4/L5 long-horizon agentic-like closure candidate",
+          "source_experiment": "N18"
+        },
+        {
+          "capability_id": "n08_memory_trail_affordance",
+          "coverage_id": "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_route_support_trace",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "route memory / trail-affordance candidate with producer-vs-native distinction preserved",
+          "source_experiment": "N08"
+        },
+        {
+          "capability_id": "n06_runtime_visible_route_selection",
+          "coverage_id": "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_route_support_trace",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-level runtime-visible route-selection candidate; semantic choice remains blocked",
+          "source_experiment": "N06"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_route_support_trace",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n06_runtime_visible_route_selection",
+          "coverage_id": "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_foodward_affordance_surface",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-level runtime-visible route-selection candidate; semantic choice remains blocked",
+          "source_experiment": "N06"
+        },
+        {
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "coverage_id": "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_foodward_affordance_surface",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP4 consequence-sensitive route-selection candidate",
+          "source_experiment": "N14"
+        },
+        {
+          "capability_id": "n08_memory_trail_affordance",
+          "coverage_id": "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_foodward_affordance_surface",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "route memory / trail-affordance candidate with producer-vs-native distinction preserved",
+          "source_experiment": "N08"
+        },
+        {
+          "capability_id": "n06_runtime_visible_route_selection",
+          "coverage_id": "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_homeward_affordance_surface",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-level runtime-visible route-selection candidate; semantic choice remains blocked",
+          "source_experiment": "N06"
+        },
+        {
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "coverage_id": "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_homeward_affordance_surface",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP4 consequence-sensitive route-selection candidate",
+          "source_experiment": "N14"
+        },
+        {
+          "capability_id": "n08_memory_trail_affordance",
+          "coverage_id": "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_homeward_affordance_surface",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "route memory / trail-affordance candidate with producer-vs-native distinction preserved",
+          "source_experiment": "N08"
+        },
+        {
+          "capability_id": "n22_susceptibility_update",
+          "coverage_id": "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_cargo_shaped_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "producer-mediated bounded SU5 susceptibility-update / durable geometry modification candidate",
+          "source_experiment": "N22"
+        },
+        {
+          "capability_id": "n26_proxy_divergence_collapse",
+          "coverage_id": "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_cargo_shaped_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "PD6 bounded proxy divergence / proxy collapse evidence with scoped artifact AP5 bridge candidate; native AP5 unresolved",
+          "source_experiment": "N26"
+        },
+        {
+          "capability_id": "n27_configuration_substrate_transfer",
+          "coverage_id": "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_cargo_shaped_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "CT6 bounded configuration/topology transfer evidence; semantic identity transfer blocked",
+          "source_experiment": "N27"
+        },
+        {
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "coverage_id": "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_crowding_congestion_cost",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP4 consequence-sensitive route-selection candidate",
+          "source_experiment": "N14"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_crowding_congestion_cost",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n06_runtime_visible_route_selection",
+          "coverage_id": "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_crowding_congestion_cost",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-level runtime-visible route-selection candidate; semantic choice remains blocked",
+          "source_experiment": "N06"
+        },
+        {
+          "capability_id": "n22_susceptibility_update",
+          "coverage_id": "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "rc_ant_role_susceptibility_division_of_labor",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "producer-mediated bounded SU5 susceptibility-update / durable geometry modification candidate",
+          "source_experiment": "N22"
+        },
+        {
+          "capability_id": "n27_configuration_substrate_transfer",
+          "coverage_id": "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "rc_ant_role_susceptibility_division_of_labor",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "CT6 bounded configuration/topology transfer evidence; semantic identity transfer blocked",
+          "source_experiment": "N27"
+        },
+        {
+          "capability_id": "n23_live_continuation_collapse",
+          "coverage_id": "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "rc_ant_role_susceptibility_division_of_labor",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "LC6 live-continuation collapse / selection geometry candidate; semantic choice blocked",
+          "source_experiment": "N23"
+        }
+      ],
+      "claim_ceiling": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [
+        "general_trace",
+        "general_susceptibility",
+        "general_resonance",
+        "rc_ant_route_support_trace",
+        "rc_ant_foodward_affordance_surface",
+        "rc_ant_homeward_affordance_surface",
+        "rc_ant_cargo_shaped_susceptibility",
+        "rc_ant_crowding_congestion_cost",
+        "rc_ant_role_susceptibility_division_of_labor"
+      ],
+      "expected_dynamic": "A proxy, route, or susceptibility surface changes later capture or reentry conditions without becoming semantic choice or task identity.",
+      "first_probe_relevance": "candidate for I13 proxy/susceptibility/reentry prototype admission",
+      "medium_debt": [
+        "not yet shared ecology pheromone medium",
+        "no shared ecology or colony surface by itself",
+        "no shared ecology medium; local circuit only",
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology role or shared medium by itself",
+        "no ecology medium by itself",
+        "no ecology reward or resource medium by itself",
+        "no ecology parent basin or colony medium by itself",
+        "shared-medium evidence remains narrow and bottleneck-aware",
+        "does not by itself provide shared-medium coordination",
+        "no shared ecology medium by itself",
+        "does not create ecology role relocation by itself",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "no ecology shared medium by itself"
+      ],
+      "motif_family": "proxy_susceptibility_reentry",
+      "motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "naturalization_debt": [
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native integrated agentic-like behavior not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic action/perception and native agency blocked",
+        "native learning and source mutation remain blocked",
+        "native proxy formation remains unresolved",
+        "native AP5 proxy formation remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "general long-horizon native closure blocked",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "cross-substrate generality and semantic role transfer blocked",
+        "broad margin robustness and ecology composition deferred",
+        "semantic choice and native route selection blocked"
+      ],
+      "naturalization_gap": [
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native integrated agentic-like behavior not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic action/perception and native agency blocked",
+        "native learning and source mutation remain blocked",
+        "native proxy formation remains unresolved",
+        "native AP5 proxy formation remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "general long-horizon native closure blocked",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "cross-substrate generality and semantic role transfer blocked",
+        "broad margin robustness and ecology composition deferred",
+        "semantic choice and native route selection blocked"
+      ],
+      "ordered_composition": [
+        "proxy_or_selection_surface",
+        "susceptibility_update_or_collapse_surface",
+        "later_reentry_or_role_capture_surface"
+      ],
+      "producer_residue": [
+        "memory_strength-like surfaces may be producer or policy scaffolds",
+        "composition ledger and some policy surfaces remain explicit",
+        "route coupling and memory policy not supplied by N05 itself",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "carrier/producers remain visible and load-bearing",
+        "derivation policy and context weights remain frozen artifact policy",
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "identity classification remains artifact-mediated",
+        "validation telemetry does not become native implementation",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "route consequence derivation and followout remain constructed in places",
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "branch fixtures and collapse probes remain artifact-scoped"
+      ],
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "source_artifacts_consumed": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n08_memory_trail_affordance",
+          "exists": true,
+          "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+          "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n22_susceptibility_update",
+          "exists": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+          "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+          "source_output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n15_endogenous_proxy_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+          "sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n18_limited_long_horizon_closure",
+          "exists": true,
+          "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_closeout_and_handoff.json",
+          "sha256": "d4b2bacfec3fbb5684cf8aec5aeb3cbc9b2409969ae94ae53ac436191c75407c",
+          "source_output_digest": "09c0987d19e372d3df86377a843367a8bae8c85b0bc925f8328948b17a743af1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "exists": true,
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n27_configuration_substrate_transfer",
+          "exists": true,
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+          "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+          "source_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        }
+      ],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [
+        "pheromone_label_as_native_trace",
+        "memory_variable_as_trace",
+        "pheromone_as_native_medium",
+        "ant_memory",
+        "semantic_memory",
+        "agency",
+        "semantic_action",
+        "native_colony_behavior",
+        "choice",
+        "ant_movement",
+        "pheromone_memory",
+        "semantic_perception",
+        "native_shared_medium_coordination",
+        "semantic_role_as_susceptibility",
+        "assignment_as_native_capture",
+        "learning",
+        "semantic_adaptation",
+        "native_support",
+        "semantic_goal",
+        "native_goal_ownership",
+        "reward_as_function",
+        "reward_as_goal",
+        "proxy_success_as_agency",
+        "selfhood",
+        "identity_acceptance",
+        "organism_identity",
+        "semantic_understanding",
+        "symbolic_decoding_as_resonance",
+        "general_AP8",
+        "unrestricted_autonomy",
+        "native_pheromone_without_trace",
+        "ant_message_as_route_support",
+        "semantic_choice",
+        "ant_foraging_choice",
+        "intention",
+        "semantic_food_seeking",
+        "foodward_message_as_affordance",
+        "ant_decision",
+        "semantic_return_goal",
+        "home_message_as_affordance",
+        "identity_transfer",
+        "semantic_role_relocation",
+        "semantic_carrying_intention",
+        "cargo_flag_as_coherence_binding",
+        "semantic_avoidance_choice",
+        "scheduler_as_congestion_medium",
+        "cooperation",
+        "altruism",
+        "ant_ecology",
+        "biological_agency",
+        "semantic_job_identity",
+        "task_assignment_as_native_role",
+        "free_will",
+        "producer_preference_as_selection"
+      ],
+      "x_i8_coverage_ids": [
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "x_i8_coverage_status_counts": {
+        "naturalization_debt": 1,
+        "prototype_candidate": 4,
+        "source_backed": 4
+      },
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 9,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "capability_sources": [
+        {
+          "capability_id": "n27_configuration_substrate_transfer",
+          "coverage_id": "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_mobile_boundary_expression",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "CT6 bounded configuration/topology transfer evidence; semantic identity transfer blocked",
+          "source_experiment": "N27"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_mobile_boundary_expression",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n16_self_environment_boundary",
+          "coverage_id": "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_mobile_boundary_expression",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP6 self/environment boundary candidate",
+          "source_experiment": "N16"
+        },
+        {
+          "capability_id": "n06_runtime_visible_route_selection",
+          "coverage_id": "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_homeward_affordance_surface",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-level runtime-visible route-selection candidate; semantic choice remains blocked",
+          "source_experiment": "N06"
+        },
+        {
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "coverage_id": "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_homeward_affordance_surface",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP4 consequence-sensitive route-selection candidate",
+          "source_experiment": "N14"
+        },
+        {
+          "capability_id": "n08_memory_trail_affordance",
+          "coverage_id": "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_homeward_affordance_surface",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "route memory / trail-affordance candidate with producer-vs-native distinction preserved",
+          "source_experiment": "N08"
+        },
+        {
+          "capability_id": "n22_susceptibility_update",
+          "coverage_id": "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_cargo_shaped_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "producer-mediated bounded SU5 susceptibility-update / durable geometry modification candidate",
+          "source_experiment": "N22"
+        },
+        {
+          "capability_id": "n26_proxy_divergence_collapse",
+          "coverage_id": "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_cargo_shaped_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "PD6 bounded proxy divergence / proxy collapse evidence with scoped artifact AP5 bridge candidate; native AP5 unresolved",
+          "source_experiment": "N26"
+        },
+        {
+          "capability_id": "n27_configuration_substrate_transfer",
+          "coverage_id": "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_cargo_shaped_susceptibility",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "CT6 bounded configuration/topology transfer evidence; semantic identity transfer blocked",
+          "source_experiment": "N27"
+        },
+        {
+          "capability_id": "n22_susceptibility_update",
+          "coverage_id": "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "rc_ant_role_susceptibility_division_of_labor",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "producer-mediated bounded SU5 susceptibility-update / durable geometry modification candidate",
+          "source_experiment": "N22"
+        },
+        {
+          "capability_id": "n27_configuration_substrate_transfer",
+          "coverage_id": "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "rc_ant_role_susceptibility_division_of_labor",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "CT6 bounded configuration/topology transfer evidence; semantic identity transfer blocked",
+          "source_experiment": "N27"
+        },
+        {
+          "capability_id": "n23_live_continuation_collapse",
+          "coverage_id": "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7",
+          "coverage_status": "naturalization_debt",
+          "ecology_demand": "rc_ant_role_susceptibility_division_of_labor",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "LC6 live-continuation collapse / selection geometry candidate; semantic choice blocked",
+          "source_experiment": "N23"
+        }
+      ],
+      "claim_ceiling": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [
+        "rc_ant_mobile_boundary_expression",
+        "rc_ant_homeward_affordance_surface",
+        "rc_ant_cargo_shaped_susceptibility",
+        "rc_ant_role_susceptibility_division_of_labor"
+      ],
+      "expected_dynamic": "A bounded configuration or role surface is replayed or relocated while the same-basin mapping remains auditable.",
+      "first_probe_relevance": "candidate for transfer/replay/role-relocation prototype admission",
+      "medium_debt": [
+        "does not create ecology role relocation by itself",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "shared-medium separability candidate, not ecology coordination",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "does not by itself provide shared-medium coordination",
+        "no shared ecology medium by itself",
+        "not yet shared ecology pheromone medium",
+        "no ecology role or shared medium by itself",
+        "no ecology reward or resource medium by itself",
+        "no shared ecology medium; local circuit only",
+        "no ecology shared medium by itself"
+      ],
+      "motif_family": "transfer_replay_role_relocation",
+      "motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "naturalization_debt": [
+        "cross-substrate generality and semantic role transfer blocked",
+        "unscoped ecology/ant use remains blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native learning and source mutation remain blocked",
+        "native AP5 proxy formation remains blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked"
+      ],
+      "naturalization_gap": [
+        "cross-substrate generality and semantic role transfer blocked",
+        "unscoped ecology/ant use remains blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native learning and source mutation remain blocked",
+        "native AP5 proxy formation remains blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked"
+      ],
+      "ordered_composition": [
+        "configuration_or_substrate_transfer_surface",
+        "same_basin_mapping_or_replay_surface",
+        "role_or_boundary_expression_after_relocation"
+      ],
+      "producer_residue": [
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "boundary classification remains artifact/control mediated",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "route consequence derivation and followout remain constructed in places",
+        "memory_strength-like surfaces may be producer or policy scaffolds",
+        "carrier/producers remain visible and load-bearing",
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "route coupling and memory policy not supplied by N05 itself",
+        "branch fixtures and collapse probes remain artifact-scoped"
+      ],
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "source_artifacts_consumed": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n27_configuration_substrate_transfer",
+          "exists": true,
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+          "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+          "source_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n16_self_environment_boundary",
+          "exists": true,
+          "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+          "sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "exists": true,
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n08_memory_trail_affordance",
+          "exists": true,
+          "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+          "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n22_susceptibility_update",
+          "exists": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+          "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+          "source_output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        }
+      ],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [
+        "native_ant_agency",
+        "semantic_action",
+        "identity_transfer",
+        "semantic_role_relocation",
+        "agency",
+        "ant_ecology_implementation",
+        "organism_life",
+        "Phase8_completion",
+        "selfhood",
+        "organism_boundary",
+        "ant_body",
+        "independent_new_basin",
+        "native_multi_basin_by_label",
+        "reproduction",
+        "semantic_return_goal",
+        "home_message_as_affordance",
+        "semantic_choice",
+        "ant_foraging_choice",
+        "intention",
+        "ant_decision",
+        "pheromone_as_native_medium",
+        "ant_memory",
+        "semantic_memory",
+        "semantic_carrying_intention",
+        "cargo_flag_as_coherence_binding",
+        "learning",
+        "semantic_adaptation",
+        "native_support",
+        "reward_as_goal",
+        "proxy_success_as_agency",
+        "semantic_goal",
+        "choice",
+        "ant_movement",
+        "pheromone_memory",
+        "semantic_job_identity",
+        "task_assignment_as_native_role",
+        "free_will",
+        "producer_preference_as_selection"
+      ],
+      "x_i8_coverage_ids": [
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "x_i8_coverage_status_counts": {
+        "naturalization_debt": 1,
+        "prototype_candidate": 1,
+        "source_backed": 2
+      },
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 4,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "capability_sources": [
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.GENERAL.MEDIUM.SURFACE.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_surface",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.GENERAL.MEDIUM.SURFACE.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_surface",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.GENERAL.MEDIUM.SURFACE.I7",
+          "coverage_status": "medium_debt",
+          "ecology_demand": "general_medium_surface",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.GENERAL.PERTURBATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_perturbation",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n09_goal_proxy_regulation",
+          "coverage_id": "COV.GENERAL.PERTURBATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_perturbation",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-only goal-proxy regulation candidate; semantic goal ownership blocked",
+          "source_experiment": "N09"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.GENERAL.PERTURBATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_perturbation",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "coverage_id": "COV.GENERAL.CO.RESPONSE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_co_response",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP7 closed boundary engagement loop candidate",
+          "source_experiment": "N17"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.GENERAL.CO.RESPONSE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_co_response",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n05_coherence_waves_oscillators",
+          "coverage_id": "COV.GENERAL.CO.RESPONSE.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "general_co_response",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "bounded self-sustained oscillator / coherence-wave candidate; route-coupled trail memory remains blocked",
+          "source_experiment": "N05"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.RC.ANT.WASTE.ISOLATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_waste_isolation",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.WASTE.ISOLATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_waste_isolation",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n11_general_agentic_like_integration",
+          "coverage_id": "COV.RC.ANT.WASTE.ISOLATION.I7",
+          "coverage_status": "source_backed",
+          "ecology_demand": "rc_ant_waste_isolation",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "broader general artifact-only agentic-like integration candidate",
+          "source_experiment": "N11"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "rc_ant_construction_tension",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n24_surplus_supported_optionality",
+          "coverage_id": "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "rc_ant_construction_tension",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "AB5/N24-C5 surplus-supported optionality with producer flux scaffold context; N24-C6 not native",
+          "source_experiment": "N24"
+        },
+        {
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "coverage_id": "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+          "coverage_status": "producer_mediated",
+          "ecology_demand": "rc_ant_construction_tension",
+          "review_gate_status": "N25_1_contract_plus_phase8_runtime_validation_gate",
+          "source_claim_ceiling": "validation-backed scoped LGRC9V3 MB6 multi-basin substrate handoff; not ant ecology or Phase 8 completion",
+          "source_experiment": "N25.2"
+        },
+        {
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "coverage_id": "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_crowding_congestion_cost",
+          "review_gate_status": "constrained_by_N19_native_readiness_review_for_N13_N18",
+          "source_claim_ceiling": "artifact-level AP4 consequence-sensitive route-selection candidate",
+          "source_experiment": "N14"
+        },
+        {
+          "capability_id": "n28_generative_extractive_persistence",
+          "coverage_id": "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_crowding_congestion_cost",
+          "review_gate_status": "constrained_by_N20_becoming_primitive_contract_and_debt_ledger",
+          "source_claim_ceiling": "GE6 bounded generative/extractive persistence evidence; broad margin robustness and ant ecology remain blocked",
+          "source_experiment": "N28"
+        },
+        {
+          "capability_id": "n06_runtime_visible_route_selection",
+          "coverage_id": "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+          "coverage_status": "prototype_candidate",
+          "ecology_demand": "rc_ant_crowding_congestion_cost",
+          "review_gate_status": "constrained_by_N12_native_producer_review_for_N05_N11",
+          "source_claim_ceiling": "artifact-level runtime-visible route-selection candidate; semantic choice remains blocked",
+          "source_experiment": "N06"
+        }
+      ],
+      "claim_ceiling": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [
+        "general_medium_surface",
+        "general_perturbation",
+        "general_co_response",
+        "rc_ant_waste_isolation",
+        "rc_ant_construction_tension",
+        "rc_ant_crowding_congestion_cost"
+      ],
+      "expected_dynamic": "A local process enriches, extracts, isolates, or redirects medium capacity without claiming semantic construction or ecological agency.",
+      "first_probe_relevance": "candidate for I14 generative/extractive medium-reshaping prototype admission",
+      "medium_debt": [
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology pressure medium by itself",
+        "no ecology parent basin or colony medium by itself",
+        "no shared ecology medium; local circuit only",
+        "no ecology shared medium by itself",
+        "no ecology-wide medium or role surface by itself",
+        "no shared ecology or colony surface by itself",
+        "no shared ecology medium by itself",
+        "does not by itself provide shared-medium coordination",
+        "not yet shared ecology pheromone medium"
+      ],
+      "motif_family": "generative_extractive_medium_reshaping",
+      "motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "naturalization_debt": [
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "unscoped ecology/ant use remains blocked",
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "identity acceptance, selfhood, and native support blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "AP4 native route-conditioned selection remains unresolved",
+        "semantic choice and native selection ownership blocked",
+        "pure coherence/flux pheromone-like memory requires later native validation"
+      ],
+      "naturalization_gap": [
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "unscoped ecology/ant use remains blocked",
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "identity acceptance, selfhood, and native support blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "AP4 native route-conditioned selection remains unresolved",
+        "semantic choice and native selection ownership blocked",
+        "pure coherence/flux pheromone-like memory requires later native validation"
+      ],
+      "ordered_composition": [
+        "generative_or_enrichment_surface",
+        "extractive_or_depletion_surface",
+        "medium_reshaping_or_boundary_repair_surface"
+      ],
+      "producer_residue": [
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "producer flux conditioning marks missing native mechanism",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "declared target/proxy surfaces may remain producer-defined",
+        "identity classification remains artifact-mediated",
+        "route coupling and memory policy not supplied by N05 itself",
+        "branch fixtures and collapse probes remain artifact-scoped",
+        "generalization remains artifact-level and policy-mediated",
+        "composition ledger and some policy surfaces remain explicit",
+        "route consequence derivation and followout remain constructed in places",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "memory_strength-like surfaces may be producer or policy scaffolds"
+      ],
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "source_artifacts_consumed": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n09_goal_proxy_regulation",
+          "exists": true,
+          "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json",
+          "sha256": "4beae1d67f34819c52d70593f2be99d79961447dd3cd2243975a705bc3acf6ba",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n11_general_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+          "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+          "source_output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "exists": true,
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n08_memory_trail_affordance",
+          "exists": true,
+          "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+          "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        }
+      ],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [
+        "surface_annotation_as_native_medium",
+        "visual_surface_as_evidence",
+        "cooperation",
+        "altruism",
+        "ant_ecology",
+        "biological_agency",
+        "reward",
+        "semantic_choice",
+        "unbounded_abundance",
+        "ant_ecology_implementation",
+        "organism_life",
+        "Phase8_completion",
+        "semantic_action",
+        "semantic_perception",
+        "native_shared_medium_coordination",
+        "message_payload_as_medium_change",
+        "post_hoc_causality",
+        "semantic_goal",
+        "reward_maximization",
+        "intention",
+        "selfhood",
+        "identity_acceptance",
+        "organism_identity",
+        "native_coordination_without_medium",
+        "semantic_cooperation",
+        "choice",
+        "agency",
+        "ant_movement",
+        "pheromone_memory",
+        "free_will",
+        "producer_preference_as_selection",
+        "semantic_cleaning_goal",
+        "cleanup_policy_as_native_waste_basin",
+        "general_agency",
+        "colony_agency",
+        "native_colony_behavior",
+        "semantic_building_intention",
+        "producer_topology_edit_as_native_construction",
+        "semantic_avoidance_choice",
+        "scheduler_as_congestion_medium",
+        "ant_decision",
+        "ant_foraging_choice",
+        "pheromone_as_native_medium",
+        "ant_memory",
+        "semantic_memory"
+      ],
+      "x_i8_coverage_ids": [
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7"
+      ],
+      "x_i8_coverage_status_counts": {
+        "medium_debt": 1,
+        "producer_mediated": 1,
+        "prototype_candidate": 1,
+        "source_backed": 3
+      },
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 6,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "capability_sources": [],
+      "claim_ceiling": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "ecology_demands_connected": [],
+      "expected_dynamic": "Multiple bridge motifs are composed as a downstream design structure; I8 does not claim the composition has run or succeeded.",
+      "first_probe_relevance": "candidate for I15 prototype composition and atlas classification",
+      "medium_debt": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "motif_family": "composition",
+      "motif_id": "MOTIF.N29.COMPOSITION",
+      "naturalization_debt": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "naturalization_gap": [
+        "no motif-level naturalization support claimed"
+      ],
+      "ordered_composition": [
+        "at_least_two_bridge_motif_definitions",
+        "declared_order_or_phase_relation",
+        "composition_controls_before_runtime_claim"
+      ],
+      "producer_residue": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "prototype_candidate": "blocked",
+      "runtime_or_reconstruction_status": "mapping_only_no_runtime_surface",
+      "source_artifacts_consumed": [],
+      "why_not_stronger": "I8 defines bridge motif structure and debt, but does not run the motif, open a prototype row, or claim ecology behavior success.",
+      "x_i8_blocked_relabels": [],
+      "x_i8_coverage_ids": [],
+      "x_i8_coverage_status_counts": {},
+      "x_i8_motif_success_claimed": false,
+      "x_i8_native_ecology_claim_opened": false,
+      "x_i8_positive_ecology_evidence_opened": false,
+      "x_i8_prototype_admission_deferred_to_i10": true,
+      "x_i8_prototype_row_opened": false,
+      "x_i8_selected_coverage_row_count": 0,
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    }
+  ],
+  "bridge_motif_success_claimed": false,
+  "checks": [
+    {
+      "check_id": "i4_bridge_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i7_coverage_debt_matrix_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_motif_families_defined",
+      "passed": true
+    },
+    {
+      "check_id": "all_motif_rows_follow_i4_schema",
+      "passed": true
+    },
+    {
+      "check_id": "all_i8_row_extensions_are_namespaced",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_or_reconstruction_status_values_valid",
+      "passed": true
+    },
+    {
+      "check_id": "motif_rows_have_controls",
+      "passed": true
+    },
+    {
+      "check_id": "motif_source_artifacts_preserved_when_coverage_rows_exist",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_candidates_marked_without_opening_prototype_rows",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_candidate_values_are_enum",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_admission_deferred_to_i10",
+      "passed": true
+    },
+    {
+      "check_id": "source_backed_or_runnable_motifs_have_original_artifact_digests",
+      "passed": true
+    },
+    {
+      "check_id": "visual_diagnostic_motifs_do_not_raise_claim_ceiling",
+      "passed": true
+    },
+    {
+      "check_id": "composition_motifs_have_order_controls",
+      "passed": true
+    },
+    {
+      "check_id": "bridge_motif_success_not_claimed",
+      "passed": true
+    },
+    {
+      "check_id": "positive_ecology_and_implementation_evidence_closed",
+      "passed": true
+    },
+    {
+      "check_id": "native_ecology_and_agency_claims_closed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_9",
+      "passed": true
+    }
+  ],
+  "claim_boundary_audit": {
+    "biological_agency_opened": false,
+    "consciousness_opened": false,
+    "fully_native_ecology_opened": false,
+    "native_agency_claim_opened": false,
+    "native_ant_agency_opened": false,
+    "native_colony_agency_opened": false,
+    "native_shared_medium_coordination_opened": false,
+    "organism_life_opened": false,
+    "phase8_completion_opened": false,
+    "prototype_as_native_ecology_opened": false,
+    "semantic_choice_claim_opened": false,
+    "semantic_cooperation_claim_opened": false,
+    "semantic_goal_claim_opened": false,
+    "semantic_intention_claim_opened": false,
+    "sentience_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "claim_ceiling": "bridge_motif_library_only_no_runtime_success_no_prototype",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_bridge_motif_library_i8.py",
+  "debt_index": {
+    "medium_debt": [
+      "trace_pressure_loop",
+      "reserve_optionality_formation",
+      "boundary_shared_medium_unit",
+      "proxy_susceptibility_reentry",
+      "transfer_replay_role_relocation",
+      "generative_extractive_medium_reshaping"
+    ],
+    "naturalization_debt": [
+      "trace_pressure_loop",
+      "reserve_optionality_formation",
+      "boundary_shared_medium_unit",
+      "proxy_susceptibility_reentry",
+      "transfer_replay_role_relocation",
+      "generative_extractive_medium_reshaping"
+    ],
+    "producer_residue": [
+      "trace_pressure_loop",
+      "reserve_optionality_formation",
+      "boundary_shared_medium_unit",
+      "proxy_susceptibility_reentry",
+      "transfer_replay_role_relocation",
+      "generative_extractive_medium_reshaping"
+    ]
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_bridge_motif_library_i8.py",
+  "implementation_evidence_opened": false,
+  "iteration": "I8",
+  "motif_family_index": {
+    "boundary_shared_medium_unit": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+    "composition": "MOTIF.N29.COMPOSITION",
+    "generative_extractive_medium_reshaping": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+    "proxy_susceptibility_reentry": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+    "reserve_optionality_formation": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+    "trace_pressure_loop": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+    "transfer_replay_role_relocation": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION"
+  },
+  "motif_library_policy": {
+    "canonical_row_semantics": "one row = one bridge motif family definition",
+    "motif_rows_are_runtime_success": false,
+    "positive_ecology_evidence_opened": false,
+    "prototype_rows_opened": false,
+    "source_of_truth_rule": "Motif rows inherit original source artifact manifests from I7 coverage rows; I8 itself does not run or prove the motif."
+  },
+  "native_agency_claim_opened": false,
+  "native_ant_agency_opened": false,
+  "native_colony_agency_opened": false,
+  "native_ecology_claim_opened": false,
+  "native_shared_medium_coordination_opened": false,
+  "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+  "phase8_completion_opened": false,
+  "positive_ecology_evidence_opened": false,
+  "prototype_candidate_index": {
+    "blocked": [
+      "composition"
+    ],
+    "mapping_only_candidate": [
+      "trace_pressure_loop",
+      "boundary_shared_medium_unit",
+      "proxy_susceptibility_reentry",
+      "transfer_replay_role_relocation",
+      "generative_extractive_medium_reshaping"
+    ],
+    "none": [],
+    "runnable_runtime_candidate": [],
+    "source_backed_reconstruction_candidate": [
+      "reserve_optionality_formation"
+    ]
+  },
+  "prototype_rows_opened": false,
+  "ready_for_iteration_9": true,
+  "row_count_summary": {
+    "artifact_only_reconstruction_motifs": 5,
+    "blocked_motifs": 0,
+    "bridge_motif_rows": 7,
+    "mapping_only_motifs": 1,
+    "motif_families_defined": 7,
+    "prototype_candidate_motifs": 6,
+    "source_backed_reconstruction_motifs": 1
+  },
+  "runtime_status_index": {
+    "artifact_only_reconstruction": [
+      "trace_pressure_loop",
+      "boundary_shared_medium_unit",
+      "proxy_susceptibility_reentry",
+      "transfer_replay_role_relocation",
+      "generative_extractive_medium_reshaping"
+    ],
+    "mapping_only_no_runtime_surface": [
+      "composition"
+    ],
+    "source_backed_reconstruction": [
+      "reserve_optionality_formation"
+    ]
+  },
+  "script_sha256": "fc3e2f95df7d2fe05c40b9a2d8388894509bffba489ad30f338f7a42e9c1c769",
+  "sentience_opened": false,
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_bridge_schema_i4",
+      "consumed_as": "bridge_motif_schema",
+      "output_digest": "e2e093b4cd143c1f5173391923d4707e2d2f9c48467b1e0c4052ba89d5b61131",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_schema_i4.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_demand_supply_coverage_debt_i7",
+      "consumed_as": "coverage_debt_motif_hint_source",
+      "output_digest": "6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_demand_supply_coverage_debt_i7.json",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Bridge Motif Library"
+}

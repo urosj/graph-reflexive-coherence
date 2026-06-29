@@ -328,10 +328,10 @@ ecology claims remain closed until their later scoped iterations.
 
 ### Iteration 5 - Ecology Demand Matrix
 
-- [ ] Build ecology demand matrix from Iteration 1.
-- [ ] Group demands by parent basin, shared medium, trace/pressure, susceptibility, co-response, role, and reproduction/split surfaces.
-- [ ] Mark required runtime surfaces and controls for every demand.
-- [ ] Mark demand rows with no current LGRC/GRC surface as unresolved demand.
+- [x] Build ecology demand matrix from Iteration 1.
+- [x] Group demands by parent basin, shared medium, trace/pressure, susceptibility, co-response, role, and reproduction/split surfaces.
+- [x] Mark required runtime surfaces and controls for every demand.
+- [x] Mark demand rows with no current LGRC/GRC surface as unresolved demand.
 
 Expected result:
 
@@ -342,12 +342,85 @@ ecology_demand_matrix_supported = true
 ready_for_iteration_6 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_ecology_demand_matrix_i5.json
+report = reports/n29_ecology_demand_matrix_i5.md
+script = scripts/build_n29_ecology_demand_matrix_i5.py
+status = passed
+acceptance_state = accepted_ecology_demand_matrix
+demand_matrix_row_count = 30
+current_lgrc_grc_surface_evaluation_status = deferred_to_iteration_6_and_7
+matrix_policy = normalized_ecology_demand_registry_not_cartesian_matrix
+group_counts = {
+  parent_basin_and_subbasin: 3,
+  shared_medium_and_medium_surface: 4,
+  trace_pressure_and_affordance: 7,
+  susceptibility_and_resonance: 4,
+  perturbation_co_response_loop: 3,
+  role_labor_and_task_differentiation: 6,
+  reserve_surplus_and_reproduction_split: 3,
+  debt_and_naturalization_conditions: 4
+}
+source_index_count = 5
+control_index_count = 60
+unresolved_demand_ledger_rows = 30
+unique_state_surface_count = 75
+unique_trace_surface_count = 59
+unique_control_count = 60
+unique_blocked_relabel_count = 59
+i1_source_digest_matches = true
+uses_i1_as_only_demand_source = true
+i2_used_only_for_blocked_claim_language = true
+i3_capability_matching_attempted = false
+coverage_status_assigned = false
+n05_n28_evidence_imported = false
+demand_supply_matching_opened = false
+coverage_debt_rows_opened = false
+bridge_motif_success_claimed = false
+bridge_motifs_created = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+all_rows_unresolved_as_of_i5 = true
+unresolved_status = pending_i6_supply_atlas_and_i7_coverage_match
+output_digest = 2503831622cdfc99d9f6083bfc841481a06c6fd67bcba1a9ad840c1e1c069fe9
+failed_checks = []
+ready_for_iteration_6 = true
+```
+
+Iteration 5 interpretation:
+
+```text
+Iteration 5 supports a normalized ecology demand registry as a
+target-requirement artifact. It consumes I1 as the only demand source, I2 only
+for blocked-claim language, and I4 as the schema / Phase-B boundary. It does
+not import N05-N28 capability evidence, use I3 capability cards for matching,
+assign coverage_status, match demand to supply, create coverage/debt rows,
+create bridge motifs, claim bridge motif success, open prototype rows, or open
+positive ecology evidence.
+
+All rows remain unresolved as of I5 by design. This does not mean the project
+has shown that no LGRC/GRC surface exists. It means the I5 demand-only matrix
+does not claim a current surface. Current surface evaluation is deferred to I6
+capability supply and I7 demand/supply coverage matching.
+
+The full artifact is intentionally normalized rather than Cartesian: one row is
+one ecology demand requirement, while indexes carry family, source, control,
+surface-taxonomy, and unresolved-ledger joins. Row extensions are namespaced as
+`x_i5_*` so the frozen I4 row schema is preserved.
+```
+
 ### Iteration 6 - N05-N28 Capability Supply Atlas
 
-- [ ] Build supply atlas from Iteration 3 capability cards.
-- [ ] Group capabilities by trace, pressure, boundary, loop, proxy, transfer, formation, and medium-reshaping surfaces.
-- [ ] Preserve native-readiness and producer/debt status row-locally.
-- [ ] Identify direct prototype candidates.
+- [x] Build supply atlas from Iteration 3 capability cards.
+- [x] Group capabilities by trace, pressure, boundary, loop, proxy, transfer, formation, and medium-reshaping surfaces.
+- [x] Preserve native-readiness and producer/debt status row-locally.
+- [x] Identify direct prototype candidates.
+- [x] Normalize source-of-truth policy: I3 cards are indexes, original source artifacts are evidence.
+- [x] Emit producer-residue, medium-debt, and naturalization-debt ledgers.
+- [x] Confirm no demand/supply coverage status, bridge motif success, prototype row, or positive ecology evidence is opened.
 
 Expected result:
 
@@ -358,12 +431,92 @@ capability_supply_atlas_supported = true
 ready_for_iteration_7 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_capability_supply_atlas_i6.json
+report = reports/n29_capability_supply_atlas_i6.md
+script = scripts/build_n29_capability_supply_atlas_i6.py
+status = passed
+acceptance_state = accepted_capability_supply_atlas
+capability_supply_row_count = 26
+supply_group_counts = {
+  trace_aftereffect: 10,
+  pressure_reserve_support: 14,
+  boundary_multi_basin_unit: 14,
+  closed_loop_perturbation_response: 9,
+  proxy_divergence_collapse: 10,
+  transfer_replay_relocation: 4,
+  formation_child_basin: 14,
+  medium_reshaping_generative_extractive: 8,
+  route_choice_arbitration: 4,
+  regulation_homeostasis: 13,
+  visual_or_report_only: 0,
+  control_only_or_negative: 11
+}
+direct_prototype_candidate_count = 18
+context_only_or_gate_count = 8
+prototype_potential_status_counts = {
+  source_backed_reconstruction_candidate: 16,
+  mapping_only_candidate: 4,
+  none: 4,
+  blocked_by_claim_boundary: 2
+}
+normalized_native_readiness_counts = {
+  native_ready_surface: 0,
+  bounded_runtime_surface: 3,
+  medium_debt: 19,
+  blocked_by_review_gate: 2,
+  control_only: 2
+}
+debt_ledger_counts = {
+  producer_residue_ledger: 26,
+  medium_debt_ledger: 26,
+  naturalization_debt_ledger: 26
+}
+coverage_debt_rows_opened = false
+demand_supply_matching_opened = false
+bridge_motifs_created = false
+bridge_motif_success_claimed = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+source_artifacts_required_for_future_coverage_claims = true
+output_digest = 8b80dcc636f8d3333f6e344bbf33ffc12eebe256e7ce2e4f19db33573a6e7181
+failed_checks = []
+ready_for_iteration_7 = true
+```
+
+Iteration 6 interpretation:
+
+```text
+Iteration 6 supports a capability supply atlas, not coverage. It consumes I3
+capability cards and I4 schema / Phase-B boundaries only. It groups supplied
+capability surfaces by normalized supply families while preserving
+native-readiness status, producer residue, naturalization debt, medium debt,
+source claim ceilings, blocked relabels, and original source artifact
+manifests row-locally.
+
+The source-of-truth rule is explicit: I3 capability cards are orientation
+indexes and claim-boundary summaries, not full data sources. Any later
+source-backed coverage, motif, prototype, runtime, or visual claim must return
+to original source artifacts, closeouts, runtime records, source reports, or
+visual manifests where the visual claim is explicit.
+
+The direct prototype candidate count is supply-side potential only. It does
+not open prototype rows, bridge motifs, bridge motif success, coverage/debt
+rows, demand/supply matching, positive ecology evidence, or native ecology
+claims. Normalized readiness is intentionally conservative: I6 records no
+`native_ready_surface` rows. Bounded runtime and source-backed reconstruction
+potential remain below native ecology, native agency, and demand coverage.
+```
+
 ### Iteration 7 - Demand / Supply Coverage And Debt Matrix
 
-- [ ] Match ecology demands to capability supply.
-- [ ] Classify coverage as source-backed, prototype candidate, producer-mediated, medium debt, naturalization debt, native-ready surface, control-only, blocked relabel, missing runtime surface, or not applicable.
-- [ ] Record why each demand is covered, partial, blocked, or missing.
-- [ ] Record first-probe implication for every unresolved demand.
+- [x] Match ecology demands to capability supply.
+- [x] Classify coverage as source-backed, prototype candidate, producer-mediated, medium debt, naturalization debt, native-ready surface, control-only, blocked relabel, missing runtime surface, or not applicable.
+- [x] Record why each demand is covered, partial, blocked, or missing.
+- [x] Record first-probe implication for every unresolved demand.
 
 Expected result:
 
@@ -374,16 +527,102 @@ coverage_matrix_supported = true
 ready_for_iteration_8 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_demand_supply_coverage_debt_i7.json
+report = reports/n29_demand_supply_coverage_debt_i7.md
+script = scripts/build_n29_demand_supply_coverage_debt_i7.py
+status = passed
+acceptance_state = accepted_demand_supply_coverage_and_debt_matrix
+coverage_debt_row_count = 30
+candidate_link_row_count = 180
+demand_rows_consumed = 30
+supply_rows_available = 26
+demands_with_any_candidate_source = 30
+demands_without_candidate_source = 0
+coverage_status_counts = {
+  source_backed: 13,
+  prototype_candidate: 4,
+  producer_mediated: 3,
+  medium_debt: 8,
+  naturalization_debt: 2
+}
+rows_with_producer_residue = 30
+rows_with_medium_debt = 30
+rows_with_naturalization_debt = 30
+first_probe_cluster_counts = {
+  source_artifact_admission: 13,
+  prototype_admission_pending: 4,
+  producer_residue_isolation: 3,
+  medium_debt_resolution: 8,
+  withdrawal_or_substrate_carriage: 2
+}
+motif_hint_counts = {
+  boundary_shared_medium_unit: 15,
+  proxy_susceptibility_reentry: 9,
+  trace_pressure_loop: 6
+}
+bridge_motifs_created = false
+bridge_motif_library_opened = false
+bridge_motif_success_claimed = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+native_ecology_claim_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+native_shared_medium_coordination_opened = false
+output_digest = 6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985
+failed_checks = []
+ready_for_iteration_8 = true
+```
+
+Iteration 7 interpretation:
+
+```text
+Iteration 7 is the first bridge-facing match between what agentic ecology
+requires and what N05-N28 currently supply. It consumes I5 demand rows and I6
+supply rows under the I4 coverage/debt schema. Each I5 demand receives a
+coverage/debt row with candidate capability sources, coverage status,
+source-of-truth artifacts, visible producer / medium / naturalization debt,
+blocked relabels, and a first-probe implication.
+
+The matrix is intentionally not a motif library and not a prototype atlas.
+The `candidate_link_rows` table is a sparse audit edge table, not a full
+Cartesian demand-by-capability dump. `bridge_motif` values are only I8
+orientation hints and every row carries
+`motif_status = hint_for_I8_not_motif_evidence`.
+
+`source_backed` means that a demand has directly relevant source-backed
+capability surfaces and original artifacts named in the row; it does not mean
+the ecology behavior has been demonstrated. `prototype_candidate` means the
+mapping is plausible enough to shape I8/I10+ work, not that a prototype row is
+open. `medium_debt`, `producer_mediated`, and `naturalization_debt` rows remain
+debt-bearing by design.
+
+All 30 demands have at least one candidate supply source, but all 30 also carry
+visible debt. This is the main I7 result: N05-N28 provide a broad bridge supply
+surface for ecology, while the bridge still depends on explicit debt handling,
+motif definition, prototype admission, and later runnable probe contracts.
+
+I7 does not create bridge motifs, claim motif success, open prototype rows,
+open positive ecology evidence, open implementation evidence, or open native
+ecology / native agency / ant agency / colony agency / native shared-medium
+coordination claims.
+```
+
 ### Iteration 8 - Bridge Motif Library
 
-- [ ] Define trace-pressure-loop motif.
-- [ ] Define reserve-optionality-formation motif.
-- [ ] Define boundary-shared-medium-unit motif.
-- [ ] Define proxy-susceptibility-reentry motif.
-- [ ] Define transfer-replay-role-relocation motif.
-- [ ] Define generative/extractive medium-reshaping motif.
-- [ ] Define composition motif rules.
-- [ ] Mark which motifs are runnable, reconstructable, visual-only, or blocked.
+- [x] Define trace-pressure-loop motif.
+- [x] Define reserve-optionality-formation motif.
+- [x] Define boundary-shared-medium-unit motif.
+- [x] Define proxy-susceptibility-reentry motif.
+- [x] Define transfer-replay-role-relocation motif.
+- [x] Define generative/extractive medium-reshaping motif.
+- [x] Define composition motif rules.
+- [x] Mark which motifs are runnable, reconstructable, visual-only, or blocked.
 
 Expected result:
 
@@ -394,17 +633,93 @@ bridge_motif_library_supported = true
 ready_for_iteration_9 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_bridge_motif_library_i8.json
+report = reports/n29_bridge_motif_library_i8.md
+script = scripts/build_n29_bridge_motif_library_i8.py
+status = passed
+acceptance_state = accepted_bridge_motif_library
+bridge_motif_row_count = 7
+motif_families_defined = {
+  trace_pressure_loop,
+  reserve_optionality_formation,
+  boundary_shared_medium_unit,
+  proxy_susceptibility_reentry,
+  transfer_replay_role_relocation,
+  generative_extractive_medium_reshaping,
+  composition
+}
+runtime_or_reconstruction_status_counts = {
+  source_backed_reconstruction: 1,
+  artifact_only_reconstruction: 5,
+  mapping_only_no_runtime_surface: 1,
+  blocked: 0
+}
+prototype_candidate_motifs = 6
+bridge_motif_library_opened = true
+bridge_motif_success_claimed = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+native_ecology_claim_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+native_shared_medium_coordination_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+output_digest = 5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0
+failed_checks = []
+ready_for_iteration_9 = true
+```
+
+Iteration 8 interpretation:
+
+```text
+Iteration 8 supports a bridge motif library, not bridge proof. It converts I7
+motif hints and coverage/debt rows into seven explicit motif-family definitions
+with ordered composition, expected dynamic, source rows, controls, debt, and
+first-probe relevance.
+
+One motif family, `reserve_optionality_formation`, is classified as
+`source_backed_reconstruction` because the selected coverage rows are all
+source-backed and carry original source artifacts through I7. Five motif
+families are classified as `artifact_only_reconstruction` because their
+component rows include source artifacts but also carry unresolved producer
+residue, medium debt, naturalization debt, or prototype-candidate dependence.
+This prevents source-backed component support from being upgraded into motif
+success or native ecology support.
+
+The `composition` motif is intentionally
+`mapping_only_no_runtime_surface`: it defines how multiple motifs can later be
+ordered or phase-related, but it does not yet provide runtime composition
+evidence.
+
+I8 does not claim bridge motif success, open prototype rows, open positive
+ecology evidence, run ecology probes, or open native ecology / native agency /
+ant agency / colony agency / native shared-medium coordination claims.
+```
+
 ### Iteration 9 - Motif Relabel Nulls And Composition Controls
 
-- [ ] Reject vocabulary-as-evidence relabel.
-- [ ] Reject ant-label-as-ant-behavior relabel.
-- [ ] Reject message-scaffold-as-medium relabel.
-- [ ] Reject producer-residue-as-native relabel.
-- [ ] Reject N28-generative-as-cooperation relabel.
-- [ ] Reject prototype-as-native-ecology relabel.
-- [ ] Reject visualization-as-proof relabel.
-- [ ] Reject report-only composition relabel.
-- [ ] Confirm failed-open count is zero.
+- [x] Derive nulls from forbidden promotion edges instead of intuition.
+- [x] Consume I7 coverage/debt rows, I8 motif rows, and I4 claim boundary.
+- [x] Reject vocabulary-as-evidence relabel.
+- [x] Reject ant-label-as-ant-behavior relabel.
+- [x] Reject message-scaffold-as-medium relabel.
+- [x] Reject producer-residue-as-native relabel.
+- [x] Reject medium-debt-as-native-shared-medium relabel.
+- [x] Reject naturalization-debt-as-native-support relabel.
+- [x] Reject N28-generative-as-cooperation relabel.
+- [x] Reject prototype-as-native-ecology relabel.
+- [x] Reject visualization/report-as-proof relabel.
+- [x] Reject label-only, report-only, hidden-producer, order-inverted, missing-source, medium-debt-hidden, and unsafe composition relabels.
+- [x] Pair every null with a near-positive bounded-reading control.
+- [x] Emit a null adequacy table covering motif families, blocked claims, debt types, review gates, and near-positive controls.
+- [x] Confirm failed-open count is zero.
 
 Expected result:
 
@@ -413,6 +728,92 @@ status = passed
 acceptance_state = accepted_motif_relabel_nulls_fail_closed
 failed_open_count = 0
 ready_for_iteration_10 = true
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_motif_relabel_nulls_i9.json
+report = reports/n29_motif_relabel_nulls_i9.md
+script = scripts/build_n29_motif_relabel_nulls_i9.py
+status = passed
+acceptance_state = accepted_phase_b_controls_fail_closed_ready_for_phase_c
+control_row_count = 33
+schema_negative_control_rows = 10
+motif_control_rows = 21
+composition_control_rows = 2
+failed_closed_rows = 33
+failed_open_rows = 0
+row_local_null_rows = 26
+near_positive_control_rows = 26
+null_failed_closed_rows = 26
+null_failed_open_rows = 0
+required_null_families_present = true
+all_motif_families_have_relabel_null_coverage = true
+all_required_composition_controls_have_nulls = true
+all_global_blocked_claims_covered = true
+producer_residue_relabels_covered = true
+medium_debt_relabels_covered = true
+naturalization_debt_relabels_covered = true
+review_gate_bypass_nulls_present = true
+AP4_AP5_NAT4_gap_erasure_nulls_present = true
+near_positive_controls_passed = true
+null_adequacy_table_passed = true
+phase_b_closed = true
+phase_c_opened = false
+prototype_admission_deferred_to_iteration_10 = true
+bridge_motif_success_claimed = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+runtime_ecology_probe_contract_opened = false
+native_ecology_claim_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+native_shared_medium_coordination_opened = false
+semantic_cooperation_claim_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+output_digest = a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28
+failed_checks = []
+ready_for_iteration_10 = true
+```
+
+Iteration 9 interpretation:
+
+```text
+Iteration 9 closes Phase B by validating the negative side of the motif
+library with row-local relabel nulls. The nulls are derived from forbidden
+promotion edges:
+
+source row -> valid bounded claim -> tempting stronger relabel -> expected rejection
+
+The artifact consumes I7 coverage/debt rows, I8 motif rows, and the I4 claim
+boundary. Each null records source rows, the valid bounded claim, attempted
+relabel, relabel path, expected `failed_closed` status, failure if accepted,
+claim ceiling after rejection, and a paired near-positive control. The
+near-positive controls preserve the legitimate bounded bridge reading, so I9
+does not reject the motif library itself; it rejects only unsafe promotion.
+
+The null set covers vocabulary-as-evidence, ant-label-as-behavior, message
+scaffold as native medium, producer residue as native capacity, medium debt as
+native shared medium, naturalization debt as native support, visual/report as
+runtime evidence, prototype candidate as prototype success, motif as native
+ecology success, N28 generative/extractive patterns as cooperation or
+biological agency, composition without order/source/control support, source
+summary as original evidence, review-gate bypass, and AP4/AP5/NAT4 gap erasure.
+
+Composition controls now have explicit relabel nulls for label-only
+composition, report-only composition, hidden producer coupling, component order
+inversion, missing source row, medium debt hidden as native relation, and
+composition-as-native-ecology success.
+
+The result is Phase B closed and Phase C ready, not Phase C opened. I9 opens no
+prototype rows, no runnable ecology probe contract, no positive ecology
+evidence, no native ecology / native agency / native ant / native colony /
+native shared-medium coordination claim, no semantic cooperation claim, no
+sentience claim, no biological agency claim, and no Phase 8 completion claim.
 ```
 
 ## Phase C - Prototype Atlas

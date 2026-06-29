@@ -287,6 +287,12 @@ missing_runtime_surface
 not_applicable
 ```
 
+Iteration 7 should keep this as a normalized join: one canonical coverage row
+per ecology demand, with ranked `candidate_capability_sources` and an optional
+sparse `candidate_link_rows` table for nontrivial demand/supply edges. It
+should not emit a full demand-by-capability Cartesian matrix. Bridge motif
+labels in I7 are hints for Iteration 8 only, not motif rows or motif success.
+
 ### Bridge Motif Library
 
 Each motif row should include:
@@ -319,6 +325,15 @@ transfer_replay_role_relocation
 generative_extractive_medium_reshaping
 composition
 ```
+
+I8 motif rows are definitions and reconstruction targets, not motif-success
+evidence. A motif may be marked `source_backed_reconstruction` only when its
+component coverage rows carry original source artifacts through I7 and do not
+depend on unresolved producer, medium, naturalization, or prototype-candidate
+debt. Debt-heavy motifs should stay `artifact_only_reconstruction` or
+`mapping_only_no_runtime_surface`. None of these statuses opens a prototype row,
+runtime ecology proof, native ecology, or native shared-medium coordination
+claim.
 
 ### Prototype Atlas
 
@@ -443,7 +458,15 @@ I5 = ecology demand matrix only
   motifs, or open prototype rows.
 
 I6 = capability supply atlas only
-  must not create coverage/debt matches, bridge motifs, or prototype rows.
+  reorganizes I3 capability cards into normalized supply families, preserves
+  review gates, source claim ceilings, producer residue, medium debt,
+  naturalization debt, blocked relabels, and original source artifact manifests.
+  I3 cards are orientation indexes, not full data sources. Later source-backed
+  coverage, motif, prototype, runtime, or visual claims must return to original
+  source artifacts, closeouts, runtime records, source reports, or visual
+  manifests. I6 may identify prototype potential only; it must not create
+  coverage/debt matches, bridge motifs, prototype rows, or positive ecology
+  evidence.
 
 I7 = demand/supply coverage-debt matching only
   must not create bridge motifs, open prototype rows, or claim native ecology.
@@ -507,6 +530,29 @@ Iteration 7  - Demand / Supply Coverage And Debt Matrix
 Iteration 8  - Bridge Motif Library
 Iteration 9  - Motif Relabel Nulls And Composition Controls
 ```
+
+Iteration 9 closes Phase B only if motif relabels, debt-as-native readings,
+composition order hiding, missing source rows, missing review gates, AP4/AP5
+gap hiding, report-only composition, visual-only evidence promotion, early
+prototype rows, runnable ecology probe contracts, and native ecology / agency
+promotions all fail closed. Passing I9 makes Iteration 10 prototype admission
+schema ready; it does not open Phase C prototypes by itself.
+
+I9 nulls must be derived from row-local forbidden promotion edges, not from
+generic caution. The required chain is:
+
+```text
+source row -> valid bounded claim -> tempting stronger relabel -> expected rejection
+```
+
+Each null must name its source motif or global boundary row, source rows, valid
+bounded claim, attempted relabel, relabel path, failure if accepted, claim
+ceiling after rejection, and a paired near-positive control. Near-positive
+controls must pass the bounded bridge reading while the unsafe relabel fails
+closed. The null adequacy table must cover every motif family, all required
+composition controls, global blocked claims, producer / medium /
+naturalization debt clusters, review gates, AP4/AP5/NAT4 gap erasure, and
+failed-open count zero.
 
 ### Phase C - Prototype Atlas
 
