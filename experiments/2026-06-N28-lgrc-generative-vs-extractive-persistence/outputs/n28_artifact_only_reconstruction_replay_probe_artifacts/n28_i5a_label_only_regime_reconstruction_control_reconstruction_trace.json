@@ -1,0 +1,30 @@
+{
+  "actual_result": "failed_closed",
+  "available_inputs": [
+    "regime_counts",
+    "source_iteration_labels",
+    "source_regime_labels"
+  ],
+  "blocked_reason": "regime labels and counts cannot replace source-current geometric deltas",
+  "expected_result": "positive_N28_GE_support_rejected",
+  "missing_inputs": [
+    "focal_stability_trace",
+    "neighbor_capacity_delta_trace",
+    "merge_leakage_trace",
+    "capacity_attribution_trace"
+  ],
+  "reconstruction_mode": "regime_labels_and_counts_only",
+  "regime_metrics_reconstructable": false,
+  "shared_policy_replay_reconstructable": false,
+  "source_basis": {
+    "regime_counts": {
+      "competitive": 1,
+      "extractive": 3,
+      "generative": 3,
+      "neutral": 1
+    },
+    "rows_demoted": []
+  },
+  "source_current_n28_trace_available": false,
+  "trace_id": "n28_i5a_label_only_regime_reconstruction_control_trace"
+}

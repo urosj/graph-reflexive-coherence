@@ -32,6 +32,11 @@
   deterministic Iteration 4-E GE3 competitive/neutral mechanism-diversity
   probe, using three-lobe neutral capacity circulation without generative or
   extractive promotion.
+- `build_n28_replay_capacity_attribution_matrix.py` - Builds the
+  deterministic Iteration 5 replay and capacity-attribution matrix over I4
+  through I4-E.
+- `build_n28_artifact_only_reconstruction_replay_probe.py` - Builds the
+  deterministic Iteration 5-A artifact-only reconstruction replay controls.
 
 Later scripts will build probe artifacts, replay/control matrices, stress
 matrices, classification records, and closeout records.

@@ -78,3 +78,17 @@
   runtime trace, focal stability trace, neutral/circulatory neighbor capacity
   trace, extraction/leakage trace, capacity attribution trace, classification
   trace, and canonical core.
+- `n28_replay_capacity_attribution_matrix.json` - Iteration 5 replay and
+  capacity-attribution matrix. Replays I4 through I4-E, including I4-A2 and
+  I4-C2, and supports a GE4 replay/control-backed regime-separation candidate
+  pending stress.
+- `n28_replay_capacity_attribution_matrix_artifacts/` - Iteration 5 trace
+  bundle containing one replay trace per I4-family row plus a matrix summary
+  trace.
+- `n28_artifact_only_reconstruction_replay_probe.json` - Iteration 5-A
+  artifact-only reconstruction replay probe. Confirms reports, labels, N27
+  transfer context, digests, and matrix summaries cannot replace
+  source-current N28 traces for positive support.
+- `n28_artifact_only_reconstruction_replay_probe_artifacts/` - Iteration 5-A
+  trace bundle containing one fail-closed reconstruction control trace per
+  insufficient surface plus a summary trace.

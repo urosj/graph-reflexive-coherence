@@ -992,27 +992,183 @@ stress, and closeout.
 
 ## Iteration 5 - Replay And Capacity Attribution Matrix
 
-- [ ] Run artifact replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run duplicate replay.
-- [ ] Run capacity-attribution controls.
-- [ ] Run merge/leakage controls.
-- [ ] Run focal-survival-only controls.
-- [ ] Replay I4 through I4-E paired-regime rows, including I4-A2 and I4-C2.
-- [ ] Test whether replayed rows can still use one shared policy family.
-- [ ] Record `shared_regime_policy_status` or a provisional policy-divergence blocker.
-- [ ] Confirm all generative candidates, including mechanism-diverse rows, remain generative or are demoted explicitly.
-- [ ] Confirm all extractive contrasts, including mechanism-diverse rows, remain extractive or are demoted explicitly.
-- [ ] Confirm both competitive/neutral contrasts remain non-generative or are demoted explicitly.
-- [ ] Confirm regime labels remain stable under replay or are demoted explicitly.
-- [ ] Confirm extractive/competitive rows remain valid contrasts, not failed rows, unless promoted incorrectly.
-- [ ] Record per-row demotions or blockers.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Run capacity-attribution controls.
+- [x] Run merge/leakage controls.
+- [x] Run focal-survival-only controls.
+- [x] Replay I4 through I4-E paired-regime rows, including I4-A2 and I4-C2.
+- [x] Test whether replayed rows can still use one shared policy family.
+- [x] Record `shared_regime_policy_status` or a provisional policy-divergence blocker.
+- [x] Confirm all generative candidates, including mechanism-diverse rows, remain generative or are demoted explicitly.
+- [x] Confirm all extractive contrasts, including mechanism-diverse rows, remain extractive or are demoted explicitly.
+- [x] Confirm both competitive/neutral contrasts remain non-generative or are demoted explicitly.
+- [x] Confirm regime labels remain stable under replay or are demoted explicitly.
+- [x] Confirm extractive/competitive rows remain valid contrasts, not failed rows, unless promoted incorrectly.
+- [x] Record per-row demotions or blockers.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_replay_control_backed_ge4_regime_separation_candidate_pending_stress
+output_digest = 3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa
+provisional_ge_ladder_rung = GE4
+ge4_or_stronger_supported = true
+ge5_or_stronger_supported = false
+ge6_or_stronger_supported = false
+shared_regime_policy_status = replay_control_backed_pending_stress
+source_row_count = 8
+rows_demoted = []
+failed_checks = []
+```
+
+Artifacts:
+
+```text
+outputs/n28_replay_capacity_attribution_matrix.json
+reports/n28_replay_capacity_attribution_matrix.md
+scripts/build_n28_replay_capacity_attribution_matrix.py
+outputs/n28_replay_capacity_attribution_matrix_artifacts/matrix_summary_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4_row_primary_generative_candidate_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4a_row_generative_strengthening_candidate_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4a2_row_generative_mechanism_diversity_candidate_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4b_row_primary_extractive_contrast_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4c_row_extractive_strengthening_contrast_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4c2_row_extractive_mechanism_diversity_contrast_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4d_row_primary_competitive_neutral_contrast_trace.json
+outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast_trace.json
+```
+
+Replay matrix:
+
+```text
+I4   generative  -> generative  artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-A generative  -> generative  artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-A2 generative -> generative  artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-B extractive  -> extractive  artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-C extractive  -> extractive  artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-C2 extractive -> extractive  artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-D competitive -> competitive artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-E neutral     -> neutral     artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+```
+
+Interpretation:
+
+```text
+I5 upgrades the I4-family evidence from provisional GE3 source-current regime
+rows to a replay/control-backed GE4 regime-separation candidate. The upgrade
+is matrix-level: all three generative rows, all three extractive rows, and both
+competitive/neutral rows replay with stable regime labels and pass
+capacity-attribution, merge/leakage, and focal-survival-only controls.
+
+The shared policy family survives replay/control validation:
+
+shared_policy_ids = [n28_shared_regime_policy_v1]
+single_shared_policy_family_preserved = true
+
+This is still not GE5 or GE6. I6 must stress the same regime boundaries before
+N28 can claim stress/variant-backed paired-regime separation. I7 and I8 still
+need AP/claim classification and closeout.
+
+Duplicate replay uses the standard convention from earlier experiments:
+first_emitted = true and second_emitted = false means the second replay
+suppressed a duplicate while preserving the same digest. This is a pass, not a
+failed second replay.
+```
 
 ## Iteration 5-A - Artifact-Only Reconstruction Replay Probe
 
-- [ ] Test whether N28 classification can be reconstructed from reports alone.
-- [ ] Test whether N27 transfer success alone can recreate the N28 claim.
-- [ ] Require source-current N28 traces for positive support.
+- [x] Test whether N28 classification can be reconstructed from reports alone.
+- [x] Test whether N27 transfer success alone can recreate the N28 claim.
+- [x] Require source-current N28 traces for positive support.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_artifact_only_reconstruction_controls_fail_closed_no_new_ge_support
+output_digest = c88d2605b60f272ab4fd50bc062c09ab5059f26bf236e7339309196f47863646
+provisional_ge_ladder_rung = GE4
+i5_ge4_result_preserved = true
+i5a_new_ge_support_opened = false
+ge5_or_stronger_supported = false
+control_row_count = 5
+failed_closed_row_count = 5
+failed_open_row_count = 0
+positive_support_allowed_rows = []
+failed_checks = []
+```
+
+Artifacts:
+
+```text
+outputs/n28_artifact_only_reconstruction_replay_probe.json
+reports/n28_artifact_only_reconstruction_replay_probe.md
+scripts/build_n28_artifact_only_reconstruction_replay_probe.py
+outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/artifact_only_reconstruction_summary.json
+outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_report_only_reconstruction_control_reconstruction_trace.json
+outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_label_only_regime_reconstruction_control_reconstruction_trace.json
+outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_n27_transfer_only_reconstruction_control_reconstruction_trace.json
+outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_digest_only_reconstruction_control_reconstruction_trace.json
+outputs/n28_artifact_only_reconstruction_replay_probe_artifacts/n28_i5a_matrix_summary_only_reconstruction_control_reconstruction_trace.json
+```
+
+Control rows:
+
+```text
+report_only_summary -> rejected / failed_closed
+regime_labels_and_counts_only -> rejected / failed_closed
+n27_transfer_context_only -> rejected / failed_closed
+digest_and_hashes_only -> rejected / failed_closed
+i5_matrix_summary_only -> rejected / failed_closed
+```
+
+Interpretation:
+
+```text
+I5-A does not add positive GE support. It protects the I5 result by showing
+that reports, labels, N27 transfer context, digests/hashes, and I5 matrix
+summaries cannot replace source-current N28 traces and per-row replay controls.
+
+It does this by turning each possible shortcut into an explicit negative
+control row. Each row is allowed to carry the shortcut surface it is testing,
+but it is forced to record:
+
+source_current_inputs = []
+source_current_n28_trace_required = true
+source_current_n28_trace_available = false
+regime_metrics_reconstructable = false
+ge_ladder_rung = GE0
+ge4_support_allowed = false
+row_decision = rejected
+control_status = failed_closed
+
+The report-only row has report text but lacks source-current runtime traces,
+neighbor-capacity traces, extraction/leakage traces, classification traces,
+and the generative/extractive core. The label/count row has regime labels and
+counts but lacks focal stability, neighbor capacity delta, merge/leakage, and
+capacity-attribution traces. The N27-only row has transfer-context digests but
+lacks N28 regime rows, N28 replay rows, and N28 capacity-attribution traces.
+The digest-only row has provenance hashes but lacks loaded trace payloads,
+metric sign checks, and regime-specific attribution controls. The I5-summary
+row has the matrix summary but lacks per-row source-current traces, per-row
+replay traces, and per-row control results.
+
+All five rows therefore fail closed:
+
+control_row_count = 5
+failed_closed_row_count = 5
+failed_open_row_count = 0
+positive_support_allowed_rows = []
+source_current_n28_trace_missing_blocks_support = true
+
+The GE4 candidate remains sourced to I5. I5-A only confirms that insufficient
+reconstruction surfaces fail closed. GE5, GE6, final N28, semantic
+cooperation, agency, native support, Phase 8 completion, and ant ecology remain
+blocked pending stress, claim classification, and closeout.
+```
 
 ## Iteration 6 - Stress / Regime-Separation Matrix
 

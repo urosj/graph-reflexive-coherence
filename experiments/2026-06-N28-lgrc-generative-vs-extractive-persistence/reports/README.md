@@ -24,3 +24,7 @@
 - `n28_competitive_neutral_mechanism_diversity_probe.md` - Markdown summary
   for Iteration 4-E source-current GE3 competitive/neutral
   mechanism-diversity probe.
+- `n28_replay_capacity_attribution_matrix.md` - Markdown summary for
+  Iteration 5 replay and capacity-attribution matrix over I4 through I4-E.
+- `n28_artifact_only_reconstruction_replay_probe.md` - Markdown summary for
+  Iteration 5-A artifact-only reconstruction replay controls.

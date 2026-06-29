@@ -1,0 +1,132 @@
+{
+  "artifact_replay": {
+    "artifact_replay_digest": "2d843284e6b42fd913831fd2c564836239f0b4f4a2f55bd751e582e3d48f3b92",
+    "manifest_file_count": 8,
+    "status": "passed"
+  },
+  "classification_replay": {
+    "expected_regime_label": "extractive",
+    "original_regime_evidence_role": "measured_contrast_alternative",
+    "original_regime_label": "extractive",
+    "regime_label_stable": true,
+    "replay_evidence": {
+      "competitive_redistribution": false,
+      "extraction_below": false,
+      "extraction_present": true,
+      "extractive_loss": true,
+      "generative_gain": false,
+      "metrics": {
+        "environment_capacity_delta": -0.065,
+        "extractive_flattening": 0.048,
+        "extractive_flattening_ceiling": 0.03,
+        "focal_extraction_cost": 0.038,
+        "focal_extraction_cost_ceiling": 0.035,
+        "focal_floors_preserved": true,
+        "focal_stability_preserved": true,
+        "merge_leakage": 0.043,
+        "merge_leakage_ceiling": 0.025,
+        "neighbor_boundary_delta": -0.104,
+        "neighbor_distinguishability_delta": -0.075,
+        "neighbor_support_delta": -0.055
+      },
+      "near_neutral": false,
+      "neutral_circulation": false,
+      "stable": true
+    },
+    "replayed_regime_label": "extractive",
+    "status": "passed"
+  },
+  "control_results": [
+    {
+      "actual_result": "neighbor_capacity_loss_and_extraction_present",
+      "blocked_condition": "focal stability exists without regime-specific environment-side capacity evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "focal_survival_only_as_regime_control",
+      "control_status": "passed",
+      "expected_result": "claim blocked if only focal survival is present",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "replayed_regime=extractive",
+      "blocked_condition": "capacity attribution does not reproduce the source regime label",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "capacity_attribution_control",
+      "control_status": "passed",
+      "expected_result": "row demoted if replay classifier changes the regime",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "merge_leakage_recorded_as_extractive_axis_not_support",
+      "blocked_condition": "merge/leakage is treated as generative support or hidden success",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "merge_leakage_as_support_control",
+      "control_status": "passed",
+      "expected_result": "merge/leakage cannot masquerade as support",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "source-current capacity traces and core digest replayed",
+      "blocked_condition": "regime label exists without source-current metrics",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "label_only_regime_control",
+      "control_status": "passed",
+      "expected_result": "label-only row rejected",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "N28 source-current row metrics drive replay classification",
+      "blocked_condition": "N27 transfer success is used as N28 regime evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "transfer_success_as_n28_success_control",
+      "control_status": "passed",
+      "expected_result": "N27 remains context only",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "all unsafe claim flags false",
+      "blocked_condition": "environment exchange is relabeled as semantic cooperation or agency",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "semantic_cooperation_relabel_control",
+      "control_status": "passed",
+      "expected_result": "unsafe promotions remain blocked",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "deltas=-0.075/-0.055/-0.104/-0.065",
+      "blocked_condition": "metric signs do not support the replayed regime",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "capacity_metric_sign_control",
+      "control_status": "passed",
+      "expected_result": "row demoted if signs fail the frozen classifier",
+      "rung_effect": "GE4_preserved"
+    }
+  ],
+  "duplicate_replay": {
+    "duplicate_positive_row_created": false,
+    "duplicate_replay_digest_stable": true,
+    "duplicate_replay_first_emitted": true,
+    "duplicate_replay_second_emitted": false,
+    "duplicate_semantics": "stable digest and no duplicate positive row creation",
+    "first_replay_digest": "e6b2d39d131dd4a78434d62938e2d09763cbe175a8a7bd060b9906eda8a43ac2",
+    "second_replay_digest": "e6b2d39d131dd4a78434d62938e2d09763cbe175a8a7bd060b9906eda8a43ac2",
+    "status": "passed"
+  },
+  "replay_passed": true,
+  "snapshot_load_replay": {
+    "core_digest_replayed": "e682974a2ef5bf6a20763e18b97accc92414b4a062af7f84ee86d2869073430a",
+    "snapshot_load_digest_stable": true,
+    "snapshot_payload_digest": "1f565e611e323d5f8fe6f924a41f7f9b992f4f13edad543fced508d36ee26c19",
+    "status": "passed"
+  },
+  "source_artifact_manifest_valid": true,
+  "source_artifact_sha256": "6c5f5053f30755526b1358651447130d1e9a2cf8f8e3a9f77ad426d5dfd4e56f",
+  "source_iteration": "4-C2",
+  "source_output_digest": "cd099229fa37dcdf1c497555fd6ace7d4435035c87e58c1eec9bac6acb7e7067",
+  "source_output_digest_matches_expected": true,
+  "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe.json",
+  "source_role": "extractive_mechanism_diversity",
+  "source_row_digest": "653698de931037e832c2964766eef7644a78505f2775f15ddbe79e6adbf95204",
+  "source_row_digest_recomputed": true,
+  "source_row_id": "n28_i4c2_row_extractive_mechanism_diversity_contrast",
+  "trace_id": "n28_i5_n28_i4c2_row_extractive_mechanism_diversity_contrast_replay_trace"
+}
