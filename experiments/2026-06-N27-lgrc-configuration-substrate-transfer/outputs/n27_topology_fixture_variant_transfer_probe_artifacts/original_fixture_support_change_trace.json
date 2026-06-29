@@ -1,0 +1,8 @@
+{
+  "original_fixture_support_changed": true,
+  "original_fixture_support_reintroduced": false,
+  "post_fixture_id": "fixture_delta_folded",
+  "pre_fixture_id": "fixture_gamma_branch",
+  "support_change_kind": "topological_fixture_context_remapped_not_rebuilt",
+  "trace_id": "n27_i4a_original_fixture_support_change_trace"
+}

@@ -239,22 +239,193 @@ scripts/build_n27_active_nulls_and_failure_baselines.py
 
 ## Iteration 4 - Minimal Configuration Transfer Probe
 
-- [ ] Declare mapping before use.
-- [ ] Record pre-transfer basin signature.
-- [ ] Record post-transfer basin signature.
-- [ ] Record boundary mapping trace.
-- [ ] Record support/coherence preservation.
-- [ ] Record flux balance.
-- [ ] Record artifact manifest and hashes.
-- [ ] Keep result provisional pending replay/control validation.
+- [x] Declare mapping before use.
+- [x] Record pre-transfer basin signature.
+- [x] Record post-transfer basin signature.
+- [x] Record boundary mapping trace.
+- [x] Record support/coherence preservation.
+- [x] Record flux balance.
+- [x] Record artifact manifest and hashes.
+- [x] Keep result provisional pending replay/control validation.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_minimal_source_current_CT2_candidate_pending_replay_controls
+n27_closeout_ceiling = N27-C4_source_current_transfer_candidate_supported
+positive_transfer_evidence_opened = true
+candidate_rows_classified = true
+provisional_ct_ladder_rung = CT2
+ct_ladder_rung_assigned = false
+ct_assignment_scope = provisional_candidate_only_pending_replay_controls
+ct3_or_stronger_supported = false
+final_transfer_supported = false
+ready_for_iteration_4a_topology_fixture_variant_transfer_probe = true
+ready_for_iteration_5_replay_same_basin_mapping_matrix = true
+failed_checks = []
+output_digest = f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294
+```
+
+Interpretation: I4 opens the first positive source-current transfer surface.
+The row maps `fixture_alpha_frame` to `fixture_beta_frame` with a declared
+configuration mapping before post-transfer observation. It records pre/post
+basin signatures, mapped boundary, support and coherence floors above
+threshold, bounded flux imbalance, and an empty reconstruction ledger.
+
+Alpha/beta frame explanation: `fixture_alpha_frame` is the pre-transfer
+configuration, and `fixture_beta_frame` is the post-transfer configuration.
+They are not semantic places or identities. They are two declared graph /
+configuration frames with different node ids and coordinate/config rules.
+
+The I4 mapping is:
+
+```text
+pre frame:
+  alpha_core
+  alpha_support
+  alpha_boundary
+
+declared mapping:
+  alpha_core     -> beta_core
+  alpha_support  -> beta_support
+  alpha_boundary -> beta_boundary
+
+post frame:
+  beta_core
+  beta_support
+  beta_boundary
+```
+
+So I4 is not saying that a basin moved from one nearby location to another in
+the same frame. It is saying that a pre-transfer basin signature is compared to
+a post-transfer basin signature through a mapping declared before the post
+result is inspected. The row counts only because the mapped boundary is present,
+support/coherence floors remain above threshold, flux imbalance remains within
+bound, and hidden support reconstruction is absent.
+
+This is only a provisional CT2 candidate. It is not replay-backed CT3,
+control-backed CT4, stress-backed CT5, final transfer, semantic identity,
+native support, native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology.
+
+Review tightening: I4 now keeps replay and stress controls within the frozen
+control-status enum by using `control_status = not_applicable` and recording
+the CT2-specific deferral in `control_applicability_reason`. The boundary
+mapping margin is exactly at floor:
+
+```text
+boundary_acceptance_operator = greater_than_or_equal
+boundary_mapping_margin = 0.0
+boundary_margin_at_floor = true
+```
+
+This is admissible for CT2, but it must be treated as a narrow boundary edge in
+I6 stress/variant testing. I4 also records `transfer_schema_output_digest`,
+`active_nulls_output_digest`, and `immediate_predecessor_output_digest` so the
+predecessor chain is explicit.
+
+Artifacts:
+
+```text
+outputs/n27_minimal_configuration_transfer_probe.json
+outputs/n27_minimal_configuration_transfer_probe_artifacts/
+reports/n27_minimal_configuration_transfer_probe.md
+scripts/build_n27_minimal_configuration_transfer_probe.py
+```
 
 ## Iteration 4-A - Topology / Fixture Variant Transfer Probe
 
-- [ ] Add a distinct declared mapping variant.
-- [ ] Verify the variant is source-backed.
-- [ ] Verify mapping-specific pre/post signature traces.
-- [ ] Reject same-label/different-basin success.
-- [ ] Keep result bounded as variant transfer evidence only.
+- [x] Add a distinct declared mapping variant.
+- [x] Verify the variant is source-backed.
+- [x] Verify mapping-specific pre/post signature traces.
+- [x] Reject same-label/different-basin success.
+- [x] Keep result bounded as variant transfer evidence only.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_topology_fixture_variant_CT2_candidate_pending_replay_controls
+n27_closeout_ceiling = N27-C4_source_current_transfer_candidate_supported
+positive_transfer_evidence_opened = true
+candidate_rows_classified = true
+provisional_ct_ladder_rung = CT2
+ct_ladder_rung_assigned = false
+ct_assignment_scope = variant_candidate_only_pending_replay_controls
+i4_replaced = false
+i4a_replaces_i4 = false
+ct3_or_stronger_supported = false
+ct5_or_stronger_supported = false
+final_transfer_supported = false
+ready_for_iteration_5_replay_same_basin_mapping_matrix = true
+failed_checks = []
+output_digest = 5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7
+```
+
+Interpretation: I4-A adds a distinct source-current topology / fixture mapping
+variant. It maps a branched pre-frame fixture
+`fixture_gamma_branch_frame` to a folded post-frame fixture
+`fixture_delta_folded_frame`. Node ids, frame ids, coordinate rules, and edge
+shape change. The row counts only because the declared topological role mapping
+preserves the basin signature, maps all boundary edges, keeps support and
+coherence above floor, keeps flux within bound, and records an empty
+reconstruction ledger.
+
+How I4-A differs from I4:
+
+```text
+I4:
+  transfer kind = minimal configuration-frame transfer
+  pre frame = fixture_alpha_frame
+  post frame = fixture_beta_frame
+  mapped nodes = alpha_core / alpha_support / alpha_boundary
+               -> beta_core / beta_support / beta_boundary
+  graph shape = simple three-node core-support-boundary fixture
+  boundary margin = 0.0
+  role in N27 = first minimal CT2 source-current transfer candidate
+
+I4-A:
+  transfer kind = topology / fixture variant transfer
+  pre frame = fixture_gamma_branch_frame
+  post frame = fixture_delta_folded_frame
+  mapped nodes = gamma_core / gamma_left_support / gamma_right_support /
+                 gamma_outer_boundary
+               -> delta_core / delta_north_support / delta_south_support /
+                  delta_outer_boundary
+  graph shape = branched support fixture mapped into folded/cyclic support fixture
+  boundary margin = 0.1
+  role in N27 = additive distinct CT2 variant candidate
+```
+
+So I4 proves that the basic declared-transfer machinery can preserve a basin
+signature across one minimal alpha/beta configuration mapping. I4-A asks
+whether the same discipline survives a more structurally different fixture:
+the node ids change, the frame changes, the coordinate rule changes, and the
+edge geometry changes from a branch-like support layout to a folded support
+layout. I4-A is stronger as variant coverage, but it is not a replay result and
+does not erase I4's narrow boundary-at-floor condition.
+
+Review validation: I4-A consumes the current I4 artifact digest
+`f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294` in
+the top-level source record, row predecessor fields, and source-record chain.
+The cross-substrate missing-mapping control is recorded as
+`control_status = not_applicable` with
+`rung_effect = substrate_transfer_claim_not_opened`, because I4-A is a
+topology/fixture variant and does not open a substrate-transfer claim.
+
+This is additive variant evidence. It does not replace I4, does not widen I4's
+boundary-at-floor edge, and does not support replay-backed CT3, control-backed
+CT4, stress-backed CT5, final transfer, semantic identity, native support,
+native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology.
+
+Artifacts:
+
+```text
+outputs/n27_topology_fixture_variant_transfer_probe.json
+outputs/n27_topology_fixture_variant_transfer_probe_artifacts/
+reports/n27_topology_fixture_variant_transfer_probe.md
+scripts/build_n27_topology_fixture_variant_transfer_probe.py
+```
 
 ## Iteration 5 - Replay And Same-Basin Mapping Matrix
 

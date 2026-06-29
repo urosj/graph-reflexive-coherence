@@ -1,0 +1,38 @@
+{
+  "boundary_acceptance_operator": "greater_than_or_equal",
+  "boundary_jaccard_floor": 1.0,
+  "boundary_mapping_digest": "19eda5427b090da77ac54a195c031d249b0645651cb97a232ccebad6c847c358",
+  "boundary_mapping_margin": 0.0,
+  "boundary_mapping_preserved": true,
+  "boundary_margin_at_floor": true,
+  "edge_mapping": {
+    "alpha_core-alpha_support": "beta_core-beta_support",
+    "alpha_support-alpha_boundary": "beta_support-beta_boundary"
+  },
+  "mapped_boundary_edge_count": 2,
+  "mapped_boundary_jaccard": 1.0,
+  "post_boundary_edges": [
+    [
+      "beta_core",
+      "beta_support"
+    ],
+    [
+      "beta_support",
+      "beta_boundary"
+    ]
+  ],
+  "pre_boundary_edges": [
+    [
+      "alpha_core",
+      "alpha_support"
+    ],
+    [
+      "alpha_support",
+      "alpha_boundary"
+    ]
+  ],
+  "same_label_different_basin_rejected": true,
+  "trace_id": "n27_i4_boundary_mapping_trace",
+  "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+  "unmapped_boundary_edge_count": 0
+}

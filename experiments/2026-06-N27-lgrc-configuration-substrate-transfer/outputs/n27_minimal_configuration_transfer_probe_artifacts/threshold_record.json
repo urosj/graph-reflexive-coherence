@@ -1,0 +1,19 @@
+{
+  "applies_to_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+  "boundary_jaccard_floor": 1.0,
+  "boundary_mapping_tolerance_formula": "boundary_mapping_margin = mapped_boundary_jaccard - boundary_jaccard_floor",
+  "coherence_floor": 0.9,
+  "coherence_floor_margin_formula": "coherence_floor_margin = post_min_coherence - coherence_floor",
+  "declaration_order": 0,
+  "declared_before_use": true,
+  "flux_balance_bound_formula": "flux_balance_margin = max_flux_imbalance - post_abs_flux_imbalance",
+  "hidden_support_reconstruction_allowed": false,
+  "max_flux_imbalance": 0.05,
+  "max_signature_distance": 0.06,
+  "record_id": "n27_i4_threshold_record",
+  "same_label_only_allowed": false,
+  "signature_preservation_margin_formula": "signature_preservation_margin = max_signature_distance - observed_signature_distance",
+  "support_floor": 0.9,
+  "support_floor_margin_formula": "support_floor_margin = post_min_support - support_floor",
+  "threshold_record_digest": "40fe4a97f354d91d9c1961d33ced2b46b1cbb3e55977c6bba283e3fd397e5a18"
+}

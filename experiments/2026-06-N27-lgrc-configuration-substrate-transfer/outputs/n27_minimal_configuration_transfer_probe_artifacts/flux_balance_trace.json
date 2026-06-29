@@ -1,0 +1,10 @@
+{
+  "flux_balance_digest": "0baf2b6876a3b767966d725b5613534ed4756e8eb4b5f323f4d3be84de99a34f",
+  "flux_balance_margin": 0.025,
+  "flux_balance_preserved_within_bound": true,
+  "hidden_flux_support_reconstruction_detected": false,
+  "max_flux_imbalance": 0.05,
+  "post_abs_flux_imbalance": 0.025,
+  "pre_abs_flux_imbalance": 0.02,
+  "trace_id": "n27_i4_flux_balance_trace"
+}

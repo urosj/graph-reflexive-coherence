@@ -1,0 +1,56 @@
+{
+  "boundary_acceptance_operator": "greater_than_or_equal",
+  "boundary_jaccard_floor": 0.9,
+  "boundary_mapping_digest": "736fe3a67e490eef260a4df6a2ddb4878a367878e11255192cecf315e01f590a",
+  "boundary_mapping_margin": 0.1,
+  "boundary_mapping_preserved": true,
+  "boundary_margin_at_floor": false,
+  "edge_mapping": {
+    "gamma_core-gamma_left_support": "delta_core-delta_north_support",
+    "gamma_core-gamma_right_support": "delta_south_support-delta_core",
+    "gamma_left_support-gamma_outer_boundary": "delta_north_support-delta_outer_boundary",
+    "gamma_right_support-gamma_outer_boundary": "delta_outer_boundary-delta_south_support"
+  },
+  "mapped_boundary_edge_count": 4,
+  "mapped_boundary_jaccard": 1.0,
+  "post_boundary_edges": [
+    [
+      "delta_core",
+      "delta_north_support"
+    ],
+    [
+      "delta_south_support",
+      "delta_core"
+    ],
+    [
+      "delta_north_support",
+      "delta_outer_boundary"
+    ],
+    [
+      "delta_outer_boundary",
+      "delta_south_support"
+    ]
+  ],
+  "pre_boundary_edges": [
+    [
+      "gamma_core",
+      "gamma_left_support"
+    ],
+    [
+      "gamma_core",
+      "gamma_right_support"
+    ],
+    [
+      "gamma_left_support",
+      "gamma_outer_boundary"
+    ],
+    [
+      "gamma_right_support",
+      "gamma_outer_boundary"
+    ]
+  ],
+  "same_label_different_basin_rejected": true,
+  "trace_id": "n27_i4a_boundary_mapping_trace",
+  "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+  "unmapped_boundary_edge_count": 0
+}

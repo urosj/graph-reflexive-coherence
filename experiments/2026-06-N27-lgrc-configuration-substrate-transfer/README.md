@@ -8,7 +8,7 @@ unscoped multi-basin consumption.
 Current state:
 
 ```text
-status = iteration_3_passed
+status = iteration_4a_passed
 source_contract_row = n20_i5_row_08_configuration_substrate_transfer
 n20_contract_status = complete
 n26_consumption = bounded_PD6_proxy_divergence_collapse_evidence_only
@@ -21,12 +21,15 @@ primary_scope = configuration_or_topology_transfer_inside_LGRC
 cross_substrate_scope = optional_if_declared_source_backed_mapping_exists
 local_ladder = CT0...CT6
 closeout_ladder = N27-C0...N27-C6
-positive_transfer_evidence_opened = false
+positive_transfer_evidence_opened = true
+provisional_ct_ladder_rung = CT2
 ct_ladder_rung_assigned = false
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
 active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
-ready_for_iteration_4 = true
+minimal_configuration_transfer_output_digest = f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294
+topology_fixture_variant_transfer_output_digest = 5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7
+ready_for_iteration_5 = true
 ```
 
 Core question:

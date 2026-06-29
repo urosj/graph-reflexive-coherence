@@ -1,0 +1,37 @@
+{
+  "edge_mapping": {
+    "gamma_core-gamma_left_support": "delta_core-delta_north_support",
+    "gamma_core-gamma_right_support": "delta_south_support-delta_core",
+    "gamma_left_support-gamma_outer_boundary": "delta_north_support-delta_outer_boundary",
+    "gamma_right_support-gamma_outer_boundary": "delta_outer_boundary-delta_south_support"
+  },
+  "mapping_declaration_order": 0,
+  "mapping_declared_before_use": true,
+  "mapping_digest_excludes_outcome": true,
+  "mapping_policy": "declared_source_current_topological_role_correspondence",
+  "mapping_source_backed": true,
+  "node_mapping": {
+    "gamma_core": "delta_core",
+    "gamma_left_support": "delta_north_support",
+    "gamma_outer_boundary": "delta_outer_boundary",
+    "gamma_right_support": "delta_south_support"
+  },
+  "post_fixture_id": "fixture_delta_folded",
+  "post_frame_id": "fixture_delta_folded_frame",
+  "post_observation_order": 2,
+  "pre_fixture_id": "fixture_gamma_branch",
+  "pre_frame_id": "fixture_gamma_branch_frame",
+  "pre_observation_order": 1,
+  "same_frame_movement_claimed": false,
+  "topology_change": {
+    "coordinate_rule_changed": "branched_role_layout_to_folded_cycle_role_layout",
+    "edge_shape_changed": true,
+    "fixture_equivalence_label_only": false,
+    "frame_changed": true,
+    "node_ids_changed": true
+  },
+  "trace_id": "n27_i4a_transfer_mapping_trace",
+  "transfer_mapping_digest": "71c0287ccc4e785d629d4415f9e6b58d5d7d280cbde7d5b8e17d91fe7cff2636",
+  "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+  "transfer_scope": "topology"
+}

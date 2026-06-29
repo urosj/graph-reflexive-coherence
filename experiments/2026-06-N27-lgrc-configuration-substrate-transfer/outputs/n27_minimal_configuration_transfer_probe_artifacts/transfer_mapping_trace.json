@@ -1,0 +1,33 @@
+{
+  "configuration_change": {
+    "coordinate_rule_changed": "alpha_linear_layout_to_beta_offset_layout",
+    "fixture_equivalence_label_only": false,
+    "frame_changed": true,
+    "node_ids_changed": true
+  },
+  "edge_mapping": {
+    "alpha_core-alpha_support": "beta_core-beta_support",
+    "alpha_support-alpha_boundary": "beta_support-beta_boundary"
+  },
+  "mapping_declaration_order": 0,
+  "mapping_declared_before_use": true,
+  "mapping_digest_excludes_outcome": true,
+  "mapping_policy": "declared_source_current_node_and_boundary_correspondence",
+  "mapping_source_backed": true,
+  "node_mapping": {
+    "alpha_boundary": "beta_boundary",
+    "alpha_core": "beta_core",
+    "alpha_support": "beta_support"
+  },
+  "post_fixture_id": "fixture_beta",
+  "post_frame_id": "fixture_beta_frame",
+  "post_observation_order": 2,
+  "pre_fixture_id": "fixture_alpha",
+  "pre_frame_id": "fixture_alpha_frame",
+  "pre_observation_order": 1,
+  "same_frame_movement_claimed": false,
+  "trace_id": "n27_i4_transfer_mapping_trace",
+  "transfer_mapping_digest": "5d26566b0ddb52e42b2648277764367f8daaa599a84bc79a1ef542939da7fa12",
+  "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+  "transfer_scope": "configuration"
+}

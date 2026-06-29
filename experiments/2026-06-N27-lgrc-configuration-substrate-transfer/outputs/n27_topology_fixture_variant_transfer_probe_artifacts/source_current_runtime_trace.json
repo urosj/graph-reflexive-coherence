@@ -1,0 +1,16 @@
+{
+  "derived_report_only": false,
+  "implementation_patch_opened": false,
+  "observation_order": [
+    "threshold_record_declared",
+    "mapping_declared",
+    "pre_signature_observed",
+    "post_signature_observed",
+    "boundary_support_coherence_flux_evaluated",
+    "variant_compared_to_i4"
+  ],
+  "run_artifact_id": "n27_i4a_topology_fixture_variant_runtime",
+  "runtime_config_digest": "cd1687a10ea55f720525c8edf49daa2d8605e6ef0f1898fb4bf5b14587a8bf64",
+  "source_current_trace_kind": "deterministic_topology_fixture_transfer_variant",
+  "trace_id": "n27_i4a_source_current_runtime_trace"
+}

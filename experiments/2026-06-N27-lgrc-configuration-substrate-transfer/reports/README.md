@@ -12,6 +12,8 @@ Current reports:
 n27_source_inventory_and_transfer_contract_admission.md
 n27_transfer_schema_and_controls.md
 n27_active_nulls_and_failure_baselines.md
+n27_minimal_configuration_transfer_probe.md
+n27_topology_fixture_variant_transfer_probe.md
 ```
 
 Planned reports mirror `outputs/`.

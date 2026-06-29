@@ -8,13 +8,15 @@ Current outputs:
 n27_source_inventory_and_transfer_contract_admission.json
 n27_transfer_schema_and_controls.json
 n27_active_nulls_and_failure_baselines.json
+n27_minimal_configuration_transfer_probe.json
+n27_minimal_configuration_transfer_probe_artifacts/
+n27_topology_fixture_variant_transfer_probe.json
+n27_topology_fixture_variant_transfer_probe_artifacts/
 ```
 
 Planned outputs:
 
 ```text
-n27_minimal_configuration_transfer_probe.json
-n27_topology_fixture_variant_transfer_probe.json
 n27_replay_same_basin_mapping_matrix.json
 n27_stress_mapping_variant_transfer_matrix.json
 n27_controls_ap_dependency_claim_classification.json

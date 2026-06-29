@@ -1,0 +1,19 @@
+{
+  "applies_to_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+  "boundary_jaccard_floor": 0.9,
+  "boundary_mapping_tolerance_formula": "boundary_mapping_margin = mapped_boundary_jaccard - boundary_jaccard_floor",
+  "coherence_floor": 0.91,
+  "coherence_floor_margin_formula": "coherence_floor_margin = post_min_coherence - coherence_floor",
+  "declaration_order": 0,
+  "declared_before_use": true,
+  "flux_balance_bound_formula": "flux_balance_margin = max_flux_imbalance - post_abs_flux_imbalance",
+  "hidden_support_reconstruction_allowed": false,
+  "max_flux_imbalance": 0.06,
+  "max_signature_distance": 0.07,
+  "record_id": "n27_i4a_threshold_record",
+  "same_label_only_allowed": false,
+  "signature_preservation_margin_formula": "signature_preservation_margin = max_signature_distance - observed_signature_distance",
+  "support_floor": 0.91,
+  "support_floor_margin_formula": "support_floor_margin = post_min_support - support_floor",
+  "threshold_record_digest": "ec27397a586da2265119b869182380e00fd4655a337e7d3a9e356f199863d6e7"
+}
