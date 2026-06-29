@@ -1,0 +1,14 @@
+{
+  "final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+  "final_n28_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+  "focused_margin_context_preserved": true,
+  "focused_margin_promoted_to_broad_robustness": false,
+  "i7_acceptance_state": "accepted_ge5_controls_ap_claim_classification_pending_i8_closeout",
+  "i7_ge5_supported": true,
+  "i7_ge6_supported_before_closeout": false,
+  "i7_output_digest": "13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35",
+  "paired_regime_evidence_present": true,
+  "ready_for_n29": true,
+  "same_rule_classification_status": "supported",
+  "trace_id": "n28_i8_closeout_trace"
+}

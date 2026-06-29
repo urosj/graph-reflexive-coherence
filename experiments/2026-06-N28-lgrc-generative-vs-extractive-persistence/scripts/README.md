@@ -55,6 +55,10 @@
 - `build_n28_focused_margin_variant_stress_envelope.py` - Builds the
   deterministic Iteration 6-C focused stress/envelope matrix for I4-F and
   I4-G.
+- `build_n28_controls_ap_dependency_claim_classification.py` - Builds the
+  deterministic Iteration 7 controls, AP4/AP5 dependency, and claim
+  classification record over the I4-family and focused-margin evidence stack.
+- `build_n28_closeout_and_n29_handoff.py` - Builds the deterministic
+  Iteration 8 closeout and N29 handoff record.
 
-Later scripts will build probe artifacts, replay/control matrices, stress
-matrices, classification records, and closeout records.
+The N28 implementation script set is complete through closeout.

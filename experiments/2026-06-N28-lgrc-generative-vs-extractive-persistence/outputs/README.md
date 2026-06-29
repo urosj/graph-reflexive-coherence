@@ -138,3 +138,18 @@
 - `n28_focused_margin_variant_stress_envelope_artifacts/` - Iteration 6-C
   trace bundle containing focused stress-envelope traces for both variants
   plus a summary trace.
+- `n28_controls_ap_dependency_claim_classification.json` - Iteration 7
+  controls, AP4/AP5 dependency, and claim classification record. Classifies
+  the I4-family, focused-margin, replay, and stress evidence as a bounded GE5
+  candidate pending I8 closeout, while keeping GE6, final N28, AP4/AP5 NAT4
+  gap resolution, and unsafe claims blocked.
+- `n28_controls_ap_dependency_claim_classification_artifacts/` - Iteration 7
+  trace bundle containing one classification trace per I4-family/focused row
+  plus the I7 classification summary trace.
+- `n28_closeout_and_n29_handoff.json` - Iteration 8 closeout and N29 handoff
+  record. Closes N28 as GE6 / N28-C6 bounded artifact-level
+  generative/extractive persistence evidence, while preserving AP4/AP5 gaps,
+  broad-robustness blockers, unsafe-claim blockers, and the bounded N29
+  consumption rules.
+- `n28_closeout_and_n29_handoff_artifacts/` - Iteration 8 trace bundle
+  containing source-lineage, claim-boundary, closeout, and N29 handoff records.

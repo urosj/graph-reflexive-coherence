@@ -8,7 +8,7 @@ cooperation, agency, native support, or ant ecology.
 Current state:
 
 ```text
-status = initialized
+status = closed
 source_ledger_row = n20_i3_row_09_generative_extractive_persistence
 descriptor_contract_row = n20_i4_row_09_generative_extractive_persistence
 consumable_contract_row = n20_i5_row_09_generative_extractive_persistence
@@ -22,13 +22,17 @@ primary_scope = LGRC focal basin plus neighborhood / sub-basin capacity effects
 ant_ecology_scope = deferred_until_N29
 local_ladder = GE0...GE6
 closeout_ladder = N28-C0...N28-C6
-positive_generative_evidence_opened = false
-ge_ladder_rung_assigned = false
-n28_closeout_ladder_rung_assigned = false
+positive_generative_evidence_opened = true
+final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persistence_evidence
+final_n28_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
+final_supported_status = bounded_artifact_level_generative_extractive_persistence_evidence
+broad_margin_robustness_supported = false
+ap4_nat4_gap_resolved = false
+ap5_nat4_gap_resolved = false
 native_support_opened = false
 phase8_completion_opened = false
 ant_ecology_opened = false
-ready_for_iteration_1 = true
+ready_for_n29 = true
 ```
 
 Core question:
@@ -233,6 +237,11 @@ Iteration 5 - Replay And Capacity Attribution Matrix
 Iteration 5-A - Artifact-Only Reconstruction Replay Probe
 Iteration 6 - Stress / Regime-Separation Matrix
 Iteration 6-A - Regime Boundary / Transition Matrix
+Iteration 6-B - Margin Envelope Sweep
+Iteration 4-F - Higher-Margin Neutral Circulation Probe
+Iteration 4-G - Higher-Margin Competitive Redistribution Probe
+Iteration 5-B - Focused Margin Variant Replay Matrix
+Iteration 6-C - Focused Margin Variant Stress Envelope
 Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
 Iteration 8 - Closeout And N29 Handoff
 ```

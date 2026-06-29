@@ -42,3 +42,8 @@
   Iteration 5-B replay/control matrix over I4-F and I4-G.
 - `n28_focused_margin_variant_stress_envelope.md` - Markdown summary for
   Iteration 6-C focused stress/envelope matrix over I4-F and I4-G.
+- `n28_controls_ap_dependency_claim_classification.md` - Markdown summary for
+  Iteration 7 controls, AP4/AP5 dependency, and claim classification over the
+  replay/stress-backed N28 evidence stack.
+- `n28_closeout_and_n29_handoff.md` - Markdown summary for Iteration 8
+  closeout and N29 handoff.

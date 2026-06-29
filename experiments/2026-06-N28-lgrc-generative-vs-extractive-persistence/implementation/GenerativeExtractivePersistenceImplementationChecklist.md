@@ -1714,33 +1714,163 @@ native support, Phase 8 completion, or ant ecology.
 
 ## Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
 
-- [ ] Classify all positive, partial, rejected, blocked, and contrast rows.
-- [ ] Confirm primary and strengthening generative candidates are represented, or record blocker.
-- [ ] Confirm primary and strengthening extractive contrasts are represented, or record blocker.
-- [ ] Confirm primary and alternative competitive/neutral contrasts are represented, or record blocker.
-- [ ] Classify `shared_regime_policy_status`.
-- [ ] Confirm label-specific thresholds are either absent or recorded as split-policy blockers.
-- [ ] Confirm competitive/neutral rows are not promoted to generative evidence.
-- [ ] Confirm AP4/AP5 dependencies are row-local.
-- [ ] Confirm N27 context is not promoted to N28 evidence.
-- [ ] Confirm unsafe claim flags remain false.
-- [ ] Confirm no ant ecology implementation opens.
+- [x] Classify all positive, partial, rejected, blocked, and contrast rows.
+- [x] Confirm primary and strengthening generative candidates are represented, or record blocker.
+- [x] Confirm primary and strengthening extractive contrasts are represented, or record blocker.
+- [x] Confirm primary and alternative competitive/neutral contrasts are represented, or record blocker.
+- [x] Classify `shared_regime_policy_status`.
+- [x] Confirm label-specific thresholds are either absent or recorded as split-policy blockers.
+- [x] Confirm competitive/neutral rows are not promoted to generative evidence.
+- [x] Confirm AP4/AP5 dependencies are row-local.
+- [x] Confirm N27 context is not promoted to N28 evidence.
+- [x] Confirm unsafe claim flags remain false.
+- [x] Confirm no ant ecology implementation opens.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_ge5_controls_ap_claim_classification_pending_i8_closeout
+output_digest = 13271b6c1e5e67f89fdabf77722aba648654094250cd1bf8c60d361c95560e35
+provisional_ge_ladder_rung = GE5
+n28_closeout_ceiling = N28-C5_replay_control_stress_backed_generative_extractive_candidate_supported
+classification_row_count = 10
+generative_row_count = 3
+extractive_contrast_row_count = 3
+competitive_neutral_contrast_row_count = 4
+focused_margin_row_count = 2
+shared_regime_policy_status = supported
+ge5_or_stronger_supported = true
+ge6_or_stronger_supported = false
+final_n28_supported = false
+broad_margin_robustness_supported = false
+order_of_magnitude_robustness_supported = false
+ap4_nat4_gap_resolved = false
+ap5_nat4_gap_resolved = false
+failed_checks = []
+ready_for_iteration_8_closeout_and_n29_handoff = true
+```
+
+Artifacts:
+
+```text
+outputs/n28_controls_ap_dependency_claim_classification.json
+reports/n28_controls_ap_dependency_claim_classification.md
+scripts/build_n28_controls_ap_dependency_claim_classification.py
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i7_classification_summary.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4_row_primary_generative_candidate_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4a_row_generative_strengthening_candidate_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4a2_row_generative_mechanism_diversity_candidate_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4b_row_primary_extractive_contrast_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4c_row_extractive_strengthening_contrast_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4c2_row_extractive_mechanism_diversity_contrast_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4d_row_primary_competitive_neutral_contrast_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4e_row_competitive_neutral_mechanism_diversity_contrast_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4f_row_higher_margin_neutral_circulation_contrast_claim_classification_trace.json
+outputs/n28_controls_ap_dependency_claim_classification_artifacts/n28_i4g_row_higher_margin_competitive_redistribution_contrast_claim_classification_trace.json
+```
+
+Interpretation:
+
+```text
+I7 classifies the N28 evidence stack as a bounded GE5 candidate pending I8
+closeout. It does not close GE6 or final N28.
+
+The strongest support is the broad I6 paired regime matrix: generative,
+extractive, and competitive/neutral rows remain separable under one shared
+policy, with replay/control backing from I5 and artifact-only blockers from
+I5-A.
+
+I6-A contributes the same-policy transition surface. It shows that the
+classification boundary can hold across declared transition envelopes, but it
+does not add new source-current GE evidence by itself.
+
+I6-B remains a margin diagnostic. It identifies bottlenecks and motivates
+focused variants, but it does not support broad robustness or GE6.
+
+I6-C contributes focused current-multiplier margin evidence for I4-F and I4-G.
+It removes the critical current-margin blockers for the focused
+competitive/neutral region only. It does not widen the full I4-family envelope
+and does not support order-of-magnitude robustness.
+
+AP4 and AP5 NAT4 gaps remain unresolved and row-local. N27 transfer context is
+not promoted to N28 evidence. Extractive and competitive/neutral rows remain
+contrast evidence, not generative evidence. Semantic cooperation, semantic
+choice, agency, native support, sentience, Phase 8 completion, and ant ecology
+remain blocked.
+```
 
 ## Iteration 8 - Closeout And N29 Handoff
 
-- [ ] Freeze final GE rung if warranted.
-- [ ] Freeze final N28-C rung if warranted.
-- [ ] Confirm closeout does not rely on a single generative-looking row.
-- [ ] Confirm GE5/N28-C5 require paired generative, extractive, and competitive/neutral regime separation unless explicit blockers are recorded.
-- [ ] Record whether same-rule classification is supported, partially supported, split-policy-required, or blocked.
-- [ ] Record final claim ceiling.
-- [ ] Record final controls and blockers.
-- [ ] Confirm source digests and artifact hashes.
-- [ ] Confirm no absolute paths.
-- [ ] Confirm `src_diff_empty` unless an explicit implementation defect is only recorded, not fixed.
-- [ ] Record N29 handoff.
+- [x] Freeze final GE rung if warranted.
+- [x] Freeze final N28-C rung if warranted.
+- [x] Confirm closeout does not rely on a single generative-looking row.
+- [x] Confirm GE5/N28-C5 require paired generative, extractive, and competitive/neutral regime separation unless explicit blockers are recorded.
+- [x] Record whether same-rule classification is supported, partially supported, split-policy-required, or blocked.
+- [x] Record final claim ceiling.
+- [x] Record final controls and blockers.
+- [x] Confirm source digests and artifact hashes.
+- [x] Confirm no absolute paths.
+- [x] Confirm `src_diff_empty` unless an explicit implementation defect is only recorded, not fixed.
+- [x] Record N29 handoff.
 
-Expected closeout ceiling:
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_n28_c6_closeout_n29_handoff_ready
+output_digest = 80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f
+final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persistence_evidence
+final_n28_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
+final_n28_supported = true
+ready_for_n29 = true
+same_rule_classification_status = supported
+broad_margin_robustness_supported = false
+order_of_magnitude_robustness_supported = false
+ap4_nat4_gap_resolved = false
+ap5_nat4_gap_resolved = false
+native_ap5_supported = false
+native_support_supported = false
+phase8_completion_supported = false
+ant_ecology_implementation_supported = false
+src_diff_empty = true
+failed_checks = []
+```
+
+Artifacts:
+
+```text
+outputs/n28_closeout_and_n29_handoff.json
+reports/n28_closeout_and_n29_handoff.md
+scripts/build_n28_closeout_and_n29_handoff.py
+outputs/n28_closeout_and_n29_handoff_artifacts/source_lineage_trace.json
+outputs/n28_closeout_and_n29_handoff_artifacts/claim_boundary_trace.json
+outputs/n28_closeout_and_n29_handoff_artifacts/closeout_trace.json
+outputs/n28_closeout_and_n29_handoff_artifacts/n29_handoff_record.json
+```
+
+Interpretation:
+
+```text
+N28 closes at GE6 / N28-C6 because I8 records a claim-clean handoff to N29
+over the I7-classified GE5 evidence stack. GE6 is the N29-ready closeout rung;
+it is not a new dynamics probe and not a broad robustness claim.
+
+The final support remains bounded: paired generative, extractive, and
+competitive/neutral regime separation survived replay/control/stress under one
+shared policy. I6-A contributes same-policy transition context; I6-B remains a
+margin diagnostic; I6-C contributes focused current-multiplier margin support
+only.
+
+N29 may consume N28 as bounded artifact-level generative/extractive persistence
+evidence and claim-clean environment-exchange context. N29 must not consume it
+as semantic cooperation, semantic choice, agency, native support, native AP5,
+AP5 NAT4-gap resolution, Phase 8 completion, ant ecology implementation, broad
+margin robustness, order-of-magnitude robustness, or unscoped multi-basin
+substrate evidence.
+```
+
+Final closeout ceiling:
 
 ```text
 bounded artifact-level generative/extractive persistence candidate
