@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note for N27. It replaces the
+This handoff is the current pickup note for N28. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -23,12 +23,14 @@ N25.1 LGRC9V3 multi-basin formation extension requirements = closed
 Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement = closed_at_MB5
 N25.2 LGRC9V3 MB6 validation bridge = closed
 N26 proxy divergence / proxy collapse = closed
-current primitive experiment = N27_configuration_substrate_transfer
-N27 configuration / substrate transfer = iteration_3_active_nulls_fail_closed
-N27_may_consume_N26_as = bounded_PD6_proxy_divergence_collapse_evidence
-N27_must_not_consume_N26_as = native_AP5_or_AP5_NAT4_gap_resolution
-N27_positive_transfer_evidence_opened = false
-N27_next_iteration = I4_minimal_configuration_transfer_probe
+current primitive experiment = N28_generative_vs_extractive_persistence
+N27 configuration / topology transfer = closed
+N27_final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+N27_final_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+N27_final_transfer_supported = true
+N27_n28_precursor_evaluation_supported = true
+N27_n28_generative_persistence_supported = false
+N28_next_iteration = I1_source_inventory_and_generative_extractiveness_contract_admission
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -260,23 +262,55 @@ unscoped_multi_basin_substrate
 N27 should treat configuration/substrate transfer as a new source-current
 question, not as a proxy-score relabel or hidden producer carryover.
 
-N27 current state:
+N27 closed state:
 
 ```text
-status = iteration_3_passed
-acceptance_state = accepted_active_nulls_fail_closed_no_positive_transfer_evidence
-n27_closeout_ceiling = N27-C3_active_nulls_fail_closed
-positive_transfer_evidence_opened = false
-ct_ladder_rung_assigned = false
+status = passed
+acceptance_state = accepted_n27_c6_closeout_n28_handoff_ready
+final_supported_status = bounded_artifact_level_configuration_topology_transfer_candidate
+final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+final_n27_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+final_transfer_supported = true
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
 active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
-ready_for_iteration_4 = true
+controls_ap_dependency_claim_classification_output_digest = d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c
+n28_precursor_side_effect_claim_classification_output_digest = 10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb
+closeout_and_n28_handoff_output_digest = 818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716
+ready_for_n28 = true
 ```
 
-N27 I4 may now start the first minimal configuration-transfer probe. It should
-not overread CT1/CT2 evidence as transfer support before replay/control
-validation.
+N27 supports bounded artifact-level configuration/topology transfer evidence.
+Its strongest positive row is the I4-A gamma/delta topology / fixture variant,
+classified at CT5 after replay, controls, stress, AP4/AP5 boundary handling,
+and unsafe-claim checks. I8 closes the tranche at CT6 and records the N28
+handoff.
+
+N28 may consume N27 as:
+
+```text
+bounded_configuration_topology_transfer_evidence
+claim_clean_ct5_transfer_candidate_closeout
+n28_ready_side_effect_precursor_evaluation
+focal_stability_with_neighbor_capacity_metrics_context
+```
+
+N28 must not consume N27 as:
+
+```text
+N28_generative_persistence_evidence
+semantic_identity
+semantic_cooperation
+agency
+native_support
+native_AP5
+AP5_NAT4_gap_resolution
+Phase_8_completion
+ant_ecology
+organism_life
+```
 
 ## Active Roadmap Source
 
@@ -321,6 +355,26 @@ Use this handoff together with:
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_transfer_schema_and_controls.md`
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_active_nulls_and_failure_baselines.json`
 - `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_active_nulls_and_failure_baselines.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_configuration_transfer_probe.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_configuration_transfer_probe.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_transfer_probe.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_topology_fixture_transfer_probe.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_replay_and_mapping_matrix.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_transfer_replay_and_mapping_matrix.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_stress_and_mapping_variants.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_transfer_stress_and_mapping_variants.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_controls_ap_dependency_claim_classification.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_controls_ap_dependency_claim_classification.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_observation_probe.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_n28_precursor_side_effect_observation_probe.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_replay_matrix.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_n28_precursor_side_effect_replay_matrix.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_stress_matrix.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_n28_precursor_side_effect_stress_matrix.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_claim_classification.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_n28_precursor_side_effect_claim_classification.md`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json`
+- `experiments/2026-06-N27-lgrc-configuration-substrate-transfer/reports/n27_closeout_and_n28_handoff.md`
 
 Historical prerequisite context remains in:
 
@@ -731,14 +785,16 @@ n26_unscoped_multi_basin_consumption_allowed = false
 ```
 
 N26 consumed N25.2 in scoped MB6 mode and then closed as bounded PD6 proxy
-divergence / proxy collapse evidence. N27 may now consume N26 as bounded proxy
-divergence context:
+divergence / proxy collapse evidence. N27 consumed N26 as bounded proxy
+divergence context and then closed as bounded CT6 configuration/topology
+transfer evidence:
 
 ```text
 scoped mode:
   consume N25 sub-basin / high-margin core evidence as historical context
   consume N25.2 MB6 as scoped multi-basin substrate evidence through N26
   consume N26 PD6 as bounded proxy divergence / proxy collapse evidence
+  consume N27 CT6 as bounded configuration/topology transfer evidence
 
 unscoped mode:
   blocked

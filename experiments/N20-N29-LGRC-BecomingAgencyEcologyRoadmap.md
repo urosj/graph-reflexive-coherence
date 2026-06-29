@@ -12,8 +12,10 @@ as the LGRC9V3 multi-basin formation extension requirements bridge. The Phase 8
 multi-basin implementation tranche is closed at MB5, and N25.2 is closed as
 the validation bridge supporting MB6 / scoped N26-ready substrate evidence.
 N26 is closed as bounded PD6 proxy divergence / proxy collapse evidence with a
-scoped artifact AP5 bridge candidate, and N27 configuration/substrate transfer
-is initialized as the next primitive experiment.
+scoped artifact AP5 bridge candidate, and N27 is closed as bounded CT6
+configuration/topology transfer evidence with a claim-clean N28 side-effect
+precursor handoff. N28 generative versus extractive persistence is the next
+primitive experiment.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
@@ -655,17 +657,21 @@ substrate.
 Status:
 
 ```text
-iteration_3_passed
+closed
 source_contract_row = n20_i5_row_08_configuration_substrate_transfer
 local_ladder = CT0...CT6
 closeout_ladder = N27-C0...N27-C6
-positive_transfer_evidence_opened = false
-ct_ladder_rung_assigned = false
-n27_closeout_ceiling = N27-C3_active_nulls_fail_closed
+final_supported_status = bounded_artifact_level_configuration_topology_transfer_candidate
+final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+final_n27_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+final_transfer_supported = true
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
 active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
-ready_for_iteration_4 = true
+closeout_and_n28_handoff_output_digest = 818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716
+ready_for_n28 = true
 ```
 
 Question:
@@ -696,11 +702,11 @@ configuration / fixture / topology transfer
 Substrate transfer is allowed only when the substrate mapping is explicitly
 declared and source-backed.
 
-Iteration 2 froze the schema/control contract before positive probes:
+N27 consumed the N20 I5 transfer contract as normative, N26 only as bounded
+proxy/AP5 context, and N25.2 only through N26 scoped context. It preserved the
+transfer boundary:
 
 ```text
-N20 I5 consumable transfer contract = normative
-N20 I4 transfer descriptor = context only
 same label after mapping = not transfer
 basin movement = not transfer
 support reconstruction as transfer = blocked
@@ -709,10 +715,34 @@ direct N25.2 transfer backfill = blocked
 AP4/AP5 dependency handling = row-local
 ```
 
-Iteration 3 ran active nulls and failure baselines only. All 22 frozen controls
-failed closed with zero failed-open rows. Iteration 4 may now attempt the first
-minimal configuration-transfer probe, while keeping CT1/CT2 below transfer
-support until replay/control validation.
+N27's strongest positive row is the I4-A gamma/delta topology / fixture
+variant. I7 classified it as CT5 after replay, controls, stress, AP4/AP5
+boundary handling, and unsafe-claim checks. I8 adds the closeout and N28
+handoff records, so the final N27 transfer rung is CT6.
+
+N28 may consume N27 as:
+
+```text
+bounded_configuration_topology_transfer_evidence
+claim_clean_ct5_transfer_candidate_closeout
+n28_ready_side_effect_precursor_evaluation
+focal_stability_with_neighbor_capacity_metrics_context
+```
+
+N28 must not consume N27 as:
+
+```text
+N28_generative_persistence_evidence
+semantic_identity
+semantic_cooperation
+agency
+native_support
+native_AP5
+AP5_NAT4_gap_resolution
+Phase_8_completion
+ant_ecology
+organism_life
+```
 
 ## N28. Generative Vs Extractive Persistence
 
