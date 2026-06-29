@@ -1,0 +1,20 @@
+{
+  "n28_generative_persistence_supported": false,
+  "n28_readiness_side_effect_replay_supported": true,
+  "reconstruction_trace_digest": "2642f143fc3aa7c730b8699c19dc2d830b5a1170f311734cc3e0555799f3b6aa",
+  "replay_core": {
+    "artifact_only_reconstruction_passed": true,
+    "artifact_replay_passed": true,
+    "duplicate_replay_created_second_positive_row": false,
+    "duplicate_replay_digest_stable": true,
+    "extractive_trace_digest": "561a3d0ee20c09f7ef64efd6305308617ae200d8c6f040c63b4320591cd37a64",
+    "focal_trace_digest": "72fa9c48fdf488627df3071fd56c9e011423d27dc479870a1fd251fbb26e69a3",
+    "neighbor_trace_digest": "8d7d3ae6d0264d4e6abd8f85ca12637c9fb6f8e627c5f8753ce8e5461a4a0d43",
+    "replay_creates_new_side_effect_evidence": false,
+    "side_effect_summary_digest": "765d2e7ec24da5d9b8d18206eaef1b22b62b5120e816d8bc19ae82ca803caff8",
+    "snapshot_load_replay_passed": true,
+    "source_i4b_row_id": "n27_i4b_row_i4a_transfer_side_effect_observation"
+  },
+  "side_effect_replay_supported": true,
+  "trace_id": "n27_i5b_side_effect_replay_trace"
+}

@@ -1,0 +1,13 @@
+{
+  "matches_i4b_side_effect_summary_digest": true,
+  "n28_claim_supported": false,
+  "reconstructed_core_digest": "cc09e1213ec1fa03d8e2a16d04549ad2320d278449f9c6d5ce9526b6520efc2d",
+  "reconstructed_from_artifact_roles": [
+    "focal_basin_stability_trace",
+    "neighbor_capacity_trace",
+    "extractive_flattening_trace",
+    "side_effect_summary_trace"
+  ],
+  "source_row_summary_used_as_evidence": false,
+  "trace_id": "n27_i5b_side_effect_artifact_only_reconstruction_trace"
+}

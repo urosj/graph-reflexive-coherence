@@ -8,7 +8,7 @@ unscoped multi-basin consumption.
 Current state:
 
 ```text
-status = iteration_6_passed
+status = iteration_7a_passed
 source_contract_row = n20_i5_row_08_configuration_substrate_transfer
 n20_contract_status = complete
 n26_consumption = bounded_PD6_proxy_divergence_collapse_evidence_only
@@ -22,25 +22,32 @@ cross_substrate_scope = optional_if_declared_source_backed_mapping_exists
 local_ladder = CT0...CT6
 closeout_ladder = N27-C0...N27-C6
 positive_transfer_evidence_opened = true
-provisional_ct_ladder_rung = CT3
-ct_ladder_rung_assigned = false
+classified_ct_ladder_rung = CT5
+ct_ladder_rung_assigned = true
 ct3_replay_candidate_supported = true
 ct3_replay_hygiene_supported = true
+ct4_control_backed_candidate_supported = true
 ct5_stress_variant_candidate_supported = true
-ct5_assignment_allowed = false
-ct5_assignment_blocker = full_control_trace_pending_iteration_7
-ct4_or_stronger_supported = false
-ct5_or_stronger_supported = false
+ct5_or_stronger_supported = true
+ct6_or_stronger_supported = false
 final_transfer_supported = false
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
+n28_experiment_ready = true
 source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
 transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
 active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
 minimal_configuration_transfer_output_digest = f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294
 topology_fixture_variant_transfer_output_digest = 5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7
+transfer_side_effect_observation_output_digest = a398c63ae42d5275b4d7ca32a7a7be0f7c88b279b90b8e6bfd495107343e94a0
 replay_same_basin_mapping_output_digest = de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6
 artifact_only_reconstruction_replay_output_digest = 5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36
+transfer_side_effect_replay_output_digest = 3f034af77147172b99e885793b82438285990d46ee364ae95cd801ea6385eef7
 stress_mapping_variant_transfer_output_digest = 3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a
-ready_for_iteration_7 = true
+n28_precursor_side_effect_evaluation_output_digest = 2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af
+controls_ap_dependency_claim_classification_output_digest = d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c
+n28_precursor_side_effect_claim_classification_output_digest = 10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb
+ready_for_iteration_8 = true
 ```
 
 Core question:
@@ -212,9 +219,13 @@ Iteration 2 - Transfer Schema And Control Freeze
 Iteration 3 - Active Nulls And Failure Baselines
 Iteration 4 - Minimal Configuration Transfer Probe
 Iteration 4-A - Topology / Fixture Variant Transfer Probe
+Iteration 4-B - Transfer Side-Effect Observation Probe
 Iteration 5 - Replay And Same-Basin Mapping Matrix
 Iteration 5-A - Artifact-Only Reconstruction Replay Probe
+Iteration 5-B - Transfer Side-Effect Replay Probe
 Iteration 6 - Stress / Mapping-Variant Transfer Matrix
+Iteration 6-A - N28 Precursor Side-Effect Evaluation Matrix
 Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
+Iteration 7-A - N28 Precursor Side-Effect Claim Classification
 Iteration 8 - Closeout And N28 Handoff
 ```

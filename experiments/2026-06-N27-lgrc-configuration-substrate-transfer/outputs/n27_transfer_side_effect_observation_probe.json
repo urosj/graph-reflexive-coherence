@@ -1,0 +1,230 @@
+{
+  "acceptance_state": "accepted_source_current_transfer_side_effect_observation_no_n28_claim",
+  "artifact_id": "n27_transfer_side_effect_observation_probe",
+  "checks": [
+    {
+      "check_id": "i4a_source_available",
+      "detail": "passed",
+      "passed": true
+    },
+    {
+      "check_id": "focal_basin_stability_preserved",
+      "detail": {
+        "focal_basin": "delta_core_mapped_basin",
+        "focal_extraction_cost": 0.018,
+        "focal_extraction_cost_ceiling": 0.04,
+        "focal_stability_preserved": true,
+        "post_boundary_margin": 0.095,
+        "post_coherence_floor_margin": 0.024,
+        "post_support_floor_margin": 0.014,
+        "pre_boundary_margin": 0.1,
+        "pre_coherence_floor_margin": 0.025,
+        "pre_support_floor_margin": 0.015,
+        "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "source_transfer_row": "n27_i4a_row_01_topology_fixture_variant_transfer_probe",
+        "trace_id": "n27_i4b_focal_basin_stability_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "neighbor_capacity_improves_without_merge_leakage",
+      "detail": {
+        "extractive_flattening_below_ceiling": true,
+        "focal_basin_stable": true,
+        "interpretation": "source-current side-effect observation for N28 readiness; not N28 generative persistence evidence",
+        "merge_leakage_below_ceiling": true,
+        "n28_generative_persistence_supported": false,
+        "n28_precursor_observation_supported": true,
+        "neighbor_capacity_improved": true,
+        "neighbor_distinguishability_improved": true,
+        "side_effect_observation_kind": "source_current_n28_precursor_observation",
+        "source_iteration": "4-A",
+        "trace_id": "n27_i4b_side_effect_summary"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n28_claim_remains_blocked",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "generative_persistence_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "n28_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": [],
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "source-current side-effect observation only",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_transfer_side_effect_observation_probe.py",
+  "experiment": "N27",
+  "failed_checks": [],
+  "final_transfer_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "4-B",
+  "n28_generative_persistence_supported": false,
+  "n28_readiness_side_effect_observation_supported": true,
+  "output_digest": "a398c63ae42d5275b4d7ca32a7a7be0f7c88b279b90b8e6bfd495107343e94a0",
+  "purpose": "Record source-current side-effect traces around the I4-A transfer so N28 can consume evaluated neighborhood effects, not only a CT ledger.",
+  "ready_for_iteration_5b_side_effect_replay": true,
+  "schema_version": "1.0",
+  "side_effect_row": {
+    "all_artifact_sha256_match_file_contents": true,
+    "artifact_manifest": [
+      {
+        "artifact_role": "focal_basin_stability_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_observation_probe_artifacts/focal_basin_stability_trace.json",
+        "sha256": "e5c6a65f99143bc91707802e1ebc82f9a183f343b859e6ae94eab652c9b8283a"
+      },
+      {
+        "artifact_role": "neighbor_capacity_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_observation_probe_artifacts/neighbor_capacity_trace.json",
+        "sha256": "1784ea9f22b2223b5ce0cb62e51e0753fb04cc4b22750a39a58fb77bf78fa905"
+      },
+      {
+        "artifact_role": "extractive_flattening_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_observation_probe_artifacts/extractive_flattening_trace.json",
+        "sha256": "5c5510ed35184fe743602bce23d9a1b43f9f52948d54684b50699ee8a2010299"
+      },
+      {
+        "artifact_role": "side_effect_summary_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_observation_probe_artifacts/side_effect_summary_trace.json",
+        "sha256": "7e2dd9cc3738b78650f553f74a48a9ca445b236bf2350975440d9ba87e34165b"
+      }
+    ],
+    "claim_ceiling": "N28-ready side-effect observation candidate; not N28 generative persistence, ecology, agency, or native support",
+    "extractive_flattening_trace": {
+      "extractive_flattening_ceiling": 0.05,
+      "extractive_flattening_score": 0.022,
+      "merge_leakage_ceiling": 0.04,
+      "merge_leakage_score": 0.018,
+      "merge_or_leakage_masquerading_as_support": false,
+      "neighbor_flattening_detected": false,
+      "neighbor_merge_detected": false,
+      "trace_id": "n27_i4b_extractive_flattening_trace"
+    },
+    "final_transfer_supported": false,
+    "focal_basin_stability_trace": {
+      "focal_basin": "delta_core_mapped_basin",
+      "focal_extraction_cost": 0.018,
+      "focal_extraction_cost_ceiling": 0.04,
+      "focal_stability_preserved": true,
+      "post_boundary_margin": 0.095,
+      "post_coherence_floor_margin": 0.024,
+      "post_support_floor_margin": 0.014,
+      "pre_boundary_margin": 0.1,
+      "pre_coherence_floor_margin": 0.025,
+      "pre_support_floor_margin": 0.015,
+      "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "source_transfer_row": "n27_i4a_row_01_topology_fixture_variant_transfer_probe",
+      "trace_id": "n27_i4b_focal_basin_stability_trace"
+    },
+    "n28_generative_persistence_supported": false,
+    "n28_readiness_side_effect_observation_supported": true,
+    "neighbor_capacity_trace": {
+      "environment_basin_forming_capacity_post": 0.76,
+      "environment_basin_forming_capacity_pre": 0.66,
+      "environment_capacity_delta": 0.1,
+      "measured_region": "delta_adjacent_support_neighborhood",
+      "neighbor_basin_count_post": 3,
+      "neighbor_basin_count_pre": 2,
+      "neighbor_distinguishability_delta": 0.1,
+      "neighbor_distinguishability_post": 0.82,
+      "neighbor_distinguishability_pre": 0.72,
+      "neighbor_support_floor_delta": 0.04,
+      "neighbor_support_floor_post": 0.93,
+      "neighbor_support_floor_pre": 0.89,
+      "sub_basin_survival_post": 0.84,
+      "sub_basin_survival_pre": 0.78,
+      "trace_id": "n27_i4b_neighbor_capacity_trace"
+    },
+    "row_decision": "supported",
+    "row_decision_scope": "n28_precursor_side_effect_observation_only",
+    "row_id": "n27_i4b_row_i4a_transfer_side_effect_observation",
+    "side_effect_summary": {
+      "extractive_flattening_below_ceiling": true,
+      "focal_basin_stable": true,
+      "interpretation": "source-current side-effect observation for N28 readiness; not N28 generative persistence evidence",
+      "merge_leakage_below_ceiling": true,
+      "n28_generative_persistence_supported": false,
+      "n28_precursor_observation_supported": true,
+      "neighbor_capacity_improved": true,
+      "neighbor_distinguishability_improved": true,
+      "side_effect_observation_kind": "source_current_n28_precursor_observation",
+      "source_iteration": "4-A",
+      "trace_id": "n27_i4b_side_effect_summary"
+    },
+    "side_effect_summary_digest": "765d2e7ec24da5d9b8d18206eaef1b22b62b5120e816d8bc19ae82ca803caff8",
+    "source_iteration": "4-A",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "source_records": [
+    {
+      "output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe.json",
+      "sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+      "source_id": "n27_i4a_topology_fixture_variant_transfer",
+      "source_role": "source_current_transfer_variant_for_side_effect_observation"
+    }
+  ],
+  "status": "passed",
+  "topology_fixture_variant_transfer_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7"
+}

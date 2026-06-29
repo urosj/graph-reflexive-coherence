@@ -1,0 +1,32 @@
+{
+  "extractive_flattening_detected": false,
+  "focal_survival_only": false,
+  "interpretation": "N28-ready precursor evaluation: focal basin remains stable while neighbor capacity indicators improve below extraction/leakage ceilings",
+  "merge_or_leakage_masquerading_as_support": false,
+  "metrics": {
+    "extractive_flattening_score": 0.022,
+    "focal_extraction_cost": 0.018,
+    "focal_stability_preserved": true,
+    "merge_leakage_score": 0.018,
+    "neighbor_capacity_delta": 0.1,
+    "neighbor_distinguishability_delta": 0.1,
+    "neighbor_support_delta": 0.04
+  },
+  "n28_generative_persistence_supported": false,
+  "n28_precursor_evaluation_supported": true,
+  "neighbor_label_only": false,
+  "policy": {
+    "declared_before_use": true,
+    "extractive_flattening_ceiling": 0.05,
+    "focal_extraction_cost_ceiling": 0.04,
+    "focal_stability_required": true,
+    "merge_leakage_ceiling": 0.04,
+    "neighbor_capacity_delta_min": 0.05,
+    "neighbor_distinguishability_delta_min": 0.05,
+    "neighbor_support_delta_min": 0.02,
+    "policy_id": "n27_i6a_n28_precursor_side_effect_policy"
+  },
+  "source_i5b_row_id": "n27_i5b_row_i4b_side_effect_replay",
+  "source_i7_ct_classification_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+  "trace_id": "n27_i6a_n28_precursor_side_effect_evaluation_trace"
+}

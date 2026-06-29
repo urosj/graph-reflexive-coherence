@@ -1,0 +1,17 @@
+{
+  "environment_basin_forming_capacity_post": 0.76,
+  "environment_basin_forming_capacity_pre": 0.66,
+  "environment_capacity_delta": 0.1,
+  "measured_region": "delta_adjacent_support_neighborhood",
+  "neighbor_basin_count_post": 3,
+  "neighbor_basin_count_pre": 2,
+  "neighbor_distinguishability_delta": 0.1,
+  "neighbor_distinguishability_post": 0.82,
+  "neighbor_distinguishability_pre": 0.72,
+  "neighbor_support_floor_delta": 0.04,
+  "neighbor_support_floor_post": 0.93,
+  "neighbor_support_floor_pre": 0.89,
+  "sub_basin_survival_post": 0.84,
+  "sub_basin_survival_pre": 0.78,
+  "trace_id": "n27_i4b_neighbor_capacity_trace"
+}

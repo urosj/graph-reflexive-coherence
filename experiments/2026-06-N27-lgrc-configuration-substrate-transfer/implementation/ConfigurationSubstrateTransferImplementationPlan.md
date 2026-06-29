@@ -402,11 +402,25 @@ Run at least one distinct mapping variant so N27 is not only a single fixture
 label. This probes whether the transfer signature is mapping-specific and
 source-current.
 
+### Iteration 4-B - Transfer Side-Effect Observation Probe
+
+Record source-current side-effect traces around the strongest transfer variant:
+focal-basin stability, neighbor distinguishability, neighbor support/coherence,
+environment basin-forming capacity, focal extraction cost, extractive
+flattening, and merge/leakage. This is N28-readiness evidence only. It must not
+claim generative persistence.
+
 ### Iteration 5 - Replay And Same-Basin Mapping Matrix
 
 Replay I4/I4-A candidates and test whether same-basin signature, boundary
 mapping, support/coherence floors, and flux balance survive artifact replay,
 snapshot/load replay, and duplicate replay.
+
+### Iteration 5-B - Transfer Side-Effect Replay Probe
+
+Replay and reconstruct the I4-B side-effect traces from artifacts so N28 does
+not receive report-only or ledger-only side-effect claims. This should create
+no new transfer evidence and no N28 claim.
 
 ### Iteration 6 - Stress / Mapping-Variant Transfer Matrix
 
@@ -414,11 +428,27 @@ Stress declared mapping windows, boundary tolerance, support preservation, and
 configuration/topology variants. This should distinguish narrow transfer from
 variant-backed transfer.
 
+### Iteration 6-A - N28 Precursor Side-Effect Evaluation Matrix
+
+Evaluate the replayed side-effect traces under a declared N28 precursor policy:
+focal stability must be preserved, neighbor capacity/distinguishability/support
+must improve, and extraction/flattening/merge leakage must remain below
+ceilings. This produces N28-ready evaluation artifacts, not N28 generative
+persistence.
+
 ### Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
 
 Run the full control matrix and classify the strongest CT rung. AP4/AP5
 dependencies must remain row-local. Native AP5 and AP5 NAT4-gap resolution stay
 blocked unless separately source-backed.
+
+### Iteration 7-A - N28 Precursor Side-Effect Claim Classification
+
+Run side-effect-specific controls so focal survival alone, neighbor labels,
+merge/leakage, extraction masking, CT5 transfer success, semantic cooperation,
+native support, ant ecology, and Phase 8 completion cannot be relabeled as N28
+generative persistence. The only allowed result is a claim-clean N28 precursor
+handoff.
 
 ### Iteration 8 - Closeout And N28 Handoff
 

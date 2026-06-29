@@ -427,6 +427,45 @@ reports/n27_topology_fixture_variant_transfer_probe.md
 scripts/build_n27_topology_fixture_variant_transfer_probe.py
 ```
 
+## Iteration 4-B - Transfer Side-Effect Observation Probe
+
+- [x] Record focal-basin stability under the I4-A transfer surface.
+- [x] Record neighbor distinguishability and support/coherence side effects.
+- [x] Record environment basin-forming capacity side effects.
+- [x] Record focal extraction cost and extractive flattening.
+- [x] Record merge/leakage as a blocker, not as support.
+- [x] Keep N28 generative persistence blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_source_current_transfer_side_effect_observation_no_n28_claim
+n28_readiness_side_effect_observation_supported = true
+n28_generative_persistence_supported = false
+ready_for_iteration_5b_side_effect_replay = true
+failed_checks = []
+output_digest = a398c63ae42d5275b4d7ca32a7a7be0f7c88b279b90b8e6bfd495107343e94a0
+```
+
+Interpretation: I4-B observes the environment-side consequences of the I4-A
+topology transfer candidate. It records focal stability, neighbor
+distinguishability, neighbor support, environment basin-forming capacity,
+focal extraction cost, extractive flattening, and merge/leakage ceilings.
+
+The result is useful for N28 because it is not only a transfer ledger. It gives
+N28 a measured side-effect surface. It still does not support N28 generative
+persistence, ecology, agency, native support, semantic cooperation, or Phase 8.
+
+Artifacts:
+
+```text
+outputs/n27_transfer_side_effect_observation_probe.json
+outputs/n27_transfer_side_effect_observation_probe_artifacts/
+reports/n27_transfer_side_effect_observation_probe.md
+scripts/build_n27_transfer_side_effect_observation_probe.py
+```
+
 ## Iteration 5 - Replay And Same-Basin Mapping Matrix
 
 - [x] Run artifact replay.
@@ -566,6 +605,41 @@ reports/n27_artifact_only_reconstruction_replay_probe.md
 scripts/build_n27_artifact_only_reconstruction_replay_probe.py
 ```
 
+## Iteration 5-B - Transfer Side-Effect Replay Probe
+
+- [x] Replay I4-B side-effect traces.
+- [x] Reconstruct side-effect traces from artifacts.
+- [x] Verify replay digest stability.
+- [x] Verify duplicate replay does not create a second positive row.
+- [x] Confirm no new side-effect evidence is created by replay.
+- [x] Keep N28 generative persistence blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_transfer_side_effect_replay_reconstruction_no_n28_claim
+n28_readiness_side_effect_replay_supported = true
+n28_generative_persistence_supported = false
+ready_for_iteration_6a_side_effect_evaluation_matrix = true
+failed_checks = []
+output_digest = 3f034af77147172b99e885793b82438285990d46ee364ae95cd801ea6385eef7
+```
+
+Interpretation: I5-B makes the I4-B side-effect observation replayable and
+artifact-reconstructable. This avoids handing N28 only a report-level claim.
+Replay does not create new side-effect evidence and does not support N28
+generative persistence.
+
+Artifacts:
+
+```text
+outputs/n27_transfer_side_effect_replay_probe.json
+outputs/n27_transfer_side_effect_replay_probe_artifacts/
+reports/n27_transfer_side_effect_replay_probe.md
+scripts/build_n27_transfer_side_effect_replay_probe.py
+```
+
 ## Iteration 6 - Stress / Mapping-Variant Transfer Matrix
 
 - [x] Stress boundary mapping tolerance.
@@ -663,15 +737,203 @@ reports/n27_stress_mapping_variant_transfer_matrix.md
 scripts/build_n27_stress_mapping_variant_transfer_matrix.py
 ```
 
+## Iteration 6-A - N28 Precursor Side-Effect Evaluation Matrix
+
+- [x] Evaluate replayed side-effect traces under a declared N28 precursor policy.
+- [x] Confirm focal stability is preserved.
+- [x] Confirm neighbor capacity, distinguishability, and support improve.
+- [x] Confirm focal extraction cost remains below ceiling.
+- [x] Confirm extractive flattening remains below ceiling.
+- [x] Confirm merge/leakage remains below ceiling.
+- [x] Keep N28 generative persistence blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_n28_precursor_side_effect_evaluation_no_n28_claim
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
+ready_for_iteration_7a_side_effect_claim_classification = true
+failed_checks = []
+output_digest = 2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af
+```
+
+Evaluation summary:
+
+```text
+focal_stability_preserved = true
+neighbor_capacity_delta = 0.10
+neighbor_distinguishability_delta = 0.10
+neighbor_support_delta = 0.04
+focal_extraction_cost = 0.018
+extractive_flattening_score = 0.022
+merge_leakage_score = 0.018
+```
+
+Interpretation: I6-A evaluates the replayed I4-B/I5-B side-effect surface as a
+N28-ready precursor. It shows focal transfer stability with positive
+environment-side capacity indicators below extraction/leakage ceilings. It
+does not claim N28 generative persistence; that remains N28 scope.
+
+Artifacts:
+
+```text
+outputs/n27_n28_precursor_side_effect_evaluation_matrix.json
+outputs/n27_n28_precursor_side_effect_evaluation_matrix_artifacts/
+reports/n27_n28_precursor_side_effect_evaluation_matrix.md
+scripts/build_n27_n28_precursor_side_effect_evaluation_matrix.py
+```
+
 ## Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
 
-- [ ] Run full fail-closed control matrix.
-- [ ] Record AP4 dependency row-locally when route/selection participates.
-- [ ] Record AP5 dependency row-locally when proxy/target participates.
-- [ ] Confirm N26 scoped AP5 bridge does not become native AP5.
-- [ ] Confirm AP5 NAT4 gap remains unresolved unless independently source-backed.
-- [ ] Classify strongest CT rung.
-- [ ] Keep unsafe claim flags false.
+- [x] Run full fail-closed control matrix.
+- [x] Record AP4 dependency row-locally when route/selection participates.
+- [x] Record AP5 dependency row-locally when proxy/target participates.
+- [x] Confirm N26 scoped AP5 bridge does not become native AP5.
+- [x] Confirm AP5 NAT4 gap remains unresolved unless independently source-backed.
+- [x] Classify strongest CT rung.
+- [x] Keep unsafe claim flags false.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_ct5_controls_ap_claim_classification_pending_i8_closeout
+n27_closeout_ceiling = N27-C5_replay_control_stress_backed_transfer_candidate_supported
+positive_transfer_evidence_opened = true
+new_transfer_evidence_created = false
+candidate_rows_classified = true
+classified_ct_ladder_rung = CT5
+ct_ladder_rung_assigned = true
+ct_assignment_scope = controls_ap_claim_classification_pending_i8_closeout
+ct3_replay_candidate_supported = true
+ct4_control_backed_candidate_supported = true
+ct5_or_stronger_supported = true
+ct6_or_stronger_supported = false
+final_transfer_supported = false
+failed_open_control_count = 0
+failed_closed_control_count = 1
+ready_for_iteration_8_closeout_and_n28_handoff = true
+failed_checks = []
+output_digest = d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c
+```
+
+Interpretation: I7 consumes I6 without creating new transfer geometry. It runs
+the full frozen I2 control matrix over both candidate rows and records AP4/AP5
+dependency statuses row-locally.
+
+The I4 alpha/beta row remains useful, but bounded:
+
+```text
+source = I4 alpha/beta minimal configuration transfer
+classification = CT4_control_clean_stress_limited
+row_decision = partial
+ct5_supported = false
+ct5_contribution_allowed = false
+failed_closed_control = stress_variant_failure_control
+```
+
+The row is control-clean for its supported scope, but the I6 stress blocker
+remains valid. I7 therefore does not let I4 contribute to CT5.
+
+The I4-A gamma/delta topology / fixture variant becomes the strongest
+classified row:
+
+```text
+source = I4-A gamma/delta topology fixture variant
+classification = CT5
+row_decision = supported
+ct5_supported = true
+failed_open_control_count = 0
+```
+
+The full control matrix records all frozen controls as passed or explicitly
+not applicable. The only `failed_closed` control in I7 is the I4 stress gate,
+which correctly blocks I4 from CT5 rather than invalidating the whole tranche.
+
+AP4/AP5 classification:
+
+```text
+ap4_dependency_status = not_applicable
+ap4_condition_reason = configuration/topology mapping does not use route-conditioned selection
+ap5_dependency_status = not_applicable
+ap5_condition_reason = mapping does not use proxy or target formation
+```
+
+N26 remains bounded context, not transfer evidence. N25.2 is not directly
+consumed. Native AP5 and AP5 NAT4-gap resolution remain blocked. Semantic
+identity, semantic choice, native support, sentience, Phase 8 completion, and
+ant ecology claims remain false.
+
+This is still not final transfer. I7 supports CT5 as a controlled
+stress/variant-backed transfer candidate, while CT6 and final N27 closeout
+remain I8 scope.
+
+Artifacts:
+
+```text
+outputs/n27_controls_ap_dependency_claim_classification.json
+outputs/n27_controls_ap_dependency_claim_classification_artifacts/
+reports/n27_controls_ap_dependency_claim_classification.md
+scripts/build_n27_controls_ap_dependency_claim_classification.py
+```
+
+## Iteration 7-A - N28 Precursor Side-Effect Claim Classification
+
+- [x] Block focal survival alone as N28 generativity.
+- [x] Block neighbor label/count-only success.
+- [x] Block merge/leakage as neighbor support.
+- [x] Block masked extractive flattening.
+- [x] Block CT5 transfer success as N28 success.
+- [x] Block semantic cooperation and agency relabels.
+- [x] Block native support, ant ecology, and Phase 8 relabels.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_n28_ready_side_effect_precursor_claim_clean_no_n28_claim
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
+n28_experiment_ready = true
+ready_for_iteration_8_closeout_and_n28_handoff = true
+failed_checks = []
+output_digest = 10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb
+```
+
+Interpretation: I7-A makes the side-effect evaluation claim-clean for N28
+handoff. It blocks the main false positives: focal survival alone,
+neighbor-label-only capacity, merge/leakage masquerading as support,
+extractive flattening hidden by focal persistence, CT5 transfer relabeled as
+N28 success, semantic cooperation, native support, ant ecology, and Phase 8
+completion.
+
+The supported result is:
+
+```text
+N28-ready precursor side-effect evaluation artifact
+```
+
+Not:
+
+```text
+N28 generative persistence
+ecology
+agency
+native support
+semantic cooperation
+Phase 8 completion
+```
+
+Artifacts:
+
+```text
+outputs/n27_n28_precursor_side_effect_claim_classification.json
+outputs/n27_n28_precursor_side_effect_claim_classification_artifacts/
+reports/n27_n28_precursor_side_effect_claim_classification.md
+scripts/build_n27_n28_precursor_side_effect_claim_classification.py
+```
 
 ## Iteration 8 - Closeout And N28 Handoff
 
