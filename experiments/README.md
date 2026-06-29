@@ -442,7 +442,9 @@ Click the static image to open the animation; click the sequence image to open
 the full panel for zooming. The N28 visual is a source-backed diagnostic
 projection over generative, extractive, competitive redistribution, and
 neutral circulation source rows. It is an inspection aid; the supporting
-claims remain in the JSON/replay/control/closeout artifacts.
+claims remain in the JSON/replay/control/closeout artifacts. It plots local
+focal-basin and neighborhood capacity metrics; it does not plot or audit
+global total-coherence invariance.
 
 N20-N28 stay inside this repository and ground becoming-style primitives:
 withdrawal resistance, naturalization depth, susceptibility update, live

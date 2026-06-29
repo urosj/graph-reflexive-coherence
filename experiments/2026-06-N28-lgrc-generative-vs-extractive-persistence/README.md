@@ -44,7 +44,8 @@ ready_for_n29 = true
 Click the static image to open the animation; click the sequence image to open
 the full panel for zooming. This visualization is a source-backed diagnostic
 projection from N28 row metrics, not a proof layer and not a full runtime
-geometry replay.
+geometry replay. It plots local focal-basin and neighborhood capacity metrics;
+it does not plot or audit global total-coherence invariance.
 
 Core question:
 

@@ -2,10 +2,11 @@
 
 Status: `passed`
 
-Output digest: `18947ccd7b1c5bacc7c7a7e80c84332d602a8076c95b7d2a8a6e9e00ec138817`
+Output digest: `5d425668e294b37e5561904d0e3ad6f01b1eba2ffecafb68f4343f7aed19c349`
 
 This visualization is a source-backed diagnostic projection over four N28
-pattern classes:
+pattern classes. The plotted deltas are local focal-basin and neighborhood
+capacity metrics, not global total-coherence deltas:
 
 | Class | Source row | Env delta | Support delta | Boundary delta | Classification |
 | --- | --- | --- | --- | --- | --- |
@@ -27,7 +28,18 @@ Boundary:
 ```text
 visual_proof_allowed = false
 renderer_boundary = source-backed diagnostic projection from recorded N28 row metrics; not a new proof layer and not a full runtime geometry replay
+conservation_caveat = The visualization plots local focal-basin and neighborhood capacity metrics; it does not plot or audit global total-coherence invariance.
+global_total_coherence_invariance_audited = false
+global_total_coherence_checksum_present = false
+local_metric_deltas_are_total_coherence_deltas = false
 broad_margin_robustness_supported = false
 ap4_nat4_gap_resolved = false
 ap5_nat4_gap_resolved = false
 ```
+
+Conservation caveat:
+
+The plotted before/after bars are local focal-basin and neighborhood capacity
+metrics. They should not be read as global total-coherence changes. N28 records
+environment-capacity budget compatibility, but it does not compute a global
+total-coherence checksum before/after the visualized rows.

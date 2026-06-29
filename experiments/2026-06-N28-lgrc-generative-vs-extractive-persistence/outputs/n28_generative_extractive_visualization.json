@@ -67,10 +67,14 @@
     "visuals_are_inspection_aids_only": true
   },
   "command": ".venv/bin/python experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/scripts/render_n28_generative_extractive_visualization.py",
+  "conservation_caveat": "The visualization plots local focal-basin and neighborhood capacity metrics; it does not plot or audit global total-coherence invariance.",
   "final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
   "final_n28_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
   "generated_at": "2026-06-29T00:00:00+00:00",
-  "output_digest": "18947ccd7b1c5bacc7c7a7e80c84332d602a8076c95b7d2a8a6e9e00ec138817",
+  "global_total_coherence_checksum_present": false,
+  "global_total_coherence_invariance_audited": false,
+  "local_metric_deltas_are_total_coherence_deltas": false,
+  "output_digest": "5d425668e294b37e5561904d0e3ad6f01b1eba2ffecafb68f4343f7aed19c349",
   "renderer_boundary": "source-backed diagnostic projection from recorded N28 row metrics; not a new proof layer and not a full runtime geometry replay",
   "source_artifacts": [
     {
@@ -138,33 +142,33 @@
   "visual_outputs": {
     "animation_gif": {
       "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_animation.gif",
-      "sha256": "3eedde618c9070dd0b2114677ce919353f0e2956884ad5ce4bcef6fc63028288"
+      "sha256": "b8a1f74076698271132304c701db9e1a9795e7c5dac8ed552a85eb6b723ef4e0"
     },
     "frames": [
       {
         "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/frames/n28_generative_extractive_frame_00_generative.png",
-        "sha256": "c62fdd9a7f97f1ef16b3d2525a6536fbecb4384d6ccd331acf0cfa2be08cdc19"
+        "sha256": "d486e1182b5de3e91ef047bdb9847b4cc253ab4b01e5d37c9070b64ad4e5f1db"
       },
       {
         "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/frames/n28_generative_extractive_frame_01_extractive.png",
-        "sha256": "bcda5fcb688b6a7c3b8d5115c1dcba57791d44483409e53f14a63b8a37b07fec"
+        "sha256": "1fa146c3a5348e28df8c085f8b4d00a9da9e8fb703bcdac648bf908d690f6c31"
       },
       {
         "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/frames/n28_generative_extractive_frame_02_competitive.png",
-        "sha256": "7e51edc6957b0392bb93529adf6b449dff817a6b87535c901529b53261857945"
+        "sha256": "1f2af777cacf3f26d4b60612e8124b44085790be7f763f921398c26e02d9ec2d"
       },
       {
         "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/frames/n28_generative_extractive_frame_03_neutral.png",
-        "sha256": "c74e3c4226b6bc973e9c16e767404f5297f6e3bb2cc4563ca7c59e12959de6f7"
+        "sha256": "a5a7415d7c4f8bf2c2b014956797b3099a02ca4d0b374297de5fee03212fadee"
       }
     ],
     "graph_png": {
       "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_graph.png",
-      "sha256": "38d234ba76b90c634233463972539eb66bd848541f35f83e5c5fde1896f6742a"
+      "sha256": "73d5a9e015b8a78ed09c724149f89e456be59fea32434219e388f597cad4c39c"
     },
     "sequence_png": {
       "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization/n28_generative_extractive_pattern_sequence.png",
-      "sha256": "6b7844f210dc8f7151fdb7359e8a32f4e408ee57aff83197ba69cc9513416ab7"
+      "sha256": "ba20066ac6423b142550a6ea7844ef86fbe07f3cd71ad3f3180971c47a09faff"
     }
   },
   "visual_proof_allowed": false,

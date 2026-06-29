@@ -31,6 +31,11 @@ COMMAND = (
     "render_n28_generative_extractive_visualization.py"
 )
 
+CONSERVATION_CAVEAT = (
+    "The visualization plots local focal-basin and neighborhood capacity metrics; "
+    "it does not plot or audit global total-coherence invariance."
+)
+
 SOURCE_CASES = [
     {
         "case_id": "generative_enrichment",
@@ -350,7 +355,7 @@ def draw_graph(cases: list[dict[str, Any]], closeout: dict[str, Any], path: Path
     fig.text(
         0.02,
         0.018,
-        "Diagnostic projection from N28 source-current traces. Visuals aid inspection; proof remains in JSON/replay/control/closeout artifacts.",
+        "Local metric projection only; total-coherence invariance is not plotted or audited here.",
         ha="left",
         va="bottom",
         fontsize=9,
@@ -401,7 +406,7 @@ def draw_sequence(cases: list[dict[str, Any]], path: Path) -> None:
     fig.text(
         0.02,
         0.012,
-        "Costs are plotted as negative bars to show extraction pressure. Focal basin remains above floors in all four classes.",
+        "Costs are negative bars. Deltas are local metrics; total-coherence invariance is not shown.",
         ha="left",
         va="bottom",
         fontsize=9,
@@ -427,8 +432,8 @@ def draw_frame(case: dict[str, Any], frame_index: int, path: Path) -> None:
     fig.text(
         0.5,
         0.03,
-        f"{case['caption']} | env {signed_text(case['environment_capacity_delta'])} | "
-        f"classification {case['classification_result']}",
+        f"{case['caption']} | local env {signed_text(case['environment_capacity_delta'])} | "
+        "not a total-coherence audit",
         ha="center",
         va="bottom",
         fontsize=9,
@@ -510,6 +515,10 @@ def write_manifest(
             "source-backed diagnostic projection from recorded N28 row metrics; "
             "not a new proof layer and not a full runtime geometry replay"
         ),
+        "conservation_caveat": CONSERVATION_CAVEAT,
+        "global_total_coherence_invariance_audited": False,
+        "global_total_coherence_checksum_present": False,
+        "local_metric_deltas_are_total_coherence_deltas": False,
         "source_artifacts": source_artifacts,
         "visual_outputs": visual_outputs,
         "case_summaries": [
@@ -580,7 +589,8 @@ Status: `{manifest['visual_status']}`
 Output digest: `{manifest['output_digest']}`
 
 This visualization is a source-backed diagnostic projection over four N28
-pattern classes:
+pattern classes. The plotted deltas are local focal-basin and neighborhood
+capacity metrics, not global total-coherence deltas:
 
 {chr(10).join(rows)}
 
@@ -597,10 +607,21 @@ Boundary:
 ```text
 visual_proof_allowed = {str(manifest['visual_proof_allowed']).lower()}
 renderer_boundary = {manifest['renderer_boundary']}
+conservation_caveat = {manifest['conservation_caveat']}
+global_total_coherence_invariance_audited = {str(manifest['global_total_coherence_invariance_audited']).lower()}
+global_total_coherence_checksum_present = {str(manifest['global_total_coherence_checksum_present']).lower()}
+local_metric_deltas_are_total_coherence_deltas = {str(manifest['local_metric_deltas_are_total_coherence_deltas']).lower()}
 broad_margin_robustness_supported = {str(manifest['broad_margin_robustness_supported']).lower()}
 ap4_nat4_gap_resolved = {str(manifest['ap4_nat4_gap_resolved']).lower()}
 ap5_nat4_gap_resolved = {str(manifest['ap5_nat4_gap_resolved']).lower()}
 ```
+
+Conservation caveat:
+
+The plotted before/after bars are local focal-basin and neighborhood capacity
+metrics. They should not be read as global total-coherence changes. N28 records
+environment-capacity budget compatibility, but it does not compute a global
+total-coherence checksum before/after the visualized rows.
 """
     REPORT_PATH.write_text(report, encoding="utf-8")
 
