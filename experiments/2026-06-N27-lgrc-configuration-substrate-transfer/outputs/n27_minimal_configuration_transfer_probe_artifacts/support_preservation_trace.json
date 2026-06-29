@@ -1,0 +1,11 @@
+{
+  "post_min_support": 0.91,
+  "pre_min_support": 0.92,
+  "support_floor": 0.9,
+  "support_floor_margin": 0.01,
+  "support_preservation_delta": -0.01,
+  "support_preservation_digest": "fd1367c568c54360e257bbd0f44262d9695e42fe6c7eb0c8503a47b8b95e23a8",
+  "support_preserved_above_floor": true,
+  "support_reconstruction_counted_as_preservation": false,
+  "trace_id": "n27_i4_support_preservation_trace"
+}

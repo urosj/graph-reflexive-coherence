@@ -1,0 +1,424 @@
+{
+  "acceptance_state": "accepted_n28_ready_side_effect_precursor_claim_clean_no_n28_claim",
+  "artifact_id": "n27_n28_precursor_side_effect_claim_classification",
+  "checks": [
+    {
+      "check_id": "i6a_source_passed",
+      "detail": "passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_passed_no_failed_open",
+      "detail": [
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "focal survival without environment-side improvement",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "focal_survival_only_as_generative_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "neighbor label or count changes without source-current capacity metrics",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "neighbor_label_only_as_capacity_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "merge or leakage is counted as neighbor support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_as_support_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "focal persistence hides environmental flattening",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "extractive_flattening_masked_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "CT5 transfer success is relabeled as N28 generative persistence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "transfer_success_as_n28_success_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "semantic cooperation or intention is used as evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_cooperation_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "side-effect support is relabeled native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "N27 side effects are relabeled ant ecology behavior",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ant_ecology_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "N27 side effects are relabeled Phase 8 completion",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_completion_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n28_precursor_supported",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "n28_generative_persistence_remains_blocked",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "generative_persistence_claim_allowed": false,
+        "n28_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": [],
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "N28-ready precursor side-effect classification only",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_cooperation_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "classification_row": {
+    "all_artifact_sha256_match_file_contents": true,
+    "artifact_manifest": [
+      {
+        "artifact_role": "n28_precursor_side_effect_claim_classification_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_claim_classification_artifacts/n28_precursor_side_effect_claim_classification_trace.json",
+        "sha256": "eaa9abb9d4c213ac6e6d63acb10645b24928cee57d13bce2f3c8e9012c96684c"
+      }
+    ],
+    "claim_ceiling": "N28-ready side-effect precursor, not N28 evidence",
+    "classification_trace": {
+      "claim_ceiling": "N28-ready precursor side-effect evaluation, not N28 support",
+      "control_results": [
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "focal survival without environment-side improvement",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "focal_survival_only_as_generative_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "neighbor label or count changes without source-current capacity metrics",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "neighbor_label_only_as_capacity_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "merge or leakage is counted as neighbor support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_as_support_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "focal persistence hides environmental flattening",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "extractive_flattening_masked_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "CT5 transfer success is relabeled as N28 generative persistence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "transfer_success_as_n28_success_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "semantic cooperation or intention is used as evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_cooperation_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "side-effect support is relabeled native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "N27 side effects are relabeled ant ecology behavior",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ant_ecology_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        },
+        {
+          "actual_result": "blocked_condition_absent_or_claim_rejected",
+          "blocked_condition": "N27 side effects are relabeled Phase 8 completion",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_completion_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "failed_closed_when_blocked_condition_present",
+          "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+        }
+      ],
+      "failed_open_control_count": 0,
+      "n28_experiment_ready": true,
+      "n28_generative_persistence_supported": false,
+      "n28_precursor_evaluation_supported": true,
+      "source_i6a_output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+      "trace_id": "n27_i7a_n28_precursor_side_effect_claim_classification_trace",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "generative_persistence_claim_allowed": false,
+        "n28_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_cooperation_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      }
+    },
+    "classification_trace_digest": "c986cd194b43a188d77fe4d17b006eead7ddcca6775dcd615c265e08ea0591e9",
+    "control_results": [
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "focal survival without environment-side improvement",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "focal_survival_only_as_generative_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "neighbor label or count changes without source-current capacity metrics",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "neighbor_label_only_as_capacity_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "merge or leakage is counted as neighbor support",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "merge_leakage_as_support_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "focal persistence hides environmental flattening",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "extractive_flattening_masked_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "CT5 transfer success is relabeled as N28 generative persistence",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "transfer_success_as_n28_success_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "semantic cooperation or intention is used as evidence",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "semantic_cooperation_relabel_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "side-effect support is relabeled native support",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "native_support_relabel_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "N27 side effects are relabeled ant ecology behavior",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "ant_ecology_relabel_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      },
+      {
+        "actual_result": "blocked_condition_absent_or_claim_rejected",
+        "blocked_condition": "N27 side effects are relabeled Phase 8 completion",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "phase8_completion_relabel_control",
+        "control_satisfied_for_positive_row": true,
+        "control_status": "passed",
+        "expected_result": "failed_closed_when_blocked_condition_present",
+        "rung_effect": "N28_precursor_claim_preserved_N28_claim_blocked"
+      }
+    ],
+    "failed_open_control_count": 0,
+    "n28_experiment_ready": true,
+    "n28_generative_persistence_supported": false,
+    "n28_precursor_evaluation_supported": true,
+    "row_decision": "supported",
+    "row_decision_scope": "n28_ready_precursor_evaluation_claim_clean",
+    "row_id": "n27_i7a_row_n28_precursor_side_effect_claim_classification",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_cooperation_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_n28_precursor_side_effect_claim_classification.py",
+  "experiment": "N27",
+  "failed_checks": [],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "7-A",
+  "n28_experiment_ready": true,
+  "n28_generative_persistence_supported": false,
+  "n28_precursor_evaluation_supported": true,
+  "n28_precursor_side_effect_evaluation_output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+  "output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+  "purpose": "Classify the I6-A side-effect evaluation as N28-ready precursor evidence while blocking N28, ecology, agency, and native-support claims.",
+  "ready_for_iteration_8_closeout_and_n28_handoff": true,
+  "schema_version": "1.0",
+  "source_records": [
+    {
+      "output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_evaluation_matrix.json",
+      "sha256": "04424eda2a6a2dea59543cd0474cefab8f74c800d0ec58d20c8349d736aa2e79",
+      "source_id": "n27_i6a_n28_precursor_side_effect_evaluation",
+      "source_role": "n28_precursor_evaluation_source"
+    }
+  ],
+  "status": "passed"
+}

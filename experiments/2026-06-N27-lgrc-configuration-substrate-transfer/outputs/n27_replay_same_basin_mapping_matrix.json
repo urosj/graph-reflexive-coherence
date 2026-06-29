@@ -1,0 +1,2159 @@
+{
+  "acceptance_state": "accepted_replay_same_basin_mapping_matrix_CT3_candidates_pending_controls_stress",
+  "active_nulls_output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+  "artifact_id": "n27_replay_same_basin_mapping_matrix",
+  "candidate_rows_classified": true,
+  "checks": [
+    {
+      "check_id": "source_chain_digests_match",
+      "detail": {
+        "i1": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+        "i2": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22",
+        "i3": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+        "i4": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+        "i4a": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i4_and_i4a_ready_for_replay",
+      "detail": {
+        "i4_ready": true,
+        "i4a_ready": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "two_ct2_candidates_consumed",
+      "detail": [
+        "4",
+        "4-A"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "required_ct3_replay_modes_pass",
+      "detail": [
+        {
+          "artifact_replay": "passed",
+          "ct3_replay_candidate_supported": true,
+          "ct4_or_stronger_supported": false,
+          "ct5_or_stronger_supported": false,
+          "duplicate_replay": "passed",
+          "final_transfer_supported": false,
+          "mapping_order_replay": "passed",
+          "replay_trace_digest": "786a8826990cd9e985903ee78807f7b36ab4b480809352cbd93ac0bb4c756cce",
+          "snapshot_load_replay": "passed"
+        },
+        {
+          "artifact_replay": "passed",
+          "ct3_replay_candidate_supported": true,
+          "ct4_or_stronger_supported": false,
+          "ct5_or_stronger_supported": false,
+          "duplicate_replay": "passed",
+          "final_transfer_supported": false,
+          "mapping_order_replay": "passed",
+          "replay_trace_digest": "62f7e7cb4976bc3eae7c254574e8b18757f208f265bc2ea990e5662e137ff2da",
+          "snapshot_load_replay": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_stable_without_duplicate_positive_rows",
+      "detail": [
+        {
+          "duplicate_replay": {
+            "duplicate_digest_stable": true,
+            "duplicate_positive_row_created": false,
+            "duplicate_replay_digest_stable": true,
+            "duplicate_replay_first_emitted": true,
+            "duplicate_replay_second_emitted": false,
+            "duplicate_semantics": "stable digest and no duplicate positive row creation",
+            "first_replay_digest": "41f0a61c353196f303f9a488a2bf1cb329175e15b3fd5f893b1247479b4cc4f8",
+            "second_emitted_false_meaning": "duplicate suppression worked; the second replay validated the same digest without creating another positive row",
+            "second_replay_digest": "41f0a61c353196f303f9a488a2bf1cb329175e15b3fd5f893b1247479b4cc4f8",
+            "status": "passed"
+          },
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay"
+        },
+        {
+          "duplicate_replay": {
+            "duplicate_digest_stable": true,
+            "duplicate_positive_row_created": false,
+            "duplicate_replay_digest_stable": true,
+            "duplicate_replay_first_emitted": true,
+            "duplicate_replay_second_emitted": false,
+            "duplicate_semantics": "stable digest and no duplicate positive row creation",
+            "first_replay_digest": "974cb12ecbe1335a16eb6fbddf65bf8d26050e52877fca0c93e581ee25af5330",
+            "second_emitted_false_meaning": "duplicate suppression worked; the second replay validated the same digest without creating another positive row",
+            "second_replay_digest": "974cb12ecbe1335a16eb6fbddf65bf8d26050e52877fca0c93e581ee25af5330",
+            "status": "passed"
+          },
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "mapping_order_replay_preserves_declared_order",
+      "detail": [
+        {
+          "mapping_order_replay": {
+            "mapping_declaration_order": 0,
+            "mapping_digest_excludes_outcome": true,
+            "mapping_precedes_pre_and_post_observation": true,
+            "post_observation_order": 2,
+            "pre_observation_order": 1,
+            "status": "passed"
+          },
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay"
+        },
+        {
+          "mapping_order_replay": {
+            "mapping_declaration_order": 0,
+            "mapping_digest_excludes_outcome": true,
+            "mapping_precedes_pre_and_post_observation": true,
+            "post_observation_order": 2,
+            "pre_observation_order": 1,
+            "status": "passed"
+          },
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "same_basin_mapping_replay_preserves_required_metrics",
+      "detail": [
+        {
+          "boundary": true,
+          "coherence": true,
+          "flux": true,
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+          "same_basin_signature_replay_result": "passed",
+          "signature": true,
+          "support": true
+        },
+        {
+          "boundary": true,
+          "coherence": true,
+          "flux": true,
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+          "same_basin_signature_replay_result": "passed",
+          "signature": true,
+          "support": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "replay_validates_source_records_without_creating_transfer_evidence",
+      "detail": [
+        {
+          "policy": {
+            "new_boundary_mapping_created": false,
+            "new_post_transfer_basin_signature_created": false,
+            "new_transfer_mapping_created": false,
+            "source_runtime_records_replayed": [
+              "transfer_mapping_trace",
+              "pre_transfer_basin_signature_trace",
+              "post_transfer_basin_signature_trace",
+              "boundary_mapping_trace",
+              "support_preservation_trace",
+              "coherence_preservation_trace",
+              "flux_balance_trace",
+              "reconstructed_support_ledger"
+            ],
+            "validates_source_candidate_artifacts_only": true
+          },
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+          "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+          "transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4"
+        },
+        {
+          "policy": {
+            "new_boundary_mapping_created": false,
+            "new_post_transfer_basin_signature_created": false,
+            "new_transfer_mapping_created": false,
+            "source_runtime_records_replayed": [
+              "transfer_mapping_trace",
+              "pre_transfer_basin_signature_trace",
+              "post_transfer_basin_signature_trace",
+              "boundary_mapping_trace",
+              "support_preservation_trace",
+              "coherence_preservation_trace",
+              "flux_balance_trace",
+              "reconstructed_support_ledger"
+            ],
+            "validates_source_candidate_artifacts_only": true
+          },
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+          "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+          "transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "support_reconstruction_absent_and_not_counted",
+      "detail": [
+        {
+          "reconstruction": {
+            "hidden_support_reconstruction_absent": true,
+            "reconstructed_support_events": [],
+            "support_reconstruction_counted_as_transfer": false
+          },
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay"
+        },
+        {
+          "reconstruction": {
+            "hidden_support_reconstruction_absent": true,
+            "reconstructed_support_events": [],
+            "support_reconstruction_counted_as_transfer": false
+          },
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_sha256_match_file_contents",
+      "detail": [
+        "n27_i5_row_i4_same_basin_mapping_replay",
+        "n27_i5_row_i4a_same_basin_mapping_replay"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ct3_artifact_roles_present",
+      "detail": [
+        {
+          "roles": [
+            "boundary_mapping_trace",
+            "coherence_preservation_trace",
+            "flux_balance_trace",
+            "original_fixture_support_change_trace",
+            "post_transfer_basin_signature_trace",
+            "pre_transfer_basin_signature_trace",
+            "reconstructed_support_ledger",
+            "replay_trace",
+            "source_current_runtime_trace",
+            "support_preservation_trace",
+            "threshold_record",
+            "transfer_mapping_trace"
+          ],
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay"
+        },
+        {
+          "roles": [
+            "boundary_mapping_trace",
+            "coherence_preservation_trace",
+            "flux_balance_trace",
+            "original_fixture_support_change_trace",
+            "post_transfer_basin_signature_trace",
+            "pre_transfer_basin_signature_trace",
+            "reconstructed_support_ledger",
+            "replay_trace",
+            "source_current_runtime_trace",
+            "support_preservation_trace",
+            "threshold_record",
+            "transfer_mapping_trace",
+            "variant_comparison_trace"
+          ],
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "control_status_values_within_frozen_enum",
+      "detail": [
+        "not_applicable",
+        "passed"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "replay_failure_control_passed_for_ct3",
+      "detail": [
+        {
+          "actual_result": "passed_all_required_I5_replay_modes",
+          "blocked_condition": "artifact, snapshot/load, duplicate, or mapping-order replay fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 executes artifact, snapshot/load, duplicate, and mapping-order replay.",
+          "control_id": "replay_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects non-replayable transfer",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "passed_all_required_I5_replay_modes",
+          "blocked_condition": "artifact, snapshot/load, duplicate, or mapping-order replay fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 executes artifact, snapshot/load, duplicate, and mapping-order replay.",
+          "control_id": "replay_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects non-replayable transfer",
+          "rung_effect": "CT3_not_blocked"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "stress_and_final_transfer_remain_blocked",
+      "detail": {
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "final_transfer_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap_gap_and_source_boundaries_preserved",
+      "detail": [
+        {
+          "ap4": "not_applicable",
+          "ap5": "not_applicable",
+          "n25_2_direct_transfer_consumption_used": false,
+          "row_id": "n27_i5_row_i4_same_basin_mapping_replay"
+        },
+        {
+          "ap4": "not_applicable",
+          "ap5": "not_applicable",
+          "n25_2_direct_transfer_consumption_used": false,
+          "row_id": "n27_i5_row_i4a_same_basin_mapping_replay"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        "n27_i5_row_i4_same_basin_mapping_replay",
+        "n27_i5_row_i4a_same_basin_mapping_replay"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": {
+        "checked_marker_count": 2
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "provisional CT3 replay-backed same-basin transfer candidate; stress, full control classification, final transfer, native AP5, AP5 NAT4-gap resolution, Phase 8, and ant ecology remain blocked",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_replay_same_basin_mapping_matrix.py",
+  "ct3_replay_candidate_supported": true,
+  "ct4_or_stronger_supported": false,
+  "ct5_or_stronger_supported": false,
+  "ct6_or_stronger_supported": false,
+  "ct_assignment_scope": "replay_backed_candidate_only_pending_controls_stress_closeout",
+  "ct_ladder_rung_assigned": false,
+  "experiment": "N27",
+  "failed_checks": [],
+  "final_transfer_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "5",
+  "matrix_summary": {
+    "candidate_count": 2,
+    "ct3_candidate_count": 2,
+    "ct4_or_stronger_supported": false,
+    "ct5_or_stronger_supported": false,
+    "final_transfer_supported": false,
+    "replay_fail_count": 0,
+    "replay_pass_count": 2
+  },
+  "minimal_configuration_transfer_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+  "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+  "n27_closeout_ladder_rung_assigned": false,
+  "output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+  "positive_transfer_evidence_opened": true,
+  "provisional_ct_ladder_rung": "CT3",
+  "purpose": "Replay the I4 and I4-A CT2 candidates and test whether same-basin mapping evidence is stable under artifact, snapshot/load, duplicate, and mapping-order replay.",
+  "ready_for_iteration_6_stress_mapping_variant_transfer_matrix": true,
+  "replay_row_count": 2,
+  "replay_rows": [
+    {
+      "active_nulls_output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_condition_reason": "I4 mapping does not use route-conditioned selection; AP4 remains recorded as conditional inherited context only.",
+      "ap4_dependency_status": "not_applicable",
+      "ap5_condition_reason": "I4 does not use proxy or target formation; N26 scoped AP5 context is not consumed as native AP5 or transfer evidence.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "threshold_record",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/threshold_record.json",
+          "sha256": "143a480d78440edc0c69448d4a6ad89cd25a619d311601853c4257f4658609f3"
+        },
+        {
+          "artifact_role": "transfer_mapping_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/transfer_mapping_trace.json",
+          "sha256": "706ab3a481ac04d6c6432880f23963f438b5d79ea62c0d68dfa54d19d8674176"
+        },
+        {
+          "artifact_role": "pre_transfer_basin_signature_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/pre_transfer_basin_signature_trace.json",
+          "sha256": "57412f774212842e83ea4374becf10287c7fc44cc8bf1cc3bcb547f0297fd4e0"
+        },
+        {
+          "artifact_role": "post_transfer_basin_signature_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/post_transfer_basin_signature_trace.json",
+          "sha256": "a23d074b5843b003bcc6472768d202b107fbca03c0921c7c4abbd2d529fc6925"
+        },
+        {
+          "artifact_role": "boundary_mapping_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/boundary_mapping_trace.json",
+          "sha256": "b69d1d8d67bf605dba930733113281715a98e84060956531a900068b69d4230f"
+        },
+        {
+          "artifact_role": "support_preservation_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/support_preservation_trace.json",
+          "sha256": "3279fa2cef307020d125760ba2aece86cbb4eb1014ec75a13208c4b3ce2371f8"
+        },
+        {
+          "artifact_role": "coherence_preservation_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/coherence_preservation_trace.json",
+          "sha256": "5cfc177c109bf5075b6445de57f31f5b23d1193e302d44748c5d4d4a1ffb34a0"
+        },
+        {
+          "artifact_role": "flux_balance_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/flux_balance_trace.json",
+          "sha256": "2260e4c2d612a9fb8643c21455e2d187dab7ca42631efb4cf391d8523f42cb61"
+        },
+        {
+          "artifact_role": "source_current_runtime_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "307597fa243fa1000bd36f28c2d9387d34f45a300723749076b3b2bb8d936e5d"
+        },
+        {
+          "artifact_role": "original_fixture_support_change_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/original_fixture_support_change_trace.json",
+          "sha256": "626636cd1b26925d313cf30ab99922a076ec5d2b59d04c3eaa75a725b8af0396"
+        },
+        {
+          "artifact_role": "reconstructed_support_ledger",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/reconstructed_support_ledger.json",
+          "sha256": "aa983305731dc6ff5bf126336345fccdca41b56b5cceba263df96aff5c6c634e"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4_same_basin_mapping_replay_replay_trace.json",
+          "sha256": "9befc894e75f5b614da6044b1e8e2594360977f268e3eadea653592ebeebcce8"
+        }
+      ],
+      "artifact_replay_result": "passed",
+      "boundary_mapping_tolerance_formula": "boundary_mapping_margin = mapped_boundary_jaccard - boundary_jaccard_floor",
+      "boundary_mapping_trace": {
+        "boundary_acceptance_operator": "greater_than_or_equal",
+        "boundary_jaccard_floor": 1.0,
+        "boundary_mapping_digest": "19eda5427b090da77ac54a195c031d249b0645651cb97a232ccebad6c847c358",
+        "boundary_mapping_margin": 0.0,
+        "boundary_mapping_preserved": true,
+        "boundary_margin_at_floor": true,
+        "edge_mapping": {
+          "alpha_core-alpha_support": "beta_core-beta_support",
+          "alpha_support-alpha_boundary": "beta_support-beta_boundary"
+        },
+        "mapped_boundary_edge_count": 2,
+        "mapped_boundary_jaccard": 1.0,
+        "post_boundary_edges": [
+          [
+            "beta_core",
+            "beta_support"
+          ],
+          [
+            "beta_support",
+            "beta_boundary"
+          ]
+        ],
+        "pre_boundary_edges": [
+          [
+            "alpha_core",
+            "alpha_support"
+          ],
+          [
+            "alpha_support",
+            "alpha_boundary"
+          ]
+        ],
+        "same_label_different_basin_rejected": true,
+        "trace_id": "n27_i4_boundary_mapping_trace",
+        "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "unmapped_boundary_edge_count": 0
+      },
+      "claim_ceiling": "provisional CT3 replay-backed same-basin transfer candidate pending I6 stress, I7 controls/classification, and I8 closeout; no final transfer, semantic identity, native support, native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology claim",
+      "coherence_floor_margin_formula": "coherence_floor_margin = post_min_coherence - coherence_floor",
+      "coherence_preservation_trace": {
+        "coherence_floor": 0.9,
+        "coherence_floor_margin": 0.02,
+        "coherence_preservation_delta": -0.01,
+        "coherence_preservation_digest": "baa12fb2139198810beb8bba1d7542776749f137455183cd88fd148dde5ff2ee",
+        "coherence_preserved_above_floor": true,
+        "post_min_coherence": 0.92,
+        "pre_min_coherence": 0.93,
+        "trace_id": "n27_i4_coherence_preservation_trace"
+      },
+      "configuration_label_only_rejected": true,
+      "consumable_contract_row_digest": "14d661d69af9aa62731834570a8db02e0050d8464c9a6b9608dcce2e472bb00c",
+      "control_results": [
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "same label appears after mapping but basin signature or boundary differs",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "same_label_different_basin_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects label identity",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "fixture or topology is declared equivalent without source-current mapping",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "fixture_equivalence_label_only_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects mapping-free fixture similarity",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "transfer mapping is declared after seeing the post-transfer result",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "mapping_declared_after_outcome_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects post-hoc mapping",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "proxy score is preserved while basin signature or boundary mapping fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "proxy_score_relabel_as_transfer_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects proxy preservation",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "undeclared producer support rebuilds the post-transfer basin",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "hidden_support_reconstruction_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects hidden rebuilding",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "reconstructed support ledger is counted as preserved support",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "support_reconstruction_as_transfer_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects post-hoc reconstruction",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "post-transfer boundary is not mapped from the pre-transfer boundary",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "boundary_mapping_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects unmapped boundary",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "post-transfer basin signature is missing",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "post_transfer_signature_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects missing post-transfer state",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "row is derived from report labels rather than source-current runtime inputs",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "source_current_inputs_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects report-only evidence",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "topology_or_configuration_scope_not_substrate",
+          "blocked_condition": "substrate transfer is claimed without source-backed substrate mapping",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 replays configuration/topology rows only; no substrate-transfer claim is opened.",
+          "control_id": "cross_substrate_mapping_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "not_applicable",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects unmapped substrate claims",
+          "rung_effect": "substrate_transfer_claim_not_opened"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "artifact path, role, or SHA-256 validation fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "artifact_manifest_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects unverifiable artifacts",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "passed_all_required_I5_replay_modes",
+          "blocked_condition": "artifact, snapshot/load, duplicate, or mapping-order replay fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 executes artifact, snapshot/load, duplicate, and mapping-order replay.",
+          "control_id": "replay_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects non-replayable transfer",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "deferred_blocks_CT5_or_stronger_until_iteration_6",
+          "blocked_condition": "mapping tolerance, support, coherence, or flux stress fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 is replay-only; stress/variant testing remains I6 scope.",
+          "control_id": "stress_variant_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "not_applicable",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects overbroad robustness",
+          "rung_effect": "CT5_or_stronger_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "route-conditioned selection participates but AP4 dependency is omitted",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "AP4_dependency_omitted_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects prose-only AP4 handling",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "proxy/target formation participates but AP5 dependency is omitted",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "AP5_dependency_omitted_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects prose-only AP5 handling",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N26 PD6 proxy result is counted as N27 transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "n26_proxy_as_transfer_evidence_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects proxy-to-transfer relabel",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N26 scoped artifact AP5 bridge is promoted to native AP5",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "n26_scoped_ap5_as_native_ap5_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects native AP5 relabel",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N25.2 is consumed directly as N27 substrate transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "n25_2_direct_transfer_consumption_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects direct N25.2 backfill",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "semantic identity or selfhood is used as transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "semantic_identity_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects identity overclaim",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "semantic choice, goal, or intention is used as transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "semantic_choice_goal_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects semantic agency language",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "producer-mediated or transfer-preserved support is relabeled native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "native_support_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects native support overclaim",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N27 transfer evidence is relabeled Phase 8 completion or ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "phase8_ant_ecology_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects downstream project overclaim",
+          "rung_effect": "CT3_not_blocked"
+        }
+      ],
+      "ct_ladder_rung": "CT3",
+      "derived_report_only": false,
+      "descriptor_contract_row_digest": "c8be68905ad18176f6087210ad24cf2cc432d1b04e61e9db8edc54f86b46987f",
+      "duplicate_replay_result": "passed",
+      "final_transfer_supported": false,
+      "flux_balance_bound_formula": "flux_balance_margin = max_flux_imbalance - post_abs_flux_imbalance",
+      "flux_balance_trace": {
+        "flux_balance_digest": "0baf2b6876a3b767966d725b5613534ed4756e8eb4b5f323f4d3be84de99a34f",
+        "flux_balance_margin": 0.025,
+        "flux_balance_preserved_within_bound": true,
+        "hidden_flux_support_reconstruction_detected": false,
+        "max_flux_imbalance": 0.05,
+        "post_abs_flux_imbalance": 0.025,
+        "pre_abs_flux_imbalance": 0.02,
+        "trace_id": "n27_i4_flux_balance_trace"
+      },
+      "hidden_support_reconstruction_absent": true,
+      "iteration": "5",
+      "mapping_order_replay_result": "passed",
+      "n25_2_consumed_only_through_n26_context": true,
+      "n25_2_direct_transfer_consumption_used": false,
+      "n26_closeout_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+      "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+      "original_fixture_support_change_trace": {
+        "original_fixture_support_changed": true,
+        "original_fixture_support_reintroduced": false,
+        "post_fixture_id": "fixture_beta",
+        "pre_fixture_id": "fixture_alpha",
+        "support_change_kind": "fixture_context_remapped_not_rebuilt",
+        "trace_id": "n27_i4_original_fixture_support_change_trace"
+      },
+      "post_transfer_basin_signature_trace": {
+        "basin_label": "basin_signature_A_mapped",
+        "basin_label_used_as_evidence": false,
+        "basin_nodes": [
+          "beta_core",
+          "beta_support",
+          "beta_boundary"
+        ],
+        "boundary_edges": [
+          [
+            "beta_core",
+            "beta_support"
+          ],
+          [
+            "beta_support",
+            "beta_boundary"
+          ]
+        ],
+        "coherence_by_node": {
+          "beta_boundary": 0.93,
+          "beta_core": 0.94,
+          "beta_support": 0.92
+        },
+        "fixture_id": "fixture_beta",
+        "flux_by_edge": {
+          "beta_core-beta_support": 0.04,
+          "beta_support-beta_boundary": -0.015
+        },
+        "frame_id": "fixture_beta_frame",
+        "max_signature_distance": 0.06,
+        "observation_order": 2,
+        "observed_signature_distance": 0.025,
+        "post_signature_digest": "cef3d47fa45a4e6c052e9726f33aaafd26d6143f34363c2719aa7841ec04d996",
+        "post_transfer_signature_present": true,
+        "same_basin_signature_preserved_under_mapping": true,
+        "signature_preservation_margin": 0.035,
+        "signature_vector": {
+          "abs_flux_imbalance": 0.025,
+          "boundary_edge_count": 2,
+          "core_weight": 1.0,
+          "min_coherence": 0.92,
+          "min_support": 0.91
+        },
+        "support_by_node": {
+          "beta_boundary": 0.92,
+          "beta_core": 0.93,
+          "beta_support": 0.91
+        },
+        "trace_id": "n27_i4_post_transfer_basin_signature_trace"
+      },
+      "pre_transfer_basin_signature_trace": {
+        "basin_label": "basin_signature_A",
+        "basin_label_used_as_evidence": false,
+        "basin_nodes": [
+          "alpha_core",
+          "alpha_support",
+          "alpha_boundary"
+        ],
+        "boundary_edges": [
+          [
+            "alpha_core",
+            "alpha_support"
+          ],
+          [
+            "alpha_support",
+            "alpha_boundary"
+          ]
+        ],
+        "coherence_by_node": {
+          "alpha_boundary": 0.94,
+          "alpha_core": 0.95,
+          "alpha_support": 0.93
+        },
+        "fixture_id": "fixture_alpha",
+        "flux_by_edge": {
+          "alpha_core-alpha_support": 0.035,
+          "alpha_support-alpha_boundary": -0.015
+        },
+        "frame_id": "fixture_alpha_frame",
+        "observation_order": 1,
+        "pre_signature_digest": "735348581363d2ef7d351e858840fc1a61d723836f97b001d3c1cf06c2e88809",
+        "signature_vector": {
+          "abs_flux_imbalance": 0.02,
+          "boundary_edge_count": 2,
+          "core_weight": 1.0,
+          "min_coherence": 0.93,
+          "min_support": 0.92
+        },
+        "support_by_node": {
+          "alpha_boundary": 0.93,
+          "alpha_core": 0.94,
+          "alpha_support": 0.92
+        },
+        "trace_id": "n27_i4_pre_transfer_basin_signature_trace"
+      },
+      "proxy_score_relabel_rejected": true,
+      "reconstructed_support_ledger": {
+        "hidden_support_reconstruction_absent": true,
+        "reconstructed_support_events": [],
+        "support_reconstruction_as_transfer_rejected": true,
+        "trace_id": "n27_i4_reconstructed_support_ledger"
+      },
+      "replay_creates_new_transfer_evidence": false,
+      "replay_result": {
+        "artifact_replay": "passed",
+        "ct3_replay_candidate_supported": true,
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "duplicate_replay": "passed",
+        "final_transfer_supported": false,
+        "mapping_order_replay": "passed",
+        "replay_trace_digest": "786a8826990cd9e985903ee78807f7b36ab4b480809352cbd93ac0bb4c756cce",
+        "snapshot_load_replay": "passed"
+      },
+      "replay_trace": {
+        "artifact_replay": {
+          "all_artifact_sha256_match_file_contents": true,
+          "artifact_manifest_digest": "1e5ec1a4ca76e903e5150258c34fbea2e106c86c738f128ea29eeed431211637",
+          "artifact_roles_replayed": [
+            "boundary_mapping_trace",
+            "coherence_preservation_trace",
+            "flux_balance_trace",
+            "original_fixture_support_change_trace",
+            "post_transfer_basin_signature_trace",
+            "pre_transfer_basin_signature_trace",
+            "reconstructed_support_ledger",
+            "source_current_runtime_trace",
+            "support_preservation_trace",
+            "threshold_record",
+            "transfer_mapping_trace"
+          ],
+          "status": "passed"
+        },
+        "ct3_replay_candidate_supported": true,
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "duplicate_replay": {
+          "duplicate_digest_stable": true,
+          "duplicate_positive_row_created": false,
+          "duplicate_replay_digest_stable": true,
+          "duplicate_replay_first_emitted": true,
+          "duplicate_replay_second_emitted": false,
+          "duplicate_semantics": "stable digest and no duplicate positive row creation",
+          "first_replay_digest": "41f0a61c353196f303f9a488a2bf1cb329175e15b3fd5f893b1247479b4cc4f8",
+          "second_emitted_false_meaning": "duplicate suppression worked; the second replay validated the same digest without creating another positive row",
+          "second_replay_digest": "41f0a61c353196f303f9a488a2bf1cb329175e15b3fd5f893b1247479b4cc4f8",
+          "status": "passed"
+        },
+        "final_transfer_supported": false,
+        "mapping_order_replay": {
+          "mapping_declaration_order": 0,
+          "mapping_digest_excludes_outcome": true,
+          "mapping_precedes_pre_and_post_observation": true,
+          "post_observation_order": 2,
+          "pre_observation_order": 1,
+          "status": "passed"
+        },
+        "replay_evidence_creation_policy": {
+          "new_boundary_mapping_created": false,
+          "new_post_transfer_basin_signature_created": false,
+          "new_transfer_mapping_created": false,
+          "source_runtime_records_replayed": [
+            "transfer_mapping_trace",
+            "pre_transfer_basin_signature_trace",
+            "post_transfer_basin_signature_trace",
+            "boundary_mapping_trace",
+            "support_preservation_trace",
+            "coherence_preservation_trace",
+            "flux_balance_trace",
+            "reconstructed_support_ledger"
+          ],
+          "validates_source_candidate_artifacts_only": true
+        },
+        "required_replay_modes": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay",
+          "mapping_order_replay"
+        ],
+        "snapshot_load_replay": {
+          "boundary_mapping_preserved": true,
+          "coherence_preserved_above_floor": true,
+          "flux_balance_preserved_within_bound": true,
+          "same_basin_signature_preserved_under_mapping": true,
+          "snapshot_payload_digest": "b6521d09164d17b28b033981e33f39171dc713d3e116ad46e1997ef188e99600",
+          "status": "passed",
+          "support_preserved_above_floor": true
+        },
+        "source_iteration": "4",
+        "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+        "source_row_id": "n27_i4_row_01_minimal_configuration_transfer_probe",
+        "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "support_reconstruction_replay": {
+          "hidden_support_reconstruction_absent": true,
+          "reconstructed_support_events": [],
+          "support_reconstruction_counted_as_transfer": false
+        },
+        "trace_id": "n27_i5_i4_replay_trace",
+        "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "transfer_scope": "configuration"
+      },
+      "replay_trace_digest": "786a8826990cd9e985903ee78807f7b36ab4b480809352cbd93ac0bb4c756cce",
+      "row_decision": "supported",
+      "row_decision_scope": "replay_backed_CT3_candidate_pending_controls_stress_closeout",
+      "row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+      "row_output_digest": "70af2df7a3de98c39bf420c621e6226116476ffbd43e0d445529f3a2b1b89d11",
+      "row_specific_thresholds_declared_before_use": {
+        "applies_to_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "boundary_jaccard_floor": 1.0,
+        "boundary_mapping_tolerance_formula": "boundary_mapping_margin = mapped_boundary_jaccard - boundary_jaccard_floor",
+        "coherence_floor": 0.9,
+        "coherence_floor_margin_formula": "coherence_floor_margin = post_min_coherence - coherence_floor",
+        "declaration_order": 0,
+        "declared_before_use": true,
+        "flux_balance_bound_formula": "flux_balance_margin = max_flux_imbalance - post_abs_flux_imbalance",
+        "hidden_support_reconstruction_allowed": false,
+        "max_flux_imbalance": 0.05,
+        "max_signature_distance": 0.06,
+        "record_id": "n27_i4_threshold_record",
+        "same_label_only_allowed": false,
+        "signature_preservation_margin_formula": "signature_preservation_margin = max_signature_distance - observed_signature_distance",
+        "support_floor": 0.9,
+        "support_floor_margin_formula": "support_floor_margin = post_min_support - support_floor",
+        "threshold_record_digest": "40fe4a97f354d91d9c1961d33ced2b46b1cbb3e55977c6bba283e3fd397e5a18"
+      },
+      "run_artifact_id": "n27_i5_i4_replay_runtime",
+      "runtime_config_digest": "a67e00cc472ce1b3751a365847e07fd77ad9b346d864b87d79ee3aee960b9cfd",
+      "same_basin_signature_preserved_under_mapping": true,
+      "same_basin_signature_replay_result": "passed",
+      "same_label_different_basin_rejected": true,
+      "signature_preservation_margin_formula": "signature_preservation_margin = max_signature_distance - observed_signature_distance",
+      "snapshot_load_replay_result": "passed",
+      "source_contract_row_digest": "14d661d69af9aa62731834570a8db02e0050d8464c9a6b9608dcce2e472bb00c",
+      "source_current_inputs": [
+        {
+          "artifact_role": "threshold_record",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/threshold_record.json",
+          "sha256": "143a480d78440edc0c69448d4a6ad89cd25a619d311601853c4257f4658609f3"
+        },
+        {
+          "artifact_role": "transfer_mapping_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/transfer_mapping_trace.json",
+          "sha256": "706ab3a481ac04d6c6432880f23963f438b5d79ea62c0d68dfa54d19d8674176"
+        },
+        {
+          "artifact_role": "pre_transfer_basin_signature_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/pre_transfer_basin_signature_trace.json",
+          "sha256": "57412f774212842e83ea4374becf10287c7fc44cc8bf1cc3bcb547f0297fd4e0"
+        },
+        {
+          "artifact_role": "post_transfer_basin_signature_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/post_transfer_basin_signature_trace.json",
+          "sha256": "a23d074b5843b003bcc6472768d202b107fbca03c0921c7c4abbd2d529fc6925"
+        },
+        {
+          "artifact_role": "boundary_mapping_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/boundary_mapping_trace.json",
+          "sha256": "b69d1d8d67bf605dba930733113281715a98e84060956531a900068b69d4230f"
+        },
+        {
+          "artifact_role": "support_preservation_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/support_preservation_trace.json",
+          "sha256": "3279fa2cef307020d125760ba2aece86cbb4eb1014ec75a13208c4b3ce2371f8"
+        },
+        {
+          "artifact_role": "coherence_preservation_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/coherence_preservation_trace.json",
+          "sha256": "5cfc177c109bf5075b6445de57f31f5b23d1193e302d44748c5d4d4a1ffb34a0"
+        },
+        {
+          "artifact_role": "flux_balance_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/flux_balance_trace.json",
+          "sha256": "2260e4c2d612a9fb8643c21455e2d187dab7ca42631efb4cf391d8523f42cb61"
+        },
+        {
+          "artifact_role": "source_current_runtime_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "307597fa243fa1000bd36f28c2d9387d34f45a300723749076b3b2bb8d936e5d"
+        },
+        {
+          "artifact_role": "original_fixture_support_change_trace",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/original_fixture_support_change_trace.json",
+          "sha256": "626636cd1b26925d313cf30ab99922a076ec5d2b59d04c3eaa75a725b8af0396"
+        },
+        {
+          "artifact_role": "reconstructed_support_ledger",
+          "consumed_as": "source_current_configuration_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/reconstructed_support_ledger.json",
+          "sha256": "aa983305731dc6ff5bf126336345fccdca41b56b5cceba263df96aff5c6c634e"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "consumed_as": "source_current_same_basin_mapping_replay_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4_same_basin_mapping_replay_replay_trace.json",
+          "sha256": "9befc894e75f5b614da6044b1e8e2594360977f268e3eadea653592ebeebcce8"
+        }
+      ],
+      "source_inventory_output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+      "source_iteration": "4",
+      "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+      "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+      "support_floor_margin_formula": "support_floor_margin = post_min_support - support_floor",
+      "support_preservation_trace": {
+        "post_min_support": 0.91,
+        "pre_min_support": 0.92,
+        "support_floor": 0.9,
+        "support_floor_margin": 0.01,
+        "support_preservation_delta": -0.01,
+        "support_preservation_digest": "fd1367c568c54360e257bbd0f44262d9695e42fe6c7eb0c8503a47b8b95e23a8",
+        "support_preserved_above_floor": true,
+        "support_reconstruction_counted_as_preservation": false,
+        "trace_id": "n27_i4_support_preservation_trace"
+      },
+      "support_reconstruction_as_transfer_rejected": true,
+      "threshold_record_digest": "40fe4a97f354d91d9c1961d33ced2b46b1cbb3e55977c6bba283e3fd397e5a18",
+      "transfer_claim_allowed": false,
+      "transfer_core": {
+        "boundary_mapping_digest": "19eda5427b090da77ac54a195c031d249b0645651cb97a232ccebad6c847c358",
+        "coherence_preservation_digest": "baa12fb2139198810beb8bba1d7542776749f137455183cd88fd148dde5ff2ee",
+        "flux_balance_digest": "0baf2b6876a3b767966d725b5613534ed4756e8eb4b5f323f4d3be84de99a34f",
+        "mapping_declared_before_use": true,
+        "mapping_source_backed": true,
+        "post_signature_digest": "cef3d47fa45a4e6c052e9726f33aaafd26d6143f34363c2719aa7841ec04d996",
+        "pre_signature_digest": "735348581363d2ef7d351e858840fc1a61d723836f97b001d3c1cf06c2e88809",
+        "support_preservation_digest": "fd1367c568c54360e257bbd0f44262d9695e42fe6c7eb0c8503a47b8b95e23a8",
+        "transfer_mapping_digest": "5d26566b0ddb52e42b2648277764367f8daaa599a84bc79a1ef542939da7fa12",
+        "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "transfer_scope": "configuration"
+      },
+      "transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+      "transfer_mapping_digest": "5d26566b0ddb52e42b2648277764367f8daaa599a84bc79a1ef542939da7fa12",
+      "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+      "transfer_mapping_trace": {
+        "configuration_change": {
+          "coordinate_rule_changed": "alpha_linear_layout_to_beta_offset_layout",
+          "fixture_equivalence_label_only": false,
+          "frame_changed": true,
+          "node_ids_changed": true
+        },
+        "edge_mapping": {
+          "alpha_core-alpha_support": "beta_core-beta_support",
+          "alpha_support-alpha_boundary": "beta_support-beta_boundary"
+        },
+        "mapping_declaration_order": 0,
+        "mapping_declared_before_use": true,
+        "mapping_digest_excludes_outcome": true,
+        "mapping_policy": "declared_source_current_node_and_boundary_correspondence",
+        "mapping_source_backed": true,
+        "node_mapping": {
+          "alpha_boundary": "beta_boundary",
+          "alpha_core": "beta_core",
+          "alpha_support": "beta_support"
+        },
+        "post_fixture_id": "fixture_beta",
+        "post_frame_id": "fixture_beta_frame",
+        "post_observation_order": 2,
+        "pre_fixture_id": "fixture_alpha",
+        "pre_frame_id": "fixture_alpha_frame",
+        "pre_observation_order": 1,
+        "same_frame_movement_claimed": false,
+        "trace_id": "n27_i4_transfer_mapping_trace",
+        "transfer_mapping_digest": "5d26566b0ddb52e42b2648277764367f8daaa599a84bc79a1ef542939da7fa12",
+        "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "transfer_scope": "configuration"
+      },
+      "transfer_schema_output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22",
+      "transfer_scope": "configuration",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "active_nulls_output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_condition_reason": "I4-A mapping does not use route-conditioned selection; AP4 remains conditional inherited context only.",
+      "ap4_dependency_status": "not_applicable",
+      "ap5_condition_reason": "I4-A does not use proxy or target formation; N26 scoped AP5 context is not consumed as native AP5 or transfer evidence.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "threshold_record",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/threshold_record.json",
+          "sha256": "23d39966ec437ffd2363bf3f519a9817211c03974827ccc86632f54a2f7f6b7f"
+        },
+        {
+          "artifact_role": "transfer_mapping_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/transfer_mapping_trace.json",
+          "sha256": "ae4f7f04aff19eae2498be900c65e1f90a26894ec21f65d6707fddc3d5a977fb"
+        },
+        {
+          "artifact_role": "pre_transfer_basin_signature_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/pre_transfer_basin_signature_trace.json",
+          "sha256": "445948f0cae9664ad2df8b9bf35420a222c53b3df3f65ef1c34fedf390baf1cb"
+        },
+        {
+          "artifact_role": "post_transfer_basin_signature_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/post_transfer_basin_signature_trace.json",
+          "sha256": "33dc463283d7c7e2f99721b780f8edbef4b70ed3b5f3f9cdc78a42dbc16b49d4"
+        },
+        {
+          "artifact_role": "boundary_mapping_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/boundary_mapping_trace.json",
+          "sha256": "d0f44e9027582ada3614e708d88513f62971b0249b7d58ca6a35bb4412d92f54"
+        },
+        {
+          "artifact_role": "support_preservation_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/support_preservation_trace.json",
+          "sha256": "7fd91f28eabd90454e0dd8327a8784974a03710fd21b783ba75e2035e3f3416b"
+        },
+        {
+          "artifact_role": "coherence_preservation_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/coherence_preservation_trace.json",
+          "sha256": "a036832f5fd84feac837aa52aa5d69366b62caab5c945ddbc653b3f4418f21e7"
+        },
+        {
+          "artifact_role": "flux_balance_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/flux_balance_trace.json",
+          "sha256": "5ab6df05427e523c1364da95aeb478ff19b5ab51b21c72de1d2b0db6f7f17295"
+        },
+        {
+          "artifact_role": "source_current_runtime_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "57b59502ee0835cb4664e7773d481cee5d1251a882ee941c09b3adcd08f0adfb"
+        },
+        {
+          "artifact_role": "original_fixture_support_change_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/original_fixture_support_change_trace.json",
+          "sha256": "3ee0d231920494a642002603b9bf63c9d692e60c84d195c33d216721e4802cc4"
+        },
+        {
+          "artifact_role": "reconstructed_support_ledger",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/reconstructed_support_ledger.json",
+          "sha256": "59b117db7aa5d85fb5e2b1b231385747e4ead6027f9e0caafadef18aef426992"
+        },
+        {
+          "artifact_role": "variant_comparison_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/variant_comparison_trace.json",
+          "sha256": "55b821cbab77de64e3bf33687b7ca5cd9bf1b8b504c58b17c9ecdf51c3fd5ede"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4a_same_basin_mapping_replay_replay_trace.json",
+          "sha256": "98a44df9d2297908906359357d4ab41a9ebcf44a31c879ce015d45b185221404"
+        }
+      ],
+      "artifact_replay_result": "passed",
+      "boundary_mapping_tolerance_formula": "boundary_mapping_margin = mapped_boundary_jaccard - boundary_jaccard_floor",
+      "boundary_mapping_trace": {
+        "boundary_acceptance_operator": "greater_than_or_equal",
+        "boundary_jaccard_floor": 0.9,
+        "boundary_mapping_digest": "736fe3a67e490eef260a4df6a2ddb4878a367878e11255192cecf315e01f590a",
+        "boundary_mapping_margin": 0.1,
+        "boundary_mapping_preserved": true,
+        "boundary_margin_at_floor": false,
+        "edge_mapping": {
+          "gamma_core-gamma_left_support": "delta_core-delta_north_support",
+          "gamma_core-gamma_right_support": "delta_south_support-delta_core",
+          "gamma_left_support-gamma_outer_boundary": "delta_north_support-delta_outer_boundary",
+          "gamma_right_support-gamma_outer_boundary": "delta_outer_boundary-delta_south_support"
+        },
+        "mapped_boundary_edge_count": 4,
+        "mapped_boundary_jaccard": 1.0,
+        "post_boundary_edges": [
+          [
+            "delta_core",
+            "delta_north_support"
+          ],
+          [
+            "delta_south_support",
+            "delta_core"
+          ],
+          [
+            "delta_north_support",
+            "delta_outer_boundary"
+          ],
+          [
+            "delta_outer_boundary",
+            "delta_south_support"
+          ]
+        ],
+        "pre_boundary_edges": [
+          [
+            "gamma_core",
+            "gamma_left_support"
+          ],
+          [
+            "gamma_core",
+            "gamma_right_support"
+          ],
+          [
+            "gamma_left_support",
+            "gamma_outer_boundary"
+          ],
+          [
+            "gamma_right_support",
+            "gamma_outer_boundary"
+          ]
+        ],
+        "same_label_different_basin_rejected": true,
+        "trace_id": "n27_i4a_boundary_mapping_trace",
+        "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "unmapped_boundary_edge_count": 0
+      },
+      "claim_ceiling": "provisional CT3 replay-backed same-basin transfer candidate pending I6 stress, I7 controls/classification, and I8 closeout; no final transfer, semantic identity, native support, native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology claim",
+      "coherence_floor_margin_formula": "coherence_floor_margin = post_min_coherence - coherence_floor",
+      "coherence_preservation_trace": {
+        "coherence_floor": 0.91,
+        "coherence_floor_margin": 0.025,
+        "coherence_preservation_delta": -0.005,
+        "coherence_preservation_digest": "9abe65db46b69073ac89c90a64938cf346779528ff61cfb7db2b0de5ab2032cc",
+        "coherence_preserved_above_floor": true,
+        "post_min_coherence": 0.935,
+        "pre_min_coherence": 0.94,
+        "trace_id": "n27_i4a_coherence_preservation_trace"
+      },
+      "configuration_label_only_rejected": true,
+      "consumable_contract_row_digest": "14d661d69af9aa62731834570a8db02e0050d8464c9a6b9608dcce2e472bb00c",
+      "control_results": [
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "same label appears after mapping but basin signature or boundary differs",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "same_label_different_basin_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects label identity",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "fixture or topology is declared equivalent without source-current mapping",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "fixture_equivalence_label_only_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects mapping-free fixture similarity",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "transfer mapping is declared after seeing the post-transfer result",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "mapping_declared_after_outcome_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects post-hoc mapping",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "proxy score is preserved while basin signature or boundary mapping fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "proxy_score_relabel_as_transfer_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects proxy preservation",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "undeclared producer support rebuilds the post-transfer basin",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "hidden_support_reconstruction_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects hidden rebuilding",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "reconstructed support ledger is counted as preserved support",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "support_reconstruction_as_transfer_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects post-hoc reconstruction",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "post-transfer boundary is not mapped from the pre-transfer boundary",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "boundary_mapping_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects unmapped boundary",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "post-transfer basin signature is missing",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "post_transfer_signature_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects missing post-transfer state",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "row is derived from report labels rather than source-current runtime inputs",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "source_current_inputs_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects report-only evidence",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "topology_or_configuration_scope_not_substrate",
+          "blocked_condition": "substrate transfer is claimed without source-backed substrate mapping",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 replays configuration/topology rows only; no substrate-transfer claim is opened.",
+          "control_id": "cross_substrate_mapping_missing_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "not_applicable",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects unmapped substrate claims",
+          "rung_effect": "substrate_transfer_claim_not_opened"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "artifact path, role, or SHA-256 validation fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "artifact_manifest_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects unverifiable artifacts",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "passed_all_required_I5_replay_modes",
+          "blocked_condition": "artifact, snapshot/load, duplicate, or mapping-order replay fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 executes artifact, snapshot/load, duplicate, and mapping-order replay.",
+          "control_id": "replay_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects non-replayable transfer",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "deferred_blocks_CT5_or_stronger_until_iteration_6",
+          "blocked_condition": "mapping tolerance, support, coherence, or flux stress fails",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 is replay-only; stress/variant testing remains I6 scope.",
+          "control_id": "stress_variant_failure_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "not_applicable",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects overbroad robustness",
+          "rung_effect": "CT5_or_stronger_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "route-conditioned selection participates but AP4 dependency is omitted",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "AP4_dependency_omitted_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects prose-only AP4 handling",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "proxy/target formation participates but AP5 dependency is omitted",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "AP5_dependency_omitted_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects prose-only AP5 handling",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N26 PD6 proxy result is counted as N27 transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "n26_proxy_as_transfer_evidence_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects proxy-to-transfer relabel",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N26 scoped artifact AP5 bridge is promoted to native AP5",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "n26_scoped_ap5_as_native_ap5_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects native AP5 relabel",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N25.2 is consumed directly as N27 substrate transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "n25_2_direct_transfer_consumption_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects direct N25.2 backfill",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "semantic identity or selfhood is used as transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "semantic_identity_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects identity overclaim",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "semantic choice, goal, or intention is used as transfer evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "semantic_choice_goal_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects semantic agency language",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "producer-mediated or transfer-preserved support is relabeled native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "native_support_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects native support overclaim",
+          "rung_effect": "CT3_not_blocked"
+        },
+        {
+          "actual_result": "inherited_or_revalidated_false_positive_blocker_clear",
+          "blocked_condition": "N27 transfer evidence is relabeled Phase 8 completion or ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_applicability_reason": "I5 preserves the I4/I4-A source-current candidate boundary and replay does not trigger this blocker.",
+          "control_id": "phase8_ant_ecology_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "clear_or_defer_without_upgrading_beyond_CT3",
+          "orthogonal_role": "rejects downstream project overclaim",
+          "rung_effect": "CT3_not_blocked"
+        }
+      ],
+      "ct_ladder_rung": "CT3",
+      "derived_report_only": false,
+      "descriptor_contract_row_digest": "c8be68905ad18176f6087210ad24cf2cc432d1b04e61e9db8edc54f86b46987f",
+      "duplicate_replay_result": "passed",
+      "final_transfer_supported": false,
+      "flux_balance_bound_formula": "flux_balance_margin = max_flux_imbalance - post_abs_flux_imbalance",
+      "flux_balance_trace": {
+        "flux_balance_digest": "94a4707068312dcfe0e3c8d7974a2a26e08c205c84937412e6203a10d3b05c87",
+        "flux_balance_margin": 0.028,
+        "flux_balance_preserved_within_bound": true,
+        "hidden_flux_support_reconstruction_detected": false,
+        "max_flux_imbalance": 0.06,
+        "post_abs_flux_imbalance": 0.032,
+        "pre_abs_flux_imbalance": 0.026,
+        "trace_id": "n27_i4a_flux_balance_trace"
+      },
+      "hidden_support_reconstruction_absent": true,
+      "iteration": "5",
+      "mapping_order_replay_result": "passed",
+      "n25_2_consumed_only_through_n26_context": true,
+      "n25_2_direct_transfer_consumption_used": false,
+      "n26_closeout_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+      "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+      "original_fixture_support_change_trace": {
+        "original_fixture_support_changed": true,
+        "original_fixture_support_reintroduced": false,
+        "post_fixture_id": "fixture_delta_folded",
+        "pre_fixture_id": "fixture_gamma_branch",
+        "support_change_kind": "topological_fixture_context_remapped_not_rebuilt",
+        "trace_id": "n27_i4a_original_fixture_support_change_trace"
+      },
+      "post_transfer_basin_signature_trace": {
+        "basin_label": "basin_signature_variant_B_mapped",
+        "basin_label_used_as_evidence": false,
+        "basin_nodes": [
+          "delta_core",
+          "delta_north_support",
+          "delta_south_support",
+          "delta_outer_boundary"
+        ],
+        "boundary_edges": [
+          [
+            "delta_core",
+            "delta_north_support"
+          ],
+          [
+            "delta_south_support",
+            "delta_core"
+          ],
+          [
+            "delta_north_support",
+            "delta_outer_boundary"
+          ],
+          [
+            "delta_outer_boundary",
+            "delta_south_support"
+          ]
+        ],
+        "coherence_by_node": {
+          "delta_core": 0.945,
+          "delta_north_support": 0.935,
+          "delta_outer_boundary": 0.94,
+          "delta_south_support": 0.938
+        },
+        "fixture_id": "fixture_delta_folded",
+        "flux_by_edge": {
+          "delta_core-delta_north_support": 0.04,
+          "delta_north_support-delta_outer_boundary": -0.02,
+          "delta_outer_boundary-delta_south_support": -0.021,
+          "delta_south_support-delta_core": 0.033
+        },
+        "frame_id": "fixture_delta_folded_frame",
+        "max_signature_distance": 0.07,
+        "observation_order": 2,
+        "observed_signature_distance": 0.03,
+        "post_signature_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+        "post_transfer_signature_present": true,
+        "same_basin_signature_preserved_under_mapping": true,
+        "signature_preservation_margin": 0.04,
+        "signature_vector": {
+          "abs_flux_imbalance": 0.032,
+          "boundary_edge_count": 4,
+          "core_weight": 1.0,
+          "min_coherence": 0.935,
+          "min_support": 0.925,
+          "support_branch_count": 2
+        },
+        "support_by_node": {
+          "delta_core": 0.94,
+          "delta_north_support": 0.925,
+          "delta_outer_boundary": 0.932,
+          "delta_south_support": 0.928
+        },
+        "trace_id": "n27_i4a_post_transfer_basin_signature_trace"
+      },
+      "pre_transfer_basin_signature_trace": {
+        "basin_label": "basin_signature_variant_B",
+        "basin_label_used_as_evidence": false,
+        "basin_nodes": [
+          "gamma_core",
+          "gamma_left_support",
+          "gamma_right_support",
+          "gamma_outer_boundary"
+        ],
+        "boundary_edges": [
+          [
+            "gamma_core",
+            "gamma_left_support"
+          ],
+          [
+            "gamma_core",
+            "gamma_right_support"
+          ],
+          [
+            "gamma_left_support",
+            "gamma_outer_boundary"
+          ],
+          [
+            "gamma_right_support",
+            "gamma_outer_boundary"
+          ]
+        ],
+        "coherence_by_node": {
+          "gamma_core": 0.952,
+          "gamma_left_support": 0.944,
+          "gamma_outer_boundary": 0.946,
+          "gamma_right_support": 0.94
+        },
+        "fixture_id": "fixture_gamma_branch",
+        "flux_by_edge": {
+          "gamma_core-gamma_left_support": 0.038,
+          "gamma_core-gamma_right_support": 0.034,
+          "gamma_left_support-gamma_outer_boundary": -0.02,
+          "gamma_right_support-gamma_outer_boundary": -0.018
+        },
+        "frame_id": "fixture_gamma_branch_frame",
+        "observation_order": 1,
+        "pre_signature_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d",
+        "signature_vector": {
+          "abs_flux_imbalance": 0.026,
+          "boundary_edge_count": 4,
+          "core_weight": 1.0,
+          "min_coherence": 0.94,
+          "min_support": 0.945,
+          "support_branch_count": 2
+        },
+        "support_by_node": {
+          "gamma_core": 0.955,
+          "gamma_left_support": 0.945,
+          "gamma_outer_boundary": 0.95,
+          "gamma_right_support": 0.948
+        },
+        "trace_id": "n27_i4a_pre_transfer_basin_signature_trace"
+      },
+      "proxy_score_relabel_rejected": true,
+      "reconstructed_support_ledger": {
+        "hidden_support_reconstruction_absent": true,
+        "reconstructed_support_events": [],
+        "support_reconstruction_as_transfer_rejected": true,
+        "trace_id": "n27_i4a_reconstructed_support_ledger"
+      },
+      "replay_creates_new_transfer_evidence": false,
+      "replay_result": {
+        "artifact_replay": "passed",
+        "ct3_replay_candidate_supported": true,
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "duplicate_replay": "passed",
+        "final_transfer_supported": false,
+        "mapping_order_replay": "passed",
+        "replay_trace_digest": "62f7e7cb4976bc3eae7c254574e8b18757f208f265bc2ea990e5662e137ff2da",
+        "snapshot_load_replay": "passed"
+      },
+      "replay_trace": {
+        "artifact_replay": {
+          "all_artifact_sha256_match_file_contents": true,
+          "artifact_manifest_digest": "82d9ed0fb646f7e48bc4348ef6396a11e00901534f2ee0672d78208784497bc4",
+          "artifact_roles_replayed": [
+            "boundary_mapping_trace",
+            "coherence_preservation_trace",
+            "flux_balance_trace",
+            "original_fixture_support_change_trace",
+            "post_transfer_basin_signature_trace",
+            "pre_transfer_basin_signature_trace",
+            "reconstructed_support_ledger",
+            "source_current_runtime_trace",
+            "support_preservation_trace",
+            "threshold_record",
+            "transfer_mapping_trace",
+            "variant_comparison_trace"
+          ],
+          "status": "passed"
+        },
+        "ct3_replay_candidate_supported": true,
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "duplicate_replay": {
+          "duplicate_digest_stable": true,
+          "duplicate_positive_row_created": false,
+          "duplicate_replay_digest_stable": true,
+          "duplicate_replay_first_emitted": true,
+          "duplicate_replay_second_emitted": false,
+          "duplicate_semantics": "stable digest and no duplicate positive row creation",
+          "first_replay_digest": "974cb12ecbe1335a16eb6fbddf65bf8d26050e52877fca0c93e581ee25af5330",
+          "second_emitted_false_meaning": "duplicate suppression worked; the second replay validated the same digest without creating another positive row",
+          "second_replay_digest": "974cb12ecbe1335a16eb6fbddf65bf8d26050e52877fca0c93e581ee25af5330",
+          "status": "passed"
+        },
+        "final_transfer_supported": false,
+        "mapping_order_replay": {
+          "mapping_declaration_order": 0,
+          "mapping_digest_excludes_outcome": true,
+          "mapping_precedes_pre_and_post_observation": true,
+          "post_observation_order": 2,
+          "pre_observation_order": 1,
+          "status": "passed"
+        },
+        "replay_evidence_creation_policy": {
+          "new_boundary_mapping_created": false,
+          "new_post_transfer_basin_signature_created": false,
+          "new_transfer_mapping_created": false,
+          "source_runtime_records_replayed": [
+            "transfer_mapping_trace",
+            "pre_transfer_basin_signature_trace",
+            "post_transfer_basin_signature_trace",
+            "boundary_mapping_trace",
+            "support_preservation_trace",
+            "coherence_preservation_trace",
+            "flux_balance_trace",
+            "reconstructed_support_ledger"
+          ],
+          "validates_source_candidate_artifacts_only": true
+        },
+        "required_replay_modes": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay",
+          "mapping_order_replay"
+        ],
+        "snapshot_load_replay": {
+          "boundary_mapping_preserved": true,
+          "coherence_preserved_above_floor": true,
+          "flux_balance_preserved_within_bound": true,
+          "same_basin_signature_preserved_under_mapping": true,
+          "snapshot_payload_digest": "8b16ad90aab0e806ea2f5b919896d9a0a8041670ba0fe59e5a1083f3fc701e85",
+          "status": "passed",
+          "support_preserved_above_floor": true
+        },
+        "source_iteration": "4-A",
+        "source_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+        "source_row_id": "n27_i4a_row_01_topology_fixture_variant_transfer_probe",
+        "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "support_reconstruction_replay": {
+          "hidden_support_reconstruction_absent": true,
+          "reconstructed_support_events": [],
+          "support_reconstruction_counted_as_transfer": false
+        },
+        "trace_id": "n27_i5_i4a_replay_trace",
+        "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "transfer_scope": "topology"
+      },
+      "replay_trace_digest": "62f7e7cb4976bc3eae7c254574e8b18757f208f265bc2ea990e5662e137ff2da",
+      "row_decision": "supported",
+      "row_decision_scope": "replay_backed_CT3_candidate_pending_controls_stress_closeout",
+      "row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+      "row_output_digest": "39f5e96a62ef88afc4a87ea53d174454bc41c6e9944f1d5c7a3e5f0bf0a4a9c6",
+      "row_specific_thresholds_declared_before_use": {
+        "applies_to_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "boundary_jaccard_floor": 0.9,
+        "boundary_mapping_tolerance_formula": "boundary_mapping_margin = mapped_boundary_jaccard - boundary_jaccard_floor",
+        "coherence_floor": 0.91,
+        "coherence_floor_margin_formula": "coherence_floor_margin = post_min_coherence - coherence_floor",
+        "declaration_order": 0,
+        "declared_before_use": true,
+        "flux_balance_bound_formula": "flux_balance_margin = max_flux_imbalance - post_abs_flux_imbalance",
+        "hidden_support_reconstruction_allowed": false,
+        "max_flux_imbalance": 0.06,
+        "max_signature_distance": 0.07,
+        "record_id": "n27_i4a_threshold_record",
+        "same_label_only_allowed": false,
+        "signature_preservation_margin_formula": "signature_preservation_margin = max_signature_distance - observed_signature_distance",
+        "support_floor": 0.91,
+        "support_floor_margin_formula": "support_floor_margin = post_min_support - support_floor",
+        "threshold_record_digest": "ec27397a586da2265119b869182380e00fd4655a337e7d3a9e356f199863d6e7"
+      },
+      "run_artifact_id": "n27_i5_i4a_replay_runtime",
+      "runtime_config_digest": "cd1687a10ea55f720525c8edf49daa2d8605e6ef0f1898fb4bf5b14587a8bf64",
+      "same_basin_signature_preserved_under_mapping": true,
+      "same_basin_signature_replay_result": "passed",
+      "same_label_different_basin_rejected": true,
+      "signature_preservation_margin_formula": "signature_preservation_margin = max_signature_distance - observed_signature_distance",
+      "snapshot_load_replay_result": "passed",
+      "source_contract_row_digest": "14d661d69af9aa62731834570a8db02e0050d8464c9a6b9608dcce2e472bb00c",
+      "source_current_inputs": [
+        {
+          "artifact_role": "threshold_record",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/threshold_record.json",
+          "sha256": "23d39966ec437ffd2363bf3f519a9817211c03974827ccc86632f54a2f7f6b7f"
+        },
+        {
+          "artifact_role": "transfer_mapping_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/transfer_mapping_trace.json",
+          "sha256": "ae4f7f04aff19eae2498be900c65e1f90a26894ec21f65d6707fddc3d5a977fb"
+        },
+        {
+          "artifact_role": "pre_transfer_basin_signature_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/pre_transfer_basin_signature_trace.json",
+          "sha256": "445948f0cae9664ad2df8b9bf35420a222c53b3df3f65ef1c34fedf390baf1cb"
+        },
+        {
+          "artifact_role": "post_transfer_basin_signature_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/post_transfer_basin_signature_trace.json",
+          "sha256": "33dc463283d7c7e2f99721b780f8edbef4b70ed3b5f3f9cdc78a42dbc16b49d4"
+        },
+        {
+          "artifact_role": "boundary_mapping_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/boundary_mapping_trace.json",
+          "sha256": "d0f44e9027582ada3614e708d88513f62971b0249b7d58ca6a35bb4412d92f54"
+        },
+        {
+          "artifact_role": "support_preservation_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/support_preservation_trace.json",
+          "sha256": "7fd91f28eabd90454e0dd8327a8784974a03710fd21b783ba75e2035e3f3416b"
+        },
+        {
+          "artifact_role": "coherence_preservation_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/coherence_preservation_trace.json",
+          "sha256": "a036832f5fd84feac837aa52aa5d69366b62caab5c945ddbc653b3f4418f21e7"
+        },
+        {
+          "artifact_role": "flux_balance_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/flux_balance_trace.json",
+          "sha256": "5ab6df05427e523c1364da95aeb478ff19b5ab51b21c72de1d2b0db6f7f17295"
+        },
+        {
+          "artifact_role": "source_current_runtime_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "57b59502ee0835cb4664e7773d481cee5d1251a882ee941c09b3adcd08f0adfb"
+        },
+        {
+          "artifact_role": "original_fixture_support_change_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/original_fixture_support_change_trace.json",
+          "sha256": "3ee0d231920494a642002603b9bf63c9d692e60c84d195c33d216721e4802cc4"
+        },
+        {
+          "artifact_role": "reconstructed_support_ledger",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/reconstructed_support_ledger.json",
+          "sha256": "59b117db7aa5d85fb5e2b1b231385747e4ead6027f9e0caafadef18aef426992"
+        },
+        {
+          "artifact_role": "variant_comparison_trace",
+          "consumed_as": "source_current_topology_fixture_variant_transfer_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/variant_comparison_trace.json",
+          "sha256": "55b821cbab77de64e3bf33687b7ca5cd9bf1b8b504c58b17c9ecdf51c3fd5ede"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "consumed_as": "source_current_same_basin_mapping_replay_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4a_same_basin_mapping_replay_replay_trace.json",
+          "sha256": "98a44df9d2297908906359357d4ab41a9ebcf44a31c879ce015d45b185221404"
+        }
+      ],
+      "source_inventory_output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+      "source_iteration": "4-A",
+      "source_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "support_floor_margin_formula": "support_floor_margin = post_min_support - support_floor",
+      "support_preservation_trace": {
+        "post_min_support": 0.925,
+        "pre_min_support": 0.945,
+        "support_floor": 0.91,
+        "support_floor_margin": 0.015,
+        "support_preservation_delta": -0.02,
+        "support_preservation_digest": "15460a54077e5e7a1a27087c6da7febbd2c4a2700160a2329357c6a688d61baa",
+        "support_preserved_above_floor": true,
+        "support_reconstruction_counted_as_preservation": false,
+        "trace_id": "n27_i4a_support_preservation_trace"
+      },
+      "support_reconstruction_as_transfer_rejected": true,
+      "threshold_record_digest": "ec27397a586da2265119b869182380e00fd4655a337e7d3a9e356f199863d6e7",
+      "transfer_claim_allowed": false,
+      "transfer_core": {
+        "boundary_mapping_digest": "736fe3a67e490eef260a4df6a2ddb4878a367878e11255192cecf315e01f590a",
+        "coherence_preservation_digest": "9abe65db46b69073ac89c90a64938cf346779528ff61cfb7db2b0de5ab2032cc",
+        "flux_balance_digest": "94a4707068312dcfe0e3c8d7974a2a26e08c205c84937412e6203a10d3b05c87",
+        "mapping_declared_before_use": true,
+        "mapping_source_backed": true,
+        "post_signature_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+        "pre_signature_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d",
+        "support_preservation_digest": "15460a54077e5e7a1a27087c6da7febbd2c4a2700160a2329357c6a688d61baa",
+        "transfer_mapping_digest": "71c0287ccc4e785d629d4415f9e6b58d5d7d280cbde7d5b8e17d91fe7cff2636",
+        "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "transfer_scope": "topology"
+      },
+      "transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "transfer_mapping_digest": "71c0287ccc4e785d629d4415f9e6b58d5d7d280cbde7d5b8e17d91fe7cff2636",
+      "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+      "transfer_mapping_trace": {
+        "edge_mapping": {
+          "gamma_core-gamma_left_support": "delta_core-delta_north_support",
+          "gamma_core-gamma_right_support": "delta_south_support-delta_core",
+          "gamma_left_support-gamma_outer_boundary": "delta_north_support-delta_outer_boundary",
+          "gamma_right_support-gamma_outer_boundary": "delta_outer_boundary-delta_south_support"
+        },
+        "mapping_declaration_order": 0,
+        "mapping_declared_before_use": true,
+        "mapping_digest_excludes_outcome": true,
+        "mapping_policy": "declared_source_current_topological_role_correspondence",
+        "mapping_source_backed": true,
+        "node_mapping": {
+          "gamma_core": "delta_core",
+          "gamma_left_support": "delta_north_support",
+          "gamma_outer_boundary": "delta_outer_boundary",
+          "gamma_right_support": "delta_south_support"
+        },
+        "post_fixture_id": "fixture_delta_folded",
+        "post_frame_id": "fixture_delta_folded_frame",
+        "post_observation_order": 2,
+        "pre_fixture_id": "fixture_gamma_branch",
+        "pre_frame_id": "fixture_gamma_branch_frame",
+        "pre_observation_order": 1,
+        "same_frame_movement_claimed": false,
+        "topology_change": {
+          "coordinate_rule_changed": "branched_role_layout_to_folded_cycle_role_layout",
+          "edge_shape_changed": true,
+          "fixture_equivalence_label_only": false,
+          "frame_changed": true,
+          "node_ids_changed": true
+        },
+        "trace_id": "n27_i4a_transfer_mapping_trace",
+        "transfer_mapping_digest": "71c0287ccc4e785d629d4415f9e6b58d5d7d280cbde7d5b8e17d91fe7cff2636",
+        "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "transfer_scope": "topology"
+      },
+      "transfer_schema_output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22",
+      "transfer_scope": "topology",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "schema_version": "1.0",
+  "source_inventory_output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_source_inventory_transfer_contract_admission_no_positive_evidence",
+      "artifact_id": "n27_source_inventory_and_transfer_contract_admission",
+      "exists": true,
+      "output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_source_inventory_and_transfer_contract_admission.json",
+      "sha256": "6f5bd7ad1ff13ddad0f33d699338aec0103154122cc56c36bc8d065498cf0664",
+      "source_id": "n27_i1_source_inventory",
+      "source_role": "source_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_transfer_schema_and_controls_frozen_no_positive_evidence",
+      "artifact_id": "n27_transfer_schema_and_controls",
+      "exists": true,
+      "output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_schema_and_controls.json",
+      "sha256": "82ba16b1ea4d0ca3dab3b96581aa8f4378e405ef03dfef2f03babe5d1eda9c43",
+      "source_id": "n27_i2_transfer_schema",
+      "source_role": "schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_transfer_evidence",
+      "artifact_id": "n27_active_nulls_and_failure_baselines",
+      "exists": true,
+      "output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_active_nulls_and_failure_baselines.json",
+      "sha256": "471e4766cbcd8b0cb38e251d581ca9829d175e16e842e94b396e50682a5bec3b",
+      "source_id": "n27_i3_active_nulls",
+      "source_role": "active_null_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_CT2_candidate_pending_replay_controls",
+      "artifact_id": "n27_minimal_configuration_transfer_probe",
+      "exists": true,
+      "output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe.json",
+      "sha256": "3fe8b091b55e8c924b86c027692a30e7ad19a973cb23b32ef87db55240188d35",
+      "source_id": "n27_i4_minimal_transfer",
+      "source_role": "minimal_transfer_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_topology_fixture_variant_CT2_candidate_pending_replay_controls",
+      "artifact_id": "n27_topology_fixture_variant_transfer_probe",
+      "exists": true,
+      "output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe.json",
+      "sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+      "source_id": "n27_i4a_topology_fixture_variant",
+      "source_role": "topology_fixture_variant_candidate",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "topology_fixture_variant_transfer_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+  "transfer_schema_output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22"
+}

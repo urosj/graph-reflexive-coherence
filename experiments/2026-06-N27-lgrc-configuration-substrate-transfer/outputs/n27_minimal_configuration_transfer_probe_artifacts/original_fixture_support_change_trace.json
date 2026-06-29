@@ -1,0 +1,8 @@
+{
+  "original_fixture_support_changed": true,
+  "original_fixture_support_reintroduced": false,
+  "post_fixture_id": "fixture_beta",
+  "pre_fixture_id": "fixture_alpha",
+  "support_change_kind": "fixture_context_remapped_not_rebuilt",
+  "trace_id": "n27_i4_original_fixture_support_change_trace"
+}

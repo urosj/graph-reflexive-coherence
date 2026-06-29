@@ -1,0 +1,87 @@
+{
+  "artifact_replay": {
+    "all_artifact_sha256_match_file_contents": true,
+    "artifact_manifest_digest": "1e5ec1a4ca76e903e5150258c34fbea2e106c86c738f128ea29eeed431211637",
+    "artifact_roles_replayed": [
+      "boundary_mapping_trace",
+      "coherence_preservation_trace",
+      "flux_balance_trace",
+      "original_fixture_support_change_trace",
+      "post_transfer_basin_signature_trace",
+      "pre_transfer_basin_signature_trace",
+      "reconstructed_support_ledger",
+      "source_current_runtime_trace",
+      "support_preservation_trace",
+      "threshold_record",
+      "transfer_mapping_trace"
+    ],
+    "status": "passed"
+  },
+  "ct3_replay_candidate_supported": true,
+  "ct4_or_stronger_supported": false,
+  "ct5_or_stronger_supported": false,
+  "duplicate_replay": {
+    "duplicate_digest_stable": true,
+    "duplicate_positive_row_created": false,
+    "duplicate_replay_digest_stable": true,
+    "duplicate_replay_first_emitted": true,
+    "duplicate_replay_second_emitted": false,
+    "duplicate_semantics": "stable digest and no duplicate positive row creation",
+    "first_replay_digest": "41f0a61c353196f303f9a488a2bf1cb329175e15b3fd5f893b1247479b4cc4f8",
+    "second_emitted_false_meaning": "duplicate suppression worked; the second replay validated the same digest without creating another positive row",
+    "second_replay_digest": "41f0a61c353196f303f9a488a2bf1cb329175e15b3fd5f893b1247479b4cc4f8",
+    "status": "passed"
+  },
+  "final_transfer_supported": false,
+  "mapping_order_replay": {
+    "mapping_declaration_order": 0,
+    "mapping_digest_excludes_outcome": true,
+    "mapping_precedes_pre_and_post_observation": true,
+    "post_observation_order": 2,
+    "pre_observation_order": 1,
+    "status": "passed"
+  },
+  "replay_evidence_creation_policy": {
+    "new_boundary_mapping_created": false,
+    "new_post_transfer_basin_signature_created": false,
+    "new_transfer_mapping_created": false,
+    "source_runtime_records_replayed": [
+      "transfer_mapping_trace",
+      "pre_transfer_basin_signature_trace",
+      "post_transfer_basin_signature_trace",
+      "boundary_mapping_trace",
+      "support_preservation_trace",
+      "coherence_preservation_trace",
+      "flux_balance_trace",
+      "reconstructed_support_ledger"
+    ],
+    "validates_source_candidate_artifacts_only": true
+  },
+  "required_replay_modes": [
+    "artifact_replay",
+    "snapshot_load_replay",
+    "duplicate_replay",
+    "mapping_order_replay"
+  ],
+  "snapshot_load_replay": {
+    "boundary_mapping_preserved": true,
+    "coherence_preserved_above_floor": true,
+    "flux_balance_preserved_within_bound": true,
+    "same_basin_signature_preserved_under_mapping": true,
+    "snapshot_payload_digest": "b6521d09164d17b28b033981e33f39171dc713d3e116ad46e1997ef188e99600",
+    "status": "passed",
+    "support_preserved_above_floor": true
+  },
+  "source_iteration": "4",
+  "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+  "source_row_id": "n27_i4_row_01_minimal_configuration_transfer_probe",
+  "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+  "support_reconstruction_replay": {
+    "hidden_support_reconstruction_absent": true,
+    "reconstructed_support_events": [],
+    "support_reconstruction_counted_as_transfer": false
+  },
+  "trace_id": "n27_i5_i4_replay_trace",
+  "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+  "transfer_scope": "configuration"
+}

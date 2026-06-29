@@ -1,0 +1,13 @@
+{
+  "extractive_flattening_below_ceiling": true,
+  "focal_basin_stable": true,
+  "interpretation": "source-current side-effect observation for N28 readiness; not N28 generative persistence evidence",
+  "merge_leakage_below_ceiling": true,
+  "n28_generative_persistence_supported": false,
+  "n28_precursor_observation_supported": true,
+  "neighbor_capacity_improved": true,
+  "neighbor_distinguishability_improved": true,
+  "side_effect_observation_kind": "source_current_n28_precursor_observation",
+  "source_iteration": "4-A",
+  "trace_id": "n27_i4b_side_effect_summary"
+}

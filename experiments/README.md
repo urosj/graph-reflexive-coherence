@@ -51,6 +51,7 @@ machine-local state.
 | [N24 abundance and surplus-supported optionality](2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md) | Closed bounded artifact-level AB5 surplus-supported optionality candidate with native N24-C5 closeout, explicit flux/leakage debt, and a separate producer-mediated flux-conditioning scaffold for N25. | README, then closeout handoff, native and producer flux probes, replay/control matrices, optional-continuation probes, implementation checklist, and hypotheses. |
 | N25 basin formation arc: [N25](2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md), [N25.1](2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md), [N25.2](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md) | Closed three-step formation arc: N25 reached scoped native BF5 high-margin core/sub-basin evidence, N25.1 specified the missing LGRC9V3 multi-basin runtime surfaces, and the Phase 8 plus N25.2 validation path closed MB6 as scoped N26-ready multi-basin substrate evidence. Unscoped N26 consumption, native support, agency, sentience, ant ecology implementation, and Phase 8 completion remain blocked. | Read N25 for BF5 formation evidence, N25.1 for the extension contract, N25.2 for MB6 validation and N26 handoff, plus the Phase 8 multi-basin closeout. |
 | [N26 proxy divergence and proxy collapse](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md) | Closed bounded artifact-level PD6 proxy divergence / proxy collapse evidence on scoped N25.2 MB6 multi-basin substrate, with scoped artifact AP5 bridge candidate support. Native AP5, AP5 NAT4-gap resolution, semantic goal/choice, agency, native support, sentience, Phase 8 completion, ant ecology, and unscoped multi-basin consumption remain blocked. | README, closeout handoff, replay/control/AP5 gate, proxy collapse matrix, score-dose divergence probe, implementation checklist, and hypotheses. |
+| [N27 configuration/substrate transfer](2026-06-N27-lgrc-configuration-substrate-transfer/README.md) | Closed bounded artifact-level CT6 configuration/topology transfer evidence with N27-C6/N28 handoff and claim-clean N28 precursor side-effect evaluation. N28 generative persistence, semantic identity, agency, native support, native AP5, AP5 NAT4-gap resolution, Phase 8 completion, and ant ecology remain blocked. | README, closeout handoff, control/AP classification, N28 precursor side-effect evaluation, replay/stress matrices, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -364,9 +365,8 @@ ready_for_n27 = true
 N26 supports a scoped artifact AP5 bridge candidate only. It does not resolve
 the native AP5 NAT4 gap and does not support native AP5, native support,
 semantic goal ownership, choice, agency, sentience, Phase 8 completion, ant
-ecology, or unscoped multi-basin substrate. N27 is next and should test
-configuration/substrate transfer as a new source-current question, not as a
-proxy-score relabel or hidden producer carryover.
+ecology, or unscoped multi-basin substrate. N27 has now consumed this handoff
+and closed the configuration/topology transfer primitive.
 
 N26 supporting visualization:
 
@@ -393,6 +393,24 @@ agentic ecology / ants project:
     applied multi-basin shared-medium ecology target, held as context until N29
 ```
 
+N27 closes as bounded artifact-level `CT6` configuration/topology transfer
+evidence with a claim-clean N28 side-effect precursor:
+
+```text
+final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+final_n27_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+final_transfer_supported = true
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
+ready_for_n28 = true
+```
+
+N28 may consume N27 as bounded transfer evidence plus side-effect precursor
+evaluation. It must not consume N27 as N28 generative persistence, semantic
+identity, semantic cooperation, agency, native support, native AP5, AP5
+NAT4-gap resolution, Phase 8 completion, ant ecology, sentience, or
+organism/life.
+
 N20-N28 stay inside this repository and ground becoming-style primitives:
 withdrawal resistance, naturalization depth, susceptibility update, live
 continuation collapse, surplus-supported optionality, spark/new-basin
@@ -402,12 +420,13 @@ update / durable geometry modification, N23 closed bounded live-continuation
 collapse / selection geometry, N24 closed bounded surplus-supported optionality
 with a producer-assisted flux scaffold, N25 closed scoped high-margin
 core/sub-basin formation with N25-C6 handoff readiness, N25.1 closed the
-requirements bridge for Phase 8 LGRC9V3 multi-basin formation, and N25.2
-closed the MB6 validation bridge. N26 closed bounded proxy divergence / proxy
-collapse at PD6 and is now ready for N27 configuration/substrate transfer.
-Unscoped multi-basin consumption, native AP5, native support, agency,
-sentience, ant ecology implementation, and Phase 8 completion remain blocked.
-N29 is the first formal convergence bridge
+requirements bridge for Phase 8 LGRC9V3 multi-basin formation, N25.2 closed
+the MB6 validation bridge, N26 closed bounded proxy divergence / proxy collapse
+at PD6, and N27 closed bounded configuration/topology transfer at CT6. N28 is
+next and should test generative versus extractive persistence from N27's
+transfer and side-effect precursor surfaces. Unscoped multi-basin consumption,
+native AP5, native support, agency, sentience, ant ecology implementation, and
+Phase 8 completion remain blocked. N29 is the first formal convergence bridge
 into the agentic ecology project, where producer residue, medium debt, and
 first applied ant-ecology probes can be specified. Native support, native ant
 agency, biological agency, and unrestricted agency remain unopened.

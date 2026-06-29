@@ -1,0 +1,15 @@
+{
+  "focal_basin": "delta_core_mapped_basin",
+  "focal_extraction_cost": 0.018,
+  "focal_extraction_cost_ceiling": 0.04,
+  "focal_stability_preserved": true,
+  "post_boundary_margin": 0.095,
+  "post_coherence_floor_margin": 0.024,
+  "post_support_floor_margin": 0.014,
+  "pre_boundary_margin": 0.1,
+  "pre_coherence_floor_margin": 0.025,
+  "pre_support_floor_margin": 0.015,
+  "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+  "source_transfer_row": "n27_i4a_row_01_topology_fixture_variant_transfer_probe",
+  "trace_id": "n27_i4b_focal_basin_stability_trace"
+}

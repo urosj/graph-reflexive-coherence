@@ -1,0 +1,64 @@
+{
+  "basin_label": "basin_signature_variant_B_mapped",
+  "basin_label_used_as_evidence": false,
+  "basin_nodes": [
+    "delta_core",
+    "delta_north_support",
+    "delta_south_support",
+    "delta_outer_boundary"
+  ],
+  "boundary_edges": [
+    [
+      "delta_core",
+      "delta_north_support"
+    ],
+    [
+      "delta_south_support",
+      "delta_core"
+    ],
+    [
+      "delta_north_support",
+      "delta_outer_boundary"
+    ],
+    [
+      "delta_outer_boundary",
+      "delta_south_support"
+    ]
+  ],
+  "coherence_by_node": {
+    "delta_core": 0.945,
+    "delta_north_support": 0.935,
+    "delta_outer_boundary": 0.94,
+    "delta_south_support": 0.938
+  },
+  "fixture_id": "fixture_delta_folded",
+  "flux_by_edge": {
+    "delta_core-delta_north_support": 0.04,
+    "delta_north_support-delta_outer_boundary": -0.02,
+    "delta_outer_boundary-delta_south_support": -0.021,
+    "delta_south_support-delta_core": 0.033
+  },
+  "frame_id": "fixture_delta_folded_frame",
+  "max_signature_distance": 0.07,
+  "observation_order": 2,
+  "observed_signature_distance": 0.03,
+  "post_signature_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+  "post_transfer_signature_present": true,
+  "same_basin_signature_preserved_under_mapping": true,
+  "signature_preservation_margin": 0.04,
+  "signature_vector": {
+    "abs_flux_imbalance": 0.032,
+    "boundary_edge_count": 4,
+    "core_weight": 1.0,
+    "min_coherence": 0.935,
+    "min_support": 0.925,
+    "support_branch_count": 2
+  },
+  "support_by_node": {
+    "delta_core": 0.94,
+    "delta_north_support": 0.925,
+    "delta_outer_boundary": 0.932,
+    "delta_south_support": 0.928
+  },
+  "trace_id": "n27_i4a_post_transfer_basin_signature_trace"
+}

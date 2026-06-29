@@ -1,0 +1,178 @@
+{
+  "acceptance_state": "accepted_n28_precursor_side_effect_evaluation_no_n28_claim",
+  "artifact_id": "n27_n28_precursor_side_effect_evaluation_matrix",
+  "checks": [
+    {
+      "check_id": "i5b_replay_source_passed",
+      "detail": "passed",
+      "passed": true
+    },
+    {
+      "check_id": "i7_ct5_boundary_available",
+      "detail": "CT5",
+      "passed": true
+    },
+    {
+      "check_id": "side_effect_policy_passed",
+      "detail": {
+        "metrics": {
+          "extractive_flattening_score": 0.022,
+          "focal_extraction_cost": 0.018,
+          "focal_stability_preserved": true,
+          "merge_leakage_score": 0.018,
+          "neighbor_capacity_delta": 0.1,
+          "neighbor_distinguishability_delta": 0.1,
+          "neighbor_support_delta": 0.04
+        },
+        "policy": {
+          "declared_before_use": true,
+          "extractive_flattening_ceiling": 0.05,
+          "focal_extraction_cost_ceiling": 0.04,
+          "focal_stability_required": true,
+          "merge_leakage_ceiling": 0.04,
+          "neighbor_capacity_delta_min": 0.05,
+          "neighbor_distinguishability_delta_min": 0.05,
+          "neighbor_support_delta_min": 0.02,
+          "policy_id": "n27_i6a_n28_precursor_side_effect_policy"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n28_claim_remains_blocked",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "generative_persistence_claim_allowed": false,
+        "n28_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": [],
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "N28 precursor evaluation only",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_n28_precursor_side_effect_evaluation_matrix.py",
+  "controls_ap_dependency_claim_classification_output_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+  "evaluation_row": {
+    "all_artifact_sha256_match_file_contents": true,
+    "artifact_manifest": [
+      {
+        "artifact_role": "n28_precursor_side_effect_evaluation_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_n28_precursor_side_effect_evaluation_matrix_artifacts/n28_precursor_side_effect_evaluation_trace.json",
+        "sha256": "f1ea535b65eed4fda31ad0e54291d963a2080e7f226f08e18c5ad0d195827096"
+      }
+    ],
+    "claim_ceiling": "N28-ready side-effect evaluation artifact",
+    "evaluation_trace": {
+      "extractive_flattening_detected": false,
+      "focal_survival_only": false,
+      "interpretation": "N28-ready precursor evaluation: focal basin remains stable while neighbor capacity indicators improve below extraction/leakage ceilings",
+      "merge_or_leakage_masquerading_as_support": false,
+      "metrics": {
+        "extractive_flattening_score": 0.022,
+        "focal_extraction_cost": 0.018,
+        "focal_stability_preserved": true,
+        "merge_leakage_score": 0.018,
+        "neighbor_capacity_delta": 0.1,
+        "neighbor_distinguishability_delta": 0.1,
+        "neighbor_support_delta": 0.04
+      },
+      "n28_generative_persistence_supported": false,
+      "n28_precursor_evaluation_supported": true,
+      "neighbor_label_only": false,
+      "policy": {
+        "declared_before_use": true,
+        "extractive_flattening_ceiling": 0.05,
+        "focal_extraction_cost_ceiling": 0.04,
+        "focal_stability_required": true,
+        "merge_leakage_ceiling": 0.04,
+        "neighbor_capacity_delta_min": 0.05,
+        "neighbor_distinguishability_delta_min": 0.05,
+        "neighbor_support_delta_min": 0.02,
+        "policy_id": "n27_i6a_n28_precursor_side_effect_policy"
+      },
+      "source_i5b_row_id": "n27_i5b_row_i4b_side_effect_replay",
+      "source_i7_ct_classification_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+      "trace_id": "n27_i6a_n28_precursor_side_effect_evaluation_trace"
+    },
+    "evaluation_trace_digest": "955955512a77fb4ef04393353a2bebec193b503f20f7f4fc0a47d05af6dbc16d",
+    "n28_generative_persistence_supported": false,
+    "n28_precursor_evaluation_supported": true,
+    "row_decision": "supported",
+    "row_decision_scope": "n28_precursor_evaluation_artifact_only",
+    "row_id": "n27_i6a_row_n28_precursor_side_effect_evaluation",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "experiment": "N27",
+  "failed_checks": [],
+  "final_transfer_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "6-A",
+  "n28_generative_persistence_supported": false,
+  "n28_precursor_evaluation_supported": true,
+  "output_digest": "2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af",
+  "purpose": "Evaluate replayed transfer side-effect traces as N28 precursor artifacts without claiming N28 generative persistence.",
+  "ready_for_iteration_7a_side_effect_claim_classification": true,
+  "schema_version": "1.0",
+  "source_records": [
+    {
+      "output_digest": "3f034af77147172b99e885793b82438285990d46ee364ae95cd801ea6385eef7",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_replay_probe.json",
+      "sha256": "e8387f1f135782737cc120a68f51843b8522abad7cfb416157d9027a125ce1e9",
+      "source_id": "n27_i5b_side_effect_replay",
+      "source_role": "side_effect_replay_source"
+    },
+    {
+      "output_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_controls_ap_dependency_claim_classification.json",
+      "sha256": "d6b995fdf3747976841d144ce37f88310c962809b9f80ed985c62babe9f86242",
+      "source_id": "n27_i7_ct_classification",
+      "source_role": "ct5_transfer_classification_boundary"
+    }
+  ],
+  "status": "passed",
+  "transfer_side_effect_replay_output_digest": "3f034af77147172b99e885793b82438285990d46ee364ae95cd801ea6385eef7"
+}

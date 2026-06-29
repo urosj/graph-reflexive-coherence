@@ -1,0 +1,235 @@
+# N27 - LGRC Configuration / Substrate Transfer
+
+N27 tests whether a basin signature can transfer across a declared
+configuration, fixture, topology, or substrate mapping without being reduced to
+proxy-score relabeling, hidden producer support, semantic identity, or
+unscoped multi-basin consumption.
+
+Current state:
+
+```text
+status = closed
+source_contract_row = n20_i5_row_08_configuration_substrate_transfer
+n20_contract_status = complete
+n26_consumption = bounded_PD6_proxy_divergence_collapse_evidence_only
+n26_scoped_ap5_bridge_context_allowed = true
+n26_native_ap5_consumption_allowed = false
+n26_ap5_nat4_gap_resolution_allowed = false
+target_primitive = configuration_substrate_transfer
+target_reading = bounded configuration / substrate transfer
+primary_scope = configuration_or_topology_transfer_inside_LGRC
+cross_substrate_scope = optional_if_declared_source_backed_mapping_exists
+local_ladder = CT0...CT6
+closeout_ladder = N27-C0...N27-C6
+positive_transfer_evidence_opened = true
+classified_ct_ladder_rung = CT5
+ct_ladder_rung_assigned = true
+ct3_replay_candidate_supported = true
+ct3_replay_hygiene_supported = true
+ct4_control_backed_candidate_supported = true
+ct5_stress_variant_candidate_supported = true
+ct5_or_stronger_supported = true
+ct6_or_stronger_supported = false
+final_supported_status = bounded_artifact_level_configuration_topology_transfer_candidate
+final_ct_ladder_rung = CT6_N28_ready_bounded_transfer_evidence
+final_n27_closeout_rung = N27-C6_N28_ready_bounded_transfer_closeout
+final_transfer_supported = true
+n28_precursor_evaluation_supported = true
+n28_generative_persistence_supported = false
+n28_experiment_ready = true
+ready_for_n28 = true
+source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
+transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
+active_nulls_output_digest = 2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3
+minimal_configuration_transfer_output_digest = f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294
+topology_fixture_variant_transfer_output_digest = 5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7
+transfer_side_effect_observation_output_digest = a398c63ae42d5275b4d7ca32a7a7be0f7c88b279b90b8e6bfd495107343e94a0
+replay_same_basin_mapping_output_digest = de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6
+artifact_only_reconstruction_replay_output_digest = 5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36
+transfer_side_effect_replay_output_digest = 3f034af77147172b99e885793b82438285990d46ee364ae95cd801ea6385eef7
+stress_mapping_variant_transfer_output_digest = 3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a
+n28_precursor_side_effect_evaluation_output_digest = 2dbe7d94d14ffd6753952dfb5360ac779b2c433c0a24e3a8a7444b40964fd1af
+controls_ap_dependency_claim_classification_output_digest = d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c
+n28_precursor_side_effect_claim_classification_output_digest = 10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb
+closeout_and_n28_handoff_output_digest = 818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716
+```
+
+Core question:
+
+```text
+Can a basin signature persist under a structurally distinct fixture,
+configuration, topology, or declared substrate mapping?
+```
+
+LGRC reading:
+
+```text
+transfer =
+  a pre-transfer basin signature, mapped boundary, support/coherence floor,
+  and flux discipline remain source-current after a declared mapping changes
+  the fixture/configuration/substrate context
+```
+
+N27 is not a semantic identity, organism/life, agency, native support,
+sentience, ant-ecology, or Phase 8 completion experiment.
+
+## Source Boundary
+
+Primary source artifacts:
+
+```text
+experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json
+experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json
+experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json
+experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/reports/n26_closeout_and_n27_handoff.md
+experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md
+experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md
+```
+
+N27 may consume:
+
+```text
+N20 configuration/substrate transfer contract
+N20 same-basin continuation rule for transfer
+N26 bounded PD6 proxy divergence / proxy collapse evidence
+N26 scoped artifact AP5 bridge context
+N26 proxy-pressure control context
+N26 source-current proxy/basin contrast context
+N25.2 scoped MB6 substrate evidence only through N26 context
+```
+
+N27 must not consume any source as:
+
+```text
+native AP5
+AP5 NAT4 gap resolution
+semantic identity
+semantic goal
+semantic choice
+agency
+native support
+sentience
+organism/life
+ant ecology implementation
+Phase 8 completion
+unscoped multi-basin substrate
+```
+
+## Required Source-Current Fields
+
+Positive N27 rows must provide source-current evidence for:
+
+```text
+source_current_inputs
+source_contract_row_digest
+source_output_digest
+run_artifact_id
+runtime_config_digest
+artifact_manifest
+all_artifact_sha256_match_file_contents
+row_specific_thresholds_declared_before_use
+transfer_scope = configuration | fixture | topology | substrate
+transfer_mapping_id
+transfer_mapping_digest
+mapping_declared_before_use
+mapping_source_backed
+pre_transfer_basin_signature_trace
+post_transfer_basin_signature_trace
+boundary_mapping_trace
+support_preservation_trace
+coherence_preservation_trace
+flux_balance_trace
+original_fixture_support_change_trace
+reconstructed_support_ledger
+hidden_support_reconstruction_absent
+same_basin_signature_preserved_under_mapping
+same_label_different_basin_rejected
+proxy_score_relabel_rejected
+configuration_label_only_rejected
+support_reconstruction_as_transfer_rejected
+replay_result
+control_results
+ap4_dependency_status
+ap4_condition_reason
+ap5_dependency_status
+ap5_condition_reason
+claim_ceiling
+unsafe_claim_flags
+```
+
+## Local Ladder
+
+```text
+CT0 = no source-current transfer evidence
+CT1 = declared mapping and pre-transfer basin signature present
+CT2 = source-current post-transfer signature and boundary mapping observed
+CT3 = replay-backed same-basin transfer candidate
+CT4 = control-backed configuration/topology transfer candidate
+CT5 = stress/variant-backed transfer candidate across multiple declared mappings
+CT6 = N28-ready bounded transfer evidence with claim-clean handoff
+```
+
+Rows below `CT3` cannot support transfer. Rows below `CT4` cannot support
+control-backed transfer. Rows below `CT5` cannot support transfer robustness
+across mapping variants. `CT6` is a handoff rung, not an identity or agency
+claim.
+
+Closeout ladder:
+
+```text
+N27-C0 = initialized contract only
+N27-C1 = source inventory and transfer contract admission passed
+N27-C2 = transfer schema and controls frozen
+N27-C3 = active nulls fail closed
+N27-C4 = source-current transfer candidate supported
+N27-C5 = replay/control/stress-backed transfer candidate supported
+N27-C6 = N28-ready bounded transfer closeout
+```
+
+## Claim Boundary
+
+Allowed maximum claim after successful closeout:
+
+```text
+bounded artifact-level configuration/substrate transfer evidence on declared
+LGRC-visible mappings, with unsafe promotions blocked
+```
+
+Blocked claims:
+
+```text
+semantic identity
+semantic choice
+semantic goal ownership
+semantic learning
+agency
+native support
+selfhood
+identity acceptance
+sentience
+organism/life
+ant ecology implementation
+Phase 8 completion
+unscoped multi-basin substrate
+native AP5
+AP5 NAT4 gap resolution
+```
+
+## Initial Expected Structure
+
+```text
+Iteration 1 - Source Inventory And Transfer Contract Admission
+Iteration 2 - Transfer Schema And Control Freeze
+Iteration 3 - Active Nulls And Failure Baselines
+Iteration 4 - Minimal Configuration Transfer Probe
+Iteration 4-A - Topology / Fixture Variant Transfer Probe
+Iteration 4-B - Transfer Side-Effect Observation Probe
+Iteration 5 - Replay And Same-Basin Mapping Matrix
+Iteration 5-A - Artifact-Only Reconstruction Replay Probe
+Iteration 5-B - Transfer Side-Effect Replay Probe
+Iteration 6 - Stress / Mapping-Variant Transfer Matrix
+Iteration 6-A - N28 Precursor Side-Effect Evaluation Matrix
+Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
+Iteration 7-A - N28 Precursor Side-Effect Claim Classification
+Iteration 8 - Closeout And N28 Handoff
+```

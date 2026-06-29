@@ -1,0 +1,195 @@
+{
+  "acceptance_state": "accepted_transfer_side_effect_replay_reconstruction_no_n28_claim",
+  "artifact_id": "n27_transfer_side_effect_replay_probe",
+  "checks": [
+    {
+      "check_id": "i4b_source_available",
+      "detail": "passed",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_replay_passed",
+      "detail": {
+        "artifact_only_reconstruction_passed": true,
+        "artifact_replay_passed": true,
+        "duplicate_replay_created_second_positive_row": false,
+        "duplicate_replay_digest_stable": true,
+        "extractive_trace_digest": "561a3d0ee20c09f7ef64efd6305308617ae200d8c6f040c63b4320591cd37a64",
+        "focal_trace_digest": "72fa9c48fdf488627df3071fd56c9e011423d27dc479870a1fd251fbb26e69a3",
+        "neighbor_trace_digest": "8d7d3ae6d0264d4e6abd8f85ca12637c9fb6f8e627c5f8753ce8e5461a4a0d43",
+        "replay_creates_new_side_effect_evidence": false,
+        "side_effect_summary_digest": "765d2e7ec24da5d9b8d18206eaef1b22b62b5120e816d8bc19ae82ca803caff8",
+        "snapshot_load_replay_passed": true,
+        "source_i4b_row_id": "n27_i4b_row_i4a_transfer_side_effect_observation"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_only_reconstruction_passed",
+      "detail": {
+        "matches_i4b_side_effect_summary_digest": true,
+        "n28_claim_supported": false,
+        "reconstructed_core_digest": "cc09e1213ec1fa03d8e2a16d04549ad2320d278449f9c6d5ce9526b6520efc2d",
+        "reconstructed_from_artifact_roles": [
+          "focal_basin_stability_trace",
+          "neighbor_capacity_trace",
+          "extractive_flattening_trace",
+          "side_effect_summary_trace"
+        ],
+        "source_row_summary_used_as_evidence": false,
+        "trace_id": "n27_i5b_side_effect_artifact_only_reconstruction_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "replay_creates_no_new_side_effect_evidence",
+      "detail": {
+        "artifact_only_reconstruction_passed": true,
+        "artifact_replay_passed": true,
+        "duplicate_replay_created_second_positive_row": false,
+        "duplicate_replay_digest_stable": true,
+        "extractive_trace_digest": "561a3d0ee20c09f7ef64efd6305308617ae200d8c6f040c63b4320591cd37a64",
+        "focal_trace_digest": "72fa9c48fdf488627df3071fd56c9e011423d27dc479870a1fd251fbb26e69a3",
+        "neighbor_trace_digest": "8d7d3ae6d0264d4e6abd8f85ca12637c9fb6f8e627c5f8753ce8e5461a4a0d43",
+        "replay_creates_new_side_effect_evidence": false,
+        "side_effect_summary_digest": "765d2e7ec24da5d9b8d18206eaef1b22b62b5120e816d8bc19ae82ca803caff8",
+        "snapshot_load_replay_passed": true,
+        "source_i4b_row_id": "n27_i4b_row_i4a_transfer_side_effect_observation"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n28_claim_remains_blocked",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "generative_persistence_claim_allowed": false,
+        "n28_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": [],
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "side-effect replay/reconstruction only",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_transfer_side_effect_replay_probe.py",
+  "experiment": "N27",
+  "failed_checks": [],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "5-B",
+  "n28_generative_persistence_supported": false,
+  "n28_readiness_side_effect_replay_supported": true,
+  "output_digest": "3f034af77147172b99e885793b82438285990d46ee364ae95cd801ea6385eef7",
+  "purpose": "Replay and reconstruct I4-B transfer side-effect traces.",
+  "ready_for_iteration_6a_side_effect_evaluation_matrix": true,
+  "replay_row": {
+    "all_artifact_sha256_match_file_contents": true,
+    "artifact_manifest": [
+      {
+        "artifact_role": "side_effect_replay_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_replay_probe_artifacts/side_effect_replay_trace.json",
+        "sha256": "59452054b0b3e837ab4c7bb217aaa5a2744101ea2878208b70c56d5b316d585f"
+      },
+      {
+        "artifact_role": "side_effect_artifact_only_reconstruction_trace",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_replay_probe_artifacts/side_effect_artifact_only_reconstruction_trace.json",
+        "sha256": "15e1da6ae3bba44fe78ceb0812b0be563af49933ea3135a9b7e4f41eb70db852"
+      }
+    ],
+    "claim_ceiling": "N28-ready side-effect replay candidate only",
+    "final_transfer_supported": false,
+    "n28_generative_persistence_supported": false,
+    "n28_readiness_side_effect_replay_supported": true,
+    "reconstruction_trace": {
+      "matches_i4b_side_effect_summary_digest": true,
+      "n28_claim_supported": false,
+      "reconstructed_core_digest": "cc09e1213ec1fa03d8e2a16d04549ad2320d278449f9c6d5ce9526b6520efc2d",
+      "reconstructed_from_artifact_roles": [
+        "focal_basin_stability_trace",
+        "neighbor_capacity_trace",
+        "extractive_flattening_trace",
+        "side_effect_summary_trace"
+      ],
+      "source_row_summary_used_as_evidence": false,
+      "trace_id": "n27_i5b_side_effect_artifact_only_reconstruction_trace"
+    },
+    "reconstruction_trace_digest": "2642f143fc3aa7c730b8699c19dc2d830b5a1170f311734cc3e0555799f3b6aa",
+    "replay_trace": {
+      "n28_generative_persistence_supported": false,
+      "n28_readiness_side_effect_replay_supported": true,
+      "reconstruction_trace_digest": "2642f143fc3aa7c730b8699c19dc2d830b5a1170f311734cc3e0555799f3b6aa",
+      "replay_core": {
+        "artifact_only_reconstruction_passed": true,
+        "artifact_replay_passed": true,
+        "duplicate_replay_created_second_positive_row": false,
+        "duplicate_replay_digest_stable": true,
+        "extractive_trace_digest": "561a3d0ee20c09f7ef64efd6305308617ae200d8c6f040c63b4320591cd37a64",
+        "focal_trace_digest": "72fa9c48fdf488627df3071fd56c9e011423d27dc479870a1fd251fbb26e69a3",
+        "neighbor_trace_digest": "8d7d3ae6d0264d4e6abd8f85ca12637c9fb6f8e627c5f8753ce8e5461a4a0d43",
+        "replay_creates_new_side_effect_evidence": false,
+        "side_effect_summary_digest": "765d2e7ec24da5d9b8d18206eaef1b22b62b5120e816d8bc19ae82ca803caff8",
+        "snapshot_load_replay_passed": true,
+        "source_i4b_row_id": "n27_i4b_row_i4a_transfer_side_effect_observation"
+      },
+      "side_effect_replay_supported": true,
+      "trace_id": "n27_i5b_side_effect_replay_trace"
+    },
+    "replay_trace_digest": "5678d9c69fbc3525067880f5f9c63bd88cdce84fac0619af8ff092db2d933b83",
+    "row_decision": "supported",
+    "row_decision_scope": "n28_precursor_side_effect_replay_only",
+    "row_id": "n27_i5b_row_i4b_side_effect_replay",
+    "side_effect_replay_supported": true,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "generative_persistence_claim_allowed": false,
+      "n28_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "schema_version": "1.0",
+  "source_records": [
+    {
+      "output_digest": "a398c63ae42d5275b4d7ca32a7a7be0f7c88b279b90b8e6bfd495107343e94a0",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_side_effect_observation_probe.json",
+      "sha256": "0655357a33159c49a5be9325c1fe1fa360cd5f3db9d6f36ff93dd6ec80f69a79",
+      "source_id": "n27_i4b_side_effect_observation",
+      "source_role": "source_current_side_effect_observation"
+    }
+  ],
+  "status": "passed",
+  "transfer_side_effect_observation_output_digest": "a398c63ae42d5275b4d7ca32a7a7be0f7c88b279b90b8e6bfd495107343e94a0"
+}

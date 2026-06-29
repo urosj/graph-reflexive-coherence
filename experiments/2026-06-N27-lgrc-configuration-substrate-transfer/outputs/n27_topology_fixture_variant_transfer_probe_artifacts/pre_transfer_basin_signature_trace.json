@@ -1,0 +1,59 @@
+{
+  "basin_label": "basin_signature_variant_B",
+  "basin_label_used_as_evidence": false,
+  "basin_nodes": [
+    "gamma_core",
+    "gamma_left_support",
+    "gamma_right_support",
+    "gamma_outer_boundary"
+  ],
+  "boundary_edges": [
+    [
+      "gamma_core",
+      "gamma_left_support"
+    ],
+    [
+      "gamma_core",
+      "gamma_right_support"
+    ],
+    [
+      "gamma_left_support",
+      "gamma_outer_boundary"
+    ],
+    [
+      "gamma_right_support",
+      "gamma_outer_boundary"
+    ]
+  ],
+  "coherence_by_node": {
+    "gamma_core": 0.952,
+    "gamma_left_support": 0.944,
+    "gamma_outer_boundary": 0.946,
+    "gamma_right_support": 0.94
+  },
+  "fixture_id": "fixture_gamma_branch",
+  "flux_by_edge": {
+    "gamma_core-gamma_left_support": 0.038,
+    "gamma_core-gamma_right_support": 0.034,
+    "gamma_left_support-gamma_outer_boundary": -0.02,
+    "gamma_right_support-gamma_outer_boundary": -0.018
+  },
+  "frame_id": "fixture_gamma_branch_frame",
+  "observation_order": 1,
+  "pre_signature_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d",
+  "signature_vector": {
+    "abs_flux_imbalance": 0.026,
+    "boundary_edge_count": 4,
+    "core_weight": 1.0,
+    "min_coherence": 0.94,
+    "min_support": 0.945,
+    "support_branch_count": 2
+  },
+  "support_by_node": {
+    "gamma_core": 0.955,
+    "gamma_left_support": 0.945,
+    "gamma_outer_boundary": 0.95,
+    "gamma_right_support": 0.948
+  },
+  "trace_id": "n27_i4a_pre_transfer_basin_signature_trace"
+}

@@ -1,0 +1,14 @@
+{
+  "i4_replaced": false,
+  "i4_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+  "i4_transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+  "i4a_replaces_i4": false,
+  "i4a_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+  "i4a_transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+  "mapping_variant_relation": "distinct_topology_fixture_variant_not_i4_replay",
+  "same_fixture_pair_as_i4": false,
+  "same_transfer_scope_as_i4": false,
+  "trace_id": "n27_i4a_variant_comparison_trace",
+  "transfer_core_digest_differs_from_i4": true,
+  "variant_adds_evidence_without_widening_i4": true
+}

@@ -1,0 +1,15 @@
+{
+  "derived_report_only": false,
+  "implementation_patch_opened": false,
+  "observation_order": [
+    "threshold_record_declared",
+    "mapping_declared",
+    "pre_signature_observed",
+    "post_signature_observed",
+    "boundary_support_coherence_flux_evaluated"
+  ],
+  "run_artifact_id": "n27_i4_minimal_configuration_transfer_runtime",
+  "runtime_config_digest": "a67e00cc472ce1b3751a365847e07fd77ad9b346d864b87d79ee3aee960b9cfd",
+  "source_current_trace_kind": "deterministic_configuration_transfer_fixture",
+  "trace_id": "n27_i4_source_current_runtime_trace"
+}

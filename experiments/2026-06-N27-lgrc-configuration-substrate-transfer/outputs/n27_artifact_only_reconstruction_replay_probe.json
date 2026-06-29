@@ -1,0 +1,525 @@
+{
+  "acceptance_state": "accepted_artifact_only_reconstruction_replay_hygiene_for_CT3_candidates_no_new_transfer",
+  "active_nulls_output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+  "artifact_id": "n27_artifact_only_reconstruction_replay_probe",
+  "candidate_rows_classified": true,
+  "checks": [
+    {
+      "check_id": "source_chain_digests_match",
+      "detail": {
+        "i5": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5_replay_matrix_passed",
+      "detail": {
+        "ct3": true,
+        "final": false,
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "two_artifact_only_reconstruction_rows_present",
+      "detail": [
+        "4",
+        "4-A"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_row_body_not_used_for_reconstruction",
+      "detail": [
+        "n27_i5a_row_i4_artifact_only_reconstruction",
+        "n27_i5a_row_i4a_artifact_only_reconstruction"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_sha256_match_file_contents",
+      "detail": [
+        {
+          "mismatches": [],
+          "row_id": "n27_i5a_row_i4_artifact_only_reconstruction"
+        },
+        {
+          "mismatches": [],
+          "row_id": "n27_i5a_row_i4a_artifact_only_reconstruction"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "reconstructed_transfer_core_matches_source_and_i5",
+      "detail": [
+        {
+          "reconstructed": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+          "row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+          "source": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4"
+        },
+        {
+          "reconstructed": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+          "row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+          "source": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_only_reconstruction_digest_stable",
+      "detail": [
+        {
+          "first": "78f6871db877ba52d649e0405fc78728b4f5adf8ada66127f15e19f927b6e940",
+          "row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+          "second": "78f6871db877ba52d649e0405fc78728b4f5adf8ada66127f15e19f927b6e940"
+        },
+        {
+          "first": "adfef65e7ce1e3cd58ebaf585a88a9fdae9a1e6d083a8c1b10cd80a2e8e5ef10",
+          "row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+          "second": "adfef65e7ce1e3cd58ebaf585a88a9fdae9a1e6d083a8c1b10cd80a2e8e5ef10"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "mapping_order_reconstructed",
+      "detail": [
+        {
+          "mapping_declaration_order": 0,
+          "mapping_digest_excludes_outcome": true,
+          "mapping_precedes_pre_and_post_observation": true,
+          "post_observation_order": 2,
+          "pre_observation_order": 1
+        },
+        {
+          "mapping_declaration_order": 0,
+          "mapping_digest_excludes_outcome": true,
+          "mapping_precedes_pre_and_post_observation": true,
+          "post_observation_order": 2,
+          "pre_observation_order": 1
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "same_basin_metrics_reconstructed_cleanly",
+      "detail": [
+        {
+          "boundary_mapping_preserved": true,
+          "coherence_preserved_above_floor": true,
+          "flux_balance_preserved_within_bound": true,
+          "hidden_support_reconstruction_absent": true,
+          "same_basin_signature_preserved_under_mapping": true,
+          "support_preserved_above_floor": true,
+          "support_reconstruction_events": []
+        },
+        {
+          "boundary_mapping_preserved": true,
+          "coherence_preserved_above_floor": true,
+          "flux_balance_preserved_within_bound": true,
+          "hidden_support_reconstruction_absent": true,
+          "same_basin_signature_preserved_under_mapping": true,
+          "support_preserved_above_floor": true,
+          "support_reconstruction_events": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "support_reconstruction_absent",
+      "detail": [
+        "n27_i5a_row_i4_artifact_only_reconstruction",
+        "n27_i5a_row_i4a_artifact_only_reconstruction"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_new_transfer_evidence_created",
+      "detail": [
+        "n27_i5a_row_i4_artifact_only_reconstruction",
+        "n27_i5a_row_i4a_artifact_only_reconstruction"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ct4_ct5_final_remain_blocked",
+      "detail": {
+        "ct4": false,
+        "ct5": false,
+        "final": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        "n27_i5a_row_i4_artifact_only_reconstruction",
+        "n27_i5a_row_i4a_artifact_only_reconstruction"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": {
+        "checked_marker_count": 2
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "artifact-only reconstruction replay hygiene for existing CT3 candidates; no new transfer evidence, CT4, CT5, final transfer, native AP5, Phase 8, or ant ecology claim",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_artifact_only_reconstruction_replay_probe.py",
+  "ct3_replay_hygiene_supported": true,
+  "ct4_or_stronger_supported": false,
+  "ct5_or_stronger_supported": false,
+  "ct6_or_stronger_supported": false,
+  "ct_assignment_scope": "artifact_only_reconstruction_hygiene_for_existing_CT3_candidates",
+  "ct_ladder_rung_assigned": false,
+  "experiment": "N27",
+  "failed_checks": [],
+  "final_transfer_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "5-A",
+  "minimal_configuration_transfer_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+  "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+  "n27_closeout_ladder_rung_assigned": false,
+  "new_transfer_evidence_created": false,
+  "output_digest": "5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36",
+  "positive_transfer_evidence_opened": true,
+  "provisional_ct_ladder_rung": "CT3",
+  "purpose": "Harden I5 by reconstructing the I4 and I4-A transfer cores from artifact files only, without trusting candidate-row summary fields.",
+  "ready_for_iteration_6_stress_mapping_variant_transfer_matrix": true,
+  "reconstruction_row_count": 2,
+  "reconstruction_rows": [
+    {
+      "artifact_manifest": [
+        {
+          "artifact_role": "artifact_only_reconstruction_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_artifact_only_reconstruction_replay_probe_artifacts/n27_i5a_row_i4_artifact_only_reconstruction_artifact_only_reconstruction_trace.json",
+          "sha256": "61199415e35b92cc36552a6a30e0a9efd7ab79055cb9066f9e4198af408b74be"
+        }
+      ],
+      "artifact_only_reconstruction_result": "passed",
+      "artifact_only_reconstruction_trace": {
+        "artifact_only_policy": {
+          "i5_row_used_only_for_replay_context": true,
+          "new_transfer_evidence_created": false,
+          "source_candidate_manifest_used_as_artifact_index": true,
+          "source_candidate_summary_used_only_for_expected_digest": true,
+          "source_row_body_used_for_reconstruction": false
+        },
+        "artifact_roles_loaded": [
+          "transfer_mapping_trace",
+          "pre_transfer_basin_signature_trace",
+          "post_transfer_basin_signature_trace",
+          "boundary_mapping_trace",
+          "support_preservation_trace",
+          "coherence_preservation_trace",
+          "flux_balance_trace",
+          "reconstructed_support_ledger"
+        ],
+        "artifact_sha256_match_file_contents": true,
+        "artifact_sha256_mismatches": [],
+        "ct3_hygiene_supported": true,
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "final_transfer_supported": false,
+        "first_reconstruction_digest": "78f6871db877ba52d649e0405fc78728b4f5adf8ada66127f15e19f927b6e940",
+        "i5_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+        "i5_replay_row_output_digest": "70af2df7a3de98c39bf420c621e6226116476ffbd43e0d445529f3a2b1b89d11",
+        "i5_source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "mapping_order_reconstructed": {
+          "mapping_declaration_order": 0,
+          "mapping_digest_excludes_outcome": true,
+          "mapping_precedes_pre_and_post_observation": true,
+          "post_observation_order": 2,
+          "pre_observation_order": 1
+        },
+        "post_frame_id": "fixture_beta_frame",
+        "pre_frame_id": "fixture_alpha_frame",
+        "reconstructed_core_matches_i5_replay_source": true,
+        "reconstructed_core_matches_source": true,
+        "reconstructed_transfer_core": {
+          "boundary_mapping_digest": "19eda5427b090da77ac54a195c031d249b0645651cb97a232ccebad6c847c358",
+          "coherence_preservation_digest": "baa12fb2139198810beb8bba1d7542776749f137455183cd88fd148dde5ff2ee",
+          "flux_balance_digest": "0baf2b6876a3b767966d725b5613534ed4756e8eb4b5f323f4d3be84de99a34f",
+          "mapping_declared_before_use": true,
+          "mapping_source_backed": true,
+          "post_signature_digest": "cef3d47fa45a4e6c052e9726f33aaafd26d6143f34363c2719aa7841ec04d996",
+          "pre_signature_digest": "735348581363d2ef7d351e858840fc1a61d723836f97b001d3c1cf06c2e88809",
+          "support_preservation_digest": "fd1367c568c54360e257bbd0f44262d9695e42fe6c7eb0c8503a47b8b95e23a8",
+          "transfer_mapping_digest": "5d26566b0ddb52e42b2648277764367f8daaa599a84bc79a1ef542939da7fa12",
+          "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+          "transfer_scope": "configuration"
+        },
+        "reconstructed_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "reconstruction_digest_stable": true,
+        "same_basin_metrics_reconstructed": {
+          "boundary_mapping_preserved": true,
+          "coherence_preserved_above_floor": true,
+          "flux_balance_preserved_within_bound": true,
+          "hidden_support_reconstruction_absent": true,
+          "same_basin_signature_preserved_under_mapping": true,
+          "support_preserved_above_floor": true,
+          "support_reconstruction_events": []
+        },
+        "same_frame_movement_claimed": false,
+        "second_reconstruction_digest": "78f6871db877ba52d649e0405fc78728b4f5adf8ada66127f15e19f927b6e940",
+        "source_iteration": "4",
+        "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+        "source_row_id": "n27_i4_row_01_minimal_configuration_transfer_probe",
+        "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "trace_id": "n27_i5a_i4_artifact_only_reconstruction_trace"
+      },
+      "artifact_only_reconstruction_trace_digest": "c620888076368e83d52ec287abba9ce7d3c68a7faade5fe2c93ceb83dec0d83d",
+      "claim_ceiling": "artifact-only CT3 replay hygiene; no new transfer evidence, CT4, CT5, final transfer, semantic identity, native support, native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology claim",
+      "ct_ladder_rung": "CT3",
+      "final_transfer_supported": false,
+      "i5_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+      "i5_replay_row_output_digest": "70af2df7a3de98c39bf420c621e6226116476ffbd43e0d445529f3a2b1b89d11",
+      "iteration": "5-A",
+      "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+      "replay_hygiene_role": "artifact_only_reconstruction_of_existing_CT3_candidate",
+      "row_decision": "supported",
+      "row_decision_scope": "artifact_only_reconstruction_replay_hygiene_no_new_transfer",
+      "row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+      "source_iteration": "4",
+      "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+      "source_row_id": "n27_i4_row_01_minimal_configuration_transfer_probe",
+      "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+      "transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+      "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+      "transfer_scope": "configuration",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "artifact_manifest": [
+        {
+          "artifact_role": "artifact_only_reconstruction_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_artifact_only_reconstruction_replay_probe_artifacts/n27_i5a_row_i4a_artifact_only_reconstruction_artifact_only_reconstruction_trace.json",
+          "sha256": "6f74e9f77b7614e43d0ba4bb80d9e012824ab077dfe505c65ca4630a04433aa9"
+        }
+      ],
+      "artifact_only_reconstruction_result": "passed",
+      "artifact_only_reconstruction_trace": {
+        "artifact_only_policy": {
+          "i5_row_used_only_for_replay_context": true,
+          "new_transfer_evidence_created": false,
+          "source_candidate_manifest_used_as_artifact_index": true,
+          "source_candidate_summary_used_only_for_expected_digest": true,
+          "source_row_body_used_for_reconstruction": false
+        },
+        "artifact_roles_loaded": [
+          "transfer_mapping_trace",
+          "pre_transfer_basin_signature_trace",
+          "post_transfer_basin_signature_trace",
+          "boundary_mapping_trace",
+          "support_preservation_trace",
+          "coherence_preservation_trace",
+          "flux_balance_trace",
+          "reconstructed_support_ledger"
+        ],
+        "artifact_sha256_match_file_contents": true,
+        "artifact_sha256_mismatches": [],
+        "ct3_hygiene_supported": true,
+        "ct4_or_stronger_supported": false,
+        "ct5_or_stronger_supported": false,
+        "final_transfer_supported": false,
+        "first_reconstruction_digest": "adfef65e7ce1e3cd58ebaf585a88a9fdae9a1e6d083a8c1b10cd80a2e8e5ef10",
+        "i5_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+        "i5_replay_row_output_digest": "39f5e96a62ef88afc4a87ea53d174454bc41c6e9944f1d5c7a3e5f0bf0a4a9c6",
+        "i5_source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "mapping_order_reconstructed": {
+          "mapping_declaration_order": 0,
+          "mapping_digest_excludes_outcome": true,
+          "mapping_precedes_pre_and_post_observation": true,
+          "post_observation_order": 2,
+          "pre_observation_order": 1
+        },
+        "post_frame_id": "fixture_delta_folded_frame",
+        "pre_frame_id": "fixture_gamma_branch_frame",
+        "reconstructed_core_matches_i5_replay_source": true,
+        "reconstructed_core_matches_source": true,
+        "reconstructed_transfer_core": {
+          "boundary_mapping_digest": "736fe3a67e490eef260a4df6a2ddb4878a367878e11255192cecf315e01f590a",
+          "coherence_preservation_digest": "9abe65db46b69073ac89c90a64938cf346779528ff61cfb7db2b0de5ab2032cc",
+          "flux_balance_digest": "94a4707068312dcfe0e3c8d7974a2a26e08c205c84937412e6203a10d3b05c87",
+          "mapping_declared_before_use": true,
+          "mapping_source_backed": true,
+          "post_signature_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+          "pre_signature_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d",
+          "support_preservation_digest": "15460a54077e5e7a1a27087c6da7febbd2c4a2700160a2329357c6a688d61baa",
+          "transfer_mapping_digest": "71c0287ccc4e785d629d4415f9e6b58d5d7d280cbde7d5b8e17d91fe7cff2636",
+          "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+          "transfer_scope": "topology"
+        },
+        "reconstructed_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "reconstruction_digest_stable": true,
+        "same_basin_metrics_reconstructed": {
+          "boundary_mapping_preserved": true,
+          "coherence_preserved_above_floor": true,
+          "flux_balance_preserved_within_bound": true,
+          "hidden_support_reconstruction_absent": true,
+          "same_basin_signature_preserved_under_mapping": true,
+          "support_preserved_above_floor": true,
+          "support_reconstruction_events": []
+        },
+        "same_frame_movement_claimed": false,
+        "second_reconstruction_digest": "adfef65e7ce1e3cd58ebaf585a88a9fdae9a1e6d083a8c1b10cd80a2e8e5ef10",
+        "source_iteration": "4-A",
+        "source_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+        "source_row_id": "n27_i4a_row_01_topology_fixture_variant_transfer_probe",
+        "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "trace_id": "n27_i5a_i4a_artifact_only_reconstruction_trace"
+      },
+      "artifact_only_reconstruction_trace_digest": "88b8e8237b2f4064390353875717153c146c3a36b47dd8450027ee8cecab8a15",
+      "claim_ceiling": "artifact-only CT3 replay hygiene; no new transfer evidence, CT4, CT5, final transfer, semantic identity, native support, native AP5, AP5 NAT4-gap resolution, Phase 8, or ant ecology claim",
+      "ct_ladder_rung": "CT3",
+      "final_transfer_supported": false,
+      "i5_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+      "i5_replay_row_output_digest": "39f5e96a62ef88afc4a87ea53d174454bc41c6e9944f1d5c7a3e5f0bf0a4a9c6",
+      "iteration": "5-A",
+      "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+      "replay_hygiene_role": "artifact_only_reconstruction_of_existing_CT3_candidate",
+      "row_decision": "supported",
+      "row_decision_scope": "artifact_only_reconstruction_replay_hygiene_no_new_transfer",
+      "row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+      "source_iteration": "4-A",
+      "source_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "source_row_id": "n27_i4a_row_01_topology_fixture_variant_transfer_probe",
+      "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+      "transfer_scope": "topology",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "replay_same_basin_mapping_output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+  "schema_version": "1.0",
+  "source_inventory_output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_source_inventory_transfer_contract_admission_no_positive_evidence",
+      "artifact_id": "n27_source_inventory_and_transfer_contract_admission",
+      "exists": true,
+      "output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_source_inventory_and_transfer_contract_admission.json",
+      "sha256": "6f5bd7ad1ff13ddad0f33d699338aec0103154122cc56c36bc8d065498cf0664",
+      "source_id": "n27_i1_source_inventory",
+      "source_role": "source_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_transfer_schema_and_controls_frozen_no_positive_evidence",
+      "artifact_id": "n27_transfer_schema_and_controls",
+      "exists": true,
+      "output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_schema_and_controls.json",
+      "sha256": "82ba16b1ea4d0ca3dab3b96581aa8f4378e405ef03dfef2f03babe5d1eda9c43",
+      "source_id": "n27_i2_transfer_schema",
+      "source_role": "schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_transfer_evidence",
+      "artifact_id": "n27_active_nulls_and_failure_baselines",
+      "exists": true,
+      "output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_active_nulls_and_failure_baselines.json",
+      "sha256": "471e4766cbcd8b0cb38e251d581ca9829d175e16e842e94b396e50682a5bec3b",
+      "source_id": "n27_i3_active_nulls",
+      "source_role": "active_null_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_CT2_candidate_pending_replay_controls",
+      "artifact_id": "n27_minimal_configuration_transfer_probe",
+      "exists": true,
+      "output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe.json",
+      "sha256": "3fe8b091b55e8c924b86c027692a30e7ad19a973cb23b32ef87db55240188d35",
+      "source_id": "n27_i4_minimal_transfer",
+      "source_role": "minimal_transfer_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_topology_fixture_variant_CT2_candidate_pending_replay_controls",
+      "artifact_id": "n27_topology_fixture_variant_transfer_probe",
+      "exists": true,
+      "output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe.json",
+      "sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+      "source_id": "n27_i4a_topology_fixture_variant",
+      "source_role": "topology_fixture_variant_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_same_basin_mapping_matrix_CT3_candidates_pending_controls_stress",
+      "artifact_id": "n27_replay_same_basin_mapping_matrix",
+      "exists": true,
+      "output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix.json",
+      "sha256": "4befc7a401c44724cb2d11d66c5e99a095d4349d1c0451248715b44e982e0674",
+      "source_id": "n27_i5_replay_same_basin_mapping",
+      "source_role": "replay_same_basin_mapping_matrix",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "topology_fixture_variant_transfer_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+  "transfer_schema_output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22"
+}

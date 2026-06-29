@@ -1,0 +1,30 @@
+{
+  "ct5_supported": true,
+  "ct6_supported": true,
+  "final_transfer_supported": true,
+  "i7_ct_classification_output_digest": "d25a2490345a25e41c76f76afecbd267d3dba77e3d2b0fdf6b3f8c256ccaa08c",
+  "i7a_n28_precursor_output_digest": "10a4ca23ea7c111a6de53fd2c5b27d30cd75063ef7c7304cad46010776362fbb",
+  "n28_generative_persistence_supported": false,
+  "n28_precursor_evaluation_supported": true,
+  "trace_id": "n27_i8_closeout_trace",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "ap5_nat4_gap_resolution_claim_allowed": false,
+    "generative_persistence_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "n28_generative_persistence_claim_allowed": false,
+    "native_ap5_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_identity_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "semantic_target_ownership_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false,
+    "unscoped_multi_basin_claim_allowed": false
+  }
+}

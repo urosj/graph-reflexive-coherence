@@ -1,0 +1,1277 @@
+{
+  "acceptance_state": "accepted_stress_mapping_variant_candidate_pending_i7_controls_no_final_transfer",
+  "active_nulls_output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+  "artifact_id": "n27_stress_mapping_variant_transfer_matrix",
+  "artifact_only_reconstruction_replay_output_digest": "5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36",
+  "candidate_rows_classified": true,
+  "checks": [
+    {
+      "check_id": "source_chain_digests_match",
+      "detail": {
+        "i5": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+        "i5a": "5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5_and_i5a_ready_for_stress",
+      "detail": {
+        "i5_ct3": true,
+        "i5_status": "passed",
+        "i5a_hygiene": true,
+        "i5a_status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "stress_rows_cover_i4_and_i4a_separately",
+      "detail": [
+        "4",
+        "4-A"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "stress_policy_declared_before_use",
+      "detail": {
+        "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+        "declaration_order": 0,
+        "declared_before_use": true,
+        "pass_rule": "all residual margins must remain greater than or equal to zero",
+        "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+        "stress_rows": [
+          {
+            "boundary_margin_cost": 0.05,
+            "coherence_margin_cost": 0.0,
+            "flux_margin_cost": 0.0,
+            "stress_id": "boundary_tightening_0_05",
+            "support_margin_cost": 0.0
+          },
+          {
+            "boundary_margin_cost": 0.0,
+            "coherence_margin_cost": 0.0,
+            "flux_margin_cost": 0.0,
+            "stress_id": "support_drawdown_0_008",
+            "support_margin_cost": 0.008
+          },
+          {
+            "boundary_margin_cost": 0.0,
+            "coherence_margin_cost": 0.012,
+            "flux_margin_cost": 0.0,
+            "stress_id": "coherence_drawdown_0_012",
+            "support_margin_cost": 0.0
+          },
+          {
+            "boundary_margin_cost": 0.0,
+            "coherence_margin_cost": 0.0,
+            "flux_margin_cost": 0.02,
+            "stress_id": "flux_pressure_0_02",
+            "support_margin_cost": 0.0
+          },
+          {
+            "boundary_margin_cost": 0.03,
+            "coherence_margin_cost": 0.006,
+            "flux_margin_cost": 0.01,
+            "stress_id": "combined_moderate_mapping_stress",
+            "support_margin_cost": 0.005
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i4_boundary_at_floor_exposed",
+      "detail": [
+        {
+          "artifact_manifest": [
+            {
+              "artifact_role": "stress_variant_trace",
+              "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_stress_variant_trace.json",
+              "sha256": "8549e3fd2f73916e688f53dbf6bc5a2a04c92de92900c913a4c8be0442068798"
+            },
+            {
+              "artifact_role": "control_trace",
+              "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_control_trace.json",
+              "sha256": "b0e98b18095bdc92b125dc67ce91f0fdc37416c96463b798fe8bf3752797369f"
+            }
+          ],
+          "base_margins": {
+            "boundary": 0.0,
+            "coherence": 0.02,
+            "flux": 0.025,
+            "signature": 0.035,
+            "support": 0.01
+          },
+          "claim_ceiling": "stress/variant evidence over an existing CT3 candidate; CT5 ladder assignment remains pending I7 controls and final transfer remains blocked",
+          "control_trace": {
+            "ct5_assignment_allowed_before_i7_controls": false,
+            "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+            "stress_variant_failure_control_meaning": "stress blocker triggered and stronger stress claim was rejected",
+            "stress_variant_failure_control_status": "failed_closed",
+            "trace_id": "n27_i6_i4_stress_control_trace",
+            "trace_scope": "stress_control_trace_only_not_full_i7_control_matrix"
+          },
+          "control_trace_digest": "d4ae47e9f97b0636749875bd8e77d5a702f828217de5aff1f83afc0c216302c5",
+          "ct5_assignment_allowed": false,
+          "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+          "ct5_stress_variant_candidate_supported": false,
+          "ct_ladder_rung": "CT3_stress_limited",
+          "final_transfer_supported": false,
+          "iteration": "6",
+          "new_transfer_evidence_created": false,
+          "row_decision": "partial",
+          "row_decision_scope": "replay_backed_candidate_stress_limited_by_declared_margin",
+          "row_id": "n27_i6_row_i4_stress_mapping_variant",
+          "source_iteration": "4",
+          "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+          "source_reconstruction_row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+          "source_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+          "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+          "stress_failure_mode": "declared_stress_exceeds_available_margin",
+          "stress_trace": {
+            "all_stress_rows_passed": false,
+            "artifact_only_reconstruction_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+            "base_margins": {
+              "boundary": 0.0,
+              "coherence": 0.02,
+              "flux": 0.025,
+              "signature": 0.035,
+              "support": 0.01
+            },
+            "baseline_boundary_at_floor": true,
+            "failed_stress_ids": [
+              "boundary_tightening_0_05",
+              "combined_moderate_mapping_stress"
+            ],
+            "new_transfer_evidence_created": false,
+            "source_iteration": "4",
+            "source_reconstruction_row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+            "source_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+            "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+            "stress_failure_mode": "declared_stress_exceeds_available_margin",
+            "stress_policy": {
+              "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+              "declaration_order": 0,
+              "declared_before_use": true,
+              "pass_rule": "all residual margins must remain greater than or equal to zero",
+              "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+              "stress_rows": [
+                {
+                  "boundary_margin_cost": 0.05,
+                  "coherence_margin_cost": 0.0,
+                  "flux_margin_cost": 0.0,
+                  "stress_id": "boundary_tightening_0_05",
+                  "support_margin_cost": 0.0
+                },
+                {
+                  "boundary_margin_cost": 0.0,
+                  "coherence_margin_cost": 0.0,
+                  "flux_margin_cost": 0.0,
+                  "stress_id": "support_drawdown_0_008",
+                  "support_margin_cost": 0.008
+                },
+                {
+                  "boundary_margin_cost": 0.0,
+                  "coherence_margin_cost": 0.012,
+                  "flux_margin_cost": 0.0,
+                  "stress_id": "coherence_drawdown_0_012",
+                  "support_margin_cost": 0.0
+                },
+                {
+                  "boundary_margin_cost": 0.0,
+                  "coherence_margin_cost": 0.0,
+                  "flux_margin_cost": 0.02,
+                  "stress_id": "flux_pressure_0_02",
+                  "support_margin_cost": 0.0
+                },
+                {
+                  "boundary_margin_cost": 0.03,
+                  "coherence_margin_cost": 0.006,
+                  "flux_margin_cost": 0.01,
+                  "stress_id": "combined_moderate_mapping_stress",
+                  "support_margin_cost": 0.005
+                }
+              ]
+            },
+            "stress_results": [
+              {
+                "failed_axes": [
+                  "boundary"
+                ],
+                "residual_margins": {
+                  "boundary": -0.05,
+                  "coherence": 0.02,
+                  "flux": 0.025,
+                  "signature": 0.035,
+                  "support": 0.01
+                },
+                "stress_costs": {
+                  "boundary": 0.05,
+                  "coherence": 0.0,
+                  "flux": 0.0,
+                  "support": 0.0
+                },
+                "stress_id": "boundary_tightening_0_05",
+                "stress_passed": false
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.0,
+                  "coherence": 0.02,
+                  "flux": 0.025,
+                  "signature": 0.035,
+                  "support": 0.002
+                },
+                "stress_costs": {
+                  "boundary": 0.0,
+                  "coherence": 0.0,
+                  "flux": 0.0,
+                  "support": 0.008
+                },
+                "stress_id": "support_drawdown_0_008",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.0,
+                  "coherence": 0.008,
+                  "flux": 0.025,
+                  "signature": 0.035,
+                  "support": 0.01
+                },
+                "stress_costs": {
+                  "boundary": 0.0,
+                  "coherence": 0.012,
+                  "flux": 0.0,
+                  "support": 0.0
+                },
+                "stress_id": "coherence_drawdown_0_012",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.0,
+                  "coherence": 0.02,
+                  "flux": 0.005,
+                  "signature": 0.035,
+                  "support": 0.01
+                },
+                "stress_costs": {
+                  "boundary": 0.0,
+                  "coherence": 0.0,
+                  "flux": 0.02,
+                  "support": 0.0
+                },
+                "stress_id": "flux_pressure_0_02",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [
+                  "boundary"
+                ],
+                "residual_margins": {
+                  "boundary": -0.03,
+                  "coherence": 0.014,
+                  "flux": 0.015,
+                  "signature": 0.035,
+                  "support": 0.005
+                },
+                "stress_costs": {
+                  "boundary": 0.03,
+                  "coherence": 0.006,
+                  "flux": 0.01,
+                  "support": 0.005
+                },
+                "stress_id": "combined_moderate_mapping_stress",
+                "stress_passed": false
+              }
+            ],
+            "stress_variant_trace_role": "stress_existing_replay_backed_transfer_candidate",
+            "trace_id": "n27_i6_i4_stress_variant_trace",
+            "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+            "transfer_scope": "configuration"
+          },
+          "stress_trace_digest": "880b35b9438ef0b1723af6bd7aa08f671ca9618a16cb49d159a042e8e1d14665",
+          "transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+          "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+          "transfer_scope": "configuration",
+          "unsafe_claim_flags": {
+            "agency_claim_allowed": false,
+            "ant_ecology_claim_allowed": false,
+            "ap5_nat4_gap_resolution_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "native_ap5_claim_allowed": false,
+            "native_support_claim_allowed": false,
+            "organism_life_claim_allowed": false,
+            "phase8_completion_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "semantic_goal_claim_allowed": false,
+            "semantic_identity_claim_allowed": false,
+            "semantic_learning_claim_allowed": false,
+            "semantic_target_ownership_claim_allowed": false,
+            "sentience_claim_allowed": false,
+            "unrestricted_autonomy_claim_allowed": false,
+            "unscoped_multi_basin_claim_allowed": false
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i4a_passes_declared_stress_envelope",
+      "detail": [
+        {
+          "artifact_manifest": [
+            {
+              "artifact_role": "stress_variant_trace",
+              "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_stress_variant_trace.json",
+              "sha256": "f4d4aaed32d7d6b97033bc46bc805f51a7c262355794138b58a70dd580f10fb5"
+            },
+            {
+              "artifact_role": "control_trace",
+              "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_control_trace.json",
+              "sha256": "57c458331ed7e317c14330f2bcd4fd9d69242551bedb126f13c13697141804a0"
+            }
+          ],
+          "base_margins": {
+            "boundary": 0.1,
+            "coherence": 0.025,
+            "flux": 0.028,
+            "signature": 0.04,
+            "support": 0.015
+          },
+          "claim_ceiling": "stress/variant evidence over an existing CT3 candidate; CT5 ladder assignment remains pending I7 controls and final transfer remains blocked",
+          "control_trace": {
+            "ct5_assignment_allowed_before_i7_controls": false,
+            "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+            "stress_variant_failure_control_meaning": "stress envelope passed",
+            "stress_variant_failure_control_status": "passed",
+            "trace_id": "n27_i6_i4a_stress_control_trace",
+            "trace_scope": "stress_control_trace_only_not_full_i7_control_matrix"
+          },
+          "control_trace_digest": "0d137463e44d3614be523dbccb09fa47017f8b07ca222943b9274cedb8c35deb",
+          "ct5_assignment_allowed": false,
+          "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+          "ct5_stress_variant_candidate_supported": true,
+          "ct_ladder_rung": "CT5_candidate_pending_controls",
+          "final_transfer_supported": false,
+          "iteration": "6",
+          "new_transfer_evidence_created": false,
+          "row_decision": "supported",
+          "row_decision_scope": "bounded_stress_variant_candidate_pending_i7_controls",
+          "row_id": "n27_i6_row_i4a_stress_mapping_variant",
+          "source_iteration": "4-A",
+          "source_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+          "source_reconstruction_row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+          "source_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+          "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+          "stress_failure_mode": "none",
+          "stress_trace": {
+            "all_stress_rows_passed": true,
+            "artifact_only_reconstruction_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+            "base_margins": {
+              "boundary": 0.1,
+              "coherence": 0.025,
+              "flux": 0.028,
+              "signature": 0.04,
+              "support": 0.015
+            },
+            "baseline_boundary_at_floor": false,
+            "failed_stress_ids": [],
+            "new_transfer_evidence_created": false,
+            "source_iteration": "4-A",
+            "source_reconstruction_row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+            "source_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+            "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+            "stress_failure_mode": "none",
+            "stress_policy": {
+              "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+              "declaration_order": 0,
+              "declared_before_use": true,
+              "pass_rule": "all residual margins must remain greater than or equal to zero",
+              "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+              "stress_rows": [
+                {
+                  "boundary_margin_cost": 0.05,
+                  "coherence_margin_cost": 0.0,
+                  "flux_margin_cost": 0.0,
+                  "stress_id": "boundary_tightening_0_05",
+                  "support_margin_cost": 0.0
+                },
+                {
+                  "boundary_margin_cost": 0.0,
+                  "coherence_margin_cost": 0.0,
+                  "flux_margin_cost": 0.0,
+                  "stress_id": "support_drawdown_0_008",
+                  "support_margin_cost": 0.008
+                },
+                {
+                  "boundary_margin_cost": 0.0,
+                  "coherence_margin_cost": 0.012,
+                  "flux_margin_cost": 0.0,
+                  "stress_id": "coherence_drawdown_0_012",
+                  "support_margin_cost": 0.0
+                },
+                {
+                  "boundary_margin_cost": 0.0,
+                  "coherence_margin_cost": 0.0,
+                  "flux_margin_cost": 0.02,
+                  "stress_id": "flux_pressure_0_02",
+                  "support_margin_cost": 0.0
+                },
+                {
+                  "boundary_margin_cost": 0.03,
+                  "coherence_margin_cost": 0.006,
+                  "flux_margin_cost": 0.01,
+                  "stress_id": "combined_moderate_mapping_stress",
+                  "support_margin_cost": 0.005
+                }
+              ]
+            },
+            "stress_results": [
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.05,
+                  "coherence": 0.025,
+                  "flux": 0.028,
+                  "signature": 0.04,
+                  "support": 0.015
+                },
+                "stress_costs": {
+                  "boundary": 0.05,
+                  "coherence": 0.0,
+                  "flux": 0.0,
+                  "support": 0.0
+                },
+                "stress_id": "boundary_tightening_0_05",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.1,
+                  "coherence": 0.025,
+                  "flux": 0.028,
+                  "signature": 0.04,
+                  "support": 0.007
+                },
+                "stress_costs": {
+                  "boundary": 0.0,
+                  "coherence": 0.0,
+                  "flux": 0.0,
+                  "support": 0.008
+                },
+                "stress_id": "support_drawdown_0_008",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.1,
+                  "coherence": 0.013,
+                  "flux": 0.028,
+                  "signature": 0.04,
+                  "support": 0.015
+                },
+                "stress_costs": {
+                  "boundary": 0.0,
+                  "coherence": 0.012,
+                  "flux": 0.0,
+                  "support": 0.0
+                },
+                "stress_id": "coherence_drawdown_0_012",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.1,
+                  "coherence": 0.025,
+                  "flux": 0.008,
+                  "signature": 0.04,
+                  "support": 0.015
+                },
+                "stress_costs": {
+                  "boundary": 0.0,
+                  "coherence": 0.0,
+                  "flux": 0.02,
+                  "support": 0.0
+                },
+                "stress_id": "flux_pressure_0_02",
+                "stress_passed": true
+              },
+              {
+                "failed_axes": [],
+                "residual_margins": {
+                  "boundary": 0.07,
+                  "coherence": 0.019,
+                  "flux": 0.018,
+                  "signature": 0.04,
+                  "support": 0.01
+                },
+                "stress_costs": {
+                  "boundary": 0.03,
+                  "coherence": 0.006,
+                  "flux": 0.01,
+                  "support": 0.005
+                },
+                "stress_id": "combined_moderate_mapping_stress",
+                "stress_passed": true
+              }
+            ],
+            "stress_variant_trace_role": "stress_existing_replay_backed_transfer_candidate",
+            "trace_id": "n27_i6_i4a_stress_variant_trace",
+            "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+            "transfer_scope": "topology"
+          },
+          "stress_trace_digest": "fc7b9534b4aab5fa03982d569e5e6124e35c4f32f798234c9017d7554cf1c8b8",
+          "transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+          "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+          "transfer_scope": "topology",
+          "unsafe_claim_flags": {
+            "agency_claim_allowed": false,
+            "ant_ecology_claim_allowed": false,
+            "ap5_nat4_gap_resolution_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "native_ap5_claim_allowed": false,
+            "native_support_claim_allowed": false,
+            "organism_life_claim_allowed": false,
+            "phase8_completion_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "semantic_goal_claim_allowed": false,
+            "semantic_identity_claim_allowed": false,
+            "semantic_learning_claim_allowed": false,
+            "semantic_target_ownership_claim_allowed": false,
+            "sentience_claim_allowed": false,
+            "unrestricted_autonomy_claim_allowed": false,
+            "unscoped_multi_basin_claim_allowed": false
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "stress_variant_evidence_does_not_create_new_transfer",
+      "detail": [
+        "n27_i6_row_i4_stress_mapping_variant",
+        "n27_i6_row_i4a_stress_mapping_variant"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "stress_artifact_sha256_match_file_contents",
+      "detail": [
+        "n27_i6_row_i4_stress_mapping_variant",
+        "n27_i6_row_i4a_stress_mapping_variant"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ct5_assignment_deferred_until_i7_controls",
+      "detail": {
+        "allowed": false,
+        "blocker": "full_control_trace_pending_iteration_7",
+        "candidate": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "final_transfer_remains_blocked",
+      "detail": {
+        "final_transfer_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        "n27_i6_row_i4_stress_mapping_variant",
+        "n27_i6_row_i4a_stress_mapping_variant"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": {
+        "checked_marker_count": 2
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "bounded stress/variant evidence candidate pending I7 controls; final transfer, native AP5, AP5 NAT4-gap resolution, Phase 8, and ant ecology remain blocked",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "ap5_nat4_gap_resolution_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_identity_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "semantic_target_ownership_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false,
+      "unscoped_multi_basin_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_stress_mapping_variant_transfer_matrix.py",
+  "ct3_replay_candidate_supported": true,
+  "ct5_assignment_allowed": false,
+  "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+  "ct5_or_stronger_supported": false,
+  "ct5_stress_variant_candidate_supported": true,
+  "ct6_or_stronger_supported": false,
+  "ct_assignment_scope": "stress_variant_candidate_pending_i7_controls_and_closeout",
+  "ct_ladder_rung_assigned": false,
+  "experiment": "N27",
+  "failed_checks": [],
+  "final_transfer_supported": false,
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "6",
+  "iteration_7_handoff": {
+    "handoff_status": "ready_for_full_controls_ap_dependency_claim_classification",
+    "i4_consumption": {
+      "consume_as": "CT3_replay_backed_stress_limited_candidate",
+      "ct5_contribution_allowed": false,
+      "demote_below_ct3_without_new_control_failure": false,
+      "source_iteration": "4"
+    },
+    "i4a_consumption": {
+      "consume_as": "CT5_candidate_evidence_pending_i7_controls",
+      "ct5_assignment_allowed_before_i7": false,
+      "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+      "source_iteration": "4-A"
+    },
+    "i6_control_trace_scope": "stress_control_trace_only_not_full_i7_control_matrix",
+    "required_i7_validations": [
+      "all_frozen_controls_run_or_explicitly_not_applicable",
+      "failed_open_controls_equal_zero",
+      "same_label_movement_proxy_relabel_support_reconstruction_controls_clean",
+      "n26_not_counted_as_transfer_evidence",
+      "n25_2_not_directly_consumed",
+      "ap4_ap5_row_local_statuses_valid",
+      "native_ap5_and_ap5_nat4_gap_resolution_blocked",
+      "semantic_identity_native_support_phase8_ant_ecology_claims_false"
+    ]
+  },
+  "minimal_configuration_transfer_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+  "n27_closeout_ceiling": "N27-C4_source_current_transfer_candidate_supported",
+  "n27_closeout_ladder_rung_assigned": false,
+  "new_transfer_evidence_created": false,
+  "output_digest": "3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a",
+  "positive_transfer_evidence_opened": true,
+  "provisional_ct_ladder_rung": "CT5_candidate_pending_controls",
+  "purpose": "Stress replay-backed CT3 transfer candidates across boundary, support, coherence, flux, and mapping-variant pressure while preserving claim ceilings.",
+  "ready_for_iteration_7_controls_ap_dependency_claim_classification": true,
+  "replay_same_basin_mapping_output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+  "schema_version": "1.0",
+  "source_inventory_output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_source_inventory_transfer_contract_admission_no_positive_evidence",
+      "artifact_id": "n27_source_inventory_and_transfer_contract_admission",
+      "exists": true,
+      "output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_source_inventory_and_transfer_contract_admission.json",
+      "sha256": "6f5bd7ad1ff13ddad0f33d699338aec0103154122cc56c36bc8d065498cf0664",
+      "source_id": "n27_i1_source_inventory",
+      "source_role": "source_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_transfer_schema_and_controls_frozen_no_positive_evidence",
+      "artifact_id": "n27_transfer_schema_and_controls",
+      "exists": true,
+      "output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_transfer_schema_and_controls.json",
+      "sha256": "82ba16b1ea4d0ca3dab3b96581aa8f4378e405ef03dfef2f03babe5d1eda9c43",
+      "source_id": "n27_i2_transfer_schema",
+      "source_role": "schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_transfer_evidence",
+      "artifact_id": "n27_active_nulls_and_failure_baselines",
+      "exists": true,
+      "output_digest": "2ef877fbbd8a66ca858a28d9deaf8ec84dbaf4529471920a90623499a2d4ebe3",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_active_nulls_and_failure_baselines.json",
+      "sha256": "471e4766cbcd8b0cb38e251d581ca9829d175e16e842e94b396e50682a5bec3b",
+      "source_id": "n27_i3_active_nulls",
+      "source_role": "active_null_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_CT2_candidate_pending_replay_controls",
+      "artifact_id": "n27_minimal_configuration_transfer_probe",
+      "exists": true,
+      "output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe.json",
+      "sha256": "3fe8b091b55e8c924b86c027692a30e7ad19a973cb23b32ef87db55240188d35",
+      "source_id": "n27_i4_minimal_transfer",
+      "source_role": "minimal_transfer_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_topology_fixture_variant_CT2_candidate_pending_replay_controls",
+      "artifact_id": "n27_topology_fixture_variant_transfer_probe",
+      "exists": true,
+      "output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe.json",
+      "sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+      "source_id": "n27_i4a_topology_fixture_variant",
+      "source_role": "topology_fixture_variant_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_same_basin_mapping_matrix_CT3_candidates_pending_controls_stress",
+      "artifact_id": "n27_replay_same_basin_mapping_matrix",
+      "exists": true,
+      "output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix.json",
+      "sha256": "4befc7a401c44724cb2d11d66c5e99a095d4349d1c0451248715b44e982e0674",
+      "source_id": "n27_i5_replay_same_basin_mapping",
+      "source_role": "replay_same_basin_mapping_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_artifact_only_reconstruction_replay_hygiene_for_CT3_candidates_no_new_transfer",
+      "artifact_id": "n27_artifact_only_reconstruction_replay_probe",
+      "exists": true,
+      "output_digest": "5cba66c4ac1d1c855fc830ac1bbe274e209a08aef8faf884f1b1576512b6de36",
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_artifact_only_reconstruction_replay_probe.json",
+      "sha256": "f25a2e8186ad075d42dd3196b796a0bb22595e4e6a083a8424266fcece92441b",
+      "source_id": "n27_i5a_artifact_only_reconstruction",
+      "source_role": "artifact_only_reconstruction_hygiene",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "stress_matrix_summary": {
+    "candidate_count": 2,
+    "full_matrix_broad_stress_support": false,
+    "i4_boundary_at_floor_exposed": true,
+    "i4a_topology_variant_stress_candidate_supported": true,
+    "stress_limited_count": 1,
+    "stress_pass_count": 1
+  },
+  "stress_policy": {
+    "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+    "declaration_order": 0,
+    "declared_before_use": true,
+    "pass_rule": "all residual margins must remain greater than or equal to zero",
+    "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+    "stress_rows": [
+      {
+        "boundary_margin_cost": 0.05,
+        "coherence_margin_cost": 0.0,
+        "flux_margin_cost": 0.0,
+        "stress_id": "boundary_tightening_0_05",
+        "support_margin_cost": 0.0
+      },
+      {
+        "boundary_margin_cost": 0.0,
+        "coherence_margin_cost": 0.0,
+        "flux_margin_cost": 0.0,
+        "stress_id": "support_drawdown_0_008",
+        "support_margin_cost": 0.008
+      },
+      {
+        "boundary_margin_cost": 0.0,
+        "coherence_margin_cost": 0.012,
+        "flux_margin_cost": 0.0,
+        "stress_id": "coherence_drawdown_0_012",
+        "support_margin_cost": 0.0
+      },
+      {
+        "boundary_margin_cost": 0.0,
+        "coherence_margin_cost": 0.0,
+        "flux_margin_cost": 0.02,
+        "stress_id": "flux_pressure_0_02",
+        "support_margin_cost": 0.0
+      },
+      {
+        "boundary_margin_cost": 0.03,
+        "coherence_margin_cost": 0.006,
+        "flux_margin_cost": 0.01,
+        "stress_id": "combined_moderate_mapping_stress",
+        "support_margin_cost": 0.005
+      }
+    ]
+  },
+  "stress_rows": [
+    {
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_variant_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_stress_variant_trace.json",
+          "sha256": "8549e3fd2f73916e688f53dbf6bc5a2a04c92de92900c913a4c8be0442068798"
+        },
+        {
+          "artifact_role": "control_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_control_trace.json",
+          "sha256": "b0e98b18095bdc92b125dc67ce91f0fdc37416c96463b798fe8bf3752797369f"
+        }
+      ],
+      "base_margins": {
+        "boundary": 0.0,
+        "coherence": 0.02,
+        "flux": 0.025,
+        "signature": 0.035,
+        "support": 0.01
+      },
+      "claim_ceiling": "stress/variant evidence over an existing CT3 candidate; CT5 ladder assignment remains pending I7 controls and final transfer remains blocked",
+      "control_trace": {
+        "ct5_assignment_allowed_before_i7_controls": false,
+        "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+        "stress_variant_failure_control_meaning": "stress blocker triggered and stronger stress claim was rejected",
+        "stress_variant_failure_control_status": "failed_closed",
+        "trace_id": "n27_i6_i4_stress_control_trace",
+        "trace_scope": "stress_control_trace_only_not_full_i7_control_matrix"
+      },
+      "control_trace_digest": "d4ae47e9f97b0636749875bd8e77d5a702f828217de5aff1f83afc0c216302c5",
+      "ct5_assignment_allowed": false,
+      "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+      "ct5_stress_variant_candidate_supported": false,
+      "ct_ladder_rung": "CT3_stress_limited",
+      "final_transfer_supported": false,
+      "iteration": "6",
+      "new_transfer_evidence_created": false,
+      "row_decision": "partial",
+      "row_decision_scope": "replay_backed_candidate_stress_limited_by_declared_margin",
+      "row_id": "n27_i6_row_i4_stress_mapping_variant",
+      "source_iteration": "4",
+      "source_output_digest": "f98f5d56d15389fa6a8a3f138c6cccb30404bd7e9ef4c6a4badd7ef13be04294",
+      "source_reconstruction_row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+      "source_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+      "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+      "stress_failure_mode": "declared_stress_exceeds_available_margin",
+      "stress_trace": {
+        "all_stress_rows_passed": false,
+        "artifact_only_reconstruction_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "base_margins": {
+          "boundary": 0.0,
+          "coherence": 0.02,
+          "flux": 0.025,
+          "signature": 0.035,
+          "support": 0.01
+        },
+        "baseline_boundary_at_floor": true,
+        "failed_stress_ids": [
+          "boundary_tightening_0_05",
+          "combined_moderate_mapping_stress"
+        ],
+        "new_transfer_evidence_created": false,
+        "source_iteration": "4",
+        "source_reconstruction_row_id": "n27_i5a_row_i4_artifact_only_reconstruction",
+        "source_replay_row_id": "n27_i5_row_i4_same_basin_mapping_replay",
+        "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "stress_failure_mode": "declared_stress_exceeds_available_margin",
+        "stress_policy": {
+          "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+          "declaration_order": 0,
+          "declared_before_use": true,
+          "pass_rule": "all residual margins must remain greater than or equal to zero",
+          "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+          "stress_rows": [
+            {
+              "boundary_margin_cost": 0.05,
+              "coherence_margin_cost": 0.0,
+              "flux_margin_cost": 0.0,
+              "stress_id": "boundary_tightening_0_05",
+              "support_margin_cost": 0.0
+            },
+            {
+              "boundary_margin_cost": 0.0,
+              "coherence_margin_cost": 0.0,
+              "flux_margin_cost": 0.0,
+              "stress_id": "support_drawdown_0_008",
+              "support_margin_cost": 0.008
+            },
+            {
+              "boundary_margin_cost": 0.0,
+              "coherence_margin_cost": 0.012,
+              "flux_margin_cost": 0.0,
+              "stress_id": "coherence_drawdown_0_012",
+              "support_margin_cost": 0.0
+            },
+            {
+              "boundary_margin_cost": 0.0,
+              "coherence_margin_cost": 0.0,
+              "flux_margin_cost": 0.02,
+              "stress_id": "flux_pressure_0_02",
+              "support_margin_cost": 0.0
+            },
+            {
+              "boundary_margin_cost": 0.03,
+              "coherence_margin_cost": 0.006,
+              "flux_margin_cost": 0.01,
+              "stress_id": "combined_moderate_mapping_stress",
+              "support_margin_cost": 0.005
+            }
+          ]
+        },
+        "stress_results": [
+          {
+            "failed_axes": [
+              "boundary"
+            ],
+            "residual_margins": {
+              "boundary": -0.05,
+              "coherence": 0.02,
+              "flux": 0.025,
+              "signature": 0.035,
+              "support": 0.01
+            },
+            "stress_costs": {
+              "boundary": 0.05,
+              "coherence": 0.0,
+              "flux": 0.0,
+              "support": 0.0
+            },
+            "stress_id": "boundary_tightening_0_05",
+            "stress_passed": false
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.0,
+              "coherence": 0.02,
+              "flux": 0.025,
+              "signature": 0.035,
+              "support": 0.002
+            },
+            "stress_costs": {
+              "boundary": 0.0,
+              "coherence": 0.0,
+              "flux": 0.0,
+              "support": 0.008
+            },
+            "stress_id": "support_drawdown_0_008",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.0,
+              "coherence": 0.008,
+              "flux": 0.025,
+              "signature": 0.035,
+              "support": 0.01
+            },
+            "stress_costs": {
+              "boundary": 0.0,
+              "coherence": 0.012,
+              "flux": 0.0,
+              "support": 0.0
+            },
+            "stress_id": "coherence_drawdown_0_012",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.0,
+              "coherence": 0.02,
+              "flux": 0.005,
+              "signature": 0.035,
+              "support": 0.01
+            },
+            "stress_costs": {
+              "boundary": 0.0,
+              "coherence": 0.0,
+              "flux": 0.02,
+              "support": 0.0
+            },
+            "stress_id": "flux_pressure_0_02",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [
+              "boundary"
+            ],
+            "residual_margins": {
+              "boundary": -0.03,
+              "coherence": 0.014,
+              "flux": 0.015,
+              "signature": 0.035,
+              "support": 0.005
+            },
+            "stress_costs": {
+              "boundary": 0.03,
+              "coherence": 0.006,
+              "flux": 0.01,
+              "support": 0.005
+            },
+            "stress_id": "combined_moderate_mapping_stress",
+            "stress_passed": false
+          }
+        ],
+        "stress_variant_trace_role": "stress_existing_replay_backed_transfer_candidate",
+        "trace_id": "n27_i6_i4_stress_variant_trace",
+        "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "transfer_scope": "configuration"
+      },
+      "stress_trace_digest": "880b35b9438ef0b1723af6bd7aa08f671ca9618a16cb49d159a042e8e1d14665",
+      "transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+      "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+      "transfer_scope": "configuration",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "artifact_manifest": [
+        {
+          "artifact_role": "stress_variant_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_stress_variant_trace.json",
+          "sha256": "f4d4aaed32d7d6b97033bc46bc805f51a7c262355794138b58a70dd580f10fb5"
+        },
+        {
+          "artifact_role": "control_trace",
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_control_trace.json",
+          "sha256": "57c458331ed7e317c14330f2bcd4fd9d69242551bedb126f13c13697141804a0"
+        }
+      ],
+      "base_margins": {
+        "boundary": 0.1,
+        "coherence": 0.025,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "claim_ceiling": "stress/variant evidence over an existing CT3 candidate; CT5 ladder assignment remains pending I7 controls and final transfer remains blocked",
+      "control_trace": {
+        "ct5_assignment_allowed_before_i7_controls": false,
+        "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+        "stress_variant_failure_control_meaning": "stress envelope passed",
+        "stress_variant_failure_control_status": "passed",
+        "trace_id": "n27_i6_i4a_stress_control_trace",
+        "trace_scope": "stress_control_trace_only_not_full_i7_control_matrix"
+      },
+      "control_trace_digest": "0d137463e44d3614be523dbccb09fa47017f8b07ca222943b9274cedb8c35deb",
+      "ct5_assignment_allowed": false,
+      "ct5_assignment_blocker": "full_control_trace_pending_iteration_7",
+      "ct5_stress_variant_candidate_supported": true,
+      "ct_ladder_rung": "CT5_candidate_pending_controls",
+      "final_transfer_supported": false,
+      "iteration": "6",
+      "new_transfer_evidence_created": false,
+      "row_decision": "supported",
+      "row_decision_scope": "bounded_stress_variant_candidate_pending_i7_controls",
+      "row_id": "n27_i6_row_i4a_stress_mapping_variant",
+      "source_iteration": "4-A",
+      "source_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+      "source_reconstruction_row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+      "source_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+      "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "stress_failure_mode": "none",
+      "stress_trace": {
+        "all_stress_rows_passed": true,
+        "artifact_only_reconstruction_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "base_margins": {
+          "boundary": 0.1,
+          "coherence": 0.025,
+          "flux": 0.028,
+          "signature": 0.04,
+          "support": 0.015
+        },
+        "baseline_boundary_at_floor": false,
+        "failed_stress_ids": [],
+        "new_transfer_evidence_created": false,
+        "source_iteration": "4-A",
+        "source_reconstruction_row_id": "n27_i5a_row_i4a_artifact_only_reconstruction",
+        "source_replay_row_id": "n27_i5_row_i4a_same_basin_mapping_replay",
+        "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "stress_failure_mode": "none",
+        "stress_policy": {
+          "ct5_assignment_note": "I6 may support stress/variant evidence, but CT5 ladder assignment remains pending I7 full controls because the frozen CT5 artifact role includes a control trace.",
+          "declaration_order": 0,
+          "declared_before_use": true,
+          "pass_rule": "all residual margins must remain greater than or equal to zero",
+          "policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+          "stress_rows": [
+            {
+              "boundary_margin_cost": 0.05,
+              "coherence_margin_cost": 0.0,
+              "flux_margin_cost": 0.0,
+              "stress_id": "boundary_tightening_0_05",
+              "support_margin_cost": 0.0
+            },
+            {
+              "boundary_margin_cost": 0.0,
+              "coherence_margin_cost": 0.0,
+              "flux_margin_cost": 0.0,
+              "stress_id": "support_drawdown_0_008",
+              "support_margin_cost": 0.008
+            },
+            {
+              "boundary_margin_cost": 0.0,
+              "coherence_margin_cost": 0.012,
+              "flux_margin_cost": 0.0,
+              "stress_id": "coherence_drawdown_0_012",
+              "support_margin_cost": 0.0
+            },
+            {
+              "boundary_margin_cost": 0.0,
+              "coherence_margin_cost": 0.0,
+              "flux_margin_cost": 0.02,
+              "stress_id": "flux_pressure_0_02",
+              "support_margin_cost": 0.0
+            },
+            {
+              "boundary_margin_cost": 0.03,
+              "coherence_margin_cost": 0.006,
+              "flux_margin_cost": 0.01,
+              "stress_id": "combined_moderate_mapping_stress",
+              "support_margin_cost": 0.005
+            }
+          ]
+        },
+        "stress_results": [
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.05,
+              "coherence": 0.025,
+              "flux": 0.028,
+              "signature": 0.04,
+              "support": 0.015
+            },
+            "stress_costs": {
+              "boundary": 0.05,
+              "coherence": 0.0,
+              "flux": 0.0,
+              "support": 0.0
+            },
+            "stress_id": "boundary_tightening_0_05",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.1,
+              "coherence": 0.025,
+              "flux": 0.028,
+              "signature": 0.04,
+              "support": 0.007
+            },
+            "stress_costs": {
+              "boundary": 0.0,
+              "coherence": 0.0,
+              "flux": 0.0,
+              "support": 0.008
+            },
+            "stress_id": "support_drawdown_0_008",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.1,
+              "coherence": 0.013,
+              "flux": 0.028,
+              "signature": 0.04,
+              "support": 0.015
+            },
+            "stress_costs": {
+              "boundary": 0.0,
+              "coherence": 0.012,
+              "flux": 0.0,
+              "support": 0.0
+            },
+            "stress_id": "coherence_drawdown_0_012",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.1,
+              "coherence": 0.025,
+              "flux": 0.008,
+              "signature": 0.04,
+              "support": 0.015
+            },
+            "stress_costs": {
+              "boundary": 0.0,
+              "coherence": 0.0,
+              "flux": 0.02,
+              "support": 0.0
+            },
+            "stress_id": "flux_pressure_0_02",
+            "stress_passed": true
+          },
+          {
+            "failed_axes": [],
+            "residual_margins": {
+              "boundary": 0.07,
+              "coherence": 0.019,
+              "flux": 0.018,
+              "signature": 0.04,
+              "support": 0.01
+            },
+            "stress_costs": {
+              "boundary": 0.03,
+              "coherence": 0.006,
+              "flux": 0.01,
+              "support": 0.005
+            },
+            "stress_id": "combined_moderate_mapping_stress",
+            "stress_passed": true
+          }
+        ],
+        "stress_variant_trace_role": "stress_existing_replay_backed_transfer_candidate",
+        "trace_id": "n27_i6_i4a_stress_variant_trace",
+        "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "transfer_scope": "topology"
+      },
+      "stress_trace_digest": "fc7b9534b4aab5fa03982d569e5e6124e35c4f32f798234c9017d7554cf1c8b8",
+      "transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+      "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+      "transfer_scope": "topology",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "ap5_nat4_gap_resolution_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_ap5_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_identity_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "topology_fixture_variant_transfer_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+  "transfer_schema_output_digest": "15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22"
+}

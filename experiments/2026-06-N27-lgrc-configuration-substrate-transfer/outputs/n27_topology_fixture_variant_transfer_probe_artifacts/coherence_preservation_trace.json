@@ -1,0 +1,10 @@
+{
+  "coherence_floor": 0.91,
+  "coherence_floor_margin": 0.025,
+  "coherence_preservation_delta": -0.005,
+  "coherence_preservation_digest": "9abe65db46b69073ac89c90a64938cf346779528ff61cfb7db2b0de5ab2032cc",
+  "coherence_preserved_above_floor": true,
+  "post_min_coherence": 0.935,
+  "pre_min_coherence": 0.94,
+  "trace_id": "n27_i4a_coherence_preservation_trace"
+}

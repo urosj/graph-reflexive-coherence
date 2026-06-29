@@ -1,0 +1,478 @@
+{
+  "acceptance_state": "accepted_source_inventory_transfer_contract_admission_no_positive_evidence",
+  "ant_ecology_opened": false,
+  "artifact_id": "n27_source_inventory_and_transfer_contract_admission",
+  "candidate_rows_classified": false,
+  "checks": [
+    {
+      "check": "all_cited_sources_exist",
+      "detail": {
+        "source_count": 7
+      },
+      "passed": true
+    },
+    {
+      "check": "n20_i5_transfer_contract_complete",
+      "detail": {
+        "primitive_id": "configuration_substrate_transfer",
+        "row_id": "n20_i5_row_08_configuration_substrate_transfer",
+        "same_basin_rule_id": "n20_i5_configuration_substrate_transfer_same_basin_rule"
+      },
+      "passed": true
+    },
+    {
+      "check": "required_transfer_contract_fields_present",
+      "detail": {
+        "basin_signature_fields": [
+          "pre_transfer_basin_signature_trace",
+          "post_transfer_basin_signature_trace",
+          "boundary_mapping_trace"
+        ],
+        "source_current_inputs": [
+          "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+          "configuration_substrate_transfer.post_transfer_basin_signature_trace",
+          "configuration_substrate_transfer.boundary_mapping_trace",
+          "configuration_substrate_transfer.support_preservation_trace"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "n26_consumed_as_context_not_transfer_evidence",
+      "detail": {
+        "may_consume_n26_as": [
+          "bounded_PD6_proxy_divergence_collapse_evidence",
+          "scoped_artifact_AP5_bridge_candidate_context",
+          "proxy_pressure_control_context",
+          "source_current_proxy_basin_contrast_context"
+        ],
+        "must_not_consume_n26_as": [
+          "native_AP5",
+          "AP5_NAT4_gap_resolution",
+          "semantic_goal_or_choice",
+          "agency",
+          "native_support",
+          "sentience",
+          "Phase_8_completion",
+          "ant_ecology",
+          "unscoped_multi_basin_substrate"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "n26_ap5_boundary_preserved",
+      "detail": {
+        "ap5_dependency_role": "row-local AP5 dependency recorded and replay/control clean for scoped artifact bridge use",
+        "ap5_nat4_gap_resolved": false,
+        "native_ap5_bridge_supported": false,
+        "scoped_artifact_ap5_bridge_candidate_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check": "n25_2_consumed_only_through_n26_scoped_context",
+      "detail": {
+        "direct_transfer_consumption_allowed": false,
+        "n25_2_role": "inherited_scoped_context_only_through_N26"
+      },
+      "passed": true
+    },
+    {
+      "check": "no_positive_transfer_evidence_opened",
+      "detail": {
+        "ct_ladder_rung_assigned": false,
+        "positive_transfer_evidence_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check": "movement_vs_transfer_boundary_recorded",
+      "detail": {
+        "basin_movement_is_transfer": false,
+        "movement_reading": "within-frame basin center or boundary shift in the same graph",
+        "same_label_after_mapping_sufficient": false,
+        "transfer_reading": "cross-frame declared mapping with pre/post signature, boundary mapping, support/coherence preservation, and flux discipline"
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": {
+        "claim_count": 16
+      },
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths_in_records",
+      "detail": {
+        "absolute_path_policy": "repository_relative_paths_only"
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "semantic_identity",
+      "semantic_choice",
+      "semantic_goal_ownership",
+      "semantic_learning",
+      "agency",
+      "native_support",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ant_ecology_implementation",
+      "Phase_8_completion",
+      "unscoped_multi_basin_substrate",
+      "native_AP5",
+      "AP5_NAT4_gap_resolution"
+    ],
+    "claim_ceiling": "source inventory and transfer contract admission only; no positive transfer evidence, semantic identity, agency, native support, sentience, Phase 8 completion, ant ecology, native AP5, or AP5 NAT4 gap resolution"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N27-lgrc-configuration-substrate-transfer/scripts/build_n27_source_inventory_and_transfer_contract_admission.py",
+  "consumable_contract_row": "n20_i5_row_08_configuration_substrate_transfer",
+  "ct_ladder_rung_assigned": false,
+  "descriptor_contract_summary": {
+    "allowed_drift": "deferred_or_not_recorded",
+    "basin_signature": [
+      "pre_transfer_basin_signature_trace",
+      "post_transfer_basin_signature_trace",
+      "boundary_mapping_trace"
+    ],
+    "continuation_condition": "basin signature persists under declared configuration or substrate mapping",
+    "contract_status": "incomplete_missing_same_basin_rule",
+    "failure_modes": [],
+    "hidden_producer_support_allowed": "deferred_or_not_recorded",
+    "label_only_continuation_allowed": false,
+    "naturalization_debt": [
+      "configuration_substrate_transfer.source_current_mapping_telemetry",
+      "configuration_substrate_transfer.independent_substrate_replay"
+    ],
+    "primitive_id": "configuration_substrate_transfer",
+    "producer_supplied_scaffolds": [
+      "configuration_substrate_transfer.configuration_mapping_policy",
+      "configuration_substrate_transfer.fixture_equivalence_label"
+    ],
+    "proxy_metric_id": "n20_i4_configuration_substrate_transfer_transfer_signature_preservation_margin",
+    "proxy_only_success_allowed": "deferred_or_not_recorded",
+    "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+    "proxy_success_replaces_continuation": false,
+    "replay_requirement": "deferred_or_not_recorded",
+    "required_supports": [
+      "transfer mapping declaration",
+      "boundary mapping trace",
+      "support preservation trace"
+    ],
+    "row_id": "n20_i4_row_08_configuration_substrate_transfer",
+    "same_basin_rule_id": "pending_n20_i5_configuration_substrate_transfer_same_basin_rule",
+    "same_basin_signature_fields": [],
+    "source_current_inputs": [
+      "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+      "configuration_substrate_transfer.post_transfer_basin_signature_trace",
+      "configuration_substrate_transfer.boundary_mapping_trace",
+      "configuration_substrate_transfer.support_preservation_trace"
+    ],
+    "transfer_condition": "declared fixture/topology/substrate mapping is source-backed"
+  },
+  "experiment": "N27",
+  "failed_checks": [],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "iteration": "I1",
+  "movement_vs_transfer_boundary": {
+    "basin_movement_is_transfer": false,
+    "movement_reading": "within-frame basin center or boundary shift in the same graph",
+    "same_label_after_mapping_sufficient": false,
+    "transfer_reading": "cross-frame declared mapping with pre/post signature, boundary mapping, support/coherence preservation, and flux discipline"
+  },
+  "n25_2_direct_transfer_consumption_allowed": false,
+  "n26_ap5_boundary": {
+    "ap5_dependency_role": "row-local AP5 dependency recorded and replay/control clean for scoped artifact bridge use",
+    "ap5_nat4_gap_resolved": false,
+    "native_ap5_bridge_supported": false,
+    "scoped_artifact_ap5_bridge_candidate_supported": true
+  },
+  "n26_consumed_as_transfer_evidence": false,
+  "n26_handoff_boundary": {
+    "handoff_status": "ready",
+    "may_consume_n26_as": [
+      "bounded_PD6_proxy_divergence_collapse_evidence",
+      "scoped_artifact_AP5_bridge_candidate_context",
+      "proxy_pressure_control_context",
+      "source_current_proxy_basin_contrast_context"
+    ],
+    "must_not_consume_n26_as": [
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "semantic_goal_or_choice",
+      "agency",
+      "native_support",
+      "sentience",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate"
+    ],
+    "required_n27_controls": [
+      "transfer_not_proxy_score_relabel",
+      "configuration_mapping_declared_before_use",
+      "same_basin_signature_preserved_under_mapping",
+      "hidden_producer_state_blocks_transfer_claim",
+      "source_current_geometry_required",
+      "AP4_AP5_dependency_carried_row_locally_when_selection_or_proxy_participates",
+      "unsafe_semantic_agency_native_support_claims_blocked"
+    ]
+  },
+  "n27_closeout_ladder_rung_assigned": false,
+  "native_support_opened": false,
+  "output_digest": "5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222",
+  "phase8_completion_opened": false,
+  "positive_transfer_evidence_opened": false,
+  "ready_for_iteration_2": true,
+  "source_contract_row": "n20_i4_row_08_configuration_substrate_transfer",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "artifact_id": "n20_same_basin_continuation_contract",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "N20_i5_complete_transfer_contract",
+        "same_basin_rule_source",
+        "transfer_support_scaffold_source"
+      ],
+      "must_not_consume_as": [
+        "positive_transfer_evidence",
+        "runtime_transfer_probe",
+        "semantic_identity_evidence"
+      ],
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_classification": "contract_source",
+      "source_id": "n20_same_basin_continuation_contract",
+      "source_role": "complete_configuration_substrate_transfer_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+      "artifact_id": "n20_native_function_proxy_contract",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "N20_i4_transfer_descriptor_context",
+        "proxy_metric_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "positive_transfer_evidence",
+        "same_basin_rule_complete_source",
+        "semantic_identity_evidence"
+      ],
+      "output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_classification": "contract_source",
+      "source_id": "n20_native_function_proxy_contract",
+      "source_role": "configuration_substrate_transfer_descriptor_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n26_c6_pd6_closeout_and_n27_handoff",
+      "artifact_id": "n26_closeout_and_n27_handoff",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "bounded_PD6_proxy_divergence_collapse_evidence",
+        "scoped_artifact_AP5_bridge_candidate_context",
+        "proxy_pressure_control_context",
+        "source_current_proxy_basin_contrast_context"
+      ],
+      "must_not_consume_as": [
+        "native_AP5",
+        "AP5_NAT4_gap_resolution",
+        "transfer_evidence",
+        "semantic_identity_evidence",
+        "native_support",
+        "agency",
+        "unscoped_multi_basin_substrate"
+      ],
+      "output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+      "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+      "source_classification": "handoff_source",
+      "source_id": "n26_closeout",
+      "source_role": "bounded_PD6_proxy_divergence_collapse_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_applicable_markdown_context",
+      "artifact_id": "markdown_source",
+      "digest_policy": "sha256_pinned_markdown_context",
+      "exists": true,
+      "may_consume_as": [
+        "handoff_interpretation_context",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "positive_transfer_evidence",
+        "native_AP5",
+        "semantic_identity_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/reports/n26_closeout_and_n27_handoff.md",
+      "sha256": "e725e12e714ea7be8a0ffa3a4dfd77cd547e9ccfd75066d056dae4eedbe33a90",
+      "source_classification": "handoff_report_context",
+      "source_id": "n26_closeout_report",
+      "source_role": "N27_handoff_text_boundary",
+      "status": "context_only"
+    },
+    {
+      "acceptance_state": "accepted_n25_2_c6_closeout_scoped_n26_handoff",
+      "artifact_id": "n25_2_closeout_and_n26_handoff",
+      "digest_policy": "sha256_pinned_source_artifact",
+      "exists": true,
+      "may_consume_as": [
+        "inherited_scoped_MB6_context_through_N26",
+        "N26_substrate_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "direct_N27_substrate_transfer_evidence",
+        "unscoped_multi_basin_substrate",
+        "native_support",
+        "agency",
+        "ant_ecology_implementation"
+      ],
+      "output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+      "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+      "source_classification": "inherited_scoped_substrate_context",
+      "source_id": "n25_2_closeout_inherited_through_n26",
+      "source_role": "scoped_MB6_context_inherited_only_through_N26",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_applicable_markdown_context",
+      "artifact_id": "markdown_source",
+      "digest_policy": "existence_only_active_roadmap_context",
+      "exists": true,
+      "may_consume_as": [
+        "roadmap_handoff_context",
+        "N27_scope_context"
+      ],
+      "must_not_consume_as": [
+        "positive_transfer_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "sha256": "not_pinned_active_context_document",
+      "source_classification": "handoff_context",
+      "source_id": "n20_n29_handoff",
+      "source_role": "current_N27_pickup_note",
+      "status": "context_only"
+    },
+    {
+      "acceptance_state": "not_applicable_markdown_context",
+      "artifact_id": "markdown_source",
+      "digest_policy": "existence_only_active_roadmap_context",
+      "exists": true,
+      "may_consume_as": [
+        "roadmap_context",
+        "N27_question_context"
+      ],
+      "must_not_consume_as": [
+        "positive_transfer_evidence"
+      ],
+      "output_digest": "not_applicable_markdown_context",
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "sha256": "not_pinned_active_context_document",
+      "source_classification": "roadmap_context",
+      "source_id": "n20_n29_roadmap",
+      "source_role": "N27_question_and_iteration_context",
+      "status": "context_only"
+    }
+  ],
+  "status": "passed",
+  "target_primitive": "configuration_substrate_transfer",
+  "target_reading": "bounded configuration / substrate transfer",
+  "transfer_contract_summary": {
+    "allowed_drift": "mapped fixture/topology may change but declared basin signature must remain within mapping tolerance",
+    "basin_signature": [
+      "pre_transfer_basin_signature_trace",
+      "post_transfer_basin_signature_trace",
+      "boundary_mapping_trace"
+    ],
+    "continuation_condition": "basin signature persists under declared configuration or substrate mapping",
+    "contract_status": "complete",
+    "failure_modes": [
+      "same label on different basin",
+      "fixture equivalence label without mapping",
+      "hidden support reconstruction",
+      "AP4 gap omitted when route-conditioned selection participates",
+      "cross-substrate transfer claimed without declared source-backed substrate mapping"
+    ],
+    "hidden_producer_support_allowed": false,
+    "label_only_continuation_allowed": false,
+    "naturalization_debt": [
+      "configuration_substrate_transfer.source_current_mapping_telemetry",
+      "configuration_substrate_transfer.independent_substrate_replay"
+    ],
+    "primitive_id": "configuration_substrate_transfer",
+    "producer_supplied_scaffolds": [
+      "configuration_substrate_transfer.configuration_mapping_policy",
+      "configuration_substrate_transfer.fixture_equivalence_label"
+    ],
+    "proxy_metric_id": "n20_i4_configuration_substrate_transfer_transfer_signature_preservation_margin",
+    "proxy_only_success_allowed": false,
+    "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+    "proxy_success_replaces_continuation": false,
+    "replay_requirement": "transfer replays under structurally distinct fixture or mapping",
+    "required_supports": [
+      "transfer mapping declaration",
+      "boundary mapping trace",
+      "support preservation trace"
+    ],
+    "row_id": "n20_i5_row_08_configuration_substrate_transfer",
+    "same_basin_rule_id": "n20_i5_configuration_substrate_transfer_same_basin_rule",
+    "same_basin_signature_fields": [
+      "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+      "configuration_substrate_transfer.post_transfer_basin_signature_trace",
+      "configuration_substrate_transfer.boundary_mapping_trace"
+    ],
+    "source_current_inputs": [
+      "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+      "configuration_substrate_transfer.post_transfer_basin_signature_trace",
+      "configuration_substrate_transfer.boundary_mapping_trace",
+      "configuration_substrate_transfer.support_preservation_trace"
+    ],
+    "transfer_condition": "declared fixture/topology/substrate mapping is source-backed"
+  },
+  "transfer_scope_policy": {
+    "allowed_row_scopes": [
+      "configuration",
+      "fixture",
+      "topology",
+      "substrate"
+    ],
+    "full_substrate_transfer_supported_by_i1": false,
+    "primary_scope": "configuration_or_topology_transfer_inside_LGRC",
+    "substrate_transfer_requires_source_backed_mapping": true
+  },
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "ap5_nat4_gap_resolution_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_ap5_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_identity_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "semantic_target_ownership_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false,
+    "unscoped_multi_basin_claim_allowed": false
+  }
+}

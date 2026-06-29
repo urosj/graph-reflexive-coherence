@@ -1,0 +1,45 @@
+{
+  "basin_label": "basin_signature_A",
+  "basin_label_used_as_evidence": false,
+  "basin_nodes": [
+    "alpha_core",
+    "alpha_support",
+    "alpha_boundary"
+  ],
+  "boundary_edges": [
+    [
+      "alpha_core",
+      "alpha_support"
+    ],
+    [
+      "alpha_support",
+      "alpha_boundary"
+    ]
+  ],
+  "coherence_by_node": {
+    "alpha_boundary": 0.94,
+    "alpha_core": 0.95,
+    "alpha_support": 0.93
+  },
+  "fixture_id": "fixture_alpha",
+  "flux_by_edge": {
+    "alpha_core-alpha_support": 0.035,
+    "alpha_support-alpha_boundary": -0.015
+  },
+  "frame_id": "fixture_alpha_frame",
+  "observation_order": 1,
+  "pre_signature_digest": "735348581363d2ef7d351e858840fc1a61d723836f97b001d3c1cf06c2e88809",
+  "signature_vector": {
+    "abs_flux_imbalance": 0.02,
+    "boundary_edge_count": 2,
+    "core_weight": 1.0,
+    "min_coherence": 0.93,
+    "min_support": 0.92
+  },
+  "support_by_node": {
+    "alpha_boundary": 0.93,
+    "alpha_core": 0.94,
+    "alpha_support": 0.92
+  },
+  "trace_id": "n27_i4_pre_transfer_basin_signature_trace"
+}

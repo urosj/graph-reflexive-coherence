@@ -1,0 +1,50 @@
+{
+  "basin_label": "basin_signature_A_mapped",
+  "basin_label_used_as_evidence": false,
+  "basin_nodes": [
+    "beta_core",
+    "beta_support",
+    "beta_boundary"
+  ],
+  "boundary_edges": [
+    [
+      "beta_core",
+      "beta_support"
+    ],
+    [
+      "beta_support",
+      "beta_boundary"
+    ]
+  ],
+  "coherence_by_node": {
+    "beta_boundary": 0.93,
+    "beta_core": 0.94,
+    "beta_support": 0.92
+  },
+  "fixture_id": "fixture_beta",
+  "flux_by_edge": {
+    "beta_core-beta_support": 0.04,
+    "beta_support-beta_boundary": -0.015
+  },
+  "frame_id": "fixture_beta_frame",
+  "max_signature_distance": 0.06,
+  "observation_order": 2,
+  "observed_signature_distance": 0.025,
+  "post_signature_digest": "cef3d47fa45a4e6c052e9726f33aaafd26d6143f34363c2719aa7841ec04d996",
+  "post_transfer_signature_present": true,
+  "same_basin_signature_preserved_under_mapping": true,
+  "signature_preservation_margin": 0.035,
+  "signature_vector": {
+    "abs_flux_imbalance": 0.025,
+    "boundary_edge_count": 2,
+    "core_weight": 1.0,
+    "min_coherence": 0.92,
+    "min_support": 0.91
+  },
+  "support_by_node": {
+    "beta_boundary": 0.92,
+    "beta_core": 0.93,
+    "beta_support": 0.91
+  },
+  "trace_id": "n27_i4_post_transfer_basin_signature_trace"
+}
