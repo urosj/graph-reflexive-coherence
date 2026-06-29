@@ -28,3 +28,17 @@
   Iteration 5 replay and capacity-attribution matrix over I4 through I4-E.
 - `n28_artifact_only_reconstruction_replay_probe.md` - Markdown summary for
   Iteration 5-A artifact-only reconstruction replay controls.
+- `n28_stress_regime_separation_matrix.md` - Markdown summary for Iteration 6
+  stress and regime-separation matrix over the I4-family rows admitted by I5.
+- `n28_regime_boundary_transition_matrix.md` - Markdown summary for Iteration
+  6-A regime boundary / transition matrix.
+- `n28_margin_envelope_sweep.md` - Markdown summary for Iteration 6-B margin
+  envelope sweep.
+- `n28_higher_margin_neutral_circulation_probe.md` - Markdown summary for
+  Iteration 4-F focused higher-margin neutral circulation variant.
+- `n28_higher_margin_competitive_redistribution_probe.md` - Markdown summary
+  for Iteration 4-G focused higher-margin competitive redistribution variant.
+- `n28_focused_margin_variant_replay_matrix.md` - Markdown summary for
+  Iteration 5-B replay/control matrix over I4-F and I4-G.
+- `n28_focused_margin_variant_stress_envelope.md` - Markdown summary for
+  Iteration 6-C focused stress/envelope matrix over I4-F and I4-G.

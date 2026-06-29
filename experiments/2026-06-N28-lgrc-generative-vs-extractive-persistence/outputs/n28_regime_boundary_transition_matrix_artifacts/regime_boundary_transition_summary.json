@@ -1,0 +1,83 @@
+{
+  "boundary_interpretation": "same_policy_transition_surface_supported_without_new_source_current_GE_rows",
+  "ge5_boundary_preservation_row_count": 16,
+  "ge5_boundary_preservation_rows": [
+    "n28_i6a_n28_i4_row_primary_generative_candidate_source_anchor",
+    "n28_i6a_n28_i4_row_primary_generative_candidate_generative_edge",
+    "n28_i6a_n28_i4a_row_generative_strengthening_candidate_source_anchor",
+    "n28_i6a_n28_i4a_row_generative_strengthening_candidate_generative_edge",
+    "n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_source_anchor",
+    "n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_generative_edge",
+    "n28_i6a_n28_i4b_row_primary_extractive_contrast_source_anchor",
+    "n28_i6a_n28_i4b_row_primary_extractive_contrast_extractive_edge",
+    "n28_i6a_n28_i4c_row_extractive_strengthening_contrast_source_anchor",
+    "n28_i6a_n28_i4c_row_extractive_strengthening_contrast_extractive_edge",
+    "n28_i6a_n28_i4c2_row_extractive_mechanism_diversity_contrast_source_anchor",
+    "n28_i6a_n28_i4c2_row_extractive_mechanism_diversity_contrast_extractive_edge",
+    "n28_i6a_n28_i4d_row_primary_competitive_neutral_contrast_source_anchor",
+    "n28_i6a_n28_i4d_row_primary_competitive_neutral_contrast_competitive_edge",
+    "n28_i6a_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast_source_anchor",
+    "n28_i6a_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast_neutral_edge"
+  ],
+  "label_match_count": 34,
+  "label_mismatch_count": 0,
+  "label_transition_counts": {
+    "competitive->competitive": 2,
+    "competitive->extractive": 1,
+    "competitive->generative": 1,
+    "competitive->unclassified": 1,
+    "extractive->extractive": 6,
+    "extractive->generative": 3,
+    "extractive->unclassified": 3,
+    "generative->extractive": 3,
+    "generative->generative": 6,
+    "generative->unclassified": 3,
+    "neutral->extractive": 1,
+    "neutral->generative": 1,
+    "neutral->neutral": 2,
+    "neutral->unclassified": 1
+  },
+  "new_source_current_evidence_opened": false,
+  "role_counts": {
+    "aggregate_depletion_cross_check": {
+      "failed": 0,
+      "passed": 2,
+      "row_count": 2
+    },
+    "aggregate_enrichment_cross_check": {
+      "failed": 0,
+      "passed": 2,
+      "row_count": 2
+    },
+    "opposite_regime_cross_check": {
+      "failed": 0,
+      "passed": 6,
+      "row_count": 6
+    },
+    "same_regime_boundary_edge": {
+      "failed": 0,
+      "passed": 8,
+      "row_count": 8
+    },
+    "source_current_anchor": {
+      "failed": 0,
+      "passed": 8,
+      "row_count": 8
+    },
+    "unclassified_gap_expected": {
+      "failed": 0,
+      "passed": 8,
+      "row_count": 8
+    }
+  },
+  "shared_policy_ids": [
+    "n28_shared_regime_policy_v1"
+  ],
+  "shared_regime_policy_status": "supported",
+  "single_shared_policy_family_preserved": true,
+  "source_i6_output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+  "source_rows_mutated": false,
+  "thresholds_retuned_for_transition": false,
+  "trace_id": "n28_i6a_regime_boundary_transition_summary",
+  "transition_row_count": 34
+}

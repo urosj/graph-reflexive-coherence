@@ -1,0 +1,109 @@
+{
+  "axis_results": {
+    "boundary_integrity_compression": {
+      "critical_current_margin_count": 1,
+      "failed_within_sweep_count": 2,
+      "minimum_current_margin": 0.001,
+      "minimum_max_passed_multiplier": 1.25,
+      "narrow_current_margin_count": 2,
+      "row_count": 8,
+      "stress_axis": "boundary_integrity"
+    },
+    "extraction_cost_pressure": {
+      "critical_current_margin_count": 1,
+      "failed_within_sweep_count": 2,
+      "minimum_current_margin": 0.002,
+      "minimum_max_passed_multiplier": 1.5,
+      "narrow_current_margin_count": 2,
+      "row_count": 8,
+      "stress_axis": "extraction_cost"
+    },
+    "focal_stability_softening": {
+      "critical_current_margin_count": 0,
+      "failed_within_sweep_count": 0,
+      "minimum_current_margin": 0.003,
+      "minimum_max_passed_multiplier": 3.0,
+      "narrow_current_margin_count": 1,
+      "row_count": 8,
+      "stress_axis": "focal_stability"
+    },
+    "merge_leakage_pressure": {
+      "critical_current_margin_count": 1,
+      "failed_within_sweep_count": 2,
+      "minimum_current_margin": 0.002,
+      "minimum_max_passed_multiplier": 1.5,
+      "narrow_current_margin_count": 3,
+      "row_count": 8,
+      "stress_axis": "merge_leakage"
+    },
+    "neighbor_capacity_compression": {
+      "critical_current_margin_count": 0,
+      "failed_within_sweep_count": 1,
+      "minimum_current_margin": 0.003,
+      "minimum_max_passed_multiplier": 2.5,
+      "narrow_current_margin_count": 1,
+      "row_count": 8,
+      "stress_axis": "neighbor_capacity"
+    }
+  },
+  "critical_bottleneck_rows": [
+    {
+      "current_i6_limiting_field": "flattening_margin",
+      "current_i6_minimum_margin": 0.002,
+      "first_failed_multiplier": 2.0,
+      "max_passed_multiplier": 1.5,
+      "row_id": "n28_i6b_n28_i4d_row_primary_competitive_neutral_contrast_extraction_cost_pressure",
+      "source_regime_label": "competitive",
+      "stress_id": "extraction_cost_pressure"
+    },
+    {
+      "current_i6_limiting_field": "merge_leakage_margin",
+      "current_i6_minimum_margin": 0.002,
+      "first_failed_multiplier": 2.0,
+      "max_passed_multiplier": 1.5,
+      "row_id": "n28_i6b_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast_merge_leakage_pressure",
+      "source_regime_label": "neutral",
+      "stress_id": "merge_leakage_pressure"
+    },
+    {
+      "current_i6_limiting_field": "outflow_lobe_margin",
+      "current_i6_minimum_margin": 0.001,
+      "first_failed_multiplier": 1.5,
+      "max_passed_multiplier": 1.25,
+      "row_id": "n28_i6b_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast_boundary_integrity_compression",
+      "source_regime_label": "neutral",
+      "stress_id": "boundary_integrity_compression"
+    }
+  ],
+  "critical_current_margin_count": 3,
+  "current_i6_multiplier": 1.0,
+  "current_i6_rows_preserved": 40,
+  "envelope_row_count": 40,
+  "failed_within_sweep_count": 7,
+  "ge5_result_preserved": true,
+  "ge6_or_stronger_supported": false,
+  "narrow_current_margin_count": 9,
+  "new_source_current_evidence_opened": false,
+  "recommendation": {
+    "generic_more_i5_i6_runs_recommended": false,
+    "higher_margin_competitive_redistribution_variant_recommended": true,
+    "higher_margin_extractive_variant_recommended": false,
+    "higher_margin_generative_variant_recommended": false,
+    "higher_margin_neutral_circulation_variant_recommended": true,
+    "reason": "critical current margins are localized to competitive/neutral transition rows rather than the full paired-regime matrix"
+  },
+  "source_i6_output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+  "source_rows_mutated": false,
+  "sweep_multipliers": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "thresholds_retuned_for_sweep": false,
+  "trace_id": "n28_i6b_margin_envelope_sweep_summary"
+}

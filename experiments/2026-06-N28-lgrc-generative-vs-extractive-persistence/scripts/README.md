@@ -37,6 +37,24 @@
   through I4-E.
 - `build_n28_artifact_only_reconstruction_replay_probe.py` - Builds the
   deterministic Iteration 5-A artifact-only reconstruction replay controls.
+- `build_n28_stress_regime_separation_matrix.py` - Builds the deterministic
+  Iteration 6 stress and regime-separation matrix over the I4-family rows
+  admitted by I5.
+- `build_n28_regime_boundary_transition_matrix.py` - Builds the deterministic
+  Iteration 6-A regime boundary / transition matrix around the I6 GE5 result.
+- `build_n28_margin_envelope_sweep.py` - Builds the deterministic Iteration
+  6-B margin envelope sweep around the I6 stress matrix.
+- `build_n28_higher_margin_neutral_circulation_probe.py` - Builds the
+  deterministic Iteration 4-F focused higher-margin neutral circulation
+  variant recommended by I6-B.
+- `build_n28_higher_margin_competitive_redistribution_probe.py` - Builds the
+  deterministic Iteration 4-G focused higher-margin competitive
+  redistribution variant recommended by I6-B.
+- `build_n28_focused_margin_variant_replay_matrix.py` - Builds the
+  deterministic Iteration 5-B replay/control matrix for I4-F and I4-G.
+- `build_n28_focused_margin_variant_stress_envelope.py` - Builds the
+  deterministic Iteration 6-C focused stress/envelope matrix for I4-F and
+  I4-G.
 
 Later scripts will build probe artifacts, replay/control matrices, stress
 matrices, classification records, and closeout records.

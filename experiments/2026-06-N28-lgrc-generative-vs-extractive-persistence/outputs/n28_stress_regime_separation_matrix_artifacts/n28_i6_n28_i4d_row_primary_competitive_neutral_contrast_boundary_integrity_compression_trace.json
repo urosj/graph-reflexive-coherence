@@ -1,0 +1,109 @@
+{
+  "base_metrics": {
+    "environment_capacity_delta": 0.004,
+    "extractive_flattening": 0.024,
+    "extractive_flattening_ceiling": 0.03,
+    "focal_extraction_cost": 0.028,
+    "focal_extraction_cost_ceiling": 0.035,
+    "merge_leakage": 0.019,
+    "merge_leakage_ceiling": 0.025,
+    "neighbor_boundary_delta": -0.012,
+    "neighbor_distinguishability_delta": 0.018,
+    "neighbor_support_delta": 0.006
+  },
+  "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+  "source_iteration": "4-D",
+  "source_regime_evidence_role": "measured_contrast",
+  "source_regime_label": "competitive",
+  "source_row_digest": "a3f9a912682c099a7be25d69041a22a59494dba15ae1dc4f993bd19a780e2ffa",
+  "source_row_id": "n28_i4d_row_primary_competitive_neutral_contrast",
+  "source_row_mutated": false,
+  "stress_effect": {
+    "source_row_mutated": false,
+    "stress_axis": "boundary_integrity",
+    "stress_id": "boundary_integrity_compression",
+    "stress_scope": "bounded boundary and lobe-separation compression",
+    "stressed_boundary_digest": "d67e305e8a3fa4078a21ad3c6d98209429ef95fe41189650e581eb7eeda6662f",
+    "stressed_focal_digest": "e0b8e1b7c57d5c4528c0f5f8945bdbdd666ccbb020874562fc8320027fd8ff89",
+    "stressed_metrics_digest": "07e4296e85ec942c3f9729112f9d355178d317230506f7ed276042865c43c7e8",
+    "thresholds_retuned_for_stress": false
+  },
+  "stress_evidence": {
+    "competitive_redistribution": true,
+    "extraction_below": true,
+    "extraction_present": false,
+    "extractive_loss": false,
+    "generative_gain": false,
+    "metric_margins": {
+      "environment_capacity_neutral_margin": 0.021,
+      "extraction_cost_margin": 0.007,
+      "flattening_margin": 0.006,
+      "focal_coherence_margin": 0.039,
+      "focal_support_margin": 0.03,
+      "merge_leakage_margin": 0.006,
+      "minimum_margin": 0.006,
+      "neighbor_boundary_neutral_margin": 0.013,
+      "neighbor_distinguishability_neutral_margin": 0.007,
+      "neighbor_support_neutral_margin": 0.019,
+      "route_lobe_a_margin": 0.011,
+      "route_lobe_b_margin": 0.006
+    },
+    "near_neutral": true,
+    "neutral_circulation": false,
+    "stable": true
+  },
+  "stress_passed": true,
+  "stress_variant": {
+    "extractive_boundary_relief": 0.006,
+    "generative_boundary_reduction": 0.01,
+    "mixed_lobe_reduction": 0.004,
+    "stress_axis": "boundary_integrity",
+    "stress_id": "boundary_integrity_compression",
+    "stress_scope": "bounded boundary and lobe-separation compression"
+  },
+  "stressed_boundary_record": {
+    "aggregate_neighbor_capacity_not_materially_extractive": true,
+    "aggregate_neighbor_capacity_not_materially_generative": true,
+    "boundary_role": "primary_competitive_neutral_regime_contrast",
+    "classification_target": "competitive",
+    "competitive_redistribution_detected": true,
+    "different_from_extractive_cases": true,
+    "different_from_generative_cases": true,
+    "extraction_leakage_below_extractive_ceiling": true,
+    "mechanism_class": "competitive_capacity_redistribution",
+    "mechanism_evidence_fields": [
+      "runtime_trace.mechanism_class",
+      "capacity_attribution_trace.route_lobe_a_capacity_delta",
+      "capacity_attribution_trace.route_lobe_b_capacity_delta",
+      "source_current_runtime_trace.step.neighbor_lobes"
+    ],
+    "not_threshold_gap_or_label_only": true,
+    "route_lobe_a_capacity_delta": 0.051,
+    "route_lobe_b_capacity_delta": -0.046,
+    "same_frozen_policy_family": true
+  },
+  "stressed_focal_state": {
+    "coherence_floor": 0.84,
+    "floors_preserved": true,
+    "focal_stability_preserved": true,
+    "post_coherence_min": 0.879,
+    "post_stability_score": 0.874,
+    "post_support_min": 0.87,
+    "support_floor": 0.84
+  },
+  "stressed_metrics": {
+    "environment_capacity_delta": 0.004,
+    "extractive_flattening": 0.024,
+    "extractive_flattening_ceiling": 0.03,
+    "focal_extraction_cost": 0.028,
+    "focal_extraction_cost_ceiling": 0.035,
+    "merge_leakage": 0.019,
+    "merge_leakage_ceiling": 0.025,
+    "neighbor_boundary_delta": -0.012,
+    "neighbor_distinguishability_delta": 0.018,
+    "neighbor_support_delta": 0.006
+  },
+  "stressed_regime_label": "competitive",
+  "thresholds_retuned_for_stress": false,
+  "trace_id": "n28_i6_n28_i4d_row_primary_competitive_neutral_contrast_boundary_integrity_compression_trace"
+}

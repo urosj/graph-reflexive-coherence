@@ -1,0 +1,83 @@
+{
+  "paired_regime_coverage": {
+    "competitive_neutral_source_rows": 2,
+    "extractive_source_rows": 3,
+    "generative_source_rows": 3
+  },
+  "regime_results": {
+    "competitive": {
+      "failed_count": 0,
+      "minimum_margin": 0.002,
+      "passed_count": 5,
+      "stress_row_count": 5
+    },
+    "extractive": {
+      "failed_count": 0,
+      "minimum_margin": 0.003,
+      "passed_count": 15,
+      "stress_row_count": 15
+    },
+    "generative": {
+      "failed_count": 0,
+      "minimum_margin": 0.01,
+      "passed_count": 15,
+      "stress_row_count": 15
+    },
+    "neutral": {
+      "failed_count": 0,
+      "minimum_margin": 0.001,
+      "passed_count": 5,
+      "stress_row_count": 5
+    }
+  },
+  "rows_demoted": [],
+  "shared_policy_ids": [
+    "n28_shared_regime_policy_v1"
+  ],
+  "single_shared_policy_family_preserved": true,
+  "source_i5_output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+  "source_rows_mutated": false,
+  "stress_axis_results": {
+    "boundary_integrity_compression": {
+      "failed_count": 0,
+      "minimum_margin": 0.001,
+      "passed_count": 8,
+      "row_count": 8,
+      "stress_axis": "boundary_integrity"
+    },
+    "extraction_cost_pressure": {
+      "failed_count": 0,
+      "minimum_margin": 0.002,
+      "passed_count": 8,
+      "row_count": 8,
+      "stress_axis": "extraction_cost"
+    },
+    "focal_stability_softening": {
+      "failed_count": 0,
+      "minimum_margin": 0.003,
+      "passed_count": 8,
+      "row_count": 8,
+      "stress_axis": "focal_stability"
+    },
+    "merge_leakage_pressure": {
+      "failed_count": 0,
+      "minimum_margin": 0.002,
+      "passed_count": 8,
+      "row_count": 8,
+      "stress_axis": "merge_leakage"
+    },
+    "neighbor_capacity_compression": {
+      "failed_count": 0,
+      "minimum_margin": 0.003,
+      "passed_count": 8,
+      "row_count": 8,
+      "stress_axis": "neighbor_capacity"
+    }
+  },
+  "stress_failed_row_count": 0,
+  "stress_passed_row_count": 40,
+  "stress_row_count": 40,
+  "stress_variant_count": 5,
+  "thresholds_retuned_for_stress": false,
+  "trace_id": "n28_i6_stress_regime_separation_summary"
+}

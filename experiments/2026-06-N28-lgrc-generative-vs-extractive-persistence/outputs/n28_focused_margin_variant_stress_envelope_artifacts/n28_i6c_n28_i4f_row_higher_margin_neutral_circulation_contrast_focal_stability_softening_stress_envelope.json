@@ -1,0 +1,148 @@
+{
+  "current_classification_preserved": true,
+  "current_limiting_field": "flattening_margin",
+  "current_minimum_margin": 0.01,
+  "current_stress_multiplier": 1.0,
+  "first_failed_multiplier": "not_failed_within_sweep",
+  "max_passed_multiplier": 3.0,
+  "new_source_current_evidence_opened": false,
+  "source_iteration": "4-F",
+  "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+  "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+  "source_regime_label": "neutral",
+  "source_replay_row_digest": "1f1436519f06126dd0210f125aee13dfd3fcab3ea0ac6226238e7902ced5eafa",
+  "source_replay_row_id": "n28_i5b_replay_n28_i4f_row_higher_margin_neutral_circulation_contrast",
+  "source_row_digest": "df88f2b368ffea217ca289ad81e58131e00ffa85f1f12ae51fe7e888a2369124",
+  "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast",
+  "source_row_mutated": false,
+  "stress_axis": "focal_stability",
+  "stress_id": "focal_stability_softening",
+  "sweep_multipliers": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "sweep_points": [
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 0.0,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 0.5,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 1.0,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 1.25,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 1.5,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 2.0,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 2.5,
+      "observed_label": "neutral"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "near_neutral": true,
+        "neutral_circulation": true,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.01,
+      "minimum_margin_field": "flattening_margin",
+      "multiplier": 3.0,
+      "observed_label": "neutral"
+    }
+  ],
+  "targeted_bottleneck_reference": "not_targeted_bottleneck_axis",
+  "targeted_margin_improvement_supported": false,
+  "thresholds_retuned_for_sweep": false,
+  "trace_id": "n28_i6c_n28_i4f_row_higher_margin_neutral_circulation_contrast_focal_stability_softening_stress_envelope"
+}

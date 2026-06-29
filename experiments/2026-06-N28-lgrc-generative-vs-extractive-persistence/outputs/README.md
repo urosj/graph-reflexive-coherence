@@ -92,3 +92,49 @@
 - `n28_artifact_only_reconstruction_replay_probe_artifacts/` - Iteration 5-A
   trace bundle containing one fail-closed reconstruction control trace per
   insufficient surface plus a summary trace.
+- `n28_stress_regime_separation_matrix.json` - Iteration 6 stress and
+  regime-separation matrix. Applies fixed focal-stability,
+  neighbor-capacity, extraction-cost, merge/leakage, and boundary-integrity
+  stress overlays to all I4-family rows admitted by I5 and supports a
+  provisional GE5 candidate pending claim classification.
+- `n28_stress_regime_separation_matrix_artifacts/` - Iteration 6 trace bundle
+  containing one stress trace per source row and stress axis plus a stress
+  summary trace.
+- `n28_regime_boundary_transition_matrix.json` - Iteration 6-A regime
+  boundary / transition matrix. Varies declared transition envelopes around
+  the I6 GE5 source anchors under the same shared policy without opening new
+  source-current GE evidence.
+- `n28_regime_boundary_transition_matrix_artifacts/` - Iteration 6-A trace
+  bundle containing transition traces for source anchors, same-regime boundary
+  edges, unclassified gaps, and cross-regime controls.
+- `n28_margin_envelope_sweep.json` - Iteration 6-B margin envelope sweep.
+  Sweeps I6 stress multipliers across all I4-family rows to identify critical
+  bottlenecks and decide whether targeted higher-margin variants are useful.
+- `n28_margin_envelope_sweep_artifacts/` - Iteration 6-B trace bundle
+  containing one envelope trace per source row / stress axis plus a sweep
+  summary trace.
+- `n28_higher_margin_neutral_circulation_probe.json` - Iteration 4-F
+  focused higher-margin neutral circulation variant. Targets the I6-B neutral
+  outflow-lobe and merge/leakage bottlenecks without replacing I4-E.
+- `n28_higher_margin_neutral_circulation_probe_artifacts/` - Iteration 4-F
+  trace bundle containing threshold, runtime, focal stability, capacity,
+  leakage, attribution, classification, and canonical core traces.
+- `n28_higher_margin_competitive_redistribution_probe.json` - Iteration 4-G
+  focused higher-margin competitive redistribution variant. Targets the I6-B
+  competitive flattening bottleneck without replacing I4-D.
+- `n28_higher_margin_competitive_redistribution_probe_artifacts/` - Iteration
+  4-G trace bundle containing threshold, runtime, focal stability, capacity,
+  leakage, attribution, classification, and canonical core traces.
+- `n28_focused_margin_variant_replay_matrix.json` - Iteration 5-B replay and
+  control matrix for the I4-F and I4-G focused variants. Supports GE4 for the
+  focused variants pending stress.
+- `n28_focused_margin_variant_replay_matrix_artifacts/` - Iteration 5-B trace
+  bundle containing replay/control traces for I4-F and I4-G plus a focused
+  replay summary trace.
+- `n28_focused_margin_variant_stress_envelope.json` - Iteration 6-C stress
+  envelope for the focused variants. Reuses the I6 stress family and I6-B
+  multiplier sweep to support focused GE5 evidence with no critical current
+  margins remaining.
+- `n28_focused_margin_variant_stress_envelope_artifacts/` - Iteration 6-C
+  trace bundle containing focused stress-envelope traces for both variants
+  plus a summary trace.

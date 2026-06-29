@@ -1,0 +1,169 @@
+{
+  "critical_margin_at_current": false,
+  "current_i6_classification_preserved": true,
+  "current_i6_limiting_field": "merge_leakage_margin",
+  "current_i6_minimum_margin": 0.014,
+  "current_i6_multiplier": 1.0,
+  "first_failed_multiplier": "not_failed_within_sweep",
+  "max_passed_multiplier": 3.0,
+  "narrow_margin_at_current": false,
+  "new_source_current_evidence_opened": false,
+  "source_iteration": "4-A2",
+  "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe.json",
+  "source_regime_label": "generative",
+  "source_row_digest": "6d7c791cb4a937ab27ccb33c8bc2eae7908be25c60e2a88b45f024e6950af8cf",
+  "source_row_id": "n28_i4a2_row_generative_mechanism_diversity_candidate",
+  "source_row_mutated": false,
+  "stress_axis": "boundary_integrity",
+  "stress_id": "boundary_integrity_compression",
+  "sweep_multipliers": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "sweep_points": [
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 0.0,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 0.5,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 1.0,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 1.25,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 1.5,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 2.0,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 2.5,
+      "observed_label": "generative"
+    },
+    {
+      "classification_evidence": {
+        "competitive_redistribution": false,
+        "extraction_below": true,
+        "extraction_present": false,
+        "extractive_loss": false,
+        "generative_gain": true,
+        "near_neutral": false,
+        "neutral_circulation": false,
+        "stable": true
+      },
+      "classification_preserved": true,
+      "minimum_margin": 0.014,
+      "minimum_margin_field": "merge_leakage_margin",
+      "multiplier": 3.0,
+      "observed_label": "generative"
+    }
+  ],
+  "thresholds_retuned_for_sweep": false,
+  "trace_id": "n28_i6b_n28_i4a2_row_generative_mechanism_diversity_candidate_boundary_integrity_compression_envelope"
+}

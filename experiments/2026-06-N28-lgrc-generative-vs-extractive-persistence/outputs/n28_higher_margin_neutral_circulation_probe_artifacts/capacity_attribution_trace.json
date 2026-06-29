@@ -1,0 +1,24 @@
+{
+  "attribution_result": "source_current_higher_margin_neutral_circulatory_neighbor_capacity_exchange",
+  "buffer_lobe_capacity_delta": 0.001,
+  "capacity_attribution_basis": [
+    "neighbor_distinguishability_delta",
+    "neighbor_support_delta",
+    "neighbor_boundary_delta",
+    "environment_capacity_delta"
+  ],
+  "competitive_redistribution_detected": false,
+  "direct_two_lobe_competitive_pair_used": false,
+  "environment_capacity_budget_mismatch": false,
+  "extractive_capacity_loss_threshold_met": false,
+  "generative_capacity_gain_threshold_met": false,
+  "hidden_capacity_attribution_policy_used": false,
+  "inflow_lobe_capacity_delta": 0.062,
+  "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+  "medium_segmentation_policy_hidden": false,
+  "n27_transfer_success_used_as_n28_success": false,
+  "neutral_circulation_detected": true,
+  "outflow_lobe_capacity_delta": -0.06,
+  "producer_generativity_label_used_as_evidence": false,
+  "trace_id": "n28_i4f_capacity_attribution_trace"
+}

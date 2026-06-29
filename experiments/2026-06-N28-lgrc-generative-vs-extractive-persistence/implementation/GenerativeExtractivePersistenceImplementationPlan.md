@@ -238,6 +238,79 @@ regime boundary stays stable under replay, controls, and stress
 transfer success alone does not classify as generative
 ```
 
+During implementation, additional iterations may be added only when they answer
+a concrete evidence gap surfaced by earlier artifacts. They must not be used to
+retune thresholds after the fact or replace a weaker source row silently.
+
+Allowed additions:
+
+```text
+mechanism-diversity rows:
+  added when a first strengthening row risks being only an optimized copy
+
+artifact-only / reconstruction controls:
+  added when replay evidence could be confused with report-derived evidence
+
+boundary / envelope sweeps:
+  added when a shared classifier appears supported but the transition surface
+  or margin robustness is not yet known
+
+focused higher-margin variants:
+  added only when an envelope sweep localizes weak margins to specific
+  regime-transition rows
+```
+
+Every added tranche should make its rationale auditable in the plan/checklist
+and, where the row schema already has matching fields, in row metadata:
+
+```text
+why_added
+source_iteration_or_gap_trigger
+prior_row_replacement_status = false
+threshold_retuning_status = false
+source_row_mutation_status = false
+claim_ceiling
+```
+
+The actual N28 implementation added the following extra rows for these reasons:
+
+```text
+I4-A2:
+  added because I4-A strengthened the generative side but could still look like
+  the same local-shell mechanism with better margins. I4-A2 tests generative
+  mechanism diversity.
+
+I4-C2:
+  added because I4-C strengthened the extractive side but could still look like
+  the same drain mechanism with better margins. I4-C2 tests extractive
+  mechanism diversity.
+
+I5-A:
+  added because I5 replay/control success could be overread as reconstructable
+  from reports, labels, digests, or N27 transfer context. I5-A proves those
+  shortcuts fail closed.
+
+I6-A:
+  added because I6 supported GE5 but did not by itself show where the shared
+  regime classifier changes labels. I6-A maps the transition surface.
+
+I6-B:
+  added because I6 supported GE5 with narrow competitive/neutral margins. I6-B
+  maps the stress multiplier envelope and identifies bottlenecks.
+
+I4-F / I4-G:
+  added because I6-B localized the weak margins to neutral circulation and
+  competitive redistribution rows. They are focused source-current variants,
+  not replacements for I4-D/I4-E and not broad-robustness evidence by
+  themselves.
+
+I5-B / I6-C:
+  added because I4-F/I4-G could not count beyond GE3 until replay/control and
+  stress/envelope validation were run on the focused variants. The intended
+  I6-C result is targeted current-multiplier margin improvement, not
+  order-of-magnitude robustness.
+```
+
 ## Generative Persistence Vs Transfer
 
 N28 is not a transfer experiment.
@@ -640,7 +713,18 @@ classifies the replayed rows or whether split policies are required.
 ### Iteration 5-A. Artifact-Only Reconstruction Replay Probe
 
 Confirm that N28 classification cannot be reconstructed from reports, labels,
-or N27 transfer success alone.
+digests, matrix summaries, or N27 transfer success alone.
+
+This iteration is a protection pass, not a positive-evidence pass. It should
+preserve the I5 GE4 result while proving that the following fail closed:
+
+```text
+report-only reconstruction
+label-only regime reconstruction
+N27 transfer-only reconstruction
+digest/hash-only reconstruction
+I5 matrix-summary-only reconstruction
+```
 
 ### Iteration 6. Stress / Regime-Separation Matrix
 
@@ -663,10 +747,155 @@ provisionally:
 supported | partially_supported | split_policy_required | blocked
 ```
 
+### Iteration 6-B. Margin Envelope Sweep
+
+Sweep the multiplier on each I6 stress vector across all I4-family source rows.
+This is not a new positive source-current evidence pass. It is an envelope
+diagnostic over the existing I6 GE5 matrix.
+
+I6-B should record:
+
+```text
+current_i6_multiplier
+max_passed_multiplier
+first_failed_multiplier
+current_i6_minimum_margin
+current_i6_limiting_field
+critical_current_margin_count
+narrow_current_margin_count
+```
+
+This iteration was added because I6 reached GE5, but the weakest
+competitive/neutral rows had very narrow current margins. The useful question
+became:
+
+```text
+are the weak margins global across N28,
+or localized to specific transition rows?
+```
+
+If bottlenecks are localized, I6-B may recommend focused source-current rows.
+It must not recommend generic extra runs merely to add volume.
+
+### Iteration 4-F. Higher-Margin Neutral Circulation Variant
+
+Add a focused source-current neutral circulation variant only if I6-B identifies
+neutral circulation as a margin bottleneck. I4-F should preserve the same
+regime label and policy family as I4-E while improving the limiting neutral
+circulation margins.
+
+I4-F was added because I6-B found neutral bottlenecks at:
+
+```text
+merge_leakage_pressure:
+  limiting field = merge_leakage_margin
+
+boundary_integrity_compression:
+  limiting field = outflow_lobe_margin
+```
+
+The row should therefore increase circulation lobe margin and reduce
+merge/leakage pressure without becoming generative or extractive. It must not
+replace I4-E, mutate I4-E, or widen thresholds.
+
+Expected scope:
+
+```text
+regime_label = neutral
+regime_evidence_role = measured_contrast_margin_strengthening
+GE3 only until focused replay/control
+```
+
+### Iteration 4-G. Higher-Margin Competitive Redistribution Variant
+
+Add a focused source-current competitive redistribution variant only if I6-B
+identifies competitive redistribution as a margin bottleneck. I4-G should
+preserve the same regime label and policy family as I4-D while improving the
+limiting competitive margins.
+
+I4-G was added because I6-B found a competitive bottleneck at:
+
+```text
+extraction_cost_pressure:
+  limiting field = flattening_margin
+```
+
+The row should increase route-lobe separation and keep flattening/extraction
+below ceiling without becoming generative or extractive. It must not replace
+I4-D, mutate I4-D, or widen thresholds.
+
+Expected scope:
+
+```text
+regime_label = competitive
+regime_evidence_role = measured_contrast_margin_strengthening
+GE3 only until focused replay/control
+```
+
+### Iteration 5-B. Focused Margin Variant Replay Matrix
+
+Replay and control I4-F and I4-G after they exist. This is required because
+focused variants are only GE3 source-current rows until artifact replay,
+snapshot/load replay, duplicate replay, capacity-attribution controls,
+merge/leakage controls, and focal-survival-only controls pass.
+
+I5-B was added because I4-F/I4-G were created after I5. They should not be
+silently folded into the already completed I5 matrix.
+
+Expected scope:
+
+```text
+I4-F neutral replay/control -> GE4 if stable
+I4-G competitive replay/control -> GE4 if stable
+GE5 remains pending I6-C
+```
+
+### Iteration 6-C. Focused Margin Variant Stress Envelope
+
+Stress I5-B focused variants with the same I6 stress family and I6-B multiplier
+envelope. I6-C should test only the focused rows created to address I6-B
+bottlenecks.
+
+I6-C was added because I4-F/I4-G and I5-B could not by themselves show that the
+bottleneck margins improved under stress. The pass condition is:
+
+```text
+all focused current-stress rows preserve classification
+targeted I6-B bottleneck margins improve
+critical_current_margin_count = 0
+narrow_current_margin_count = 0
+thresholds_retuned_for_sweep = false
+source_rows_mutated = false
+broad_margin_robustness_supported = false
+order_of_magnitude_robustness_supported = false
+```
+
+Expected scope:
+
+```text
+focused GE5 support for current-multiplier competitive/neutral transition margins
+not broad flux robustness
+GE6 remains pending I7/I8 claim classification and closeout
+```
+
 ### Iteration 7. Controls, AP4/AP5 Dependency, And Claim Classification
 
 Classify all candidate rows, active nulls, contrasts, AP dependencies, and
-unsafe claim boundaries.
+unsafe claim boundaries, including the focused I4-F/I4-G/I5-B/I6-C tranche.
+
+I7 should distinguish:
+
+```text
+primary paired-regime GE5 matrix from I6
+boundary-transition policy evidence from I6-A
+margin-envelope diagnostic evidence from I6-B
+focused current-multiplier competitive/neutral GE5 margin support from I6-C
+```
+
+It must not turn focused competitive/neutral margin support into a broader
+generative claim or broad robustness claim. It should also preserve the
+AP4/AP5 NAT4 gap records and keep semantic cooperation, agency, native support,
+Phase 8 completion, and ant ecology blocked.
 
 ### Iteration 8. Closeout And N29 Handoff
 

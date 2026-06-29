@@ -1172,27 +1172,545 @@ blocked pending stress, claim classification, and closeout.
 
 ## Iteration 6 - Stress / Regime-Separation Matrix
 
-- [ ] Stress focal stability.
-- [ ] Stress neighbor capacity.
-- [ ] Stress extraction cost.
-- [ ] Stress merge/leakage.
-- [ ] Stress boundary integrity.
-- [ ] Stress I4 through I4-E paired-regime rows, including I4-A2 and I4-C2, under the same policy family first.
-- [ ] If the same policy family fails, record split-policy evidence rather than retuning thresholds.
-- [ ] Confirm generative rows do not collapse into focal-survival-only rows.
-- [ ] Confirm extractive rows are not hidden by focal stability.
-- [ ] Preserve thresholds and policy declared before use.
+- [x] Stress focal stability.
+- [x] Stress neighbor capacity.
+- [x] Stress extraction cost.
+- [x] Stress merge/leakage.
+- [x] Stress boundary integrity.
+- [x] Stress I4 through I4-E paired-regime rows, including I4-A2 and I4-C2, under the same policy family first.
+- [x] If the same policy family fails, record split-policy evidence rather than retuning thresholds.
+- [x] Confirm generative rows do not collapse into focal-survival-only rows.
+- [x] Confirm extractive rows are not hidden by focal stability.
+- [x] Preserve thresholds and policy declared before use.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_stress_variant_backed_ge5_regime_separation_candidate_pending_claim_classification
+output_digest = fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756
+provisional_ge_ladder_rung = GE5
+ge4_or_stronger_supported = true
+ge5_or_stronger_supported = true
+ge6_or_stronger_supported = false
+shared_regime_policy_status = supported
+stress_variant_count = 5
+stress_row_count = 40
+stress_passed_row_count = 40
+stress_failed_row_count = 0
+rows_demoted = []
+failed_checks = []
+ready_for_iteration_7_claim_classification = true
+```
+
+Artifacts:
+
+```text
+outputs/n28_stress_regime_separation_matrix.json
+reports/n28_stress_regime_separation_matrix.md
+scripts/build_n28_stress_regime_separation_matrix.py
+outputs/n28_stress_regime_separation_matrix_artifacts/stress_regime_separation_summary.json
+outputs/n28_stress_regime_separation_matrix_artifacts/n28_i6_*_trace.json
+```
+
+Stress axes:
+
+```text
+focal_stability_softening -> 8 / 8 passed, minimum margin = 0.003
+neighbor_capacity_compression -> 8 / 8 passed, minimum margin = 0.003
+extraction_cost_pressure -> 8 / 8 passed, minimum margin = 0.002
+merge_leakage_pressure -> 8 / 8 passed, minimum margin = 0.002
+boundary_integrity_compression -> 8 / 8 passed, minimum margin = 0.001
+```
+
+Regime coverage:
+
+```text
+generative = 15 / 15 stress rows passed, minimum margin = 0.010
+extractive = 15 / 15 stress rows passed, minimum margin = 0.003
+competitive = 5 / 5 stress rows passed, minimum margin = 0.002
+neutral = 5 / 5 stress rows passed, minimum margin = 0.001
+```
+
+Interpretation:
+
+```text
+I6 upgrades I5 from replay/control-backed GE4 to a provisional GE5 candidate.
+It does so by applying five declared stress overlays to every I4-family row
+already admitted by I5: focal stability softening, neighbor-capacity
+compression, extraction-cost pressure, merge/leakage pressure, and boundary
+integrity compression.
+
+The stress overlays do not retune thresholds, do not mutate source rows, and
+preserve the same shared policy family:
+
+shared_policy_ids = [n28_shared_regime_policy_v1]
+thresholds_retuned_for_stress = false
+source_rows_mutated = false
+
+Geometrically, I6 compresses each regime's load-bearing axes while keeping the
+same classification rules. Generative rows keep focal persistence while their
+neighboring capacity shell remains enriched. Extractive rows keep focal
+persistence while the neighborhood remains depleted/flattened and extraction
+remains present. Competitive/neutral rows keep redistribution or circulation
+without becoming aggregate enrichment or depletion.
+
+The result is strong enough for GE5 because all paired regime families survive
+bounded stress without demotion:
+
+generative source rows = 3
+extractive source rows = 3
+competitive/neutral source rows = 2
+stress rows passed = 40
+stress rows failed = 0
+
+The result is still not GE6 or final N28. Margins remain narrow in the weakest
+neutral/boundary cases, with minimum stress margin 0.001. I7 must still classify
+AP4/AP5 dependencies and unsafe claim boundaries, and I8 must still freeze
+closeout and the N29 handoff.
+```
 
 ## Iteration 6-A - Regime Boundary / Transition Matrix
 
-- [ ] Vary stress or capacity envelope across declared settings.
-- [ ] Record where rows remain generative.
-- [ ] Record where rows become competitive or neutral.
-- [ ] Record where rows become extractive.
-- [ ] Confirm transition points are source-current and not post-hoc threshold choices.
-- [ ] Decide provisional `shared_regime_policy_status`.
-- [ ] Confirm any policy divergence is declared, source-current, and replay/control clean.
-- [ ] Confirm regime boundary remains replay/control clean when shared policy is supported.
+- [x] Vary stress or capacity envelope across declared settings.
+- [x] Record where rows remain generative.
+- [x] Record where rows become competitive or neutral.
+- [x] Record where rows become extractive.
+- [x] Confirm transition points are source-current and not post-hoc threshold choices.
+- [x] Decide provisional `shared_regime_policy_status`.
+- [x] Confirm any policy divergence is declared, source-current, and replay/control clean.
+- [x] Confirm regime boundary remains replay/control clean when shared policy is supported.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_regime_boundary_transition_matrix_same_policy_supported_no_new_ge_support
+output_digest = e6b0afbf81873e519db458e611cc01a1c11b2e9b5c2dead899946b270077700d
+i6_ge5_result_preserved = true
+i6a_new_ge_support_opened = false
+ge5_or_stronger_supported = true
+ge6_or_stronger_supported = false
+shared_regime_policy_status = supported
+transition_row_count = 34
+label_match_count = 34
+label_mismatch_count = 0
+ge5_boundary_preservation_row_count = 16
+failed_checks = []
+ready_for_iteration_7_claim_classification = true
+```
+
+Artifacts:
+
+```text
+outputs/n28_regime_boundary_transition_matrix.json
+reports/n28_regime_boundary_transition_matrix.md
+scripts/build_n28_regime_boundary_transition_matrix.py
+outputs/n28_regime_boundary_transition_matrix_artifacts/regime_boundary_transition_summary.json
+outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_*_trace.json
+```
+
+Transition roles:
+
+```text
+source_current_anchor = 8 / 8 matched
+same_regime_boundary_edge = 8 / 8 matched
+unclassified_gap_expected = 8 / 8 matched
+opposite_regime_cross_check = 6 / 6 matched
+aggregate_enrichment_cross_check = 2 / 2 matched
+aggregate_depletion_cross_check = 2 / 2 matched
+```
+
+Observed label transitions:
+
+```text
+generative -> generative = 6
+generative -> unclassified = 3
+generative -> extractive = 3
+extractive -> extractive = 6
+extractive -> unclassified = 3
+extractive -> generative = 3
+competitive -> competitive = 2
+competitive -> unclassified = 1
+competitive -> generative = 1
+competitive -> extractive = 1
+neutral -> neutral = 2
+neutral -> unclassified = 1
+neutral -> generative = 1
+neutral -> extractive = 1
+```
+
+Interpretation:
+
+```text
+I6-A preserves the I6 GE5 result and supports the same shared regime policy as
+a boundary classifier. It does not add new source-current GE support. Instead,
+it varies declared transition envelopes around the I4-family source anchors and
+checks whether the same frozen policy classifies each transition surface as
+expected.
+
+Source anchors and same-regime boundary-edge rows preserve the GE5 policy
+surface. Boundary-gap and cross-regime rows are controls. The key result is
+that near-zero aggregate deltas alone do not become competitive or neutral:
+when mixed-lobe or circulation evidence is removed, the row becomes
+unclassified. When aggregate enrichment or depletion crosses the declared
+thresholds, the same policy classifies it as generative or extractive.
+
+This means the N28 classifier is not merely memorizing labels. It has a
+traceable transition surface:
+
+generative / extractive regimes require signed neighborhood-capacity and
+extraction/leakage evidence;
+competitive / neutral regimes require mixed-lobe or circulation evidence;
+boundary gaps fail closed as unclassified.
+
+GE6 and final N28 remain blocked pending I7 claim classification and I8
+closeout. I6-A makes additional I5/I6 replay/stress rows optional rather than
+required unless we want broader margins or more source-current variety.
+```
+
+## Iteration 6-B - Margin Envelope Sweep
+
+- [x] Sweep I6 stress multipliers across all I4-family source rows.
+- [x] Preserve the current I6 multiplier as an explicit checkpoint.
+- [x] Record max passed multiplier and first failed multiplier per row/axis.
+- [x] Identify critical current-margin bottlenecks.
+- [x] Decide whether generic extra I5/I6 runs or targeted higher-margin rows are useful.
+- [x] Confirm thresholds are not retuned and source rows are not mutated.
+- [x] Confirm I6-B does not open new source-current GE support or GE6.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_margin_envelope_sweep_ge5_preserved_bottlenecks_identified
+output_digest = f91f4cb675b39e0fa87f5ebfbbb842e52129d42c2fbe7d4586bbe2bcd54c5fab
+i6_ge5_result_preserved = true
+i6b_new_ge_support_opened = false
+ge5_or_stronger_supported = true
+ge6_or_stronger_supported = false
+envelope_row_count = 40
+current_i6_rows_preserved = 40
+critical_current_margin_count = 3
+narrow_current_margin_count = 9
+failed_within_sweep_count = 7
+failed_checks = []
+ready_for_iteration_7_claim_classification = true
+```
+
+Artifacts:
+
+```text
+outputs/n28_margin_envelope_sweep.json
+reports/n28_margin_envelope_sweep.md
+scripts/build_n28_margin_envelope_sweep.py
+outputs/n28_margin_envelope_sweep_artifacts/margin_envelope_sweep_summary.json
+outputs/n28_margin_envelope_sweep_artifacts/n28_i6b_*_envelope.json
+```
+
+Critical bottlenecks:
+
+```text
+competitive / extraction_cost_pressure:
+  limiting field = flattening_margin
+  current margin = 0.002
+  max passed multiplier = 1.5
+  first failed multiplier = 2.0
+
+neutral / merge_leakage_pressure:
+  limiting field = merge_leakage_margin
+  current margin = 0.002
+  max passed multiplier = 1.5
+  first failed multiplier = 2.0
+
+neutral / boundary_integrity_compression:
+  limiting field = outflow_lobe_margin
+  current margin = 0.001
+  max passed multiplier = 1.25
+  first failed multiplier = 1.5
+```
+
+Recommendation:
+
+```text
+generic_more_i5_i6_runs_recommended = false
+higher_margin_neutral_circulation_variant_recommended = true
+higher_margin_competitive_redistribution_variant_recommended = true
+higher_margin_generative_variant_recommended = false
+higher_margin_extractive_variant_recommended = false
+```
+
+Interpretation:
+
+```text
+I6-B preserves the I6 GE5 result at the current stress multiplier and maps the
+failure envelope around it. The current weak margins are not spread across the
+whole paired-regime matrix. They are localized to competitive/neutral rows,
+especially the neutral circulation row under boundary compression.
+
+This means a generic extra replay/stress pass would mostly add volume, not new
+agency-relevant structure. If N28 is strengthened further before I7, the useful
+work is focused: add a higher-margin neutral circulation variant and, second,
+a higher-margin competitive redistribution variant, then replay/stress those
+specific rows. More generative or extractive variants are not indicated by the
+current bottleneck map.
+
+I6-B remains GE5 envelope characterization only. It does not add new
+source-current GE support, does not solve GE6, and does not open final N28,
+semantic cooperation, agency, native support, Phase 8 completion, or ant
+ecology.
+```
+
+## Iteration 4-F - Higher-Margin Neutral Circulation Variant
+
+- [x] Add the focused higher-margin neutral circulation row recommended by I6-B.
+- [x] Preserve the same shared regime policy family and claim boundary.
+- [x] Confirm I4-F does not replace I4-E.
+- [x] Confirm the row remains neutral circulation, not generative or extractive.
+- [x] Record improvement against the I6-B neutral circulation bottlenecks.
+- [x] Keep GE4+ pending focused replay/control.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_higher_margin_neutral_circulation_ge3_candidate_pending_replay_stress
+output_digest = 1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921
+provisional_ge_ladder_rung = GE3
+regime_label = neutral
+regime_evidence_role = measured_contrast_margin_strengthening
+higher_margin_neutral_circulation_supported = true
+i4e_replaced = false
+i6b_bottleneck_targeted = true
+ge4_or_stronger_supported = false
+ready_for_i5b_focused_replay = true
+failed_checks = []
+```
+
+Artifacts:
+
+```text
+outputs/n28_higher_margin_neutral_circulation_probe.json
+reports/n28_higher_margin_neutral_circulation_probe.md
+scripts/build_n28_higher_margin_neutral_circulation_probe.py
+outputs/n28_higher_margin_neutral_circulation_probe_artifacts/*.json
+```
+
+Focused margin comparison:
+
+```text
+i4e_outflow_margin = 0.005
+i4f_outflow_margin = 0.020
+i4e_merge_leakage_margin = 0.005
+i4f_merge_leakage_margin = 0.010
+i4f_inflow_margin = 0.022
+i4f_flattening_margin = 0.010
+```
+
+Interpretation:
+
+```text
+I4-F is a focused answer to I6-B's neutral circulation bottleneck. It keeps
+the same neutral/circulatory geometry as I4-E: the focal basin remains stable,
+aggregate neighbor capacity remains near-neutral, and the surrounding field is
+processed through inflow, outflow, and buffer lobes rather than broad
+enrichment or depletion.
+
+The strengthening is geometric margin, not a new label. The inflow/outflow
+circulation pair has more room above the mixed-lobe floor, and merge/leakage is
+further below ceiling. This targets the I6-B outflow-lobe and merge/leakage
+bottlenecks while keeping the claim at GE3 pending focused replay and stress.
+```
+
+## Iteration 4-G - Higher-Margin Competitive Redistribution Variant
+
+- [x] Add the focused higher-margin competitive redistribution row recommended by I6-B.
+- [x] Preserve the same shared regime policy family and claim boundary.
+- [x] Confirm I4-G does not replace I4-D.
+- [x] Confirm the row remains competitive redistribution, not generative or extractive.
+- [x] Record improvement against the I6-B competitive flattening bottleneck.
+- [x] Keep GE4+ pending focused replay/control.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_higher_margin_competitive_redistribution_ge3_candidate_pending_replay_stress
+output_digest = 8bc907a97b07c09c72fd7ceda63811555c335c0d45d6dbef6cfb29489f463e72
+provisional_ge_ladder_rung = GE3
+regime_label = competitive
+regime_evidence_role = measured_contrast_margin_strengthening
+higher_margin_competitive_redistribution_supported = true
+i4d_replaced = false
+i6b_bottleneck_targeted = true
+ge4_or_stronger_supported = false
+ready_for_i5b_focused_replay = true
+failed_checks = []
+```
+
+Artifacts:
+
+```text
+outputs/n28_higher_margin_competitive_redistribution_probe.json
+reports/n28_higher_margin_competitive_redistribution_probe.md
+scripts/build_n28_higher_margin_competitive_redistribution_probe.py
+outputs/n28_higher_margin_competitive_redistribution_probe_artifacts/*.json
+```
+
+Focused margin comparison:
+
+```text
+i4d_route_lobe_a_margin = 0.015
+i4g_route_lobe_a_margin = 0.030
+i4d_route_lobe_b_margin = 0.010
+i4g_route_lobe_b_margin = 0.028
+i4d_flattening_margin = 0.006
+i4g_flattening_margin = 0.011
+i4g_extraction_cost_margin = 0.013
+```
+
+Interpretation:
+
+```text
+I4-G is a focused answer to I6-B's competitive redistribution bottleneck. The
+geometry remains competitive: one route lobe gains capacity while the opposed
+lobe loses capacity, focal support remains stable, and aggregate neighbor
+capacity remains near-neutral rather than becoming generative or extractive.
+
+The improvement is that the two route lobes are farther from the mixed-lobe
+floor and flattening/extraction costs are farther below ceiling. It therefore
+strengthens the competitive transition surface without retuning policy or
+replacing I4-D. GE4+ remains pending focused replay and stress.
+```
+
+## Iteration 5-B - Focused Margin Variant Replay Matrix
+
+- [x] Replay I4-F and I4-G as focused variants.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Confirm regime labels remain stable.
+- [x] Confirm capacity-attribution, merge/leakage, and focal-survival-only controls pass.
+- [x] Confirm GE5 remains pending I6-C.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_focused_margin_variants_ge4_replay_control_backed_pending_stress
+output_digest = 0ce6c4dcb35f4c7bef0f2e17c8ab2ff87bde958706c390fd05e016b5092fb08e
+provisional_ge_ladder_rung = GE4
+focused_variant_ge4_supported = true
+ge4_or_stronger_supported = true
+ge5_or_stronger_supported = false
+source_row_count = 2
+rows_demoted = []
+failed_checks = []
+ready_for_i6c_focused_stress = true
+```
+
+Artifacts:
+
+```text
+outputs/n28_focused_margin_variant_replay_matrix.json
+reports/n28_focused_margin_variant_replay_matrix.md
+scripts/build_n28_focused_margin_variant_replay_matrix.py
+outputs/n28_focused_margin_variant_replay_matrix_artifacts/*.json
+```
+
+Replay rows:
+
+```text
+I4-F neutral     -> neutral     artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+I4-G competitive -> competitive artifact/snapshot/duplicate = passed/passed/passed  final = GE4
+```
+
+Interpretation:
+
+```text
+I5-B upgrades the focused variants from GE3 to GE4 only. It shows that the
+higher-margin neutral circulation and competitive redistribution rows are
+replay/control consumable under the same shared policy family. It does not
+replace I5 and does not claim stress-backed GE5 until I6-C.
+```
+
+## Iteration 6-C - Focused Margin Variant Stress Envelope
+
+- [x] Stress I5-B focused variants using the same I6 stress family.
+- [x] Sweep the same multiplier envelope used by I6-B.
+- [x] Confirm all current focused stress rows preserve classification.
+- [x] Confirm targeted I6-B bottleneck margins improve.
+- [x] Confirm no critical or narrow current margins remain.
+- [x] Confirm thresholds are not retuned and source rows are not mutated.
+- [x] Keep GE6 and final N28 blocked pending claim classification.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_focused_margin_variants_ge5_stress_envelope_supported_pending_claim_classification
+output_digest = 0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3
+provisional_ge_ladder_rung = GE5
+focused_variant_ge5_supported = true
+ge5_or_stronger_supported = true
+ge6_or_stronger_supported = false
+stress_row_count = 10
+current_stress_rows_preserved = 10
+targeted_bottleneck_improvement_count = 3
+critical_current_margin_count = 0
+narrow_current_margin_count = 0
+minimum_current_margin = 0.005
+broad_margin_robustness_supported = false
+order_of_magnitude_robustness_supported = false
+margin_interpretation = targeted_current_multiplier_margin_improvement_not_broad_robustness
+failed_checks = []
+ready_for_iteration_7_claim_classification = true
+```
+
+Artifacts:
+
+```text
+outputs/n28_focused_margin_variant_stress_envelope.json
+reports/n28_focused_margin_variant_stress_envelope.md
+scripts/build_n28_focused_margin_variant_stress_envelope.py
+outputs/n28_focused_margin_variant_stress_envelope_artifacts/*.json
+```
+
+Targeted improvements:
+
+```text
+neutral / merge_leakage_pressure:
+  I6-B critical margin = 0.002
+  I6-C focused margin = 0.007
+
+neutral / boundary_integrity_compression:
+  I6-B critical margin = 0.001
+  I6-C focused margin = 0.010
+
+competitive / extraction_cost_pressure:
+  I6-B critical margin = 0.002
+  I6-C focused margin = 0.007
+```
+
+Interpretation:
+
+```text
+I6-C shows that the focused neutral circulation and competitive redistribution
+variants improve the specific current-multiplier bottleneck margins identified
+by I6-B. This is focused optimization of the weak competitive/neutral
+transition rows, not broad margin robustness. The geometric change is not a new
+regime label. I4-F remains neutral circulation and I4-G remains competitive
+redistribution.
+
+The stronger evidence is narrow: their circulation, leakage, route-lobe, and
+flattening margins no longer sit on the I6-B critical edge under the current
+stress multiplier. The absolute normalized margins remain small, with minimum
+current margin 0.005, so this is not order-of-magnitude robustness and not GE6.
+
+This supports focused GE5 evidence for the competitive/neutral transition
+region only. It does not upgrade GE6, final N28, semantic cooperation, agency,
+native support, Phase 8 completion, or ant ecology.
+```
 
 ## Iteration 7 - Controls, AP4/AP5 Dependency, And Claim Classification
 
