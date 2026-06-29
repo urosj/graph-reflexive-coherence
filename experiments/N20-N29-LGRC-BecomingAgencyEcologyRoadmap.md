@@ -13,7 +13,7 @@ multi-basin implementation tranche is closed at MB5, and N25.2 is closed as
 the validation bridge supporting MB6 / scoped N26-ready substrate evidence.
 N26 is closed as bounded PD6 proxy divergence / proxy collapse evidence with a
 scoped artifact AP5 bridge candidate, and N27 configuration/substrate transfer
-is next.
+is initialized as the next primitive experiment.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
@@ -652,6 +652,21 @@ substrate.
 
 ## N27. Configuration / Substrate Transfer
 
+Status:
+
+```text
+iteration_2_passed
+source_contract_row = n20_i5_row_08_configuration_substrate_transfer
+local_ladder = CT0...CT6
+closeout_ladder = N27-C0...N27-C6
+positive_transfer_evidence_opened = false
+ct_ladder_rung_assigned = false
+n27_closeout_ceiling = N27-C2_transfer_schema_and_controls_frozen
+source_inventory_output_digest = 5ff3409dd63b9b52cf3e10e91797653c319af0564dbcc344dd9e9fc2c3cbb222
+transfer_schema_output_digest = 15515b88b7b6853f9cb47f9fd22f4291a78d7037da586d795110dea91c55ab22
+ready_for_iteration_3 = true
+```
+
 Question:
 
 ```text
@@ -679,6 +694,21 @@ configuration / fixture / topology transfer
 
 Substrate transfer is allowed only when the substrate mapping is explicitly
 declared and source-backed.
+
+Iteration 2 froze the schema/control contract before positive probes:
+
+```text
+N20 I5 consumable transfer contract = normative
+N20 I4 transfer descriptor = context only
+same label after mapping = not transfer
+basin movement = not transfer
+support reconstruction as transfer = blocked
+N26 proxy/AP5 context as transfer/native AP5 = blocked
+direct N25.2 transfer backfill = blocked
+AP4/AP5 dependency handling = row-local
+```
+
+Iteration 3 should run active nulls and failure baselines only.
 
 ## N28. Generative Vs Extractive Persistence
 

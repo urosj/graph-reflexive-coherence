@@ -1,0 +1,25 @@
+# N27 Outputs
+
+Generated N27 JSON artifacts will be written here.
+
+Current outputs:
+
+```text
+n27_source_inventory_and_transfer_contract_admission.json
+n27_transfer_schema_and_controls.json
+```
+
+Planned outputs:
+
+```text
+n27_active_nulls_and_failure_baselines.json
+n27_minimal_configuration_transfer_probe.json
+n27_topology_fixture_variant_transfer_probe.json
+n27_replay_same_basin_mapping_matrix.json
+n27_stress_mapping_variant_transfer_matrix.json
+n27_controls_ap_dependency_claim_classification.json
+n27_closeout_and_n28_handoff.json
+```
+
+Outputs must use repository-relative paths only. Visuals, summaries, labels,
+or report-only rows cannot satisfy positive transfer evidence.
