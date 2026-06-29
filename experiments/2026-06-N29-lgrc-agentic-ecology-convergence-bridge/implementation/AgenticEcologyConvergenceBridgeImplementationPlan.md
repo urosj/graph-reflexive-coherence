@@ -254,16 +254,22 @@ what cannot be consumed by ecology yet?
 Each coverage row should include:
 
 ```text
+source_experiment_or_spec
 ecology_demand
 candidate_capability_sources
+bridge_motif
+agency_diagnostic_role
 coverage_status
 coverage_reason
 producer_residue
 medium_debt
 naturalization_debt
+native_readiness_status
 native_readiness_gap
+blocked_relabels
 first_probe_implication
 claim_ceiling
+why_not_stronger
 ```
 
 Coverage statuses:
@@ -299,6 +305,7 @@ controls
 prototype_candidate
 first_probe_relevance
 claim_ceiling
+why_not_stronger
 ```
 
 Initial motif families:
@@ -365,6 +372,7 @@ controls
 next_probe_contract
 claim_ceiling
 unsafe_claim_flags
+why_not_stronger
 ```
 
 Every prototype row must answer:
@@ -401,6 +409,7 @@ unresolved_debt
 claim_ceiling
 blocked_relabels
 next_action
+why_not_stronger
 ```
 
 Allowed directions:
@@ -408,6 +417,36 @@ Allowed directions:
 ```text
 outbound_to_agentic_ecology
 inbound_to_n30_plus_core_primitives
+```
+
+## Phase Boundary Rules
+
+Iteration 4 freezes Phase A as the Phase A -> Phase B validation boundary.
+Capability cards are orientation/index records only. Source-backed coverage,
+motif, prototype, and handoff claims must return to original experiment
+artifacts, closeouts, reports, runtime records, or visual manifests where the
+visual claim is explicit.
+
+The canonical claim flag location is `claim_boundary_audit`; top-level flags
+are convenience mirrors only. The blocked claim list must match the
+`claim_boundary_audit` keys.
+
+Unknown fields are allowed only when namespaced with `x_`, paired with
+`x_unknown_field_review_status`, and unable to raise the claim ceiling or
+replace a required field.
+
+Phase B separation:
+
+```text
+I5 = ecology demand matrix only
+  must not import N05-N28 evidence, match demand to supply, create bridge
+  motifs, or open prototype rows.
+
+I6 = capability supply atlas only
+  must not create coverage/debt matches, bridge motifs, or prototype rows.
+
+I7 = demand/supply coverage-debt matching only
+  must not create bridge motifs, open prototype rows, or claim native ecology.
 ```
 
 ## Composition Discipline

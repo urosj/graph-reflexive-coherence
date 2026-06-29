@@ -33,15 +33,15 @@ ready_for_iteration_1 = true
 
 ### Iteration 1 - Ecology Demand Extraction
 
-- [ ] Inventory `reflexive-coherence-agentic-ecology/README.md`.
-- [ ] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-FromStateToBecoming.md`.
-- [ ] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md`.
-- [ ] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md`.
-- [ ] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md`.
-- [ ] Extract ecology demands as target requirements, not evidence.
-- [ ] Extract RC-Ant worked-domain component demands.
-- [ ] Record source roles and blocked implementation-evidence roles.
-- [ ] Confirm no native ecology or ant-agency claim opens.
+- [x] Inventory `reflexive-coherence-agentic-ecology/README.md`.
+- [x] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-FromStateToBecoming.md`.
+- [x] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md`.
+- [x] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md`.
+- [x] Inventory `reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md`.
+- [x] Extract ecology demands as target requirements, not evidence.
+- [x] Extract RC-Ant worked-domain component demands.
+- [x] Record source roles and blocked implementation-evidence roles.
+- [x] Confirm no native ecology or ant-agency claim opens.
 
 Expected result:
 
@@ -53,13 +53,48 @@ positive_ecology_evidence_opened = false
 ready_for_iteration_2 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_ecology_demand_extraction_i1.json
+report = reports/n29_ecology_demand_extraction_i1.md
+script = scripts/build_n29_ecology_demand_extraction_i1.py
+status = passed
+acceptance_state = accepted_ecology_demand_model_no_implementation_claims
+source_count = 5
+general_ecology_demand_rows = 14
+rc_ant_component_demand_rows = 16
+total_demand_rows = 30
+output_digest = 509f808f69b6ac33682c1f4396fd8a421d6d9372130c8edc357e102bb7b513e3
+failed_checks = []
+n05_n28_capability_coverage_claimed = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+ready_for_iteration_2 = true
+```
+
+Iteration 1 interpretation:
+
+```text
+Iteration 1 supports an ecology demand model extracted from
+RC-agentic-ecology sources as target requirements only. It opens no
+implementation evidence, no positive ecology evidence, no prototype rows, and
+no native ant, colony, biological, sentience, or Phase 8 claim.
+```
+
 ### Iteration 2 - Agency Diagnostic And Method Constraint Extraction
 
-- [ ] Inventory Agency of Becoming essay as diagnostic/method source.
-- [ ] Inventory Arc of Becoming method sources.
-- [ ] Extract withdrawal resistance, naturalization depth, substrate transfer capacity, proxy collapse rate, and generative agency.
-- [ ] Map diagnostics to N21-N28 without upgrading them into proof.
-- [ ] Record interpretation limits and claim boundary.
+- [x] Inventory Agency of Becoming essay as diagnostic/method source.
+- [x] Inventory Arc of Becoming method sources.
+- [x] Extract withdrawal resistance, naturalization depth, substrate transfer capacity, proxy collapse rate, and generative agency.
+- [x] Map diagnostics to N21-N28 without upgrading them into proof.
+- [x] Record interpretation limits and claim boundary.
 
 Expected result:
 
@@ -71,14 +106,57 @@ native_agency_claim_opened = false
 ready_for_iteration_3 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_agency_diagnostic_method_constraints_i2.json
+report = reports/n29_agency_diagnostic_method_constraints_i2.md
+script = scripts/build_n29_agency_diagnostic_method_constraints_i2.py
+status = passed
+acceptance_state = accepted_agency_diagnostics_as_method_no_agency_claim
+source_count = 5
+agency_diagnostic_row_count = 5
+arc_method_constraint_row_count = 4
+diagnostic_taxonomy_row_count = 5
+n21_n28_alignment_row_count = 9
+output_digest = 02deca28ddfc7ed56c68b394cc885788a478203c230b53385151cae6bc3b8a06
+failed_checks = []
+agency_diagnostics_extracted = true
+arc_method_constraints_extracted = true
+diagnostics_mapped_to_n21_n28 = true
+diagnostics_mapped_without_proof = true
+n05_n28_capability_coverage_claimed = false
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+ready_for_iteration_3 = true
+```
+
+Iteration 2 interpretation:
+
+```text
+Iteration 2 supports only the method-level statement that Agency of Becoming
+diagnostics and Arc of Becoming constraints can structure later N29 bridge
+rows. The diagnostics map to N21-N28 surfaces, but their role is interpretive:
+they cannot replace source-current artifacts, replay, controls, runtime probes,
+prototype proof, N05-N28 capability coverage, native agency evidence, or
+ecology evidence.
+```
+
 ### Iteration 3 - N05-N28 Capability Card Import
 
-- [ ] Import N05-N28 as capability cards, not as a chronological re-proof.
-- [ ] Attach N12, N19, and N20 review/contract gates where applicable.
-- [ ] Record source claim ceiling for every capability card.
-- [ ] Record supplied geometry or dynamic for every capability card.
-- [ ] Record producer residue, medium debt, naturalization debt, and blocked relabels.
-- [ ] Record prototype potential for each capability card.
+- [x] Import N05-N28 as capability cards, not as a chronological re-proof.
+- [x] Attach N12, N19, and N20 review/contract gates where applicable.
+- [x] Record source claim ceiling for every capability card.
+- [x] Record supplied geometry or dynamic for every capability card.
+- [x] Record producer residue, medium debt, naturalization debt, and blocked relabels.
+- [x] Record prototype potential for each capability card.
 
 Expected result:
 
@@ -90,16 +168,62 @@ prior_experiment_revalidation_attempted = false
 ready_for_iteration_4 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_capability_atlas_i3.json
+report = reports/n29_capability_atlas_i3.md
+script = scripts/build_n29_capability_atlas_i3.py
+status = passed
+acceptance_state = accepted_n05_n28_capability_atlas_with_review_gates
+capability_card_count = 26
+output_digest = c7a676e26fef91f9cddffe3ad156c0268ef10c2e31e740464c15cd8798737a29
+failed_checks = []
+capability_atlas_supported = true
+prior_experiment_revalidation_attempted = false
+capability_cards_are_full_data_source = false
+source_artifacts_required_for_full_data = true
+source_statuses_are_passed_or_complete = true
+review_gates_attached_to_historical_blocks = true
+n20_contract_gate_visible_for_becoming_primitives = true
+prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+ready_for_iteration_4 = true
+```
+
+Iteration 3 interpretation:
+
+```text
+Iteration 3 supports a bridge-facing capability atlas. It imports prior
+experiments as capability cards with source claim ceilings, review gates,
+native-readiness status, producer residue, naturalization debt, medium debt,
+blocked relabels, and prototype potential. It does not replay or revalidate
+prior experiments, open ecology evidence, open prototype rows, or claim native
+agency / ant ecology / biological agency / Phase 8 completion.
+
+Capability cards are orientation/index records only. Later coverage, motif,
+and prototype rows may use them to find candidate sources and inherit claim
+ceilings, but any real evidence claim must read and cite the original
+experiment artifacts, closeouts, reports, or runtime records directly.
+```
+
 ### Iteration 4 - Bridge Schema And Claim Boundary Freeze
 
-- [ ] Freeze ecology demand row schema.
-- [ ] Freeze capability card schema.
-- [ ] Freeze coverage/debt row schema.
-- [ ] Freeze bridge motif row schema.
-- [ ] Freeze prototype row schema.
-- [ ] Freeze source role and claim ceiling enums.
-- [ ] Freeze blocked claim list.
-- [ ] Confirm positive prototype rows remain closed.
+- [x] Freeze ecology demand row schema.
+- [x] Freeze capability card schema.
+- [x] Freeze coverage/debt row schema.
+- [x] Freeze bridge motif row schema.
+- [x] Freeze prototype row schema.
+- [x] Freeze source role and claim ceiling enums.
+- [x] Freeze blocked claim list.
+- [x] Confirm positive prototype rows remain closed.
 
 Expected result:
 
@@ -109,6 +233,95 @@ acceptance_state = accepted_bridge_schema_frozen_no_positive_prototypes
 bridge_schema_frozen = true
 positive_prototype_rows_opened = false
 ready_for_iteration_5 = true
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_bridge_schema_i4.json
+report = reports/n29_bridge_schema_i4.md
+script = scripts/build_n29_bridge_schema_i4.py
+status = passed
+acceptance_state = accepted_bridge_schema_frozen_no_positive_prototypes
+bridge_schema_frozen = true
+schema_version = n29_bridge_schema_v1
+schema_status = frozen_for_phase_b
+schema_sections_frozen = [
+  ecology_demand_row_schema,
+  capability_card_schema,
+  coverage_debt_row_schema,
+  bridge_motif_row_schema,
+  prototype_row_schema,
+  handoff_ledger_row_schema
+]
+negative_fixture_row_count = 10
+positive_fixture_row_count = 5
+coverage_status_enum_complete = true
+motif_family_enum_complete = true
+prototype_status_enum_complete = true
+source_of_truth_policy_requires_original_artifacts = true
+executable_source_of_truth_gates_frozen = true
+blocked_claim_list_matches_claim_boundary_audit_keys = true
+coverage_schema_matches_hypothesis_b_required_context = true
+why_not_stronger_required_for_downstream_rows = true
+unknown_field_policy_frozen = true
+negative_fixture_rows_fail_closed = true
+positive_fixture_rows_are_shape_only = true
+phase_b_separation_rules_frozen = true
+cross_enum_rules_frozen = true
+handoff_validation_rules_frozen = true
+source_fidelity_audit_requires_original_sources_for_phase_b_claims = true
+positive_prototype_rows_opened = false
+positive_ecology_evidence_opened = false
+implementation_evidence_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+output_digest = e2e093b4cd143c1f5173391923d4707e2d2f9c48467b1e0c4052ba89d5b61131
+failed_checks = []
+ready_for_iteration_5 = true
+```
+
+Iteration 4 interpretation:
+
+```text
+Iteration 4 closes Phase A as a Phase A -> Phase B validation boundary, not a
+positive evidence pass. It fixes the row shapes, enums, source-of-truth policy,
+executable gates, controls, fixture rows, handoff rules, and blocked claim list
+that Phase B/C rows must obey.
+
+The coverage/debt schema now requires source experiment or spec identity,
+bridge motif, agency diagnostic role, native-readiness status, native-readiness
+gap, blocked relabels, and why-not-stronger text. The distinction between
+native readiness status and native readiness gap is deliberate: a row may say
+what readiness category it occupies while still recording the exact missing
+surface or debt that prevents a stronger claim.
+
+The canonical claim flag location is `claim_boundary_audit`; top-level claim
+flags are convenience mirrors only. The check
+`blocked_claim_list_matches_claim_boundary_audit_keys` prevents a blocked claim
+from appearing in one place but not the other.
+
+Capability cards remain orientation/index records. Later coverage, motif,
+prototype, and handoff rows must return to original experiment artifacts,
+closeouts, reports, runtime records, or visual manifests where the visual claim
+is explicit. Source-backed, native-ready, and prototype-candidate rows cannot be
+established from I3 capability cards alone, and visual-diagnostic-only rows
+cannot become source-backed or native-ready evidence.
+
+I4 also freezes fail-closed negative fixtures for card-as-runtime-evidence,
+producer-as-native, medium-debt-as-native-coordination, visual-as-source-backed,
+missing motif controls, hidden component order, N28-as-cooperation relabel,
+prototype-as-native-ecology, missing N12/N19 review gates, and AP4/AP5 gaps
+hidden by ecology vocabulary. Positive fixtures are schema-shape examples only;
+they open no evidence.
+
+Phase B separation is now explicit: I5 is demand-only, I6 is supply-only, and
+I7 is coverage/debt matching only. Bridge motifs, prototype rows, and native
+ecology claims remain closed until their later scoped iterations.
 ```
 
 ## Phase B - Coverage, Debt, And Motifs
