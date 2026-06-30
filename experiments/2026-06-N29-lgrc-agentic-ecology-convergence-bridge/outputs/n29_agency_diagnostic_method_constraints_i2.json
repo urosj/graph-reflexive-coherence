@@ -1,0 +1,1541 @@
+{
+  "acceptance_state": "accepted_agency_diagnostics_as_method_no_agency_claim",
+  "agency_diagnostic_row_count": 5,
+  "agency_diagnostic_rows": [
+    {
+      "blocked_relabels": [
+        "willpower",
+        "semantic_choice",
+        "native_agency",
+        "native_support_by_label"
+      ],
+      "bridge_value_for_n29": "Names the support-removal demand that ecology prototypes must not mistake for willpower, choice, or native agency.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether a declared basin continuation persists when a declared support, probe, or scaffold is weakened or removed.",
+      "diagnostic_code": "WR",
+      "diagnostic_description": "Tests whether a declared basin continuation persists when a declared support, probe, or scaffold is weakened or removed.",
+      "diagnostic_id": "withdrawal_resistance",
+      "diagnostic_name": "withdrawal_resistance",
+      "future_experiment_alignment": [
+        "N21"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N21"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "Persistence ratio or decay-rate reading under declared withdrawal conditions, with same-basin continuation and hidden-support controls.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "declared_support_or_scaffold",
+        "declared_withdrawal_condition",
+        "same_basin_continuation_rule",
+        "support_coherence_boundary_flux_floors"
+      ],
+      "required_surfaces_for_future_probe": [
+        "support_or_scaffold_surface",
+        "same_basin_signature",
+        "withdrawal_schedule",
+        "replay_and_hidden_support_controls"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#withdrawal-resistance"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#withdrawal-resistance"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "support_removal_persistence_question",
+        "withdrawal_dependence_or_resistance_candidate"
+      ],
+      "what_it_cannot_claim": [
+        "willpower",
+        "semantic_choice",
+        "native_agency",
+        "native_support"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "probe_success_as_native_expression",
+        "scaffold_as_substrate_carried_capacity",
+        "native_support"
+      ],
+      "bridge_value_for_n29": "Separates ecology capacities that are scaffolded from capacities that have evidence of bounded naturalization.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether a capacity first exposed under support becomes available through source-current basin geometry without the original probe.",
+      "diagnostic_code": "ND",
+      "diagnostic_description": "Tests whether a capacity first exposed under support becomes available through source-current basin geometry without the original probe.",
+      "diagnostic_id": "naturalization_depth",
+      "diagnostic_name": "naturalization_depth",
+      "future_experiment_alignment": [
+        "N21",
+        "N22"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N21",
+        "N22"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "Rung-limited reading of the highest supported probe-absent or support-withdrawn condition, not a general native-capacity claim.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "probe_present_baseline",
+        "probe_absent_or_probe_withdrawn_run",
+        "original_probe_residue_audit",
+        "same_class_comparison_rule"
+      ],
+      "required_surfaces_for_future_probe": [
+        "probe_present_baseline",
+        "probe_absent_replay",
+        "post_probe_state_derivation",
+        "producer_residue_audit"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#naturalization-depth",
+        "geometric-reflexive-coherence/arc-of-becoming/2026-05-NaturalizationOfBecoming.md#naturalization-gap"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#naturalization-depth",
+        "geometric-reflexive-coherence/arc-of-becoming/2026-05-NaturalizationOfBecoming.md#naturalization-gap"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "bounded_naturalization_depth_candidate",
+        "producer_or_scaffold_dependence_boundary"
+      ],
+      "what_it_cannot_claim": [
+        "native_regime_expression_by_label",
+        "native_support",
+        "general_agency"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "copy_as_transfer",
+        "identity_label_as_continuation",
+        "semantic_role_transfer",
+        "native_agency"
+      ],
+      "bridge_value_for_n29": "Supplies the transfer requirement for ecology components that must move between substrate frames without identity-by-label.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether basin-relevant structure can be mapped into a distinct substrate or frame while preserving declared continuation constraints.",
+      "diagnostic_code": "ST",
+      "diagnostic_description": "Tests whether basin-relevant structure can be mapped into a distinct substrate or frame while preserving declared continuation constraints.",
+      "diagnostic_id": "substrate_transfer_capacity",
+      "diagnostic_name": "substrate_transfer_capacity",
+      "future_experiment_alignment": [
+        "N27"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N27"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "A structurally distinct target-frame continuation test, ideally linked to withdrawal and naturalization conditions rather than copy labels.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "source_substrate_or_frame",
+        "target_substrate_or_frame",
+        "transfer_mapping_rule",
+        "same_basin_transfer_identity_rule"
+      ],
+      "required_surfaces_for_future_probe": [
+        "source_frame_signature",
+        "target_frame_signature",
+        "transfer_mapping_ledger",
+        "same_basin_transfer_replay"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#substrate-transfer-capacity"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#substrate-transfer-capacity"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "bounded_substrate_transfer_candidate",
+        "transfer_mapping_debt_or_failure_mode"
+      ],
+      "what_it_cannot_claim": [
+        "identity_transfer_by_copy",
+        "semantic_role_transfer",
+        "native_agency"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "proxy_improvement_as_native_function",
+        "reward_as_goal_ownership",
+        "semantic_success",
+        "agency_by_score"
+      ],
+      "bridge_value_for_n29": "Protects ecology prototypes from treating externally convenient scores as evidence of agentic function.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether proxy metrics improve while source-current basin support, continuation, or native function degrades or collapses.",
+      "diagnostic_code": "PC",
+      "diagnostic_description": "Tests whether proxy metrics improve while source-current basin support, continuation, or native function degrades or collapses.",
+      "diagnostic_id": "proxy_collapse_rate",
+      "diagnostic_name": "proxy_collapse_rate",
+      "future_experiment_alignment": [
+        "N26"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N26"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "A divergence reading between proxy score and declared native-function or basin-continuation traces over a declared window.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "proxy_metric_definition",
+        "native_function_or_basin_continuation_descriptor",
+        "divergence_window",
+        "collapse_or_demote_rule"
+      ],
+      "required_surfaces_for_future_probe": [
+        "proxy_metric_trace",
+        "native_function_or_basin_continuation_trace",
+        "divergence_window",
+        "collapse_or_demote_control"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#proxy-collapse-rate"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#proxy-collapse-rate"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "proxy_native_divergence",
+        "proxy_collapse_or_proxy_safety_boundary"
+      ],
+      "what_it_cannot_claim": [
+        "goal_ownership",
+        "semantic_success",
+        "agency_by_score"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "cooperation",
+        "altruism",
+        "biological_agency",
+        "native_colony_agency",
+        "organism_life"
+      ],
+      "bridge_value_for_n29": "Names the ecology-facing difference between preserving one identity and enriching the conditions under which other basins can form.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether a persistent basin increases nearby basin-forming capacity or medium richness while remaining distinguishable and bounded.",
+      "diagnostic_code": "GA",
+      "diagnostic_description": "Tests whether a persistent basin increases nearby basin-forming capacity or medium richness while remaining distinguishable and bounded.",
+      "diagnostic_id": "generative_agency",
+      "diagnostic_name": "generative_agency",
+      "future_experiment_alignment": [
+        "N24",
+        "N25",
+        "N25.2",
+        "N28"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N24",
+        "N25",
+        "N25.2",
+        "N28"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "Higher-order diagnostic over focal persistence plus neighboring basin-forming capacity, with extractive or competitive contrasts.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "focal_basin_persistence_rule",
+        "neighbor_or_environment_capacity_measure",
+        "distinguishability_and_merge_leakage_controls",
+        "extractive_or_competitive_contrast"
+      ],
+      "required_surfaces_for_future_probe": [
+        "focal_basin_persistence_trace",
+        "neighbor_capacity_or_child_basin_trace",
+        "shared_medium_or_capacity_shell_trace",
+        "extractive_competitive_contrast"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#generative-agency"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#generative-agency"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "environment_basin_forming_capacity_change",
+        "generative_vs_extractive_persistence_pattern"
+      ],
+      "what_it_cannot_claim": [
+        "cooperation",
+        "altruism",
+        "biological_agency",
+        "native_colony_agency",
+        "organism_life"
+      ]
+    }
+  ],
+  "agency_diagnostics_extracted": true,
+  "arc_method_constraint_row_count": 4,
+  "arc_method_constraint_rows": [
+    {
+      "blocked_failure_modes": [
+        "vocabulary_as_evidence",
+        "local_tag_promoted_to_ecology_capability",
+        "chronological_revalidation_replaces_bridge_mapping"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "classification_constraint",
+      "future_iteration_relevance": [
+        "I3",
+        "I4",
+        "I8",
+        "I9"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "classification_constraint",
+      "method_role": "Classify what prior experiments express before using those labels as capability cards or bridge motifs.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "observation_tags_do_not_automatically_become_bridge_classes",
+        "bridge_classes_must_be_reusable_or_generative",
+        "classification_must_not_raise_claim_ceiling"
+      ],
+      "source_id": "arc_classification_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    },
+    {
+      "blocked_failure_modes": [
+        "probe_promotion",
+        "constructive_overreach",
+        "boundary_collapse",
+        "control_blindness"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "interrogation_constraint",
+      "future_iteration_relevance": [
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "interrogation_constraint",
+      "method_role": "Treat prototypes and future ecology probes as bounded questions, not as proof that an agentic ecology behavior exists natively.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "prototype_rows_need_declared_question_and_claim_ceiling",
+        "probe_success_cannot_promote_native_agency",
+        "controls_and_withdrawal_paths_remain_required"
+      ],
+      "source_id": "arc_interrogation_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    },
+    {
+      "blocked_failure_modes": [
+        "scaffold_as_native_capacity",
+        "support_translation_as_naturalization",
+        "producer_residue_as_native_support"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "naturalization_constraint",
+      "future_iteration_relevance": [
+        "I6",
+        "I7",
+        "I10",
+        "I15"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "naturalization_constraint",
+      "method_role": "Keep scaffolded or producer-assisted bridge compositions separate from substrate-carried or native-ready capacities.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "producer_residue_must_be_recorded_row_locally",
+        "naturalization_debt_cannot_be_erased_by_mapping",
+        "probe_absent_or_support_withdrawn_status_must_be_explicit"
+      ],
+      "source_id": "arc_naturalization_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    },
+    {
+      "blocked_failure_modes": [
+        "proxy_localization_trap",
+        "endpoint_forcing",
+        "producer_optimization_as_agency",
+        "ecology_handoff_without_native_debt"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "cultivation_constraint",
+      "future_iteration_relevance": [
+        "I8",
+        "I14",
+        "I15",
+        "I16"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "cultivation_constraint",
+      "method_role": "Preserve the bridge as disciplined participation in unfolding dynamics, not endpoint forcing or proxy optimization.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "bridge_motifs_must_name_function_not_proxy_only",
+        "prototype_rows_must_state_remaining_debt",
+        "N30_plus_handoff_must_record_missing_native_mechanisms"
+      ],
+      "source_id": "arc_cultivation_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    }
+  ],
+  "arc_method_constraints": [
+    {
+      "blocked_failure_modes": [
+        "vocabulary_as_evidence",
+        "local_tag_promoted_to_ecology_capability",
+        "chronological_revalidation_replaces_bridge_mapping"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "classification_constraint",
+      "future_iteration_relevance": [
+        "I3",
+        "I4",
+        "I8",
+        "I9"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "classification_constraint",
+      "method_role": "Classify what prior experiments express before using those labels as capability cards or bridge motifs.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "observation_tags_do_not_automatically_become_bridge_classes",
+        "bridge_classes_must_be_reusable_or_generative",
+        "classification_must_not_raise_claim_ceiling"
+      ],
+      "source_id": "arc_classification_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    },
+    {
+      "blocked_failure_modes": [
+        "probe_promotion",
+        "constructive_overreach",
+        "boundary_collapse",
+        "control_blindness"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "interrogation_constraint",
+      "future_iteration_relevance": [
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "interrogation_constraint",
+      "method_role": "Treat prototypes and future ecology probes as bounded questions, not as proof that an agentic ecology behavior exists natively.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "prototype_rows_need_declared_question_and_claim_ceiling",
+        "probe_success_cannot_promote_native_agency",
+        "controls_and_withdrawal_paths_remain_required"
+      ],
+      "source_id": "arc_interrogation_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    },
+    {
+      "blocked_failure_modes": [
+        "scaffold_as_native_capacity",
+        "support_translation_as_naturalization",
+        "producer_residue_as_native_support"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "naturalization_constraint",
+      "future_iteration_relevance": [
+        "I6",
+        "I7",
+        "I10",
+        "I15"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "naturalization_constraint",
+      "method_role": "Keep scaffolded or producer-assisted bridge compositions separate from substrate-carried or native-ready capacities.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "producer_residue_must_be_recorded_row_locally",
+        "naturalization_debt_cannot_be_erased_by_mapping",
+        "probe_absent_or_support_withdrawn_status_must_be_explicit"
+      ],
+      "source_id": "arc_naturalization_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    },
+    {
+      "blocked_failure_modes": [
+        "proxy_localization_trap",
+        "endpoint_forcing",
+        "producer_optimization_as_agency",
+        "ecology_handoff_without_native_debt"
+      ],
+      "claim_ceiling": "method_constraint_only",
+      "constraint_id": "cultivation_constraint",
+      "future_iteration_relevance": [
+        "I8",
+        "I14",
+        "I15",
+        "I16"
+      ],
+      "implementation_evidence_opened": false,
+      "method_id": "cultivation_constraint",
+      "method_role": "Preserve the bridge as disciplined participation in unfolding dynamics, not endpoint forcing or proxy optimization.",
+      "native_agency_claim_opened": false,
+      "required_n29_discipline": [
+        "bridge_motifs_must_name_function_not_proxy_only",
+        "prototype_rows_must_state_remaining_debt",
+        "N30_plus_handoff_must_record_missing_native_mechanisms"
+      ],
+      "source_id": "arc_cultivation_of_becoming",
+      "source_role": "arc_method_constraint_not_evidence"
+    }
+  ],
+  "arc_method_constraints_extracted": true,
+  "artifact_id": "n29_agency_diagnostic_method_constraints_i2",
+  "biological_agency_opened": false,
+  "blocked_claim_audit": {
+    "biological_agency_opened": false,
+    "consciousness_opened": false,
+    "fully_native_ecology_opened": false,
+    "identity_acceptance_claim_opened": false,
+    "native_agency_claim_opened": false,
+    "native_ant_agency_opened": false,
+    "native_colony_agency_opened": false,
+    "native_support_opened": false,
+    "organism_life_opened": false,
+    "phase8_completion_opened": false,
+    "selfhood_claim_opened": false,
+    "semantic_choice_claim_opened": false,
+    "semantic_goal_claim_opened": false,
+    "semantic_intention_claim_opened": false,
+    "sentience_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "checks": [
+    {
+      "check_id": "i1_ecology_demand_model_passed",
+      "passed": true
+    },
+    {
+      "check_id": "agency_and_arc_sources_inventoried",
+      "passed": true
+    },
+    {
+      "check_id": "source_roles_are_method_not_implementation_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "agency_diagnostics_complete",
+      "passed": true
+    },
+    {
+      "check_id": "arc_method_constraints_complete",
+      "passed": true
+    },
+    {
+      "check_id": "diagnostics_mapped_to_n21_n28_without_proof",
+      "passed": true
+    },
+    {
+      "check_id": "method_constraints_do_not_satisfy_evidence_gates",
+      "passed": true
+    },
+    {
+      "check_id": "alignment_table_covers_n21_n28_without_importing_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "no_n05_n28_capability_coverage_claimed",
+      "passed": true
+    },
+    {
+      "check_id": "no_prototype_rows_opened",
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_ecology_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary_audit": {
+    "biological_agency_opened": false,
+    "consciousness_opened": false,
+    "fully_native_ecology_opened": false,
+    "identity_acceptance_claim_opened": false,
+    "native_agency_claim_opened": false,
+    "native_ant_agency_opened": false,
+    "native_colony_agency_opened": false,
+    "native_support_opened": false,
+    "organism_life_opened": false,
+    "phase8_completion_opened": false,
+    "selfhood_claim_opened": false,
+    "semantic_choice_claim_opened": false,
+    "semantic_goal_claim_opened": false,
+    "semantic_intention_claim_opened": false,
+    "sentience_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "claim_boundary_recorded": true,
+  "claim_ceiling": "agency_diagnostics_and_arc_method_constraints_only_no_implementation_evidence",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_agency_diagnostic_method_constraints_i2.py",
+  "diagnostic_taxonomy": [
+    {
+      "blocked_relabels": [
+        "willpower",
+        "semantic_choice",
+        "native_agency",
+        "native_support_by_label"
+      ],
+      "bridge_value_for_n29": "Names the support-removal demand that ecology prototypes must not mistake for willpower, choice, or native agency.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether a declared basin continuation persists when a declared support, probe, or scaffold is weakened or removed.",
+      "diagnostic_code": "WR",
+      "diagnostic_description": "Tests whether a declared basin continuation persists when a declared support, probe, or scaffold is weakened or removed.",
+      "diagnostic_id": "withdrawal_resistance",
+      "diagnostic_name": "withdrawal_resistance",
+      "future_experiment_alignment": [
+        "N21"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N21"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "Persistence ratio or decay-rate reading under declared withdrawal conditions, with same-basin continuation and hidden-support controls.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "declared_support_or_scaffold",
+        "declared_withdrawal_condition",
+        "same_basin_continuation_rule",
+        "support_coherence_boundary_flux_floors"
+      ],
+      "required_surfaces_for_future_probe": [
+        "support_or_scaffold_surface",
+        "same_basin_signature",
+        "withdrawal_schedule",
+        "replay_and_hidden_support_controls"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#withdrawal-resistance"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#withdrawal-resistance"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "support_removal_persistence_question",
+        "withdrawal_dependence_or_resistance_candidate"
+      ],
+      "what_it_cannot_claim": [
+        "willpower",
+        "semantic_choice",
+        "native_agency",
+        "native_support"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "probe_success_as_native_expression",
+        "scaffold_as_substrate_carried_capacity",
+        "native_support"
+      ],
+      "bridge_value_for_n29": "Separates ecology capacities that are scaffolded from capacities that have evidence of bounded naturalization.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether a capacity first exposed under support becomes available through source-current basin geometry without the original probe.",
+      "diagnostic_code": "ND",
+      "diagnostic_description": "Tests whether a capacity first exposed under support becomes available through source-current basin geometry without the original probe.",
+      "diagnostic_id": "naturalization_depth",
+      "diagnostic_name": "naturalization_depth",
+      "future_experiment_alignment": [
+        "N21",
+        "N22"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N21",
+        "N22"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "Rung-limited reading of the highest supported probe-absent or support-withdrawn condition, not a general native-capacity claim.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "probe_present_baseline",
+        "probe_absent_or_probe_withdrawn_run",
+        "original_probe_residue_audit",
+        "same_class_comparison_rule"
+      ],
+      "required_surfaces_for_future_probe": [
+        "probe_present_baseline",
+        "probe_absent_replay",
+        "post_probe_state_derivation",
+        "producer_residue_audit"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#naturalization-depth",
+        "geometric-reflexive-coherence/arc-of-becoming/2026-05-NaturalizationOfBecoming.md#naturalization-gap"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#naturalization-depth",
+        "geometric-reflexive-coherence/arc-of-becoming/2026-05-NaturalizationOfBecoming.md#naturalization-gap"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "bounded_naturalization_depth_candidate",
+        "producer_or_scaffold_dependence_boundary"
+      ],
+      "what_it_cannot_claim": [
+        "native_regime_expression_by_label",
+        "native_support",
+        "general_agency"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "copy_as_transfer",
+        "identity_label_as_continuation",
+        "semantic_role_transfer",
+        "native_agency"
+      ],
+      "bridge_value_for_n29": "Supplies the transfer requirement for ecology components that must move between substrate frames without identity-by-label.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether basin-relevant structure can be mapped into a distinct substrate or frame while preserving declared continuation constraints.",
+      "diagnostic_code": "ST",
+      "diagnostic_description": "Tests whether basin-relevant structure can be mapped into a distinct substrate or frame while preserving declared continuation constraints.",
+      "diagnostic_id": "substrate_transfer_capacity",
+      "diagnostic_name": "substrate_transfer_capacity",
+      "future_experiment_alignment": [
+        "N27"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N27"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "A structurally distinct target-frame continuation test, ideally linked to withdrawal and naturalization conditions rather than copy labels.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "source_substrate_or_frame",
+        "target_substrate_or_frame",
+        "transfer_mapping_rule",
+        "same_basin_transfer_identity_rule"
+      ],
+      "required_surfaces_for_future_probe": [
+        "source_frame_signature",
+        "target_frame_signature",
+        "transfer_mapping_ledger",
+        "same_basin_transfer_replay"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#substrate-transfer-capacity"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#substrate-transfer-capacity"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "bounded_substrate_transfer_candidate",
+        "transfer_mapping_debt_or_failure_mode"
+      ],
+      "what_it_cannot_claim": [
+        "identity_transfer_by_copy",
+        "semantic_role_transfer",
+        "native_agency"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "proxy_improvement_as_native_function",
+        "reward_as_goal_ownership",
+        "semantic_success",
+        "agency_by_score"
+      ],
+      "bridge_value_for_n29": "Protects ecology prototypes from treating externally convenient scores as evidence of agentic function.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether proxy metrics improve while source-current basin support, continuation, or native function degrades or collapses.",
+      "diagnostic_code": "PC",
+      "diagnostic_description": "Tests whether proxy metrics improve while source-current basin support, continuation, or native function degrades or collapses.",
+      "diagnostic_id": "proxy_collapse_rate",
+      "diagnostic_name": "proxy_collapse_rate",
+      "future_experiment_alignment": [
+        "N26"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N26"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "A divergence reading between proxy score and declared native-function or basin-continuation traces over a declared window.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "proxy_metric_definition",
+        "native_function_or_basin_continuation_descriptor",
+        "divergence_window",
+        "collapse_or_demote_rule"
+      ],
+      "required_surfaces_for_future_probe": [
+        "proxy_metric_trace",
+        "native_function_or_basin_continuation_trace",
+        "divergence_window",
+        "collapse_or_demote_control"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#proxy-collapse-rate"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#proxy-collapse-rate"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "proxy_native_divergence",
+        "proxy_collapse_or_proxy_safety_boundary"
+      ],
+      "what_it_cannot_claim": [
+        "goal_ownership",
+        "semantic_success",
+        "agency_by_score"
+      ]
+    },
+    {
+      "blocked_relabels": [
+        "cooperation",
+        "altruism",
+        "biological_agency",
+        "native_colony_agency",
+        "organism_life"
+      ],
+      "bridge_value_for_n29": "Names the ecology-facing difference between preserving one identity and enriching the conditions under which other basins can form.",
+      "claim_ceiling": "diagnostic_vocabulary_only_future_probe_alignment",
+      "definition": "Tests whether a persistent basin increases nearby basin-forming capacity or medium richness while remaining distinguishable and bounded.",
+      "diagnostic_code": "GA",
+      "diagnostic_description": "Tests whether a persistent basin increases nearby basin-forming capacity or medium richness while remaining distinguishable and bounded.",
+      "diagnostic_id": "generative_agency",
+      "diagnostic_name": "generative_agency",
+      "future_experiment_alignment": [
+        "N24",
+        "N25",
+        "N25.2",
+        "N28"
+      ],
+      "implementation_evidence_opened": false,
+      "mapped_experiment_family": [
+        "N24",
+        "N25",
+        "N25.2",
+        "N28"
+      ],
+      "mapped_to_n21_n28_without_proof": true,
+      "n05_n28_capability_coverage_claimed": false,
+      "native_agency_claim_opened": false,
+      "operational_reading": "Higher-order diagnostic over focal persistence plus neighboring basin-forming capacity, with extractive or competitive contrasts.",
+      "prototype_row_opened": false,
+      "required_declared_conditions": [
+        "focal_basin_persistence_rule",
+        "neighbor_or_environment_capacity_measure",
+        "distinguishability_and_merge_leakage_controls",
+        "extractive_or_competitive_contrast"
+      ],
+      "required_surfaces_for_future_probe": [
+        "focal_basin_persistence_trace",
+        "neighbor_capacity_or_child_basin_trace",
+        "shared_medium_or_capacity_shell_trace",
+        "extractive_competitive_contrast"
+      ],
+      "source_reference": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#generative-agency"
+      ],
+      "source_references": [
+        "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md#generative-agency"
+      ],
+      "source_role": "agency_diagnostic_not_evidence",
+      "what_it_can_classify": [
+        "environment_basin_forming_capacity_change",
+        "generative_vs_extractive_persistence_pattern"
+      ],
+      "what_it_cannot_claim": [
+        "cooperation",
+        "altruism",
+        "biological_agency",
+        "native_colony_agency",
+        "organism_life"
+      ]
+    }
+  ],
+  "diagnostic_to_future_experiment_alignment": [
+    {
+      "alignment_id": "withdrawal_resistance_to_n21",
+      "alignment_role": "interpretive_filter_and_probe_design_constraint",
+      "diagnostic_or_method": "withdrawal_resistance",
+      "mapped_experiment_family": [
+        "N21"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "naturalization_depth_to_n21",
+      "alignment_role": "interpretive_filter_and_probe_design_constraint",
+      "diagnostic_or_method": "naturalization_depth",
+      "mapped_experiment_family": [
+        "N21"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "susceptibility_update_to_n22",
+      "alignment_role": "durable_geometry_update_boundary_for_later_capability_cards",
+      "diagnostic_or_method": "naturalization_depth_susceptibility_bridge",
+      "mapped_experiment_family": [
+        "N22"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "collapse_selection_to_n23",
+      "alignment_role": "collapse_or_selection_interpretation_constraint",
+      "diagnostic_or_method": "classification_and_interrogation_boundary",
+      "mapped_experiment_family": [
+        "N23"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "abundance_optionality_to_n24",
+      "alignment_role": "abundance_or_optionality_bridge_constraint",
+      "diagnostic_or_method": "generative_capacity_context",
+      "mapped_experiment_family": [
+        "N24"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "basin_formation_to_n25_n25_2",
+      "alignment_role": "basin_formation_and_child_basin_claim_ceiling",
+      "diagnostic_or_method": "generative_agency_boundary",
+      "mapped_experiment_family": [
+        "N25",
+        "N25.2"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "proxy_collapse_rate_to_n26",
+      "alignment_role": "proxy_native_divergence_interpretation_constraint",
+      "diagnostic_or_method": "proxy_collapse_rate",
+      "mapped_experiment_family": [
+        "N26"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "substrate_transfer_capacity_to_n27",
+      "alignment_role": "transfer_claim_boundary_and_probe_design_constraint",
+      "diagnostic_or_method": "substrate_transfer_capacity",
+      "mapped_experiment_family": [
+        "N27"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "generative_extractive_diagnostic_to_n28",
+      "alignment_role": "generative_extractive_persistence_interpretation_constraint",
+      "diagnostic_or_method": "generative_agency",
+      "mapped_experiment_family": [
+        "N28"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    }
+  ],
+  "diagnostics_mapped_to_n21_n28": true,
+  "diagnostics_mapped_without_proof": true,
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_agency_diagnostic_method_constraints_i2.py",
+  "i1_acceptance_state": "accepted_ecology_demand_model_no_implementation_claims",
+  "i1_output_digest": "509f808f69b6ac33682c1f4396fd8a421d6d9372130c8edc357e102bb7b513e3",
+  "i1_source_artifact": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_ecology_demand_extraction_i1.json",
+  "i1_status": "passed",
+  "implementation_evidence_opened": false,
+  "interpretation_limits_recorded": true,
+  "iteration": "I2",
+  "n05_n28_capability_coverage_claimed": false,
+  "n21_n28_alignment": [
+    {
+      "alignment_id": "withdrawal_resistance_to_n21",
+      "alignment_role": "interpretive_filter_and_probe_design_constraint",
+      "diagnostic_or_method": "withdrawal_resistance",
+      "mapped_experiment_family": [
+        "N21"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "naturalization_depth_to_n21",
+      "alignment_role": "interpretive_filter_and_probe_design_constraint",
+      "diagnostic_or_method": "naturalization_depth",
+      "mapped_experiment_family": [
+        "N21"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "susceptibility_update_to_n22",
+      "alignment_role": "durable_geometry_update_boundary_for_later_capability_cards",
+      "diagnostic_or_method": "naturalization_depth_susceptibility_bridge",
+      "mapped_experiment_family": [
+        "N22"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "collapse_selection_to_n23",
+      "alignment_role": "collapse_or_selection_interpretation_constraint",
+      "diagnostic_or_method": "classification_and_interrogation_boundary",
+      "mapped_experiment_family": [
+        "N23"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "abundance_optionality_to_n24",
+      "alignment_role": "abundance_or_optionality_bridge_constraint",
+      "diagnostic_or_method": "generative_capacity_context",
+      "mapped_experiment_family": [
+        "N24"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "basin_formation_to_n25_n25_2",
+      "alignment_role": "basin_formation_and_child_basin_claim_ceiling",
+      "diagnostic_or_method": "generative_agency_boundary",
+      "mapped_experiment_family": [
+        "N25",
+        "N25.2"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "proxy_collapse_rate_to_n26",
+      "alignment_role": "proxy_native_divergence_interpretation_constraint",
+      "diagnostic_or_method": "proxy_collapse_rate",
+      "mapped_experiment_family": [
+        "N26"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "substrate_transfer_capacity_to_n27",
+      "alignment_role": "transfer_claim_boundary_and_probe_design_constraint",
+      "diagnostic_or_method": "substrate_transfer_capacity",
+      "mapped_experiment_family": [
+        "N27"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    },
+    {
+      "alignment_id": "generative_extractive_diagnostic_to_n28",
+      "alignment_role": "generative_extractive_persistence_interpretation_constraint",
+      "diagnostic_or_method": "generative_agency",
+      "mapped_experiment_family": [
+        "N28"
+      ],
+      "may_use_for": [
+        "coverage_debt_classification",
+        "prototype_claim_ceiling",
+        "N30_plus_missing_mechanism_handoff"
+      ],
+      "must_not_use_for": [
+        "native_agency_proof",
+        "positive_ecology_evidence",
+        "N05_N28_capability_coverage_claim",
+        "prototype_success_claim"
+      ]
+    }
+  ],
+  "native_agency_claim_opened": false,
+  "native_ant_agency_opened": false,
+  "native_colony_agency_opened": false,
+  "organism_life_opened": false,
+  "output_digest": "02deca28ddfc7ed56c68b394cc885788a478203c230b53385151cae6bc3b8a06",
+  "phase8_completion_opened": false,
+  "positive_ecology_evidence_opened": false,
+  "prototype_rows_opened": false,
+  "ready_for_iteration_3": true,
+  "script_sha256": "47603c3913d4ff94869fab5f92a395d115f35b4216010574d93009a872da234c",
+  "sentience_opened": false,
+  "source_count": 5,
+  "source_inventory": [
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "diagnostic_vocabulary",
+        "interpretive_constraint",
+        "claim_boundary_context",
+        "future_probe_alignment_context"
+      ],
+      "must_not_consume_as": [
+        "implementation_evidence",
+        "native_agency_evidence",
+        "ant_ecology_evidence",
+        "prototype_proof",
+        "n05_n28_capability_coverage_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "30398f3a71ae2b65313a6bd40461aa8a31dec50e8ac09957650c37dcbe2b98b1",
+      "source_id": "agency_of_becoming_essay",
+      "source_path": "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md",
+      "source_role": "agency_diagnostic_interpretation_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "method_vocabulary",
+        "classification_value_gate",
+        "observation_first_constraint",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "implementation_evidence",
+        "native_agency_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "3893fcf20ec8c9596dd2540b812774d53f5aef308e2da6f017f4bbc241fdcc25",
+      "source_id": "arc_classification_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-ClassificationOfBecoming.md",
+      "source_role": "classification_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "bounded_probe_vocabulary",
+        "probe_as_question_constraint",
+        "control_and_withdrawal_constraint",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "probe_success_as_proof",
+        "native_agency_evidence",
+        "implementation_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "c6b5bb55bbb928668ec75e17bf7bf29bb01d3e015aaaae5086aa95ff3894f763",
+      "source_id": "arc_interrogation_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-InterrogationofBecoming.md",
+      "source_role": "bounded_probe_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "naturalization_gap_vocabulary",
+        "probe_absence_constraint",
+        "producer_residue_boundary",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "native_support_evidence",
+        "native_agency_evidence",
+        "implementation_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "d92e8d1b783d06fcac2f23c03cdf71403ebb9ec435789db18a0ec9cb3b3cb7e0",
+      "source_id": "arc_naturalization_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-NaturalizationOfBecoming.md",
+      "source_role": "naturalization_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "method_sequence_context",
+        "function_not_proxy_constraint",
+        "support_withdrawal_context",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "endpoint_forcing_permission",
+        "native_agency_evidence",
+        "implementation_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "e5c560c908c8025701e1d06cc8684c53c0bea434a3d49814e65e0bb7b65aeb3d",
+      "source_id": "arc_cultivation_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-CultivationOfBecoming.md",
+      "source_role": "cultivation_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    }
+  ],
+  "source_records": [
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "diagnostic_vocabulary",
+        "interpretive_constraint",
+        "claim_boundary_context",
+        "future_probe_alignment_context"
+      ],
+      "must_not_consume_as": [
+        "implementation_evidence",
+        "native_agency_evidence",
+        "ant_ecology_evidence",
+        "prototype_proof",
+        "n05_n28_capability_coverage_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "30398f3a71ae2b65313a6bd40461aa8a31dec50e8ac09957650c37dcbe2b98b1",
+      "source_id": "agency_of_becoming_essay",
+      "source_path": "geometric-reflexive-coherence/essays/2026-06-12-AgencyOfBecoming-InterpretationThroughRC.md",
+      "source_role": "agency_diagnostic_interpretation_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "method_vocabulary",
+        "classification_value_gate",
+        "observation_first_constraint",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "implementation_evidence",
+        "native_agency_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "3893fcf20ec8c9596dd2540b812774d53f5aef308e2da6f017f4bbc241fdcc25",
+      "source_id": "arc_classification_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-ClassificationOfBecoming.md",
+      "source_role": "classification_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "bounded_probe_vocabulary",
+        "probe_as_question_constraint",
+        "control_and_withdrawal_constraint",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "probe_success_as_proof",
+        "native_agency_evidence",
+        "implementation_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "c6b5bb55bbb928668ec75e17bf7bf29bb01d3e015aaaae5086aa95ff3894f763",
+      "source_id": "arc_interrogation_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-InterrogationofBecoming.md",
+      "source_role": "bounded_probe_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "naturalization_gap_vocabulary",
+        "probe_absence_constraint",
+        "producer_residue_boundary",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "native_support_evidence",
+        "native_agency_evidence",
+        "implementation_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "d92e8d1b783d06fcac2f23c03cdf71403ebb9ec435789db18a0ec9cb3b3cb7e0",
+      "source_id": "arc_naturalization_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-NaturalizationOfBecoming.md",
+      "source_role": "naturalization_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    },
+    {
+      "ant_ecology_claim_opened": false,
+      "claim_ceiling": "method_and_diagnostic_vocabulary_only_no_proof",
+      "digest_policy": "sha256_of_external_method_source",
+      "exists": true,
+      "implementation_evidence_opened": false,
+      "may_consume_as": [
+        "method_sequence_context",
+        "function_not_proxy_constraint",
+        "support_withdrawal_context",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "endpoint_forcing_permission",
+        "native_agency_evidence",
+        "implementation_evidence",
+        "prototype_proof"
+      ],
+      "native_agency_claim_opened": false,
+      "prototype_proof_opened": false,
+      "sha256": "e5c560c908c8025701e1d06cc8684c53c0bea434a3d49814e65e0bb7b65aeb3d",
+      "source_id": "arc_cultivation_of_becoming",
+      "source_path": "geometric-reflexive-coherence/arc-of-becoming/2026-05-CultivationOfBecoming.md",
+      "source_role": "cultivation_method_constraint_source",
+      "source_scope": "diagnostic_and_method_source_only"
+    }
+  ],
+  "source_scope": "agency_of_becoming_and_arc_method_sources_only",
+  "status": "passed",
+  "title": "Agency Diagnostic And Method Constraint Extraction"
+}

@@ -1,0 +1,154 @@
+{
+  "acceptance_state": "accepted_native_directed_cycle_absent_broader_loop_definition_recorded",
+  "artifact_id": "n29_neutral_circulation_directed_cycle_i1443",
+  "checks": [
+    {
+      "check_id": "broader_loop_definition_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "native_forward_leg_found",
+      "passed": true
+    },
+    {
+      "check_id": "producer_fallback_not_used",
+      "passed": true
+    },
+    {
+      "check_id": "native_directed_cycle_absent",
+      "passed": true
+    },
+    {
+      "check_id": "native_closed_loop_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_neutral_circulation_directed_cycle_i1443.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_neutral_circulation_directed_cycle_i1443.py",
+  "iteration": "I14.4-3",
+  "native_closed_environmental_circulation_supported": false,
+  "native_directed_cycle_found": false,
+  "native_directed_cycle_search_row": {
+    "blocked_reason": "Native neutral-circulation rows exist, but none records a later forward leg that consumes the I4-F changed medium and returns dependency to the starting pattern class.",
+    "claim_ceiling": "native_directed_circulation_cycle_search_blocked_no_ordered_dependency_cycle",
+    "i14_4_2_reverse_only_scope_corrected": true,
+    "native_closed_environmental_circulation_supported": false,
+    "native_directed_cycle_found": false,
+    "native_directed_cycle_search": {
+      "definition": "directed_closed_dependency_cycle_not_reverse_bounce",
+      "directed_cycle_pairs": [],
+      "loop_requirement": [
+        "forward leg A changes local capacity distribution",
+        "later forward leg B consumes A's changed distribution as source-current input",
+        "later A-side or A-class state depends on B's changed distribution"
+      ],
+      "native_rows_scanned": [
+        {
+          "buffer_lobe_capacity_delta": 0.002,
+          "consumes_i4f_changed_medium": false,
+          "inflow_lobe_capacity_delta": 0.047,
+          "mechanism_class": "three_lobe_circulatory_capacity_exchange",
+          "neutral_circulation_detected": true,
+          "outflow_lobe_capacity_delta": -0.045,
+          "returns_to_starting_pattern_class": false,
+          "row_digest": "1d59626e0765e15b3e29f39e089b848c21ee15e5fa7a442b49413c01389ecfdc",
+          "row_id": "n28_i4e_row_competitive_neutral_mechanism_diversity_contrast",
+          "source_artifact_id": "n28_competitive_neutral_mechanism_diversity_probe",
+          "source_current_native": true,
+          "source_output_digest": "d760e55481c2d84e554c5089863c725c3b57ee7da1dedbf5b919f201c3c754cd",
+          "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_competitive_neutral_mechanism_diversity_probe.json"
+        },
+        {
+          "buffer_lobe_capacity_delta": 0.001,
+          "consumes_i4f_changed_medium": false,
+          "inflow_lobe_capacity_delta": 0.062,
+          "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+          "neutral_circulation_detected": true,
+          "outflow_lobe_capacity_delta": -0.06,
+          "returns_to_starting_pattern_class": false,
+          "row_digest": "df88f2b368ffea217ca289ad81e58131e00ffa85f1f12ae51fe7e888a2369124",
+          "row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast",
+          "source_artifact_id": "n28_higher_margin_neutral_circulation_probe",
+          "source_current_native": true,
+          "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+          "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json"
+        }
+      ],
+      "not_required": [
+        "opposite-orientation sign inversion",
+        "bounce-back over the same channel",
+        "label-swapped reverse leg"
+      ]
+    },
+    "native_forward_neutral_circulation_leg_found": true,
+    "producer_fallback_used": false,
+    "remaining_debt": [
+      "native LGRC needs ordered multi-leg circulation telemetry over changed medium states",
+      "I14.4-1 remains a producer-mediated bridge candidate for how closure could work",
+      "a future native directed cycle need not be opposite-orientation, but it must be source-current and dependency-closed"
+    ],
+    "row_decision": "blocked",
+    "row_decision_scope": "native_directed_cycle_absent_under_broader_loop_definition",
+    "row_digest": "0374c2ad42ec95c225c538650a64620bd1a6c893f33976064a496ba170dc94a7",
+    "row_id": "n29_i14_4_3_native_directed_circulation_cycle_search",
+    "why_i14_4_3_differs": "I14.4-2 searched for an opposite-orientation reverse leg. I14.4-3 uses the broader loop definition: all legs may point forward, as long as their ordered dependencies close back to the starting pattern class."
+  },
+  "output_digest": "6c0ef71941c7e5ccf4ca39702cb1956a32aaf772cffb7bd04181cdb70af24eee",
+  "producer_fallback_used": false,
+  "ready_for_i14d_i14e": false,
+  "ready_for_iteration_15": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_single_direction_neutral_circulation_leg_closed_loop_blocked",
+      "artifact_id": "n29_neutral_circulation_composition_i144",
+      "iteration": "I14.4",
+      "output_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_composition_i144.json",
+      "sha256": "d3143def269793276d62f616deeda76ce49cbe202c6f46bbd4191d533ee8cc45",
+      "source_id": "n29_i14_4_single_direction_circulation",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_only_reverse_leg_absent_closed_loop_blocked",
+      "artifact_id": "n29_neutral_circulation_native_search_i1442",
+      "iteration": "I14.4-2",
+      "output_digest": "4af80144e3bf4b416953592b50904b0fbb47699d9d8425aa9562791b7a5595c4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_native_search_i1442.json",
+      "sha256": "459dce385be55f26ac0863ef177d9dd589ff484c65a69d310701aef790fc915d",
+      "source_id": "n29_i14_4_2_native_reverse_search",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14.4-3 Native Directed Circulation Cycle Search"
+}

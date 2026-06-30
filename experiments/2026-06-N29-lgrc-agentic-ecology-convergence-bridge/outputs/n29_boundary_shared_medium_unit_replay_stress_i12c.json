@@ -1,0 +1,207 @@
+{
+  "acceptance_state": "accepted_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+  "artifact_id": "n29_boundary_shared_medium_unit_replay_stress_i12c",
+  "checks": [
+    {
+      "check_id": "i12a_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i12b_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i12b_failed_open_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "all_replay_stress_rows_pass_or_demote_cleanly",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_snapshot_duplicate_replay_pass",
+      "passed": true
+    },
+    {
+      "check_id": "medium_coupling_and_merge_pressure_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "counterpart_separability_survives_or_demotes",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "controlled and replay/stress-backed Prototype B bridge exemplar candidate",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "bounded boundary/shared-medium bridge exemplar candidate; not native shared-medium coordination or ecology success",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i12abc.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i12abc.py",
+  "iteration": "I12-C",
+  "matrix_summary": {
+    "failed_or_blocked_count": 0,
+    "passed_count": 6,
+    "prototype_b_bridge_exemplar_candidate_supported": true,
+    "row_count": 6
+  },
+  "output_digest": "763752030ab58c6c73db61959b17426b63305c892bb875a6da150a4f3788df94",
+  "prototype_b_bridge_exemplar_candidate_supported": true,
+  "prototype_success_claimed": false,
+  "ready_for_iteration_13": true,
+  "replay_stress_rows": [
+    {
+      "pass_condition": "same unit row reconstructs from artifact manifest",
+      "row_id": "artifact_only_replay",
+      "source_basis": "N25.2 multi-window replay validation",
+      "status": "passed"
+    },
+    {
+      "pass_condition": "basin, medium, and counterpart assignments survive snapshot load",
+      "row_id": "snapshot_load_replay",
+      "source_basis": "N25.2 replay validation",
+      "status": "passed"
+    },
+    {
+      "pass_condition": "duplicate run preserves classification within tolerance",
+      "row_id": "duplicate_replay",
+      "source_basis": "N25.2 replay validation",
+      "status": "passed"
+    },
+    {
+      "pass_condition": "source coupling trace remains bounded and injected pressure fails closed",
+      "row_id": "medium_coupling_stress",
+      "source_basis": "N25.2 source merge/leakage stress and injected pressure fail-closed row",
+      "status": "passed",
+      "supporting_rows": [
+        {
+          "claim_effect": "source merge/leakage ceiling preserved",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.0,
+          "status": "passed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "source_merge_leakage_ceiling"
+        },
+        {
+          "claim_effect": "non-source pressure would block stronger claim",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.1,
+          "status": "failed_closed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "injected_merge_leakage_pressure_fail_closed"
+        }
+      ]
+    },
+    {
+      "pass_condition": "merge pressure remains bounded or demotes claim",
+      "row_id": "merge_pressure_stress",
+      "source_basis": "N25.2 merge/leakage pressure stress",
+      "status": "passed",
+      "supporting_rows": [
+        {
+          "claim_effect": "source merge/leakage ceiling preserved",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.0,
+          "status": "passed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "source_merge_leakage_ceiling"
+        },
+        {
+          "claim_effect": "non-source pressure would block stronger claim",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.1,
+          "status": "failed_closed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "injected_merge_leakage_pressure_fail_closed"
+        }
+      ]
+    },
+    {
+      "pass_condition": "counterpart remains distinguishable from basin-side state or row is demoted",
+      "row_id": "counterpart_separability_stress",
+      "source_basis": "I12-A selected/rejected candidate split plus I12-B old-basin-thickening and label-only controls",
+      "status": "passed",
+      "supporting_controls": [
+        "old_basin_thickening_as_counterpart_control",
+        "label_only_boundary_control"
+      ]
+    }
+  ],
+  "runtime_ecology_success_claimed": false,
+  "script_sha256": "027e43ca949dec52a65cb7a3fbc99965f611e8b0a945bf81027cc7945801aac7",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_runtime_i12a",
+      "output_digest": "518d48d038ad7d27062b785820c91f69c35e5925e1feb864ff59a1204c4a93e5",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_runtime_i12a.json",
+      "role": "runtime_unit_source",
+      "sha256": "7f774be699f6fa78a4df227d17125984ed32ecc819be99694e0f92bd03d6d5d3",
+      "source_id": "n29_i12a_runtime_unit",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_controls_fail_closed",
+      "artifact_id": "n29_boundary_shared_medium_unit_controls_i12b",
+      "output_digest": "cd617b24085747023ed6d68d8156790695b6f3ca894c77df436a4e15248af433",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_controls_i12b.json",
+      "role": "control_source",
+      "sha256": "c3e51ad269ff2c59edf7f2506258d24196c22e1620224526ca8d22dce8635030",
+      "source_id": "n29_i12b_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_window_persistence_replay_mb4_extension_no_mb6",
+      "artifact_id": "n25_2_multi_window_persistence_replay",
+      "output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+      "role": "replay_source",
+      "sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+      "source_id": "n25_2_multi_window_persistence_replay",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_stress_variant_matrix_mb5_retained_multi_window_ready_pending_gate",
+      "artifact_id": "n25_2_stress_variant_matrix",
+      "output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "role": "stress_source",
+      "sha256": "ad303bb671707d877d80f4a2baa05b99f4d28d658f99f65a28c266fab96462b5",
+      "source_id": "n25_2_stress_variant_matrix",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Boundary / Shared-Medium Replay And Stress"
+}

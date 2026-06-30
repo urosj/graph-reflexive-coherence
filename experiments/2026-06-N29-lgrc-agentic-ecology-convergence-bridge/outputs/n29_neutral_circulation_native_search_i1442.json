@@ -1,0 +1,147 @@
+{
+  "acceptance_state": "accepted_native_only_reverse_leg_absent_closed_loop_blocked",
+  "artifact_id": "n29_neutral_circulation_native_search_i1442",
+  "checks": [
+    {
+      "check_id": "native_forward_leg_found",
+      "passed": true
+    },
+    {
+      "check_id": "producer_fallback_not_used",
+      "passed": true
+    },
+    {
+      "check_id": "native_reverse_leg_absent",
+      "passed": true
+    },
+    {
+      "check_id": "native_closed_loop_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "i14_4_1_context_does_not_upgrade_native",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_neutral_circulation_native_search_i1442.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_neutral_circulation_native_search_i1442.py",
+  "iteration": "I14.4-2",
+  "native_closed_environmental_circulation_supported": false,
+  "native_forward_neutral_circulation_leg_found": true,
+  "native_reverse_opposite_orientation_leg_found": false,
+  "native_search_row": {
+    "blocked_reason": "No source-current native opposite-orientation neutral-circulation leg was found that consumes the I4-F forward post-state.",
+    "claim_ceiling": "native_only_closed_circulation_search_blocked_reverse_leg_absent",
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "native_closed_environmental_circulation_supported": false,
+    "native_forward_neutral_circulation_leg_found": true,
+    "native_reverse_leg_consumes_forward_post_state": false,
+    "native_reverse_opposite_orientation_leg_found": false,
+    "native_search_result": {
+      "candidate_rows_scanned": [
+        {
+          "buffer_lobe_capacity_delta": 0.002,
+          "consumes_forward_post_state": false,
+          "direction": "forward_orientation",
+          "inflow_lobe_capacity_delta": 0.047,
+          "neutral_circulation_detected": true,
+          "outflow_lobe_capacity_delta": -0.045,
+          "producer_mediated": false,
+          "row_digest": "1d59626e0765e15b3e29f39e089b848c21ee15e5fa7a442b49413c01389ecfdc",
+          "row_id": "n28_i4e_row_competitive_neutral_mechanism_diversity_contrast",
+          "source_artifact_id": "n28_competitive_neutral_mechanism_diversity_probe",
+          "source_current_native": true,
+          "source_output_digest": "d760e55481c2d84e554c5089863c725c3b57ee7da1dedbf5b919f201c3c754cd",
+          "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_competitive_neutral_mechanism_diversity_probe.json"
+        },
+        {
+          "buffer_lobe_capacity_delta": 0.001,
+          "consumes_forward_post_state": false,
+          "direction": "forward_orientation",
+          "inflow_lobe_capacity_delta": 0.062,
+          "neutral_circulation_detected": true,
+          "outflow_lobe_capacity_delta": -0.06,
+          "producer_mediated": false,
+          "row_digest": "df88f2b368ffea217ca289ad81e58131e00ffa85f1f12ae51fe7e888a2369124",
+          "row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast",
+          "source_artifact_id": "n28_higher_margin_neutral_circulation_probe",
+          "source_current_native": true,
+          "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+          "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json"
+        }
+      ],
+      "forward_orientation_native_row_count": 2,
+      "reverse_orientation_native_consuming_forward_row_count": 0,
+      "scanned_native_neutral_row_count": 2
+    },
+    "producer_fallback_used": false,
+    "producer_mediated_i14_4_1_consumed_as_context_only": true,
+    "remaining_debt": [
+      "native LGRC needs a runtime mechanism that emits the reverse leg from the changed medium state",
+      "I14.4-1 producer-mediated reverse leg remains bridge evidence only",
+      "I14-D/I14-E cannot validate native closed circulation without a native reverse leg"
+    ],
+    "row_decision": "blocked",
+    "row_decision_scope": "native_only_reverse_leg_absent_closed_loop_blocked",
+    "row_digest": "135a4e313bbe0ba132bcf89a5de082e194c08005705f3f5c2265a6c60df3af1c",
+    "row_id": "n29_i14_4_2_native_neutral_circulation_closure_search"
+  },
+  "output_digest": "4af80144e3bf4b416953592b50904b0fbb47699d9d8425aa9562791b7a5595c4",
+  "producer_fallback_used": false,
+  "ready_for_i14d_i14e": false,
+  "ready_for_iteration_15": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_single_direction_neutral_circulation_leg_closed_loop_blocked",
+      "artifact_id": "n29_neutral_circulation_composition_i144",
+      "iteration": "I14.4",
+      "output_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_composition_i144.json",
+      "sha256": "d3143def269793276d62f616deeda76ce49cbe202c6f46bbd4191d533ee8cc45",
+      "source_id": "n29_i14_4_single_direction_circulation",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_neutral_circulation_loop_closure_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_neutral_circulation_loop_closure_i1441",
+      "iteration": "I14.4-1",
+      "output_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_loop_closure_i1441.json",
+      "sha256": "b0870f6acd015a52781d903c491649b0214db539d04bc66780bea3963884fb13",
+      "source_id": "n29_i14_4_1_producer_loop_context_only",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14.4-2 Native-Only Neutral Circulation Closure Search"
+}

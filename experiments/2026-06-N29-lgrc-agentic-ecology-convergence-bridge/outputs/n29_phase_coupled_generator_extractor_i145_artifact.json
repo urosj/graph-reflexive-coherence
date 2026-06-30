@@ -1,0 +1,65 @@
+{
+  "artifact_id": "n29_phase_coupled_generator_extractor_i145_artifact",
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_phase_coupled_exchange_supported": false,
+    "phase_coupled_bridge_candidate_created": true,
+    "resource_economy_claim_allowed": false
+  },
+  "composition_target": "phase_coupled_generator_extractor_exchange_candidate",
+  "experiment_id": "N29",
+  "extractor_leg": {
+    "environment_capacity_delta": -0.069,
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_value": 0.0165,
+    "native_lgrc": false,
+    "neighbor_boundary_delta": -0.081,
+    "neighbor_distinguishability_delta": -0.077,
+    "neighbor_support_delta": -0.063,
+    "producer_mediated": true,
+    "replay_stress_backed_by_i14_2_3_c": true,
+    "role_preserved": true,
+    "source_iteration": "I14.2-3",
+    "source_output_digest": "8247fa5d5efcbb694051783a77a1b9d19c4f2785690bf75f820e1efa973d57d6",
+    "source_runtime_row_id": "n29_i14_2_3_leakage_gated_extractive_construction_motif"
+  },
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generator_leg": {
+    "environment_capacity_delta": 0.123,
+    "neighbor_boundary_delta": 0.126,
+    "neighbor_distinguishability_delta": 0.133,
+    "neighbor_support_delta": 0.082,
+    "replay_stress_backed_by_i14c": true,
+    "role_preserved": true,
+    "source_iteration": "I14.1",
+    "source_output_digest": "cc979553bcc8daeaaaca69d648f66b007854e8dd687e8b5864e64b14c52ad8a1",
+    "source_runtime_row_id": "n29_i14_1_generative_enrichment_motif"
+  },
+  "geometry_interpretation": "The generator leg enriches the neighboring shell while the extractor leg removes capacity from a phase-aligned shell. The combined trace preserves role polarity: gain remains gain and depletion remains depletion. The phase relation is a declared N29 bridge policy, not a native LGRC ecology loop or resource economy. I14.5 is one-way: the generator is ordered before the extractor, but the extractor's changed state does not yet feed a later generator state. Geometrically this shows that generative enrichment and extractive depletion can be ordered without collapsing into a single win/loss transfer. The generator remains generative, the extractor remains extractive, and the bridge preserves both roles instead of averaging them into generic redistribution.",
+  "iteration": "I14.5",
+  "output_digest": "451bca391575470283957a2d41cf5fdb5892b8a7ff48b4d47fb0d6b550b5740d",
+  "phase_relation_trace": {
+    "declared_before_use": true,
+    "extractor_consumes_generator_changed_medium": true,
+    "generator_changes_medium_before_extractor": true,
+    "generator_extractor_roles_averaged_away": false,
+    "phase_order": [
+      "generator_leg",
+      "extractor_leg",
+      "residual_medium_state"
+    ],
+    "phase_policy_id": "n29_i14_5_generator_extractor_phase_bridge_v1",
+    "producer_mediated_phase_bridge": true,
+    "residual_capacity_summary": {
+      "environment_capacity_residual": 0.054,
+      "neighbor_boundary_residual": 0.045,
+      "neighbor_distinguishability_residual": 0.056,
+      "neighbor_support_residual": 0.019
+    },
+    "source_current_native_phase_relation": false
+  },
+  "runtime_artifact_type": "prototype_d_phase_coupled_generator_extractor_artifact",
+  "source_precomposition_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475"
+}

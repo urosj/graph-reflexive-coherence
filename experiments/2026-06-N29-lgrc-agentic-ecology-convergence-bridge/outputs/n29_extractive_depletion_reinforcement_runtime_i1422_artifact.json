@@ -1,0 +1,183 @@
+{
+  "artifact_id": "n29_extractive_depletion_reinforcement_runtime_i1422_artifact",
+  "claim_ceiling": "direct_extractive_depletion_mechanism_diversity_runtime_candidate_with_leakage_caveat_pending_focused_controls_replay_stress",
+  "evidence_lane": "direct_runtime_motif_reinforcement",
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "iteration": "I14.2-2",
+  "motif_id": "extractive_depletion_motif",
+  "output_digest": "477accfff7db072c30a348212b9aaae2c30a8d25d368ceb470cf7e505856dc32",
+  "producer_visibility_record": {
+    "hidden_producer_state_used": false,
+    "producer_declared_before_use": true,
+    "producer_policy_id": "n29_i1422_extracting_mechanism_diversity_bridge_v1",
+    "producer_residue": "visible_source_row_and_n29_bridge_extraction",
+    "producer_residue_as_substrate_carried_allowed": false,
+    "producer_success_can_upgrade_native": false,
+    "source_producer_residue_record": {
+      "producer_generativity_label_used_as_evidence": false,
+      "producer_residue_as_substrate_carried_allowed": false,
+      "producer_residue_fields": [
+        "generative_extractive_persistence.generativity_label",
+        "generative_extractive_persistence.neighbor_attribution_policy",
+        "generative_extractive_persistence.medium_segmentation_policy"
+      ]
+    }
+  },
+  "relation_to_i14_2": {
+    "not_a_clean_bounded_leakage_replacement": true,
+    "original_i14_2_replaced": false,
+    "original_i14_2_runtime_row_id": "n29_i14_2_extractive_depletion_motif",
+    "reinforcement_type": "mechanism_diversity_extracting_boundary_flattening",
+    "reinforces_i14_2": true
+  },
+  "runtime_artifact_type": "prototype_d_direct_runtime_candidate_artifact",
+  "runtime_candidate_trace": {
+    "capacity_attribution_trace": {
+      "attribution_result": "source_current_neighbor_capacity_degradation_by_merge_leakage_boundary_flattening",
+      "boundary_flattening_dominant": true,
+      "capacity_attribution_basis": [
+        "neighbor_distinguishability_delta",
+        "neighbor_support_delta",
+        "neighbor_boundary_delta",
+        "environment_capacity_delta"
+      ],
+      "cross_shell_directional_drain_used": false,
+      "environment_capacity_budget_mismatch": false,
+      "hidden_capacity_attribution_policy_used": false,
+      "mechanism_class": "merge_leakage_dominant_boundary_flattening",
+      "medium_segmentation_policy_hidden": false,
+      "merge_leakage_dominant": true,
+      "n27_transfer_success_used_as_n28_success": false,
+      "producer_generativity_label_used_as_evidence": false,
+      "trace_id": "n28_i4c2_capacity_attribution_trace"
+    },
+    "focal_basin_stability_trace": {
+      "coherence_floor": 0.84,
+      "focal_basin_id": "n28_i4c2_focal_basin_zeta",
+      "focal_coherence_floor_preserved": true,
+      "focal_stability_preserved": true,
+      "focal_support_floor_preserved": true,
+      "post_coherence_min": 0.875,
+      "post_stability_score": 0.871,
+      "post_support_min": 0.868,
+      "pre_coherence_min": 0.882,
+      "pre_stability_score": 0.879,
+      "pre_support_min": 0.875,
+      "support_floor": 0.84,
+      "trace_id": "n28_i4c2_focal_basin_stability_trace"
+    },
+    "geometry_summary": "focal basin remains above support/coherence/stability floors while the neighboring capacity shell degrades through a merge/leakage dominant boundary-flattening mechanism",
+    "leakage_interpretation_record": {
+      "admissibility_interpretation": "I14.2-2 reinforces the extractive motif through a different source-current depletion mechanism. It intentionally preserves the extractive-mechanism leakage caveat instead of presenting itself as a clean bounded-leakage replacement.",
+      "clean_bounded_leakage_claim_allowed": false,
+      "extractive_mechanism_exceedance_recorded": true,
+      "extractive_mechanism_exceedance_value": 0.018,
+      "leakage_record_status": "extractive_mechanism_reinforcement_caveat",
+      "merge_leakage_below_ceiling": false,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.043
+    },
+    "merge_leakage_trace": {
+      "ceiling": 0.025,
+      "digest": "66d01ad761471d9f27df7fe54c7f784ef27e39e329780d6803cb6a25973aade2",
+      "value": 0.043
+    },
+    "neighbor_or_medium_capacity_trace": {
+      "environment_capacity_delta": -0.065,
+      "neighbor_boundary_delta": -0.104,
+      "neighbor_count_only": false,
+      "neighbor_distinguishability_delta": -0.075,
+      "neighbor_label_only": false,
+      "neighbor_scope_id": "n28_i4c2_neighbor_capacity_shell_zeta",
+      "neighbor_support_delta": -0.055,
+      "post_environment_basin_forming_capacity": 0.622,
+      "post_neighbor_boundary_integrity": 0.612,
+      "post_neighbor_distinguishability": 0.646,
+      "post_neighbor_support_floor": 0.687,
+      "pre_environment_basin_forming_capacity": 0.687,
+      "pre_neighbor_boundary_integrity": 0.716,
+      "pre_neighbor_distinguishability": 0.721,
+      "pre_neighbor_support_floor": 0.742,
+      "trace_id": "n28_i4c2_neighbor_capacity_trace"
+    },
+    "regime_classification_trace": {
+      "classification_declared_before_use": true,
+      "classification_policy_id": "n28_i4c2_extractive_mechanism_diversity_policy_v1",
+      "classification_reason": "stable focal basin + degraded neighborhood capacity + merge/leakage-dominant boundary flattening mechanism",
+      "classification_result": "extractive",
+      "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+      "focal_persistence_axis": "stable",
+      "label_specific_thresholds_used": false,
+      "neighborhood_capacity_axis": "degrades",
+      "policy_retuned_for_label": false,
+      "post_hoc_boundary_shift_used": false,
+      "regime_evidence_role": "measured_contrast_alternative",
+      "regime_label": "extractive",
+      "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+      "trace_id": "n28_i4c2_extractive_mechanism_diversity_classification_trace"
+    }
+  },
+  "runtime_target": "extractive_depletion_runtime_prototype",
+  "source_current_inputs": [
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/capacity_attribution_trace.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/classification_trace.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/extraction_leakage_trace.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/focal_basin_stability_trace.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/generative_extractive_core.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/neighbor_capacity_trace.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/source_current_runtime_trace.json",
+    "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/threshold_policy_trace.json"
+  ],
+  "source_n28_artifact_id": "n28_extractive_mechanism_diversity_probe",
+  "source_n28_output_digest": "cd099229fa37dcdf1c497555fd6ace7d4435035c87e58c1eec9bac6acb7e7067",
+  "source_n28_row_digest": "653698de931037e832c2964766eef7644a78505f2775f15ddbe79e6adbf95204",
+  "source_n28_row_id": "n28_i4c2_row_extractive_mechanism_diversity_contrast",
+  "threshold_record": {
+    "declared_before_use": true,
+    "measurement_source": "N28 I4-C2 source-current row threshold record",
+    "pass_fail_relation": "inherits N28 thresholds without retuning",
+    "source_threshold_record": {
+      "declared_before_use": true,
+      "environment_capacity_degradation_min": 0.05,
+      "environment_capacity_delta_min": 0.09,
+      "extractive_flattening_ceiling": 0.03,
+      "extractive_mechanism_exceedance_min": 0.005,
+      "focal_coherence_floor": 0.84,
+      "focal_extraction_cost_ceiling": 0.035,
+      "focal_stability_min": 0.86,
+      "focal_support_floor": 0.84,
+      "label_specific_thresholds_used": false,
+      "merge_leakage_ceiling": 0.025,
+      "neighbor_boundary_degradation_min": 0.06,
+      "neighbor_boundary_delta_min": 0.08,
+      "neighbor_distinguishability_degradation_min": 0.05,
+      "neighbor_distinguishability_delta_min": 0.08,
+      "neighbor_support_degradation_min": 0.04,
+      "neighbor_support_delta_min": 0.05,
+      "policy_id": "n28_i4c2_extractive_mechanism_diversity_policy_v1",
+      "policy_retuned_for_label": false,
+      "post_hoc_boundary_shift_used": false,
+      "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+      "thresholds_widened_relative_to_i4b": false
+    },
+    "threshold_record_id": "n29_i14_2_2_threshold_record"
+  },
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

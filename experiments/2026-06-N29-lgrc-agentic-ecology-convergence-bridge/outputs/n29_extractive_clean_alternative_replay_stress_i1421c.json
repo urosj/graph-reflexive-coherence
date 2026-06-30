@@ -1,0 +1,159 @@
+{
+  "acceptance_state": "accepted_focused_clean_extractive_replay_stress_blocked_no_candidate",
+  "artifact_id": "n29_extractive_clean_alternative_replay_stress_i1421c",
+  "checks": [
+    {
+      "check_id": "i14_2_1_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "focused_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "focused_controls_failed_open_zero",
+      "passed": true
+    },
+    {
+      "check_id": "no_replacement_candidate_exists",
+      "passed": true
+    },
+    {
+      "check_id": "all_replay_blocked_no_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "all_stress_blocked_no_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "clean_replay_stress_not_supported",
+      "passed": true
+    },
+    {
+      "check_id": "original_i14_2_caveat_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_support_claim_not_allowed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_record",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "focused_replay_stress_blocked_no_clean_runtime_candidate_original_i14_2_caveat_preserved",
+  "clean_bounded_extractive_runtime_claim_allowed": false,
+  "clean_extractive_replay_stress_supported": false,
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_clean_alternative_i1421bc.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_clean_alternative_i1421bc.py",
+  "i14_2_original_remains_consumable_only_with_leakage_caveat": true,
+  "i14_5_generator_extractor_composition_implication": "I14.5 may use the original I14.2 extractor only if the leakage caveat remains explicit; it cannot claim clean bounded-leakage extractor support from I14.2-1.",
+  "iteration": "I14.2-1-C",
+  "output_digest": "c4f229eba2bacc09f869d94c97335d7e13172aac29e1bdaad8b5124eee6b6b79",
+  "prototype_d_runtime_support_claim_allowed": false,
+  "replay_results": [
+    {
+      "claim_effect": "blocks_clean_extractive_replay_support",
+      "reason": "I14.2-1 created a search/blocker artifact, not a replacement runtime artifact.",
+      "replay_digest": "83f19930bbe62ba32f6c09373eecb12c425e1a1f9596a7a150ba3fa40c3b4061",
+      "replay_mode": "artifact_replay",
+      "status": "blocked_no_runtime_candidate"
+    },
+    {
+      "claim_effect": "blocks_clean_extractive_replay_support",
+      "reason": "No replacement runtime trace exists to snapshot/load.",
+      "replay_digest": "33f72fc9ab96502ec138f6ebfc67051e18733c16acaccbe012a7f65d1c18f645",
+      "replay_mode": "snapshot_load_replay",
+      "status": "blocked_no_runtime_candidate"
+    },
+    {
+      "claim_effect": "blocks_clean_extractive_replay_support",
+      "reason": "No replacement runtime candidate exists for duplicate replay.",
+      "replay_digest": "596cddf4d4a7c3f5048aa0d1475e1b9830629e7139096ddbb1c9797948a95d81",
+      "replay_mode": "duplicate_replay",
+      "status": "blocked_no_runtime_candidate"
+    }
+  ],
+  "replay_stress_summary": {
+    "blocked_replay_count": 3,
+    "blocked_stress_count": 3,
+    "replacement_runtime_candidate_exists": false,
+    "stable_replay_count": 0,
+    "stress_passed_count": 0,
+    "why_not_positive_support": "I14.2-1 did not admit a clean replacement runtime candidate."
+  },
+  "script_sha256": "f6c58dde068cba0497138c82532522739c01d6f451f8f88c16d19f6ebafcf795",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_clean_extractive_alternative_search_no_admissible_replacement_found",
+      "artifact_id": "n29_extractive_clean_alternative_search_i1421",
+      "iteration": "I14.2-1",
+      "output_digest": "61a3fec4f97b5549fa1621451e68b3a1118d3f1e773584fe614ec168bd221b97",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_alternative_search_i1421.json",
+      "sha256": "17523e3c2137487985cb2e8d6dbfb987f072e3477db9a5d3b0f7c05f56930ae1",
+      "source_id": "n29_i14_2_1_clean_extractive_search",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_focused_clean_extractive_replacement_controls_fail_closed",
+      "artifact_id": "n29_extractive_clean_alternative_controls_i1421b",
+      "iteration": "I14.2-1-B",
+      "output_digest": "c916ebb9aa294439821ea4e4e1c0d48eef7ed6461a5e417607dd957cb883c33d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_alternative_controls_i1421b.json",
+      "sha256": "9b811845c3887725e2feb368b00a946b9b12e60a0ff4e30463230f2574771183",
+      "source_id": "n29_i14_2_1_b_focused_controls",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "stress_results": [
+    {
+      "claim_effect": "blocks_clean_extractive_stress_support",
+      "reason": "No clean bounded-leakage source-current extractor was admitted.",
+      "status": "blocked_no_runtime_candidate",
+      "stress_digest": "3b727a1125841551fcebb009fc99cf54a40d0311c7b3f520a2f115b36927f729",
+      "stress_id": "clean_extractive_depletion_replay_stress"
+    },
+    {
+      "claim_effect": "blocks_clean_extractive_stress_support",
+      "reason": "The boundary was already crossed by every supported extractive source row.",
+      "status": "blocked_no_runtime_candidate",
+      "stress_digest": "a64907aba2a3e92eb45d1953f2d07ca2f44da03a22fafb6b54df02a15cac9a89",
+      "stress_id": "merge_leakage_boundary_stress"
+    },
+    {
+      "claim_effect": "blocks_clean_extractive_stress_support",
+      "reason": "Neutral-gap transition rows are controls, not replacement extractor candidates.",
+      "status": "blocked_no_runtime_candidate",
+      "stress_digest": "46ca254947f2869b00abd990a4d8c8401f5cd1cf40a277369a4f19bbb36a87a2",
+      "stress_id": "neutral_gap_substitution_stress"
+    }
+  ],
+  "title": "Prototype D I14.2-1-C Focused Clean Extractive Replay / Stress",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

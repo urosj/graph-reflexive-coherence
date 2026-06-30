@@ -1,0 +1,457 @@
+{
+  "acceptance_state": "accepted_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success",
+  "artifact_id": "n29_trace_pressure_loop_replay_stress_i11c",
+  "checks": [
+    {
+      "check_id": "i11_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i11a_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i11b_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "snapshot_load_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "trace_window_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "pressure_threshold_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "response_margin_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_12",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_ant_agency_claimed": false,
+    "native_ecology_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "phase8_completion_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false,
+    "semantic_action_claimed": false,
+    "semantic_signal_claimed": false
+  },
+  "claim_ceiling": "replay_stress_backed_runtime_bridge_candidate_no_ecology_success",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_replay_stress_i11c.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_replay_stress_i11c.py",
+  "interpretation": {
+    "trace_caveat": "The current runtime does not implement a decay law for the latest processed parent-arrival trace. I11-C therefore supports only an observed bounded no-decay window, not general trace persistence.",
+    "what_passes": "I11-C shows stable artifact, snapshot/load continuation, and duplicate deterministic replay for the I11-A runtime bridge, while mapping bounded pressure and response margins.",
+    "why_not_stronger": "The result remains producer-assisted and bounded to this two-pole trace/pressure/loop fixture. It does not establish native ecology, semantic communication, shared-medium coordination, agency, or general trace persistence."
+  },
+  "iteration": "I11-C",
+  "output_digest": "e78cedc79f0f32d1370fd0a72f908292e07fd5ca8e61b0b0b9a0daee65ed0fa3",
+  "pressure_threshold_supported": "bounded",
+  "ready_for_iteration_12": true,
+  "replay_rows": [
+    {
+      "embedded_leg_count": 4,
+      "embedded_self_rearm_validation_valid": true,
+      "manifest_digest_matches_runtime_artifact": true,
+      "passed": true,
+      "raw_event_revalidation_available": false,
+      "raw_event_revalidation_note": "I11-A stores validated leg records and producer artifacts, but not the full raw event log as a standalone output artifact.",
+      "replay_id": "artifact_replay",
+      "status": "stable"
+    },
+    {
+      "candidate_count": 2,
+      "completed_count": 2,
+      "continued_after_load": true,
+      "event_count": 16,
+      "failure_reasons": [],
+      "passed": true,
+      "producer_result_count": 2,
+      "production_record_count": 2,
+      "replay_id": "snapshot_load_replay",
+      "scheduled_event_count": 2,
+      "snapshot_artifact": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_replay_stress_i11c_snapshot.json",
+      "snapshot_sha256": "dfff5265fdeeac2ddd13f974160eafcb36f5d01bfa2088432c73cf8f5063b39b",
+      "status": "stable",
+      "valid": true
+    },
+    {
+      "first_digest": "0de9b91a1d4d97b05286c5ca0d0ab2ded60f994b20824e3d42a59f8980a568ae",
+      "first_summary": {
+        "completed_count": 4,
+        "event_kinds": [
+          "lgrc9v3_local_update",
+          "lgrc9v3_packet_arrival",
+          "lgrc9v3_packet_arrival_eligibility",
+          "lgrc9v3_packet_departure",
+          "lgrc9v3_self_rearm_evidence"
+        ],
+        "producer_result_count": 4,
+        "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "scheduled_event_count": 4,
+        "validation_valid": true
+      },
+      "passed": true,
+      "replay_id": "duplicate_replay",
+      "second_digest": "0de9b91a1d4d97b05286c5ca0d0ab2ded60f994b20824e3d42a59f8980a568ae",
+      "second_summary": {
+        "completed_count": 4,
+        "event_kinds": [
+          "lgrc9v3_local_update",
+          "lgrc9v3_packet_arrival",
+          "lgrc9v3_packet_arrival_eligibility",
+          "lgrc9v3_packet_departure",
+          "lgrc9v3_self_rearm_evidence"
+        ],
+        "producer_result_count": 4,
+        "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "scheduled_event_count": 4,
+        "validation_valid": true
+      },
+      "status": "stable"
+    }
+  ],
+  "response_margin_supported": "bounded",
+  "runtime_bridge_replay_status": "stable",
+  "script_sha256": "21ed9192144ed4b7139bbf3d7176b87a7078a208438d42e4c9e95df65bf75b1f",
+  "snapshot_artifact_manifest": {
+    "artifact_role": "native_lgrc9v3_snapshot_load_replay_source",
+    "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_replay_stress_i11c_snapshot.json",
+    "sha256": "dfff5265fdeeac2ddd13f974160eafcb36f5d01bfa2088432c73cf8f5063b39b"
+  },
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_trace_pressure_loop_prototype_i11",
+      "consumed_as": "lineage_and_claim_boundary_source",
+      "output_digest": "16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_prototype_i11.json"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_runtime_i11a",
+      "consumed_as": "primary_runtime_bridge_candidate_source",
+      "output_digest": "57e647333608ff7fdc1bb307eb256e12770ff9efb98b185bc097e0057d1f5076",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_runtime_i11a.json"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_runtime_controls_i11b",
+      "consumed_as": "control_gate_source",
+      "output_digest": "5c9aaaf087c783fd82d330ade313a589519a787532154aa613a98f4142cd582a",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_runtime_controls_i11b.json"
+    }
+  ],
+  "status": "passed",
+  "stress_rows": [
+    {
+      "max_supported_noop_delay_steps": 4,
+      "rows": [
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 1,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 2,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 4,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        }
+      ],
+      "scan_id": "trace_window_scan",
+      "status": "bounded_no_decay_window",
+      "trace_decay_note": "The current runtime does not implement a decay law for the latest processed parent-arrival trace. I11-C therefore supports only an observed bounded no-decay window, not general trace persistence.",
+      "trace_decay_observed": false
+    },
+    {
+      "bounded_failure_observed": true,
+      "maximum_rejected_surplus": 0.049,
+      "measured_boundary_note": "The configured runtime gate is surplus < trigger_threshold. In this scan, the serialized 0.049 surplus point fails closed while 0.05 supports the loop, so I11-C records a measured supported boundary just above the nominal threshold rather than exact equality support.",
+      "minimum_supported_surplus": 0.05,
+      "rows": [
+        {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "delay_steps": 0,
+          "event_count": 4,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.22,
+          "runtime_error": null,
+          "scheduled_event_count": 0,
+          "supported": false,
+          "surplus": 0.03,
+          "valid": false
+        },
+        {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "delay_steps": 0,
+          "event_count": 4,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.202,
+          "runtime_error": null,
+          "scheduled_event_count": 0,
+          "supported": false,
+          "surplus": 0.048,
+          "valid": false
+        },
+        {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "delay_steps": 0,
+          "event_count": 4,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.201,
+          "runtime_error": null,
+          "scheduled_event_count": 0,
+          "supported": false,
+          "surplus": 0.049,
+          "valid": false
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.2,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.05,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        }
+      ],
+      "scan_id": "pressure_threshold_scan",
+      "status": "bounded",
+      "threshold_supported": false,
+      "trigger_threshold": 0.049
+    },
+    {
+      "baseline_packet_amount_supported": true,
+      "bounded_failure_observed": true,
+      "max_supported_packet_amount": 2.25,
+      "min_rejected_packet_amount": 2.26,
+      "rows": [
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.05,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.5,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 1.0,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 2.25,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.15,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "delay_steps": 0,
+          "event_count": 4,
+          "failure_reasons": [
+            "InvalidStateTransitionError"
+          ],
+          "packet_amount": 2.26,
+          "producer_result_count": 0,
+          "production_record_count": 0,
+          "reference_mass": 2.15,
+          "runtime_error": "route-aspect surplus trigger exceeds source-node coherence",
+          "scheduled_event_count": 0,
+          "supported": false,
+          "surplus": 0.1,
+          "valid": false
+        }
+      ],
+      "scan_id": "response_margin_scan",
+      "status": "bounded"
+    }
+  ],
+  "title": "Trace / Pressure / Loop Replay And Stress Matrix",
+  "trace_window_supported": "bounded_no_decay_window"
+}

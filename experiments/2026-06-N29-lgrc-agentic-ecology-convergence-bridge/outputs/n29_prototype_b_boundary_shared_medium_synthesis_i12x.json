@@ -1,0 +1,263 @@
+{
+  "acceptance_state": "accepted_prototype_b_synthesis_ready_for_i13",
+  "artifact_id": "n29_prototype_b_boundary_shared_medium_synthesis_i12x",
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i12_primary_supported",
+      "passed": true
+    },
+    {
+      "check_id": "i12_1_repeatability_supported",
+      "passed": true
+    },
+    {
+      "check_id": "i12_1_does_not_replace_or_widen_i12",
+      "passed": true
+    },
+    {
+      "check_id": "i12_2_active_medium_separability_supported",
+      "passed": true
+    },
+    {
+      "check_id": "i12_2_does_not_claim_leakage_headroom",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_13",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "active_shared_medium_coordination_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "nonzero_leakage_tolerance_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_b_synthesis_i12x.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_b_synthesis_i12x.py",
+  "iteration": "I12x",
+  "output_digest": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925",
+  "prototype_b_summary": {
+    "claim_blockers_remaining": [
+      "native shared-medium coordination",
+      "nonzero leakage tolerance",
+      "semantic trail or pheromone substrate",
+      "multi-agent interaction",
+      "ant ecology success",
+      "agent body / organism-environment boundary",
+      "native support",
+      "sentience",
+      "Phase 8 completion"
+    ],
+    "i12_1_contribution": {
+      "margin_interpretation": "repeatability_strengthening_not_widened_stress_margin",
+      "numeric_margin_summary": {
+        "basin_side_support_or_coherence_delta": 2.0,
+        "basin_side_support_or_coherence_i12": 1.1,
+        "basin_side_support_or_coherence_i12_1": 3.1,
+        "counterpart_support_or_coherence_i12": 3.0,
+        "counterpart_support_or_coherence_i12_1": 1.0,
+        "incident_edge_count_i12": 2.0,
+        "incident_edge_count_i12_1": 2.0,
+        "merge_leakage_declared_ceiling_i12_and_i12_1": 0.0,
+        "observed_absolute_incident_flux_i12": 0.0,
+        "observed_absolute_incident_flux_i12_1": 0.0,
+        "replay_stress_passed_count_i12": 6,
+        "replay_stress_passed_count_i12_1": 6
+      },
+      "primary_i12_envelope_widened": false,
+      "primary_i12_replaced": false,
+      "repeatability_strengthened": true,
+      "role": "sibling repeatability variant, not envelope widening",
+      "supported": true,
+      "unit": {
+        "basin_side_state": "child_basin_core_2",
+        "counterpart_region": "competing_sink_0",
+        "observed_absolute_incident_flux": 0.0,
+        "runtime_unit_id": "N29.I12.1A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+        "shared_or_adjacent_medium": "source_edge_1_route_variant_medium_channel"
+      }
+    },
+    "i12_2_contribution": {
+      "active_medium_present_count": 2,
+      "leakage_headroom_improved": false,
+      "nonzero_injected_pressure_failed_closed_count": 2,
+      "role": "active-medium separability tranche, not leakage tolerance",
+      "supported": true,
+      "zero_leakage_policy_changed": false,
+      "zero_leakage_policy_preserved_count": 2
+    },
+    "i12_contribution": {
+      "failed_or_blocked_count": 0,
+      "replay_stress_rows_passed": 6,
+      "role": "primary boundary/shared-medium unit extraction and controlled replay/stress",
+      "supported": true,
+      "unit": {
+        "basin_side_state": "child_basin_core_0",
+        "counterpart_region": "competing_sink_2",
+        "observed_absolute_incident_flux": 0.0,
+        "runtime_unit_id": "N29.I12A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+        "shared_or_adjacent_medium": "source_edge_1_route_candidate_medium_channel"
+      }
+    },
+    "prototype_id": "Prototype_B_boundary_shared_medium_unit",
+    "prototype_success_claimed": false,
+    "ready_for_iteration_13": true,
+    "runtime_ecology_success_claimed": false,
+    "shared_claim_ceiling": "bounded Prototype B boundary/shared-medium bridge evidence: primary unit, sibling repeatability, and active-medium separability",
+    "synthesis_scope": "I12_I12_1_I12_2"
+  },
+  "script_sha256": "b0259b1ecb5f3d814fe434afb87a4066008f9a751d686e9067502d8ec23e8211",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_unit_runtime_tranche_admission_pending_i12abc",
+      "artifact_id": "n29_boundary_shared_medium_unit_i12",
+      "iteration": "I12",
+      "output_digest": "069c034eee8430a307da163ae9f9459978687cd0ad5d150de0f36c97bb4c4137",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_i12.json",
+      "sha256": "7286b7be94480c735085a48e7ef0122c611e0f355c49d533137152b8d81872ba",
+      "source_id": "i12_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_runtime_i12a",
+      "iteration": "I12-A",
+      "output_digest": "518d48d038ad7d27062b785820c91f69c35e5925e1feb864ff59a1204c4a93e5",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_runtime_i12a.json",
+      "sha256": "7f774be699f6fa78a4df227d17125984ed32ecc819be99694e0f92bd03d6d5d3",
+      "source_id": "i12_runtime",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_controls_fail_closed",
+      "artifact_id": "n29_boundary_shared_medium_unit_controls_i12b",
+      "iteration": "I12-B",
+      "output_digest": "cd617b24085747023ed6d68d8156790695b6f3ca894c77df436a4e15248af433",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_controls_i12b.json",
+      "sha256": "c3e51ad269ff2c59edf7f2506258d24196c22e1620224526ca8d22dce8635030",
+      "source_id": "i12_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_replay_stress_i12c",
+      "iteration": "I12-C",
+      "output_digest": "763752030ab58c6c73db61959b17426b63305c892bb875a6da150a4f3788df94",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_replay_stress_i12c.json",
+      "sha256": "93aaf0075dc2dd73419bbb57730b21cd6425dcbfa6aae308e6f27830e3c4dfc7",
+      "source_id": "i12_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_boundary_shared_medium_sibling_admission",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_i121",
+      "iteration": "I12.1",
+      "output_digest": "9a609777ff861f5f3887a65591e6047dc366367e9c292961ed204c578083bd41",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_i121.json",
+      "sha256": "8e566aa630f0c8e1049216f9c8366ccdcfe9debc85f3d112dd1310649f016f42",
+      "source_id": "i121_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_runtime_i121a",
+      "iteration": "I12.1-A",
+      "output_digest": "0c3cb123e7245747705de79d2e732e962de014882fdf5fae7d668b152b189dd4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_runtime_i121a.json",
+      "sha256": "5607004a4d67064817624dadc64dc49d9fa8b33a63a740151ab6cef24f50e92a",
+      "source_id": "i121_runtime",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_boundary_shared_medium_controls_fail_closed",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_controls_i121b",
+      "iteration": "I12.1-B",
+      "output_digest": "e6392bd4457bca541dd0f1693dda5a4e6ea1d1fb26f6bd5bb4844c360adba8dc",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_controls_i121b.json",
+      "sha256": "4662794e11f6ddf726a830c78dd6174eca0dcd6b89375b95a424d5e4fc67ba03",
+      "source_id": "i121_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_replay_stress_i121c",
+      "iteration": "I12.1-C",
+      "output_digest": "09a8717a2079adb047f21e30dddfe36f6030a2d6875cb72bf2e9d54d8af51693",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_replay_stress_i121c.json",
+      "sha256": "fad2cb7a9baffb728e72195939a824271196e3f7dbba0cc550489c827529ea02",
+      "source_id": "i121_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_medium_separability_admission_pending_i122abc",
+      "artifact_id": "n29_boundary_shared_medium_active_i122",
+      "iteration": "I12.2",
+      "output_digest": "999740bd86d0756e61f2d9c263dda209f3b26ab1d00ee49952023dc6f96a9f49",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_i122.json",
+      "sha256": "88616787cae0109af5a70a88ec1741447cd7fffad716a982745ad6b8a575c60f",
+      "source_id": "i122_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_medium_runtime_extraction_pending_controls",
+      "artifact_id": "n29_boundary_shared_medium_active_runtime_i122a",
+      "iteration": "I12.2-A",
+      "output_digest": "55eb734a533aea01d605c9fd77b9a827099998d56892e81699608db60f95956a",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_runtime_i122a.json",
+      "sha256": "2305a230009736240cf1f4e9ce885e3ac29e2e24d61d5dcfa2638a1e93affbbe",
+      "source_id": "i122_runtime",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_medium_controls_fail_closed",
+      "artifact_id": "n29_boundary_shared_medium_active_controls_i122b",
+      "iteration": "I12.2-B",
+      "output_digest": "e6f189f79572713f5097f05d7cedc77c1a465c4ba7c463899a138698e9912139",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_controls_i122b.json",
+      "sha256": "3ff05090cf07874e9020f88ddc97f22d419c8779a464bd0307ad14eaa17fa58e",
+      "source_id": "i122_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_medium_separability_probe_no_leakage_policy_change",
+      "artifact_id": "n29_boundary_shared_medium_active_replay_stress_i122c",
+      "iteration": "I12.2-C",
+      "output_digest": "d6077db416fa6c032bfc4d0d4edcf43802f8604f1468d45ba300f4ae4f9a9cf2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_replay_stress_i122c.json",
+      "sha256": "93a18770145972687ab64c5dd52fd3bac9d929d7677b0575808b26886a9f8ced",
+      "source_id": "i122_replay_stress",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B Boundary / Shared-Medium Synthesis"
+}

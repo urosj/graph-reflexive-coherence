@@ -1,0 +1,98 @@
+{
+  "acceptance_state": "accepted_stronger_candidate_definition_pending_runtime_controls_replay",
+  "artifact_id": "n29_trace_pressure_loop_stronger_candidate_i111",
+  "candidate_role": "stronger_sibling_not_replacement_for_i11",
+  "checks": [
+    {
+      "check_id": "i11c_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_is_sibling_not_replacement",
+      "passed": true
+    },
+    {
+      "check_id": "thresholds_declared_before_runtime",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false
+  },
+  "claim_ceiling": "stronger_candidate_definition_no_runtime_claim_yet",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_stronger_i111.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_stronger_i111.py",
+  "geometry": {
+    "cycle": "M_to_S parent trace -> S_to_K -> K_to_M -> M_to_S",
+    "edge_count": 3,
+    "node_count": 3,
+    "pole_regions": {
+      "K": [
+        1
+      ],
+      "M": [
+        2
+      ],
+      "S": [
+        0
+      ]
+    },
+    "route_aspect_digest": "361ce1bbc02832596f9d33b203150c81da6f5b31113ce0195b44806f3823ad21",
+    "route_aspect_id": "n29_i111_three_pole_trace_pressure_loop",
+    "route_channel_sequence": [
+      "S_to_K",
+      "K_to_M",
+      "M_to_S"
+    ],
+    "seed_parent_arrival": "M_to_S"
+  },
+  "iteration": "I11.1",
+  "output_digest": "d9f007adeac363f57ea8316d06a85a5c3e6532828986040d443e32c89cb8c067",
+  "predeclared_thresholds": {
+    "declared_before_runtime": true,
+    "expected_pressure_margin_per_leg": 0.201,
+    "expected_surplus_per_leg": 0.25,
+    "packet_amount": 0.2,
+    "references": {
+      "K": 1.95,
+      "M": 0.95,
+      "S": 3.25
+    },
+    "trigger_threshold": 0.049
+  },
+  "prototype_family": "trace_pressure_loop",
+  "ready_for_i111a": true,
+  "required_followups": [
+    "I11.1-A",
+    "I11.1-B",
+    "I11.1-C"
+  ],
+  "script_sha256": "a712537f57511aaa8efc5b87127c9a0c86e19b5a6609a4146c2f7fd210805c84",
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_trace_pressure_loop_replay_stress_i11c",
+      "consumed_as": "minimal_edge_prototype_and_motivation_source",
+      "output_digest": "e78cedc79f0f32d1370fd0a72f908292e07fd5ca8e61b0b0b9a0daee65ed0fa3",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_replay_stress_i11c.json"
+    }
+  ],
+  "status": "passed",
+  "title": "Stronger Trace / Pressure / Loop Candidate Definition",
+  "why_stronger_than_i11": "I11.1 uses a three-pole route cycle with six completed legs over two cycles and an expected surplus margin of 0.201 above the same 0.049 route-surplus threshold. I11 remains the minimal edge case; I11.1 tests whether the same motif can be less marginal without changing the claim rules."
+}

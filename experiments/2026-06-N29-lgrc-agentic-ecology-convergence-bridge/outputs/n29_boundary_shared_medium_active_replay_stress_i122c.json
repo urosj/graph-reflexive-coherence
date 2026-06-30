@@ -1,0 +1,193 @@
+{
+  "acceptance_state": "accepted_active_medium_separability_probe_no_leakage_policy_change",
+  "active_medium_rows": [
+    {
+      "basin_side_region": "child_basin_core_0",
+      "claim_effect": "supports active-medium separability only: source-current medium activity is present, merge/leakage into the basin remains zero, and nonzero injected pressure fails closed",
+      "counterpart_region": "competing_sink_2",
+      "nonzero_pressure_control": {
+        "claim_effect": "non-source pressure would block stronger claim",
+        "declared_ceiling": 0.0,
+        "nonzero_pressure_fails_closed": true,
+        "observed_absolute_incident_flux": 0.1,
+        "status": "failed_closed"
+      },
+      "runtime_unit_id": "N29.I12A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+      "shared_or_adjacent_medium": "source_edge_1_route_candidate_medium_channel",
+      "source_current_medium_activity": {
+        "active_medium_present": true,
+        "activity_kind": "source-current packet/contact medium activity",
+        "in_flight_packet_total_after_transport": 0.0,
+        "max_source_contact_amount": 0.1,
+        "packet_record_count": 1.0
+      },
+      "variant_id": "I12_primary_reference",
+      "zero_leakage_separability": {
+        "declared_merge_leakage_ceiling": 0.0,
+        "observed_absolute_incident_flux": 0.0,
+        "zero_leakage_policy_preserved": true
+      }
+    },
+    {
+      "basin_side_region": "child_basin_core_2",
+      "claim_effect": "supports active-medium separability only: source-current medium activity is present, merge/leakage into the basin remains zero, and nonzero injected pressure fails closed",
+      "counterpart_region": "competing_sink_0",
+      "nonzero_pressure_control": {
+        "claim_effect": "non-source pressure would block stronger claim",
+        "declared_ceiling": 0.0,
+        "nonzero_pressure_fails_closed": true,
+        "observed_absolute_incident_flux": 0.1,
+        "status": "failed_closed"
+      },
+      "runtime_unit_id": "N29.I12.1A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+      "shared_or_adjacent_medium": "source_edge_1_route_variant_medium_channel",
+      "source_current_medium_activity": {
+        "active_medium_present": true,
+        "activity_kind": "source-current packet/contact medium activity",
+        "in_flight_packet_total_after_transport": 0.0,
+        "max_source_contact_amount": 0.1,
+        "packet_record_count": 1.0
+      },
+      "variant_id": "I12_1_sibling_variant",
+      "zero_leakage_separability": {
+        "declared_merge_leakage_ceiling": 0.0,
+        "observed_absolute_incident_flux": 0.0,
+        "zero_leakage_policy_preserved": true
+      }
+    }
+  ],
+  "artifact_id": "n29_boundary_shared_medium_active_replay_stress_i122c",
+  "checks": [
+    {
+      "check_id": "i122a_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i122b_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i122b_failed_open_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "active_medium_present_in_both_rows",
+      "passed": true
+    },
+    {
+      "check_id": "zero_leakage_policy_preserved_in_both_rows",
+      "passed": true
+    },
+    {
+      "check_id": "nonzero_injected_pressure_fails_closed_in_both_rows",
+      "passed": true
+    },
+    {
+      "check_id": "leakage_headroom_not_claimed_as_improved",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "active_shared_medium_coordination_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "nonzero_leakage_tolerance_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "bounded active-medium separability evidence; source-current packet/contact medium activity with zero merge/leakage and fail-closed nonzero pressure controls",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "control_summary": {
+    "control_count": 5,
+    "failed_closed_count": 5,
+    "failed_open_count": 0
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "iteration": "I12.2-C",
+  "matrix_summary": {
+    "active_medium_present_count": 2,
+    "active_medium_row_count": 2,
+    "active_medium_separability_candidate_supported": true,
+    "leakage_headroom_improved": false,
+    "nonzero_injected_pressure_failed_closed_count": 2,
+    "zero_leakage_policy_changed": false,
+    "zero_leakage_policy_preserved_count": 2
+  },
+  "output_digest": "d6077db416fa6c032bfc4d0d4edcf43802f8604f1468d45ba300f4ae4f9a9cf2",
+  "prototype_b_active_medium_separability_strengthened": true,
+  "prototype_success_claimed": false,
+  "ready_for_iteration_13": true,
+  "runtime_ecology_success_claimed": false,
+  "script_sha256": "1571e968a79c15d4d19f5a541e8c65dae28b97c6e81ff5bd3d0cc4ed57253181",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_active_medium_runtime_extraction_pending_controls",
+      "artifact_id": "n29_boundary_shared_medium_active_runtime_i122a",
+      "output_digest": "55eb734a533aea01d605c9fd77b9a827099998d56892e81699608db60f95956a",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_runtime_i122a.json",
+      "role": "active_medium_runtime_source",
+      "sha256": "2305a230009736240cf1f4e9ce885e3ac29e2e24d61d5dcfa2638a1e93affbbe",
+      "source_id": "n29_i122a_active_medium_runtime",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_medium_controls_fail_closed",
+      "artifact_id": "n29_boundary_shared_medium_active_controls_i122b",
+      "output_digest": "e6f189f79572713f5097f05d7cedc77c1a465c4ba7c463899a138698e9912139",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_controls_i122b.json",
+      "role": "active_medium_control_source",
+      "sha256": "3ff05090cf07874e9020f88ddc97f22d419c8779a464bd0307ad14eaa17fa58e",
+      "source_id": "n29_i122b_active_medium_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_replay_stress_i12c",
+      "output_digest": "763752030ab58c6c73db61959b17426b63305c892bb875a6da150a4f3788df94",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_replay_stress_i12c.json",
+      "role": "primary_replay_stress_source",
+      "sha256": "93aaf0075dc2dd73419bbb57730b21cd6425dcbfa6aae308e6f27830e3c4dfc7",
+      "source_id": "n29_i12c_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_replay_stress_i121c",
+      "output_digest": "09a8717a2079adb047f21e30dddfe36f6030a2d6875cb72bf2e9d54d8af51693",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_replay_stress_i121c.json",
+      "role": "sibling_replay_stress_source",
+      "sha256": "fad2cb7a9baffb728e72195939a824271196e3f7dbba0cc550489c827529ea02",
+      "source_id": "n29_i121c_replay_stress",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Active-Medium Replay And Stress Close",
+  "why_not_stronger": [
+    "does not permit nonzero merge/leakage tolerance",
+    "does not widen the I12 or I12.1 stress envelope",
+    "does not prove native shared-medium coordination or semantic medium use"
+  ]
+}

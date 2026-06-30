@@ -1,0 +1,128 @@
+{
+  "acceptance_state": "accepted_active_medium_controls_fail_closed",
+  "artifact_id": "n29_boundary_shared_medium_active_controls_i122b",
+  "checks": [
+    {
+      "check_id": "i122a_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_controls_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "active_shared_medium_coordination_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "nonzero_leakage_tolerance_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "control_rows": [
+    {
+      "actual_result": "non-source pressure would block stronger claim",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "I12_primary_reference_nonzero_pressure_control",
+      "control_status": "failed_closed",
+      "declared_ceiling": 0.0,
+      "expected_result": "failed_closed",
+      "observed_absolute_incident_flux": 0.1,
+      "rung_effect": "blocks nonzero leakage tolerance and native shared-medium coordination",
+      "variant_id": "I12_primary_reference"
+    },
+    {
+      "actual_result": "non-source pressure would block stronger claim",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "I12_1_sibling_variant_nonzero_pressure_control",
+      "control_status": "failed_closed",
+      "declared_ceiling": 0.0,
+      "expected_result": "failed_closed",
+      "observed_absolute_incident_flux": 0.1,
+      "rung_effect": "blocks nonzero leakage tolerance and native shared-medium coordination",
+      "variant_id": "I12_1_sibling_variant"
+    },
+    {
+      "actual_result": "source-current packet/contact activity cannot be relabeled as native shared-medium coordination",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "active_medium_as_coordination_relabel_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "rung_effect": "blocks native shared-medium coordination claim",
+      "variant_id": "cross_variant"
+    },
+    {
+      "actual_result": "medium activity has no semantic trail or pheromone substrate interpretation",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "semantic_trail_or_pheromone_relabel_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "rung_effect": "blocks semantic medium claim",
+      "variant_id": "cross_variant"
+    },
+    {
+      "actual_result": "active-medium separability is not ant-ecology or runtime-ecology success",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "active_medium_as_ecology_success_relabel_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "rung_effect": "blocks ecology success claim",
+      "variant_id": "cross_variant"
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "iteration": "I12.2-B",
+  "matrix_summary": {
+    "control_count": 5,
+    "failed_closed_count": 5,
+    "failed_open_count": 0
+  },
+  "output_digest": "e6f189f79572713f5097f05d7cedc77c1a465c4ba7c463899a138698e9912139",
+  "prototype_b_active_medium_separability_strengthened": false,
+  "prototype_success_claimed": false,
+  "ready_for_i122c": true,
+  "ready_for_iteration_13": false,
+  "runtime_ecology_success_claimed": false,
+  "script_sha256": "1571e968a79c15d4d19f5a541e8c65dae28b97c6e81ff5bd3d0cc4ed57253181",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_active_medium_runtime_extraction_pending_controls",
+      "artifact_id": "n29_boundary_shared_medium_active_runtime_i122a",
+      "output_digest": "55eb734a533aea01d605c9fd77b9a827099998d56892e81699608db60f95956a",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_runtime_i122a.json",
+      "role": "active_medium_runtime_source",
+      "sha256": "2305a230009736240cf1f4e9ce885e3ac29e2e24d61d5dcfa2638a1e93affbbe",
+      "source_id": "n29_i122a_active_medium_runtime",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Active-Medium Controls"
+}

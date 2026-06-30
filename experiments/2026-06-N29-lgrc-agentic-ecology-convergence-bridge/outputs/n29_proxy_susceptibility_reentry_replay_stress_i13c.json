@@ -1,0 +1,262 @@
+{
+  "acceptance_state": "accepted_i13c_source_stable_mapping_only_runtime_replay_stress_not_admitted",
+  "artifact_id": "n29_proxy_susceptibility_reentry_replay_stress_i13c",
+  "checks": [
+    {
+      "check_id": "i13b_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_chain_sha_stable",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_replay_not_run",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_stress_not_run",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_claim_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "mapping_only_with_stable_sources",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_14",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_role_behavior_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "identity_transfer_claim_allowed": false,
+      "intentional_return_claim_allowed": false,
+      "learning_as_semantic_knowledge_claim_allowed": false,
+      "native_ap4_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "preference_ownership_claim_allowed": false,
+      "semantic_goal_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_i13abc.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_i13abc.py",
+  "iteration": "I13-C",
+  "output_digest": "d2f16bd16998c146e012a3a1955907fd3b6a248c0f48f403a946af051b5741d5",
+  "replay_stress_record": {
+    "claim_ceiling": "source-stable mapping-only Prototype C record; runtime replay/stress blocked by absent exact row",
+    "controls_consumed": true,
+    "i13_source_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+    "i13a_source_digest": "8eda4085ebacf26f80ab4a19a326be42d9d90edb98a656cb1fe57d625ad1e732",
+    "i13b_source_digest": "9c2adba1a6d56c541ef21fd3d0967acb3af7046d01667c1089237179dadf20d9",
+    "iteration_14_handoff_role": "carry Prototype C as a source-backed mapping/debt motif, not a runtime prototype success",
+    "mapping_only_with_stable_sources": true,
+    "prototype_c_runtime_claim_allowed": false,
+    "prototype_c_runtime_success_supported": false,
+    "prototype_family": "proxy_susceptibility_reentry",
+    "ready_for_iteration_14": true,
+    "runtime_replay_not_run_reason": "No exact source-current runtime row was admitted by I13-A.",
+    "runtime_replay_status": "not_run",
+    "runtime_stress_not_run_reason": "No exact source-current runtime row exists for stress variation.",
+    "runtime_stress_status": "not_run",
+    "source_chain_digest_replay_status": "stable",
+    "source_chain_stability_rows": [
+      {
+        "acceptance_state": "accepted_bridge_motif_library",
+        "artifact_id": "n29_bridge_motif_library_i8",
+        "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+        "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json",
+        "sha256": "abd0c077dca7b5158f1e5ca0eae8d0e7f6ba849ffcf4542d75b8ba237929f073",
+        "sha256_matches_file": true,
+        "source_id": "n29_i8_motif_library_index",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_prototype_b_synthesis_ready_for_i13",
+        "artifact_id": "n29_prototype_b_boundary_shared_medium_synthesis_i12x",
+        "output_digest": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925",
+        "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_b_boundary_shared_medium_synthesis_i12x.json",
+        "sha256": "6549eb68362b3497bdcdc7d2c35e5cf00f35ca12e75134da59580caa7a1ccbb4",
+        "sha256_matches_file": true,
+        "source_id": "n29_i12x_prototype_b_boundary",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_n22_c6_handoff_ready_producer_mediated_su5_no_native_learning",
+        "artifact_id": "n22_i8_closeout_and_n23_handoff",
+        "output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+        "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+        "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+        "sha256_matches_file": true,
+        "source_id": "n22_closeout",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_controlled_producer_mediated_su5_candidate_no_final_closeout",
+        "artifact_id": "n22_i7_replay_and_control_matrix",
+        "output_digest": "243d068ba53715b30a40312d8f5c6a2e512f41a23c1773e0e7abb620dce963ef",
+        "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_and_control_matrix.json",
+        "sha256": "b9e91d81bd42bcff925980c06b758499e1bf5e87b3adea53ae8c0c9aff7081c7",
+        "sha256_matches_file": true,
+        "source_id": "n22_su5_controlled_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_producer_mediated_carrier_transfer_candidates_pending_i7_no_final_su5",
+        "artifact_id": "n22_i6a_carrier_transfer_reentry_probe",
+        "output_digest": "e919277fbf8b3d40a3da977be9bafba38675cd0af893ef7f594bc25659009678",
+        "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe.json",
+        "sha256": "df49bc138786189f83d19c114d9532a02a1fe26f36107d695848c76bca5bd9e4",
+        "sha256_matches_file": true,
+        "source_id": "n22_carrier_reentry_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+        "artifact_id": "n23_i8_closeout_and_n24_handoff",
+        "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+        "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+        "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+        "sha256_matches_file": true,
+        "source_id": "n23_closeout",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_ap4_selection_geometry_lc5_candidate_pending_i7",
+        "artifact_id": "n23_i6_ap4_selection_geometry_probe",
+        "output_digest": "ff20018f3546c0567a03d840c14d2e924b9aca162ff25e74b912579c33a24422",
+        "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe.json",
+        "sha256": "74016fb1ebc4a7ba006d93ba5f5f39794d090ff2a9f5dfb74c9ba25c18ca2f69",
+        "sha256_matches_file": true,
+        "source_id": "n23_collapse_response_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_multibranch_source_current_lc3_candidate_pending_i5a",
+        "artifact_id": "n23_i4a_multibranch_live_set_collapse_probe",
+        "output_digest": "1c52af46ebbedadf8cd0bee091ad14785c58b21e412f8c01a06c315261ce5339",
+        "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe.json",
+        "sha256": "8a1de6033491e288d8dc3592964c161ab88745330ee9e736c9865ad5eaa392d8",
+        "sha256_matches_file": true,
+        "source_id": "n23_multibranch_response_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_n26_c6_pd6_closeout_and_n27_handoff",
+        "artifact_id": "n26_closeout_and_n27_handoff",
+        "output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+        "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+        "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+        "sha256_matches_file": true,
+        "source_id": "n26_closeout",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_controlled_pd5_with_scoped_artifact_ap5_bridge_candidate_pending_i8",
+        "artifact_id": "n26_replay_controls_and_ap5_gate",
+        "output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+        "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_replay_controls_and_ap5_gate.json",
+        "sha256": "b2892b7bdae9d8536e1a42c3fb91f08a3ff4ea1bb168b3eb862198bffd56b065",
+        "sha256_matches_file": true,
+        "source_id": "n26_proxy_state_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_provisional_pd5_proxy_collapse_candidate_pending_i7",
+        "artifact_id": "n26_proxy_collapse_perturbation_matrix",
+        "output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+        "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+        "sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f",
+        "sha256_matches_file": true,
+        "source_id": "n26_proxy_collapse_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_n27_c6_closeout_n28_handoff_ready",
+        "artifact_id": "n27_closeout_and_n28_handoff",
+        "output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+        "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+        "sha256_matches_file": true,
+        "source_id": "n27_closeout",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_replay_same_basin_mapping_matrix_CT3_candidates_pending_controls_stress",
+        "artifact_id": "n27_replay_same_basin_mapping_matrix",
+        "output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix.json",
+        "sha256": "4befc7a401c44724cb2d11d66c5e99a095d4349d1c0451248715b44e982e0674",
+        "sha256_matches_file": true,
+        "source_id": "n27_transfer_reentry_source",
+        "status": "passed"
+      },
+      {
+        "acceptance_state": "accepted_stress_mapping_variant_candidate_pending_i7_controls_no_final_transfer",
+        "artifact_id": "n27_stress_mapping_variant_transfer_matrix",
+        "output_digest": "3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a",
+        "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix.json",
+        "sha256": "b5c6c24ee2e856ce4e0500a6c19c344a223cd97b53b78e3d59ab8d48eae52536",
+        "sha256_matches_file": true,
+        "source_id": "n27_stress_mapping_source",
+        "status": "passed"
+      }
+    ]
+  },
+  "script_sha256": "1e270e677081948a311913f1278e10b781efec7401b57d504aed11561ff697ff",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_mapping_only_proxy_susceptibility_reentry_bridge_ready_for_i14_no_i13abc",
+      "artifact_id": "n29_proxy_susceptibility_reentry_i13",
+      "iteration": "I13",
+      "output_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_i13.json",
+      "sha256": "20b5dbfc503363dbabaf906b2d992f077aeebba2d460ce8fbd7ececeb9ea2895",
+      "source_id": "n29_i13_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_i13a_exact_row_absent_mapping_inventory_consumable",
+      "artifact_id": "n29_proxy_susceptibility_reentry_extraction_i13a",
+      "iteration": "I13-A",
+      "output_digest": "8eda4085ebacf26f80ab4a19a326be42d9d90edb98a656cb1fe57d625ad1e732",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_extraction_i13a.json",
+      "sha256": "c06f3e4984ad9d6169f3153c5fb1b3a885b52d808db93a571945bf87962c8738",
+      "source_id": "n29_i13a_extraction",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_i13b_mapping_controls_fail_closed_no_runtime_claim",
+      "artifact_id": "n29_proxy_susceptibility_reentry_controls_i13b",
+      "iteration": "I13-B",
+      "output_digest": "9c2adba1a6d56c541ef21fd3d0967acb3af7046d01667c1089237179dadf20d9",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_controls_i13b.json",
+      "sha256": "aac159ff730482c84488a7834deea51406da8b78ea9e9f6f5bda86f5f0b252bd",
+      "source_id": "n29_i13b_controls",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype C I13-C Replay / Stress Decision"
+}

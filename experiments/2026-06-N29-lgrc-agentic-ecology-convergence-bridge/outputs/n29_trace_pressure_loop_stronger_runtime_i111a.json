@@ -1,0 +1,86 @@
+{
+  "acceptance_state": "accepted_stronger_three_pole_runtime_candidate_pending_controls_replay",
+  "artifact_id": "n29_trace_pressure_loop_stronger_runtime_i111a",
+  "checks": [
+    {
+      "check_id": "i111_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_artifact_present",
+      "passed": true
+    },
+    {
+      "check_id": "self_rearm_validation_passed",
+      "passed": true
+    },
+    {
+      "check_id": "six_completed_legs",
+      "passed": true
+    },
+    {
+      "check_id": "pressure_margin_stronger_than_i11c",
+      "passed": true
+    },
+    {
+      "check_id": "producer_success_does_not_upgrade_native",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false
+  },
+  "claim_ceiling": "stronger_runtime_bridge_candidate_pending_controls_replay_no_ecology_success",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_stronger_i111.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_stronger_i111.py",
+  "iteration": "I11.1-A",
+  "output_digest": "e8e273643fa37e414153ff58ef34a56a6b0b1a7c334ea30949ae89492ebe0e0e",
+  "ready_for_i111b": true,
+  "runtime_or_reconstruction_status": "producer_assisted_runtime_instantiation",
+  "runtime_row": {
+    "completed_leg_count": 6,
+    "min_pressure_margin": 0.201,
+    "min_surplus_after_arrival": 0.25,
+    "pressure_margin_stronger_than_i11c": true,
+    "producer_assisted": true,
+    "producer_success_can_upgrade_native": false,
+    "row_id": "N29.I11.1A.RUNTIME.THREE_POLE_TRACE_PRESSURE_LOOP",
+    "scheduled_event_count": 6,
+    "self_rearm_validation_valid": true,
+    "status": "admitted_runtime_bridge_exemplar_candidate_producer_assisted"
+  },
+  "script_sha256": "a712537f57511aaa8efc5b87127c9a0c86e19b5a6609a4146c2f7fd210805c84",
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_trace_pressure_loop_stronger_candidate_i111",
+      "consumed_as": "stronger_candidate_definition",
+      "output_digest": "d9f007adeac363f57ea8316d06a85a5c3e6532828986040d443e32c89cb8c067",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_candidate_i111.json"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_stronger_runtime_i111a_runtime_artifact",
+      "consumed_as": "source_current_runtime_surface",
+      "output_digest": "2190aa52099edb7d5db59dcb35d6165ee63583f21fd86d80580d97f8cbeaa34d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_runtime_i111a_runtime_artifact.json",
+      "sha256": "b702dd8158692710569f570a4f95cd6647fa937143e5591af3f731541114e051"
+    }
+  ],
+  "status": "passed",
+  "title": "Stronger Trace / Pressure / Loop Runtime Instantiation"
+}

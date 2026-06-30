@@ -1,0 +1,780 @@
+{
+  "acceptance_state": "accepted_prototype_d_five_motif_synthesis_with_loop_debt",
+  "artifact_id": "n29_generative_extractive_medium_reshaping_i14",
+  "checks": [
+    {
+      "check_id": "n29_i13x_ready_for_i14",
+      "passed": true
+    },
+    {
+      "check_id": "n28_closeout_ready_for_n29",
+      "passed": true
+    },
+    {
+      "check_id": "n28_ge6_handoff_present",
+      "passed": true
+    },
+    {
+      "check_id": "exactly_five_motifs_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "expected_motif_ids_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "all_motifs_use_source_backed_n28_basis",
+      "passed": true
+    },
+    {
+      "check_id": "loop_implications_not_promoted",
+      "passed": true
+    },
+    {
+      "check_id": "n29_i5_i8_orientation_only",
+      "passed": true
+    },
+    {
+      "check_id": "visualization_total_coherence_caveat_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "broad_margin_not_overclaimed",
+      "passed": true
+    },
+    {
+      "check_id": "order_of_magnitude_margin_not_overclaimed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "n28_may_consume_as": [
+      "bounded_artifact_level_generative_extractive_persistence_evidence",
+      "paired_generative_extractive_competitive_neutral_regime_separation",
+      "claim_clean_environment_exchange_capacity_context",
+      "same_policy_transition_surface_context",
+      "focused_current_multiplier_margin_context",
+      "margin_bottleneck_diagnostic_context",
+      "ap4_ap5_gap_records_for_dependency_tracking"
+    ],
+    "n28_must_not_consume_as": [
+      "semantic_cooperation",
+      "semantic_choice",
+      "semantic_goal_ownership",
+      "semantic_learning",
+      "agency",
+      "native_support",
+      "sentience",
+      "organism_life",
+      "ant_ecology_implementation",
+      "native_ant_agency",
+      "native_colony_agency",
+      "Phase_8_completion",
+      "native_AP5",
+      "AP5_NAT4_gap_resolution",
+      "broad_margin_robustness",
+      "order_of_magnitude_robustness",
+      "unscoped_multi_basin_substrate"
+    ],
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_generative_extractive_medium_reshaping_i14.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_generative_extractive_medium_reshaping_i14.py",
+  "iteration": "I14",
+  "motif_rows": [
+    {
+      "agentic_ecology_runtime_claim_allowed": false,
+      "bridge_motif": "focal_persistence_plus_neighbor_capacity_gain",
+      "claim_ceiling": "bounded_environment_enrichment_motif_not_resource_economy",
+      "closed_loop_or_exchange_cycle_claim_allowed": false,
+      "downstream_ecology_probe_suggested": "Use as a future ecology probe where local persistence enriches an adjacent medium without claiming cooperation or resource production.",
+      "ecology_demand_served": [
+        "environment_capacity_enrichment",
+        "constructive_medium_change",
+        "future_resource_field_seeding_without_resource_semantics"
+      ],
+      "geometric_read": "The focal basin remains above support/coherence/stability floors while the adjacent capacity shell becomes more distinguishable, more bounded, and better supported.",
+      "motif_classification": "source_backed_environment_enrichment_motif",
+      "motif_id": "generative_enrichment_motif",
+      "prototype_family": "generative_extractive_medium_reshaping",
+      "remaining_producer_medium_naturalization_debt": [
+        "no resource ownership semantics",
+        "no coordinated exchange cycle",
+        "no agentic ecology runtime"
+      ],
+      "replay_basis": {
+        "artifact_replay_result": "passed",
+        "capacity_attribution_controls_result": "passed",
+        "duplicate_replay_meaning": "second_emitted_false_means_duplicate_suppression_worked",
+        "duplicate_replay_result": "passed",
+        "duplicate_replay_second_emitted": false,
+        "final_consumable_rung": "GE4",
+        "focal_survival_only_controls_result": "passed",
+        "merge_leakage_controls_result": "passed",
+        "regime_label_stable_under_replay": true,
+        "replay_trace_digest": "09fff34eab8aae5a4689146478f405bdab8f70cfed9a3e08bc83ec40ffba919f",
+        "row_id": "n28_i5_replay_n28_i4_row_primary_generative_candidate",
+        "snapshot_load_replay_result": "passed",
+        "source_iteration": "4",
+        "source_regime_label": "generative",
+        "source_row_id": "n28_i4_row_primary_generative_candidate"
+      },
+      "requires_future_runtime_construction": false,
+      "resource_economy_claim_allowed": false,
+      "runtime_or_reconstruction_status": "source_backed_motif_synthesis",
+      "source_backed_now": true,
+      "source_basis": [
+        {
+          "output_digest": "daa25e4694929b11af38d7b044f4b4f5a4e70f6c2fbcae954db6a84854c08e5d",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_generative_candidate_probe.json",
+          "row_id": "n28_i4_row_primary_generative_candidate",
+          "sha256": "fa8d7ee21effb6f5f5b1606ccdf676bdcfd3dc743fbd82edf87622b1cb73cb09",
+          "source_id": "n28_primary_generative_candidate_probe"
+        },
+        {
+          "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "row_id": "n28_i5_replay_n28_i4_row_primary_generative_candidate",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_id": "n28_replay_capacity_attribution_matrix"
+        },
+        {
+          "output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+          "sha256": "a2b510af65d5fba2924493df65a6472d19ae811d8c455f2e4ffb92710e00e785",
+          "source_id": "n28_stress_regime_separation_matrix"
+        },
+        {
+          "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_id": "n28_closeout_and_n29_handoff"
+        }
+      ],
+      "stress_basis": {
+        "ge5_or_stronger_supported": true,
+        "ge6_or_stronger_supported": false,
+        "minimum_margin_by_regime": {
+          "competitive": 0.002,
+          "extractive": 0.003,
+          "generative": 0.01,
+          "neutral": 0.001
+        },
+        "stress_failed_row_count": 0,
+        "stress_passed_row_count": 40,
+        "stress_source": {
+          "output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+          "sha256": "a2b510af65d5fba2924493df65a6472d19ae811d8c455f2e4ffb92710e00e785",
+          "source_id": "n28_stress_regime_separation_matrix"
+        },
+        "thresholds_retuned_for_stress": false
+      },
+      "supplied_capability": "Focal basin persists while neighbor support, boundary, distinguishability, and environment basin-forming capacity increase.",
+      "total_coherence_visualization_caveat_preserved": true,
+      "visualization_case": {
+        "case_id": "generative_enrichment",
+        "classification_result": "generative",
+        "environment_capacity_delta": 0.123,
+        "extraction_cost": 0.018,
+        "flattening": 0.014,
+        "merge_leakage": 0.012,
+        "neighbor_boundary_delta": 0.126,
+        "neighbor_distinguishability_delta": 0.133,
+        "neighbor_support_delta": 0.082,
+        "row_id": "n28_i4_row_primary_generative_candidate",
+        "source_iteration": "4"
+      }
+    },
+    {
+      "agentic_ecology_runtime_claim_allowed": false,
+      "bridge_motif": "focal_persistence_plus_neighbor_capacity_loss",
+      "claim_ceiling": "bounded_environment_depletion_motif_not_exploitation",
+      "closed_loop_or_exchange_cycle_claim_allowed": false,
+      "downstream_ecology_probe_suggested": "Use as a future ecology probe for depletion pressure or extraction-like medium change, with exploitation and goal semantics blocked.",
+      "ecology_demand_served": [
+        "environment_capacity_depletion",
+        "bounded_extraction_or_flattening_contrast",
+        "future_loss_or_pressure_field_without_exploitation_semantics"
+      ],
+      "geometric_read": "The focal basin remains intact while the surrounding capacity shell is drained or flattened, so persistence is separated from enrichment.",
+      "motif_classification": "source_backed_environment_depletion_motif",
+      "motif_id": "extractive_depletion_motif",
+      "prototype_family": "generative_extractive_medium_reshaping",
+      "remaining_producer_medium_naturalization_debt": [
+        "no exploitation semantics",
+        "no selective uptake or resource assimilation",
+        "no agentic ecology runtime"
+      ],
+      "replay_basis": {
+        "artifact_replay_result": "passed",
+        "capacity_attribution_controls_result": "passed",
+        "duplicate_replay_meaning": "second_emitted_false_means_duplicate_suppression_worked",
+        "duplicate_replay_result": "passed",
+        "duplicate_replay_second_emitted": false,
+        "final_consumable_rung": "GE4",
+        "focal_survival_only_controls_result": "passed",
+        "merge_leakage_controls_result": "passed",
+        "regime_label_stable_under_replay": true,
+        "replay_trace_digest": "85d335605c1a61907945d182467f0ac92b4caf2509dc9e26002ba1df1eb4d932",
+        "row_id": "n28_i5_replay_n28_i4b_row_primary_extractive_contrast",
+        "snapshot_load_replay_result": "passed",
+        "source_iteration": "4-B",
+        "source_regime_label": "extractive",
+        "source_row_id": "n28_i4b_row_primary_extractive_contrast"
+      },
+      "requires_future_runtime_construction": false,
+      "resource_economy_claim_allowed": false,
+      "runtime_or_reconstruction_status": "source_backed_motif_synthesis",
+      "source_backed_now": true,
+      "source_basis": [
+        {
+          "output_digest": "5015b7f5a148db75c7513b8fa8f249d1ac1fb0fc5fe4c6150d28d4ae644f84d3",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_extractive_contrast_probe.json",
+          "row_id": "n28_i4b_row_primary_extractive_contrast",
+          "sha256": "77cb500ad3a1042f1a5c19631e190b0f8657da2046958d145ebb7b927e05ec53",
+          "source_id": "n28_primary_extractive_contrast_probe"
+        },
+        {
+          "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "row_id": "n28_i5_replay_n28_i4b_row_primary_extractive_contrast",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_id": "n28_replay_capacity_attribution_matrix"
+        },
+        {
+          "output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+          "sha256": "a2b510af65d5fba2924493df65a6472d19ae811d8c455f2e4ffb92710e00e785",
+          "source_id": "n28_stress_regime_separation_matrix"
+        },
+        {
+          "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_id": "n28_closeout_and_n29_handoff"
+        }
+      ],
+      "stress_basis": {
+        "ge5_or_stronger_supported": true,
+        "ge6_or_stronger_supported": false,
+        "minimum_margin_by_regime": {
+          "competitive": 0.002,
+          "extractive": 0.003,
+          "generative": 0.01,
+          "neutral": 0.001
+        },
+        "stress_failed_row_count": 0,
+        "stress_passed_row_count": 40,
+        "stress_source": {
+          "output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+          "sha256": "a2b510af65d5fba2924493df65a6472d19ae811d8c455f2e4ffb92710e00e785",
+          "source_id": "n28_stress_regime_separation_matrix"
+        },
+        "thresholds_retuned_for_stress": false
+      },
+      "supplied_capability": "Focal basin persists while neighbor support, boundary, distinguishability, and environment capacity decrease or flatten.",
+      "total_coherence_visualization_caveat_preserved": true,
+      "visualization_case": {
+        "case_id": "extractive_persistence",
+        "classification_result": "extractive",
+        "environment_capacity_delta": -0.069,
+        "extraction_cost": 0.046,
+        "flattening": 0.041,
+        "merge_leakage": 0.033,
+        "neighbor_boundary_delta": -0.081,
+        "neighbor_distinguishability_delta": -0.077,
+        "neighbor_support_delta": -0.063,
+        "row_id": "n28_i4b_row_primary_extractive_contrast",
+        "source_iteration": "4-B"
+      }
+    },
+    {
+      "agentic_ecology_runtime_claim_allowed": false,
+      "bridge_motif": "one_region_depleted_another_enriched",
+      "claim_ceiling": "bounded_processor_redistribution_motif_not_intentional_processing",
+      "closed_loop_or_exchange_cycle_claim_allowed": false,
+      "downstream_ecology_probe_suggested": "Use as a future ecology probe for medium reshaping or local route-field processing, while blocking semantic tool/use readings.",
+      "ecology_demand_served": [
+        "capacity_redistribution",
+        "local_processing_or_reshaping",
+        "future_environment_changer_without_intentional_processing_semantics"
+      ],
+      "geometric_read": "The pattern behaves like a geometric processor: it preserves focal persistence while redistributing capacity across local regions, rather than globally enriching or globally depleting the medium.",
+      "motif_classification": "source_backed_capacity_redistribution_motif",
+      "motif_id": "processor_redistribution_motif",
+      "prototype_family": "generative_extractive_medium_reshaping",
+      "remaining_producer_medium_naturalization_debt": [
+        "no semantic processing or tool use",
+        "no coordinated exchange cycle",
+        "focused margin improvement is not broad robustness"
+      ],
+      "replay_basis": {
+        "artifact_replay_result": "passed",
+        "capacity_attribution_controls_result": "passed",
+        "duplicate_replay_meaning": "second_emitted_false_means_duplicate_suppression_worked",
+        "duplicate_replay_result": "passed",
+        "duplicate_replay_second_emitted": false,
+        "final_consumable_rung": "GE4",
+        "focal_survival_only_controls_result": "passed",
+        "merge_leakage_controls_result": "passed",
+        "regime_label_stable_under_replay": true,
+        "replay_trace_digest": "0a3bcfe8a7e2e01053cd5afca5b0fd0b5b453144c50a985b49405256005dca24",
+        "row_id": "n28_i5_replay_n28_i4d_row_primary_competitive_neutral_contrast",
+        "snapshot_load_replay_result": "passed",
+        "source_iteration": "4-D",
+        "source_regime_label": "competitive",
+        "source_row_id": "n28_i4d_row_primary_competitive_neutral_contrast"
+      },
+      "requires_future_runtime_construction": false,
+      "resource_economy_claim_allowed": false,
+      "runtime_or_reconstruction_status": "source_backed_motif_synthesis",
+      "source_backed_now": true,
+      "source_basis": [
+        {
+          "output_digest": "f124a1afe8aff1a54a44157290e053d748e5545e1a9afcff1d1accbebef6c173",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_competitive_neutral_contrast_probe.json",
+          "row_id": "n28_i4d_row_primary_competitive_neutral_contrast",
+          "sha256": "7eda37627e8ea9172c9d44909a67316d37846843c527bd84f24b1000c5abb157",
+          "source_id": "n28_primary_competitive_neutral_contrast_probe"
+        },
+        {
+          "output_digest": "8bc907a97b07c09c72fd7ceda63811555c335c0d45d6dbef6cfb29489f463e72",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_competitive_redistribution_probe.json",
+          "row_id": "n28_i4g_row_higher_margin_competitive_redistribution_contrast",
+          "sha256": "de0abbae9f90df2485f7c04abd79df9db836cdac511a36109210d54ca5e6bc00",
+          "source_id": "n28_higher_margin_competitive_redistribution_probe"
+        },
+        {
+          "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "row_id": "n28_i5_replay_n28_i4d_row_primary_competitive_neutral_contrast",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_id": "n28_replay_capacity_attribution_matrix"
+        },
+        {
+          "output_digest": "0ce6c4dcb35f4c7bef0f2e17c8ab2ff87bde958706c390fd05e016b5092fb08e",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix.json",
+          "sha256": "724beb8558ee1f082207d71275ee23cba7539595af0bf04b9cb66ef035f17791",
+          "source_id": "n28_focused_margin_variant_replay_matrix"
+        },
+        {
+          "output_digest": "0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_stress_envelope.json",
+          "sha256": "0c89e5a911967bd92dd4d344edbf4ef611e339cb3b9184f02f4eb6fb66033857",
+          "source_id": "n28_focused_margin_variant_stress_envelope"
+        }
+      ],
+      "stress_basis": {
+        "broad_margin_robustness_supported": false,
+        "focused_optimization_not_generalization": true,
+        "focused_variant_ge5_supported": true,
+        "minimum_current_margin": 0.005,
+        "order_of_magnitude_robustness_supported": false,
+        "stress_source": {
+          "output_digest": "0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_stress_envelope.json",
+          "sha256": "0c89e5a911967bd92dd4d344edbf4ef611e339cb3b9184f02f4eb6fb66033857",
+          "source_id": "n28_focused_margin_variant_stress_envelope"
+        }
+      },
+      "supplied_capability": "Capacity can increase in one local lobe while decreasing in another under the same regime-policy family.",
+      "total_coherence_visualization_caveat_preserved": true,
+      "visualization_case": {
+        "case_id": "competitive_redistribution",
+        "classification_result": "competitive",
+        "environment_capacity_delta": 0.004,
+        "extraction_cost": 0.028,
+        "flattening": 0.024,
+        "merge_leakage": 0.019,
+        "neighbor_boundary_delta": -0.012,
+        "neighbor_distinguishability_delta": 0.018,
+        "neighbor_support_delta": 0.006,
+        "row_id": "n28_i4d_row_primary_competitive_neutral_contrast",
+        "source_iteration": "4-D"
+      }
+    },
+    {
+      "agentic_ecology_runtime_claim_allowed": false,
+      "bridge_motif": "balanced_or_near_neutral_capacity_circulation_implication",
+      "claim_ceiling": "neutral_circulation_implication_not_closed_loop",
+      "closed_loop_or_exchange_cycle_claim_allowed": false,
+      "downstream_ecology_probe_suggested": "Later compose with an oppositely oriented neutral row and test ordered dependency before claiming a closed circulation loop.",
+      "ecology_demand_served": [
+        "balanced_capacity_exchange_implication",
+        "future_circulation_design_seed",
+        "medium_route_exchange_without_loop_claim"
+      ],
+      "geometric_read": "N28 supplies a three-lobe circulation-like pattern with inflow, outflow, and buffer roles, but I14 does not pair it with an opposite ordered leg.",
+      "motif_classification": "source_backed_neutral_circulation_implication",
+      "motif_id": "neutral_circulation_implication",
+      "prototype_family": "generative_extractive_medium_reshaping",
+      "remaining_producer_medium_naturalization_debt": [
+        "opposite orientation not composed here",
+        "ordered dependency not run",
+        "closed circulation replay/control matrix not run"
+      ],
+      "replay_basis": {
+        "artifact_replay_result": "passed",
+        "capacity_attribution_controls_result": "passed",
+        "duplicate_replay_meaning": "second_emitted_false_means_duplicate_suppression_worked",
+        "duplicate_replay_result": "passed",
+        "duplicate_replay_second_emitted": false,
+        "final_consumable_rung": "GE4",
+        "focal_survival_only_controls_result": "passed",
+        "merge_leakage_controls_result": "passed",
+        "regime_label_stable_under_replay": true,
+        "replay_trace_digest": "17f08e78bf6b318d217a8ab2da747f86de0c518f9ab8f4c15e6ccb6aba6a77f8",
+        "row_id": "n28_i5_replay_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast",
+        "snapshot_load_replay_result": "passed",
+        "source_iteration": "4-E",
+        "source_regime_label": "neutral",
+        "source_row_id": "n28_i4e_row_competitive_neutral_mechanism_diversity_contrast"
+      },
+      "requires_future_runtime_construction": true,
+      "resource_economy_claim_allowed": false,
+      "runtime_or_reconstruction_status": "source_backed_implication_future_runtime_composition_required",
+      "source_backed_now": true,
+      "source_basis": [
+        {
+          "output_digest": "d760e55481c2d84e554c5089863c725c3b57ee7da1dedbf5b919f201c3c754cd",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_competitive_neutral_mechanism_diversity_probe.json",
+          "row_id": "n28_i4e_row_competitive_neutral_mechanism_diversity_contrast",
+          "sha256": "2f83ba3b39c279afa968078dc5a494639d7ddf1dafc1dec8655b951f8bff0570",
+          "source_id": "n28_competitive_neutral_mechanism_diversity_probe"
+        },
+        {
+          "output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+          "row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast",
+          "sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+          "source_id": "n28_higher_margin_neutral_circulation_probe"
+        },
+        {
+          "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "row_id": "n28_i5_replay_n28_i4e_row_competitive_neutral_mechanism_diversity_contrast",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_id": "n28_replay_capacity_attribution_matrix"
+        },
+        {
+          "output_digest": "0ce6c4dcb35f4c7bef0f2e17c8ab2ff87bde958706c390fd05e016b5092fb08e",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix.json",
+          "sha256": "724beb8558ee1f082207d71275ee23cba7539595af0bf04b9cb66ef035f17791",
+          "source_id": "n28_focused_margin_variant_replay_matrix"
+        },
+        {
+          "output_digest": "0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_stress_envelope.json",
+          "sha256": "0c89e5a911967bd92dd4d344edbf4ef611e339cb3b9184f02f4eb6fb66033857",
+          "source_id": "n28_focused_margin_variant_stress_envelope"
+        }
+      ],
+      "stress_basis": {
+        "broad_margin_robustness_supported": false,
+        "focused_optimization_not_generalization": true,
+        "focused_variant_ge5_supported": true,
+        "minimum_current_margin": 0.005,
+        "order_of_magnitude_robustness_supported": false,
+        "stress_source": {
+          "output_digest": "0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_stress_envelope.json",
+          "sha256": "0c89e5a911967bd92dd4d344edbf4ef611e339cb3b9184f02f4eb6fb66033857",
+          "source_id": "n28_focused_margin_variant_stress_envelope"
+        }
+      },
+      "supplied_capability": "Neutral or near-neutral circulation-like capacity routing can be identified while focal persistence remains bounded.",
+      "total_coherence_visualization_caveat_preserved": true,
+      "visualization_case": {
+        "case_id": "neutral_circulation",
+        "classification_result": "neutral",
+        "environment_capacity_delta": -0.002,
+        "extraction_cost": 0.027,
+        "flattening": 0.023,
+        "merge_leakage": 0.02,
+        "neighbor_boundary_delta": 0.007,
+        "neighbor_distinguishability_delta": 0.008,
+        "neighbor_support_delta": -0.006,
+        "row_id": "n28_i4e_row_competitive_neutral_mechanism_diversity_contrast",
+        "source_iteration": "4-E"
+      }
+    },
+    {
+      "agentic_ecology_runtime_claim_allowed": false,
+      "bridge_motif": "generator_leg_plus_extractor_leg_phase_coupling_implication",
+      "claim_ceiling": "phase_coupled_generator_extractor_implication_not_resource_economy",
+      "closed_loop_or_exchange_cycle_claim_allowed": false,
+      "downstream_ecology_probe_suggested": "Later compose a generator and extractor in ordered phase, then verify that one leg's changed medium state conditions the other without averaging away the regime distinction.",
+      "ecology_demand_served": [
+        "future_phase_coupled_exchange_cycle_design",
+        "generator_extractor_composition_seed",
+        "gain_loss_timing_without_resource_economy_claim"
+      ],
+      "geometric_read": "The generative leg increases neighboring capacity while the extractive leg decreases it; I14 records that their contrast can seed a future phase-coupled exchange probe, but it does not synchronize them here.",
+      "motif_classification": "source_backed_phase_coupling_implication",
+      "motif_id": "phase_coupled_generator_extractor_implication",
+      "prototype_family": "generative_extractive_medium_reshaping",
+      "remaining_producer_medium_naturalization_debt": [
+        "phase relation not run",
+        "ordered gain/loss dependency not run",
+        "resource economy and coordinated exchange claims blocked"
+      ],
+      "replay_basis": "future_composition_replay_required",
+      "requires_future_runtime_construction": true,
+      "resource_economy_claim_allowed": false,
+      "runtime_or_reconstruction_status": "source_backed_implication_future_runtime_composition_required",
+      "source_backed_now": true,
+      "source_basis": [
+        {
+          "output_digest": "daa25e4694929b11af38d7b044f4b4f5a4e70f6c2fbcae954db6a84854c08e5d",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_generative_candidate_probe.json",
+          "row_id": "n28_i4_row_primary_generative_candidate",
+          "sha256": "fa8d7ee21effb6f5f5b1606ccdf676bdcfd3dc743fbd82edf87622b1cb73cb09",
+          "source_id": "n28_primary_generative_candidate_probe"
+        },
+        {
+          "output_digest": "5015b7f5a148db75c7513b8fa8f249d1ac1fb0fc5fe4c6150d28d4ae644f84d3",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_extractive_contrast_probe.json",
+          "row_id": "n28_i4b_row_primary_extractive_contrast",
+          "sha256": "77cb500ad3a1042f1a5c19631e190b0f8657da2046958d145ebb7b927e05ec53",
+          "source_id": "n28_primary_extractive_contrast_probe"
+        },
+        {
+          "output_digest": "e6b0afbf81873e519db458e611cc01a1c11b2e9b5c2dead899946b270077700d",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix.json",
+          "sha256": "7d876c308c4e9e63eef97ec36fac2178ec1a00b869b93816bace31f59e0ac0b6",
+          "source_id": "n28_regime_boundary_transition_matrix"
+        },
+        {
+          "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_id": "n28_closeout_and_n29_handoff"
+        }
+      ],
+      "stress_basis": {
+        "label_mismatch_count": 0,
+        "new_source_current_evidence_opened": false,
+        "same_policy_transition_surface_supported": "same_policy_transition_surface_supported_without_new_source_current_GE_rows",
+        "thresholds_retuned_for_transition": false,
+        "transition_source": {
+          "output_digest": "e6b0afbf81873e519db458e611cc01a1c11b2e9b5c2dead899946b270077700d",
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix.json",
+          "sha256": "7d876c308c4e9e63eef97ec36fac2178ec1a00b869b93816bace31f59e0ac0b6",
+          "source_id": "n28_regime_boundary_transition_matrix"
+        }
+      },
+      "supplied_capability": "Generative and extractive regimes are both source-backed under the same policy family, and N28 records a same-policy transition surface.",
+      "total_coherence_visualization_caveat_preserved": true,
+      "visualization_case": "not_visualized_as_distinct_case"
+    }
+  ],
+  "output_digest": "14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970",
+  "prototype_d_summary": {
+    "broad_margin_robustness_supported": false,
+    "claim_ceiling": "source_backed_environmental_exchange_motif_synthesis_with_loop_debt",
+    "global_total_coherence_invariance_audited": false,
+    "motif_count": 5,
+    "motif_ids": [
+      "generative_enrichment_motif",
+      "extractive_depletion_motif",
+      "processor_redistribution_motif",
+      "neutral_circulation_implication",
+      "phase_coupled_generator_extractor_implication"
+    ],
+    "n28_final_closeout_rung": "N28-C6_N29_ready_bounded_generative_extractive_closeout",
+    "n28_final_ge_ladder_rung": "GE6_N29_ready_bounded_generative_extractive_persistence_evidence",
+    "n28_ge5_or_stronger_supported": true,
+    "n28_ge6_or_stronger_supported": true,
+    "n28_ready_for_n29": true,
+    "n29_i13x_ready_for_iteration_14": true,
+    "n29_i8_consumption_role": "orientation_index_only",
+    "order_of_magnitude_robustness_supported": false,
+    "prototype_family": "generative_extractive_medium_reshaping",
+    "ready_for_iteration_15": true,
+    "visualization_caveat": "The visualization plots local focal-basin and neighborhood capacity metrics; it does not plot or audit global total-coherence invariance."
+  },
+  "script_sha256": "bb659a1996c91a1ba9399edebb12514f786a1978f0d65323e2be662c54a9e178",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_bridge_motif_library",
+      "artifact_id": "n29_bridge_motif_library_i8",
+      "iteration": "I8",
+      "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json",
+      "sha256": "abd0c077dca7b5158f1e5ca0eae8d0e7f6ba849ffcf4542d75b8ba237929f073",
+      "source_id": "n29_i8_bridge_motif_library_index",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_i13x_two_geometry_prototype_c_synthesis_ready_for_i14",
+      "artifact_id": "n29_proxy_susceptibility_reentry_synthesis_i13x",
+      "iteration": "I13*",
+      "output_digest": "679a34a70231150ccae123e8ad391c41544bd94b5a82b70f00e0ccc1f5400e04",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_synthesis_i13x.json",
+      "sha256": "e02721b643794479b7d07b2c595eab809baa285cb89f0ad252afa00a730edc01",
+      "source_id": "n29_i13x_prototype_c_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n28_c6_closeout_n29_handoff_ready",
+      "artifact_id": "n28_closeout_and_n29_handoff",
+      "iteration": "8",
+      "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+      "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+      "source_id": "n28_closeout_and_n29_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_ge4_regime_separation_candidate_pending_stress",
+      "artifact_id": "n28_replay_capacity_attribution_matrix",
+      "iteration": "5",
+      "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+      "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+      "source_id": "n28_replay_capacity_attribution_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_stress_variant_backed_ge5_regime_separation_candidate_pending_claim_classification",
+      "artifact_id": "n28_stress_regime_separation_matrix",
+      "iteration": "6",
+      "output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+      "sha256": "a2b510af65d5fba2924493df65a6472d19ae811d8c455f2e4ffb92710e00e785",
+      "source_id": "n28_stress_regime_separation_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_regime_boundary_transition_matrix_same_policy_supported_no_new_ge_support",
+      "artifact_id": "n28_regime_boundary_transition_matrix",
+      "iteration": "6-A",
+      "output_digest": "e6b0afbf81873e519db458e611cc01a1c11b2e9b5c2dead899946b270077700d",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix.json",
+      "sha256": "7d876c308c4e9e63eef97ec36fac2178ec1a00b869b93816bace31f59e0ac0b6",
+      "source_id": "n28_regime_boundary_transition_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_focused_margin_variants_ge4_replay_control_backed_pending_stress",
+      "artifact_id": "n28_focused_margin_variant_replay_matrix",
+      "iteration": "5-B",
+      "output_digest": "0ce6c4dcb35f4c7bef0f2e17c8ab2ff87bde958706c390fd05e016b5092fb08e",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_replay_matrix.json",
+      "sha256": "724beb8558ee1f082207d71275ee23cba7539595af0bf04b9cb66ef035f17791",
+      "source_id": "n28_focused_margin_variant_replay_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_focused_margin_variants_ge5_stress_envelope_supported_pending_claim_classification",
+      "artifact_id": "n28_focused_margin_variant_stress_envelope",
+      "iteration": "6-C",
+      "output_digest": "0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_stress_envelope.json",
+      "sha256": "0c89e5a911967bd92dd4d344edbf4ef611e339cb3b9184f02f4eb6fb66033857",
+      "source_id": "n28_focused_margin_variant_stress_envelope",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n28_generative_extractive_visualization",
+      "iteration": "not_recorded",
+      "output_digest": "5d425668e294b37e5561904d0e3ad6f01b1eba2ffecafb68f4343f7aed19c349",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization.json",
+      "sha256": "9eaec3d86d2caf7b49b1429e8708cbe48457dd3c4c9ccfc1a983a0ba0b6d235e",
+      "source_id": "n28_generative_extractive_visualization",
+      "status": "not_recorded"
+    },
+    {
+      "acceptance_state": "accepted_primary_source_current_ge3_generative_candidate_pending_replay_controls",
+      "artifact_id": "n28_primary_generative_candidate_probe",
+      "iteration": "4",
+      "output_digest": "daa25e4694929b11af38d7b044f4b4f5a4e70f6c2fbcae954db6a84854c08e5d",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_generative_candidate_probe.json",
+      "sha256": "fa8d7ee21effb6f5f5b1606ccdf676bdcfd3dc743fbd82edf87622b1cb73cb09",
+      "source_id": "n28_primary_generative_candidate_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_primary_extractive_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_primary_extractive_contrast_probe",
+      "iteration": "4-B",
+      "output_digest": "5015b7f5a148db75c7513b8fa8f249d1ac1fb0fc5fe4c6150d28d4ae644f84d3",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_extractive_contrast_probe.json",
+      "sha256": "77cb500ad3a1042f1a5c19631e190b0f8657da2046958d145ebb7b927e05ec53",
+      "source_id": "n28_primary_extractive_contrast_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_primary_competitive_neutral_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_primary_competitive_neutral_contrast_probe",
+      "iteration": "4-D",
+      "output_digest": "f124a1afe8aff1a54a44157290e053d748e5545e1a9afcff1d1accbebef6c173",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_competitive_neutral_contrast_probe.json",
+      "sha256": "7eda37627e8ea9172c9d44909a67316d37846843c527bd84f24b1000c5abb157",
+      "source_id": "n28_primary_competitive_neutral_contrast_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_competitive_neutral_mechanism_diversity_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_competitive_neutral_mechanism_diversity_probe",
+      "iteration": "4-E",
+      "output_digest": "d760e55481c2d84e554c5089863c725c3b57ee7da1dedbf5b919f201c3c754cd",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_competitive_neutral_mechanism_diversity_probe.json",
+      "sha256": "2f83ba3b39c279afa968078dc5a494639d7ddf1dafc1dec8655b951f8bff0570",
+      "source_id": "n28_competitive_neutral_mechanism_diversity_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_higher_margin_neutral_circulation_ge3_candidate_pending_replay_stress",
+      "artifact_id": "n28_higher_margin_neutral_circulation_probe",
+      "iteration": "4-F",
+      "output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+      "sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+      "source_id": "n28_higher_margin_neutral_circulation_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_higher_margin_competitive_redistribution_ge3_candidate_pending_replay_stress",
+      "artifact_id": "n28_higher_margin_competitive_redistribution_probe",
+      "iteration": "4-G",
+      "output_digest": "8bc907a97b07c09c72fd7ceda63811555c335c0d45d6dbef6cfb29489f463e72",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_competitive_redistribution_probe.json",
+      "sha256": "de0abbae9f90df2485f7c04abd79df9db836cdac511a36109210d54ca5e6bc00",
+      "source_id": "n28_higher_margin_competitive_redistribution_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14 Generative / Extractive Medium Reshaping Motif Synthesis"
+}

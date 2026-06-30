@@ -1,0 +1,234 @@
+{
+  "acceptance_state": "accepted_exact_runtime_unit_extraction_pending_controls_replay_stress",
+  "artifact_id": "n29_boundary_shared_medium_unit_runtime_i12a",
+  "bridge_unit_runtime_row": {
+    "basin_side_state": {
+      "boundary_assignment": {
+        "0": 2.0
+      },
+      "core_ids": [
+        0
+      ],
+      "membership_by_core": {
+        "0": [
+          0,
+          1,
+          2
+        ]
+      },
+      "region_id": "child_basin_core_0",
+      "state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+      "support_or_coherence_trace": {
+        "coherence_floor_records": {
+          "0": 1.1
+        },
+        "flow_window_node_coherence_trace": {
+          "0": 1.1,
+          "1": 1.9,
+          "2": 3.0
+        },
+        "flow_window_node_support_trace": {
+          "0": 1.1,
+          "1": 1.9,
+          "2": 3.0
+        },
+        "support_floor_records": {
+          "0": 1.1
+        }
+      }
+    },
+    "claim_ceiling": "source-current boundary/shared-adjacent-medium runtime extraction; not Prototype B success until I12-B/C",
+    "counterpart_region": {
+      "candidate_route_digest": "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e",
+      "candidate_route_id": "candidate:low",
+      "candidate_selected_sink_id": 2,
+      "candidate_source_node_ids": [
+        1,
+        2
+      ],
+      "candidate_target_node_ids": [
+        2
+      ],
+      "counterpart_region_is_not_old_basin_thickening": true,
+      "region_id": "competing_sink_2",
+      "separability_from_basin_side": {
+        "arbitration_record_id": "native-route-arbitration:9a365d80523046b2a5413f9c5920c10a",
+        "rejected_route_id": "candidate:low",
+        "rejected_sink_id": 2,
+        "selected_route_id": "candidate:high",
+        "selected_sink_id": 0,
+        "selected_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49"
+      },
+      "support_or_coherence_trace": {
+        "counterpart_node_coherence": 3.0,
+        "counterpart_node_support": 3.0
+      }
+    },
+    "coupling_or_leakage_measure": {
+      "0:absolute_incident_flux": 0.0,
+      "0:incident_edge_count": 2.0
+    },
+    "merge_pressure_measure": {
+      "0:absolute_incident_flux": 0.0,
+      "0:incident_edge_count": 2.0
+    },
+    "producer_residue": "native_source_current",
+    "runtime_family": "LGRC9V3",
+    "runtime_family_level": "lgrc3",
+    "separability_measure": {
+      "candidate_set_digest": "not_recorded",
+      "rejected_candidate_route_digests": [
+        "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e"
+      ],
+      "selected_candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158"
+    },
+    "shared_or_adjacent_medium": {
+      "coupling_or_leakage_trace": {
+        "child_basin_merge_leakage_trace": {
+          "0:absolute_incident_flux": 0.0,
+          "0:incident_edge_count": 2.0
+        },
+        "flow_window_edge_flux_trace": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "packet_flux_trace": {
+          "event_queue_record_count": 0.0,
+          "in_flight_packet_total": 0.0,
+          "packet_record_count": 1.0
+        }
+      },
+      "medium_part_is_not_merely_label": true,
+      "medium_region_or_channel_id": "source_edge_1_route_candidate_medium_channel",
+      "merge_pressure_metric": {
+        "incident_edge_count": 2.0,
+        "observed_absolute_incident_flux": 0.0
+      },
+      "source_edge_ids": [
+        1
+      ],
+      "target_edge_ids": [
+        0
+      ]
+    },
+    "source_runtime_artifact_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+    "source_runtime_artifact_id": "n25_2_native_runtime_positive_probe",
+    "source_runtime_artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+    "unit_extraction_rule": {
+      "not_wholesale_mb6_inheritance": true,
+      "rule_id": "N29.I12A.EXTRACT.N25_2_I4_REFERENCE_CHILD_BASIN_WITH_COMPETING_SINK",
+      "selection": [
+        "child_basin_state_records.records[0]",
+        "runtime_surface_evidence.flow_window_records[0]",
+        "candidate_result.candidate_records[candidate:high]",
+        "candidate_result.candidate_records[candidate:low]"
+      ],
+      "source_basis": "N25.2 I4 native runtime positive probe"
+    },
+    "unit_id": "N29.I12A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+    "why_admitted": "all three unit parts are extracted from source-current N25.2 runtime traces with source digests and claim flags",
+    "why_not_stronger": "counterpart is a route-candidate/counterpart region, not semantic neighbor or multi-agent interaction; controls and replay/stress remain pending"
+  },
+  "checks": [
+    {
+      "check_id": "i12_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_three_parts_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_three_parts_have_source_current_runtime_trace",
+      "passed": true
+    },
+    {
+      "check_id": "medium_part_is_not_merely_label",
+      "passed": true
+    },
+    {
+      "check_id": "counterpart_region_is_not_old_basin_thickening",
+      "passed": true
+    },
+    {
+      "check_id": "n25_2_mb6_not_inherited_wholesale",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_present",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "exact source-current boundary/shared-adjacent-medium unit extraction pending controls and replay/stress",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i12abc.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i12abc.py",
+  "iteration": "I12-A",
+  "output_digest": "518d48d038ad7d27062b785820c91f69c35e5925e1feb864ff59a1204c4a93e5",
+  "prototype_b_candidate_supported": false,
+  "ready_for_i12b": true,
+  "ready_for_i12c": false,
+  "ready_for_iteration_13": false,
+  "runtime_ecology_success_claimed": false,
+  "runtime_family": "LGRC9V3",
+  "runtime_instantiation_claimed": true,
+  "script_sha256": "027e43ca949dec52a65cb7a3fbc99965f611e8b0a945bf81027cc7945801aac7",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_unit_runtime_tranche_admission_pending_i12abc",
+      "artifact_id": "n29_boundary_shared_medium_unit_i12",
+      "output_digest": "069c034eee8430a307da163ae9f9459978687cd0ad5d150de0f36c97bb4c4137",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_i12.json",
+      "role": "runtime_tranche_contract",
+      "sha256": "7286b7be94480c735085a48e7ef0122c611e0f355c49d533137152b8d81872ba",
+      "source_id": "n29_i12_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_runtime_positive_mb3_candidate_pending_replay_controls_no_mb6",
+      "artifact_id": "n25_2_native_runtime_positive_probe",
+      "output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+      "role": "primary_runtime_source",
+      "sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+      "source_id": "n25_2_native_runtime_positive_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Runtime Boundary / Shared-Medium Unit Extraction"
+}

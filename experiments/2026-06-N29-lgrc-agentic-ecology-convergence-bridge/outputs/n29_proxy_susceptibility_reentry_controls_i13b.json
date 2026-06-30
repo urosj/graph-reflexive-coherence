@@ -1,0 +1,219 @@
+{
+  "acceptance_state": "accepted_i13b_mapping_controls_fail_closed_no_runtime_claim",
+  "artifact_id": "n29_proxy_susceptibility_reentry_controls_i13b",
+  "checks": [
+    {
+      "check_id": "i13a_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "required_controls_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "failed_open_control_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_claim_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_role_behavior_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "identity_transfer_claim_allowed": false,
+      "intentional_return_claim_allowed": false,
+      "learning_as_semantic_knowledge_claim_allowed": false,
+      "native_ap4_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "preference_ownership_claim_allowed": false,
+      "semantic_goal_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_i13abc.py",
+  "controls_record": {
+    "all_controls_failed_closed": true,
+    "claim_ceiling": "fail-closed mapping/relabel controls over Prototype C source-backed parts; no runtime control-backed Prototype C",
+    "control_execution_kind": "mapping_relabel_and_cross_experiment_stitching_controls",
+    "control_matrix_id": "N29.I13B.PROTOTYPE_C.MAPPING_RELABEL_CONTROLS",
+    "control_rows": [
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "coverage_map_as_source_row_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "cross_experiment_stitching_without_source_digest_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "semantic_goal_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "semantic_choice_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "preference_ownership_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "intentional_return_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "identity_transfer_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "learning_as_semantic_knowledge_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "native_ap4_ap5_closure_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "native_support_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "ant_role_behavior_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      },
+      {
+        "actual_result": "claim rejected; no Prototype C runtime row admitted",
+        "control_id": "ecology_success_relabel_control",
+        "control_scope": "mapping_and_relabel_control_over_i13a_extraction_attempt",
+        "control_status": "failed_closed",
+        "expected_result": "claim rejected when false-positive path is asserted",
+        "mapping_record_allowed_when_control_triggers": true,
+        "rung_effect": "blocks runtime Prototype C; preserves mapping/debt record",
+        "runtime_claim_allowed_when_control_triggers": false
+      }
+    ],
+    "failed_open_control_count": 0,
+    "i13_source_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+    "i13a_source_digest": "8eda4085ebacf26f80ab4a19a326be42d9d90edb98a656cb1fe57d625ad1e732",
+    "prototype_c_runtime_claim_allowed": false,
+    "prototype_family": "proxy_susceptibility_reentry",
+    "runtime_control_matrix_not_run_reason": "I13-A did not admit an exact source-current runtime row; I13-B can only test relabel/stitching controls over the mapping/extraction record.",
+    "runtime_control_matrix_run": false
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_i13abc.py",
+  "iteration": "I13-B",
+  "output_digest": "9c2adba1a6d56c541ef21fd3d0967acb3af7046d01667c1089237179dadf20d9",
+  "script_sha256": "1e270e677081948a311913f1278e10b781efec7401b57d504aed11561ff697ff",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_mapping_only_proxy_susceptibility_reentry_bridge_ready_for_i14_no_i13abc",
+      "artifact_id": "n29_proxy_susceptibility_reentry_i13",
+      "iteration": "I13",
+      "output_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_i13.json",
+      "sha256": "20b5dbfc503363dbabaf906b2d992f077aeebba2d460ce8fbd7ececeb9ea2895",
+      "source_id": "n29_i13_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_i13a_exact_row_absent_mapping_inventory_consumable",
+      "artifact_id": "n29_proxy_susceptibility_reentry_extraction_i13a",
+      "iteration": "I13-A",
+      "output_digest": "8eda4085ebacf26f80ab4a19a326be42d9d90edb98a656cb1fe57d625ad1e732",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_extraction_i13a.json",
+      "sha256": "c06f3e4984ad9d6169f3153c5fb1b3a885b52d808db93a571945bf87962c8738",
+      "source_id": "n29_i13a_extraction",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype C I13-B Mapping Relabel Controls"
+}

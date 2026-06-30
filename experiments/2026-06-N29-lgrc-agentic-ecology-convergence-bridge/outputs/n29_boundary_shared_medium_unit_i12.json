@@ -1,0 +1,623 @@
+{
+  "acceptance_state": "accepted_boundary_shared_medium_unit_runtime_tranche_admission_pending_i12abc",
+  "artifact_id": "n29_boundary_shared_medium_unit_i12",
+  "checks": [
+    {
+      "check_id": "all_required_sources_exist_and_parse",
+      "passed": true
+    },
+    {
+      "check_id": "n16_consumed_as_boundary_discipline_not_native_shared_medium",
+      "passed": true
+    },
+    {
+      "check_id": "n25_2_consumed_as_scoped_mb6_runtime_source",
+      "passed": true
+    },
+    {
+      "check_id": "n25_and_n25_1_not_promoted_to_runtime_mb6",
+      "passed": true
+    },
+    {
+      "check_id": "n24_n28_consumed_as_context_only",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_b_route_present_in_i10",
+      "passed": true
+    },
+    {
+      "check_id": "unit_has_basin_medium_counterpart_parts",
+      "passed": true
+    },
+    {
+      "check_id": "i12abc_handoff_defined",
+      "passed": true
+    },
+    {
+      "check_id": "i12a_exact_row_extraction_required",
+      "passed": true
+    },
+    {
+      "check_id": "i12b_expected_control_results_defined",
+      "passed": true
+    },
+    {
+      "check_id": "i13_hard_gates_keep_next_family_closed",
+      "passed": true
+    },
+    {
+      "check_id": "mobile_body_subclass_boundary_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "stable_debt_ids_present",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i12.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i12.py",
+  "i12abc_handoff_contract": {
+    "hard_gates_before_iteration_13": {
+      "agent_body_claim_opened": false,
+      "i12a_basin_side_trace_present": true,
+      "i12a_counterpart_trace_present": true,
+      "i12a_manifest_sha256_present": true,
+      "i12a_medium_trace_present": true,
+      "i12a_runtime_artifact_present": true,
+      "i12b_agent_body_relabel_rejected": true,
+      "i12b_all_controls_run": true,
+      "i12b_failed_open_count": 0,
+      "i12b_merge_leakage_as_success_rejected": true,
+      "i12b_native_shared_medium_relabel_rejected": true,
+      "i12b_old_basin_thickening_as_counterpart_rejected": true,
+      "i12c_counterpart_separability_survives_or_demotes": true,
+      "i12c_merge_pressure_survives_or_demotes": true,
+      "i12c_replay_stress_complete": true,
+      "multi_agent_interaction_opened": false,
+      "native_shared_medium_coordination_opened": false,
+      "prototype_success_claimed": false,
+      "semantic_trail_or_pheromone_substrate_opened": false
+    },
+    "i12a_required_candidate_fields": [
+      "runtime_family",
+      "source_runtime_artifact_id",
+      "source_runtime_artifact_digest",
+      "unit_extraction_rule",
+      "unit_id",
+      "basin_side_region_id",
+      "basin_side_support_or_coherence_trace",
+      "basin_side_boundary_assignment",
+      "medium_region_or_channel_id",
+      "medium_coupling_or_leakage_trace",
+      "medium_merge_pressure_metric",
+      "counterpart_region_id",
+      "counterpart_support_or_coherence_trace",
+      "counterpart_separability_from_basin_side",
+      "coupling_or_leakage_measure",
+      "separability_measure",
+      "merge_pressure_measure",
+      "producer_residue",
+      "claim_ceiling",
+      "why_admitted",
+      "why_not_stronger"
+    ],
+    "i12a_required_outputs": [
+      "source-current bridge-unit runtime artifact",
+      "basin-side trace",
+      "shared/adjacent-medium trace",
+      "counterpart-region trace",
+      "artifact manifest with SHA-256 digests"
+    ],
+    "i12a_runtime_instantiation_required": true,
+    "i12a_validation_fields": {
+      "all_three_parts_have_source_current_runtime_trace": true,
+      "all_three_parts_present": true,
+      "counterpart_region_is_not_old_basin_thickening": true,
+      "medium_part_is_not_merely_label": true,
+      "n25_2_mb6_not_inherited_wholesale": true
+    },
+    "i12b_controls_required": [
+      "label_only_boundary_control",
+      "visual_only_boundary_control",
+      "merge_leakage_as_success_control",
+      "old_basin_thickening_as_counterpart_control",
+      "producer_as_native_control",
+      "n16_artifact_boundary_as_native_runtime_relabel_control",
+      "n25_2_mb6_as_ant_ecology_relabel_control",
+      "native_shared_medium_coordination_relabel_control",
+      "semantic_trail_or_pheromone_relabel_control",
+      "agent_body_relabel_control"
+    ],
+    "i12b_expected_control_results": [
+      {
+        "control_id": "label_only_boundary_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_boundary_shared_medium_claim"
+      },
+      {
+        "control_id": "visual_only_boundary_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_visual_backfill"
+      },
+      {
+        "control_id": "merge_leakage_as_success_control",
+        "expected_result": "failed_closed_or_demote",
+        "rung_effect": "blocks_or_demotes_if_coupling_collapses_separability"
+      },
+      {
+        "control_id": "old_basin_thickening_as_counterpart_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_counterpart_claim"
+      },
+      {
+        "control_id": "producer_as_native_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_native_runtime_upgrade"
+      },
+      {
+        "control_id": "n16_artifact_boundary_as_native_runtime_relabel_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_N16_artifact_to_native_runtime_relabel"
+      },
+      {
+        "control_id": "n25_2_mb6_as_ant_ecology_relabel_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_MB6_to_ant_ecology_relabel"
+      },
+      {
+        "control_id": "native_shared_medium_coordination_relabel_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_native_shared_medium_coordination_claim"
+      },
+      {
+        "control_id": "semantic_trail_or_pheromone_relabel_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_semantic_medium_claim"
+      },
+      {
+        "control_id": "agent_body_relabel_control",
+        "expected_result": "failed_closed",
+        "rung_effect": "blocks_agent_body_claim"
+      }
+    ],
+    "i12c_pass_or_demote_conditions": {
+      "artifact_only_replay": "same unit row reconstructs from artifact manifest",
+      "counterpart_separability_stress": "counterpart remains distinguishable from basin-side state or row is demoted",
+      "duplicate_replay": "duplicate run preserves classification within tolerance",
+      "medium_coupling_stress": "coupling changes medium trace without collapsing separability",
+      "merge_pressure_stress": "increased merge pressure remains bounded or demotes claim",
+      "snapshot_load_replay": "basin, medium, and counterpart assignments survive snapshot load"
+    },
+    "i12c_replay_stress_required": [
+      "artifact_only_replay",
+      "snapshot_load_replay",
+      "duplicate_replay",
+      "medium_coupling_stress",
+      "merge_pressure_stress",
+      "counterpart_separability_stress"
+    ],
+    "potential_failure_conditions": [
+      "unit inherited from MB6 wholesale instead of extracted as one row",
+      "medium trace is only a label, not a measured channel or region",
+      "counterpart region is old basin thickening",
+      "merge or leakage is treated as success rather than stress",
+      "N16 artifact boundary is relabeled as native runtime boundary",
+      "N25.2 MB6 is relabeled as ant ecology",
+      "body/environment or agent-body language appears as a claim",
+      "ready_for_iteration_13 becomes true before I12-A/B/C pass"
+    ],
+    "promotion_blockers": [
+      "agent body",
+      "organism/environment boundary",
+      "native colony boundary",
+      "native shared-medium coordination",
+      "semantic trail or pheromone substrate",
+      "resource ownership",
+      "multi-agent interaction",
+      "agency",
+      "life"
+    ]
+  },
+  "iteration": "I12",
+  "output_digest": "069c034eee8430a307da163ae9f9459978687cd0ad5d150de0f36c97bb4c4137",
+  "prototype_b_claim_boundary": {
+    "allowed_claim": "admitted bounded boundary/shared-medium bridge unit pending I12-A/B/C runtime, controls, and replay/stress",
+    "ant_ecology_implementation_opened": false,
+    "claim_ceiling": "bounded_boundary_shared_medium_bridge_exemplar_candidate_pending_i12abc",
+    "native_shared_medium_coordination_opened": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "prototype_b_unit_row": {
+    "admission_status": "source_backed_runtime_tranche_admission_pending_i12abc",
+    "boundary_discipline_source": {
+      "final_scope": "internal support-relevant state and external resource, perturbation, structured-state, and shared-medium pressures are separable in generated artifacts and controls",
+      "final_supported_ap_level": "AP6",
+      "fully_native": false,
+      "source_id": "n16_closeout_ap6_boundary"
+    },
+    "bridge_exemplar_claim_allowed": false,
+    "claim_ceiling": "bounded_boundary_shared_medium_bridge_exemplar_candidate_pending_i12abc",
+    "debt_distinctions": [
+      {
+        "debt_id": "DEBT.I12.MULTI_BASIN_EXACT_ROW_EXTRACTION_REQUIRED",
+        "debt_kind": "multi_basin_debt",
+        "description": "Runtime source is available from N25.2, but I12-A must extract one exact bridge-unit row rather than inherit MB6 wholesale."
+      },
+      {
+        "debt_id": "DEBT.I12.CHILD_BASIN_REPLAY_CONTROL_LINEAGE_REQUIRED",
+        "debt_kind": "child_basin_debt",
+        "description": "Child-basin records may be consumed only with replay/control lineage intact."
+      },
+      {
+        "debt_id": "DEBT.I12.MOBILE_BODY_READING_BLOCKED",
+        "debt_kind": "mobile_boundary_debt",
+        "description": "Mobile/body-like readings remain blocked; no mobile boundary or agent-body claim is opened."
+      },
+      {
+        "debt_id": "DEBT.I12.N16_N25_2_JOIN_REQUIRED",
+        "debt_kind": "shared_medium_debt",
+        "description": "N16 artifact-level shared-medium discipline and N25.2 runtime substrate must be joined before claiming a bridge exemplar."
+      },
+      {
+        "debt_id": "DEBT.I12.SEMANTIC_MEDIUM_LABELS_BLOCKED",
+        "debt_kind": "semantic_medium_debt",
+        "description": "Trail, pheromone, resource, and colony-local medium language remain blocked labels."
+      }
+    ],
+    "downstream_probe_suggestion": {
+      "i12a": "extract or instantiate one source-current boundary/shared-medium unit row from N25.2-style runtime artifacts",
+      "i12b": "run controls against label-only boundary, visual-only boundary, merge/leakage-as-success, producer-as-native, and native shared-medium coordination relabels",
+      "i12c": "run replay/stress for basin-side, medium-side, and counterpart-region separability under bounded coupling"
+    },
+    "ecology_demand_served": [
+      "scoped body/environment precursor without body claim",
+      "shared-medium substrate precursor without pheromone/trail semantics",
+      "neighbor/counterpart precursor without multi-agent interaction claim",
+      "local interaction surface precursor without colony agency claim"
+    ],
+    "geometric_interpretation": "Prototype B treats the ecology bridge unit as a three-part geometric surface: one basin-side region, one shared or adjacent medium channel, and one counterpart region. The important dynamic is not motion, choice, or colony behavior. It is whether the sides remain distinguishable while coupling/leakage through the medium is measurable and fail-closed controls reject merge, label-only, and visual-only success.",
+    "mobile_boundary_claim_opened": false,
+    "primary_runtime_source": {
+      "consumption_scope": "scoped multi-basin substrate evidence only",
+      "final_mb_ladder_rung": "MB6_N26_ready_multi_basin_substrate_evidence",
+      "mb6_supported": true,
+      "source_id": "n25_2_closeout_mb6"
+    },
+    "prototype_class": "boundary_mobile_expression",
+    "prototype_family": "boundary_shared_medium_unit",
+    "prototype_subclass": "boundary_shared_medium_unit_not_mobile_body",
+    "prototype_success_claimed": false,
+    "prototype_unit_id": "N29.I12.PROTOTYPE_B.BOUNDARY_SHARED_MEDIUM_UNIT.PRIMARY",
+    "row_decision": "admitted_for_runtime_tranche",
+    "runtime_instantiation_claimed": false,
+    "structural_parts": [
+      {
+        "part": "basin_side_state",
+        "required_i12abc_measurement": [
+          "source-current basin-side support/coherence",
+          "boundary-side assignment",
+          "basin-side persistence under replay"
+        ],
+        "source_basis": "N25.2 scoped MB6 multi-basin substrate evidence plus N16 AP6 internal-side discipline"
+      },
+      {
+        "part": "shared_or_adjacent_medium",
+        "required_i12abc_measurement": [
+          "coupling or leakage channel",
+          "shared-medium / adjacent-region attribution",
+          "merge pressure and leakage bounds"
+        ],
+        "source_basis": "N16 shared-medium separability controls, N25.2 child-basin / multi-basin interface, N24/N28 context only if capacity or reshaping is needed"
+      },
+      {
+        "part": "counterpart_region",
+        "required_i12abc_measurement": [
+          "counterpart support/coherence or child-basin record",
+          "separability from basin-side state",
+          "counterpart not reduced to relabeled old basin thickening"
+        ],
+        "source_basis": "N25.2 multi-basin counterpart-side records; N16 negative controls prevent label-only neighbor claims"
+      }
+    ]
+  },
+  "prototype_class": "boundary_mobile_expression",
+  "prototype_family": "boundary_shared_medium_unit",
+  "prototype_subclass": "boundary_shared_medium_unit_not_mobile_body",
+  "ready_for_i12a_i12b_i12c": true,
+  "ready_for_iteration_13": false,
+  "script_sha256": "02d6317f69251a6e1ea02a093da8139ac7e29fa51bd5665d743c26c6546b75c0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "closed_claim_clean_ap6_artifact_level_self_environment_boundary_candidate",
+      "artifact_id": "n16_closeout_and_handoff",
+      "consume_as": "boundary_discipline_source",
+      "exists": true,
+      "file_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+      "may_supply": [
+        "AP6 artifact-level boundary separability",
+        "claim boundary for internal/external separability"
+      ],
+      "must_not_supply": [
+        "native selfhood",
+        "native shared-medium coordination",
+        "agent body",
+        "multi-agent interaction"
+      ],
+      "output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+      "source_id": "n16_closeout_ap6_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_full_control_matrix_no_ap6_closeout",
+      "artifact_id": "n16_basin_boundary_requirements_matrix",
+      "consume_as": "boundary_requirement_and_control_source",
+      "exists": true,
+      "file_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83",
+      "may_supply": [
+        "leakage, support, coherence, and shared-medium separability requirements",
+        "negative-control vocabulary for boundary relabels"
+      ],
+      "must_not_supply": [
+        "native environment model",
+        "semantic self/environment boundary",
+        "agency"
+      ],
+      "output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+      "source_id": "n16_boundary_requirements",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+      "artifact_id": "n25_closeout_and_n26_handoff",
+      "consume_as": "sub_basin_and_gap_history_context",
+      "exists": true,
+      "file_sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+      "may_supply": [
+        "BF5 scoped formation context",
+        "record of the pre-Phase-8 native multi-basin gap"
+      ],
+      "must_not_supply": [
+        "MB6 evidence",
+        "native multi-basin runtime success",
+        "agentic ecology component success"
+      ],
+      "output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "source_id": "n25_closeout_bf_scope",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+      "artifact_id": "n25_1_closeout_and_phase8_extension_handoff",
+      "consume_as": "phase8_multi_basin_extension_bridge",
+      "exists": true,
+      "file_sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+      "may_supply": [
+        "requirements bridge for dedicated multi-basin runtime surfaces",
+        "implementation boundary before N25.2 validation"
+      ],
+      "must_not_supply": [
+        "runtime multi-basin evidence",
+        "MB6 validation",
+        "native shared-medium coordination"
+      ],
+      "output_digest": "396692475de004ddc8a586a501e1518b8316eebbf8f651304a76abeae25ae09e",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+      "source_id": "n25_1_phase8_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n25_2_c6_closeout_scoped_n26_handoff",
+      "artifact_id": "n25_2_closeout_and_n26_handoff",
+      "consume_as": "primary_scoped_multi_basin_runtime_source",
+      "exists": true,
+      "file_sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+      "may_supply": [
+        "MB6 N26-ready scoped multi-basin substrate evidence",
+        "source-current runtime, replay, control, and stress discipline"
+      ],
+      "must_not_supply": [
+        "native support",
+        "agency",
+        "sentience",
+        "ant ecology implementation",
+        "unscoped multi-basin substrate consumption"
+      ],
+      "output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+      "source_id": "n25_2_closeout_mb6",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_runtime_positive_mb3_candidate_pending_replay_controls_no_mb6",
+      "artifact_id": "n25_2_native_runtime_positive_probe",
+      "consume_as": "runtime_candidate_source",
+      "exists": true,
+      "file_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+      "may_supply": [
+        "native runtime child-basin / multi-basin candidate trace"
+      ],
+      "must_not_supply": [
+        "long-horizon ecology persistence",
+        "semantic colony-local interaction"
+      ],
+      "output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+      "source_id": "n25_2_runtime_positive",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_window_persistence_replay_mb4_extension_no_mb6",
+      "artifact_id": "n25_2_multi_window_persistence_replay",
+      "consume_as": "multi_window_child_basin_replay_source",
+      "exists": true,
+      "file_sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+      "may_supply": [
+        "multi-window child-basin persistence replay evidence"
+      ],
+      "must_not_supply": [
+        "general long-horizon ecology",
+        "semantic memory or ownership"
+      ],
+      "output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+      "source_id": "n25_2_multi_window_replay",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_fail_closed_controls_mb5_candidates_no_mb6",
+      "artifact_id": "n25_2_fail_closed_control_matrix",
+      "consume_as": "multi_basin_control_source",
+      "exists": true,
+      "file_sha256": "09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea",
+      "may_supply": [
+        "label-only, visual-only, merge/leakage, and producer-as-native controls"
+      ],
+      "must_not_supply": [
+        "positive runtime evidence by itself"
+      ],
+      "output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_fail_closed_control_matrix.json",
+      "source_id": "n25_2_control_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_ab5_n24c5_closeout_with_producer_flux_scaffold_n25_handoff",
+      "artifact_id": "n24_closeout_and_n25_handoff",
+      "consume_as": "medium_capacity_context_only",
+      "exists": true,
+      "file_sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+      "may_supply": [
+        "bounded surplus / optionality context for medium-capacity interpretation"
+      ],
+      "must_not_supply": [
+        "boundary/shared-medium unit success",
+        "resource ownership",
+        "choice"
+      ],
+      "output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+      "source_id": "n24_closeout_medium_capacity",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n28_c6_closeout_n29_handoff_ready",
+      "artifact_id": "n28_closeout_and_n29_handoff",
+      "consume_as": "medium_reshaping_context_only",
+      "exists": true,
+      "file_sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+      "may_supply": [
+        "generative/extractive medium-reshaping context",
+        "conservation caveat for visual interpretation"
+      ],
+      "must_not_supply": [
+        "boundary/shared-medium unit success",
+        "cooperation",
+        "biological agency"
+      ],
+      "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+      "source_id": "n28_closeout_medium_reshaping",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_admission_schema_frozen_no_prototype_rows",
+      "artifact_id": "n29_prototype_admission_schema_i10",
+      "consume_as": "prototype_admission_schema_source",
+      "exists": true,
+      "file_sha256": "f6a4c85c23822f7819a3c4be93fc742c66394140156f3125a286a2dc2bc89e40",
+      "may_supply": [
+        "Prototype B route definition",
+        "allowed initial bridge status policy"
+      ],
+      "must_not_supply": [
+        "prototype success",
+        "runtime ecology evidence"
+      ],
+      "output_digest": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_admission_schema_i10.json",
+      "source_id": "n29_i10_prototype_admission_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_stronger_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success",
+      "artifact_id": "n29_trace_pressure_loop_stronger_replay_stress_i111c",
+      "consume_as": "prior_prototype_context_only",
+      "exists": true,
+      "file_sha256": "68c232579f6fea6d71804b2a908ef623003ed8f200002d3c047a2248624b8d77",
+      "may_supply": [
+        "contrast with Prototype A evidence pattern"
+      ],
+      "must_not_supply": [
+        "Prototype B boundary/shared-medium evidence",
+        "shared-medium unit success"
+      ],
+      "output_digest": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_replay_stress_i111c.json",
+      "source_id": "n29_i111c_prototype_a_context",
+      "status": "passed"
+    }
+  ],
+  "source_hierarchy": {
+    "boundary_discipline_source": "n16_closeout_ap6_boundary",
+    "context_only_sources": [
+      "n24_closeout_medium_capacity",
+      "n28_closeout_medium_reshaping",
+      "n29_i111c_prototype_a_context"
+    ],
+    "control_sources": [
+      "n16_boundary_requirements",
+      "n25_2_control_matrix"
+    ],
+    "gap_and_requirements_history": [
+      "n25_closeout_bf_scope",
+      "n25_1_phase8_bridge"
+    ],
+    "primary_runtime_source": "n25_2_closeout_mb6",
+    "replay_source": "n25_2_multi_window_replay"
+  },
+  "status": "passed",
+  "title": "Prototype B - Boundary / Shared-Medium Unit Admission",
+  "why_not_iteration_13_yet": "Prototype B still needs I12-A/B/C runtime extraction, controls, and replay/stress before the next prototype family."
+}

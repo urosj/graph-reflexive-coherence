@@ -1,0 +1,929 @@
+{
+  "artifact_id": "n29_trace_pressure_loop_runtime_i11a_runtime_artifact",
+  "artifact_kind": "n29_i11a_lgrc9v3_runtime_trace_pressure_loop",
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false
+  },
+  "fixture": {
+    "cycle_count": 2,
+    "edge_count": 2,
+    "node_count": 2,
+    "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+    "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+    "route_channel_sequence": [
+      "S_to_K",
+      "K_to_S"
+    ]
+  },
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "output_digest": "521b40ce3dca367e0f9b8f1641ed52bab1515595bb9eaad037b2db51f9559237",
+  "producer_results": [
+    {
+      "artifact_kind": "lgrc9v3_autonomous_event_production_result",
+      "artifact_schema_version": "lgrc9v3_autonomous_event_production_result_v1",
+      "causal_surface_digest": "cfb666dd431c3f0931b7cb3aa643bdb3c6efde1728f5678132b724e83b90df6a",
+      "checkpoint_index": 2,
+      "collapse_reabsorption_emitted": false,
+      "event_time_key": 1.0,
+      "evidence_class": "autonomous_event_production",
+      "idempotency_policy": "causal_surface_digest_once",
+      "identity_acceptance_emitted": false,
+      "mode_version": "lgrc9v3_autonomy_v1",
+      "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+      "producer_version": "lgrc9v3_autonomy_v1",
+      "production_records": [
+        {
+          "causal_surface_digest": "cfb666dd431c3f0931b7cb3aa643bdb3c6efde1728f5678132b724e83b90df6a",
+          "idempotency_key": "459454f8d3579316f9a74f19c162eb38185a689c580813ba4c64d371ec88f370",
+          "observed_evidence": {
+            "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+            "edge_id": 0,
+            "eligible_channel_id": "S_to_K",
+            "expected_next_channel_id": "K_to_S",
+            "native_self_rearm_evidence": true,
+            "observed_mass": 2.25,
+            "packet_amount": 0.1,
+            "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+            "producer_event_time_key": 1.0,
+            "producer_mutation_ownership": "step_processes_packet_departure",
+            "reference_mass": 2.15,
+            "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+            "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+            "scheduled_departure_event_time_key": 1.0,
+            "scheduled_packet_id": "lgrc9v3-packet-020c7a5efb259bfb",
+            "self_rearm_evidence": {
+              "budget_after_child_scheduling_before_departure": 3.0,
+              "budget_after_parent_arrival": 3.0,
+              "budget_after_producer": 3.0,
+              "budget_before_producer": 3.0,
+              "child_departure_event_id": "lgrc9v3-packet-event-1328727edf14de18",
+              "child_departure_event_time_key": 1.0,
+              "child_packet_id": "lgrc9v3-packet-020c7a5efb259bfb",
+              "child_scheduling_budget_error": 0.0,
+              "child_source_node_id": 0,
+              "child_target_node_id": 1,
+              "event_schema_version": "lgrc9v3_self_rearm_evidence_event_v1",
+              "event_time_ordering": {
+                "arrival_before_or_at_producer": true,
+                "producer_before_or_at_child_departure": true
+              },
+              "expected_next_channel_id": "K_to_S",
+              "expected_previous_channel_id": "K_to_S",
+              "movement_claim_allowed": false,
+              "native_d2_3_equivalent": false,
+              "native_grc9v3_loop_evidence": false,
+              "native_self_rearm_evidence": true,
+              "node_proper_time_surface": {
+                "0": 1.0,
+                "1": 0.0
+              },
+              "observed_mass_after_arrival": 2.25,
+              "parent_arrival_budget_error": 0.0,
+              "parent_arrival_channel_id": "K_to_S",
+              "parent_arrival_event_id": "lgrc9v3-packet-event-6e0befbe79a1c3c1",
+              "parent_arrival_event_time_key": 1.0,
+              "parent_arrival_scheduler_event_index": 2,
+              "parent_arrival_target_node_id": 0,
+              "parent_packet_id": "lgrc9v3-packet-612a6d8723dbea14",
+              "producer_after_parent_arrival_committed": true,
+              "producer_budget_error": 0.0,
+              "producer_event_time_key": 1.0,
+              "producer_record_id": "lgrc9v3-producer-record-e6fa53a59d1403b8e845ff97",
+              "producer_scheduler_event_index": 2,
+              "reference_mass": 2.15,
+              "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+              "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+              "route_channel_sequence": [
+                "S_to_K",
+                "K_to_S"
+              ],
+              "route_step_index": 0,
+              "runtime_family": "LGRC9V3",
+              "self_rearm_evidence_id": "4566c057d583a22084be3a9b5705a3cd775e17c0177039e3cf07087dd406c6a9",
+              "self_rearm_status": "scheduled_child_pending_departure",
+              "source_node_proper_time_at_trigger": 1.0,
+              "source_pole_id": "S",
+              "surplus_after_arrival": 0.10000000000000009,
+              "target_pole_id": "S",
+              "threshold_crossed": true,
+              "trigger_channel_id": "S_to_K",
+              "trigger_threshold": 0.049
+            },
+            "self_rearm_evidence_id": "4566c057d583a22084be3a9b5705a3cd775e17c0177039e3cf07087dd406c6a9",
+            "self_rearm_status": "scheduled_child_pending_departure",
+            "source_node_id": 0,
+            "source_node_last_update_event_time_key_at_evaluation": 1.0,
+            "source_node_proper_time_at_evaluation": 1.0,
+            "source_pole_id": "S",
+            "surplus": 0.10000000000000009,
+            "target_node_id": 1,
+            "target_pole_id": "K"
+          },
+          "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+          "producer_version": "lgrc9v3_autonomy_v1",
+          "queued_work_consumed": false,
+          "reason_code": "surplus_trigger_packet_departure_scheduled",
+          "record_id": "lgrc9v3-producer-record-e6fa53a59d1403b8e845ff97",
+          "scheduled_event_id": "lgrc9v3-packet-event-1328727edf14de18",
+          "scheduled_event_kind": "lgrc9v3_packet_departure",
+          "scheduled_event_time_key": 1.0,
+          "thresholds": {
+            "packet_amount": 0.1,
+            "reference_mass": 2.15,
+            "trigger_threshold": 0.049
+          },
+          "topology_mutated": false,
+          "trigger_edge_id": 0,
+          "trigger_node_id": 0
+        }
+      ],
+      "queue_ownership_policy": "producers_enqueue_step_consumes",
+      "queued_work_consumed": false,
+      "record_count": 1,
+      "runtime_family": "LGRC9V3",
+      "scheduled_event_count": 1,
+      "scheduler_event_index": 2,
+      "state_mutated": true,
+      "topology_mutated": false
+    },
+    {
+      "artifact_kind": "lgrc9v3_autonomous_event_production_result",
+      "artifact_schema_version": "lgrc9v3_autonomous_event_production_result_v1",
+      "causal_surface_digest": "d08cf415875002f7fa3ca3c42ad50b4dfbf645cf4e8e00981a49da37191c18a5",
+      "checkpoint_index": 4,
+      "collapse_reabsorption_emitted": false,
+      "event_time_key": 2.0,
+      "evidence_class": "autonomous_event_production",
+      "idempotency_policy": "causal_surface_digest_once",
+      "identity_acceptance_emitted": false,
+      "mode_version": "lgrc9v3_autonomy_v1",
+      "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+      "producer_version": "lgrc9v3_autonomy_v1",
+      "production_records": [
+        {
+          "causal_surface_digest": "d08cf415875002f7fa3ca3c42ad50b4dfbf645cf4e8e00981a49da37191c18a5",
+          "idempotency_key": "30ff68f15f89f2efffb29042c908b4f80dea0b02bd54e7265a322c21e3a02f14",
+          "observed_evidence": {
+            "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+            "edge_id": 1,
+            "eligible_channel_id": "K_to_S",
+            "expected_next_channel_id": "S_to_K",
+            "native_self_rearm_evidence": true,
+            "observed_mass": 0.85,
+            "packet_amount": 0.1,
+            "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+            "producer_event_time_key": 2.0,
+            "producer_mutation_ownership": "step_processes_packet_departure",
+            "reference_mass": 0.75,
+            "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+            "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+            "scheduled_departure_event_time_key": 2.0,
+            "scheduled_packet_id": "lgrc9v3-packet-8ac4ff414b6b248f",
+            "self_rearm_evidence": {
+              "budget_after_child_scheduling_before_departure": 3.0,
+              "budget_after_parent_arrival": 3.0,
+              "budget_after_producer": 3.0,
+              "budget_before_producer": 3.0,
+              "child_departure_event_id": "lgrc9v3-packet-event-a4fd9a591992d41e",
+              "child_departure_event_time_key": 2.0,
+              "child_packet_id": "lgrc9v3-packet-8ac4ff414b6b248f",
+              "child_scheduling_budget_error": 0.0,
+              "child_source_node_id": 1,
+              "child_target_node_id": 0,
+              "event_schema_version": "lgrc9v3_self_rearm_evidence_event_v1",
+              "event_time_ordering": {
+                "arrival_before_or_at_producer": true,
+                "producer_before_or_at_child_departure": true
+              },
+              "expected_next_channel_id": "S_to_K",
+              "expected_previous_channel_id": "S_to_K",
+              "movement_claim_allowed": false,
+              "native_d2_3_equivalent": false,
+              "native_grc9v3_loop_evidence": false,
+              "native_self_rearm_evidence": true,
+              "node_proper_time_surface": {
+                "0": 1.0,
+                "1": 2.0
+              },
+              "observed_mass_after_arrival": 0.85,
+              "parent_arrival_budget_error": 0.0,
+              "parent_arrival_channel_id": "S_to_K",
+              "parent_arrival_event_id": "lgrc9v3-packet-event-a0d6baad3bcc1753",
+              "parent_arrival_event_time_key": 2.0,
+              "parent_arrival_scheduler_event_index": 4,
+              "parent_arrival_target_node_id": 1,
+              "parent_packet_id": "lgrc9v3-packet-020c7a5efb259bfb",
+              "producer_after_parent_arrival_committed": true,
+              "producer_budget_error": 0.0,
+              "producer_event_time_key": 2.0,
+              "producer_record_id": "lgrc9v3-producer-record-2f6e014d0b53ac6b33775f57",
+              "producer_scheduler_event_index": 4,
+              "reference_mass": 0.75,
+              "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+              "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+              "route_channel_sequence": [
+                "S_to_K",
+                "K_to_S"
+              ],
+              "route_step_index": 1,
+              "runtime_family": "LGRC9V3",
+              "self_rearm_evidence_id": "ea57686fe6a55372bbb54e6443a5742481164dd9360504d82eeb4d73ec919948",
+              "self_rearm_status": "scheduled_child_pending_departure",
+              "source_node_proper_time_at_trigger": 2.0,
+              "source_pole_id": "K",
+              "surplus_after_arrival": 0.09999999999999998,
+              "target_pole_id": "K",
+              "threshold_crossed": true,
+              "trigger_channel_id": "K_to_S",
+              "trigger_threshold": 0.049
+            },
+            "self_rearm_evidence_id": "ea57686fe6a55372bbb54e6443a5742481164dd9360504d82eeb4d73ec919948",
+            "self_rearm_status": "scheduled_child_pending_departure",
+            "source_node_id": 1,
+            "source_node_last_update_event_time_key_at_evaluation": 2.0,
+            "source_node_proper_time_at_evaluation": 2.0,
+            "source_pole_id": "K",
+            "surplus": 0.09999999999999998,
+            "target_node_id": 0,
+            "target_pole_id": "S"
+          },
+          "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+          "producer_version": "lgrc9v3_autonomy_v1",
+          "queued_work_consumed": false,
+          "reason_code": "surplus_trigger_packet_departure_scheduled",
+          "record_id": "lgrc9v3-producer-record-2f6e014d0b53ac6b33775f57",
+          "scheduled_event_id": "lgrc9v3-packet-event-a4fd9a591992d41e",
+          "scheduled_event_kind": "lgrc9v3_packet_departure",
+          "scheduled_event_time_key": 2.0,
+          "thresholds": {
+            "packet_amount": 0.1,
+            "reference_mass": 0.75,
+            "trigger_threshold": 0.049
+          },
+          "topology_mutated": false,
+          "trigger_edge_id": 1,
+          "trigger_node_id": 1
+        }
+      ],
+      "queue_ownership_policy": "producers_enqueue_step_consumes",
+      "queued_work_consumed": false,
+      "record_count": 1,
+      "runtime_family": "LGRC9V3",
+      "scheduled_event_count": 1,
+      "scheduler_event_index": 4,
+      "state_mutated": true,
+      "topology_mutated": false
+    },
+    {
+      "artifact_kind": "lgrc9v3_autonomous_event_production_result",
+      "artifact_schema_version": "lgrc9v3_autonomous_event_production_result_v1",
+      "causal_surface_digest": "c2ce0fcd3ba8f151e9b8249fe956ed5b929361082d1da53c49bd2732ee247e4e",
+      "checkpoint_index": 6,
+      "collapse_reabsorption_emitted": false,
+      "event_time_key": 3.0,
+      "evidence_class": "autonomous_event_production",
+      "idempotency_policy": "causal_surface_digest_once",
+      "identity_acceptance_emitted": false,
+      "mode_version": "lgrc9v3_autonomy_v1",
+      "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+      "producer_version": "lgrc9v3_autonomy_v1",
+      "production_records": [
+        {
+          "causal_surface_digest": "c2ce0fcd3ba8f151e9b8249fe956ed5b929361082d1da53c49bd2732ee247e4e",
+          "idempotency_key": "33678c7d57011cab136f7209897a544e35b9d07043615c79b67b868014f1210d",
+          "observed_evidence": {
+            "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+            "edge_id": 0,
+            "eligible_channel_id": "S_to_K",
+            "expected_next_channel_id": "K_to_S",
+            "native_self_rearm_evidence": true,
+            "observed_mass": 2.25,
+            "packet_amount": 0.1,
+            "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+            "producer_event_time_key": 3.0,
+            "producer_mutation_ownership": "step_processes_packet_departure",
+            "reference_mass": 2.15,
+            "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+            "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+            "scheduled_departure_event_time_key": 3.0,
+            "scheduled_packet_id": "lgrc9v3-packet-cae8662be91f5054",
+            "self_rearm_evidence": {
+              "budget_after_child_scheduling_before_departure": 3.0,
+              "budget_after_parent_arrival": 3.0,
+              "budget_after_producer": 3.0,
+              "budget_before_producer": 3.0,
+              "child_departure_event_id": "lgrc9v3-packet-event-82d5f2fcf94008c5",
+              "child_departure_event_time_key": 3.0,
+              "child_packet_id": "lgrc9v3-packet-cae8662be91f5054",
+              "child_scheduling_budget_error": 0.0,
+              "child_source_node_id": 0,
+              "child_target_node_id": 1,
+              "event_schema_version": "lgrc9v3_self_rearm_evidence_event_v1",
+              "event_time_ordering": {
+                "arrival_before_or_at_producer": true,
+                "producer_before_or_at_child_departure": true
+              },
+              "expected_next_channel_id": "K_to_S",
+              "expected_previous_channel_id": "K_to_S",
+              "movement_claim_allowed": false,
+              "native_d2_3_equivalent": false,
+              "native_grc9v3_loop_evidence": false,
+              "native_self_rearm_evidence": true,
+              "node_proper_time_surface": {
+                "0": 3.0,
+                "1": 2.0
+              },
+              "observed_mass_after_arrival": 2.25,
+              "parent_arrival_budget_error": 0.0,
+              "parent_arrival_channel_id": "K_to_S",
+              "parent_arrival_event_id": "lgrc9v3-packet-event-b58d92bbfad54df8",
+              "parent_arrival_event_time_key": 3.0,
+              "parent_arrival_scheduler_event_index": 6,
+              "parent_arrival_target_node_id": 0,
+              "parent_packet_id": "lgrc9v3-packet-8ac4ff414b6b248f",
+              "producer_after_parent_arrival_committed": true,
+              "producer_budget_error": 0.0,
+              "producer_event_time_key": 3.0,
+              "producer_record_id": "lgrc9v3-producer-record-e9ae106ee535feab9142fabe",
+              "producer_scheduler_event_index": 6,
+              "reference_mass": 2.15,
+              "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+              "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+              "route_channel_sequence": [
+                "S_to_K",
+                "K_to_S"
+              ],
+              "route_step_index": 0,
+              "runtime_family": "LGRC9V3",
+              "self_rearm_evidence_id": "8decb104096c8cfc603a062ef6634d09bba845571828cb1b3cb3bca15816984f",
+              "self_rearm_status": "scheduled_child_pending_departure",
+              "source_node_proper_time_at_trigger": 3.0,
+              "source_pole_id": "S",
+              "surplus_after_arrival": 0.10000000000000009,
+              "target_pole_id": "S",
+              "threshold_crossed": true,
+              "trigger_channel_id": "S_to_K",
+              "trigger_threshold": 0.049
+            },
+            "self_rearm_evidence_id": "8decb104096c8cfc603a062ef6634d09bba845571828cb1b3cb3bca15816984f",
+            "self_rearm_status": "scheduled_child_pending_departure",
+            "source_node_id": 0,
+            "source_node_last_update_event_time_key_at_evaluation": 3.0,
+            "source_node_proper_time_at_evaluation": 3.0,
+            "source_pole_id": "S",
+            "surplus": 0.10000000000000009,
+            "target_node_id": 1,
+            "target_pole_id": "K"
+          },
+          "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+          "producer_version": "lgrc9v3_autonomy_v1",
+          "queued_work_consumed": false,
+          "reason_code": "surplus_trigger_packet_departure_scheduled",
+          "record_id": "lgrc9v3-producer-record-e9ae106ee535feab9142fabe",
+          "scheduled_event_id": "lgrc9v3-packet-event-82d5f2fcf94008c5",
+          "scheduled_event_kind": "lgrc9v3_packet_departure",
+          "scheduled_event_time_key": 3.0,
+          "thresholds": {
+            "packet_amount": 0.1,
+            "reference_mass": 2.15,
+            "trigger_threshold": 0.049
+          },
+          "topology_mutated": false,
+          "trigger_edge_id": 0,
+          "trigger_node_id": 0
+        }
+      ],
+      "queue_ownership_policy": "producers_enqueue_step_consumes",
+      "queued_work_consumed": false,
+      "record_count": 1,
+      "runtime_family": "LGRC9V3",
+      "scheduled_event_count": 1,
+      "scheduler_event_index": 6,
+      "state_mutated": true,
+      "topology_mutated": false
+    },
+    {
+      "artifact_kind": "lgrc9v3_autonomous_event_production_result",
+      "artifact_schema_version": "lgrc9v3_autonomous_event_production_result_v1",
+      "causal_surface_digest": "0a360d88f8854e216ad0961ac614e7f070aa916fdcc8ba21d598743cb6f7221d",
+      "checkpoint_index": 8,
+      "collapse_reabsorption_emitted": false,
+      "event_time_key": 4.0,
+      "evidence_class": "autonomous_event_production",
+      "idempotency_policy": "causal_surface_digest_once",
+      "identity_acceptance_emitted": false,
+      "mode_version": "lgrc9v3_autonomy_v1",
+      "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+      "producer_version": "lgrc9v3_autonomy_v1",
+      "production_records": [
+        {
+          "causal_surface_digest": "0a360d88f8854e216ad0961ac614e7f070aa916fdcc8ba21d598743cb6f7221d",
+          "idempotency_key": "9d40ecae40859a1e23d49d71571808631fc94339d65eaf6056b9df442e3e55a1",
+          "observed_evidence": {
+            "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+            "edge_id": 1,
+            "eligible_channel_id": "K_to_S",
+            "expected_next_channel_id": "S_to_K",
+            "native_self_rearm_evidence": true,
+            "observed_mass": 0.85,
+            "packet_amount": 0.1,
+            "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+            "producer_event_time_key": 4.0,
+            "producer_mutation_ownership": "step_processes_packet_departure",
+            "reference_mass": 0.75,
+            "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+            "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+            "scheduled_departure_event_time_key": 4.0,
+            "scheduled_packet_id": "lgrc9v3-packet-7eee594ca142440d",
+            "self_rearm_evidence": {
+              "budget_after_child_scheduling_before_departure": 3.0,
+              "budget_after_parent_arrival": 3.0,
+              "budget_after_producer": 3.0,
+              "budget_before_producer": 3.0,
+              "child_departure_event_id": "lgrc9v3-packet-event-fe212945ba81e359",
+              "child_departure_event_time_key": 4.0,
+              "child_packet_id": "lgrc9v3-packet-7eee594ca142440d",
+              "child_scheduling_budget_error": 0.0,
+              "child_source_node_id": 1,
+              "child_target_node_id": 0,
+              "event_schema_version": "lgrc9v3_self_rearm_evidence_event_v1",
+              "event_time_ordering": {
+                "arrival_before_or_at_producer": true,
+                "producer_before_or_at_child_departure": true
+              },
+              "expected_next_channel_id": "S_to_K",
+              "expected_previous_channel_id": "S_to_K",
+              "movement_claim_allowed": false,
+              "native_d2_3_equivalent": false,
+              "native_grc9v3_loop_evidence": false,
+              "native_self_rearm_evidence": true,
+              "node_proper_time_surface": {
+                "0": 3.0,
+                "1": 4.0
+              },
+              "observed_mass_after_arrival": 0.85,
+              "parent_arrival_budget_error": 0.0,
+              "parent_arrival_channel_id": "S_to_K",
+              "parent_arrival_event_id": "lgrc9v3-packet-event-927b293f8e050a98",
+              "parent_arrival_event_time_key": 4.0,
+              "parent_arrival_scheduler_event_index": 8,
+              "parent_arrival_target_node_id": 1,
+              "parent_packet_id": "lgrc9v3-packet-cae8662be91f5054",
+              "producer_after_parent_arrival_committed": true,
+              "producer_budget_error": 0.0,
+              "producer_event_time_key": 4.0,
+              "producer_record_id": "lgrc9v3-producer-record-2967ddbc6904e5d5ded56bdd",
+              "producer_scheduler_event_index": 8,
+              "reference_mass": 0.75,
+              "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+              "route_aspect_id": "n29_i11a_two_pole_trace_pressure_loop",
+              "route_channel_sequence": [
+                "S_to_K",
+                "K_to_S"
+              ],
+              "route_step_index": 1,
+              "runtime_family": "LGRC9V3",
+              "self_rearm_evidence_id": "65ac8c6855b979174bac997ee444077d8d09332e686a51f87aa41914e5866a54",
+              "self_rearm_status": "scheduled_child_pending_departure",
+              "source_node_proper_time_at_trigger": 4.0,
+              "source_pole_id": "K",
+              "surplus_after_arrival": 0.09999999999999998,
+              "target_pole_id": "K",
+              "threshold_crossed": true,
+              "trigger_channel_id": "K_to_S",
+              "trigger_threshold": 0.049
+            },
+            "self_rearm_evidence_id": "65ac8c6855b979174bac997ee444077d8d09332e686a51f87aa41914e5866a54",
+            "self_rearm_status": "scheduled_child_pending_departure",
+            "source_node_id": 1,
+            "source_node_last_update_event_time_key_at_evaluation": 4.0,
+            "source_node_proper_time_at_evaluation": 4.0,
+            "source_pole_id": "K",
+            "surplus": 0.09999999999999998,
+            "target_node_id": 0,
+            "target_pole_id": "S"
+          },
+          "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+          "producer_version": "lgrc9v3_autonomy_v1",
+          "queued_work_consumed": false,
+          "reason_code": "surplus_trigger_packet_departure_scheduled",
+          "record_id": "lgrc9v3-producer-record-2967ddbc6904e5d5ded56bdd",
+          "scheduled_event_id": "lgrc9v3-packet-event-fe212945ba81e359",
+          "scheduled_event_kind": "lgrc9v3_packet_departure",
+          "scheduled_event_time_key": 4.0,
+          "thresholds": {
+            "packet_amount": 0.1,
+            "reference_mass": 0.75,
+            "trigger_threshold": 0.049
+          },
+          "topology_mutated": false,
+          "trigger_edge_id": 1,
+          "trigger_node_id": 1
+        }
+      ],
+      "queue_ownership_policy": "producers_enqueue_step_consumes",
+      "queued_work_consumed": false,
+      "record_count": 1,
+      "runtime_family": "LGRC9V3",
+      "scheduled_event_count": 1,
+      "scheduler_event_index": 8,
+      "state_mutated": true,
+      "topology_mutated": false
+    }
+  ],
+  "runtime_basis": {
+    "example_family": "examples/lgrc9v3/native_packet_loop.py",
+    "model_class": "LGRC9V3",
+    "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+    "producer_success_can_upgrade_native": false,
+    "producer_visibility": "declared_before_use_source_visible_bounded"
+  },
+  "runtime_family": "LGRC9V3",
+  "runtime_or_reconstruction_status": "producer_assisted_runtime_instantiation",
+  "runtime_summary": {
+    "completed_self_rearm_count": 4,
+    "event_count": 28,
+    "event_kinds": [
+      "lgrc9v3_local_update",
+      "lgrc9v3_packet_arrival",
+      "lgrc9v3_packet_arrival_eligibility",
+      "lgrc9v3_packet_departure",
+      "lgrc9v3_self_rearm_evidence"
+    ],
+    "packet_budget_total": 3.0,
+    "producer_result_count": 4,
+    "self_rearm_event_count": 8,
+    "step_record_count": 8
+  },
+  "self_rearm_validation": {
+    "candidate_count": 4,
+    "completed_count": 4,
+    "failure_reasons": [],
+    "movement_claim_allowed": false,
+    "native_d2_3_equivalent": false,
+    "native_grc9v3_loop_evidence": false,
+    "valid": true,
+    "validated_self_rearm_evidence_ids": [
+      "d845b3414f78da7a0e7920ee5db2e2e491eb298230680049f2a8154612790004",
+      "047deac890959f3a8b9a95565a5cf44be198c994f51e30eeaabd95f358b0074e",
+      "393ab546887588bac3f042dab4a60a852bb503338f3fed70ec483f9df281ad49",
+      "9ae4536a290ffc33876f6122dd3e3bcbefa117dabf16468c2679c164f3386dec"
+    ],
+    "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+  },
+  "step_records": [
+    {
+      "checkpoint_index": 3,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_self_rearm_evidence"
+      ],
+      "event_time_key": 1.0,
+      "processed_event_id": "lgrc9v3-packet-event-1328727edf14de18",
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "queue_length_after": 1,
+      "queue_length_before": 1,
+      "scheduler_event_index": 3,
+      "step_index": 3,
+      "time": 1.0
+    },
+    {
+      "checkpoint_index": 4,
+      "event_kinds": [
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update"
+      ],
+      "event_time_key": 2.0,
+      "processed_event_id": "lgrc9v3-packet-event-a0d6baad3bcc1753",
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "queue_length_after": 0,
+      "queue_length_before": 1,
+      "scheduler_event_index": 4,
+      "step_index": 4,
+      "time": 2.0
+    },
+    {
+      "checkpoint_index": 5,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_self_rearm_evidence"
+      ],
+      "event_time_key": 2.0,
+      "processed_event_id": "lgrc9v3-packet-event-a4fd9a591992d41e",
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "queue_length_after": 1,
+      "queue_length_before": 1,
+      "scheduler_event_index": 5,
+      "step_index": 5,
+      "time": 2.0
+    },
+    {
+      "checkpoint_index": 6,
+      "event_kinds": [
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update"
+      ],
+      "event_time_key": 3.0,
+      "processed_event_id": "lgrc9v3-packet-event-b58d92bbfad54df8",
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "queue_length_after": 0,
+      "queue_length_before": 1,
+      "scheduler_event_index": 6,
+      "step_index": 6,
+      "time": 3.0
+    },
+    {
+      "checkpoint_index": 7,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_self_rearm_evidence"
+      ],
+      "event_time_key": 3.0,
+      "processed_event_id": "lgrc9v3-packet-event-82d5f2fcf94008c5",
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "queue_length_after": 1,
+      "queue_length_before": 1,
+      "scheduler_event_index": 7,
+      "step_index": 7,
+      "time": 3.0
+    },
+    {
+      "checkpoint_index": 8,
+      "event_kinds": [
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update"
+      ],
+      "event_time_key": 4.0,
+      "processed_event_id": "lgrc9v3-packet-event-927b293f8e050a98",
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "queue_length_after": 0,
+      "queue_length_before": 1,
+      "scheduler_event_index": 8,
+      "step_index": 8,
+      "time": 4.0
+    },
+    {
+      "checkpoint_index": 9,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_self_rearm_evidence"
+      ],
+      "event_time_key": 4.0,
+      "processed_event_id": "lgrc9v3-packet-event-fe212945ba81e359",
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "queue_length_after": 1,
+      "queue_length_before": 1,
+      "scheduler_event_index": 9,
+      "step_index": 9,
+      "time": 4.0
+    },
+    {
+      "checkpoint_index": 10,
+      "event_kinds": [
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update"
+      ],
+      "event_time_key": 5.0,
+      "processed_event_id": "lgrc9v3-packet-event-87cd4ca52593f796",
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "queue_length_after": 0,
+      "queue_length_before": 1,
+      "scheduler_event_index": 10,
+      "step_index": 10,
+      "time": 5.0
+    }
+  ],
+  "trace_pressure_loop_leg_records": [
+    {
+      "budget_surface": {
+        "budget_after_child_departure": 3.0,
+        "budget_after_parent_arrival": 3.0,
+        "budget_after_producer": 3.0,
+        "budget_before_producer": 3.0,
+        "child_departure_budget_error": 0.0,
+        "child_scheduling_budget_error": 0.0,
+        "producer_budget_error": 0.0
+      },
+      "candidate_self_rearm_evidence_id": "4566c057d583a22084be3a9b5705a3cd775e17c0177039e3cf07087dd406c6a9",
+      "loop_response_leg": {
+        "child_departure_event_id": "lgrc9v3-packet-event-1328727edf14de18",
+        "child_departure_event_time_key": 1.0,
+        "child_departure_processed": true,
+        "child_departure_scheduler_event_index": 3,
+        "child_source_node_id": 0,
+        "child_target_node_id": 1,
+        "event_time_ordering": {
+          "arrival_before_or_at_child_departure": true,
+          "arrival_before_or_at_producer": true,
+          "producer_before_or_at_child_departure": true
+        },
+        "expected_next_channel_id": "K_to_S"
+      },
+      "pressure_reserve_leg": {
+        "observed_mass_after_arrival": 2.25,
+        "reference_mass": 2.15,
+        "source_pole_id": "S",
+        "surplus_after_arrival": 0.10000000000000009,
+        "threshold_crossed": true,
+        "trigger_channel_id": "S_to_K",
+        "trigger_threshold": 0.049
+      },
+      "self_rearm_evidence_id": "d845b3414f78da7a0e7920ee5db2e2e491eb298230680049f2a8154612790004",
+      "trace_aftereffect_leg": {
+        "node_proper_time_surface": {
+          "0": 1.0,
+          "1": 0.0
+        },
+        "parent_arrival_budget_error": 0.0,
+        "parent_arrival_channel_id": "K_to_S",
+        "parent_arrival_event_id": "lgrc9v3-packet-event-6e0befbe79a1c3c1",
+        "parent_arrival_event_time_key": 1.0,
+        "parent_arrival_target_node_id": 0,
+        "runtime_visible": true
+      }
+    },
+    {
+      "budget_surface": {
+        "budget_after_child_departure": 3.0,
+        "budget_after_parent_arrival": 3.0,
+        "budget_after_producer": 3.0,
+        "budget_before_producer": 3.0,
+        "child_departure_budget_error": 0.0,
+        "child_scheduling_budget_error": 0.0,
+        "producer_budget_error": 0.0
+      },
+      "candidate_self_rearm_evidence_id": "ea57686fe6a55372bbb54e6443a5742481164dd9360504d82eeb4d73ec919948",
+      "loop_response_leg": {
+        "child_departure_event_id": "lgrc9v3-packet-event-a4fd9a591992d41e",
+        "child_departure_event_time_key": 2.0,
+        "child_departure_processed": true,
+        "child_departure_scheduler_event_index": 5,
+        "child_source_node_id": 1,
+        "child_target_node_id": 0,
+        "event_time_ordering": {
+          "arrival_before_or_at_child_departure": true,
+          "arrival_before_or_at_producer": true,
+          "producer_before_or_at_child_departure": true
+        },
+        "expected_next_channel_id": "S_to_K"
+      },
+      "pressure_reserve_leg": {
+        "observed_mass_after_arrival": 0.85,
+        "reference_mass": 0.75,
+        "source_pole_id": "K",
+        "surplus_after_arrival": 0.09999999999999998,
+        "threshold_crossed": true,
+        "trigger_channel_id": "K_to_S",
+        "trigger_threshold": 0.049
+      },
+      "self_rearm_evidence_id": "047deac890959f3a8b9a95565a5cf44be198c994f51e30eeaabd95f358b0074e",
+      "trace_aftereffect_leg": {
+        "node_proper_time_surface": {
+          "0": 1.0,
+          "1": 2.0
+        },
+        "parent_arrival_budget_error": 0.0,
+        "parent_arrival_channel_id": "S_to_K",
+        "parent_arrival_event_id": "lgrc9v3-packet-event-a0d6baad3bcc1753",
+        "parent_arrival_event_time_key": 2.0,
+        "parent_arrival_target_node_id": 1,
+        "runtime_visible": true
+      }
+    },
+    {
+      "budget_surface": {
+        "budget_after_child_departure": 3.0,
+        "budget_after_parent_arrival": 3.0,
+        "budget_after_producer": 3.0,
+        "budget_before_producer": 3.0,
+        "child_departure_budget_error": 0.0,
+        "child_scheduling_budget_error": 0.0,
+        "producer_budget_error": 0.0
+      },
+      "candidate_self_rearm_evidence_id": "8decb104096c8cfc603a062ef6634d09bba845571828cb1b3cb3bca15816984f",
+      "loop_response_leg": {
+        "child_departure_event_id": "lgrc9v3-packet-event-82d5f2fcf94008c5",
+        "child_departure_event_time_key": 3.0,
+        "child_departure_processed": true,
+        "child_departure_scheduler_event_index": 7,
+        "child_source_node_id": 0,
+        "child_target_node_id": 1,
+        "event_time_ordering": {
+          "arrival_before_or_at_child_departure": true,
+          "arrival_before_or_at_producer": true,
+          "producer_before_or_at_child_departure": true
+        },
+        "expected_next_channel_id": "K_to_S"
+      },
+      "pressure_reserve_leg": {
+        "observed_mass_after_arrival": 2.25,
+        "reference_mass": 2.15,
+        "source_pole_id": "S",
+        "surplus_after_arrival": 0.10000000000000009,
+        "threshold_crossed": true,
+        "trigger_channel_id": "S_to_K",
+        "trigger_threshold": 0.049
+      },
+      "self_rearm_evidence_id": "393ab546887588bac3f042dab4a60a852bb503338f3fed70ec483f9df281ad49",
+      "trace_aftereffect_leg": {
+        "node_proper_time_surface": {
+          "0": 3.0,
+          "1": 2.0
+        },
+        "parent_arrival_budget_error": 0.0,
+        "parent_arrival_channel_id": "K_to_S",
+        "parent_arrival_event_id": "lgrc9v3-packet-event-b58d92bbfad54df8",
+        "parent_arrival_event_time_key": 3.0,
+        "parent_arrival_target_node_id": 0,
+        "runtime_visible": true
+      }
+    },
+    {
+      "budget_surface": {
+        "budget_after_child_departure": 3.0,
+        "budget_after_parent_arrival": 3.0,
+        "budget_after_producer": 3.0,
+        "budget_before_producer": 3.0,
+        "child_departure_budget_error": 0.0,
+        "child_scheduling_budget_error": 0.0,
+        "producer_budget_error": 0.0
+      },
+      "candidate_self_rearm_evidence_id": "65ac8c6855b979174bac997ee444077d8d09332e686a51f87aa41914e5866a54",
+      "loop_response_leg": {
+        "child_departure_event_id": "lgrc9v3-packet-event-fe212945ba81e359",
+        "child_departure_event_time_key": 4.0,
+        "child_departure_processed": true,
+        "child_departure_scheduler_event_index": 9,
+        "child_source_node_id": 1,
+        "child_target_node_id": 0,
+        "event_time_ordering": {
+          "arrival_before_or_at_child_departure": true,
+          "arrival_before_or_at_producer": true,
+          "producer_before_or_at_child_departure": true
+        },
+        "expected_next_channel_id": "S_to_K"
+      },
+      "pressure_reserve_leg": {
+        "observed_mass_after_arrival": 0.85,
+        "reference_mass": 0.75,
+        "source_pole_id": "K",
+        "surplus_after_arrival": 0.09999999999999998,
+        "threshold_crossed": true,
+        "trigger_channel_id": "K_to_S",
+        "trigger_threshold": 0.049
+      },
+      "self_rearm_evidence_id": "9ae4536a290ffc33876f6122dd3e3bcbefa117dabf16468c2679c164f3386dec",
+      "trace_aftereffect_leg": {
+        "node_proper_time_surface": {
+          "0": 3.0,
+          "1": 4.0
+        },
+        "parent_arrival_budget_error": 0.0,
+        "parent_arrival_channel_id": "S_to_K",
+        "parent_arrival_event_id": "lgrc9v3-packet-event-927b293f8e050a98",
+        "parent_arrival_event_time_key": 4.0,
+        "parent_arrival_target_node_id": 1,
+        "runtime_visible": true
+      }
+    }
+  ],
+  "trigger_records": [
+    {
+      "cycle_index": 0,
+      "declared_before_producer": true,
+      "eligible_channel_id": "S_to_K",
+      "reference_mass": 2.15,
+      "source_pole_id": "S"
+    },
+    {
+      "cycle_index": 0,
+      "declared_before_producer": true,
+      "eligible_channel_id": "K_to_S",
+      "reference_mass": 0.75,
+      "source_pole_id": "K"
+    },
+    {
+      "cycle_index": 1,
+      "declared_before_producer": true,
+      "eligible_channel_id": "S_to_K",
+      "reference_mass": 2.15,
+      "source_pole_id": "S"
+    },
+    {
+      "cycle_index": 1,
+      "declared_before_producer": true,
+      "eligible_channel_id": "K_to_S",
+      "reference_mass": 0.75,
+      "source_pole_id": "K"
+    }
+  ]
+}

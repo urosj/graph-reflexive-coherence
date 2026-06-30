@@ -1,0 +1,96 @@
+{
+  "artifact_id": "n29_neutral_circulation_directed_cycle_bridge_i1444_artifact",
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_closed_environmental_circulation_supported": false,
+    "native_directed_cycle_supported": false,
+    "producer_mediated_directed_cycle_candidate_created": true,
+    "resource_economy_claim_allowed": false
+  },
+  "cycle_definition": {
+    "definition_id": "all_forward_pattern_frame_cycle",
+    "later_state_returns_to_starting_pattern_class_required": true,
+    "locally_forward_legs_required": true,
+    "ordered_dependency_required": true,
+    "reverse_bounce_back_required": false,
+    "sign_inverted_reverse_leg_required": false
+  },
+  "cycle_residual_state": {
+    "alpha_class_return_delta": 0.05084,
+    "beta_class_residual_delta": -0.0108,
+    "closure_residual_abs_max": 0.0108,
+    "closure_residual_ceiling": 0.015,
+    "closure_residual_gate_passed": true,
+    "gamma_class_residual_delta": 0.0
+  },
+  "directed_cycle_dependency_trace": {
+    "all_legs_locally_forward": true,
+    "first_leg_changes_medium_distribution": true,
+    "label_swap_as_cycle_rejected": true,
+    "later_alpha_class_state_depends_on_second_leg": true,
+    "later_state_returns_to_starting_pattern_class": true,
+    "native_directed_cycle_supported": false,
+    "ordered_leg_sequence": [
+      "alpha_to_beta_forward_source_current_leg",
+      "beta_to_gamma_forward_producer_bridge_leg",
+      "later_alpha_class_dependency_state"
+    ],
+    "producer_mediated_directed_cycle_candidate_created": true,
+    "reverse_bounce_back_used": false,
+    "second_leg_consumes_prior_changed_medium": true,
+    "sign_inverted_reverse_leg_used": false
+  },
+  "experiment_id": "N29",
+  "frame_shifted_second_forward_leg": {
+    "consumes_prior_changed_medium": true,
+    "forward_magnitude_gate_passed": true,
+    "leg_source": "N29_bridge_derived_from_I4F_forward_post_state",
+    "leg_source_current_native": false,
+    "local_forward_buffer_delta": 0.00164,
+    "local_forward_inflow_delta": 0.0492,
+    "local_forward_outflow_delta": -0.05084,
+    "minimum_forward_magnitude": 0.04,
+    "pattern_frame": "beta_to_gamma_forward"
+  },
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "I14.4-4 resolves the I14.4-3 native blocker only in the N29 producer-mediated bridge lane. The first leg is the source-current I4-F neutral circulation: alpha enriches beta while beta drains against a near-stable buffer. The second leg does not bounce back along the same channel. It shifts frame and continues forward from beta toward gamma, consuming the changed medium left by the first leg. Closure is recorded because the later alpha-class state depends on the second leg's changed distribution. This is a directed-cycle bridge candidate, not native LGRC closed circulation.",
+  "iteration": "I14.4-4",
+  "leakage_record": {
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_gate_passed": true,
+    "merge_leakage_margin": 0.006,
+    "merge_leakage_value": 0.019
+  },
+  "native_blocker_resolved_only_in_producer_lane": true,
+  "output_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+  "producer_bridge_policy": {
+    "declared_before_use": true,
+    "label_swap_used": false,
+    "policy_id": "n29_i14_4_4_all_forward_directed_cycle_bridge_policy_v1",
+    "producer_mediated": true,
+    "producer_success_can_upgrade_native": false,
+    "producer_surface_role": "derive a frame-shifted forward leg from the I4-F changed medium so the cycle can close without sign-inverted bounce-back",
+    "return_to_alpha_class_factor": 0.82,
+    "reverse_bounce_back_used": false,
+    "second_forward_transfer_factor": 0.82,
+    "thresholds_retuned": false
+  },
+  "runtime_artifact_type": "producer_mediated_all_forward_directed_cycle_bridge_artifact",
+  "source_current_first_leg": {
+    "buffer_lobe_capacity_delta": 0.001,
+    "inflow_lobe_capacity_delta": 0.062,
+    "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+    "neutral_circulation_detected": true,
+    "outflow_lobe_capacity_delta": -0.06,
+    "pattern_frame": "alpha_to_beta_forward",
+    "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+    "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast"
+  },
+  "source_i14_4_1_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+  "source_i14_4_3_digest": "6c0ef71941c7e5ccf4ca39702cb1956a32aaf772cffb7bd04181cdb70af24eee",
+  "source_i14_4_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+  "source_precomposition_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475"
+}

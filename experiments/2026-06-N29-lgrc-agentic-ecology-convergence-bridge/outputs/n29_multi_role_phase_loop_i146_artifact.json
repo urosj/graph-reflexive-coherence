@@ -1,0 +1,101 @@
+{
+  "artifact_id": "n29_multi_role_phase_loop_i146_artifact",
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "literal_perpetual_loop_claim_allowed": false,
+    "multi_role_phase_loop_candidate_created": true,
+    "native_closed_environmental_circulation_supported": false,
+    "native_multi_role_ecology_supported": false,
+    "native_phase_coupled_exchange_supported": false,
+    "resource_economy_claim_allowed": false
+  },
+  "combined_loop_residual_record": {
+    "combined_loop_residual_abs": 0.01296,
+    "combined_loop_residual_ceiling": 0.02,
+    "combined_loop_residual_gate_passed": true,
+    "cross_bridge_residual_abs": 0.0041,
+    "directed_cycle_max_residual_abs": 0.0108,
+    "phase_feedback_max_residual_abs": 0.01296
+  },
+  "component_roles": [
+    {
+      "producer_mediated": false,
+      "role_id": "generator",
+      "role_preserved": true,
+      "source_iteration": "I14.1 via I14.5-2"
+    },
+    {
+      "producer_mediated": true,
+      "role_id": "extractor",
+      "role_preserved": true,
+      "source_iteration": "I14.2-3 via I14.5-2"
+    },
+    {
+      "producer_mediated": false,
+      "role_id": "processor_buffer",
+      "role_preserved": true,
+      "source_iteration": "I14.3 via I14.5-2"
+    },
+    {
+      "producer_mediated": true,
+      "role_id": "all_forward_circulation",
+      "role_preserved": true,
+      "source_iteration": "I14.4-4"
+    }
+  ],
+  "composition_lane_record": {
+    "native_multi_role_ecology_supported": false,
+    "native_source_current_leg_present": true,
+    "producer_mediated_bridge_lane_recorded": true,
+    "producer_mediated_bridge_legs_present": true,
+    "producer_success_can_upgrade_native": false
+  },
+  "composition_target": "multi_role_phase_coupled_loop_candidate",
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "I14.6 composes the strongest current Prototype D bridge rows into a multi-role phase-coupled loop candidate. I14.5-2 supplies the generator -> extractor -> processor/buffer -> later generator path. I14.4-4 supplies an all-forward circulation bridge that consumes the later-generator signal and returns dependency toward the generator side. This is closer to the intended perpetual-like phase loop than I14.5-2 alone, but it is still producer-mediated bridge evidence, not a native ecology or literal perpetual runtime claim.",
+  "iteration": "I14.6",
+  "leakage_record": {
+    "max_per_leg_merge_leakage": 0.019,
+    "multi_leg_leakage_aggregation_supported": false,
+    "per_leg_leakage_gates_passed": true,
+    "per_leg_leakage_values": {
+      "directed_cycle_leg_merge_leakage": 0.019,
+      "phase_feedback_leg_merge_leakage": 0.018
+    },
+    "per_leg_merge_leakage_ceiling": 0.025,
+    "why_not_aggregate": "I14.6 composes bridge rows across different declared frames; per-leg leakage gates pass, but no single native shared-medium leakage aggregation channel is established."
+  },
+  "ordered_dependency_cycle": {
+    "circulation_input": "I14.4-4",
+    "cross_bridge_residual": 0.0041,
+    "cycle_to_generator_bridge_gate_passed": true,
+    "i14_4_4_alpha_class_return_used": 0.05084,
+    "i14_5_2_later_generator_signal_used": 0.04674,
+    "literal_perpetual_runtime_claimed": false,
+    "ordered_dependency_cycle_recorded": true,
+    "ordered_sequence": [
+      "generator_enriches_medium_shell",
+      "extractor_consumes_generator_changed_medium",
+      "processor_buffers_extractor_changed_medium",
+      "later_generator_consumes_buffered_changed_medium",
+      "all_forward_circulation_consumes_later_generator_signal",
+      "alpha_class_return_closes_to_generator_side"
+    ],
+    "phase_feedback_input": "I14.5-2",
+    "phase_to_cycle_bridge_gate_passed": true,
+    "report_only_composition": false
+  },
+  "output_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+  "runtime_artifact_type": "producer_mediated_multi_role_phase_coupled_loop_artifact",
+  "source_i14_4_1_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+  "source_i14_4_3_digest": "6c0ef71941c7e5ccf4ca39702cb1956a32aaf772cffb7bd04181cdb70af24eee",
+  "source_i14_4_4_digest": "44fe1547a6abd4313dc4ffff1da3f351e82f73c8f74ac569bce024b517ba45d8",
+  "source_i14_4_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+  "source_i14_5_1_digest": "61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486",
+  "source_i14_5_2_digest": "16b51f3750e1f10056573666a60b9762df763aa77d30ff8d7776eb24cbc2d9b7",
+  "source_i14_5_digest": "85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d"
+}

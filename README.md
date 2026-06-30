@@ -46,18 +46,21 @@ local proper-time evidence, recurrent pulse circuits, route choice,
 memory/trail affordance, goal-proxy regulation, and bounded agentic-like
 integration.
 
-The current becoming-primitive handoff moves next to `N29`. The Phase 8
-`LGRC9V3` multi-basin formation tranche consumed the closed N25/N25.1 evidence
-and closed at `MB5`; the N25.2 validation bridge then closed at `MB6`,
-allowing N26 to consume scoped multi-basin substrate evidence. N26 closed
-bounded proxy divergence / proxy collapse evidence at `PD6`, and N27 closed
-bounded configuration/topology transfer evidence at `CT6` with an N28
-side-effect precursor handoff. N28 then closed bounded artifact-level
-generative/extractive persistence evidence at `GE6` / `N28-C6` with a
-claim-clean N29 handoff. Broad margin robustness, order-of-magnitude
-robustness, AP4/AP5 NAT4-gap resolution, unscoped multi-basin substrate
-consumption, native support, native AP5, agency, sentience, ant ecology
-implementation, and Phase 8 completion remain blocked.
+The current becoming-primitive / ecology-bridge arc has closed through `N29`.
+The Phase 8 `LGRC9V3` multi-basin formation tranche consumed the closed
+N25/N25.1 evidence and closed at `MB5`; the N25.2 validation bridge then
+closed at `MB6`, allowing N26 to consume scoped multi-basin substrate evidence.
+N26 closed bounded proxy divergence / proxy collapse evidence at `PD6`, N27
+closed bounded configuration/topology transfer evidence at `CT6`, and N28
+closed bounded generative/extractive persistence evidence at `GE6` / `N28-C6`.
+N29 then closed at `EB6` / `N29-C6` as a claim-clean convergence bridge: it
+produces a prototype atlas, bridge composition map, and first ecology probe
+contracts for `reflexive-coherence-agentic-ecology`, while handing unresolved
+native-surface and producer-debt targets back to N30+ work in this repository.
+Executed ecology runtime, native ant/colony agency, resource economy,
+cooperation/exploitation, native support, native AP5, AP4/AP5 NAT4-gap
+resolution, sentience, organism/life, ant ecology implementation, and Phase 8
+completion remain blocked.
 
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current
@@ -67,6 +70,36 @@ producer-assisted evidence and native coherence-loop evidence explicit.
 The long-term goal is a more fully native RC implementation with self-contained
 field patterns. Present claims remain bounded by the papers, specs, tests,
 telemetry, experiment reports, and committed artifacts that support them.
+
+## Project shape
+
+The repository is gradually taking the shape of a core runtime plus a reusable
+pattern library. The core runtime lives in `src/pygrc`, with specs, tests,
+telemetry, visualization, and examples defining the stable surfaces around it.
+The experiments incubate candidate patterns, controls, runtime extensions, and
+composition contracts before they are treated as reusable building blocks.
+
+Patterns become reusable only with their evidence boundary attached. Some are
+native to the current runtime; others are producer-assisted or depend on a
+declared extension. When nativity is not yet achieved, the experiment records a
+contract: which surfaces are required, which producer or medium debts remain,
+which claims are blocked, and what a later native rerun or discharge record
+would need to show. Consuming projects should therefore cite the exact pattern,
+contract, and extension set they rely on rather than treating the whole
+repository as one undifferentiated capability.
+
+In that sense, `experiments/` is the incubation and audit layer, while selected
+runtime/spec/example surfaces become the reusable library. Extensions are meant
+to be selectable: a downstream project should be able to say, for example, that
+it uses core `LGRC9V3`, the Phase 8 multi-basin extension, a specific N29 probe
+contract, or a producer-mediated pattern with unresolved nativity debt.
+
+The examples are part of this shape. They are not only demonstrations of what
+is already available; they also show how to search for patterns, inspect
+geometry, design motifs, and compose small structures into richer probes. N29
+is the current clearest bridge example: it turns the N05-N28 evidence stack
+into a prototype atlas and first ecology probe contracts without converting
+those contracts into executed ecology runtime or native agency claims.
 
 ## Theory and implementation map
 
@@ -277,7 +310,7 @@ evidence and states what the claim does not assert.
 | `LGRC9V3` supports executable causal-history surfaces and packet/event queue experiments. | [papers/2026-05-LGRC-9.md](papers/2026-05-LGRC-9.md), [specs/lgrc-9-v3-spec.md](specs/lgrc-9-v3-spec.md), [implementation/Phase-8-LGRC9-Closeout.md](implementation/Phase-8-LGRC9-Closeout.md), [examples/lgrc9v3](examples/lgrc9v3/README.md), [tests/models/test_lgrc_9_v3_runtime.py](tests/models/test_lgrc_9_v3_runtime.py) | General agency, intention, biological identity, or personhood. |
 | N05-N11 record a bounded LGRC agentic-like foundation arc with explicit claim ceilings. | [experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md](experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md), [experiments/2026-05-N10-lgrc-agentic-like-integration/README.md](experiments/2026-05-N10-lgrc-agentic-like-integration/README.md), [experiments/2026-05-N11-lgrc-general-agentic-like-integration/README.md](experiments/2026-05-N11-lgrc-general-agentic-like-integration/README.md), [experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/build_n11_iteration_12_final_closeout_and_handoff.py](experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/build_n11_iteration_12_final_closeout_and_handoff.py), [experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json](experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json) | Unbounded agency or hidden-steering-free native general intelligence. |
 | N12-N19 close the artifact-level agency-prerequisite and native-readiness review stack, with AP4/AP5 NAT4 gaps still blocking full native ladder generation. | [experiments/README.md](experiments/README.md), [experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md](experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md), [experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md](experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md), [experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json](experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json), [experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md](experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md) | Full AP3-AP8 native ladder generation, agency, native support, Phase 8 implementation, identity acceptance, or unrestricted autonomy. |
-| N20-N28 close the current becoming-primitive arc through scoped BF5 high-margin core / sub-basin formation, Phase 8 MB6 validation, bounded PD6 proxy divergence / proxy collapse, bounded CT6 configuration/topology transfer, and bounded GE6 generative/extractive persistence with an N29 handoff. | [experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md](experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md), [experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md](experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md), [experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md](experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md), [experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md](experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md), [experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md](experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md), [experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md](experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md), [experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md](experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md), [experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md](experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md), [experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md](experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md), [experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md](experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md), [experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md](experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md), [experiments/2026-06-N27-lgrc-configuration-substrate-transfer/README.md](experiments/2026-06-N27-lgrc-configuration-substrate-transfer/README.md), [experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md](experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md), [implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md](implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md) | Broad margin robustness, order-of-magnitude robustness, N26-ready unscoped multi-basin substrate evidence, BF6 as general native multi-basin formation, native AP5, AP4/AP5 NAT4-gap resolution, native support, semantic learning, semantic choice, agency, sentience, ant ecology implementation, Phase 8 completion, or unrestricted autonomy. |
+| N20-N29 close the becoming-primitive and ecology-bridge arc: N20 defines producer/debt contracts; N21-N28 close bounded primitive evidence through GE6; N29 closes at EB6/N29-C6 with a prototype atlas, bridge composition map, and first ecology probe contracts. | [experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md](experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md), [experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md](experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md), [experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md](experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md), [experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md](experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md), [experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md](experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md), [experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md](experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md), [experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md](experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md), [experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md](experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md), [experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md](experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md), [experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md](experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md), [experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md](experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md), [experiments/2026-06-N27-lgrc-configuration-substrate-transfer/README.md](experiments/2026-06-N27-lgrc-configuration-substrate-transfer/README.md), [experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md](experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md), [experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/README.md](experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/README.md), [experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_closeout_and_ecology_handoff_i18.json](experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_closeout_and_ecology_handoff_i18.json), [experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/reports/n29_closeout_and_ecology_handoff_i18.md](experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/reports/n29_closeout_and_ecology_handoff_i18.md), [implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md](implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md) | Executed ecology runtime, native ant/colony agency, biological agency, organism/life, resource economy, cooperation/exploitation, native shared-medium coordination, native support, semantic learning/choice/goals, AP4/AP5 NAT4-gap resolution, Phase 8 completion, or unrestricted autonomy. |
 
 To reproduce the quickstart visual, run:
 

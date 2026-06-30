@@ -1,0 +1,407 @@
+{
+  "acceptance_state": "accepted_complete_prototype_d_synthesis_ready_for_i15",
+  "artifact_id": "n29_prototype_d_complete_synthesis_i14y",
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14x_native_motif_layer_supported",
+      "passed": true
+    },
+    {
+      "check_id": "native_composition_blockers_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "producer_composition_replay_stress_supported",
+      "passed": true
+    },
+    {
+      "check_id": "aggregate_leakage_margin_carried_forward",
+      "passed": true
+    },
+    {
+      "check_id": "row_roles_cover_core_tranche",
+      "passed": true
+    },
+    {
+      "check_id": "naturalization_targets_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "final_atlas_classification_still_pending",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_15",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_aggregate_shared_medium_leakage_supported": false,
+    "native_ecology_claim_allowed": false,
+    "native_multi_role_ecology_supported": false,
+    "resource_economy_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "literal_perpetual_runtime_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "complete Prototype D bridge synthesis with native/source-current motif layer and replay/stress-backed producer-mediated composition bridge catalogue; not native ecology, resource economy, cooperation, exploitation, agency, or final atlas classification",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_d_complete_synthesis_i14y.py",
+  "complete_prototype_d_synthesis_supported": true,
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_d_complete_synthesis_i14y.py",
+  "iteration": "I14Y",
+  "native_composition_layer": {
+    "blocking_sources": [
+      "I14.4-2 native reverse search",
+      "I14.4-3 native directed-cycle search",
+      "I14.5/I14.5-1/I14.5-2 native phase support flags",
+      "I14.6/I14.6-2 native multi-role and aggregate leakage flags"
+    ],
+    "native_aggregate_shared_medium_leakage_supported": false,
+    "native_closed_environmental_circulation_supported": false,
+    "native_directed_cycle_found": false,
+    "native_multi_role_ecology_supported": false,
+    "native_phase_coupled_exchange_supported": false,
+    "native_reverse_opposite_orientation_leg_found": false,
+    "status": "blocked"
+  },
+  "native_motif_layer": {
+    "claim_ceiling": "native/source-current motif runtime evidence with extractor caveat; not native closed composition",
+    "clean_native_extractor_supported": false,
+    "clean_producer_mediated_extractor_supported": true,
+    "direct_replay_stress_backed_count": 3,
+    "direct_runtime_candidate_count": 3,
+    "native_source_current_motifs": [
+      "I14.1 generative enrichment",
+      "I14.2 extractive depletion with leakage caveat",
+      "I14.3 processor / redistribution",
+      "I14.4 single-direction neutral-circulation leg"
+    ],
+    "source": "I14X pre-composition synthesis",
+    "status": "supported"
+  },
+  "naturalization_targets": [
+    {
+      "current_status": "blocked_by_I14.4-2_and_I14.4-3",
+      "needed_for": "native closed circulation / native directed cycle",
+      "target_id": "native_ordered_multi_leg_dependency"
+    },
+    {
+      "current_status": "producer_mediated_in_I14.5-1_and_I14.5-2",
+      "needed_for": "native generator/extractor feedback and buffered feedback",
+      "target_id": "native_changed_medium_handoff_between_motifs"
+    },
+    {
+      "current_status": "producer_mediated_guard_in_I14.6-2",
+      "needed_for": "native multi-role ecology / aggregate shared-medium leakage",
+      "target_id": "native_multi_leg_leakage_aggregation"
+    },
+    {
+      "current_status": "producer_mediated_in_I14.2-3; native I14.2 and I14.2-2 retain caveat",
+      "needed_for": "native clean extractor lane",
+      "target_id": "native_clean_extractor_without_leakage_gate"
+    }
+  ],
+  "output_digest": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be",
+  "producer_composition_layer": {
+    "aggregate_leakage_ceiling": 0.04,
+    "aggregate_leakage_margin": 0.0104,
+    "bridge_candidates": [
+      "i14_4_1_producer_reverse_loop_bridge",
+      "i14_4_4_producer_directed_cycle_bridge",
+      "i14_5_1_generator_extractor_feedback_bridge",
+      "i14_5_2_buffered_feedback_bridge",
+      "i14_6_multi_role_phase_loop",
+      "i14_6_2_wider_aggregate_leakage"
+    ],
+    "candidate_count": 6,
+    "claim_ceiling": "replay/stress-backed producer-mediated Prototype D composition bridge catalogue; not native ecology or resource economy",
+    "context_or_blocker_rows": [
+      "i14_4_single_direction_neutral_circulation",
+      "i14_4_2_native_reverse_search_blocker",
+      "i14_4_3_native_directed_cycle_blocker",
+      "i14_5_generator_extractor_one_way_bridge",
+      "i14_6_1_narrow_aggregate_leakage"
+    ],
+    "control_gate": "accepted_loop_composition_controls_fail_closed_ready_for_i14e",
+    "failed_replay_count": 0,
+    "failed_stress_count": 0,
+    "producer_guard_capture_remains_debt": true,
+    "replay_count": 24,
+    "replay_stress_gate": "accepted_loop_composition_replay_stress_producer_bridge_catalogue_ready_for_i15",
+    "stable_candidate_count": 6,
+    "status": "replay_stress_backed_bridge_catalogue_supported",
+    "stress_count": 39
+  },
+  "prototype_d_final_atlas_classification_allowed": false,
+  "prototype_d_native_composition_layer_supported": false,
+  "prototype_d_native_motif_layer_supported": true,
+  "prototype_d_producer_mediated_composition_bridge_supported": true,
+  "prototype_family": "generative_extractive_medium_reshaping_and_composition",
+  "ready_for_iteration_15": true,
+  "report_sha256": "bb973713f24e64d4c0a66e9545033b4685c6d0aa14e00f670628e061f37c8bc4",
+  "row_roles": [
+    {
+      "output_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475",
+      "role": "pre-composition native motif and extractor-side synthesis",
+      "row_id": "I14X",
+      "status": "consumed"
+    },
+    {
+      "output_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+      "role": "native/source-current single-direction neutral-circulation leg",
+      "row_id": "I14.4",
+      "status": "context_supported_closed_loop_blocked"
+    },
+    {
+      "output_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+      "role": "producer-mediated reverse-loop bridge candidate",
+      "row_id": "I14.4-1",
+      "status": "replay_stress_backed_via_i14e"
+    },
+    {
+      "output_digest": "4af80144e3bf4b416953592b50904b0fbb47699d9d8425aa9562791b7a5595c4",
+      "role": "native reverse-leg blocker",
+      "row_id": "I14.4-2",
+      "status": "blocker_preserved"
+    },
+    {
+      "output_digest": "6c0ef71941c7e5ccf4ca39702cb1956a32aaf772cffb7bd04181cdb70af24eee",
+      "role": "native directed-cycle blocker",
+      "row_id": "I14.4-3",
+      "status": "blocker_preserved"
+    },
+    {
+      "output_digest": "44fe1547a6abd4313dc4ffff1da3f351e82f73c8f74ac569bce024b517ba45d8",
+      "role": "producer-mediated all-forward directed-cycle bridge",
+      "row_id": "I14.4-4",
+      "status": "replay_stress_backed_via_i14e"
+    },
+    {
+      "output_digest": "85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d",
+      "role": "one-way generator/extractor bridge context",
+      "row_id": "I14.5",
+      "status": "context_supported_stronger_loop_claim_blocked"
+    },
+    {
+      "output_digest": "61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486",
+      "role": "producer-mediated generator/extractor feedback bridge",
+      "row_id": "I14.5-1",
+      "status": "replay_stress_backed_via_i14e"
+    },
+    {
+      "output_digest": "16b51f3750e1f10056573666a60b9762df763aa77d30ff8d7776eb24cbc2d9b7",
+      "role": "producer-mediated buffered feedback bridge",
+      "row_id": "I14.5-2",
+      "status": "replay_stress_backed_via_i14e"
+    },
+    {
+      "output_digest": "32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b",
+      "role": "producer-mediated multi-role phase-loop candidate",
+      "row_id": "I14.6",
+      "status": "replay_stress_backed_via_i14e"
+    },
+    {
+      "output_digest": "51c409081b93492d3f4991f5a7ca7353cb10bd29e0a95aad02552339974ade26",
+      "role": "narrow aggregate leakage baseline",
+      "row_id": "I14.6-1",
+      "status": "baseline_context_superseded_by_i14_6_2_for_margin"
+    },
+    {
+      "output_digest": "57c86cb4776a71a246d7e72aea0c73b60beff0f27066aa5ba3d298ff1c2f4686",
+      "role": "wider-margin producer-mediated aggregate leakage candidate",
+      "row_id": "I14.6-2",
+      "status": "replay_stress_backed_via_i14e"
+    },
+    {
+      "output_digest": "afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2",
+      "role": "loop/composition controls",
+      "row_id": "I14-D",
+      "status": "passed"
+    },
+    {
+      "output_digest": "3cdaf38779178b996f1f286e886463e0edd4e4ecd201df87b35e7b63dc2872b4",
+      "role": "loop/composition replay and stress",
+      "row_id": "I14-E",
+      "status": "passed"
+    }
+  ],
+  "script_sha256": "079e1ff5ca215f37366f11d7a1035e478151e20147974a1c6bac5b63a86e5996",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_i14x_pre_composition_index_ready_for_i14_4_i14_5",
+      "artifact_id": "n29_generative_extractive_medium_reshaping_synthesis_i14x",
+      "iteration": "I14*",
+      "output_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_medium_reshaping_synthesis_i14x.json",
+      "sha256": "db4398c5c74a5cce654857b51e500edf0ebf9af1d4b9702b9e69903a57d4cf24",
+      "source_id": "i14x_pre_composition_synthesis",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_single_direction_neutral_circulation_leg_closed_loop_blocked",
+      "artifact_id": "n29_neutral_circulation_composition_i144",
+      "iteration": "I14.4",
+      "output_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_composition_i144.json",
+      "sha256": "d3143def269793276d62f616deeda76ce49cbe202c6f46bbd4191d533ee8cc45",
+      "source_id": "i14_4_single_direction_neutral_circulation",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_neutral_circulation_loop_closure_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_neutral_circulation_loop_closure_i1441",
+      "iteration": "I14.4-1",
+      "output_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_loop_closure_i1441.json",
+      "sha256": "b0870f6acd015a52781d903c491649b0214db539d04bc66780bea3963884fb13",
+      "source_id": "i14_4_1_producer_reverse_loop_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_only_reverse_leg_absent_closed_loop_blocked",
+      "artifact_id": "n29_neutral_circulation_native_search_i1442",
+      "iteration": "I14.4-2",
+      "output_digest": "4af80144e3bf4b416953592b50904b0fbb47699d9d8425aa9562791b7a5595c4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_native_search_i1442.json",
+      "sha256": "459dce385be55f26ac0863ef177d9dd589ff484c65a69d310701aef790fc915d",
+      "source_id": "i14_4_2_native_reverse_search_blocker",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_directed_cycle_absent_broader_loop_definition_recorded",
+      "artifact_id": "n29_neutral_circulation_directed_cycle_i1443",
+      "iteration": "I14.4-3",
+      "output_digest": "6c0ef71941c7e5ccf4ca39702cb1956a32aaf772cffb7bd04181cdb70af24eee",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_directed_cycle_i1443.json",
+      "sha256": "d3eb8aef0a333c40c6b2fc739dc6605c754bafa1c36abf82039c37e7ce2fb745",
+      "source_id": "i14_4_3_native_directed_cycle_blocker",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_directed_cycle_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_neutral_circulation_directed_cycle_bridge_i1444",
+      "iteration": "I14.4-4",
+      "output_digest": "44fe1547a6abd4313dc4ffff1da3f351e82f73c8f74ac569bce024b517ba45d8",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_directed_cycle_bridge_i1444.json",
+      "sha256": "c38905f6135b74ca30a4bcf325c3e26ec427ffe28913f0ed05c6d338854676dc",
+      "source_id": "i14_4_4_producer_directed_cycle_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_phase_coupled_generator_extractor_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_phase_coupled_generator_extractor_i145",
+      "iteration": "I14.5",
+      "output_digest": "85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_phase_coupled_generator_extractor_i145.json",
+      "sha256": "2b3e6a7f02cd1cbea1bc6841f690c9e8a82f8af097aef1a9ff05ac463626509f",
+      "source_id": "i14_5_generator_extractor_one_way_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_generator_extractor_feedback_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_generator_extractor_feedback_i1451",
+      "iteration": "I14.5-1",
+      "output_digest": "61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generator_extractor_feedback_i1451.json",
+      "sha256": "e12047ec50a99b4c485357b78963730136e6bfe9e683aea555b0a50c33537dc2",
+      "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_buffered_generator_extractor_feedback_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_buffered_generator_extractor_feedback_i1452",
+      "iteration": "I14.5-2",
+      "output_digest": "16b51f3750e1f10056573666a60b9762df763aa77d30ff8d7776eb24cbc2d9b7",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_buffered_generator_extractor_feedback_i1452.json",
+      "sha256": "1de839c455798a855c276ed3cfc54286a27a8babed24f56b5399647ecc9d92ad",
+      "source_id": "i14_5_2_buffered_feedback_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_role_phase_loop_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_multi_role_phase_loop_i146",
+      "iteration": "I14.6",
+      "output_digest": "32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_role_phase_loop_i146.json",
+      "sha256": "265a0d4031e2849be4d1e471928483a26365990d8ed3d891404e175300a25d5c",
+      "source_id": "i14_6_multi_role_phase_loop",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_leg_leakage_aggregation_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_multi_leg_leakage_aggregation_i1461",
+      "iteration": "I14.6-1",
+      "output_digest": "51c409081b93492d3f4991f5a7ca7353cb10bd29e0a95aad02552339974ade26",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_leg_leakage_aggregation_i1461.json",
+      "sha256": "95f84f73d78fcb27344487b8e0daafe24ad1c7171c168dff516c7b4730f04656",
+      "source_id": "i14_6_1_narrow_aggregate_leakage",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_wider_margin_leakage_aggregation_bridge_variant_pending_i14d_i14e",
+      "artifact_id": "n29_wider_margin_leakage_aggregation_i1462",
+      "iteration": "I14.6-2",
+      "output_digest": "57c86cb4776a71a246d7e72aea0c73b60beff0f27066aa5ba3d298ff1c2f4686",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_wider_margin_leakage_aggregation_i1462.json",
+      "sha256": "c4cf63ab0d62e952ab48e8fd4235b34e205b94d1408dd1d5349dbebdf5da5af4",
+      "source_id": "i14_6_2_wider_aggregate_leakage",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_loop_composition_controls_fail_closed_ready_for_i14e",
+      "artifact_id": "n29_loop_composition_controls_i14d",
+      "iteration": "I14-D",
+      "output_digest": "afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_loop_composition_controls_i14d.json",
+      "sha256": "006a66f1999a00f8032cd9bfee9b839eaa5484f8965be321a148c0e4dcc6b273",
+      "source_id": "i14d_loop_composition_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_loop_composition_replay_stress_producer_bridge_catalogue_ready_for_i15",
+      "artifact_id": "n29_loop_composition_replay_stress_i14e",
+      "iteration": "I14-E",
+      "output_digest": "3cdaf38779178b996f1f286e886463e0edd4e4ecd201df87b35e7b63dc2872b4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_loop_composition_replay_stress_i14e.json",
+      "sha256": "c76f1337c110cbe408d41de3dff404acefb87218af7da3872747503d90d959a4",
+      "source_id": "i14e_loop_composition_replay_stress",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "synthesis_scope": "I14_through_I14_E",
+  "title": "Prototype D Complete Synthesis"
+}

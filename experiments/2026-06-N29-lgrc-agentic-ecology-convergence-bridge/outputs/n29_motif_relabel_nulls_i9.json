@@ -1,0 +1,3096 @@
+{
+  "acceptance_state": "accepted_phase_b_controls_fail_closed_ready_for_phase_c",
+  "artifact_id": "n29_motif_relabel_nulls_i9",
+  "biological_agency_opened": false,
+  "bridge_motif_success_claimed": false,
+  "checks": [
+    {
+      "check_id": "i4_bridge_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i7_coverage_matrix_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i8_bridge_motif_library_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i7_coverage_matrix_digest_matches",
+      "passed": true
+    },
+    {
+      "check_id": "i8_motif_library_digest_matches",
+      "passed": true
+    },
+    {
+      "check_id": "i4_control_policy_digest_matches",
+      "passed": true
+    },
+    {
+      "check_id": "all_control_rows_fail_closed",
+      "passed": true
+    },
+    {
+      "check_id": "all_null_rows_fail_closed",
+      "passed": true
+    },
+    {
+      "check_id": "no_failed_open_rows",
+      "passed": true
+    },
+    {
+      "check_id": "null_failed_open_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "all_nulls_have_source_rows",
+      "passed": true
+    },
+    {
+      "check_id": "all_nulls_have_attempted_relabel",
+      "passed": true
+    },
+    {
+      "check_id": "all_nulls_have_expected_status_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "all_nulls_have_failure_if_accepted_flag",
+      "passed": true
+    },
+    {
+      "check_id": "all_nulls_have_near_positive_control",
+      "passed": true
+    },
+    {
+      "check_id": "near_positive_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_schema_negative_fixtures_consumed",
+      "passed": true
+    },
+    {
+      "check_id": "every_i8_motif_has_control_rows",
+      "passed": true
+    },
+    {
+      "check_id": "composition_controls_present",
+      "passed": true
+    },
+    {
+      "check_id": "motif_success_relabels_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "debt_as_native_relabels_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_null_families_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_motif_families_have_relabel_null_coverage",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_composition_controls_have_nulls",
+      "passed": true
+    },
+    {
+      "check_id": "all_global_blocked_claims_covered",
+      "passed": true
+    },
+    {
+      "check_id": "producer_residue_relabels_covered",
+      "passed": true
+    },
+    {
+      "check_id": "medium_debt_relabels_covered",
+      "passed": true
+    },
+    {
+      "check_id": "naturalization_debt_relabels_covered",
+      "passed": true
+    },
+    {
+      "check_id": "review_gate_bypass_nulls_present",
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_nat4_gap_erasure_nulls_present",
+      "passed": true
+    },
+    {
+      "check_id": "null_adequacy_table_passed",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_and_runtime_probe_rows_remain_closed",
+      "passed": true
+    },
+    {
+      "check_id": "phase_b_closed_phase_c_not_opened",
+      "passed": true
+    },
+    {
+      "check_id": "native_ecology_and_agency_claims_closed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_10",
+      "passed": true
+    }
+  ],
+  "claim_boundary_audit": {
+    "biological_agency_opened": false,
+    "consciousness_opened": false,
+    "fully_native_ecology_opened": false,
+    "native_agency_claim_opened": false,
+    "native_ant_agency_opened": false,
+    "native_colony_agency_opened": false,
+    "native_shared_medium_coordination_opened": false,
+    "organism_life_opened": false,
+    "phase8_completion_opened": false,
+    "prototype_as_native_ecology_opened": false,
+    "semantic_choice_claim_opened": false,
+    "semantic_cooperation_claim_opened": false,
+    "semantic_goal_claim_opened": false,
+    "semantic_intention_claim_opened": false,
+    "sentience_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "claim_ceiling": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_motif_relabel_nulls_i9.py",
+  "control_family_index": {
+    "ap_gap_control": [
+      "I9.SCHEMA.ap4_ap5_gap_hidden_by_ecology_language"
+    ],
+    "composition_control": [
+      "I9.SCHEMA.composition_row_hides_component_order",
+      "I9.COMPOSITION.ordered_composition_required",
+      "I9.COMPOSITION.report_only_or_label_only_composition_rejected"
+    ],
+    "debt_as_native_relabel_control": [
+      "I9.MOTIF.trace_pressure_loop.debt_as_native_relabel",
+      "I9.MOTIF.reserve_optionality_formation.debt_as_native_relabel",
+      "I9.MOTIF.boundary_shared_medium_unit.debt_as_native_relabel",
+      "I9.MOTIF.proxy_susceptibility_reentry.debt_as_native_relabel",
+      "I9.MOTIF.transfer_replay_role_relocation.debt_as_native_relabel",
+      "I9.MOTIF.generative_extractive_medium_reshaping.debt_as_native_relabel",
+      "I9.MOTIF.composition.debt_as_native_relabel"
+    ],
+    "medium_debt_control": [
+      "I9.SCHEMA.medium_debt_row_claims_native_shared_medium_coordination"
+    ],
+    "motif_control": [
+      "I9.SCHEMA.bridge_motif_missing_controls"
+    ],
+    "motif_required_control_presence": [
+      "I9.MOTIF.trace_pressure_loop.required_controls_present",
+      "I9.MOTIF.reserve_optionality_formation.required_controls_present",
+      "I9.MOTIF.boundary_shared_medium_unit.required_controls_present",
+      "I9.MOTIF.proxy_susceptibility_reentry.required_controls_present",
+      "I9.MOTIF.transfer_replay_role_relocation.required_controls_present",
+      "I9.MOTIF.generative_extractive_medium_reshaping.required_controls_present",
+      "I9.MOTIF.composition.required_controls_present"
+    ],
+    "motif_success_relabel_control": [
+      "I9.MOTIF.trace_pressure_loop.motif_success_relabel",
+      "I9.MOTIF.reserve_optionality_formation.motif_success_relabel",
+      "I9.MOTIF.boundary_shared_medium_unit.motif_success_relabel",
+      "I9.MOTIF.proxy_susceptibility_reentry.motif_success_relabel",
+      "I9.MOTIF.transfer_replay_role_relocation.motif_success_relabel",
+      "I9.MOTIF.generative_extractive_medium_reshaping.motif_success_relabel",
+      "I9.MOTIF.composition.motif_success_relabel"
+    ],
+    "native_readiness_control": [
+      "I9.SCHEMA.producer_mediated_row_claims_native_ready_surface"
+    ],
+    "prototype_relabel_control": [
+      "I9.SCHEMA.prototype_as_native_ecology"
+    ],
+    "review_gate_control": [
+      "I9.SCHEMA.missing_n12_or_n19_review_gate_for_gated_source"
+    ],
+    "source_of_truth_control": [
+      "I9.SCHEMA.coverage_row_uses_capability_card_as_runtime_evidence"
+    ],
+    "unsafe_ecology_relabel_control": [
+      "I9.SCHEMA.n28_generative_relabelled_as_cooperation"
+    ],
+    "visual_relabel_control": [
+      "I9.SCHEMA.visual_diagnostic_only_row_claims_source_backed"
+    ]
+  },
+  "control_rows": [
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "coverage row cites only I3 capability card for source_backed claim",
+      "blocked_by": "capability_card_used_as_runtime_evidence",
+      "claim_allowed": false,
+      "control_family": "source_of_truth_control",
+      "control_id": "I9.SCHEMA.coverage_row_uses_capability_card_as_runtime_evidence",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "coverage_row_uses_capability_card_as_runtime_evidence",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "producer-mediated row claims native_ready_surface without native gate",
+      "blocked_by": "producer_residue_as_native_ready_surface",
+      "claim_allowed": false,
+      "control_family": "native_readiness_control",
+      "control_id": "I9.SCHEMA.producer_mediated_row_claims_native_ready_surface",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "producer_mediated_row_claims_native_ready_surface",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "medium debt is relabeled as native shared-medium coordination",
+      "blocked_by": "medium_debt_hidden_as_native_relation_control",
+      "claim_allowed": false,
+      "control_family": "medium_debt_control",
+      "control_id": "I9.SCHEMA.medium_debt_row_claims_native_shared_medium_coordination",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "medium_debt_row_claims_native_shared_medium_coordination",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "visual-only row uses source_backed claim ceiling",
+      "blocked_by": "visual_only_as_evidence_control",
+      "claim_allowed": false,
+      "control_family": "visual_relabel_control",
+      "control_id": "I9.SCHEMA.visual_diagnostic_only_row_claims_source_backed",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "visual_diagnostic_only_row_claims_source_backed",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "bridge motif omits required relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_control",
+      "control_id": "I9.SCHEMA.bridge_motif_missing_controls",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "bridge_motif_missing_controls",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "composition row omits ordered composition or hides order inversion risk",
+      "blocked_by": "component_order_inversion_control",
+      "claim_allowed": false,
+      "control_family": "composition_control",
+      "control_id": "I9.SCHEMA.composition_row_hides_component_order",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "composition_row_hides_component_order",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "N28 generative pattern is relabeled as cooperation or altruism",
+      "blocked_by": "semantic_cooperation_claim_opened",
+      "claim_allowed": false,
+      "control_family": "unsafe_ecology_relabel_control",
+      "control_id": "I9.SCHEMA.n28_generative_relabelled_as_cooperation",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "n28_generative_relabelled_as_cooperation",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "prototype row claims native ecology behavior",
+      "blocked_by": "prototype_as_native_ecology_opened",
+      "claim_allowed": false,
+      "control_family": "prototype_relabel_control",
+      "control_id": "I9.SCHEMA.prototype_as_native_ecology",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "prototype_as_native_ecology",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "N05-N11 or N13-N18 source row omits N12/N19 gate",
+      "blocked_by": "review_gate_omitted_for_gated_source",
+      "claim_allowed": false,
+      "control_family": "review_gate_control",
+      "control_id": "I9.SCHEMA.missing_n12_or_n19_review_gate_for_gated_source",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "missing_n12_or_n19_review_gate_for_gated_source",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "Phase_B_to_Phase_C_boundary",
+      "bad_condition": "AP4/AP5 native-readiness gaps are hidden by ecology vocabulary",
+      "blocked_by": "claim_ceiling_missing_or_raised_without_source",
+      "claim_allowed": false,
+      "control_family": "ap_gap_control",
+      "control_id": "I9.SCHEMA.ap4_ap5_gap_hidden_by_ecology_language",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "source_fixture_id": "ap4_ap5_gap_hidden_by_ecology_language",
+      "why_it_matters": "The I4 negative fixture remains active at I9, so this false-positive path cannot be used to promote motifs into prototypes or native ecology."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.trace_pressure_loop.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "trace_pressure_loop",
+      "motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.trace_pressure_loop.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "trace_pressure_loop",
+      "motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.trace_pressure_loop.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology pressure medium by itself",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "no ecology parent basin or colony medium by itself",
+        "does not define ecology medium",
+        "no shared ecology medium; local circuit only",
+        "no shared ecology or colony surface by itself",
+        "no ecology shared medium by itself",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "does not by itself provide shared-medium coordination",
+        "no ecology role or shared medium by itself",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology reward or resource medium by itself"
+      ],
+      "motif_family": "trace_pressure_loop",
+      "motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "naturalization_debt": [
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "broad margin robustness and ecology composition deferred",
+        "identity acceptance, selfhood, and native support blocked",
+        "native support-generation not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "native integrated agentic-like behavior not established",
+        "semantic choice and native route selection blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "native learning and source mutation remain blocked",
+        "unscoped ecology/ant use remains blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "producer_residue": [
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "declared target/proxy surfaces may remain producer-defined",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "identity classification remains artifact-mediated",
+        "support thresholds and response policies remain artifact-mediated",
+        "route coupling and memory policy not supplied by N05 itself",
+        "composition ledger and some policy surfaces remain explicit",
+        "branch fixtures and collapse probes remain artifact-scoped",
+        "producer flux conditioning marks missing native mechanism",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "carrier/producers remain visible and load-bearing",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "proxy surfaces and perturbation regimes remain declared/audited"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.reserve_optionality_formation.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "reserve_optionality_formation",
+      "motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.reserve_optionality_formation.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "reserve_optionality_formation",
+      "motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "prototype_candidate": "source_backed_reconstruction_candidate",
+      "runtime_or_reconstruction_status": "source_backed_reconstruction",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.reserve_optionality_formation.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "no ecology reward or resource medium by itself",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology-wide medium or role surface by itself"
+      ],
+      "motif_family": "reserve_optionality_formation",
+      "motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "naturalization_debt": [
+        "native AP5 proxy formation remains blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "unscoped ecology/ant use remains blocked",
+        "fully native general integration blocked"
+      ],
+      "producer_residue": [
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "producer flux conditioning marks missing native mechanism",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "generalization remains artifact-level and policy-mediated"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.boundary_shared_medium_unit.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "boundary_shared_medium_unit",
+      "motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.boundary_shared_medium_unit.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "boundary_shared_medium_unit",
+      "motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.boundary_shared_medium_unit.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology parent basin or colony medium by itself",
+        "shared-medium separability candidate, not ecology coordination",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "shared-medium evidence remains narrow and bottleneck-aware",
+        "paired-perspective shared medium remains bounded and scoped",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "abundance not yet ecology medium or reproduction",
+        "no ecology-wide medium or role surface by itself",
+        "no shared ecology or colony surface by itself",
+        "records medium-related debt for later primitives",
+        "defines shared child-basin substrate requirements, not evidence",
+        "not a shared-medium evidence source",
+        "no ecology medium evidence by itself",
+        "no shared ecology medium by itself",
+        "does not create ecology role relocation by itself",
+        "no ecology reward or resource medium by itself"
+      ],
+      "motif_family": "boundary_shared_medium_unit",
+      "motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "naturalization_debt": [
+        "unscoped ecology/ant use remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "general long-horizon native closure blocked",
+        "semantic action/perception and native agency blocked",
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "defines debt; does not resolve it",
+        "runtime validation deferred to Phase 8 and N25.2",
+        "native absorption candidates require later implementation validation",
+        "AP4/AP5 native evidence gaps propagate to dependent rows",
+        "ND6 durable source mutation deferred to N22 bridge",
+        "cross-substrate generality and semantic role transfer blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "producer_residue": [
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "identity classification remains artifact-mediated",
+        "boundary classification remains artifact/control mediated",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "validation telemetry does not become native implementation",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "producer flux conditioning marks missing native mechanism",
+        "generalization remains artifact-level and policy-mediated",
+        "composition ledger and some policy surfaces remain explicit",
+        "explicit ledger of producer-mediated fields and naturalization debt",
+        "records what must not be backfilled by labels or producers",
+        "records which older surfaces remain producer scaffolds",
+        "records AP-stack implementation gaps and scaffolds",
+        "declared supports and probes remain audited surfaces",
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "proxy surfaces and perturbation regimes remain declared/audited"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.proxy_susceptibility_reentry.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "proxy_susceptibility_reentry",
+      "motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.proxy_susceptibility_reentry.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "proxy_susceptibility_reentry",
+      "motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.proxy_susceptibility_reentry.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "not yet shared ecology pheromone medium",
+        "no shared ecology or colony surface by itself",
+        "no shared ecology medium; local circuit only",
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology role or shared medium by itself",
+        "no ecology medium by itself",
+        "no ecology reward or resource medium by itself",
+        "no ecology parent basin or colony medium by itself",
+        "shared-medium evidence remains narrow and bottleneck-aware",
+        "does not by itself provide shared-medium coordination",
+        "no shared ecology medium by itself",
+        "does not create ecology role relocation by itself",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "no ecology shared medium by itself"
+      ],
+      "motif_family": "proxy_susceptibility_reentry",
+      "motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "naturalization_debt": [
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native integrated agentic-like behavior not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic action/perception and native agency blocked",
+        "native learning and source mutation remain blocked",
+        "native proxy formation remains unresolved",
+        "native AP5 proxy formation remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "general long-horizon native closure blocked",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "cross-substrate generality and semantic role transfer blocked",
+        "broad margin robustness and ecology composition deferred",
+        "semantic choice and native route selection blocked"
+      ],
+      "producer_residue": [
+        "memory_strength-like surfaces may be producer or policy scaffolds",
+        "composition ledger and some policy surfaces remain explicit",
+        "route coupling and memory policy not supplied by N05 itself",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "carrier/producers remain visible and load-bearing",
+        "derivation policy and context weights remain frozen artifact policy",
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "identity classification remains artifact-mediated",
+        "validation telemetry does not become native implementation",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "route consequence derivation and followout remain constructed in places",
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "branch fixtures and collapse probes remain artifact-scoped"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.transfer_replay_role_relocation.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "transfer_replay_role_relocation",
+      "motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.transfer_replay_role_relocation.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "transfer_replay_role_relocation",
+      "motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.transfer_replay_role_relocation.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "does not create ecology role relocation by itself",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "shared-medium separability candidate, not ecology coordination",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "does not by itself provide shared-medium coordination",
+        "no shared ecology medium by itself",
+        "not yet shared ecology pheromone medium",
+        "no ecology role or shared medium by itself",
+        "no ecology reward or resource medium by itself",
+        "no shared ecology medium; local circuit only",
+        "no ecology shared medium by itself"
+      ],
+      "motif_family": "transfer_replay_role_relocation",
+      "motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "naturalization_debt": [
+        "cross-substrate generality and semantic role transfer blocked",
+        "unscoped ecology/ant use remains blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native learning and source mutation remain blocked",
+        "native AP5 proxy formation remains blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked"
+      ],
+      "producer_residue": [
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "boundary classification remains artifact/control mediated",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "route consequence derivation and followout remain constructed in places",
+        "memory_strength-like surfaces may be producer or policy scaffolds",
+        "carrier/producers remain visible and load-bearing",
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "route coupling and memory policy not supplied by N05 itself",
+        "branch fixtures and collapse probes remain artifact-scoped"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.generative_extractive_medium_reshaping.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.generative_extractive_medium_reshaping.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "prototype_candidate": "mapping_only_candidate",
+      "runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.generative_extractive_medium_reshaping.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology pressure medium by itself",
+        "no ecology parent basin or colony medium by itself",
+        "no shared ecology medium; local circuit only",
+        "no ecology shared medium by itself",
+        "no ecology-wide medium or role surface by itself",
+        "no shared ecology or colony surface by itself",
+        "no shared ecology medium by itself",
+        "does not by itself provide shared-medium coordination",
+        "not yet shared ecology pheromone medium"
+      ],
+      "motif_family": "generative_extractive_medium_reshaping",
+      "motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "naturalization_debt": [
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "unscoped ecology/ant use remains blocked",
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "identity acceptance, selfhood, and native support blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "AP4 native route-conditioned selection remains unresolved",
+        "semantic choice and native selection ownership blocked",
+        "pure coherence/flux pheromone-like memory requires later native validation"
+      ],
+      "producer_residue": [
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "producer flux conditioning marks missing native mechanism",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "declared target/proxy surfaces may remain producer-defined",
+        "identity classification remains artifact-mediated",
+        "route coupling and memory policy not supplied by N05 itself",
+        "branch fixtures and collapse probes remain artifact-scoped",
+        "generalization remains artifact-level and policy-mediated",
+        "composition ledger and some policy surfaces remain explicit",
+        "route consequence derivation and followout remain constructed in places",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "memory_strength-like surfaces may be producer or policy scaffolds"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif row omits one or more relabel/order/source controls",
+      "blocked_by": "missing_required_controls",
+      "claim_allowed": false,
+      "control_family": "motif_required_control_presence",
+      "control_id": "I9.MOTIF.composition.required_controls_present",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "composition",
+      "motif_id": "MOTIF.N29.COMPOSITION",
+      "observed_controls": [
+        "label_only_control",
+        "report_only_control",
+        "visual_only_as_evidence_control",
+        "hidden_producer_coupling_control",
+        "medium_debt_hidden_as_native_relation_control",
+        "component_order_inversion_control",
+        "missing_source_row_control",
+        "unsafe_ecology_relabel_control",
+        "review_gate_preservation_control",
+        "claim_ceiling_control"
+      ],
+      "required_controls_present": true,
+      "why_it_matters": "Motif definitions are only reusable if every motif carries relabel, source, medium-debt, producer, and order controls into Phase C."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "motif definition is relabeled as motif success or runtime ecology behavior",
+      "blocked_by": "bridge_motif_success_claimed",
+      "claim_allowed": false,
+      "control_family": "motif_success_relabel_control",
+      "control_id": "I9.MOTIF.composition.motif_success_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "composition",
+      "motif_id": "MOTIF.N29.COMPOSITION",
+      "prototype_candidate": "blocked",
+      "runtime_or_reconstruction_status": "mapping_only_no_runtime_surface",
+      "why_it_matters": "I8 creates reusable bridge shapes, not successful ecology runs. I10+ must admit prototypes before any runtime bridge evidence can be tested."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_motif_library_to_I10_prototype_admission",
+      "bad_condition": "producer residue, medium debt, or naturalization debt is relabeled as native ecology",
+      "blocked_by": "debt_hidden_as_native_ecology",
+      "claim_allowed": false,
+      "control_family": "debt_as_native_relabel_control",
+      "control_id": "I9.MOTIF.composition.debt_as_native_relabel",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "medium_debt": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "motif_family": "composition",
+      "motif_id": "MOTIF.N29.COMPOSITION",
+      "naturalization_debt": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "producer_residue": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "why_it_matters": "Debt-bearing motif definitions can guide prototypes, but cannot be read as native shared-medium coordination, native ant behavior, or agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_composition_motif_to_I15_composition_atlas",
+      "bad_condition": "composition relation lacks ordered components or hides order inversion risk",
+      "blocked_by": "component_order_inversion_control",
+      "claim_allowed": false,
+      "component_order_inversion_control": "required_before_any_runtime_or_prototype_claim",
+      "control_family": "composition_control",
+      "control_id": "I9.COMPOSITION.ordered_composition_required",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "composition",
+      "motif_id": "MOTIF.N29.COMPOSITION",
+      "ordered_composition_present": true,
+      "why_it_matters": "Composition is useful only as a declared order/phase relation. A later prototype must test order inversion before claiming composition behavior."
+    },
+    {
+      "actual_status": "failed_closed",
+      "affected_phase": "I8_composition_motif_to_I15_composition_atlas",
+      "bad_condition": "composition is assembled from labels or reports without source rows",
+      "blocked_by": "label_only_composition_control_and_report_only_control",
+      "claim_allowed": false,
+      "control_family": "composition_control",
+      "control_id": "I9.COMPOSITION.report_only_or_label_only_composition_rejected",
+      "dependent_claim_blocked": true,
+      "expected_status": "rejected",
+      "motif_family": "composition",
+      "motif_id": "MOTIF.N29.COMPOSITION",
+      "source_artifacts_consumed": [],
+      "why_it_matters": "I8 composition is mapping-only. It cannot become prototype evidence until source rows and composition controls are admitted in Phase C."
+    }
+  ],
+  "control_status_counts": {
+    "failed_closed": 33
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_motif_relabel_nulls_i9.py",
+  "global_blocked_claim_coverage": {
+    "biological_agency_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.SURPLUS_SUPPORTED_SPLIT_AS_REPRODUCTION.004",
+        "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.EXTRACTIVE_PATTERN_AS_EXPLOITATION_OR_BIOLOGICAL_AGENCY.012"
+      ]
+    },
+    "consciousness_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003"
+      ]
+    },
+    "fully_native_ecology_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003"
+      ]
+    },
+    "native_agency_claim_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.COPY_AS_IDENTITY_TRANSFER.009",
+        "NULL.N29.GLOBAL.MOTIF_DEFINITION_AS_NATIVE_ECOLOGY_SUCCESS.022",
+        "NULL.N29.GLOBAL.N12_N19_N20_REVIEW_GATE_BYPASS.024",
+        "NULL.N29.GLOBAL.NATURALIZATION_DEBT_AS_NATIVE_CAPACITY.026"
+      ]
+    },
+    "native_ant_agency_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.ROLE_RELOCATION_AS_SEMANTIC_ROLE_TRANSFER.010"
+      ]
+    },
+    "native_colony_agency_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.BOUNDED_UNIT_AS_COLONY_BODY.006",
+        "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.GENERATIVE_PATTERN_AS_COOPERATION_OR_ALTRUISM.011"
+      ]
+    },
+    "native_shared_medium_coordination_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.MESSAGE_SCAFFOLD_AS_NATIVE_SHARED_MEDIUM.005",
+        "NULL.N29.COMPOSITION.MEDIUM_DEBT_HIDDEN_AS_NATIVE_COMPOSITION_RELATION.018"
+      ]
+    },
+    "organism_life_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.SURPLUS_SUPPORTED_SPLIT_AS_REPRODUCTION.004",
+        "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.BOUNDED_UNIT_AS_COLONY_BODY.006",
+        "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.EXTRACTIVE_PATTERN_AS_EXPLOITATION_OR_BIOLOGICAL_AGENCY.012"
+      ]
+    },
+    "phase8_completion_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003"
+      ]
+    },
+    "prototype_as_native_ecology_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003"
+      ]
+    },
+    "semantic_choice_claim_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003",
+        "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.ROUTING_BIAS_AS_SEMANTIC_GOAL.008",
+        "NULL.N29.GLOBAL.AP4_AP5_NAT4_GAP_HIDDEN_BY_ECOLOGY_LANGUAGE.025"
+      ]
+    },
+    "semantic_cooperation_claim_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.GENERATIVE_PATTERN_AS_COOPERATION_OR_ALTRUISM.011"
+      ]
+    },
+    "semantic_goal_claim_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003",
+        "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.PROXY_IMPROVEMENT_AS_NATIVE_FUNCTION.007",
+        "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.ROUTING_BIAS_AS_SEMANTIC_GOAL.008"
+      ]
+    },
+    "semantic_intention_claim_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003"
+      ]
+    },
+    "sentience_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003"
+      ]
+    },
+    "unrestricted_autonomy_opened": {
+      "coverage_status": "direct_or_indirect",
+      "null_ids": [
+        "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.COPY_AS_IDENTITY_TRANSFER.009"
+      ]
+    }
+  },
+  "implementation_evidence_opened": false,
+  "iteration": "I9",
+  "native_agency_claim_opened": false,
+  "native_ant_agency_opened": false,
+  "native_colony_agency_opened": false,
+  "native_ecology_claim_opened": false,
+  "native_shared_medium_coordination_opened": false,
+  "near_positive_control_rows": [
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "trace_pressure_loop bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "trace_pressure_loop",
+      "near_positive_control_id": "NEARPOS.N29.TRACE_PRESSURE_LOOP.001",
+      "paired_null_id": "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+      "unsafe_relabel_blocked": "trace_as_pheromone_semantic_message",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "trace_pressure_loop bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "trace_pressure_loop",
+      "near_positive_control_id": "NEARPOS.N29.TRACE_PRESSURE_LOOP.002",
+      "paired_null_id": "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+      "unsafe_relabel_blocked": "loop_aftereffect_as_ant_route_behavior",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "reserve_optionality_formation bridge motif with source_backed_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "reserve_optionality_formation",
+      "near_positive_control_id": "NEARPOS.N29.RESERVE_OPTIONALITY_FORMATION.003",
+      "paired_null_id": "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003",
+      "unsafe_relabel_blocked": "optionality_as_goal_directed_choice",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "reserve_optionality_formation bridge motif with source_backed_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "reserve_optionality_formation",
+      "near_positive_control_id": "NEARPOS.N29.RESERVE_OPTIONALITY_FORMATION.004",
+      "paired_null_id": "NULL.N29.RESERVE_OPTIONALITY_FORMATION.SURPLUS_SUPPORTED_SPLIT_AS_REPRODUCTION.004",
+      "unsafe_relabel_blocked": "surplus_supported_split_as_reproduction",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "boundary_shared_medium_unit bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "boundary_shared_medium_unit",
+      "near_positive_control_id": "NEARPOS.N29.BOUNDARY_SHARED_MEDIUM_UNIT.005",
+      "paired_null_id": "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.MESSAGE_SCAFFOLD_AS_NATIVE_SHARED_MEDIUM.005",
+      "unsafe_relabel_blocked": "message_scaffold_as_native_shared_medium",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "boundary_shared_medium_unit bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "boundary_shared_medium_unit",
+      "near_positive_control_id": "NEARPOS.N29.BOUNDARY_SHARED_MEDIUM_UNIT.006",
+      "paired_null_id": "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.BOUNDED_UNIT_AS_COLONY_BODY.006",
+      "unsafe_relabel_blocked": "bounded_unit_as_colony_body",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "proxy_susceptibility_reentry bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "proxy_susceptibility_reentry",
+      "near_positive_control_id": "NEARPOS.N29.PROXY_SUSCEPTIBILITY_REENTRY.007",
+      "paired_null_id": "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.PROXY_IMPROVEMENT_AS_NATIVE_FUNCTION.007",
+      "unsafe_relabel_blocked": "proxy_improvement_as_native_function",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "proxy_susceptibility_reentry bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "proxy_susceptibility_reentry",
+      "near_positive_control_id": "NEARPOS.N29.PROXY_SUSCEPTIBILITY_REENTRY.008",
+      "paired_null_id": "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.ROUTING_BIAS_AS_SEMANTIC_GOAL.008",
+      "unsafe_relabel_blocked": "routing_bias_as_semantic_goal",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "transfer_replay_role_relocation bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "transfer_replay_role_relocation",
+      "near_positive_control_id": "NEARPOS.N29.TRANSFER_REPLAY_ROLE_RELOCATION.009",
+      "paired_null_id": "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.COPY_AS_IDENTITY_TRANSFER.009",
+      "unsafe_relabel_blocked": "copy_as_identity_transfer",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "transfer_replay_role_relocation bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "transfer_replay_role_relocation",
+      "near_positive_control_id": "NEARPOS.N29.TRANSFER_REPLAY_ROLE_RELOCATION.010",
+      "paired_null_id": "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.ROLE_RELOCATION_AS_SEMANTIC_ROLE_TRANSFER.010",
+      "unsafe_relabel_blocked": "role_relocation_as_semantic_role_transfer",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "generative_extractive_medium_reshaping bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "near_positive_control_id": "NEARPOS.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.011",
+      "paired_null_id": "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.GENERATIVE_PATTERN_AS_COOPERATION_OR_ALTRUISM.011",
+      "unsafe_relabel_blocked": "generative_pattern_as_cooperation_or_altruism",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "generative_extractive_medium_reshaping bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "near_positive_control_id": "NEARPOS.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.012",
+      "paired_null_id": "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.EXTRACTIVE_PATTERN_AS_EXPLOITATION_OR_BIOLOGICAL_AGENCY.012",
+      "unsafe_relabel_blocked": "extractive_pattern_as_exploitation_or_biological_agency",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.013",
+      "paired_null_id": "NULL.N29.COMPOSITION.LABEL_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.013",
+      "unsafe_relabel_blocked": "label_only_composition_as_bridge_behavior",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.014",
+      "paired_null_id": "NULL.N29.COMPOSITION.REPORT_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.014",
+      "unsafe_relabel_blocked": "report_only_composition_as_bridge_behavior",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.015",
+      "paired_null_id": "NULL.N29.COMPOSITION.HIDDEN_PRODUCER_COUPLING_AS_COMPOSITION.015",
+      "unsafe_relabel_blocked": "hidden_producer_coupling_as_composition",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.016",
+      "paired_null_id": "NULL.N29.COMPOSITION.COMPONENT_ORDER_INVERSION_HIDDEN.016",
+      "unsafe_relabel_blocked": "component_order_inversion_hidden",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.017",
+      "paired_null_id": "NULL.N29.COMPOSITION.MISSING_SOURCE_ROW_AS_COMPOSITION.017",
+      "unsafe_relabel_blocked": "missing_source_row_as_composition",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.018",
+      "paired_null_id": "NULL.N29.COMPOSITION.MEDIUM_DEBT_HIDDEN_AS_NATIVE_COMPOSITION_RELATION.018",
+      "unsafe_relabel_blocked": "medium_debt_hidden_as_native_composition_relation",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "claim_ceiling_preserved": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "passed_bounded",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.019",
+      "paired_null_id": "NULL.N29.COMPOSITION.COMPOSITION_MOTIF_AS_NATIVE_ECOLOGY_SUCCESS.019",
+      "unsafe_relabel_blocked": "composition_motif_as_native_ecology_success",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.020",
+      "paired_null_id": "NULL.N29.GLOBAL.VISUAL_OR_REPORT_AS_RUNTIME_EVIDENCE.020",
+      "unsafe_relabel_blocked": "visual_or_report_as_runtime_evidence",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.021",
+      "paired_null_id": "NULL.N29.GLOBAL.PROTOTYPE_CANDIDATE_AS_PROTOTYPE_SUCCESS.021",
+      "unsafe_relabel_blocked": "prototype_candidate_as_prototype_success",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.022",
+      "paired_null_id": "NULL.N29.GLOBAL.MOTIF_DEFINITION_AS_NATIVE_ECOLOGY_SUCCESS.022",
+      "unsafe_relabel_blocked": "motif_definition_as_native_ecology_success",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.023",
+      "paired_null_id": "NULL.N29.GLOBAL.I3_OR_I6_SUMMARY_AS_ORIGINAL_RUNTIME_EVIDENCE.023",
+      "unsafe_relabel_blocked": "I3_or_I6_summary_as_original_runtime_evidence",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.024",
+      "paired_null_id": "NULL.N29.GLOBAL.N12_N19_N20_REVIEW_GATE_BYPASS.024",
+      "unsafe_relabel_blocked": "N12_N19_N20_review_gate_bypass",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.025",
+      "paired_null_id": "NULL.N29.GLOBAL.AP4_AP5_NAT4_GAP_HIDDEN_BY_ECOLOGY_LANGUAGE.025",
+      "unsafe_relabel_blocked": "AP4_AP5_NAT4_gap_hidden_by_ecology_language",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    },
+    {
+      "actual_status": "passed_bounded",
+      "bounded_claim_preserved": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "claim_ceiling_preserved": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "passed_bounded",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.026",
+      "paired_null_id": "NULL.N29.GLOBAL.NATURALIZATION_DEBT_AS_NATIVE_CAPACITY.026",
+      "unsafe_relabel_blocked": "naturalization_debt_as_native_capacity",
+      "why_it_matters": "The null blocks a stronger relabel while preserving the legitimate bounded bridge motif or Phase B boundary reading."
+    }
+  ],
+  "null_adequacy_table": [
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_ant_agency_opened",
+        "semantic_cooperation_claim_opened",
+        "semantic_goal_claim_opened",
+        "semantic_choice_claim_opened",
+        "native_agency_claim_opened",
+        "unrestricted_autonomy_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "reserve_optionality_formation",
+        "trace_pressure_loop",
+        "transfer_replay_role_relocation"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.TRACE_PRESSURE_LOOP.001",
+        "NEARPOS.N29.RESERVE_OPTIONALITY_FORMATION.003",
+        "NEARPOS.N29.TRANSFER_REPLAY_ROLE_RELOCATION.009"
+      ],
+      "null_count": 3,
+      "null_family": "vocabulary_as_evidence_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_ant_agency_opened",
+        "biological_agency_opened",
+        "organism_life_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "reserve_optionality_formation",
+        "trace_pressure_loop"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.TRACE_PRESSURE_LOOP.002",
+        "NEARPOS.N29.RESERVE_OPTIONALITY_FORMATION.004"
+      ],
+      "null_count": 2,
+      "null_family": "ant_label_as_ant_behavior_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_shared_medium_coordination_opened"
+      ],
+      "debt_types_covered": [
+        "medium_debt"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "boundary_shared_medium_unit"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.BOUNDARY_SHARED_MEDIUM_UNIT.005"
+      ],
+      "null_count": 1,
+      "null_family": "message_scaffold_as_native_medium_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "semantic_goal_claim_opened",
+        "native_ant_agency_opened"
+      ],
+      "debt_types_covered": [
+        "producer_residue"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "proxy_susceptibility_reentry",
+        "transfer_replay_role_relocation"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.PROXY_SUSCEPTIBILITY_REENTRY.007",
+        "NEARPOS.N29.TRANSFER_REPLAY_ROLE_RELOCATION.010"
+      ],
+      "null_count": 2,
+      "null_family": "producer_residue_as_native_capacity_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_colony_agency_opened",
+        "organism_life_opened",
+        "biological_agency_opened",
+        "native_shared_medium_coordination_opened"
+      ],
+      "debt_types_covered": [
+        "medium_debt"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "boundary_shared_medium_unit",
+        "composition",
+        "generative_extractive_medium_reshaping"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.BOUNDARY_SHARED_MEDIUM_UNIT.006",
+        "NEARPOS.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.012",
+        "NEARPOS.N29.COMPOSITION.018"
+      ],
+      "null_count": 3,
+      "null_family": "medium_debt_as_native_shared_medium_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "global_phase_b_boundary"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.GLOBAL.020"
+      ],
+      "null_count": 1,
+      "null_family": "visual_or_report_as_runtime_evidence_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "prototype_rows_opened",
+        "native_ecology_claim_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "global_phase_b_boundary"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.GLOBAL.021"
+      ],
+      "null_count": 1,
+      "null_family": "prototype_candidate_as_prototype_success_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "prototype_rows_opened",
+        "native_agency_claim_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "composition",
+        "global_phase_b_boundary"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.COMPOSITION.019",
+        "NEARPOS.N29.GLOBAL.022"
+      ],
+      "null_count": 2,
+      "null_family": "motif_as_native_ecology_success_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "semantic_cooperation_claim_opened",
+        "native_colony_agency_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "generative_extractive_medium_reshaping"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.011"
+      ],
+      "null_count": 1,
+      "null_family": "N28_generative_as_cooperation_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened",
+        "native_ecology_claim_opened",
+        "prototype_rows_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "composition"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.COMPOSITION.013",
+        "NEARPOS.N29.COMPOSITION.014",
+        "NEARPOS.N29.COMPOSITION.015",
+        "NEARPOS.N29.COMPOSITION.016",
+        "NEARPOS.N29.COMPOSITION.017"
+      ],
+      "null_count": 5,
+      "null_family": "composition_without_order_or_controls_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "global_phase_b_boundary"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.GLOBAL.023"
+      ],
+      "null_count": 1,
+      "null_family": "source_summary_as_original_evidence_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_agency_claim_opened",
+        "native_ecology_claim_opened"
+      ],
+      "debt_types_covered": [
+        "not_debt_specific"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "global_phase_b_boundary"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.GLOBAL.024"
+      ],
+      "null_count": 1,
+      "null_family": "review_gate_bypass_nulls",
+      "review_gates_covered": [
+        "N12",
+        "N19",
+        "N20"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "semantic_goal_claim_opened",
+        "semantic_choice_claim_opened",
+        "native_ecology_claim_opened"
+      ],
+      "debt_types_covered": [
+        "naturalization_debt"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "global_phase_b_boundary",
+        "proxy_susceptibility_reentry"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.PROXY_SUSCEPTIBILITY_REENTRY.008",
+        "NEARPOS.N29.GLOBAL.025"
+      ],
+      "null_count": 2,
+      "null_family": "AP4_AP5_NAT4_gap_erasure_nulls",
+      "review_gates_covered": [
+        "AP4",
+        "AP5",
+        "NAT4"
+      ]
+    },
+    {
+      "adequacy_status": "passed",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "native_agency_claim_opened"
+      ],
+      "debt_types_covered": [
+        "naturalization_debt"
+      ],
+      "expected_failed_open_count": 0,
+      "motif_families_covered": [
+        "global_phase_b_boundary"
+      ],
+      "near_positive_controls": [
+        "NEARPOS.N29.GLOBAL.026"
+      ],
+      "null_count": 1,
+      "null_family": "naturalization_debt_as_native_support_nulls",
+      "review_gates_covered": [
+        "not_review_gate_specific"
+      ]
+    }
+  ],
+  "null_derivation_policy": {
+    "derivation_chain": "source row -> valid bounded claim -> tempting stronger relabel -> expected rejection",
+    "near_positive_required": true,
+    "null_sources": [
+      "I7 coverage/debt rows",
+      "I8 motif rows",
+      "I4 control policy and claim boundary"
+    ],
+    "nulls_block_promotion_not_bounded_bridge_reading": true
+  },
+  "null_family_index": {
+    "AP4_AP5_NAT4_gap_erasure_nulls": [
+      "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.ROUTING_BIAS_AS_SEMANTIC_GOAL.008",
+      "NULL.N29.GLOBAL.AP4_AP5_NAT4_GAP_HIDDEN_BY_ECOLOGY_LANGUAGE.025"
+    ],
+    "N28_generative_as_cooperation_nulls": [
+      "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.GENERATIVE_PATTERN_AS_COOPERATION_OR_ALTRUISM.011"
+    ],
+    "ant_label_as_ant_behavior_nulls": [
+      "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+      "NULL.N29.RESERVE_OPTIONALITY_FORMATION.SURPLUS_SUPPORTED_SPLIT_AS_REPRODUCTION.004"
+    ],
+    "composition_without_order_or_controls_nulls": [
+      "NULL.N29.COMPOSITION.LABEL_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.013",
+      "NULL.N29.COMPOSITION.REPORT_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.014",
+      "NULL.N29.COMPOSITION.HIDDEN_PRODUCER_COUPLING_AS_COMPOSITION.015",
+      "NULL.N29.COMPOSITION.COMPONENT_ORDER_INVERSION_HIDDEN.016",
+      "NULL.N29.COMPOSITION.MISSING_SOURCE_ROW_AS_COMPOSITION.017"
+    ],
+    "medium_debt_as_native_shared_medium_nulls": [
+      "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.BOUNDED_UNIT_AS_COLONY_BODY.006",
+      "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.EXTRACTIVE_PATTERN_AS_EXPLOITATION_OR_BIOLOGICAL_AGENCY.012",
+      "NULL.N29.COMPOSITION.MEDIUM_DEBT_HIDDEN_AS_NATIVE_COMPOSITION_RELATION.018"
+    ],
+    "message_scaffold_as_native_medium_nulls": [
+      "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.MESSAGE_SCAFFOLD_AS_NATIVE_SHARED_MEDIUM.005"
+    ],
+    "motif_as_native_ecology_success_nulls": [
+      "NULL.N29.COMPOSITION.COMPOSITION_MOTIF_AS_NATIVE_ECOLOGY_SUCCESS.019",
+      "NULL.N29.GLOBAL.MOTIF_DEFINITION_AS_NATIVE_ECOLOGY_SUCCESS.022"
+    ],
+    "naturalization_debt_as_native_support_nulls": [
+      "NULL.N29.GLOBAL.NATURALIZATION_DEBT_AS_NATIVE_CAPACITY.026"
+    ],
+    "producer_residue_as_native_capacity_nulls": [
+      "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.PROXY_IMPROVEMENT_AS_NATIVE_FUNCTION.007",
+      "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.ROLE_RELOCATION_AS_SEMANTIC_ROLE_TRANSFER.010"
+    ],
+    "prototype_candidate_as_prototype_success_nulls": [
+      "NULL.N29.GLOBAL.PROTOTYPE_CANDIDATE_AS_PROTOTYPE_SUCCESS.021"
+    ],
+    "review_gate_bypass_nulls": [
+      "NULL.N29.GLOBAL.N12_N19_N20_REVIEW_GATE_BYPASS.024"
+    ],
+    "source_summary_as_original_evidence_nulls": [
+      "NULL.N29.GLOBAL.I3_OR_I6_SUMMARY_AS_ORIGINAL_RUNTIME_EVIDENCE.023"
+    ],
+    "visual_or_report_as_runtime_evidence_nulls": [
+      "NULL.N29.GLOBAL.VISUAL_OR_REPORT_AS_RUNTIME_EVIDENCE.020"
+    ],
+    "vocabulary_as_evidence_nulls": [
+      "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+      "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003",
+      "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.COPY_AS_IDENTITY_TRANSFER.009"
+    ]
+  },
+  "null_rows": [
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "trace_as_pheromone_semantic_message",
+      "blocked_claims_covered": [
+        "native_ant_agency_opened",
+        "semantic_cooperation_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ant_agency_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "trace_pressure_loop",
+      "near_positive_control_id": "NEARPOS.N29.TRACE_PRESSURE_LOOP.001",
+      "null_family": "vocabulary_as_evidence_nulls",
+      "null_id": "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+      "relabel_path": "trace_aftereffect -> pheromone_label -> semantic_message -> ant_behavior",
+      "source_capability_ids": [
+        "n17_closed_boundary_engagement_loop",
+        "n09_goal_proxy_regulation",
+        "n28_generative_extractive_persistence",
+        "n13_support_seeking_regulation",
+        "n05_coherence_waves_oscillators",
+        "n24_surplus_supported_optionality",
+        "n22_susceptibility_update",
+        "n25_2_mb6_validation_bridge"
+      ],
+      "source_motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7"
+      ],
+      "valid_claim": "trace_pressure_loop bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Trace/pressure loop motifs can orient a later route-support prototype, but cannot become pheromone communication or ant trail-following by vocabulary."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "loop_aftereffect_as_ant_route_behavior",
+      "blocked_claims_covered": [
+        "native_ant_agency_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ant_agency_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "trace_pressure_loop",
+      "near_positive_control_id": "NEARPOS.N29.TRACE_PRESSURE_LOOP.002",
+      "null_family": "ant_label_as_ant_behavior_nulls",
+      "null_id": "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002",
+      "relabel_path": "loop_aftereffect -> route_label -> ant_route_behavior",
+      "source_capability_ids": [
+        "n17_closed_boundary_engagement_loop",
+        "n09_goal_proxy_regulation",
+        "n28_generative_extractive_persistence",
+        "n13_support_seeking_regulation",
+        "n05_coherence_waves_oscillators",
+        "n24_surplus_supported_optionality",
+        "n22_susceptibility_update",
+        "n25_2_mb6_validation_bridge"
+      ],
+      "source_motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7"
+      ],
+      "valid_claim": "trace_pressure_loop bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "A loop aftereffect remains a bridge motif component, not native ant route behavior."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "optionality_as_goal_directed_choice",
+      "blocked_claims_covered": [
+        "semantic_goal_claim_opened",
+        "semantic_choice_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "semantic_goal_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "reserve_optionality_formation",
+      "near_positive_control_id": "NEARPOS.N29.RESERVE_OPTIONALITY_FORMATION.003",
+      "null_family": "vocabulary_as_evidence_nulls",
+      "null_id": "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003",
+      "relabel_path": "optionality -> choice_label -> semantic_goal",
+      "source_capability_ids": [
+        "n26_proxy_divergence_collapse",
+        "n24_surplus_supported_optionality",
+        "n25_scoped_basin_formation",
+        "n25_2_mb6_validation_bridge"
+      ],
+      "source_motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "source_rows": [
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "valid_claim": "reserve_optionality_formation bridge motif with source_backed_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Surplus-supported optionality can support a bounded formation motif, but not semantic goal-directed choice."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "surplus_supported_split_as_reproduction",
+      "blocked_claims_covered": [
+        "biological_agency_opened",
+        "organism_life_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "biological_agency_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "reserve_optionality_formation",
+      "near_positive_control_id": "NEARPOS.N29.RESERVE_OPTIONALITY_FORMATION.004",
+      "null_family": "ant_label_as_ant_behavior_nulls",
+      "null_id": "NULL.N29.RESERVE_OPTIONALITY_FORMATION.SURPLUS_SUPPORTED_SPLIT_AS_REPRODUCTION.004",
+      "relabel_path": "surplus_split -> reproduction_label -> biological_colony_life",
+      "source_capability_ids": [
+        "n26_proxy_divergence_collapse",
+        "n24_surplus_supported_optionality",
+        "n25_scoped_basin_formation",
+        "n25_2_mb6_validation_bridge"
+      ],
+      "source_motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "source_rows": [
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "valid_claim": "reserve_optionality_formation bridge motif with source_backed_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Reserve/formation structure is not biological reproduction, life, or colony reproduction."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "message_scaffold_as_native_shared_medium",
+      "blocked_claims_covered": [
+        "native_shared_medium_coordination_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_shared_medium_coordination_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "boundary_shared_medium_unit",
+      "near_positive_control_id": "NEARPOS.N29.BOUNDARY_SHARED_MEDIUM_UNIT.005",
+      "null_family": "message_scaffold_as_native_medium_nulls",
+      "null_id": "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.MESSAGE_SCAFFOLD_AS_NATIVE_SHARED_MEDIUM.005",
+      "relabel_path": "message_scaffold -> shared_medium_label -> native_shared_medium_coordination",
+      "source_capability_ids": [
+        "n25_2_mb6_validation_bridge",
+        "n07_identity_attractor_invariance",
+        "n16_self_environment_boundary",
+        "n18_limited_long_horizon_closure",
+        "n17_closed_boundary_engagement_loop",
+        "n28_generative_extractive_persistence",
+        "n24_surplus_supported_optionality",
+        "n11_general_agentic_like_integration",
+        "n10_agentic_like_integration",
+        "n20_becoming_primitive_contract",
+        "n25_1_multi_basin_requirements_bridge",
+        "n12_native_producer_review_gate",
+        "n21_withdrawal_naturalization",
+        "n27_configuration_substrate_transfer",
+        "n26_proxy_divergence_collapse",
+        "n25_scoped_basin_formation"
+      ],
+      "source_motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "source_rows": [
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "valid_claim": "boundary_shared_medium_unit bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Boundary/shared-medium motifs carry medium debt unless runtime medium coordination is source-backed later."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "bounded_unit_as_colony_body",
+      "blocked_claims_covered": [
+        "native_colony_agency_opened",
+        "organism_life_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_colony_agency_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "boundary_shared_medium_unit",
+      "near_positive_control_id": "NEARPOS.N29.BOUNDARY_SHARED_MEDIUM_UNIT.006",
+      "null_family": "medium_debt_as_native_shared_medium_nulls",
+      "null_id": "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.BOUNDED_UNIT_AS_COLONY_BODY.006",
+      "relabel_path": "bounded_unit -> colony_body_label -> native_colony_agency",
+      "source_capability_ids": [
+        "n25_2_mb6_validation_bridge",
+        "n07_identity_attractor_invariance",
+        "n16_self_environment_boundary",
+        "n18_limited_long_horizon_closure",
+        "n17_closed_boundary_engagement_loop",
+        "n28_generative_extractive_persistence",
+        "n24_surplus_supported_optionality",
+        "n11_general_agentic_like_integration",
+        "n10_agentic_like_integration",
+        "n20_becoming_primitive_contract",
+        "n25_1_multi_basin_requirements_bridge",
+        "n12_native_producer_review_gate",
+        "n21_withdrawal_naturalization",
+        "n27_configuration_substrate_transfer",
+        "n26_proxy_divergence_collapse",
+        "n25_scoped_basin_formation"
+      ],
+      "source_motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "source_rows": [
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "valid_claim": "boundary_shared_medium_unit bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "A bounded bridge unit is not a native colony body or organism."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "proxy_improvement_as_native_function",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "semantic_goal_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ecology_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "proxy_susceptibility_reentry",
+      "near_positive_control_id": "NEARPOS.N29.PROXY_SUSCEPTIBILITY_REENTRY.007",
+      "null_family": "producer_residue_as_native_capacity_nulls",
+      "null_id": "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.PROXY_IMPROVEMENT_AS_NATIVE_FUNCTION.007",
+      "relabel_path": "proxy_improvement -> native_function_label -> native_support",
+      "source_capability_ids": [
+        "n08_memory_trail_affordance",
+        "n10_agentic_like_integration",
+        "n05_coherence_waves_oscillators",
+        "n22_susceptibility_update",
+        "n15_endogenous_proxy_formation",
+        "n26_proxy_divergence_collapse",
+        "n17_closed_boundary_engagement_loop",
+        "n18_limited_long_horizon_closure",
+        "n06_runtime_visible_route_selection",
+        "n14_consequence_sensitive_route_selection",
+        "n27_configuration_substrate_transfer",
+        "n28_generative_extractive_persistence",
+        "n23_live_continuation_collapse"
+      ],
+      "source_motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "source_rows": [
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "proxy_susceptibility_reentry bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Proxy/susceptibility improvement remains debt-bearing until producer and AP5 gaps are resolved."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "routing_bias_as_semantic_goal",
+      "blocked_claims_covered": [
+        "semantic_goal_claim_opened",
+        "semantic_choice_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "semantic_goal_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "proxy_susceptibility_reentry",
+      "near_positive_control_id": "NEARPOS.N29.PROXY_SUSCEPTIBILITY_REENTRY.008",
+      "null_family": "AP4_AP5_NAT4_gap_erasure_nulls",
+      "null_id": "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.ROUTING_BIAS_AS_SEMANTIC_GOAL.008",
+      "relabel_path": "routing_bias -> goal_label -> AP5_gap_erased_by_ecology_vocabulary",
+      "source_capability_ids": [
+        "n08_memory_trail_affordance",
+        "n10_agentic_like_integration",
+        "n05_coherence_waves_oscillators",
+        "n22_susceptibility_update",
+        "n15_endogenous_proxy_formation",
+        "n26_proxy_divergence_collapse",
+        "n17_closed_boundary_engagement_loop",
+        "n18_limited_long_horizon_closure",
+        "n06_runtime_visible_route_selection",
+        "n14_consequence_sensitive_route_selection",
+        "n27_configuration_substrate_transfer",
+        "n28_generative_extractive_persistence",
+        "n23_live_continuation_collapse"
+      ],
+      "source_motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "source_rows": [
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "proxy_susceptibility_reentry bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Routing bias and proxy collapse cannot hide AP4/AP5/NAT4 gaps."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "copy_as_identity_transfer",
+      "blocked_claims_covered": [
+        "native_agency_claim_opened",
+        "unrestricted_autonomy_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_agency_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "transfer_replay_role_relocation",
+      "near_positive_control_id": "NEARPOS.N29.TRANSFER_REPLAY_ROLE_RELOCATION.009",
+      "null_family": "vocabulary_as_evidence_nulls",
+      "null_id": "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.COPY_AS_IDENTITY_TRANSFER.009",
+      "relabel_path": "transfer_replay -> identity_label -> selfhood_or_identity_acceptance",
+      "source_capability_ids": [
+        "n27_configuration_substrate_transfer",
+        "n25_2_mb6_validation_bridge",
+        "n16_self_environment_boundary",
+        "n06_runtime_visible_route_selection",
+        "n14_consequence_sensitive_route_selection",
+        "n08_memory_trail_affordance",
+        "n22_susceptibility_update",
+        "n26_proxy_divergence_collapse",
+        "n23_live_continuation_collapse"
+      ],
+      "source_motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "source_rows": [
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "transfer_replay_role_relocation bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Configuration transfer remains bounded transfer evidence, not identity transfer or selfhood."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "role_relocation_as_semantic_role_transfer",
+      "blocked_claims_covered": [
+        "native_ant_agency_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ant_agency_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "transfer_replay_role_relocation",
+      "near_positive_control_id": "NEARPOS.N29.TRANSFER_REPLAY_ROLE_RELOCATION.010",
+      "null_family": "producer_residue_as_native_capacity_nulls",
+      "null_id": "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.ROLE_RELOCATION_AS_SEMANTIC_ROLE_TRANSFER.010",
+      "relabel_path": "role_relocation -> semantic_role_label -> native_ant_task_identity",
+      "source_capability_ids": [
+        "n27_configuration_substrate_transfer",
+        "n25_2_mb6_validation_bridge",
+        "n16_self_environment_boundary",
+        "n06_runtime_visible_route_selection",
+        "n14_consequence_sensitive_route_selection",
+        "n08_memory_trail_affordance",
+        "n22_susceptibility_update",
+        "n26_proxy_divergence_collapse",
+        "n23_live_continuation_collapse"
+      ],
+      "source_motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "source_rows": [
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "transfer_replay_role_relocation bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Role relocation remains a bridge mapping unless later prototypes naturalize the role surface."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "generative_pattern_as_cooperation_or_altruism",
+      "blocked_claims_covered": [
+        "semantic_cooperation_claim_opened",
+        "native_colony_agency_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "semantic_cooperation_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "near_positive_control_id": "NEARPOS.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.011",
+      "null_family": "N28_generative_as_cooperation_nulls",
+      "null_id": "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.GENERATIVE_PATTERN_AS_COOPERATION_OR_ALTRUISM.011",
+      "relabel_path": "generative_medium_reshaping -> cooperation_label -> colony_agency",
+      "source_capability_ids": [
+        "n28_generative_extractive_persistence",
+        "n24_surplus_supported_optionality",
+        "n25_2_mb6_validation_bridge",
+        "n17_closed_boundary_engagement_loop",
+        "n09_goal_proxy_regulation",
+        "n05_coherence_waves_oscillators",
+        "n11_general_agentic_like_integration",
+        "n14_consequence_sensitive_route_selection",
+        "n06_runtime_visible_route_selection"
+      ],
+      "source_motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "source_rows": [
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7"
+      ],
+      "valid_claim": "generative_extractive_medium_reshaping bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "N28 generative/extractive structure can reshape basin-forming capacity, but cannot be interpreted as cooperation or altruism."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "extractive_pattern_as_exploitation_or_biological_agency",
+      "blocked_claims_covered": [
+        "biological_agency_opened",
+        "organism_life_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "biological_agency_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "near_positive_control_id": "NEARPOS.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.012",
+      "null_family": "medium_debt_as_native_shared_medium_nulls",
+      "null_id": "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.EXTRACTIVE_PATTERN_AS_EXPLOITATION_OR_BIOLOGICAL_AGENCY.012",
+      "relabel_path": "extractive_pattern -> exploitation_label -> biological_agency",
+      "source_capability_ids": [
+        "n28_generative_extractive_persistence",
+        "n24_surplus_supported_optionality",
+        "n25_2_mb6_validation_bridge",
+        "n17_closed_boundary_engagement_loop",
+        "n09_goal_proxy_regulation",
+        "n05_coherence_waves_oscillators",
+        "n11_general_agentic_like_integration",
+        "n14_consequence_sensitive_route_selection",
+        "n06_runtime_visible_route_selection"
+      ],
+      "source_motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "source_rows": [
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7"
+      ],
+      "valid_claim": "generative_extractive_medium_reshaping bridge motif with artifact_only_reconstruction status and claim ceiling bridge_motif_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Extractive medium reshaping is not biological exploitation or organism-level agency."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "label_only_composition_as_bridge_behavior",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "positive_ecology_evidence_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.013",
+      "null_family": "composition_without_order_or_controls_nulls",
+      "null_id": "NULL.N29.COMPOSITION.LABEL_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.013",
+      "relabel_path": "motif_A_label + motif_B_label -> composition_success",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Composition needs ordered source-backed components and order controls before any later prototype claim."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "report_only_composition_as_bridge_behavior",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "positive_ecology_evidence_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.014",
+      "null_family": "composition_without_order_or_controls_nulls",
+      "null_id": "NULL.N29.COMPOSITION.REPORT_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.014",
+      "relabel_path": "composition_report -> composition_success_label -> bridge_behavior",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "A report-level composition can orient a future prototype, but cannot replace ordered source rows."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "hidden_producer_coupling_as_composition",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ecology_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.015",
+      "null_family": "composition_without_order_or_controls_nulls",
+      "null_id": "NULL.N29.COMPOSITION.HIDDEN_PRODUCER_COUPLING_AS_COMPOSITION.015",
+      "relabel_path": "hidden_producer_coupling -> composition_link -> native_ecology_behavior",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "A hidden producer link cannot supply the missing runtime coupling for a motif composition."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "component_order_inversion_hidden",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "positive_ecology_evidence_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.016",
+      "null_family": "composition_without_order_or_controls_nulls",
+      "null_id": "NULL.N29.COMPOSITION.COMPONENT_ORDER_INVERSION_HIDDEN.016",
+      "relabel_path": "motif_A_after_motif_B -> treated_as_motif_A_before_motif_B",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Composition order or phase cannot be hidden by report language."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "missing_source_row_as_composition",
+      "blocked_claims_covered": [
+        "prototype_rows_opened",
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "prototype_rows_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.017",
+      "null_family": "composition_without_order_or_controls_nulls",
+      "null_id": "NULL.N29.COMPOSITION.MISSING_SOURCE_ROW_AS_COMPOSITION.017",
+      "relabel_path": "missing_source_row -> composition_assumed -> prototype_ready",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Composition cannot be admitted if any component lacks an explicit source row."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "medium_debt_hidden_as_native_composition_relation",
+      "blocked_claims_covered": [
+        "native_shared_medium_coordination_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_shared_medium_coordination_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.018",
+      "null_family": "medium_debt_as_native_shared_medium_nulls",
+      "null_id": "NULL.N29.COMPOSITION.MEDIUM_DEBT_HIDDEN_AS_NATIVE_COMPOSITION_RELATION.018",
+      "relabel_path": "medium_debt -> native_relation_label -> shared_medium_coordination",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "Composition through a debt-bearing medium cannot be relabeled as native shared-medium coordination."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "composition_motif_as_native_ecology_success",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "prototype_rows_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "composition_rule_definition_only_no_runtime_success_no_prototype",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ecology_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "composition",
+      "near_positive_control_id": "NEARPOS.N29.COMPOSITION.019",
+      "null_family": "motif_as_native_ecology_success_nulls",
+      "null_id": "NULL.N29.COMPOSITION.COMPOSITION_MOTIF_AS_NATIVE_ECOLOGY_SUCCESS.019",
+      "relabel_path": "composition_motif -> native_ecology_success_label -> ecology_behavior",
+      "source_capability_ids": [],
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "valid_claim": "composition bridge motif with mapping_only_no_runtime_surface status and claim ceiling composition_rule_definition_only_no_runtime_success_no_prototype",
+      "why_this_null_is_relevant": "The composition motif remains a bridge definition until a later admitted prototype runs and passes controls."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "visual_or_report_as_runtime_evidence",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "positive_ecology_evidence_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.020",
+      "null_family": "visual_or_report_as_runtime_evidence_nulls",
+      "null_id": "NULL.N29.GLOBAL.VISUAL_OR_REPORT_AS_RUNTIME_EVIDENCE.020",
+      "relabel_path": "visual_or_report_summary -> runtime_evidence_label -> source_backed_runtime_claim",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "Visual/report artifacts can orient interpretation but cannot replace runtime/source artifacts."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "prototype_candidate_as_prototype_success",
+      "blocked_claims_covered": [
+        "prototype_rows_opened",
+        "native_ecology_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "prototype_rows_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.021",
+      "null_family": "prototype_candidate_as_prototype_success_nulls",
+      "null_id": "NULL.N29.GLOBAL.PROTOTYPE_CANDIDATE_AS_PROTOTYPE_SUCCESS.021",
+      "relabel_path": "I8_prototype_candidate -> prototype_success_label -> native_ecology",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "I8 prototype candidates are admission targets for I10+, not prototype evidence."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "motif_definition_as_native_ecology_success",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "native_agency_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ecology_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.022",
+      "null_family": "motif_as_native_ecology_success_nulls",
+      "null_id": "NULL.N29.GLOBAL.MOTIF_DEFINITION_AS_NATIVE_ECOLOGY_SUCCESS.022",
+      "relabel_path": "motif_definition -> ecology_success_label -> native_ecology",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "Bridge motifs are reusable definitions, not native ecology behavior."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "I3_or_I6_summary_as_original_runtime_evidence",
+      "blocked_claims_covered": [
+        "positive_ecology_evidence_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "positive_ecology_evidence_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.023",
+      "null_family": "source_summary_as_original_evidence_nulls",
+      "null_id": "NULL.N29.GLOBAL.I3_OR_I6_SUMMARY_AS_ORIGINAL_RUNTIME_EVIDENCE.023",
+      "relabel_path": "summary_card -> source_artifact_label -> source_backed_claim",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "I3/I6 cards are indexes; later source-backed claims must return to original source artifacts."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "N12_N19_N20_review_gate_bypass",
+      "blocked_claims_covered": [
+        "native_agency_claim_opened",
+        "native_ecology_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_agency_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.024",
+      "null_family": "review_gate_bypass_nulls",
+      "null_id": "NULL.N29.GLOBAL.N12_N19_N20_REVIEW_GATE_BYPASS.024",
+      "relabel_path": "gated_source -> ecology_vocabulary -> review_gate_erased",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "Review gates remain active when older sources are consumed through N29."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "AP4_AP5_NAT4_gap_hidden_by_ecology_language",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "semantic_choice_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ecology_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.025",
+      "null_family": "AP4_AP5_NAT4_gap_erasure_nulls",
+      "null_id": "NULL.N29.GLOBAL.AP4_AP5_NAT4_GAP_HIDDEN_BY_ECOLOGY_LANGUAGE.025",
+      "relabel_path": "selection_or_proxy_gap -> ecology_role_label -> NAT4_gap_erased",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "AP4/AP5/NAT4 gaps remain visible through N29 and cannot be erased by ecology language."
+    },
+    {
+      "actual_status": "failed_closed",
+      "attempted_relabel": "naturalization_debt_as_native_capacity",
+      "blocked_claims_covered": [
+        "native_ecology_claim_opened",
+        "native_agency_claim_opened"
+      ],
+      "bounded_bridge_reading_preserved": true,
+      "claim_allowed": false,
+      "claim_ceiling_after_rejection": "phase_b_bridge_controls_closed_no_prototypes_no_runtime_ecology",
+      "expected_status": "failed_closed",
+      "failure_if_accepted": "native_ecology_claim_opened",
+      "future_risk_if_not_blocked": "unsafe_promotion_in_I10_to_I18",
+      "motif_family": "global_phase_b_boundary",
+      "near_positive_control_id": "NEARPOS.N29.GLOBAL.026",
+      "null_family": "naturalization_debt_as_native_support_nulls",
+      "null_id": "NULL.N29.GLOBAL.NATURALIZATION_DEBT_AS_NATIVE_CAPACITY.026",
+      "relabel_path": "naturalization_debt -> native_capacity_label -> native_ecology",
+      "source_capability_ids": [
+        "MOTIF.N29.TRACE_PRESSURE_LOOP",
+        "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+        "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+        "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+        "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+        "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+        "MOTIF.N29.COMPOSITION"
+      ],
+      "source_motif_id": "GLOBAL.I9.PHASE_B_BOUNDARY",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7",
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "valid_claim": "Phase B bridge motifs, coverage rows, and source summaries remain bounded orientation/reconstruction artifacts",
+      "why_this_null_is_relevant": "Naturalization debt can define a future work target, but cannot itself count as native support or native ecology capacity."
+    }
+  ],
+  "output_digest": "a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28",
+  "phase8_completion_opened": false,
+  "phase_b_closed": true,
+  "phase_b_closeout_policy": {
+    "i9_scope": "motif_relabel_nulls_and_composition_controls_only",
+    "motif_success_claim_allowed": false,
+    "phase_b_closed": true,
+    "phase_c_opened": false,
+    "prototype_admission_deferred_to_iteration_10": true,
+    "runtime_ecology_probe_contract_opened": false
+  },
+  "phase_b_i9_rule": {
+    "job": "motif_relabel_nulls_and_composition_controls_only",
+    "must_not": [
+      "open_prototype_rows",
+      "open_runnable_ecology_probe_contract",
+      "claim_bridge_motif_success",
+      "open_positive_ecology_evidence",
+      "claim_native_ecology"
+    ]
+  },
+  "positive_ecology_evidence_opened": false,
+  "prototype_rows_opened": false,
+  "ready_for_iteration_10": true,
+  "row_count_summary": {
+    "composition_control_rows": 2,
+    "control_rows": 33,
+    "failed_closed_rows": 33,
+    "failed_open_rows": 0,
+    "motif_control_rows": 21,
+    "near_positive_control_rows": 26,
+    "null_failed_closed_rows": 26,
+    "null_failed_open_rows": 0,
+    "null_rows": 26,
+    "schema_negative_control_rows": 10
+  },
+  "runtime_ecology_probe_contract_opened": false,
+  "script_sha256": "ba061fca47cecca23e9636c5a51fc5a2fb211ab721a9b65e3c6d63ade4ffd26f",
+  "semantic_cooperation_claim_opened": false,
+  "sentience_opened": false,
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_bridge_schema_i4",
+      "consumed_as": "negative_fixture_and_control_schema",
+      "output_digest": "e2e093b4cd143c1f5173391923d4707e2d2f9c48467b1e0c4052ba89d5b61131",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_schema_i4.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_demand_supply_coverage_debt_i7",
+      "consumed_as": "row_local_coverage_and_debt_source",
+      "output_digest": "6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_demand_supply_coverage_debt_i7.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_bridge_motif_library_i8",
+      "consumed_as": "motif_library_under_control",
+      "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Motif Relabel Nulls And Composition Controls"
+}

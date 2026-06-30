@@ -1,0 +1,444 @@
+{
+  "acceptance_state": "accepted_stronger_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success",
+  "artifact_id": "n29_trace_pressure_loop_stronger_replay_stress_i111c",
+  "checks": [
+    {
+      "check_id": "i111a_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i111b_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "snapshot_load_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "trace_window_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "pressure_threshold_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "response_margin_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "route_context_bounded",
+      "passed": true
+    },
+    {
+      "check_id": "stronger_pressure_margin_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_12",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false
+  },
+  "claim_ceiling": "stronger_replay_stress_backed_runtime_bridge_candidate_no_ecology_success",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_stronger_i111.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_stronger_i111.py",
+  "interpretation": {
+    "trace_caveat": "The runtime still has no trace-decay law. I11.1-C therefore extends the observed no-decay window but does not prove general trace persistence.",
+    "what_passes": "I11.1-C is the primary positive evidence for Prototype A: a stronger three-pole trace/pressure/loop sibling with stable artifact, snapshot/load, and duplicate replay.",
+    "why_not_stronger": "The result remains producer-assisted and fixture-bounded. It is not native ecology, semantic communication, shared-medium coordination, agency, or prototype success.",
+    "why_stronger": "The baseline route legs carry surplus 0.25 against the same 0.049 threshold, giving a pressure margin of 0.201. I11-C remains the minimal edge case and construction contrast at the 0.049 / 0.05 boundary."
+  },
+  "iteration": "I11.1-C",
+  "output_digest": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+  "pressure_threshold_supported": "bounded",
+  "ready_for_iteration_12": true,
+  "replay_rows": [
+    {
+      "completed_count": 6,
+      "manifest_digest_matches_runtime_artifact": true,
+      "passed": true,
+      "replay_id": "artifact_replay",
+      "status": "stable"
+    },
+    {
+      "candidate_count": 3,
+      "completed_count": 3,
+      "event_count": 22,
+      "failure_reasons": [],
+      "passed": true,
+      "producer_result_count": 3,
+      "production_record_count": 3,
+      "replay_id": "snapshot_load_replay",
+      "scheduled_event_count": 3,
+      "snapshot_artifact": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_replay_stress_i111c_snapshot.json",
+      "snapshot_sha256": "ae4929c8793cb0cf5ee9b4d9a7e2a757790d7ea5bbb157ed3d2a4f056d9158a4",
+      "status": "stable",
+      "valid": true
+    },
+    {
+      "first_digest": "e9efd3f48dfeb13be51a82f8ad4391497355af04b5d1d4d73c3c1081a8d7e928",
+      "passed": true,
+      "replay_id": "duplicate_replay",
+      "second_digest": "e9efd3f48dfeb13be51a82f8ad4391497355af04b5d1d4d73c3c1081a8d7e928",
+      "status": "stable"
+    }
+  ],
+  "response_margin_supported": "bounded",
+  "route_context_supported": "bounded",
+  "runtime_bridge_replay_status": "stable",
+  "script_sha256": "a712537f57511aaa8efc5b87127c9a0c86e19b5a6609a4146c2f7fd210805c84",
+  "snapshot_artifact_manifest": {
+    "artifact_role": "native_lgrc9v3_snapshot_load_replay_source",
+    "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_replay_stress_i111c_snapshot.json",
+    "sha256": "ae4929c8793cb0cf5ee9b4d9a7e2a757790d7ea5bbb157ed3d2a4f056d9158a4"
+  },
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_trace_pressure_loop_stronger_runtime_i111a",
+      "consumed_as": "stronger_runtime_candidate_source",
+      "output_digest": "e8e273643fa37e414153ff58ef34a56a6b0b1a7c334ea30949ae89492ebe0e0e",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_runtime_i111a.json"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_stronger_controls_i111b",
+      "consumed_as": "stronger_control_gate_source",
+      "output_digest": "8f21aac1709002fc2a642339f7300c0fd3daba0ae1d0bb2512e7a1c28f84b460",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_controls_i111b.json"
+    }
+  ],
+  "status": "passed",
+  "stress_rows": [
+    {
+      "max_supported_noop_delay_steps": 8,
+      "rows": [
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 1,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 2,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 4,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 8,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        }
+      ],
+      "scan_id": "trace_window_scan",
+      "status": "bounded_no_decay_window",
+      "trace_decay_note": "The runtime still has no trace-decay law. I11.1-C therefore extends the observed no-decay window but does not prove general trace persistence.",
+      "trace_decay_observed": false
+    },
+    {
+      "baseline_pressure_margin": 0.201,
+      "baseline_supported": true,
+      "baseline_surplus": 0.25,
+      "maximum_rejected_surplus": 0.048,
+      "minimum_supported_surplus": 0.05,
+      "rows": [
+        {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "delay_steps": 0,
+          "event_count": 4,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.452,
+          "runtime_error": null,
+          "scheduled_event_count": 0,
+          "supported": false,
+          "surplus": 0.048,
+          "valid": false
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.45,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.05,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.4,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.1,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.3,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.2,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        }
+      ],
+      "scan_id": "pressure_threshold_scan",
+      "status": "bounded",
+      "trigger_threshold": 0.049
+    },
+    {
+      "baseline_packet_amount_supported": true,
+      "max_supported_packet_amount": 3.5,
+      "min_rejected_packet_amount": 3.51,
+      "rows": [
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.1,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 0.2,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 1.0,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "delay_steps": 0,
+          "event_count": 10,
+          "failure_reasons": [],
+          "packet_amount": 3.5,
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 3.25,
+          "runtime_error": null,
+          "scheduled_event_count": 1,
+          "supported": true,
+          "surplus": 0.25,
+          "valid": true
+        },
+        {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "delay_steps": 0,
+          "event_count": 4,
+          "failure_reasons": [
+            "InvalidStateTransitionError"
+          ],
+          "packet_amount": 3.51,
+          "producer_result_count": 0,
+          "production_record_count": 0,
+          "reference_mass": 3.25,
+          "runtime_error": "route-aspect surplus trigger exceeds source-node coherence",
+          "scheduled_event_count": 0,
+          "supported": false,
+          "surplus": 0.25,
+          "valid": false
+        }
+      ],
+      "scan_id": "response_margin_scan",
+      "status": "bounded"
+    },
+    {
+      "all_three_poles_supported": true,
+      "min_pressure_margin": 0.201,
+      "rows": [
+        {
+          "child_departure_processed": true,
+          "pressure_margin": 0.201,
+          "source_pole_id": "S",
+          "surplus_after_arrival": 0.25,
+          "trigger_channel_id": "S_to_K"
+        },
+        {
+          "child_departure_processed": true,
+          "pressure_margin": 0.20100000000000023,
+          "source_pole_id": "K",
+          "surplus_after_arrival": 0.2500000000000002,
+          "trigger_channel_id": "K_to_M"
+        },
+        {
+          "child_departure_processed": true,
+          "pressure_margin": 0.201,
+          "source_pole_id": "M",
+          "surplus_after_arrival": 0.25,
+          "trigger_channel_id": "M_to_S"
+        }
+      ],
+      "scan_id": "route_context_scan",
+      "status": "bounded"
+    }
+  ],
+  "title": "Stronger Trace / Pressure / Loop Replay And Stress Matrix",
+  "trace_window_supported": "bounded_no_decay_window"
+}

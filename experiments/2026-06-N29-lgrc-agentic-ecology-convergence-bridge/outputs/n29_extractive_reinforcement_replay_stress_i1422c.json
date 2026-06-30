@@ -1,0 +1,223 @@
+{
+  "acceptance_state": "accepted_extract_reinforcement_bounded_replay_stress_with_leakage_caveat",
+  "artifact_id": "n29_extractive_reinforcement_replay_stress_i1422c",
+  "checks": [
+    {
+      "check_id": "i14_2_2_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "focused_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "focused_controls_failed_open_zero",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_manifest_paths_exist",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "all_replay_stable",
+      "passed": true
+    },
+    {
+      "check_id": "all_stress_passed",
+      "passed": true
+    },
+    {
+      "check_id": "reinforcement_replay_stress_supported",
+      "passed": true
+    },
+    {
+      "check_id": "clean_bounded_leakage_not_supported",
+      "passed": true
+    },
+    {
+      "check_id": "original_i14_2_not_replaced",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_i14_5_with_caveat",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_support_claim_not_final",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_record",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "bounded_extract_reinforcement_runtime_support_with_leakage_caveat_no_clean_leakage_no_ecology_success",
+  "clean_bounded_extractive_runtime_claim_allowed": false,
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_reinforcement_i1422bc.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_reinforcement_i1422bc.py",
+  "i14_2_2_clean_bounded_leakage_supported": false,
+  "i14_2_2_reinforcement_replay_stress_supported": true,
+  "i14_2_original_replaced": false,
+  "iteration": "I14.2-2-C",
+  "output_digest": "fce211d51a23565c85ffab9e3e6b155e35703805f439689869530831fce85905",
+  "prototype_d_runtime_support_claim_allowed": false,
+  "ready_for_i14_5_with_leakage_caveat": true,
+  "replay_results": [
+    {
+      "claim_effect": "supports_artifact_replay_for_i14_2_2_reinforcement",
+      "replay_mode": "artifact_replay",
+      "replayed_output_digest": "477accfff7db072c30a348212b9aaae2c30a8d25d368ceb470cf7e505856dc32",
+      "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_reinforcement_runtime_i1422_artifact.json",
+      "source_artifact_sha256": "98de34b048182a34b59c2e9e4d02c5a52d04edd070d68a17fcd5b3348d08b042",
+      "status": "stable"
+    },
+    {
+      "claim_effect": "supports_snapshot_load_stability_of_i14_2_2_trace",
+      "replay_mode": "snapshot_load_replay",
+      "replayed_output_digest": "477accfff7db072c30a348212b9aaae2c30a8d25d368ceb470cf7e505856dc32",
+      "snapshot_digest": "79dc0b782edd3c77347ed9e3794f7c8601eaac0e3ec45878f386c5a3528a1858",
+      "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_reinforcement_runtime_i1422_artifact.json",
+      "status": "stable"
+    },
+    {
+      "claim_effect": "duplicate_suppression_is_stable",
+      "first_emit_digest": "477accfff7db072c30a348212b9aaae2c30a8d25d368ceb470cf7e505856dc32",
+      "replay_mode": "duplicate_replay",
+      "second_emit_creates_duplicate_record": false,
+      "second_emit_digest": "477accfff7db072c30a348212b9aaae2c30a8d25d368ceb470cf7e505856dc32",
+      "status": "stable"
+    }
+  ],
+  "replay_stress_summary": {
+    "all_replay_stable": true,
+    "all_stress_passed": true,
+    "final_i14_2_2_status": "bounded_extractive_mechanism_diversity_replay_stress_supported_with_leakage_caveat",
+    "stable_replay_count": 3,
+    "stress_passed_count": 5
+  },
+  "runtime_row_id": "n29_i14_2_2_extractive_depletion_mechanism_diversity_motif",
+  "script_sha256": "ce9737c7ad9cbe792d6aa8b705ac4e38ae315541b17597f70d1ac6231fac9957",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_extractive_depletion_mechanism_diversity_runtime_candidate_pending_focused_controls_replay_stress",
+      "artifact_id": "n29_extractive_depletion_reinforcement_runtime_i1422",
+      "iteration": "I14.2-2",
+      "output_digest": "69b24367946ec06d3c6f8fad57786322d946c01d4c34dcaee4a82a45f8833025",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_reinforcement_runtime_i1422.json",
+      "sha256": "6fc36d90e7852aa113d94e76ddc9e08eaef258107944f2059227b9d7836b946f",
+      "source_id": "n29_i14_2_2_reinforcement_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extract_reinforcement_controls_fail_closed_pending_replay_stress",
+      "artifact_id": "n29_extractive_reinforcement_controls_i1422b",
+      "iteration": "I14.2-2-B",
+      "output_digest": "8cd5ec0dc3c4669819ddc5220e90600a450575ad3cf48c91f8e35eaac16c3704",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_reinforcement_controls_i1422b.json",
+      "sha256": "041b3e9c102d1bbb321d3138f447155c18368e083a28170e561d63927e154b34",
+      "source_id": "n29_i14_2_2_b_controls",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "stress_results": [
+    {
+      "description": "preserve source-current depletion above declared degradation thresholds",
+      "expected_result": "supported_with_leakage_caveat",
+      "metrics": {
+        "boundary_depletion": 0.104,
+        "distinguishability_depletion": 0.075,
+        "environment_capacity_degradation_min": 0.05,
+        "environment_capacity_depletion": 0.065,
+        "neighbor_boundary_degradation_min": 0.06,
+        "neighbor_distinguishability_degradation_min": 0.05,
+        "neighbor_support_degradation_min": 0.04,
+        "neighbor_support_depletion": 0.055
+      },
+      "observed_result": "supported_with_leakage_caveat",
+      "status": "passed",
+      "stress_digest": "e3d914b841ee2d6ccde5a60ef992e41c4ca6476e04e6870eb15d40121ae10019",
+      "stress_id": "i14_2_2_c_depletion_above_floor"
+    },
+    {
+      "description": "remove or sign-flip negative neighbor capacity deltas",
+      "expected_result": "rejected_or_demoted",
+      "metrics": {
+        "polarity_required": "all_neighbor_capacity_deltas_negative"
+      },
+      "observed_result": "rejected_or_demoted",
+      "status": "passed",
+      "stress_digest": "110b4e78d2e9d3b61e56f94dc3c7d3f44078a1d9c134ca17f0073a000802cb0b",
+      "stress_id": "i14_2_2_c_depletion_polarity_ablation"
+    },
+    {
+      "description": "remove merge/leakage-dominant boundary-flattening attribution",
+      "expected_result": "rejected_or_demoted",
+      "metrics": {
+        "mechanism_class": "merge_leakage_dominant_boundary_flattening"
+      },
+      "observed_result": "rejected_or_demoted",
+      "status": "passed",
+      "stress_digest": "f3a4a101546eec8808ac1bd0511f42f34d21e00c3f7d63bb93ed081a562f6096",
+      "stress_id": "i14_2_2_c_mechanism_attribution_ablation"
+    },
+    {
+      "description": "cross focal support, coherence, or stability floor",
+      "expected_result": "rejected",
+      "metrics": {
+        "coherence_floor": 0.84,
+        "focal_stability_min": 0.86,
+        "post_coherence_min": 0.875,
+        "post_stability_score": 0.871,
+        "post_support_min": 0.868,
+        "support_floor": 0.84
+      },
+      "observed_result": "rejected",
+      "status": "passed",
+      "stress_digest": "1685846f852683c87414a27269dd3450be755f1b599b9cbfe2ecfd6949f3c5e6",
+      "stress_id": "i14_2_2_c_focal_floor_crossing_rejection"
+    },
+    {
+      "description": "preserve over-ceiling leakage as caveat, not clean bounded leakage",
+      "expected_result": "caveat_preserved_not_clean_bounded_leakage",
+      "metrics": {
+        "clean_bounded_leakage_claim_allowed": false,
+        "merge_leakage_ceiling": 0.025,
+        "merge_leakage_value": 0.043
+      },
+      "observed_result": "caveat_preserved_not_clean_bounded_leakage",
+      "status": "passed",
+      "stress_digest": "333d3e8f3e96c785bd05af88917118de7b560b90b7c8a4ee08d8aa1ef1d3d836",
+      "stress_id": "i14_2_2_c_leakage_caveat_boundary"
+    }
+  ],
+  "title": "Prototype D I14.2-2-C Extractive Reinforcement Replay / Stress",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

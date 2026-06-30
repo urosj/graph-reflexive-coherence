@@ -1,0 +1,172 @@
+{
+  "acceptance_state": "accepted_multi_leg_leakage_aggregation_bridge_candidate_pending_i14d_i14e",
+  "artifact_id": "n29_multi_leg_leakage_aggregation_i1461",
+  "checks": [
+    {
+      "check_id": "i14_6_prior_per_leg_only",
+      "passed": true
+    },
+    {
+      "check_id": "shared_leakage_frame_declared",
+      "passed": true
+    },
+    {
+      "check_id": "all_channels_mapped",
+      "passed": true
+    },
+    {
+      "check_id": "full_sum_aggregation_passed",
+      "passed": true
+    },
+    {
+      "check_id": "leakage_cancellation_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "overlap_credit_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "hidden_sink_or_source_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "double_counting_discount_rejected",
+      "passed": true
+    },
+    {
+      "check_id": "native_aggregate_shared_medium_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha_match",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_multi_leg_leakage_aggregation_i1461.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_multi_leg_leakage_aggregation_i1461.py",
+  "iteration": "I14.6-1",
+  "leakage_aggregation_row": {
+    "agency_claim_allowed": false,
+    "aggregate_merge_leakage": 0.037,
+    "aggregate_merge_leakage_ceiling": 0.04,
+    "aggregate_merge_leakage_margin": 0.003,
+    "claim_ceiling": "producer_mediated_multi_leg_leakage_aggregation_candidate_pending_controls_replay",
+    "cooperation_claim_allowed": false,
+    "double_counting_discount_used": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "hidden_sink_or_source_used": false,
+    "i14_6_consumed": true,
+    "i14_6_per_leg_only_status_resolved_in_bridge_lane": true,
+    "i14_6_replaced": false,
+    "leakage_cancellation_used": false,
+    "multi_leg_leakage_aggregation_supported": true,
+    "narrow_margin_recorded": true,
+    "native_aggregate_shared_medium_leakage_supported": false,
+    "native_multi_role_ecology_supported": false,
+    "native_shared_medium_frame": false,
+    "overlap_credit_used": false,
+    "producer_mediated_bridge_lane_recorded": true,
+    "remaining_debt": [
+      "I14-D composition controls pending",
+      "I14-E replay/stress pending",
+      "aggregate leakage margin is narrow",
+      "aggregation frame is producer-mediated, not native shared-medium LGRC",
+      "resource economy, cooperation, exploitation, ecology success, and agency claims remain blocked"
+    ],
+    "resource_economy_claim_allowed": false,
+    "row_decision": "partial",
+    "row_decision_scope": "producer_mediated_multi_leg_leakage_aggregation_candidate_pending_i14d_i14e",
+    "row_digest": "d1611370ff61381dcfc739fed1ee400ecd836d12e3621acfe5ccb583f5aa61b4",
+    "row_id": "n29_i14_6_1_multi_leg_leakage_aggregation_probe",
+    "runtime_artifact_manifest": [
+      {
+        "artifact_role": "n29_i14_6_1_multi_leg_leakage_aggregation_artifact",
+        "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_leg_leakage_aggregation_i1461_artifact.json",
+        "sha256": "51510eb6c2ddaed2a45ff565a769c334d9bb84ffedf99b636a5f43e73adc9683"
+      }
+    ],
+    "shared_leakage_frame_declared": true
+  },
+  "multi_leg_leakage_aggregation_supported": true,
+  "native_aggregate_shared_medium_leakage_supported": false,
+  "output_digest": "51c409081b93492d3f4991f5a7ca7353cb10bd29e0a95aad02552339974ade26",
+  "producer_mediated_bridge_lane_recorded": true,
+  "ready_for_i14d_i14e": true,
+  "ready_for_iteration_15": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_multi_role_phase_loop_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_multi_role_phase_loop_i146",
+      "iteration": "I14.6",
+      "output_digest": "32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_role_phase_loop_i146.json",
+      "sha256": "265a0d4031e2849be4d1e471928483a26365990d8ed3d891404e175300a25d5c",
+      "source_id": "n29_i14_6_multi_role_phase_loop",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n29_multi_role_phase_loop_i146_artifact",
+      "iteration": "I14.6",
+      "output_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_role_phase_loop_i146_artifact.json",
+      "sha256": "9db7c72466d9f26cb07fc451ee9b3775f2b3177b320b8e1be802e74aabf394c1",
+      "source_id": "n29_i14_6_multi_role_phase_loop_artifact",
+      "status": "not_recorded"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n29_neutral_circulation_directed_cycle_bridge_i1444_artifact",
+      "iteration": "I14.4-4",
+      "output_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_directed_cycle_bridge_i1444_artifact.json",
+      "sha256": "4074bb00c930acc30c46aa3d3d06ece2e83e357ea531d6ffebbacd47ac79c80f",
+      "source_id": "n29_i14_4_4_directed_cycle_artifact",
+      "status": "not_recorded"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n29_buffered_generator_extractor_feedback_i1452_artifact",
+      "iteration": "I14.5-2",
+      "output_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_buffered_generator_extractor_feedback_i1452_artifact.json",
+      "sha256": "6e8b7d270cda2ea55fe6893384f7fd97d6ee299b520ece970c5653f1cd796a3d",
+      "source_id": "n29_i14_5_2_buffered_feedback_artifact",
+      "status": "not_recorded"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14.6-1 Multi-Leg Leakage Aggregation Probe"
+}

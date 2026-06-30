@@ -1,0 +1,79 @@
+{
+  "aggregation_trace": {
+    "aggregate_leakage_gate_passed": true,
+    "aggregate_merge_leakage": 0.037,
+    "aggregate_merge_leakage_ceiling": 0.04,
+    "aggregate_merge_leakage_margin": 0.003,
+    "aggregation_method": "full_sum_no_cancellation",
+    "directed_cycle_leg_merge_leakage": 0.019,
+    "double_counting_discount_used": false,
+    "hidden_sink_or_source_used": false,
+    "leakage_cancellation_used": false,
+    "narrow_margin_recorded": true,
+    "overlap_credit_used": false,
+    "phase_feedback_leg_merge_leakage": 0.018
+  },
+  "artifact_id": "n29_multi_leg_leakage_aggregation_i1461_artifact",
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "multi_leg_leakage_aggregation_supported": true,
+    "native_aggregate_shared_medium_leakage_supported": false,
+    "native_multi_role_ecology_supported": false,
+    "resource_economy_claim_allowed": false
+  },
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "I14.6-1 puts the I14.5-2 phase-feedback leg and the I14.4-4 directed-cycle leg into a common producer-mediated leakage frame. It does not cancel one leakage value against the other and does not discount overlap. The aggregate leakage is the full sum of both legs. That supports a narrow bridge-lane aggregate leakage record, while native shared-medium leakage aggregation remains unsupported.",
+  "i14_6_prior_leakage_status": {
+    "max_per_leg_merge_leakage": 0.019,
+    "multi_leg_leakage_aggregation_supported": false,
+    "per_leg_leakage_gates_passed": true,
+    "per_leg_leakage_values": {
+      "directed_cycle_leg_merge_leakage": 0.019,
+      "phase_feedback_leg_merge_leakage": 0.018
+    },
+    "per_leg_merge_leakage_ceiling": 0.025,
+    "why_not_aggregate": "I14.6 composes bridge rows across different declared frames; per-leg leakage gates pass, but no single native shared-medium leakage aggregation channel is established."
+  },
+  "iteration": "I14.6-1",
+  "leakage_channel_map": [
+    {
+      "channel_id": "phase_feedback_leg",
+      "mapped_to_common_frame": true,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.018,
+      "source_iteration": "I14.5-2",
+      "source_role": "generator_extractor_processor_feedback"
+    },
+    {
+      "channel_id": "directed_cycle_leg",
+      "mapped_to_common_frame": true,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.019,
+      "source_iteration": "I14.4-4",
+      "source_role": "all_forward_directed_circulation"
+    }
+  ],
+  "output_digest": "97d3e9b193b9cf5d780c5f6417895a5348ea6b97371655510853a0a766a6b401",
+  "runtime_artifact_type": "producer_mediated_multi_leg_leakage_aggregation_artifact",
+  "shared_leakage_frame_policy": {
+    "aggregate_ceiling": 0.04,
+    "aggregate_ceiling_formula": "2 * per_leg_ceiling - aggregate_reserve",
+    "aggregate_reserve": 0.01,
+    "declared_before_use": true,
+    "frame_role": "map the I14.5-2 phase-feedback leakage and I14.4-4 directed-cycle leakage into one common bridge attribution frame",
+    "native_shared_medium_frame": false,
+    "per_leg_ceiling": 0.025,
+    "policy_id": "n29_i14_6_1_common_bridge_leakage_frame_v1",
+    "producer_mediated": true,
+    "producer_success_can_upgrade_native": false,
+    "thresholds_retuned_after_outcome": false
+  },
+  "source_i14_4_4_artifact_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+  "source_i14_5_2_artifact_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+  "source_i14_6_artifact_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+  "source_i14_6_digest": "32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b"
+}

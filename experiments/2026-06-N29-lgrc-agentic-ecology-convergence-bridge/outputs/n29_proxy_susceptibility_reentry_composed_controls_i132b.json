@@ -1,0 +1,181 @@
+{
+  "acceptance_state": "accepted_i13_2b_buffered_runtime_controls_fail_closed",
+  "artifact_id": "n29_proxy_susceptibility_reentry_composed_controls_i132b",
+  "checks": [
+    {
+      "check_id": "i13_2_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_candidate_digest_stable",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_have_status",
+      "passed": true
+    },
+    {
+      "check_id": "failed_open_control_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "control_backed_candidate_supported",
+      "passed": true
+    },
+    {
+      "check_id": "final_success_still_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_role_behavior_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "identity_transfer_claim_allowed": false,
+      "intentional_return_claim_allowed": false,
+      "learning_as_semantic_knowledge_claim_allowed": false,
+      "native_ap4_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "preference_ownership_claim_allowed": false,
+      "semantic_goal_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_composed_i132bc.py",
+  "control_rows": [
+    {
+      "actual_result": "susceptibility delta and differential response lose the buffered margin",
+      "blocked_condition": "buffered target response claimed when buffer lane is removed",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "buffer_lane_removed_control",
+      "control_result_interpretation": "control blocks a buffered false-positive path while preserving the bounded alternative composed runtime candidate",
+      "control_status": "failed_closed",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "source-current delta trace required",
+      "blocked_condition": "proxy pressure recorded as label without numeric susceptibility delta",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "proxy_pressure_label_only_control",
+      "control_result_interpretation": "control blocks a buffered false-positive path while preserving the bounded alternative composed runtime candidate",
+      "control_status": "failed_closed",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "candidate requires peer route not to carry the target-specific buffer",
+      "blocked_condition": "peer receives copied buffer lane and destroys target-specific distinction",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "same_budget_peer_buffer_copy_control",
+      "control_result_interpretation": "control blocks a buffered false-positive path while preserving the bounded alternative composed runtime candidate",
+      "control_status": "failed_closed",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "ordered four-leg trace required",
+      "blocked_condition": "re-entry readback is placed before susceptibility modification",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "reentry_order_inversion_control",
+      "control_result_interpretation": "control blocks a buffered false-positive path while preserving the bounded alternative composed runtime candidate",
+      "control_status": "failed_closed",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "target response exceeds peer response by declared margin",
+      "blocked_condition": "target response not distinguished from peer under equal budget",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "same_budget_peer_comparison_control",
+      "control_result_interpretation": "same-budget peer comparison supports buffered row-local distinguishability",
+      "control_status": "passed_as_comparability_control",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "unsafe semantic claims remain false",
+      "blocked_condition": "buffered differential response relabeled as semantic learning, choice, or goal",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "semantic_learning_choice_goal_relabel_control",
+      "control_result_interpretation": "control blocks a buffered false-positive path while preserving the bounded alternative composed runtime candidate",
+      "control_status": "failed_closed",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "AP4/AP5 remain inherited bridge dependencies, not upgraded",
+      "blocked_condition": "buffered composed row relabeled as native AP4/AP5 closure or native support",
+      "control_consumed_runtime_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+      "control_execution_scope": "I13.2 buffered composed runtime row",
+      "control_id": "native_ap4_ap5_support_relabel_control",
+      "control_result_interpretation": "control blocks a buffered false-positive path while preserving the bounded alternative composed runtime candidate",
+      "control_status": "failed_closed",
+      "runtime_candidate_demoted": false,
+      "runtime_claim_allowed_when_control_triggers": false
+    }
+  ],
+  "control_summary": {
+    "candidate_row_digest": "0e5287c6b6a462c7cb7b6d85cf2db9ae780108f513d457f36550501d2846d014",
+    "candidate_row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+    "claim_ceiling": "control-backed I13.2 buffered Prototype C runtime candidate; not final Prototype C success, semantic learning, choice, agency, native AP4/AP5, native support, or ecology success",
+    "control_backed_runtime_candidate_supported": true,
+    "control_count": 7,
+    "failed_closed_count": 6,
+    "failed_open_count": 0,
+    "final_prototype_c_success_supported": false,
+    "i13_2_source_digest": "f4a934506528d5fe0609ce50f1748b9d5bf308bf815a81c1ea0088a1789276c6",
+    "passed_comparability_count": 1,
+    "prototype_family": "proxy_susceptibility_reentry",
+    "runtime_artifact_digest": "9c26eedffa9f009ef9e9de5648c1ff4331ed0b2e0a2ffaf08addf971604d4cd5"
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_composed_i132bc.py",
+  "iteration": "I13.2-B",
+  "output_digest": "1da84e47fa5e9130dceb5e074e8389a25384681bed63be37ac2eac38762a12d5",
+  "script_sha256": "ac31edc1ae683c8fb7d9514a8b14993117f4cf1acc8e2e49a3e6cc7e7a54525b",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_i13_2_alternative_composed_runtime_candidate_pending_b_c",
+      "artifact_id": "n29_proxy_susceptibility_reentry_composed_i132",
+      "iteration": "I13.2",
+      "output_digest": "f4a934506528d5fe0609ce50f1748b9d5bf308bf815a81c1ea0088a1789276c6",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_composed_i132.json",
+      "sha256": "218322f4d0a2baa09d2f1b367ffc2b31065ae47e96b42ce022e54952a7d944f8",
+      "source_id": "n29_i13_2_buffered_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n29_proxy_susceptibility_reentry_composed_runtime_i132_artifact",
+      "iteration": "I13.2-runtime",
+      "output_digest": "9c26eedffa9f009ef9e9de5648c1ff4331ed0b2e0a2ffaf08addf971604d4cd5",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_composed_runtime_i132_artifact.json",
+      "sha256": "6719e4ccc8a579955b72103551bfe231a1d00e5c8d51b52c68201cbc4d3306fb",
+      "source_id": "n29_i13_2_runtime_artifact",
+      "status": "not_recorded"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype C I13.2-B Buffered Runtime Controls"
+}

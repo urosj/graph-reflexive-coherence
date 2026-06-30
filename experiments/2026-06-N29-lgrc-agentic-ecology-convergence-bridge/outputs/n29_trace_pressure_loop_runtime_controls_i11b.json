@@ -1,0 +1,583 @@
+{
+  "acceptance_state": "accepted_trace_pressure_loop_runtime_controls_fail_closed_producer_assisted_only",
+  "all_controls_failed_closed": true,
+  "artifact_id": "n29_trace_pressure_loop_runtime_controls_i11b",
+  "checks": [
+    {
+      "check_id": "i11_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i11a_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i11a_runtime_artifact_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_controls_present",
+      "passed": true
+    },
+    {
+      "check_id": "failed_open_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_controls_executed_where_applicable",
+      "passed": true
+    },
+    {
+      "check_id": "semantic_controls_are_claim_controls_only",
+      "passed": true
+    },
+    {
+      "check_id": "producer_success_does_not_upgrade_native",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_11C",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_ant_agency_claimed": false,
+    "native_ecology_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "phase8_completion_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false,
+    "semantic_action_claimed": false,
+    "semantic_signal_claimed": false
+  },
+  "claim_ceiling": "perturbation_control_backed_runtime_bridge_candidate_no_ecology_success",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_runtime_controls_i11b.py",
+  "control_row_count": 12,
+  "control_rows": [
+    {
+      "actual_result": "producer emits only a skipped diagnostic record; no child event is scheduled",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "trace_leg_ablation",
+      "control_id": "no_parent_arrival_trace_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 0,
+        "completed_count": 0,
+        "eligible_channel_id": "S_to_K",
+        "event_count": 0,
+        "failure_reasons": [
+          "no_completed_self_rearm_evidence"
+        ],
+        "policy": "packet_departure_from_route_aspect_surplus_policy",
+        "producer_result_count": 1,
+        "production_record_count": 1,
+        "reference_mass": 2.15,
+        "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "route_channel_sequence": [
+          "S_to_K",
+          "K_to_S"
+        ],
+        "scheduled_event_count": 0,
+        "self_rearm_validation": {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": false,
+          "validated_self_rearm_evidence_ids": [],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        },
+        "source_pole_id": "S"
+      },
+      "expected_result": "no child packet scheduling without a returned parent-arrival trace",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "surplus below threshold produced only a skipped diagnostic record",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "pressure_leg_ablation",
+      "control_id": "below_threshold_pressure_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 0,
+        "completed_count": 0,
+        "eligible_channel_id": "S_to_K",
+        "event_count": 4,
+        "failure_reasons": [
+          "no_completed_self_rearm_evidence"
+        ],
+        "policy": "packet_departure_from_route_aspect_surplus_policy",
+        "producer_result_count": 1,
+        "production_record_count": 1,
+        "reference_mass": 2.202,
+        "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "route_channel_sequence": [
+          "S_to_K",
+          "K_to_S"
+        ],
+        "scheduled_event_count": 0,
+        "self_rearm_validation": {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": false,
+          "validated_self_rearm_evidence_ids": [],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        },
+        "source_pole_id": "S"
+      },
+      "expected_result": "below-threshold surplus must not schedule a child packet",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "below margin rejected; above margin produced a completed self-rearm",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "pressure_margin",
+      "control_id": "near_threshold_margin_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "above": {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "eligible_channel_id": "S_to_K",
+          "event_count": 10,
+          "failure_reasons": [],
+          "policy": "packet_departure_from_route_aspect_surplus_policy",
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.2,
+          "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+          "route_channel_sequence": [
+            "S_to_K",
+            "K_to_S"
+          ],
+          "scheduled_event_count": 1,
+          "self_rearm_validation": {
+            "candidate_count": 1,
+            "completed_count": 1,
+            "failure_reasons": [],
+            "movement_claim_allowed": false,
+            "native_d2_3_equivalent": false,
+            "native_grc9v3_loop_evidence": false,
+            "valid": true,
+            "validated_self_rearm_evidence_ids": [
+              "2695205634432e59d0678bb1f6dc45383512e1303326e35049a8a0e87d9d400d"
+            ],
+            "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+          },
+          "source_pole_id": "S"
+        },
+        "below": {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "eligible_channel_id": "S_to_K",
+          "event_count": 4,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "policy": "packet_departure_from_route_aspect_surplus_policy",
+          "producer_result_count": 1,
+          "production_record_count": 1,
+          "reference_mass": 2.202,
+          "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+          "route_channel_sequence": [
+            "S_to_K",
+            "K_to_S"
+          ],
+          "scheduled_event_count": 0,
+          "self_rearm_validation": {
+            "candidate_count": 0,
+            "completed_count": 0,
+            "failure_reasons": [
+              "no_completed_self_rearm_evidence"
+            ],
+            "movement_claim_allowed": false,
+            "native_d2_3_equivalent": false,
+            "native_grc9v3_loop_evidence": false,
+            "valid": false,
+            "validated_self_rearm_evidence_ids": [],
+            "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+          },
+          "source_pole_id": "S"
+        }
+      },
+      "expected_result": "near-threshold below case rejects while just-above case schedules",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "route-aspect contract rejects the impossible expected channel before runtime",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "route_order_ablation",
+      "control_id": "wrong_expected_channel_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "completed_count": 0,
+        "configuration_rejected_before_runtime": true,
+        "construction_error": "expected_next_channel_id must match sequence",
+        "failure_reasons": [
+          "expected_next_channel_id must match sequence"
+        ],
+        "production_record_count": 0
+      },
+      "expected_result": "wrong expected-next channel must not validate as the I11-A loop",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": false
+    },
+    {
+      "actual_result": "fresh runtime route digest differs from declared mismatched digest gate",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "admission_digest_ablation",
+      "control_id": "route_aspect_digest_mismatch_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 1,
+        "canonical_i11a_route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "completed_count": 1,
+        "declared_route_aspect_digest": "declared_bad_digest",
+        "eligible_channel_id": "S_to_K",
+        "event_count": 10,
+        "failure_reasons": [],
+        "policy": "packet_departure_from_route_aspect_surplus_policy",
+        "producer_result_count": 1,
+        "production_record_count": 1,
+        "reference_mass": 2.15,
+        "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "route_channel_sequence": [
+          "S_to_K",
+          "K_to_S"
+        ],
+        "scheduled_event_count": 1,
+        "self_rearm_validation": {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "failure_reasons": [],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": true,
+          "validated_self_rearm_evidence_ids": [
+            "d845b3414f78da7a0e7920ee5db2e2e491eb298230680049f2a8154612790004"
+          ],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        },
+        "source_pole_id": "S"
+      },
+      "expected_result": "route-aspect digest mismatch blocks admission even if runtime schedules",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "runtime may schedule locally, but canonical sequence/digest gate rejects it",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "route_order_ablation",
+      "control_id": "channel_sequence_shuffle_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 1,
+        "canonical_i11a_route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "canonical_route_channel_sequence": [
+          "S_to_K",
+          "K_to_S"
+        ],
+        "completed_count": 1,
+        "eligible_channel_id": "S_to_K",
+        "event_count": 10,
+        "failure_reasons": [],
+        "policy": "packet_departure_from_route_aspect_surplus_policy",
+        "producer_result_count": 1,
+        "production_record_count": 1,
+        "reference_mass": 2.15,
+        "route_aspect_digest": "f7279ada6299835ce1fb6bab11b18f740fd75cf927c75e1808164141d113098f",
+        "route_channel_sequence": [
+          "K_to_S",
+          "S_to_K"
+        ],
+        "scheduled_event_count": 1,
+        "self_rearm_validation": {
+          "candidate_count": 1,
+          "completed_count": 1,
+          "failure_reasons": [],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": true,
+          "validated_self_rearm_evidence_ids": [
+            "1b25ee4af9536073e9fd6a5db3558231e7e6f32356630aa1753db50a91d910e2"
+          ],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        },
+        "source_pole_id": "S"
+      },
+      "expected_result": "shuffled channel sequence cannot backfill canonical I11-A route order",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "first producer call schedules; second call emits a skipped diagnostic record",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "producer_idempotency",
+      "control_id": "same_causal_surface_replay_idempotency_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 1,
+        "completed_count": 0,
+        "event_count": 5,
+        "failure_reasons": [
+          "missing_child_departure_event:lgrc9v3-packet-event-1328727edf14de18"
+        ],
+        "first_causal_surface_digest": "cfb666dd431c3f0931b7cb3aa643bdb3c6efde1728f5678132b724e83b90df6a",
+        "first_record_count": 1,
+        "first_scheduled_event_count": 1,
+        "producer_result_count": 2,
+        "production_record_count": 2,
+        "scheduled_event_count": 1,
+        "second_causal_surface_digest": "0c56907f19cd8231a1d86070a70d4716e5b65d960c4e5b1c1df81609f1b469ac",
+        "second_record_count": 1,
+        "second_scheduled_event_count": 0,
+        "self_rearm_validation": {
+          "candidate_count": 1,
+          "completed_count": 0,
+          "failure_reasons": [
+            "missing_child_departure_event:lgrc9v3-packet-event-1328727edf14de18"
+          ],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": false,
+          "validated_self_rearm_evidence_ids": [],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        }
+      },
+      "expected_result": "same causal surface must not schedule a duplicate producer record",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "packet events exist but no producer-linked self-rearm evidence validates",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "producer_ownership_ablation",
+      "control_id": "direct_queue_injection_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 0,
+        "completed_count": 0,
+        "event_count": 4,
+        "failure_reasons": [
+          "no_completed_self_rearm_evidence"
+        ],
+        "producer_result_count": 0,
+        "production_record_count": 0,
+        "scheduled_event_count": 0,
+        "self_rearm_validation": {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": false,
+          "validated_self_rearm_evidence_ids": [],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        }
+      },
+      "expected_result": "direct queue injection without producer evidence cannot validate the loop",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "candidate exists, but completed self-rearm evidence is absent",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "step_ownership_ablation",
+      "control_id": "unprocessed_child_departure_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 1,
+        "completed_count": 0,
+        "event_count": 5,
+        "failure_reasons": [
+          "no_completed_self_rearm_evidence"
+        ],
+        "producer_result_count": 1,
+        "production_record_count": 1,
+        "scheduled_event_count": 1,
+        "self_rearm_validation": {
+          "candidate_count": 1,
+          "completed_count": 0,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": false,
+          "validated_self_rearm_evidence_ids": [],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        }
+      },
+      "expected_result": "scheduled child pending departure is insufficient until step processes it",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "disabled producer produced no scheduled packet event",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "producer_ownership_ablation",
+      "control_id": "producer_disabled_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "candidate_count": 0,
+        "completed_count": 0,
+        "eligible_channel_id": "S_to_K",
+        "event_count": 4,
+        "failure_reasons": [
+          "no_completed_self_rearm_evidence"
+        ],
+        "policy": "disabled",
+        "producer_result_count": 1,
+        "production_record_count": 1,
+        "reference_mass": 2.15,
+        "route_aspect_digest": "1fd4f344957f9b38697b2600fecb5ef2369671ca0a4cb4a29022ebd6b35ab52d",
+        "route_channel_sequence": [
+          "S_to_K",
+          "K_to_S"
+        ],
+        "scheduled_event_count": 0,
+        "self_rearm_validation": {
+          "candidate_count": 0,
+          "completed_count": 0,
+          "failure_reasons": [
+            "no_completed_self_rearm_evidence"
+          ],
+          "movement_claim_allowed": false,
+          "native_d2_3_equivalent": false,
+          "native_grc9v3_loop_evidence": false,
+          "valid": false,
+          "validated_self_rearm_evidence_ids": [],
+          "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+        },
+        "source_pole_id": "S"
+      },
+      "expected_result": "disabled producer policy cannot create the bounded response leg",
+      "rung_effect": "preserves_i11a_only_if_failed_closed",
+      "runtime_executed": true
+    },
+    {
+      "actual_result": "semantic labels remain blocked and cannot count as runtime evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "claim_boundary",
+      "control_id": "semantic_pheromone_hunger_relabel_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "blocked_labels": [
+          "pheromone_communication",
+          "hunger_semantics",
+          "alarm_semantics",
+          "ant_route_behavior",
+          "semantic_action"
+        ],
+        "runtime_evidence_substitution_allowed": false
+      },
+      "expected_result": "semantic pheromone, hunger, alarm, and ant-behavior labels are rejected",
+      "rung_effect": "preserves_claim_ceiling_only_if_failed_closed",
+      "runtime_executed": false
+    },
+    {
+      "actual_result": "I11-A remains producer-assisted; native ecology and agency remain false",
+      "claim_allowed_when_control_triggers": false,
+      "control_family": "claim_boundary",
+      "control_id": "producer_success_as_native_runtime_success_control",
+      "control_status": "failed_closed",
+      "evidence": {
+        "i11a_runtime_status": "producer_assisted_runtime_instantiation",
+        "native_runtime_ecology_success_claimed": false,
+        "producer_success_can_upgrade_native": false
+      },
+      "expected_result": "producer-assisted success cannot upgrade to native runtime ecology",
+      "rung_effect": "admits_only_producer_assisted_control_backed_candidate",
+      "runtime_executed": false
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "failed_open_count": 0,
+  "failed_open_rows": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_runtime_controls_i11b.py",
+  "iteration": "I11-B",
+  "output_digest": "5c9aaaf087c783fd82d330ade313a589519a787532154aa613a98f4142cd582a",
+  "ready_for_iteration_11C": true,
+  "required_control_count": 12,
+  "required_controls": [
+    "no_parent_arrival_trace_control",
+    "below_threshold_pressure_control",
+    "near_threshold_margin_control",
+    "wrong_expected_channel_control",
+    "route_aspect_digest_mismatch_control",
+    "channel_sequence_shuffle_control",
+    "same_causal_surface_replay_idempotency_control",
+    "direct_queue_injection_control",
+    "unprocessed_child_departure_control",
+    "producer_disabled_control",
+    "semantic_pheromone_hunger_relabel_control",
+    "producer_success_as_native_runtime_success_control"
+  ],
+  "runtime_control_scope": {
+    "controls_raise_claim_ceiling": false,
+    "i11_alone_runtime_evidence_allowed": false,
+    "lineage_source": "I11",
+    "primary_runtime_source": "I11-A",
+    "producer_assisted_result_can_upgrade_native": false
+  },
+  "runtime_executed_control_count": 9,
+  "script_sha256": "e31075e1d9298a7acc1019b854e14ab8cc63205aa10592ef268b670a8baa76a3",
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_trace_pressure_loop_prototype_i11",
+      "consumed_as": "lineage_and_claim_boundary_source",
+      "output_digest": "16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_prototype_i11.json"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_runtime_i11a",
+      "consumed_as": "primary_runtime_bridge_candidate_source",
+      "output_digest": "57e647333608ff7fdc1bb307eb256e12770ff9efb98b185bc097e0057d1f5076",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_runtime_i11a.json"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_runtime_i11a_runtime_artifact",
+      "consumed_as": "source_current_runtime_surface_for_controls",
+      "output_digest": "521b40ce3dca367e0f9b8f1641ed52bab1515595bb9eaad037b2db51f9559237",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_runtime_i11a_runtime_artifact.json",
+      "sha256": "be5a214194b94b2858b4f5ca0e11616ed2f81e84b178971ba6a9c1061f2df389"
+    }
+  ],
+  "status": "passed",
+  "title": "Trace / Pressure / Loop Perturbation Controls",
+  "why_i11b_passes": "I11-B keeps I11-A bounded because every required false-positive path fails closed: removing the parent trace, lowering pressure below threshold, breaking route/order gates, bypassing producer ownership, skipping step ownership, disabling the producer, or applying semantic labels cannot replace the trace/pressure/loop runtime chain.",
+  "why_not_stronger": "The controls back a producer-assisted runtime bridge candidate only. They do not convert the row into native ecology, pheromone communication, hunger semantics, shared-medium coordination, agency, or prototype success."
+}

@@ -1,0 +1,89 @@
+{
+  "acceptance_state": "accepted_active_medium_separability_admission_pending_i122abc",
+  "artifact_id": "n29_boundary_shared_medium_active_i122",
+  "checks": [
+    {
+      "check_id": "i12_primary_reference_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i12_1_sibling_reference_passed",
+      "passed": true
+    },
+    {
+      "check_id": "active_medium_probe_requires_i122abc",
+      "passed": true
+    },
+    {
+      "check_id": "zero_leakage_ceiling_preserved_as_policy",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "active_shared_medium_coordination_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "nonzero_leakage_tolerance_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "active-medium admission only; no Prototype B strengthening without I12.2-A/B/C",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "i122_tranche": {
+    "i122a": "active medium runtime extraction",
+    "i122b": "active medium controls and claim blockers",
+    "i122c": "active medium replay/stress close"
+  },
+  "iteration": "I12.2",
+  "output_digest": "999740bd86d0756e61f2d9c263dda209f3b26ab1d00ee49952023dc6f96a9f49",
+  "ready_for_i122a": true,
+  "ready_for_iteration_13": false,
+  "script_sha256": "1571e968a79c15d4d19f5a541e8c65dae28b97c6e81ff5bd3d0cc4ed57253181",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_replay_stress_i12c",
+      "output_digest": "763752030ab58c6c73db61959b17426b63305c892bb875a6da150a4f3788df94",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_replay_stress_i12c.json",
+      "role": "primary_reference_source",
+      "sha256": "93aaf0075dc2dd73419bbb57730b21cd6425dcbfa6aae308e6f27830e3c4dfc7",
+      "source_id": "n29_i12c_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_replay_stress_i121c",
+      "output_digest": "09a8717a2079adb047f21e30dddfe36f6030a2d6875cb72bf2e9d54d8af51693",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_replay_stress_i121c.json",
+      "role": "sibling_reference_source",
+      "sha256": "fad2cb7a9baffb728e72195939a824271196e3f7dbba0cc550489c827529ea02",
+      "source_id": "n29_i121c_replay_stress",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Active-Medium Separability Admission"
+}

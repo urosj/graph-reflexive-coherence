@@ -1,0 +1,188 @@
+{
+  "acceptance_state": "accepted_alternative_boundary_shared_medium_controls_fail_closed",
+  "artifact_id": "n29_boundary_shared_medium_unit_alternative_controls_i121b",
+  "checks": [
+    {
+      "check_id": "i121a_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_controls_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i121.py",
+  "control_rows": [
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "label_only_boundary_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "label_only_child_basin",
+      "source_control_digest": "1b853efcfd07bd4a16c8d1cb335c70d8997146e292d9ed1847e49871e0ba36ca"
+    },
+    {
+      "actual_result": "control failed closed; visualization remains corroboration only",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "visual_only_boundary_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "graph_visual_only_success_control",
+      "source_control_digest": "4714db531008962f943d26958a75c0e78eef03f991663efa3989d1b433fd6897"
+    },
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "merge_leakage_as_success_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "merge_leakage_as_multi_basin_success",
+      "source_control_digest": "80087db9fa5421b351fcc584b143b668d7de8ab2722326f6ef809ecd67653de7"
+    },
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "old_basin_thickening_as_counterpart_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "old_basin_thickening_as_child_basin",
+      "source_control_digest": "323a7748efaf9267c1f04136aa3ad2f527e06b028ef43c04d7de2aca3e58e0db"
+    },
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "producer_as_native_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "producer_assisted_success_as_native_upgrade",
+      "source_control_digest": "69a6eadebbc9fc1042e853177b211b76b5e72a8ef11d65cc48a8011936b951f2"
+    },
+    {
+      "actual_result": "source-role claim control failed closed; relabel rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "n16_artifact_boundary_as_native_runtime_relabel_control",
+      "control_kind": "source_role_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "n16_source_role_boundary_control",
+      "source_control_digest": "f94deaec8ecd2a8c2588eb4ea94d82422d73073c303ebb56940596e4166363e2"
+    },
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "n25_2_mb6_as_ant_ecology_relabel_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "ant_ecology_relabel",
+      "source_control_digest": "3905593f839e80f20e6032a0ea2b28bce39146a736fa5f4b81cefb18df75fe75"
+    },
+    {
+      "actual_result": "source-role claim control failed closed; relabel rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "native_shared_medium_coordination_relabel_control",
+      "control_kind": "source_role_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "native_shared_medium_coordination_claim_boundary_control",
+      "source_control_digest": "76ab6692a58c1ebfcc714fb3e822870013591afd4e33ca0542a4f230ece6a26e"
+    },
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "semantic_trail_or_pheromone_relabel_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "semantic_learning_choice_agency_relabel",
+      "source_control_digest": "6c124d510f4313ebcceaf8eca9f96939d4778bf953e6574256e18e259ec8f0e9"
+    },
+    {
+      "actual_result": "control failed closed; claim rejected",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "agent_body_relabel_control",
+      "control_kind": "runtime_control",
+      "control_status": "failed_closed",
+      "expected_result": "failed_closed",
+      "mapped_source_control_id": "organism_life_relabel",
+      "source_control_digest": "78fd952e233f330a8b58d79327d4c8af94cdc9832ea29a97c1a111428083813d"
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i121.py",
+  "iteration": "I12.1-B",
+  "matrix_summary": {
+    "control_count": 10,
+    "failed_closed_count": 10,
+    "failed_open_count": 0,
+    "runtime_control_count": 8,
+    "source_role_control_count": 2
+  },
+  "output_digest": "e6392bd4457bca541dd0f1693dda5a4e6ea1d1fb26f6bd5bb4844c360adba8dc",
+  "prototype_b_candidate_supported": false,
+  "ready_for_i121c": true,
+  "ready_for_iteration_13": false,
+  "runtime_ecology_success_claimed": false,
+  "script_sha256": "5c1cf13fcaab7eaeeaf7cb61d7254b34ce996bee7a55ee9751a7b9d81cd4247b",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_alternative_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_runtime_i121a",
+      "output_digest": "0c3cb123e7245747705de79d2e732e962de014882fdf5fae7d668b152b189dd4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_runtime_i121a.json",
+      "role": "alternative_runtime_unit_source",
+      "sha256": "5607004a4d67064817624dadc64dc49d9fa8b33a63a740151ab6cef24f50e92a",
+      "source_id": "n29_i121a_runtime_unit",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_fail_closed_controls_mb5_candidates_no_mb6",
+      "artifact_id": "n25_2_fail_closed_control_matrix",
+      "output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_fail_closed_control_matrix.json",
+      "role": "variant_control_source",
+      "sha256": "09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea",
+      "source_id": "n25_2_fail_closed_control_matrix",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Alternative Unit Controls"
+}

@@ -1,0 +1,138 @@
+{
+  "artifact_id": "n29_buffered_generator_extractor_feedback_i1452_artifact",
+  "buffered_feedback_dependency_trace": {
+    "buffered_phase_feedback_bridge_candidate_created": true,
+    "extractor_consumes_generator_changed_medium": true,
+    "extractor_leg_role_preserved": true,
+    "generator_changes_medium_before_extractor": true,
+    "generator_leg_role_preserved": true,
+    "later_generator_consumes_buffered_changed_medium": true,
+    "later_generator_state_depends_on_buffered_changed_medium": true,
+    "native_buffered_phase_feedback_supported": false,
+    "ordered_leg_sequence": [
+      "first_generator_leg",
+      "extractor_leg",
+      "processor_buffer_leg",
+      "later_generator_feedback_leg"
+    ],
+    "processor_buffer_role_preserved": true,
+    "processor_buffers_extractor_changed_medium": true,
+    "roles_averaged_away": false,
+    "win_loss_transfer_required": false
+  },
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "buffered_phase_feedback_bridge_candidate_created": true,
+    "cooperation_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_buffered_phase_feedback_supported": false,
+    "native_phase_coupled_exchange_supported": false,
+    "phase_coupled_exchange_cycle_claim_allowed": false,
+    "resource_economy_claim_allowed": false
+  },
+  "composition_target": "buffered_generator_extractor_processor_generator_feedback_candidate",
+  "experiment_id": "N29",
+  "extractor_leg": {
+    "axis_deltas": {
+      "boundary": -0.081,
+      "distinguishability": -0.077,
+      "environment": -0.069,
+      "support": -0.063
+    },
+    "role_preserved": true,
+    "source_iteration": "I14.2-3",
+    "source_output_digest": "8247fa5d5efcbb694051783a77a1b9d19c4f2785690bf75f820e1efa973d57d6",
+    "source_runtime_row_id": "n29_i14_2_3_leakage_gated_extractive_construction_motif"
+  },
+  "first_generator_leg": {
+    "axis_deltas": {
+      "boundary": 0.126,
+      "distinguishability": 0.133,
+      "environment": 0.123,
+      "support": 0.082
+    },
+    "role_preserved": true,
+    "source_iteration": "I14.1",
+    "source_output_digest": "cc979553bcc8daeaaaca69d648f66b007854e8dd687e8b5864e64b14c52ad8a1",
+    "source_runtime_row_id": "n29_i14_1_generative_enrichment_motif"
+  },
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "I14.5-2 differs from I14.5-1 by inserting the processor redistribution motif between extractor and later generator. The generator enriches, the extractor depletes a phase-aligned shell, the processor redistributes the resulting medium, and the later generator consumes that buffered state. The bridge improves phase residual headroom with one declared retention factor across axes, but remains producer-mediated and cannot upgrade native phase feedback.",
+  "iteration": "I14.5-2",
+  "later_generator_feedback_leg": {
+    "axis_deltas": {
+      "boundary": 0.0287,
+      "distinguishability": 0.05904,
+      "environment": 0.04674,
+      "support": 0.02214
+    },
+    "consumes_extractor_and_processor_changed_medium": true,
+    "feedback_magnitude_gate_passed": true,
+    "minimum_environment_feedback_delta": 0.04,
+    "minimum_support_feedback_delta": 0.02,
+    "role_preserved": true,
+    "source": "N29_bridge_derived_from_extractor_modified_medium_after_processor_buffer",
+    "source_current_native": false
+  },
+  "leakage_record": {
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_gate_passed": true,
+    "merge_leakage_margin": 0.007,
+    "merge_leakage_value": 0.018
+  },
+  "output_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+  "phase_residual_record": {
+    "available_phase_pool_after_buffer": {
+      "boundary": 0.035,
+      "distinguishability": 0.072,
+      "environment": 0.057,
+      "support": 0.027
+    },
+    "i14_5_1_margin_improved": true,
+    "i14_5_1_max_phase_residual_abs": 0.02762,
+    "later_generator_feedback_axis_deltas": {
+      "boundary": 0.0287,
+      "distinguishability": 0.05904,
+      "environment": 0.04674,
+      "support": 0.02214
+    },
+    "max_phase_residual_abs": 0.01296,
+    "max_phase_residual_ceiling": 0.015,
+    "phase_residual_gate_passed": true,
+    "phase_residuals": {
+      "boundary_phase_residual": 0.0063,
+      "distinguishability_phase_residual": 0.01296,
+      "environment_phase_residual": 0.01026,
+      "support_phase_residual": 0.00486
+    },
+    "residual_improvement_over_i14_5_1": 0.01466
+  },
+  "processor_buffer_leg": {
+    "axis_deltas": {
+      "boundary": -0.01,
+      "distinguishability": 0.016,
+      "environment": 0.003,
+      "support": 0.008
+    },
+    "role": "redistribution_buffer_between_extractor_and_later_generator",
+    "role_preserved": true,
+    "source_iteration": "I14.3",
+    "source_output_digest": "998950d34cce9ed539d5cc6ed49a89438b4d0d5c90146ab5b9c0950fada0944d",
+    "source_runtime_row_id": "n29_i14_3_processor_redistribution_motif"
+  },
+  "producer_buffered_feedback_policy": {
+    "buffered_feedback_retention_factor": 0.82,
+    "declared_before_use": true,
+    "i14_5_1_replaced": false,
+    "policy_id": "n29_i14_5_2_buffered_phase_feedback_bridge_v1",
+    "producer_mediated": true,
+    "producer_success_can_upgrade_native": false,
+    "producer_surface_role": "insert the source-backed processor motif as a redistribution buffer before deriving the later generator response",
+    "single_factor_applied_to_all_axes": true,
+    "thresholds_retuned": false
+  },
+  "runtime_artifact_type": "producer_mediated_buffered_generator_extractor_feedback_bridge_artifact",
+  "source_i14_5_1_digest": "61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486",
+  "source_i14_5_digest": "85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d",
+  "source_precomposition_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475"
+}

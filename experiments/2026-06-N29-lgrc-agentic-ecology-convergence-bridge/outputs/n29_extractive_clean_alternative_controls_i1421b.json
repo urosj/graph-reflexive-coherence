@@ -1,0 +1,217 @@
+{
+  "acceptance_state": "accepted_focused_clean_extractive_replacement_controls_fail_closed",
+  "artifact_id": "n29_extractive_clean_alternative_controls_i1421b",
+  "checks": [
+    {
+      "check_id": "i14_2_1_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14c_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_1_found_no_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "control_count_expected",
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "failed_open_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "original_i14_2_caveat_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_support_claim_not_allowed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_record",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "focused_controls_validate_i14_2_1_clean_replacement_blocker_no_runtime_support",
+  "clean_bounded_extractive_runtime_claim_allowed": false,
+  "clean_replacement_candidate_created": false,
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_clean_alternative_i1421bc.py",
+  "control_count": 8,
+  "control_results": [
+    {
+      "actual_result": "failed_closed_all_positive_extractive_sources_remain_over_ceiling",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "b3760a01ee4e246778ebe378e3bf5307295f11f10733b08b786e5289da5907f2",
+      "control_id": "i14_2_1_over_ceiling_extractive_as_clean_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "supported extractive source row exceeds merge/leakage ceiling but is called clean bounded leakage",
+      "rung_effect": "blocks_clean_extractive_replacement"
+    },
+    {
+      "actual_result": "failed_closed_transition_rows_are_unclassified_controls_not_positive_extractors",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "68a7e5014d772063fa195d1142b532eb7d74c236199ca507afe225ced672b0b0",
+      "control_id": "i14_2_1_neutral_gap_transition_as_extractor_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "lower-leakage neutral-gap transition row is used as extractive positive evidence",
+      "rung_effect": "blocks_transition_backfill"
+    },
+    {
+      "actual_result": "failed_closed_threshold_retuning_for_n29_forbidden",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "ddd3ad42a3cb027c453a1babce442cb70435716fffcbba3260fdc63820a60955",
+      "control_id": "i14_2_1_threshold_retune_to_fit_clean_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "N28 merge/leakage ceiling is widened or retuned to make extractor clean",
+      "rung_effect": "blocks_retuned_clean_claim"
+    },
+    {
+      "actual_result": "failed_closed_original_i14_2_caveat_preserved",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "d06798fd957c78712864ad12cffddb1ce3e23b1caee107836c615f9d21dbe9eb",
+      "control_id": "i14_2_1_i14_2_caveat_erasure_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "original I14.2 leakage caveat is removed without a replacement row",
+      "rung_effect": "blocks_i14_2_upgrade"
+    },
+    {
+      "actual_result": "failed_closed_search_record_created_no_runtime_candidate",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "4966f50f21cc6cdc8527429125d3a5fe5988fd7f31e39ed9adf1c8cee5d182cc",
+      "control_id": "i14_2_1_report_only_search_as_runtime_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "I14.2-1 search report is treated as a new runtime extractor",
+      "rung_effect": "blocks_runtime_support_from_search"
+    },
+    {
+      "actual_result": "failed_closed_no_candidate_to_control_or_replay",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "b749904fe357ac3acf4a5bd702429731f602e8635714c578fe489445029f66a0",
+      "control_id": "i14_2_1_rerun_b_c_without_candidate_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "not_applicable_or_rejected",
+      "false_positive_shape": "controls/replay are rerun as if a replacement runtime row exists",
+      "rung_effect": "blocks_empty_positive_validation"
+    },
+    {
+      "actual_result": "failed_closed_manifest_and_source_current_requirements_remain_required",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "7e988bb5cf5d0a01052c4abe24eac87c0b0b2b36b583cc587e8028f07ed9d447",
+      "control_id": "i14_2_1_source_manifest_gap_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "candidate source row lacks source-current inputs or verified artifact manifest",
+      "rung_effect": "blocks_non_source_current_replacement"
+    },
+    {
+      "actual_result": "failed_closed_semantic_ecology_claims_remain_blocked",
+      "claim_allowed_when_control_triggers": false,
+      "control_digest": "f38bb75cc61668ebf0b78607734d907ba61427cf1d17556db6e547520fe9a3ff",
+      "control_id": "i14_2_1_exploitation_relabel_control",
+      "control_scope": "focused_i14_2_1_clean_extractive_replacement_blocker",
+      "control_status": "failed_closed",
+      "control_status_meaning": "false_positive_triggered_and_claim_rejected",
+      "expected_result": "rejected",
+      "false_positive_shape": "extractive depletion is relabelled as exploitation, resource use, or ecology success",
+      "rung_effect": "blocks_ecology_overclaim"
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "failed_closed_count": 8,
+  "failed_open_count": 0,
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_clean_alternative_i1421bc.py",
+  "i14_2_original_caveat_preserved": true,
+  "i14b_i14c_rerun_required_after_controls": false,
+  "iteration": "I14.2-1-B",
+  "output_digest": "c916ebb9aa294439821ea4e4e1c0d48eef7ed6461a5e417607dd957cb883c33d",
+  "prototype_d_runtime_support_claim_allowed": false,
+  "replacement_candidate_status_after_controls": "blocked_no_clean_replacement_candidate",
+  "script_sha256": "f6c58dde068cba0497138c82532522739c01d6f451f8f88c16d19f6ebafcf795",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_clean_extractive_alternative_search_no_admissible_replacement_found",
+      "artifact_id": "n29_extractive_clean_alternative_search_i1421",
+      "iteration": "I14.2-1",
+      "output_digest": "61a3fec4f97b5549fa1621451e68b3a1118d3f1e773584fe614ec168bd221b97",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_alternative_search_i1421.json",
+      "sha256": "17523e3c2137487985cb2e8d6dbfb987f072e3477db9a5d3b0f7c05f56930ae1",
+      "source_id": "n29_i14_2_1_clean_extractive_search",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extractive_depletion_motif_direct_runtime_candidate_pending_i14b_i14c",
+      "artifact_id": "n29_extractive_depletion_runtime_i142",
+      "iteration": "I14.2",
+      "output_digest": "4e42198b18f34700956b53b5873a56639c80b774259ebfbfda5d18168a4e57d0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_runtime_i142.json",
+      "sha256": "f153f1b7e897eecc00841012b82049e8690446f89710fd7f5a0ceaf4e90dea69",
+      "source_id": "n29_i14_2_original_extractive_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_direct_runtime_candidates_bounded_replay_stress_pending_classification",
+      "artifact_id": "n29_generative_extractive_direct_replay_stress_i14c",
+      "iteration": "I14-C",
+      "output_digest": "b10bf023a775433daa6dcf03805cabff606f6f81aaa94f16b0b677f73e9d8fa2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_direct_replay_stress_i14c.json",
+      "sha256": "6d45d005ff9d830657710bae70120ede2394b0a5655bb32eb6636e47667dec30",
+      "source_id": "n29_i14c_direct_replay_stress_context",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14.2-1-B Focused Clean Extractive Controls",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

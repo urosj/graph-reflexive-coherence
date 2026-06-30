@@ -1,0 +1,92 @@
+{
+  "acceptance_state": "accepted_alternative_boundary_shared_medium_sibling_admission",
+  "artifact_id": "n29_boundary_shared_medium_unit_alternative_i121",
+  "checks": [
+    {
+      "check_id": "i12c_primary_reference_supported",
+      "passed": true
+    },
+    {
+      "check_id": "variant_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "variant_source_is_distinct_from_i12_reference",
+      "passed": true
+    },
+    {
+      "check_id": "primary_i12_replaced_false",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "alternative sibling admission only; no Prototype B success without I12.1-A/B/C",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i121.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i121.py",
+  "iteration": "I12.1",
+  "output_digest": "9a609777ff861f5f3887a65591e6047dc366367e9c292961ed204c578083bd41",
+  "primary_i12_envelope_widened": false,
+  "primary_i12_replaced": false,
+  "ready_for_i121a": true,
+  "ready_for_iteration_13": false,
+  "script_sha256": "5c1cf13fcaab7eaeeaf7cb61d7254b34ce996bee7a55ee9751a7b9d81cd4247b",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_replay_stress_i12c",
+      "output_digest": "763752030ab58c6c73db61959b17426b63305c892bb875a6da150a4f3788df94",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_replay_stress_i12c.json",
+      "role": "primary_reference_context",
+      "sha256": "93aaf0075dc2dd73419bbb57730b21cd6425dcbfa6aae308e6f27830e3c4dfc7",
+      "source_id": "n29_i12_primary_reference",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_runtime_variant_and_front_capacity_companion_mb3_scope_no_mb6",
+      "artifact_id": "n25_2_native_runtime_variant_probe",
+      "output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_variant_probe.json",
+      "role": "alternative_runtime_source",
+      "sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+      "source_id": "n25_2_runtime_variant_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Alternative Boundary / Shared-Medium Sibling Admission",
+  "variant_role": "alternative_sibling_repeatability_probe",
+  "variant_source_row": {
+    "candidate_id": "i4a_route_variant_child_basin_core_2",
+    "expected_basin_side": "child_basin_core_2",
+    "expected_counterpart": "competing_sink_0",
+    "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+    "source_iteration": "N25.2 I4-A"
+  }
+}

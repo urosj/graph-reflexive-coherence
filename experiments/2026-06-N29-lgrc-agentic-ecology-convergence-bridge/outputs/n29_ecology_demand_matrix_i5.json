@@ -1,0 +1,3613 @@
+{
+  "acceptance_state": "accepted_ecology_demand_matrix",
+  "artifact_id": "n29_ecology_demand_matrix_i5",
+  "bridge_motif_success_claimed": false,
+  "bridge_motifs_created": false,
+  "candidate_capability_sources_imported": false,
+  "checks": [
+    {
+      "check_id": "i1_ecology_demand_model_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i2_agency_method_constraints_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i4_bridge_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i1_source_digest_matches",
+      "passed": true
+    },
+    {
+      "check_id": "uses_i1_as_only_demand_source",
+      "passed": true
+    },
+    {
+      "check_id": "i2_used_only_for_blocked_claim_language",
+      "passed": true
+    },
+    {
+      "check_id": "i5_phase_b_separation_rule_consumed",
+      "passed": true
+    },
+    {
+      "check_id": "only_i1_i2_i4_sources_consumed",
+      "passed": true
+    },
+    {
+      "check_id": "demand_row_count_matches_i1",
+      "passed": true
+    },
+    {
+      "check_id": "all_i4_ecology_demand_schema_fields_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_i5_row_extensions_are_namespaced",
+      "passed": true
+    },
+    {
+      "check_id": "required_group_families_present",
+      "details": "seen_groups=['debt_and_naturalization_conditions', 'parent_basin_and_subbasin', 'perturbation_co_response_loop', 'reserve_surplus_and_reproduction_split', 'role_labor_and_task_differentiation', 'shared_medium_and_medium_surface', 'susceptibility_and_resonance', 'trace_pressure_and_affordance']",
+      "passed": true
+    },
+    {
+      "check_id": "every_demand_has_runtime_surfaces_and_controls",
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_have_claim_ceiling_target_requirement_only",
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_have_blocked_relabels",
+      "passed": true
+    },
+    {
+      "check_id": "current_surfaces_marked_unresolved_pending_i6_i7",
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_with_missing_surfaces_enter_unresolved_ledger",
+      "passed": true
+    },
+    {
+      "check_id": "source_roles_are_target_requirement_not_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "coverage_status_assigned_false",
+      "passed": true
+    },
+    {
+      "check_id": "i3_capability_matching_attempted_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_n05_n28_evidence_imported",
+      "passed": true
+    },
+    {
+      "check_id": "no_demand_supply_matching_or_coverage_rows_opened",
+      "passed": true
+    },
+    {
+      "check_id": "no_bridge_motifs_or_prototype_rows_opened",
+      "passed": true
+    },
+    {
+      "check_id": "positive_ecology_and_implementation_evidence_closed",
+      "passed": true
+    },
+    {
+      "check_id": "native_shared_medium_coordination_opened_false",
+      "passed": true
+    },
+    {
+      "check_id": "native_ant_and_colony_agency_opened_false",
+      "passed": true
+    },
+    {
+      "check_id": "phase8_completion_opened_false",
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_6",
+      "passed": true
+    }
+  ],
+  "claim_boundary_audit": {
+    "biological_agency_opened": false,
+    "consciousness_opened": false,
+    "fully_native_ecology_opened": false,
+    "native_agency_claim_opened": false,
+    "native_ant_agency_opened": false,
+    "native_colony_agency_opened": false,
+    "native_shared_medium_coordination_opened": false,
+    "organism_life_opened": false,
+    "phase8_completion_opened": false,
+    "prototype_as_native_ecology_opened": false,
+    "semantic_choice_claim_opened": false,
+    "semantic_cooperation_claim_opened": false,
+    "semantic_goal_claim_opened": false,
+    "semantic_intention_claim_opened": false,
+    "sentience_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "claim_ceiling": "ecology_demand_matrix_only_no_supply_match_no_prototypes",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_ecology_demand_matrix_i5.py",
+  "control_index": {
+    "alarm_message_control": [
+      "rc_ant_alarm_threat_pressure"
+    ],
+    "ant_object_as_native_agent_control": [
+      "rc_ant_mobile_boundary_expression"
+    ],
+    "broadcast_as_modulation_control": [
+      "general_parent_basin_modulation"
+    ],
+    "broadcast_as_pressure_control": [
+      "general_pressure"
+    ],
+    "cargo_flag_as_bound_support_control": [
+      "rc_ant_cargo_shaped_susceptibility"
+    ],
+    "cargo_without_cost_control": [
+      "rc_ant_cargo_shaped_susceptibility"
+    ],
+    "central_controller_as_parent_basin_control": [
+      "general_parent_basin"
+    ],
+    "central_scheduler_as_modulation_control": [
+      "general_parent_basin_modulation"
+    ],
+    "colony_label_only_control": [
+      "rc_ant_colony_parent_basin"
+    ],
+    "compatibility_label_only_control": [
+      "general_resonance"
+    ],
+    "construction_label_only_control": [
+      "rc_ant_construction_tension"
+    ],
+    "crowding_label_only_control": [
+      "rc_ant_crowding_congestion_cost"
+    ],
+    "debt_hidden_as_native_control": [
+      "general_medium_debt"
+    ],
+    "direct_message_scaffold_control": [
+      "general_shared_medium"
+    ],
+    "food_label_without_support_control": [
+      "rc_ant_food_resource_coupling"
+    ],
+    "foodward_goal_label_control": [
+      "rc_ant_foodward_affordance_surface"
+    ],
+    "free_geometry_change_control": [
+      "rc_ant_construction_tension"
+    ],
+    "free_motion_control": [
+      "rc_ant_mobile_boundary_expression"
+    ],
+    "global_path_memory_control": [
+      "rc_ant_route_support_trace"
+    ],
+    "hidden_assignment_control": [
+      "general_susceptibility"
+    ],
+    "hidden_coordinator_control": [
+      "general_co_response"
+    ],
+    "hidden_food_assignment_control": [
+      "rc_ant_foodward_affordance_surface"
+    ],
+    "hidden_global_variable_control": [
+      "general_shared_medium"
+    ],
+    "hidden_return_assignment_control": [
+      "rc_ant_homeward_affordance_surface"
+    ],
+    "home_label_only_control": [
+      "rc_ant_nest_home_basin"
+    ],
+    "homeward_goal_label_control": [
+      "rc_ant_homeward_affordance_surface"
+    ],
+    "hunger_broadcast_control": [
+      "rc_ant_reserve_hunger_pressure"
+    ],
+    "independent_change_control": [
+      "general_perturbation"
+    ],
+    "label_only_naturalization_control": [
+      "general_naturalization_condition"
+    ],
+    "message_as_native_medium_control": [
+      "general_message_scaffold"
+    ],
+    "message_passing_as_co_response_control": [
+      "general_co_response"
+    ],
+    "missing_medium_debt_control": [
+      "general_medium_debt"
+    ],
+    "parent_destroyed_by_split_control": [
+      "rc_ant_surplus_supported_split_reproduction"
+    ],
+    "parent_label_only_relabel_control": [
+      "general_parent_basin"
+    ],
+    "pheromone_label_only_control": [
+      "rc_ant_route_support_trace"
+    ],
+    "post_hoc_perturbation_control": [
+      "general_perturbation"
+    ],
+    "pressure_label_only_control": [
+      "general_pressure"
+    ],
+    "producer_state_as_native_control": [
+      "general_producer_residue"
+    ],
+    "resource_counter_as_native_food_control": [
+      "rc_ant_food_resource_coupling"
+    ],
+    "role_label_only_control": [
+      "general_susceptibility"
+    ],
+    "same_response_for_incompatible_state_control": [
+      "general_resonance"
+    ],
+    "scaffold_not_removed_control": [
+      "general_naturalization_condition"
+    ],
+    "scheduler_collision_control": [
+      "rc_ant_crowding_congestion_cost"
+    ],
+    "semantic_care_goal_control": [
+      "rc_ant_nursery_demand"
+    ],
+    "semantic_fear_or_intention_control": [
+      "rc_ant_alarm_threat_pressure"
+    ],
+    "semantic_hunger_goal_control": [
+      "rc_ant_reserve_hunger_pressure"
+    ],
+    "semantic_job_choice_control": [
+      "rc_ant_role_susceptibility_division_of_labor"
+    ],
+    "spawn_label_control": [
+      "rc_ant_surplus_supported_split_reproduction"
+    ],
+    "stale_trace_control": [
+      "general_trace"
+    ],
+    "storage_without_support_control": [
+      "rc_ant_nest_home_basin"
+    ],
+    "sum_of_ants_as_colony_control": [
+      "rc_ant_colony_parent_basin"
+    ],
+    "surface_label_only_control": [
+      "general_medium_surface"
+    ],
+    "task_assignment_as_nursery_control": [
+      "rc_ant_nursery_demand"
+    ],
+    "task_table_as_division_control": [
+      "rc_ant_role_susceptibility_division_of_labor"
+    ],
+    "trace_label_only_control": [
+      "general_trace"
+    ],
+    "undeclared_message_scaffold_control": [
+      "general_message_scaffold"
+    ],
+    "undeclared_producer_variable_control": [
+      "general_producer_residue"
+    ],
+    "unperturbed_surface_response_control": [
+      "general_medium_surface"
+    ],
+    "waste_removal_without_isolation_control": [
+      "rc_ant_waste_isolation"
+    ],
+    "waste_task_label_control": [
+      "rc_ant_waste_isolation"
+    ]
+  },
+  "control_taxonomy": {
+    "control_count": 60,
+    "control_index": {
+      "alarm_message_control": [
+        "rc_ant_alarm_threat_pressure"
+      ],
+      "ant_object_as_native_agent_control": [
+        "rc_ant_mobile_boundary_expression"
+      ],
+      "broadcast_as_modulation_control": [
+        "general_parent_basin_modulation"
+      ],
+      "broadcast_as_pressure_control": [
+        "general_pressure"
+      ],
+      "cargo_flag_as_bound_support_control": [
+        "rc_ant_cargo_shaped_susceptibility"
+      ],
+      "cargo_without_cost_control": [
+        "rc_ant_cargo_shaped_susceptibility"
+      ],
+      "central_controller_as_parent_basin_control": [
+        "general_parent_basin"
+      ],
+      "central_scheduler_as_modulation_control": [
+        "general_parent_basin_modulation"
+      ],
+      "colony_label_only_control": [
+        "rc_ant_colony_parent_basin"
+      ],
+      "compatibility_label_only_control": [
+        "general_resonance"
+      ],
+      "construction_label_only_control": [
+        "rc_ant_construction_tension"
+      ],
+      "crowding_label_only_control": [
+        "rc_ant_crowding_congestion_cost"
+      ],
+      "debt_hidden_as_native_control": [
+        "general_medium_debt"
+      ],
+      "direct_message_scaffold_control": [
+        "general_shared_medium"
+      ],
+      "food_label_without_support_control": [
+        "rc_ant_food_resource_coupling"
+      ],
+      "foodward_goal_label_control": [
+        "rc_ant_foodward_affordance_surface"
+      ],
+      "free_geometry_change_control": [
+        "rc_ant_construction_tension"
+      ],
+      "free_motion_control": [
+        "rc_ant_mobile_boundary_expression"
+      ],
+      "global_path_memory_control": [
+        "rc_ant_route_support_trace"
+      ],
+      "hidden_assignment_control": [
+        "general_susceptibility"
+      ],
+      "hidden_coordinator_control": [
+        "general_co_response"
+      ],
+      "hidden_food_assignment_control": [
+        "rc_ant_foodward_affordance_surface"
+      ],
+      "hidden_global_variable_control": [
+        "general_shared_medium"
+      ],
+      "hidden_return_assignment_control": [
+        "rc_ant_homeward_affordance_surface"
+      ],
+      "home_label_only_control": [
+        "rc_ant_nest_home_basin"
+      ],
+      "homeward_goal_label_control": [
+        "rc_ant_homeward_affordance_surface"
+      ],
+      "hunger_broadcast_control": [
+        "rc_ant_reserve_hunger_pressure"
+      ],
+      "independent_change_control": [
+        "general_perturbation"
+      ],
+      "label_only_naturalization_control": [
+        "general_naturalization_condition"
+      ],
+      "message_as_native_medium_control": [
+        "general_message_scaffold"
+      ],
+      "message_passing_as_co_response_control": [
+        "general_co_response"
+      ],
+      "missing_medium_debt_control": [
+        "general_medium_debt"
+      ],
+      "parent_destroyed_by_split_control": [
+        "rc_ant_surplus_supported_split_reproduction"
+      ],
+      "parent_label_only_relabel_control": [
+        "general_parent_basin"
+      ],
+      "pheromone_label_only_control": [
+        "rc_ant_route_support_trace"
+      ],
+      "post_hoc_perturbation_control": [
+        "general_perturbation"
+      ],
+      "pressure_label_only_control": [
+        "general_pressure"
+      ],
+      "producer_state_as_native_control": [
+        "general_producer_residue"
+      ],
+      "resource_counter_as_native_food_control": [
+        "rc_ant_food_resource_coupling"
+      ],
+      "role_label_only_control": [
+        "general_susceptibility"
+      ],
+      "same_response_for_incompatible_state_control": [
+        "general_resonance"
+      ],
+      "scaffold_not_removed_control": [
+        "general_naturalization_condition"
+      ],
+      "scheduler_collision_control": [
+        "rc_ant_crowding_congestion_cost"
+      ],
+      "semantic_care_goal_control": [
+        "rc_ant_nursery_demand"
+      ],
+      "semantic_fear_or_intention_control": [
+        "rc_ant_alarm_threat_pressure"
+      ],
+      "semantic_hunger_goal_control": [
+        "rc_ant_reserve_hunger_pressure"
+      ],
+      "semantic_job_choice_control": [
+        "rc_ant_role_susceptibility_division_of_labor"
+      ],
+      "spawn_label_control": [
+        "rc_ant_surplus_supported_split_reproduction"
+      ],
+      "stale_trace_control": [
+        "general_trace"
+      ],
+      "storage_without_support_control": [
+        "rc_ant_nest_home_basin"
+      ],
+      "sum_of_ants_as_colony_control": [
+        "rc_ant_colony_parent_basin"
+      ],
+      "surface_label_only_control": [
+        "general_medium_surface"
+      ],
+      "task_assignment_as_nursery_control": [
+        "rc_ant_nursery_demand"
+      ],
+      "task_table_as_division_control": [
+        "rc_ant_role_susceptibility_division_of_labor"
+      ],
+      "trace_label_only_control": [
+        "general_trace"
+      ],
+      "undeclared_message_scaffold_control": [
+        "general_message_scaffold"
+      ],
+      "undeclared_producer_variable_control": [
+        "general_producer_residue"
+      ],
+      "unperturbed_surface_response_control": [
+        "general_medium_surface"
+      ],
+      "waste_removal_without_isolation_control": [
+        "rc_ant_waste_isolation"
+      ],
+      "waste_task_label_control": [
+        "rc_ant_waste_isolation"
+      ]
+    },
+    "control_policy": "controls are target requirements only in I5; execution and fail-closed evaluation remain later-phase work"
+  },
+  "coverage_debt_rows_opened": false,
+  "coverage_status_assigned": false,
+  "current_lgrc_grc_surface_evaluation_status": "deferred_to_iteration_6_and_7",
+  "demand_family_index": {
+    "debt_and_naturalization_conditions": [
+      "general_message_scaffold",
+      "general_medium_debt",
+      "general_producer_residue",
+      "general_naturalization_condition"
+    ],
+    "parent_basin_and_subbasin": [
+      "general_parent_basin",
+      "rc_ant_colony_parent_basin",
+      "rc_ant_nest_home_basin"
+    ],
+    "perturbation_co_response_loop": [
+      "general_perturbation",
+      "general_co_response",
+      "general_parent_basin_modulation"
+    ],
+    "reserve_surplus_and_reproduction_split": [
+      "rc_ant_food_resource_coupling",
+      "rc_ant_reserve_hunger_pressure",
+      "rc_ant_surplus_supported_split_reproduction"
+    ],
+    "role_labor_and_task_differentiation": [
+      "rc_ant_mobile_boundary_expression",
+      "rc_ant_nursery_demand",
+      "rc_ant_waste_isolation",
+      "rc_ant_construction_tension",
+      "rc_ant_crowding_congestion_cost",
+      "rc_ant_role_susceptibility_division_of_labor"
+    ],
+    "shared_medium_and_medium_surface": [
+      "general_shared_medium",
+      "general_medium_surface",
+      "general_message_scaffold",
+      "general_medium_debt"
+    ],
+    "susceptibility_and_resonance": [
+      "general_susceptibility",
+      "general_resonance",
+      "rc_ant_cargo_shaped_susceptibility",
+      "rc_ant_role_susceptibility_division_of_labor"
+    ],
+    "trace_pressure_and_affordance": [
+      "general_trace",
+      "general_pressure",
+      "rc_ant_route_support_trace",
+      "rc_ant_foodward_affordance_surface",
+      "rc_ant_homeward_affordance_surface",
+      "rc_ant_reserve_hunger_pressure",
+      "rc_ant_alarm_threat_pressure"
+    ]
+  },
+  "demand_group_summary": [
+    {
+      "demand_count": 3,
+      "description": "parent/colony/nest context, modulation, and contained sub-basin surfaces",
+      "group_id": "parent_basin_and_subbasin"
+    },
+    {
+      "demand_count": 4,
+      "description": "shared medium, medium surface, message scaffold, and medium debt target surfaces",
+      "group_id": "shared_medium_and_medium_surface"
+    },
+    {
+      "demand_count": 7,
+      "description": "trace, pressure, route support, affordance, reserve, and alarm surfaces",
+      "group_id": "trace_pressure_and_affordance"
+    },
+    {
+      "demand_count": 4,
+      "description": "susceptibility, cargo-shaped response, resonance, and role-capture surfaces",
+      "group_id": "susceptibility_and_resonance"
+    },
+    {
+      "demand_count": 3,
+      "description": "perturbation, co-response, and parent-modulation loop target surfaces",
+      "group_id": "perturbation_co_response_loop"
+    },
+    {
+      "demand_count": 6,
+      "description": "role, labor, isolation, construction, congestion, and mobile-boundary target surfaces",
+      "group_id": "role_labor_and_task_differentiation"
+    },
+    {
+      "demand_count": 3,
+      "description": "resource, reserve, surplus, and split/reproduction target surfaces",
+      "group_id": "reserve_surplus_and_reproduction_split"
+    },
+    {
+      "demand_count": 4,
+      "description": "producer residue, medium debt, scaffold, and naturalization-condition demand rows",
+      "group_id": "debt_and_naturalization_conditions"
+    }
+  ],
+  "demand_supply_matching_opened": false,
+  "demand_surface_taxonomy": {
+    "debt_and_naturalization_conditions": {
+      "demand_ids": [
+        "general_message_scaffold",
+        "general_medium_debt",
+        "general_producer_residue",
+        "general_naturalization_condition"
+      ],
+      "description": "producer residue, medium debt, scaffold, and naturalization-condition demand rows",
+      "state_surfaces": [
+        "debt_ledger_state",
+        "message_state",
+        "producer_state_surface",
+        "scaffold_removed_state",
+        "substrate_carried_geometry",
+        "target_geometry_surface",
+        "target_medium_surface"
+      ],
+      "trace_surfaces": [
+        "debt_resolution_trace",
+        "message_to_medium_mapping_trace",
+        "naturalization_replay_trace",
+        "producer_to_target_mapping_trace",
+        "scaffold_withdrawal_trace"
+      ]
+    },
+    "parent_basin_and_subbasin": {
+      "demand_ids": [
+        "general_parent_basin",
+        "rc_ant_colony_parent_basin",
+        "rc_ant_nest_home_basin"
+      ],
+      "description": "parent/colony/nest context, modulation, and contained sub-basin surfaces",
+      "state_surfaces": [
+        "colony_boundary",
+        "home_affordance_state",
+        "internal_subbasins",
+        "local_subbasin_state",
+        "nest_reserve",
+        "nest_support_state",
+        "parent_identity_boundary",
+        "reserve_condition",
+        "subbasin_membership"
+      ],
+      "trace_surfaces": [
+        "colony_event_history",
+        "event_history",
+        "parent_pressure_trace",
+        "reserve_change_trace",
+        "return_trace",
+        "storage_update_trace"
+      ]
+    },
+    "perturbation_co_response_loop": {
+      "demand_ids": [
+        "general_perturbation",
+        "general_co_response",
+        "general_parent_basin_modulation"
+      ],
+      "description": "perturbation, co-response, and parent-modulation loop target surfaces",
+      "state_surfaces": [
+        "boundary_or_cost_change",
+        "changed_medium_state",
+        "common_pressure_state",
+        "local_capture_state",
+        "local_response_state",
+        "parent_demand_state",
+        "parent_reserve_state"
+      ],
+      "trace_surfaces": [
+        "cause_attribution_trace",
+        "co_response_event_trace",
+        "local_shift_trace",
+        "modulation_event_trace",
+        "perturbation_event_trace",
+        "shared_cause_trace"
+      ]
+    },
+    "reserve_surplus_and_reproduction_split": {
+      "demand_ids": [
+        "rc_ant_food_resource_coupling",
+        "rc_ant_reserve_hunger_pressure",
+        "rc_ant_surplus_supported_split_reproduction"
+      ],
+      "description": "resource, reserve, surplus, and split/reproduction target surfaces",
+      "state_surfaces": [
+        "depletion_state",
+        "external_affordance",
+        "food_support_basin",
+        "foraging_susceptibility",
+        "nest_reserve",
+        "new_boundary_candidate",
+        "parent_closure_state",
+        "reserve_deficit",
+        "surplus_support"
+      ],
+      "trace_surfaces": [
+        "food_contact_trace",
+        "local_shift_trace",
+        "post_split_persistence_trace",
+        "reserve_pressure_trace",
+        "split_event_trace",
+        "support_binding_trace"
+      ]
+    },
+    "role_labor_and_task_differentiation": {
+      "demand_ids": [
+        "rc_ant_mobile_boundary_expression",
+        "rc_ant_nursery_demand",
+        "rc_ant_waste_isolation",
+        "rc_ant_construction_tension",
+        "rc_ant_crowding_congestion_cost",
+        "rc_ant_role_susceptibility_division_of_labor"
+      ],
+      "description": "role, labor, isolation, construction, congestion, and mobile-boundary target surfaces",
+      "state_surfaces": [
+        "boundary_strength",
+        "brood_demand",
+        "care_susceptibility",
+        "congestion_cost_surface",
+        "construction_site_basin",
+        "coupling_surface",
+        "isolation_boundary",
+        "leakage_state",
+        "local_density",
+        "local_history",
+        "local_reserve",
+        "material_support",
+        "mobile_boundary_state",
+        "nursery_support_basin",
+        "role_basin_state",
+        "route_capacity_state",
+        "susceptibility_profile",
+        "waste_basin"
+      ],
+      "trace_surfaces": [
+        "care_response_trace",
+        "construction_action_trace",
+        "crowding_trace",
+        "demand_capture_trace",
+        "geometry_change_trace",
+        "isolation_route_trace",
+        "movement_trace",
+        "nursery_demand_trace",
+        "role_reentry_trace",
+        "route_shift_trace",
+        "support_transfer_trace",
+        "waste_contact_trace"
+      ]
+    },
+    "shared_medium_and_medium_surface": {
+      "demand_ids": [
+        "general_shared_medium",
+        "general_medium_surface",
+        "general_message_scaffold",
+        "general_medium_debt"
+      ],
+      "description": "shared medium, medium surface, message scaffold, and medium debt target surfaces",
+      "state_surfaces": [
+        "cost_surface",
+        "debt_ledger_state",
+        "message_state",
+        "reserve_condition",
+        "reserve_pressure_surface",
+        "route_support_surface",
+        "support_distribution",
+        "target_medium_surface"
+      ],
+      "trace_surfaces": [
+        "debt_resolution_trace",
+        "message_to_medium_mapping_trace",
+        "pressure_field",
+        "signature_field",
+        "surface_decay_trace",
+        "surface_update_trace",
+        "trace_field"
+      ]
+    },
+    "susceptibility_and_resonance": {
+      "demand_ids": [
+        "general_susceptibility",
+        "general_resonance",
+        "rc_ant_cargo_shaped_susceptibility",
+        "rc_ant_role_susceptibility_division_of_labor"
+      ],
+      "description": "susceptibility, cargo-shaped response, resonance, and role-capture surfaces",
+      "state_surfaces": [
+        "bound_cargo_state",
+        "compatibility_state",
+        "integration_or_dissipation_state",
+        "local_basin_capture_state",
+        "local_history",
+        "movement_cost_state",
+        "role_basin_state",
+        "role_bias_state",
+        "susceptibility_profile",
+        "target_subbasin_susceptibility"
+      ],
+      "trace_surfaces": [
+        "capture_response_trace",
+        "cargo_binding_trace",
+        "cargo_delivery_trace",
+        "demand_capture_trace",
+        "failed_integration_trace",
+        "resonance_response_trace",
+        "role_reentry_trace",
+        "susceptibility_update_trace"
+      ]
+    },
+    "trace_pressure_and_affordance": {
+      "demand_ids": [
+        "general_trace",
+        "general_pressure",
+        "rc_ant_route_support_trace",
+        "rc_ant_foodward_affordance_surface",
+        "rc_ant_homeward_affordance_surface",
+        "rc_ant_reserve_hunger_pressure",
+        "rc_ant_alarm_threat_pressure"
+      ],
+      "description": "trace, pressure, route support, affordance, reserve, and alarm surfaces",
+      "state_surfaces": [
+        "alarm_pressure_surface",
+        "boundary_threat_state",
+        "cargo_state",
+        "cost_gradient",
+        "defense_susceptibility",
+        "empty_cargo_state",
+        "food_affordance_surface",
+        "food_susceptibility_state",
+        "foraging_susceptibility",
+        "home_affordance_surface",
+        "nest_coupling_state",
+        "nest_reserve",
+        "persistent_aftereffect_state",
+        "reserve_deficit",
+        "route_cost_state",
+        "route_cost_surface",
+        "support_pressure",
+        "trace_strength_state"
+      ],
+      "trace_surfaces": [
+        "alarm_trace",
+        "cargo_return_trace",
+        "decay_trace",
+        "defense_response_trace",
+        "deposition_trace",
+        "food_signature_contact_trace",
+        "foodward_route_trace",
+        "homeward_route_trace",
+        "local_shift_trace",
+        "pressure_change_trace",
+        "reentry_trace",
+        "reserve_pressure_trace",
+        "response_bias_trace",
+        "trace_decay",
+        "trace_deposition",
+        "trace_reentry"
+      ]
+    }
+  },
+  "ecology_demand_matrix_supported": true,
+  "ecology_demand_rows": [
+    {
+      "blocked_relabels": [
+        "native_colony_agency",
+        "central_manager_as_parent_basin"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_parent_basin",
+      "ecology_component": "parent_basin",
+      "first_probe_relevance": "required for any colony-level or shared-medium probe",
+      "medium_debt_risk": "parent modulation may be simulated as direct broadcast",
+      "producer_residue_risk": "parent pressure may be maintained by explicit producer state",
+      "required_controls": [
+        "parent_label_only_relabel_control",
+        "central_controller_as_parent_basin_control"
+      ],
+      "required_dynamics": [
+        "higher_order_context_modulates_local_continuation",
+        "local_elements_remain_differentiated_inside_parent_geometry"
+      ],
+      "required_state_surfaces": [
+        "parent_identity_boundary",
+        "reserve_condition",
+        "local_subbasin_state"
+      ],
+      "required_trace_surfaces": [
+        "event_history",
+        "parent_pressure_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "parent_basin_and_subbasin",
+      "x_i5_demand_subfamily": "parent_basin",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "parent_basin_and_subbasin"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "parent_label_only_relabel_control",
+          "central_controller_as_parent_basin_control"
+        ],
+        "state_surfaces": [
+          "parent_identity_boundary",
+          "reserve_condition",
+          "local_subbasin_state"
+        ],
+        "trace_surfaces": [
+          "event_history",
+          "parent_pressure_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "native_shared_medium_coordination",
+        "message_bus_as_medium"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_shared_medium",
+      "ecology_component": "shared_medium",
+      "first_probe_relevance": "central surface for relation and coordination probes",
+      "medium_debt_risk": "message bus may stand in for shared medium",
+      "producer_residue_risk": "medium may be maintained by producer-visible ledger",
+      "required_controls": [
+        "direct_message_scaffold_control",
+        "hidden_global_variable_control"
+      ],
+      "required_dynamics": [
+        "multiple_local_geometries_respond_to_common_medium_condition",
+        "relation_carried_by_medium_change_not_pairwise_message_only"
+      ],
+      "required_state_surfaces": [
+        "support_distribution",
+        "cost_surface",
+        "reserve_condition"
+      ],
+      "required_trace_surfaces": [
+        "trace_field",
+        "pressure_field",
+        "signature_field"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "shared_medium_and_medium_surface",
+      "x_i5_demand_subfamily": "shared_medium",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "shared_medium_and_medium_surface"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "direct_message_scaffold_control",
+          "hidden_global_variable_control"
+        ],
+        "state_surfaces": [
+          "support_distribution",
+          "cost_surface",
+          "reserve_condition"
+        ],
+        "trace_surfaces": [
+          "trace_field",
+          "pressure_field",
+          "signature_field"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 3,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "surface_annotation_as_native_medium",
+        "visual_surface_as_evidence"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_medium_surface",
+      "ecology_component": "medium_surface",
+      "first_probe_relevance": "needed before medium participation can be probed",
+      "medium_debt_risk": "surface may be represented as explicit message channel",
+      "producer_residue_risk": "surface may be an annotation rather than substrate geometry",
+      "required_controls": [
+        "surface_label_only_control",
+        "unperturbed_surface_response_control"
+      ],
+      "required_dynamics": [
+        "specific_medium_aspect_can_be_perturbed",
+        "later_local_response_depends_on_surface_change"
+      ],
+      "required_state_surfaces": [
+        "route_support_surface",
+        "reserve_pressure_surface",
+        "cost_surface"
+      ],
+      "required_trace_surfaces": [
+        "surface_update_trace",
+        "surface_decay_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "shared_medium_and_medium_surface",
+      "x_i5_demand_subfamily": "medium_surface",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "shared_medium_and_medium_surface"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "surface_label_only_control",
+          "unperturbed_surface_response_control"
+        ],
+        "state_surfaces": [
+          "route_support_surface",
+          "reserve_pressure_surface",
+          "cost_surface"
+        ],
+        "trace_surfaces": [
+          "surface_update_trace",
+          "surface_decay_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "message_payload_as_medium_change",
+        "post_hoc_causality"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_perturbation",
+      "ecology_component": "perturbation",
+      "first_probe_relevance": "required for any shared-medium cause/effect probe",
+      "medium_debt_risk": "perturbation may be encoded as message payload",
+      "producer_residue_risk": "producer may inject perturbation after outcome inspection",
+      "required_controls": [
+        "post_hoc_perturbation_control",
+        "independent_change_control"
+      ],
+      "required_dynamics": [
+        "activity_changes_shared_medium",
+        "change_has_auditable_cause_and_later_effect"
+      ],
+      "required_state_surfaces": [
+        "changed_medium_state",
+        "boundary_or_cost_change"
+      ],
+      "required_trace_surfaces": [
+        "perturbation_event_trace",
+        "cause_attribution_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "perturbation_co_response_loop",
+      "x_i5_demand_subfamily": "perturbation",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "perturbation_co_response_loop"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "post_hoc_perturbation_control",
+          "independent_change_control"
+        ],
+        "state_surfaces": [
+          "changed_medium_state",
+          "boundary_or_cost_change"
+        ],
+        "trace_surfaces": [
+          "perturbation_event_trace",
+          "cause_attribution_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "pheromone_label_as_native_trace",
+        "memory_variable_as_trace"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_trace",
+      "ecology_component": "trace",
+      "first_probe_relevance": "basis for route-support and aftereffect prototypes",
+      "medium_debt_risk": "trace may be replaced by direct notification",
+      "producer_residue_risk": "trace may be kept in explicit memory table",
+      "required_controls": [
+        "trace_label_only_control",
+        "stale_trace_control"
+      ],
+      "required_dynamics": [
+        "prior_activity_leaves_persistent_medium_alteration",
+        "later_affordance_or_cost_changes_due_to_trace"
+      ],
+      "required_state_surfaces": [
+        "persistent_aftereffect_state",
+        "route_cost_state"
+      ],
+      "required_trace_surfaces": [
+        "trace_deposition",
+        "trace_decay",
+        "trace_reentry"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "trace",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "trace_label_only_control",
+          "stale_trace_control"
+        ],
+        "state_surfaces": [
+          "persistent_aftereffect_state",
+          "route_cost_state"
+        ],
+        "trace_surfaces": [
+          "trace_deposition",
+          "trace_decay",
+          "trace_reentry"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 3,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_goal_as_pressure",
+        "central_command_as_pressure"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_pressure",
+      "ecology_component": "pressure",
+      "first_probe_relevance": "basis for reserve/hunger and threat-pressure probes",
+      "medium_debt_risk": "pressure may be sent as a broadcast instruction",
+      "producer_residue_risk": "pressure may be a scheduler priority variable",
+      "required_controls": [
+        "broadcast_as_pressure_control",
+        "pressure_label_only_control"
+      ],
+      "required_dynamics": [
+        "medium_condition_changes_likelihood_or_cost_of_continuation",
+        "pressure_can_bias_multiple_local_elements_without_command"
+      ],
+      "required_state_surfaces": [
+        "reserve_deficit",
+        "cost_gradient",
+        "support_pressure"
+      ],
+      "required_trace_surfaces": [
+        "pressure_change_trace",
+        "response_bias_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "pressure",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "broadcast_as_pressure_control",
+          "pressure_label_only_control"
+        ],
+        "state_surfaces": [
+          "reserve_deficit",
+          "cost_gradient",
+          "support_pressure"
+        ],
+        "trace_surfaces": [
+          "pressure_change_trace",
+          "response_bias_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_role_as_susceptibility",
+        "assignment_as_native_capture"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_susceptibility",
+      "ecology_component": "susceptibility",
+      "first_probe_relevance": "required for role and differentiated-response probes",
+      "medium_debt_risk": "susceptibility may be emulated by message subscription",
+      "producer_residue_risk": "susceptibility may be task assignment state",
+      "required_controls": [
+        "role_label_only_control",
+        "hidden_assignment_control"
+      ],
+      "required_dynamics": [
+        "local_geometry_can_be_captured_by_medium_condition",
+        "different_local_states_respond_differently_to_same_condition"
+      ],
+      "required_state_surfaces": [
+        "local_basin_capture_state",
+        "role_bias_state"
+      ],
+      "required_trace_surfaces": [
+        "susceptibility_update_trace",
+        "capture_response_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "susceptibility_and_resonance",
+      "x_i5_demand_subfamily": "susceptibility",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "susceptibility_and_resonance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "role_label_only_control",
+          "hidden_assignment_control"
+        ],
+        "state_surfaces": [
+          "local_basin_capture_state",
+          "role_bias_state"
+        ],
+        "trace_surfaces": [
+          "susceptibility_update_trace",
+          "capture_response_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "native_coordination_without_medium",
+        "semantic_cooperation"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_co_response",
+      "ecology_component": "co_response",
+      "first_probe_relevance": "needed for shared-medium coordination probes",
+      "medium_debt_risk": "co-response may be simulated by broadcast",
+      "producer_residue_risk": "producer may coordinate elements directly",
+      "required_controls": [
+        "hidden_coordinator_control",
+        "message_passing_as_co_response_control"
+      ],
+      "required_dynamics": [
+        "multiple_elements_shift_due_to_same_medium_condition",
+        "coordination_occurs_without_direct_pairwise_instruction"
+      ],
+      "required_state_surfaces": [
+        "common_pressure_state",
+        "local_response_state"
+      ],
+      "required_trace_surfaces": [
+        "co_response_event_trace",
+        "shared_cause_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "perturbation_co_response_loop",
+      "x_i5_demand_subfamily": "co_response",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "perturbation_co_response_loop"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "hidden_coordinator_control",
+          "message_passing_as_co_response_control"
+        ],
+        "state_surfaces": [
+          "common_pressure_state",
+          "local_response_state"
+        ],
+        "trace_surfaces": [
+          "co_response_event_trace",
+          "shared_cause_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_understanding",
+        "symbolic_decoding_as_resonance"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_resonance",
+      "ecology_component": "resonance",
+      "first_probe_relevance": "useful for distinguishing shared perturbation from arbitrary signal",
+      "medium_debt_risk": "resonance may be replaced by protocol agreement",
+      "producer_residue_risk": "compatibility may be precomputed by producer",
+      "required_controls": [
+        "compatibility_label_only_control",
+        "same_response_for_incompatible_state_control"
+      ],
+      "required_dynamics": [
+        "perturbation_integrates_in_compatible_geometry",
+        "incompatible_geometry_rejects_or_dissipates_perturbation"
+      ],
+      "required_state_surfaces": [
+        "compatibility_state",
+        "integration_or_dissipation_state"
+      ],
+      "required_trace_surfaces": [
+        "resonance_response_trace",
+        "failed_integration_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "susceptibility_and_resonance",
+      "x_i5_demand_subfamily": "resonance",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "susceptibility_and_resonance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "compatibility_label_only_control",
+          "same_response_for_incompatible_state_control"
+        ],
+        "state_surfaces": [
+          "compatibility_state",
+          "integration_or_dissipation_state"
+        ],
+        "trace_surfaces": [
+          "resonance_response_trace",
+          "failed_integration_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "colony_intention",
+        "central_manager_as_parent_modulation"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_parent_basin_modulation",
+      "ecology_component": "parent_basin_modulation",
+      "first_probe_relevance": "needed for colony-demand and reserve-pressure probes",
+      "medium_debt_risk": "modulation may be implemented as global broadcast",
+      "producer_residue_risk": "parent modulation may be explicit scheduler policy",
+      "required_controls": [
+        "central_scheduler_as_modulation_control",
+        "broadcast_as_modulation_control"
+      ],
+      "required_dynamics": [
+        "parent_condition_changes_affordance_landscape",
+        "local_susceptibilities_shift_without_individual_commands"
+      ],
+      "required_state_surfaces": [
+        "parent_reserve_state",
+        "parent_demand_state",
+        "local_capture_state"
+      ],
+      "required_trace_surfaces": [
+        "modulation_event_trace",
+        "local_shift_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "perturbation_co_response_loop",
+      "x_i5_demand_subfamily": "parent_basin_modulation",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "perturbation_co_response_loop"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "central_scheduler_as_modulation_control",
+          "broadcast_as_modulation_control"
+        ],
+        "state_surfaces": [
+          "parent_reserve_state",
+          "parent_demand_state",
+          "local_capture_state"
+        ],
+        "trace_surfaces": [
+          "modulation_event_trace",
+          "local_shift_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "direct_message_as_native_coordination",
+        "protocol_as_shared_medium"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_message_scaffold",
+      "ecology_component": "message_scaffold",
+      "first_probe_relevance": "needed when early ecology probes require explicit relation scaffolds",
+      "medium_debt_risk": "message scaffold is medium debt until naturalized",
+      "producer_residue_risk": "message scaffold may become hidden producer state",
+      "required_controls": [
+        "message_as_native_medium_control",
+        "undeclared_message_scaffold_control"
+      ],
+      "required_dynamics": [
+        "explicit_message_is_allowed_only_as_scaffold",
+        "message_target_rc_meaning_is_declared"
+      ],
+      "required_state_surfaces": [
+        "message_state",
+        "target_medium_surface"
+      ],
+      "required_trace_surfaces": [
+        "message_to_medium_mapping_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "shared_medium_and_medium_surface",
+      "x_i5_demand_subfamily": "message_scaffold",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "shared_medium_and_medium_surface",
+        "debt_and_naturalization_conditions"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "message_as_native_medium_control",
+          "undeclared_message_scaffold_control"
+        ],
+        "state_surfaces": [
+          "message_state",
+          "target_medium_surface"
+        ],
+        "trace_surfaces": [
+          "message_to_medium_mapping_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 1,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "scaffold_as_native_relation",
+        "medium_debt_erased_by_success"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_medium_debt",
+      "ecology_component": "medium_debt",
+      "first_probe_relevance": "required for all message-mediated ecology prototypes",
+      "medium_debt_risk": "this row is the explicit medium debt requirement",
+      "producer_residue_risk": "debt may be omitted from producer ledger",
+      "required_controls": [
+        "debt_hidden_as_native_control",
+        "missing_medium_debt_control"
+      ],
+      "required_dynamics": [
+        "message_or_coordination_scaffold_is_recorded_as_debt",
+        "debt_has_naturalization_condition"
+      ],
+      "required_state_surfaces": [
+        "debt_ledger_state",
+        "target_medium_surface"
+      ],
+      "required_trace_surfaces": [
+        "debt_resolution_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md#shared-medium"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "shared_medium_and_medium_surface",
+      "x_i5_demand_subfamily": "medium_debt",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "shared_medium_and_medium_surface",
+        "debt_and_naturalization_conditions"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "debt_hidden_as_native_control",
+          "missing_medium_debt_control"
+        ],
+        "state_surfaces": [
+          "debt_ledger_state",
+          "target_medium_surface"
+        ],
+        "trace_surfaces": [
+          "debt_resolution_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 1,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "producer_scaffold_as_native_behavior",
+        "native_agency_by_producer"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_producer_residue",
+      "ecology_component": "producer_residue",
+      "first_probe_relevance": "required for any ecology probe using scaffolding",
+      "medium_debt_risk": "producer may also carry relation/message scaffolds",
+      "producer_residue_risk": "this row tracks producer residue risk directly",
+      "required_controls": [
+        "producer_state_as_native_control",
+        "undeclared_producer_variable_control"
+      ],
+      "required_dynamics": [
+        "explicit_producer_state_is_declared",
+        "target_rc_meaning_and_naturalization_debt_are_recorded"
+      ],
+      "required_state_surfaces": [
+        "producer_state_surface",
+        "target_geometry_surface"
+      ],
+      "required_trace_surfaces": [
+        "producer_to_target_mapping_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-FromStateToBecoming.md#rc-inversion",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#core-definitions"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "debt_and_naturalization_conditions",
+      "x_i5_demand_subfamily": "producer_residue",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "debt_and_naturalization_conditions"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "producer_state_as_native_control",
+          "undeclared_producer_variable_control"
+        ],
+        "state_surfaces": [
+          "producer_state_surface",
+          "target_geometry_surface"
+        ],
+        "trace_surfaces": [
+          "producer_to_target_mapping_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 1,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "partial_scaffold_as_native",
+        "implementation_success_as_naturalization"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "general_naturalization_condition",
+      "ecology_component": "naturalization_condition",
+      "first_probe_relevance": "defines when future ecology behavior can become native claim",
+      "medium_debt_risk": "message scaffold may be left unresolved",
+      "producer_residue_risk": "naturalization may be asserted without scaffold withdrawal",
+      "required_controls": [
+        "scaffold_not_removed_control",
+        "label_only_naturalization_control"
+      ],
+      "required_dynamics": [
+        "scaffolded_behavior_has_declared_native_target",
+        "withdrawal_or_substrate_carriage_condition_is_defined"
+      ],
+      "required_state_surfaces": [
+        "substrate_carried_geometry",
+        "scaffold_removed_state"
+      ],
+      "required_trace_surfaces": [
+        "naturalization_replay_trace",
+        "scaffold_withdrawal_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/README.md#core-translation",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-FromStateToBecoming.md#rc-inversion"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "debt_and_naturalization_conditions",
+      "x_i5_demand_subfamily": "naturalization_condition",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "debt_and_naturalization_conditions"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "scaffold_not_removed_control",
+          "label_only_naturalization_control"
+        ],
+        "state_surfaces": [
+          "substrate_carried_geometry",
+          "scaffold_removed_state"
+        ],
+        "trace_surfaces": [
+          "naturalization_replay_trace",
+          "scaffold_withdrawal_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "general",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "native_colony_agency",
+        "biological_colony_life"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_colony_parent_basin",
+      "ecology_component": "colony_parent_basin",
+      "first_probe_relevance": "root demand for RC-Ant-style probe",
+      "medium_debt_risk": "colony pressure may be broadcast to ants",
+      "producer_residue_risk": "colony identity may be maintained by top-level producer object",
+      "required_controls": [
+        "colony_label_only_control",
+        "sum_of_ants_as_colony_control"
+      ],
+      "required_dynamics": [
+        "colony_persists_as_parent_basin",
+        "subbasins_gain_meaning_inside_parent"
+      ],
+      "required_state_surfaces": [
+        "colony_boundary",
+        "nest_reserve",
+        "subbasin_membership"
+      ],
+      "required_trace_surfaces": [
+        "colony_event_history",
+        "reserve_change_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "parent_basin_and_subbasin",
+      "x_i5_demand_subfamily": "colony_parent_basin",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "parent_basin_and_subbasin"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "colony_label_only_control",
+          "sum_of_ants_as_colony_control"
+        ],
+        "state_surfaces": [
+          "colony_boundary",
+          "nest_reserve",
+          "subbasin_membership"
+        ],
+        "trace_surfaces": [
+          "colony_event_history",
+          "reserve_change_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "native_ant_agency",
+        "semantic_action"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_mobile_boundary_expression",
+      "ecology_component": "mobile_boundary_expression",
+      "first_probe_relevance": "needed for any mobile ecology element",
+      "medium_debt_risk": "movement coordination may be message-mediated",
+      "producer_residue_risk": "ant mode may be explicit state-machine variable",
+      "required_controls": [
+        "ant_object_as_native_agent_control",
+        "free_motion_control"
+      ],
+      "required_dynamics": [
+        "mobile_local_geometry_couples_parent_to_external_support",
+        "movement_has_cost"
+      ],
+      "required_state_surfaces": [
+        "mobile_boundary_state",
+        "local_reserve",
+        "coupling_surface"
+      ],
+      "required_trace_surfaces": [
+        "movement_trace",
+        "support_transfer_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "role_labor_and_task_differentiation",
+      "x_i5_demand_subfamily": "mobile_boundary_expression",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "role_labor_and_task_differentiation"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "ant_object_as_native_agent_control",
+          "free_motion_control"
+        ],
+        "state_surfaces": [
+          "mobile_boundary_state",
+          "local_reserve",
+          "coupling_surface"
+        ],
+        "trace_surfaces": [
+          "movement_trace",
+          "support_transfer_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_home_goal",
+        "native_colony_home_identity"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_nest_home_basin",
+      "ecology_component": "nest_home_basin",
+      "first_probe_relevance": "needed for food-return and reserve probes",
+      "medium_debt_risk": "homeward pressure may be direct instruction",
+      "producer_residue_risk": "home may be hard-coded coordinate or state variable",
+      "required_controls": [
+        "home_label_only_control",
+        "storage_without_support_control"
+      ],
+      "required_dynamics": [
+        "nest_provides_internal_support_architecture",
+        "home_coupling_shapes_return"
+      ],
+      "required_state_surfaces": [
+        "nest_support_state",
+        "home_affordance_state",
+        "internal_subbasins"
+      ],
+      "required_trace_surfaces": [
+        "return_trace",
+        "storage_update_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "parent_basin_and_subbasin",
+      "x_i5_demand_subfamily": "nest_home_basin",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "parent_basin_and_subbasin"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "home_label_only_control",
+          "storage_without_support_control"
+        ],
+        "state_surfaces": [
+          "nest_support_state",
+          "home_affordance_state",
+          "internal_subbasins"
+        ],
+        "trace_surfaces": [
+          "return_trace",
+          "storage_update_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_food_goal",
+        "resource_counter_as_basin"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_food_resource_coupling",
+      "ecology_component": "food_resource_coupling",
+      "first_probe_relevance": "basis for resource-coupling probe",
+      "medium_debt_risk": "food discovery may be direct message",
+      "producer_residue_risk": "food may be producer-managed resource counter",
+      "required_controls": [
+        "food_label_without_support_control",
+        "resource_counter_as_native_food_control"
+      ],
+      "required_dynamics": [
+        "external_support_basin_can_couple_to_mobile_expression",
+        "support_can_be_bound_or_depleted"
+      ],
+      "required_state_surfaces": [
+        "food_support_basin",
+        "external_affordance",
+        "depletion_state"
+      ],
+      "required_trace_surfaces": [
+        "food_contact_trace",
+        "support_binding_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "reserve_surplus_and_reproduction_split",
+      "x_i5_demand_subfamily": "food_resource_coupling",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "reserve_surplus_and_reproduction_split"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "food_label_without_support_control",
+          "resource_counter_as_native_food_control"
+        ],
+        "state_surfaces": [
+          "food_support_basin",
+          "external_affordance",
+          "depletion_state"
+        ],
+        "trace_surfaces": [
+          "food_contact_trace",
+          "support_binding_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "native_pheromone_without_trace",
+        "ant_message_as_route_support"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_route_support_trace",
+      "ecology_component": "route_support_trace",
+      "first_probe_relevance": "central trace/aftereffect prototype demand",
+      "medium_debt_risk": "route support may be communicated directly",
+      "producer_residue_risk": "route trace may be stored in global path table",
+      "required_controls": [
+        "pheromone_label_only_control",
+        "global_path_memory_control"
+      ],
+      "required_dynamics": [
+        "prior_passage_changes_future_route_affordance",
+        "trace_has_cost_and_decay"
+      ],
+      "required_state_surfaces": [
+        "route_cost_surface",
+        "trace_strength_state"
+      ],
+      "required_trace_surfaces": [
+        "deposition_trace",
+        "decay_trace",
+        "reentry_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "route_support_trace",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "pheromone_label_only_control",
+          "global_path_memory_control"
+        ],
+        "state_surfaces": [
+          "route_cost_surface",
+          "trace_strength_state"
+        ],
+        "trace_surfaces": [
+          "deposition_trace",
+          "decay_trace",
+          "reentry_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 2,
+      "x_i5_required_trace_surface_count": 3,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_food_seeking",
+        "foodward_message_as_affordance"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_foodward_affordance_surface",
+      "ecology_component": "foodward_affordance_surface",
+      "first_probe_relevance": "needed for foraging-like probe without goal labels",
+      "medium_debt_risk": "food location may be sent as message",
+      "producer_residue_risk": "foodward route may be scheduled by producer",
+      "required_controls": [
+        "foodward_goal_label_control",
+        "hidden_food_assignment_control"
+      ],
+      "required_dynamics": [
+        "empty_or_food_susceptible_mobile_geometry_moves_toward_food_affordance",
+        "foodward_coupling_depends_on_reserve_or_role"
+      ],
+      "required_state_surfaces": [
+        "food_affordance_surface",
+        "empty_cargo_state",
+        "food_susceptibility_state"
+      ],
+      "required_trace_surfaces": [
+        "foodward_route_trace",
+        "food_signature_contact_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "foodward_affordance_surface",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "foodward_goal_label_control",
+          "hidden_food_assignment_control"
+        ],
+        "state_surfaces": [
+          "food_affordance_surface",
+          "empty_cargo_state",
+          "food_susceptibility_state"
+        ],
+        "trace_surfaces": [
+          "foodward_route_trace",
+          "food_signature_contact_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_return_goal",
+        "home_message_as_affordance"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_homeward_affordance_surface",
+      "ecology_component": "homeward_affordance_surface",
+      "first_probe_relevance": "needed for food-return/cargo probe",
+      "medium_debt_risk": "home location may be direct message",
+      "producer_residue_risk": "return may be controlled by mode variable",
+      "required_controls": [
+        "homeward_goal_label_control",
+        "hidden_return_assignment_control"
+      ],
+      "required_dynamics": [
+        "cargo_or_home_susceptible_mobile_geometry_moves_toward_nest_affordance",
+        "homeward_coupling_depends_on_bound_support"
+      ],
+      "required_state_surfaces": [
+        "home_affordance_surface",
+        "cargo_state",
+        "nest_coupling_state"
+      ],
+      "required_trace_surfaces": [
+        "homeward_route_trace",
+        "cargo_return_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "homeward_affordance_surface",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "homeward_goal_label_control",
+          "hidden_return_assignment_control"
+        ],
+        "state_surfaces": [
+          "home_affordance_surface",
+          "cargo_state",
+          "nest_coupling_state"
+        ],
+        "trace_surfaces": [
+          "homeward_route_trace",
+          "cargo_return_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_carrying_intention",
+        "cargo_flag_as_coherence_binding"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_cargo_shaped_susceptibility",
+      "ecology_component": "cargo_shaped_susceptibility",
+      "first_probe_relevance": "needed for support transport and role-capture probes",
+      "medium_debt_risk": "cargo routing may be direct task message",
+      "producer_residue_risk": "cargo may be boolean variable without support binding",
+      "required_controls": [
+        "cargo_flag_as_bound_support_control",
+        "cargo_without_cost_control"
+      ],
+      "required_dynamics": [
+        "bound_cargo_changes_cost_and_future_coupling",
+        "cargo_type_modulates_nest_subbasin_relevance"
+      ],
+      "required_state_surfaces": [
+        "bound_cargo_state",
+        "movement_cost_state",
+        "target_subbasin_susceptibility"
+      ],
+      "required_trace_surfaces": [
+        "cargo_binding_trace",
+        "cargo_delivery_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "susceptibility_and_resonance",
+      "x_i5_demand_subfamily": "cargo_shaped_susceptibility",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "susceptibility_and_resonance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "cargo_flag_as_bound_support_control",
+          "cargo_without_cost_control"
+        ],
+        "state_surfaces": [
+          "bound_cargo_state",
+          "movement_cost_state",
+          "target_subbasin_susceptibility"
+        ],
+        "trace_surfaces": [
+          "cargo_binding_trace",
+          "cargo_delivery_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "colony_hunger_as_semantic_goal",
+        "broadcast_as_pressure"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_reserve_hunger_pressure",
+      "ecology_component": "reserve_hunger_pressure",
+      "first_probe_relevance": "pressure/reserve prototype demand",
+      "medium_debt_risk": "reserve deficit may be broadcast as command",
+      "producer_residue_risk": "hunger may be a global scheduler priority",
+      "required_controls": [
+        "hunger_broadcast_control",
+        "semantic_hunger_goal_control"
+      ],
+      "required_dynamics": [
+        "reserve_deficit_modulates_food_coupling_pressure",
+        "many_local_elements_can_shift_due_to_common_deficit"
+      ],
+      "required_state_surfaces": [
+        "nest_reserve",
+        "reserve_deficit",
+        "foraging_susceptibility"
+      ],
+      "required_trace_surfaces": [
+        "reserve_pressure_trace",
+        "local_shift_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "reserve_hunger_pressure",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance",
+        "reserve_surplus_and_reproduction_split"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "hunger_broadcast_control",
+          "semantic_hunger_goal_control"
+        ],
+        "state_surfaces": [
+          "nest_reserve",
+          "reserve_deficit",
+          "foraging_susceptibility"
+        ],
+        "trace_surfaces": [
+          "reserve_pressure_trace",
+          "local_shift_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_alarm_understanding",
+        "native_defense_agency"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_alarm_threat_pressure",
+      "ecology_component": "alarm_threat_pressure",
+      "first_probe_relevance": "tests pressure/co-response under boundary perturbation",
+      "medium_debt_risk": "alarm may be direct broadcast",
+      "producer_residue_risk": "defense response may be task assignment",
+      "required_controls": [
+        "alarm_message_control",
+        "semantic_fear_or_intention_control"
+      ],
+      "required_dynamics": [
+        "boundary_threat_alters_local_affordance",
+        "compatible_mobile_geometries_shift_to_defense"
+      ],
+      "required_state_surfaces": [
+        "boundary_threat_state",
+        "alarm_pressure_surface",
+        "defense_susceptibility"
+      ],
+      "required_trace_surfaces": [
+        "alarm_trace",
+        "defense_response_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "trace_pressure_and_affordance",
+      "x_i5_demand_subfamily": "alarm_threat_pressure",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "trace_pressure_and_affordance"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "alarm_message_control",
+          "semantic_fear_or_intention_control"
+        ],
+        "state_surfaces": [
+          "boundary_threat_state",
+          "alarm_pressure_surface",
+          "defense_susceptibility"
+        ],
+        "trace_surfaces": [
+          "alarm_trace",
+          "defense_response_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_nursing_intention",
+        "task_label_as_role_basin"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_nursery_demand",
+      "ecology_component": "nursery_demand",
+      "first_probe_relevance": "role susceptibility and demand-field probe",
+      "medium_debt_risk": "nursery demand may be message broadcast",
+      "producer_residue_risk": "nursery role may be explicit task assignment",
+      "required_controls": [
+        "task_assignment_as_nursery_control",
+        "semantic_care_goal_control"
+      ],
+      "required_dynamics": [
+        "brood_or_nursery_support_need_captures_compatible_roles",
+        "care_coupling_remains_basin_demand_not_task_label"
+      ],
+      "required_state_surfaces": [
+        "nursery_support_basin",
+        "brood_demand",
+        "care_susceptibility"
+      ],
+      "required_trace_surfaces": [
+        "nursery_demand_trace",
+        "care_response_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "role_labor_and_task_differentiation",
+      "x_i5_demand_subfamily": "nursery_demand",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "role_labor_and_task_differentiation"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "task_assignment_as_nursery_control",
+          "semantic_care_goal_control"
+        ],
+        "state_surfaces": [
+          "nursery_support_basin",
+          "brood_demand",
+          "care_susceptibility"
+        ],
+        "trace_surfaces": [
+          "nursery_demand_trace",
+          "care_response_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_cleaning_goal",
+        "cleanup_policy_as_native_waste_basin"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_waste_isolation",
+      "ecology_component": "waste_isolation",
+      "first_probe_relevance": "negative-basin and leakage-control probe",
+      "medium_debt_risk": "waste route may be direct task message",
+      "producer_residue_risk": "waste removal may be hard-coded cleanup policy",
+      "required_controls": [
+        "waste_task_label_control",
+        "waste_removal_without_isolation_control"
+      ],
+      "required_dynamics": [
+        "harmful_or_spent_support_routes_to_isolation_basin",
+        "persistence_requires_removal_or_boundary_repair"
+      ],
+      "required_state_surfaces": [
+        "waste_basin",
+        "isolation_boundary",
+        "leakage_state"
+      ],
+      "required_trace_surfaces": [
+        "waste_contact_trace",
+        "isolation_route_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "role_labor_and_task_differentiation",
+      "x_i5_demand_subfamily": "waste_isolation",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "role_labor_and_task_differentiation"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "waste_task_label_control",
+          "waste_removal_without_isolation_control"
+        ],
+        "state_surfaces": [
+          "waste_basin",
+          "isolation_boundary",
+          "leakage_state"
+        ],
+        "trace_surfaces": [
+          "waste_contact_trace",
+          "isolation_route_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_building_intention",
+        "producer_topology_edit_as_native_construction"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_construction_tension",
+      "ecology_component": "construction_tension",
+      "first_probe_relevance": "tests geometry modification as ecology demand",
+      "medium_debt_risk": "builders may receive direct construction commands",
+      "producer_residue_risk": "construction may be external topology edit",
+      "required_controls": [
+        "construction_label_only_control",
+        "free_geometry_change_control"
+      ],
+      "required_dynamics": [
+        "material_or_boundary_tension_changes_future_affordance",
+        "construction_spends_support_to_modify_geometry"
+      ],
+      "required_state_surfaces": [
+        "construction_site_basin",
+        "material_support",
+        "boundary_strength"
+      ],
+      "required_trace_surfaces": [
+        "construction_action_trace",
+        "geometry_change_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "role_labor_and_task_differentiation",
+      "x_i5_demand_subfamily": "construction_tension",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "role_labor_and_task_differentiation"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "construction_label_only_control",
+          "free_geometry_change_control"
+        ],
+        "state_surfaces": [
+          "construction_site_basin",
+          "material_support",
+          "boundary_strength"
+        ],
+        "trace_surfaces": [
+          "construction_action_trace",
+          "geometry_change_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_avoidance_choice",
+        "scheduler_as_congestion_medium"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_crowding_congestion_cost",
+      "ecology_component": "crowding_congestion_cost",
+      "first_probe_relevance": "shared cost surface and co-response probe",
+      "medium_debt_risk": "route redirection may be direct message",
+      "producer_residue_risk": "congestion may be a pathfinding penalty inserted by producer",
+      "required_controls": [
+        "scheduler_collision_control",
+        "crowding_label_only_control"
+      ],
+      "required_dynamics": [
+        "density_or_route_use_changes_movement_cost",
+        "local_elements_redistribute_due_to_cost_surface"
+      ],
+      "required_state_surfaces": [
+        "congestion_cost_surface",
+        "route_capacity_state",
+        "local_density"
+      ],
+      "required_trace_surfaces": [
+        "crowding_trace",
+        "route_shift_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "role_labor_and_task_differentiation",
+      "x_i5_demand_subfamily": "crowding_congestion_cost",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "role_labor_and_task_differentiation"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "scheduler_collision_control",
+          "crowding_label_only_control"
+        ],
+        "state_surfaces": [
+          "congestion_cost_surface",
+          "route_capacity_state",
+          "local_density"
+        ],
+        "trace_surfaces": [
+          "crowding_trace",
+          "route_shift_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "semantic_job_identity",
+        "task_assignment_as_native_role"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_role_susceptibility_division_of_labor",
+      "ecology_component": "role_susceptibility_division_of_labor",
+      "first_probe_relevance": "role differentiation and susceptibility probe",
+      "medium_debt_risk": "roles may be assigned through messages",
+      "producer_residue_risk": "division of labor may be explicit role table",
+      "required_controls": [
+        "task_table_as_division_control",
+        "semantic_job_choice_control"
+      ],
+      "required_dynamics": [
+        "repeated_coupling_deepens_role_basin_susceptibility",
+        "different_mobile_geometries_respond_differently_to_same_demand"
+      ],
+      "required_state_surfaces": [
+        "role_basin_state",
+        "local_history",
+        "susceptibility_profile"
+      ],
+      "required_trace_surfaces": [
+        "role_reentry_trace",
+        "demand_capture_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony",
+        "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md#ant-colony-examples"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "susceptibility_and_resonance",
+      "x_i5_demand_subfamily": "role_susceptibility_division_of_labor",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "susceptibility_and_resonance",
+        "role_labor_and_task_differentiation"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "task_table_as_division_control",
+          "semantic_job_choice_control"
+        ],
+        "state_surfaces": [
+          "role_basin_state",
+          "local_history",
+          "susceptibility_profile"
+        ],
+        "trace_surfaces": [
+          "role_reentry_trace",
+          "demand_capture_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    },
+    {
+      "blocked_relabels": [
+        "biological_reproduction_claim",
+        "producer_spawn_as_native_split"
+      ],
+      "claim_ceiling": "target_requirement_only",
+      "demand_id": "rc_ant_surplus_supported_split_reproduction",
+      "ecology_component": "surplus_supported_split_reproduction",
+      "first_probe_relevance": "future reproduction/split probe target, not I1 evidence",
+      "medium_debt_risk": "split coordination may rely on central schedule",
+      "producer_residue_risk": "spawn may be producer insertion",
+      "required_controls": [
+        "spawn_label_control",
+        "parent_destroyed_by_split_control"
+      ],
+      "required_dynamics": [
+        "surplus_support_enables_new_identity_or_subidentity",
+        "parent_closure_survives_split"
+      ],
+      "required_state_surfaces": [
+        "surplus_support",
+        "new_boundary_candidate",
+        "parent_closure_state"
+      ],
+      "required_trace_surfaces": [
+        "split_event_trace",
+        "post_split_persistence_trace"
+      ],
+      "source_role": "target_requirement_not_evidence",
+      "source_spec_reference": [
+        "reflexive-coherence-agentic-ecology/papers/2026-06-RC-AgenticEcology.md#rc-ant-colony"
+      ],
+      "x_i5_bridge_motif_created": false,
+      "x_i5_candidate_capability_sources_imported": false,
+      "x_i5_current_lgrc_surface_expectation": "unknown_until_I7",
+      "x_i5_demand_family": "reserve_surplus_and_reproduction_split",
+      "x_i5_demand_subfamily": "surplus_supported_split_reproduction",
+      "x_i5_demand_supply_match_opened": false,
+      "x_i5_implementation_evidence_opened": false,
+      "x_i5_matrix_group_ids": [
+        "reserve_surplus_and_reproduction_split"
+      ],
+      "x_i5_positive_ecology_evidence_opened": false,
+      "x_i5_prototype_row_opened": false,
+      "x_i5_required_control_count": 2,
+      "x_i5_required_runtime_surfaces": {
+        "control_surfaces": [
+          "spawn_label_control",
+          "parent_destroyed_by_split_control"
+        ],
+        "state_surfaces": [
+          "surplus_support",
+          "new_boundary_candidate",
+          "parent_closure_state"
+        ],
+        "trace_surfaces": [
+          "split_event_trace",
+          "post_split_persistence_trace"
+        ]
+      },
+      "x_i5_required_state_surface_count": 3,
+      "x_i5_required_trace_surface_count": 2,
+      "x_i5_source_demand_family": "rc_ant_worked_domain",
+      "x_i5_unresolved_as_of_i5": true,
+      "x_i5_unresolved_demand_status": "pending_i6_supply_atlas_and_i7_coverage_match",
+      "x_i5_unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching.",
+      "x_i5_unresolved_without_capability_match": true,
+      "x_i5_why_not_stronger": "Current LGRC/GRC coverage is deliberately not evaluated until I6/I7; this row only states what the ecology demand requires.",
+      "x_unknown_field_review_status": "accepted_no_claim_effect"
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-29T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_ecology_demand_matrix_i5.py",
+  "i3_capability_matching_attempted": false,
+  "implementation_evidence_opened": false,
+  "iteration": "I5",
+  "matrix_policy": {
+    "canonical_row_semantics": "one row = one ecology demand requirement",
+    "cartesian_expansion_allowed": false,
+    "coverage_status_assignment_allowed": false,
+    "current_lgrc_surface_claim_allowed": false,
+    "facets_stay_in_arrays": [
+      "required_dynamics",
+      "required_state_surfaces",
+      "required_trace_surfaces",
+      "required_controls",
+      "blocked_relabels"
+    ],
+    "prototype_rows_allowed": false,
+    "source_capability_matching_allowed": false
+  },
+  "n05_n28_evidence_imported": false,
+  "output_digest": "2503831622cdfc99d9f6083bfc841481a06c6fd67bcba1a9ad840c1e1c069fe9",
+  "phase_b_i5_job": "ecology_demand_matrix_only",
+  "phase_b_separation_rule_consumed": {
+    "job": "ecology_demand_matrix_only",
+    "must_not": [
+      "import_N05_N28_evidence",
+      "match_demand_to_supply",
+      "create_bridge_motifs",
+      "open_prototype_rows"
+    ]
+  },
+  "positive_ecology_evidence_opened": false,
+  "prototype_rows_opened": false,
+  "ready_for_iteration_6": true,
+  "row_count_summary": {
+    "control_index_count": 60,
+    "demand_family_index_count": 8,
+    "ecology_demand_rows": 30,
+    "source_index_count": 5,
+    "unresolved_demand_ledger_rows": 30
+  },
+  "runtime_surface_inventory": {
+    "top_blocked_relabels": [
+      [
+        "native_colony_agency",
+        2
+      ],
+      [
+        "central_manager_as_parent_basin",
+        1
+      ],
+      [
+        "native_shared_medium_coordination",
+        1
+      ],
+      [
+        "message_bus_as_medium",
+        1
+      ],
+      [
+        "surface_annotation_as_native_medium",
+        1
+      ],
+      [
+        "visual_surface_as_evidence",
+        1
+      ],
+      [
+        "message_payload_as_medium_change",
+        1
+      ],
+      [
+        "post_hoc_causality",
+        1
+      ],
+      [
+        "pheromone_label_as_native_trace",
+        1
+      ],
+      [
+        "memory_variable_as_trace",
+        1
+      ]
+    ],
+    "top_controls": [
+      [
+        "parent_label_only_relabel_control",
+        1
+      ],
+      [
+        "central_controller_as_parent_basin_control",
+        1
+      ],
+      [
+        "direct_message_scaffold_control",
+        1
+      ],
+      [
+        "hidden_global_variable_control",
+        1
+      ],
+      [
+        "surface_label_only_control",
+        1
+      ],
+      [
+        "unperturbed_surface_response_control",
+        1
+      ],
+      [
+        "post_hoc_perturbation_control",
+        1
+      ],
+      [
+        "independent_change_control",
+        1
+      ],
+      [
+        "trace_label_only_control",
+        1
+      ],
+      [
+        "stale_trace_control",
+        1
+      ]
+    ],
+    "top_state_surfaces": [
+      [
+        "reserve_condition",
+        2
+      ],
+      [
+        "cost_surface",
+        2
+      ],
+      [
+        "reserve_deficit",
+        2
+      ],
+      [
+        "target_medium_surface",
+        2
+      ],
+      [
+        "nest_reserve",
+        2
+      ],
+      [
+        "parent_identity_boundary",
+        1
+      ],
+      [
+        "local_subbasin_state",
+        1
+      ],
+      [
+        "support_distribution",
+        1
+      ],
+      [
+        "route_support_surface",
+        1
+      ],
+      [
+        "reserve_pressure_surface",
+        1
+      ]
+    ],
+    "top_trace_surfaces": [
+      [
+        "local_shift_trace",
+        2
+      ],
+      [
+        "event_history",
+        1
+      ],
+      [
+        "parent_pressure_trace",
+        1
+      ],
+      [
+        "trace_field",
+        1
+      ],
+      [
+        "pressure_field",
+        1
+      ],
+      [
+        "signature_field",
+        1
+      ],
+      [
+        "surface_update_trace",
+        1
+      ],
+      [
+        "surface_decay_trace",
+        1
+      ],
+      [
+        "perturbation_event_trace",
+        1
+      ],
+      [
+        "cause_attribution_trace",
+        1
+      ]
+    ],
+    "unique_blocked_relabel_count": 59,
+    "unique_control_count": 60,
+    "unique_state_surface_count": 75,
+    "unique_trace_surface_count": 59
+  },
+  "script_sha256": "e3325dca63a43b237b5ce161993cb3189226f2487a80e51406c8c261aeba9d31",
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_ecology_demand_extraction_i1",
+      "consumed_as": "demand_source",
+      "output_digest": "509f808f69b6ac33682c1f4396fd8a421d6d9372130c8edc357e102bb7b513e3",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_ecology_demand_extraction_i1.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_agency_diagnostic_method_constraints_i2",
+      "consumed_as": "blocked_claim_language_only_not_demand_or_supply_source",
+      "output_digest": "02deca28ddfc7ed56c68b394cc885788a478203c230b53385151cae6bc3b8a06",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_agency_diagnostic_method_constraints_i2.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_bridge_schema_i4",
+      "consumed_as": "schema_and_phase_b_boundary",
+      "output_digest": "e2e093b4cd143c1f5173391923d4707e2d2f9c48467b1e0c4052ba89d5b61131",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_schema_i4.json",
+      "status": "passed"
+    }
+  ],
+  "source_coverage_summary": {
+    "blocked_claim_language_source": "n29_agency_diagnostic_method_constraints_i2",
+    "coverage_claimed": false,
+    "coverage_deferred_to": "I7",
+    "demand_source": "n29_ecology_demand_extraction_i1",
+    "schema_boundary_source": "n29_bridge_schema_i4",
+    "source_count": 5
+  },
+  "source_index": {
+    "FromStateToBecoming": [
+      "general_naturalization_condition",
+      "general_producer_residue"
+    ],
+    "RCAgenticEcology": [
+      "rc_ant_alarm_threat_pressure",
+      "rc_ant_cargo_shaped_susceptibility",
+      "rc_ant_colony_parent_basin",
+      "rc_ant_construction_tension",
+      "rc_ant_crowding_congestion_cost",
+      "rc_ant_food_resource_coupling",
+      "rc_ant_foodward_affordance_surface",
+      "rc_ant_homeward_affordance_surface",
+      "rc_ant_mobile_boundary_expression",
+      "rc_ant_nest_home_basin",
+      "rc_ant_nursery_demand",
+      "rc_ant_reserve_hunger_pressure",
+      "rc_ant_role_susceptibility_division_of_labor",
+      "rc_ant_route_support_trace",
+      "rc_ant_surplus_supported_split_reproduction",
+      "rc_ant_waste_isolation"
+    ],
+    "README": [
+      "general_co_response",
+      "general_medium_debt",
+      "general_message_scaffold",
+      "general_naturalization_condition",
+      "general_parent_basin_modulation",
+      "general_pressure",
+      "general_producer_residue",
+      "general_shared_medium",
+      "general_trace"
+    ],
+    "SharedMediumCoordinationSpec": [
+      "general_co_response",
+      "general_medium_debt",
+      "general_medium_surface",
+      "general_message_scaffold",
+      "general_parent_basin",
+      "general_parent_basin_modulation",
+      "general_perturbation",
+      "general_pressure",
+      "general_producer_residue",
+      "general_resonance",
+      "general_shared_medium",
+      "general_susceptibility",
+      "general_trace",
+      "rc_ant_alarm_threat_pressure",
+      "rc_ant_crowding_congestion_cost",
+      "rc_ant_foodward_affordance_surface",
+      "rc_ant_homeward_affordance_surface",
+      "rc_ant_nursery_demand",
+      "rc_ant_reserve_hunger_pressure",
+      "rc_ant_role_susceptibility_division_of_labor",
+      "rc_ant_route_support_trace"
+    ],
+    "TheSharedMedium": [
+      "general_co_response",
+      "general_medium_debt",
+      "general_message_scaffold",
+      "general_parent_basin",
+      "general_parent_basin_modulation",
+      "general_perturbation",
+      "general_resonance",
+      "general_susceptibility",
+      "general_trace"
+    ]
+  },
+  "status": "passed",
+  "title": "Ecology Demand Matrix",
+  "unresolved_demand_ledger": [
+    {
+      "blocked_relabels": [
+        "native_colony_agency",
+        "central_manager_as_parent_basin"
+      ],
+      "demand_id": "general_parent_basin",
+      "first_probe_relevance": "required for any colony-level or shared-medium probe",
+      "required_future_surface": "parent_identity_boundary + reserve_condition + event_history + parent_pressure_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "native_shared_medium_coordination",
+        "message_bus_as_medium"
+      ],
+      "demand_id": "general_shared_medium",
+      "first_probe_relevance": "central surface for relation and coordination probes",
+      "required_future_surface": "support_distribution + cost_surface + trace_field + pressure_field",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "surface_annotation_as_native_medium",
+        "visual_surface_as_evidence"
+      ],
+      "demand_id": "general_medium_surface",
+      "first_probe_relevance": "needed before medium participation can be probed",
+      "required_future_surface": "route_support_surface + reserve_pressure_surface + surface_update_trace + surface_decay_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "message_payload_as_medium_change",
+        "post_hoc_causality"
+      ],
+      "demand_id": "general_perturbation",
+      "first_probe_relevance": "required for any shared-medium cause/effect probe",
+      "required_future_surface": "changed_medium_state + boundary_or_cost_change + perturbation_event_trace + cause_attribution_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "pheromone_label_as_native_trace",
+        "memory_variable_as_trace"
+      ],
+      "demand_id": "general_trace",
+      "first_probe_relevance": "basis for route-support and aftereffect prototypes",
+      "required_future_surface": "persistent_aftereffect_state + route_cost_state + trace_deposition + trace_decay",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_goal_as_pressure",
+        "central_command_as_pressure"
+      ],
+      "demand_id": "general_pressure",
+      "first_probe_relevance": "basis for reserve/hunger and threat-pressure probes",
+      "required_future_surface": "reserve_deficit + cost_gradient + pressure_change_trace + response_bias_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_role_as_susceptibility",
+        "assignment_as_native_capture"
+      ],
+      "demand_id": "general_susceptibility",
+      "first_probe_relevance": "required for role and differentiated-response probes",
+      "required_future_surface": "local_basin_capture_state + role_bias_state + susceptibility_update_trace + capture_response_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "native_coordination_without_medium",
+        "semantic_cooperation"
+      ],
+      "demand_id": "general_co_response",
+      "first_probe_relevance": "needed for shared-medium coordination probes",
+      "required_future_surface": "common_pressure_state + local_response_state + co_response_event_trace + shared_cause_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_understanding",
+        "symbolic_decoding_as_resonance"
+      ],
+      "demand_id": "general_resonance",
+      "first_probe_relevance": "useful for distinguishing shared perturbation from arbitrary signal",
+      "required_future_surface": "compatibility_state + integration_or_dissipation_state + resonance_response_trace + failed_integration_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "colony_intention",
+        "central_manager_as_parent_modulation"
+      ],
+      "demand_id": "general_parent_basin_modulation",
+      "first_probe_relevance": "needed for colony-demand and reserve-pressure probes",
+      "required_future_surface": "parent_reserve_state + parent_demand_state + modulation_event_trace + local_shift_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "direct_message_as_native_coordination",
+        "protocol_as_shared_medium"
+      ],
+      "demand_id": "general_message_scaffold",
+      "first_probe_relevance": "needed when early ecology probes require explicit relation scaffolds",
+      "required_future_surface": "message_state + target_medium_surface + message_to_medium_mapping_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "scaffold_as_native_relation",
+        "medium_debt_erased_by_success"
+      ],
+      "demand_id": "general_medium_debt",
+      "first_probe_relevance": "required for all message-mediated ecology prototypes",
+      "required_future_surface": "debt_ledger_state + target_medium_surface + debt_resolution_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "producer_scaffold_as_native_behavior",
+        "native_agency_by_producer"
+      ],
+      "demand_id": "general_producer_residue",
+      "first_probe_relevance": "required for any ecology probe using scaffolding",
+      "required_future_surface": "producer_state_surface + target_geometry_surface + producer_to_target_mapping_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "partial_scaffold_as_native",
+        "implementation_success_as_naturalization"
+      ],
+      "demand_id": "general_naturalization_condition",
+      "first_probe_relevance": "defines when future ecology behavior can become native claim",
+      "required_future_surface": "substrate_carried_geometry + scaffold_removed_state + naturalization_replay_trace + scaffold_withdrawal_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "native_colony_agency",
+        "biological_colony_life"
+      ],
+      "demand_id": "rc_ant_colony_parent_basin",
+      "first_probe_relevance": "root demand for RC-Ant-style probe",
+      "required_future_surface": "colony_boundary + nest_reserve + colony_event_history + reserve_change_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "native_ant_agency",
+        "semantic_action"
+      ],
+      "demand_id": "rc_ant_mobile_boundary_expression",
+      "first_probe_relevance": "needed for any mobile ecology element",
+      "required_future_surface": "mobile_boundary_state + local_reserve + movement_trace + support_transfer_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_home_goal",
+        "native_colony_home_identity"
+      ],
+      "demand_id": "rc_ant_nest_home_basin",
+      "first_probe_relevance": "needed for food-return and reserve probes",
+      "required_future_surface": "nest_support_state + home_affordance_state + return_trace + storage_update_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_food_goal",
+        "resource_counter_as_basin"
+      ],
+      "demand_id": "rc_ant_food_resource_coupling",
+      "first_probe_relevance": "basis for resource-coupling probe",
+      "required_future_surface": "food_support_basin + external_affordance + food_contact_trace + support_binding_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "native_pheromone_without_trace",
+        "ant_message_as_route_support"
+      ],
+      "demand_id": "rc_ant_route_support_trace",
+      "first_probe_relevance": "central trace/aftereffect prototype demand",
+      "required_future_surface": "route_cost_surface + trace_strength_state + deposition_trace + decay_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_food_seeking",
+        "foodward_message_as_affordance"
+      ],
+      "demand_id": "rc_ant_foodward_affordance_surface",
+      "first_probe_relevance": "needed for foraging-like probe without goal labels",
+      "required_future_surface": "food_affordance_surface + empty_cargo_state + foodward_route_trace + food_signature_contact_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_return_goal",
+        "home_message_as_affordance"
+      ],
+      "demand_id": "rc_ant_homeward_affordance_surface",
+      "first_probe_relevance": "needed for food-return/cargo probe",
+      "required_future_surface": "home_affordance_surface + cargo_state + homeward_route_trace + cargo_return_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_carrying_intention",
+        "cargo_flag_as_coherence_binding"
+      ],
+      "demand_id": "rc_ant_cargo_shaped_susceptibility",
+      "first_probe_relevance": "needed for support transport and role-capture probes",
+      "required_future_surface": "bound_cargo_state + movement_cost_state + cargo_binding_trace + cargo_delivery_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "colony_hunger_as_semantic_goal",
+        "broadcast_as_pressure"
+      ],
+      "demand_id": "rc_ant_reserve_hunger_pressure",
+      "first_probe_relevance": "pressure/reserve prototype demand",
+      "required_future_surface": "nest_reserve + reserve_deficit + reserve_pressure_trace + local_shift_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_alarm_understanding",
+        "native_defense_agency"
+      ],
+      "demand_id": "rc_ant_alarm_threat_pressure",
+      "first_probe_relevance": "tests pressure/co-response under boundary perturbation",
+      "required_future_surface": "boundary_threat_state + alarm_pressure_surface + alarm_trace + defense_response_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_nursing_intention",
+        "task_label_as_role_basin"
+      ],
+      "demand_id": "rc_ant_nursery_demand",
+      "first_probe_relevance": "role susceptibility and demand-field probe",
+      "required_future_surface": "nursery_support_basin + brood_demand + nursery_demand_trace + care_response_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_cleaning_goal",
+        "cleanup_policy_as_native_waste_basin"
+      ],
+      "demand_id": "rc_ant_waste_isolation",
+      "first_probe_relevance": "negative-basin and leakage-control probe",
+      "required_future_surface": "waste_basin + isolation_boundary + waste_contact_trace + isolation_route_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_building_intention",
+        "producer_topology_edit_as_native_construction"
+      ],
+      "demand_id": "rc_ant_construction_tension",
+      "first_probe_relevance": "tests geometry modification as ecology demand",
+      "required_future_surface": "construction_site_basin + material_support + construction_action_trace + geometry_change_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_avoidance_choice",
+        "scheduler_as_congestion_medium"
+      ],
+      "demand_id": "rc_ant_crowding_congestion_cost",
+      "first_probe_relevance": "shared cost surface and co-response probe",
+      "required_future_surface": "congestion_cost_surface + route_capacity_state + crowding_trace + route_shift_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "semantic_job_identity",
+        "task_assignment_as_native_role"
+      ],
+      "demand_id": "rc_ant_role_susceptibility_division_of_labor",
+      "first_probe_relevance": "role differentiation and susceptibility probe",
+      "required_future_surface": "role_basin_state + local_history + role_reentry_trace + demand_capture_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    },
+    {
+      "blocked_relabels": [
+        "biological_reproduction_claim",
+        "producer_spawn_as_native_split"
+      ],
+      "demand_id": "rc_ant_surplus_supported_split_reproduction",
+      "first_probe_relevance": "future reproduction/split probe target, not I1 evidence",
+      "required_future_surface": "surplus_support + new_boundary_candidate + split_event_trace + post_split_persistence_trace",
+      "unresolved_reason": "I5 is demand-only and cannot import N05-N28 capability evidence or perform demand/supply matching."
+    }
+  ]
+}
