@@ -828,6 +828,131 @@ I12.2-C = active-medium replay/stress close
 The correct positive result is active-medium separability, not nonzero leakage
 tolerance, native shared-medium coordination, or ecology success.
 
+Prototype C starts at I13 and has a third center of gravity. It should not
+repeat Prototype A's trace / pressure / loop pattern or Prototype B's
+boundary / shared-medium unit. Prototype C asks whether a bridge component can
+be built around history-conditioned re-entry:
+
+```text
+prior interaction / proxy divergence / susceptibility update
+  -> bounded changed geometry or proxy state
+  -> later re-entry into the same or transferred configuration
+  -> bounded differential response or collapse
+```
+
+In agentic ecology terms, this is the low-level scaffold underneath future
+language such as "returning to a place", "foodward susceptibility",
+"role-capture", "cargo-shaped response", "avoidance", or "choice under prior
+experience". I13 must not claim those semantic or biological readings. Its job
+is narrower: identify whether N22/N23/N26/N27 already provide source-backed
+pieces that can be assembled into a controlled proxy / susceptibility /
+re-entry bridge miniature.
+
+Primary source families:
+
+```text
+N22 = susceptibility update / durable geometry modification
+N23 = live-continuation collapse / selection geometry
+N26 = proxy divergence / proxy collapse
+N27 = configuration / substrate transfer and re-entry mapping
+```
+
+N29 I5-I8 may be used as indexes and coverage maps only. I13 must return to
+the original experiment artifacts for full source rows, digests, controls, and
+claim ceilings.
+
+The intended I13 bridge row has four distinguishable parts:
+
+```text
+proxy_or_perturbation_state
+susceptibility_delta_or_modified_geometry
+reentry_or_transfer_trace
+collapse_or_differential_response_trace
+```
+
+I13 should first be an admission / design step. If it finds a clean source
+chain, later I13-A/B/C can extract an exact runtime or artifact row, run
+controls, and replay/stress it. If the source chain is only mapping-level, I13
+must classify the row as mapping-only with debt rather than pretending it is a
+runnable ecology prototype.
+
+I13-A/B/C may still be useful after a mapping-only I13 result, but their role
+changes. They should not become a hidden positive runtime tranche. Instead:
+
+```text
+I13-A = exact row extraction attempt / source-chain localization
+I13-B = mapping relabel and cross-experiment stitching controls
+I13-C = replay / stress admissibility decision over the admitted record
+```
+
+If I13-A does not find one exact source-current row, I13-B and I13-C should
+remain control/debt records: they may stabilize the mapping record and preserve
+claim boundaries, but they cannot support runtime Prototype C.
+
+If I13-A/B/C close as mapping/debt only, N29 may still try a constructive
+composition step. That step should be called I13.1, not I13-D, because it is
+not another validation record over the inherited source chain. I13.1 asks
+whether N29 can build a new source-current composed prototype from the
+source-backed mechanisms:
+
+```text
+proxy pressure / perturbation state
+  -> route-local susceptibility or geometry update
+  -> same-budget re-entry / transfer readback
+  -> bounded differential response or collapse
+```
+
+I13.1 must be judged as new N29 evidence. It may use N22/N23/N26/N27 as design
+constraints and claim ceilings, but it must not claim that prior artifacts
+already proved the composed row. A positive I13.1 result can support a bounded
+Prototype C runtime candidate. It still cannot support final ecology success,
+semantic learning, choice, agency, native AP4/AP5 closure, native support, or
+ant-role behavior.
+
+After a positive I13.1 runtime candidate, run the usual follow-up pair:
+
+```text
+I13.1-B = controls over the composed runtime candidate
+I13.1-C = replay / stress over the composed runtime candidate
+```
+
+These are different from I13-B/C. I13-B/C protect the mapping-only source
+chain. I13.1-B/C validate the newly composed N29 runtime row. If I13.1-B/C
+pass, Prototype C can be carried forward as a control-backed and
+replay/stress-backed bounded runtime candidate under its local envelope, but
+still not as final ecology success.
+
+If the I13.1-C envelope is narrow, N29 may add I13.2 as an alternative composed
+runtime candidate. I13.2 should not replace I13.1 and should not retune I13.1.
+It should test repeatability and possible margin headroom in a different
+proxy/susceptibility/re-entry geometry. If I13.2 passes, run I13.2-B/C before
+classifying it as control-backed or replay/stress-backed.
+
+After I13.1-C and I13.2-C, add a compact I13* synthesis before moving to I14.
+The synthesis should classify Prototype C as a two-geometry bounded runtime
+pattern, preserve the mapping hygiene records, identify the strongest local
+candidate, and keep all semantic, native-support, and ecology-success claims
+blocked.
+
+Claim blockers:
+
+```text
+semantic goal
+semantic choice
+preference ownership
+intentional return
+identity transfer
+learning as semantic knowledge
+native AP4/AP5 closure
+native support
+ant role behavior
+ecology success
+```
+
+The correct positive result is a bounded proxy / susceptibility / re-entry
+bridge candidate, not learning, choice, agency, native role selection, or
+semantic return.
+
 ### Phase D - Probe Contracts And Closeout
 
 ```text

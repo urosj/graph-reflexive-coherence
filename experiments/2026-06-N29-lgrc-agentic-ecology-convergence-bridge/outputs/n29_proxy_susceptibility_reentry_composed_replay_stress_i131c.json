@@ -1,0 +1,268 @@
+{
+  "acceptance_state": "accepted_i13_1c_composed_runtime_replay_stress_backed_candidate",
+  "artifact_id": "n29_proxy_susceptibility_reentry_composed_replay_stress_i131c",
+  "checks": [
+    {
+      "check_id": "i13_1b_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_replays_stable",
+      "passed": true
+    },
+    {
+      "check_id": "supported_stress_rows_present",
+      "passed": true
+    },
+    {
+      "check_id": "rejected_stress_rows_present",
+      "passed": true
+    },
+    {
+      "check_id": "control_stress_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "supported_margins_positive",
+      "passed": true
+    },
+    {
+      "check_id": "replay_stress_backed_candidate_supported",
+      "passed": true
+    },
+    {
+      "check_id": "final_success_still_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_14",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_role_behavior_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "identity_transfer_claim_allowed": false,
+      "intentional_return_claim_allowed": false,
+      "learning_as_semantic_knowledge_claim_allowed": false,
+      "native_ap4_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "preference_ownership_claim_allowed": false,
+      "semantic_goal_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_composed_i131bc.py",
+  "control_stress_rows": [
+    {
+      "control_status": "failed_closed",
+      "reason": "response trace cannot precede susceptibility and re-entry trace",
+      "row_decision": "rejected",
+      "row_id": "order_inversion_control",
+      "runtime_claim_allowed": false
+    },
+    {
+      "control_status": "failed_closed",
+      "reason": "bounded differential response is not semantic learning, choice, or goal",
+      "row_decision": "rejected",
+      "row_id": "semantic_goal_choice_learning_relabel_control",
+      "runtime_claim_allowed": false
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_composed_i131bc.py",
+  "iteration": "I13.1-C",
+  "output_digest": "1939e892718f1a63e1246ce580b402ff72da4a1102136b0945f2faaa3129d284",
+  "replay_rows": [
+    {
+      "digest_match": true,
+      "recomputed_row_digest": "23a944fb2ed8a2d2ccf97d6b1b8ee0e6e33c5280401dd24f46ef753e03a7e2dc",
+      "replay_status": "stable",
+      "row_id": "artifact_replay",
+      "runtime_claim_allowed": true,
+      "source_row_digest": "23a944fb2ed8a2d2ccf97d6b1b8ee0e6e33c5280401dd24f46ef753e03a7e2dc"
+    },
+    {
+      "replay_status": "stable",
+      "row_id": "snapshot_load_replay",
+      "runtime_claim_allowed": true,
+      "runtime_sha256": "c604357c6f54ee50c8e0d131e5b6542b07b436969afffa031fa481ffdb40db85",
+      "source_runtime_digest": "4f4bc8efb432a54cb2c06d62eef16a34bbc9a6f290ed1ef0780c7d18a18e057c"
+    },
+    {
+      "duplicate_suppression_interpretation": "second replay does not create a second candidate row; it preserves the same row digest",
+      "first_replay_emits_candidate": true,
+      "replay_status": "stable",
+      "row_id": "duplicate_replay",
+      "runtime_claim_allowed": true,
+      "second_replay_duplicates_candidate": false
+    }
+  ],
+  "replay_stress_summary": {
+    "claim_ceiling": "replay/stress-backed I13.1 composed Prototype C runtime candidate under a narrow local envelope; not final ecology success or semantic agency",
+    "control_stress_failed_closed_count": 2,
+    "final_prototype_c_success_supported": false,
+    "i13_1_source_digest": "0abdefc5d6df6bd072b55926ffbf7876f97a4bb99d0ce30acf49c08c3c7b2e0d",
+    "i13_1b_source_digest": "feca975ed081a275e90f01b81b23cb6fd9e7d5e821db32bd9f24c997ebab2138",
+    "min_supported_differential_response_margin": 0.03825,
+    "min_supported_susceptibility_margin": 0.0046,
+    "prototype_family": "proxy_susceptibility_reentry",
+    "ready_for_iteration_14": true,
+    "rejected_stress_count": 2,
+    "replay_count": 3,
+    "replay_stress_backed_runtime_candidate_supported": true,
+    "runtime_artifact_digest": "4f4bc8efb432a54cb2c06d62eef16a34bbc9a6f290ed1ef0780c7d18a18e057c",
+    "stable_replay_count": 3,
+    "stress_envelope_scope": "baseline plus near-floor proxy-pressure support; below susceptibility floor and high-challenge response-floor cases reject",
+    "stress_row_count": 4,
+    "supported_stress_count": 2
+  },
+  "script_sha256": "d08bd0eeacb9b93528e252afe9477a2828b3f11ba0bbfae745ec09a4396608dd",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_i13_1_composed_runtime_candidate_no_final_ecology_success",
+      "artifact_id": "n29_proxy_susceptibility_reentry_composed_i131",
+      "iteration": "I13.1",
+      "output_digest": "0abdefc5d6df6bd072b55926ffbf7876f97a4bb99d0ce30acf49c08c3c7b2e0d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_composed_i131.json",
+      "sha256": "7c879dafdc0e1c490cc7ff0a3ffc6e90160b0781fa733148d6bd4dd412bf80cb",
+      "source_id": "n29_i13_1_composed_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n29_proxy_susceptibility_reentry_composed_runtime_i131_artifact",
+      "iteration": "I13.1-runtime",
+      "output_digest": "4f4bc8efb432a54cb2c06d62eef16a34bbc9a6f290ed1ef0780c7d18a18e057c",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_composed_runtime_i131_artifact.json",
+      "sha256": "c604357c6f54ee50c8e0d131e5b6542b07b436969afffa031fa481ffdb40db85",
+      "source_id": "n29_i13_1_runtime_artifact",
+      "status": "not_recorded"
+    },
+    {
+      "acceptance_state": "accepted_i13_1b_composed_runtime_controls_fail_closed",
+      "artifact_id": "n29_proxy_susceptibility_reentry_composed_controls_i131b",
+      "iteration": "I13.1-B",
+      "output_digest": "feca975ed081a275e90f01b81b23cb6fd9e7d5e821db32bd9f24c997ebab2138",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_composed_controls_i131b.json",
+      "sha256": "4c5db367ac686044826578453ec0e58bac6e4701534bf387e8e57f7037c2d154",
+      "source_id": "n29_i13_1b_controls",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "stress_rows": [
+    {
+      "challenge_load": 0.15,
+      "differential_response": 0.1445,
+      "differential_response_margin": 0.0645,
+      "expected_decision": "supported",
+      "floor_results": {
+        "differential_response_above_floor": true,
+        "susceptibility_delta_above_floor": true,
+        "target_response_above_floor": true
+      },
+      "peer_reentry_alignment": 0.08,
+      "peer_response_score": 0.525,
+      "proxy_pressure": 0.18,
+      "row_decision": "supported",
+      "row_digest": "bfb5ca175ea84c7c528af092a251c8621e3686ad0a027caf15aad0997da77f6f",
+      "row_id": "baseline_replay_stress",
+      "runtime_claim_allowed": true,
+      "susceptibility_coupling": 0.42,
+      "susceptibility_delta": 0.0756,
+      "susceptibility_delta_margin": 0.0256,
+      "target_reentry_alignment": 0.18,
+      "target_response_margin": 0.0695,
+      "target_response_score": 0.6695
+    },
+    {
+      "challenge_load": 0.15,
+      "differential_response": 0.11825,
+      "differential_response_margin": 0.03825,
+      "expected_decision": "supported",
+      "floor_results": {
+        "differential_response_above_floor": true,
+        "susceptibility_delta_above_floor": true,
+        "target_response_above_floor": true
+      },
+      "peer_reentry_alignment": 0.08,
+      "peer_response_score": 0.525,
+      "proxy_pressure": 0.13,
+      "row_decision": "supported",
+      "row_digest": "b5e9d8d7273225e749a245ae95617cbba3f903d1bc3917650bdea4c614344518",
+      "row_id": "near_floor_proxy_pressure_supported",
+      "runtime_claim_allowed": true,
+      "susceptibility_coupling": 0.42,
+      "susceptibility_delta": 0.0546,
+      "susceptibility_delta_margin": 0.0046,
+      "target_reentry_alignment": 0.18,
+      "target_response_margin": 0.04325,
+      "target_response_score": 0.64325
+    },
+    {
+      "challenge_load": 0.15,
+      "differential_response": 0.1025,
+      "differential_response_margin": 0.0225,
+      "expected_decision": "rejected",
+      "floor_results": {
+        "differential_response_above_floor": true,
+        "susceptibility_delta_above_floor": false,
+        "target_response_above_floor": true
+      },
+      "peer_reentry_alignment": 0.08,
+      "peer_response_score": 0.525,
+      "proxy_pressure": 0.1,
+      "row_decision": "rejected",
+      "row_digest": "5bafc5dc3370d533d95466ce3ee2980cd4b175101482980c65eb8e440b8fa209",
+      "row_id": "below_susceptibility_floor_rejected",
+      "runtime_claim_allowed": false,
+      "susceptibility_coupling": 0.42,
+      "susceptibility_delta": 0.042,
+      "susceptibility_delta_margin": -0.008,
+      "target_reentry_alignment": 0.18,
+      "target_response_margin": 0.0275,
+      "target_response_score": 0.6275
+    },
+    {
+      "challenge_load": 0.95,
+      "differential_response": 0.1445,
+      "differential_response_margin": 0.0645,
+      "expected_decision": "rejected",
+      "floor_results": {
+        "differential_response_above_floor": true,
+        "susceptibility_delta_above_floor": true,
+        "target_response_above_floor": false
+      },
+      "peer_reentry_alignment": 0.08,
+      "peer_response_score": 0.445,
+      "proxy_pressure": 0.18,
+      "row_decision": "rejected",
+      "row_digest": "89220e5d18b7e574307e842dc580a18958bf2bea3bb860b926176c3cfb822c3c",
+      "row_id": "high_challenge_response_floor_rejected",
+      "runtime_claim_allowed": false,
+      "susceptibility_coupling": 0.42,
+      "susceptibility_delta": 0.0756,
+      "susceptibility_delta_margin": 0.0256,
+      "target_reentry_alignment": 0.18,
+      "target_response_margin": -0.0105,
+      "target_response_score": 0.5895
+    }
+  ],
+  "title": "Prototype C I13.1-C Composed Runtime Replay / Stress"
+}

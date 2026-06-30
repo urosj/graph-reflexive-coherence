@@ -2158,22 +2158,554 @@ Phase 8 completion
 
 ### Iteration 13 - Prototype C: Proxy / Susceptibility / Re-Entry
 
-- [ ] Build or reconstruct a proxy-collapse / susceptibility / re-entry miniature from N22/N23/N26/N27 evidence where source support permits.
-- [ ] Record ecology demand served.
-- [ ] Record supplied capability and bridge motif.
-- [ ] Record remaining producer, medium, or naturalization debt.
-- [ ] Record exact downstream ecology probe suggested by the prototype.
-- [ ] Record AP4/AP5 dependency status.
-- [ ] Record whether re-entry is source-backed, producer-mediated, or missing.
-- [ ] Block semantic goal, semantic choice, and identity-transfer relabels.
+Direction:
 
-Expected result:
+I13 starts Prototype C. It should not be another trace / pressure / loop row
+and it should not be another boundary/shared-medium unit. Prototype C asks a
+different bridge question:
+
+```text
+Can prior proxy divergence, susceptibility update, or live-continuation
+collapse become a source-backed re-entry miniature, where a later return to a
+same or transferred configuration produces a bounded differential response?
+```
+
+This is the low-level bridge underneath future ecology language such as
+returning to a place, foodward susceptibility, role-capture, cargo-shaped
+response, avoidance, or choice under prior experience. I13 must keep that
+language interpretive only. It should look for source-backed geometry, proxy,
+susceptibility, transfer, and re-entry traces, not semantic goals or choices.
+
+Prototype C fits the Phase C progression like this:
+
+```text
+Prototype A / I11 = trace + pressure + bounded loop response
+Prototype B / I12 = boundary + shared/adjacent medium + counterpart separability
+Prototype C / I13 = proxy/susceptibility state + re-entry + bounded differential response
+```
+
+Primary source roles:
+
+```text
+N22 = susceptibility update / durable geometry modification source
+N23 = live-continuation collapse / selection geometry source
+N26 = proxy divergence / proxy collapse source
+N27 = configuration / substrate transfer and re-entry mapping source
+```
+
+N29 I5-I8 may be used as search/index scaffolds only. I13 must return to the
+original experiment artifacts for full source rows, digests, controls, and
+claim ceilings.
+
+The expected bridge row should have four parts where source support permits:
+
+```text
+proxy_or_perturbation_state
+susceptibility_delta_or_modified_geometry
+reentry_or_transfer_trace
+collapse_or_differential_response_trace
+```
+
+If all four are source-backed and controls can be named, I13 may admit a
+Prototype C runtime or artifact tranche for I13-A/B/C. If not, I13 should
+classify the row as mapping-only or debt-bearing. It must not infer re-entry
+from labels, coverage-map rows, or semantic ecology terms.
+
+Blocked readings:
+
+```text
+semantic goal
+semantic choice
+preference ownership
+intentional return
+identity transfer
+learning as semantic knowledge
+native AP4/AP5 closure
+native support
+ant role behavior
+ecology success
+```
+
+Expected I13 stance:
+
+```text
+status = passed_or_mapping_only_with_reason
+prototype_family = proxy_susceptibility_reentry
+claim_ceiling = bounded_proxy_susceptibility_reentry_bridge_candidate_or_mapping_only_with_debt
+ready_for_i13a_i13b_i13c = true only if an exact source-backed row is available
+ready_for_iteration_14 = true only if Prototype C is admitted or explicitly
+  demoted without blocking the atlas
+```
+
+- [x] Build or reconstruct a proxy-collapse / susceptibility / re-entry miniature from N22/N23/N26/N27 evidence where source support permits.
+- [x] Record ecology demand served.
+- [x] Record supplied capability and bridge motif.
+- [x] Record remaining producer, medium, or naturalization debt.
+- [x] Record exact downstream ecology probe suggested by the prototype.
+- [x] Record AP4/AP5 dependency status.
+- [x] Record whether re-entry is source-backed, producer-mediated, or missing.
+- [x] Block semantic goal, semantic choice, and identity-transfer relabels.
+
+Result:
 
 ```text
 status = passed
 prototype_family = proxy_susceptibility_reentry
-claim_ceiling = source_backed_bridge_prototype_or_mapping_only_with_debt
+acceptance_state = accepted_mapping_only_proxy_susceptibility_reentry_bridge_ready_for_i14_no_i13abc
+output = outputs/n29_proxy_susceptibility_reentry_i13.json
+report = reports/n29_proxy_susceptibility_reentry_i13.md
+output_digest = 6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f
+claim_ceiling = source-backed mapping-only Prototype C proxy/susceptibility/re-entry bridge candidate with explicit debt; no runtime ecology success
+all_four_parts_source_backed = true
+exact_single_runtime_row_available = false
+ready_for_i13a_i13b_i13c = false
 ready_for_iteration_14 = true
+```
+
+Interpretation:
+
+```text
+I13 finds source-backed parts for Prototype C, but does not find one exact
+source-current runtime row that already combines proxy state, susceptibility
+delta, re-entry, and differential response. The row is therefore useful as a
+mapping/admission bridge and source-backed debt ledger. It is not a Prototype C
+runtime success and it does not open I13-A/B/C as a positive runtime tranche.
+I13-A/B/C were then run as separate validation/debt records: exact-row
+extraction, mapping controls, and replay/stress admissibility.
+```
+
+### Iteration 13-A - Prototype C Exact Row Extraction Attempt
+
+- [x] Consume the I13 admission record.
+- [x] Attempt to localize one exact source-current row combining proxy state, susceptibility delta, re-entry, and differential response.
+- [x] Record source IDs by bridge part.
+- [x] Record whether a common runtime artifact exists.
+- [x] Preserve mapping inventory if exact runtime row is absent.
+- [x] Block runtime Prototype C when exact row is absent.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13a_exact_row_absent_mapping_inventory_consumable
+output = outputs/n29_proxy_susceptibility_reentry_extraction_i13a.json
+report = reports/n29_proxy_susceptibility_reentry_extraction_i13a.md
+output_digest = 8eda4085ebacf26f80ab4a19a326be42d9d90edb98a656cb1fe57d625ad1e732
+exact_source_current_runtime_row_found = false
+prototype_c_runtime_claim_allowed = false
+mapping_record_consumable = true
+```
+
+Interpretation:
+
+```text
+I13-A confirms that the four Prototype C parts are source-backed but distributed
+across N22/N23/N26/N27 artifacts. No single source-current runtime row already
+contains all four parts with one lineage, so runtime Prototype C remains blocked.
+```
+
+### Iteration 13-B - Prototype C Mapping Relabel Controls
+
+- [x] Consume I13 and I13-A.
+- [x] Run mapping/relabel controls over the attempted Prototype C row.
+- [x] Block coverage-map-as-source-row and cross-experiment-stitching relabels.
+- [x] Block semantic goal, choice, preference ownership, intentional return, identity transfer, and semantic learning relabels.
+- [x] Block native AP4/AP5, native support, ant-role behavior, and ecology-success relabels.
+- [x] Preserve mapping/debt record while blocking runtime Prototype C.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13b_mapping_controls_fail_closed_no_runtime_claim
+output = outputs/n29_proxy_susceptibility_reentry_controls_i13b.json
+report = reports/n29_proxy_susceptibility_reentry_controls_i13b.md
+output_digest = 9c2adba1a6d56c541ef21fd3d0967acb3af7046d01667c1089237179dadf20d9
+all_controls_failed_closed = true
+failed_open_control_count = 0
+runtime_control_matrix_run = false
+prototype_c_runtime_claim_allowed = false
+```
+
+Interpretation:
+
+```text
+I13-B protects I13-A by proving that labels, indexes, stitching, semantic
+readings, native AP4/AP5 closure, native support, ant-role behavior, and ecology
+success cannot be used to turn the mapping record into a runtime Prototype C.
+```
+
+### Iteration 13-C - Prototype C Replay / Stress Decision
+
+- [x] Consume I13, I13-A, and I13-B.
+- [x] Validate source-chain digest stability.
+- [x] Record runtime replay admissibility.
+- [x] Record runtime stress admissibility.
+- [x] Preserve mapping-only handoff if exact runtime row remains absent.
+- [x] Keep I14 open without promoting Prototype C to runtime success.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13c_source_stable_mapping_only_runtime_replay_stress_not_admitted
+output = outputs/n29_proxy_susceptibility_reentry_replay_stress_i13c.json
+report = reports/n29_proxy_susceptibility_reentry_replay_stress_i13c.md
+output_digest = d2f16bd16998c146e012a3a1955907fd3b6a248c0f48f403a946af051b5741d5
+source_chain_digest_replay_status = stable
+runtime_replay_status = not_run
+runtime_stress_status = not_run
+prototype_c_runtime_claim_allowed = false
+ready_for_iteration_14 = true
+```
+
+Interpretation:
+
+```text
+I13-C keeps Prototype C as source-stable mapping/debt evidence. Runtime replay
+and stress are not admissible because I13-A found no exact runtime row. This
+does not block I14; it simply means Prototype C enters the atlas as debt-bearing
+rather than as a runtime prototype success.
+```
+
+### Iteration 13.1 - Prototype C Composed Runtime Candidate
+
+I13.1 corrects the overly narrow reading of I13-A/B/C. I13-A/B/C show only that
+the exact combined row was not already present in prior source artifacts. They
+do not prove that N29 cannot compose such a row. I13.1 therefore builds a new
+N29 source-current composed prototype from source-backed design constraints:
+
+```text
+proxy pressure / perturbation state
+  -> route-local susceptibility update
+  -> same-budget re-entry into the modified lane
+  -> bounded differential response against a peer route
+```
+
+The result must be evaluated as new N29 evidence, not as inherited proof from
+N22/N23/N26/N27. It may support a bounded runtime candidate if all four legs are
+present and controls fail closed. It must still block final ecology success,
+semantic learning, choice, agency, native AP4/AP5 closure, native support, and
+ant-role behavior.
+
+- [x] Consume I13, I13-A, I13-B, and I13-C as source-backed design constraints and claim ceilings.
+- [x] Build a new N29 composed runtime artifact.
+- [x] Record the proxy/perturbation leg.
+- [x] Record the susceptibility/modified-geometry leg.
+- [x] Record the re-entry/transfer readback leg.
+- [x] Record the collapse/differential-response leg.
+- [x] Record same-budget peer comparison.
+- [x] Record fail-closed relabel/stitching/hidden-response controls.
+- [x] Preserve AP4/AP5 and native-support blockers.
+- [x] Distinguish bounded runtime candidate support from final Prototype C success.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13_1_composed_runtime_candidate_no_final_ecology_success
+output = outputs/n29_proxy_susceptibility_reentry_composed_i131.json
+runtime_artifact = outputs/n29_proxy_susceptibility_reentry_composed_runtime_i131_artifact.json
+report = reports/n29_proxy_susceptibility_reentry_composed_i131.md
+output_digest = 0abdefc5d6df6bd072b55926ffbf7876f97a4bb99d0ce30acf49c08c3c7b2e0d
+runtime_artifact_digest = 4f4bc8efb432a54cb2c06d62eef16a34bbc9a6f290ed1ef0780c7d18a18e057c
+prototype_c_runtime_candidate_supported = true
+final_prototype_c_success_supported = false
+susceptibility_delta_margin = 0.0256
+differential_response_margin = 0.0645
+failed_open_control_count = 0
+ready_for_iteration_14 = true
+```
+
+Interpretation:
+
+```text
+I13.1 is the constructive Prototype C pass. It shows that N29 can compose the
+source-backed mechanisms into a new runtime candidate where proxy pressure
+modifies a route-local susceptibility lane, later re-entry reads that modified
+lane, and the target route differs from a same-budget peer route. This is real
+bridge evidence, but still bounded. I13.1-B/C then test controls and local
+replay/stress over this composed row. Producer-mediated susceptibility remains
+naturalization debt, native AP4/AP5 closure is not supported, and no semantic
+learning, choice, agency, or ecology success is claimed.
+```
+
+### Iteration 13.1-B - Prototype C Composed Runtime Controls
+
+I13.1-B is the control matrix for the new composed runtime row. It is not the
+same as I13-B, which only protected the mapping-only source chain. I13.1-B asks
+whether the actual I13.1 runtime candidate survives the false-positive paths
+that would make a composed history-conditioned response look stronger than it
+is.
+
+- [x] Consume the I13.1 composed runtime candidate.
+- [x] Verify the candidate row digest is stable.
+- [x] Run no-prior-proxy-pressure control.
+- [x] Run label-only susceptibility delta control.
+- [x] Run re-entry removed control.
+- [x] Run hidden direct response producer control.
+- [x] Run same-budget peer comparability control.
+- [x] Run semantic learning / choice / goal relabel control.
+- [x] Run native AP4/AP5 / native support relabel control.
+- [x] Preserve final Prototype C success blocker.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13_1b_composed_runtime_controls_fail_closed
+output = outputs/n29_proxy_susceptibility_reentry_composed_controls_i131b.json
+report = reports/n29_proxy_susceptibility_reentry_composed_controls_i131b.md
+output_digest = feca975ed081a275e90f01b81b23cb6fd9e7d5e821db32bd9f24c997ebab2138
+control_backed_runtime_candidate_supported = true
+failed_closed_count = 6
+passed_comparability_count = 1
+failed_open_count = 0
+final_prototype_c_success_supported = false
+```
+
+Interpretation:
+
+```text
+I13.1-B supports the composed Prototype C row as control-backed. The controls
+show that no-prior-proxy, label-only susceptibility, removed re-entry, hidden
+direct response, semantic learning/choice/goal, and native AP4/AP5/native
+support relabel paths fail closed. The same-budget peer comparison remains the
+row-local distinguishability check.
+```
+
+### Iteration 13.1-C - Prototype C Composed Runtime Replay / Stress
+
+I13.1-C is the replay and local stress pass for the I13.1 runtime row. It is
+also different from I13-C: I13-C correctly did not run runtime replay because
+no exact row existed yet; I13.1-C now has a composed runtime row to replay and
+stress.
+
+- [x] Consume I13.1 and I13.1-B.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay with duplicate suppression.
+- [x] Run baseline stress replay.
+- [x] Run near-floor proxy-pressure stress.
+- [x] Run below-susceptibility-floor rejection.
+- [x] Run high-challenge response-floor rejection.
+- [x] Run order inversion and semantic relabel control stress rows.
+- [x] Preserve final Prototype C success blocker.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13_1c_composed_runtime_replay_stress_backed_candidate
+output = outputs/n29_proxy_susceptibility_reentry_composed_replay_stress_i131c.json
+report = reports/n29_proxy_susceptibility_reentry_composed_replay_stress_i131c.md
+output_digest = 1939e892718f1a63e1246ce580b402ff72da4a1102136b0945f2faaa3129d284
+replay_stress_backed_runtime_candidate_supported = true
+stable_replay_count = 3 / 3
+supported_stress_count = 2
+rejected_stress_count = 2
+min_supported_susceptibility_margin = 0.0046
+min_supported_differential_response_margin = 0.03825
+final_prototype_c_success_supported = false
+ready_for_iteration_14 = true
+```
+
+Interpretation:
+
+```text
+I13.1-C strengthens Prototype C from a constructed runtime candidate into a
+local replay/stress-backed runtime candidate. The envelope is narrow: baseline
+and near-floor proxy pressure pass, while below-floor susceptibility and
+high-challenge response-floor variants reject. Prototype C can now be carried
+forward as bounded runtime evidence, not merely a mapping/debt motif, but it
+still does not claim semantic learning, choice, native AP4/AP5 closure, native
+support, ant-role behavior, or ecology success.
+```
+
+### Iteration 13.2 - Prototype C Alternative Composed Runtime Candidate
+
+I13.2 is an alternative composed Prototype C runtime candidate. It is not a
+retune of I13.1 and does not replace I13.1. Its role is to test whether
+Prototype C repeats in a different geometry and whether margin headroom improves
+before running the usual B/C controls and replay/stress pass.
+
+The alternative geometry uses a buffered susceptibility lane:
+
+```text
+proxy pressure enters a buffered target route
+  -> buffer + proxy pressure update route-local susceptibility
+  -> same-budget re-entry probes target and peer route
+  -> target response separates from peer response with larger margin
+```
+
+- [x] Consume I13 and I13.1-C as source-backed context.
+- [x] Build an alternative N29 composed runtime artifact.
+- [x] Preserve I13.1 as primary existing evidence, not replaced.
+- [x] Record buffered proxy / susceptibility / re-entry / differential-response geometry.
+- [x] Compare margins against I13.1-C minimum supported margins.
+- [x] Block final Prototype C success pending I13.2-B/C.
+- [x] Preserve unsafe claim blockers.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13_2_alternative_composed_runtime_candidate_pending_b_c
+output = outputs/n29_proxy_susceptibility_reentry_composed_i132.json
+runtime_artifact = outputs/n29_proxy_susceptibility_reentry_composed_runtime_i132_artifact.json
+report = reports/n29_proxy_susceptibility_reentry_composed_i132.md
+output_digest = f4a934506528d5fe0609ce50f1748b9d5bf308bf815a81c1ea0088a1789276c6
+prototype_c_runtime_candidate_supported = true
+final_prototype_c_success_supported = false
+susceptibility_delta_margin = 0.0712
+differential_response_margin = 0.19162
+susceptibility_margin_delta_vs_i13_1_min = 0.0666
+differential_margin_delta_vs_i13_1_min = 0.15337
+ready_for_i13_2_b_c = true
+ready_for_iteration_14 = false
+```
+
+Interpretation:
+
+```text
+I13.2 strengthens Prototype C repeatability by producing a second composed
+runtime candidate in a different buffered geometry, with materially larger
+local margins than the I13.1-C minimum supported envelope. It is not yet
+control-backed or replay/stress-backed; I13.2-B/C are required before it can
+carry the same evidential status as I13.1-C.
+```
+
+### Iteration 13.2-B - Prototype C Buffered Runtime Controls
+
+I13.2-B is the control matrix for the buffered alternative runtime row. It
+tests whether the larger-margin result survives the false-positive paths that
+are specific to the buffer geometry.
+
+- [x] Consume the I13.2 buffered runtime candidate.
+- [x] Verify the candidate row digest is stable.
+- [x] Run buffer-lane removed control.
+- [x] Run proxy-pressure label-only control.
+- [x] Run same-budget peer buffer-copy control.
+- [x] Run re-entry order inversion control.
+- [x] Run same-budget peer comparison control.
+- [x] Run semantic learning / choice / goal relabel control.
+- [x] Run native AP4/AP5 / native support relabel control.
+- [x] Preserve final Prototype C success blocker.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13_2b_buffered_runtime_controls_fail_closed
+output = outputs/n29_proxy_susceptibility_reentry_composed_controls_i132b.json
+report = reports/n29_proxy_susceptibility_reentry_composed_controls_i132b.md
+output_digest = 1da84e47fa5e9130dceb5e074e8389a25384681bed63be37ac2eac38762a12d5
+control_backed_runtime_candidate_supported = true
+failed_closed_count = 6
+passed_comparability_count = 1
+failed_open_count = 0
+final_prototype_c_success_supported = false
+```
+
+Interpretation:
+
+```text
+I13.2-B supports the buffered alternative as control-backed. Buffer removal,
+label-only proxy pressure, peer buffer copy, re-entry order inversion, semantic
+learning/choice/goal relabel, and native AP4/AP5/native-support relabel paths
+fail closed. The same-budget peer comparison remains the distinguishability
+check.
+```
+
+### Iteration 13.2-C - Prototype C Buffered Runtime Replay / Stress
+
+I13.2-C is the replay and local stress pass for the buffered alternative. It
+also records an important calibration result: the buffered geometry survives
+weaker high-challenge loads, so the high-challenge rejection row must use a
+true response-floor-crossing challenge rather than assuming that any elevated
+challenge should reject.
+
+- [x] Consume I13.2 and I13.2-B.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay with duplicate suppression.
+- [x] Run baseline buffered stress.
+- [x] Run moderate proxy-pressure stress.
+- [x] Run buffer-removed rejection.
+- [x] Run response-floor-crossing high-challenge rejection.
+- [x] Run buffer-copy and semantic relabel control stress rows.
+- [x] Preserve final Prototype C success blocker.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13_2c_buffered_runtime_replay_stress_backed_candidate
+output = outputs/n29_proxy_susceptibility_reentry_composed_replay_stress_i132c.json
+report = reports/n29_proxy_susceptibility_reentry_composed_replay_stress_i132c.md
+output_digest = 3672b90ef3f361f26bcd654708f10962dd4c4c2b833258b82e9997d15a7393fc
+replay_stress_backed_runtime_candidate_supported = true
+stable_replay_count = 3 / 3
+supported_stress_count = 2
+rejected_stress_count = 2
+min_supported_susceptibility_margin = 0.0436
+min_supported_differential_response_margin = 0.14336
+final_prototype_c_success_supported = false
+ready_for_iteration_14 = true
+```
+
+Interpretation:
+
+```text
+I13.2-C strengthens Prototype C by making the buffered alternative
+replay/stress-backed under a local envelope. Baseline and moderate proxy
+pressure pass with materially larger margins than I13.1-C; buffer removal and a
+true response-floor-crossing high challenge reject. This makes Prototype C a
+two-geometry bounded runtime pattern, while still blocking semantic learning,
+choice, native AP4/AP5 closure, native support, ant-role behavior, and ecology
+success.
+```
+
+### Iteration 13* - Prototype C Synthesis
+
+I13* is a compact synthesis of the whole Prototype C tranche. Its purpose is to
+make the state easy to consume before I14: I13-A/B/C remain hygiene/debt
+records, while I13.1-C and I13.2-C are the runtime evidence.
+
+- [x] Consume I13, I13-A/B/C, I13.1, I13.1-B/C, I13.2, and I13.2-B/C.
+- [x] Preserve mapping hygiene and exact-row absence records.
+- [x] Classify I13.1-C and I13.2-C as replay/stress-backed runtime candidates.
+- [x] Identify the strongest local candidate.
+- [x] Record remaining topology, multi-route, naturalization, AP4/AP5, and ecology-integration debt.
+- [x] Keep final Prototype C success blocked.
+- [x] Keep ready for I14 true.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i13x_two_geometry_prototype_c_synthesis_ready_for_i14
+output = outputs/n29_proxy_susceptibility_reentry_synthesis_i13x.json
+report = reports/n29_proxy_susceptibility_reentry_synthesis_i13x.md
+output_digest = 679a34a70231150ccae123e8ad391c41544bd94b5a82b70f00e0ccc1f5400e04
+runtime_candidate_count = 2
+control_backed_candidate_count = 2
+replay_stress_backed_candidate_count = 2
+strongest_local_candidate = I13.2
+prototype_c_carry_forward_status = two-geometry bounded runtime pattern
+final_prototype_c_success_supported = false
+ready_for_iteration_14 = true
+```
+
+Interpretation:
+
+```text
+Prototype C now has one narrow direct-lane runtime candidate and one stronger
+buffered-lane runtime candidate. Both are control-backed and replay/stress-
+backed. I13.2 is the strongest local candidate. The tranche is strong enough
+for N29 bridge-atlas use, but it still does not support semantic learning,
+choice, agency, native AP4/AP5 closure, native support, ant-role behavior, or
+ecology success.
 ```
 
 ### Iteration 14 - Prototype D: Generative / Extractive Medium Reshaping

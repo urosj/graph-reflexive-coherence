@@ -1,0 +1,220 @@
+{
+  "artifact_id": "n29_proxy_susceptibility_reentry_composed_runtime_i132_artifact",
+  "candidate_row": {
+    "alternative_role": "repeatability_and_margin_probe_not_i13_1_replacement",
+    "claim_ceiling": "alternative bounded N29-composed Prototype C runtime candidate; not semantic learning, choice, agency, native AP4/AP5 closure, native support, or ecology success",
+    "composition_source_policy": {
+      "i13_1_not_replaced": true,
+      "new_n29_composed_trace_required": true,
+      "prior_experiments_not_used_as": "pre-existing combined row proof",
+      "prior_experiments_used_as": "source_backed_design_constraints_and_claim_ceilings"
+    },
+    "derived_report_only": false,
+    "final_prototype_c_success_supported": false,
+    "four_leg_trace": {
+      "collapse_or_differential_response_trace": {
+        "differential_response": 0.27162,
+        "event": "buffered target route keeps response above floor and separates from peer",
+        "leg": "collapse_or_differential_response_trace",
+        "peer_response_score": 0.4977,
+        "target_response_score": 0.76932,
+        "time_index": 3
+      },
+      "proxy_or_perturbation_state": {
+        "buffer_lane_capacity_difference": 0.1,
+        "event": "buffered target route receives bounded proxy pressure",
+        "leg": "proxy_or_perturbation_state",
+        "peer_proxy_pressure": 0.0,
+        "target_proxy_pressure": 0.22,
+        "time_index": 0
+      },
+      "reentry_or_transfer_trace": {
+        "challenge_load": 0.18,
+        "event": "same-budget re-entry probes buffered target and peer route",
+        "leg": "reentry_or_transfer_trace",
+        "peer_reentry_alignment": 0.06,
+        "target_reentry_alignment": 0.22,
+        "time_index": 2
+      },
+      "susceptibility_delta_or_modified_geometry": {
+        "event": "proxy pressure plus buffer lane modifies target susceptibility",
+        "leg": "susceptibility_delta_or_modified_geometry",
+        "peer_susceptibility_after": 0.48,
+        "susceptibility_delta": 0.1212,
+        "target_susceptibility_after": 0.6012,
+        "target_susceptibility_before": 0.48,
+        "time_index": 1
+      }
+    },
+    "metrics": {
+      "differential_response": 0.27162,
+      "differential_response_floor": 0.08,
+      "differential_response_margin": 0.19162,
+      "peer_response_score": 0.4977,
+      "susceptibility_delta": 0.1212,
+      "susceptibility_delta_floor": 0.05,
+      "susceptibility_delta_margin": 0.0712,
+      "target_boundary_floor_preserved": true,
+      "target_coherence_floor_preserved": true,
+      "target_response_score": 0.76932,
+      "target_support_floor_preserved": true
+    },
+    "peer_same_budget_post_state": {
+      "boundary_integrity": 0.84,
+      "buffer_lane_capacity": 0.02,
+      "coherence": 0.85,
+      "response_class": "same_budget_peer_no_buffered_susceptibility",
+      "response_score": 0.4977,
+      "route_id": "route_delta_peer_same_budget",
+      "support": 0.86,
+      "susceptibility": 0.48
+    },
+    "row_decision": "supported_as_alternative_bounded_composed_runtime_candidate",
+    "row_digest": "0e5287c6b6a462c7cb7b6d85cf2db9ae780108f513d457f36550501d2846d014",
+    "row_id": "n29_i13_2_buffered_proxy_susceptibility_reentry_candidate",
+    "runtime_claim_allowed": true,
+    "source_current_trace_generated_by_n29": true,
+    "target_post_state": {
+      "boundary_integrity": 0.89,
+      "buffer_lane_capacity": 0.12,
+      "coherence": 0.91,
+      "response_class": "buffered_reentry_response_preserved",
+      "response_score": 0.76932,
+      "route_id": "route_gamma_buffered_target",
+      "support": 0.92,
+      "susceptibility": 0.6012
+    }
+  },
+  "control_rows": [
+    {
+      "actual_result": "susceptibility delta and differential response lose the buffered margin",
+      "blocked_condition": "buffered target response claimed when buffer lane is removed",
+      "control_id": "buffer_lane_removed_control",
+      "control_status": "failed_closed",
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "source-current delta trace required",
+      "blocked_condition": "proxy pressure recorded as label without numeric susceptibility delta",
+      "control_id": "proxy_pressure_label_only_control",
+      "control_status": "failed_closed",
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "candidate requires peer route not to carry the target-specific buffer",
+      "blocked_condition": "peer receives copied buffer lane and destroys target-specific distinction",
+      "control_id": "same_budget_peer_buffer_copy_control",
+      "control_status": "failed_closed",
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "ordered four-leg trace required",
+      "blocked_condition": "re-entry readback is placed before susceptibility modification",
+      "control_id": "reentry_order_inversion_control",
+      "control_status": "failed_closed",
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "target response exceeds peer response by declared margin",
+      "blocked_condition": "target response not distinguished from peer under equal budget",
+      "control_id": "same_budget_peer_comparison_control",
+      "control_status": "passed_as_comparability_control",
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "unsafe semantic claims remain false",
+      "blocked_condition": "buffered differential response relabeled as semantic learning, choice, or goal",
+      "control_id": "semantic_learning_choice_goal_relabel_control",
+      "control_status": "failed_closed",
+      "runtime_claim_allowed_when_control_triggers": false
+    },
+    {
+      "actual_result": "AP4/AP5 remain inherited bridge dependencies, not upgraded",
+      "blocked_condition": "buffered composed row relabeled as native AP4/AP5 closure or native support",
+      "control_id": "native_ap4_ap5_support_relabel_control",
+      "control_status": "failed_closed",
+      "runtime_claim_allowed_when_control_triggers": false
+    }
+  ],
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometric_interpretation": {
+    "not_claimed": [
+      "semantic learning",
+      "semantic choice",
+      "goal ownership",
+      "identity transfer",
+      "native AP4/AP5 closure",
+      "native support",
+      "ant ecology success"
+    ],
+    "short_read": "I13.2 uses a buffered target route rather than the I13.1 direct susceptibility lane. Proxy pressure enters a capacity buffer, which amplifies route-local susceptibility before later re-entry. The peer route has the same budget but lacks the target-specific buffer, so the later response separates more clearly."
+  },
+  "initial_state": {
+    "peer_route": {
+      "boundary_integrity": 0.94,
+      "buffer_lane_capacity": 0.02,
+      "coherence": 1.0,
+      "route_id": "route_delta_peer_same_budget",
+      "support": 1.0,
+      "susceptibility": 0.48
+    },
+    "target_route": {
+      "boundary_integrity": 0.94,
+      "buffer_lane_capacity": 0.12,
+      "coherence": 1.0,
+      "route_id": "route_gamma_buffered_target",
+      "support": 1.0,
+      "susceptibility": 0.48
+    }
+  },
+  "iteration": "I13.2-runtime",
+  "output_digest": "9c26eedffa9f009ef9e9de5648c1ff4331ed0b2e0a2ffaf08addf971604d4cd5",
+  "runtime_kind": "n29_buffered_proxy_susceptibility_reentry_prototype",
+  "source_i13_1c_digest": "1939e892718f1a63e1246ce580b402ff72da4a1102136b0945f2faaa3129d284",
+  "source_i13_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+  "thresholds_declared_before_use": {
+    "boundary_integrity_floor": 0.8,
+    "challenge_load": 0.18,
+    "coherence_floor": 0.85,
+    "differential_response_floor": 0.08,
+    "response_score_floor": 0.6,
+    "support_floor": 0.85,
+    "susceptibility_delta_floor": 0.05
+  },
+  "timeline": [
+    {
+      "buffer_lane_capacity_difference": 0.1,
+      "event": "buffered target route receives bounded proxy pressure",
+      "leg": "proxy_or_perturbation_state",
+      "peer_proxy_pressure": 0.0,
+      "target_proxy_pressure": 0.22,
+      "time_index": 0
+    },
+    {
+      "event": "proxy pressure plus buffer lane modifies target susceptibility",
+      "leg": "susceptibility_delta_or_modified_geometry",
+      "peer_susceptibility_after": 0.48,
+      "susceptibility_delta": 0.1212,
+      "target_susceptibility_after": 0.6012,
+      "target_susceptibility_before": 0.48,
+      "time_index": 1
+    },
+    {
+      "challenge_load": 0.18,
+      "event": "same-budget re-entry probes buffered target and peer route",
+      "leg": "reentry_or_transfer_trace",
+      "peer_reentry_alignment": 0.06,
+      "target_reentry_alignment": 0.22,
+      "time_index": 2
+    },
+    {
+      "differential_response": 0.27162,
+      "event": "buffered target route keeps response above floor and separates from peer",
+      "leg": "collapse_or_differential_response_trace",
+      "peer_response_score": 0.4977,
+      "target_response_score": 0.76932,
+      "time_index": 3
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "acceptance_state": "accepted_i13a_exact_row_absent_mapping_inventory_consumable",
+  "artifact_id": "n29_proxy_susceptibility_reentry_extraction_i13a",
+  "checks": [
+    {
+      "check_id": "i13_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_four_parts_still_source_backed",
+      "passed": true
+    },
+    {
+      "check_id": "exact_runtime_row_not_found",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_claim_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "mapping_record_consumable",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_role_behavior_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "identity_transfer_claim_allowed": false,
+      "intentional_return_claim_allowed": false,
+      "learning_as_semantic_knowledge_claim_allowed": false,
+      "native_ap4_claim_allowed": false,
+      "native_ap5_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "preference_ownership_claim_allowed": false,
+      "semantic_goal_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_i13abc.py",
+  "experiment_id": "N29",
+  "extraction_record": {
+    "bridge_parts_source_backed": true,
+    "claim_ceiling": "exact-row extraction attempt over source-backed Prototype C parts; runtime Prototype C remains blocked",
+    "exact_row_requirements": [
+      "single source-current runtime artifact contains proxy_or_perturbation_state",
+      "same runtime artifact contains susceptibility_delta_or_modified_geometry",
+      "same runtime artifact contains reentry_or_transfer_trace",
+      "same runtime artifact contains collapse_or_differential_response_trace",
+      "all four traces share one runtime lineage / snapshot chain",
+      "row-level timing order is source-current rather than stitched from summaries",
+      "per-row thresholds and controls are declared before outcome inspection"
+    ],
+    "exact_source_current_runtime_row_found": false,
+    "extraction_attempt_id": "N29.I13A.PROTOTYPE_C.EXACT_ROW_EXTRACTION",
+    "i13_source_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+    "mapping_record_consumable": true,
+    "missing_exact_row_evidence": [
+      "I13 part sources are distributed across N22, N23, N26, and N27 artifacts",
+      "no artifact_id appears as the primary source for all four bridge parts",
+      "N29 I5-I8 are coverage indexes only and cannot replace original source rows"
+    ],
+    "prototype_c_runtime_claim_allowed": false,
+    "prototype_family": "proxy_susceptibility_reentry",
+    "ready_for_i13b_controls": true,
+    "ready_for_i13c_replay_stress_decision": true,
+    "row_decision": "blocked_for_runtime_claim_supported_as_mapping_inventory",
+    "source_ids_by_part": {
+      "collapse_or_differential_response_trace": [
+        "n23_collapse_response_source",
+        "n23_multibranch_response_source",
+        "n26_proxy_collapse_source"
+      ],
+      "proxy_or_perturbation_state": [
+        "n26_proxy_state_source",
+        "n26_proxy_collapse_source"
+      ],
+      "reentry_or_transfer_trace": [
+        "n27_transfer_reentry_source",
+        "n27_stress_mapping_source"
+      ],
+      "susceptibility_delta_or_modified_geometry": [
+        "n22_su5_controlled_source",
+        "n22_closeout"
+      ]
+    },
+    "unique_primary_source_ids": [
+      "n22_closeout",
+      "n22_su5_controlled_source",
+      "n23_collapse_response_source",
+      "n23_multibranch_response_source",
+      "n26_proxy_collapse_source",
+      "n26_proxy_state_source",
+      "n27_stress_mapping_source",
+      "n27_transfer_reentry_source"
+    ]
+  },
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_i13abc.py",
+  "iteration": "I13-A",
+  "output_digest": "8eda4085ebacf26f80ab4a19a326be42d9d90edb98a656cb1fe57d625ad1e732",
+  "script_sha256": "1e270e677081948a311913f1278e10b781efec7401b57d504aed11561ff697ff",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_mapping_only_proxy_susceptibility_reentry_bridge_ready_for_i14_no_i13abc",
+      "artifact_id": "n29_proxy_susceptibility_reentry_i13",
+      "iteration": "I13",
+      "output_digest": "6c59aa8af35e380a7d00fab3725092b59d710391d312462c071b2d4e0140f90f",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_i13.json",
+      "sha256": "20b5dbfc503363dbabaf906b2d992f077aeebba2d460ce8fbd7ececeb9ea2895",
+      "source_id": "n29_i13_admission",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype C I13-A Exact Row Extraction Attempt"
+}
