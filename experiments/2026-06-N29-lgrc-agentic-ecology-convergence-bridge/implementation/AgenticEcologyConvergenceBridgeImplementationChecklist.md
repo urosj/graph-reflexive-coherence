@@ -4615,13 +4615,13 @@ still has to classify Prototype D alongside the other prototype families.
 
 ### Iteration 15 - Prototype Composition And Atlas Classification
 
-- [ ] Classify all prototype rows.
-- [ ] Compose selected prototype families where source support permits.
-- [ ] Run or record composition controls.
-- [ ] Confirm every prototype is classified as bridge exemplar, not ecology success.
-- [ ] Confirm every accepted prototype has a next-probe implication.
-- [ ] Record mapping-only rows and missing runtime surfaces.
-- [ ] Confirm no native ecology, agency, sentience, or Phase 8 claim opens.
+- [x] Classify all prototype rows.
+- [x] Compose selected prototype families where source support permits.
+- [x] Run or record composition controls.
+- [x] Confirm every prototype is classified as bridge exemplar, not ecology success.
+- [x] Confirm every accepted prototype has a next-probe implication.
+- [x] Record mapping-only rows and missing runtime surfaces.
+- [x] Confirm no native ecology, agency, sentience, or Phase 8 claim opens.
 
 Expected result:
 
@@ -4630,6 +4630,53 @@ status = passed
 acceptance_state = accepted_prototype_atlas_with_debt_classification
 prototype_atlas_supported = true
 ready_for_iteration_16 = true
+```
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_prototype_atlas_with_debt_classification
+prototype_atlas_supported = true
+composition_atlas_opened = true
+composition_runtime_supported = false
+runtime_ecology_success_supported = false
+native_ecology_supported = false
+ready_for_iteration_16 = true
+output_digest = e139dd61fcd2b0998282033e5fe1a041891291d5db036982063e510be33f7cd2
+output = outputs/n29_prototype_atlas_classification_i15.json
+report = reports/n29_prototype_atlas_classification_i15.md
+```
+
+Interpretation:
+
+I15 converts Prototypes A-D into a classified prototype atlas. It records the
+best validated evidence row, supporting or contrast rows, evidence status,
+family carry-forward status, remaining blockers, claim ceiling, and next-probe
+implication for each prototype. Prototype A is the trace/pressure/loop bridge
+exemplar, Prototype B is the boundary/shared-medium unit, Prototype C is the
+proxy/susceptibility/re-entry unit, and Prototype D is the
+generative/extractive medium-reshaping unit with a visible lane split between
+native motif evidence and producer-mediated composition bridges.
+
+Composition is now admitted only at atlas level. The A/B, B/C, C/D, and A/D
+rows are source-backed bridge-composition seeds for I16 probe contracts, not
+composed ecology runtime successes. Each row separates composition readiness
+from runtime evidence, records `why_admitted` and `why_not_stronger`, and keeps
+composition claim allowance false. The full A/B/C/D ecology runtime remains a
+mapping-only probe seed until I16. Composition controls record order inversion,
+hidden producer coupling, hidden medium debt, claim-ceiling upgrade, and
+prototype-success-as-ecology-success relabels as fail-closed blockers. Missing
+runtime surfaces remain explicit: composed ecology runtime harness,
+cross-prototype state handoff trace, native multi-component medium coupling,
+and ecology role observation/control matrix.
+
+The claim ceiling remains:
+
+```text
+claim-clean prototype atlas and source-backed bridge composition map;
+not composed ecology runtime success, native ecology, agency, sentience,
+native support, resource economy, cooperation, exploitation, or Phase 8 completion.
 ```
 
 ## Phase D - Probe Contracts And Closeout

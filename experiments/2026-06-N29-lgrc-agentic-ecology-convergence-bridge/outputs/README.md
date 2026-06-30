@@ -114,6 +114,7 @@ n29_wider_margin_leakage_aggregation_i1462.json
 n29_loop_composition_controls_i14d.json
 n29_loop_composition_replay_stress_i14e.json
 n29_prototype_d_complete_synthesis_i14y.json
+n29_prototype_atlas_classification_i15.json
 n29_phase_coupled_generator_extractor_i145_artifact.json
 n29_phase_coupled_generator_extractor_i145.json
 ```

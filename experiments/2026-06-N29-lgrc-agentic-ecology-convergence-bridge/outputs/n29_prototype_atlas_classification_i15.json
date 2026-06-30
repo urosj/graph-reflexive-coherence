@@ -1,0 +1,913 @@
+{
+  "acceptance_state": "accepted_prototype_atlas_with_debt_classification",
+  "artifact_id": "n29_prototype_atlas_classification_i15",
+  "atlas_summary": {
+    "bridge_exemplar_count": 4,
+    "claim_ceiling": "claim-clean prototype atlas and source-backed bridge composition map; not composed ecology runtime success, native ecology, agency, sentience, or Phase 8 completion",
+    "composition_atlas_opened": true,
+    "composition_row_count": 4,
+    "composition_runtime_supported": false,
+    "ecology_success_supported": false,
+    "mapping_only_row_count": 5,
+    "missing_runtime_surface_count": 4,
+    "native_ecology_supported": false,
+    "probe_implication_group_count": 4,
+    "prototype_atlas_supported": true,
+    "prototype_count": 4,
+    "ready_for_iteration_16": true,
+    "status_enum_count": 22
+  },
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i10_composition_activation_condition_satisfied_for_atlas",
+      "details": "I10 blocked direct composition before I15; I15 now has four admitted non-composition prototype rows.",
+      "passed": true
+    },
+    {
+      "check_id": "four_prototype_rows_classified",
+      "passed": true
+    },
+    {
+      "check_id": "all_prototype_rows_have_evidence_status",
+      "passed": true
+    },
+    {
+      "check_id": "all_prototype_rows_have_family_status",
+      "passed": true
+    },
+    {
+      "check_id": "all_prototype_rows_have_claim_ceiling",
+      "passed": true
+    },
+    {
+      "check_id": "every_prototype_bridge_exemplar_not_ecology_success",
+      "passed": true
+    },
+    {
+      "check_id": "every_prototype_has_next_probe_implication",
+      "passed": true
+    },
+    {
+      "check_id": "composition_rows_reference_admitted_prototypes",
+      "passed": true
+    },
+    {
+      "check_id": "composition_controls_failed_closed",
+      "passed": true
+    },
+    {
+      "check_id": "composition_rows_have_ordered_composition_controls_and_limits",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_d_not_overpromoted_before_and_after_i14c",
+      "passed": true
+    },
+    {
+      "check_id": "mapping_rows_and_missing_runtime_surfaces_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "all_mapping_only_rows_have_missing_surface_reason",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_16",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_success_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "fully_native_ecology_claim_allowed": false,
+    "native_ant_agency_claim_allowed": false,
+    "native_colony_agency_claim_allowed": false,
+    "native_shared_medium_coordination_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_atlas_classification_i15.py",
+  "composition_atlas_opened": true,
+  "composition_rows": [
+    {
+      "blocked_relabels": [
+        "native shared-medium coordination",
+        "semantic route support",
+        "ecology success"
+      ],
+      "bridge_composition_candidate": true,
+      "claim_ceiling": "A+B bridge composition seed; not runtime ecology success",
+      "component_evidence_statuses": {
+        "prototype_a_trace_pressure_loop": "runtime_replay_stress_backed_bridge_candidate",
+        "prototype_b_boundary_shared_medium_unit": "runtime_replay_stress_backed_bridge_candidate"
+      },
+      "component_prototype_ids": [
+        "prototype_a_trace_pressure_loop",
+        "prototype_b_boundary_shared_medium_unit"
+      ],
+      "component_source_digests": {
+        "prototype_a_trace_pressure_loop": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+        "prototype_b_boundary_shared_medium_unit": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925"
+      },
+      "composition_claim_allowed": false,
+      "composition_evidence_status": "source_backed_reconstruction_candidate",
+      "composition_id": "composition_a_b_trace_pressure_boundary_unit",
+      "composition_readiness_status": "ready_for_probe_contract",
+      "composition_runtime_supported": false,
+      "composition_status": "source_backed_reconstruction_candidate",
+      "control_results": [
+        {
+          "actual_result": "claim_rejected_without_ordered_dependency",
+          "blocked_condition": "unordered or inverted component dependency",
+          "control_id": "component_order_inversion_control",
+          "control_scope": "composition_a_b_trace_pressure_boundary_unit",
+          "control_status": "failed_closed",
+          "expected_result": "composition_claim_allowed_false",
+          "rung_effect": "blocks_composed_runtime_success"
+        },
+        {
+          "actual_result": "producer_residue_kept_visible",
+          "blocked_condition": "undeclared producer coupling between prototypes",
+          "control_id": "hidden_producer_coupling_control",
+          "control_scope": "composition_a_b_trace_pressure_boundary_unit",
+          "control_status": "failed_closed",
+          "expected_result": "native_or_ecology_claim_false",
+          "rung_effect": "blocks_native_ecology_upgrade"
+        },
+        {
+          "actual_result": "medium_debt_recorded",
+          "blocked_condition": "medium/shared-state debt relabeled as native coordination",
+          "control_id": "medium_debt_hidden_as_native_relation_control",
+          "control_scope": "composition_a_b_trace_pressure_boundary_unit",
+          "control_status": "failed_closed",
+          "expected_result": "native_shared_medium_coordination_false",
+          "rung_effect": "blocks_native_coordination_claim"
+        },
+        {
+          "actual_result": "bridge_ceiling_preserved",
+          "blocked_condition": "composition raises claims above component ceilings",
+          "control_id": "composition_claim_ceiling_upgrade_control",
+          "control_scope": "composition_a_b_trace_pressure_boundary_unit",
+          "control_status": "failed_closed",
+          "expected_result": "claim_ceiling_not_raised",
+          "rung_effect": "blocks_ecology_success_claim"
+        },
+        {
+          "actual_result": "ecology_success_blocked",
+          "blocked_condition": "bridge exemplar relabeled as ecology success",
+          "control_id": "prototype_success_as_ecology_success_control",
+          "control_scope": "composition_a_b_trace_pressure_boundary_unit",
+          "control_status": "failed_closed",
+          "expected_result": "ecology_success_claim_allowed_false",
+          "rung_effect": "requires_I16_runtime_probe_contract"
+        }
+      ],
+      "next_probe_implication": "Minimal ecology probe can ask whether a pressure loop can operate through a separable medium unit.",
+      "ordered_dependency": "trace/pressure loop conditions the separable boundary/shared-medium unit without claiming native shared-medium coordination",
+      "runtime_ecology_success_supported": false,
+      "runtime_surface_status": "not_run_in_i15",
+      "why_admitted": "Both components are admitted bridge exemplars and the ordered dependency can be stated without raising either component's claim ceiling.",
+      "why_not_stronger": "The ordered A+B runtime composition has not been run; this is composition readiness for I16, not composed ecology evidence."
+    },
+    {
+      "blocked_relabels": [
+        "semantic learning",
+        "native shared-medium coordination",
+        "choice"
+      ],
+      "bridge_composition_candidate": true,
+      "claim_ceiling": "B+C bridge composition seed; not semantic learning or coordination",
+      "component_evidence_statuses": {
+        "prototype_b_boundary_shared_medium_unit": "runtime_replay_stress_backed_bridge_candidate",
+        "prototype_c_proxy_susceptibility_reentry": "runtime_replay_stress_backed_bridge_candidate"
+      },
+      "component_prototype_ids": [
+        "prototype_b_boundary_shared_medium_unit",
+        "prototype_c_proxy_susceptibility_reentry"
+      ],
+      "component_source_digests": {
+        "prototype_b_boundary_shared_medium_unit": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925",
+        "prototype_c_proxy_susceptibility_reentry": "39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d"
+      },
+      "composition_claim_allowed": false,
+      "composition_evidence_status": "source_backed_reconstruction_candidate",
+      "composition_id": "composition_b_c_boundary_proxy_reentry",
+      "composition_readiness_status": "ready_for_probe_contract",
+      "composition_runtime_supported": false,
+      "composition_status": "source_backed_reconstruction_candidate",
+      "control_results": [
+        {
+          "actual_result": "claim_rejected_without_ordered_dependency",
+          "blocked_condition": "unordered or inverted component dependency",
+          "control_id": "component_order_inversion_control",
+          "control_scope": "composition_b_c_boundary_proxy_reentry",
+          "control_status": "failed_closed",
+          "expected_result": "composition_claim_allowed_false",
+          "rung_effect": "blocks_composed_runtime_success"
+        },
+        {
+          "actual_result": "producer_residue_kept_visible",
+          "blocked_condition": "undeclared producer coupling between prototypes",
+          "control_id": "hidden_producer_coupling_control",
+          "control_scope": "composition_b_c_boundary_proxy_reentry",
+          "control_status": "failed_closed",
+          "expected_result": "native_or_ecology_claim_false",
+          "rung_effect": "blocks_native_ecology_upgrade"
+        },
+        {
+          "actual_result": "medium_debt_recorded",
+          "blocked_condition": "medium/shared-state debt relabeled as native coordination",
+          "control_id": "medium_debt_hidden_as_native_relation_control",
+          "control_scope": "composition_b_c_boundary_proxy_reentry",
+          "control_status": "failed_closed",
+          "expected_result": "native_shared_medium_coordination_false",
+          "rung_effect": "blocks_native_coordination_claim"
+        },
+        {
+          "actual_result": "bridge_ceiling_preserved",
+          "blocked_condition": "composition raises claims above component ceilings",
+          "control_id": "composition_claim_ceiling_upgrade_control",
+          "control_scope": "composition_b_c_boundary_proxy_reentry",
+          "control_status": "failed_closed",
+          "expected_result": "claim_ceiling_not_raised",
+          "rung_effect": "blocks_ecology_success_claim"
+        },
+        {
+          "actual_result": "ecology_success_blocked",
+          "blocked_condition": "bridge exemplar relabeled as ecology success",
+          "control_id": "prototype_success_as_ecology_success_control",
+          "control_scope": "composition_b_c_boundary_proxy_reentry",
+          "control_status": "failed_closed",
+          "expected_result": "ecology_success_claim_allowed_false",
+          "rung_effect": "requires_I16_runtime_probe_contract"
+        }
+      ],
+      "next_probe_implication": "Probe contract can test whether a separable medium can carry a re-entry-conditioned susceptibility pattern.",
+      "ordered_dependency": "boundary/shared-medium separability supplies the local medium in which susceptibility and later re-entry can be probed",
+      "runtime_ecology_success_supported": false,
+      "runtime_surface_status": "not_run_in_i15",
+      "why_admitted": "Prototype B supplies a bounded medium/boundary unit and Prototype C supplies a re-entry susceptibility pattern; both preserve their debt rows.",
+      "why_not_stronger": "No runtime has yet shown susceptibility/re-entry operating inside the Prototype B medium unit."
+    },
+    {
+      "blocked_relabels": [
+        "resource economy",
+        "cooperation/exploitation",
+        "native medium-reshaping ecology"
+      ],
+      "bridge_composition_candidate": true,
+      "claim_ceiling": "C+D bridge composition seed; not resource economy",
+      "component_evidence_statuses": {
+        "prototype_c_proxy_susceptibility_reentry": "runtime_replay_stress_backed_bridge_candidate",
+        "prototype_d_generative_extractive_medium_reshaping": "runtime_replay_stress_backed_bridge_candidate_with_lane_split"
+      },
+      "component_prototype_ids": [
+        "prototype_c_proxy_susceptibility_reentry",
+        "prototype_d_generative_extractive_medium_reshaping"
+      ],
+      "component_source_digests": {
+        "prototype_c_proxy_susceptibility_reentry": "39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d",
+        "prototype_d_generative_extractive_medium_reshaping": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be"
+      },
+      "composition_claim_allowed": false,
+      "composition_evidence_status": "source_backed_reconstruction_candidate",
+      "composition_id": "composition_c_d_susceptibility_medium_reshaping",
+      "composition_readiness_status": "ready_for_probe_contract",
+      "composition_runtime_supported": false,
+      "composition_status": "source_backed_reconstruction_candidate",
+      "control_results": [
+        {
+          "actual_result": "claim_rejected_without_ordered_dependency",
+          "blocked_condition": "unordered or inverted component dependency",
+          "control_id": "component_order_inversion_control",
+          "control_scope": "composition_c_d_susceptibility_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "composition_claim_allowed_false",
+          "rung_effect": "blocks_composed_runtime_success"
+        },
+        {
+          "actual_result": "producer_residue_kept_visible",
+          "blocked_condition": "undeclared producer coupling between prototypes",
+          "control_id": "hidden_producer_coupling_control",
+          "control_scope": "composition_c_d_susceptibility_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "native_or_ecology_claim_false",
+          "rung_effect": "blocks_native_ecology_upgrade"
+        },
+        {
+          "actual_result": "medium_debt_recorded",
+          "blocked_condition": "medium/shared-state debt relabeled as native coordination",
+          "control_id": "medium_debt_hidden_as_native_relation_control",
+          "control_scope": "composition_c_d_susceptibility_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "native_shared_medium_coordination_false",
+          "rung_effect": "blocks_native_coordination_claim"
+        },
+        {
+          "actual_result": "bridge_ceiling_preserved",
+          "blocked_condition": "composition raises claims above component ceilings",
+          "control_id": "composition_claim_ceiling_upgrade_control",
+          "control_scope": "composition_c_d_susceptibility_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "claim_ceiling_not_raised",
+          "rung_effect": "blocks_ecology_success_claim"
+        },
+        {
+          "actual_result": "ecology_success_blocked",
+          "blocked_condition": "bridge exemplar relabeled as ecology success",
+          "control_id": "prototype_success_as_ecology_success_control",
+          "control_scope": "composition_c_d_susceptibility_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "ecology_success_claim_allowed_false",
+          "rung_effect": "requires_I16_runtime_probe_contract"
+        }
+      ],
+      "next_probe_implication": "Probe contract can test whether re-entry state affects later generative/extractive medium reshaping.",
+      "ordered_dependency": "susceptibility/re-entry changes may condition later medium reshaping motifs, while native composition debt remains visible",
+      "runtime_ecology_success_supported": false,
+      "runtime_surface_status": "not_run_in_i15",
+      "why_admitted": "Prototype C supplies history-conditioned susceptibility and Prototype D supplies medium-reshaping motifs with lane-split debt visible.",
+      "why_not_stronger": "The runtime handoff from C's changed susceptibility state into D's medium-reshaping motif has not been executed as a composed probe."
+    },
+    {
+      "blocked_relabels": [
+        "closed environmental circulation",
+        "resource economy",
+        "native ecology"
+      ],
+      "bridge_composition_candidate": true,
+      "claim_ceiling": "A+D bridge composition seed; not closed circulation or resource economy",
+      "component_evidence_statuses": {
+        "prototype_a_trace_pressure_loop": "runtime_replay_stress_backed_bridge_candidate",
+        "prototype_d_generative_extractive_medium_reshaping": "runtime_replay_stress_backed_bridge_candidate_with_lane_split"
+      },
+      "component_prototype_ids": [
+        "prototype_a_trace_pressure_loop",
+        "prototype_d_generative_extractive_medium_reshaping"
+      ],
+      "component_source_digests": {
+        "prototype_a_trace_pressure_loop": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+        "prototype_d_generative_extractive_medium_reshaping": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be"
+      },
+      "composition_claim_allowed": false,
+      "composition_evidence_status": "source_backed_reconstruction_candidate",
+      "composition_id": "composition_a_d_loop_pressure_medium_reshaping",
+      "composition_readiness_status": "ready_for_probe_contract_with_producer_debt",
+      "composition_runtime_supported": false,
+      "composition_status": "source_backed_reconstruction_candidate",
+      "control_results": [
+        {
+          "actual_result": "claim_rejected_without_ordered_dependency",
+          "blocked_condition": "unordered or inverted component dependency",
+          "control_id": "component_order_inversion_control",
+          "control_scope": "composition_a_d_loop_pressure_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "composition_claim_allowed_false",
+          "rung_effect": "blocks_composed_runtime_success"
+        },
+        {
+          "actual_result": "producer_residue_kept_visible",
+          "blocked_condition": "undeclared producer coupling between prototypes",
+          "control_id": "hidden_producer_coupling_control",
+          "control_scope": "composition_a_d_loop_pressure_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "native_or_ecology_claim_false",
+          "rung_effect": "blocks_native_ecology_upgrade"
+        },
+        {
+          "actual_result": "medium_debt_recorded",
+          "blocked_condition": "medium/shared-state debt relabeled as native coordination",
+          "control_id": "medium_debt_hidden_as_native_relation_control",
+          "control_scope": "composition_a_d_loop_pressure_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "native_shared_medium_coordination_false",
+          "rung_effect": "blocks_native_coordination_claim"
+        },
+        {
+          "actual_result": "bridge_ceiling_preserved",
+          "blocked_condition": "composition raises claims above component ceilings",
+          "control_id": "composition_claim_ceiling_upgrade_control",
+          "control_scope": "composition_a_d_loop_pressure_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "claim_ceiling_not_raised",
+          "rung_effect": "blocks_ecology_success_claim"
+        },
+        {
+          "actual_result": "ecology_success_blocked",
+          "blocked_condition": "bridge exemplar relabeled as ecology success",
+          "control_id": "prototype_success_as_ecology_success_control",
+          "control_scope": "composition_a_d_loop_pressure_medium_reshaping",
+          "control_status": "failed_closed",
+          "expected_result": "ecology_success_claim_allowed_false",
+          "rung_effect": "requires_I16_runtime_probe_contract"
+        }
+      ],
+      "next_probe_implication": "Probe contract can ask whether pressure-loop dynamics and medium-reshaping aftereffects condition each other over ordered runtime.",
+      "ordered_dependency": "trace/pressure loop leaves or consumes a medium-reshaping condition; later pressure response may differ if a runtime probe is built",
+      "runtime_ecology_success_supported": false,
+      "runtime_surface_status": "not_run_in_i15",
+      "why_admitted": "Prototype A and Prototype D are admitted bridge exemplars and form the smallest direct pressure-loop/medium-reshaping composition.",
+      "why_not_stronger": "No ordered runtime has shown an A loop leaving a D medium aftereffect that later changes A-side pressure response."
+    }
+  ],
+  "composition_runtime_supported": false,
+  "debt_classification_rows": [
+    {
+      "blocks": [
+        "native loop agency",
+        "semantic action/perception"
+      ],
+      "debt_id": "producer_assisted_trace_pressure_loop_debt",
+      "debt_status": "must_remain_visible_in_probe_contract",
+      "source_prototype": "prototype_a_trace_pressure_loop"
+    },
+    {
+      "blocks": [
+        "native shared-medium coordination",
+        "multi-agent interaction"
+      ],
+      "debt_id": "nonzero_shared_medium_leakage_and_native_coordination_debt",
+      "debt_status": "must_remain_visible_in_probe_contract",
+      "source_prototype": "prototype_b_boundary_shared_medium_unit"
+    },
+    {
+      "blocks": [
+        "semantic learning",
+        "choice",
+        "native AP4/AP5 closure"
+      ],
+      "debt_id": "producer_mediated_susceptibility_and_AP4_AP5_debt",
+      "debt_status": "must_remain_visible_in_probe_contract",
+      "source_prototype": "prototype_c_proxy_susceptibility_reentry"
+    },
+    {
+      "blocks": [
+        "native closed circulation",
+        "resource economy",
+        "cooperation/exploitation"
+      ],
+      "debt_id": "native_composition_and_multi_leg_medium_debt",
+      "debt_status": "must_remain_visible_in_probe_contract",
+      "source_prototype": "prototype_d_generative_extractive_medium_reshaping"
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_atlas_classification_i15.py",
+  "iteration": "I15",
+  "mapping_only_rows": [
+    {
+      "missing_surface_reason": "no composed runtime harness or cross-prototype handoff trace",
+      "reason": "I15 classifies prototypes and selected composition seeds; I16 must define the runnable A/B/C/D ecology probe contract.",
+      "row_id": "minimal_composed_ecology_runtime",
+      "row_status": "mapping_only_no_runtime_surface"
+    },
+    {
+      "missing_surface_reason": "ordered cross-prototype state handoff and composed replay/control matrix are not run until I16+",
+      "reason": "The full pressure-loop -> separable medium -> susceptibility/re-entry -> medium-reshaping chain is a probe-contract seed, not an I15 runtime row.",
+      "row_id": "full_a_b_c_d_minimal_probe_seed",
+      "row_status": "mapping_only_no_runtime_surface"
+    },
+    {
+      "missing_surface_reason": "claim blocked; no native ecology runtime surface exists",
+      "reason": "Prototype atlas evidence is artifact/runtime bridge evidence, not agency.",
+      "row_id": "native_ecology_or_colony_agency",
+      "row_status": "blocked_by_claim_boundary"
+    },
+    {
+      "missing_surface_reason": "native multi-component medium coupling surface is missing",
+      "reason": "Prototype B preserves zero-leakage policy and does not support native coordination.",
+      "row_id": "native_shared_medium_coordination",
+      "row_status": "blocked_by_debt"
+    },
+    {
+      "missing_surface_reason": "resource economy / cooperation / exploitation observation and control surface is missing and semantically blocked",
+      "reason": "Prototype D medium reshaping does not license semantic ecology roles.",
+      "row_id": "resource_economy_cooperation_exploitation",
+      "row_status": "blocked_by_claim_boundary"
+    }
+  ],
+  "missing_runtime_surfaces": [
+    {
+      "current_status": "missing",
+      "not_allowed_to_backfill_from": "I15 atlas rows",
+      "required_for": "I16 minimal runnable ecology probe",
+      "surface_id": "composed_ecology_runtime_harness"
+    },
+    {
+      "current_status": "missing",
+      "not_allowed_to_backfill_from": "source digests or report summaries",
+      "required_for": "ordered composition runtime evidence",
+      "surface_id": "cross_prototype_state_handoff_trace"
+    },
+    {
+      "current_status": "missing",
+      "not_allowed_to_backfill_from": "producer-mediated composition bridges",
+      "required_for": "native ecology or native shared-medium coordination claims",
+      "surface_id": "native_multi_component_medium_coupling"
+    },
+    {
+      "current_status": "missing",
+      "not_allowed_to_backfill_from": "prototype labels",
+      "required_for": "future ecology probe evaluation",
+      "surface_id": "ecology_role_observation_and_control_matrix"
+    }
+  ],
+  "native_ecology_supported": false,
+  "output_digest": "e139dd61fcd2b0998282033e5fe1a041891291d5db036982063e510be33f7cd2",
+  "probe_implication_index": {
+    "blocked_or_later_probe_candidates": [
+      {
+        "candidate_id": "full_A_B_C_D_minimal_ecology_runtime",
+        "role": "full chain requires composed runtime harness and handoff trace",
+        "status": "mapping_only_until_I16"
+      },
+      {
+        "candidate_id": "native_D_circulation_or_exchange_loop",
+        "role": "requires native ordered dependency and medium handoff not shown in I15",
+        "status": "blocked_by_native_composition_debt"
+      }
+    ],
+    "medium_reshaping_probe_candidates": [
+      {
+        "candidate_id": "C_plus_D_history_conditioned_medium_reshaping",
+        "composition_id": "composition_c_d_susceptibility_medium_reshaping",
+        "role": "history-conditioned susceptibility affecting later medium reshaping"
+      },
+      {
+        "candidate_id": "A_plus_D_loop_pressure_medium_aftereffect",
+        "composition_id": "composition_a_d_loop_pressure_medium_reshaping",
+        "role": "pressure loop and medium-reshaping aftereffect dependency"
+      }
+    ],
+    "minimal_ecology_probe_candidates": [
+      {
+        "candidate_id": "A_plus_B_route_support_pressure_over_medium_unit",
+        "composition_id": "composition_a_b_trace_pressure_boundary_unit",
+        "role": "smallest pressure loop over a separable boundary/shared-medium unit"
+      }
+    ],
+    "stronger_probe_candidates": [
+      {
+        "candidate_id": "B_plus_C_reentry_susceptibility_inside_bounded_unit",
+        "composition_id": "composition_b_c_boundary_proxy_reentry",
+        "role": "re-entry/susceptibility pattern inside a bounded medium unit"
+      }
+    ]
+  },
+  "prototype_atlas_supported": true,
+  "prototype_rows": [
+    {
+      "atlas_classification": "bridge_exemplar",
+      "bridge_exemplar_supported": true,
+      "claim_ceiling": "bounded trace/pressure/loop runtime bridge exemplar; not ecology success, agency, semantic action, native support, or Phase 8",
+      "evidence_hierarchy": {
+        "construction_contrast": "I11-C minimal edge replay/stress row",
+        "construction_contrast_digest": "e78cedc79f0f32d1370fd0a72f908292e07fd5ca8e61b0b0b9a0daee65ed0fa3",
+        "primary_artifact_digest": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+        "primary_evidence": "I11.1-C stronger replay/stress-backed row",
+        "why_primary": "I11.1-C preserves the same trace/pressure/loop rules with less knife-edge margins than the I11-C construction contrast."
+      },
+      "evidence_status": "runtime_replay_stress_backed_bridge_candidate",
+      "evidence_summary": {
+        "pressure_threshold_supported": "bounded",
+        "response_margin_supported": "bounded",
+        "route_context_supported": "bounded",
+        "runtime_bridge_replay_status": "stable",
+        "trace_window_supported": "bounded_no_decay_window"
+      },
+      "native_ecology_status": "blocked",
+      "next_probe_implication": "Can supply the pressure/response loop skeleton for the first agentic-ecology probe contract.",
+      "primary_source_digest": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+      "primary_source_id": "prototype_a_i11_1c",
+      "producer_residue_status": "producer_assisted_bridge_evidence",
+      "prototype_family_status": "carry_forward_primary",
+      "prototype_id": "prototype_a_trace_pressure_loop",
+      "prototype_label": "Prototype A - trace / pressure / bounded response loop",
+      "prototype_status": "runnable_runtime",
+      "remaining_blockers": [
+        "producer-assisted, not native ecology",
+        "no general trace decay law",
+        "no pheromone, hunger, ant behavior, or semantic action"
+      ],
+      "runtime_ecology_success_supported": false,
+      "source_basis": "I11.1-C replay/stress-backed stronger runtime bridge"
+    },
+    {
+      "atlas_classification": "bridge_exemplar",
+      "bridge_exemplar_supported": true,
+      "claim_ceiling": "bounded boundary/shared-medium bridge exemplar with zero-leakage policy preserved; not native shared-medium coordination or multi-agent interaction",
+      "evidence_hierarchy": {
+        "primary_artifact_digest": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925",
+        "primary_evidence": "I12x synthesis",
+        "supporting_rows": [
+          "I12 primary boundary/shared-medium unit",
+          "I12.1 sibling repeatability",
+          "I12.2 active-medium separability"
+        ],
+        "why_primary": "I12x preserves the primary unit, repeatability variant, and active-medium separability while keeping nonzero leakage debt visible."
+      },
+      "evidence_status": "runtime_replay_stress_backed_bridge_candidate",
+      "evidence_summary": {
+        "active_medium_separability_supported": true,
+        "nonzero_leakage_tolerance_supported": false,
+        "primary_unit_supported": true,
+        "sibling_repeatability_supported": true
+      },
+      "native_ecology_status": "blocked",
+      "next_probe_implication": "Can supply the separable medium/boundary unit for composed ecology probe contracts, while preserving nonzero-leakage debt.",
+      "primary_source_digest": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925",
+      "primary_source_id": "prototype_b_i12x",
+      "producer_residue_status": "source_backed_bridge_evidence_with_medium_debt",
+      "prototype_family_status": "carry_forward_primary",
+      "prototype_id": "prototype_b_boundary_shared_medium_unit",
+      "prototype_label": "Prototype B - boundary / shared-medium unit",
+      "prototype_status": "runnable_runtime",
+      "remaining_blockers": [
+        "no native shared-medium coordination",
+        "nonzero leakage tolerance remains unsupported",
+        "no agent body or multi-agent interaction"
+      ],
+      "runtime_ecology_success_supported": false,
+      "source_basis": "I12/I12.1/I12.2 synthesis"
+    },
+    {
+      "atlas_classification": "bridge_exemplar",
+      "bridge_exemplar_supported": true,
+      "claim_ceiling": "bounded two-geometry Prototype C proxy/susceptibility/re-entry runtime pattern; not semantic learning, choice, agency, native AP4/AP5, native support, ant-role behavior, or ecology success",
+      "evidence_hierarchy": {
+        "primary_artifact_digest": "39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d",
+        "primary_evidence": "I13x synthesis",
+        "supporting_rows": [
+          "I13 mapping hygiene and exact source-chain extraction",
+          "I13.1-C narrow direct composed runtime",
+          "I13.2-C stronger buffered runtime"
+        ],
+        "why_primary": "I13x records the two runtime geometries and preserves the mapping-only debt rows rather than treating them as runtime evidence."
+      },
+      "evidence_status": "runtime_replay_stress_backed_bridge_candidate",
+      "evidence_summary": {
+        "control_backed_candidate_count": 2,
+        "replay_stress_backed_candidate_count": 2,
+        "runtime_candidate_count": 2,
+        "strongest_local_candidate": {
+          "candidate_id": "I13.2",
+          "min_supported_differential_response_margin": 0.14336,
+          "min_supported_susceptibility_margin": 0.0436,
+          "role": "buffered susceptibility lane alternative"
+        }
+      },
+      "native_ecology_status": "blocked",
+      "next_probe_implication": "Can supply a re-entry/susceptibility modulation component for probe contracts, without semantic learning or choice claims.",
+      "primary_source_digest": "39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d",
+      "primary_source_id": "prototype_c_i13x",
+      "producer_residue_status": "producer_mediated_susceptibility_debt_remains",
+      "prototype_family_status": "carry_forward_primary",
+      "prototype_id": "prototype_c_proxy_susceptibility_reentry",
+      "prototype_label": "Prototype C - proxy / susceptibility / re-entry",
+      "prototype_status": "runnable_runtime",
+      "remaining_blockers": [
+        "no semantic learning or choice",
+        "native AP4/AP5 closure remains blocked",
+        "no native support"
+      ],
+      "runtime_ecology_success_supported": false,
+      "source_basis": "I13/I13.1/I13.2 two-geometry synthesis"
+    },
+    {
+      "atlas_classification": "bridge_exemplar_with_lane_split",
+      "bridge_exemplar_supported": true,
+      "claim_ceiling": "complete Prototype D bridge synthesis with native/source-current motif layer and replay/stress-backed producer-mediated composition bridge catalogue; not native ecology, resource economy, cooperation, exploitation, agency, or final atlas classification",
+      "evidence_hierarchy": {
+        "primary_artifact_digest": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be",
+        "primary_evidence": "I14Y complete Prototype D synthesis",
+        "supporting_artifact_digests": {
+          "I14-C": "b10bf023a775433daa6dcf03805cabff606f6f81aaa94f16b0b677f73e9d8fa2",
+          "I14-D": "afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2",
+          "I14-E": "3cdaf38779178b996f1f286e886463e0edd4e4ecd201df87b35e7b63dc2872b4"
+        },
+        "supporting_rows": [
+          "I14-C direct motif replay/stress",
+          "I14-D composition controls",
+          "I14-E composition replay/stress"
+        ],
+        "why_primary": "I14Y is used only after I14-C, I14-D, and I14-E have passed; it preserves the native motif / blocked native composition / producer-mediated composition split."
+      },
+      "evidence_status": "runtime_replay_stress_backed_bridge_candidate_with_lane_split",
+      "evidence_summary": {
+        "native_composition_layer_supported": false,
+        "native_motif_layer_supported": true,
+        "naturalization_targets": [
+          {
+            "current_status": "blocked_by_I14.4-2_and_I14.4-3",
+            "needed_for": "native closed circulation / native directed cycle",
+            "target_id": "native_ordered_multi_leg_dependency"
+          },
+          {
+            "current_status": "producer_mediated_in_I14.5-1_and_I14.5-2",
+            "needed_for": "native generator/extractor feedback and buffered feedback",
+            "target_id": "native_changed_medium_handoff_between_motifs"
+          },
+          {
+            "current_status": "producer_mediated_guard_in_I14.6-2",
+            "needed_for": "native multi-role ecology / aggregate shared-medium leakage",
+            "target_id": "native_multi_leg_leakage_aggregation"
+          },
+          {
+            "current_status": "producer_mediated_in_I14.2-3; native I14.2 and I14.2-2 retain caveat",
+            "needed_for": "native clean extractor lane",
+            "target_id": "native_clean_extractor_without_leakage_gate"
+          }
+        ],
+        "producer_mediated_composition_bridge_supported": true
+      },
+      "native_ecology_status": "blocked",
+      "next_probe_implication": "Can supply environmental medium-reshaping motifs and producer-mediated composition bridges for ecology probe contracts.",
+      "primary_source_digest": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be",
+      "primary_source_id": "prototype_d_i14y",
+      "producer_residue_status": "native/source-current motif layer plus producer-mediated composition bridge; native composition remains debt",
+      "prototype_family_status": "carry_forward_with_debt",
+      "prototype_id": "prototype_d_generative_extractive_medium_reshaping",
+      "prototype_label": "Prototype D - generative / extractive / medium reshaping",
+      "prototype_status": "runnable_runtime",
+      "remaining_blockers": [
+        "native composition layer remains unsupported",
+        "no resource economy, cooperation, exploitation, or altruism",
+        "closed environmental circulation remains producer-mediated bridge evidence"
+      ],
+      "runtime_ecology_success_supported": false,
+      "source_basis": "I14Y complete Prototype D synthesis"
+    }
+  ],
+  "ready_for_iteration_16": true,
+  "runtime_ecology_success_supported": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_bridge_motif_library",
+      "artifact_id": "n29_bridge_motif_library_i8",
+      "iteration": "I8",
+      "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json",
+      "sha256": "abd0c077dca7b5158f1e5ca0eae8d0e7f6ba849ffcf4542d75b8ba237929f073",
+      "source_id": "i8_bridge_motif_library",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_phase_b_controls_fail_closed_ready_for_phase_c",
+      "artifact_id": "n29_motif_relabel_nulls_i9",
+      "iteration": "I9",
+      "output_digest": "a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_motif_relabel_nulls_i9.json",
+      "sha256": "4cb75e44959ed1a9f6d67cb6e3f47f9cbe79cc43ca45a0d18a6c607e36f44eab",
+      "source_id": "i9_motif_relabel_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_admission_schema_frozen_no_prototype_rows",
+      "artifact_id": "n29_prototype_admission_schema_i10",
+      "iteration": "I10",
+      "output_digest": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_admission_schema_i10.json",
+      "sha256": "f6a4c85c23822f7819a3c4be93fc742c66394140156f3125a286a2dc2bc89e40",
+      "source_id": "i10_prototype_admission_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success",
+      "artifact_id": "n29_trace_pressure_loop_replay_stress_i11c",
+      "iteration": "I11-C",
+      "output_digest": "e78cedc79f0f32d1370fd0a72f908292e07fd5ca8e61b0b0b9a0daee65ed0fa3",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_replay_stress_i11c.json",
+      "sha256": "c877fa4e6a2fcf0bc25c04bdb52dc42716fca6257c6460c95476e8e03aeefe5d",
+      "source_id": "prototype_a_i11c_minimal_edge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_stronger_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success",
+      "artifact_id": "n29_trace_pressure_loop_stronger_replay_stress_i111c",
+      "iteration": "I11.1-C",
+      "output_digest": "1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_stronger_replay_stress_i111c.json",
+      "sha256": "68c232579f6fea6d71804b2a908ef623003ed8f200002d3c047a2248624b8d77",
+      "source_id": "prototype_a_i11_1c",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_b_synthesis_ready_for_i13",
+      "artifact_id": "n29_prototype_b_boundary_shared_medium_synthesis_i12x",
+      "iteration": "I12x",
+      "output_digest": "236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_b_boundary_shared_medium_synthesis_i12x.json",
+      "sha256": "6549eb68362b3497bdcdc7d2c35e5cf00f35ca12e75134da59580caa7a1ccbb4",
+      "source_id": "prototype_b_i12x",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_i13x_two_geometry_prototype_c_synthesis_ready_for_i14",
+      "artifact_id": "n29_proxy_susceptibility_reentry_synthesis_i13x",
+      "iteration": "I13*",
+      "output_digest": "39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_proxy_susceptibility_reentry_synthesis_i13x.json",
+      "sha256": "aaa25af2f811542aaa7dae4faf8315b09e3157f8e495194414069b5ade0c8363",
+      "source_id": "prototype_c_i13x",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_complete_prototype_d_synthesis_ready_for_i15",
+      "artifact_id": "n29_prototype_d_complete_synthesis_i14y",
+      "iteration": "I14Y",
+      "output_digest": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_d_complete_synthesis_i14y.json",
+      "sha256": "96ab47fc8a4584bed885fbcf07eeda373b48185508ec2e6418aad8bdcbba71e7",
+      "source_id": "prototype_d_i14y",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_direct_runtime_candidates_bounded_replay_stress_pending_classification",
+      "artifact_id": "n29_generative_extractive_direct_replay_stress_i14c",
+      "iteration": "I14-C",
+      "output_digest": "b10bf023a775433daa6dcf03805cabff606f6f81aaa94f16b0b677f73e9d8fa2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_direct_replay_stress_i14c.json",
+      "sha256": "6d45d005ff9d830657710bae70120ede2394b0a5655bb32eb6636e47667dec30",
+      "source_id": "prototype_d_i14c_direct_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_loop_composition_controls_fail_closed_ready_for_i14e",
+      "artifact_id": "n29_loop_composition_controls_i14d",
+      "iteration": "I14-D",
+      "output_digest": "afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_loop_composition_controls_i14d.json",
+      "sha256": "006a66f1999a00f8032cd9bfee9b839eaa5484f8965be321a148c0e4dcc6b273",
+      "source_id": "prototype_d_i14d_composition_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_loop_composition_replay_stress_producer_bridge_catalogue_ready_for_i15",
+      "artifact_id": "n29_loop_composition_replay_stress_i14e",
+      "iteration": "I14-E",
+      "output_digest": "3cdaf38779178b996f1f286e886463e0edd4e4ecd201df87b35e7b63dc2872b4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_loop_composition_replay_stress_i14e.json",
+      "sha256": "c76f1337c110cbe408d41de3dff404acefb87218af7da3872747503d90d959a4",
+      "source_id": "prototype_d_i14e_composition_replay_stress",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "status_enums": {
+    "composition_evidence_status_values": [
+      "source_backed_reconstruction_candidate",
+      "mapping_only_no_runtime_surface",
+      "runtime_not_run",
+      "blocked_by_controls"
+    ],
+    "composition_readiness_status_values": [
+      "ready_for_probe_contract",
+      "ready_for_probe_contract_with_producer_debt",
+      "blocked_by_missing_source",
+      "blocked_by_controls",
+      "blocked_by_claim_boundary"
+    ],
+    "evidence_status_values": [
+      "runtime_replay_stress_backed_bridge_candidate",
+      "runtime_replay_stress_backed_bridge_candidate_with_lane_split",
+      "control_backed_runtime_candidate_pending_replay",
+      "source_backed_reconstruction_candidate",
+      "mapping_only_debt_record",
+      "context_only",
+      "blocked_by_missing_runtime_surface",
+      "blocked_by_controls",
+      "blocked_by_claim_boundary"
+    ],
+    "prototype_family_status_values": [
+      "carry_forward_primary",
+      "carry_forward_with_debt",
+      "mapping_only",
+      "blocked_or_deferred"
+    ]
+  },
+  "title": "Prototype Atlas And Composition Classification"
+}

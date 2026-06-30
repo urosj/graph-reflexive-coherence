@@ -1274,6 +1274,16 @@ I14Y = Complete Prototype D Synthesis
   for I14X, I14.4-I14.6-2, I14-D, and I14-E, carry forward naturalization
   targets, keep final atlas classification pending I15, and block native
   ecology, resource economy, cooperation, exploitation, and agency claims.
+
+I15 = Prototype Composition And Atlas Classification
+  Classify Prototypes A-D as bridge exemplars and compose selected prototype
+  families only where source support permits. I15 may open atlas-level
+  composition rows as source-backed probe-contract seeds, but it must not
+  claim a composed ecology runtime. Every composition row must reference
+  admitted prototype IDs, record order/hidden-coupling/medium-debt/claim-ceiling
+  controls, preserve producer and medium debt, and point to the next runnable
+  probe implication. Mapping-only rows and missing runtime surfaces remain
+  explicit inputs for I16 rather than hidden evidence.
 ```
 
 The important split is:
