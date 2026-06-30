@@ -820,13 +820,13 @@ sentience claim, no biological agency claim, and no Phase 8 completion claim.
 
 ### Iteration 10 - Prototype Admission Schema
 
-- [ ] Freeze prototype status values.
-- [ ] Freeze bridge exemplar row fields.
-- [ ] Freeze runtime vs reconstruction vs visual-only distinctions.
-- [ ] Freeze required source artifacts and digest fields.
-- [ ] Freeze controls for report-only, visual-only, hidden producer coupling, and unsafe ecology relabels.
-- [ ] Require every prototype to name ecology demand, supplied capability, bridge motif, remaining debt, and next probe contract.
-- [ ] Freeze prototype claim ceilings.
+- [x] Freeze prototype status values.
+- [x] Freeze bridge exemplar row fields.
+- [x] Freeze runtime vs reconstruction vs visual-only distinctions.
+- [x] Freeze required source artifacts and digest fields.
+- [x] Freeze controls for report-only, visual-only, hidden producer coupling, and unsafe ecology relabels.
+- [x] Require every prototype to name ecology demand, supplied capability, bridge motif, remaining debt, and next probe contract.
+- [x] Freeze prototype claim ceilings.
 
 Expected result:
 
@@ -837,16 +837,168 @@ prototype_admission_schema_frozen = true
 ready_for_iteration_11 = true
 ```
 
+Implemented result:
+
+```text
+artifact = outputs/n29_prototype_admission_schema_i10.json
+report = reports/n29_prototype_admission_schema_i10.md
+script = scripts/build_n29_prototype_admission_schema_i10.py
+status = passed
+acceptance_state = accepted_prototype_admission_schema_frozen_no_prototype_rows
+prototype_admission_schema_frozen = true
+prototype_status_value_count = 10
+prototype_class_rows = 8
+admission_route_rows = 7
+future_candidate_routes = 6
+blocked_or_mapping_only_routes = 1
+control_schema_rows = 13
+route_class_crosswalk_rows = 7
+composition_directly_admissible = false
+i9_phase_b_closeout_passed = true
+i9_ready_for_iteration_10 = true
+source_artifact_digests_recorded = true
+prototype_row_required_fields_present = true
+runtime_reconstruction_distinctions_frozen = true
+required_controls_frozen = true
+every_prototype_class_names_motif = true
+every_i8_motif_has_admission_route = true
+all_prototype_classes_have_admission_route = true
+route_count_and_class_count_difference_explained = true
+every_future_candidate_route_has_source_rows = true
+composition_not_directly_admitted = true
+composition_activation_condition_frozen = true
+composition_route_status_policy_blocks_pre_i15 = true
+route_specific_status_policy_excludes_runnable_runtime_without_runtime_artifacts = true
+i9_null_controls_consumed_by_routes = true
+future_control_results_schema_requires_evaluated_controls = true
+digest_policy_frozen = true
+future_rows_require_why_admitted_and_why_not_stronger = true
+future_debt_compaction_policy_frozen = true
+i11_minimal_handoff_contract_frozen = true
+prototype_rows_opened = false
+bridge_exemplar_rows_opened = false
+prototype_success_claimed = false
+positive_ecology_evidence_opened = false
+runtime_ecology_probe_contract_opened = false
+native_ecology_claim_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+native_shared_medium_coordination_opened = false
+semantic_cooperation_claim_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+output_digest = fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d
+failed_checks = []
+ready_for_iteration_11 = true
+```
+
+Iteration 10 interpretation:
+
+```text
+Iteration 10 opens Phase C only as an admission schema. It freezes how future
+prototype rows must name source rows, source artifacts, source digests, ecology
+demand role, supplied capability, bridge motif, bridge exemplar role,
+composition role, agency diagnostic role, runtime/reconstruction status,
+producer residue, medium debt, naturalization gap, controls, evaluated
+control results, next probe contract, source digest status, debt summary,
+debt source refs, claim ceiling, unsafe claim flags, why-admitted text, and
+why-not-stronger text.
+
+It consumes I4 as the schema/claim boundary, I7 as the source row and source
+artifact manifest surface, I8 as the motif library admission source, and I9 as
+the Phase B closeout/null-control boundary. Six I8 motifs become future
+candidate admission routes. The `composition` motif remains blocked at I10
+because it is mapping-only and needs ordered source rows and controls in I15.
+Composition may open in I15 only after at least two non-composition prototype
+rows have been admitted, ordered composition references admitted prototype IDs,
+component order inversion / hidden producer coupling / medium-debt-hidden
+controls pass, and the composition does not raise the claim ceiling.
+
+I10 also explains why seven admission routes produce eight prototype classes:
+`trace_pressure_loop` is one route that can feed both `trace_pressure_loop` and
+`closed_loop_perturbation_response` prototype families. Future rows must use
+route-specific allowed statuses; no route may claim `runnable_runtime` unless it
+introduces or cites a runtime artifact with manifest, replay/control status,
+and source-current trace. Legacy source artifacts may use content SHA-256 as
+the canonical digest when `source_output_digest` is not recorded, while future
+generated artifacts require output digests.
+
+The I11 handoff is deliberately minimal: use one primary route, one primary
+demand cluster, two to four primary source artifacts, one explicit
+reconstruction or mapping basis, evaluated controls, one exact next probe
+contract, and no composition.
+
+I10 does not open prototype rows, bridge exemplar rows, runtime ecology probe
+contracts, positive ecology evidence, native ecology, native ant/colony
+agency, native shared-medium coordination, semantic cooperation, biological
+agency, sentience, or Phase 8 completion. Passing I10 means I11 can start the
+first prototype-family row under a frozen admission contract.
+```
+
 ### Iteration 11 - Prototype A: Trace / Pressure / Loop
 
-- [ ] Build or reconstruct a miniature that couples trace/aftereffect, pressure/reserve, and loop response where source support permits.
-- [ ] Record source rows from N08/N13/N17/N22/N24 as applicable.
-- [ ] Record ecology demand served.
-- [ ] Record supplied capability and bridge motif.
-- [ ] Record remaining producer, medium, or naturalization debt.
-- [ ] Record exact downstream ecology probe suggested by the prototype.
-- [ ] Record whether the miniature is runnable runtime, source-backed reconstruction, visual-only, or mapping-only.
-- [ ] Block ant pheromone, hunger, semantic action, and native ecology relabels.
+Direction:
+
+```text
+I11 is the first actual bridge prototype after the Phase B mapping and I10
+admission schema. It fits into agentic ecology as the smallest testable
+structure for this question:
+
+Can an ecology component be built from prior LGRC/GRC primitives where a
+trace/aftereffect, a pressure/reserve condition, and a loop response form one
+bounded bridge exemplar?
+
+In ant-ecology terms, I11 must not prove pheromones, ant route behavior,
+hunger, alarm semantics, intention, or colony agency. It should build only the
+lower-level scaffold those ideas would later need:
+
+trace/aftereffect:
+  some prior state leaves a structured residue or route bias
+
+pressure/reserve:
+  some support, depletion, perturbation, or reserve condition makes the trace
+  relevant
+
+loop response:
+  a bounded response closes through later state, instead of being only a
+  one-way mark
+
+The intended I11 bridge is:
+
+something happened before
+it left an admissible trace or aftereffect
+a later pressure condition makes that trace matter
+a bounded loop/re-entry response can be reconstructed from source-backed rows
+
+I11 should stay minimal: one route, one demand cluster, two to four primary
+source artifacts, evaluated controls, and one exact next probe contract.
+Allowed ceiling:
+
+bounded trace-pressure-loop bridge exemplar candidate
+
+Blocked readings:
+
+pheromone communication
+ant action or ant route behavior
+semantic signal
+semantic action
+hunger/alarm semantics
+native ecology behavior
+agency
+native shared-medium coordination
+```
+
+- [x] Build or reconstruct a miniature that couples trace/aftereffect, pressure/reserve, and loop response where source support permits.
+- [x] Record source rows from N13/N17/N24 as the minimal I10-admitted source basis.
+- [x] Record `COV.GENERAL.TRACE.I7` / N08 as a secondary trace-basis audit without making it an extra primary source.
+- [x] Record ecology demand served.
+- [x] Record supplied capability and bridge motif.
+- [x] Record remaining producer, medium, or naturalization debt.
+- [x] Record exact downstream ecology probe suggested by the prototype.
+- [x] Record whether the miniature is runnable runtime, source-backed reconstruction, visual-only, or mapping-only.
+- [x] Block ant pheromone, hunger, semantic action, and native ecology relabels.
 
 Expected result:
 
@@ -855,6 +1007,563 @@ status = passed
 prototype_family = trace_pressure_loop
 claim_ceiling = source_backed_bridge_prototype_or_mapping_only_with_debt
 ready_for_iteration_12 = true
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_trace_pressure_loop_prototype_i11.json
+report = reports/n29_trace_pressure_loop_prototype_i11.md
+script = scripts/build_n29_trace_pressure_loop_prototype_i11.py
+status = passed
+acceptance_state = accepted_trace_pressure_loop_bridge_exemplar_candidate_no_runtime_ecology
+prototype_row_count = 1
+prototype_rows_opened = true
+bridge_exemplar_rows_opened = true
+prototype_success_claimed = false
+runtime_or_reconstruction_status = artifact_only_reconstruction
+primary_source_artifacts = [
+  n17_closed_boundary_engagement_loop,
+  n13_support_seeking_regulation,
+  n24_surplus_supported_optionality
+]
+primary_source_artifact_count = 3
+secondary_trace_basis = COV.GENERAL.TRACE.I7 / n08_memory_trail_affordance
+trace_basis_role = secondary_trace_basis_not_primary_proof_expansion
+primary_demand_cluster = trace_pressure_loop_minimal_pressure_response_cluster
+control_results = 13
+all_required_controls_evaluated = true
+no_control_failed_open_or_not_run = true
+all_controls_have_bounded_rung_effect = true
+runtime_status_allowed_by_route = true
+source_digests_present = true
+i10_output_digest_matches_consumed_artifact = true
+trace_leg_source_fidelity_checked = true
+trace_coverage_row_absence_explained_or_fixed = true
+n17_n13_n24_role_separation_verified = true
+agency_diagnostic_role_uses_i2_diagnostic_ids = true
+method_constraint_role_split_from_diagnostic_role = true
+why_admitted_and_why_not_stronger_present = true
+debt_summary_and_refs_present = true
+stable_debt_ids_present = true
+next_probe_contract_present = true
+next_probe_contract_has_controls_and_expected_failure_modes = true
+next_probe_is_not_phase_d_runtime_contract = true
+composition_remains_closed = true
+positive_ecology_evidence_opened = false
+runtime_ecology_probe_contract_opened = false
+native_ecology_claim_opened = false
+native_agency_claim_opened = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+native_shared_medium_coordination_opened = false
+semantic_signal_claim_opened = false
+pheromone_communication_claim_opened = false
+hunger_alarm_semantics_opened = false
+biological_agency_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+output_digest = 16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd
+failed_checks = []
+ready_for_iteration_12 = true
+```
+
+Iteration 11 interpretation:
+
+```text
+Iteration 11 opens the first bounded bridge prototype row under the I10
+admission contract. The row is an artifact-only reconstruction candidate for a
+minimal trace / pressure / loop structure. It uses N17 as the bounded
+loop/aftereffect source, N13 as support-pressure regulation context, and N24 as
+reserve/surplus pressure context.
+
+The trace leg is source-fidelity checked through `COV.GENERAL.TRACE.I7` and
+the N08 memory-trail artifact as a secondary trace-basis audit. That secondary
+trace basis makes the trace leg auditable, but it does not become an extra
+primary proof source and does not raise the claim ceiling.
+
+I11 also records the I10 digest linkage explicitly:
+
+i10_output_digest_matches_consumed_artifact = true
+current_i10_output_digest = fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d
+consumed_i10_output_digest = fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d
+
+The source roles remain separated:
+
+N17 = bounded loop/re-entry and aftereffect context, not agency/action
+N13 = bounded support-pressure context, not hunger/alarm semantics
+N24 = bounded reserve/surplus pressure context, not reproduction or choice
+
+The admitted bridge is deliberately small:
+
+prior source-backed condition leaves an admissible trace or aftereffect
+later pressure/reserve condition makes that trace relevant
+bounded loop/re-entry evidence supplies the response leg
+
+This supports only:
+
+bounded trace-pressure-loop bridge exemplar candidate
+
+It uses `withdrawal_resistance` and `naturalization_depth` as the relevant I2
+agency diagnostic roles. Source-of-truth, claim-boundary, producer-residue, and
+medium-debt handling are recorded separately as method constraint roles.
+
+The downstream probe contract now includes explicit controls, expected failure
+modes, a minimal success observation, and the claim ceiling
+`downstream_probe_contract_only_no_runtime_ecology_claim`.
+
+It does not support prototype success, runtime ecology evidence, pheromone
+communication, ant route behavior, hunger or alarm semantics, semantic action,
+native ecology behavior, native shared-medium coordination, agency, sentience,
+biological agency, or Phase 8 completion.
+```
+
+Decision after I11 review:
+
+```text
+I11 is a good first artifact-only bridge exemplar, but the prototype pattern
+should be strengthened when runtime evidence is feasible. The rest of Phase C
+should use this as a directional template:
+
+base exemplar:
+  source-backed bridge row with debt visible
+
+runtime strengthening:
+  minimal runtime instantiation where existing LGRC/GRC surfaces permit it
+
+perturbation controls:
+  remove, invert, or ablate the key leg and require failure closed
+
+replay/stress:
+  replay, duplicate, perturbation envelope, margin, and claim-boundary checks
+
+If runtime strengthening is not available for a later prototype family, record
+that as medium, producer, naturalization, or implementation debt. Do not
+replace runtime evidence with labels.
+
+Native runtime evidence is preferred. If full native runtime support is missing,
+producer-assisted runtime evidence is still admissible when the producer is the
+same kind of bounded, declared, source-visible producer already used in N05-N28.
+Such a producer must be replayable, non-semantic, explicitly recorded as
+producer residue / naturalization debt, and treated as evidence for the minimal
+LGRC extension still needed. It cannot upgrade the row to native ecology,
+native shared-medium coordination, ant behavior, or agency.
+```
+
+### Iteration 11-A - Runtime Trace / Pressure / Loop Instantiation
+
+- [x] Build a minimal runtime trace/pressure/loop example using existing LGRC/GRC surfaces where possible.
+- [x] If native runtime support is missing, allow a same-discipline producer-assisted runtime row with producer residue and naturalization debt explicit.
+- [x] Record runtime artifact manifest, source-current traces, digests, and fixture/config identity.
+- [x] Record the trace or aftereffect surface as runtime-visible, not only report-derived.
+- [x] Apply a declared pressure or reserve condition.
+- [x] Record a bounded later loop/re-entry response.
+- [x] Show the later response is conditioned by the trace/pressure setup, not direct forcing.
+- [x] Preserve I11 source-role separation for N17/N13/N24 and secondary trace-basis limits.
+- [x] Keep prototype success, ant behavior, pheromone communication, hunger semantics, native shared-medium coordination, and agency claims closed.
+
+Expected result:
+
+```text
+status = passed | partial | blocked
+prototype_family = trace_pressure_loop
+runtime_or_reconstruction_status = minimal_native_runtime_instantiation | producer_assisted_runtime_instantiation | blocked_by_missing_runtime_surface
+claim_ceiling = minimal_runtime_bridge_prototype_candidate_no_ecology_success
+ready_for_iteration_11B = true if source-current runtime row exists or blocker is clean
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_trace_pressure_loop_runtime_i11a.json
+runtime_artifact = outputs/n29_trace_pressure_loop_runtime_i11a_runtime_artifact.json
+report = reports/n29_trace_pressure_loop_runtime_i11a.md
+script = scripts/build_n29_trace_pressure_loop_runtime_i11a.py
+status = passed
+acceptance_state = accepted_producer_assisted_runtime_trace_pressure_loop_candidate_no_ecology_success
+prototype_family = trace_pressure_loop
+runtime_or_reconstruction_status = producer_assisted_runtime_instantiation
+bounded_row_status = admitted_runtime_bridge_exemplar_candidate_producer_assisted
+runtime_family = LGRC9V3
+producer_policy = packet_departure_from_route_aspect_surplus_policy
+same_discipline_producer = true
+producer_residue = visible
+producer_success_can_upgrade_native = false
+naturalization_debt = native_ecology_and_shared_medium_not_opened
+trace_pressure_loop_leg_count = 4
+self_rearm_validation_passed = true
+trace_aftereffect_runtime_visible = true
+pressure_declared_before_use = true
+pressure_threshold_crossed = true
+bounded_loop_response_observed = true
+conditioned_by_trace_pressure = true
+max_budget_error = 0.0
+source_i11_digest_matches = true
+source_i11_output_digest = 16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd
+i11b_runtime_control_handoff_present = true
+runtime_artifact_sha256 = be5a214194b94b2858b4f5ca0e11616ed2f81e84b178971ba6a9c1061f2df389
+runtime_artifact_output_digest = 521b40ce3dca367e0f9b8f1641ed52bab1515595bb9eaad037b2db51f9559237
+output_digest = 57e647333608ff7fdc1bb307eb256e12770ff9efb98b185bc097e0057d1f5076
+failed_checks = []
+ready_for_iteration_11B = true
+```
+
+Iteration 11-A interpretation:
+
+```text
+I11-A strengthens I11 from artifact-only reconstruction to a minimal runtime
+bridge candidate. It runs the executable LGRC9V3 route-surplus packet-loop
+surface. A returned packet arrival leaves a runtime-visible aftereffect at a
+pole; a declared route-surplus pressure trigger reads that current state; the
+LGRC9V3 producer schedules a bounded child packet departure; and `step()`
+processes that departure. Four completed self-rearm legs validate this
+trace/pressure/loop pattern with zero budget error.
+
+The result remains producer-assisted because the route-surplus producer
+schedules eligible packet work. That producer is declared, source-visible,
+bounded, replayable, and treated as producer residue / naturalization debt.
+It does not upgrade the row to native ecology, native shared-medium
+coordination, ant behavior, pheromone communication, hunger semantics, agency,
+or prototype success.
+
+I11-A also records the canonical I11 source linkage explicitly:
+
+source_i11_digest_matches = true
+canonical_i11_artifact = outputs/n29_trace_pressure_loop_prototype_i11.json
+source_i11_output_digest = 16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd
+
+The status change is a promotion of runtime status, not a stronger claim:
+
+previous I11 status = artifact_only_reconstruction
+I11-A runtime addendum = producer_assisted_runtime_instantiation
+bounded row status = admitted_runtime_bridge_exemplar_candidate_producer_assisted
+claim ceiling = minimal_runtime_bridge_prototype_candidate_no_ecology_success
+
+The next step is null validation, not stronger wording. I11-B must test whether
+the runtime bridge disappears or fails closed when trace, pressure, route/order,
+idempotency, producer/step ownership, or unsafe labels are broken.
+```
+
+### Iteration 11-B - Trace / Pressure / Loop Perturbation Controls
+
+- [x] Run no-parent-arrival-trace control.
+- [x] Run below-threshold pressure control.
+- [x] Run near-threshold margin control.
+- [x] Run wrong-expected-channel control.
+- [x] Run route-aspect-digest mismatch control.
+- [x] Run channel-sequence shuffle control.
+- [x] Run same-causal-surface replay idempotency control.
+- [x] Run direct-queue-injection control.
+- [x] Run unprocessed-child-departure control.
+- [x] Run producer-disabled control.
+- [x] Run semantic pheromone / hunger label relabel controls.
+- [x] If I11-A uses a producer-assisted row, verify the declared producer is visible and same-discipline with N05-N28 producer use.
+- [x] Reject producer success as native runtime success.
+- [x] Require all false-positive paths to fail closed.
+- [x] Demote I11-A if any required perturbation control fails open.
+
+Expected result:
+
+```text
+status = passed | partial | blocked
+no_parent_arrival_trace_control = failed_closed
+below_threshold_pressure_control = failed_closed
+near_threshold_margin_control = failed_closed
+wrong_expected_channel_control = failed_closed
+route_aspect_digest_mismatch_control = failed_closed
+channel_sequence_shuffle_control = failed_closed
+same_causal_surface_replay_idempotency_control = failed_closed
+direct_queue_injection_control = failed_closed
+unprocessed_child_departure_control = failed_closed
+producer_disabled_control = failed_closed
+semantic_relabel_controls = failed_closed
+claim_ceiling = perturbation_control_backed_runtime_bridge_candidate_no_ecology_success
+ready_for_iteration_11C = true if controls fail closed
+```
+
+Implemented result:
+
+```text
+status = passed
+acceptance_state = accepted_trace_pressure_loop_runtime_controls_fail_closed_producer_assisted_only
+artifact = outputs/n29_trace_pressure_loop_runtime_controls_i11b.json
+report = reports/n29_trace_pressure_loop_runtime_controls_i11b.md
+script = scripts/build_n29_trace_pressure_loop_runtime_controls_i11b.py
+output_digest = 5c9aaaf087c783fd82d330ade313a589519a787532154aa613a98f4142cd582a
+failed_open_count = 0
+runtime_executed_control_count = 9
+ready_for_iteration_11C = true
+
+no_parent_arrival_trace_control = failed_closed
+below_threshold_pressure_control = failed_closed
+near_threshold_margin_control = failed_closed
+wrong_expected_channel_control = failed_closed
+route_aspect_digest_mismatch_control = failed_closed
+channel_sequence_shuffle_control = failed_closed
+same_causal_surface_replay_idempotency_control = failed_closed
+direct_queue_injection_control = failed_closed
+unprocessed_child_departure_control = failed_closed
+producer_disabled_control = failed_closed
+semantic_pheromone_hunger_relabel_control = failed_closed
+producer_success_as_native_runtime_success_control = failed_closed
+```
+
+Interpretation:
+
+```text
+I11-B consumes I11-A as the runtime control source and I11 as lineage /
+claim-boundary source. I11 alone is not treated as runtime evidence.
+
+The runtime controls distinguish skipped diagnostic producer records from
+scheduled child packet events. A skipped diagnostic record is not failed-open;
+it is the audit trail showing that the producer inspected the causal surface
+and did not schedule a bounded response. The no-parent, below-threshold,
+near-threshold-below, producer-disabled, and idempotency controls are therefore
+judged by scheduled_event_count and completed self-rearm evidence, not by the
+mere presence of a diagnostic producer record.
+
+The wrong-expected-channel control fails closed before runtime because the
+route-aspect contract rejects an impossible expected-next channel. Digest and
+channel-sequence controls show that local packet activity cannot backfill the
+canonical I11-A route/order record. Direct queue injection and unprocessed
+child departure show that producer ownership and step ownership are both
+required. Semantic and producer-as-native relabels remain blocked.
+
+This backs I11-A as a perturbation-control-backed producer-assisted runtime
+bridge candidate. It still does not support native ecology, pheromone /
+hunger semantics, ant behavior, native shared-medium coordination, agency, or
+prototype success.
+```
+
+### Iteration 11-C - Trace / Pressure / Loop Replay And Stress Matrix
+
+- [x] Run artifact replay for the I11-A runtime row.
+- [x] Run snapshot/load replay for the I11-A runtime row.
+- [x] Run duplicate replay for the I11-A runtime row.
+- [x] Measure trace persistence or decay window.
+- [x] Measure pressure/reserve threshold or perturbation amplitude envelope.
+- [x] Measure bounded response margin.
+- [x] Record margin limits and failure boundary instead of retuning to pass.
+- [x] Preserve I11-B control outcomes and all I11 claim ceilings.
+
+Expected result:
+
+```text
+status = passed | partial | blocked
+runtime_bridge_replay_status = stable | partial | blocked
+trace_window_supported = bounded
+pressure_threshold_supported = bounded
+response_margin_supported = bounded
+claim_ceiling = replay_stress_backed_runtime_bridge_candidate_no_ecology_success
+ready_for_iteration_12 = true
+```
+
+Implemented result:
+
+```text
+status = passed
+acceptance_state = accepted_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success
+artifact = outputs/n29_trace_pressure_loop_replay_stress_i11c.json
+snapshot_artifact = outputs/n29_trace_pressure_loop_replay_stress_i11c_snapshot.json
+report = reports/n29_trace_pressure_loop_replay_stress_i11c.md
+script = scripts/build_n29_trace_pressure_loop_replay_stress_i11c.py
+output_digest = e78cedc79f0f32d1370fd0a72f908292e07fd5ca8e61b0b0b9a0daee65ed0fa3
+
+runtime_bridge_replay_status = stable
+artifact_replay = stable
+snapshot_load_replay = stable
+duplicate_replay = stable
+trace_window_supported = bounded_no_decay_window
+pressure_threshold_supported = bounded
+response_margin_supported = bounded
+ready_for_iteration_12 = true
+```
+
+Interpretation:
+
+```text
+I11-C consumes I11-A as the runtime bridge and I11-B as the fail-closed
+control gate. It adds replay and stress evidence without raising the claim
+ceiling.
+
+Artifact replay is stable at the I11-A artifact level. Since I11-A did not
+export the full raw event log as a standalone artifact, artifact replay relies
+on embedded validation, leg records, and digest linkage. Snapshot/load replay
+is stronger: it saves a native LGRC9V3 snapshot after the first leg, reloads it
+through LGRC9V3.load(), continues with the second leg, and validates the
+combined self-rearm chain. Duplicate replay is stable over a normalized
+runtime summary digest.
+
+The stress matrix records bounded margins rather than retuning. The trace
+window supports a bounded no-decay window through four no-op delay steps, but
+the current runtime has no trace-decay law, so this is not general trace
+persistence. The pressure scan records a measured boundary between surplus
+0.049 failing closed and 0.05 supporting the loop; this is reported as the
+measured runtime boundary, not exact equality-at-threshold support. The
+response scan supports packet amount up to 2.25 and fails closed at 2.26,
+which tracks the available source-node coherence bound.
+
+The result remains a replay/stress-backed producer-assisted runtime bridge
+candidate. It does not establish native ecology, pheromone / hunger semantics,
+ant behavior, native shared-medium coordination, agency, or prototype success.
+```
+
+### Iteration 11.1 - Stronger Trace / Pressure / Loop Sibling Candidate
+
+- [x] Preserve I11/I11-A/B/C as the minimal edge prototype, not a failed row.
+- [x] Define a stronger sibling candidate instead of replacing I11.
+- [x] Keep the same trace / pressure / loop motif and claim ceiling.
+- [x] Predeclare stronger geometry, thresholds, route sequence, and expected margins.
+- [x] Require I11.1-A/B/C before consuming the stronger candidate as runtime evidence.
+
+Implemented result:
+
+```text
+status = passed
+acceptance_state = accepted_stronger_candidate_definition_pending_runtime_controls_replay
+artifact = outputs/n29_trace_pressure_loop_stronger_candidate_i111.json
+report = reports/n29_trace_pressure_loop_stronger_candidate_i111.md
+script = scripts/build_n29_trace_pressure_loop_stronger_i111.py
+output_digest = d9f007adeac363f57ea8316d06a85a5c3e6532828986040d443e32c89cb8c067
+
+candidate_role = stronger_sibling_not_replacement_for_i11
+node_count = 3
+edge_count = 3
+route_channel_sequence = [S_to_K, K_to_M, M_to_S]
+expected_surplus_per_leg = 0.25
+expected_pressure_margin_per_leg = 0.201
+ready_for_i111a = true
+```
+
+Interpretation:
+
+```text
+I11.1 is introduced because I11-C passed as a minimal runnable bridge but was
+borderline as a representative pattern. I11.1 keeps the same rules and claim
+ceiling while moving from a two-pole edge fixture to a three-pole cyclic route.
+It is not an optimization of I11's exact fixture; it is a stronger sibling
+candidate with more route contexts and a larger predeclared pressure margin.
+
+If I11.1-A/B/C pass, I11.1-C becomes the primary positive evidence for
+Prototype A. I11-C remains the minimal edge case and construction contrast:
+it shows how the motif first became runnable and why the stronger sibling was
+needed.
+```
+
+### Iteration 11.1-A - Stronger Runtime Instantiation
+
+- [x] Run the stronger three-pole route in LGRC9V3.
+- [x] Require source-current completed self-rearm evidence.
+- [x] Record completed legs, scheduled events, surplus, and pressure margins.
+- [x] Keep producer-assisted status visible.
+- [x] Preserve no native ecology / agency / semantic communication claim ceiling.
+
+Implemented result:
+
+```text
+status = passed
+acceptance_state = accepted_stronger_three_pole_runtime_candidate_pending_controls_replay
+artifact = outputs/n29_trace_pressure_loop_stronger_runtime_i111a.json
+runtime_artifact = outputs/n29_trace_pressure_loop_stronger_runtime_i111a_runtime_artifact.json
+report = reports/n29_trace_pressure_loop_stronger_runtime_i111a.md
+script = scripts/build_n29_trace_pressure_loop_stronger_i111.py
+output_digest = e8e273643fa37e414153ff58ef34a56a6b0b1a7c334ea30949ae89492ebe0e0e
+
+completed_leg_count = 6
+scheduled_event_count = 6
+min_surplus_after_arrival = 0.25
+min_pressure_margin = 0.201
+pressure_margin_stronger_than_i11c = true
+producer_success_can_upgrade_native = false
+ready_for_i111b = true
+```
+
+### Iteration 11.1-B - Stronger Perturbation Controls
+
+- [x] Re-run the I11-B control family against the stronger three-pole route.
+- [x] Require no failed-open controls.
+- [x] Keep diagnostic skipped producer records distinct from scheduled child events.
+- [x] Reject semantic relabels and producer-as-native relabels.
+
+Implemented result:
+
+```text
+status = passed
+acceptance_state = accepted_stronger_trace_pressure_loop_controls_fail_closed_producer_assisted_only
+artifact = outputs/n29_trace_pressure_loop_stronger_controls_i111b.json
+report = reports/n29_trace_pressure_loop_stronger_controls_i111b.md
+script = scripts/build_n29_trace_pressure_loop_stronger_i111.py
+output_digest = 8f21aac1709002fc2a642339f7300c0fd3daba0ae1d0bb2512e7a1c28f84b460
+
+failed_open_count = 0
+runtime_executed_control_count = 9
+all required controls = failed_closed
+ready_for_i111c = true
+```
+
+### Iteration 11.1-C - Stronger Replay And Stress Matrix
+
+- [x] Run artifact replay for the stronger runtime row.
+- [x] Run native LGRC9V3 snapshot/load replay.
+- [x] Run duplicate deterministic replay.
+- [x] Measure trace no-decay window.
+- [x] Measure pressure threshold boundary and stronger baseline pressure margin.
+- [x] Measure bounded response amount.
+- [x] Check all three route contexts.
+- [x] Preserve producer-assisted and claim-boundary limits.
+
+Implemented result:
+
+```text
+status = passed
+acceptance_state = accepted_stronger_trace_pressure_loop_replay_stress_bounded_producer_assisted_no_ecology_success
+artifact = outputs/n29_trace_pressure_loop_stronger_replay_stress_i111c.json
+snapshot_artifact = outputs/n29_trace_pressure_loop_stronger_replay_stress_i111c_snapshot.json
+report = reports/n29_trace_pressure_loop_stronger_replay_stress_i111c.md
+script = scripts/build_n29_trace_pressure_loop_stronger_i111.py
+output_digest = 1f5eb9d6cb5b3a5b418d882814972e6ad93d1f605f6f630a335fe11c06a62fac
+
+runtime_bridge_replay_status = stable
+artifact_replay = stable
+snapshot_load_replay = stable
+duplicate_replay = stable
+trace_window_supported = bounded_no_decay_window
+pressure_threshold_supported = bounded
+response_margin_supported = bounded
+route_context_supported = bounded
+baseline_surplus = 0.25
+baseline_pressure_margin = 0.201
+max_supported_response_packet_amount = 3.5
+min_rejected_response_packet_amount = 3.51
+ready_for_iteration_12 = true
+```
+
+Interpretation:
+
+```text
+I11.1-C is now the primary positive evidence for Prototype A. I11-C remains
+the minimal edge case and construction contrast. The same producer-assisted
+trace / pressure / loop rules hold across a three-pole cyclic route with six
+completed legs, stable artifact replay, native snapshot/load continuation,
+duplicate deterministic replay, and no failed-open controls.
+
+The key improvement is pressure margin: I11-C was an edge case around the
+0.049 / 0.05 boundary, while I11.1-C carries surplus 0.25 against the same
+0.049 threshold, giving a baseline pressure margin of 0.201 on all route
+contexts.
+
+The response scan is bounded by source-node coherence capacity, not by a claim
+that the response amount is semantically optimal or surplus-only. It supports
+the runtime's bounded scheduling capacity up to packet amount 3.5 and fails
+closed at 3.51.
+
+The trace caveat remains: the runtime still has no decay law for the latest
+processed parent-arrival trace. I11.1-C extends the observed no-decay window to
+eight no-op delay steps, but it still does not prove general trace persistence.
+
+The result remains a stronger producer-assisted runtime bridge candidate. It
+does not establish native ecology, pheromone / hunger semantics, ant behavior,
+native shared-medium coordination, agency, or prototype success.
 ```
 
 ### Iteration 12 - Prototype B: Boundary / Shared-Medium Unit

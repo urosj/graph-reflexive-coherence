@@ -348,10 +348,14 @@ Prototype status:
 ```text
 runnable_runtime
 source_backed_reconstruction
+artifact_only_reconstruction
 visual_diagnostic_only
 mapping_only_no_runtime_surface
 blocked_by_missing_source
 blocked_by_claim_boundary
+blocked_by_debt
+blocked_by_controls
+blocked_by_phase_boundary
 ```
 
 Prototype classes:
@@ -371,8 +375,11 @@ Prototype rows must include:
 
 ```text
 prototype_id
+prototype_family
+admission_source_motif_id
 source_rows
 source_digests
+source_artifacts
 ecology_demand_role
 supplied_capability
 bridge_motif
@@ -384,9 +391,14 @@ producer_residue
 medium_debt
 naturalization_gap
 controls
+control_results
 next_probe_contract
+source_digest_status
+debt_summary
+debt_source_refs
 claim_ceiling
 unsafe_claim_flags
+why_admitted
 why_not_stronger
 ```
 
@@ -407,6 +419,148 @@ If no prototype is possible:
 prototype_status = mapping_only_no_runtime_surface
 missing_surface_reason = ...
 first_probe_requirement = ...
+```
+
+I10 is an admission contract, not prototype admission. It may freeze allowed
+prototype families, route-specific statuses, source/digest requirements,
+controls, debt summaries, and claim ceilings, but it must not claim that a
+route is already a prototype or that a motif has succeeded as ecology.
+
+Future prototype rows must include evaluated `control_results`, not just a
+list of required controls. A control status of `not_run` blocks the dependent
+claim, and `failed_open` invalidates the row. Legacy source artifacts may use
+content SHA-256 as canonical when `source_output_digest` is missing; future
+generated artifacts require output digests.
+
+Composition is not directly admissible from I10. It may open only in I15 after
+at least two non-composition prototype rows are admitted, ordered composition
+references admitted prototype IDs, order-inversion / hidden-producer /
+medium-debt-hidden controls pass, and the composition does not raise the claim
+ceiling.
+
+I11 should start minimally: one primary route, one primary demand cluster, two
+to four primary source artifacts, one explicit reconstruction or mapping basis,
+all required controls evaluated, one exact next probe contract, and no
+composition.
+
+The trace leg must be source-fidelity checked. If the primary I10 route does
+not directly include a trace coverage row, I11 must either add a trace coverage
+row as a secondary trace-basis audit or explicitly explain why the trace row is
+absent. Secondary trace rows may clarify the leg, but they must not become an
+extra primary proof source or raise the claim ceiling.
+
+I11 is the first actual bridge prototype after Phase B mapping and I10
+admission schema. Its ecology role is to test the smallest bridge structure
+needed by later agentic ecology patterns:
+
+```text
+trace / aftereffect
++ pressure / reserve condition
++ bounded loop or re-entry response
+= bounded trace-pressure-loop bridge exemplar candidate
+```
+
+In agentic-ecology terms, this is a lower-level scaffold for later phenomena
+such as pheromone-like trails, alarm pressure, hunger pressure, route support,
+or nest/food loops. I11 must not claim those higher-level phenomena. It should
+show only that something source-backed happened before, left an admissible
+trace or aftereffect, a later pressure condition makes that trace relevant,
+and a bounded loop/re-entry response can be reconstructed under I10 controls.
+
+Allowed I11 ceiling:
+
+```text
+bounded trace-pressure-loop bridge exemplar candidate
+```
+
+Blocked I11 readings:
+
+```text
+pheromone communication
+ant route behavior
+hunger or alarm semantics
+semantic signal
+semantic action
+native ecology behavior
+agency
+native shared-medium coordination
+```
+
+Decision after I11 review:
+
+```text
+I11 is a valid first artifact-only bridge exemplar, but Phase C should not stop
+at library rows when runtime evidence is feasible.
+```
+
+This becomes the directional template for the remaining prototype families:
+
+```text
+base prototype row:
+  source-backed bridge exemplar or mapping row with debt visible
+
+runtime strengthening row:
+  minimal runtime instantiation if existing LGRC/GRC surfaces permit it
+
+perturbation/control row:
+  remove or invert the key leg and require failure closed
+
+replay/stress row:
+  replay, duplicate, perturbation envelope, margin, and claim-boundary checks
+```
+
+The strengthening rows do not make N29 an ant-ecology implementation. They
+turn a bridge motif from a catalogue entry into a minimal runnable bridge when
+the runtime already supports it, while preserving all claim ceilings. If a
+prototype family cannot reach runtime evidence, the gap must be recorded as
+medium, producer, naturalization, or implementation debt instead of patched by
+labels.
+
+Native runtime evidence is preferred, but it is not the only admissible bridge
+strengthening mode. If full native LGRC runtime support does not yet exist, a
+producer-assisted runtime row is valid when the producer is at the same
+discipline level as producers used in N05-N28: declared before use, source
+visible, replayable, bounded, non-semantic, and recorded as producer residue or
+naturalization debt. Such rows help identify the minimal LGRC extension needed
+to make the bridge native later. They cannot upgrade the result to native
+ecology, native shared-medium coordination, agency, or ant behavior.
+
+For I11 specifically:
+
+```text
+I11   = artifact-only trace/pressure/loop bridge exemplar
+I11-A = minimal runtime trace/pressure/loop instantiation
+I11-B = perturbation / ablation / order controls
+I11-C = replay / stress / margin matrix
+```
+
+I11-B should be a runtime null/control packet over I11-A, not an attempt to
+raise the claim ceiling. Its job is to validate that the bridge requires the
+trace, pressure, route/order structure, idempotent producer surface, and
+producer/step ownership recorded by I11-A.
+
+Required I11-B controls:
+
+```text
+no_parent_arrival_trace_control
+below_threshold_pressure_control
+near_threshold_margin_control
+wrong_expected_channel_control
+route_aspect_digest_mismatch_control
+channel_sequence_shuffle_control
+same_causal_surface_replay_idempotency_control
+direct_queue_injection_control
+unprocessed_child_departure_control
+producer_disabled_control
+semantic_pheromone_hunger_relabel_control
+producer_success_as_native_runtime_success_control
+```
+
+Expected I11-B acceptance:
+
+```text
+accepted_trace_pressure_loop_runtime_controls_fail_closed_producer_assisted_only
+failed_open_count = 0
 ```
 
 ### Bidirectional Handoff Ledger
@@ -559,11 +713,42 @@ failed-open count zero.
 ```text
 Iteration 10 - Prototype Admission Schema
 Iteration 11 - Prototype A: Trace / Pressure / Loop
+Iteration 11-A - Runtime Trace / Pressure / Loop Instantiation
+Iteration 11-B - Trace / Pressure / Loop Perturbation Controls
+Iteration 11-C - Trace / Pressure / Loop Replay And Stress Matrix
+Iteration 11.1 - Stronger Trace / Pressure / Loop Sibling Candidate
+Iteration 11.1-A - Stronger Runtime Instantiation
+Iteration 11.1-B - Stronger Perturbation Controls
+Iteration 11.1-C - Stronger Replay And Stress Matrix
 Iteration 12 - Prototype B: Boundary / Shared-Medium Unit
 Iteration 13 - Prototype C: Proxy / Susceptibility / Re-Entry
 Iteration 14 - Prototype D: Generative / Extractive Medium Reshaping
 Iteration 15 - Prototype Composition And Atlas Classification
 ```
+
+I11 remains the minimal edge trace / pressure / loop prototype and construction
+contrast. I11.1 is the primary positive evidence for Prototype A once it passes
+I11.1-A/B/C. It exists because I11-C passed but exposed a narrow pressure
+boundary: the two-pole fixture supported a minimal runnable bridge, but the
+representative prototype library needs a less knife-edge pattern where the same
+rules, controls, and claim ceiling hold with larger margins. I11.1 therefore
+keeps the same trace / pressure / loop motif and producer-assisted claim
+ceiling while using a three-pole route cycle with larger predeclared surplus
+margin and more route contexts.
+
+Evidence hierarchy for Prototype A:
+
+```text
+primary positive evidence:
+  I11.1 / I11.1-A / I11.1-B / I11.1-C
+
+minimal edge / construction contrast:
+  I11 / I11-A / I11-B / I11-C
+```
+
+Later Prototype A summaries should cite I11.1-C first. I11-C should be used to
+explain how the motif was first made runnable, why the stronger sibling was
+needed, and where the minimal pressure boundary sits.
 
 ### Phase D - Probe Contracts And Closeout
 

@@ -4,5 +4,25 @@ Markdown reports will summarize the matching N29 JSON outputs. Reports are
 interpretive summaries only; source status and claim boundaries must remain
 grounded in JSON artifacts.
 
-No reports exist at initialization.
+Current reports:
 
+```text
+n29_ecology_demand_extraction_i1.md
+n29_agency_diagnostic_method_constraints_i2.md
+n29_capability_atlas_i3.md
+n29_bridge_schema_i4.md
+n29_ecology_demand_matrix_i5.md
+n29_capability_supply_atlas_i6.md
+n29_demand_supply_coverage_debt_i7.md
+n29_bridge_motif_library_i8.md
+n29_motif_relabel_nulls_i9.md
+n29_prototype_admission_schema_i10.md
+n29_trace_pressure_loop_prototype_i11.md
+n29_trace_pressure_loop_runtime_i11a.md
+n29_trace_pressure_loop_runtime_controls_i11b.md
+n29_trace_pressure_loop_replay_stress_i11c.md
+n29_trace_pressure_loop_stronger_candidate_i111.md
+n29_trace_pressure_loop_stronger_runtime_i111a.md
+n29_trace_pressure_loop_stronger_controls_i111b.md
+n29_trace_pressure_loop_stronger_replay_stress_i111c.md
+```

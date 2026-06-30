@@ -1,0 +1,239 @@
+{
+  "acceptance_state": "accepted_producer_assisted_runtime_trace_pressure_loop_candidate_no_ecology_success",
+  "artifact_id": "n29_trace_pressure_loop_runtime_i11a",
+  "checks": [
+    {
+      "check_id": "i11_artifact_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_i11_digest_matches",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_artifact_manifest_present",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_artifact_output_digest_present",
+      "passed": true
+    },
+    {
+      "check_id": "lgrc9v3_runtime_executed",
+      "passed": true
+    },
+    {
+      "check_id": "producer_policy_declared",
+      "passed": true
+    },
+    {
+      "check_id": "same_discipline_producer_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "producer_success_does_not_upgrade_native",
+      "passed": true
+    },
+    {
+      "check_id": "bounded_row_status_promoted_not_claim",
+      "passed": true
+    },
+    {
+      "check_id": "i11b_runtime_control_handoff_present",
+      "passed": true
+    },
+    {
+      "check_id": "self_rearm_validation_passed",
+      "passed": true
+    },
+    {
+      "check_id": "completed_trace_pressure_loop_leg_count_positive",
+      "passed": true
+    },
+    {
+      "check_id": "trace_aftereffect_runtime_visible",
+      "passed": true
+    },
+    {
+      "check_id": "pressure_declared_before_use",
+      "passed": true
+    },
+    {
+      "check_id": "pressure_threshold_crossed",
+      "passed": true
+    },
+    {
+      "check_id": "bounded_loop_response_observed",
+      "passed": true
+    },
+    {
+      "check_id": "conditioned_by_trace_pressure",
+      "passed": true
+    },
+    {
+      "check_id": "budget_errors_within_epsilon",
+      "passed": true
+    },
+    {
+      "check_id": "controls_all_passed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claimed": false,
+    "hunger_alarm_semantics_claimed": false,
+    "native_ant_agency_claimed": false,
+    "native_ecology_claimed": false,
+    "native_shared_medium_coordination_claimed": false,
+    "phase8_completion_claimed": false,
+    "pheromone_communication_claimed": false,
+    "prototype_success_claimed": false,
+    "runtime_ecology_success_claimed": false,
+    "semantic_action_claimed": false,
+    "semantic_signal_claimed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_runtime_i11a.py",
+  "control_results": [
+    {
+      "control_id": "runtime_artifact_manifest_control",
+      "evidence_basis": "runtime artifact file is generated and SHA-256 referenced",
+      "rung_effect": "admits_runtime_bridge_candidate",
+      "status": "passed"
+    },
+    {
+      "control_id": "runtime_visible_trace_control",
+      "evidence_basis": "completed self-rearm records include parent arrival event IDs and proper-time surfaces",
+      "rung_effect": "admits_runtime_bridge_candidate",
+      "status": "passed"
+    },
+    {
+      "control_id": "declared_pressure_before_use_control",
+      "evidence_basis": "route surplus triggers are configured before each producer evaluation",
+      "rung_effect": "admits_runtime_bridge_candidate",
+      "status": "passed"
+    },
+    {
+      "control_id": "bounded_loop_response_control",
+      "evidence_basis": "completed self-rearm records include child departure processed evidence",
+      "rung_effect": "admits_runtime_bridge_candidate",
+      "status": "passed"
+    },
+    {
+      "control_id": "producer_as_native_success_control",
+      "evidence_basis": "producer-assisted status and producer residue remain explicit",
+      "rung_effect": "admits_only_producer_assisted_runtime_candidate",
+      "status": "passed"
+    },
+    {
+      "control_id": "unsafe_ecology_relabel_control",
+      "evidence_basis": "pheromone, hunger, native ecology, shared-medium, and agency claims remain false",
+      "rung_effect": "admits_runtime_bridge_candidate",
+      "status": "passed"
+    }
+  ],
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_trace_pressure_loop_runtime_i11a.py",
+  "i11b_runtime_control_handoff": {
+    "demotion_rule": "any required failed-open control demotes or blocks I11-A runtime admission",
+    "direction": "runtime control validation for I11-A; null validation, not stronger language",
+    "expected_acceptance_state": "accepted_trace_pressure_loop_runtime_controls_fail_closed_producer_assisted_only",
+    "expected_failed_open_count": 0,
+    "iteration": "I11-B",
+    "required_controls": [
+      "no_parent_arrival_trace_control",
+      "below_threshold_pressure_control",
+      "near_threshold_margin_control",
+      "wrong_expected_channel_control",
+      "route_aspect_digest_mismatch_control",
+      "channel_sequence_shuffle_control",
+      "same_causal_surface_replay_idempotency_control",
+      "direct_queue_injection_control",
+      "unprocessed_child_departure_control",
+      "producer_disabled_control",
+      "semantic_pheromone_hunger_relabel_control",
+      "producer_success_as_native_runtime_success_control"
+    ],
+    "status": "required_next_null_validation"
+  },
+  "iteration": "I11-A",
+  "output_digest": "57e647333608ff7fdc1bb307eb256e12770ff9efb98b185bc097e0057d1f5076",
+  "prototype_family": "trace_pressure_loop",
+  "prototype_lineage": {
+    "bounded_row_status": "admitted_runtime_bridge_exemplar_candidate_producer_assisted",
+    "claim_ceiling": "minimal_runtime_bridge_prototype_candidate_no_ecology_success",
+    "i11a_runtime_status": "producer_assisted_runtime_instantiation",
+    "previous_i11_status": "artifact_only_reconstruction",
+    "prototype_id": "PROTO.N29.I11.TRACE_PRESSURE_LOOP.MINIMAL",
+    "reconstruction_row": "I11",
+    "reconstruction_status": "artifact_only_reconstruction",
+    "runtime_addendum": "I11-A",
+    "runtime_controls": "I11-B"
+  },
+  "ready_for_iteration_11B": true,
+  "runtime_artifact_manifest": {
+    "artifact_role": "source_current_runtime_artifact",
+    "output_digest": "521b40ce3dca367e0f9b8f1641ed52bab1515595bb9eaad037b2db51f9559237",
+    "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_runtime_i11a_runtime_artifact.json",
+    "sha256": "be5a214194b94b2858b4f5ca0e11616ed2f81e84b178971ba6a9c1061f2df389"
+  },
+  "runtime_instantiation_row": {
+    "bounded_loop_response_observed": true,
+    "claim_ceiling": "minimal_runtime_bridge_prototype_candidate_no_ecology_success",
+    "conditioned_by_trace_pressure": true,
+    "max_budget_error": 0.0,
+    "naturalization_debt": "native_ecology_and_shared_medium_not_opened",
+    "pressure_declared_before_use": true,
+    "pressure_threshold_crossed": true,
+    "producer_assisted": true,
+    "producer_policy": "packet_departure_from_route_aspect_surplus_policy",
+    "producer_residue": "visible",
+    "producer_success_can_upgrade_native": false,
+    "row_id": "N29.I11A.RUNTIME.TRACE_PRESSURE_LOOP.PRODUCER_ASSISTED",
+    "runtime_family": "LGRC9V3",
+    "runtime_status": "producer_assisted_runtime_instantiation",
+    "same_discipline_producer": true,
+    "status": "admitted_runtime_bridge_exemplar_candidate_producer_assisted",
+    "trace_aftereffect_runtime_visible": true,
+    "trace_pressure_loop_leg_count": 4
+  },
+  "runtime_or_reconstruction_status": "producer_assisted_runtime_instantiation",
+  "script_sha256": "9c635bc70b3f06644138ae7a65d2632c851ba9c3f1e84395297cfb4350306904",
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_trace_pressure_loop_prototype_i11",
+      "consumed_as": "artifact_only_trace_pressure_loop_bridge_exemplar",
+      "output_digest": "16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_prototype_i11.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_trace_pressure_loop_runtime_i11a_runtime_artifact",
+      "consumed_as": "source_current_runtime_trace_pressure_loop_artifact",
+      "output_digest": "521b40ce3dca367e0f9b8f1641ed52bab1515595bb9eaad037b2db51f9559237",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_runtime_i11a_runtime_artifact.json",
+      "sha256": "be5a214194b94b2858b4f5ca0e11616ed2f81e84b178971ba6a9c1061f2df389"
+    }
+  ],
+  "source_i11_digest_linkage": {
+    "canonical_i11_artifact": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_trace_pressure_loop_prototype_i11.json",
+    "consumed_i11_output_digest": "16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd",
+    "current_i11_output_digest": "16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd",
+    "digest_scope": "current_repository_i11_artifact_consumed_by_i11a",
+    "source_i11_digest_matches": true
+  },
+  "source_i11_output_digest": "16865699b886318c070f0d44047ed5738510faf8833ff4b15dd46fd3da1af0fd",
+  "status": "passed",
+  "title": "Runtime Trace / Pressure / Loop Instantiation",
+  "why_admitted": "I11-A runs an executable LGRC9V3 packet-loop surface where a parent arrival trace, route-surplus pressure trigger, and processed child departure form a minimal trace/pressure/loop runtime bridge candidate.",
+  "why_not_stronger": "The row is producer-assisted runtime evidence. The producer is declared and source-visible, but this is not native ecology, pheromone communication, hunger semantics, native shared-medium coordination, agency, or prototype success."
+}

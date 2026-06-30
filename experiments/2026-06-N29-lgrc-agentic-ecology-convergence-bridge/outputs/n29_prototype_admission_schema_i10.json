@@ -1,0 +1,2173 @@
+{
+  "acceptance_state": "accepted_prototype_admission_schema_frozen_no_prototype_rows",
+  "admission_route_counts": {
+    "blocked_or_mapping_only_routes": 1,
+    "future_candidate_routes": 6,
+    "total_routes": 7
+  },
+  "admission_route_rows": [
+    {
+      "admission_route_id": "I10.ADMISSION.TRACE_PRESSURE_LOOP",
+      "candidate_route_allowed_for_future_iteration": true,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.TRACE_PRESSURE_LOOP.producer_residue",
+        "I10.ADMISSION.TRACE_PRESSURE_LOOP.medium_debt",
+        "I10.ADMISSION.TRACE_PRESSURE_LOOP.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [
+          "native_shared_medium_coordination_missing",
+          "native_ecology_or_agency_naturalization_missing",
+          "producer_residue_must_remain_visible"
+        ],
+        "medium_debt": "present",
+        "naturalization_debt": "present",
+        "nonblocking_debt_for_bridge_exemplar": [
+          "artifact_only_reconstruction_available_for_bridge_exemplar"
+        ],
+        "producer_residue": "present"
+      },
+      "i8_prototype_candidate": "mapping_only_candidate",
+      "i8_runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "i9_null_controls_consumed": [
+        "NULL.N29.TRACE_PRESSURE_LOOP.TRACE_AS_PHEROMONE_SEMANTIC_MESSAGE.001",
+        "NULL.N29.TRACE_PRESSURE_LOOP.LOOP_AFTEREFFECT_AS_ANT_ROUTE_BEHAVIOR.002"
+      ],
+      "medium_debt": [
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology pressure medium by itself",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "no ecology parent basin or colony medium by itself",
+        "does not define ecology medium",
+        "no shared ecology medium; local circuit only",
+        "no shared ecology or colony surface by itself",
+        "no ecology shared medium by itself",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "does not by itself provide shared-medium coordination",
+        "no ecology role or shared medium by itself",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology reward or resource medium by itself"
+      ],
+      "motif_family": "trace_pressure_loop",
+      "naturalization_debt": [
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "broad margin robustness and ecology composition deferred",
+        "identity acceptance, selfhood, and native support blocked",
+        "native support-generation not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "native integrated agentic-like behavior not established",
+        "semantic choice and native route selection blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "native learning and source mutation remain blocked",
+        "unscoped ecology/ant use remains blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "producer_residue": [
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "declared target/proxy surfaces may remain producer-defined",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "identity classification remains artifact-mediated",
+        "support thresholds and response policies remain artifact-mediated",
+        "route coupling and memory policy not supplied by N05 itself",
+        "composition ledger and some policy surfaces remain explicit",
+        "branch fixtures and collapse probes remain artifact-scoped",
+        "producer flux conditioning marks missing native mechanism",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "carrier/producers remain visible and load-bearing",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "proxy surfaces and perturbation regimes remain declared/audited"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "source_artifacts": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n09_goal_proxy_regulation",
+          "exists": true,
+          "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json",
+          "sha256": "4beae1d67f34819c52d70593f2be99d79961447dd3cd2243975a705bc3acf6ba",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n13_support_seeking_regulation",
+          "exists": true,
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+          "sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n22_susceptibility_update",
+          "exists": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+          "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+          "source_output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        }
+      ],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "source_rows": [
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.PRESSURE.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.RESERVE.HUNGER.PRESSURE.I7",
+        "COV.RC.ANT.ALARM.THREAT.PRESSURE.I7",
+        "COV.RC.ANT.NURSERY.DEMAND.I7"
+      ],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.RESERVE_OPTIONALITY_FORMATION",
+      "candidate_route_allowed_for_future_iteration": true,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.RESERVE_OPTIONALITY_FORMATION.producer_residue",
+        "I10.ADMISSION.RESERVE_OPTIONALITY_FORMATION.medium_debt",
+        "I10.ADMISSION.RESERVE_OPTIONALITY_FORMATION.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [
+          "native_shared_medium_coordination_missing",
+          "native_ecology_or_agency_naturalization_missing",
+          "producer_residue_must_remain_visible"
+        ],
+        "medium_debt": "present",
+        "naturalization_debt": "present",
+        "nonblocking_debt_for_bridge_exemplar": [
+          "source_backed_reconstruction_available_for_bridge_exemplar"
+        ],
+        "producer_residue": "present"
+      },
+      "i8_prototype_candidate": "source_backed_reconstruction_candidate",
+      "i8_runtime_or_reconstruction_status": "source_backed_reconstruction",
+      "i9_null_controls_consumed": [
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.OPTIONALITY_AS_GOAL_DIRECTED_CHOICE.003",
+        "NULL.N29.RESERVE_OPTIONALITY_FORMATION.SURPLUS_SUPPORTED_SPLIT_AS_REPRODUCTION.004"
+      ],
+      "medium_debt": [
+        "no ecology reward or resource medium by itself",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology-wide medium or role surface by itself"
+      ],
+      "motif_family": "reserve_optionality_formation",
+      "naturalization_debt": [
+        "native AP5 proxy formation remains blocked",
+        "broad native flux robustness remains debt",
+        "independent new basin and BF6 blocked in original N25",
+        "unscoped ecology/ant use remains blocked",
+        "fully native general integration blocked"
+      ],
+      "producer_residue": [
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "producer flux conditioning marks missing native mechanism",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "generalization remains artifact-level and policy-mediated"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "source_artifacts": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n11_general_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+          "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+          "source_output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+          "source_status": "passed"
+        }
+      ],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "source_rows": [
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "candidate_route_allowed_for_future_iteration": true,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.BOUNDARY_SHARED_MEDIUM_UNIT.producer_residue",
+        "I10.ADMISSION.BOUNDARY_SHARED_MEDIUM_UNIT.medium_debt",
+        "I10.ADMISSION.BOUNDARY_SHARED_MEDIUM_UNIT.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [
+          "native_shared_medium_coordination_missing",
+          "native_ecology_or_agency_naturalization_missing",
+          "producer_residue_must_remain_visible"
+        ],
+        "medium_debt": "present",
+        "naturalization_debt": "present",
+        "nonblocking_debt_for_bridge_exemplar": [
+          "artifact_only_reconstruction_available_for_bridge_exemplar"
+        ],
+        "producer_residue": "present"
+      },
+      "i8_prototype_candidate": "mapping_only_candidate",
+      "i8_runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "i9_null_controls_consumed": [
+        "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.MESSAGE_SCAFFOLD_AS_NATIVE_SHARED_MEDIUM.005",
+        "NULL.N29.BOUNDARY_SHARED_MEDIUM_UNIT.BOUNDED_UNIT_AS_COLONY_BODY.006"
+      ],
+      "medium_debt": [
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "no ecology parent basin or colony medium by itself",
+        "shared-medium separability candidate, not ecology coordination",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "shared-medium evidence remains narrow and bottleneck-aware",
+        "paired-perspective shared medium remains bounded and scoped",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "abundance not yet ecology medium or reproduction",
+        "no ecology-wide medium or role surface by itself",
+        "no shared ecology or colony surface by itself",
+        "records medium-related debt for later primitives",
+        "defines shared child-basin substrate requirements, not evidence",
+        "not a shared-medium evidence source",
+        "no ecology medium evidence by itself",
+        "no shared ecology medium by itself",
+        "does not create ecology role relocation by itself",
+        "no ecology reward or resource medium by itself"
+      ],
+      "motif_family": "boundary_shared_medium_unit",
+      "naturalization_debt": [
+        "unscoped ecology/ant use remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "general long-horizon native closure blocked",
+        "semantic action/perception and native agency blocked",
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "defines debt; does not resolve it",
+        "runtime validation deferred to Phase 8 and N25.2",
+        "native absorption candidates require later implementation validation",
+        "AP4/AP5 native evidence gaps propagate to dependent rows",
+        "ND6 durable source mutation deferred to N22 bridge",
+        "cross-substrate generality and semantic role transfer blocked",
+        "native AP5 proxy formation remains blocked"
+      ],
+      "producer_residue": [
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "identity classification remains artifact-mediated",
+        "boundary classification remains artifact/control mediated",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "validation telemetry does not become native implementation",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "producer flux conditioning marks missing native mechanism",
+        "generalization remains artifact-level and policy-mediated",
+        "composition ledger and some policy surfaces remain explicit",
+        "explicit ledger of producer-mediated fields and naturalization debt",
+        "records what must not be backfilled by labels or producers",
+        "records which older surfaces remain producer scaffolds",
+        "records AP-stack implementation gaps and scaffolds",
+        "declared supports and probes remain audited surfaces",
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "proxy surfaces and perturbation regimes remain declared/audited"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "source_artifacts": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n16_self_environment_boundary",
+          "exists": true,
+          "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+          "sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n18_limited_long_horizon_closure",
+          "exists": true,
+          "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_closeout_and_handoff.json",
+          "sha256": "d4b2bacfec3fbb5684cf8aec5aeb3cbc9b2409969ae94ae53ac436191c75407c",
+          "source_output_digest": "09c0987d19e372d3df86377a843367a8bae8c85b0bc925f8328948b17a743af1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n11_general_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+          "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+          "source_output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n20_becoming_primitive_contract",
+          "exists": true,
+          "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+          "sha256": "f6897b0bd39d716e3f8de33ff1818d7b71cf59d9da957197dccd247e7ec438e9",
+          "source_output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_1_multi_basin_requirements_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json",
+          "sha256": "5650b0fea8a6708a05d0fe09191fec0501511f290b8f0e7ef6db9cfca22b12f9",
+          "source_output_digest": "396692475de004ddc8a586a501e1518b8316eebbf8f651304a76abeae25ae09e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n12_native_producer_review_gate",
+          "exists": true,
+          "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json",
+          "sha256": "fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e",
+          "source_output_digest": "e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n19_native_readiness_review_gate",
+          "exists": true,
+          "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+          "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+          "source_output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n21_withdrawal_naturalization",
+          "exists": true,
+          "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_closeout_and_n22_handoff.json",
+          "sha256": "91e7799c1a75ff2839cd5c64b0ca89ba584e8f1e69395f03b69f3565791fd47d",
+          "source_output_digest": "dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n27_configuration_substrate_transfer",
+          "exists": true,
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+          "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+          "source_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        }
+      ],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "source_rows": [
+        "COV.GENERAL.PARENT.BASIN.I7",
+        "COV.GENERAL.SHARED.MEDIUM.I7",
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PARENT.BASIN.MODULATION.I7",
+        "COV.GENERAL.MESSAGE.SCAFFOLD.I7",
+        "COV.GENERAL.MEDIUM.DEBT.I7",
+        "COV.GENERAL.PRODUCER.RESIDUE.I7",
+        "COV.GENERAL.NATURALIZATION.CONDITION.I7",
+        "COV.RC.ANT.COLONY.PARENT.BASIN.I7",
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.NEST.HOME.BASIN.I7",
+        "COV.RC.ANT.FOOD.RESOURCE.COUPLING.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.SURPLUS.SUPPORTED.SPLIT.REPRODUCTION.I7"
+      ],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.PROXY_SUSCEPTIBILITY_REENTRY",
+      "candidate_route_allowed_for_future_iteration": true,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.PROXY_SUSCEPTIBILITY_REENTRY.producer_residue",
+        "I10.ADMISSION.PROXY_SUSCEPTIBILITY_REENTRY.medium_debt",
+        "I10.ADMISSION.PROXY_SUSCEPTIBILITY_REENTRY.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [
+          "native_shared_medium_coordination_missing",
+          "native_ecology_or_agency_naturalization_missing",
+          "producer_residue_must_remain_visible"
+        ],
+        "medium_debt": "present",
+        "naturalization_debt": "present",
+        "nonblocking_debt_for_bridge_exemplar": [
+          "artifact_only_reconstruction_available_for_bridge_exemplar"
+        ],
+        "producer_residue": "present"
+      },
+      "i8_prototype_candidate": "mapping_only_candidate",
+      "i8_runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "i9_null_controls_consumed": [
+        "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.PROXY_IMPROVEMENT_AS_NATIVE_FUNCTION.007",
+        "NULL.N29.PROXY_SUSCEPTIBILITY_REENTRY.ROUTING_BIAS_AS_SEMANTIC_GOAL.008"
+      ],
+      "medium_debt": [
+        "not yet shared ecology pheromone medium",
+        "no shared ecology or colony surface by itself",
+        "no shared ecology medium; local circuit only",
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology role or shared medium by itself",
+        "no ecology medium by itself",
+        "no ecology reward or resource medium by itself",
+        "no ecology parent basin or colony medium by itself",
+        "shared-medium evidence remains narrow and bottleneck-aware",
+        "does not by itself provide shared-medium coordination",
+        "no shared ecology medium by itself",
+        "does not create ecology role relocation by itself",
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "no ecology shared medium by itself"
+      ],
+      "motif_family": "proxy_susceptibility_reentry",
+      "naturalization_debt": [
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native integrated agentic-like behavior not established",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic action/perception and native agency blocked",
+        "native learning and source mutation remain blocked",
+        "native proxy formation remains unresolved",
+        "native AP5 proxy formation remains blocked",
+        "identity acceptance, selfhood, and native support blocked",
+        "general long-horizon native closure blocked",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "cross-substrate generality and semantic role transfer blocked",
+        "broad margin robustness and ecology composition deferred",
+        "semantic choice and native route selection blocked"
+      ],
+      "producer_residue": [
+        "memory_strength-like surfaces may be producer or policy scaffolds",
+        "composition ledger and some policy surfaces remain explicit",
+        "route coupling and memory policy not supplied by N05 itself",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "carrier/producers remain visible and load-bearing",
+        "derivation policy and context weights remain frozen artifact policy",
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "identity classification remains artifact-mediated",
+        "validation telemetry does not become native implementation",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "route consequence derivation and followout remain constructed in places",
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "branch fixtures and collapse probes remain artifact-scoped"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "source_artifacts": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n08_memory_trail_affordance",
+          "exists": true,
+          "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+          "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n22_susceptibility_update",
+          "exists": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+          "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+          "source_output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n15_endogenous_proxy_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+          "sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n18_limited_long_horizon_closure",
+          "exists": true,
+          "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_closeout_and_handoff.json",
+          "sha256": "d4b2bacfec3fbb5684cf8aec5aeb3cbc9b2409969ae94ae53ac436191c75407c",
+          "source_output_digest": "09c0987d19e372d3df86377a843367a8bae8c85b0bc925f8328948b17a743af1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "exists": true,
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n27_configuration_substrate_transfer",
+          "exists": true,
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+          "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+          "source_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        }
+      ],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "source_rows": [
+        "COV.GENERAL.TRACE.I7",
+        "COV.GENERAL.SUSCEPTIBILITY.I7",
+        "COV.GENERAL.RESONANCE.I7",
+        "COV.RC.ANT.ROUTE.SUPPORT.TRACE.I7",
+        "COV.RC.ANT.FOODWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "candidate_route_allowed_for_future_iteration": true,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.TRANSFER_REPLAY_ROLE_RELOCATION.producer_residue",
+        "I10.ADMISSION.TRANSFER_REPLAY_ROLE_RELOCATION.medium_debt",
+        "I10.ADMISSION.TRANSFER_REPLAY_ROLE_RELOCATION.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [
+          "native_shared_medium_coordination_missing",
+          "native_ecology_or_agency_naturalization_missing",
+          "producer_residue_must_remain_visible"
+        ],
+        "medium_debt": "present",
+        "naturalization_debt": "present",
+        "nonblocking_debt_for_bridge_exemplar": [
+          "artifact_only_reconstruction_available_for_bridge_exemplar"
+        ],
+        "producer_residue": "present"
+      },
+      "i8_prototype_candidate": "mapping_only_candidate",
+      "i8_runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "i9_null_controls_consumed": [
+        "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.COPY_AS_IDENTITY_TRANSFER.009",
+        "NULL.N29.TRANSFER_REPLAY_ROLE_RELOCATION.ROLE_RELOCATION_AS_SEMANTIC_ROLE_TRANSFER.010"
+      ],
+      "medium_debt": [
+        "does not create ecology role relocation by itself",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "shared-medium separability candidate, not ecology coordination",
+        "multi-basin shared substrate absent until N25.2 validation",
+        "does not by itself provide shared-medium coordination",
+        "no shared ecology medium by itself",
+        "not yet shared ecology pheromone medium",
+        "no ecology role or shared medium by itself",
+        "no ecology reward or resource medium by itself",
+        "no shared ecology medium; local circuit only",
+        "no ecology shared medium by itself"
+      ],
+      "motif_family": "transfer_replay_role_relocation",
+      "naturalization_debt": [
+        "cross-substrate generality and semantic role transfer blocked",
+        "unscoped ecology/ant use remains blocked",
+        "selfhood and native boundary ownership blocked",
+        "independent new basin and BF6 blocked in original N25",
+        "semantic choice and native selection ownership blocked",
+        "AP4 native route-conditioned selection remains unresolved",
+        "pure coherence/flux pheromone-like memory requires later native validation",
+        "native learning and source mutation remain blocked",
+        "native AP5 proxy formation remains blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked"
+      ],
+      "producer_residue": [
+        "mapping ledger and artifact reconstruction surfaces remain explicit",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "boundary classification remains artifact/control mediated",
+        "producer-assisted BF5 scaffold records missing native mechanism",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "route consequence derivation and followout remain constructed in places",
+        "memory_strength-like surfaces may be producer or policy scaffolds",
+        "carrier/producers remain visible and load-bearing",
+        "proxy surfaces and perturbation regimes remain declared/audited",
+        "route coupling and memory policy not supplied by N05 itself",
+        "branch fixtures and collapse probes remain artifact-scoped"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "source_artifacts": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n27_configuration_substrate_transfer",
+          "exists": true,
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+          "sha256": "65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+          "source_output_digest": "818a57c3c3fd778809f6e2b37525d69f1010976adb953e91eceeb633dde5b716",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n16_self_environment_boundary",
+          "exists": true,
+          "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+          "sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_scoped_basin_formation",
+          "exists": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+          "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+          "source_output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "exists": true,
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n08_memory_trail_affordance",
+          "exists": true,
+          "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+          "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n22_susceptibility_update",
+          "exists": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+          "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+          "source_output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n26_proxy_divergence_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+          "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3",
+          "source_output_digest": "bfb2f02a2c302da27215a87f5a42666ff11f5af5bbaed49ecc6204098afafe31",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        }
+      ],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "source_rows": [
+        "COV.RC.ANT.MOBILE.BOUNDARY.EXPRESSION.I7",
+        "COV.RC.ANT.HOMEWARD.AFFORDANCE.SURFACE.I7",
+        "COV.RC.ANT.CARGO.SHAPED.SUSCEPTIBILITY.I7",
+        "COV.RC.ANT.ROLE.SUSCEPTIBILITY.DIVISION.OF.LABOR.I7"
+      ],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "candidate_route_allowed_for_future_iteration": true,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.producer_residue",
+        "I10.ADMISSION.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.medium_debt",
+        "I10.ADMISSION.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [
+          "native_shared_medium_coordination_missing",
+          "native_ecology_or_agency_naturalization_missing",
+          "producer_residue_must_remain_visible"
+        ],
+        "medium_debt": "present",
+        "naturalization_debt": "present",
+        "nonblocking_debt_for_bridge_exemplar": [
+          "artifact_only_reconstruction_available_for_bridge_exemplar"
+        ],
+        "producer_residue": "present"
+      },
+      "i8_prototype_candidate": "mapping_only_candidate",
+      "i8_runtime_or_reconstruction_status": "artifact_only_reconstruction",
+      "i9_null_controls_consumed": [
+        "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.GENERATIVE_PATTERN_AS_COOPERATION_OR_ALTRUISM.011",
+        "NULL.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING.EXTRACTIVE_PATTERN_AS_EXPLOITATION_OR_BIOLOGICAL_AGENCY.012"
+      ],
+      "medium_debt": [
+        "medium reshaping exists as pattern evidence, not shared ecology medium",
+        "abundance not yet ecology medium or reproduction",
+        "multi-basin substrate exists, but ecology shared-medium coordination remains future work",
+        "paired-perspective shared medium remains bounded and scoped",
+        "no ecology pressure medium by itself",
+        "no ecology parent basin or colony medium by itself",
+        "no shared ecology medium; local circuit only",
+        "no ecology shared medium by itself",
+        "no ecology-wide medium or role surface by itself",
+        "no shared ecology or colony surface by itself",
+        "no shared ecology medium by itself",
+        "does not by itself provide shared-medium coordination",
+        "not yet shared ecology pheromone medium"
+      ],
+      "motif_family": "generative_extractive_medium_reshaping",
+      "naturalization_debt": [
+        "broad margin robustness and ecology composition deferred",
+        "broad native flux robustness remains debt",
+        "unscoped ecology/ant use remains blocked",
+        "semantic action/perception and native agency blocked",
+        "endogenous proxy formation deferred to N15 and proxy collapse to N26",
+        "identity acceptance, selfhood, and native support blocked",
+        "native trail/memory and agency use require later N08/N12/N20 discipline",
+        "semantic choice and native route selection blocked",
+        "fully native general integration blocked",
+        "native integrated agentic-like behavior not established",
+        "AP4 native route-conditioned selection remains unresolved",
+        "semantic choice and native selection ownership blocked",
+        "pure coherence/flux pheromone-like memory requires later native validation"
+      ],
+      "producer_residue": [
+        "pattern construction and visual diagnostics remain bounded source artifacts",
+        "producer flux conditioning marks missing native mechanism",
+        "runtime extension is default-off and scoped; not a third-party observer layer",
+        "loop construction and some resource/shared-medium variants remain artifact mediated",
+        "declared target/proxy surfaces may remain producer-defined",
+        "identity classification remains artifact-mediated",
+        "route coupling and memory policy not supplied by N05 itself",
+        "branch fixtures and collapse probes remain artifact-scoped",
+        "generalization remains artifact-level and policy-mediated",
+        "composition ledger and some policy surfaces remain explicit",
+        "route consequence derivation and followout remain constructed in places",
+        "route scoring/arbitration policy may remain explicit unless naturalized later",
+        "memory_strength-like surfaces may be producer or policy scaffolds"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "source_artifacts": [
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n28_generative_extractive_persistence",
+          "exists": true,
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+          "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+          "source_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n24_surplus_supported_optionality",
+          "exists": true,
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+          "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+          "source_output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n25_2_mb6_validation_bridge",
+          "exists": true,
+          "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+          "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328",
+          "source_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n17_closed_boundary_engagement_loop",
+          "exists": true,
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n09_goal_proxy_regulation",
+          "exists": true,
+          "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json",
+          "sha256": "4beae1d67f34819c52d70593f2be99d79961447dd3cd2243975a705bc3acf6ba",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n07_identity_attractor_invariance",
+          "exists": true,
+          "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n05_coherence_waves_oscillators",
+          "exists": true,
+          "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+          "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n23_live_continuation_collapse",
+          "exists": true,
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+          "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+          "source_output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n11_general_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+          "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+          "source_output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n10_agentic_like_integration",
+          "exists": true,
+          "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+          "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+          "source_output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n14_consequence_sensitive_route_selection",
+          "exists": true,
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n06_runtime_visible_route_selection",
+          "exists": true,
+          "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        },
+        {
+          "artifact_role": "primary_closeout_or_handoff",
+          "capability_id": "n08_memory_trail_affordance",
+          "exists": true,
+          "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+          "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+          "source_output_digest": "not_recorded",
+          "source_status": "passed"
+        }
+      ],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "source_rows": [
+        "COV.GENERAL.MEDIUM.SURFACE.I7",
+        "COV.GENERAL.PERTURBATION.I7",
+        "COV.GENERAL.CO.RESPONSE.I7",
+        "COV.RC.ANT.WASTE.ISOLATION.I7",
+        "COV.RC.ANT.CONSTRUCTION.TENSION.I7",
+        "COV.RC.ANT.CROWDING.CONGESTION.COST.I7"
+      ],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.COMPOSITION",
+      "candidate_route_allowed_for_future_iteration": false,
+      "claim_ceiling": "future_bridge_exemplar_candidate_only_until_source_rows_and_controls_are_admitted",
+      "controls_required": [
+        "prototype_report_only_as_proof_control",
+        "prototype_visual_only_as_runtime_control",
+        "prototype_hidden_producer_coupling_control",
+        "prototype_label_only_ecology_behavior_control",
+        "prototype_missing_source_artifact_control",
+        "prototype_missing_source_digest_control",
+        "prototype_debt_as_native_control",
+        "prototype_candidate_as_success_control",
+        "prototype_composition_order_inversion_control",
+        "prototype_ap_gap_erasure_control",
+        "prototype_review_gate_bypass_control",
+        "prototype_unsafe_ecology_relabel_control",
+        "prototype_phase_boundary_bypass_control"
+      ],
+      "current_i10_admission_status": "not_admitted_schema_only",
+      "debt_source_refs": [
+        "I10.ADMISSION.COMPOSITION.producer_residue",
+        "I10.ADMISSION.COMPOSITION.medium_debt",
+        "I10.ADMISSION.COMPOSITION.naturalization_debt"
+      ],
+      "debt_summary": {
+        "blocking_debt": [],
+        "medium_debt": "none_identified",
+        "naturalization_debt": "none_identified",
+        "nonblocking_debt_for_bridge_exemplar": [],
+        "producer_residue": "none_identified"
+      },
+      "i8_prototype_candidate": "blocked",
+      "i8_runtime_or_reconstruction_status": "mapping_only_no_runtime_surface",
+      "i9_null_controls_consumed": [
+        "NULL.N29.COMPOSITION.LABEL_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.013",
+        "NULL.N29.COMPOSITION.REPORT_ONLY_COMPOSITION_AS_BRIDGE_BEHAVIOR.014",
+        "NULL.N29.COMPOSITION.HIDDEN_PRODUCER_COUPLING_AS_COMPOSITION.015",
+        "NULL.N29.COMPOSITION.COMPONENT_ORDER_INVERSION_HIDDEN.016",
+        "NULL.N29.COMPOSITION.MISSING_SOURCE_ROW_AS_COMPOSITION.017",
+        "NULL.N29.COMPOSITION.MEDIUM_DEBT_HIDDEN_AS_NATIVE_COMPOSITION_RELATION.018",
+        "NULL.N29.COMPOSITION.COMPOSITION_MOTIF_AS_NATIVE_ECOLOGY_SUCCESS.019"
+      ],
+      "medium_debt": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "motif_family": "composition",
+      "naturalization_debt": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "producer_residue": [
+        "none_identified_in_selected_coverage_rows"
+      ],
+      "prototype_row_opened": false,
+      "route_allowed_statuses": [
+        "blocked_by_phase_boundary"
+      ],
+      "source_artifacts": [],
+      "source_digest_policy": "content_sha256_canonical_when_source_output_digest_missing",
+      "source_digest_requirement": "required_when_future_row_claims_source_backed_or_reconstruction_status",
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows": [],
+      "why_admitted_if_future_row_satisfies_schema": "Future row may be admitted only if it supplies a minimal source basis, evaluated controls, source digest status, debt summary, next probe contract, and claim boundary.",
+      "why_not_admitted_in_i10": "I10 freezes admission schema only; I11-I15 may create prototype rows under this contract."
+    }
+  ],
+  "artifact_id": "n29_prototype_admission_schema_i10",
+  "biological_agency_opened": false,
+  "bridge_exemplar_row_schema": {
+    "exemplar_success_claim_allowed_in_i10": false,
+    "required_fields": [
+      "bridge_exemplar_id",
+      "prototype_id",
+      "ecology_demand_role",
+      "supplied_capability",
+      "bridge_motif",
+      "composition_role",
+      "remaining_debt",
+      "downstream_probe_implication"
+    ],
+    "schema_id": "n29_i10_bridge_exemplar_row_schema_v1"
+  },
+  "bridge_exemplar_rows_opened": false,
+  "checks": [
+    {
+      "check_id": "i4_bridge_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i7_coverage_matrix_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i8_bridge_motif_library_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i9_phase_b_closeout_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i9_ready_for_iteration_10",
+      "passed": true
+    },
+    {
+      "check_id": "source_artifact_digests_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_status_values_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "prototype_row_required_fields_present",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_reconstruction_distinctions_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "required_controls_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "every_prototype_class_names_motif",
+      "passed": true
+    },
+    {
+      "check_id": "every_i8_motif_has_admission_route",
+      "passed": true
+    },
+    {
+      "check_id": "all_prototype_classes_have_admission_route",
+      "passed": true
+    },
+    {
+      "check_id": "route_count_and_class_count_difference_explained",
+      "passed": true
+    },
+    {
+      "check_id": "every_future_candidate_route_has_source_rows",
+      "passed": true
+    },
+    {
+      "check_id": "composition_not_directly_admitted",
+      "passed": true
+    },
+    {
+      "check_id": "composition_activation_condition_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "composition_route_status_policy_blocks_pre_i15",
+      "passed": true
+    },
+    {
+      "check_id": "route_specific_status_policy_excludes_runnable_runtime_without_runtime_artifacts",
+      "passed": true
+    },
+    {
+      "check_id": "i9_null_controls_consumed_by_routes",
+      "passed": true
+    },
+    {
+      "check_id": "future_control_results_schema_requires_evaluated_controls",
+      "passed": true
+    },
+    {
+      "check_id": "digest_policy_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "future_rows_require_why_admitted_and_why_not_stronger",
+      "passed": true
+    },
+    {
+      "check_id": "future_debt_compaction_policy_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "i11_minimal_handoff_contract_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "no_prototype_rows_opened",
+      "passed": true
+    },
+    {
+      "check_id": "no_prototype_success_or_ecology_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "native_ecology_and_agency_claims_closed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    },
+    {
+      "check_id": "ready_for_iteration_11",
+      "passed": true
+    }
+  ],
+  "claim_boundary_audit": {
+    "biological_agency_opened": false,
+    "consciousness_opened": false,
+    "fully_native_ecology_opened": false,
+    "native_agency_claim_opened": false,
+    "native_ant_agency_opened": false,
+    "native_colony_agency_opened": false,
+    "native_shared_medium_coordination_opened": false,
+    "organism_life_opened": false,
+    "phase8_completion_opened": false,
+    "prototype_as_native_ecology_opened": false,
+    "semantic_choice_claim_opened": false,
+    "semantic_cooperation_claim_opened": false,
+    "semantic_goal_claim_opened": false,
+    "semantic_intention_claim_opened": false,
+    "sentience_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "claim_ceiling": "prototype_admission_schema_only_no_prototype_rows_no_ecology_success",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_admission_schema_i10.py",
+  "composition_activation_condition": {
+    "allowed_pre_i15_status": "blocked_by_phase_boundary",
+    "composition_may_open_in_i15_only_if": [
+      "at_least_two_noncomposition_prototype_rows_admitted",
+      "ordered_composition_references_admitted_prototype_ids",
+      "component_order_inversion_control_passed",
+      "hidden_producer_coupling_control_passed",
+      "medium_debt_hidden_as_native_relation_control_passed",
+      "composition_does_not_raise_claim_ceiling"
+    ],
+    "composition_route_directly_admissible_in_i10": false,
+    "i11_to_i14_must_not_use_composition_as_prototype_source": true
+  },
+  "control_schema_rows": [
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_report_only_as_proof_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "report-only prototype evidence must fail closed"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_visual_only_as_runtime_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "visual-only rows cannot become runtime proof"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_hidden_producer_coupling_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "hidden producer coupling blocks prototype admission"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_label_only_ecology_behavior_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "ecology labels cannot replace source-current structure"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_missing_source_artifact_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "missing source artifact blocks admission"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_missing_source_digest_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "missing or mismatched digest blocks admission"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_debt_as_native_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "producer/medium/naturalization debt cannot be relabeled native"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_candidate_as_success_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "candidate status cannot become prototype success"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_composition_order_inversion_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "composition order inversion must fail closed"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_ap_gap_erasure_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "AP4/AP5/NAT4 gaps must remain row-local"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_review_gate_bypass_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "N12/N19/N20 review gates cannot be bypassed"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_unsafe_ecology_relabel_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "unsafe ecology/agency relabels remain blocked"
+    },
+    {
+      "claim_allowed_when_triggered": false,
+      "control_id": "prototype_phase_boundary_bypass_control",
+      "control_status": "frozen_required_for_future_prototype_rows",
+      "expected_result_when_triggered": "failed_closed",
+      "rung_effect": "blocks_prototype_admission_or_demotes_to_mapping_only",
+      "why_required": "I10 schema cannot open runtime ecology probes"
+    }
+  ],
+  "digest_policy": {
+    "content_sha256_is_canonical_when_source_output_digest_missing": true,
+    "future_generated_artifacts_require_output_digest": true,
+    "source_backed_reconstruction_requires_at_least_one_verified_content_sha256": true,
+    "source_output_digest_optional_for_legacy_artifacts": true
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "future_control_results_schema": {
+    "acceptance_rules": {
+      "all_required_controls_present": true,
+      "failed_closed_demotes_or_blocks": true,
+      "no_control_status_failed_open": true,
+      "not_run_blocks_dependent_claim": true
+    },
+    "required_for_i11_plus": true,
+    "row_shape": {
+      "control_id": "string",
+      "evidence_basis": "string",
+      "rung_effect": "admitted | demoted_to_mapping_only | blocked",
+      "status": "passed | failed_closed | not_run_blocks_claim | not_applicable_with_reason | failed_open"
+    }
+  },
+  "future_debt_compaction_policy": {
+    "blocking_debt_required": true,
+    "future_rows_should_reference_large_route_debt_arrays_by_id": true,
+    "future_rows_should_use_debt_summary": true,
+    "nonblocking_debt_for_bridge_exemplar_required": true
+  },
+  "future_source_digest_status_schema": {
+    "all_required_source_artifact_sha256_present": "boolean",
+    "digest_basis": "content_sha256 | output_digest | content_sha256_plus_output_digest",
+    "legacy_output_digest_missing_allowed": "boolean",
+    "legacy_output_digest_missing_count": "integer"
+  },
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_prototype_admission_schema_i10.py",
+  "i11_minimal_handoff_contract": {
+    "i11_must_emit_one_exact_next_probe_contract": true,
+    "i11_must_evaluate_all_required_controls": true,
+    "i11_must_not_open_composition": true,
+    "i11_must_use_one_explicit_reconstruction_or_mapping_basis": true,
+    "i11_primary_source_artifact_count_range": [
+      2,
+      4
+    ],
+    "i11_should_use_one_primary_demand_cluster": true,
+    "i11_should_use_one_primary_motif_route": true,
+    "suggested_claim_ceiling": "bounded_trace_pressure_loop_bridge_exemplar_candidate_no_runtime_ecology_success",
+    "suggested_first_route": "I10.ADMISSION.TRACE_PRESSURE_LOOP"
+  },
+  "implementation_evidence_opened": false,
+  "iteration": "I10",
+  "motif_to_prototype_class_crosswalk": [
+    {
+      "admission_route_id": "I10.ADMISSION.TRACE_PRESSURE_LOOP",
+      "motif_family": "trace_pressure_loop",
+      "prototype_families": [
+        "trace_pressure_loop",
+        "closed_loop_perturbation_response"
+      ],
+      "route_to_class_relation": "one_route_to_multiple_classes",
+      "source_motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "status": "schema_defined_no_prototype_row_opened"
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.RESERVE_OPTIONALITY_FORMATION",
+      "motif_family": "reserve_optionality_formation",
+      "prototype_families": [
+        "reserve_pressure"
+      ],
+      "route_to_class_relation": "one_route_to_one_class",
+      "source_motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "status": "schema_defined_no_prototype_row_opened"
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "motif_family": "boundary_shared_medium_unit",
+      "prototype_families": [
+        "boundary_mobile_expression"
+      ],
+      "route_to_class_relation": "one_route_to_one_class",
+      "source_motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "status": "schema_defined_no_prototype_row_opened"
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.PROXY_SUSCEPTIBILITY_REENTRY",
+      "motif_family": "proxy_susceptibility_reentry",
+      "prototype_families": [
+        "proxy_collapse"
+      ],
+      "route_to_class_relation": "one_route_to_one_class",
+      "source_motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "status": "schema_defined_no_prototype_row_opened"
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "motif_family": "transfer_replay_role_relocation",
+      "prototype_families": [
+        "configuration_transfer"
+      ],
+      "route_to_class_relation": "one_route_to_one_class",
+      "source_motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "status": "schema_defined_no_prototype_row_opened"
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "motif_family": "generative_extractive_medium_reshaping",
+      "prototype_families": [
+        "generative_extractive_medium_reshaping"
+      ],
+      "route_to_class_relation": "one_route_to_one_class",
+      "source_motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "status": "schema_defined_no_prototype_row_opened"
+    },
+    {
+      "admission_route_id": "I10.ADMISSION.COMPOSITION",
+      "motif_family": "composition",
+      "prototype_families": [
+        "composition"
+      ],
+      "route_to_class_relation": "one_route_to_one_class",
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "status": "schema_defined_no_prototype_row_opened"
+    }
+  ],
+  "native_agency_claim_opened": false,
+  "native_ant_agency_opened": false,
+  "native_colony_agency_opened": false,
+  "native_ecology_claim_opened": false,
+  "native_shared_medium_coordination_opened": false,
+  "output_digest": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+  "phase8_completion_opened": false,
+  "phase_b_to_phase_c_boundary": {
+    "i10_phase_c_prototype_evidence_opened": false,
+    "i10_phase_c_schema_opened": true,
+    "i9_phase_b_closed": true,
+    "i9_ready_for_iteration_10": true
+  },
+  "positive_ecology_evidence_opened": false,
+  "prototype_admission_policy": {
+    "future_iterations_allowed_to_open_rows_under_schema": [
+      "I11",
+      "I12",
+      "I13",
+      "I14",
+      "I15"
+    ],
+    "i10_scope": "schema_freeze_only",
+    "phase_c_opened_as_schema": true,
+    "prototype_rows_opened": false,
+    "prototype_success_claim_allowed": false,
+    "runtime_ecology_probe_contract_opened": false
+  },
+  "prototype_admission_schema_frozen": true,
+  "prototype_class_rows": [
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "trace / pressure / loop bridge exemplar",
+      "iteration_target": "I11",
+      "next_probe_contract_required": true,
+      "prototype_family": "trace_pressure_loop",
+      "source_digests_required": true,
+      "source_motif_family": "trace_pressure_loop",
+      "source_motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "reserve / surplus / pressure bridge exemplar",
+      "iteration_target": "I11_or_I15",
+      "next_probe_contract_required": true,
+      "prototype_family": "reserve_pressure",
+      "source_digests_required": true,
+      "source_motif_family": "reserve_optionality_formation",
+      "source_motif_id": "MOTIF.N29.RESERVE_OPTIONALITY_FORMATION",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "boundary / mobile expression / shared-medium unit bridge exemplar",
+      "iteration_target": "I12",
+      "next_probe_contract_required": true,
+      "prototype_family": "boundary_mobile_expression",
+      "source_digests_required": true,
+      "source_motif_family": "boundary_shared_medium_unit",
+      "source_motif_id": "MOTIF.N29.BOUNDARY_SHARED_MEDIUM_UNIT",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "closed-loop perturbation-response bridge exemplar",
+      "iteration_target": "I11",
+      "next_probe_contract_required": true,
+      "prototype_family": "closed_loop_perturbation_response",
+      "source_digests_required": true,
+      "source_motif_family": "trace_pressure_loop",
+      "source_motif_id": "MOTIF.N29.TRACE_PRESSURE_LOOP",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "proxy / susceptibility / re-entry bridge exemplar",
+      "iteration_target": "I13",
+      "next_probe_contract_required": true,
+      "prototype_family": "proxy_collapse",
+      "source_digests_required": true,
+      "source_motif_family": "proxy_susceptibility_reentry",
+      "source_motif_id": "MOTIF.N29.PROXY_SUSCEPTIBILITY_REENTRY",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "configuration transfer / role relocation bridge exemplar",
+      "iteration_target": "I13_or_I15",
+      "next_probe_contract_required": true,
+      "prototype_family": "configuration_transfer",
+      "source_digests_required": true,
+      "source_motif_family": "transfer_replay_role_relocation",
+      "source_motif_id": "MOTIF.N29.TRANSFER_REPLAY_ROLE_RELOCATION",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "generative / extractive medium-reshaping bridge exemplar",
+      "iteration_target": "I14",
+      "next_probe_contract_required": true,
+      "prototype_family": "generative_extractive_medium_reshaping",
+      "source_digests_required": true,
+      "source_motif_family": "generative_extractive_medium_reshaping",
+      "source_motif_id": "MOTIF.N29.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    },
+    {
+      "admission_status": "schema_defined_no_prototype_row_opened",
+      "allowed_initial_statuses": [
+        "source_backed_reconstruction",
+        "artifact_only_reconstruction",
+        "mapping_only_no_runtime_surface",
+        "visual_diagnostic_only"
+      ],
+      "claim_ceiling": "bridge_exemplar_admission_schema_only_no_prototype_success",
+      "ecology_role": "ordered motif composition bridge exemplar",
+      "iteration_target": "I15",
+      "next_probe_contract_required": true,
+      "prototype_family": "composition",
+      "source_digests_required": true,
+      "source_motif_family": "composition",
+      "source_motif_id": "MOTIF.N29.COMPOSITION",
+      "source_rows_required": true,
+      "unsafe_claim_flags_required_false": true,
+      "why_not_stronger_required": true
+    }
+  ],
+  "prototype_row_schema": {
+    "claim_ceiling_required": true,
+    "control_results_required": true,
+    "debt_source_refs_required": true,
+    "debt_summary_required": true,
+    "derived_report_only_blocks_runtime_status": true,
+    "next_probe_contract_required": true,
+    "required_fields": [
+      "prototype_id",
+      "prototype_family",
+      "admission_source_motif_id",
+      "source_rows",
+      "source_digests",
+      "source_artifacts",
+      "ecology_demand_role",
+      "supplied_capability",
+      "bridge_motif",
+      "bridge_exemplar_role",
+      "composition_role",
+      "agency_diagnostic_role",
+      "runtime_or_reconstruction_status",
+      "producer_residue",
+      "medium_debt",
+      "naturalization_gap",
+      "controls",
+      "control_results",
+      "next_probe_contract",
+      "source_digest_status",
+      "debt_summary",
+      "debt_source_refs",
+      "claim_ceiling",
+      "unsafe_claim_flags",
+      "why_admitted",
+      "why_not_stronger"
+    ],
+    "schema_id": "n29_i10_prototype_row_schema_v1",
+    "source_artifact_manifest_required": true,
+    "source_digest_fields_required": [
+      "source_digests",
+      "source_artifacts",
+      "source_rows"
+    ],
+    "source_digest_status_required": true,
+    "unsafe_claim_flags_required_false": true,
+    "why_admitted_required": true,
+    "why_not_stronger_required": true
+  },
+  "prototype_rows_opened": false,
+  "prototype_status_values": [
+    "runnable_runtime",
+    "source_backed_reconstruction",
+    "artifact_only_reconstruction",
+    "visual_diagnostic_only",
+    "mapping_only_no_runtime_surface",
+    "blocked_by_missing_source",
+    "blocked_by_claim_boundary",
+    "blocked_by_debt",
+    "blocked_by_controls",
+    "blocked_by_phase_boundary"
+  ],
+  "prototype_success_claimed": false,
+  "ready_for_iteration_11": true,
+  "route_allowed_status_policy": {
+    "I10.ADMISSION.BOUNDARY_SHARED_MEDIUM_UNIT": [
+      "artifact_only_reconstruction",
+      "mapping_only_no_runtime_surface",
+      "visual_diagnostic_only"
+    ],
+    "I10.ADMISSION.COMPOSITION": [
+      "blocked_by_phase_boundary"
+    ],
+    "I10.ADMISSION.GENERATIVE_EXTRACTIVE_MEDIUM_RESHAPING": [
+      "artifact_only_reconstruction",
+      "mapping_only_no_runtime_surface",
+      "visual_diagnostic_only"
+    ],
+    "I10.ADMISSION.PROXY_SUSCEPTIBILITY_REENTRY": [
+      "artifact_only_reconstruction",
+      "mapping_only_no_runtime_surface",
+      "visual_diagnostic_only"
+    ],
+    "I10.ADMISSION.RESERVE_OPTIONALITY_FORMATION": [
+      "source_backed_reconstruction",
+      "artifact_only_reconstruction",
+      "mapping_only_no_runtime_surface",
+      "visual_diagnostic_only"
+    ],
+    "I10.ADMISSION.TRACE_PRESSURE_LOOP": [
+      "artifact_only_reconstruction",
+      "mapping_only_no_runtime_surface",
+      "visual_diagnostic_only"
+    ],
+    "I10.ADMISSION.TRANSFER_REPLAY_ROLE_RELOCATION": [
+      "artifact_only_reconstruction",
+      "mapping_only_no_runtime_surface",
+      "visual_diagnostic_only"
+    ]
+  },
+  "runtime_ecology_probe_contract_opened": false,
+  "runtime_reconstruction_distinction_rows": [
+    {
+      "allowed_claim": "runnable bridge prototype candidate after controls",
+      "blocked_claim": "native ecology or ant behavior",
+      "required_basis": "new or existing runtime artifact with manifest, digest, replay/control status, and source-current trace",
+      "status": "runnable_runtime"
+    },
+    {
+      "allowed_claim": "source-backed bridge reconstruction candidate",
+      "blocked_claim": "runtime success or native ecology",
+      "required_basis": "original source artifacts plus reconstruction record and digest trail",
+      "status": "source_backed_reconstruction"
+    },
+    {
+      "allowed_claim": "debt-bearing bridge reconstruction candidate",
+      "blocked_claim": "native-ready or runtime ecology success",
+      "required_basis": "artifact-level rows with unresolved producer/medium/naturalization debt visible",
+      "status": "artifact_only_reconstruction"
+    },
+    {
+      "allowed_claim": "visual diagnostic bridge context",
+      "blocked_claim": "runtime evidence",
+      "required_basis": "visual manifest plus explicit visual claim boundary",
+      "status": "visual_diagnostic_only"
+    },
+    {
+      "allowed_claim": "mapping-only bridge target",
+      "blocked_claim": "prototype success",
+      "required_basis": "declared mapping and missing runtime surface reason",
+      "status": "mapping_only_no_runtime_surface"
+    }
+  ],
+  "script_sha256": "bc4f4308d4d12a3076d1ec30cdf6dc91ccb22f3d61bf5b80da08f6e67cabbd39",
+  "semantic_cooperation_claim_opened": false,
+  "sentience_opened": false,
+  "source_artifacts": [
+    {
+      "artifact_id": "n29_bridge_schema_i4",
+      "consumed_as": "schema_and_claim_boundary",
+      "output_digest": "e2e093b4cd143c1f5173391923d4707e2d2f9c48467b1e0c4052ba89d5b61131",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_schema_i4.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_demand_supply_coverage_debt_i7",
+      "consumed_as": "coverage_rows_and_source_of_truth_artifacts",
+      "output_digest": "6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_demand_supply_coverage_debt_i7.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_bridge_motif_library_i8",
+      "consumed_as": "motif_library_admission_source",
+      "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json",
+      "status": "passed"
+    },
+    {
+      "artifact_id": "n29_motif_relabel_nulls_i9",
+      "consumed_as": "phase_b_closeout_and_null_control_boundary",
+      "output_digest": "a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_motif_relabel_nulls_i9.json",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype Admission Schema"
+}
