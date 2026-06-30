@@ -2687,7 +2687,7 @@ status = passed
 acceptance_state = accepted_i13x_two_geometry_prototype_c_synthesis_ready_for_i14
 output = outputs/n29_proxy_susceptibility_reentry_synthesis_i13x.json
 report = reports/n29_proxy_susceptibility_reentry_synthesis_i13x.md
-output_digest = 679a34a70231150ccae123e8ad391c41544bd94b5a82b70f00e0ccc1f5400e04
+output_digest = 39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d
 runtime_candidate_count = 2
 control_backed_candidate_count = 2
 replay_stress_backed_candidate_count = 2
@@ -2710,22 +2710,1103 @@ ecology success.
 
 ### Iteration 14 - Prototype D: Generative / Extractive Medium Reshaping
 
-- [ ] Build or reconstruct generative, extractive, competitive, neutral, or circulation-like medium-reshaping miniatures from N28 evidence.
-- [ ] Record ecology demand served.
-- [ ] Record supplied capability and bridge motif.
-- [ ] Record remaining producer, medium, or naturalization debt.
-- [ ] Record exact downstream ecology probe suggested by the prototype.
-- [ ] Preserve N28 total-coherence visualization caveat.
-- [ ] Record whether compositions are source-backed or require future runtime.
-- [ ] Block cooperation, exploitation, altruism, and biological agency relabels.
+Direction:
+
+I14 starts Prototype D. It should not be another proxy / susceptibility /
+re-entry row, another boundary/shared-medium unit, or another N28 replay/stress
+matrix. Prototype D asks a different bridge question:
+
+```text
+Can N28's source-backed generative, extractive, neutral, and processor-like
+medium-reshaping regimes be admitted as ecology bridge motifs, while keeping
+closed circulation loops and coordinated exchange cycles as future construction
+debt?
+```
+
+In agentic ecology terms, this is the low-level bridge underneath future
+language such as enrichment, depletion, resource movement, circulation,
+repair, exchange, exploitation, cooperation, or environmental transformation.
+I14 must keep that language interpretive only. It should classify N28's
+geometric medium-reshaping regimes as motif supply, not as resource economy,
+ecology runtime, cooperation, exploitation, altruism, or biological agency.
+
+Prototype D fits the Phase C progression like this:
+
+```text
+Prototype A / I11 = trace + pressure + bounded loop response
+Prototype B / I12 = boundary + shared/adjacent medium + counterpart separability
+Prototype C / I13 = proxy/susceptibility state + re-entry + bounded differential response
+Prototype D / I14 = generative/extractive/neutral medium reshaping + exchange motifs
+```
+
+Primary source role:
+
+```text
+N28 = replay/stress-backed generative, extractive, competitive, neutral,
+      processor, and transition-surface medium-reshaping evidence
+```
+
+N29 I5-I8 may be used as search/index scaffolds only. I14 must return to the
+original N28 artifacts, reports, visual manifests, and closeout rows for full
+source rows, digests, controls, visualization caveats, and claim ceilings.
+
+The expected Prototype D output is a five-motif source-backed synthesis:
+
+```text
+generative_enrichment_motif
+extractive_depletion_motif
+processor_redistribution_motif
+neutral_circulation_implication
+phase_coupled_generator_extractor_implication
+```
+
+The last two are explicitly implications, not achieved loops. A closed
+environmental circulation loop would require a later runtime construction where
+one leg changes source-current capacity distribution, the next leg consumes
+that changed distribution, reverse or complementary routing occurs, and later
+state depends on the returned change under replay/order controls.
+
+Blocked readings:
+
+```text
+closed environmental circulation loop
+resource economy
+coordinated exchange cycle
+agentic ecology runtime
+cooperation
+exploitation
+altruism
+biological agency
+native ecological role
+semantic purpose or goal
+```
+
+- [x] Consume original N28 source artifacts, reports, visual manifests, and closeout rows for full source data.
+- [x] Use N29 I5-I8 only as orientation indexes, not as substitutes for N28 source rows.
+- [x] Record five Prototype D motifs:
+  - [x] `generative_enrichment_motif`
+  - [x] `extractive_depletion_motif`
+  - [x] `processor_redistribution_motif`
+  - [x] `neutral_circulation_implication`
+  - [x] `phase_coupled_generator_extractor_implication`
+- [x] For each motif, record N28 source basis, ecology demand served, supplied capability, bridge motif, remaining producer / medium / naturalization debt, downstream ecology probe suggested, and claim ceiling.
+- [x] Preserve N28 total-coherence visualization caveat.
+- [x] Classify neutral circulation as a future circulation-construction implication, not a closed environmental circulation loop.
+- [x] Classify phase-coupled generator/extractor as a future exchange-cycle implication, not a coordinated resource economy or ecology runtime.
+- [x] Record whether any composition is source-backed now or requires future runtime construction.
+- [x] Block closed environmental circulation loop, resource economy, coordinated exchange cycle, agentic ecology runtime, cooperation, exploitation, altruism, and biological agency relabels.
 
 Expected result:
 
 ```text
 status = passed
 prototype_family = generative_extractive_medium_reshaping
-claim_ceiling = source_backed_bridge_prototype_or_mapping_only_with_debt
+motif_count = 5
+claim_ceiling = source_backed_environmental_exchange_motif_synthesis_with_loop_debt
 ready_for_iteration_15 = true
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_generative_extractive_medium_reshaping_i14.json
+report = reports/n29_generative_extractive_medium_reshaping_i14.md
+script = scripts/build_n29_generative_extractive_medium_reshaping_i14.py
+status = passed
+acceptance_state = accepted_prototype_d_five_motif_synthesis_with_loop_debt
+output_digest = 14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970
+motif_count = 5
+prototype_family = generative_extractive_medium_reshaping
+n28_final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persistence_evidence
+n28_final_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
+n28_ge5_or_stronger_supported = true
+n28_ge6_or_stronger_supported = true
+visualization_caveat_preserved = true
+global_total_coherence_invariance_audited = false
+broad_margin_robustness_supported = false
+order_of_magnitude_robustness_supported = false
+neutral_circulation_closed_loop_claim_allowed = false
+phase_coupled_exchange_cycle_claim_allowed = false
+ready_for_iteration_15 = true
+```
+
+Interpretation:
+
+```text
+Prototype D admits N28 replay/stress-backed environmental exchange regimes as
+five ecology bridge motifs. It does not claim a closed circulation loop,
+resource economy, coordinated exchange cycle, agentic ecology runtime,
+cooperation, exploitation, altruism, or biological agency. Circulation and
+phase-coupled exchange remain downstream runtime-composition debt.
+```
+
+I14 consumes N28 directly for the motif rows and uses N29 I5-I8 only as
+orientation indexes. The five rows are source-backed as motif supply, but only
+the generative, extractive, and processor/redistribution motifs are admitted as
+current motif syntheses. The neutral circulation and phase-coupled
+generator/extractor rows are admitted as source-backed implications that need a
+future ordered runtime construction before any circulation-loop or exchange-
+cycle claim is allowed.
+
+Provisional Prototype D runtime structure:
+
+```text
+I14-A  = Prototype D Runtime Admission Schema
+  Freeze shared fixture rules, source-current requirements, producer visibility,
+  motif-specific thresholds, controls, replay policy, visualization caveats,
+  and claim ceilings.
+
+I14.1  = Generative Enrichment Runtime Prototype
+  Runtime exemplar for focal persistence plus neighboring capacity gain.
+
+I14.2  = Extractive Depletion Runtime Prototype
+  Runtime exemplar for focal persistence plus neighboring capacity loss,
+  depletion, or flattening.
+
+I14.3  = Processor / Redistribution Runtime Prototype
+  Runtime exemplar for local capacity redistribution where one region is
+  depleted while another is enriched.
+
+I14-B  = Controls for I14.1-I14.3
+  Label-only, visual-only, report-only, focal-survival-only, resource/economy,
+  cooperation/exploitation, producer-hidden-state, and N28-relabel controls.
+
+I14-C  = Replay / Stress for I14.1-I14.3
+  Artifact replay, snapshot/load, duplicate replay, order checks where
+  applicable, and bounded stress over the three direct runtime motifs.
+
+I14.4  = Neutral Circulation Composition Attempt
+  Opposite-orientation or ordered-dependency construction attempt for the
+  neutral circulation implication.
+
+I14.5  = Phase-Coupled Generator / Extractor Composition Attempt
+  Generator leg plus extractor leg with source-current phase relation.
+
+I14-D  = Loop / Composition Controls for I14.4-I14.5
+  Order inversion, missing feedback, label-only circulation, hidden producer
+  coupling, regime-averaging, merge/leakage-as-cycle, and resource-economy
+  relabel controls.
+
+I14-E  = Replay / Stress for I14.4-I14.5
+  Replay and stress only if I14.4/I14.5 produce admissible source-current
+  composition rows. Otherwise record blocked composition debt.
+```
+
+Runtime-status split:
+
+```text
+I14.1-I14.3 = runtime prototypes of already supported N28 motif classes
+I14.4-I14.5 = new composition attempts that may become loop candidates
+```
+
+### Iteration 14-A - Prototype D Runtime Admission Schema
+
+Direction:
+
+I14-A freezes the Prototype D runtime rules before any direct runtime motif or
+composition attempt is allowed to claim support. It is schema/admission only:
+no runtime evidence, no positive runtime row, no closed loop, no resource
+economy, and no agentic ecology runtime claim may open here.
+
+- [x] Consume I10 prototype admission schema.
+- [x] Consume I14 Prototype D five-motif synthesis.
+- [x] Consume N28 closeout, replay, stress, focused-margin, and visualization caveat sources.
+- [x] Freeze required runtime row fields.
+- [x] Freeze source-current runtime input requirements.
+- [x] Freeze threshold declaration policy before use.
+- [x] Freeze producer visibility and hidden-producer blockers.
+- [x] Freeze visualization policy and total-coherence caveat.
+- [x] Freeze replay policy for direct runtime motifs.
+- [x] Freeze stricter replay/order policy for composition attempts.
+- [x] Freeze direct runtime target rows for I14.1-I14.3.
+- [x] Freeze composition-attempt target rows for I14.4-I14.5.
+- [x] Freeze direct controls for I14.1-I14.3.
+- [x] Freeze loop/composition controls for I14.4-I14.5.
+- [x] Confirm runtime evidence remains closed.
+- [x] Confirm positive runtime rows are not created.
+- [x] Confirm unsafe claim flags remain false.
+
+Expected result:
+
+```text
+status = passed
+acceptance_state = accepted_prototype_d_runtime_admission_schema_no_runtime_evidence
+runtime_evidence_opened = false
+positive_runtime_rows_created = false
+direct_runtime_targets = [I14.1, I14.2, I14.3]
+composition_attempt_targets = [I14.4, I14.5]
+claim_ceiling = prototype_d_runtime_admission_schema_only_no_runtime_support
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_generative_extractive_runtime_admission_i14a.json
+report = reports/n29_generative_extractive_runtime_admission_i14a.md
+script = scripts/build_n29_generative_extractive_runtime_admission_i14a.py
+status = passed
+acceptance_state = accepted_prototype_d_runtime_admission_schema_no_runtime_evidence
+output_digest = aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc
+runtime_evidence_opened = false
+positive_runtime_rows_created = false
+direct_target_count = 3
+composition_target_count = 2
+direct_targets = [I14.1, I14.2, I14.3]
+composition_targets = [I14.4, I14.5]
+direct_controls_frozen = 10
+composition_controls_frozen = 8
+ready_for_i14_1 = true
+ready_for_i14_2 = true
+ready_for_i14_3 = true
+ready_for_i14_4 = true
+ready_for_i14_5 = true
+check_count = 33
+failed_checks = []
+```
+
+Additional validation checks added after I14-A review:
+
+```text
+schema_only_no_runtime_support = true
+direct_targets_are_exactly_I14_1_I14_2_I14_3 = true
+composition_targets_are_exactly_I14_4_I14_5 = true
+direct_lane_and_composition_lane_disjoint = true
+composition_targets_not_eligible_for_runtime_candidate_before_controls = true
+all_direct_targets_require_i14b_and_i14c = true
+all_composition_targets_require_i14d_and_i14e = true
+required_runtime_fields_complete = true
+required_field_policy_blocks_missing_fields = true
+threshold_policy_blocks_posthoc_thresholds = true
+producer_policy_blocks_hidden_producer_state = true
+visualization_caveat_blocks_visual_proof = true
+claim_boundary_blocks_resource_economy_and_cooperation = true
+source_digest_chain_i10_i14_n28_verified = true
+aggregate_only_redistribution_control_frozen = true
+source_schema_digest_validation_field_required = true
+leakage_interpretation_record_field_required = true
+```
+
+Interpretation:
+
+```text
+I14-A makes Prototype D runnable-prototype work admissible but does not itself
+support any runtime prototype. I14.1-I14.3 may attempt direct source-current
+runtime prototypes for already supported N28 motif classes. I14.4-I14.5 remain
+composition attempts with stricter ordered-dependency, feedback, and
+replay/order controls before any loop-like claim can be considered.
+```
+
+Canonical schema note:
+
+```text
+canonical_i14a_output_digest = aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc
+prior_reviewed_i14a_output_digest = 0107d355f4782e08ff4b5de17db3f52fd8f630264657c1fcf57b31bd7eabbf12
+pre_direct_row_i14a_output_digest = 1cb358878652abcc2b1beaa8635888025055baeb4bd83d057cfe1f7472338a6c
+i14a_digest_mismatch_explained_by_regeneration = true
+reason = I14-A was regenerated to freeze source-schema digest validation,
+         leakage-interpretation records, and aggregate-only redistribution
+         control before I14.1-I14.3 were consumed.
+```
+
+### Iteration 14.1 - Generative Enrichment Runtime Prototype
+
+- [x] Consume I14 Prototype D motif synthesis.
+- [x] Consume I14-A runtime admission schema.
+- [x] Consume the N28 primary generative source-current row directly.
+- [x] Create a new N29 runtime-candidate artifact rather than relabeling N28.
+- [x] Preserve focal support/coherence/stability floors.
+- [x] Record positive neighbor/medium capacity deltas.
+- [x] Record threshold, producer-visibility, attribution, merge/leakage, and visualization-caveat fields.
+- [x] Keep I14-B controls and I14-C replay/stress pending.
+- [x] Block resource economy, cooperation, biological agency, and ecology-success claims.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_generative_enrichment_runtime_i141.json
+runtime_artifact = outputs/n29_generative_enrichment_runtime_i141_artifact.json
+report = reports/n29_generative_enrichment_runtime_i141.md
+script = scripts/build_n29_generative_extractive_direct_runtime_i141_i143.py
+status = passed
+acceptance_state = accepted_generative_enrichment_motif_direct_runtime_candidate_pending_i14b_i14c
+source_n28_row_id = n28_i4_row_primary_generative_candidate
+runtime_row_id = n29_i14_1_generative_enrichment_motif
+row_decision = partial
+row_decision_scope = direct_runtime_candidate_created_pending_i14b_controls_and_i14c_replay_stress
+claim_ceiling = direct_generative_enrichment_runtime_candidate_pending_i14b_i14c
+direct_runtime_candidate_created = true
+control_backed_runtime_supported = false
+replay_stress_backed_runtime_supported = false
+direct_runtime_support_claim_allowed = false
+canonical_i14a_output_digest = aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc
+output_digest = cc979553bcc8daeaaaca69d648f66b007854e8dd687e8b5864e64b14c52ad8a1
+failed_checks = []
+```
+
+Geometric interpretation:
+
+```text
+I14.1 uses the N28 I4 source-current generative row as the direct runtime
+input. The focal basin stays above support, coherence, and stability floors
+while the neighboring capacity shell becomes more basin-forming: support,
+distinguishability, boundary integrity, and environment capacity all increase.
+The N29 row is a new runtime-candidate artifact over that source-current trace,
+not an N28 relabel. It remains pending I14-B controls and I14-C replay/stress.
+```
+
+### Iteration 14.2 - Extractive Depletion Runtime Prototype
+
+- [x] Consume I14 Prototype D motif synthesis.
+- [x] Consume I14-A runtime admission schema.
+- [x] Consume the N28 primary extractive source-current row directly.
+- [x] Create a new N29 runtime-candidate artifact rather than relabeling N28.
+- [x] Preserve focal support/coherence/stability floors.
+- [x] Record negative neighbor/medium capacity deltas.
+- [x] Record threshold, producer-visibility, attribution, merge/leakage, and visualization-caveat fields.
+- [x] Keep I14-B controls and I14-C replay/stress pending.
+- [x] Block exploitation, resource consumption, biological agency, and ecology-success claims.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_depletion_runtime_i142.json
+runtime_artifact = outputs/n29_extractive_depletion_runtime_i142_artifact.json
+report = reports/n29_extractive_depletion_runtime_i142.md
+script = scripts/build_n29_generative_extractive_direct_runtime_i141_i143.py
+status = passed
+acceptance_state = accepted_extractive_depletion_motif_direct_runtime_candidate_pending_i14b_i14c
+source_n28_row_id = n28_i4b_row_primary_extractive_contrast
+runtime_row_id = n29_i14_2_extractive_depletion_motif
+row_decision = partial
+row_decision_scope = direct_runtime_candidate_created_pending_i14b_controls_and_i14c_replay_stress
+claim_ceiling = direct_extractive_depletion_runtime_candidate_with_leakage_exceedance_caveat_pending_i14b_i14c
+direct_runtime_candidate_created = true
+control_backed_runtime_supported = false
+replay_stress_backed_runtime_supported = false
+direct_runtime_support_claim_allowed = false
+canonical_i14a_output_digest = aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc
+leakage_record_status = extractive_mechanism_exceedance_caveat
+merge_leakage_value = 0.033
+merge_leakage_ceiling = 0.025
+merge_leakage_below_ceiling = false
+clean_bounded_leakage_claim_allowed = false
+output_digest = 4e42198b18f34700956b53b5873a56639c80b774259ebfbfda5d18168a4e57d0
+failed_checks = []
+```
+
+Geometric interpretation:
+
+```text
+I14.2 uses the N28 I4-B source-current extractive row as the direct runtime
+input. The focal basin remains above its floors while the neighboring capacity
+shell loses support, distinguishability, boundary integrity, and environment
+basin-forming capacity. This is a depletion / flattening motif, not exploitation
+or selective uptake. Its merge/leakage value is above the N28 ceiling, so the
+row is explicitly classified as extractive-mechanism exceedance evidence, not
+clean bounded leakage. The row remains pending I14-B controls and I14-C replay /
+stress before any stronger Prototype D support can be claimed.
+```
+
+### Iteration 14.3 - Processor / Redistribution Runtime Prototype
+
+- [x] Consume I14 Prototype D motif synthesis.
+- [x] Consume I14-A runtime admission schema.
+- [x] Consume the N28 higher-margin competitive redistribution source-current row directly.
+- [x] Create a new N29 runtime-candidate artifact rather than relabeling N28.
+- [x] Preserve focal support/coherence/stability floors.
+- [x] Record opposed route-lobe capacity deltas under one source-current policy.
+- [x] Record threshold, producer-visibility, attribution, merge/leakage, and visualization-caveat fields.
+- [x] Keep I14-B controls and I14-C replay/stress pending.
+- [x] Block intentional processing, tool-use, resource-routing economy, and ecology-success claims.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_processor_redistribution_runtime_i143.json
+runtime_artifact = outputs/n29_processor_redistribution_runtime_i143_artifact.json
+report = reports/n29_processor_redistribution_runtime_i143.md
+script = scripts/build_n29_generative_extractive_direct_runtime_i141_i143.py
+status = passed
+acceptance_state = accepted_processor_redistribution_motif_direct_runtime_candidate_pending_i14b_i14c
+source_n28_row_id = n28_i4g_row_higher_margin_competitive_redistribution_contrast
+runtime_row_id = n29_i14_3_processor_redistribution_motif
+row_decision = partial
+row_decision_scope = direct_runtime_candidate_created_pending_i14b_controls_and_i14c_replay_stress
+claim_ceiling = direct_processor_redistribution_runtime_candidate_pending_i14b_i14c
+direct_runtime_candidate_created = true
+control_backed_runtime_supported = false
+replay_stress_backed_runtime_supported = false
+direct_runtime_support_claim_allowed = false
+canonical_i14a_output_digest = aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc
+aggregate_only_redistribution_allowed = false
+route_lobe_a_capacity_delta = 0.07
+route_lobe_b_capacity_delta = -0.068
+output_digest = 998950d34cce9ed539d5cc6ed49a89438b4d0d5c90146ab5b9c0950fada0944d
+failed_checks = []
+```
+
+Geometric interpretation:
+
+```text
+I14.3 uses the N28 I4-G source-current competitive redistribution row as the
+direct runtime input. The focal basin remains bounded while one route lobe gains
+capacity and an opposed lobe loses capacity under the same declared policy. This
+is the processor-like motif: a changer / redistributor of medium capacity, not
+semantic processing, tool use, or resource routing. It remains pending I14-B
+controls and I14-C replay/stress.
+```
+
+### Iteration 14-B - Controls For I14.1-I14.3
+
+- [x] Consume the canonical I14-A runtime admission schema.
+- [x] Consume I14.1 generative enrichment candidate.
+- [x] Consume I14.2 extractive depletion candidate with leakage caveat.
+- [x] Consume I14.3 processor / redistribution candidate with lobe-opposition basis.
+- [x] Run label-only medium-reshaping controls.
+- [x] Run report-only and visual-only runtime controls.
+- [x] Run focal-survival-only controls.
+- [x] Run aggregate-only redistribution controls.
+- [x] Run hidden-producer-state controls.
+- [x] Run N28-relabel-as-N29-runtime controls.
+- [x] Run resource-economy and cooperation/exploitation relabel controls.
+- [x] Run total-coherence visualization overclaim controls.
+- [x] Preserve I14.2 extractive-mechanism leakage caveat.
+- [x] Preserve I14.3 route-lobe opposition requirement.
+- [x] Keep replay/stress and Prototype D runtime support pending I14-C.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_generative_extractive_direct_controls_i14b.json
+report = reports/n29_generative_extractive_direct_controls_i14b.md
+script = scripts/build_n29_generative_extractive_direct_controls_i14b.py
+status = passed
+acceptance_state = accepted_direct_runtime_candidate_controls_fail_closed_pending_i14c
+canonical_i14a_output_digest = aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc
+control_count = 30
+failed_closed_count = 30
+failed_open_count = 0
+surviving_candidate_count = 3
+control_backed_runtime_support_claim_allowed = false
+replay_stress_backed_runtime_support_claim_allowed = false
+prototype_d_runtime_support_claim_allowed = false
+ready_for_i14c_replay_stress = true
+output_digest = 84ecb67648b879e82c123ca4f8f8f57dd38abf0deb602f03902f6a820a7a0c83
+failed_checks = []
+```
+
+Triad status:
+
+```text
+I14.1 generative enrichment:
+  controls = passed_fail_closed_matrix
+  status = admissible_for_i14c_replay_stress
+
+I14.2 extractive depletion:
+  controls = passed_fail_closed_matrix
+  leakage_caveat = merge_leakage exceeds ceiling and is retained only as
+                   extractive-mechanism exceedance evidence
+  status = admissible_for_i14c_replay_stress_with_leakage_exceedance_caveat
+
+I14.3 processor redistribution:
+  controls = passed_fail_closed_matrix
+  lobe_opposition_basis = required
+  status = admissible_for_i14c_replay_stress
+```
+
+Interpretation:
+
+```text
+I14-B is a control gate, not replay/stress support. It rejects false-positive
+paths for all three direct candidates while preserving the near-positive rows
+for I14-C. Copying an N28 label as N29 runtime fails closed, but consuming N28
+source-current traces remains allowed when the N29 row creates its own artifact,
+manifest, threshold record, lineage audit, and claim boundary.
+```
+
+### Iteration 14-C - Replay / Stress For I14.1-I14.3
+
+- [x] Consume I14-B direct control matrix.
+- [x] Consume the three I14.1-I14.3 surviving candidates.
+- [x] Run artifact replay for each direct runtime candidate.
+- [x] Run snapshot/load replay over each runtime-candidate trace.
+- [x] Run duplicate replay / duplicate suppression check for each candidate.
+- [x] Stress I14.1 by neighbor-gain ablation, focal-floor crossing, and capacity-attribution ablation.
+- [x] Stress I14.2 by degradation ablation, leakage-collapse boundary, focal-floor crossing, and attribution ablation.
+- [x] Stress I14.3 by one-lobe removal, lobe-opposition flattening, aggregate-only redistribution, and focal-floor crossing.
+- [x] Preserve I14.2 leakage-exceedance caveat.
+- [x] Preserve I14.3 route-lobe opposition basis.
+- [x] Confirm broad margin robustness is not claimed.
+- [x] Confirm final Prototype D runtime support remains pending classification.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_generative_extractive_direct_replay_stress_i14c.json
+report = reports/n29_generative_extractive_direct_replay_stress_i14c.md
+script = scripts/build_n29_generative_extractive_direct_replay_stress_i14c.py
+status = passed
+acceptance_state = accepted_direct_runtime_candidates_bounded_replay_stress_pending_classification
+bounded_replay_stress_supported_count = 3
+stable_replay_count = 3
+stress_passed_count = 3
+broad_margin_robustness_supported = false
+prototype_d_runtime_support_claim_allowed = false
+ready_for_prototype_d_classification = true
+output_digest = b10bf023a775433daa6dcf03805cabff606f6f81aaa94f16b0b677f73e9d8fa2
+failed_checks = []
+```
+
+Candidate results:
+
+```text
+I14.1:
+  replay = stable
+  stress = passed
+  final_i14c_status = bounded_generative_neighbor_gain_replay_stress_supported
+
+I14.2:
+  replay = stable
+  stress = passed
+  final_i14c_status = bounded_extractive_depletion_replay_stress_supported_with_leakage_caveat
+  stronger_alternative_signal = optional cleaner extractive alternative if clean bounded leakage is needed
+
+I14.3:
+  replay = stable
+  stress = passed
+  final_i14c_status = bounded_processor_redistribution_replay_stress_supported
+```
+
+Interpretation:
+
+```text
+I14-C gives bounded replay/stress support for the three direct Prototype D
+candidates. It does not claim broad margin robustness or final Prototype D
+runtime success. I14.2 remains the only row with a clear follow-up signal:
+if Prototype D needs a clean bounded-leakage extractor rather than
+extractive-mechanism exceedance, add a stronger extractive alternative.
+```
+
+### Iteration 14.2-1 - Clean Extractive Alternative Source Search
+
+- [x] Consume I14 Prototype D motif synthesis.
+- [x] Consume I14-A runtime admission schema.
+- [x] Consume the original I14.2 runtime candidate and I14-C replay/stress result.
+- [x] Search source-backed N28 extractive rows for a cleaner replacement.
+- [x] Require the replacement to be source-current, supported, extractive, negative-neighbor-capacity evidence.
+- [x] Require merge/leakage below the declared source ceiling.
+- [x] Reject transition, neutral-gap, unclassified, rejected, or control rows as replacement evidence.
+- [x] Preserve the original I14.2 leakage caveat if no replacement is found.
+- [x] Record whether I14-B/C must be rerun with a new replacement candidate.
+- [x] Keep ecology, cooperation, exploitation, resource-economy, and agency claims blocked.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_clean_alternative_search_i1421.json
+report = reports/n29_extractive_clean_alternative_search_i1421.md
+script = scripts/build_n29_extractive_clean_alternative_i1421.py
+status = passed
+acceptance_state = accepted_clean_extractive_alternative_search_no_admissible_replacement_found
+clean_source_candidate_found = false
+clean_replacement_candidate_created = false
+i14_2_1_result = blocked_no_clean_source_current_extractive_replacement
+best_source_candidate = n28_i4b_row_primary_extractive_contrast
+best_merge_leakage_value = 0.033
+best_merge_leakage_ceiling = 0.025
+should_rerun_i14b_i14c_with_i14_2_1 = false
+claim_ceiling = clean_extractive_alternative_search_completed_no_runtime_replacement_original_i14_2_leakage_caveat_preserved
+output_digest = 61a3fec4f97b5549fa1621451e68b3a1118d3f1e773584fe614ec168bd221b97
+failed_checks = []
+```
+
+Candidate source result:
+
+```text
+n28_i4b_row_primary_extractive_contrast:
+  merge_leakage_value = 0.033
+  merge_leakage_ceiling = 0.025
+  clean_candidate = false
+  status = blocked_by_merge_leakage_ceiling
+
+n28_i4c_row_extractive_strengthening_contrast:
+  merge_leakage_value = 0.036
+  merge_leakage_ceiling = 0.025
+  clean_candidate = false
+  status = blocked_by_merge_leakage_ceiling
+
+n28_i4c2_row_extractive_mechanism_diversity_contrast:
+  merge_leakage_value = 0.043
+  merge_leakage_ceiling = 0.025
+  clean_candidate = false
+  status = blocked_by_merge_leakage_ceiling
+```
+
+Interpretation:
+
+```text
+I14.2-1 does not replace I14.2. It shows that the current source-backed N28
+extractive portfolio contains supported extractive depletion evidence, but no
+clean bounded-leakage extractive source row. Lower-leakage transition rows are
+not admissible replacements because they are neutral-gap / unclassified control
+rows, not supported extractive candidates. Therefore I14-B/C do not need to be
+rerun for I14.2-1 now. A focused I14.2-1-B/C or expanded I14-B/C rerun becomes
+necessary only if a future source-current clean extractive candidate is created.
+```
+
+### Iteration 14.2-1-B - Focused Clean Extractive Controls
+
+- [x] Consume I14.2-1 clean extractive alternative search.
+- [x] Consume original I14.2 extractor and I14-C replay/stress context.
+- [x] Reject over-ceiling extractive rows as clean bounded-leakage support.
+- [x] Reject neutral-gap / transition rows as extractive positives.
+- [x] Reject threshold retuning to force clean leakage.
+- [x] Reject erasing the original I14.2 leakage caveat.
+- [x] Reject report-only search as a runtime extractor.
+- [x] Reject rerunning controls/replay as if a replacement row exists.
+- [x] Reject non-source-current or manifest-gap replacement rows.
+- [x] Reject exploitation / resource / ecology-success relabels.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_clean_alternative_controls_i1421b.json
+report = reports/n29_extractive_clean_alternative_controls_i1421b.md
+script = scripts/build_n29_extractive_clean_alternative_i1421bc.py
+status = passed
+acceptance_state = accepted_focused_clean_extractive_replacement_controls_fail_closed
+control_count = 8
+failed_closed_count = 8
+failed_open_count = 0
+clean_replacement_candidate_created = false
+i14b_i14c_rerun_required_after_controls = false
+prototype_d_runtime_support_claim_allowed = false
+clean_bounded_extractive_runtime_claim_allowed = false
+output_digest = c916ebb9aa294439821ea4e4e1c0d48eef7ed6461a5e417607dd957cb883c33d
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.2-1-B validates the blocker. It does not add a positive extractor row.
+It shows that the tempting escape paths all fail closed: over-ceiling extractor
+as clean support, neutral-gap transition substitution, threshold retuning,
+caveat erasure, report-only search-as-runtime, rerun-without-candidate, source
+manifest gaps, and exploitation/resource relabels.
+```
+
+### Iteration 14.2-1-C - Focused Clean Extractive Replay / Stress
+
+- [x] Consume I14.2-1 clean extractive alternative search.
+- [x] Consume I14.2-1-B focused controls.
+- [x] Record artifact replay as blocked by absence of replacement runtime candidate.
+- [x] Record snapshot/load replay as blocked by absence of replacement runtime trace.
+- [x] Record duplicate replay as blocked by absence of replacement runtime candidate.
+- [x] Record clean extractive stress as blocked by absence of clean extractor.
+- [x] Record merge/leakage boundary stress as already crossed by every supported extractive source row.
+- [x] Record neutral-gap substitution stress as blocked because neutral-gap rows are controls, not extractive candidates.
+- [x] Preserve original I14.2 as consumable only with leakage caveat.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_clean_alternative_replay_stress_i1421c.json
+report = reports/n29_extractive_clean_alternative_replay_stress_i1421c.md
+script = scripts/build_n29_extractive_clean_alternative_i1421bc.py
+status = passed
+acceptance_state = accepted_focused_clean_extractive_replay_stress_blocked_no_candidate
+replacement_runtime_candidate_exists = false
+stable_replay_count = 0
+stress_passed_count = 0
+blocked_replay_count = 3
+blocked_stress_count = 3
+clean_extractive_replay_stress_supported = false
+i14_2_original_remains_consumable_only_with_leakage_caveat = true
+output_digest = c4f229eba2bacc09f869d94c97335d7e13172aac29e1bdaad8b5124eee6b6b79
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.2-1-C records that replay/stress is blocked, not failed open. There is no
+clean replacement runtime artifact to replay or stress. I14.5 can still attempt
+a generator/extractor composition, but if it uses the current extractor it must
+carry the original I14.2 leakage caveat. I14.2-1 supplies no clean
+bounded-leakage extractor support.
+```
+
+### Iteration 14.2-2 - Extractive Reinforcement Runtime Candidate
+
+- [x] Consume I14 Prototype D motif synthesis.
+- [x] Consume I14-A runtime admission schema.
+- [x] Consume original I14.2 as the primary extractor context.
+- [x] Consume I14.2-1 and focused I14.2-1-B/C as clean-replacement blockers.
+- [x] Consume N28 I4-C2 extractive mechanism-diversity source row.
+- [x] Create a new N29 runtime-candidate artifact rather than relabeling N28.
+- [x] Preserve focal support/coherence/stability floors.
+- [x] Record negative neighbor/medium capacity deltas.
+- [x] Record the mechanism difference from I14.2.
+- [x] Preserve the extractive-mechanism leakage caveat.
+- [x] Confirm clean bounded-leakage support is still not claimed.
+- [x] Keep focused controls and replay/stress pending.
+- [x] Block exploitation, resource consumption, ecology success, and agency claims.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_depletion_reinforcement_runtime_i1422.json
+runtime_artifact = outputs/n29_extractive_depletion_reinforcement_runtime_i1422_artifact.json
+report = reports/n29_extractive_depletion_reinforcement_runtime_i1422.md
+script = scripts/build_n29_extractive_reinforcement_i1422.py
+status = passed
+acceptance_state = accepted_extractive_depletion_mechanism_diversity_runtime_candidate_pending_focused_controls_replay_stress
+source_n28_row_id = n28_i4c2_row_extractive_mechanism_diversity_contrast
+runtime_row_id = n29_i14_2_2_extractive_depletion_mechanism_diversity_motif
+row_decision = partial
+row_decision_scope = extractive_reinforcement_runtime_candidate_created_pending_focused_controls_and_replay_stress
+relation_to_i14_2 = reinforces_i14_2_not_replacement
+relation_to_i14_2_1 = avoids_clean_replacement_search_clean_gap_preserved
+merge_leakage_value = 0.043
+merge_leakage_ceiling = 0.025
+clean_bounded_leakage_claim_allowed = false
+extractive_mechanism_exceedance_recorded = true
+requires_i14_2_2_b_controls = true
+requires_i14_2_2_c_replay_stress = true
+direct_runtime_support_claim_allowed = false
+output_digest = 69b24367946ec06d3c6f8fad57786322d946c01d4c34dcaee4a82a45f8833025
+failed_checks = []
+```
+
+Geometric interpretation:
+
+```text
+I14.2-2 reinforces I14.2 by adding a second source-current extractor geometry.
+I14.2 uses the primary N28 I4-B extractive contrast. I14.2-2 uses N28 I4-C2,
+where the focal basin stays above support/coherence/stability floors while the
+neighboring shell is degraded by a merge/leakage-dominant boundary-flattening
+mechanism. This broadens the extractor motif as mechanism diversity. It does
+not solve the clean bounded-leakage gap and does not replace I14.2.
+```
+
+### Iteration 14.2-2-B - Focused Extractive Reinforcement Controls
+
+- [x] Consume I14.2-2 extractive reinforcement runtime candidate.
+- [x] Consume original I14.2 as primary extractor context.
+- [x] Consume I14.2-1-B/C clean-replacement blocker controls.
+- [x] Reject label-only mechanism diversity.
+- [x] Reject report-only runtime support.
+- [x] Reject N28 I4-C2 relabel as N29 runtime success.
+- [x] Reject focal-survival-only evidence.
+- [x] Reject depletion polarity ablation.
+- [x] Reject mechanism-attribution ablation.
+- [x] Reject clean-leakage relabel.
+- [x] Reject threshold retuning.
+- [x] Reject I14.2 replacement overclaim.
+- [x] Reject exploitation / resource / ecology-success relabels.
+- [x] Keep support pending I14.2-2-C replay/stress.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_reinforcement_controls_i1422b.json
+report = reports/n29_extractive_reinforcement_controls_i1422b.md
+script = scripts/build_n29_extractive_reinforcement_i1422bc.py
+status = passed
+acceptance_state = accepted_extract_reinforcement_controls_fail_closed_pending_replay_stress
+runtime_row_id = n29_i14_2_2_extractive_depletion_mechanism_diversity_motif
+control_count = 10
+failed_closed_count = 10
+failed_open_count = 0
+candidate_survives_controls = true
+ready_for_i14_2_2_c_replay_stress = true
+control_backed_runtime_support_claim_allowed = false
+clean_bounded_extractive_runtime_claim_allowed = false
+output_digest = 8cd5ec0dc3c4669819ddc5220e90600a450575ad3cf48c91f8e35eaac16c3704
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.2-2-B validates the reinforcement candidate's control boundary. It rejects
+false positives that would turn source labels, report summaries, focal survival,
+lost depletion polarity, missing mechanism attribution, threshold retuning, or
+semantic resource/exploitation language into support. The row survives only as
+caveated extractive mechanism-diversity evidence pending replay/stress.
+```
+
+### Iteration 14.2-2-C - Focused Extractive Reinforcement Replay / Stress
+
+- [x] Consume I14.2-2 extractive reinforcement runtime candidate.
+- [x] Consume I14.2-2-B focused controls.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Stress depletion above declared thresholds.
+- [x] Stress depletion-polarity ablation.
+- [x] Stress mechanism-attribution ablation.
+- [x] Stress focal-floor crossing.
+- [x] Stress leakage-caveat boundary.
+- [x] Preserve clean bounded-leakage support as false.
+- [x] Mark row ready for I14.5 only with leakage caveat.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_reinforcement_replay_stress_i1422c.json
+report = reports/n29_extractive_reinforcement_replay_stress_i1422c.md
+script = scripts/build_n29_extractive_reinforcement_i1422bc.py
+status = passed
+acceptance_state = accepted_extract_reinforcement_bounded_replay_stress_with_leakage_caveat
+runtime_row_id = n29_i14_2_2_extractive_depletion_mechanism_diversity_motif
+stable_replay_count = 3
+stress_passed_count = 5
+final_i14_2_2_status = bounded_extractive_mechanism_diversity_replay_stress_supported_with_leakage_caveat
+i14_2_2_reinforcement_replay_stress_supported = true
+i14_2_2_clean_bounded_leakage_supported = false
+ready_for_i14_5_with_leakage_caveat = true
+output_digest = fce211d51a23565c85ffab9e3e6b155e35703805f439689869530831fce85905
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.2-2-C makes the reinforcement row replay/stress-backed. It provides a
+second extractor mechanism for Prototype D, useful for I14.5 as extractor-side
+mechanism diversity. It still does not provide clean bounded-leakage support
+and still does not replace I14.2.
+```
+
+### Iteration 14.2-3 - Cleaner Extractor Construction Attempt
+
+- [x] Consume I14 Prototype D motif synthesis.
+- [x] Consume I14-A runtime admission schema.
+- [x] Consume primary I14.2 extractor source.
+- [x] Consume I14.2-1 clean-source search and focused blocker validation.
+- [x] Consume I14.2-2 reinforcement replay/stress result.
+- [x] Declare construction policy before use.
+- [x] Preserve original I14.2 thresholds without retuning.
+- [x] Avoid neutral-gap / transition-row backfill.
+- [x] Construct leakage-gated extractor from source-current I14.2 deltas.
+- [x] Preserve negative neighbor/medium capacity deltas.
+- [x] Preserve degradation floors for environment, support, distinguishability, and boundary axes.
+- [x] Bring merge/leakage below the original ceiling with non-rounding-level margin.
+- [x] Preserve focal support/coherence/stability floors.
+- [x] Record producer-mediated construction status and native-support blocker.
+- [x] Keep clean bounded-leakage support pending focused controls and replay/stress.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_clean_constructed_runtime_i1423.json
+runtime_artifact = outputs/n29_extractive_clean_constructed_runtime_i1423_artifact.json
+report = reports/n29_extractive_clean_constructed_runtime_i1423.md
+script = scripts/build_n29_extractive_clean_constructed_i1423.py
+status = passed
+acceptance_state = accepted_producer_mediated_leakage_gated_extractor_construction_candidate_pending_controls_replay_stress
+runtime_row_id = n29_i14_2_3_leakage_gated_extractive_construction_motif
+capacity_delta_factor = 1.0
+leakage_gate_factor = 0.5
+producer_mediated_construction = true
+thresholds_retuned = false
+neutral_gap_rows_used = false
+environment_capacity_delta = -0.069
+neighbor_support_delta = -0.063
+neighbor_distinguishability_delta = -0.077
+neighbor_boundary_delta = -0.081
+minimum_degradation_margin = 0.019
+merge_leakage_value = 0.0165
+merge_leakage_ceiling = 0.025
+merge_leakage_margin = 0.0085
+minimum_meaningful_margin_floor = 0.005
+meaningful_leakage_margin = true
+rounding_level_margin_blocker = false
+narrow_margin_caveat = false
+clean_bounded_leakage_candidate_created = true
+clean_bounded_leakage_support_claim_allowed = false
+ready_for_i14_2_3_b_controls = true
+ready_for_i14_2_3_c_replay_stress = false
+output_digest = 8247fa5d5efcbb694051783a77a1b9d19c4f2785690bf75f820e1efa973d57d6
+failed_checks = []
+```
+
+Geometric interpretation:
+
+```text
+I14.2-3 replaces the rejected uniform-attenuation idea with a leakage-gated
+extractor. The primary I14.2 extraction geometry is kept at source strength:
+the neighboring shell still loses support, distinguishability, boundary
+integrity, and environment basin-forming capacity on all four axes. The new
+producer surface acts only on merge/leakage, reducing it from the source
+0.033 to 0.0165 against the 0.025 ceiling, with 0.0085 headroom above a
+0.005 meaningful-margin floor. This is no longer a rounding-level crossing,
+but it remains producer-mediated bridge evidence pending controls and
+replay/stress. It does not upgrade native LGRC or prove ecology success.
+```
+
+### Iteration 14.2-3-B - Focused Leakage-Gated Extractor Controls
+
+- [x] Consume I14.2-3 leakage-gated extractor candidate.
+- [x] Consume original I14.2 extractor context.
+- [x] Consume I14.2-2-C reinforcement context.
+- [x] Reject hidden leakage-gate support.
+- [x] Reject leakage-gate-as-native relabel.
+- [x] Reject threshold retuning.
+- [x] Reject uniform attenuation / rounding-level support.
+- [x] Reject neutral-gap backfill.
+- [x] Reject label-specific extractor construction.
+- [x] Reject source I14.2 caveat erasure.
+- [x] Reject report-only runtime support.
+- [x] Reject exploitation/resource/ecology relabel.
+- [x] Keep support pending replay/stress.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_clean_constructed_controls_i1423b.json
+report = reports/n29_extractive_clean_constructed_controls_i1423b.md
+script = scripts/build_n29_extractive_clean_constructed_i1423bc.py
+status = passed
+acceptance_state = accepted_leakage_gated_extractor_controls_fail_closed_pending_replay_stress
+runtime_row_id = n29_i14_2_3_leakage_gated_extractive_construction_motif
+control_count = 10
+failed_closed_count = 10
+failed_open_count = 0
+candidate_survives_controls = true
+leakage_gate_factor = 0.5
+capacity_delta_factor = 1.0
+merge_leakage_margin = 0.0085
+control_backed_candidate_supported = true
+control_backed_runtime_support_claim_allowed = false
+native_lgrc_support_claim_allowed = false
+ready_for_i14_2_3_c_replay_stress = true
+output_digest = 4897dd938ae282ea3cf062d83dd3250434d42bb92a61e37cbf6722d870e397f9
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.2-3-B protects the leakage-gated candidate from the main false-positive
+paths. It says the candidate survives only because the leakage gate is declared,
+visible, producer-mediated, non-native, non-retuned, non-label-only, and not a
+neutral-gap backfill. Control-backed support is still not final support; the
+row must pass replay/stress in I14.2-3-C.
+```
+
+### Iteration 14.2-3-C - Focused Leakage-Gated Extractor Replay / Stress
+
+- [x] Consume I14.2-3 leakage-gated extractor candidate.
+- [x] Consume I14.2-3-B focused controls.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Stress depletion floors.
+- [x] Stress leakage-gate margin.
+- [x] Stress gate-removal ablation.
+- [x] Stress producer-as-native relabel.
+- [x] Stress depletion polarity ablation.
+- [x] Stress focal floor crossing rejection.
+- [x] Keep native LGRC support, ecology success, resource, exploitation, cooperation, and agency claims blocked.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_extractive_clean_constructed_replay_stress_i1423c.json
+report = reports/n29_extractive_clean_constructed_replay_stress_i1423c.md
+script = scripts/build_n29_extractive_clean_constructed_i1423bc.py
+status = passed
+acceptance_state = accepted_leakage_gated_extractor_bounded_replay_stress_pending_classification
+runtime_row_id = n29_i14_2_3_leakage_gated_extractive_construction_motif
+stable_replay_count = 3
+stress_passed_count = 6
+final_i14_2_3_status = producer_mediated_leakage_gated_extractor_replay_stress_supported_pending_prototype_d_classification
+i14_2_3_leakage_gated_replay_stress_supported = true
+i14_2_3_clean_bounded_leakage_supported = true
+producer_mediated_bridge_evidence_supported = true
+native_lgrc_clean_extractor_supported = false
+producer_success_can_upgrade_native = false
+ready_for_i14_5_without_i14_2_leakage_caveat = true
+ready_for_prototype_d_classification = true
+prototype_d_runtime_support_claim_allowed = false
+output_digest = 959f72a4a6d6cf4ee9db5cd191136f54bbd19d707be5db4303ce79b0f9bf84b6
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.2-3-C supports the leakage-gated extractor under bounded replay/stress.
+This removes the clean-leakage blocker only for the new producer-mediated
+I14.2-3 bridge row. It does not retroactively clean the original I14.2 source
+row, does not make the leakage gate native LGRC, and does not open resource,
+exploitation, cooperation, ecology-success, or agency claims.
+```
+
+### Iteration 14* - Prototype D Pre-Composition Synthesis
+
+I14* is a compact interim synthesis of the Prototype D tranche so far. Its
+purpose is to make the state easy to consume before the composition attempts:
+I14 supplies the motif source synthesis, I14-A admits runtime evidence rules,
+I14.1/I14.2/I14.3 plus I14-B/C support the direct runtime motifs, and
+I14.2-1/2/3 classify the extractor-side clean-leakage problem.
+
+- [x] Consume I14, I14-A, I14.1/I14.2/I14.3, and I14-B/C.
+- [x] Consume I14.2-1/B/C clean-source search and blocker record.
+- [x] Consume I14.2-2/B/C source-current reinforcement.
+- [x] Consume I14.2-3/B/C producer-mediated leakage-gated extractor.
+- [x] Classify direct generative, extractive, and processor motifs as replay/stress-backed.
+- [x] Preserve the original I14.2 leakage caveat.
+- [x] Classify I14.2-2 as source-current reinforcement with leakage caveat.
+- [x] Classify I14.2-3 as clean bounded-leakage only in the producer-mediated bridge lane.
+- [x] Keep native clean extractor support blocked.
+- [x] Keep closed circulation, exchange cycle, resource economy, ecology success, cooperation, exploitation, and agency blocked.
+- [x] Keep ready for I14.4/I14.5 true.
+- [x] Keep ready for I15 false until I14.4/I14.5 composition attempts run.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_i14x_pre_composition_index_ready_for_i14_4_i14_5
+artifact = outputs/n29_generative_extractive_medium_reshaping_synthesis_i14x.json
+report = reports/n29_generative_extractive_medium_reshaping_synthesis_i14x.md
+script = scripts/build_n29_generative_extractive_synthesis_i14x.py
+output_digest = 320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475
+prototype_family = generative_extractive_medium_reshaping
+prototype_d_runtime_evidence_supported = true
+direct_runtime_candidate_count = 3
+direct_replay_stress_backed_count = 3
+extractor_followup_count = 3
+clean_native_source_backed_extractor_supported = false
+clean_producer_mediated_extractor_supported = true
+native_lgrc_clean_extractor_supported = false
+strongest_clean_extractor_candidate = I14.2-3
+final_prototype_d_success_supported = false
+ready_for_i14_4_i14_5 = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+Prototype D now has replay/stress-backed runtime evidence for direct generative
+enrichment, direct extractive depletion with leakage caveat, and processor
+redistribution. The extractor side is clearer than before: I14.2 remains the
+native/source-current extractive row with a leakage caveat; I14.2-2 reinforces
+the extractor mechanism but preserves that caveat; I14.2-3 supplies clean
+bounded leakage only through an explicit producer-mediated leakage gate. That
+is useful bridge evidence, but it is not native LGRC clean-extractor evidence
+and it does not open ecology/resource/agency claims.
+
+This is not a final Prototype D synthesis. It is a pre-composition index for
+I14.4 and I14.5. Neutral circulation and phase-coupled generator/extractor
+composition still have to be attempted before I15 can classify the full
+Prototype D state.
 ```
 
 ### Iteration 15 - Prototype Composition And Atlas Classification

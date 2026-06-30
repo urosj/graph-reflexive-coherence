@@ -664,6 +664,27 @@ missing source row
 unsafe ecology relabel
 ```
 
+N28-derived circulation and exchange rows need special handling. N28 showed
+source-backed generative, extractive, competitive, neutral, processor, and
+transition-surface regimes under replay and stress, but it did not prove an
+ordered environmental circulation loop. In N29, these rows may define bridge
+motifs and future composition targets. They must not be upgraded into closed
+capacity cycles unless a later runtime row shows ordered dependency:
+
+```text
+leg A changes local capacity distribution
+leg B consumes A's changed distribution as source-current input
+leg B returns or redirects capacity along the reverse or complementary arc
+later A-side state depends on B's changed distribution
+```
+
+Likewise, a phase-coupled generator/extractor exchange is a future composition
+candidate, not a current Prototype D result. The guard is that the generative
+leg must remain generative, the extractive leg must remain extractive, the
+phase relation must be source-current, neither leg may be relabeled as the
+other, and closed-circulation replay/control checks must pass before any loop
+claim is made.
+
 ## Iteration Plan
 
 ### Phase A - Demand, Supply, And Bridge Schema
@@ -723,6 +744,16 @@ Iteration 11.1-C - Stronger Replay And Stress Matrix
 Iteration 12 - Prototype B: Boundary / Shared-Medium Unit
 Iteration 13 - Prototype C: Proxy / Susceptibility / Re-Entry
 Iteration 14 - Prototype D: Generative / Extractive Medium Reshaping
+Iteration 14-A - Prototype D Runtime Admission Schema
+Iteration 14.1 - Generative Enrichment Runtime Prototype
+Iteration 14.2 - Extractive Depletion Runtime Prototype
+Iteration 14.3 - Processor / Redistribution Runtime Prototype
+Iteration 14-B - Controls For I14.1-I14.3
+Iteration 14-C - Replay / Stress For I14.1-I14.3
+Iteration 14.4 - Neutral Circulation Composition Attempt
+Iteration 14.5 - Phase-Coupled Generator / Extractor Composition Attempt
+Iteration 14-D - Loop / Composition Controls For I14.4-I14.5
+Iteration 14-E - Replay / Stress For I14.4-I14.5
 Iteration 15 - Prototype Composition And Atlas Classification
 ```
 
@@ -952,6 +983,229 @@ ecology success
 The correct positive result is a bounded proxy / susceptibility / re-entry
 bridge candidate, not learning, choice, agency, native role selection, or
 semantic return.
+
+Prototype D starts at I14 and has a fourth center of gravity. It should not
+rerun N28 replay/stress matrices or try to prove an environmental loop. It
+should synthesize N28's source-backed medium-reshaping regimes into five
+ecology-facing motifs:
+
+```text
+generative_enrichment_motif:
+  focal basin persists while neighboring or surrounding capacity becomes more
+  distinguishable, better supported, or better bounded.
+
+extractive_depletion_motif:
+  focal basin persists while neighboring or surrounding capacity is depleted,
+  flattened, or made less basin-forming.
+
+processor_redistribution_motif:
+  one region is depleted while another is enriched, with the focal persistence
+  and role distinction preserved.
+
+neutral_circulation_implication:
+  balanced or near-neutral redistribution suggests a possible circulation
+  construction when paired with an opposite orientation, but it is not itself a
+  closed circulation loop.
+
+phase_coupled_generator_extractor_implication:
+  a future construction target where a generative enrichment leg and an
+  extractive depletion leg are phase-related as source-current exchange, but
+  the current row remains motif/debt only.
+```
+
+I14 should return to the original N28 artifacts, reports, visual manifests,
+and closeout rows for the source basis. N29 I5-I8 may be used as indexes only.
+Each motif row should record the N28 source basis, ecology demand served,
+supplied capability, bridge motif, remaining producer / medium /
+naturalization debt, downstream ecology probe suggested, and claim ceiling.
+
+The intended positive result is:
+
+```text
+N28 supplies replay/stress-backed environmental exchange regimes that can seed
+N29 ecology bridge motifs.
+```
+
+The blocked results are:
+
+```text
+closed environmental circulation loop
+resource economy
+coordinated exchange cycle
+agentic ecology runtime
+cooperation
+exploitation
+altruism
+biological agency
+```
+
+I14 is a start, not the end of Prototype D. If N29 next seeks runtime
+prototypes, the tranche should be staged so the first three source-backed
+medium-reshaping motifs are not given the same evidential status as the two
+loop-like composition implications.
+
+Provisional Prototype D runtime structure:
+
+```text
+I14-A  = Prototype D Runtime Admission Schema
+  Freeze shared fixture rules, source-current requirements, producer visibility,
+  motif-specific thresholds, controls, replay policy, visualization caveats,
+  and claim ceilings for Prototype D runtime rows.
+
+I14.1  = Generative Enrichment Runtime Prototype
+  Runtime exemplar for focal persistence plus neighboring capacity gain.
+
+I14.2  = Extractive Depletion Runtime Prototype
+  Runtime exemplar for focal persistence plus neighboring capacity loss,
+  depletion, or flattening.
+
+I14.3  = Processor / Redistribution Runtime Prototype
+  Runtime exemplar for local capacity redistribution where one region is
+  depleted while another is enriched.
+
+I14-B  = Controls for I14.1-I14.3
+  Label-only, visual-only, report-only, focal-survival-only, resource/economy,
+  cooperation/exploitation, producer-hidden-state, N28-relabel, and
+  aggregate-only redistribution controls. The N28-relabel control must fail
+  only when a row copies N28 by label; it must still allow N28 source-current
+  rows to serve as source inputs when the N29 row creates its own artifact,
+  manifest, threshold record, lineage audit, and claim boundary.
+
+I14-C  = Replay / Stress for I14.1-I14.3
+  Artifact replay, snapshot/load, duplicate replay, order checks where
+  applicable, and bounded stress over the three direct runtime motifs. Stress
+  should include neighbor-gain ablation for I14.1, degradation / leakage-boundary
+  separation for I14.2, and route-lobe opposition removal or aggregate-only
+  redistribution for I14.3.
+
+I14.2-1 = Clean Extractive Alternative Source Search
+  If I14-C preserves the I14.2 leakage caveat, search the existing
+  source-backed N28 extractive rows for a cleaner replacement: supported,
+  source-current, extractive, negative-neighbor-capacity evidence with
+  merge/leakage below its declared ceiling. This row must not consume
+  neutral-gap, transition, rejected, or unclassified rows as extractive
+  positives. If no clean replacement is found, record the blocker and do not
+  rerun I14-B/C for I14.2-1.
+
+I14.2-1-B = Focused Clean Extractive Controls
+  If I14.2-1 finds no replacement, run focused controls over the blocker:
+  over-ceiling extractor as clean support, neutral-gap transition substitution,
+  threshold retuning, caveat erasure, report-only search as runtime, rerun
+  without candidate, source-manifest gaps, and exploitation/resource relabels.
+  All must fail closed. This validates the blocker; it does not create support.
+
+I14.2-1-C = Focused Clean Extractive Replay / Stress
+  Replay/stress must be explicitly blocked or not applicable when no
+  replacement runtime candidate exists. This records that there is no clean
+  extractor artifact to replay or stress. I14.5 may still consume original
+  I14.2 only with its leakage caveat intact.
+
+I14.2-2 = Extractive Reinforcement Runtime Candidate
+  Add a different kind of alternative from I14.2-1. This row should not search
+  for clean bounded leakage and should not replace I14.2. Instead, consume a
+  supported source-current N28 extractive mechanism-diversity row to reinforce
+  I14.2 as an extractive/depletion motif with a different geometry. The
+  expected role is mechanism-diversity reinforcement with the leakage caveat
+  preserved: useful extractor evidence, not clean leakage support, not
+  exploitation, and not ecology success. It requires its own focused controls
+  and replay/stress before being used as control-backed Prototype D evidence.
+
+I14.2-2-B = Focused Extractive Reinforcement Controls
+  Validate the I14.2-2 reinforcement row against label-only mechanism
+  diversity, report-only runtime, N28 relabel, focal-survival-only,
+  polarity-ablation, mechanism-attribution-ablation, clean-leakage relabel,
+  threshold-retune, replacement-overclaim, and exploitation/resource relabel
+  controls. The row may survive controls only as caveated reinforcement.
+
+I14.2-2-C = Focused Extractive Reinforcement Replay / Stress
+  Replay and stress the I14.2-2 runtime artifact. Stable replay and bounded
+  stress may support a second extractor mechanism for Prototype D, but only
+  with the over-ceiling merge/leakage caveat intact. This can strengthen I14.5
+  as extractor-side mechanism diversity, not as clean bounded leakage.
+
+I14.2-3 = Leakage-Gated Extractor Construction Attempt
+  Try a different path from I14.2-1 and I14.2-2: construct an extractor from
+  the primary I14.2 source-current trace under a declared producer policy that
+  preserves the extractive capacity deltas while adding an explicit leakage
+  gate. This may count only if all neighbor/medium capacity deltas remain
+  negative and above degradation floors, focal floors remain preserved,
+  merge/leakage falls below the original ceiling with a non-rounding-level
+  margin, no neutral-gap rows are consumed, and thresholds are not retuned.
+  If successful, classify it as a producer-mediated leakage-gated extractor
+  construction candidate pending focused controls and replay/stress, not
+  native LGRC evidence or final clean extractor support. Uniform attenuation
+  that clears leakage only by rounding-scale headroom does not count.
+
+I14.2-3-B = Focused Leakage-Gated Extractor Controls
+  Validate the I14.2-3 leakage-gated row against hidden gate, gate-as-native,
+  threshold-retune, uniform-attenuation, neutral-gap backfill, label-only,
+  source-caveat erasure, rounding-margin, report-only, and ecology/resource
+  relabel controls. The row may survive controls only as explicit
+  producer-mediated bridge evidence pending replay/stress.
+
+I14.2-3-C = Focused Leakage-Gated Extractor Replay / Stress
+  Replay and stress the I14.2-3 runtime artifact. Stable replay and bounded
+  stress may support the leakage-gated extractor as producer-mediated
+  clean bounded-leakage bridge evidence. It must not retroactively upgrade the
+  original I14.2 source row, must not make the leakage gate native LGRC, and
+  must not open ecology, resource, exploitation, cooperation, or agency claims.
+
+I14.4  = Neutral Circulation Composition Attempt
+  Opposite-orientation or ordered-dependency construction attempt for the
+  neutral circulation implication. This remains a composition attempt until
+  ordered source-current dependency and replay/order controls pass.
+
+I14.5  = Phase-Coupled Generator / Extractor Composition Attempt
+  Generator leg plus extractor leg with source-current phase relation. This
+  remains a composition attempt until gain/loss dependency is ordered,
+  source-current, and replay/control-backed.
+
+I14-D  = Loop / Composition Controls for I14.4-I14.5
+  Order inversion, missing feedback, label-only circulation, hidden producer
+  coupling, regime-averaging, merge/leakage-as-cycle, and resource-economy
+  relabel controls.
+
+I14-E  = Replay / Stress for I14.4-I14.5
+  Replay and stress only if I14.4/I14.5 produce admissible source-current
+  composition rows. Otherwise record blocked composition debt.
+
+I14* = Prototype D Synthesis
+  Synthesize I14 through I14.2-3-C into a compact carry-forward record. The
+  synthesis must distinguish direct source-current motifs from the
+  producer-mediated leakage-gated extractor, preserve the original I14.2
+  leakage caveat, keep native clean extractor support blocked, and hand
+  I14.4/I14.5 a searchable pre-composition Prototype D state without opening
+  closed circulation, exchange cycle, resource economy, ecology success,
+  cooperation, exploitation, or agency claims.
+```
+
+The important split is:
+
+```text
+I14.1-I14.3 = runtime prototypes of already supported N28 motif classes
+I14.4-I14.5 = new composition attempts that may become loop candidates
+```
+
+I14.1-I14.3 should be read as candidate creation unless I14-B and I14-C pass.
+I14.2 has an explicit caveat: its merge/leakage value is above the N28 ceiling,
+so it can only be interpreted as extractive-mechanism exceedance evidence, not
+as clean bounded leakage. I14.2-1 is the follow-up admission/search row for a
+cleaner source-backed extractor. If it finds no replacement, I14.5 may still
+use I14.2 only with the leakage caveat intact. I14.2-1-B/C validates that this
+blocker fails closed and that replay/stress is blocked by the absence of a
+runtime replacement. I14.2-2 is a different follow-up: it reinforces I14.2 via
+an alternative extractive mechanism while preserving the same kind of leakage
+caveat. I14.2-2-B/C can make that reinforcement replay/stress-backed, but it
+still cannot support clean bounded leakage. I14.2-3 is the leakage-gated
+construction attempt and must be kept separate from both: it may create a
+cleaner extractor only as producer-mediated candidate pending focused controls
+and replay/stress, and only if the leakage margin is not rounding-scale. I14.3
+must be evaluated through opposed route-lobe capacity deltas; aggregate
+near-neutral capacity alone is not enough.
+
+For now, I14's five motifs are sufficient for Prototype D admission. Loop
+composition remains downstream debt until the I14.4/I14.5 path exists and
+passes its own controls.
 
 ### Phase D - Probe Contracts And Closeout
 

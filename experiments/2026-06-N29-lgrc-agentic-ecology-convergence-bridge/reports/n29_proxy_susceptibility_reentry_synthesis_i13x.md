@@ -4,7 +4,20 @@ Status: `passed`
 
 Acceptance state: `accepted_i13x_two_geometry_prototype_c_synthesis_ready_for_i14`
 
-Output digest: `679a34a70231150ccae123e8ad391c41544bd94b5a82b70f00e0ccc1f5400e04`
+Output digest: `39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d`
+
+## Search Summary
+
+```text
+prototype_family = proxy_susceptibility_reentry
+prototype_c_runtime_evidence_supported = true
+runtime_candidate_count = 2
+control_backed_candidate_count = 2
+replay_stress_backed_candidate_count = 2
+strongest_local_candidate = I13.2
+final_prototype_c_success_supported = false
+ready_for_iteration_14 = true
+```
 
 ## Read
 

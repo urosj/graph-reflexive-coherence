@@ -1,0 +1,479 @@
+{
+  "acceptance_state": "accepted_extractive_depletion_mechanism_diversity_runtime_candidate_pending_focused_controls_replay_stress",
+  "artifact_id": "n29_extractive_depletion_reinforcement_runtime_i1422",
+  "checks": [
+    {
+      "check_id": "i14_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14a_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_1_blocker_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_1_b_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_1_c_replay_stress_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_n28_artifact_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_n28_row_matches_expected",
+      "passed": true
+    },
+    {
+      "check_id": "source_n28_row_supported",
+      "passed": true
+    },
+    {
+      "check_id": "source_n28_row_is_extractive",
+      "passed": true
+    },
+    {
+      "check_id": "source_n28_row_is_source_current",
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_non_empty",
+      "passed": true
+    },
+    {
+      "check_id": "source_manifest_paths_exist",
+      "passed": true
+    },
+    {
+      "check_id": "source_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_artifact_written",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "neighbor_capacity_depletes",
+      "passed": true
+    },
+    {
+      "check_id": "focal_floors_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_not_replaced",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_1_clean_gap_not_erased",
+      "passed": true
+    },
+    {
+      "check_id": "leakage_caveat_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "clean_bounded_leakage_claim_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "controls_pending",
+      "passed": true
+    },
+    {
+      "check_id": "replay_stress_pending",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_support_claim_not_allowed_yet",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_record",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "direct_extractive_depletion_mechanism_diversity_runtime_candidate_with_leakage_caveat_pending_focused_controls_replay_stress",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_reinforcement_i1422.py",
+  "control_backed_runtime_supported": false,
+  "direct_runtime_candidate_created": true,
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_reinforcement_i1422.py",
+  "iteration": "I14.2-2",
+  "output_digest": "69b24367946ec06d3c6f8fad57786322d946c01d4c34dcaee4a82a45f8833025",
+  "prototype_d_runtime_support_claim_allowed": false,
+  "ready_for_i14_2_2_b_controls": true,
+  "ready_for_i14_2_2_c_replay_stress": false,
+  "replay_stress_backed_runtime_supported": false,
+  "runtime_candidate_row": {
+    "capacity_attribution_trace": {
+      "attribution_result": "source_current_neighbor_capacity_degradation_by_merge_leakage_boundary_flattening",
+      "boundary_flattening_dominant": true,
+      "capacity_attribution_basis": [
+        "neighbor_distinguishability_delta",
+        "neighbor_support_delta",
+        "neighbor_boundary_delta",
+        "environment_capacity_delta"
+      ],
+      "cross_shell_directional_drain_used": false,
+      "environment_capacity_budget_mismatch": false,
+      "hidden_capacity_attribution_policy_used": false,
+      "mechanism_class": "merge_leakage_dominant_boundary_flattening",
+      "medium_segmentation_policy_hidden": false,
+      "merge_leakage_dominant": true,
+      "n27_transfer_success_used_as_n28_success": false,
+      "producer_generativity_label_used_as_evidence": false,
+      "trace_id": "n28_i4c2_capacity_attribution_trace"
+    },
+    "claim_ceiling": "direct_extractive_depletion_mechanism_diversity_runtime_candidate_with_leakage_caveat_pending_focused_controls_replay_stress",
+    "direct_runtime_support_claim_allowed": false,
+    "evidence_lane": "direct_runtime_motif_reinforcement",
+    "focal_basin_stability_trace": {
+      "coherence_floor": 0.84,
+      "focal_basin_id": "n28_i4c2_focal_basin_zeta",
+      "focal_coherence_floor_preserved": true,
+      "focal_stability_preserved": true,
+      "focal_support_floor_preserved": true,
+      "post_coherence_min": 0.875,
+      "post_stability_score": 0.871,
+      "post_support_min": 0.868,
+      "pre_coherence_min": 0.882,
+      "pre_stability_score": 0.879,
+      "pre_support_min": 0.875,
+      "support_floor": 0.84,
+      "trace_id": "n28_i4c2_focal_basin_stability_trace"
+    },
+    "iteration_target": "I14.2-2",
+    "leakage_interpretation_record": {
+      "admissibility_interpretation": "I14.2-2 reinforces the extractive motif through a different source-current depletion mechanism. It intentionally preserves the extractive-mechanism leakage caveat instead of presenting itself as a clean bounded-leakage replacement.",
+      "clean_bounded_leakage_claim_allowed": false,
+      "extractive_mechanism_exceedance_recorded": true,
+      "extractive_mechanism_exceedance_value": 0.018,
+      "leakage_record_status": "extractive_mechanism_reinforcement_caveat",
+      "merge_leakage_below_ceiling": false,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.043
+    },
+    "merge_leakage_trace": {
+      "ceiling": 0.025,
+      "digest": "66d01ad761471d9f27df7fe54c7f784ef27e39e329780d6803cb6a25973aade2",
+      "value": 0.043
+    },
+    "motif_id": "extractive_depletion_motif",
+    "n28_relabel_as_n29_runtime": false,
+    "neighbor_or_medium_capacity_trace": {
+      "environment_capacity_delta": -0.065,
+      "neighbor_boundary_delta": -0.104,
+      "neighbor_count_only": false,
+      "neighbor_distinguishability_delta": -0.075,
+      "neighbor_label_only": false,
+      "neighbor_scope_id": "n28_i4c2_neighbor_capacity_shell_zeta",
+      "neighbor_support_delta": -0.055,
+      "post_environment_basin_forming_capacity": 0.622,
+      "post_neighbor_boundary_integrity": 0.612,
+      "post_neighbor_distinguishability": 0.646,
+      "post_neighbor_support_floor": 0.687,
+      "pre_environment_basin_forming_capacity": 0.687,
+      "pre_neighbor_boundary_integrity": 0.716,
+      "pre_neighbor_distinguishability": 0.721,
+      "pre_neighbor_support_floor": 0.742,
+      "trace_id": "n28_i4c2_neighbor_capacity_trace"
+    },
+    "new_n29_runtime_artifact_created": true,
+    "producer_visibility_record": {
+      "hidden_producer_state_used": false,
+      "producer_declared_before_use": true,
+      "producer_policy_id": "n29_i1422_extracting_mechanism_diversity_bridge_v1",
+      "producer_residue": "visible_source_row_and_n29_bridge_extraction",
+      "producer_residue_as_substrate_carried_allowed": false,
+      "producer_success_can_upgrade_native": false,
+      "source_producer_residue_record": {
+        "producer_generativity_label_used_as_evidence": false,
+        "producer_residue_as_substrate_carried_allowed": false,
+        "producer_residue_fields": [
+          "generative_extractive_persistence.generativity_label",
+          "generative_extractive_persistence.neighbor_attribution_policy",
+          "generative_extractive_persistence.medium_segmentation_policy"
+        ]
+      }
+    },
+    "regime_classification_trace": {
+      "classification_declared_before_use": true,
+      "classification_policy_id": "n28_i4c2_extractive_mechanism_diversity_policy_v1",
+      "classification_reason": "stable focal basin + degraded neighborhood capacity + merge/leakage-dominant boundary flattening mechanism",
+      "classification_result": "extractive",
+      "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+      "focal_persistence_axis": "stable",
+      "label_specific_thresholds_used": false,
+      "neighborhood_capacity_axis": "degrades",
+      "policy_retuned_for_label": false,
+      "post_hoc_boundary_shift_used": false,
+      "regime_evidence_role": "measured_contrast_alternative",
+      "regime_label": "extractive",
+      "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+      "trace_id": "n28_i4c2_extractive_mechanism_diversity_classification_trace"
+    },
+    "relation_to_i14_2": {
+      "mechanism_difference": "I14.2 uses the primary N28 I4-B extractive contrast. I14.2-2 uses N28 I4-C2, where depletion is attributed to a merge/leakage-dominant boundary-flattening mechanism.",
+      "original_i14_2_replaced": false,
+      "reinforcement_type": "mechanism_diversity_extracting_boundary_flattening",
+      "reinforces_i14_2": true
+    },
+    "relation_to_i14_2_1": {
+      "avoids_clean_replacement_search": true,
+      "clean_bounded_leakage_claim_allowed": false,
+      "i14_2_1_b_controls_preserved": "accepted_focused_clean_extractive_replacement_controls_fail_closed",
+      "i14_2_1_blocker_preserved": "blocked_no_clean_source_current_extractive_replacement",
+      "i14_2_1_c_replay_stress_blocker_preserved": "accepted_focused_clean_extractive_replay_stress_blocked_no_candidate"
+    },
+    "requires_i14_2_2_b_controls": true,
+    "requires_i14_2_2_c_replay_stress": true,
+    "row_decision": "partial",
+    "row_decision_scope": "extractive_reinforcement_runtime_candidate_created_pending_focused_controls_and_replay_stress",
+    "row_digest": "3800daf6ca6ee3e422760f53e909a33fed562cc705e5f04303ade1004d7fc1dc",
+    "runtime_artifact_manifest": [
+      {
+        "artifact_role": "n29_i14_2_2_runtime_candidate_artifact",
+        "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_reinforcement_runtime_i1422_artifact.json",
+        "sha256": "98de34b048182a34b59c2e9e4d02c5a52d04edd070d68a17fcd5b3348d08b042"
+      },
+      {
+        "artifact_role": "threshold_policy_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/threshold_policy_trace.json",
+        "sha256": "50e0c50513531fadca5e1599b61062f6a219a70f71a7e51b161a117ff38d0b54"
+      },
+      {
+        "artifact_role": "source_current_runtime_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/source_current_runtime_trace.json",
+        "sha256": "f25cf4bf26bc47db263823dc8f3091c4b10f12fa98c4235ac141b89ee51707c1"
+      },
+      {
+        "artifact_role": "focal_basin_stability_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/focal_basin_stability_trace.json",
+        "sha256": "3e4088ed1e8eb550451889e3c7b97518d83df08787b121621502fb979f647291"
+      },
+      {
+        "artifact_role": "neighbor_capacity_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/neighbor_capacity_trace.json",
+        "sha256": "f97ef3827480472a75810eeb75d67035a4a12ce25f4369950b9802c2eede7231"
+      },
+      {
+        "artifact_role": "extraction_leakage_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/extraction_leakage_trace.json",
+        "sha256": "51db1c42eaa460a557de4833948898a719883fede0053b50b651bf909867d63b"
+      },
+      {
+        "artifact_role": "capacity_attribution_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/capacity_attribution_trace.json",
+        "sha256": "f70a37d437a8d41f15764facfa3e7c1d251ab22a2a1158e29bc0cb42c46e5ad7"
+      },
+      {
+        "artifact_role": "classification_trace",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/classification_trace.json",
+        "sha256": "33f362ce967f9a7399aecb3276f1e4dd45aa96e24399c649494cdd7b31f5999d"
+      },
+      {
+        "artifact_role": "generative_extractive_core",
+        "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/generative_extractive_core.json",
+        "sha256": "f4ed005ea8532bdccb92867e2a2337c71f15978ad49558950cedcc429b135918"
+      }
+    ],
+    "runtime_candidate_created": true,
+    "runtime_claim_allowed_before_controls_replay": false,
+    "runtime_config_digest": "b219226bb3b9103a94687d102e80cd7fe27021154ed736cfaf712fa2eedfa76c",
+    "runtime_row_id": "n29_i14_2_2_extractive_depletion_mechanism_diversity_motif",
+    "runtime_target": "extractive_depletion_runtime_prototype",
+    "source_current_inputs": [
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/capacity_attribution_trace.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/classification_trace.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/extraction_leakage_trace.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/focal_basin_stability_trace.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/generative_extractive_core.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/neighbor_capacity_trace.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/source_current_runtime_trace.json",
+      "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe_artifacts/threshold_policy_trace.json"
+    ],
+    "source_motif_digest": "14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970",
+    "source_n28_artifact_id": "n28_extractive_mechanism_diversity_probe",
+    "source_n28_output_digest": "cd099229fa37dcdf1c497555fd6ace7d4435035c87e58c1eec9bac6acb7e7067",
+    "source_n28_row_digest": "653698de931037e832c2964766eef7644a78505f2775f15ddbe79e6adbf95204",
+    "source_n28_row_id": "n28_i4c2_row_extractive_mechanism_diversity_contrast",
+    "source_positive_evidence_shape": "focal basin remains above declared support/coherence/stability floors while neighboring capacity is depleted, flattened, or made less basin-forming in source-current runtime traces",
+    "threshold_record": {
+      "declared_before_use": true,
+      "measurement_source": "N28 I4-C2 source-current row threshold record",
+      "pass_fail_relation": "inherits N28 thresholds without retuning",
+      "source_threshold_record": {
+        "declared_before_use": true,
+        "environment_capacity_degradation_min": 0.05,
+        "environment_capacity_delta_min": 0.09,
+        "extractive_flattening_ceiling": 0.03,
+        "extractive_mechanism_exceedance_min": 0.005,
+        "focal_coherence_floor": 0.84,
+        "focal_extraction_cost_ceiling": 0.035,
+        "focal_stability_min": 0.86,
+        "focal_support_floor": 0.84,
+        "label_specific_thresholds_used": false,
+        "merge_leakage_ceiling": 0.025,
+        "neighbor_boundary_degradation_min": 0.06,
+        "neighbor_boundary_delta_min": 0.08,
+        "neighbor_distinguishability_degradation_min": 0.05,
+        "neighbor_distinguishability_delta_min": 0.08,
+        "neighbor_support_degradation_min": 0.04,
+        "neighbor_support_delta_min": 0.05,
+        "policy_id": "n28_i4c2_extractive_mechanism_diversity_policy_v1",
+        "policy_retuned_for_label": false,
+        "post_hoc_boundary_shift_used": false,
+        "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+        "thresholds_widened_relative_to_i4b": false
+      },
+      "threshold_record_id": "n29_i14_2_2_threshold_record"
+    },
+    "thresholds_declared_before_use": true,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    },
+    "why_not_stronger": [
+      "I14.2-2 is pending focused controls.",
+      "I14.2-2 is pending focused replay/stress.",
+      "The row reinforces extractive mechanism diversity, but does not solve the clean bounded-leakage gap.",
+      "It is not exploitation, resource use, ecology success, or agency."
+    ]
+  },
+  "script_sha256": "4b61df6162f2fac979113e34f47562865d2fc43681957ca5707c0b090edfcc24",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_prototype_d_five_motif_synthesis_with_loop_debt",
+      "artifact_id": "n29_generative_extractive_medium_reshaping_i14",
+      "iteration": "I14",
+      "output_digest": "14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_medium_reshaping_i14.json",
+      "sha256": "ab9093f18e9d90279f2f736a2cc909919dda686bd45581eedbfacaf4d2e90965",
+      "source_id": "n29_i14_prototype_d_motif_synthesis",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_d_runtime_admission_schema_no_runtime_evidence",
+      "artifact_id": "n29_generative_extractive_runtime_admission_i14a",
+      "iteration": "I14-A",
+      "output_digest": "aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_runtime_admission_i14a.json",
+      "sha256": "cb03f0202da7194e051ca1faeccaeadc0980452d74f4222c923d7e5264e3ae5e",
+      "source_id": "n29_i14a_runtime_admission_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extractive_depletion_motif_direct_runtime_candidate_pending_i14b_i14c",
+      "artifact_id": "n29_extractive_depletion_runtime_i142",
+      "iteration": "I14.2",
+      "output_digest": "4e42198b18f34700956b53b5873a56639c80b774259ebfbfda5d18168a4e57d0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_runtime_i142.json",
+      "sha256": "f153f1b7e897eecc00841012b82049e8690446f89710fd7f5a0ceaf4e90dea69",
+      "source_id": "n29_i14_2_original_extractive_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_clean_extractive_alternative_search_no_admissible_replacement_found",
+      "artifact_id": "n29_extractive_clean_alternative_search_i1421",
+      "iteration": "I14.2-1",
+      "output_digest": "61a3fec4f97b5549fa1621451e68b3a1118d3f1e773584fe614ec168bd221b97",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_alternative_search_i1421.json",
+      "sha256": "17523e3c2137487985cb2e8d6dbfb987f072e3477db9a5d3b0f7c05f56930ae1",
+      "source_id": "n29_i14_2_1_clean_replacement_search",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_focused_clean_extractive_replacement_controls_fail_closed",
+      "artifact_id": "n29_extractive_clean_alternative_controls_i1421b",
+      "iteration": "I14.2-1-B",
+      "output_digest": "c916ebb9aa294439821ea4e4e1c0d48eef7ed6461a5e417607dd957cb883c33d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_alternative_controls_i1421b.json",
+      "sha256": "9b811845c3887725e2feb368b00a946b9b12e60a0ff4e30463230f2574771183",
+      "source_id": "n29_i14_2_1_b_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_focused_clean_extractive_replay_stress_blocked_no_candidate",
+      "artifact_id": "n29_extractive_clean_alternative_replay_stress_i1421c",
+      "iteration": "I14.2-1-C",
+      "output_digest": "c4f229eba2bacc09f869d94c97335d7e13172aac29e1bdaad8b5124eee6b6b79",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_alternative_replay_stress_i1421c.json",
+      "sha256": "bad2da7764c9cbd7b541099a212e8e7b78264037453307515d2cae9938008167",
+      "source_id": "n29_i14_2_1_c_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extractive_mechanism_diversity_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_extractive_mechanism_diversity_probe",
+      "iteration": "4-C2",
+      "output_digest": "cd099229fa37dcdf1c497555fd6ace7d4435035c87e58c1eec9bac6acb7e7067",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe.json",
+      "sha256": "6c5f5053f30755526b1358651447130d1e9a2cf8f8e3a9f77ad426d5dfd4e56f",
+      "source_id": "n28_i4c2_extractive_mechanism_diversity_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n29_extractive_depletion_reinforcement_runtime_i1422_artifact",
+      "iteration": "I14.2-2",
+      "output_digest": "477accfff7db072c30a348212b9aaae2c30a8d25d368ceb470cf7e505856dc32",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_reinforcement_runtime_i1422_artifact.json",
+      "sha256": "98de34b048182a34b59c2e9e4d02c5a52d04edd070d68a17fcd5b3348d08b042",
+      "source_id": "n29_i14_2_2_runtime_artifact",
+      "status": "not_recorded"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14.2-2 Extractive Depletion Reinforcement Runtime Candidate",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

@@ -61,13 +61,20 @@
       "semantic_goal_claim_allowed": false
     }
   },
+  "claim_ceiling": "bounded two-geometry Prototype C proxy/susceptibility/re-entry runtime pattern; not semantic learning, choice, agency, native AP4/AP5, native support, ant-role behavior, or ecology success",
   "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_synthesis_i13x.py",
+  "control_backed_candidate_count": 2,
   "experiment_id": "N29",
   "failed_checks": [],
+  "final_prototype_c_success_supported": false,
   "generated_at": "2026-06-30T00:00:00+00:00",
   "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_proxy_susceptibility_reentry_synthesis_i13x.py",
   "iteration": "I13*",
-  "output_digest": "679a34a70231150ccae123e8ad391c41544bd94b5a82b70f00e0ccc1f5400e04",
+  "mapping_hygiene_preserved": true,
+  "output_digest": "39af6c7ae6b8877d62fcaf75287f1c28b88046e98955dbdfd0496374f951887d",
+  "prototype_c_bridge_role": "proxy/susceptibility/re-entry bridge: changed susceptibility state conditions later bounded differential response on re-entry",
+  "prototype_c_carry_forward_status": "two-geometry bounded runtime pattern: I13.1 narrow direct lane and I13.2 stronger buffered lane",
+  "prototype_c_runtime_evidence_supported": true,
   "prototype_c_synthesis": {
     "claim_ceiling": "bounded two-geometry Prototype C proxy/susceptibility/re-entry runtime pattern; not semantic learning, choice, agency, native AP4/AP5, native support, ant-role behavior, or ecology success",
     "control_backed_candidate_count": 2,
@@ -136,7 +143,18 @@
     },
     "synthesis_scope": "I13_through_I13_2_C"
   },
-  "script_sha256": "543e2125c218b1dc103194a49b0d7780f66a99560c29caa075153eaa1d500e40",
+  "prototype_family": "proxy_susceptibility_reentry",
+  "ready_for_iteration_14": true,
+  "remaining_debt": [
+    "broader topology generalization not tested",
+    "multi-route or multi-basin Prototype C not tested",
+    "producer-mediated susceptibility naturalization debt remains",
+    "native AP4/AP5 closure remains blocked",
+    "ecology integration remains future work"
+  ],
+  "replay_stress_backed_candidate_count": 2,
+  "runtime_candidate_count": 2,
+  "script_sha256": "e0360d41ac04a3e87d6d8d7d7387cd32de58d7047be2c89d89df42510c4cf25f",
   "source_artifacts": [
     {
       "acceptance_state": "accepted_mapping_only_proxy_susceptibility_reentry_bridge_ready_for_i14_no_i13abc",
@@ -240,5 +258,11 @@
     }
   ],
   "status": "passed",
+  "strongest_local_candidate": {
+    "candidate_id": "I13.2",
+    "min_supported_differential_response_margin": 0.14336,
+    "min_supported_susceptibility_margin": 0.0436,
+    "role": "buffered susceptibility lane alternative"
+  },
   "title": "Prototype C I13* Proxy / Susceptibility / Re-Entry Synthesis"
 }

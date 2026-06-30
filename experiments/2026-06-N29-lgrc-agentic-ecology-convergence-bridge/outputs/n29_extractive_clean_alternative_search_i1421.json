@@ -1,0 +1,567 @@
+{
+  "acceptance_state": "accepted_clean_extractive_alternative_search_no_admissible_replacement_found",
+  "artifact_id": "n29_extractive_clean_alternative_search_i1421",
+  "best_source_candidate": {
+    "admission_status": "blocked_by_merge_leakage_ceiling",
+    "artifact_manifest_paths_exist": true,
+    "artifact_manifest_sha256_matches": true,
+    "capacity_attribution_trace": {
+      "attribution_result": "source_current_neighbor_capacity_degradation_with_extractive_mechanism",
+      "capacity_attribution_basis": [
+        "neighbor_distinguishability_delta",
+        "neighbor_support_delta",
+        "neighbor_boundary_delta",
+        "environment_capacity_delta"
+      ],
+      "environment_capacity_budget_mismatch": false,
+      "hidden_capacity_attribution_policy_used": false,
+      "medium_segmentation_policy_hidden": false,
+      "n27_transfer_success_used_as_n28_success": false,
+      "producer_generativity_label_used_as_evidence": false,
+      "trace_id": "n28_i4b_capacity_attribution_trace"
+    },
+    "classification_result": {
+      "classification_declared_before_use": true,
+      "classification_policy_id": "n28_i4b_primary_extractive_policy_v1",
+      "classification_reason": "stable focal basin + degraded neighborhood capacity + high extraction/flattening/leakage mechanism",
+      "classification_result": "extractive",
+      "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+      "focal_persistence_axis": "stable",
+      "label_specific_thresholds_used": false,
+      "neighborhood_capacity_axis": "degrades",
+      "policy_retuned_for_label": false,
+      "post_hoc_boundary_shift_used": false,
+      "regime_evidence_role": "measured_contrast",
+      "regime_label": "extractive",
+      "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+      "trace_id": "n28_i4b_primary_extractive_classification_trace"
+    },
+    "clean_bounded_leakage_extractive_candidate": false,
+    "derived_report_only": false,
+    "merge_leakage_below_ceiling": false,
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_value": 0.033,
+    "neighbor_capacity_delta_trace": {
+      "environment_capacity_delta": -0.069,
+      "neighbor_boundary_delta": -0.081,
+      "neighbor_count_only": false,
+      "neighbor_distinguishability_delta": -0.077,
+      "neighbor_label_only": false,
+      "neighbor_scope_id": "n28_i4b_neighbor_capacity_shell_gamma",
+      "neighbor_support_delta": -0.063,
+      "post_environment_basin_forming_capacity": 0.626,
+      "post_neighbor_boundary_integrity": 0.621,
+      "post_neighbor_distinguishability": 0.639,
+      "post_neighbor_support_floor": 0.681,
+      "pre_environment_basin_forming_capacity": 0.695,
+      "pre_neighbor_boundary_integrity": 0.702,
+      "pre_neighbor_distinguishability": 0.716,
+      "pre_neighbor_support_floor": 0.744,
+      "trace_id": "n28_i4b_neighbor_capacity_trace"
+    },
+    "row_decision": "supported",
+    "source_artifact_id": "n28_primary_extractive_contrast_probe",
+    "source_current_inputs_non_empty": true,
+    "source_id": "n28_i4b_primary_extractive",
+    "source_output_digest": "5015b7f5a148db75c7513b8fa8f249d1ac1fb0fc5fe4c6150d28d4ae644f84d3",
+    "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_extractive_contrast_probe.json",
+    "source_role": "primary_extractive_i14_2_source",
+    "source_row_digest": "ead612a1a7e357a2082947d47ebad9ee643e678af57aa7864642e9de7a69426b",
+    "source_row_id": "n28_i4b_row_primary_extractive_contrast",
+    "why_not_i14_2_1_replacement": "source-current extractive row exists, but merge/leakage remains above the declared N28 ceiling; consuming it would preserve the I14.2 extractive-mechanism caveat instead of replacing it."
+  },
+  "candidate_search_rows": [
+    {
+      "admission_status": "blocked_by_merge_leakage_ceiling",
+      "artifact_manifest_paths_exist": true,
+      "artifact_manifest_sha256_matches": true,
+      "capacity_attribution_trace": {
+        "attribution_result": "source_current_neighbor_capacity_degradation_with_extractive_mechanism",
+        "capacity_attribution_basis": [
+          "neighbor_distinguishability_delta",
+          "neighbor_support_delta",
+          "neighbor_boundary_delta",
+          "environment_capacity_delta"
+        ],
+        "environment_capacity_budget_mismatch": false,
+        "hidden_capacity_attribution_policy_used": false,
+        "medium_segmentation_policy_hidden": false,
+        "n27_transfer_success_used_as_n28_success": false,
+        "producer_generativity_label_used_as_evidence": false,
+        "trace_id": "n28_i4b_capacity_attribution_trace"
+      },
+      "classification_result": {
+        "classification_declared_before_use": true,
+        "classification_policy_id": "n28_i4b_primary_extractive_policy_v1",
+        "classification_reason": "stable focal basin + degraded neighborhood capacity + high extraction/flattening/leakage mechanism",
+        "classification_result": "extractive",
+        "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+        "focal_persistence_axis": "stable",
+        "label_specific_thresholds_used": false,
+        "neighborhood_capacity_axis": "degrades",
+        "policy_retuned_for_label": false,
+        "post_hoc_boundary_shift_used": false,
+        "regime_evidence_role": "measured_contrast",
+        "regime_label": "extractive",
+        "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+        "trace_id": "n28_i4b_primary_extractive_classification_trace"
+      },
+      "clean_bounded_leakage_extractive_candidate": false,
+      "derived_report_only": false,
+      "merge_leakage_below_ceiling": false,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.033,
+      "neighbor_capacity_delta_trace": {
+        "environment_capacity_delta": -0.069,
+        "neighbor_boundary_delta": -0.081,
+        "neighbor_count_only": false,
+        "neighbor_distinguishability_delta": -0.077,
+        "neighbor_label_only": false,
+        "neighbor_scope_id": "n28_i4b_neighbor_capacity_shell_gamma",
+        "neighbor_support_delta": -0.063,
+        "post_environment_basin_forming_capacity": 0.626,
+        "post_neighbor_boundary_integrity": 0.621,
+        "post_neighbor_distinguishability": 0.639,
+        "post_neighbor_support_floor": 0.681,
+        "pre_environment_basin_forming_capacity": 0.695,
+        "pre_neighbor_boundary_integrity": 0.702,
+        "pre_neighbor_distinguishability": 0.716,
+        "pre_neighbor_support_floor": 0.744,
+        "trace_id": "n28_i4b_neighbor_capacity_trace"
+      },
+      "row_decision": "supported",
+      "source_artifact_id": "n28_primary_extractive_contrast_probe",
+      "source_current_inputs_non_empty": true,
+      "source_id": "n28_i4b_primary_extractive",
+      "source_output_digest": "5015b7f5a148db75c7513b8fa8f249d1ac1fb0fc5fe4c6150d28d4ae644f84d3",
+      "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_extractive_contrast_probe.json",
+      "source_role": "primary_extractive_i14_2_source",
+      "source_row_digest": "ead612a1a7e357a2082947d47ebad9ee643e678af57aa7864642e9de7a69426b",
+      "source_row_id": "n28_i4b_row_primary_extractive_contrast",
+      "why_not_i14_2_1_replacement": "source-current extractive row exists, but merge/leakage remains above the declared N28 ceiling; consuming it would preserve the I14.2 extractive-mechanism caveat instead of replacing it."
+    },
+    {
+      "admission_status": "blocked_by_merge_leakage_ceiling",
+      "artifact_manifest_paths_exist": true,
+      "artifact_manifest_sha256_matches": true,
+      "capacity_attribution_trace": {
+        "attribution_result": "source_current_cross_shell_neighbor_capacity_degradation_with_extractive_mechanism",
+        "capacity_attribution_basis": [
+          "neighbor_distinguishability_delta",
+          "neighbor_support_delta",
+          "neighbor_boundary_delta",
+          "environment_capacity_delta"
+        ],
+        "environment_capacity_budget_mismatch": false,
+        "hidden_capacity_attribution_policy_used": false,
+        "medium_segmentation_policy_hidden": false,
+        "n27_transfer_success_used_as_n28_success": false,
+        "producer_generativity_label_used_as_evidence": false,
+        "trace_id": "n28_i4c_capacity_attribution_trace"
+      },
+      "classification_result": {
+        "classification_declared_before_use": true,
+        "classification_policy_id": "n28_i4c_extractive_strengthening_policy_v1",
+        "classification_reason": "stable focal basin + degraded neighborhood capacity + high extraction/flattening/leakage mechanism",
+        "classification_result": "extractive",
+        "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+        "focal_persistence_axis": "stable",
+        "label_specific_thresholds_used": false,
+        "neighborhood_capacity_axis": "degrades",
+        "policy_retuned_for_label": false,
+        "post_hoc_boundary_shift_used": false,
+        "regime_evidence_role": "measured_contrast_alternative",
+        "regime_label": "extractive",
+        "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+        "trace_id": "n28_i4c_extractive_strengthening_classification_trace"
+      },
+      "clean_bounded_leakage_extractive_candidate": false,
+      "derived_report_only": false,
+      "merge_leakage_below_ceiling": false,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.036,
+      "neighbor_capacity_delta_trace": {
+        "environment_capacity_delta": -0.078,
+        "neighbor_boundary_delta": -0.09,
+        "neighbor_count_only": false,
+        "neighbor_distinguishability_delta": -0.086,
+        "neighbor_label_only": false,
+        "neighbor_scope_id": "n28_i4c_neighbor_capacity_shell_delta",
+        "neighbor_support_delta": -0.07,
+        "post_environment_basin_forming_capacity": 0.626,
+        "post_neighbor_boundary_integrity": 0.629,
+        "post_neighbor_distinguishability": 0.646,
+        "post_neighbor_support_floor": 0.688,
+        "pre_environment_basin_forming_capacity": 0.704,
+        "pre_neighbor_boundary_integrity": 0.719,
+        "pre_neighbor_distinguishability": 0.732,
+        "pre_neighbor_support_floor": 0.758,
+        "trace_id": "n28_i4c_neighbor_capacity_trace"
+      },
+      "row_decision": "supported",
+      "source_artifact_id": "n28_extractive_strengthening_contrast_probe",
+      "source_current_inputs_non_empty": true,
+      "source_id": "n28_i4c_extractive_strengthening",
+      "source_output_digest": "013286de4bfa88838412d757a47c76b09f6f98381f71bddfa21cd1f5f70ba9d6",
+      "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_strengthening_contrast_probe.json",
+      "source_role": "stronger_extractive_mechanism_source",
+      "source_row_digest": "756d226e16cbf51696ef67a615a312fdb548102acefd7672f3905ae8f7d2fc8d",
+      "source_row_id": "n28_i4c_row_extractive_strengthening_contrast",
+      "why_not_i14_2_1_replacement": "source-current extractive row exists, but merge/leakage remains above the declared N28 ceiling; consuming it would preserve the I14.2 extractive-mechanism caveat instead of replacing it."
+    },
+    {
+      "admission_status": "blocked_by_merge_leakage_ceiling",
+      "artifact_manifest_paths_exist": true,
+      "artifact_manifest_sha256_matches": true,
+      "capacity_attribution_trace": {
+        "attribution_result": "source_current_neighbor_capacity_degradation_by_merge_leakage_boundary_flattening",
+        "boundary_flattening_dominant": true,
+        "capacity_attribution_basis": [
+          "neighbor_distinguishability_delta",
+          "neighbor_support_delta",
+          "neighbor_boundary_delta",
+          "environment_capacity_delta"
+        ],
+        "cross_shell_directional_drain_used": false,
+        "environment_capacity_budget_mismatch": false,
+        "hidden_capacity_attribution_policy_used": false,
+        "mechanism_class": "merge_leakage_dominant_boundary_flattening",
+        "medium_segmentation_policy_hidden": false,
+        "merge_leakage_dominant": true,
+        "n27_transfer_success_used_as_n28_success": false,
+        "producer_generativity_label_used_as_evidence": false,
+        "trace_id": "n28_i4c2_capacity_attribution_trace"
+      },
+      "classification_result": {
+        "classification_declared_before_use": true,
+        "classification_policy_id": "n28_i4c2_extractive_mechanism_diversity_policy_v1",
+        "classification_reason": "stable focal basin + degraded neighborhood capacity + merge/leakage-dominant boundary flattening mechanism",
+        "classification_result": "extractive",
+        "extraction_leakage_axis": "high_extraction_flattening_leakage_or_merge",
+        "focal_persistence_axis": "stable",
+        "label_specific_thresholds_used": false,
+        "neighborhood_capacity_axis": "degrades",
+        "policy_retuned_for_label": false,
+        "post_hoc_boundary_shift_used": false,
+        "regime_evidence_role": "measured_contrast_alternative",
+        "regime_label": "extractive",
+        "shared_regime_policy_id": "n28_shared_regime_policy_v1",
+        "trace_id": "n28_i4c2_extractive_mechanism_diversity_classification_trace"
+      },
+      "clean_bounded_leakage_extractive_candidate": false,
+      "derived_report_only": false,
+      "merge_leakage_below_ceiling": false,
+      "merge_leakage_ceiling": 0.025,
+      "merge_leakage_value": 0.043,
+      "neighbor_capacity_delta_trace": {
+        "environment_capacity_delta": -0.065,
+        "neighbor_boundary_delta": -0.104,
+        "neighbor_count_only": false,
+        "neighbor_distinguishability_delta": -0.075,
+        "neighbor_label_only": false,
+        "neighbor_scope_id": "n28_i4c2_neighbor_capacity_shell_zeta",
+        "neighbor_support_delta": -0.055,
+        "post_environment_basin_forming_capacity": 0.622,
+        "post_neighbor_boundary_integrity": 0.612,
+        "post_neighbor_distinguishability": 0.646,
+        "post_neighbor_support_floor": 0.687,
+        "pre_environment_basin_forming_capacity": 0.687,
+        "pre_neighbor_boundary_integrity": 0.716,
+        "pre_neighbor_distinguishability": 0.721,
+        "pre_neighbor_support_floor": 0.742,
+        "trace_id": "n28_i4c2_neighbor_capacity_trace"
+      },
+      "row_decision": "supported",
+      "source_artifact_id": "n28_extractive_mechanism_diversity_probe",
+      "source_current_inputs_non_empty": true,
+      "source_id": "n28_i4c2_extractive_mechanism_diversity",
+      "source_output_digest": "cd099229fa37dcdf1c497555fd6ace7d4435035c87e58c1eec9bac6acb7e7067",
+      "source_path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe.json",
+      "source_role": "alternative_extractive_mechanism_source",
+      "source_row_digest": "653698de931037e832c2964766eef7644a78505f2775f15ddbe79e6adbf95204",
+      "source_row_id": "n28_i4c2_row_extractive_mechanism_diversity_contrast",
+      "why_not_i14_2_1_replacement": "source-current extractive row exists, but merge/leakage remains above the declared N28 ceiling; consuming it would preserve the I14.2 extractive-mechanism caveat instead of replacing it."
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i14_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14a_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_2_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14c_source_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_rows_checked",
+      "passed": true
+    },
+    {
+      "check_id": "all_source_rows_are_supported_extractive",
+      "passed": true
+    },
+    {
+      "check_id": "all_source_rows_are_source_current",
+      "passed": true
+    },
+    {
+      "check_id": "all_source_manifests_validate",
+      "passed": true
+    },
+    {
+      "check_id": "no_clean_source_candidate_found",
+      "passed": true
+    },
+    {
+      "check_id": "best_source_is_original_i14_2_source",
+      "passed": true
+    },
+    {
+      "check_id": "best_source_still_exceeds_ceiling",
+      "passed": true
+    },
+    {
+      "check_id": "lower_leakage_transition_rows_not_consumed",
+      "passed": true
+    },
+    {
+      "check_id": "original_i14_2_caveat_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "no_replacement_runtime_candidate_created",
+      "passed": true
+    },
+    {
+      "check_id": "i14b_i14c_rerun_not_required_without_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_record",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "clean_extractive_alternative_search_completed_no_runtime_replacement_original_i14_2_leakage_caveat_preserved",
+  "clean_bounded_extractive_runtime_claim_allowed": false,
+  "clean_replacement_candidate_created": false,
+  "clean_source_candidate_found": false,
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_clean_alternative_i1421.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_extractive_clean_alternative_i1421.py",
+  "i14_2_1_result": "blocked_no_clean_source_current_extractive_replacement",
+  "iteration": "I14.2-1",
+  "nonconsumable_lower_leakage_transition_rows": [
+    {
+      "consumable_as_i14_2_1_replacement": false,
+      "expected_label": "unclassified",
+      "extractive_flattening": null,
+      "extractive_flattening_ceiling": null,
+      "ge5_boundary_preservation_allowed": false,
+      "merge_leakage": null,
+      "merge_leakage_ceiling": null,
+      "new_source_current_evidence_opened": false,
+      "nonconsumption_reason": "This is an unclassified neutral-gap transition/control row, not a supported source-current extractive candidate. Lower leakage here cannot backfill I14.2.",
+      "observed_label": "unclassified",
+      "row_decision": "rejected",
+      "source_row_id": "n28_i4b_row_primary_extractive_contrast",
+      "transition_id": "neutral_gap_without_mixed_lobes",
+      "transition_row_id": "n28_i6a_n28_i4b_row_primary_extractive_contrast_neutral_gap_without_mixed_lobes",
+      "transition_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4b_row_primary_extractive_contrast_neutral_gap_without_mixed_lobes_trace.json",
+      "transition_trace_artifact_sha256": "c6e2ecdb9ee58bfabf2331fcc67435e3626576e944bcc4d606b087ab84dd7fdc",
+      "transition_trace_sha256_matches": true,
+      "would_be_below_leakage_ceiling": false
+    },
+    {
+      "consumable_as_i14_2_1_replacement": false,
+      "expected_label": "unclassified",
+      "extractive_flattening": null,
+      "extractive_flattening_ceiling": null,
+      "ge5_boundary_preservation_allowed": false,
+      "merge_leakage": null,
+      "merge_leakage_ceiling": null,
+      "new_source_current_evidence_opened": false,
+      "nonconsumption_reason": "This is an unclassified neutral-gap transition/control row, not a supported source-current extractive candidate. Lower leakage here cannot backfill I14.2.",
+      "observed_label": "unclassified",
+      "row_decision": "rejected",
+      "source_row_id": "n28_i4c_row_extractive_strengthening_contrast",
+      "transition_id": "neutral_gap_without_mixed_lobes",
+      "transition_row_id": "n28_i6a_n28_i4c_row_extractive_strengthening_contrast_neutral_gap_without_mixed_lobes",
+      "transition_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4c_row_extractive_strengthening_contrast_neutral_gap_without_mixed_lobes_trace.json",
+      "transition_trace_artifact_sha256": "3eff56a5ef5a4457a020d789cda83e2945d15a666667f7e6d5ad85658d22335a",
+      "transition_trace_sha256_matches": true,
+      "would_be_below_leakage_ceiling": false
+    },
+    {
+      "consumable_as_i14_2_1_replacement": false,
+      "expected_label": "unclassified",
+      "extractive_flattening": null,
+      "extractive_flattening_ceiling": null,
+      "ge5_boundary_preservation_allowed": false,
+      "merge_leakage": null,
+      "merge_leakage_ceiling": null,
+      "new_source_current_evidence_opened": false,
+      "nonconsumption_reason": "This is an unclassified neutral-gap transition/control row, not a supported source-current extractive candidate. Lower leakage here cannot backfill I14.2.",
+      "observed_label": "unclassified",
+      "row_decision": "rejected",
+      "source_row_id": "n28_i4c2_row_extractive_mechanism_diversity_contrast",
+      "transition_id": "neutral_gap_without_mixed_lobes",
+      "transition_row_id": "n28_i6a_n28_i4c2_row_extractive_mechanism_diversity_contrast_neutral_gap_without_mixed_lobes",
+      "transition_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4c2_row_extractive_mechanism_diversity_contrast_neutral_gap_without_mixed_lobes_trace.json",
+      "transition_trace_artifact_sha256": "541a7349708f85b1bb499ed40c7313d3fcc29476292c526ebded6b96ba6b6913",
+      "transition_trace_sha256_matches": true,
+      "would_be_below_leakage_ceiling": false
+    }
+  ],
+  "original_i14_2_status": {
+    "i14c_final_status": "bounded_extractive_depletion_replay_stress_supported_with_leakage_caveat",
+    "leakage_record_status": "extractive_mechanism_exceedance_caveat",
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_value": 0.033,
+    "original_i14_2_replaced": false,
+    "runtime_row_id": "n29_i14_2_extractive_depletion_motif",
+    "source_row_id": "n28_i4b_row_primary_extractive_contrast"
+  },
+  "output_digest": "61a3fec4f97b5549fa1621451e68b3a1118d3f1e773584fe614ec168bd221b97",
+  "prototype_d_runtime_support_claim_allowed": false,
+  "replacement_blockers": [
+    "all supported source-current N28 extractive rows exceed the merge/leakage ceiling",
+    "lower-leakage N28 transition rows are rejected or unclassified controls, not positive extractive candidates",
+    "N29 cannot retune N28 thresholds or relabel neutral-gap controls as extractive runtime evidence"
+  ],
+  "rerun_policy": {
+    "acceptable_future_rerun_shapes": [
+      "focused_i14_2_1_b_controls_and_i14_2_1_c_replay_stress",
+      "expanded_i14_b_i14_c_rollup_including_clean_extractive_candidate"
+    ],
+    "current_result_requires_i14b_i14c_rerun": false,
+    "future_clean_candidate_requires_controls": true,
+    "future_clean_candidate_requires_replay_stress": true,
+    "reason": "No replacement runtime candidate was created."
+  },
+  "script_sha256": "4fdcbdc482996da249a62a0b98ad612cb13bc4c39f33959a285c1fcc5244f73f",
+  "search_question": "Can the existing source-backed N28 extractive portfolio supply a direct I14.2 replacement whose merge/leakage is below the declared ceiling?",
+  "should_rerun_i14b_i14c_with_i14_2_1": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_prototype_d_five_motif_synthesis_with_loop_debt",
+      "artifact_id": "n29_generative_extractive_medium_reshaping_i14",
+      "iteration": "I14",
+      "output_digest": "14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_medium_reshaping_i14.json",
+      "sha256": "ab9093f18e9d90279f2f736a2cc909919dda686bd45581eedbfacaf4d2e90965",
+      "source_id": "n29_i14_prototype_d_motif_synthesis",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_d_runtime_admission_schema_no_runtime_evidence",
+      "artifact_id": "n29_generative_extractive_runtime_admission_i14a",
+      "iteration": "I14-A",
+      "output_digest": "aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_runtime_admission_i14a.json",
+      "sha256": "cb03f0202da7194e051ca1faeccaeadc0980452d74f4222c923d7e5264e3ae5e",
+      "source_id": "n29_i14a_runtime_admission_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extractive_depletion_motif_direct_runtime_candidate_pending_i14b_i14c",
+      "artifact_id": "n29_extractive_depletion_runtime_i142",
+      "iteration": "I14.2",
+      "output_digest": "4e42198b18f34700956b53b5873a56639c80b774259ebfbfda5d18168a4e57d0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_depletion_runtime_i142.json",
+      "sha256": "f153f1b7e897eecc00841012b82049e8690446f89710fd7f5a0ceaf4e90dea69",
+      "source_id": "n29_i14_2_original_extractive_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_direct_runtime_candidates_bounded_replay_stress_pending_classification",
+      "artifact_id": "n29_generative_extractive_direct_replay_stress_i14c",
+      "iteration": "I14-C",
+      "output_digest": "b10bf023a775433daa6dcf03805cabff606f6f81aaa94f16b0b677f73e9d8fa2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_direct_replay_stress_i14c.json",
+      "sha256": "6d45d005ff9d830657710bae70120ede2394b0a5655bb32eb6636e47667dec30",
+      "source_id": "n29_i14c_direct_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_primary_extractive_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_primary_extractive_contrast_probe",
+      "iteration": "4-B",
+      "output_digest": "5015b7f5a148db75c7513b8fa8f249d1ac1fb0fc5fe4c6150d28d4ae644f84d3",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_primary_extractive_contrast_probe.json",
+      "sha256": "77cb500ad3a1042f1a5c19631e190b0f8657da2046958d145ebb7b927e05ec53",
+      "source_id": "n28_i4b_primary_extractive",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extractive_strengthening_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_extractive_strengthening_contrast_probe",
+      "iteration": "4-C",
+      "output_digest": "013286de4bfa88838412d757a47c76b09f6f98381f71bddfa21cd1f5f70ba9d6",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_strengthening_contrast_probe.json",
+      "sha256": "dc6c58b3beacd33266dbbdfaf9e22a050d4b74c0394a202794a3c0ef56ebe99e",
+      "source_id": "n28_i4c_extractive_strengthening",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_extractive_mechanism_diversity_ge3_measured_contrast_pending_replay_controls",
+      "artifact_id": "n28_extractive_mechanism_diversity_probe",
+      "iteration": "4-C2",
+      "output_digest": "cd099229fa37dcdf1c497555fd6ace7d4435035c87e58c1eec9bac6acb7e7067",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_extractive_mechanism_diversity_probe.json",
+      "sha256": "6c5f5053f30755526b1358651447130d1e9a2cf8f8e3a9f77ad426d5dfd4e56f",
+      "source_id": "n28_i4c2_extractive_mechanism_diversity",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_regime_boundary_transition_matrix_same_policy_supported_no_new_ge_support",
+      "artifact_id": "n28_regime_boundary_transition_matrix",
+      "iteration": "6-A",
+      "output_digest": "e6b0afbf81873e519db458e611cc01a1c11b2e9b5c2dead899946b270077700d",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix.json",
+      "sha256": "7d876c308c4e9e63eef97ec36fac2178ec1a00b869b93816bace31f59e0ac0b6",
+      "source_id": "n28_i6a_transition_matrix_context",
+      "status": "passed"
+    }
+  ],
+  "source_selection_policy": {
+    "must_be_source_current": true,
+    "must_be_supported_extractive_candidate": true,
+    "must_have_merge_leakage_below_declared_ceiling": true,
+    "must_not_use_transition_or_null_rows_as_positive_evidence": true,
+    "must_preserve_negative_neighbor_capacity_delta": true,
+    "thresholds_retuned_for_n29": false
+  },
+  "status": "passed",
+  "title": "Prototype D I14.2-1 Clean Extractive Alternative Search",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

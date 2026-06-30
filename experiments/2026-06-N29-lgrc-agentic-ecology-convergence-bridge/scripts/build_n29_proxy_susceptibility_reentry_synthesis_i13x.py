@@ -252,6 +252,32 @@ def build_synthesis() -> dict[str, Any]:
             source_artifact(source_id, SOURCE_PATHS[source_id], parsed)
             for source_id, parsed in sources.items()
         ],
+        "prototype_family": synthesis["prototype_family"],
+        "prototype_c_bridge_role": (
+            "proxy/susceptibility/re-entry bridge: changed susceptibility state "
+            "conditions later bounded differential response on re-entry"
+        ),
+        "prototype_c_runtime_evidence_supported": (
+            synthesis["replay_stress_backed_candidate_count"] >= 1
+        ),
+        "runtime_candidate_count": synthesis["runtime_candidate_count"],
+        "control_backed_candidate_count": synthesis["control_backed_candidate_count"],
+        "replay_stress_backed_candidate_count": synthesis[
+            "replay_stress_backed_candidate_count"
+        ],
+        "strongest_local_candidate": synthesis["strongest_local_candidate"],
+        "prototype_c_carry_forward_status": synthesis[
+            "prototype_c_carry_forward_status"
+        ],
+        "mapping_hygiene_preserved": synthesis["mapping_hygiene_records"][
+            "mapping_only_records_preserved"
+        ],
+        "final_prototype_c_success_supported": synthesis[
+            "final_prototype_c_success_supported"
+        ],
+        "ready_for_iteration_14": synthesis["ready_for_iteration_14"],
+        "claim_ceiling": synthesis["claim_ceiling"],
+        "remaining_debt": synthesis["remaining_debt"],
         "prototype_c_synthesis": synthesis,
         "claim_boundary": {"unsafe_claim_flags": UNSAFE_FLAGS},
         "checks": checks,
@@ -277,6 +303,19 @@ def write_report(path: Path, data: dict[str, Any]) -> None:
         f"Acceptance state: `{data['acceptance_state']}`",
         "",
         f"Output digest: `{data['output_digest']}`",
+        "",
+        "## Search Summary",
+        "",
+        "```text",
+        f"prototype_family = {data['prototype_family']}",
+        f"prototype_c_runtime_evidence_supported = {str(data['prototype_c_runtime_evidence_supported']).lower()}",
+        f"runtime_candidate_count = {data['runtime_candidate_count']}",
+        f"control_backed_candidate_count = {data['control_backed_candidate_count']}",
+        f"replay_stress_backed_candidate_count = {data['replay_stress_backed_candidate_count']}",
+        f"strongest_local_candidate = {data['strongest_local_candidate']['candidate_id']}",
+        f"final_prototype_c_success_supported = {str(data['final_prototype_c_success_supported']).lower()}",
+        f"ready_for_iteration_14 = {str(data['ready_for_iteration_14']).lower()}",
+        "```",
         "",
         "## Read",
         "",

@@ -1,0 +1,640 @@
+{
+  "acceptance_state": "accepted_prototype_d_runtime_admission_schema_no_runtime_evidence",
+  "artifact_id": "n29_generative_extractive_runtime_admission_i14a",
+  "checks": [
+    {
+      "check_id": "i10_prototype_schema_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_motif_synthesis_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i14_has_five_motifs",
+      "passed": true
+    },
+    {
+      "check_id": "n28_closeout_ready_for_n29",
+      "passed": true
+    },
+    {
+      "check_id": "schema_only_no_runtime_support",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_evidence_not_opened",
+      "passed": true
+    },
+    {
+      "check_id": "positive_runtime_rows_not_created",
+      "passed": true
+    },
+    {
+      "check_id": "direct_target_count_is_three",
+      "passed": true
+    },
+    {
+      "check_id": "composition_target_count_is_two",
+      "passed": true
+    },
+    {
+      "check_id": "direct_targets_are_exactly_I14_1_I14_2_I14_3",
+      "passed": true
+    },
+    {
+      "check_id": "composition_targets_are_exactly_I14_4_I14_5",
+      "passed": true
+    },
+    {
+      "check_id": "direct_lane_and_composition_lane_disjoint",
+      "passed": true
+    },
+    {
+      "check_id": "direct_targets_are_not_future_loop_implications",
+      "passed": true
+    },
+    {
+      "check_id": "composition_targets_not_eligible_for_runtime_candidate_before_controls",
+      "passed": true
+    },
+    {
+      "check_id": "composition_targets_keep_loop_claims_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "all_direct_targets_require_i14b_and_i14c",
+      "passed": true
+    },
+    {
+      "check_id": "all_composition_targets_require_i14d_and_i14e",
+      "passed": true
+    },
+    {
+      "check_id": "required_runtime_fields_complete",
+      "passed": true
+    },
+    {
+      "check_id": "required_runtime_fields_cover_source_current_and_claims",
+      "passed": true
+    },
+    {
+      "check_id": "required_field_policy_blocks_missing_fields",
+      "passed": true
+    },
+    {
+      "check_id": "threshold_policy_blocks_posthoc_thresholds",
+      "passed": true
+    },
+    {
+      "check_id": "producer_policy_blocks_hidden_producer_state",
+      "passed": true
+    },
+    {
+      "check_id": "visualization_caveat_blocks_visual_proof",
+      "passed": true
+    },
+    {
+      "check_id": "direct_controls_count",
+      "passed": true
+    },
+    {
+      "check_id": "aggregate_only_redistribution_control_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "source_schema_digest_validation_field_required",
+      "passed": true
+    },
+    {
+      "check_id": "leakage_interpretation_record_field_required",
+      "passed": true
+    },
+    {
+      "check_id": "composition_controls_count",
+      "passed": true
+    },
+    {
+      "check_id": "visualization_caveat_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_blocks_resource_economy_and_cooperation",
+      "passed": true
+    },
+    {
+      "check_id": "source_digest_chain_i10_i14_n28_verified",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_current_claims": [
+      "runtime_prototype_supported",
+      "closed_environmental_circulation_loop",
+      "resource_economy",
+      "coordinated_exchange_cycle",
+      "agentic_ecology_runtime",
+      "cooperation",
+      "exploitation",
+      "altruism",
+      "biological_agency"
+    ],
+    "maximum_allowed_current_claim": "schema_frozen_ready_for_i14_1_to_i14_5",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_generative_extractive_runtime_admission_i14a.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_generative_extractive_runtime_admission_i14a.py",
+  "iteration": "I14-A",
+  "output_digest": "aeb89e95e03cf7f64e395375db8012b4b603491a7dfc1bc95c32ae55a46923cc",
+  "runtime_admission_schema": {
+    "claim_ceiling": "prototype_d_runtime_admission_schema_only_no_runtime_support",
+    "composition_attempt_targets": [
+      {
+        "allowed_current_claim": "composition_attempt_target_only_no_loop_evidence",
+        "blocked_overclaims": [
+          "closed circulation loop before ordered dependency",
+          "resource economy",
+          "coordinated exchange cycle",
+          "cooperation"
+        ],
+        "claim_ceiling": "composition_attempt_pending_ordered_dependency_controls_replay_stress",
+        "eligible_for_composition_attempt_after_schema": true,
+        "eligible_for_runtime_candidate_after_schema": false,
+        "evidence_lane": "composition_attempt",
+        "iteration_target": "I14.4",
+        "loop_or_exchange_cycle_claim_allowed_before_i14d_i14e": false,
+        "motif_id": "neutral_circulation_implication",
+        "ordered_dependency_requirements": [
+          "leg_a_changes_local_capacity_distribution",
+          "leg_b_consumes_leg_a_changed_distribution_as_source_current_input",
+          "leg_b_returns_or_redirects_capacity_along_reverse_or_complementary_arc",
+          "later_leg_a_side_state_depends_on_leg_b_changed_distribution"
+        ],
+        "requires_i14d_controls": true,
+        "requires_i14e_replay_stress": true,
+        "runtime_target": "neutral_circulation_composition_attempt",
+        "source_motif_claim_ceiling": "neutral_circulation_implication_not_closed_loop",
+        "source_motif_requires_future_runtime_construction": true,
+        "source_motif_runtime_status": "source_backed_implication_future_runtime_composition_required"
+      },
+      {
+        "allowed_current_claim": "composition_attempt_target_only_no_loop_evidence",
+        "blocked_overclaims": [
+          "coordinated exchange cycle before phase dependency",
+          "resource economy",
+          "cooperation",
+          "exploitation"
+        ],
+        "claim_ceiling": "composition_attempt_pending_ordered_dependency_controls_replay_stress",
+        "eligible_for_composition_attempt_after_schema": true,
+        "eligible_for_runtime_candidate_after_schema": false,
+        "evidence_lane": "composition_attempt",
+        "iteration_target": "I14.5",
+        "loop_or_exchange_cycle_claim_allowed_before_i14d_i14e": false,
+        "motif_id": "phase_coupled_generator_extractor_implication",
+        "ordered_dependency_requirements": [
+          "generative_leg_remains_generative",
+          "extractive_leg_remains_extractive",
+          "phase_relation_is_source_current",
+          "gain_loss_timing_or_location_is_conditioned_by_prior_leg_state",
+          "neither_leg_is_relabelled_as_the_other"
+        ],
+        "requires_i14d_controls": true,
+        "requires_i14e_replay_stress": true,
+        "runtime_target": "phase_coupled_generator_extractor_composition_attempt",
+        "source_motif_claim_ceiling": "phase_coupled_generator_extractor_implication_not_resource_economy",
+        "source_motif_requires_future_runtime_construction": true,
+        "source_motif_runtime_status": "source_backed_implication_future_runtime_composition_required"
+      }
+    ],
+    "composition_control_schema": [
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_order_inversion_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_missing_feedback_leg_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_label_only_circulation_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_hidden_producer_coupling_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_regime_averaging_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_merge_leakage_as_cycle_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_resource_economy_relabel_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_closed_loop_promotion_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "composition_attempt"
+      }
+    ],
+    "derived_report_only_blocks_runtime_support": true,
+    "direct_control_schema": [
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_label_only_medium_reshaping_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_report_only_as_runtime_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_visual_only_as_runtime_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_focal_survival_only_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_aggregate_only_redistribution_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_hidden_producer_state_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_n28_relabel_as_n29_runtime_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_resource_economy_relabel_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_cooperation_exploitation_relabel_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      },
+      {
+        "claim_allowed_when_triggered": false,
+        "control_id": "prototype_d_total_coherence_visualization_overclaim_control",
+        "control_status": "frozen_required_for_future_rows",
+        "expected_result_when_triggered": "failed_closed",
+        "rung_effect": "blocks_runtime_support_or_demotes_to_debt_record",
+        "target_lane": "direct_runtime_motif"
+      }
+    ],
+    "direct_runtime_targets": [
+      {
+        "allowed_current_claim": "runtime_admission_target_only_no_positive_runtime_evidence",
+        "blocked_overclaims": [
+          "resource economy",
+          "cooperation",
+          "biological agency",
+          "semantic construction"
+        ],
+        "claim_ceiling": "direct_runtime_prototype_candidate_pending_controls_replay_stress",
+        "eligible_for_runtime_candidate_after_schema": true,
+        "evidence_lane": "direct_runtime_motif",
+        "iteration_target": "I14.1",
+        "motif_id": "generative_enrichment_motif",
+        "positive_evidence_shape": "focal basin remains above declared support/coherence/stability floors while neighboring capacity, support, distinguishability, or boundary metrics increase in source-current runtime traces",
+        "requires_i14b_controls": true,
+        "requires_i14c_replay_stress": true,
+        "runtime_claim_allowed_before_i14b_i14c": false,
+        "runtime_target": "generative_enrichment_runtime_prototype",
+        "source_motif_claim_ceiling": "bounded_environment_enrichment_motif_not_resource_economy",
+        "source_motif_requires_future_runtime_construction": false,
+        "source_motif_runtime_status": "source_backed_motif_synthesis"
+      },
+      {
+        "allowed_current_claim": "runtime_admission_target_only_no_positive_runtime_evidence",
+        "blocked_overclaims": [
+          "exploitation",
+          "selective uptake",
+          "resource consumption",
+          "biological agency"
+        ],
+        "claim_ceiling": "direct_runtime_prototype_candidate_pending_controls_replay_stress",
+        "eligible_for_runtime_candidate_after_schema": true,
+        "evidence_lane": "direct_runtime_motif",
+        "iteration_target": "I14.2",
+        "motif_id": "extractive_depletion_motif",
+        "positive_evidence_shape": "focal basin remains above declared support/coherence/stability floors while neighboring capacity is depleted, flattened, or made less basin-forming in source-current runtime traces",
+        "requires_i14b_controls": true,
+        "requires_i14c_replay_stress": true,
+        "runtime_claim_allowed_before_i14b_i14c": false,
+        "runtime_target": "extractive_depletion_runtime_prototype",
+        "source_motif_claim_ceiling": "bounded_environment_depletion_motif_not_exploitation",
+        "source_motif_requires_future_runtime_construction": false,
+        "source_motif_runtime_status": "source_backed_motif_synthesis"
+      },
+      {
+        "allowed_current_claim": "runtime_admission_target_only_no_positive_runtime_evidence",
+        "blocked_overclaims": [
+          "intentional processing",
+          "tool use",
+          "resource routing economy",
+          "semantic action"
+        ],
+        "claim_ceiling": "direct_runtime_prototype_candidate_pending_controls_replay_stress",
+        "eligible_for_runtime_candidate_after_schema": true,
+        "evidence_lane": "direct_runtime_motif",
+        "iteration_target": "I14.3",
+        "motif_id": "processor_redistribution_motif",
+        "positive_evidence_shape": "focal basin remains bounded while one local region loses capacity and another gains capacity under one declared source-current runtime policy",
+        "requires_i14b_controls": true,
+        "requires_i14c_replay_stress": true,
+        "runtime_claim_allowed_before_i14b_i14c": false,
+        "runtime_target": "processor_redistribution_runtime_prototype",
+        "source_motif_claim_ceiling": "bounded_processor_redistribution_motif_not_intentional_processing",
+        "source_motif_requires_future_runtime_construction": false,
+        "source_motif_runtime_status": "source_backed_motif_synthesis"
+      }
+    ],
+    "global_total_coherence_invariance_audited": false,
+    "n28_relabel_as_n29_runtime_blocks_support": true,
+    "n29_i5_i8_orientation_only": true,
+    "positive_runtime_rows_created": false,
+    "producer_policy": {
+      "future_producer_record_required_fields": [
+        "producer_visibility_record",
+        "producer_policy_id",
+        "producer_declared_before_use",
+        "producer_residue",
+        "producer_success_can_upgrade_native"
+      ],
+      "hidden_producer_state_blocks_support": true,
+      "producer_allowed_if_same_discipline_as_n05_n28": true,
+      "producer_schedule_must_be_declared_before_use": true,
+      "producer_success_cannot_upgrade_native": true,
+      "producer_visibility_required": true
+    },
+    "ready_for_i14_1": true,
+    "ready_for_i14_2": true,
+    "ready_for_i14_3": true,
+    "ready_for_i14_4": true,
+    "ready_for_i14_5": true,
+    "replay_policy": {
+      "composition_required_replay_modes": [
+        "artifact_replay",
+        "snapshot_load_replay",
+        "duplicate_replay",
+        "order_inversion_control",
+        "feedback_removed_or_phase_broken_control"
+      ],
+      "direct_runtime_required_replay_modes": [
+        "artifact_replay",
+        "snapshot_load_replay",
+        "duplicate_replay"
+      ],
+      "duplicate_second_emit_false_means_duplicate_suppression_when_digest_stable": true,
+      "not_run_blocks_dependent_runtime_claim": true
+    },
+    "required_field_policy": {
+      "failed_open_control_effect": "invalidates_runtime_row",
+      "missing_artifact_manifest_effect": "blocks_runtime_support",
+      "missing_required_field_effect": "blocks_runtime_support",
+      "missing_threshold_record_effect": "blocks_runtime_support",
+      "not_run_control_or_replay_effect": "blocks_dependent_runtime_claim",
+      "thresholds_declared_after_result_effect": "blocks_runtime_support",
+      "unsafe_claim_flag_true_effect": "blocks_runtime_support"
+    },
+    "required_runtime_row_fields": [
+      "runtime_row_id",
+      "iteration_target",
+      "motif_id",
+      "evidence_lane",
+      "source_motif_digest",
+      "source_schema_digest_validation",
+      "source_current_inputs",
+      "runtime_artifact_manifest",
+      "runtime_config_digest",
+      "producer_visibility_record",
+      "threshold_record",
+      "thresholds_declared_before_use",
+      "focal_basin_stability_trace",
+      "neighbor_or_medium_capacity_trace",
+      "regime_classification_trace",
+      "capacity_attribution_trace",
+      "merge_leakage_trace",
+      "leakage_interpretation_record",
+      "visualization_manifest_refs",
+      "visualization_caveat",
+      "control_results",
+      "replay_requirements",
+      "stress_requirements",
+      "claim_ceiling",
+      "unsafe_claim_flags",
+      "why_not_stronger"
+    ],
+    "runtime_evidence_opened": false,
+    "schema_id": "n29_i14a_prototype_d_runtime_admission_schema",
+    "schema_scope": "Prototype D runtime admission only; no runtime evidence opened",
+    "source_current_runtime_required": true,
+    "source_i10_output_digest": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+    "source_i14_output_digest": "14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970",
+    "source_n28_closeout_output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+    "stress_policy": {
+      "broad_margin_robustness_must_not_be_inferred_from_n28": true,
+      "composition_stress_required_before_loop_claim": true,
+      "direct_runtime_stress_required_before_candidate_close": true,
+      "order_of_magnitude_robustness_must_not_be_inferred_from_n28": true
+    },
+    "threshold_policy": {
+      "future_threshold_record_required_fields": [
+        "threshold_name",
+        "threshold_value",
+        "declared_before_use",
+        "measurement_source",
+        "pass_fail_relation",
+        "why_threshold_is_motif_specific_not_retuned"
+      ],
+      "motif_specific_thresholds_allowed": true,
+      "row_specific_thresholds_required_before_use": true,
+      "thresholds_may_not_be_retuned_to_make_label_pass": true,
+      "thresholds_may_not_widen_n28_claim_ceiling": true
+    },
+    "visualization_caveat": "The visualization plots local focal-basin and neighborhood capacity metrics; it does not plot or audit global total-coherence invariance.",
+    "visualization_policy": {
+      "global_total_coherence_checksum_required_if_claimed": true,
+      "total_coherence_visualization_caveat_required": true,
+      "visuals_allowed_as_diagnostic_context": true,
+      "visuals_cannot_replace_source_current_runtime_trace": true
+    }
+  },
+  "script_sha256": "714656cfbe3880689c222d545f28cb0d93b1c9a15054bf7227fb25c9c0f05006",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_prototype_admission_schema_frozen_no_prototype_rows",
+      "artifact_id": "n29_prototype_admission_schema_i10",
+      "iteration": "I10",
+      "output_digest": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_admission_schema_i10.json",
+      "sha256": "f6a4c85c23822f7819a3c4be93fc742c66394140156f3125a286a2dc2bc89e40",
+      "source_id": "n29_i10_prototype_admission_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_d_five_motif_synthesis_with_loop_debt",
+      "artifact_id": "n29_generative_extractive_medium_reshaping_i14",
+      "iteration": "I14",
+      "output_digest": "14635c6e36f3f63c47a1a66b77a2fa5d4d5f8a555376197101dd839b9cb9f970",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_medium_reshaping_i14.json",
+      "sha256": "ab9093f18e9d90279f2f736a2cc909919dda686bd45581eedbfacaf4d2e90965",
+      "source_id": "n29_i14_prototype_d_motif_synthesis",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n28_c6_closeout_n29_handoff_ready",
+      "artifact_id": "n28_closeout_and_n29_handoff",
+      "iteration": "8",
+      "output_digest": "80ca5f1fcd75372fbd0f05065e67e077d140f4e9ff5931574f4d1beefee2ec4f",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+      "sha256": "7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+      "source_id": "n28_closeout_and_n29_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_ge4_regime_separation_candidate_pending_stress",
+      "artifact_id": "n28_replay_capacity_attribution_matrix",
+      "iteration": "5",
+      "output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+      "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+      "source_id": "n28_replay_capacity_attribution_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_stress_variant_backed_ge5_regime_separation_candidate_pending_claim_classification",
+      "artifact_id": "n28_stress_regime_separation_matrix",
+      "iteration": "6",
+      "output_digest": "fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+      "sha256": "a2b510af65d5fba2924493df65a6472d19ae811d8c455f2e4ffb92710e00e785",
+      "source_id": "n28_stress_regime_separation_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_focused_margin_variants_ge5_stress_envelope_supported_pending_claim_classification",
+      "artifact_id": "n28_focused_margin_variant_stress_envelope",
+      "iteration": "6-C",
+      "output_digest": "0dc3cc97695338d5f54719e993a4dd2912d5983eb03f066c3de04e027f3c06b3",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_focused_margin_variant_stress_envelope.json",
+      "sha256": "0c89e5a911967bd92dd4d344edbf4ef611e339cb3b9184f02f4eb6fb66033857",
+      "source_id": "n28_focused_margin_variant_stress_envelope",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "artifact_id": "n28_generative_extractive_visualization",
+      "iteration": "not_recorded",
+      "output_digest": "5d425668e294b37e5561904d0e3ad6f01b1eba2ffecafb68f4343f7aed19c349",
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_extractive_visualization.json",
+      "sha256": "9eaec3d86d2caf7b49b1429e8708cbe48457dd3c4c9ccfc1a983a0ba0b6d235e",
+      "source_id": "n28_generative_extractive_visualization",
+      "status": "not_recorded"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14-A Runtime Admission Schema"
+}
