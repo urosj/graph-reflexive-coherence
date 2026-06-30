@@ -1,0 +1,221 @@
+{
+  "acceptance_state": "accepted_alternative_boundary_shared_medium_bridge_candidate_controlled_replay_stress",
+  "artifact_id": "n29_boundary_shared_medium_unit_alternative_replay_stress_i121c",
+  "checks": [
+    {
+      "check_id": "i121a_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i121b_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i121b_failed_open_count_zero",
+      "passed": true
+    },
+    {
+      "check_id": "all_replay_stress_rows_pass_or_demote_cleanly",
+      "passed": true
+    },
+    {
+      "check_id": "alternative_is_repeatability_not_replacement",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "alternative bounded boundary/shared-medium bridge exemplar candidate; repeatability evidence only",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i121.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_unit_i121.py",
+  "iteration": "I12.1-C",
+  "margin_comparison_with_i12": {
+    "claim_effect": "describe I12.1 as repeatability strengthening, not as a higher-margin or widened-envelope result",
+    "comparison_scope": "I12_reference_vs_I12_1_sibling_variant",
+    "margin_interpretation": "repeatability_strengthening_not_widened_stress_margin",
+    "numeric_margin_summary": {
+      "basin_side_support_or_coherence_delta": 2.0,
+      "basin_side_support_or_coherence_i12": 1.1,
+      "basin_side_support_or_coherence_i12_1": 3.1,
+      "counterpart_support_or_coherence_i12": 3.0,
+      "counterpart_support_or_coherence_i12_1": 1.0,
+      "incident_edge_count_i12": 2.0,
+      "incident_edge_count_i12_1": 2.0,
+      "merge_leakage_declared_ceiling_i12_and_i12_1": 0.0,
+      "observed_absolute_incident_flux_i12": 0.0,
+      "observed_absolute_incident_flux_i12_1": 0.0,
+      "replay_stress_passed_count_i12": 6,
+      "replay_stress_passed_count_i12_1": 6
+    },
+    "what_did_not_improve": [
+      "merge/leakage stress headroom is unchanged because both rows remain at observed flux 0.0 against a declared ceiling of 0.0",
+      "the primary I12 envelope is not widened",
+      "the sibling row does not replace the primary I12 reference"
+    ],
+    "what_improved": [
+      "basin-side support/coherence value is higher in the sibling variant",
+      "Prototype B now has two controlled source-current orientations instead of one exact row"
+    ]
+  },
+  "matrix_summary": {
+    "failed_or_blocked_count": 0,
+    "passed_count": 6,
+    "prototype_b_alternative_bridge_candidate_supported": true,
+    "row_count": 6
+  },
+  "output_digest": "09a8717a2079adb047f21e30dddfe36f6030a2d6875cb72bf2e9d54d8af51693",
+  "primary_i12_envelope_widened": false,
+  "primary_i12_replaced": false,
+  "prototype_b_alternative_bridge_candidate_supported": true,
+  "prototype_b_repeatability_strengthened": true,
+  "prototype_success_claimed": false,
+  "ready_for_iteration_13": true,
+  "replay_stress_rows": [
+    {
+      "pass_condition": "same variant unit row reconstructs from artifact manifest",
+      "row_id": "artifact_only_replay",
+      "status": "passed"
+    },
+    {
+      "pass_condition": "variant basin, medium, and counterpart assignments survive snapshot load",
+      "row_id": "snapshot_load_replay",
+      "status": "passed"
+    },
+    {
+      "pass_condition": "duplicate run preserves variant classification within tolerance",
+      "row_id": "duplicate_replay",
+      "status": "passed"
+    },
+    {
+      "pass_condition": "source coupling trace remains bounded and injected pressure fails closed",
+      "row_id": "medium_coupling_stress",
+      "status": "passed",
+      "supporting_rows": [
+        {
+          "claim_effect": "source merge/leakage ceiling preserved",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.0,
+          "status": "passed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "source_merge_leakage_ceiling"
+        },
+        {
+          "claim_effect": "non-source pressure would block stronger claim",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.1,
+          "status": "failed_closed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "injected_merge_leakage_pressure_fail_closed"
+        }
+      ]
+    },
+    {
+      "pass_condition": "merge pressure remains bounded or demotes claim",
+      "row_id": "merge_pressure_stress",
+      "status": "passed",
+      "supporting_rows": [
+        {
+          "claim_effect": "source merge/leakage ceiling preserved",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.0,
+          "status": "passed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "source_merge_leakage_ceiling"
+        },
+        {
+          "claim_effect": "non-source pressure would block stronger claim",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.1,
+          "status": "failed_closed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "injected_merge_leakage_pressure_fail_closed"
+        }
+      ]
+    },
+    {
+      "pass_condition": "variant counterpart remains distinguishable or row is demoted",
+      "row_id": "counterpart_separability_stress",
+      "status": "passed",
+      "supporting_controls": [
+        "old_basin_thickening_as_counterpart_control",
+        "label_only_boundary_control"
+      ]
+    }
+  ],
+  "runtime_ecology_success_claimed": false,
+  "script_sha256": "5c1cf13fcaab7eaeeaf7cb61d7254b34ce996bee7a55ee9751a7b9d81cd4247b",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_alternative_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_runtime_i121a",
+      "output_digest": "0c3cb123e7245747705de79d2e732e962de014882fdf5fae7d668b152b189dd4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_runtime_i121a.json",
+      "role": "alternative_runtime_unit_source",
+      "sha256": "5607004a4d67064817624dadc64dc49d9fa8b33a63a740151ab6cef24f50e92a",
+      "source_id": "n29_i121a_runtime_unit",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_boundary_shared_medium_controls_fail_closed",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_controls_i121b",
+      "output_digest": "e6392bd4457bca541dd0f1693dda5a4e6ea1d1fb26f6bd5bb4844c360adba8dc",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_controls_i121b.json",
+      "role": "alternative_control_source",
+      "sha256": "4662794e11f6ddf726a830c78dd6174eca0dcd6b89375b95a424d5e4fc67ba03",
+      "source_id": "n29_i121b_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_window_persistence_replay_mb4_extension_no_mb6",
+      "artifact_id": "n25_2_multi_window_persistence_replay",
+      "output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+      "role": "variant_replay_source",
+      "sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+      "source_id": "n25_2_multi_window_persistence_replay",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_stress_variant_matrix_mb5_retained_multi_window_ready_pending_gate",
+      "artifact_id": "n25_2_stress_variant_matrix",
+      "output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "role": "variant_stress_source",
+      "sha256": "ad303bb671707d877d80f4a2baa05b99f4d28d658f99f65a28c266fab96462b5",
+      "source_id": "n25_2_stress_variant_matrix",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Alternative Unit Replay And Stress"
+}

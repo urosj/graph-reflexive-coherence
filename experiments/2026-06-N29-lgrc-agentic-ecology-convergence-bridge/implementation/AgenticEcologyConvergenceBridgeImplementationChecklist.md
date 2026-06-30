@@ -1568,22 +1568,592 @@ native shared-medium coordination, agency, or prototype success.
 
 ### Iteration 12 - Prototype B: Boundary / Shared-Medium Unit
 
-- [ ] Build or reconstruct a boundary/shared-medium unit miniature from N16/N25/N25.2 evidence where source support permits.
-- [ ] Record multi-basin, child-basin, mobile-boundary, and shared-medium debt distinctions.
-- [ ] Record ecology demand served.
-- [ ] Record supplied capability and bridge motif.
-- [ ] Record remaining producer, medium, or naturalization debt.
-- [ ] Record exact downstream ecology probe suggested by the prototype.
-- [ ] Preserve N25/N25.2 scoped limits.
-- [ ] Block ant body, organism, and native colony relabels.
+Direction:
+
+```text
+I12 is the second bridge prototype family. It should not repeat Prototype A's
+trace / pressure / loop pattern. Prototype A asks whether a trace, a pressure
+condition, and a bounded response can form a runnable bridge exemplar. Prototype
+B asks a different ecology question:
+
+Can an ecology component be built from prior LGRC/GRC primitives where a basin
+boundary, a shared or adjacent medium, and a distinguishable counterpart region
+form one controlled boundary/shared-medium unit?
+
+In agentic ecology terms, this is the low-level scaffold that later "body /
+environment", "agent / medium", "neighbor", "trail substrate", "resource
+field", or "colony-local interaction surface" language would require. But I12
+must not claim any of those semantic or biological readings. Its job is to
+construct the structural bridge underneath them:
+
+boundary:
+  a source-backed distinction between an internal basin-side state and an
+  external, adjacent, child-basin, or shared-medium side
+
+shared / adjacent medium:
+  a medium or interface through which influence, leakage, separation, or
+  coupling can be measured without collapsing the sides into one basin
+
+counterpart region:
+  another basin, child basin, neighbor region, or medium-side region whose
+  separability can be audited rather than inferred by labels
+
+The intended I12 bridge is:
+
+a bounded basin-side state is distinguishable
+there is a medium or adjacent region it can couple to
+the coupling can be measured without erasing boundary separability
+controls reject label-only boundary, merge/leakage-as-success, and native
+shared-medium coordination relabels
+
+Primary source families should be N16 for AP6 boundary separability and
+shared-medium controls, N25/N25.1/N25.2 for child-basin / multi-basin formation
+and Phase 8 multi-basin runtime surfaces, and N24/N28 where abundance or
+medium-reshaping context is needed. N16 supplies the boundary discipline; N25.2
+supplies the strongest current multi-basin runtime evidence; N24/N28 can supply
+medium-capacity context only when needed.
+
+I12 is an admission / design step. It should decide the exact Prototype B unit,
+source rows, debt, controls, and whether a runtime instantiation is available.
+It should not yet overclaim the full I12-A/B/C tranche. If I12 is clean, I12-A
+through I12-C can then be run together.
+
+Allowed ceiling:
+
+bounded boundary/shared-medium bridge exemplar candidate
+
+Blocked readings:
+
+agent body
+organism/environment boundary
+native colony boundary
+native shared-medium coordination
+semantic trail or pheromone substrate
+resource ownership
+multi-agent interaction
+agency
+life
+```
+
+- [x] Build or reconstruct a boundary/shared-medium unit miniature from N16/N25/N25.2 evidence where source support permits.
+- [x] Record multi-basin, child-basin, mobile-boundary, and shared-medium debt distinctions.
+- [x] Record ecology demand served.
+- [x] Record supplied capability and bridge motif.
+- [x] Record remaining producer, medium, or naturalization debt.
+- [x] Record exact downstream ecology probe suggested by the prototype.
+- [x] Preserve N25/N25.2 scoped limits.
+- [x] Block ant body, organism, and native colony relabels.
 
 Expected result:
 
 ```text
 status = passed
 prototype_family = boundary_shared_medium_unit
-claim_ceiling = source_backed_bridge_prototype_or_mapping_only_with_debt
+claim_ceiling = bounded_boundary_shared_medium_bridge_exemplar_candidate_pending_i12abc
+ready_for_i12a_i12b_i12c = true
+ready_for_iteration_13 = false
+```
+
+Implemented result:
+
+```text
+artifact = outputs/n29_boundary_shared_medium_unit_i12.json
+report = reports/n29_boundary_shared_medium_unit_i12.md
+script = scripts/build_n29_boundary_shared_medium_unit_i12.py
+status = passed
+acceptance_state = accepted_boundary_shared_medium_unit_runtime_tranche_admission_pending_i12abc
+prototype_family = boundary_shared_medium_unit
+prototype_class = boundary_mobile_expression
+prototype_subclass = boundary_shared_medium_unit_not_mobile_body
+source_count = 12
+output_digest = 069c034eee8430a307da163ae9f9459978687cd0ad5d150de0f36c97bb4c4137
+failed_checks = []
+primary_runtime_source = n25_2_closeout_mb6
+boundary_discipline_source = n16_closeout_ap6_boundary
+prototype_success_claimed = false
+runtime_instantiation_claimed = false
+bridge_exemplar_claim_allowed = false
+admission_status = source_backed_runtime_tranche_admission_pending_i12abc
+mobile_boundary_claim_opened = false
+stable_debt_ids_present = true
+i12a_required_candidate_field_count = 21
+i12b_expected_control_result_count = 10
+hard_gates_before_iteration_13_defined = true
+ready_for_i12a_i12b_i12c = true
+ready_for_iteration_13 = false
+```
+
+Iteration 12 interpretation:
+
+```text
+Iteration 12 admits Prototype B as a boundary/shared-medium unit design. It
+does not claim Prototype B success yet. The selected bridge unit has three
+geometric parts: a basin-side state, a shared or adjacent medium, and a
+counterpart region. N25.2 is consumed as the primary scoped MB6 runtime source,
+N16 is consumed as AP6 boundary discipline, N25/N25.1 explain the gap and
+Phase 8 implementation chain, and N24/N28 remain context-only sources for
+medium capacity or medium reshaping.
+
+The geometric point is separability under measurable coupling: the basin side
+and counterpart side must remain distinguishable while shared/adjacent-medium
+coupling, leakage, and merge pressure are auditable. I12 therefore hands off to
+I12-A/B/C for runtime extraction, controls, and replay/stress. The handoff now
+requires one exact bridge-unit row instead of wholesale MB6 inheritance, records
+stable debt IDs, names the subclass as
+`boundary_shared_medium_unit_not_mobile_body`, and keeps I13 closed behind hard
+runtime/control/replay gates. It blocks agent body, organism/environment
+boundary, native colony boundary, native shared-medium coordination, semantic
+trail or pheromone substrate, resource ownership, multi-agent interaction,
+agency, life, sentience, native support, and Phase 8 completion.
+```
+
+### Iteration 12-A - Boundary / Shared-Medium Runtime Unit Extraction
+
+- [x] Extract one exact source-current bridge-unit row from N25.2-style runtime artifacts.
+- [x] Record basin-side state, shared/adjacent-medium trace, and counterpart-region trace separately.
+- [x] Record source runtime artifact ID, digest, SHA-256 manifest, and extraction rule.
+- [x] Confirm the unit is not inherited from MB6 wholesale.
+- [x] Preserve claim ceiling below Prototype B success and ecology success.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_boundary_shared_medium_unit_runtime_i12a.json
+report = reports/n29_boundary_shared_medium_unit_runtime_i12a.md
+script = scripts/build_n29_boundary_shared_medium_unit_i12abc.py
+status = passed
+acceptance_state = accepted_exact_runtime_unit_extraction_pending_controls_replay_stress
+basin_side_state = child_basin_core_0
+shared_or_adjacent_medium = source_edge_1_route_candidate_medium_channel
+counterpart_region = competing_sink_2
+output_digest = 518d48d038ad7d27062b785820c91f69c35e5925e1feb864ff59a1204c4a93e5
+failed_checks = []
+runtime_instantiation_claimed = true
+prototype_b_candidate_supported = false
+runtime_ecology_success_claimed = false
+ready_for_i12b = true
+ready_for_i12c = false
+ready_for_iteration_13 = false
+```
+
+I12-A interpretation:
+
+```text
+I12-A extracts a real source-current bridge unit from the N25.2 native runtime
+positive probe. The basin side is the emitted child-basin core `0`; the
+shared/adjacent medium is the route-candidate source edge / medium channel
+through which coupling and leakage are measured; the counterpart region is the
+competing sink `2` from the same native route-candidate set. This is not a
+semantic neighbor, body part, agent, trail substrate, or ecology interaction.
+It is an exact geometric row pending controls and replay/stress.
+```
+
+### Iteration 12-B - Boundary / Shared-Medium Control Packet
+
+- [x] Run label-only boundary control.
+- [x] Run visual-only boundary control.
+- [x] Run merge/leakage-as-success control.
+- [x] Run old-basin-thickening-as-counterpart control.
+- [x] Run producer-as-native control.
+- [x] Run N16 artifact-boundary as native-runtime relabel control.
+- [x] Run N25.2 MB6 as ant-ecology relabel control.
+- [x] Run native shared-medium coordination relabel control.
+- [x] Run semantic trail / pheromone relabel control.
+- [x] Run agent-body relabel control.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_boundary_shared_medium_unit_controls_i12b.json
+report = reports/n29_boundary_shared_medium_unit_controls_i12b.md
+script = scripts/build_n29_boundary_shared_medium_unit_i12abc.py
+status = passed
+acceptance_state = accepted_boundary_shared_medium_controls_fail_closed
+control_count = 10
+failed_closed_count = 10
+failed_open_count = 0
+runtime_control_count = 8
+source_role_control_count = 2
+output_digest = cd617b24085747023ed6d68d8156790695b6f3ca894c77df436a4e15248af433
+failed_checks = []
+prototype_b_candidate_supported = false
+runtime_ecology_success_claimed = false
+ready_for_i12c = true
+ready_for_iteration_13 = false
+```
+
+I12-B interpretation:
+
+```text
+I12-B adds no positive evidence. It protects I12-A by showing that labels,
+visuals, merge/leakage, old-basin thickening, producer assistance, N16 artifact
+boundary relabeling, N25.2 MB6 relabeling, semantic medium labels, and
+agent-body language all fail closed or remain source-role controls. The row
+therefore keeps Prototype B below ecology success and below native
+shared-medium coordination.
+```
+
+### Iteration 12-C - Boundary / Shared-Medium Replay And Stress
+
+- [x] Run artifact-only replay check.
+- [x] Run snapshot/load replay check.
+- [x] Run duplicate replay check.
+- [x] Run medium-coupling stress.
+- [x] Run merge-pressure stress.
+- [x] Run counterpart-separability stress.
+- [x] Preserve demotion rule if stress collapses separability.
+- [x] Confirm unsafe claims remain false.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_boundary_shared_medium_unit_replay_stress_i12c.json
+report = reports/n29_boundary_shared_medium_unit_replay_stress_i12c.md
+script = scripts/build_n29_boundary_shared_medium_unit_i12abc.py
+status = passed
+acceptance_state = accepted_boundary_shared_medium_bridge_candidate_controlled_replay_stress
+row_count = 6
+passed_count = 6
+failed_or_blocked_count = 0
+prototype_b_bridge_exemplar_candidate_supported = true
+prototype_success_claimed = false
+runtime_ecology_success_claimed = false
+output_digest = 763752030ab58c6c73db61959b17426b63305c892bb875a6da150a4f3788df94
+failed_checks = []
 ready_for_iteration_13 = true
+```
+
+I12-C interpretation:
+
+```text
+I12-C supports a bounded Prototype B bridge-exemplar candidate: the exact
+runtime row from I12-A survives the replay/stress package and the I12-B controls
+fail closed. The result remains a bridge candidate, not Prototype B success in
+the strong ecology sense, not native shared-medium coordination, not an agent
+body, not multi-agent interaction, and not ant ecology implementation. With
+I12-A/B/C complete, I13 can start the proxy / susceptibility / re-entry
+prototype family.
+```
+
+I12-C strength and limit record:
+
+```text
+I12-C is strong enough for its bounded claim, but it is still narrow. It
+supports a controlled, replay/stress-backed Prototype B bridge-exemplar
+candidate over one exact source-current unit:
+
+  basin side = child_basin_core_0
+  shared/adjacent medium = source_edge_1_route_candidate_medium_channel
+  counterpart = competing_sink_2
+
+The result is credible because the unit is extracted rather than inherited
+wholesale from MB6, all three parts are present, controls fail closed, replay
+passes, stress rows pass or demote cleanly, and unsafe claims remain false.
+
+The result is still narrow because it is a single exact unit, the N25.2 source
+threshold is exact-floor in the reference row, tightened threshold stress fails
+closed, and the medium evidence is primarily bounded/no-leakage rather than a
+rich active shared-medium coupling regime. The counterpart is a competing route
+sink / counterpart candidate region, not a semantic neighbor, agent, or
+ecology participant.
+
+Therefore I12-C should be classified as:
+
+  valid_but_narrow_boundary_shared_medium_bridge_candidate
+
+not:
+
+  broad native shared-medium coordination
+  body/environment prototype success
+  multi-agent interaction
+  ant ecology implementation
+```
+
+### Iteration 12.1 - Alternative Boundary / Shared-Medium Sibling Candidate
+
+Direction:
+
+```text
+I12.1 should strengthen Prototype B by adding a second source-current
+boundary/shared-medium unit variant, not by optimizing or retuning the I12-A
+reference row. The intended source is the N25.2 I4-A route variant, which gives
+an alternative child-basin / route-candidate orientation:
+
+  primary I12 = core-0 / sink-2 reference unit
+  I12.1 = route-variant sibling unit, expected around core-2 orientation
+
+The goal is repeatability across a distinct basin/counterpart orientation. If
+I12.1-A/B/C pass, Prototype B will rest on two controlled runtime variants
+instead of a single exact row. This is not expected to widen the I12 stress
+envelope. If the sibling has a larger basin-side support/coherence value, record
+that narrowly as a local sibling-state difference rather than as improved
+merge/leakage headroom.
+
+Run I12.1 and I12.1-A/B/C as one operational tranche, like I11.1, but keep
+separate artifacts and sequential gating:
+
+  I12.1 = alternative sibling admission
+  I12.1-A = exact runtime unit extraction for the variant
+  I12.1-B = controls over the variant
+  I12.1-C = replay/stress over the variant
+
+If I12.1-A cannot extract an exact three-part row, I12.1-B/C must be blocked or
+not-run with reason codes rather than inferring a counterpart from MB6.
+```
+
+- [x] Define the I12.1 sibling unit source hierarchy.
+- [x] Confirm I12.1 uses a distinct N25.2 variant row, not the I12-A reference row.
+- [x] Extract basin-side, shared/adjacent-medium, and counterpart-region fields.
+- [x] Run controls against the extracted variant.
+- [x] Run replay/stress against the extracted variant.
+- [x] Compare I12 and I12.1 as repeatability evidence, not envelope widening.
+- [x] Keep unsafe ecology/native/agency claims false.
+
+Expected result:
+
+```text
+status = passed_or_blocked_with_reason
+prototype_family = boundary_shared_medium_unit
+variant_role = alternative_sibling_repeatability_probe
+primary_i12_replaced = false
+prototype_b_bridge_exemplar_candidate_supported = true | false
+claim_ceiling = bounded_boundary_shared_medium_bridge_exemplar_candidate
+ready_for_iteration_13 = true only if I12.1 does not reveal a blocker that
+  demotes the Prototype B family
+```
+
+Implemented result:
+
+```text
+admission_artifact = outputs/n29_boundary_shared_medium_unit_alternative_i121.json
+runtime_artifact = outputs/n29_boundary_shared_medium_unit_alternative_runtime_i121a.json
+control_artifact = outputs/n29_boundary_shared_medium_unit_alternative_controls_i121b.json
+replay_stress_artifact = outputs/n29_boundary_shared_medium_unit_alternative_replay_stress_i121c.json
+report_prefix = reports/n29_boundary_shared_medium_unit_alternative_*.md
+script = scripts/build_n29_boundary_shared_medium_unit_i121.py
+
+I12.1 status = passed
+I12.1 output_digest = 9a609777ff861f5f3887a65591e6047dc366367e9c292961ed204c578083bd41
+I12.1-A status = passed
+I12.1-A output_digest = 0c3cb123e7245747705de79d2e732e962de014882fdf5fae7d668b152b189dd4
+I12.1-B status = passed
+I12.1-B output_digest = e6392bd4457bca541dd0f1693dda5a4e6ea1d1fb26f6bd5bb4844c360adba8dc
+I12.1-C status = passed
+I12.1-C output_digest = 09a8717a2079adb047f21e30dddfe36f6030a2d6875cb72bf2e9d54d8af51693
+
+basin_side_state = child_basin_core_2
+shared_or_adjacent_medium = source_edge_1_route_variant_medium_channel
+counterpart_region = competing_sink_0
+I12.1-C row_count = 6
+I12.1-C passed_count = 6
+I12.1-C failed_or_blocked_count = 0
+prototype_b_alternative_bridge_candidate_supported = true
+prototype_b_repeatability_strengthened = true
+primary_i12_replaced = false
+primary_i12_envelope_widened = false
+margin_interpretation = repeatability_strengthening_not_widened_stress_margin
+basin_side_support_or_coherence_i12 = 1.1
+basin_side_support_or_coherence_i12_1 = 3.1
+basin_side_support_or_coherence_delta = 2.0
+observed_absolute_incident_flux_i12 = 0.0
+observed_absolute_incident_flux_i12_1 = 0.0
+merge_leakage_declared_ceiling_i12_and_i12_1 = 0.0
+prototype_success_claimed = false
+runtime_ecology_success_claimed = false
+ready_for_iteration_13 = true
+```
+
+I12.1 interpretation:
+
+I12.1 strengthens Prototype B by adding a second source-current
+boundary/shared-medium unit variant. It uses the N25.2 I4-A route variant, not
+the I12-A reference row:
+
+```text
+  I12 = child_basin_core_0 / source_edge_1_route_candidate_medium_channel /
+        competing_sink_2
+
+  I12.1 = child_basin_core_2 / source_edge_1_route_variant_medium_channel /
+          competing_sink_0
+```
+
+The result supports repeatability across a distinct basin/counterpart
+orientation. It does not replace I12, does not widen the I12 envelope, and does
+not promote Prototype B into native shared-medium coordination, body /
+environment, multi-agent interaction, ant ecology, agency, life, native
+support, sentience, or Phase 8 completion.
+
+The only clear numerical improvement is local to the basin-side
+support/coherence value:
+
+```text
+I12 basin-side support/coherence = 1.1
+I12.1 basin-side support/coherence = 3.1
+delta = +2.0
+```
+
+The stress margin is not widened:
+
+```text
+I12 observed absolute incident flux = 0.0
+I12.1 observed absolute incident flux = 0.0
+declared merge/leakage ceiling = 0.0
+```
+
+So the correct final wording is repeatability strengthening, not
+higher-margin stress-envelope evidence.
+
+### Iteration 12.2 - Active-Medium Separability Probe
+
+Direction:
+
+I12.2 addresses the remaining I12/I12.1 limitation: the leakage headroom cannot
+improve under a zero ceiling, but Prototype B can still be strengthened if the
+shared/adjacent medium is source-current active while merge/leakage remains
+zero and injected nonzero pressure fails closed.
+
+This is not a retune and not a ceiling change:
+
+```text
+accepted target =
+  source-current packet/contact medium activity
+  observed merge/leakage into basin = 0.0
+  declared merge/leakage ceiling = 0.0
+  injected nonzero pressure = failed_closed
+
+blocked target =
+  nonzero leakage tolerance
+  higher leakage headroom
+  native shared-medium coordination
+  semantic trail / pheromone substrate
+  ant ecology success
+```
+
+- [x] Run I12.2 admission.
+- [x] Run I12.2-A active-medium runtime extraction.
+- [x] Run I12.2-B active-medium controls.
+- [x] Run I12.2-C replay/stress close.
+- [x] Block nonzero leakage tolerance and native shared-medium coordination claims.
+- [x] Record I12.2 as active-medium separability evidence, not envelope widening.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_boundary_shared_medium_active_i122.json
+runtime_artifact = outputs/n29_boundary_shared_medium_active_runtime_i122a.json
+control_artifact = outputs/n29_boundary_shared_medium_active_controls_i122b.json
+replay_stress_artifact = outputs/n29_boundary_shared_medium_active_replay_stress_i122c.json
+report = reports/n29_boundary_shared_medium_active_i122.md
+script = scripts/build_n29_boundary_shared_medium_active_i122.py
+
+I12.2 status = passed
+I12.2 output_digest = 999740bd86d0756e61f2d9c263dda209f3b26ab1d00ee49952023dc6f96a9f49
+I12.2-A status = passed
+I12.2-A output_digest = 55eb734a533aea01d605c9fd77b9a827099998d56892e81699608db60f95956a
+I12.2-B status = passed
+I12.2-B output_digest = e6f189f79572713f5097f05d7cedc77c1a465c4ba7c463899a138698e9912139
+I12.2-C status = passed
+I12.2-C output_digest = d6077db416fa6c032bfc4d0d4edcf43802f8604f1468d45ba300f4ae4f9a9cf2
+
+active_medium_row_count = 2
+active_medium_present_count = 2
+zero_leakage_policy_preserved_count = 2
+nonzero_injected_pressure_failed_closed_count = 2
+I12.2-B control_count = 5
+I12.2-B failed_closed_count = 5
+I12.2-B failed_open_count = 0
+active_medium_separability_candidate_supported = true
+leakage_headroom_improved = false
+zero_leakage_policy_changed = false
+prototype_b_active_medium_separability_strengthened = true
+prototype_success_claimed = false
+runtime_ecology_success_claimed = false
+ready_for_iteration_13 = true
+```
+
+Interpretation:
+
+I12.2 strengthens Prototype B by showing active source-current medium traces in
+both the primary and sibling units:
+
+```text
+I12 packet_record_count = 1.0
+I12 source contact amount = 0.1
+I12 observed merge/leakage = 0.0
+
+I12.1 packet_record_count = 1.0
+I12.1 source contact amount = 0.1
+I12.1 observed merge/leakage = 0.0
+```
+
+The nonzero pressure row remains a control:
+
+```text
+injected observed incident flux = 0.1
+declared ceiling = 0.0
+status = failed_closed
+```
+
+So I12.2 supports active-medium separability, not nonzero leakage tolerance or
+native shared-medium coordination.
+
+### Prototype B Synthesis - Boundary / Shared-Medium I12x
+
+Direction:
+
+Add a compact source-backed synthesis record for search, indexing, and evidence
+handoff. This is not a new evidence row. It summarizes what I12, I12.1, and
+I12.2 jointly support and keeps the claim ceiling visible.
+
+- [x] Summarize I12 as primary unit extraction and controlled replay/stress.
+- [x] Summarize I12.1 as sibling repeatability, not envelope widening.
+- [x] Summarize I12.2 as active-medium separability, not leakage tolerance.
+- [x] Carry source artifact digests.
+- [x] Carry remaining blockers.
+- [x] Keep prototype/ecology/native/agency claims false.
+
+Implemented result:
+
+```text
+artifact = outputs/n29_prototype_b_boundary_shared_medium_synthesis_i12x.json
+report = reports/n29_prototype_b_boundary_shared_medium_synthesis_i12x.md
+script = scripts/build_n29_prototype_b_synthesis_i12x.py
+
+status = passed
+output_digest = 236adf775e0a470637fd8822d887e474b81103113040b58ac98fb7d727d66925
+
+I12 supported = true
+I12.1 repeatability supported = true
+I12.1 primary_i12_replaced = false
+I12.1 primary_i12_envelope_widened = false
+I12.2 active_medium_separability_supported = true
+I12.2 leakage_headroom_improved = false
+ready_for_iteration_13 = true
+prototype_success_claimed = false
+runtime_ecology_success_claimed = false
+```
+
+Synthesis interpretation:
+
+```text
+I12   = primary boundary/shared-medium source-current unit.
+I12.1 = sibling repeatability variant, not wider stress envelope.
+I12.2 = active source-current medium separability, not nonzero leakage
+        tolerance.
+```
+
+Remaining blockers:
+
+```text
+native shared-medium coordination
+nonzero leakage tolerance
+semantic trail or pheromone substrate
+multi-agent interaction
+ant ecology success
+agent body / organism-environment boundary
+native support
+sentience
+Phase 8 completion
 ```
 
 ### Iteration 13 - Prototype C: Proxy / Susceptibility / Re-Entry

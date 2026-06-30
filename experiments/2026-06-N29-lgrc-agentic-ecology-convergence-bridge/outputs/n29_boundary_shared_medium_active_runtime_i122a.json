@@ -1,0 +1,177 @@
+{
+  "acceptance_state": "accepted_active_medium_runtime_extraction_pending_controls",
+  "active_medium_rows": [
+    {
+      "basin_side_region": "child_basin_core_0",
+      "claim_effect": "supports active-medium separability only: source-current medium activity is present, merge/leakage into the basin remains zero, and nonzero injected pressure fails closed",
+      "counterpart_region": "competing_sink_2",
+      "nonzero_pressure_control": {
+        "claim_effect": "non-source pressure would block stronger claim",
+        "declared_ceiling": 0.0,
+        "nonzero_pressure_fails_closed": true,
+        "observed_absolute_incident_flux": 0.1,
+        "status": "failed_closed"
+      },
+      "runtime_unit_id": "N29.I12A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+      "shared_or_adjacent_medium": "source_edge_1_route_candidate_medium_channel",
+      "source_current_medium_activity": {
+        "active_medium_present": true,
+        "activity_kind": "source-current packet/contact medium activity",
+        "in_flight_packet_total_after_transport": 0.0,
+        "max_source_contact_amount": 0.1,
+        "packet_record_count": 1.0
+      },
+      "variant_id": "I12_primary_reference",
+      "zero_leakage_separability": {
+        "declared_merge_leakage_ceiling": 0.0,
+        "observed_absolute_incident_flux": 0.0,
+        "zero_leakage_policy_preserved": true
+      }
+    },
+    {
+      "basin_side_region": "child_basin_core_2",
+      "claim_effect": "supports active-medium separability only: source-current medium activity is present, merge/leakage into the basin remains zero, and nonzero injected pressure fails closed",
+      "counterpart_region": "competing_sink_0",
+      "nonzero_pressure_control": {
+        "claim_effect": "non-source pressure would block stronger claim",
+        "declared_ceiling": 0.0,
+        "nonzero_pressure_fails_closed": true,
+        "observed_absolute_incident_flux": 0.1,
+        "status": "failed_closed"
+      },
+      "runtime_unit_id": "N29.I12.1A.BOUNDARY_SHARED_MEDIUM_UNIT.RUNTIME.001",
+      "shared_or_adjacent_medium": "source_edge_1_route_variant_medium_channel",
+      "source_current_medium_activity": {
+        "active_medium_present": true,
+        "activity_kind": "source-current packet/contact medium activity",
+        "in_flight_packet_total_after_transport": 0.0,
+        "max_source_contact_amount": 0.1,
+        "packet_record_count": 1.0
+      },
+      "variant_id": "I12_1_sibling_variant",
+      "zero_leakage_separability": {
+        "declared_merge_leakage_ceiling": 0.0,
+        "observed_absolute_incident_flux": 0.0,
+        "zero_leakage_policy_preserved": true
+      }
+    }
+  ],
+  "artifact_id": "n29_boundary_shared_medium_active_runtime_i122a",
+  "checks": [
+    {
+      "check_id": "i122_admission_passed",
+      "passed": true
+    },
+    {
+      "check_id": "source_current_medium_activity_present_in_both_rows",
+      "passed": true
+    },
+    {
+      "check_id": "zero_leakage_policy_preserved_in_both_rows",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "active_shared_medium_coordination_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agent_body_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "life_claim_allowed": false,
+      "multi_agent_interaction_claim_allowed": false,
+      "native_colony_boundary_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "nonzero_leakage_tolerance_claim_allowed": false,
+      "organism_environment_boundary_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_ownership_claim_allowed": false,
+      "semantic_trail_or_pheromone_substrate_claim_allowed": false,
+      "sentience_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_boundary_shared_medium_active_i122.py",
+  "iteration": "I12.2-A",
+  "matrix_summary": {
+    "active_medium_present_count": 2,
+    "active_medium_row_count": 2,
+    "active_medium_separability_candidate_supported": true,
+    "leakage_headroom_improved": false,
+    "nonzero_injected_pressure_failed_closed_count": 2,
+    "zero_leakage_policy_changed": false,
+    "zero_leakage_policy_preserved_count": 2
+  },
+  "output_digest": "55eb734a533aea01d605c9fd77b9a827099998d56892e81699608db60f95956a",
+  "prototype_b_active_medium_separability_strengthened": false,
+  "prototype_success_claimed": false,
+  "ready_for_i122b": true,
+  "ready_for_iteration_13": false,
+  "runtime_ecology_success_claimed": false,
+  "script_sha256": "1571e968a79c15d4d19f5a541e8c65dae28b97c6e81ff5bd3d0cc4ed57253181",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_active_medium_separability_admission_pending_i122abc",
+      "artifact_id": "n29_boundary_shared_medium_active_i122",
+      "output_digest": "999740bd86d0756e61f2d9c263dda209f3b26ab1d00ee49952023dc6f96a9f49",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_active_i122.json",
+      "role": "active_medium_admission_source",
+      "sha256": "88616787cae0109af5a70a88ec1741447cd7fffad716a982745ad6b8a575c60f",
+      "source_id": "n29_i122_admission",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_runtime_i12a",
+      "output_digest": "518d48d038ad7d27062b785820c91f69c35e5925e1feb864ff59a1204c4a93e5",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_runtime_i12a.json",
+      "role": "primary_runtime_unit_source",
+      "sha256": "7f774be699f6fa78a4df227d17125984ed32ecc819be99694e0f92bd03d6d5d3",
+      "source_id": "n29_i12a_runtime_unit",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_exact_runtime_unit_extraction_pending_controls_replay_stress",
+      "artifact_id": "n29_boundary_shared_medium_unit_alternative_runtime_i121a",
+      "output_digest": "0c3cb123e7245747705de79d2e732e962de014882fdf5fae7d668b152b189dd4",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_boundary_shared_medium_unit_alternative_runtime_i121a.json",
+      "role": "sibling_runtime_unit_source",
+      "sha256": "5607004a4d67064817624dadc64dc49d9fa8b33a63a740151ab6cef24f50e92a",
+      "source_id": "n29_i121a_runtime_unit",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_runtime_positive_mb3_candidate_pending_replay_controls_no_mb6",
+      "artifact_id": "n25_2_native_runtime_positive_probe",
+      "output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+      "role": "primary_runtime_contact_source",
+      "sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+      "source_id": "n25_2_native_runtime_positive_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_runtime_variant_and_front_capacity_companion_mb3_scope_no_mb6",
+      "artifact_id": "n25_2_native_runtime_variant_probe",
+      "output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_variant_probe.json",
+      "role": "sibling_runtime_contact_source",
+      "sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+      "source_id": "n25_2_native_runtime_variant_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype B - Active-Medium Runtime Extraction"
+}

@@ -750,6 +750,84 @@ Later Prototype A summaries should cite I11.1-C first. I11-C should be used to
 explain how the motif was first made runnable, why the stronger sibling was
 needed, and where the minimal pressure boundary sits.
 
+Prototype B starts at I12 and has a different center of gravity. It is not
+another trace / pressure / loop row. It should orient around a bounded
+boundary/shared-medium unit: a distinguishable basin-side state, a shared or
+adjacent medium, and a counterpart region whose separability can be audited
+without turning merge, leakage, or labels into success. I12 should consume N16
+for AP6 boundary discipline, N25/N25.1/N25.2 for child-basin and multi-basin
+runtime surfaces, and N24/N28 only where medium-capacity or medium-reshaping
+context is needed. It should block body/environment, colony boundary,
+pheromone/trail substrate, resource ownership, multi-agent interaction, agency,
+and native shared-medium coordination readings.
+
+I12 should run first as an admission/design step. If it fixes a clean unit,
+source basis, controls, and runtime availability, I12-A/B/C may then be run as
+one tranche.
+
+I12-A/B/C must preserve I12's source-role discipline row-locally:
+
+```text
+N16 = boundary discipline / separability source, not native shared-medium evidence
+N25.2 = primary scoped multi-basin runtime source, not wholesale ecology success
+N25/N25.1 = gap and requirements history, not MB6 runtime evidence
+N24/N28 = medium-capacity / medium-reshaping context only
+Prototype A context = contrast only, not Prototype B evidence
+```
+
+The bridge row must remain a three-part geometry:
+
+```text
+basin_side_state
+shared_or_adjacent_medium
+counterpart_region
+```
+
+I12-A must extract one exact source-current runtime row with all three parts.
+I12-B must run label-only, visual-only, merge/leakage-as-success,
+old-basin-thickening, producer-as-native, N16 artifact relabel, N25.2 MB6 as
+ant ecology relabel, native shared-medium coordination relabel, semantic
+trail/pheromone relabel, and agent-body relabel controls. I12-C must run
+artifact-only, snapshot/load, duplicate replay, medium-coupling, merge-pressure,
+and counterpart-separability stress. Do not move to I13 until I12-A/B/C pass or
+explicitly demote the Prototype B row.
+
+If I12-A/B/C pass only on one exact reference unit, add I12.1 as an alternative
+sibling before I13 when practical. I12.1 should not optimize the reference row
+or widen the I12 envelope. It should test repeatability by extracting a distinct
+N25.2 route-variant boundary/shared-medium unit, then run the same runtime,
+control, and replay/stress sequence:
+
+```text
+I12.1 = alternative sibling admission
+I12.1-A = exact variant runtime extraction
+I12.1-B = controls over that variant
+I12.1-C = replay/stress over that variant
+```
+
+The intended interpretation is two controlled source-current variants for
+Prototype B, not replacement of the primary I12 reference and not a native
+shared-medium coordination claim. If I12.1 has a higher basin-side
+support/coherence value, record that as a local sibling-state difference only.
+Do not describe I12.1 as a higher-margin stress result unless merge/leakage
+headroom, replay/stress envelope, or declared thresholds actually improve.
+
+If I12/I12.1 still leave the shared medium looking too passive, add I12.2 as an
+active-medium separability probe before I13. I12.2 should not seek higher
+merge/leakage headroom, because the declared ceiling remains zero. Instead it
+should ask whether the source-current medium is active or stress-bearing while
+boundary separability remains intact:
+
+```text
+I12.2 = active-medium separability admission
+I12.2-A = source-current active-medium runtime extraction
+I12.2-B = active-medium controls and claim blockers
+I12.2-C = active-medium replay/stress close
+```
+
+The correct positive result is active-medium separability, not nonzero leakage
+tolerance, native shared-medium coordination, or ecology success.
+
 ### Phase D - Probe Contracts And Closeout
 
 ```text
