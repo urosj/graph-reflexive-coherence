@@ -1,0 +1,836 @@
+{
+  "acceptance_state": "accepted_loop_composition_replay_stress_producer_bridge_catalogue_ready_for_i15",
+  "agency_claim_allowed": false,
+  "aggregate_leakage_replay_record": {
+    "aggregate_margin_preserved": true,
+    "aggregate_merge_leakage_ceiling": 0.04,
+    "aggregate_merge_leakage_margin": 0.0104,
+    "native_aggregate_shared_medium_leakage_supported": false,
+    "producer_guard_capture_remains_debt": true,
+    "source_id": "i14_6_2_wider_aggregate_leakage"
+  },
+  "artifact_id": "n29_loop_composition_replay_stress_i14e",
+  "candidate_count": 6,
+  "candidate_replay_stress_summaries": [
+    {
+      "artifact_id": "n29_neutral_circulation_loop_closure_i1441",
+      "claim_ceiling_before_i14e": "producer_mediated_ordered_neutral_circulation_loop_closure_candidate_pending_controls_replay",
+      "failed_replay_count": 0,
+      "failed_stress_count": 0,
+      "i14e_status": "replay_stress_stable_producer_mediated_candidate",
+      "i14e_supports_native_ecology": false,
+      "i14e_supports_producer_mediated_bridge_catalogue": true,
+      "iteration": "I14.4-1",
+      "native_success_claim_allowed_after_i14e": false,
+      "producer_mediated_bridge_lane_preserved": true,
+      "replay_count": 4,
+      "replay_rows": [
+        {
+          "claim_effect": "artifact_replay_stable_only",
+          "replay_mode": "artifact_replay",
+          "replayed_output_digest": "06de4db170c08ebc775728dda51db3507e4d6115ed1b0d6afb7374413ad8d385",
+          "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_loop_closure_i1441_artifact.json",
+          "source_artifact_sha256": "c62f68df5f10464e523a9fe2c5ec33e23fe7e70f9b6aef210ac675e9a5220dd7",
+          "source_id": "i14_4_1_producer_reverse_loop_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "snapshot_reconstruction_stable_only",
+          "replay_mode": "snapshot_load_replay",
+          "replayed_output_digest": "06de4db170c08ebc775728dda51db3507e4d6115ed1b0d6afb7374413ad8d385",
+          "snapshot_digest": "e07c6df0820440b699cd14db58c4afd9ca0d435981d4b3a8adb348794b1df155",
+          "source_id": "i14_4_1_producer_reverse_loop_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "duplicate_suppression_stable",
+          "first_emit_digest": "06de4db170c08ebc775728dda51db3507e4d6115ed1b0d6afb7374413ad8d385",
+          "replay_mode": "duplicate_replay",
+          "second_emit_creates_duplicate_record": false,
+          "second_emit_digest": "06de4db170c08ebc775728dda51db3507e4d6115ed1b0d6afb7374413ad8d385",
+          "source_id": "i14_4_1_producer_reverse_loop_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "ordered_dependency_projection_stable",
+          "ordered_dependency_digest": "4da25557bfd61d7b31f4471e7a6d114554062452b499e07f4987b4b90648aee3",
+          "replay_mode": "ordered_dependency_replay",
+          "source_id": "i14_4_1_producer_reverse_loop_bridge",
+          "status": "stable"
+        }
+      ],
+      "row_id": "n29_i14_4_1_neutral_circulation_loop_closure_candidate",
+      "runtime_artifact_output_digest": "06de4db170c08ebc775728dda51db3507e4d6115ed1b0d6afb7374413ad8d385",
+      "runtime_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_loop_closure_i1441_artifact.json",
+      "runtime_artifact_sha256": "c62f68df5f10464e523a9fe2c5ec33e23fe7e70f9b6aef210ac675e9a5220dd7",
+      "source_id": "i14_4_1_producer_reverse_loop_bridge",
+      "source_output_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+      "stress_count": 6,
+      "stress_rows": [
+        {
+          "description": "invert leg order and require loop/feedback claim to fail closed",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "e1c577f0284f2696c7cdfb7258bd0b876b8efb947394d345cb63344880dd81c7",
+          "stress_id": "i14_4_1_producer_reverse_loop_bridge_order_inversion_replay"
+        },
+        {
+          "description": "remove required second or feedback leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "14a3b495647794b0307379626d307d908c361da682d84885b8a47fb465ea4d24",
+          "stress_id": "i14_4_1_producer_reverse_loop_bridge_missing_required_leg"
+        },
+        {
+          "description": "replace ordered traces with composition labels only",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "4fb809caf7d5f40f3e9eaaf9f30e1e00ee0da097dd5ee0420d58d4c76034a66a",
+          "stress_id": "i14_4_1_producer_reverse_loop_bridge_label_only_composition"
+        },
+        {
+          "description": "promote producer-mediated bridge to native LGRC ecology",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "365be177e2ae2581ba2a087a9f39a9c316e3ebfec7e87b93daefa5a05e9892b8",
+          "stress_id": "i14_4_1_producer_reverse_loop_bridge_producer_as_native_relabel"
+        },
+        {
+          "description": "remove producer-derived reverse leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "a259d7b41ec5661c41966a5efc20f1dade6e00c9e8b600b8c5658c40583eb386",
+          "stress_id": "i14e_reverse_leg_removed"
+        },
+        {
+          "description": "treat producer reverse leg as native source-current reverse leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "7aa1c404f887eeb5ab7eba0f61ac39246f5be33746b8b4506988bdcb48445269",
+          "stress_id": "i14e_reverse_leg_native_relabel"
+        }
+      ],
+      "summary_digest": "32e806c80f42b4ef71df7cb7da773bdac14dce2ec550b7be213654eef11c7317"
+    },
+    {
+      "artifact_id": "n29_neutral_circulation_directed_cycle_bridge_i1444",
+      "claim_ceiling_before_i14e": "producer_mediated_all_forward_directed_cycle_candidate_pending_controls_replay",
+      "failed_replay_count": 0,
+      "failed_stress_count": 0,
+      "i14e_status": "replay_stress_stable_producer_mediated_candidate",
+      "i14e_supports_native_ecology": false,
+      "i14e_supports_producer_mediated_bridge_catalogue": true,
+      "iteration": "I14.4-4",
+      "native_success_claim_allowed_after_i14e": false,
+      "producer_mediated_bridge_lane_preserved": true,
+      "replay_count": 4,
+      "replay_rows": [
+        {
+          "claim_effect": "artifact_replay_stable_only",
+          "replay_mode": "artifact_replay",
+          "replayed_output_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+          "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_directed_cycle_bridge_i1444_artifact.json",
+          "source_artifact_sha256": "4074bb00c930acc30c46aa3d3d06ece2e83e357ea531d6ffebbacd47ac79c80f",
+          "source_id": "i14_4_4_producer_directed_cycle_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "snapshot_reconstruction_stable_only",
+          "replay_mode": "snapshot_load_replay",
+          "replayed_output_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+          "snapshot_digest": "a3aeed39abab284a206a66db6b66877896440c5f5611bc06c62a7c1d4f3068bb",
+          "source_id": "i14_4_4_producer_directed_cycle_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "duplicate_suppression_stable",
+          "first_emit_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+          "replay_mode": "duplicate_replay",
+          "second_emit_creates_duplicate_record": false,
+          "second_emit_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+          "source_id": "i14_4_4_producer_directed_cycle_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "ordered_dependency_projection_stable",
+          "ordered_dependency_digest": "33636a6436d4da82c76b853ebd80ee813f65dd4c3fcc1a5ba46d12aec6fcd206",
+          "replay_mode": "ordered_dependency_replay",
+          "source_id": "i14_4_4_producer_directed_cycle_bridge",
+          "status": "stable"
+        }
+      ],
+      "row_id": "n29_i14_4_4_producer_mediated_directed_cycle_bridge_candidate",
+      "runtime_artifact_output_digest": "a125620b89e48cba1afb7ad23aacdc648901e0a4443bdc6b74101cce9f4cfee3",
+      "runtime_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_directed_cycle_bridge_i1444_artifact.json",
+      "runtime_artifact_sha256": "4074bb00c930acc30c46aa3d3d06ece2e83e357ea531d6ffebbacd47ac79c80f",
+      "source_id": "i14_4_4_producer_directed_cycle_bridge",
+      "source_output_digest": "44fe1547a6abd4313dc4ffff1da3f351e82f73c8f74ac569bce024b517ba45d8",
+      "stress_count": 6,
+      "stress_rows": [
+        {
+          "description": "invert leg order and require loop/feedback claim to fail closed",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "07c538ec0f61c639bb10af204d4af9412c11499b1f8eb457ba76a2a2606790c5",
+          "stress_id": "i14_4_4_producer_directed_cycle_bridge_order_inversion_replay"
+        },
+        {
+          "description": "remove required second or feedback leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "8ec3c4125f892cb39db080e7db01b851d3507e03d7e645fd2f1ad86b74a4e383",
+          "stress_id": "i14_4_4_producer_directed_cycle_bridge_missing_required_leg"
+        },
+        {
+          "description": "replace ordered traces with composition labels only",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "7bc995a4fdf771b9ee6afba01aebc7d111c5f84777dd38aa38a895f6593df70e",
+          "stress_id": "i14_4_4_producer_directed_cycle_bridge_label_only_composition"
+        },
+        {
+          "description": "promote producer-mediated bridge to native LGRC ecology",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "06889aba57f8c955a698c112ace5da696082021522d6226e44bc8a2e08b903b4",
+          "stress_id": "i14_4_4_producer_directed_cycle_bridge_producer_as_native_relabel"
+        },
+        {
+          "description": "remove frame-shifted second forward leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "685ca9d668294b424c0cba3f8de05c53ca1a268707286f897170c277d80246d9",
+          "stress_id": "i14e_directed_cycle_second_leg_removed"
+        },
+        {
+          "description": "misread all-forward cycle as sign-inverted bounce-back",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "23ad24d98e203a8c03bcf0af5d8e437e173be2691af12ee8e83effe7c9cb1569",
+          "stress_id": "i14e_bounce_back_relabel"
+        }
+      ],
+      "summary_digest": "59a48e5feb51a26df3a3abae646f990a90b9df5c8a60a531beeafa11e38569f7"
+    },
+    {
+      "artifact_id": "n29_generator_extractor_feedback_i1451",
+      "claim_ceiling_before_i14e": "producer_mediated_generator_extractor_feedback_candidate_pending_controls_replay",
+      "failed_replay_count": 0,
+      "failed_stress_count": 0,
+      "i14e_status": "replay_stress_stable_producer_mediated_candidate",
+      "i14e_supports_native_ecology": false,
+      "i14e_supports_producer_mediated_bridge_catalogue": true,
+      "iteration": "I14.5-1",
+      "native_success_claim_allowed_after_i14e": false,
+      "producer_mediated_bridge_lane_preserved": true,
+      "replay_count": 4,
+      "replay_rows": [
+        {
+          "claim_effect": "artifact_replay_stable_only",
+          "replay_mode": "artifact_replay",
+          "replayed_output_digest": "b995e6a5b9ca455112c5c44242cc9f8ac8891bbb00a375849830c3c9e66e645b",
+          "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generator_extractor_feedback_i1451_artifact.json",
+          "source_artifact_sha256": "a546e12c2eb0785868679dfbea1ddafcde027f905b7d0cde9759e70a3dc19fa3",
+          "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "snapshot_reconstruction_stable_only",
+          "replay_mode": "snapshot_load_replay",
+          "replayed_output_digest": "b995e6a5b9ca455112c5c44242cc9f8ac8891bbb00a375849830c3c9e66e645b",
+          "snapshot_digest": "755d9dfc123aab585d464794dd0d639006f2841dcb407b7becb3d3a378f07ee3",
+          "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "duplicate_suppression_stable",
+          "first_emit_digest": "b995e6a5b9ca455112c5c44242cc9f8ac8891bbb00a375849830c3c9e66e645b",
+          "replay_mode": "duplicate_replay",
+          "second_emit_creates_duplicate_record": false,
+          "second_emit_digest": "b995e6a5b9ca455112c5c44242cc9f8ac8891bbb00a375849830c3c9e66e645b",
+          "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "ordered_dependency_projection_stable",
+          "ordered_dependency_digest": "8541023d9df987304c22d9eacafe5e116dba8b92612f307f25a3de796b291693",
+          "replay_mode": "ordered_dependency_replay",
+          "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+          "status": "stable"
+        }
+      ],
+      "row_id": "n29_i14_5_1_generator_extractor_feedback_bridge_candidate",
+      "runtime_artifact_output_digest": "b995e6a5b9ca455112c5c44242cc9f8ac8891bbb00a375849830c3c9e66e645b",
+      "runtime_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generator_extractor_feedback_i1451_artifact.json",
+      "runtime_artifact_sha256": "a546e12c2eb0785868679dfbea1ddafcde027f905b7d0cde9759e70a3dc19fa3",
+      "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+      "source_output_digest": "61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486",
+      "stress_count": 6,
+      "stress_rows": [
+        {
+          "description": "invert leg order and require loop/feedback claim to fail closed",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "022e35661f59b1ec05da5e313d32a3ffb5ef259036ac4a844961bf3ea9c3f8dc",
+          "stress_id": "i14_5_1_generator_extractor_feedback_bridge_order_inversion_replay"
+        },
+        {
+          "description": "remove required second or feedback leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "ec376d1c5ce57bc13a1d1588432c2065bd2321f378a90c5c1d329b5a43e1c287",
+          "stress_id": "i14_5_1_generator_extractor_feedback_bridge_missing_required_leg"
+        },
+        {
+          "description": "replace ordered traces with composition labels only",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "7b7a82a155860c3ba4b1ccc54b31f0c27a7aae77004c4608b28dbc0ebf514fc9",
+          "stress_id": "i14_5_1_generator_extractor_feedback_bridge_label_only_composition"
+        },
+        {
+          "description": "promote producer-mediated bridge to native LGRC ecology",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "a3291f282a2cc930837aec4ed7197189bcbb4c9468e647105606c2fb63f3abac",
+          "stress_id": "i14_5_1_generator_extractor_feedback_bridge_producer_as_native_relabel"
+        },
+        {
+          "description": "remove extractor-modified medium before later generator",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "c6bd67d213054e078425dc6bb98834d21210cb195db1899f1f2748e0e21cb64c",
+          "stress_id": "i14e_extractor_feedback_removed"
+        },
+        {
+          "description": "average generator/extractor roles into generic redistribution",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "0e441e42b381ea3aa0a1fa3d326de0006c665af79434f4a9b354cf0b9ac02c71",
+          "stress_id": "i14e_generator_extractor_role_averaged"
+        }
+      ],
+      "summary_digest": "e8257d979282e3e2c96f5a986a4c7d3e6e90630a43037763010bb922dd638a6a"
+    },
+    {
+      "artifact_id": "n29_buffered_generator_extractor_feedback_i1452",
+      "claim_ceiling_before_i14e": "producer_mediated_buffered_generator_extractor_feedback_candidate_pending_controls_replay",
+      "failed_replay_count": 0,
+      "failed_stress_count": 0,
+      "i14e_status": "replay_stress_stable_producer_mediated_candidate",
+      "i14e_supports_native_ecology": false,
+      "i14e_supports_producer_mediated_bridge_catalogue": true,
+      "iteration": "I14.5-2",
+      "native_success_claim_allowed_after_i14e": false,
+      "producer_mediated_bridge_lane_preserved": true,
+      "replay_count": 4,
+      "replay_rows": [
+        {
+          "claim_effect": "artifact_replay_stable_only",
+          "replay_mode": "artifact_replay",
+          "replayed_output_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+          "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_buffered_generator_extractor_feedback_i1452_artifact.json",
+          "source_artifact_sha256": "6e8b7d270cda2ea55fe6893384f7fd97d6ee299b520ece970c5653f1cd796a3d",
+          "source_id": "i14_5_2_buffered_feedback_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "snapshot_reconstruction_stable_only",
+          "replay_mode": "snapshot_load_replay",
+          "replayed_output_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+          "snapshot_digest": "b1237c6899fa7e88cd5de238442bcb8628815bcb7f302fb33ff2e960490ea2bb",
+          "source_id": "i14_5_2_buffered_feedback_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "duplicate_suppression_stable",
+          "first_emit_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+          "replay_mode": "duplicate_replay",
+          "second_emit_creates_duplicate_record": false,
+          "second_emit_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+          "source_id": "i14_5_2_buffered_feedback_bridge",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "ordered_dependency_projection_stable",
+          "ordered_dependency_digest": "a73d41aa752f83ea7d331ddab4021d877dccd773d81079938f128378f8c26171",
+          "replay_mode": "ordered_dependency_replay",
+          "source_id": "i14_5_2_buffered_feedback_bridge",
+          "status": "stable"
+        }
+      ],
+      "row_id": "n29_i14_5_2_buffered_generator_extractor_feedback_bridge_candidate",
+      "runtime_artifact_output_digest": "d839204a0854237c4f1585f43693b3bbce4deb77b48522df6796d671e592ee88",
+      "runtime_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_buffered_generator_extractor_feedback_i1452_artifact.json",
+      "runtime_artifact_sha256": "6e8b7d270cda2ea55fe6893384f7fd97d6ee299b520ece970c5653f1cd796a3d",
+      "source_id": "i14_5_2_buffered_feedback_bridge",
+      "source_output_digest": "16b51f3750e1f10056573666a60b9762df763aa77d30ff8d7776eb24cbc2d9b7",
+      "stress_count": 6,
+      "stress_rows": [
+        {
+          "description": "invert leg order and require loop/feedback claim to fail closed",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "43d762beb0ae1647257959eb5897361f5e8383f1b1f872acedf3edaf9d3d1505",
+          "stress_id": "i14_5_2_buffered_feedback_bridge_order_inversion_replay"
+        },
+        {
+          "description": "remove required second or feedback leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "93e0e79b961d0add165444f7a9c8a1587bb44bcdd60f520d0b380f238f6cd693",
+          "stress_id": "i14_5_2_buffered_feedback_bridge_missing_required_leg"
+        },
+        {
+          "description": "replace ordered traces with composition labels only",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "dad846fee04c0197b4860e865878f6f739502fce4ad28ef0f7292dd1d4172d29",
+          "stress_id": "i14_5_2_buffered_feedback_bridge_label_only_composition"
+        },
+        {
+          "description": "promote producer-mediated bridge to native LGRC ecology",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "5a24ed7f0d13b572f5e0a98fe323b010631e6c968a64f6bdd0da5f6d4a2e9a31",
+          "stress_id": "i14_5_2_buffered_feedback_bridge_producer_as_native_relabel"
+        },
+        {
+          "description": "remove processor/buffer leg before later generator",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "1ca1c0880ed7828014b984cfcb464586d886cae38f0fd0617dc86a3df3f1547e",
+          "stress_id": "i14e_processor_buffer_removed"
+        },
+        {
+          "description": "perturb buffer retention so phase residual no longer preserves gate",
+          "expected_result": "failed_closed_or_demoted",
+          "observed_result": "failed_closed_or_demoted",
+          "status": "passed",
+          "stress_digest": "ce8951b25021d0d82eebbc3e4226029b847ae54053c0d88f8fb610fbda3a28ad",
+          "stress_id": "i14e_buffer_retention_factor_perturbed"
+        }
+      ],
+      "summary_digest": "1883319680ad30eb44a3b2fc3fd7bd602b01172b59b98f3c4d9337184023f6ac"
+    },
+    {
+      "artifact_id": "n29_multi_role_phase_loop_i146",
+      "claim_ceiling_before_i14e": "producer_mediated_multi_role_phase_loop_candidate_pending_controls_replay",
+      "failed_replay_count": 0,
+      "failed_stress_count": 0,
+      "i14e_status": "replay_stress_stable_producer_mediated_candidate",
+      "i14e_supports_native_ecology": false,
+      "i14e_supports_producer_mediated_bridge_catalogue": true,
+      "iteration": "I14.6",
+      "native_success_claim_allowed_after_i14e": false,
+      "producer_mediated_bridge_lane_preserved": true,
+      "replay_count": 4,
+      "replay_rows": [
+        {
+          "claim_effect": "artifact_replay_stable_only",
+          "replay_mode": "artifact_replay",
+          "replayed_output_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+          "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_role_phase_loop_i146_artifact.json",
+          "source_artifact_sha256": "9db7c72466d9f26cb07fc451ee9b3775f2b3177b320b8e1be802e74aabf394c1",
+          "source_id": "i14_6_multi_role_phase_loop",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "snapshot_reconstruction_stable_only",
+          "replay_mode": "snapshot_load_replay",
+          "replayed_output_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+          "snapshot_digest": "b8d0729c022c1a3542c9b546c1e28f7d88f99e83847457d3cd87655944abd308",
+          "source_id": "i14_6_multi_role_phase_loop",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "duplicate_suppression_stable",
+          "first_emit_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+          "replay_mode": "duplicate_replay",
+          "second_emit_creates_duplicate_record": false,
+          "second_emit_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+          "source_id": "i14_6_multi_role_phase_loop",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "ordered_dependency_projection_stable",
+          "ordered_dependency_digest": "fe89aea3b4d1f389841b4860d056085891286d61f7f1a5145d5cd1ec03357eed",
+          "replay_mode": "ordered_dependency_replay",
+          "source_id": "i14_6_multi_role_phase_loop",
+          "status": "stable"
+        }
+      ],
+      "row_id": "n29_i14_6_multi_role_phase_coupled_loop_candidate",
+      "runtime_artifact_output_digest": "7f2ecf99d7786ba28eff65498c0d27fe3ee687a23fd7af262c8b0f81025d54ac",
+      "runtime_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_role_phase_loop_i146_artifact.json",
+      "runtime_artifact_sha256": "9db7c72466d9f26cb07fc451ee9b3775f2b3177b320b8e1be802e74aabf394c1",
+      "source_id": "i14_6_multi_role_phase_loop",
+      "source_output_digest": "32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b",
+      "stress_count": 7,
+      "stress_rows": [
+        {
+          "description": "invert leg order and require loop/feedback claim to fail closed",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "b2a55157ae87626469493da894b45f7da0f165a8227dd0860d9c7fced678ca93",
+          "stress_id": "i14_6_multi_role_phase_loop_order_inversion_replay"
+        },
+        {
+          "description": "remove required second or feedback leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "5c889e44dcb04962bf5bb4dea2d21428e8b6b5f632643d1135738170b967ab25",
+          "stress_id": "i14_6_multi_role_phase_loop_missing_required_leg"
+        },
+        {
+          "description": "replace ordered traces with composition labels only",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "09eb8fffee1b1d3355c2e76bbacdc4f6a09e3e24a7574051db4e3264efca752a",
+          "stress_id": "i14_6_multi_role_phase_loop_label_only_composition"
+        },
+        {
+          "description": "promote producer-mediated bridge to native LGRC ecology",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "f8e6a942ed8ee3e999535d7dfa1c93af386e668c64abaaf51760485f07e3d6cf",
+          "stress_id": "i14_6_multi_role_phase_loop_producer_as_native_relabel"
+        },
+        {
+          "description": "remove bridge between phase-feedback leg and directed-cycle leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "2cecc8d65f51313d41b8c995f2b9227124c5d73c66ea63ac903ff998d27db64e",
+          "stress_id": "i14e_phase_to_cycle_bridge_removed"
+        },
+        {
+          "description": "remove bridge from directed cycle back to generator side",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "d611052ac64c9bed13cc5f696b6928b4ac08612518305e4e3b575c711f65be22",
+          "stress_id": "i14e_cycle_to_generator_bridge_removed"
+        },
+        {
+          "description": "use per-leg leakage pass as aggregate leakage support",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "934bc78988c7ea786aa92217515d9412c830228a4779ad4c5331789b646d1562",
+          "stress_id": "i14e_per_leg_only_as_aggregate_relabel"
+        }
+      ],
+      "summary_digest": "5285fec33574bae851a312791eb5327c71eced89c9d0a8631aa30f779ef28761"
+    },
+    {
+      "artifact_id": "n29_wider_margin_leakage_aggregation_i1462",
+      "claim_ceiling_before_i14e": "producer_mediated_wider_margin_leakage_aggregation_variant_pending_controls_replay",
+      "failed_replay_count": 0,
+      "failed_stress_count": 0,
+      "i14e_status": "replay_stress_stable_producer_mediated_candidate",
+      "i14e_supports_native_ecology": false,
+      "i14e_supports_producer_mediated_bridge_catalogue": true,
+      "iteration": "I14.6-2",
+      "native_success_claim_allowed_after_i14e": false,
+      "producer_mediated_bridge_lane_preserved": true,
+      "replay_count": 4,
+      "replay_rows": [
+        {
+          "claim_effect": "artifact_replay_stable_only",
+          "replay_mode": "artifact_replay",
+          "replayed_output_digest": "74accdcb003e6526b85561f6ec17073a08082948b10990836238403b8557984b",
+          "source_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_wider_margin_leakage_aggregation_i1462_artifact.json",
+          "source_artifact_sha256": "a45fa01460b6c110c7b5e0e7312268eeb5187fc10d48b4b2781b6d5249b56300",
+          "source_id": "i14_6_2_wider_aggregate_leakage",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "snapshot_reconstruction_stable_only",
+          "replay_mode": "snapshot_load_replay",
+          "replayed_output_digest": "74accdcb003e6526b85561f6ec17073a08082948b10990836238403b8557984b",
+          "snapshot_digest": "2fa0d7f58bc35b03857a3aca03b732c631573950827d20f3ef7b03aa47459f0d",
+          "source_id": "i14_6_2_wider_aggregate_leakage",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "duplicate_suppression_stable",
+          "first_emit_digest": "74accdcb003e6526b85561f6ec17073a08082948b10990836238403b8557984b",
+          "replay_mode": "duplicate_replay",
+          "second_emit_creates_duplicate_record": false,
+          "second_emit_digest": "74accdcb003e6526b85561f6ec17073a08082948b10990836238403b8557984b",
+          "source_id": "i14_6_2_wider_aggregate_leakage",
+          "status": "stable"
+        },
+        {
+          "claim_effect": "ordered_dependency_projection_stable",
+          "ordered_dependency_digest": "b99bb804f5a96808cdd48eee47390685845d9478be6606904a0169cb63f6e701",
+          "replay_mode": "ordered_dependency_replay",
+          "source_id": "i14_6_2_wider_aggregate_leakage",
+          "status": "stable"
+        }
+      ],
+      "row_id": "n29_i14_6_2_wider_margin_multi_leg_leakage_aggregation_variant",
+      "runtime_artifact_output_digest": "74accdcb003e6526b85561f6ec17073a08082948b10990836238403b8557984b",
+      "runtime_artifact_path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_wider_margin_leakage_aggregation_i1462_artifact.json",
+      "runtime_artifact_sha256": "a45fa01460b6c110c7b5e0e7312268eeb5187fc10d48b4b2781b6d5249b56300",
+      "source_id": "i14_6_2_wider_aggregate_leakage",
+      "source_output_digest": "57c86cb4776a71a246d7e72aea0c73b60beff0f27066aa5ba3d298ff1c2f4686",
+      "stress_count": 8,
+      "stress_rows": [
+        {
+          "description": "invert leg order and require loop/feedback claim to fail closed",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "e477886866db9a8bfccf83c9483debd4f7d20f09084fbc4c3c27c645426baebe",
+          "stress_id": "i14_6_2_wider_aggregate_leakage_order_inversion_replay"
+        },
+        {
+          "description": "remove required second or feedback leg",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "d95a9c2b4cb69c99d86836b6b346349df98448c95e9c9265d0cbbdd170881799",
+          "stress_id": "i14_6_2_wider_aggregate_leakage_missing_required_leg"
+        },
+        {
+          "description": "replace ordered traces with composition labels only",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "6ec6b867638859348b3df993229bc252c36f2ca7b2bb93829dbdc1a01fbe64e2",
+          "stress_id": "i14_6_2_wider_aggregate_leakage_label_only_composition"
+        },
+        {
+          "description": "promote producer-mediated bridge to native LGRC ecology",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "88d9ae5ef7dba3b5f45639a793b719c7120dfefc14b59f092fa551033cd78a6d",
+          "stress_id": "i14_6_2_wider_aggregate_leakage_producer_as_native_relabel"
+        },
+        {
+          "description": "preserve I14.6-2 aggregate leakage margin under replay",
+          "expected_result": "supported",
+          "observed_result": "supported",
+          "status": "passed",
+          "stress_digest": "eb5c6da97ba844bcee4d7b2d7aee230b4c3d5a9f5848629325da9154e3303ded",
+          "stress_id": "i14e_aggregate_leakage_margin_preserved"
+        },
+        {
+          "description": "relax aggregate ceiling to make leakage pass",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "a4af1033a7adf347590d94df8c2a47b64258cb0cfc3627bd2e27f1260dee64e8",
+          "stress_id": "i14e_aggregate_ceiling_relaxation_ablation"
+        },
+        {
+          "description": "cancel or overlap-credit channels instead of full accounting",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "64f69a88ae878aa804fa82abeeabfe6c8bd9ea66e8441d4c79671b47bbe33312",
+          "stress_id": "i14e_leakage_cancellation_ablation"
+        },
+        {
+          "description": "count producer guard capture as native shared-medium success",
+          "expected_result": "failed_closed",
+          "observed_result": "failed_closed",
+          "status": "passed",
+          "stress_digest": "430bcb42b694e16e5f414a7310345310e4525f7a90af166972250fd472c5890e",
+          "stress_id": "i14e_producer_guard_capture_native_relabel"
+        }
+      ],
+      "summary_digest": "1f657c126037cdca2ba1c2e1bb95f5866f9d8b5e4e9c12ae38acdbd41254bb35"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i14d_controls_passed",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_set_matches_i14d",
+      "passed": true
+    },
+    {
+      "check_id": "all_source_candidates_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_runtime_artifacts_exist",
+      "passed": true
+    },
+    {
+      "check_id": "all_replay_rows_stable",
+      "passed": true
+    },
+    {
+      "check_id": "all_stress_rows_passed",
+      "passed": true
+    },
+    {
+      "check_id": "stable_candidate_count_is_six",
+      "passed": true
+    },
+    {
+      "check_id": "aggregate_leakage_margin_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "stronger_native_and_semantic_claims_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_loop_composition_replay_stress_i14e.py",
+  "cooperation_claim_allowed": false,
+  "experiment_id": "N29",
+  "exploitation_claim_allowed": false,
+  "failed_checks": [],
+  "failed_replay_count": 0,
+  "failed_stress_count": 0,
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_loop_composition_replay_stress_i14e.py",
+  "i14d_control_status": "accepted_loop_composition_controls_fail_closed_ready_for_i14e",
+  "i14d_output_digest": "afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2",
+  "iteration": "I14-E",
+  "native_aggregate_shared_medium_leakage_supported": false,
+  "native_closed_environmental_circulation_supported": false,
+  "native_multi_role_ecology_supported": false,
+  "native_phase_coupled_exchange_supported": false,
+  "output_digest": "3cdaf38779178b996f1f286e886463e0edd4e4ecd201df87b35e7b63dc2872b4",
+  "producer_mediated_bridge_catalogue_supported": true,
+  "prototype_d_composition_replay_stress_supported": true,
+  "ready_for_iteration_15": true,
+  "replay_count": 24,
+  "report_sha256": "0e140a38553903cdd6c29b58d1ef35a20114000dc47010f681d2441df70cd3c1",
+  "resource_economy_claim_allowed": false,
+  "script_sha256": "952ae46f42e09e8187284bd286306e93616c718b9e2b4da40a4eb20e0670fbec",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_loop_composition_controls_fail_closed_ready_for_i14e",
+      "artifact_id": "n29_loop_composition_controls_i14d",
+      "iteration": "I14-D",
+      "output_digest": "afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_loop_composition_controls_i14d.json",
+      "sha256": "006a66f1999a00f8032cd9bfee9b839eaa5484f8965be321a148c0e4dcc6b273",
+      "source_id": "n29_i14d_loop_composition_controls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_neutral_circulation_loop_closure_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_neutral_circulation_loop_closure_i1441",
+      "iteration": "I14.4-1",
+      "output_digest": "45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_loop_closure_i1441.json",
+      "sha256": "b0870f6acd015a52781d903c491649b0214db539d04bc66780bea3963884fb13",
+      "source_id": "i14_4_1_producer_reverse_loop_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_directed_cycle_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_neutral_circulation_directed_cycle_bridge_i1444",
+      "iteration": "I14.4-4",
+      "output_digest": "44fe1547a6abd4313dc4ffff1da3f351e82f73c8f74ac569bce024b517ba45d8",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_neutral_circulation_directed_cycle_bridge_i1444.json",
+      "sha256": "c38905f6135b74ca30a4bcf325c3e26ec427ffe28913f0ed05c6d338854676dc",
+      "source_id": "i14_4_4_producer_directed_cycle_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_generator_extractor_feedback_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_generator_extractor_feedback_i1451",
+      "iteration": "I14.5-1",
+      "output_digest": "61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generator_extractor_feedback_i1451.json",
+      "sha256": "e12047ec50a99b4c485357b78963730136e6bfe9e683aea555b0a50c33537dc2",
+      "source_id": "i14_5_1_generator_extractor_feedback_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_buffered_generator_extractor_feedback_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_buffered_generator_extractor_feedback_i1452",
+      "iteration": "I14.5-2",
+      "output_digest": "16b51f3750e1f10056573666a60b9762df763aa77d30ff8d7776eb24cbc2d9b7",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_buffered_generator_extractor_feedback_i1452.json",
+      "sha256": "1de839c455798a855c276ed3cfc54286a27a8babed24f56b5399647ecc9d92ad",
+      "source_id": "i14_5_2_buffered_feedback_bridge",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_role_phase_loop_bridge_candidate_pending_i14d_i14e",
+      "artifact_id": "n29_multi_role_phase_loop_i146",
+      "iteration": "I14.6",
+      "output_digest": "32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_multi_role_phase_loop_i146.json",
+      "sha256": "265a0d4031e2849be4d1e471928483a26365990d8ed3d891404e175300a25d5c",
+      "source_id": "i14_6_multi_role_phase_loop",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_wider_margin_leakage_aggregation_bridge_variant_pending_i14d_i14e",
+      "artifact_id": "n29_wider_margin_leakage_aggregation_i1462",
+      "iteration": "I14.6-2",
+      "output_digest": "57c86cb4776a71a246d7e72aea0c73b60beff0f27066aa5ba3d298ff1c2f4686",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_wider_margin_leakage_aggregation_i1462.json",
+      "sha256": "c4cf63ab0d62e952ab48e8fd4235b34e205b94d1408dd1d5349dbebdf5da5af4",
+      "source_id": "i14_6_2_wider_aggregate_leakage",
+      "status": "passed"
+    }
+  ],
+  "stable_candidate_count": 6,
+  "status": "passed",
+  "stress_count": 39,
+  "title": "Prototype D I14-E Loop / Composition Replay And Stress",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_runtime_claim_allowed": false,
+    "altruism_claim_allowed": false,
+    "ant_ecology_success_claim_allowed": false,
+    "biological_agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "coordinated_exchange_cycle_claim_allowed": false,
+    "ecology_success_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "literal_perpetual_runtime_claim_allowed": false,
+    "native_ecological_role_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_purpose_claim_allowed": false
+  }
+}

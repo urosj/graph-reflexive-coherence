@@ -1,0 +1,48 @@
+{
+  "artifact_id": "n29_neutral_circulation_composition_i144_artifact",
+  "baseline_neutral_leg_context": {
+    "buffer_lobe_capacity_delta": 0.002,
+    "consumption_role": "same-direction neutral circulation context only",
+    "inflow_lobe_capacity_delta": 0.047,
+    "mechanism_class": "three_lobe_circulatory_capacity_exchange",
+    "outflow_lobe_capacity_delta": -0.045,
+    "source_output_digest": "d760e55481c2d84e554c5089863c725c3b57ee7da1dedbf5b919f201c3c754cd",
+    "source_row_id": "n28_i4e_row_competitive_neutral_mechanism_diversity_contrast"
+  },
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "closed_environmental_circulation_loop_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "resource_economy_claim_allowed": false,
+    "single_direction_neutral_circulation_leg_supported": true
+  },
+  "composition_dependency_trace": {
+    "forward_leg_changes_capacity_distribution": true,
+    "label_swap_as_reverse_leg_rejected": true,
+    "later_forward_side_depends_on_second_leg_changed_distribution": false,
+    "ordered_closed_circulation_dependency_supported": false,
+    "reverse_leg_created_by_label_swap": false,
+    "reverse_or_opposite_orientation_leg_source": "not_found_in_current_N28_N29_sources",
+    "reverse_or_opposite_orientation_leg_source_current": false,
+    "second_leg_consumes_forward_changed_distribution": false
+  },
+  "composition_target": "neutral_circulation_loop_candidate",
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "The source-current I4-F row is a real three-lobe neutral circulation leg: one lobe gains, one loses, and a buffer remains near stable while aggregate capacity stays neutral. I14.4 does not have a second source-current opposite-orientation leg, so it cannot form a closed circulation loop; it records the missing reverse leg as composition debt.",
+  "iteration": "I14.4",
+  "output_digest": "162e9f73a600e55092416b8892c31634e20b52d4fc5c0b9e63fe05e7da305229",
+  "runtime_artifact_type": "prototype_d_neutral_circulation_composition_attempt_artifact",
+  "source_current_forward_leg": {
+    "buffer_lobe_capacity_delta": 0.001,
+    "inflow_lobe_capacity_delta": 0.062,
+    "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_value": 0.015,
+    "neutral_circulation_detected": true,
+    "outflow_lobe_capacity_delta": -0.06,
+    "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+    "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast"
+  },
+  "source_precomposition_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475"
+}

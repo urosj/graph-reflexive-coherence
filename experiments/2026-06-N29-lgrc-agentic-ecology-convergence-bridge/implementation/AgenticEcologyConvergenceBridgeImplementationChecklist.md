@@ -2882,21 +2882,22 @@ I14.4  = Neutral Circulation Composition Attempt
 I14.5  = Phase-Coupled Generator / Extractor Composition Attempt
   Generator leg plus extractor leg with source-current phase relation.
 
-I14-D  = Loop / Composition Controls for I14.4-I14.5
+I14-D  = Loop / Composition Controls for I14.4-I14.6-2
   Order inversion, missing feedback, label-only circulation, hidden producer
   coupling, regime-averaging, merge/leakage-as-cycle, and resource-economy
   relabel controls.
 
-I14-E  = Replay / Stress for I14.4-I14.5
-  Replay and stress only if I14.4/I14.5 produce admissible source-current
-  composition rows. Otherwise record blocked composition debt.
+I14-E  = Replay / Stress for I14.4-I14.6-2
+  Replay and stress only if I14.4/I14.5/I14.5-1/I14.5-2/I14.6/I14.6-1/I14.6-2
+  produce admissible source-current composition rows or explicit
+  producer-mediated bridge rows. Otherwise record blocked composition debt.
 ```
 
 Runtime-status split:
 
 ```text
 I14.1-I14.3 = runtime prototypes of already supported N28 motif classes
-I14.4-I14.5 = new composition attempts that may become loop candidates
+I14.4-I14.6 = new composition attempts that may become loop candidates
 ```
 
 ### Iteration 14-A - Prototype D Runtime Admission Schema
@@ -2991,7 +2992,7 @@ Interpretation:
 ```text
 I14-A makes Prototype D runnable-prototype work admissible but does not itself
 support any runtime prototype. I14.1-I14.3 may attempt direct source-current
-runtime prototypes for already supported N28 motif classes. I14.4-I14.5 remain
+runtime prototypes for already supported N28 motif classes. I14.4-I14.6 remain
 composition attempts with stricter ordered-dependency, feedback, and
 replay/order controls before any loop-like claim can be considered.
 ```
@@ -3807,6 +3808,809 @@ This is not a final Prototype D synthesis. It is a pre-composition index for
 I14.4 and I14.5. Neutral circulation and phase-coupled generator/extractor
 composition still have to be attempted before I15 can classify the full
 Prototype D state.
+```
+
+### Iteration 14.4 - Neutral Circulation Composition Attempt
+
+I14.4 tests the neutral-circulation implication from I14/N28. The key question
+is whether the available source-current circulation evidence can form a closed
+circulation loop, not merely whether a single neutral circulation leg exists.
+
+- [x] Consume I14* pre-composition index.
+- [x] Consume N28 I4-E neutral-circulation context.
+- [x] Consume N28 I4-F higher-margin neutral-circulation source row.
+- [x] Record source-current forward neutral-circulation leg.
+- [x] Check whether a source-current opposite-orientation leg exists.
+- [x] Reject label-swapped reverse leg as closed-loop evidence.
+- [x] Keep closed environmental circulation loop blocked.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_single_direction_neutral_circulation_leg_closed_loop_blocked
+artifact = outputs/n29_neutral_circulation_composition_i144.json
+runtime_artifact = outputs/n29_neutral_circulation_composition_i144_artifact.json
+report = reports/n29_neutral_circulation_composition_i144.md
+script = scripts/build_n29_generative_extractive_compositions_i144_i145.py
+output_digest = c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355
+single_direction_neutral_circulation_leg_supported = true
+closed_environmental_circulation_loop_supported = false
+ready_for_i14d_i14e = false
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.4 finds a real source-backed neutral-circulation leg: N28 I4-F records a
+three-lobe pattern where one lobe gains, one lobe loses, and a buffer stays
+near stable while aggregate capacity remains neutral. It does not find a
+second source-current opposite-orientation leg. Therefore I14.4 supports a
+single-direction circulation leg with closed-loop debt, not a closed
+environmental circulation loop.
+```
+
+### Iteration 14.4-1 - Neutral Circulation Loop-Closure Bridge Attempt
+
+I14.4-1 responds to the I14.4 blocker. Since the repository does not yet have
+a second native/source-current opposite-orientation circulation row, I14.4-1
+tries a bounded N29 bridge construction: derive a reverse leg from the
+source-current I4-F forward post-state and test whether ordered loop-closure
+candidate fields can be recorded without relabeling a label swap as closure.
+
+- [x] Consume I14.4 single-direction neutral-circulation result.
+- [x] Consume I14* pre-composition index.
+- [x] Consume N28 I4-F source-current forward circulation leg.
+- [x] Declare reverse-leg bridge policy before use.
+- [x] Derive reverse leg from the forward post-state, not from label swapping.
+- [x] Record forward -> reverse -> later residual-state ordering.
+- [x] Record later forward-side state dependence on the reverse leg.
+- [x] Preserve producer-mediated status for the reverse leg.
+- [x] Keep native closed environmental circulation blocked.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_producer_mediated_neutral_circulation_loop_closure_candidate_pending_i14d_i14e
+artifact = outputs/n29_neutral_circulation_loop_closure_i1441.json
+runtime_artifact = outputs/n29_neutral_circulation_loop_closure_i1441_artifact.json
+report = reports/n29_neutral_circulation_loop_closure_i1441.md
+script = scripts/build_n29_neutral_circulation_loop_closure_i1441.py
+output_digest = 45c6ed3b870b9250e65a5f198e5dc219d188675394e9c08809bc108f96c9521d
+producer_mediated_closed_circulation_candidate_created = true
+native_closed_environmental_circulation_supported = false
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.4-1 turns the I14.4 single-direction leg into a producer-mediated ordered
+loop-closure candidate. The forward leg changes the lobe distribution; the
+declared reverse-leg bridge consumes that changed distribution and returns most
+capacity along the opposite arc; the later residual state depends on that
+reverse leg. This is stronger than I14.4, but still not native LGRC closed
+circulation because the reverse leg is an explicit N29 bridge producer.
+```
+
+### Iteration 14.4-2 - Native-Only Neutral Circulation Closure Search
+
+I14.4-2 asks whether the same loop-closure can be found natively, without the
+I14.4-1 bridge producer. It scans existing N28 native/source-current neutral
+circulation rows for an opposite-orientation leg that also consumes the I4-F
+forward post-state.
+
+- [x] Consume I14.4 single-direction neutral-circulation result.
+- [x] Consume I14.4-1 producer-mediated loop closure as context only.
+- [x] Scan native/source-current N28 neutral-circulation rows.
+- [x] Require opposite orientation, not another same-direction forward leg.
+- [x] Require reverse leg to consume the I4-F forward post-state.
+- [x] Forbid producer fallback.
+- [x] Keep native closed environmental circulation blocked if no native reverse leg exists.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_native_only_reverse_leg_absent_closed_loop_blocked
+artifact = outputs/n29_neutral_circulation_native_search_i1442.json
+report = reports/n29_neutral_circulation_native_search_i1442.md
+script = scripts/build_n29_neutral_circulation_native_search_i1442.py
+output_digest = 4af80144e3bf4b416953592b50904b0fbb47699d9d8425aa9562791b7a5595c4
+native_forward_neutral_circulation_leg_found = true
+native_reverse_opposite_orientation_leg_found = false
+native_closed_environmental_circulation_supported = false
+producer_fallback_used = false
+ready_for_i14d_i14e = false
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.4-2 confirms the native-only answer is currently negative. The scan found
+two native/source-current neutral-circulation rows, I4-E and I4-F, but both
+are forward-oriented. It found zero native reverse-orientation rows that
+consume the I4-F forward post-state. Therefore native closed environmental
+circulation remains blocked, while I14.4-1 remains a producer-mediated bridge
+candidate and missing-mechanism probe.
+```
+
+### Iteration 14.4-3 - Native Directed Circulation Cycle Search
+
+I14.4-3 corrects the scope of I14.4-2. A loop does not have to be a bounce-back
+or sign-inverted reverse leg. It can be a directed cycle: forward from one
+pattern to a second, then forward again through another geometry, closing
+dependency back to the starting pattern class.
+
+- [x] Record how I14.4-3 differs from I14.4-2.
+- [x] Search for native/source-current directed cycles, not only reverse legs.
+- [x] Require a later leg to consume the I4-F changed medium.
+- [x] Require later A-side or A-class state to depend on the later leg.
+- [x] Forbid producer fallback.
+- [x] Keep native closed environmental circulation blocked if no directed dependency cycle exists.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_native_directed_cycle_absent_broader_loop_definition_recorded
+artifact = outputs/n29_neutral_circulation_directed_cycle_i1443.json
+report = reports/n29_neutral_circulation_directed_cycle_i1443.md
+script = scripts/build_n29_neutral_circulation_directed_cycle_i1443.py
+output_digest = 6c0ef71941c7e5ccf4ca39702cb1956a32aaf772cffb7bd04181cdb70af24eee
+native_directed_cycle_found = false
+native_closed_environmental_circulation_supported = false
+producer_fallback_used = false
+ready_for_i14d_i14e = false
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.4-3 uses the broader loop definition: every leg may point forward, like a
+directed cycle, if ordered dependency closes back to the starting pattern
+class. Under that definition, the native result is still negative for the
+current source set. I4-E and I4-F are native neutral-circulation rows, but
+neither records a later native leg that consumes I4-F's changed medium and
+returns dependency to the starting pattern class.
+```
+
+### Iteration 14.4-4 - Producer-Mediated Directed Cycle Bridge
+
+I14.4-4 responds to the I14.4-3 blocker in the producer-mediated bridge lane.
+It does not rewrite I14.4-3 and does not claim native LGRC directed-cycle
+support. Instead, it asks whether N29 can build the missing directed-cycle
+shape with the same kind of bounded bridge producer used elsewhere in the
+N20-N29 series.
+
+- [x] Consume I14.4-3 as the native directed-cycle blocker.
+- [x] Preserve `native_directed_cycle_supported = false`.
+- [x] Consume the I4-F source-current forward neutral-circulation leg.
+- [x] Declare the all-forward directed-cycle bridge policy before use.
+- [x] Build a frame-shifted second forward leg, not a reverse bounce-back leg.
+- [x] Require the second forward leg to consume the prior changed medium.
+- [x] Require later state to return dependency to the starting pattern class.
+- [x] Reject sign-inverted reverse-leg and label-swap closure.
+- [x] Preserve producer-mediated status for the second leg.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_producer_mediated_directed_cycle_bridge_candidate_pending_i14d_i14e
+artifact = outputs/n29_neutral_circulation_directed_cycle_bridge_i1444.json
+runtime_artifact = outputs/n29_neutral_circulation_directed_cycle_bridge_i1444_artifact.json
+report = reports/n29_neutral_circulation_directed_cycle_bridge_i1444.md
+script = scripts/build_n29_neutral_circulation_directed_cycle_bridge_i1444.py
+output_digest = 44fe1547a6abd4313dc4ffff1da3f351e82f73c8f74ac569bce024b517ba45d8
+producer_mediated_directed_cycle_candidate_created = true
+native_directed_cycle_supported = false
+all_legs_locally_forward = true
+reverse_bounce_back_used = false
+sign_inverted_reverse_leg_used = false
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.4-4 is the producer-mediated resolution of the broader I14.4-3 directed
+cycle blocker. The first leg remains the source-current I4-F neutral
+circulation. The second leg is not a bounce-back and not a sign-inverted
+reverse leg; it is a frame-shifted forward leg that consumes the changed
+medium left by the first leg. Closure is recorded because the later
+alpha-class state depends on that second forward leg's changed distribution.
+
+Geometrically, this is the "always forward" loop form: each local transition
+continues forward in its own pattern frame, but the ordered dependency closes
+at the pattern-class level. That makes I14.4-4 valuable bridge evidence for
+the circulation-loop shape, while preserving the key boundary: native LGRC
+directed-cycle support remains blocked by I14.4-3.
+```
+
+### Iteration 14.5 - Phase-Coupled Generator / Extractor Composition Attempt
+
+I14.5 tests whether the generator and extractor motifs can be placed into an
+ordered phase relation without averaging away their roles. Because the clean
+extractor currently comes from I14.2-3's explicit leakage-gated producer lane,
+this can only support a producer-mediated bridge candidate pending I14-D/E.
+
+- [x] Consume I14* pre-composition index.
+- [x] Consume replay/stress-backed I14.1 generator evidence.
+- [x] Consume I14.2-3 clean producer-mediated extractor evidence.
+- [x] Record ordered generator -> extractor -> residual-medium phase relation.
+- [x] Preserve generator and extractor roles separately.
+- [x] Block native phase-coupled exchange, resource economy, cooperation, exploitation, ecology success, and agency claims.
+- [x] Mark I14-D/I14-E controls and replay/stress as pending.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_phase_coupled_generator_extractor_bridge_candidate_pending_i14d_i14e
+artifact = outputs/n29_phase_coupled_generator_extractor_i145.json
+runtime_artifact = outputs/n29_phase_coupled_generator_extractor_i145_artifact.json
+report = reports/n29_phase_coupled_generator_extractor_i145.md
+script = scripts/build_n29_generative_extractive_compositions_i144_i145.py
+output_digest = 85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d
+phase_coupled_bridge_candidate_created = true
+native_phase_coupled_exchange_supported = false
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.5 creates a bounded one-way bridge candidate where a replay/stress-backed
+generative leg is ordered before the clean producer-mediated extractor leg.
+The roles remain distinct: the generator enriches a medium shell and the
+extractor depletes a phase-aligned shell. Geometrically, this is not a win/lose
+transfer where the generator has to lose for the extractor-side region to gain.
+I14.5 shows that generative enrichment and extractive depletion can be ordered
+without collapsing into one generic redistribution event. The generator remains
+generative, the extractor remains extractive, and the bridge preserves both
+roles.
+
+The limitation is explicit: I14.5 stops at the extractor. It does not yet show
+the extractor's changed state feeding a later generator state or forming a
+closed exchange dependency. The phase relation is still an N29 bridge policy,
+so the result is not native LGRC ecology, resource economy, cooperation,
+exploitation, or agency.
+```
+
+### Iteration 14.5-1 - Generator / Extractor Feedback Bridge
+
+I14.5-1 strengthens I14.5 by adding the missing third dependency. I14.5 only
+orders generator before extractor. I14.5-1 asks whether the extractor-modified
+medium can condition a later generator state while preserving generator and
+extractor role polarity.
+
+- [x] Consume I14.5 as the one-way generator -> extractor bridge.
+- [x] Consume the I14.1 generator row.
+- [x] Consume the I14.2-3 leakage-gated extractor row.
+- [x] Derive a later generator feedback leg from extractor-modified medium.
+- [x] Require the later generator to consume extractor-changed state.
+- [x] Preserve generator and extractor roles.
+- [x] Confirm roles are not averaged into generic redistribution.
+- [x] Confirm win/loss transfer is not required.
+- [x] Keep feedback bridge producer-mediated.
+- [x] Keep native phase feedback blocked.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_generator_extractor_feedback_bridge_candidate_pending_i14d_i14e
+artifact = outputs/n29_generator_extractor_feedback_i1451.json
+runtime_artifact = outputs/n29_generator_extractor_feedback_i1451_artifact.json
+report = reports/n29_generator_extractor_feedback_i1451.md
+script = scripts/build_n29_generator_extractor_feedback_i1451.py
+output_digest = 61a74f11a2a596f319d8a9096921bf93d8fd921d32c5fedf87781f62db375486
+phase_feedback_bridge_candidate_created = true
+native_phase_feedback_supported = false
+native_phase_coupled_exchange_supported = false
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.5-1 records a generator -> extractor -> generator bridge. The first
+generator enriches a shell, the extractor removes capacity from a phase-aligned
+shell, and the later generator response is derived from the extractor-modified
+medium. This is stronger than I14.5 because the extractor no longer terminates
+the chain; it conditions a later generator state.
+
+The result is still producer-mediated. It supports a phase-feedback bridge
+candidate pending I14-D/I14-E controls and replay/stress, not native LGRC phase
+feedback, resource economy, cooperation, exploitation, ecology success, or
+agency.
+```
+
+### Iteration 14.5-2 - Buffered Generator / Extractor Feedback Bridge
+
+I14.5-2 strengthens I14.5-1 by inserting a processor/redistribution buffer
+between extractor and later generator. It is not another direct feedback
+attempt and not a retune of I14.5-1. The question is whether a third motif can
+stabilize the phase bridge:
+
+```text
+generator -> extractor -> processor/buffer -> later generator
+```
+
+- [x] Consume I14.5-1 as the direct feedback bridge.
+- [x] Consume I14.3 processor/redistribution runtime motif.
+- [x] Insert processor buffer between extractor and later generator.
+- [x] Require later generator to consume buffered changed medium.
+- [x] Preserve generator, extractor, and processor roles.
+- [x] Confirm roles are not averaged into generic redistribution.
+- [x] Confirm win/loss transfer is not required.
+- [x] Improve phase residual headroom over I14.5-1.
+- [x] Keep buffered feedback bridge producer-mediated.
+- [x] Keep native buffered phase feedback blocked.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_buffered_generator_extractor_feedback_bridge_candidate_pending_i14d_i14e
+artifact = outputs/n29_buffered_generator_extractor_feedback_i1452.json
+runtime_artifact = outputs/n29_buffered_generator_extractor_feedback_i1452_artifact.json
+report = reports/n29_buffered_generator_extractor_feedback_i1452.md
+script = scripts/build_n29_buffered_generator_extractor_feedback_i1452.py
+output_digest = 16b51f3750e1f10056573666a60b9762df763aa77d30ff8d7776eb24cbc2d9b7
+buffered_phase_feedback_bridge_candidate_created = true
+native_buffered_phase_feedback_supported = false
+native_phase_coupled_exchange_supported = false
+i14_5_1_max_phase_residual_abs = 0.02762
+i14_5_2_max_phase_residual_abs = 0.01296
+residual_improvement_over_i14_5_1 = 0.01466
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.5-2 is stronger than I14.5-1 because the later generator does not consume
+extractor-modified medium directly. It consumes extractor-modified medium after
+a processor/redistribution buffer has shaped it. This creates a more plausible
+multi-role phase bridge and prepares I14.6 better than a two-role direct
+feedback pair.
+
+The margin improvement is real within this artifact: max phase residual falls
+from 0.02762 in I14.5-1 to 0.01296 in I14.5-2. The improvement uses one
+declared retention factor across axes and the source-backed I14.3 processor
+motif, so it is not an axis-by-axis threshold retune. The result remains
+producer-mediated and pending I14-D/I14-E. It does not support native buffered
+phase feedback, resource economy, cooperation, exploitation, ecology success,
+or agency.
+```
+
+### Iteration 14.6 - Multi-Role Phase-Coupled Loop Composition
+
+I14.6 is the optional next composition tier. It should use the now available
+generator, extractor, processor, neutral-circulation, and feedback bridge rows
+to test whether a more complex "perpetual" phase-coupled loop can be composed.
+
+- [x] Consume I14.4* circulation bridge rows.
+- [x] Consume I14.5 and I14.5-1 as phase-bridge lineage/context rows.
+- [x] Consume I14.5-2 as the primary buffered phase-feedback input.
+- [x] Compose more than one generator/extractor/processor role.
+- [x] Record ordered dependency cycle, not report-only composition.
+- [x] Separate native source-current legs from producer-mediated bridge legs.
+- [x] Reject hidden producer coupling as native ecology.
+- [x] Reject resource economy, cooperation, exploitation, ecology success, and agency relabels.
+- [x] Keep I14-D/I14-E controls and replay/stress pending unless run.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_multi_role_phase_loop_bridge_candidate_pending_i14d_i14e
+artifact = outputs/n29_multi_role_phase_loop_i146.json
+runtime_artifact = outputs/n29_multi_role_phase_loop_i146_artifact.json
+report = reports/n29_multi_role_phase_loop_i146.md
+script = scripts/build_n29_multi_role_phase_loop_i146.py
+output_digest = 32a6e5567b208d30af6da7b4e523e69089444cfb75a1314a1fa63ae0d3e8db3b
+multi_role_phase_loop_candidate_created = true
+native_multi_role_ecology_supported = false
+producer_mediated_bridge_lane_recorded = true
+phase_feedback_max_residual_abs = 0.01296
+directed_cycle_max_residual_abs = 0.0108
+cross_bridge_residual_abs = 0.0041
+combined_loop_residual_abs = 0.01296
+combined_loop_residual_ceiling = 0.02
+per_leg_leakage_gates_passed = true
+multi_leg_leakage_aggregation_supported = false
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.6 is the first Prototype D row that composes the buffered
+generator/extractor phase-feedback path with the all-forward directed
+circulation path. The ordered sequence is:
+
+generator -> extractor -> processor/buffer -> later generator ->
+all-forward circulation -> generator-side return
+
+This is closer to the intended perpetual-like phase loop than I14.5-2 alone
+because the later-generator signal is consumed by the circulation bridge, and
+the circulation bridge returns dependency toward the generator side. It is not
+a literal perpetual runtime and not native ecology. The row remains a
+producer-mediated multi-role phase-loop candidate pending I14-D/I14-E.
+
+The leakage interpretation is deliberately conservative. Per-leg leakage gates
+pass, but native aggregate shared-medium leakage is not established because
+the composed rows live in different declared bridge frames. Therefore I14.6
+cannot claim resource economy, cooperation, exploitation, ecology success, or
+agency.
+```
+
+### Iteration 14.6-1 - Multi-Leg Leakage Aggregation Probe
+
+I14.6-1 addresses the main weakness left by I14.6. I14.6 passes per-leg
+leakage gates, but it does not show that leakage remains bounded when the
+phase-feedback leg and directed-cycle leg are treated in one common leakage
+attribution frame.
+
+- [x] Consume I14.6 as the multi-role phase-loop candidate.
+- [x] Consume I14.5-2 phase-feedback leakage.
+- [x] Consume I14.4-4 directed-cycle leakage.
+- [x] Declare a common producer-mediated leakage frame before use.
+- [x] Map both leakage channels into the common frame.
+- [x] Use full-sum aggregation.
+- [x] Reject leakage cancellation.
+- [x] Reject overlap credit.
+- [x] Reject hidden sink/source.
+- [x] Reject double-counting discount.
+- [x] Record aggregate leakage margin.
+- [x] Keep native aggregate shared-medium leakage blocked.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_multi_leg_leakage_aggregation_bridge_candidate_pending_i14d_i14e
+artifact = outputs/n29_multi_leg_leakage_aggregation_i1461.json
+runtime_artifact = outputs/n29_multi_leg_leakage_aggregation_i1461_artifact.json
+report = reports/n29_multi_leg_leakage_aggregation_i1461.md
+script = scripts/build_n29_multi_leg_leakage_aggregation_i1461.py
+output_digest = 51c409081b93492d3f4991f5a7ca7353cb10bd29e0a95aad02552339974ade26
+multi_leg_leakage_aggregation_supported = true
+native_aggregate_shared_medium_leakage_supported = false
+producer_mediated_bridge_lane_recorded = true
+phase_feedback_leg_merge_leakage = 0.018
+directed_cycle_leg_merge_leakage = 0.019
+aggregate_merge_leakage = 0.037
+aggregate_merge_leakage_ceiling = 0.04
+aggregate_merge_leakage_margin = 0.003
+narrow_margin_recorded = true
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.6-1 improves the I14.6 leakage status from per-leg-only to a
+producer-mediated aggregate leakage attribution candidate. The aggregation is
+conservative: both leakage values are fully summed, with no cancellation,
+overlap credit, hidden sink/source, or double-counting discount.
+
+The result is useful but narrow. Aggregate leakage is 0.037 against a declared
+aggregate bridge ceiling of 0.04, leaving margin 0.003. This is enough to let
+I14-D/I14-E test the composed loop without carrying the old per-leg-only
+blocker, but it remains producer-mediated and narrow-margin. It does not
+support native shared-medium leakage aggregation, resource economy,
+cooperation, exploitation, ecology success, or agency.
+```
+
+### Iteration 14.6-2 - Wider-Margin Multi-Leg Leakage Aggregation Variant
+
+I14.6-2 responds to the narrow margin in I14.6-1. It keeps the same aggregate
+ceiling and full-sum aggregation stance, but adds a declared producer-mediated
+interface guard to reduce net channel leakage. Captured leakage is recorded as
+producer debt rather than hidden native success.
+
+- [x] Consume I14.6-1 as the narrow aggregate leakage baseline.
+- [x] Preserve the same aggregate leakage ceiling.
+- [x] Preserve full-sum aggregation.
+- [x] Apply one uniform leakage-window factor to both channels.
+- [x] Record gross leakage before the window.
+- [x] Record net leakage after the window.
+- [x] Record producer-guard captured leakage.
+- [x] Reject ceiling relaxation.
+- [x] Reject leakage cancellation.
+- [x] Reject overlap credit.
+- [x] Reject hidden sink/source.
+- [x] Reject double-counting discount.
+- [x] Keep native aggregate shared-medium leakage blocked.
+- [x] Keep resource economy, cooperation, exploitation, ecology success, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_wider_margin_leakage_aggregation_bridge_variant_pending_i14d_i14e
+artifact = outputs/n29_wider_margin_leakage_aggregation_i1462.json
+runtime_artifact = outputs/n29_wider_margin_leakage_aggregation_i1462_artifact.json
+report = reports/n29_wider_margin_leakage_aggregation_i1462.md
+script = scripts/build_n29_wider_margin_leakage_aggregation_i1462.py
+output_digest = 57c86cb4776a71a246d7e72aea0c73b60beff0f27066aa5ba3d298ff1c2f4686
+wider_margin_multi_leg_leakage_aggregation_supported = true
+native_aggregate_shared_medium_leakage_supported = false
+producer_mediated_bridge_lane_recorded = true
+gross_aggregate_merge_leakage_before_window = 0.037
+net_aggregate_merge_leakage = 0.0296
+producer_guard_captured_leakage_total = 0.0074
+aggregate_merge_leakage_ceiling = 0.04
+aggregate_merge_leakage_margin = 0.0104
+margin_improvement_over_i14_6_1 = 0.0074
+ready_for_i14d_i14e = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14.6-2 gives the multi-leg leakage aggregation a wider margin without
+relaxing the aggregate ceiling. I14.6-1 had aggregate leakage 0.037 against
+ceiling 0.04, margin 0.003. I14.6-2 keeps the same ceiling but routes both
+channels through one declared producer-mediated interface guard, reducing net
+aggregate leakage to 0.0296 and widening margin to 0.0104.
+
+This is stronger bridge evidence, not native aggregation. The producer guard
+captures 0.0074 leakage, and that capture is recorded as producer debt rather
+than native shared-medium success. I14.6-2 remains producer-mediated and
+pending I14-D/I14-E. It does not support resource economy, cooperation,
+exploitation, ecology success, or agency.
+```
+
+### Iteration 14-D - Loop / Composition Controls For I14.4-I14.6-2
+
+- [x] Consume I14.4 through I14.6-2 composition-family artifacts.
+- [x] Preserve I14.4-2 and I14.4-3 native circulation blockers.
+- [x] Keep single-direction and one-way rows as context only.
+- [x] Admit only control-clean producer-mediated bridge rows into I14-E.
+- [x] Reject label-only loop closure and post-hoc circulation stitching.
+- [x] Reject order inversion and missing-feedback promotion.
+- [x] Reject hidden producer coupling and producer-as-native relabels.
+- [x] Reject regime averaging and generator/extractor role swapping.
+- [x] Reject merge/leakage-as-cycle, leakage cancellation, overlap credit, and double-count discounts.
+- [x] Reject resource economy, cooperation, exploitation, and agency relabels.
+- [x] Keep replay/stress pending until I14-E.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_loop_composition_controls_fail_closed_ready_for_i14e
+artifact = outputs/n29_loop_composition_controls_i14d.json
+report = reports/n29_loop_composition_controls_i14d.md
+script = scripts/build_n29_loop_composition_controls_i14d.py
+output_digest = afbfa39f02c0e3432aa97a167a9736ba402f7ab930301cc587c49475cda377c2
+
+control_count = 14
+failed_closed_count = 14
+failed_open_count = 0
+i14e_consumable_candidate_count = 6
+
+i14e_consumable_candidate_ids =
+  i14_4_1_producer_reverse_loop_bridge
+  i14_4_4_producer_directed_cycle_bridge
+  i14_5_1_generator_extractor_feedback_bridge
+  i14_5_2_buffered_feedback_bridge
+  i14_6_multi_role_phase_loop
+  i14_6_2_wider_aggregate_leakage
+
+limited_or_blocker_source_ids =
+  i14_4_single_direction_neutral_circulation
+  i14_4_2_native_reverse_search_blocker
+  i14_4_3_native_directed_cycle_blocker
+  i14_5_generator_extractor_one_way_bridge
+  i14_6_1_narrow_aggregate_leakage
+
+native_reverse_opposite_orientation_leg_found = false
+native_directed_cycle_found = false
+producer_bridge_rows_do_not_overwrite_native_blockers = true
+
+i14_6_2_aggregate_margin = 0.0104
+leakage_cancellation_used = false
+overlap_credit_used = false
+double_counting_discount_used = false
+ceiling_relaxation_used = false
+
+ready_for_i14e_replay_stress = true
+ready_for_iteration_15 = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14-D is the controls-only admission gate for the I14.4-I14.6-2 composition
+family. It does not add replay or stress evidence. It proves that the current
+composition rows cannot pass by labels, post-hoc stitching, order inversion,
+missing feedback promotion, hidden producer coupling, regime averaging,
+leakage accounting tricks, or semantic resource/social/agency relabels.
+
+The main result is bounded: six producer-mediated bridge candidates are
+admitted to I14-E replay/stress, while the native blockers remain blockers.
+I14.4 and I14.5 remain useful construction context but are not promoted into
+closed loops. I14.6-1 remains a narrow aggregate baseline, and I14.6-2 becomes
+the aggregate leakage candidate carried forward because it keeps the same
+ceiling while widening the margin. Nothing in I14-D supports native ecology,
+native phase-coupled exchange, native aggregate shared-medium leakage,
+resource economy, cooperation, exploitation, or agency.
+```
+
+### Iteration 14-E - Replay / Stress For I14.4-I14.6-2
+
+- [x] Consume only the six candidates admitted by I14-D.
+- [x] Run artifact replay, snapshot/load replay, duplicate replay, and ordered-dependency replay.
+- [x] Stress order inversion, missing legs, label-only composition, and producer-as-native relabels.
+- [x] Stress reverse-leg removal for I14.4-1.
+- [x] Stress second-forward-leg removal for I14.4-4.
+- [x] Stress extractor-feedback removal for I14.5-1.
+- [x] Stress processor/buffer removal and retention perturbation for I14.5-2.
+- [x] Stress phase-to-cycle and cycle-to-generator bridge removal for I14.6.
+- [x] Preserve I14.6-2 aggregate leakage margin under replay/stress.
+- [x] Keep native ecology, native aggregate leakage, resource economy, cooperation, exploitation, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_loop_composition_replay_stress_producer_bridge_catalogue_ready_for_i15
+artifact = outputs/n29_loop_composition_replay_stress_i14e.json
+report = reports/n29_loop_composition_replay_stress_i14e.md
+script = scripts/build_n29_loop_composition_replay_stress_i14e.py
+output_digest = 3cdaf38779178b996f1f286e886463e0edd4e4ecd201df87b35e7b63dc2872b4
+
+candidate_count = 6
+stable_candidate_count = 6
+replay_count = 24
+stress_count = 39
+failed_replay_count = 0
+failed_stress_count = 0
+
+producer_mediated_bridge_catalogue_supported = true
+prototype_d_composition_replay_stress_supported = true
+aggregate_merge_leakage_margin = 0.0104
+aggregate_merge_leakage_ceiling = 0.04
+producer_guard_capture_remains_debt = true
+
+native_closed_environmental_circulation_supported = false
+native_phase_coupled_exchange_supported = false
+native_multi_role_ecology_supported = false
+native_aggregate_shared_medium_leakage_supported = false
+resource_economy_claim_allowed = false
+cooperation_claim_allowed = false
+exploitation_claim_allowed = false
+agency_claim_allowed = false
+
+ready_for_iteration_15 = true
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I14-E strengthens the Prototype D composition family from control-clean
+candidate rows into a replay/stress-backed producer-mediated bridge catalogue.
+The result covers the six I14-D-admitted candidates and preserves the I14.6-2
+aggregate leakage margin of 0.0104 under replay/stress.
+
+The claim remains bounded. I14-E does not make the loop native, does not make
+I14.6 a native multi-role ecology, and does not convert producer guard capture
+into native shared-medium leakage support. It supports a useful bridge
+catalogue for later prototype classification, not resource economy,
+cooperation, exploitation, or agency.
+```
+
+### Iteration 14Y - Complete Prototype D Synthesis
+
+I14Y is the complete Prototype D synthesis before I15 atlas classification. It
+updates the earlier I14X pre-composition synthesis with the full I14.4-I14.E
+composition tranche.
+
+- [x] Consume I14X pre-composition synthesis.
+- [x] Consume I14.4 through I14.6-2 composition rows.
+- [x] Consume I14-D controls and I14-E replay/stress.
+- [x] Classify the native/source-current motif layer.
+- [x] Preserve the blocked native composition layer.
+- [x] Classify the replay/stress-backed producer-mediated composition bridge layer.
+- [x] Record row roles for I14X, I14.4-I14.6-2, I14-D, and I14-E.
+- [x] Record naturalization targets for native ordered dependency, changed-medium handoff, aggregate leakage, and clean extractor support.
+- [x] Keep final atlas classification pending I15.
+- [x] Keep native ecology, resource economy, cooperation, exploitation, and agency blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_complete_prototype_d_synthesis_ready_for_i15
+artifact = outputs/n29_prototype_d_complete_synthesis_i14y.json
+report = reports/n29_prototype_d_complete_synthesis_i14y.md
+script = scripts/build_n29_prototype_d_complete_synthesis_i14y.py
+output_digest = aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be
+
+synthesis_scope = I14_through_I14_E
+prototype_d_native_motif_layer_supported = true
+prototype_d_native_composition_layer_supported = false
+prototype_d_producer_mediated_composition_bridge_supported = true
+complete_prototype_d_synthesis_supported = true
+prototype_d_final_atlas_classification_allowed = false
+
+native_source_current_motifs =
+  I14.1 generative enrichment
+  I14.2 extractive depletion with leakage caveat
+  I14.3 processor / redistribution
+  I14.4 single-direction neutral-circulation leg
+
+producer_bridge_stable_candidate_count = 6
+producer_bridge_replay_count = 24
+producer_bridge_stress_count = 39
+producer_bridge_failed_replay_count = 0
+producer_bridge_failed_stress_count = 0
+aggregate_leakage_margin = 0.0104
+
+native_reverse_opposite_orientation_leg_found = false
+native_directed_cycle_found = false
+native_closed_environmental_circulation_supported = false
+native_phase_coupled_exchange_supported = false
+native_multi_role_ecology_supported = false
+native_aggregate_shared_medium_leakage_supported = false
+
+ready_for_iteration_15 = true
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+Prototype D now has a complete pre-I15 synthesis. The native/source-current
+motif layer is supported, but only as motif/runtime evidence: generative
+enrichment, extractive depletion with leakage caveat, processor redistribution,
+and one single-direction neutral-circulation leg.
+
+The native composition layer remains blocked. Current artifacts do not support
+native reverse/directed-cycle closure, native phase-coupled exchange, native
+multi-role ecology, or native aggregate shared-medium leakage. The strongest
+composition result is instead a replay/stress-backed producer-mediated bridge
+catalogue from I14-E, with I14.6-2 carrying the aggregate leakage margin.
+
+I14Y is a synthesis and handoff record, not final atlas classification. I15
+still has to classify Prototype D alongside the other prototype families.
 ```
 
 ### Iteration 15 - Prototype Composition And Atlas Classification

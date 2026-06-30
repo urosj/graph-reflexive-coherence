@@ -1,0 +1,106 @@
+{
+  "artifact_id": "n29_generator_extractor_feedback_i1451_artifact",
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_phase_coupled_exchange_supported": false,
+    "native_phase_feedback_supported": false,
+    "phase_coupled_exchange_cycle_claim_allowed": false,
+    "phase_feedback_bridge_candidate_created": true,
+    "resource_economy_claim_allowed": false
+  },
+  "composition_target": "generator_extractor_generator_feedback_candidate",
+  "experiment_id": "N29",
+  "extractor_leg": {
+    "environment_capacity_delta": -0.069,
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_value": 0.0165,
+    "neighbor_boundary_delta": -0.081,
+    "neighbor_distinguishability_delta": -0.077,
+    "neighbor_support_delta": -0.063,
+    "producer_mediated": true,
+    "role_preserved": true,
+    "source_iteration": "I14.2-3",
+    "source_output_digest": "8247fa5d5efcbb694051783a77a1b9d19c4f2785690bf75f820e1efa973d57d6",
+    "source_runtime_row_id": "n29_i14_2_3_leakage_gated_extractive_construction_motif"
+  },
+  "feedback_dependency_trace": {
+    "extractor_consumes_generator_changed_medium": true,
+    "extractor_leg_role_preserved": true,
+    "generator_changes_medium_before_extractor": true,
+    "generator_leg_role_preserved": true,
+    "later_generator_consumes_extractor_changed_medium": true,
+    "later_generator_state_depends_on_extractor_changed_medium": true,
+    "native_phase_feedback_supported": false,
+    "ordered_leg_sequence": [
+      "first_generator_leg",
+      "extractor_leg",
+      "later_generator_feedback_leg"
+    ],
+    "phase_feedback_bridge_candidate_created": true,
+    "roles_averaged_away": false,
+    "win_loss_transfer_required": false
+  },
+  "first_generator_leg": {
+    "environment_capacity_delta": 0.123,
+    "neighbor_boundary_delta": 0.126,
+    "neighbor_distinguishability_delta": 0.133,
+    "neighbor_support_delta": 0.082,
+    "role_preserved": true,
+    "source_iteration": "I14.1",
+    "source_output_digest": "cc979553bcc8daeaaaca69d648f66b007854e8dd687e8b5864e64b14c52ad8a1",
+    "source_runtime_row_id": "n29_i14_1_generative_enrichment_motif"
+  },
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "I14.5-1 strengthens I14.5 by adding a third ordered dependency: the extractor-modified medium conditions a later generator state. The first generator enriches a shell, the extractor removes capacity from a phase-aligned shell, and the later generator response is derived from that extractor-modified medium. This is not a generator losing so the extractor can gain. It is a producer-mediated phase feedback bridge where role polarity is preserved across a generator -> extractor -> generator sequence.",
+  "iteration": "I14.5-1",
+  "later_generator_feedback_leg": {
+    "consumes_extractor_changed_medium": true,
+    "environment_capacity_delta": 0.05106,
+    "feedback_magnitude_gate_passed": true,
+    "minimum_feedback_delta": 0.04,
+    "neighbor_boundary_delta": 0.05994,
+    "neighbor_distinguishability_delta": 0.05698,
+    "neighbor_support_delta": 0.04662,
+    "role_preserved": true,
+    "source": "N29_bridge_derived_from_extractor_modified_medium",
+    "source_current_native": false
+  },
+  "leakage_record": {
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_gate_passed": true,
+    "merge_leakage_margin": 0.006,
+    "merge_leakage_value": 0.019
+  },
+  "output_digest": "b995e6a5b9ca455112c5c44242cc9f8ac8891bbb00a375849830c3c9e66e645b",
+  "phase_residual_record": {
+    "max_phase_residual_abs": 0.02762,
+    "max_phase_residual_ceiling": 0.03,
+    "phase_residual_gate_passed": true,
+    "phase_residuals": {
+      "boundary_phase_residual": -0.01494,
+      "distinguishability_phase_residual": -0.00098,
+      "environment_phase_residual": 0.00294,
+      "support_phase_residual": -0.02762
+    }
+  },
+  "producer_feedback_policy": {
+    "declared_before_use": true,
+    "extractor_relabelled_as_generator": false,
+    "feedback_response_factor": 0.74,
+    "generator_loss_required": false,
+    "policy_id": "n29_i14_5_1_extractor_to_later_generator_feedback_bridge_v1",
+    "producer_mediated": true,
+    "producer_success_can_upgrade_native": false,
+    "producer_surface_role": "derive a later generator response from the extractor-modified medium while preserving generator/extractor role polarity",
+    "thresholds_retuned": false
+  },
+  "runtime_artifact_type": "producer_mediated_generator_extractor_feedback_bridge_artifact",
+  "source_i14_5_digest": "85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d",
+  "source_precomposition_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475",
+  "source_row_audit": {
+    "i14_1_generator_digest": "cc979553bcc8daeaaaca69d648f66b007854e8dd687e8b5864e64b14c52ad8a1",
+    "i14_2_3_extractor_digest": "8247fa5d5efcbb694051783a77a1b9d19c4f2785690bf75f820e1efa973d57d6"
+  }
+}

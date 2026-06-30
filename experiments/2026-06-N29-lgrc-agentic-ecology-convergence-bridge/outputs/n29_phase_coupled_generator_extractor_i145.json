@@ -1,0 +1,150 @@
+{
+  "acceptance_state": "accepted_phase_coupled_generator_extractor_bridge_candidate_pending_i14d_i14e",
+  "artifact_id": "n29_phase_coupled_generator_extractor_i145",
+  "checks": [
+    {
+      "check_id": "i14x_ready_for_composition_attempts",
+      "passed": true
+    },
+    {
+      "check_id": "generator_leg_replay_stress_backed",
+      "passed": true
+    },
+    {
+      "check_id": "extractor_leg_clean_producer_supported",
+      "passed": true
+    },
+    {
+      "check_id": "roles_not_averaged_away",
+      "passed": true
+    },
+    {
+      "check_id": "native_phase_claim_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha_match",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_ecology_runtime_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_ecology_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "closed_environmental_circulation_loop_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "coordinated_exchange_cycle_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "native_ecological_role_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_purpose_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_generative_extractive_compositions_i144_i145.py",
+  "composition_attempt_row": {
+    "claim_ceiling": "producer_mediated_generator_extractor_phase_bridge_candidate_pending_controls_replay",
+    "extractor_leg_role_preserved": true,
+    "generator_leg_role_preserved": true,
+    "native_phase_coupled_exchange_supported": false,
+    "phase_coupled_bridge_candidate_created": true,
+    "phase_coupled_exchange_cycle_claim_allowed": false,
+    "producer_mediated_phase_bridge": true,
+    "remaining_debt": [
+      "I14-D composition controls pending",
+      "I14-E replay/stress pending",
+      "phase relation is producer-mediated, not native source-current LGRC",
+      "resource economy, cooperation, exploitation, and agency claims remain blocked"
+    ],
+    "roles_averaged_away": false,
+    "row_decision": "partial",
+    "row_decision_scope": "producer_mediated_phase_coupled_bridge_candidate_pending_i14d_i14e",
+    "row_digest": "2d77d09aeb79ee600b8f1f2b111b1e4c29b8fa05b62a74c18a628cc4aca898a5",
+    "row_id": "n29_i14_5_phase_coupled_generator_extractor_bridge_candidate",
+    "runtime_artifact_manifest": [
+      {
+        "artifact_role": "n29_i14_5_phase_coupled_generator_extractor_artifact",
+        "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_phase_coupled_generator_extractor_i145_artifact.json",
+        "sha256": "f615aca2036f6234751023d4972a423e2aa42b10384ee7dd95ce7a8573b76e88"
+      }
+    ],
+    "source_current_native_phase_relation": false
+  },
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_generative_extractive_compositions_i144_i145.py",
+  "iteration": "I14.5",
+  "native_phase_coupled_exchange_supported": false,
+  "output_digest": "85bc10c8918e6c18008bd62d1715bac8f1dfa814b5bdfba43eda051b2117d56d",
+  "phase_coupled_bridge_candidate_created": true,
+  "ready_for_i14d_i14e": true,
+  "ready_for_iteration_15": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_i14x_pre_composition_index_ready_for_i14_4_i14_5",
+      "artifact_id": "n29_generative_extractive_medium_reshaping_synthesis_i14x",
+      "iteration": "I14*",
+      "output_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_medium_reshaping_synthesis_i14x.json",
+      "sha256": "db4398c5c74a5cce654857b51e500edf0ebf9af1d4b9702b9e69903a57d4cf24",
+      "source_id": "n29_i14x_precomposition_index",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_generative_enrichment_motif_direct_runtime_candidate_pending_i14b_i14c",
+      "artifact_id": "n29_generative_enrichment_runtime_i141",
+      "iteration": "I14.1",
+      "output_digest": "cc979553bcc8daeaaaca69d648f66b007854e8dd687e8b5864e64b14c52ad8a1",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_enrichment_runtime_i141.json",
+      "sha256": "7e8e9a611fee0ad75543e8fff0439dfcbe8f7b235ce65cb5cf23ace9cb736c65",
+      "source_id": "n29_i14_1_generator_runtime",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_direct_runtime_candidates_bounded_replay_stress_pending_classification",
+      "artifact_id": "n29_generative_extractive_direct_replay_stress_i14c",
+      "iteration": "I14-C",
+      "output_digest": "b10bf023a775433daa6dcf03805cabff606f6f81aaa94f16b0b677f73e9d8fa2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_generative_extractive_direct_replay_stress_i14c.json",
+      "sha256": "6d45d005ff9d830657710bae70120ede2394b0a5655bb32eb6636e47667dec30",
+      "source_id": "n29_i14_c_direct_replay_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_leakage_gated_extractor_construction_candidate_pending_controls_replay_stress",
+      "artifact_id": "n29_extractive_clean_constructed_runtime_i1423",
+      "iteration": "I14.2-3",
+      "output_digest": "8247fa5d5efcbb694051783a77a1b9d19c4f2785690bf75f820e1efa973d57d6",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_constructed_runtime_i1423.json",
+      "sha256": "b3bb324dc7de43203ca5f519e16a96057e950ad808a6e0ff98ffe6797df815cc",
+      "source_id": "n29_i14_2_3_clean_extractor_runtime",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_leakage_gated_extractor_bounded_replay_stress_pending_classification",
+      "artifact_id": "n29_extractive_clean_constructed_replay_stress_i1423c",
+      "iteration": "I14.2-3-C",
+      "output_digest": "959f72a4a6d6cf4ee9db5cd191136f54bbd19d707be5db4303ce79b0f9bf84b6",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_extractive_clean_constructed_replay_stress_i1423c.json",
+      "sha256": "6576818be654adf497b1d261b3b2e5dcc6d1150a1e84876697aa24a50c90a13d",
+      "source_id": "n29_i14_2_3_c_clean_extractor_replay_stress",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "title": "Prototype D I14.5 Phase-Coupled Generator / Extractor Composition Attempt"
+}

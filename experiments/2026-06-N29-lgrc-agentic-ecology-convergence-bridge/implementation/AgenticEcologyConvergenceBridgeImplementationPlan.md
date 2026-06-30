@@ -752,8 +752,8 @@ Iteration 14-B - Controls For I14.1-I14.3
 Iteration 14-C - Replay / Stress For I14.1-I14.3
 Iteration 14.4 - Neutral Circulation Composition Attempt
 Iteration 14.5 - Phase-Coupled Generator / Extractor Composition Attempt
-Iteration 14-D - Loop / Composition Controls For I14.4-I14.5
-Iteration 14-E - Replay / Stress For I14.4-I14.5
+Iteration 14-D - Loop / Composition Controls For I14.4-I14.6-2
+Iteration 14-E - Replay / Stress For I14.4-I14.6-2
 Iteration 15 - Prototype Composition And Atlas Classification
 ```
 
@@ -1154,36 +1154,133 @@ I14.4  = Neutral Circulation Composition Attempt
   Opposite-orientation or ordered-dependency construction attempt for the
   neutral circulation implication. This remains a composition attempt until
   ordered source-current dependency and replay/order controls pass.
+  The first admissible outcome may be a blocked/partial record if only a
+  single source-current circulation direction exists. A label-swapped reverse
+  leg must be rejected rather than counted as closed circulation.
+
+I14.4-1 = Neutral Circulation Loop-Closure Bridge Attempt
+  If I14.4 finds only a single source-current circulation leg, try a bounded
+  N29 bridge construction that derives a reverse leg from the forward post-state.
+  This can support only a producer-mediated ordered loop-closure candidate
+  pending I14-D/E. It must not be described as native LGRC closed circulation.
+
+I14.4-2 = Native-Only Neutral Circulation Closure Search
+  Search existing native/source-current circulation rows for an opposite-
+  orientation leg that consumes the I4-F forward post-state. No producer
+  fallback is allowed. If no such leg exists, record the native closure blocker
+  explicitly and keep I14.4-1 as bridge evidence only.
+
+I14.4-3 = Native Directed Circulation Cycle Search
+  Correct the I14.4-2 scope: a loop does not require bounce-back or sign-
+  inverted reverse orientation. It may be a directed cycle where each leg
+  continues forward, as long as a later leg consumes the changed medium and
+  closes dependency back to the starting pattern class. Search for that broader
+  native directed cycle without producer fallback.
+
+I14.4-4 = Producer-Mediated Directed Cycle Bridge
+  Resolve the I14.4-3 blocker only in the bridge lane. Keep the I14.4-3 native
+  result negative, then add a producer-mediated frame-shifted forward leg that
+  consumes the source-current I4-F changed medium and returns dependency to the
+  starting pattern class. This is not the I14.4-1 reverse-return bridge: every
+  local leg remains forward in its own frame. The result may support an
+  all-forward directed-cycle bridge candidate pending I14-D/E, but it must not
+  upgrade native LGRC directed-cycle support or open resource-economy,
+  cooperation, exploitation, ecology-success, or agency claims.
 
 I14.5  = Phase-Coupled Generator / Extractor Composition Attempt
   Generator leg plus extractor leg with source-current phase relation. This
   remains a composition attempt until gain/loss dependency is ordered,
-  source-current, and replay/control-backed.
+  source-current, and replay/control-backed. If the clean extractor leg comes
+  from an explicit N29 producer-mediated bridge, the result can only be a
+  producer-mediated phase bridge candidate, not native ecology or resource
+  economy.
 
-I14-D  = Loop / Composition Controls for I14.4-I14.5
+I14.5-1 = Generator / Extractor Feedback Bridge
+  Strengthen I14.5 by adding the missing feedback dependency: the extractor's
+  changed medium must condition a later generator state. This tests a
+  generator -> extractor -> generator bridge rather than the one-way
+  generator -> extractor transition in I14.5. It should preserve role polarity:
+  generator remains enrichment, extractor remains depletion, and the feedback
+  bridge must not collapse them into generic redistribution or a win/loss
+  transfer. If the later generator leg is producer-mediated, classify the row
+  as producer-mediated phase-feedback candidate pending I14-D/E, not native
+  phase-coupled exchange.
+
+I14.5-2 = Buffered Generator / Extractor Feedback Bridge
+  Strengthen I14.5-1 by inserting the processor/redistribution motif between
+  extractor and later generator. This should test a different mechanism:
+  generator -> extractor -> processor/buffer -> later generator. It must not
+  be a direct retune of I14.5-1. A useful result should preserve generator,
+  extractor, and processor roles, improve residual headroom using a declared
+  buffer policy, and keep the claim ceiling producer-mediated pending I14-D/E.
+
+I14.6 = Multi-Role Phase-Coupled Loop Composition
+  Optional next composition tier after I14.5-2. Instead of using only one
+  generator and one extractor, compose a more complex system from generators,
+  extractors, processors, and circulation motifs to test whether a
+  "perpetual" phase-coupled loop can be generated as an ordered dependency
+  cycle. I14.6 may use producer-mediated bridge surfaces if native runtime
+  surfaces are missing, but it must record lane ceilings explicitly and must
+  not use producer-mediated success to upgrade native ecology, resource
+  economy, cooperation, exploitation, or agency claims.
+
+I14.6-1 = Multi-Leg Leakage Aggregation Probe
+  Address the main I14.6 weakness. I14.6 has per-leg leakage gates, but no
+  aggregate shared leakage frame. I14.6-1 should map the phase-feedback and
+  directed-cycle leakages into a common producer-mediated bridge frame, reject
+  cancellation, overlap credit, hidden sinks/sources, and double-counting
+  discounts, and record whether full-sum aggregate leakage stays within a
+  declared aggregate ceiling. A supported row may strengthen I14.6 only in the
+  producer-mediated bridge lane; it must not support native shared-medium
+  leakage aggregation or ecology/resource/agency claims.
+
+I14.6-2 = Wider-Margin Multi-Leg Leakage Aggregation Variant
+  Strengthen I14.6-1 if its aggregate margin is too narrow. Preserve the same
+  aggregate ceiling and full-sum aggregation policy, reject cancellation,
+  overlap credit, hidden sinks/sources, and double-counting discounts, and use
+  a declared producer-mediated interface guard to reduce net channel leakage.
+  Captured leakage must be recorded as producer/naturalization debt, not hidden
+  native success. A supported row can widen the producer-mediated bridge
+  margin, but still cannot support native shared-medium leakage aggregation or
+  ecology/resource/agency claims.
+
+I14-D  = Loop / Composition Controls for I14.4-I14.6-2
   Order inversion, missing feedback, label-only circulation, hidden producer
   coupling, regime-averaging, merge/leakage-as-cycle, and resource-economy
-  relabel controls.
+  relabel controls. If I14.4-1 or I14.4-4 is consumed, controls must preserve
+  the distinction between native blocked rows and producer-mediated bridge
+  rows.
 
-I14-E  = Replay / Stress for I14.4-I14.5
-  Replay and stress only if I14.4/I14.5 produce admissible source-current
-  composition rows. Otherwise record blocked composition debt.
+I14-E  = Replay / Stress for I14.4-I14.6-2
+  Replay and stress only if I14.4/I14.4-1/I14.4-4/I14.5/I14.5-1/I14.5-2/
+  I14.6/I14.6-1/I14.6-2 produce admissible source-current composition rows
+  or explicit producer-mediated bridge rows. Otherwise record blocked
+  composition debt.
 
 I14* = Prototype D Synthesis
   Synthesize I14 through I14.2-3-C into a compact carry-forward record. The
   synthesis must distinguish direct source-current motifs from the
   producer-mediated leakage-gated extractor, preserve the original I14.2
   leakage caveat, keep native clean extractor support blocked, and hand
-  I14.4/I14.5 a searchable pre-composition Prototype D state without opening
+  I14.4/I14.5/I14.5-1/I14.6 a searchable composition Prototype D state without opening
   closed circulation, exchange cycle, resource economy, ecology success,
   cooperation, exploitation, or agency claims.
+
+I14Y = Complete Prototype D Synthesis
+  Synthesize the full Prototype D tranche after I14-E. The synthesis must
+  explicitly preserve the split between native/source-current motif evidence,
+  blocked native composition evidence, and replay/stress-backed
+  producer-mediated composition bridge evidence. It should record row roles
+  for I14X, I14.4-I14.6-2, I14-D, and I14-E, carry forward naturalization
+  targets, keep final atlas classification pending I15, and block native
+  ecology, resource economy, cooperation, exploitation, and agency claims.
 ```
 
 The important split is:
 
 ```text
 I14.1-I14.3 = runtime prototypes of already supported N28 motif classes
-I14.4-I14.5 = new composition attempts that may become loop candidates
+I14.4-I14.6 = new composition attempts that may become loop candidates
 ```
 
 I14.1-I14.3 should be read as candidate creation unless I14-B and I14-C pass.
@@ -1204,7 +1301,7 @@ must be evaluated through opposed route-lobe capacity deltas; aggregate
 near-neutral capacity alone is not enough.
 
 For now, I14's five motifs are sufficient for Prototype D admission. Loop
-composition remains downstream debt until the I14.4/I14.5 path exists and
+composition remains downstream debt until the I14.4-I14.6 path exists and
 passes its own controls.
 
 ### Phase D - Probe Contracts And Closeout

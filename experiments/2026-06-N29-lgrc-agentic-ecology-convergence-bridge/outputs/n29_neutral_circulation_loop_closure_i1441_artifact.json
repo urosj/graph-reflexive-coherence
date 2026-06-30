@@ -1,0 +1,74 @@
+{
+  "artifact_id": "n29_neutral_circulation_loop_closure_i1441_artifact",
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "cooperation_claim_allowed": false,
+    "exploitation_claim_allowed": false,
+    "native_closed_environmental_circulation_supported": false,
+    "producer_mediated_closed_circulation_candidate_created": true,
+    "resource_economy_claim_allowed": false
+  },
+  "closure_dependency_trace": {
+    "closed_circulation_candidate_created": true,
+    "forward_leg_changes_capacity_distribution": true,
+    "label_swap_as_reverse_leg_rejected": true,
+    "later_forward_side_state_depends_on_reverse_leg": true,
+    "native_closed_circulation_supported": false,
+    "ordered_leg_sequence": [
+      "forward_source_current_leg",
+      "derived_reverse_leg",
+      "later_forward_side_residual_state"
+    ],
+    "reverse_leg_consumes_forward_changed_distribution": true
+  },
+  "derived_reverse_leg": {
+    "minimum_return_magnitude": 0.04,
+    "return_magnitude_gate_passed": true,
+    "reverse_buffer_delta": 0.0016,
+    "reverse_gain_on_forward_outflow_lobe": 0.048,
+    "reverse_leg_consumes_forward_changed_distribution": true,
+    "reverse_leg_source": "N29_bridge_derived_from_I4F_forward_post_state",
+    "reverse_leg_source_current_native": false,
+    "reverse_loss_on_forward_inflow_lobe": -0.0496
+  },
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "geometry_interpretation": "I14.4-1 turns the single neutral circulation leg into an ordered bridge-loop candidate by deriving a reverse leg from the forward post-state. The forward leg enriches one lobe and depletes the opposed lobe; the reverse leg then consumes that changed state and returns most of the capacity along the opposite arc. The residual state remains bounded, but the reverse leg is N29 producer-mediated, not native LGRC source-current closure.",
+  "iteration": "I14.4-1",
+  "leakage_record": {
+    "merge_leakage_ceiling": 0.025,
+    "merge_leakage_gate_passed": true,
+    "merge_leakage_margin": 0.007,
+    "merge_leakage_value": 0.018
+  },
+  "output_digest": "06de4db170c08ebc775728dda51db3507e4d6115ed1b0d6afb7374413ad8d385",
+  "residual_medium_state": {
+    "max_allowed_abs_residual": 0.015,
+    "residual_buffer_lobe_capacity_delta": 0.0026,
+    "residual_gate_passed": true,
+    "residual_inflow_lobe_capacity_delta": 0.0124,
+    "residual_outflow_lobe_capacity_delta": -0.012
+  },
+  "reverse_leg_policy": {
+    "declared_before_use": true,
+    "label_swap_used": false,
+    "policy_id": "n29_i14_4_1_reverse_leg_bridge_policy_v1",
+    "producer_mediated": true,
+    "producer_success_can_upgrade_native": false,
+    "producer_surface_role": "derive an opposite-direction return leg from the source-current forward post-state",
+    "reverse_return_factor": 0.8,
+    "thresholds_retuned": false
+  },
+  "runtime_artifact_type": "prototype_d_neutral_circulation_loop_closure_attempt_artifact",
+  "source_current_forward_leg": {
+    "buffer_lobe_capacity_delta": 0.001,
+    "inflow_lobe_capacity_delta": 0.062,
+    "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+    "neutral_circulation_detected": true,
+    "outflow_lobe_capacity_delta": -0.06,
+    "source_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+    "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast"
+  },
+  "source_i14_4_digest": "c66b0368d927644b9c3d7c00f8bc9754f2572b0b6a5e14616ad705af43c6a355",
+  "source_precomposition_digest": "320f59800ddb76879d36c0753fdbdac22f049c8ce9088fcf4341b16a18c1c475"
+}
