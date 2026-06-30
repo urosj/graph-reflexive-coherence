@@ -1,0 +1,152 @@
+{
+  "agency_claim_allowed": false,
+  "artifact_id": "n29_bridge_visualization",
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "passed": true
+    },
+    {
+      "check_id": "all_visual_outputs_exist",
+      "passed": true
+    },
+    {
+      "check_id": "visual_boundary_blocks_proof_claim",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_manifest",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "not_agency_or_semantic_action": true,
+    "not_ecology_success": true,
+    "not_native_ecology": true,
+    "not_new_evidence": true,
+    "not_phase8_completion": true,
+    "not_runtime_execution": true
+  },
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/render_n29_bridge_visualization.py",
+  "ecology_success_supported": false,
+  "experiment_id": "N29",
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "render_n29_bridge_visualization.py",
+  "native_ecology_supported": false,
+  "output_digest": "2c5dfc697230a783c564bdefc9db044134cc31b056be051c48336c17f50fb6f2",
+  "phase8_completion_opened": false,
+  "runtime_probe_executed": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_prototype_atlas_with_debt_classification",
+      "artifact_id": "n29_prototype_atlas_classification_i15",
+      "output_digest": "e139dd61fcd2b0998282033e5fe1a041891291d5db036982063e510be33f7cd2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_atlas_classification_i15.json",
+      "sha256": "1a810918df2923b5f5fe475ec9d0cc1f843fe614640b8149ea25173aab985a26",
+      "source_id": "i15_prototype_atlas",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_ecology_probe_contract",
+      "artifact_id": "n29_minimal_ecology_probe_contract_i16",
+      "output_digest": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_minimal_ecology_probe_contract_i16.json",
+      "sha256": "44fbe5b9547279012bcc35f89cb7b66864fc4f06a57ff2ea0e8c42e3dcbdd58f",
+      "source_id": "i16_minimal_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_ecology_probe_contract",
+      "artifact_id": "n29_alternative_ecology_probe_contract_i17",
+      "output_digest": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_alternative_ecology_probe_contract_i17.json",
+      "sha256": "3fed33e4fe040da5eb35374af0ed89510e4a8f7ba3bda93849a0ce3e4eaf92cc",
+      "source_id": "i17_alternative_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_full_bridge_probe_contract",
+      "artifact_id": "n29_full_bridge_probe_contract_i17a",
+      "output_digest": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_full_bridge_probe_contract_i17a.json",
+      "sha256": "bbdc9009626200f41ce993adfe7f1e557fb6d8ee1d1cb77666a94f317339af31",
+      "source_id": "i17a_full_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_agentic_ecology_convergence_bridge_handoff",
+      "artifact_id": "n29_closeout_and_ecology_handoff_i18",
+      "output_digest": "fa21662f0a69d582bfe574311110f2610a21e6e4e352991823ce47280e0e8ff5",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_closeout_and_ecology_handoff_i18.json",
+      "sha256": "842ba57e994bbb3e219acff741afd85c87d102bea5eec6d134f3b84f2445cb52",
+      "source_id": "i18_closeout",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_complete_prototype_d_synthesis_ready_for_i15",
+      "artifact_id": "n29_prototype_d_complete_synthesis_i14y",
+      "output_digest": "aae7a30f8f911cbfb79d32602d7049a1907be3746152844eace7e3aebf29d6be",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_d_complete_synthesis_i14y.json",
+      "sha256": "96ab47fc8a4584bed885fbcf07eeda373b48185508ec2e6418aad8bdcbba71e7",
+      "source_id": "i14y_prototype_d_synthesis",
+      "status": "passed"
+    }
+  ],
+  "source_backed_visuals": true,
+  "status": "passed",
+  "title": "N29 Bridge Visualization",
+  "visual_boundary": "Diagnostic bridge visualization generated from existing N29 JSON artifacts; not a new runtime probe, not new ecology evidence, and not a proof layer.",
+  "visual_outputs": [
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_graph.png",
+      "role": "bridge_atlas_graph_static",
+      "sha256": "0805898097d8076d1818e181104808e7fe36f2dd9c3bcd9f94707ad6f18c4ecc"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_sequence.png",
+      "role": "bridge_atlas_sequence_static",
+      "sha256": "f12dbe9f4de8911901c9fae71c8868c143b52376cde56a47352a62ee4bccdd1f"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_animation.gif",
+      "role": "bridge_atlas_sequence_animation",
+      "sha256": "b4d9f159ea5d226d1b4757cdc8d163e3cad492aae84569258271772071c58165"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_prototype_atlas_panel.png",
+      "role": "prototype_atlas_panel",
+      "sha256": "f9f9b7bf14c24d93d08d1526a8958feaacd13c65fc3138b063fa7ad24d32a8dc"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_probe_contract_expansion.png",
+      "role": "probe_contract_expansion_panel",
+      "sha256": "904756e45d0f70c5855493ed5565bd1e11d4f278a34a573d27ff5364c12da7f8"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_prototype_d_motif_panel.png",
+      "role": "prototype_d_motif_medium_reshaping_panel",
+      "sha256": "4fbf2319a3bc03ae031fcc65e2f27810df2ff91ee9b60891b90eedeeaed4f382"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/frames/n29_bridge_frame_00.png",
+      "role": "bridge_sequence_animation_frame",
+      "sha256": "d59cc8860742b6cbc7390cf31ddfe8d28c2a48ffb2f4f3600810a7803598ffa0"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/frames/n29_bridge_frame_01.png",
+      "role": "bridge_sequence_animation_frame",
+      "sha256": "86539b074c814aae0b29c1760d007980e734f6e527b9bbb013588fd5f93ec712"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/frames/n29_bridge_frame_02.png",
+      "role": "bridge_sequence_animation_frame",
+      "sha256": "bb2f282d8d970142d054c317a3fc44ddb1a38d6af30550c491732e54f160bb67"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/frames/n29_bridge_frame_03.png",
+      "role": "bridge_sequence_animation_frame",
+      "sha256": "4521df544d68b916fed61f3821947517951a5be867b0978baf4ebaba435282c5"
+    }
+  ],
+  "visual_proof_allowed": false
+}

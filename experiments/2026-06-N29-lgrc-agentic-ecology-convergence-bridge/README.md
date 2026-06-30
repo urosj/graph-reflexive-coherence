@@ -164,6 +164,26 @@ N29 should produce six work products.
 6. first agentic-ecology probe contracts
 ```
 
+## Supporting Visualizations
+
+N29 includes a source-backed bridge visualization package:
+
+```text
+manifest = outputs/n29_bridge_visualization.json
+report = reports/n29_bridge_visualization.md
+graph = outputs/n29_bridge_visualization/n29_bridge_atlas_graph.png
+sequence = outputs/n29_bridge_visualization/n29_bridge_atlas_sequence.png
+prototype_panel = outputs/n29_bridge_visualization/n29_prototype_atlas_panel.png
+contract_panel = outputs/n29_bridge_visualization/n29_probe_contract_expansion.png
+prototype_d_panel = outputs/n29_bridge_visualization/n29_prototype_d_motif_panel.png
+auxiliary_animation = outputs/n29_bridge_visualization/n29_bridge_atlas_animation.gif
+```
+
+The visuals summarize the bridge atlas, prototype atlas, contract expansion,
+and Prototype D motif/medium-reshaping lane split. They are diagnostic
+projections from existing N29 JSON artifacts; they do not add runtime evidence,
+ecology success, native ecology, agency, native support, or Phase 8 completion.
+
 ### Ecology Demand Model
 
 The ecology side should be expressed as demands, not as assumed evidence.

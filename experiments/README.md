@@ -512,6 +512,26 @@ I17-A:
   medium reshaping
 ```
 
+N29 supporting visualizations:
+
+| Bridge atlas graph | Sequence image |
+| --- | --- |
+| [![N29 bridge atlas graph](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_graph.png)](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_graph.png) | [![N29 bridge atlas sequence](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_sequence.png)](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_bridge_atlas_sequence.png) |
+
+| Prototype atlas | Contract expansion |
+| --- | --- |
+| [![N29 prototype atlas panel](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_prototype_atlas_panel.png)](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_prototype_atlas_panel.png) | [![N29 probe contract expansion](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_probe_contract_expansion.png)](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_probe_contract_expansion.png) |
+
+| Prototype D motif / medium reshaping |
+| --- |
+| [![N29 Prototype D motif panel](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_prototype_d_motif_panel.png)](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_visualization/n29_prototype_d_motif_panel.png) |
+
+Click the bridge atlas graph, sequence image, and panels to open the full
+images for zooming. The N29 visuals are source-backed
+diagnostic projections from I15/I16/I17/I17-A/I18/I14Y artifacts. They are
+inspection aids; runtime ecology success, native ecology, agency, native
+support, and Phase 8 completion remain blocked by the underlying artifacts.
+
 The outbound handoff target is `reflexive-coherence-agentic-ecology`; it may
 consume N29 as probe-contract input, not as executed ant-ecology runtime. The
 inbound N30+ handoff remains in this repository and carries native-surface and

@@ -85,4 +85,5 @@ n29_alternative_ecology_probe_contract_i17.md
 n29_full_bridge_probe_contract_i17a.md
 n29_closeout_and_ecology_handoff_i18.md
 n29_phase_coupled_generator_extractor_i145.md
+n29_bridge_visualization.md
 ```

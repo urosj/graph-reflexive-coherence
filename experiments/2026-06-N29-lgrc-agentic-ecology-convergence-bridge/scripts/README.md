@@ -78,4 +78,5 @@ build_n29_minimal_ecology_probe_contract_i16.py
 build_n29_alternative_ecology_probe_contract_i17.py
 build_n29_full_bridge_probe_contract_i17a.py
 build_n29_closeout_and_ecology_handoff_i18.py
+render_n29_bridge_visualization.py
 ```

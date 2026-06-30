@@ -121,4 +121,11 @@ n29_full_bridge_probe_contract_i17a.json
 n29_closeout_and_ecology_handoff_i18.json
 n29_phase_coupled_generator_extractor_i145_artifact.json
 n29_phase_coupled_generator_extractor_i145.json
+n29_bridge_visualization.json
+n29_bridge_visualization/
 ```
+
+`n29_bridge_visualization/` contains the supporting graph, sequence,
+animation, prototype-atlas panel, contract-expansion panel, and Prototype D
+motif panel generated from existing N29 JSON artifacts. These visuals are
+inspection aids only; claims remain grounded in the source outputs and reports.
