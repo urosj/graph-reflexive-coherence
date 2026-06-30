@@ -1,0 +1,641 @@
+{
+  "acceptance_state": "accepted_agentic_ecology_convergence_bridge_handoff",
+  "artifact_id": "n29_closeout_and_ecology_handoff_i18",
+  "biological_agency_opened": false,
+  "bridge_ladder_classification": [
+    {
+      "bridge_ladder_rung": "EB0_source_inventory_only",
+      "meaning": "ecology demand, method constraints, capability source inventory, and schema boundary recorded",
+      "source_iterations": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "status": "passed"
+    },
+    {
+      "bridge_ladder_rung": "EB1_normalized_demand_supply_matrix",
+      "meaning": "ecology demands and LGRC/GRC supplies joined with explicit coverage/debt rows",
+      "source_iterations": [
+        "I5",
+        "I6",
+        "I7"
+      ],
+      "status": "passed"
+    },
+    {
+      "bridge_ladder_rung": "EB2_bridge_motif_library_with_controls",
+      "meaning": "motif library and relabel/null controls are claim-clean",
+      "source_iterations": [
+        "I8",
+        "I9"
+      ],
+      "status": "passed"
+    },
+    {
+      "bridge_ladder_rung": "EB3_prototype_admission_schema",
+      "meaning": "runtime prototype admission requirements are frozen",
+      "source_iterations": [
+        "I10"
+      ],
+      "status": "passed"
+    },
+    {
+      "bridge_ladder_rung": "EB4_runtime_bridge_prototypes_supported",
+      "meaning": "four prototype families have runtime or synthesis evidence with controls and debt",
+      "source_iterations": [
+        "I11",
+        "I12",
+        "I13",
+        "I14"
+      ],
+      "status": "passed"
+    },
+    {
+      "bridge_ladder_rung": "EB5_prototype_atlas_and_composition_map_supported",
+      "meaning": "prototype atlas classifies bridge exemplars and composition seeds without ecology-success claims",
+      "source_iterations": [
+        "I15"
+      ],
+      "status": "passed"
+    },
+    {
+      "bridge_ladder_rung": "EB6_first_ecology_probe_contracts_and_handoff_supported",
+      "meaning": "minimal, stronger, and full A/B/C/D probe contracts are ready for outbound ecology work",
+      "source_iterations": [
+        "I16",
+        "I17",
+        "I17-A",
+        "I18"
+      ],
+      "status": "passed"
+    }
+  ],
+  "bridge_ladder_rung": "EB6_first_ecology_probe_contracts_and_handoff_supported",
+  "checks": [
+    {
+      "check_id": "all_required_source_artifacts_passed",
+      "details": {
+        "i10_prototype_admission_schema": "passed",
+        "i15_prototype_atlas": "passed",
+        "i16_minimal_probe_contract": "passed",
+        "i17_alternative_probe_contract": "passed",
+        "i17a_full_bridge_probe_contract": "passed",
+        "i5_ecology_demand_matrix": "passed",
+        "i6_capability_supply_atlas": "passed",
+        "i7_demand_supply_coverage_debt": "passed",
+        "i8_bridge_motif_library": "passed",
+        "i9_motif_relabel_nulls": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "prototype_atlas_ready_for_contracts",
+      "details": {
+        "prototype_atlas_supported": true,
+        "ready_for_iteration_16": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase_d_contracts_supported",
+      "details": {
+        "active_nulls_supported": true,
+        "alternative_probe_contract_supported": true,
+        "bridge_motif_library_supported": true,
+        "capability_supply_atlas_supported": true,
+        "coverage_debt_matrix_supported": true,
+        "demand_matrix_supported": true,
+        "ecology_success_supported": false,
+        "full_bridge_probe_contract_supported": true,
+        "minimal_probe_contract_supported": true,
+        "native_composition_supported": false,
+        "native_ecology_supported": false,
+        "phase_a_to_b_boundary_supported": true,
+        "prototype_admission_schema_supported": true,
+        "prototype_atlas_supported": true,
+        "runtime_probe_executed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "contracts_remain_non_runtime",
+      "details": {
+        "ecology_success_supported": false,
+        "native_ecology_supported": false,
+        "runtime_probe_executed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "deviation_nativity_gate_preserved",
+      "details": [
+        {
+          "contract_conformance_does_not_imply_nativity": true,
+          "contract_deviation_allowed": true,
+          "deviation_does_not_discharge_producer_debt": true,
+          "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+          "nativity_requires_rerun_or_source_backed_discharge": true,
+          "output_digest": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+          "source_artifact": "n29_minimal_ecology_probe_contract_i16"
+        },
+        {
+          "contract_conformance_does_not_imply_nativity": true,
+          "contract_deviation_allowed": true,
+          "deviation_does_not_discharge_producer_debt": true,
+          "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+          "nativity_requires_rerun_or_source_backed_discharge": true,
+          "output_digest": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+          "source_artifact": "n29_alternative_ecology_probe_contract_i17"
+        },
+        {
+          "contract_conformance_does_not_imply_nativity": true,
+          "contract_deviation_allowed": true,
+          "deviation_does_not_discharge_producer_debt": true,
+          "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+          "nativity_requires_rerun_or_source_backed_discharge": true,
+          "output_digest": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+          "source_artifact": "n29_full_bridge_probe_contract_i17a"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "outbound_and_inbound_handoffs_supported",
+      "details": {
+        "inbound": "supported",
+        "outbound": "supported"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "details": {
+        "agency_claim_allowed": false,
+        "altruism_claim_allowed": false,
+        "ant_behavior_claim_allowed": false,
+        "ant_ecology_runtime_success_claim_allowed": false,
+        "biological_agency_claim_allowed": false,
+        "choice_claim_allowed": false,
+        "closed_native_circulation_claim_allowed": false,
+        "colony_agency_claim_allowed": false,
+        "cooperation_claim_allowed": false,
+        "ecology_success_claim_allowed": false,
+        "exploitation_claim_allowed": false,
+        "learning_claim_allowed": false,
+        "native_ant_agency_claim_allowed": false,
+        "native_colony_agency_claim_allowed": false,
+        "native_composition_claim_allowed": false,
+        "native_ecology_claim_allowed": false,
+        "native_shared_medium_coordination_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "resource_economy_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_pheromone_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_digests_present",
+      "details": {
+        "i10_prototype_admission_schema": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+        "i15_prototype_atlas": "e139dd61fcd2b0998282033e5fe1a041891291d5db036982063e510be33f7cd2",
+        "i16_minimal_probe_contract": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+        "i17_alternative_probe_contract": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+        "i17a_full_bridge_probe_contract": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+        "i5_ecology_demand_matrix": "2503831622cdfc99d9f6083bfc841481a06c6fd67bcba1a9ad840c1e1c069fe9",
+        "i6_capability_supply_atlas": "8b80dcc636f8d3333f6e344bbf33ffc12eebe256e7ce2e4f19db33573a6e7181",
+        "i7_demand_supply_coverage_debt": "6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985",
+        "i8_bridge_motif_library": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+        "i9_motif_relabel_nulls": "a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "details": [],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "all_unsafe_claim_flags_false": true,
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "altruism_claim_allowed": false,
+      "ant_behavior_claim_allowed": false,
+      "ant_ecology_runtime_success_claim_allowed": false,
+      "biological_agency_claim_allowed": false,
+      "choice_claim_allowed": false,
+      "closed_native_circulation_claim_allowed": false,
+      "colony_agency_claim_allowed": false,
+      "cooperation_claim_allowed": false,
+      "ecology_success_claim_allowed": false,
+      "exploitation_claim_allowed": false,
+      "learning_claim_allowed": false,
+      "native_ant_agency_claim_allowed": false,
+      "native_colony_agency_claim_allowed": false,
+      "native_composition_claim_allowed": false,
+      "native_ecology_claim_allowed": false,
+      "native_shared_medium_coordination_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "resource_economy_claim_allowed": false,
+      "semantic_goal_claim_allowed": false,
+      "semantic_pheromone_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "claim-clean prototype atlas and source-backed bridge composition map with first agentic-ecology probe contracts; not executed ecology runtime, native ecology, agency, sentience, native support, resource economy, cooperation, exploitation, or Phase 8 completion",
+  "closed_native_circulation_supported": false,
+  "closeout_scope": "bridge_and_probe_contract_handoff_only",
+  "command": ".venv/bin/python experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_closeout_and_ecology_handoff_i18.py",
+  "contract_deviation_and_nativity_closeout": {
+    "contract_conformance_does_not_imply_nativity": true,
+    "deviation_allowed": true,
+    "deviation_does_not_discharge_debt": true,
+    "deviation_requires_reason_scope_and_affected_surfaces": true,
+    "gate_rows": [
+      {
+        "contract_conformance_does_not_imply_nativity": true,
+        "contract_deviation_allowed": true,
+        "deviation_does_not_discharge_producer_debt": true,
+        "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+        "nativity_requires_rerun_or_source_backed_discharge": true,
+        "output_digest": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+        "source_artifact": "n29_minimal_ecology_probe_contract_i16"
+      },
+      {
+        "contract_conformance_does_not_imply_nativity": true,
+        "contract_deviation_allowed": true,
+        "deviation_does_not_discharge_producer_debt": true,
+        "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+        "nativity_requires_rerun_or_source_backed_discharge": true,
+        "output_digest": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+        "source_artifact": "n29_alternative_ecology_probe_contract_i17"
+      },
+      {
+        "contract_conformance_does_not_imply_nativity": true,
+        "contract_deviation_allowed": true,
+        "deviation_does_not_discharge_producer_debt": true,
+        "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+        "nativity_requires_rerun_or_source_backed_discharge": true,
+        "output_digest": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+        "source_artifact": "n29_full_bridge_probe_contract_i17a"
+      }
+    ],
+    "gate_status": "preserved_across_phase_d_contracts",
+    "later_core_nativity_does_not_retroactively_upgrade_old_probe": true,
+    "native_discharge_requires": [
+      "new native runtime run against native surface",
+      "or source-backed discharge record proving producer or medium debt no longer carries result"
+    ]
+  },
+  "cooperation_or_exploitation_supported": false,
+  "ecology_success_supported": false,
+  "experiment_id": "N29",
+  "failed_checks": [],
+  "generated_at": "2026-06-30T00:00:00+00:00",
+  "generated_by": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/scripts/build_n29_closeout_and_ecology_handoff_i18.py",
+  "inbound_n30_plus_continuation_handoff": {
+    "candidate_n30_plus_experiment_targets": [
+      {
+        "source_debt": "Prototype B/D medium and composition debt",
+        "target_id": "native_multi_component_medium_coupling",
+        "why_needed": "replace producer-mediated medium handoffs with source-current native coupling"
+      },
+      {
+        "source_debt": "I16/I17/I17-A composed runtime harness debt",
+        "target_id": "native_cross_prototype_state_handoff",
+        "why_needed": "let prototype outputs become native inputs without external bridge assembly"
+      },
+      {
+        "source_debt": "N28/N29 generative/extractive resource-economy blocker",
+        "target_id": "native_resource_capacity_semantics_without_semantic_labels",
+        "why_needed": "test capacity exchange without importing goal/reward/cooperation language"
+      },
+      {
+        "source_debt": "Phase D deviation/nativity gate",
+        "target_id": "producer_residue_discharge_tests",
+        "why_needed": "prove when a producer-mediated bridge can be rerun or discharged as native"
+      }
+    ],
+    "handoff_id": "n29_to_n30_plus_core_primitives",
+    "handoff_status": "supported",
+    "may_consume_as": [
+      "catalogue of missing native surfaces",
+      "naturalization target list",
+      "prototype-composition debt map",
+      "candidate primitive/component roadmap"
+    ],
+    "must_not_consume_as": [
+      "proof that ecology runtime exists",
+      "proof that producer-mediated compositions are native",
+      "proof of semantic agency or life"
+    ],
+    "purpose": "continue core LGRC/GRC primitive and agency-component work in this repository"
+  },
+  "inbound_n30_plus_continuation_handoff_supported": true,
+  "iteration": "I18",
+  "n29_closeout_ladder_classification": [
+    {
+      "meaning": "experiment structure and source scope established",
+      "n29_closeout_ladder_rung": "N29-C0_initialized_bridge_only",
+      "status": "passed"
+    },
+    {
+      "meaning": "ecology-side requirements and agency-of-becoming constraints normalized",
+      "n29_closeout_ladder_rung": "N29-C1_ecology_demands_and_method_constraints_supported",
+      "status": "passed"
+    },
+    {
+      "meaning": "N05-N28 supply and debt matrix completed from source artifacts",
+      "n29_closeout_ladder_rung": "N29-C2_capability_supply_and_coverage_supported",
+      "status": "passed"
+    },
+    {
+      "meaning": "motifs and relabel nulls completed",
+      "n29_closeout_ladder_rung": "N29-C3_bridge_motif_library_supported",
+      "status": "passed"
+    },
+    {
+      "meaning": "prototype A-D family evidence and controls admitted",
+      "n29_closeout_ladder_rung": "N29-C4_runtime_prototype_families_supported",
+      "status": "passed"
+    },
+    {
+      "meaning": "prototype atlas plus I16/I17/I17-A contracts supported",
+      "n29_closeout_ladder_rung": "N29-C5_prototype_atlas_and_probe_contracts_supported",
+      "status": "passed"
+    },
+    {
+      "meaning": "outbound ecology and inbound N30+ handoffs are recorded with claim ceilings",
+      "n29_closeout_ladder_rung": "N29-C6_agentic_ecology_probe_handoff_complete",
+      "status": "passed"
+    }
+  ],
+  "n29_closeout_ladder_rung": "N29-C6_agentic_ecology_probe_handoff_complete",
+  "n29_closeout_supported": true,
+  "native_ant_agency_opened": false,
+  "native_colony_agency_opened": false,
+  "native_ecology_supported": false,
+  "native_support_opened": false,
+  "organism_life_opened": false,
+  "outbound_agentic_ecology_handoff": {
+    "first_probe_contracts": [
+      {
+        "contract_id": "minimal_route_pressure_over_shared_medium_unit_probe",
+        "output_digest": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+        "role": "minimal runnable ecology probe contract",
+        "source_artifact": "n29_minimal_ecology_probe_contract_i16"
+      },
+      {
+        "contract_id": "route_pressure_medium_reentry_susceptibility_probe",
+        "output_digest": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+        "role": "stronger A+B+C probe contract",
+        "source_artifact": "n29_alternative_ecology_probe_contract_i17"
+      },
+      {
+        "contract_id": "full_atlas_a_b_c_d_bridge_probe_contract",
+        "output_digest": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+        "role": "full A/B/C/D bridge probe contract",
+        "source_artifact": "n29_full_bridge_probe_contract_i17a"
+      }
+    ],
+    "handoff_id": "n29_to_reflexive_coherence_agentic_ecology",
+    "handoff_status": "supported",
+    "may_consume_as": [
+      "claim-clean ecology demand model",
+      "N05-N28 capability/debt atlas",
+      "bridge motif library",
+      "prototype atlas",
+      "minimal A+B probe contract",
+      "stronger A+B+C probe contract",
+      "full A+B+C+D bridge probe contract"
+    ],
+    "must_not_consume_as": [
+      "executed ant ecology runtime",
+      "native ant agency",
+      "native colony agency",
+      "semantic pheromone or goal evidence",
+      "resource economy evidence",
+      "cooperation or exploitation evidence",
+      "native support or Phase 8 completion"
+    ],
+    "required_consuming_project_rules": [
+      "record any deviation from N29 contracts with reason, scope, and affected surfaces",
+      "preserve producer residue and medium debt unless discharged by source-backed evidence",
+      "do not treat contract conformance as native ecology",
+      "run replay/control matrix before claiming ecology probe support",
+      "keep semantic agency, cooperation, exploitation, and ant-behavior labels blocked until directly evidenced"
+    ],
+    "target_repository": "reflexive-coherence-agentic-ecology"
+  },
+  "outbound_agentic_ecology_handoff_supported": true,
+  "output_digest": "fa21662f0a69d582bfe574311110f2610a21e6e4e352991823ce47280e0e8ff5",
+  "output_readiness": {
+    "active_nulls_supported": true,
+    "alternative_probe_contract_supported": true,
+    "bridge_motif_library_supported": true,
+    "capability_supply_atlas_supported": true,
+    "coverage_debt_matrix_supported": true,
+    "demand_matrix_supported": true,
+    "ecology_success_supported": false,
+    "full_bridge_probe_contract_supported": true,
+    "minimal_probe_contract_supported": true,
+    "native_composition_supported": false,
+    "native_ecology_supported": false,
+    "phase_a_to_b_boundary_supported": true,
+    "prototype_admission_schema_supported": true,
+    "prototype_atlas_supported": true,
+    "runtime_probe_executed": false
+  },
+  "phase8_completion_opened": false,
+  "ready_for_n30_plus_core_primitive_work": true,
+  "ready_for_reflexive_coherence_agentic_ecology": true,
+  "resource_economy_supported": false,
+  "runtime_probe_executed": false,
+  "sentience_opened": false,
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_ecology_demand_matrix",
+      "artifact_id": "n29_ecology_demand_matrix_i5",
+      "iteration": "I5",
+      "output_digest": "2503831622cdfc99d9f6083bfc841481a06c6fd67bcba1a9ad840c1e1c069fe9",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_ecology_demand_matrix_i5.json",
+      "sha256": "61eb618e966069bffd834bd8fa32cc26050972a21132ce32777abf5dd4667e5e",
+      "source_id": "i5_ecology_demand_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_capability_supply_atlas",
+      "artifact_id": "n29_capability_supply_atlas_i6",
+      "iteration": "I6",
+      "output_digest": "8b80dcc636f8d3333f6e344bbf33ffc12eebe256e7ce2e4f19db33573a6e7181",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_capability_supply_atlas_i6.json",
+      "sha256": "ba0e32f9f7a4c064e6235fe9c306424daa5458c07c0b02f0c34e2d400da4d74b",
+      "source_id": "i6_capability_supply_atlas",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_demand_supply_coverage_and_debt_matrix",
+      "artifact_id": "n29_demand_supply_coverage_debt_i7",
+      "iteration": "I7",
+      "output_digest": "6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_demand_supply_coverage_debt_i7.json",
+      "sha256": "4aadbba5f303e893ff5ead7ace2b6acd4054160f5f7c593699a59aae609587d8",
+      "source_id": "i7_demand_supply_coverage_debt",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_bridge_motif_library",
+      "artifact_id": "n29_bridge_motif_library_i8",
+      "iteration": "I8",
+      "output_digest": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json",
+      "sha256": "abd0c077dca7b5158f1e5ca0eae8d0e7f6ba849ffcf4542d75b8ba237929f073",
+      "source_id": "i8_bridge_motif_library",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_phase_b_controls_fail_closed_ready_for_phase_c",
+      "artifact_id": "n29_motif_relabel_nulls_i9",
+      "iteration": "I9",
+      "output_digest": "a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_motif_relabel_nulls_i9.json",
+      "sha256": "4cb75e44959ed1a9f6d67cb6e3f47f9cbe79cc43ca45a0d18a6c607e36f44eab",
+      "source_id": "i9_motif_relabel_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_admission_schema_frozen_no_prototype_rows",
+      "artifact_id": "n29_prototype_admission_schema_i10",
+      "iteration": "I10",
+      "output_digest": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_admission_schema_i10.json",
+      "sha256": "f6a4c85c23822f7819a3c4be93fc742c66394140156f3125a286a2dc2bc89e40",
+      "source_id": "i10_prototype_admission_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_prototype_atlas_with_debt_classification",
+      "artifact_id": "n29_prototype_atlas_classification_i15",
+      "iteration": "I15",
+      "output_digest": "e139dd61fcd2b0998282033e5fe1a041891291d5db036982063e510be33f7cd2",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_atlas_classification_i15.json",
+      "sha256": "1a810918df2923b5f5fe475ec9d0cc1f843fe614640b8149ea25173aab985a26",
+      "source_id": "i15_prototype_atlas",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_ecology_probe_contract",
+      "artifact_id": "n29_minimal_ecology_probe_contract_i16",
+      "iteration": "I16",
+      "output_digest": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_minimal_ecology_probe_contract_i16.json",
+      "sha256": "44fbe5b9547279012bcc35f89cb7b66864fc4f06a57ff2ea0e8c42e3dcbdd58f",
+      "source_id": "i16_minimal_probe_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_ecology_probe_contract",
+      "artifact_id": "n29_alternative_ecology_probe_contract_i17",
+      "iteration": "I17",
+      "output_digest": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_alternative_ecology_probe_contract_i17.json",
+      "sha256": "3fed33e4fe040da5eb35374af0ed89510e4a8f7ba3bda93849a0ce3e4eaf92cc",
+      "source_id": "i17_alternative_probe_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_full_bridge_probe_contract",
+      "artifact_id": "n29_full_bridge_probe_contract_i17a",
+      "iteration": "I17-A",
+      "output_digest": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_full_bridge_probe_contract_i17a.json",
+      "sha256": "bbdc9009626200f41ce993adfe7f1e557fb6d8ee1d1cb77666a94f317339af31",
+      "source_id": "i17a_full_bridge_probe_contract",
+      "status": "passed"
+    }
+  ],
+  "source_output_digest_map": {
+    "i10_prototype_admission_schema": "fed49575d0ae9bc598d54cfbb6d01a87d69a3f8229fe466f580182b7e2c49f4d",
+    "i15_prototype_atlas": "e139dd61fcd2b0998282033e5fe1a041891291d5db036982063e510be33f7cd2",
+    "i16_minimal_probe_contract": "d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53",
+    "i17_alternative_probe_contract": "d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798",
+    "i17a_full_bridge_probe_contract": "f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981",
+    "i5_ecology_demand_matrix": "2503831622cdfc99d9f6083bfc841481a06c6fd67bcba1a9ad840c1e1c069fe9",
+    "i6_capability_supply_atlas": "8b80dcc636f8d3333f6e344bbf33ffc12eebe256e7ce2e4f19db33573a6e7181",
+    "i7_demand_supply_coverage_debt": "6fa29aa7ff520acb733920bb711e498bb421b091f9b6575a7663bc5f21710985",
+    "i8_bridge_motif_library": "5617368e38bc0b09ef5b152699948a967d7c5d72eae09467c4705749bb372ad0",
+    "i9_motif_relabel_nulls": "a6869a090698bf0c54601e34758408345eda978408a135c883fc495bf7c55a28"
+  },
+  "src_diff_empty": true,
+  "src_diff_paths": [],
+  "status": "passed",
+  "title": "N29 Iteration 18 - Closeout And Agentic Ecology Handoff",
+  "unresolved_debt_by_handoff_direction": [
+    {
+      "blocks": [
+        "ecology_success_supported",
+        "native_ecology_supported"
+      ],
+      "debt_id": "composed_ecology_runtime_harness_missing",
+      "handoff_direction": "outbound_agentic_ecology",
+      "status": "open"
+    },
+    {
+      "blocks": [
+        "native_composition_supported",
+        "native_support_supported"
+      ],
+      "debt_id": "producer_mediated_cross_prototype_handoff",
+      "handoff_direction": "both",
+      "status": "open"
+    },
+    {
+      "blocks": [
+        "native_shared_medium_coordination_supported"
+      ],
+      "debt_id": "medium_debt_and_nonzero_leakage_policy",
+      "handoff_direction": "both",
+      "status": "open"
+    },
+    {
+      "blocks": [
+        "native_route_selection_or_proxy_target_closure"
+      ],
+      "debt_id": "ap4_ap5_gap_propagation",
+      "handoff_direction": "inbound_n30_plus",
+      "status": "open"
+    },
+    {
+      "blocks": [
+        "resource_economy_supported",
+        "cooperation_or_exploitation_supported"
+      ],
+      "debt_id": "resource_economy_cooperation_exploitation_semantics",
+      "handoff_direction": "outbound_agentic_ecology",
+      "status": "open"
+    },
+    {
+      "blocks": [
+        "retroactive_native_upgrade",
+        "producer_removal_without_rerun"
+      ],
+      "debt_id": "deviation_nativity_discharge",
+      "handoff_direction": "both",
+      "status": "open"
+    }
+  ]
+}

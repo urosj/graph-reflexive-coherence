@@ -4683,11 +4683,12 @@ native support, resource economy, cooperation, exploitation, or Phase 8 completi
 
 ### Iteration 16 - Minimal Runnable Ecology Probe Contract
 
-- [ ] Define the smallest runnable probe for `reflexive-coherence-agentic-ecology`.
-- [ ] Use the coverage matrix and prototype atlas to justify the probe.
-- [ ] Identify which bridge exemplars the probe composes.
-- [ ] Record required source rows, runtime surfaces, producer residue, medium debt, controls, and expected failure modes.
-- [ ] Record what the probe must not claim.
+- [x] Define the smallest runnable probe for `reflexive-coherence-agentic-ecology`.
+- [x] Use the coverage matrix and prototype atlas to justify the probe.
+- [x] Identify which bridge exemplars the probe composes.
+- [x] Record required source rows, runtime surfaces, producer residue, medium debt, controls, and expected failure modes.
+- [x] Record what the probe must not claim.
+- [x] Record deviation/nativity gate so downstream deviations do not discharge producer or medium debt.
 
 Expected result:
 
@@ -4698,13 +4699,64 @@ minimal_probe_contract_supported = true
 ready_for_iteration_17 = true
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_minimal_ecology_probe_contract
+minimal_probe_contract_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+ready_for_iteration_17 = true
+output_digest = d34e209f2b97aeac6242279f1c887afbf4c2064dcdc6a8fe0dc29cfa1275ac53
+output = outputs/n29_minimal_ecology_probe_contract_i16.json
+report = reports/n29_minimal_ecology_probe_contract_i16.md
+```
+
+Interpretation:
+
+I16 selects the I15 A+B composition as the smallest runnable ecology probe
+contract:
+
+```text
+Prototype A trace/pressure loop
+  over
+Prototype B boundary/shared-medium unit
+```
+
+This is minimal because it tests one ordered cross-prototype dependency without
+adding Prototype C susceptibility/re-entry or Prototype D medium reshaping. The
+required trace order is:
+
+```text
+t0 route/external pressure enters Prototype A loop surface
+t1 Prototype A emits bounded response/change trace
+t2 A response conditions Prototype B boundary/shared-medium unit
+t3 later B medium/boundary state is evaluated under that conditioned input
+```
+
+The row is a contract, not a run. It records the required composed runtime
+harness, trace/pressure surface, boundary/shared-medium surface, ordered
+handoff trace, producer-residue/medium-debt ledger, replay/control matrix, and
+fail-closed controls. Ecology success, native ant behavior, native
+shared-medium coordination, semantic pheromone/goal claims, native support,
+sentience, organism/life, and Phase 8 completion remain blocked.
+
+The contract also records the Phase D deviation/nativity gate: consuming
+projects may deviate from the contract only with recorded reason and scope, and
+neither conformance nor deviation proves nativity or removes producer/medium
+debt. Native discharge requires a later native rerun or source-backed discharge
+record.
+
 ### Iteration 17 - Stronger / Alternative Ecology Probe Contract
 
-- [ ] Define one stronger or alternative ecology probe.
-- [ ] State how it differs from the minimal probe.
-- [ ] Record additional bridge motifs and runtime requirements.
-- [ ] Identify which bridge exemplars the stronger probe composes or extends.
-- [ ] Record added risks, debts, and blocked claims.
+- [x] Define one stronger or alternative ecology probe.
+- [x] State how it differs from the minimal probe.
+- [x] Record additional bridge motifs and runtime requirements.
+- [x] Identify which bridge exemplars the stronger probe composes or extends.
+- [x] Record added risks, debts, and blocked claims.
+- [x] Preserve deviation/nativity gate from the minimal contract.
 
 Expected result:
 
@@ -4715,22 +4767,146 @@ alternative_probe_contract_supported = true
 ready_for_iteration_18 = true
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_ecology_probe_contract
+alternative_probe_contract_supported = true
+stronger_probe_contract_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+ready_for_iteration_18 = true
+output_digest = d2af854a4065351aaed23e74ac7c77dc7ec495765b32cccd69019b20e31c6798
+output = outputs/n29_alternative_ecology_probe_contract_i17.json
+report = reports/n29_alternative_ecology_probe_contract_i17.md
+```
+
+Interpretation:
+
+I17 extends the I16 minimal A+B contract rather than replacing it:
+
+```text
+Prototype A trace/pressure loop
+  over
+Prototype B boundary/shared-medium unit
+  plus
+Prototype C re-entry/susceptibility and differential response
+```
+
+This is stronger than I16 because it adds route/region re-entry,
+susceptibility delta, and later differential response inside the bounded
+medium unit. The required trace order becomes:
+
+```text
+t0 route/external pressure enters Prototype A loop surface
+t1 Prototype A emits bounded response/change trace
+t2 A response conditions Prototype B boundary/shared-medium unit
+t3 B medium/boundary state remains separable and debt-visible
+t4 later route/region re-entry occurs inside or through that unit
+t5 Prototype C susceptibility state differs under the re-entry condition
+t6 later response is conditioned by susceptibility delta, not semantic choice
+```
+
+The row is still a contract, not a run. It records additional runtime surfaces
+for re-entry/susceptibility, differential response, and AP4/AP5/proxy-residue
+accounting. It also records added risks: susceptibility label as learning,
+differential response as choice, native shared-medium relabeling, AP4/AP5 gap
+omission, and hidden producer proxy carryover. Ecology success, native agency,
+learning, choice, semantic ant behavior, native shared-medium coordination,
+native support, sentience, organism/life, and Phase 8 completion remain
+blocked.
+
+The deviation/nativity gate is preserved here as well. A downstream ecology
+prototype can vary the contract, but that variance is a scoped bridge deviation,
+not evidence that the producer surfaces, AP-gap dependencies, or medium debts
+have been naturalized.
+
+### Iteration 17-A - Full A/B/C/D Bridge Probe Contract
+
+- [x] Define the full atlas bridge probe contract.
+- [x] State how it extends I17.
+- [x] Compose Prototypes A, B, C, and D in one ordered contract.
+- [x] Preserve Prototype D native motif / blocked native composition / producer-mediated bridge split.
+- [x] Record D medium-reshaping handoff surfaces, aggregate leakage / medium-debt ledgers, controls, and expected failure modes.
+- [x] Record resource economy, cooperation, exploitation, closed-circulation, native ecology, and Phase 8 blockers.
+- [x] Preserve deviation/nativity gate across the full A/B/C/D chain.
+
+Expected result:
+
+```text
+status = passed
+acceptance_state = accepted_full_bridge_probe_contract
+full_bridge_probe_contract_supported = true
+runtime_probe_executed = false
+ready_for_iteration_18 = true
+```
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_full_bridge_probe_contract
+full_bridge_probe_contract_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+native_composition_supported = false
+resource_economy_supported = false
+cooperation_or_exploitation_supported = false
+ready_for_iteration_18 = true
+output_digest = f135650c01d2d74c3eb9c33e8b923542077beb8e7b2e723f36a2f7be1f68d981
+output = outputs/n29_full_bridge_probe_contract_i17a.json
+report = reports/n29_full_bridge_probe_contract_i17a.md
+```
+
+Interpretation:
+
+I17-A is the full bridge contract:
+
+```text
+Prototype A trace/pressure loop
+  over
+Prototype B boundary/shared-medium unit
+  plus
+Prototype C re-entry/susceptibility and differential response
+  plus
+Prototype D generative/extractive medium reshaping
+```
+
+The required trace order extends I17 with a C-to-D handoff, D medium-reshaping
+event, aggregate leakage / debt audit, and later pressure or medium aftereffect
+record. This is the full atlas bridge probe contract, not an executed ecology
+runtime. Prototype D remains lane-split: native/source-current motifs are
+supported, native composition remains unsupported, and producer-mediated
+composition bridges remain debt. Resource economy, cooperation, exploitation,
+altruism, closed native circulation, native ecology, semantic agency, native
+support, sentience, organism/life, and Phase 8 completion remain blocked.
+
+The full contract keeps the same deviation/nativity gate at the strongest
+composition level. Deviations are allowed for practical bridge building, but
+they become recorded scope debt. Later native LGRC support for any used surface
+does not retroactively upgrade these producer-mediated contract rows; native
+discharge requires a source-backed native rerun or an explicit discharge record.
+
 ### Iteration 18 - Closeout And Agentic Ecology Handoff
 
-- [ ] Classify bridge ladder.
-- [ ] Classify N29 closeout ladder.
-- [ ] Finalize ecology demand model.
-- [ ] Finalize capability atlas.
-- [ ] Finalize coverage/debt matrix.
-- [ ] Finalize bridge motif library.
-- [ ] Finalize prototype atlas.
-- [ ] Finalize first probe contracts.
-- [ ] Finalize outbound handoff to `reflexive-coherence-agentic-ecology`.
-- [ ] Finalize inbound handoff to N30+ core primitive / agency-component work.
-- [ ] Record unresolved debt by handoff direction.
-- [ ] Record candidate N30+ experiment targets.
-- [ ] Confirm ready for work in `reflexive-coherence-agentic-ecology`.
-- [ ] Confirm this repository remains open for N30+ primitive and agency-component experiments.
+- [x] Classify bridge ladder.
+- [x] Classify N29 closeout ladder.
+- [x] Finalize ecology demand model.
+- [x] Finalize capability atlas.
+- [x] Finalize coverage/debt matrix.
+- [x] Finalize bridge motif library.
+- [x] Finalize prototype atlas.
+- [x] Finalize first probe contracts.
+- [x] Finalize outbound handoff to `reflexive-coherence-agentic-ecology`.
+- [x] Finalize inbound handoff to N30+ core primitive / agency-component work.
+- [x] Record unresolved debt by handoff direction.
+- [x] Record candidate N30+ experiment targets.
+- [x] Confirm ready for work in `reflexive-coherence-agentic-ecology`.
+- [x] Confirm this repository remains open for N30+ primitive and agency-component experiments.
+- [x] Preserve Phase D deviation/nativity gate in the final handoff.
 
 Expected result:
 
@@ -4748,3 +4924,70 @@ organism_life_opened = false
 sentience_opened = false
 phase8_completion_opened = false
 ```
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_agentic_ecology_convergence_bridge_handoff
+bridge_ladder_rung = EB6_first_ecology_probe_contracts_and_handoff_supported
+n29_closeout_ladder_rung = N29-C6_agentic_ecology_probe_handoff_complete
+outbound_agentic_ecology_handoff_supported = true
+inbound_n30_plus_continuation_handoff_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+biological_agency_opened = false
+organism_life_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+native_support_opened = false
+resource_economy_supported = false
+cooperation_or_exploitation_supported = false
+closed_native_circulation_supported = false
+src_diff_empty = true
+failed_checks = []
+output_digest = fa21662f0a69d582bfe574311110f2610a21e6e4e352991823ce47280e0e8ff5
+output = outputs/n29_closeout_and_ecology_handoff_i18.json
+report = reports/n29_closeout_and_ecology_handoff_i18.md
+```
+
+Interpretation:
+
+I18 closes N29 as a bridge experiment, not as ecology runtime execution. The
+supported final claim is:
+
+```text
+claim-clean prototype atlas and source-backed bridge composition map with first
+agentic-ecology probe contracts
+```
+
+The three outbound probe contracts are:
+
+```text
+I16: minimal A+B route-pressure over shared-medium unit probe
+I17: stronger A+B+C route-pressure / shared-medium / re-entry susceptibility probe
+I17-A: full A/B/C/D bridge probe contract
+```
+
+The outbound handoff to `reflexive-coherence-agentic-ecology` is supported only
+as probe-contract input. It must not be consumed as executed ant ecology
+runtime, native ant agency, native colony agency, native shared-medium
+coordination, resource economy, cooperation, exploitation, sentience,
+organism/life, native support, or Phase 8 completion.
+
+The inbound handoff to N30+ is also supported. It carries the remaining
+naturalization and primitive/component targets back into this repository:
+native multi-component medium coupling, native cross-prototype state handoff,
+native resource/capacity semantics without semantic labels, and producer
+residue discharge tests.
+
+The final closeout preserves the Phase D deviation/nativity gate. Downstream
+ecology work may deviate from the contracts only with recorded reason, scope,
+and affected surfaces. Deviation or contract conformance does not discharge
+producer residue, medium debt, AP4/AP5 gaps, or Prototype D composition debt.
+Later native LGRC support does not retroactively upgrade old producer-mediated
+contract rows; native discharge requires a native rerun or source-backed
+discharge record.

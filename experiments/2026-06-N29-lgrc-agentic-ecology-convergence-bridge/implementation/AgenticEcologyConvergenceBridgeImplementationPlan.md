@@ -1319,8 +1319,48 @@ passes its own controls.
 ```text
 Iteration 16 - Minimal Runnable Ecology Probe Contract
 Iteration 17 - Stronger / Alternative Ecology Probe Contract
+Iteration 17-A - Full A/B/C/D Bridge Probe Contract
 Iteration 18 - Closeout And Agentic Ecology Handoff
 ```
+
+I16 should select the smallest I15 composition that can plausibly become a
+runnable ecology probe without adding extra layers: Prototype A plus Prototype
+B, the trace/pressure loop over a separable boundary/shared-medium unit. This
+is a probe contract, not a runtime result. It must define ordered trace legs,
+required runtime surfaces, producer residue and medium-debt ledgers, replay and
+control requirements, expected failure modes, and blocked claim families. It
+must not write into the ecology repository or claim that the composed runtime
+already exists.
+
+I17 should define one stronger or alternative probe contract by extending I16,
+not replacing it. The clean stronger contract is Prototype A + Prototype B +
+Prototype C: the I16 pressure-over-medium unit plus re-entry/susceptibility
+inside that bounded unit. I17 must record the added runtime surfaces,
+susceptibility/re-entry controls, AP4/AP5 gap discipline, and semantic
+learning/choice blockers. It should remain a contract artifact and must not
+claim executed ecology runtime, learning, choice, native agency, or native
+shared-medium coordination.
+
+I17-A should define the full atlas bridge contract by extending I17 with
+Prototype D. This is the A/B/C/D chain: trace/pressure loop, boundary/shared
+medium, re-entry/susceptibility, and generative/extractive medium reshaping.
+I17-A must preserve the Prototype D lane split: native/source-current motif
+evidence is supported, native composition remains unsupported, and
+producer-mediated composition bridges remain naturalization debt. It must record
+D handoff surfaces, aggregate leakage / medium-debt ledgers, resource-economy
+and cooperation/exploitation relabel blockers, and why this still is not
+executed ecology runtime or native ecology.
+
+All Phase D probe contracts must also carry a deviation/nativity gate. A
+consuming ecology project may deviate from the contract when building a runtime
+prototype, but the deviation must be recorded with reason, scope, and affected
+surfaces. Contract conformance does not imply nativity, and contract deviation
+does not discharge producer residue, medium debt, AP4/AP5 gaps, or Prototype D
+composition debt. If later core LGRC runtime changes naturalize one of the
+surfaces used by a contract, older producer-mediated probe results are not
+retroactively upgraded. Native discharge requires either a new run against the
+native surface or a source-backed discharge record that proves the producer or
+medium debt is no longer carrying the result.
 
 This iteration count is intentionally smaller than a primitive-proof experiment.
 N29 is not trying to prove another primitive. It is trying to construct the

@@ -80,5 +80,9 @@ n29_loop_composition_controls_i14d.md
 n29_loop_composition_replay_stress_i14e.md
 n29_prototype_d_complete_synthesis_i14y.md
 n29_prototype_atlas_classification_i15.md
+n29_minimal_ecology_probe_contract_i16.md
+n29_alternative_ecology_probe_contract_i17.md
+n29_full_bridge_probe_contract_i17a.md
+n29_closeout_and_ecology_handoff_i18.md
 n29_phase_coupled_generator_extractor_i145.md
 ```

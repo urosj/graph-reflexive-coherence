@@ -78,17 +78,23 @@ improving the underlying primitives and agency components.
 Current state:
 
 ```text
-status = initialized
+status = closed
 source_scope = N05-N28 plus ecology/specification sources
 content_scope = ecology_demand_supply_bridge_and_prototype_atlas
-positive_ecology_evidence_opened = false
+bridge_ladder_rung = EB6_first_ecology_probe_contracts_and_handoff_supported
+n29_closeout_ladder_rung = N29-C6_agentic_ecology_probe_handoff_complete
+outbound_agentic_ecology_handoff_supported = true
+inbound_n30_plus_continuation_handoff_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
 native_ant_agency_opened = false
 native_colony_agency_opened = false
 biological_agency_opened = false
 organism_life_opened = false
 sentience_opened = false
 phase8_completion_opened = false
-ready_for_iteration_1 = true
+ready_for_reflexive_coherence_agentic_ecology = true
+ready_for_n30_plus_core_primitive_work = true
 ```
 
 Core question:
