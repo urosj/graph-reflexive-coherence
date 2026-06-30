@@ -1,9 +1,12 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note for N29. It replaces the
-N12-N18 handoff as the active continuation record for the becoming-agency
-primitive arc. The N12-N18 handoff remains historical context for the closed
-agency-prerequisite stack.
+This handoff records the closed N20-N29 becoming-agency ecology arc. It
+replaces the older N12-N18 handoff as the closed continuation record for the
+becoming-primitive arc, and now points outward to
+`reflexive-coherence-agentic-ecology` for composed ecology probes and inward to
+N30+ for continued primitive / agency-component naturalization work. The
+N12-N18 handoff remains historical context for the closed agency-prerequisite
+stack.
 
 ## Current Position
 
@@ -34,8 +37,13 @@ N28_final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persisten
 N28_final_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
 N28_final_supported = true
 N28_ready_for_n29 = true
-current primitive experiment = N29_agentic_ecology_convergence_bridge
-N29_next_iteration = I1_source_inventory_and_bridge_contract_admission
+N29 agentic ecology convergence bridge = closed
+N29_bridge_ladder_rung = EB6_first_ecology_probe_contracts_and_handoff_supported
+N29_final_closeout_rung = N29-C6_agentic_ecology_probe_handoff_complete
+N29_outbound_agentic_ecology_handoff_supported = true
+N29_inbound_n30_plus_continuation_handoff_supported = true
+current outbound target = reflexive-coherence-agentic-ecology
+current in-repository continuation = N30_plus_core_primitive_and_agency_component_work
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -318,6 +326,101 @@ ant_ecology
 organism_life
 ```
 
+N28 then closed as bounded generative / extractive persistence evidence:
+
+```text
+status = passed
+acceptance_state = accepted_n28_c6_closeout_n29_handoff_ready
+final_supported_status = bounded_artifact_level_generative_extractive_persistence_evidence
+final_ge_ladder_rung = GE6_N29_ready_bounded_generative_extractive_persistence_evidence
+final_n28_closeout_rung = N28-C6_N29_ready_bounded_generative_extractive_closeout
+final_n28_supported = true
+ready_for_n29 = true
+broad_margin_robustness_supported = false
+order_of_magnitude_robustness_supported = false
+ap4_nat4_gap_resolved = false
+ap5_nat4_gap_resolved = false
+```
+
+N29 consumed N28 as bounded generative/extractive persistence evidence and
+claim-clean environment-exchange context. It did not consume N28 as semantic
+cooperation, semantic choice, agency, native support, native AP5, AP5 NAT4-gap
+resolution, Phase 8 completion, ant ecology implementation, broad margin
+robustness, order-of-magnitude robustness, or unscoped multi-basin substrate
+evidence.
+
+## N29 Closeout And Ecology Handoff
+
+N29 closed the convergence bridge:
+
+```text
+status = passed
+acceptance_state = accepted_agentic_ecology_convergence_bridge_handoff
+bridge_ladder_rung = EB6_first_ecology_probe_contracts_and_handoff_supported
+n29_closeout_ladder_rung = N29-C6_agentic_ecology_probe_handoff_complete
+outbound_agentic_ecology_handoff_supported = true
+inbound_n30_plus_continuation_handoff_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+native_ant_agency_opened = false
+native_colony_agency_opened = false
+biological_agency_opened = false
+organism_life_opened = false
+sentience_opened = false
+phase8_completion_opened = false
+resource_economy_supported = false
+cooperation_or_exploitation_supported = false
+closed_native_circulation_supported = false
+src_diff_empty = true
+output_digest = fa21662f0a69d582bfe574311110f2610a21e6e4e352991823ce47280e0e8ff5
+```
+
+N29 supports:
+
+```text
+claim-clean ecology demand model
+N05-N28 capability/debt atlas
+bridge motif library
+source-backed prototype atlas
+minimal A+B probe contract
+stronger A+B+C probe contract
+full A/B/C/D bridge probe contract
+outbound ecology handoff
+inbound N30+ primitive/component handoff
+```
+
+The outbound target is:
+
+```text
+reflexive-coherence-agentic-ecology
+```
+
+The outbound handoff may be consumed as first probe-contract input. It must not
+be consumed as executed ant ecology runtime, native ant agency, native colony
+agency, biological agency, organism/life, semantic cooperation or exploitation,
+resource economy, native shared-medium coordination, native support, sentience,
+or Phase 8 completion.
+
+The inbound N30+ handoff carries open native-surface and naturalization targets:
+
+```text
+native multi-component medium coupling
+native cross-prototype state handoff
+native resource/capacity semantics without semantic labels
+producer residue discharge tests
+```
+
+The final contract rule is:
+
+```text
+downstream deviation allowed = true, if recorded with reason and scope
+contract conformance implies nativity = false
+deviation discharges producer/medium debt = false
+later core nativity retroactively upgrades old producer rows = false
+native discharge requires native rerun or source-backed discharge record
+```
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -393,6 +496,19 @@ Use this handoff together with:
 - `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/reports/n28_controls_ap_dependency_claim_classification.md`
 - `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json`
 - `experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/reports/n28_closeout_and_n29_handoff.md`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/README.md`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/implementation/AgenticEcologyConvergenceBridgeImplementationPlan.md`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/implementation/AgenticEcologyConvergenceBridgeImplementationChecklist.md`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_ecology_demand_matrix_i5.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_capability_supply_atlas_i6.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_demand_supply_coverage_debt_i7.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_bridge_motif_library_i8.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_prototype_atlas_classification_i15.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_minimal_ecology_probe_contract_i16.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_alternative_ecology_probe_contract_i17.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_full_bridge_probe_contract_i17a.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_closeout_and_ecology_handoff_i18.json`
+- `experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/reports/n29_closeout_and_ecology_handoff_i18.md`
 
 Historical prerequisite context remains in:
 
@@ -910,14 +1026,17 @@ fully native integration
 unrestricted autonomy
 ```
 
-## N22-N29 Context
+## N20-N29 Context
 
-N20-N28 remain closed in this repository as LGRC-visible becoming-primitive
-evidence and control discipline. N29 is now the first formal convergence bridge
-into the agentic ecology project.
+N20-N29 are closed in this repository as LGRC-visible becoming-primitive
+evidence, control discipline, prototype atlas, bridge composition map, and
+first ecology probe contracts. N29 is the first formal convergence bridge into
+the agentic ecology project, not the executed ecology runtime itself.
 
-Do not retroactively treat N20-N28 as ant-ecology implementation. N29 may begin
-formal bridge specifications, but native ant agency, native colony agency,
-biological agency, organism/life, unrestricted autonomy, native support, and
-Phase 8 completion remain blocked unless a later source-backed experiment
-explicitly supports a narrower claim.
+Do not retroactively treat N20-N29 as ant-ecology implementation. N29 supplies
+claim-clean probe contracts to the ecology repository and naturalization
+targets to N30+ work. Native ant agency, native colony agency, biological
+agency, organism/life, unrestricted autonomy, native support, semantic
+cooperation/exploitation, resource economy, and Phase 8 completion remain
+blocked unless a later source-backed experiment explicitly supports a narrower
+claim.

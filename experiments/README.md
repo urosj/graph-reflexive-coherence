@@ -53,6 +53,7 @@ machine-local state.
 | [N26 proxy divergence and proxy collapse](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md) | Closed bounded artifact-level PD6 proxy divergence / proxy collapse evidence on scoped N25.2 MB6 multi-basin substrate, with scoped artifact AP5 bridge candidate support. Native AP5, AP5 NAT4-gap resolution, semantic goal/choice, agency, native support, sentience, Phase 8 completion, ant ecology, and unscoped multi-basin consumption remain blocked. | README, closeout handoff, replay/control/AP5 gate, proxy collapse matrix, score-dose divergence probe, implementation checklist, and hypotheses. |
 | [N27 configuration/substrate transfer](2026-06-N27-lgrc-configuration-substrate-transfer/README.md) | Closed bounded artifact-level CT6 configuration/topology transfer evidence with N27-C6/N28 handoff and claim-clean N28 precursor side-effect evaluation. N28 generative persistence, semantic identity, agency, native support, native AP5, AP5 NAT4-gap resolution, Phase 8 completion, and ant ecology remain blocked. | README, closeout handoff, control/AP classification, N28 precursor side-effect evaluation, replay/stress matrices, implementation checklist, and hypotheses. |
 | [N28 generative vs extractive persistence](2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md) | Closed bounded artifact-level GE6 generative/extractive persistence evidence with paired generative, extractive, and competitive/neutral regime separation under one shared policy, plus N28-C6/N29 handoff. Broad robustness, AP4/AP5 NAT4-gap resolution, native AP5, native support, Phase 8 completion, and ant ecology remain blocked. | README, closeout handoff, I7 claim classification, replay/stress matrices, focused margin tranche, implementation checklist, and hypotheses. |
+| [N29 agentic ecology convergence bridge](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/README.md) | Closed bridge experiment at EB6/N29-C6: source-backed ecology demand model, capability/debt atlas, bridge motif library, prototype atlas, and first probe contracts for `reflexive-coherence-agentic-ecology`, with N30+ primitive/component naturalization targets recorded. Executed ecology runtime, native ant/colony agency, resource economy, cooperation/exploitation, native support, sentience, organism/life, and Phase 8 completion remain blocked. | README, I18 closeout handoff, Phase D probe contracts, prototype atlas, demand/supply coverage matrix, motif library, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -425,13 +426,6 @@ ap4_nat4_gap_resolved = false
 ap5_nat4_gap_resolved = false
 ```
 
-N29 may consume N28 as bounded generative/extractive persistence evidence and
-claim-clean environment-exchange context. It must not consume N28 as semantic
-cooperation, semantic choice, agency, native support, native AP5, AP5
-NAT4-gap resolution, Phase 8 completion, ant ecology implementation, broad
-margin robustness, order-of-magnitude robustness, or unscoped multi-basin
-substrate evidence.
-
 N28 supporting visualization:
 
 | Static image linked to animation | Sequence image |
@@ -446,25 +440,101 @@ claims remain in the JSON/replay/control/closeout artifacts. It plots local
 focal-basin and neighborhood capacity metrics; it does not plot or audit
 global total-coherence invariance.
 
-N20-N28 stay inside this repository and ground becoming-style primitives:
-withdrawal resistance, naturalization depth, susceptibility update, live
-continuation collapse, surplus-supported optionality, spark/new-basin
-formation, proxy divergence, transfer, and generative persistence. N21 closed
-the first two primitives, N22 closed bounded producer-mediated susceptibility
-update / durable geometry modification, N23 closed bounded live-continuation
-collapse / selection geometry, N24 closed bounded surplus-supported optionality
-with a producer-assisted flux scaffold, N25 closed scoped high-margin
-core/sub-basin formation with N25-C6 handoff readiness, N25.1 closed the
-requirements bridge for Phase 8 LGRC9V3 multi-basin formation, N25.2 closed
-the MB6 validation bridge, N26 closed bounded proxy divergence / proxy collapse
-at PD6, N27 closed bounded configuration/topology transfer at CT6, and N28
-closed bounded generative/extractive persistence at GE6. N29 is now the first
-formal convergence bridge into the agentic ecology project, where producer
-residue, medium debt, and first applied ant-ecology probes can be specified.
-Unscoped multi-basin consumption, native AP5, AP4/AP5 NAT4-gap resolution,
-native support, agency, sentience, ant ecology implementation, Phase 8
-completion, native ant agency, biological agency, and unrestricted agency
-remain unopened.
+N29 closes as the formal convergence bridge at `EB6` / `N29-C6`. It is a
+compounded evidence experiment: it does not add a new primitive, but it
+normalizes what agentic ecology needs, what N05-N28 can actually supply, which
+bridge compositions are source-backed enough to try, and which producer /
+medium / naturalization debts remain open.
+
+```text
+status = passed
+acceptance_state = accepted_agentic_ecology_convergence_bridge_handoff
+bridge_ladder_rung = EB6_first_ecology_probe_contracts_and_handoff_supported
+n29_closeout_ladder_rung = N29-C6_agentic_ecology_probe_handoff_complete
+outbound_agentic_ecology_handoff_supported = true
+inbound_n30_plus_continuation_handoff_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+phase8_completion_opened = false
+```
+
+N29 consumed the closed stack as follows:
+
+```text
+N05-N11:
+  bounded agentic-like foundation context
+
+N12-N19:
+  agency-prerequisite and native-readiness review discipline
+
+N20-N28:
+  becoming-primitive evidence and controls:
+    withdrawal resistance / naturalization depth
+    susceptibility update / durable geometry modification
+    live-continuation collapse / selection geometry
+    abundance / surplus-supported optionality
+    basin formation and scoped MB6 multi-basin substrate
+    proxy divergence / proxy collapse
+    configuration / topology transfer
+    generative / extractive persistence
+```
+
+N29 consumed N28 specifically as bounded generative/extractive persistence
+evidence and claim-clean environment-exchange context. It did not consume N28
+as semantic cooperation, semantic choice, agency, native support, native AP5,
+AP5 NAT4-gap resolution, Phase 8 completion, ant ecology implementation, broad
+margin robustness, order-of-magnitude robustness, or unscoped multi-basin
+substrate evidence.
+
+N29 produced six bridge work products:
+
+```text
+1. ecology demand model
+2. N05-N28 capability/debt atlas
+3. demand/supply coverage and debt matrix
+4. bridge motif library
+5. source-backed prototype atlas
+6. first agentic-ecology probe contracts
+```
+
+The final outbound probe contracts are:
+
+```text
+I16:
+  minimal A+B route-pressure over shared-medium unit probe
+
+I17:
+  stronger A+B+C route-pressure / shared-medium / re-entry susceptibility probe
+
+I17-A:
+  full A/B/C/D bridge probe contract including generative/extractive
+  medium reshaping
+```
+
+The outbound handoff target is `reflexive-coherence-agentic-ecology`; it may
+consume N29 as probe-contract input, not as executed ant-ecology runtime. The
+inbound N30+ handoff remains in this repository and carries native-surface and
+producer-debt targets: native multi-component medium coupling, native
+cross-prototype state handoff, native resource/capacity semantics without
+semantic labels, and producer-residue discharge tests.
+
+N29 also freezes the Phase D deviation/nativity gate:
+
+```text
+downstream deviation allowed = true, if recorded with reason and scope
+contract conformance implies nativity = false
+deviation discharges producer/medium debt = false
+later core nativity retroactively upgrades old producer rows = false
+native discharge requires native rerun or source-backed discharge record
+```
+
+Executed ecology runtime, unscoped multi-basin consumption, native AP5,
+AP4/AP5 NAT4-gap resolution, native support, agency, sentience, ant ecology
+implementation, Phase 8 completion, native ant agency, biological agency,
+resource economy, cooperation/exploitation, organism/life, and unrestricted
+agency remain unopened.
+
 The agency-specific essay sources include `From Structural Abundance to
 Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
 Read-Back`; the last is a boundary source for separating agency from sentience,

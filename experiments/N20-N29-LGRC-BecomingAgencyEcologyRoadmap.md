@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Roadmap
 
-This roadmap defines the active experiment arc after the closed N12-N19
+This roadmap records the closed N20-N29 experiment arc after the closed N12-N19
 agency-prerequisite and native-readiness stack. N20 is closed as the
 translation-contract entry point, N21 is closed as the first bounded
 becoming-primitive evidence experiment, N22 is closed as the bounded
@@ -15,8 +15,9 @@ N26 is closed as bounded PD6 proxy divergence / proxy collapse evidence with a
 scoped artifact AP5 bridge candidate, and N27 is closed as bounded CT6
 configuration/topology transfer evidence with a claim-clean N28 side-effect
 precursor handoff. N28 is closed as bounded GE6 generative/extractive
-persistence evidence with a claim-clean N29 handoff. N29 is now the next
-convergence bridge into agentic ecology.
+persistence evidence with a claim-clean N29 handoff. N29 is closed as the EB6 /
+N29-C6 convergence bridge into agentic ecology, with first probe contracts and
+an inbound N30+ continuation handoff.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
@@ -128,8 +129,9 @@ The agentic ecology path supplies the applied domain: multi-basin ecology,
 shared-medium traces, ant/colony-like support flow, producer residue, and
 medium debt.
 
-Before N29, this path is context only. Do not write formal ants ecology specs
-or claim applied ant behavior inside N20-N28.
+Before N29, this path was context only. N29 records bridge contracts for the
+ecology repository, but still does not claim executed ant behavior, native ant
+agency, biological agency, or native ecology.
 
 ## Arc of Becoming Method
 
@@ -796,8 +798,8 @@ ap4_nat4_gap_resolved = false
 ap5_nat4_gap_resolved = false
 ```
 
-N29 may consume N28 as bounded artifact-level generative/extractive persistence
-evidence and claim-clean environment-exchange context. It must not consume N28
+N29 consumed N28 as bounded artifact-level generative/extractive persistence
+evidence and claim-clean environment-exchange context. It did not consume N28
 as semantic cooperation, semantic choice, agency, native support, native AP5,
 AP5 NAT4-gap resolution, Phase 8 completion, ant ecology implementation, broad
 margin robustness, order-of-magnitude robustness, or unscoped multi-basin
@@ -813,6 +815,22 @@ project with explicit producer residue, medium debt, claim boundaries, and a
 runnable first-probe plan?
 ```
 
+Closed result:
+
+```text
+status = passed
+acceptance_state = accepted_agentic_ecology_convergence_bridge_handoff
+bridge_ladder_rung = EB6_first_ecology_probe_contracts_and_handoff_supported
+n29_closeout_ladder_rung = N29-C6_agentic_ecology_probe_handoff_complete
+outbound_agentic_ecology_handoff_supported = true
+inbound_n30_plus_continuation_handoff_supported = true
+runtime_probe_executed = false
+ecology_success_supported = false
+native_ecology_supported = false
+phase8_completion_opened = false
+output_digest = fa21662f0a69d582bfe574311110f2610a21e6e4e352991823ce47280e0e8ff5
+```
+
 N29 is the convergence point for the three paths:
 
 ```text
@@ -826,7 +844,7 @@ agentic ecology / ants project:
     applied multi-basin shared-medium ecology target
 ```
 
-N29 should produce:
+N29 produced:
 
 ```text
 primitive-to-ant-ecology mapping
@@ -838,7 +856,20 @@ claim boundary
 handoff to the agentic ecology project
 ```
 
-N29 should not yet claim:
+The supported handoff products are:
+
+```text
+ecology demand model
+N05-N28 capability/debt atlas
+bridge motif library
+source-backed prototype atlas
+minimal A+B probe contract
+stronger A+B+C probe contract
+full A/B/C/D bridge probe contract
+N30+ primitive/component naturalization target list
+```
+
+N29 does not claim:
 
 ```text
 native ant agency
@@ -847,11 +878,26 @@ biological agency
 consciousness
 organism/life
 fully native shared-medium coordination
+executed ecology runtime
+resource economy
+cooperation or exploitation
+Phase 8 completion
 ```
 
-Formal agentic ecology specs should begin at N29, not before. N20-N28 may cite
-the ecology project as future application context, but should not define its
-implementation surface.
+Formal agentic ecology runtime work begins after N29 in
+`reflexive-coherence-agentic-ecology`. This repository continues with N30+
+primitive and agency-component work where native surfaces, cross-prototype
+handoff, medium coupling, and producer-residue discharge can be tested.
+
+The Phase D contract rule is:
+
+```text
+downstream deviation allowed = true, if recorded with reason and scope
+contract conformance implies nativity = false
+deviation discharges producer/medium debt = false
+later core nativity retroactively upgrades old producer rows = false
+native discharge requires native rerun or source-backed discharge record
+```
 
 ## Claim Boundary
 
@@ -898,8 +944,8 @@ This roadmap is useful only if:
 
 ```text
 N20 grounds the vocabulary before primitive tests begin
-N20-N28 stay in graph-reflexive-coherence
-N29 is the first formal bridge to agentic ecology
+N20-N29 stay in graph-reflexive-coherence as primitive and bridge evidence
+N29 is the first formal bridge to agentic ecology and is now closed at EB6/N29-C6
 Arc of Becoming is used as method, not as evidence shortcut
 the geometric coherence papers and essays supply diagnostics, not proof by citation
 producer residue and native evidence remain separate
@@ -910,8 +956,9 @@ no primitive is promoted if it succeeds only by changing the N20 definition of
 basin signature, continuation-function descriptor, or proxy-only success
 negative controls fail closed with named blockers
 AP4/AP5 NAT4 gaps are tracked rather than bypassed
-N22 learning, N23 choice/collapse, N24 abundance, N25 spark/new-basin
-formation, N25.1 Phase 8 requirements, N26 proxy divergence, and N27 transfer
+N22 learning/susceptibility, N23 choice/collapse, N24 abundance, N25
+spark/new-basin formation, N25.1 Phase 8 requirements, N26 proxy divergence,
+N27 transfer, N28 generative/extractive persistence, and N29 bridge contracts
 remain separate evidence targets
 Phase 8 opens only through the explicit post-N25.1 implementation branch
 ```
