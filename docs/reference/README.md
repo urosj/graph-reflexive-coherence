@@ -5,6 +5,7 @@ Canonical operator-facing guides live here. Implementation plans and checklists 
 ## Available Now
 
 - [Catalogs And Evidence Reference Guide](Catalogs-And-Evidence-ReferenceGuide.md)
+- [Claim Boundary Index](ClaimBoundaryIndex.md)
 - [Landscape Inference Reference Guide](LandscapeInference-ReferenceGuide.md)
 - [Graph Visualization Reference Guide](GraphVisualization-ReferenceGuide.md)
 - [GRC Runtime Reference Guide](GRC-Runtime-ReferenceGuide.md)
