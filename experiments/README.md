@@ -566,3 +566,10 @@ Roadmap-level context:
 - [N12-N18 LGRC Agency Prerequisites Roadmap](N12-N18-LGRC-AgencyPrerequisitesRoadmap.md)
 - [N20-N29 LGRC Becoming-Agency Ecology Roadmap](N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md)
 - [N20-N29 LGRC Becoming-Agency Ecology Handoff](N20-N29-LGRC-BecomingAgencyEcologyHandoff.md)
+- [N30+ Experiment Catalog Roadmap](N30_plus_experiment_catalog_roadmap.md)
+- [N30+ Candidate Directions](N30_plus_candidate_directions.md)
+
+The N30+ documents are planning and catalog-orientation records. They define
+how future experiments should think about primitives, building blocks, motifs,
+regimes, source-basis discipline, debt, failure, and candidate directions, but
+they are not themselves evidence for a new claim arc.

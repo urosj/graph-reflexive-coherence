@@ -238,3 +238,18 @@ not claim executed ecology runtime, native ant/colony agency, biological agency,
 organism/life, resource economy, cooperation/exploitation, native shared-medium
 coordination, semantic learning, semantic choice, semantic goals, AP4/AP5 NAT4
 gap resolution, Phase 8 completion, or unrestricted autonomy.
+
+## Forward Catalog Orientation
+
+The N30+ roadmap package is a planning and ontology layer for future
+experiments. It defines catalog layers, candidate directions, debt/failure
+language, and claim-hygiene expectations, but it is not itself a source of
+evidence for a new claim arc.
+
+Pointers:
+
+- [N30+ Experiment Catalog Roadmap](../../experiments/N30_plus_experiment_catalog_roadmap.md):
+  Catalog ontology for primitives, building blocks, motifs, regimes, debt, and
+  claim discipline after N29.
+- [N30+ Candidate Directions](../../experiments/N30_plus_candidate_directions.md):
+  Candidate shared-medium ecology directions for future experiments.

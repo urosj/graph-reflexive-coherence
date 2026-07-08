@@ -101,6 +101,13 @@ is the current clearest bridge example: it turns the N05-N28 evidence stack
 into a prototype atlas and first ecology probe contracts without converting
 those contracts into executed ecology runtime or native agency claims.
 
+The N30+ catalog roadmap package now orients the next in-repository experiment
+phase. It is planning and ontology guidance, not evidence by itself:
+[N30+ Experiment Catalog Roadmap](experiments/N30_plus_experiment_catalog_roadmap.md)
+defines primitives, building blocks, motifs, regimes, debt, and claim hygiene;
+[N30+ Candidate Directions](experiments/N30_plus_candidate_directions.md)
+collects candidate directions for future shared-medium ecology work.
+
 ## Theory and implementation map
 
 The broader Reflexive Coherence theory lives primarily in
@@ -309,6 +316,7 @@ full link-heavy evidence index is kept in
 | N05-N11 foundation arc | N05-N11 record a bounded LGRC agentic-like foundation arc with explicit claim ceilings. | Not unbounded agency or hidden-steering-free native general intelligence. | [N05-N11 roadmap](experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n05-n11-foundation-arc) |
 | N12-N19 review arc | N12-N19 close the artifact-level agency-prerequisite and native-readiness review stack; AP4/AP5 NAT4 gaps remain blockers. | Not full native AP3-AP8 ladder generation, agency, native support, Phase 8 implementation, identity acceptance, or unrestricted autonomy. | [N12-N18 roadmap](experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md), [N19 closeout report](experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n12-n19-review-arc) |
 | N20-N29 becoming/ecology bridge arc | N20-N29 close bounded becoming-primitive evidence through N28 and close N29 at `EB6` / `N29-C6` with a prototype atlas and first ecology probe contracts. | Not executed ecology runtime, native ant/colony agency, biological agency, organism/life, resource economy, cooperation/exploitation, semantic goals/choice/learning, AP4/AP5 gap resolution, Phase 8 completion, or unrestricted autonomy. | [N20-N29 roadmap](experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md), [N29 closeout report](experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/reports/n29_closeout_and_ecology_handoff_i18.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n20-n29-becomingecology-bridge-arc) |
+| N30+ catalog orientation | N30+ roadmap documents define the next catalog grammar for primitives, building blocks, motifs, regimes, candidate directions, debt, and claim hygiene. | Not an evidence source, not a fixed schedule, and not a new claim arc until future experiments produce source-backed artifacts. | [N30+ roadmap](experiments/N30_plus_experiment_catalog_roadmap.md), [N30+ candidate directions](experiments/N30_plus_candidate_directions.md) |
 
 Global non-claims remain explicit: this repository does not currently claim
 native agency, native ant/colony agency, semantic goal ownership, sentience,
