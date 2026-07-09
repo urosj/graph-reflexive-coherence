@@ -1,0 +1,9 @@
+{
+  "artifact_role": "i5c_participant_medium_separation_trace",
+  "medium_surface_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+  "participant_carrier_id": "n28_i4f_focal_basin_iota",
+  "participant_medium_distinct": true,
+  "participant_medium_separation_digest": "10d6e261ce1d25813acb8819b0b839d747742d8fe015ec1f455742c70116440b",
+  "separation_argument": "The participant carrier is the N28 I4-F focal basin; the medium surface is the separate wide circulatory neighbor field.",
+  "trace_id": "n30_i5c_participant_medium_separation_trace"
+}

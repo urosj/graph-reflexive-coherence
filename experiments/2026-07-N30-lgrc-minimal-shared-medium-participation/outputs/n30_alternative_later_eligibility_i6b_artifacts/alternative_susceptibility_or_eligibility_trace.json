@@ -1,0 +1,30 @@
+{
+  "acceptance_threshold": {
+    "mixed_lobe_delta_min": 0.04,
+    "neighbor_capacity_stress_margin_min": 0.01
+  },
+  "alternative_susceptibility_or_eligibility_trace_digest": "b877c615d06c0ed1883018985a4b312b25261a17e41b8428cc6b7ade5d0b7ff1",
+  "artifact_role": "alternative_susceptibility_or_eligibility_trace",
+  "baseline_window": "N28_I4F_pre_circulation_lobe_state",
+  "conditioning_basis": "The post-circulation route-conductance eligibility requires both inflow and outflow lobe changes above the declared mixed-lobe threshold, and the neighbor-capacity stress envelope remains supported at 0.010 margin.",
+  "effect_size": {
+    "margin_improvement_over_i6_reference": 0.008,
+    "minimum_lobe_exchange_margin": 0.02,
+    "neighbor_capacity_stress_margin": 0.01,
+    "source_i6_threshold_margin_reference": 0.002
+  },
+  "expected_direction": "inflow_and_outflow_lobes_both_exceed_mixed_lobe_delta_min",
+  "inflow_lobe_capacity_delta": 0.062,
+  "later_response_conditioned_by_medium": true,
+  "later_response_metric": "circulatory_route_conductance_eligibility_margin",
+  "medium_surface_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+  "metric_declared_before_use": true,
+  "minimum_lobe_exchange_margin": 0.02,
+  "neighbor_capacity_stress_margin": 0.01,
+  "normalization_denominator": "mixed_lobe_delta_min_and_neighbor_capacity_stress_margin",
+  "outflow_lobe_capacity_delta_abs": 0.06,
+  "response_window": "N28_I4F_post_circulation_lobe_state_plus_I6C_stress_envelope",
+  "source_i5c_relation_chain_id": "n30_i5c_i4f_focal_to_circulatory_medium_trace_chain",
+  "trace_dependency_control_status": "provisional_pending_iteration_7",
+  "trace_id": "n30_i6b_circulatory_route_eligibility_trace"
+}

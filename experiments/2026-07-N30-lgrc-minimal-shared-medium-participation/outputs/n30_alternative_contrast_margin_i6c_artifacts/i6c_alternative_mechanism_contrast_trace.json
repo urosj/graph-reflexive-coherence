@@ -1,0 +1,15 @@
+{
+  "artifact_role": "i6c_alternative_mechanism_contrast_trace",
+  "competitive_counterfactual_trace_id": "n28_i4g_capacity_attribution_trace",
+  "competitive_direct_two_lobe_pair": true,
+  "competitive_mechanism_class": "higher_margin_competitive_capacity_redistribution",
+  "contrast_interpretation": "The alternative source improves threshold margin relative to I6 and uses a three-lobe neutral-circulation mechanism rather than the direct two-lobe competitive counterfactual.",
+  "mechanism_contrast_supported": true,
+  "mechanism_contrast_trace_digest": "4001fd30799f60ff2cd25bc3d2d5a0e0c9fb36257902e9d9d7500939eed8eb46",
+  "neutral_mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+  "neutral_source_trace_id": "n28_i4f_capacity_attribution_trace",
+  "neutral_three_lobe_circulation": true,
+  "threshold_margin_delta_vs_i6": 0.008,
+  "threshold_margin_ratio_vs_i6": 5.0,
+  "trace_id": "n30_i6c_alternative_mechanism_contrast_trace"
+}

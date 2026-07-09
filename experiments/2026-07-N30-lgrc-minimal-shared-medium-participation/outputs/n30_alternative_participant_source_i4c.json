@@ -1,0 +1,198 @@
+{
+  "acceptance_state": "accepted_alternative_P2_participant_source_fixture_no_medium_claim",
+  "artifact_manifest": [
+    {
+      "artifact_role": "alternative_participant_carrier_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_participant_source_i4c_artifacts/alternative_participant_carrier_trace.json",
+      "sha256": "dac4baff4b44d6d0462bd161537f0b4dd31718d441d6f87fc889ad2882d26dba"
+    },
+    {
+      "artifact_role": "i4c_claim_boundary_guard",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_participant_source_i4c_artifacts/i4c_claim_boundary_guard.json",
+      "sha256": "8ef3bdd58d3ac75e744f71d493301ebb1c9766650356a1e4737c2df8ccc3ad13"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_participant_carrier_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_participant_source_i4c_artifacts/alternative_participant_carrier_trace.json",
+          "sha256": "dac4baff4b44d6d0462bd161537f0b4dd31718d441d6f87fc889ad2882d26dba"
+        },
+        {
+          "artifact_role": "i4c_claim_boundary_guard",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_participant_source_i4c_artifacts/i4c_claim_boundary_guard.json",
+          "sha256": "8ef3bdd58d3ac75e744f71d493301ebb1c9766650356a1e4737c2df8ccc3ad13"
+        }
+      ],
+      "blocked_relabels": [
+        "final_minimal_shared_medium_participation",
+        "shared_medium_coordination",
+        "parent_basin_modulation",
+        "resonant_alignment",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "claim_ceiling": "alternative participant/source fixture only; no medium relation",
+      "derived_report_only": false,
+      "medium_relation_claim_allowed": false,
+      "medium_relation_ladder_rung": "not_assigned",
+      "minimal_shared_medium_participation_claim_allowed": false,
+      "participant_attribution_trace": {
+        "artifact_role": "alternative_participant_carrier_trace",
+        "carrier_trace_digest": "ae507ff86e44cf2e869d8be3b4ec23b0f1b3fe3aa9e20544bc910b88f215a3f2",
+        "coherence_floor": 0.84,
+        "coherence_margin": 0.046,
+        "focal_coherence_floor_preserved": true,
+        "focal_stability_preserved": true,
+        "focal_support_floor_preserved": true,
+        "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+        "participant_carrier": "N28_I4F_focal_basin_iota",
+        "participant_carrier_id": "n28_i4f_focal_basin_iota",
+        "post_coherence_min": 0.886,
+        "post_stability_score": 0.883,
+        "post_support_min": 0.875,
+        "pre_coherence_min": 0.889,
+        "pre_stability_score": 0.884,
+        "pre_support_min": 0.878,
+        "source_fixture_kind": "source_current_geometric_trace_fixture",
+        "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast",
+        "support_floor": 0.84,
+        "support_margin": 0.035,
+        "trace_id": "n30_i4c_alternative_participant_carrier_trace"
+      },
+      "participant_carrier": "N28_I4F_focal_basin_iota",
+      "participant_carrier_id": "n28_i4f_focal_basin_iota",
+      "participant_ladder_rung": "P2_candidate_alternative_source_fixture",
+      "participant_persistence_window": "N28_I4F_step_0_to_step_1",
+      "primary_layer": "primitive",
+      "row_decision": "supported_alternative_P2_participant_source_fixture",
+      "row_id": "n30_i4c_row_01_i4f_alternative_participant_source_fixture",
+      "row_output_digest": "ccc455274dbda9962570ed2e5e1effc12c07bd507745e303bc54de1feaad77bc",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+          "sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+          "source_role": "N28_I4F_higher_margin_neutral_circulation"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "9a8a65f72289920d4620dc260233394d3817064296028206caf3cc02042b8399",
+          "source_role": "N28_I4F_source_current_runtime_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/focal_basin_stability_trace.json",
+          "sha256": "7951315cb3fc118f07c7099a26baabd712fd6c2c4eedead43dee7dc9229e1f6d",
+          "source_role": "N28_I4F_focal_basin_stability_trace"
+        }
+      ],
+      "source_iteration": "I4-C"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "source_i4f_passed",
+      "passed": true
+    },
+    {
+      "check_id": "focal_basin_support_coherence_stability_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "medium_relation_claims_closed",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "final_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "P2_alternative_source_fixture_only",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "final_minimal_shared_medium_participation_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py",
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "iteration": "4-C_alternative_participant_source_fixture_admission",
+  "medium_relation_ladder_rung_assigned": "not_assigned",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_closeout_ceiling": "N30-C3_participant_admissibility_candidate",
+  "output_digest": "80f5346ac422749246050bc5e4514c323ea63f7dc7d49394628ad2b6860d668d",
+  "participant_ladder_rung_assigned": "P2_candidate_alternative_source_fixture",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "alternative_participant_source_fixture_only",
+  "ready_for_iteration_5c_medium_surface_trace": true,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py",
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+      "sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+      "source_role": "N28_I4F_higher_margin_neutral_circulation"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/source_current_runtime_trace.json",
+      "sha256": "9a8a65f72289920d4620dc260233394d3817064296028206caf3cc02042b8399",
+      "source_role": "N28_I4F_source_current_runtime_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/focal_basin_stability_trace.json",
+      "sha256": "7951315cb3fc118f07c7099a26baabd712fd6c2c4eedead43dee7dc9229e1f6d",
+      "source_role": "N28_I4F_focal_basin_stability_trace"
+    }
+  ],
+  "source_n28_i4f_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+  "status": "passed"
+}

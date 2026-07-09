@@ -35,6 +35,10 @@ N30 reconstruction and artifact-generation scripts will be stored here.
   susceptibility JSON, supporting traces, and report.
 - `build_n30_later_eligibility_margin_i6a.py`: consumes I6 and emits the I6-A
   later-eligibility contrast-margin JSON, supporting traces, and report.
+- `build_n30_alternative_source_tranche_i4c_to_i6c.py`: consumes the N28 I4-F
+  higher-margin neutral-circulation source and focused replay/stress records to
+  emit I4-C, I5-C, I5-D, I6-B, and I6-C alternative-source JSON, supporting
+  traces, and reports.
 
 Run from the repository root:
 
@@ -50,4 +54,5 @@ Run from the repository root:
 .venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_medium_surface_scope_window_i5b.py
 .venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_later_eligibility_i6.py
 .venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_later_eligibility_margin_i6a.py
+.venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py
 ```

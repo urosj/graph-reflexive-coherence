@@ -426,6 +426,36 @@ A good I6-A result can strengthen dependency separation while still recording
 that the N28 threshold margin remains narrow. It cannot by itself support final
 N30-C5/C6.
 
+### Alternative Source Tranche: I4-C through I6-C
+
+If I6/I6-A remain too dependent on the N28 generative-edge boundary, N30 should
+try a different source family instead of retuning the same row.
+
+The alternative tranche uses the N28 I4-F higher-margin neutral-circulation
+source. This tests a different medium geometry:
+
+```text
+I5/I6 family:
+  generative neighbor enrichment surface
+
+I5-C/I6-B family:
+  circulatory route-conductance surface
+```
+
+Required sequence:
+
+```text
+I4-C = alternative participant/source fixture admission
+I5-C = alternative circulatory medium-surface trace
+I5-D = replay / scope / stress audit for that surface
+I6-B = later route-conductance eligibility dependency
+I6-C = contrast and margin audit against original I6 and mechanism counterfactual
+```
+
+This tranche may improve the raw threshold margin and mechanism diversity. It
+must not overwrite the original I6 result, retune thresholds, or claim final
+N30-C5/C6 without I7 controls.
+
 ### Iteration 7. Replay, Controls, And Medium Debt Matrix
 
 Run artifact replay, duplicate replay, snapshot/load replay, message-removal,

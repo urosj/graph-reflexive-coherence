@@ -36,3 +36,15 @@ N30 iteration reports will be stored here.
   the I6 M2 dependency is separated from neutral-gap and extractive-cross
   counterfactuals, while explicitly preserving the narrow threshold-margin
   caveat.
+- `n30_alternative_participant_source_i4c.md`: alternative source fixture
+  admission report for the N28 I4-F focal basin as a P2 participant candidate.
+- `n30_alternative_medium_surface_i5c.md`: alternative circulatory medium
+  surface report for the N28 I4-F route-conductance surface.
+- `n30_alternative_scope_stress_i5d.md`: replay/scope/stress report for the
+  alternative circulatory surface.
+- `n30_alternative_later_eligibility_i6b.md`: alternative later-eligibility
+  report showing a provisional M2 route-conductance dependency with improved
+  threshold margin.
+- `n30_alternative_contrast_margin_i6c.md`: alternative source contrast and
+  margin report comparing I6-B with the original I6 edge case and preserving
+  the final C5/C6 boundary.

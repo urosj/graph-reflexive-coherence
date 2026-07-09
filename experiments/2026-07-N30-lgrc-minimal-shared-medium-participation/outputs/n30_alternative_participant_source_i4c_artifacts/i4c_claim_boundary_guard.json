@@ -1,0 +1,27 @@
+{
+  "alternative_source_role": "N28_I4F_higher_margin_neutral_circulation_fixture",
+  "artifact_role": "i4c_claim_boundary_guard",
+  "blocked_claims": [
+    "final_minimal_shared_medium_participation",
+    "shared_medium_coordination",
+    "parent_basin_modulation",
+    "resonant_alignment",
+    "native_shared_medium_organization",
+    "semantic_communication",
+    "semantic_coordination",
+    "cooperation",
+    "agency",
+    "selfhood",
+    "identity_acceptance",
+    "sentience",
+    "organism_life",
+    "ecology_regime",
+    "phase8_completion",
+    "unrestricted_autonomy"
+  ],
+  "claim_boundary_guard_digest": "504d5abdccee1b97593fbe89979ef238fd7a5cf262a8d2e85cd891354ce7ef32",
+  "medium_relation_ladder_rung": "not_assigned_until_I5C",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "participant_ladder_rung": "P2_candidate_alternative_source_fixture",
+  "trace_id": "n30_i4c_claim_boundary_guard"
+}

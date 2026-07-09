@@ -74,3 +74,22 @@ historical evidence record.
   closeout boundary.
 - `n30_later_eligibility_margin_i6a_artifacts/`: supporting contrast-threshold
   policy, contrast-margin matrix, and I6-A claim-boundary guard.
+- `n30_alternative_participant_source_i4c.json`: alternative source fixture
+  admission. It consumes the N28 I4-F higher-margin neutral-circulation source
+  and admits its focal basin as a P2 participant candidate while keeping medium
+  relation claims closed.
+- `n30_alternative_medium_surface_i5c.json`: alternative medium-surface trace.
+  It declares the N28 I4-F wide circulatory neighbor field as a shared-local
+  route-conductance surface with a lobe-exchange margin of `0.02`.
+- `n30_alternative_scope_stress_i5d.json`: replay/scope/stress audit for the
+  alternative circulatory surface, consuming N28 focused replay and stress
+  envelope records.
+- `n30_alternative_later_eligibility_i6b.json`: alternative later-eligibility
+  dependency probe. It opens a provisional M2 route-conductance eligibility
+  candidate with neighbor-capacity threshold margin `0.01`.
+- `n30_alternative_contrast_margin_i6c.json`: alternative source contrast and
+  margin audit. It records a fivefold threshold-margin improvement over I6
+  while keeping final N30-C5/C6 blocked pending I7 controls.
+- `n30_alternative_*_artifacts/`: supporting participant, medium-surface,
+  replay/stress, susceptibility, lineage, contrast, and claim-boundary traces
+  for the I4-C through I6-C alternative source tranche.

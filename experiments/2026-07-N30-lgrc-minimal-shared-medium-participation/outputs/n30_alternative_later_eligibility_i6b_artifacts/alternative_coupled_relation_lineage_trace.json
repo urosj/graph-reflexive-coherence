@@ -1,0 +1,14 @@
+{
+  "alternative_coupled_relation_lineage_digest": "fc3eb74f0916775af6c1f842a46de857a673403821f78c281c86e19c3363b9a1",
+  "artifact_role": "alternative_coupled_relation_lineage_trace",
+  "causal_order_verified": "ordered_N28_I4F_runtime_trace_plus_replay_stress_envelope",
+  "direct_message_present": false,
+  "ordered_chain": [
+    "participant_event",
+    "circulatory_medium_surface_perturbation",
+    "lobe_exchange_surface_change",
+    "later_route_conductance_eligibility"
+  ],
+  "relation_chain_id": "n30_i5c_i4f_focal_to_circulatory_medium_trace_chain_route_conductance_eligibility",
+  "trace_id": "n30_i6b_circulatory_relation_lineage_trace"
+}

@@ -4,7 +4,7 @@
 
 ```text
 experiment = N30
-status = iteration_6a_later_eligibility_contrast_margin_probe_passed
+status = iteration_6c_alternative_source_contrast_margin_probe_passed
 positive_evidence_opened = participant_admissibility_medium_surface_trace_and_provisional_later_eligibility
 final_n30_closeout_rung = not_assigned
 ready_for_iteration_7 = true
@@ -780,6 +780,144 @@ extractive-cross counterfactual. This makes the later-eligibility dependency
 less label-fragile than the raw threshold margin suggests, while preserving the
 claim boundary. I6-A strengthens provisional M2 input evidence; it does not
 finalize N30-C5/C6.
+```
+
+## Alternative Source Tranche - I4-C through I6-C
+
+Reason:
+
+```text
+I6/I6-A prove the dependency shape, but they remain tied to the N28 generative
+edge threshold margin of 0.002. The alternative tranche tests whether the N30
+contract holds on a different source geometry: N28 I4-F higher-margin neutral
+circulation, where the medium is a route-conductance / circulatory neighbor
+surface rather than a generative enrichment surface.
+```
+
+### Iteration 4-C - Alternative Participant / Source Fixture Admission
+
+- [x] Consume N28 I4-F higher-margin neutral circulation as an alternative source fixture.
+- [x] Admit the focal basin as a P2 participant candidate.
+- [x] Keep medium relation claims closed.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_P2_participant_source_fixture_no_medium_claim
+output = outputs/n30_alternative_participant_source_i4c.json
+report = reports/n30_alternative_participant_source_i4c.md
+output_digest = 80f5346ac422749246050bc5e4514c323ea63f7dc7d49394628ad2b6860d668d
+participant_ladder_rung = P2_candidate_alternative_source_fixture
+medium_relation_ladder_rung = not_assigned
+n30_closeout_ceiling = N30-C3_participant_admissibility_candidate
+failed_checks = []
+```
+
+### Iteration 5-C - Alternative Medium-Surface Trace
+
+- [x] Declare the N28 I4-F wide circulatory neighbor field as the medium surface.
+- [x] Record lobe exchange as the surface-change mechanism.
+- [x] Keep later eligibility and final C5 claims closed.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_M1_circulatory_medium_surface_trace
+output = outputs/n30_alternative_medium_surface_i5c.json
+report = reports/n30_alternative_medium_surface_i5c.md
+output_digest = 754c8cabeeb35d4274b2841ecc7458eeebb9c1eee8c1c5d26782c38a4bf2b335
+participant_ladder_rung = P2_candidate_alternative_source_fixture
+medium_relation_ladder_rung = M1_candidate_alternative_circulatory_surface
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate
+minimum_lobe_exchange_margin = 0.02
+minimal_shared_medium_participation_claim_allowed = false
+failed_checks = []
+```
+
+### Iteration 5-D - Alternative Scope / Stress Audit
+
+- [x] Consume N28 focused replay and stress envelope for I4-F.
+- [x] Record stress margins for the alternative circulatory surface.
+- [x] Keep later eligibility claims closed until I6-B.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_M1_circulatory_surface_replay_stress_audit
+output = outputs/n30_alternative_scope_stress_i5d.json
+report = reports/n30_alternative_scope_stress_i5d.md
+output_digest = 5052dc86851af8f12bc26949a640b6df4eb766183255b83a8b90416eeff13b92
+participant_ladder_rung = P2_candidate_alternative_source_fixture
+medium_relation_ladder_rung = M1_candidate_alternative_circulatory_surface
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate
+minimum_current_margin = 0.006
+neighbor_capacity_current_margin = 0.01
+failed_checks = []
+```
+
+### Iteration 6-B - Alternative Later Eligibility Probe
+
+- [x] Link the circulatory medium surface to later route-conductance eligibility.
+- [x] Record improved threshold margin relative to original I6.
+- [x] Keep final C5/C6 blocked pending I7.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_M2_later_eligibility_candidate_pending_I7_controls
+output = outputs/n30_alternative_later_eligibility_i6b.json
+report = reports/n30_alternative_later_eligibility_i6b.md
+output_digest = df9d1789199368ac62385e3e0052d2dcfaf4858bb44eecc338e66b07240f10f5
+participant_ladder_rung = P2_candidate_alternative_source_fixture
+medium_relation_ladder_rung = M2_candidate_alternative_source_pending_I7_controls
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate_with_alternative_C5_input_evidence
+alternative_neighbor_capacity_threshold_margin = 0.01
+alternative_lobe_exchange_margin = 0.02
+minimal_shared_medium_participation_claim_allowed = false
+final_n30_c5_claim_allowed = false
+failed_checks = []
+```
+
+### Iteration 6-C - Alternative Contrast / Margin Audit
+
+- [x] Compare the alternative I6-B margin to the original I6 edge margin.
+- [x] Record mechanism contrast against the competitive direct two-lobe counterfactual.
+- [x] Preserve the final C5/C6 claim boundary.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_source_margin_and_mechanism_contrast_audit_no_final_C5
+output = outputs/n30_alternative_contrast_margin_i6c.json
+report = reports/n30_alternative_contrast_margin_i6c.md
+output_digest = bb4930b3423156f4aac9b023cb14efb3c7bc8d707518395b2b95fe79fd39a403
+participant_ladder_rung = P2_candidate_alternative_source_fixture
+medium_relation_ladder_rung = M2_candidate_alternative_source_pending_I7_controls
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate_with_alternative_C5_input_evidence
+threshold_margin_delta_vs_i6 = 0.008
+threshold_margin_ratio_vs_i6 = 5.0
+alternative_lobe_exchange_margin = 0.02
+broad_margin_robustness_supported = false
+minimal_shared_medium_participation_claim_allowed = false
+final_n30_c5_claim_allowed = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+The alternative source tranche does not replace I6. It adds a second M2-shaped
+source family with different medium geometry. The original I6 remains the
+generative-edge relation with narrow 0.002 threshold margin. I6-B/I6-C add a
+circulatory route-conductance relation with 0.010 neighbor-capacity threshold
+margin and 0.020 lobe-exchange margin. This is a fivefold threshold-margin
+improvement relative to I6, but not broad robustness. Final N30-C5/C6 remain
+blocked until I7 relation controls pass.
 ```
 
 ## Iteration 7 - Replay, Controls, And Medium Debt Matrix

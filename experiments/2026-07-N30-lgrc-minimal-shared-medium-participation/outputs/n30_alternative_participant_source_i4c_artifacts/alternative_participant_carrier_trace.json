@@ -1,0 +1,23 @@
+{
+  "artifact_role": "alternative_participant_carrier_trace",
+  "carrier_trace_digest": "ae507ff86e44cf2e869d8be3b4ec23b0f1b3fe3aa9e20544bc910b88f215a3f2",
+  "coherence_floor": 0.84,
+  "coherence_margin": 0.046,
+  "focal_coherence_floor_preserved": true,
+  "focal_stability_preserved": true,
+  "focal_support_floor_preserved": true,
+  "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+  "participant_carrier": "N28_I4F_focal_basin_iota",
+  "participant_carrier_id": "n28_i4f_focal_basin_iota",
+  "post_coherence_min": 0.886,
+  "post_stability_score": 0.883,
+  "post_support_min": 0.875,
+  "pre_coherence_min": 0.889,
+  "pre_stability_score": 0.884,
+  "pre_support_min": 0.878,
+  "source_fixture_kind": "source_current_geometric_trace_fixture",
+  "source_row_id": "n28_i4f_row_higher_margin_neutral_circulation_contrast",
+  "support_floor": 0.84,
+  "support_margin": 0.035,
+  "trace_id": "n30_i4c_alternative_participant_carrier_trace"
+}
