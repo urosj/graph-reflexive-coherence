@@ -12,6 +12,35 @@ agency, ecology, or native shared-medium organization. It should first ask
 whether the term **shared medium** can be grounded in source-current LGRC
 evidence at the smallest admissible relation form.
 
+## Closeout Result
+
+N30 closes at:
+
+```text
+N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+```
+
+The supported claim is bounded:
+
+```text
+artifact-level minimal shared-medium participation candidate
+trace-mediated eligibility primitive / building-block candidate
+```
+
+The result is supported by replay/control-clean evidence across the original
+generative-edge family and an alternative circulatory family. It does not claim
+shared-medium coordination, communication, cooperation, agency, native
+shared-medium organization, parent-basin modulation, resonance, sentience, or
+ecology regime.
+
+N30 also does not select N31 by default. Its handoff is a cross-project spiral:
+
+```text
+N30 grounds minimal shared-medium participation
+  -> agentic ecology demand/composition pass
+  -> selected N31+ LGRC primitive or building-block probe
+```
+
 ## Core Question
 
 ```text
@@ -211,15 +240,21 @@ sentience
 unrestricted autonomy
 ```
 
-## Initial Handoff Target
+## Handoff Target
 
-If N30 succeeds, the next natural building-block experiment is not generic
-ecology. It is a controlled shared-medium building block such as:
+If N30 succeeds, it should not automatically select N31. The updated N30+
+direction is a cross-project spiral:
 
 ```text
-N31 = shared-medium support redistribution
+N30 grounds minimal shared-medium participation
+  -> agentic ecology demand/composition pass
+  -> selected N31+ LGRC primitive or building-block probe
 ```
 
-Other later candidates include slow-memory conductance trace,
-boundary-mediated exchange, latent basin / ghost aftereffect, and
-generative/extractive shared-medium relation.
+N30 can expose a candidate interface for future shared-medium building blocks,
+but the next LGRC experiment should remain unfixed until the agentic-ecology
+demand pass says which building block is actually needed.
+
+Possible later candidates include shared-medium support redistribution,
+slow-memory conductance trace, boundary-mediated exchange, latent basin / ghost
+aftereffect, and generative/extractive shared-medium relation.

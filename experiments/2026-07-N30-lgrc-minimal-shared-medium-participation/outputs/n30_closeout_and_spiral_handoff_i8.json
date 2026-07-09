@@ -1,0 +1,281 @@
+{
+  "acceptance_state": "accepted_N30_C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout",
+  "agency_claim_allowed": false,
+  "agentic_ecology_demand_pass_recommended": true,
+  "all_artifact_sha256_match_file_contents": true,
+  "artifact_manifest": [
+    {
+      "artifact_role": "i8_closeout_classification_record",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8_artifacts/i8_closeout_classification_record.json",
+      "sha256": "8ea4090617fa4b2439c7d020897e2a2910181dac64a7c0a0b16440c09b45aa30"
+    },
+    {
+      "artifact_role": "i8_post_n30_spiral_handoff_contract",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8_artifacts/i8_post_n30_spiral_handoff_contract.json",
+      "sha256": "cc5e0cbde3ee1728fa58c87b2adab000f7eb14044a419d95f8f23cc7dc19eb42"
+    },
+    {
+      "artifact_role": "i8_claim_boundary_guard",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8_artifacts/i8_claim_boundary_guard.json",
+      "sha256": "64270da7020a870806b85fb41687d4bda911494fe3e0a3e479e3ce72979a9555"
+    }
+  ],
+  "bounded_minimal_shared_medium_participation_candidate_supported": true,
+  "candidate_n31_interface_available": true,
+  "candidate_n31_selected": false,
+  "checks": [
+    {
+      "check_id": "source_i7_passed_and_c5_candidate_supported",
+      "passed": true
+    },
+    {
+      "check_id": "n30_c6_spiral_ready_closeout_assigned",
+      "passed": true
+    },
+    {
+      "check_id": "post_n30_spiral_recorded_without_fixed_n31_selection",
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_preserves_blocked_promotions",
+      "passed": true
+    },
+    {
+      "check_id": "medium_debt_and_spiral_debt_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "unqualified_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy",
+      "fixed_n31_selection_without_spiral_review",
+      "agentic_ecology_demand_as_substrate_evidence"
+    ],
+    "claim_ceiling": "artifact_level_bounded_minimal_shared_medium_participation_candidate",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "agentic_ecology_demand_as_substrate_evidence_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "fixed_n31_selection_without_spiral_review_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unqualified_minimal_shared_medium_participation_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "claim_boundary_guard": {
+    "agency_claim_allowed": false,
+    "agentic_ecology_demand_as_substrate_evidence_allowed": false,
+    "allowed_final_claim": "artifact-level bounded minimal shared-medium participation candidate",
+    "allowed_secondary_claim": "trace-mediated eligibility primitive/building-block candidate",
+    "artifact_role": "i8_claim_boundary_guard",
+    "blocked_claims": [
+      "unqualified_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy",
+      "fixed_n31_selection_without_spiral_review",
+      "agentic_ecology_demand_as_substrate_evidence"
+    ],
+    "claim_boundary_guard_digest": "f3811b78924e744d4bdf342ff8a4be5f08952ecf25e43ba53946e460e9bc2d5c",
+    "ecology_regime_claim_allowed": false,
+    "fixed_n31_selection_allowed": false,
+    "native_shared_medium_organization_claim_allowed": false,
+    "shared_medium_coordination_claim_allowed": false,
+    "trace_id": "n30_i8_claim_boundary_guard",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "agentic_ecology_demand_as_substrate_evidence_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "fixed_n31_selection_without_spiral_review_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unqualified_minimal_shared_medium_participation_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "classification_record": {
+    "all_required_controls_failed_closed": true,
+    "all_required_replay_modes_passed": true,
+    "artifact_role": "i8_closeout_classification_record",
+    "bounded_minimal_shared_medium_participation_candidate_supported": true,
+    "candidate_family_count": 2,
+    "candidate_row_count": 3,
+    "candidate_row_ids": [
+      "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+      "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+      "n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate"
+    ],
+    "classification_record_digest": "e20a46adf1827299ae63c7565f4ef0dbea372b3285aefc1e1c7925e8a841a79c",
+    "coupled_relation_chain_support": "supported_replay_control_backed_candidate",
+    "failed_open_control_count": 0,
+    "final_n30_c5_claim_allowed": true,
+    "final_n30_c5_claim_scope": "bounded replay/control-backed minimal shared-medium participation candidate",
+    "final_n30_c6_closeout_allowed": true,
+    "final_n30_c6_closeout_scope": "post-N30 spiral-ready closeout with demand-map handoff, not fixed N31 selection",
+    "margin_summary": {
+      "alternative_circulatory_lobe_exchange_margin": 0.02,
+      "alternative_circulatory_threshold_margin": 0.01,
+      "alternative_circulatory_threshold_ratio_vs_i6": 5.0,
+      "margin_claim": "N30 has one narrow original generative-edge C5 family and one higher-headroom alternative circulatory C5 family; this supports mechanism diversity, not broad shared-medium robustness.",
+      "original_generative_contrast_margin_vs_extractive_min": 0.044,
+      "original_generative_contrast_margin_vs_neutral_min": 0.042,
+      "original_generative_threshold_margin_min": 0.002
+    },
+    "medium_relation_final": "M2_trace_mediated_eligibility_replay_control_backed_candidate",
+    "n30_c5_replay_control_backed_candidate_supported": true,
+    "n30_c6_spiral_ready_closeout_supported": true,
+    "n30_closeout_rung": "N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout",
+    "not_run_control_count": 0,
+    "participant_ladder_final": "P2_minimally_stable_participant_with_P4_guardrail_context",
+    "participant_ladder_notes": [
+      "P2 is the load-bearing participant level for N30.",
+      "I4-B supplies P4-style support-sensitivity guardrail context but does not make N30 an agency or selfhood result."
+    ],
+    "source_i7_output_digest": "46f7eba93fa206355f4dc3eb5b2ae8e70dd1126eba975030a2e2fc15f1603fec",
+    "trace_id": "n30_i8_closeout_classification_record",
+    "trace_mediated_eligibility_primitive_candidate_supported": true,
+    "unqualified_minimal_shared_medium_participation_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_closeout_i8.py",
+  "ecology_regime_claim_allowed": false,
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_c5_claim_allowed": true,
+  "final_n30_c6_closeout_allowed": true,
+  "final_n30_closeout_rung": "N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout",
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "iteration": "8_classification_and_post_n30_spiral_handoff",
+  "medium_relation_ladder_rung_assigned": "M2_trace_mediated_eligibility_replay_control_backed_candidate",
+  "n30_c5_replay_control_backed_candidate_supported": true,
+  "n30_c6_spiral_ready_closeout_supported": true,
+  "n30_closeout_rung": "N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout",
+  "native_shared_medium_organization_claim_allowed": false,
+  "next_lgrc_experiment_fixed": false,
+  "output_digest": "7971163b1d7bd4027f5375270cfb2445cfe4698a8869b28e26f9273d0a5b5af6",
+  "participant_ladder_rung_assigned": "P2_minimally_stable_participant_with_P4_guardrail_context",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "N30_closeout_classification_and_spiral_handoff",
+  "post_n30_handoff_mode": "cross_project_spiral",
+  "post_n30_spiral_handoff_contract": {
+    "agentic_ecology_demand_pass_recommended": true,
+    "agentic_ecology_demand_pass_role": "demand/composition mapping only; not substrate evidence and not ecology implementation",
+    "artifact_role": "i8_post_n30_spiral_handoff_contract",
+    "candidate_n31_interface_available": true,
+    "candidate_n31_interface_meaning": "N30 exposes a trace-mediated eligibility interface that a future support-redistribution or related N31+ experiment may consume if the agentic-ecology demand map selects it.",
+    "candidate_n31_selected": false,
+    "may_consume_as": [
+      "bounded minimal shared-medium participation primitive candidate",
+      "trace-mediated eligibility primitive/building-block candidate",
+      "source-current shared-medium participation evidence for demand mapping",
+      "control pattern for direct-message and label-only blockers"
+    ],
+    "must_not_consume_as": [
+      "shared-medium coordination",
+      "native shared-medium organization",
+      "semantic communication",
+      "cooperation",
+      "agency",
+      "ecology regime",
+      "fixed N31 selection",
+      "agentic ecology implementation"
+    ],
+    "next_lgrc_experiment_fixed": false,
+    "open_debt_for_spiral": [
+      "agentic ecology demand map not yet written",
+      "next LGRC primitive/building-block not yet selected",
+      "native shared-medium organization not shown",
+      "decay curve remains limited in original generative M2 family",
+      "fresh N30 runtime not required for this closeout but remains a possible later strengthening path"
+    ],
+    "post_n30_handoff_mode": "cross_project_spiral",
+    "selection_rule": "Do not fix N31 or any N31+ experiment until the post-N30 agentic ecology demand/composition pass identifies the needed primitive or building block.",
+    "spiral_handoff_contract_digest": "d8550352d16210220af1126278f76762d638f3e699729a432fe57f816403ce2a",
+    "trace_id": "n30_i8_post_n30_spiral_handoff_contract"
+  },
+  "ready_for_agentic_ecology_demand_pass": true,
+  "ready_for_fixed_N31_selection": false,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_closeout_i8.py",
+  "shared_medium_coordination_claim_allowed": false,
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_replay_controls_i7.json",
+      "sha256": "bf29695841f87fc40b2464114129a19e8616c2f8e6efa49a09a472ed65cca264",
+      "source_role": "N30_I7_replay_control_backed_C5_candidate"
+    },
+    {
+      "path": "experiments/N30_plus_experiment_catalog_roadmap.md",
+      "sha256": "3c5ac6d9cbb05b134d38bf9defd42c6c938f025a8ac1751dafe1f6c500a926cf",
+      "source_role": "N30_plus_catalog_roadmap_spiral_policy"
+    },
+    {
+      "path": "experiments/N30_plus_candidate_directions.md",
+      "sha256": "47043d91d59c140a401f6b622bd7cb923ef9e06244ebbdae1ab134cc62c50722",
+      "source_role": "N30_plus_candidate_directions_spiral_policy"
+    },
+    {
+      "path": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_closeout_and_ecology_handoff_i18.json",
+      "sha256": "842ba57e994bbb3e219acff741afd85c87d102bea5eec6d134f3b84f2445cb52",
+      "source_role": "N29_agentic_ecology_handoff_context"
+    }
+  ],
+  "source_i7_output_digest": "46f7eba93fa206355f4dc3eb5b2ae8e70dd1126eba975030a2e2fc15f1603fec",
+  "status": "passed",
+  "trace_mediated_eligibility_primitive_candidate_supported": true,
+  "unqualified_minimal_shared_medium_participation_claim_allowed": false
+}

@@ -39,6 +39,12 @@ N30 reconstruction and artifact-generation scripts will be stored here.
   higher-margin neutral-circulation source and focused replay/stress records to
   emit I4-C, I5-C, I5-D, I6-B, and I6-C alternative-source JSON, supporting
   traces, and reports.
+- `build_n30_replay_controls_i7.py`: consumes I2/I3 plus I6/I6-A/I6-B/I6-C to
+  emit the I7 replay/control and medium-debt matrix, supporting an N30-C5
+  candidate while leaving final post-N30 spiral closeout to I8.
+- `build_n30_closeout_i8.py`: consumes I7 plus the N30+ roadmap/candidate
+  direction package and emits the I8 N30-C6 closeout, post-N30 spiral handoff
+  contract, and claim-boundary guard.
 
 Run from the repository root:
 
@@ -55,4 +61,6 @@ Run from the repository root:
 .venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_later_eligibility_i6.py
 .venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_later_eligibility_margin_i6a.py
 .venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py
+.venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_replay_controls_i7.py
+.venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_closeout_i8.py
 ```

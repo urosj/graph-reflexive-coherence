@@ -1,0 +1,43 @@
+{
+  "all_required_controls_failed_closed": true,
+  "all_required_replay_modes_passed": true,
+  "artifact_role": "i8_closeout_classification_record",
+  "bounded_minimal_shared_medium_participation_candidate_supported": true,
+  "candidate_family_count": 2,
+  "candidate_row_count": 3,
+  "candidate_row_ids": [
+    "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+    "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+    "n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate"
+  ],
+  "classification_record_digest": "e20a46adf1827299ae63c7565f4ef0dbea372b3285aefc1e1c7925e8a841a79c",
+  "coupled_relation_chain_support": "supported_replay_control_backed_candidate",
+  "failed_open_control_count": 0,
+  "final_n30_c5_claim_allowed": true,
+  "final_n30_c5_claim_scope": "bounded replay/control-backed minimal shared-medium participation candidate",
+  "final_n30_c6_closeout_allowed": true,
+  "final_n30_c6_closeout_scope": "post-N30 spiral-ready closeout with demand-map handoff, not fixed N31 selection",
+  "margin_summary": {
+    "alternative_circulatory_lobe_exchange_margin": 0.02,
+    "alternative_circulatory_threshold_margin": 0.01,
+    "alternative_circulatory_threshold_ratio_vs_i6": 5.0,
+    "margin_claim": "N30 has one narrow original generative-edge C5 family and one higher-headroom alternative circulatory C5 family; this supports mechanism diversity, not broad shared-medium robustness.",
+    "original_generative_contrast_margin_vs_extractive_min": 0.044,
+    "original_generative_contrast_margin_vs_neutral_min": 0.042,
+    "original_generative_threshold_margin_min": 0.002
+  },
+  "medium_relation_final": "M2_trace_mediated_eligibility_replay_control_backed_candidate",
+  "n30_c5_replay_control_backed_candidate_supported": true,
+  "n30_c6_spiral_ready_closeout_supported": true,
+  "n30_closeout_rung": "N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout",
+  "not_run_control_count": 0,
+  "participant_ladder_final": "P2_minimally_stable_participant_with_P4_guardrail_context",
+  "participant_ladder_notes": [
+    "P2 is the load-bearing participant level for N30.",
+    "I4-B supplies P4-style support-sensitivity guardrail context but does not make N30 an agency or selfhood result."
+  ],
+  "source_i7_output_digest": "46f7eba93fa206355f4dc3eb5b2ae8e70dd1126eba975030a2e2fc15f1603fec",
+  "trace_id": "n30_i8_closeout_classification_record",
+  "trace_mediated_eligibility_primitive_candidate_supported": true,
+  "unqualified_minimal_shared_medium_participation_claim_allowed": false
+}

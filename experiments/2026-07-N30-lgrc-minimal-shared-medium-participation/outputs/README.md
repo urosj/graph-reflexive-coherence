@@ -93,3 +93,18 @@ historical evidence record.
 - `n30_alternative_*_artifacts/`: supporting participant, medium-surface,
   replay/stress, susceptibility, lineage, contrast, and claim-boundary traces
   for the I4-C through I6-C alternative source tranche.
+- `n30_replay_controls_i7.json`: replay/control and medium-debt matrix. It
+  consumes the original I6/I6-A M2 candidates and the alternative I6-B/I6-C M2
+  candidate, passes artifact-only, duplicate, snapshot/load, and metric
+  recomputation replays, reinstantiates all 20 required controls per candidate
+  row, and supports an N30-C5 candidate pending I8 post-N30 spiral closeout.
+- `n30_replay_controls_i7_artifacts/`: supporting replay/control matrix,
+  medium-debt matrix, and I7 claim-boundary guard.
+- `n30_closeout_and_spiral_handoff_i8.json`: final N30 closeout and
+  post-N30 spiral handoff. It closes N30 at N30-C6 as a bounded artifact-level
+  minimal shared-medium participation candidate, records the candidate N31
+  interface without selecting N31, and recommends an agentic-ecology
+  demand/composition pass as the next step.
+- `n30_closeout_and_spiral_handoff_i8_artifacts/`: supporting closeout
+  classification, post-N30 spiral handoff contract, and I8 claim-boundary
+  guard.

@@ -48,3 +48,11 @@ N30 iteration reports will be stored here.
 - `n30_alternative_contrast_margin_i6c.md`: alternative source contrast and
   margin report comparing I6-B with the original I6 edge case and preserving
   the final C5/C6 boundary.
+- `n30_replay_controls_i7.md`: replay/control and medium-debt report showing
+  that all three M2 candidate rows pass required replay modes, all 60
+  row-control results fail closed, and N30-C5 candidate support is available
+  pending I8 post-N30 spiral closeout.
+- `n30_closeout_and_spiral_handoff_i8.md`: final N30 closeout report. It
+  records N30-C6 as a bounded artifact-level minimal shared-medium
+  participation closeout, preserves the blocked claim boundary, and hands off
+  to the cross-project spiral rather than fixing N31 by default.

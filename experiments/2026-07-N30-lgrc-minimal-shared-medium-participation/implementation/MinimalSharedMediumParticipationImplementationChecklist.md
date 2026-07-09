@@ -4,10 +4,15 @@
 
 ```text
 experiment = N30
-status = iteration_6c_alternative_source_contrast_margin_probe_passed
-positive_evidence_opened = participant_admissibility_medium_surface_trace_and_provisional_later_eligibility
-final_n30_closeout_rung = not_assigned
-ready_for_iteration_7 = true
+status = iteration_8_closed
+positive_evidence_opened = bounded_minimal_shared_medium_participation_candidate
+n30_c5_candidate_supported = true
+n30_c6_spiral_ready_closeout_supported = true
+final_n30_closeout_rung = N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+post_n30_handoff_mode = cross_project_spiral
+agentic_ecology_demand_pass_recommended = true
+candidate_n31_selected = false
+next_lgrc_experiment_fixed = false
 ```
 
 ## Setup
@@ -990,30 +995,159 @@ Thus the fuller interpretation is:
 
 ## Iteration 7 - Replay, Controls, And Medium Debt Matrix
 
-- [ ] Run artifact-only replay.
-- [ ] Run duplicate replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run direct-message removal control.
-- [ ] Run no-perturbation control.
-- [ ] Run trace-ablation control.
-- [ ] Run wrong-surface control.
-- [ ] Run time-reversed trace control.
-- [ ] Run medium-freeze control.
-- [ ] Run trace-shuffle control.
-- [ ] Run false-trace injection control.
-- [ ] Run decay manipulation control.
-- [ ] Run susceptibility inversion control.
-- [ ] Run hidden producer / global controller controls.
-- [ ] Record medium debt and producer residue per row.
+- [x] Run artifact-only replay.
+- [x] Run duplicate replay.
+- [x] Run snapshot/load replay.
+- [x] Recompute later-response metric for each candidate row.
+- [x] Run direct-message removal control.
+- [x] Run no-perturbation control.
+- [x] Run trace-ablation control.
+- [x] Run wrong-surface control.
+- [x] Run time-reversed trace control.
+- [x] Run medium-freeze control.
+- [x] Run trace-shuffle control.
+- [x] Run false-trace injection control.
+- [x] Run decay manipulation control.
+- [x] Run susceptibility inversion control.
+- [x] Run hidden producer / global controller controls.
+- [x] Reinstantiate all I2/I3 required fail-closed controls against positive rows.
+- [x] Record medium debt and producer residue per row.
 
-## Iteration 8 - Classification And N31 Handoff
+Result:
 
-- [ ] Classify strongest participant ladder rung.
-- [ ] Classify strongest shared-medium relation rung.
-- [ ] Classify coupled relation-chain support.
-- [ ] Confirm N30-C5/C6 are blocked unless participant + non-private medium surface + trace/surface change + later eligibility dependency pass replay/control.
-- [ ] Assign N30 closeout rung if warranted.
-- [ ] Record final claim ceiling.
-- [ ] Record blocked claims.
-- [ ] Record N31 handoff target if supported.
-- [ ] Confirm shared-medium coordination, parent-basin modulation, resonance, native shared-medium organization, agency, ecology regime, sentience, organism/life, and unrestricted autonomy remain blocked.
+```text
+status = passed
+acceptance_state = accepted_replay_control_backed_C5_candidate_pending_I8_closeout
+output = outputs/n30_replay_controls_i7.json
+report = reports/n30_replay_controls_i7.md
+script = scripts/build_n30_replay_controls_i7.py
+output_digest = 46f7eba93fa206355f4dc3eb5b2ae8e70dd1126eba975030a2e2fc15f1603fec
+candidate_row_count = 3
+required_control_count = 20
+total_control_result_count = 60
+failed_open_control_count = 0
+not_run_control_count = 0
+all_required_replay_modes_passed = true
+all_required_controls_failed_closed = true
+participant_ladder_rung = P2_candidate_with_I4B_P4_guardrail
+medium_relation_ladder_rung = M2_replay_control_backed_C5_candidate
+n30_closeout_ceiling = N30-C5_replay_control_backed_candidate_pending_I8
+n30_c5_candidate_supported = true
+minimal_shared_medium_participation_candidate_supported = true
+final_n30_closeout_rung = not_assigned
+final_n30_c5_claim_allowed = false
+final_n30_c6_claim_allowed = false
+failed_checks = []
+ready_for_iteration_8_classification_closeout = true
+ready_for_iteration_8_classification_spiral_handoff = true
+post_n30_handoff_mode = cross_project_spiral_pending_I8
+agentic_ecology_demand_pass_recommended = true
+candidate_n31_interface_available_pending_i8 = true
+candidate_n31_selected = false
+next_lgrc_experiment_fixed = false
+```
+
+Candidate coverage:
+
+```text
+original generative-edge family:
+  n30_i6_row_01_i5_single_shell_later_eligibility_candidate
+  n30_i6_row_02_i5a_split_shell_later_eligibility_candidate
+
+alternative circulatory family:
+  n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate
+```
+
+Interpretation:
+
+```text
+I7 is the first replay/control-backed N30-C5 candidate layer. It consumes the
+original I6/I6-A generative-edge M2 rows and the alternative I6-B/I6-C
+circulatory M2 row. For each row, artifact-only replay, duplicate replay,
+snapshot/load replay, and later-response metric recomputation pass.
+
+All 20 required I2/I3 controls are reinstantiated against each positive row,
+for 60 total control results. Every false-positive path fails closed; there
+are no failed-open or not-run controls.
+
+This supports N30-C5 candidate evidence, not final N30 closeout. I8 still has
+to assign the final closeout rung, record the post-N30 cross-project spiral
+handoff, decide whether a candidate N31 interface is available without selecting
+N31 by default, and preserve medium/producer debt. N30-C6, shared-medium
+coordination, parent-basin modulation, resonance, native shared-medium
+organization, agency, sentience, and ecology-regime claims remain blocked.
+```
+
+## Iteration 8 - Classification And Post-N30 Spiral Handoff
+
+- [x] Classify strongest participant ladder rung.
+- [x] Classify strongest shared-medium relation rung.
+- [x] Classify coupled relation-chain support.
+- [x] Confirm N30-C5/C6 are blocked unless participant + non-private medium surface + trace/surface change + later eligibility dependency pass replay/control.
+- [x] Assign N30 closeout rung if warranted.
+- [x] Record final claim ceiling.
+- [x] Record blocked claims.
+- [x] Record `post_n30_handoff_mode = cross_project_spiral`.
+- [x] Record whether an agentic ecology demand/composition pass is recommended.
+- [x] Record whether a candidate N31 interface is available.
+- [x] Keep `candidate_n31_selected = false` unless a demand map justifies selecting N31 now.
+- [x] Keep `next_lgrc_experiment_fixed = false` unless a demand map justifies fixing the next LGRC experiment now.
+- [x] Confirm shared-medium coordination, parent-basin modulation, resonance, native shared-medium organization, agency, ecology regime, sentience, organism/life, and unrestricted autonomy remain blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_N30_C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+output = outputs/n30_closeout_and_spiral_handoff_i8.json
+report = reports/n30_closeout_and_spiral_handoff_i8.md
+script = scripts/build_n30_closeout_i8.py
+output_digest = 7971163b1d7bd4027f5375270cfb2445cfe4698a8869b28e26f9273d0a5b5af6
+source_i7_output_digest = 46f7eba93fa206355f4dc3eb5b2ae8e70dd1126eba975030a2e2fc15f1603fec
+participant_ladder_rung = P2_minimally_stable_participant_with_P4_guardrail_context
+medium_relation_ladder_rung = M2_trace_mediated_eligibility_replay_control_backed_candidate
+final_n30_closeout_rung = N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+n30_c5_replay_control_backed_candidate_supported = true
+n30_c6_spiral_ready_closeout_supported = true
+bounded_minimal_shared_medium_participation_candidate_supported = true
+trace_mediated_eligibility_primitive_candidate_supported = true
+post_n30_handoff_mode = cross_project_spiral
+agentic_ecology_demand_pass_recommended = true
+candidate_n31_interface_available = true
+candidate_n31_selected = false
+next_lgrc_experiment_fixed = false
+ready_for_agentic_ecology_demand_pass = true
+ready_for_fixed_N31_selection = false
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+I8 closes N30 at N30-C6, but only as a bounded artifact-level minimal
+shared-medium participation candidate. The result is supported by I7
+replay/control evidence across both the original generative-edge family and
+the alternative circulatory family.
+
+The final claim is not shared-medium coordination, communication, cooperation,
+agency, native shared-medium organization, parent-basin modulation, resonance,
+sentience, or ecology regime. N30 establishes that the minimal relation chain
+can be made replay/control-clean:
+  participant continuity
+  -> non-private medium surface perturbation
+  -> source-current trace/surface change
+  -> later eligibility/susceptibility dependence
+
+The post-N30 handoff is a cross-project spiral. N30 exposes a candidate
+interface for future N31-style LGRC work, but it does not select N31 by default.
+The next recommended step is an agentic-ecology demand/composition pass that
+decides which shared-medium building block should be tested next.
+
+Margin interpretation:
+  I6 original generative-edge rows remain narrow in raw threshold headroom
+  (minimum 0.002), but have stronger contrast margins against neutral/extractive
+  counterfactuals (0.042/0.044). I6-B contributes the alternative circulatory
+  source with threshold margin 0.01 and lobe-exchange margin 0.02. The fivefold
+  raw threshold-margin improvement strengthens confidence, but does not turn
+  the result into broad shared-medium robustness or native organization.
+```

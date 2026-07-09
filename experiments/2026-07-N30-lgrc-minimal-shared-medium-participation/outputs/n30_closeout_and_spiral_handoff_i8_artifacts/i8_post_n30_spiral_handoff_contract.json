@@ -1,0 +1,36 @@
+{
+  "agentic_ecology_demand_pass_recommended": true,
+  "agentic_ecology_demand_pass_role": "demand/composition mapping only; not substrate evidence and not ecology implementation",
+  "artifact_role": "i8_post_n30_spiral_handoff_contract",
+  "candidate_n31_interface_available": true,
+  "candidate_n31_interface_meaning": "N30 exposes a trace-mediated eligibility interface that a future support-redistribution or related N31+ experiment may consume if the agentic-ecology demand map selects it.",
+  "candidate_n31_selected": false,
+  "may_consume_as": [
+    "bounded minimal shared-medium participation primitive candidate",
+    "trace-mediated eligibility primitive/building-block candidate",
+    "source-current shared-medium participation evidence for demand mapping",
+    "control pattern for direct-message and label-only blockers"
+  ],
+  "must_not_consume_as": [
+    "shared-medium coordination",
+    "native shared-medium organization",
+    "semantic communication",
+    "cooperation",
+    "agency",
+    "ecology regime",
+    "fixed N31 selection",
+    "agentic ecology implementation"
+  ],
+  "next_lgrc_experiment_fixed": false,
+  "open_debt_for_spiral": [
+    "agentic ecology demand map not yet written",
+    "next LGRC primitive/building-block not yet selected",
+    "native shared-medium organization not shown",
+    "decay curve remains limited in original generative M2 family",
+    "fresh N30 runtime not required for this closeout but remains a possible later strengthening path"
+  ],
+  "post_n30_handoff_mode": "cross_project_spiral",
+  "selection_rule": "Do not fix N31 or any N31+ experiment until the post-N30 agentic ecology demand/composition pass identifies the needed primitive or building block.",
+  "spiral_handoff_contract_digest": "d8550352d16210220af1126278f76762d638f3e699729a432fe57f816403ce2a",
+  "trace_id": "n30_i8_post_n30_spiral_handoff_contract"
+}

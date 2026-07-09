@@ -149,10 +149,10 @@ N30-C5 = replay/control-backed minimal shared-medium participation candidate:
   participant + non-private medium surface + trace/surface change
   + later eligibility dependency
   + replay/control support in the declared fixture
-N30-C6 = N31-ready minimal shared-medium participation closeout:
+N30-C6 = post-N30 spiral-ready minimal shared-medium participation closeout:
   N30-C5 plus handoff-grade contract, declared transfer status,
-  declared medium/producer debt, N31 candidate interface, and blocked relabels
-  preserved
+  declared medium/producer debt, agentic-ecology demand-pass status, optional
+  N31 candidate interface, and blocked relabels preserved
 ```
 
 ## Required Candidate Fields
@@ -479,9 +479,26 @@ Run artifact replay, duplicate replay, snapshot/load replay, message-removal,
 medium-freeze, trace-shuffle, false-trace, decay, susceptibility-inversion,
 hidden-producer, and semantic relabel controls.
 
-### Iteration 8. Classification And N31 Handoff
+Iteration 7 should consume every positive/provisional M2 family currently
+available, including the original I6/I6-A generative-edge rows and the
+alternative I6-B/I6-C circulatory row. A row can support N30-C5 candidate
+evidence only if all required replay modes pass and every required
+false-positive control fails closed. Final closeout, C6 handoff, and N31
+interface status remain Iteration 8 work. N31 should not be selected by default;
+I8 should record the post-N30 cross-project spiral state and whether an
+agentic-ecology demand pass is the next recommended step.
+
+### Iteration 8. Classification And Post-N30 Spiral Handoff
 
 Classify the strongest supported N30 result. If warranted, close at N30-C6 and
-handoff to N31 as a support-redistribution or trace-mediated eligibility
-building-block candidate. Do not claim shared-medium coordination or native
-shared-medium organization.
+handoff to the post-N30 cross-project spiral. The closeout should record:
+
+```text
+post_n30_handoff_mode = cross_project_spiral
+agentic_ecology_demand_pass_recommended = true | false
+candidate_n31_interface_available = true | false
+candidate_n31_selected = false unless justified by the demand map
+next_lgrc_experiment_fixed = false unless justified by the demand map
+```
+
+Do not claim shared-medium coordination or native shared-medium organization.
