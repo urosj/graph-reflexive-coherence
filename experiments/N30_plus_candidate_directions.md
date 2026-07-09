@@ -36,6 +36,7 @@ All candidates inherit:
 - [Candidate N35+: Motif Experiments](#candidate-n35-motif-experiments)
 - [Later N30+ Regime Probes](#later-n30-regime-probes)
 - [Direction Addendum: N30 Selected Starting Point](#direction-addendum-n30-selected-starting-point)
+- [Direction Addendum: Cross-Project Spiral](#direction-addendum-cross-project-spiral)
 
 ## Naming convention
 
@@ -545,3 +546,57 @@ positive runtime probe second
 ```
 
 but contract language must not count as positive shared-medium evidence.
+
+## Direction Addendum: Cross-Project Spiral
+
+The candidate sequence above should not be read as a closed LGRC-only backlog.
+After N30 grounds minimal shared-medium participation, the next candidate choice
+should be allowed to depend on a demand/composition pass in the agentic ecology
+project.
+
+Recommended operating rhythm:
+
+```text
+N30 in graph-reflexive-coherence:
+  minimal shared-medium participation gate
+
+agentic ecology demand pass:
+  identify which shared-medium primitives and building blocks ecology actually
+  needs, without treating those demands as evidence
+
+N31+ in graph-reflexive-coherence:
+  test one demanded primitive or building block with source-current artifacts,
+  replay, controls, debt accounting, and claim ceilings
+
+ecology motif pass:
+  compose admitted or bounded candidates into motif-level probes when enough
+  building blocks exist
+```
+
+This means N31 is not automatically fixed by the original candidate order.
+Shared-medium support redistribution remains a strong candidate, but the
+agentic ecology demand pass may show that another building block should come
+first, such as:
+
+```text
+slow trace
+boundary permeability
+latent basin / ghost aftereffect
+resource-capacity coupling
+role/cargo-shaped susceptibility
+fragmentation threshold
+```
+
+The constraint is that demand is not proof. Agentic ecology may expose the need;
+LGRC must still test whether the needed distinction is source-current,
+replayable, control-clean, and claim-bounded.
+
+This keeps the catalog bidirectional:
+
+```text
+upward:
+  primitive -> building block -> motif -> regime
+
+downward:
+  missing ecology behavior -> missing block -> missing primitive -> LGRC probe
+```

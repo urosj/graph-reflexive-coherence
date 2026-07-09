@@ -66,6 +66,7 @@ Future experiments should be allowed to discover new primitives when attempting 
 - [17. Candidate N30+ directions](#17-candidate-n30-directions)
 - [18. Closing orientation](#18-closing-orientation)
 - [Appendix A. N30 Direction Refinement](#appendix-a-n30-direction-refinement)
+- [Appendix B. Cross-Project Spiral After N30](#appendix-b-cross-project-spiral-after-n30)
 
 ---
 
@@ -1350,3 +1351,80 @@ The original N30-A/N30-B idea is not discarded. It is demoted into a later or
 secondary operational pattern: contract/admission work and first positive
 building-block probes can still follow once minimal shared-medium participation
 is grounded.
+
+---
+
+## Appendix B. Cross-Project Spiral After N30
+
+N30+ should not become an isolated LGRC-only sequence, and agentic ecology
+should not outrun source-current substrate evidence.
+
+The preferred operating pattern after N30 is a two-loop spiral:
+
+```text
+LGRC catalog loop
+  tests what can be source-current, replayable, control-clean, and claim-bounded
+
+agentic ecology demand loop
+  exposes what distinctions, surfaces, relations, and compositions are actually
+  needed by forest/colony/shared-medium ecology targets
+
+LGRC primitive/block loop
+  tests the demanded primitives or building blocks one by one
+
+ecology motif loop
+  composes admitted or bounded candidates into motif-level probes
+```
+
+N30 should come first because it grounds the phrase **shared medium** at the
+minimum admissible relation form: participant continuity, non-private medium
+surface, trace/surface change, later eligibility dependence, and controls
+against message/controller/story relabels.
+
+After N30, the next useful step may be a short pass in the agentic ecology
+project, but not as full ecology implementation. Its role should be a demand
+map such as:
+
+```text
+Shared-Medium Ecology Primitive and Building-Block Demands
+```
+
+That demand map may identify needs such as:
+
+```text
+slow trace
+support redistribution
+boundary permeability
+latent basin
+ghost aftereffect
+resource-capacity coupling
+parent-basin modulation
+fragmentation threshold
+role/cargo-shaped susceptibility
+```
+
+Those are demands, not evidence claims. They can steer which N31+ experiments
+matter, but they cannot substitute for LGRC source artifacts, replay, controls,
+or claim-boundary checks.
+
+The practical rule is:
+
+```text
+Do N30 first.
+Then alternate:
+  one LGRC admissibility experiment,
+  one agentic-ecology demand/composition review when useful.
+```
+
+This keeps both sides honest:
+
+```text
+LGRC prevents ecology from becoming story-driven scaffolding.
+Agentic ecology prevents LGRC from becoming sterile substrate work detached
+from the relational capacities ecology actually needs.
+```
+
+The spiral is an application of this roadmap's bidirectional grammar. Upward
+composition builds from primitives toward motifs and regimes; downward
+discovery lets failed or missing ecology compositions expose the next primitive
+or building block that LGRC needs to test.
