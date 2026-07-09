@@ -4,10 +4,10 @@
 
 ```text
 experiment = N30
-status = iteration_2_schema_frozen
+status = iteration_3_active_nulls_passed
 positive_evidence_opened = false
 final_n30_closeout_rung = not_assigned
-ready_for_iteration_3 = true
+ready_for_iteration_4 = true
 ```
 
 ## Setup
@@ -132,25 +132,84 @@ classified as post-hoc trace construction or label-only surface.
 I3 null-row mapping:
 active null rows must record blocked_gate, blocked_rung, dependent_hypothesis,
 and control_equivalent_id in addition to the base null-row fields.
+
+Traceability note:
+The I2 digest supersedes the earlier intermediate digest
+`afba7d70973c5dae28b57e9e38e5de5479276b1113b74b4f002132063f38967d` after
+the claim-boundary naming was aligned with I1, machine-readable field/control
+counts were added, and the hypothesis manifest was surfaced for I3 linkage.
 ```
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
-- [ ] Run or synthesize active null rows for direct-message-only relabel.
-- [ ] Run medium-surface label-only null.
-- [ ] Run hidden global-controller null.
-- [ ] Run hidden producer-routing null.
-- [ ] Run post-hoc trace-construction null.
-- [ ] Run participant label-drift null.
-- [ ] Run generic redistribution relabel null.
-- [ ] Run no-perturbation null.
-- [ ] Run trace-ablation null.
-- [ ] Run wrong-surface null.
-- [ ] Run time-reversed-trace null.
-- [ ] Run semantic communication / coordination / cooperation / agency relabel nulls.
-- [ ] Record `null_row_id`, `null_type`, `expected_fail_reason`, `observed_fail_reason`, and `fail_closed` for every null row.
-- [ ] Confirm all nulls fail closed.
-- [ ] Confirm no positive evidence opened.
+- [x] Run or synthesize active null rows for direct-message-only relabel.
+- [x] Run medium-surface label-only null.
+- [x] Run hidden global-controller null.
+- [x] Run hidden producer-routing null.
+- [x] Run post-hoc trace-construction null.
+- [x] Run participant label-drift null.
+- [x] Run generic redistribution relabel null.
+- [x] Run no-perturbation null.
+- [x] Run trace-ablation null.
+- [x] Run wrong-surface null.
+- [x] Run time-reversed-trace null.
+- [x] Run semantic communication / coordination / cooperation / agency relabel nulls.
+- [x] Record `null_row_id`, `null_type`, `expected_fail_reason`, `observed_fail_reason`, and `fail_closed` for every null row.
+- [x] Confirm all nulls fail closed.
+- [x] Confirm no positive evidence opened.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_evidence
+output = outputs/n30_active_nulls_i3.json
+report = reports/n30_active_nulls_i3.md
+script = scripts/build_n30_active_nulls_i3.py
+output_digest = 20de953306725e68bb866f5a71c65b1239cec4ecfc36abb3710d95ae9e4a5c49
+active_null_count = 20
+failed_closed_count = 20
+failed_open_rows = []
+null_fixture_config_digest = aaf2736324b8284f7d7da6137309276e1f7ac706cd9579c3ed5a742b2e321beb
+null_generation_policy_digest = df29a80fa0120267362c2680387f77c12fd6e58577a822c33b94282505d2aeb1
+blocked_rungs = [N30-C3, N30-C4, N30-C5, N30-C6]
+dependent_hypotheses = [Hypothesis B, Hypothesis C, Hypothesis D, Hypothesis E]
+positive_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+ready_for_iteration_4_participant_admissibility_probe = true
+```
+
+Interpretation:
+
+```text
+I3 establishes the pre-positive false-positive boundary. It can block unsafe
+paths, but it cannot support participant admissibility, medium trace evidence,
+later eligibility dependency, or N30-C5/C6. Direct messages, label-only
+surfaces, hidden producers, global controllers, post-hoc traces, no
+perturbation, trace ablation, wrong surfaces, time reversal, trace shuffling,
+false trace injection, decay manipulation, susceptibility inversion,
+participant label drift, generic redistribution, semantic communication,
+semantic coordination, cooperation/agency relabels, and native shared-medium
+organization relabels all fail closed.
+
+I3-to-I7 rule:
+I3 nulls are pre-positive false-positive blockers. They do not substitute for
+I7 runtime controls. I7 must rerun or reinstantiate equivalent controls against
+the actual I4-I6 positive candidate fixture.
+
+Observation-source note:
+The `observed_fail_reason` field is preserved because I2 requires it, but in
+I3 its observation source is `pre_positive_synthetic_active_null_fixture`.
+These values are declared fail-closed fixture conditions, not runtime
+measurements.
+
+I4 ceiling guard:
+I4 may test only participant admissibility. It cannot assign a medium-relation
+rung, medium perturbation claim, trace-mediated eligibility claim, or minimal
+shared-medium participation claim. Same label is not same carrier; I4 must
+record carrier digest or trace continuity, recognizability metric, threshold,
+replay status, and label-drift control result.
+```
 
 ## Iteration 4 - Minimal Participant Admissibility Probe
 
