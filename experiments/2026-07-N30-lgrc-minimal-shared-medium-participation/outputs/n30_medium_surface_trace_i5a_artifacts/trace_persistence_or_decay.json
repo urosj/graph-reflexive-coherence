@@ -1,0 +1,16 @@
+{
+  "artifact_replay_status": "passed",
+  "artifact_role": "trace_persistence_or_decay",
+  "decay_curve_available": false,
+  "decay_curve_status": "not_measured_in_I5_A",
+  "duplicate_replay_digest_stable": true,
+  "duplicate_replay_status": "passed",
+  "i6_requirement": "I6 must test whether a later eligibility/susceptibility response depends on this changed medium surface.",
+  "persistence_status": "replay_persistent_no_decay_curve",
+  "regime_label_stable_under_replay": true,
+  "replay_trace_digest": "3af2317905e232d182b74b53057f9f0790fc17a202a463e8f6a2d572127b1fbc",
+  "snapshot_load_replay_status": "passed",
+  "trace_id": "n30_i5a_trace_persistence_or_decay",
+  "trace_or_surface_change_id": "n30_i5a_n28_i4a2_neighbor_capacity_surface_change",
+  "trace_persistence_or_decay_digest": "7fcf78d8ee7d11cff6d9e8b87248176a8f43ee154e7100a94ec95efb6e8a48a6"
+}

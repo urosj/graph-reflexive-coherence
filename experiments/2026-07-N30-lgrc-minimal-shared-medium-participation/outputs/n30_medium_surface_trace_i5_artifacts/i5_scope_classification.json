@@ -1,0 +1,56 @@
+{
+  "artifact_role": "i5_scope_classification",
+  "c4_c5_rule": "C4 = changed medium surface exists; C5 = later response depends on that changed surface.",
+  "fresh_n30_runtime_evidence": false,
+  "i5_claim_type": "inherited_medium_surface_trace_admission",
+  "i5_positive_scope": "inherited_source_current_medium_surface_trace_only",
+  "i6_dependency_required": true,
+  "i6_lineage_rule": "I6 must consume this exact relation_chain_id or declare a parent_relation_chain_id plus a justified fork.",
+  "n28_artifacts_allowed_to_support": [
+    "N30-C4_medium_perturbation_trace_candidate",
+    "M1_candidate"
+  ],
+  "n28_artifacts_not_allowed_to_support": [
+    "N30-C5_trace_mediated_eligibility",
+    "M2_later_response_conditioned_by_medium",
+    "minimal_shared_medium_participation",
+    "shared_medium_coordination",
+    "native_shared_medium_organization"
+  ],
+  "n28_controls_classified_as": "source_guardrail_controls_not_N30_relation_controls",
+  "n30_fresh_runtime": false,
+  "n30_relation_controls": {
+    "classification": "not_run_for_I5_C4_surface_trace_admission",
+    "required_control_ids": [
+      "direct_message_removal_control",
+      "no_perturbation_control",
+      "trace_ablation_control",
+      "wrong_surface_control",
+      "time_reversed_trace_control",
+      "medium_freeze_control",
+      "trace_shuffle_control",
+      "false_trace_injection_control",
+      "decay_manipulation_control",
+      "susceptibility_inversion_control",
+      "hidden_producer_global_controller_control"
+    ],
+    "status": "pending_iteration_7"
+  },
+  "row_participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+  "runtime_origin": "inherited_N28_source_current_artifact",
+  "scope_classification_digest": "dd1e4e49e7854bb0291ca54ae2243e6f3de707b857c9532c59d886d100808871",
+  "shared_local_scope_status": "shared_local_candidate_pending_later_encounter",
+  "source_guardrail_control_ids": [
+    "capacity_attribution_control",
+    "label_only_regime_control",
+    "merge_leakage_as_support_control",
+    "transfer_success_as_n28_success_control"
+  ],
+  "source_i4b_strongest_participant_guardrail": "P4_candidate",
+  "strongest_N30_I5_row_participant_rung": "P2_candidate",
+  "supports_M1": true,
+  "supports_M2": false,
+  "supports_N30_C4": true,
+  "supports_N30_C5": false,
+  "trace_id": "n30_i5_scope_classification"
+}

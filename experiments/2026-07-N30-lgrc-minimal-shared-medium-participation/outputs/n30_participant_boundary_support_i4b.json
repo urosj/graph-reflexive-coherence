@@ -1,0 +1,420 @@
+{
+  "acceptance_state": "accepted_participant_boundary_support_sensitive_P4_candidate_no_medium_relation",
+  "all_artifact_sha256_match_file_contents": true,
+  "artifact_manifest": [
+    {
+      "artifact_role": "participant_boundary_support_stress_policy_record",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/stress_policy_record.json",
+      "sha256": "6aa5286198f866b9eda16f5d6d17f309dd7e470f66bb742223890bbda9ac7078"
+    },
+    {
+      "artifact_role": "participant_boundary_support_sensitivity_matrix",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_boundary_support_sensitivity_matrix.json",
+      "sha256": "1c15626fd31e570cb7a7fb307555ab79a1a5bcaafc77a901f32146b2fffa9d7a"
+    },
+    {
+      "artifact_role": "participant_p4_candidate_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_p4_candidate_trace.json",
+      "sha256": "a9c9baf4e3b6bc0d1413907bcafc1b732caa2c6f93c1d36b6c27775b89a53713"
+    },
+    {
+      "artifact_role": "participant_stress_limited_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_stress_limited_trace.json",
+      "sha256": "4a6d69040815408a9502c7d33980ec45c380d11212d1a279ed71daa5881fdeef"
+    },
+    {
+      "artifact_role": "i4b_medium_leakage_guard_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/i4b_medium_leakage_guard_trace.json",
+      "sha256": "a17445cae4d8cc34402a10ed83e50aa0012212db5c24712f1e5bf68f7e554917"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "participant_boundary_support_stress_policy_record",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/stress_policy_record.json",
+          "sha256": "6aa5286198f866b9eda16f5d6d17f309dd7e470f66bb742223890bbda9ac7078"
+        },
+        {
+          "artifact_role": "participant_boundary_support_sensitivity_matrix",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_boundary_support_sensitivity_matrix.json",
+          "sha256": "1c15626fd31e570cb7a7fb307555ab79a1a5bcaafc77a901f32146b2fffa9d7a"
+        },
+        {
+          "artifact_role": "participant_stress_limited_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_stress_limited_trace.json",
+          "sha256": "4a6d69040815408a9502c7d33980ec45c380d11212d1a279ed71daa5881fdeef"
+        },
+        {
+          "artifact_role": "i4b_medium_leakage_guard_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/i4b_medium_leakage_guard_trace.json",
+          "sha256": "a17445cae4d8cc34402a10ed83e50aa0012212db5c24712f1e5bf68f7e554917"
+        }
+      ],
+      "derived_report_only": false,
+      "medium_relation_ladder_rung": "not_assigned",
+      "minimal_shared_medium_participation_claim_allowed": false,
+      "participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+      "participant_ladder_rung": "P2_stress_limited",
+      "participant_ladder_rung_reason": "participant carrier remains admissible as P2, but boundary stress fails closed and blocks P3/P4 strengthening",
+      "row_decision": "partial_boundary_limited_participant_admissibility",
+      "row_id": "n30_i4b_row_01_i4_boundary_limited_participant",
+      "row_output_digest": "f71bd085029b2e573d07dcbfc84f6890fb15929dd2990b350844a4ecb337b542",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4.json",
+          "sha256": "66d722a64b655bfa023f0b209d4cfa5d5a832f1f09db248e810c5b7553d8de80",
+          "source_role": "N30_I4_primary_P2_participant_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_stress_variant_trace.json",
+          "sha256": "8549e3fd2f73916e688f53dbf6bc5a2a04c92de92900c913a4c8be0442068798",
+          "source_role": "N27_I4_boundary_limited_stress_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_control_trace.json",
+          "sha256": "b0e98b18095bdc92b125dc67ce91f0fdc37416c96463b798fe8bf3752797369f",
+          "source_role": "N27_I4_stress_control_trace"
+        }
+      ],
+      "source_iteration": "I4",
+      "stress_summary": {
+        "all_stress_rows_passed": false,
+        "base_margins": {
+          "boundary": 0.0,
+          "coherence": 0.02,
+          "flux": 0.025,
+          "signature": 0.035,
+          "support": 0.01
+        },
+        "baseline_boundary_at_floor": true,
+        "claim_ceiling": "participant boundary/support sensitivity only; no medium perturbation, trace-mediated eligibility, minimal shared-medium participation, agency, selfhood, or native shared-medium organization claim",
+        "control_trace_digest": "d4ae47e9f97b0636749875bd8e77d5a702f828217de5aff1f83afc0c216302c5",
+        "control_trace_meaning": "stress blocker triggered and stronger stress claim was rejected",
+        "control_trace_status": "failed_closed",
+        "failed_stress_ids": [
+          "boundary_tightening_0_05",
+          "combined_moderate_mapping_stress"
+        ],
+        "medium_relation_ladder_rung": "not_assigned",
+        "medium_surface_trace_evidence_opened": false,
+        "minimal_shared_medium_participation_claim_allowed": false,
+        "minimum_residual_margin_across_stress": -0.05,
+        "participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+        "participant_ladder_rung": "P2_stress_limited",
+        "participant_ladder_rung_reason": "participant carrier remains admissible as P2, but boundary stress fails closed and blocks P3/P4 strengthening",
+        "passed_stress_ids": [
+          "support_drawdown_0_008",
+          "coherence_drawdown_0_012",
+          "flux_pressure_0_02"
+        ],
+        "row_decision": "partial_boundary_limited_participant_admissibility",
+        "source_iteration": "4",
+        "source_label": "I4_minimal_alpha_beta_participant",
+        "source_transfer_core_digest": "205a7848363076da87de0ff9713437504606769844c8eba9792f4a68e602afa4",
+        "stress_failure_mode": "declared_stress_exceeds_available_margin",
+        "stress_trace_digest": "880b35b9438ef0b1723af6bd7aa08f671ca9618a16cb49d159a042e8e1d14665",
+        "stress_variant_candidate_supported": false,
+        "summary_digest": "6c379b87cfc45ebf8a6d9044214072ca62c88efc7e457af5f4769dbdd6c4fd4a",
+        "transfer_mapping_id": "n27_i4_alpha_to_beta_configuration_mapping",
+        "transfer_scope": "configuration",
+        "unsafe_claim_flags": {
+          "agency_opened": false,
+          "cooperation_opened": false,
+          "ecology_regime_opened": false,
+          "identity_acceptance_opened": false,
+          "medium_perturbation_opened": false,
+          "minimal_shared_medium_participation_opened": false,
+          "native_shared_medium_organization_opened": false,
+          "organism_life_opened": false,
+          "phase8_completion_opened": false,
+          "selfhood_opened": false,
+          "semantic_communication_opened": false,
+          "semantic_coordination_opened": false,
+          "sentience_opened": false,
+          "shared_medium_coordination_opened": false,
+          "trace_mediated_eligibility_opened": false,
+          "unrestricted_autonomy_opened": false
+        }
+      },
+      "supports_stronger_participant_claim": false
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "participant_boundary_support_stress_policy_record",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/stress_policy_record.json",
+          "sha256": "6aa5286198f866b9eda16f5d6d17f309dd7e470f66bb742223890bbda9ac7078"
+        },
+        {
+          "artifact_role": "participant_boundary_support_sensitivity_matrix",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_boundary_support_sensitivity_matrix.json",
+          "sha256": "1c15626fd31e570cb7a7fb307555ab79a1a5bcaafc77a901f32146b2fffa9d7a"
+        },
+        {
+          "artifact_role": "participant_p4_candidate_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/participant_p4_candidate_trace.json",
+          "sha256": "a9c9baf4e3b6bc0d1413907bcafc1b732caa2c6f93c1d36b6c27775b89a53713"
+        },
+        {
+          "artifact_role": "i4b_medium_leakage_guard_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b_artifacts/i4b_medium_leakage_guard_trace.json",
+          "sha256": "a17445cae4d8cc34402a10ed83e50aa0012212db5c24712f1e5bf68f7e554917"
+        }
+      ],
+      "derived_report_only": false,
+      "medium_relation_ladder_rung": "not_assigned",
+      "minimal_shared_medium_participation_claim_allowed": false,
+      "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+      "participant_ladder_rung": "P4_candidate",
+      "participant_ladder_rung_reason": "participant carrier survived boundary tightening, support drawdown, coherence drawdown, flux pressure, and combined bounded stress",
+      "row_decision": "supported_participant_boundary_support_sensitive_candidate_only",
+      "row_id": "n30_i4b_row_02_i4a_boundary_support_sensitive_participant",
+      "row_output_digest": "5f2a0a2150dddcc0e2d5942e28af46608695fcb82038185374b59f760146c028",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a.json",
+          "sha256": "8de5f12e77d1bcec022e245ee648468605c4b43c0d17aadecf32c699d5fa0129",
+          "source_role": "N30_I4A_topology_fixture_P2_participant_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_stress_variant_trace.json",
+          "sha256": "f4d4aaed32d7d6b97033bc46bc805f51a7c262355794138b58a70dd580f10fb5",
+          "source_role": "N27_I4A_boundary_support_sensitive_stress_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_control_trace.json",
+          "sha256": "57c458331ed7e317c14330f2bcd4fd9d69242551bedb126f13c13697141804a0",
+          "source_role": "N27_I4A_stress_control_trace"
+        }
+      ],
+      "source_iteration": "I4-A",
+      "stress_summary": {
+        "all_stress_rows_passed": true,
+        "base_margins": {
+          "boundary": 0.1,
+          "coherence": 0.025,
+          "flux": 0.028,
+          "signature": 0.04,
+          "support": 0.015
+        },
+        "baseline_boundary_at_floor": false,
+        "claim_ceiling": "participant boundary/support sensitivity only; no medium perturbation, trace-mediated eligibility, minimal shared-medium participation, agency, selfhood, or native shared-medium organization claim",
+        "control_trace_digest": "0d137463e44d3614be523dbccb09fa47017f8b07ca222943b9274cedb8c35deb",
+        "control_trace_meaning": "stress envelope passed",
+        "control_trace_status": "passed",
+        "failed_stress_ids": [],
+        "medium_relation_ladder_rung": "not_assigned",
+        "medium_surface_trace_evidence_opened": false,
+        "minimal_shared_medium_participation_claim_allowed": false,
+        "minimum_residual_margin_across_stress": 0.007,
+        "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+        "participant_ladder_rung": "P4_candidate",
+        "participant_ladder_rung_reason": "participant carrier survived boundary tightening, support drawdown, coherence drawdown, flux pressure, and combined bounded stress",
+        "passed_stress_ids": [
+          "boundary_tightening_0_05",
+          "support_drawdown_0_008",
+          "coherence_drawdown_0_012",
+          "flux_pressure_0_02",
+          "combined_moderate_mapping_stress"
+        ],
+        "row_decision": "supported_participant_boundary_support_sensitive_candidate_only",
+        "source_iteration": "4-A",
+        "source_label": "I4A_branched_topology_participant",
+        "source_transfer_core_digest": "e1c4dc4d6dbc9bcd99c2d347ff05a955cf69dab07a933ad2fb20c890bcf602a9",
+        "stress_failure_mode": "none",
+        "stress_trace_digest": "fc7b9534b4aab5fa03982d569e5e6124e35c4f32f798234c9017d7554cf1c8b8",
+        "stress_variant_candidate_supported": true,
+        "summary_digest": "5f165a146b5d53791b9a48434b65326107ce0159800ef052e52f243f0004cb99",
+        "transfer_mapping_id": "n27_i4a_gamma_to_delta_topology_fixture_mapping",
+        "transfer_scope": "topology",
+        "unsafe_claim_flags": {
+          "agency_opened": false,
+          "cooperation_opened": false,
+          "ecology_regime_opened": false,
+          "identity_acceptance_opened": false,
+          "medium_perturbation_opened": false,
+          "minimal_shared_medium_participation_opened": false,
+          "native_shared_medium_organization_opened": false,
+          "organism_life_opened": false,
+          "phase8_completion_opened": false,
+          "selfhood_opened": false,
+          "semantic_communication_opened": false,
+          "semantic_coordination_opened": false,
+          "sentience_opened": false,
+          "shared_medium_coordination_opened": false,
+          "trace_mediated_eligibility_opened": false,
+          "unrestricted_autonomy_opened": false
+        }
+      },
+      "supports_stronger_participant_claim": true
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i4_and_i4a_inputs_passed",
+      "passed": true
+    },
+    {
+      "check_id": "n27_stress_matrix_consumed",
+      "passed": true
+    },
+    {
+      "check_id": "source_guardrails_match_i4_i4a_and_n27_stress",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_rows_have_source_and_artifact_metadata",
+      "passed": true
+    },
+    {
+      "check_id": "i4_boundary_limited_not_upgraded",
+      "passed": true
+    },
+    {
+      "check_id": "i4a_survives_boundary_support_coherence_flux_stress",
+      "passed": true
+    },
+    {
+      "check_id": "stress_policy_declared_before_classification",
+      "passed": true
+    },
+    {
+      "check_id": "participant_only_ceiling_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "no_medium_or_later_eligibility_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "medium_perturbation",
+      "trace_mediated_eligibility",
+      "minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "P4 participant boundary/support-sensitive candidate only",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "identity_acceptance_opened": false,
+      "medium_perturbation_opened": false,
+      "minimal_shared_medium_participation_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "phase8_completion_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "trace_mediated_eligibility_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_participant_boundary_support_i4b.py",
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_closeout_rung": "not_assigned",
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "i4_boundary_limited": true,
+  "i4_replaced": false,
+  "i4a_boundary_support_sensitive_candidate_supported": true,
+  "i4a_replaced": false,
+  "iteration": "4-B_participant_boundary_support_sensitivity_probe",
+  "later_eligibility_dependency_evidence_opened": false,
+  "medium_relation_ladder_rung_assigned": false,
+  "medium_surface_trace_evidence_opened": false,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_closeout_ceiling": "N30-C3_participant_admissibility_candidate",
+  "native_shared_medium_organization_claim_allowed": false,
+  "output_digest": "b248e35e131071c606c2c5cc7c7ca1c2638f79ed2ea9fe2fda0959a88bd612d0",
+  "participant_admissibility_evidence_opened": true,
+  "participant_boundary_support_sensitivity_evidence_opened": true,
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "participant_boundary_support_sensitivity_only",
+  "ready_for_iteration_5_medium_surface_trace_probe": true,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_participant_boundary_support_i4b.py",
+  "shared_medium_coordination_claim_allowed": false,
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4.json",
+      "sha256": "66d722a64b655bfa023f0b209d4cfa5d5a832f1f09db248e810c5b7553d8de80",
+      "source_role": "N30_I4_primary_P2_participant_candidate"
+    },
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a.json",
+      "sha256": "8de5f12e77d1bcec022e245ee648468605c4b43c0d17aadecf32c699d5fa0129",
+      "source_role": "N30_I4A_topology_fixture_P2_participant_candidate"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix.json",
+      "sha256": "b5c6c24ee2e856ce4e0500a6c19c344a223cd97b53b78e3d59ab8d48eae52536",
+      "source_role": "N27_stress_mapping_variant_matrix"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_stress_variant_trace.json",
+      "sha256": "8549e3fd2f73916e688f53dbf6bc5a2a04c92de92900c913a4c8be0442068798",
+      "source_role": "N27_I4_boundary_limited_stress_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_stress_variant_trace.json",
+      "sha256": "f4d4aaed32d7d6b97033bc46bc805f51a7c262355794138b58a70dd580f10fb5",
+      "source_role": "N27_I4A_boundary_support_sensitive_stress_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4_stress_control_trace.json",
+      "sha256": "b0e98b18095bdc92b125dc67ce91f0fdc37416c96463b798fe8bf3752797369f",
+      "source_role": "N27_I4_stress_control_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_stress_mapping_variant_transfer_matrix_artifacts/n27_i6_row_i4a_stress_control_trace.json",
+      "sha256": "57c458331ed7e317c14330f2bcd4fd9d69242551bedb126f13c13697141804a0",
+      "source_role": "N27_I4A_stress_control_trace"
+    }
+  ],
+  "source_guardrail_records": {
+    "closeout_summary_only_used": false,
+    "i4_output_digest": "63f72c353b52f18eeeeece349fadde34d5f8a050d67c4f670d2397250b77774f",
+    "i4a_output_digest": "353b4417d6b278ee428de5e1adc88fdb7dd456f3aaa7e01c7d92a68d06296421",
+    "n27_stress_artifacts_consumed": true,
+    "n27_stress_output_digest": "3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a",
+    "underlying_N27_stress_artifacts_consumed": true
+  },
+  "source_i4_output_digest": "63f72c353b52f18eeeeece349fadde34d5f8a050d67c4f670d2397250b77774f",
+  "source_i4a_output_digest": "353b4417d6b278ee428de5e1adc88fdb7dd456f3aaa7e01c7d92a68d06296421",
+  "source_n27_stress_output_digest": "3335a4a6017a96b6d71c6e1f386bb2d17669208f8d8daf9b7a25a49755e7324a",
+  "status": "passed",
+  "strongest_participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "strongest_participant_ladder_rung": "P4_candidate"
+}

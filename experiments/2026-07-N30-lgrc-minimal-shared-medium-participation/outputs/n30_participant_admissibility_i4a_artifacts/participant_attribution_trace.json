@@ -1,0 +1,32 @@
+{
+  "artifact_role": "participant_attribution_trace",
+  "attribution_source": "N27 topology-fixture source-current pre/post basin signature and declared mapping",
+  "boundary_mapping_preserved": true,
+  "coherence_preserved_above_floor": true,
+  "edge_mapping": {
+    "gamma_core-gamma_left_support": "delta_core-delta_north_support",
+    "gamma_core-gamma_right_support": "delta_south_support-delta_core",
+    "gamma_left_support-gamma_outer_boundary": "delta_north_support-delta_outer_boundary",
+    "gamma_right_support-gamma_outer_boundary": "delta_outer_boundary-delta_south_support"
+  },
+  "flux_balance_preserved_within_bound": true,
+  "hidden_support_reconstruction_absent": true,
+  "mapping_declared_before_use": true,
+  "mapping_digest_excludes_outcome": true,
+  "mapping_source_backed": true,
+  "node_mapping": {
+    "gamma_core": "delta_core",
+    "gamma_left_support": "delta_north_support",
+    "gamma_outer_boundary": "delta_outer_boundary",
+    "gamma_right_support": "delta_south_support"
+  },
+  "participant_attribution_trace_digest": "525dabcf5956fb44b352877e72ac6afdac6a4958b6577b057196fd06bb83b279",
+  "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "runtime_config_digest": "cd1687a10ea55f720525c8edf49daa2d8605e6ef0f1898fb4bf5b14587a8bf64",
+  "runtime_trace_id": "n27_i4a_source_current_runtime_trace",
+  "source_current_trace_kind": "deterministic_topology_fixture_transfer_variant",
+  "source_derived_report_only": false,
+  "support_preserved_above_floor": true,
+  "support_reconstruction_counted_as_preservation": false,
+  "trace_id": "n30_i4a_participant_attribution_trace"
+}

@@ -1,0 +1,427 @@
+{
+  "acceptance_state": "accepted_M2_dependency_contrast_margin_strengthening_no_threshold_margin_upgrade",
+  "all_artifact_sha256_match_file_contents": true,
+  "artifact_manifest": [
+    {
+      "artifact_role": "i6a_contrast_threshold_policy",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_margin_i6a_artifacts/i6a_contrast_threshold_policy.json",
+      "sha256": "0381ba5fc1d3344fc1a731c867b79f3e00570ba1a0fb42fe4eb88bb4867b7069"
+    },
+    {
+      "artifact_role": "i6a_contrast_margin_matrix",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_margin_i6a_artifacts/i6a_contrast_margin_matrix.json",
+      "sha256": "4ed9a51c090d4a2e2919a6c28c5f4f5eebf9c5436dfb0db2672352b0a9cc2003"
+    },
+    {
+      "artifact_role": "i6a_claim_boundary_guard",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_margin_i6a_artifacts/i6a_claim_boundary_guard.json",
+      "sha256": "095726954e437624a8cb5aa8c8bcaf90f8ab4be771de4718cf0818c7af05bec1"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "dependency_contrast_margin_supported": true,
+      "edge_vs_extractive_axis_deltas": {
+        "environment_capacity_delta": 0.144,
+        "neighbor_boundary_delta": 0.144,
+        "neighbor_distinguishability_delta": 0.134,
+        "neighbor_support_delta": 0.094
+      },
+      "edge_vs_extractive_axis_margins": {
+        "environment_capacity_delta": 0.094,
+        "neighbor_boundary_delta": 0.094,
+        "neighbor_distinguishability_delta": 0.084,
+        "neighbor_support_delta": 0.044
+      },
+      "edge_vs_neutral_axis_deltas": {
+        "environment_capacity_delta": 0.092,
+        "neighbor_boundary_delta": 0.082,
+        "neighbor_distinguishability_delta": 0.082,
+        "neighbor_support_delta": 0.052
+      },
+      "edge_vs_neutral_axis_margins": {
+        "environment_capacity_delta": 0.082,
+        "neighbor_boundary_delta": 0.072,
+        "neighbor_distinguishability_delta": 0.072,
+        "neighbor_support_delta": 0.042
+      },
+      "extractive_contrast_threshold": 0.05,
+      "medium_relation_ladder_rung": "M2_candidate_pending_I7_controls",
+      "medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+      "minimum_contrast_margin_vs_extractive": 0.044,
+      "minimum_contrast_margin_vs_neutral": 0.042,
+      "minimum_edge_vs_extractive_axis_delta": 0.094,
+      "minimum_edge_vs_neutral_axis_delta": 0.052,
+      "neutral_contrast_threshold": 0.01,
+      "relation_chain_id": "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+      "row_decision": "supported_for_M2_dependency_contrast_margin_not_threshold_margin_upgrade",
+      "row_digest": "a7aa0bc7556d3a411ff10807280af0b05ed1c5e1922f60f2aa311154365c2133",
+      "row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate_contrast_margin",
+      "source_i6_row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+      "threshold_margin_from_i6": 0.002,
+      "threshold_margin_improved": false
+    },
+    {
+      "dependency_contrast_margin_supported": true,
+      "edge_vs_extractive_axis_deltas": {
+        "environment_capacity_delta": 0.144,
+        "neighbor_boundary_delta": 0.144,
+        "neighbor_distinguishability_delta": 0.134,
+        "neighbor_support_delta": 0.094
+      },
+      "edge_vs_extractive_axis_margins": {
+        "environment_capacity_delta": 0.094,
+        "neighbor_boundary_delta": 0.094,
+        "neighbor_distinguishability_delta": 0.084,
+        "neighbor_support_delta": 0.044
+      },
+      "edge_vs_neutral_axis_deltas": {
+        "environment_capacity_delta": 0.092,
+        "neighbor_boundary_delta": 0.082,
+        "neighbor_distinguishability_delta": 0.082,
+        "neighbor_support_delta": 0.052
+      },
+      "edge_vs_neutral_axis_margins": {
+        "environment_capacity_delta": 0.082,
+        "neighbor_boundary_delta": 0.072,
+        "neighbor_distinguishability_delta": 0.072,
+        "neighbor_support_delta": 0.042
+      },
+      "extractive_contrast_threshold": 0.05,
+      "medium_relation_ladder_rung": "M2_candidate_pending_I7_controls",
+      "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+      "minimum_contrast_margin_vs_extractive": 0.044,
+      "minimum_contrast_margin_vs_neutral": 0.042,
+      "minimum_edge_vs_extractive_axis_delta": 0.094,
+      "minimum_edge_vs_neutral_axis_delta": 0.052,
+      "neutral_contrast_threshold": 0.01,
+      "relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+      "row_decision": "supported_for_M2_dependency_contrast_margin_not_threshold_margin_upgrade",
+      "row_digest": "40e384444ca301c875a7aed4c401630a120bc5588efe0bcf85f66ca09b412b09",
+      "row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_contrast_margin",
+      "source_i6_row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+      "threshold_margin_from_i6": 0.002,
+      "threshold_margin_improved": false
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "source_i6_passed_with_provisional_m2",
+      "passed": true
+    },
+    {
+      "check_id": "contrast_policy_declared_without_threshold_retune",
+      "passed": true
+    },
+    {
+      "check_id": "dependency_contrast_margins_supported",
+      "passed": true
+    },
+    {
+      "check_id": "higher_threshold_margin_not_overclaimed",
+      "passed": true
+    },
+    {
+      "check_id": "final_c5_c6_claims_blocked_pending_i7",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "higher_threshold_margin",
+      "final_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy",
+      "slow_trace_or_medium_memory"
+    ],
+    "claim_ceiling": "provisional_M2_dependency_contrast_margin_strengthening_pending_I7",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "final_minimal_shared_medium_participation_opened": false,
+      "higher_threshold_margin_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "slow_trace_or_medium_memory_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "claim_boundary_guard": {
+    "artifact_role": "i6a_claim_boundary_guard",
+    "blocked_claims": [
+      "higher_threshold_margin",
+      "final_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy",
+      "slow_trace_or_medium_memory"
+    ],
+    "claim_boundary_guard_digest": "80acac7a89a6dae7a0d04ebdf86f2ccf1fab92f690945dbfeef5d7a4c3cabf38",
+    "dependency_contrast_margin_supported": true,
+    "final_n30_c5_claim_allowed": false,
+    "final_n30_c6_claim_allowed": false,
+    "higher_threshold_margin_supported": false,
+    "m2_input_evidence_supported": true,
+    "minimal_shared_medium_participation_claim_allowed": false,
+    "n30_c5_input_evidence_supported": true,
+    "reason_final_claim_blocked": "iteration_7_relation_controls_pending",
+    "trace_id": "n30_i6a_claim_boundary_guard"
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_later_eligibility_margin_i6a.py",
+  "contrast_margin_matrix": {
+    "artifact_role": "i6a_contrast_margin_matrix",
+    "contrast_margin_matrix_digest": "958a30f85eca269d338b71f12866416306e4296d0c5127c532e89e72b0d1728d",
+    "contrast_policy": {
+      "allowed_positive_claim": "higher counterfactual contrast margin for provisional M2 dependency separation",
+      "artifact_role": "i6a_contrast_threshold_policy",
+      "contrast_threshold_policy_digest": "f9488aa1953ff1515444e1c10bbbf9a4a474ba7934dc301c48b197fd930128a9",
+      "extractive_counterfactual_min_axis_delta": 0.05,
+      "higher_threshold_margin_claim_allowed": false,
+      "i6_threshold_margin_reinterpreted": false,
+      "n28_thresholds_retuned": false,
+      "neutral_counterfactual_min_axis_delta": 0.01,
+      "policy_declared_before_i6a_row_classification": true,
+      "policy_purpose": "Measure dependency separation from neutral and opposite-regime counterfactuals without changing N28 generative thresholds.",
+      "trace_id": "n30_i6a_later_eligibility_contrast_threshold_policy"
+    },
+    "dependency_contrast_margin_supported": true,
+    "higher_threshold_margin_supported": false,
+    "interpretation": "I6-A strengthens the dependency contrast, not the N28 threshold margin. I6 remains a narrow threshold-margin candidate.",
+    "margin_rows": [
+      {
+        "dependency_contrast_margin_supported": true,
+        "edge_vs_extractive_axis_deltas": {
+          "environment_capacity_delta": 0.144,
+          "neighbor_boundary_delta": 0.144,
+          "neighbor_distinguishability_delta": 0.134,
+          "neighbor_support_delta": 0.094
+        },
+        "edge_vs_extractive_axis_margins": {
+          "environment_capacity_delta": 0.094,
+          "neighbor_boundary_delta": 0.094,
+          "neighbor_distinguishability_delta": 0.084,
+          "neighbor_support_delta": 0.044
+        },
+        "edge_vs_neutral_axis_deltas": {
+          "environment_capacity_delta": 0.092,
+          "neighbor_boundary_delta": 0.082,
+          "neighbor_distinguishability_delta": 0.082,
+          "neighbor_support_delta": 0.052
+        },
+        "edge_vs_neutral_axis_margins": {
+          "environment_capacity_delta": 0.082,
+          "neighbor_boundary_delta": 0.072,
+          "neighbor_distinguishability_delta": 0.072,
+          "neighbor_support_delta": 0.042
+        },
+        "extractive_contrast_threshold": 0.05,
+        "medium_relation_ladder_rung": "M2_candidate_pending_I7_controls",
+        "medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+        "minimum_contrast_margin_vs_extractive": 0.044,
+        "minimum_contrast_margin_vs_neutral": 0.042,
+        "minimum_edge_vs_extractive_axis_delta": 0.094,
+        "minimum_edge_vs_neutral_axis_delta": 0.052,
+        "neutral_contrast_threshold": 0.01,
+        "relation_chain_id": "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+        "row_decision": "supported_for_M2_dependency_contrast_margin_not_threshold_margin_upgrade",
+        "row_digest": "a7aa0bc7556d3a411ff10807280af0b05ed1c5e1922f60f2aa311154365c2133",
+        "row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate_contrast_margin",
+        "source_i6_row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+        "threshold_margin_from_i6": 0.002,
+        "threshold_margin_improved": false
+      },
+      {
+        "dependency_contrast_margin_supported": true,
+        "edge_vs_extractive_axis_deltas": {
+          "environment_capacity_delta": 0.144,
+          "neighbor_boundary_delta": 0.144,
+          "neighbor_distinguishability_delta": 0.134,
+          "neighbor_support_delta": 0.094
+        },
+        "edge_vs_extractive_axis_margins": {
+          "environment_capacity_delta": 0.094,
+          "neighbor_boundary_delta": 0.094,
+          "neighbor_distinguishability_delta": 0.084,
+          "neighbor_support_delta": 0.044
+        },
+        "edge_vs_neutral_axis_deltas": {
+          "environment_capacity_delta": 0.092,
+          "neighbor_boundary_delta": 0.082,
+          "neighbor_distinguishability_delta": 0.082,
+          "neighbor_support_delta": 0.052
+        },
+        "edge_vs_neutral_axis_margins": {
+          "environment_capacity_delta": 0.082,
+          "neighbor_boundary_delta": 0.072,
+          "neighbor_distinguishability_delta": 0.072,
+          "neighbor_support_delta": 0.042
+        },
+        "extractive_contrast_threshold": 0.05,
+        "medium_relation_ladder_rung": "M2_candidate_pending_I7_controls",
+        "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+        "minimum_contrast_margin_vs_extractive": 0.044,
+        "minimum_contrast_margin_vs_neutral": 0.042,
+        "minimum_edge_vs_extractive_axis_delta": 0.094,
+        "minimum_edge_vs_neutral_axis_delta": 0.052,
+        "neutral_contrast_threshold": 0.01,
+        "relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+        "row_decision": "supported_for_M2_dependency_contrast_margin_not_threshold_margin_upgrade",
+        "row_digest": "40e384444ca301c875a7aed4c401630a120bc5588efe0bcf85f66ca09b412b09",
+        "row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_contrast_margin",
+        "source_i6_row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+        "threshold_margin_from_i6": 0.002,
+        "threshold_margin_improved": false
+      }
+    ],
+    "minimum_dependency_contrast_margin_vs_extractive": 0.044,
+    "minimum_dependency_contrast_margin_vs_neutral": 0.042,
+    "source_i6_acceptance_state": "accepted_provisional_M2_later_eligibility_dependency_candidate_pending_I7_controls",
+    "source_i6_output_digest": "44281258a0b7f62fa01a067bd4e308c4d35996e7c36333e2987458c672d3a7f4",
+    "source_i6_threshold_margin": 0.002,
+    "source_i6_threshold_margin_improved": false,
+    "trace_id": "n30_i6a_later_eligibility_contrast_margin_matrix"
+  },
+  "contrast_policy": {
+    "allowed_positive_claim": "higher counterfactual contrast margin for provisional M2 dependency separation",
+    "artifact_role": "i6a_contrast_threshold_policy",
+    "contrast_threshold_policy_digest": "f9488aa1953ff1515444e1c10bbbf9a4a474ba7934dc301c48b197fd930128a9",
+    "extractive_counterfactual_min_axis_delta": 0.05,
+    "higher_threshold_margin_claim_allowed": false,
+    "i6_threshold_margin_reinterpreted": false,
+    "n28_thresholds_retuned": false,
+    "neutral_counterfactual_min_axis_delta": 0.01,
+    "policy_declared_before_i6a_row_classification": true,
+    "policy_purpose": "Measure dependency separation from neutral and opposite-regime counterfactuals without changing N28 generative thresholds.",
+    "trace_id": "n30_i6a_later_eligibility_contrast_threshold_policy"
+  },
+  "dependency_contrast_margin_supported": true,
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_c5_claim_allowed": false,
+  "final_n30_c6_claim_allowed": false,
+  "final_n30_closeout_rung": "not_assigned",
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "higher_threshold_margin_supported": false,
+  "iteration": "6-A_later_eligibility_contrast_margin_probe",
+  "later_eligibility_dependency_evidence_opened": true,
+  "medium_relation_ladder_rung_assigned": "M2_candidate_pending_I7_controls",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "minimum_dependency_contrast_margin_vs_extractive": 0.044,
+  "minimum_dependency_contrast_margin_vs_neutral": 0.042,
+  "n30_c5_input_evidence_supported": true,
+  "n30_closeout_ceiling": "N30-C4_medium_perturbation_trace_candidate_with_strengthened_provisional_C5_input_evidence",
+  "n30_fresh_runtime": false,
+  "output_digest": "145d5bf2acda7b049df43c5c9b5742fb33920e0dfc11d955cd795b5620cecad7",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "counterfactual_contrast_margin_strengthening_for_provisional_M2",
+  "ready_for_iteration_7_replay_controls": true,
+  "runtime_origin": "inherited_N28_source_current_transition_artifacts",
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_later_eligibility_margin_i6a.py",
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_i6.json",
+      "sha256": "9ba4e8ea9e0f4ac9c383c0ad9ec56c7b003ee027c11390cfa4b586dfc27d7159",
+      "source_role": "N30_I6_provisional_M2_later_eligibility_candidate"
+    },
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+      "sha256": "2383c8fcd54d6033a77decb7e431d50227841b66606e8ec6808f480da6d2b8d5",
+      "source_role": "N30_I5_single_shell_M1_surface_trace"
+    },
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a.json",
+      "sha256": "4769a9b4666d7b178afbfe42a166d7915369cb5cba0896f9dc70d0bf8f46c4c4",
+      "source_role": "N30_I5A_split_shell_M1_surface_trace"
+    },
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_scope_window_i5b.json",
+      "sha256": "9a03d41029025ed62518d4a511ec3ea2ae680290a310852b97ee556da448e540",
+      "source_role": "N30_I5B_scope_window_audit"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix.json",
+      "sha256": "7d876c308c4e9e63eef97ec36fac2178ec1a00b869b93816bace31f59e0ac0b6",
+      "source_role": "N28_same_policy_transition_matrix"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4a_row_generative_strengthening_candidate_generative_edge_trace.json",
+      "sha256": "bcea04364b0a7652e2d8200283ff77d1ea0ef33328f61dee5e309fbb0d1c558f",
+      "source_role": "N28_I4A_same_regime_boundary_edge_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4a_row_generative_strengthening_candidate_neutral_gap_without_mixed_lobes_trace.json",
+      "sha256": "a56bfdd2259fb9a6be9d79f3e04975b26aea0b6a963fe133e4ef5fa6ae22b904",
+      "source_role": "N28_I4A_neutral_gap_counterfactual_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4a_row_generative_strengthening_candidate_extractive_cross_trace.json",
+      "sha256": "21b2285af12d81141efbbd7d41d3ae8bb952048fcbd2d768148480753e138a26",
+      "source_role": "N28_I4A_extractive_cross_counterfactual_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_generative_edge_trace.json",
+      "sha256": "3e9e989d0e4e7022315ac7fc27bd42777dbcd9b52f6f0c4f0fc9e78eefe2169b",
+      "source_role": "N28_I4A2_same_regime_boundary_edge_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_neutral_gap_without_mixed_lobes_trace.json",
+      "sha256": "3c52e43641b46416075c0baec3d560e8d71a540c57f1bf1b8e03dd4dc88df893",
+      "source_role": "N28_I4A2_neutral_gap_counterfactual_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_regime_boundary_transition_matrix_artifacts/n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_extractive_cross_trace.json",
+      "sha256": "67413332797eb06576b887d261204b23a0ad2ed615b162fa145ee40d96e222ee",
+      "source_role": "N28_I4A2_extractive_cross_counterfactual_trace"
+    }
+  ],
+  "source_i6_output_digest": "44281258a0b7f62fa01a067bd4e308c4d35996e7c36333e2987458c672d3a7f4",
+  "source_i6_threshold_margin": 0.002,
+  "status": "passed"
+}

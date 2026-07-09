@@ -1,0 +1,22 @@
+{
+  "accepted_window_kinds": [
+    "source_step_0_to_step_1_surface_change",
+    "artifact_replay_persistence",
+    "snapshot_load_replay_persistence",
+    "duplicate_replay_persistence",
+    "bounded_neighbor_capacity_stress_variant"
+  ],
+  "artifact_role": "medium_surface_window_policy",
+  "declared_probe_question": "Does I5/I5-A provide broader surface scope or longer persistence than immediate replay-stable C4/M1 surface trace admission?",
+  "i6_dependency_requirement": "I6 may consume the C4 surface rows, but must not infer slow trace or medium memory from I5-B.",
+  "not_accepted_as_temporal_decay_window": [
+    "stress_variant",
+    "duplicate_replay",
+    "snapshot_load_replay"
+  ],
+  "slow_trace_or_medium_memory_claim_allowed": false,
+  "trace_id": "n30_i5b_medium_surface_window_policy",
+  "true_temporal_decay_curve_available": false,
+  "true_temporal_decay_curve_required_for_slow_trace": true,
+  "window_policy_digest": "6efc7c5a4f48df04b7b0c7069f90751b2301d720c3d1df1c4a82d21f9991ecbc"
+}

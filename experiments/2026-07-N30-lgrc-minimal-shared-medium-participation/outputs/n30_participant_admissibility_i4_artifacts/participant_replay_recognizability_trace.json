@@ -1,0 +1,20 @@
+{
+  "artifact_replay_status": "passed",
+  "artifact_role": "participant_replay_recognizability_trace",
+  "duplicate_replay_status": "passed",
+  "mapping_order_replay_status": "passed",
+  "medium_relation_evidence_opened": false,
+  "p2_candidate_supported": true,
+  "participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+  "recognizability_margin": 0.035,
+  "recognizability_metric": "signature_distance_under_declared_N27_mapping",
+  "recognizability_observed": 0.025,
+  "recognizability_passed": true,
+  "recognizability_threshold": 0.06,
+  "replay_recognizability_trace_digest": "e43090668155e792eeb9268c5aeadc1ddb32ff4d0f92f37c697a7b3c4b1f1437",
+  "replay_source": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4_same_basin_mapping_replay_replay_trace.json",
+  "replay_status": "passed",
+  "same_basin_signature_preserved_under_mapping": true,
+  "snapshot_load_replay_status": "passed",
+  "trace_id": "n30_i4_participant_replay_recognizability_trace"
+}

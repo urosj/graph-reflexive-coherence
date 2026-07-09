@@ -1,0 +1,123 @@
+{
+  "acceptance_state": "accepted_alternative_source_margin_and_mechanism_contrast_audit_no_final_C5",
+  "all_artifact_sha256_match_file_contents": true,
+  "alternative_lobe_exchange_margin": 0.02,
+  "alternative_threshold_margin": 0.01,
+  "artifact_manifest": [
+    {
+      "artifact_role": "i6c_alternative_mechanism_contrast_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_contrast_margin_i6c_artifacts/i6c_alternative_mechanism_contrast_trace.json",
+      "sha256": "2dc53fd879126c08840f1b7b2894f60fb7be1eaa553e2b8aa83646c3feb21c11"
+    },
+    {
+      "artifact_role": "i6c_claim_boundary_guard",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_contrast_margin_i6c_artifacts/i6c_claim_boundary_guard.json",
+      "sha256": "ebfb13fd439c5c39ae2d815e4fc4476d27fdd0f093ec46ba897bf06769a1a0a2"
+    }
+  ],
+  "broad_margin_robustness_supported": false,
+  "checks": [
+    {
+      "check_id": "source_i6b_passed",
+      "passed": true
+    },
+    {
+      "check_id": "threshold_margin_improves_over_i6_reference",
+      "passed": true
+    },
+    {
+      "check_id": "mechanism_contrast_supported",
+      "passed": true
+    },
+    {
+      "check_id": "final_c5_claim_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "final_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "alternative_M2_margin_contrast_audit_pending_I7",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "final_minimal_shared_medium_participation_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py",
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_c5_claim_allowed": false,
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "iteration": "6-C_alternative_contrast_margin_audit",
+  "mechanism_contrast_supported": true,
+  "medium_relation_ladder_rung_assigned": "M2_candidate_alternative_source_pending_I7_controls",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_c5_input_evidence_supported": true,
+  "n30_closeout_ceiling": "N30-C4_medium_perturbation_trace_candidate_with_alternative_C5_input_evidence",
+  "output_digest": "bb4930b3423156f4aac9b023cb14efb3c7bc8d707518395b2b95fe79fd39a403",
+  "participant_ladder_rung_assigned": "P2_candidate_alternative_source_fixture",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "alternative_source_margin_and_mechanism_contrast",
+  "ready_for_iteration_7_replay_controls": true,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py",
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_later_eligibility_i6b.json",
+      "sha256": "9c89b1141ecaa1d31a282f581d23963cc012bfaf2ececf2fbfe81a1a9847a7f8",
+      "source_role": "N30_I6B_alternative_M2_later_eligibility_candidate"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/capacity_attribution_trace.json",
+      "sha256": "3e95381a0ca0b58227798fef0c212a005e294db192435f39cf7d94a475286a59",
+      "source_role": "N28_I4F_neutral_circulation_capacity_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_competitive_redistribution_probe_artifacts/capacity_attribution_trace.json",
+      "sha256": "143bfc3c01363e42ecce57cfdd8a147df23480dc131e6a4200412e1bee1b2678",
+      "source_role": "N28_I4G_competitive_counterfactual_capacity_trace"
+    }
+  ],
+  "source_i6_threshold_margin_reference": 0.002,
+  "source_i6b_output_digest": "df9d1789199368ac62385e3e0052d2dcfaf4858bb44eecc338e66b07240f10f5",
+  "status": "passed",
+  "threshold_margin_delta_vs_i6": 0.008,
+  "threshold_margin_ratio_vs_i6": 5.0
+}

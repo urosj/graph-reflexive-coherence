@@ -1,0 +1,508 @@
+{
+  "acceptance_state": "accepted_source_inventory_method_admission_no_positive_evidence",
+  "candidate_rows_classified": false,
+  "checks": [
+    {
+      "check_id": "all_required_sources_exist",
+      "passed": true
+    },
+    {
+      "check_id": "required_method_sources_present",
+      "passed": true
+    },
+    {
+      "check_id": "external_shared_medium_sources_pinned",
+      "passed": true
+    },
+    {
+      "check_id": "method_sources_not_runtime_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "n27_n28_n29_guardrails_present",
+      "passed": true
+    },
+    {
+      "check_id": "all_records_have_consumption_boundaries",
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_n30_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "shared_medium_coordination",
+      "native_shared_medium_organization",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "source_inventory_and_method_admission_only_no_N30_evidence",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_source_inventory_i1.py",
+  "digest_semantics": {
+    "file_sha256": "exact_artifact_file_content_digest",
+    "mismatch_between_output_digest_and_file_sha256_is_expected": true,
+    "output_digest": "canonical_payload_digest_excluding_output_digest_field"
+  },
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_closeout_rung": "not_assigned",
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "guardrail_sufficiency_policy": {
+    "N27_N28_closeouts_are_sufficient_for_I1_inventory": true,
+    "closeout_summary_alone_may_support_positive_N30_evidence": false,
+    "positive_probe_requirement": "if closeout artifacts do not expose participant-recognizability or environment-effect fields directly, consume the underlying N27/N28 result artifacts before classifying positive N30 rows"
+  },
+  "iteration": "1_source_inventory_and_method_admission",
+  "medium_relation_ladder_rung_assigned": false,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_closeout_ceiling": "N30-C1_source_method_inventory_passed",
+  "native_shared_medium_organization_claim_allowed": false,
+  "output_digest": "2a7bc77d5c7034e0b329dd80a85de44e8bafa56ac966ca61ac501b89ae2f61a4",
+  "participant_ladder_rung_assigned": false,
+  "positive_evidence_opened": false,
+  "primary_layer": "primitive",
+  "ready_for_iteration_2_schema_freeze": true,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_source_inventory_i1.py",
+  "shared_medium_coordination_claim_allowed": false,
+  "shared_medium_source_pin_policy": {
+    "absolute_paths_recorded": false,
+    "external_sources_pinned_by": "sha256_content_digest",
+    "later_source_changes_do_not_silently_change_N30_basis": true
+  },
+  "source_consumption_rule": {
+    "N27_N28_N29": "guardrail_and_bridge_context_only_until_new_N30_runtime_artifacts_exist",
+    "claim_boundary_index": "claim_ceiling_and_blocked_relabel_index_only",
+    "roadmap_and_shared_medium_documents": "method_vocabulary_controls_debt_claim_boundary_only"
+  },
+  "source_record_count": 10,
+  "source_records": [
+    {
+      "allowed_use": [
+        "catalog_layer_vocabulary",
+        "source_basis_policy",
+        "claim_boundary_policy",
+        "bidirectional_grammar_context"
+      ],
+      "blocked_use": [
+        "runtime_evidence",
+        "shared_medium_participation_evidence",
+        "native_shared_medium_organization_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:3c5ac6d9cbb05b134d38bf9defd42c6c938f025a8ac1751dafe1f6c500a926cf",
+      "consumed_sections": [
+        "source basis and consumption rules",
+        "catalog hierarchy",
+        "claim-boundary policy",
+        "N30 direction appendices"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "catalog_layer_vocabulary",
+        "source_basis_policy",
+        "claim_boundary_policy",
+        "bidirectional_grammar_context"
+      ],
+      "must_not_consume_as": [
+        "runtime_evidence",
+        "shared_medium_participation_evidence",
+        "native_shared_medium_organization_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n30_plus_experiment_catalog_roadmap",
+      "source_path_or_url": "experiments/N30_plus_experiment_catalog_roadmap.md",
+      "source_role": "catalog_ontology_and_claim_policy_source"
+    },
+    {
+      "allowed_use": [
+        "candidate_dependency_context",
+        "N30_direction_context",
+        "N31_handoff_context"
+      ],
+      "blocked_use": [
+        "experiment_result_evidence",
+        "positive_N30_row_source",
+        "shared_medium_coordination_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:47043d91d59c140a401f6b622bd7cb923ef9e06244ebbdae1ab134cc62c50722",
+      "consumed_sections": [
+        "candidate relationship map",
+        "N30 direction notes",
+        "two-loop spiral appendices"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "candidate_dependency_context",
+        "N30_direction_context",
+        "N31_handoff_context"
+      ],
+      "must_not_consume_as": [
+        "experiment_result_evidence",
+        "positive_N30_row_source",
+        "shared_medium_coordination_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n30_plus_candidate_directions",
+      "source_path_or_url": "experiments/N30_plus_candidate_directions.md",
+      "source_role": "candidate_direction_and_dependency_context"
+    },
+    {
+      "allowed_use": [
+        "message_vs_medium_distinction",
+        "medium_surface_vocabulary",
+        "shared_medium_debt_context",
+        "blocked_coordination_boundary"
+      ],
+      "blocked_use": [
+        "LGRC_runtime_evidence",
+        "native_shared_medium_organization_evidence",
+        "communication_or_cooperation_evidence",
+        "ecology_regime_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:c2c2371525036b3a56e88a38d8ca51bf140a9b16a897378c50b01be5ec076c45",
+      "consumed_sections": [
+        "shared medium as transition concept",
+        "message-passing distinction",
+        "coordination and resonance caveats"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "message_vs_medium_distinction",
+        "medium_surface_vocabulary",
+        "shared_medium_debt_context",
+        "blocked_coordination_boundary"
+      ],
+      "must_not_consume_as": [
+        "LGRC_runtime_evidence",
+        "native_shared_medium_organization_evidence",
+        "communication_or_cooperation_evidence",
+        "ecology_regime_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "shared_medium_essay",
+      "source_path_or_url": "reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md",
+      "source_role": "shared_medium_conceptual_transition_source"
+    },
+    {
+      "allowed_use": [
+        "medium_surface_schema_vocabulary",
+        "perturbation_trace_susceptibility_vocabulary",
+        "medium_debt_schema",
+        "direct_message_and_hidden_producer_controls"
+      ],
+      "blocked_use": [
+        "runnable_LGRC_evidence",
+        "native_shared_medium_coordination_evidence",
+        "agentic_ecology_implementation_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:db249acdfc95a245e4fadbb90a31eec687c7550f51b59414734f4cabd57730df",
+      "consumed_sections": [
+        "engineering surfaces",
+        "trace and susceptibility method",
+        "medium debt",
+        "controls and failure modes"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "medium_surface_schema_vocabulary",
+        "perturbation_trace_susceptibility_vocabulary",
+        "medium_debt_schema",
+        "direct_message_and_hidden_producer_controls"
+      ],
+      "must_not_consume_as": [
+        "runnable_LGRC_evidence",
+        "native_shared_medium_coordination_evidence",
+        "agentic_ecology_implementation_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "shared_medium_coordination_engineering_spec",
+      "source_path_or_url": "reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md",
+      "source_role": "shared_medium_method_control_and_debt_source"
+    },
+    {
+      "allowed_use": [
+        "participant_carrier_recognizability_guardrail",
+        "configuration_transfer_boundary",
+        "same_basin_mapping_replay_discipline"
+      ],
+      "blocked_use": [
+        "minimal_shared_medium_participation_evidence",
+        "medium_surface_trace_evidence",
+        "agentic_participant_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:65def6d91e32631183169c1863ac8a984c93e16b80d69bac393d02db97f25506",
+      "consumed_sections": [
+        "closeout rung",
+        "transfer contract",
+        "blocked claims"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "participant_carrier_recognizability_guardrail",
+        "configuration_transfer_boundary",
+        "same_basin_mapping_replay_discipline"
+      ],
+      "must_not_consume_as": [
+        "minimal_shared_medium_participation_evidence",
+        "medium_surface_trace_evidence",
+        "agentic_participant_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n27_closeout_and_n28_handoff",
+      "source_path_or_url": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_closeout_and_n28_handoff.json",
+      "source_role": "participant_continuity_and_transfer_guardrail"
+    },
+    {
+      "allowed_use": [
+        "generative_extractive_environment_effect_distinction",
+        "generic_redistribution_relabel_blocker",
+        "medium_reshaping_claim_boundary"
+      ],
+      "blocked_use": [
+        "shared_medium_relation_evidence",
+        "later_eligibility_dependency_evidence",
+        "ecology_regime_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:7e17af82ba5bfeded841b9c3682e8a05596773acacd88925721306c1a3795ad9",
+      "consumed_sections": [
+        "closeout rung",
+        "N29 handoff",
+        "claim boundary"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "generative_extractive_environment_effect_distinction",
+        "generic_redistribution_relabel_blocker",
+        "medium_reshaping_claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "shared_medium_relation_evidence",
+        "later_eligibility_dependency_evidence",
+        "ecology_regime_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n28_closeout_and_n29_handoff",
+      "source_path_or_url": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_closeout_and_n29_handoff.json",
+      "source_role": "environment_effect_and_medium_reshaping_guardrail"
+    },
+    {
+      "allowed_use": [
+        "bridge_context",
+        "shared_medium_demand_context",
+        "motif_to_primitive_dependency_context",
+        "producer_contract_context"
+      ],
+      "blocked_use": [
+        "N30_positive_evidence",
+        "shared_medium_coordination_evidence",
+        "agentic_ecology_regime_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:842ba57e994bbb3e219acff741afd85c87d102bea5eec6d134f3b84f2445cb52",
+      "consumed_sections": [
+        "N29 closeout",
+        "ecology handoff",
+        "prototype atlas",
+        "blocked claims"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "bridge_context",
+        "shared_medium_demand_context",
+        "motif_to_primitive_dependency_context",
+        "producer_contract_context"
+      ],
+      "must_not_consume_as": [
+        "N30_positive_evidence",
+        "shared_medium_coordination_evidence",
+        "agentic_ecology_regime_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n29_closeout_and_ecology_handoff",
+      "source_path_or_url": "experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/outputs/n29_closeout_and_ecology_handoff_i18.json",
+      "source_role": "ecology_bridge_and_shared_medium_demand_context"
+    },
+    {
+      "allowed_use": [
+        "historical_arc_context",
+        "experiment_sequence_context",
+        "claim_boundary_context"
+      ],
+      "blocked_use": [
+        "N30_runtime_evidence",
+        "source_current_trace_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:911c5055d8cfcb87dc9e810b8b6a24f109bff83e809edb71549dcba57908e70e",
+      "consumed_sections": [
+        "N20-N29 arc",
+        "N30 transition notes"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "historical_arc_context",
+        "experiment_sequence_context",
+        "claim_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "N30_runtime_evidence",
+        "source_current_trace_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n20_n29_becoming_agency_ecology_roadmap",
+      "source_path_or_url": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "source_role": "becoming_agency_ecology_arc_state"
+    },
+    {
+      "allowed_use": [
+        "handoff_context",
+        "blocked_claim_context",
+        "N30_positioning_context"
+      ],
+      "blocked_use": [
+        "N30_positive_evidence",
+        "runtime_trace_evidence"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:2831fe6c668b1ddabb3a231cf4e154a620fde5184746843b64b208e592333f14",
+      "consumed_sections": [
+        "current state",
+        "next handoff"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "handoff_context",
+        "blocked_claim_context",
+        "N30_positioning_context"
+      ],
+      "must_not_consume_as": [
+        "N30_positive_evidence",
+        "runtime_trace_evidence"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "n20_n29_becoming_agency_ecology_handoff",
+      "source_path_or_url": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "source_role": "handoff_state_and_next_step_context"
+    },
+    {
+      "allowed_use": [
+        "claim_ceiling_context",
+        "blocked_relabel_context",
+        "unsafe_claim_flags_context"
+      ],
+      "blocked_use": [
+        "evidence_source",
+        "runtime_result_source",
+        "positive_row_support"
+      ],
+      "claim_boundary_imported": true,
+      "commit_or_digest": "sha256:a4a2e3fd042e304f8a62116b0a675da2801f1a8a0e6cb9f4f2ebabeac6d50144",
+      "consumed_sections": [
+        "bounded claims",
+        "claim boundary records"
+      ],
+      "digest_algorithm": "sha256",
+      "may_consume_as": [
+        "claim_ceiling_context",
+        "blocked_relabel_context",
+        "unsafe_claim_flags_context"
+      ],
+      "must_not_consume_as": [
+        "evidence_source",
+        "runtime_result_source",
+        "positive_row_support"
+      ],
+      "positive_evidence_opened_by_this_source": false,
+      "runtime_evidence_allowed": false,
+      "source_current_runtime_evidence_allowed": false,
+      "source_exists": true,
+      "source_id": "claim_boundary_index",
+      "source_path_or_url": "docs/reference/ClaimBoundaryIndex.md",
+      "source_role": "blocked_claim_and_claim_ceiling_index"
+    }
+  ],
+  "source_roles": [
+    "becoming_agency_ecology_arc_state",
+    "blocked_claim_and_claim_ceiling_index",
+    "candidate_direction_and_dependency_context",
+    "catalog_ontology_and_claim_policy_source",
+    "ecology_bridge_and_shared_medium_demand_context",
+    "environment_effect_and_medium_reshaping_guardrail",
+    "handoff_state_and_next_step_context",
+    "participant_continuity_and_transfer_guardrail",
+    "shared_medium_conceptual_transition_source",
+    "shared_medium_method_control_and_debt_source"
+  ],
+  "status": "passed"
+}

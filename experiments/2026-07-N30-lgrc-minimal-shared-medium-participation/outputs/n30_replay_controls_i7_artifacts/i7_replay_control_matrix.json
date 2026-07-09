@@ -1,0 +1,1258 @@
+{
+  "all_required_controls_failed_closed": true,
+  "all_required_replay_modes_passed": true,
+  "artifact_role": "i7_replay_control_matrix",
+  "candidate_row_ids": [
+    "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+    "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+    "n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate"
+  ],
+  "candidate_rows": [
+    {
+      "all_required_controls_failed_closed": true,
+      "all_required_replay_modes_passed": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "susceptibility_or_eligibility_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_i6_artifacts/i5_single_shell_susceptibility_or_eligibility_trace.json",
+          "sha256": "2caa4333aa621ec43f3c7189c4468364d530a86a4fa94fe0c0ded01df2cd0b00"
+        },
+        {
+          "artifact_role": "coupled_relation_lineage_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_i6_artifacts/i5_single_shell_coupled_relation_lineage_trace.json",
+          "sha256": "64ae4062dfe33228b427bdff92041fe1972e4e2de2cf4d5a3f506ff38a0e19d8"
+        }
+      ],
+      "blocked_relabels": [
+        "final_n30_c6",
+        "fixed_n31_selection_without_spiral_review",
+        "shared_medium_coordination",
+        "parent_basin_modulation",
+        "resonant_alignment",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "claim_ceiling": "replay/control-backed C5 candidate pending I8 classification",
+      "control_count": 20,
+      "control_results": [
+        {
+          "actual_result": "direct_message_only_relabel_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "direct sender-receiver packet relabeled as shared medium",
+          "blocked_gate": "medium_surface_non_private_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "direct_message_only_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "direct message path lacks declared medium-surface conditioning",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_01_direct_message_only_relabel"
+        },
+        {
+          "actual_result": "medium_surface_label_only_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "surface name exists but no source-current medium surface change exists",
+          "blocked_gate": "declared_medium_surface_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_surface_label_only",
+          "control_status": "failed_closed",
+          "expected_result": "label-only surface cannot satisfy perturbation or trace gate",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_02_medium_surface_label_only"
+        },
+        {
+          "actual_result": "hidden_global_controller_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "global controller changes later eligibility outside the medium surface",
+          "blocked_gate": "later_response_depends_on_medium_trace",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_global_controller",
+          "control_status": "failed_closed",
+          "expected_result": "later response is controller-carried instead of trace-carried",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_03_hidden_global_controller"
+        },
+        {
+          "actual_result": "hidden_producer_routing_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "producer routes later response without visible medium dependency",
+          "blocked_gate": "producer_residue_and_trace_dependency_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_routing",
+          "control_status": "failed_closed",
+          "expected_result": "hidden producer routing blocks artifact-level relation-chain support",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_04_hidden_producer_routing"
+        },
+        {
+          "actual_result": "post_hoc_trace_construction_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace is assembled from report/log after outcome inspection",
+          "blocked_gate": "source_current_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction",
+          "control_status": "failed_closed",
+          "expected_result": "post-hoc trace cannot count as medium surface state",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_05_post_hoc_trace_construction"
+        },
+        {
+          "actual_result": "no_perturbation_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later difference appears with no participant-caused perturbation",
+          "blocked_gate": "participant_to_medium_perturbation_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "no_perturbation_control",
+          "control_status": "failed_closed",
+          "expected_result": "medium trace requires a perturbation event",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_06_no_perturbation_control"
+        },
+        {
+          "actual_result": "trace_ablation_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later eligibility still claimed after declared trace removal",
+          "blocked_gate": "later_response_depends_on_medium_trace",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "trace_ablation_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace must be necessary for the later response dependency",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_07_trace_ablation_control"
+        },
+        {
+          "actual_result": "wrong_surface_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "dependency is attributed to an unrelated medium surface",
+          "blocked_gate": "declared_surface_specificity_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "wrong_surface_control",
+          "control_status": "failed_closed",
+          "expected_result": "later response must depend on the declared changed surface",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_08_wrong_surface_control"
+        },
+        {
+          "actual_result": "time_reversed_trace_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later response is used to explain an earlier trace",
+          "blocked_gate": "causal_order_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "time_reversed_trace_control",
+          "control_status": "failed_closed",
+          "expected_result": "ordered lineage must be participant -> perturbation -> trace -> later response",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_09_time_reversed_trace_control"
+        },
+        {
+          "actual_result": "medium_freeze_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "medium surface is frozen yet later response is still claimed",
+          "blocked_gate": "medium_surface_change_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_freeze_control",
+          "control_status": "failed_closed",
+          "expected_result": "surface state must change or leave a trace",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_10_medium_freeze_control"
+        },
+        {
+          "actual_result": "trace_shuffle_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace is shuffled across unrelated chains while retaining the label",
+          "blocked_gate": "relation_chain_identity_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "trace_shuffle_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace must stay in the same relation_chain_id",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_11_trace_shuffle_control"
+        },
+        {
+          "actual_result": "false_trace_injection_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "injected trace is used as evidence without participant perturbation",
+          "blocked_gate": "trace_provenance_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "false_trace_injection_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace provenance must point to the participant perturbation",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_12_false_trace_injection_control"
+        },
+        {
+          "actual_result": "decay_manipulation_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace persistence is created by manipulating decay after the outcome",
+          "blocked_gate": "trace_persistence_or_decay_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "decay_manipulation_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace persistence/decay must be declared before classification",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_13_decay_manipulation_control"
+        },
+        {
+          "actual_result": "susceptibility_inversion_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later response changes opposite to the predeclared direction",
+          "blocked_gate": "predeclared_later_response_metric_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "susceptibility_inversion_control",
+          "control_status": "failed_closed",
+          "expected_result": "later-response metric must match predeclared direction and threshold",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_14_susceptibility_inversion_control"
+        },
+        {
+          "actual_result": "participant_label_drift_control_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "participant carrier changes identity while retaining participant label",
+          "blocked_gate": "participant_carrier_continuity_gate",
+          "blocked_rung_if_failed_open": "N30-C3",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "participant_label_drift_control",
+          "control_status": "failed_closed",
+          "expected_result": "participant carrier must remain recognizable for P2",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_15_participant_label_drift_control"
+        },
+        {
+          "actual_result": "generic_redistribution_relabel_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "generic redistribution is relabeled as shared-medium eligibility",
+          "blocked_gate": "N28_environment_effect_distinction_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "generic_redistribution_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "environment change must be specific trace-mediated eligibility, not generic redistribution",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_16_generic_redistribution_relabel"
+        },
+        {
+          "actual_result": "semantic_communication_relabel_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace influence is relabeled as semantic communication",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_communication_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks semantic communication claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_17_semantic_communication_relabel"
+        },
+        {
+          "actual_result": "semantic_coordination_relabel_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "co-response vocabulary is relabeled as semantic coordination",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_coordination_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks shared-medium coordination claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_18_semantic_coordination_relabel"
+        },
+        {
+          "actual_result": "cooperation_agency_relabel_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "participant relation is relabeled as cooperation or agency",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "cooperation_agency_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks cooperation, agency, selfhood, and identity claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_19_cooperation_agency_relabel"
+        },
+        {
+          "actual_result": "native_shared_medium_organization_relabel_reinstantiated_against_n30_i6_row_01_i5_single_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "artifact-level medium trace is relabeled as native shared-medium organization",
+          "blocked_gate": "native_shared_medium_claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_shared_medium_organization_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 explicitly blocks native shared-medium organization",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_20_native_shared_medium_organization_relabel"
+        }
+      ],
+      "failed_open_control_count": 0,
+      "final_n30_c5_claim_allowed": false,
+      "final_n30_c6_claim_allowed": false,
+      "later_response_conditioned_by_medium": true,
+      "later_response_metric": "same_policy_generative_boundary_edge_eligibility_score",
+      "margin_context": {
+        "contrast_margin_vs_extractive": 0.044,
+        "contrast_margin_vs_neutral": 0.042,
+        "margin_interpretation": "narrow_threshold_margin_with_stronger_counterfactual_separation",
+        "mean_normalized_score": 1.028056,
+        "threshold_margin": 0.002
+      },
+      "medium_debt_record": {
+        "artifact_role": "i7_medium_debt_row",
+        "family": "original_generative",
+        "medium_debt_status": "artifact_level_medium_dependency_supported_with_remaining_nativity_debt",
+        "n30_fresh_runtime": false,
+        "native_shared_medium_organization_opened": false,
+        "producer_residue_status": "no_hidden_producer_or_global_controller_admitted_by_I7_controls",
+        "remaining_debt": [
+          "I6 later eligibility dependency consumed and replay/control checked in I7",
+          "I7 controls passed as artifact-level replays over inherited source-current traces",
+          "I8 closeout and post-N30 spiral handoff not yet assigned",
+          "decay curve not measured in I5",
+          "native shared-medium organization remains blocked"
+        ],
+        "row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+        "runtime_origin": "inherited_source_current_artifacts"
+      },
+      "medium_relation_ladder_rung": "M2_replay_control_backed_C5_candidate",
+      "medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+      "minimal_shared_medium_participation_candidate_supported": true,
+      "n30_c5_candidate_supported": true,
+      "not_run_control_count": 0,
+      "participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+      "primary_layer": "primitive",
+      "producer_residue_record": {
+        "hidden_global_controller_admitted": false,
+        "hidden_producer_routing_admitted": false,
+        "producer_success_upgrades_native": false,
+        "semantic_label_used_as_evidence": false
+      },
+      "relation_chain_id": "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+      "replay_statuses": {
+        "artifact_only_replay": {
+          "artifact_sha256_match": true,
+          "manifest_count": 2,
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed"
+        },
+        "duplicate_replay": {
+          "duplicate_replay_digest_stable": true,
+          "first_replay_digest": "f17a162a4c1ebeea8b3ad3f983de318a2d03fc834ec6cac2301d64d79adac901",
+          "rung_effect": "required_for_N30-C5",
+          "second_replay_digest": "f17a162a4c1ebeea8b3ad3f983de318a2d03fc834ec6cac2301d64d79adac901",
+          "status": "passed"
+        },
+        "later_response_metric_recomputed": {
+          "metric_family": "generative_boundary_edge_normalized_axis_score",
+          "minimum_threshold_margin": 0.002,
+          "recomputed_mean_normalized_score": 1.028056,
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed",
+          "stored_mean_normalized_score": 1.028056
+        },
+        "snapshot_load_replay": {
+          "loaded_artifact_count": 2,
+          "loaded_artifact_roles": [
+            "susceptibility_or_eligibility_trace",
+            "coupled_relation_lineage_trace"
+          ],
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed"
+        }
+      },
+      "row_decision": "supported_N30-C5_candidate_pending_I8_closeout",
+      "row_id": "n30_i7_n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+      "row_output_digest": "629f9a7f3fa8a47d8cd853d634fad778b4d54f501b30d0084b83460d4829333c",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b.json",
+          "sha256": "4de77602fa8e5d85c1e52587a0ce18fc4c7cce6ba09ad3a3a3bc9bbfe62a5757",
+          "source_role": "N30_I4B_participant_boundary_support_guardrail"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe.json",
+          "sha256": "925ba6b77027c8c45259f52f3e377a3805f942a89141253c411d83266e5eca99",
+          "source_role": "N28_I4A_source_current_generative_strengthening_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_role": "N28_replay_capacity_attribution_matrix"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "9dc5157e935159b5663ba11aaf186a61dbbe080da40d1e9ea715a67cca5af76f",
+          "source_role": "N28_I4A_source_current_runtime_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/focal_basin_stability_trace.json",
+          "sha256": "c5d14ab4974cc1af2386d7918c8b5e259659c6df12d9b818a253942ea1eeced4",
+          "source_role": "N28_I4A_focal_basin_stability_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/neighbor_capacity_trace.json",
+          "sha256": "ce19f7d7be88b3ce1b6d45df37586646a6c9f14463dd2b720ca008b0ee4009e9",
+          "source_role": "N28_I4A_neighbor_capacity_medium_surface_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/capacity_attribution_trace.json",
+          "sha256": "04606c89adcfa9abd69f54c8cd78fe7372baa32cc9b6ad7b41c2f2662c871960",
+          "source_role": "N28_I4A_capacity_attribution_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/extraction_leakage_trace.json",
+          "sha256": "468a548e91988041a54def089d6fdffee9b2d8e5a2aac170bf2fdc8d38225feb",
+          "source_role": "N28_I4A_extraction_leakage_guard_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/classification_trace.json",
+          "sha256": "4e8511321f0dd3c19a7e1e4617afb0ff040d908b96a1b27137112c774edd82f0",
+          "source_role": "N28_I4A_classification_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/generative_extractive_core.json",
+          "sha256": "8dce6f8aa66d2de6430fef7ec4cf70ec788c2c4cd8b2df79eff1e3ba4d724584",
+          "source_role": "N28_I4A_generative_extractive_core"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_strengthening_candidate_probe_artifacts/threshold_policy_trace.json",
+          "sha256": "6811ae3365fa214afac1000c60415fe6b6f3851b8d9cbdb9d099642c1cd89e8c",
+          "source_role": "N28_I4A_threshold_policy_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4a_row_generative_strengthening_candidate_trace.json",
+          "sha256": "5902d5c6610a134c996bcaf71e67190f35d05de79a673e50876c36f679ea8b26",
+          "source_role": "N28_I4A_replay_trace"
+        }
+      ],
+      "source_family": "original_generative",
+      "source_iteration": "I6",
+      "source_row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate"
+    },
+    {
+      "all_required_controls_failed_closed": true,
+      "all_required_replay_modes_passed": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "susceptibility_or_eligibility_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_i6_artifacts/i5a_split_shell_susceptibility_or_eligibility_trace.json",
+          "sha256": "0fea1d60ee8a7d090ee26bfbae398cc1aceb7a034298415cbf494fef6119219b"
+        },
+        {
+          "artifact_role": "coupled_relation_lineage_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_i6_artifacts/i5a_split_shell_coupled_relation_lineage_trace.json",
+          "sha256": "33ab838a611ec07f4b46842fd6ab89ff351898201f725a56588986add605baaa"
+        }
+      ],
+      "blocked_relabels": [
+        "final_n30_c6",
+        "fixed_n31_selection_without_spiral_review",
+        "shared_medium_coordination",
+        "parent_basin_modulation",
+        "resonant_alignment",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "claim_ceiling": "replay/control-backed C5 candidate pending I8 classification",
+      "control_count": 20,
+      "control_results": [
+        {
+          "actual_result": "direct_message_only_relabel_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "direct sender-receiver packet relabeled as shared medium",
+          "blocked_gate": "medium_surface_non_private_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "direct_message_only_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "direct message path lacks declared medium-surface conditioning",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_01_direct_message_only_relabel"
+        },
+        {
+          "actual_result": "medium_surface_label_only_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "surface name exists but no source-current medium surface change exists",
+          "blocked_gate": "declared_medium_surface_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_surface_label_only",
+          "control_status": "failed_closed",
+          "expected_result": "label-only surface cannot satisfy perturbation or trace gate",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_02_medium_surface_label_only"
+        },
+        {
+          "actual_result": "hidden_global_controller_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "global controller changes later eligibility outside the medium surface",
+          "blocked_gate": "later_response_depends_on_medium_trace",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_global_controller",
+          "control_status": "failed_closed",
+          "expected_result": "later response is controller-carried instead of trace-carried",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_03_hidden_global_controller"
+        },
+        {
+          "actual_result": "hidden_producer_routing_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "producer routes later response without visible medium dependency",
+          "blocked_gate": "producer_residue_and_trace_dependency_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_routing",
+          "control_status": "failed_closed",
+          "expected_result": "hidden producer routing blocks artifact-level relation-chain support",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_04_hidden_producer_routing"
+        },
+        {
+          "actual_result": "post_hoc_trace_construction_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace is assembled from report/log after outcome inspection",
+          "blocked_gate": "source_current_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction",
+          "control_status": "failed_closed",
+          "expected_result": "post-hoc trace cannot count as medium surface state",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_05_post_hoc_trace_construction"
+        },
+        {
+          "actual_result": "no_perturbation_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later difference appears with no participant-caused perturbation",
+          "blocked_gate": "participant_to_medium_perturbation_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "no_perturbation_control",
+          "control_status": "failed_closed",
+          "expected_result": "medium trace requires a perturbation event",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_06_no_perturbation_control"
+        },
+        {
+          "actual_result": "trace_ablation_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later eligibility still claimed after declared trace removal",
+          "blocked_gate": "later_response_depends_on_medium_trace",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "trace_ablation_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace must be necessary for the later response dependency",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_07_trace_ablation_control"
+        },
+        {
+          "actual_result": "wrong_surface_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "dependency is attributed to an unrelated medium surface",
+          "blocked_gate": "declared_surface_specificity_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "wrong_surface_control",
+          "control_status": "failed_closed",
+          "expected_result": "later response must depend on the declared changed surface",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_08_wrong_surface_control"
+        },
+        {
+          "actual_result": "time_reversed_trace_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later response is used to explain an earlier trace",
+          "blocked_gate": "causal_order_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "time_reversed_trace_control",
+          "control_status": "failed_closed",
+          "expected_result": "ordered lineage must be participant -> perturbation -> trace -> later response",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_09_time_reversed_trace_control"
+        },
+        {
+          "actual_result": "medium_freeze_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "medium surface is frozen yet later response is still claimed",
+          "blocked_gate": "medium_surface_change_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_freeze_control",
+          "control_status": "failed_closed",
+          "expected_result": "surface state must change or leave a trace",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_10_medium_freeze_control"
+        },
+        {
+          "actual_result": "trace_shuffle_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace is shuffled across unrelated chains while retaining the label",
+          "blocked_gate": "relation_chain_identity_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "trace_shuffle_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace must stay in the same relation_chain_id",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_11_trace_shuffle_control"
+        },
+        {
+          "actual_result": "false_trace_injection_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "injected trace is used as evidence without participant perturbation",
+          "blocked_gate": "trace_provenance_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "false_trace_injection_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace provenance must point to the participant perturbation",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_12_false_trace_injection_control"
+        },
+        {
+          "actual_result": "decay_manipulation_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace persistence is created by manipulating decay after the outcome",
+          "blocked_gate": "trace_persistence_or_decay_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "decay_manipulation_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace persistence/decay must be declared before classification",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_13_decay_manipulation_control"
+        },
+        {
+          "actual_result": "susceptibility_inversion_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "later response changes opposite to the predeclared direction",
+          "blocked_gate": "predeclared_later_response_metric_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "susceptibility_inversion_control",
+          "control_status": "failed_closed",
+          "expected_result": "later-response metric must match predeclared direction and threshold",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_14_susceptibility_inversion_control"
+        },
+        {
+          "actual_result": "participant_label_drift_control_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "participant carrier changes identity while retaining participant label",
+          "blocked_gate": "participant_carrier_continuity_gate",
+          "blocked_rung_if_failed_open": "N30-C3",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "participant_label_drift_control",
+          "control_status": "failed_closed",
+          "expected_result": "participant carrier must remain recognizable for P2",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_15_participant_label_drift_control"
+        },
+        {
+          "actual_result": "generic_redistribution_relabel_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "generic redistribution is relabeled as shared-medium eligibility",
+          "blocked_gate": "N28_environment_effect_distinction_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "generic_redistribution_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "environment change must be specific trace-mediated eligibility, not generic redistribution",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_16_generic_redistribution_relabel"
+        },
+        {
+          "actual_result": "semantic_communication_relabel_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace influence is relabeled as semantic communication",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_communication_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks semantic communication claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_17_semantic_communication_relabel"
+        },
+        {
+          "actual_result": "semantic_coordination_relabel_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "co-response vocabulary is relabeled as semantic coordination",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_coordination_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks shared-medium coordination claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_18_semantic_coordination_relabel"
+        },
+        {
+          "actual_result": "cooperation_agency_relabel_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "participant relation is relabeled as cooperation or agency",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "cooperation_agency_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks cooperation, agency, selfhood, and identity claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_19_cooperation_agency_relabel"
+        },
+        {
+          "actual_result": "native_shared_medium_organization_relabel_reinstantiated_against_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_and_rejected",
+          "blocked_condition": "artifact-level medium trace is relabeled as native shared-medium organization",
+          "blocked_gate": "native_shared_medium_claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_shared_medium_organization_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 explicitly blocks native shared-medium organization",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_20_native_shared_medium_organization_relabel"
+        }
+      ],
+      "failed_open_control_count": 0,
+      "final_n30_c5_claim_allowed": false,
+      "final_n30_c6_claim_allowed": false,
+      "later_response_conditioned_by_medium": true,
+      "later_response_metric": "same_policy_generative_boundary_edge_eligibility_score",
+      "margin_context": {
+        "contrast_margin_vs_extractive": 0.044,
+        "contrast_margin_vs_neutral": 0.042,
+        "margin_interpretation": "narrow_threshold_margin_with_stronger_counterfactual_separation",
+        "mean_normalized_score": 1.028056,
+        "threshold_margin": 0.002
+      },
+      "medium_debt_record": {
+        "artifact_role": "i7_medium_debt_row",
+        "family": "original_generative",
+        "medium_debt_status": "artifact_level_medium_dependency_supported_with_remaining_nativity_debt",
+        "n30_fresh_runtime": false,
+        "native_shared_medium_organization_opened": false,
+        "producer_residue_status": "no_hidden_producer_or_global_controller_admitted_by_I7_controls",
+        "remaining_debt": [
+          "I6 later eligibility dependency consumed and replay/control checked in I7",
+          "I7 controls passed as artifact-level replays over inherited source-current traces",
+          "I8 closeout and post-N30 spiral handoff not yet assigned",
+          "decay curve not measured in I5-A",
+          "native shared-medium organization remains blocked"
+        ],
+        "row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+        "runtime_origin": "inherited_source_current_artifacts"
+      },
+      "medium_relation_ladder_rung": "M2_replay_control_backed_C5_candidate",
+      "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+      "minimal_shared_medium_participation_candidate_supported": true,
+      "n30_c5_candidate_supported": true,
+      "not_run_control_count": 0,
+      "participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+      "primary_layer": "primitive",
+      "producer_residue_record": {
+        "hidden_global_controller_admitted": false,
+        "hidden_producer_routing_admitted": false,
+        "producer_success_upgrades_native": false,
+        "semantic_label_used_as_evidence": false
+      },
+      "relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+      "replay_statuses": {
+        "artifact_only_replay": {
+          "artifact_sha256_match": true,
+          "manifest_count": 2,
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed"
+        },
+        "duplicate_replay": {
+          "duplicate_replay_digest_stable": true,
+          "first_replay_digest": "21588874c6c99522dc26d74edaf8e092fc11fda6b9b6622d618e75ac0a435647",
+          "rung_effect": "required_for_N30-C5",
+          "second_replay_digest": "21588874c6c99522dc26d74edaf8e092fc11fda6b9b6622d618e75ac0a435647",
+          "status": "passed"
+        },
+        "later_response_metric_recomputed": {
+          "metric_family": "generative_boundary_edge_normalized_axis_score",
+          "minimum_threshold_margin": 0.002,
+          "recomputed_mean_normalized_score": 1.028056,
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed",
+          "stored_mean_normalized_score": 1.028056
+        },
+        "snapshot_load_replay": {
+          "loaded_artifact_count": 2,
+          "loaded_artifact_roles": [
+            "susceptibility_or_eligibility_trace",
+            "coupled_relation_lineage_trace"
+          ],
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed"
+        }
+      },
+      "row_decision": "supported_N30-C5_candidate_pending_I8_closeout",
+      "row_id": "n30_i7_n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+      "row_output_digest": "d7353467cd78df7ca0910ee7287386b187d43da4ec4750f53c093b98d880dc57",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b.json",
+          "sha256": "4de77602fa8e5d85c1e52587a0ce18fc4c7cce6ba09ad3a3a3bc9bbfe62a5757",
+          "source_role": "N30_I4B_participant_boundary_support_guardrail"
+        },
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+          "sha256": "2383c8fcd54d6033a77decb7e431d50227841b66606e8ec6808f480da6d2b8d5",
+          "source_role": "N30_I5_primary_medium_surface_trace_reference"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe.json",
+          "sha256": "4e253dddf41e8d42decd51273f975478b0473dfcfd9c515ff11cea7ffecd31e5",
+          "source_role": "N28_I4A2_source_current_generative_mechanism_diversity_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_role": "N28_replay_capacity_attribution_matrix"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "a807c0d735e7f487db9e66f5a11ec97fe1b90f4b0c39d61b9b8d2bea90f55245",
+          "source_role": "N28_I4A2_source_current_runtime_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/focal_basin_stability_trace.json",
+          "sha256": "b9dbfc4573d2eae29f87bd1a126bc44de4bc9b93e24fb9710b394e0dc80278e6",
+          "source_role": "N28_I4A2_focal_basin_stability_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/neighbor_capacity_trace.json",
+          "sha256": "8ab93f31d722ece7111ff0b6e11a0ca2d8e5e5944eca08e69559ef0f9d6dad1d",
+          "source_role": "N28_I4A2_neighbor_capacity_medium_surface_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/capacity_attribution_trace.json",
+          "sha256": "505cffeb7f7a9ca30461d5bc7d0f2ce4907cf56ef33bcafc3b457adc482dc2f7",
+          "source_role": "N28_I4A2_capacity_attribution_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/extraction_leakage_trace.json",
+          "sha256": "56757c2aa686bf4fa07d66a8de6cd6575c3e8db1475842cf9ada79fb467de903",
+          "source_role": "N28_I4A2_extraction_leakage_guard_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/classification_trace.json",
+          "sha256": "dde6689c74a3741d2ba8777478538f8c4d4b79d0216de9688cdcf4513ecc3381",
+          "source_role": "N28_I4A2_classification_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/generative_extractive_core.json",
+          "sha256": "0a56b7e6c6cfba7e04149dcddf50077de092e6ae14a8b0b470f2af3ef52da89c",
+          "source_role": "N28_I4A2_generative_extractive_core"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/threshold_policy_trace.json",
+          "sha256": "3fe883df73053857bc88ce61b0cb13d5cdf1024b01b2a82fd8823d694a36cda4",
+          "source_role": "N28_I4A2_threshold_policy_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4a2_row_generative_mechanism_diversity_candidate_trace.json",
+          "sha256": "cd71aaff75506da4358588515d3b406bdee53fb81050d285c622b6ef119af8b2",
+          "source_role": "N28_I4A2_replay_trace"
+        }
+      ],
+      "source_family": "original_generative",
+      "source_iteration": "I6",
+      "source_row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate"
+    },
+    {
+      "all_required_controls_failed_closed": true,
+      "all_required_replay_modes_passed": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_susceptibility_or_eligibility_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_later_eligibility_i6b_artifacts/alternative_susceptibility_or_eligibility_trace.json",
+          "sha256": "86066e84f0a7194ecf1b46dbd1fbc28aff84db5e6ff4cf5146bfc04cdd296092"
+        },
+        {
+          "artifact_role": "alternative_coupled_relation_lineage_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_later_eligibility_i6b_artifacts/alternative_coupled_relation_lineage_trace.json",
+          "sha256": "44367d9cb3dad566e40d8273aa340bbc4a8dd37ddadb6f21d4475555739b46b2"
+        }
+      ],
+      "blocked_relabels": [
+        "final_n30_c6",
+        "fixed_n31_selection_without_spiral_review",
+        "shared_medium_coordination",
+        "parent_basin_modulation",
+        "resonant_alignment",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "claim_ceiling": "replay/control-backed C5 candidate pending I8 classification",
+      "control_count": 20,
+      "control_results": [
+        {
+          "actual_result": "direct_message_only_relabel_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "direct sender-receiver packet relabeled as shared medium",
+          "blocked_gate": "medium_surface_non_private_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "direct_message_only_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "direct message path lacks declared medium-surface conditioning",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_01_direct_message_only_relabel"
+        },
+        {
+          "actual_result": "medium_surface_label_only_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "surface name exists but no source-current medium surface change exists",
+          "blocked_gate": "declared_medium_surface_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_surface_label_only",
+          "control_status": "failed_closed",
+          "expected_result": "label-only surface cannot satisfy perturbation or trace gate",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_02_medium_surface_label_only"
+        },
+        {
+          "actual_result": "hidden_global_controller_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "global controller changes later eligibility outside the medium surface",
+          "blocked_gate": "later_response_depends_on_medium_trace",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_global_controller",
+          "control_status": "failed_closed",
+          "expected_result": "later response is controller-carried instead of trace-carried",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_03_hidden_global_controller"
+        },
+        {
+          "actual_result": "hidden_producer_routing_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "producer routes later response without visible medium dependency",
+          "blocked_gate": "producer_residue_and_trace_dependency_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_routing",
+          "control_status": "failed_closed",
+          "expected_result": "hidden producer routing blocks artifact-level relation-chain support",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_04_hidden_producer_routing"
+        },
+        {
+          "actual_result": "post_hoc_trace_construction_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace is assembled from report/log after outcome inspection",
+          "blocked_gate": "source_current_trace_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction",
+          "control_status": "failed_closed",
+          "expected_result": "post-hoc trace cannot count as medium surface state",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_05_post_hoc_trace_construction"
+        },
+        {
+          "actual_result": "no_perturbation_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "later difference appears with no participant-caused perturbation",
+          "blocked_gate": "participant_to_medium_perturbation_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "no_perturbation_control",
+          "control_status": "failed_closed",
+          "expected_result": "medium trace requires a perturbation event",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_06_no_perturbation_control"
+        },
+        {
+          "actual_result": "trace_ablation_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "later eligibility still claimed after declared trace removal",
+          "blocked_gate": "later_response_depends_on_medium_trace",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "trace_ablation_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace must be necessary for the later response dependency",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_07_trace_ablation_control"
+        },
+        {
+          "actual_result": "wrong_surface_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "dependency is attributed to an unrelated medium surface",
+          "blocked_gate": "declared_surface_specificity_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "wrong_surface_control",
+          "control_status": "failed_closed",
+          "expected_result": "later response must depend on the declared changed surface",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_08_wrong_surface_control"
+        },
+        {
+          "actual_result": "time_reversed_trace_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "later response is used to explain an earlier trace",
+          "blocked_gate": "causal_order_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "time_reversed_trace_control",
+          "control_status": "failed_closed",
+          "expected_result": "ordered lineage must be participant -> perturbation -> trace -> later response",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_09_time_reversed_trace_control"
+        },
+        {
+          "actual_result": "medium_freeze_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "medium surface is frozen yet later response is still claimed",
+          "blocked_gate": "medium_surface_change_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "medium_freeze_control",
+          "control_status": "failed_closed",
+          "expected_result": "surface state must change or leave a trace",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_10_medium_freeze_control"
+        },
+        {
+          "actual_result": "trace_shuffle_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace is shuffled across unrelated chains while retaining the label",
+          "blocked_gate": "relation_chain_identity_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "trace_shuffle_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace must stay in the same relation_chain_id",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_11_trace_shuffle_control"
+        },
+        {
+          "actual_result": "false_trace_injection_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "injected trace is used as evidence without participant perturbation",
+          "blocked_gate": "trace_provenance_gate",
+          "blocked_rung_if_failed_open": "N30-C4",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "false_trace_injection_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace provenance must point to the participant perturbation",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_12_false_trace_injection_control"
+        },
+        {
+          "actual_result": "decay_manipulation_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace persistence is created by manipulating decay after the outcome",
+          "blocked_gate": "trace_persistence_or_decay_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "decay_manipulation_control",
+          "control_status": "failed_closed",
+          "expected_result": "trace persistence/decay must be declared before classification",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_13_decay_manipulation_control"
+        },
+        {
+          "actual_result": "susceptibility_inversion_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "later response changes opposite to the predeclared direction",
+          "blocked_gate": "predeclared_later_response_metric_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "susceptibility_inversion_control",
+          "control_status": "failed_closed",
+          "expected_result": "later-response metric must match predeclared direction and threshold",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_14_susceptibility_inversion_control"
+        },
+        {
+          "actual_result": "participant_label_drift_control_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "participant carrier changes identity while retaining participant label",
+          "blocked_gate": "participant_carrier_continuity_gate",
+          "blocked_rung_if_failed_open": "N30-C3",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "participant_label_drift_control",
+          "control_status": "failed_closed",
+          "expected_result": "participant carrier must remain recognizable for P2",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_15_participant_label_drift_control"
+        },
+        {
+          "actual_result": "generic_redistribution_relabel_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "generic redistribution is relabeled as shared-medium eligibility",
+          "blocked_gate": "N28_environment_effect_distinction_gate",
+          "blocked_rung_if_failed_open": "N30-C5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "generic_redistribution_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "environment change must be specific trace-mediated eligibility, not generic redistribution",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_16_generic_redistribution_relabel"
+        },
+        {
+          "actual_result": "semantic_communication_relabel_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "trace influence is relabeled as semantic communication",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_communication_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks semantic communication claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_17_semantic_communication_relabel"
+        },
+        {
+          "actual_result": "semantic_coordination_relabel_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "co-response vocabulary is relabeled as semantic coordination",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_coordination_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks shared-medium coordination claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_18_semantic_coordination_relabel"
+        },
+        {
+          "actual_result": "cooperation_agency_relabel_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "participant relation is relabeled as cooperation or agency",
+          "blocked_gate": "claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "cooperation_agency_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 blocks cooperation, agency, selfhood, and identity claims",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_19_cooperation_agency_relabel"
+        },
+        {
+          "actual_result": "native_shared_medium_organization_relabel_reinstantiated_against_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate_and_rejected",
+          "blocked_condition": "artifact-level medium trace is relabeled as native shared-medium organization",
+          "blocked_gate": "native_shared_medium_claim_boundary_gate",
+          "blocked_rung_if_failed_open": "N30-C6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_shared_medium_organization_relabel",
+          "control_status": "failed_closed",
+          "expected_result": "N30 explicitly blocks native shared-medium organization",
+          "rung_effect": "N30-C5_candidate_preserved_because_false_positive_path_failed_closed",
+          "source_i3_null_row_id": "n30_i3_null_20_native_shared_medium_organization_relabel"
+        }
+      ],
+      "failed_open_control_count": 0,
+      "final_n30_c5_claim_allowed": false,
+      "final_n30_c6_claim_allowed": false,
+      "later_response_conditioned_by_medium": true,
+      "later_response_metric": "circulatory_route_conductance_eligibility_margin",
+      "margin_context": {
+        "lobe_exchange_margin": 0.02,
+        "margin_interpretation": "stronger_lobe_exchange_plus_larger_raw_stress_gate_headroom",
+        "threshold_margin": 0.01,
+        "threshold_margin_ratio_vs_i6": 5.0
+      },
+      "medium_debt_record": {
+        "artifact_role": "i7_medium_debt_row",
+        "family": "alternative_circulatory",
+        "medium_debt_status": "artifact_level_medium_dependency_supported_with_remaining_nativity_debt",
+        "n30_fresh_runtime": false,
+        "native_shared_medium_organization_opened": false,
+        "producer_residue_status": "no_hidden_producer_or_global_controller_admitted_by_I7_controls",
+        "remaining_debt": [
+          "I6 later eligibility dependency consumed and replay/control checked in I7",
+          "I7 controls passed as artifact-level replays over inherited source-current traces",
+          "I8 closeout and post-N30 spiral handoff not yet assigned",
+          "alternative source uses N28 I4-F circulation artifacts rather than fresh N30 runtime",
+          "native shared-medium organization remains blocked"
+        ],
+        "row_id": "n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate",
+        "runtime_origin": "inherited_source_current_artifacts"
+      },
+      "medium_relation_ladder_rung": "M2_replay_control_backed_C5_candidate",
+      "medium_surface_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+      "minimal_shared_medium_participation_candidate_supported": true,
+      "n30_c5_candidate_supported": true,
+      "not_run_control_count": 0,
+      "participant_ladder_rung": "P2_candidate_alternative_source_fixture",
+      "primary_layer": "primitive",
+      "producer_residue_record": {
+        "hidden_global_controller_admitted": false,
+        "hidden_producer_routing_admitted": false,
+        "producer_success_upgrades_native": false,
+        "semantic_label_used_as_evidence": false
+      },
+      "relation_chain_id": "n30_i5c_i4f_focal_to_circulatory_medium_trace_chain_route_conductance_eligibility",
+      "replay_statuses": {
+        "artifact_only_replay": {
+          "artifact_sha256_match": true,
+          "manifest_count": 2,
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed"
+        },
+        "duplicate_replay": {
+          "duplicate_replay_digest_stable": true,
+          "first_replay_digest": "27d5d2ea4c89eea379c46561f59a36bbe7b15580e617a900e99e8d78002a865a",
+          "rung_effect": "required_for_N30-C5",
+          "second_replay_digest": "27d5d2ea4c89eea379c46561f59a36bbe7b15580e617a900e99e8d78002a865a",
+          "status": "passed"
+        },
+        "later_response_metric_recomputed": {
+          "metric_family": "circulatory_route_conductance_lobe_exchange",
+          "mixed_lobe_delta_min": 0.04,
+          "neighbor_capacity_stress_margin": 0.01,
+          "recomputed_minimum_lobe_exchange_margin": 0.02,
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed",
+          "stored_minimum_lobe_exchange_margin": 0.02
+        },
+        "snapshot_load_replay": {
+          "loaded_artifact_count": 2,
+          "loaded_artifact_roles": [
+            "alternative_susceptibility_or_eligibility_trace",
+            "alternative_coupled_relation_lineage_trace"
+          ],
+          "rung_effect": "required_for_N30-C5",
+          "status": "passed"
+        }
+      },
+      "row_decision": "supported_N30-C5_candidate_pending_I8_closeout",
+      "row_id": "n30_i7_n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate",
+      "row_output_digest": "957a24f8cf75dc88af8b32349e3d273a9144e8b130676d1329a2296487c291bd",
+      "source_current_inputs": [],
+      "source_family": "alternative_circulatory",
+      "source_iteration": "I6-B",
+      "source_row_id": "n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate"
+    }
+  ],
+  "failed_open_control_count": 0,
+  "not_run_control_count": 0,
+  "replay_control_matrix_digest": "e77eb3c2873b56641720e629e0bba6baa9786d71a0c2da63ee8705c467681f9b",
+  "required_control_ids": [
+    "direct_message_only_relabel",
+    "medium_surface_label_only",
+    "hidden_global_controller",
+    "hidden_producer_routing",
+    "post_hoc_trace_construction",
+    "no_perturbation_control",
+    "trace_ablation_control",
+    "wrong_surface_control",
+    "time_reversed_trace_control",
+    "medium_freeze_control",
+    "trace_shuffle_control",
+    "false_trace_injection_control",
+    "decay_manipulation_control",
+    "susceptibility_inversion_control",
+    "participant_label_drift_control",
+    "generic_redistribution_relabel",
+    "semantic_communication_relabel",
+    "semantic_coordination_relabel",
+    "cooperation_agency_relabel",
+    "native_shared_medium_organization_relabel"
+  ],
+  "required_replay_modes": [
+    "artifact_only_replay",
+    "duplicate_replay",
+    "snapshot_load_replay",
+    "later_response_metric_recomputed"
+  ],
+  "source_i6_output_digest": "44281258a0b7f62fa01a067bd4e308c4d35996e7c36333e2987458c672d3a7f4",
+  "source_i6a_output_digest": "145d5bf2acda7b049df43c5c9b5742fb33920e0dfc11d955cd795b5620cecad7",
+  "source_i6b_output_digest": "df9d1789199368ac62385e3e0052d2dcfaf4858bb44eecc338e66b07240f10f5",
+  "source_i6c_output_digest": "bb4930b3423156f4aac9b023cb14efb3c7bc8d707518395b2b95fe79fd39a403",
+  "trace_id": "n30_i7_replay_control_matrix"
+}

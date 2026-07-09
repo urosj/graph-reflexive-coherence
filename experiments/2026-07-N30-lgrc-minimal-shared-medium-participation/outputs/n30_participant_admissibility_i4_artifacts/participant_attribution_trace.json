@@ -1,0 +1,29 @@
+{
+  "artifact_role": "participant_attribution_trace",
+  "attribution_source": "N27 source-current pre/post basin signature and declared mapping",
+  "boundary_mapping_preserved": true,
+  "coherence_preserved_above_floor": true,
+  "edge_mapping": {
+    "alpha_core-alpha_support": "beta_core-beta_support",
+    "alpha_support-alpha_boundary": "beta_support-beta_boundary"
+  },
+  "flux_balance_preserved_within_bound": true,
+  "hidden_support_reconstruction_absent": true,
+  "mapping_declared_before_use": true,
+  "mapping_digest_excludes_outcome": true,
+  "mapping_source_backed": true,
+  "node_mapping": {
+    "alpha_boundary": "beta_boundary",
+    "alpha_core": "beta_core",
+    "alpha_support": "beta_support"
+  },
+  "participant_attribution_trace_digest": "1f68bacc3842e20c8572a0160f0eb7cff4db9f0d5377f659da6820fe3d4be361",
+  "participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+  "runtime_config_digest": "a67e00cc472ce1b3751a365847e07fd77ad9b346d864b87d79ee3aee960b9cfd",
+  "runtime_trace_id": "n27_i4_source_current_runtime_trace",
+  "source_current_trace_kind": "deterministic_configuration_transfer_fixture",
+  "source_derived_report_only": false,
+  "support_preserved_above_floor": true,
+  "support_reconstruction_counted_as_preservation": false,
+  "trace_id": "n30_i4_participant_attribution_trace"
+}

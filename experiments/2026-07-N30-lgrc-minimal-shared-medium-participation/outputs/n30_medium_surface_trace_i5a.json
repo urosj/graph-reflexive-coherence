@@ -1,0 +1,1022 @@
+{
+  "acceptance_state": "accepted_mechanism_diverse_medium_surface_trace_M1_strengthening_no_later_eligibility",
+  "all_artifact_sha256_match_file_contents": true,
+  "artifact_manifest": [
+    {
+      "artifact_role": "medium_surface_declaration_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/medium_surface_declaration_trace.json",
+      "sha256": "ac07fca8e123abace2057f748a9a1063fc058e382ac7f771f5da353140e45a3f"
+    },
+    {
+      "artifact_role": "participant_medium_separation_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/participant_medium_separation_trace.json",
+      "sha256": "b25bd1e96cad278437a1ec60cff683861d97bee8d8e0054efcc008c2cf2b3171"
+    },
+    {
+      "artifact_role": "medium_perturbation_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/medium_perturbation_trace.json",
+      "sha256": "c3ffa018cdc966aa44ae923b97a679b1b4297da54b6bc36fc23a37d748d06707"
+    },
+    {
+      "artifact_role": "trace_or_surface_change",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/trace_or_surface_change.json",
+      "sha256": "28f9af620f7156c3b93c6e236bd0813ee65c297e08bbcc0a37ee3add202acc15"
+    },
+    {
+      "artifact_role": "trace_persistence_or_decay",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/trace_persistence_or_decay.json",
+      "sha256": "b9a7e1e067c54d076ea2b323812aa50ed86337d3d340ef7e5ad6a8271dcda85c"
+    },
+    {
+      "artifact_role": "medium_debt_record",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/medium_debt_record.json",
+      "sha256": "d45e846043b97dc88ec121424b3f94a76ec988184e180daef801ae07b3559189"
+    },
+    {
+      "artifact_role": "i5a_medium_leakage_guard_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/i5a_medium_leakage_guard_trace.json",
+      "sha256": "f2e09956807c8089a07560ed8b44b9c19dc8d0b3b0da435743772bd9690525e6"
+    },
+    {
+      "artifact_role": "i5a_scope_classification",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/i5a_scope_classification.json",
+      "sha256": "26804226df2f7bae6e26c71cb19ffc34bf38721a20bc5588332822c3f85336a4"
+    },
+    {
+      "artifact_role": "i5a_vs_i5_medium_trace_comparison",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/i5a_vs_i5_medium_trace_comparison.json",
+      "sha256": "559f844628a827348481e54c6f5ca4a436a0dc9fc4d678368beca7aa3b80e7f9"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "acceptance_threshold": "not_declared_until_iteration_6",
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "medium_surface_declaration_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/medium_surface_declaration_trace.json",
+          "sha256": "ac07fca8e123abace2057f748a9a1063fc058e382ac7f771f5da353140e45a3f"
+        },
+        {
+          "artifact_role": "participant_medium_separation_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/participant_medium_separation_trace.json",
+          "sha256": "b25bd1e96cad278437a1ec60cff683861d97bee8d8e0054efcc008c2cf2b3171"
+        },
+        {
+          "artifact_role": "medium_perturbation_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/medium_perturbation_trace.json",
+          "sha256": "c3ffa018cdc966aa44ae923b97a679b1b4297da54b6bc36fc23a37d748d06707"
+        },
+        {
+          "artifact_role": "trace_or_surface_change",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/trace_or_surface_change.json",
+          "sha256": "28f9af620f7156c3b93c6e236bd0813ee65c297e08bbcc0a37ee3add202acc15"
+        },
+        {
+          "artifact_role": "trace_persistence_or_decay",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/trace_persistence_or_decay.json",
+          "sha256": "b9a7e1e067c54d076ea2b323812aa50ed86337d3d340ef7e5ad6a8271dcda85c"
+        },
+        {
+          "artifact_role": "medium_debt_record",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/medium_debt_record.json",
+          "sha256": "d45e846043b97dc88ec121424b3f94a76ec988184e180daef801ae07b3559189"
+        },
+        {
+          "artifact_role": "i5a_medium_leakage_guard_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/i5a_medium_leakage_guard_trace.json",
+          "sha256": "f2e09956807c8089a07560ed8b44b9c19dc8d0b3b0da435743772bd9690525e6"
+        },
+        {
+          "artifact_role": "i5a_scope_classification",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/i5a_scope_classification.json",
+          "sha256": "26804226df2f7bae6e26c71cb19ffc34bf38721a20bc5588332822c3f85336a4"
+        },
+        {
+          "artifact_role": "i5a_vs_i5_medium_trace_comparison",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5a_artifacts/i5a_vs_i5_medium_trace_comparison.json",
+          "sha256": "559f844628a827348481e54c6f5ca4a436a0dc9fc4d678368beca7aa3b80e7f9"
+        }
+      ],
+      "baseline_window": "not_declared_until_iteration_6",
+      "blocked_relabels": [
+        "trace_mediated_eligibility",
+        "minimal_shared_medium_participation",
+        "shared_medium_coordination",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "boundary_accessible_medium_surface": true,
+      "causal_order_verified": "partial_order_verified_for_surface_change_only",
+      "claim_ceiling": "N30-C4 mechanism-diverse medium perturbation / trace candidate only; no later eligibility dependency, minimal shared-medium participation, shared-medium coordination, or native shared-medium organization",
+      "control_results": [
+        {
+          "actual_result": "neighbor_capacity_gain_present",
+          "blocked_condition": "focal stability exists without regime-specific environment-side capacity evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "focal_survival_only_as_regime_control",
+          "control_status": "passed",
+          "expected_result": "claim blocked if only focal survival is present",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "replayed_regime=generative",
+          "blocked_condition": "capacity attribution does not reproduce the source regime label",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "capacity_attribution_control",
+          "control_status": "passed",
+          "expected_result": "row demoted if replay classifier changes the regime",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "merge_leakage_below_ceiling",
+          "blocked_condition": "merge/leakage is treated as generative support or hidden success",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_as_support_control",
+          "control_status": "passed",
+          "expected_result": "merge/leakage cannot masquerade as support",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "source-current capacity traces and core digest replayed",
+          "blocked_condition": "regime label exists without source-current metrics",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_regime_control",
+          "control_status": "passed",
+          "expected_result": "label-only row rejected",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "N28 source-current row metrics drive replay classification",
+          "blocked_condition": "N27 transfer success is used as N28 regime evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "transfer_success_as_n28_success_control",
+          "control_status": "passed",
+          "expected_result": "N27 remains context only",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "all unsafe claim flags false",
+          "blocked_condition": "environment exchange is relabeled as semantic cooperation or agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_cooperation_relabel_control",
+          "control_status": "passed",
+          "expected_result": "unsafe promotions remain blocked",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "deltas=0.141/0.084/0.132/0.127",
+          "blocked_condition": "metric signs do not support the replayed regime",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "capacity_metric_sign_control",
+          "control_status": "passed",
+          "expected_result": "row demoted if signs fail the frozen classifier",
+          "rung_effect": "GE4_preserved"
+        }
+      ],
+      "control_results_classification": "source_guardrail_controls_only_not_N30_relation_controls",
+      "counterfactual_row_id": "pending_iteration_6_or_7",
+      "derived_report_only": false,
+      "direct_message_present": false,
+      "direct_message_status": "absent_from_N28_medium_surface_trace",
+      "effect_size": "not_run_until_iteration_6",
+      "expected_direction": "not_declared_until_iteration_6",
+      "fresh_n30_runtime_evidence": false,
+      "i5_replaced": false,
+      "i5a_claim_type": "inherited_medium_surface_trace_admission",
+      "i5a_replaces_i5": false,
+      "i5a_scope_classification": {
+        "artifact_role": "i5a_scope_classification",
+        "c4_c5_rule": "C4 = changed medium surface exists; C5 = later response depends on that changed surface.",
+        "fresh_n30_runtime_evidence": false,
+        "i5a_claim_type": "inherited_medium_surface_trace_admission",
+        "i5a_positive_scope": "inherited_source_current_medium_surface_trace_only",
+        "i6_dependency_required": true,
+        "i6_lineage_rule": "I6 must consume this exact relation_chain_id or declare a parent_relation_chain_id plus a justified fork.",
+        "n28_artifacts_allowed_to_support": [
+          "N30-C4_medium_perturbation_trace_candidate",
+          "M1_candidate"
+        ],
+        "n28_artifacts_not_allowed_to_support": [
+          "N30-C5_trace_mediated_eligibility",
+          "M2_later_response_conditioned_by_medium",
+          "minimal_shared_medium_participation",
+          "shared_medium_coordination",
+          "native_shared_medium_organization"
+        ],
+        "n28_controls_classified_as": "source_guardrail_controls_not_N30_relation_controls",
+        "n30_fresh_runtime": false,
+        "n30_relation_controls": {
+          "classification": "not_run_for_I5_A_C4_surface_trace_admission",
+          "required_control_ids": [
+            "direct_message_removal_control",
+            "no_perturbation_control",
+            "trace_ablation_control",
+            "wrong_surface_control",
+            "time_reversed_trace_control",
+            "medium_freeze_control",
+            "trace_shuffle_control",
+            "false_trace_injection_control",
+            "decay_manipulation_control",
+            "susceptibility_inversion_control",
+            "hidden_producer_global_controller_control"
+          ],
+          "status": "pending_iteration_7"
+        },
+        "row_participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+        "runtime_origin": "inherited_N28_source_current_artifact",
+        "scope_classification_digest": "023104dcab0b1aa9884ec1df934a6bb221f40ded0aa380cafe8135a19e51caa8",
+        "shared_local_scope_status": "shared_local_candidate_pending_later_encounter",
+        "source_guardrail_control_ids": [
+          "capacity_attribution_control",
+          "label_only_regime_control",
+          "merge_leakage_as_support_control",
+          "transfer_success_as_n28_success_control"
+        ],
+        "source_i4b_strongest_participant_guardrail": "P4_candidate",
+        "strongest_N30_I5A_row_participant_rung": "P2_candidate",
+        "supports_M1": true,
+        "supports_M2": false,
+        "supports_N30_C4": true,
+        "supports_N30_C5": false,
+        "trace_id": "n30_i5a_scope_classification"
+      },
+      "i5a_strengthens_i5": true,
+      "i5a_surface_trace_guardrail_control_ids": [
+        "capacity_attribution_control",
+        "label_only_regime_control",
+        "merge_leakage_as_support_control",
+        "transfer_success_as_n28_success_control"
+      ],
+      "i5a_vs_i5_comparison": {
+        "artifact_role": "i5a_vs_i5_medium_trace_comparison",
+        "claim_boundary": "I5-A strengthens I5 as a second source-current medium-surface trace mechanism. It does not replace I5, widen M1 into M2, or support minimal shared-medium participation.",
+        "comparison_digest": "b692b652010e3f94ea78fafc55db803db993b7f33b7ad81ecaea79aa6f8c23bc",
+        "delta_comparison": {
+          "i5_surface_change_fields": {
+            "environment_capacity_delta": 0.134,
+            "neighbor_boundary_delta": 0.145,
+            "neighbor_distinguishability_delta": 0.154,
+            "neighbor_support_delta": 0.087
+          },
+          "i5a_has_larger_all_deltas": false,
+          "i5a_surface_change_fields": {
+            "environment_capacity_delta": 0.127,
+            "neighbor_boundary_delta": 0.132,
+            "neighbor_distinguishability_delta": 0.141,
+            "neighbor_support_delta": 0.084
+          }
+        },
+        "i5_mechanism": "single_neighbor_capacity_shell_strengthening",
+        "i5_primary_medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+        "i5_replaced": false,
+        "i5_source_output": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+        "i5_source_output_digest": "f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971",
+        "i5a_mechanism": "split_shell_capacity_growth_with_delayed_boundary_thickening",
+        "i5a_medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+        "i5a_replaces_i5": false,
+        "i5a_strengthens_i5": true,
+        "margin_upgrade_claimed": false,
+        "mechanism_distinction_from_i5": "I5 consumes the N28 I4-A single-shell strengthening source. I5-A consumes the N28 I4-A2 split-shell / delayed-boundary mechanism source.",
+        "source_mechanism_note": "I4-A strengthens I4 by margin in a beta local shell; I4-A2 tests a distinct split-shell/delayed-boundary mechanism.",
+        "strengthening_kind": "mechanism_diversity_and_repeatability; I5-A shows that M1 surface-trace evidence is not confined to the I5 single-shell strengthening mechanism",
+        "trace_id": "n30_i5a_vs_i5_medium_trace_comparison"
+      },
+      "later_response_conditioned_by_medium": false,
+      "later_response_event_id": "not_run_until_iteration_6",
+      "later_response_metric": "not_declared_until_iteration_6",
+      "medium_ablation_control_result": "pending_iteration_7",
+      "medium_debt_record": {
+        "artifact_role": "medium_debt_record",
+        "direct_message_present": false,
+        "direct_message_status": "absent_from_N28_medium_surface_trace",
+        "hidden_producer_route_detected": false,
+        "medium_debt_record_digest": "a0a46f3425d9dca19a41647612d8f858cbdca3645e86cffb35c7d70a0d8fe3a2",
+        "medium_debt_status": "medium_surface_trace_supported_later_dependency_pending",
+        "producer_residue_status": "no_hidden_capacity_policy_or_producer_label_used_as_evidence",
+        "remaining_debt": [
+          "later eligibility dependency not tested until I6",
+          "runtime controls over actual N30 relation chain pending I7",
+          "decay curve not measured in I5-A",
+          "native shared-medium organization blocked"
+        ],
+        "trace_id": "n30_i5a_medium_debt_record"
+      },
+      "medium_relation_ladder_rung": "M1_candidate",
+      "medium_surface_carrier": {
+        "post_state": {
+          "environment_basin_forming_capacity": 0.708,
+          "neighbor_boundary_integrity": 0.718,
+          "neighbor_distinguishability": 0.753,
+          "neighbor_support_floor": 0.75
+        },
+        "pre_state": {
+          "environment_basin_forming_capacity": 0.581,
+          "neighbor_boundary_integrity": 0.586,
+          "neighbor_distinguishability": 0.612,
+          "neighbor_support_floor": 0.666
+        },
+        "source_trace_id": "n28_i4a2_neighbor_capacity_trace",
+        "surface_fields": [
+          "neighbor_distinguishability",
+          "neighbor_support_floor",
+          "neighbor_boundary_integrity",
+          "environment_basin_forming_capacity"
+        ],
+        "surface_kind": "neighbor_capacity_shell"
+      },
+      "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+      "medium_surface_scope": "shared_local",
+      "medium_surface_scope_status": "shared_local_candidate_pending_later_encounter",
+      "n30_fresh_runtime": false,
+      "n30_relation_controls": {
+        "classification": "not_run_for_I5_A_C4_surface_trace_admission",
+        "required_control_ids": [
+          "direct_message_removal_control",
+          "no_perturbation_control",
+          "trace_ablation_control",
+          "wrong_surface_control",
+          "time_reversed_trace_control",
+          "medium_freeze_control",
+          "trace_shuffle_control",
+          "false_trace_injection_control",
+          "decay_manipulation_control",
+          "susceptibility_inversion_control",
+          "hidden_producer_global_controller_control"
+        ],
+        "status": "pending_iteration_7"
+      },
+      "normalization_denominator": "not_declared_until_iteration_6",
+      "participant_attribution_trace": {
+        "artifact_role": "participant_medium_separation_trace",
+        "local_n28_participant_basis": {
+          "focal_basin_id": "n28_i4a2_focal_basin_epsilon",
+          "focal_coherence_floor_preserved": true,
+          "focal_stability_preserved": true,
+          "focal_support_floor_preserved": true,
+          "replay_passed": true
+        },
+        "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+        "participant_admissibility_guardrail_source": {
+          "guardrail_scope": "I4-B establishes participant-side readiness discipline; it is not imported as proof that the N27 carrier itself perturbed the N28 medium surface.",
+          "source": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b.json",
+          "strongest_participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+          "strongest_participant_ladder_rung": "P4_candidate"
+        },
+        "participant_carrier_id": "n28_i4a2_focal_basin_epsilon",
+        "participant_medium_distinct": true,
+        "participant_medium_separation_argument": "The participant side is the N28 focal basin; the medium surface is the distinct split-shell neighbor capacity surface. The row uses I4-B as a participant discipline guardrail while the load-bearing medium trace comes from N28 I4-A2 source-current artifacts.",
+        "participant_medium_separation_digest": "bdfc9f377bbdba41382d9d79ffe12a44d86af397e7f14cb6ec3793ae9dc6f320",
+        "same_identifier_blocks_c5_c6": false,
+        "trace_id": "n30_i5a_participant_medium_separation_trace"
+      },
+      "participant_carrier": {
+        "carrier_kind": "N28_focal_basin",
+        "focal_basin_id": "n28_i4a2_focal_basin_epsilon",
+        "focal_coherence_floor_preserved": true,
+        "focal_signature_digest": "9e9bf80529b5fa8a835322be9acbcb43f7cd2902096cf34c018a1d719506ffdc",
+        "focal_stability_preserved": true,
+        "focal_support_floor_preserved": true
+      },
+      "participant_carrier_id": "n28_i4a2_focal_basin_epsilon",
+      "participant_event_id": "n30_i5a_n28_i4a2_focal_basin_environment_event",
+      "participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+      "participant_medium_distinct": true,
+      "participant_medium_separation_argument": "The participant side is the N28 focal basin; the medium surface is the distinct split-shell neighbor capacity surface. The row uses I4-B as a participant discipline guardrail while the load-bearing medium trace comes from N28 I4-A2 source-current artifacts.",
+      "participant_persistence_window": [
+        "N28_I4A2_step_0_focal_state",
+        "N28_I4A2_step_1_focal_state",
+        "N28_I5_replay_trace"
+      ],
+      "perturbation_event_id": "n30_i5a_n28_i4a2_neighbor_surface_perturbation",
+      "perturbation_trace": {
+        "artifact_role": "medium_perturbation_trace",
+        "attribution_result": "source_current_split_shell_neighbor_capacity_improvement",
+        "capacity_attribution_basis": [
+          "neighbor_distinguishability_delta",
+          "neighbor_support_delta",
+          "neighbor_boundary_delta",
+          "environment_capacity_delta"
+        ],
+        "capacity_attribution_trace_id": "n28_i4a2_capacity_attribution_trace",
+        "hidden_capacity_attribution_policy_used": false,
+        "medium_perturbation_trace_digest": "2472d9682205df32b43c151f4647ee12123784f6622e764407b00e3aa3216b20",
+        "medium_segmentation_policy_hidden": false,
+        "n27_transfer_success_used_as_n28_success": false,
+        "participant_event_id": "n30_i5a_n28_i4a2_focal_basin_environment_event",
+        "participant_to_medium_causal_closure_status": "not_finalized_until_I6_I7; I5-A records mechanism-diverse source-current perturbation and surface change, not later eligibility dependence",
+        "perturbation_event_id": "n30_i5a_n28_i4a2_neighbor_surface_perturbation",
+        "producer_generativity_label_used_as_evidence": false,
+        "relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain",
+        "source_current_trace_kind": "source_current_geometric_trace_fixture",
+        "source_runtime_trace_id": "n28_i4a2_generative_mechanism_diversity_runtime_trace",
+        "trace_id": "n30_i5a_medium_perturbation_trace"
+      },
+      "primary_layer": "primitive",
+      "producer_residue_record": {
+        "hidden_capacity_attribution_policy_used": false,
+        "medium_segmentation_policy_hidden": false,
+        "producer_generativity_label_used_as_evidence": false
+      },
+      "relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain",
+      "replay_statuses": {
+        "artifact_replay": "passed",
+        "classification_replay": "passed",
+        "duplicate_replay": "passed",
+        "snapshot_load_replay": "passed"
+      },
+      "response_window": "not_declared_until_iteration_6",
+      "row_chain_decision": "C4_medium_perturbation_trace_candidate_only",
+      "row_decision": "supported_medium_surface_trace_candidate_only",
+      "row_id": "n30_i5a_row_01_n28_i4a2_mechanism_diverse_medium_surface_trace_candidate",
+      "row_output_digest": "9ba64574e0803fad4465400f70f356a244e0faab3380993889932db8ca1c9533",
+      "row_participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+      "runtime_origin": "inherited_N28_source_current_artifact",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b.json",
+          "sha256": "4de77602fa8e5d85c1e52587a0ce18fc4c7cce6ba09ad3a3a3bc9bbfe62a5757",
+          "source_role": "N30_I4B_participant_boundary_support_guardrail"
+        },
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+          "sha256": "2383c8fcd54d6033a77decb7e431d50227841b66606e8ec6808f480da6d2b8d5",
+          "source_role": "N30_I5_primary_medium_surface_trace_reference"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe.json",
+          "sha256": "4e253dddf41e8d42decd51273f975478b0473dfcfd9c515ff11cea7ffecd31e5",
+          "source_role": "N28_I4A2_source_current_generative_mechanism_diversity_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+          "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+          "source_role": "N28_replay_capacity_attribution_matrix"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "a807c0d735e7f487db9e66f5a11ec97fe1b90f4b0c39d61b9b8d2bea90f55245",
+          "source_role": "N28_I4A2_source_current_runtime_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/focal_basin_stability_trace.json",
+          "sha256": "b9dbfc4573d2eae29f87bd1a126bc44de4bc9b93e24fb9710b394e0dc80278e6",
+          "source_role": "N28_I4A2_focal_basin_stability_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/neighbor_capacity_trace.json",
+          "sha256": "8ab93f31d722ece7111ff0b6e11a0ca2d8e5e5944eca08e69559ef0f9d6dad1d",
+          "source_role": "N28_I4A2_neighbor_capacity_medium_surface_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/capacity_attribution_trace.json",
+          "sha256": "505cffeb7f7a9ca30461d5bc7d0f2ce4907cf56ef33bcafc3b457adc482dc2f7",
+          "source_role": "N28_I4A2_capacity_attribution_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/extraction_leakage_trace.json",
+          "sha256": "56757c2aa686bf4fa07d66a8de6cd6575c3e8db1475842cf9ada79fb467de903",
+          "source_role": "N28_I4A2_extraction_leakage_guard_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/classification_trace.json",
+          "sha256": "dde6689c74a3741d2ba8777478538f8c4d4b79d0216de9688cdcf4513ecc3381",
+          "source_role": "N28_I4A2_classification_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/generative_extractive_core.json",
+          "sha256": "0a56b7e6c6cfba7e04149dcddf50077de092e6ae14a8b0b470f2af3ef52da89c",
+          "source_role": "N28_I4A2_generative_extractive_core"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/threshold_policy_trace.json",
+          "sha256": "3fe883df73053857bc88ce61b0cb13d5cdf1024b01b2a82fd8823d694a36cda4",
+          "source_role": "N28_I4A2_threshold_policy_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4a2_row_generative_mechanism_diversity_candidate_trace.json",
+          "sha256": "cd71aaff75506da4358588515d3b406bdee53fb81050d285c622b6ef119af8b2",
+          "source_role": "N28_I4A2_replay_trace"
+        }
+      ],
+      "source_guardrail_controls": [
+        {
+          "actual_result": "neighbor_capacity_gain_present",
+          "blocked_condition": "focal stability exists without regime-specific environment-side capacity evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "focal_survival_only_as_regime_control",
+          "control_status": "passed",
+          "expected_result": "claim blocked if only focal survival is present",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "replayed_regime=generative",
+          "blocked_condition": "capacity attribution does not reproduce the source regime label",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "capacity_attribution_control",
+          "control_status": "passed",
+          "expected_result": "row demoted if replay classifier changes the regime",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "merge_leakage_below_ceiling",
+          "blocked_condition": "merge/leakage is treated as generative support or hidden success",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_as_support_control",
+          "control_status": "passed",
+          "expected_result": "merge/leakage cannot masquerade as support",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "source-current capacity traces and core digest replayed",
+          "blocked_condition": "regime label exists without source-current metrics",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_regime_control",
+          "control_status": "passed",
+          "expected_result": "label-only row rejected",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "N28 source-current row metrics drive replay classification",
+          "blocked_condition": "N27 transfer success is used as N28 regime evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "transfer_success_as_n28_success_control",
+          "control_status": "passed",
+          "expected_result": "N27 remains context only",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "all unsafe claim flags false",
+          "blocked_condition": "environment exchange is relabeled as semantic cooperation or agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_cooperation_relabel_control",
+          "control_status": "passed",
+          "expected_result": "unsafe promotions remain blocked",
+          "rung_effect": "GE4_preserved"
+        },
+        {
+          "actual_result": "deltas=0.141/0.084/0.132/0.127",
+          "blocked_condition": "metric signs do not support the replayed regime",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "capacity_metric_sign_control",
+          "control_status": "passed",
+          "expected_result": "row demoted if signs fail the frozen classifier",
+          "rung_effect": "GE4_preserved"
+        }
+      ],
+      "source_i4b_strongest_participant_guardrail": "P4_candidate",
+      "source_iteration": "I5-A",
+      "strengthening_role": "mechanism_diverse_M1_strengthening_not_margin_upgrade",
+      "strongest_N30_I5A_row_participant_rung": "P2_candidate",
+      "susceptibility_or_eligibility_trace": "not_run_until_iteration_6",
+      "trace_dependency_control_ids": "pending_iteration_7",
+      "trace_or_surface_change": {
+        "artifact_role": "trace_or_surface_change",
+        "classification_declared_before_use": true,
+        "classification_result": "generative",
+        "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+        "neighbor_count_only": false,
+        "neighbor_label_only": false,
+        "surface_change_fields": {
+          "environment_capacity_delta": 0.127,
+          "neighbor_boundary_delta": 0.132,
+          "neighbor_distinguishability_delta": 0.141,
+          "neighbor_support_delta": 0.084
+        },
+        "surface_change_passed": true,
+        "thresholds": {
+          "environment_capacity_delta_min": 0.09,
+          "neighbor_boundary_delta_min": 0.08,
+          "neighbor_distinguishability_delta_min": 0.08,
+          "neighbor_support_delta_min": 0.05
+        },
+        "trace_id": "n30_i5a_trace_or_surface_change",
+        "trace_or_surface_change_digest": "65e0c435ba98730cf2e142774e2e29d2109af2fbc784849189ed6e06f6b13cf3",
+        "trace_or_surface_change_id": "n30_i5a_n28_i4a2_neighbor_capacity_surface_change"
+      },
+      "trace_or_surface_change_id": "n30_i5a_n28_i4a2_neighbor_capacity_surface_change",
+      "trace_persistence_or_decay": {
+        "artifact_replay_status": "passed",
+        "artifact_role": "trace_persistence_or_decay",
+        "decay_curve_available": false,
+        "decay_curve_status": "not_measured_in_I5_A",
+        "duplicate_replay_digest_stable": true,
+        "duplicate_replay_status": "passed",
+        "i6_requirement": "I6 must test whether a later eligibility/susceptibility response depends on this changed medium surface.",
+        "persistence_status": "replay_persistent_no_decay_curve",
+        "regime_label_stable_under_replay": true,
+        "replay_trace_digest": "3af2317905e232d182b74b53057f9f0790fc17a202a463e8f6a2d572127b1fbc",
+        "snapshot_load_replay_status": "passed",
+        "trace_id": "n30_i5a_trace_persistence_or_decay",
+        "trace_or_surface_change_id": "n30_i5a_n28_i4a2_neighbor_capacity_surface_change",
+        "trace_persistence_or_decay_digest": "7fcf78d8ee7d11cff6d9e8b87248176a8f43ee154e7100a94ec95efb6e8a48a6"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i4b_participant_guardrail_passed",
+      "passed": true
+    },
+    {
+      "check_id": "n28_i4a2_source_current_artifacts_consumed_not_closeout_only",
+      "passed": true
+    },
+    {
+      "check_id": "i5a_scope_classification_preserves_inherited_runtime_boundary",
+      "passed": true
+    },
+    {
+      "check_id": "n28_controls_are_guardrails_not_n30_relation_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i4b_p4_guardrail_does_not_promote_i5a_row_participant_rung",
+      "passed": true
+    },
+    {
+      "check_id": "i5a_strengthens_i5_without_replacing_it",
+      "passed": true
+    },
+    {
+      "check_id": "medium_surface_declared_non_private",
+      "passed": true
+    },
+    {
+      "check_id": "participant_medium_distinct",
+      "passed": true
+    },
+    {
+      "check_id": "surface_change_deltas_pass_thresholds",
+      "passed": true
+    },
+    {
+      "check_id": "capacity_attribution_controls_clean",
+      "passed": true
+    },
+    {
+      "check_id": "replay_persistence_available_without_later_dependency_claim",
+      "passed": true
+    },
+    {
+      "check_id": "i5a_ceiling_guard_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "derived_report_only_false_for_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "trace_mediated_eligibility",
+      "minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "medium_surface_perturbation_trace_candidate_only",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "identity_acceptance_opened": false,
+      "minimal_shared_medium_participation_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "phase8_completion_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "trace_mediated_eligibility_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_medium_surface_trace_i5a.py",
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_closeout_rung": "not_assigned",
+  "fresh_n30_runtime_evidence": false,
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "i5_replaced": false,
+  "i5a_claim_type": "inherited_medium_surface_trace_admission",
+  "i5a_replaces_i5": false,
+  "i5a_scope_classification": {
+    "artifact_role": "i5a_scope_classification",
+    "c4_c5_rule": "C4 = changed medium surface exists; C5 = later response depends on that changed surface.",
+    "fresh_n30_runtime_evidence": false,
+    "i5a_claim_type": "inherited_medium_surface_trace_admission",
+    "i5a_positive_scope": "inherited_source_current_medium_surface_trace_only",
+    "i6_dependency_required": true,
+    "i6_lineage_rule": "I6 must consume this exact relation_chain_id or declare a parent_relation_chain_id plus a justified fork.",
+    "n28_artifacts_allowed_to_support": [
+      "N30-C4_medium_perturbation_trace_candidate",
+      "M1_candidate"
+    ],
+    "n28_artifacts_not_allowed_to_support": [
+      "N30-C5_trace_mediated_eligibility",
+      "M2_later_response_conditioned_by_medium",
+      "minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "native_shared_medium_organization"
+    ],
+    "n28_controls_classified_as": "source_guardrail_controls_not_N30_relation_controls",
+    "n30_fresh_runtime": false,
+    "n30_relation_controls": {
+      "classification": "not_run_for_I5_A_C4_surface_trace_admission",
+      "required_control_ids": [
+        "direct_message_removal_control",
+        "no_perturbation_control",
+        "trace_ablation_control",
+        "wrong_surface_control",
+        "time_reversed_trace_control",
+        "medium_freeze_control",
+        "trace_shuffle_control",
+        "false_trace_injection_control",
+        "decay_manipulation_control",
+        "susceptibility_inversion_control",
+        "hidden_producer_global_controller_control"
+      ],
+      "status": "pending_iteration_7"
+    },
+    "row_participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+    "runtime_origin": "inherited_N28_source_current_artifact",
+    "scope_classification_digest": "023104dcab0b1aa9884ec1df934a6bb221f40ded0aa380cafe8135a19e51caa8",
+    "shared_local_scope_status": "shared_local_candidate_pending_later_encounter",
+    "source_guardrail_control_ids": [
+      "capacity_attribution_control",
+      "label_only_regime_control",
+      "merge_leakage_as_support_control",
+      "transfer_success_as_n28_success_control"
+    ],
+    "source_i4b_strongest_participant_guardrail": "P4_candidate",
+    "strongest_N30_I5A_row_participant_rung": "P2_candidate",
+    "supports_M1": true,
+    "supports_M2": false,
+    "supports_N30_C4": true,
+    "supports_N30_C5": false,
+    "trace_id": "n30_i5a_scope_classification"
+  },
+  "i5a_strengthening_kind": "mechanism_diversity_repeatability_not_margin_upgrade",
+  "i5a_strengthens_i5": true,
+  "i5a_vs_i5_comparison": {
+    "artifact_role": "i5a_vs_i5_medium_trace_comparison",
+    "claim_boundary": "I5-A strengthens I5 as a second source-current medium-surface trace mechanism. It does not replace I5, widen M1 into M2, or support minimal shared-medium participation.",
+    "comparison_digest": "b692b652010e3f94ea78fafc55db803db993b7f33b7ad81ecaea79aa6f8c23bc",
+    "delta_comparison": {
+      "i5_surface_change_fields": {
+        "environment_capacity_delta": 0.134,
+        "neighbor_boundary_delta": 0.145,
+        "neighbor_distinguishability_delta": 0.154,
+        "neighbor_support_delta": 0.087
+      },
+      "i5a_has_larger_all_deltas": false,
+      "i5a_surface_change_fields": {
+        "environment_capacity_delta": 0.127,
+        "neighbor_boundary_delta": 0.132,
+        "neighbor_distinguishability_delta": 0.141,
+        "neighbor_support_delta": 0.084
+      }
+    },
+    "i5_mechanism": "single_neighbor_capacity_shell_strengthening",
+    "i5_primary_medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+    "i5_replaced": false,
+    "i5_source_output": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+    "i5_source_output_digest": "f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971",
+    "i5a_mechanism": "split_shell_capacity_growth_with_delayed_boundary_thickening",
+    "i5a_medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+    "i5a_replaces_i5": false,
+    "i5a_strengthens_i5": true,
+    "margin_upgrade_claimed": false,
+    "mechanism_distinction_from_i5": "I5 consumes the N28 I4-A single-shell strengthening source. I5-A consumes the N28 I4-A2 split-shell / delayed-boundary mechanism source.",
+    "source_mechanism_note": "I4-A strengthens I4 by margin in a beta local shell; I4-A2 tests a distinct split-shell/delayed-boundary mechanism.",
+    "strengthening_kind": "mechanism_diversity_and_repeatability; I5-A shows that M1 surface-trace evidence is not confined to the I5 single-shell strengthening mechanism",
+    "trace_id": "n30_i5a_vs_i5_medium_trace_comparison"
+  },
+  "iteration": "5-A_mechanism_diverse_medium_surface_trace_strengthening",
+  "later_eligibility_dependency_evidence_opened": false,
+  "medium_relation_ladder_rung_assigned": "M1_candidate",
+  "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+  "medium_surface_scope": "shared_local",
+  "medium_surface_scope_status": "shared_local_candidate_pending_later_encounter",
+  "medium_surface_trace_evidence_opened": true,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_closeout_ceiling": "N30-C4_medium_perturbation_trace_candidate",
+  "n30_fresh_runtime": false,
+  "n30_relation_controls": {
+    "classification": "not_run_for_I5_A_C4_surface_trace_admission",
+    "required_control_ids": [
+      "direct_message_removal_control",
+      "no_perturbation_control",
+      "trace_ablation_control",
+      "wrong_surface_control",
+      "time_reversed_trace_control",
+      "medium_freeze_control",
+      "trace_shuffle_control",
+      "false_trace_injection_control",
+      "decay_manipulation_control",
+      "susceptibility_inversion_control",
+      "hidden_producer_global_controller_control"
+    ],
+    "status": "pending_iteration_7"
+  },
+  "native_shared_medium_organization_claim_allowed": false,
+  "output_digest": "519cc4efb48963232d969a6ecbf9d67e1b8dda005d89faed5f17995c233590ef",
+  "participant_admissibility_guardrail_available": true,
+  "participant_ladder_rung_assigned": "P2_candidate_with_I4B_P4_guardrail",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "mechanism_diverse_medium_surface_perturbation_trace_strengthening_only",
+  "ready_for_iteration_6_later_eligibility_probe": true,
+  "row_participant_ladder_rung": "P2_candidate_with_I4B_P4_guardrail",
+  "runtime_origin": "inherited_N28_source_current_artifact",
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_medium_surface_trace_i5a.py",
+  "shared_medium_coordination_claim_allowed": false,
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b.json",
+      "sha256": "4de77602fa8e5d85c1e52587a0ce18fc4c7cce6ba09ad3a3a3bc9bbfe62a5757",
+      "source_role": "N30_I4B_participant_boundary_support_guardrail"
+    },
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+      "sha256": "2383c8fcd54d6033a77decb7e431d50227841b66606e8ec6808f480da6d2b8d5",
+      "source_role": "N30_I5_primary_medium_surface_trace_reference"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe.json",
+      "sha256": "4e253dddf41e8d42decd51273f975478b0473dfcfd9c515ff11cea7ffecd31e5",
+      "source_role": "N28_I4A2_source_current_generative_mechanism_diversity_candidate"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix.json",
+      "sha256": "35473f0df504d5fed18bbee8548360f7fb2fba98ab4fc28101dc4def926c5ea6",
+      "source_role": "N28_replay_capacity_attribution_matrix"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/source_current_runtime_trace.json",
+      "sha256": "a807c0d735e7f487db9e66f5a11ec97fe1b90f4b0c39d61b9b8d2bea90f55245",
+      "source_role": "N28_I4A2_source_current_runtime_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/focal_basin_stability_trace.json",
+      "sha256": "b9dbfc4573d2eae29f87bd1a126bc44de4bc9b93e24fb9710b394e0dc80278e6",
+      "source_role": "N28_I4A2_focal_basin_stability_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/neighbor_capacity_trace.json",
+      "sha256": "8ab93f31d722ece7111ff0b6e11a0ca2d8e5e5944eca08e69559ef0f9d6dad1d",
+      "source_role": "N28_I4A2_neighbor_capacity_medium_surface_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/capacity_attribution_trace.json",
+      "sha256": "505cffeb7f7a9ca30461d5bc7d0f2ce4907cf56ef33bcafc3b457adc482dc2f7",
+      "source_role": "N28_I4A2_capacity_attribution_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/extraction_leakage_trace.json",
+      "sha256": "56757c2aa686bf4fa07d66a8de6cd6575c3e8db1475842cf9ada79fb467de903",
+      "source_role": "N28_I4A2_extraction_leakage_guard_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/classification_trace.json",
+      "sha256": "dde6689c74a3741d2ba8777478538f8c4d4b79d0216de9688cdcf4513ecc3381",
+      "source_role": "N28_I4A2_classification_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/generative_extractive_core.json",
+      "sha256": "0a56b7e6c6cfba7e04149dcddf50077de092e6ae14a8b0b470f2af3ef52da89c",
+      "source_role": "N28_I4A2_generative_extractive_core"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_generative_mechanism_diversity_probe_artifacts/threshold_policy_trace.json",
+      "sha256": "3fe883df73053857bc88ce61b0cb13d5cdf1024b01b2a82fd8823d694a36cda4",
+      "source_role": "N28_I4A2_threshold_policy_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_replay_capacity_attribution_matrix_artifacts/n28_i5_replay_n28_i4a2_row_generative_mechanism_diversity_candidate_trace.json",
+      "sha256": "cd71aaff75506da4358588515d3b406bdee53fb81050d285c622b6ef119af8b2",
+      "source_role": "N28_I4A2_replay_trace"
+    }
+  ],
+  "source_guardrail_controls": [
+    {
+      "actual_result": "neighbor_capacity_gain_present",
+      "blocked_condition": "focal stability exists without regime-specific environment-side capacity evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "focal_survival_only_as_regime_control",
+      "control_status": "passed",
+      "expected_result": "claim blocked if only focal survival is present",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "replayed_regime=generative",
+      "blocked_condition": "capacity attribution does not reproduce the source regime label",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "capacity_attribution_control",
+      "control_status": "passed",
+      "expected_result": "row demoted if replay classifier changes the regime",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "merge_leakage_below_ceiling",
+      "blocked_condition": "merge/leakage is treated as generative support or hidden success",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "merge_leakage_as_support_control",
+      "control_status": "passed",
+      "expected_result": "merge/leakage cannot masquerade as support",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "source-current capacity traces and core digest replayed",
+      "blocked_condition": "regime label exists without source-current metrics",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "label_only_regime_control",
+      "control_status": "passed",
+      "expected_result": "label-only row rejected",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "N28 source-current row metrics drive replay classification",
+      "blocked_condition": "N27 transfer success is used as N28 regime evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "transfer_success_as_n28_success_control",
+      "control_status": "passed",
+      "expected_result": "N27 remains context only",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "all unsafe claim flags false",
+      "blocked_condition": "environment exchange is relabeled as semantic cooperation or agency",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "semantic_cooperation_relabel_control",
+      "control_status": "passed",
+      "expected_result": "unsafe promotions remain blocked",
+      "rung_effect": "GE4_preserved"
+    },
+    {
+      "actual_result": "deltas=0.141/0.084/0.132/0.127",
+      "blocked_condition": "metric signs do not support the replayed regime",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "capacity_metric_sign_control",
+      "control_status": "passed",
+      "expected_result": "row demoted if signs fail the frozen classifier",
+      "rung_effect": "GE4_preserved"
+    }
+  ],
+  "source_guardrail_records": {
+    "closeout_summary_only_used": false,
+    "i4b_guardrail_not_row_participant_rung": true,
+    "i4b_participant_guardrail_output_digest": "b248e35e131071c606c2c5cc7c7ca1c2638f79ed2ea9fe2fda0959a88bd612d0",
+    "i4b_strongest_participant_ladder_rung": "P4_candidate",
+    "i5_primary_medium_surface_trace_output_digest": "f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971",
+    "n28_i4a2_source_output_digest": "f2785e97307704bff58e413eb071aff10311f0a3d6bd753ebccfb4c1975b6c20",
+    "n28_replay_output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+    "underlying_N28_artifacts_consumed": true
+  },
+  "source_i4b_output_digest": "b248e35e131071c606c2c5cc7c7ca1c2638f79ed2ea9fe2fda0959a88bd612d0",
+  "source_i4b_strongest_participant_guardrail": "P4_candidate",
+  "source_i5_output_digest": "f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971",
+  "source_n28_i4a2_output_digest": "f2785e97307704bff58e413eb071aff10311f0a3d6bd753ebccfb4c1975b6c20",
+  "source_n28_replay_output_digest": "3fd8875fa01e4cbb91933bc89cf2db32a1a2d8396a6ebc16451c33a008af6caa",
+  "status": "passed",
+  "strongest_N30_I5A_row_participant_rung": "P2_candidate",
+  "strongest_medium_relation_ladder_rung": "M1_candidate",
+  "strongest_participant_ladder_rung": "P2_candidate",
+  "trace_or_surface_change_id": "n30_i5a_n28_i4a2_neighbor_capacity_surface_change",
+  "trace_surface_change_supported": true
+}

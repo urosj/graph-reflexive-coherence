@@ -1,0 +1,57 @@
+{
+  "artifact_role": "participant_carrier_state_trace",
+  "basin_label_used_as_evidence": false,
+  "boundary_edge_count_preserved": true,
+  "branch_count_preserved": true,
+  "carrier_identity_claimed": false,
+  "carrier_state_trace_digest": "f6a5d7071f30bd0075dd10c4564060fff1d93f9b1badf19134089b9a04f82bb5",
+  "participant_carrier_digest": "b666204063c6ce7ab569fefb16587c5f8db9fb4e5ea39449ab909e48932f787f",
+  "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "participant_carrier_type": "branched_mapped_basin_signature_carrier",
+  "participant_end_state_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+  "participant_persistence_window": [
+    "n27_i4a_pre_transfer_signature",
+    "n27_i4a_post_transfer_signature",
+    "n27_i5_same_basin_replay"
+  ],
+  "participant_start_state_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d",
+  "post_basin_nodes": [
+    "delta_core",
+    "delta_north_support",
+    "delta_south_support",
+    "delta_outer_boundary"
+  ],
+  "post_fixture_id": "fixture_delta_folded",
+  "post_frame_id": "fixture_delta_folded_frame",
+  "post_signature_vector": {
+    "abs_flux_imbalance": 0.032,
+    "boundary_edge_count": 4,
+    "core_weight": 1.0,
+    "min_coherence": 0.935,
+    "min_support": 0.925,
+    "support_branch_count": 2
+  },
+  "pre_basin_nodes": [
+    "gamma_core",
+    "gamma_left_support",
+    "gamma_right_support",
+    "gamma_outer_boundary"
+  ],
+  "pre_fixture_id": "fixture_gamma_branch",
+  "pre_frame_id": "fixture_gamma_branch_frame",
+  "pre_signature_vector": {
+    "abs_flux_imbalance": 0.026,
+    "boundary_edge_count": 4,
+    "core_weight": 1.0,
+    "min_coherence": 0.94,
+    "min_support": 0.945,
+    "support_branch_count": 2
+  },
+  "required_topology_shape_keys": [
+    "support_branch_count",
+    "boundary_edge_count"
+  ],
+  "selfhood_claimed": false,
+  "topology_shape_keys_present": true,
+  "trace_id": "n30_i4a_participant_carrier_state_trace"
+}

@@ -1,0 +1,17 @@
+{
+  "agency_relabel_rejected": true,
+  "artifact_role": "participant_label_drift_control_trace",
+  "basin_label_used_as_evidence": false,
+  "carrier_digest_or_trace_continuity_required": true,
+  "identity_acceptance_relabel_rejected": true,
+  "label_drift_control_result": "passed",
+  "label_drift_control_trace_digest": "f47d7b0a986affb494a0c257ae50cbe2394978e93926eb926a7ed60071d090bb",
+  "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "participant_label_only_relabel_rejected": true,
+  "post_basin_label": "basin_signature_variant_B_mapped",
+  "pre_basin_label": "basin_signature_variant_B",
+  "same_label_different_basin_rejected": true,
+  "same_label_is_not_same_carrier": true,
+  "selfhood_relabel_rejected": true,
+  "trace_id": "n30_i4a_participant_label_drift_control_trace"
+}

@@ -8,6 +8,13 @@ N30+ for continued primitive / agency-component naturalization work. The
 N12-N18 handoff remains historical context for the closed agency-prerequisite
 stack.
 
+Current continuation note:
+
+```text
+active continuation handoff = experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md
+reason = N30 has now closed as the first source-backed N30+ shared-medium result
+```
+
 ## Current Position
 
 The prior stacks are closed:
@@ -43,7 +50,7 @@ N29_final_closeout_rung = N29-C6_agentic_ecology_probe_handoff_complete
 N29_outbound_agentic_ecology_handoff_supported = true
 N29_inbound_n30_plus_continuation_handoff_supported = true
 current outbound target = reflexive-coherence-agentic-ecology
-current in-repository continuation = N30_plus_core_primitive_and_agency_component_work
+current in-repository continuation = superseded_by_N30_plus_LGRC_SharedMediumEcologyHandoff
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -402,7 +409,8 @@ agency, biological agency, organism/life, semantic cooperation or exploitation,
 resource economy, native shared-medium coordination, native support, sentience,
 or Phase 8 completion.
 
-The inbound N30+ handoff carries open native-surface and naturalization targets:
+The original inbound N30+ handoff carried open native-surface and
+naturalization targets:
 
 ```text
 native multi-component medium coupling
@@ -410,6 +418,16 @@ native cross-prototype state handoff
 native resource/capacity semantics without semantic labels
 producer residue discharge tests
 ```
+
+After N30 closeout, use:
+
+```text
+experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md
+```
+
+as the active continuation record. It records the bounded minimal
+shared-medium participation result, the post-N30 cross-project spiral, and the
+fact that N31 is not selected by default.
 
 The final contract rule is:
 
@@ -1035,7 +1053,9 @@ the agentic ecology project, not the executed ecology runtime itself.
 
 Do not retroactively treat N20-N29 as ant-ecology implementation. N29 supplies
 claim-clean probe contracts to the ecology repository and naturalization
-targets to N30+ work. Native ant agency, native colony agency, biological
+targets to N30+ work. The active N30+ continuation pointer is now
+`experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md`. Native ant agency,
+native colony agency, biological
 agency, organism/life, unrestricted autonomy, native support, semantic
 cooperation/exploitation, resource economy, and Phase 8 completion remain
 blocked unless a later source-backed experiment explicitly supports a narrower

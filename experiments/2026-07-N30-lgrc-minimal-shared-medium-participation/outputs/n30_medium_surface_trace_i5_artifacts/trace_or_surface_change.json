@@ -1,0 +1,24 @@
+{
+  "artifact_role": "trace_or_surface_change",
+  "classification_declared_before_use": true,
+  "classification_result": "generative",
+  "medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+  "neighbor_count_only": false,
+  "neighbor_label_only": false,
+  "surface_change_fields": {
+    "environment_capacity_delta": 0.134,
+    "neighbor_boundary_delta": 0.145,
+    "neighbor_distinguishability_delta": 0.154,
+    "neighbor_support_delta": 0.087
+  },
+  "surface_change_passed": true,
+  "thresholds": {
+    "environment_capacity_delta_min": 0.09,
+    "neighbor_boundary_delta_min": 0.08,
+    "neighbor_distinguishability_delta_min": 0.08,
+    "neighbor_support_delta_min": 0.05
+  },
+  "trace_id": "n30_i5_trace_or_surface_change",
+  "trace_or_surface_change_digest": "41dfce69d8a3195a45ea0bfbb33bf8d25db9b9ae51f63586daeb3c9a97d7f50f",
+  "trace_or_surface_change_id": "n30_i5_n28_i4a_neighbor_capacity_surface_change"
+}

@@ -1,0 +1,556 @@
+{
+  "acceptance_state": "accepted_participant_medium_schema_controls_frozen_no_positive_evidence",
+  "active_null_schema": {
+    "active_null_positive_evidence_allowed": false,
+    "required_fields": [
+      "null_row_id",
+      "null_type",
+      "expected_fail_reason",
+      "observed_fail_reason",
+      "fail_closed",
+      "blocked_gate",
+      "blocked_rung",
+      "dependent_hypothesis",
+      "control_equivalent_id"
+    ],
+    "required_null_ids": [
+      "direct_message_only_relabel",
+      "medium_surface_label_only",
+      "hidden_global_controller",
+      "hidden_producer_routing",
+      "post_hoc_trace_construction",
+      "no_perturbation_control",
+      "trace_ablation_control",
+      "wrong_surface_control",
+      "time_reversed_trace_control",
+      "medium_freeze_control",
+      "trace_shuffle_control",
+      "false_trace_injection_control",
+      "decay_manipulation_control",
+      "susceptibility_inversion_control",
+      "participant_label_drift_control",
+      "generic_redistribution_relabel",
+      "semantic_communication_relabel",
+      "semantic_coordination_relabel",
+      "cooperation_agency_relabel",
+      "native_shared_medium_organization_relabel"
+    ]
+  },
+  "candidate_evidence_row_schema": {
+    "all_artifact_sha256_match_file_contents_required": true,
+    "artifact_manifest_required_for_positive_rows": true,
+    "positive_row_requires_derived_report_only_false": true,
+    "required_fields": [
+      "row_id",
+      "source_iteration",
+      "primary_layer",
+      "participant_ladder_rung",
+      "medium_relation_ladder_rung",
+      "relation_chain_id",
+      "participant_event_id",
+      "participant_carrier_id",
+      "participant_carrier",
+      "participant_persistence_window",
+      "participant_attribution_trace",
+      "medium_surface_id",
+      "medium_surface_carrier",
+      "medium_surface_scope",
+      "participant_medium_distinct",
+      "participant_medium_separation_argument",
+      "perturbation_trace",
+      "perturbation_event_id",
+      "trace_or_surface_change_id",
+      "trace_persistence_or_decay",
+      "susceptibility_or_eligibility_trace",
+      "later_response_event_id",
+      "later_response_conditioned_by_medium",
+      "later_response_metric",
+      "expected_direction",
+      "response_window",
+      "baseline_window",
+      "acceptance_threshold",
+      "normalization_denominator",
+      "effect_size",
+      "counterfactual_row_id",
+      "causal_order_verified",
+      "trace_dependency_control_ids",
+      "medium_ablation_control_result",
+      "row_chain_decision",
+      "direct_message_present",
+      "direct_message_status",
+      "medium_debt_record",
+      "producer_residue_record",
+      "source_current_inputs",
+      "artifact_manifest",
+      "replay_statuses",
+      "control_results",
+      "claim_ceiling",
+      "blocked_relabels",
+      "row_decision"
+    ],
+    "row_decision_allowed_values": [
+      "supported",
+      "partial",
+      "blocked",
+      "rejected",
+      "not_applicable"
+    ],
+    "source_current_inputs_required_for_positive_rows": true
+  },
+  "candidate_required_field_count": 46,
+  "candidate_rows_classified": false,
+  "checks": [
+    {
+      "check_id": "i1_source_inventory_passed",
+      "passed": true
+    },
+    {
+      "check_id": "participant_ladder_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "medium_relation_ladder_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "n30_closeout_ladder_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_required_fields_present",
+      "passed": true
+    },
+    {
+      "check_id": "coupled_relation_chain_requirement_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "sharedness_gate_blocks_private_internal",
+      "passed": true
+    },
+    {
+      "check_id": "participant_medium_separation_audit_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "C5_C6_minimum_rung_policy_frozen",
+      "passed": true
+    },
+    {
+      "check_id": "telemetry_only_medium_surfaces_blocked",
+      "passed": true
+    },
+    {
+      "check_id": "later_response_metrics_predeclared",
+      "passed": true
+    },
+    {
+      "check_id": "controls_cover_plan_required_ids",
+      "passed": true
+    },
+    {
+      "check_id": "active_null_gate_mapping_fields_required",
+      "passed": true
+    },
+    {
+      "check_id": "replay_requirements_block_C5_until_replay_controls",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "shared_medium_coordination",
+      "native_shared_medium_organization",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "schema_and_control_freeze_only_no_N30_evidence",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "closeout_minimum_rung_policy": {
+    "N30-C3": {
+      "meaning": "participant admissibility candidate only",
+      "minimum_medium_relation_rung": "not_required",
+      "minimum_participant_rung": "P1"
+    },
+    "N30-C4": {
+      "meaning": "medium perturbation / trace candidate only",
+      "minimum_medium_relation_rung": "M1",
+      "minimum_participant_rung": "P1"
+    },
+    "N30-C5": {
+      "meaning": "replay/control-backed minimal shared-medium participation candidate",
+      "minimum_medium_relation_rung": "M2",
+      "minimum_participant_rung": "P2"
+    },
+    "N30-C6": {
+      "meaning": "N31-ready minimal shared-medium participation closeout",
+      "minimum_medium_relation_rung": "M2",
+      "minimum_participant_rung": "P2"
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_schema_control_freeze_i2.py",
+  "controls": {
+    "control_results_schema": {
+      "allowed_statuses": [
+        "passed",
+        "failed_closed",
+        "failed_open",
+        "not_run",
+        "not_applicable"
+      ],
+      "failed_open_effect": "blocks_row_and_blocks_N30-C5_or_stronger",
+      "not_run_effect": "blocks_dependent_rung",
+      "required_fields": [
+        "control_id",
+        "control_status",
+        "blocked_condition",
+        "expected_result",
+        "actual_result",
+        "claim_allowed_when_control_triggers",
+        "rung_effect"
+      ]
+    },
+    "direct_message_and_hidden_producer_policy": {
+      "direct_message_only_relabel": "failed_closed_required_before_positive_support",
+      "hidden_global_controller": "failed_closed_required_before_positive_support",
+      "hidden_producer_routing": "failed_closed_required_before_positive_support",
+      "producer_success_cannot_upgrade_native_shared_medium": true
+    },
+    "required_control_ids": [
+      "direct_message_only_relabel",
+      "medium_surface_label_only",
+      "hidden_global_controller",
+      "hidden_producer_routing",
+      "post_hoc_trace_construction",
+      "no_perturbation_control",
+      "trace_ablation_control",
+      "wrong_surface_control",
+      "time_reversed_trace_control",
+      "medium_freeze_control",
+      "trace_shuffle_control",
+      "false_trace_injection_control",
+      "decay_manipulation_control",
+      "susceptibility_inversion_control",
+      "participant_label_drift_control",
+      "generic_redistribution_relabel",
+      "semantic_communication_relabel",
+      "semantic_coordination_relabel",
+      "cooperation_agency_relabel",
+      "native_shared_medium_organization_relabel"
+    ]
+  },
+  "coupled_relation_chain_schema": {
+    "blocked_explanations": [
+      "direct_message",
+      "global_controller",
+      "hidden_producer",
+      "scheduler_drift",
+      "post_hoc_trace_construction"
+    ],
+    "dependency_requirement": "later response must depend on declared medium surface change",
+    "must_share_relation_chain_id": true,
+    "required_order": [
+      "participant_continuity",
+      "medium_surface_perturbation",
+      "trace_or_surface_change",
+      "later_eligibility_or_susceptibility_change"
+    ],
+    "separate_components_without_chain_support": "partial_or_rejected"
+  },
+  "digest_semantics": {
+    "file_sha256": "exact_artifact_file_content_digest",
+    "output_digest": "canonical_payload_digest_excluding_output_digest_field",
+    "source_output_digest_scope": "I1_canonical_payload_digest",
+    "source_output_sha256_scope": "exact_I1_JSON_file_content"
+  },
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_closeout_rung": "not_assigned",
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "hypothesis_manifest": [
+    {
+      "hypothesis_id": "Hypothesis A",
+      "path": "hypotheses/hypothesis_a_shared_medium_source_basis.md",
+      "role": "source_basis_and_method_admission"
+    },
+    {
+      "hypothesis_id": "Hypothesis B",
+      "path": "hypotheses/hypothesis_b_minimal_participant_continuity.md",
+      "role": "participant_continuity_gate"
+    },
+    {
+      "hypothesis_id": "Hypothesis C",
+      "path": "hypotheses/hypothesis_c_medium_trace_eligibility.md",
+      "role": "medium_trace_and_later_eligibility_gate"
+    },
+    {
+      "hypothesis_id": "Hypothesis D",
+      "path": "hypotheses/hypothesis_d_medium_debt_and_claim_boundary.md",
+      "role": "debt_controls_and_claim_boundary_gate"
+    },
+    {
+      "hypothesis_id": "Hypothesis E",
+      "path": "hypotheses/hypothesis_e_coupled_shared_medium_relation_chain.md",
+      "role": "coupled_relation_chain_gate"
+    }
+  ],
+  "iteration": "2_participant_medium_schema_freeze",
+  "later_response_metric_schema": {
+    "post_hoc_difference_effect": "exploratory_only_blocks_N30-C5_and_N30-C6",
+    "predeclared_before_row_classification_required": true,
+    "required_fields": [
+      "later_response_metric",
+      "expected_direction",
+      "response_window",
+      "baseline_window",
+      "acceptance_threshold",
+      "normalization_denominator",
+      "effect_size",
+      "counterfactual_row_id"
+    ]
+  },
+  "medium_debt_schema": {
+    "producer_mediated_effect": "may_support_artifact_level_candidate_but_records_debt_and_cannot_claim_native_shared_medium",
+    "status_allowed_values": [
+      "none",
+      "medium_surface_producer_mediated",
+      "trace_decay_producer_mediated",
+      "susceptibility_metric_producer_mediated",
+      "naturalization_debt",
+      "blocked_relabel"
+    ]
+  },
+  "medium_relation_ladder": {
+    "M0": {
+      "label": "direct_message_passing",
+      "meaning": "Sender-receiver scripting or direct message transfer, not shared-medium evidence.",
+      "n30_positive_support_allowed": false
+    },
+    "M1": {
+      "label": "boundary_perturbation",
+      "meaning": "Participant perturbs a declared non-private medium surface.",
+      "n30_positive_support_allowed": true
+    },
+    "M2": {
+      "label": "trace_mediated_eligibility_or_influence",
+      "meaning": "Medium trace/surface change conditions later eligibility, cost, routing, support, susceptibility, or capacity.",
+      "n30_positive_support_allowed": true
+    },
+    "M3": {
+      "label": "shared_field_co_response_optional_secondary_candidate",
+      "meaning": "Multiple participants co-respond through a shared field; optional and not required for N30.",
+      "n30_positive_support_allowed": "secondary_candidate_only"
+    },
+    "M4": {
+      "label": "parent_basin_modulation_blocked_future",
+      "meaning": "Parent-basin modulation is future work and blocked for N30 positive claims.",
+      "n30_positive_support_allowed": false
+    },
+    "M5": {
+      "label": "resonant_alignment_blocked_future",
+      "meaning": "Resonant alignment is future work and blocked for N30 positive claims.",
+      "n30_positive_support_allowed": false
+    },
+    "M6": {
+      "label": "native_shared_medium_organization_blocked_future",
+      "meaning": "Native shared-medium organization is not an N30 claim.",
+      "n30_positive_support_allowed": false
+    }
+  },
+  "medium_relation_ladder_rung_assigned": false,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n27_n28_guardrail_sufficiency_policy": {
+    "N27_closeout_guardrail_role": "participant_recognizability_and_transfer_discipline",
+    "N28_closeout_guardrail_role": "environment_effect_and_generic_redistribution_boundary",
+    "closeout_summary_alone_can_support_positive_N30_row": false,
+    "inherits_i1_policy": true,
+    "positive_row_rule": "closeout summaries are enough only if they expose the required guardrail fields; otherwise consume underlying N27/N28 result artifacts",
+    "source_inventory_policy_key": "guardrail_sufficiency_policy"
+  },
+  "n30_closeout_ceiling": "N30-C2_schema_and_active_null_controls_frozen",
+  "n30_closeout_ladder": {
+    "N30-C0": "initialized_only",
+    "N30-C1": "source_method_inventory_passed",
+    "N30-C2": "schema_and_active_null_controls_frozen",
+    "N30-C3": "participant_admissibility_candidate",
+    "N30-C4": "medium_perturbation_trace_candidate",
+    "N30-C5": "replay_control_backed_minimal_shared_medium_participation_candidate",
+    "N30-C6": "N31_ready_minimal_shared_medium_participation_closeout"
+  },
+  "native_shared_medium_organization_claim_allowed": false,
+  "output_digest": "1286b3242c3a466c34289be0d4d1589be428c10782ac64eadff7611483b1462c",
+  "participant_ladder": {
+    "P0": {
+      "label": "medium_only_perturbation_no_attributable_participant",
+      "meaning": "A medium perturbation exists but no contributor/respondent carrier is attributable.",
+      "n30_positive_support_allowed": false
+    },
+    "P1": {
+      "label": "attributable_contributor_or_respondent_within_one_event_chain",
+      "meaning": "A participant carrier is attributable within a bounded event chain.",
+      "n30_positive_support_allowed": "minimal_input_only"
+    },
+    "P2": {
+      "label": "same_carrier_recognizable_across_bounded_replay_window",
+      "meaning": "The participant carrier remains recognizable under bounded replay.",
+      "n30_positive_support_allowed": true
+    },
+    "P3": {
+      "label": "boundary_or_interface_participant",
+      "meaning": "The participant is expressed through a boundary/interface surface.",
+      "n30_positive_support_allowed": "secondary_observation_only"
+    },
+    "P4": {
+      "label": "support_sensitive_participant",
+      "meaning": "The carrier has support-sensitive persistence but not N30-native agency.",
+      "n30_positive_support_allowed": "secondary_observation_only"
+    },
+    "P5": {
+      "label": "withdrawal_resistant_participant_out_of_N30_primary_scope",
+      "meaning": "Withdrawal-resistant participant evidence belongs to earlier/later dedicated probes.",
+      "n30_positive_support_allowed": false
+    },
+    "P6": {
+      "label": "generative_participant_out_of_N30_primary_scope",
+      "meaning": "Generative participant evidence is out of N30 primary scope.",
+      "n30_positive_support_allowed": false
+    },
+    "P7": {
+      "label": "agentic_participant_blocked",
+      "meaning": "Agentic participant, selfhood, intention, and semantic agency remain blocked.",
+      "n30_positive_support_allowed": false
+    }
+  },
+  "participant_ladder_rung_assigned": false,
+  "participant_medium_separation_audit": {
+    "controls_required_to_record_partial_same_identifier_row": [
+      "participant_label_drift_control",
+      "medium_surface_label_only",
+      "trace_ablation_control",
+      "wrong_surface_control"
+    ],
+    "participant_medium_distinct_required_for_N30_C5_or_C6": true,
+    "same_identifier_blocks_N30_C5_or_C6": true,
+    "same_identifier_effect": [
+      "internal_aftereffect",
+      "medium_only_perturbation",
+      "medium_mediated_self_aftereffect_candidate",
+      "partial_not_C5_or_C6"
+    ],
+    "separation_argument_required_if_same_identifier": "allowed_for_explanation_but_not_for_C5_or_C6_closure"
+  },
+  "positive_evidence_opened": false,
+  "primary_layer": "primitive",
+  "producer_residue_schema": {
+    "declared_scaffold_effect": "records_debt_without_native_upgrade",
+    "hidden_residue_effect": "blocks_positive_row",
+    "status_allowed_values": [
+      "none",
+      "declared_scaffold",
+      "direct_message_scaffold",
+      "hidden_routing_detected",
+      "global_controller_detected",
+      "post_hoc_trace_detected"
+    ]
+  },
+  "ready_for_iteration_3_active_nulls": true,
+  "replay_requirements": {
+    "N30_C3_requires": [
+      "participant_attribution_replay_or_declared_bounded_window"
+    ],
+    "N30_C4_requires": [
+      "source_current_medium_surface_trace",
+      "trace_or_surface_change_reconstruction"
+    ],
+    "N30_C5_requires": [
+      "artifact_only_replay",
+      "duplicate_replay",
+      "snapshot_load_replay",
+      "trace_dependency_controls_failed_closed",
+      "later_response_metric_recomputed"
+    ],
+    "N30_C6_requires": [
+      "N30_C5",
+      "handoff_grade_contract",
+      "declared_transfer_status",
+      "declared_medium_and_producer_debt",
+      "N31_candidate_interface"
+    ]
+  },
+  "required_control_count": 20,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_schema_control_freeze_i2.py",
+  "shared_medium_coordination_claim_allowed": false,
+  "sharedness_gate": {
+    "medium_surface_scope_allowed_values": [
+      "private_internal",
+      "boundary_accessible",
+      "shared_local",
+      "shared_global",
+      "route_conductance_susceptibility_surface",
+      "packet_event_history_surface",
+      "parent_surface_candidate"
+    ],
+    "minimum_scope_for_N30_C5_or_C6": [
+      "boundary_accessible",
+      "shared_local",
+      "shared_global",
+      "route_conductance_susceptibility_surface",
+      "packet_event_history_surface"
+    ],
+    "parent_surface_candidate_effect": "blocked_for_N30_positive_claims_unless_explicitly_scoped",
+    "private_internal_effect": "classify_as_medium_mediated_self_aftereffect_candidate_unless_special_case_controls_pass",
+    "telemetry_only_surface_policy": {
+      "packet_event_history_surface_requirement": "must condition runtime later response, not merely appear in logs",
+      "report_or_log_only_effect": "classify_as_post_hoc_trace_construction_or_label_only_surface",
+      "runtime_conditioning_required": true
+    }
+  },
+  "source_inventory": {
+    "source_acceptance_state": "accepted_source_inventory_method_admission_no_positive_evidence",
+    "source_output": "outputs/n30_source_inventory_i1.json",
+    "source_output_digest": "2a7bc77d5c7034e0b329dd80a85de44e8bafa56ac966ca61ac501b89ae2f61a4",
+    "source_output_sha256": "d1131987ca9a556198cc3c9d7b36dc0e675d1c994e91256c25cc94079d04f67e",
+    "source_ready_for_i2": true
+  },
+  "status": "passed"
+}

@@ -1,0 +1,285 @@
+{
+  "acceptance_state": "accepted_alternative_M1_circulatory_medium_surface_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "alternative_medium_surface_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_medium_surface_i5c_artifacts/alternative_medium_surface_trace.json",
+      "sha256": "eb60e16aad6c88ae912f3868648b194663cc17c13e857cf2e6f2763f935a39b1"
+    },
+    {
+      "artifact_role": "i5c_participant_medium_separation_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_medium_surface_i5c_artifacts/i5c_participant_medium_separation_trace.json",
+      "sha256": "f282945d8d21ad94f140e6cef670b20eabfbae30fc2251b67a14e5bf6c3d91b2"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "alternative_medium_surface_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_medium_surface_i5c_artifacts/alternative_medium_surface_trace.json",
+          "sha256": "eb60e16aad6c88ae912f3868648b194663cc17c13e857cf2e6f2763f935a39b1"
+        },
+        {
+          "artifact_role": "i5c_participant_medium_separation_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_medium_surface_i5c_artifacts/i5c_participant_medium_separation_trace.json",
+          "sha256": "f282945d8d21ad94f140e6cef670b20eabfbae30fc2251b67a14e5bf6c3d91b2"
+        }
+      ],
+      "blocked_relabels": [
+        "final_minimal_shared_medium_participation",
+        "shared_medium_coordination",
+        "parent_basin_modulation",
+        "resonant_alignment",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "claim_ceiling": "N30-C4 alternative circulatory medium-surface trace candidate",
+      "derived_report_only": false,
+      "direct_message_present": false,
+      "direct_message_status": "absent_from_N28_I4F_circulatory_trace",
+      "effect_size": 0.02,
+      "later_response_conditioned_by_medium": false,
+      "later_response_event_id": "not_run_until_I6B",
+      "later_response_metric": "not_declared_until_I6B",
+      "medium_relation_ladder_rung": "M1_candidate_alternative_circulatory_surface",
+      "medium_surface_carrier": "N28_I4F_wide_circulatory_neighbor_field",
+      "medium_surface_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+      "medium_surface_scope": "shared_local",
+      "minimal_shared_medium_participation_claim_allowed": false,
+      "minimum_lobe_exchange_margin": 0.02,
+      "participant_carrier": "N28_I4F_focal_basin_iota",
+      "participant_carrier_id": "n28_i4f_focal_basin_iota",
+      "participant_event_id": "n30_i5c_i4f_focal_circulation_event",
+      "participant_ladder_rung": "P2_candidate_alternative_source_fixture",
+      "participant_medium_distinct": true,
+      "participant_medium_separation_argument": {
+        "artifact_role": "i5c_participant_medium_separation_trace",
+        "medium_surface_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+        "participant_carrier_id": "n28_i4f_focal_basin_iota",
+        "participant_medium_distinct": true,
+        "participant_medium_separation_digest": "10d6e261ce1d25813acb8819b0b839d747742d8fe015ec1f455742c70116440b",
+        "separation_argument": "The participant carrier is the N28 I4-F focal basin; the medium surface is the separate wide circulatory neighbor field.",
+        "trace_id": "n30_i5c_participant_medium_separation_trace"
+      },
+      "perturbation_event_id": "n30_i5c_circulatory_neighbor_surface_perturbation",
+      "perturbation_trace": {
+        "attribution_result": "source_current_higher_margin_neutral_circulatory_neighbor_capacity_exchange",
+        "buffer_lobe_capacity_delta": 0.001,
+        "capacity_attribution_basis": [
+          "neighbor_distinguishability_delta",
+          "neighbor_support_delta",
+          "neighbor_boundary_delta",
+          "environment_capacity_delta"
+        ],
+        "competitive_redistribution_detected": false,
+        "direct_two_lobe_competitive_pair_used": false,
+        "environment_capacity_budget_mismatch": false,
+        "extractive_capacity_loss_threshold_met": false,
+        "generative_capacity_gain_threshold_met": false,
+        "hidden_capacity_attribution_policy_used": false,
+        "inflow_lobe_capacity_delta": 0.062,
+        "mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+        "medium_segmentation_policy_hidden": false,
+        "n27_transfer_success_used_as_n28_success": false,
+        "neutral_circulation_detected": true,
+        "outflow_lobe_capacity_delta": -0.06,
+        "producer_generativity_label_used_as_evidence": false,
+        "trace_id": "n28_i4f_capacity_attribution_trace"
+      },
+      "primary_layer": "primitive",
+      "relation_chain_id": "n30_i5c_i4f_focal_to_circulatory_medium_trace_chain",
+      "row_decision": "supported_alternative_M1_circulatory_medium_surface_trace",
+      "row_id": "n30_i5c_row_01_i4f_circulatory_medium_surface_trace",
+      "row_output_digest": "63bff92157d32102cb813e2c70deac69b628608c109a48254ca19bb11de90a53",
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_participant_source_i4c.json",
+          "sha256": "41118ebbcfaa91e657d917755321d93a54ff033147bdf95824cab34acf45503f",
+          "source_role": "N30_I4C_alternative_participant_source_fixture"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+          "sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+          "source_role": "N28_I4F_higher_margin_neutral_circulation"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/neighbor_capacity_trace.json",
+          "sha256": "362ed7a2cfab98fa18d89fcaf381fdb2abbfc3ebb30cf05249f6599454d50499",
+          "source_role": "N28_I4F_neighbor_capacity_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/capacity_attribution_trace.json",
+          "sha256": "3e95381a0ca0b58227798fef0c212a005e294db192435f39cf7d94a475286a59",
+          "source_role": "N28_I4F_capacity_attribution_trace"
+        },
+        {
+          "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/threshold_policy_trace.json",
+          "sha256": "855021a9dc22a317f55fe4a4b19bc35fb8974db507eefc8a38884ab180ab8c47",
+          "source_role": "N28_I4F_threshold_policy_trace"
+        }
+      ],
+      "source_iteration": "I5-C",
+      "trace_or_surface_change": {
+        "alternative_medium_surface_trace_digest": "df50b2130a5b26cd001ea28abfca0c41b2e36730a8427c77329adecbcad49b83",
+        "artifact_role": "alternative_medium_surface_trace",
+        "buffer_lobe_capacity_delta": 0.001,
+        "direct_two_lobe_pair_used": false,
+        "inflow_lobe_capacity_delta": 0.062,
+        "inflow_lobe_margin": 0.022,
+        "medium_surface_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+        "medium_surface_scope": "shared_local_route_conductance_surface",
+        "minimum_lobe_exchange_margin": 0.02,
+        "mixed_lobe_delta_min": 0.04,
+        "neighbor_capacity_trace": {
+          "environment_capacity_delta": -0.001,
+          "neighbor_boundary_delta": 0.009,
+          "neighbor_count_only": false,
+          "neighbor_distinguishability_delta": 0.01,
+          "neighbor_label_only": false,
+          "neighbor_scope_id": "n28_i4f_wide_circulatory_neighbor_field_iota",
+          "neighbor_support_delta": -0.004,
+          "post_environment_basin_forming_capacity": 0.66,
+          "post_neighbor_boundary_integrity": 0.693,
+          "post_neighbor_distinguishability": 0.714,
+          "post_neighbor_support_floor": 0.722,
+          "pre_environment_basin_forming_capacity": 0.661,
+          "pre_neighbor_boundary_integrity": 0.684,
+          "pre_neighbor_distinguishability": 0.704,
+          "pre_neighbor_support_floor": 0.726,
+          "trace_id": "n28_i4f_neighbor_capacity_trace"
+        },
+        "neutral_circulation_detected": true,
+        "outflow_lobe_capacity_delta": -0.06,
+        "outflow_lobe_margin": 0.02,
+        "surface_mechanism_class": "three_lobe_higher_margin_circulatory_capacity_exchange",
+        "thresholds_retuned_for_i5c": false,
+        "trace_id": "n30_i5c_circulatory_medium_surface_trace"
+      },
+      "trace_or_surface_change_id": "n30_i5c_circulatory_medium_surface_trace",
+      "trace_persistence_or_decay": "pending_I5D_replay_stress_audit"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "source_i4c_passed",
+      "passed": true
+    },
+    {
+      "check_id": "circulatory_surface_margin_positive",
+      "passed": true
+    },
+    {
+      "check_id": "participant_medium_distinct",
+      "passed": true
+    },
+    {
+      "check_id": "later_eligibility_claims_closed",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "final_minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "parent_basin_modulation",
+      "resonant_alignment",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "alternative_M1_circulatory_surface_only",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "final_minimal_shared_medium_participation_opened": false,
+      "identity_acceptance_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "parent_basin_modulation_opened": false,
+      "phase8_completion_opened": false,
+      "resonant_alignment_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py",
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "iteration": "5-C_alternative_medium_surface_trace",
+  "later_eligibility_dependency_evidence_opened": false,
+  "medium_relation_ladder_rung_assigned": "M1_candidate_alternative_circulatory_surface",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "minimum_lobe_exchange_margin": 0.02,
+  "n30_closeout_ceiling": "N30-C4_medium_perturbation_trace_candidate",
+  "output_digest": "754c8cabeeb35d4274b2841ecc7458eeebb9c1eee8c1c5d26782c38a4bf2b335",
+  "participant_ladder_rung_assigned": "P2_candidate_alternative_source_fixture",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "alternative_circulatory_medium_surface_trace",
+  "ready_for_iteration_5d_scope_stress_audit": true,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_alternative_source_tranche_i4c_to_i6c.py",
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_alternative_participant_source_i4c.json",
+      "sha256": "41118ebbcfaa91e657d917755321d93a54ff033147bdf95824cab34acf45503f",
+      "source_role": "N30_I4C_alternative_participant_source_fixture"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe.json",
+      "sha256": "ca566bbe9aa07cee57e2068ec18a697f5aeb37f91979a12a260f2175ad5b8512",
+      "source_role": "N28_I4F_higher_margin_neutral_circulation"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/neighbor_capacity_trace.json",
+      "sha256": "362ed7a2cfab98fa18d89fcaf381fdb2abbfc3ebb30cf05249f6599454d50499",
+      "source_role": "N28_I4F_neighbor_capacity_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/capacity_attribution_trace.json",
+      "sha256": "3e95381a0ca0b58227798fef0c212a005e294db192435f39cf7d94a475286a59",
+      "source_role": "N28_I4F_capacity_attribution_trace"
+    },
+    {
+      "path": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_higher_margin_neutral_circulation_probe_artifacts/threshold_policy_trace.json",
+      "sha256": "855021a9dc22a317f55fe4a4b19bc35fb8974db507eefc8a38884ab180ab8c47",
+      "source_role": "N28_I4F_threshold_policy_trace"
+    }
+  ],
+  "source_i4c_output_digest": "80f5346ac422749246050bc5e4514c323ea63f7dc7d49394628ad2b6860d668d",
+  "source_n28_i4f_output_digest": "1848a9ffe8c4c0242ef2b670527b65bedbcd9ea5ae0c57a15a8208acf1ab0921",
+  "status": "passed"
+}

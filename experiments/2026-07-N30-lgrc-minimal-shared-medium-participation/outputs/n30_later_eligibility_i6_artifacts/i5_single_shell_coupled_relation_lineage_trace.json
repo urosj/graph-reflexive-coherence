@@ -1,0 +1,34 @@
+{
+  "artifact_role": "coupled_relation_lineage_trace",
+  "causal_order_verified": "ordered_source_trace_plus_same_policy_transition",
+  "coupled_relation_lineage_digest": "cad091214a2c56190c32641bb86e109dcf3a56b8f05a8664e8515c37087fcd10",
+  "direct_message_present": false,
+  "direct_message_status": "absent_from_N28_medium_surface_trace",
+  "edge_matrix_row_id": "n28_i6a_n28_i4a_row_generative_strengthening_candidate_generative_edge",
+  "extractive_counterfactual_row_id": "n28_i6a_n28_i4a_row_generative_strengthening_candidate_extractive_cross",
+  "medium_surface_scope": "shared_local",
+  "medium_surface_scope_status": "shared_local_candidate_pending_later_encounter",
+  "neutral_counterfactual_row_id": "n28_i6a_n28_i4a_row_generative_strengthening_candidate_neutral_gap_without_mixed_lobes",
+  "ordered_chain": [
+    {
+      "event_id": "n30_i5_n28_i4a_focal_basin_environment_event",
+      "phase": "participant_event"
+    },
+    {
+      "event_id": "n30_i5_n28_i4a_neighbor_surface_perturbation",
+      "phase": "medium_perturbation"
+    },
+    {
+      "event_id": "n30_i5_n28_i4a_neighbor_capacity_surface_change",
+      "phase": "trace_or_surface_change"
+    },
+    {
+      "event_id": "n28_i6a_n28_i4a_row_generative_strengthening_candidate_generative_edge_trace",
+      "phase": "later_response"
+    }
+  ],
+  "participant_medium_distinct": true,
+  "relation_chain_id": "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+  "row_chain_decision": "provisional_M2_later_eligibility_dependency_candidate_pending_I7_controls",
+  "trace_id": "n30_i6_i5_single_shell_coupled_relation_lineage_trace"
+}

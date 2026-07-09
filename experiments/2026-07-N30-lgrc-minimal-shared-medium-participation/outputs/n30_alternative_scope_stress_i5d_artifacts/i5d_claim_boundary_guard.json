@@ -1,0 +1,26 @@
+{
+  "artifact_role": "i5d_claim_boundary_guard",
+  "blocked_claims": [
+    "final_minimal_shared_medium_participation",
+    "shared_medium_coordination",
+    "parent_basin_modulation",
+    "resonant_alignment",
+    "native_shared_medium_organization",
+    "semantic_communication",
+    "semantic_coordination",
+    "cooperation",
+    "agency",
+    "selfhood",
+    "identity_acceptance",
+    "sentience",
+    "organism_life",
+    "ecology_regime",
+    "phase8_completion",
+    "unrestricted_autonomy"
+  ],
+  "claim_boundary_guard_digest": "810b1f6c57d0dde99a5c2f5d24e2d2b9d08a61b1cd32ea291e8a9535f478ce16",
+  "later_eligibility_dependency_evidence_opened": false,
+  "m1_alternative_surface_stress_supported": true,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "trace_id": "n30_i5d_claim_boundary_guard"
+}

@@ -35,6 +35,9 @@ All candidates inherit:
 - [Candidate N34: Generative/Extractive Shared-Medium Relation](#candidate-n34-generativeextractive-shared-medium-relation)
 - [Candidate N35+: Motif Experiments](#candidate-n35-motif-experiments)
 - [Later N30+ Regime Probes](#later-n30-regime-probes)
+- [Direction Addendum: N30 Selected Starting Point](#direction-addendum-n30-selected-starting-point)
+- [Direction Addendum: Cross-Project Spiral](#direction-addendum-cross-project-spiral)
+- [Direction Addendum: N30 Closeout Status](#direction-addendum-n30-closeout-status)
 
 ## Naming convention
 
@@ -456,3 +459,182 @@ Blocked relabels unless separately tested:
 ```text
 life, consciousness, sentience, organism identity, unrestricted agency
 ```
+
+---
+
+## Direction Addendum: N30 Selected Starting Point
+
+The candidate list above is retained as the broader N30+ orientation. The first
+concrete N30 experiment is intentionally narrower than the original
+support-redistribution candidate.
+
+Selected N30:
+
+```text
+N30 - Minimal Shared-Medium Participation
+primary layer = primitive
+secondary observation = trace-mediated eligibility primitive / building-block candidate
+```
+
+Reason for the refinement:
+
+```text
+shared medium is not a loose synonym for a shared graph, channel, message bus,
+or carrier surface. It is a defined relation grammar from the shared-medium
+essay and engineering spec.
+```
+
+N30 therefore starts by grounding the smallest admissible relation form:
+
+```text
+participant carrier
+  perturbs declared medium surface
+trace or surface state persists / decays
+later participant eligibility, cost, support, routing, susceptibility, or
+capacity changes because of that surface
+```
+
+This keeps the first positive target near:
+
+```text
+M1 = boundary perturbation
+M2 = trace-mediated influence / trace-mediated eligibility
+```
+
+and blocks:
+
+```text
+shared-medium coordination
+parent-basin modulation
+resonant alignment
+native shared-medium organization
+communication
+cooperation
+agency
+ecology regime
+```
+
+Updated near-term candidate sequence:
+
+```text
+N30:
+  Minimal Shared-Medium Participation
+  primitive / relation-admission experiment
+
+N31:
+  Shared-Medium Support Redistribution
+  building-block candidate, consuming N30 if N30 closes cleanly
+
+N32:
+  Slow-Memory Conductance Trace
+  building-block candidate
+
+N33:
+  Boundary-Mediated Exchange
+  building-block candidate
+
+N34:
+  Generative/Extractive Shared-Medium Relation
+  building-block candidate consuming N28-style environment-effect discipline
+```
+
+The original Candidate N30 contract/probe split remains useful as an
+operational pattern inside N30 or N31:
+
+```text
+contract/admission pass first
+positive runtime probe second
+```
+
+but contract language must not count as positive shared-medium evidence.
+
+## Direction Addendum: Cross-Project Spiral
+
+The candidate sequence above should not be read as a closed LGRC-only backlog.
+After N30's minimal shared-medium participation closeout, the next candidate
+choice should be allowed to depend on a demand/composition pass in the agentic
+ecology project.
+
+Recommended operating rhythm:
+
+```text
+N30 in graph-reflexive-coherence:
+  minimal shared-medium participation gate
+
+agentic ecology demand pass:
+  identify which shared-medium primitives and building blocks ecology actually
+  needs, without treating those demands as evidence
+
+N31+ in graph-reflexive-coherence:
+  test one demanded primitive or building block with source-current artifacts,
+  replay, controls, debt accounting, and claim ceilings
+
+ecology motif pass:
+  compose admitted or bounded candidates into motif-level probes when enough
+  building blocks exist
+```
+
+This means N31 is not automatically fixed by the original candidate order.
+Shared-medium support redistribution remains a strong candidate, but the
+agentic ecology demand pass may show that another building block should come
+first, such as:
+
+```text
+slow trace
+boundary permeability
+latent basin / ghost aftereffect
+resource-capacity coupling
+role/cargo-shaped susceptibility
+fragmentation threshold
+```
+
+The constraint is that demand is not proof. Agentic ecology may expose the need;
+LGRC must still test whether the needed distinction is source-current,
+replayable, control-clean, and claim-bounded.
+
+This keeps the catalog bidirectional:
+
+```text
+upward:
+  primitive -> building block -> motif -> regime
+
+downward:
+  missing ecology behavior -> missing block -> missing primitive -> LGRC probe
+```
+
+## Direction Addendum: N30 Closeout Status
+
+N30 has now closed as the first source-backed N30+ result:
+
+```text
+N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+```
+
+The result supports a bounded minimal shared-medium participation candidate and
+a trace-mediated eligibility primitive/building-block candidate. It does not
+support shared-medium coordination, communication, cooperation, agency, native
+shared-medium organization, ecology regime, or fixed N31 selection.
+
+This means the candidate lists above should be read as a menu, not as the next
+fixed schedule. Shared-medium support redistribution remains a strong possible
+next direction, but N30's actual closeout points first to an agentic-ecology
+demand/composition pass:
+
+```text
+N30 closeout
+  -> agentic ecology demand/composition pass
+  -> selected N31+ LGRC primitive or building-block probe
+```
+
+The demand pass may still choose support redistribution, but it may instead
+select slow trace, boundary permeability, latent basin / ghost aftereffect,
+resource-capacity coupling, role/cargo-shaped susceptibility, fragmentation
+threshold, or another shared-medium building block exposed by ecology needs.
+Any such choice still requires its own LGRC source artifacts, replay/control
+records, debt accounting, and claim ceiling.
+
+N30 evidence pointers:
+
+- [N30 README](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md)
+- [N30 I8 closeout report](2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md)
+- [N30 I8 closeout JSON](2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8.json)

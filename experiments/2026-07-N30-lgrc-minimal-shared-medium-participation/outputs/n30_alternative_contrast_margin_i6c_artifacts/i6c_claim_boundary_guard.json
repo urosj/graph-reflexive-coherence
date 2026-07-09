@@ -1,0 +1,27 @@
+{
+  "alternative_threshold_margin_improved_vs_i6": true,
+  "artifact_role": "i6c_claim_boundary_guard",
+  "blocked_claims": [
+    "final_minimal_shared_medium_participation",
+    "shared_medium_coordination",
+    "parent_basin_modulation",
+    "resonant_alignment",
+    "native_shared_medium_organization",
+    "semantic_communication",
+    "semantic_coordination",
+    "cooperation",
+    "agency",
+    "selfhood",
+    "identity_acceptance",
+    "sentience",
+    "organism_life",
+    "ecology_regime",
+    "phase8_completion",
+    "unrestricted_autonomy"
+  ],
+  "broad_margin_robustness_supported": false,
+  "claim_boundary_guard_digest": "39fe8d2f03ffd37c45310ae2e05b1ae3b2077721d314d08976fc594f59257509",
+  "final_n30_c5_claim_allowed": false,
+  "final_n30_c6_claim_allowed": false,
+  "trace_id": "n30_i6c_claim_boundary_guard"
+}

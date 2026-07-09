@@ -1,0 +1,482 @@
+{
+  "acceptance_state": "accepted_topology_fixture_variant_P2_participant_strengthening_no_medium_relation",
+  "artifact_manifest": [
+    {
+      "artifact_role": "participant_recognizability_threshold_record",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/threshold_record.json",
+      "sha256": "0cd9e7c0a8f42e737c5bb35a37e72f6242d42222527fe850e8b2358ba9052345"
+    },
+    {
+      "artifact_role": "participant_carrier_state_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_carrier_state_trace.json",
+      "sha256": "29654ad793d7a8bbad46d8236d5a29a1c2746280f231a9418c591256939ebfdb"
+    },
+    {
+      "artifact_role": "participant_attribution_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_attribution_trace.json",
+      "sha256": "913e2ceefd49759fad3868c9e43d92849f9cc3789d1c79584b0780846695648a"
+    },
+    {
+      "artifact_role": "participant_replay_recognizability_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_replay_recognizability_trace.json",
+      "sha256": "feeefc99a37b78b3db4847bd84e7d5a5349ff814675ef7497e3d630951c7da9e"
+    },
+    {
+      "artifact_role": "participant_label_drift_control_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_label_drift_control_trace.json",
+      "sha256": "a469a5a6474689ba318578a8003c6f4f7385161f44a66443e9e470ad4ad1be7c"
+    },
+    {
+      "artifact_role": "topology_fixture_variant_strengthening_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/topology_fixture_variant_strengthening_trace.json",
+      "sha256": "e6cda5107fe93d17c7994e3f2199d5789f199739f3cd58af625ad600e60d93c6"
+    },
+    {
+      "artifact_role": "i4a_medium_leakage_guard_trace",
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/i4a_medium_leakage_guard_trace.json",
+      "sha256": "daac911def7512dfb874eb7372ec9dc2372709f8826165998d3cfbb11331c873"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "participant_recognizability_threshold_record",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/threshold_record.json",
+          "sha256": "0cd9e7c0a8f42e737c5bb35a37e72f6242d42222527fe850e8b2358ba9052345"
+        },
+        {
+          "artifact_role": "participant_carrier_state_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_carrier_state_trace.json",
+          "sha256": "29654ad793d7a8bbad46d8236d5a29a1c2746280f231a9418c591256939ebfdb"
+        },
+        {
+          "artifact_role": "participant_attribution_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_attribution_trace.json",
+          "sha256": "913e2ceefd49759fad3868c9e43d92849f9cc3789d1c79584b0780846695648a"
+        },
+        {
+          "artifact_role": "participant_replay_recognizability_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_replay_recognizability_trace.json",
+          "sha256": "feeefc99a37b78b3db4847bd84e7d5a5349ff814675ef7497e3d630951c7da9e"
+        },
+        {
+          "artifact_role": "participant_label_drift_control_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/participant_label_drift_control_trace.json",
+          "sha256": "a469a5a6474689ba318578a8003c6f4f7385161f44a66443e9e470ad4ad1be7c"
+        },
+        {
+          "artifact_role": "topology_fixture_variant_strengthening_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/topology_fixture_variant_strengthening_trace.json",
+          "sha256": "e6cda5107fe93d17c7994e3f2199d5789f199739f3cd58af625ad600e60d93c6"
+        },
+        {
+          "artifact_role": "i4a_medium_leakage_guard_trace",
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4a_artifacts/i4a_medium_leakage_guard_trace.json",
+          "sha256": "daac911def7512dfb874eb7372ec9dc2372709f8826165998d3cfbb11331c873"
+        }
+      ],
+      "blocked_relabels": [
+        "medium_perturbation",
+        "trace_mediated_eligibility",
+        "minimal_shared_medium_participation",
+        "shared_medium_coordination",
+        "native_shared_medium_organization",
+        "semantic_communication",
+        "semantic_coordination",
+        "cooperation",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "sentience",
+        "organism_life",
+        "ecology_regime",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "carrier_digest_or_trace_continuity_required": true,
+      "claim_ceiling": "N30-C3 participant admissibility strengthening candidate only; no medium perturbation, trace-mediated eligibility, minimal shared-medium participation, semantic identity, selfhood, agency, or native shared-medium organization claim",
+      "derived_report_only": false,
+      "i4_replaced": false,
+      "i4a_strengthening_scope": "repeatability_under_topology_fixture_shape_variation",
+      "i4a_strengthens_i4": true,
+      "label_drift_control_result": "passed",
+      "medium_perturbation_claim_allowed": false,
+      "medium_relation_ladder_rung": "not_assigned",
+      "medium_relation_rung_assignment_allowed": false,
+      "medium_surface_id": "not_declared_in_iteration_4a",
+      "minimal_shared_medium_participation_claim_allowed": false,
+      "native_shared_medium_organization_claim_allowed": false,
+      "participant_admissibility_claim_allowed": true,
+      "participant_attribution_trace": {
+        "artifact_role": "participant_attribution_trace",
+        "attribution_source": "N27 topology-fixture source-current pre/post basin signature and declared mapping",
+        "boundary_mapping_preserved": true,
+        "coherence_preserved_above_floor": true,
+        "edge_mapping": {
+          "gamma_core-gamma_left_support": "delta_core-delta_north_support",
+          "gamma_core-gamma_right_support": "delta_south_support-delta_core",
+          "gamma_left_support-gamma_outer_boundary": "delta_north_support-delta_outer_boundary",
+          "gamma_right_support-gamma_outer_boundary": "delta_outer_boundary-delta_south_support"
+        },
+        "flux_balance_preserved_within_bound": true,
+        "hidden_support_reconstruction_absent": true,
+        "mapping_declared_before_use": true,
+        "mapping_digest_excludes_outcome": true,
+        "mapping_source_backed": true,
+        "node_mapping": {
+          "gamma_core": "delta_core",
+          "gamma_left_support": "delta_north_support",
+          "gamma_outer_boundary": "delta_outer_boundary",
+          "gamma_right_support": "delta_south_support"
+        },
+        "participant_attribution_trace_digest": "525dabcf5956fb44b352877e72ac6afdac6a4958b6577b057196fd06bb83b279",
+        "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+        "runtime_config_digest": "cd1687a10ea55f720525c8edf49daa2d8605e6ef0f1898fb4bf5b14587a8bf64",
+        "runtime_trace_id": "n27_i4a_source_current_runtime_trace",
+        "source_current_trace_kind": "deterministic_topology_fixture_transfer_variant",
+        "source_derived_report_only": false,
+        "support_preserved_above_floor": true,
+        "support_reconstruction_counted_as_preservation": false,
+        "trace_id": "n30_i4a_participant_attribution_trace"
+      },
+      "participant_carrier": {
+        "carrier_digest": "b666204063c6ce7ab569fefb16587c5f8db9fb4e5ea39449ab909e48932f787f",
+        "end_state_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+        "source_mapping_digest": "71c0287ccc4e785d629d4415f9e6b58d5d7d280cbde7d5b8e17d91fe7cff2636",
+        "start_state_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d"
+      },
+      "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+      "participant_carrier_type": "branched_mapped_basin_signature_carrier",
+      "participant_end_state_digest": "909a540bc3a66f80127a4cee636cc4498e7eedd4c5bc10081f6b7cefdc401d1d",
+      "participant_event_id": "n30_i4a_participant_admission_event",
+      "participant_ladder_rung": "P2_candidate",
+      "participant_ladder_rung_reason": "same branched mapped basin-signature carrier remains recognizable across pre/post source-current topology-fixture traces and bounded replay",
+      "participant_persistence_window": [
+        "n27_i4a_pre_transfer_signature",
+        "n27_i4a_post_transfer_signature",
+        "n27_i5_same_basin_replay"
+      ],
+      "participant_start_state_digest": "f5f30813001f5656872cf8a9be46126de28f24c738bfc0d1961b79197f3a070d",
+      "primary_layer": "primitive",
+      "recognizability_margin": 0.04,
+      "recognizability_metric": "signature_distance_under_declared_N27_topology_fixture_mapping",
+      "recognizability_observed": 0.03,
+      "recognizability_threshold": 0.07,
+      "relation_chain_id": "not_opened_until_I5_I6",
+      "replay_status": {
+        "artifact_replay": "passed",
+        "duplicate_replay": "passed",
+        "mapping_order_replay": "passed",
+        "snapshot_load_replay": "passed"
+      },
+      "row_decision": "supported_participant_admissibility_strengthening_candidate_only",
+      "row_id": "n30_i4a_row_01_topology_fixture_variant_P2_participant_admissibility",
+      "row_output_digest": "de5a03b1e500721949366e0c39d1da109b2118a4be298d098961ce52c8ae23d6",
+      "same_label_is_not_same_carrier": true,
+      "shared_medium_coordination_claim_allowed": false,
+      "source_current_inputs": [
+        {
+          "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4.json",
+          "sha256": "66d722a64b655bfa023f0b209d4cfa5d5a832f1f09db248e810c5b7553d8de80",
+          "source_role": "N30_I4_primary_P2_participant_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe.json",
+          "sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+          "source_role": "N27_topology_fixture_CT2_candidate"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix.json",
+          "sha256": "4befc7a401c44724cb2d11d66c5e99a095d4349d1c0451248715b44e982e0674",
+          "source_role": "N27_replay_same_basin_mapping_matrix"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/pre_transfer_basin_signature_trace.json",
+          "sha256": "445948f0cae9664ad2df8b9bf35420a222c53b3df3f65ef1c34fedf390baf1cb",
+          "source_role": "pre_branched_participant_signature_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/post_transfer_basin_signature_trace.json",
+          "sha256": "33dc463283d7c7e2f99721b780f8edbef4b70ed3b5f3f9cdc78a42dbc16b49d4",
+          "source_role": "post_branched_participant_signature_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/transfer_mapping_trace.json",
+          "sha256": "ae4f7f04aff19eae2498be900c65e1f90a26894ec21f65d6707fddc3d5a977fb",
+          "source_role": "declared_topology_fixture_mapping_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/source_current_runtime_trace.json",
+          "sha256": "57b59502ee0835cb4664e7773d481cee5d1251a882ee941c09b3adcd08f0adfb",
+          "source_role": "source_current_runtime_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/support_preservation_trace.json",
+          "sha256": "7fd91f28eabd90454e0dd8327a8784974a03710fd21b783ba75e2035e3f3416b",
+          "source_role": "support_preservation_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/coherence_preservation_trace.json",
+          "sha256": "a036832f5fd84feac837aa52aa5d69366b62caab5c945ddbc653b3f4418f21e7",
+          "source_role": "coherence_preservation_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/boundary_mapping_trace.json",
+          "sha256": "d0f44e9027582ada3614e708d88513f62971b0249b7d58ca6a35bb4412d92f54",
+          "source_role": "boundary_mapping_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/flux_balance_trace.json",
+          "sha256": "5ab6df05427e523c1364da95aeb478ff19b5ab51b21c72de1d2b0db6f7f17295",
+          "source_role": "flux_balance_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/reconstructed_support_ledger.json",
+          "sha256": "59b117db7aa5d85fb5e2b1b231385747e4ead6027f9e0caafadef18aef426992",
+          "source_role": "hidden_support_reconstruction_control"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/variant_comparison_trace.json",
+          "sha256": "55b821cbab77de64e3bf33687b7ca5cd9bf1b8b504c58b17c9ecdf51c3fd5ede",
+          "source_role": "N27_topology_variant_comparison_trace"
+        },
+        {
+          "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4a_same_basin_mapping_replay_replay_trace.json",
+          "sha256": "98a44df9d2297908906359357d4ab41a9ebcf44a31c879ce015d45b185221404",
+          "source_role": "participant_replay_trace"
+        }
+      ],
+      "source_iteration": "I4-A",
+      "trace_mediated_eligibility_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency_opened": false,
+        "cooperation_opened": false,
+        "ecology_regime_opened": false,
+        "identity_acceptance_opened": false,
+        "medium_perturbation_opened": false,
+        "minimal_shared_medium_participation_opened": false,
+        "native_shared_medium_organization_opened": false,
+        "organism_life_opened": false,
+        "phase8_completion_opened": false,
+        "selfhood_opened": false,
+        "semantic_communication_opened": false,
+        "semantic_coordination_opened": false,
+        "sentience_opened": false,
+        "shared_medium_coordination_opened": false,
+        "trace_mediated_eligibility_opened": false,
+        "unrestricted_autonomy_opened": false
+      }
+    }
+  ],
+  "candidate_rows_classified": true,
+  "checks": [
+    {
+      "check_id": "i4_primary_participant_candidate_passed",
+      "passed": true
+    },
+    {
+      "check_id": "underlying_n27_topology_artifacts_consumed_not_closeout_only",
+      "passed": true
+    },
+    {
+      "check_id": "i4a_strengthens_without_replacing_i4",
+      "passed": true
+    },
+    {
+      "check_id": "participant_carrier_digest_continuity_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "recognizability_metric_declared_before_classification",
+      "passed": true
+    },
+    {
+      "check_id": "topology_fixture_shape_variant_recorded",
+      "passed": true
+    },
+    {
+      "check_id": "replay_status_passed",
+      "passed": true
+    },
+    {
+      "check_id": "label_drift_control_passed",
+      "passed": true
+    },
+    {
+      "check_id": "i4a_ceiling_guard_preserved",
+      "passed": true
+    },
+    {
+      "check_id": "no_medium_evidence_opened",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_sha256_matches",
+      "passed": true
+    },
+    {
+      "check_id": "derived_report_only_false_for_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "medium_perturbation",
+      "trace_mediated_eligibility",
+      "minimal_shared_medium_participation",
+      "shared_medium_coordination",
+      "native_shared_medium_organization",
+      "semantic_communication",
+      "semantic_coordination",
+      "cooperation",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "participant_admissibility_strengthening_candidate_only",
+    "unsafe_claim_flags": {
+      "agency_opened": false,
+      "cooperation_opened": false,
+      "ecology_regime_opened": false,
+      "identity_acceptance_opened": false,
+      "medium_perturbation_opened": false,
+      "minimal_shared_medium_participation_opened": false,
+      "native_shared_medium_organization_opened": false,
+      "organism_life_opened": false,
+      "phase8_completion_opened": false,
+      "selfhood_opened": false,
+      "semantic_communication_opened": false,
+      "semantic_coordination_opened": false,
+      "sentience_opened": false,
+      "shared_medium_coordination_opened": false,
+      "trace_mediated_eligibility_opened": false,
+      "unrestricted_autonomy_opened": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_participant_admissibility_i4a.py",
+  "experiment": "N30_minimal_shared_medium_participation",
+  "failed_checks": [],
+  "final_n30_closeout_rung": "not_assigned",
+  "generated_at": "2026-07-09T00:00:00+00:00",
+  "i4_replaced": false,
+  "i4a_replaces_i4": false,
+  "i4a_strengthens_i4": true,
+  "iteration": "4-A_P2_participant_strengthening_topology_fixture_variant",
+  "later_eligibility_dependency_evidence_opened": false,
+  "medium_relation_ladder_rung_assigned": false,
+  "medium_surface_trace_evidence_opened": false,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_closeout_ceiling": "N30-C3_participant_admissibility_candidate",
+  "native_shared_medium_organization_claim_allowed": false,
+  "output_digest": "353b4417d6b278ee428de5e1adc88fdb7dd456f3aaa7e01c7d92a68d06296421",
+  "participant_admissibility_evidence_opened": true,
+  "participant_ladder_rung_assigned": "provisional_P2_candidate",
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "participant_admissibility_strengthening_only",
+  "ready_for_iteration_4b_boundary_support_sensitive_participant_probe": true,
+  "ready_for_iteration_5_medium_surface_trace_probe": true,
+  "script": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/scripts/build_n30_participant_admissibility_i4a.py",
+  "shared_medium_coordination_claim_allowed": false,
+  "source_current_inputs": [
+    {
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4.json",
+      "sha256": "66d722a64b655bfa023f0b209d4cfa5d5a832f1f09db248e810c5b7553d8de80",
+      "source_role": "N30_I4_primary_P2_participant_candidate"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe.json",
+      "sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+      "source_role": "N27_topology_fixture_CT2_candidate"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix.json",
+      "sha256": "4befc7a401c44724cb2d11d66c5e99a095d4349d1c0451248715b44e982e0674",
+      "source_role": "N27_replay_same_basin_mapping_matrix"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/pre_transfer_basin_signature_trace.json",
+      "sha256": "445948f0cae9664ad2df8b9bf35420a222c53b3df3f65ef1c34fedf390baf1cb",
+      "source_role": "pre_branched_participant_signature_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/post_transfer_basin_signature_trace.json",
+      "sha256": "33dc463283d7c7e2f99721b780f8edbef4b70ed3b5f3f9cdc78a42dbc16b49d4",
+      "source_role": "post_branched_participant_signature_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/transfer_mapping_trace.json",
+      "sha256": "ae4f7f04aff19eae2498be900c65e1f90a26894ec21f65d6707fddc3d5a977fb",
+      "source_role": "declared_topology_fixture_mapping_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/source_current_runtime_trace.json",
+      "sha256": "57b59502ee0835cb4664e7773d481cee5d1251a882ee941c09b3adcd08f0adfb",
+      "source_role": "source_current_runtime_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/support_preservation_trace.json",
+      "sha256": "7fd91f28eabd90454e0dd8327a8784974a03710fd21b783ba75e2035e3f3416b",
+      "source_role": "support_preservation_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/coherence_preservation_trace.json",
+      "sha256": "a036832f5fd84feac837aa52aa5d69366b62caab5c945ddbc653b3f4418f21e7",
+      "source_role": "coherence_preservation_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/boundary_mapping_trace.json",
+      "sha256": "d0f44e9027582ada3614e708d88513f62971b0249b7d58ca6a35bb4412d92f54",
+      "source_role": "boundary_mapping_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/flux_balance_trace.json",
+      "sha256": "5ab6df05427e523c1364da95aeb478ff19b5ab51b21c72de1d2b0db6f7f17295",
+      "source_role": "flux_balance_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/reconstructed_support_ledger.json",
+      "sha256": "59b117db7aa5d85fb5e2b1b231385747e4ead6027f9e0caafadef18aef426992",
+      "source_role": "hidden_support_reconstruction_control"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/variant_comparison_trace.json",
+      "sha256": "55b821cbab77de64e3bf33687b7ca5cd9bf1b8b504c58b17c9ecdf51c3fd5ede",
+      "source_role": "N27_topology_variant_comparison_trace"
+    },
+    {
+      "path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_replay_same_basin_mapping_matrix_artifacts/n27_i5_row_i4a_same_basin_mapping_replay_replay_trace.json",
+      "sha256": "98a44df9d2297908906359357d4ab41a9ebcf44a31c879ce015d45b185221404",
+      "source_role": "participant_replay_trace"
+    }
+  ],
+  "source_guardrail_records": {
+    "closeout_summary_only_used": false,
+    "n27_replay_output_digest": "de0f5f7dc0f3cd1482569465198473940faa52275943ab7af1333a5c88bcf7c6",
+    "n27_replay_output_sha256": "4befc7a401c44724cb2d11d66c5e99a095d4349d1c0451248715b44e982e0674",
+    "n27_topology_output_digest": "5db5235c72e6954c5676be715cfdaa92cdc0e2d5746e5be40720e2152f5678f7",
+    "n27_topology_output_sha256": "7cd2646f3ff8e0952e2c2aa7a762d9bdd5305ee1263ce0d897f52afc22c565d8",
+    "underlying_N27_artifacts_consumed": true
+  },
+  "source_i4": {
+    "source_acceptance_state": "accepted_minimal_participant_admissibility_P2_candidate_no_medium_relation",
+    "source_output": "outputs/n30_participant_admissibility_i4.json",
+    "source_output_digest": "63f72c353b52f18eeeeece349fadde34d5f8a050d67c4f670d2397250b77774f",
+    "source_output_sha256": "66d722a64b655bfa023f0b209d4cfa5d5a832f1f09db248e810c5b7553d8de80"
+  },
+  "status": "passed"
+}

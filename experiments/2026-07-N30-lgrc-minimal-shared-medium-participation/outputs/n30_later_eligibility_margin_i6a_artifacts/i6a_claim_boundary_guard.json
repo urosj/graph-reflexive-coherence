@@ -1,0 +1,33 @@
+{
+  "artifact_role": "i6a_claim_boundary_guard",
+  "blocked_claims": [
+    "higher_threshold_margin",
+    "final_minimal_shared_medium_participation",
+    "shared_medium_coordination",
+    "parent_basin_modulation",
+    "resonant_alignment",
+    "native_shared_medium_organization",
+    "semantic_communication",
+    "semantic_coordination",
+    "cooperation",
+    "agency",
+    "selfhood",
+    "identity_acceptance",
+    "sentience",
+    "organism_life",
+    "ecology_regime",
+    "phase8_completion",
+    "unrestricted_autonomy",
+    "slow_trace_or_medium_memory"
+  ],
+  "claim_boundary_guard_digest": "80acac7a89a6dae7a0d04ebdf86f2ccf1fab92f690945dbfeef5d7a4c3cabf38",
+  "dependency_contrast_margin_supported": true,
+  "final_n30_c5_claim_allowed": false,
+  "final_n30_c6_claim_allowed": false,
+  "higher_threshold_margin_supported": false,
+  "m2_input_evidence_supported": true,
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "n30_c5_input_evidence_supported": true,
+  "reason_final_claim_blocked": "iteration_7_relation_controls_pending",
+  "trace_id": "n30_i6a_claim_boundary_guard"
+}

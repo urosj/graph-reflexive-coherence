@@ -1,0 +1,33 @@
+{
+  "artifact_role": "medium_surface_declaration_trace",
+  "medium_surface_carrier": {
+    "post_state": {
+      "environment_basin_forming_capacity": 0.708,
+      "neighbor_boundary_integrity": 0.718,
+      "neighbor_distinguishability": 0.753,
+      "neighbor_support_floor": 0.75
+    },
+    "pre_state": {
+      "environment_basin_forming_capacity": 0.581,
+      "neighbor_boundary_integrity": 0.586,
+      "neighbor_distinguishability": 0.612,
+      "neighbor_support_floor": 0.666
+    },
+    "source_trace_id": "n28_i4a2_neighbor_capacity_trace",
+    "surface_fields": [
+      "neighbor_distinguishability",
+      "neighbor_support_floor",
+      "neighbor_boundary_integrity",
+      "environment_basin_forming_capacity"
+    ],
+    "surface_kind": "neighbor_capacity_shell"
+  },
+  "medium_surface_declaration_digest": "f91531524227ee8842b410db5417cdd252dead732f5b231aba7c6bdc1d4e16db",
+  "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+  "medium_surface_scope": "shared_local",
+  "private_internal_surface": false,
+  "sharedness_argument": "N28 I4-A2 records a split-shell neighbor capacity surface as distinct from the focal basin and exposes support, boundary, distinguishability, and environment-capacity fields rather than private participant state.",
+  "surface_label_only": false,
+  "telemetry_only_surface": false,
+  "trace_id": "n30_i5a_medium_surface_declaration_trace"
+}

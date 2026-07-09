@@ -1,0 +1,65 @@
+{
+  "agentic_ecology_demand_pass_recommended": true,
+  "artifact_role": "i7_medium_debt_matrix",
+  "candidate_n31_interface_available_pending_i8": true,
+  "candidate_n31_selected": false,
+  "debt_rows": [
+    {
+      "artifact_role": "i7_medium_debt_row",
+      "family": "original_generative",
+      "medium_debt_status": "artifact_level_medium_dependency_supported_with_remaining_nativity_debt",
+      "n30_fresh_runtime": false,
+      "native_shared_medium_organization_opened": false,
+      "producer_residue_status": "no_hidden_producer_or_global_controller_admitted_by_I7_controls",
+      "remaining_debt": [
+        "I6 later eligibility dependency consumed and replay/control checked in I7",
+        "I7 controls passed as artifact-level replays over inherited source-current traces",
+        "I8 closeout and post-N30 spiral handoff not yet assigned",
+        "decay curve not measured in I5",
+        "native shared-medium organization remains blocked"
+      ],
+      "row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+      "runtime_origin": "inherited_source_current_artifacts"
+    },
+    {
+      "artifact_role": "i7_medium_debt_row",
+      "family": "original_generative",
+      "medium_debt_status": "artifact_level_medium_dependency_supported_with_remaining_nativity_debt",
+      "n30_fresh_runtime": false,
+      "native_shared_medium_organization_opened": false,
+      "producer_residue_status": "no_hidden_producer_or_global_controller_admitted_by_I7_controls",
+      "remaining_debt": [
+        "I6 later eligibility dependency consumed and replay/control checked in I7",
+        "I7 controls passed as artifact-level replays over inherited source-current traces",
+        "I8 closeout and post-N30 spiral handoff not yet assigned",
+        "decay curve not measured in I5-A",
+        "native shared-medium organization remains blocked"
+      ],
+      "row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+      "runtime_origin": "inherited_source_current_artifacts"
+    },
+    {
+      "artifact_role": "i7_medium_debt_row",
+      "family": "alternative_circulatory",
+      "medium_debt_status": "artifact_level_medium_dependency_supported_with_remaining_nativity_debt",
+      "n30_fresh_runtime": false,
+      "native_shared_medium_organization_opened": false,
+      "producer_residue_status": "no_hidden_producer_or_global_controller_admitted_by_I7_controls",
+      "remaining_debt": [
+        "I6 later eligibility dependency consumed and replay/control checked in I7",
+        "I7 controls passed as artifact-level replays over inherited source-current traces",
+        "I8 closeout and post-N30 spiral handoff not yet assigned",
+        "alternative source uses N28 I4-F circulation artifacts rather than fresh N30 runtime",
+        "native shared-medium organization remains blocked"
+      ],
+      "row_id": "n30_i6b_row_01_i4f_circulatory_route_eligibility_candidate",
+      "runtime_origin": "inherited_source_current_artifacts"
+    }
+  ],
+  "medium_debt_matrix_digest": "f00980a26d8c2f6d6effe23f7a0978f975d899f3788fcf10a722a07c6c2148f9",
+  "native_shared_medium_organization_opened": false,
+  "next_lgrc_experiment_fixed": false,
+  "post_n30_handoff_mode": "cross_project_spiral_pending_I8",
+  "producer_success_upgrades_native": false,
+  "trace_id": "n30_i7_medium_debt_matrix"
+}
