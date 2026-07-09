@@ -1,0 +1,14 @@
+{
+  "artifact_role": "medium_surface_persistence_decay_limit",
+  "decay_curve_status": "not_measured_in_I5B",
+  "demotion_rule_for_i6": "Any I6 row that requires slow trace or medium memory must add new runtime evidence; it cannot inherit that claim from I5-B.",
+  "i5_decay_curve_available": false,
+  "i5_persistence_status": "replay_persistent_no_decay_curve",
+  "i5a_decay_curve_available": false,
+  "i5a_persistence_status": "replay_persistent_no_decay_curve",
+  "longer_temporal_window_supported": false,
+  "persistence_claim_ceiling": "replay and bounded stress-variant persistence only; no slow trace, medium memory, or long-horizon persistence",
+  "persistence_decay_limit_digest": "7282cc17910d10b54693275c990cb28bd6907f7a37a29be619e6ac1358a89871",
+  "stress_variant_persistence_available": true,
+  "trace_id": "n30_i5b_medium_surface_persistence_decay_limit"
+}

@@ -1,0 +1,34 @@
+{
+  "artifact_role": "i5a_vs_i5_medium_trace_comparison",
+  "claim_boundary": "I5-A strengthens I5 as a second source-current medium-surface trace mechanism. It does not replace I5, widen M1 into M2, or support minimal shared-medium participation.",
+  "comparison_digest": "b692b652010e3f94ea78fafc55db803db993b7f33b7ad81ecaea79aa6f8c23bc",
+  "delta_comparison": {
+    "i5_surface_change_fields": {
+      "environment_capacity_delta": 0.134,
+      "neighbor_boundary_delta": 0.145,
+      "neighbor_distinguishability_delta": 0.154,
+      "neighbor_support_delta": 0.087
+    },
+    "i5a_has_larger_all_deltas": false,
+    "i5a_surface_change_fields": {
+      "environment_capacity_delta": 0.127,
+      "neighbor_boundary_delta": 0.132,
+      "neighbor_distinguishability_delta": 0.141,
+      "neighbor_support_delta": 0.084
+    }
+  },
+  "i5_mechanism": "single_neighbor_capacity_shell_strengthening",
+  "i5_primary_medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+  "i5_replaced": false,
+  "i5_source_output": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+  "i5_source_output_digest": "f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971",
+  "i5a_mechanism": "split_shell_capacity_growth_with_delayed_boundary_thickening",
+  "i5a_medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+  "i5a_replaces_i5": false,
+  "i5a_strengthens_i5": true,
+  "margin_upgrade_claimed": false,
+  "mechanism_distinction_from_i5": "I5 consumes the N28 I4-A single-shell strengthening source. I5-A consumes the N28 I4-A2 split-shell / delayed-boundary mechanism source.",
+  "source_mechanism_note": "I4-A strengthens I4 by margin in a beta local shell; I4-A2 tests a distinct split-shell/delayed-boundary mechanism.",
+  "strengthening_kind": "mechanism_diversity_and_repeatability; I5-A shows that M1 surface-trace evidence is not confined to the I5 single-shell strengthening mechanism",
+  "trace_id": "n30_i5a_vs_i5_medium_trace_comparison"
+}

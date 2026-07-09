@@ -1,0 +1,113 @@
+{
+  "artifact_role": "i6a_contrast_margin_matrix",
+  "contrast_margin_matrix_digest": "958a30f85eca269d338b71f12866416306e4296d0c5127c532e89e72b0d1728d",
+  "contrast_policy": {
+    "allowed_positive_claim": "higher counterfactual contrast margin for provisional M2 dependency separation",
+    "artifact_role": "i6a_contrast_threshold_policy",
+    "contrast_threshold_policy_digest": "f9488aa1953ff1515444e1c10bbbf9a4a474ba7934dc301c48b197fd930128a9",
+    "extractive_counterfactual_min_axis_delta": 0.05,
+    "higher_threshold_margin_claim_allowed": false,
+    "i6_threshold_margin_reinterpreted": false,
+    "n28_thresholds_retuned": false,
+    "neutral_counterfactual_min_axis_delta": 0.01,
+    "policy_declared_before_i6a_row_classification": true,
+    "policy_purpose": "Measure dependency separation from neutral and opposite-regime counterfactuals without changing N28 generative thresholds.",
+    "trace_id": "n30_i6a_later_eligibility_contrast_threshold_policy"
+  },
+  "dependency_contrast_margin_supported": true,
+  "higher_threshold_margin_supported": false,
+  "interpretation": "I6-A strengthens the dependency contrast, not the N28 threshold margin. I6 remains a narrow threshold-margin candidate.",
+  "margin_rows": [
+    {
+      "dependency_contrast_margin_supported": true,
+      "edge_vs_extractive_axis_deltas": {
+        "environment_capacity_delta": 0.144,
+        "neighbor_boundary_delta": 0.144,
+        "neighbor_distinguishability_delta": 0.134,
+        "neighbor_support_delta": 0.094
+      },
+      "edge_vs_extractive_axis_margins": {
+        "environment_capacity_delta": 0.094,
+        "neighbor_boundary_delta": 0.094,
+        "neighbor_distinguishability_delta": 0.084,
+        "neighbor_support_delta": 0.044
+      },
+      "edge_vs_neutral_axis_deltas": {
+        "environment_capacity_delta": 0.092,
+        "neighbor_boundary_delta": 0.082,
+        "neighbor_distinguishability_delta": 0.082,
+        "neighbor_support_delta": 0.052
+      },
+      "edge_vs_neutral_axis_margins": {
+        "environment_capacity_delta": 0.082,
+        "neighbor_boundary_delta": 0.072,
+        "neighbor_distinguishability_delta": 0.072,
+        "neighbor_support_delta": 0.042
+      },
+      "extractive_contrast_threshold": 0.05,
+      "medium_relation_ladder_rung": "M2_candidate_pending_I7_controls",
+      "medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+      "minimum_contrast_margin_vs_extractive": 0.044,
+      "minimum_contrast_margin_vs_neutral": 0.042,
+      "minimum_edge_vs_extractive_axis_delta": 0.094,
+      "minimum_edge_vs_neutral_axis_delta": 0.052,
+      "neutral_contrast_threshold": 0.01,
+      "relation_chain_id": "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+      "row_decision": "supported_for_M2_dependency_contrast_margin_not_threshold_margin_upgrade",
+      "row_digest": "a7aa0bc7556d3a411ff10807280af0b05ed1c5e1922f60f2aa311154365c2133",
+      "row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate_contrast_margin",
+      "source_i6_row_id": "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+      "threshold_margin_from_i6": 0.002,
+      "threshold_margin_improved": false
+    },
+    {
+      "dependency_contrast_margin_supported": true,
+      "edge_vs_extractive_axis_deltas": {
+        "environment_capacity_delta": 0.144,
+        "neighbor_boundary_delta": 0.144,
+        "neighbor_distinguishability_delta": 0.134,
+        "neighbor_support_delta": 0.094
+      },
+      "edge_vs_extractive_axis_margins": {
+        "environment_capacity_delta": 0.094,
+        "neighbor_boundary_delta": 0.094,
+        "neighbor_distinguishability_delta": 0.084,
+        "neighbor_support_delta": 0.044
+      },
+      "edge_vs_neutral_axis_deltas": {
+        "environment_capacity_delta": 0.092,
+        "neighbor_boundary_delta": 0.082,
+        "neighbor_distinguishability_delta": 0.082,
+        "neighbor_support_delta": 0.052
+      },
+      "edge_vs_neutral_axis_margins": {
+        "environment_capacity_delta": 0.082,
+        "neighbor_boundary_delta": 0.072,
+        "neighbor_distinguishability_delta": 0.072,
+        "neighbor_support_delta": 0.042
+      },
+      "extractive_contrast_threshold": 0.05,
+      "medium_relation_ladder_rung": "M2_candidate_pending_I7_controls",
+      "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+      "minimum_contrast_margin_vs_extractive": 0.044,
+      "minimum_contrast_margin_vs_neutral": 0.042,
+      "minimum_edge_vs_extractive_axis_delta": 0.094,
+      "minimum_edge_vs_neutral_axis_delta": 0.052,
+      "neutral_contrast_threshold": 0.01,
+      "relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+      "row_decision": "supported_for_M2_dependency_contrast_margin_not_threshold_margin_upgrade",
+      "row_digest": "40e384444ca301c875a7aed4c401630a120bc5588efe0bcf85f66ca09b412b09",
+      "row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate_contrast_margin",
+      "source_i6_row_id": "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate",
+      "threshold_margin_from_i6": 0.002,
+      "threshold_margin_improved": false
+    }
+  ],
+  "minimum_dependency_contrast_margin_vs_extractive": 0.044,
+  "minimum_dependency_contrast_margin_vs_neutral": 0.042,
+  "source_i6_acceptance_state": "accepted_provisional_M2_later_eligibility_dependency_candidate_pending_I7_controls",
+  "source_i6_output_digest": "44281258a0b7f62fa01a067bd4e308c4d35996e7c36333e2987458c672d3a7f4",
+  "source_i6_threshold_margin": 0.002,
+  "source_i6_threshold_margin_improved": false,
+  "trace_id": "n30_i6a_later_eligibility_contrast_margin_matrix"
+}

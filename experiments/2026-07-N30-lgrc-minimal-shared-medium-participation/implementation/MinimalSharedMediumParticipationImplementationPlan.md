@@ -363,10 +363,68 @@ P3/P4-side readiness.
 Test whether the participant perturbs a declared medium surface and leaves a
 source-current trace or surface change with persistence/decay evidence.
 
+### Iteration 5-A. Mechanism-Diverse Medium Surface Trace Strengthening
+
+Add a second M1 medium-surface trace candidate through a distinct N28
+source-current mechanism. The purpose is repeatability under medium-surface
+mechanism variation, not replacement of I5, not a larger-margin claim, and not
+M2/C5 evidence.
+
+### Iteration 5-B. Medium Surface Persistence / Scope-Window Probe
+
+Audit whether I5/I5-A support broader medium-surface scope or longer
+persistence before I6 attempts later eligibility. This iteration may strengthen
+C4/M1 by showing local split-shell scope or replay/stress-variant persistence,
+but it must not treat stress variants, duplicate replay, or snapshot replay as
+temporal decay curves.
+
+Allowed I5-B outcomes:
+
+```text
+larger local split-shell scope supported
+replay/stress-variant persistence supported
+temporal decay curve supported only if actually measured
+slow trace / medium memory blocked unless temporal decay evidence exists
+```
+
+I5-B must keep C5/M2 and minimal shared-medium participation blocked.
+
 ### Iteration 6. Later Eligibility / Susceptibility Probe
 
 Test whether later participant eligibility, cost, support, routing,
 susceptibility, or capacity changes because of the changed medium surface.
+
+Iteration 6 must consume the exact I5/I5-A medium-surface ids or explicitly
+justify a fork. It may use N28 same-policy transition traces as bounded
+source-backed later-response evidence, but it must distinguish:
+
+```text
+medium surface exists and changes = C4/M1 evidence
+changed medium surface conditions later eligibility = provisional M2 input evidence
+replay/control-backed minimal shared-medium participation = pending I7
+```
+
+The later metric must be declared before classification, include an explicit
+baseline/counterfactual row, and preserve N28-style environment-effect
+distinctions. A positive I6 row can support provisional M2 input evidence, but
+not final N30-C5/C6 until I7 replay and relation controls pass.
+
+### Iteration 6-A. Later Eligibility Contrast-Margin Probe
+
+Strengthen I6 by checking whether the provisional M2 dependency is clearly
+separated from neutral-gap and opposite-regime counterfactuals.
+
+I6-A may not retune N28 thresholds or reinterpret the I6 threshold margin.
+It should distinguish:
+
+```text
+threshold margin = distance from the N28 generative boundary
+contrast margin = distance from active counterfactuals
+```
+
+A good I6-A result can strengthen dependency separation while still recording
+that the N28 threshold margin remains narrow. It cannot by itself support final
+N30-C5/C6.
 
 ### Iteration 7. Replay, Controls, And Medium Debt Matrix
 

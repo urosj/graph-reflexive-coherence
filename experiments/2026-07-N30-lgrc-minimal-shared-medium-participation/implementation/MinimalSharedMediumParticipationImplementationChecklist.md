@@ -4,10 +4,10 @@
 
 ```text
 experiment = N30
-status = iteration_4b_participant_boundary_support_sensitivity_passed
-positive_evidence_opened = participant_admissibility_only
+status = iteration_6a_later_eligibility_contrast_margin_probe_passed
+positive_evidence_opened = participant_admissibility_medium_surface_trace_and_provisional_later_eligibility
 final_n30_closeout_rung = not_assigned
-ready_for_iteration_5 = true
+ready_for_iteration_7 = true
 ```
 
 ## Setup
@@ -417,24 +417,370 @@ later eligibility dependency, so N30-C4/C5/C6 remain blocked.
 
 ## Iteration 5 - Medium Surface Perturbation / Trace Probe
 
-- [ ] Declare medium surface.
-- [ ] Declare `medium_surface_scope`.
-- [ ] Confirm medium surface is non-private or classify as self-aftereffect / partial.
-- [ ] Record participant / medium distinctness.
-- [ ] Record perturbation source and timing.
-- [ ] Record trace or surface-state change.
-- [ ] Record persistence/decay behavior.
-- [ ] Block label-only medium and hidden producer routes.
+- [x] Declare medium surface.
+- [x] Declare `medium_surface_scope`.
+- [x] Confirm medium surface is non-private or classify as self-aftereffect / partial.
+- [x] Record participant / medium distinctness.
+- [x] Record perturbation source and timing.
+- [x] Record trace or surface-state change.
+- [x] Record persistence/decay behavior.
+- [x] Block label-only medium and hidden producer routes.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_medium_surface_perturbation_trace_M1_candidate_no_later_eligibility
+output = outputs/n30_medium_surface_trace_i5.json
+report = reports/n30_medium_surface_trace_i5.md
+script = scripts/build_n30_medium_surface_trace_i5.py
+output_digest = f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971
+participant_ladder_rung = P2_candidate_with_I4B_P4_guardrail
+strongest_N30_I5_row_participant_rung = P2_candidate
+source_i4b_strongest_participant_guardrail = P4_candidate
+medium_relation_ladder_rung = M1_candidate
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate
+runtime_origin = inherited_N28_source_current_artifact
+n30_fresh_runtime = false
+i5_claim_type = inherited_medium_surface_trace_admission
+participant_carrier_id = n28_i4a_focal_basin_beta
+medium_surface_id = n28_i4a_neighbor_capacity_shell_beta
+medium_surface_scope = shared_local
+medium_surface_scope_status = shared_local_candidate_pending_later_encounter
+participant_medium_distinct = true
+neighbor_distinguishability_delta = 0.154
+neighbor_support_delta = 0.087
+neighbor_boundary_delta = 0.145
+environment_capacity_delta = 0.134
+trace_persistence_status = replay_persistent_no_decay_curve
+source_guardrail_controls = N28_controls_only
+n30_relation_controls = pending_iteration_7
+trace_dependency_control_ids = pending_iteration_7
+artifact_count = 8
+source_current_input_count = 12
+failed_checks = []
+medium_surface_trace_evidence_opened = true
+later_eligibility_dependency_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+shared_medium_coordination_claim_allowed = false
+native_shared_medium_organization_claim_allowed = false
+ready_for_iteration_6_later_eligibility_probe = true
+```
+
+Interpretation:
+
+```text
+I5 opens the medium-surface side of N30 by consuming the N28 I4-A source-current
+generative strengthening row and its N28 replay trace. The declared medium
+surface is the N28 neighbor capacity shell, not the focal basin itself. It is
+classified as `shared_local` because the shell is distinct from the focal basin
+and exposes support, boundary, distinguishability, and environment-capacity
+fields rather than private participant state.
+
+I5 is inherited/source-current medium-surface admission, not fresh N30 runtime
+evidence. N28 artifacts may support C4/M1 surface-trace admission. They may not
+support C5/M2 later eligibility dependency unless I6/I7 add a new N30
+relation-chain dependency test.
+
+Geometrically, the N28 focal basin remains viable while the adjacent capacity
+surface becomes more distinguishable, better supported, better bounded, and
+more basin-forming. This supports an M1 medium perturbation / trace candidate.
+Replay shows the surface-change record is persistent enough for I5, but no
+decay curve is measured.
+
+I4-B is consumed as participant-side discipline: N30 already has a bounded P4
+participant guardrail. That P4 value is a source guardrail, not the I5 row's
+own participant rung. The I5 row remains `P2_candidate_with_I4B_P4_guardrail`.
+I5 does not claim that the N27 I4-A carrier itself perturbed the N28 surface.
+The load-bearing medium trace is the N28 source-current focal/neighbor
+relation.
+
+The N28 controls consumed by I5 are source guardrail controls, not N30 relation
+controls. I7 must still run or instantiate direct-message removal,
+trace-ablation, wrong-surface, time-reversal, medium-freeze, trace-shuffle,
+false-trace, decay, susceptibility-inversion, and hidden-producer controls
+against the actual I5/I6 relation chain.
+
+I5 still does not support trace-mediated eligibility, later susceptibility,
+minimal shared-medium participation, shared-medium coordination, native
+shared-medium organization, semantic communication, cooperation, agency,
+selfhood, or ecology-regime claims. N30-C5/C6 remain blocked until I6/I7 show
+that a later response depends on the changed medium surface and controls pass.
+
+C4 and C5 remain separate: C4 means a changed medium surface exists; C5 means
+a later response depends on that changed surface. I5 supports C4 only.
+```
+
+## Iteration 5-A - Mechanism-Diverse Medium Surface Trace Strengthening
+
+- [x] Consume I5 as the primary minimal M1 medium-surface trace row.
+- [x] Consume the N28 I4-A2 mechanism-diversity source-current artifacts.
+- [x] Consume the N28 I4-A2 replay trace.
+- [x] Declare a second medium surface without replacing I5.
+- [x] Record participant / medium distinctness for the I4-A2 focal/split-shell pair.
+- [x] Record medium-surface deltas and replay persistence.
+- [x] Compare I5 and I5-A as mechanism-diverse evidence rather than margin upgrade.
+- [x] Confirm later eligibility, M2, C5, coordination, and native shared-medium claims remain closed.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_mechanism_diverse_medium_surface_trace_M1_strengthening_no_later_eligibility
+output = outputs/n30_medium_surface_trace_i5a.json
+report = reports/n30_medium_surface_trace_i5a.md
+script = scripts/build_n30_medium_surface_trace_i5a.py
+output_digest = 519cc4efb48963232d969a6ecbf9d67e1b8dda005d89faed5f17995c233590ef
+source_i5_output_digest = f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971
+source_n28_i4a2_output_digest = f2785e97307704bff58e413eb071aff10311f0a3d6bd753ebccfb4c1975b6c20
+participant_ladder_rung = P2_candidate_with_I4B_P4_guardrail
+strongest_N30_I5A_row_participant_rung = P2_candidate
+source_i4b_strongest_participant_guardrail = P4_candidate
+medium_relation_ladder_rung = M1_candidate
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate
+runtime_origin = inherited_N28_source_current_artifact
+n30_fresh_runtime = false
+i5a_claim_type = inherited_medium_surface_trace_admission
+participant_carrier_id = n28_i4a2_focal_basin_epsilon
+medium_surface_id = n28_i4a2_split_neighbor_capacity_shell_epsilon
+medium_surface_scope = shared_local
+medium_surface_scope_status = shared_local_candidate_pending_later_encounter
+participant_medium_distinct = true
+neighbor_distinguishability_delta = 0.141
+neighbor_support_delta = 0.084
+neighbor_boundary_delta = 0.132
+environment_capacity_delta = 0.127
+trace_persistence_status = replay_persistent_no_decay_curve
+i5_replaced = false
+i5a_strengthens_i5 = true
+i5a_strengthening_kind = mechanism_diversity_repeatability_not_margin_upgrade
+margin_upgrade_claimed = false
+source_guardrail_controls = N28_controls_only
+n30_relation_controls = pending_iteration_7
+trace_dependency_control_ids = pending_iteration_7
+artifact_count = 9
+source_current_input_count = 13
+failed_checks = []
+medium_surface_trace_evidence_opened = true
+later_eligibility_dependency_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+shared_medium_coordination_claim_allowed = false
+native_shared_medium_organization_claim_allowed = false
+ready_for_iteration_6_later_eligibility_probe = true
+```
+
+Interpretation:
+
+```text
+I5-A strengthens I5 by showing that the N30 M1 medium-surface trace result is
+not confined to the I5 single-shell strengthening mechanism. It consumes the
+N28 I4-A2 split-shell / delayed-boundary mechanism-diversity row and replay
+trace. The local participant side is the I4-A2 focal basin, and the medium
+surface is the distinct split neighboring capacity shell.
+
+Like I5, I5-A is inherited/source-current medium-surface admission, not fresh
+N30 runtime evidence. N28 I4-A2 artifacts may support C4/M1 surface-trace
+admission. They may not support C5/M2 later eligibility dependency unless I6/I7
+add a new N30 relation-chain dependency test.
+
+Geometrically, the focal basin remains viable while a split neighboring shell
+becomes more distinguishable, better supported, better bounded, and more
+basin-forming. This is the same M1 kind of medium-surface perturbation / trace
+evidence as I5, but through a different source-current mechanism.
+
+I5-A is not a larger-margin upgrade. Its deltas are slightly smaller than I5:
+0.141 / 0.084 / 0.132 / 0.127 versus I5's
+0.154 / 0.087 / 0.145 / 0.134. The value is repeatability and mechanism
+diversity. I5 remains the primary minimal M1 row; I5-A is additional
+mechanism-diverse M1 evidence. It does not replace I5, widen M1 into M2,
+support later eligibility dependency, or support minimal shared-medium
+participation.
+
+The N28 controls consumed by I5-A are source guardrail controls, not N30
+relation controls. I7 must still run or instantiate direct-message removal,
+trace-ablation, wrong-surface, time-reversal, medium-freeze, trace-shuffle,
+false-trace, decay, susceptibility-inversion, and hidden-producer controls
+against the actual I5-A/I6 relation chain.
+```
+
+## Iteration 5-B - Medium Surface Persistence / Scope-Window Probe
+
+- [x] Consume I5 as the primary single-shell C4/M1 medium-surface trace row.
+- [x] Consume I5-A as the split-shell mechanism-diverse C4/M1 medium-surface trace row.
+- [x] Consume N28 neighbor-capacity stress rows for the I5 and I5-A source mechanisms.
+- [x] Test whether a broader local medium-surface scope is supported.
+- [x] Test whether replay/stress-variant persistence is supported.
+- [x] Separate stress/replay persistence from true temporal decay.
+- [x] Block slow-trace, medium-memory, C5/M2, and minimal shared-medium participation claims.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_C4_M1_scope_window_audit_split_scope_supported_temporal_decay_blocked
+output = outputs/n30_medium_surface_scope_window_i5b.json
+report = reports/n30_medium_surface_scope_window_i5b.md
+script = scripts/build_n30_medium_surface_scope_window_i5b.py
+output_digest = b795a864f4db404b4a620fac248d9fc47f6ef508c2929d6e82639dca9427d956
+source_i5_output_digest = f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971
+source_i5a_output_digest = 519cc4efb48963232d969a6ecbf9d67e1b8dda005d89faed5f17995c233590ef
+source_n28_stress_matrix_output_digest = fe051d860391bdbceddc2892abd49dc117b8a5797b3802d77609b1578e1ad756
+medium_relation_ladder_rung = M1_candidate
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate
+runtime_origin = inherited_N28_source_current_artifact
+n30_fresh_runtime = false
+larger_local_scope_supported = true
+scope_extension_kind = local split-shell surface broader than the I5 single-shell medium surface, not a global shared medium
+shared_global_scope_supported = false
+replay_and_stress_variant_persistence_supported = true
+longer_temporal_window_supported = false
+temporal_decay_window_supported = false
+slow_trace_or_medium_memory_supported = false
+later_eligibility_dependency_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+artifact_count = 4
+source_current_input_count = 5
+failed_checks = []
+ready_for_iteration_6_later_eligibility_probe = true
+```
+
+Interpretation:
+
+```text
+I5-B strengthens C4/M1 by showing that the medium-surface trace portfolio is
+not limited to the I5 single-shell surface. I5-A supplies a broader local
+split-shell surface, and both I5 and I5-A survive replay plus the N28
+neighbor-capacity compression stress variant. This supports local
+scope-broadening and replay/stress-variant persistence for the C4 surface
+trace.
+
+I5-B does not support a true longer temporal window. Stress variants, duplicate
+replay, and snapshot/load replay are not decay curves. Therefore slow trace,
+medium memory, long-horizon persistence, C5/M2, and minimal shared-medium
+participation remain blocked. I6 may consume the exact I5/I5-A surface ids and
+relation chains, but it must add new later-response dependency evidence rather
+than inheriting it from I5-B.
+```
 
 ## Iteration 6 - Later Eligibility / Susceptibility Probe
 
-- [ ] Record later eligibility, cost, support, routing, susceptibility, or capacity change.
-- [ ] Predeclare `later_response_metric`, `expected_direction`, `response_window`, `baseline_window`, `acceptance_threshold`, and `normalization_denominator`.
-- [ ] Record effect size and counterfactual row.
-- [ ] Show later change depends on the changed medium surface.
-- [ ] Link participant event, perturbation event, trace/surface change, and later response in one `relation_chain_id`.
-- [ ] Preserve N28-style environment-effect distinction where relevant.
-- [ ] Block generic redistribution and semantic relation relabels.
+- [x] Record later eligibility, cost, support, routing, susceptibility, or capacity change.
+- [x] Predeclare `later_response_metric`, `expected_direction`, `response_window`, `baseline_window`, `acceptance_threshold`, and `normalization_denominator`.
+- [x] Record effect size and counterfactual row.
+- [x] Show later change depends on the changed medium surface.
+- [x] Link participant event, perturbation event, trace/surface change, and later response in one `relation_chain_id`.
+- [x] Preserve N28-style environment-effect distinction where relevant.
+- [x] Block generic redistribution and semantic relation relabels.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_provisional_M2_later_eligibility_dependency_candidate_pending_I7_controls
+output = outputs/n30_later_eligibility_i6.json
+report = reports/n30_later_eligibility_i6.md
+script = scripts/build_n30_later_eligibility_i6.py
+output_digest = 44281258a0b7f62fa01a067bd4e308c4d35996e7c36333e2987458c672d3a7f4
+source_i5_output_digest = f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971
+source_i5a_output_digest = 519cc4efb48963232d969a6ecbf9d67e1b8dda005d89faed5f17995c233590ef
+source_i5b_output_digest = b795a864f4db404b4a620fac248d9fc47f6ef508c2929d6e82639dca9427d956
+source_n28_transition_matrix_output_digest = e6b0afbf81873e519db458e611cc01a1c11b2e9b5c2dead899946b270077700d
+participant_ladder_rung = P2_candidate_with_I4B_P4_guardrail
+medium_relation_ladder_rung = M2_candidate_pending_I7_controls
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate_with_provisional_C5_input_evidence
+later_eligibility_dependency_evidence_opened = true
+n30_c5_input_evidence_supported = true
+minimal_shared_medium_participation_claim_allowed = false
+final_n30_c5_claim_allowed = false
+final_n30_c6_claim_allowed = false
+runtime_origin = inherited_N28_source_current_transition_artifacts
+n30_fresh_runtime = false
+candidate_row_count = 2
+minimum_threshold_margin = 0.002
+minimum_effect_size_vs_neutral = 1.028056
+minimum_effect_size_vs_extractive_cross = 1.738751
+effect_margin_class = narrow_positive
+artifact_count = 6
+source_current_input_count = 10
+failed_checks = []
+ready_for_iteration_7_replay_controls = true
+```
+
+Interpretation:
+
+```text
+I6 opens provisional M2 input evidence by linking each I5/I5-A participant
+event, medium perturbation, medium-surface change, and later same-policy
+boundary-edge eligibility trace into a single ordered relation chain. The later
+eligibility metric is predeclared as the same-policy generative boundary-edge
+eligibility score normalized by the I5/I5-A surface-change thresholds.
+
+The geometric dependency is narrow but explicit: the later boundary-edge
+response stays eligible only when the medium surface retains positive
+distinguishability, support, boundary, and environment-capacity deltas above
+threshold. The neutral-gap counterfactual has no medium-surface gain and stays
+unclassified. The extractive-cross counterfactual changes the surface in the
+opposite direction and stays extractive. This blocks label-only eligibility and
+generic redistribution relabels for I6.
+
+I6 is not final N30-C5. The minimum positive threshold margin is 0.002, and the
+full replay/control matrix has not run. Therefore minimal shared-medium
+participation, N30-C5 closeout, N30-C6 handoff, coordination, native
+shared-medium organization, agency, sentience, and ecology-regime claims remain
+blocked pending I7/I8.
+```
+
+## Iteration 6-A - Later Eligibility Contrast-Margin Probe
+
+- [x] Consume I6 as the provisional M2 later-eligibility dependency candidate.
+- [x] Predeclare a separate counterfactual contrast-margin policy.
+- [x] Confirm N28 thresholds are not retuned and I6 threshold margin is not reinterpreted.
+- [x] Measure separation from neutral-gap counterfactuals.
+- [x] Measure separation from opposite-regime extractive counterfactuals.
+- [x] Preserve the narrow I6 threshold-margin caveat.
+- [x] Keep final C5/C6 and minimal shared-medium participation claims blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_M2_dependency_contrast_margin_strengthening_no_threshold_margin_upgrade
+output = outputs/n30_later_eligibility_margin_i6a.json
+report = reports/n30_later_eligibility_margin_i6a.md
+script = scripts/build_n30_later_eligibility_margin_i6a.py
+output_digest = 145d5bf2acda7b049df43c5c9b5742fb33920e0dfc11d955cd795b5620cecad7
+source_i6_output_digest = 44281258a0b7f62fa01a067bd4e308c4d35996e7c36333e2987458c672d3a7f4
+medium_relation_ladder_rung = M2_candidate_pending_I7_controls
+n30_closeout_ceiling = N30-C4_medium_perturbation_trace_candidate_with_strengthened_provisional_C5_input_evidence
+source_i6_threshold_margin = 0.002
+higher_threshold_margin_supported = false
+dependency_contrast_margin_supported = true
+minimum_dependency_contrast_margin_vs_neutral = 0.042
+minimum_dependency_contrast_margin_vs_extractive = 0.044
+n30_c5_input_evidence_supported = true
+minimal_shared_medium_participation_claim_allowed = false
+final_n30_c5_claim_allowed = false
+final_n30_c6_claim_allowed = false
+artifact_count = 3
+failed_checks = []
+ready_for_iteration_7_replay_controls = true
+```
+
+Interpretation:
+
+```text
+I6-A strengthens I6 by separating two margin meanings. The original I6
+threshold margin remains narrow at 0.002; I6-A does not improve or hide that.
+Instead, I6-A asks whether the same M2 dependency is clearly separated from the
+active counterfactuals.
+
+The answer is positive: the minimum axis-level dependency contrast margin is
+0.042 against the neutral-gap counterfactual and 0.044 against the
+extractive-cross counterfactual. This makes the later-eligibility dependency
+less label-fragile than the raw threshold margin suggests, while preserving the
+claim boundary. I6-A strengthens provisional M2 input evidence; it does not
+finalize N30-C5/C6.
+```
 
 ## Iteration 7 - Replay, Controls, And Medium Debt Matrix
 

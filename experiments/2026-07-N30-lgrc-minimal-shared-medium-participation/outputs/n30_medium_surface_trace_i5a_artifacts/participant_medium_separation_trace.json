@@ -1,0 +1,23 @@
+{
+  "artifact_role": "participant_medium_separation_trace",
+  "local_n28_participant_basis": {
+    "focal_basin_id": "n28_i4a2_focal_basin_epsilon",
+    "focal_coherence_floor_preserved": true,
+    "focal_stability_preserved": true,
+    "focal_support_floor_preserved": true,
+    "replay_passed": true
+  },
+  "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+  "participant_admissibility_guardrail_source": {
+    "guardrail_scope": "I4-B establishes participant-side readiness discipline; it is not imported as proof that the N27 carrier itself perturbed the N28 medium surface.",
+    "source": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_boundary_support_i4b.json",
+    "strongest_participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+    "strongest_participant_ladder_rung": "P4_candidate"
+  },
+  "participant_carrier_id": "n28_i4a2_focal_basin_epsilon",
+  "participant_medium_distinct": true,
+  "participant_medium_separation_argument": "The participant side is the N28 focal basin; the medium surface is the distinct split-shell neighbor capacity surface. The row uses I4-B as a participant discipline guardrail while the load-bearing medium trace comes from N28 I4-A2 source-current artifacts.",
+  "participant_medium_separation_digest": "bdfc9f377bbdba41382d9d79ffe12a44d86af397e7f14cb6ec3793ae9dc6f320",
+  "same_identifier_blocks_c5_c6": false,
+  "trace_id": "n30_i5a_participant_medium_separation_trace"
+}

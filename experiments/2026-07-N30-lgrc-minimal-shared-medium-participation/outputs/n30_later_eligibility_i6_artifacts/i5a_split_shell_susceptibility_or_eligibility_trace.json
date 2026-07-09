@@ -1,0 +1,88 @@
+{
+  "acceptance_threshold": {
+    "all_axis_metrics_at_or_above_declared_threshold": true,
+    "mean_normalized_axis_score": 1.0,
+    "minimum_normalized_axis_score": 1.0
+  },
+  "artifact_role": "susceptibility_or_eligibility_trace",
+  "baseline_window": "N28_I6A_neutral_gap_without_mixed_lobes",
+  "conditioning_basis": "The same-policy boundary-edge transition is eligible only when the declared medium-surface axes remain above their predeclared I5 thresholds; the neutral gap lacks those axes and the extractive cross moves in the opposite direction.",
+  "edge_mean_normalized_score": 1.028056,
+  "edge_metrics": {
+    "environment_capacity_delta": 0.092,
+    "neighbor_boundary_delta": 0.082,
+    "neighbor_distinguishability_delta": 0.082,
+    "neighbor_support_delta": 0.052
+  },
+  "edge_normalized_axis_scores": {
+    "environment_capacity_delta": 1.022222,
+    "neighbor_boundary_delta": 1.025,
+    "neighbor_distinguishability_delta": 1.025,
+    "neighbor_support_delta": 1.04
+  },
+  "edge_transition_trace_id": "n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_generative_edge_trace",
+  "effect_margin_class": "narrow_positive",
+  "effect_size_vs_extractive_cross": 1.738751,
+  "effect_size_vs_neutral": 1.028056,
+  "expected_direction": "positive_generative_boundary_edge_axes_above_threshold",
+  "extractive_counterfactual_blocks_generic_redistribution": true,
+  "extractive_counterfactual_metrics": {
+    "environment_capacity_delta": -0.052,
+    "neighbor_boundary_delta": -0.062,
+    "neighbor_distinguishability_delta": -0.052,
+    "neighbor_support_delta": -0.042
+  },
+  "extractive_counterfactual_trace_id": "n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_extractive_cross_trace",
+  "extractive_mean_normalized_score": -0.710695,
+  "extractive_normalized_axis_scores": {
+    "environment_capacity_delta": -0.577778,
+    "neighbor_boundary_delta": -0.775,
+    "neighbor_distinguishability_delta": -0.65,
+    "neighbor_support_delta": -0.84
+  },
+  "i7_controls_required_for_final_C5": [
+    "artifact_replay",
+    "duplicate_replay",
+    "snapshot_load_replay",
+    "direct_message_removal",
+    "no_perturbation",
+    "trace_ablation",
+    "wrong_surface",
+    "time_reversed_trace",
+    "medium_freeze",
+    "trace_shuffle",
+    "false_trace_injection",
+    "decay_manipulation",
+    "susceptibility_inversion",
+    "hidden_producer_or_global_controller"
+  ],
+  "later_response_conditioned_by_medium": true,
+  "later_response_metric": "same_policy_generative_boundary_edge_eligibility_score",
+  "medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+  "metric_declared_before_use": true,
+  "minimum_threshold_margin": 0.002,
+  "neutral_counterfactual_blocks_label_only_eligibility": true,
+  "neutral_counterfactual_metrics": {
+    "environment_capacity_delta": 0.0,
+    "neighbor_boundary_delta": 0.0,
+    "neighbor_distinguishability_delta": 0.0,
+    "neighbor_support_delta": 0.0
+  },
+  "neutral_counterfactual_trace_id": "n28_i6a_n28_i4a2_row_generative_mechanism_diversity_candidate_neutral_gap_without_mixed_lobes_trace",
+  "neutral_mean_normalized_score": 0.0,
+  "neutral_normalized_axis_scores": {
+    "environment_capacity_delta": 0.0,
+    "neighbor_boundary_delta": 0.0,
+    "neighbor_distinguishability_delta": 0.0,
+    "neighbor_support_delta": 0.0
+  },
+  "new_source_current_evidence_opened_by_N28_transition": false,
+  "normalization_denominator": "declared_I5_surface_change_thresholds",
+  "response_window": "N28_I6A_same_policy_generative_boundary_edge",
+  "source_relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain",
+  "source_row_mutated": false,
+  "susceptibility_or_eligibility_trace_digest": "1200402be6ea4bbf7eee091d757236857329e74be983618099098f316488320b",
+  "thresholds_retuned_for_transition": false,
+  "trace_dependency_control_status": "provisional_pending_iteration_7",
+  "trace_id": "n30_i6_i5a_split_shell_later_eligibility_dependency_trace"
+}

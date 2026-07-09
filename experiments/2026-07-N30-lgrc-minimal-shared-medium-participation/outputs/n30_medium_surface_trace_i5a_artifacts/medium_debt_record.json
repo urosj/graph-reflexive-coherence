@@ -1,0 +1,16 @@
+{
+  "artifact_role": "medium_debt_record",
+  "direct_message_present": false,
+  "direct_message_status": "absent_from_N28_medium_surface_trace",
+  "hidden_producer_route_detected": false,
+  "medium_debt_record_digest": "a0a46f3425d9dca19a41647612d8f858cbdca3645e86cffb35c7d70a0d8fe3a2",
+  "medium_debt_status": "medium_surface_trace_supported_later_dependency_pending",
+  "producer_residue_status": "no_hidden_capacity_policy_or_producer_label_used_as_evidence",
+  "remaining_debt": [
+    "later eligibility dependency not tested until I6",
+    "runtime controls over actual N30 relation chain pending I7",
+    "decay curve not measured in I5-A",
+    "native shared-medium organization blocked"
+  ],
+  "trace_id": "n30_i5a_medium_debt_record"
+}

@@ -35,3 +35,42 @@ historical evidence record.
 - `n30_participant_boundary_support_i4b_artifacts/`: supporting stress-policy,
   sensitivity-matrix, P4-candidate, stress-limited, and I4-B
   medium-leakage guard traces.
+- `n30_medium_surface_trace_i5.json`: first medium-surface positive artifact.
+  It consumes the N28 I4-A source-current focal/neighbor traces and replay
+  record to declare the neighbor capacity shell as a shared-local medium
+  surface with a replay-persistent surface change, while keeping later
+  eligibility and minimal shared-medium participation claims closed.
+- `n30_medium_surface_trace_i5_artifacts/`: supporting medium-surface
+  declaration, participant/medium separation, perturbation, surface-change,
+  trace persistence/debt, scope-classification, and I5 claim-boundary guard
+  traces.
+- `n30_medium_surface_trace_i5a.json`: mechanism-diverse M1 strengthening
+  artifact. It consumes the N28 I4-A2 split-shell / delayed-boundary
+  mechanism-diversity row and replay trace as a second shared-local medium
+  surface candidate, without replacing I5 or opening later-eligibility claims.
+- `n30_medium_surface_trace_i5a_artifacts/`: supporting I5-A medium-surface
+  declaration, participant/medium separation, perturbation, surface-change,
+  trace persistence/debt, scope-classification, claim-boundary guard, and
+  I5-vs-I5-A comparison traces.
+- `n30_medium_surface_scope_window_i5b.json`: medium-surface persistence /
+  scope-window audit. It consumes I5, I5-A, and N28 neighbor-capacity stress
+  rows to support local split-shell scope and replay/stress-variant
+  persistence while blocking temporal decay, slow-trace, C5/M2, and minimal
+  shared-medium participation claims.
+- `n30_medium_surface_scope_window_i5b_artifacts/`: supporting window policy,
+  scope-window matrix, persistence/decay limit, and I5-B claim-boundary guard
+  traces.
+- `n30_later_eligibility_i6.json`: later eligibility / susceptibility probe.
+  It consumes I5, I5-A, I5-B, and the N28 same-policy transition traces to
+  support provisional M2 input evidence while keeping final N30-C5/C6 and
+  minimal shared-medium participation claims blocked pending I7 controls.
+- `n30_later_eligibility_i6_artifacts/`: supporting susceptibility or
+  eligibility traces, coupled relation-lineage traces, aggregate later
+  eligibility trace, and I6 claim-boundary guard.
+- `n30_later_eligibility_margin_i6a.json`: later-eligibility contrast-margin
+  probe. It consumes I6 and shows that the provisional M2 dependency is more
+  clearly separated from neutral-gap and extractive-cross counterfactuals than
+  the narrow threshold margin alone indicates, while preserving the no-C5
+  closeout boundary.
+- `n30_later_eligibility_margin_i6a_artifacts/`: supporting contrast-threshold
+  policy, contrast-margin matrix, and I6-A claim-boundary guard.

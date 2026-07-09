@@ -1,0 +1,12 @@
+{
+  "artifact_role": "i5a_medium_leakage_guard_trace",
+  "later_eligibility_dependency_evidence_opened": false,
+  "m2_or_stronger_supported": false,
+  "medium_leakage_guard_digest": "ab2276e3c7c31539a105b8f180ed447492217adbe171632e68a214400c47c815",
+  "medium_relation_ladder_rung": "M1_candidate",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "native_shared_medium_organization_claim_allowed": false,
+  "shared_medium_coordination_claim_allowed": false,
+  "trace_id": "n30_i5a_medium_leakage_guard_trace",
+  "trace_mediated_eligibility_claim_allowed": false
+}

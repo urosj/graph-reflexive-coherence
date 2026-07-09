@@ -1,0 +1,106 @@
+{
+  "artifact_role": "medium_surface_scope_window_matrix",
+  "larger_local_scope_supported": true,
+  "minimum_stress_margin": 0.014,
+  "replay_and_stress_variant_persistence_supported": true,
+  "scope_extension_kind": "local split-shell surface broader than the I5 single-shell medium surface, not a global shared medium",
+  "scope_window_matrix_digest": "e9bdc0eb51ff98801c79177efc6c2089f4ca4dc147215b672db6a13ae6206f8f",
+  "shared_global_scope_supported": false,
+  "single_shell_surface_supported": true,
+  "slow_trace_or_medium_memory_supported": false,
+  "source_rows": [
+    {
+      "base_decay_curve_available": false,
+      "base_replay_persistence_status": "replay_persistent_no_decay_curve",
+      "base_surface_change_fields": {
+        "environment_capacity_delta": 0.134,
+        "neighbor_boundary_delta": 0.145,
+        "neighbor_distinguishability_delta": 0.154,
+        "neighbor_support_delta": 0.087
+      },
+      "declared_surface_scope_kind": "single_neighbor_capacity_shell",
+      "larger_scope_than_i5": false,
+      "m1_c4_surface_trace_admission_preserved": true,
+      "m2_c5_dependency_supported": false,
+      "n30_fresh_runtime": false,
+      "replay_and_stress_variant_persistence_supported": true,
+      "row_decision": "supported_for_C4_scope_window_audit_not_C5_or_slow_trace",
+      "row_digest": "a0276569d5082f9524e93d1e1c43775e9442bd14eb7f780226e20a94a87c3850",
+      "runtime_origin": "inherited_N28_source_current_artifact",
+      "slow_trace_or_medium_memory_supported": false,
+      "source_label": "I5_single_shell",
+      "source_medium_surface_id": "n28_i4a_neighbor_capacity_shell_beta",
+      "source_output_digest": "f84cfb6ca3ce06f699a8be2a680cdb75707a637b4b6abb167dbc66b681ccc971",
+      "source_relation_chain_id": "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain",
+      "source_row_id": "n30_i5_row_01_n28_i4a_medium_surface_trace_candidate",
+      "source_row_mutated": false,
+      "stress_minimum_margin": 0.014,
+      "stress_passed": true,
+      "stress_source": {
+        "stress_axis": "neighbor_capacity",
+        "stress_matrix": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+        "stress_row_id": "n28_i6_n28_i4a_row_generative_strengthening_candidate_neighbor_capacity_compression",
+        "stress_scope": "bounded compression toward regime decision boundary",
+        "stress_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix_artifacts/n28_i6_n28_i4a_row_generative_strengthening_candidate_neighbor_capacity_compression_trace.json",
+        "stress_trace_digest": "5c2f5fdaf677d95b362e69d74d72d9534e1f05d81e858d54cda8b66bea38b791"
+      },
+      "stressed_regime_label": "generative",
+      "stressed_surface_change_fields": {
+        "environment_capacity_delta": 0.124,
+        "neighbor_boundary_delta": 0.135,
+        "neighbor_distinguishability_delta": 0.144,
+        "neighbor_support_delta": 0.077
+      },
+      "thresholds_retuned_for_stress": false,
+      "true_temporal_decay_window_supported": false
+    },
+    {
+      "base_decay_curve_available": false,
+      "base_replay_persistence_status": "replay_persistent_no_decay_curve",
+      "base_surface_change_fields": {
+        "environment_capacity_delta": 0.127,
+        "neighbor_boundary_delta": 0.132,
+        "neighbor_distinguishability_delta": 0.141,
+        "neighbor_support_delta": 0.084
+      },
+      "declared_surface_scope_kind": "split_shell_neighbor_capacity_surface",
+      "larger_scope_than_i5": true,
+      "m1_c4_surface_trace_admission_preserved": true,
+      "m2_c5_dependency_supported": false,
+      "n30_fresh_runtime": false,
+      "replay_and_stress_variant_persistence_supported": true,
+      "row_decision": "supported_for_C4_scope_window_audit_not_C5_or_slow_trace",
+      "row_digest": "ca297903d5318c3839a93001372e159a91099a4836783b0b92f6d0e7dbda375e",
+      "runtime_origin": "inherited_N28_source_current_artifact",
+      "slow_trace_or_medium_memory_supported": false,
+      "source_label": "I5A_split_shell",
+      "source_medium_surface_id": "n28_i4a2_split_neighbor_capacity_shell_epsilon",
+      "source_output_digest": "519cc4efb48963232d969a6ecbf9d67e1b8dda005d89faed5f17995c233590ef",
+      "source_relation_chain_id": "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain",
+      "source_row_id": "n30_i5a_row_01_n28_i4a2_mechanism_diverse_medium_surface_trace_candidate",
+      "source_row_mutated": false,
+      "stress_minimum_margin": 0.014,
+      "stress_passed": true,
+      "stress_source": {
+        "stress_axis": "neighbor_capacity",
+        "stress_matrix": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix.json",
+        "stress_row_id": "n28_i6_n28_i4a2_row_generative_mechanism_diversity_candidate_neighbor_capacity_compression",
+        "stress_scope": "bounded compression toward regime decision boundary",
+        "stress_trace_artifact": "experiments/2026-06-N28-lgrc-generative-vs-extractive-persistence/outputs/n28_stress_regime_separation_matrix_artifacts/n28_i6_n28_i4a2_row_generative_mechanism_diversity_candidate_neighbor_capacity_compression_trace.json",
+        "stress_trace_digest": "2c061a03bf834a9f85238a7267a7cdcb753105de760a294e73638b476f067fc2"
+      },
+      "stressed_regime_label": "generative",
+      "stressed_surface_change_fields": {
+        "environment_capacity_delta": 0.117,
+        "neighbor_boundary_delta": 0.122,
+        "neighbor_distinguishability_delta": 0.131,
+        "neighbor_support_delta": 0.074
+      },
+      "thresholds_retuned_for_stress": false,
+      "true_temporal_decay_window_supported": false
+    }
+  ],
+  "split_shell_local_scope_supported": true,
+  "temporal_decay_window_supported": false,
+  "trace_id": "n30_i5b_medium_surface_scope_window_matrix"
+}

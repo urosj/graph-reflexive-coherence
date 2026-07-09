@@ -1,0 +1,13 @@
+{
+  "allowed_positive_claim": "higher counterfactual contrast margin for provisional M2 dependency separation",
+  "artifact_role": "i6a_contrast_threshold_policy",
+  "contrast_threshold_policy_digest": "f9488aa1953ff1515444e1c10bbbf9a4a474ba7934dc301c48b197fd930128a9",
+  "extractive_counterfactual_min_axis_delta": 0.05,
+  "higher_threshold_margin_claim_allowed": false,
+  "i6_threshold_margin_reinterpreted": false,
+  "n28_thresholds_retuned": false,
+  "neutral_counterfactual_min_axis_delta": 0.01,
+  "policy_declared_before_i6a_row_classification": true,
+  "policy_purpose": "Measure dependency separation from neutral and opposite-regime counterfactuals without changing N28 generative thresholds.",
+  "trace_id": "n30_i6a_later_eligibility_contrast_threshold_policy"
+}

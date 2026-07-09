@@ -1,0 +1,37 @@
+{
+  "aggregate_trace_digest": "8100babe6baa3361353eb52ee4b799e902d5d96829f598b6ae04ffded1c18b00",
+  "artifact_role": "i6_later_eligibility_aggregate_trace",
+  "candidate_count": 2,
+  "candidate_row_ids": [
+    "n30_i6_row_01_i5_single_shell_later_eligibility_candidate",
+    "n30_i6_row_02_i5a_split_shell_later_eligibility_candidate"
+  ],
+  "effect_margin_class": "narrow_positive",
+  "final_c5_claim_blocked_pending_i7": true,
+  "m2_input_evidence_supported": true,
+  "medium_surface_ids": [
+    "n28_i4a_neighbor_capacity_shell_beta",
+    "n28_i4a2_split_neighbor_capacity_shell_epsilon"
+  ],
+  "minimum_effect_size_vs_extractive_cross": 1.738751,
+  "minimum_effect_size_vs_neutral": 1.028056,
+  "minimum_threshold_margin": 0.002,
+  "new_source_current_evidence_opened_by_transition_matrix": false,
+  "relation_chain_ids": [
+    "n30_i5_n28_i4a_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency",
+    "n30_i5a_n28_i4a2_focal_to_neighbor_medium_trace_chain_later_eligibility_dependency"
+  ],
+  "same_policy_transition_matrix_acceptance_state": "accepted_regime_boundary_transition_matrix_same_policy_supported_no_new_ge_support",
+  "same_policy_transition_matrix_status": "passed",
+  "source_transition_policy": {
+    "declared_before_use": true,
+    "epsilon_above_boundary": 0.002,
+    "mixed_lobe_boundary_required_for_competitive_or_neutral": true,
+    "neutral_gap_value": 0.0,
+    "policy_id": "n28_i6a_same_policy_boundary_transition_v1",
+    "source_rows_mutated": false,
+    "thresholds_retuned_for_transition": false
+  },
+  "thresholds_retuned_for_transition": false,
+  "trace_id": "n30_i6_later_eligibility_aggregate_trace"
+}
