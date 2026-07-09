@@ -422,6 +422,23 @@ threshold margin = distance from the N28 generative boundary
 contrast margin = distance from active counterfactuals
 ```
 
+Margin records should not be read only as raw absolute values. When the source
+artifact exposes enough data, reports should interpret each margin as:
+
+```text
+observed_value
+declared_threshold_or_floor
+raw_margin = observed_value - declared_threshold_or_floor
+relative_margin_vs_threshold = raw_margin / declared_threshold_or_floor
+relative_margin_vs_observed = raw_margin / observed_value
+normalized_score = observed_value / declared_threshold_or_floor
+```
+
+If an artifact records only a gate headroom, such as a stress-envelope
+`current_minimum_margin`, the report should say that a clean relative percentage
+cannot be computed without the underlying observed value and threshold. This
+prevents `0.002 -> 0.010` from being treated as the whole interpretation.
+
 A good I6-A result can strengthen dependency separation while still recording
 that the N28 threshold margin remains narrow. It cannot by itself support final
 N30-C5/C6.

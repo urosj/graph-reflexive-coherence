@@ -52,6 +52,29 @@ support, boundary, and environment-capacity deltas form the later eligibility
 condition. The margin is narrow but positive, so I6 is a provisional M2 input
 candidate, not a robust C5 closeout.
 
+## Margin Semantics
+
+The `0.002` margin is raw threshold headroom, not transmitted mass. It is the
+smallest distance between a later medium-conditioned axis and its declared
+surface-change threshold:
+
+```text
+environment_capacity_delta = 0.092 against threshold 0.090
+neighbor_boundary_delta = 0.082 against threshold 0.080
+neighbor_distinguishability_delta = 0.082 against threshold 0.080
+neighbor_support_delta = 0.052 against threshold 0.050
+
+mean observed axis delta ~= 0.077
+mean threshold ~= 0.075
+raw mean headroom ~= 0.002
+relative headroom vs mean threshold ~= 2.7%
+mean normalized score = 1.028056
+```
+
+So I6 is narrow in absolute raw-margin terms, but the normalized reading is
+approximately 2.7-2.8% over the mean declared threshold. The weakest raw
+headroom remains `0.002`, so the row stays provisional pending I7 controls.
+
 ## Claim Boundary
 
 ```text

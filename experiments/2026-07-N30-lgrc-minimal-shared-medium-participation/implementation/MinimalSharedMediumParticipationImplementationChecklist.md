@@ -730,6 +730,30 @@ shared-medium organization, agency, sentience, and ecology-regime claims remain
 blocked pending I7/I8.
 ```
 
+Margin interpretation:
+
+```text
+The 0.002 I6 margin is raw threshold headroom, not transmitted mass. It is the
+smallest distance between a later medium-conditioned axis and its declared
+surface-change threshold.
+
+Observed I6 edge axes:
+  environment_capacity_delta = 0.092 against threshold 0.090
+  neighbor_boundary_delta = 0.082 against threshold 0.080
+  neighbor_distinguishability_delta = 0.082 against threshold 0.080
+  neighbor_support_delta = 0.052 against threshold 0.050
+
+Mean observed axis delta ~= 0.077
+Mean threshold ~= 0.075
+Raw mean headroom ~= 0.002
+Relative headroom vs mean threshold ~= 2.7%
+Mean normalized score = 1.028056
+
+So I6 is a narrow positive result in normalized geometric-threshold terms,
+not just a raw 0.2% result. The weakest raw headroom remains 0.002, which is
+why the row stays provisional pending I7 controls.
+```
+
 ## Iteration 6-A - Later Eligibility Contrast-Margin Probe
 
 - [x] Consume I6 as the provisional M2 later-eligibility dependency candidate.
@@ -882,6 +906,31 @@ final_n30_c5_claim_allowed = false
 failed_checks = []
 ```
 
+Margin interpretation:
+
+```text
+I6-B contains two margin meanings.
+
+Lobe-exchange margin:
+  inflow_lobe_capacity_delta = 0.062
+  outflow_lobe_capacity_delta_abs = 0.060
+  mixed_lobe_delta_min = 0.040
+  minimum_lobe_exchange_margin = 0.020
+
+This is about 50% headroom relative to the lobe threshold, or about 33% of the
+observed minimum lobe delta. That is stronger than the original I6 threshold
+edge.
+
+Neighbor-capacity stress margin:
+  neighbor_capacity_stress_margin = 0.010
+
+This is the stress-envelope gate headroom used for the 5x comparison against
+the original I6 0.002 edge margin. It is not itself the lobe-transfer amount.
+The underlying stress artifact records the limiting field and gate headroom,
+but not enough observed-value/threshold detail to compute a clean relative
+percentage for that stress margin.
+```
+
 ### Iteration 6-C - Alternative Contrast / Margin Audit
 
 - [x] Compare the alternative I6-B margin to the original I6 edge margin.
@@ -918,6 +967,25 @@ circulatory route-conductance relation with 0.010 neighbor-capacity threshold
 margin and 0.020 lobe-exchange margin. This is a fivefold threshold-margin
 improvement relative to I6, but not broad robustness. Final N30-C5/C6 remain
 blocked until I7 relation controls pass.
+```
+
+Detailed margin reading:
+
+```text
+The 5x statement compares only raw gate headroom:
+  original I6 edge threshold margin = 0.002
+  alternative I6-B neighbor-capacity stress margin = 0.010
+  ratio = 5.0
+
+It should not be read as "five times the transmitted capacity." The stronger
+capacity-change evidence in I6-B is the lobe exchange:
+  0.060/0.062 observed lobe deltas against a 0.040 threshold.
+
+Thus the fuller interpretation is:
+  I6 = narrow normalized generative-edge eligibility headroom (~2.7-2.8% over
+       the mean threshold, raw weakest margin 0.002).
+  I6-B = stronger lobe-exchange medium geometry plus a 5x larger raw stress
+         gate headroom, but still pending I7 replay/control.
 ```
 
 ## Iteration 7 - Replay, Controls, And Medium Debt Matrix
