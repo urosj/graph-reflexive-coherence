@@ -46,21 +46,30 @@ local proper-time evidence, recurrent pulse circuits, route choice,
 memory/trail affordance, goal-proxy regulation, and bounded agentic-like
 integration.
 
-The current becoming-primitive / ecology-bridge arc has closed through `N29`.
-The Phase 8 `LGRC9V3` multi-basin formation tranche consumed the closed
-N25/N25.1 evidence and closed at `MB5`; the N25.2 validation bridge then
-closed at `MB6`, allowing N26 to consume scoped multi-basin substrate evidence.
-N26 closed bounded proxy divergence / proxy collapse evidence at `PD6`, N27
-closed bounded configuration/topology transfer evidence at `CT6`, and N28
-closed bounded generative/extractive persistence evidence at `GE6` / `N28-C6`.
-N29 then closed at `EB6` / `N29-C6` as a claim-clean convergence bridge: it
-produces a prototype atlas, bridge composition map, and first ecology probe
-contracts for `reflexive-coherence-agentic-ecology`, while handing unresolved
-native-surface and producer-debt targets back to N30+ work in this repository.
-Executed ecology runtime, native ant/colony agency, resource economy,
-cooperation/exploitation, native support, native AP5, AP4/AP5 NAT4-gap
-resolution, sentience, organism/life, ant ecology implementation, and Phase 8
-completion remain blocked.
+The becoming-primitive / ecology-bridge and first N30+ shared-medium arc has
+closed through `N30-C6`. The Phase 8
+`LGRC9V3` multi-basin formation tranche consumed the closed N25/N25.1 evidence
+and closed at `MB5`; the N25.2 validation bridge then closed at `MB6`, allowing
+N26 to consume scoped multi-basin substrate evidence. N26 closed bounded proxy
+divergence / proxy collapse evidence at `PD6`, N27 closed bounded
+configuration/topology transfer evidence at `CT6`, and N28 closed bounded
+generative/extractive persistence evidence at `GE6` / `N28-C6`. N29 closed at
+`EB6` / `N29-C6` as a claim-clean convergence bridge with a prototype atlas,
+bridge composition map, and first ecology probe contracts for
+`reflexive-coherence-agentic-ecology`.
+
+N30 then grounded the phrase **shared medium** at the smallest admissible LGRC
+relation form: participant continuity, non-private medium-surface perturbation,
+source-current trace/surface change, and later eligibility/susceptibility
+dependence under replay/control validation. It closes as a bounded
+artifact-level minimal shared-medium participation candidate and hands off to a
+cross-project spiral: an agentic-ecology demand/composition pass should decide
+which N31+ primitive or building block to test next. Shared-medium
+coordination, communication, cooperation, agency, native shared-medium
+organization, native support, native AP5, AP4/AP5 NAT4-gap resolution,
+sentience, organism/life, ant ecology implementation, executed ecology
+runtime, resource economy, cooperation/exploitation, and Phase 8 completion
+remain blocked.
 
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current
@@ -97,16 +106,23 @@ contract, or a producer-mediated pattern with unresolved nativity debt.
 The examples are part of this shape. They are not only demonstrations of what
 is already available; they also show how to search for patterns, inspect
 geometry, design motifs, and compose small structures into richer probes. N29
-is the current clearest bridge example: it turns the N05-N28 evidence stack
-into a prototype atlas and first ecology probe contracts without converting
-those contracts into executed ecology runtime or native agency claims.
+is the clearest bridge-atlas example: it turns the N05-N28 evidence stack into
+a prototype atlas and first ecology probe contracts without converting those
+contracts into executed ecology runtime or native agency claims. N30 is the
+first post-bridge shared-medium example: it shows how a minimally stable
+participant, a non-private medium surface, a source-current trace, and a later
+eligibility dependency can become a reusable primitive/building-block candidate
+while preserving the claim boundary.
 
-The N30+ catalog roadmap package now orients the next in-repository experiment
+The N30+ catalog roadmap package orients the next in-repository experiment
 phase. It is planning and ontology guidance, not evidence by itself:
 [N30+ Experiment Catalog Roadmap](experiments/N30_plus_experiment_catalog_roadmap.md)
 defines primitives, building blocks, motifs, regimes, debt, and claim hygiene;
 [N30+ Candidate Directions](experiments/N30_plus_candidate_directions.md)
-collects candidate directions for future shared-medium ecology work.
+collects candidate directions for future shared-medium ecology work. The N30
+closeout is the first source-backed result under that roadmap, and
+[N30+ Shared-Medium Ecology Handoff](experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md)
+is the current continuation pointer after N30.
 
 ## Theory and implementation map
 
@@ -316,7 +332,8 @@ full link-heavy evidence index is kept in
 | N05-N11 foundation arc | N05-N11 record a bounded LGRC agentic-like foundation arc with explicit claim ceilings. | Not unbounded agency or hidden-steering-free native general intelligence. | [N05-N11 roadmap](experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n05-n11-foundation-arc) |
 | N12-N19 review arc | N12-N19 close the artifact-level agency-prerequisite and native-readiness review stack; AP4/AP5 NAT4 gaps remain blockers. | Not full native AP3-AP8 ladder generation, agency, native support, Phase 8 implementation, identity acceptance, or unrestricted autonomy. | [N12-N18 roadmap](experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md), [N19 closeout report](experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n12-n19-review-arc) |
 | N20-N29 becoming/ecology bridge arc | N20-N29 close bounded becoming-primitive evidence through N28 and close N29 at `EB6` / `N29-C6` with a prototype atlas and first ecology probe contracts. | Not executed ecology runtime, native ant/colony agency, biological agency, organism/life, resource economy, cooperation/exploitation, semantic goals/choice/learning, AP4/AP5 gap resolution, Phase 8 completion, or unrestricted autonomy. | [N20-N29 roadmap](experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md), [N29 closeout report](experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/reports/n29_closeout_and_ecology_handoff_i18.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n20-n29-becomingecology-bridge-arc) |
-| N30+ catalog orientation | N30+ roadmap documents define the next catalog grammar for primitives, building blocks, motifs, regimes, candidate directions, debt, and claim hygiene. | Not an evidence source, not a fixed schedule, and not a new claim arc until future experiments produce source-backed artifacts. | [N30+ roadmap](experiments/N30_plus_experiment_catalog_roadmap.md), [N30+ candidate directions](experiments/N30_plus_candidate_directions.md) |
+| N30 minimal shared-medium participation | N30 closes at `N30-C6` as bounded artifact-level minimal shared-medium participation: participant continuity, non-private medium-surface perturbation, source-current trace/surface change, and later eligibility/susceptibility dependence under replay/control validation. | Not shared-medium coordination, communication, cooperation, agency, native shared-medium organization, ecology regime, sentience, organism/life, or fixed N31 selection. | [N30 README](experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/README.md), [N30 I8 closeout report](experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md), [N30+ handoff](experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n30-minimal-shared-medium-participation) |
+| N30+ catalog orientation | N30+ roadmap documents define the next catalog grammar for primitives, building blocks, motifs, regimes, candidate directions, debt, and claim hygiene. | Planning and ontology guidance only; not a substitute for source artifacts, not a fixed schedule, and not evidence for future N31+ claims. | [N30+ roadmap](experiments/N30_plus_experiment_catalog_roadmap.md), [N30+ candidate directions](experiments/N30_plus_candidate_directions.md) |
 
 Global non-claims remain explicit: this repository does not currently claim
 native agency, native ant/colony agency, semantic goal ownership, sentience,

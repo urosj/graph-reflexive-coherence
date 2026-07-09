@@ -54,7 +54,7 @@ machine-local state.
 | [N27 configuration/substrate transfer](2026-06-N27-lgrc-configuration-substrate-transfer/README.md) | Closed bounded artifact-level CT6 configuration/topology transfer evidence with N27-C6/N28 handoff and claim-clean N28 precursor side-effect evaluation. N28 generative persistence, semantic identity, agency, native support, native AP5, AP5 NAT4-gap resolution, Phase 8 completion, and ant ecology remain blocked. | README, closeout handoff, control/AP classification, N28 precursor side-effect evaluation, replay/stress matrices, implementation checklist, and hypotheses. |
 | [N28 generative vs extractive persistence](2026-06-N28-lgrc-generative-vs-extractive-persistence/README.md) | Closed bounded artifact-level GE6 generative/extractive persistence evidence with paired generative, extractive, and competitive/neutral regime separation under one shared policy, plus N28-C6/N29 handoff. Broad robustness, AP4/AP5 NAT4-gap resolution, native AP5, native support, Phase 8 completion, and ant ecology remain blocked. | README, closeout handoff, I7 claim classification, replay/stress matrices, focused margin tranche, implementation checklist, and hypotheses. |
 | [N29 agentic ecology convergence bridge](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/README.md) | Closed bridge experiment at EB6/N29-C6: source-backed ecology demand model, capability/debt atlas, bridge motif library, prototype atlas, and first probe contracts for `reflexive-coherence-agentic-ecology`, with N30+ primitive/component naturalization targets recorded. Executed ecology runtime, native ant/colony agency, resource economy, cooperation/exploitation, native support, sentience, organism/life, and Phase 8 completion remain blocked. | README, I18 closeout handoff, Phase D probe contracts, prototype atlas, demand/supply coverage matrix, motif library, implementation checklist, and hypotheses. |
-| [N30 minimal shared-medium participation](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md) | Scaffolded first N30+ experiment: defines minimal shared-medium participation as participant continuity plus medium-surface perturbation / trace / later eligibility evidence, grounded in N27/N28/N29 and the shared-medium essay/spec sources. Positive evidence, shared-medium coordination, communication, cooperation, agency, ecology regime, and native shared-medium organization remain unopened. | README, hypotheses, implementation plan/checklist, and future iteration scaffolds. |
+| [N30 minimal shared-medium participation](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md) | Closed first N30+ experiment at N30-C6: bounded artifact-level minimal shared-medium participation candidate with participant continuity, non-private medium-surface perturbation, source-current trace/surface change, and later eligibility/susceptibility dependence under replay/control validation. Shared-medium coordination, communication, cooperation, agency, ecology regime, native shared-medium organization, and fixed N31 selection remain blocked. | README, I8 closeout and spiral handoff, I7 replay/control matrix, medium-debt artifacts, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -561,6 +561,46 @@ Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
 Read-Back`; the last is a boundary source for separating agency from sentience,
 not a sentience claim.
 
+N30 closes the first concrete N30+ shared-medium experiment:
+
+```text
+status = passed
+acceptance_state = accepted_N30_C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+final_n30_closeout_rung = N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+n30_c5_replay_control_backed_candidate_supported = true
+n30_c6_spiral_ready_closeout_supported = true
+bounded_minimal_shared_medium_participation_candidate_supported = true
+trace_mediated_eligibility_primitive_candidate_supported = true
+post_n30_handoff_mode = cross_project_spiral
+agentic_ecology_demand_pass_recommended = true
+candidate_n31_interface_available = true
+candidate_n31_selected = false
+next_lgrc_experiment_fixed = false
+```
+
+N30 grounds "shared medium" at the lowest LGRC relation form that survived
+replay/control validation:
+
+```text
+participant continuity
+  -> non-private medium surface perturbation
+  -> source-current trace / surface change
+  -> later eligibility or susceptibility depends on that changed surface
+```
+
+This enables later trace-conditioned eligibility, shared support
+redistribution, slow conductance/memory traces, boundary-mediated exchange,
+stigmergic trail-like fields, capacity circulation, and ecology demand mapping.
+It does not yet claim shared-medium coordination, communication, cooperation,
+agency, native shared-medium organization, parent-basin modulation, resonance,
+sentience, organism/life, ant ecology implementation, executed ecology runtime,
+or ecology regime.
+
+The continuation is deliberately not a fixed N31. N30 exposes a candidate
+interface for future N31+ LGRC building-block work, but the next recommended
+step is an agentic-ecology demand/composition pass that decides which
+shared-medium primitive or building block should be tested next.
+
 Roadmap-level context:
 
 - [N05-N11 LGRC Agentic-Like Foundation Roadmap](N05-N11-LGRC-AgenticLikeFoundationRoadmap.md)
@@ -569,8 +609,14 @@ Roadmap-level context:
 - [N20-N29 LGRC Becoming-Agency Ecology Handoff](N20-N29-LGRC-BecomingAgencyEcologyHandoff.md)
 - [N30+ Experiment Catalog Roadmap](N30_plus_experiment_catalog_roadmap.md)
 - [N30+ Candidate Directions](N30_plus_candidate_directions.md)
+- [N30+ LGRC Shared-Medium Ecology Handoff](N30_plus_LGRC_SharedMediumEcologyHandoff.md)
 
 The N30+ documents are planning and catalog-orientation records. They define
 how future experiments should think about primitives, building blocks, motifs,
 regimes, source-basis discipline, debt, failure, and candidate directions, but
-they are not themselves evidence for a new claim arc.
+they are not themselves evidence. N30 is the first source-backed closeout under
+that roadmap; later N31+ claims still need their own artifacts, replay/control
+records, and claim boundaries. The N30+ handoff is the active continuation
+pointer after N30: it preserves the cross-project spiral and keeps N31
+unselected until an agentic-ecology demand/composition pass chooses the next
+LGRC primitive or building block.

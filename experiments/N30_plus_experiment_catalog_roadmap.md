@@ -67,6 +67,7 @@ Future experiments should be allowed to discover new primitives when attempting 
 - [18. Closing orientation](#18-closing-orientation)
 - [Appendix A. N30 Direction Refinement](#appendix-a-n30-direction-refinement)
 - [Appendix B. Cross-Project Spiral After N30](#appendix-b-cross-project-spiral-after-n30)
+- [Appendix C. N30 Closeout Update](#appendix-c-n30-closeout-update)
 
 ---
 
@@ -1255,10 +1256,11 @@ implementation.
 
 The earlier candidate table remains useful as orientation, especially the
 shared-medium support-redistribution and building-block-contract directions.
-However, the first concrete N30 experiment should not start by claiming a
-shared-medium building block. The term **shared medium** is already a defined
-concept in the RC-Agentic-Ecology shared-medium essay and engineering spec, and
-using it too lightly would risk turning it into a generic carrier-surface label.
+However, the first concrete N30 experiment was not designed to start by
+claiming a shared-medium building block. The term **shared medium** is already
+a defined concept in the RC-Agentic-Ecology shared-medium essay and engineering
+spec, and using it too lightly would risk turning it into a generic
+carrier-surface label.
 
 N30 therefore begins one layer lower:
 
@@ -1376,10 +1378,10 @@ ecology motif loop
   composes admitted or bounded candidates into motif-level probes
 ```
 
-N30 should come first because it grounds the phrase **shared medium** at the
-minimum admissible relation form: participant continuity, non-private medium
-surface, trace/surface change, later eligibility dependence, and controls
-against message/controller/story relabels.
+N30 came first because it grounds the phrase **shared medium** at the minimum
+admissible relation form: participant continuity, non-private medium surface,
+trace/surface change, later eligibility dependence, and controls against
+message/controller/story relabels.
 
 After N30, the next useful step may be a short pass in the agentic ecology
 project, but not as full ecology implementation. Its role should be a demand
@@ -1407,10 +1409,9 @@ Those are demands, not evidence claims. They can steer which N31+ experiments
 matter, but they cannot substitute for LGRC source artifacts, replay, controls,
 or claim-boundary checks.
 
-The practical rule is:
+The practical rule after N30 is:
 
 ```text
-Do N30 first.
 Then alternate:
   one LGRC admissibility experiment,
   one agentic-ecology demand/composition review when useful.
@@ -1428,3 +1429,55 @@ The spiral is an application of this roadmap's bidirectional grammar. Upward
 composition builds from primitives toward motifs and regimes; downward
 discovery lets failed or missing ecology compositions expose the next primitive
 or building block that LGRC needs to test.
+
+---
+
+## Appendix C. N30 Closeout Update
+
+N30 has now closed as the first concrete N30+ source-backed result:
+
+```text
+final_n30_closeout_rung = N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+bounded_minimal_shared_medium_participation_candidate_supported = true
+trace_mediated_eligibility_primitive_candidate_supported = true
+post_n30_handoff_mode = cross_project_spiral
+agentic_ecology_demand_pass_recommended = true
+candidate_n31_interface_available = true
+candidate_n31_selected = false
+next_lgrc_experiment_fixed = false
+```
+
+The result validates the narrowed N30 starting point from Appendix A. It does
+not replace this roadmap's broader candidate grammar. Instead, it supplies the
+first source-backed shared-medium primitive/building-block candidate that the
+next demand/composition pass can consume.
+
+The supported relation is:
+
+```text
+participant continuity
+  -> non-private medium surface perturbation
+  -> source-current trace / surface change
+  -> later eligibility or susceptibility depends on that changed surface
+  -> replay/control validation
+```
+
+This opens later pattern families such as trace-conditioned eligibility,
+shared support redistribution, slow conductance / memory traces,
+boundary-mediated exchange, stigmergic trail-like fields, capacity circulation,
+and ecology demand mapping. It still blocks shared-medium coordination,
+communication, cooperation, agency, native shared-medium organization,
+parent-basin modulation, resonance, sentience, organism/life, executed ecology
+runtime, ecology regime, and fixed N31 selection.
+
+Canonical evidence pointers:
+
+- [N30 experiment README](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md)
+- [N30 I8 closeout report](2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md)
+- [N30 I8 structured closeout](2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8.json)
+
+The roadmap consequence is important: the next step should not be selected by
+the old candidate order alone. N30 makes a candidate N31+ interface available,
+but the next concrete LGRC experiment should be selected after the
+agentic-ecology demand/composition pass identifies which shared-medium building
+block is actually needed.

@@ -239,17 +239,72 @@ organism/life, resource economy, cooperation/exploitation, native shared-medium
 coordination, semantic learning, semantic choice, semantic goals, AP4/AP5 NAT4
 gap resolution, Phase 8 completion, or unrestricted autonomy.
 
+## N30 Minimal Shared-Medium Participation
+
+Bounded claim: N30 closes at `N30-C6` as artifact-level minimal shared-medium
+participation evidence. The supported relation is:
+
+```text
+participant continuity
+  -> non-private medium surface perturbation
+  -> source-current trace / surface change
+  -> later eligibility or susceptibility depends on that changed surface
+  -> replay/control validation
+```
+
+This makes "shared medium" a source-backed LGRC relation form rather than only
+a planning phrase. It can be consumed as a bounded minimal shared-medium
+participation candidate and as trace-mediated eligibility primitive /
+building-block candidate input for later demand mapping.
+
+Evidence pointers:
+
+- [N30 README](../../experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/README.md):
+  Experiment entry point, core question, claim ceiling, and cross-project
+  spiral handoff.
+- [N30 I8 closeout report](../../experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md):
+  Human-readable final closeout, margin context, and claim-boundary summary.
+- [N30 I8 closeout JSON](../../experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8.json):
+  Structured final N30-C6 closeout and post-N30 spiral handoff fields.
+- [N30 I7 replay/control report](../../experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_replay_controls_i7.md):
+  Replay/control and medium-debt matrix that supports the N30-C5 candidate
+  consumed by I8.
+- [N30 I7 replay/control JSON](../../experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_replay_controls_i7.json):
+  Structured per-row replay/control evidence across original generative-edge
+  and alternative circulatory candidate families.
+- [N30 implementation checklist](../../experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/implementation/MinimalSharedMediumParticipationImplementationChecklist.md):
+  Iteration-by-iteration evidence record, closeout interpretation, and
+  closure-continuation positioning.
+- [N30+ shared-medium ecology handoff](../../experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md):
+  Active continuation record after N30, including the cross-project spiral,
+  candidate N31 interface status, and fixed-N31 blocker.
+
+Claim ceiling: bounded artifact-level minimal shared-medium participation
+candidate. This does not claim shared-medium coordination, communication,
+cooperation, agency, native shared-medium organization, parent-basin
+modulation, resonance, sentience, organism/life, ecology regime, executed
+agentic ecology runtime, fixed N31 selection, Phase 8 completion, or
+unrestricted autonomy.
+
+Continuation boundary: N30 exposes a candidate N31+ interface, but it does not
+select N31 by default. The next recommended step is a cross-project spiral
+through an agentic-ecology demand/composition pass, followed by whichever LGRC
+primitive or building block that pass actually selects.
+
 ## Forward Catalog Orientation
 
 The N30+ roadmap package is a planning and ontology layer for future
 experiments. It defines catalog layers, candidate directions, debt/failure
 language, and claim-hygiene expectations, but it is not itself a source of
-evidence for a new claim arc.
+evidence for future N31+ claims. N30 is the first source-backed closeout under
+that roadmap.
 
 Pointers:
 
 - [N30+ Experiment Catalog Roadmap](../../experiments/N30_plus_experiment_catalog_roadmap.md):
   Catalog ontology for primitives, building blocks, motifs, regimes, debt, and
-  claim discipline after N29.
+  claim discipline after N29/N30.
 - [N30+ Candidate Directions](../../experiments/N30_plus_candidate_directions.md):
   Candidate shared-medium ecology directions for future experiments.
+- [N30+ Shared-Medium Ecology Handoff](../../experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md):
+  Active handoff after the N30 closeout.

@@ -37,6 +37,7 @@ All candidates inherit:
 - [Later N30+ Regime Probes](#later-n30-regime-probes)
 - [Direction Addendum: N30 Selected Starting Point](#direction-addendum-n30-selected-starting-point)
 - [Direction Addendum: Cross-Project Spiral](#direction-addendum-cross-project-spiral)
+- [Direction Addendum: N30 Closeout Status](#direction-addendum-n30-closeout-status)
 
 ## Naming convention
 
@@ -550,9 +551,9 @@ but contract language must not count as positive shared-medium evidence.
 ## Direction Addendum: Cross-Project Spiral
 
 The candidate sequence above should not be read as a closed LGRC-only backlog.
-After N30 grounds minimal shared-medium participation, the next candidate choice
-should be allowed to depend on a demand/composition pass in the agentic ecology
-project.
+After N30's minimal shared-medium participation closeout, the next candidate
+choice should be allowed to depend on a demand/composition pass in the agentic
+ecology project.
 
 Recommended operating rhythm:
 
@@ -600,3 +601,40 @@ upward:
 downward:
   missing ecology behavior -> missing block -> missing primitive -> LGRC probe
 ```
+
+## Direction Addendum: N30 Closeout Status
+
+N30 has now closed as the first source-backed N30+ result:
+
+```text
+N30-C6_post_N30_spiral_ready_minimal_shared_medium_participation_closeout
+```
+
+The result supports a bounded minimal shared-medium participation candidate and
+a trace-mediated eligibility primitive/building-block candidate. It does not
+support shared-medium coordination, communication, cooperation, agency, native
+shared-medium organization, ecology regime, or fixed N31 selection.
+
+This means the candidate lists above should be read as a menu, not as the next
+fixed schedule. Shared-medium support redistribution remains a strong possible
+next direction, but N30's actual closeout points first to an agentic-ecology
+demand/composition pass:
+
+```text
+N30 closeout
+  -> agentic ecology demand/composition pass
+  -> selected N31+ LGRC primitive or building-block probe
+```
+
+The demand pass may still choose support redistribution, but it may instead
+select slow trace, boundary permeability, latent basin / ghost aftereffect,
+resource-capacity coupling, role/cargo-shaped susceptibility, fragmentation
+threshold, or another shared-medium building block exposed by ecology needs.
+Any such choice still requires its own LGRC source artifacts, replay/control
+records, debt accounting, and claim ceiling.
+
+N30 evidence pointers:
+
+- [N30 README](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md)
+- [N30 I8 closeout report](2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md)
+- [N30 I8 closeout JSON](2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8.json)

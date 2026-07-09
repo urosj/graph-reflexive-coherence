@@ -1151,3 +1151,72 @@ Margin interpretation:
   raw threshold-margin improvement strengthens confidence, but does not turn
   the result into broad shared-medium robustness or native organization.
 ```
+
+## Closure-Continuation Interpretation
+
+```text
+N30's large-scheme contribution is that "shared medium" is no longer only a
+theoretical or ecological phrase inside the N30+ roadmap. N30 grounds it as a
+minimal LGRC relation form:
+
+  participant continuity
+  -> non-private medium surface perturbation
+  -> source-current trace / surface change
+  -> later eligibility or susceptibility depends on that changed surface
+  -> replay/control validation
+
+Before N30, the relevant pieces were separate:
+  N27 showed configuration/topology recognizability across transfer.
+  N28 showed generative, extractive, competitive, and neutral environmental
+      reshaping regimes.
+  N29 showed that these pieces can be arranged into bridge motifs.
+  Shared-medium ecology documents supplied vocabulary and engineering
+      discipline.
+
+N30 adds the missing lowest shared-medium rung. It shows that a fully stable
+self or agency candidate is not required before shared-medium participation can
+begin. A minimally stable participant can participate if its trace changes a
+non-private surface and later eligibility depends on that changed surface.
+
+What N30 enables:
+  trace-conditioned eligibility:
+    a participant leaves a surface change that makes later routes, basins, or
+    interactions more or less admissible.
+
+  shared support redistribution:
+    a participant changes a local support/capacity field, and later
+    participants become easier or harder to sustain because of that field.
+
+  slow conductance / memory trace:
+    the medium carries a persistent or decaying conductance change, not a
+    private message.
+
+  boundary-mediated exchange:
+    participants affect one another indirectly through boundary surfaces,
+    permeability, or route costs.
+
+  stigmergic trail-like fields:
+    not semantic communication, but trace-mediated eligibility where prior
+    passage changes later passage conditions.
+
+  capacity circulation:
+    N28-style generative, extractive, and neutral patterns can become later
+    routing or eligibility conditions.
+
+  ecological demand mapping:
+    agentic ecology can now ask which medium surfaces forest, colony, niche,
+    or support-field motifs require, and which of those LGRC can express.
+
+This is why N30 should not hand off directly to a fixed N31. The correct
+continuation is:
+
+  N30 LGRC result
+  -> agentic ecology demand/composition pass
+  -> selected N31+ primitive or building-block experiment
+
+Claim boundary:
+  N30 enables composable environmental participation patterns.
+  N30 does not claim shared-medium coordination, cooperation, communication,
+  agency, native shared-medium organization, parent-basin modulation, resonance,
+  sentience, organism/life, or ecology regime.
+```
