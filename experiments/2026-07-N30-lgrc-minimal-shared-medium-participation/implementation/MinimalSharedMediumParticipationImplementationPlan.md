@@ -339,6 +339,25 @@ fail_closed
 Test whether a participant carrier can be attributed and replayed across a
 bounded window without selfhood, identity, or agency promotion.
 
+### Iteration 4-A. Participant Admissibility Strengthening Variant
+
+Add a second P2 participant-admissibility candidate under a distinct
+topology/fixture shape. The purpose is repeatability under carrier-shape
+variation, not replacement of I4 and not medium evidence. The row should
+consume underlying source-current traces and replay artifacts, record the
+geometric/topological difference from I4, and preserve the N30-C3 ceiling.
+
+### Iteration 4-B. Participant Boundary / Support-Sensitivity Probe
+
+If needed before medium-surface work, test whether the P2 participant carrier
+remains admissible under participant-boundary or support-sensitivity
+variation. This may strengthen the participant side toward P3/P4-style
+readiness, but it still must not assign a medium-relation rung or minimal
+shared-medium participation claim. A valid I4-B should preserve stress-limited
+participant rows as limited instead of upgrading them, and only stronger
+participant rows that survive declared boundary/support stress should count as
+P3/P4-side readiness.
+
 ### Iteration 5. Medium Surface Perturbation / Trace Probe
 
 Test whether the participant perturbs a declared medium surface and leaves a

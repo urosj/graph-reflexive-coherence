@@ -4,10 +4,10 @@
 
 ```text
 experiment = N30
-status = iteration_3_active_nulls_passed
-positive_evidence_opened = false
+status = iteration_4b_participant_boundary_support_sensitivity_passed
+positive_evidence_opened = participant_admissibility_only
 final_n30_closeout_rung = not_assigned
-ready_for_iteration_4 = true
+ready_for_iteration_5 = true
 ```
 
 ## Setup
@@ -213,11 +213,207 @@ replay status, and label-drift control result.
 
 ## Iteration 4 - Minimal Participant Admissibility Probe
 
-- [ ] Declare participant carrier.
-- [ ] Declare bounded persistence window.
-- [ ] Record participant attribution trace.
-- [ ] Check N27-style recognizability / replay discipline.
-- [ ] Block selfhood, identity, agency, and semantic participant relabels.
+- [x] Declare participant carrier.
+- [x] Declare bounded persistence window.
+- [x] Record participant attribution trace.
+- [x] Check N27-style recognizability / replay discipline.
+- [x] Block selfhood, identity, agency, and semantic participant relabels.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_minimal_participant_admissibility_P2_candidate_no_medium_relation
+output = outputs/n30_participant_admissibility_i4.json
+report = reports/n30_participant_admissibility_i4.md
+script = scripts/build_n30_participant_admissibility_i4.py
+output_digest = 63f72c353b52f18eeeeece349fadde34d5f8a050d67c4f670d2397250b77774f
+participant_ladder_rung = P2_candidate
+n30_closeout_ceiling = N30-C3_participant_admissibility_candidate
+positive_evidence_scope = participant_admissibility_only
+participant_carrier_id = n30_i4_participant_carrier_basin_signature_A_mapped
+recognizability_metric = signature_distance_under_declared_N27_mapping
+recognizability_observed = 0.025
+recognizability_threshold = 0.06
+recognizability_margin = 0.035
+replay_status = passed
+label_drift_control_result = passed
+artifact_count = 6
+source_current_input_count = 12
+failed_checks = []
+medium_relation_ladder_rung_assigned = false
+medium_surface_trace_evidence_opened = false
+later_eligibility_dependency_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+shared_medium_coordination_claim_allowed = false
+native_shared_medium_organization_claim_allowed = false
+ready_for_iteration_5_medium_surface_trace_probe = true
+```
+
+Interpretation:
+
+```text
+I4 is the first positive N30 content row, but it supports participant
+admissibility only. It consumes underlying N27 source-current traces and replay
+records, not only N27 closeout summaries. The participant is treated as a
+mapped basin-signature carrier: alpha-frame basin signature A maps into the
+beta-frame basin signature while support, coherence, boundary mapping, and
+bounded flux remain preserved. The carrier passes the declared recognizability
+metric because mapped signature distance is 0.025 against a threshold of 0.06.
+The threshold is inherited from N27's post-transfer basin-signature tolerance,
+not independently tuned by N30, so the result remains a bounded participant
+admissibility claim rather than a general stability or medium-relation claim.
+
+This is enough for a bounded P2 participant-admissibility candidate and an
+N30-C3 ceiling. It is not evidence for medium perturbation, trace-mediated
+eligibility, minimal shared-medium participation, semantic identity, selfhood,
+agency, shared-medium coordination, or native shared-medium organization.
+```
+
+## Iteration 4-A - P2 Participant Strengthening Variant
+
+- [x] Consume I4 as the primary P2 participant-admissibility candidate.
+- [x] Consume underlying N27 topology/fixture variant source-current artifacts.
+- [x] Declare a second participant carrier without replacing I4.
+- [x] Record topology/fixture difference from I4.
+- [x] Record participant recognizability threshold and observed metric.
+- [x] Record replay status and label-drift control.
+- [x] Confirm medium-relation, later-eligibility, and shared-medium claims remain closed.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_topology_fixture_variant_P2_participant_strengthening_no_medium_relation
+output = outputs/n30_participant_admissibility_i4a.json
+report = reports/n30_participant_admissibility_i4a.md
+script = scripts/build_n30_participant_admissibility_i4a.py
+output_digest = 353b4417d6b278ee428de5e1adc88fdb7dd456f3aaa7e01c7d92a68d06296421
+participant_ladder_rung = P2_candidate
+n30_closeout_ceiling = N30-C3_participant_admissibility_candidate
+positive_evidence_scope = participant_admissibility_strengthening_only
+participant_carrier_id = n30_i4a_participant_carrier_branched_topology_signature
+recognizability_metric = signature_distance_under_declared_N27_topology_fixture_mapping
+recognizability_observed = 0.03
+recognizability_threshold = 0.07
+recognizability_margin = 0.04
+replay_status = passed
+label_drift_control_result = passed
+artifact_count = 7
+source_current_input_count = 14
+failed_checks = []
+i4_replaced = false
+i4a_replaces_i4 = false
+i4a_strengthens_i4 = true
+medium_relation_ladder_rung_assigned = false
+medium_surface_trace_evidence_opened = false
+later_eligibility_dependency_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+shared_medium_coordination_claim_allowed = false
+native_shared_medium_organization_claim_allowed = false
+ready_for_iteration_4b_boundary_support_sensitive_participant_probe = true
+ready_for_iteration_5_medium_surface_trace_probe = true
+```
+
+Interpretation:
+
+```text
+I4-A strengthens I4 by showing a second P2 participant-admissibility candidate
+under a different N27 topology/fixture shape. It consumes the N27
+topology-fixture variant's underlying pre/post basin-signature traces, mapping
+trace, runtime trace, support/coherence/boundary/flux traces, hidden-support
+ledger, and replay trace. It does not consume N27 closeout summaries as a
+substitute for source-current evidence.
+
+Geometrically, I4 used a three-node alpha/beta chain with one support lane.
+I4-A uses a four-node gamma/delta branched/folded carrier with two support
+lanes and four boundary edges. The support-branch count and boundary-edge
+count remain preserved across the declared topology/fixture mapping, and the
+mapped signature distance remains within threshold: 0.03 <= 0.07, margin 0.04.
+The threshold is inherited from N27's topology-fixture transfer tolerance, not
+independently tuned by N30. The topology-shape preservation check also now
+requires `support_branch_count` and `boundary_edge_count` to exist on both
+pre/post signature vectors before it can pass.
+
+This improves repeatability of the P2 participant-admissibility result under
+topology/fixture shape variation. It does not replace I4, does not widen N30
+into medium evidence, and does not support medium perturbation,
+trace-mediated eligibility, minimal shared-medium participation, semantic
+identity, selfhood, agency, shared-medium coordination, or native
+shared-medium organization.
+```
+
+## Iteration 4-B - Participant Boundary / Support-Sensitivity Probe
+
+- [x] Consume I4 and I4-A participant candidates.
+- [x] Consume N27 stress / mapping-variant matrix over both carriers.
+- [x] Preserve the I4 boundary-limited result instead of upgrading it.
+- [x] Test I4-A under boundary tightening, support drawdown, coherence drawdown, flux pressure, and combined stress.
+- [x] Assign the strongest participant-side rung without opening a medium-relation rung.
+- [x] Record source-current stress/control artifacts and claim boundary.
+- [x] Confirm minimal shared-medium participation remains blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_participant_boundary_support_sensitive_P4_candidate_no_medium_relation
+output = outputs/n30_participant_boundary_support_i4b.json
+report = reports/n30_participant_boundary_support_i4b.md
+script = scripts/build_n30_participant_boundary_support_i4b.py
+output_digest = b248e35e131071c606c2c5cc7c7ca1c2638f79ed2ea9fe2fda0959a88bd612d0
+strongest_participant_ladder_rung = P4_candidate
+strongest_participant_carrier_id = n30_i4a_participant_carrier_branched_topology_signature
+i4_boundary_limited = true
+i4a_boundary_support_sensitive_candidate_supported = true
+i4_row_rung = P2_stress_limited
+i4a_row_rung = P4_candidate
+i4_failed_stress_ids = [boundary_tightening_0_05, combined_moderate_mapping_stress]
+i4a_failed_stress_ids = []
+i4a_minimum_residual_margin_across_stress = 0.007
+n30_closeout_ceiling = N30-C3_participant_admissibility_candidate
+artifact_count = 5
+source_current_input_count = 7
+failed_checks = []
+check_count = 12
+medium_relation_ladder_rung_assigned = false
+medium_surface_trace_evidence_opened = false
+later_eligibility_dependency_evidence_opened = false
+minimal_shared_medium_participation_claim_allowed = false
+shared_medium_coordination_claim_allowed = false
+native_shared_medium_organization_claim_allowed = false
+ready_for_iteration_5_medium_surface_trace_probe = true
+```
+
+Interpretation:
+
+```text
+I4-B tests whether participant admissibility remains meaningful under declared
+boundary/support stress. It consumes N27's stress/mapping-variant matrix rather
+than creating a new synthetic stress label.
+
+The I4 alpha/beta carrier remains a valid P2 participant-admissibility
+candidate, but it is boundary-limited: its boundary margin is already at floor,
+so boundary tightening and combined moderate stress fail closed. I4 is
+therefore not upgraded.
+
+The I4-A gamma/delta branched/folded carrier survives boundary tightening,
+support drawdown, coherence drawdown, flux pressure, and combined bounded
+stress with minimum residual margin 0.007. This supports a bounded P4
+participant candidate: the participant is not only recognizable under replay,
+but remains admissible under boundary/support-sensitive stress.
+
+The I4-B rows now carry row-level `source_current_inputs`, `artifact_manifest`,
+`derived_report_only = false`, and artifact SHA status, matching the row
+metadata expected by downstream consumers. The top-level `source_guardrail_records`
+also records that N27 stress artifacts were consumed and closeout summaries
+were not used as a substitute. Empty stress-margin lists are treated as script
+errors rather than silently passing.
+
+This still does not open medium evidence. P4 is participant-side readiness
+only. N30 still lacks a declared non-private medium surface, medium trace, and
+later eligibility dependency, so N30-C4/C5/C6 remain blocked.
+```
 
 ## Iteration 5 - Medium Surface Perturbation / Trace Probe
 

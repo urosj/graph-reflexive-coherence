@@ -1,0 +1,19 @@
+{
+  "artifact_role": "participant_recognizability_threshold_record",
+  "carrier_digest_or_trace_continuity_required": true,
+  "declared_before_classification": true,
+  "i4a_role": "P2_strengthening_topology_fixture_variant",
+  "label_only_continuity_allowed": false,
+  "medium_relation_rung_assignment_allowed": false,
+  "n30_independent_threshold_validation_status": "not_independently_revalidated; N30 accepts the N27 topology fixture transfer tolerance as the carrier recognizability gate for this P2 strengthening probe",
+  "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "recognizability_acceptance_rule": "observed_signature_distance <= max_signature_distance",
+  "recognizability_metric": "signature_distance_under_declared_N27_topology_fixture_mapping",
+  "recognizability_threshold": 0.07,
+  "record_id": "n30_i4a_participant_recognizability_threshold_record",
+  "same_label_is_not_same_carrier": true,
+  "threshold_inheritance_claim_limit": "supports bounded participant admissibility under topology/fixture variation only; does not prove general participant stability or medium relation",
+  "threshold_record_digest": "35ff6c353c13e5f3ae9a99cef7770a99c51f9d858f518d90b253646c3e882f29",
+  "threshold_source": "N27 topology-fixture post-transfer basin-signature max_signature_distance",
+  "threshold_source_path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_topology_fixture_variant_transfer_probe_artifacts/post_transfer_basin_signature_trace.json"
+}

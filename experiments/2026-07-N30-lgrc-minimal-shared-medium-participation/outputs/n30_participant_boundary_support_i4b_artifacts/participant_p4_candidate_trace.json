@@ -1,0 +1,113 @@
+{
+  "agentic_participant_claim_allowed": false,
+  "all_stress_rows_passed": true,
+  "artifact_role": "participant_p4_candidate_trace",
+  "base_margins": {
+    "boundary": 0.1,
+    "coherence": 0.025,
+    "flux": 0.028,
+    "signature": 0.04,
+    "support": 0.015
+  },
+  "boundary_interface_participant_candidate": true,
+  "generative_participant_claim_allowed": false,
+  "minimum_residual_margin_across_stress": 0.007,
+  "p4_candidate_trace_digest": "89a74454be67431f79334ec5b21b3acbb22155d8954519b19d35e39cddbccb2a",
+  "participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "participant_ladder_rung": "P4_candidate",
+  "stress_results": [
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.05,
+        "coherence": 0.025,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "stress_costs": {
+        "boundary": 0.05,
+        "coherence": 0.0,
+        "flux": 0.0,
+        "support": 0.0
+      },
+      "stress_id": "boundary_tightening_0_05",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.1,
+        "coherence": 0.025,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.007
+      },
+      "stress_costs": {
+        "boundary": 0.0,
+        "coherence": 0.0,
+        "flux": 0.0,
+        "support": 0.008
+      },
+      "stress_id": "support_drawdown_0_008",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.1,
+        "coherence": 0.013,
+        "flux": 0.028,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "stress_costs": {
+        "boundary": 0.0,
+        "coherence": 0.012,
+        "flux": 0.0,
+        "support": 0.0
+      },
+      "stress_id": "coherence_drawdown_0_012",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.1,
+        "coherence": 0.025,
+        "flux": 0.008,
+        "signature": 0.04,
+        "support": 0.015
+      },
+      "stress_costs": {
+        "boundary": 0.0,
+        "coherence": 0.0,
+        "flux": 0.02,
+        "support": 0.0
+      },
+      "stress_id": "flux_pressure_0_02",
+      "stress_passed": true
+    },
+    {
+      "failed_axes": [],
+      "residual_margins": {
+        "boundary": 0.07,
+        "coherence": 0.019,
+        "flux": 0.018,
+        "signature": 0.04,
+        "support": 0.01
+      },
+      "stress_costs": {
+        "boundary": 0.03,
+        "coherence": 0.006,
+        "flux": 0.01,
+        "support": 0.005
+      },
+      "stress_id": "combined_moderate_mapping_stress",
+      "stress_passed": true
+    }
+  ],
+  "support_sensitive_participant_candidate": true,
+  "trace_id": "n30_i4b_participant_p4_candidate_trace",
+  "withdrawal_resistant_participant_claim_allowed": false
+}

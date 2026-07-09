@@ -1,0 +1,46 @@
+{
+  "artifact_role": "participant_carrier_state_trace",
+  "basin_label_used_as_evidence": false,
+  "carrier_identity_claimed": false,
+  "carrier_state_trace_digest": "dc40b6ad884e9bac00375c0d391da77c550770b0a85b696cbe1d01a954d36c2c",
+  "participant_carrier_digest": "52e842cd61a833489d81a149928bde6caf9a07d6cd1d3834c31a71d39f6638d5",
+  "participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+  "participant_carrier_type": "mapped_basin_signature_carrier",
+  "participant_end_state_digest": "cef3d47fa45a4e6c052e9726f33aaafd26d6143f34363c2719aa7841ec04d996",
+  "participant_persistence_window": [
+    "n27_i4_pre_transfer_signature",
+    "n27_i4_post_transfer_signature",
+    "n27_i5_same_basin_replay"
+  ],
+  "participant_start_state_digest": "735348581363d2ef7d351e858840fc1a61d723836f97b001d3c1cf06c2e88809",
+  "post_basin_nodes": [
+    "beta_core",
+    "beta_support",
+    "beta_boundary"
+  ],
+  "post_fixture_id": "fixture_beta",
+  "post_frame_id": "fixture_beta_frame",
+  "post_signature_vector": {
+    "abs_flux_imbalance": 0.025,
+    "boundary_edge_count": 2,
+    "core_weight": 1.0,
+    "min_coherence": 0.92,
+    "min_support": 0.91
+  },
+  "pre_basin_nodes": [
+    "alpha_core",
+    "alpha_support",
+    "alpha_boundary"
+  ],
+  "pre_fixture_id": "fixture_alpha",
+  "pre_frame_id": "fixture_alpha_frame",
+  "pre_signature_vector": {
+    "abs_flux_imbalance": 0.02,
+    "boundary_edge_count": 2,
+    "core_weight": 1.0,
+    "min_coherence": 0.93,
+    "min_support": 0.92
+  },
+  "selfhood_claimed": false,
+  "trace_id": "n30_i4_participant_carrier_state_trace"
+}

@@ -1,0 +1,50 @@
+{
+  "artifact_role": "participant_boundary_support_stress_policy_record",
+  "declared_before_classification": true,
+  "medium_relation_assignment_allowed": false,
+  "n30_interpretation": "boundary/support participant sensitivity requires all declared residual margins to remain non-negative for the tested carrier",
+  "p3_gate": "boundary_tightening_0_05 must pass",
+  "p4_gate": "boundary_tightening_0_05, support_drawdown_0_008, coherence_drawdown_0_012, flux_pressure_0_02, and combined_moderate_mapping_stress must pass",
+  "pass_rule": "all residual margins must remain greater than or equal to zero",
+  "record_id": "n30_i4b_participant_boundary_support_stress_policy_record",
+  "source_declaration_order": 0,
+  "source_policy_id": "n27_i6_bounded_mapping_variant_stress_policy",
+  "stress_policy_record_digest": "547fe2678260d0f3d352dfee36959b4ab7b6ac4d166e53ab7eb6f8169613eab7",
+  "stress_rows": [
+    {
+      "boundary_margin_cost": 0.05,
+      "coherence_margin_cost": 0.0,
+      "flux_margin_cost": 0.0,
+      "stress_id": "boundary_tightening_0_05",
+      "support_margin_cost": 0.0
+    },
+    {
+      "boundary_margin_cost": 0.0,
+      "coherence_margin_cost": 0.0,
+      "flux_margin_cost": 0.0,
+      "stress_id": "support_drawdown_0_008",
+      "support_margin_cost": 0.008
+    },
+    {
+      "boundary_margin_cost": 0.0,
+      "coherence_margin_cost": 0.012,
+      "flux_margin_cost": 0.0,
+      "stress_id": "coherence_drawdown_0_012",
+      "support_margin_cost": 0.0
+    },
+    {
+      "boundary_margin_cost": 0.0,
+      "coherence_margin_cost": 0.0,
+      "flux_margin_cost": 0.02,
+      "stress_id": "flux_pressure_0_02",
+      "support_margin_cost": 0.0
+    },
+    {
+      "boundary_margin_cost": 0.03,
+      "coherence_margin_cost": 0.006,
+      "flux_margin_cost": 0.01,
+      "stress_id": "combined_moderate_mapping_stress",
+      "support_margin_cost": 0.005
+    }
+  ]
+}

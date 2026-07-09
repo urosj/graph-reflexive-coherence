@@ -1,0 +1,12 @@
+{
+  "artifact_role": "i4_medium_leakage_guard_trace",
+  "exploratory_medium_observation_effect": "record_only_not_C4_or_C5_support",
+  "i4_medium_relation_rung_assignment_allowed": false,
+  "medium_leakage_guard_trace_digest": "ee9ee8d57cd07dcae6c39f468faf2056a2246bc718ce4ff8c4456a041d997b16",
+  "medium_perturbation_claim_allowed": false,
+  "medium_relation_ladder_rung": "not_assigned",
+  "medium_surface_id": "not_declared_in_iteration_4",
+  "minimal_shared_medium_participation_claim_allowed": false,
+  "trace_id": "n30_i4_medium_leakage_guard_trace",
+  "trace_mediated_eligibility_claim_allowed": false
+}

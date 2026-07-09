@@ -1,0 +1,17 @@
+{
+  "artifact_role": "topology_fixture_variant_strengthening_trace",
+  "i4_participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+  "i4_recognizability_margin": 0.035,
+  "i4_replaced": false,
+  "i4_source_output_digest": "63f72c353b52f18eeeeece349fadde34d5f8a050d67c4f670d2397250b77774f",
+  "i4_topology_summary": "three-node alpha/beta chain with one support lane",
+  "i4a_participant_carrier_id": "n30_i4a_participant_carrier_branched_topology_signature",
+  "i4a_recognizability_margin": 0.04,
+  "i4a_replaces_i4": false,
+  "i4a_role": "second_P2_candidate_with_distinct_topology_fixture_shape",
+  "i4a_topology_summary": "four-node gamma/delta branched/folded carrier with two support lanes",
+  "medium_relation_evidence_opened": false,
+  "strengthening_kind": "repeatability_under_topology_fixture_shape_variation",
+  "topology_variant_comparison_trace_digest": "a47c7f693e813706a669fe1c19011ad46f00a87e1229c231fec0232ff4ddac72",
+  "trace_id": "n30_i4a_topology_fixture_variant_strengthening_trace"
+}

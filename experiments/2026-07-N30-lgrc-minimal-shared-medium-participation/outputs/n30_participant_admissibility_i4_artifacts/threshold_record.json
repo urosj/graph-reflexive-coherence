@@ -1,0 +1,18 @@
+{
+  "artifact_role": "participant_recognizability_threshold_record",
+  "carrier_digest_or_trace_continuity_required": true,
+  "declared_before_classification": true,
+  "label_only_continuity_allowed": false,
+  "medium_relation_rung_assignment_allowed": false,
+  "n30_independent_threshold_validation_status": "not_independently_revalidated; N30 accepts the N27 transfer tolerance as the carrier recognizability gate for this P2 probe",
+  "participant_carrier_id": "n30_i4_participant_carrier_basin_signature_A_mapped",
+  "recognizability_acceptance_rule": "observed_signature_distance <= max_signature_distance",
+  "recognizability_metric": "signature_distance_under_declared_N27_mapping",
+  "recognizability_threshold": 0.06,
+  "record_id": "n30_i4_participant_recognizability_threshold_record",
+  "same_label_is_not_same_carrier": true,
+  "threshold_inheritance_claim_limit": "supports bounded participant admissibility only; does not prove general participant stability or medium relation",
+  "threshold_record_digest": "5d85f394953d803dbd02368ed6959a51e67c512523d443120ca5c2de811889ed",
+  "threshold_source": "N27 post-transfer basin-signature max_signature_distance",
+  "threshold_source_path": "experiments/2026-06-N27-lgrc-configuration-substrate-transfer/outputs/n27_minimal_configuration_transfer_probe_artifacts/post_transfer_basin_signature_trace.json"
+}
