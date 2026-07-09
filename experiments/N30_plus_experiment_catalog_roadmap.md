@@ -65,6 +65,7 @@ Future experiments should be allowed to discover new primitives when attempting 
 - [16. How this prepares agentic ecology](#16-how-this-prepares-agentic-ecology)
 - [17. Candidate N30+ directions](#17-candidate-n30-directions)
 - [18. Closing orientation](#18-closing-orientation)
+- [Appendix A. N30 Direction Refinement](#appendix-a-n30-direction-refinement)
 
 ---
 
@@ -1243,3 +1244,109 @@ A regime candidate is not yet life, consciousness, or full agency.
 But each layer can be real, useful, and worth cataloging when its evidence is clear.
 
 The discipline of N30+ is to let future experiments move upward when composition is supported, move downward when missing primitives are revealed, and keep every claim attached to the substrate evidence that actually carries it.
+
+---
+
+## Appendix A. N30 Direction Refinement
+
+After the initial N30+ roadmap package was written, N30 was narrowed before
+implementation.
+
+The earlier candidate table remains useful as orientation, especially the
+shared-medium support-redistribution and building-block-contract directions.
+However, the first concrete N30 experiment should not start by claiming a
+shared-medium building block. The term **shared medium** is already a defined
+concept in the RC-Agentic-Ecology shared-medium essay and engineering spec, and
+using it too lightly would risk turning it into a generic carrier-surface label.
+
+N30 therefore begins one layer lower:
+
+```text
+N30 = Minimal Shared-Medium Participation
+primary layer = primitive
+secondary observation = possible trace-mediated eligibility building-block candidate
+```
+
+The refined N30 question is:
+
+```text
+Can a minimally stable participant perturb a declared medium surface, leaving a
+source-current trace or surface change that later alters eligibility, cost,
+support, routing, susceptibility, or capacity for a participant, without direct
+sender-receiver scripting?
+```
+
+This refinement preserves the roadmap's bidirectional grammar:
+
+```text
+failed or premature building-block target
+  -> missing primitive/admission gate
+  -> N30 minimal participant + medium-surface relation probe
+```
+
+### Additional Source Basis For N30
+
+N30 should explicitly consume these shared-medium sources as method and boundary
+sources:
+
+```text
+reflexive-coherence-agentic-ecology/papers/2026-06-TheSharedMedium.md
+reflexive-coherence-agentic-ecology/papers/2026-06-SharedMediumCoordination-EngineeringSpec.md
+```
+
+Allowed role:
+
+```text
+definition of shared medium
+message-passing vs shared-medium distinction
+medium surface / perturbation / trace / susceptibility vocabulary
+medium debt and direct-message scaffold discipline
+control vocabulary
+```
+
+Blocked role:
+
+```text
+LGRC runtime evidence
+native shared-medium coordination evidence
+agency, cooperation, communication, or ecology evidence
+```
+
+N30 should also consume N27 and N28 as guardrails:
+
+```text
+N27:
+  participant/configuration recognizability and transfer discipline
+
+N28:
+  environment-effect separation across generative, extractive, competitive,
+  and neutral reshaping
+```
+
+### N30 Claim Boundary
+
+N30 should target the lowest shared-medium relation rungs:
+
+```text
+M1 = boundary perturbation
+M2 = trace-mediated influence / trace-mediated eligibility
+```
+
+It may record early M3 co-response only as a secondary candidate if evidence
+naturally appears. It should block or defer:
+
+```text
+parent-basin modulation
+resonant alignment
+native shared-medium organization
+shared-medium coordination
+communication
+cooperation
+agency
+ecology regime
+```
+
+The original N30-A/N30-B idea is not discarded. It is demoted into a later or
+secondary operational pattern: contract/admission work and first positive
+building-block probes can still follow once minimal shared-medium participation
+is grounded.

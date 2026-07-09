@@ -35,6 +35,7 @@ All candidates inherit:
 - [Candidate N34: Generative/Extractive Shared-Medium Relation](#candidate-n34-generativeextractive-shared-medium-relation)
 - [Candidate N35+: Motif Experiments](#candidate-n35-motif-experiments)
 - [Later N30+ Regime Probes](#later-n30-regime-probes)
+- [Direction Addendum: N30 Selected Starting Point](#direction-addendum-n30-selected-starting-point)
 
 ## Naming convention
 
@@ -456,3 +457,91 @@ Blocked relabels unless separately tested:
 ```text
 life, consciousness, sentience, organism identity, unrestricted agency
 ```
+
+---
+
+## Direction Addendum: N30 Selected Starting Point
+
+The candidate list above is retained as the broader N30+ orientation. The first
+concrete N30 experiment is intentionally narrower than the original
+support-redistribution candidate.
+
+Selected N30:
+
+```text
+N30 - Minimal Shared-Medium Participation
+primary layer = primitive
+secondary observation = trace-mediated eligibility primitive / building-block candidate
+```
+
+Reason for the refinement:
+
+```text
+shared medium is not a loose synonym for a shared graph, channel, message bus,
+or carrier surface. It is a defined relation grammar from the shared-medium
+essay and engineering spec.
+```
+
+N30 therefore starts by grounding the smallest admissible relation form:
+
+```text
+participant carrier
+  perturbs declared medium surface
+trace or surface state persists / decays
+later participant eligibility, cost, support, routing, susceptibility, or
+capacity changes because of that surface
+```
+
+This keeps the first positive target near:
+
+```text
+M1 = boundary perturbation
+M2 = trace-mediated influence / trace-mediated eligibility
+```
+
+and blocks:
+
+```text
+shared-medium coordination
+parent-basin modulation
+resonant alignment
+native shared-medium organization
+communication
+cooperation
+agency
+ecology regime
+```
+
+Updated near-term candidate sequence:
+
+```text
+N30:
+  Minimal Shared-Medium Participation
+  primitive / relation-admission experiment
+
+N31:
+  Shared-Medium Support Redistribution
+  building-block candidate, consuming N30 if N30 closes cleanly
+
+N32:
+  Slow-Memory Conductance Trace
+  building-block candidate
+
+N33:
+  Boundary-Mediated Exchange
+  building-block candidate
+
+N34:
+  Generative/Extractive Shared-Medium Relation
+  building-block candidate consuming N28-style environment-effect discipline
+```
+
+The original Candidate N30 contract/probe split remains useful as an
+operational pattern inside N30 or N31:
+
+```text
+contract/admission pass first
+positive runtime probe second
+```
+
+but contract language must not count as positive shared-medium evidence.
