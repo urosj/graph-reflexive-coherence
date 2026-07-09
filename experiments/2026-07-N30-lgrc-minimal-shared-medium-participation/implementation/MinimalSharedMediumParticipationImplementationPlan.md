@@ -111,8 +111,8 @@ Claim Boundary Index:
 
 ```text
 P0 = medium-only perturbation, no attributable participant
-P1 = attributable participant
-P2 = persistent participant
+P1 = attributable contributor/respondent within one event chain
+P2 = same carrier remains recognizable across a bounded replay window
 P3 = boundary/interface participant
 P4 = support-sensitive participant
 P5 = withdrawal-resistant participant, out of N30 primary scope
@@ -128,7 +128,7 @@ secondary observations. P5-P7 remain outside the primary N30 target.
 ```text
 M0 = direct message passing
 M1 = boundary perturbation
-M2 = trace-mediated influence / trace-mediated eligibility
+M2 = trace-mediated eligibility / trace-mediated influence
 M3 = shared-field co-response, optional secondary candidate
 M4 = parent-basin modulation, blocked/future
 M5 = resonant alignment, blocked/future
@@ -145,8 +145,14 @@ N30-C1 = source/method inventory passed
 N30-C2 = schema and active-null controls frozen
 N30-C3 = participant admissibility candidate
 N30-C4 = medium perturbation / trace candidate
-N30-C5 = replay/control-backed minimal shared-medium participation candidate
-N30-C6 = N31-ready minimal shared-medium participation closeout
+N30-C5 = replay/control-backed minimal shared-medium participation candidate:
+  participant + non-private medium surface + trace/surface change
+  + later eligibility dependency
+  + replay/control support in the declared fixture
+N30-C6 = N31-ready minimal shared-medium participation closeout:
+  N30-C5 plus handoff-grade contract, declared transfer status,
+  declared medium/producer debt, N31 candidate interface, and blocked relabels
+  preserved
 ```
 
 ## Required Candidate Fields
@@ -159,15 +165,36 @@ source_iteration
 primary_layer
 participant_ladder_rung
 medium_relation_ladder_rung
+relation_chain_id
+participant_event_id
+participant_carrier_id
 participant_carrier
 participant_persistence_window
 participant_attribution_trace
 medium_surface_id
 medium_surface_carrier
+medium_surface_scope
+participant_medium_distinct
+participant_medium_separation_argument
 perturbation_trace
+perturbation_event_id
+trace_or_surface_change_id
 trace_persistence_or_decay
 susceptibility_or_eligibility_trace
+later_response_event_id
 later_response_conditioned_by_medium
+later_response_metric
+expected_direction
+response_window
+baseline_window
+acceptance_threshold
+normalization_denominator
+effect_size
+counterfactual_row_id
+causal_order_verified
+trace_dependency_control_ids
+medium_ablation_control_result
+row_chain_decision
 direct_message_present
 direct_message_status
 medium_debt_record
@@ -181,6 +208,58 @@ blocked_relabels
 row_decision
 ```
 
+The later eligibility metric must be declared before row classification. A
+post-hoc downstream difference may be recorded as exploratory, but it cannot
+support N30-C5 or N30-C6.
+
+### Coupled Relation-Chain Requirement
+
+A positive N30 row must link participant continuity, medium perturbation,
+trace/surface change, and later eligibility change in one causal lineage.
+
+It is not sufficient to show these components separately.
+
+A row may not close at N30-C5 or N30-C6 unless the later response is shown to
+depend on the declared medium surface change rather than on direct message,
+global controller, hidden producer, scheduler drift, or post-hoc trace
+construction.
+
+### Sharedness Gate
+
+For N30, a medium surface must be non-private relative to the participant
+carrier.
+
+Allowed sharedness forms:
+
+```text
+boundary_accessible
+shared_local
+shared_global
+route_conductance_susceptibility_surface
+packet_event_history_surface
+parent_surface_candidate, blocked for N30 positive claims unless explicitly scoped
+```
+
+For N30-C5/C6, `medium_surface_scope` must be at least `boundary_accessible` or
+`shared_local`. If the surface is `private_internal`, classify the row as
+medium-mediated self-aftereffect candidate unless a special-case separation
+argument and controls support a shared-medium reading.
+
+### Participant / Medium Separation Audit
+
+N30 must record whether the participant carrier and medium surface are distinct.
+
+If:
+
+```text
+participant_carrier_id == medium_surface_id
+```
+
+then the row must be classified as internal aftereffect, medium-only
+perturbation, or special-case trace participant. It cannot close as minimal
+shared-medium participation unless a separation argument is provided and
+controls support it.
+
 ## Controls
 
 N30 controls must include:
@@ -191,6 +270,10 @@ medium_surface_label_only
 hidden_global_controller
 hidden_producer_routing
 post_hoc_trace_construction
+no_perturbation_control
+trace_ablation_control
+wrong_surface_control
+time_reversed_trace_control
 medium_freeze_control
 trace_shuffle_control
 false_trace_injection_control
@@ -212,6 +295,24 @@ Build the source inventory. Admit shared-medium sources as method/boundary
 sources, N27/N28 as load-bearing guardrails, and N29 as bridge context. Do not
 open positive N30 evidence.
 
+The source inventory must include:
+
+```text
+source_id
+source_path_or_url
+source_role
+allowed_use
+blocked_use
+commit_or_digest
+consumed_sections
+claim_boundary_imported
+runtime_evidence_allowed
+```
+
+External shared-medium sources should be pinned by content digest or commit
+identifier so later changes in the source repository do not silently change the
+N30 method basis.
+
 ### Iteration 2. Participant / Medium Schema Freeze
 
 Freeze participant ladder, medium relation ladder, required fields, source
@@ -222,6 +323,16 @@ artifact admissibility, controls, debt status enums, and closeout ladder.
 Instantiate fail-closed nulls for message-only, label-only, hidden producer,
 global controller, post-hoc trace, participant drift, generic redistribution,
 and semantic relabel paths. No positive evidence.
+
+Each null row should record:
+
+```text
+null_row_id
+null_type
+expected_fail_reason
+observed_fail_reason
+fail_closed
+```
 
 ### Iteration 4. Minimal Participant Admissibility Probe
 
@@ -250,4 +361,3 @@ Classify the strongest supported N30 result. If warranted, close at N30-C6 and
 handoff to N31 as a support-redistribution or trace-mediated eligibility
 building-block candidate. Do not claim shared-medium coordination or native
 shared-medium organization.
-

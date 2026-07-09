@@ -14,7 +14,7 @@ ready_for_iteration_1 = true
 
 - [x] Create N30 experiment directory.
 - [x] Add README with core question, source basis, claim ceiling, and blocked claims.
-- [x] Add hypotheses A-D.
+- [x] Add hypotheses A-E.
 - [x] Add implementation plan.
 - [x] Add implementation checklist.
 - [x] Add configs / outputs / reports / scripts README placeholders.
@@ -29,6 +29,8 @@ ready_for_iteration_1 = true
 - [ ] Consume N29 closeout / ecology handoff as bridge context.
 - [ ] Consume Claim Boundary Index.
 - [ ] Record source roles and must-not-consume-as rules.
+- [ ] Record `source_id`, `source_path_or_url`, `source_role`, `allowed_use`, `blocked_use`, `commit_or_digest`, `consumed_sections`, `claim_boundary_imported`, and `runtime_evidence_allowed`.
+- [ ] Pin external shared-medium sources by content digest or commit identifier.
 - [ ] Confirm no positive N30 evidence opened.
 
 ## Iteration 2 - Participant / Medium Schema Freeze
@@ -37,6 +39,10 @@ ready_for_iteration_1 = true
 - [ ] Freeze shared-medium relation ladder M0-M6.
 - [ ] Freeze N30 closeout ladder N30-C0-N30-C6.
 - [ ] Freeze candidate evidence fields.
+- [ ] Freeze coupled relation-chain fields.
+- [ ] Freeze sharedness gate and `medium_surface_scope` enum.
+- [ ] Freeze participant / medium separation audit.
+- [ ] Freeze predeclared later-response metric fields.
 - [ ] Freeze medium debt and producer residue status enums.
 - [ ] Freeze direct-message and hidden-producer control policy.
 - [ ] Freeze replay requirements.
@@ -51,7 +57,12 @@ ready_for_iteration_1 = true
 - [ ] Run post-hoc trace-construction null.
 - [ ] Run participant label-drift null.
 - [ ] Run generic redistribution relabel null.
+- [ ] Run no-perturbation null.
+- [ ] Run trace-ablation null.
+- [ ] Run wrong-surface null.
+- [ ] Run time-reversed-trace null.
 - [ ] Run semantic communication / coordination / cooperation / agency relabel nulls.
+- [ ] Record `null_row_id`, `null_type`, `expected_fail_reason`, `observed_fail_reason`, and `fail_closed` for every null row.
 - [ ] Confirm all nulls fail closed.
 - [ ] Confirm no positive evidence opened.
 
@@ -66,6 +77,9 @@ ready_for_iteration_1 = true
 ## Iteration 5 - Medium Surface Perturbation / Trace Probe
 
 - [ ] Declare medium surface.
+- [ ] Declare `medium_surface_scope`.
+- [ ] Confirm medium surface is non-private or classify as self-aftereffect / partial.
+- [ ] Record participant / medium distinctness.
 - [ ] Record perturbation source and timing.
 - [ ] Record trace or surface-state change.
 - [ ] Record persistence/decay behavior.
@@ -74,7 +88,10 @@ ready_for_iteration_1 = true
 ## Iteration 6 - Later Eligibility / Susceptibility Probe
 
 - [ ] Record later eligibility, cost, support, routing, susceptibility, or capacity change.
+- [ ] Predeclare `later_response_metric`, `expected_direction`, `response_window`, `baseline_window`, `acceptance_threshold`, and `normalization_denominator`.
+- [ ] Record effect size and counterfactual row.
 - [ ] Show later change depends on the changed medium surface.
+- [ ] Link participant event, perturbation event, trace/surface change, and later response in one `relation_chain_id`.
 - [ ] Preserve N28-style environment-effect distinction where relevant.
 - [ ] Block generic redistribution and semantic relation relabels.
 
@@ -84,6 +101,10 @@ ready_for_iteration_1 = true
 - [ ] Run duplicate replay.
 - [ ] Run snapshot/load replay.
 - [ ] Run direct-message removal control.
+- [ ] Run no-perturbation control.
+- [ ] Run trace-ablation control.
+- [ ] Run wrong-surface control.
+- [ ] Run time-reversed trace control.
 - [ ] Run medium-freeze control.
 - [ ] Run trace-shuffle control.
 - [ ] Run false-trace injection control.
@@ -96,9 +117,10 @@ ready_for_iteration_1 = true
 
 - [ ] Classify strongest participant ladder rung.
 - [ ] Classify strongest shared-medium relation rung.
+- [ ] Classify coupled relation-chain support.
+- [ ] Confirm N30-C5/C6 are blocked unless participant + non-private medium surface + trace/surface change + later eligibility dependency pass replay/control.
 - [ ] Assign N30 closeout rung if warranted.
 - [ ] Record final claim ceiling.
 - [ ] Record blocked claims.
 - [ ] Record N31 handoff target if supported.
 - [ ] Confirm shared-medium coordination, parent-basin modulation, resonance, native shared-medium organization, agency, ecology regime, sentience, organism/life, and unrestricted autonomy remain blocked.
-
