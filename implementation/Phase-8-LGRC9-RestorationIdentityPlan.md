@@ -1,6 +1,6 @@
 # Phase 8 LGRC9 Restoration Identity Plan
 
-Status: Open; Iterations 90-93 complete. Closeout remains pending.
+Status: Closed; Iterations 90-94 complete.
 
 This continuation is opened by RCAE P2-I1 C01/C02. C01 compared complete
 LGRC9V3 snapshots across native save/load and stopped before scientific
@@ -16,6 +16,8 @@ Companion records:
 - [`Phase-8-LGRC9-RestorationIdentityChecklist.md`](./Phase-8-LGRC9-RestorationIdentityChecklist.md)
 - [`Phase-8-LGRC9-RestorationIdentityValidationMatrix.md`](./Phase-8-LGRC9-RestorationIdentityValidationMatrix.md)
 - [`Phase-8-LGRC9-RestorationIdentityRCAEReplayMatrix.json`](./Phase-8-LGRC9-RestorationIdentityRCAEReplayMatrix.json)
+- [`Phase-8-LGRC9-RestorationIdentityCloseout.md`](./Phase-8-LGRC9-RestorationIdentityCloseout.md)
+- [`Phase-8-LGRC9-RestorationIdentityCloseout.json`](./Phase-8-LGRC9-RestorationIdentityCloseout.json)
 
 ## Goal
 
@@ -277,7 +279,8 @@ supported runtime artifacts may omit deterministic empty logs, so the public
 identity now canonicalizes the runtime artifact through the unchanged native
 runtime-state restorer. Current runtime artifacts remain exact. The complete
 positive, sensitivity, normalization, compatibility, and negative-control
-matrix passes; final support freeze remains assigned to Iteration 94.
+matrix passes. Iteration 94 subsequently completed the support freeze without
+further source or runtime changes.
 
 ## Iteration 94. Closeout And RCAE Return
 
@@ -295,9 +298,16 @@ tranche as bounded incomplete. Record the graph-side debt and return the
 versioned C02 projection as the explicit P2-I2 fallback. Do not broaden source
 changes to force completion.
 
+Completed without snapshot redesign. The public identity, matrix, supported
+snapshot scope, bounded continuation scope, compatibility policy, raw
+representation observations, and RCAE return contract are frozen in the
+closeout artifacts. P2-I2 may explicitly transition from the RCAE C02
+projection to the native PyGRC helper; silent transition is forbidden and
+external ecology state remains separately composed.
+
 ## Acceptance State
 
-The intended closeout state is:
+The achieved closeout state is:
 
 ```text
 lgrc9v3_restoration_identity_v1_supported = true

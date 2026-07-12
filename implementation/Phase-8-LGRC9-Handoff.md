@@ -1253,6 +1253,8 @@ handoff as the current Phase 8 continuation index:
 - [`Phase-8-LGRC9-MultiBasinFormationCloseout.md`](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
 - [`Phase-8-LGRC9-RestorationIdentityPlan.md`](./Phase-8-LGRC9-RestorationIdentityPlan.md)
 - [`Phase-8-LGRC9-RestorationIdentityChecklist.md`](./Phase-8-LGRC9-RestorationIdentityChecklist.md)
+- [`Phase-8-LGRC9-RestorationIdentityCloseout.md`](./Phase-8-LGRC9-RestorationIdentityCloseout.md)
+- [`Phase-8-LGRC9-RestorationIdentityCloseout.json`](./Phase-8-LGRC9-RestorationIdentityCloseout.json)
 
 Current N04 return target after the route-arbitration closeout:
 
@@ -1265,8 +1267,8 @@ semantic choice, agency, RC identity collapse, identity acceptance,
 locomotion-like behavior, biological behavior, unrestricted movement, or
 claim-promotion flags.
 
-The restoration-identity continuation is open as a bounded additive contract
-before RCAE P2-I2. It targets:
+The restoration-identity continuation is closed as a bounded additive contract
+for explicit RCAE P2-I2 adoption. It provides:
 
 ```text
 LGRC9V3-owned read-only embedded-GRC9V3 state projection
@@ -1279,6 +1281,19 @@ It preserves raw snapshot digests as observations and leaves snapshot schema,
 load behavior, runtime dynamics, and the GRC9V3 substrate unchanged.
 RCAE-owned medium or pool state remains outside the native PyGRC identity and
 must be composed separately by the consuming project.
+
+The supported scope is LGRC9V3 `pygrc.snapshot` version 1 model/snapshot
+inputs, including older supported representations that omit deterministic
+empty LGRC runtime logs. The identity reaches a fixed point across repeated
+native load even when the raw representation cycles. Bounded equal-input
+continuation passed for the retained RCAE fixture and a local queued-arrival
+twin; unrestricted continuation equivalence remains blocked.
+
+P2-I1 remains unchanged. P2-I2 may replace its RCAE C02 projection only by
+declaring a realization-profile transition to
+`pygrc.models.lgrc9v3_restoration_identity_v1`. Silent upgrade is forbidden.
+The C02 projection remains an explicit non-native fallback for older graph
+revisions or environments without the helper.
 
 The N25.1-driven multi-basin formation implementation tranche is closed at
 Iteration 89. Iteration 83 freezes the baseline in:

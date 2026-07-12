@@ -1,9 +1,8 @@
 # LGRC9V3 Restoration Identity Specification
 
-Status: Phase 8 additive contract in implementation. The internal embedded
-GRC9V3 state component and public composite identity are available, and the
-full replay, sensitivity, and compatibility matrix passes. Final closeout and
-downstream handoff remain pending.
+Status: Implemented, validated, and closed in Phase 8 Iterations 90-94. The
+internal embedded GRC9V3 state component, public composite identity, complete
+matrix, and bounded downstream handoff are available.
 
 This specification defines a versioned, library-owned equality surface for
 save/load restoration. It does not redefine raw snapshots, change runtime
@@ -20,6 +19,8 @@ Companion implementation records:
 
 - [`../implementation/Phase-8-LGRC9-RestorationIdentityPlan.md`](../implementation/Phase-8-LGRC9-RestorationIdentityPlan.md)
 - [`../implementation/Phase-8-LGRC9-RestorationIdentityChecklist.md`](../implementation/Phase-8-LGRC9-RestorationIdentityChecklist.md)
+- [`../implementation/Phase-8-LGRC9-RestorationIdentityCloseout.md`](../implementation/Phase-8-LGRC9-RestorationIdentityCloseout.md)
+- [`../implementation/Phase-8-LGRC9-RestorationIdentityCloseout.json`](../implementation/Phase-8-LGRC9-RestorationIdentityCloseout.json)
 
 ## Motivation
 
@@ -393,3 +394,22 @@ validation
 It does not support native agency, selfhood, semantic identity, identity
 acceptance, organism/life, ecology, unrestricted replay equivalence, or Phase
 8 completion.
+
+## Closed Support State
+
+The Iteration 94 support state is:
+
+```text
+lgrc9v3_restoration_identity_v1_supported = true
+raw_snapshot_byte_identity_required = false
+snapshot_schema_changed = false
+runtime_behavior_changed = false
+old_snapshots_loadable = true
+equal_input_continuation_validated = true
+rcae_p2_i2_native_identity_handoff_ready = true
+```
+
+Equal-input continuation is bounded to the declared validation fixtures. A
+consumer must still compose external medium, pool, intervention, or experiment
+state and must explicitly record any transition from an experiment-owned
+projection to this native PyGRC identity.

@@ -4,6 +4,8 @@ This checklist tracks:
 
 - [`Phase-8-LGRC9-RestorationIdentityPlan.md`](./Phase-8-LGRC9-RestorationIdentityPlan.md)
 - [`../specs/lgrc-9-v3-restoration-identity.md`](../specs/lgrc-9-v3-restoration-identity.md)
+- [`Phase-8-LGRC9-RestorationIdentityCloseout.md`](./Phase-8-LGRC9-RestorationIdentityCloseout.md)
+- [`Phase-8-LGRC9-RestorationIdentityCloseout.json`](./Phase-8-LGRC9-RestorationIdentityCloseout.json)
 
 ## Ground Rules
 
@@ -574,24 +576,73 @@ git diff --check: passed
 
 ## Iteration 94. Closeout And RCAE Return
 
-Status: pending.
+Status: passed.
 
-- [ ] Produce closeout JSON and Markdown artifacts.
-- [ ] Record exact supported snapshot families and versions.
-- [ ] Record exact identity schema version and public callable paths.
-- [ ] Record raw snapshot identity as separate observational data.
-- [ ] Record restoration-identity fixed-point status and raw representation
+- [x] Produce closeout JSON and Markdown artifacts.
+- [x] Record exact supported snapshot families and versions.
+- [x] Record exact identity schema version and public callable paths.
+- [x] Record raw snapshot identity as separate observational data.
+- [x] Record restoration-identity fixed-point status and raw representation
   cycling separately.
-- [ ] Record bounded continuation-validation scope.
-- [ ] Record old-snapshot compatibility status.
-- [ ] Confirm snapshot schema unchanged.
-- [ ] Confirm runtime behavior unchanged.
-- [ ] Confirm C01/C02 classifications unchanged.
-- [ ] Record explicit P2-I2 realization-profile transition requirements.
-- [ ] Record the C02 projection fallback if native identity cannot close
+- [x] Record bounded continuation-validation scope.
+- [x] Record old-snapshot compatibility status.
+- [x] Confirm snapshot schema unchanged.
+- [x] Confirm runtime behavior unchanged.
+- [x] Confirm C01/C02 classifications unchanged.
+- [x] Record explicit P2-I2 realization-profile transition requirements.
+- [x] Record the C02 projection fallback if native identity cannot close
   without broad redesign.
-- [ ] Update Phase 8 plan, checklist, handoff, specs, and reference guide.
-- [ ] Keep all unsafe claim flags false.
+- [x] Update Phase 8 plan, checklist, handoff, specs, and reference guide.
+- [x] Keep all unsafe claim flags false.
+
+### Implementation Details
+
+Iteration 94 adds:
+
+```text
+implementation/Phase-8-LGRC9-RestorationIdentityCloseout.json
+implementation/Phase-8-LGRC9-RestorationIdentityCloseout.md
+```
+
+The closeout freezes `pygrc.snapshot` version 1 LGRC9V3 model/snapshot input,
+the `lgrc9v3_restoration_identity_v1` artifact schema, and both public
+`pygrc.models` callable paths. Plain GRC9V3 snapshots remain outside the
+LGRC-specific helper; no GRC9V3 public identity API is introduced.
+
+Raw snapshot cycling and restoration-identity stability are recorded as
+separate facts. C01 remains bounded incomplete under its over-broad raw
+equality predicate, and C02 remains passed under its RCAE-owned projection.
+P2-I2 may adopt the native helper only through an explicit realization-profile
+transition. The C02 projection remains a non-native fallback.
+
+No source, runtime, loader, snapshot schema, or behavior changes are made in
+I94.
+
+All unsafe claim flags in the closeout JSON are explicitly `false`.
+
+The final state is:
+
+```text
+lgrc9v3_restoration_identity_v1_supported = true
+raw_snapshot_byte_identity_required = false
+snapshot_schema_changed = false
+runtime_behavior_changed = false
+old_snapshots_loadable = true
+equal_input_continuation_validated = true
+rcae_p2_i2_native_identity_handoff_ready = true
+```
+
+### Verification Results
+
+```text
+I91-I93 focused matrix: 235 passed, 25 subtests passed
+RCAE retained replay rerun: 11 / 11 checks passed
+closeout JSON parse and acceptance assertions: passed
+recorded matrix artifact SHA-256 checks: passed
+relative Markdown link check: passed
+git diff --check: passed
+I94 src/tests/scripts diff: empty
+```
 
 ## Unsafe Claim Flags
 

@@ -1459,6 +1459,11 @@ be explicit. Equal restoration identity is necessary for a native
 restoration-equivalence claim, but bounded equal-input continuation replay
 remains a separate requirement.
 
+Phase 8 Iterations 90-94 close this helper as supported for LGRC9V3
+`pygrc.snapshot` version 1 model/snapshot inputs. The validation includes old
+supported representations and bounded continuation fixtures; it does not
+promote raw snapshot equality or unrestricted continuation equivalence.
+
 This Phase 8 contract does not add a GRC9V3 public API or change the GRC9V3
 substrate. A general GRC9V3 restoration identity, if later needed, belongs to a
 separate non-Phase-8 tranche.
