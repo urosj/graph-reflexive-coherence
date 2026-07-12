@@ -3322,6 +3322,19 @@ causal refinement / child-stabilization source context and replayable
 multi-basin formation evidence. It should not be treated as a loose
 long-range item or as already-supported BF6 evidence.
 
+The RCAE P2-I1-driven restoration-identity continuation has also been promoted
+into a dedicated Phase 8 plan/checklist:
+
+```text
+Phase-8-LGRC9-RestorationIdentityPlan.md
+Phase-8-LGRC9-RestorationIdentityChecklist.md
+```
+
+That continuation owns the additive LGRC9V3 semantic restoration identity and
+the raw-snapshot/restoration distinction. It reads embedded GRC9V3 state but
+does not own GRC9V3 source, behavior, or public API. It also does not own
+runtime dynamics, snapshot migration, RC identity, or ecology claims.
+
 - [ ] Standalone executable `LGRC9` runtime:
       decide whether pure nine-port causal history needs behavior beyond
       `GRC9V3`-backed annotation.

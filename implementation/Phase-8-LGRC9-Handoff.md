@@ -1251,6 +1251,8 @@ handoff as the current Phase 8 continuation index:
 - [`Phase-8-LGRC9-MultiBasinFormationPlan.md`](./Phase-8-LGRC9-MultiBasinFormationPlan.md)
 - [`Phase-8-LGRC9-MultiBasinFormationChecklist.md`](./Phase-8-LGRC9-MultiBasinFormationChecklist.md)
 - [`Phase-8-LGRC9-MultiBasinFormationCloseout.md`](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
+- [`Phase-8-LGRC9-RestorationIdentityPlan.md`](./Phase-8-LGRC9-RestorationIdentityPlan.md)
+- [`Phase-8-LGRC9-RestorationIdentityChecklist.md`](./Phase-8-LGRC9-RestorationIdentityChecklist.md)
 
 Current N04 return target after the route-arbitration closeout:
 
@@ -1262,6 +1264,21 @@ These continuations remain runtime-support closeouts. They do not promote
 semantic choice, agency, RC identity collapse, identity acceptance,
 locomotion-like behavior, biological behavior, unrestricted movement, or
 claim-promotion flags.
+
+The restoration-identity continuation is open as a bounded additive contract
+before RCAE P2-I2. It targets:
+
+```text
+LGRC9V3-owned read-only embedded-GRC9V3 state projection
++ exact LGRC9V3 runtime artifact
++ events and observables
+-> lgrc9v3_restoration_identity_v1
+```
+
+It preserves raw snapshot digests as observations and leaves snapshot schema,
+load behavior, runtime dynamics, and the GRC9V3 substrate unchanged.
+RCAE-owned medium or pool state remains outside the native PyGRC identity and
+must be composed separately by the consuming project.
 
 The N25.1-driven multi-basin formation implementation tranche is closed at
 Iteration 89. Iteration 83 freezes the baseline in:
