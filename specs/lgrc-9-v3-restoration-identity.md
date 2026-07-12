@@ -1,6 +1,8 @@
 # LGRC9V3 Restoration Identity Specification
 
-Status: Planned Phase 8 additive contract.
+Status: Phase 8 additive contract in implementation. The internal embedded
+GRC9V3 state component is available; the public composite identity remains
+pending.
 
 This specification defines a versioned, library-owned equality surface for
 save/load restoration. It does not redefine raw snapshots, change runtime
@@ -97,6 +99,26 @@ component_kind = "lgrc9v3_embedded_grc9v3_state"
 component_schema_version = "lgrc9v3_embedded_grc9v3_state_v1"
 ```
 
+The exact callable names are:
+
+```text
+internal component artifact:
+  build_lgrc9v3_embedded_grc9v3_state_v1
+
+internal component digest:
+  digest_lgrc9v3_embedded_grc9v3_state_v1
+
+public composite artifact, pending Iteration 92:
+  lgrc9v3_restoration_identity_v1
+
+public composite digest, pending Iteration 92:
+  digest_lgrc9v3_restoration_identity_v1
+```
+
+The embedded helpers are callable from their dedicated LGRC module for
+testing and composition, but are not exported through the public models
+facade. They do not create a public GRC9V3 identity contract.
+
 ## Embedded GRC9V3 Base-State Component
 
 LGRC9V3 restoration identity must include an LGRC9V3-owned, read-only
@@ -123,6 +145,41 @@ event and observable state owned by GRC9V3
 scientifically or operationally load-bearing cached quantities
 coarse-state cache when it is preserved as runtime/evidence state
 ```
+
+Version 1 records that coverage with this component shape:
+
+```text
+component_kind
+component_schema_version
+source_model_family
+source_snapshot_schema
+source_snapshot_version
+resolved_parameter_identity
+topology
+stable_allocation
+state
+base_events
+base_observables
+included_state_groups
+excluded_representation_fields
+```
+
+`stable_allocation` includes next IDs, live IDs, and live/tombstone slot
+status. `state` is the complete current serialized `GRC9V3State` payload after
+the existing GRC9V3 loader has materialized deterministic defaults. The LGRC
+projection then independently canonicalizes undirected topology endpoints and
+port-edge endpoint/sign orientation. `base_events` and `base_observables`
+retain the normalized outer GRC9V3 evidence views as well as the corresponding
+state-owned fields. Zero flux is represented as positive `0.0`; nonzero signed
+flux remains identity-bearing.
+
+Version 1 does not normalize signed zero globally. The I90 representation
+cycle was source-backed only for oriented `port_edges[*].flux_uv`, so only
+that field receives signed-zero normalization. Signed zero in potential,
+labels, budget fields, caches, or future state remains exact identity-bearing
+state unless a later source-backed contract revision proves it to be
+representation-only. Iteration 93 must exercise such fields when checking the
+identity fixed point; it may not silently widen the version-1 exclusion.
 
 Before identity construction, deterministic normalization must resolve:
 
@@ -168,6 +225,11 @@ idempotency state, and other serialized LGRC runtime surfaces.
 
 Events and observables remain included because they are part of the auditable
 scientific state and are validated by native load.
+
+The embedded component intentionally contains both the state-owned event and
+observable fields and the normalized outer GRC9V3 event/observable views. They
+are separate serialized contract surfaces even when they agree. Iteration 93
+must test sensitivity and restoration consistency for both paths.
 
 ## Representation Exclusions
 

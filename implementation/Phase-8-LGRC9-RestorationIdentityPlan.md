@@ -1,7 +1,7 @@
 # Phase 8 LGRC9 Restoration Identity Plan
 
-Status: Open; specification and implementation boundary defined, source work
-not yet opened.
+Status: Open; Iterations 90-91 complete. The public composite restoration
+identity, replay/sensitivity matrix, and closeout remain pending.
 
 This continuation is opened by RCAE P2-I1 C01/C02. C01 compared complete
 LGRC9V3 snapshots across native save/load and stopped before scientific
@@ -101,12 +101,24 @@ Supported now:
 Missing now:
 
 - a public semantic restoration-identity surface;
-- an LGRC9V3-owned canonical projection of embedded GRC9V3 state;
-- a documented distinction between canonical file encoding and restored-model
-  re-snapshot equality;
 - sensitivity tests proving which state is identity-bearing; and
 - a downstream capability path that RCAE P2-I2 can consume without inventing
   another native-state projection.
+
+Implemented internally in Iteration 91:
+
+- an LGRC9V3-owned canonical projection of embedded GRC9V3 state;
+- deterministic default materialization through the unchanged GRC9V3 loader;
+- stable allocation/tombstone-state recording;
+- undirected endpoint and signed-flux canonicalization; and
+- deterministic component artifact and digest helpers.
+
+Documented and frozen in Iteration 90:
+
+- canonical file encoding does not imply restored-model re-snapshot equality;
+- raw snapshot cycling remains observable and outside restoration identity;
+  and
+- no lost scientific state was observed in the retained RCAE fixture.
 
 Architectural debt retained by this tranche:
 
@@ -202,6 +214,19 @@ Required properties:
 
 No GRC9V3 source, API, constructor, loader, snapshot, or runtime behavior may
 change in this iteration.
+
+Implemented as a dedicated LGRC-owned module:
+
+```text
+src/pygrc/models/lgrc_9_v3_restoration.py
+```
+
+The projection deep-copies the embedded snapshot, restores that copy through
+the existing GRC9V3 loader, and serializes the fully materialized state into
+the internal `lgrc9v3_embedded_grc9v3_state_v1` component. It then applies an
+LGRC-owned endpoint/sign canonicalization without mutating the source input.
+This preserves GRC9V3 as an inspected dependency and avoids duplicating its
+default-resolution rules.
 
 ## Iteration 92. LGRC9V3 Composite Restoration Identity
 

@@ -156,30 +156,171 @@ implement and validate the LGRC-only surface.
 
 ## Iteration 91. Embedded GRC9V3 State Projection
 
-Status: pending.
+Status: passed.
 
-- [ ] Freeze exact public callable names and artifact schema.
-- [ ] Add the internal `lgrc9v3_embedded_grc9v3_state_v1` component.
-- [ ] Include canonical resolved parameter identity.
-- [ ] Include complete topology and stable allocation state.
-- [ ] Include node, basin, hierarchy, and expansion state.
-- [ ] Include canonical port edges with signed flux orientation.
-- [ ] Include analytic edge labels and constitutive modes.
-- [ ] Include potential, sink set, and basin membership.
-- [ ] Include choice and collapse registries.
-- [ ] Include step/time, budget target, and remainder.
-- [ ] Include RNG state and parameter identity after deterministic
+- [x] Freeze exact public callable names and artifact schema.
+- [x] Add the internal `lgrc9v3_embedded_grc9v3_state_v1` component.
+- [x] Include canonical resolved parameter identity.
+- [x] Include complete topology and stable allocation state.
+- [x] Include node, basin, hierarchy, and expansion state.
+- [x] Include canonical port edges with signed flux orientation.
+- [x] Include analytic edge labels and constitutive modes.
+- [x] Include potential, sink set, and basin membership.
+- [x] Include choice and collapse registries.
+- [x] Include step/time, budget target, and remainder.
+- [x] Include RNG state and parameter identity after deterministic
   normalization.
-- [ ] Include base-state events and observables represented by current GRC9V3
+- [x] Include base-state events and observables represented by current GRC9V3
   state.
-- [ ] Include load-bearing/evidence-bearing cached quantities and coarse state.
-- [ ] Record every representation-only exclusion explicitly.
-- [ ] Confirm identity construction does not mutate model or snapshot input.
-- [ ] Reject malformed and wrong-family inputs.
-- [ ] Add deterministic artifact and digest tests.
-- [ ] Confirm `src/pygrc/models/grc_9_v3.py` is unchanged.
-- [ ] Confirm GRC9V3 public exports are unchanged.
-- [ ] Confirm GRC9V3 behavior and snapshot outputs are unchanged.
+- [x] Include load-bearing/evidence-bearing cached quantities and coarse state.
+- [x] Record every representation-only exclusion explicitly.
+- [x] Confirm identity construction does not mutate model or snapshot input.
+- [x] Reject malformed and wrong-family inputs.
+- [x] Add deterministic artifact and digest tests.
+- [x] Confirm `src/pygrc/models/grc_9_v3.py` is unchanged.
+- [x] Confirm GRC9V3 public exports are unchanged.
+- [x] Confirm embedded component helpers remain absent from the public models
+  facade until Iteration 92.
+- [x] Confirm GRC9V3 behavior and snapshot outputs are unchanged.
+
+### Implementation Details
+
+Iteration 91 adds:
+
+```text
+src/pygrc/models/lgrc_9_v3_restoration.py
+tests/models/test_lgrc_9_v3_restoration.py
+```
+
+The exact internal component callables are:
+
+```text
+build_lgrc9v3_embedded_grc9v3_state_v1
+digest_lgrc9v3_embedded_grc9v3_state_v1
+```
+
+The public Iteration 92 callable names are also frozen, but remain
+unimplemented:
+
+```text
+lgrc9v3_restoration_identity_v1
+digest_lgrc9v3_restoration_identity_v1
+```
+
+The implementation accepts a complete LGRC9V3 snapshot, validates the outer
+family, locates the required embedded GRC9V3 snapshot, and deep-copies it. The
+copy is restored through the existing `GRC9V3._from_snapshot` path. This is a
+read-only consumption of the current GRC9V3 contract: it resolves parameter
+identity, RNG state, budget provenance, and other deterministic defaults
+without changing GRC9V3 source or behavior.
+
+Topology, stable allocation, and serialized state are all derived from the
+same normalized GRC9V3 snapshot. Stable allocation is reconstructed from that
+snapshot's next IDs and live topology IDs, avoiding a split between live-object
+and serialized representations.
+
+The resulting component records:
+
+```text
+resolved parameter identity
+canonical topology and port occupancy
+next stable node/edge IDs
+live and tombstoned allocation slots
+complete serialized GRC9V3 state
+normalized base GRC9V3 event and observable views
+included-state manifest
+explicit representation exclusions
+```
+
+The complete state includes node/basin/hierarchy/expansion fields, analytic
+edge labels, potential, sinks, basin membership, choice/collapse registries,
+step/time/budget/remainder, RNG, events, observables, cached quantities, and
+coarse state. Cache containers are not excluded wholesale.
+
+After existing default materialization, the LGRC-owned projection performs
+the normalization that the I90 baseline proved necessary:
+
+```text
+topology endpoints are ordered by (node_id, slot)
+port-edge endpoints are ordered by (node_id, port_id)
+nonzero flux changes sign when endpoint orientation is reversed
+zero flux is normalized to positive 0.0
+```
+
+The nonzero flux sign remains scientific state. Only the sign bit of an exact
+zero after orientation canonicalization is excluded as representation history.
+Signed zero is not normalized in any other state field in version 1; those
+values remain exact until a later source-backed contract revision proves a
+narrow representation-only exclusion.
+
+Dedicated tests prove:
+
+```text
+repeated construction is deterministic
+the source snapshot is not mutated
+node and edge allocation tombstones are retained
+before-save and three repeated-load components agree
+zero-flux sign is canonical
+opposite raw endpoint encodings preserve the same nonzero signed flux
+nonzero signed-flux mutation changes the digest
+included coherence mutation changes the digest
+non-mapping input fails closed
+invalid conductance fails closed
+missing topology edge ID fails closed
+wrong-family input fails closed
+missing embedded base snapshot fails closed
+```
+
+The component is intentionally not exported through `pygrc.models` in I91.
+It remains an internal LGRC composition surface until I92 adds and exports the
+complete public identity. `src/pygrc/models/grc_9_v3.py`, the GRC9V3 public
+facade, snapshot payloads, loaders, equations, and runtime behavior are
+unchanged.
+
+### Verification Results
+
+Focused restoration and serialization verification:
+
+```text
+.venv/bin/python -m pytest \
+  tests/core/test_serialization_contract.py \
+  tests/models/test_grc_9_v3_state.py \
+  tests/models/test_lgrc_9_v3_runtime.py \
+  tests/models/test_lgrc_9_v3_restoration.py -q
+
+211 passed, 20 subtests passed
+```
+
+Static verification:
+
+```text
+ruff format --check: passed
+ruff check: passed
+mypy lgrc_9_v3_restoration.py: passed
+git diff --check: passed
+I90 RCAE baseline diagnostic rerun: passed
+GRC9V3 source/public-facade diff from I90: empty
+```
+
+The complete repository test run before the final review corrections reached:
+
+```text
+1621 passed
+741 subtests passed
+25 failed
+```
+
+All 25 failures require precomputed discovery/telemetry files under ignored
+`outputs/...` session paths that are absent from this checkout. Git confirms
+those paths are ignored. No full-suite failure imports or exercises the I91
+module, and the complete focused LGRC9V3/GRC9V3 serialization matrix passes.
+The repository-wide suite is therefore not globally green in this checkout,
+but no I91 regression was observed.
+
+The final review corrections add only fail-closed validation and focused
+tests. The complete 20-minute repository run was not repeated because the same
+ignored output prerequisites remain absent; the complete focused matrix above
+was rerun after those corrections.
 
 ## Iteration 92. LGRC9V3 Composite Restoration Identity
 
@@ -222,6 +363,8 @@ Status: pending.
 - [ ] Budget target or remainder mutation changes identity.
 - [ ] RNG mutation changes identity.
 - [ ] Event or observable mutation changes identity.
+- [ ] State-owned and normalized outer GRC9V3 event/observable mutations are
+  tested as separate included paths.
 - [ ] LGRC queue, clock, ledger, surface, topology-history, route, or producer
   mutation changes identity.
 - [ ] A mutation hidden under a cache container still changes identity when
@@ -235,6 +378,8 @@ Status: pending.
 - [ ] Deterministic RNG materialization keeps identity stable.
 - [ ] Declared budget-source materialization keeps identity stable.
 - [ ] Mapping/set insertion-order changes keep identity stable.
+- [ ] Signed zero outside oriented port-edge flux remains exact and is not
+  silently normalized by version 1.
 
 ### Compatibility And Negative Controls
 
