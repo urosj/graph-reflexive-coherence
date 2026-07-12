@@ -253,7 +253,8 @@ class LGRC9V3EmbeddedRestorationStateTests(unittest.TestCase):
         )
 
     def test_non_mapping_input_fails_closed(self) -> None:
-        for malformed in (None, [], "not-a-snapshot"):
+        malformed_inputs: tuple[object, ...] = (None, [], "not-a-snapshot")
+        for malformed in malformed_inputs:
             with self.subTest(malformed=malformed):
                 with self.assertRaises(SnapshotCompatibilityError):
                     build_lgrc9v3_embedded_grc9v3_state_v1(malformed)  # type: ignore[arg-type]

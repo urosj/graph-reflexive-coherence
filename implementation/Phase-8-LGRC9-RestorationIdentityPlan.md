@@ -1,7 +1,6 @@
 # Phase 8 LGRC9 Restoration Identity Plan
 
-Status: Open; Iterations 90-92 complete. The replay/sensitivity matrix and
-closeout remain pending.
+Status: Open; Iterations 90-93 complete. Closeout remains pending.
 
 This continuation is opened by RCAE P2-I1 C01/C02. C01 compared complete
 LGRC9V3 snapshots across native save/load and stopped before scientific
@@ -15,6 +14,8 @@ Companion records:
 
 - [`../specs/lgrc-9-v3-restoration-identity.md`](../specs/lgrc-9-v3-restoration-identity.md)
 - [`Phase-8-LGRC9-RestorationIdentityChecklist.md`](./Phase-8-LGRC9-RestorationIdentityChecklist.md)
+- [`Phase-8-LGRC9-RestorationIdentityValidationMatrix.md`](./Phase-8-LGRC9-RestorationIdentityValidationMatrix.md)
+- [`Phase-8-LGRC9-RestorationIdentityRCAEReplayMatrix.json`](./Phase-8-LGRC9-RestorationIdentityRCAEReplayMatrix.json)
 
 ## Goal
 
@@ -102,7 +103,6 @@ Supported now:
 
 Missing now:
 
-- the full sensitivity matrix proving which state is identity-bearing; and
 - a downstream capability path that RCAE P2-I2 can consume without inventing
   another native-state projection.
 
@@ -270,6 +270,14 @@ Run the complete matrix defined by the dedicated specification:
 The matrix must include nonzero signed port-edge flux and nonempty basin,
 registry, budget, RNG, and LGRC runtime surfaces. A fixture containing only the
 six RCAE differences is insufficient.
+
+Completed with both a broad local matrix and the original RCAE C02 source
+fixture. The matrix found and corrected one compatibility issue: older
+supported runtime artifacts may omit deterministic empty logs, so the public
+identity now canonicalizes the runtime artifact through the unchanged native
+runtime-state restorer. Current runtime artifacts remain exact. The complete
+positive, sensitivity, normalization, compatibility, and negative-control
+matrix passes; final support freeze remains assigned to Iteration 94.
 
 ## Iteration 94. Closeout And RCAE Return
 

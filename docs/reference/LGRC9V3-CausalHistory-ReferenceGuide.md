@@ -361,12 +361,15 @@ same_artifact = lgrc9v3_restoration_identity_v1(model.snapshot())
 ```
 
 The artifact combines the canonical embedded GRC9V3 continuation state with
-the exact native LGRC runtime artifact, events, and observables. It answers
-whether supported save/load representations restore the same scientific and
-continuation-relevant state. It does not require raw snapshot-byte equality,
-replace continuation replay, or establish RC identity, selfhood, or agency.
-Raw full-snapshot digests remain separate diagnostics. The full sensitivity
-and compatibility matrix remains an Iteration 93 requirement.
+the canonical native LGRC runtime artifact, events, and observables. Current
+runtime artifacts remain exact; older supported artifacts receive only the
+deterministic default materialization already performed by the native runtime
+restorer. It answers whether supported save/load representations restore the
+same scientific and continuation-relevant state. It does not require raw
+snapshot-byte equality, replace continuation replay, or establish RC identity,
+selfhood, or agency. Raw full-snapshot digests remain separate diagnostics.
+The Iteration 93 replay, sensitivity, and compatibility matrix passes; final
+support freeze and downstream handoff remain Iteration 94 work.
 
 ## Landscape Construction
 

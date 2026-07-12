@@ -1448,7 +1448,7 @@ The identity composes:
 
 ```text
 LGRC9V3-owned read-only projection of its embedded GRC9V3 state
-+ exact LGRC9V3 runtime artifact
++ canonical LGRC9V3 runtime artifact (current artifacts remain exact)
 + event state
 + observables
 ```

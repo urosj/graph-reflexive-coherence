@@ -16,6 +16,7 @@ from pygrc.core import (
 )
 
 from .grc_9_v3 import GRC9V3
+from .lgrc_9_v3_runtime_state import restore_lgrc9v3_runtime_state_artifact
 
 
 LGRC9V3_EMBEDDED_GRC9V3_STATE_KIND = "lgrc9v3_embedded_grc9v3_state"
@@ -289,13 +290,8 @@ def build_lgrc9v3_embedded_grc9v3_state_v1(
         raise SnapshotCompatibilityError("LGRC9V3 restoration source must be a mapping")
     require_snapshot_family(snapshot, expected_family="LGRC9V3")
 
-    caches = _require_mapping(snapshot.get("caches"), context="LGRC9V3 snapshot caches")
-    base_snapshot = _require_mapping(
-        caches.get("base_grc9v3_snapshot"),
-        context="LGRC9V3 snapshot caches.base_grc9v3_snapshot",
-    )
     try:
-        normalized_model = GRC9V3._from_snapshot(deepcopy(base_snapshot))
+        normalized_model = _normalized_embedded_grc9v3_model(snapshot)
         normalized_snapshot = normalized_model.snapshot()
     except SnapshotCompatibilityError:
         raise
@@ -342,6 +338,24 @@ def build_lgrc9v3_embedded_grc9v3_state_v1(
     return dict(canonicalize_json_value(component))
 
 
+def _normalized_embedded_grc9v3_model(
+    snapshot: Mapping[str, Any],
+) -> GRC9V3:
+    caches = _require_mapping(snapshot.get("caches"), context="LGRC9V3 snapshot caches")
+    base_snapshot = _require_mapping(
+        caches.get("base_grc9v3_snapshot"),
+        context="LGRC9V3 snapshot caches.base_grc9v3_snapshot",
+    )
+    try:
+        return GRC9V3._from_snapshot(deepcopy(base_snapshot))
+    except SnapshotCompatibilityError:
+        raise
+    except (KeyError, TypeError, ValueError) as exc:
+        raise SnapshotCompatibilityError(
+            "embedded GRC9V3 snapshot could not be normalized"
+        ) from exc
+
+
 def digest_lgrc9v3_embedded_grc9v3_state_v1(
     snapshot: Mapping[str, Any],
 ) -> str:
@@ -386,6 +400,11 @@ def lgrc9v3_restoration_identity_v1(
         dynamics.get("lgrc9v3_runtime"),
         context="LGRC9V3 snapshot dynamics.lgrc9v3_runtime",
     )
+    normalized_base_model = _normalized_embedded_grc9v3_model(snapshot)
+    normalized_runtime_artifact = restore_lgrc9v3_runtime_state_artifact(
+        runtime_artifact,
+        base_state=normalized_base_model.get_state(),
+    ).to_artifact()
     events = snapshot.get("events")
     if events is None:
         raise SnapshotCompatibilityError("LGRC9V3 snapshot events are required")
@@ -403,7 +422,7 @@ def lgrc9v3_restoration_identity_v1(
         "source_snapshot_schema": metadata.get("snapshot_schema"),
         "source_snapshot_version": metadata.get("snapshot_version"),
         "embedded_grc9v3_state": build_lgrc9v3_embedded_grc9v3_state_v1(snapshot),
-        "lgrc9v3_runtime_artifact": deepcopy(runtime_artifact),
+        "lgrc9v3_runtime_artifact": normalized_runtime_artifact,
         "events": deepcopy(events),
         "observables": deepcopy(observables),
         "included_state_groups": list(_COMPOSITE_INCLUDED_STATE_GROUPS),

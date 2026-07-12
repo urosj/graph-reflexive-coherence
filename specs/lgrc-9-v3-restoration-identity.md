@@ -1,8 +1,9 @@
 # LGRC9V3 Restoration Identity Specification
 
 Status: Phase 8 additive contract in implementation. The internal embedded
-GRC9V3 state component and public composite identity are available; the full
-replay, sensitivity, and compatibility matrix remains pending.
+GRC9V3 state component and public composite identity are available, and the
+full replay, sensitivity, and compatibility matrix passes. Final closeout and
+downstream handoff remain pending.
 
 This specification defines a versioned, library-owned equality surface for
 save/load restoration. It does not redefine raw snapshots, change runtime
@@ -178,8 +179,8 @@ cycle was source-backed only for oriented `port_edges[*].flux_uv`, so only
 that field receives signed-zero normalization. Signed zero in potential,
 labels, budget fields, caches, or future state remains exact identity-bearing
 state unless a later source-backed contract revision proves it to be
-representation-only. Iteration 93 must exercise such fields when checking the
-identity fixed point; it may not silently widen the version-1 exclusion.
+representation-only. Iteration 93 exercised such fields while checking the
+identity fixed point and did not widen the version-1 exclusion.
 
 Before identity construction, deterministic normalization must resolve:
 
@@ -224,18 +225,23 @@ The runtime artifact, events, and observables are copied from the supplied
 native snapshot rather than reconstructed, while the embedded GRC9V3 state is
 normalized through the Iteration 91 component.
 
-The exact native `dynamics.lgrc9v3_runtime` artifact remains included. This
-preserves packet ledgers, queues, clocks, causal routes, topology history,
-surface lineage, multi-basin records, route arbitration, producer records,
-idempotency state, and other serialized LGRC runtime surfaces.
+The canonical native `dynamics.lgrc9v3_runtime` artifact remains included.
+Current artifacts are preserved exactly. Older supported artifacts are passed
+through the existing native runtime-state restorer so deterministic absent
+defaults, such as later-added empty logs, materialize before identity
+construction. This preserves packet ledgers, queues, clocks, causal routes,
+topology history, surface lineage, multi-basin records, route arbitration,
+producer records, idempotency state, and other serialized LGRC runtime
+surfaces while satisfying the restoration fixed point.
 
 Events and observables remain included because they are part of the auditable
 scientific state and are validated by native load.
 
 The embedded component intentionally contains both the state-owned event and
-observable fields and the normalized outer GRC9V3 event/observable views. They
-are separate serialized contract surfaces even when they agree. Iteration 93
-must test sensitivity and restoration consistency for both paths.
+observable fields and the normalized outer GRC9V3 event/observable views. I93
+confirmed that state-owned mutations change the component and its normalized
+outer view. A raw duplicate outer-only change that the native loader does not
+restore as state normalizes away rather than becoming a second state channel.
 
 ## Representation Exclusions
 

@@ -374,15 +374,17 @@ artifact kind and schema version
 model family
 source snapshot schema/version
 Iteration 91 embedded GRC9V3 state component
-exact serialized dynamics.lgrc9v3_runtime artifact
+canonical dynamics.lgrc9v3_runtime artifact (current artifacts remain exact)
 exact serialized LGRC9V3 events
 exact serialized LGRC9V3 observables
 included-state manifest
 explicit representation exclusions
 ```
 
-The native runtime, event, and observable groups are deep-copied from the
-supplied native snapshot, not reconstructed. The complete artifact is then
+At I92, the native runtime, event, and observable groups were deep-copied from
+the supplied current snapshot. I93 retained exact current runtime values while
+adding native default materialization for older supported runtime artifacts.
+Events and observables remain exact. The complete artifact is
 JSON-canonicalized. Raw snapshot bytes, raw full-snapshot digest, duplicate
 outer GRC9V3 views, and the raw embedded GRC9V3 representation are excluded.
 No raw digest is present in the artifact used by
@@ -457,60 +459,118 @@ all directly affected and focused regression tests pass.
 
 ## Iteration 93. Replay, Sensitivity, And Compatibility Matrix
 
-Status: pending.
+Status: passed.
 
 ### Positive Matrix
 
-- [ ] `identity(before_save) == identity(after_load)`.
-- [ ] Native LGRC runtime artifacts remain exact.
-- [ ] Events and observables remain exact.
-- [ ] Equal-input continuation twins remain equivalent.
-- [ ] Repeated identity construction is deterministic.
-- [ ] Restoration identity remains fixed across repeated native loads.
+- [x] `identity(before_save) == identity(after_load)`.
+- [x] Native LGRC runtime artifacts remain exact.
+- [x] Events and observables remain exact.
+- [x] Equal-input continuation twins remain equivalent.
+- [x] Repeated identity construction is deterministic.
+- [x] Restoration identity remains fixed across repeated native loads.
 
 ### Sensitivity Matrix
 
-- [ ] Topology mutation changes identity.
-- [ ] Stable allocation-ID mutation changes identity.
-- [ ] Node/basin mutation changes identity.
-- [ ] Nonzero signed port-edge flux mutation changes identity.
-- [ ] Edge-label or constitutive-mode mutation changes identity.
-- [ ] Potential, sink-set, or basin-membership mutation changes identity.
-- [ ] Budget target or remainder mutation changes identity.
-- [ ] RNG mutation changes identity.
-- [ ] Event or observable mutation changes identity.
-- [ ] State-owned and normalized outer GRC9V3 event/observable mutations are
-  tested as separate included paths.
-- [ ] LGRC queue, clock, ledger, surface, topology-history, route, or producer
+- [x] Topology mutation changes identity.
+- [x] Stable allocation-ID mutation changes identity.
+- [x] Node/basin mutation changes identity.
+- [x] Nonzero signed port-edge flux mutation changes identity.
+- [x] Edge-label or constitutive-mode mutation changes identity.
+- [x] Potential, sink-set, or basin-membership mutation changes identity.
+- [x] Budget target or remainder mutation changes identity.
+- [x] RNG mutation changes identity.
+- [x] Event or observable mutation changes identity.
+- [x] State-owned event/observable mutations change the normalized embedded
+  component; raw duplicate outer-only changes normalize away when the native
+  loader does not restore them as state.
+- [x] LGRC queue, clock, ledger, surface, topology-history, route, or producer
   mutation changes identity.
-- [ ] A mutation hidden under a cache container still changes identity when
+- [x] A mutation hidden under a cache container still changes identity when
   that field is load-bearing or evidence-bearing.
 
 ### Normalization Controls
 
-- [ ] Equivalent undirected endpoint reversal plus signed-flux reversal keeps
+- [x] Equivalent undirected endpoint reversal plus signed-flux reversal keeps
   identity stable.
-- [ ] Deterministic parameter-identity materialization keeps identity stable.
-- [ ] Deterministic RNG materialization keeps identity stable.
-- [ ] Declared budget-source materialization keeps identity stable.
-- [ ] Mapping/set insertion-order changes keep identity stable.
-- [ ] Signed zero outside oriented port-edge flux remains exact and is not
+- [x] Deterministic parameter-identity materialization keeps identity stable.
+- [x] Deterministic RNG materialization keeps identity stable.
+- [x] Declared budget-source materialization keeps identity stable.
+- [x] Mapping/set insertion-order changes keep identity stable.
+- [x] Signed zero outside oriented port-edge flux remains exact and is not
   silently normalized by version 1.
 
 ### Compatibility And Negative Controls
 
-- [ ] Old supported GRC9V3 snapshots remain loadable.
-- [ ] Old supported LGRC9V3 snapshots remain loadable.
-- [ ] Raw full-snapshot digest remains observable and may differ.
-- [ ] Missing included state fails closed.
-- [ ] Wrong model family fails closed.
-- [ ] Malformed runtime artifact fails closed.
-- [ ] Raw digest cannot be relabeled as restoration identity.
-- [ ] Experiment projection cannot be relabeled as native identity.
-- [ ] Equal restoration identity cannot be relabeled as unrestricted
+- [x] Old supported GRC9V3 snapshots remain loadable.
+- [x] Old supported LGRC9V3 snapshots remain loadable.
+- [x] Raw full-snapshot digest remains observable and may differ.
+- [x] Missing included state fails closed.
+- [x] Wrong model family fails closed.
+- [x] Malformed runtime artifact fails closed.
+- [x] Raw digest cannot be relabeled as restoration identity.
+- [x] Experiment projection cannot be relabeled as native identity.
+- [x] Equal restoration identity cannot be relabeled as unrestricted
   behavioral equivalence.
-- [ ] Full focused and regression suites pass.
-- [ ] `git diff --check` passes.
+- [x] Full focused and core/model regression suites pass.
+- [x] Repository-wide ignored-output prerequisite failures remain separately
+  recorded and unrelated to restoration identity.
+- [x] `git diff --check` passes.
+
+### Implementation Details
+
+Iteration 93 adds:
+
+```text
+tests/models/test_lgrc_9_v3_restoration_matrix.py
+scripts/audit_lgrc9v3_restoration_identity_matrix.py
+implementation/Phase-8-LGRC9-RestorationIdentityRCAEReplayMatrix.json
+implementation/Phase-8-LGRC9-RestorationIdentityValidationMatrix.md
+```
+
+The local executable matrix has 19 test methods and five subtests. It uses
+current nonempty LGRC packet state, explicit topology/allocation gaps,
+source-current causal-pulse surface production, older supported snapshot
+variants, repeated native loads, and equal-input continuation twins.
+
+The original RCAE C02 fixture is rerun read-only at seed 211 in the
+`candidate-conditioning` cell. Its four raw representations retain three
+distinct raw digests and the known signed-zero cycle, while all four produce
+one restoration identity digest. All 11 retained RCAE checks pass, including
+bounded equal-input continuation after the branch point.
+
+I93 found that copying an older raw LGRC runtime artifact was insufficient:
+supported historical snapshots may omit later-added empty logs that the native
+restorer materializes. The composite now passes the runtime artifact through
+`restore_lgrc9v3_runtime_state_artifact(...).to_artifact()`. Current artifacts
+remain exact; old supported artifacts reach the same fixed point. No runtime,
+loader, snapshot, state, GRC9V3, or abstract-interface implementation changed.
+
+The post-I93 state is:
+
+```text
+restoration_identity_matrix_passed = true
+lgrc9v3_restoration_identity_v1_candidate_supported_pending_closeout = true
+lgrc9v3_restoration_identity_v1_supported = false
+support_blocker = iteration_94_closeout_not_run
+raw_snapshot_byte_identity_required = false
+unrestricted_behavioral_equivalence = false
+```
+
+### Verification Results
+
+```text
+I93 matrix: 19 passed, 5 subtests passed
+I91-I93 focused matrix: 235 passed, 25 subtests passed
+core + models regression: 857 passed, 260 subtests passed
+RCAE retained replay: 11 / 11 checks passed
+audit script SHA-256: 51c022184120019a0b55a165f21c34e602fd4d58bbbbfc4097f7daa418d0f593
+matrix test SHA-256: b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154
+RCAE matrix SHA-256: a0ec3183fba78e21110a948cd349c380553383051cd3e6958d04618076bbc426
+ruff: passed
+mypy: passed
+git diff --check: passed
+```
 
 ## Iteration 94. Closeout And RCAE Return
 
