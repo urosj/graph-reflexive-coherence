@@ -177,8 +177,12 @@ changing source:
 - current snapshots remain loadable; and
 - the target public identity surface is absent.
 
-The freeze must also audit whether a second load reaches a stable snapshot
-fixed point.
+A retained read-only diagnostic under `scripts/` may reconstruct the fixture
+and comparison. It is an Iteration 90 audit artifact, not PyGRC runtime code.
+
+The freeze must also audit repeated loads for representation cycling or
+continued normalization. Raw snapshot stabilization is observed, not required;
+the later native restoration identity must be the stable fixed point.
 
 ## Iteration 91. Embedded GRC9V3 State Projection
 
@@ -221,7 +225,7 @@ Run the complete matrix defined by the dedicated specification:
 
 - before/after restoration identity equality;
 - raw snapshot inequality remains observable;
-- normalization fixed point;
+- restoration-identity fixed point across repeated load;
 - exact runtime artifact;
 - equal-input continuation twins;
 - included-state mutation sensitivity;

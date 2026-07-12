@@ -26,7 +26,7 @@ This checklist tracks:
 
 ## Iteration 90. Baseline And Contract Freeze
 
-Status: pending.
+Status: passed.
 
 ### Documentation Definition
 
@@ -39,25 +39,120 @@ Status: pending.
 
 ### Baseline Work
 
-- [ ] Record exact source revision and clean-worktree state.
-- [ ] Reproduce the C01 fixture observation against current source.
-- [ ] Record raw before/after snapshot digests.
-- [ ] Record recursive difference paths and values.
-- [ ] Confirm exact LGRC runtime-artifact equality.
-- [ ] Confirm outer topology, basin attributes, edge labels, events, and
+- [x] Record exact source revision and clean-worktree state.
+- [x] Reproduce the C01 fixture observation against current source.
+- [x] Record raw before/after snapshot digests.
+- [x] Record recursive difference paths and values.
+- [x] Confirm exact LGRC runtime-artifact equality.
+- [x] Confirm outer topology, basin attributes, edge labels, events, and
   observables agree.
-- [ ] Confirm existing bounded continue-after-load tests pass.
-- [ ] Test and record second-load normalization fixed point.
-- [ ] Confirm no restoration-identity public callable exists.
-- [ ] Record source diff outside implementation/spec records as empty.
-- [ ] Write baseline freeze JSON and Markdown artifacts.
+- [x] Confirm existing bounded continue-after-load tests pass.
+- [x] Test and record repeated-load normalization or representation cycling.
+- [x] Confirm no restoration-identity public callable exists.
+- [x] Record source diff outside implementation/spec records as empty.
+- [x] Write baseline freeze JSON and Markdown artifacts.
 
 ### Required Baseline Artifacts
 
 ```text
 implementation/Phase-8-LGRC9-RestorationIdentityBaselineFreeze.json
 implementation/Phase-8-LGRC9-RestorationIdentityBaselineFreeze.md
+scripts/audit_lgrc9v3_restoration_baseline.py
 ```
+
+### Implementation Details
+
+Iteration 90 uses the retained diagnostic:
+
+```text
+scripts/audit_lgrc9v3_restoration_baseline.py
+sha256 = b9647dbe53ab67d087f079c01da64f2ba883fa5cc702a2ae4e3a91bc793f3c0a
+```
+
+The script is an implementation-boundary audit, not runtime code. It:
+
+1. resolves the RCAE repository through the relative sibling-repository
+   default or explicit `--rcae-root`;
+2. loads the retained P2-I1 fixture and cell definitions read-only;
+3. reconstructs seed `211`, `candidate-conditioning`, through the public
+   PyGRC `LGRC9V3` facade;
+4. runs the writer packet window and emits the declared feedback surface;
+5. captures the post-writer/post-surface branch-point snapshot;
+6. performs three native save/load cycles in a temporary directory;
+7. computes canonical raw snapshot digests at each cycle;
+8. compares snapshots recursively with type-sensitive and signed-zero-sensitive
+   leaf comparison;
+9. compares outer groups, the exact LGRC runtime artifact, and the historical
+   RCAE C02 projection separately; and
+10. confirms that the target native restoration-identity callable is absent.
+
+The first load reproduces the C01 normalization boundary, but the stricter
+comparator records seven canonical leaves rather than six:
+
+```text
+budget_target_source: absent -> explicit_state
+params_identity: null -> resolved digest
+port edge 1 endpoints: (1, 0) -> (0, 1)
+port edge 1 flux_uv: +0.0 -> -0.0
+runtime RNG: null -> deterministic state
+metadata RNG: absent -> deterministic state
+```
+
+The signed-zero leaf was absent from C01's count because ordinary Python
+equality treats `+0.0 == -0.0`. Canonical JSON preserves the sign, so repeated
+loads alternate raw digests:
+
+```text
+before save       = 37ac41bce4a0c8b4ae93bb0435b2abb0312e189b5d73380a46533b0ae5486a87
+after first load  = bd316a368afc4728cd8a60b00abd1fdb3bd8deb1a45ba24c23fd9a5edfee6f9d
+after second load = efa8171d1c366fb23e2059c2c6418ba7a8c3f73a6e43dd119390159132c12e04
+after third load  = bd316a368afc4728cd8a60b00abd1fdb3bd8deb1a45ba24c23fd9a5edfee6f9d
+```
+
+Only `caches.base_grc9v3_snapshot.dynamics.state.port_edges.1.flux_uv`
+changes after the first load, alternating `-0.0` and `+0.0`. Flux magnitude
+and Python value equality remain unchanged. All outer groups and the exact
+`dynamics.lgrc9v3_runtime` artifact remain equal.
+
+This changes the implementation requirement in one precise way:
+
+```text
+raw snapshot fixed point = not required
+restoration identity fixed point = required
+signed zero in embedded port-edge flux = canonically collapsed by LGRC identity
+```
+
+It does not authorize dropping dynamic port-edge flux from identity. Nonzero
+signed flux remains identity-bearing and is a required Iteration 93
+sensitivity control. It also does not authorize any GRC9V3 source or behavior
+change.
+
+Verification:
+
+```text
+.venv/bin/python scripts/audit_lgrc9v3_restoration_baseline.py
+    passed
+
+.venv/bin/python -m pytest \
+  tests/core/test_serialization_contract.py \
+  tests/models/test_grc_9_v3_state.py \
+  tests/models/test_lgrc_9_v3_runtime.py -q
+    203 passed, 17 subtests passed
+
+.venv/bin/python -m ruff check \
+  scripts/audit_lgrc9v3_restoration_baseline.py
+    passed
+
+git diff --name-only HEAD -- src tests examples
+    no output
+
+git diff --check
+    passed
+```
+
+Iteration 90 therefore closes as a documentation, diagnostic, and freeze
+iteration. Restoration identity remains unsupported until Iterations 91-93
+implement and validate the LGRC-only surface.
 
 ## Iteration 91. Embedded GRC9V3 State Projection
 
@@ -114,7 +209,7 @@ Status: pending.
 - [ ] Events and observables remain exact.
 - [ ] Equal-input continuation twins remain equivalent.
 - [ ] Repeated identity construction is deterministic.
-- [ ] First restored snapshot is a second-load fixed point.
+- [ ] Restoration identity remains fixed across repeated native loads.
 
 ### Sensitivity Matrix
 
@@ -164,7 +259,8 @@ Status: pending.
 - [ ] Record exact supported snapshot families and versions.
 - [ ] Record exact identity schema version and public callable paths.
 - [ ] Record raw snapshot identity as separate observational data.
-- [ ] Record normalization fixed-point status.
+- [ ] Record restoration-identity fixed-point status and raw representation
+  cycling separately.
 - [ ] Record bounded continuation-validation scope.
 - [ ] Record old-snapshot compatibility status.
 - [ ] Confirm snapshot schema unchanged.

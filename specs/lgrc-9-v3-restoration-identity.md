@@ -211,17 +211,18 @@ For any supported snapshot `S` and native restored model `M = load(S)`:
 identity(S) == identity(M.snapshot())
 ```
 
-For repeated normalization:
+For repeated restoration:
 
 ```text
 S1 = load(S).snapshot()
 S2 = load(S1).snapshot()
-S1 == S2
+identity(S) == identity(S1) == identity(S2)
 ```
 
-The second relation is a normalization fixed-point requirement for the
-supported runtime and snapshot version. It is distinct from requiring the
-original `S` to equal `S1`.
+The second relation is a restoration-identity fixed-point requirement. It does
+not require `S`, `S1`, and `S2` to have equal raw digests. Representation-only
+normalization, including signed-zero orientation on a physically zero
+undirected flux, may remain visible in those raw observations.
 
 Equal restoration identities are necessary for a restoration-equivalence
 claim, but not sufficient for arbitrary behavioral equivalence. Bounded
@@ -270,7 +271,7 @@ Positive coverage:
 - native identity equality before save and after load;
 - exact LGRC runtime-artifact preservation;
 - event and observable preservation;
-- normalization fixed point;
+- restoration-identity fixed point across repeated load;
 - equal-input continuation equivalence; and
 - deterministic repeated identity construction.
 
