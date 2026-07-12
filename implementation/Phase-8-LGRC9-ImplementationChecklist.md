@@ -3322,6 +3322,28 @@ causal refinement / child-stabilization source context and replayable
 multi-basin formation evidence. It should not be treated as a loose
 long-range item or as already-supported BF6 evidence.
 
+The RCAE P2-I1-driven restoration-identity continuation has also been closed
+through a dedicated Phase 8 plan/checklist/closeout:
+
+```text
+Phase-8-LGRC9-RestorationIdentityPlan.md
+Phase-8-LGRC9-RestorationIdentityChecklist.md
+Phase-8-LGRC9-RestorationIdentityCloseout.md
+Phase-8-LGRC9-RestorationIdentityCloseout.json
+```
+
+That continuation owns the additive LGRC9V3 semantic restoration identity and
+the raw-snapshot/restoration distinction. It reads embedded GRC9V3 state but
+does not own GRC9V3 source, behavior, or public API. It also does not own
+runtime dynamics, snapshot migration, RC identity, or ecology claims.
+
+Iterations 90-94 validate the public identity over supported LGRC9V3
+`pygrc.snapshot` version 1 inputs, old-snapshot default materialization,
+representation-normalization invariance, included-state sensitivity, and
+bounded equal-input continuation. Raw snapshot cycling remains separately
+observable. RCAE P2-I2 must explicitly declare any transition from its C02
+projection to the native helper; no silent success upgrade is allowed.
+
 - [ ] Standalone executable `LGRC9` runtime:
       decide whether pure nine-port causal history needs behavior beyond
       `GRC9V3`-backed annotation.

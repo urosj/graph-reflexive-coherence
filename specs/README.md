@@ -41,6 +41,13 @@ The implementation strategy assumed by these specs is:
   `LGRC9V3`. The first implementation level is LGRC-0 annotation/timing
   evidence over `GRC9V3`; behavior-changing LGRC-1 is opt-in and semi-causal
   unless causal availability buffers exist.
+- `lgrc-9-v3-restoration-identity.md`
+  Implemented and validated versioned LGRC9V3 restoration-identity contract
+  over LGRC runtime state and
+  a read-only projection of its embedded GRC9V3 state. It distinguishes
+  canonical raw snapshot representation from canonical scientific restoration
+  state without changing either substrate, snapshot format, or runtime
+  behavior.
 - `grc-integration-layer.md`
   Adapter-layer contract for exposing core models to downstream runtimes without constraining core model design.
 - `grc-machine-driver.md`

@@ -344,6 +344,36 @@ native LGRC9V3 runtime snapshots. `LGRC9V3.load(...)` restores snapshots whose
 metadata declares `model_family = "LGRC9V3"`. Legacy `GRC9V3` snapshots should
 still be loaded as synchronous `GRC9V3` unless an explicit adapter is used.
 
+LGRC9V3 also exposes a versioned restoration identity without changing the
+snapshot or loader contract:
+
+```python
+from pygrc.models import (
+    digest_lgrc9v3_restoration_identity_v1,
+    lgrc9v3_restoration_identity_v1,
+)
+
+artifact = lgrc9v3_restoration_identity_v1(model)
+digest = digest_lgrc9v3_restoration_identity_v1(model)
+
+# Complete LGRC9V3 snapshot mappings are accepted as well.
+same_artifact = lgrc9v3_restoration_identity_v1(model.snapshot())
+```
+
+The artifact combines the canonical embedded GRC9V3 continuation state with
+the canonical native LGRC runtime artifact, events, and observables. Current
+runtime artifacts remain exact; older supported artifacts receive only the
+deterministic default materialization already performed by the native runtime
+restorer. It answers whether supported save/load representations restore the
+same scientific and continuation-relevant state. It does not require raw
+snapshot-byte equality, replace continuation replay, or establish RC identity,
+selfhood, or agency. Raw full-snapshot digests remain separate diagnostics.
+Iterations 90-94 are closed. The replay, sensitivity, compatibility, and
+bounded continuation matrices pass, and the public helper is supported for
+LGRC9V3 `pygrc.snapshot` version 1 model/snapshot inputs. Raw snapshot digests
+remain separate observations. Downstream consumers must explicitly adopt the
+native identity and separately compose external medium or experiment state.
+
 ## Landscape Construction
 
 LGRC9V3 can be constructed directly from GRCL9V3 landscape seeds through the

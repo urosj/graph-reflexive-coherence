@@ -1,0 +1,136 @@
+{
+  "acceptance_state": {
+    "equal_input_continuation_validated": true,
+    "lgrc9v3_restoration_identity_v1_supported": true,
+    "old_snapshots_loadable": true,
+    "raw_snapshot_byte_identity_required": false,
+    "rcae_p2_i2_native_identity_handoff_ready": true,
+    "runtime_behavior_changed": false,
+    "snapshot_schema_changed": false
+  },
+  "bounded_continuation_validation": {
+    "claim": "bounded equal-input continuation equivalence for the declared fixtures",
+    "fixtures": [
+      "RCAE P2-I1 C02 seed 211 candidate-conditioning branch point",
+      "local queued-arrival continuation twin with nonempty LGRC runtime state"
+    ],
+    "unrestricted_continuation_equivalence": false
+  },
+  "claim_boundary": {
+    "agency_supported": false,
+    "ecology_supported": false,
+    "identity_acceptance_supported": false,
+    "native_shared_medium_supported": false,
+    "organism_or_life_supported": false,
+    "phase8_complete": false,
+    "raw_snapshot_byte_identity_required": false,
+    "rc_identity_supported": false,
+    "selfhood_supported": false,
+    "unrestricted_continuation_equivalence": false
+  },
+  "closed_iterations": [
+    90,
+    91,
+    92,
+    93,
+    94
+  ],
+  "compatibility": {
+    "current_lgrc_runtime_artifact_exact": true,
+    "old_supported_grc9v3_snapshot_v1_loadable_as_grc9v3": true,
+    "old_supported_lgrc9v3_snapshot_v1_loadable": true,
+    "old_supported_runtime_missing_empty_logs_materialized": true,
+    "old_supported_runtime_normalization_owner": "existing LGRC9V3 runtime-state restorer",
+    "snapshot_migration_added": false,
+    "snapshot_schema_changed": false
+  },
+  "date": "2026-07-12",
+  "identity_contract": {
+    "artifact_kind": "lgrc9v3_restoration_identity",
+    "artifact_schema_version": "lgrc9v3_restoration_identity_v1",
+    "digest_callable": "pygrc.models.digest_lgrc9v3_restoration_identity_v1",
+    "embedded_component_schema": "lgrc9v3_embedded_grc9v3_state_v1",
+    "identity_callable": "pygrc.models.lgrc9v3_restoration_identity_v1",
+    "raw_snapshot_digest_in_identity": false,
+    "version": 1
+  },
+  "matrix_artifacts": [
+    {
+      "path": "implementation/Phase-8-LGRC9-RestorationIdentityValidationMatrix.md",
+      "sha256": "a6dd1fda689d3684d5897e95a0b6dd62d5c74598337fd2079ae32897595c2a46"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-RestorationIdentityRCAEReplayMatrix.json",
+      "sha256": "a0ec3183fba78e21110a948cd349c380553383051cd3e6958d04618076bbc426"
+    },
+    {
+      "path": "scripts/audit_lgrc9v3_restoration_identity_matrix.py",
+      "sha256": "51c022184120019a0b55a165f21c34e602fd4d58bbbbfc4097f7daa418d0f593"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+      "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154"
+    }
+  ],
+  "rcae_source_classification": {
+    "c01": "bounded_incomplete_due_to_over_broad_raw_snapshot_equality_predicate",
+    "c01_reclassified": false,
+    "c02": "passed_with_rcae_owned_versioned_restoration_projection_and_bounded_continuation",
+    "c02_reclassified": false
+  },
+  "rcae_return": {
+    "c02_projection_fallback": {
+      "allowed": true,
+      "condition": "older graph revision or native identity helper unavailable",
+      "may_be_relabeled_as_native_pygrc_identity": false
+    },
+    "external_state_composition_required": [
+      "ecology medium state",
+      "pool state",
+      "intervention state"
+    ],
+    "new_identity_provider": "pygrc.models.lgrc9v3_restoration_identity_v1",
+    "p2_i1_changed": false,
+    "p2_i2_may_adopt_native_identity": true,
+    "previous_identity_provider": "RCAE C02 restoration projection",
+    "realization_profile_transition_required": true,
+    "silent_upgrade_forbidden": true
+  },
+  "raw_snapshot_observation": {
+    "identity_digest": "4a48db62f9ab59b39fae8ecde7570afb3c07f30fe7208b39d74b934d83600301",
+    "identity_fixed_point": true,
+    "raw_representation_cycle_observed": true,
+    "raw_snapshot_digests": [
+      "37ac41bce4a0c8b4ae93bb0435b2abb0312e189b5d73380a46533b0ae5486a87",
+      "bd316a368afc4728cd8a60b00abd1fdb3bd8deb1a45ba24c23fd9a5edfee6f9d",
+      "efa8171d1c366fb23e2059c2c6418ba7a8c3f73a6e43dd119390159132c12e04",
+      "bd316a368afc4728cd8a60b00abd1fdb3bd8deb1a45ba24c23fd9a5edfee6f9d"
+    ],
+    "unique_identity_digest_count": 1,
+    "unique_raw_snapshot_digest_count": 3
+  },
+  "report_kind": "phase8_lgrc9_restoration_identity_closeout_v1",
+  "status": "closed",
+  "supported_snapshot_scope": {
+    "accepted_input_family": "LGRC9V3",
+    "accepted_inputs": [
+      "concrete LGRC9V3 model",
+      "complete LGRC9V3 snapshot mapping"
+    ],
+    "embedded_family": "GRC9V3",
+    "embedded_family_public_identity_added": false,
+    "plain_grc9v3_snapshot_accepted_by_lgrc_identity": false,
+    "plain_grc9v3_snapshot_native_loader_unchanged": true,
+    "snapshot_schema": "pygrc.snapshot",
+    "snapshot_version": 1
+  },
+  "verification": {
+    "core_models_result": "857 passed, 260 subtests passed",
+    "focused_i91_i93_result": "235 passed, 25 subtests passed",
+    "i93_matrix_result": "19 passed, 5 subtests passed",
+    "rcae_retained_replay_result": "11 of 11 checks passed",
+    "repository_wide_result": "1621 passed, 741 subtests passed, 25 failed due to absent gitignored output prerequisites",
+    "ruff": "passed",
+    "type_check": "passed"
+  }
+}

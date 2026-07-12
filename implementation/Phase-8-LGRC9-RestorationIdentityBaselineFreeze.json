@@ -1,0 +1,207 @@
+{
+  "artifact": "Phase-8-LGRC9-RestorationIdentityBaselineFreeze",
+  "schema_version": "phase8_lgrc9_restoration_identity_baseline_freeze_v1",
+  "date": "2026-07-12",
+  "status": "passed",
+  "iteration": 90,
+  "purpose": "freeze_lgrc9v3_restoration_boundary_before_identity_source_changes",
+  "source_commit": "809e5704182c1ccabcd9414139923d7dab2590fd",
+  "fixture": {
+    "source_project": "reflexive-coherence-agentic-ecology",
+    "source_experiment": "P2-I1",
+    "seed": 211,
+    "cell_id": "candidate-conditioning",
+    "window": "post_writer_feedback_surface_branch_point",
+    "consumption_boundary": "read_only_fixture_and_diagnostic_source_not_native_identity_definition"
+  },
+  "raw_snapshot_observation": {
+    "before_save_digest": "37ac41bce4a0c8b4ae93bb0435b2abb0312e189b5d73380a46533b0ae5486a87",
+    "after_first_load_digest": "bd316a368afc4728cd8a60b00abd1fdb3bd8deb1a45ba24c23fd9a5edfee6f9d",
+    "after_second_load_digest": "efa8171d1c366fb23e2059c2c6418ba7a8c3f73a6e43dd119390159132c12e04",
+    "after_third_load_digest": "bd316a368afc4728cd8a60b00abd1fdb3bd8deb1a45ba24c23fd9a5edfee6f9d",
+    "before_equals_after_first_load": false,
+    "python_value_equality_after_first_and_second_load": true,
+    "canonical_digest_equality_after_first_and_second_load": false,
+    "canonical_digest_equality_after_first_and_third_load": true,
+    "raw_representation_cycle_observed": true,
+    "raw_representation_cycle_path": "caches.base_grc9v3_snapshot.dynamics.state.port_edges.1.flux_uv",
+    "raw_representation_cycle_values": [
+      "-0.0",
+      "+0.0",
+      "-0.0"
+    ],
+    "raw_snapshot_fixed_point_required": false
+  },
+  "first_load_differences": [
+    {
+      "path": "caches.base_grc9v3_snapshot.dynamics.state.cached_quantities.budget_target_source",
+      "before": "absent",
+      "after": "explicit_state",
+      "classification": "deterministic_default_materialization"
+    },
+    {
+      "path": "caches.base_grc9v3_snapshot.dynamics.state.params_identity",
+      "before": null,
+      "after": "a9e588afc04aac1cf752c2526883df5ebad0d78773d5e6cfb76971bad0625025",
+      "classification": "deterministic_identity_materialization"
+    },
+    {
+      "path": "caches.base_grc9v3_snapshot.dynamics.state.port_edges.1.flux_uv",
+      "before": "+0.0",
+      "after": "-0.0",
+      "classification": "signed_zero_from_undirected_orientation_canonicalization"
+    },
+    {
+      "path": "caches.base_grc9v3_snapshot.dynamics.state.port_edges.1.node_u",
+      "before": 1,
+      "after": 0,
+      "classification": "undirected_endpoint_canonicalization"
+    },
+    {
+      "path": "caches.base_grc9v3_snapshot.dynamics.state.port_edges.1.node_v",
+      "before": 0,
+      "after": 1,
+      "classification": "undirected_endpoint_canonicalization"
+    },
+    {
+      "path": "caches.base_grc9v3_snapshot.dynamics.state.rng_state",
+      "before": null,
+      "after_digest": "024eba5b3b75c991ecf316761e985227f048ca678eb955faedc33d96680a51e6",
+      "classification": "deterministic_rng_materialization"
+    },
+    {
+      "path": "caches.base_grc9v3_snapshot.metadata.rng_state",
+      "before": "absent",
+      "after_digest": "024eba5b3b75c991ecf316761e985227f048ca678eb955faedc33d96680a51e6",
+      "classification": "deterministic_rng_metadata_materialization"
+    }
+  ],
+  "restoration_observation": {
+    "first_load_canonical_difference_count": 7,
+    "c01_reported_python_equality_difference_count": 6,
+    "difference_count_explanation": "ordinary Python equality treats positive and negative zero as equal",
+    "outer_metadata_equal": true,
+    "outer_topology_equal": true,
+    "outer_basin_attributes_equal": true,
+    "outer_edge_labels_equal": true,
+    "outer_dynamics_equal": true,
+    "outer_observables_equal": true,
+    "outer_events_equal": true,
+    "exact_lgrc9v3_runtime_artifact_equal": true,
+    "rcae_c02_projection_equal": true,
+    "rcae_c02_projection_role": "historical_fixture_bounded_comparator_only",
+    "lost_scientific_state_observed_in_tested_path": false,
+    "general_restoration_equivalence_claimed": false
+  },
+  "public_surface_baseline": {
+    "lgrc9v3_restoration_identity_v1_present": false,
+    "grc9v3_restoration_identity_public_api_present": false,
+    "raw_snapshot_digest_present": true,
+    "native_save_load_present": true,
+    "bounded_continue_after_load_tests_present": true
+  },
+  "source_artifacts": {
+    "rcae_c01_report": {
+      "path": "../reflexive-coherence-agentic-ecology/experiments/2026-07-AE01-post-n30-demand-composition-atlas/reports/P2-I1-C01-bounded-incomplete.md",
+      "sha256": "114238fe34af169eb8136f9fa10429440d6cdd8e5c18f886c828efd3736abb67"
+    },
+    "rcae_c02_report": {
+      "path": "../reflexive-coherence-agentic-ecology/experiments/2026-07-AE01-post-n30-demand-composition-atlas/reports/P2-I1-C02-result.md",
+      "sha256": "accf6ce4ffeba3ab0709bffb1802a17d556c1975959977602dbace61bd7379b6"
+    },
+    "rcae_fixture": {
+      "path": "../reflexive-coherence-agentic-ecology/experiments/2026-07-AE01-post-n30-demand-composition-atlas/configs/p2_i1_fixture.json",
+      "sha256": "1513381ca9a8747d636f286c4d9f12bef103baa8cd0659395e7bc966b3948ed5"
+    },
+    "rcae_cells": {
+      "path": "../reflexive-coherence-agentic-ecology/experiments/2026-07-AE01-post-n30-demand-composition-atlas/configs/p2_i1_cells.json",
+      "sha256": "ecdd15d24e34e4007f611489f172e49fb8f00292c0f02d14c1ebb3924143efe6"
+    }
+  },
+  "source_code_baseline": {
+    "src/pygrc/core/serialization.py": "6d3de4bc62e28d53301ae8c10d772f68672c61626f54cb9711056f1e9c81d874",
+    "src/pygrc/core/digests.py": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+    "src/pygrc/models/grc_9_v3.py": "6552dbb711b03ce5e2a2fe15815d9c6c6de464d7b06afb2dc677e4704fbfe42f",
+    "src/pygrc/models/grc_9_v3_state.py": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+    "src/pygrc/models/lgrc_9_v3_runtime.py": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+    "src/pygrc/models/__init__.py": "d28d374458e8b378c60c2b5d3ae76bd528b10a08c02b491ee10a99c1ff359603"
+  },
+  "iteration_artifacts": {
+    "diagnostic_script": {
+      "path": "scripts/audit_lgrc9v3_restoration_baseline.py",
+      "sha256": "b9647dbe53ab67d087f079c01da64f2ba883fa5cc702a2ae4e3a91bc793f3c0a",
+      "role": "read_only_reproduction_and_type_sensitive_snapshot_comparison"
+    }
+  },
+  "change_boundary": {
+    "iteration_90_source_changes_opened": false,
+    "src_tests_examples_diff_empty": true,
+    "grc9v3_source_changes_allowed": false,
+    "iteration_90_allowed_repository_changes": [
+      "implementation/Phase-8-LGRC9-RestorationIdentityPlan.md",
+      "implementation/Phase-8-LGRC9-RestorationIdentityChecklist.md",
+      "implementation/Phase-8-LGRC9-RestorationIdentityBaselineFreeze.json",
+      "implementation/Phase-8-LGRC9-RestorationIdentityBaselineFreeze.md",
+      "specs/lgrc-9-v3-restoration-identity.md",
+      "scripts/audit_lgrc9v3_restoration_baseline.py"
+    ],
+    "iteration_91_lgrc_only_source_envelope": [
+      "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "src/pygrc/models/__init__.py",
+      "tests/models/test_lgrc_9_v3_runtime.py",
+      "specs/lgrc-9-v3-spec.md",
+      "specs/lgrc-9-v3-restoration-identity.md",
+      "docs/reference/LGRC9V3-CausalHistory-ReferenceGuide.md"
+    ],
+    "protected_invariants": [
+      "GRC9V3_source_and_public_API",
+      "GRC9V3_runtime_behavior_and_snapshot_output",
+      "LGRC9V3_snapshot_schema",
+      "LGRC9V3_load_behavior",
+      "LGRC9V3_runtime_dynamics",
+      "packet_and_node_budget",
+      "topology_and_event_order",
+      "old_snapshot_compatibility"
+    ]
+  },
+  "verification": {
+    "commands": [
+      {
+        "command": ".venv/bin/python scripts/audit_lgrc9v3_restoration_baseline.py",
+        "status": "passed",
+        "result": "seven first-load canonical leaves; signed-zero raw digest cycle isolated"
+      },
+      {
+        "command": ".venv/bin/python -m pytest tests/core/test_serialization_contract.py tests/models/test_grc_9_v3_state.py tests/models/test_lgrc_9_v3_runtime.py -q",
+        "status": "passed",
+        "result": "203 passed, 17 subtests passed"
+      },
+      {
+        "command": "git diff --name-only HEAD -- src tests examples",
+        "status": "passed",
+        "result": "no output"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed"
+      }
+    ]
+  },
+  "claim_flags": {
+    "raw_snapshot_byte_identity_required": false,
+    "restoration_identity_supported": false,
+    "unrestricted_continuation_equivalence": false,
+    "grc9v3_modified": false,
+    "rc_identity_supported": false,
+    "selfhood_supported": false,
+    "identity_acceptance_supported": false,
+    "agency_supported": false,
+    "native_shared_medium_supported": false,
+    "ecology_supported": false,
+    "organism_or_life_supported": false,
+    "phase8_complete": false
+  },
+  "next_iteration": "91_embedded_grc9v3_state_projection"
+}

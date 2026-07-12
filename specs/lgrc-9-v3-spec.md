@@ -1430,6 +1430,48 @@ If a field is absent because the artifact predates LGRC support or because the
 mode is disabled, readers must treat the artifact as non-LGRC evidence rather
 than inventing default causal semantics.
 
+### Restoration Identity
+
+LGRC9V3 exposes a versioned restoration identity distinct from the raw
+snapshot digest:
+
+```text
+lgrc9v3_restoration_identity_v1
+digest_lgrc9v3_restoration_identity_v1
+```
+
+Both helpers are exported through `pygrc.models` and accept either a concrete
+`LGRC9V3` model or a complete LGRC9V3 snapshot mapping. They are concrete
+family helpers, not methods on the common `GRCModel` interface.
+
+The identity composes:
+
+```text
+LGRC9V3-owned read-only projection of its embedded GRC9V3 state
++ canonical LGRC9V3 runtime artifact (current artifacts remain exact)
++ event state
++ observables
+```
+
+It must preserve state that is continuation-relevant or evidence-bearing even
+when that state is stored under `caches`. Representation-only exclusions must
+be explicit. Equal restoration identity is necessary for a native
+restoration-equivalence claim, but bounded equal-input continuation replay
+remains a separate requirement.
+
+Phase 8 Iterations 90-94 close this helper as supported for LGRC9V3
+`pygrc.snapshot` version 1 model/snapshot inputs. The validation includes old
+supported representations and bounded continuation fixtures; it does not
+promote raw snapshot equality or unrestricted continuation equivalence.
+
+This Phase 8 contract does not add a GRC9V3 public API or change the GRC9V3
+substrate. A general GRC9V3 restoration identity, if later needed, belongs to a
+separate non-Phase-8 tranche.
+
+The complete artifact shape, exclusions, compatibility policy, controls, and
+claim ceiling are defined in
+[`lgrc-9-v3-restoration-identity.md`](./lgrc-9-v3-restoration-identity.md).
+
 ## Out Of Scope
 
 The current executable `LGRC9V3` queue shell must not claim:

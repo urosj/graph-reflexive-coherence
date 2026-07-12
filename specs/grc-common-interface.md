@@ -272,6 +272,26 @@ The storage format is implementation-defined, but it must preserve:
 - model family identifier,
 - file format version.
 
+Canonical serialization and restoration identity are distinct contracts.
+Canonical serialization means that one supplied snapshot payload has a
+deterministic JSON representation. It does not require that a loader which
+materializes deterministic defaults or canonicalizes an equivalent internal
+representation must later emit a byte-identical snapshot.
+
+Concrete families may expose a versioned restoration identity when downstream
+branch/replay work needs semantic restoration equality. Such an identity must:
+
+- be family-owned rather than inferred from generic snapshot group names;
+- include all continuation-relevant and scientific state for that family;
+- enumerate representation-only exclusions narrowly;
+- retain raw full-snapshot digests as separate observations; and
+- remain separate from bounded continuation replay.
+
+The common `GRCModel` interface does not require a restoration-identity method
+at this time. The first concrete family contract is defined only for LGRC9V3
+in
+[`lgrc-9-v3-restoration-identity.md`](./lgrc-9-v3-restoration-identity.md).
+
 ## Recommended Internal Hooks
 
 Concrete models should implement internal hooks with these names where possible:

@@ -1102,6 +1102,27 @@ Phase-8-LGRC9-NativePacketLoopChecklist.md
 That continuation targets route-aspect semantics, source-pole surplus trigger
 production, and native self-rearm causality evidence for `LGRC9V3`.
 
+A later RCAE P2-I1-driven bounded restoration-contract continuation is now
+closed in:
+
+```text
+Phase-8-LGRC9-RestorationIdentityPlan.md
+Phase-8-LGRC9-RestorationIdentityChecklist.md
+Phase-8-LGRC9-RestorationIdentityCloseout.md
+Phase-8-LGRC9-RestorationIdentityCloseout.json
+```
+
+That continuation adds no causal or dynamical mechanism. It defines a
+versioned library-owned distinction between raw snapshot representation and
+LGRC9V3 restoration identity, including a read-only embedded-GRC9V3 state
+component, so downstream branch/replay experiments do not need to invent
+native-state projections.
+
+The closeout supports a versioned LGRC9V3 restoration identity with bounded
+continuation validation. It leaves raw snapshot identity observational,
+requires explicit downstream adoption, and does not support unrestricted
+continuation equivalence, RC identity, agency, ecology, or Phase 8 completion.
+
 ### Later Levels
 
 Later levels, if any, should be added only after LGRC-2 and LGRC-3 expose
