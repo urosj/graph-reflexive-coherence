@@ -1432,12 +1432,17 @@ than inventing default causal semantics.
 
 ### Restoration Identity
 
-LGRC9V3 may expose a versioned restoration identity distinct from the raw
+LGRC9V3 exposes a versioned restoration identity distinct from the raw
 snapshot digest:
 
 ```text
 lgrc9v3_restoration_identity_v1
+digest_lgrc9v3_restoration_identity_v1
 ```
+
+Both helpers are exported through `pygrc.models` and accept either a concrete
+`LGRC9V3` model or a complete LGRC9V3 snapshot mapping. They are concrete
+family helpers, not methods on the common `GRCModel` interface.
 
 The identity composes:
 

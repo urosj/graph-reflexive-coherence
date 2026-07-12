@@ -8,8 +8,21 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from pygrc.core import PortGraphBackend, SnapshotCompatibilityError
-from pygrc.models import GRC9V3NodeState, GRC9V3State, LGRC9V3, PortEdge
+from pygrc.core import (
+    PortGraphBackend,
+    SnapshotCompatibilityError,
+    digest_canonical_data,
+)
+from pygrc.models import (
+    GRC9V3NodeState,
+    GRC9V3State,
+    LGRC9V3,
+    LGRC9V3_RESTORATION_IDENTITY_KIND,
+    LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION,
+    PortEdge,
+    digest_lgrc9v3_restoration_identity_v1,
+    lgrc9v3_restoration_identity_v1,
+)
 from pygrc.models.lgrc_9_v3_restoration import (
     LGRC9V3_EMBEDDED_GRC9V3_STATE_KIND,
     LGRC9V3_EMBEDDED_GRC9V3_STATE_SCHEMA_VERSION,
@@ -93,6 +106,30 @@ def _model() -> LGRC9V3:
             "evolution": {"rng_seed": 17},
         },
     )
+
+
+def _active_model() -> LGRC9V3:
+    model = _model()
+    model.schedule_packet_departure(
+        source_node_id=2,
+        target_node_id=0,
+        edge_id=1,
+        amount=0.25,
+        departure_event_time_key=1.0,
+        scheduler_event_index=1,
+    )
+    model.step()
+    return model
+
+
+def _mapping_keys(value: object) -> set[str]:
+    if isinstance(value, dict):
+        return set(value) | {
+            key for child in value.values() for key in _mapping_keys(child)
+        }
+    if isinstance(value, list):
+        return {key for child in value for key in _mapping_keys(child)}
+    return set()
 
 
 class LGRC9V3EmbeddedRestorationStateTests(unittest.TestCase):
@@ -246,6 +283,122 @@ class LGRC9V3EmbeddedRestorationStateTests(unittest.TestCase):
         ]
         with self.assertRaises(SnapshotCompatibilityError):
             build_lgrc9v3_embedded_grc9v3_state_v1(missing_edge_id)
+
+
+class LGRC9V3CompositeRestorationIdentityTests(unittest.TestCase):
+    def test_public_artifact_composes_exact_native_groups(self) -> None:
+        model = _active_model()
+        snapshot = model.snapshot()
+        original = deepcopy(snapshot)
+
+        from_model = lgrc9v3_restoration_identity_v1(model)
+        from_snapshot = lgrc9v3_restoration_identity_v1(snapshot)
+
+        self.assertEqual(original, snapshot)
+        self.assertEqual(from_model, from_snapshot)
+        self.assertEqual(
+            LGRC9V3_RESTORATION_IDENTITY_KIND,
+            from_snapshot["artifact_kind"],
+        )
+        self.assertEqual(
+            LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION,
+            from_snapshot["artifact_schema_version"],
+        )
+        self.assertEqual("LGRC9V3", from_snapshot["model_family"])
+        self.assertEqual("pygrc.snapshot", from_snapshot["source_snapshot_schema"])
+        self.assertEqual(1, from_snapshot["source_snapshot_version"])
+        self.assertIn(
+            "embedded_grc9v3_state",
+            from_snapshot["included_state_groups"],
+        )
+        self.assertIn(
+            "exact_lgrc9v3_runtime_artifact",
+            from_snapshot["included_state_groups"],
+        )
+        self.assertIn(
+            "raw_full_snapshot_digest",
+            from_snapshot["excluded_representation_fields"],
+        )
+        self.assertEqual(
+            snapshot["dynamics"]["lgrc9v3_runtime"],
+            from_snapshot["lgrc9v3_runtime_artifact"],
+        )
+        self.assertEqual(snapshot["events"], from_snapshot["events"])
+        self.assertEqual(snapshot["observables"], from_snapshot["observables"])
+        artifact_keys = _mapping_keys(from_snapshot)
+        self.assertNotIn("raw_snapshot_digest", artifact_keys)
+        self.assertNotIn("raw_full_snapshot_digest", artifact_keys)
+        self.assertNotIn("raw_snapshot", artifact_keys)
+
+    def test_public_artifact_and_digest_are_deterministic(self) -> None:
+        snapshot = _active_model().snapshot()
+        first = lgrc9v3_restoration_identity_v1(snapshot)
+        second = lgrc9v3_restoration_identity_v1(snapshot)
+        self.assertEqual(first, second)
+        self.assertEqual(
+            digest_canonical_data(first),
+            digest_lgrc9v3_restoration_identity_v1(snapshot),
+        )
+
+    def test_public_identity_is_stable_across_native_load(self) -> None:
+        model = _active_model()
+        before = lgrc9v3_restoration_identity_v1(model)
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            path = Path(tmp_dir) / "lgrc9v3-composite.json"
+            model.save(str(path))
+            loaded = LGRC9V3.load(str(path))
+        self.assertEqual(before, lgrc9v3_restoration_identity_v1(loaded))
+
+    def test_runtime_event_and_observable_mutations_change_digest(self) -> None:
+        snapshot = _active_model().snapshot()
+        original_digest = digest_lgrc9v3_restoration_identity_v1(snapshot)
+
+        runtime_changed = deepcopy(snapshot)
+        runtime_changed["dynamics"]["lgrc9v3_runtime"]["scheduler_event_index"] += 1
+        self.assertNotEqual(
+            original_digest,
+            digest_lgrc9v3_restoration_identity_v1(runtime_changed),
+        )
+
+        event_changed = deepcopy(snapshot)
+        event_changed["events"][0]["payload"]["identity_test_marker"] = True
+        self.assertNotEqual(
+            original_digest,
+            digest_lgrc9v3_restoration_identity_v1(event_changed),
+        )
+
+        observable_changed = deepcopy(snapshot)
+        observable_key = next(iter(observable_changed["observables"]))
+        observable_changed["observables"][observable_key] += 1.0
+        self.assertNotEqual(
+            original_digest,
+            digest_lgrc9v3_restoration_identity_v1(observable_changed),
+        )
+
+    def test_public_identity_rejects_unsupported_or_malformed_sources(self) -> None:
+        with self.assertRaises(SnapshotCompatibilityError):
+            lgrc9v3_restoration_identity_v1(object())  # type: ignore[arg-type]
+
+        snapshot = _active_model().snapshot()
+        missing_runtime = deepcopy(snapshot)
+        del missing_runtime["dynamics"]["lgrc9v3_runtime"]
+        with self.assertRaises(SnapshotCompatibilityError):
+            lgrc9v3_restoration_identity_v1(missing_runtime)
+
+        malformed_events = deepcopy(snapshot)
+        malformed_events["events"] = {}
+        with self.assertRaises(SnapshotCompatibilityError):
+            lgrc9v3_restoration_identity_v1(malformed_events)
+
+        missing_events = deepcopy(snapshot)
+        del missing_events["events"]
+        with self.assertRaisesRegex(SnapshotCompatibilityError, "events are required"):
+            lgrc9v3_restoration_identity_v1(missing_events)
+
+        malformed_observables = deepcopy(snapshot)
+        malformed_observables["observables"] = []
+        with self.assertRaises(SnapshotCompatibilityError):
+            lgrc9v3_restoration_identity_v1(malformed_observables)
 
 
 if __name__ == "__main__":

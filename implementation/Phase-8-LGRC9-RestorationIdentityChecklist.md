@@ -253,6 +253,12 @@ Signed zero is not normalized in any other state field in version 1; those
 values remain exact until a later source-backed contract revision proves a
 narrow representation-only exclusion.
 
+Port-edge/topology correspondence is consumed through the unchanged GRC9V3
+loader and its post-hydration state validation. I91 does not impose a second
+raw pre-hydration key policy, because the current GRC9V3 contract may
+materialize supported edge defaults from topology. I93 malformed-input controls
+must verify this inherited boundary rather than silently redefine it.
+
 Dedicated tests prove:
 
 ```text
@@ -324,20 +330,130 @@ was rerun after those corrections.
 
 ## Iteration 92. LGRC9V3 Composite Restoration Identity
 
-Status: pending.
+Status: passed.
 
-- [ ] Add `lgrc9v3_restoration_identity_v1`.
-- [ ] Consume the internal embedded-GRC9V3 state component.
-- [ ] Include the exact LGRC runtime artifact.
-- [ ] Include LGRC event state.
-- [ ] Include LGRC observables.
-- [ ] Include source snapshot schema/version provenance.
-- [ ] Include explicit inclusion/exclusion manifest.
-- [ ] Keep raw snapshot digest outside the identity digest.
-- [ ] Export the concrete helper through the public models facade.
-- [ ] Do not change the abstract `GRCModel` interface.
-- [ ] Do not change `snapshot()`, `save()`, or `load()` payload or behavior.
-- [ ] Add deterministic repeated-construction tests.
+- [x] Add `lgrc9v3_restoration_identity_v1`.
+- [x] Consume the internal embedded-GRC9V3 state component.
+- [x] Include the exact LGRC runtime artifact.
+- [x] Include LGRC event state.
+- [x] Include LGRC observables.
+- [x] Include source snapshot schema/version provenance.
+- [x] Include explicit inclusion/exclusion manifest.
+- [x] Keep raw snapshot digest outside the identity digest.
+- [x] Export the concrete helper through the public models facade.
+- [x] Do not change the abstract `GRCModel` interface.
+- [x] Do not change `snapshot()`, `save()`, or `load()` payload or behavior.
+- [x] Add deterministic repeated-construction tests.
+
+### Implementation Details
+
+Iteration 92 extends the dedicated LGRC-owned restoration module with:
+
+```text
+LGRC9V3_RESTORATION_IDENTITY_KIND
+LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION
+lgrc9v3_restoration_identity_v1
+digest_lgrc9v3_restoration_identity_v1
+```
+
+The concrete public helpers are exported through `pygrc.models`. They are not
+methods on `GRCModel` or `LGRC9V3`, so the abstract interface and runtime class
+contracts remain unchanged.
+
+Both supported inputs follow one explicit path:
+
+```text
+LGRC9V3 model -> model.snapshot() -> composite identity
+LGRC9V3 snapshot mapping ---------> composite identity
+```
+
+The composite artifact contains:
+
+```text
+artifact kind and schema version
+model family
+source snapshot schema/version
+Iteration 91 embedded GRC9V3 state component
+exact serialized dynamics.lgrc9v3_runtime artifact
+exact serialized LGRC9V3 events
+exact serialized LGRC9V3 observables
+included-state manifest
+explicit representation exclusions
+```
+
+The native runtime, event, and observable groups are deep-copied from the
+supplied native snapshot, not reconstructed. The complete artifact is then
+JSON-canonicalized. Raw snapshot bytes, raw full-snapshot digest, duplicate
+outer GRC9V3 views, and the raw embedded GRC9V3 representation are excluded.
+No raw digest is present in the artifact used by
+`digest_lgrc9v3_restoration_identity_v1`.
+
+Dedicated I92 tests use a nonempty packet-event runtime and prove:
+
+```text
+model and snapshot inputs produce the same artifact
+source snapshot remains unchanged
+runtime artifact is included exactly
+events and observables are included exactly
+artifact kind, schema, family, and manifests are present
+raw snapshot and raw digest are absent
+artifact and digest construction are deterministic
+digest equals canonical digest of the public artifact
+identity agrees before save and after native load
+runtime, event, and observable mutations change the digest
+unsupported input fails closed
+missing runtime artifact fails closed
+malformed event or observable groups fail closed
+```
+
+Iteration 92 establishes the public composition surface, not the full claim.
+The comprehensive replay, sensitivity, normalization, old-snapshot, and
+negative-control matrix remains assigned to Iteration 93.
+
+The post-I92 state is therefore:
+
+```text
+lgrc9v3_restoration_identity_v1_callable_available = true
+lgrc9v3_restoration_identity_v1_artifact_shape_frozen = true
+lgrc9v3_restoration_identity_v1_supported = false
+support_blocker = iteration_93_matrix_not_run
+phase8_restoration_identity_closeout_complete = false
+```
+
+The stricter integer checks in the identity projection intentionally reject
+boolean IDs even though Python treats `bool` as a subclass of `int`. This is a
+family-specific identity validation boundary, not a change to core snapshot
+validation. Stable allocation remains an explicit slot-by-slot representation
+in version 1; its size scales with the highest allocated stable ID by design.
+
+### Verification Results
+
+```text
+.venv/bin/python -m pytest \
+  tests/core/test_serialization_contract.py \
+  tests/models/test_grc_9_v3_state.py \
+  tests/models/test_lgrc_9_v3_runtime.py \
+  tests/models/test_lgrc_9_v3_restoration.py -q
+
+216 passed, 20 subtests passed
+```
+
+```text
+I92 dedicated tests: 13 passed, 3 subtests passed
+ruff format --check: passed
+ruff check: passed
+mypy lgrc_9_v3_restoration.py: passed
+git diff --check: passed
+I90 RCAE baseline diagnostic rerun: passed
+GRCModel, GRC9V3, LGRC9V3 runtime/state source diff from I91: empty
+```
+
+The only source changes are the dedicated restoration module and concrete
+`pygrc.models` exports. Snapshot construction, save/load behavior, runtime
+state, equations, scheduling, producers, and abstract interfaces remain
+unchanged. The repository-wide suite was not repeated in I92 because the 25
+known ignored-output prerequisite failures recorded under I91 remain present;
+all directly affected and focused regression tests pass.
 
 ## Iteration 93. Replay, Sensitivity, And Compatibility Matrix
 

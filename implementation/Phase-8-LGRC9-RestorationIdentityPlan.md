@@ -1,7 +1,7 @@
 # Phase 8 LGRC9 Restoration Identity Plan
 
-Status: Open; Iterations 90-91 complete. The public composite restoration
-identity, replay/sensitivity matrix, and closeout remain pending.
+Status: Open; Iterations 90-92 complete. The replay/sensitivity matrix and
+closeout remain pending.
 
 This continuation is opened by RCAE P2-I1 C01/C02. C01 compared complete
 LGRC9V3 snapshots across native save/load and stopped before scientific
@@ -96,12 +96,13 @@ Supported now:
 - native GRC9V3 and LGRC9V3 save/load;
 - exact preservation tests for LGRC runtime artifacts;
 - multiple bounded continue-after-load tests; and
-- raw snapshot digest helpers.
+- raw snapshot digest helpers;
+- an internal canonical embedded-GRC9V3 state component; and
+- a public versioned LGRC9V3 restoration identity artifact and digest helper.
 
 Missing now:
 
-- a public semantic restoration-identity surface;
-- sensitivity tests proving which state is identity-bearing; and
+- the full sensitivity matrix proving which state is identity-bearing; and
 - a downstream capability path that RCAE P2-I2 can consume without inventing
   another native-state projection.
 
@@ -243,6 +244,13 @@ explicit inclusion/exclusion manifest
 
 Expose the concrete public helper and digest path without changing
 `GRCModel`, `snapshot()`, `save()`, or `load()` behavior.
+
+Implemented in the same dedicated LGRC-owned module. The public helper accepts
+an `LGRC9V3` model or complete snapshot, consumes the Iteration 91 component,
+and copies the exact serialized LGRC runtime artifact, events, and observables
+into the versioned composite artifact. The canonical digest excludes raw
+snapshot bytes and raw snapshot digests. The helpers are exported through
+`pygrc.models`; no method is added to `GRCModel` or `LGRC9V3`.
 
 ## Iteration 93. Replay, Sensitivity, And Compatibility Matrix
 

@@ -8,6 +8,7 @@ import math
 from typing import Any
 
 from pygrc.core import (
+    GRCModel,
     SnapshotCompatibilityError,
     canonicalize_json_value,
     digest_canonical_data,
@@ -19,6 +20,8 @@ from .grc_9_v3 import GRC9V3
 
 LGRC9V3_EMBEDDED_GRC9V3_STATE_KIND = "lgrc9v3_embedded_grc9v3_state"
 LGRC9V3_EMBEDDED_GRC9V3_STATE_SCHEMA_VERSION = "lgrc9v3_embedded_grc9v3_state_v1"
+LGRC9V3_RESTORATION_IDENTITY_KIND = "lgrc9v3_restoration_identity"
+LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION = "lgrc9v3_restoration_identity_v1"
 
 _INCLUDED_STATE_GROUPS = (
     "resolved_parameter_identity",
@@ -40,6 +43,21 @@ _EXCLUDED_REPRESENTATION_FIELDS = (
     "signed_zero_of_zero_port_edge_flux",
     "absence_before_deterministic_default_materialization",
     "duplicate_outer_grc9v3_snapshot_groups",
+)
+
+_COMPOSITE_INCLUDED_STATE_GROUPS = (
+    "embedded_grc9v3_state",
+    "exact_lgrc9v3_runtime_artifact",
+    "lgrc9v3_events",
+    "lgrc9v3_observables",
+    "source_snapshot_schema_and_version",
+)
+
+_COMPOSITE_EXCLUDED_REPRESENTATION_FIELDS = (
+    "raw_full_snapshot_digest",
+    "raw_snapshot_file_bytes",
+    "duplicate_outer_topology_basin_and_edge_groups",
+    "raw_embedded_grc9v3_snapshot_representation",
 )
 
 
@@ -332,9 +350,85 @@ def digest_lgrc9v3_embedded_grc9v3_state_v1(
     return digest_canonical_data(build_lgrc9v3_embedded_grc9v3_state_v1(snapshot))
 
 
+def _lgrc9v3_snapshot(
+    source: Mapping[str, Any] | GRCModel,
+) -> Mapping[str, Any]:
+    if isinstance(source, Mapping):
+        return source
+
+    # Avoid coupling LGRC9V3 runtime construction to this optional identity
+    # module while still accepting the concrete model at the public boundary.
+    from .lgrc_9_v3_runtime import LGRC9V3
+
+    if isinstance(source, LGRC9V3):
+        return source.snapshot()
+    raise SnapshotCompatibilityError(
+        "LGRC9V3 restoration identity source must be an LGRC9V3 model or snapshot"
+    )
+
+
+def lgrc9v3_restoration_identity_v1(
+    source: Mapping[str, Any] | GRCModel,
+) -> dict[str, Any]:
+    """Build the public version-1 LGRC9V3 restoration identity artifact."""
+
+    snapshot = _lgrc9v3_snapshot(source)
+    require_snapshot_family(snapshot, expected_family="LGRC9V3")
+    metadata = _require_mapping(
+        snapshot.get("metadata"),
+        context="LGRC9V3 snapshot metadata",
+    )
+    dynamics = _require_mapping(
+        snapshot.get("dynamics"),
+        context="LGRC9V3 snapshot dynamics",
+    )
+    runtime_artifact = _require_mapping(
+        dynamics.get("lgrc9v3_runtime"),
+        context="LGRC9V3 snapshot dynamics.lgrc9v3_runtime",
+    )
+    events = snapshot.get("events")
+    if events is None:
+        raise SnapshotCompatibilityError("LGRC9V3 snapshot events are required")
+    if not isinstance(events, list):
+        raise SnapshotCompatibilityError("LGRC9V3 snapshot events must be a list")
+    observables = _require_mapping(
+        snapshot.get("observables"),
+        context="LGRC9V3 snapshot observables",
+    )
+
+    artifact = {
+        "artifact_kind": LGRC9V3_RESTORATION_IDENTITY_KIND,
+        "artifact_schema_version": LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION,
+        "model_family": "LGRC9V3",
+        "source_snapshot_schema": metadata.get("snapshot_schema"),
+        "source_snapshot_version": metadata.get("snapshot_version"),
+        "embedded_grc9v3_state": build_lgrc9v3_embedded_grc9v3_state_v1(snapshot),
+        "lgrc9v3_runtime_artifact": deepcopy(runtime_artifact),
+        "events": deepcopy(events),
+        "observables": deepcopy(observables),
+        "included_state_groups": list(_COMPOSITE_INCLUDED_STATE_GROUPS),
+        "excluded_representation_fields": list(
+            _COMPOSITE_EXCLUDED_REPRESENTATION_FIELDS
+        ),
+    }
+    return dict(canonicalize_json_value(artifact))
+
+
+def digest_lgrc9v3_restoration_identity_v1(
+    source: Mapping[str, Any] | GRCModel,
+) -> str:
+    """Digest the public version-1 LGRC9V3 restoration identity artifact."""
+
+    return digest_canonical_data(lgrc9v3_restoration_identity_v1(source))
+
+
 __all__ = [
     "LGRC9V3_EMBEDDED_GRC9V3_STATE_KIND",
     "LGRC9V3_EMBEDDED_GRC9V3_STATE_SCHEMA_VERSION",
+    "LGRC9V3_RESTORATION_IDENTITY_KIND",
+    "LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION",
     "build_lgrc9v3_embedded_grc9v3_state_v1",
     "digest_lgrc9v3_embedded_grc9v3_state_v1",
+    "digest_lgrc9v3_restoration_identity_v1",
+    "lgrc9v3_restoration_identity_v1",
 ]

@@ -1,8 +1,8 @@
 # LGRC9V3 Restoration Identity Specification
 
 Status: Phase 8 additive contract in implementation. The internal embedded
-GRC9V3 state component is available; the public composite identity remains
-pending.
+GRC9V3 state component and public composite identity are available; the full
+replay, sensitivity, and compatibility matrix remains pending.
 
 This specification defines a versioned, library-owned equality surface for
 save/load restoration. It does not redefine raw snapshots, change runtime
@@ -108,10 +108,10 @@ internal component artifact:
 internal component digest:
   digest_lgrc9v3_embedded_grc9v3_state_v1
 
-public composite artifact, pending Iteration 92:
+public composite artifact:
   lgrc9v3_restoration_identity_v1
 
-public composite digest, pending Iteration 92:
+public composite digest:
   digest_lgrc9v3_restoration_identity_v1
 ```
 
@@ -217,6 +217,12 @@ excluded_representation_fields
 The identity digest is computed over this payload. Raw snapshot digests may be
 returned in a separate diagnostic envelope, but must not be included in the
 restoration-identity digest.
+
+The public helper accepts either a concrete `LGRC9V3` model or a complete
+LGRC9V3 snapshot mapping. Both inputs resolve to the same canonical artifact.
+The runtime artifact, events, and observables are copied from the supplied
+native snapshot rather than reconstructed, while the embedded GRC9V3 state is
+normalized through the Iteration 91 component.
 
 The exact native `dynamics.lgrc9v3_runtime` artifact remains included. This
 preserves packet ledgers, queues, clocks, causal routes, topology history,
