@@ -12,6 +12,11 @@ It is the top-level execution plan for:
 
 The codebase target remains the usual package layout under `src/`.
 
+Bounded repairs to already implemented contracts are not assigned new phase
+numbers. They are indexed under
+[`implementation/corrections/`](./corrections/README.md), with their own plans,
+checklists, closeouts, and claim boundaries.
+
 Operator-facing reference documentation lives under
 [`docs/reference/`](../docs/reference/README.md). Start there for current usage
 guides:
