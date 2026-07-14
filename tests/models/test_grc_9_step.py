@@ -382,10 +382,12 @@ class GRC9StepLoopPersistenceTest(unittest.TestCase):
                 "dynamics",
                 "observables",
                 "events",
+                "reset_baseline",
                 "caches",
             },
             set(snapshot.keys()),
         )
+        self.assertEqual("available", snapshot["reset_baseline"]["status"])
         self.assertEqual("GRC9", snapshot["metadata"]["model_family"])
         self.assertIn("edge_label_computation_mode", snapshot["edge_labels"])
         self.assertIn("edge_label_params", snapshot["edge_labels"])

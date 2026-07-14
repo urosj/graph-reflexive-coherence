@@ -26,6 +26,8 @@ from .types import GRCState
 
 SNAPSHOT_SCHEMA = "pygrc.snapshot"
 SNAPSHOT_VERSION = 1
+RESET_BASELINE_SCHEMA = "pygrc.reset_baseline"
+RESET_BASELINE_VERSION = 1
 SNAPSHOT_GROUP_ORDER = (
     "metadata",
     "topology",
@@ -34,6 +36,7 @@ SNAPSHOT_GROUP_ORDER = (
     "dynamics",
     "observables",
     "events",
+    "reset_baseline",
     "caches",
 )
 
@@ -148,6 +151,17 @@ class TopologySnapshot(TypedDict, total=False):
     port_structure: NotRequired[dict[str, Any]]
 
 
+class ResetBaselineSnapshot(TypedDict, total=False):
+    """Versioned reset-baseline persistence group."""
+
+    reset_baseline_schema: str
+    reset_baseline_version: int
+    model_family: str
+    status: str
+    snapshot: NotRequired[dict[str, Any]]
+    unavailable_reason: NotRequired[str]
+
+
 class BaseSnapshot(TypedDict, total=False):
     """Shared top-level snapshot contract."""
 
@@ -158,6 +172,7 @@ class BaseSnapshot(TypedDict, total=False):
     dynamics: NotRequired[dict[str, Any]]
     observables: NotRequired[dict[str, Any]]
     events: NotRequired[list[dict[str, Any]]]
+    reset_baseline: NotRequired[ResetBaselineSnapshot]
     caches: NotRequired[dict[str, Any]]
 
 
@@ -439,6 +454,7 @@ def build_standard_snapshot(
     dynamics: Mapping[str, Any] | None = None,
     observables: Mapping[str, Any] | None = None,
     events: list[Mapping[str, Any]] | None = None,
+    reset_baseline: Mapping[str, Any] | None = None,
     caches: Mapping[str, Any] | None = None,
     mutation_history: Any = None,
 ) -> BaseSnapshot:
@@ -468,6 +484,11 @@ def build_standard_snapshot(
             None if observables is None else canonicalize_json_value(observables)
         ),
         "events": None if events is None else build_event_records(events),
+        "reset_baseline": (
+            None
+            if reset_baseline is None
+            else canonicalize_json_value(reset_baseline)
+        ),
         "caches": None if caches is None else canonicalize_json_value(caches),
     }
 
@@ -477,6 +498,46 @@ def build_standard_snapshot(
         if payload is not None:
             snapshot[group_name] = payload
     return snapshot
+
+
+def build_reset_baseline_group(
+    *,
+    model_family: str,
+    baseline_snapshot: Mapping[str, Any] | None,
+    unavailable_reason: str | None = None,
+) -> ResetBaselineSnapshot:
+    """Build one explicit reset-baseline persistence group."""
+
+    if not isinstance(model_family, str) or not model_family:
+        raise ValueError("reset baseline model_family must be a non-empty string")
+    if baseline_snapshot is not None and unavailable_reason is not None:
+        raise ValueError(
+            "available reset baseline cannot also declare an unavailable reason"
+        )
+    if baseline_snapshot is None and (
+        not isinstance(unavailable_reason, str) or not unavailable_reason
+    ):
+        raise ValueError(
+            "unavailable reset baseline requires a non-empty unavailable_reason"
+        )
+
+    group: ResetBaselineSnapshot = {
+        "reset_baseline_schema": RESET_BASELINE_SCHEMA,
+        "reset_baseline_version": RESET_BASELINE_VERSION,
+        "model_family": model_family,
+        "status": "available" if baseline_snapshot is not None else "unavailable",
+    }
+    if baseline_snapshot is not None:
+        if "reset_baseline" in baseline_snapshot:
+            raise ValueError("reset baseline snapshot must not nest another baseline")
+        canonical_snapshot = canonicalize_json_value(baseline_snapshot)
+        if not isinstance(canonical_snapshot, dict):
+            raise TypeError("reset baseline snapshot must canonicalize to a mapping")
+        group["snapshot"] = canonical_snapshot
+    else:
+        assert unavailable_reason is not None
+        group["unavailable_reason"] = unavailable_reason
+    return group
 
 
 def snapshot_to_json(snapshot: Mapping[str, Any]) -> str:
@@ -731,10 +792,104 @@ def validate_snapshot_contract(snapshot: Mapping[str, Any]) -> None:
     if not isinstance(metadata["capabilities"], list):
         raise SnapshotCompatibilityError("metadata.capabilities must be a list")
 
+    reset_baseline = snapshot.get("reset_baseline")
+    if reset_baseline is not None:
+        validate_reset_baseline_group(
+            reset_baseline,
+            expected_family=str(metadata["model_family"]),
+        )
+        if isinstance(reset_baseline, Mapping) and (
+            reset_baseline.get("status") == "available"
+        ):
+            baseline_snapshot = reset_baseline.get("snapshot")
+            assert isinstance(baseline_snapshot, Mapping)
+            baseline_metadata = baseline_snapshot.get("metadata")
+            assert isinstance(baseline_metadata, Mapping)
+            if baseline_metadata.get("params_hash") != metadata.get("params_hash"):
+                raise SnapshotCompatibilityError(
+                    "reset_baseline params_hash does not match outer snapshot"
+                )
+
     if "nodes" in topology and not isinstance(topology["nodes"], list):
         raise SnapshotCompatibilityError("topology.nodes must be a list when present")
     if "edges" in topology and not isinstance(topology["edges"], list):
         raise SnapshotCompatibilityError("topology.edges must be a list when present")
+
+
+def validate_reset_baseline_group(
+    group: Any,
+    *,
+    expected_family: str,
+) -> None:
+    """Validate one reset-baseline group without recursive baselines."""
+
+    if not isinstance(group, Mapping):
+        raise SnapshotCompatibilityError("reset_baseline group must be a mapping")
+    if group.get("reset_baseline_schema") != RESET_BASELINE_SCHEMA:
+        raise SnapshotCompatibilityError("unsupported reset_baseline schema")
+    if group.get("reset_baseline_version") != RESET_BASELINE_VERSION:
+        raise SnapshotCompatibilityError("unsupported reset_baseline version")
+    if group.get("model_family") != expected_family:
+        raise SnapshotCompatibilityError(
+            "reset_baseline model_family does not match snapshot family"
+        )
+    status = group.get("status")
+    if status == "available":
+        baseline_snapshot = group.get("snapshot")
+        if not isinstance(baseline_snapshot, Mapping):
+            raise SnapshotCompatibilityError(
+                "available reset_baseline requires a snapshot mapping"
+            )
+        if "reset_baseline" in baseline_snapshot:
+            raise SnapshotCompatibilityError(
+                "reset_baseline snapshot must not nest another baseline"
+            )
+        validate_snapshot_contract(baseline_snapshot)
+        baseline_metadata = baseline_snapshot.get("metadata", {})
+        if not isinstance(baseline_metadata, Mapping) or (
+            baseline_metadata.get("model_family") != expected_family
+        ):
+            raise SnapshotCompatibilityError(
+                "reset_baseline snapshot family does not match outer snapshot"
+            )
+        if "unavailable_reason" in group:
+            raise SnapshotCompatibilityError(
+                "available reset_baseline must not declare unavailable_reason"
+            )
+        return
+    if status == "unavailable":
+        reason = group.get("unavailable_reason")
+        if not isinstance(reason, str) or not reason:
+            raise SnapshotCompatibilityError(
+                "unavailable reset_baseline requires unavailable_reason"
+            )
+        if "snapshot" in group:
+            raise SnapshotCompatibilityError(
+                "unavailable reset_baseline must not contain snapshot"
+            )
+        return
+    raise SnapshotCompatibilityError(
+        "reset_baseline status must be 'available' or 'unavailable'"
+    )
+
+
+def reset_baseline_snapshot(
+    snapshot: Mapping[str, Any],
+    *,
+    expected_family: str,
+) -> Mapping[str, Any] | None:
+    """Return an available baseline, or None for legacy/unavailable data."""
+
+    group = snapshot.get("reset_baseline")
+    if group is None:
+        return None
+    validate_reset_baseline_group(group, expected_family=expected_family)
+    assert isinstance(group, Mapping)
+    if group.get("status") == "unavailable":
+        return None
+    baseline = group.get("snapshot")
+    assert isinstance(baseline, Mapping)
+    return baseline
 
 
 def require_snapshot_family(

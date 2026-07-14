@@ -8,6 +8,8 @@ import tempfile
 import unittest
 
 from pygrc.core import (
+    RESET_BASELINE_SCHEMA,
+    RESET_BASELINE_VERSION,
     SNAPSHOT_SCHEMA,
     SNAPSHOT_GROUP_ORDER,
     SNAPSHOT_VERSION,
@@ -16,6 +18,7 @@ from pygrc.core import (
     WeightedGraphBackend,
     build_dynamics_group,
     build_event_records,
+    build_reset_baseline_group,
     build_snapshot_metadata,
     build_standard_snapshot,
     build_topology_snapshot,
@@ -31,6 +34,7 @@ from pygrc.core import (
     snapshot_from_json,
     snapshot_to_json,
     validate_snapshot_contract,
+    validate_reset_baseline_group,
 )
 
 
@@ -169,6 +173,49 @@ class SnapshotContractTest(unittest.TestCase):
                 ),
                 topology=build_topology_snapshot(),
                 mutation_history=[{"kind": "remove_edge"}],
+            )
+
+    def test_reset_baseline_group_is_versioned_and_non_recursive(self) -> None:
+        baseline = build_standard_snapshot(
+            metadata=build_snapshot_metadata(
+                model_family="GRCV2",
+                step_index=0,
+                params={},
+                resolved_params={},
+                params_hash="hash",
+                capabilities={"single_weight_edges"},
+            ),
+            topology=build_topology_snapshot(nodes=[], edges=[]),
+        )
+        group = build_reset_baseline_group(
+            model_family="GRCV2",
+            baseline_snapshot=baseline,
+        )
+
+        self.assertEqual(RESET_BASELINE_SCHEMA, group["reset_baseline_schema"])
+        self.assertEqual(RESET_BASELINE_VERSION, group["reset_baseline_version"])
+        self.assertEqual("available", group["status"])
+        validate_reset_baseline_group(group, expected_family="GRCV2")
+
+        with self.assertRaises(ValueError):
+            build_reset_baseline_group(
+                model_family="GRCV2",
+                baseline_snapshot={**baseline, "reset_baseline": group},
+            )
+
+    def test_unavailable_reset_baseline_requires_explicit_reason(self) -> None:
+        group = build_reset_baseline_group(
+            model_family="GRC9V3",
+            baseline_snapshot=None,
+            unavailable_reason="legacy_snapshot_missing_reset_baseline",
+        )
+
+        self.assertEqual("unavailable", group["status"])
+        validate_reset_baseline_group(group, expected_family="GRC9V3")
+        with self.assertRaises(ValueError):
+            build_reset_baseline_group(
+                model_family="GRC9V3",
+                baseline_snapshot=None,
             )
 
     def test_build_event_records_returns_canonical_event_list(self) -> None:

@@ -25,6 +25,7 @@ from pygrc.core import (
     StepResult,
     WeightedGraphBackend,
     build_event_records,
+    build_reset_baseline_group,
     build_snapshot_metadata,
     build_standard_snapshot,
     build_topology_snapshot,
@@ -32,6 +33,7 @@ from pygrc.core import (
     export_weighted_topology,
     load_snapshot,
     require_snapshot_family,
+    reset_baseline_snapshot,
     restore_weighted_graph,
     save_snapshot,
     serialize_rng_state,
@@ -579,7 +581,8 @@ class GRCV2(GRCModel):
         self._state = deepcopy(initial_state)
         if self._state.rng_state is None:
             self._state.rng_state = self._default_rng_state()
-        self._initial_state = deepcopy(initial_state)
+        self._initial_state: GRCV2State | None = deepcopy(initial_state)
+        self._reset_baseline_unavailable_reason: str | None = None
         if self._initial_state.rng_state is None:
             self._initial_state.rng_state = deepcopy(self._state.rng_state)
 
@@ -605,6 +608,15 @@ class GRCV2(GRCModel):
     @classmethod
     def load(cls, path: str) -> "GRCV2":
         snapshot = load_snapshot(path)
+        return cls._from_snapshot(snapshot, restore_reset_baseline=True)
+
+    @classmethod
+    def _from_snapshot(
+        cls,
+        snapshot: Mapping[str, Any],
+        *,
+        restore_reset_baseline: bool = False,
+    ) -> "GRCV2":
         require_snapshot_family(snapshot, expected_family=cls.MODEL_FAMILY)
         dynamics = snapshot.get("dynamics", {})
         if not isinstance(dynamics, Mapping):
@@ -622,7 +634,32 @@ class GRCV2(GRCModel):
         params = _build_params({"params": snapshot["metadata"]["params"]})
         if restored_state.params_identity is None:
             restored_state.params_identity = params.params_hash
-        return cls(params=params, state=restored_state)
+        model = cls(params=params, state=restored_state)
+        if restore_reset_baseline:
+            model._restore_reset_baseline(snapshot)
+        return model
+
+    def _restore_reset_baseline(self, snapshot: Mapping[str, Any]) -> None:
+        baseline_snapshot = reset_baseline_snapshot(
+            snapshot,
+            expected_family=self.MODEL_FAMILY,
+        )
+        if baseline_snapshot is None:
+            group = snapshot.get("reset_baseline")
+            reason = "legacy_snapshot_missing_reset_baseline"
+            if isinstance(group, Mapping):
+                raw_reason = group.get("unavailable_reason")
+                if isinstance(raw_reason, str) and raw_reason:
+                    reason = raw_reason
+            self._initial_state = None
+            self._reset_baseline_unavailable_reason = reason
+            return
+        baseline_model = type(self)._from_snapshot(
+            baseline_snapshot,
+            restore_reset_baseline=False,
+        )
+        self._initial_state = deepcopy(baseline_model.get_state())
+        self._reset_baseline_unavailable_reason = None
 
     def get_state(self) -> GRCV2State:
         return self._state
@@ -747,9 +784,22 @@ class GRCV2(GRCModel):
         )
 
     def reset(self) -> None:
+        if self._initial_state is None:
+            raise SnapshotCompatibilityError(
+                "reset baseline is unavailable; call rebase_reset_baseline() "
+                "explicitly before reset()"
+            )
         self._state = deepcopy(self._initial_state)
 
-    def snapshot(self) -> dict[str, Any]:
+    def rebase_reset_baseline(self) -> None:
+        self._initial_state = deepcopy(self._state)
+        self._reset_baseline_unavailable_reason = None
+
+    def _snapshot_payload(
+        self,
+        *,
+        reset_baseline: Mapping[str, Any] | None,
+    ) -> dict[str, Any]:
         topology = (
             export_weighted_topology(self._state.topology)
             if isinstance(self._state.topology, WeightedGraphBackend)
@@ -781,7 +831,31 @@ class GRCV2(GRCModel):
                     for event in self._state.event_log
                 ]
             ),
+            reset_baseline=reset_baseline,
         )
+
+    def snapshot(self) -> dict[str, Any]:
+        if self._initial_state is None:
+            reset_baseline = build_reset_baseline_group(
+                model_family=self.MODEL_FAMILY,
+                baseline_snapshot=None,
+                unavailable_reason=(
+                    self._reset_baseline_unavailable_reason
+                    or "reset_baseline_unavailable"
+                ),
+            )
+        else:
+            baseline_model = type(self)(
+                params=self._params,
+                state=deepcopy(self._initial_state),
+            )
+            reset_baseline = build_reset_baseline_group(
+                model_family=self.MODEL_FAMILY,
+                baseline_snapshot=baseline_model._snapshot_payload(
+                    reset_baseline=None
+                ),
+            )
+        return self._snapshot_payload(reset_baseline=reset_baseline)
 
     def save(self, path: str) -> None:
         save_snapshot(path, self.snapshot())

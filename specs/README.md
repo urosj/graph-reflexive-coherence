@@ -43,11 +43,13 @@ The implementation strategy assumed by these specs is:
   unless causal availability buffers exist.
 - `lgrc-9-v3-restoration-identity.md`
   Implemented and validated versioned LGRC9V3 restoration-identity contract
-  over LGRC runtime state and
-  a read-only projection of its embedded GRC9V3 state. It distinguishes
-  canonical raw snapshot representation from canonical scientific restoration
-  state without changing either substrate, snapshot format, or runtime
-  behavior.
+  over LGRC runtime state and a read-only projection of its embedded GRC9V3
+  state. V1 identifies current state; v2 additionally identifies the persisted
+  reset baseline. Both remain distinct from raw snapshot identity.
+- `grc-reset-baseline-persistence.md`
+  Repository-wide save/load/reset lifecycle contract for all concrete model
+  families. It adds a versioned reset-baseline snapshot group without changing
+  the shared snapshot schema version or runtime dynamics.
 - `grc-integration-layer.md`
   Adapter-layer contract for exposing core models to downstream runtimes without constraining core model design.
 - `grc-machine-driver.md`

@@ -1438,6 +1438,8 @@ snapshot digest:
 ```text
 lgrc9v3_restoration_identity_v1
 digest_lgrc9v3_restoration_identity_v1
+lgrc9v3_restoration_identity_v2
+digest_lgrc9v3_restoration_identity_v2
 ```
 
 Both helpers are exported through `pygrc.models` and accept either a concrete
@@ -1463,6 +1465,15 @@ Phase 8 Iterations 90-94 close this helper as supported for LGRC9V3
 `pygrc.snapshot` version 1 model/snapshot inputs. The validation includes old
 supported representations and bounded continuation fixtures; it does not
 promote raw snapshot equality or unrestricted continuation equivalence.
+
+The later repository-wide reset-baseline persistence correction preserves v1
+as the current-state identity and adds v2 over current state plus the persisted
+declared reset baseline. V2 is required when a consumer depends on equivalent
+`reset()` behavior across save/load. Legacy snapshots remain current-state
+loadable but cannot produce v2 until explicitly rebased. That operation adopts
+the legacy checkpoint as a new declared baseline; it does not recover the
+omitted construction baseline. The resulting v2 guarantee is prospective over
+later save/load cycles and remains separate from behavioral replay evidence.
 
 This Phase 8 contract does not add a GRC9V3 public API or change the GRC9V3
 substrate. A general GRC9V3 restoration identity, if later needed, belongs to a

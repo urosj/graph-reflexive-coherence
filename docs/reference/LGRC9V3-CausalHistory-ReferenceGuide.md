@@ -344,13 +344,15 @@ native LGRC9V3 runtime snapshots. `LGRC9V3.load(...)` restores snapshots whose
 metadata declares `model_family = "LGRC9V3"`. Legacy `GRC9V3` snapshots should
 still be loaded as synchronous `GRC9V3` unless an explicit adapter is used.
 
-LGRC9V3 also exposes a versioned restoration identity without changing the
-snapshot or loader contract:
+LGRC9V3 exposes a versioned current-state restoration identity. A later core
+persistence correction adds a reset-aware version:
 
 ```python
 from pygrc.models import (
     digest_lgrc9v3_restoration_identity_v1,
+    digest_lgrc9v3_restoration_identity_v2,
     lgrc9v3_restoration_identity_v1,
+    lgrc9v3_restoration_identity_v2,
 )
 
 artifact = lgrc9v3_restoration_identity_v1(model)
@@ -358,6 +360,10 @@ digest = digest_lgrc9v3_restoration_identity_v1(model)
 
 # Complete LGRC9V3 snapshot mappings are accepted as well.
 same_artifact = lgrc9v3_restoration_identity_v1(model.snapshot())
+
+# Use v2 when reset-equivalent restoration is part of the contract.
+reset_aware_artifact = lgrc9v3_restoration_identity_v2(model)
+reset_aware_digest = digest_lgrc9v3_restoration_identity_v2(model)
 ```
 
 The artifact combines the canonical embedded GRC9V3 continuation state with
@@ -373,6 +379,16 @@ bounded continuation matrices pass, and the public helper is supported for
 LGRC9V3 `pygrc.snapshot` version 1 model/snapshot inputs. Raw snapshot digests
 remain separate observations. Downstream consumers must explicitly adopt the
 native identity and separately compose external medium or experiment state.
+
+V1 intentionally remains a current-state identity. V2 composes that identity
+for current state and the persisted reset baseline. A legacy snapshot without
+baseline provenance cannot produce v2 until its current state is explicitly
+adopted as a new baseline through `rebase_reset_baseline()`.
+
+That rebase makes v2 available prospectively. It does not recover the omitted
+historical construction baseline. Equal post-rebase v2 identities establish
+equal declared current/reset state under the identity schema, not equal
+construction history, raw snapshot bytes, or unrestricted continuation.
 
 ## Landscape Construction
 

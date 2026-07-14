@@ -64,9 +64,17 @@ class GRCV2RuntimePersistenceTest(unittest.TestCase):
         snapshot = model.snapshot()
 
         self.assertEqual(
-            ["metadata", "topology", "dynamics", "observables", "events"],
+            [
+                "metadata",
+                "topology",
+                "dynamics",
+                "observables",
+                "events",
+                "reset_baseline",
+            ],
             list(snapshot.keys()),
         )
+        self.assertEqual("available", snapshot["reset_baseline"]["status"])
         self.assertEqual("GRCV2", snapshot["metadata"]["model_family"])
         self.assertEqual(model.get_params().params_hash, snapshot["metadata"]["params_hash"])
         self.assertEqual(model.get_state().step_index, snapshot["metadata"]["step_index"])

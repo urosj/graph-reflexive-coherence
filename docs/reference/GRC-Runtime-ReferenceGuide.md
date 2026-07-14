@@ -69,9 +69,21 @@ Common methods:
 | `compute_observables()` | Compute current family observables. |
 | `step()` | Advance exactly one runtime step. |
 | `run(num_steps)` | Call `step()` repeatedly. |
-| `reset()` | Restore construction-time state. |
+| `reset()` | Restore the declared reset baseline: construction-time state unless explicitly rebased. |
+| `rebase_reset_baseline()` | Explicitly make current state the future reset baseline. |
 | `snapshot()` | Return a serialization-safe `BaseSnapshot` per the shared interface. Current concrete runtime families serialize snapshots as JSON-safe mappings. |
 | `save(path)` | Persist a model snapshot. |
+
+Snapshots emitted by current concrete families preserve the reset baseline in
+the versioned `reset_baseline` group. `set_state()` does not rebase it. Legacy
+snapshots without that group still load current state, but `reset()` fails
+until `rebase_reset_baseline()` is called explicitly.
+
+For a legacy model, rebasing adopts the loaded current checkpoint as a new
+declared reset baseline. It does not reconstruct or certify the construction
+baseline omitted by the legacy snapshot. Reset preservation after that point
+is prospective: later save/load cycles preserve the explicitly adopted
+baseline.
 
 `step()` returns `StepResult`:
 

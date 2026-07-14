@@ -15,6 +15,13 @@ The first contract identity is:
 lgrc9v3_restoration_identity_v1
 ```
 
+A later repository-wide reset-lifecycle correction adds, without redefining
+v1:
+
+```text
+lgrc9v3_restoration_identity_v2
+```
+
 Companion implementation records:
 
 - [`../implementation/Phase-8-LGRC9-RestorationIdentityPlan.md`](../implementation/Phase-8-LGRC9-RestorationIdentityPlan.md)
@@ -120,6 +127,61 @@ public composite digest:
 The embedded helpers are callable from their dedicated LGRC module for
 testing and composition, but are not exported through the public models
 facade. They do not create a public GRC9V3 identity contract.
+
+The statement above describes the bounded Phase 8 v1 helper. The later core
+reset-baseline correction adds a common lifecycle operation and v2 identity;
+it does not reinterpret the Phase 8 implementation.
+
+## Reset-Lifecycle Identity V2
+
+The original Phase 8 contract remains the current-state identity:
+
+```text
+v1 = current scientific and continuation-relevant LGRC9V3 state
+```
+
+The repository-wide
+[reset-baseline persistence contract](./grc-reset-baseline-persistence.md)
+adds:
+
+```text
+v2 = v1(current state) + v1(reset baseline state)
+```
+
+The public helpers are:
+
+```text
+lgrc9v3_restoration_identity_v2
+digest_lgrc9v3_restoration_identity_v2
+```
+
+V2 requires a versioned, available reset baseline. A legacy snapshot with no
+baseline remains loadable, but cannot produce v2 identity until an explicit
+rebase produces declared baseline provenance.
+
+V1 does not include the new `reset_baseline` group and its meaning is frozen.
+Equal v1 identity therefore does not imply equal future `reset()` behavior.
+Consumers that depend on reset-equivalent restoration should use v2 and record
+the provider/schema transition explicitly.
+
+An explicit rebase of a legacy model makes v2 available prospectively by
+adopting current state as the new reset baseline. Equal v2 after that operation
+means equal declared current state and reset state under this identity schema.
+It does not mean the omitted historical construction baseline was recovered,
+and it does not establish common construction history or raw byte equality.
+
+A downstream consumer that admits a legacy checkpoint through rebase should
+record that boundary explicitly rather than treating it as construction
+provenance:
+
+```text
+reset_baseline_admission = explicit_rebase_from_legacy_checkpoint
+historical_construction_baseline_recovered = false
+post_rebase_v2_used_prospectively = true
+```
+
+This admission record remains meaningful even when two post-rebase v2 digests
+match. Identity equality does not erase how the reset baseline was established.
 
 ## Embedded GRC9V3 Base-State Component
 
@@ -401,8 +463,10 @@ The Iteration 94 support state is:
 
 ```text
 lgrc9v3_restoration_identity_v1_supported = true
+lgrc9v3_restoration_identity_v2_supported = true
 raw_snapshot_byte_identity_required = false
-snapshot_schema_changed = false
+snapshot_schema_version_changed = false
+additive_reset_baseline_group_added = true
 runtime_behavior_changed = false
 old_snapshots_loadable = true
 equal_input_continuation_validated = true
@@ -413,3 +477,4 @@ Equal-input continuation is bounded to the declared validation fixtures. A
 consumer must still compose external medium, pool, intervention, or experiment
 state and must explicitly record any transition from an experiment-owned
 projection to this native PyGRC identity.
+For reset-sensitive RCAE work, the handoff target is now v2 rather than v1.

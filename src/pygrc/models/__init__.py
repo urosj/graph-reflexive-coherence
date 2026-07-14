@@ -489,8 +489,11 @@ from .lgrc_9_v3_runtime_state import (
 from .lgrc_9_v3_restoration import (
     LGRC9V3_RESTORATION_IDENTITY_KIND,
     LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION,
+    LGRC9V3_RESTORATION_IDENTITY_V2_SCHEMA_VERSION,
     digest_lgrc9v3_restoration_identity_v1,
+    digest_lgrc9v3_restoration_identity_v2,
     lgrc9v3_restoration_identity_v1,
+    lgrc9v3_restoration_identity_v2,
 )
 from .grc_v2 import GRCV2
 from .grc_v2_landscape import (
@@ -607,6 +610,7 @@ __all__ = [
     "LGRC9V3_RUNTIME_STATE_SCHEMA_VERSION",
     "LGRC9V3_RESTORATION_IDENTITY_KIND",
     "LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION",
+    "LGRC9V3_RESTORATION_IDENTITY_V2_SCHEMA_VERSION",
     "LGRC9V3_ANNOTATION_MODE_VERSION",
     "LGRC9V3_CAUSAL_ARTIFACT_KEY",
     "LGRC9V3_CAUSAL_ARTIFACT_KIND",
@@ -1024,7 +1028,9 @@ __all__ = [
     "build_lgrc9v3_multi_basin_flow_window_record_digest",
     "build_lgrc9v3_multi_basin_replay_validation_record_digest",
     "digest_lgrc9v3_restoration_identity_v1",
+    "digest_lgrc9v3_restoration_identity_v2",
     "lgrc9v3_restoration_identity_v1",
+    "lgrc9v3_restoration_identity_v2",
     "restore_lgrc9v3_child_basin_state_record_artifact",
     "restore_lgrc9v3_multi_basin_control_record_artifact",
     "restore_lgrc9v3_multi_basin_flow_window_record_artifact",

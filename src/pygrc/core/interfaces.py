@@ -75,6 +75,12 @@ class GRCModel(ABC):
     def reset(self) -> None:
         """Restore the initial state used at construction time."""
 
+    def rebase_reset_baseline(self) -> None:
+        """Explicitly make the current state the future reset baseline."""
+        raise NotImplementedError(
+            "this model does not implement explicit reset-baseline rebasing"
+        )
+
     @abstractmethod
     def snapshot(self) -> BaseSnapshot:
         """Return a serialization-safe deep representation of the model."""

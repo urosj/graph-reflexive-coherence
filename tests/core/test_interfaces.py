@@ -30,6 +30,7 @@ class DummyModel(GRCModel):
 
     def __init__(self) -> None:
         self._state = GRCState(step_index=0, time=0.0)
+        self._initial_state = GRCState(step_index=0, time=0.0)
         self._params: dict[str, Any] = {"dt": 1.0}
 
     @classmethod
@@ -78,7 +79,16 @@ class DummyModel(GRCModel):
         )
 
     def reset(self) -> None:
-        self._state = GRCState(step_index=0, time=0.0)
+        self._state = GRCState(
+            step_index=self._initial_state.step_index,
+            time=self._initial_state.time,
+        )
+
+    def rebase_reset_baseline(self) -> None:
+        self._initial_state = GRCState(
+            step_index=self._state.step_index,
+            time=self._state.time,
+        )
 
     def snapshot(self) -> BaseSnapshot:
         return {
@@ -110,6 +120,9 @@ class InterfaceContractTest(unittest.TestCase):
 
     def test_abstract_surface_matches_required_methods(self) -> None:
         self.assertTrue(REQUIRED_ABSTRACT_METHODS.issubset(GRCModel.__abstractmethods__))
+
+    def test_rebase_reset_baseline_is_additive_common_surface(self) -> None:
+        self.assertTrue(callable(GRCModel.rebase_reset_baseline))
 
     def test_run_uses_step_exactly_num_steps_times(self) -> None:
         model = DummyModel()
