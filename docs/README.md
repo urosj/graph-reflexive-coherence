@@ -8,7 +8,11 @@ This directory contains operator-facing documentation for PyGRC.
 - `status/` contains current-state records and policy notes that are not
   implementation checklists.
 - `../examples/` contains runnable usage paths and example plans.
-- `../implementation/` contains engineering plans, implementation checklists, retrospective notes, and phase history.
+- `../implementation/` contains engineering plans, implementation checklists,
+  retrospective notes, and phase history. Its
+  [`corrections/`](../implementation/corrections/README.md) index records
+  bounded repairs to existing contracts separately from new implementation
+  phases.
 
 For day-to-day usage, start with `reference/README.md`.
 

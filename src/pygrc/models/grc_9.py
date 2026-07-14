@@ -22,12 +22,14 @@ from pygrc.core import (
     SnapshotCompatibilityError,
     StepResult,
     build_event_records,
+    build_reset_baseline_group,
     build_snapshot_metadata,
     build_standard_snapshot,
     deserialize_rng_state,
     export_port_topology,
     load_snapshot,
     require_snapshot_family,
+    reset_baseline_snapshot,
     restore_port_graph,
     save_snapshot,
     serialize_rng_state,
@@ -673,7 +675,8 @@ class GRC9(GRCModel):
             budget_target_provided=state is not None and state.budget_target != 0.0,
         )
         self._validate_state(self._state)
-        self._initial_state = deepcopy(self._state)
+        self._initial_state: GRC9State | None = deepcopy(self._state)
+        self._reset_baseline_unavailable_reason: str | None = None
 
     @classmethod
     def from_config(cls, config: Mapping[str, Any]) -> "GRC9":
@@ -702,6 +705,15 @@ class GRC9(GRCModel):
     @classmethod
     def load(cls, path: str) -> "GRC9":
         snapshot = load_snapshot(path)
+        return cls._from_snapshot(snapshot, restore_reset_baseline=True)
+
+    @classmethod
+    def _from_snapshot(
+        cls,
+        snapshot: Mapping[str, Any],
+        *,
+        restore_reset_baseline: bool = False,
+    ) -> "GRC9":
         require_snapshot_family(snapshot, expected_family=cls.MODEL_FAMILY)
 
         metadata = snapshot["metadata"]
@@ -796,7 +808,32 @@ class GRC9(GRCModel):
             state_mapping=state_mapping,
             topology=topology,
         )
-        return cls(params=params, state=state)
+        model = cls(params=params, state=state)
+        if restore_reset_baseline:
+            model._restore_reset_baseline(snapshot)
+        return model
+
+    def _restore_reset_baseline(self, snapshot: Mapping[str, Any]) -> None:
+        baseline_snapshot = reset_baseline_snapshot(
+            snapshot,
+            expected_family=self.MODEL_FAMILY,
+        )
+        if baseline_snapshot is None:
+            group = snapshot.get("reset_baseline")
+            reason = "legacy_snapshot_missing_reset_baseline"
+            if isinstance(group, Mapping):
+                raw_reason = group.get("unavailable_reason")
+                if isinstance(raw_reason, str) and raw_reason:
+                    reason = raw_reason
+            self._initial_state = None
+            self._reset_baseline_unavailable_reason = reason
+            return
+        baseline_model = type(self)._from_snapshot(
+            baseline_snapshot,
+            restore_reset_baseline=False,
+        )
+        self._initial_state = deepcopy(baseline_model.get_state())
+        self._reset_baseline_unavailable_reason = None
 
     def get_state(self) -> GRC9State:
         return self._state
@@ -2260,9 +2297,22 @@ class GRC9(GRCModel):
         )
 
     def reset(self) -> None:
+        if self._initial_state is None:
+            raise SnapshotCompatibilityError(
+                "reset baseline is unavailable; call rebase_reset_baseline() "
+                "explicitly before reset()"
+            )
         self._state = deepcopy(self._initial_state)
 
-    def snapshot(self) -> dict[str, Any]:
+    def rebase_reset_baseline(self) -> None:
+        self._initial_state = deepcopy(self._state)
+        self._reset_baseline_unavailable_reason = None
+
+    def _snapshot_payload(
+        self,
+        *,
+        reset_baseline: Mapping[str, Any] | None,
+    ) -> dict[str, Any]:
         edge_labels = {
             "geometric_length": {
                 str(edge_id): value
@@ -2308,8 +2358,32 @@ class GRC9(GRCModel):
                     for event in self._state.event_log
                 ]
             ),
+            reset_baseline=reset_baseline,
             caches={"coarse_cache": _stringify_mapping_keys(dict(self._state.coarse_cache))},
         )
+
+    def snapshot(self) -> dict[str, Any]:
+        if self._initial_state is None:
+            reset_baseline = build_reset_baseline_group(
+                model_family=self.MODEL_FAMILY,
+                baseline_snapshot=None,
+                unavailable_reason=(
+                    self._reset_baseline_unavailable_reason
+                    or "reset_baseline_unavailable"
+                ),
+            )
+        else:
+            baseline_model = type(self)(
+                params=self._params,
+                state=deepcopy(self._initial_state),
+            )
+            reset_baseline = build_reset_baseline_group(
+                model_family=self.MODEL_FAMILY,
+                baseline_snapshot=baseline_model._snapshot_payload(
+                    reset_baseline=None
+                ),
+            )
+        return self._snapshot_payload(reset_baseline=reset_baseline)
 
     def save(self, path: str) -> None:
         save_snapshot(path, self.snapshot())

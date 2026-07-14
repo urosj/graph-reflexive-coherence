@@ -22,11 +22,19 @@ Evidence pointers:
   implementations and facades behind the reference-family claim.
 - [Model tests](../../tests/models): Regression and behavior tests that
   exercise the model families rather than only documenting them.
+- [Reset-baseline persistence specification](../../specs/grc-reset-baseline-persistence.md):
+  Defines current-state versus declared-reset-baseline persistence, explicit
+  legacy rebase, and the prospective provenance boundary.
+- [Reset-baseline persistence closeout](../../implementation/corrections/PyGRC-ResetBaselinePersistenceCloseout.md):
+  Records the cross-family correction, LGRC9V3 restoration identity v2, test
+  scope, and downstream re-admission requirements.
 - [Release notes](../../RELEASE-NOTES.md): Publication-snapshot status and
   current package/release boundaries.
 
 Claim ceiling: reference implementation and research runtime surface. This does
-not claim a stabilized black-box product API.
+not claim a stabilized black-box product API. Reset-aware restoration identity
+does not establish raw snapshot byte equality, recovered legacy construction
+history, unrestricted behavioral equivalence, or semantic identity.
 
 ## Landscape, Telemetry, And Visualization
 

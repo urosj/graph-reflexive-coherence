@@ -161,9 +161,11 @@ class FamilyStubContractTest(unittest.TestCase):
                 "dynamics",
                 "observables",
                 "events",
+                "reset_baseline",
             ],
             list(snapshot.keys()),
         )
+        self.assertEqual("available", snapshot["reset_baseline"]["status"])
         self.assertEqual(
             {"nodes": [], "edges": [], "incidence": {}},
             snapshot["topology"],

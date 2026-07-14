@@ -1325,3 +1325,35 @@ n26_unscoped_multi_basin_consumption_allowed = false
 The current experiment handoff is therefore N26, with scoped multi-basin
 substrate evidence allowed and unscoped multi-basin, native support, agency,
 sentience, ant ecology, and Phase 8 completion claims still blocked.
+
+## Core Reset-Baseline Persistence Addendum
+
+After the Phase 8 restoration-identity closeout, RCAE exposed a repository-wide
+snapshot/reset contract gap shared by GRC9V3 and LGRC9V3. The correction is
+closed outside Phase 8 in:
+
+- [`PyGRC-ResetBaselinePersistencePlan.md`](./corrections/PyGRC-ResetBaselinePersistencePlan.md)
+- [`PyGRC-ResetBaselinePersistenceChecklist.md`](./corrections/PyGRC-ResetBaselinePersistenceChecklist.md)
+- [`PyGRC-ResetBaselinePersistenceCloseout.md`](./corrections/PyGRC-ResetBaselinePersistenceCloseout.md)
+- [`../specs/grc-reset-baseline-persistence.md`](../specs/grc-reset-baseline-persistence.md)
+
+Phase 8 v1 remains the supported current-state identity. RCAE P2-I2 should
+re-admit the graph revision and use:
+
+```text
+provider = pygrc.models.lgrc9v3_restoration_identity_v2
+schema = lgrc9v3_restoration_identity_v2
+```
+
+when reset-equivalent restoration is required. Silent reuse of v1 or the RCAE
+C02 projection as reset-aware identity is blocked.
+
+For a legacy checkpoint, explicit rebase permits prospective v2 use by adopting
+that checkpoint as a new declared reset baseline. It does not recover the
+omitted construction baseline. A consuming record should therefore disclose:
+
+```text
+reset_baseline_admission = explicit_rebase_from_legacy_checkpoint
+historical_construction_baseline_recovered = false
+post_rebase_v2_used_prospectively = true
+```

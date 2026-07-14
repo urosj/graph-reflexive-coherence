@@ -209,6 +209,7 @@ Rules:
 - `get_params()` must return the resolved parameter object actually governing the current model.
 - `snapshot()` must return a serialization-safe deep representation.
 - `set_state()` must validate compatibility with the model family.
+- `set_state()` changes current state without changing the reset baseline.
 
 ### Simulation lifecycle
 
@@ -216,13 +217,23 @@ Rules:
 def step(self) -> StepResult: ...
 def run(self, num_steps: int) -> list[StepResult]: ...
 def reset(self) -> None: ...
+def rebase_reset_baseline(self) -> None: ...
 ```
 
 Rules:
 
 - `step()` advances exactly one simulation step.
 - `run()` is a convenience loop over `step()`.
-- `reset()` restores the initial state used at construction time.
+- `reset()` restores the declared reset baseline. This is the initial state
+  used at construction time unless an explicit rebase has replaced it.
+- Save/load preserves that reset baseline for snapshots emitted under the
+  [reset-baseline persistence contract](./grc-reset-baseline-persistence.md).
+- `rebase_reset_baseline()` is the only lifecycle operation that explicitly
+  replaces the reset baseline with current state.
+- A legacy snapshot without baseline provenance remains loadable, but
+  `reset()` fails closed until an explicit rebase.
+- Rebasing a legacy model adopts current state as a new baseline. It does not
+  recover or certify the omitted historical construction baseline.
 
 ### Diagnostics
 

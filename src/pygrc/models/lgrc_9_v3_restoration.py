@@ -13,6 +13,7 @@ from pygrc.core import (
     canonicalize_json_value,
     digest_canonical_data,
     require_snapshot_family,
+    reset_baseline_snapshot,
 )
 
 from .grc_9_v3 import GRC9V3
@@ -23,6 +24,9 @@ LGRC9V3_EMBEDDED_GRC9V3_STATE_KIND = "lgrc9v3_embedded_grc9v3_state"
 LGRC9V3_EMBEDDED_GRC9V3_STATE_SCHEMA_VERSION = "lgrc9v3_embedded_grc9v3_state_v1"
 LGRC9V3_RESTORATION_IDENTITY_KIND = "lgrc9v3_restoration_identity"
 LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION = "lgrc9v3_restoration_identity_v1"
+LGRC9V3_RESTORATION_IDENTITY_V2_SCHEMA_VERSION = (
+    "lgrc9v3_restoration_identity_v2"
+)
 
 _INCLUDED_STATE_GROUPS = (
     "resolved_parameter_identity",
@@ -441,13 +445,60 @@ def digest_lgrc9v3_restoration_identity_v1(
     return digest_canonical_data(lgrc9v3_restoration_identity_v1(source))
 
 
+def lgrc9v3_restoration_identity_v2(
+    source: Mapping[str, Any] | GRCModel,
+) -> dict[str, Any]:
+    """Build version 2 identity over current state and reset baseline."""
+
+    snapshot = _lgrc9v3_snapshot(source)
+    require_snapshot_family(snapshot, expected_family="LGRC9V3")
+    baseline_snapshot = reset_baseline_snapshot(
+        snapshot,
+        expected_family="LGRC9V3",
+    )
+    if baseline_snapshot is None:
+        raise SnapshotCompatibilityError(
+            "LGRC9V3 restoration identity v2 requires an available reset baseline"
+        )
+    artifact = {
+        "artifact_kind": LGRC9V3_RESTORATION_IDENTITY_KIND,
+        "artifact_schema_version": LGRC9V3_RESTORATION_IDENTITY_V2_SCHEMA_VERSION,
+        "model_family": "LGRC9V3",
+        "current_state_restoration_identity": (
+            lgrc9v3_restoration_identity_v1(snapshot)
+        ),
+        "reset_baseline_restoration_identity": (
+            lgrc9v3_restoration_identity_v1(baseline_snapshot)
+        ),
+        "included_state_groups": [
+            "current_state_restoration_identity_v1",
+            "reset_baseline_restoration_identity_v1",
+        ],
+        "excluded_representation_fields": list(
+            _COMPOSITE_EXCLUDED_REPRESENTATION_FIELDS
+        ),
+    }
+    return dict(canonicalize_json_value(artifact))
+
+
+def digest_lgrc9v3_restoration_identity_v2(
+    source: Mapping[str, Any] | GRCModel,
+) -> str:
+    """Digest the version-2 current-state plus reset-baseline identity."""
+
+    return digest_canonical_data(lgrc9v3_restoration_identity_v2(source))
+
+
 __all__ = [
     "LGRC9V3_EMBEDDED_GRC9V3_STATE_KIND",
     "LGRC9V3_EMBEDDED_GRC9V3_STATE_SCHEMA_VERSION",
     "LGRC9V3_RESTORATION_IDENTITY_KIND",
     "LGRC9V3_RESTORATION_IDENTITY_SCHEMA_VERSION",
+    "LGRC9V3_RESTORATION_IDENTITY_V2_SCHEMA_VERSION",
     "build_lgrc9v3_embedded_grc9v3_state_v1",
     "digest_lgrc9v3_embedded_grc9v3_state_v1",
     "digest_lgrc9v3_restoration_identity_v1",
+    "digest_lgrc9v3_restoration_identity_v2",
     "lgrc9v3_restoration_identity_v1",
+    "lgrc9v3_restoration_identity_v2",
 ]

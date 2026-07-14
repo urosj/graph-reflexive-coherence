@@ -132,3 +132,22 @@ The closeout does not support raw snapshot byte identity, unrestricted
 continuation equivalence, RC identity, selfhood, identity acceptance, agency,
 native shared-medium organization, ecology, organism/life, or completion of
 Phase 8 as a whole.
+
+## Post-Closeout Core Persistence Correction
+
+The later
+[PyGRC reset-baseline persistence closeout](./corrections/PyGRC-ResetBaselinePersistenceCloseout.md)
+identified lifecycle state that v1 was never designed to include. V1 remains
+supported with its original current-state meaning. The core correction adds
+`lgrc9v3_restoration_identity_v2`, which includes both current-state v1
+identity and reset-baseline v1 identity.
+
+This does not invalidate Iterations 90-94. It narrows their downstream use:
+v1 remains correct for current-state restoration, while reset-sensitive
+consumers such as RCAE P2-I2 should explicitly adopt v2.
+
+Legacy rebase does not change that boundary. It makes v2 available by adopting
+the loaded checkpoint as a new declared reset baseline, so the resulting
+identity is prospective. It does not recover construction provenance omitted
+from the legacy artifact, and equal post-rebase v2 does not prove common
+construction history.

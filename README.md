@@ -138,6 +138,7 @@ record rather than the paper list alone:
 | Entry point | What it explains |
 | --- | --- |
 | [implementation/ImplementationPhases.md](implementation/ImplementationPhases.md) | Top-level phase map from core substrate through runtimes, telemetry, visualization, landscapes, and LGRC. |
+| [implementation/corrections/README.md](implementation/corrections/README.md) | Bounded corrections to existing runtime or persistence contracts that do not constitute new dynamics phases. |
 | [specs/README.md](specs/README.md) | Implementation contracts and family capability matrix for `GRCV2`, `GRCV3`, `GRC9`, `GRC9V3`, and `LGRC9V3`. |
 | [Phase T implementation plan: telemetry and evidence discipline](implementation/Phase-T-ImplementationPlan.md) | Artifact layout, reports, replay, and evidence discipline. |
 | [implementation/Phase-V-ImplementationPlan.md](implementation/Phase-V-ImplementationPlan.md) | Visualization as a downstream consumer of saved telemetry and graph checkpoints. |
@@ -281,7 +282,9 @@ graph-state construction through the model APIs is also supported.
 - `experiments/`: experiment plans, scripts, configs, reports, and historical
   evidence records.
 - `implementation/`: engineering plans, checklists, handoffs, closeouts, and
-  phase history.
+  phase history. Bounded repairs to existing contracts are indexed separately
+  under `implementation/corrections/` so they are not mistaken for new
+  capability phases.
 - `configs/`: reusable landscape and seed fixtures.
 - `tests/`: unit, integration, telemetry, landscape, model, and smoke tests.
 

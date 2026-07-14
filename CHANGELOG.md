@@ -11,7 +11,25 @@ at `version = "0.1"`.
 
 ## Unreleased
 
-No repository-level milestone has been recorded after 2026-07-12.
+### Persistence And Compatibility
+
+- Corrected the repository-wide snapshot/reset contract for `GRCV2`, `GRCV3`,
+  `GRC9`, `GRC9V3`, and `LGRC9V3`. New snapshots preserve an explicit,
+  versioned declared reset baseline, initially construction state;
+  `set_state()` does not rebase it, and `rebase_reset_baseline()` provides the
+  explicit transition.
+- Kept legacy snapshots current-state loadable without pretending their saved
+  checkpoint was the original construction baseline. `reset()` fails closed
+  until an explicit rebase when baseline provenance is unavailable. Rebase
+  adopts the checkpoint as a new prospective baseline; it does not recover the
+  omitted historical baseline.
+- Preserved `lgrc9v3_restoration_identity_v1` as the current-state identity and
+  added `lgrc9v3_restoration_identity_v2` over current state plus reset
+  baseline. Raw snapshot digests remain separate observations.
+- Added the
+  [reset-baseline persistence specification](specs/grc-reset-baseline-persistence.md)
+  and [closeout](implementation/corrections/PyGRC-ResetBaselinePersistenceCloseout.md),
+  including explicit RCAE P2-I2 re-admission guidance.
 
 ## Research Repository Milestone - 2026-07-12
 
