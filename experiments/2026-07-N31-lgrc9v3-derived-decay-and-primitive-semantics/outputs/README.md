@@ -134,6 +134,34 @@
   the independent receiver operation as provisional producer-mediated `DR4`,
   while leaving the native lane at `DR2` and `DR5` pending I10.
 
+## Iteration 9-B
+
+- `n31_i9b_conserved_leakage_artifacts/` contains the preregistered B-R policy,
+  complete post-formation and post-export native snapshots, one-shot closure
+  state, bounded policy sweep, organization/readout intervention matrix, and
+  composed native/closure/policy/topology identity. It also retains the
+  closure-receipt/native-event mismatch matrix.
+- `n31_i9b_conserved_leakage_source_current_trace.json` records the exact local
+  trigger, baseline-to-formed organization delta, bounded persistence scope,
+  producer ownership, conservative packet lifecycle, route-boundary
+  accounting, route-mass/organization distinction, destination isolation,
+  local readout mediation, atomic refusal, restoration, corrected I9 lineage,
+  and selected controls.
+- `n31_conserved_leakage_i9b.json` classifies the result as provisional
+  producer-mediated `B-R / DR4`, keeps `D0-R` untested and native D0a at `DR2`,
+  and leaves the formal row and complete control matrix pending I10.
+- `n31_i9b1_conserved_leakage_response_artifacts/` contains the reconstructed
+  formation state, disjoint native persistence checkpoint, four-level export
+  response matrix, paired native readout-boundary matrix, per-level native
+  snapshots, zero-export native/closure receipts, and the reviewed-to-corrected
+  I9-B identity lineage.
+- `n31_i9b1_conserved_leakage_response_trace.json` records exact I9-B source
+  consumption, formation attribution, bounded persistence authority, response
+  equations, response-row diff whitelists, readout-boundary shifts, B.1's
+  linear-through-cap scope, and the inherited I9-B above-cap plateau rows.
+- `n31_conserved_leakage_response_i9b1.json` retains Candidate B at provisional
+  `B-R / DR4` while strengthening attribution, persistence, and response shape.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

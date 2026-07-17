@@ -1,0 +1,32 @@
+{
+  "artifact_kind": "n31_i9b_revision_lineage",
+  "artifact_schema_version": "n31_i9b_revision_lineage_r1",
+  "corrected_I9B_R1_identity": {
+    "artifact_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+    "output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+    "preregistration_output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+    "preregistration_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+    "role": "exact_corrected_I9B_consumed_by_I9B1_and_I10",
+    "trace_output_digest": "65ac1e3a81788fdfc9abdad7ff9398b3308ffc55e9801cce829b249f7238a454",
+    "trace_sha256": "f383d757dbee5cb853ffb78e2d8a1b7df1239ef6efb198c4dd9df17b6dceca90"
+  },
+  "corrected_identity_consumable_as_evidence": true,
+  "corrections": [
+    "formation_reclassified_as_strengthening_from_baseline_O_B_0.05",
+    "attributable_formation_effect_gate_added",
+    "DR2_persistence_scope_made_explicit",
+    "composed_receipt_event_mismatch_controls_added",
+    "corrected_I9_revision_lineage_retained",
+    "unretained_runtime_test_count_removed_from_formal_evidence"
+  ],
+  "earlier_identity_consumable_as_evidence": false,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "7342946a5a091d362f01fd7e2d0746a0fa64f8b98952e884055e7552f2a798e2",
+  "reviewed_I9B_R0_identity": {
+    "artifact_sha256_status": "not_retained_before_review_correction",
+    "output_digest": "68e3b67d0831b63a94f03443b08d871112bd85e92450c7003cdc502d0281359e",
+    "role": "reviewed_pre_attribution_correction_identity_not_evidence",
+    "trace_output_digest": "43675b9b7afa7e39637f55a364cad8114abbe9398282d927e3b3112dcc864078"
+  },
+  "scientific_B_R_DR4_conclusion_changed": false
+}

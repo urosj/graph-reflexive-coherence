@@ -1,0 +1,473 @@
+{
+  "all_diff_whitelists_pass": true,
+  "all_response_equations_close": true,
+  "artifact_kind": "n31_i9b1_bounded_export_response_matrix",
+  "artifact_schema_version": "n31_i9b1_export_response_matrix_v1",
+  "distinct_positive_q_levels": [
+    0.009999999999999981,
+    0.01999999999999999,
+    0.03999999999999998
+  ],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "26ef02e26723687aeeae907fc5920560532f55ba0afa8c594a4e7eebe578a1ea",
+  "policy_identity": "n31_B_registered_route_local_export_policy_v1",
+  "q_emit_monotonic_non_decreasing": true,
+  "rows": [
+    {
+      "closure_one_shot_receipt_consumed": true,
+      "closure_reinitialized_from_exact_formation_receipt": true,
+      "delta_route_mass_M_B": 0.0,
+      "delta_route_organization_O_B": 0.0,
+      "destination_credit": 0.0,
+      "destination_credit_equals_q": true,
+      "diagnostic_diff_whitelist_passed": true,
+      "event_queue_empty_after_export": true,
+      "expected_q_emit": 0.0,
+      "export_packet_created": false,
+      "in_flight_amount": 0.0,
+      "in_flight_equals_q": true,
+      "native_export_diff_whitelist_passed": true,
+      "observed_q_emit": 0.0,
+      "organization_delta_equals_negative_q": true,
+      "positive_export": false,
+      "post_export_native_identity_v2": "f171aa0f09bf85b9cc701c253c07853bf8b04b9bcc2df42b352d9d7c3782d023",
+      "post_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_post_export.json",
+      "pre_export_native_identity_v2": "f171aa0f09bf85b9cc701c253c07853bf8b04b9bcc2df42b352d9d7c3782d023",
+      "pre_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_pre_export.json",
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.2,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.0,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "q_relation_exact": true,
+      "route_after": {
+        "C_formation_source": 0.14999999999999997,
+        "C_leakage_source": 0.2,
+        "route_mass_M_B": 0.35,
+        "route_organization_O_B": 0.050000000000000044
+      },
+      "route_before": {
+        "C_formation_source": 0.14999999999999997,
+        "C_leakage_source": 0.2,
+        "route_mass_M_B": 0.35,
+        "route_organization_O_B": 0.050000000000000044
+      },
+      "route_mass_delta_equals_negative_q": true,
+      "row_id": "source_C_0.20",
+      "source_debit": 0.0,
+      "source_debit_equals_q": true,
+      "source_state": {
+        "budget": {
+          "budget_error": -2.220446049250313e-16,
+          "conserved_budget_total": 1.0499999999999998,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.0499999999999998
+        },
+        "intervention": {
+          "after": {
+            "0": 0.14999999999999997,
+            "1": 0.2,
+            "2": 0.5
+          },
+          "authority": "experiment_diagnostic_intervention",
+          "before": {
+            "0": 0.25,
+            "1": 0.39999999999999997,
+            "2": 0.2
+          },
+          "intervention_id": "i9b1_source_C_0.20",
+          "node_deltas": {
+            "0": -0.10000000000000003,
+            "1": -0.19999999999999996,
+            "2": 0.3
+          },
+          "total_C_delta": 0.0
+        },
+        "restoration_identity_v2": "f171aa0f09bf85b9cc701c253c07853bf8b04b9bcc2df42b352d9d7c3782d023",
+        "route": {
+          "C_formation_source": 0.14999999999999997,
+          "C_leakage_source": 0.2,
+          "route_mass_M_B": 0.35,
+          "route_organization_O_B": 0.050000000000000044
+        }
+      },
+      "source_state_authority": "experiment_diagnostic_intervention",
+      "zero_export_closure_receipt_consumed": true,
+      "zero_export_native_identity_unchanged": true,
+      "zero_export_packet_created": false
+    },
+    {
+      "closure_one_shot_receipt_consumed": true,
+      "closure_reinitialized_from_exact_formation_receipt": true,
+      "delta_route_mass_M_B": -0.010000000000000009,
+      "delta_route_organization_O_B": -0.009999999999999981,
+      "destination_credit": 0.010000000000000009,
+      "destination_credit_equals_q": true,
+      "diagnostic_diff_whitelist_passed": true,
+      "event_queue_empty_after_export": true,
+      "expected_q_emit": 0.009999999999999981,
+      "export_packet_created": true,
+      "in_flight_amount": 0.009999999999999981,
+      "in_flight_equals_q": true,
+      "native_export_diff_whitelist_passed": true,
+      "observed_q_emit": 0.009999999999999981,
+      "organization_delta_equals_negative_q": true,
+      "positive_export": true,
+      "post_export_native_identity_v2": "50973ff23aa6bc260da3e02b9b7e890ebd4e4f2e0b2bea649c14446b4f1f645f",
+      "post_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_post_export.json",
+      "pre_export_native_identity_v2": "ba33e2d3859311c255fcc56f6a6300a51ba91087d9cce322c14385034a41576b",
+      "pre_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_pre_export.json",
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.21,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.009999999999999981,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.009999999999999981,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_i9b1_0.21",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "q_relation_exact": true,
+      "route_after": {
+        "C_formation_source": 0.13999999999999999,
+        "C_leakage_source": 0.2,
+        "route_mass_M_B": 0.33999999999999997,
+        "route_organization_O_B": 0.060000000000000026
+      },
+      "route_before": {
+        "C_formation_source": 0.13999999999999999,
+        "C_leakage_source": 0.21,
+        "route_mass_M_B": 0.35,
+        "route_organization_O_B": 0.07
+      },
+      "route_mass_delta_equals_negative_q": true,
+      "row_id": "source_C_0.21",
+      "source_debit": 0.009999999999999981,
+      "source_debit_equals_q": true,
+      "source_state": {
+        "budget": {
+          "budget_error": -2.220446049250313e-16,
+          "conserved_budget_total": 1.0499999999999998,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.0499999999999998
+        },
+        "intervention": {
+          "after": {
+            "0": 0.13999999999999999,
+            "1": 0.21,
+            "2": 0.5
+          },
+          "authority": "experiment_diagnostic_intervention",
+          "before": {
+            "0": 0.25,
+            "1": 0.39999999999999997,
+            "2": 0.2
+          },
+          "intervention_id": "i9b1_source_C_0.21",
+          "node_deltas": {
+            "0": -0.11000000000000001,
+            "1": -0.18999999999999997,
+            "2": 0.3
+          },
+          "total_C_delta": 0.0
+        },
+        "restoration_identity_v2": "ba33e2d3859311c255fcc56f6a6300a51ba91087d9cce322c14385034a41576b",
+        "route": {
+          "C_formation_source": 0.13999999999999999,
+          "C_leakage_source": 0.21,
+          "route_mass_M_B": 0.35,
+          "route_organization_O_B": 0.07
+        }
+      },
+      "source_state_authority": "experiment_diagnostic_intervention",
+      "zero_export_closure_receipt_consumed": true,
+      "zero_export_native_identity_unchanged": true,
+      "zero_export_packet_created": null
+    },
+    {
+      "closure_one_shot_receipt_consumed": true,
+      "closure_reinitialized_from_exact_formation_receipt": true,
+      "delta_route_mass_M_B": -0.020000000000000018,
+      "delta_route_organization_O_B": -0.01999999999999999,
+      "destination_credit": 0.020000000000000018,
+      "destination_credit_equals_q": true,
+      "diagnostic_diff_whitelist_passed": true,
+      "event_queue_empty_after_export": true,
+      "expected_q_emit": 0.01999999999999999,
+      "export_packet_created": true,
+      "in_flight_amount": 0.01999999999999999,
+      "in_flight_equals_q": true,
+      "native_export_diff_whitelist_passed": true,
+      "observed_q_emit": 0.01999999999999999,
+      "organization_delta_equals_negative_q": true,
+      "positive_export": true,
+      "post_export_native_identity_v2": "4db7fe16a8688f3f803cbdc6a962cff767b2f088821c8f6545e98bb8366ef434",
+      "post_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_post_export.json",
+      "pre_export_native_identity_v2": "b7ba24f3215ca2bbbc871accc8401b196749b81173c7e816ab3664fd602dbf49",
+      "pre_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_pre_export.json",
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.22,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.01999999999999999,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.01999999999999999,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_i9b1_0.22",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "q_relation_exact": true,
+      "route_after": {
+        "C_formation_source": 0.12999999999999998,
+        "C_leakage_source": 0.2,
+        "route_mass_M_B": 0.32999999999999996,
+        "route_organization_O_B": 0.07000000000000003
+      },
+      "route_before": {
+        "C_formation_source": 0.12999999999999998,
+        "C_leakage_source": 0.22,
+        "route_mass_M_B": 0.35,
+        "route_organization_O_B": 0.09000000000000002
+      },
+      "route_mass_delta_equals_negative_q": true,
+      "row_id": "source_C_0.22",
+      "source_debit": 0.01999999999999999,
+      "source_debit_equals_q": true,
+      "source_state": {
+        "budget": {
+          "budget_error": -2.220446049250313e-16,
+          "conserved_budget_total": 1.0499999999999998,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.0499999999999998
+        },
+        "intervention": {
+          "after": {
+            "0": 0.12999999999999998,
+            "1": 0.22,
+            "2": 0.5
+          },
+          "authority": "experiment_diagnostic_intervention",
+          "before": {
+            "0": 0.25,
+            "1": 0.39999999999999997,
+            "2": 0.2
+          },
+          "intervention_id": "i9b1_source_C_0.22",
+          "node_deltas": {
+            "0": -0.12000000000000002,
+            "1": -0.17999999999999997,
+            "2": 0.3
+          },
+          "total_C_delta": 0.0
+        },
+        "restoration_identity_v2": "b7ba24f3215ca2bbbc871accc8401b196749b81173c7e816ab3664fd602dbf49",
+        "route": {
+          "C_formation_source": 0.12999999999999998,
+          "C_leakage_source": 0.22,
+          "route_mass_M_B": 0.35,
+          "route_organization_O_B": 0.09000000000000002
+        }
+      },
+      "source_state_authority": "experiment_diagnostic_intervention",
+      "zero_export_closure_receipt_consumed": true,
+      "zero_export_native_identity_unchanged": true,
+      "zero_export_packet_created": null
+    },
+    {
+      "closure_one_shot_receipt_consumed": true,
+      "closure_reinitialized_from_exact_formation_receipt": true,
+      "delta_route_mass_M_B": -0.03999999999999998,
+      "delta_route_organization_O_B": -0.03999999999999998,
+      "destination_credit": 0.040000000000000036,
+      "destination_credit_equals_q": true,
+      "diagnostic_diff_whitelist_passed": true,
+      "event_queue_empty_after_export": true,
+      "expected_q_emit": 0.03999999999999998,
+      "export_packet_created": true,
+      "in_flight_amount": 0.03999999999999998,
+      "in_flight_equals_q": true,
+      "native_export_diff_whitelist_passed": true,
+      "observed_q_emit": 0.03999999999999998,
+      "organization_delta_equals_negative_q": true,
+      "positive_export": true,
+      "post_export_native_identity_v2": "424dcacd8d6764992e1508034a51ffe24ac1f6058bf0f106b3cdb967411087ce",
+      "post_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_post_export.json",
+      "pre_export_native_identity_v2": "b36617147eb7c0af76c98fff768522f6c21df06d765787f86dbccccf93656a68",
+      "pre_export_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_pre_export.json",
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.24,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.03999999999999998,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.03999999999999998,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_i9b1_0.24",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "q_relation_exact": true,
+      "route_after": {
+        "C_formation_source": 0.10999999999999999,
+        "C_leakage_source": 0.2,
+        "route_mass_M_B": 0.31,
+        "route_organization_O_B": 0.09000000000000002
+      },
+      "route_before": {
+        "C_formation_source": 0.10999999999999999,
+        "C_leakage_source": 0.24,
+        "route_mass_M_B": 0.35,
+        "route_organization_O_B": 0.13
+      },
+      "route_mass_delta_equals_negative_q": true,
+      "row_id": "source_C_0.24",
+      "source_debit": 0.03999999999999998,
+      "source_debit_equals_q": true,
+      "source_state": {
+        "budget": {
+          "budget_error": -2.220446049250313e-16,
+          "conserved_budget_total": 1.0499999999999998,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.0499999999999998
+        },
+        "intervention": {
+          "after": {
+            "0": 0.10999999999999999,
+            "1": 0.24,
+            "2": 0.5
+          },
+          "authority": "experiment_diagnostic_intervention",
+          "before": {
+            "0": 0.25,
+            "1": 0.39999999999999997,
+            "2": 0.2
+          },
+          "intervention_id": "i9b1_source_C_0.24",
+          "node_deltas": {
+            "0": -0.14,
+            "1": -0.15999999999999998,
+            "2": 0.3
+          },
+          "total_C_delta": 0.0
+        },
+        "restoration_identity_v2": "b36617147eb7c0af76c98fff768522f6c21df06d765787f86dbccccf93656a68",
+        "route": {
+          "C_formation_source": 0.10999999999999999,
+          "C_leakage_source": 0.24,
+          "route_mass_M_B": 0.35,
+          "route_organization_O_B": 0.13
+        }
+      },
+      "source_state_authority": "experiment_diagnostic_intervention",
+      "zero_export_closure_receipt_consumed": true,
+      "zero_export_native_identity_unchanged": true,
+      "zero_export_packet_created": null
+    }
+  ],
+  "source_state_scope": "constant_route_mass_diagnostic_interventions_not_additional_formation_trajectories",
+  "topology_unchanged": true,
+  "zero_export_receipt": {
+    "post_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+    "pre_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+    "row_id": "source_C_0.20",
+    "zero_export_closure_receipt_consumed": true,
+    "zero_export_native_identity_unchanged": true,
+    "zero_export_packet_created": false
+  }
+}

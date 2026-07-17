@@ -1,0 +1,1147 @@
+{
+  "I9B_controls_retained": {
+    "composed_receipt_event_mismatches_fail_closed": true,
+    "destination_C_clamp_preserves_readout": true,
+    "matched_route_mass_loss_preserves_O_B_and_readout": true,
+    "producer_omitted_no_export_branch_present": true,
+    "source_C_clamp_reverses_readout": true,
+    "source_identity": {
+      "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json"
+    }
+  },
+  "I9B_revision_lineage": {
+    "output_digest": "7342946a5a091d362f01fd7e2d0746a0fa64f8b98952e884055e7552f2a798e2",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b_revision_lineage_r1.json",
+    "scientific_B_R_DR4_conclusion_changed": false,
+    "sha256": "78ae36e12d6c20681c233ee8dc9619816a57fba08f3c27da4438f3b6ff3f17ee"
+  },
+  "acceptance_state": "accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4",
+  "artifact_kind": "formation_and_bounded_export_response_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_I9B1_contract",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_preregistration.json",
+      "sha256": "3fca010b076ff5ccefb255be566672fb81dbbb724e6160bcaa0d398c3b1dbddd"
+    },
+    {
+      "artifact_role": "reviewed_to_corrected_I9B_identity_lineage",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b_revision_lineage_r1.json",
+      "sha256": "78ae36e12d6c20681c233ee8dc9619816a57fba08f3c27da4438f3b6ff3f17ee"
+    },
+    {
+      "artifact_role": "reconstructed_native_formation_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_formation_snapshot.json",
+      "sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01"
+    },
+    {
+      "artifact_role": "post_disjoint_native_progression_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_snapshot.json",
+      "sha256": "01aa373b7d332ad56725b12d81a9128e526fbecdc42df0b7339265f67384bea3"
+    },
+    {
+      "artifact_role": "independent_native_persistence_checkpoint",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_checkpoint.json",
+      "sha256": "d046939075c810fadeb7ad23be135f649e147e76efa0c12c4b9a4324aa4b6d9f"
+    },
+    {
+      "artifact_role": "multi_level_bounded_export_response_shape",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+      "sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394"
+    },
+    {
+      "artifact_role": "paired_native_admission_boundary_shape",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_readout_boundary_matrix.json",
+      "sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a"
+    },
+    {
+      "artifact_role": "source_C_0.20_no_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_pre_export.json",
+      "sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206"
+    },
+    {
+      "artifact_role": "source_C_0.20_post_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_post_export.json",
+      "sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206"
+    },
+    {
+      "artifact_role": "source_C_0.21_no_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_pre_export.json",
+      "sha256": "bac22986268941f1ccb7a18b56caf37f3c49bed9c7a5cd3657b605b8f8c9292c"
+    },
+    {
+      "artifact_role": "source_C_0.21_post_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_post_export.json",
+      "sha256": "fa5c50509f367a0531d466f22adb680f5d708d4a1fa149dc22c1ea0b73caaf78"
+    },
+    {
+      "artifact_role": "source_C_0.22_no_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_pre_export.json",
+      "sha256": "14b73d5d4e014b41687328e4939cf5949f80649e5d062e84438d3390a5f1e364"
+    },
+    {
+      "artifact_role": "source_C_0.22_post_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_post_export.json",
+      "sha256": "9fb36c2052c9b312e8972032654c61b74c0f627225b55a75cdc994210b77bfce"
+    },
+    {
+      "artifact_role": "source_C_0.24_no_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_pre_export.json",
+      "sha256": "33c631d7c07c1775c4d788e89ae92a853c59636e80d8e8361708c5bac9bcac23"
+    },
+    {
+      "artifact_role": "source_C_0.24_post_export_native_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_post_export.json",
+      "sha256": "7e7741745db4da4584b61348d08b929e75e39494bbfbab46e34e9354b98dfa3d"
+    }
+  ],
+  "artifact_schema_version": "n31_i9b1_response_trace_v1",
+  "candidate_id": "B_conserved_source_leakage",
+  "checks": [
+    {
+      "check_id": "exact_I9B_sources_and_producer_implementation_consumed",
+      "detail": [
+        {
+          "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+          "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+          "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+          "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json"
+        },
+        {
+          "actual_output_digest": "65ac1e3a81788fdfc9abdad7ff9398b3308ffc55e9801cce829b249f7238a454",
+          "actual_sha256": "f383d757dbee5cb853ffb78e2d8a1b7df1239ef6efb198c4dd9df17b6dceca90",
+          "expected_output_digest": "65ac1e3a81788fdfc9abdad7ff9398b3308ffc55e9801cce829b249f7238a454",
+          "expected_sha256": "f383d757dbee5cb853ffb78e2d8a1b7df1239ef6efb198c4dd9df17b6dceca90",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_source_current_trace.json"
+        },
+        {
+          "actual_output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+          "actual_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+          "expected_output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+          "expected_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_preregistration.json"
+        },
+        {
+          "actual_output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+          "actual_sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+          "expected_output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+          "expected_sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json"
+        },
+        {
+          "actual_sha256": "61028afea71579e8c4a0dc4d962c40bd24ee2b80d3378313d822c51f1c584210",
+          "expected_sha256": "61028afea71579e8c4a0dc4d962c40bd24ee2b80d3378313d822c51f1c584210",
+          "identity_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_conserved_leakage_i9b.py",
+          "role": "executed_Candidate_B_producer_and_fixture_implementation"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "formation_strengthens_existing_O_B_by_attributable_delta",
+      "detail": {
+        "arrival_receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 2,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "departure_receipt": {
+          "amount": 0.05,
+          "budget_error": 2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+          "event_kind": "lgrc9v3_packet_departure",
+          "event_time_key": 0.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 1,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "formation_activity_stopped": true,
+        "formation_effect_O_B": 0.09999999999999998,
+        "restoration_v1_exact": true,
+        "restoration_v2_exact": true,
+        "route_after_formation": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "route_before_formation": {
+          "C_formation_source": 0.3,
+          "C_leakage_source": 0.35,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.04999999999999999
+        },
+        "topology_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+        "topology_identity": {
+          "edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "edge_payloads": [
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 0,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "formation_source_to_leakage_source"
+              },
+              "source_node_id": 0,
+              "source_port_id": 1,
+              "target_node_id": 1,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 1,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "leakage_source_to_export_destination"
+              },
+              "source_node_id": 1,
+              "source_port_id": 2,
+              "target_node_id": 2,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 2,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "leakage_source_to_later_readout"
+              },
+              "source_node_id": 1,
+              "source_port_id": 3,
+              "target_node_id": 3,
+              "target_port_id": 1
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "node_payloads": [
+            {
+              "node_id": 0,
+              "payload": {
+                "fixture_role": "formation_source"
+              }
+            },
+            {
+              "node_id": 1,
+              "payload": {
+                "fixture_role": "leakage_source"
+              }
+            },
+            {
+              "node_id": 2,
+              "payload": {
+                "fixture_role": "export_destination"
+              }
+            },
+            {
+              "node_id": 3,
+              "payload": {
+                "fixture_role": "later_readout_target"
+              }
+            }
+          ],
+          "role_to_node_id": {
+            "export_destination": 2,
+            "formation_source": 0,
+            "later_readout_target": 3,
+            "leakage_source": 1
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formation_exhausted_and_restores_before_progression",
+      "detail": {
+        "arrival_receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 2,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "departure_receipt": {
+          "amount": 0.05,
+          "budget_error": 2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+          "event_kind": "lgrc9v3_packet_departure",
+          "event_time_key": 0.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 1,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "formation_activity_stopped": true,
+        "formation_effect_O_B": 0.09999999999999998,
+        "restoration_v1_exact": true,
+        "restoration_v2_exact": true,
+        "route_after_formation": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "route_before_formation": {
+          "C_formation_source": 0.3,
+          "C_leakage_source": 0.35,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.04999999999999999
+        },
+        "topology_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+        "topology_identity": {
+          "edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "edge_payloads": [
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 0,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "formation_source_to_leakage_source"
+              },
+              "source_node_id": 0,
+              "source_port_id": 1,
+              "target_node_id": 1,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 1,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "leakage_source_to_export_destination"
+              },
+              "source_node_id": 1,
+              "source_port_id": 2,
+              "target_node_id": 2,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 2,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "leakage_source_to_later_readout"
+              },
+              "source_node_id": 1,
+              "source_port_id": 3,
+              "target_node_id": 3,
+              "target_port_id": 1
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "node_payloads": [
+            {
+              "node_id": 0,
+              "payload": {
+                "fixture_role": "formation_source"
+              }
+            },
+            {
+              "node_id": 1,
+              "payload": {
+                "fixture_role": "leakage_source"
+              }
+            },
+            {
+              "node_id": 2,
+              "payload": {
+                "fixture_role": "export_destination"
+              }
+            },
+            {
+              "node_id": 3,
+              "payload": {
+                "fixture_role": "later_readout_target"
+              }
+            }
+          ],
+          "role_to_node_id": {
+            "export_destination": 2,
+            "formation_source": 0,
+            "later_readout_target": 3,
+            "leakage_source": 1
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formed_relation_persists_through_disjoint_native_progression",
+      "detail": {
+        "O_B_change": 0.0,
+        "artifact_kind": "n31_i9b1_independent_native_persistence_checkpoint",
+        "artifact_schema_version": "n31_i9b1_persistence_checkpoint_v1",
+        "autonomous_persistence_claimed": false,
+        "bookkeeping": {
+          "boundary_birth_trial_queue_after": 0,
+          "boundary_birth_trial_queue_before": 1,
+          "causal_flux_events_processed": 0,
+          "causal_spark_diagnostic_events": 0,
+          "causal_topology_integration_events": 0,
+          "checkpoint_index": 3,
+          "event_time_key": 2.0,
+          "local_update_eligibility_events": 0,
+          "local_update_events": 0,
+          "packetized_flux_applied": false,
+          "processed_event_id": null,
+          "processed_event_kind": "lgrc9v3_causal_boundary_birth_trial",
+          "queue_length_after": 0,
+          "queue_length_before": 0,
+          "scheduler_event_index": 3,
+          "step_order": [
+            "order_event_queue",
+            "process_causal_boundary_birth_trial",
+            "checkpoint_runtime_state"
+          ],
+          "topology_events_routed": 0
+        },
+        "candidate_B_export_packet_count": 0,
+        "candidate_B_export_policy_invocation_count": 0,
+        "checkpoint_advanced": true,
+        "edge_ids_after": [
+          0,
+          1,
+          2
+        ],
+        "edge_ids_before": [
+          0,
+          1,
+          2
+        ],
+        "emitted_event_kinds": [],
+        "formation_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_formation_snapshot.json",
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "node_ids_after": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "node_ids_before": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "output_digest": "91219ce3b0515e1502bae2d9ff82e3d679b721379f81bc85c694521756602646",
+        "parent_node_id": 2,
+        "parent_node_on_registered_route": false,
+        "persistence_supported": true,
+        "persistence_through_ordinary_state_mutating_activity": "not_tested",
+        "progression_authority": "experiment_scheduled_native_runtime_trial",
+        "progression_class": "nonqualifying_nonadmitted_disjoint_causal_boundary_birth_trial",
+        "restoration_v1_exact": true,
+        "restoration_v2_exact": true,
+        "route_after": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "route_before": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "scheduler_advanced": true,
+        "source_formation_effect_O_B": 0.09999999999999998,
+        "topology_events_routed": 0,
+        "topology_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "persistence_progression_not_relabelled_autonomous",
+      "detail": {
+        "O_B_change": 0.0,
+        "artifact_kind": "n31_i9b1_independent_native_persistence_checkpoint",
+        "artifact_schema_version": "n31_i9b1_persistence_checkpoint_v1",
+        "autonomous_persistence_claimed": false,
+        "bookkeeping": {
+          "boundary_birth_trial_queue_after": 0,
+          "boundary_birth_trial_queue_before": 1,
+          "causal_flux_events_processed": 0,
+          "causal_spark_diagnostic_events": 0,
+          "causal_topology_integration_events": 0,
+          "checkpoint_index": 3,
+          "event_time_key": 2.0,
+          "local_update_eligibility_events": 0,
+          "local_update_events": 0,
+          "packetized_flux_applied": false,
+          "processed_event_id": null,
+          "processed_event_kind": "lgrc9v3_causal_boundary_birth_trial",
+          "queue_length_after": 0,
+          "queue_length_before": 0,
+          "scheduler_event_index": 3,
+          "step_order": [
+            "order_event_queue",
+            "process_causal_boundary_birth_trial",
+            "checkpoint_runtime_state"
+          ],
+          "topology_events_routed": 0
+        },
+        "candidate_B_export_packet_count": 0,
+        "candidate_B_export_policy_invocation_count": 0,
+        "checkpoint_advanced": true,
+        "edge_ids_after": [
+          0,
+          1,
+          2
+        ],
+        "edge_ids_before": [
+          0,
+          1,
+          2
+        ],
+        "emitted_event_kinds": [],
+        "formation_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_formation_snapshot.json",
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "node_ids_after": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "node_ids_before": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "output_digest": "91219ce3b0515e1502bae2d9ff82e3d679b721379f81bc85c694521756602646",
+        "parent_node_id": 2,
+        "parent_node_on_registered_route": false,
+        "persistence_supported": true,
+        "persistence_through_ordinary_state_mutating_activity": "not_tested",
+        "progression_authority": "experiment_scheduled_native_runtime_trial",
+        "progression_class": "nonqualifying_nonadmitted_disjoint_causal_boundary_birth_trial",
+        "restoration_v1_exact": true,
+        "restoration_v2_exact": true,
+        "route_after": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "route_before": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "scheduler_advanced": true,
+        "source_formation_effect_O_B": 0.09999999999999998,
+        "topology_events_routed": 0,
+        "topology_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "three_distinct_positive_export_levels_observed",
+      "detail": [
+        0.009999999999999981,
+        0.01999999999999999,
+        0.03999999999999998
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "bounded_export_response_equations_close",
+      "detail": {
+        "B1_independent_above_cap_plateau_tested": false,
+        "B1_response_shape_scope": "monotonic_linear_through_cap_boundary",
+        "I9B_inherited_above_cap_plateau_rows": [
+          {
+            "observed_q_emit": 0.04,
+            "source_C": 0.26,
+            "source_excess": 0.06
+          },
+          {
+            "observed_q_emit": 0.04,
+            "source_C": 0.4,
+            "source_excess": 0.2
+          }
+        ],
+        "I9B_inherited_q_cap_never_exceeded": true,
+        "all_diff_whitelists_pass": true,
+        "all_response_equations_close": true,
+        "distinct_positive_q_levels": [
+          0.009999999999999981,
+          0.01999999999999999,
+          0.03999999999999998
+        ],
+        "output_digest": "26ef02e26723687aeeae907fc5920560532f55ba0afa8c594a4e7eebe578a1ea",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+        "q_emit_monotonic_non_decreasing": true,
+        "sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394",
+        "zero_export_receipt": {
+          "post_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+          "pre_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+          "row_id": "source_C_0.20",
+          "zero_export_closure_receipt_consumed": true,
+          "zero_export_native_identity_unchanged": true,
+          "zero_export_packet_created": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "response_row_diff_whitelists_and_closure_reset_pass",
+      "detail": {
+        "B1_independent_above_cap_plateau_tested": false,
+        "B1_response_shape_scope": "monotonic_linear_through_cap_boundary",
+        "I9B_inherited_above_cap_plateau_rows": [
+          {
+            "observed_q_emit": 0.04,
+            "source_C": 0.26,
+            "source_excess": 0.06
+          },
+          {
+            "observed_q_emit": 0.04,
+            "source_C": 0.4,
+            "source_excess": 0.2
+          }
+        ],
+        "I9B_inherited_q_cap_never_exceeded": true,
+        "all_diff_whitelists_pass": true,
+        "all_response_equations_close": true,
+        "distinct_positive_q_levels": [
+          0.009999999999999981,
+          0.01999999999999999,
+          0.03999999999999998
+        ],
+        "output_digest": "26ef02e26723687aeeae907fc5920560532f55ba0afa8c594a4e7eebe578a1ea",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+        "q_emit_monotonic_non_decreasing": true,
+        "sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394",
+        "zero_export_receipt": {
+          "post_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+          "pre_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+          "row_id": "source_C_0.20",
+          "zero_export_closure_receipt_consumed": true,
+          "zero_export_native_identity_unchanged": true,
+          "zero_export_packet_created": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "zero_export_native_identity_and_closure_transition_separated",
+      "detail": {
+        "post_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+        "pre_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+        "row_id": "source_C_0.20",
+        "zero_export_closure_receipt_consumed": true,
+        "zero_export_native_identity_unchanged": true,
+        "zero_export_packet_created": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "cap_plateau_scoped_to_inherited_I9B_evidence",
+      "detail": {
+        "B1_independent_above_cap_plateau_tested": false,
+        "B1_response_shape_scope": "monotonic_linear_through_cap_boundary",
+        "I9B_inherited_above_cap_plateau_rows": [
+          {
+            "observed_q_emit": 0.04,
+            "source_C": 0.26,
+            "source_excess": 0.06
+          },
+          {
+            "observed_q_emit": 0.04,
+            "source_C": 0.4,
+            "source_excess": 0.2
+          }
+        ],
+        "I9B_inherited_q_cap_never_exceeded": true,
+        "all_diff_whitelists_pass": true,
+        "all_response_equations_close": true,
+        "distinct_positive_q_levels": [
+          0.009999999999999981,
+          0.01999999999999999,
+          0.03999999999999998
+        ],
+        "output_digest": "26ef02e26723687aeeae907fc5920560532f55ba0afa8c594a4e7eebe578a1ea",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+        "q_emit_monotonic_non_decreasing": true,
+        "sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394",
+        "zero_export_receipt": {
+          "post_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+          "pre_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+          "row_id": "source_C_0.20",
+          "zero_export_closure_receipt_consumed": true,
+          "zero_export_native_identity_unchanged": true,
+          "zero_export_packet_created": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "paired_native_readout_boundary_shift_equals_export",
+      "detail": {
+        "all_boundary_shifts_equal_q_emit": true,
+        "all_rejected_rows_atomic": true,
+        "all_robust_above_rejected": true,
+        "all_robust_below_admitted": true,
+        "mediation_strength": "bounded_partial_local_leakage_source_C",
+        "output_digest": "ed9b2c9b29edba7512e3b4823b7a2adbd2bba73aa84e6ff7bbf0e55a4f9e124b",
+        "paired_boundary_shift_monotonic_non_decreasing": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_readout_boundary_matrix.json",
+        "sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "robust_readout_sides_and_atomic_refusal_pass",
+      "detail": {
+        "all_boundary_shifts_equal_q_emit": true,
+        "all_rejected_rows_atomic": true,
+        "all_robust_above_rejected": true,
+        "all_robust_below_admitted": true,
+        "mediation_strength": "bounded_partial_local_leakage_source_C",
+        "output_digest": "ed9b2c9b29edba7512e3b4823b7a2adbd2bba73aa84e6ff7bbf0e55a4f9e124b",
+        "paired_boundary_shift_monotonic_non_decreasing": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_readout_boundary_matrix.json",
+        "sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "B_R_DR4_ceiling_preserved",
+      "detail": {
+        "D0_R_bridge_status": "not_tested",
+        "DR4_supported": true,
+        "DR5_supported": false,
+        "DR6_supported": false,
+        "current_decay_relation_ladder_rung": "DR4",
+        "full_route_distribution_mediation": false,
+        "native_decay_classification_unchanged": "D0a_DR2",
+        "relation_authority": "producer_mediated",
+        "semantic_class": "B",
+        "semantic_subtype": "B_R_conserved_export_policy",
+        "transport_authority": "native_LGRC9V3_packet_runtime"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contracts_unchanged",
+      "detail": {
+        "governance_base_revision": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6",
+        "protected_runtime_contract_diff_empty": true,
+        "src_diff_empty": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "pre_outcome_I9B1_contract",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_preregistration.json",
+          "sha256": "3fca010b076ff5ccefb255be566672fb81dbbb724e6160bcaa0d398c3b1dbddd"
+        },
+        {
+          "artifact_role": "reviewed_to_corrected_I9B_identity_lineage",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b_revision_lineage_r1.json",
+          "sha256": "78ae36e12d6c20681c233ee8dc9619816a57fba08f3c27da4438f3b6ff3f17ee"
+        },
+        {
+          "artifact_role": "reconstructed_native_formation_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_formation_snapshot.json",
+          "sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01"
+        },
+        {
+          "artifact_role": "post_disjoint_native_progression_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_snapshot.json",
+          "sha256": "01aa373b7d332ad56725b12d81a9128e526fbecdc42df0b7339265f67384bea3"
+        },
+        {
+          "artifact_role": "independent_native_persistence_checkpoint",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_checkpoint.json",
+          "sha256": "d046939075c810fadeb7ad23be135f649e147e76efa0c12c4b9a4324aa4b6d9f"
+        },
+        {
+          "artifact_role": "multi_level_bounded_export_response_shape",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+          "sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394"
+        },
+        {
+          "artifact_role": "paired_native_admission_boundary_shape",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_readout_boundary_matrix.json",
+          "sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a"
+        },
+        {
+          "artifact_role": "source_C_0.20_no_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_pre_export.json",
+          "sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206"
+        },
+        {
+          "artifact_role": "source_C_0.20_post_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_post_export.json",
+          "sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206"
+        },
+        {
+          "artifact_role": "source_C_0.21_no_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_pre_export.json",
+          "sha256": "bac22986268941f1ccb7a18b56caf37f3c49bed9c7a5cd3657b605b8f8c9292c"
+        },
+        {
+          "artifact_role": "source_C_0.21_post_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_post_export.json",
+          "sha256": "fa5c50509f367a0531d466f22adb680f5d708d4a1fa149dc22c1ea0b73caaf78"
+        },
+        {
+          "artifact_role": "source_C_0.22_no_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_pre_export.json",
+          "sha256": "14b73d5d4e014b41687328e4939cf5949f80649e5d062e84438d3390a5f1e364"
+        },
+        {
+          "artifact_role": "source_C_0.22_post_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_post_export.json",
+          "sha256": "9fb36c2052c9b312e8972032654c61b74c0f627225b55a75cdc994210b77bfce"
+        },
+        {
+          "artifact_role": "source_C_0.24_no_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_pre_export.json",
+          "sha256": "33c631d7c07c1775c4d788e89ae92a853c59636e80d8e8361708c5bac9bcac23"
+        },
+        {
+          "artifact_role": "source_C_0.24_post_export_native_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_post_export.json",
+          "sha256": "7e7741745db4da4584b61348d08b929e75e39494bbfbab46e34e9354b98dfa3d"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "recursive",
+      "passed": true
+    }
+  ],
+  "classification": {
+    "D0_R_bridge_status": "not_tested",
+    "DR4_supported": true,
+    "DR5_supported": false,
+    "DR6_supported": false,
+    "current_decay_relation_ladder_rung": "DR4",
+    "full_route_distribution_mediation": false,
+    "native_decay_classification_unchanged": "D0a_DR2",
+    "relation_authority": "producer_mediated",
+    "semantic_class": "B",
+    "semantic_subtype": "B_R_conserved_export_policy",
+    "transport_authority": "native_LGRC9V3_packet_runtime"
+  },
+  "derived_report_only": false,
+  "experiment": "N31",
+  "failed_checks": [],
+  "formation_attribution": {
+    "arrival_receipt": {
+      "amount": 0.05,
+      "budget_error": -2.220446049250313e-16,
+      "edge_id": 0,
+      "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 1.0,
+      "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+      "scheduler_event_index": 2,
+      "source_lineage_id": "n31_B_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    "departure_receipt": {
+      "amount": 0.05,
+      "budget_error": 2.220446049250313e-16,
+      "edge_id": 0,
+      "event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 0.0,
+      "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+      "scheduler_event_index": 1,
+      "source_lineage_id": "n31_B_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    "formation_activity_stopped": true,
+    "formation_effect_O_B": 0.09999999999999998,
+    "restoration_v1_exact": true,
+    "restoration_v2_exact": true,
+    "route_after_formation": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.39999999999999997,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.14999999999999997
+    },
+    "route_before_formation": {
+      "C_formation_source": 0.3,
+      "C_leakage_source": 0.35,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.04999999999999999
+    },
+    "topology_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+    "topology_identity": {
+      "edge_ids": [
+        0,
+        1,
+        2
+      ],
+      "edge_payloads": [
+        {
+          "conductance": 1.0,
+          "delay": 1.0,
+          "edge_id": 0,
+          "orientation": "canonical_source_to_target",
+          "payload": {
+            "fixture_relation": "formation_source_to_leakage_source"
+          },
+          "source_node_id": 0,
+          "source_port_id": 1,
+          "target_node_id": 1,
+          "target_port_id": 1
+        },
+        {
+          "conductance": 1.0,
+          "delay": 1.0,
+          "edge_id": 1,
+          "orientation": "canonical_source_to_target",
+          "payload": {
+            "fixture_relation": "leakage_source_to_export_destination"
+          },
+          "source_node_id": 1,
+          "source_port_id": 2,
+          "target_node_id": 2,
+          "target_port_id": 1
+        },
+        {
+          "conductance": 1.0,
+          "delay": 1.0,
+          "edge_id": 2,
+          "orientation": "canonical_source_to_target",
+          "payload": {
+            "fixture_relation": "leakage_source_to_later_readout"
+          },
+          "source_node_id": 1,
+          "source_port_id": 3,
+          "target_node_id": 3,
+          "target_port_id": 1
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "node_payloads": [
+        {
+          "node_id": 0,
+          "payload": {
+            "fixture_role": "formation_source"
+          }
+        },
+        {
+          "node_id": 1,
+          "payload": {
+            "fixture_role": "leakage_source"
+          }
+        },
+        {
+          "node_id": 2,
+          "payload": {
+            "fixture_role": "export_destination"
+          }
+        },
+        {
+          "node_id": 3,
+          "payload": {
+            "fixture_role": "later_readout_target"
+          }
+        }
+      ],
+      "role_to_node_id": {
+        "export_destination": 2,
+        "formation_source": 0,
+        "later_readout_target": 3,
+        "leakage_source": 1
+      }
+    }
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "governance": {
+    "governance_base_revision": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6",
+    "protected_runtime_contract_diff_empty": true,
+    "src_diff_empty": true
+  },
+  "iteration": "9-B.1",
+  "output_digest": "5611c0e1644928b16ce74ba501f08db7f4494e5652d89cc8f25648040b1657e2",
+  "persistence_checkpoint": {
+    "autonomous_persistence_claimed": false,
+    "output_digest": "91219ce3b0515e1502bae2d9ff82e3d679b721379f81bc85c694521756602646",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_checkpoint.json",
+    "persistence_supported": true,
+    "persistence_through_ordinary_state_mutating_activity": "not_tested",
+    "progression_authority": "experiment_scheduled_native_runtime_trial",
+    "sha256": "d046939075c810fadeb7ad23be135f649e147e76efa0c12c4b9a4324aa4b6d9f"
+  },
+  "preregistration": {
+    "output_digest": "3e65ebfc0d86f64d19c8cd495fce595b6176253bf2e5ef3306abd8ca4ec473e7",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_preregistration.json",
+    "sha256": "3fca010b076ff5ccefb255be566672fb81dbbb724e6160bcaa0d398c3b1dbddd"
+  },
+  "producer_policy_unchanged": true,
+  "readout_shape": {
+    "all_boundary_shifts_equal_q_emit": true,
+    "all_rejected_rows_atomic": true,
+    "all_robust_above_rejected": true,
+    "all_robust_below_admitted": true,
+    "mediation_strength": "bounded_partial_local_leakage_source_C",
+    "output_digest": "ed9b2c9b29edba7512e3b4823b7a2adbd2bba73aa84e6ff7bbf0e55a4f9e124b",
+    "paired_boundary_shift_monotonic_non_decreasing": true,
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_readout_boundary_matrix.json",
+    "sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a"
+  },
+  "response_shape": {
+    "B1_independent_above_cap_plateau_tested": false,
+    "B1_response_shape_scope": "monotonic_linear_through_cap_boundary",
+    "I9B_inherited_above_cap_plateau_rows": [
+      {
+        "observed_q_emit": 0.04,
+        "source_C": 0.26,
+        "source_excess": 0.06
+      },
+      {
+        "observed_q_emit": 0.04,
+        "source_C": 0.4,
+        "source_excess": 0.2
+      }
+    ],
+    "I9B_inherited_q_cap_never_exceeded": true,
+    "all_diff_whitelists_pass": true,
+    "all_response_equations_close": true,
+    "distinct_positive_q_levels": [
+      0.009999999999999981,
+      0.01999999999999999,
+      0.03999999999999998
+    ],
+    "output_digest": "26ef02e26723687aeeae907fc5920560532f55ba0afa8c594a4e7eebe578a1ea",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+    "q_emit_monotonic_non_decreasing": true,
+    "sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394",
+    "zero_export_receipt": {
+      "post_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+      "pre_export_snapshot_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+      "row_id": "source_C_0.20",
+      "zero_export_closure_receipt_consumed": true,
+      "zero_export_native_identity_unchanged": true,
+      "zero_export_packet_created": false
+    }
+  },
+  "second_export_or_decay_producer_added": false,
+  "source_chain": [
+    {
+      "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json"
+    },
+    {
+      "actual_output_digest": "65ac1e3a81788fdfc9abdad7ff9398b3308ffc55e9801cce829b249f7238a454",
+      "actual_sha256": "f383d757dbee5cb853ffb78e2d8a1b7df1239ef6efb198c4dd9df17b6dceca90",
+      "expected_output_digest": "65ac1e3a81788fdfc9abdad7ff9398b3308ffc55e9801cce829b249f7238a454",
+      "expected_sha256": "f383d757dbee5cb853ffb78e2d8a1b7df1239ef6efb198c4dd9df17b6dceca90",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_source_current_trace.json"
+    },
+    {
+      "actual_output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+      "actual_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+      "expected_output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+      "expected_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_preregistration.json"
+    },
+    {
+      "actual_output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+      "actual_sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+      "expected_output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+      "expected_sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json"
+    },
+    {
+      "actual_sha256": "61028afea71579e8c4a0dc4d962c40bd24ee2b80d3378313d822c51f1c584210",
+      "expected_sha256": "61028afea71579e8c4a0dc4d962c40bd24ee2b80d3378313d822c51f1c584210",
+      "identity_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_conserved_leakage_i9b.py",
+      "role": "executed_Candidate_B_producer_and_fixture_implementation"
+    }
+  ],
+  "source_current_runtime_artifact": true,
+  "status": "passed",
+  "topology_unchanged": true
+}

@@ -1,0 +1,2061 @@
+{
+  "D0_R_bridge_status": "not_tested",
+  "acceptance_state": "accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10",
+  "artifact_kind": "conserved_leakage_source_current_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_B_R_export_and_readout_contract",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_preregistration.json",
+      "sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987"
+    },
+    {
+      "artifact_role": "complete_native_post_formation_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_post_formation_snapshot.json",
+      "sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01"
+    },
+    {
+      "artifact_role": "complete_native_post_export_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_final_snapshot.json",
+      "sha256": "d18f9a92d097384ca8793f06ec985de192f52d0994bc0c328a0c05032638c0ce"
+    },
+    {
+      "artifact_role": "versioned_one_shot_export_policy_receipt_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_closure_state.json",
+      "sha256": "c99abe6a2bbeb6754e7ab19508c47542758c51656b97446a3a62cab8375013cb"
+    },
+    {
+      "artifact_role": "bounded_export_amount_and_one_shot_control_matrix",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json",
+      "sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f"
+    },
+    {
+      "artifact_role": "organization_mediation_and_destination_isolation_matrix",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+      "sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e"
+    },
+    {
+      "artifact_role": "native_closure_policy_topology_composed_identity",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_candidate_identity.json",
+      "sha256": "bb44ab0534781b8e7fbdaa4a9039515d56ec3dc022330e560fd7aa629bbc528e"
+    },
+    {
+      "artifact_role": "closure_receipt_native_event_mismatch_fail_closed_matrix",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_transaction_mismatch_controls.json",
+      "sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab"
+    }
+  ],
+  "artifact_schema_version": "n31_i9b_conserved_leakage_trace_v2",
+  "candidate_id": "B_conserved_source_leakage",
+  "checks": [
+    {
+      "check_id": "exact_I2_I9_and_contract_sources_consumed",
+      "detail": [
+        {
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+        },
+        {
+          "actual_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "actual_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "expected_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "expected_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_admission_i9.json"
+        },
+        {
+          "actual_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+          "actual_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+          "expected_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+          "expected_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9_added_mechanism_admission_artifacts/n31_i9_candidate_contract_bundle.json"
+        },
+        {
+          "actual_output_digest": "dedb00b9aed5c4e295f872ca3746e62f9c7a05fc51c37c4aa95903b612bb7df7",
+          "actual_sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd",
+          "expected_output_digest": "dedb00b9aed5c4e295f872ca3746e62f9c7a05fc51c37c4aa95903b612bb7df7",
+          "expected_sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9_revision_lineage.json"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "candidate_B_contract_consumed",
+      "detail": {
+        "blocked_relabels": [
+          "ordinary_D0_R",
+          "coherence_destruction",
+          "native_decay",
+          "global_emission_scheduler"
+        ],
+        "candidate_disposition": "not_executed",
+        "candidate_id": "B_conserved_source_leakage",
+        "candidate_schema_version": "n31_decay_candidate_schema_v2",
+        "candidate_specific_regeneration_required": true,
+        "candidate_specific_rung_qualifier": "B_R_conserved_export_policy",
+        "carrier_definition": "LGRC_coherence_packet_to_explicit_destination",
+        "causal_transition_owner": "registered_route_local_export_policy_producer",
+        "claim_ceiling": "DR6_reusable_B_R_contract_not_native_D0_R",
+        "complete_control_ids": [
+          "label_only_decay",
+          "wall_clock_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "relation_weakens_but_has_no_later_readout_effect",
+          "global_route_selector",
+          "hidden_producer_update",
+          "unrecorded_post_formation_producer_call",
+          "missing_internal_time_owner",
+          "missing_invariant",
+          "missing_restoration_state",
+          "report_digest_as_runtime_state",
+          "native_relabel_from_producer",
+          "RCAE_demand_as_graph_evidence",
+          "trail_or_stigmergy_relabel",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "producer_scheduled_D0_decay",
+          "export_authoring_producer_call_retained_as_D0_R",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "route_mass_loss_as_organization_weakening_relabel",
+          "organization_weakening_without_mediation_as_causal_decay_relabel",
+          "constant_mass_internal_reorganization_as_export_relabel",
+          "unclosed_route_boundary_continuity",
+          "added_export_policy_as_D0_R_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "forming_packet_continuation_as_later_independent_readout",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification",
+          "local_loss_without_destination",
+          "source_debit_packet_amount_target_credit_mismatch",
+          "hidden_reservoir",
+          "new_leakage_policy_as_ordinary_D0_relabel",
+          "global_emission_scheduler",
+          "unbounded_emitted_amount",
+          "receiver_in_later_read_path",
+          "B_R_as_D0_R_without_bridge"
+        ],
+        "complete_control_set_digest": "e8e0828f4478a043da5f406111883cf9627399957f17add8441404a7d3a58270",
+        "continuation_state_definition": "complete_LGRC_state_plus_registered_one_shot_export_policy_receipt",
+        "control_resolution_status": "not_run_pending_candidate_specific_regeneration_and_execution",
+        "current_decay_relation_ladder_rung": "DR0",
+        "current_rung_reason": "admission_contract_only_no_candidate_runtime_evidence",
+        "destination_isolation_contract": {
+          "automatic_return_packets_allowed_before_readout": false,
+          "derived_geometry_dependency_control_required": true,
+          "destination_clamp_pair_required": true,
+          "destination_clamp_rule": "vary_destination_state_after_credit_while_matching_source_route_and_queue; later_readout_must_remain_unchanged",
+          "destination_originated_events_allowed_before_readout": false,
+          "event_trace_no_return_required": true,
+          "isolation_failure_blocks_DR4_plus": true,
+          "shared_selector_reads_destination_state": false
+        },
+        "direct_I3_null_consumption_allowed": false,
+        "direct_I3_null_consumption_count": 0,
+        "equation_or_relation": {
+          "C_floor": 0.2,
+          "emission_relation": "q_emit = min(q_cap, max(0, C_leakage_source - C_floor))",
+          "equation_or_relation_id": "n31_B_bounded_export_v1",
+          "global_scheduler_allowed": false,
+          "outcome_tuning_allowed": false,
+          "q_cap": 0.04,
+          "trigger": "first_registered_local_source_event_after_formation"
+        },
+        "execution_decision": "execute",
+        "execution_iteration": "I9-B",
+        "execution_rationale": "registered_D0_R_to_B_R_bridge_and_conserved_export_test",
+        "export_destination_excluded_from_later_readout_path": true,
+        "export_ownership": {
+          "B_R_subtype": true,
+          "added_export_policy_present": true,
+          "d0_subclass": "not_applicable_candidate_B",
+          "d0_to_br_bridge_status": "not_tested",
+          "export_policy_owner": "experiment_producer",
+          "ordinary_post_formation_flux_generated": "not_run"
+        },
+        "highest_later_eligible_ceiling": "DR6_after_DR5_and_reusable_B_R_contract",
+        "inherited_required_control_ids": [
+          "label_only_decay",
+          "wall_clock_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "relation_weakens_but_has_no_later_readout_effect",
+          "global_route_selector",
+          "hidden_producer_update",
+          "unrecorded_post_formation_producer_call",
+          "missing_internal_time_owner",
+          "missing_invariant",
+          "missing_restoration_state",
+          "report_digest_as_runtime_state",
+          "native_relabel_from_producer",
+          "RCAE_demand_as_graph_evidence",
+          "trail_or_stigmergy_relabel",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "producer_scheduled_D0_decay",
+          "export_authoring_producer_call_retained_as_D0_R",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "route_mass_loss_as_organization_weakening_relabel",
+          "organization_weakening_without_mediation_as_causal_decay_relabel",
+          "constant_mass_internal_reorganization_as_export_relabel",
+          "unclosed_route_boundary_continuity",
+          "added_export_policy_as_D0_R_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "forming_packet_continuation_as_later_independent_readout",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification"
+        ],
+        "internal_time_contract": {
+          "internal_time_advance_equation": "one_shot_export_eligibility_after_formation",
+          "internal_time_advance_event": "registered_local_source_event",
+          "internal_time_owner": "native_LGRC_event_queue_with_local_export_callback",
+          "internal_time_state_path": "event_queue.registered_local_source_event",
+          "internal_time_units": "processed_native_events",
+          "snapshot_path": "candidate_closure.export_policy_receipt",
+          "wall_clock_excluded": true
+        },
+        "invariant_contract": {
+          "explicit_destination_required": true,
+          "invariant_id": "n31_B_source_packet_destination_conservation_v1",
+          "quantity": "node_plus_in_flight_coherence",
+          "relation": "C_leakage_source_before - C_leakage_source_after == packet_amount == export_destination_credit",
+          "system_boundary": "all_four_nodes_plus_in_flight_packets",
+          "tolerance": 1e-12
+        },
+        "lane_id": "added_mechanism",
+        "lane_specific_control_ids": [
+          "local_loss_without_destination",
+          "source_debit_packet_amount_target_credit_mismatch",
+          "hidden_reservoir",
+          "new_leakage_policy_as_ordinary_D0_relabel",
+          "global_emission_scheduler",
+          "unbounded_emitted_amount",
+          "receiver_in_later_read_path",
+          "B_R_as_D0_R_without_bridge"
+        ],
+        "later_readout_path": [
+          0,
+          1,
+          3
+        ],
+        "native_upgrade_allowed": false,
+        "naturalization_debt": [
+          "native_route_local_export_policy_missing",
+          "ordinary_D0_R_bridge_unproven"
+        ],
+        "one_shot_trigger_contract": {
+          "callback_phase": "after_committed_arrival_before_export_packet_creation",
+          "edge_id": 0,
+          "eligibility_consumption": "atomic_on_first_qualifying_attempt",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "failed_emission_retry_behavior": "no_retry_without_new_versioned_contract",
+          "lineage_id": "n31_B_formation_lineage",
+          "receipt_restoration_required": true,
+          "receipt_snapshot_path": "candidate_closure.export_policy_receipt",
+          "second_trigger_behavior": "refused_from_restored_one_shot_receipt",
+          "source_node_id": 0,
+          "target_node_id": 1,
+          "trigger_contract_id": "n31_B_first_local_arrival_after_formation_v1",
+          "zero_emission_behavior": "consume_receipt_and_record_zero_emission"
+        },
+        "organization_contract": {
+          "formed_organization_minimum": 0.04,
+          "mass_loss_is_not_organization_weakening": true,
+          "mass_loss_substitution_control": "matched_route_mass_loss_without_source_contrast_change",
+          "matched_fixture_fields": [
+            "canonical_topology_digest",
+            "formed_route_mass",
+            "formed_O_B",
+            "event_queue",
+            "readout_probe"
+          ],
+          "minimum_weakening_delta": 0.01,
+          "observable_relation": "O_B = C_leakage_source - C_formation_source",
+          "organization_domain": "spatial_route_distribution",
+          "organization_observable_id": "n31_B_route_source_contrast_v1",
+          "post_export_rule": "O_B_post <= O_B_formed - minimum_weakening_delta",
+          "route_mass_observable": "M_B = C_formation_source + C_leakage_source",
+          "stronger_weaker_ordering": "larger_O_B_is_stronger"
+        },
+        "positive_candidate_evidence_opened": false,
+        "primary_semantic_class": "B",
+        "producer_DR5_or_DR6_implies_native_DR5_or_DR6": false,
+        "producer_residue": [
+          "producer_owns_export_eligibility_amount_time_and_destination",
+          "native_LGRC_only_executes_conservative_packet_transport"
+        ],
+        "representation_or_authority_class": "producer_mediated",
+        "reusable_contract_status": "not_tested_pending_I10_through_I12",
+        "role_contract": {
+          "export_destination_node_id": 2,
+          "formation_source_node_id": 0,
+          "later_readout_target_node_id": 3,
+          "leakage_source_node_id": 1
+        },
+        "row_decision": "not_applicable",
+        "row_decision_scope_reason": "I9_admission_only_before_candidate_execution",
+        "schema_change_record_id": "n31_i2_schema_freeze",
+        "source_current_input_allowlist": [
+          {
+            "forbidden_adjacent_inputs": [
+              "global_node_scan",
+              "destination_state"
+            ],
+            "historical_depth": "current",
+            "input_path": "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+            "input_role": "C_leakage_source",
+            "load_bearing": true,
+            "read_phase": "one_shot_export_decision",
+            "required_or_optional": "required"
+          },
+          {
+            "forbidden_adjacent_inputs": [],
+            "historical_depth": "current",
+            "input_path": "candidate_policy.C_floor",
+            "input_role": "predeclared_leakage_source_floor",
+            "load_bearing": true,
+            "read_phase": "one_shot_export_decision",
+            "required_or_optional": "required"
+          },
+          {
+            "forbidden_adjacent_inputs": [],
+            "historical_depth": "current",
+            "input_path": "candidate_policy.q_cap",
+            "input_role": "predeclared_export_cap",
+            "load_bearing": true,
+            "read_phase": "one_shot_export_decision",
+            "required_or_optional": "required"
+          },
+          {
+            "forbidden_adjacent_inputs": [
+              "global_event_count",
+              "wall_clock"
+            ],
+            "historical_depth": "one_exact_registered_event",
+            "input_path": "candidate_closure.qualifying_local_event_receipt",
+            "input_role": "exact_local_trigger_receipt",
+            "load_bearing": true,
+            "read_phase": "registered_event_callback",
+            "required_or_optional": "required"
+          },
+          {
+            "forbidden_adjacent_inputs": [],
+            "historical_depth": "restored_current_receipt_state",
+            "input_path": "candidate_closure.export_policy_receipt",
+            "input_role": "restored_one_shot_consumption_state",
+            "load_bearing": true,
+            "read_phase": "before_export_attempt",
+            "required_or_optional": "required"
+          },
+          {
+            "forbidden_adjacent_inputs": [],
+            "historical_depth": "frozen_fixture",
+            "input_path": "candidate_fixture.edge_payloads[1]",
+            "input_role": "registered_export_boundary_and_destination",
+            "load_bearing": true,
+            "read_phase": "fixture_admission",
+            "required_or_optional": "required"
+          },
+          {
+            "forbidden_adjacent_inputs": [],
+            "historical_depth": "frozen_fixture",
+            "input_path": "candidate_fixture.role_to_node_id",
+            "input_role": "formation_leakage_destination_readout_roles",
+            "load_bearing": true,
+            "read_phase": "fixture_admission",
+            "required_or_optional": "required"
+          }
+        ],
+        "source_current_input_policy": {
+          "allowlist_digest": "29e48bd03221117d1f3ea82b4a71753e7033a22e32e90c3fe543bfd81116956d",
+          "global_state_scan_allowed": false,
+          "labels_as_causal_inputs_allowed": false,
+          "outcome_inspection_allowed": false,
+          "unlisted_input_read_status": "blocks_candidate_row"
+        },
+        "source_current_inputs": [
+          "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "candidate_policy.C_floor",
+          "candidate_policy.q_cap",
+          "candidate_closure.qualifying_local_event_receipt",
+          "candidate_closure.export_policy_receipt",
+          "candidate_fixture.edge_payloads[1]",
+          "candidate_fixture.role_to_node_id"
+        ],
+        "source_iteration": "I9",
+        "topology": {
+          "canonical_topology_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+          "edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "edge_payloads": [
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 0,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "formation_source_to_leakage_source"
+              },
+              "source_node_id": 0,
+              "source_port_id": 1,
+              "target_node_id": 1,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 1,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "leakage_source_to_export_destination"
+              },
+              "source_node_id": 1,
+              "source_port_id": 2,
+              "target_node_id": 2,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 2,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "leakage_source_to_later_readout"
+              },
+              "source_node_id": 1,
+              "source_port_id": 3,
+              "target_node_id": 3,
+              "target_port_id": 1
+            }
+          ],
+          "independent_fixture_reconstruction_required": true,
+          "mutable_topology_policy": "frozen_no_topology_mutation",
+          "node_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "node_payloads": [
+            {
+              "node_id": 0,
+              "payload": {
+                "fixture_role": "formation_source"
+              }
+            },
+            {
+              "node_id": 1,
+              "payload": {
+                "fixture_role": "leakage_source"
+              }
+            },
+            {
+              "node_id": 2,
+              "payload": {
+                "fixture_role": "export_destination"
+              }
+            },
+            {
+              "node_id": 3,
+              "payload": {
+                "fixture_role": "later_readout_target"
+              }
+            }
+          ],
+          "node_roles": {
+            "export_destination": 2,
+            "formation_source": 0,
+            "later_readout_target": 3,
+            "leakage_source": 1
+          },
+          "receiver_region": [
+            2
+          ],
+          "registered_route_boundary": [
+            1
+          ],
+          "registered_route_support": [
+            0,
+            1
+          ],
+          "role_to_node_id": {
+            "export_destination": 2,
+            "formation_source": 0,
+            "later_readout_target": 3,
+            "leakage_source": 1
+          },
+          "source_region": [
+            1
+          ],
+          "topology_contract_id": "n31_i9_B_four_node_export_and_readout_v1",
+          "topology_identity_match_rule": "reconstructed_canonical_topology_digest_must_equal_frozen_digest",
+          "topology_signature": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+          "transfer_scope": "route_local_export_to_explicit_destination_excluded_from_readout_path"
+        },
+        "units_by_state": {
+          "C_floor": "coherence",
+          "C_leakage_source": "coherence",
+          "q_cap": "coherence",
+          "q_emit": "coherence"
+        },
+        "update_phase": "registered_local_source_event_before_packet_creation"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "canonical_four_node_topology_reconstructed",
+      "detail": {
+        "contract_fixture_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+        "exact": true,
+        "reconstructed_fixture_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "qualifying_local_event_exact",
+      "detail": {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+        "scheduler_event_index": 2,
+        "source_lineage_id": "n31_B_formation_lineage",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formation_stops_and_relation_restores_before_export",
+      "detail": {
+        "arrival_receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 2,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "baseline_O_B": 0.04999999999999999,
+        "budget_after_formation": {
+          "budget_error": -2.220446049250313e-16,
+          "conserved_budget_total": 1.0499999999999998,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.0499999999999998
+        },
+        "departure_receipt": {
+          "amount": 0.05,
+          "budget_error": 2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+          "event_kind": "lgrc9v3_packet_departure",
+          "event_time_key": 0.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 1,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "formation_activity_stopped_before_export": true,
+        "formation_activity_stopped_derived": true,
+        "formation_effect_O_B": 0.09999999999999998,
+        "formation_effect_gate_passed": true,
+        "formed_O_B": 0.14999999999999997,
+        "minimum_attributable_formation_effect": 0.04,
+        "persistence_scope": {
+          "formation_activity_stopped": true,
+          "scope_ceiling": "post_formation_checkpoint_and_restoration_persistence_only",
+          "snapshot_restoration_persistence": "supported",
+          "unrelated_native_continuation_before_export": "not_run",
+          "unrelated_native_continuation_persistence_claimed": false
+        },
+        "post_formation_identity_v1": "c9492a22e7e85b0882da9b582fc17d564b95bcf38c9331d14fffe78315dc1169",
+        "post_formation_identity_v2": "87b9224c1603e23c1075851a4a57ca53c1d4103004d6858d54343881a08aae4d",
+        "post_formation_restoration_identity_exact": true,
+        "route_after_formation": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "route_before_formation": {
+          "C_formation_source": 0.3,
+          "C_leakage_source": 0.35,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.04999999999999999
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "absolute_formed_route_organization_supported",
+      "detail": {
+        "C_formation_source": 0.25,
+        "C_leakage_source": 0.39999999999999997,
+        "route_mass_M_B": 0.6499999999999999,
+        "route_organization_O_B": 0.14999999999999997
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formation_effect_threshold_bound_to_I9_contract",
+      "detail": {
+        "absolute_formed_organization_minimum_is_descriptive_not_sufficient": 0.04,
+        "expected_formation_effect_O_B": 0.1,
+        "minimum_attributable_formation_effect": 0.04,
+        "observable": "O_B = C_leakage_source - C_formation_source",
+        "rule": "formed_O_B - baseline_O_B >= minimum_attributable_formation_effect",
+        "threshold_source": "I9_candidate.organization_contract.formed_organization_minimum",
+        "threshold_source_value": 0.04
+      },
+      "passed": true
+    },
+    {
+      "check_id": "route_organization_attributably_strengthened_from_baseline",
+      "detail": {
+        "arrival_receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 2,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "baseline_O_B": 0.04999999999999999,
+        "budget_after_formation": {
+          "budget_error": -2.220446049250313e-16,
+          "conserved_budget_total": 1.0499999999999998,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.0499999999999998
+        },
+        "departure_receipt": {
+          "amount": 0.05,
+          "budget_error": 2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+          "event_kind": "lgrc9v3_packet_departure",
+          "event_time_key": 0.0,
+          "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+          "scheduler_event_index": 1,
+          "source_lineage_id": "n31_B_formation_lineage",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "formation_activity_stopped_before_export": true,
+        "formation_activity_stopped_derived": true,
+        "formation_effect_O_B": 0.09999999999999998,
+        "formation_effect_gate_passed": true,
+        "formed_O_B": 0.14999999999999997,
+        "minimum_attributable_formation_effect": 0.04,
+        "persistence_scope": {
+          "formation_activity_stopped": true,
+          "scope_ceiling": "post_formation_checkpoint_and_restoration_persistence_only",
+          "snapshot_restoration_persistence": "supported",
+          "unrelated_native_continuation_before_export": "not_run",
+          "unrelated_native_continuation_persistence_claimed": false
+        },
+        "post_formation_identity_v1": "c9492a22e7e85b0882da9b582fc17d564b95bcf38c9331d14fffe78315dc1169",
+        "post_formation_identity_v2": "87b9224c1603e23c1075851a4a57ca53c1d4103004d6858d54343881a08aae4d",
+        "post_formation_restoration_identity_exact": true,
+        "route_after_formation": {
+          "C_formation_source": 0.25,
+          "C_leakage_source": 0.39999999999999997,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.14999999999999997
+        },
+        "route_before_formation": {
+          "C_formation_source": 0.3,
+          "C_leakage_source": 0.35,
+          "route_mass_M_B": 0.6499999999999999,
+          "route_organization_O_B": 0.04999999999999999
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "positive_bounded_export_emitted",
+      "detail": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.39999999999999997,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.04,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.04,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_positive",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "route_organization_weakened",
+      "detail": {
+        "added_export_policy_present": true,
+        "continuity_closed": true,
+        "naturalization_debt": [
+          "native_route_local_export_policy_missing",
+          "ordinary_D0_R_bridge_unproven"
+        ],
+        "ordinary_post_formation_flux_generated": false,
+        "positive_emitted_amount": true,
+        "producer_authors_aftereffect": true,
+        "producer_residue": [
+          "producer_owns_export_eligibility_amount_time_and_destination",
+          "native_LGRC_only_executes_conservative_packet_transport"
+        ],
+        "route_mass_decrease": 0.039999999999999925,
+        "route_mass_decreased": true,
+        "route_organization_weakened": true,
+        "route_organization_weakening_delta": 0.03999999999999998,
+        "source_debit_packet_amount_destination_credit_match": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "route_boundary_continuity_and_full_conservation_close",
+      "detail": {
+        "added_export_policy_present": true,
+        "continuity_closed": true,
+        "naturalization_debt": [
+          "native_route_local_export_policy_missing",
+          "ordinary_D0_R_bridge_unproven"
+        ],
+        "ordinary_post_formation_flux_generated": false,
+        "positive_emitted_amount": true,
+        "producer_authors_aftereffect": true,
+        "producer_residue": [
+          "producer_owns_export_eligibility_amount_time_and_destination",
+          "native_LGRC_only_executes_conservative_packet_transport"
+        ],
+        "route_mass_decrease": 0.039999999999999925,
+        "route_mass_decreased": true,
+        "route_organization_weakened": true,
+        "route_organization_weakening_delta": 0.03999999999999998,
+        "source_debit_packet_amount_destination_credit_match": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "policy_sweep_matches_bounded_relation",
+      "detail": {
+        "all_rows_match_relation": true,
+        "all_second_calls_refused_state_neutral": true,
+        "output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json",
+        "q_cap_never_exceeded": true,
+        "sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+        "zero_emission_consumes_one_shot_receipt": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "one_shot_receipt_consumption_and_restoration_pass",
+      "detail": {
+        "closure_round_trip_exact": true,
+        "closure_unchanged": true,
+        "native_state_unchanged": true,
+        "second_trigger_operation": "refused_one_shot_receipt_already_consumed",
+        "second_trigger_refused": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unrelated_event_does_not_trigger_export",
+      "detail": {
+        "closure_unchanged": true,
+        "event_queue_empty": true,
+        "producer_call": {
+          "mutated_native_state_paths": [],
+          "one_shot_receipt_already_consumed": false,
+          "operation": "not_triggered_nonqualifying_event",
+          "producer_id": "n31_B_registered_route_local_export_policy_v1",
+          "receipt_matched_exact_predicate": false,
+          "scheduled_events": []
+        },
+        "receipt": {
+          "amount": 0.01,
+          "budget_error": 0.0,
+          "edge_id": 2,
+          "event_id": "lgrc9v3-packet-event-da1c13ed8081e7b9",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-47cfa3fd1c27e94c",
+          "scheduler_event_index": 2,
+          "source_lineage_id": "n31_B_unrelated_lineage",
+          "source_node_id": 1,
+          "target_node_id": 3
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "later_native_readout_depends_on_exported_source_state",
+      "detail": {
+        "all_rejected_readouts_atomic": true,
+        "destination_C_clamps_preserve_export_readout": true,
+        "duplicate_readout_replay_exact": true,
+        "matched_route_mass_loss_without_O_B_weakening_retains_readout": true,
+        "no_export_vs_export_readout_split": true,
+        "output_digest": "6fc6b5b1baa034aa539513ff8a90ef00233addb1053131c61f68fb8c35508d26",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+        "sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e",
+        "source_C_clamps_reverse_readout": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "destination_isolated_from_later_readout",
+      "detail": {
+        "automatic_return_packets_before_readout": 0,
+        "destination_node_id": 2,
+        "destination_on_later_readout_path": false,
+        "destination_originated_events_before_readout": 0,
+        "destination_state_read_by_export_policy": false,
+        "destination_state_read_by_later_admission": false,
+        "later_readout_path": [
+          0,
+          1,
+          3
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "route_mass_loss_not_substituted_for_organization_weakening",
+      "detail": {
+        "all_rejected_readouts_atomic": true,
+        "destination_C_clamps_preserve_export_readout": true,
+        "duplicate_readout_replay_exact": true,
+        "matched_route_mass_loss_without_O_B_weakening_retains_readout": true,
+        "no_export_vs_export_readout_split": true,
+        "output_digest": "6fc6b5b1baa034aa539513ff8a90ef00233addb1053131c61f68fb8c35508d26",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+        "sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e",
+        "source_C_clamps_reverse_readout": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "rejected_readouts_atomic",
+      "detail": {
+        "all_rejected_readouts_atomic": true,
+        "destination_C_clamps_preserve_export_readout": true,
+        "duplicate_readout_replay_exact": true,
+        "matched_route_mass_loss_without_O_B_weakening_retains_readout": true,
+        "no_export_vs_export_readout_split": true,
+        "output_digest": "6fc6b5b1baa034aa539513ff8a90ef00233addb1053131c61f68fb8c35508d26",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+        "sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e",
+        "source_C_clamps_reverse_readout": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_export_and_readout_replay_exact",
+      "detail": {
+        "closure_round_trip_exact": true,
+        "composed_identity": {
+          "artifact_kind": "n31_i9b_composed_candidate_identity",
+          "artifact_schema_version": "n31_i9b_composed_candidate_identity_v1",
+          "components": {
+            "export_closure_identity": "01b757ab395c071597a8ae3d8072c5ebec1ff3f2b7910ccf1ea9bb1598dc6aff",
+            "export_policy_identity": "c452a419f78e814c975339e89f82233c476a584fabc3bc7268c446863987bcfb",
+            "native_restoration_identity_v2": "b62540324d02664e550bd91fb6b6742902a6ebee62d9fc4991bccbabd9430dc4",
+            "topology_contract_identity": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f"
+          },
+          "composed_candidate_identity": "927f49e0cb68e01a961c40a2deb4223db1feef59f4c7aac7b1a8d4d71d370a8b",
+          "generated_at": "2026-07-17T00:00:00+00:00",
+          "output_digest": "39fec662908c3c771728994cc2a141b81bc5392bc1589246d91a5e2ad730f3d7",
+          "wrong_native_closure_policy_or_topology_pairing_changes_identity": true
+        },
+        "composed_transaction_controls": {
+          "all_mismatch_controls_failed_closed": true,
+          "matched_positive_transaction_admitted": true,
+          "output_digest": "c31e5939f2df6e8fa929728c4ef8b7121bc271361ac0e4632fe2f8c2bfe02dba",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_transaction_mismatch_controls.json",
+          "sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab"
+        },
+        "full_I10_replay_matrix_pending": true,
+        "positive_export_duplicate_replay_exact": true,
+        "readout_duplicate_replay_exact": true,
+        "restored_second_trigger_refused_state_neutral": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "composed_receipt_event_mismatches_fail_closed",
+      "detail": {
+        "all_mismatch_controls_failed_closed": true,
+        "matched_positive_transaction_admitted": true,
+        "output_digest": "c31e5939f2df6e8fa929728c4ef8b7121bc271361ac0e4632fe2f8c2bfe02dba",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_transaction_mismatch_controls.json",
+        "sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_ownership_and_input_audit_explicit",
+      "detail": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.39999999999999997,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.04,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.04,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_positive",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ownership_facts_derived_from_calls_and_packet_lineage",
+      "detail": {
+        "added_export_policy_present": true,
+        "debit_transport_credit_owner": "native_LGRC9V3_packet_runtime",
+        "export_amount_owner": "registered_experiment_producer_policy",
+        "export_destination_owner": "registered_experiment_producer_policy",
+        "export_time_owner": "registered_experiment_producer_policy",
+        "native_export_packet_record_count": 1,
+        "ordinary_post_formation_flux_generated": false,
+        "ordinary_post_formation_flux_packet_count": 0,
+        "post_formation_producer_call_count": 1,
+        "producer_authors_aftereffect": true,
+        "producer_mutated_native_state_paths": [],
+        "producer_scheduled_event_count": 1
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_current_input_allowlist_exact",
+      "detail": {
+        "declared_input_paths": [
+          "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "candidate_policy.C_floor",
+          "candidate_policy.q_cap",
+          "candidate_closure.qualifying_local_event_receipt",
+          "candidate_closure.export_policy_receipt",
+          "candidate_fixture.edge_payloads[1]",
+          "candidate_fixture.role_to_node_id"
+        ],
+        "destination_state_read_by_export_policy": false,
+        "edge_payload_use": "fixture_identity_validation_only_not_amount_policy",
+        "exact_allowlist_match": true,
+        "global_node_scan_performed": false,
+        "observed_input_paths": [
+          "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "candidate_policy.C_floor",
+          "candidate_policy.q_cap",
+          "candidate_closure.qualifying_local_event_receipt",
+          "candidate_closure.export_policy_receipt",
+          "candidate_fixture.edge_payloads[1]",
+          "candidate_fixture.role_to_node_id"
+        ],
+        "outcome_history_read": false,
+        "semantic_edge_payload_read_by_export_policy": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "B_R_not_promoted_to_D0_R",
+      "detail": {
+        "added_export_policy_present": true,
+        "continuity_closed": true,
+        "naturalization_debt": [
+          "native_route_local_export_policy_missing",
+          "ordinary_D0_R_bridge_unproven"
+        ],
+        "ordinary_post_formation_flux_generated": false,
+        "positive_emitted_amount": true,
+        "producer_authors_aftereffect": true,
+        "producer_residue": [
+          "producer_owns_export_eligibility_amount_time_and_destination",
+          "native_LGRC_only_executes_conservative_packet_transport"
+        ],
+        "route_mass_decrease": 0.039999999999999925,
+        "route_mass_decreased": true,
+        "route_organization_weakened": true,
+        "route_organization_weakening_delta": 0.03999999999999998,
+        "source_debit_packet_amount_destination_credit_match": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "selected_candidate_controls_pass_without_failed_open",
+      "detail": {
+        "complete_control_count": 60,
+        "direct_I3_null_consumption_count": 0,
+        "failed_open_count": 0,
+        "inherited_control_count_resolved_here": 8,
+        "lane_specific_control_count": 8,
+        "resolved_complete_control_count": 16,
+        "resolved_complete_controls": "16 / 60",
+        "unresolved_control_ids": [
+          "label_only_decay",
+          "wall_clock_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "global_route_selector",
+          "hidden_producer_update",
+          "unrecorded_post_formation_producer_call",
+          "missing_internal_time_owner",
+          "missing_invariant",
+          "missing_restoration_state",
+          "report_digest_as_runtime_state",
+          "native_relabel_from_producer",
+          "RCAE_demand_as_graph_evidence",
+          "trail_or_stigmergy_relabel",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "producer_scheduled_D0_decay",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formal_recursive_candidate_row_pending_I10",
+      "detail": {
+        "complete_control_count": 60,
+        "direct_I3_null_consumption_count": 0,
+        "failed_open_count": 0,
+        "inherited_control_count_resolved_here": 8,
+        "lane_specific_control_count": 8,
+        "resolved_complete_control_count": 16,
+        "resolved_complete_controls": "16 / 60",
+        "unresolved_control_ids": [
+          "label_only_decay",
+          "wall_clock_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "global_route_selector",
+          "hidden_producer_update",
+          "unrecorded_post_formation_producer_call",
+          "missing_internal_time_owner",
+          "missing_invariant",
+          "missing_restoration_state",
+          "report_digest_as_runtime_state",
+          "native_relabel_from_producer",
+          "RCAE_demand_as_graph_evidence",
+          "trail_or_stigmergy_relabel",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "producer_scheduled_D0_decay",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "pre_outcome_B_R_export_and_readout_contract",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_preregistration.json",
+          "sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987"
+        },
+        {
+          "artifact_role": "complete_native_post_formation_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_post_formation_snapshot.json",
+          "sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01"
+        },
+        {
+          "artifact_role": "complete_native_post_export_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_final_snapshot.json",
+          "sha256": "d18f9a92d097384ca8793f06ec985de192f52d0994bc0c328a0c05032638c0ce"
+        },
+        {
+          "artifact_role": "versioned_one_shot_export_policy_receipt_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_closure_state.json",
+          "sha256": "c99abe6a2bbeb6754e7ab19508c47542758c51656b97446a3a62cab8375013cb"
+        },
+        {
+          "artifact_role": "bounded_export_amount_and_one_shot_control_matrix",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json",
+          "sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f"
+        },
+        {
+          "artifact_role": "organization_mediation_and_destination_isolation_matrix",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+          "sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e"
+        },
+        {
+          "artifact_role": "native_closure_policy_topology_composed_identity",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_candidate_identity.json",
+          "sha256": "bb44ab0534781b8e7fbdaa4a9039515d56ec3dc022330e560fd7aa629bbc528e"
+        },
+        {
+          "artifact_role": "closure_receipt_native_event_mismatch_fail_closed_matrix",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_transaction_mismatch_controls.json",
+          "sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "control_resolution": {
+    "complete_control_count": 60,
+    "direct_I3_null_consumption_count": 0,
+    "failed_open_count": 0,
+    "inherited_control_count_resolved_here": 8,
+    "lane_specific_control_count": 8,
+    "resolved_complete_control_count": 16,
+    "resolved_complete_controls": "16 / 60",
+    "unresolved_control_ids": [
+      "label_only_decay",
+      "wall_clock_decay",
+      "post_hoc_weakening_trace",
+      "forming_activity_never_stopped",
+      "relation_persists_but_does_not_weaken",
+      "global_route_selector",
+      "hidden_producer_update",
+      "unrecorded_post_formation_producer_call",
+      "missing_internal_time_owner",
+      "missing_invariant",
+      "missing_restoration_state",
+      "report_digest_as_runtime_state",
+      "native_relabel_from_producer",
+      "RCAE_demand_as_graph_evidence",
+      "trail_or_stigmergy_relabel",
+      "lossy_node_scalar_match_as_complete_state",
+      "invented_C_slow_state",
+      "producer_scheduled_D0_decay",
+      "instantaneous_geometry_as_durable_decay",
+      "derived_observable_as_causal_trail",
+      "cache_removed_and_recomputed",
+      "cache_divergence",
+      "observable_disconnected_from_transport",
+      "slow_organization_clamp",
+      "complete_state_matched_history_contrast",
+      "ordinary_outward_flux_as_added_leakage_relabel",
+      "mass_unmatched_organization_intervention",
+      "proper_time_annotation_as_causal_alignment",
+      "added_coincidence_window_as_native_temporal_organization",
+      "arrival_histogram_as_causal_mediation",
+      "fixed_delay_single_path_as_dispersion",
+      "periodic_rephasing_as_monotonic_decay",
+      "diagnostic_domain_as_mediator_domain",
+      "mixed_domain_without_load_bearing_isolation",
+      "temporal_intervention_with_unmatched_state",
+      "geometric_observable_without_local_transport_intervention",
+      "bounded_partial_disposition_with_supported_row_decision",
+      "blocked_representation_with_supported_row_decision",
+      "full_mediation_with_false_mediated_change",
+      "absent_mediation_with_true_mediated_change",
+      "mixed_domain_unresolved_claims_DR4",
+      "blocked_D0a_authority_as_coherence_only_positive",
+      "D0c_persistence_retained_as_same_D0c_row",
+      "D0b_transport_feedback_without_authority_reclassification"
+    ]
+  },
+  "control_results": [
+    {
+      "actual_result": "export and no-export branches split the later native readout",
+      "blocked_condition": "relation_weakens_but_has_no_later_readout_effect",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "relation_weakens_but_has_no_later_readout_effect",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_DR4",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "formation and export queues are empty before later readout",
+      "blocked_condition": "forming_packet_continuation_as_later_independent_readout",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "forming_packet_continuation_as_later_independent_readout",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_DR4",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "producer scheduling authors B-R export and is not relabeled D0-R",
+      "blocked_condition": "export_authoring_producer_call_retained_as_D0_R",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "export_authoring_producer_call_retained_as_D0_R",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_semantic_classification",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "matched route-mass loss leaves O_B unchanged and retains readout",
+      "blocked_condition": "route_mass_loss_as_organization_weakening_relabel",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "route_mass_loss_as_organization_weakening_relabel",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_DR3_plus",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "source-C clamp reverses the later departure-admission result",
+      "blocked_condition": "organization_weakening_without_mediation_as_causal_decay_relabel",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "organization_weakening_without_mediation_as_causal_decay_relabel",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_DR4",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "positive export decreases route mass and credits an explicit destination",
+      "blocked_condition": "constant_mass_internal_reorganization_as_export_relabel",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "constant_mass_internal_reorganization_as_export_relabel",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "route mass loss equals edge-1 packet amount and destination credit",
+      "blocked_condition": "unclosed_route_boundary_continuity",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "unclosed_route_boundary_continuity",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "added export policy is retained as B-R with producer residue",
+      "blocked_condition": "added_export_policy_as_D0_R_relabel",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "added_export_policy_as_D0_R_relabel",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_D0_R_relabel",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "source debit closes to native packet and explicit destination credit",
+      "blocked_condition": "local_loss_without_destination",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "local_loss_without_destination",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "all three quantities equal 0.04 within tolerance",
+      "blocked_condition": "source_debit_packet_amount_target_credit_mismatch",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "source_debit_packet_amount_target_credit_mismatch",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "all four nodes plus in-flight packet close the budget",
+      "blocked_condition": "hidden_reservoir",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "hidden_reservoir",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "export remains producer-owned B-R and D0-R bridge remains not tested",
+      "blocked_condition": "new_leakage_policy_as_ordinary_D0_relabel",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "new_leakage_policy_as_ordinary_D0_relabel",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_semantic_classification",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "only the exact local formation-arrival receipt triggers the one-shot policy",
+      "blocked_condition": "global_emission_scheduler",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "global_emission_scheduler",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "five-point source-C sweep never exceeds q_cap or source excess",
+      "blocked_condition": "unbounded_emitted_amount",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "unbounded_emitted_amount",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_B_R_support",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "destination node 2 has no event or state dependency on path 0-1-3",
+      "blocked_condition": "receiver_in_later_read_path",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "receiver_in_later_read_path",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_DR4",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "ordinary D0-R analogue remains explicitly not tested",
+      "blocked_condition": "B_R_as_D0_R_without_bridge",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "B_R_as_D0_R_without_bridge",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_D0_R_relabel",
+      "scope_reason_if_not_applicable": null
+    }
+  ],
+  "derived_report_only": false,
+  "destination_isolation": {
+    "automatic_return_packets_before_readout": 0,
+    "destination_node_id": 2,
+    "destination_on_later_readout_path": false,
+    "destination_originated_events_before_readout": 0,
+    "destination_state_read_by_export_policy": false,
+    "destination_state_read_by_later_admission": false,
+    "later_readout_path": [
+      0,
+      1,
+      3
+    ]
+  },
+  "experiment": "N31",
+  "export_measurements": {
+    "added_export_policy_present": true,
+    "continuity_closed": true,
+    "naturalization_debt": [
+      "native_route_local_export_policy_missing",
+      "ordinary_D0_R_bridge_unproven"
+    ],
+    "ordinary_post_formation_flux_generated": false,
+    "positive_emitted_amount": true,
+    "producer_authors_aftereffect": true,
+    "producer_residue": [
+      "producer_owns_export_eligibility_amount_time_and_destination",
+      "native_LGRC_only_executes_conservative_packet_transport"
+    ],
+    "route_mass_decrease": 0.039999999999999925,
+    "route_mass_decreased": true,
+    "route_organization_weakened": true,
+    "route_organization_weakening_delta": 0.03999999999999998,
+    "source_debit_packet_amount_destination_credit_match": true
+  },
+  "failed_checks": [],
+  "formal_candidate_row_pending_I10": true,
+  "formation": {
+    "arrival_receipt": {
+      "amount": 0.05,
+      "budget_error": -2.220446049250313e-16,
+      "edge_id": 0,
+      "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 1.0,
+      "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+      "scheduler_event_index": 2,
+      "source_lineage_id": "n31_B_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    "baseline_O_B": 0.04999999999999999,
+    "budget_after_formation": {
+      "budget_error": -2.220446049250313e-16,
+      "conserved_budget_total": 1.0499999999999998,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.0499999999999998
+    },
+    "departure_receipt": {
+      "amount": 0.05,
+      "budget_error": 2.220446049250313e-16,
+      "edge_id": 0,
+      "event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 0.0,
+      "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+      "scheduler_event_index": 1,
+      "source_lineage_id": "n31_B_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    "formation_activity_stopped_before_export": true,
+    "formation_activity_stopped_derived": true,
+    "formation_effect_O_B": 0.09999999999999998,
+    "formation_effect_gate_passed": true,
+    "formed_O_B": 0.14999999999999997,
+    "minimum_attributable_formation_effect": 0.04,
+    "persistence_scope": {
+      "formation_activity_stopped": true,
+      "scope_ceiling": "post_formation_checkpoint_and_restoration_persistence_only",
+      "snapshot_restoration_persistence": "supported",
+      "unrelated_native_continuation_before_export": "not_run",
+      "unrelated_native_continuation_persistence_claimed": false
+    },
+    "post_formation_identity_v1": "c9492a22e7e85b0882da9b582fc17d564b95bcf38c9331d14fffe78315dc1169",
+    "post_formation_identity_v2": "87b9224c1603e23c1075851a4a57ca53c1d4103004d6858d54343881a08aae4d",
+    "post_formation_restoration_identity_exact": true,
+    "route_after_formation": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.39999999999999997,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.14999999999999997
+    },
+    "route_before_formation": {
+      "C_formation_source": 0.3,
+      "C_leakage_source": 0.35,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.04999999999999999
+    }
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "9-B",
+  "mediation_contract": {
+    "destination_C_mediation_rejected": true,
+    "full_complete_state_mediation": false,
+    "leakage_source_C_mediates_departure_eligibility": true,
+    "load_bearing_readout": "native_departure_admission_only",
+    "mediation_strength": "bounded_partial_local_leakage_source_C",
+    "other_continuation_state_matched": "false_with_declared_mass_compensators"
+  },
+  "native_transport_authority": "LGRC9V3_packet_runtime",
+  "output_digest": "65ac1e3a81788fdfc9abdad7ff9398b3308ffc55e9801cce829b249f7238a454",
+  "policy_ownership_derivation": {
+    "added_export_policy_present": true,
+    "debit_transport_credit_owner": "native_LGRC9V3_packet_runtime",
+    "export_amount_owner": "registered_experiment_producer_policy",
+    "export_destination_owner": "registered_experiment_producer_policy",
+    "export_time_owner": "registered_experiment_producer_policy",
+    "native_export_packet_record_count": 1,
+    "ordinary_post_formation_flux_generated": false,
+    "ordinary_post_formation_flux_packet_count": 0,
+    "post_formation_producer_call_count": 1,
+    "producer_authors_aftereffect": true,
+    "producer_mutated_native_state_paths": [],
+    "producer_scheduled_event_count": 1
+  },
+  "policy_sweep": {
+    "all_rows_match_relation": true,
+    "all_second_calls_refused_state_neutral": true,
+    "output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json",
+    "q_cap_never_exceeded": true,
+    "sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+    "zero_emission_consumes_one_shot_receipt": true
+  },
+  "positive_export": {
+    "arrival_receipt": {
+      "amount": 0.04,
+      "budget_error": 0.0,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-f8e01d29cc565d73",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 3.0,
+      "packet_id": "lgrc9v3-packet-254f88df02207729",
+      "scheduler_event_index": 4,
+      "source_lineage_id": "n31_B_export_positive",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "automatic_return_packet_count": 0,
+    "branch_id": "n31_i9b_export_positive",
+    "budget_after": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.05,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.05
+    },
+    "budget_before": {
+      "budget_error": -2.220446049250313e-16,
+      "conserved_budget_total": 1.0499999999999998,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.0499999999999998
+    },
+    "budget_in_flight": {
+      "budget_error": 2.220446049250313e-16,
+      "conserved_budget_total": 1.05,
+      "in_flight_packet_total": 0.04,
+      "node_coherence_total": 1.01
+    },
+    "budget_scheduled": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.0499999999999998,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.0499999999999998
+    },
+    "closure_after": {
+      "artifact_kind": "n31_B_one_shot_export_closure_state",
+      "artifact_schema_version": "n31_B_one_shot_export_closure_state_v1",
+      "export_policy_receipt": {
+        "C_floor": 0.2,
+        "destination_node_id": 2,
+        "edge_id": 1,
+        "one_shot_consumed": true,
+        "producer_call_index": 1,
+        "q_cap": 0.04,
+        "q_emit": 0.04,
+        "receipt_schema": "n31_B_export_policy_receipt_v1",
+        "source_C_at_decision": 0.39999999999999997,
+        "source_node_id": 1,
+        "trigger_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40"
+      },
+      "global_event_count_state_present": false,
+      "producer_call_count": 1,
+      "qualifying_local_event_receipt": {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+        "scheduler_event_index": 2,
+        "source_lineage_id": "n31_B_formation_lineage",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      "wall_clock_state_present": false
+    },
+    "closure_before": {
+      "artifact_kind": "n31_B_one_shot_export_closure_state",
+      "artifact_schema_version": "n31_B_one_shot_export_closure_state_v1",
+      "export_policy_receipt": null,
+      "global_event_count_state_present": false,
+      "producer_call_count": 0,
+      "qualifying_local_event_receipt": {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+        "scheduler_event_index": 2,
+        "source_lineage_id": "n31_B_formation_lineage",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      "wall_clock_state_present": false
+    },
+    "departure_receipt": {
+      "amount": 0.04,
+      "budget_error": 2.220446049250313e-16,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-c03e5c3d5b5d921b",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-254f88df02207729",
+      "scheduler_event_index": 3,
+      "source_lineage_id": "n31_B_export_positive",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "destination_credit": 0.04000000000000001,
+    "destination_originated_event_count": 0,
+    "event_queue_empty_after_export": true,
+    "export_packet_records": [
+      {
+        "amount": 0.04,
+        "arrival_event_id": "lgrc9v3-packet-event-f8e01d29cc565d73",
+        "arrival_event_time_key": 3.0,
+        "arrival_scheduler_event_index": 4,
+        "departure_event_id": "lgrc9v3-packet-event-c03e5c3d5b5d921b",
+        "departure_event_time_key": 2.0,
+        "departure_scheduler_event_index": 3,
+        "edge_id": 1,
+        "packet_id": "lgrc9v3-packet-254f88df02207729",
+        "packet_state": "arrived",
+        "source_lineage_id": "n31_B_export_positive",
+        "source_node_id": 1,
+        "target_lineage_id": "n31_B_explicit_export_destination",
+        "target_node_id": 2
+      }
+    ],
+    "native_identity_before_export": {
+      "v1": "c9492a22e7e85b0882da9b582fc17d564b95bcf38c9331d14fffe78315dc1169",
+      "v2": "87b9224c1603e23c1075851a4a57ca53c1d4103004d6858d54343881a08aae4d"
+    },
+    "node_C_after": {
+      "0": 0.25,
+      "1": 0.36,
+      "2": 0.24000000000000002,
+      "3": 0.2
+    },
+    "node_C_before": {
+      "0": 0.25,
+      "1": 0.39999999999999997,
+      "2": 0.2,
+      "3": 0.2
+    },
+    "ordinary_post_formation_flux_packet_count": 0,
+    "packet_after_arrival": {
+      "amount": 0.04,
+      "arrival_event_id": "lgrc9v3-packet-event-f8e01d29cc565d73",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-c03e5c3d5b5d921b",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-254f88df02207729",
+      "packet_state": "arrived",
+      "source_lineage_id": "n31_B_export_positive",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_B_explicit_export_destination",
+      "target_node_id": 2
+    },
+    "packet_after_departure": {
+      "amount": 0.04,
+      "arrival_event_id": "lgrc9v3-packet-event-f8e01d29cc565d73",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-c03e5c3d5b5d921b",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-254f88df02207729",
+      "packet_state": "in_flight",
+      "source_lineage_id": "n31_B_export_positive",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_B_explicit_export_destination",
+      "target_node_id": 2
+    },
+    "packet_records_after_export": [
+      {
+        "amount": 0.05,
+        "arrival_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+        "arrival_event_time_key": 1.0,
+        "arrival_scheduler_event_index": 2,
+        "departure_event_id": "lgrc9v3-packet-event-64b92fc6755504b9",
+        "departure_event_time_key": 0.0,
+        "departure_scheduler_event_index": 1,
+        "edge_id": 0,
+        "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+        "packet_state": "arrived",
+        "source_lineage_id": "n31_B_formation_lineage",
+        "source_node_id": 0,
+        "target_lineage_id": "n31_B_leakage_source_lineage",
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.04,
+        "arrival_event_id": "lgrc9v3-packet-event-f8e01d29cc565d73",
+        "arrival_event_time_key": 3.0,
+        "arrival_scheduler_event_index": 4,
+        "departure_event_id": "lgrc9v3-packet-event-c03e5c3d5b5d921b",
+        "departure_event_time_key": 2.0,
+        "departure_scheduler_event_index": 3,
+        "edge_id": 1,
+        "packet_id": "lgrc9v3-packet-254f88df02207729",
+        "packet_state": "arrived",
+        "source_lineage_id": "n31_B_export_positive",
+        "source_node_id": 1,
+        "target_lineage_id": "n31_B_explicit_export_destination",
+        "target_node_id": 2
+      }
+    ],
+    "packet_scheduled": true,
+    "producer_call": {
+      "destination_state_read": false,
+      "global_node_scan_performed": false,
+      "mutated_native_state_paths": [],
+      "native_runtime_owns_debit_transport_and_credit": true,
+      "one_shot_receipt_already_consumed": false,
+      "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+      "outcome_history_read": false,
+      "policy_inputs": {
+        "C_floor": 0.2,
+        "C_leakage_source": 0.39999999999999997,
+        "one_shot_consumed_before_call": false,
+        "q_cap": 0.04,
+        "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+        "registered_destination_node_id": 2,
+        "registered_export_edge_id": 1
+      },
+      "producer_authors_export_amount_time_and_destination": true,
+      "producer_id": "n31_B_registered_route_local_export_policy_v1",
+      "q_emit": 0.04,
+      "receipt_matched_exact_predicate": true,
+      "scheduled_events": [
+        {
+          "amount": 0.04,
+          "arrival_event_time_key": 3.0,
+          "departure_event_time_key": 2.0,
+          "edge_id": 1,
+          "lineage_id": "n31_B_export_positive",
+          "source_node_id": 1,
+          "target_node_id": 2
+        }
+      ],
+      "semantic_edge_payload_read": false,
+      "unlisted_input_read": false,
+      "wall_clock_read": false
+    },
+    "q_emit": 0.04,
+    "route_after": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.36,
+      "route_mass_M_B": 0.61,
+      "route_organization_O_B": 0.10999999999999999
+    },
+    "route_before": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.39999999999999997,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.14999999999999997
+    },
+    "source_debit": 0.03999999999999998
+  },
+  "preregistration": {
+    "output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_preregistration.json",
+    "sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987"
+  },
+  "producer_read_audit": {
+    "destination_state_read": false,
+    "global_node_scan_performed": false,
+    "mutated_native_state_paths": [],
+    "native_runtime_owns_debit_transport_and_credit": true,
+    "one_shot_receipt_already_consumed": false,
+    "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+    "outcome_history_read": false,
+    "policy_inputs": {
+      "C_floor": 0.2,
+      "C_leakage_source": 0.39999999999999997,
+      "one_shot_consumed_before_call": false,
+      "q_cap": 0.04,
+      "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+      "registered_destination_node_id": 2,
+      "registered_export_edge_id": 1
+    },
+    "producer_authors_export_amount_time_and_destination": true,
+    "producer_id": "n31_B_registered_route_local_export_policy_v1",
+    "q_emit": 0.04,
+    "receipt_matched_exact_predicate": true,
+    "scheduled_events": [
+      {
+        "amount": 0.04,
+        "arrival_event_time_key": 3.0,
+        "departure_event_time_key": 2.0,
+        "edge_id": 1,
+        "lineage_id": "n31_B_export_positive",
+        "source_node_id": 1,
+        "target_node_id": 2
+      }
+    ],
+    "semantic_edge_payload_read": false,
+    "unlisted_input_read": false,
+    "wall_clock_read": false
+  },
+  "readout_and_interventions": {
+    "all_rejected_readouts_atomic": true,
+    "destination_C_clamps_preserve_export_readout": true,
+    "duplicate_readout_replay_exact": true,
+    "matched_route_mass_loss_without_O_B_weakening_retains_readout": true,
+    "no_export_vs_export_readout_split": true,
+    "output_digest": "6fc6b5b1baa034aa539513ff8a90ef00233addb1053131c61f68fb8c35508d26",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+    "sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e",
+    "source_C_clamps_reverse_readout": true
+  },
+  "relation_authority": "producer_mediated",
+  "relative_effect_scales": {
+    "export_readout_rejection_margin": 0.010000000000000009,
+    "minimum_readout_margin": 0.010000000000000009,
+    "minimum_readout_margin_fraction_of_probe": 0.027027027027027053,
+    "no_export_readout_hold_margin": 0.02999999999999997,
+    "organization_weakening_fraction_of_formed_O_B": 0.2666666666666666,
+    "route_mass_export_fraction": 0.06153846153846143,
+    "source_debit_fraction": 0.09999999999999996
+  },
+  "replay_and_identity": {
+    "closure_round_trip_exact": true,
+    "composed_identity": {
+      "artifact_kind": "n31_i9b_composed_candidate_identity",
+      "artifact_schema_version": "n31_i9b_composed_candidate_identity_v1",
+      "components": {
+        "export_closure_identity": "01b757ab395c071597a8ae3d8072c5ebec1ff3f2b7910ccf1ea9bb1598dc6aff",
+        "export_policy_identity": "c452a419f78e814c975339e89f82233c476a584fabc3bc7268c446863987bcfb",
+        "native_restoration_identity_v2": "b62540324d02664e550bd91fb6b6742902a6ebee62d9fc4991bccbabd9430dc4",
+        "topology_contract_identity": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f"
+      },
+      "composed_candidate_identity": "927f49e0cb68e01a961c40a2deb4223db1feef59f4c7aac7b1a8d4d71d370a8b",
+      "generated_at": "2026-07-17T00:00:00+00:00",
+      "output_digest": "39fec662908c3c771728994cc2a141b81bc5392bc1589246d91a5e2ad730f3d7",
+      "wrong_native_closure_policy_or_topology_pairing_changes_identity": true
+    },
+    "composed_transaction_controls": {
+      "all_mismatch_controls_failed_closed": true,
+      "matched_positive_transaction_admitted": true,
+      "output_digest": "c31e5939f2df6e8fa929728c4ef8b7121bc271361ac0e4632fe2f8c2bfe02dba",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_transaction_mismatch_controls.json",
+      "sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab"
+    },
+    "full_I10_replay_matrix_pending": true,
+    "positive_export_duplicate_replay_exact": true,
+    "readout_duplicate_replay_exact": true,
+    "restored_second_trigger_refused_state_neutral": true
+  },
+  "restoration_control": {
+    "closure_round_trip_exact": true,
+    "closure_unchanged": true,
+    "native_state_unchanged": true,
+    "second_trigger_operation": "refused_one_shot_receipt_already_consumed",
+    "second_trigger_refused": true
+  },
+  "route_boundary_accounting": {
+    "continuity_closed": true,
+    "destination_credit": 0.04000000000000001,
+    "explicit_destination_node_id": 2,
+    "registered_route_boundary_edge_id": 1,
+    "registered_route_support": [
+      0,
+      1
+    ],
+    "route_mass_after": 0.61,
+    "route_mass_before": 0.6499999999999999,
+    "route_mass_decrease": 0.039999999999999925,
+    "signed_net_outward_packet_amount": 0.04
+  },
+  "semantic_class": "B",
+  "semantic_subtype": "B_R_conserved_export_policy",
+  "source_current_input_audit": {
+    "declared_input_paths": [
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+      "candidate_policy.C_floor",
+      "candidate_policy.q_cap",
+      "candidate_closure.qualifying_local_event_receipt",
+      "candidate_closure.export_policy_receipt",
+      "candidate_fixture.edge_payloads[1]",
+      "candidate_fixture.role_to_node_id"
+    ],
+    "destination_state_read_by_export_policy": false,
+    "edge_payload_use": "fixture_identity_validation_only_not_amount_policy",
+    "exact_allowlist_match": true,
+    "global_node_scan_performed": false,
+    "observed_input_paths": [
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+      "candidate_policy.C_floor",
+      "candidate_policy.q_cap",
+      "candidate_closure.qualifying_local_event_receipt",
+      "candidate_closure.export_policy_receipt",
+      "candidate_fixture.edge_payloads[1]",
+      "candidate_fixture.role_to_node_id"
+    ],
+    "outcome_history_read": false,
+    "semantic_edge_payload_read_by_export_policy": false,
+    "unlisted_input_read": false,
+    "wall_clock_read": false
+  },
+  "source_current_runtime_artifact": true,
+  "source_current_trace_evidence_only": true,
+  "status": "passed",
+  "topology_audit": {
+    "contract_fixture_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+    "exact": true,
+    "reconstructed_fixture_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f"
+  },
+  "unrelated_event_control": {
+    "closure_unchanged": true,
+    "event_queue_empty": true,
+    "producer_call": {
+      "mutated_native_state_paths": [],
+      "one_shot_receipt_already_consumed": false,
+      "operation": "not_triggered_nonqualifying_event",
+      "producer_id": "n31_B_registered_route_local_export_policy_v1",
+      "receipt_matched_exact_predicate": false,
+      "scheduled_events": []
+    },
+    "receipt": {
+      "amount": 0.01,
+      "budget_error": 0.0,
+      "edge_id": 2,
+      "event_id": "lgrc9v3-packet-event-da1c13ed8081e7b9",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 1.0,
+      "packet_id": "lgrc9v3-packet-47cfa3fd1c27e94c",
+      "scheduler_event_index": 2,
+      "source_lineage_id": "n31_B_unrelated_lineage",
+      "source_node_id": 1,
+      "target_node_id": 3
+    }
+  }
+}

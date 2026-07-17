@@ -159,6 +159,37 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_release_efficacy_downstream_readout_i9a1.py
 ```
 
+## Iteration 9-B
+
+- `build_n31_conserved_leakage_i9b.py` reconstructs Candidate B's frozen
+  four-node topology, executes the exact local trigger and bounded one-shot
+  producer policy, carries export through native packet mechanics, audits route
+  boundary conservation, separates baseline organization from attributable
+  formation effect, runs policy/organization/destination/readout and composed
+  transaction controls, restores the composite lifecycle, and emits provisional
+  `B-R / DR4` without upgrading ordinary `D0-R` or the native lane.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_conserved_leakage_i9b.py
+```
+
+## Iteration 9-B.1
+
+- `build_n31_conserved_leakage_response_i9b1.py` consumes exact I9-B artifacts
+  and implementation, reconstructs attributable formation, processes a
+  disjoint native persistence trial, executes four fixed-policy export levels,
+  enforces response-row diff whitelists and zero-export receipts, retains I9-B
+  revision lineage, and maps paired native admission-boundary shifts without
+  adding a producer or raising the provisional `DR4` ceiling.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_conserved_leakage_response_i9b1.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

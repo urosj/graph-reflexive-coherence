@@ -1169,6 +1169,160 @@ conservation and distinguish B-R policy ownership from ordinary D0-R flux.
 Bound emitted amount by available source excess and exclude receiver state from
 the later read path during the registered probe window.
 
+I9-B reconstructs the exact four-node I9 contract:
+
+```text
+node 0 = formation source
+node 1 = leakage source
+node 2 = explicit export destination
+node 3 = later readout target
+
+formation path = 0 -> 1
+producer-owned export = 1 -> 2
+later native readout = 1 -> 3
+```
+
+The source-current route organization is
+`O_B = C_leakage_source - C_formation_source`, and route mass is
+`M_B = C_formation_source + C_leakage_source`. Before formation, the fixture has
+`C_0=0.30`, `C_1=0.35`, and `O_B=0.05`. A `0.05` native formation packet
+strengthens that existing contrast to `C_0=0.25`, `C_1=0.40`, `O_B=0.15`, and
+`M_B=0.65`. The attributable formation effect is therefore `0.10`, not `0.15`,
+and it passes a separately preregistered minimum-effect gate of `0.04`. The I9
+absolute formed-organization minimum remains descriptive and cannot establish
+formation attribution by itself. After the formation
+packet is complete and the queue is empty, its exact local arrival receipt
+admits one producer call under the predeclared rule:
+
+```text
+q_emit = min(0.04, max(0, C_1 - 0.20))
+```
+
+The producer owns eligibility, amount, event time, and destination selection.
+It schedules one packet but does not mutate node coherence directly. Native
+LGRC owns source debit, in-flight transport, and destination credit. The
+positive row emits `0.04`, leaves `C_1=0.36`, weakens `O_B` from `0.15` to
+`0.11`, and lowers route mass from `0.65` to `0.61`. Source debit, packet
+amount, signed route-boundary outflow, route-mass decrease, and destination
+credit all equal `0.04` within tolerance.
+
+The later readout uses a distinct native departure request from node 1 to node
+3 at `q=0.37`, after formation and export packets have completed. The no-export
+branch admits the request at `C_1=0.40`; the export branch rejects it at
+`C_1=0.36`. Balanced source-C clamps reverse the result. Balanced destination-C
+clamps preserve the export result, and node 2 emits no event or return packet.
+This supports bounded partial mediation of departure admission by local source
+coherence; it does not support complete-state mediation.
+
+A matched diagnostic control removes the same `0.04` route mass symmetrically
+from nodes 0 and 1 and credits node 2. It preserves `O_B=0.15` and the later
+readout. Route-mass loss therefore cannot substitute for route-organization
+weakening. The observed weakening is about `26.7%` of formed `O_B`; exported
+mass is about `6.15%` of formed route mass; and the minimum readout margin is
+`0.01`, about `2.7%` of the readout packet amount.
+
+The policy sweep covers below-floor, floor, uncapped, and capped source states.
+Zero-emission attempts still consume the one-shot receipt; repeated and
+restored second triggers are refused without changing native or closure state.
+An unrelated native arrival does not trigger export. Closure, native state,
+policy, and topology are bound into one composed identity.
+
+Persistence is scoped exactly: I9-B shows the formed relation after formation
+activity stops at a source-current checkpoint and across v1/v2 restoration. It
+does not claim survival through an unrelated native continuation before the
+export callback. Composed-transaction controls admit the matched closure
+receipt and native export packet while rejecting consumed-without-packet,
+unconsumed-with-packet, amount-mismatch, and destination-mismatch pairings.
+
+The I9-B ceiling is provisional producer-mediated `B-R / DR4`. `D0-R` remains
+`not_tested`: no ordinary native post-formation flux produced the export, and
+conservation does not erase producer ownership. `DR5` remains pending the
+formal recursive candidate row and complete I10 replay/control matrix. I10 must
+also retain a native readout threshold sweep at `0.35`, `0.36`, `0.37`, `0.38`,
+`0.40`, and `0.41`; the current `0.01` minimum split margin is valid but narrow.
+
+### Iteration 9-B.1 - Formation Attribution And Bounded Export Response Shape
+
+Strengthen Candidate B without raising its rung or adding another producer.
+I9-B.1 keeps the exact four-node topology, one-shot export implementation,
+`C_floor=0.20`, and `q_cap=0.04` from I9-B.
+
+First, reconstruct formation from the original fixture and retain the complete
+attribution sequence:
+
+```text
+baseline O_B = 0.05
+formed O_B = 0.15
+formation effect = 0.10
+minimum attributable effect = 0.04
+```
+
+Second, strengthen persistence beyond a static checkpoint. After formation is
+exhausted and restored, process one experiment-scheduled native causal
+boundary-birth trial on disjoint destination node 2 with zero outward pressure.
+The trial advances LGRC scheduler/checkpoint state but emits no topology event,
+mutates no topology, invokes no Candidate B export, and leaves `O_B` unchanged.
+This is persistence through a nonqualifying native progression event; it is not
+autonomous persistence or evidence that an ordinary ecology event occurred.
+The event is state-neutral. Persistence through ordinary state-mutating native
+activity remains `not_tested`.
+
+Third, hold route mass at `0.35` under explicit diagnostic source-state
+interventions and evaluate the unchanged Candidate B equation at source C
+values `0.20`, `0.21`, `0.22`, and `0.24`. These produce observed export levels
+`0`, `0.01`, `0.02`, and `0.04`. For every row require:
+
+```text
+delta O_B = -q_emit
+delta M_B = -q_emit
+source debit = in-flight amount = destination credit = q_emit
+```
+
+The diagnostic states retain positive `O_B`, complete conservation, and one
+fixed policy/topology. They test response shape and are not relabeled as four
+additional natural formation trajectories.
+
+These B.1 rows establish a monotonic linear response through the cap boundary,
+not an independent above-cap plateau. Cap-saturation evidence remains in the
+inherited I9-B policy sweep, whose `C_source=0.26` and `0.40` rows have source
+excess strictly above `q_cap=0.04` while observed export remains `0.04`.
+
+For the zero-export row, require separate native and closure receipts:
+
+```text
+zero_export_native_identity_unchanged = true
+zero_export_closure_receipt_consumed = true
+zero_export_packet_created = false
+```
+
+Every response row must satisfy a preregistered state-diff whitelist and exact
+one-shot closure reset rule. I10 should consume those receipts rather than infer
+state neutrality from `q_emit=0` alone.
+
+Finally, probe each no-export and post-export state at robustly below, exactly
+at, `nextafter` below/above, and robustly above local source C. The load-bearing
+result is the paired native admission-boundary shift:
+
+```text
+boundary_shift(no_export -> export) = q_emit
+```
+
+This avoids an invalid expectation that absolute post-export boundaries must
+move monotonically across rows with different initial source states. The paired
+shift is monotonic and equal to export amount. Mediation remains bounded to
+local leakage-source C, not the complete route distribution.
+
+Retain a versioned `I9-BR1` lineage receipt from the initially reviewed I9-B
+result/trace identities to the corrected identities consumed here. Record the
+formation-attribution and contract corrections and that the scientific
+provisional `B-R / DR4` conclusion did not change.
+
+I9-B.1 leaves Candidate B at provisional producer-mediated `B-R / DR4`. I10
+still owns the formal recursive row, complete 60-control matrix, and any `DR5`
+decision. I10 must consume I9-B as the core positive execution and I9-B.1 as
+complementary formation-attribution, bounded-persistence, response-shape, and
+boundary-shift evidence; B.1 does not replace the I9-B core row.
+
 ### Iteration 9-C - Susceptibility Relaxation Probe
 
 Test route-local conductance/susceptibility relaxation only under declared

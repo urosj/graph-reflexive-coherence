@@ -1,0 +1,82 @@
+{
+  "D0_R_bridge_status": "not_tested",
+  "artifact_kind": "conserved_leakage_preregistration",
+  "artifact_schema_version": "n31_i9b_preregistration_v2",
+  "candidate_id": "B_conserved_source_leakage",
+  "claim_ceiling": "provisional_producer_mediated_B_R_DR4_pending_I10",
+  "expected_post_export": {
+    "C_leakage_source": 0.36,
+    "route_mass_M_B": 0.61,
+    "route_organization_O_B": 0.11
+  },
+  "expected_post_formation": {
+    "C_formation_source": 0.25,
+    "C_leakage_source": 0.4,
+    "route_mass_M_B": 0.65,
+    "route_organization_O_B": 0.15
+  },
+  "expected_preformation": {
+    "C_formation_source": 0.3,
+    "C_leakage_source": 0.35,
+    "route_mass_M_B": 0.65,
+    "route_organization_O_B": 0.05
+  },
+  "expected_q_emit": 0.04,
+  "experiment": "N31",
+  "export_policy": {
+    "C_floor": 0.2,
+    "destination_node_id": 2,
+    "edge_id": 1,
+    "emission_relation": "q_emit = min(q_cap, max(0, C_leakage_source - C_floor))",
+    "one_shot": true,
+    "policy_schema": "n31_B_registered_route_local_export_policy_v1",
+    "q_cap": 0.04,
+    "source_node_id": 1,
+    "trigger": {
+      "edge_id": 0,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "source_lineage_id": "n31_B_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    }
+  },
+  "export_policy_identity": "c452a419f78e814c975339e89f82233c476a584fabc3bc7268c446863987bcfb",
+  "formation_amount": 0.05,
+  "formation_attribution_gate": {
+    "absolute_formed_organization_minimum_is_descriptive_not_sufficient": 0.04,
+    "expected_formation_effect_O_B": 0.1,
+    "minimum_attributable_formation_effect": 0.04,
+    "observable": "O_B = C_leakage_source - C_formation_source",
+    "rule": "formed_O_B - baseline_O_B >= minimum_attributable_formation_effect",
+    "threshold_source": "I9_candidate.organization_contract.formed_organization_minimum",
+    "threshold_source_value": 0.04
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "initial_node_C": {
+    "0": 0.3,
+    "1": 0.35,
+    "2": 0.2,
+    "3": 0.2
+  },
+  "iteration": "9-B",
+  "later_readout": {
+    "destination_node_2_excluded": true,
+    "expected_export": "rejected",
+    "expected_no_export": "admitted",
+    "operation": "native_node_1_to_node_3_departure_on_edge_2",
+    "q_readout": 0.37,
+    "robust_source_C_interval": "post_export_C < q < no_export_C"
+  },
+  "minimum_weakening_delta": 0.01,
+  "native_upgrade_allowed": false,
+  "outcome_tuning_allowed": false,
+  "output_digest": "4a2ceb8862ca8ae4384d20fbbffdef908a8ea33b06ee5f2ef6c094e4c09a0e4c",
+  "preregistration_identity": "f522d92d97b19d2cde67f946980d982d1789772883992c0e30e3693437ae1de1",
+  "required_controls": {
+    "destination_C_clamp_preserves_export_readout": true,
+    "matched_route_mass_loss_without_O_B_weakening_retains_readout": true,
+    "one_shot_restoration_refuses_second_trigger": true,
+    "source_C_clamp_reverses_readout": true,
+    "unrelated_event_does_not_trigger": true
+  }
+}

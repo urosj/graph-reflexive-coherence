@@ -1464,18 +1464,225 @@ formal candidate-row and complete replay/control obligations.
 
 ## Iteration 9-B - Conserved Leakage
 
-- [ ] Declare source, destination, amount, schedule, and internal clock.
-- [ ] Record B-R export-policy owner and all policy inputs.
-- [ ] Bound emitted amount by available source excess and source floor.
-- [ ] Debit source through admitted packet mechanics.
-- [ ] Record exact in-flight amount and destination credit.
-- [ ] Audit full node-plus-in-flight conservation.
-- [ ] Exclude hidden reservoir and destruction.
-- [ ] Distinguish new leakage policy from ordinary D0 outward flux.
-- [ ] Exclude the receiver from the later read path during the registered probe window.
-- [ ] Keep D0-R analogue status `not_tested` unless a separate bridge passes.
-- [ ] Test local encounter/readout.
-- [ ] Restore all lifecycle state.
+- [x] Declare source, destination, amount, schedule, and internal clock.
+- [x] Record B-R export-policy owner and all policy inputs.
+- [x] Bound emitted amount by available source excess and source floor.
+- [x] Debit source through admitted packet mechanics.
+- [x] Record exact in-flight amount and destination credit.
+- [x] Audit full node-plus-in-flight conservation.
+- [x] Exclude hidden reservoir and destruction.
+- [x] Distinguish new leakage policy from ordinary D0 outward flux.
+- [x] Exclude the receiver from the later read path during the registered probe window.
+- [x] Keep D0-R analogue status `not_tested` unless a separate bridge passes.
+- [x] Test local encounter/readout.
+- [x] Restore all lifecycle state.
+- [x] Sweep the bounded export relation below, at, and above the source floor.
+- [x] Consume zero-emission and positive one-shot receipts atomically.
+- [x] Refuse repeated and restored second triggers without state mutation.
+- [x] Reject unrelated native arrivals as export triggers.
+- [x] Separate route-mass loss from route-organization weakening.
+- [x] Reverse the later readout with balanced source-C clamps.
+- [x] Preserve the later result under balanced destination-C clamps.
+- [x] Prove atomic state-neutral refusal for rejected native readouts.
+- [x] Keep mediation bounded to local departure admission.
+- [x] Record preformation `O_B` and gate attributable formation delta separately from absolute formed organization.
+- [x] Scope DR2 persistence to post-formation checkpoint/restoration evidence.
+- [x] Fail closed composed receipt/event presence, amount, and destination mismatches.
+- [x] Retain corrected I9 revision lineage in the source chain.
+- [x] Keep the formal recursive candidate row and full controls pending I10.
+
+### Iteration 9-B Result
+
+```text
+status = passed
+acceptance_state = accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10
+candidate_id = B_conserved_source_leakage
+semantic_subtype = B_R_conserved_export_policy
+relation_authority = producer_mediated
+transport_authority = native_LGRC9V3_packet_runtime
+baseline_O_B = 0.04999999999999999
+formed_O_B = 0.14999999999999997
+formation_effect_O_B = 0.09999999999999998
+minimum_attributable_formation_effect = 0.04
+formation_effect_gate_passed = true
+post_export_O_B = 0.10999999999999999
+organization_weakening_delta = 0.03999999999999998
+organization_weakening_fraction_of_formed_O_B = 0.2666666666666666
+q_emit = 0.04
+source_debit = 0.03999999999999998
+route_mass_decrease = 0.039999999999999925
+destination_credit = 0.04000000000000001
+continuity_closed = true
+route_mass_export_fraction = 0.06153846153846143
+source_debit_fraction = 0.09999999999999996
+readout_q = 0.37
+no_export_readout_admitted = true
+export_readout_admitted = false
+minimum_readout_margin = 0.010000000000000009
+minimum_readout_margin_fraction_of_probe = 0.027027027027027053
+source_C_clamps_reverse_readout = true
+destination_C_clamps_preserve_readout = true
+mass_loss_substitution_rejected = true
+all_rejected_readouts_atomic = true
+duplicate_replay_exact = true
+resolved_complete_controls = 16 / 60
+current_decay_relation_ladder_rung = DR4 provisional
+DR5_supported = false
+D0_R_bridge_status = not_tested
+native_decay_classification = D0a / DR2 unchanged
+DR2_persistence_scope = post-formation checkpoint and restoration only
+unrelated_native_continuation_persistence_claimed = false
+composed_receipt_event_mismatches_fail_closed = true
+n31_closeout_progress_rung = N31-C4
+targeted_LGRC_runtime_conformance = verification-only; not retained as candidate evidence
+output_digest = 4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3
+```
+
+### Iteration 9-B Geometric Interpretation
+
+The fixture already has directional contrast `O_B=0.05` on route `[0, 1]`.
+Formation moves coherence from node 0 into node 1 and strengthens that contrast
+to `0.15`, for an attributable formation effect of `0.10`. Candidate B then
+exports `0.04` from node 1
+across boundary edge 1 into explicit destination node 2. The route is weakened
+because node 1 falls while node 0 remains fixed, not merely because total route
+mass is lower. The matched mass-loss control removes `0.02` from both route
+nodes; route mass falls by the same `0.04`, but their contrast remains `0.15`
+and the later readout still passes.
+
+The separate readout asks node 1 to emit `0.37` toward node 3. Without export,
+node 1 retains `0.40` and admits the operation. After export, it retains `0.36`
+and refuses. Source-C clamps reverse this split; destination-C clamps do not.
+The destination is therefore an accounting endpoint, not a hidden return path
+or a global selector. The supported mediator is local departure eligibility,
+not the full branch state.
+
+The persistence claim is similarly bounded. Formation activity is exhausted,
+the `O_B=0.15` checkpoint restores exactly under both identity schemas, and the
+export begins from that restored state. No unrelated native continuation was
+inserted between formation and export, so I9-B does not claim that stronger
+persistence scope. Cross-state controls nevertheless reject a consumed receipt
+without its export packet, an unconsumed receipt with an export packet, and
+receipt/packet amount or destination mismatches.
+
+The result is a producer-owned `B-R` relation. The producer reads the exact
+local event receipt, current source C, frozen floor/cap, one-shot state, and
+numeric topology bindings; it selects export amount, time, and destination.
+Native LGRC conservatively executes the packet. That division is the evidence:
+it shows a workable added mechanism and precisely identifies the native policy
+surface still missing. It does not support ordinary `D0-R`, native decay,
+coherence destruction, a global scheduler, or `DR5`.
+
+The runtime conformance counts used during implementation are verification
+notes, not retained candidate evidence. I10 must rerun and retain any test
+receipt it intends to consume, and it must sweep readout requests at `0.35`,
+`0.36`, `0.37`, `0.38`, `0.40`, and `0.41` around the narrow current split.
+
+## Iteration 9-B.1 - Formation Attribution And Bounded Export Response Shape
+
+- [x] Consume exact I9-B result, trace, preregistration, and producer implementation identities.
+- [x] Reconstruct baseline `O_B=0.05`, formed `O_B=0.15`, and attributable effect `0.10`.
+- [x] Preserve the `0.04` minimum attributable formation-effect gate.
+- [x] Exhaust and restore formation before independent progression.
+- [x] Process one disjoint native boundary-birth trial without topology admission.
+- [x] Advance native scheduler/checkpoint state while preserving topology and `O_B`.
+- [x] Record the trial as experiment-scheduled native progression, not autonomous persistence.
+- [x] Record ordinary state-mutating native persistence as not tested.
+- [x] Keep the exact Candidate B producer, topology, floor, and cap.
+- [x] Produce `q_emit = 0`, `0.01`, `0.02`, and `0.04` under predeclared source states.
+- [x] Keep route mass fixed across diagnostic pre-export source states.
+- [x] Close organization, route-mass, debit, in-flight, and destination equations per row.
+- [x] Retain at least three distinct positive export levels.
+- [x] Scope B.1 to linear response through the cap boundary.
+- [x] Cite inherited I9-B above-cap rows as plateau evidence rather than attributing the plateau to B.1.
+- [x] Separate zero-export native identity, closure-receipt consumption, and packet creation.
+- [x] Enforce response-row native-state diff whitelists and exact closure reset.
+- [x] Probe no-export and export branches below, at, and above local source C.
+- [x] Record `nextafter` boundary behavior without using it as a semantic relabel.
+- [x] Prove paired admission-boundary shift equals `q_emit` at every level.
+- [x] Prove rejected readout probes are atomic and state-neutral.
+- [x] Consume I9-B source/destination/mass-substitution/mismatch controls without inflating the 60-control matrix.
+- [x] Preserve bounded-partial local-source-C mediation.
+- [x] Preserve provisional `B-R / DR4`; keep `DR5` and `DR6` false.
+- [x] Keep `D0-R` untested and native D0a at `DR2`.
+- [x] Retain the reviewed-to-corrected I9-B revision lineage receipt.
+- [x] Preserve I9-B as the I10 core positive row and B.1 as complementary evidence.
+- [x] Keep runtime and protected contracts unchanged.
+
+### Iteration 9-B.1 Result
+
+```text
+status = passed
+acceptance_state = accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4
+baseline_O_B = 0.04999999999999999
+formed_O_B = 0.14999999999999997
+formation_effect_O_B = 0.09999999999999998
+independent_native_progression_persistence_supported = true
+progression_authority = experiment_scheduled_native_runtime_trial
+persistence_through_ordinary_state_mutating_activity = not_tested
+topology_events_routed = 0
+topology_unchanged = true
+q_emit_levels = [0.0, 0.009999999999999981, 0.01999999999999999, 0.03999999999999998]
+distinct_positive_q_level_count = 3
+all_response_equations_close = true
+all_diff_whitelists_pass = true
+zero_export_native_identity_unchanged = true
+zero_export_closure_receipt_consumed = true
+zero_export_packet_created = false
+B1_response_shape_scope = monotonic_linear_through_cap_boundary
+I9B_inherited_above_cap_plateau_row_count = 2
+all_robust_below_admitted = true
+all_robust_above_rejected = true
+all_rejected_rows_atomic = true
+all_boundary_shifts_equal_q_emit = true
+paired_boundary_shift_monotonic_non_decreasing = true
+mediation_strength = bounded_partial_local_leakage_source_C
+current_decay_relation_ladder_rung = DR4 provisional
+DR5_supported = false
+DR6_supported = false
+D0_R_bridge_status = not_tested
+native_decay_classification = D0a / DR2 unchanged
+output_digest = 867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e
+```
+
+### Iteration 9-B.1 Interpretation
+
+I9-B.1 strengthens three empirically thin parts of I9-B. Formation is now
+reconstructed as a change from an existing contrast, not merely reported at its
+final value. Persistence survives exact restoration and a disjoint native
+runtime trial that advances scheduler/checkpoint state without changing route
+coherence or topology. The trial is scheduled by the experiment and fails to
+admit a boundary birth, so the result is not autonomous persistence. It is also
+state-neutral; persistence through ordinary state-mutating native activity was
+not tested.
+
+The response matrix uses controlled source states with constant route mass.
+Those states are diagnostic interventions, not additional naturally formed
+relations. Under the unchanged policy, three positive export levels establish a
+bounded response shape: organization and route mass each fall by `q_emit`, and
+native debit, packet transport, and destination credit close to the same amount.
+The B.1 result is linear through the cap boundary. The two inherited I9-B rows
+with source excess above `0.04` supply the separate plateau evidence.
+
+At zero export, native identity remains unchanged, the one-shot closure receipt
+is consumed, and no packet is created. Every response row also passes the
+preregistered state-diff whitelist and exact closure-reset rule.
+
+For downstream effect, the meaningful monotonic quantity is not absolute
+post-export C across different initial states. It is the paired shift from each
+row's no-export native admission boundary to its export boundary. That shift is
+exactly `0`, `0.01`, `0.02`, and `0.04`. Robust below-boundary probes admit,
+robust above-boundary probes reject atomically, exact-boundary probes admit, and
+the immediately adjacent `nextafter` probes split on the expected side.
+
+This is serious response-shape and attribution evidence for Candidate B, but it
+does not pre-empt I10. Candidate B remains producer-mediated `B-R / DR4`; full
+controls, formal recursive admission, `DR5`, `DR6`, ordinary `D0-R`, autonomous
+native export, and complete-route mediation remain unsupported or pending.
+The I9-BR1 receipt preserves reviewed and corrected identities and confirms the
+scientific DR4 conclusion is unchanged. I10 must retain I9-B as the core
+positive execution and consume B.1 as complementary attribution and shape
+evidence, not as a replacement row.
 
 ## Iteration 9-C - Susceptibility Relaxation
 

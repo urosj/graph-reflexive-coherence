@@ -81,6 +81,19 @@
   clamps establish provisional `DR4` with bounded local-C mediation, atomic
   native refusal, and qualified floating-point endpoint behavior.
 
+## Iteration 9-B
+
+- `n31_conserved_leakage_i9b.md` explains the four-node B-R geometry, exact
+  baseline-to-formed organization attribution, source/packet/destination
+  conservation, producer-versus-native authority, route-mass substitution
+  control, bounded persistence scope, destination isolation, later native
+  readout, provisional `DR4` ceiling, and why ordinary `D0-R` remains untested.
+- `n31_conserved_leakage_response_i9b1.md` explains why the formation delta is
+  attributable, how a disjoint non-admitted native trial strengthens bounded
+  state-neutral persistence, how multi-level export shifts paired native
+  readout boundaries, why above-cap plateau evidence remains inherited from
+  I9-B, and why Candidate B stays at provisional `DR4`.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

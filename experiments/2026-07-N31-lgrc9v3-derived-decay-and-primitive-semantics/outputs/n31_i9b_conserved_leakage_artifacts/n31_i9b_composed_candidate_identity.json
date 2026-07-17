@@ -1,0 +1,14 @@
+{
+  "artifact_kind": "n31_i9b_composed_candidate_identity",
+  "artifact_schema_version": "n31_i9b_composed_candidate_identity_v1",
+  "components": {
+    "export_closure_identity": "01b757ab395c071597a8ae3d8072c5ebec1ff3f2b7910ccf1ea9bb1598dc6aff",
+    "export_policy_identity": "c452a419f78e814c975339e89f82233c476a584fabc3bc7268c446863987bcfb",
+    "native_restoration_identity_v2": "b62540324d02664e550bd91fb6b6742902a6ebee62d9fc4991bccbabd9430dc4",
+    "topology_contract_identity": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f"
+  },
+  "composed_candidate_identity": "927f49e0cb68e01a961c40a2deb4223db1feef59f4c7aac7b1a8d4d71d370a8b",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "39fec662908c3c771728994cc2a141b81bc5392bc1589246d91a5e2ad730f3d7",
+  "wrong_native_closure_policy_or_topology_pairing_changes_identity": true
+}
