@@ -41,6 +41,22 @@
   recursive schema conformance, cache/restoration evidence, observer-side-effect
   scope, DR3 support, and why the result remains below a causal trail.
 
+## Iteration 7
+
+- `n31_d0a_source_current_causal_probe_i7.md` explains the preregistered
+  spatial direction matrix, formation/persistence/weakening geometry, matched
+  native readout eligibility interventions, route-mass and conservation
+  closure, experiment ownership of the weakening schedule, native D0a `DR2`
+  ceiling, bounded local-C causal effect, unresolved full-distribution
+  mediation, and the remaining autonomous-relaxation and I8 replay/control debt.
+
+## Iteration 8
+
+- `n31_d0_replay_controls_classification_i8.md` explains the exact replay and
+  reconstruction results, the bounded `0.20 < q <= 0.24` local-C eligibility
+  interval, the separate D0c/D0b/native-D0a/conditional-reorganization
+  classifications, and why the added-mechanism lane remains necessary.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

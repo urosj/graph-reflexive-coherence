@@ -1,0 +1,81 @@
+{
+  "artifact_kind": "D0a_candidate_preregistration",
+  "artifact_schema_version": "n31_i7_preregistration_v1",
+  "candidate_selection_policy": "the internal_weakening row is selected by its preregistered signed direction, not by scanning outcomes; hold and reinforcement remain controls",
+  "experiment": "N31",
+  "finite_attempt_matrix": [
+    {
+      "attempt_mode": "disjoint_hold",
+      "expected_geometric_role": "persistence_without_route_change",
+      "progression_lane": "outside edge 3, nodes 4 to 3"
+    },
+    {
+      "attempt_mode": "internal_weakening",
+      "expected_geometric_role": "decrease signed formation coordinate",
+      "progression_lane": "route edge 1, node 1 to node 2"
+    },
+    {
+      "attempt_mode": "internal_reinforcement",
+      "expected_geometric_role": "directional control increases coordinate",
+      "progression_lane": "route edge 1, node 2 to node 1"
+    }
+  ],
+  "fixture_id": "n31_i7_five_node_route_and_disjoint_progression_v1",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "7",
+  "output_digest": "0df4522b45d5bc262fbd8fa105af0e4bf048cc6a01c376af8e9a25885bc3302e",
+  "packet_schedule": {
+    "attempt_progression": {
+      "amount": 0.04,
+      "arrival": 5.0,
+      "departure": 4.0
+    },
+    "formation": {
+      "amount": 0.2,
+      "arrival": 1.0,
+      "departure": 0.0,
+      "route": "0->1 edge 0"
+    },
+    "later_readout": {
+      "amount": 0.22,
+      "arrival": 7.0,
+      "departure": 6.0,
+      "route": "1->0 edge 0"
+    },
+    "persistence_clock_event": {
+      "amount": 0.05,
+      "arrival": 3.0,
+      "departure": 2.0,
+      "route": "3->4 edge 3"
+    }
+  },
+  "producer_boundary": {
+    "all_schedule_calls_before_first_runtime_event": true,
+    "no_D0_specific_decay_state": true,
+    "no_retained_age_or_history_cursor": true,
+    "no_schedule_call_after_formation": true,
+    "predeclared_progression_lane_is_producer_residue": true
+  },
+  "thresholds": {
+    "baseline_rule": "pre_formation_C1_minus_C2",
+    "closed_system_budget_tolerance": 1e-12,
+    "declaration_digest": "bfd8b289088c2a1f662ab04343278c7f5e3d7555b942af6473429d0fd1a476af",
+    "declared_before_candidate_outcome": true,
+    "declared_before_runtime_execution": true,
+    "identity_match_tolerance": 0.0,
+    "minimum_formation_effect": 0.15,
+    "minimum_readout_pass_margin": 0.015,
+    "minimum_readout_rejection_shortfall": 0.015,
+    "minimum_residual_organization": 0.05,
+    "minimum_weakening_amount": 0.05,
+    "monotonicity_requirement": "single_directional_weakening_step_only",
+    "persistence_tolerance": 1e-12,
+    "route_mass_tolerance": 1e-12,
+    "selected_organization_coordinate": "C[1]-C[2]",
+    "sign_or_orientation_ambiguity_resolution": "orientation is frozen from the signed C1-C2 formation delta; absolute magnitude is not substituted after outcomes are observed",
+    "stronger_orientation": "greater_than_baseline_in_formation_direction",
+    "threshold_record_id": "n31_i7_spatial_D0a_thresholds_v1",
+    "trajectory_rule": "formation effect must persist through a disjoint event, then the predeclared internal-weakening row must reduce but not erase it",
+    "weaker_orientation": "lower_positive_formation_effect"
+  }
+}

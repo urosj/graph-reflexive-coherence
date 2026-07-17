@@ -64,6 +64,32 @@
   clock scope, candidate-specific controls, DR3 observable classification,
   producer residue, and explicit causal-trail/DR4 blocker.
 
+## Iteration 7
+
+- `n31_i7_d0a_source_current_causal_probe_artifacts/` contains the pre-outcome
+  thresholds/attempt record and complete source-current snapshots for all
+  hold, weakening, reinforcement, and matched intervention branches.
+- `n31_i7_d0a_source_current_causal_trace.json` records the three-direction
+  runtime matrix, event receipts, route mass and spatial coordinates, fixed
+  later readout, C-only clamp/restore interventions, restoration identity,
+  producer audit, conservation, native D0a `DR2` ceiling, and separate
+  conditional-reorganization/local-C causal result.
+- `n31_d0a_source_current_causal_probe_i7.json` records the normalized D0a
+  candidate, recursively complete mass/organization/mediation contracts,
+  D0c/D0b/D0a comparison, N31-C3 progress ceiling, claim blockers, and I8
+  readiness.
+
+## Iteration 8
+
+- `n31_i8_d0_replay_control_artifacts/` contains the preregistered replay and
+  local source-C readout-amount sweep contract.
+- `n31_i8_d0_replay_control_trace.json` records artifact, snapshot/load,
+  duplicate, execution-reconstruction, equal-state, amount-sweep, conservation,
+  timing, and complete D0 control results.
+- `n31_d0_replay_controls_classification_i8.json` keeps native spatial D0a at
+  `DR2`, preserves conditional reorganization as a separate non-rung-raising
+  object, reaches `N31-C4`, and records `d0_insufficient` readiness for I9.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

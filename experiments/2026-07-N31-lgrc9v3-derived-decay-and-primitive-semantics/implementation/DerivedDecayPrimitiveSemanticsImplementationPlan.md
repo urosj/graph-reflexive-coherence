@@ -781,12 +781,85 @@ weakening order. The route-mass window must count departure/in-flight mass,
 boundary crossing, outside arrival, and re-entry exactly once with explicit
 support-reclassification terms.
 
+I7 implements this as a finite three-direction perturbation matrix over the exact spatial
+projection admitted by I4. Every packet is queued before the first runtime
+event. A `0 -> 1` packet forms the route organization; a disjoint `3 -> 4`
+packet establishes bounded persistence; and equal-dose continuation rows then
+hold, weaken (`1 -> 2`), or reinforce (`2 -> 1`) the signed `C[1] - C[2]`
+formation coordinate. A fixed later `1 -> 0` packet is also prequeued. It is
+admitted in the persisted and reinforced rows but rejected after weakening.
+
+The three progression branches are not equal-state continuations: their future
+queues already contain different hold, weakening, and reinforcement packets.
+They establish a preregistered directional perturbation response, not
+autonomous divergence from one complete state.
+
+The causal intervention uses the I4-admitted `set_state()` surface only on
+matched control branches. A baseline-C clamp removes readout eligibility, and
+restoring formed C in the weakened branch restores it. Route mass is exact and
+the restoration identity differs only at route-node coherence paths. The later
+native operation reads local source-node `C[1]`, however, rather than the full
+route distribution. The intervention therefore supports bounded-partial local-C
+causality; full `C[1]-C[2]` mediation and induced-geometric causality remain
+unresolved.
+
+The fixture owns the weakening packet's time, amount, direction, source, and
+destination. Native LGRC owns conservative debit, in-flight state, and credit,
+but does not select the weakening transition. I7 therefore caps native spatial
+D0a at `DR2` for formation and persistence. It separately supports an
+experiment-authored, mass-conserving conditional reorganization with a bounded
+local-C readout effect. It does not support autonomous no-input weakening or a
+native `DR4` decay relation. I8 must preserve this reclassification, replay the
+execution, audit the narrow readout interval, and decide the final comparative
+classification.
+
 ### Iteration 8 - D0 Replay, Controls, And Classification
 
 Apply artifact replay, snapshot/load, reset-aware identity, duplicate replay,
 branch continuation, invariant audits, and D0 controls. Classify D0a/D0b/D0c
 separately, preserve D0-R as one D0 subtype, and decide whether
-added-mechanism work is justified.
+added-mechanism work is justified. Treat the I7 direction matrix as a
+directional perturbation matrix, not equal-state continuation. Record the
+triggered `producer_scheduled_D0_decay` blocker, retain native D0a at `DR2`,
+and keep full route-distribution mediation unresolved unless a new matched
+contrast isolates it. Preserve the threshold interval `0.20 < q <= 0.24` and,
+if audited, use a preregistered readout-amount sweep rather than generalizing
+from the single `q = 0.22` crossing.
+
+I8 implements this boundary as a replay and classification matrix. It directly
+reruns the I3, I5, I6, and I7 builders and verifies I2/I4 governance and
+representation dependencies transitively through those exact source chains. It
+does not claim that every evidence-stack builder was directly rerun. It verifies
+`45` artifact-manifest references resolving to `25` unique paths, including
+`20` repeated cross-source references; every reference hash is exact. It also
+roundtrips `19` I7 LGRC snapshots under restoration identities v1 and v2,
+reconstructs each I7 attempt twice from the source-current fixture, and runs
+equal-state continuation from one complete pre-readout snapshot. Equal-state
+continuation is replay-correctness evidence only and adds no weakening,
+mediation, or route-causality evidence. The directional
+hold/weakening/reinforce matrix is retained only as a perturbation control and
+is not consumed as the equal-state branch test.
+
+A preregistered amount sweep at `q = 0.18, 0.20, 0.21, 0.22, 0.24, 0.25,
+0.26` confirms that the local source-C readout differs only for
+`0.20 < q <= 0.24`. The `q = 0.24` row is the native floating-point
+eligibility boundary with effectively zero hold margin, not a meaningful
+positive-margin endpoint. This is a narrow native eligibility interval, not a
+broad route-retuning result. I8 also consumes the complete I3 generic
+pre-positive null matrix and the candidate-specific I5-I7 controls as separate
+evidential sets; it does not present I3 nulls as direct per-candidate null
+consumption. No dependent control remains `failed_open` or `not_run`.
+
+The comparative result reaches `N31-C4`: D0c remains an instantaneous `DR1`
+comparator, D0b remains a fading derived observable at `DR3` without mediation,
+native spatial D0a remains formation/persistence at `DR2`, and the replay-clean
+conditional reorganization remains a separate, experiment-authored object with
+a bounded local-C effect. D0-R is not instantiated in the executed internal-cycle
+and internal-reorganization fixtures; ordinary export is unobserved but not
+globally refuted. Because no native autonomous weakening trajectory exists,
+`d0_insufficient` remains the schema-valid I9 admission enum, qualified as
+`d0_insufficient_for_autonomous_causal_weakening`. D0 is not wholly
+insufficient. I8 opens but does not select the A/B/C candidate lanes.
 
 ### Iteration 9 - Added-Mechanism Admission
 
@@ -806,6 +879,24 @@ added_mechanism_admission_reason =
 Record why each candidate is executed, classified without execution, or
 inapplicable. D0 success does not require an added-mechanism run, but it also
 does not forbid a preregistered comparison or bridge test.
+
+I9 must preserve the I8 capability boundary rather than treating its admission
+reason as whole-D0 failure:
+
+```text
+D0c remains DR1 instantaneous current-state geometry.
+D0b remains a DR3 fading derived observable without causal mediation.
+Native spatial D0a remains DR2 formation and persistence.
+Conditional conservative reorganization remains separate perturbation evidence.
+The missing transition is producer-owned autonomous causal weakening.
+```
+
+Candidate A tests release-efficacy attenuation, Candidate B tests conserved
+leakage/export under explicit policy ownership, and Candidate C tests
+susceptibility or conductance relaxation. A producer-assisted success may
+identify a missing native mechanism or bounded closure, but it may not
+retroactively raise the native D0a rung. D0-R remains uninstantiated unless a
+dedicated ordinary-export fixture supplies source-current evidence.
 
 ### Iteration 9-A - Release-Efficacy Attenuation Probe
 

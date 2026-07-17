@@ -1,0 +1,27 @@
+{
+  "added_mechanism_lane_before_replay": "open",
+  "artifact_kind": "D0_replay_and_amount_sweep_preregistration",
+  "artifact_schema_version": "n31_i8_preregistration_v1",
+  "declared_before_I8_runtime_replay": true,
+  "direction_matrix_role": "perturbation_control_not_equal_state",
+  "expected_regions": {
+    "0.20 < q <= 0.24": "hold_passes_weakened_fails",
+    "q <= 0.20": "hold_and_weakened_pass",
+    "q > 0.24": "hold_and_weakened_fail"
+  },
+  "experiment": "N31",
+  "full_route_distribution_mediation_before_replay": "unresolved",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "8",
+  "native_D0a_ceiling_before_replay": "DR2",
+  "output_digest": "5df0a6e738c719d3e8cdeec6519a8e97702ca2c1c43f7a37a0fc052b49350794",
+  "readout_amounts": [
+    0.18,
+    0.2,
+    0.21,
+    0.22,
+    0.24,
+    0.25,
+    0.26
+  ]
+}

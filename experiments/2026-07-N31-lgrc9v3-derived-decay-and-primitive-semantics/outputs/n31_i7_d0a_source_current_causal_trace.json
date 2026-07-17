@@ -1,0 +1,1610 @@
+{
+  "acceptance_state": "accepted_source_current_spatial_D0a_direction_matrix_and_matched_causal_intervention_trace",
+  "artifact_kind": "D0a_source_current_causal_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_threshold_and_attempt_preregistration",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/n31_i7_preregistration.json",
+      "sha256": "99886a6eb5e755ce409c1777d5c5eccdbd82144af08175fb24756a8f8b6b4047"
+    },
+    {
+      "artifact_role": "source_current_disjoint_hold_baseline_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_baseline.json",
+      "sha256": "bba37179c7b154b0d3a67fbc39831a7994a5dc2d287cb793aed9937fef9f6212"
+    },
+    {
+      "artifact_role": "source_current_disjoint_hold_formed_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_formed.json",
+      "sha256": "5d54a67c63489a073b2e30d16a12ad0b6122e0d0a7ba50c2bceb02f7ac2a3aeb"
+    },
+    {
+      "artifact_role": "source_current_disjoint_hold_persisted_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_persisted.json",
+      "sha256": "fb0c510e26de7949755ad4aa7badec78362f9c19e764248126589ac972a07c14"
+    },
+    {
+      "artifact_role": "source_current_disjoint_hold_progressed_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_progressed.json",
+      "sha256": "56e04cf1042f709df574248ab9fafc5ffc5dd158735284beef99341b589792b5"
+    },
+    {
+      "artifact_role": "source_current_disjoint_hold_after_readout_attempt_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_after_readout_attempt.json",
+      "sha256": "6fc0ee54222cc3824d23f2f7bf5993d9e93a394b529c6875938bfadad877fb78"
+    },
+    {
+      "artifact_role": "source_current_internal_weakening_baseline_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_baseline.json",
+      "sha256": "8415327ecffae4ef93cc246f50c25b47bc9418da9d382fcd8dc3ef3f5ca7deb5"
+    },
+    {
+      "artifact_role": "source_current_internal_weakening_formed_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_formed.json",
+      "sha256": "cb805e927e329ffa4b1191bad082b8760241d03a73ebba411bc89abccf217eb9"
+    },
+    {
+      "artifact_role": "source_current_internal_weakening_persisted_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_persisted.json",
+      "sha256": "383b835a8c7cdf06f3e2efdf56cb4fd202245757cdeb662f215bb930c9cdea64"
+    },
+    {
+      "artifact_role": "source_current_internal_weakening_progressed_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_progressed.json",
+      "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0"
+    },
+    {
+      "artifact_role": "source_current_internal_weakening_after_readout_attempt_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_after_readout_attempt.json",
+      "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0"
+    },
+    {
+      "artifact_role": "source_current_internal_reinforcement_baseline_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_baseline.json",
+      "sha256": "bda932cedeff35eae167e896c3b32f082b177a6ba43f141f7fe56245432105d8"
+    },
+    {
+      "artifact_role": "source_current_internal_reinforcement_formed_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_formed.json",
+      "sha256": "59fb9cd6b312e567a45ae9d22a8e411b27f57ffd6a5906a2e08a914106040cfe"
+    },
+    {
+      "artifact_role": "source_current_internal_reinforcement_persisted_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_persisted.json",
+      "sha256": "4ff0bb9e95f27e8ebeab12fe9ff4c48f2b11fb40c8a9c40d14c509ee42318891"
+    },
+    {
+      "artifact_role": "source_current_internal_reinforcement_progressed_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_progressed.json",
+      "sha256": "b55d320dfc5aa43332d7a69f778fc1e8c2eb4c00b9ec35687aa25739615340ca"
+    },
+    {
+      "artifact_role": "source_current_internal_reinforcement_after_readout_attempt_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_after_readout_attempt.json",
+      "sha256": "7c085460b8ae379c4bcf3ba0885edbb66428c02500236bc9aebb4be13ff933e9"
+    },
+    {
+      "artifact_role": "source_current_intervention_hold_baseline_clamp_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp.json",
+      "sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e"
+    },
+    {
+      "artifact_role": "source_current_intervention_hold_baseline_clamp_after_readout_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp_after_readout.json",
+      "sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e"
+    },
+    {
+      "artifact_role": "source_current_intervention_weakened_formed_restore_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore.json",
+      "sha256": "cd57fd6fb7c4b68579d4a514aedd1e414583328403dbf872f715281b6fab4a27"
+    },
+    {
+      "artifact_role": "source_current_intervention_weakened_formed_restore_after_readout_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore_after_readout.json",
+      "sha256": "64082d7b1967e1bf7e2aa441746698ec133c3869d2422fd1a592bca8d8eac16f"
+    }
+  ],
+  "artifact_schema_version": "n31_i7_D0a_source_current_causal_trace_v1",
+  "attempt_rows": [
+    {
+      "after_readout_attempt": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 7.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.5,
+          "1": 0.020000000000000018,
+          "2": 0.48
+        },
+        "queue_record_count": 0,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "17e991da142165acd239918d3a9016ff9857bac088d2cc1169ba879fcd9602b5",
+        "restoration_identity_v2_digest": "6ed26caf6a8fb4221e34ee2629864986dd46890dc990104e9ab93c3f07aa30e6",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 8,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": 0.020000000000000018,
+          "coordinate_C1_minus_C2": -0.45999999999999996,
+          "formation_oriented_strength": -0.019999999999999962,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "attempt_id": "n31_i7_disjoint_hold",
+      "attempt_mode": "disjoint_hold",
+      "baseline": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 0.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.48,
+          "1": 0.04,
+          "2": 0.48
+        },
+        "queue_record_count": 4,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "829e53fea3692f6f4ecaac5dae454e19473aa0c28d436e8bba7a7268c34ad052",
+        "restoration_identity_v2_digest": "1148bdb652d2cbcc320d1615fdc7fb5507afc7ebc83fd0ced18ab4c2d8506326",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 0,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": 0.0,
+          "coordinate_C1_minus_C2": -0.44,
+          "formation_oriented_strength": 0.0,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "formation_receipts": [
+        {
+          "budget_errors": [
+            -2.220446049250313e-16
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 0.0,
+          "state_mutated": true,
+          "step_index": 1
+        },
+        {
+          "budget_errors": [
+            2.220446049250313e-16
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 1.0,
+          "state_mutated": true,
+          "step_index": 2
+        }
+      ],
+      "formed": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 1.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 3,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "0d3727c5206ade9e0566d2c94b07199ebf6018c39c32c9578195b52d9b02f756",
+        "restoration_identity_v2_digest": "883c3831ae84df7ebc10faeb0d5506eea5886386bf87c1875754c236862abb78",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 2.220446049250313e-16,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 2,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "forming_packet_exhausted_at_formed_checkpoint": true,
+      "forming_packet_identity_excluded_from_progression_and_readout": true,
+      "persisted": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 3.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 2,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "162fc78715a0ce1ec0b2038e70faf0a65ce5ec1e1932a69107c008f2d40db65a",
+        "restoration_identity_v2_digest": "da046970c11496903f90f66ecdf0e9b8e4cb1291a3086ce0c8dcacc802602ec4",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 4,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "persistence_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 2.0,
+          "state_mutated": true,
+          "step_index": 3
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 3.0,
+          "state_mutated": true,
+          "step_index": 4
+        }
+      ],
+      "post_formation_producer_calls": [],
+      "post_formation_state_mutating_producer_calls": [],
+      "pre_readout_snapshot_load_audit": {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true
+      },
+      "producer_call_audit_status": "complete_no_post_formation_calls",
+      "progressed": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 5.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 1,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "c405b70ca27c42af438a65f741e183fc94b6760e291fa1df00bda3bad5381bbd",
+        "restoration_identity_v2_digest": "d540b7750bac51f886128d3421dbefc9a133823af0ea6ba69b49f43c18601a57",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 6,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "progression_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 4.0,
+          "state_mutated": true,
+          "step_index": 5
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 5.0,
+          "state_mutated": true,
+          "step_index": 6
+        }
+      ],
+      "readout": {
+        "admitted": true,
+        "eligibility_margin": 0.020000000000000018,
+        "event_receipts": [
+          {
+            "budget_errors": [
+              0.0
+            ],
+            "event_kinds": [
+              "lgrc9v3_packet_departure"
+            ],
+            "event_time_key": 6.0,
+            "state_mutated": true,
+            "step_index": 7
+          },
+          {
+            "budget_errors": [
+              0.0
+            ],
+            "event_kinds": [
+              "lgrc9v3_packet_arrival",
+              "lgrc9v3_packet_arrival_eligibility",
+              "lgrc9v3_local_update"
+            ],
+            "event_time_key": 7.0,
+            "state_mutated": true,
+            "step_index": 8
+          }
+        ],
+        "exception_message": null,
+        "exception_type": null,
+        "native_transition": "LGRC9V3.step packet departure and arrival",
+        "packet_amount": 0.22,
+        "queue_record_count_after": 0,
+        "queue_record_count_before": 1,
+        "source_coherence_before": 0.24000000000000002,
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      "schedule_declared_before_execution": true,
+      "snapshot_manifest": [
+        {
+          "artifact_role": "source_current_disjoint_hold_baseline_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_baseline.json",
+          "sha256": "bba37179c7b154b0d3a67fbc39831a7994a5dc2d287cb793aed9937fef9f6212"
+        },
+        {
+          "artifact_role": "source_current_disjoint_hold_formed_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_formed.json",
+          "sha256": "5d54a67c63489a073b2e30d16a12ad0b6122e0d0a7ba50c2bceb02f7ac2a3aeb"
+        },
+        {
+          "artifact_role": "source_current_disjoint_hold_persisted_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_persisted.json",
+          "sha256": "fb0c510e26de7949755ad4aa7badec78362f9c19e764248126589ac972a07c14"
+        },
+        {
+          "artifact_role": "source_current_disjoint_hold_progressed_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_progressed.json",
+          "sha256": "56e04cf1042f709df574248ab9fafc5ffc5dd158735284beef99341b589792b5"
+        },
+        {
+          "artifact_role": "source_current_disjoint_hold_after_readout_attempt_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_after_readout_attempt.json",
+          "sha256": "6fc0ee54222cc3824d23f2f7bf5993d9e93a394b529c6875938bfadad877fb78"
+        }
+      ]
+    },
+    {
+      "after_readout_attempt": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 5.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.2,
+          "2": 0.52
+        },
+        "queue_record_count": 1,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "32eace2838865e8a4ac6669b05a1b47370b4bd3cc21b3c7a3b930067aecc1839",
+        "restoration_identity_v2_digest": "9c3a2c9e40f72cf8133022b4ac1324317ccf1438f7e4ee6c71cf377a7db3cf4d",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 6,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.24000000000000005,
+          "coordinate_C1_minus_C2": -0.32,
+          "formation_oriented_strength": 0.12,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "attempt_id": "n31_i7_internal_weakening",
+      "attempt_mode": "internal_weakening",
+      "baseline": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 0.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.48,
+          "1": 0.04,
+          "2": 0.48
+        },
+        "queue_record_count": 4,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "a358fe294fd61bb001c7dc64e11fbca0f25500dd788dcd31c50cc55880828fc5",
+        "restoration_identity_v2_digest": "97914d2eaa058977b725e6ae41595455dc30fb21dee52f83ea9a24224719bef6",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 0,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": 0.0,
+          "coordinate_C1_minus_C2": -0.44,
+          "formation_oriented_strength": 0.0,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "formation_receipts": [
+        {
+          "budget_errors": [
+            -2.220446049250313e-16
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 0.0,
+          "state_mutated": true,
+          "step_index": 1
+        },
+        {
+          "budget_errors": [
+            2.220446049250313e-16
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 1.0,
+          "state_mutated": true,
+          "step_index": 2
+        }
+      ],
+      "formed": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 1.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 3,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "331374d0fd1894601206cf2f2f41464b554dc7a0e4f38a84d5456408752ba1cc",
+        "restoration_identity_v2_digest": "aaf3569b5520ff8e7666d2294c7c23067d1e9e0cbedb3c7afb17edb9f91d9fef",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 2.220446049250313e-16,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 2,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "forming_packet_exhausted_at_formed_checkpoint": true,
+      "forming_packet_identity_excluded_from_progression_and_readout": true,
+      "persisted": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 3.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 2,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "da4d2f7b775b8eb291177717643ed8798502cd03e08cec7c8386bf457117de74",
+        "restoration_identity_v2_digest": "55ea2190ee579a83a90d5936a1d39e72d74fc9c647f3573283504edf7d12474a",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 4,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "persistence_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 2.0,
+          "state_mutated": true,
+          "step_index": 3
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 3.0,
+          "state_mutated": true,
+          "step_index": 4
+        }
+      ],
+      "post_formation_producer_calls": [],
+      "post_formation_state_mutating_producer_calls": [],
+      "pre_readout_snapshot_load_audit": {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true
+      },
+      "producer_call_audit_status": "complete_no_post_formation_calls",
+      "progressed": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 5.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.2,
+          "2": 0.52
+        },
+        "queue_record_count": 1,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "32eace2838865e8a4ac6669b05a1b47370b4bd3cc21b3c7a3b930067aecc1839",
+        "restoration_identity_v2_digest": "9c3a2c9e40f72cf8133022b4ac1324317ccf1438f7e4ee6c71cf377a7db3cf4d",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 6,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.24000000000000005,
+          "coordinate_C1_minus_C2": -0.32,
+          "formation_oriented_strength": 0.12,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "progression_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 4.0,
+          "state_mutated": true,
+          "step_index": 5
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 5.0,
+          "state_mutated": true,
+          "step_index": 6
+        }
+      ],
+      "readout": {
+        "admitted": false,
+        "eligibility_margin": -0.01999999999999999,
+        "event_receipts": [],
+        "exception_message": "source coherence is smaller than packet amount",
+        "exception_type": "InvalidStateTransitionError",
+        "native_transition": "LGRC9V3.step packet departure eligibility",
+        "packet_amount": 0.22,
+        "queue_record_count_after": 1,
+        "queue_record_count_before": 1,
+        "source_coherence_before": 0.2,
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      "schedule_declared_before_execution": true,
+      "snapshot_manifest": [
+        {
+          "artifact_role": "source_current_internal_weakening_baseline_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_baseline.json",
+          "sha256": "8415327ecffae4ef93cc246f50c25b47bc9418da9d382fcd8dc3ef3f5ca7deb5"
+        },
+        {
+          "artifact_role": "source_current_internal_weakening_formed_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_formed.json",
+          "sha256": "cb805e927e329ffa4b1191bad082b8760241d03a73ebba411bc89abccf217eb9"
+        },
+        {
+          "artifact_role": "source_current_internal_weakening_persisted_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_persisted.json",
+          "sha256": "383b835a8c7cdf06f3e2efdf56cb4fd202245757cdeb662f215bb930c9cdea64"
+        },
+        {
+          "artifact_role": "source_current_internal_weakening_progressed_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_progressed.json",
+          "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0"
+        },
+        {
+          "artifact_role": "source_current_internal_weakening_after_readout_attempt_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_after_readout_attempt.json",
+          "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0"
+        }
+      ]
+    },
+    {
+      "after_readout_attempt": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 7.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.5,
+          "1": 0.060000000000000026,
+          "2": 0.44
+        },
+        "queue_record_count": 0,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "7f5cded502c9bf012f085544d61a9e8f2618478b4c1b78610974cc72321f228d",
+        "restoration_identity_v2_digest": "a71832f19b8cf02eca57a15fc0f7f1528e81ba4469d8e01c670648eaa3352ca6",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 8,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": 0.06,
+          "coordinate_C1_minus_C2": -0.38,
+          "formation_oriented_strength": 0.06,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "attempt_id": "n31_i7_internal_reinforcement",
+      "attempt_mode": "internal_reinforcement",
+      "baseline": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 0.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.48,
+          "1": 0.04,
+          "2": 0.48
+        },
+        "queue_record_count": 4,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "f89c3eb068d76c0c28fdbf549ef70e4c7ee449028fcc2557493d19c9988fde31",
+        "restoration_identity_v2_digest": "f965f4e0564821b7759321c35451db8b0ba830632b266833fdad877108cb1a60",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 0,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": 0.0,
+          "coordinate_C1_minus_C2": -0.44,
+          "formation_oriented_strength": 0.0,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "formation_receipts": [
+        {
+          "budget_errors": [
+            -2.220446049250313e-16
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 0.0,
+          "state_mutated": true,
+          "step_index": 1
+        },
+        {
+          "budget_errors": [
+            2.220446049250313e-16
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 1.0,
+          "state_mutated": true,
+          "step_index": 2
+        }
+      ],
+      "formed": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 1.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 3,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "84dbd835378b06175602d91da82a6d43e3fd0f231b79c164b6e881c01e3f2dbd",
+        "restoration_identity_v2_digest": "9e9ce783c6a1d927508aa661783ff5e71bb768d14a1cfde91f09dce69bd2e057",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 2.220446049250313e-16,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 2,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "forming_packet_exhausted_at_formed_checkpoint": true,
+      "forming_packet_identity_excluded_from_progression_and_readout": true,
+      "persisted": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 3.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.24000000000000002,
+          "2": 0.48
+        },
+        "queue_record_count": 2,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "5e588bd3271c24f7dbf49de60591eed23676a2d79a3054dbac0d3574db72b8e3",
+        "restoration_identity_v2_digest": "929433e5af0ecc4a381805c6573f403137e3019a22df29583303862b4dbc4926",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 4,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.2,
+          "coordinate_C1_minus_C2": -0.23999999999999996,
+          "formation_oriented_strength": 0.20000000000000004,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "persistence_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 2.0,
+          "state_mutated": true,
+          "step_index": 3
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 3.0,
+          "state_mutated": true,
+          "step_index": 4
+        }
+      ],
+      "post_formation_producer_calls": [],
+      "post_formation_state_mutating_producer_calls": [],
+      "pre_readout_snapshot_load_audit": {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true
+      },
+      "producer_call_audit_status": "complete_no_post_formation_calls",
+      "progressed": {
+        "boundary_transfer": {
+          "edge_id": 2,
+          "instantaneous_oriented_flux": 0.0,
+          "integrated_outward_transfer_in_window": 0.0
+        },
+        "event_time_key": 5.0,
+        "forming_packet_in_flight": false,
+        "node_coherence": {
+          "0": 0.27999999999999997,
+          "1": 0.28,
+          "2": 0.44
+        },
+        "queue_record_count": 1,
+        "registered_route_mass": 1.0,
+        "restoration_identity_v1_digest": "99e9c2ab2ff2fdfa5f04fb3bcf5f4524d41f77b2bd55dccb86b4263813881445",
+        "restoration_identity_v2_digest": "336721cf621ab5c7d835ca7b3b6dff1664c069bcb7ada2b56c82c158ef43abbb",
+        "route_internal_in_flight_mass": 0,
+        "route_node_coherence_mass": 1.0,
+        "runtime_budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 2.0,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 2.0
+        },
+        "scheduler_event_index": 6,
+        "spatial_organization": {
+          "baseline_C1_minus_C2": -0.44,
+          "coordinate_C0_minus_C2": -0.16000000000000003,
+          "coordinate_C1_minus_C2": -0.15999999999999998,
+          "formation_oriented_strength": 0.28,
+          "internal_oriented_flux": {
+            "0": 0.0,
+            "1": 0.0
+          }
+        }
+      },
+      "progression_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 4.0,
+          "state_mutated": true,
+          "step_index": 5
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 5.0,
+          "state_mutated": true,
+          "step_index": 6
+        }
+      ],
+      "readout": {
+        "admitted": true,
+        "eligibility_margin": 0.060000000000000026,
+        "event_receipts": [
+          {
+            "budget_errors": [
+              0.0
+            ],
+            "event_kinds": [
+              "lgrc9v3_packet_departure"
+            ],
+            "event_time_key": 6.0,
+            "state_mutated": true,
+            "step_index": 7
+          },
+          {
+            "budget_errors": [
+              0.0
+            ],
+            "event_kinds": [
+              "lgrc9v3_packet_arrival",
+              "lgrc9v3_packet_arrival_eligibility",
+              "lgrc9v3_local_update"
+            ],
+            "event_time_key": 7.0,
+            "state_mutated": true,
+            "step_index": 8
+          }
+        ],
+        "exception_message": null,
+        "exception_type": null,
+        "native_transition": "LGRC9V3.step packet departure and arrival",
+        "packet_amount": 0.22,
+        "queue_record_count_after": 0,
+        "queue_record_count_before": 1,
+        "source_coherence_before": 0.28,
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      "schedule_declared_before_execution": true,
+      "snapshot_manifest": [
+        {
+          "artifact_role": "source_current_internal_reinforcement_baseline_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_baseline.json",
+          "sha256": "bda932cedeff35eae167e896c3b32f082b177a6ba43f141f7fe56245432105d8"
+        },
+        {
+          "artifact_role": "source_current_internal_reinforcement_formed_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_formed.json",
+          "sha256": "59fb9cd6b312e567a45ae9d22a8e411b27f57ffd6a5906a2e08a914106040cfe"
+        },
+        {
+          "artifact_role": "source_current_internal_reinforcement_persisted_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_persisted.json",
+          "sha256": "4ff0bb9e95f27e8ebeab12fe9ff4c48f2b11fb40c8a9c40d14c509ee42318891"
+        },
+        {
+          "artifact_role": "source_current_internal_reinforcement_progressed_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_progressed.json",
+          "sha256": "b55d320dfc5aa43332d7a69f778fc1e8c2eb4c00b9ec35687aa25739615340ca"
+        },
+        {
+          "artifact_role": "source_current_internal_reinforcement_after_readout_attempt_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_after_readout_attempt.json",
+          "sha256": "7c085460b8ae379c4bcf3ba0885edbb66428c02500236bc9aebb4be13ff933e9"
+        }
+      ]
+    }
+  ],
+  "causal_intervention_matrix": {
+    "formed_organization_enables_readout": true,
+    "hold_baseline_clamp": {
+      "intervention_receipt": {
+        "all_other_scientific_state_matched": true,
+        "allowed_changed_paths": [
+          "embedded_grc9v3_state.state.nodes.0.coherence",
+          "embedded_grc9v3_state.state.nodes.1.coherence",
+          "embedded_grc9v3_state.state.nodes.2.coherence"
+        ],
+        "changed_restoration_identity_paths": [
+          "embedded_grc9v3_state.state.nodes.0.coherence",
+          "embedded_grc9v3_state.state.nodes.1.coherence"
+        ],
+        "changed_route_C_path_count": 2,
+        "constitutive_dependent_fields_recomputed": false,
+        "intervention_scope": "registered_route_node_C_only",
+        "intervention_surface": "LGRC9V3.set_state",
+        "only_intended_C_paths_changed": true,
+        "readout_uses_direct_native_source_C_eligibility": true,
+        "route_mass_after": 1.0,
+        "route_mass_before": 1.0,
+        "route_mass_matched": true,
+        "snapshot_load_identity_v1_exact_before_intervention": true,
+        "snapshot_load_identity_v2_exact_before_intervention": true
+      },
+      "readout": {
+        "admitted": false,
+        "eligibility_margin": -0.18,
+        "event_receipts": [],
+        "exception_message": "source coherence is smaller than packet amount",
+        "exception_type": "InvalidStateTransitionError",
+        "native_transition": "LGRC9V3.step packet departure eligibility",
+        "packet_amount": 0.22,
+        "queue_record_count_after": 1,
+        "queue_record_count_before": 1,
+        "source_coherence_before": 0.04,
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    },
+    "hold_native_readout": {
+      "admitted": true,
+      "eligibility_margin": 0.020000000000000018,
+      "event_receipts": [
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_departure"
+          ],
+          "event_time_key": 6.0,
+          "state_mutated": true,
+          "step_index": 7
+        },
+        {
+          "budget_errors": [
+            0.0
+          ],
+          "event_kinds": [
+            "lgrc9v3_packet_arrival",
+            "lgrc9v3_packet_arrival_eligibility",
+            "lgrc9v3_local_update"
+          ],
+          "event_time_key": 7.0,
+          "state_mutated": true,
+          "step_index": 8
+        }
+      ],
+      "exception_message": null,
+      "exception_type": null,
+      "native_transition": "LGRC9V3.step packet departure and arrival",
+      "packet_amount": 0.22,
+      "queue_record_count_after": 0,
+      "queue_record_count_before": 1,
+      "source_coherence_before": 0.24000000000000002,
+      "source_node_id": 1,
+      "target_node_id": 0
+    },
+    "mediation_supported": true,
+    "restoring_formed_organization_restores_readout": true,
+    "same_readout_packet_amount_all_branches": true,
+    "weakened_formed_restore": {
+      "intervention_receipt": {
+        "all_other_scientific_state_matched": true,
+        "allowed_changed_paths": [
+          "embedded_grc9v3_state.state.nodes.0.coherence",
+          "embedded_grc9v3_state.state.nodes.1.coherence",
+          "embedded_grc9v3_state.state.nodes.2.coherence"
+        ],
+        "changed_restoration_identity_paths": [
+          "embedded_grc9v3_state.state.nodes.1.coherence",
+          "embedded_grc9v3_state.state.nodes.2.coherence"
+        ],
+        "changed_route_C_path_count": 2,
+        "constitutive_dependent_fields_recomputed": false,
+        "intervention_scope": "registered_route_node_C_only",
+        "intervention_surface": "LGRC9V3.set_state",
+        "only_intended_C_paths_changed": true,
+        "readout_uses_direct_native_source_C_eligibility": true,
+        "route_mass_after": 1.0,
+        "route_mass_before": 1.0,
+        "route_mass_matched": true,
+        "snapshot_load_identity_v1_exact_before_intervention": true,
+        "snapshot_load_identity_v2_exact_before_intervention": true
+      },
+      "readout": {
+        "admitted": true,
+        "eligibility_margin": 0.020000000000000018,
+        "event_receipts": [
+          {
+            "budget_errors": [
+              0.0
+            ],
+            "event_kinds": [
+              "lgrc9v3_packet_departure"
+            ],
+            "event_time_key": 6.0,
+            "state_mutated": true,
+            "step_index": 7
+          },
+          {
+            "budget_errors": [
+              0.0
+            ],
+            "event_kinds": [
+              "lgrc9v3_packet_arrival",
+              "lgrc9v3_packet_arrival_eligibility",
+              "lgrc9v3_local_update"
+            ],
+            "event_time_key": 7.0,
+            "state_mutated": true,
+            "step_index": 8
+          }
+        ],
+        "exception_message": null,
+        "exception_type": null,
+        "native_transition": "LGRC9V3.step packet departure and arrival",
+        "packet_amount": 0.22,
+        "queue_record_count_after": 0,
+        "queue_record_count_before": 1,
+        "source_coherence_before": 0.24000000000000002,
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    },
+    "weakened_native_readout": {
+      "admitted": false,
+      "eligibility_margin": -0.01999999999999999,
+      "event_receipts": [],
+      "exception_message": "source coherence is smaller than packet amount",
+      "exception_type": "InvalidStateTransitionError",
+      "native_transition": "LGRC9V3.step packet departure eligibility",
+      "packet_amount": 0.22,
+      "queue_record_count_after": 1,
+      "queue_record_count_before": 1,
+      "source_coherence_before": 0.2,
+      "source_node_id": 1,
+      "target_node_id": 0
+    },
+    "weakening_removes_readout_eligibility": true
+  },
+  "checks": [
+    {
+      "check_id": "formation_effect_passed",
+      "detail": 0.20000000000000004,
+      "passed": true
+    },
+    {
+      "check_id": "forming_packet_exhausted_before_persistence",
+      "detail": [
+        "n31_i7_disjoint_hold",
+        "n31_i7_internal_weakening",
+        "n31_i7_internal_reinforcement"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "bounded_persistence_passed",
+      "detail": {
+        "formed": 0.20000000000000004,
+        "persisted": 0.20000000000000004
+      },
+      "passed": true
+    },
+    {
+      "check_id": "direction_matrix_passed",
+      "detail": {
+        "baseline_strength": 0.0,
+        "formed_strength": 0.20000000000000004,
+        "hold_preserved_formation_effect": true,
+        "matrix_kind": "preregistered_directional_perturbation_not_equal_state_continuation",
+        "non_equality_reason": "hold, weakening, and reinforcement branches contain distinct predeclared future packet queues",
+        "persisted_complete_continuation_states_equal": false,
+        "persisted_strength": 0.20000000000000004,
+        "reinforced_strength": 0.28,
+        "reinforcement_direction_control_passed": true,
+        "residual_organization_fraction": 0.5999999999999999,
+        "residual_organization_passed": true,
+        "weakened_strength": 0.12,
+        "weakening_amount": 0.08000000000000004,
+        "weakening_direction_passed": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "readout_mediation_intervention_passed",
+      "detail": {
+        "formed_organization_enables_readout": true,
+        "hold_baseline_clamp": {
+          "intervention_receipt": {
+            "all_other_scientific_state_matched": true,
+            "allowed_changed_paths": [
+              "embedded_grc9v3_state.state.nodes.0.coherence",
+              "embedded_grc9v3_state.state.nodes.1.coherence",
+              "embedded_grc9v3_state.state.nodes.2.coherence"
+            ],
+            "changed_restoration_identity_paths": [
+              "embedded_grc9v3_state.state.nodes.0.coherence",
+              "embedded_grc9v3_state.state.nodes.1.coherence"
+            ],
+            "changed_route_C_path_count": 2,
+            "constitutive_dependent_fields_recomputed": false,
+            "intervention_scope": "registered_route_node_C_only",
+            "intervention_surface": "LGRC9V3.set_state",
+            "only_intended_C_paths_changed": true,
+            "readout_uses_direct_native_source_C_eligibility": true,
+            "route_mass_after": 1.0,
+            "route_mass_before": 1.0,
+            "route_mass_matched": true,
+            "snapshot_load_identity_v1_exact_before_intervention": true,
+            "snapshot_load_identity_v2_exact_before_intervention": true
+          },
+          "readout": {
+            "admitted": false,
+            "eligibility_margin": -0.18,
+            "event_receipts": [],
+            "exception_message": "source coherence is smaller than packet amount",
+            "exception_type": "InvalidStateTransitionError",
+            "native_transition": "LGRC9V3.step packet departure eligibility",
+            "packet_amount": 0.22,
+            "queue_record_count_after": 1,
+            "queue_record_count_before": 1,
+            "source_coherence_before": 0.04,
+            "source_node_id": 1,
+            "target_node_id": 0
+          }
+        },
+        "hold_native_readout": {
+          "admitted": true,
+          "eligibility_margin": 0.020000000000000018,
+          "event_receipts": [
+            {
+              "budget_errors": [
+                0.0
+              ],
+              "event_kinds": [
+                "lgrc9v3_packet_departure"
+              ],
+              "event_time_key": 6.0,
+              "state_mutated": true,
+              "step_index": 7
+            },
+            {
+              "budget_errors": [
+                0.0
+              ],
+              "event_kinds": [
+                "lgrc9v3_packet_arrival",
+                "lgrc9v3_packet_arrival_eligibility",
+                "lgrc9v3_local_update"
+              ],
+              "event_time_key": 7.0,
+              "state_mutated": true,
+              "step_index": 8
+            }
+          ],
+          "exception_message": null,
+          "exception_type": null,
+          "native_transition": "LGRC9V3.step packet departure and arrival",
+          "packet_amount": 0.22,
+          "queue_record_count_after": 0,
+          "queue_record_count_before": 1,
+          "source_coherence_before": 0.24000000000000002,
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        "mediation_supported": true,
+        "restoring_formed_organization_restores_readout": true,
+        "same_readout_packet_amount_all_branches": true,
+        "weakened_formed_restore": {
+          "intervention_receipt": {
+            "all_other_scientific_state_matched": true,
+            "allowed_changed_paths": [
+              "embedded_grc9v3_state.state.nodes.0.coherence",
+              "embedded_grc9v3_state.state.nodes.1.coherence",
+              "embedded_grc9v3_state.state.nodes.2.coherence"
+            ],
+            "changed_restoration_identity_paths": [
+              "embedded_grc9v3_state.state.nodes.1.coherence",
+              "embedded_grc9v3_state.state.nodes.2.coherence"
+            ],
+            "changed_route_C_path_count": 2,
+            "constitutive_dependent_fields_recomputed": false,
+            "intervention_scope": "registered_route_node_C_only",
+            "intervention_surface": "LGRC9V3.set_state",
+            "only_intended_C_paths_changed": true,
+            "readout_uses_direct_native_source_C_eligibility": true,
+            "route_mass_after": 1.0,
+            "route_mass_before": 1.0,
+            "route_mass_matched": true,
+            "snapshot_load_identity_v1_exact_before_intervention": true,
+            "snapshot_load_identity_v2_exact_before_intervention": true
+          },
+          "readout": {
+            "admitted": true,
+            "eligibility_margin": 0.020000000000000018,
+            "event_receipts": [
+              {
+                "budget_errors": [
+                  0.0
+                ],
+                "event_kinds": [
+                  "lgrc9v3_packet_departure"
+                ],
+                "event_time_key": 6.0,
+                "state_mutated": true,
+                "step_index": 7
+              },
+              {
+                "budget_errors": [
+                  0.0
+                ],
+                "event_kinds": [
+                  "lgrc9v3_packet_arrival",
+                  "lgrc9v3_packet_arrival_eligibility",
+                  "lgrc9v3_local_update"
+                ],
+                "event_time_key": 7.0,
+                "state_mutated": true,
+                "step_index": 8
+              }
+            ],
+            "exception_message": null,
+            "exception_type": null,
+            "native_transition": "LGRC9V3.step packet departure and arrival",
+            "packet_amount": 0.22,
+            "queue_record_count_after": 0,
+            "queue_record_count_before": 1,
+            "source_coherence_before": 0.24000000000000002,
+            "source_node_id": 1,
+            "target_node_id": 0
+          }
+        },
+        "weakened_native_readout": {
+          "admitted": false,
+          "eligibility_margin": -0.01999999999999999,
+          "event_receipts": [],
+          "exception_message": "source coherence is smaller than packet amount",
+          "exception_type": "InvalidStateTransitionError",
+          "native_transition": "LGRC9V3.step packet departure eligibility",
+          "packet_amount": 0.22,
+          "queue_record_count_after": 1,
+          "queue_record_count_before": 1,
+          "source_coherence_before": 0.2,
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        "weakening_removes_readout_eligibility": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "readout_margins_passed",
+      "detail": {
+        "hold_pass_margin": 0.020000000000000018,
+        "weakening_rejection_shortfall": 0.01999999999999999
+      },
+      "passed": true
+    },
+    {
+      "check_id": "route_mass_and_global_budget_closed",
+      "detail": "all attempt checkpoints",
+      "passed": true
+    },
+    {
+      "check_id": "post_formation_producer_mutation_absent",
+      "detail": {
+        "all_schedule_calls_before_first_runtime_event": true,
+        "intervention_calls_are_control_branches_not_positive_trajectory": true,
+        "post_formation_producer_call_policy": "no_calls",
+        "post_formation_producer_calls": [],
+        "post_formation_state_mutating_producer_calls": [],
+        "pre_execution_schedule_authorship_present": true,
+        "pre_execution_schedule_call_count_per_attempt": 4,
+        "producer_call_audit_status": "complete_preexecution_schedule_authorship_present_no_postformation_calls",
+        "weakening_schedule_owner": "experiment_fixture",
+        "weakening_transition_execution_owner": "native_LGRC9V3_runtime"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "snapshot_load_identity_exact",
+      "detail": "all attempt and intervention branch points",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_hashes_exact",
+      "detail": 20,
+      "passed": true
+    }
+  ],
+  "classification_boundary": {
+    "autonomous_slow_mode_relaxation_supported": false,
+    "conditional_internal_reorganization_relation": "supported_with_bounded_local_source_C_readout_effect",
+    "conditional_reorganization_shape": "DR4_shaped_but_not_an_autonomous_decay_rung",
+    "final_D0a_supported": false,
+    "full_spatial_distribution_mediation_supported": false,
+    "general_decay_law_supported": false,
+    "native_D0a_ladder_ceiling": "DR2",
+    "pending": "I8 replay, restoration, complete control, and comparative classification",
+    "supported_D0_subclass": "D0a_spatial_formation_and_persistence"
+  },
+  "derived_report_only": false,
+  "direction_matrix": {
+    "baseline_strength": 0.0,
+    "formed_strength": 0.20000000000000004,
+    "hold_preserved_formation_effect": true,
+    "matrix_kind": "preregistered_directional_perturbation_not_equal_state_continuation",
+    "non_equality_reason": "hold, weakening, and reinforcement branches contain distinct predeclared future packet queues",
+    "persisted_complete_continuation_states_equal": false,
+    "persisted_strength": 0.20000000000000004,
+    "reinforced_strength": 0.28,
+    "reinforcement_direction_control_passed": true,
+    "residual_organization_fraction": 0.5999999999999999,
+    "residual_organization_passed": true,
+    "weakened_strength": 0.12,
+    "weakening_amount": 0.08000000000000004,
+    "weakening_direction_passed": true
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "fixture_contract": {
+    "all_packet_schedules_registered_before_first_event": true,
+    "global_conserved_budget": 2.0,
+    "outside_progression_edge": 3,
+    "packet_execution_owner": "native_LGRC9V3_runtime",
+    "registered_route_mass": 1.0,
+    "route_boundary_edge": 2,
+    "route_internal_edges": [
+      0,
+      1
+    ],
+    "route_support": [
+      0,
+      1,
+      2
+    ],
+    "schedule_definition_owner": "experiment_fixture",
+    "selected_spatial_coordinate": "C[1]-C[2]"
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "7",
+  "output_digest": "f70e6424ef15185968d21a8485f975dcc19078815ce9059b88d6d83d845d9a0a",
+  "preregistration": {
+    "declared_before_attempt_execution": true,
+    "output_digest": "0df4522b45d5bc262fbd8fa105af0e4bf048cc6a01c376af8e9a25885bc3302e",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/n31_i7_preregistration.json",
+    "sha256": "99886a6eb5e755ce409c1777d5c5eccdbd82144af08175fb24756a8f8b6b4047"
+  },
+  "producer_call_audit": {
+    "all_schedule_calls_before_first_runtime_event": true,
+    "intervention_calls_are_control_branches_not_positive_trajectory": true,
+    "post_formation_producer_call_policy": "no_calls",
+    "post_formation_producer_calls": [],
+    "post_formation_state_mutating_producer_calls": [],
+    "pre_execution_schedule_authorship_present": true,
+    "pre_execution_schedule_call_count_per_attempt": 4,
+    "producer_call_audit_status": "complete_preexecution_schedule_authorship_present_no_postformation_calls",
+    "weakening_schedule_owner": "experiment_fixture",
+    "weakening_transition_execution_owner": "native_LGRC9V3_runtime"
+  },
+  "public_runtime_operations": [
+    "LGRC9V3.from_state",
+    "LGRC9V3.schedule_packet_departure",
+    "LGRC9V3.step",
+    "LGRC9V3.save",
+    "LGRC9V3.load",
+    "LGRC9V3.set_state",
+    "lgrc9v3_restoration_identity_v1",
+    "digest_lgrc9v3_restoration_identity_v2"
+  ],
+  "runtime_family": "LGRC9V3",
+  "runtime_revision": "42a760376c630fc9d9797ef2d85848b5af628a17",
+  "source_current_runtime_artifact": true,
+  "status": "passed"
+}

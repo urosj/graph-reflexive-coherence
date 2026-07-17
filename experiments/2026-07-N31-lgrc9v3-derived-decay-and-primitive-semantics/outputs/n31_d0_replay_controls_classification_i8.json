@@ -1,0 +1,309 @@
+{
+  "RCAE_return_projection": {
+    "added_mechanism_scope": "autonomous_causal_weakening_only",
+    "added_producer_mechanism_lane": "scientifically_justified_and_open",
+    "automatic_RCAE_adoption_allowed": false,
+    "conditional_internal_reorganization": {
+      "D0_decay_relation": false,
+      "execution_owner": "native_LGRC9V3_runtime",
+      "local_source_C_consequence": "supported_bounded_partial",
+      "native_D0a_rung_effect": "separate_not_rung_raising",
+      "perturbation_owner": "experiment_fixture",
+      "readout_scope": "0.20 < q <= 0.24",
+      "replay_status": "passed",
+      "reverse_reinforcement": "supported",
+      "weakening_direction": "supported"
+    },
+    "final_return_manifest_emitted": false,
+    "native_spatial_D0a": {
+      "autonomous_weakening": "unsupported",
+      "decay_relation_ladder_rung": "DR2",
+      "formation": "supported",
+      "full_route_distribution_mediation": "unresolved",
+      "persistence": "supported",
+      "producer_authored_weakening_not_consumed": true,
+      "replay_status": "passed"
+    },
+    "projection_status": "provisional_I8_not_final_return_manifest"
+  },
+  "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+  "added_mechanism_decision": {
+    "D0_wholly_insufficient": false,
+    "I8_does_not_select_candidate": true,
+    "I9_A_release_efficacy_lane": "open_for_admission",
+    "I9_B_conserved_leakage_lane": "open_for_admission",
+    "I9_C_susceptibility_lane": "open_for_admission",
+    "admission_reason": "d0_insufficient",
+    "admission_reason_qualifier": "d0_insufficient_for_autonomous_causal_weakening",
+    "reason": "existing LGRC forms and preserves spatial organization and executes conservative externally specified reorganization, but supplies no native autonomous weakening trajectory",
+    "scientifically_justified": true
+  },
+  "aggregation_invariant": {
+    "conditional_reorganization_can_raise_native_D0a_rung": false,
+    "full_route_distribution_mediation": "unresolved",
+    "mediation_strength": "bounded_partial_local_source_C",
+    "native_D0a_ladder_ceiling": "DR2",
+    "native_spatial_D0a_and_conditional_reorganization_separate": true,
+    "ordinary_autonomous_weakening_generated": false,
+    "producer_authors_weakening": true,
+    "provisional_DR4_status": "superseded_not_a_native_decay_rung"
+  },
+  "artifact_kind": "D0_replay_controls_classification",
+  "artifact_manifest": [
+    {
+      "artifact_role": "I8_replay_and_amount_sweep_preregistration",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i8_d0_replay_control_artifacts/n31_i8_replay_and_amount_sweep_preregistration.json",
+      "sha256": "7df80a1e37fc56c5452bd79b8b9dc898174c06c8deb2815a7e8dd4c184f5d0e0"
+    },
+    {
+      "artifact_role": "I8_replay_control_runtime_trace",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i8_d0_replay_control_trace.json",
+      "sha256": "31c360eeb75c729a21f06e39ec66492a65a2148ebb943a4c6e020ae6764d69c6"
+    }
+  ],
+  "artifact_schema_version": "n31_i8_D0_replay_controls_classification_v1",
+  "checks": [
+    {
+      "check_id": "I8_trace_passed",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "D0_classes_remain_separate",
+      "detail": {
+        "D0_R": {
+          "causal_mediation": false,
+          "ordinary_export_observed": false,
+          "scope_note": "current internal-cycle and internal-reorganization fixtures do not constitute a dedicated ordinary-export D0-R attempt",
+          "source_current_D0_R_globally_refuted": false,
+          "status": "not_instantiated_in_executed_D0_fixtures"
+        },
+        "D0b": {
+          "causal_mediation": false,
+          "claim_ceiling": "observable_only_below_causal_trail",
+          "ladder_rung": "DR3",
+          "persistence": true,
+          "status": "supported_finite_window_derived_observable",
+          "weakening": true
+        },
+        "D0c": {
+          "causal_mediation": false,
+          "claim_ceiling": "instantaneous_current_state_geometry_only",
+          "ladder_rung": "DR1",
+          "persistence": false,
+          "status": "supported_instantaneous_comparator"
+        },
+        "conditional_internal_reorganization": {
+          "D0_decay_relation": false,
+          "execution_owner": "native_LGRC9V3_runtime",
+          "local_source_C_consequence": "supported_bounded_partial",
+          "native_D0a_rung_effect": "separate_not_rung_raising",
+          "perturbation_owner": "experiment_fixture",
+          "readout_scope": "0.20 < q <= 0.24",
+          "replay_status": "passed",
+          "reverse_reinforcement": "supported",
+          "weakening_direction": "supported"
+        },
+        "native_spatial_D0a": {
+          "autonomous_weakening": "unsupported",
+          "decay_relation_ladder_rung": "DR2",
+          "formation": "supported",
+          "full_route_distribution_mediation": "unresolved",
+          "persistence": "supported",
+          "producer_authored_weakening_not_consumed": true,
+          "replay_status": "passed"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I7_demotion_preserved_on_all_aggregation_surfaces",
+      "detail": {
+        "conditional_reorganization_can_raise_native_D0a_rung": false,
+        "full_route_distribution_mediation": "unresolved",
+        "mediation_strength": "bounded_partial_local_source_C",
+        "native_D0a_ladder_ceiling": "DR2",
+        "native_spatial_D0a_and_conditional_reorganization_separate": true,
+        "ordinary_autonomous_weakening_generated": false,
+        "producer_authors_weakening": true,
+        "provisional_DR4_status": "superseded_not_a_native_decay_rung"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "added_mechanism_lane_remains_open",
+      "detail": {
+        "D0_wholly_insufficient": false,
+        "I8_does_not_select_candidate": true,
+        "I9_A_release_efficacy_lane": "open_for_admission",
+        "I9_B_conserved_leakage_lane": "open_for_admission",
+        "I9_C_susceptibility_lane": "open_for_admission",
+        "admission_reason": "d0_insufficient",
+        "admission_reason_qualifier": "d0_insufficient_for_autonomous_causal_weakening",
+        "reason": "existing LGRC forms and preserves spatial organization and executes conservative externally specified reorganization, but supplies no native autonomous weakening trajectory",
+        "scientifically_justified": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "RCAE_projection_bounded",
+      "detail": {
+        "added_mechanism_scope": "autonomous_causal_weakening_only",
+        "added_producer_mechanism_lane": "scientifically_justified_and_open",
+        "automatic_RCAE_adoption_allowed": false,
+        "conditional_internal_reorganization": {
+          "D0_decay_relation": false,
+          "execution_owner": "native_LGRC9V3_runtime",
+          "local_source_C_consequence": "supported_bounded_partial",
+          "native_D0a_rung_effect": "separate_not_rung_raising",
+          "perturbation_owner": "experiment_fixture",
+          "readout_scope": "0.20 < q <= 0.24",
+          "replay_status": "passed",
+          "reverse_reinforcement": "supported",
+          "weakening_direction": "supported"
+        },
+        "final_return_manifest_emitted": false,
+        "native_spatial_D0a": {
+          "autonomous_weakening": "unsupported",
+          "decay_relation_ladder_rung": "DR2",
+          "formation": "supported",
+          "full_route_distribution_mediation": "unresolved",
+          "persistence": "supported",
+          "producer_authored_weakening_not_consumed": true,
+          "replay_status": "passed"
+        },
+        "projection_status": "provisional_I8_not_final_return_manifest"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "autonomous_D0a_weakening_claim_allowed": false,
+        "communication_claim_allowed": false,
+        "ecology_claim_allowed": false,
+        "full_route_distribution_mediation_claim_allowed": false,
+        "general_decay_law_claim_allowed": false,
+        "native_DR4_decay_relation_claim_allowed": false,
+        "native_memory_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "trail_or_stigmergy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "42a760376c630fc9d9797ef2d85848b5af628a17",
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contract_diff_empty",
+      "detail": "42a760376c630fc9d9797ef2d85848b5af628a17",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "recursive",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "replay_control_backed_native_spatial_D0a_formation_and_persistence_at_DR2_plus_separate_experiment_authored_conditional_reorganization_with_bounded_local_C_effect",
+    "blocked_claims": [
+      "autonomous_D0a_weakening",
+      "native_DR4_decay_relation",
+      "full_route_distribution_mediation",
+      "induced_geometric_mediation",
+      "general_decay_law",
+      "native_memory",
+      "trail_or_stigmergy",
+      "communication",
+      "ecology",
+      "agency",
+      "native_support",
+      "Phase_8_completion"
+    ],
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "autonomous_D0a_weakening_claim_allowed": false,
+      "communication_claim_allowed": false,
+      "ecology_claim_allowed": false,
+      "full_route_distribution_mediation_claim_allowed": false,
+      "general_decay_law_claim_allowed": false,
+      "native_DR4_decay_relation_claim_allowed": false,
+      "native_memory_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "trail_or_stigmergy_claim_allowed": false
+    }
+  },
+  "classification": {
+    "D0_R": {
+      "causal_mediation": false,
+      "ordinary_export_observed": false,
+      "scope_note": "current internal-cycle and internal-reorganization fixtures do not constitute a dedicated ordinary-export D0-R attempt",
+      "source_current_D0_R_globally_refuted": false,
+      "status": "not_instantiated_in_executed_D0_fixtures"
+    },
+    "D0b": {
+      "causal_mediation": false,
+      "claim_ceiling": "observable_only_below_causal_trail",
+      "ladder_rung": "DR3",
+      "persistence": true,
+      "status": "supported_finite_window_derived_observable",
+      "weakening": true
+    },
+    "D0c": {
+      "causal_mediation": false,
+      "claim_ceiling": "instantaneous_current_state_geometry_only",
+      "ladder_rung": "DR1",
+      "persistence": false,
+      "status": "supported_instantaneous_comparator"
+    },
+    "conditional_internal_reorganization": {
+      "D0_decay_relation": false,
+      "execution_owner": "native_LGRC9V3_runtime",
+      "local_source_C_consequence": "supported_bounded_partial",
+      "native_D0a_rung_effect": "separate_not_rung_raising",
+      "perturbation_owner": "experiment_fixture",
+      "readout_scope": "0.20 < q <= 0.24",
+      "replay_status": "passed",
+      "reverse_reinforcement": "supported",
+      "weakening_direction": "supported"
+    },
+    "native_spatial_D0a": {
+      "autonomous_weakening": "unsupported",
+      "decay_relation_ladder_rung": "DR2",
+      "formation": "supported",
+      "full_route_distribution_mediation": "unresolved",
+      "persistence": "supported",
+      "producer_authored_weakening_not_consumed": true,
+      "replay_status": "passed"
+    }
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "governance": {
+    "governance_base_revision": "42a760376c630fc9d9797ef2d85848b5af628a17",
+    "protected_runtime_contract_diff_empty": true,
+    "src_diff_empty": true
+  },
+  "iteration": "8",
+  "n31_closeout_progress": {
+    "final_N31_supported": false,
+    "n31_closeout_ceiling": "N31-C4_causal_control_backed_result_and_blocker_available",
+    "n31_closeout_ladder_rung_assigned": false,
+    "n31_closeout_progress_rung": "N31-C4",
+    "ready_for_iteration_9_added_mechanism_admission": true
+  },
+  "output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+  "source_trace": {
+    "output_digest": "29667fb70ec3da35bf490d93510655bd1698e747ccdca0633ea2ac56680b4d7f",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i8_d0_replay_control_trace.json",
+    "sha256": "31c360eeb75c729a21f06e39ec66492a65a2148ebb943a4c6e020ae6764d69c6"
+  },
+  "status": "passed"
+}

@@ -84,6 +84,36 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0b_finite_window_derived_relation_i6.py
 ```
 
+## Iteration 7
+
+- `build_n31_d0a_source_current_causal_probe_i7.py` preregisters and runs a
+  hold/weakening/reinforcement direction matrix over the I4-admitted spatial C
+  projection, proves route-mass and budget closure, tests a fixed later native
+  departure readout, applies matched C-only clamp/restore interventions, audits
+  restoration identity and producer calls, and separates native D0a formation
+  and persistence at `DR2` from an experiment-authored conditional
+  reorganization with a bounded local-C causal effect.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0a_source_current_causal_probe_i7.py
+```
+
+## Iteration 8
+
+- `build_n31_d0_replay_controls_classification_i8.py` replays source manifests
+  and snapshots, reconstructs I7 attempts, runs equal-state continuation and a
+  preregistered readout-amount sweep, aggregates D0 controls, and emits the
+  `N31-C4` comparative classification without promoting conditional
+  reorganization into native D0a decay.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0_replay_controls_classification_i8.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

@@ -830,59 +830,269 @@ spatial D0a lane. The terminal closeout rung remains unassigned.
 
 ## Iteration 7 - D0a Source-Current Causal Probe
 
-- [ ] Confirm Iteration 4 admitted native or exact representation.
-- [ ] Skip with explicit blocker if representation is lossy or missing.
-- [ ] Declare fixture, thresholds, and finite attempt matrix before execution.
-- [ ] Form attributable route-local coherence organization.
-- [ ] Instantiate separate route-mass, route-organization, and causal-mediation contracts.
-- [ ] Stop forming activity.
-- [ ] Demonstrate bounded persistence.
-- [ ] Demonstrate weakening under ordinary internal progression.
-- [ ] Show later local readout dependence on the mediator.
-- [ ] Clamp/intervene on slow organization and change/remove readout effect.
-- [ ] Match route mass and all other continuation state during organization intervention where possible.
-- [ ] Report bounded partial or unresolved mediation when exact matching is unavailable.
-- [ ] Close signed boundary-flux continuity before claiming conservative export.
-- [ ] Classify weakening mode and D0 subtype from independent facts.
-- [ ] Record organization domain and weakening trajectory class.
-- [ ] Separate observed diagnostic domains from the load-bearing mediator domain.
-- [ ] Resolve a mixed row to one load-bearing domain or retain unresolved mediation.
-- [ ] For a temporal lane, prove the relation derives from admitted native timing state without added phase or coincidence state.
-- [ ] Match packet amount, route mass, spatial organization, and other continuation state in temporal intervention.
-- [ ] Distinguish propagation of forming packets from a later encountered route mediator.
-- [ ] Exhaust, causally isolate, or identity-exclude forming packets before independent-readout language.
-- [ ] Require local-transport intervention before promoting geometric shallowing to causal D0a.
-- [ ] Require ordinary post-formation flux and no added export policy for D0-R.
-- [ ] Compare instantaneous D0c and observable-only D0b controls.
-- [ ] Enforce strict D0 producer-role audit.
-- [ ] Record every post-formation producer call and prove the state-mutating call list is empty.
-- [ ] Preserve complete conservation.
-- [ ] Record complete-state rather than node-scalar equality.
-- [ ] Emit source-current artifacts, JSON, and report.
+- [x] Confirm Iteration 4 admitted native or exact representation.
+- [x] Skip with explicit blocker if representation is lossy or missing.
+- [x] Declare fixture, thresholds, and finite attempt matrix before execution.
+- [x] Form attributable route-local coherence organization.
+- [x] Instantiate separate route-mass, route-organization, and causal-mediation contracts.
+- [x] Stop forming activity.
+- [x] Demonstrate bounded persistence.
+- [x] Demonstrate weakening under experiment-authored, natively executed internal progression.
+- [x] Show later local readout dependence on the local source-node C component.
+- [x] Clamp/intervene on represented route C and change/remove the local readout effect.
+- [x] Match route mass and all other continuation state during organization intervention where possible.
+- [x] Report bounded-partial local-C mediation and retain full route-distribution mediation as unresolved.
+- [x] Close signed boundary-flux continuity before claiming conservative export.
+- [x] Classify weakening mode and D0 subtype from independent facts.
+- [x] Record organization domain and weakening trajectory class.
+- [x] Separate observed diagnostic domains from the load-bearing mediator domain.
+- [x] Resolve a mixed row to one load-bearing domain or retain unresolved mediation.
+- [x] For a temporal lane, prove the relation derives from admitted native timing state without added phase or coincidence state.
+- [x] Match packet amount, route mass, spatial organization, and other continuation state in temporal intervention.
+- [x] Distinguish propagation of forming packets from a later encountered route mediator.
+- [x] Exhaust, causally isolate, or identity-exclude forming packets before independent-readout language.
+- [x] Require local-transport intervention before promoting geometric shallowing to causal D0a.
+- [x] Require ordinary post-formation flux and no added export policy for D0-R.
+- [x] Compare instantaneous D0c and observable-only D0b controls.
+- [x] Enforce strict D0 producer-role audit.
+- [x] Record every post-formation producer call and prove the state-mutating call list is empty.
+- [x] Preserve complete conservation.
+- [x] Record complete-state inequality for the direction matrix and matched-except-C identity for interventions.
+- [x] Emit source-current artifacts, JSON, and report.
+
+Iteration 7 result:
+
+```text
+status = passed
+acceptance_state = accepted_native_spatial_D0a_DR2_formation_persistence_and_conditional_reorganization_probe
+primary_semantic_class = D0a
+representation_or_authority_class = exact_derived_projection
+organization_domain = spatial_distribution
+weakening_mode = internal_reorganization
+weakening_mode_qualifier = experiment_authored_conditional_directional_packet_transfer
+native_D0a_ladder_ceiling = DR2
+conditional_internal_reorganization_relation = supported
+mediation_strength = bounded_partial
+full_spatial_distribution_mediation_supported = false
+n31_closeout_progress_rung = N31-C3
+final_D0a_supported = false
+final_N31_supported = false
+ready_for_iteration_8_replay_controls_classification = true
+output_digest = ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1
+```
+
+I7 records two separate evidential objects even though they share one runtime
+trace:
+
+```text
+native_spatial_D0a:
+  formation = supported
+  persistence = supported
+  decay_relation_ladder_rung = DR2
+  autonomous_weakening = unsupported
+
+conditional_internal_reorganization:
+  perturbation_owner = experiment_fixture
+  execution_owner = native_LGRC9V3_runtime
+  weakening_direction = supported
+  reverse_reinforcement = supported
+  local_source_C_consequence = supported_bounded_partial
+  native_D0a_rung_effect = separate_not_rung_raising
+  D0_decay_relation = false
+```
+
+Machine surfaces normalize the same boundary:
+
+```text
+provisional_DR4_status = superseded_not_a_native_decay_rung
+decay_relation_ladder_rung = DR2_native_D0a_ceiling
+mediation_strength = bounded_partial
+load_bearing_mediator = local_source_node_C
+full_route_distribution_mediation = unresolved
+producer_authors_weakening = true
+ordinary_autonomous_weakening_generated = false
+```
+
+The candidate row, nested mediation/organization contracts, comparison table,
+claim flags, and provisional RCAE return projection carry these same facts.
+The RCAE projection permits no automatic adoption and is not a final return
+manifest. Its added producer-mechanism lane remains open pending I8 confirmation
+and I9 admission.
+
+Normalized I7 control summary:
+
+```text
+producer_scheduled_D0_decay = failed_closed
+forming_packet_exclusion = passed
+route_mass_match = passed
+direction_matrix = perturbation_control
+proper_time_alignment = not_applicable
+```
+
+I7 consumes the exact spatial representation admitted by I4 and freezes a
+three-row direction matrix before execution. The route begins with coherence
+`[0.48, 0.04, 0.48]`. A native `0 -> 1` packet of `0.20` forms a positive
+`C[1] - C[2]` effect of `0.20`. A disjoint outside packet advances native LGRC
+event time while the effect remains `0.20`. Equal-dose progression then gives:
+
+```text
+disjoint hold            = 0.20
+internal 1 -> 2 weakening = 0.12
+internal 2 -> 1 control   = 0.28
+```
+
+Thus event-time advance alone does not weaken the route, the registered
+weakening direction reduces but does not erase organization, and reversing the
+same internal packet reinforces it. These are different preregistered future
+packet queues, not equal-state continuation branches. Route mass remains `1.0`,
+closed-system coherence remains `2.0`, no packet crosses the route boundary,
+and the signed integrated outward transfer is zero. I7 therefore establishes a
+directional internal-redistribution perturbation matrix rather than autonomous
+weakening, route-mass loss, or conservative export.
+
+The later readout is a `1 -> 0` packet of `0.22`, also queued before the first
+event. The persisted route has source coherence `0.24` and admits the readout
+with margin `+0.02`. The weakened route has source coherence `0.20` and rejects
+it with margin `-0.02`. A baseline-C clamp removes eligibility from the hold
+branch, while restoring formed C rescues the weakened branch. Both controls
+preserve route mass; restoration identity v1/v2 is exact before intervention;
+and the complete identity differs only at route-node C paths. Native departure
+eligibility reads local `C[1]`, so the result establishes a bounded local-C
+causal effect. It does not isolate the complete `C[1]-C[2]` distribution as the
+mediator, and `set_state()` does not validate induced-geometric causality.
+
+The binary readout is valid but narrow: differentiated admission exists only
+for `0.20 < q <= 0.24`. The selected `q = 0.22` was preregistered and gives
+`+0.02`/`-0.02` margins, but it is not broad traversal retuning.
+
+The forming packet is exhausted before persistence, progression, and readout.
+All packet schedules occur before the first runtime event, and every
+post-formation producer-call list is empty. This does not erase producer
+authorship: the fixture selects the weakening time, amount, direction, source,
+and destination. Native LGRC executes conservative packet transport. The
+`producer_scheduled_D0_decay` control therefore fails closed and caps native
+spatial D0a at `DR2` for formation and persistence. The conditional
+reorganization and local-C readout effect remain useful separate evidence, but
+they are not autonomous D0a decay or a native `DR4` result. Temporal and mixed
+lanes are out of scope; D0-R is not claimed because there is no boundary export.
+I8 remains responsible for replay, reconstruction, control consumption, and
+final D0a/D0b/D0c classification.
 
 ## Iteration 8 - D0 Replay, Controls, And Classification
 
-- [ ] Consume D0c, D0b, and any admissible D0a candidate rows.
-- [ ] Run artifact replay.
-- [ ] Run snapshot/load replay.
-- [ ] Use restoration identity v2 for reset-sensitive rows.
-- [ ] Run duplicate replay.
-- [ ] Run equal-state branch continuation.
-- [ ] Run mediator and complete-state interventions.
-- [ ] Run cache recomputation and execution reconstruction separately.
-- [ ] Run conservation and timing audits.
-- [ ] Run all D0 controls.
-- [ ] Demote or reject failed-open rows.
-- [ ] Classify D0a/D0b/D0c separately.
-- [ ] Preserve D0-R as one D0 subtype rather than all coherence-only decay.
-- [ ] Retain route mass, organization, readout, and mediation results separately.
-- [ ] Classify geometric, temporal-alignment, and arrival-distribution variants without promoting observables.
-- [ ] Classify recurrence as modulation rather than monotonic decay.
-- [ ] Treat intervention-backed bounded partial mediation as Boolean-supported but qualified-partial only.
-- [ ] Block causal D0-R when mediation is absent or unresolved.
-- [ ] Decide whether added-mechanism admission is scientifically justified.
-- [ ] Do not infer added mechanism solely from missing D0 representation.
-- [ ] Emit replay/control/classification JSON and report.
+- [x] Consume D0c, D0b, and any admissible D0a candidate rows.
+- [x] Run artifact replay.
+- [x] Distinguish `45` manifest references from `25` unique artifact paths and record `20` repeated cross-source references.
+- [x] Require every manifest reference hash to match even when paths repeat across source artifacts.
+- [x] Record direct builder replay as I3/I5/I6/I7 and I2/I4 governance/representation verification as transitive.
+- [x] Run snapshot/load replay.
+- [x] Use restoration identity v2 for reset-sensitive rows.
+- [x] Run duplicate replay.
+- [x] Run equal-state branch continuation.
+- [x] Limit equal-state continuation to replay correctness; add no weakening, mediation, or route-causality evidence.
+- [x] Do not consume the I7 directional perturbation matrix as equal-state continuation.
+- [x] Preserve the I7 native D0a ceiling at `DR2` unless new autonomous source-current weakening evidence is produced.
+- [x] Preserve bounded-partial local-C mediation and full-route mediation debt.
+- [x] Record the triggered `producer_scheduled_D0_decay` control as `failed_closed`.
+- [x] Audit the narrow readout interval; use a preregistered amount sweep if extending the claim.
+- [x] Classify `q = 0.24` as the native floating-point eligibility boundary with effectively zero hold margin.
+- [x] Run mediator and complete-state interventions.
+- [x] Run cache recomputation and execution reconstruction separately.
+- [x] Run conservation and timing audits.
+- [x] Run all D0 controls.
+- [x] Keep I3 generic pre-positive nulls separate from I5-I7 candidate-specific controls.
+- [x] Record all required controls as resolved with no `failed_open` or `not_run` dependent control.
+- [x] Demote or reject failed-open rows.
+- [x] Classify D0a/D0b/D0c separately.
+- [x] Preserve D0-R as one D0 subtype rather than all coherence-only decay.
+- [x] Record D0-R as uninstantiated in executed fixtures rather than globally refuted.
+- [x] Retain route mass, organization, readout, and mediation results separately.
+- [x] Classify geometric, temporal-alignment, and arrival-distribution variants without promoting observables.
+- [x] Classify recurrence as modulation rather than monotonic decay.
+- [x] Treat intervention-backed bounded partial mediation as Boolean-supported but qualified-partial only.
+- [x] Block causal D0-R when mediation is absent or unresolved.
+- [x] Decide whether added-mechanism admission is scientifically justified.
+- [x] Do not infer added mechanism solely from missing D0 representation.
+- [x] Emit replay/control/classification JSON and report.
+
+Iteration 8 result:
+
+```text
+status = passed
+acceptance_state = accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need
+n31_closeout_progress_rung = N31-C4
+native_spatial_D0a_ladder_ceiling = DR2
+autonomous_D0a_weakening_supported = false
+conditional_internal_reorganization_supported = true
+conditional_reorganization_is_D0_decay = false
+mediation_strength = bounded_partial_local_source_C
+full_route_distribution_mediation = unresolved
+added_mechanism_admission_reason = d0_insufficient
+added_mechanism_admission_reason_qualifier = d0_insufficient_for_autonomous_causal_weakening
+D0_wholly_insufficient = false
+ready_for_iteration_9_added_mechanism_admission = true
+final_N31_supported = false
+output_digest = bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8
+```
+
+I8 reconstructs and replays the evidence stack rather than opening another
+positive D0 probe. It directly reruns I3, I5, I6, and I7, while I2/I4
+governance and representation dependencies are verified transitively through
+the exact source chains. It verifies `45` artifact-manifest references resolving
+to `25` unique paths, with `20` repeated cross-source references and every
+reference hash exact. It also performs exact roundtrips for `19` I7 snapshots
+under restoration identities v1 and v2, exact fresh reconstruction and
+duplicate replay for all three I7 attempts, and an equal-state continuation
+from one complete pre-readout snapshot. Equal-state continuation establishes
+replay correctness only; it adds no weakening, mediation, or route-causality
+evidence. The I7 direction matrix is explicitly excluded from that equal-state
+claim.
+
+The preregistered readout sweep confirms the bounded threshold shape:
+
+```text
+q <= 0.20        = hold and weakened branches both admit
+0.20 < q <= 0.24 = hold admits and weakened rejects
+q > 0.24         = both reject
+```
+
+This is a narrow local source-C eligibility interval, not broad traversal
+retuning or full route-distribution mediation. The upper endpoint has effectively
+zero hold margin and is retained only as the native floating-point eligibility
+boundary, not a meaningful positive-margin endpoint.
+
+All `70` I3 generic pre-positive active nulls remain failed closed. They remain
+separate from and are not presented as direct per-candidate null consumption.
+Across I5-I7 candidate controls,
+`22` pass, `6` fail closed as intended, `2` are not applicable with scope, and
+none are `failed_open` or `not_run`. I7 retains:
+
+```text
+producer_scheduled_D0_decay = failed_closed
+forming_packet_exclusion = passed
+route_mass_match = passed
+direction_matrix = perturbation_control
+proper_time_alignment = not_applicable
+```
+
+The comparative result is:
+
+```text
+D0c = DR1 instantaneous comparator, no persistence or mediation
+D0b = DR3 finite-window fading observable, no causal mediation
+native spatial D0a = DR2 formation and persistence, no autonomous weakening
+conditional reorganization = replay-clean perturbation with bounded local-C effect
+D0-R = not instantiated in executed fixtures; ordinary export remains untested
+```
+
+Existing LGRC therefore supports spatial formation and persistence plus
+conservative externally specified reorganization, but not a native autonomous
+weakening trajectory. This supports the schema-valid `d0_insufficient` I9
+admission enum only under the qualifier
+`d0_insufficient_for_autonomous_causal_weakening`; D0 is not wholly
+insufficient. D0-R is not globally refuted because no dedicated ordinary-export
+fixture was executed. I8 does not select candidate A, B, or C; all three remain
+open for separate admission, and no automatic RCAE adoption is allowed.
 
 ## Iteration 9 - Added-Mechanism Admission
 
@@ -897,6 +1107,21 @@ spatial D0a lane. The terminal closeout rung remains unassigned.
 - [ ] Do not use one generic scalar decay law.
 - [ ] Do not rank nonequivalent candidates by raw effect size.
 - [ ] Emit admission JSON and report.
+
+I9 admission must preserve the bounded I8 capability record:
+
+```text
+D0c = DR1 instantaneous geometry
+D0b = DR3 fading derived observable without causal mediation
+native spatial D0a = DR2 formation and persistence
+conditional reorganization = separate experiment-authored perturbation evidence
+missing transition = producer-owned autonomous causal weakening
+```
+
+A tests release efficacy, B tests conserved leakage/export, and C tests
+susceptibility/conductance relaxation. Producer-assisted success cannot
+retroactively raise native D0a, and D0-R remains uninstantiated unless a
+dedicated ordinary-export probe supports it.
 
 ## Iteration 9-A - Release-Efficacy Attenuation
 
