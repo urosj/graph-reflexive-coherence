@@ -1,0 +1,2259 @@
+{
+  "acceptance_state": "accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+  "artifact_kind": "exact_derived_fixture_history_susceptibility_source_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_execution_exact_derived_relation_contract",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_preregistration.json",
+      "sha256": "13d3958117ad404ed0a8e8831bdbbe6f61577198dbe1de0e3f3d786a8941f038"
+    },
+    {
+      "artifact_role": "formed_native_history_roundtrip",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_formed_native_roundtrip.json",
+      "sha256": "443871ed4e419761609b433c96e0e4b2744343573af73c2480493bafef0cd954"
+    },
+    {
+      "artifact_role": "relaxed_native_history_roundtrip",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_relaxed_native_roundtrip.json",
+      "sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f"
+    },
+    {
+      "artifact_role": "history_identity_tamper_control",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_tampered_history_snapshot.json",
+      "sha256": "292f2361ea6066e11b6b16c6cc20a2c9dab670b21111e6f6771e4e4305f62ce5"
+    },
+    {
+      "artifact_role": "exact_derived_susceptibility_matrix",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_derivation_matrix.json",
+      "sha256": "ce82b871959aef27b0f2e135fa9712becc4d5cc2a6a220dc6f310ce27f17940b"
+    },
+    {
+      "artifact_role": "closure_orchestrated_lower_GRC9V3_kernel_readout_matrix",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_readout_matrix.json",
+      "sha256": "959d104bc025b565d04d15e69f3e50821ed782e14e1813d941d0c208291c1795"
+    },
+    {
+      "artifact_role": "candidate_C1_selected_controls",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_control_matrix.json",
+      "sha256": "2552f5fdf493737e309c73870da0d8b7659a6993444c777ed4eb03a98702329c"
+    },
+    {
+      "artifact_role": "native_history_relation_implementation_identity",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_composed_identities.json",
+      "sha256": "8942779b0f08f54cfcd9db1744a7a587d85d967b3db6c4b13c0c5f2b29a1f223"
+    }
+  ],
+  "artifact_schema_version": "n31_i9c1_exact_derived_susceptibility_trace_v1",
+  "candidate_id": "C_derived_history_susceptibility",
+  "carrier_and_authority": {
+    "causal_history_state_eliminated": false,
+    "conductance_insertion_authority": "experiment_wrapper",
+    "derived_S_computation_authority": "exact_derived_history_closure",
+    "external_history_archive_required": false,
+    "history_carrier": "native_packet_processing_log",
+    "history_identity_included_in_restoration": true,
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "independent_susceptibility_state_eliminated": true,
+    "ordinary_LGRC_step_consumes_derived_S": false,
+    "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+    "slow_coherence_mode_realized": false,
+    "stored_S_state_present": false
+  },
+  "checks": [
+    {
+      "check_id": "exact_sources_consumed",
+      "detail": [
+        {
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+        },
+        {
+          "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+          "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+          "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+          "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json"
+        },
+        {
+          "actual_output_digest": "c9bd64cebc1127f67e178b0030b26e5d4a74e7ae3e77c7c47e5ccb1e04b74ee9",
+          "actual_sha256": "154bc39adf77ee1423d6a74cb060dbd13bd4f751e8c174f47e7eb28df34136a7",
+          "expected_output_digest": "c9bd64cebc1127f67e178b0030b26e5d4a74e7ae3e77c7c47e5ccb1e04b74ee9",
+          "expected_sha256": "154bc39adf77ee1423d6a74cb060dbd13bd4f751e8c174f47e7eb28df34136a7",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_source_current_trace.json"
+        },
+        {
+          "actual_output_digest": "7c8a0688ab14bafa939598d90966109094fe561bf0cb9bd0911fbe1d2db96487",
+          "actual_sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7",
+          "expected_output_digest": "7c8a0688ab14bafa939598d90966109094fe561bf0cb9bd0911fbe1d2db96487",
+          "expected_sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_preregistration.json"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I9C_script_and_native_snapshots_exact",
+      "detail": {
+        "I9C_script_sha256": "1151666dcf53175803e238ad2b096eae581d992503e6a58ffeb425021db30a98",
+        "snapshots_exact": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "independent_S_absent_and_external_history_not_required",
+      "detail": {
+        "causal_history_state_eliminated": false,
+        "conductance_insertion_authority": "experiment_wrapper",
+        "derived_S_computation_authority": "exact_derived_history_closure",
+        "external_history_archive_required": false,
+        "history_carrier": "native_packet_processing_log",
+        "history_identity_included_in_restoration": true,
+        "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+        "independent_susceptibility_state_eliminated": true,
+        "ordinary_LGRC_step_consumes_derived_S": false,
+        "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+        "slow_coherence_mode_realized": false,
+        "stored_S_state_present": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_history_roundtrip_and_derived_recomputation_exact",
+      "detail": {
+        "artifact_kind": "n31_i9c1_exact_derivation_matrix",
+        "artifact_schema_version": "n31_i9c1_exact_derivation_matrix_v1",
+        "complete_native_identity_different_due_to_history": true,
+        "complete_native_state_equal": false,
+        "current_C_JC_geometry_projection_equal": true,
+        "different_native_history_state": true,
+        "external_history_archive_required": false,
+        "formed": {
+          "derived_S": 0.9,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 0,
+          "progression_receipts": [],
+          "qualifying_history_identity": "4e45ebc9a66aa98c1d7f686a1b5d7a40428fc1ad182b8669fb1e033fbc1d0d33",
+          "stored_S_state_present": false
+        },
+        "formed_replay": {
+          "derived_S": 0.9,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 0,
+          "progression_receipts": [],
+          "qualifying_history_identity": "4e45ebc9a66aa98c1d7f686a1b5d7a40428fc1ad182b8669fb1e033fbc1d0d33",
+          "stored_S_state_present": false
+        },
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "markovian_relative_to_complete_native_snapshot": true,
+        "non_markovian_relative_to_current_projection": true,
+        "output_digest": "bb6021a7d88c03d9faf8d34c41123f0ab96f97968d6d3d8bdf888f4d812a8e4e",
+        "relation_contract": {
+          "S_floor": 0.5,
+          "S_max": 1.0,
+          "alpha": 1.0,
+          "conductance_insertion_phase": "after_native_compute_base_conductance_before_native_compute_potential",
+          "derived_relation": "S = S_floor + clip(alpha * q_use * rho ** N_after_formation, 0, S_max - S_floor)",
+          "external_history_archive_allowed": false,
+          "fixture_bound_exact_history_functional": true,
+          "fixture_specific_match_fields": [
+            "source_node_id",
+            "target_node_id",
+            "event_time_key",
+            "scheduler_event_index",
+            "source_lineage_id"
+          ],
+          "formation_before_progression_precedence_load_bearing": true,
+          "formation_receipt_predicate": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_kind": "lgrc9v3_packet_arrival",
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "general_route_history_functional_supported": false,
+          "history_carrier_class": "native_serialized_causal_history_state",
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "identity_or_audit_fields_not_physical_inputs": [
+            "packet_id",
+            "event_id"
+          ],
+          "independent_S_state_allowed": false,
+          "ordering_among_equivalent_progression_receipts_load_bearing": false,
+          "outcome_tuning_allowed": false,
+          "progression_receipt_predicate": {
+            "amount": 0.05,
+            "edge_id": 0,
+            "event_kind": "lgrc9v3_packet_arrival",
+            "exact_registered_specs": [
+              [
+                0,
+                1,
+                2.0,
+                20,
+                "n31_C_progression_1"
+              ],
+              [
+                1,
+                0,
+                3.0,
+                30,
+                "n31_C_progression_2"
+              ],
+              [
+                0,
+                1,
+                4.0,
+                40,
+                "n31_C_progression_3"
+              ],
+              [
+                1,
+                0,
+                5.0,
+                50,
+                "n31_C_progression_4"
+              ]
+            ]
+          },
+          "qualifying_progression_count_load_bearing": true,
+          "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+          "relation_schema": "n31_C1_exact_derived_history_susceptibility_v1",
+          "rho": 0.75,
+          "source_policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+          "storage_order_semantically_load_bearing": false,
+          "theory_correspondence": "operational_discrete_J_C_history_proxy",
+          "transfer_to_equivalent_event_identifiers_tested": false
+        },
+        "relaxed": {
+          "derived_S": 0.6265625,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 4,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            }
+          ],
+          "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+          "stored_S_state_present": false
+        },
+        "relaxed_replay": {
+          "derived_S": 0.6265625,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 4,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            }
+          ],
+          "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+          "stored_S_state_present": false
+        },
+        "same_current_C_JC_geometry_projection": true,
+        "same_current_projection_different_native_history_changes_derived_S": true,
+        "stored_S_state_present_in_formed_snapshot": false,
+        "stored_S_state_present_in_relaxed_snapshot": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "derived_relation_reproduces_formed_and_relaxed_trajectory",
+      "detail": {
+        "S_weakening": 0.2734375,
+        "complete_native_state_equal": false,
+        "current_C_JC_geometry_projection_equal": true,
+        "different_native_history_state": true,
+        "formed_S": 0.9,
+        "markovian_relative_to_complete_native_snapshot": true,
+        "non_markovian_relative_to_current_projection": true,
+        "output_digest": "bb6021a7d88c03d9faf8d34c41123f0ab96f97968d6d3d8bdf888f4d812a8e4e",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_derivation_matrix.json",
+        "relaxed_S": 0.6265625,
+        "sha256": "ce82b871959aef27b0f2e135fa9712becc4d5cc2a6a220dc6f310ce27f17940b"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "same_current_projection_different_complete_native_state_classified",
+      "detail": {
+        "artifact_kind": "n31_i9c1_exact_derivation_matrix",
+        "artifact_schema_version": "n31_i9c1_exact_derivation_matrix_v1",
+        "complete_native_identity_different_due_to_history": true,
+        "complete_native_state_equal": false,
+        "current_C_JC_geometry_projection_equal": true,
+        "different_native_history_state": true,
+        "external_history_archive_required": false,
+        "formed": {
+          "derived_S": 0.9,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 0,
+          "progression_receipts": [],
+          "qualifying_history_identity": "4e45ebc9a66aa98c1d7f686a1b5d7a40428fc1ad182b8669fb1e033fbc1d0d33",
+          "stored_S_state_present": false
+        },
+        "formed_replay": {
+          "derived_S": 0.9,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 0,
+          "progression_receipts": [],
+          "qualifying_history_identity": "4e45ebc9a66aa98c1d7f686a1b5d7a40428fc1ad182b8669fb1e033fbc1d0d33",
+          "stored_S_state_present": false
+        },
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "markovian_relative_to_complete_native_snapshot": true,
+        "non_markovian_relative_to_current_projection": true,
+        "output_digest": "bb6021a7d88c03d9faf8d34c41123f0ab96f97968d6d3d8bdf888f4d812a8e4e",
+        "relation_contract": {
+          "S_floor": 0.5,
+          "S_max": 1.0,
+          "alpha": 1.0,
+          "conductance_insertion_phase": "after_native_compute_base_conductance_before_native_compute_potential",
+          "derived_relation": "S = S_floor + clip(alpha * q_use * rho ** N_after_formation, 0, S_max - S_floor)",
+          "external_history_archive_allowed": false,
+          "fixture_bound_exact_history_functional": true,
+          "fixture_specific_match_fields": [
+            "source_node_id",
+            "target_node_id",
+            "event_time_key",
+            "scheduler_event_index",
+            "source_lineage_id"
+          ],
+          "formation_before_progression_precedence_load_bearing": true,
+          "formation_receipt_predicate": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_kind": "lgrc9v3_packet_arrival",
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "general_route_history_functional_supported": false,
+          "history_carrier_class": "native_serialized_causal_history_state",
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "identity_or_audit_fields_not_physical_inputs": [
+            "packet_id",
+            "event_id"
+          ],
+          "independent_S_state_allowed": false,
+          "ordering_among_equivalent_progression_receipts_load_bearing": false,
+          "outcome_tuning_allowed": false,
+          "progression_receipt_predicate": {
+            "amount": 0.05,
+            "edge_id": 0,
+            "event_kind": "lgrc9v3_packet_arrival",
+            "exact_registered_specs": [
+              [
+                0,
+                1,
+                2.0,
+                20,
+                "n31_C_progression_1"
+              ],
+              [
+                1,
+                0,
+                3.0,
+                30,
+                "n31_C_progression_2"
+              ],
+              [
+                0,
+                1,
+                4.0,
+                40,
+                "n31_C_progression_3"
+              ],
+              [
+                1,
+                0,
+                5.0,
+                50,
+                "n31_C_progression_4"
+              ]
+            ]
+          },
+          "qualifying_progression_count_load_bearing": true,
+          "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+          "relation_schema": "n31_C1_exact_derived_history_susceptibility_v1",
+          "rho": 0.75,
+          "source_policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+          "storage_order_semantically_load_bearing": false,
+          "theory_correspondence": "operational_discrete_J_C_history_proxy",
+          "transfer_to_equivalent_event_identifiers_tested": false
+        },
+        "relaxed": {
+          "derived_S": 0.6265625,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 4,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            }
+          ],
+          "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+          "stored_S_state_present": false
+        },
+        "relaxed_replay": {
+          "derived_S": 0.6265625,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 4,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            }
+          ],
+          "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+          "stored_S_state_present": false
+        },
+        "same_current_C_JC_geometry_projection": true,
+        "same_current_projection_different_native_history_changes_derived_S": true,
+        "stored_S_state_present_in_formed_snapshot": false,
+        "stored_S_state_present_in_relaxed_snapshot": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "conflicting_injected_S_has_no_authority",
+      "detail": {
+        "injected_S": 0.9,
+        "injected_value_used": false,
+        "readout": {
+          "coherence_transition_caused_by_readout": false,
+          "complete_snapshot_exact_after_cleanup": true,
+          "conductance_insertion_authority": "experiment_wrapper",
+          "derived_S": 0.6265625,
+          "derived_S_computation_authority": "exact_derived_history_closure",
+          "g_effective": 0.3800293664761969,
+          "g_native": 0.6065306597126334,
+          "native_identity_exact_after_cleanup": true,
+          "ordinary_LGRC_step_consumes_derived_S": false,
+          "packet_transport_executed_during_readout": false,
+          "post_cleanup_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.265704092527065,
+            "2": -0.8760058732952394
+          },
+          "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_request_authority": "experiment_harness",
+          "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+          "row_id": "conflicting_injected_S_ignored",
+          "scientific_readout_digest": "36e80d4598e5d690dd366341aefc5beaccfa7b34ef62e6705787ca90b000badf",
+          "signed_flux_on_registered_edge": 0.1480967673715728
+        },
+        "recomputed_derived_S": 0.6265625
+      },
+      "passed": true
+    },
+    {
+      "check_id": "history_integrity_semantic_change_and_storage_neutrality_partitioned",
+      "detail": {
+        "causal_order": {
+          "derived_S": 0.66875,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "50fbcc3080b4569e0825bebdc953228d46dd5088f3845db3cc0edd40abe88313",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 3,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+          "status": "derived",
+          "stored_S_state_present": false
+        },
+        "duplicate": {
+          "reason": "duplicate qualifying progression receipt",
+          "status": "blocked"
+        },
+        "semantic_label": {
+          "derived_S": 0.6265625,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 4,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            }
+          ],
+          "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+          "status": "derived",
+          "stored_S_state_present": false
+        },
+        "storage_shuffle": {
+          "derived_S": 0.6265625,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 4,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            }
+          ],
+          "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+          "status": "derived",
+          "stored_S_state_present": false
+        },
+        "truncate": {
+          "derived_S": 0.66875,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "b977595951d69bc55b37d58d49cd8f1b964b4f039a91713ba1fb9677cbefba13",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 3,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+          "status": "derived",
+          "stored_S_state_present": false
+        },
+        "wrong_amount": {
+          "derived_S": 0.66875,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "8d7aefc321488dbc6708e4032c43624a0e14f430cbe568d41160d7a95fcfadf6",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 3,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+          "status": "derived",
+          "stored_S_state_present": false
+        },
+        "wrong_edge": {
+          "derived_S": 0.66875,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "241e7e1f0980eeaa58c18c86b2babb1714035dc030f193d92a4e2b49a46befdf",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 3,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+          "status": "derived",
+          "stored_S_state_present": false
+        },
+        "wrong_lineage": {
+          "derived_S": 0.66875,
+          "derived_cache_optional": true,
+          "external_history_archive_required": false,
+          "formation_receipt": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+            "scheduler_event_index": 11,
+            "source_lineage_id": "n31_C_registered_route_use",
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "history_identity": "060b63073c52456f781f3b5f645f4533d717845de264a52cfb27db315584d6c7",
+          "history_identity_included_in_restoration": true,
+          "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+          "progression_count": 3,
+          "progression_receipts": [
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            {
+              "amount": 0.05,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+          "status": "derived",
+          "stored_S_state_present": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_restoration_identity_binds_history",
+      "detail": {
+        "source": {
+          "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+          "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+        },
+        "tampered": {
+          "v1": "2048c8f89baec3448cba18dc6fbea6d32fb24fa2500acef4eefce4e5a1cc99f6",
+          "v2": "d69241fc5849f6049da6eec2c791a20e90017e153f31072211c66d3bbe00e6a0"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "derived_relation_changes_registered_lower_GRC9V3_kernel_readout",
+      "detail": {
+        "g_effective_weakening": 0.16584822726517323,
+        "output_digest": "02da65418990dd021a38aa172b7940ba98049ef5f934db45792c69475590ef65",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_readout_matrix.json",
+        "readout_kind": "lower_GRC9V3_potential_flux_diagnostic",
+        "sha256": "959d104bc025b565d04d15e69f3e50821ed782e14e1813d941d0c208291c1795",
+        "signed_flux_change": 0.028417626337679303,
+        "state_mutating_native_transport_consequence_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "readout_cleanup_exact_and_transport_not_claimed",
+      "detail": [
+        {
+          "coherence_transition_caused_by_readout": false,
+          "complete_snapshot_exact_after_cleanup": true,
+          "conductance_insertion_authority": "experiment_wrapper",
+          "derived_S": 0.9,
+          "derived_S_computation_authority": "exact_derived_history_closure",
+          "g_effective": 0.5458775937413701,
+          "g_native": 0.6065306597126334,
+          "native_identity_exact_after_cleanup": true,
+          "ordinary_LGRC_step_consumes_derived_S": false,
+          "packet_transport_executed_during_readout": false,
+          "post_cleanup_native_identity": {
+            "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+            "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+          },
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.2325344470740305,
+            "2": -0.9091755187482741
+          },
+          "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+            "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+          },
+          "readout_request_authority": "experiment_harness",
+          "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+          "row_id": "formed_history",
+          "scientific_readout_digest": "2ebed65d321750e8b08040d7e8aa8d77794b9d076d5e8497fc5e04c9715a7f49",
+          "signed_flux_on_registered_edge": 0.1765143937092521
+        },
+        {
+          "coherence_transition_caused_by_readout": false,
+          "complete_snapshot_exact_after_cleanup": true,
+          "conductance_insertion_authority": "experiment_wrapper",
+          "derived_S": 0.6265625,
+          "derived_S_computation_authority": "exact_derived_history_closure",
+          "g_effective": 0.3800293664761969,
+          "g_native": 0.6065306597126334,
+          "native_identity_exact_after_cleanup": true,
+          "ordinary_LGRC_step_consumes_derived_S": false,
+          "packet_transport_executed_during_readout": false,
+          "post_cleanup_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.265704092527065,
+            "2": -0.8760058732952394
+          },
+          "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_request_authority": "experiment_harness",
+          "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+          "row_id": "relaxed_history",
+          "scientific_readout_digest": "36e80d4598e5d690dd366341aefc5beaccfa7b34ef62e6705787ca90b000badf",
+          "signed_flux_on_registered_edge": 0.1480967673715728
+        },
+        {
+          "coherence_transition_caused_by_readout": false,
+          "complete_snapshot_exact_after_cleanup": true,
+          "conductance_insertion_authority": "experiment_wrapper",
+          "derived_S": 0.6265625,
+          "derived_S_computation_authority": "exact_derived_history_closure",
+          "g_effective": 0.3800293664761969,
+          "g_native": 0.6065306597126334,
+          "native_identity_exact_after_cleanup": true,
+          "ordinary_LGRC_step_consumes_derived_S": false,
+          "packet_transport_executed_during_readout": false,
+          "post_cleanup_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.265704092527065,
+            "2": -0.8760058732952394
+          },
+          "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_request_authority": "experiment_harness",
+          "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+          "row_id": "relaxed_history_replay",
+          "scientific_readout_digest": "36e80d4598e5d690dd366341aefc5beaccfa7b34ef62e6705787ca90b000badf",
+          "signed_flux_on_registered_edge": 0.1480967673715728
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "candidate_C1_controls_resolved_without_preempting_I10",
+      "detail": {
+        "DR5_control_gate_complete": false,
+        "artifact_kind": "n31_i9c1_control_matrix",
+        "artifact_schema_version": "n31_i9c1_control_matrix_v1",
+        "complete_I10_control_matrix_claimed": false,
+        "control_count": 12,
+        "controls": [
+          {
+            "control_id": "stored_S_as_independent_state",
+            "control_kind": "conformance",
+            "control_status": "passed",
+            "independent_S_state_allowed": false,
+            "stored_S_state_present": false
+          },
+          {
+            "control_id": "derived_cache_divergence",
+            "control_kind": "active_null",
+            "control_status": "failed_closed",
+            "injected_S": 0.9,
+            "injected_S_used": false,
+            "readout_matches_clean_recomputation": true,
+            "recomputed_S": 0.6265625
+          },
+          {
+            "control_id": "external_history_archive",
+            "control_kind": "conformance",
+            "control_status": "passed",
+            "external_history_archive_required": false,
+            "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log"
+          },
+          {
+            "control_id": "history_missing_from_restoration_identity",
+            "control_kind": "conformance",
+            "control_status": "passed",
+            "source_identity": {
+              "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "tampered_identity": {
+              "v1": "2048c8f89baec3448cba18dc6fbea6d32fb24fa2500acef4eefce4e5a1cc99f6",
+              "v2": "d69241fc5849f6049da6eec2c791a20e90017e153f31072211c66d3bbe00e6a0"
+            },
+            "v1_changed": true,
+            "v2_changed": true
+          },
+          {
+            "control_id": "same_history_different_derived_S",
+            "control_kind": "conformance",
+            "control_status": "passed",
+            "same_derived_S": true,
+            "same_history_identity": true
+          },
+          {
+            "classification_effect": "non_markovian_relative_to_reduced_current_projection_state_complete_relative_to_full_native_snapshot",
+            "complete_native_state_equal": false,
+            "control_id": "same_current_projection_different_native_history",
+            "control_kind": "classification_discriminator",
+            "control_status": "passed",
+            "current_C_JC_geometry_projection_equal": true,
+            "derived_S_different": true,
+            "history_identity_different": true
+          },
+          {
+            "control_id": "receipt_duplicate",
+            "control_kind": "history_integrity_active_null",
+            "control_status": "failed_closed",
+            "result": {
+              "reason": "duplicate qualifying progression receipt",
+              "status": "blocked"
+            }
+          },
+          {
+            "control_id": "receipt_truncation",
+            "control_kind": "valid_history_semantic_change",
+            "control_status": "passed",
+            "expected_derived_S": 0.66875,
+            "result": {
+              "derived_S": 0.66875,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "b977595951d69bc55b37d58d49cd8f1b964b4f039a91713ba1fb9677cbefba13",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 3,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                }
+              ],
+              "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+              "status": "derived",
+              "stored_S_state_present": false
+            }
+          },
+          {
+            "control_id": "receipt_edge_lineage_amount_tamper",
+            "control_kind": "valid_history_semantic_change",
+            "control_status": "passed",
+            "expected_derived_S": 0.66875,
+            "wrong_amount": {
+              "derived_S": 0.66875,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "8d7aefc321488dbc6708e4032c43624a0e14f430cbe568d41160d7a95fcfadf6",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 3,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                }
+              ],
+              "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+              "status": "derived",
+              "stored_S_state_present": false
+            },
+            "wrong_edge": {
+              "derived_S": 0.66875,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "241e7e1f0980eeaa58c18c86b2babb1714035dc030f193d92a4e2b49a46befdf",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 3,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                }
+              ],
+              "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+              "status": "derived",
+              "stored_S_state_present": false
+            },
+            "wrong_lineage": {
+              "derived_S": 0.66875,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "060b63073c52456f781f3b5f645f4533d717845de264a52cfb27db315584d6c7",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 3,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                }
+              ],
+              "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+              "status": "derived",
+              "stored_S_state_present": false
+            }
+          },
+          {
+            "causal_order_tamper": {
+              "derived_S": 0.66875,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "50fbcc3080b4569e0825bebdc953228d46dd5088f3845db3cc0edd40abe88313",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 3,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                }
+              ],
+              "qualifying_history_identity": "cf0b90ed824e372b1b53a1c0b92785d9c790dd692f2e5023428db192442ed8d3",
+              "status": "derived",
+              "stored_S_state_present": false
+            },
+            "causal_order_tamper_expected_S": 0.66875,
+            "control_id": "receipt_order_shuffle",
+            "control_kind": "storage_neutrality_and_precedence_change",
+            "control_status": "passed",
+            "storage_shuffle": {
+              "derived_S": 0.6265625,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 4,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 6.0,
+                  "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+                  "scheduler_event_index": 51,
+                  "source_lineage_id": "n31_C_progression_4",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                }
+              ],
+              "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+              "status": "derived",
+              "stored_S_state_present": false
+            },
+            "storage_shuffle_expected_S": 0.6265625
+          },
+          {
+            "control_id": "history_label_as_causal_input",
+            "control_kind": "semantic_label_neutrality",
+            "control_status": "passed",
+            "expected_derived_S": 0.6265625,
+            "semantic_label_only_result": {
+              "derived_S": 0.6265625,
+              "derived_cache_optional": true,
+              "external_history_archive_required": false,
+              "formation_receipt": {
+                "amount": 0.4,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+                "event_kind": "lgrc9v3_packet_arrival",
+                "event_time_key": 2.0,
+                "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+                "scheduler_event_index": 11,
+                "source_lineage_id": "n31_C_registered_route_use",
+                "source_node_id": 1,
+                "target_node_id": 2
+              },
+              "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+              "history_identity_included_in_restoration": true,
+              "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+              "progression_count": 4,
+              "progression_receipts": [
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 3.0,
+                  "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+                  "scheduler_event_index": 21,
+                  "source_lineage_id": "n31_C_progression_1",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 4.0,
+                  "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+                  "scheduler_event_index": 31,
+                  "source_lineage_id": "n31_C_progression_2",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 5.0,
+                  "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+                  "scheduler_event_index": 41,
+                  "source_lineage_id": "n31_C_progression_3",
+                  "source_node_id": 0,
+                  "target_node_id": 1
+                },
+                {
+                  "amount": 0.05,
+                  "edge_id": 0,
+                  "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 6.0,
+                  "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+                  "scheduler_event_index": 51,
+                  "source_lineage_id": "n31_C_progression_4",
+                  "source_node_id": 1,
+                  "target_node_id": 0
+                }
+              ],
+              "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+              "status": "derived",
+              "stored_S_state_present": false
+            }
+          },
+          {
+            "control_id": "derived_relation_causal_consumption",
+            "control_kind": "conformance",
+            "control_status": "passed",
+            "derived_relation_causally_consumed": true
+          }
+        ],
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "output_digest": "e8885a7dce87244d7d672b0cbf1b9889be4259c092d142f05c07e33cae7a99f4"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "C1_reestablishes_DR4_under_new_carrier_without_native_upgrade",
+      "detail": {
+        "DR4_reestablished_under_new_carrier_semantics": true,
+        "DR5_supported": false,
+        "DR6_supported": false,
+        "I9C_independent_state_result_replaced": false,
+        "authority_class": "exact_derived_native_packet_history_closure",
+        "current_decay_relation_ladder_rung": "DR4",
+        "current_state_D0a_supported": false,
+        "fixture_bound_exact_history_functional": true,
+        "fresh_independent_runtime_execution": false,
+        "general_route_history_functional_supported": false,
+        "independent_classification_from_DR0": true,
+        "initial_rung": "DR0",
+        "insertion_class": "producer_or_wrapper_mediated_constitutive_insertion",
+        "native_D0a_unchanged": "DR2",
+        "native_upgrade_allowed": false,
+        "semantic_class": "exact_derived_fixture_history_susceptibility",
+        "source_native_trajectory_inherited_from_I9C": true,
+        "theory_correspondence": "discrete_C_JC_history_proxy",
+        "transfer_to_equivalent_event_identifiers_tested": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contracts_unchanged",
+      "detail": [
+        "src",
+        "lib",
+        "specs",
+        "implementation",
+        "tests",
+        "examples",
+        "scripts",
+        "pyproject.toml",
+        "requirements.txt",
+        "uv.lock"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "pre_execution_exact_derived_relation_contract",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_preregistration.json",
+          "sha256": "13d3958117ad404ed0a8e8831bdbbe6f61577198dbe1de0e3f3d786a8941f038"
+        },
+        {
+          "artifact_role": "formed_native_history_roundtrip",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_formed_native_roundtrip.json",
+          "sha256": "443871ed4e419761609b433c96e0e4b2744343573af73c2480493bafef0cd954"
+        },
+        {
+          "artifact_role": "relaxed_native_history_roundtrip",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_relaxed_native_roundtrip.json",
+          "sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f"
+        },
+        {
+          "artifact_role": "history_identity_tamper_control",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_tampered_history_snapshot.json",
+          "sha256": "292f2361ea6066e11b6b16c6cc20a2c9dab670b21111e6f6771e4e4305f62ce5"
+        },
+        {
+          "artifact_role": "exact_derived_susceptibility_matrix",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_derivation_matrix.json",
+          "sha256": "ce82b871959aef27b0f2e135fa9712becc4d5cc2a6a220dc6f310ce27f17940b"
+        },
+        {
+          "artifact_role": "closure_orchestrated_lower_GRC9V3_kernel_readout_matrix",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_readout_matrix.json",
+          "sha256": "959d104bc025b565d04d15e69f3e50821ed782e14e1813d941d0c208291c1795"
+        },
+        {
+          "artifact_role": "candidate_C1_selected_controls",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_control_matrix.json",
+          "sha256": "2552f5fdf493737e309c73870da0d8b7659a6993444c777ed4eb03a98702329c"
+        },
+        {
+          "artifact_role": "native_history_relation_implementation_identity",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_composed_identities.json",
+          "sha256": "8942779b0f08f54cfcd9db1744a7a587d85d967b3db6c4b13c0c5f2b29a1f223"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "DR5": false,
+        "DR6": false,
+        "agency": false,
+        "autonomous_decay": false,
+        "native_D0a": false,
+        "native_memory": false,
+        "native_support": false,
+        "native_susceptibility": false,
+        "ordinary_LGRC_step_consumes_S": false,
+        "trail_or_stigmergy": false
+      },
+      "passed": true
+    }
+  ],
+  "classification": {
+    "DR4_reestablished_under_new_carrier_semantics": true,
+    "DR5_supported": false,
+    "DR6_supported": false,
+    "I9C_independent_state_result_replaced": false,
+    "authority_class": "exact_derived_native_packet_history_closure",
+    "current_decay_relation_ladder_rung": "DR4",
+    "current_state_D0a_supported": false,
+    "fixture_bound_exact_history_functional": true,
+    "fresh_independent_runtime_execution": false,
+    "general_route_history_functional_supported": false,
+    "independent_classification_from_DR0": true,
+    "initial_rung": "DR0",
+    "insertion_class": "producer_or_wrapper_mediated_constitutive_insertion",
+    "native_D0a_unchanged": "DR2",
+    "native_upgrade_allowed": false,
+    "semantic_class": "exact_derived_fixture_history_susceptibility",
+    "source_native_trajectory_inherited_from_I9C": true,
+    "theory_correspondence": "discrete_C_JC_history_proxy",
+    "transfer_to_equivalent_event_identifiers_tested": false
+  },
+  "controls": {
+    "complete_I10_control_matrix_claimed": false,
+    "control_count": 12,
+    "output_digest": "e8885a7dce87244d7d672b0cbf1b9889be4259c092d142f05c07e33cae7a99f4",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_control_matrix.json",
+    "sha256": "2552f5fdf493737e309c73870da0d8b7659a6993444c777ed4eb03a98702329c"
+  },
+  "derivation": {
+    "S_weakening": 0.2734375,
+    "complete_native_state_equal": false,
+    "current_C_JC_geometry_projection_equal": true,
+    "different_native_history_state": true,
+    "formed_S": 0.9,
+    "markovian_relative_to_complete_native_snapshot": true,
+    "non_markovian_relative_to_current_projection": true,
+    "output_digest": "bb6021a7d88c03d9faf8d34c41123f0ab96f97968d6d3d8bdf888f4d812a8e4e",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_derivation_matrix.json",
+    "relaxed_S": 0.6265625,
+    "sha256": "ce82b871959aef27b0f2e135fa9712becc4d5cc2a6a220dc6f310ce27f17940b"
+  },
+  "derived_report_only": false,
+  "experiment": "N31",
+  "failed_checks": [],
+  "fresh_independent_runtime_execution": false,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "9-C.1",
+  "naturalization_debt": [
+    "native_exact_history_functional_surface_missing",
+    "general_semantic_route_history_functional_unvalidated",
+    "equivalent_identifier_and_renumbering_transfer_unvalidated",
+    "native_constitutive_consumption_of_derived_S_missing",
+    "state_mutating_native_transport_consequence_missing"
+  ],
+  "output_digest": "b69bcdeb113b40e930500a33228b08dabce5438846be8c539f14fc4fc614f759",
+  "producer_residue": [
+    "exact_history_functional_implemented_by_experiment_closure",
+    "conductance_insertion_owned_by_experiment_wrapper",
+    "cross_edge_progression_history_is_load_bearing",
+    "fixture_specific_event_match_policy_is_load_bearing"
+  ],
+  "readout": {
+    "g_effective_weakening": 0.16584822726517323,
+    "output_digest": "02da65418990dd021a38aa172b7940ba98049ef5f934db45792c69475590ef65",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_readout_matrix.json",
+    "readout_kind": "lower_GRC9V3_potential_flux_diagnostic",
+    "sha256": "959d104bc025b565d04d15e69f3e50821ed782e14e1813d941d0c208291c1795",
+    "signed_flux_change": 0.028417626337679303,
+    "state_mutating_native_transport_consequence_supported": false
+  },
+  "relation_contract": {
+    "S_floor": 0.5,
+    "S_max": 1.0,
+    "alpha": 1.0,
+    "conductance_insertion_phase": "after_native_compute_base_conductance_before_native_compute_potential",
+    "derived_relation": "S = S_floor + clip(alpha * q_use * rho ** N_after_formation, 0, S_max - S_floor)",
+    "external_history_archive_allowed": false,
+    "fixture_bound_exact_history_functional": true,
+    "fixture_specific_match_fields": [
+      "source_node_id",
+      "target_node_id",
+      "event_time_key",
+      "scheduler_event_index",
+      "source_lineage_id"
+    ],
+    "formation_before_progression_precedence_load_bearing": true,
+    "formation_receipt_predicate": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "general_route_history_functional_supported": false,
+    "history_carrier_class": "native_serialized_causal_history_state",
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "identity_or_audit_fields_not_physical_inputs": [
+      "packet_id",
+      "event_id"
+    ],
+    "independent_S_state_allowed": false,
+    "ordering_among_equivalent_progression_receipts_load_bearing": false,
+    "outcome_tuning_allowed": false,
+    "progression_receipt_predicate": {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "exact_registered_specs": [
+        [
+          0,
+          1,
+          2.0,
+          20,
+          "n31_C_progression_1"
+        ],
+        [
+          1,
+          0,
+          3.0,
+          30,
+          "n31_C_progression_2"
+        ],
+        [
+          0,
+          1,
+          4.0,
+          40,
+          "n31_C_progression_3"
+        ],
+        [
+          1,
+          0,
+          5.0,
+          50,
+          "n31_C_progression_4"
+        ]
+      ]
+    },
+    "qualifying_progression_count_load_bearing": true,
+    "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+    "relation_schema": "n31_C1_exact_derived_history_susceptibility_v1",
+    "rho": 0.75,
+    "source_policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+    "storage_order_semantically_load_bearing": false,
+    "theory_correspondence": "operational_discrete_J_C_history_proxy",
+    "transfer_to_equivalent_event_identifiers_tested": false
+  },
+  "source_candidate": "C_route_susceptibility_relaxation",
+  "source_chain": [
+    {
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+    },
+    {
+      "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json"
+    },
+    {
+      "actual_output_digest": "c9bd64cebc1127f67e178b0030b26e5d4a74e7ae3e77c7c47e5ccb1e04b74ee9",
+      "actual_sha256": "154bc39adf77ee1423d6a74cb060dbd13bd4f751e8c174f47e7eb28df34136a7",
+      "expected_output_digest": "c9bd64cebc1127f67e178b0030b26e5d4a74e7ae3e77c7c47e5ccb1e04b74ee9",
+      "expected_sha256": "154bc39adf77ee1423d6a74cb060dbd13bd4f751e8c174f47e7eb28df34136a7",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_source_current_trace.json"
+    },
+    {
+      "actual_output_digest": "7c8a0688ab14bafa939598d90966109094fe561bf0cb9bd0911fbe1d2db96487",
+      "actual_sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7",
+      "expected_output_digest": "7c8a0688ab14bafa939598d90966109094fe561bf0cb9bd0911fbe1d2db96487",
+      "expected_sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_preregistration.json"
+    }
+  ],
+  "source_current_runtime_artifact": true,
+  "source_native_trajectory_inherited_from_I9C": true,
+  "source_snapshot_exact": true,
+  "status": "passed",
+  "theory_positioning": {
+    "A_B_C_comparative_ranking_deferred_to_I11": true,
+    "causal_history_state_eliminated": false,
+    "closer_than_independent_candidate_C": true,
+    "history_carrier": "native_packet_processing_log",
+    "independent_S_eliminated": true,
+    "independent_history_archive_introduced": false,
+    "reason": "derived_S_is_determined_by_fixture_bound_native_restored_packet_history_but_causal_history_state_and_wrapper_owned_constitutive_insertion_remain",
+    "slow_coherence_mode_realized": false,
+    "strict_current_state_coherence_only_D0a": false
+  },
+  "unsafe_claim_flags": {
+    "DR5": false,
+    "DR6": false,
+    "agency": false,
+    "autonomous_decay": false,
+    "native_D0a": false,
+    "native_memory": false,
+    "native_support": false,
+    "native_susceptibility": false,
+    "ordinary_LGRC_step_consumes_S": false,
+    "trail_or_stigmergy": false
+  }
+}

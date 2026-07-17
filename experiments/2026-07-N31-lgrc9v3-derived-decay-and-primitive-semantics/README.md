@@ -251,6 +251,22 @@ relaxes under an explicit internal-time law. If this state changes the future
 while complete coherence state is otherwise equal, it is an effective closure
 or additional causal state, not coherence-only D0.
 
+Candidate C is close to the functional image of reflexive geometry, but not to
+the strict 2025-11 coherence-only ontology. An independently variable `S` that
+changes a later readout under identical complete native `C` is an added causal
+degree of freedom. D0a remains the preferred theory target, and Candidate B is
+the closest added mechanism to the strict ontology because it redistributes
+coherence without introducing a second physical field.
+
+Iteration 9-C.1 tests a narrower naturalization question without overwriting
+Candidate C: can `S` be eliminated as independently stored state and recomputed
+exactly from native-restored `C/J_C` packet history? A positive result is an
+exact-derived native-packet-history closure, not current-state D0a. It is
+non-Markovian relative to a reduced current `C/J_C` projection but state-complete
+relative to the full native snapshot containing the packet log. The current
+functional remains fixture-bound, and wrapper-owned constitutive insertion
+remains explicit producer residue.
+
 ## Non-Negotiable Boundaries
 
 ### Coherence Conservation

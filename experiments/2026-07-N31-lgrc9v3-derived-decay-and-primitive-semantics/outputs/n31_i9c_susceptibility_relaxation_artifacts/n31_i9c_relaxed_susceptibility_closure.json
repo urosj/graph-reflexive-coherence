@@ -1,0 +1,25 @@
+{
+  "S_by_edge": {
+    "1": 0.6265625
+  },
+  "artifact_kind": "n31_C_route_susceptibility_closure",
+  "artifact_schema_version": "n31_candidate_C_susceptibility_identity_v1",
+  "formation_receipt_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+  "formation_update_count": 1,
+  "global_event_count_state_present": false,
+  "outcome_history_state_present": false,
+  "output_digest": "6c0f03be14c18c240834b44c06e06e45d4a0977e2d4efd231313811d87da5a43",
+  "processed_progression_event_count": 4,
+  "processed_progression_event_ids": [
+    "lgrc9v3-packet-event-11da4224625714e2",
+    "lgrc9v3-packet-event-bc4d5065a77d7de2",
+    "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+    "lgrc9v3-packet-event-2bd3b3f00514671a"
+  ],
+  "q_use_by_edge": {
+    "1": 0.4
+  },
+  "relaxation_update_count": 4,
+  "update_count": 5,
+  "wall_clock_state_present": false
+}

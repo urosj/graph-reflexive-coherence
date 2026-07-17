@@ -1,0 +1,20 @@
+{
+  "S_by_edge": {
+    "1": 0.9
+  },
+  "artifact_kind": "n31_C_route_susceptibility_closure",
+  "artifact_schema_version": "n31_candidate_C_susceptibility_identity_v1",
+  "formation_receipt_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+  "formation_update_count": 1,
+  "global_event_count_state_present": false,
+  "outcome_history_state_present": false,
+  "output_digest": "c6089c7450ee361ed67459a7e8c73eb063caa2a3a1f731c428384fe9d3daed3a",
+  "processed_progression_event_count": 0,
+  "processed_progression_event_ids": [],
+  "q_use_by_edge": {
+    "1": 0.4
+  },
+  "relaxation_update_count": 0,
+  "update_count": 1,
+  "wall_clock_state_present": false
+}

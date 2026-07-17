@@ -94,6 +94,24 @@
   readout boundaries, why above-cap plateau evidence remains inherited from
   I9-B, and why Candidate B stays at provisional `DR4`.
 
+## Iteration 9-C
+
+- `n31_susceptibility_relaxation_i9c.md` explains how a native route-use
+  receipt triggers closure-owned susceptibility formation, how matched native
+  progression isolates producer-mediated relaxation, how restored `S` changes
+  a closure-orchestrated native-kernel diagnostic, and why functional
+  resemblance to reflexive geometry does not make C closest to the strict
+  coherence-only ontology.
+
+## Iteration 9-C.1
+
+- `n31_exact_derived_susceptibility_i9c1.md` explains how native-restored packet
+  history exactly determines susceptibility without stored `S`, why equal
+  reduced projections do not mean equal complete native state, why the current
+  relation remains fixture-bound, how the derived relation remains causally
+  consumed, and why retained history plus wrapper-owned constitutive insertion
+  still block native D0a.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

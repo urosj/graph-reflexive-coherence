@@ -1686,21 +1686,234 @@ evidence, not as a replacement row.
 
 ## Iteration 9-C - Susceptibility Relaxation
 
-- [ ] Declare conductance/susceptibility carrier and units.
-- [ ] Declare formation/reinforcement and relaxation laws separately.
-- [ ] Use system-internal progression.
-- [ ] Record whether state is independently causal.
-- [ ] Match complete C while intervening on susceptibility where meaningful.
-- [ ] Serialize and restore all state.
-- [ ] Exclude hidden producer history.
-- [ ] Preserve producer/closure/native distinction.
-- [ ] Record naturalization debt.
+- [x] Consume exact I2 and corrected I9 Candidate C contract identities.
+- [x] Reconstruct the frozen three-node, two-edge topology exactly.
+- [x] Declare `S` as dimensionless route-local closure state with bounds `[0.5, 1.0]`.
+- [x] Declare formation and relaxation laws separately before execution.
+- [x] Trigger producer-owned `S` formation from an exact native route-use arrival receipt.
+- [x] Exhaust formation traffic before progression and readout.
+- [x] Serialize and restore native and closure state independently.
+- [x] Run matched native progression in closure-active and closure-omitted branches.
+- [x] Prove native v1/v2 identities and budgets match after progression.
+- [x] Apply one bounded relaxation update per exact native arrival receipt.
+- [x] Preserve wall-clock and global-event-count exclusion.
+- [x] Match complete native state before formed/relaxed readout comparison.
+- [x] Apply `g_effective = S * g_native` only at the frozen partial-pipeline phase.
+- [x] Use native GRC9V3 kernels for potential/flux computation without calling the result an ordinary LGRC step.
+- [x] Restore exact pre-application native v1/v2 identities and complete snapshot after every readout hook.
+- [x] Audit formation, relaxation, and readout input paths against exact allowlists.
+- [x] Classify the readout as diagnostic flux computation, not packet transport or a coherence transition.
+- [x] Prove monotonic `S`, effective-conductance, and signed-flux response shape.
+- [x] Keep mediation bounded to registered-edge conductance and record graph-level potential scope.
+- [x] Resolve all five Candidate C lane-specific controls.
+- [x] Keep the susceptibility-update magnitude ledger report-only and noncausal; do not relabel it a cost ledger.
+- [x] Separate functional reflexive-geometry resemblance from strict ontological fidelity.
+- [x] Preserve closure/producer/native distinctions and naturalization debt.
+- [x] Preserve provisional producer-mediated `C-R / DR4` and leave DR5/DR6 pending.
+- [x] Keep runtime and protected contracts unchanged.
+
+### Iteration 9-C Result
+
+```text
+status = passed
+acceptance_state = accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10
+candidate_id = C_route_susceptibility_relaxation
+semantic_subtype = C_R_route_susceptibility_relaxation
+relation_authority = producer_mediated_effective_non_markovian_closure
+readout_request_authority = experiment_harness
+susceptibility_and_conductance_insertion_authority = candidate_C_closure
+potential_flux_computation_authority = native_GRC9V3_kernels
+ordinary_LGRC_step_consumes_S = false
+readout_kind = native_potential_flux_diagnostic
+state_mutating_native_transport_consequence_supported = false
+initial_S = 0.5
+formed_S = 0.9
+relaxed_S = 0.6265625
+S_weakening = 0.2734375
+g_native = 0.6065306597126334
+formed_g_effective = 0.5458775937413701
+relaxed_g_effective = 0.3800293664761969
+g_effective_weakening = 0.16584822726517323
+formed_signed_flux = 0.1765143937092521
+relaxed_signed_flux = 0.1480967673715728
+signed_flux_change = 0.028417626337679303
+matched_native_progression_identity_exact = true
+lane_specific_controls_resolved = 5 / 5
+current_decay_relation_ladder_rung = DR4 provisional
+DR5_supported = false
+DR6_supported = false
+D0_R_bridge_status = not_tested
+native_decay_classification = D0a / DR2 unchanged
+strict_ontology_closest_added_mechanism = Candidate B
+candidate_C_strict_ontology_disposition = effective closure or possible theory extension
+candidate_C_functional_reflexive_geometry_resemblance = closest among added mechanisms
+functional_resemblance_is_not_ontological_fidelity = true
+output_digest = f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad
+```
+
+### Iteration 9-C Geometric Interpretation
+
+The registered route-use packet transfers `0.4` coherence from node 1 to node
+2 through edge 1. Native LGRC conserves this packet flow. Candidate C does
+something separate: its exact arrival receipt raises the closure-owned
+susceptibility multiplier on that same route from `0.5` to `0.9`. The route is
+therefore more able to carry the later native conductance relation, but that
+ability is stored outside native LGRC state.
+
+Four subsequent packets move back and forth on edge 0. Both compared branches
+execute the same packets and end with byte-identical native snapshots. In the
+active branch, the closure consumes each arrival receipt and contracts `S`
+toward its `0.5` floor. In the omitted branch, no closure call occurs and `S`
+stays at `0.9`. The experiment therefore isolates susceptibility relaxation
+from route-mass loss, topology change, native-event differences, or labels.
+
+The later readout starts from one common native snapshot. The experiment harness
+requests it, Candidate C inserts `S * g_native` on edge 1, and native GRC9V3
+kernels compute graph-level potential and diagnostic flux. Formed `S` returns
+signed flux `0.1765`; relaxed `S` returns `0.1481`. This is a changed registered
+readout, not packet transport, a coherence transition, or ordinary native
+continuation. Exact pre-hook native identities and snapshot are restored.
+
+The result is strong Candidate C evidence because it contains source-current
+formation, bounded persistence, exact event-driven weakening, and a separate
+native-kernel diagnostic consequence. Its limit is equally important: ordinary LGRC
+steps would recompute and overwrite the conductance unless the closure owns the
+partial-pipeline order. No resource cost has been established, and independent
+`S` remains outside RC coherence accounting. Candidate C is therefore provisional producer-mediated
+`C-R / DR4`, not native D0 decay. I10 retains formal DR5 admission and full
+control responsibility; reusable-contract DR6 remains later work.
+
+Candidate C is closest to the functional image of reflexive geometry, but not
+to the strict 2025-11 coherence-only ontology. Identical complete native `C`
+with different independently restored `S` produces different diagnostics, so
+`S` is an added causal degree of freedom. Strict ontological alignment is
+`D0a > B > A > C`, with B the closest added mechanism; functional resemblance
+is `C > D0a > B > A`. Naturalizing C would require `S` to be exactly derived
+from `C/J_C` history with no independent freedom, or represented as a native
+slow coherence mode.
+
+## Iteration 9-C.1 - Exact-Derived Route Susceptibility
+
+- [x] Preserve I9-C as the independent-state Candidate C result rather than replacing it.
+- [x] Start `C_derived_history_susceptibility` at `DR0` with no inherited rung.
+- [x] Freeze the exact history relation from I9-C's preregistered floor, ceiling, `alpha`, and `rho`.
+- [x] Use only native-restored `packet_processing_log` receipts as history authority.
+- [x] Prohibit stored `S`, hidden relaxation cursors, receipt counts, route age, and external receipt archives.
+- [x] Prove formed and weakened `S` recompute exactly after native snapshot/load.
+- [x] Prove deleting any optional derived cache does not change recomputation.
+- [x] Prove a conflicting injected independent `S` has no readout authority.
+- [x] Detect or predict receipt truncation, duplication, edge, lineage, amount, and causal-order tampering.
+- [x] Prove storage-order shuffling and semantic labels are causally neutral.
+- [x] Compare equal reduced current projections with different complete native states and histories.
+- [x] Classify the relation as non-Markovian to the reduced projection but state-complete to the full native snapshot.
+- [x] Record the packet log as retained causal-history state and an operational discrete `J_C` proxy.
+- [x] Record the exact event matcher as fixture-bound and general route-history transfer as unsupported.
+- [x] Separate invalid duplicate controls, valid semantic-history changes, and storage-only changes.
+- [x] Causally consume derived `S` through the bounded wrapper-owned conductance insertion.
+- [x] Use lower-substrate GRC9V3 kernels for potential and diagnostic flux.
+- [x] Restore exact native state after every diagnostic readout.
+- [x] Keep packet transport, coherence transition, and ordinary LGRC-step claims false.
+- [x] Re-establish provisional `C-R / DR4` from `DR0` under new carrier semantics; leave `DR5/DR6` pending.
+- [x] Record that source native trajectories are inherited from I9-C rather than freshly executed.
+- [x] Keep native D0a at `DR2` and defer comparative A/B/C ranking to I11.
+- [x] Keep runtime and protected contracts unchanged.
+
+### Iteration 9-C.1 Result
+
+```text
+status = passed
+acceptance_state = accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10
+candidate_id = C_derived_history_susceptibility
+source_candidate = C_route_susceptibility_relaxation
+initial_rung = DR0
+current_decay_relation_ladder_rung = DR4 provisional
+semantic_class = exact_derived_fixture_history_susceptibility
+authority_class = exact_derived_native_packet_history_closure
+theory_correspondence = discrete_C_JC_history_proxy
+insertion_class = producer_or_wrapper_mediated_constitutive_insertion
+history_source = native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log
+history_identity_included_in_restoration = true
+external_history_archive_required = false
+stored_S_state_present = false
+independent_susceptibility_state_eliminated = true
+causal_history_state_eliminated = false
+history_carrier = native_packet_processing_log
+slow_coherence_mode_realized = false
+formed_derived_S = 0.9
+relaxed_derived_S = 0.6265625
+S_weakening = 0.2734375
+g_effective_weakening = 0.16584822726517323
+signed_flux_change = 0.028417626337679303
+current_C_JC_geometry_projection_equal = true
+complete_native_state_equal = false
+different_native_history_state = true
+non_markovian_relative_to_current_projection = true
+markovian_relative_to_complete_native_snapshot = true
+fixture_bound_exact_history_functional = true
+general_route_history_functional_supported = false
+transfer_to_equivalent_event_identifiers_tested = false
+DR4_reestablished_under_new_carrier_semantics = true
+independent_classification_from_DR0 = true
+fresh_independent_runtime_execution = false
+source_native_trajectory_inherited_from_I9C = true
+DR5_supported = false
+DR6_supported = false
+I9C_independent_state_result_replaced = false
+current_state_D0a_supported = false
+native_D0a_unchanged = DR2
+native_upgrade_allowed = false
+checks_passed = 17 / 17
+output_digest = 2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e
+```
+
+### Iteration 9-C.1 Geometric Interpretation
+
+C.1 retains the same geometric effect measured by I9-C but removes the
+independently serialized susceptibility field. The formed native snapshot
+contains one qualifying edge-1 route-use receipt and derives `S=0.9`. The
+weakened snapshot contains the same formation receipt plus four ordered native
+progression receipts and derives `S=0.6265625`. No separate susceptibility
+value or external history ledger is needed to reproduce either state.
+
+The two snapshots have equal reduced current coherence, geometry, conductance,
+and flux projections, but they are not the same complete native state. Their
+serialized packet histories and restoration identities differ. The relation is
+therefore non-Markovian relative to the reduced current projection and
+state-complete relative to the full native snapshot.
+
+Independent `S` is gone, but causal memory has not disappeared: it resides in
+the native `packet_processing_log`. The experiment treats packet amount, edge
+orientation, and internal ordering as an operational discrete `J_C`-history
+proxy. This is stronger theory alignment than independently free `S`, but it is
+not a realized slow-coherence mode.
+
+The exact matcher remains fixture-bound to I9-C node, event-time,
+scheduler-index, and lineage fields. Equivalent identifiers, shifted clocks,
+role-preserving renumbering, and irrelevant-event interspersion have not been
+tested, so general route-history transfer is unsupported.
+
+For the diagnostic consequence, the wrapper inserts the recomputed
+`S * g_native` on the registered edge and lower-substrate GRC9V3 kernels
+calculate potential and flux. The readout changes and exact native state is
+restored, so the relation is causal rather than report-only. Ordinary LGRC
+continuation still has no hook that consumes derived `S`; the constitutive
+insertion remains producer/naturalization debt.
+
+C.1 re-establishes provisional exact-derived-fixture-history `C-R / DR4` from
+`DR0` under new carrier semantics. This is an independent classification, not
+a fresh runtime replicate: the native trajectory comes from I9-C. It does not
+support native D0a, `DR5`, or `DR6`, and it does not replace I9-C. I10 must
+eventually keep independent-state C and fixture-bound exact-history C.1
+separate, while I11 retains authority for comparative theory ranking.
 
 ## Iteration 10 - Added-Mechanism Replay And Controls
 
 - [ ] Consume every executed A/B/C candidate row explicitly.
 - [ ] Run artifact, snapshot/load, duplicate, and branch replay.
 - [ ] Run candidate-specific invariant controls.
+- [ ] For Candidate C, run duplicate-receipt, wrong-lineage, wrong-edge, nonqualifying-event, and restored-receipt-set controls.
+- [ ] Consume I9-C and I9-C.1 as separate carrier/authority rows; do not let C.1 retroactively naturalize C.
+- [ ] For Candidate C.1, preserve native-history identity, exact recomputation, injected-state rejection, history-tamper, and constitutive-insertion controls.
 - [ ] Run local-encounter and global-selector controls.
 - [ ] Run hidden-state and producer/native controls.
 - [ ] Run topology-specific controls.

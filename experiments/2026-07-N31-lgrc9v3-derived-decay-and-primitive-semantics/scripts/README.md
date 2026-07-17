@@ -190,6 +190,37 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_conserved_leakage_response_i9b1.py
 ```
 
+## Iteration 9-C
+
+- `build_n31_susceptibility_relaxation_i9c.py` reconstructs Candidate C's
+  frozen route, triggers producer-owned versioned `S` formation from an exact
+  native route-use receipt, runs matched closure-active and closure-omitted
+  native progression, applies bounded relaxation, audits exact closure inputs
+  and post-hook restoration, and measures a diagnostic effect through native
+  GRC9V3 potential/flux kernels without modifying runtime code.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_susceptibility_relaxation_i9c.py
+```
+
+## Iteration 9-C.1
+
+- `build_n31_exact_derived_susceptibility_i9c1.py` consumes exact I9-C native
+  snapshots and preregistration, eliminates independently stored `S`, derives
+  susceptibility from serialized native packet history, runs restoration and
+  partitioned history-integrity/semantic/storage controls, and repeats the
+  bounded lower-substrate GRC9V3-kernel diagnostic without modifying runtime
+  code. It records the exact relation as fixture-bound rather than a general
+  route-history functional.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_exact_derived_susceptibility_i9c1.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

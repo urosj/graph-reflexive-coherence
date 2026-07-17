@@ -162,6 +162,37 @@
 - `n31_conserved_leakage_response_i9b1.json` retains Candidate B at provisional
   `B-R / DR4` while strengthening attribution, persistence, and response shape.
 
+## Iteration 9-C
+
+- `n31_i9c_susceptibility_relaxation_artifacts/` contains the preregistration,
+  native route-use formation snapshot, formed/relaxed closure states, matched
+  closure-active/omitted native progression snapshots, exact receipt matrix,
+  native conductance/potential/flux readout matrix, selected controls, and
+  composed identities.
+- `n31_i9c_susceptibility_relaxation_source_current_trace.json` records the
+  route-local carrier, matched progression, bounded relaxation trajectory,
+  closure-orchestrated native-kernel diagnostic, exact input/cleanup audit,
+  two-axis theory positioning, producer residue, and naturalization debt.
+- `n31_susceptibility_relaxation_i9c.json` classifies Candidate C as
+  provisional producer-mediated `C-R / DR4`, leaves `DR5/DR6` pending, and
+  preserves native D0a at `DR2`. It records B, not C, as the closest added
+  mechanism to the strict coherence-only ontology.
+
+## Iteration 9-C.1
+
+- `n31_i9c1_exact_derived_susceptibility_artifacts/` contains the frozen exact
+  history relation, native formed/relaxed round trips, history-tamper fixture,
+  exact derivation and native-kernel readout matrices, selected controls, and
+  composed identities.
+- `n31_i9c1_exact_derived_susceptibility_source_current_trace.json` records the
+  native packet-history carrier, independent-state elimination, exact
+  recomputation, reduced-projection/full-state distinction, fixture-bound
+  generality ceiling, causal diagnostic, controls, and debt.
+- `n31_exact_derived_susceptibility_i9c1.json` re-establishes provisional
+  exact-derived-fixture-history `C-R / DR4` under new carrier semantics, keeps
+  I9-C intact, and leaves native D0a, general route transfer, `DR5`, and `DR6`
+  unsupported.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

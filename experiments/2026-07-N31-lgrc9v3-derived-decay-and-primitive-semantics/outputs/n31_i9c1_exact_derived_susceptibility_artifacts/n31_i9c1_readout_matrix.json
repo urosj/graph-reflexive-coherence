@@ -1,0 +1,139 @@
+{
+  "S_weakening": 0.2734375,
+  "artifact_kind": "n31_i9c1_exact_derived_readout_matrix",
+  "artifact_schema_version": "n31_i9c1_exact_derived_readout_matrix_v1",
+  "derived_relation_causally_consumed": true,
+  "formed": {
+    "coherence_transition_caused_by_readout": false,
+    "complete_snapshot_exact_after_cleanup": true,
+    "conductance_insertion_authority": "experiment_wrapper",
+    "derived_S": 0.9,
+    "derived_S_computation_authority": "exact_derived_history_closure",
+    "g_effective": 0.5458775937413701,
+    "g_native": 0.6065306597126334,
+    "native_identity_exact_after_cleanup": true,
+    "ordinary_LGRC_step_consumes_derived_S": false,
+    "packet_transport_executed_during_readout": false,
+    "post_cleanup_native_identity": {
+      "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+      "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+    },
+    "potential_by_node": {
+      "0": -1.6582900341776956,
+      "1": -1.2325344470740305,
+      "2": -0.9091755187482741
+    },
+    "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+    "pre_application_native_identity": {
+      "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+      "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+    },
+    "readout_request_authority": "experiment_harness",
+    "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+    "row_id": "formed_history",
+    "scientific_readout_digest": "2ebed65d321750e8b08040d7e8aa8d77794b9d076d5e8497fc5e04c9715a7f49",
+    "signed_flux_on_registered_edge": 0.1765143937092521
+  },
+  "g_effective_weakening": 0.16584822726517323,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "injected_independent_S_control": {
+    "injected_S": 0.9,
+    "injected_value_used": false,
+    "readout": {
+      "coherence_transition_caused_by_readout": false,
+      "complete_snapshot_exact_after_cleanup": true,
+      "conductance_insertion_authority": "experiment_wrapper",
+      "derived_S": 0.6265625,
+      "derived_S_computation_authority": "exact_derived_history_closure",
+      "g_effective": 0.3800293664761969,
+      "g_native": 0.6065306597126334,
+      "native_identity_exact_after_cleanup": true,
+      "ordinary_LGRC_step_consumes_derived_S": false,
+      "packet_transport_executed_during_readout": false,
+      "post_cleanup_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "potential_by_node": {
+        "0": -1.6582900341776956,
+        "1": -1.265704092527065,
+        "2": -0.8760058732952394
+      },
+      "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+      "pre_application_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "readout_request_authority": "experiment_harness",
+      "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+      "row_id": "conflicting_injected_S_ignored",
+      "scientific_readout_digest": "36e80d4598e5d690dd366341aefc5beaccfa7b34ef62e6705787ca90b000badf",
+      "signed_flux_on_registered_edge": 0.1480967673715728
+    },
+    "recomputed_derived_S": 0.6265625
+  },
+  "output_digest": "02da65418990dd021a38aa172b7940ba98049ef5f934db45792c69475590ef65",
+  "relaxed": {
+    "coherence_transition_caused_by_readout": false,
+    "complete_snapshot_exact_after_cleanup": true,
+    "conductance_insertion_authority": "experiment_wrapper",
+    "derived_S": 0.6265625,
+    "derived_S_computation_authority": "exact_derived_history_closure",
+    "g_effective": 0.3800293664761969,
+    "g_native": 0.6065306597126334,
+    "native_identity_exact_after_cleanup": true,
+    "ordinary_LGRC_step_consumes_derived_S": false,
+    "packet_transport_executed_during_readout": false,
+    "post_cleanup_native_identity": {
+      "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+      "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+    },
+    "potential_by_node": {
+      "0": -1.6582900341776956,
+      "1": -1.265704092527065,
+      "2": -0.8760058732952394
+    },
+    "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+    "pre_application_native_identity": {
+      "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+      "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+    },
+    "readout_request_authority": "experiment_harness",
+    "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+    "row_id": "relaxed_history",
+    "scientific_readout_digest": "36e80d4598e5d690dd366341aefc5beaccfa7b34ef62e6705787ca90b000badf",
+    "signed_flux_on_registered_edge": 0.1480967673715728
+  },
+  "relaxed_replay": {
+    "coherence_transition_caused_by_readout": false,
+    "complete_snapshot_exact_after_cleanup": true,
+    "conductance_insertion_authority": "experiment_wrapper",
+    "derived_S": 0.6265625,
+    "derived_S_computation_authority": "exact_derived_history_closure",
+    "g_effective": 0.3800293664761969,
+    "g_native": 0.6065306597126334,
+    "native_identity_exact_after_cleanup": true,
+    "ordinary_LGRC_step_consumes_derived_S": false,
+    "packet_transport_executed_during_readout": false,
+    "post_cleanup_native_identity": {
+      "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+      "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+    },
+    "potential_by_node": {
+      "0": -1.6582900341776956,
+      "1": -1.265704092527065,
+      "2": -0.8760058732952394
+    },
+    "potential_flux_computation_authority": "lower_substrate_GRC9V3_kernels",
+    "pre_application_native_identity": {
+      "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+      "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+    },
+    "readout_request_authority": "experiment_harness",
+    "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+    "row_id": "relaxed_history_replay",
+    "scientific_readout_digest": "36e80d4598e5d690dd366341aefc5beaccfa7b34ef62e6705787ca90b000badf",
+    "signed_flux_on_registered_edge": 0.1480967673715728
+  },
+  "signed_flux_change": 0.028417626337679303
+}

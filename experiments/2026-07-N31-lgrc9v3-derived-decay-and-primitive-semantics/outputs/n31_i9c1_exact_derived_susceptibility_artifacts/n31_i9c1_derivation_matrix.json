@@ -1,0 +1,289 @@
+{
+  "artifact_kind": "n31_i9c1_exact_derivation_matrix",
+  "artifact_schema_version": "n31_i9c1_exact_derivation_matrix_v1",
+  "complete_native_identity_different_due_to_history": true,
+  "complete_native_state_equal": false,
+  "current_C_JC_geometry_projection_equal": true,
+  "different_native_history_state": true,
+  "external_history_archive_required": false,
+  "formed": {
+    "derived_S": 0.9,
+    "derived_cache_optional": true,
+    "external_history_archive_required": false,
+    "formation_receipt": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+      "scheduler_event_index": 11,
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+    "history_identity_included_in_restoration": true,
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "progression_count": 0,
+    "progression_receipts": [],
+    "qualifying_history_identity": "4e45ebc9a66aa98c1d7f686a1b5d7a40428fc1ad182b8669fb1e033fbc1d0d33",
+    "stored_S_state_present": false
+  },
+  "formed_replay": {
+    "derived_S": 0.9,
+    "derived_cache_optional": true,
+    "external_history_archive_required": false,
+    "formation_receipt": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+      "scheduler_event_index": 11,
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+    "history_identity_included_in_restoration": true,
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "progression_count": 0,
+    "progression_receipts": [],
+    "qualifying_history_identity": "4e45ebc9a66aa98c1d7f686a1b5d7a40428fc1ad182b8669fb1e033fbc1d0d33",
+    "stored_S_state_present": false
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "markovian_relative_to_complete_native_snapshot": true,
+  "non_markovian_relative_to_current_projection": true,
+  "output_digest": "bb6021a7d88c03d9faf8d34c41123f0ab96f97968d6d3d8bdf888f4d812a8e4e",
+  "relation_contract": {
+    "S_floor": 0.5,
+    "S_max": 1.0,
+    "alpha": 1.0,
+    "conductance_insertion_phase": "after_native_compute_base_conductance_before_native_compute_potential",
+    "derived_relation": "S = S_floor + clip(alpha * q_use * rho ** N_after_formation, 0, S_max - S_floor)",
+    "external_history_archive_allowed": false,
+    "fixture_bound_exact_history_functional": true,
+    "fixture_specific_match_fields": [
+      "source_node_id",
+      "target_node_id",
+      "event_time_key",
+      "scheduler_event_index",
+      "source_lineage_id"
+    ],
+    "formation_before_progression_precedence_load_bearing": true,
+    "formation_receipt_predicate": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "general_route_history_functional_supported": false,
+    "history_carrier_class": "native_serialized_causal_history_state",
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "identity_or_audit_fields_not_physical_inputs": [
+      "packet_id",
+      "event_id"
+    ],
+    "independent_S_state_allowed": false,
+    "ordering_among_equivalent_progression_receipts_load_bearing": false,
+    "outcome_tuning_allowed": false,
+    "progression_receipt_predicate": {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "exact_registered_specs": [
+        [
+          0,
+          1,
+          2.0,
+          20,
+          "n31_C_progression_1"
+        ],
+        [
+          1,
+          0,
+          3.0,
+          30,
+          "n31_C_progression_2"
+        ],
+        [
+          0,
+          1,
+          4.0,
+          40,
+          "n31_C_progression_3"
+        ],
+        [
+          1,
+          0,
+          5.0,
+          50,
+          "n31_C_progression_4"
+        ]
+      ]
+    },
+    "qualifying_progression_count_load_bearing": true,
+    "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+    "relation_schema": "n31_C1_exact_derived_history_susceptibility_v1",
+    "rho": 0.75,
+    "source_policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+    "storage_order_semantically_load_bearing": false,
+    "theory_correspondence": "operational_discrete_J_C_history_proxy",
+    "transfer_to_equivalent_event_identifiers_tested": false
+  },
+  "relaxed": {
+    "derived_S": 0.6265625,
+    "derived_cache_optional": true,
+    "external_history_archive_required": false,
+    "formation_receipt": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+      "scheduler_event_index": 11,
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+    "history_identity_included_in_restoration": true,
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "progression_count": 4,
+    "progression_receipts": [
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 3.0,
+        "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+        "scheduler_event_index": 21,
+        "source_lineage_id": "n31_C_progression_1",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+        "scheduler_event_index": 31,
+        "source_lineage_id": "n31_C_progression_2",
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+        "scheduler_event_index": 41,
+        "source_lineage_id": "n31_C_progression_3",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 6.0,
+        "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+        "scheduler_event_index": 51,
+        "source_lineage_id": "n31_C_progression_4",
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    ],
+    "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+    "stored_S_state_present": false
+  },
+  "relaxed_replay": {
+    "derived_S": 0.6265625,
+    "derived_cache_optional": true,
+    "external_history_archive_required": false,
+    "formation_receipt": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+      "scheduler_event_index": 11,
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+    "history_identity_included_in_restoration": true,
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "progression_count": 4,
+    "progression_receipts": [
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 3.0,
+        "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+        "scheduler_event_index": 21,
+        "source_lineage_id": "n31_C_progression_1",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+        "scheduler_event_index": 31,
+        "source_lineage_id": "n31_C_progression_2",
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+        "scheduler_event_index": 41,
+        "source_lineage_id": "n31_C_progression_3",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 6.0,
+        "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+        "scheduler_event_index": 51,
+        "source_lineage_id": "n31_C_progression_4",
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    ],
+    "qualifying_history_identity": "935c6a94e581dd1bed3493d6f1d598add01d2b62e751437f637e75bd9f4386c1",
+    "stored_S_state_present": false
+  },
+  "same_current_C_JC_geometry_projection": true,
+  "same_current_projection_different_native_history_changes_derived_S": true,
+  "stored_S_state_present_in_formed_snapshot": false,
+  "stored_S_state_present_in_relaxed_snapshot": false
+}

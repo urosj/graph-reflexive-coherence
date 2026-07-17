@@ -1,0 +1,66 @@
+{
+  "DR5_control_gate_complete": false,
+  "artifact_kind": "n31_i9c_control_matrix",
+  "artifact_schema_version": "n31_i9c_control_matrix_v1",
+  "auxiliary_control_count": 2,
+  "complete_I10_control_matrix_claimed": false,
+  "controls": [
+    {
+      "cache_write_erased_by_native_rebuild": true,
+      "control_id": "conductance_label_only",
+      "control_status": "failed_closed",
+      "injected_cache_value": 0.123,
+      "native_baseline_value": 0.6065306597126334,
+      "native_recomputed_value": 0.6065306597126334,
+      "positive_claim_allowed": false
+    },
+    {
+      "control_id": "susceptibility_without_restoration",
+      "control_status": "failed_closed",
+      "missing_closure_blocked": true,
+      "positive_claim_allowed": false
+    },
+    {
+      "control_id": "history_carried_by_hidden_producer",
+      "control_status": "failed_closed",
+      "exact_receipt_ids_restored": true,
+      "malformed_closure_rejected": true,
+      "positive_claim_allowed": false
+    },
+    {
+      "control_id": "same_complete_C_different_S_changes_future",
+      "control_status": "passed",
+      "positive_claim_allowed": true,
+      "registered_readout_changed": true,
+      "same_native_v1_identity": true,
+      "same_native_v2_identity": true,
+      "strict_coherence_only_boundary_crossed": true
+    },
+    {
+      "candidate_closure_required_for_effect": true,
+      "control_id": "producer_closure_as_native_memory",
+      "control_status": "failed_closed",
+      "native_identity_excludes_candidate_closure": true,
+      "native_memory_claim_allowed": false,
+      "positive_claim_allowed": false
+    },
+    {
+      "control_id": "wall_clock_decay",
+      "control_status": "passed",
+      "event_receipt_count_is_internal_time": true,
+      "positive_claim_allowed": true,
+      "wall_clock_state_present": false
+    },
+    {
+      "control_id": "producer_scheduled_D0_decay",
+      "control_status": "failed_closed",
+      "native_D0_upgrade_allowed": false,
+      "positive_claim_allowed": false,
+      "relation_authority": "producer_mediated"
+    }
+  ],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "lane_specific_control_count": 5,
+  "lane_specific_controls_resolved": 5,
+  "output_digest": "96b03510f0cfabf61e3b6b5d5cf0f48febf7b27d922d4fd1998317d2fe7f9aa2"
+}
