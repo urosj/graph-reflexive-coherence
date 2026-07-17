@@ -14,6 +14,10 @@ susceptibility state.
 - Attributable activity changes complete route-local C/J_C organization.
 - Route mass, route organization, and causal mediation are defined by separate
   contracts and measured independently.
+- The organization domain and weakening trajectory are declared before use;
+  organization may be spatial, geometric, functional, temporal, or mixed.
+- The organization domain names the load-bearing mediator rather than only an
+  observed diagnostic; mixed rows isolate one domain or remain unresolved.
 - Forming activity stops before the weakening window.
 - The relation persists and then weakens under ordinary admitted dynamics.
 - A later local transport/readout depends on the changed coherence mediator.
@@ -23,6 +27,13 @@ susceptibility state.
 - Any D0-R export result closes its signed route-boundary continuity residual
   and shows that ordinary post-formation evolution, not an added export policy,
   generated the flux.
+- Any temporal D0a result derives alignment or arrival organization exactly
+  from admitted native timing/packet state without added phase, resonance, or
+  coincidence-window state.
+- Temporal interventions match packet amount, route mass, spatial organization,
+  and other continuation state as far as representable.
+- A causal-dispersion result excludes forming packets before claiming a later
+  independent route relation.
 - No load-bearing producer updates post-formation state or schedules decay.
 - Conservation, restoration identity v2 where required, replay, and controls
   pass.
@@ -37,6 +48,9 @@ susceptibility state.
 - The route relation changes but does not mediate later local transport.
 - Lower route mass is used as proof of weakened organization or causal mediation.
 - An added export policy is relabeled as ordinary D0-R because it conserves coherence.
+- A proper-time annotation or arrival histogram is treated as causal organization by itself.
+- Periodic rephasing is called monotonic decay, or forming-packet propagation is called a persistent route relation.
+- A mixed-domain label substitutes for identifying the load-bearing mediator.
 
 ## Claim Ceiling
 

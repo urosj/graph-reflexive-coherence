@@ -11,6 +11,11 @@ without substituting coarse equality or report synthesis.
 - D0a representation status is frozen before positive execution.
 - Route mass, route organization, and causal mediation each have a declared
   representation/authority contract before positive execution.
+- Primary semantic class, representation/authority class, and candidate
+  disposition are recorded independently.
+- Timing annotations, delay policies, queue state, and arrival distributions
+  receive explicit native/exact/lossy/missing representation dispositions
+  before temporal-organization evidence runs.
 - Exact projections freeze basis, decomposition/recomposition, overlap policy,
   temporal support, intervention semantics, and error bound.
 - Lossy or missing representation blocks D0a rather than triggering invented

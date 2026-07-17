@@ -85,6 +85,24 @@ theory extension is actually required, and what is its honest authority?
 
 N31 preserves six distinct candidate meanings.
 
+Every scientific row keeps three axes separate:
+
+```text
+primary semantic class:
+  D0a | D0b | D0c | A | B | C
+
+representation or authority:
+  native, exact-derived, producer-mediated, effective closure,
+  runtime extension, or theory extension
+
+candidate disposition:
+  supported, bounded partial, blocked, unsupported, unexecuted, inapplicable,
+  or rejected as relabel
+```
+
+An authority or outcome value cannot replace the semantic class of the
+candidate actually tested.
+
 The D0/B export distinction is a refinement inside this taxonomy, not a
 seventh candidate:
 
@@ -160,6 +178,9 @@ causal mediation:
 A lower route mass does not by itself prove that route organization weakened,
 and either change may occur without mediating later transport. Positive rows
 must therefore carry separate mass, organization, and mediation contracts.
+Route organization is not restricted to spatial geometry. Its registered
+domain may be spatial distribution, induced geometry, functional coupling,
+temporal alignment, arrival-time distribution, or a declared mixture.
 The resulting distinctions include:
 
 ```text
@@ -178,6 +199,33 @@ mass and organization weaken, mediation passes, no added export policy:
 mass and organization weaken, mediation passes, added export policy present:
   B-R candidate
 ```
+
+Three useful breadth variants remain inside the existing taxonomy:
+
+```text
+geometric shallowing:
+  D0a internal reorganization or slow-mode relaxation, with D0c comparator
+
+causal desynchronization:
+  temporal-organization D0a only when admitted native timing relations carry
+  and mediate the effect; otherwise temporal closure or expression policy
+
+causal dispersion:
+  D0b arrival observable unless native temporal packet organization mediates
+  a later independent local readout; otherwise D0a or A-like closure remains open
+```
+
+Clock annotations, a widening arrival histogram, or changed curvature do not
+by themselves establish causal organization. Periodic dephasing and rephasing
+are temporal modulation, not monotonic decay.
+
+`organization_domain` names the mediator, not merely its diagnostic. A mixed
+row must isolate one load-bearing domain or remain unresolved. Temporal
+interventions match packet amount, route mass, spatial organization, and other
+continuation state as far as representable. Dispersion becomes a later-route
+candidate only after forming packets are exhausted, causally isolated, or
+excluded by identity. Geometric shallowing still requires a local-transport
+intervention before causal D0a wording.
 
 ### A - Release-Efficacy Attenuation
 
@@ -228,6 +276,10 @@ scheduling, and test duration are forbidden causal inputs.
 Later response must encounter the changed route-local state through admitted
 local transport. Reading both routes, choosing the larger score, and writing a
 preferred result is a global selector, not a causal local encounter.
+
+Observable-only DR1-DR3 rows may validly lack a later causal encounter. Local
+encounter becomes mandatory for DR4+ causal language; conservation and declared
+internal-time ownership remain mandatory at lower rungs.
 
 ### Independent Mass, Organization, And Mediation Evidence
 
@@ -303,6 +355,19 @@ primitive succeed.
 N31 is an evidence experiment. Its experiment branch may add scripts,
 fixtures, outputs, reports, and requirements records, but it does not modify
 `src/` to make a candidate pass.
+
+The protected experiment scope also includes runtime libraries, specifications,
+tests, examples, global scripts, and dependency declarations. Such changes
+belong to a revision-distinct implementation tranche. Experiment-local files
+are allowed; repository index and handoff updates wait until closeout and cannot
+serve as evidence for the same run.
+
+For D0 rows, post-formation producer behavior is recorded mechanically as no
+calls, observation-only calls, or preregistered native-autonomy enablement.
+State-mutating producer calls are forbidden. Any producer call that decides
+whether, when, how much, or where coherence is exported classifies that export
+as B-R rather than D0-R. A preregistered native-autonomy call cannot use its
+call time as the aftereffect gate or supply export details while retaining D0.
 
 If N31 selects a missing native mechanism:
 

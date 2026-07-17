@@ -161,16 +161,23 @@ source-to-artifact manifest
 
 ```text
 decay definition and excluded meanings
-D0a/D0b/D0c/A/B/C dispositions
+primary semantic class: D0a/D0b/D0c/A/B/C
+representation/authority class separate from semantic class
+candidate disposition separate from semantic class and authority
 D0 subtype and weakening-mode disposition
 D0a representation disposition and projection contract if applicable
 D0 producer-role audit
+post-formation producer-call policy and complete call audit
 D0-versus-B redistribution classification
 D0-R/B-R export-policy ownership and bridge status
 carrier and continuation-state definitions
 route-mass contract and boundary-flux continuity closure
 route-organization contract and observable authority
+organization domain and weakening trajectory class
+observed diagnostic domains and load-bearing mediator domain
 causal-mediation contract and mass/state matching status
+forming-packet exclusion and later-probe independence status
+full versus qualified-partial mediation interpretation ceiling
 internal-time owner and advance event
 invariants and units
 local causal-readout contract
@@ -232,6 +239,8 @@ prior_experiment_source_ids
 rcae_demand_source_id
 paper_to_runtime_capability_dispositions
 candidate_dispositions
+primary_semantic_class_by_candidate
+representation_or_authority_class_by_candidate
 coherence_only_disposition
 d0a_representation_status
 d0a_projection_contract_id
@@ -241,7 +250,15 @@ d0_subclass_by_candidate
 weakening_mode_by_candidate
 route_mass_contract_by_candidate
 route_organization_contract_by_candidate
+organization_domain_by_candidate
+observed_diagnostic_domains_by_candidate
+load_bearing_organization_domain_by_candidate
+mixed_domain_mediation_resolution_by_candidate
+weakening_trajectory_class_by_candidate
 causal_mediation_contract_by_candidate
+formation_packet_exclusion_status_by_candidate
+later_readout_probe_relation_by_candidate
+temporal_intervention_matching_status_by_candidate
 route_mass_decreased_by_candidate
 route_organization_weakened_by_candidate
 later_readout_changed_by_candidate
@@ -251,6 +268,11 @@ added_export_policy_present_by_candidate
 export_policy_owner_by_candidate
 producer_authors_aftereffect_by_candidate
 d0_to_br_bridge_status
+added_mechanism_admission_reason_by_candidate
+post_formation_producer_call_policy_by_candidate
+post_formation_producer_calls_by_candidate
+post_formation_state_mutating_producer_calls_by_candidate
+producer_call_audit_status_by_candidate
 decay_relation_ladder_rung
 n31_closeout_ladder_rung
 selected_primitive_ids
@@ -263,6 +285,7 @@ carrier_by_candidate
 internal_time_by_candidate
 invariants_by_candidate
 topology_scope_by_candidate
+timing_and_delay_surface_disposition_by_candidate
 native_api_by_candidate
 producer_residue_by_candidate
 naturalization_debt_by_candidate
@@ -271,6 +294,8 @@ control_summary
 derived_cache_recomputation_status
 execution_reconstruction_status
 src_diff_empty_for_experiment_branch
+protected_runtime_contract_diff_empty
+protected_runtime_contract_path_scope
 claim_ceiling
 blocked_relabels
 p2_i3_return_recommendation

@@ -14,6 +14,8 @@ silently upgrading producer results, or claiming the ecology pattern itself.
 - Native, exact-derived, producer-mediated, effective-closure, runtime-debt,
   and theory-extension statuses remain distinct.
 - Experiment-branch `src_diff_empty` is recorded.
+- The frozen runtime, contract, test, example, global-script, and dependency
+  path scope remains diff-empty on the experiment branch.
 - A selected missing native mechanism opens a separate implementation tranche.
 - The final return manifest maps every mandatory role to exact artifacts or an
   inapplicability reason.

@@ -2,9 +2,10 @@
 
 ## Statement
 
-Any admitted N31 weakening relation can preserve the relevant invariant, use a
-declared system-internal clock, and affect later response through a local
-encounter rather than hidden destruction or global route selection.
+Any admitted N31 weakening relation can preserve the relevant invariant and use
+a declared system-internal clock. Any relation admitted at DR4 or above must
+affect later response through a local encounter rather than hidden
+destruction or global route selection.
 
 ## Required Support
 
@@ -13,7 +14,7 @@ encounter rather than hidden destruction or global route selection.
 - Any non-coherence state has declared units, bounds, cost, and invariant.
 - Event/proper-time ownership and the advancing event are explicit.
 - Wall-clock, process scheduling, and run duration are excluded.
-- Later readout consumes route-local state or transport.
+- For DR4+ rows, later readout consumes route-local state or transport.
 - Destination/accounting audits exist for moved coherence.
 - Route-local mass change closes against signed net boundary flux under the
   frozen support, measure, in-flight treatment, and tolerance.

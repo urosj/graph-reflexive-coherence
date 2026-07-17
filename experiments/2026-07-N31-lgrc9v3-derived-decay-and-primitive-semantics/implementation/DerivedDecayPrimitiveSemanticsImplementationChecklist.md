@@ -36,6 +36,8 @@ rcae_return_ready = false
 - [ ] Read theory/substrate sources directly rather than consuming RCAE summaries as evidence.
 - [ ] Inventory LGRC9V3 state, packet, queue, proper-time, event-time, conductance, and surface APIs.
 - [ ] Inventory route-support, boundary-flux, organization-observable, and local-readout APIs separately.
+- [ ] Classify lapse, proper-time relation, edge-delay, queue, and arrival-distribution runtime surfaces.
+- [ ] Distinguish executable timing behavior from paper-defined or missing timing policy.
 - [ ] Inventory restoration identity v1/v2 and reset-baseline correction.
 - [ ] Inventory load-bearing runtime tests.
 - [ ] Inventory N08 source artifacts and native-memory blocker.
@@ -58,8 +60,9 @@ N31-C1_source_and_authority_inventory_only
 
 ## Iteration 2 - Semantic, Representation, And Control Schema Freeze
 
-- [ ] Freeze primary semantic classes for D0a/D0b/D0c/A/B/C.
-- [ ] Freeze authority classes separately from semantic classes.
+- [ ] Freeze primary semantic classes as exactly D0a/D0b/D0c/A/B/C.
+- [ ] Freeze representation/authority classes separately from semantic classes.
+- [ ] Freeze candidate dispositions separately from semantic and authority classes.
 - [ ] Enforce one primary semantic class per candidate row.
 - [ ] Freeze DR0-DR6 ladder and rung gates.
 - [ ] Freeze N31-C0 through N31-C6 ladder.
@@ -70,7 +73,15 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Freeze D0-R as a D0 subtype and B-R as a Candidate B subtype.
 - [ ] Freeze route-mass contract, outward-positive sign policy, and continuity residual.
 - [ ] Freeze route-organization contract and observable-authority enum.
+- [ ] Freeze organization-domain enum across spatial, geometric, functional, temporal, and mixed relations.
+- [ ] Define organization domain as mediator domain, separate from observed diagnostic domains.
+- [ ] Require mixed-domain rows to isolate one load-bearing domain or remain unresolved.
+- [ ] Freeze weakening-trajectory enum including relaxation, drift, recurrence, broadening, and transience.
 - [ ] Freeze causal-mediation contract and full/partial/unresolved statuses.
+- [ ] Freeze `organization_mediated_readout_change = true` for intervention-backed full or bounded-partial mediation only.
+- [ ] Freeze full versus qualified-partial D0-R interpretation ceilings.
+- [ ] Freeze independent-later-probe and forming-packet-exclusion statuses.
+- [ ] Freeze temporal-intervention matching and added coincidence/resonance policy fields.
 - [ ] Freeze weakening-mode and D0-subclass enums.
 - [ ] Freeze independent mass, organization, readout, and mediation fact fields.
 - [ ] Freeze D0-R/B-R policy-owner facts and bridge-status enum.
@@ -82,6 +93,11 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Freeze candidate-specific topology contract.
 - [ ] Freeze local causal-readout contract.
 - [ ] Freeze D0 producer allowance and prohibition.
+- [ ] Freeze post-formation producer-call policy and call-level audit fields.
+- [ ] Freeze producer-call audit status as complete-no-mutation, reclassified, or blocking-incomplete.
+- [ ] Require empty state-mutating producer calls for D0.
+- [ ] Reclassify export-authoring producer calls mechanically as B-R.
+- [ ] Block native-autonomy calls whose timing gates the aftereffect or supplies export details.
 - [ ] Freeze A packet-creation versus in-flight boundary.
 - [ ] Freeze B destination and conservation boundary.
 - [ ] Freeze C independent-state/closure boundary.
@@ -89,7 +105,8 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Freeze external state composition requirements.
 - [ ] Freeze cache recomputation separately from execution reconstruction.
 - [ ] Freeze control result status enum and demotion precedence.
-- [ ] Freeze runtime modification boundary and `src_diff_empty` requirement.
+- [ ] Freeze exact protected runtime/contract paths and diff-empty requirements.
+- [ ] Keep specification, runtime, test, example, and dependency changes in a revision-distinct tranche.
 - [ ] Freeze RCAE return manifest schema.
 - [ ] Assign no positive DR rung.
 - [ ] Emit schema/control JSON and report.
@@ -104,6 +121,8 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Instantiate `relation_weakens_but_has_no_later_readout_effect`.
 - [ ] Instantiate `global_route_selector`.
 - [ ] Instantiate `hidden_producer_update`.
+- [ ] Instantiate unrecorded post-formation producer call.
+- [ ] Instantiate export-authoring producer call retained as D0-R.
 - [ ] Instantiate `missing_internal_time_owner`.
 - [ ] Instantiate `missing_invariant`.
 - [ ] Instantiate `missing_restoration_state`.
@@ -118,6 +137,16 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Instantiate unclosed route-boundary continuity.
 - [ ] Instantiate added export policy as ordinary D0-R relabel.
 - [ ] Instantiate mass-unmatched organization intervention.
+- [ ] Instantiate `proper_time_annotation_as_causal_alignment`.
+- [ ] Instantiate `added_coincidence_window_as_native_temporal_organization`.
+- [ ] Instantiate `arrival_histogram_as_causal_mediation`.
+- [ ] Instantiate `fixed_delay_single_path_as_dispersion`.
+- [ ] Instantiate `periodic_rephasing_as_monotonic_decay`.
+- [ ] Instantiate `diagnostic_domain_as_mediator_domain`.
+- [ ] Instantiate `mixed_domain_without_load_bearing_isolation`.
+- [ ] Instantiate `forming_packet_continuation_as_later_independent_readout`.
+- [ ] Instantiate `temporal_intervention_with_unmatched_state`.
+- [ ] Instantiate `geometric_observable_without_local_transport_intervention`.
 - [ ] Instantiate A/B/C-specific invariant and relabel controls.
 - [ ] Require all active nulls to fail closed.
 - [ ] Record `failed_open_rows = 0` before positive admission.
@@ -133,6 +162,8 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Separate route mass from route organization and later causal mediation.
 - [ ] Determine whether route support, boundary, and net flux are exactly measurable.
 - [ ] Determine organization-observable authority and update owner.
+- [ ] Determine representability separately for each admitted organization domain.
+- [ ] Do not infer native resonance or eligibility from timing annotations alone.
 - [ ] Determine whether organization intervention can hold route mass and other state equal.
 - [ ] Determine whether graph topology and edge/packet state form an exact discrete representation.
 - [ ] Determine whether a spectral decomposition is exact, lossy, or missing.
@@ -191,9 +222,18 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Report bounded partial or unresolved mediation when exact matching is unavailable.
 - [ ] Close signed boundary-flux continuity before claiming conservative export.
 - [ ] Classify weakening mode and D0 subtype from independent facts.
+- [ ] Record organization domain and weakening trajectory class.
+- [ ] Separate observed diagnostic domains from the load-bearing mediator domain.
+- [ ] Resolve a mixed row to one load-bearing domain or retain unresolved mediation.
+- [ ] For a temporal lane, prove the relation derives from admitted native timing state without added phase or coincidence state.
+- [ ] Match packet amount, route mass, spatial organization, and other continuation state in temporal intervention.
+- [ ] Distinguish propagation of forming packets from a later encountered route mediator.
+- [ ] Exhaust, causally isolate, or identity-exclude forming packets before independent-readout language.
+- [ ] Require local-transport intervention before promoting geometric shallowing to causal D0a.
 - [ ] Require ordinary post-formation flux and no added export policy for D0-R.
 - [ ] Compare instantaneous D0c and observable-only D0b controls.
 - [ ] Enforce strict D0 producer-role audit.
+- [ ] Record every post-formation producer call and prove the state-mutating call list is empty.
 - [ ] Preserve complete conservation.
 - [ ] Record complete-state rather than node-scalar equality.
 - [ ] Emit source-current artifacts, JSON, and report.
@@ -214,13 +254,19 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Classify D0a/D0b/D0c separately.
 - [ ] Preserve D0-R as one D0 subtype rather than all coherence-only decay.
 - [ ] Retain route mass, organization, readout, and mediation results separately.
+- [ ] Classify geometric, temporal-alignment, and arrival-distribution variants without promoting observables.
+- [ ] Classify recurrence as modulation rather than monotonic decay.
+- [ ] Treat intervention-backed bounded partial mediation as Boolean-supported but qualified-partial only.
+- [ ] Block causal D0-R when mediation is absent or unresolved.
 - [ ] Decide whether added-mechanism admission is scientifically justified.
 - [ ] Do not infer added mechanism solely from missing D0 representation.
 - [ ] Emit replay/control/classification JSON and report.
 
 ## Iteration 9 - Added-Mechanism Admission
 
-- [ ] Record D0 insufficiency reason before opening added candidates.
+- [ ] Record one allowed added-mechanism admission reason before opening candidates.
+- [ ] Permit D0 insufficiency, representation blocker, semantic control, bridge test, or downstream-reusability rationale.
+- [ ] Do not require added-mechanism execution after D0 success.
 - [ ] Decide A/B/C execute, classify-only, or inapplicable status separately.
 - [ ] Freeze candidate-specific topologies.
 - [ ] Freeze equations/relations, units, phases, and clocks.
@@ -309,12 +355,14 @@ N31-C1_source_and_authority_inventory_only
 - [ ] Record representation and projection status.
 - [ ] Return route-mass, route-organization, and causal-mediation contracts.
 - [ ] Return weakening mode, D0 subtype, export-policy ownership, and bridge status.
+- [ ] Return organization domain and weakening trajectory class by candidate.
 - [ ] Record cache recomputation and execution reconstruction separately.
 - [ ] Record restoration identity by candidate.
 - [ ] Record producer residue and naturalization debt.
 - [ ] Record selected primitive/closure/extension or non-selection reason.
 - [ ] Record outcome-specific P2-I3 recommendation.
 - [ ] Record `src_diff_empty = true` for experiment branch.
+- [ ] Record `protected_runtime_contract_diff_empty = true` over the frozen path scope.
 - [ ] Keep unsafe claim flags false.
 - [ ] Assign final DR and N31-C rungs.
 - [ ] Mark N31-C6 only when return bundle is reconstructable.

@@ -17,6 +17,8 @@ continuation relation and from instantaneous state/flux geometry.
   independent state, or missing.
 - A disconnected-observable control tests whether the reported relation itself
   affects later transport.
+- Curvature, alignment, and arrival-distribution observables are each kept below
+  causal status until a local mediator intervention changes later readout.
 - Causal language is blocked when only the observable fades.
 
 ## Failure Conditions
@@ -27,6 +29,10 @@ continuation relation and from instantaneous state/flux geometry.
 - Instantaneous anisotropy is relabeled as durable aftereffect.
 - A mass decrease or diagnostic change is used as causal-mediation evidence
   without a separately validated organization intervention.
+- A widened arrival histogram is promoted to temporal D0a, or a flatter
+  geometry to weaker guidance, without native local-readout dependence.
+- Continued propagation of forming packets is called a later independent route
+  effect, or a diagnostic domain is labeled as the causal mediator.
 
 ## Claim Ceiling
 

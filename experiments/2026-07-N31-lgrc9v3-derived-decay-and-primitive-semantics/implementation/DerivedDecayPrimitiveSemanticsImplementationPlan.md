@@ -55,30 +55,49 @@ claims. It cannot satisfy a graph evidence gate.
 Every candidate receives exactly one primary semantic class:
 
 ```text
-coherence_only_slow_causal_organization
-fading_derived_graph_observable
-instantaneous_state_flux_geometry
-release_efficacy_attenuation
-coherence_conserving_source_leakage
-route_susceptibility_relaxation
-effective_non_markovian_closure
-missing_representation_or_runtime_surface
-not_supported
+primary_semantic_class = D0a | D0b | D0c | A | B | C
 ```
 
-Authority is recorded separately:
+The class definitions remain:
 
 ```text
-existing_native
-exact_derived_projection
-producer_mediated
-runtime_extension_required
-theory_extension_required
-blocked_relabel
+D0a = coherence_only_slow_causal_organization
+D0b = fading_derived_graph_observable
+D0c = instantaneous_state_flux_geometry
+A = release_efficacy_attenuation
+B = coherence_conserving_source_leakage
+C = route_susceptibility_relaxation
 ```
 
-No row may receive contradictory authority classes for the same load-bearing
-transition.
+Representation or authority is recorded separately:
+
+```text
+representation_or_authority_class =
+  existing_native |
+  exact_derived_projection |
+  producer_mediated |
+  effective_non_markovian_closure |
+  runtime_extension_required |
+  theory_extension_required
+```
+
+Outcome disposition is also separate:
+
+```text
+candidate_disposition =
+  supported |
+  bounded_partial |
+  blocked_by_representation |
+  blocked_by_runtime |
+  not_supported |
+  not_executed |
+  inapplicable |
+  rejected_as_relabel
+```
+
+No row may use an authority or outcome disposition in place of the candidate
+that was actually tested. No row may receive contradictory authority classes
+for the same load-bearing transition.
 
 ### D0-R/B-R Export-Ownership Refinement
 
@@ -99,6 +118,35 @@ B-R:
 The causal owner is decisive. Conservation is required in both lanes, but it
 does not promote an added policy to D0-R. B-R is only a bounded operational
 analogue of D0-R when a separate registered bridge supports that relation.
+
+### D0 Organization-Domain Breadth
+
+D0a route organization may be spatial, geometric, functional, or temporal.
+This admits three bounded variants without adding candidate classes:
+
+```text
+geometric shallowing:
+  organization changes inside a registered support, possibly at constant mass;
+  D0c remains the instantaneous comparator and mediation remains required
+
+causal desynchronization:
+  relative timing organization derived exactly from admitted proper-time,
+  event, queue, or packet state weakens under native progression
+
+causal dispersion:
+  conserved packet coherence broadens across arrival time and native local
+  processing later depends on that temporal distribution
+```
+
+These are not admitted by label. A new phase, resonance, eligibility, or
+coincidence-window state is an effective closure, runtime extension, or
+expression policy rather than coherence-only D0. A widening arrival histogram
+is D0b unless the native temporal organization mediates a later local readout;
+propagation of the original forming packets alone does not establish a
+persistent route relation. Phase slip with recurrence is modulation, not
+monotonic decay. Iteration 1 must classify the relevant timing and delay
+surfaces as executable native behavior, exact projection, specified-but-missing
+surface, or added closure before a positive temporal lane can run.
 
 ## Local Ladders
 
@@ -202,6 +250,27 @@ route_organization_contract_id
 organization_observable_id
 organization_definition
 organization_inputs
+organization_domain =
+  spatial_distribution |
+  induced_geometry |
+  functional_coupling |
+  temporal_alignment |
+  arrival_time_distribution |
+  mixed |
+  other
+observed_diagnostic_domains
+load_bearing_organization_domain =
+  spatial_distribution |
+  induced_geometry |
+  functional_coupling |
+  temporal_alignment |
+  arrival_time_distribution |
+  other |
+  unresolved
+mixed_domain_mediation_resolution =
+  resolved_to_one_load_bearing_domain |
+  unresolved |
+  not_applicable
 organization_before
 organization_after
 organization_weakened
@@ -219,7 +288,10 @@ organization_recomputation_status
 ```
 
 A lossy scalar, cached diagnostic, producer-owned state, or report relation
-cannot stand in for ordinary coherence-only organization.
+cannot stand in for ordinary coherence-only organization. `organization_domain`
+describes the mediator that carries the later effect, not merely the domain of
+an observed diagnostic. A mixed-domain row must isolate one load-bearing domain
+or retain unresolved mediation.
 
 ### Causal-Mediation Contract
 
@@ -229,10 +301,24 @@ later_local_readout_definition
 later_readout_changed
 organization_intervention_definition
 mass_matched_during_organization_intervention
+packet_amount_matched_during_organization_intervention
+spatial_organization_matched_during_temporal_intervention
 other_continuation_state_matched
 organization_intervention_valid
+local_transport_intervention_status
 direct_readout_path_excluded
 hidden_selector_excluded
+added_coincidence_or_resonance_policy_present
+later_readout_probe_relation =
+  independent_later_probe |
+  forming_packet_continuation |
+  unresolved
+formation_packet_exclusion_status =
+  exhausted |
+  causally_isolated |
+  excluded_by_packet_identity |
+  not_excluded |
+  not_applicable
 organization_mediated_readout_change
 mediation_strength = full | bounded_partial | absent | unresolved
 ```
@@ -240,6 +326,27 @@ mediation_strength = full | bounded_partial | absent | unresolved
 The strongest organization-mediation result holds route mass and all other
 continuation state equal while changing organization. If exact matching is not
 available, the row must report bounded partial mediation or unresolved status.
+For a temporal intervention, packet amount, route mass, spatial organization,
+and other continuation state must be matched as far as representable. An added
+coincidence or resonance policy moves authority to a closure or expression
+policy. A dispersion row cannot claim a later independent mediator until the
+forming packets are exhausted, causally isolated, or excluded by identity.
+
+`organization_mediated_readout_change` is true only for intervention-backed
+`full` or `bounded_partial` mediation. The interpretation ceiling remains
+different:
+
+```text
+full:
+  full bounded causal-candidate wording allowed
+
+bounded_partial:
+  qualified partial causal-candidate wording only
+
+absent | unresolved:
+  organization_mediated_readout_change = false
+  no causal D0-R admission
+```
 
 ### Independent Classification Facts
 
@@ -251,6 +358,16 @@ weakening_mode =
   mixed |
   observable_only |
   none |
+  unresolved
+
+weakening_trajectory_class =
+  monotone_relaxation |
+  damped_relaxation |
+  phase_drift |
+  phase_slip_or_recurrence |
+  dispersive_broadening |
+  instantaneous_change |
+  transient |
   unresolved
 
 d0_subclass =
@@ -303,13 +420,53 @@ If route mass decreases without organization weakening, the result is
 conservative redistribution only. If organization weakens without mediation,
 the result is correlated weakening. Neither may be promoted to causal decay.
 
+Trajectory classification also fails closed:
+
+```text
+monotone or damped weakening with mediation:
+  candidate decay relation
+
+phase slip with periodic loss and recovery:
+  modulation or dephasing
+
+one forming pulse broadening while still in transit:
+  propagation or dispersion, not a persistent route relation
+
+changed geometry or timing diagnostic without intervention-backed mediation:
+  observable-only D0b/D0c evidence
+```
+
 ## Runtime Modification Boundary
 
 N31 experiment work keeps:
 
 ```text
 src_diff_empty = true
+protected_runtime_contract_diff_empty = true
 ```
+
+`src_diff_empty` means that `src/**` has no diff from the I1 frozen graph base.
+`protected_runtime_contract_diff_empty` applies the broader scope below.
+
+The protected scope is measured from the I1 frozen graph base and includes:
+
+```text
+src/**
+lib/**
+specs/**
+implementation/**
+tests/**
+examples/**
+scripts/**
+pyproject.toml
+requirements*.txt
+uv.lock
+```
+
+N31 may write inside its experiment directory. Repository index and handoff
+documents may change only at closeout and cannot be consumed as native evidence
+for the same run. Any runtime, specification, implementation, test, example,
+global script, or dependency change belongs to a revision-distinct tranche.
 
 Experiment-local producers may construct fixtures, initiate formation through
 public native operations, request admitted transitions, compute derived
@@ -318,6 +475,30 @@ observations, and collect receipts.
 For D0 they may not perform load-bearing post-formation updates, schedule
 D0-specific decay, retain a future-affecting age/history cursor, relax
 conductance from retained history, or feed a cached diagnostic into transport.
+
+Every D0 row must record:
+
+```text
+post_formation_producer_call_policy =
+  no_calls |
+  observation_only |
+  pre_registered_native_autonomy_enablement
+
+post_formation_producer_calls
+post_formation_state_mutating_producer_calls
+producer_call_audit_status =
+  complete_no_mutation |
+  complete_reclassified |
+  incomplete_blocks_row
+```
+
+`post_formation_state_mutating_producer_calls` must be empty for D0. For D0-R,
+any producer call that decides whether, when, how much, or where coherence is
+exported mechanically sets `added_export_policy_present = true` and moves the
+row to B-R regardless of conservation closure. A preregistered native-autonomy
+call may invoke only a native continuation surface frozen before formation. If
+the call time gates the aftereffect or supplies export details, the producer
+authors the transition and the row cannot remain D0.
 
 If a missing native surface is selected, N31 produces requirements for a
 separate implementation tranche. Native implementation and later validation
@@ -332,10 +513,12 @@ candidate_id
 candidate_schema_version
 schema_change_record_id
 source_iteration
-semantic_class
-authority_class
+primary_semantic_class
+representation_or_authority_class
+candidate_disposition
 d0_subclass
 weakening_mode
+weakening_trajectory_class
 formation_source
 carrier_definition
 continuation_state_definition
@@ -353,6 +536,11 @@ export_policy_owner
 export_policy_inputs
 producer_authors_aftereffect
 d0_to_br_bridge_status
+added_mechanism_admission_reason
+post_formation_producer_call_policy
+post_formation_producer_calls
+post_formation_state_mutating_producer_calls
+producer_call_audit_status
 topology_contract_id
 internal_time_owner
 internal_time_advance_event
@@ -411,6 +599,7 @@ relation_persists_but_does_not_weaken
 relation_weakens_but_has_no_later_readout_effect
 global_route_selector
 hidden_producer_update
+unrecorded_post_formation_producer_call
 missing_internal_time_owner
 missing_invariant
 missing_restoration_state
@@ -426,6 +615,7 @@ trail_or_stigmergy_relabel
 lossy_node_scalar_match_as_complete_state
 invented_C_slow_state
 producer_scheduled_D0_decay
+export_authoring_producer_call_retained_as_D0_R
 instantaneous_geometry_as_durable_decay
 derived_observable_as_causal_trail
 cache_removed_and_recomputed
@@ -440,6 +630,16 @@ constant_mass_internal_reorganization_as_export_relabel
 unclosed_route_boundary_continuity
 added_export_policy_as_D0_R_relabel
 mass_unmatched_organization_intervention
+proper_time_annotation_as_causal_alignment
+added_coincidence_window_as_native_temporal_organization
+arrival_histogram_as_causal_mediation
+fixed_delay_single_path_as_dispersion
+periodic_rephasing_as_monotonic_decay
+diagnostic_domain_as_mediator_domain
+mixed_domain_without_load_bearing_isolation
+forming_packet_continuation_as_later_independent_readout
+temporal_intervention_with_unmatched_state
+geometric_observable_without_local_transport_intervention
 ```
 
 ### Candidate A Controls
@@ -504,7 +704,8 @@ surfaces, and claim boundaries. Open no positive evidence.
 
 Freeze taxonomy, ladders, required fields, D0 representation/projection
 schema, normalized route-mass/organization/mediation contracts, D0-R/B-R
-ownership and bridge fields, internal-time and invariant schemas, candidate topology schema,
+ownership and bridge fields, internal-time and invariant schemas, candidate
+topology schema,
 restoration/reconstruction policy, control statuses, demotion precedence, and
 return manifest schema. Open no positive evidence.
 
@@ -549,9 +750,22 @@ added-mechanism work is justified.
 
 ### Iteration 9 - Added-Mechanism Admission
 
-If D0 is insufficient, freeze candidate-specific fixtures, equations, phases,
-clocks, invariants, topology, and controls for A, B, and/or C. Record why each
-candidate is executed, classified without execution, or inapplicable.
+Freeze an explicit admission reason before opening candidate-specific fixtures,
+equations, phases, clocks, invariants, topology, and controls for A, B, and/or
+C:
+
+```text
+added_mechanism_admission_reason =
+  d0_insufficient |
+  d0_representation_blocked |
+  comparative_semantic_control |
+  registered_d0_to_br_bridge_test |
+  downstream_reusability_probe
+```
+
+Record why each candidate is executed, classified without execution, or
+inapplicable. D0 success does not require an added-mechanism run, but it also
+does not forbid a preregistered comparison or bridge test.
 
 ### Iteration 9-A - Release-Efficacy Attenuation Probe
 
