@@ -25,6 +25,19 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_schema_control_freeze_i2.py
 ```
 
+## Iteration 3
+
+- `build_n31_active_nulls_and_failure_baselines_i3.py` instantiates all 70
+  frozen controls as claim-relative, semantically comparable derived fixtures.
+  It machine-checks cross-field contradictions, dimensional controls, and
+  trace-derived ownership without opening positive decay evidence.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_active_nulls_and_failure_baselines_i3.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

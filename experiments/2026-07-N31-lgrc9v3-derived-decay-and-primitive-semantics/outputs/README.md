@@ -13,6 +13,12 @@
   restoration, control, protected-scope, and RCAE-return schemas without
   assigning a positive result.
 
+## Iteration 3
+
+- `n31_active_nulls_and_failure_baselines_i3.json` records 70 active-null rows,
+  their semantic comparability contracts, claim-relative fail-closed results,
+  machine relation checks, and the no-positive-evidence admission boundary.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

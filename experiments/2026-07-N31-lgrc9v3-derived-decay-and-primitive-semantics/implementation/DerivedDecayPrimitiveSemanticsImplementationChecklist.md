@@ -278,46 +278,154 @@ I2 changes no protected runtime or contract surface.
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
-- [ ] Instantiate `label_only_decay`.
-- [ ] Instantiate `wall_clock_decay`.
-- [ ] Instantiate `post_hoc_weakening_trace`.
-- [ ] Instantiate `forming_activity_never_stopped`.
-- [ ] Instantiate `relation_persists_but_does_not_weaken`.
-- [ ] Instantiate `relation_weakens_but_has_no_later_readout_effect`.
-- [ ] Instantiate `global_route_selector`.
-- [ ] Instantiate `hidden_producer_update`.
-- [ ] Instantiate unrecorded post-formation producer call.
-- [ ] Instantiate export-authoring producer call retained as D0-R.
-- [ ] Instantiate `missing_internal_time_owner`.
-- [ ] Instantiate `missing_invariant`.
-- [ ] Instantiate `missing_restoration_state`.
-- [ ] Instantiate `report_digest_as_runtime_state`.
-- [ ] Instantiate `native_relabel_from_producer`.
-- [ ] Instantiate `RCAE_demand_as_graph_evidence`.
-- [ ] Instantiate `trail_or_stigmergy_relabel`.
-- [ ] Instantiate D0-specific false-positive controls.
-- [ ] Instantiate route-mass loss as organization-weakening relabel.
-- [ ] Instantiate organization weakening without causal mediation.
-- [ ] Instantiate constant-mass internal reorganization as export relabel.
-- [ ] Instantiate unclosed route-boundary continuity.
-- [ ] Instantiate added export policy as ordinary D0-R relabel.
-- [ ] Instantiate mass-unmatched organization intervention.
-- [ ] Instantiate `proper_time_annotation_as_causal_alignment`.
-- [ ] Instantiate `added_coincidence_window_as_native_temporal_organization`.
-- [ ] Instantiate `arrival_histogram_as_causal_mediation`.
-- [ ] Instantiate `fixed_delay_single_path_as_dispersion`.
-- [ ] Instantiate `periodic_rephasing_as_monotonic_decay`.
-- [ ] Instantiate `diagnostic_domain_as_mediator_domain`.
-- [ ] Instantiate `mixed_domain_without_load_bearing_isolation`.
-- [ ] Instantiate `forming_packet_continuation_as_later_independent_readout`.
-- [ ] Instantiate `temporal_intervention_with_unmatched_state`.
-- [ ] Instantiate `geometric_observable_without_local_transport_intervention`.
-- [ ] Instantiate A/B/C-specific invariant and relabel controls.
-- [ ] Require all active nulls to fail closed.
-- [ ] Record `failed_open_rows = 0` before positive admission.
-- [ ] Assign no positive DR rung from active-null fixtures.
-- [ ] Record active nulls as derived fixtures, not scientific evidence.
-- [ ] Emit active-null JSON and report with clear `failed_closed` semantics.
+- [x] Instantiate `label_only_decay`.
+- [x] Instantiate `wall_clock_decay`.
+- [x] Instantiate `post_hoc_weakening_trace`.
+- [x] Instantiate `forming_activity_never_stopped`.
+- [x] Instantiate `relation_persists_but_does_not_weaken`.
+- [x] Instantiate `relation_weakens_but_has_no_later_readout_effect`.
+- [x] Instantiate `global_route_selector`.
+- [x] Instantiate `hidden_producer_update`.
+- [x] Instantiate unrecorded post-formation producer call.
+- [x] Instantiate export-authoring producer call retained as D0-R.
+- [x] Instantiate `missing_internal_time_owner`.
+- [x] Instantiate `missing_invariant`.
+- [x] Instantiate `missing_restoration_state`.
+- [x] Instantiate `report_digest_as_runtime_state`.
+- [x] Instantiate `native_relabel_from_producer`.
+- [x] Instantiate `RCAE_demand_as_graph_evidence`.
+- [x] Instantiate `trail_or_stigmergy_relabel`.
+- [x] Instantiate D0-specific false-positive controls.
+- [x] Instantiate route-mass loss as organization-weakening relabel.
+- [x] Instantiate organization weakening without causal mediation.
+- [x] Instantiate constant-mass internal reorganization as export relabel.
+- [x] Instantiate unclosed route-boundary continuity.
+- [x] Instantiate added export policy as ordinary D0-R relabel.
+- [x] Instantiate mass-unmatched organization intervention.
+- [x] Instantiate `proper_time_annotation_as_causal_alignment`.
+- [x] Instantiate `added_coincidence_window_as_native_temporal_organization`.
+- [x] Instantiate `arrival_histogram_as_causal_mediation`.
+- [x] Instantiate `fixed_delay_single_path_as_dispersion`.
+- [x] Instantiate `periodic_rephasing_as_monotonic_decay`.
+- [x] Instantiate `diagnostic_domain_as_mediator_domain`.
+- [x] Instantiate `mixed_domain_without_load_bearing_isolation`.
+- [x] Instantiate `forming_packet_continuation_as_later_independent_readout`.
+- [x] Instantiate `temporal_intervention_with_unmatched_state`.
+- [x] Instantiate `geometric_observable_without_local_transport_intervention`.
+- [x] Instantiate A/B/C-specific invariant and relabel controls.
+- [x] Record semantic comparability per row and reject topology-only comparability.
+- [x] Record claim under test, scenario direction, violated gate, and expected failure per row.
+- [x] Retain a predicate receipt and blocker-repair mutation for every null row.
+- [x] Require bad-fixture rejection and repaired-fixture non-rejection before `failed_closed`.
+- [x] Machine-reject the eight frozen cross-field contradiction fixtures.
+- [x] Machine-reject integrated-flux, matched-intervention, and ownership violations.
+- [x] Treat affirmative discriminators relative to their overclaim, not as universal failures.
+- [x] Keep six disjoint control families separate from overlapping affirmative, dimensional, and ownership tags.
+- [x] Freeze the future candidate-to-null semantic comparability resolver schema.
+- [x] Freeze new-identity records for D0c/D0b semantic transitions.
+- [x] Keep candidate-specific source-current control execution pending later iterations.
+- [x] Require all active nulls to fail closed.
+- [x] Record `failed_open_rows = 0` before positive admission.
+- [x] Assign no positive DR rung from active-null fixtures.
+- [x] Record active nulls as derived fixtures, not scientific evidence.
+- [x] Emit active-null JSON and report with clear `failed_closed` semantics.
+
+### Iteration 3 Result
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_decay_evidence
+source_I2_output_digest = a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf
+active_null_row_count = 70
+common_active_null_row_count = 16
+D0_active_null_row_count = 28
+candidate_A_active_null_row_count = 5
+candidate_B_active_null_row_count = 8
+candidate_C_active_null_row_count = 5
+schema_relation_active_null_row_count = 8
+affirmative_discriminator_row_count = 5
+dimensional_control_row_count = 5
+trace_derived_ownership_control_row_count = 5
+cross_cut_counts_are_tags_not_additional_rows = true
+validator_receipt_count = 70
+validator_bad_fixture_rejection_count = 70
+validator_repaired_fixture_non_rejection_count = 70
+future_candidate_control_resolver_schema_frozen = true
+future_semantic_transition_record_schema_frozen = true
+failed_closed_rows = 70
+failed_open_rows = 0
+positive_evidence_opened = false
+candidate_rows_classified = false
+decay_relation_ladder_rung_assigned = false
+decay_relation_ladder_ceiling = DR0_no_source_current_decay_evidence
+n31_closeout_ladder_rung_assigned = false
+n31_closeout_ceiling = N31-C1_source_and_semantic_contract_admitted
+n31_c2_active_null_component_satisfied = true
+n31_c2_representation_component_pending_iteration_4 = true
+src_diff_empty = true
+protected_runtime_contract_diff_empty = true
+ready_for_iteration_4_D0a_representation_gate = true
+output_digest = e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea
+artifact_sha256 = b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff
+report_sha256 = e59ad5dd4a3093d596c14c1976b6605dd2c8765347fd08c3c4988487e2a09738
+script_sha256 = 44c6c2c398eb2a66b7014e5dc3b9ce809ee0312bb013d4889eb6ca156773fcc8
+```
+
+### Iteration 3 Interpretation
+
+I3 is the pre-positive admission boundary. Each frozen control is instantiated
+as a claim-relative derived fixture with an explicit false-positive scenario,
+violated gate, expected claim failure, and semantic comparability contract.
+`failed_closed` means the blocker triggered and the specific overclaim was
+rejected; it does not mean a scientific runtime probe failed. `failed_open`
+would be a control-governance failure, and no such row exists.
+
+The status is validator-derived rather than registry-authored. Every row stores
+a named predicate, exact rejected gate, bad-fixture digest, targeted repair
+mutation, repaired-fixture digest, and both predicate outcomes. A row receives
+`failed_closed` only when the bad fixture is rejected and the repaired fixture
+is not. Repair removes the targeted blocker; it does not create positive
+evidence.
+
+The nulls are not generic across semantic classes. A future positive row may
+consume an I3 null only when semantic class, authority, organization and
+load-bearing domains, internal-time policy, candidate schema, carrier, and
+continuation-state contracts match. Equal topology alone is insufficient; a
+nonmatching null must be regenerated for the positive candidate.
+
+The 70 rows form six disjoint families. Affirmative, dimensional, and ownership
+counts are overlapping tags on those rows, not another 15 executions. I3 is a
+baseline control library rather than a universal pass. A later resolver must
+record candidate ID, control ID, matched I3 null, comparability status/digest,
+regeneration requirement, and the resolved source-current control artifact.
+
+Five controls are affirmative discriminators viewed against a specific
+overclaim: exact cache recomputation, observable disconnection, mediator
+clamping, an allegedly complete or node-scalar-complete history contrast, and
+equal-C/different-S future contrast. Their fail-closed result rejects the
+overclaim under test. It does
+not turn their orthogonal implication into positive I3 evidence.
+
+The machine fixtures also enforce the distinctions introduced in I2. An
+instantaneous outward flux rate cannot close a time-integrated route-mass
+delta; mass loss cannot substitute for organization weakening; organization
+weakening cannot substitute for mediation; and unmatched interventions cannot
+support DR4. Producer ownership is derived from calls, scheduled events, and
+export decisions, so scheduling without direct mutation can still force B-R
+classification. B-R classification remains separate from positive B-R decay
+support.
+
+I3 demonstrates validator semantics over derived fixtures, not runtime
+observability. Later source-current rows must still resolve call traces, event
+lineage, packet identities, mutation paths, read-path guards, and restoration
+state against candidate-specific controls. D0c persistence and causal D0b use
+must create new candidate identities with the source row retained unchanged;
+neither transition may rewrite the original row in place.
+
+I3 does not satisfy the whole `N31-C2` rung. Its active-null component passes,
+but I4 must still establish the D0a representation boundary. Therefore the
+closeout ceiling remains `N31-C1`, no positive DR rung is assigned, and I3 is
+ready only for the I4 representation gate.
 
 ## Iteration 4 - D0a Representation Gate
 
