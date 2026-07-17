@@ -4,12 +4,13 @@
 
 ```text
 branch = experiment-N31
-status = initialized
+status = iteration_1_passed
 positive_evidence_opened = false
 decay_semantics_selected = false
 native_runtime_change_authorized = false
 decay_relation_ladder_rung = DR0
-n31_closeout_ladder_rung = N31-C0
+n31_closeout_ladder_rung_assigned = false
+n31_closeout_ceiling = N31-C1_source_and_authority_inventory_only
 candidate_schema_version = n31_decay_candidate_schema_v2
 rcae_return_ready = false
 ```
@@ -24,39 +25,99 @@ rcae_return_ready = false
 - [x] Normalize route mass, route organization, and causal mediation before I1.
 - [x] Record schema change `n31_pre_i1_mass_organization_mediation_normalization_v2`.
 - [x] Record that fixture migration is inapplicable because no positive scientific fixtures exist.
-- [ ] Commit the initialized N31 package.
+- [x] Commit the initialized N31 package.
 
 ## Iteration 1 - Source Inventory And Authority Admission
 
-- [ ] Record exact graph revision and clean source state.
-- [ ] Verify RCAE demand revision `ae11be2008b1902df1749faec531420432056c37`.
-- [ ] Digest all required RCAE demand records.
-- [ ] Verify theory revision `e0d25bf69b8bf681eb8d092ba416497030e5d88e`.
-- [ ] Verify all seven theory/substrate source digests.
-- [ ] Read theory/substrate sources directly rather than consuming RCAE summaries as evidence.
-- [ ] Inventory LGRC9V3 state, packet, queue, proper-time, event-time, conductance, and surface APIs.
-- [ ] Inventory route-support, boundary-flux, organization-observable, and local-readout APIs separately.
-- [ ] Classify lapse, proper-time relation, edge-delay, queue, and arrival-distribution runtime surfaces.
-- [ ] Distinguish executable timing behavior from paper-defined or missing timing policy.
-- [ ] Inventory restoration identity v1/v2 and reset-baseline correction.
-- [ ] Inventory load-bearing runtime tests.
-- [ ] Inventory N08 source artifacts and native-memory blocker.
-- [ ] Inventory N22 source artifacts, producer carrier, and naturalization debt.
-- [ ] Inventory N30 closeout and source-current participant/medium rows.
-- [ ] Record N30+ roadmap/handoff as planning boundary only.
-- [ ] Give every source `may_consume_as` and `must_not_consume_as` fields.
-- [ ] Record paper/specification-to-runtime capability dispositions.
-- [ ] Record current missing surfaces without treating absence as negative theory evidence.
-- [ ] Keep DR and N31-C positive rungs unassigned.
-- [ ] Keep `positive_evidence_opened = false`.
-- [ ] Emit source inventory JSON and report.
-- [ ] Verify deterministic rerun and artifact hashes.
+- [x] Record exact graph revision and clean source state.
+- [x] Verify RCAE demand revision `ae11be2008b1902df1749faec531420432056c37`.
+- [x] Digest all required RCAE demand records.
+- [x] Verify theory revision `e0d25bf69b8bf681eb8d092ba416497030e5d88e`.
+- [x] Verify all seven theory/substrate source digests.
+- [x] Read theory/substrate sources directly rather than consuming RCAE summaries as evidence.
+- [x] Inventory LGRC9V3 state, packet, queue, proper-time, event-time, conductance, and surface APIs.
+- [x] Inventory route-support, boundary-flux, organization-observable, and local-readout APIs separately.
+- [x] Classify lapse, proper-time relation, edge-delay, queue, and arrival-distribution runtime surfaces.
+- [x] Distinguish executable timing behavior from paper-defined or missing timing policy.
+- [x] Inventory restoration identity v1/v2 and reset-baseline correction.
+- [x] Inventory load-bearing runtime tests.
+- [x] Inventory N08 source artifacts and native-memory blocker.
+- [x] Inventory N22 source artifacts, producer carrier, and naturalization debt.
+- [x] Inventory N30 closeout and source-current participant/medium rows.
+- [x] Record N30+ roadmap/handoff as planning boundary only.
+- [x] Give every source `may_consume_as` and `must_not_consume_as` fields.
+- [x] Record paper/specification-to-runtime capability dispositions.
+- [x] Record current missing surfaces without treating absence as negative theory evidence.
+- [x] Keep DR and N31-C positive rungs unassigned.
+- [x] Keep `positive_evidence_opened = false`.
+- [x] Emit source inventory JSON and report.
+- [x] Verify deterministic rerun and artifact hashes.
 
 Expected ceiling:
 
 ```text
 N31-C1_source_and_authority_inventory_only
 ```
+
+### Iteration 1 Result
+
+```text
+status = passed
+acceptance_state = accepted_source_and_authority_inventory_only_no_decay_evidence
+graph_frozen_I1_base_revision = 7075ecb5e464401df96f16eac171fbefe0e532dc
+RCAE_demand_revision = ae11be2008b1902df1749faec531420432056c37
+geometric_theory_revision = e0d25bf69b8bf681eb8d092ba416497030e5d88e
+source_record_count = 46
+runtime_capability_count = 16
+all_seven_theory_digests_match = true
+src_diff_empty = true
+protected_runtime_contract_diff_empty = true
+positive_evidence_opened = false
+decay_relation_ladder_rung_assigned = false
+decay_relation_ladder_ceiling = DR0_no_source_current_decay_evidence
+n31_closeout_ladder_rung_assigned = false
+n31_closeout_ceiling = N31-C1_source_and_authority_inventory_only
+ready_for_iteration_2_schema_freeze = true
+targeted_runtime_conformance = 46 passed, 27 subtests passed
+output_digest = c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736
+artifact_sha256 = 1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79
+report_sha256 = 1d8323f044fe554e4d6aaa25ce96e935f3f15d59eb202c3fa1fe32cdda08fbaf
+script_sha256 = d324765e5339098c043b5e3cf5cc4a66e293b32fb723f1a5dfab06478a23e049
+```
+
+### Iteration 1 Interpretation
+
+I1 establishes authority and executable-surface boundaries only. LGRC9V3
+already has source-current coherence, conductance/flux, lapse, proper-time,
+event-time, edge-delay, packet queue, arrival, and local-update surfaces. Those
+surfaces can support later N31 representations and interventions, but their
+existence does not demonstrate a durable-yet-weakening relation.
+
+Per-packet arrival times and exact event histories make temporal and
+finite-window projections possible. The runtime does not currently expose a
+native arrival-distribution decay state, coincidence/resonance policy, generic
+persistent route-organization mediator, or susceptibility-relaxation law.
+These absences are implementation/representation findings, not negative
+evidence about RC theory. I4 must decide whether a candidate organization is an
+exact projection, is blocked by representation, or requires an extension.
+
+The historical boundary is also explicit:
+
+```text
+N08 = artifact memory/route-trace precedent; native memory policy blocked
+N22 = producer-mediated conductance carrier; native update/relaxation debt
+N30 = source-current participant/medium/readout precedent; temporal decay unresolved
+```
+
+Restoration identity v1 is available for current scientific state. V2 adds the
+reset baseline; explicit legacy rebase yields prospective v2 identity without
+recovering historical construction provenance. Later replay rows must choose
+the identity matching the operation under test.
+
+Verification used `.venv` and covered restoration v1/v2, reset-baseline
+persistence, native packet-loop baseline/route behavior, and LGRC9V3 telemetry
+contracts. This is runtime conformance support for the inventory, not N31
+scientific evidence.
 
 ## Iteration 2 - Semantic, Representation, And Control Schema Freeze
 

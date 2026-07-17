@@ -1,0 +1,1326 @@
+{
+  "acceptance_state": "accepted_source_and_authority_inventory_only_no_decay_evidence",
+  "candidate_rows_classified": false,
+  "candidate_schema_version": "n31_decay_candidate_schema_v2",
+  "checks": [
+    {
+      "check_id": "graph_frozen_I1_base_is_ancestor",
+      "passed": true
+    },
+    {
+      "check_id": "rcae_revision_verified",
+      "passed": true
+    },
+    {
+      "check_id": "theory_revision_verified",
+      "passed": true
+    },
+    {
+      "check_id": "all_required_sources_exist",
+      "passed": true
+    },
+    {
+      "check_id": "all_seven_theory_digests_match",
+      "passed": true
+    },
+    {
+      "check_id": "all_sources_have_consumption_boundaries",
+      "passed": true
+    },
+    {
+      "check_id": "RCAE_sources_are_demand_not_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "timing_execution_and_missing_policy_distinguished",
+      "passed": true
+    },
+    {
+      "check_id": "route_mass_organization_and_mediation_not_collapsed",
+      "passed": true
+    },
+    {
+      "check_id": "restoration_v1_v2_and_reset_baseline_inventory_present",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contract_diff_empty",
+      "passed": true
+    },
+    {
+      "check_id": "positive_evidence_remains_closed",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "universal_decay_law",
+      "native_memory",
+      "native_learning",
+      "trail_or_stigmergy",
+      "semantic_communication",
+      "shared_medium_coordination",
+      "agency",
+      "selfhood",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ecology_regime",
+      "phase8_extension",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "source_and_authority_inventory_only_no_N31_decay_evidence",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ecology_regime_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_learning_claim_allowed": false,
+      "native_memory_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_extension_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_communication_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "shared_medium_coordination_claim_allowed": false,
+      "trail_or_stigmergy_claim_allowed": false,
+      "universal_decay_law_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_source_inventory_i1.py",
+  "decay_relation_ladder_ceiling": "DR0_no_source_current_decay_evidence",
+  "decay_relation_ladder_rung_assigned": false,
+  "decay_semantics_selected": false,
+  "digest_semantics": {
+    "artifact_sha256": "exact_file_content_digest",
+    "output_digest": "canonical_payload_digest_excluding_output_digest",
+    "values_may_differ": true
+  },
+  "experiment": "N31_lgrc9v3_derived_decay_and_primitive_semantics",
+  "external_source_revisions": {
+    "RCAE_demand_revision": "ae11be2008b1902df1749faec531420432056c37",
+    "geometric_theory_revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e"
+  },
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "graph_source_state": {
+    "branch": "experiment-N31",
+    "execution_revision_policy": "frozen_base_must_remain_ancestor; later experiment-only commits do not change consumed runtime revision",
+    "experiment_artifact_changes_allowed": true,
+    "frozen_I1_base_is_ancestor": true,
+    "frozen_I1_base_revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+    "protected_runtime_contract_diff_empty": true,
+    "source_state_at_I1_start": "clean",
+    "src_diff_empty": true
+  },
+  "historic_experiment_boundaries": {
+    "N08": "artifact_memory_and_route_trace_precedent_with_native_memory_policy_blocked",
+    "N22": "producer_mediated_non_consumptive_conductance_carrier_with_native_update_and_relaxation_debt",
+    "N30": "source_current_participant_medium_and_later_eligibility_precedent_with_temporal_decay_unresolved",
+    "roadmaps_and_handoffs": "planning_and_claim_boundary_only"
+  },
+  "iteration": "1_source_inventory_and_authority_admission",
+  "missing_surface_interpretation": {
+    "I4_may_classify": [
+      "exact_derived_projection",
+      "blocked_by_representation",
+      "runtime_extension_required"
+    ],
+    "missing_runtime_surface_is_negative_theory_evidence": false,
+    "missing_runtime_surface_means": "current_graph_representation_or_policy_does_not_supply_the_surface"
+  },
+  "n31_closeout_ceiling": "N31-C1_source_and_authority_inventory_only",
+  "n31_closeout_ladder_rung_assigned": false,
+  "output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+  "positive_evidence_opened": false,
+  "ready_for_iteration_2_schema_freeze": true,
+  "runtime_capability_count": 16,
+  "runtime_capability_inventory": [
+    {
+      "capability_id": "node_coherence_state",
+      "evidence": "LGRC9V3RuntimeState.base_state node coherence",
+      "n31_use": "route_mass_and_invariant_input_candidate",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py"
+      ]
+    },
+    {
+      "capability_id": "edge_conductance_and_flux",
+      "evidence": "port-edge conductance and flux_uv are source-current state/telemetry",
+      "n31_use": "D0c_input_and_candidate_C_comparator_only",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "src/pygrc/telemetry/lgrc9v3_contract.py"
+      ]
+    },
+    {
+      "capability_id": "lapse",
+      "evidence": "compute_lgrc9v3_lapse_by_node with explicit policies",
+      "n31_use": "internal_time_input_not_decay_policy",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_computed_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_timing.py"
+      ]
+    },
+    {
+      "capability_id": "node_proper_time",
+      "evidence": "step-local _advance_node_proper_time updates persisted node surfaces",
+      "n31_use": "internal_progression_clock_not_causal_alignment_proof",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_mutating_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_runtime.py"
+      ]
+    },
+    {
+      "capability_id": "event_time_and_edge_causal_delay",
+      "evidence": "arrival key is departure key plus captured positive edge causal delay",
+      "n31_use": "temporal_projection_input_not_dispersion_or_decay_by_itself",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_packets.py"
+      ]
+    },
+    {
+      "capability_id": "packet_event_queue",
+      "evidence": "deterministic departure/arrival records, queue ordering, and processors",
+      "n31_use": "formation_packet_exclusion_and_temporal_history_input",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_executable_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_packets.py"
+      ]
+    },
+    {
+      "capability_id": "arrival_local_readout",
+      "evidence": "arrival eligibility and local update can causally affect later scheduling",
+      "n31_use": "candidate_local_readout_API_subject_to_I4_mediation_gate",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_executable_runtime_surface",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_packets.py",
+        "src/pygrc/models/lgrc_9_v3_runtime.py"
+      ]
+    },
+    {
+      "capability_id": "arrival_time_distribution",
+      "evidence": "per-packet arrival keys exist; no native arrival-distribution state or update law",
+      "n31_use": "D0b_or_I4_temporal_representation_candidate",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "exact_derived_projection_possible_native_aggregate_missing",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_packets.py"
+      ]
+    },
+    {
+      "capability_id": "coincidence_resonance_alignment_policy",
+      "evidence": "no native coincidence window, resonance state, or alignment update owner found",
+      "n31_use": "added_policy_must_be_closure_or_extension_not_native_D0",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "runtime_surface_missing",
+      "source_paths": []
+    },
+    {
+      "capability_id": "registered_route_support",
+      "evidence": "topology and causal route records exist but no generic N31 route-support API",
+      "n31_use": "I4_representation_gate",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "candidate_exact_projection_requires_I4_freeze",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_runtime.py"
+      ]
+    },
+    {
+      "capability_id": "route_boundary_flux",
+      "evidence": "packet and edge flux are available; route boundary/sign/in-flight treatment is not generic",
+      "n31_use": "I4_mass_continuity_gate",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "candidate_exact_projection_requires_I4_continuity_contract",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_packets.py",
+        "src/pygrc/telemetry/lgrc9v3_contract.py"
+      ]
+    },
+    {
+      "capability_id": "route_organization_observable",
+      "evidence": "state exposes geometry/timing components but no admitted persistent route-organization mediator",
+      "n31_use": "I4_domain_specific_representation_gate",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "generic_native_mediator_missing_exact_projection_open",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_timing.py"
+      ]
+    },
+    {
+      "capability_id": "finite_window_history_relation",
+      "evidence": "exact queue/event/route histories exist; a finite-window relation would be derived",
+      "n31_use": "D0b_candidate_only",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "exact_derived_projection_candidate_no_native_decay_policy",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_packets.py"
+      ]
+    },
+    {
+      "capability_id": "route_susceptibility_relaxation",
+      "evidence": "conductance state exists but N22 carrier update was producer-mediated and no native relaxation law exists",
+      "n31_use": "candidate_C_closure_or_extension_boundary",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "added_update_and_relaxation_policy_missing",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_runtime.py"
+      ]
+    },
+    {
+      "capability_id": "restoration_identity_v1",
+      "evidence": "v1 identifies scientific current state and excludes representation caches",
+      "n31_use": "current_state_replay_identity_only",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_current_state_identity",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_restoration.py",
+        "specs/lgrc-9-v3-restoration-identity.md"
+      ]
+    },
+    {
+      "capability_id": "restoration_identity_v2_and_reset_baseline",
+      "evidence": "v2 binds current v1 identity and reset-baseline v1 identity; legacy rebase is explicit/prospective",
+      "n31_use": "N31_replay_restoration_and_reset_contract",
+      "positive_decay_evidence": false,
+      "runtime_disposition": "existing_native_current_plus_reset_baseline_identity",
+      "source_paths": [
+        "src/pygrc/models/lgrc_9_v3_restoration.py",
+        "specs/grc-reset-baseline-persistence.md"
+      ]
+    }
+  ],
+  "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_source_inventory_i1.py",
+  "source_record_count": 46,
+  "source_records": [
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/reports/P2-I3-Q005-decay-interpretation-study.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "7bfcba424c478890a5ced828bd69840cc67de07a2977cb076d50251a4c5587dd",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_q005_decay_interpretation_study",
+      "source_role": "exact_decay_question_and_candidate_taxonomy_demand"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/implementation/P2-I3-N31-decay-primitive-handoff.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "ba16dd2828503ab7fa8dc8706ca59a92f238a8e783c7f99d111c11bfb5ca4058",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_n31_decay_primitive_handoff",
+      "source_role": "graph_departure_and_return_contract_demand"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/implementation/P2-I3-decision-record.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "3870b48ef7bb6f9f0b82ecbdb001a75fee9f5108e9f29321b222f59b01e8b2a6",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_p2_i3_decision_record",
+      "source_role": "paused_ecology_decision_and_authority_boundary"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/implementation/P2-I3-trail-or-stigmergic-field-brief.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "4cabaf7adbd5a339806908469459cd0879fdb0a18a3a84f092e69709198a3dec",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_trail_field_brief",
+      "source_role": "ecology_demand_context_only"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/implementation/P2-I3-trail-or-stigmergic-field-checklist.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "d21866649309a593784fa5c11bdbd582d96d1c779c89aaca940be19a70490240",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_trail_field_checklist",
+      "source_role": "ecology_acceptance_context_only"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/reports/P2-I3-I01-source-current-capability-audit.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "435b705b3c940e36f7c86cae41ffaa35ddc5e53b954213cf86e11bbe5290e698",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_source_current_capability_audit",
+      "source_role": "downstream_capability_demand_audit_only"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "question",
+        "control",
+        "return_role",
+        "blocked_claim"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "N31_positive_evidence"
+      ],
+      "path": "experiments/2026-07-AE01-post-n30-demand-composition-atlas/reports/P2-I3-I02-exact-source-admission.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "reflexive_coherence_agentic_ecology",
+      "revision": "ae11be2008b1902df1749faec531420432056c37",
+      "sha256": "1e98009b6be48b72346d0cb2b2f4e38c9b6f8f03003cb01b444679720a09def6",
+      "source_exists_at_revision": true,
+      "source_id": "rcae_exact_source_admission",
+      "source_role": "downstream_source_admission_context_only"
+    },
+    {
+      "expected_sha256": "e03b643e6020f0288a7fa9dd1a49b93c445b4fb3c9e85b8dab09fcadd53d6b94",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "core/2025-11-ReflexiveCoherence.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "e03b643e6020f0288a7fa9dd1a49b93c445b4fb3c9e85b8dab09fcadd53d6b94",
+      "source_exists_at_revision": true,
+      "source_id": "theory_reflexive_coherence",
+      "source_role": "core_coherence_geometry_flux_and_conservation_source"
+    },
+    {
+      "expected_sha256": "a9d49332b25d01511c8731a2478de6321792137f645cef32e3be01cc94f0fbe5",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "core/2025-11-RC-IdentityChoiceAbundance.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "a9d49332b25d01511c8731a2478de6321792137f645cef32e3be01cc94f0fbe5",
+      "source_exists_at_revision": true,
+      "source_id": "theory_identity_choice_abundance",
+      "source_role": "basin_persistence_geometry_update_and_conservation_source"
+    },
+    {
+      "expected_sha256": "d0b9da4c2af353ba0a008c9d83a466609e1df2b643e9de3936d4df45909079bf",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "core/2025-11-Coherence.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "d0b9da4c2af353ba0a008c9d83a466609e1df2b643e9de3936d4df45909079bf",
+      "source_exists_at_revision": true,
+      "source_id": "theory_coherence",
+      "source_role": "coherence_field_and_continuity_source"
+    },
+    {
+      "expected_sha256": "85c34229212c7ef0a67dd9baaa50ea755ba45701f7a99b60e4112f1a33b4ef70",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "investigations/2026-01-RC-Distance-v4.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "85c34229212c7ef0a67dd9baaa50ea755ba45701f7a99b60e4112f1a33b4ef70",
+      "source_exists_at_revision": true,
+      "source_id": "theory_rc_distance_v4",
+      "source_role": "geometric_causal_functional_distance_source"
+    },
+    {
+      "expected_sha256": "4340a8b7b4be0d6b04127f4205630db59912e2a4a18ca326025517ece6a996cb",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "substrates/2026-05-LGRC-9.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "4340a8b7b4be0d6b04127f4205630db59912e2a4a18ca326025517ece6a996cb",
+      "source_exists_at_revision": true,
+      "source_id": "theory_lgrc9",
+      "source_role": "lgrc_timing_packet_and_causal_substrate_specification"
+    },
+    {
+      "expected_sha256": "d95f745ed5b88c114448add49f84dd97cd3ef3140fbdde0d7c620e29dd368481",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "substrates/2026-05-LGRC9V3-Native-Packet-Loops.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "d95f745ed5b88c114448add49f84dd97cd3ef3140fbdde0d7c620e29dd368481",
+      "source_exists_at_revision": true,
+      "source_id": "theory_lgrc9v3_native_packet_loops",
+      "source_role": "native_packet_loop_and_queue_specification"
+    },
+    {
+      "expected_sha256": "82506f5b1fbf2aa7e60a2e67559be82bca4781e2becede75fb2f17c5a0a5c45e",
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "theory_constraint",
+        "substrate_specification",
+        "claim_boundary"
+      ],
+      "must_not_consume_as": [
+        "graph_runtime_evidence",
+        "positive_N31_run_evidence"
+      ],
+      "path": "substrates/2026-05-LGRC9V3-Causal-Pulse-Substrate-Surfaces.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "geometric_reflexive_coherence",
+      "revision": "e0d25bf69b8bf681eb8d092ba416497030e5d88e",
+      "sha256": "82506f5b1fbf2aa7e60a2e67559be82bca4781e2becede75fb2f17c5a0a5c45e",
+      "source_exists_at_revision": true,
+      "source_id": "theory_lgrc9v3_causal_pulse_surfaces",
+      "source_role": "causal_pulse_surface_and_lineage_specification"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "source_exists_at_revision": true,
+      "source_id": "runtime_contract",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "source_exists_at_revision": true,
+      "source_id": "runtime_state",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+      "source_exists_at_revision": true,
+      "source_id": "timing_surfaces",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "source_exists_at_revision": true,
+      "source_id": "packet_queue",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+      "source_exists_at_revision": true,
+      "source_id": "restoration_identity",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "source_exists_at_revision": true,
+      "source_id": "runtime_execution",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+      "source_exists_at_revision": true,
+      "source_id": "runtime_facade",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+      "source_exists_at_revision": true,
+      "source_id": "telemetry_contract",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "specs/lgrc-9-v3-restoration-identity.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "08c3ee95a9b76016648e14d028120bdebc88d2a109387874c32e4a462b037458",
+      "source_exists_at_revision": true,
+      "source_id": "restoration_identity_spec",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "runtime_capability_inventory",
+        "representation_gate_input",
+        "replay_contract"
+      ],
+      "must_not_consume_as": [
+        "positive_decay_evidence_without_run",
+        "universal_decay_claim"
+      ],
+      "path": "specs/grc-reset-baseline-persistence.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "20a75f525b1a46e97afaa3aa9e16f63adddc754ded088fa38cd666272ddc8891",
+      "source_exists_at_revision": true,
+      "source_id": "reset_baseline_spec",
+      "source_role": "load_bearing_graph_runtime_or_specification_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_lgrc_9_v3_runtime.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_01",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_lgrc_9_v3_contract.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_02",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_03",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_04",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_lgrc_9_v3_restoration.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_05",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_06",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/models/test_reset_baseline_persistence.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_07",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "existing_contract_conformance_context",
+        "future_N31_test_selection"
+      ],
+      "must_not_consume_as": [
+        "N31_scientific_evidence",
+        "decay_candidate_support"
+      ],
+      "path": "tests/telemetry/test_lgrc9v3_contract.py",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "6331bf72bc41fc3545f5f6cef4b8a8bfc767a89b9c5d9d426b013ffc75884a2c",
+      "source_exists_at_revision": true,
+      "source_id": "load_bearing_runtime_test_08",
+      "source_role": "load_bearing_runtime_conformance_test_source"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "historic_memory_candidate_boundary",
+        "native_memory_blocker"
+      ],
+      "must_not_consume_as": [
+        "N31_decay_evidence",
+        "native_decay_policy_evidence"
+      ],
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "source_exists_at_revision": true,
+      "source_id": "n08_mem6_closeout",
+      "source_role": "historic_artifact_memory_candidate_and_native_policy_blocker"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "native_geometry_trail_blocker",
+        "route_use_trace_context"
+      ],
+      "must_not_consume_as": [
+        "N31_positive_D0_evidence",
+        "native_route_memory_evidence"
+      ],
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "source_exists_at_revision": true,
+      "source_id": "n08_native_geometry_trail_closeout",
+      "source_role": "native_geometry_trail_attempt_and_blocker_context"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "historic_susceptibility_contract",
+        "AP4_AP5_gap_context"
+      ],
+      "must_not_consume_as": [
+        "N31_candidate_C_evidence",
+        "native_susceptibility_update_evidence"
+      ],
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_source_handoff_inventory.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "1ea13c1d9fcdaa75ba284aa1041dd08b18f8e8c1a6d73f24c45512b639e9773f",
+      "source_exists_at_revision": true,
+      "source_id": "n22_source_handoff_inventory",
+      "source_role": "susceptibility_contract_history"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "producer_carrier_precedent",
+        "naturalization_debt_source"
+      ],
+      "must_not_consume_as": [
+        "native_candidate_C_evidence",
+        "coherence_only_D0_evidence"
+      ],
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "a944464675fc2bb42b1e24417a511073a6ef2d491334aff9f590ca970f9296a3",
+      "source_exists_at_revision": true,
+      "source_id": "n22_producer_carrier_probe",
+      "source_role": "producer_mediated_conductance_carrier_precedent"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "producer_residue_boundary",
+        "native_conductance_memory_blocker"
+      ],
+      "must_not_consume_as": [
+        "N31_positive_evidence",
+        "native_learning_or_decay_evidence"
+      ],
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0",
+      "source_exists_at_revision": true,
+      "source_id": "n22_closeout_and_n23_handoff",
+      "source_role": "producer_residue_and_naturalization_debt_boundary"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "source_current_participant_precedent",
+        "participant_attribution_boundary"
+      ],
+      "must_not_consume_as": [
+        "N31_decay_evidence",
+        "agentic_participant_evidence"
+      ],
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_participant_admissibility_i4.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "66d722a64b655bfa023f0b209d4cfa5d5a832f1f09db248e810c5b7553d8de80",
+      "source_exists_at_revision": true,
+      "source_id": "n30_participant_admissibility",
+      "source_role": "source_current_participant_carrier_precedent"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "source_current_fixture_precedent",
+        "trace_persistence_decay_limit"
+      ],
+      "must_not_consume_as": [
+        "N31_decay_evidence",
+        "native_slow_trace_evidence"
+      ],
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_trace_i5.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "2383c8fcd54d6033a77decb7e431d50227841b66606e8ec6808f480da6d2b8d5",
+      "source_exists_at_revision": true,
+      "source_id": "n30_primary_medium_trace",
+      "source_role": "source_current_medium_trace_precedent"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "window_scope_boundary",
+        "temporal_decay_blocker"
+      ],
+      "must_not_consume_as": [
+        "N31_positive_D0b_evidence",
+        "long_horizon_decay_evidence"
+      ],
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_medium_surface_scope_window_i5b.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "9a03d41029025ed62518d4a511ec3ea2ae680290a310852b97ee556da448e540",
+      "source_exists_at_revision": true,
+      "source_id": "n30_scope_window_audit",
+      "source_role": "medium_scope_window_and_temporal_decay_blocker"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "local_later_readout_precedent",
+        "causal_dependency_control_context"
+      ],
+      "must_not_consume_as": [
+        "N31_causal_mediation_evidence",
+        "shared_medium_coordination_evidence"
+      ],
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_later_eligibility_i6.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "9ba4e8ea9e0f4ac9c383c0ad9ec56c7b003ee027c11390cfa4b586dfc27d7159",
+      "source_exists_at_revision": true,
+      "source_id": "n30_later_eligibility",
+      "source_role": "later_eligibility_dependency_precedent"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "participant_medium_context",
+        "post_N30_spiral_context"
+      ],
+      "must_not_consume_as": [
+        "N31_decay_evidence",
+        "ecology_regime_evidence"
+      ],
+      "path": "experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8.json",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "ade32c848cbffa4d5757bfce50eaadb72a63a8252a8ba09e5fd562c6c100718c",
+      "source_exists_at_revision": true,
+      "source_id": "n30_closeout",
+      "source_role": "minimal_shared_medium_closeout_and_N31_context"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "catalog_context",
+        "claim_boundary_policy"
+      ],
+      "must_not_consume_as": [
+        "scientific_evidence",
+        "N31_candidate_support"
+      ],
+      "path": "experiments/N30_plus_experiment_catalog_roadmap.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "247c0282e3200693ba800a02985aff5f55223ce15882924c7434045d2fc46ea6",
+      "source_exists_at_revision": true,
+      "source_id": "n30_plus_catalog_roadmap",
+      "source_role": "planning_and_claim_boundary_only"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "candidate_direction_context",
+        "dependency_context"
+      ],
+      "must_not_consume_as": [
+        "scientific_evidence",
+        "N31_candidate_selection"
+      ],
+      "path": "experiments/N30_plus_candidate_directions.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "6507b9e9f8ecce2537c678ad77d6898002543173cd462e39300cf2aff72dc7a1",
+      "source_exists_at_revision": true,
+      "source_id": "n30_plus_candidate_directions",
+      "source_role": "planning_direction_only"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "handoff_context",
+        "ecology_demand_context"
+      ],
+      "must_not_consume_as": [
+        "scientific_evidence",
+        "N31_decay_result"
+      ],
+      "path": "experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "8fa69faf1631256fc1ef116715ee51387b578cc6d053df9ed3e51fdfcc831bb4",
+      "source_exists_at_revision": true,
+      "source_id": "n30_plus_shared_medium_ecology_handoff",
+      "source_role": "planning_handoff_only"
+    },
+    {
+      "expected_sha256": null,
+      "expected_sha256_matches": true,
+      "may_consume_as": [
+        "claim_ceiling_context",
+        "blocked_relabel_context"
+      ],
+      "must_not_consume_as": [
+        "scientific_evidence",
+        "positive_runtime_support"
+      ],
+      "path": "docs/reference/ClaimBoundaryIndex.md",
+      "positive_evidence_opened_by_source": false,
+      "repository_id": "graph_reflexive_coherence",
+      "revision": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "sha256": "b8169b152bd892c4e840c4deff8000601be842378e281759d3e6c033d15b877b",
+      "source_exists_at_revision": true,
+      "source_id": "claim_boundary_index",
+      "source_role": "claim_index_only"
+    }
+  ],
+  "status": "passed",
+  "theory_to_runtime_dispositions": [
+    {
+      "n31_effect": "each positive row must freeze and close its own invariant",
+      "question_id": "global_coherence_conservation",
+      "runtime_disposition": "multiple_budget_and_packet_continuity_surfaces_exist_candidate_specific_audit_required",
+      "theory_disposition": "direct_theory_requirement"
+    },
+    {
+      "n31_effect": "no positive D0a row admitted in I1",
+      "question_id": "D0a_slow_causal_coherence_organization",
+      "runtime_disposition": "representation_unresolved_pending_I4",
+      "theory_disposition": "theoretically_compatible_not_automatically_discrete"
+    },
+    {
+      "n31_effect": "candidate remains below mediation until I6/I8",
+      "question_id": "D0b_fading_derived_observable",
+      "runtime_disposition": "exact_history_inputs_exist_projection_not_yet_frozen",
+      "theory_disposition": "admissible_as_observable_not_independent_state"
+    },
+    {
+      "n31_effect": "instantaneous comparator only; persistence unproved",
+      "question_id": "D0c_instantaneous_geometry",
+      "runtime_disposition": "native_state_and_telemetry_inputs_exist",
+      "theory_disposition": "directly_induced_by_current_coherence_flux_geometry"
+    },
+    {
+      "n31_effect": "arrival histogram alone remains D0b",
+      "question_id": "temporal_desynchronization_or_dispersion",
+      "runtime_disposition": "timing_and_packet_events_native_distribution_and_mediation_unresolved",
+      "theory_disposition": "bounded_D0_domain_variant_if_causal_mediation_is_shown"
+    },
+    {
+      "n31_effect": "added law cannot be called field-state decay",
+      "question_id": "candidate_A_release_efficacy",
+      "runtime_disposition": "packet_amount_and_timing_exist_no_generic_age_phase_release_law",
+      "theory_disposition": "compatible_only_if_efficacy_is_coherence_derived_or_declared_added_state"
+    },
+    {
+      "n31_effect": "producer policy must remain B_or_B_R",
+      "question_id": "candidate_B_conserved_source_leakage",
+      "runtime_disposition": "packet_transfer_primitives_exist_endogenous_leak_law_missing",
+      "theory_disposition": "continuity_compatible_with_explicit_destination"
+    },
+    {
+      "n31_effect": "cannot be promoted to coherence-only D0",
+      "question_id": "candidate_C_susceptibility_relaxation",
+      "runtime_disposition": "storage_precedent_exists_native_update_relaxation_missing",
+      "theory_disposition": "independent_slow_state_is_closure_or_theory_extension"
+    }
+  ]
+}
