@@ -1,0 +1,1245 @@
+{
+  "D0b_persistence_supported": true,
+  "D0b_weakening_supported": true,
+  "acceptance_state": "accepted_source_current_D0b_DR3_finite_window_observable_below_causal_trail",
+  "artifact_manifest": [
+    {
+      "artifact_role": "source_current_D0b_finite_window_runtime_trace",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+      "sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039"
+    },
+    {
+      "artifact_role": "I5R1_provenance_and_scientific_outcome_lineage",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_revision_lineage_r1.json",
+      "sha256": "4d0e0dded207fc7c1da61114ee603835a168f58d155b7912edb2e6f189957aa0"
+    }
+  ],
+  "candidate_row_count": 1,
+  "candidate_rows": [
+    {
+      "added_export_policy_present": false,
+      "added_mechanism_admission_reason": "not_applicable_D0b_observable",
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "source_current_D0b_finite_window_runtime_trace",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039"
+        }
+      ],
+      "artifact_sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039",
+      "blocked_relabels": [
+        "causal_trail",
+        "causal_decay",
+        "causal_mediation",
+        "independent_decay_state",
+        "native_route_memory",
+        "trail_or_stigmergic_field",
+        "semantic_memory",
+        "learning",
+        "communication",
+        "agency",
+        "selfhood",
+        "sentience",
+        "organism_or_life",
+        "native_support",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "branch_continuation_status": "passed_compute_vs_omit_observer_side_effect_control",
+      "candidate_disposition": "supported",
+      "candidate_id": "n31_i6_D0b_finite_window_route_flux_coupling",
+      "candidate_schema_version": "n31_decay_candidate_schema_v2",
+      "candidate_semantic_contract": {
+        "candidate_specific_schema_id": "n31_i6_D0b_candidate_schema_v1",
+        "carrier_contract_id": "n31_i6_native_route_arrival_history_v1",
+        "continuation_state_contract_id": "n31_i6_complete_LGRC9V3_state_plus_declared_history_functional_v1",
+        "internal_time_policy": "model_owned_event_time_wall_clock_excluded_v1",
+        "load_bearing_organization_domain": "functional_coupling",
+        "organization_domain": "functional_coupling",
+        "primary_semantic_class": "D0b",
+        "representation_or_authority_class": "exact_derived_projection"
+      },
+      "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+      "candidate_specific_control_regeneration_count": 15,
+      "carrier_definition": "native completed packet transfers on the registered route edge within the declared LGRC event-time window",
+      "causal_mediation_contract": {
+        "added_coincidence_or_resonance_policy_present": false,
+        "causal_mediation_contract_id": "n31_i6_D0b_observable_only_v1",
+        "direct_readout_path_excluded": false,
+        "formation_packet_exclusion_status": "exhausted",
+        "hidden_selector_excluded": true,
+        "later_local_readout_definition": "observer-side-effect audit: equal-state compute-versus-omit branches process identical native continuation",
+        "later_readout_changed": false,
+        "later_readout_probe_relation": "unresolved",
+        "later_readout_probe_relation_detail": "observer_side_effect_disconnection_only_not_an_independent_later_probe",
+        "local_transport_intervention_status": "not_run",
+        "mass_matched_during_organization_intervention": "not_applicable_no_organization_intervention",
+        "mediation_strength": "absent",
+        "organization_intervention_definition": "not_run: neither native packet history nor finite-window relation value was clamped, deleted, or contrasted",
+        "organization_intervention_valid": false,
+        "organization_mediated_readout_change": false,
+        "other_continuation_state_matched": "not_applicable_no_organization_intervention",
+        "packet_amount_matched_during_organization_intervention": "not_applicable_no_organization_intervention",
+        "spatial_organization_matched_during_temporal_intervention": "not_applicable_no_temporal_intervention",
+        "temporal_intervention_matching_status": "not_applicable"
+      },
+      "claim_ceiling": "bounded_source_current_fading_finite_window_graph_observable_DR3_below_causal_trail",
+      "clock_scope": "global_model_event_time",
+      "coherence_budget_after": 4.0,
+      "coherence_budget_before": 4.0,
+      "complete_state_identity": {
+        "baseline_before_schedule": "625c69f6b938964e9caa5ea8cadec48b55901c353c353db2312604ac680e0f0a",
+        "forming_route_packets_in_flight_after_final_departure": "7f4fa959be51f7f856c1336aa504bdc80c97c5d391d208f66b676fa7ea439b25",
+        "post_formation_progression_1": "dfc8ba7baac27ce12928354c6c5c989490d70baf0a8a77acde14a5281a044af9",
+        "post_formation_progression_2": "05d01bf4c425530add15e0d457b65e6b8cac9413b4d98bb010bdc07befa3db04",
+        "post_formation_progression_3": "5252d0f3d3bc51bb3b1bcf692234edf6a29cf1bb2939245cd42a8cfba7742548",
+        "post_formation_progression_4": "52ca75f2fe55cb3d86446d2d3b2bc3d3a1c984c7a3de87f983adf71b3277e747",
+        "route_arrival_1_committed": "b4f890ec0e74d7a4e676ee7e78603c66fe5dec04435a2642c14e063353c7161b",
+        "route_arrival_2_committed": "4c485f900d1ed4334fae553cdc642024dbdf7ee6ff60405e236fb1f4b9e4748b",
+        "route_arrival_3_committed": "6704a741f5766c66c4f3e2c2c619bd94676f78e9c0fcf53e433fbd33747e1559"
+      },
+      "continuation_state_definition": "complete LGRC9V3 current scientific state plus an exact, non-independent functional over retained native packet history",
+      "control_results": [
+        {
+          "actual_result": "native_packet_history_and_runtime_receipts_present",
+          "blocked_condition": "label_or_report_without_source_current_relation",
+          "candidate_control_execution_id": "n31_i6_regenerated_label_only_decay_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "label_only_decay",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "native_history_trace_required",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR1_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "5af423df776f4f01d2172c2e94e351eb2cbf88932f0e49b9ecff252f0685e7ce",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "label_only_decay",
+          "source_I3_row_digest": "be154f55d4337b17b7bf478c11889f25d706d16c9915d8c6188c2ded01ae4594"
+        },
+        {
+          "actual_result": "window_evaluation_uses_LGRC9V3_event_time_key",
+          "blocked_condition": "wall_time_or_process_duration_advances_window",
+          "candidate_control_execution_id": "n31_i6_regenerated_wall_clock_decay_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "wall_clock_decay",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "model_owned_event_time_only",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR3_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "f4d2034d007bde3713478ee4464b6602d2d326448192ad87b5a00c87026d2eb5",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "wall_clock_decay",
+          "source_I3_row_digest": "7ffeaafb88740a24ae88a3876d6b9bd72931db89a13c2bf68f33e0ed535aca9d"
+        },
+        {
+          "actual_result": "fixed_window_and_staggered_arrivals_recorded_in_threshold_contract",
+          "blocked_condition": "outcome_selected_window_or_trace",
+          "candidate_control_execution_id": "n31_i6_regenerated_post_hoc_weakening_trace_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "post_hoc_weakening_trace",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "window_and_thresholds_declared_before_execution",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR3_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "bef5615b00a5abaf3fd953d08208e3d8ed56af20d8a31f1c30c8b65b3745bc62",
+          "semantic_comparability_mismatches": [
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "post_hoc_weakening_trace",
+          "source_I3_row_digest": "61c5674d15f7858732ced20a2da1a74f55eb5a8bfa6cb774f4be369e5fb021a5"
+        },
+        {
+          "actual_result": "all_route_packets_arrived_at_event_time_2_and_no_later_route_packets_exist",
+          "blocked_condition": "continued_route_formation_called_persistence",
+          "candidate_control_execution_id": "n31_i6_regenerated_forming_activity_never_stopped_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "forming_activity_never_stopped",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "route_carrier_exhausted_before_persistence_checkpoint",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR2_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "3e8cb36e1e456b228913e27826710d4599760fcabb67a939984aff474ce989bb",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "forming_activity_never_stopped",
+          "source_I3_row_digest": "4ce870c0fc55b13a0406c748850fe7ae60ed80444b64a20381997fac0f67b945"
+        },
+        {
+          "actual_result": "[0.30000000000000004, 0.2, 0.1, 0.0]",
+          "blocked_condition": "persistence_without_weakening_promoted_to_DR3",
+          "candidate_control_execution_id": "n31_i6_regenerated_relation_persists_but_does_not_weaken_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "relation_persists_but_does_not_weaken",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "at_least_two_positive_decreases_and_final_expiry",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR3_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "5af423df776f4f01d2172c2e94e351eb2cbf88932f0e49b9ecff252f0685e7ce",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "relation_persists_but_does_not_weaken",
+          "source_I3_row_digest": "6ebf2fb66bc55db2015a7f28e2e74c8feb9167e58fab48304c61423ddd921a60"
+        },
+        {
+          "actual_result": "LGRC9V3_event_queue_progression_receipts_present",
+          "blocked_condition": "weakening_without_named_internal_time_owner",
+          "candidate_control_execution_id": "n31_i6_regenerated_missing_internal_time_owner_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "missing_internal_time_owner",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "native_event_time_owner_and_events_recorded",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR3_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "f4d2034d007bde3713478ee4464b6602d2d326448192ad87b5a00c87026d2eb5",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "missing_internal_time_owner",
+          "source_I3_row_digest": "f3d17e9d3e3ef580ce650c5a4ba6377ec3996a409c1063c4c1161b8479bc21e0"
+        },
+        {
+          "actual_result": "budget_span=0.0",
+          "blocked_condition": "relation_without_coherence_budget_invariant",
+          "candidate_control_execution_id": "n31_i6_regenerated_missing_invariant_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "missing_invariant",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "global_node_plus_in_flight_budget_closed",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_row",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "5af423df776f4f01d2172c2e94e351eb2cbf88932f0e49b9ecff252f0685e7ce",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "missing_invariant",
+          "source_I3_row_digest": "d425eedb79335a9483c101a412082f1ddd459d5a8ddec401819d9697fd2afbf1"
+        },
+        {
+          "actual_result": "all_checkpoint_snapshot_load_audits_exact",
+          "blocked_condition": "history_relation_not_restorable",
+          "candidate_control_execution_id": "n31_i6_regenerated_missing_restoration_state_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "missing_restoration_state",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "identity_and_recomputed_relation_exact_after_snapshot_load",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR5_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "5af423df776f4f01d2172c2e94e351eb2cbf88932f0e49b9ecff252f0685e7ce",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "missing_restoration_state",
+          "source_I3_row_digest": "5248abc5cd7060b9527c1040b0d4627e38c867610f8598ab3fac87c53ca42772"
+        },
+        {
+          "actual_result": "report_cache_absent_from_runtime_identity",
+          "blocked_condition": "report_or_digest_used_as_history carrier",
+          "candidate_control_execution_id": "n31_i6_regenerated_report_digest_as_runtime_state_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "report_digest_as_runtime_state",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "relation_recomputed_from_native_packet_history",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR1_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "bef5615b00a5abaf3fd953d08208e3d8ed56af20d8a31f1c30c8b65b3745bc62",
+          "semantic_comparability_mismatches": [
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "report_digest_as_runtime_state",
+          "source_I3_row_digest": "f79bc0e0be4426091edc7a2d1898bdab4c4442e35d6a792d5633383ec1ce6918"
+        },
+        {
+          "actual_result": "computed_and_uncomputed_observer branches continue identically; no history intervention run",
+          "blocked_condition": "recomputable_D0b_observable_relabelled_as_causal_trail",
+          "candidate_control_execution_id": "n31_i6_regenerated_derived_observable_as_causal_trail_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "derived_observable_as_causal_trail",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "failed_closed",
+          "expected_result": "causal_claim_rejected_without_transport_mediation",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR4_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "60aafce8f49d7c673c027d72573e5c7b3744e312c83818e2316686894f594093",
+          "semantic_comparability_mismatches": [
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "derived_observable_as_causal_trail",
+          "source_I3_row_digest": "4eff172429637c7750f619e6cb4cf12190419b0cabb446fdb36dcf4fea996796"
+        },
+        {
+          "actual_result": "all checkpoint caches recompute exactly",
+          "blocked_condition": "exact_cache_relabelled_as_independent_decay_state",
+          "candidate_control_execution_id": "n31_i6_regenerated_cache_removed_and_recomputed_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "cache_removed_and_recomputed",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "failed_closed",
+          "expected_result": "cache_removal_and_recomputation_leave runtime identity unchanged",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_independent_state_claim",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "29956592ce2037d16a3c4f3a5af94fa540ceae345a2b0f1b487a4c6e6a3d08f6",
+          "semantic_comparability_mismatches": [
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "cache_removed_and_recomputed",
+          "source_I3_row_digest": "7e281b51e0f411e84749d846afd81c515419820d11609dde8e527ac45060f660"
+        },
+        {
+          "actual_result": "no cache divergence observed",
+          "blocked_condition": "divergent_cache_retains_exact_derived_authority",
+          "candidate_control_execution_id": "n31_i6_regenerated_cache_divergence_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "cache_divergence",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "all recomputation digests exact",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_exact_D0b",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "29956592ce2037d16a3c4f3a5af94fa540ceae345a2b0f1b487a4c6e6a3d08f6",
+          "semantic_comparability_mismatches": [
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "cache_divergence",
+          "source_I3_row_digest": "be1b230173f822bcad4fbaca736146c40691c8020d8e1d00b37df2fc14d29718"
+        },
+        {
+          "actual_result": "after_identity_equal=True; organization_intervention_performed=false",
+          "blocked_condition": "D0b_observable_claimed_as_transport_mediator",
+          "candidate_control_execution_id": "n31_i6_regenerated_observable_disconnected_from_transport_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "observable_disconnected_from_transport",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "failed_closed",
+          "expected_result": "observer computation has no side effect; mediator intervention remains not run",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_DR4_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "60aafce8f49d7c673c027d72573e5c7b3744e312c83818e2316686894f594093",
+          "semantic_comparability_mismatches": [
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "observable_disconnected_from_transport",
+          "source_I3_row_digest": "42431b4853022d289e7e897482d0e4d5aa2eea8b36fe8c7d135d4158aa239f8b"
+        },
+        {
+          "actual_result": "route_mass_span=0.0",
+          "blocked_condition": "route_mass_loss_substitutes_for_window_coupling_weakening",
+          "candidate_control_execution_id": "n31_i6_regenerated_route_mass_loss_as_organization_weakening_relabel_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "route_mass matched while finite-window relation changes",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_organization_inference",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "adef7fdb46504d82ba3bceacf9bd90708cfd89faae11d73fd286b34eb239f175",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "source_I3_row_digest": "b0e5211bdfdb65b928948f4eee6c11b1fdbb580460879bcbdb52e925dd1fa40e"
+        },
+        {
+          "actual_result": "fed_back_into_transport=false",
+          "blocked_condition": "derived_observable_drives_transport_without_authority_change",
+          "candidate_control_execution_id": "n31_i6_regenerated_D0b_transport_feedback_without_authority_reclassification_v1",
+          "candidate_semantic_contract_digest": "36fc2305674f3db704d5a721f53b523f4909d6fecb8182098f3ea3314ce585dd",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "route_arrival_3_committed",
+            "post_formation_progression_1",
+            "post_formation_progression_4"
+          ],
+          "control_id": "D0b_transport_feedback_without_authority_reclassification",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "observable never fed back into runtime",
+          "matched_to_I3_null": false,
+          "regenerated_for_I6_candidate": true,
+          "rung_effect": "blocks_unreclassified_DR4",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "1850ee0abb61ff196ef61ac95021adecba648efece8edc2ce67740f2f212b30b",
+          "semantic_comparability_mismatches": [
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "D0b_transport_feedback_without_authority_reclassification",
+          "source_I3_row_digest": "7dfe942092100a3c0df8fb0345cd5c5c40a50798b809a964363b098136d37c33"
+        }
+      ],
+      "d0_subclass": "D0b_finite_window_flux_coupling_observable",
+      "d0_to_br_bridge_status": "not_tested",
+      "decay_relation_ladder_rung": "DR3",
+      "derived_cache_recomputation_status": "passed_exact",
+      "derived_cache_status": "not_persisted_exact_projection",
+      "destination_trace_if_mass_moves": {
+        "scope_reason": "route_mass_does_not_move_outside_support",
+        "status": "not_applicable"
+      },
+      "direct_I3_null_consumption_count": 0,
+      "equation_or_relation_id": "n31_i6_finite_window_absolute_route_flux_v1",
+      "execution_reconstruction_status": "not_run_pending_iteration_8",
+      "export_policy_inputs": [],
+      "export_policy_owner": "not_applicable_no_route_export",
+      "formation_source": "native_source_current_staggered_route_packet_arrivals",
+      "formation_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+        "checkpoint_ids": [
+          "forming_route_packets_in_flight_after_final_departure",
+          "route_arrival_1_committed",
+          "route_arrival_2_committed",
+          "route_arrival_3_committed"
+        ]
+      },
+      "forming_activity_present": true,
+      "forming_activity_stopped": true,
+      "internal_time_advance_event": "native_progression_lane_packet_departure_and_arrival",
+      "internal_time_owner": "native_LGRC9V3_event_queue",
+      "invariant_id": "closed_system_node_plus_in_flight_coherence",
+      "invariant_tolerance": 1e-12,
+      "later_readout_changed": false,
+      "local_clock_decay_claim_allowed": false,
+      "local_readout_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+        "control_id": "observable_disconnected_from_transport",
+        "later_readout_changed": false,
+        "result": "compute_and_omit_observer_branches_continue_identically",
+        "scope": "observer_side_effect_only_not_mediator_disconnection"
+      },
+      "mediator_intervention_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+        "intervention": "not_run",
+        "mediation_supported": false,
+        "observer_side_effect_control": "compute_versus_omit_pure_observable",
+        "organization_intervention_valid": false,
+        "runtime_identity_changed": false
+      },
+      "missing_nested_required_fields": {},
+      "missing_required_fields": [],
+      "naturalization_debt": [
+        "autonomous event-time progression after route formation is not shown",
+        "the finite-window relation is not consumed by native transport",
+        "causal D0a mediation remains for Iteration 7"
+      ],
+      "nested_contract_validation": {
+        "causal_mediation_contract": {
+          "complete": true,
+          "missing_required_fields": [],
+          "observed_required_field_count": 18,
+          "required_field_count": 18
+        },
+        "route_mass_contract": {
+          "complete": true,
+          "missing_required_fields": [],
+          "observed_required_field_count": 20,
+          "required_field_count": 20
+        },
+        "route_organization_contract": {
+          "complete": true,
+          "missing_required_fields": [],
+          "observed_required_field_count": 15,
+          "required_field_count": 15
+        }
+      },
+      "nested_contract_value_validation": {
+        "causal_mediation_contract": {
+          "absent_mediation_does_not_claim_change": true,
+          "formation_packet_exclusion_status_valid": true,
+          "later_readout_probe_relation_valid": true,
+          "mediation_strength_valid": true,
+          "temporal_intervention_matching_status_valid": true
+        },
+        "route_mass_contract": {
+          "boundary_crossing_count_policy_valid": true,
+          "boundary_flux_sign_policy_valid": true,
+          "continuity_formula_closed": true,
+          "flux_quantity_semantics_valid": true
+        },
+        "route_organization_contract": {
+          "load_bearing_domain_valid": true,
+          "mixed_domain_resolution_valid": true,
+          "organization_authority_valid": true,
+          "organization_domain_valid": true,
+          "organization_recomputation_status_valid": true
+        }
+      },
+      "nested_contract_values_conform": true,
+      "ordinary_post_formation_flux_generated": false,
+      "organization_mediated_readout_change": false,
+      "persistence_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+        "from_checkpoint": "route_arrival_3_committed",
+        "persistence_supported": true,
+        "to_checkpoint": "post_formation_progression_1",
+        "value_after": 0.30000000000000004,
+        "value_before": 0.30000000000000004
+      },
+      "post_formation_producer_call_policy": "no_calls",
+      "post_formation_producer_calls": [],
+      "post_formation_state_mutating_producer_calls": [],
+      "post_formation_window": "native_event_time_2.0_to_6.35",
+      "primary_semantic_class": "D0b",
+      "producer_authors_aftereffect": false,
+      "producer_call_audit_status": "complete_no_post_formation_calls",
+      "producer_residue": [
+        "route formation and the disjoint event-time progression schedule are experiment-predeclared",
+        "the progression scaffold is not autonomous route activity"
+      ],
+      "producer_roles": [
+        "experiment_fixture_pre_formation_route_packet_schedule",
+        "experiment_fixture_pre_formation_disjoint_progression_schedule",
+        "pure_observer_and_receipt_collector"
+      ],
+      "progression_fixture_authored_by_experiment": true,
+      "representation_or_authority_class": "exact_derived_projection",
+      "reset_status": "not_applicable_no_reset_sensitive_operation",
+      "restoration_identity_schema": "lgrc9v3_restoration_identity_v1",
+      "route_local_proper_time_advanced_during_expiry": false,
+      "route_local_surface": "registered route coupling edge 0 between nodes 0 and 1",
+      "route_mass_contract": {
+        "boundary_crossing_count_policy": "each_packet_or_flux_transfer_counted_exactly_once",
+        "boundary_flux_sign_policy": "positive_outward",
+        "boundary_measure": {
+          "edge_weights": {
+            "1": 1.0
+          },
+          "kind": "discrete_registered_edge_counting_measure",
+          "registered_boundary_edge_count": 1
+        },
+        "continuity_closed": true,
+        "continuity_residual": 0.0,
+        "continuity_tolerance": 1e-12,
+        "departure_arrival_accounting_policy": "internal route transfer counted once as in-flight mass between debit and credit; no departure/arrival double counting",
+        "flux_quantity_semantics": "time_integrated_exported_coherence",
+        "in_flight_boundary_treatment": "no registered-boundary packet is in flight; internal route packets remain included once in registered route mass until native arrival",
+        "mass_after": 2.5,
+        "mass_before": 2.5,
+        "mass_delta": 0.0,
+        "metric_measure_and_boundary_convention": "fixed discrete node support with one registered outward edge; node coherence plus internal in-flight route packet amount",
+        "moving_support_or_measure_correction": "not_applicable_fixed_support_and_fixed_boundary",
+        "net_outward_boundary_flux": 0.0,
+        "post_formation_integration_window": {
+          "classification": "declared_D0b_post_formation_observation_window",
+          "end_event_time_key": 6.35,
+          "start_event_time_key": 2.0
+        },
+        "receiver_inside_or_outside_support": "registered route-transfer receiver node 1 is inside support; boundary receiver node 2 is outside support",
+        "registered_route_boundary": {
+          "edge_ids": [
+            1
+          ],
+          "inside_node_ids": [
+            0,
+            1
+          ],
+          "outside_node_ids": [
+            2
+          ]
+        },
+        "registered_route_support": [
+          0,
+          1
+        ],
+        "route_mass_contract_id": "n31_i6_registered_route_mass_v1"
+      },
+      "route_mass_decreased": false,
+      "route_organization_contract": {
+        "load_bearing_organization_domain": "functional_coupling",
+        "mixed_domain_mediation_resolution": "not_applicable",
+        "observed_diagnostic_domains": [
+          "functional_coupling"
+        ],
+        "organization_after": 0.0,
+        "organization_authority": "exact_derived_projection",
+        "organization_before": 0.30000000000000004,
+        "organization_definition": "F_01(T;DeltaT)=sum of absolute amounts for completed native route transfers with arrival time in (T-DeltaT,T]",
+        "organization_domain": "functional_coupling",
+        "organization_has_independent_causal_freedom": false,
+        "organization_inputs": [
+          "native route packet arrival records",
+          "native LGRC9V3 global event_time_key",
+          "declared fixed window duration"
+        ],
+        "organization_observable_id": "n31_i6_finite_window_absolute_route_flux_v1",
+        "organization_recomputation_status": "passed_exact",
+        "organization_update_owner": "pure_observer_over_native_LGRC9V3_history",
+        "organization_weakened": true,
+        "route_organization_contract_id": "n31_i6_D0b_window_coupling_v1"
+      },
+      "route_organization_weakened": true,
+      "row_decision": "supported",
+      "row_digest": "3abbf8edd1bd6b63aacc4e289f438f8929c17e68826bbf540276e91078b7c7a8",
+      "row_specific_thresholds_declared_before_use": {
+        "closed_system_budget_tolerance": 1e-12,
+        "declared_before_runtime_execution": true,
+        "expired_coupling_maximum": 1e-12,
+        "finite_window_duration_event_time": 4.0,
+        "minimum_distinct_positive_weakening_steps": 2,
+        "persistence_coupling_minimum": 0.299999999999,
+        "positive_D0b_requires": "an exact source-current finite-window flux relation remains nonzero after forming-carrier exhaustion, then decreases as route events leave the declared window under native global-model event-time progression",
+        "post_formation_coupling_minimum": 0.299999999999,
+        "relation_value_tolerance": 1e-12,
+        "restoration_identity_required": true,
+        "route_mass_tolerance": 1e-12,
+        "threshold_record_id": "n31_i6_d0b_thresholds_v1",
+        "window_left_boundary_policy": "strict_exclusion",
+        "window_right_boundary_policy": "inclusive"
+      },
+      "schema_change_record_id": "n31_pre_i1_mass_organization_mediation_normalization_v2",
+      "snapshot_load_status": "passed_exact_source_history_and_relation",
+      "source_current_inputs": [
+        "LGRC9V3RuntimeState.event_time_key",
+        "LGRC9V3RuntimeState.packet_ledger.packet_records",
+        "LGRC9V3RuntimeState.base_state.nodes[*].coherence"
+      ],
+      "source_iteration": "N31-I6",
+      "topology_contract_id": "n31_i6_route_plus_disjoint_progression_lane_v1",
+      "units_by_state": {
+        "event_time": "native_event_time_key",
+        "finite_window_coupling": "coherence",
+        "route_mass": "coherence",
+        "route_transfer": "coherence"
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "causal_decay_claim_allowed": false,
+        "causal_mediation_claim_allowed": false,
+        "causal_trail_claim_allowed": false,
+        "communication_claim_allowed": false,
+        "independent_decay_state_claim_allowed": false,
+        "learning_claim_allowed": false,
+        "native_route_memory_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_or_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_memory_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "trail_or_stigmergic_field_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "update_phase": "post_route_carrier_exhaustion_native_event_time_progression",
+      "weakening_mode": "declared_finite_window_history_expiry",
+      "weakening_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+        "checkpoint_ids": [
+          "post_formation_progression_1",
+          "post_formation_progression_2",
+          "post_formation_progression_3",
+          "post_formation_progression_4"
+        ],
+        "values": [
+          0.30000000000000004,
+          0.2,
+          0.1,
+          0.0
+        ],
+        "weakening_supported": true,
+        "window_expiry_supported": true
+      },
+      "weakening_trajectory_class": "monotonic_stepwise_finite_window_expiry"
+    }
+  ],
+  "candidate_rows_classified": true,
+  "causal_mediation_supported": false,
+  "checks": [
+    {
+      "check_id": "I2_source_chain_exact",
+      "detail": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "passed": true
+    },
+    {
+      "check_id": "I3R1_source_chain_exact",
+      "detail": "N31-I3R1",
+      "passed": true
+    },
+    {
+      "check_id": "I4R1_source_chain_exact",
+      "detail": "N31-I4R1",
+      "passed": true
+    },
+    {
+      "check_id": "I5R1_source_chain_exact_and_I6_ready",
+      "detail": "1bb729f219fbb4e0e5f52615e4213567e4f46b195b7bc00a27376c283203e9c8",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_trace_passed",
+      "detail": "7941db25a5c048f450573725f3844c098f7060a0ca265cb2dd1711ced4e92f2f",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_schema_complete",
+      "detail": {
+        "nested": {},
+        "nested_contract_validation": {
+          "causal_mediation_contract": {
+            "complete": true,
+            "missing_required_fields": [],
+            "observed_required_field_count": 18,
+            "required_field_count": 18
+          },
+          "route_mass_contract": {
+            "complete": true,
+            "missing_required_fields": [],
+            "observed_required_field_count": 20,
+            "required_field_count": 20
+          },
+          "route_organization_contract": {
+            "complete": true,
+            "missing_required_fields": [],
+            "observed_required_field_count": 15,
+            "required_field_count": 15
+          }
+        },
+        "top_level": []
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I2_nested_contracts_recursively_complete",
+      "detail": {
+        "causal_mediation_contract": {
+          "complete": true,
+          "missing_required_fields": [],
+          "observed_required_field_count": 18,
+          "required_field_count": 18
+        },
+        "route_mass_contract": {
+          "complete": true,
+          "missing_required_fields": [],
+          "observed_required_field_count": 20,
+          "required_field_count": 20
+        },
+        "route_organization_contract": {
+          "complete": true,
+          "missing_required_fields": [],
+          "observed_required_field_count": 15,
+          "required_field_count": 15
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I2_nested_contract_values_conform",
+      "detail": {
+        "causal_mediation_contract": {
+          "absent_mediation_does_not_claim_change": true,
+          "formation_packet_exclusion_status_valid": true,
+          "later_readout_probe_relation_valid": true,
+          "mediation_strength_valid": true,
+          "temporal_intervention_matching_status_valid": true
+        },
+        "route_mass_contract": {
+          "boundary_crossing_count_policy_valid": true,
+          "boundary_flux_sign_policy_valid": true,
+          "continuity_formula_closed": true,
+          "flux_quantity_semantics_valid": true
+        },
+        "route_organization_contract": {
+          "load_bearing_domain_valid": true,
+          "mixed_domain_resolution_valid": true,
+          "organization_authority_valid": true,
+          "organization_domain_valid": true,
+          "organization_recomputation_status_valid": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_current_D0b_relation_persists_and_weakens",
+      "detail": [
+        0.30000000000000004,
+        0.30000000000000004,
+        0.2,
+        0.1,
+        0.0
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "cache_removal_recomputation_exact",
+      "detail": "not_persisted_exact_projection",
+      "passed": true
+    },
+    {
+      "check_id": "restoration_and_branch_disconnection_pass",
+      "detail": "passed_compute_vs_omit_observer_side_effect_control",
+      "passed": true
+    },
+    {
+      "check_id": "observer_side_effect_control_not_mislabeled_as_mediator_intervention",
+      "detail": {
+        "added_coincidence_or_resonance_policy_present": false,
+        "causal_mediation_contract_id": "n31_i6_D0b_observable_only_v1",
+        "direct_readout_path_excluded": false,
+        "formation_packet_exclusion_status": "exhausted",
+        "hidden_selector_excluded": true,
+        "later_local_readout_definition": "observer-side-effect audit: equal-state compute-versus-omit branches process identical native continuation",
+        "later_readout_changed": false,
+        "later_readout_probe_relation": "unresolved",
+        "later_readout_probe_relation_detail": "observer_side_effect_disconnection_only_not_an_independent_later_probe",
+        "local_transport_intervention_status": "not_run",
+        "mass_matched_during_organization_intervention": "not_applicable_no_organization_intervention",
+        "mediation_strength": "absent",
+        "organization_intervention_definition": "not_run: neither native packet history nor finite-window relation value was clamped, deleted, or contrasted",
+        "organization_intervention_valid": false,
+        "organization_mediated_readout_change": false,
+        "other_continuation_state_matched": "not_applicable_no_organization_intervention",
+        "packet_amount_matched_during_organization_intervention": "not_applicable_no_organization_intervention",
+        "spatial_organization_matched_during_temporal_intervention": "not_applicable_no_temporal_intervention",
+        "temporal_intervention_matching_status": "not_applicable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "global_clock_scope_and_local_clock_ceiling_explicit",
+      "detail": "global_model_event_time",
+      "passed": true
+    },
+    {
+      "check_id": "packet_event_measure_and_window_boundaries_explicit",
+      "detail": {
+        "cases": [
+          {
+            "actual_included_arrival_event_times": [
+              1.0,
+              1.5,
+              2.0
+            ],
+            "evaluation_event_time_key": 2.0,
+            "expected_included_arrival_event_times": [
+              1.0,
+              1.5,
+              2.0
+            ],
+            "passed": true,
+            "purpose": "right_endpoint_includes_arrival_at_T",
+            "window_start_event_time_key": -2.0
+          },
+          {
+            "actual_included_arrival_event_times": [
+              1.5,
+              2.0
+            ],
+            "evaluation_event_time_key": 5.0,
+            "expected_included_arrival_event_times": [
+              1.5,
+              2.0
+            ],
+            "passed": true,
+            "purpose": "left_endpoint_excludes_arrival_at_1_0",
+            "window_start_event_time_key": 1.0
+          },
+          {
+            "actual_included_arrival_event_times": [
+              2.0
+            ],
+            "evaluation_event_time_key": 5.5,
+            "expected_included_arrival_event_times": [
+              2.0
+            ],
+            "passed": true,
+            "purpose": "left_endpoint_excludes_arrival_at_1_5",
+            "window_start_event_time_key": 1.5
+          },
+          {
+            "actual_included_arrival_event_times": [],
+            "evaluation_event_time_key": 6.0,
+            "expected_included_arrival_event_times": [],
+            "passed": true,
+            "purpose": "left_endpoint_excludes_arrival_at_2_0",
+            "window_start_event_time_key": 2.0
+          }
+        ],
+        "fixture_kind": "exact_history_functional_boundary_conformance",
+        "passed": true,
+        "runtime_state_mutated": false,
+        "source_history": "retained_native_route_packet_records",
+        "window_interval": "(T-DeltaT,T]"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "causal_trail_and_DR4_relabels_fail_closed",
+      "detail": "bounded_source_current_fading_finite_window_graph_observable_DR3_below_causal_trail",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_specific_controls_regenerated",
+      "detail": {
+        "direct_I3": 0,
+        "regenerated": 15
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mass_and_budget_invariants_pass",
+      "detail": {
+        "budget_span": 0.0,
+        "route_mass_span": 0.0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "source_current_D0b_finite_window_runtime_trace",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+          "sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "positive_causal_decay_claims_remain_closed",
+      "detail": "bounded_source_current_fading_finite_window_graph_observable_DR3_below_causal_trail",
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contract_diff_empty",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "recursive",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_relabels": [
+      "causal_trail",
+      "causal_decay",
+      "causal_mediation",
+      "independent_decay_state",
+      "native_route_memory",
+      "trail_or_stigmergic_field",
+      "semantic_memory",
+      "learning",
+      "communication",
+      "agency",
+      "selfhood",
+      "sentience",
+      "organism_or_life",
+      "native_support",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "bounded_source_current_fading_finite_window_graph_observable_DR3_below_causal_trail",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "causal_decay_claim_allowed": false,
+      "causal_mediation_claim_allowed": false,
+      "causal_trail_claim_allowed": false,
+      "communication_claim_allowed": false,
+      "independent_decay_state_claim_allowed": false,
+      "learning_claim_allowed": false,
+      "native_route_memory_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_or_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_memory_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "trail_or_stigmergic_field_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0b_finite_window_derived_relation_i6.py",
+  "decay_relation_ladder_ceiling": "DR3_fading_observable_without_mediation",
+  "decay_relation_ladder_rung": "DR3",
+  "decay_relation_ladder_rung_assigned": true,
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "graph_scope": {
+    "I6_governance_base_revision": "5adcd5c3253d041c203e85936e586de621a44760",
+    "protected_runtime_contract_diff_empty": true,
+    "runtime_modified": false,
+    "src_diff_empty": true
+  },
+  "iteration": "6",
+  "n31_c3_D0b_component_satisfied": true,
+  "n31_c3_D0c_component_satisfied": true,
+  "n31_c3_overall_pending_D0a_classification": true,
+  "n31_closeout_ceiling": "N31-C2_active_nulls_and_representation_boundary_established",
+  "n31_closeout_ladder_rung_assigned": false,
+  "n31_progress_rung": "N31-C2_active_nulls_and_representation_boundary_established",
+  "n31_progress_rung_assigned": true,
+  "output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+  "positive_causal_decay_evidence_opened": false,
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "source_current_D0b_fading_observable_only",
+  "ready_for_iteration_7_D0a_source_current_causal_probe": true,
+  "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0b_finite_window_derived_relation_i6.py",
+  "source_chain": {
+    "I2": {
+      "artifact_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+    },
+    "I3R1": {
+      "I3_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "I3_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+      "lineage_output_digest": "b6f6c1948f723d5fbb6008348b804b778993718da18c4b7efb3a499a8757de64",
+      "lineage_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i3_revision_lineage_r1.json"
+    },
+    "I4R1": {
+      "I4_output_digest": "b7b6f34e3978ec4a410a77e36bc1b548f1baf96dbda7987803d544fc737c3597",
+      "I4_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_representation_gate_i4.json",
+      "lineage_output_digest": "6dbd1441b5fcdce666d8eeca287cd59205cc4d34495016a0aefe3da9b818eb16",
+      "lineage_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i4_revision_lineage_r1.json"
+    },
+    "I5R1": {
+      "artifact_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+      "consumed_as": "D0c_comparator_and_I6_handoff_boundary",
+      "lineage_artifact_sha256": "4d0e0dded207fc7c1da61114ee603835a168f58d155b7912edb2e6f189957aa0",
+      "lineage_output_digest": "1bb729f219fbb4e0e5f52615e4213567e4f46b195b7bc00a27376c283203e9c8",
+      "lineage_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_revision_lineage_r1.json",
+      "output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0c_instantaneous_geometry_comparator_i5.json",
+      "revision_id": "N31-I5R1",
+      "trace_artifact_sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d",
+      "trace_output_digest": "c5d2609960d765bd3b97b65664a2ca86e6d16228ad34bf0714e31d093f7fe395",
+      "trace_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json"
+    }
+  },
+  "source_current_D0b_candidate_supported": true,
+  "source_current_trace": {
+    "artifact_role": "source_current_D0b_finite_window_runtime_trace",
+    "output_digest": "7941db25a5c048f450573725f3844c098f7060a0ca265cb2dd1711ced4e92f2f",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+    "sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039"
+  },
+  "status": "passed",
+  "threshold_declaration": {
+    "closed_system_budget_tolerance": 1e-12,
+    "declared_before_runtime_execution": true,
+    "expired_coupling_maximum": 1e-12,
+    "finite_window_duration_event_time": 4.0,
+    "minimum_distinct_positive_weakening_steps": 2,
+    "persistence_coupling_minimum": 0.299999999999,
+    "positive_D0b_requires": "an exact source-current finite-window flux relation remains nonzero after forming-carrier exhaustion, then decreases as route events leave the declared window under native global-model event-time progression",
+    "post_formation_coupling_minimum": 0.299999999999,
+    "relation_value_tolerance": 1e-12,
+    "restoration_identity_required": true,
+    "route_mass_tolerance": 1e-12,
+    "threshold_record_id": "n31_i6_d0b_thresholds_v1",
+    "window_left_boundary_policy": "strict_exclusion",
+    "window_right_boundary_policy": "inclusive"
+  },
+  "threshold_declaration_digest": "a107bfdf82471ff037a074c5ff8055cad09215a20901ef737ddf4295033b0201"
+}

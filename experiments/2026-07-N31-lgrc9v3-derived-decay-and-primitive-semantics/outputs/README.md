@@ -49,6 +49,21 @@
   control regeneration receipts, DR1 classification, and explicit
   no-persistence/no-decay ceiling.
 
+## Iteration 6
+
+- `n31_i5_revision_lineage_r1.json` records the reviewed and committed I5/trace
+  identities, revision reasons, normalized scientific outcome, and exact I5R1
+  artifacts consumed by I6.
+- `n31_i6_d0b_finite_window_source_current_trace.json` records staggered native
+  route transfers, packet-event measure, exact `(T - DeltaT, T]` boundary
+  cases, disjoint global event-time progression, stepwise history expiry, cache
+  recomputation, snapshot/load restoration, observer-side-effect control, and
+  conservation.
+- `n31_d0b_finite_window_derived_relation_i6.json` records the normalized D0b
+  candidate, recursively validated route mass/organization/mediation contracts,
+  clock scope, candidate-specific controls, DR3 observable classification,
+  producer residue, and explicit causal-trail/DR4 blocker.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

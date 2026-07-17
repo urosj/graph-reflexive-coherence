@@ -1,0 +1,93 @@
+{
+  "acceptance_state": "accepted_I5R1_provenance_and_scientific_outcome_invariance_closed",
+  "artifact_kind": "I5_revision_lineage",
+  "artifact_schema_version": "n31_i5_revision_lineage_v1",
+  "checks": [
+    {
+      "check_id": "current_I5_identity_exact",
+      "detail": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+      "passed": true
+    },
+    {
+      "check_id": "normalized_scientific_outcome_unchanged",
+      "detail": "2ad1ba1c24ad2c9766d4fac7b4452a8318161f0ab4b2036ebb89dd22daca6a5c",
+      "passed": true
+    },
+    {
+      "check_id": "D0c_DR1_ceiling_unchanged",
+      "detail": "DR1_attributable_route_local_relation_formed",
+      "passed": true
+    },
+    {
+      "check_id": "I6_admission_unchanged",
+      "detail": true,
+      "passed": true
+    }
+  ],
+  "comparison_policy": {
+    "comparison_kind": "normalized_scientific_outcome",
+    "contract_and_provenance_detail_changed": true,
+    "current_normalized_outcome": {
+      "D0a_persistence_supported": false,
+      "D0a_weakening_supported": false,
+      "causal_mediation_supported": false,
+      "decay_relation_ladder_rung": "DR1",
+      "forming_packet_current_l1_norm": 0.30000000000000004,
+      "positive_decay_evidence_opened": false,
+      "post_withdrawal_packet_current_l1_norm": 0.0,
+      "primary_semantic_class": "D0c",
+      "representation_or_authority_class": "exact_derived_projection",
+      "source_current_D0c_candidate_supported": true
+    },
+    "current_normalized_outcome_digest": "2ad1ba1c24ad2c9766d4fac7b4452a8318161f0ab4b2036ebb89dd22daca6a5c",
+    "prior_normalized_outcome": {
+      "D0a_persistence_supported": false,
+      "D0a_weakening_supported": false,
+      "causal_mediation_supported": false,
+      "decay_relation_ladder_rung": "DR1",
+      "forming_packet_current_l1_norm": 0.30000000000000004,
+      "positive_decay_evidence_opened": false,
+      "post_withdrawal_packet_current_l1_norm": 0.0,
+      "primary_semantic_class": "D0c",
+      "representation_or_authority_class": "exact_derived_projection",
+      "source_current_D0c_candidate_supported": true
+    },
+    "prior_normalized_outcome_digest": "2ad1ba1c24ad2c9766d4fac7b4452a8318161f0ab4b2036ebb89dd22daca6a5c",
+    "scientific_outcome_changed": false,
+    "why_not_full_artifact_equality": "I5R1 intentionally adds provenance, orientation, carrier-phase, and candidate-specific control detail while retaining the reviewed D0c/DR1 result"
+  },
+  "current_committed_artifacts": {
+    "commit": "5adcd5c3253d041c203e85936e586de621a44760",
+    "consumed_by_I6": true,
+    "label": "N31-I5R1",
+    "output_artifact_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+    "output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+    "output_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0c_instantaneous_geometry_comparator_i5.json",
+    "trace_artifact_sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d",
+    "trace_output_digest": "c5d2609960d765bd3b97b65664a2ca86e6d16228ad34bf0714e31d093f7fe395",
+    "trace_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json"
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "1bb729f219fbb4e0e5f52615e4213567e4f46b195b7bc00a27376c283203e9c8",
+  "prior_review_package": {
+    "artifact_sha256": "a0d046cc81b4e1cff4ceb2beb793ade871747274eaa5752737ed9891e49a618e",
+    "consumed_by_I6": false,
+    "full_artifacts_retained_in_repository": false,
+    "identity_source": "external_reviewed_package_identity",
+    "label": "N31-I5-pre-review-hardening-package",
+    "output_digest": "93c8e2efa1bd1901922b5d069fa92bb29a5d22dfd6baf42d5acd3cdea142dad7",
+    "trace_artifact_sha256": "bb61187c604b63c541ad2074c3856e2383512d0c09f97bfb7ec44216203b314f",
+    "trace_output_digest": "71a68beef656d8a32df1255003e9fdbd01177f13f57f71340bc820e44d61c9b3"
+  },
+  "revision_id": "N31-I5R1",
+  "revision_reason": [
+    "closed the I4-to-I4R1 provenance lineage consumed by I5",
+    "made registered-cycle and canonical native-edge current orientations explicit",
+    "separated formation-input stop from forming-carrier exhaustion",
+    "regenerated controls for the exact I5 semantic contract",
+    "tightened instantaneous state-flux comparator terminology"
+  ],
+  "status": "passed"
+}

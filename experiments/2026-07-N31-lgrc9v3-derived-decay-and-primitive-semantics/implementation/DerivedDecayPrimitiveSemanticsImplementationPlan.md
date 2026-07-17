@@ -747,7 +747,25 @@ when authority, organization domain, carrier, or continuation state differs.
 
 Construct an exact finite-window relation from admitted packet/flux history.
 Test fading, cache removal/recomputation, restoration, and diagnostic
-disconnection from transport. Observable-only evidence stays below DR4.
+observer-side-effect auditing. Use the RC-Distance finite-window coherent-
+coupling relation directly: completed transfers over one registered route edge
+contribute while their native arrival times remain in `(T - DeltaT, T]`.
+Freeze the packet-to-flux bridge as an atomic native-arrival event measure and
+challenge both the inclusive right endpoint and strict left endpoint directly.
+Stagger the forming arrivals so that they leave the fixed window one by one
+rather than introducing an outcome-fitted attenuation kernel. After the route
+carrier is exhausted, advance LGRC event time with a predeclared packet lane
+that is disjoint from the registered route support and is excluded from the
+relation. Record this progression lane as producer residue and do not describe
+it as autonomous route decay. State explicitly that expiry uses global model
+event time, not route-local proper time. Prove that an experiment-local cache can be
+removed and recomputed from native history, that snapshot/load preserves the
+history functional exactly, and that computing versus omitting the observable
+does not alter equal-state branch continuation. Treat that branch as an
+observer-side-effect audit, not an intervention on route organization. Recursively
+validate all frozen I2 route-mass, route-organization, and causal-mediation
+fields. Observable-only evidence may reach DR3 but stays below DR4 and
+causal-trail language.
 
 ### Iteration 7 - D0a Source-Current Causal Probe
 

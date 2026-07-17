@@ -682,18 +682,151 @@ terminal closeout rung remains unassigned.
 
 ## Iteration 6 - D0b Finite-Window Derived Relation
 
-- [ ] Define exact history support and window semantics.
-- [ ] Build relation from admitted source-current packet/flux history.
-- [ ] Prove cache recomputation from exact history.
-- [ ] Stop forming activity.
-- [ ] Show old history leaving the window under internal progression.
-- [ ] Record weakening of the derived relation.
-- [ ] Remove/recompute cache and compare identity.
-- [ ] Verify cache has no independent causal freedom.
-- [ ] Disconnect observable from transport and compare later readout.
-- [ ] Restore and replay source history and cache.
-- [ ] Keep fading observable below DR4 absent causal mediation.
-- [ ] Emit source-current artifacts, JSON, and report.
+- [x] Define exact history support and window semantics.
+- [x] Build relation from admitted source-current packet/flux history.
+- [x] Prove cache recomputation from exact history.
+- [x] Stop forming activity.
+- [x] Show old history leaving the window under internal progression.
+- [x] Record weakening of the derived relation.
+- [x] Remove/recompute cache and compare identity.
+- [x] Verify cache has no independent causal freedom.
+- [x] Run compute-versus-omit equal-branch continuation.
+- [x] Classify compute-versus-omit as an observer-side-effect control, not an organization intervention.
+- [x] Restore and replay source history and cache.
+- [x] Instantiate and recursively validate the complete I2 nested contracts.
+- [x] Freeze native-arrival packet-event measure semantics.
+- [x] Test strict-left and inclusive-right window equality cases.
+- [x] Record global-model-event-time scope and block route-local-clock decay wording.
+- [x] Record I5-to-I5R1 provenance and unchanged scientific meaning.
+- [x] Split positive-to-positive decreases, total decreases, and final expiry.
+- [x] Keep fading observable below DR4 absent causal mediation.
+- [x] Emit source-current artifacts, JSON, and report.
+
+### Iteration 6 Result
+
+```text
+status = passed
+acceptance_state = accepted_source_current_D0b_DR3_finite_window_observable_below_causal_trail
+primary_semantic_class = D0b
+representation_or_authority_class = exact_derived_projection
+candidate_disposition = supported
+row_decision = supported
+window_interval = (T - 4.0, T]
+route_arrival_event_times = [1.0, 1.5, 2.0]
+relation_at_forming_carrier_exhaustion = 0.30000000000000004
+post_formation_progression_values = [0.30000000000000004, 0.2, 0.1, 0.0]
+route_mass_span = 0.0
+closed_system_budget_span = 0.0
+D0b_persistence_supported = true
+D0b_weakening_supported = true
+window_expiry_supported = true
+derived_cache_recomputation_status = passed_exact
+snapshot_load_status = passed_exact_source_history_and_relation
+branch_continuation_status = passed_compute_vs_omit_observer_side_effect_control
+branch_continuation_scope = observer_side_effect_only_not_mediator_intervention
+organization_intervention_valid = false
+local_transport_intervention_status = not_run
+later_readout_probe_relation = unresolved
+clock_scope = global_model_event_time
+route_local_proper_time_advanced_during_expiry = false
+local_clock_decay_claim_allowed = false
+packet_transfer_measure = atomic_native_packet_arrival_measure
+window_boundary_conformance = passed
+positive_to_positive_decrease_count = 2
+total_strict_decrease_count = 3
+final_expiry_step_count = 1
+route_mass_contract_required_fields = 20
+route_organization_contract_required_fields = 15
+causal_mediation_contract_required_fields = 18
+missing_nested_required_fields = {}
+causal_mediation_supported = false
+positive_causal_decay_evidence_opened = false
+decay_relation_ladder_rung = DR3
+n31_progress_rung = N31-C2_active_nulls_and_representation_boundary_established
+n31_c3_D0b_component_satisfied = true
+n31_c3_overall_pending_D0a_classification = true
+n31_closeout_ladder_rung_assigned = false
+direct_I3_null_consumption_count = 0
+candidate_specific_control_regeneration_count = 15
+ready_for_iteration_7_D0a_source_current_causal_probe = true
+i5_revision_id = N31-I5R1
+i5_revision_lineage_output_digest = 1bb729f219fbb4e0e5f52615e4213567e4f46b195b7bc00a27376c283203e9c8
+i5_revision_lineage_sha256 = 4d0e0dded207fc7c1da61114ee603835a168f58d155b7912edb2e6f189957aa0
+trace_output_digest = 7941db25a5c048f450573725f3844c098f7060a0ca265cb2dd1711ced4e92f2f
+trace_sha256 = 42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039
+output_digest = 206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a
+artifact_sha256 = a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22
+src_diff_empty = true
+```
+
+I6 instantiates the finite-window coherent-coupling relation defined in the
+RC-Distance source. Three equal native packets complete transfers over one
+registered internal route edge at event times `1.0`, `1.5`, and `2.0`. Each
+completed transfer is counted once on arrival; departure and arrival are not
+double-counted. The bridge uses an explicitly declared atomic native-arrival
+event measure; it is an operational discretization of the theory relation, not
+the uniquely implied discretization. With `DeltaT = 4.0`, the relation is:
+
+```text
+F_01(T; DeltaT) = sum |packet amount|
+                  for route arrivals in (T - DeltaT, T]
+```
+
+When the final forming packet arrives at `T = 2.0`, all three source-current
+records are inside the window and `F_01 = 0.3`. A disjoint, predeclared packet
+lane then advances native LGRC event time. It neither intersects the route
+support nor contributes to `F_01`. At the first progression checkpoint all
+three route records remain in the window. At later checkpoints they leave one
+by one, producing `0.3 -> 0.2 -> 0.1 -> 0.0`. This is a geometric change in
+the recent-flux coupling graph: the registered route edge loses recent
+transport support while route mass and total coherence remain unchanged.
+
+The equality conformance fixture evaluates the retained source-current history
+at `T = 2.0`, `5.0`, `5.5`, and `6.0`. The event at the right endpoint is
+included; events exactly at the left endpoint are excluded. This directly
+validates `(T - DeltaT, T]`, rather than only checking values away from equality.
+
+The progression lane is an explicit experimental scaffold. All of its packet
+schedule calls occur before the first runtime event, and no producer call is
+made after route formation. Its native events provide bounded internal-time
+progression, but I6 does not claim that the route autonomously generated that
+progression. It advances global model event time, not route-local proper time,
+so unrelated graph activity can age the relation. Autonomous progression and
+route-local-clock decay therefore remain naturalization debt.
+
+The relation is not an LGRC state variable. It is recomputed exactly from the
+native packet ledger and current native event time. An experiment-local report
+cache is removed and rebuilt at every checkpoint without changing restoration
+identity. Snapshot/load restores both the source history and recomputed value
+exactly. This supports exact-derived authority and rejects an independent
+decay-state relabel.
+
+The observer-side-effect control restores two equal branches from the same
+post-formation state. One branch computes the observable and the other does
+not; both then process the same native progression events and finish with
+equal receipts and restoration identities. This proves that computing the
+observable has no runtime side effect. It does not alter packet history or
+clamp organization under matched continuation state, so it is not a mediator
+intervention and no independent later probe is established. I6 supports `D0b`
+at `DR3`, not `DR4`, a causal trail, or causal decay. Feeding the observable
+back into transport later would require explicit authority reclassification as
+an effective closure or added mechanism.
+
+The candidate recursively instantiates all `20` route-mass, `15`
+route-organization, and `18` causal-mediation fields frozen by I2; no nested
+field is missing. The `N31-I5R1` lineage pins the earlier reviewed and current
+I5/trace identities and records that provenance, orientation, carrier-phase,
+and control hardening did not change I5's `D0c/DR1` scientific result.
+
+All inherited control meanings are regenerated against the exact I6 contract:
+`D0b`, exact-derived authority, functional-coupling domain, native route-
+arrival history carrier, and complete LGRC continuation state plus declared
+history functional. No generic I3 fixture is consumed directly as positive
+source-current evidence.
+
+I6 satisfies the D0b classification component needed for `N31-C3`. The
+overall progress ceiling remains `N31-C2` until I7 classifies the admitted
+spatial D0a lane. The terminal closeout rung remains unassigned.
 
 ## Iteration 7 - D0a Source-Current Causal Probe
 

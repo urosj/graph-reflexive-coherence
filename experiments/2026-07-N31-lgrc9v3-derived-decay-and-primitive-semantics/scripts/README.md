@@ -68,6 +68,22 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0c_instantaneous_geometry_comparator_i5.py
 ```
 
+## Iteration 6
+
+- `build_n31_d0b_finite_window_derived_relation_i6.py` runs staggered native
+  transfers over one registered route edge, computes the finite-window coupling
+  under a declared packet-event measure, tests exact interval boundaries,
+  builds I5R1 lineage, recursively validates I2 contracts, advances global event
+  time through a disjoint predeclared native packet lane, and audits stepwise
+  expiry, cache recomputation, snapshot/load restoration, observer side effects,
+  conservation, clock scope, and the DR3 observable ceiling.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0b_finite_window_derived_relation_i6.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

@@ -33,6 +33,14 @@
   versus carrier-exhaustion boundary, I4R1 lineage, candidate-specific control
   regeneration, exact mass/C matching, DR1 support, and no-decay ceiling.
 
+## Iteration 6
+
+- `n31_d0b_finite_window_derived_relation_i6.md` explains the exact recent-flux
+  coupling functional, packet-event measure, interval boundary tests, staggered
+  expiry, disjoint global event-time progression scaffold, I5R1 lineage,
+  recursive schema conformance, cache/restoration evidence, observer-side-effect
+  scope, DR3 support, and why the result remains below a causal trail.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.
