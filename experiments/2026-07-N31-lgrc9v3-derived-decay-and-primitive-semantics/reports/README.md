@@ -26,6 +26,13 @@
   surgical-clamp boundary, route-window and weakening-order prerequisites,
   spectral rejection, per-domain dispositions, and why I4 remains at DR0.
 
+## Iteration 5
+
+- `n31_d0c_instantaneous_geometry_comparator_i5.md` explains the balanced native
+  packet-cycle state-flux geometry, dual orientation contract, formation-input
+  versus carrier-exhaustion boundary, I4R1 lineage, candidate-specific control
+  regeneration, exact mass/C matching, DR1 support, and no-decay ceiling.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

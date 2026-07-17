@@ -53,6 +53,21 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0a_representation_gate_i4.py
 ```
 
+## Iteration 5
+
+- `build_n31_d0c_instantaneous_geometry_comparator_i5.py` runs a balanced
+  three-packet native LGRC cycle, captures complete baseline/forming/post
+  identities, emits I4R1 provenance, derives current C/J_C state-flux geometry
+  in registered and native orientations, verifies divergence/mass/budget
+  invariants, regenerates candidate-specific controls, and classifies the
+  transient source-current comparator at DR1.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0c_instantaneous_geometry_comparator_i5.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

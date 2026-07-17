@@ -559,17 +559,126 @@ admission is complete; those execution preconditions are not.
 
 ## Iteration 5 - D0c Instantaneous Geometry Comparator
 
-- [ ] Declare source-current fixture and route-local geometry relation.
-- [ ] Declare thresholds before execution.
-- [ ] Record complete forming-current state.
-- [ ] Record instantaneous C/J_C-derived geometry/readout.
-- [ ] Stop forming activity explicitly.
-- [ ] Record immediate post-withdrawal state/readout.
-- [ ] Verify whether effect disappears with current.
-- [ ] Preserve conservation and local encounter.
-- [ ] Reject durable-aftereffect relabel when persistence is absent.
-- [ ] Record maximum D0c/DR ceiling honestly.
-- [ ] Emit source-current artifacts, JSON, and report.
+- [x] Declare source-current fixture and route-local geometry relation.
+- [x] Declare thresholds before execution.
+- [x] Record complete forming-current state.
+- [x] Record instantaneous C/J_C-derived geometry/readout.
+- [x] Stop forming activity explicitly.
+- [x] Record immediate post-withdrawal state/readout.
+- [x] Verify whether effect disappears with current.
+- [x] Preserve conservation and keep later local encounter out of scope at DR1.
+- [x] Reject durable-aftereffect relabel when persistence is absent.
+- [x] Reconcile the original reviewed I4 identity with committed `N31-I4R1`.
+- [x] Record registered-cycle and canonical native-edge current orientations.
+- [x] Verify balanced node-current divergence.
+- [x] Separate formation-input stop from forming-carrier exhaustion.
+- [x] Regenerate controls against the exact I5 semantic contract.
+- [x] Record maximum D0c/DR ceiling honestly.
+- [x] Emit source-current artifacts, JSON, and report.
+
+### Iteration 5 Result
+
+```text
+status = passed
+acceptance_state = accepted_source_current_D0c_DR1_instantaneous_geometry_comparator_no_persistence_no_decay
+primary_semantic_class = D0c
+representation_or_authority_class = exact_derived_projection
+candidate_disposition = supported
+row_decision = supported
+forming_packet_current_l1_norm = 0.30000000000000004
+post_withdrawal_packet_current_l1_norm = 0.0
+signed_packet_current_by_registered_orientation = {0: 0.1, 1: 0.1, 2: 0.1}
+signed_packet_current_by_native_edge_orientation = {0: 0.1, 1: 0.1, 2: -0.1}
+maximum_absolute_node_current_divergence = 0.0
+formation_input_stopped = true
+formation_input_stop_checkpoint = forming_cycle_packets_in_flight
+forming_carrier_exhausted = true
+forming_carrier_exhaustion_checkpoint = first_post_withdrawal_arrival_complete
+active_forming_carrier_interval_is_post_formation_window = false
+route_mass_error_forming_to_post = 0.0
+coherence_coordinate_error_forming_to_post = 1.1102230246251565e-16
+closed_system_budget_span = 0.0
+source_current_D0c_candidate_supported = true
+positive_evidence_opened = true
+positive_evidence_scope = source_current_D0c_instantaneous_comparator_only
+positive_decay_evidence_opened = false
+D0a_persistence_supported = false
+D0a_weakening_supported = false
+causal_mediation_supported = false
+decay_relation_ladder_rung = DR1
+n31_progress_rung = N31-C2_active_nulls_and_representation_boundary_established
+n31_c3_D0c_classification_component_satisfied = true
+n31_c3_overall_pending_D0b_and_D0a_classification = true
+n31_closeout_ladder_rung_assigned = false
+ready_for_iteration_6_D0b_finite_window_relation = true
+direct_I3_null_consumption_count = 0
+candidate_specific_control_regeneration_count = 6
+i4_revision_id = N31-I4R1
+i4_revision_lineage_output_digest = 6dbd1441b5fcdce666d8eeca287cd59205cc4d34495016a0aefe3da9b818eb16
+i4_revision_lineage_sha256 = a8781a04980b0a650a0ebfeae41f34a067a188f72c57b71f140ad1048642d5ba
+trace_output_digest = c5d2609960d765bd3b97b65664a2ca86e6d16228ad34bf0714e31d093f7fe395
+trace_sha256 = 4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d
+output_digest = 95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b
+artifact_sha256 = 6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704
+src_diff_empty = true
+```
+
+I5 consumes the committed I4 artifact as `N31-I4R1`. The reviewed pre-hardening
+I4 package and I4R1 have different artifact/output identities. The generated
+lineage retains both identities and records the hardening reason. Its normalized
+scientific-outcome comparison shows that exact spatial representation, DR0,
+positive-evidence quarantine, and I5 admission are unchanged. The earlier full
+artifact was not retained in the repository and is not claimed as the consumed
+source; I5 consumes the exact committed I4R1 artifact.
+
+I5 uses a registered three-node route arranged as an internal cycle. Three
+equal native packets depart at the same event time, one along each oriented
+edge. During transit, every route node has been debited by the same amount, so
+the anchor-relative C coordinates are unchanged. Internal in-flight packet
+mass is counted once, so registered route mass is also unchanged. What appears
+is a nonzero oriented packet-current cycle, measured as packet amount divided
+by native event-time transit duration.
+
+The packet-current signs are explicit rather than inferred from edge IDs. The
+registered cycle orientation is `0 -> 1`, `1 -> 2`, `2 -> 0`, producing the
+signed vector `{+0.1,+0.1,+0.1}`. The canonical restoration identity stores
+edge `2` as `0 -> 2`, producing `{+0.1,+0.1,-0.1}` in native-edge orientation.
+Both encode the same transport. Outflow-minus-inflow divergence is zero at all
+three route nodes.
+
+The next three native events complete the three arrivals. They restore the
+original node C distribution, remove all in-flight packet current, and empty
+the queue. No `set_state()`, static edge-flux cancellation, hidden selector, or
+post-formation producer is used. This cleanly isolates an instantaneous
+`J_C`-indexed geometry component from route mass and spatial C coordinates.
+It is an instantaneous state-flux geometry comparator, not an induced metric,
+curvature, Hessian, or geometric transport intervention.
+
+Formation input stops after the final predeclared departure is processed. The
+packets then remain the active forming carrier from event time `0` to `1`; this
+interval is not a post-formation persistence window. “Withdrawal” occurs when
+all three native arrivals commit and the carrier is exhausted. Arrived-packet
+records remain in the scientific state, but the exact current projection
+consumes only in-flight records. Counting historical packets as current fails
+closed.
+
+The result supports `D0c` at `DR1`: an attributable source-current relation is
+formed. It does not support DR2 because the selected current component is zero
+at the first post-arrival checkpoint. There is consequently no persistent
+relation to weaken, and no later-readout or mediation evidence. The
+`instantaneous_geometry_as_durable_decay` control fails closed, so the result
+is transient packet propagation/current geometry, not decay.
+
+I5 does not directly consume generic I3 null fixtures. Each inherited control
+meaning is compared against the I5 semantic contract (`D0c`, exact-derived,
+functional coupling, packet-current carrier, complete current state). Because
+at least one load-bearing field differs for every inherited control, all five
+are regenerated against the source-current I5 trace with comparability digests.
+The history-as-current control is candidate-specific and has no I3 source row.
+
+I5 satisfies the D0c component needed for `N31-C3`, but the overall progress
+ceiling remains `N31-C2` pending the I6 D0b and I7 D0a classifications. The
+terminal closeout rung remains unassigned.
 
 ## Iteration 6 - D0b Finite-Window Derived Relation
 

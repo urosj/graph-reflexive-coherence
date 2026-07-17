@@ -1,0 +1,94 @@
+{
+  "acceptance_state": "accepted_I4R1_provenance_and_scientific_outcome_invariance_closed",
+  "artifact_kind": "I4_revision_lineage",
+  "artifact_schema_version": "n31_i4_revision_lineage_v1",
+  "checks": [
+    {
+      "check_id": "current_I4_identity_exact",
+      "detail": "b7b6f34e3978ec4a410a77e36bc1b548f1baf96dbda7987803d544fc737c3597",
+      "passed": true
+    },
+    {
+      "check_id": "normalized_scientific_outcome_unchanged",
+      "detail": "73798742bda9f0d6a52328e71eb080741830b922cfd4ad5baa850b7cf57258b1",
+      "passed": true
+    },
+    {
+      "check_id": "evidence_and_DR_ceiling_unchanged",
+      "detail": "DR0_no_source_current_decay_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "I5_admission_unchanged",
+      "detail": true,
+      "passed": true
+    }
+  ],
+  "comparison_policy": {
+    "comparison_kind": "normalized_scientific_outcome",
+    "contract_and_provenance_detail_changed": true,
+    "current_normalized_outcome": {
+      "D0a_representation_status": "represented_by_exact_projection",
+      "arrival_distribution_representation_gate_open": false,
+      "decay_relation_ladder_ceiling": "DR0_no_source_current_decay_evidence",
+      "identity_roundtrip_exact": true,
+      "mixed_representation_gate_open": false,
+      "n31_progress_ceiling": "N31-C2_active_nulls_and_representation_boundary_established",
+      "observed_reconstruction_error": 0.0,
+      "positive_evidence_opened": false,
+      "ready_for_iteration_5_D0c_comparator": true,
+      "spatial_representation_gate_open": true,
+      "standalone_carrier_lane": "spatial_distribution",
+      "temporal_representation_gate_open": false
+    },
+    "current_normalized_outcome_digest": "73798742bda9f0d6a52328e71eb080741830b922cfd4ad5baa850b7cf57258b1",
+    "prior_normalized_outcome": {
+      "D0a_representation_status": "represented_by_exact_projection",
+      "arrival_distribution_representation_gate_open": false,
+      "decay_relation_ladder_ceiling": "DR0_no_source_current_decay_evidence",
+      "identity_roundtrip_exact": true,
+      "mixed_representation_gate_open": false,
+      "n31_progress_ceiling": "N31-C2_active_nulls_and_representation_boundary_established",
+      "observed_reconstruction_error": 0.0,
+      "positive_evidence_opened": false,
+      "ready_for_iteration_5_D0c_comparator": true,
+      "spatial_representation_gate_open": true,
+      "standalone_carrier_lane": "spatial_distribution",
+      "temporal_representation_gate_open": false
+    },
+    "prior_normalized_outcome_digest": "73798742bda9f0d6a52328e71eb080741830b922cfd4ad5baa850b7cf57258b1",
+    "prior_normalized_outcome_source": "reviewed I4 result block and scientific disposition",
+    "scientific_outcome_changed": false,
+    "why_not_full_artifact_equality": "I4R1 intentionally changes provenance and contract detail while retaining the reviewed representation conclusion and claim ceiling"
+  },
+  "current_committed_artifact": {
+    "artifact_sha256": "eab3b993ad9990c2a7ba47e2445f62b520e003d9c938bc9cbc9590e428dd3782",
+    "commit": "a5fcdd67ed49a5a1e11456dd4d7fb4a5e32ba95b",
+    "consumed_by_I5": true,
+    "label": "N31-I4R1",
+    "output_digest": "b7b6f34e3978ec4a410a77e36bc1b548f1baf96dbda7987803d544fc737c3597",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_representation_gate_i4.json"
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "6dbd1441b5fcdce666d8eeca287cd59205cc4d34495016a0aefe3da9b818eb16",
+  "prior_review_package": {
+    "artifact_sha256": "358d425674dbca3fa96ccf1cade0da7ce8afe81e537b8cc40bdf35b5f6a8bc49",
+    "consumed_by_I5": false,
+    "full_artifact_retained_in_repository": false,
+    "identity_source": "external_reviewed_package_identity",
+    "label": "N31-I4-pre-review-hardening-package",
+    "output_digest": "0c23bd575fdaf139badf589bb796244961d12456eec0a52460523a6012e22f8e"
+  },
+  "revision_id": "N31-I4R1",
+  "revision_reason": [
+    "closed I3-to-I3R1 provenance lineage",
+    "made projection coordinate mapping machine-readable",
+    "separated spatial organization from boundary transfer",
+    "bounded set_state to surgical-clamp representation evidence",
+    "froze I7 weakening-order and route-window prerequisites",
+    "clarified N31-C2 progress versus terminal closeout assignment"
+  ],
+  "status": "passed"
+}

@@ -733,7 +733,15 @@ missing.
 
 Measure current-state/flux-derived route geometry during forming current and
 immediately after withdrawal. Establish the lower comparator without durable
-aftereffect language.
+aftereffect language. Use a balanced native packet cycle so route mass and
+anchor-relative C coordinates remain matched while the in-flight packet-current
+component is present, then exhaust that forming cycle through native arrivals.
+Treat historical arrived-packet records as context rather than active current,
+and cap a nonpersistent D0c row at DR1. Record both registered-cycle and
+canonical native-edge sign conventions plus node-current divergence. Separate
+formation-input stop from forming-carrier exhaustion. Resolve each I3 control
+through semantic comparability and regenerate it for the exact I5 candidate
+when authority, organization domain, carrier, or continuation state differs.
 
 ### Iteration 6 - D0b Finite-Window Derived Relation
 
