@@ -1,0 +1,100 @@
+{
+  "acceptance_state": "accepted_I3R1_provenance_and_semantic_invariance_closed",
+  "artifact_kind": "I3_revision_lineage",
+  "artifact_schema_version": "n31_i3_revision_lineage_v1",
+  "changed_record_surfaces": [
+    "scenario_facts strengthened for executable predicates",
+    "actual_result now records bad-fixture rejection and repaired-fixture acceptance",
+    "row_digest regenerated after receipt hardening",
+    "validator_receipt added per row",
+    "future_candidate_control_resolver_schema added",
+    "future_semantic_transition_record_schema added",
+    "cross_cut_counts_are_tags_not_additional_rows added"
+  ],
+  "checks": [
+    {
+      "check_id": "current_I3_identity_exact",
+      "detail": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "passed": true
+    },
+    {
+      "check_id": "control_identity_set_unchanged_from_prior_review_package",
+      "detail": "1c9d9f5ae54faddb6bbb2abf8110498f15a704c08eaf711f862eff01fb1d1ac9",
+      "passed": true
+    },
+    {
+      "check_id": "scientific_control_semantics_unchanged_from_prior_review_package",
+      "detail": "cc4a53efd629e0d52455b5fe2a6427af0dabe869d53cfc3de06325c1dbf2f02d",
+      "passed": true
+    },
+    {
+      "check_id": "scientific_ceiling_unchanged",
+      "detail": "DR0_no_source_current_decay_evidence",
+      "passed": true
+    }
+  ],
+  "current_committed_artifact": {
+    "artifact_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+    "commit": "58128d13a103f4d41ca73ffe484c1da8265b0379",
+    "consumed_by_I4": true,
+    "label": "N31-I3R1",
+    "output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json"
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "b6f6c1948f723d5fbb6008348b804b778993718da18c4b7efb3a499a8757de64",
+  "prior_review_package": {
+    "artifact_sha256": "7cfb143c56db0ea9a9ddf5839822ed8eb321d96b3345b6c1dc2384a9aa855736",
+    "consumed_by_I4": false,
+    "label": "N31-I3-pre-validator-receipt-review-package",
+    "output_digest": "02066f16f2a7fb60ea9122f5a649fb540b3459745b6b583fc7f05a89fd667da0"
+  },
+  "revision_id": "N31-I3R1",
+  "revision_reason": "post-review hardening made failed_closed validator-derived, added bad/repaired fixture receipts, clarified cross-cut counts, froze the future candidate control resolver, and froze semantic transition records",
+  "scientific_semantics_comparison": {
+    "DR_ceiling_changed": false,
+    "comparison_scope": [
+      "control_id",
+      "claim_under_test",
+      "false_positive_scenario",
+      "violated_gate",
+      "expected_claim_failure",
+      "rung_effect",
+      "primary_semantic_class",
+      "representation_or_authority_class",
+      "organization_domain",
+      "load_bearing_organization_domain",
+      "control_scenario_kind",
+      "orthogonal_result_scope",
+      "candidate_specific_schema_id",
+      "carrier_contract_id",
+      "continuation_state_contract_id",
+      "internal_time_policy",
+      "expected_result",
+      "expected_control_status",
+      "control_status",
+      "positive_evidence_admissible",
+      "positive_DR_rung_assigned"
+    ],
+    "current_control_id_set_digest": "1c9d9f5ae54faddb6bbb2abf8110498f15a704c08eaf711f862eff01fb1d1ac9",
+    "current_semantic_projection_digest": "cc4a53efd629e0d52455b5fe2a6427af0dabe869d53cfc3de06325c1dbf2f02d",
+    "positive_evidence_status_changed": false,
+    "prior_control_id_set_digest": "1c9d9f5ae54faddb6bbb2abf8110498f15a704c08eaf711f862eff01fb1d1ac9",
+    "prior_semantic_projection_digest": "cc4a53efd629e0d52455b5fe2a6427af0dabe869d53cfc3de06325c1dbf2f02d",
+    "row_count_after": 70,
+    "row_count_before": 70,
+    "scientific_control_meaning_changed": false
+  },
+  "status": "passed",
+  "unchanged_scientific_surfaces": [
+    "70 control identities and six disjoint families",
+    "claim under test and false-positive scenario",
+    "violated gate and expected claim failure",
+    "semantic and authority classes",
+    "organization and load-bearing domains",
+    "rung effects and control statuses",
+    "no-positive-evidence and DR0 ceiling"
+  ]
+}

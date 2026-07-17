@@ -19,6 +19,13 @@
   matrix, semantic comparability rule, affirmative-discriminator handling,
   dimensional and ownership checks, and the pending I4 representation gate.
 
+## Iteration 4
+
+- `n31_d0a_representation_gate_i4.md` explains the scoped exact spatial
+  projection, I3R1 lineage, mass/organization/transfer/mediation separation,
+  surgical-clamp boundary, route-window and weakening-order prerequisites,
+  spectral rejection, per-domain dispositions, and why I4 remains at DR0.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

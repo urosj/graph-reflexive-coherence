@@ -38,6 +38,21 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_active_nulls_and_failure_baselines_i3.py
 ```
 
+## Iteration 4
+
+- `build_n31_d0a_representation_gate_i4.py` builds a source-current LGRC9V3
+  conformance fixture, closes the I3R1 revision lineage, factors registered-
+  route mass, spatial organization, and boundary transfer from the complete
+  current restoration identity, verifies exact recomposition and clamp
+  invariants, and freezes the domain-specific D0a representation boundary and
+  later I7 preregistration requirements.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0a_representation_gate_i4.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

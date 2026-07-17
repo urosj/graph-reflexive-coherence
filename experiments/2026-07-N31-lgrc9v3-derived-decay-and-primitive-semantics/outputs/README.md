@@ -19,6 +19,22 @@
   their semantic comparability contracts, claim-relative fail-closed results,
   machine relation checks, and the no-positive-evidence admission boundary.
 
+## Iteration 4
+
+- `n31_i3_revision_lineage_r1.json` records the prior-reviewed and committed
+  I3 identities, why I3 was revised, and machine evidence that the 70 control
+  identities, scientific semantics, no-evidence status, and DR0 ceiling did
+  not change.
+- `n31_i4_spatial_projection_conformance_fixture.json` records the public
+  LGRC9V3 execution receipt, registered route/boundary, exact restoration-
+  identity projection roundtrip, machine coordinate mapping, separate spatial
+  organization and boundary-transfer channels, and the bounded surgical-clamp
+  contrast.
+- `n31_d0a_representation_gate_i4.json` records the complete-state crosswalk,
+  exact projection contract, spectral disposition, domain-specific
+  representation matrix, I7 preregistration/window requirements, and scoped
+  spatial D0a admission boundary.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

@@ -185,6 +185,10 @@ N31-C5 = comparative primitive/closure/non-selection classification complete
 N31-C6 = exact RCAE return bundle complete
 ```
 
+Intermediate iterations may assign a current progress rung and ceiling. The
+terminal `n31_closeout_ladder_rung_assigned` field remains false until the final
+N31 closeout iteration.
+
 ## D0a Representation Gate
 
 Before any positive D0a run, freeze:
@@ -718,8 +722,12 @@ not positive source-current evidence. They must fail closed before admission.
 
 Audit whether source-current LGRC9V3 can represent and intervene on the claimed
 route-local slow coherence organization separately from route mass, boundary
-flux, and later causal mediation. Freeze one status before positive execution.
-Close D0a honestly if representation is lossy or missing.
+flux, and later causal mediation. Record the machine coordinate mapping and
+separate spatial organization, boundary transfer, and exact context. Treat
+`set_state()` as a surgical representation clamp unless native formation or
+dependent-field recomputation is separately demonstrated. Freeze one status
+before positive execution. Close D0a honestly if representation is lossy or
+missing.
 
 ### Iteration 5 - D0c Instantaneous Geometry Comparator
 
@@ -740,6 +748,12 @@ persistence, autonomous weakening, local dependence, mediator intervention,
 complete-state equality, and strict D0 producer limits. Retain mass,
 organization, and mediation results independently; classify ordinary export,
 internal reorganization, slow-mode relaxation, or another bounded D0 subtype.
+Before execution, preregister the candidate-specific observable, stronger and
+weaker orientation, baseline, threshold, tolerance, trajectory/monotonicity
+rule, and sign-ambiguity resolution. Exact representation does not define a
+weakening order. The route-mass window must count departure/in-flight mass,
+boundary crossing, outside arrival, and re-entry exactly once with explicit
+support-reclassification terms.
 
 ### Iteration 8 - D0 Replay, Controls, And Classification
 

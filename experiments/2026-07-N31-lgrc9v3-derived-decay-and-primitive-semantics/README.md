@@ -285,7 +285,9 @@ internal-time ownership remain mandatory at lower rungs.
 
 Every positive causal-decay row must independently define and measure route
 mass, route organization, and causal mediation. The route-mass contract must
-close its signed boundary-flux continuity relation. The organization contract
+close its signed boundary-flux continuity relation across internal departure,
+in-flight residence, boundary crossing, outside arrival, and re-entry without
+double counting. The organization contract
 must declare whether its observable is native state, an exact or lossy
 projection, a recomputable history functional, an effective closure,
 independent state, or missing. A strong organization-mediation intervention
@@ -349,6 +351,9 @@ N31-C6 = exact RCAE return bundle complete
 
 N31-C6 is a return-readiness rung, not a requirement that a native decay
 primitive succeed.
+
+Intermediate artifacts may record a current progress rung and ceiling. The
+terminal closeout-rung assignment remains reserved for final N31 closeout.
 
 ## Runtime Modification Boundary
 

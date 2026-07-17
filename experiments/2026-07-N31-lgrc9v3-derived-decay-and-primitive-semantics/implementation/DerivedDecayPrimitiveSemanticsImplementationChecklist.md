@@ -429,26 +429,133 @@ ready only for the I4 representation gate.
 
 ## Iteration 4 - D0a Representation Gate
 
-- [ ] Enumerate complete D0a state needed by the theory claim.
-- [ ] Compare it field-by-field with source-current LGRC9V3 state.
-- [ ] Separate node scalar coherence from complete spatial/flux organization.
-- [ ] Separate route mass from route organization and later causal mediation.
-- [ ] Determine whether route support, boundary, and net flux are exactly measurable.
-- [ ] Determine organization-observable authority and update owner.
-- [ ] Determine representability separately for each admitted organization domain.
-- [ ] Do not infer native resonance or eligibility from timing annotations alone.
-- [ ] Determine whether organization intervention can hold route mass and other state equal.
-- [ ] Determine whether graph topology and edge/packet state form an exact discrete representation.
-- [ ] Determine whether a spectral decomposition is exact, lossy, or missing.
-- [ ] Freeze projection basis and operators if exact projection is claimed.
-- [ ] Freeze overlap/orthogonality and temporal support.
-- [ ] Freeze intervention semantics and reconstruction error bound.
-- [ ] Prove projection has no independent causal state.
-- [ ] Assign exactly one D0a representation status.
-- [ ] Block positive D0a if status is lossy or missing.
-- [ ] Do not invent persistent slow-state variables.
-- [ ] Record theory support separately from runtime representation support.
-- [ ] Emit representation-gate JSON and report.
+- [x] Enumerate complete D0a state needed by the theory claim.
+- [x] Compare it field-by-field with source-current LGRC9V3 state.
+- [x] Separate node scalar coherence from complete spatial/flux organization.
+- [x] Separate route mass from route organization and later causal mediation.
+- [x] Determine whether route support, boundary, and net flux are exactly measurable.
+- [x] Determine organization-observable authority and update owner.
+- [x] Determine representability separately for each admitted organization domain.
+- [x] Do not infer native resonance or eligibility from timing annotations alone.
+- [x] Determine whether organization intervention can hold route mass and other state equal.
+- [x] Determine whether graph topology and edge/packet state form an exact discrete representation.
+- [x] Determine whether a spectral decomposition is exact, lossy, or missing.
+- [x] Freeze projection basis and operators if exact projection is claimed.
+- [x] Record ordered route nodes, anchor, coordinate maps/orientations, and exact context exclusion/reinsertion paths.
+- [x] Separate spatial organization from boundary-transfer flux.
+- [x] Freeze overlap/orthogonality and temporal support.
+- [x] Freeze intervention semantics and reconstruction error bound.
+- [x] Classify `set_state()` as a surgical matched-state clamp and validate its invariants.
+- [x] Block the clamp from native-formation and autonomous-weakening evidence.
+- [x] Freeze the I7 weakening-order preregistration schema without selecting an outcome-dependent order.
+- [x] Freeze the future I7 route-mass window accounting requirements.
+- [x] Record induced geometry as a response component with a separate promotion gate.
+- [x] Close the I3-to-I3R1 revision lineage and prove unchanged scientific control semantics.
+- [x] Prove projection has no independent causal state.
+- [x] Assign exactly one D0a representation status.
+- [x] Block positive D0a if status is lossy or missing.
+- [x] Do not invent persistent slow-state variables.
+- [x] Record theory support separately from runtime representation support.
+- [x] Emit representation-gate JSON and report.
+
+### Iteration 4 Result
+
+```text
+status = passed
+acceptance_state = accepted_scoped_spatial_D0a_exact_projection_representation_gate_no_positive_decay_evidence
+d0a_representation_status = represented_by_exact_projection
+d0a_representation_status_scope = registered-route spatial C distribution and internal oriented flux; separate boundary transfer; exact context
+spatial_D0a_representation_gate_open = true
+temporal_D0a_representation_gate_open = false
+arrival_distribution_D0a_representation_gate_open = false
+mixed_D0a_representation_gate_open = false
+identity_roundtrip_exact = true
+observed_reconstruction_error = 0.0
+reconstruction_error_bound = 1e-12
+positive_evidence_opened = false
+decay_relation_ladder_ceiling = DR0_no_source_current_decay_evidence
+n31_closeout_ceiling = N31-C2_active_nulls_and_representation_boundary_established
+n31_progress_rung = N31-C2_active_nulls_and_representation_boundary_established
+n31_progress_rung_assigned = true
+n31_closeout_ladder_rung_assigned = false
+ready_for_iteration_5_D0c_comparator = true
+ready_for_iteration_7_spatial_D0a_probe = true
+iteration_7_representation_admission_complete = true
+iteration_7_execution_preconditions_complete = false
+i3_revision_id = N31-I3R1
+i3_revision_lineage_output_digest = b6f6c1948f723d5fbb6008348b804b778993718da18c4b7efb3a499a8757de64
+i3_revision_lineage_sha256 = 2ac6582625b0898fd799c545de385a757925226eae4d38803d903549e2133398
+output_digest = b7b6f34e3978ec4a410a77e36bc1b548f1baf96dbda7987803d544fc737c3597
+artifact_sha256 = eab3b993ad9990c2a7ba47e2445f62b520e003d9c938bc9cbc9590e428dd3782
+conformance_fixture_sha256 = d9aa3aedbb0af3521a273533505279810a71d2a77dfdfd8fa5d39ec706a0e23a
+src_diff_empty = true
+```
+
+I4 consumes the committed I3 artifact as `N31-I3R1`. The earlier reviewed I3
+package and I3R1 have different artifact/output digests because I3R1 adds
+validator-derived receipts, bad/repaired-fixture evidence, and future
+resolver/transition schemas. The generated revision-lineage record proves that
+the 70 control identities, scientific meanings, no-positive-evidence status,
+and DR0 ceiling did not change. The earlier package is recorded but is not
+consumed by I4.
+
+I4 establishes a representation boundary, not a decay result. The conformance
+fixture executes public LGRC9V3 packet operations and derives its projection
+from the complete current `lgrc9v3_restoration_identity_v1`. It factors the
+registered route's C distribution and internal oriented flux into a spatial
+organization channel, keeps boundary flux in a separate transfer channel, and
+retains every other scientific field in an exact matched context. Ordered route
+nodes, the anchor, coordinate maps and orientations, and all excluded and
+reinserted identity paths are machine-readable. Recomposition has zero observed
+error. The projection is recomputed, is not persisted as runtime state, and is
+not fed back into transport, so it introduces no independent slow state.
+
+The mass/organization contrast keeps route mass at `2.5`, keeps node `1`
+coherence at `0.75`, and keeps every non-organization identity field matched,
+while changing the complete route C distribution through public
+`LGRC9V3.set_state()`. This demonstrates that one node scalar, route mass, and
+route organization are distinct representational objects and that a matched
+native-state intervention is representable. The intervention is explicitly a
+`surgical_matched_state_clamp`: coherence bounds, total node coherence,
+conserved budget, packet-ledger error, boundary transfer, and exact queue/context
+are checked. Because dependent constitutive fields are not recomputed, the
+clamp is not native formation or autonomous weakening evidence. It does not
+demonstrate that organization mediates any later readout.
+
+Support nodes, internal edges, the route boundary, and instantaneous signed
+boundary flux are exactly enumerable for the registered route. The measured
+`0.03125` outward value remains an instantaneous flux rate; I4 does not
+integrate a post-formation window and does not claim exported route mass or
+closed boundary continuity.
+
+The future I7 route-mass contract must count internal departure/in-flight mass
+once, integrate boundary crossing once, avoid recounting outside arrival, treat
+re-entry as signed inward transfer, and record support/boundary reclassification
+explicitly. Instantaneous flux cannot substitute for this window.
+
+The global status is scoped to one admitted spatial C/J_C carrier lane.
+Induced geometry and native functional-coupling state are representable only
+as response components of that lane, not as standalone carrier claims. Native
+timestamps, proper times, and delays do not create a temporal-alignment
+mediator. An exact arrival-history relation remains a D0b observable candidate,
+not persistent D0a state. Mixed mediation remains unresolved and blocked.
+Induced geometry remains a response component rather than an independently
+admitted carrier; promotion requires its own source-current state/projection,
+weakening order, local-transport intervention, matched mass/transfer controls,
+later-readout dependence, and clamp/ablation effect.
+
+A truncated spectral slow mode is explicitly lossy. A full spectral route is
+not admitted because no canonical degeneracy and intervention contract is
+frozen, and it is unnecessary: the finite registered-route coordinate basis
+already gives an exact roundtrip. I4 therefore permits a later spatial D0a
+attempt without pre-claiming persistence, weakening, or causal mediation.
+Before I7 executes, the candidate-specific observable, stronger/weaker
+orientation, baseline, threshold, tolerance, trajectory rule, monotonicity, and
+sign-ambiguity resolution must be frozen before outcomes. Representation
+admission is complete; those execution preconditions are not.
+
+`N31-C2` is recorded as the current progress rung and ceiling. The terminal
+`n31_closeout_ladder_rung_assigned` flag remains false until final N31 closeout.
 
 ## Iteration 5 - D0c Instantaneous Geometry Comparator
 
