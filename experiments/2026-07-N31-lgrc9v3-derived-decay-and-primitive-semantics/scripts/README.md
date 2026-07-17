@@ -12,6 +12,19 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_source_inventory_i1.py
 ```
 
+## Iteration 2
+
+- `build_n31_schema_control_freeze_i2.py` freezes semantic/authority/outcome
+  axes, DR and closeout ladders, normalized route contracts, producer and
+  restoration policies, active-null comparability, controls, and the RCAE
+  return manifest.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_schema_control_freeze_i2.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

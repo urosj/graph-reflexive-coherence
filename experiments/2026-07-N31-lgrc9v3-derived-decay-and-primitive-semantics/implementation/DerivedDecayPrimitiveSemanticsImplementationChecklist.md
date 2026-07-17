@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-N31
-status = iteration_1_passed
+status = iteration_2_passed
 positive_evidence_opened = false
 decay_semantics_selected = false
 native_runtime_change_authorized = false
@@ -121,56 +121,160 @@ scientific evidence.
 
 ## Iteration 2 - Semantic, Representation, And Control Schema Freeze
 
-- [ ] Freeze primary semantic classes as exactly D0a/D0b/D0c/A/B/C.
-- [ ] Freeze representation/authority classes separately from semantic classes.
-- [ ] Freeze candidate dispositions separately from semantic and authority classes.
-- [ ] Enforce one primary semantic class per candidate row.
-- [ ] Freeze DR0-DR6 ladder and rung gates.
-- [ ] Freeze N31-C0 through N31-C6 ladder.
-- [ ] Freeze D0a representation status enum.
-- [ ] Freeze exact-projection contract fields.
-- [ ] Freeze lossy/missing representation blocker.
-- [ ] Freeze `n31_decay_candidate_schema_v2` and schema change-record identity.
-- [ ] Freeze D0-R as a D0 subtype and B-R as a Candidate B subtype.
-- [ ] Freeze route-mass contract, outward-positive sign policy, and continuity residual.
-- [ ] Freeze route-organization contract and observable-authority enum.
-- [ ] Freeze organization-domain enum across spatial, geometric, functional, temporal, and mixed relations.
-- [ ] Define organization domain as mediator domain, separate from observed diagnostic domains.
-- [ ] Require mixed-domain rows to isolate one load-bearing domain or remain unresolved.
-- [ ] Freeze weakening-trajectory enum including relaxation, drift, recurrence, broadening, and transience.
-- [ ] Freeze causal-mediation contract and full/partial/unresolved statuses.
-- [ ] Freeze `organization_mediated_readout_change = true` for intervention-backed full or bounded-partial mediation only.
-- [ ] Freeze full versus qualified-partial D0-R interpretation ceilings.
-- [ ] Freeze independent-later-probe and forming-packet-exclusion statuses.
-- [ ] Freeze temporal-intervention matching and added coincidence/resonance policy fields.
-- [ ] Freeze weakening-mode and D0-subclass enums.
-- [ ] Freeze independent mass, organization, readout, and mediation fact fields.
-- [ ] Freeze D0-R/B-R policy-owner facts and bridge-status enum.
-- [ ] Require future validators to reject missing or superseded contract schemas.
-- [ ] Require deterministic migration or regeneration of any future stale fixtures.
-- [ ] Freeze candidate row schema and required artifact manifest.
-- [ ] Freeze internal-time owner/advance-event schema.
-- [ ] Freeze coherence and non-coherence invariant schemas.
-- [ ] Freeze candidate-specific topology contract.
-- [ ] Freeze local causal-readout contract.
-- [ ] Freeze D0 producer allowance and prohibition.
-- [ ] Freeze post-formation producer-call policy and call-level audit fields.
-- [ ] Freeze producer-call audit status as complete-no-mutation, reclassified, or blocking-incomplete.
-- [ ] Require empty state-mutating producer calls for D0.
-- [ ] Reclassify export-authoring producer calls mechanically as B-R.
-- [ ] Block native-autonomy calls whose timing gates the aftereffect or supplies export details.
-- [ ] Freeze A packet-creation versus in-flight boundary.
-- [ ] Freeze B destination and conservation boundary.
-- [ ] Freeze C independent-state/closure boundary.
-- [ ] Freeze v1 versus v2 restoration use.
-- [ ] Freeze external state composition requirements.
-- [ ] Freeze cache recomputation separately from execution reconstruction.
-- [ ] Freeze control result status enum and demotion precedence.
-- [ ] Freeze exact protected runtime/contract paths and diff-empty requirements.
-- [ ] Keep specification, runtime, test, example, and dependency changes in a revision-distinct tranche.
-- [ ] Freeze RCAE return manifest schema.
-- [ ] Assign no positive DR rung.
-- [ ] Emit schema/control JSON and report.
+- [x] Freeze primary semantic classes as exactly D0a/D0b/D0c/A/B/C.
+- [x] Freeze representation/authority classes separately from semantic classes.
+- [x] Freeze candidate dispositions separately from semantic and authority classes.
+- [x] Enforce one primary semantic class per candidate row.
+- [x] Freeze DR0-DR6 ladder and rung gates.
+- [x] Freeze N31-C0 through N31-C6 ladder.
+- [x] Freeze D0a representation status enum.
+- [x] Freeze exact-projection contract fields.
+- [x] Freeze lossy/missing representation blocker.
+- [x] Freeze `n31_decay_candidate_schema_v2` and schema change-record identity.
+- [x] Freeze D0-R as a D0 subtype and B-R as a Candidate B subtype.
+- [x] Freeze route-mass contract, outward-positive sign policy, and continuity residual.
+- [x] Require boundary flux to be time-integrated exported coherence over the declared post-formation window.
+- [x] Require one boundary measure and exactly-once crossing accounting; block departure/arrival double counting.
+- [x] Freeze route-organization contract and observable-authority enum.
+- [x] Freeze organization-domain enum across spatial, geometric, functional, temporal, and mixed relations.
+- [x] Define organization domain as mediator domain, separate from observed diagnostic domains.
+- [x] Require mixed-domain rows to isolate one load-bearing domain or remain unresolved.
+- [x] Freeze weakening-trajectory enum including relaxation, drift, recurrence, broadening, and transience.
+- [x] Freeze causal-mediation contract and full/partial/unresolved statuses.
+- [x] Freeze `organization_mediated_readout_change = true` for intervention-backed full or bounded-partial mediation only.
+- [x] Freeze full versus qualified-partial D0-R interpretation ceilings.
+- [x] Freeze independent-later-probe and forming-packet-exclusion statuses.
+- [x] Freeze temporal-intervention matching and added coincidence/resonance policy fields.
+- [x] Freeze cross-field contradiction rules between disposition, authority, mediation, and DR ceilings.
+- [x] Freeze D0c-to-D0a and D0b-to-causal-authority semantic transition rules.
+- [x] Freeze weakening-mode and D0-subclass enums.
+- [x] Freeze independent mass, organization, readout, and mediation fact fields.
+- [x] Freeze D0-R/B-R policy-owner facts and bridge-status enum.
+- [x] Derive policy ownership from call/event/lineage traces, including scheduling without direct mutation.
+- [x] Separate B-R ownership classification from positive B-R decay support.
+- [x] Require future validators to reject missing or superseded contract schemas.
+- [x] Require deterministic migration or regeneration of any future stale fixtures.
+- [x] Freeze candidate row schema and required artifact manifest.
+- [x] Freeze active-null comparability and derived-fixture-only schema.
+- [x] Require active nulls to state the false-positive scenario and match mediator semantics, not topology alone.
+- [x] Freeze internal-time owner/advance-event schema.
+- [x] Freeze coherence and non-coherence invariant schemas.
+- [x] Freeze candidate-specific topology contract.
+- [x] Freeze local causal-readout contract.
+- [x] Freeze D0 producer allowance and prohibition.
+- [x] Freeze post-formation producer-call policy and call-level audit fields.
+- [x] Freeze producer-call audit status as complete-no-mutation, reclassified, or blocking-incomplete.
+- [x] Require empty state-mutating producer calls for D0.
+- [x] Reclassify export-authoring producer calls mechanically as B-R.
+- [x] Block native-autonomy calls whose timing gates the aftereffect or supplies export details.
+- [x] Freeze A packet-creation versus in-flight boundary.
+- [x] Freeze B destination and conservation boundary.
+- [x] Freeze C independent-state/closure boundary.
+- [x] Freeze v1 versus v2 restoration use.
+- [x] Freeze external state composition requirements.
+- [x] Freeze cache recomputation separately from execution reconstruction.
+- [x] Freeze control result status enum and demotion precedence.
+- [x] Freeze exact protected runtime/contract paths and diff-empty requirements.
+- [x] Keep specification, runtime, test, example, and dependency changes in a revision-distinct tranche.
+- [x] Record the protected runtime base, I1/I2 governance base, and generated I2 artifact as an explicit revision chain.
+- [x] Freeze RCAE return manifest schema.
+- [x] Assign no positive DR rung.
+- [x] Emit schema/control JSON and report.
+
+### Iteration 2 Result
+
+```text
+status = passed
+acceptance_state = accepted_semantic_representation_control_schema_frozen_no_positive_evidence
+source_I1_output_digest = c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736
+schema_authority_source_count = 9
+candidate_schema_version = n31_decay_candidate_schema_v2
+primary_semantic_class_count = 6
+candidate_required_field_count = 72
+active_null_required_field_count = 28
+route_mass_contract_field_count = 20
+route_organization_contract_field_count = 15
+causal_mediation_contract_field_count = 18
+control_id_count = 70
+RCAE_return_required_field_count = 77
+src_diff_empty = true
+protected_runtime_contract_diff_empty = true
+positive_evidence_opened = false
+candidate_rows_classified = false
+d0a_representation_status_assigned = false
+decay_relation_ladder_rung_assigned = false
+decay_relation_ladder_ceiling = DR0_no_source_current_decay_evidence
+n31_closeout_ladder_rung_assigned = false
+n31_closeout_ceiling = N31-C1_source_and_semantic_contract_admitted
+ready_for_iteration_3_active_nulls = true
+output_digest = a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf
+artifact_sha256 = 9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6
+report_sha256 = 688ca8736ff713ab823f8311816fe6cd92ab5e2268c1ec757b9f114479961627
+script_sha256 = a1751fc202b331e88b9b71f04eedec5a509308876297c962fa56ba2d502cd17b
+```
+
+### Iteration 2 Interpretation
+
+I2 freezes the rules under which later N31 rows may be admitted. It does not
+decide whether D0a is representable, select a candidate, or provide decay
+evidence. The six semantic classes remain independent from representation
+authority and outcome disposition; D0-R and B-R remain ownership subtypes.
+
+The central evidential rule is now structural:
+
+```text
+route mass change != route organization change != causal mediation
+```
+
+Each fact requires its own contract. Lower route mass without signed boundary
+closure is not demonstrated redistribution. Weaker organization without a
+matched intervention is correlated weakening. A later changed readout without
+local mediation does not support DR4.
+
+The route-mass closure is dimensionally explicit. Boundary flux is the
+time-integrated exported coherence over the declared post-formation window,
+using the same boundary and measure as the route-mass delta. Crossings are
+counted exactly once; an instantaneous rate sample or double-counted
+departure/arrival record cannot close the continuity residual.
+
+Temporal and geometric variants are likewise bounded. Proper-time annotations,
+arrival histograms, and curvature diagnostics are observations until the
+declared organization mediates a later local operation. Forming packets must be
+excluded before a later independent relation is claimed, and an added
+coincidence/resonance policy changes authority to a closure or extension.
+
+Producer ownership is fail-closed: D0 permits no load-bearing post-formation
+producer mutation. A producer that chooses export timing, amount, or
+destination makes the row B-R even when conservation passes. Restoration v1
+covers current-state equivalence; reset-sensitive claims require v2, while
+external candidate state requires separate identity composition.
+
+Ownership is derived from producer-call, scheduled-event, mutation-path,
+native-lineage, and export-decision traces rather than authored booleans.
+Scheduling an export without directly mutating state still establishes
+producer authorship. B-R classification records that ownership; it is not
+positive B-R evidence unless emission, route-mass change, continuity, and the
+organization/readout/mediation gates also pass.
+
+Cross-field validation now blocks contradictory rows mechanically. A blocked
+representation cannot carry a supported row decision; full or bounded-partial
+mediation cannot coexist with a false mediated-change flag; unresolved mixed
+mediation cannot exceed DR3; and blocked D0a authority cannot be promoted into
+coherence-only D0a evidence. Persistent D0c becomes a new D0a candidate rather
+than an in-place D0c upgrade, while a D0b observable used causally by transport
+must acquire exact-derived authority or be classified as a closure.
+
+I3 may now instantiate the 70 false-positive controls as comparable,
+derived-fixture-only nulls. Each null must identify the claim under test and
+false-positive scenario and match the candidate's semantic class, authority,
+mediator domain, internal-time policy, schema, carrier, and continuation
+contract. Matching topology alone is insufficient. Those rows may close
+false-positive paths but cannot assign a positive DR rung.
+
+The revision chain is explicit: protected runtime baseline
+`7075ecb5e464401df96f16eac171fbefe0e532dc`, I1/I2 governance base
+`07255b46479d678f649bd89b3f92ceeb95c8d98a`, then this generated I2 artifact.
+I2 changes no protected runtime or contract surface.
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
