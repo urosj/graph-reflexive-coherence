@@ -1,0 +1,28 @@
+{
+  "artifact_kind": "n31_i9a_composed_candidate_identity",
+  "artifact_schema_version": "n31_i9a_composed_candidate_identity_v1",
+  "branches": {
+    "aged": {
+      "components": {
+        "native_restoration_identity_v2": "c28c8a18d841f5a7337a336c12b9156374791ef71a3bf48f680ae0c44d32a5d0",
+        "release_phase_closure_identity": "980c413aa9c576f3e64159dfea95241332132e6fe0d4f16081c608f938cbd3b3",
+        "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+        "topology_contract_identity": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f"
+      },
+      "composed_candidate_identity": "8bd96cc70e0f63274b76fc20284484b68da7bbf5aaeb96fc3472c9f681449f4a"
+    },
+    "fresh": {
+      "components": {
+        "native_restoration_identity_v2": "c28c8a18d841f5a7337a336c12b9156374791ef71a3bf48f680ae0c44d32a5d0",
+        "release_phase_closure_identity": "7bc934522a5af5675390ef0292fa590dd0a28024130c164c4aff2f7b12f0f36f",
+        "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+        "topology_contract_identity": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f"
+      },
+      "composed_candidate_identity": "de417466c45aa37580f18ff310b2ca2860231851d7d42e04f5fc8d632074cd9a"
+    }
+  },
+  "composition_rule": "digest(native_v2,closure_identity,release_policy_identity,topology_identity)",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+  "wrong_closure_or_policy_pairing_changes_identity": true
+}

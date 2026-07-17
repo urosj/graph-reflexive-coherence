@@ -1,0 +1,429 @@
+{
+  "artifact_kind": "n31_i9a1_receiver_mediation_interventions",
+  "artifact_schema_version": "n31_i9a1_mediation_interventions_v1",
+  "balanced_clamps_preserve_total_C": true,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "dcc4837a4503fd3fd7aaf7fcd6d0a0ccc42bd84251bfab456f86820a15623e05",
+  "receiver_C_clamp_reverses_admission_split": true,
+  "rows": [
+    {
+      "arrival_receipt": null,
+      "balanced_clamp_record": {
+        "coherence_after": 0.3,
+        "coherence_before": 0.4,
+        "compensator_after": 0.9000000000000001,
+        "compensator_before": 0.8,
+        "compensator_node_id": 0,
+        "node_id": 2,
+        "total_delta": 5.551115123125783e-17
+      },
+      "branch_id": "n31_A1_fresh_0.35_fresh_receiver_C_clamped_to_aged_C",
+      "budget_after": null,
+      "budget_before": {
+        "budget_error": 0.0,
+        "conserved_budget_total": 1.6,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.6
+      },
+      "candidate_A_producer_calls_during_readout": 0,
+      "candidate_A_producer_loaded_during_readout": false,
+      "compensator_C_before_readout": 0.9000000000000001,
+      "departure_receipt": null,
+      "duplicate_replay_exact": true,
+      "experiment_authored_probe_request": true,
+      "global_selector_read": false,
+      "intervention": {
+        "causal_role": "receiver_mediation_down_clamp",
+        "intervention_id": "fresh_receiver_C_clamped_to_aged_C",
+        "node_id": 2,
+        "target_coherence": 0.3
+      },
+      "native_runtime_owns_admission_debit_transport_and_credit": true,
+      "original_release_packets_complete_before_readout": true,
+      "phase_source": "fresh",
+      "processing_state_after": {
+        "budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.6000000000000003,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6000000000000003
+        },
+        "checkpoint_index": 4,
+        "event_queue_count": 1,
+        "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+        "event_time_key": 3.0,
+        "packet_ledger_digest": "751c70353637179a4aeadf8a309294c4be77b2962944bb17f7eccd976774b618",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "a4dc74323b82f4452a0df35ecc1bc7641e762fcd309324405cc99c58323a54a8",
+        "restoration_identity_v2": "574fbdabd131e4ffc1a9739d6d8dbd0c6a9c1557865a43514c86540f6645bfe4",
+        "scheduler_event_index": 4
+      },
+      "processing_state_before": {
+        "budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.6000000000000003,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6000000000000003
+        },
+        "checkpoint_index": 4,
+        "event_queue_count": 1,
+        "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+        "event_time_key": 3.0,
+        "packet_ledger_digest": "751c70353637179a4aeadf8a309294c4be77b2962944bb17f7eccd976774b618",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "a4dc74323b82f4452a0df35ecc1bc7641e762fcd309324405cc99c58323a54a8",
+        "restoration_identity_v2": "574fbdabd131e4ffc1a9739d6d8dbd0c6a9c1557865a43514c86540f6645bfe4",
+        "scheduler_event_index": 4
+      },
+      "q_probe": 0.35,
+      "readout_admitted": false,
+      "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+      "receiver_C_after_departure": 0.3,
+      "receiver_C_before_readout": 0.3,
+      "rejection_atomicity_receipt": {
+        "atomic_state_neutral_refusal": true,
+        "budget_unchanged": true,
+        "event_queue_unchanged": true,
+        "identity_v1_exact": true,
+        "identity_v2_exact": true,
+        "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+        "no_partial_packet_record_created": true,
+        "packet_ledger_unchanged": true,
+        "packet_record_count_unchanged": true,
+        "receipt_authority": "experiment_audit_of_native_refusal",
+        "scheduler_and_time_unchanged": true
+      },
+      "rejection_reason": "source coherence is smaller than packet amount",
+      "semantic_route_label_read": false,
+      "source_debit": 0.0,
+      "source_snapshot_identity": {
+        "v1": "0e1ea85bc8f2674db3618e9ae74b6bce5c7eb22d05c717a8a17c7ab5c3af0512",
+        "v2": "3978f40a2915c9849a16ab21c3720a1c236f6a9dec28b6b2ef5a4475defea74e"
+      },
+      "target_C_after_arrival": 0.4000000000000001,
+      "target_C_before_readout": 0.4000000000000001,
+      "target_credit": 0.0
+    },
+    {
+      "arrival_receipt": {
+        "amount": 0.35,
+        "budget_error": 2.220446049250313e-16,
+        "edge_id": 1,
+        "event_id": "lgrc9v3-packet-event-d66d2621b9aa5cd7",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+        "source_lineage_id": "n31_A1_aged_0.35_aged_receiver_C_clamped_to_fresh_C",
+        "source_node_id": 2,
+        "target_node_id": 1
+      },
+      "balanced_clamp_record": {
+        "coherence_after": 0.4,
+        "coherence_before": 0.30000000000000004,
+        "compensator_after": 0.7000000000000001,
+        "compensator_before": 0.8,
+        "compensator_node_id": 0,
+        "node_id": 2,
+        "total_delta": 0.0
+      },
+      "branch_id": "n31_A1_aged_0.35_aged_receiver_C_clamped_to_fresh_C",
+      "budget_after": {
+        "budget_error": 2.220446049250313e-16,
+        "conserved_budget_total": 1.6000000000000003,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.6000000000000003
+      },
+      "budget_before": {
+        "budget_error": 0.0,
+        "conserved_budget_total": 1.6000000000000003,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.6000000000000003
+      },
+      "candidate_A_producer_calls_during_readout": 0,
+      "candidate_A_producer_loaded_during_readout": false,
+      "compensator_C_before_readout": 0.7000000000000001,
+      "departure_receipt": {
+        "amount": 0.35,
+        "budget_error": 0.0,
+        "edge_id": 1,
+        "event_id": "lgrc9v3-packet-event-190842862f73d708",
+        "event_kind": "lgrc9v3_packet_departure",
+        "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+        "source_lineage_id": "n31_A1_aged_0.35_aged_receiver_C_clamped_to_fresh_C",
+        "source_node_id": 2,
+        "target_node_id": 1
+      },
+      "duplicate_replay_exact": true,
+      "experiment_authored_probe_request": true,
+      "global_selector_read": false,
+      "intervention": {
+        "causal_role": "receiver_mediation_up_clamp",
+        "intervention_id": "aged_receiver_C_clamped_to_fresh_C",
+        "node_id": 2,
+        "target_coherence": 0.4
+      },
+      "native_runtime_owns_admission_debit_transport_and_credit": true,
+      "original_release_packets_complete_before_readout": true,
+      "phase_source": "aged",
+      "processing_state_after": {
+        "budget": {
+          "budget_error": 2.220446049250313e-16,
+          "conserved_budget_total": 1.6000000000000003,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6000000000000003
+        },
+        "checkpoint_index": 6,
+        "event_queue_count": 0,
+        "event_queue_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "event_time_key": 5.0,
+        "packet_ledger_digest": "cba2c60d8cc94010a0f90ef743c8562424877949d338f20cb99c51f9886e5e98",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "b729eea16eb436c2820da032203000db368b9feb5368ba8497b24cba360d1e39",
+        "restoration_identity_v2": "bea018c2e8465e64e9ed1bf4de1965fe746e2831b09d4e30386bda79dd281c3e",
+        "scheduler_event_index": 6
+      },
+      "processing_state_before": {
+        "budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.6,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6
+        },
+        "checkpoint_index": 4,
+        "event_queue_count": 1,
+        "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+        "event_time_key": 3.0,
+        "packet_ledger_digest": "9271d7b36d7d0115172d14ec42fde8185667e25ab13dd4e5dd30b39750698807",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "4d7502d014d6f97786862010de96539c138f776edda7a16dd8a5b22ff182efd6",
+        "restoration_identity_v2": "9f4f4e1df1c026df504e24a864363e2c8eef30fba15b783d289d1ee75a1b6baa",
+        "scheduler_event_index": 4
+      },
+      "q_probe": 0.35,
+      "readout_admitted": true,
+      "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+      "receiver_C_after_departure": 0.050000000000000044,
+      "receiver_C_before_readout": 0.4,
+      "rejection_atomicity_receipt": null,
+      "rejection_reason": null,
+      "semantic_route_label_read": false,
+      "source_debit": 0.35,
+      "source_snapshot_identity": {
+        "v1": "231d8bbf5d00257ebb332c4a14e6b05498498c4d152f3b81fe3f6edd6280c016",
+        "v2": "e3c0e83c546df228468d201a7eda39cd6057f2c116512048e83bf05f30911bd0"
+      },
+      "target_C_after_arrival": 0.8500000000000001,
+      "target_C_before_readout": 0.5000000000000001,
+      "target_credit": 0.35
+    },
+    {
+      "arrival_receipt": {
+        "amount": 0.35,
+        "budget_error": 2.220446049250313e-16,
+        "edge_id": 1,
+        "event_id": "lgrc9v3-packet-event-d66d2621b9aa5cd7",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+        "source_lineage_id": "n31_A1_fresh_0.35_target_C_clamped_to_common_value",
+        "source_node_id": 2,
+        "target_node_id": 1
+      },
+      "balanced_clamp_record": {
+        "coherence_after": 0.45,
+        "coherence_before": 0.4000000000000001,
+        "compensator_after": 0.7500000000000001,
+        "compensator_before": 0.8,
+        "compensator_node_id": 0,
+        "node_id": 1,
+        "total_delta": 0.0
+      },
+      "branch_id": "n31_A1_fresh_0.35_target_C_clamped_to_common_value",
+      "budget_after": {
+        "budget_error": 2.220446049250313e-16,
+        "conserved_budget_total": 1.6000000000000003,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.6000000000000003
+      },
+      "budget_before": {
+        "budget_error": 0.0,
+        "conserved_budget_total": 1.6,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.6
+      },
+      "candidate_A_producer_calls_during_readout": 0,
+      "candidate_A_producer_loaded_during_readout": false,
+      "compensator_C_before_readout": 0.7500000000000001,
+      "departure_receipt": {
+        "amount": 0.35,
+        "budget_error": 0.0,
+        "edge_id": 1,
+        "event_id": "lgrc9v3-packet-event-190842862f73d708",
+        "event_kind": "lgrc9v3_packet_departure",
+        "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+        "source_lineage_id": "n31_A1_fresh_0.35_target_C_clamped_to_common_value",
+        "source_node_id": 2,
+        "target_node_id": 1
+      },
+      "duplicate_replay_exact": true,
+      "experiment_authored_probe_request": true,
+      "global_selector_read": false,
+      "intervention": {
+        "causal_role": "target_state_confound_control",
+        "intervention_id": "target_C_clamped_to_common_value",
+        "node_id": 1,
+        "target_coherence": 0.45
+      },
+      "native_runtime_owns_admission_debit_transport_and_credit": true,
+      "original_release_packets_complete_before_readout": true,
+      "phase_source": "fresh",
+      "processing_state_after": {
+        "budget": {
+          "budget_error": 2.220446049250313e-16,
+          "conserved_budget_total": 1.6000000000000003,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6000000000000003
+        },
+        "checkpoint_index": 6,
+        "event_queue_count": 0,
+        "event_queue_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "event_time_key": 5.0,
+        "packet_ledger_digest": "2d017681396a5fa25d2640541ff89c94df7ca8b9e6f8c35ef94ab2fe3e931b35",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "36d6ce44c65f64fe03cf72c9dae06799741ccb853bd29c400d57a485058d9036",
+        "restoration_identity_v2": "1a931097b2cec2f0737f0a5dc506df80a3c23bf7c0f60dba45f3af086b123a51",
+        "scheduler_event_index": 6
+      },
+      "processing_state_before": {
+        "budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.6,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6
+        },
+        "checkpoint_index": 4,
+        "event_queue_count": 1,
+        "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+        "event_time_key": 3.0,
+        "packet_ledger_digest": "ddabc898f72486ed63e3c9b7a916323f01063e2c636c2cec09d8319878eab51c",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "f2a97d7a80bf98edf503d6b4bfa16d9bad63eb11ff6ac3dd6c9fa1a1a6f68b06",
+        "restoration_identity_v2": "7a6714bcd0c0a51ec53a5caba3c98089fddc501b64cb2e765fa9a9a840386c62",
+        "scheduler_event_index": 4
+      },
+      "q_probe": 0.35,
+      "readout_admitted": true,
+      "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+      "receiver_C_after_departure": 0.050000000000000044,
+      "receiver_C_before_readout": 0.4,
+      "rejection_atomicity_receipt": null,
+      "rejection_reason": null,
+      "semantic_route_label_read": false,
+      "source_debit": 0.35,
+      "source_snapshot_identity": {
+        "v1": "0e1ea85bc8f2674db3618e9ae74b6bce5c7eb22d05c717a8a17c7ab5c3af0512",
+        "v2": "3978f40a2915c9849a16ab21c3720a1c236f6a9dec28b6b2ef5a4475defea74e"
+      },
+      "target_C_after_arrival": 0.8,
+      "target_C_before_readout": 0.45,
+      "target_credit": 0.35000000000000003
+    },
+    {
+      "arrival_receipt": null,
+      "balanced_clamp_record": {
+        "coherence_after": 0.45,
+        "coherence_before": 0.5000000000000001,
+        "compensator_after": 0.8500000000000001,
+        "compensator_before": 0.8,
+        "compensator_node_id": 0,
+        "node_id": 1,
+        "total_delta": -5.551115123125783e-17
+      },
+      "branch_id": "n31_A1_aged_0.35_target_C_clamped_to_common_value",
+      "budget_after": null,
+      "budget_before": {
+        "budget_error": 0.0,
+        "conserved_budget_total": 1.6000000000000003,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.6000000000000003
+      },
+      "candidate_A_producer_calls_during_readout": 0,
+      "candidate_A_producer_loaded_during_readout": false,
+      "compensator_C_before_readout": 0.8500000000000001,
+      "departure_receipt": null,
+      "duplicate_replay_exact": true,
+      "experiment_authored_probe_request": true,
+      "global_selector_read": false,
+      "intervention": {
+        "causal_role": "target_state_confound_control",
+        "intervention_id": "target_C_clamped_to_common_value",
+        "node_id": 1,
+        "target_coherence": 0.45
+      },
+      "native_runtime_owns_admission_debit_transport_and_credit": true,
+      "original_release_packets_complete_before_readout": true,
+      "phase_source": "aged",
+      "processing_state_after": {
+        "budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.6,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6
+        },
+        "checkpoint_index": 4,
+        "event_queue_count": 1,
+        "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+        "event_time_key": 3.0,
+        "packet_ledger_digest": "7a5e7a83ce91378ea76a170234c12fd507fba6c91a2d2763d922abdb208d3adb",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "8e43c52f465a7644b956b1b6e679626f7722ed7229bc6faf402b1727c2e196fc",
+        "restoration_identity_v2": "36923dacb40b229598c106b078c7d7dc6dc72676d33bb7dee84a6904eabee6c8",
+        "scheduler_event_index": 4
+      },
+      "processing_state_before": {
+        "budget": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.6,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.6
+        },
+        "checkpoint_index": 4,
+        "event_queue_count": 1,
+        "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+        "event_time_key": 3.0,
+        "packet_ledger_digest": "7a5e7a83ce91378ea76a170234c12fd507fba6c91a2d2763d922abdb208d3adb",
+        "packet_record_count": 3,
+        "restoration_identity_v1": "8e43c52f465a7644b956b1b6e679626f7722ed7229bc6faf402b1727c2e196fc",
+        "restoration_identity_v2": "36923dacb40b229598c106b078c7d7dc6dc72676d33bb7dee84a6904eabee6c8",
+        "scheduler_event_index": 4
+      },
+      "q_probe": 0.35,
+      "readout_admitted": false,
+      "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+      "receiver_C_after_departure": 0.30000000000000004,
+      "receiver_C_before_readout": 0.30000000000000004,
+      "rejection_atomicity_receipt": {
+        "atomic_state_neutral_refusal": true,
+        "budget_unchanged": true,
+        "event_queue_unchanged": true,
+        "identity_v1_exact": true,
+        "identity_v2_exact": true,
+        "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+        "no_partial_packet_record_created": true,
+        "packet_ledger_unchanged": true,
+        "packet_record_count_unchanged": true,
+        "receipt_authority": "experiment_audit_of_native_refusal",
+        "scheduler_and_time_unchanged": true
+      },
+      "rejection_reason": "source coherence is smaller than packet amount",
+      "semantic_route_label_read": false,
+      "source_debit": 0.0,
+      "source_snapshot_identity": {
+        "v1": "231d8bbf5d00257ebb332c4a14e6b05498498c4d152f3b81fe3f6edd6280c016",
+        "v2": "e3c0e83c546df228468d201a7eda39cd6057f2c116512048e83bf05f30911bd0"
+      },
+      "target_C_after_arrival": 0.45,
+      "target_C_before_readout": 0.45,
+      "target_credit": 0.0
+    }
+  ],
+  "target_C_clamp_preserves_admission_split": true
+}

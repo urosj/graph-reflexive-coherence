@@ -1096,17 +1096,40 @@ open for separate admission, and no automatic RCAE adoption is allowed.
 
 ## Iteration 9 - Added-Mechanism Admission
 
-- [ ] Record one allowed added-mechanism admission reason before opening candidates.
-- [ ] Permit D0 insufficiency, representation blocker, semantic control, bridge test, or downstream-reusability rationale.
-- [ ] Do not require added-mechanism execution after D0 success.
-- [ ] Decide A/B/C execute, classify-only, or inapplicable status separately.
-- [ ] Freeze candidate-specific topologies.
-- [ ] Freeze equations/relations, units, phases, and clocks.
-- [ ] Freeze candidate-specific invariants and controls.
-- [ ] Freeze producer/native/closure status before execution.
-- [ ] Do not use one generic scalar decay law.
-- [ ] Do not rank nonequivalent candidates by raw effect size.
-- [ ] Emit admission JSON and report.
+- [x] Record one allowed added-mechanism admission reason before opening candidates.
+- [x] Permit D0 insufficiency, representation blocker, semantic control, bridge test, or downstream-reusability rationale.
+- [x] Do not require added-mechanism execution after D0 success.
+- [x] Decide A/B/C execute, classify-only, or inapplicable status separately.
+- [x] Freeze candidate-specific topologies.
+- [x] Freeze equations/relations, units, phases, and clocks.
+- [x] Freeze candidate-specific invariants and controls.
+- [x] Freeze fail-closed source-current input allowlists with path, role, phase, historical depth, and forbidden adjacent inputs.
+- [x] Separate lane-specific controls from inherited common, D0, and schema-relation obligations.
+- [x] Require candidate-specific control regeneration and prohibit direct I3-null consumption.
+- [x] Record reviewed I8 versus corrected consumed I8 lineage without a scientific-result change.
+- [x] Preserve native carrier authority as `existing_native` and organization-observable authority as `exact_derived_projection`.
+- [x] Freeze numeric fixture IDs, ports, orientation, delay, conductance, payloads, role maps, and canonical topology digests.
+- [x] Resolve Candidate A formation/release/receiver roles and exact qualifying-event semantics.
+- [x] Resolve Candidate B leakage-source role, organization-versus-mass contract, destination isolation, and one-shot receipt semantics.
+- [x] Freeze Candidate C's actual conductance consumer path and the missing normal-step hook as closure debt.
+- [x] Freeze producer/native/closure status before execution.
+- [x] Freeze separate `native_decay_classification` and `added_mechanism_decay_classifications` surfaces before A/B/C execution.
+- [x] Use one DR evidence-strength ladder with lane, semantic-class, and authority qualifiers rather than inventing an interchangeable producer ladder.
+- [x] Treat the lane split as an additive aggregation projection over I2-frozen fields, not a candidate-schema or rung redefinition.
+- [x] Preserve the native lane as `D0a / existing_native carrier / exact-derived organization projection / DR2` with autonomous weakening unsupported.
+- [x] Record A, B, and C as separate added-mechanism lanes with independent dispositions and rung qualifiers.
+- [x] Record candidate authority using the frozen enum: `producer_mediated`, `effective_non_markovian_closure`, or `runtime_extension_required` where applicable.
+- [x] Record the causal-transition owner, producer residue, naturalization debt, and reusable-contract status for every added-mechanism lane.
+- [x] Set `native_upgrade_allowed = false` for every added-mechanism lane.
+- [x] Assign no positive added-mechanism rung from admission alone.
+- [x] Permit later lane-qualified DR5 evidence for A expression attenuation, B conserved export, or C susceptibility relaxation only when candidate-specific gates pass.
+- [x] Permit added-mechanism DR6 only for reusable bounded semantics and downstream contract completeness.
+- [x] Do not interpret producer-assisted or closure-owned DR5/DR6 as native DR5/DR6.
+- [x] Require a future native runtime implementation to be rerun on the native lane before naturalization can change its native rung.
+- [x] Keep N31-C6 closeout completeness distinct from DR6 mechanism evidence.
+- [x] Do not use one generic scalar decay law.
+- [x] Do not rank nonequivalent candidates by raw effect size.
+- [x] Emit admission JSON and report.
 
 I9 admission must preserve the bounded I8 capability record:
 
@@ -1123,16 +1146,321 @@ susceptibility/conductance relaxation. Producer-assisted success cannot
 retroactively raise native D0a, and D0-R remains uninstantiated unless a
 dedicated ordinary-export probe supports it.
 
+I9 will therefore preserve two simultaneous result surfaces:
+
+```text
+native_decay_classification:
+  semantic_class = D0a
+  carrier_state_authority = existing_native
+  organization_observable_authority = exact_derived_projection
+  rung = DR2
+  autonomous_weakening = unsupported
+
+added_mechanism_decay_classifications:
+  A | B | C:
+    authority = producer_mediated | effective_non_markovian_closure | runtime_extension_required
+    rung = DR0...DR6, earned independently
+    rung_qualifier = candidate-specific
+    native_upgrade_allowed = false
+    producer_residue = explicit
+    naturalization_debt = explicit
+```
+
+An added-mechanism result may reach DR5 after its intervention, replay,
+restoration, invariant, and control gates pass. It may reach DR6 when its
+bounded semantics and downstream contract are reusable. Neither result changes
+the native DR2 ceiling. If a corresponding mechanism is later naturalized in
+LGRC, it must earn a new native classification from source-current native
+runtime evidence.
+
+### Iteration 9 Result
+
+```text
+status = passed
+acceptance_state = accepted_lane_qualified_added_mechanism_admission_frozen_no_candidate_evidence
+pre_execution_contract_completeness = passed_after_I9_revision
+added_mechanism_admission_reason = d0_insufficient
+admission_reason_qualifier = d0_insufficient_for_autonomous_causal_weakening
+native_decay_classification = D0a / existing_native carrier / exact-derived organization projection / DR2
+A_execution_decision = execute_I9_A
+B_execution_decision = execute_I9_B
+C_execution_decision = execute_I9_C
+A_current_rung = DR0
+B_current_rung = DR0
+C_current_rung = DR0
+positive_candidate_evidence_opened = false
+n31_closeout_progress_rung = N31-C4
+ready_for_I9_A = true
+ready_for_I9_B = true
+ready_for_I9_C = true
+final_N31_supported = false
+source_current_input_counts = A:10 / B:7 / C:7
+complete_control_counts = A:57 / B:60 / C:57
+direct_I3_null_consumption_count = 0
+I8R1_scientific_conclusion_changed = false
+output_digest = 4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d
+```
+
+### Iteration 9 Interpretation
+
+I9 is an admission and preregistration result, not an A/B/C support result. It
+consumes the exact I2 schema and I8 classification, preserves native spatial
+D0a at `DR2`, and admits three separate added-mechanism executions:
+
+```text
+A:
+  producer-mediated release-efficacy expression policy
+  next iteration = I9-A
+  current rung = DR0
+  maximum bounded meaning = DR5 expression attenuation, not field-state decay
+
+B:
+  producer-mediated, coherence-conserving B-R export policy
+  next iteration = I9-B
+  current rung = DR0
+  DR5 requires explicit destination and exact conservation
+  DR6 additionally requires a reusable bounded B-R contract
+
+C:
+  effective non-Markovian susceptibility closure
+  next iteration = I9-C
+  current rung = DR0
+  DR5 requires restored independent state, causal readout, and controls
+  DR6 additionally requires a reusable bounded susceptibility contract
+```
+
+Each lane has its own executable canonical topology, fail-closed input
+allowlist, relation, units, internal clock, invariant, lane controls, inherited
+control obligations, producer ownership, residue, and naturalization debt.
+All I3-derived controls must be regenerated for the new carrier and authority;
+I9 consumes no I3 null row directly.
+
+A does not attenuate packets in flight. Node 1 is the exact release source;
+only created coherence is debited, while `q_unreleased` remains source `C` and
+is not a reservoir. Only the registered formation-arrival receipt advances
+release phase. B uses node 1 as the leakage source and node 2 as a declared
+destination outside the later readout path. It cannot be called D0-R without a
+separate bridge, and export mass loss does not count as organization weakening
+without the frozen source-contrast and destination-isolation controls.
+
+C owns an independently restored susceptibility state and cannot be called
+native memory or coherence-only D0. Its closure applies `S * g_native` after
+native conductance reconstruction and before native potential/flux operations.
+Ordinary `LGRC9V3.step()` lacks this hook and would overwrite a prior write, so
+partial-pipeline ordering remains explicit producer/closure debt. The
+susceptibility ledger records update magnitude only; it is not a resource cost.
+"Effective non-Markovian" is relative to LGRC state alone, not necessarily the
+composed LGRC-plus-S state.
+
+No candidate is ranked by raw effect magnitude or reduced to one generic decay
+factor. Every added-mechanism lane records `native_upgrade_allowed = false`.
+Thus a later producer-assisted `DR5` or `DR6` result can coexist with native
+`DR2`, but cannot alter it. `N31-C6` remains return-bundle completeness rather
+than mechanism `DR6` evidence.
+
 ## Iteration 9-A - Release-Efficacy Attenuation
 
-- [ ] Vary registered internal age/phase under matched carrier state.
-- [ ] Select packet amount only at creation.
-- [ ] Prove in-flight packet amount remains unchanged.
-- [ ] Prove source debit equals packet amount equals target credit.
-- [ ] Record unreleased coherence remaining at source.
-- [ ] Exclude route labels/global selection.
-- [ ] Restore all age/phase continuation state.
-- [ ] Classify expression attenuation versus field-state decay.
+- [x] Vary registered internal age/phase under matched carrier state.
+- [x] Select packet amount only at creation.
+- [x] Prove in-flight packet amount remains unchanged.
+- [x] Prove source debit equals packet amount equals target credit.
+- [x] Record unreleased coherence remaining at source.
+- [x] Exclude route labels/global selection.
+- [x] Make release phase load-bearing and receipt count validation-only.
+- [x] Reject malformed phase/count pairs before amount selection.
+- [x] Bind the efficacy table with a versioned release-policy identity.
+- [x] Bind numeric topology roles without reading semantic edge payloads.
+- [x] Restore all age/phase continuation state.
+- [x] Compose native-v2, closure, policy, and topology identities.
+- [x] Keep I9-A as trace evidence pending a formal I10 candidate row.
+- [x] Classify expression attenuation versus field-state decay.
+
+### Iteration 9-A Result
+
+```text
+status = passed
+acceptance_state = accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10
+semantic_class = A
+authority = producer_mediated
+fresh_q_created = 0.20
+aged_q_created = 0.10
+aged_to_fresh_ratio = 0.50
+packet_amount_stable_in_flight = true
+source_debit_packet_receiver_credit_exact = true
+q_unreleased_retained_at_release_source = true
+unrelated_event_phase_control_status = failed_closed
+lane_control_status_counts = passed:4 / failed_closed:1 / failed_open:0
+native_and_closure_restoration_exact = true
+duplicate_branch_replay_exact = true
+composed_candidate_identity_recorded = true
+receipt_count_validation_only = true
+semantic_edge_payload_read = false
+lane_specific_controls_resolved = 5 / 5
+complete_controls_resolved = 16 / 57
+current_decay_relation_ladder_rung = DR3
+DR4_shape_observed = true
+DR4_supported = false
+DR4_blocker = independent_later_receiver_readout_pending
+DR5_supported = false
+native_decay_classification = D0a / DR2 unchanged
+n31_closeout_progress_rung = N31-C4
+output_digest = cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0
+```
+
+### Iteration 9-A Interpretation
+
+I9-A is the first source-current added-mechanism result. It does not decay an
+existing packet. It uses a serialized producer-owned release phase to choose
+how much new packet coherence is expressed. Both branches start from the same
+post-formation native LGRC snapshot: fresh evaluates before the exact formation
+receipt is applied to the closure, while aged evaluates after that one receipt.
+The native state and queue are therefore matched; the registered closure phase
+bundle carries the only branch difference. Fresh is specifically a matched
+closure-callback suppression intervention after formation, not evidence for
+elapsed-time aging.
+
+Fresh expression creates `0.20`; aged expression creates `0.10`. Once created,
+both packets keep their amount through departure and arrival. The source loses
+exactly the created amount and the receiver gains exactly that amount. In the
+aged branch, the remaining `0.10` is ordinary node-1 coherence, not hidden or
+destroyed state. A nonqualifying native event increments runtime event history
+without changing the release phase, proving that a global event counter is not
+the age carrier.
+
+The phase-selected amount changes immediate receiver credit, but that credit is
+the conserved destination of the created packet rather than an independent
+later receiver operation. The row therefore supports producer-mediated `DR3`
+expression attenuation and only a `DR4` shape. `DR4` remains blocked pending a
+matched receiver-side native readout. It is not field-state decay, in-flight
+attenuation, or native decay. Full `DR5` remains blocked because I10 must create
+the formal recursive candidate row, add the independent readout, and regenerate
+the unresolved controls; I9-A intentionally does not consume I3 null results
+as evidence.
+
+## Iteration 9-A.1 - Independent Downstream Readout
+
+- [x] Consume the exact I9-A result, trace, composed identity, and final snapshots.
+- [x] Keep the Candidate A attenuation producer unchanged.
+- [x] Add no second decay producer.
+- [x] Verify original release packets are complete before readout.
+- [x] Keep Candidate A producer state unloaded during readout.
+- [x] Preregister a five-point native receiver-departure sweep.
+- [x] Record that the experiment authors the probe request.
+- [x] Keep admission, debit, transport, and credit native to LGRC.
+- [x] Prove the fresh/aged admission split at the middle thresholds.
+- [x] Reverse the split with balanced receiver-C interventions.
+- [x] Preserve the split under a common target-C intervention.
+- [x] Exclude immediate receiver credit by executing a separate later operation.
+- [x] Preserve node-plus-packet coherence and exact duplicate replay.
+- [x] Prove state-neutral atomic refusal for every rejected native request.
+- [x] Limit mediation to local receiver-C departure admission.
+- [x] Qualify native binary-floating-point boundaries and retain `0.35` as the robust interior.
+- [x] Normalize conformance controls to `passed` rather than `failed_closed`.
+- [x] Preserve auxiliary controls outside the inherited 57-control count.
+- [x] Record reviewed-to-current I9/I9-A revision lineage.
+- [x] Keep the formal recursive candidate row and full controls pending I10.
+
+### Why I9-A.1 Does Not Use A Different Producer
+
+The I9-A demotion from provisional `DR4` to `DR3` was an evidence-boundary
+correction, not a finding that Candidate A required a stronger producer. I9-A
+proved that its registered phase changes `q_created`; it did not yet prove that
+the changed receiver state affects a distinct later operation. A different
+producer in I9-A.1 could author that later difference and would therefore
+confound the causal chain.
+
+I9-A.1 keeps the original producer fixed and absent during readout:
+
+```text
+Candidate A producer selects q_created
+  -> native packet arrives and queue becomes empty
+  -> no producer is loaded or called
+  -> experiment requests the same later native operation
+  -> LGRC natively admits or rejects that operation from receiver C
+```
+
+The request remains experiment-authored probe instrumentation. The result does
+not establish autonomous native readout scheduling or autonomous native decay.
+
+### Iteration 9-A.1 Result
+
+```text
+status = passed
+acceptance_state = accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10
+relation_authority = producer_mediated
+readout_authority = native_LGRC9V3_runtime
+readout_request_authority = experiment_probe_harness
+autonomous_native_readout_scheduling_supported = false
+q_probe_values = [0.25, 0.30, 0.35, 0.40, 0.45]
+fresh_admission_pattern = [true, true, true, true, false]
+aged_admission_pattern = [true, true, false, false, false]
+split_q = 0.35
+native_eligibility_split = aged_C < q_probe <= fresh_C
+endpoint_values_are_observed_binary_floats_not_theoretical_reals = true
+nextafter_boundary_controls_pending_I10 = true
+receiver_C_clamp_reverses_split = true
+target_C_clamp_preserves_split = true
+mediation_strength = bounded_partial_local_receiver_C
+other_continuation_state_matched = false_with_declared_mass_compensator
+receiver_C_mediates_departure_eligibility = true
+full_complete_state_mediation = false
+producer_active_during_readout = false
+successful_native_readouts_conserve_budget = true
+duplicate_replay_exact = true
+all_rejected_readouts_atomic = true
+cumulative_complete_controls_resolved = 18 / 57
+auxiliary_controls_separately_enumerated = true
+auxiliary_controls_disjoint_from_inherited_matrix = true
+current_decay_relation_ladder_rung = DR4 provisional
+DR5_supported = false
+native_decay_classification = D0a / DR2 unchanged
+n31_closeout_progress_rung = N31-C4
+revision_lineage_output_digest = a9301bd8e3b98894ad648637d1c0412df98e078432c1fc3ef9bcbdc1cc555ee3
+targeted_LGRC_runtime_conformance = 413 passed, 89 subtests passed
+output_digest = 0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91
+```
+
+### Iteration 9-A.1 Interpretation
+
+The receiver-side readout is separate from I9-A's immediate credit. Both source
+release packets have completed before the new operation is scheduled. The
+experiment then asks receiver node 2 to emit a native packet back across edge 1.
+Fresh and aged both admit `0.25` and `0.30`; only fresh admits `0.35` and `0.40`;
+both reject `0.45`.
+
+Balanced clamps identify the load-bearing state. Moving fresh receiver C from
+`0.40` to `0.30` blocks the `0.35` operation, and moving aged receiver C from
+`0.30` to `0.40` admits it. Equalizing the target node at `C=0.45` does not
+remove the split. The later effect is therefore mediated by receiver C rather
+than target state, a second producer, or route labels.
+
+This is bounded local mediation, not complete-state mediation. The receiver-C
+clamps preserve total coherence by changing compensator node 0, so
+`other_continuation_state_matched` is explicitly
+`false_with_declared_mass_compensator`. The load-bearing result is native
+departure admission only; the complete post-arrival branch is not claimed.
+
+Rejected native requests are atomically state-neutral relative to the queued
+pre-step request state. Both restoration identities, the event queue, packet
+ledger, scheduler/time, packet-record count, and budget remain unchanged, and
+the receipt authority is explicitly an experiment audit of native refusal.
+The `0.30` and `0.40` endpoints are observed binary-floating-point behavior;
+the robust interior result is `q=0.35`, with exact `nextafter` controls retained
+as I10 debt.
+
+Original-packet exclusion, separate-readout status, and absence of a different
+producer are conformance checks and therefore record `passed`, not
+`failed_closed`. Five auxiliary I9-A.1 controls remain separately enumerated
+and do not inflate the inherited matrix, which remains `18 / 57` resolved. The
+revision-lineage artifact binds prior and current I9/I9-A identities and states
+that the numerical outcome did not change while the evidence classification
+was corrected.
+
+This closes the missing provisional `DR4` gate for Candidate A. The result is
+still producer-mediated expression attenuation: the relation comes from the
+Candidate A closure, while its downstream readout is native. It is not native
+decay, autonomous scheduling, field-state decay, or `DR5`. I10 retains the
+formal candidate-row and complete replay/control obligations.
 
 ## Iteration 9-B - Conserved Leakage
 

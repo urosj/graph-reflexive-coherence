@@ -274,6 +274,8 @@ post_formation_producer_calls_by_candidate
 post_formation_state_mutating_producer_calls_by_candidate
 producer_call_audit_status_by_candidate
 decay_relation_ladder_rung
+n31_native_decay_classification
+n31_added_mechanism_decay_classifications
 n31_closeout_ladder_rung
 selected_primitive_ids
 derived_relation_ids
@@ -289,6 +291,10 @@ timing_and_delay_surface_disposition_by_candidate
 native_api_by_candidate
 producer_residue_by_candidate
 naturalization_debt_by_candidate
+native_upgrade_allowed_by_candidate
+causal_transition_owner_by_candidate
+candidate_specific_rung_qualifier_by_candidate
+reusable_contract_status_by_candidate
 restoration_identity_by_candidate
 control_summary
 derived_cache_recomputation_status
@@ -304,6 +310,52 @@ source_artifact_manifest
 
 Conditional fields may use `not_applicable_with_reason`. Empty placeholder
 artifacts must not be created solely to populate the manifest.
+
+### Lane-Qualified DR Return Rule
+
+The return bundle reports native and added-mechanism DR results separately:
+
+```text
+n31_native_decay_classification:
+  source-current native carrier authority
+  exact-derived organization-observable authority
+  native DR ceiling
+
+n31_added_mechanism_decay_classifications:
+  candidate-specific producer/closure authority and independently earned DR ceiling
+```
+
+Both surfaces use the same DR evidence-strength definitions, qualified by
+semantic class and authority. An added-mechanism DR5 or DR6 result must retain
+`native_upgrade_allowed = false`, producer residue, and naturalization debt. It
+does not upgrade the native result. If a later PyGRC revision implements the
+mechanism natively, RCAE may consume a native upgrade only after a new
+source-current native-lane validation, not from the earlier producer contract
+alone. `N31-C6` means the return bundle is complete; it is not itself DR6.
+
+For every executed added-mechanism row, the return bundle should also carry:
+
+```text
+source_current_input_allowlist
+source_current_input_allowlist_digest
+unlisted_input_read_status
+lane_specific_control_ids
+inherited_required_control_ids
+complete_control_set_digest
+candidate_specific_regeneration_required
+direct_I3_null_consumption_count
+canonical_topology_digest
+causal_transition_owner
+producer_residue
+naturalization_debt
+```
+
+I9 admission sets direct I3 null consumption to zero. Later rows may reuse I3
+control definitions, but they must regenerate the controls against the actual
+candidate carrier and authority. Candidate C also returns the missing normal-
+step conductance hook as closure debt: its current executable path requires the
+closure to apply effective conductance between native conductance reconstruction
+and native potential/flux consumption.
 
 ## Outcome-Specific Return Recommendations
 

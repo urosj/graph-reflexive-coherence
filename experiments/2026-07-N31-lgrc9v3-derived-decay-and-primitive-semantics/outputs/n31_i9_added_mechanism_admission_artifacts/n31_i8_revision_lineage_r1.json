@@ -1,0 +1,41 @@
+{
+  "I9_consumption": {
+    "exact_current_I8_consumed": true,
+    "reviewed_pre_correction_I8_consumed": false,
+    "scientific_rerun_required_for_lineage_only_correction": false
+  },
+  "artifact_kind": "n31_i8_revision_lineage",
+  "artifact_schema_version": "n31_i8_revision_lineage_r1",
+  "corrections_made": [
+    "manifest_reference_and_count_normalization",
+    "D0_R_scope_qualification",
+    "D0_insufficiency_narrowed_to_autonomous_causal_weakening",
+    "direct_and_transitive_replay_scope_separated",
+    "control_status_boolean_meaning_normalized",
+    "equal_complete_state_scope_made_explicit",
+    "floating_point_boundary_checks_normalized",
+    "I3_null_controls_separated_from_future_candidate_regeneration"
+  ],
+  "current_I8_identity": {
+    "artifact_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+    "identity_role": "corrected_I8_consumed_by_I9",
+    "output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json"
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "2845b11b94d116b1bfe2a7db7e901a2f4d8e9c43ab5f0af029140497f8188cbe",
+  "preserved_scientific_conclusion": {
+    "added_mechanism_admission_reason_qualifier": "d0_insufficient_for_autonomous_causal_weakening",
+    "autonomous_weakening": "unsupported",
+    "formation": "supported",
+    "native_ladder_rung": "DR2",
+    "native_semantic_class": "D0a",
+    "persistence": "supported"
+  },
+  "reviewed_I8_identity": {
+    "artifact_sha256": "not_recorded_in_review_snapshot",
+    "identity_role": "pre_correction_reviewed_I8",
+    "output_digest": "3527615b47e6510acad152647731d405bdb845d7ab380f6b0bc1fb379966a2ba"
+  },
+  "scientific_conclusion_changed": false
+}

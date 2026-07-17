@@ -57,6 +57,30 @@
   interval, the separate D0c/D0b/native-D0a/conditional-reorganization
   classifications, and why the added-mechanism lane remains necessary.
 
+## Iteration 9
+
+- `n31_added_mechanism_admission_i9.md` explains the separate native and
+  added-mechanism DR surfaces, the A/B/C execution admissions, their distinct
+  semantic and authority ceilings, input/control/topology execution boundaries,
+  Candidate C's closure-hook debt, and why no positive producer or closure
+  evidence is assigned before I9-A/B/C.
+
+## Iteration 9-A
+
+- `n31_release_efficacy_attenuation_i9a.md` explains the native-matched
+  fresh/aged release branches, exact receipt-owned phase change, stable
+  in-flight carrier, retained unexpressed source coherence, producer-mediated
+  `DR3` classification, independent-readout blocker for `DR4`, and remaining
+  I10 formal-row/control debt.
+
+## Iteration 9-A.1
+
+- `n31_release_efficacy_downstream_readout_i9a1.md` explains why Candidate A is
+  retained without a second producer, how the later native threshold operation
+  differs from immediate receiver credit, and how balanced receiver/target
+  clamps establish provisional `DR4` with bounded local-C mediation, atomic
+  native refusal, and qualified floating-point endpoint behavior.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

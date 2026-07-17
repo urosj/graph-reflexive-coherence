@@ -1,0 +1,1428 @@
+{
+  "I9_revision_lineage": {
+    "exact_current_contract_consumed": true,
+    "output_digest": "dedb00b9aed5c4e295f872ca3746e62f9c7a05fc51c37c4aa95903b612bb7df7",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9_revision_lineage.json",
+    "sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd"
+  },
+  "acceptance_state": "accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10",
+  "aged_branch": {
+    "amount_policy_input_paths": [
+      "candidate_closure.release_phase",
+      "candidate_policy.q_requested",
+      "candidate_policy.epsilon_A_by_phase",
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence"
+    ],
+    "arrival_receipt": {
+      "amount": 0.1,
+      "budget_error": 0.0,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-1346e465cb599535",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 3.0,
+      "packet_id": "lgrc9v3-packet-dfb7e53dcfd2d582",
+      "scheduler_event_index": 4,
+      "source_lineage_id": "n31_A_release_aged",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "branch_id": "n31_i9a_aged",
+    "budget_delivered": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.6000000000000003,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.6000000000000003
+    },
+    "budget_in_flight": {
+      "budget_error": 2.220446049250313e-16,
+      "conserved_budget_total": 1.6000000000000003,
+      "in_flight_packet_total": 0.1,
+      "node_coherence_total": 1.5000000000000002
+    },
+    "budget_scheduled": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.6,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.6
+    },
+    "closure_state": {
+      "applied_qualifying_event_id": "lgrc9v3-packet-event-a30235d8d4c60637",
+      "artifact_kind": "n31_A_release_phase_closure_state",
+      "artifact_schema_version": "n31_A_release_phase_closure_state_v1",
+      "global_event_count_state_present": false,
+      "pending_qualifying_event_receipt": null,
+      "release_phase": "aged",
+      "release_phase_receipt_count": 1,
+      "wall_clock_state_present": false
+    },
+    "closure_validation": {
+      "receipt_count_input_role": "validation_only_not_amount_selecting",
+      "release_phase": "aged",
+      "release_phase_receipt_count": 1
+    },
+    "departure_receipt": {
+      "amount": 0.1,
+      "budget_error": 2.220446049250313e-16,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-4f373eb837c908a5",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-dfb7e53dcfd2d582",
+      "scheduler_event_index": 3,
+      "source_lineage_id": "n31_A_release_aged",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "epsilon_A": 0.5,
+    "in_flight_mutation_operation_present": false,
+    "native_identity_before_release": {
+      "v1": "990bbd4e3d85c6854161f9cdedbee16c3fb1cb06b7c42621f197ee2f94de7091",
+      "v2": "c28c8a18d841f5a7337a336c12b9156374791ef71a3bf48f680ae0c44d32a5d0"
+    },
+    "observed_input_paths": [
+      "candidate_closure.release_phase",
+      "candidate_closure.release_phase_receipt_count",
+      "candidate_policy.q_requested",
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+      "candidate_policy.epsilon_A_by_phase",
+      "candidate_policy.release_policy_identity",
+      "candidate_topology.registered_release_edge_id",
+      "candidate_topology.registered_release_source_node_id",
+      "candidate_topology.registered_release_receiver_node_id",
+      "candidate_topology.canonical_topology_digest"
+    ],
+    "packet_after_arrival": {
+      "amount": 0.1,
+      "arrival_event_id": "lgrc9v3-packet-event-1346e465cb599535",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-4f373eb837c908a5",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-dfb7e53dcfd2d582",
+      "packet_state": "arrived",
+      "source_lineage_id": "n31_A_release_aged",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_A_release_receiver",
+      "target_node_id": 2
+    },
+    "packet_after_departure": {
+      "amount": 0.1,
+      "arrival_event_id": "lgrc9v3-packet-event-1346e465cb599535",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-4f373eb837c908a5",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-dfb7e53dcfd2d582",
+      "packet_state": "in_flight",
+      "source_lineage_id": "n31_A_release_aged",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_A_release_receiver",
+      "target_node_id": 2
+    },
+    "packet_amount_selected_at_creation_only": true,
+    "phase": "aged",
+    "producer_read_audit": {
+      "global_node_scan_performed": false,
+      "outcome_history_read": false,
+      "route_label_read": false,
+      "semantic_edge_payload_read": false,
+      "unlisted_input_read": false,
+      "wall_clock_read": false
+    },
+    "q_created": 0.1,
+    "q_requested": 0.2,
+    "q_unreleased_derived_counterfactual": 0.1,
+    "q_unreleased_retention_identity": 0.10000000000000003,
+    "receiver_C_after_arrival": 0.30000000000000004,
+    "receiver_C_before": 0.2,
+    "receiver_credit": 0.10000000000000003,
+    "release_policy": {
+      "epsilon_A_by_phase": {
+        "aged": 0.5,
+        "fresh": 1.0
+      },
+      "packet_creation_relation": "q_created = q_requested * epsilon_A(phase)",
+      "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+      "release_policy_schema": "n31_A_release_efficacy_policy_v1"
+    },
+    "scheduled_packet": {
+      "amount": 0.1,
+      "arrival_event_id": "lgrc9v3-packet-event-1346e465cb599535",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-4f373eb837c908a5",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-dfb7e53dcfd2d582",
+      "packet_state": "scheduled",
+      "source_lineage_id": "n31_A_release_aged",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_A_release_receiver",
+      "target_node_id": 2
+    },
+    "separate_q_unreleased_state_created": false,
+    "source_C_after_departure": 0.5000000000000001,
+    "source_C_before": 0.6000000000000001,
+    "source_debit": 0.09999999999999998,
+    "validation_only_input_paths": [
+      "candidate_closure.release_phase_receipt_count",
+      "candidate_policy.release_policy_identity",
+      "candidate_topology.registered_release_edge_id",
+      "candidate_topology.registered_release_source_node_id",
+      "candidate_topology.registered_release_receiver_node_id",
+      "candidate_topology.canonical_topology_digest"
+    ]
+  },
+  "artifact_kind": "release_efficacy_source_current_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_release_efficacy_contract",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_preregistration.json",
+      "sha256": "fbf397d6fe59d6f1a6fac0d4b1d296e83af1572be4a6d947d0864f903d07c036"
+    },
+    {
+      "artifact_role": "I9_revision_lineage_and_exact_contract_binding",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9_revision_lineage.json",
+      "sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd"
+    },
+    {
+      "artifact_role": "shared_post_formation_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_shared_post_formation_snapshot.json",
+      "sha256": "58a7de9ae6c409556e843095dca1df5369e9f4b9261ef623f96a5180d1ef34ba"
+    },
+    {
+      "artifact_role": "fresh_release_phase_closure_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_closure_state.json",
+      "sha256": "81ef946fae7b5a71761ff11a39829a550e3f7ce5316ff5db0999e9d45e1e2c0e"
+    },
+    {
+      "artifact_role": "aged_release_phase_closure_state",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_closure_state.json",
+      "sha256": "4811b331d289f93edb6e9668fe93631f5536ac79ba2a46648273c45a36fa290f"
+    },
+    {
+      "artifact_role": "fresh_branch_final_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_final_snapshot.json",
+      "sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703"
+    },
+    {
+      "artifact_role": "aged_branch_final_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_final_snapshot.json",
+      "sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced"
+    },
+    {
+      "artifact_role": "composed_native_closure_policy_topology_identity",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+      "sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a"
+    }
+  ],
+  "artifact_schema_version": "n31_i9a_release_efficacy_trace_v1",
+  "authority": "producer_mediated",
+  "branch_invariants": {
+    "aged": {
+      "budget_conserved": true,
+      "packet_amount_stable_scheduled_departed_arrived": true,
+      "q_unreleased_retained_at_source": true,
+      "receiver_credit_equals_q_created": true,
+      "source_debit_equals_q_created": true
+    },
+    "fresh": {
+      "budget_conserved": true,
+      "packet_amount_stable_scheduled_departed_arrived": true,
+      "q_unreleased_retained_at_source": true,
+      "receiver_credit_equals_q_created": true,
+      "source_debit_equals_q_created": true
+    }
+  },
+  "candidate_id": "A_release_efficacy_attenuation",
+  "checks": [
+    {
+      "check_id": "exact_I2_I9_and_candidate_contract_sources_consumed",
+      "detail": [
+        {
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+        },
+        {
+          "actual_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "actual_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "expected_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "expected_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_admission_i9.json"
+        },
+        {
+          "actual_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+          "actual_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+          "expected_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+          "expected_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9_added_mechanism_admission_artifacts/n31_i9_candidate_contract_bundle.json"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "candidate_A_admission_contract_consumed_exactly",
+      "detail": "A_release_efficacy_attenuation",
+      "passed": true
+    },
+    {
+      "check_id": "canonical_executable_topology_matches_I9",
+      "detail": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f",
+      "passed": true
+    },
+    {
+      "check_id": "exact_formation_arrival_ages_phase_once",
+      "detail": {
+        "phase_after": "aged",
+        "phase_before": "fresh",
+        "receipt_applied": true,
+        "receipt_count_after": 1,
+        "receipt_count_before": 0,
+        "receipt_matched_exact_predicate": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unrelated_event_does_not_age_release_phase",
+      "detail": {
+        "application": {
+          "phase_after": "fresh",
+          "phase_before": "fresh",
+          "receipt_applied": false,
+          "receipt_count_after": 0,
+          "receipt_count_before": 0,
+          "receipt_matched_exact_predicate": false
+        },
+        "closure_after": {
+          "applied_qualifying_event_id": null,
+          "artifact_kind": "n31_A_release_phase_closure_state",
+          "artifact_schema_version": "n31_A_release_phase_closure_state_v1",
+          "global_event_count_state_present": false,
+          "pending_qualifying_event_receipt": {
+            "control_placeholder": true
+          },
+          "release_phase": "fresh",
+          "release_phase_receipt_count": 0,
+          "wall_clock_state_present": false
+        },
+        "global_processed_event_count_increased": true,
+        "release_phase_advanced": false,
+        "unrelated_receipt": {
+          "amount": 0.01,
+          "budget_error": 0.0,
+          "edge_id": 1,
+          "event_id": "lgrc9v3-packet-event-86f2d688800ced92",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 3.0,
+          "packet_id": "lgrc9v3-packet-25b043a1e72900e8",
+          "scheduler_event_index": 4,
+          "source_lineage_id": "n31_A_unrelated_control_lineage",
+          "source_node_id": 2,
+          "target_node_id": 1
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "fresh_and_aged_native_state_matched_before_release",
+      "detail": {
+        "v1": "990bbd4e3d85c6854161f9cdedbee16c3fb1cb06b7c42621f197ee2f94de7091",
+        "v2": "c28c8a18d841f5a7337a336c12b9156374791ef71a3bf48f680ae0c44d32a5d0"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "fresh_and_aged_closure_difference_is_registered_phase_bundle_only",
+      "detail": {
+        "allowed_phase_bundle_paths": [
+          "applied_qualifying_event_id",
+          "pending_qualifying_event_receipt",
+          "release_phase",
+          "release_phase_receipt_count"
+        ],
+        "changed_paths": [
+          "applied_qualifying_event_id",
+          "pending_qualifying_event_receipt",
+          "release_phase",
+          "release_phase_receipt_count"
+        ],
+        "only_registered_phase_bundle_differs": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "release_efficacy_relation_matches_preregistration",
+      "detail": {
+        "DR4_shape_observed": true,
+        "aged_to_fresh_q_created_ratio": 0.5,
+        "difference_matches_preregistration": true,
+        "expected_difference": 0.1,
+        "expected_ratio": 0.5,
+        "fresh_minus_aged_q_created": 0.1,
+        "immediate_receiver_credit_difference_observed": true,
+        "independent_later_receiver_readout_blocker": "matched_receiver_side_native_operation_pending",
+        "independent_later_receiver_readout_supported": false,
+        "ratio_matches_preregistration": true,
+        "receiver_credit_difference": 0.09999999999999998
+      },
+      "passed": true
+    },
+    {
+      "check_id": "packet_amount_selected_only_at_creation_and_stable_in_flight",
+      "detail": {
+        "aged": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        },
+        "fresh": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_debit_packet_amount_and_receiver_credit_exact",
+      "detail": {
+        "aged": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        },
+        "fresh": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "q_unreleased_remains_source_C_without_reservoir",
+      "detail": {
+        "aged": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        },
+        "fresh": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "node_plus_packet_budget_conserved",
+      "detail": {
+        "aged": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        },
+        "fresh": {
+          "budget_conserved": true,
+          "packet_amount_stable_scheduled_departed_arrived": true,
+          "q_unreleased_retained_at_source": true,
+          "receiver_credit_equals_q_created": true,
+          "source_debit_equals_q_created": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "immediate_receiver_credit_difference_is_not_DR4_readout",
+      "detail": {
+        "DR4_shape_observed": true,
+        "aged_to_fresh_q_created_ratio": 0.5,
+        "difference_matches_preregistration": true,
+        "expected_difference": 0.1,
+        "expected_ratio": 0.5,
+        "fresh_minus_aged_q_created": 0.1,
+        "immediate_receiver_credit_difference_observed": true,
+        "independent_later_receiver_readout_blocker": "matched_receiver_side_native_operation_pending",
+        "independent_later_receiver_readout_supported": false,
+        "ratio_matches_preregistration": true,
+        "receiver_credit_difference": 0.09999999999999998
+      },
+      "passed": true
+    },
+    {
+      "check_id": "receipt_count_is_validation_only_and_malformed_pairs_refuse",
+      "detail": {
+        "all_malformed_phase_count_pairs_refused": true,
+        "cases": [
+          {
+            "case_id": "fresh_phase_with_aged_count",
+            "error": "release phase closure bundle is inconsistent",
+            "malformed_receipt_count": 1,
+            "q_created_selected": false,
+            "release_evaluation_refused": true,
+            "release_phase": "fresh"
+          },
+          {
+            "case_id": "aged_phase_with_fresh_count",
+            "error": "release phase closure bundle is inconsistent",
+            "malformed_receipt_count": 0,
+            "q_created_selected": false,
+            "release_evaluation_refused": true,
+            "release_phase": "aged"
+          }
+        ],
+        "input_role": "validation_only_not_amount_selecting"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "release_policy_identity_matches_I9_contract",
+      "detail": {
+        "epsilon_A_by_phase": {
+          "aged": 0.5,
+          "fresh": 1.0
+        },
+        "packet_creation_relation": "q_created = q_requested * epsilon_A(phase)",
+        "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+        "release_policy_schema": "n31_A_release_efficacy_policy_v1"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "semantic_edge_payload_excluded_from_producer_inputs",
+      "detail": {
+        "admitted_input_paths": [
+          "candidate_closure.release_phase",
+          "candidate_closure.release_phase_receipt_count",
+          "candidate_policy.q_requested",
+          "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "candidate_policy.epsilon_A_by_phase",
+          "candidate_policy.release_policy_identity",
+          "candidate_topology.registered_release_edge_id",
+          "candidate_topology.registered_release_source_node_id",
+          "candidate_topology.registered_release_receiver_node_id",
+          "candidate_topology.canonical_topology_digest"
+        ],
+        "observed_inputs_exact": true,
+        "unlisted_input_read_status": "blocks_candidate_row"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_current_input_allowlist_observed_exactly",
+      "detail": {
+        "admitted_input_paths": [
+          "candidate_closure.release_phase",
+          "candidate_closure.release_phase_receipt_count",
+          "candidate_policy.q_requested",
+          "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "candidate_policy.epsilon_A_by_phase",
+          "candidate_policy.release_policy_identity",
+          "candidate_topology.registered_release_edge_id",
+          "candidate_topology.registered_release_source_node_id",
+          "candidate_topology.registered_release_receiver_node_id",
+          "candidate_topology.canonical_topology_digest"
+        ],
+        "observed_inputs_exact": true,
+        "unlisted_input_read_status": "blocks_candidate_row"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_and_closure_restoration_exact",
+      "detail": {
+        "closure_json_roundtrip_exact": true,
+        "composed_candidate_identity": {
+          "aged_identity": "8bd96cc70e0f63274b76fc20284484b68da7bbf5aaeb96fc3472c9f681449f4a",
+          "fresh_identity": "de417466c45aa37580f18ff310b2ca2860231851d7d42e04f5fc8d632074cd9a",
+          "output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+          "sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a"
+        },
+        "duplicate_branch_outcome_replay_exact": true,
+        "full_I10_replay_matrix_pending": true,
+        "shared_native_snapshot_v1_exact": true,
+        "shared_native_snapshot_v2_exact": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_branch_outcome_replay_exact",
+      "detail": {
+        "closure_json_roundtrip_exact": true,
+        "composed_candidate_identity": {
+          "aged_identity": "8bd96cc70e0f63274b76fc20284484b68da7bbf5aaeb96fc3472c9f681449f4a",
+          "fresh_identity": "de417466c45aa37580f18ff310b2ca2860231851d7d42e04f5fc8d632074cd9a",
+          "output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+          "sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a"
+        },
+        "duplicate_branch_outcome_replay_exact": true,
+        "full_I10_replay_matrix_pending": true,
+        "shared_native_snapshot_v1_exact": true,
+        "shared_native_snapshot_v2_exact": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "composed_native_closure_policy_topology_identity_recorded",
+      "detail": {
+        "aged_identity": "8bd96cc70e0f63274b76fc20284484b68da7bbf5aaeb96fc3472c9f681449f4a",
+        "fresh_identity": "de417466c45aa37580f18ff310b2ca2860231851d7d42e04f5fc8d632074cd9a",
+        "output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+        "sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "lane_control_statuses_normalized_without_failed_open",
+      "detail": [
+        {
+          "actual_result": "scheduled_departed_and_arrived_packet_amounts_are_identical_per_branch",
+          "blocked_condition": "in_flight_packet_attenuation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "in_flight_packet_attenuation",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4_plus",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "difference_occurs_at_packet_creation_and_is_not_relabelled_as_carrier_decay",
+          "blocked_condition": "carrier_amount_vs_release_efficacy_confound",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "carrier_amount_vs_release_efficacy_confound",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_classification",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "only_exact_formation_arrival_advances_phase; unrelated_event_does_not",
+          "blocked_condition": "unregistered_age_or_phase",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "unregistered_age_or_phase",
+          "control_status": "failed_closed",
+          "expected_result": "false_positive_path_rejected",
+          "rung_effect": "failure_blocks_A_DR3_plus",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "only_q_created_is_debited_and_q_unreleased_remains_release_source_C",
+          "blocked_condition": "unreleased_coherence_as_destroyed",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "unreleased_coherence_as_destroyed",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4_plus",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "numeric_topology_bindings_only; semantic_edge_payload_not_read",
+          "blocked_condition": "route_label_in_amount_policy",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "route_label_in_amount_policy",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_row",
+          "scope_reason_if_not_applicable": null
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I9_revision_lineage_and_formal_row_boundary_explicit",
+      "detail": {
+        "exact_current_contract_consumed": true,
+        "output_digest": "dedb00b9aed5c4e295f872ca3746e62f9c7a05fc51c37c4aa95903b612bb7df7",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9_revision_lineage.json",
+        "sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "complete_control_matrix_remains_pending_I10",
+      "detail": {
+        "complete_I10_matrix_pending": true,
+        "complete_control_count": 57,
+        "lane_specific_control_count": 5,
+        "lane_specific_control_status_counts": {
+          "failed_closed": 1,
+          "failed_open": 0,
+          "passed": 4
+        },
+        "lane_specific_controls_resolved_without_failed_open": true,
+        "resolved_control_count": 16,
+        "unresolved_control_ids": [
+          "label_only_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "relation_weakens_but_has_no_later_readout_effect",
+          "RCAE_demand_as_graph_evidence",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "export_authoring_producer_call_retained_as_D0_R",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "route_mass_loss_as_organization_weakening_relabel",
+          "organization_weakening_without_mediation_as_causal_decay_relabel",
+          "constant_mass_internal_reorganization_as_export_relabel",
+          "unclosed_route_boundary_continuity",
+          "added_export_policy_as_D0_R_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "forming_packet_continuation_as_later_independent_readout",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "pre_outcome_release_efficacy_contract",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_preregistration.json",
+          "sha256": "fbf397d6fe59d6f1a6fac0d4b1d296e83af1572be4a6d947d0864f903d07c036"
+        },
+        {
+          "artifact_role": "I9_revision_lineage_and_exact_contract_binding",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9_revision_lineage.json",
+          "sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd"
+        },
+        {
+          "artifact_role": "shared_post_formation_native_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_shared_post_formation_snapshot.json",
+          "sha256": "58a7de9ae6c409556e843095dca1df5369e9f4b9261ef623f96a5180d1ef34ba"
+        },
+        {
+          "artifact_role": "fresh_release_phase_closure_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_closure_state.json",
+          "sha256": "81ef946fae7b5a71761ff11a39829a550e3f7ce5316ff5db0999e9d45e1e2c0e"
+        },
+        {
+          "artifact_role": "aged_release_phase_closure_state",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_closure_state.json",
+          "sha256": "4811b331d289f93edb6e9668fe93631f5536ac79ba2a46648273c45a36fa290f"
+        },
+        {
+          "artifact_role": "fresh_branch_final_native_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_final_snapshot.json",
+          "sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703"
+        },
+        {
+          "artifact_role": "aged_branch_final_native_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_final_snapshot.json",
+          "sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced"
+        },
+        {
+          "artifact_role": "composed_native_closure_policy_topology_identity",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+          "sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "closure_phase_difference_audit": {
+    "allowed_phase_bundle_paths": [
+      "applied_qualifying_event_id",
+      "pending_qualifying_event_receipt",
+      "release_phase",
+      "release_phase_receipt_count"
+    ],
+    "changed_paths": [
+      "applied_qualifying_event_id",
+      "pending_qualifying_event_receipt",
+      "release_phase",
+      "release_phase_receipt_count"
+    ],
+    "only_registered_phase_bundle_differs": true
+  },
+  "comparison": {
+    "DR4_shape_observed": true,
+    "aged_to_fresh_q_created_ratio": 0.5,
+    "difference_matches_preregistration": true,
+    "expected_difference": 0.1,
+    "expected_ratio": 0.5,
+    "fresh_minus_aged_q_created": 0.1,
+    "immediate_receiver_credit_difference_observed": true,
+    "independent_later_receiver_readout_blocker": "matched_receiver_side_native_operation_pending",
+    "independent_later_receiver_readout_supported": false,
+    "ratio_matches_preregistration": true,
+    "receiver_credit_difference": 0.09999999999999998
+  },
+  "control_resolution": {
+    "complete_I10_matrix_pending": true,
+    "complete_control_count": 57,
+    "lane_specific_control_count": 5,
+    "lane_specific_control_status_counts": {
+      "failed_closed": 1,
+      "failed_open": 0,
+      "passed": 4
+    },
+    "lane_specific_controls_resolved_without_failed_open": true,
+    "resolved_control_count": 16,
+    "unresolved_control_ids": [
+      "label_only_decay",
+      "post_hoc_weakening_trace",
+      "forming_activity_never_stopped",
+      "relation_persists_but_does_not_weaken",
+      "relation_weakens_but_has_no_later_readout_effect",
+      "RCAE_demand_as_graph_evidence",
+      "lossy_node_scalar_match_as_complete_state",
+      "invented_C_slow_state",
+      "export_authoring_producer_call_retained_as_D0_R",
+      "instantaneous_geometry_as_durable_decay",
+      "derived_observable_as_causal_trail",
+      "cache_removed_and_recomputed",
+      "cache_divergence",
+      "observable_disconnected_from_transport",
+      "slow_organization_clamp",
+      "complete_state_matched_history_contrast",
+      "ordinary_outward_flux_as_added_leakage_relabel",
+      "route_mass_loss_as_organization_weakening_relabel",
+      "organization_weakening_without_mediation_as_causal_decay_relabel",
+      "constant_mass_internal_reorganization_as_export_relabel",
+      "unclosed_route_boundary_continuity",
+      "added_export_policy_as_D0_R_relabel",
+      "mass_unmatched_organization_intervention",
+      "proper_time_annotation_as_causal_alignment",
+      "added_coincidence_window_as_native_temporal_organization",
+      "arrival_histogram_as_causal_mediation",
+      "fixed_delay_single_path_as_dispersion",
+      "periodic_rephasing_as_monotonic_decay",
+      "diagnostic_domain_as_mediator_domain",
+      "mixed_domain_without_load_bearing_isolation",
+      "forming_packet_continuation_as_later_independent_readout",
+      "temporal_intervention_with_unmatched_state",
+      "geometric_observable_without_local_transport_intervention",
+      "bounded_partial_disposition_with_supported_row_decision",
+      "blocked_representation_with_supported_row_decision",
+      "full_mediation_with_false_mediated_change",
+      "absent_mediation_with_true_mediated_change",
+      "mixed_domain_unresolved_claims_DR4",
+      "blocked_D0a_authority_as_coherence_only_positive",
+      "D0c_persistence_retained_as_same_D0c_row",
+      "D0b_transport_feedback_without_authority_reclassification"
+    ]
+  },
+  "control_results": [
+    {
+      "actual_result": "scheduled_departed_and_arrived_packet_amounts_are_identical_per_branch",
+      "blocked_condition": "in_flight_packet_attenuation",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "in_flight_packet_attenuation",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_A_DR4_plus",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "difference_occurs_at_packet_creation_and_is_not_relabelled_as_carrier_decay",
+      "blocked_condition": "carrier_amount_vs_release_efficacy_confound",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "carrier_amount_vs_release_efficacy_confound",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_A_classification",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "only_exact_formation_arrival_advances_phase; unrelated_event_does_not",
+      "blocked_condition": "unregistered_age_or_phase",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "unregistered_age_or_phase",
+      "control_status": "failed_closed",
+      "expected_result": "false_positive_path_rejected",
+      "rung_effect": "failure_blocks_A_DR3_plus",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "only_q_created_is_debited_and_q_unreleased_remains_release_source_C",
+      "blocked_condition": "unreleased_coherence_as_destroyed",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "unreleased_coherence_as_destroyed",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_A_DR4_plus",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "numeric_topology_bindings_only; semantic_edge_payload_not_read",
+      "blocked_condition": "route_label_in_amount_policy",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "route_label_in_amount_policy",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_row",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "closure_contains_no_wall_clock_state_or_read",
+      "blocked_condition": "wall_clock_decay",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "wall_clock_decay",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "numeric_frozen_fixture_roles_only",
+      "blocked_condition": "global_route_selector",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "global_route_selector",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "all_closure_transition_state_serialized",
+      "blocked_condition": "hidden_producer_update",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "hidden_producer_update",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "producer_call_ledger_complete",
+      "blocked_condition": "unrecorded_post_formation_producer_call",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "unrecorded_post_formation_producer_call",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "exact_receipt_owned_phase_state_recorded",
+      "blocked_condition": "missing_internal_time_owner",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_internal_time_owner",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "source_packet_receiver_and_budget_invariants_recorded",
+      "blocked_condition": "missing_invariant",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_invariant",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "native_closure_and_composed_identity_roundtrip_exact",
+      "blocked_condition": "missing_restoration_state",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "missing_restoration_state",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "runtime_reads_exclude_report_digests",
+      "blocked_condition": "report_digest_as_runtime_state",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "report_digest_as_runtime_state",
+      "control_status": "passed",
+      "expected_result": "conformance_requirement_satisfied",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "producer_authority_relabel_rejected",
+      "blocked_condition": "native_relabel_from_producer",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "native_relabel_from_producer",
+      "control_status": "failed_closed",
+      "expected_result": "false_positive_path_rejected",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "trail_or_stigmergy_relabel_rejected",
+      "blocked_condition": "trail_or_stigmergy_relabel",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "trail_or_stigmergy_relabel",
+      "control_status": "failed_closed",
+      "expected_result": "false_positive_path_rejected",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    },
+    {
+      "actual_result": "candidate_classified_as_A_not_D0",
+      "blocked_condition": "producer_scheduled_D0_decay",
+      "claim_allowed_when_control_triggers": false,
+      "control_id": "producer_scheduled_D0_decay",
+      "control_status": "failed_closed",
+      "expected_result": "false_positive_path_rejected",
+      "rung_effect": "failure_blocks_provisional_A_rung",
+      "scope_reason_if_not_applicable": null
+    }
+  ],
+  "derived_report_only": false,
+  "experiment": "N31",
+  "failed_checks": [],
+  "fixture_canonical_topology_digest": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f",
+  "fixture_identity": {
+    "edge_ids": [
+      0,
+      1
+    ],
+    "edge_payloads": [
+      {
+        "conductance": 1.0,
+        "delay": 1.0,
+        "edge_id": 0,
+        "orientation": "canonical_source_to_target",
+        "payload": {
+          "fixture_relation": "formation_source_to_release_source"
+        },
+        "source_node_id": 0,
+        "source_port_id": 1,
+        "target_node_id": 1,
+        "target_port_id": 1
+      },
+      {
+        "conductance": 1.0,
+        "delay": 1.0,
+        "edge_id": 1,
+        "orientation": "canonical_source_to_target",
+        "payload": {
+          "fixture_relation": "release_source_to_release_receiver"
+        },
+        "source_node_id": 1,
+        "source_port_id": 2,
+        "target_node_id": 2,
+        "target_port_id": 1
+      }
+    ],
+    "node_ids": [
+      0,
+      1,
+      2
+    ],
+    "node_payloads": [
+      {
+        "node_id": 0,
+        "payload": {
+          "fixture_role": "formation_source"
+        }
+      },
+      {
+        "node_id": 1,
+        "payload": {
+          "fixture_role": "release_source"
+        }
+      },
+      {
+        "node_id": 2,
+        "payload": {
+          "fixture_role": "release_receiver"
+        }
+      }
+    ],
+    "role_to_node_id": {
+      "formation_source": 0,
+      "release_receiver": 2,
+      "release_source": 1
+    }
+  },
+  "formal_candidate_row_pending_I10": true,
+  "formal_candidate_row_status": "pending_recursive_I2_schema_instantiation_and_independent_DR4_readout",
+  "formation": {
+    "arrival_receipt": {
+      "amount": 0.2,
+      "budget_error": 0.0,
+      "edge_id": 0,
+      "event_id": "lgrc9v3-packet-event-a30235d8d4c60637",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 1.0,
+      "packet_id": "lgrc9v3-packet-2d6ec0fada9874a2",
+      "scheduler_event_index": 2,
+      "source_lineage_id": "n31_A_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    "departure_receipt": {
+      "amount": 0.2,
+      "budget_error": 2.220446049250313e-16,
+      "edge_id": 0,
+      "event_id": "lgrc9v3-packet-event-ef1ae77ebe26497d",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 0.0,
+      "packet_id": "lgrc9v3-packet-2d6ec0fada9874a2",
+      "scheduler_event_index": 1,
+      "source_lineage_id": "n31_A_formation_lineage",
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    "qualifying_event_exact": true,
+    "runtime_budget": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.6,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.6
+    },
+    "shared_native_identity": {
+      "v1": "990bbd4e3d85c6854161f9cdedbee16c3fb1cb06b7c42621f197ee2f94de7091",
+      "v2": "c28c8a18d841f5a7337a336c12b9156374791ef71a3bf48f680ae0c44d32a5d0"
+    }
+  },
+  "fresh_aged_native_state_matched_before_release": true,
+  "fresh_branch": {
+    "amount_policy_input_paths": [
+      "candidate_closure.release_phase",
+      "candidate_policy.q_requested",
+      "candidate_policy.epsilon_A_by_phase",
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence"
+    ],
+    "arrival_receipt": {
+      "amount": 0.2,
+      "budget_error": 0.0,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-1aabfad5af9a24ff",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 3.0,
+      "packet_id": "lgrc9v3-packet-9f508566b4b9e9b3",
+      "scheduler_event_index": 4,
+      "source_lineage_id": "n31_A_release_fresh",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "branch_id": "n31_i9a_fresh",
+    "budget_delivered": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.6,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.6
+    },
+    "budget_in_flight": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.6,
+      "in_flight_packet_total": 0.2,
+      "node_coherence_total": 1.4000000000000001
+    },
+    "budget_scheduled": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.6,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.6
+    },
+    "closure_state": {
+      "applied_qualifying_event_id": null,
+      "artifact_kind": "n31_A_release_phase_closure_state",
+      "artifact_schema_version": "n31_A_release_phase_closure_state_v1",
+      "global_event_count_state_present": false,
+      "pending_qualifying_event_receipt": {
+        "amount": 0.2,
+        "budget_error": 0.0,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-a30235d8d4c60637",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-2d6ec0fada9874a2",
+        "scheduler_event_index": 2,
+        "source_lineage_id": "n31_A_formation_lineage",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      "release_phase": "fresh",
+      "release_phase_receipt_count": 0,
+      "wall_clock_state_present": false
+    },
+    "closure_validation": {
+      "receipt_count_input_role": "validation_only_not_amount_selecting",
+      "release_phase": "fresh",
+      "release_phase_receipt_count": 0
+    },
+    "departure_receipt": {
+      "amount": 0.2,
+      "budget_error": 0.0,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-e3ee5e1d100212ed",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-9f508566b4b9e9b3",
+      "scheduler_event_index": 3,
+      "source_lineage_id": "n31_A_release_fresh",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "epsilon_A": 1.0,
+    "in_flight_mutation_operation_present": false,
+    "native_identity_before_release": {
+      "v1": "990bbd4e3d85c6854161f9cdedbee16c3fb1cb06b7c42621f197ee2f94de7091",
+      "v2": "c28c8a18d841f5a7337a336c12b9156374791ef71a3bf48f680ae0c44d32a5d0"
+    },
+    "observed_input_paths": [
+      "candidate_closure.release_phase",
+      "candidate_closure.release_phase_receipt_count",
+      "candidate_policy.q_requested",
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+      "candidate_policy.epsilon_A_by_phase",
+      "candidate_policy.release_policy_identity",
+      "candidate_topology.registered_release_edge_id",
+      "candidate_topology.registered_release_source_node_id",
+      "candidate_topology.registered_release_receiver_node_id",
+      "candidate_topology.canonical_topology_digest"
+    ],
+    "packet_after_arrival": {
+      "amount": 0.2,
+      "arrival_event_id": "lgrc9v3-packet-event-1aabfad5af9a24ff",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-e3ee5e1d100212ed",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-9f508566b4b9e9b3",
+      "packet_state": "arrived",
+      "source_lineage_id": "n31_A_release_fresh",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_A_release_receiver",
+      "target_node_id": 2
+    },
+    "packet_after_departure": {
+      "amount": 0.2,
+      "arrival_event_id": "lgrc9v3-packet-event-1aabfad5af9a24ff",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-e3ee5e1d100212ed",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-9f508566b4b9e9b3",
+      "packet_state": "in_flight",
+      "source_lineage_id": "n31_A_release_fresh",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_A_release_receiver",
+      "target_node_id": 2
+    },
+    "packet_amount_selected_at_creation_only": true,
+    "phase": "fresh",
+    "producer_read_audit": {
+      "global_node_scan_performed": false,
+      "outcome_history_read": false,
+      "route_label_read": false,
+      "semantic_edge_payload_read": false,
+      "unlisted_input_read": false,
+      "wall_clock_read": false
+    },
+    "q_created": 0.2,
+    "q_requested": 0.2,
+    "q_unreleased_derived_counterfactual": 0.0,
+    "q_unreleased_retention_identity": 0.0,
+    "receiver_C_after_arrival": 0.4,
+    "receiver_C_before": 0.2,
+    "receiver_credit": 0.2,
+    "release_policy": {
+      "epsilon_A_by_phase": {
+        "aged": 0.5,
+        "fresh": 1.0
+      },
+      "packet_creation_relation": "q_created = q_requested * epsilon_A(phase)",
+      "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+      "release_policy_schema": "n31_A_release_efficacy_policy_v1"
+    },
+    "scheduled_packet": {
+      "amount": 0.2,
+      "arrival_event_id": "lgrc9v3-packet-event-1aabfad5af9a24ff",
+      "arrival_event_time_key": 3.0,
+      "arrival_scheduler_event_index": 4,
+      "departure_event_id": "lgrc9v3-packet-event-e3ee5e1d100212ed",
+      "departure_event_time_key": 2.0,
+      "departure_scheduler_event_index": 3,
+      "edge_id": 1,
+      "packet_id": "lgrc9v3-packet-9f508566b4b9e9b3",
+      "packet_state": "scheduled",
+      "source_lineage_id": "n31_A_release_fresh",
+      "source_node_id": 1,
+      "target_lineage_id": "n31_A_release_receiver",
+      "target_node_id": 2
+    },
+    "separate_q_unreleased_state_created": false,
+    "source_C_after_departure": 0.4000000000000001,
+    "source_C_before": 0.6000000000000001,
+    "source_debit": 0.2,
+    "validation_only_input_paths": [
+      "candidate_closure.release_phase_receipt_count",
+      "candidate_policy.release_policy_identity",
+      "candidate_topology.registered_release_edge_id",
+      "candidate_topology.registered_release_source_node_id",
+      "candidate_topology.registered_release_receiver_node_id",
+      "candidate_topology.canonical_topology_digest"
+    ]
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "input_allowlist_audit": {
+    "admitted_input_paths": [
+      "candidate_closure.release_phase",
+      "candidate_closure.release_phase_receipt_count",
+      "candidate_policy.q_requested",
+      "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+      "candidate_policy.epsilon_A_by_phase",
+      "candidate_policy.release_policy_identity",
+      "candidate_topology.registered_release_edge_id",
+      "candidate_topology.registered_release_source_node_id",
+      "candidate_topology.registered_release_receiver_node_id",
+      "candidate_topology.canonical_topology_digest"
+    ],
+    "observed_inputs_exact": true,
+    "unlisted_input_read_status": "blocks_candidate_row"
+  },
+  "iteration": "9-A",
+  "output_digest": "e72aa25e3ff42cc8b37c62e31c7f5e42a6f16b941a8803534075a09c84610b0e",
+  "phase_transition": {
+    "phase_after": "aged",
+    "phase_before": "fresh",
+    "receipt_applied": true,
+    "receipt_count_after": 1,
+    "receipt_count_before": 0,
+    "receipt_matched_exact_predicate": true
+  },
+  "preregistration": {
+    "output_digest": "187696e0d50825b840da782f4c97ed5afa892eaece19ffbc724c803c114207a3",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_preregistration.json",
+    "sha256": "fbf397d6fe59d6f1a6fac0d4b1d296e83af1572be4a6d947d0864f903d07c036"
+  },
+  "receipt_count_validation_control": {
+    "all_malformed_phase_count_pairs_refused": true,
+    "cases": [
+      {
+        "case_id": "fresh_phase_with_aged_count",
+        "error": "release phase closure bundle is inconsistent",
+        "malformed_receipt_count": 1,
+        "q_created_selected": false,
+        "release_evaluation_refused": true,
+        "release_phase": "fresh"
+      },
+      {
+        "case_id": "aged_phase_with_fresh_count",
+        "error": "release phase closure bundle is inconsistent",
+        "malformed_receipt_count": 0,
+        "q_created_selected": false,
+        "release_evaluation_refused": true,
+        "release_phase": "aged"
+      }
+    ],
+    "input_role": "validation_only_not_amount_selecting"
+  },
+  "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+  "restoration_and_replay": {
+    "closure_json_roundtrip_exact": true,
+    "composed_candidate_identity": {
+      "aged_identity": "8bd96cc70e0f63274b76fc20284484b68da7bbf5aaeb96fc3472c9f681449f4a",
+      "fresh_identity": "de417466c45aa37580f18ff310b2ca2860231851d7d42e04f5fc8d632074cd9a",
+      "output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+      "sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a"
+    },
+    "duplicate_branch_outcome_replay_exact": true,
+    "full_I10_replay_matrix_pending": true,
+    "shared_native_snapshot_v1_exact": true,
+    "shared_native_snapshot_v2_exact": true
+  },
+  "semantic_class": "A",
+  "source_current_runtime_artifact": true,
+  "source_current_trace_evidence_only": true,
+  "status": "passed",
+  "unrelated_event_control": {
+    "application": {
+      "phase_after": "fresh",
+      "phase_before": "fresh",
+      "receipt_applied": false,
+      "receipt_count_after": 0,
+      "receipt_count_before": 0,
+      "receipt_matched_exact_predicate": false
+    },
+    "closure_after": {
+      "applied_qualifying_event_id": null,
+      "artifact_kind": "n31_A_release_phase_closure_state",
+      "artifact_schema_version": "n31_A_release_phase_closure_state_v1",
+      "global_event_count_state_present": false,
+      "pending_qualifying_event_receipt": {
+        "control_placeholder": true
+      },
+      "release_phase": "fresh",
+      "release_phase_receipt_count": 0,
+      "wall_clock_state_present": false
+    },
+    "global_processed_event_count_increased": true,
+    "release_phase_advanced": false,
+    "unrelated_receipt": {
+      "amount": 0.01,
+      "budget_error": 0.0,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-86f2d688800ced92",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 3.0,
+      "packet_id": "lgrc9v3-packet-25b043a1e72900e8",
+      "scheduler_event_index": 4,
+      "source_lineage_id": "n31_A_unrelated_control_lineage",
+      "source_node_id": 2,
+      "target_node_id": 1
+    }
+  }
+}

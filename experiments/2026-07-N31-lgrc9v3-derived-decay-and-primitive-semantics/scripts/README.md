@@ -114,6 +114,51 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0_replay_controls_classification_i8.py
 ```
 
+## Iteration 9
+
+- `build_n31_added_mechanism_admission_i9.py` consumes exact I2/I8 identities,
+  records I8R1 lineage, freezes candidate-specific A/B/C input allowlists,
+  complete regenerated-control obligations, canonical executable topologies,
+  and causal paths, keeps every added-mechanism lane at `DR0/not_executed`,
+  preserves native D0a at `DR2`, and emits the lane-qualified I9 admission
+  artifact and report.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_added_mechanism_admission_i9.py
+```
+
+## Iteration 9-A
+
+- `build_n31_release_efficacy_attenuation_i9a.py` reconstructs the canonical
+  Candidate A fixture, forms one exact release-phase receipt, runs native-
+  matched fresh and aged packet-creation branches, verifies packet lifecycle
+  conservation and restoration, separates phase selection from receipt-count
+  validation, excludes semantic edge payloads, composes candidate identity,
+  executes the unrelated-event phase control, and emits the producer-mediated
+  `DR3` result with the independent `DR4` readout still blocked.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_release_efficacy_attenuation_i9a.py
+```
+
+## Iteration 9-A.1
+
+- `build_n31_release_efficacy_downstream_readout_i9a1.py` consumes exact I9-A
+  final snapshots, preregisters a five-point receiver departure sweep, keeps
+  Candidate A inactive during readout, runs balanced receiver/target clamps,
+  proves state-neutral atomic refusal, records I9/I9-A revision lineage, and
+  emits the bounded provisional producer-mediated `DR4` result.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_release_efficacy_downstream_readout_i9a1.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

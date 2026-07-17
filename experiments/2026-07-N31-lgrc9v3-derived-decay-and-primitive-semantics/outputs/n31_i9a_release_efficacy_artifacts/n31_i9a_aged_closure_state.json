@@ -1,0 +1,10 @@
+{
+  "applied_qualifying_event_id": "lgrc9v3-packet-event-a30235d8d4c60637",
+  "artifact_kind": "n31_A_release_phase_closure_state",
+  "artifact_schema_version": "n31_A_release_phase_closure_state_v1",
+  "global_event_count_state_present": false,
+  "pending_qualifying_event_receipt": null,
+  "release_phase": "aged",
+  "release_phase_receipt_count": 1,
+  "wall_clock_state_present": false
+}

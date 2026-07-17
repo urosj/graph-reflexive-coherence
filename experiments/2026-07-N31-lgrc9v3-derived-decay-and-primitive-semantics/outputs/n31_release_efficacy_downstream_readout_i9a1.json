@@ -1,0 +1,1347 @@
+{
+  "acceptance_state": "accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10",
+  "artifact_kind": "release_efficacy_downstream_readout_candidate",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_independent_readout_contract",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_preregistration.json",
+      "sha256": "a0b2a9ba60e3da831771fe748f805be5741384041f57bb6d24d81cc22deb9f00"
+    },
+    {
+      "artifact_role": "native_receiver_threshold_sweep",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_threshold_sweep.json",
+      "sha256": "fc318c280c7464b0b502ba6d7a18590ad0350188eb1eb6299949a0ca91c2f06a"
+    },
+    {
+      "artifact_role": "receiver_and_target_mediation_interventions",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_mediation_interventions.json",
+      "sha256": "508fccafa359f22fa1060ed95d2136601be9edc4c96805d94def4bf97781c28e"
+    },
+    {
+      "artifact_role": "I9_and_I9A_review_revision_lineage",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9_i9a_revision_lineage.json",
+      "sha256": "14b5a0e109d464969565c5a1252c8b51f855100ecedfaf5ceeacaefd8fa4a00d"
+    }
+  ],
+  "artifact_schema_version": "n31_i9a1_downstream_readout_candidate_v1",
+  "candidate_result": {
+    "DR4_supported": true,
+    "DR5_blocker": "formal_candidate_row_and_complete_I10_matrix_pending",
+    "DR5_supported": false,
+    "DR6_supported": false,
+    "autonomous_native_readout_scheduling_supported": false,
+    "candidate_id": "A_release_efficacy_attenuation",
+    "current_decay_relation_ladder_rung": "DR4",
+    "different_decay_producer_added": false,
+    "full_complete_state_mediation": false,
+    "mediation_strength": "bounded_partial_local_receiver_C",
+    "native_decay_classification_unchanged": "D0a_DR2",
+    "native_upgrade_allowed": false,
+    "readout_authority": "native_LGRC9V3_runtime",
+    "readout_request_authority": "experiment_probe_harness",
+    "relation_authority": "producer_mediated",
+    "rung_status": "provisional_pending_I10_formal_row_and_controls",
+    "semantic_class": "A"
+  },
+  "checks": [
+    {
+      "check_id": "exact_I9_and_I9A_sources_consumed",
+      "detail": [
+        {
+          "actual_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "actual_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "expected_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "expected_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_admission_i9.json"
+        },
+        {
+          "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json"
+        },
+        {
+          "actual_output_digest": "e72aa25e3ff42cc8b37c62e31c7f5e42a6f16b941a8803534075a09c84610b0e",
+          "actual_sha256": "3ffb4ef810b9f119a6f15d25b0703a6f6b44719a79fe7b10b02521442738256f",
+          "expected_output_digest": "e72aa25e3ff42cc8b37c62e31c7f5e42a6f16b941a8803534075a09c84610b0e",
+          "expected_sha256": "3ffb4ef810b9f119a6f15d25b0703a6f6b44719a79fe7b10b02521442738256f",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_source_current_trace.json"
+        },
+        {
+          "actual_output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+          "actual_sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a",
+          "expected_output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+          "expected_sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "exact_I9A_final_snapshots_consumed",
+      "detail": [
+        {
+          "actual_sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703",
+          "event_queue_empty": true,
+          "expected_sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703",
+          "identity_exact": true,
+          "in_flight_packet_total": 0.0,
+          "node_coherence": {
+            "0": 0.8,
+            "1": 0.4000000000000001,
+            "2": 0.4
+          },
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_final_snapshot.json",
+          "restoration_identity_v1": "0e1ea85bc8f2674db3618e9ae74b6bce5c7eb22d05c717a8a17c7ab5c3af0512",
+          "restoration_identity_v2": "3978f40a2915c9849a16ab21c3720a1c236f6a9dec28b6b2ef5a4475defea74e"
+        },
+        {
+          "actual_sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced",
+          "event_queue_empty": true,
+          "expected_sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced",
+          "identity_exact": true,
+          "in_flight_packet_total": 0.0,
+          "node_coherence": {
+            "0": 0.8,
+            "1": 0.5000000000000001,
+            "2": 0.30000000000000004
+          },
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_final_snapshot.json",
+          "restoration_identity_v1": "231d8bbf5d00257ebb332c4a14e6b05498498c4d152f3b81fe3f6edd6280c016",
+          "restoration_identity_v2": "e3c0e83c546df228468d201a7eda39cd6057f2c116512048e83bf05f30911bd0"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I9A_is_DR3_with_DR4_readout_pending",
+      "detail": {
+        "DR4_blocker": "independent_later_receiver_readout_pending",
+        "DR4_shape_observed": true,
+        "DR4_supported": false,
+        "DR5_blocker": "independent_DR4_readout_and_complete_I10_replay_control_matrix_pending",
+        "DR5_supported": false,
+        "DR6_supported": false,
+        "authority": "producer_mediated",
+        "candidate_id": "A_release_efficacy_attenuation",
+        "current_decay_relation_ladder_rung": "DR3",
+        "native_decay_classification_unchanged": "D0a_DR2",
+        "native_upgrade_allowed": false,
+        "rung_qualifier": "expression_attenuation_not_field_state_decay",
+        "semantic_class": "A",
+        "source_current_expression_attenuation_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "same_candidate_A_producer_retained_without_readout_producer",
+      "detail": {
+        "I9A1_independent_readout": "later_native_receiver_departure_admission_depends_on_receiver_C",
+        "I9A_immediate_effect": "q_created_changes_receiver_C_after_arrival",
+        "I9A_relation": "release_phase_selects_q_created",
+        "producer_absent_during_readout": true,
+        "receiver_C_is_load_bearing_mediator": true,
+        "target_C_confound_rejected": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_release_packets_complete_before_readout",
+      "detail": [
+        {
+          "actual_sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703",
+          "event_queue_empty": true,
+          "expected_sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703",
+          "identity_exact": true,
+          "in_flight_packet_total": 0.0,
+          "node_coherence": {
+            "0": 0.8,
+            "1": 0.4000000000000001,
+            "2": 0.4
+          },
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_final_snapshot.json",
+          "restoration_identity_v1": "0e1ea85bc8f2674db3618e9ae74b6bce5c7eb22d05c717a8a17c7ab5c3af0512",
+          "restoration_identity_v2": "3978f40a2915c9849a16ab21c3720a1c236f6a9dec28b6b2ef5a4475defea74e"
+        },
+        {
+          "actual_sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced",
+          "event_queue_empty": true,
+          "expected_sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced",
+          "identity_exact": true,
+          "in_flight_packet_total": 0.0,
+          "node_coherence": {
+            "0": 0.8,
+            "1": 0.5000000000000001,
+            "2": 0.30000000000000004
+          },
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_final_snapshot.json",
+          "restoration_identity_v1": "231d8bbf5d00257ebb332c4a14e6b05498498c4d152f3b81fe3f6edd6280c016",
+          "restoration_identity_v2": "e3c0e83c546df228468d201a7eda39cd6057f2c116512048e83bf05f30911bd0"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "five_point_native_threshold_sweep_matches_preregistration",
+      "detail": {
+        "all_rows_match_preregistration": true,
+        "original_split_at_q_0_35": true,
+        "output_digest": "acadbb7352bdf1233b397175db67c4a19260dd651c55e6e2cec7ee58e6102098",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_threshold_sweep.json",
+        "row_count": 10,
+        "sha256": "fc318c280c7464b0b502ba6d7a18590ad0350188eb1eb6299949a0ca91c2f06a"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "independent_native_readout_splits_fresh_and_aged_at_q_0_35",
+      "detail": {
+        "aged": false,
+        "fresh": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "receiver_C_clamp_reverses_readout_split",
+      "detail": {
+        "output_digest": "dcc4837a4503fd3fd7aaf7fcd6d0a0ccc42bd84251bfab456f86820a15623e05",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_mediation_interventions.json",
+        "receiver_C_clamp_reverses_admission_split": true,
+        "sha256": "508fccafa359f22fa1060ed95d2136601be9edc4c96805d94def4bf97781c28e",
+        "target_C_clamp_preserves_admission_split": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "target_C_clamp_preserves_readout_split",
+      "detail": {
+        "output_digest": "dcc4837a4503fd3fd7aaf7fcd6d0a0ccc42bd84251bfab456f86820a15623e05",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_mediation_interventions.json",
+        "receiver_C_clamp_reverses_admission_split": true,
+        "sha256": "508fccafa359f22fa1060ed95d2136601be9edc4c96805d94def4bf97781c28e",
+        "target_C_clamp_preserves_admission_split": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "balanced_interventions_preserve_total_coherence",
+      "detail": [
+        {
+          "arrival_receipt": null,
+          "balanced_clamp_record": {
+            "coherence_after": 0.3,
+            "coherence_before": 0.4,
+            "compensator_after": 0.9000000000000001,
+            "compensator_before": 0.8,
+            "compensator_node_id": 0,
+            "node_id": 2,
+            "total_delta": 5.551115123125783e-17
+          },
+          "branch_id": "n31_A1_fresh_0.35_fresh_receiver_C_clamped_to_aged_C",
+          "budget_after": null,
+          "budget_before": {
+            "budget_error": 0.0,
+            "conserved_budget_total": 1.6,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.6
+          },
+          "candidate_A_producer_calls_during_readout": 0,
+          "candidate_A_producer_loaded_during_readout": false,
+          "compensator_C_before_readout": 0.9000000000000001,
+          "departure_receipt": null,
+          "duplicate_replay_exact": true,
+          "experiment_authored_probe_request": true,
+          "global_selector_read": false,
+          "intervention": {
+            "causal_role": "receiver_mediation_down_clamp",
+            "intervention_id": "fresh_receiver_C_clamped_to_aged_C",
+            "node_id": 2,
+            "target_coherence": 0.3
+          },
+          "native_runtime_owns_admission_debit_transport_and_credit": true,
+          "original_release_packets_complete_before_readout": true,
+          "phase_source": "fresh",
+          "processing_state_after": {
+            "budget": {
+              "budget_error": 0.0,
+              "conserved_budget_total": 1.6000000000000003,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6000000000000003
+            },
+            "checkpoint_index": 4,
+            "event_queue_count": 1,
+            "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+            "event_time_key": 3.0,
+            "packet_ledger_digest": "751c70353637179a4aeadf8a309294c4be77b2962944bb17f7eccd976774b618",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "a4dc74323b82f4452a0df35ecc1bc7641e762fcd309324405cc99c58323a54a8",
+            "restoration_identity_v2": "574fbdabd131e4ffc1a9739d6d8dbd0c6a9c1557865a43514c86540f6645bfe4",
+            "scheduler_event_index": 4
+          },
+          "processing_state_before": {
+            "budget": {
+              "budget_error": 0.0,
+              "conserved_budget_total": 1.6000000000000003,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6000000000000003
+            },
+            "checkpoint_index": 4,
+            "event_queue_count": 1,
+            "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+            "event_time_key": 3.0,
+            "packet_ledger_digest": "751c70353637179a4aeadf8a309294c4be77b2962944bb17f7eccd976774b618",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "a4dc74323b82f4452a0df35ecc1bc7641e762fcd309324405cc99c58323a54a8",
+            "restoration_identity_v2": "574fbdabd131e4ffc1a9739d6d8dbd0c6a9c1557865a43514c86540f6645bfe4",
+            "scheduler_event_index": 4
+          },
+          "q_probe": 0.35,
+          "readout_admitted": false,
+          "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+          "receiver_C_after_departure": 0.3,
+          "receiver_C_before_readout": 0.3,
+          "rejection_atomicity_receipt": {
+            "atomic_state_neutral_refusal": true,
+            "budget_unchanged": true,
+            "event_queue_unchanged": true,
+            "identity_v1_exact": true,
+            "identity_v2_exact": true,
+            "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+            "no_partial_packet_record_created": true,
+            "packet_ledger_unchanged": true,
+            "packet_record_count_unchanged": true,
+            "receipt_authority": "experiment_audit_of_native_refusal",
+            "scheduler_and_time_unchanged": true
+          },
+          "rejection_reason": "source coherence is smaller than packet amount",
+          "semantic_route_label_read": false,
+          "source_debit": 0.0,
+          "source_snapshot_identity": {
+            "v1": "0e1ea85bc8f2674db3618e9ae74b6bce5c7eb22d05c717a8a17c7ab5c3af0512",
+            "v2": "3978f40a2915c9849a16ab21c3720a1c236f6a9dec28b6b2ef5a4475defea74e"
+          },
+          "target_C_after_arrival": 0.4000000000000001,
+          "target_C_before_readout": 0.4000000000000001,
+          "target_credit": 0.0
+        },
+        {
+          "arrival_receipt": {
+            "amount": 0.35,
+            "budget_error": 2.220446049250313e-16,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-d66d2621b9aa5cd7",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+            "source_lineage_id": "n31_A1_aged_0.35_aged_receiver_C_clamped_to_fresh_C",
+            "source_node_id": 2,
+            "target_node_id": 1
+          },
+          "balanced_clamp_record": {
+            "coherence_after": 0.4,
+            "coherence_before": 0.30000000000000004,
+            "compensator_after": 0.7000000000000001,
+            "compensator_before": 0.8,
+            "compensator_node_id": 0,
+            "node_id": 2,
+            "total_delta": 0.0
+          },
+          "branch_id": "n31_A1_aged_0.35_aged_receiver_C_clamped_to_fresh_C",
+          "budget_after": {
+            "budget_error": 2.220446049250313e-16,
+            "conserved_budget_total": 1.6000000000000003,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.6000000000000003
+          },
+          "budget_before": {
+            "budget_error": 0.0,
+            "conserved_budget_total": 1.6000000000000003,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.6000000000000003
+          },
+          "candidate_A_producer_calls_during_readout": 0,
+          "candidate_A_producer_loaded_during_readout": false,
+          "compensator_C_before_readout": 0.7000000000000001,
+          "departure_receipt": {
+            "amount": 0.35,
+            "budget_error": 0.0,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-190842862f73d708",
+            "event_kind": "lgrc9v3_packet_departure",
+            "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+            "source_lineage_id": "n31_A1_aged_0.35_aged_receiver_C_clamped_to_fresh_C",
+            "source_node_id": 2,
+            "target_node_id": 1
+          },
+          "duplicate_replay_exact": true,
+          "experiment_authored_probe_request": true,
+          "global_selector_read": false,
+          "intervention": {
+            "causal_role": "receiver_mediation_up_clamp",
+            "intervention_id": "aged_receiver_C_clamped_to_fresh_C",
+            "node_id": 2,
+            "target_coherence": 0.4
+          },
+          "native_runtime_owns_admission_debit_transport_and_credit": true,
+          "original_release_packets_complete_before_readout": true,
+          "phase_source": "aged",
+          "processing_state_after": {
+            "budget": {
+              "budget_error": 2.220446049250313e-16,
+              "conserved_budget_total": 1.6000000000000003,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6000000000000003
+            },
+            "checkpoint_index": 6,
+            "event_queue_count": 0,
+            "event_queue_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "event_time_key": 5.0,
+            "packet_ledger_digest": "cba2c60d8cc94010a0f90ef743c8562424877949d338f20cb99c51f9886e5e98",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "b729eea16eb436c2820da032203000db368b9feb5368ba8497b24cba360d1e39",
+            "restoration_identity_v2": "bea018c2e8465e64e9ed1bf4de1965fe746e2831b09d4e30386bda79dd281c3e",
+            "scheduler_event_index": 6
+          },
+          "processing_state_before": {
+            "budget": {
+              "budget_error": 0.0,
+              "conserved_budget_total": 1.6,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6
+            },
+            "checkpoint_index": 4,
+            "event_queue_count": 1,
+            "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+            "event_time_key": 3.0,
+            "packet_ledger_digest": "9271d7b36d7d0115172d14ec42fde8185667e25ab13dd4e5dd30b39750698807",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "4d7502d014d6f97786862010de96539c138f776edda7a16dd8a5b22ff182efd6",
+            "restoration_identity_v2": "9f4f4e1df1c026df504e24a864363e2c8eef30fba15b783d289d1ee75a1b6baa",
+            "scheduler_event_index": 4
+          },
+          "q_probe": 0.35,
+          "readout_admitted": true,
+          "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+          "receiver_C_after_departure": 0.050000000000000044,
+          "receiver_C_before_readout": 0.4,
+          "rejection_atomicity_receipt": null,
+          "rejection_reason": null,
+          "semantic_route_label_read": false,
+          "source_debit": 0.35,
+          "source_snapshot_identity": {
+            "v1": "231d8bbf5d00257ebb332c4a14e6b05498498c4d152f3b81fe3f6edd6280c016",
+            "v2": "e3c0e83c546df228468d201a7eda39cd6057f2c116512048e83bf05f30911bd0"
+          },
+          "target_C_after_arrival": 0.8500000000000001,
+          "target_C_before_readout": 0.5000000000000001,
+          "target_credit": 0.35
+        },
+        {
+          "arrival_receipt": {
+            "amount": 0.35,
+            "budget_error": 2.220446049250313e-16,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-d66d2621b9aa5cd7",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+            "source_lineage_id": "n31_A1_fresh_0.35_target_C_clamped_to_common_value",
+            "source_node_id": 2,
+            "target_node_id": 1
+          },
+          "balanced_clamp_record": {
+            "coherence_after": 0.45,
+            "coherence_before": 0.4000000000000001,
+            "compensator_after": 0.7500000000000001,
+            "compensator_before": 0.8,
+            "compensator_node_id": 0,
+            "node_id": 1,
+            "total_delta": 0.0
+          },
+          "branch_id": "n31_A1_fresh_0.35_target_C_clamped_to_common_value",
+          "budget_after": {
+            "budget_error": 2.220446049250313e-16,
+            "conserved_budget_total": 1.6000000000000003,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.6000000000000003
+          },
+          "budget_before": {
+            "budget_error": 0.0,
+            "conserved_budget_total": 1.6,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.6
+          },
+          "candidate_A_producer_calls_during_readout": 0,
+          "candidate_A_producer_loaded_during_readout": false,
+          "compensator_C_before_readout": 0.7500000000000001,
+          "departure_receipt": {
+            "amount": 0.35,
+            "budget_error": 0.0,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-190842862f73d708",
+            "event_kind": "lgrc9v3_packet_departure",
+            "packet_id": "lgrc9v3-packet-2086516ae8d7aa88",
+            "source_lineage_id": "n31_A1_fresh_0.35_target_C_clamped_to_common_value",
+            "source_node_id": 2,
+            "target_node_id": 1
+          },
+          "duplicate_replay_exact": true,
+          "experiment_authored_probe_request": true,
+          "global_selector_read": false,
+          "intervention": {
+            "causal_role": "target_state_confound_control",
+            "intervention_id": "target_C_clamped_to_common_value",
+            "node_id": 1,
+            "target_coherence": 0.45
+          },
+          "native_runtime_owns_admission_debit_transport_and_credit": true,
+          "original_release_packets_complete_before_readout": true,
+          "phase_source": "fresh",
+          "processing_state_after": {
+            "budget": {
+              "budget_error": 2.220446049250313e-16,
+              "conserved_budget_total": 1.6000000000000003,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6000000000000003
+            },
+            "checkpoint_index": 6,
+            "event_queue_count": 0,
+            "event_queue_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "event_time_key": 5.0,
+            "packet_ledger_digest": "2d017681396a5fa25d2640541ff89c94df7ca8b9e6f8c35ef94ab2fe3e931b35",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "36d6ce44c65f64fe03cf72c9dae06799741ccb853bd29c400d57a485058d9036",
+            "restoration_identity_v2": "1a931097b2cec2f0737f0a5dc506df80a3c23bf7c0f60dba45f3af086b123a51",
+            "scheduler_event_index": 6
+          },
+          "processing_state_before": {
+            "budget": {
+              "budget_error": 0.0,
+              "conserved_budget_total": 1.6,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6
+            },
+            "checkpoint_index": 4,
+            "event_queue_count": 1,
+            "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+            "event_time_key": 3.0,
+            "packet_ledger_digest": "ddabc898f72486ed63e3c9b7a916323f01063e2c636c2cec09d8319878eab51c",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "f2a97d7a80bf98edf503d6b4bfa16d9bad63eb11ff6ac3dd6c9fa1a1a6f68b06",
+            "restoration_identity_v2": "7a6714bcd0c0a51ec53a5caba3c98089fddc501b64cb2e765fa9a9a840386c62",
+            "scheduler_event_index": 4
+          },
+          "q_probe": 0.35,
+          "readout_admitted": true,
+          "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+          "receiver_C_after_departure": 0.050000000000000044,
+          "receiver_C_before_readout": 0.4,
+          "rejection_atomicity_receipt": null,
+          "rejection_reason": null,
+          "semantic_route_label_read": false,
+          "source_debit": 0.35,
+          "source_snapshot_identity": {
+            "v1": "0e1ea85bc8f2674db3618e9ae74b6bce5c7eb22d05c717a8a17c7ab5c3af0512",
+            "v2": "3978f40a2915c9849a16ab21c3720a1c236f6a9dec28b6b2ef5a4475defea74e"
+          },
+          "target_C_after_arrival": 0.8,
+          "target_C_before_readout": 0.45,
+          "target_credit": 0.35000000000000003
+        },
+        {
+          "arrival_receipt": null,
+          "balanced_clamp_record": {
+            "coherence_after": 0.45,
+            "coherence_before": 0.5000000000000001,
+            "compensator_after": 0.8500000000000001,
+            "compensator_before": 0.8,
+            "compensator_node_id": 0,
+            "node_id": 1,
+            "total_delta": -5.551115123125783e-17
+          },
+          "branch_id": "n31_A1_aged_0.35_target_C_clamped_to_common_value",
+          "budget_after": null,
+          "budget_before": {
+            "budget_error": 0.0,
+            "conserved_budget_total": 1.6000000000000003,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.6000000000000003
+          },
+          "candidate_A_producer_calls_during_readout": 0,
+          "candidate_A_producer_loaded_during_readout": false,
+          "compensator_C_before_readout": 0.8500000000000001,
+          "departure_receipt": null,
+          "duplicate_replay_exact": true,
+          "experiment_authored_probe_request": true,
+          "global_selector_read": false,
+          "intervention": {
+            "causal_role": "target_state_confound_control",
+            "intervention_id": "target_C_clamped_to_common_value",
+            "node_id": 1,
+            "target_coherence": 0.45
+          },
+          "native_runtime_owns_admission_debit_transport_and_credit": true,
+          "original_release_packets_complete_before_readout": true,
+          "phase_source": "aged",
+          "processing_state_after": {
+            "budget": {
+              "budget_error": 0.0,
+              "conserved_budget_total": 1.6,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6
+            },
+            "checkpoint_index": 4,
+            "event_queue_count": 1,
+            "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+            "event_time_key": 3.0,
+            "packet_ledger_digest": "7a5e7a83ce91378ea76a170234c12fd507fba6c91a2d2763d922abdb208d3adb",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "8e43c52f465a7644b956b1b6e679626f7722ed7229bc6faf402b1727c2e196fc",
+            "restoration_identity_v2": "36923dacb40b229598c106b078c7d7dc6dc72676d33bb7dee84a6904eabee6c8",
+            "scheduler_event_index": 4
+          },
+          "processing_state_before": {
+            "budget": {
+              "budget_error": 0.0,
+              "conserved_budget_total": 1.6,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.6
+            },
+            "checkpoint_index": 4,
+            "event_queue_count": 1,
+            "event_queue_digest": "0bf97c1a605413c59c0eaf42be22d6d8005a33dc7e5157be27e5f530f7091a2a",
+            "event_time_key": 3.0,
+            "packet_ledger_digest": "7a5e7a83ce91378ea76a170234c12fd507fba6c91a2d2763d922abdb208d3adb",
+            "packet_record_count": 3,
+            "restoration_identity_v1": "8e43c52f465a7644b956b1b6e679626f7722ed7229bc6faf402b1727c2e196fc",
+            "restoration_identity_v2": "36923dacb40b229598c106b078c7d7dc6dc72676d33bb7dee84a6904eabee6c8",
+            "scheduler_event_index": 4
+          },
+          "q_probe": 0.35,
+          "readout_admitted": false,
+          "readout_operation": "native_LGRC9V3_receiver_packet_departure_and_arrival_on_edge_1",
+          "receiver_C_after_departure": 0.30000000000000004,
+          "receiver_C_before_readout": 0.30000000000000004,
+          "rejection_atomicity_receipt": {
+            "atomic_state_neutral_refusal": true,
+            "budget_unchanged": true,
+            "event_queue_unchanged": true,
+            "identity_v1_exact": true,
+            "identity_v2_exact": true,
+            "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+            "no_partial_packet_record_created": true,
+            "packet_ledger_unchanged": true,
+            "packet_record_count_unchanged": true,
+            "receipt_authority": "experiment_audit_of_native_refusal",
+            "scheduler_and_time_unchanged": true
+          },
+          "rejection_reason": "source coherence is smaller than packet amount",
+          "semantic_route_label_read": false,
+          "source_debit": 0.0,
+          "source_snapshot_identity": {
+            "v1": "231d8bbf5d00257ebb332c4a14e6b05498498c4d152f3b81fe3f6edd6280c016",
+            "v2": "e3c0e83c546df228468d201a7eda39cd6057f2c116512048e83bf05f30911bd0"
+          },
+          "target_C_after_arrival": 0.45,
+          "target_C_before_readout": 0.45,
+          "target_credit": 0.0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "successful_native_readouts_conserve_packet_budget",
+      "detail": "source debit equals packet amount equals target credit",
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_readout_and_intervention_replay_exact",
+      "detail": {
+        "all_rejected_readouts_atomic": true,
+        "all_successful_readouts_conserved": true,
+        "composed_readout_identity": "9478934624b19703265f14cb938f2f210f64f194d10fb9af3588fb060cc2a656",
+        "composed_readout_identity_components": {
+          "I9A1_readout_contract_identity": "5cc2521622dc60fc9d3f128297e408011257c1ec8d138920681355e4ee75ec1f",
+          "I9A_composed_candidate_identity_output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+          "mediation_interventions_output_digest": "dcc4837a4503fd3fd7aaf7fcd6d0a0ccc42bd84251bfab456f86820a15623e05",
+          "threshold_sweep_output_digest": "acadbb7352bdf1233b397175db67c4a19260dd651c55e6e2cec7ee58e6102098"
+        },
+        "duplicate_replay_exact": true,
+        "full_I10_replay_matrix_pending": true,
+        "original_release_packets_complete_before_all_readouts": true,
+        "rejected_readout_count": 6,
+        "rejection_atomicity_scope": "state_after_experiment_request_is_queued_and_before_native_step versus_state_after_native_refusal"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "rejected_native_readouts_are_atomic_and_state_neutral",
+      "detail": [
+        {
+          "atomic_state_neutral_refusal": true,
+          "budget_unchanged": true,
+          "event_queue_unchanged": true,
+          "identity_v1_exact": true,
+          "identity_v2_exact": true,
+          "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+          "no_partial_packet_record_created": true,
+          "packet_ledger_unchanged": true,
+          "packet_record_count_unchanged": true,
+          "receipt_authority": "experiment_audit_of_native_refusal",
+          "scheduler_and_time_unchanged": true
+        },
+        {
+          "atomic_state_neutral_refusal": true,
+          "budget_unchanged": true,
+          "event_queue_unchanged": true,
+          "identity_v1_exact": true,
+          "identity_v2_exact": true,
+          "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+          "no_partial_packet_record_created": true,
+          "packet_ledger_unchanged": true,
+          "packet_record_count_unchanged": true,
+          "receipt_authority": "experiment_audit_of_native_refusal",
+          "scheduler_and_time_unchanged": true
+        },
+        {
+          "atomic_state_neutral_refusal": true,
+          "budget_unchanged": true,
+          "event_queue_unchanged": true,
+          "identity_v1_exact": true,
+          "identity_v2_exact": true,
+          "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+          "no_partial_packet_record_created": true,
+          "packet_ledger_unchanged": true,
+          "packet_record_count_unchanged": true,
+          "receipt_authority": "experiment_audit_of_native_refusal",
+          "scheduler_and_time_unchanged": true
+        },
+        {
+          "atomic_state_neutral_refusal": true,
+          "budget_unchanged": true,
+          "event_queue_unchanged": true,
+          "identity_v1_exact": true,
+          "identity_v2_exact": true,
+          "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+          "no_partial_packet_record_created": true,
+          "packet_ledger_unchanged": true,
+          "packet_record_count_unchanged": true,
+          "receipt_authority": "experiment_audit_of_native_refusal",
+          "scheduler_and_time_unchanged": true
+        },
+        {
+          "atomic_state_neutral_refusal": true,
+          "budget_unchanged": true,
+          "event_queue_unchanged": true,
+          "identity_v1_exact": true,
+          "identity_v2_exact": true,
+          "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+          "no_partial_packet_record_created": true,
+          "packet_ledger_unchanged": true,
+          "packet_record_count_unchanged": true,
+          "receipt_authority": "experiment_audit_of_native_refusal",
+          "scheduler_and_time_unchanged": true
+        },
+        {
+          "atomic_state_neutral_refusal": true,
+          "budget_unchanged": true,
+          "event_queue_unchanged": true,
+          "identity_v1_exact": true,
+          "identity_v2_exact": true,
+          "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+          "no_partial_packet_record_created": true,
+          "packet_ledger_unchanged": true,
+          "packet_record_count_unchanged": true,
+          "receipt_authority": "experiment_audit_of_native_refusal",
+          "scheduler_and_time_unchanged": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "mediation_is_bounded_partial_local_receiver_C",
+      "detail": {
+        "complete_post_arrival_branch_state_claimed": false,
+        "full_complete_state_mediation": false,
+        "load_bearing_readout": "native_departure_admission_only",
+        "mediation_strength": "bounded_partial_local_receiver_C",
+        "other_continuation_state_matched": "false_with_declared_mass_compensator",
+        "receiver_C_mediates_departure_eligibility": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "floating_point_boundaries_are_observed_not_theoretical",
+      "detail": {
+        "aged_C_observed": 0.30000000000000004,
+        "endpoint_values_are_observed_binary_floats_not_theoretical_reals": true,
+        "fresh_C_observed": 0.4,
+        "native_eligibility_relation": "source_C >= q_probe",
+        "nextafter_boundary_controls_pending_I10": true,
+        "observed_split_interval": "aged_C < q_probe <= fresh_C",
+        "robust_tested_interior_q": 0.35
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I9_and_I9A_revision_lineage_closed",
+      "detail": {
+        "I9": {
+          "current_artifact_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "current_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "exact_current_artifact_consumed_by_I9A1": true,
+          "previous_output_digest": "80572f132f679beb7d733b7ed5609a5efa5cd7815490e8f3fef711b14e7fbcee",
+          "review_corrections": [
+            "release_phase_made_load_bearing",
+            "producer_input_allowlist_tightened",
+            "numeric_topology_bindings_and_policy_identity_added"
+          ],
+          "scientific_admission_decision_changed": false
+        },
+        "I9A": {
+          "current_artifact_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "current_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "evidence_rung_classification_corrected": true,
+          "exact_current_artifact_consumed_by_I9A1": true,
+          "previous_artifact_sha256_available": false,
+          "previous_output_digest": "69eec2618fde6408482dfd17f8ad1e48634756f23e02298b2ef9b260841443e1",
+          "review_corrections": [
+            "provisional_DR4_demoted_to_DR3_pending_independent_readout",
+            "control_statuses_and_policy_ownership_normalized",
+            "composed_native_plus_closure_identity_added",
+            "floating_point_release_boundary_qualified"
+          ],
+          "scientific_numerical_outcome_changed": false
+        },
+        "artifact_kind": "n31_i9_i9a_revision_lineage",
+        "artifact_schema_version": "n31_i9_i9a_revision_lineage_v1",
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "lineage_scope": "review_correction_provenance_only; no prior artifact is consumed as current evidence",
+        "output_digest": "a9301bd8e3b98894ad648637d1c0412df98e078432c1fc3ef9bcbdc1cc555ee3"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "auxiliary_controls_do_not_inflate_inherited_matrix",
+      "detail": {
+        "auxiliary_control_count": 5,
+        "auxiliary_controls_disjoint_from_inherited_matrix": true,
+        "auxiliary_controls_separately_enumerated": true,
+        "complete_control_count": 57,
+        "cumulative_resolved_control_count": 18,
+        "failed_open_count": 0,
+        "inherited_complete_controls_resolved": "18 / 57",
+        "new_complete_control_count": 2,
+        "prior_resolved_control_count": 16,
+        "unresolved_control_ids": [
+          "label_only_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "RCAE_demand_as_graph_evidence",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "export_authoring_producer_call_retained_as_D0_R",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "route_mass_loss_as_organization_weakening_relabel",
+          "organization_weakening_without_mediation_as_causal_decay_relabel",
+          "constant_mass_internal_reorganization_as_export_relabel",
+          "unclosed_route_boundary_continuity",
+          "added_export_policy_as_D0_R_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "new_and_auxiliary_controls_resolve_without_failed_open",
+      "detail": [
+        {
+          "actual_result": "same_native_receiver_operation_has_preregistered_phase_conditioned_admission_split",
+          "blocked_condition": "relation_weakens_but_has_no_later_readout_effect",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "relation_weakens_but_has_no_later_readout_effect",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "satisfies_provisional_A_DR4_readout_gate",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "original_release_packet_queue_empty_and_in_flight_total_zero_before_readout",
+          "blocked_condition": "forming_packet_continuation_as_later_independent_readout",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "forming_packet_continuation_as_later_independent_readout",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "I9A_credit_is_not_reused;_separate_native_departure_operation_executed",
+          "blocked_condition": "immediate_receiver_credit_as_independent_readout_relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "immediate_receiver_credit_as_independent_readout_relabel",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "candidate_A_unchanged_and_no_producer_loaded_during_readout",
+          "blocked_condition": "different_decay_producer_as_downstream_readout",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "different_decay_producer_as_downstream_readout",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_causal_isolation",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "balanced_receiver_C_clamps_reverse_the_admission_split",
+          "blocked_condition": "receiver_state_mediation_missing",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "receiver_state_mediation_missing",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "common_target_C_clamp_preserves_the_admission_split",
+          "blocked_condition": "target_state_explains_readout_split",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "target_state_explains_readout_split",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4",
+          "scope_reason_if_not_applicable": null
+        },
+        {
+          "actual_result": "five_point_threshold_sweep_frozen_before_I9A1_outcomes",
+          "blocked_condition": "post_hoc_readout_threshold_selection",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_readout_threshold_selection",
+          "control_status": "passed",
+          "expected_result": "conformance_requirement_satisfied",
+          "rung_effect": "failure_blocks_A_DR4",
+          "scope_reason_if_not_applicable": null
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "composed_I9A_plus_readout_identity_recorded",
+      "detail": {
+        "I9A1_readout_contract_identity": "5cc2521622dc60fc9d3f128297e408011257c1ec8d138920681355e4ee75ec1f",
+        "I9A_composed_candidate_identity_output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+        "mediation_interventions_output_digest": "dcc4837a4503fd3fd7aaf7fcd6d0a0ccc42bd84251bfab456f86820a15623e05",
+        "threshold_sweep_output_digest": "acadbb7352bdf1233b397175db67c4a19260dd651c55e6e2cec7ee58e6102098"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formal_candidate_row_and_full_control_matrix_remain_pending_I10",
+      "detail": {
+        "auxiliary_control_count": 5,
+        "auxiliary_controls_disjoint_from_inherited_matrix": true,
+        "auxiliary_controls_separately_enumerated": true,
+        "complete_control_count": 57,
+        "cumulative_resolved_control_count": 18,
+        "failed_open_count": 0,
+        "inherited_complete_controls_resolved": "18 / 57",
+        "new_complete_control_count": 2,
+        "prior_resolved_control_count": 16,
+        "unresolved_control_ids": [
+          "label_only_decay",
+          "post_hoc_weakening_trace",
+          "forming_activity_never_stopped",
+          "relation_persists_but_does_not_weaken",
+          "RCAE_demand_as_graph_evidence",
+          "lossy_node_scalar_match_as_complete_state",
+          "invented_C_slow_state",
+          "export_authoring_producer_call_retained_as_D0_R",
+          "instantaneous_geometry_as_durable_decay",
+          "derived_observable_as_causal_trail",
+          "cache_removed_and_recomputed",
+          "cache_divergence",
+          "observable_disconnected_from_transport",
+          "slow_organization_clamp",
+          "complete_state_matched_history_contrast",
+          "ordinary_outward_flux_as_added_leakage_relabel",
+          "route_mass_loss_as_organization_weakening_relabel",
+          "organization_weakening_without_mediation_as_causal_decay_relabel",
+          "constant_mass_internal_reorganization_as_export_relabel",
+          "unclosed_route_boundary_continuity",
+          "added_export_policy_as_D0_R_relabel",
+          "mass_unmatched_organization_intervention",
+          "proper_time_annotation_as_causal_alignment",
+          "added_coincidence_window_as_native_temporal_organization",
+          "arrival_histogram_as_causal_mediation",
+          "fixed_delay_single_path_as_dispersion",
+          "periodic_rephasing_as_monotonic_decay",
+          "diagnostic_domain_as_mediator_domain",
+          "mixed_domain_without_load_bearing_isolation",
+          "temporal_intervention_with_unmatched_state",
+          "geometric_observable_without_local_transport_intervention",
+          "bounded_partial_disposition_with_supported_row_decision",
+          "blocked_representation_with_supported_row_decision",
+          "full_mediation_with_false_mediated_change",
+          "absent_mediation_with_true_mediated_change",
+          "mixed_domain_unresolved_claims_DR4",
+          "blocked_D0a_authority_as_coherence_only_positive",
+          "D0c_persistence_retained_as_same_D0c_row",
+          "D0b_transport_feedback_without_authority_reclassification"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "pre_outcome_independent_readout_contract",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_preregistration.json",
+          "sha256": "a0b2a9ba60e3da831771fe748f805be5741384041f57bb6d24d81cc22deb9f00"
+        },
+        {
+          "artifact_role": "native_receiver_threshold_sweep",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_threshold_sweep.json",
+          "sha256": "fc318c280c7464b0b502ba6d7a18590ad0350188eb1eb6299949a0ca91c2f06a"
+        },
+        {
+          "artifact_role": "receiver_and_target_mediation_interventions",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_mediation_interventions.json",
+          "sha256": "508fccafa359f22fa1060ed95d2136601be9edc4c96805d94def4bf97781c28e"
+        },
+        {
+          "artifact_role": "I9_and_I9A_review_revision_lineage",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9_i9a_revision_lineage.json",
+          "sha256": "14b5a0e109d464969565c5a1252c8b51f855100ecedfaf5ceeacaefd8fa4a00d"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "provisional_DR4_only_pending_I10",
+      "detail": {
+        "DR4_supported": true,
+        "DR5_blocker": "formal_candidate_row_and_complete_I10_matrix_pending",
+        "DR5_supported": false,
+        "DR6_supported": false,
+        "autonomous_native_readout_scheduling_supported": false,
+        "candidate_id": "A_release_efficacy_attenuation",
+        "current_decay_relation_ladder_rung": "DR4",
+        "different_decay_producer_added": false,
+        "full_complete_state_mediation": false,
+        "mediation_strength": "bounded_partial_local_receiver_C",
+        "native_decay_classification_unchanged": "D0a_DR2",
+        "native_upgrade_allowed": false,
+        "readout_authority": "native_LGRC9V3_runtime",
+        "readout_request_authority": "experiment_probe_harness",
+        "relation_authority": "producer_mediated",
+        "rung_status": "provisional_pending_I10_formal_row_and_controls",
+        "semantic_class": "A"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_lane_not_upgraded",
+      "detail": {
+        "DR4_supported": true,
+        "DR5_blocker": "formal_candidate_row_and_complete_I10_matrix_pending",
+        "DR5_supported": false,
+        "DR6_supported": false,
+        "autonomous_native_readout_scheduling_supported": false,
+        "candidate_id": "A_release_efficacy_attenuation",
+        "current_decay_relation_ladder_rung": "DR4",
+        "different_decay_producer_added": false,
+        "full_complete_state_mediation": false,
+        "mediation_strength": "bounded_partial_local_receiver_C",
+        "native_decay_classification_unchanged": "D0a_DR2",
+        "native_upgrade_allowed": false,
+        "readout_authority": "native_LGRC9V3_runtime",
+        "readout_request_authority": "experiment_probe_harness",
+        "relation_authority": "producer_mediated",
+        "rung_status": "provisional_pending_I10_formal_row_and_controls",
+        "semantic_class": "A"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "autonomous_native_decay_claim_allowed": false,
+        "autonomous_native_readout_scheduling_claim_allowed": false,
+        "communication_claim_allowed": false,
+        "ecology_claim_allowed": false,
+        "field_state_decay_claim_allowed": false,
+        "in_flight_attenuation_claim_allowed": false,
+        "native_DR4_claim_allowed": false,
+        "native_memory_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "producer_DR5_claim_allowed": false,
+        "producer_DR6_claim_allowed": false,
+        "trail_or_stigmergy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6",
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contract_diff_empty",
+      "detail": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "recursive",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "provisional_producer_mediated_DR4_release_efficacy_relation_with_independent_native_receiver_readout_pending_I10",
+    "blocked_claims": [
+      "field_state_decay",
+      "in_flight_attenuation",
+      "autonomous_native_decay",
+      "autonomous_native_readout_scheduling",
+      "native_DR4",
+      "producer_DR5",
+      "producer_DR6",
+      "native_memory",
+      "trail_or_stigmergy",
+      "communication",
+      "ecology",
+      "agency",
+      "native_support",
+      "Phase_8_completion"
+    ],
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "autonomous_native_decay_claim_allowed": false,
+      "autonomous_native_readout_scheduling_claim_allowed": false,
+      "communication_claim_allowed": false,
+      "ecology_claim_allowed": false,
+      "field_state_decay_claim_allowed": false,
+      "in_flight_attenuation_claim_allowed": false,
+      "native_DR4_claim_allowed": false,
+      "native_memory_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "producer_DR5_claim_allowed": false,
+      "producer_DR6_claim_allowed": false,
+      "trail_or_stigmergy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_release_efficacy_downstream_readout_i9a1.py",
+  "control_resolution": {
+    "auxiliary_control_count": 5,
+    "auxiliary_controls_disjoint_from_inherited_matrix": true,
+    "auxiliary_controls_separately_enumerated": true,
+    "complete_control_count": 57,
+    "cumulative_resolved_control_count": 18,
+    "failed_open_count": 0,
+    "inherited_complete_controls_resolved": "18 / 57",
+    "new_complete_control_count": 2,
+    "prior_resolved_control_count": 16,
+    "unresolved_control_ids": [
+      "label_only_decay",
+      "post_hoc_weakening_trace",
+      "forming_activity_never_stopped",
+      "relation_persists_but_does_not_weaken",
+      "RCAE_demand_as_graph_evidence",
+      "lossy_node_scalar_match_as_complete_state",
+      "invented_C_slow_state",
+      "export_authoring_producer_call_retained_as_D0_R",
+      "instantaneous_geometry_as_durable_decay",
+      "derived_observable_as_causal_trail",
+      "cache_removed_and_recomputed",
+      "cache_divergence",
+      "observable_disconnected_from_transport",
+      "slow_organization_clamp",
+      "complete_state_matched_history_contrast",
+      "ordinary_outward_flux_as_added_leakage_relabel",
+      "route_mass_loss_as_organization_weakening_relabel",
+      "organization_weakening_without_mediation_as_causal_decay_relabel",
+      "constant_mass_internal_reorganization_as_export_relabel",
+      "unclosed_route_boundary_continuity",
+      "added_export_policy_as_D0_R_relabel",
+      "mass_unmatched_organization_intervention",
+      "proper_time_annotation_as_causal_alignment",
+      "added_coincidence_window_as_native_temporal_organization",
+      "arrival_histogram_as_causal_mediation",
+      "fixed_delay_single_path_as_dispersion",
+      "periodic_rephasing_as_monotonic_decay",
+      "diagnostic_domain_as_mediator_domain",
+      "mixed_domain_without_load_bearing_isolation",
+      "temporal_intervention_with_unmatched_state",
+      "geometric_observable_without_local_transport_intervention",
+      "bounded_partial_disposition_with_supported_row_decision",
+      "blocked_representation_with_supported_row_decision",
+      "full_mediation_with_false_mediated_change",
+      "absent_mediation_with_true_mediated_change",
+      "mixed_domain_unresolved_claims_DR4",
+      "blocked_D0a_authority_as_coherence_only_positive",
+      "D0c_persistence_retained_as_same_D0c_row",
+      "D0b_transport_feedback_without_authority_reclassification"
+    ]
+  },
+  "evidence_artifact_boundary": {
+    "formal_candidate_row_pending_I10": true,
+    "formal_recursive_I2_candidate_row_instantiated": false,
+    "source_current_trace_evidence_only": true
+  },
+  "evidence_summary": {
+    "aged_admission_pattern": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "all_rejected_readouts_atomic": true,
+    "duplicate_replay_exact": true,
+    "fresh_admission_pattern": [
+      true,
+      true,
+      true,
+      true,
+      false
+    ],
+    "native_eligibility_split": "aged_C < q_probe <= fresh_C",
+    "native_readout_budget_conserved": true,
+    "producer_absent_during_readout": true,
+    "receiver_C_mediation_supported": true,
+    "robust_tested_interior_q": 0.35,
+    "split_q": 0.35,
+    "target_C_confound_rejected": true,
+    "threshold_sweep_q_values": [
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45
+    ]
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "floating_point_boundary_scope": {
+    "aged_C_observed": 0.30000000000000004,
+    "endpoint_values_are_observed_binary_floats_not_theoretical_reals": true,
+    "fresh_C_observed": 0.4,
+    "native_eligibility_relation": "source_C >= q_probe",
+    "nextafter_boundary_controls_pending_I10": true,
+    "observed_split_interval": "aged_C < q_probe <= fresh_C",
+    "robust_tested_interior_q": 0.35
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "governance": {
+    "governance_base_revision": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6",
+    "protected_runtime_contract_diff_empty": true,
+    "src_diff_empty": true
+  },
+  "iteration": "9-A.1",
+  "mediation_contract": {
+    "complete_post_arrival_branch_state_claimed": false,
+    "full_complete_state_mediation": false,
+    "load_bearing_readout": "native_departure_admission_only",
+    "mediation_strength": "bounded_partial_local_receiver_C",
+    "other_continuation_state_matched": "false_with_declared_mass_compensator",
+    "receiver_C_mediates_departure_eligibility": true
+  },
+  "n31_closeout_progress": {
+    "I10_requires_I9_B_and_I9_C_dispositions": true,
+    "n31_closeout_ladder_rung_assigned": false,
+    "n31_closeout_progress_rung": "N31-C4",
+    "ready_for_I10": false,
+    "ready_for_I9_B": true,
+    "ready_for_I9_C": true
+  },
+  "output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+  "revision_lineage": {
+    "output_digest": "a9301bd8e3b98894ad648637d1c0412df98e078432c1fc3ef9bcbdc1cc555ee3",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9_i9a_revision_lineage.json",
+    "sha256": "14b5a0e109d464969565c5a1252c8b51f855100ecedfaf5ceeacaefd8fa4a00d"
+  },
+  "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_release_efficacy_downstream_readout_i9a1.py",
+  "source_chain": [
+    {
+      "actual_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+      "actual_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+      "expected_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+      "expected_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_admission_i9.json"
+    },
+    {
+      "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json"
+    },
+    {
+      "actual_output_digest": "e72aa25e3ff42cc8b37c62e31c7f5e42a6f16b941a8803534075a09c84610b0e",
+      "actual_sha256": "3ffb4ef810b9f119a6f15d25b0703a6f6b44719a79fe7b10b02521442738256f",
+      "expected_output_digest": "e72aa25e3ff42cc8b37c62e31c7f5e42a6f16b941a8803534075a09c84610b0e",
+      "expected_sha256": "3ffb4ef810b9f119a6f15d25b0703a6f6b44719a79fe7b10b02521442738256f",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_source_current_trace.json"
+    },
+    {
+      "actual_output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+      "actual_sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a",
+      "expected_output_digest": "0730351e0ef817274ba44ede68897b885689e3c087fb64bb796617a361819c7f",
+      "expected_sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json"
+    }
+  ],
+  "source_trace": {
+    "output_digest": "885e68e48389d694ce9a8e73b777fc704153ba972c31ba2137140886c6cda4f7",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_release_efficacy_downstream_readout_trace.json",
+    "sha256": "81294c11901ec19bf682a2e5c7655fd73e36d76673f53f00905ebbee2b8b9a0b"
+  },
+  "status": "passed"
+}

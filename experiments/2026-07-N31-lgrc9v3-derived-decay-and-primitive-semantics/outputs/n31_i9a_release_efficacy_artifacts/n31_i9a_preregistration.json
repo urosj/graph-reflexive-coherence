@@ -1,0 +1,43 @@
+{
+  "DR4_requires_independent_later_receiver_readout": true,
+  "DR5_requires_complete_I10_control_matrix": true,
+  "artifact_kind": "release_efficacy_preregistration",
+  "artifact_schema_version": "n31_i9a_preregistration_v1",
+  "candidate_id": "A_release_efficacy_attenuation",
+  "canonical_topology_digest": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f",
+  "claim_ceiling": "DR3_expression_attenuation",
+  "epsilon_A_by_phase": {
+    "aged": 0.5,
+    "fresh": 1.0
+  },
+  "expected_absolute_attenuation": 0.1,
+  "expected_aged_to_fresh_ratio": 0.5,
+  "expected_q_created_by_phase": {
+    "aged": 0.1,
+    "fresh": 0.2
+  },
+  "experiment": "N31",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "9-A",
+  "matched_native_branch_fields": [
+    "q_requested",
+    "release_source_C_before",
+    "canonical_topology_digest",
+    "event_queue_excluding_qualifying_event",
+    "release_receiver_node_id",
+    "complete_LGRC_continuation_state"
+  ],
+  "native_upgrade_allowed": false,
+  "only_allowed_branch_difference": "registered_release_phase_closure_state",
+  "output_digest": "187696e0d50825b840da782f4c97ed5afa892eaece19ffbc724c803c114207a3",
+  "q_requested": 0.2,
+  "qualifying_event_predicate": {
+    "edge_id": 0,
+    "event_kind": "lgrc9v3_packet_arrival",
+    "source_lineage_id": "n31_A_formation_lineage",
+    "source_node_id": 0,
+    "target_node_id": 1
+  },
+  "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+  "tolerance": 1e-12
+}

@@ -90,6 +90,50 @@
   `DR2`, preserves conditional reorganization as a separate non-rung-raising
   object, reaches `N31-C4`, and records `d0_insufficient` readiness for I9.
 
+## Iteration 9
+
+- `n31_i9_added_mechanism_admission_artifacts/n31_i8_revision_lineage_r1.json`
+  links the reviewed pre-correction I8 identity to the exact corrected I8
+  consumed by I9 and records that the scientific conclusion did not change.
+- `n31_i9_added_mechanism_admission_artifacts/n31_i9_candidate_contract_bundle.json`
+  freezes separate A/B/C canonical executable topologies, source-current input
+  allowlists, lane and inherited control obligations, relations, clocks,
+  invariants, authority, producer residue, naturalization debt, and
+  lane-qualified ceilings before candidate execution.
+- `n31_added_mechanism_admission_i9.json` preserves native D0a at `DR2`, admits
+  A, B, and C for I9-A/B/C while retaining each at `DR0/not_executed`, and
+  blocks producer or closure success from upgrading the native lane. It keeps
+  native carrier authority separate from the exact-derived organization
+  projection and records Candidate C's missing normal-step conductance hook.
+
+## Iteration 9-A
+
+- `n31_i9a_release_efficacy_artifacts/` contains the pre-outcome contract, the
+  shared post-formation native snapshot, serialized fresh/aged closure states,
+  final native snapshots for both release branches, I9 revision lineage, and a
+  composed native-v2/closure/policy/topology identity.
+- `n31_i9a_release_efficacy_source_current_trace.json` records the exact
+  qualifying receipt, native-matched branch point, fresh/aged packet lifecycle,
+  unrelated-event phase control, conservation, restoration, duplicate replay,
+  input audit, and candidate-specific control results.
+- `n31_release_efficacy_attenuation_i9a.json` classifies the source-current
+  producer-mediated expression result at `DR3`, records only a `DR4` shape
+  pending an independent receiver operation, keeps `DR5` pending I10, and
+  leaves native D0a at `DR2`.
+
+## Iteration 9-A.1
+
+- `n31_i9a1_downstream_readout_artifacts/` contains the preregistered native
+  receiver threshold sweep, balanced receiver/target mediation matrices,
+  atomic-refusal receipts, and reviewed-to-current I9/I9-A revision lineage.
+- `n31_i9a1_release_efficacy_downstream_readout_trace.json` records completed
+  I9-A source packets, the separate native readout, producer absence, threshold
+  outcomes, floating-point boundary scope, bounded local-C mediation,
+  conservation, atomic refusal, replay, and cumulative controls.
+- `n31_release_efficacy_downstream_readout_i9a1.json` combines I9-A `DR3` with
+  the independent receiver operation as provisional producer-mediated `DR4`,
+  while leaving the native lane at `DR2` and `DR5` pending I10.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains
