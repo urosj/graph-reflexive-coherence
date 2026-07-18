@@ -22,13 +22,14 @@ mandatory.
 ## Experiment State
 
 ```text
-status = in_progress_iteration_10_passed
+status = in_progress_iteration_11_passed
 positive_evidence_opened = true
-decay_semantics_selected = false
+universal_decay_semantics_selected = false
+conditional_mechanism_selection = B_R_and_C2_by_demanded_semantics
 native_runtime_change_authorized = false
 candidate_schema_version = n31_decay_candidate_schema_v2
 schema_change_record_id = n31_pre_i1_mass_organization_mediation_normalization_v2
-n31_closeout_progress_rung = N31-C4
+n31_closeout_progress_rung = N31-C5
 n31_closeout_ladder_rung_assigned = false
 native_D0a_ceiling = DR2
 added_mechanism_A_ceiling = DR5
@@ -36,6 +37,8 @@ added_mechanism_B_ceiling = DR5
 added_mechanism_C2_ceiling = DR5
 C2_native_runtime_ceiling = DR0
 rcae_return_ready = false
+comparative_selection_mode = non_ranked_semantically_distinct_conditional_frontiers
+I12_ready = true
 ```
 
 ## Why N31 Exists
@@ -334,7 +337,30 @@ I10 resolves the frozen `70`-control registry without claiming `70` runtime
 executions. Runtime controls, inherited I3 schema-null fixtures, positive
 conformance observations, and scope-not-applicable rows are reported
 separately. I11 receives three added-mechanism units plus admitted D0a/D0b/D0c
-rows and must use a multi-axis or Pareto comparison rather than one scalar rank.
+rows and must use a multi-axis conditional-frontier comparison rather than one
+scalar rank.
+
+I11 completes that six-row comparison at `N31-C5`. It finds no universal decay
+winner because the rows answer different causal questions. D0a remains the
+native coherence-only formation/persistence foundation; D0b and D0c remain
+diagnostics; A remains release-expression attenuation; B-R is conservative
+route-mass/organization redistribution; and C.2 is activity-indexed effective
+susceptibility relaxation.
+
+B-R and C.2 are retained as non-ranked, semantically distinct conditional
+frontiers for I12 reusable contract drafting. They have equal selection
+eligibility but unequal implementation maturity. B-R applies when the demanded
+semantics are conservative field-magnitude redistribution to an explicit
+destination. C.2 applies when the demanded semantics are susceptibility or
+effective-geometry relaxation. Native versus producer-mediated authority does
+not rank their usefulness. It sets the claim lane and determines which producer
+residue and naturalization debt must travel with each contract. A remains
+available if a later consumer explicitly needs expression attenuation rather
+than field-state decay.
+
+I11 alone does not reopen positive RCAE P2-I3 evidence. I12 must return the
+exact authority-qualified contracts and source identities, after which RCAE
+still owns source transition and ecology-side admission.
 
 ## Non-Negotiable Boundaries
 

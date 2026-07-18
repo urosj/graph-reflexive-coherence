@@ -2090,7 +2090,7 @@ C-family:
 - [x] Separate A/B candidate-native runtime admission from the ambient native D0a context rung.
 - [x] Emit a claim-level replay-mode map for I11.
 - [x] Carry admitted D0a/D0b/D0c rows into I11 alongside the three added-mechanism units.
-- [x] Require multi-axis/Pareto comparison in I11; prohibit a single scalar ranking.
+- [x] Require multi-axis conditional-frontier comparison in I11; prohibit a single scalar ranking.
 - [x] Run local-encounter and global-selector controls.
 - [x] Run hidden-state and producer/native controls.
 - [x] Run topology-specific controls.
@@ -2175,7 +2175,8 @@ add a score, vote, rank, or control-count contribution to C.2. A/A.1 and B/B.1
 are likewise consumed once per family. A and B do not own a native `DR2` lane;
 that rung belongs to the ambient D0a context. I10 admits three added-mechanism
 units and the admitted D0a/D0b/D0c rows for I11. I11 must compare all six rows
-as multi-axis profiles or a Pareto set, not collapse them into one scalar score.
+as multi-axis profiles with non-ranked conditional frontiers, not collapse them
+into one scalar score.
 
 The deferred C.2 naturalization list is not an unfinished I10 control set.
 Packetization, native constitutive integration, multi-cycle stability,
@@ -2193,22 +2194,126 @@ reports/n31_added_mechanism_replay_controls_i10.md
 
 ## Iteration 11 - Comparative Classification
 
-- [ ] Compare semantic meaning rather than generic decay labels.
-- [ ] Compare theory compatibility.
-- [ ] Compare invariant closure.
-- [ ] Compare internal-time ownership.
-- [ ] Compare local causality.
-- [ ] Compare representation and restoration completeness.
-- [ ] Compare producer residue and naturalization debt.
-- [ ] Compare topology and transfer scope.
-- [ ] Record D0-versus-B redistribution boundary.
-- [ ] Compare D0-R and B-R without presuming trajectory or readout equivalence.
-- [ ] Record `d0_to_br_bridge_status` with exact supporting or rejecting artifacts.
-- [ ] Compare route mass, organization, and mediation dispositions independently.
-- [ ] Permit multiple mechanisms or non-selection.
-- [ ] Record native admission or implementation requirements precisely.
-- [ ] Assign DR and N31-C5 ceiling.
-- [ ] Emit comparative classification JSON and report.
+- [x] Compare semantic meaning rather than generic decay labels.
+- [x] Compare theory compatibility.
+- [x] Compare invariant closure.
+- [x] Compare internal-time ownership.
+- [x] Compare local causality.
+- [x] Compare representation and restoration completeness.
+- [x] Compare producer residue and naturalization debt.
+- [x] Compare topology and transfer scope.
+- [x] Record D0-versus-B redistribution boundary.
+- [x] Compare D0-R and B-R without presuming trajectory or readout equivalence.
+- [x] Record `d0_to_br_bridge_status` with exact supporting or rejecting artifacts.
+- [x] Compare route mass, organization, and mediation dispositions independently.
+- [x] Permit multiple mechanisms or non-selection.
+- [x] Record native admission or implementation requirements precisely.
+- [x] Assign DR and N31-C5 ceiling.
+- [x] Emit comparative classification JSON and report.
+
+### Iteration 11 Result
+
+```text
+status = passed
+acceptance_state = accepted_multi_axis_conditional_primitive_closure_classification_ready_for_I12_return
+comparison_row_count = 6
+all_profile_axes_complete = true
+single_scalar_ranking_performed = false
+raw_effect_magnitude_ranking_performed = false
+universal_selection_not_defined = true
+selection_relation = non_ranked_semantically_distinct_conditional_frontiers
+equal_selection_eligibility = true
+equal_implementation_maturity = false
+producer_residue_preserved_as_profile_axis = true
+naturalization_debt_preserved_as_contract_constraint = true
+nativity_used_as_claim_boundary_not_ranking_priority = true
+native_D0a = DR2 unchanged
+D0b = DR3 observable only
+D0c = DR1 instantaneous diagnostic only
+A_producer = DR5 expression attenuation
+B_R_producer = DR5 conserved export
+C2_relation = DR2
+C2_producer_extension = DR5
+C2_native_runtime = DR0
+D0_R = not instantiated, not globally refuted
+d0_to_br_bridge_status = not_tested
+B_R_D0_R_equivalence_supported = false
+current_B_R_classified_as_D0_R = false
+D0_R_globally_refuted = false
+I11_preregistration_identity_exact = true
+I11_profile_axes_frozen_preclassification = true
+I11_selection_rules_frozen_preclassification = true
+post_outcome_axis_or_condition_edit_detected = false
+all_artifact_sha256_match_file_contents = true
+all_artifact_output_digests_match_canonical_contents = true
+artifact_manifest_path_set_exact = true
+committed_I10_revision = e7fc5b4a30e707c42aec83e94d40d36546a2af60
+committed_I10_unchanged_at_I11 = true
+post_commit_I10_revision_detected = false
+C2_committed_post_feedback_witness = passed
+DR6_assigned = false
+n31_closeout_progress_rung = N31-C5
+n31_closeout_ladder_rung_assigned = false
+ready_for_iteration_12 = true
+positive_P2_I3_evidence_may_resume_from_I11_alone = false
+automatic_RCAE_adoption_allowed = false
+src_diff_empty = true
+failed_checks = []
+output_digest = 95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6
+```
+
+I11 classifies six nonequivalent rows without turning their effect sizes or
+authority lanes into one score. D0a has the strongest current coherence-only
+ontological fit but no autonomous weakening. D0b and D0c are diagnostics. A is
+release-expression attenuation. B-R weakens native route mass and organization
+by producer-owned export through native conservative packet transport. D0b
+only weakens a derived finite-window observable; it does not establish
+weakening of native route state. C.2 weakens an activity-indexed effective
+susceptibility relation derived exactly from native packet history; it does not
+establish direct native route-organization weakening. Mediation support and
+mediation scope are recorded separately.
+
+The comparison does not prioritize native mechanisms over producer-mediated
+extensions. Nativity answers who owns the mechanism and what may be claimed;
+it does not determine which semantics are useful. B-R and C.2 are therefore
+non-ranked, semantically distinct conditional frontiers for I12 contract
+drafting. They have equal selection eligibility but unequal implementation
+maturity:
+
+```text
+B-R:
+  conservative field-magnitude redistribution to an explicit destination
+
+C.2:
+  activity-indexed susceptibility or effective-geometry relaxation
+```
+
+A remains available when the requested relation is expression attenuation,
+not field-state decay. D0b/D0c remain diagnostics, and D0a remains the native
+formation/persistence foundation.
+
+The D0-R/B-R distinction remains strict. Candidate B closes conservation and a
+bounded local readout effect, but the producer owns export eligibility, amount,
+time, and destination. Thus B-R is a useful bounded mechanism without becoming
+D0-R. `d0_to_br_bridge_status = not_tested`; D0-R remains neither supported nor
+globally refuted.
+
+I11 consumes the exact I10 artifact committed at `e7fc5b4`. The committed and
+current I10 SHA-256 and output digest match; there is no post-commit I10
+revision. The C.2 post-transport snapshots, v1/v2 restoration identities,
+rederived `S`, and next-step continuation witness are already part of that
+committed authority. The review-time claim of a different committed I10
+identity is not reproducible from repository history, so no artificial revision
+lineage is introduced.
+
+Artifacts:
+
+```text
+outputs/n31_i11_comparative_classification_artifacts/
+outputs/n31_i11_comparative_classification_trace.json
+outputs/n31_comparative_semantic_native_admission_i11.json
+reports/n31_comparative_semantic_native_admission_i11.md
+```
 
 ## Iteration 12 - Closeout And RCAE Return
 
@@ -2219,6 +2324,8 @@ reports/n31_added_mechanism_replay_controls_i10.md
 - [ ] Record all candidate dispositions.
 - [ ] Record representation and projection status.
 - [ ] Return route-mass, route-organization, and causal-mediation contracts.
+- [ ] Return native route-state, derived-observable, and derived-susceptibility weakening as separate typed fields.
+- [ ] Return mediation support as a boolean and mediation scope separately.
 - [ ] Return weakening mode, D0 subtype, export-policy ownership, and bridge status.
 - [ ] Return organization domain and weakening trajectory class by candidate.
 - [ ] Record cache recomputation and execution reconstruction separately.
@@ -2230,6 +2337,7 @@ reports/n31_added_mechanism_replay_controls_i10.md
 - [ ] Record `protected_runtime_contract_diff_empty = true` over the frozen path scope.
 - [ ] Keep unsafe claim flags false.
 - [ ] Assign final DR and N31-C rungs.
+- [ ] If reusable semantics are issued without new transfer execution, record `DR6_contract_only`, retain executed mechanism `DR5`, and keep cross-context reuse unsupported.
 - [ ] Mark N31-C6 only when return bundle is reconstructable.
 - [ ] Update repository indexes and N30+ handoff after closeout, not before.
 

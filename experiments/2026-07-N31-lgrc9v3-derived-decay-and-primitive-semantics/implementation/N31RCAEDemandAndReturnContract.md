@@ -260,9 +260,12 @@ formation_packet_exclusion_status_by_candidate
 later_readout_probe_relation_by_candidate
 temporal_intervention_matching_status_by_candidate
 route_mass_decreased_by_candidate
-route_organization_weakened_by_candidate
+native_route_organization_state_weakened_by_candidate
+derived_organization_observable_weakened_by_candidate
+derived_susceptibility_relation_weakened_by_candidate
 later_readout_changed_by_candidate
-organization_mediated_readout_change_by_candidate
+organization_mediated_readout_change_supported_by_candidate
+organization_mediation_scope_by_candidate
 ordinary_post_formation_flux_generated_by_candidate
 added_export_policy_present_by_candidate
 export_policy_owner_by_candidate
@@ -308,6 +311,14 @@ p2_i3_return_recommendation
 source_artifact_manifest
 ```
 
+The weakening and mediation fields above are typed independently. A fading
+derived observable does not establish weakening of native route-organization
+state. A weakening susceptibility functional does not become native route-state
+weakening by relabeling. `organization_mediated_readout_change_supported` is a
+boolean; its scope is recorded separately as `none`,
+`bounded_partial_local_source_C`, `bounded_effective_geometry`, or
+`unresolved`.
+
 Conditional fields may use `not_applicable_with_reason`. Empty placeholder
 artifacts must not be created solely to populate the manifest.
 
@@ -332,6 +343,19 @@ does not upgrade the native result. If a later PyGRC revision implements the
 mechanism natively, RCAE may consume a native upgrade only after a new
 source-current native-lane validation, not from the earlier producer contract
 alone. `N31-C6` means the return bundle is complete; it is not itself DR6.
+
+If I12 issues reusable semantics without new cross-context execution, it must
+separate:
+
+```text
+reusable_contract_status = issued
+contract_semantics_rung = DR6_contract_only
+executed_mechanism_rung = DR5
+cross_context_reuse_evidence = unsupported
+```
+
+An issued contract does not upgrade executed mechanism maturity. Cross-topology
+or cross-context reuse remains unsupported until separately executed.
 
 For every executed added-mechanism row, the return bundle should also carry:
 

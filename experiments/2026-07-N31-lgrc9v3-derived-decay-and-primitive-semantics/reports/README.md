@@ -138,6 +138,17 @@
   lane-qualified comparison rows without scalar ranking, native promotion,
   `DR6`, or automatic RCAE adoption.
 
+## Iteration 11
+
+- `n31_comparative_semantic_native_admission_i11.md` explains the six-row
+  qualitative comparison, why no scalar or universal winner is valid, how
+  D0-R remains distinct from producer-owned B-R, and why B-R and C.2 are
+  non-ranked, semantically distinct conditional frontiers selected by demanded
+  semantics rather than nativity, with unequal implementation maturity kept
+  explicit.
+  It also preserves A as an expression-attenuation boundary and blocks RCAE
+  adoption until I12 returns authority-qualified reusable contracts.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

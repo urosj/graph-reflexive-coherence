@@ -243,6 +243,21 @@
   D0/Dx comparison rows. RCAE adoption remains pending I11 and a reusable
   provider contract.
 
+## Iteration 11
+
+- `n31_i11_comparative_classification_artifacts/` contains the I11
+  preregistration, committed-I10 authority receipt, six-row multi-axis profile,
+  D0-R/B-R bridge audit, native-admission/debt matrix, and conditional
+  selection record. The profile separately types native route-state,
+  derived-observable, and derived-susceptibility weakening.
+- `n31_i11_comparative_classification_trace.json` binds those records to the
+  exact I2/I8/I9/I10 identities and records all comparative checks.
+- `n31_comparative_semantic_native_admission_i11.json` reaches `N31-C5`,
+  preserves every lane-specific DR ceiling, rejects scalar ranking and native
+  preference, verifies its own artifact manifest, and conditionally retains
+  B-R and C.2 as non-ranked semantic frontiers for distinct I12 reusable
+  contracts without authorizing RCAE adoption.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

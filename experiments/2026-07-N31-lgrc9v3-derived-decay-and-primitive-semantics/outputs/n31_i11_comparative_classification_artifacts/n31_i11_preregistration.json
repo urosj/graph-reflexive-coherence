@@ -1,0 +1,46 @@
+{
+  "artifact_kind": "n31_i11_preregistration",
+  "artifact_schema_version": "n31_i11_preregistration_v1",
+  "comparison_row_ids": [
+    "D0a_native_spatial_organization",
+    "D0b_finite_window_derived_observable",
+    "D0c_instantaneous_geometry_comparator",
+    "A_release_efficacy_attenuation",
+    "B_conserved_export_policy",
+    "C2_exact_history_susceptibility_closure"
+  ],
+  "frozen_before_profile_construction": true,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "output_digest": "a7a9046b6e870e9b20e4542a544d082690f1f8da117a0b9cca71c251722f9ea2",
+  "profile_axes": [
+    "semantic_fit",
+    "strict_RC_theory_compatibility",
+    "coherence_conservation",
+    "local_causality",
+    "internal_time_ownership",
+    "carrier_authority",
+    "mediation_strength",
+    "restoration_completeness",
+    "native_mechanics_already_available",
+    "producer_residue",
+    "naturalization_debt",
+    "topology_scope",
+    "transfer_evidence",
+    "RCAE_relevance"
+  ],
+  "ranking_policy": {
+    "conditional_plural_selection_allowed": true,
+    "cross_semantic_universal_winner_required": false,
+    "native_and_producer_lanes_may_be_collapsed": false,
+    "native_authority_receives_selection_priority": false,
+    "raw_effect_magnitude_ranking_allowed": false,
+    "single_scalar_score_allowed": false
+  },
+  "rung_policy": "I11 may retain earned DR rungs and N31-C5 progress but cannot assign DR6 or terminal closeout",
+  "selection_rules": {
+    "candidate_choice_follows_demanded_semantics": true,
+    "equal_selection_eligibility_does_not_imply_equal_implementation_maturity": true,
+    "selection_relation": "non_ranked_semantically_distinct_conditional_frontiers"
+  },
+  "source_policy": "consume exact source artifacts; I11 performs classification, not new runtime execution"
+}

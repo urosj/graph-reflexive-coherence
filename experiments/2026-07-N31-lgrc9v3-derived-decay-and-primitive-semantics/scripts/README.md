@@ -256,6 +256,22 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_added_mechanism_replay_controls_i10.py
 ```
 
+## Iteration 11
+
+- `build_n31_comparative_classification_i11.py` consumes the exact I2, I8,
+  I9-family, and I10 artifacts and emits a six-row qualitative profile,
+  committed-I10 authority receipt, D0-R/B-R bridge audit,
+  native-admission/debt matrix, and conditional RCAE selection record. It
+  preregisters axes and selection rules, types state/observable/susceptibility
+  weakening separately, verifies its generated manifest, and performs no
+  runtime probe, scalar ranking, native preference, or source modification.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_comparative_classification_i11.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

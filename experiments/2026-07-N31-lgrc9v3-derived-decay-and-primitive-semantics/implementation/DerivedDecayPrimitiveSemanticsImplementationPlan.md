@@ -1800,11 +1800,79 @@ Compare D0-R and B-R without presuming equivalence; record bridge status. Do not
 rank nonequivalent mechanisms by raw effect magnitude. I11 receives three
 added-mechanism comparison units plus the admitted D0a, D0b, and D0c rows from
 I8; D0-R remains excluded unless separately admitted. It must use a multi-axis
-profile or Pareto classification across semantic fit, strict theory
+profile or conditional-frontier classification across semantic fit, strict theory
 compatibility, conservation, locality, internal time, carrier authority,
 mediation, restoration, native mechanics, producer residue, naturalization
 debt, topology scope, transfer, and RCAE relevance. A single scalar ranking is
 not admissible; selection may remain plural or conditional.
+
+#### I11 Implementation Record
+
+I11 consumes exact I2, I8, all forward-facing I9 family sources, the C/C.1
+zero-weight ancestry records, and I10. It does not rerun runtime probes. It
+classifies the replay/control-backed evidence through six explicit profiles:
+
+The I10 authority is the artifact committed at `e7fc5b4`; its committed and
+current SHA-256 and output digest match. No post-commit I10 revision exists.
+I11 records that committed identity and directly verifies the committed C.2
+post-transport v1/v2 restoration, rederived `S`, and next-step continuation
+witness rather than inventing a second revision lineage.
+
+```text
+D0a = native coherence-organization formation/persistence, DR2
+D0b = finite-window exact-derived fading observable, DR3 diagnostic
+D0c = instantaneous geometry comparator, DR1 diagnostic
+A = producer-mediated release-expression attenuation, DR5
+B-R = producer-mediated conservative export with native transport, DR5
+C.2 = exact-history relation DR2 / producer extension DR5 / native runtime DR0
+```
+
+Every row records all fourteen frozen comparison axes plus independent route-
+mass, native route-state, derived-observable, derived-susceptibility,
+later-readout, and causal-mediation dispositions. No
+scalar score or raw-effect ranking is computed. The resulting frontiers are
+conditional rather than hierarchical: D0a is the native coherence-only
+foundation, B-R is the closest added mechanism to strict coherence-only
+ontology, and C.2 is the closest functional image of history-conditioned
+geometry. These statements identify different axes; they do not rank the
+mechanisms for downstream use.
+
+The preregistration is emitted before profile construction and freezes row
+identities, axes, and selection rules. Profile and selection artifacts bind its
+digest. I11 also verifies every generated artifact SHA-256, canonical output
+digest, and manifest path before accepting the classification.
+
+The D0-R/B-R audit preserves:
+
+```text
+D0-R = not instantiated in executed D0 fixtures; not globally refuted
+B-R = producer-mediated DR5
+d0_to_br_bridge_status = not_tested
+bounded shape analogy = supported, non-promotional
+B-R promotion to D0-R = rejected
+```
+
+I11 conditionally retains B-R and C.2 as non-ranked, semantically distinct I12
+contract frontiers with equal selection eligibility but unequal implementation
+maturity.
+B-R is applicable to conservative field-magnitude redistribution with an
+explicit destination. C.2 is applicable to activity-indexed susceptibility or
+effective-geometry relaxation. A remains an expression-attenuation boundary
+candidate. Native or producer-mediated authority constrains claims and debt;
+it is not a selection preference. I11 assigns no `DR6`, authorizes no automatic
+RCAE adoption, and does not reopen positive P2-I3 evidence by itself.
+
+Artifacts:
+
+```text
+outputs/n31_i11_comparative_classification_artifacts/
+outputs/n31_i11_comparative_classification_trace.json
+outputs/n31_comparative_semantic_native_admission_i11.json
+reports/n31_comparative_semantic_native_admission_i11.md
+```
+
+The I11 output digest is
+`95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6`.
 
 ### Iteration 12 - Closeout And RCAE Return Bundle
 
@@ -1812,6 +1880,12 @@ Produce the exact machine-readable return manifest and reader report. Record
 DR and N31-C rungs, source identities, dispositions, reconstruction, claim
 ceiling, normalized mass/organization/mediation contracts, D0-R/B-R ownership
 and bridge status, blocked relabels, `src_diff_empty`, and P2-I3 recommendation.
+
+If I12 issues a reusable contract without new transfer execution, report
+`contract_semantics_rung = DR6_contract_only` separately from
+`executed_mechanism_rung = DR5` and keep
+`cross_context_reuse_evidence = unsupported`. Contract completeness must not be
+reported as an unqualified DR6 mechanism result.
 
 N31-C6 requires return completeness, not a positive native primitive.
 

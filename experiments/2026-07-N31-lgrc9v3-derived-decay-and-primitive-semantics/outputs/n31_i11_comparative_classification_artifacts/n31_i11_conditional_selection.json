@@ -1,0 +1,49 @@
+{
+  "DR6_assigned": false,
+  "I12_return_contract_required": true,
+  "artifact_kind": "n31_i11_conditional_selection",
+  "artifact_schema_version": "n31_i11_conditional_selection_v1",
+  "automatic_RCAE_adoption_allowed": false,
+  "current_P2_I3_direction_set": {
+    "conserved_redistribution_semantics": "B_conserved_export_policy",
+    "priority_relation": "non_ranked_semantically_distinct_conditional_frontiers",
+    "susceptibility_or_effective_geometry_semantics": "C2_exact_history_susceptibility_closure"
+  },
+  "equal_implementation_maturity": false,
+  "equal_selection_eligibility": true,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "nativity_used_as_claim_boundary_not_ranking_priority": true,
+  "naturalization_debt_preserved_as_contract_constraint": true,
+  "output_digest": "7241450a117182da0af7aaad2a0c00f10438501d4716dadd024c7b3e92791f9e",
+  "positive_P2_I3_evidence_may_resume_from_I11_alone": false,
+  "preregistration_identity": {
+    "output_digest": "a7a9046b6e870e9b20e4542a544d082690f1f8da117a0b9cca71c251722f9ea2",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i11_comparative_classification_artifacts/n31_i11_preregistration.json",
+    "sha256": "cfde3012839b77a07b69ed4e0dc3349384d7ba563fa81dabd9292d3653e73145"
+  },
+  "producer_residue_preserved_as_profile_axis": true,
+  "retained_diagnostics": [
+    "D0b_finite_window_derived_observable",
+    "D0c_instantaneous_geometry_comparator"
+  ],
+  "retained_native_foundation": "D0a_native_spatial_organization",
+  "retained_semantic_boundary": {
+    "candidate_id": "A_release_efficacy_attenuation",
+    "current_RCAE_field_state_selection": false,
+    "use_only_when": "the demanded relation is release-expression attenuation rather than field-state decay"
+  },
+  "selected_for_I12_reusable_contract_drafting": [
+    {
+      "authority_ceiling": "producer_mediated_B_R_DR5",
+      "candidate_id": "B_conserved_export_policy",
+      "condition": "RCAE selects conservative route-mass and organization redistribution with an explicit destination"
+    },
+    {
+      "authority_ceiling": "producer_extension_DR5_relation_DR2_native_DR0",
+      "candidate_id": "C2_exact_history_susceptibility_closure",
+      "condition": "RCAE selects activity-indexed susceptibility or effective-geometry relaxation"
+    }
+  ],
+  "selection_reason": "the RCAE demand separates field-magnitude redistribution, susceptibility relaxation, and expression attenuation; mechanism choice follows demanded semantics and evidence, not native-versus-producer authority",
+  "selection_relation": "non_ranked_semantically_distinct_conditional_frontiers"
+}
