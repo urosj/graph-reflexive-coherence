@@ -2282,7 +2282,9 @@ maturity:
 
 ```text
 B-R:
-  conservative field-magnitude redistribution to an explicit destination
+  conservative coherence redistribution to an explicit destination
+  attributable local route-mass and route-contrast weakening
+  organization transfer to the destination remains unsupported
 
 C.2:
   activity-indexed susceptibility or effective-geometry relaxation
@@ -2317,29 +2319,115 @@ reports/n31_comparative_semantic_native_admission_i11.md
 
 ## Iteration 12 - Closeout And RCAE Return
 
-- [ ] Produce machine-readable return manifest.
-- [ ] Produce reader-facing closeout/return report.
-- [ ] Map all mandatory return roles to exact artifacts.
-- [ ] Record source revisions, digests, environment, and reproduction commands.
-- [ ] Record all candidate dispositions.
-- [ ] Record representation and projection status.
-- [ ] Return route-mass, route-organization, and causal-mediation contracts.
-- [ ] Return native route-state, derived-observable, and derived-susceptibility weakening as separate typed fields.
-- [ ] Return mediation support as a boolean and mediation scope separately.
-- [ ] Return weakening mode, D0 subtype, export-policy ownership, and bridge status.
-- [ ] Return organization domain and weakening trajectory class by candidate.
-- [ ] Record cache recomputation and execution reconstruction separately.
-- [ ] Record restoration identity by candidate.
-- [ ] Record producer residue and naturalization debt.
-- [ ] Record selected primitive/closure/extension or non-selection reason.
-- [ ] Record outcome-specific P2-I3 recommendation.
-- [ ] Record `src_diff_empty = true` for experiment branch.
-- [ ] Record `protected_runtime_contract_diff_empty = true` over the frozen path scope.
-- [ ] Keep unsafe claim flags false.
-- [ ] Assign final DR and N31-C rungs.
-- [ ] If reusable semantics are issued without new transfer execution, record `DR6_contract_only`, retain executed mechanism `DR5`, and keep cross-context reuse unsupported.
-- [ ] Mark N31-C6 only when return bundle is reconstructable.
-- [ ] Update repository indexes and N30+ handoff after closeout, not before.
+- [x] Produce machine-readable return manifest.
+- [x] Produce reader-facing closeout/return report.
+- [x] Map all mandatory return roles to exact artifacts.
+- [x] Record source revisions, digests, environment, and reproduction commands.
+- [x] Record all candidate dispositions.
+- [x] Record representation and projection status.
+- [x] Return route-mass, route-organization, and causal-mediation contracts.
+- [x] Return native route-state, derived-observable, and derived-susceptibility weakening as separate typed fields.
+- [x] Return mediation support as a boolean and mediation scope separately.
+- [x] Return weakening mode, D0 subtype, export-policy ownership, and bridge status.
+- [x] Return organization domain and weakening trajectory class by candidate.
+- [x] Record cache recomputation and execution reconstruction separately.
+- [x] Record restoration identity by candidate.
+- [x] Record producer residue and naturalization debt.
+- [x] Record selected primitive/closure/extension or non-selection reason.
+- [x] Record outcome-specific P2-I3 recommendation.
+- [x] Record `src_diff_empty = true` for experiment branch.
+- [x] Record `protected_runtime_contract_diff_empty = true` over the frozen path scope.
+- [x] Keep unsafe claim flags false.
+- [x] Assign final DR and N31-C rungs.
+- [x] If reusable semantics are issued without new transfer execution, record `DR6_contract_only`, retain executed mechanism `DR5`, and keep cross-context reuse unsupported.
+- [x] Name D0a `DR2` as a native relation ceiling, not a native decay ceiling.
+- [x] Distinguish provider-contract re-admission from positive-evidence re-admission.
+- [x] Bind each re-admission route to the closeout digest source, contract path, SHA-256, internal digest, candidate, semantics, rungs, debt, controls, and forbidden claims.
+- [x] Treat combined B-R plus C.2 use as a new composition requiring separate controls and attribution.
+- [x] Require machine-checkable contract conformance fields and semantic completeness checks.
+- [x] Mark N31-C6 only when return bundle is reconstructable.
+- [x] Update repository indexes and N30+ handoff after closeout, not before.
+
+### Iteration 12 Result
+
+```text
+status = passed
+acceptance_state = accepted_N31_C6_exact_RCAE_return_bundle_complete
+n31_closeout_ladder_rung = N31-C6_exact_RCAE_return_bundle_complete
+required_return_field_count = 107
+missing_required_return_fields = []
+native_D0a_relation_ceiling = DR2
+native_autonomous_weakening_supported = false
+native_decay_provider_available = false
+exact_derived_D0b = DR3_observable_only
+instantaneous_D0c = DR1_comparator_only
+A_executed = DR5_producer_mediated
+A_reusable_contract_status = not_issued_retained_semantic_boundary
+A_globally_rejected = false
+A_contract_issue_blocked_by_failure = false
+A_not_selected_because_current_return_targets_field_state_semantics = true
+B_R_executed_mechanism_rung = DR5_producer_mediated
+B_R_contract_semantics_rung = DR6_contract_only
+B_R_organization_at_destination_transferred = unsupported
+C2_relation_rung = DR2
+C2_executed_mechanism_rung = DR5_producer_extension
+C2_native_runtime_rung = DR0
+C2_contract_semantics_rung = DR6_contract_only
+deferred_C2_native_implementation_exists = true
+deferred_native_work_is_N31_closeout_blocker = false
+future_native_lane_must_restart_from_DR0 = true
+producer_DR5_may_not_seed_native_rung = true
+cross_context_reuse_evidence = unsupported
+d0_to_br_bridge_status = not_tested
+automatic_RCAE_adoption = false
+provider_contract_re_admission_eligible = true
+N31_positive_evidence_re_admitted_to_RCAE = false
+RCAE_ecology_evidence_must_be_generated_fresh = true
+RCAE_return_status = provider_contract_eligible_for_explicit_revision_bound_re_admission
+semantic_completeness_checks = all_true
+src_diff_empty_for_experiment_branch = true
+protected_runtime_contract_diff_empty = true
+failed_checks = []
+output_digest = 11cdb85a4a47f3d3d939e795b73a6a69ccb6889518c38bb82a04219f3dbfe736
+```
+
+I12 closes the experiment without adding a new runtime result. It turns the
+I8-I11 evidence into an exact consumer-facing return while keeping execution
+and contract maturity separate. B-R and C.2 both receive reusable semantics,
+but neither receives unqualified mechanism `DR6`: the former remains an
+executed producer-mediated `DR5` export policy and the latter remains relation
+`DR2`, producer-extension `DR5`, and native-runtime `DR0`.
+
+The two contracts are non-ranked because they answer different demands. B-R
+moves coherence conservatively to an explicit destination and produces
+attributable local route-mass and route-contrast weakening under a
+producer-owned export lifecycle. It does not establish that route organization
+itself arrives at the destination. C.2 weakens an exact history-derived
+susceptibility relation and inserts effective geometry through a producer-owned
+closure. Contract conformance preserves those ownership and debt distinctions.
+
+The I12 wording supersedes the historical I11 shorthand "field-magnitude
+redistribution." The final authority is conservative coherence redistribution
+with local route-mass and route-contrast weakening, not transfer of route
+organization to the destination.
+
+RCAE P2-I3 can now re-admit a provider contract only through an explicit record
+that selects one semantic route and binds the closeout digest plus exact
+contract path, SHA-256, internal digest, candidate, authority ceiling, rungs,
+debt, controls, and forbidden claims. N31 positive evidence is not re-admitted;
+RCAE must generate new ecology-side evidence. A generic `decay_provider`
+selection fails closed.
+
+B-R and C.2 may be instantiated together, but that combined provider is a new
+composition candidate. It inherits neither individual `DR5` result and must
+separately attribute B-R coherence redistribution, C.2 susceptibility change,
+and their interaction or interference. N31 does not authorize automatic
+provider adoption or support the trail/stigmergy claim itself.
+
+The return gate is semantic, not merely a count of populated keys. All required
+fields are non-placeholder or explicitly allowed empty, all enum values are
+admitted, contract digests resolve, authority ceilings agree, selected
+contracts bind source evidence, and no positive/blocked claim pair conflicts.
 
 ## Pre-I1 Schema Normalization Interpretation
 

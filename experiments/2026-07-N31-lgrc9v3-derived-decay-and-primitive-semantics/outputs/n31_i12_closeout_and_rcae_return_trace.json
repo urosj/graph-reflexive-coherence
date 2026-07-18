@@ -1,0 +1,599 @@
+{
+  "artifact_kind": "n31_i12_closeout_and_return_trace",
+  "artifact_schema_version": "n31_i12_closeout_and_return_trace_v2",
+  "checks": [
+    {
+      "check_id": "I1_I2_I8_I10_I11_source_identities_exact",
+      "detail": [
+        {
+          "acceptance_state": "accepted_source_and_authority_inventory_only_no_decay_evidence",
+          "actual_output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+          "actual_sha256": "1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79",
+          "expected_output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+          "expected_sha256": "1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_source_inventory_i1.json",
+          "source_role": "N31_source_and_demand_authority",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+          "source_role": "N31_schema_and_return_contract_authority",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+          "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+          "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+          "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+          "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+          "source_role": "executed_D0_family_classification",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade",
+          "actual_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+          "actual_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+          "expected_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+          "expected_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+          "source_role": "executed_added_mechanism_DR5_replay_control_authority",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_multi_axis_conditional_primitive_closure_classification_ready_for_I12_return",
+          "actual_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+          "actual_sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4",
+          "expected_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+          "expected_sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_comparative_semantic_native_admission_i11.json",
+          "source_role": "comparative_conditional_frontier_authority",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I11_ready_for_I12",
+      "detail": {
+        "n31_closeout_ladder_rung_assigned": false,
+        "n31_closeout_progress_rung": "N31-C5",
+        "ready_for_iteration_12_closeout_and_RCAE_return": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_six_candidate_dispositions_returned",
+      "detail": [
+        "A_release_efficacy_attenuation",
+        "B_conserved_export_policy",
+        "C2_exact_history_susceptibility_closure",
+        "D0a_native_spatial_organization",
+        "D0b_finite_window_derived_observable",
+        "D0c_instantaneous_geometry_comparator"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_required_return_fields_present",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "B_R_reusable_contract_issued",
+      "detail": {
+        "contract_semantics_rung": "DR6_contract_only",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR5_producer_mediated",
+        "reusable_contract_status": "issued"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "C2_reusable_contract_issued",
+      "detail": {
+        "contract_semantics_rung": "DR6_contract_only",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR5_producer_extension_relation_DR2_native_DR0",
+        "reusable_contract_status": "issued"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "contract_only_DR6_separate_from_executed_DR5",
+      "detail": {
+        "A_release_efficacy_attenuation": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR5_producer_mediated",
+          "reusable_contract_status": "not_issued_retained_semantic_boundary"
+        },
+        "B_conserved_export_policy": {
+          "contract_semantics_rung": "DR6_contract_only",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR5_producer_mediated",
+          "reusable_contract_status": "issued"
+        },
+        "C2_exact_history_susceptibility_closure": {
+          "contract_semantics_rung": "DR6_contract_only",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR5_producer_extension_relation_DR2_native_DR0",
+          "reusable_contract_status": "issued"
+        },
+        "D0a_native_spatial_organization": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR2",
+          "reusable_contract_status": "not_issued_native_foundation_not_decay_provider"
+        },
+        "D0b_finite_window_derived_observable": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR3_observable_only",
+          "reusable_contract_status": "not_issued_diagnostic_only"
+        },
+        "D0c_instantaneous_geometry_comparator": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR1_comparator_only",
+          "reusable_contract_status": "not_issued_instantaneous_diagnostic_only"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "cross_context_reuse_remains_unsupported",
+      "detail": {
+        "A_release_efficacy_attenuation": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR5_producer_mediated",
+          "reusable_contract_status": "not_issued_retained_semantic_boundary"
+        },
+        "B_conserved_export_policy": {
+          "contract_semantics_rung": "DR6_contract_only",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR5_producer_mediated",
+          "reusable_contract_status": "issued"
+        },
+        "C2_exact_history_susceptibility_closure": {
+          "contract_semantics_rung": "DR6_contract_only",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR5_producer_extension_relation_DR2_native_DR0",
+          "reusable_contract_status": "issued"
+        },
+        "D0a_native_spatial_organization": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR2",
+          "reusable_contract_status": "not_issued_native_foundation_not_decay_provider"
+        },
+        "D0b_finite_window_derived_observable": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR3_observable_only",
+          "reusable_contract_status": "not_issued_diagnostic_only"
+        },
+        "D0c_instantaneous_geometry_comparator": {
+          "contract_semantics_rung": "not_assigned",
+          "cross_context_reuse_evidence": "unsupported",
+          "executed_mechanism_rung": "DR1_comparator_only",
+          "reusable_contract_status": "not_issued_instantaneous_diagnostic_only"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_D0a_relation_ceiling_preserved_without_native_decay_claim",
+      "detail": {
+        "exact_derived_observable": "D0b_DR3",
+        "instantaneous_comparator": "D0c_DR1",
+        "native_autonomous_weakening": "unsupported",
+        "native_relation": "D0a_DR2"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "B_R_not_promoted_to_D0_R",
+      "detail": {
+        "B_R": {
+          "export_policy_owner": "experiment_producer",
+          "later_readout_changed": true,
+          "native_route_organization_state_weakened": true,
+          "native_transport_owner": "LGRC9V3",
+          "organization_mediation": "bounded_partial_local_source_C",
+          "route_mass_decreased": true,
+          "source_artifacts": [
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+          ],
+          "status": "supported_producer_mediated_DR5"
+        },
+        "B_R_D0_R_equivalence_supported": false,
+        "D0_R": {
+          "comparison_eligible": false,
+          "globally_refuted": false,
+          "ordinary_post_formation_export_observed": false,
+          "source_artifacts": [
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+          ],
+          "status": "not_instantiated_in_executed_D0_fixtures"
+        },
+        "artifact_kind": "n31_i11_d0r_br_bridge_audit",
+        "artifact_schema_version": "n31_i11_d0r_br_bridge_audit_v1",
+        "bounded_shape_analogy_status": "supported_non_promotional",
+        "conservation_promotes_B_R_to_D0_R": false,
+        "current_B_R_classified_as_D0_R": false,
+        "d0_to_br_bridge_status": "not_tested",
+        "generated_at": "2026-07-18T00:00:00+00:00",
+        "interpretation": "B-R is a bounded operational fallback with exact conservation, not evidence that ordinary D0-R exists",
+        "output_digest": "fdad50cd07effa7f745ec7577356c86f0176d1e5bdfd24e7489203ae78c79947"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "typed_weakening_fields_remain_separate",
+      "detail": "D0a, D0b, B-R, and C2 typed boundaries",
+      "passed": true
+    },
+    {
+      "check_id": "RCAE_contract_re_admission_is_explicit_revision_bound_and_not_evidence_admission",
+      "detail": "record a named re-admission decision selecting the demanded semantics, exact provider contract identity, exact N31 closeout identity, authority ceiling, producer residue, naturalization debt, controls, and forbidden claims before generating fresh positive ecology evidence",
+      "passed": true
+    },
+    {
+      "check_id": "exact_per_contract_re_admission_identity_resolves",
+      "detail": {
+        "activity_indexed_susceptibility": {
+          "candidate_id": "C2_exact_history_susceptibility_closure",
+          "contract_artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_C2_reusable_contract.json",
+          "contract_artifact_sha256": "ad0126e201c39923278e643f2c511d30ac3691f682fe1de40c0a5ca02c16f4ea",
+          "contract_only_rung": "DR6_contract_only",
+          "contract_output_digest": "8d21f49662951cdfb3ae71bb550e814bc60a6f5904dc9967eb0c8eeaa9f00b49",
+          "executed_rung": "DR5_producer_extension"
+        },
+        "conservative_coherence_redistribution": {
+          "candidate_id": "B_conserved_export_policy",
+          "contract_artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_B_R_reusable_contract.json",
+          "contract_artifact_sha256": "bcbac46ceb2bc2ce9f42bbef6ab6f8aa8f160288fd6e40545ffec2bd689b0f29",
+          "contract_only_rung": "DR6_contract_only",
+          "contract_output_digest": "7b8d171835eccf70df8debc0732eed0704867e1d7893ef955415d6c105e20873",
+          "executed_rung": "DR5_producer_mediated"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "B_R_C2_combination_is_new_controlled_composition",
+      "detail": [
+        "coherence_redistribution_caused_by_B_R",
+        "susceptibility_modification_caused_by_C2",
+        "interaction_or_interference_between_B_R_and_C2"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "DR6_contract_only_is_mechanically_bounded",
+      "detail": [
+        "admissible_inputs",
+        "carrier_authority",
+        "claim_ceiling",
+        "conservation_accounting_invariants",
+        "consumer_control_set",
+        "consumer_obligations",
+        "duplicate_behavior",
+        "forbidden_claims",
+        "forbidden_inputs",
+        "formation_condition",
+        "later_readout_requirement",
+        "native_executor_authority",
+        "producer_authority",
+        "refusal_behavior",
+        "restoration_identity",
+        "topology_scope",
+        "transfer_limitations",
+        "weakening_condition"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "A_retained_as_valid_nonselected_DR5_boundary",
+      "detail": {
+        "contract_semantics_rung": "not_assigned",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR5_producer_mediated",
+        "reusable_contract_status": "not_issued_retained_semantic_boundary"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "deferred_C2_native_work_does_not_upgrade_or_block_N31",
+      "detail": [
+        "packetization invariance",
+        "direct mediation controls",
+        "multi-cycle stability",
+        "topology lifecycle policy",
+        "cache/pruning semantics",
+        "native source-current re-admission"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "semantic_return_completeness",
+      "detail": {
+        "all_authority_ceilings_internally_consistent": true,
+        "all_contract_conformance_fields_present": true,
+        "all_contract_digests_resolve": true,
+        "all_enum_values_admitted": true,
+        "all_required_fields_nonplaceholder": true,
+        "all_selected_contracts_bind_source_evidence": true,
+        "no_contradictory_positive_blocked_claim_pair": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "7075ecb5e464401df96f16eac171fbefe0e532dc",
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contract_diff_empty",
+      "detail": [
+        "src/**",
+        "lib/**",
+        "specs/**",
+        "implementation/**",
+        "tests/**",
+        "examples/**",
+        "scripts/**",
+        "pyproject.toml",
+        "requirements*.txt",
+        "uv.lock"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_generated_artifact_sha256_match",
+      "detail": [
+        {
+          "artifact_role": "B_R_reusable_contract",
+          "output_digest": "7b8d171835eccf70df8debc0732eed0704867e1d7893ef955415d6c105e20873",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_B_R_reusable_contract.json",
+          "sha256": "bcbac46ceb2bc2ce9f42bbef6ab6f8aa8f160288fd6e40545ffec2bd689b0f29"
+        },
+        {
+          "artifact_role": "C2_reusable_contract",
+          "output_digest": "8d21f49662951cdfb3ae71bb550e814bc60a6f5904dc9967eb0c8eeaa9f00b49",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_C2_reusable_contract.json",
+          "sha256": "ad0126e201c39923278e643f2c511d30ac3691f682fe1de40c0a5ca02c16f4ea"
+        },
+        {
+          "artifact_role": "candidate_disposition_matrix",
+          "output_digest": "ecdd2f9ce7576cbcbdd549431c7ba273593c8a66fb14318f86de976c91e90e51",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_candidate_disposition_matrix.json",
+          "sha256": "3e54340b31c63630e6ddf8d2205bc4299cf98c028153cbc1b2c27cffba3b2d8e"
+        },
+        {
+          "artifact_role": "RCAE_P2_I3_recommendation",
+          "output_digest": "faa7a5c082434f818315b80e3f416f8735d55eeefb3dd34372e3874b0e34f120",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_rcae_p2_i3_recommendation.json",
+          "sha256": "838b5d570ad1f322b920b8997a53d01ecc1ae3976adec3ee4e0a5bcb59386080"
+        },
+        {
+          "artifact_role": "source_authority_and_reconstruction",
+          "output_digest": "143f4472320e3b2e4d1c6a9a1ae92bbe29eedbd9d74c67f58d042ca6b2c82f94",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_source_authority_and_reconstruction.json",
+          "sha256": "6e2032a1749fe2e0a0c6726318bb1822855c827da9c101d2be2ceaa296353648"
+        },
+        {
+          "artifact_role": "claim_debt_and_nativeness_register",
+          "output_digest": "c620ea979ef9654e9181ab093549e957cc4fc91723aec34533aacd8b582db8ab",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_claim_debt_and_nativeness_register.json",
+          "sha256": "1cc5c685f1e8d039ede744c637c87dcb37c7214d5817890f6540415c6a7bc25b"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_generated_artifact_output_digests_exact",
+      "detail": [
+        {
+          "artifact_role": "B_R_reusable_contract",
+          "output_digest": "7b8d171835eccf70df8debc0732eed0704867e1d7893ef955415d6c105e20873",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_B_R_reusable_contract.json",
+          "sha256": "bcbac46ceb2bc2ce9f42bbef6ab6f8aa8f160288fd6e40545ffec2bd689b0f29"
+        },
+        {
+          "artifact_role": "C2_reusable_contract",
+          "output_digest": "8d21f49662951cdfb3ae71bb550e814bc60a6f5904dc9967eb0c8eeaa9f00b49",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_C2_reusable_contract.json",
+          "sha256": "ad0126e201c39923278e643f2c511d30ac3691f682fe1de40c0a5ca02c16f4ea"
+        },
+        {
+          "artifact_role": "candidate_disposition_matrix",
+          "output_digest": "ecdd2f9ce7576cbcbdd549431c7ba273593c8a66fb14318f86de976c91e90e51",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_candidate_disposition_matrix.json",
+          "sha256": "3e54340b31c63630e6ddf8d2205bc4299cf98c028153cbc1b2c27cffba3b2d8e"
+        },
+        {
+          "artifact_role": "RCAE_P2_I3_recommendation",
+          "output_digest": "faa7a5c082434f818315b80e3f416f8735d55eeefb3dd34372e3874b0e34f120",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_rcae_p2_i3_recommendation.json",
+          "sha256": "838b5d570ad1f322b920b8997a53d01ecc1ae3976adec3ee4e0a5bcb59386080"
+        },
+        {
+          "artifact_role": "source_authority_and_reconstruction",
+          "output_digest": "143f4472320e3b2e4d1c6a9a1ae92bbe29eedbd9d74c67f58d042ca6b2c82f94",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_source_authority_and_reconstruction.json",
+          "sha256": "6e2032a1749fe2e0a0c6726318bb1822855c827da9c101d2be2ceaa296353648"
+        },
+        {
+          "artifact_role": "claim_debt_and_nativeness_register",
+          "output_digest": "c620ea979ef9654e9181ab093549e957cc4fc91723aec34533aacd8b582db8ab",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_claim_debt_and_nativeness_register.json",
+          "sha256": "1cc5c685f1e8d039ede744c637c87dcb37c7214d5817890f6540415c6a7bc25b"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "B_R_D0_R_equivalence_allowed": false,
+        "B_R_as_D0_R_allowed": false,
+        "D0_R_success_allowed": false,
+        "agency_or_selfhood_allowed": false,
+        "automatic_RCAE_adoption_allowed": false,
+        "communication_or_coordination_allowed": false,
+        "cross_context_reuse_allowed": false,
+        "ecology_regime_allowed": false,
+        "memory_or_learning_allowed": false,
+        "native_C2_allowed": false,
+        "native_autonomous_decay_allowed": false,
+        "native_support_allowed": false,
+        "one_general_decay_law_allowed": false,
+        "phase8_completion_allowed": false,
+        "sentience_or_organism_life_allowed": false,
+        "strict_current_C_only_C2_allowed": false,
+        "trail_or_stigmergic_field_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_return_manifest",
+      "detail": "repository-relative paths only",
+      "passed": true
+    }
+  ],
+  "extra_return_field_count": 5,
+  "failed_checks": [],
+  "generated_artifact_manifest": [
+    {
+      "artifact_role": "B_R_reusable_contract",
+      "output_digest": "7b8d171835eccf70df8debc0732eed0704867e1d7893ef955415d6c105e20873",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_B_R_reusable_contract.json",
+      "sha256": "bcbac46ceb2bc2ce9f42bbef6ab6f8aa8f160288fd6e40545ffec2bd689b0f29"
+    },
+    {
+      "artifact_role": "C2_reusable_contract",
+      "output_digest": "8d21f49662951cdfb3ae71bb550e814bc60a6f5904dc9967eb0c8eeaa9f00b49",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_C2_reusable_contract.json",
+      "sha256": "ad0126e201c39923278e643f2c511d30ac3691f682fe1de40c0a5ca02c16f4ea"
+    },
+    {
+      "artifact_role": "candidate_disposition_matrix",
+      "output_digest": "ecdd2f9ce7576cbcbdd549431c7ba273593c8a66fb14318f86de976c91e90e51",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_candidate_disposition_matrix.json",
+      "sha256": "3e54340b31c63630e6ddf8d2205bc4299cf98c028153cbc1b2c27cffba3b2d8e"
+    },
+    {
+      "artifact_role": "RCAE_P2_I3_recommendation",
+      "output_digest": "faa7a5c082434f818315b80e3f416f8735d55eeefb3dd34372e3874b0e34f120",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_rcae_p2_i3_recommendation.json",
+      "sha256": "838b5d570ad1f322b920b8997a53d01ecc1ae3976adec3ee4e0a5bcb59386080"
+    },
+    {
+      "artifact_role": "source_authority_and_reconstruction",
+      "output_digest": "143f4472320e3b2e4d1c6a9a1ae92bbe29eedbd9d74c67f58d042ca6b2c82f94",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_source_authority_and_reconstruction.json",
+      "sha256": "6e2032a1749fe2e0a0c6726318bb1822855c827da9c101d2be2ceaa296353648"
+    },
+    {
+      "artifact_role": "claim_debt_and_nativeness_register",
+      "output_digest": "c620ea979ef9654e9181ab093549e957cc4fc91723aec34533aacd8b582db8ab",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_claim_debt_and_nativeness_register.json",
+      "sha256": "1cc5c685f1e8d039ede744c637c87dcb37c7214d5817890f6540415c6a7bc25b"
+    }
+  ],
+  "missing_required_return_fields": [],
+  "output_digest": "a7298ca2499d9bd5065ba37a8a36df484af5b2ce76bbd7678492a33fd5b7e290",
+  "required_return_field_count": 107,
+  "semantic_completeness_checks": {
+    "all_authority_ceilings_internally_consistent": true,
+    "all_contract_conformance_fields_present": true,
+    "all_contract_digests_resolve": true,
+    "all_enum_values_admitted": true,
+    "all_required_fields_nonplaceholder": true,
+    "all_selected_contracts_bind_source_evidence": true,
+    "no_contradictory_positive_blocked_claim_pair": true
+  },
+  "source_records": [
+    {
+      "acceptance_state": "accepted_source_and_authority_inventory_only_no_decay_evidence",
+      "actual_output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+      "actual_sha256": "1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79",
+      "expected_output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+      "expected_sha256": "1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_source_inventory_i1.json",
+      "source_role": "N31_source_and_demand_authority",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+      "source_role": "N31_schema_and_return_contract_authority",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+      "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+      "source_role": "executed_D0_family_classification",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade",
+      "actual_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "actual_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+      "expected_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "expected_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+      "source_role": "executed_added_mechanism_DR5_replay_control_authority",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_axis_conditional_primitive_closure_classification_ready_for_I12_return",
+      "actual_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+      "actual_sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4",
+      "expected_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+      "expected_sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_comparative_semantic_native_admission_i11.json",
+      "source_role": "comparative_conditional_frontier_authority",
+      "status": "passed"
+    }
+  ]
+}

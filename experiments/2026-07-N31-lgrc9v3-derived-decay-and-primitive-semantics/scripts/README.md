@@ -272,6 +272,21 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_comparative_classification_i11.py
 ```
 
+## Iteration 12
+
+- `build_n31_closeout_and_rcae_return_i12.py` consumes exact I1, I2, I8, I10,
+  and committed I11 authorities; emits separate B-R and C.2 reusable contracts;
+  maps all mandatory RCAE return roles; validates source, artifact, and
+  protected-scope identities; validates exact v2 provider-contract bindings and
+  semantic completeness; and assigns `N31-C6` without running a new scientific
+  probe or upgrading producer evidence to native support.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_closeout_and_rcae_return_i12.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

@@ -68,6 +68,7 @@ Future experiments should be allowed to discover new primitives when attempting 
 - [Appendix A. N30 Direction Refinement](#appendix-a-n30-direction-refinement)
 - [Appendix B. Cross-Project Spiral After N30](#appendix-b-cross-project-spiral-after-n30)
 - [Appendix C. N30 Closeout Update](#appendix-c-n30-closeout-update)
+- [Appendix D. N31 Downward-Discovery Return](#appendix-d-n31-downward-discovery-return)
 
 ---
 
@@ -1481,3 +1482,45 @@ the old candidate order alone. N30 makes a candidate N31+ interface available,
 but the next concrete LGRC experiment should be selected after the
 agentic-ecology demand/composition pass identifies which shared-medium building
 block is actually needed.
+
+---
+
+## Appendix D. N31 Downward-Discovery Return
+
+The first post-N30 demand/composition pass selected decay semantics as a
+blocking substrate question. N31 then completed the roadmap's first full
+downward-discovery cycle:
+
+```text
+N30 shared-medium participation
+  -> RCAE asks what trace decay means
+  -> N31 separates non-equivalent graph-side mechanisms
+  -> N31 returns authority-qualified reusable contracts
+  -> RCAE owns provider-contract re-admission and fresh composition evidence
+```
+
+N31 closes at `N31-C6`. It does not discover one general decay law. Native D0a
+forms and persists at `DR2` but does not weaken autonomously. D0b is a fading
+exact-derived observable at `DR3` without causal mediation. B-R and C.2 each
+reach producer-mediated `DR5` and receive separate `DR6_contract_only`
+consumer contracts for conservative coherence redistribution and activity-indexed
+susceptibility respectively.
+
+This result sharpens the catalog policy:
+
+```text
+a reusable contract may be a valid building-block return
+without claiming native implementation or cross-context evidence
+```
+
+The next catalog number is therefore not selected automatically. The active
+continuation returns to RCAE P2-I3 for explicit revision-bound re-admission of
+an exact provider contract and fresh ecology-side evidence. N31 positive
+evidence is not imported into that context. N32 should be selected only if that
+composition work exposes another graph-side primitive or building-block demand.
+
+Canonical N31 pointers:
+
+- [N31 experiment README](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/README.md)
+- [N31 I12 return report](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/reports/n31_closeout_and_rcae_return_i12.md)
+- [N31 I12 structured return](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_closeout_and_rcae_return_i12.json)

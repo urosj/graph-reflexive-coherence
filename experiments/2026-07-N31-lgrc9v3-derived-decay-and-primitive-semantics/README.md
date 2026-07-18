@@ -22,23 +22,27 @@ mandatory.
 ## Experiment State
 
 ```text
-status = in_progress_iteration_11_passed
+status = closed_iteration_12_passed
 positive_evidence_opened = true
 universal_decay_semantics_selected = false
 conditional_mechanism_selection = B_R_and_C2_by_demanded_semantics
 native_runtime_change_authorized = false
 candidate_schema_version = n31_decay_candidate_schema_v2
 schema_change_record_id = n31_pre_i1_mass_organization_mediation_normalization_v2
-n31_closeout_progress_rung = N31-C5
-n31_closeout_ladder_rung_assigned = false
+n31_closeout_progress_rung = N31-C6
+n31_closeout_ladder_rung_assigned = true
 native_D0a_ceiling = DR2
 added_mechanism_A_ceiling = DR5
 added_mechanism_B_ceiling = DR5
 added_mechanism_C2_ceiling = DR5
 C2_native_runtime_ceiling = DR0
-rcae_return_ready = false
+rcae_return_ready = true
 comparative_selection_mode = non_ranked_semantically_distinct_conditional_frontiers
-I12_ready = true
+B_R_contract_semantics_rung = DR6_contract_only
+C2_contract_semantics_rung = DR6_contract_only
+cross_context_reuse_evidence = unsupported
+automatic_RCAE_adoption = false
+I12_ready = false_closed
 ```
 
 ## Why N31 Exists
@@ -73,7 +77,7 @@ N30 shared-medium minimum
   -> RCAE ecology demand
   -> N31 graph-side semantic and runtime discrimination
   -> exact N31 return bundle
-  -> RCAE re-admission and composition
+  -> RCAE provider-contract re-admission and fresh composition evidence
 ```
 
 The RCAE demand is an input question, not graph evidence.
@@ -344,23 +348,57 @@ I11 completes that six-row comparison at `N31-C5`. It finds no universal decay
 winner because the rows answer different causal questions. D0a remains the
 native coherence-only formation/persistence foundation; D0b and D0c remain
 diagnostics; A remains release-expression attenuation; B-R is conservative
-route-mass/organization redistribution; and C.2 is activity-indexed effective
+coherence redistribution with local route weakening; and C.2 is activity-indexed effective
 susceptibility relaxation.
 
 B-R and C.2 are retained as non-ranked, semantically distinct conditional
 frontiers for I12 reusable contract drafting. They have equal selection
 eligibility but unequal implementation maturity. B-R applies when the demanded
-semantics are conservative field-magnitude redistribution to an explicit
-destination. C.2 applies when the demanded semantics are susceptibility or
+semantics are conservative coherence redistribution to an explicit destination
+with attributable local route-mass and route-contrast weakening. It does not
+establish transfer of route organization to the destination. C.2 applies when the demanded semantics are susceptibility or
 effective-geometry relaxation. Native versus producer-mediated authority does
 not rank their usefulness. It sets the claim lane and determines which producer
 residue and naturalization debt must travel with each contract. A remains
 available if a later consumer explicitly needs expression attenuation rather
 than field-state decay.
 
-I11 alone does not reopen positive RCAE P2-I3 evidence. I12 must return the
-exact authority-qualified contracts and source identities, after which RCAE
-still owns source transition and ecology-side admission.
+I11 alone does not reopen positive RCAE P2-I3 evidence. I12 now returns the
+exact authority-qualified contracts and source identities; RCAE still owns
+source transition and ecology-side admission.
+
+I12 now closes N31 at `N31-C6` with two separate reusable contracts. B-R is
+available when RCAE needs conservative coherence redistribution to an explicit
+destination with local route weakening. C.2 is available when RCAE needs
+activity-indexed susceptibility or effective-geometry relaxation. Both record
+`DR6_contract_only`; their executed producer lanes remain `DR5`, and no
+cross-context reuse has been executed. RCAE may explicitly re-admit either
+provider contract under the exact N31 and contract identities, but N31 positive
+evidence is not imported into the ecology context. RCAE must generate fresh
+evidence and retains provider selection authority.
+
+If RCAE instantiates B-R and C.2 together, the combined provider is a new
+composition candidate. It inherits neither individual `DR5` result and needs
+separate attribution and controls for redistribution, susceptibility change,
+and their interaction. Candidate A remains a valid `DR5` expression mechanism;
+it is simply outside the current field-state return target. Deferred C.2 native
+work does not block N31 closeout, and any future native lane restarts at `DR0`.
+
+I12 preserves the native and diagnostic results independently:
+
+```text
+native D0a = DR2, no autonomous weakening
+exact-derived D0b = DR3 observable only
+instantaneous D0c = DR1 comparator only
+A = producer-mediated DR5 semantic boundary, no current I12 contract
+B-R = producer-mediated DR5 + DR6 contract-only
+C.2 = relation DR2 + producer DR5 + native DR0 + DR6 contract-only
+```
+
+The closeout report and machine return are:
+
+- [I12 closeout report](reports/n31_closeout_and_rcae_return_i12.md)
+- [I12 machine return](outputs/n31_closeout_and_rcae_return_i12.json)
 
 ## Non-Negotiable Boundaries
 

@@ -1,0 +1,219 @@
+{
+  "artifact_kind": "n31_i12_candidate_disposition_matrix",
+  "artifact_schema_version": "n31_i12_candidate_disposition_matrix_v1",
+  "candidate_count": 6,
+  "contract_only_DR6_does_not_upgrade_execution": true,
+  "issued_contract_ids": [
+    "n31_B_R_conserved_redistribution_contract_v2",
+    "n31_C2_exact_history_susceptibility_contract_v2"
+  ],
+  "output_digest": "ecdd2f9ce7576cbcbdd549431c7ba273593c8a66fb14318f86de976c91e90e51",
+  "rows": [
+    {
+      "candidate_disposition": "retained_native_foundation_not_selected_as_decay_provider",
+      "candidate_id": "D0a_native_spatial_organization",
+      "derived_organization_observable_weakened": "not_applicable",
+      "derived_susceptibility_relation_weakened": "not_applicable",
+      "ladder_rungs": {
+        "native_relation": "DR2"
+      },
+      "later_readout_changed": false,
+      "native_route_organization_state_weakened": false,
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "ordinary autonomous weakening trajectory",
+        "full route-organization mediation"
+      ],
+      "organization_mediated_readout_change_supported": false,
+      "organization_mediation_scope": "unresolved",
+      "primary_semantic_class": "D0a",
+      "producer_residue": [],
+      "representation_or_authority_class": "native_relation",
+      "reusable_contract": {
+        "contract_semantics_rung": "not_assigned",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR2",
+        "reusable_contract_status": "not_issued_native_foundation_not_decay_provider"
+      },
+      "route_mass_decreased": false,
+      "topology_scope": "bounded route-local fixture",
+      "transfer_evidence": "not established"
+    },
+    {
+      "candidate_disposition": "retained_diagnostic_not_selected_as_causal_provider",
+      "candidate_id": "D0b_finite_window_derived_observable",
+      "derived_organization_observable_weakened": true,
+      "derived_susceptibility_relation_weakened": "not_applicable",
+      "ladder_rungs": {
+        "observable_relation": "DR3"
+      },
+      "later_readout_changed": false,
+      "native_route_organization_state_weakened": "unsupported",
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "causal mediator",
+        "local intervention-backed readout"
+      ],
+      "organization_mediated_readout_change_supported": false,
+      "organization_mediation_scope": "none",
+      "primary_semantic_class": "D0b",
+      "producer_residue": [
+        "experiment declares the diagnostic window but does not mutate state"
+      ],
+      "representation_or_authority_class": "exact_derived_observable",
+      "reusable_contract": {
+        "contract_semantics_rung": "not_assigned",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR3_observable_only",
+        "reusable_contract_status": "not_issued_diagnostic_only"
+      },
+      "route_mass_decreased": "not_required_for_observable",
+      "topology_scope": "bounded finite-window route diagnostic",
+      "transfer_evidence": "not established"
+    },
+    {
+      "candidate_disposition": "retained_diagnostic_not_selected_as_decay_provider",
+      "candidate_id": "D0c_instantaneous_geometry_comparator",
+      "derived_organization_observable_weakened": false,
+      "derived_susceptibility_relation_weakened": "not_applicable",
+      "ladder_rungs": {
+        "observable_relation": "DR1"
+      },
+      "later_readout_changed": false,
+      "native_route_organization_state_weakened": false,
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "persistence",
+        "weakening trajectory",
+        "causal mediation"
+      ],
+      "organization_mediated_readout_change_supported": false,
+      "organization_mediation_scope": "none",
+      "primary_semantic_class": "D0c",
+      "producer_residue": [],
+      "representation_or_authority_class": "instantaneous_derived_observable",
+      "reusable_contract": {
+        "contract_semantics_rung": "not_assigned",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR1_comparator_only",
+        "reusable_contract_status": "not_issued_instantaneous_diagnostic_only"
+      },
+      "route_mass_decreased": "not_applicable",
+      "topology_scope": "single current-state route comparison",
+      "transfer_evidence": "not established"
+    },
+    {
+      "candidate_disposition": "retained_semantic_boundary_not_selected_for_current_field_state_demand",
+      "candidate_id": "A_release_efficacy_attenuation",
+      "derived_organization_observable_weakened": "not_applicable",
+      "derived_susceptibility_relation_weakened": "not_applicable",
+      "ladder_rungs": {
+        "candidate_native": "not_admitted",
+        "producer_mechanism": "DR5"
+      },
+      "later_readout_changed": true,
+      "native_route_organization_state_weakened": false,
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "library-owned release-phase lifecycle or explicit retained closure status"
+      ],
+      "organization_mediated_readout_change_supported": false,
+      "organization_mediation_scope": "none",
+      "primary_semantic_class": "A",
+      "producer_residue": [
+        "release phase",
+        "efficacy rule",
+        "release invocation"
+      ],
+      "representation_or_authority_class": "producer_mediated_expression_policy",
+      "reusable_contract": {
+        "contract_semantics_rung": "not_assigned",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR5_producer_mediated",
+        "reusable_contract_status": "not_issued_retained_semantic_boundary"
+      },
+      "route_mass_decreased": false,
+      "topology_scope": "bounded local release/receiver route",
+      "transfer_evidence": "fixture-local only"
+    },
+    {
+      "candidate_disposition": "conditionally_selected_for_I12_conserved_redistribution_contract",
+      "candidate_id": "B_conserved_export_policy",
+      "derived_organization_observable_weakened": "not_applicable",
+      "derived_susceptibility_relation_weakened": "not_applicable",
+      "ladder_rungs": {
+        "candidate_native": "not_admitted",
+        "producer_mechanism": "DR5"
+      },
+      "later_readout_changed": true,
+      "native_route_organization_state_weakened": true,
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "native route-local export lifecycle",
+        "full route-distribution mediation",
+        "separate D0-R bridge evidence"
+      ],
+      "organization_mediated_readout_change_supported": true,
+      "organization_mediation_scope": "bounded_partial_local_source_C",
+      "primary_semantic_class": "B-R",
+      "producer_residue": [
+        "export eligibility",
+        "amount/cap",
+        "time",
+        "destination"
+      ],
+      "representation_or_authority_class": "producer_mediated_export_policy_native_transport",
+      "reusable_contract": {
+        "contract_semantics_rung": "DR6_contract_only",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR5_producer_mediated",
+        "reusable_contract_status": "issued"
+      },
+      "route_mass_decreased": true,
+      "topology_scope": "four-node route with explicit out-of-readout destination",
+      "transfer_evidence": "bounded response shape only; cross-topology transfer not established"
+    },
+    {
+      "candidate_disposition": "conditionally_selected_for_I12_susceptibility_closure_contract",
+      "candidate_id": "C2_exact_history_susceptibility_closure",
+      "derived_organization_observable_weakened": "not_applicable",
+      "derived_susceptibility_relation_weakened": true,
+      "ladder_rungs": {
+        "native_runtime": "DR0",
+        "producer_extension": "DR5",
+        "relation_carrier": "DR2"
+      },
+      "later_readout_changed": true,
+      "native_route_organization_state_weakened": false,
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "packetization invariance",
+        "direct mediation controls",
+        "multi-cycle stability",
+        "topology lifecycle policy",
+        "cache/pruning semantics",
+        "native source-current re-admission"
+      ],
+      "organization_mediated_readout_change_supported": true,
+      "organization_mediation_scope": "bounded_effective_geometry",
+      "primary_semantic_class": "C.2",
+      "producer_residue": [
+        "history functional application",
+        "effective conductance insertion",
+        "packet scheduling"
+      ],
+      "representation_or_authority_class": "exact_history_relation_plus_producer_constitutive_closure",
+      "reusable_contract": {
+        "contract_semantics_rung": "DR6_contract_only",
+        "cross_context_reuse_evidence": "unsupported",
+        "executed_mechanism_rung": "DR5_producer_extension_relation_DR2_native_DR0",
+        "reusable_contract_status": "issued"
+      },
+      "route_mass_decreased": false,
+      "topology_scope": "role-preserving renumbering passed; topology lifecycle unresolved",
+      "transfer_evidence": "role-preserving representation transfer only"
+    }
+  ],
+  "selection_relation": "non_ranked_semantically_distinct_conditional_frontiers",
+  "single_universal_selection": false
+}

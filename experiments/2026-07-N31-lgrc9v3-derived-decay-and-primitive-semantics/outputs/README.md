@@ -258,6 +258,22 @@
   B-R and C.2 as non-ranked semantic frontiers for distinct I12 reusable
   contracts without authorizing RCAE adoption.
 
+## Iteration 12
+
+- `n31_i12_closeout_and_rcae_return_artifacts/` contains separate B-R and C.2
+  reusable contracts, the six-row final disposition matrix, exact
+  source/reconstruction authority, claim/debt/nativity register, and the RCAE
+  P2-I3 re-admission recommendation.
+- `n31_i12_closeout_and_rcae_return_trace.json` records the required-field,
+  source-identity, protected-scope, contract-rung, claim-boundary, and generated
+  artifact-integrity checks.
+- `n31_closeout_and_rcae_return_i12.json` assigns `N31-C6`, returns all `107`
+  required machine fields, passes seven semantic-completeness checks, keeps B-R
+  and C.2 execution at producer `DR5`, records both reusable semantics as
+  `DR6_contract_only`, and keeps cross-context reuse unsupported. Only the exact
+  provider contracts are eligible for revision-bound RCAE re-admission; N31
+  positive evidence is not re-admitted and ecology evidence must be fresh.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

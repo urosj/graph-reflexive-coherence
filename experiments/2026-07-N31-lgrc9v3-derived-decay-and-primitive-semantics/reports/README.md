@@ -149,6 +149,15 @@
   It also preserves A as an expression-attenuation boundary and blocks RCAE
   adoption until I12 returns authority-qualified reusable contracts.
 
+## Iteration 12
+
+- `n31_closeout_and_rcae_return_i12.md` explains the final `N31-C6` return,
+  the distinction between executed `DR5` and contract-only `DR6`, the native
+  D0a `DR2` relation ceiling without autonomous weakening, the separate B-R and
+  C.2 semantic routes, and the exact conditions under which RCAE P2-I3 may
+  re-admit a provider contract. It does not re-admit N31 evidence or claim
+  cross-context reuse, native decay, or the ecology pattern.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

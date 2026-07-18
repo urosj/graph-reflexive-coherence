@@ -1855,8 +1855,10 @@ B-R promotion to D0-R = rejected
 I11 conditionally retains B-R and C.2 as non-ranked, semantically distinct I12
 contract frontiers with equal selection eligibility but unequal implementation
 maturity.
-B-R is applicable to conservative field-magnitude redistribution with an
-explicit destination. C.2 is applicable to activity-indexed susceptibility or
+B-R is applicable to conservative coherence redistribution with attributable
+local route-mass and route-contrast weakening and an explicit destination. It
+does not claim that route organization is transported to that destination.
+C.2 is applicable to activity-indexed susceptibility or
 effective-geometry relaxation. A remains an expression-attenuation boundary
 candidate. Native or producer-mediated authority constrains claims and debt;
 it is not a selection preference. I11 assigns no `DR6`, authorizes no automatic
@@ -1886,6 +1888,60 @@ If I12 issues a reusable contract without new transfer execution, report
 `executed_mechanism_rung = DR5` and keep
 `cross_context_reuse_evidence = unsupported`. Contract completeness must not be
 reported as an unqualified DR6 mechanism result.
+
+I12 implements this as an exact six-row return manifest plus two versioned,
+authority-qualified reusable contracts. B-R receives a conservative coherence
+redistribution contract with explicit destination, attributable local
+route-mass and route-contrast weakening, producer-owned export lifecycle,
+native packet transport, bounded local-source-C mediation, unsupported
+organization transfer to the destination, and unresolved D0-R bridge debt.
+C.2 receives an exact-history susceptibility contract with exact `S`
+recomputation, producer-owned constitutive insertion, native packet execution,
+relation `DR2`, producer `DR5`, native `DR0`, and the deferred naturalization
+gates preserved.
+
+This final wording supersedes the I11 report's shorthand "field-magnitude
+redistribution." The evidence is specifically conservative coherence
+redistribution with local route-mass and route-contrast weakening; it does not
+show route organization transported to the destination.
+
+Both v2 contracts bind executable conformance requirements: admissible and
+forbidden inputs, carrier/producer/native-executor authority, formation and
+weakening conditions, later readout, accounting invariants, restoration,
+duplicate/refusal behavior, topology and transfer limits, controls, claim
+ceiling, and consumer obligations. `DR6_contract_only` means a reusable,
+testable semantics and acceptance contract; it does not mean cross-context
+execution, native implementation, ecology evidence, provider adoption, or a
+general decay law.
+
+The I12 return does not choose one winner. It makes the B-R and C.2 provider
+contracts eligible for explicit revision-bound re-admission and keeps provider
+selection, topology/encounter design, and ecology-side evidence under RCAE
+authority. N31 positive evidence is not re-admitted; RCAE must generate fresh
+context-specific evidence. Each admission must copy the final N31 closeout
+digest and bind the exact contract path, file hash, internal digest, candidate,
+semantic route, authority ceiling, rungs, debt, controls, and forbidden claims.
+A remains a valid `DR5` release-expression boundary, not a failed candidate.
+D0a/D0b/D0c remain the native foundation and diagnostics.
+
+B-R and C.2 may be instantiated together, but their combination is a new
+composition candidate. It inherits neither individual `DR5` result and must
+separately control and attribute coherence redistribution, susceptibility
+modification, and their interaction. Deferred C.2 native work does not block
+N31 closeout; any future native lane restarts at `DR0` and cannot inherit the
+producer rung.
+
+Artifacts:
+
+```text
+outputs/n31_i12_closeout_and_rcae_return_artifacts/
+outputs/n31_i12_closeout_and_rcae_return_trace.json
+outputs/n31_closeout_and_rcae_return_i12.json
+reports/n31_closeout_and_rcae_return_i12.md
+```
+
+The I12 output digest is
+`11cdb85a4a47f3d3d939e795b73a6a69ccb6889518c38bb82a04219f3dbfe736`.
 
 N31-C6 requires return completeness, not a positive native primitive.
 

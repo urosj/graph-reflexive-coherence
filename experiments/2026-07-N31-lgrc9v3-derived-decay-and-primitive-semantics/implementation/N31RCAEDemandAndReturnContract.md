@@ -1,6 +1,7 @@
 # N31 RCAE Demand And Return Contract
 
-Status: initialized graph-side contract; no N31 evidence admitted.
+Status: fulfilled by N31 I12; provider-contract re-admission is eligible but
+positive N31 evidence is not re-admitted automatically.
 
 ## Purpose
 
@@ -420,3 +421,62 @@ The return bundle may resolve graph-side decay semantics and runtime
 capability. It cannot itself support a trail/stigmergic field, communication,
 coordination, ecology, learning, memory, or agency. RCAE owns later
 composition and claim admission.
+
+## Final N31 Return Disposition
+
+I12 fulfills this graph-side contract at `N31-C6` with two separate reusable
+semantic contracts:
+
+```text
+B-R:
+  contract = n31_B_R_conserved_redistribution_contract_v2
+  executed mechanism = DR5 producer-mediated
+  contract semantics = DR6 contract-only
+  cross-context reuse = unsupported
+  organization transfer to destination = unsupported
+
+C.2:
+  contract = n31_C2_exact_history_susceptibility_contract_v2
+  relation carrier = DR2
+  executed mechanism = DR5 producer extension
+  native runtime = DR0
+  contract semantics = DR6 contract-only
+  cross-context reuse = unsupported
+```
+
+RCAE P2-I3 is eligible for explicit revision-bound re-admission of one provider
+contract. N31 positive evidence is not ecology-side evidence. RCAE must select
+conservative coherence redistribution or activity-indexed susceptibility by
+the meaning its probe needs, preserve producer residue and naturalization debt,
+and generate new ecology-side evidence.
+
+The re-admission record must copy the N31 closeout `output_digest` and bind:
+
+```text
+contract artifact path and SHA-256
+contract internal output digest
+candidate ID and semantic route
+authority ceiling
+executed rung and contract-only rung
+producer residue and naturalization debt
+consumer control set
+forbidden claims
+```
+
+A generic `selected_candidate = decay_provider` record fails closed. Each v2
+contract binds executable conformance fields for inputs, authorities, formation,
+weakening, later readout, conservation/accounting, restoration, duplicate and
+refusal behavior, topology, transfer limits, controls, claim ceiling, and
+consumer obligations.
+
+B-R and C.2 may be instantiated together, but their combination is a new
+composition candidate. It inherits neither individual `DR5` result and must
+separately attribute B-R coherence redistribution, C.2 susceptibility change,
+and their interaction or interference. No provider is adopted automatically,
+and N31 does not support the trail or stigmergic-field claim itself.
+
+Candidate A is not globally rejected and did not fail contract issuance. It
+remains a valid producer-mediated `DR5` expression mechanism, but the current
+return targets field-state semantics. Deferred C.2 native implementation does
+not block N31 closeout; any later native lane must restart from `DR0`, and the
+producer `DR5` rung cannot seed native evidence.
