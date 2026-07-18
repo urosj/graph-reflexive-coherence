@@ -112,6 +112,20 @@
   consumed, and why retained history plus wrapper-owned constitutive insertion
   still block native D0a.
 
+## Iteration 9-C.2
+
+- `n31_native_exact_history_closure_i9c2.md` explains how the generalized
+  exact-history relation removes fixture identity inputs, how an
+  experiment-owned producer can compose with native LGRC packet execution,
+  and why relation `DR2`, provisional producer-extension `DR4`, and
+  existing-runtime `DR0`
+  are all simultaneously correct. It names producer `DR4` as provisional,
+  records activity-indexed rather than quiescent decay, explains `S` as
+  recovery from an attenuated floor, and preserves packetization, mediation,
+  transport-units, stability, topology, cache, native re-admission, RCAE, and
+  C.1 revision-lineage constraints. Deferred naturalization requirements are
+  explicitly outside N31; I10 remains the next experiment iteration.
+
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE
 trail/stigmergy composition.

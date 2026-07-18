@@ -1523,12 +1523,146 @@ full replay/control decision; `DR6`, native D0a, autonomous decay, general
 route-history transfer, and comparative A/B/C ranking remain unsupported or
 deferred.
 
+### Iteration 9-C.2 - Generalized Exact-History Relation And LGRC-Faithful Step
+
+Test whether C.1's exact-history idea generalizes beyond its fixture matcher
+and whether it can participate in an LGRC-faithful producer/executor cycle
+without modifying `src/`. C.2 is additional evidence and does not replace C or
+C.1.
+
+The generalized relation may consume only native packet-processing facts with
+declared physical roles:
+
+```text
+formation:
+  committed arrival on the registered susceptibility edge and orientation
+
+progression:
+  later committed arrivals on other physical edges incident to the route source
+
+S:
+  floor + clip(sum(alpha * q * rho ** causal_distance), 0, max - floor)
+```
+
+Packet/event identifiers may enforce duplicate identity only. They, lineage
+labels, semantic labels, absolute event times, scheduler indices, and
+fixture-specific node numbers may not determine the value. Required controls
+include ID and lineage permutation, clock translation, scheduler shift,
+semantic-label change, irrelevant wrong-direction interspersion,
+role-preserving topology renumbering, real-history removal, malformed duplicate
+identity, and conflicting injected `S`.
+
+Native restoration must reproduce the generalized value from the serialized
+packet log without an external history archive or independently stored
+susceptibility. This evidence may reach the relation/carrier lane at `DR2`:
+formation plus exact native restoration. Experiment-scheduled progression does
+not establish autonomous native weakening.
+
+The runtime probe should follow the repository's existing LGRC producer pattern
+rather than requiring all orchestration to live inside `LGRC9V3.step()`:
+
+```text
+producer phase:
+  derive S from native history
+  compute history-conditioned geometry with native GRC9V3 kernels on a state copy
+  schedule one packet through the public LGRC API
+
+executor phase:
+  LGRC9V3.step() performs packet debit and arrival
+  native packet history records the completed transport
+  the later exact-history relation consumes that changed native history
+```
+
+The producer may not mutate live conductance, node coherence, packet lifecycle,
+or native history directly. Node-plus-in-flight coherence must remain conserved,
+different admitted histories must produce different transport, and the
+completed packet must feed back into the native history relation. A passing row
+may support a producer-extension lane at provisional `DR4`.
+
+Keep the three lane ceilings independent:
+
+```text
+relation/carrier lane:
+  may reach DR2 from generalized formation and restoration
+
+LGRC-faithful producer-extension lane:
+  may reach DR4 from weakening, causal transport, and feedback
+
+existing native-runtime lane:
+  remains DR0 until a canonical library-owned provider derives the relation
+  and the native executor consumes it
+```
+
+Producer success cannot upgrade existing native support, native D0a, or Phase 8
+status. Record conditional naturalization requirements for a possible future
+default-off, library-owned exact-history constitutive hook without selecting or
+scheduling that implementation. N31 records the contract and evidence only;
+`src/`, specs, implementation plans, examples, and tests remain unchanged.
+Do not open I10 as part of C.2; continue to I10 after C.2 closes.
+
+#### C.2 Semantic And Physical Interpretation
+
+Name the observed weakening precisely:
+
+```text
+activity-indexed local susceptibility relaxation
+
+quiescence_decay = false
+wall_clock_decay = false
+route_use_reinforcement = true
+other_incident_activity_relaxation = true
+```
+
+The operational carrier is native discrete coherence-current history. Packet
+amount represents transferred coherence; edge and orientation represent
+physical current support and direction; committed record order supplies causal
+ordering. Do not call this an unqualified continuous `J_C` representation until
+that equivalence is established.
+
+`S` is an attenuation multiplier, not supranative conductance:
+
+```text
+S = 1.0:
+  unattenuated native conductance
+
+S = 0.5:
+  unformed candidate-mode conductance floor
+
+formation:
+  recovery from the candidate floor toward native conductance
+
+relaxation:
+  return toward the candidate floor
+```
+
+A feature-enabled, no-history control must derive `S=0.5` and may not support an
+aftereffect claim.
+
+The additional packetization, mediation, transport-integration, repeated-loop,
+topology, cache, and native re-admission requirements are deferred
+naturalization requirements outside N31. They are recorded at the end of this
+plan and do not block Iteration 10.
+
+#### C.1 Revision Lineage
+
+C.2 consumes corrected C.1 digest
+`2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e`.
+An earlier reviewed artifact with digest prefix `33e77c892977` is not retained
+in the repository and is not a C.2 evidence source. The corrected C.1 version
+separates reduced projection from complete native state, records retained causal
+history, limits the matcher to its fixture, uses discrete coherence-current
+proxy wording, separates classification from fresh execution, and normalizes
+control meanings. Its provisional ceiling is unchanged; authority, scope, and
+debt are tighter.
+
 ### Iteration 10 - Added-Mechanism Replay And Controls
 
 Apply candidate-specific intervention, replay, restoration, accounting,
-hidden-state, topology, and producer/native controls. Consume I9-C and I9-C.1
-as separate evidential objects: independent-state C and exact-derived-history
-C.1 must retain separate carrier, authority, rung, and debt records.
+hidden-state, topology, and producer/native controls. Consume I9-C, I9-C.1,
+and I9-C.2 as separate evidential objects: independent-state C,
+fixture-exact-history C.1, and generalized-relation/producer-extension C.2 must
+retain separate carrier, authority, lane, rung, and debt records. C.2 producer
+success must not be consumed as existing native runtime support.
 
 ### Iteration 11 - Comparative Semantic And Native-Admission Classification
 
@@ -1560,3 +1694,81 @@ N31 can support a bounded graph-side decay relation, observable, primitive,
 closure, extension requirement, or non-selection. It cannot establish the
 RCAE trail/stigmergic field, ecology coordination, communication, memory,
 learning, agency, selfhood, sentience, or organism/life.
+
+## Deferred C.2 Naturalization Requirements (Outside N31)
+
+This section is a conditional future implementation record, not an N31
+iteration and not a prerequisite for I10-I12. Use it only if C.2 is later
+selected for LGRC naturalization.
+
+### Packetization And Mediation
+
+The current causal distance counts qualifying committed arrivals. Compare one
+`0.10` progression packet with two `0.05` packets under the same integrated
+transferred coherence and physical interval. Either `S` must match or event
+granularity must be declared physically load-bearing. Integrated local activity
+or registered proper time is preferred over arbitrary packet segmentation.
+
+Direct mediation controls must isolate:
+
+```text
+history -> derived S -> effective geometry -> flux -> packet amount
+```
+
+Run common-`S` clamp, derived-`S` bypass, same-`S`/different-history, and
+same-history/recomputed-`S` comparisons. Keep the producer input allowlist to
+`S`, an exact current native-state copy, registered route, and frozen transport
+integration parameter. Branch IDs, snapshot names, outcome history, semantic
+labels, and expected packet amounts remain forbidden.
+
+The executed producer uses `q_packet=max(0,J_e)*0.25`. The coefficient remains
+producer policy until assigned a dimensioned integration or packetization
+meaning. Naturalization requires units closure plus zero-flux, negative-flux,
+insufficient-source, source-bound, and atomic-refusal/clipping controls.
+
+### Feedback, Stability, Topology, And Cache
+
+C.2 demonstrates only:
+
+```text
+transport -> changed native history -> second S derivation
+```
+
+A naturalized implementation should run at least two complete cycles and test
+bounded saturation or declared oscillation, `S_max`, one-arrival/one-
+contribution accounting, departure/arrival double counting, recursive cascade
+bounds, exact attenuation of old and new contributions, and long-run conserved
+nonnegative coherence.
+
+Edge deletion/recreation, orientation reversal, parallel-edge replacement,
+route-source change, and topology-version change require a frozen invalidation,
+versioned-identity, or explicit-migration policy. Historical contributions may
+not silently attach to a reused identifier.
+
+An incremental cache is admissible only when full-history recomputation equals
+the cache, removal is neutral, injection has no authority, mismatch fails
+closed, identity includes relation parameters and topology version, and pruning
+has an explicit cutoff or error contract. Approximate truncation is not
+`exact-derived`.
+
+### Native Ownership And Re-Admission
+
+Either an integrated native step or a canonical library-owned producer plus
+the native executor may qualify. Native status depends on library ownership,
+specification, canonical invocation without an experiment harness, complete
+provider restoration identity, default-off behavior, no external relation
+authority, and conservative execution.
+
+The native lane starts at `DR0` and cannot inherit producer `DR4`:
+
+```text
+DR1  canonical provider derives formation from native history
+DR2  save/load and cache removal preserve exact derivation
+DR3  canonical progression weakens without experiment scheduling
+DR4  canonical provider/executor consumes S and changes conservative transport
+feedback  changed geometry is consumed in a subsequent native cycle
+baseline  feature-disabled behavior is byte-identical
+provider  wrong policy/topology/parameters/history identity refuses
+```
+
+RCAE admission remains blocked until `DR5` and a reusable provider contract.

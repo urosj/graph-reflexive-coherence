@@ -1,0 +1,62 @@
+{
+  "I10_opened": false,
+  "N31_consumption_after_future_implementation": [
+    "do_not_rewrite_I9C_or_I9C1",
+    "readmit_native_runtime_lane_from_DR0",
+    "consume_relation_lane_DR2_as_prerequisite_not_runtime_upgrade",
+    "record_new_provider_revision_and_contract_digest",
+    "execute_DR1_through_DR4_gates_before_I10",
+    "retain_existing_native_D0a_DR2_boundary"
+  ],
+  "RCAE_admission_status": "blocked_until_DR5_and_reusable_provider_contract",
+  "artifact_kind": "n31_i9c2_phase8_handoff",
+  "artifact_schema_version": "n31_i9c2_phase8_handoff_v1",
+  "blocks_N31_iteration_10": false,
+  "candidate_id": "C_native_exact_history_constitutive_closure",
+  "deferred_naturalization_debt": {
+    "cache_and_history_pruning": "open",
+    "direct_mediation_controls": "open",
+    "multi_cycle_stability": "open",
+    "packetization_invariance": "open",
+    "topology_lifecycle": "open",
+    "transport_interval_naturalization": "open"
+  },
+  "future_governance": {
+    "candidate_native_extension_diff_authorized": "must_be_true_only_on_future_implementation_branch",
+    "candidate_specific_conformance_required": true,
+    "diff_allowlist_exact": true,
+    "existing_runtime_behavior_unchanged_when_disabled": true,
+    "feature_default_off": true,
+    "full_baseline_conformance_required": true
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "handoff_status": "deferred_conditional_naturalization_requirements_recorded",
+  "implementation_selection_status": "not_selected_by_N31",
+  "native_architecture_decision": {
+    "decision_criterion": "library_ownership_native_spec_canonical_invocation_complete_restoration_default_off_and_conservative_execution",
+    "experiment_owned_producer_is_native": false,
+    "integrated_step_allowed": true,
+    "library_owned_producer_plus_step_allowed": true,
+    "status": "open_before_implementation"
+  },
+  "native_readmission_gates": {
+    "DR1": "canonical_native_provider_derives_formation_from_native_history",
+    "DR2": "save_load_and_cache_removal_preserve_exact_derivation",
+    "DR3": "canonical_native_progression_weakens_without_experiment_scheduling_being_load_bearing",
+    "DR4": "canonical_native_producer_or_step_consumes_relation_and_executes_changed_conservative_transport",
+    "baseline": "feature_disabled_is_byte_identical_to_accepted_LGRC",
+    "feedback": "completed_transport_changes_next_geometry_and_that_geometry_is_consumed_in_a_subsequent_native_cycle",
+    "provider": "wrong_policy_topology_parameters_or_history_identity_refuses"
+  },
+  "output_digest": "fffcdff90f39498d5c8ca13131f95ac878557f7c82a3745e6154b28d77d26ff4",
+  "producer_DR4_inherited_by_native_lane": false,
+  "required_change_scope": [
+    "default_off_LGRC9V3_mode_and_policy_contract",
+    "general_exact_history_derivation_surface",
+    "ordinary_step_constitutive_geometry_consumption",
+    "conservative_packet_admission_and_transport",
+    "derived_only_telemetry_and_snapshot_recomputation",
+    "candidate_specific_and_disabled_baseline_tests",
+    "spec_and_phase_checklist_updates"
+  ]
+}

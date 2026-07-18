@@ -1,0 +1,24 @@
+{
+  "DR2_relation_lane_gate_passed": true,
+  "artifact_kind": "n31_i9c2_native_restoration_matrix",
+  "artifact_schema_version": "n31_i9c2_native_restoration_matrix_v1",
+  "external_history_archive_required": false,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "native_snapshot_load_used": true,
+  "output_digest": "5e956805fb23df2681b97a41c9bdfca7a92c177cbd0a2d601094bf5f967230e9",
+  "rows": [
+    {
+      "after_load_S": 0.9,
+      "before_S": 0.9,
+      "exact": true,
+      "row_id": "formed_snapshot_load_rederive"
+    },
+    {
+      "after_load_S": 0.6265625,
+      "before_S": 0.6265625,
+      "exact": true,
+      "row_id": "progressed_snapshot_load_rederive"
+    }
+  ],
+  "stored_S_required": false
+}

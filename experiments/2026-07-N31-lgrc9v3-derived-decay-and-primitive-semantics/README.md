@@ -267,6 +267,48 @@ relative to the full native snapshot containing the packet log. The current
 functional remains fixture-bound, and wrapper-owned constitutive insertion
 remains explicit producer residue.
 
+Iteration 9-C.2 removes the fixture matcher and tests a generalized
+exact-history relation over native packet-processing records. It also follows
+the established LGRC producer/executor pattern: an experiment-owned producer
+derives the relation and schedules causal work, while `LGRC9V3.step()` alone
+executes packet debit, transit, arrival, and state mutation. This is a valid
+LGRC-faithful extension probe without an `src/` change, but it is not the same
+as existing native support.
+
+C.2 therefore records three separate lanes:
+
+```text
+relation/carrier lane = DR2
+  generalized formation plus exact native restoration
+
+producer-extension lane = DR4
+  history-conditioned geometry schedules conservative native packet transport
+  and that transport enters the native history used by the later relation
+
+existing native-runtime lane = DR0
+  ordinary LGRC does not derive the relation or consume it constitutively
+```
+
+The producer lane demonstrates what an LGRC-compatible implementation can do;
+it cannot upgrade the existing runtime lane. If C.2 is later selected for
+naturalization, native admission requires an authorized Phase 8 tranche with a
+library-owned, default-off hook and its own replay and compatibility evidence.
+That conditional work is not part of N31 and does not block I10.
+
+Do not overread C.2 as passive decay or supranative conductance. `S` ranges
+from a candidate-mode floor of `0.5 * g_native` to unattenuated
+`1.0 * g_native`. Route use reinforces `S`; other committed incident activity
+relaxes it; quiescence and wall time do not. The correct name is
+**activity-indexed local susceptibility relaxation**.
+
+C.2 proves one conservative feedback depth, not stable repeated recursion. Its
+producer `DR4` is provisional pending I10. Packetization invariance, direct
+mediation clamps, transport-interval units, a second complete feedback cycle,
+long-run stability, topology lifecycle, exact cache/pruning semantics, and the
+feature-disabled native baseline remain open. The native lane must re-earn its
+rungs and cannot inherit producer evidence. RCAE consumption remains blocked
+until `DR5` and a reusable provider contract.
+
 ## Non-Negotiable Boundaries
 
 ### Coherence Conservation

@@ -1,0 +1,132 @@
+{
+  "artifact_kind": "n31_i9c2_runtime_gap_audit",
+  "artifact_schema_version": "n31_i9c2_runtime_gap_audit_v1",
+  "current_runtime_audit": {
+    "audit_scope": "current_accepted_LGRC9V3_runtime_before_C2",
+    "current_route_amount_inputs": [
+      "absolute amount",
+      "arrival amount_fraction",
+      "arrival amount fallback"
+    ],
+    "current_runtime_conclusion": "serialized_history_exists_but_ordinary_step_has_no_native_exact_history_constitutive_consumption_hook",
+    "current_spec_defines_native_exact_history_closure": false,
+    "history_derived_geometry_consumption_present": false,
+    "history_derived_susceptibility_mode_present": false,
+    "native_packet_history_serialized": true,
+    "ordinary_step_rebuilds_GRC9V3_transport_geometry": false,
+    "ordinary_step_routes_arrival_local_update": true
+  },
+  "gap_classification": {
+    "gap_may_be_closed_inside_N31_experiment": false,
+    "gap_owner": "future_authorized_LGRC_phase8_extension",
+    "generalized_experiment_relation_missing": false,
+    "native_exact_history_functional_missing": true,
+    "ordinary_constitutive_consumption_hook_missing": true,
+    "ordinary_history_conditioned_packet_transport_missing": true,
+    "reflexive_feedback_to_next_geometry_missing": true,
+    "serialized_native_history_missing": false
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "output_digest": "405ecfdd84993ae87468a910f466a601d118c7a1636979160f4626bc7c959db2",
+  "source_records": [
+    {
+      "actual_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "actual_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "expected_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "expected_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "internal_output_digest_exact": true,
+      "output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "57e9ab2ca3239a4feda40e0bcb7963548824ec75baa97029bd4516288bee3353",
+      "expected_sha256": "57e9ab2ca3239a4feda40e0bcb7963548824ec75baa97029bd4516288bee3353",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_source_current_trace.json",
+      "sha256_exact": true
+    },
+    {
+      "actual_output_digest": "17454fd22814459390790078113c661c175656a83369fc13b2804777fcb355fb",
+      "actual_sha256": "13d3958117ad404ed0a8e8831bdbbe6f61577198dbe1de0e3f3d786a8941f038",
+      "expected_output_digest": "17454fd22814459390790078113c661c175656a83369fc13b2804777fcb355fb",
+      "expected_sha256": "13d3958117ad404ed0a8e8831bdbbe6f61577198dbe1de0e3f3d786a8941f038",
+      "internal_output_digest_exact": true,
+      "output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_preregistration.json",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3",
+      "expected_sha256": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "expected_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "expected_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "expected_sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "expected_sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "expected_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "a272102d8463359c2f9d7a40ce63b3be52509b517da67579127ab6845ff36dc4",
+      "expected_sha256": "a272102d8463359c2f9d7a40ce63b3be52509b517da67579127ab6845ff36dc4",
+      "path": "specs/lgrc-9-v3-spec.md",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "1d479c3b3b7c7c8adaaca23b6371914717f73c408b6f9b735f89cbf18858f6b4",
+      "expected_sha256": "1d479c3b3b7c7c8adaaca23b6371914717f73c408b6f9b735f89cbf18858f6b4",
+      "path": "examples/lgrc9v3/README.md",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "37274cc63ff90696689de807609fe184e167fc3a0c4adcb5421eeabbd2440c1f",
+      "expected_sha256": "37274cc63ff90696689de807609fe184e167fc3a0c4adcb5421eeabbd2440c1f",
+      "path": "examples/lgrc9v3/autonomous_produce_then_step.py",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "3bff7c0f85a664c1ee5d57d07cec82ff88baa48ef1aa1b87978f0fd6656c0a3b",
+      "expected_sha256": "3bff7c0f85a664c1ee5d57d07cec82ff88baa48ef1aa1b87978f0fd6656c0a3b",
+      "path": "examples/lgrc9v3/native_packet_loop.py",
+      "sha256_exact": true
+    },
+    {
+      "actual_sha256": "7057cf41f9f59ad6f9b00ea616ff97716abeea95b858a9bb8a21bb0c2851e9e2",
+      "expected_sha256": "7057cf41f9f59ad6f9b00ea616ff97716abeea95b858a9bb8a21bb0c2851e9e2",
+      "path": "examples/lgrc9v3/active_lgrc3_causal_history.py",
+      "sha256_exact": true
+    }
+  ],
+  "wrapper_boundary": {
+    "I9C1_wrapper_diagnostic_retained": true,
+    "LGRC_faithful_producer_step_candidate_allowed": true,
+    "producer_step_can_upgrade_existing_native_support": false,
+    "reason": "native_C2_requires_library_owned_ordinary_step_consumption_and_transport_under_a_default_off_runtime_contract",
+    "wrapper_or_subclass_can_satisfy_native_C2": false
+  }
+}

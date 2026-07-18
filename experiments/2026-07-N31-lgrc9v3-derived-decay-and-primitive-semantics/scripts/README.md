@@ -221,6 +221,23 @@ Run with:
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_exact_derived_susceptibility_i9c1.py
 ```
 
+## Iteration 9-C.2
+
+- `build_n31_native_exact_history_closure_i9c2.py` replaces C.1's fixture
+  matcher with a generalized native packet-history relation, verifies exact
+  native restoration and representation invariance, and executes an
+  experiment-owned LGRC-faithful producer/executor step. The producer computes
+  history-conditioned geometry on a state copy and schedules a packet; native
+  `LGRC9V3.step()` alone performs state mutation. The result records separate
+  relation/carrier, provisional producer-extension pending I10, and
+  existing-native-runtime lanes, plus the still-open native re-admission gates.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_native_exact_history_closure_i9c2.py
+```
+
 Scripts should be deterministic, use repository-relative paths, consume exact
 source artifacts, and keep candidate-specific topology and invariants explicit.
 Experiment scripts may construct fixtures and invoke public runtime operations;

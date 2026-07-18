@@ -1,0 +1,47 @@
+{
+  "admission_question": "Can an authorized future native LGRC extension derive route susceptibility from admitted serialized coherence-current history, consume it in ordinary transport, conserve coherence, and feed the resulting current back into later derivation without authoritative S?",
+  "artifact_kind": "n31_i9c2_preregistration",
+  "artifact_schema_version": "n31_i9c2_preregistration_v1",
+  "candidate_id": "C_native_exact_history_constitutive_closure",
+  "execution_decision": "execute_generalized_relation_native_restoration_and_LGRC_faithful_producer_step_gates_without_runtime_mutation_then_handoff_native_gap",
+  "experiment_runtime_mutation_allowed": false,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "initial_rung": "DR0",
+  "iteration": "I9-C.2",
+  "lane_status_policy": {
+    "highest_observed_evidence_ceiling": "DR4",
+    "native_runtime_lane": "DR0",
+    "producer_extension_lane": "provisional_DR4_pending_I10",
+    "relation_carrier_lane": "DR2",
+    "unqualified_native_C2_DR4_allowed": false
+  },
+  "non_admissible_shortcuts": [
+    "experiment_wrapper_conductance_write",
+    "experiment_defined_LGRC_subclass_claimed_as_native",
+    "stored_or_injected_authoritative_S",
+    "diagnostic_flux_without_executed_transport",
+    "fixture_identifier_or_timestamp_matching",
+    "retroactive_inheritance_of_I9C1_DR4"
+  ],
+  "output_digest": "2722767eb84e87773bb97a94a3edfd61d7023de06ed3e828cee4f7f925eddf74",
+  "representation_class": "proposed_native_added_mechanism_exact_history_closure",
+  "rung_assignment_policy": "assign_relation_carrier_and_native_runtime_lanes_separately_from_observed_gates",
+  "source_candidate": "C_derived_history_susceptibility",
+  "src_changes_allowed": false,
+  "susceptibility_scale_semantics": {
+    "S_equals_1": "unattenuated_native_conductance",
+    "S_equals_floor": "unformed_candidate_mode_conductance_floor",
+    "conductance_enhancement_above_native_allowed": false,
+    "formation": "reduces_candidate_attenuation",
+    "relaxation": "returns_toward_candidate_attenuation_floor"
+  },
+  "title": "Native Exact-History Constitutive Closure",
+  "weakening_semantics": {
+    "autonomous_temporal_decay_claim_allowed": false,
+    "name": "activity_indexed_local_susceptibility_relaxation",
+    "other_incident_activity_relaxation": true,
+    "quiescence_decay": false,
+    "route_use_reinforcement": true,
+    "wall_clock_decay": false
+  }
+}

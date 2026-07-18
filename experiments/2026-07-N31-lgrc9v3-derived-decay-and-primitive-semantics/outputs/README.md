@@ -193,6 +193,31 @@
   I9-C intact, and leaves native D0a, general route transfer, `DR5`, and `DR6`
   unsupported.
 
+## Iteration 9-C.2
+
+- `n31_i9c2_native_exact_history_closure_artifacts/` contains the
+  preregistration, generalized derivation matrix, native restoration matrix,
+  invariance matrix, producer-step matrix, runtime-gap audit, future native
+  extension contract, null/control plan, C.1 revision receipt, and Phase 8
+  handoff. The Phase 8 record is conditional naturalization guidance, not an
+  implementation selection or N31 blocker. The control plan distinguishes
+  executed relation/producer controls
+  from unrun native, packetization, mediation, stability, topology, and cache
+  gates.
+- `n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_c1_revision_receipt.json`
+  records the earlier reviewed C.1 digest prefix, the corrected exact C.1
+  identity consumed by C.2, the correction classes, and the fact that the
+  earlier artifact is lineage only rather than evidence.
+- `n31_i9c2_native_exact_history_closure_admission_trace.json` records the
+  three-lane admission result and the exact authorities used by the custom
+  producer/executor composition.
+- `n31_native_exact_history_closure_i9c2.json` classifies the generalized
+  relation/carrier at `DR2`, the LGRC-faithful producer-extension at provisional
+  `DR4` pending I10, and
+  the unchanged existing native runtime at `DR0`. Producer `DR4` is explicitly
+  provisional pending I10. It leaves C/C.1 intact, native D0a unchanged, RCAE
+  admission blocked, and I10 unopened.
+
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative
 classification, and the final RCAE return manifest. Scratch output remains

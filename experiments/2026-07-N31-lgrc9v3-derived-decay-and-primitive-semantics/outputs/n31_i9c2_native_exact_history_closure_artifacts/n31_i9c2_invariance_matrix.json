@@ -1,0 +1,92 @@
+{
+  "artifact_kind": "n31_i9c2_invariance_matrix",
+  "artifact_schema_version": "n31_i9c2_invariance_matrix_v1",
+  "control_scope_status": {
+    "control_plan_complete": true,
+    "native_runtime_controls_executed": false,
+    "producer_transport_controls_executed": true,
+    "relation_controls_executed": true
+  },
+  "duplicate_committed_arrival": {
+    "failed_closed": true,
+    "result": {
+      "reason": "duplicate committed arrival identity",
+      "status": "blocked"
+    }
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "history_removed": {
+    "baseline_floor": 0.5,
+    "derived_S": 0.5,
+    "returned_to_floor": true
+  },
+  "injected_S": {
+    "baseline_S": 0.6265625,
+    "derived_S": 0.6265625,
+    "injected_value": 0.999,
+    "no_authority": true
+  },
+  "invariant_rows": [
+    {
+      "baseline_S": 0.6265625,
+      "control_id": "identifiers",
+      "invariant": true,
+      "mutated_S": 0.6265625
+    },
+    {
+      "baseline_S": 0.6265625,
+      "control_id": "lineage_labels",
+      "invariant": true,
+      "mutated_S": 0.6265625
+    },
+    {
+      "baseline_S": 0.6265625,
+      "control_id": "scheduler_shift",
+      "invariant": true,
+      "mutated_S": 0.6265625
+    },
+    {
+      "baseline_S": 0.6265625,
+      "control_id": "time_translation",
+      "invariant": true,
+      "mutated_S": 0.6265625
+    },
+    {
+      "baseline_S": 0.6265625,
+      "control_id": "semantic_labels",
+      "invariant": true,
+      "mutated_S": 0.6265625
+    },
+    {
+      "baseline_S": 0.6265625,
+      "control_id": "wrong_direction_interspersion",
+      "invariant": true,
+      "mutated_S": 0.6265625
+    }
+  ],
+  "output_digest": "0a66f923936c149d2a04588200e7dc8461cbff614e1e66d5397d153758c61ae3",
+  "physically_different_history": {
+    "baseline_S": 0.6265625,
+    "changed_S": 0.66875,
+    "predictable_change": true
+  },
+  "role_preserving_renumbering": {
+    "baseline_S": 0.6265625,
+    "invariant": true,
+    "remapped_S": 0.6265625
+  },
+  "runtime_only_controls_pending": [
+    "feature_enabled_no_history_candidate_floor_behavior",
+    "common_S_clamp",
+    "derived_S_bypass",
+    "same_S_different_histories_same_packet_amount",
+    "same_history_recomputed_S_same_packet_amount",
+    "feature_disabled_byte_identical_baseline",
+    "unrelated_edge_native_conductance_unchanged",
+    "ordinary_step_transport_dependency",
+    "reflexive_feedback_second_derivation",
+    "packetization_invariance",
+    "multi_cycle_stability",
+    "topology_lifecycle"
+  ]
+}

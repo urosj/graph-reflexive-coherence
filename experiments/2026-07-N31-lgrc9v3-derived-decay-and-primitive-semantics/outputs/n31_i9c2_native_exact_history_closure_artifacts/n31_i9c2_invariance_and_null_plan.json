@@ -1,0 +1,89 @@
+{
+  "artifact_kind": "n31_i9c2_invariance_and_null_plan",
+  "artifact_schema_version": "n31_i9c2_invariance_and_null_plan_v1",
+  "control_status": {
+    "cache_pruning_controls": "not_run",
+    "control_plan_complete": true,
+    "direct_mediation_controls": "not_run",
+    "multi_cycle_stability_controls": "not_run",
+    "native_runtime_consumption_controls": "not_run_runtime_change_not_authorized_in_N31",
+    "packetization_invariance": "not_run",
+    "producer_step_transport_controls": "executed",
+    "relation_level_invariance_controls": "executed",
+    "topology_lifecycle_controls": "not_run"
+  },
+  "deferred_naturalization_controls": {
+    "cache_and_pruning": [
+      "full_recompute_equals_cache",
+      "cache_removal_neutral",
+      "cache_injection_no_authority",
+      "cache_history_mismatch_fails_closed",
+      "pruning_contract_explicit"
+    ],
+    "direct_mediation": [
+      "common_S_clamp",
+      "derived_S_bypass",
+      "same_S_different_histories",
+      "same_history_recomputed_S"
+    ],
+    "multi_cycle_stability": [
+      "at_least_two_complete_native_cycles",
+      "saturation_or_oscillation_declared",
+      "no_double_counting",
+      "no_unbounded_cascade",
+      "long_run_conservation_and_nonnegativity"
+    ],
+    "packetization": [
+      "one_0.10_vs_two_0.05_progression_packets",
+      "matched_integrated_coherence",
+      "matched_physical_interval"
+    ],
+    "topology_lifecycle": [
+      "edge_deletion",
+      "edge_recreation",
+      "orientation_reversal",
+      "parallel_edge_replacement",
+      "route_source_change",
+      "topology_version_change"
+    ],
+    "transport_integration": [
+      "zero_flux",
+      "negative_flux",
+      "insufficient_source_coherence",
+      "packet_amount_bounded_by_source",
+      "units_close"
+    ]
+  },
+  "execution_status": "relation_restoration_and_producer_step_executed_native_runtime_consumption_controls_deferred_unless_naturalization_selected",
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "output_digest": "3d474b0baa50b8a0b512721f92efcace338b975683bf645f06e31ce034d2a500",
+  "required_active_nulls": [
+    "history_removed",
+    "feature_enabled_no_history_candidate_floor_behavior",
+    "duplicate_qualifying_receipt",
+    "wrong_edge_or_direction",
+    "semantic_label_only",
+    "injected_S_has_no_authority",
+    "derived_S_bypass",
+    "feature_disabled_byte_identical_baseline",
+    "unrelated_edge_unchanged"
+  ],
+  "required_execution_tests": [
+    "native_formation",
+    "snapshot_load_exact_derivability",
+    "native_internal_weakening",
+    "same_reduced_projection_different_history_ordinary_step",
+    "actual_conservative_transport",
+    "reflexive_feedback_second_derivation"
+  ],
+  "required_invariance_controls": [
+    "event_ID_permutation",
+    "packet_ID_permutation",
+    "lineage_label_renaming",
+    "absolute_scheduler_index_shift",
+    "absolute_time_translation_with_intervals_preserved",
+    "role_preserving_node_edge_renumbering",
+    "irrelevant_interspersed_events",
+    "physically_different_current_history"
+  ]
+}
