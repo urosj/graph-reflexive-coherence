@@ -1,0 +1,33 @@
+{
+  "artifact_kind": "n31_B_one_shot_export_closure_state",
+  "artifact_schema_version": "n31_B_one_shot_export_closure_state_v1",
+  "export_policy_receipt": {
+    "C_floor": 0.2,
+    "destination_node_id": 2,
+    "edge_id": 1,
+    "one_shot_consumed": true,
+    "producer_call_index": 1,
+    "q_cap": 0.04,
+    "q_emit": 0.04,
+    "receipt_schema": "n31_B_export_policy_receipt_v1",
+    "source_C_at_decision": 0.39999999999999997,
+    "source_node_id": 1,
+    "trigger_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40"
+  },
+  "global_event_count_state_present": false,
+  "producer_call_count": 1,
+  "qualifying_local_event_receipt": {
+    "amount": 0.05,
+    "budget_error": -2.220446049250313e-16,
+    "edge_id": 0,
+    "event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+    "event_kind": "lgrc9v3_packet_arrival",
+    "event_time_key": 1.0,
+    "packet_id": "lgrc9v3-packet-0dc793d54a5d0171",
+    "scheduler_event_index": 2,
+    "source_lineage_id": "n31_B_formation_lineage",
+    "source_node_id": 0,
+    "target_node_id": 1
+  },
+  "wall_clock_state_present": false
+}

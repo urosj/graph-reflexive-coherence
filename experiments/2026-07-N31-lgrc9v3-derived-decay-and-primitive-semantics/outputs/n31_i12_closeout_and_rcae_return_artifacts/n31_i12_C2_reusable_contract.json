@@ -1,0 +1,179 @@
+{
+  "DR6_contract_only_does_not_mean": [
+    "cross_context_execution",
+    "native_implementation",
+    "ecology_evidence",
+    "provider_adoption",
+    "general_decay_law"
+  ],
+  "DR6_contract_only_means": "reusable_testable_semantics_and_acceptance_contract",
+  "artifact_kind": "n31_i12_C2_reusable_contract",
+  "artifact_schema_version": "n31_i12_C2_reusable_contract_v2",
+  "authority": {
+    "constitutive_insertion": "consumer_or_producer_owned_closure",
+    "history": "exact_serialized_native_packet_history",
+    "native_runtime_support": "DR0",
+    "native_upgrade_allowed": false,
+    "susceptibility_relation": "exact_recomputed_functional"
+  },
+  "candidate_id": "C2_exact_history_susceptibility_closure",
+  "conformance_contract": {
+    "admissible_inputs": [
+      "exact_serialized_native_packet_history",
+      "declared_local_relation_identity",
+      "predeclared_susceptibility_parameters",
+      "source_current_native_geometry_and_coherence"
+    ],
+    "carrier_authority": "exact_serialized_native_packet_history",
+    "claim_ceiling": "relation_DR2_producer_extension_DR5_native_DR0_with_DR6_contract_only",
+    "conservation_accounting_invariants": [
+      "derived_relation_has_no_independent_mass",
+      "native_node_plus_packet_coherence_budget_closes",
+      "post_transport_history_rederives_relation_exactly"
+    ],
+    "consumer_control_set": [
+      "artifact_replay",
+      "snapshot_load_replay",
+      "branch_replay",
+      "duplicate_replay",
+      "post_feedback_restoration_replay",
+      "exact_history_rederivation",
+      "wrong_edge_or_nonqualifying_event_invariance",
+      "wrong_lineage_invariance",
+      "semantic_label_invariance",
+      "role_preserving_topology_invariance",
+      "physical_progression_changes_relation",
+      "conservation_exact"
+    ],
+    "consumer_obligations": [
+      "bind_exact_history_functional_and_parameters",
+      "retain_producer_constitutive_insertion_authority",
+      "retain_native_runtime_DR0",
+      "retain_producer_residue_and_naturalization_debt",
+      "generate_fresh_context_specific_evidence",
+      "apply_all_consumer_controls"
+    ],
+    "duplicate_behavior": "duplicate_committed_arrival_identity_is_rejected_without_relation_change",
+    "forbidden_claims": [
+      "strict_current_C_only_relation",
+      "native_route_organization_weakening",
+      "native_C2",
+      "cross_context_reuse_evidence",
+      "native_support",
+      "general_decay_law",
+      "ecology_evidence"
+    ],
+    "forbidden_inputs": [
+      "independent_stored_S_state",
+      "external_history_archive_substituted_for_native_history",
+      "post_hoc_relation_parameters",
+      "semantic_labels_as_physical_history",
+      "hidden_constitutive_state"
+    ],
+    "formation_condition": "qualifying_committed_local_native_arrival_history_exists",
+    "later_readout_requirement": "changed_effective_geometry_changes_later_native_flux_or_transport",
+    "native_executor_authority": "LGRC9V3_potential_flux_packet_transport_and_history_commit",
+    "producer_authority": "exact_relation_recomputation_effective_geometry_insertion_and_packet_scheduling",
+    "refusal_behavior": "wrong_edge_lineage_role_or_label_does_not_change_relation",
+    "restoration_identity": "lgrc9v3_restoration_identity_v2_plus_exact_rederived_relation",
+    "topology_scope": "declared_local_route_and_role_preserving_topology_family",
+    "transfer_limitations": [
+      "cross_context_reuse_unsupported",
+      "native_constitutive_hook_absent",
+      "packetization_invariance_pending",
+      "multi_cycle_stability_pending"
+    ],
+    "weakening_condition": "causal_progression_reduces_exact_history_derived_susceptibility_toward_floor"
+  },
+  "contract_id": "n31_C2_exact_history_susceptibility_contract_v2",
+  "contract_status": {
+    "contract_semantics_rung": "DR6_contract_only",
+    "cross_context_reuse_evidence": "unsupported",
+    "executed_mechanism_rung": "DR5_producer_extension_relation_DR2_native_DR0",
+    "reusable_contract_status": "issued"
+  },
+  "mediation_contract": {
+    "native_potential_flux_and_packet_executor_consumes_insertion": true,
+    "ordinary_native_constitutive_hook_present": false,
+    "producer_inserts_effective_conductance": true,
+    "scope": "bounded_effective_geometry",
+    "supported": true
+  },
+  "must_not_use_as": [
+    "strict_current_C_only_relation",
+    "native_route_organization_weakening",
+    "native_C2",
+    "cross_context_reuse_evidence",
+    "native_support",
+    "general_decay_law",
+    "ecology_evidence"
+  ],
+  "naturalization_debt": [
+    "packetization invariance",
+    "direct mediation controls",
+    "multi-cycle stability",
+    "topology lifecycle policy",
+    "cache and pruning semantics",
+    "native source-current re-admission"
+  ],
+  "output_digest": "8d21f49662951cdfb3ae71bb550e814bc60a6f5904dc9967eb0c8eeaa9f00b49",
+  "producer_residue": [
+    "history functional application",
+    "effective conductance insertion",
+    "packet scheduling"
+  ],
+  "relation_contract": {
+    "event_or_packet_identifiers_are_duplicate_integrity_only": true,
+    "exact_recomputation_required": true,
+    "executed_parameters": {
+      "S_floor": 0.5,
+      "S_max": 1.0,
+      "alpha": 1.0,
+      "rho": 0.75
+    },
+    "form": "S_e=S_floor+clip(sum(alpha*q_r*rho^delta_tau),0,S_max-S_floor)",
+    "independent_S_state_allowed": false,
+    "schema": "n31_C2_general_physical_history_susceptibility_v1"
+  },
+  "restoration_and_controls": {
+    "executed_evidence_rung": "DR5_producer_extension_relation_DR2_native_DR0",
+    "post_feedback_S_and_next_step_exact": true,
+    "required_replay_modes": [
+      "artifact_replay",
+      "snapshot_load_replay",
+      "branch_replay",
+      "duplicate_replay",
+      "post_feedback_restoration_replay"
+    ],
+    "restoration_identity": "lgrc9v3_restoration_identity_v2_plus_exact_rederived_relation"
+  },
+  "semantic_class": "C.2",
+  "source_I11_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+  "source_evidence": [
+    {
+      "artifact_role": "executed_DR5_replay_control_authority",
+      "output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+      "sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af"
+    },
+    {
+      "artifact_role": "C2_family_execution_and_control_evidence",
+      "output_digest": "8f50db60fbf3fbbac0149353801afedf00fe3a88e760be6b2ff8f43b1ca6f8a6",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C_family_replay_controls.json",
+      "sha256": "252a188bd28fa71b67385fe75f57af2925d720d88d241b4d4eff47335babe375"
+    },
+    {
+      "artifact_role": "comparative_semantic_authority",
+      "output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_comparative_semantic_native_admission_i11.json",
+      "sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4"
+    }
+  ],
+  "time_and_transition_owner": {
+    "internal_progression": "qualifying committed local native arrivals",
+    "packet_scheduling": "experiment_producer",
+    "quiescence_decay": false,
+    "wall_clock_decay": false
+  },
+  "use_when": "the consuming experiment requires activity-indexed susceptibility or effective-geometry relaxation rather than conservative field export"
+}

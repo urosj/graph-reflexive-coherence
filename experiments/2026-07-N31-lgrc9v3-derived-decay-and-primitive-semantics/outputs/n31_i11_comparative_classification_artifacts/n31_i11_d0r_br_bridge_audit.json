@@ -1,0 +1,36 @@
+{
+  "B_R": {
+    "export_policy_owner": "experiment_producer",
+    "later_readout_changed": true,
+    "native_route_organization_state_weakened": true,
+    "native_transport_owner": "LGRC9V3",
+    "organization_mediation": "bounded_partial_local_source_C",
+    "route_mass_decreased": true,
+    "source_artifacts": [
+      "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+      "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+      "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+    ],
+    "status": "supported_producer_mediated_DR5"
+  },
+  "B_R_D0_R_equivalence_supported": false,
+  "D0_R": {
+    "comparison_eligible": false,
+    "globally_refuted": false,
+    "ordinary_post_formation_export_observed": false,
+    "source_artifacts": [
+      "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+      "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+    ],
+    "status": "not_instantiated_in_executed_D0_fixtures"
+  },
+  "artifact_kind": "n31_i11_d0r_br_bridge_audit",
+  "artifact_schema_version": "n31_i11_d0r_br_bridge_audit_v1",
+  "bounded_shape_analogy_status": "supported_non_promotional",
+  "conservation_promotes_B_R_to_D0_R": false,
+  "current_B_R_classified_as_D0_R": false,
+  "d0_to_br_bridge_status": "not_tested",
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "interpretation": "B-R is a bounded operational fallback with exact conservation, not evidence that ordinary D0-R exists",
+  "output_digest": "fdad50cd07effa7f745ec7577356c86f0176d1e5bdfd24e7489203ae78c79947"
+}

@@ -1,0 +1,61 @@
+{
+  "C2_DR5_disposition": "committed_as_confirmed_after_final_post_feedback_restoration_and_next_step_witness",
+  "C2_post_feedback_restoration_present_in_committed_I10": true,
+  "C2_post_feedback_witness": {
+    "check_id": "C2_post_feedback_final_state_restoration_witness_exact",
+    "detail": [
+      {
+        "complete_identity_equal": true,
+        "derived_S_exact": true,
+        "next_step_exact": true,
+        "roundtrip": {
+          "identity_v1_after": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+          "identity_v1_before": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+          "identity_v1_exact": true,
+          "identity_v2_after": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+          "identity_v2_before": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+          "identity_v2_exact": true,
+          "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+          "row_id": "C2_formed_native_history_post_transport",
+          "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json"
+        },
+        "row_id": "formed_native_history"
+      },
+      {
+        "complete_identity_equal": true,
+        "derived_S_exact": true,
+        "next_step_exact": true,
+        "roundtrip": {
+          "identity_v1_after": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+          "identity_v1_before": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+          "identity_v1_exact": true,
+          "identity_v2_after": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+          "identity_v2_before": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+          "identity_v2_exact": true,
+          "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+          "row_id": "C2_progressed_native_history_post_transport",
+          "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json"
+        },
+        "row_id": "progressed_native_history"
+      }
+    ],
+    "passed": true
+  },
+  "artifact_kind": "n31_i11_i10_committed_authority_receipt",
+  "artifact_schema_version": "n31_i11_i10_committed_authority_receipt_v1",
+  "committed_I10_identity": {
+    "git_revision": "e7fc5b4a30e707c42aec83e94d40d36546a2af60",
+    "output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+    "sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af"
+  },
+  "committed_artifact_unchanged_at_I11": true,
+  "committed_identity_is_I11_authority": true,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "output_digest": "f395c72dd70062f32eb3904dae6b1c66dd19a8f0f5f02dbcc499e215fee2f969",
+  "post_commit_I10_corrections_applied": false,
+  "post_commit_I10_revision_detected": false,
+  "reviewed_identity_mismatch_disposition": "no_second_committed_I10_identity_exists; I11 consumes the exact e7fc5b4 authority",
+  "reviewed_identity_mismatch_reproduced_from_repository": false,
+  "scientific_A_B_conclusions_changed": false
+}

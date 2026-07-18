@@ -1,0 +1,267 @@
+{
+  "all_rows_match_relation": true,
+  "all_second_calls_refused_state_neutral": true,
+  "artifact_kind": "n31_i9b_export_policy_sweep",
+  "artifact_schema_version": "n31_i9b_export_policy_sweep_v1",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "b8b4f4a9f51b88ba210d1b84601b38807785d38d11302dce536cfd18f7fb35e2",
+  "q_cap_never_exceeded": true,
+  "rows": [
+    {
+      "expected_q_emit": 0.0,
+      "matches_relation": true,
+      "observed_q_emit": 0.0,
+      "positive_emission": false,
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.18,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.0,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "second_call": {
+        "mutated_native_state_paths": [],
+        "one_shot_receipt_already_consumed": true,
+        "operation": "refused_one_shot_receipt_already_consumed",
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": []
+      },
+      "second_call_closure_unchanged": true,
+      "second_call_native_state_unchanged": true,
+      "second_call_refused": true,
+      "source_C": 0.18,
+      "zero_emission_receipt_consumed": true
+    },
+    {
+      "expected_q_emit": 0.0,
+      "matches_relation": true,
+      "observed_q_emit": 0.0,
+      "positive_emission": false,
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.2,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.0,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "second_call": {
+        "mutated_native_state_paths": [],
+        "one_shot_receipt_already_consumed": true,
+        "operation": "refused_one_shot_receipt_already_consumed",
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": []
+      },
+      "second_call_closure_unchanged": true,
+      "second_call_native_state_unchanged": true,
+      "second_call_refused": true,
+      "source_C": 0.2,
+      "zero_emission_receipt_consumed": true
+    },
+    {
+      "expected_q_emit": 0.01999999999999999,
+      "matches_relation": true,
+      "observed_q_emit": 0.01999999999999999,
+      "positive_emission": true,
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.22,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.01999999999999999,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.01999999999999999,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_sweep_0.22",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "second_call": {
+        "mutated_native_state_paths": [],
+        "one_shot_receipt_already_consumed": true,
+        "operation": "refused_one_shot_receipt_already_consumed",
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": []
+      },
+      "second_call_closure_unchanged": true,
+      "second_call_native_state_unchanged": true,
+      "second_call_refused": true,
+      "source_C": 0.22,
+      "zero_emission_receipt_consumed": true
+    },
+    {
+      "expected_q_emit": 0.04,
+      "matches_relation": true,
+      "observed_q_emit": 0.04,
+      "positive_emission": true,
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.26,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.04,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.04,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_sweep_0.26",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "second_call": {
+        "mutated_native_state_paths": [],
+        "one_shot_receipt_already_consumed": true,
+        "operation": "refused_one_shot_receipt_already_consumed",
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": []
+      },
+      "second_call_closure_unchanged": true,
+      "second_call_native_state_unchanged": true,
+      "second_call_refused": true,
+      "source_C": 0.26,
+      "zero_emission_receipt_consumed": true
+    },
+    {
+      "expected_q_emit": 0.04,
+      "matches_relation": true,
+      "observed_q_emit": 0.04,
+      "positive_emission": true,
+      "producer_call": {
+        "destination_state_read": false,
+        "global_node_scan_performed": false,
+        "mutated_native_state_paths": [],
+        "native_runtime_owns_debit_transport_and_credit": true,
+        "one_shot_receipt_already_consumed": false,
+        "operation": "consume_one_shot_receipt_and_schedule_bounded_export",
+        "outcome_history_read": false,
+        "policy_inputs": {
+          "C_floor": 0.2,
+          "C_leakage_source": 0.4,
+          "one_shot_consumed_before_call": false,
+          "q_cap": 0.04,
+          "qualifying_event_id": "lgrc9v3-packet-event-4c6df9d959b92b40",
+          "registered_destination_node_id": 2,
+          "registered_export_edge_id": 1
+        },
+        "producer_authors_export_amount_time_and_destination": true,
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "q_emit": 0.04,
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": [
+          {
+            "amount": 0.04,
+            "arrival_event_time_key": 3.0,
+            "departure_event_time_key": 2.0,
+            "edge_id": 1,
+            "lineage_id": "n31_B_export_sweep_0.40",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "semantic_edge_payload_read": false,
+        "unlisted_input_read": false,
+        "wall_clock_read": false
+      },
+      "second_call": {
+        "mutated_native_state_paths": [],
+        "one_shot_receipt_already_consumed": true,
+        "operation": "refused_one_shot_receipt_already_consumed",
+        "producer_id": "n31_B_registered_route_local_export_policy_v1",
+        "receipt_matched_exact_predicate": true,
+        "scheduled_events": []
+      },
+      "second_call_closure_unchanged": true,
+      "second_call_native_state_unchanged": true,
+      "second_call_refused": true,
+      "source_C": 0.4,
+      "zero_emission_receipt_consumed": true
+    }
+  ],
+  "zero_emission_consumes_one_shot_receipt": true
+}

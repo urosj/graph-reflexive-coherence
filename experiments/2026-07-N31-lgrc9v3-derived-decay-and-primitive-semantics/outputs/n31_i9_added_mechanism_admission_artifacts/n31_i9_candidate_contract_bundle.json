@@ -1,0 +1,1386 @@
+{
+  "artifact_kind": "added_mechanism_candidate_contract_bundle",
+  "artifact_schema_version": "n31_i9_candidate_contract_bundle_v2",
+  "candidate_contracts": [
+    {
+      "blocked_relabels": [
+        "field_state_decay",
+        "native_decay",
+        "in_flight_attenuation",
+        "native_memory"
+      ],
+      "candidate_disposition": "not_executed",
+      "candidate_id": "A_release_efficacy_attenuation",
+      "candidate_schema_version": "n31_decay_candidate_schema_v2",
+      "candidate_specific_regeneration_required": true,
+      "candidate_specific_rung_qualifier": "release_efficacy_expression_attenuation",
+      "carrier_definition": "newly_created_LGRC_coherence_packet",
+      "causal_transition_owner": "registered_release_policy_producer",
+      "claim_ceiling": "DR5_expression_attenuation_not_field_state_decay",
+      "complete_control_ids": [
+        "label_only_decay",
+        "wall_clock_decay",
+        "post_hoc_weakening_trace",
+        "forming_activity_never_stopped",
+        "relation_persists_but_does_not_weaken",
+        "relation_weakens_but_has_no_later_readout_effect",
+        "global_route_selector",
+        "hidden_producer_update",
+        "unrecorded_post_formation_producer_call",
+        "missing_internal_time_owner",
+        "missing_invariant",
+        "missing_restoration_state",
+        "report_digest_as_runtime_state",
+        "native_relabel_from_producer",
+        "RCAE_demand_as_graph_evidence",
+        "trail_or_stigmergy_relabel",
+        "lossy_node_scalar_match_as_complete_state",
+        "invented_C_slow_state",
+        "producer_scheduled_D0_decay",
+        "export_authoring_producer_call_retained_as_D0_R",
+        "instantaneous_geometry_as_durable_decay",
+        "derived_observable_as_causal_trail",
+        "cache_removed_and_recomputed",
+        "cache_divergence",
+        "observable_disconnected_from_transport",
+        "slow_organization_clamp",
+        "complete_state_matched_history_contrast",
+        "ordinary_outward_flux_as_added_leakage_relabel",
+        "route_mass_loss_as_organization_weakening_relabel",
+        "organization_weakening_without_mediation_as_causal_decay_relabel",
+        "constant_mass_internal_reorganization_as_export_relabel",
+        "unclosed_route_boundary_continuity",
+        "added_export_policy_as_D0_R_relabel",
+        "mass_unmatched_organization_intervention",
+        "proper_time_annotation_as_causal_alignment",
+        "added_coincidence_window_as_native_temporal_organization",
+        "arrival_histogram_as_causal_mediation",
+        "fixed_delay_single_path_as_dispersion",
+        "periodic_rephasing_as_monotonic_decay",
+        "diagnostic_domain_as_mediator_domain",
+        "mixed_domain_without_load_bearing_isolation",
+        "forming_packet_continuation_as_later_independent_readout",
+        "temporal_intervention_with_unmatched_state",
+        "geometric_observable_without_local_transport_intervention",
+        "bounded_partial_disposition_with_supported_row_decision",
+        "blocked_representation_with_supported_row_decision",
+        "full_mediation_with_false_mediated_change",
+        "absent_mediation_with_true_mediated_change",
+        "mixed_domain_unresolved_claims_DR4",
+        "blocked_D0a_authority_as_coherence_only_positive",
+        "D0c_persistence_retained_as_same_D0c_row",
+        "D0b_transport_feedback_without_authority_reclassification",
+        "in_flight_packet_attenuation",
+        "carrier_amount_vs_release_efficacy_confound",
+        "unregistered_age_or_phase",
+        "unreleased_coherence_as_destroyed",
+        "route_label_in_amount_policy"
+      ],
+      "complete_control_set_digest": "ca1535277cd167f7da566c915edd5ea3ddf74497150f4365c345fe4424fac08d",
+      "continuation_state_definition": "complete_LGRC_state_plus_registered_release_phase_closure_state",
+      "control_resolution_status": "not_run_pending_candidate_specific_regeneration_and_execution",
+      "current_decay_relation_ladder_rung": "DR0",
+      "current_rung_reason": "admission_contract_only_no_candidate_runtime_evidence",
+      "direct_I3_null_consumption_allowed": false,
+      "direct_I3_null_consumption_count": 0,
+      "equation_or_relation": {
+        "epsilon_A_by_phase": {
+          "aged": 0.5,
+          "fresh": 1.0
+        },
+        "equation_or_relation_id": "n31_A_release_efficacy_v1",
+        "in_flight_packet_relation": "q_in_flight(t+1) = q_in_flight(t)",
+        "outcome_tuning_allowed": false,
+        "packet_creation_relation": "q_created = q_requested * epsilon_A(phase)",
+        "release_policy_identity": "80530bef52edb734a12fd2a6ea0a49627b577da6e7e58f9eb0264ea327fa4711",
+        "release_policy_schema": "n31_A_release_efficacy_policy_v1",
+        "unreleased_relation": "q_unreleased = q_requested - q_created"
+      },
+      "execution_decision": "execute",
+      "execution_iteration": "I9-A",
+      "execution_rationale": "comparative_semantic_control_under_D0_insufficiency",
+      "fresh_aged_branch_match_contract": {
+        "matched_fields": [
+          "q_requested",
+          "release_source_C_before",
+          "canonical_topology_digest",
+          "event_queue_excluding_qualifying_event",
+          "release_receiver_node_id",
+          "complete_LGRC_continuation_state"
+        ],
+        "only_allowed_difference_at_release_decision": "registered_release_phase_closure_bundle"
+      },
+      "highest_later_eligible_ceiling": "DR5_expression_attenuation_not_field_state_decay",
+      "inherited_required_control_ids": [
+        "label_only_decay",
+        "wall_clock_decay",
+        "post_hoc_weakening_trace",
+        "forming_activity_never_stopped",
+        "relation_persists_but_does_not_weaken",
+        "relation_weakens_but_has_no_later_readout_effect",
+        "global_route_selector",
+        "hidden_producer_update",
+        "unrecorded_post_formation_producer_call",
+        "missing_internal_time_owner",
+        "missing_invariant",
+        "missing_restoration_state",
+        "report_digest_as_runtime_state",
+        "native_relabel_from_producer",
+        "RCAE_demand_as_graph_evidence",
+        "trail_or_stigmergy_relabel",
+        "lossy_node_scalar_match_as_complete_state",
+        "invented_C_slow_state",
+        "producer_scheduled_D0_decay",
+        "export_authoring_producer_call_retained_as_D0_R",
+        "instantaneous_geometry_as_durable_decay",
+        "derived_observable_as_causal_trail",
+        "cache_removed_and_recomputed",
+        "cache_divergence",
+        "observable_disconnected_from_transport",
+        "slow_organization_clamp",
+        "complete_state_matched_history_contrast",
+        "ordinary_outward_flux_as_added_leakage_relabel",
+        "route_mass_loss_as_organization_weakening_relabel",
+        "organization_weakening_without_mediation_as_causal_decay_relabel",
+        "constant_mass_internal_reorganization_as_export_relabel",
+        "unclosed_route_boundary_continuity",
+        "added_export_policy_as_D0_R_relabel",
+        "mass_unmatched_organization_intervention",
+        "proper_time_annotation_as_causal_alignment",
+        "added_coincidence_window_as_native_temporal_organization",
+        "arrival_histogram_as_causal_mediation",
+        "fixed_delay_single_path_as_dispersion",
+        "periodic_rephasing_as_monotonic_decay",
+        "diagnostic_domain_as_mediator_domain",
+        "mixed_domain_without_load_bearing_isolation",
+        "forming_packet_continuation_as_later_independent_readout",
+        "temporal_intervention_with_unmatched_state",
+        "geometric_observable_without_local_transport_intervention",
+        "bounded_partial_disposition_with_supported_row_decision",
+        "blocked_representation_with_supported_row_decision",
+        "full_mediation_with_false_mediated_change",
+        "absent_mediation_with_true_mediated_change",
+        "mixed_domain_unresolved_claims_DR4",
+        "blocked_D0a_authority_as_coherence_only_positive",
+        "D0c_persistence_retained_as_same_D0c_row",
+        "D0b_transport_feedback_without_authority_reclassification"
+      ],
+      "internal_time_contract": {
+        "amount_policy_state_path": "candidate_closure.release_phase",
+        "internal_time_advance_equation": "phase=fresh before first exact receipt; phase=aged after exactly one receipt",
+        "internal_time_advance_event": "n31_A_exact_formation_arrival",
+        "internal_time_owner": "registered_release_phase_closure",
+        "internal_time_state_path": "candidate_closure.release_phase_receipt_count",
+        "internal_time_units": "qualifying_event_receipts",
+        "malformed_phase_count_pair_behavior": "refuse_release_evaluation",
+        "receipt_count_input_role": "validation_only_not_amount_selecting",
+        "snapshot_path": "candidate_closure.release_phase",
+        "wall_clock_excluded": true
+      },
+      "invariant_contract": {
+        "invariant_id": "n31_A_total_coherence_with_unreleased_source_v1",
+        "only_q_created_is_debited": true,
+        "q_unreleased_semantics": "derived_counterfactual_not_stored_state",
+        "quantity": "node_plus_in_flight_coherence",
+        "relation": "C_release_source_before - C_release_source_after == q_created == in_flight_packet_amount == eventual_receiver_credit",
+        "release_source_C_before_after_required": true,
+        "separate_unreleased_reservoir_created": false,
+        "system_boundary": "all_three_nodes_plus_in_flight_packets",
+        "tolerance": 1e-12,
+        "unreleased_coherence_remains_at_source": true
+      },
+      "lane_id": "added_mechanism",
+      "lane_specific_control_ids": [
+        "in_flight_packet_attenuation",
+        "carrier_amount_vs_release_efficacy_confound",
+        "unregistered_age_or_phase",
+        "unreleased_coherence_as_destroyed",
+        "route_label_in_amount_policy"
+      ],
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "native_release_phase_state_missing",
+        "native_packet_creation_efficacy_surface_missing"
+      ],
+      "positive_candidate_evidence_opened": false,
+      "primary_semantic_class": "A",
+      "producer_DR5_or_DR6_implies_native_DR5_or_DR6": false,
+      "producer_residue": [
+        "release_phase_state_and_transition_owned_by_experiment_producer",
+        "producer_selects_new_packet_amount_at_creation"
+      ],
+      "qualifying_phase_event_contract": {
+        "callback_order": "after_committed_arrival_before_release_decision",
+        "edge_id": 0,
+        "event_contract_id": "n31_A_exact_formation_arrival_v1",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "lineage_id": "n31_A_formation_lineage",
+        "maximum_occurrence_count": 1,
+        "minimum_occurrence_count": 1,
+        "source_node_id": 0,
+        "target_node_id": 1,
+        "unrelated_events_advance_phase": false
+      },
+      "representation_or_authority_class": "producer_mediated",
+      "reusable_contract_status": "not_tested_pending_I10_through_I12",
+      "role_contract": {
+        "formation_source_node_id": 0,
+        "release_receiver_node_id": 2,
+        "release_source_node_id": 1,
+        "source_debit_owner_node_id": 1
+      },
+      "row_decision": "not_applicable",
+      "row_decision_scope_reason": "I9_admission_only_before_candidate_execution",
+      "schema_change_record_id": "n31_i2_schema_freeze",
+      "source_current_input_allowlist": [
+        {
+          "forbidden_adjacent_inputs": [
+            "global_processed_event_count",
+            "wall_clock",
+            "unrelated_event_history"
+          ],
+          "historical_depth": "restored_current_receipt_state",
+          "input_path": "candidate_closure.release_phase",
+          "input_role": "registered_release_phase",
+          "load_bearing": true,
+          "read_phase": "immediately_before_packet_creation",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "epsilon_selection",
+            "q_created_selection"
+          ],
+          "historical_depth": "one_exact_registered_event",
+          "input_path": "candidate_closure.release_phase_receipt_count",
+          "input_role": "phase_receipt_count_invariant_validation_only",
+          "load_bearing": false,
+          "read_phase": "immediately_before_packet_creation_validation",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "outcome_selected_packet_amount"
+          ],
+          "historical_depth": "current",
+          "input_path": "candidate_policy.q_requested",
+          "input_role": "requested_new_packet_amount",
+          "load_bearing": true,
+          "read_phase": "packet_creation",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "global_node_scan",
+            "route_label"
+          ],
+          "historical_depth": "current",
+          "input_path": "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "input_role": "release_source_C",
+          "load_bearing": true,
+          "read_phase": "packet_creation_precondition",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "outcome_tuned_epsilon"
+          ],
+          "historical_depth": "versioned_policy_configuration",
+          "input_path": "candidate_policy.epsilon_A_by_phase",
+          "input_role": "frozen_release_efficacy_table",
+          "load_bearing": true,
+          "read_phase": "packet_creation",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "versioned_policy_configuration",
+          "input_path": "candidate_policy.release_policy_identity",
+          "input_role": "release_policy_configuration_binding",
+          "load_bearing": false,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "edge_payload_label"
+          ],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_topology.registered_release_edge_id",
+          "input_role": "numeric_registered_release_edge",
+          "load_bearing": true,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_topology.registered_release_source_node_id",
+          "input_role": "numeric_registered_release_source",
+          "load_bearing": true,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_topology.registered_release_receiver_node_id",
+          "input_role": "numeric_registered_release_receiver",
+          "load_bearing": true,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_topology.canonical_topology_digest",
+          "input_role": "registered_topology_identity_binding",
+          "load_bearing": false,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        }
+      ],
+      "source_current_input_policy": {
+        "allowlist_digest": "5da354ef30aed59e73616507bf4349bf4fd88e6190e70e1a1966fc69224f02b2",
+        "global_state_scan_allowed": false,
+        "labels_as_causal_inputs_allowed": false,
+        "outcome_inspection_allowed": false,
+        "unlisted_input_read_status": "blocks_candidate_row"
+      },
+      "source_current_inputs": [
+        "candidate_closure.release_phase",
+        "candidate_closure.release_phase_receipt_count",
+        "candidate_policy.q_requested",
+        "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+        "candidate_policy.epsilon_A_by_phase",
+        "candidate_policy.release_policy_identity",
+        "candidate_topology.registered_release_edge_id",
+        "candidate_topology.registered_release_source_node_id",
+        "candidate_topology.registered_release_receiver_node_id",
+        "candidate_topology.canonical_topology_digest"
+      ],
+      "source_iteration": "I9",
+      "topology": {
+        "canonical_topology_digest": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f",
+        "edge_ids": [
+          0,
+          1
+        ],
+        "edge_payloads": [
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 0,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "formation_source_to_release_source"
+            },
+            "source_node_id": 0,
+            "source_port_id": 1,
+            "target_node_id": 1,
+            "target_port_id": 1
+          },
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 1,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "release_source_to_release_receiver"
+            },
+            "source_node_id": 1,
+            "source_port_id": 2,
+            "target_node_id": 2,
+            "target_port_id": 1
+          }
+        ],
+        "independent_fixture_reconstruction_required": true,
+        "mutable_topology_policy": "frozen_no_topology_mutation",
+        "node_ids": [
+          0,
+          1,
+          2
+        ],
+        "node_payloads": [
+          {
+            "node_id": 0,
+            "payload": {
+              "fixture_role": "formation_source"
+            }
+          },
+          {
+            "node_id": 1,
+            "payload": {
+              "fixture_role": "release_source"
+            }
+          },
+          {
+            "node_id": 2,
+            "payload": {
+              "fixture_role": "release_receiver"
+            }
+          }
+        ],
+        "node_roles": {
+          "formation_source": 0,
+          "release_receiver": 2,
+          "release_source": 1
+        },
+        "receiver_region": [
+          2
+        ],
+        "registered_route_boundary": [
+          1
+        ],
+        "registered_route_support": [
+          0,
+          1
+        ],
+        "role_to_node_id": {
+          "formation_source": 0,
+          "release_receiver": 2,
+          "release_source": 1
+        },
+        "source_region": [
+          1
+        ],
+        "topology_contract_id": "n31_i9_A_three_node_release_path_v1",
+        "topology_identity_match_rule": "reconstructed_canonical_topology_digest_must_equal_frozen_digest",
+        "topology_signature": "8b8c379411a32e059d8f4a075710dc35c9772d75eaf7df961ec9147c18af5f1f",
+        "transfer_scope": "new_packet_creation_then_native_packet_transport"
+      },
+      "units_by_state": {
+        "epsilon_A": "dimensionless",
+        "phase": "registered_discrete_phase",
+        "q_created": "coherence",
+        "q_requested": "coherence"
+      },
+      "update_phase": "packet_creation_only_never_in_flight"
+    },
+    {
+      "blocked_relabels": [
+        "ordinary_D0_R",
+        "coherence_destruction",
+        "native_decay",
+        "global_emission_scheduler"
+      ],
+      "candidate_disposition": "not_executed",
+      "candidate_id": "B_conserved_source_leakage",
+      "candidate_schema_version": "n31_decay_candidate_schema_v2",
+      "candidate_specific_regeneration_required": true,
+      "candidate_specific_rung_qualifier": "B_R_conserved_export_policy",
+      "carrier_definition": "LGRC_coherence_packet_to_explicit_destination",
+      "causal_transition_owner": "registered_route_local_export_policy_producer",
+      "claim_ceiling": "DR6_reusable_B_R_contract_not_native_D0_R",
+      "complete_control_ids": [
+        "label_only_decay",
+        "wall_clock_decay",
+        "post_hoc_weakening_trace",
+        "forming_activity_never_stopped",
+        "relation_persists_but_does_not_weaken",
+        "relation_weakens_but_has_no_later_readout_effect",
+        "global_route_selector",
+        "hidden_producer_update",
+        "unrecorded_post_formation_producer_call",
+        "missing_internal_time_owner",
+        "missing_invariant",
+        "missing_restoration_state",
+        "report_digest_as_runtime_state",
+        "native_relabel_from_producer",
+        "RCAE_demand_as_graph_evidence",
+        "trail_or_stigmergy_relabel",
+        "lossy_node_scalar_match_as_complete_state",
+        "invented_C_slow_state",
+        "producer_scheduled_D0_decay",
+        "export_authoring_producer_call_retained_as_D0_R",
+        "instantaneous_geometry_as_durable_decay",
+        "derived_observable_as_causal_trail",
+        "cache_removed_and_recomputed",
+        "cache_divergence",
+        "observable_disconnected_from_transport",
+        "slow_organization_clamp",
+        "complete_state_matched_history_contrast",
+        "ordinary_outward_flux_as_added_leakage_relabel",
+        "route_mass_loss_as_organization_weakening_relabel",
+        "organization_weakening_without_mediation_as_causal_decay_relabel",
+        "constant_mass_internal_reorganization_as_export_relabel",
+        "unclosed_route_boundary_continuity",
+        "added_export_policy_as_D0_R_relabel",
+        "mass_unmatched_organization_intervention",
+        "proper_time_annotation_as_causal_alignment",
+        "added_coincidence_window_as_native_temporal_organization",
+        "arrival_histogram_as_causal_mediation",
+        "fixed_delay_single_path_as_dispersion",
+        "periodic_rephasing_as_monotonic_decay",
+        "diagnostic_domain_as_mediator_domain",
+        "mixed_domain_without_load_bearing_isolation",
+        "forming_packet_continuation_as_later_independent_readout",
+        "temporal_intervention_with_unmatched_state",
+        "geometric_observable_without_local_transport_intervention",
+        "bounded_partial_disposition_with_supported_row_decision",
+        "blocked_representation_with_supported_row_decision",
+        "full_mediation_with_false_mediated_change",
+        "absent_mediation_with_true_mediated_change",
+        "mixed_domain_unresolved_claims_DR4",
+        "blocked_D0a_authority_as_coherence_only_positive",
+        "D0c_persistence_retained_as_same_D0c_row",
+        "D0b_transport_feedback_without_authority_reclassification",
+        "local_loss_without_destination",
+        "source_debit_packet_amount_target_credit_mismatch",
+        "hidden_reservoir",
+        "new_leakage_policy_as_ordinary_D0_relabel",
+        "global_emission_scheduler",
+        "unbounded_emitted_amount",
+        "receiver_in_later_read_path",
+        "B_R_as_D0_R_without_bridge"
+      ],
+      "complete_control_set_digest": "e8e0828f4478a043da5f406111883cf9627399957f17add8441404a7d3a58270",
+      "continuation_state_definition": "complete_LGRC_state_plus_registered_one_shot_export_policy_receipt",
+      "control_resolution_status": "not_run_pending_candidate_specific_regeneration_and_execution",
+      "current_decay_relation_ladder_rung": "DR0",
+      "current_rung_reason": "admission_contract_only_no_candidate_runtime_evidence",
+      "destination_isolation_contract": {
+        "automatic_return_packets_allowed_before_readout": false,
+        "derived_geometry_dependency_control_required": true,
+        "destination_clamp_pair_required": true,
+        "destination_clamp_rule": "vary_destination_state_after_credit_while_matching_source_route_and_queue; later_readout_must_remain_unchanged",
+        "destination_originated_events_allowed_before_readout": false,
+        "event_trace_no_return_required": true,
+        "isolation_failure_blocks_DR4_plus": true,
+        "shared_selector_reads_destination_state": false
+      },
+      "direct_I3_null_consumption_allowed": false,
+      "direct_I3_null_consumption_count": 0,
+      "equation_or_relation": {
+        "C_floor": 0.2,
+        "emission_relation": "q_emit = min(q_cap, max(0, C_leakage_source - C_floor))",
+        "equation_or_relation_id": "n31_B_bounded_export_v1",
+        "global_scheduler_allowed": false,
+        "outcome_tuning_allowed": false,
+        "q_cap": 0.04,
+        "trigger": "first_registered_local_source_event_after_formation"
+      },
+      "execution_decision": "execute",
+      "execution_iteration": "I9-B",
+      "execution_rationale": "registered_D0_R_to_B_R_bridge_and_conserved_export_test",
+      "export_destination_excluded_from_later_readout_path": true,
+      "export_ownership": {
+        "B_R_subtype": true,
+        "added_export_policy_present": true,
+        "d0_subclass": "not_applicable_candidate_B",
+        "d0_to_br_bridge_status": "not_tested",
+        "export_policy_owner": "experiment_producer",
+        "ordinary_post_formation_flux_generated": "not_run"
+      },
+      "highest_later_eligible_ceiling": "DR6_after_DR5_and_reusable_B_R_contract",
+      "inherited_required_control_ids": [
+        "label_only_decay",
+        "wall_clock_decay",
+        "post_hoc_weakening_trace",
+        "forming_activity_never_stopped",
+        "relation_persists_but_does_not_weaken",
+        "relation_weakens_but_has_no_later_readout_effect",
+        "global_route_selector",
+        "hidden_producer_update",
+        "unrecorded_post_formation_producer_call",
+        "missing_internal_time_owner",
+        "missing_invariant",
+        "missing_restoration_state",
+        "report_digest_as_runtime_state",
+        "native_relabel_from_producer",
+        "RCAE_demand_as_graph_evidence",
+        "trail_or_stigmergy_relabel",
+        "lossy_node_scalar_match_as_complete_state",
+        "invented_C_slow_state",
+        "producer_scheduled_D0_decay",
+        "export_authoring_producer_call_retained_as_D0_R",
+        "instantaneous_geometry_as_durable_decay",
+        "derived_observable_as_causal_trail",
+        "cache_removed_and_recomputed",
+        "cache_divergence",
+        "observable_disconnected_from_transport",
+        "slow_organization_clamp",
+        "complete_state_matched_history_contrast",
+        "ordinary_outward_flux_as_added_leakage_relabel",
+        "route_mass_loss_as_organization_weakening_relabel",
+        "organization_weakening_without_mediation_as_causal_decay_relabel",
+        "constant_mass_internal_reorganization_as_export_relabel",
+        "unclosed_route_boundary_continuity",
+        "added_export_policy_as_D0_R_relabel",
+        "mass_unmatched_organization_intervention",
+        "proper_time_annotation_as_causal_alignment",
+        "added_coincidence_window_as_native_temporal_organization",
+        "arrival_histogram_as_causal_mediation",
+        "fixed_delay_single_path_as_dispersion",
+        "periodic_rephasing_as_monotonic_decay",
+        "diagnostic_domain_as_mediator_domain",
+        "mixed_domain_without_load_bearing_isolation",
+        "forming_packet_continuation_as_later_independent_readout",
+        "temporal_intervention_with_unmatched_state",
+        "geometric_observable_without_local_transport_intervention",
+        "bounded_partial_disposition_with_supported_row_decision",
+        "blocked_representation_with_supported_row_decision",
+        "full_mediation_with_false_mediated_change",
+        "absent_mediation_with_true_mediated_change",
+        "mixed_domain_unresolved_claims_DR4",
+        "blocked_D0a_authority_as_coherence_only_positive",
+        "D0c_persistence_retained_as_same_D0c_row",
+        "D0b_transport_feedback_without_authority_reclassification"
+      ],
+      "internal_time_contract": {
+        "internal_time_advance_equation": "one_shot_export_eligibility_after_formation",
+        "internal_time_advance_event": "registered_local_source_event",
+        "internal_time_owner": "native_LGRC_event_queue_with_local_export_callback",
+        "internal_time_state_path": "event_queue.registered_local_source_event",
+        "internal_time_units": "processed_native_events",
+        "snapshot_path": "candidate_closure.export_policy_receipt",
+        "wall_clock_excluded": true
+      },
+      "invariant_contract": {
+        "explicit_destination_required": true,
+        "invariant_id": "n31_B_source_packet_destination_conservation_v1",
+        "quantity": "node_plus_in_flight_coherence",
+        "relation": "C_leakage_source_before - C_leakage_source_after == packet_amount == export_destination_credit",
+        "system_boundary": "all_four_nodes_plus_in_flight_packets",
+        "tolerance": 1e-12
+      },
+      "lane_id": "added_mechanism",
+      "lane_specific_control_ids": [
+        "local_loss_without_destination",
+        "source_debit_packet_amount_target_credit_mismatch",
+        "hidden_reservoir",
+        "new_leakage_policy_as_ordinary_D0_relabel",
+        "global_emission_scheduler",
+        "unbounded_emitted_amount",
+        "receiver_in_later_read_path",
+        "B_R_as_D0_R_without_bridge"
+      ],
+      "later_readout_path": [
+        0,
+        1,
+        3
+      ],
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "native_route_local_export_policy_missing",
+        "ordinary_D0_R_bridge_unproven"
+      ],
+      "one_shot_trigger_contract": {
+        "callback_phase": "after_committed_arrival_before_export_packet_creation",
+        "edge_id": 0,
+        "eligibility_consumption": "atomic_on_first_qualifying_attempt",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "failed_emission_retry_behavior": "no_retry_without_new_versioned_contract",
+        "lineage_id": "n31_B_formation_lineage",
+        "receipt_restoration_required": true,
+        "receipt_snapshot_path": "candidate_closure.export_policy_receipt",
+        "second_trigger_behavior": "refused_from_restored_one_shot_receipt",
+        "source_node_id": 0,
+        "target_node_id": 1,
+        "trigger_contract_id": "n31_B_first_local_arrival_after_formation_v1",
+        "zero_emission_behavior": "consume_receipt_and_record_zero_emission"
+      },
+      "organization_contract": {
+        "formed_organization_minimum": 0.04,
+        "mass_loss_is_not_organization_weakening": true,
+        "mass_loss_substitution_control": "matched_route_mass_loss_without_source_contrast_change",
+        "matched_fixture_fields": [
+          "canonical_topology_digest",
+          "formed_route_mass",
+          "formed_O_B",
+          "event_queue",
+          "readout_probe"
+        ],
+        "minimum_weakening_delta": 0.01,
+        "observable_relation": "O_B = C_leakage_source - C_formation_source",
+        "organization_domain": "spatial_route_distribution",
+        "organization_observable_id": "n31_B_route_source_contrast_v1",
+        "post_export_rule": "O_B_post <= O_B_formed - minimum_weakening_delta",
+        "route_mass_observable": "M_B = C_formation_source + C_leakage_source",
+        "stronger_weaker_ordering": "larger_O_B_is_stronger"
+      },
+      "positive_candidate_evidence_opened": false,
+      "primary_semantic_class": "B",
+      "producer_DR5_or_DR6_implies_native_DR5_or_DR6": false,
+      "producer_residue": [
+        "producer_owns_export_eligibility_amount_time_and_destination",
+        "native_LGRC_only_executes_conservative_packet_transport"
+      ],
+      "representation_or_authority_class": "producer_mediated",
+      "reusable_contract_status": "not_tested_pending_I10_through_I12",
+      "role_contract": {
+        "export_destination_node_id": 2,
+        "formation_source_node_id": 0,
+        "later_readout_target_node_id": 3,
+        "leakage_source_node_id": 1
+      },
+      "row_decision": "not_applicable",
+      "row_decision_scope_reason": "I9_admission_only_before_candidate_execution",
+      "schema_change_record_id": "n31_i2_schema_freeze",
+      "source_current_input_allowlist": [
+        {
+          "forbidden_adjacent_inputs": [
+            "global_node_scan",
+            "destination_state"
+          ],
+          "historical_depth": "current",
+          "input_path": "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+          "input_role": "C_leakage_source",
+          "load_bearing": true,
+          "read_phase": "one_shot_export_decision",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "current",
+          "input_path": "candidate_policy.C_floor",
+          "input_role": "predeclared_leakage_source_floor",
+          "load_bearing": true,
+          "read_phase": "one_shot_export_decision",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "current",
+          "input_path": "candidate_policy.q_cap",
+          "input_role": "predeclared_export_cap",
+          "load_bearing": true,
+          "read_phase": "one_shot_export_decision",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "global_event_count",
+            "wall_clock"
+          ],
+          "historical_depth": "one_exact_registered_event",
+          "input_path": "candidate_closure.qualifying_local_event_receipt",
+          "input_role": "exact_local_trigger_receipt",
+          "load_bearing": true,
+          "read_phase": "registered_event_callback",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "restored_current_receipt_state",
+          "input_path": "candidate_closure.export_policy_receipt",
+          "input_role": "restored_one_shot_consumption_state",
+          "load_bearing": true,
+          "read_phase": "before_export_attempt",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_fixture.edge_payloads[1]",
+          "input_role": "registered_export_boundary_and_destination",
+          "load_bearing": true,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_fixture.role_to_node_id",
+          "input_role": "formation_leakage_destination_readout_roles",
+          "load_bearing": true,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        }
+      ],
+      "source_current_input_policy": {
+        "allowlist_digest": "29e48bd03221117d1f3ea82b4a71753e7033a22e32e90c3fe543bfd81116956d",
+        "global_state_scan_allowed": false,
+        "labels_as_causal_inputs_allowed": false,
+        "outcome_inspection_allowed": false,
+        "unlisted_input_read_status": "blocks_candidate_row"
+      },
+      "source_current_inputs": [
+        "LGRC9V3RuntimeState.base_state.nodes[1].coherence",
+        "candidate_policy.C_floor",
+        "candidate_policy.q_cap",
+        "candidate_closure.qualifying_local_event_receipt",
+        "candidate_closure.export_policy_receipt",
+        "candidate_fixture.edge_payloads[1]",
+        "candidate_fixture.role_to_node_id"
+      ],
+      "source_iteration": "I9",
+      "topology": {
+        "canonical_topology_digest": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+        "edge_ids": [
+          0,
+          1,
+          2
+        ],
+        "edge_payloads": [
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 0,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "formation_source_to_leakage_source"
+            },
+            "source_node_id": 0,
+            "source_port_id": 1,
+            "target_node_id": 1,
+            "target_port_id": 1
+          },
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 1,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "leakage_source_to_export_destination"
+            },
+            "source_node_id": 1,
+            "source_port_id": 2,
+            "target_node_id": 2,
+            "target_port_id": 1
+          },
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 2,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "leakage_source_to_later_readout"
+            },
+            "source_node_id": 1,
+            "source_port_id": 3,
+            "target_node_id": 3,
+            "target_port_id": 1
+          }
+        ],
+        "independent_fixture_reconstruction_required": true,
+        "mutable_topology_policy": "frozen_no_topology_mutation",
+        "node_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "node_payloads": [
+          {
+            "node_id": 0,
+            "payload": {
+              "fixture_role": "formation_source"
+            }
+          },
+          {
+            "node_id": 1,
+            "payload": {
+              "fixture_role": "leakage_source"
+            }
+          },
+          {
+            "node_id": 2,
+            "payload": {
+              "fixture_role": "export_destination"
+            }
+          },
+          {
+            "node_id": 3,
+            "payload": {
+              "fixture_role": "later_readout_target"
+            }
+          }
+        ],
+        "node_roles": {
+          "export_destination": 2,
+          "formation_source": 0,
+          "later_readout_target": 3,
+          "leakage_source": 1
+        },
+        "receiver_region": [
+          2
+        ],
+        "registered_route_boundary": [
+          1
+        ],
+        "registered_route_support": [
+          0,
+          1
+        ],
+        "role_to_node_id": {
+          "export_destination": 2,
+          "formation_source": 0,
+          "later_readout_target": 3,
+          "leakage_source": 1
+        },
+        "source_region": [
+          1
+        ],
+        "topology_contract_id": "n31_i9_B_four_node_export_and_readout_v1",
+        "topology_identity_match_rule": "reconstructed_canonical_topology_digest_must_equal_frozen_digest",
+        "topology_signature": "9f0a651d2194bb12a47b8136c7c0f0a793e306917a4ae49882c8d85b63624e3f",
+        "transfer_scope": "route_local_export_to_explicit_destination_excluded_from_readout_path"
+      },
+      "units_by_state": {
+        "C_floor": "coherence",
+        "C_leakage_source": "coherence",
+        "q_cap": "coherence",
+        "q_emit": "coherence"
+      },
+      "update_phase": "registered_local_source_event_before_packet_creation"
+    },
+    {
+      "blocked_relabels": [
+        "coherence_only_D0",
+        "native_memory",
+        "native_susceptibility",
+        "free_unaccounted_noncoherence_state"
+      ],
+      "candidate_disposition": "not_executed",
+      "candidate_id": "C_route_susceptibility_relaxation",
+      "candidate_schema_version": "n31_decay_candidate_schema_v2",
+      "candidate_specific_regeneration_required": true,
+      "candidate_specific_rung_qualifier": "closure_owned_route_susceptibility_relaxation",
+      "carrier_definition": "versioned_route_local_susceptibility_state_S_1_2",
+      "causal_transition_owner": "versioned_susceptibility_closure",
+      "claim_ceiling": "DR6_reusable_effective_susceptibility_closure_not_native_memory",
+      "complete_control_ids": [
+        "label_only_decay",
+        "wall_clock_decay",
+        "post_hoc_weakening_trace",
+        "forming_activity_never_stopped",
+        "relation_persists_but_does_not_weaken",
+        "relation_weakens_but_has_no_later_readout_effect",
+        "global_route_selector",
+        "hidden_producer_update",
+        "unrecorded_post_formation_producer_call",
+        "missing_internal_time_owner",
+        "missing_invariant",
+        "missing_restoration_state",
+        "report_digest_as_runtime_state",
+        "native_relabel_from_producer",
+        "RCAE_demand_as_graph_evidence",
+        "trail_or_stigmergy_relabel",
+        "lossy_node_scalar_match_as_complete_state",
+        "invented_C_slow_state",
+        "producer_scheduled_D0_decay",
+        "export_authoring_producer_call_retained_as_D0_R",
+        "instantaneous_geometry_as_durable_decay",
+        "derived_observable_as_causal_trail",
+        "cache_removed_and_recomputed",
+        "cache_divergence",
+        "observable_disconnected_from_transport",
+        "slow_organization_clamp",
+        "complete_state_matched_history_contrast",
+        "ordinary_outward_flux_as_added_leakage_relabel",
+        "route_mass_loss_as_organization_weakening_relabel",
+        "organization_weakening_without_mediation_as_causal_decay_relabel",
+        "constant_mass_internal_reorganization_as_export_relabel",
+        "unclosed_route_boundary_continuity",
+        "added_export_policy_as_D0_R_relabel",
+        "mass_unmatched_organization_intervention",
+        "proper_time_annotation_as_causal_alignment",
+        "added_coincidence_window_as_native_temporal_organization",
+        "arrival_histogram_as_causal_mediation",
+        "fixed_delay_single_path_as_dispersion",
+        "periodic_rephasing_as_monotonic_decay",
+        "diagnostic_domain_as_mediator_domain",
+        "mixed_domain_without_load_bearing_isolation",
+        "forming_packet_continuation_as_later_independent_readout",
+        "temporal_intervention_with_unmatched_state",
+        "geometric_observable_without_local_transport_intervention",
+        "bounded_partial_disposition_with_supported_row_decision",
+        "blocked_representation_with_supported_row_decision",
+        "full_mediation_with_false_mediated_change",
+        "absent_mediation_with_true_mediated_change",
+        "mixed_domain_unresolved_claims_DR4",
+        "blocked_D0a_authority_as_coherence_only_positive",
+        "D0c_persistence_retained_as_same_D0c_row",
+        "D0b_transport_feedback_without_authority_reclassification",
+        "conductance_label_only",
+        "susceptibility_without_restoration",
+        "history_carried_by_hidden_producer",
+        "same_complete_C_different_S_changes_future",
+        "producer_closure_as_native_memory"
+      ],
+      "complete_control_set_digest": "bd5345d05c2c9df07dfcb8134c930f0daad598cccec684e439c9f3a9ab85b245",
+      "continuation_state_definition": "complete_LGRC_state_plus_versioned_susceptibility_closure_state",
+      "control_resolution_status": "not_run_pending_candidate_specific_regeneration_and_execution",
+      "current_decay_relation_ladder_rung": "DR0",
+      "current_rung_reason": "admission_contract_only_no_candidate_runtime_evidence",
+      "direct_I3_null_consumption_allowed": false,
+      "direct_I3_null_consumption_count": 0,
+      "equation_or_relation": {
+        "S_floor": 0.5,
+        "S_max": 1.0,
+        "alpha": 1.0,
+        "equation_or_relation_id": "n31_C_susceptibility_relaxation_v1",
+        "formation_relation": "S_after_use = min(S_max, S + alpha * q_use)",
+        "outcome_tuning_allowed": false,
+        "readout_relation": "g_effective = S * g_native",
+        "relaxation_relation": "S_next = S_floor + rho * (S - S_floor)",
+        "rho": 0.75
+      },
+      "executable_conductance_path": {
+        "callback_phase": "after_pygrc.models.grc_9_v3_runtime.compute_base_conductance_before_compute_potential",
+        "closure_state_path": "candidate_closure.S_by_edge[1]",
+        "executable_operation_sequence": [
+          "deepcopy_LGRC9V3_get_state",
+          "compute_base_conductance_with_frozen_native_evolution_and_modes",
+          "read_g_native_on_edge_1",
+          "write_S_times_g_native_to_base_conductance_and_port_edge_1",
+          "compute_potential_with_same_frozen_native_evolution",
+          "compute_flux_with_same_frozen_native_evolution",
+          "LGRC9V3_set_state",
+          "restore_original_native_conductance_before_unqualified_step"
+        ],
+        "expected_future_difference": "same_native_state_and_probe_with_different_S_produces_different_potential_or_flux_on_edge_1",
+        "export_scheduling_allowed": false,
+        "label_only_write_allowed": false,
+        "mirrored_port_edge_path": "LGRC9V3RuntimeState.base_state.port_edges[1].conductance",
+        "missing_runtime_hook_debt": "normal_step_recomputes_base_conductance_before_consumption; closure_must_own_the_partial_native_pipeline_order",
+        "native_operation_consumers": [
+          "pygrc.models.grc_9_v3_runtime.compute_potential",
+          "pygrc.models.grc_9_v3_runtime.compute_flux"
+        ],
+        "native_state_path_read": "LGRC9V3RuntimeState.base_state.base_conductance[1]",
+        "native_state_path_written": "LGRC9V3RuntimeState.base_state.base_conductance[1]",
+        "ordinary_LGRC9V3_step_compatible_without_hook": false,
+        "original_native_conductance_restoration_required": true,
+        "packet_amount_scaling_allowed": false,
+        "state_api_path": "LGRC9V3.get_state/LGRC9V3.set_state",
+        "write_relation": "g_effective = S * g_native"
+      },
+      "execution_decision": "execute",
+      "execution_iteration": "I9-C",
+      "execution_rationale": "direct_missing_autonomous_weakening_transition_test",
+      "highest_later_eligible_ceiling": "DR6_after_DR5_and_reusable_susceptibility_contract",
+      "inherited_required_control_ids": [
+        "label_only_decay",
+        "wall_clock_decay",
+        "post_hoc_weakening_trace",
+        "forming_activity_never_stopped",
+        "relation_persists_but_does_not_weaken",
+        "relation_weakens_but_has_no_later_readout_effect",
+        "global_route_selector",
+        "hidden_producer_update",
+        "unrecorded_post_formation_producer_call",
+        "missing_internal_time_owner",
+        "missing_invariant",
+        "missing_restoration_state",
+        "report_digest_as_runtime_state",
+        "native_relabel_from_producer",
+        "RCAE_demand_as_graph_evidence",
+        "trail_or_stigmergy_relabel",
+        "lossy_node_scalar_match_as_complete_state",
+        "invented_C_slow_state",
+        "producer_scheduled_D0_decay",
+        "export_authoring_producer_call_retained_as_D0_R",
+        "instantaneous_geometry_as_durable_decay",
+        "derived_observable_as_causal_trail",
+        "cache_removed_and_recomputed",
+        "cache_divergence",
+        "observable_disconnected_from_transport",
+        "slow_organization_clamp",
+        "complete_state_matched_history_contrast",
+        "ordinary_outward_flux_as_added_leakage_relabel",
+        "route_mass_loss_as_organization_weakening_relabel",
+        "organization_weakening_without_mediation_as_causal_decay_relabel",
+        "constant_mass_internal_reorganization_as_export_relabel",
+        "unclosed_route_boundary_continuity",
+        "added_export_policy_as_D0_R_relabel",
+        "mass_unmatched_organization_intervention",
+        "proper_time_annotation_as_causal_alignment",
+        "added_coincidence_window_as_native_temporal_organization",
+        "arrival_histogram_as_causal_mediation",
+        "fixed_delay_single_path_as_dispersion",
+        "periodic_rephasing_as_monotonic_decay",
+        "diagnostic_domain_as_mediator_domain",
+        "mixed_domain_without_load_bearing_isolation",
+        "forming_packet_continuation_as_later_independent_readout",
+        "temporal_intervention_with_unmatched_state",
+        "geometric_observable_without_local_transport_intervention",
+        "bounded_partial_disposition_with_supported_row_decision",
+        "blocked_representation_with_supported_row_decision",
+        "full_mediation_with_false_mediated_change",
+        "absent_mediation_with_true_mediated_change",
+        "mixed_domain_unresolved_claims_DR4",
+        "blocked_D0a_authority_as_coherence_only_positive",
+        "D0c_persistence_retained_as_same_D0c_row",
+        "D0b_transport_feedback_without_authority_reclassification"
+      ],
+      "internal_time_contract": {
+        "internal_time_advance_equation": "one_relaxation_step_per_declared_event",
+        "internal_time_advance_event": "declared_disjoint_LGRC_progression_event",
+        "internal_time_owner": "susceptibility_closure_advanced_by_declared_LGRC_events",
+        "internal_time_state_path": "candidate_closure.processed_progression_event_count",
+        "internal_time_units": "declared_disjoint_native_progression_events",
+        "snapshot_path": "candidate_closure.susceptibility_state",
+        "wall_clock_excluded": true
+      },
+      "invariant_contract": {
+        "coherence_relation": "node_plus_in_flight_coherence_before == after",
+        "invariant_id": "n31_C_coherence_and_susceptibility_bounds_v1",
+        "quantity": "coherence_plus_separate_bounded_susceptibility_state",
+        "susceptibility_relation": "S_floor <= S <= S_max",
+        "system_boundary": "all_three_nodes_plus_in_flight_packets_plus_closure_state",
+        "tolerance": 1e-12
+      },
+      "lane_id": "added_mechanism",
+      "lane_specific_control_ids": [
+        "conductance_label_only",
+        "susceptibility_without_restoration",
+        "history_carried_by_hidden_producer",
+        "same_complete_C_different_S_changes_future",
+        "producer_closure_as_native_memory"
+      ],
+      "matched_branch_contract": {
+        "comparison_phase": "before_closure_application",
+        "matched_fields": [
+          "complete_LGRC_state",
+          "event_queue",
+          "native_base_conductance",
+          "canonical_topology_digest",
+          "later_native_probe"
+        ],
+        "only_allowed_pre_application_difference": "restored_candidate_closure_S",
+        "post_application_LGRC_state_described_as_matched": false
+      },
+      "native_upgrade_allowed": false,
+      "naturalization_debt": [
+        "native_susceptibility_state_missing",
+        "native_update_and_relaxation_surface_missing",
+        "susceptibility_cost_not_naturalized_into_RC_coherence"
+      ],
+      "non_coherence_state_contract": {
+        "bounds": [
+          0.5,
+          1.0
+        ],
+        "coherence_quantity_claimed": false,
+        "composed_LGRC_plus_S_may_be_markovian": true,
+        "effective_non_markovian_relative_to": "LGRC_state_alone",
+        "invariant": "S_floor <= S <= S_max",
+        "susceptibility_update_ledger_affects_future_behavior": false,
+        "susceptibility_update_ledger_in_restoration_identity": false,
+        "susceptibility_update_ledger_role": "report_only_noncausal",
+        "susceptibility_update_magnitude": "absolute_delta_S",
+        "units": "dimensionless_conductance_multiplier"
+      },
+      "positive_candidate_evidence_opened": false,
+      "primary_semantic_class": "C",
+      "producer_DR5_or_DR6_implies_native_DR5_or_DR6": false,
+      "producer_residue": [
+        "independent_susceptibility_state_owned_by_effective_closure",
+        "closure_updates_and_relaxes_state_then_modulates_local_conductance"
+      ],
+      "representation_or_authority_class": "effective_non_markovian_closure",
+      "restoration_contract": {
+        "LGRC_current_state_schema": "lgrc9v3_restoration_identity_v1",
+        "LGRC_reset_sensitive_schema": "lgrc9v3_restoration_identity_v2",
+        "candidate_state_schema": "n31_candidate_C_susceptibility_identity_v1",
+        "composed_identity_required": true,
+        "same_complete_C_different_S_intervention_required": true
+      },
+      "reusable_contract_status": "not_tested_pending_I10_through_I12",
+      "row_decision": "not_applicable",
+      "row_decision_scope_reason": "I9_admission_only_before_candidate_execution",
+      "schema_change_record_id": "n31_i2_schema_freeze",
+      "source_current_input_allowlist": [
+        {
+          "forbidden_adjacent_inputs": [
+            "outcome_history",
+            "route_label"
+          ],
+          "historical_depth": "restored_current_closure_state",
+          "input_path": "candidate_closure.S_by_edge[1]",
+          "input_role": "restored_route_susceptibility",
+          "load_bearing": true,
+          "read_phase": "closure_application",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "frozen_fixture",
+          "input_path": "candidate_fixture.edge_payloads[1]",
+          "input_role": "registered_susceptible_edge",
+          "load_bearing": true,
+          "read_phase": "fixture_admission",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "current",
+          "input_path": "LGRC9V3RuntimeState.base_state.base_conductance[1]",
+          "input_role": "g_native",
+          "load_bearing": true,
+          "read_phase": "after_native_conductance_rebuild_before_closure_write",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "outcome_tuned_evolution_parameters"
+          ],
+          "historical_depth": "frozen_model_parameters",
+          "input_path": "LGRC9V3.get_params().evolution_and_constitutive_semantic_modes",
+          "input_role": "native_conductance_potential_and_flux_parameters",
+          "load_bearing": true,
+          "read_phase": "partial_native_pipeline_invocation",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "current_registered_use_only",
+          "input_path": "candidate_closure.q_use_by_edge[1]",
+          "input_role": "registered_route_use_amount",
+          "load_bearing": true,
+          "read_phase": "after_registered_route_use",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [
+            "global_event_count",
+            "wall_clock"
+          ],
+          "historical_depth": "one_exact_registered_event",
+          "input_path": "candidate_closure.qualifying_progression_receipt",
+          "input_role": "exact_relaxation_event_receipt",
+          "load_bearing": true,
+          "read_phase": "registered_event_callback",
+          "required_or_optional": "required"
+        },
+        {
+          "forbidden_adjacent_inputs": [],
+          "historical_depth": "restored_current_closure_state",
+          "input_path": "candidate_closure.update_count",
+          "input_role": "restored_closure_update_count",
+          "load_bearing": true,
+          "read_phase": "before_relaxation_update",
+          "required_or_optional": "required"
+        }
+      ],
+      "source_current_input_policy": {
+        "allowlist_digest": "09966ef7c67977e46a66bad017437a6268da11299dcdc2be6423022be2811341",
+        "global_state_scan_allowed": false,
+        "labels_as_causal_inputs_allowed": false,
+        "outcome_inspection_allowed": false,
+        "unlisted_input_read_status": "blocks_candidate_row"
+      },
+      "source_current_inputs": [
+        "candidate_closure.S_by_edge[1]",
+        "candidate_fixture.edge_payloads[1]",
+        "LGRC9V3RuntimeState.base_state.base_conductance[1]",
+        "LGRC9V3.get_params().evolution_and_constitutive_semantic_modes",
+        "candidate_closure.q_use_by_edge[1]",
+        "candidate_closure.qualifying_progression_receipt",
+        "candidate_closure.update_count"
+      ],
+      "source_iteration": "I9",
+      "topology": {
+        "canonical_topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c",
+        "edge_ids": [
+          0,
+          1
+        ],
+        "edge_payloads": [
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 0,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "source_to_susceptible_route"
+            },
+            "source_node_id": 0,
+            "source_port_id": 1,
+            "target_node_id": 1,
+            "target_port_id": 1
+          },
+          {
+            "conductance": 1.0,
+            "delay": 1.0,
+            "edge_id": 1,
+            "orientation": "canonical_source_to_target",
+            "payload": {
+              "fixture_relation": "susceptible_route_to_local_readout"
+            },
+            "source_node_id": 1,
+            "source_port_id": 2,
+            "target_node_id": 2,
+            "target_port_id": 1
+          }
+        ],
+        "independent_fixture_reconstruction_required": true,
+        "mutable_topology_policy": "frozen_no_topology_mutation",
+        "node_ids": [
+          0,
+          1,
+          2
+        ],
+        "node_payloads": [
+          {
+            "node_id": 0,
+            "payload": {
+              "fixture_role": "source"
+            }
+          },
+          {
+            "node_id": 1,
+            "payload": {
+              "fixture_role": "susceptible_route_node"
+            }
+          },
+          {
+            "node_id": 2,
+            "payload": {
+              "fixture_role": "local_readout_receiver"
+            }
+          }
+        ],
+        "node_roles": {
+          "local_readout_receiver": 2,
+          "source": 0,
+          "susceptible_route_node": 1
+        },
+        "receiver_region": [
+          2
+        ],
+        "registered_route_boundary": [
+          1
+        ],
+        "registered_route_support": [
+          0,
+          1
+        ],
+        "role_to_node_id": {
+          "local_readout_receiver": 2,
+          "source": 0,
+          "susceptible_route_node": 1
+        },
+        "source_region": [
+          0,
+          1
+        ],
+        "topology_contract_id": "n31_i9_C_three_node_susceptible_route_v1",
+        "topology_identity_match_rule": "reconstructed_canonical_topology_digest_must_equal_frozen_digest",
+        "topology_signature": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c",
+        "transfer_scope": "route_local_susceptibility_modulates_registered_local_conductance"
+      },
+      "units_by_state": {
+        "S": "dimensionless_conductance_multiplier",
+        "g_effective": "native_conductance_units",
+        "g_native": "native_conductance_units",
+        "q_use": "coherence"
+      },
+      "update_phase": "after_registered_route_use_then_before_later_local_readout"
+    }
+  ],
+  "cross_candidate_rules": {
+    "N31_C6_implies_DR6": false,
+    "candidate_semantics_interchangeable": false,
+    "native_upgrade_from_added_mechanism_allowed": false,
+    "one_generic_scalar_decay_law_used": false,
+    "positive_rung_assigned_from_admission": false,
+    "raw_effect_magnitude_ranking_allowed": false
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "global_admission_reason": "d0_insufficient",
+  "global_admission_reason_qualifier": "d0_insufficient_for_autonomous_causal_weakening",
+  "output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d"
+}

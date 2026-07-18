@@ -1,0 +1,45 @@
+{
+  "C2_DR5_requires_post_feedback_restoration_witness": true,
+  "C_ancestry": [
+    "I9-C",
+    "I9-C.1"
+  ],
+  "C_ancestry_positive_weight": 0,
+  "I11_comparative_selection_opened": false,
+  "I11_comparison_policy": "multi_axis_profile_before_any_selection",
+  "I11_single_scalar_ranking_allowed": false,
+  "artifact_kind": "n31_i10_preregistration",
+  "artifact_schema_version": "n31_i10_preregistration_v1",
+  "comparison_unit_policy": "one_unit_per_A_B_C_family",
+  "control_resolution_policy": "registry_resolution_is_not_equivalent_to_runtime_execution",
+  "deferred_C2_naturalization_controls_are_I10_gates": false,
+  "family_bundles": {
+    "A": [
+      "I9-A",
+      "I9-A.1"
+    ],
+    "B": [
+      "I9-B",
+      "I9-B.1"
+    ],
+    "C": [
+      "I9-C.2"
+    ]
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "output_digest": "8ce6d1547ee5924d8f215c15e9f3cbc7583b0fc7e3681db9f95a8183c84207d8",
+  "required_control_count": 70,
+  "required_replay_modes": [
+    "artifact",
+    "snapshot_load_v2",
+    "duplicate",
+    "branch"
+  ],
+  "rung_policy": {
+    "C2_native_runtime": "DR0",
+    "C2_relation_carrier": "DR2",
+    "DR5": "intervention_replay_restoration_invariants_and_controls_pass",
+    "DR6": "not_assignable_in_I10",
+    "native_D0a": "remains_DR2"
+  }
+}

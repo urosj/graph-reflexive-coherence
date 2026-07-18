@@ -1,0 +1,31 @@
+{
+  "C2_source_rule": "consume_only_current_corrected_exact_artifact_and_record_earlier_review_identity_as_non_authoritative_lineage",
+  "artifact_kind": "n31_i9c2_c1_revision_receipt",
+  "artifact_schema_version": "n31_i9c2_c1_revision_receipt_v1",
+  "correction_classes": [
+    "same_reduced_projection_not_same_complete_native_state",
+    "causal_history_state_retained_after_independent_S_elimination",
+    "fixture_bound_functional_and_generality_ceiling_recorded",
+    "packet_log_named_discrete_coherence_current_history_proxy",
+    "independent_classification_separated_from_fresh_execution",
+    "history_changes_partitioned_from_integrity_and_storage_controls",
+    "control_statuses_normalized"
+  ],
+  "current_corrected_artifact": {
+    "consumed_by_C2": true,
+    "output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+    "sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+    "source_identity_exact": true
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "lineage_role": "informational_revision_lineage_not_evidence_source",
+  "output_digest": "afd7ea8529de145ee1640a6780154848a53357ea6dab9c9b41f911c4c8f65b86",
+  "previous_reviewed_artifact": {
+    "artifact_retained_in_repository": false,
+    "consumed_by_C2": false,
+    "full_output_digest_available": false,
+    "output_digest_prefix": "33e77c892977"
+  },
+  "scientific_conclusion_change": "provisional_DR4_unchanged_scope_authority_and_debt_tightened"
+}

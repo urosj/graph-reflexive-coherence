@@ -1,0 +1,2753 @@
+{
+  "acceptance_state": "accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10",
+  "artifact_kind": "route_susceptibility_relaxation_source_current_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_candidate_C_contract",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_preregistration.json",
+      "sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7"
+    },
+    {
+      "artifact_role": "post_registered_route_use_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+      "sha256": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3"
+    },
+    {
+      "artifact_role": "formed_susceptibility_closure",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_formed_susceptibility_closure.json",
+      "sha256": "08ef7aeacf9f8d629fa122f28ba6331b323ffc5243a6d549a8b91748351f41b3"
+    },
+    {
+      "artifact_role": "post_progression_active_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+      "sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f"
+    },
+    {
+      "artifact_role": "post_progression_omitted_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_omitted_progression_snapshot.json",
+      "sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f"
+    },
+    {
+      "artifact_role": "relaxed_susceptibility_closure",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_relaxed_susceptibility_closure.json",
+      "sha256": "80db7940b444966bf002424b3f4877c8680841eb425e9cbe7d3af3c3830dd80c"
+    },
+    {
+      "artifact_role": "matched_native_progression_and_receipts",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_progression_receipt_matrix.json",
+      "sha256": "64e5417a99cdedefa058474f1959947fc15ce93aa1e646734c0d749745e90c80"
+    },
+    {
+      "artifact_role": "native_conductance_potential_flux_readout",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_native_readout_matrix.json",
+      "sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a"
+    },
+    {
+      "artifact_role": "candidate_C_selected_controls",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_control_matrix.json",
+      "sha256": "6aefb942d588e4df7df63df4afae3ccbca599aed5e6fc9f5d0f5419869cdda47"
+    },
+    {
+      "artifact_role": "native_closure_policy_topology_identity",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_composed_identities.json",
+      "sha256": "c94955dccf91b052a069c6544a2bda105807d53aaeb5a2fc169eefa9d85740a9"
+    }
+  ],
+  "artifact_schema_version": "n31_i9c_susceptibility_relaxation_trace_v1",
+  "candidate_id": "C_route_susceptibility_relaxation",
+  "checks": [
+    {
+      "check_id": "exact_sources_consumed",
+      "detail": [
+        {
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+        },
+        {
+          "actual_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "actual_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "expected_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+          "expected_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_admission_i9.json"
+        },
+        {
+          "actual_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+          "actual_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+          "expected_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+          "expected_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9_added_mechanism_admission_artifacts/n31_i9_candidate_contract_bundle.json"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "topology_matches_frozen_candidate_C_contract",
+      "detail": {
+        "frozen_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c",
+        "matches_frozen_contract": true,
+        "reconstructed_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c",
+        "reconstructed_identity": {
+          "edge_ids": [
+            0,
+            1
+          ],
+          "edge_payloads": [
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 0,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "source_to_susceptible_route"
+              },
+              "source_node_id": 0,
+              "source_port_id": 1,
+              "target_node_id": 1,
+              "target_port_id": 1
+            },
+            {
+              "conductance": 1.0,
+              "delay": 1.0,
+              "edge_id": 1,
+              "orientation": "canonical_source_to_target",
+              "payload": {
+                "fixture_relation": "susceptible_route_to_local_readout"
+              },
+              "source_node_id": 1,
+              "source_port_id": 2,
+              "target_node_id": 2,
+              "target_port_id": 1
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2
+          ],
+          "node_payloads": [
+            {
+              "node_id": 0,
+              "payload": {
+                "fixture_role": "source"
+              }
+            },
+            {
+              "node_id": 1,
+              "payload": {
+                "fixture_role": "susceptible_route_node"
+              }
+            },
+            {
+              "node_id": 2,
+              "payload": {
+                "fixture_role": "local_readout_receiver"
+              }
+            }
+          ],
+          "role_to_node_id": {
+            "local_readout_receiver": 2,
+            "source": 0,
+            "susceptible_route_node": 1
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "registered_native_route_use_triggers_producer_owned_susceptibility_formation",
+      "detail": {
+        "authority": "registered_native_route_use_triggers_producer_owned_susceptibility_formation",
+        "budget_after": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.9,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.9
+        },
+        "budget_before": {
+          "budget_error": 0.0,
+          "conserved_budget_total": 1.9,
+          "in_flight_packet_total": 0.0,
+          "node_coherence_total": 1.9
+        },
+        "closure_update": {
+          "S_after": 0.9,
+          "S_before": 0.5,
+          "declared_input_paths": [
+            "closure.S_by_edge.1",
+            "closure.formation_receipt_id",
+            "policy.S_max",
+            "policy.alpha",
+            "receipt.event_kind",
+            "receipt.edge_id",
+            "receipt.source_node_id",
+            "receipt.target_node_id",
+            "receipt.source_lineage_id",
+            "receipt.amount"
+          ],
+          "exact_allowlist_match": true,
+          "first_formation_receipt": true,
+          "formation_update_applied": true,
+          "observed_input_paths": [
+            "closure.S_by_edge.1",
+            "closure.formation_receipt_id",
+            "policy.S_max",
+            "policy.alpha",
+            "receipt.event_kind",
+            "receipt.edge_id",
+            "receipt.source_node_id",
+            "receipt.target_node_id",
+            "receipt.source_lineage_id",
+            "receipt.amount"
+          ],
+          "q_use": 0.4,
+          "receipt_matched_exact_registered_route_use": true,
+          "unlisted_input_read_status": "none_observed"
+        },
+        "formation_packet_exhausted": true,
+        "formed_S": 0.9,
+        "initial_S": 0.5,
+        "native_identity_after": {
+          "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+          "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+        },
+        "native_identity_before": {
+          "v1": "81e5714244dba1e3842c72400f55ec3d51c2d35d872be223222cd1dc7641b909",
+          "v2": "8ba43cbd613d3a1ce5cd9518de40a6c6de4c84f4be41deaf80dc41195e1d145a"
+        },
+        "receipt": {
+          "amount": 0.4,
+          "budget_error": 0.0,
+          "edge_id": 1,
+          "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 2.0,
+          "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+          "scheduler_event_index": 11,
+          "source_lineage_id": "n31_C_registered_route_use",
+          "source_node_id": 1,
+          "target_node_id": 2
+        },
+        "registered_route_use_amount": 0.4
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formed_closure_restores_before_progression",
+      "detail": {
+        "S_by_edge": {
+          "1": 0.9
+        },
+        "artifact_kind": "n31_C_route_susceptibility_closure",
+        "artifact_schema_version": "n31_candidate_C_susceptibility_identity_v1",
+        "formation_receipt_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+        "formation_update_count": 1,
+        "global_event_count_state_present": false,
+        "outcome_history_state_present": false,
+        "output_digest": "c6089c7450ee361ed67459a7e8c73eb063caa2a3a1f731c428384fe9d3daed3a",
+        "processed_progression_event_count": 0,
+        "processed_progression_event_ids": [],
+        "q_use_by_edge": {
+          "1": 0.4
+        },
+        "relaxation_update_count": 0,
+        "update_count": 1,
+        "wall_clock_state_present": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "matched_native_progression_is_identical_between_closure_lanes",
+      "detail": {
+        "active_S_sequence": [
+          0.8,
+          0.7250000000000001,
+          0.6687500000000001,
+          0.6265625
+        ],
+        "active_branch_receipts": [
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 3.0,
+            "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+            "scheduler_event_index": 21,
+            "source_lineage_id": "n31_C_progression_1",
+            "source_node_id": 0,
+            "target_node_id": 1
+          },
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 4.0,
+            "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+            "scheduler_event_index": 31,
+            "source_lineage_id": "n31_C_progression_2",
+            "source_node_id": 1,
+            "target_node_id": 0
+          },
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 5.0,
+            "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+            "scheduler_event_index": 41,
+            "source_lineage_id": "n31_C_progression_3",
+            "source_node_id": 0,
+            "target_node_id": 1
+          },
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 6.0,
+            "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+            "scheduler_event_index": 51,
+            "source_lineage_id": "n31_C_progression_4",
+            "source_node_id": 1,
+            "target_node_id": 0
+          }
+        ],
+        "active_branch_updates": [
+          {
+            "S_after": 0.8,
+            "S_before": 0.9,
+            "declared_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "delta_S": -0.09999999999999998,
+            "duplicate_receipt": false,
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "receipt": {
+              "amount": 0.05,
+              "budget_error": -2.220446049250313e-16,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 3.0,
+              "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+              "scheduler_event_index": 21,
+              "source_lineage_id": "n31_C_progression_1",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            "receipt_matched_exact_progression_predicate": true,
+            "relaxation_update_applied": true,
+            "unlisted_input_read_status": "none_observed"
+          },
+          {
+            "S_after": 0.7250000000000001,
+            "S_before": 0.8,
+            "declared_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "delta_S": -0.07499999999999996,
+            "duplicate_receipt": false,
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "receipt": {
+              "amount": 0.05,
+              "budget_error": -2.220446049250313e-16,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 4.0,
+              "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+              "scheduler_event_index": 31,
+              "source_lineage_id": "n31_C_progression_2",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            "receipt_matched_exact_progression_predicate": true,
+            "relaxation_update_applied": true,
+            "unlisted_input_read_status": "none_observed"
+          },
+          {
+            "S_after": 0.6687500000000001,
+            "S_before": 0.7250000000000001,
+            "declared_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "delta_S": -0.05625000000000002,
+            "duplicate_receipt": false,
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "receipt": {
+              "amount": 0.05,
+              "budget_error": -2.220446049250313e-16,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 5.0,
+              "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+              "scheduler_event_index": 41,
+              "source_lineage_id": "n31_C_progression_3",
+              "source_node_id": 0,
+              "target_node_id": 1
+            },
+            "receipt_matched_exact_progression_predicate": true,
+            "relaxation_update_applied": true,
+            "unlisted_input_read_status": "none_observed"
+          },
+          {
+            "S_after": 0.6265625,
+            "S_before": 0.6687500000000001,
+            "declared_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "delta_S": -0.042187500000000044,
+            "duplicate_receipt": false,
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.S_by_edge.1",
+              "closure.processed_progression_event_ids",
+              "policy.S_floor",
+              "policy.rho",
+              "receipt.event_kind",
+              "receipt.event_id",
+              "receipt.edge_id",
+              "receipt.source_node_id",
+              "receipt.target_node_id",
+              "receipt.event_time_key",
+              "receipt.scheduler_event_index",
+              "receipt.source_lineage_id",
+              "receipt.amount"
+            ],
+            "receipt": {
+              "amount": 0.05,
+              "budget_error": -2.220446049250313e-16,
+              "edge_id": 0,
+              "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 6.0,
+              "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+              "scheduler_event_index": 51,
+              "source_lineage_id": "n31_C_progression_4",
+              "source_node_id": 1,
+              "target_node_id": 0
+            },
+            "receipt_matched_exact_progression_predicate": true,
+            "relaxation_update_applied": true,
+            "unlisted_input_read_status": "none_observed"
+          }
+        ],
+        "artifact_kind": "n31_i9c_progression_receipt_matrix",
+        "artifact_schema_version": "n31_i9c_progression_receipt_matrix_v1",
+        "closure_callback_is_producer_owned": true,
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "native_budget_equal_after_matched_progression": true,
+        "native_v1_identity_equal_after_matched_progression": true,
+        "native_v2_identity_equal_after_matched_progression": true,
+        "omitted_S": 0.9,
+        "omitted_branch_receipts": [
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 3.0,
+            "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+            "scheduler_event_index": 21,
+            "source_lineage_id": "n31_C_progression_1",
+            "source_node_id": 0,
+            "target_node_id": 1
+          },
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 4.0,
+            "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+            "scheduler_event_index": 31,
+            "source_lineage_id": "n31_C_progression_2",
+            "source_node_id": 1,
+            "target_node_id": 0
+          },
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 5.0,
+            "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+            "scheduler_event_index": 41,
+            "source_lineage_id": "n31_C_progression_3",
+            "source_node_id": 0,
+            "target_node_id": 1
+          },
+          {
+            "amount": 0.05,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 0,
+            "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 6.0,
+            "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+            "scheduler_event_index": 51,
+            "source_lineage_id": "n31_C_progression_4",
+            "source_node_id": 1,
+            "target_node_id": 0
+          }
+        ],
+        "omitted_branch_updates": [],
+        "ordinary_autonomous_relaxation_claimed": false,
+        "output_digest": "267ae2b15187ea1efd8827106bed6a5474cf766b1189e5f3d73ac5c3e8fd4bd6",
+        "progression_is_experiment_scheduled": true,
+        "progression_is_native": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "exact_receipts_drive_monotonic_bounded_relaxation",
+      "detail": {
+        "S_sequence": [
+          0.5,
+          0.9,
+          0.8,
+          0.7250000000000001,
+          0.6687500000000001,
+          0.6265625
+        ],
+        "S_weakening": 0.2734375,
+        "clock_trigger_locality": "edge_0_progression_receipts",
+        "formed_S": 0.9,
+        "internal_time_units": "declared_disjoint_native_progression_receipts",
+        "ordinary_autonomous_relaxation_claimed": false,
+        "progression_schedule_authority": "experiment_fixture",
+        "relaxation_callback_authority": "candidate_C_closure",
+        "relaxed_S": 0.6265625,
+        "route_local_proper_time_decay_supported": false,
+        "susceptibility_state_locality": "edge_1"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "same_native_state_different_S_changes_native_readout",
+      "detail": {
+        "coherence_transition_caused_by_readout": false,
+        "complete_state_mediation_claimed": false,
+        "g_effective_weakening": 0.16584822726517323,
+        "load_bearing_mediator": "closure_S_applied_to_edge_1_conductance",
+        "mediation_strength": "bounded_partial_registered_edge_conductance",
+        "output_digest": "9a40ca3e5fd9e0246e320a794b7e41b35a24d6019742a7e415188c326b879c37",
+        "packet_transport_executed_during_readout": false,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_native_readout_matrix.json",
+        "readout_kind": "native_potential_flux_diagnostic",
+        "sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a",
+        "signed_flux_change": 0.028417626337679303,
+        "state_mutating_future_behavior_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "readout_shape_is_monotonic_and_local",
+      "detail": {
+        "S_monotonic_decrease": true,
+        "artifact_kind": "n31_i9c_native_readout_matrix",
+        "artifact_schema_version": "n31_i9c_native_readout_matrix_v1",
+        "common_native_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+        "common_native_v1_identity": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "common_native_v2_identity": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "complete_native_state_mediation": false,
+        "complete_state_mediation_claimed": false,
+        "formed_to_relaxed_S_weakening": 0.2734375,
+        "formed_to_relaxed_g_effective_weakening": 0.16584822726517323,
+        "formed_to_relaxed_signed_flux_change": 0.028417626337679303,
+        "g_effective_monotonic_decrease": true,
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "intervention_site": "registered_edge_1",
+        "load_bearing_mediator": "closure_S_applied_to_edge_1_conductance",
+        "mediation_strength": "bounded_partial_registered_edge_conductance",
+        "ordinary_LGRC_step_consumes_S": false,
+        "output_digest": "9a40ca3e5fd9e0246e320a794b7e41b35a24d6019742a7e415188c326b879c37",
+        "potential_solution_scope": "graph_level_native_kernel_computation",
+        "readout_authority": {
+          "potential_flux_computation": "native_GRC9V3_kernels",
+          "request": "experiment_harness",
+          "susceptibility_and_conductance_insertion": "candidate_C_closure"
+        },
+        "readout_kind": "native_potential_flux_diagnostic",
+        "rows": [
+          {
+            "S": 0.9,
+            "budget_after": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_before": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_unchanged": true,
+            "cleanup": {
+              "closure_conductance_not_left_for_unqualified_step": true,
+              "complete_changed_path_diff_after_cleanup": [],
+              "complete_snapshot_exact_after_cleanup": true,
+              "native_conductance_after_cleanup": 0.6065306597126334,
+              "native_identity_v1_exact_after_cleanup": true,
+              "native_identity_v2_exact_after_cleanup": true,
+              "original_native_conductance_restored": true,
+              "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+              "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "closure_identity": "c6089c7450ee361ed67459a7e8c73eb063caa2a3a1f731c428384fe9d3daed3a",
+            "coherence_after": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_before": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_transition_caused_by_readout": false,
+            "coherence_unchanged": true,
+            "g_effective": 0.5458775937413701,
+            "g_native": 0.6065306597126334,
+            "input_audit": {
+              "declared_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "exact_allowlist_match": true,
+              "observed_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "prohibited_input_paths": [
+                "global_event_count",
+                "wall_clock",
+                "outcome_history",
+                "global_node_scan",
+                "semantic_route_labels",
+                "readout_result_feedback",
+                "unregistered_receipt_history"
+              ],
+              "prohibited_inputs_observed": [],
+              "unlisted_input_read_status": "none_observed"
+            },
+            "native_consumers": [
+              "pygrc.models.grc_9_v3_runtime.compute_potential",
+              "pygrc.models.grc_9_v3_runtime.compute_flux"
+            ],
+            "ordinary_LGRC_step_consumes_S": false,
+            "packet_amount_scaled_by_closure": false,
+            "packet_export_scheduled_by_closure": false,
+            "packet_transport_executed_during_readout": false,
+            "potential_by_node": {
+              "0": -1.6582900341776956,
+              "1": -1.2325344470740305,
+              "2": -0.9091755187482741
+            },
+            "potential_flux_computation_authority": "native_GRC9V3_kernels",
+            "pre_application_native_identity": {
+              "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "readout_digest": "d2863cec2eb3521a9c832bc37cf89b8bbf383192317274b33f49d1bb7739e5c5",
+            "readout_kind": "native_potential_flux_diagnostic",
+            "readout_request_authority": "experiment_harness",
+            "row_id": "formed_hold",
+            "scientific_readout_digest": "615d252489b039c276206b7d0a060b7689d481bbe40650ea4db96b9d77589bf1",
+            "signed_flux_on_registered_edge": 0.1765143937092521,
+            "state_mutating_native_transport_consequence_supported": false,
+            "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+            "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+          },
+          {
+            "S": 0.8,
+            "budget_after": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_before": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_unchanged": true,
+            "cleanup": {
+              "closure_conductance_not_left_for_unqualified_step": true,
+              "complete_changed_path_diff_after_cleanup": [],
+              "complete_snapshot_exact_after_cleanup": true,
+              "native_conductance_after_cleanup": 0.6065306597126334,
+              "native_identity_v1_exact_after_cleanup": true,
+              "native_identity_v2_exact_after_cleanup": true,
+              "original_native_conductance_restored": true,
+              "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+              "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "closure_identity": "f92ddd9520c6630b001c410e05c128ac3403a0a992189c640e74b5829eb22ab8",
+            "coherence_after": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_before": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_transition_caused_by_readout": false,
+            "coherence_unchanged": true,
+            "g_effective": 0.4852245277701068,
+            "g_native": 0.6065306597126334,
+            "input_audit": {
+              "declared_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "exact_allowlist_match": true,
+              "observed_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "prohibited_input_paths": [
+                "global_event_count",
+                "wall_clock",
+                "outcome_history",
+                "global_node_scan",
+                "semantic_route_labels",
+                "readout_result_feedback",
+                "unregistered_receipt_history"
+              ],
+              "prohibited_inputs_observed": [],
+              "unlisted_input_read_status": "none_observed"
+            },
+            "native_consumers": [
+              "pygrc.models.grc_9_v3_runtime.compute_potential",
+              "pygrc.models.grc_9_v3_runtime.compute_flux"
+            ],
+            "ordinary_LGRC_step_consumes_S": false,
+            "packet_amount_scaled_by_closure": false,
+            "packet_export_scheduled_by_closure": false,
+            "packet_transport_executed_during_readout": false,
+            "potential_by_node": {
+              "0": -1.6582900341776956,
+              "1": -1.2446650602682832,
+              "2": -0.8970449055540214
+            },
+            "potential_flux_computation_authority": "native_GRC9V3_kernels",
+            "pre_application_native_identity": {
+              "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "readout_digest": "4895683659845443702193db234e68e346ce1eec7bf1680b31a31acaee3dce6c",
+            "readout_kind": "native_potential_flux_diagnostic",
+            "readout_request_authority": "experiment_harness",
+            "row_id": "relaxation_step_1",
+            "scientific_readout_digest": "5f40137e8351f2771fd8802269a5ae9de046bbd979d5f9f9cb4041a5c329cdef",
+            "signed_flux_on_registered_edge": 0.16867382541459913,
+            "state_mutating_native_transport_consequence_supported": false,
+            "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+            "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+          },
+          {
+            "S": 0.7250000000000001,
+            "budget_after": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_before": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_unchanged": true,
+            "cleanup": {
+              "closure_conductance_not_left_for_unqualified_step": true,
+              "complete_changed_path_diff_after_cleanup": [],
+              "complete_snapshot_exact_after_cleanup": true,
+              "native_conductance_after_cleanup": 0.6065306597126334,
+              "native_identity_v1_exact_after_cleanup": true,
+              "native_identity_v2_exact_after_cleanup": true,
+              "original_native_conductance_restored": true,
+              "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+              "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "closure_identity": "4e7d7f4786fac28d5c9a12253d9f4aec74f88a74df83adf15c0b1ccaea9e7a76",
+            "coherence_after": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_before": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_transition_caused_by_readout": false,
+            "coherence_unchanged": true,
+            "g_effective": 0.43973472829165927,
+            "g_native": 0.6065306597126334,
+            "input_audit": {
+              "declared_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "exact_allowlist_match": true,
+              "observed_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "prohibited_input_paths": [
+                "global_event_count",
+                "wall_clock",
+                "outcome_history",
+                "global_node_scan",
+                "semantic_route_labels",
+                "readout_result_feedback",
+                "unregistered_receipt_history"
+              ],
+              "prohibited_inputs_observed": [],
+              "unlisted_input_read_status": "none_observed"
+            },
+            "native_consumers": [
+              "pygrc.models.grc_9_v3_runtime.compute_potential",
+              "pygrc.models.grc_9_v3_runtime.compute_flux"
+            ],
+            "ordinary_LGRC_step_consumes_S": false,
+            "packet_amount_scaled_by_closure": false,
+            "packet_export_scheduled_by_closure": false,
+            "packet_transport_executed_during_readout": false,
+            "potential_by_node": {
+              "0": -1.6582900341776956,
+              "1": -1.2537630201639725,
+              "2": -0.8879469456583319
+            },
+            "potential_flux_computation_authority": "native_GRC9V3_kernels",
+            "pre_application_native_identity": {
+              "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "readout_digest": "73bfc0d220de1e499b2bed70f48d3fff12d0d030fe50540d2d82525ae3aa8f15",
+            "readout_kind": "native_potential_flux_diagnostic",
+            "readout_request_authority": "experiment_harness",
+            "row_id": "relaxation_step_2",
+            "scientific_readout_digest": "e62763666de466b0b937abc6d042d099b157a29f30c83cb479f74d8559ba06f0",
+            "signed_flux_on_registered_edge": 0.16086203212745925,
+            "state_mutating_native_transport_consequence_supported": false,
+            "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+            "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+          },
+          {
+            "S": 0.6687500000000001,
+            "budget_after": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_before": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_unchanged": true,
+            "cleanup": {
+              "closure_conductance_not_left_for_unqualified_step": true,
+              "complete_changed_path_diff_after_cleanup": [],
+              "complete_snapshot_exact_after_cleanup": true,
+              "native_conductance_after_cleanup": 0.6065306597126334,
+              "native_identity_v1_exact_after_cleanup": true,
+              "native_identity_v2_exact_after_cleanup": true,
+              "original_native_conductance_restored": true,
+              "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+              "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "closure_identity": "222c33b3107c6f2d44f6663259df0545de9d257555da6f04855b3f89cc43c585",
+            "coherence_after": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_before": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_transition_caused_by_readout": false,
+            "coherence_unchanged": true,
+            "g_effective": 0.40561737868282366,
+            "g_native": 0.6065306597126334,
+            "input_audit": {
+              "declared_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "exact_allowlist_match": true,
+              "observed_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "prohibited_input_paths": [
+                "global_event_count",
+                "wall_clock",
+                "outcome_history",
+                "global_node_scan",
+                "semantic_route_labels",
+                "readout_result_feedback",
+                "unregistered_receipt_history"
+              ],
+              "prohibited_inputs_observed": [],
+              "unlisted_input_read_status": "none_observed"
+            },
+            "native_consumers": [
+              "pygrc.models.grc_9_v3_runtime.compute_potential",
+              "pygrc.models.grc_9_v3_runtime.compute_flux"
+            ],
+            "ordinary_LGRC_step_consumes_S": false,
+            "packet_amount_scaled_by_closure": false,
+            "packet_export_scheduled_by_closure": false,
+            "packet_transport_executed_during_readout": false,
+            "potential_by_node": {
+              "0": -1.6582900341776956,
+              "1": -1.2605864900857398,
+              "2": -0.8811234757365648
+            },
+            "potential_flux_computation_authority": "native_GRC9V3_kernels",
+            "pre_application_native_identity": {
+              "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "readout_digest": "7e9448d857cfeb06664fc3e81685c17e1897569bfb592c609b68172a475659fc",
+            "readout_kind": "native_potential_flux_diagnostic",
+            "readout_request_authority": "experiment_harness",
+            "row_id": "relaxation_step_3",
+            "scientific_readout_digest": "2fa479cd65a1e804ce447694ca04391fa1437f8be5d1012c41a7ffe69d55d6bd",
+            "signed_flux_on_registered_edge": 0.15391679318739504,
+            "state_mutating_native_transport_consequence_supported": false,
+            "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+            "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+          },
+          {
+            "S": 0.6265625,
+            "budget_after": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_before": {
+              "budget_error": -2.220446049250313e-16,
+              "conserved_budget_total": 1.9,
+              "in_flight_packet_total": 0.0,
+              "node_coherence_total": 1.9
+            },
+            "budget_unchanged": true,
+            "cleanup": {
+              "closure_conductance_not_left_for_unqualified_step": true,
+              "complete_changed_path_diff_after_cleanup": [],
+              "complete_snapshot_exact_after_cleanup": true,
+              "native_conductance_after_cleanup": 0.6065306597126334,
+              "native_identity_v1_exact_after_cleanup": true,
+              "native_identity_v2_exact_after_cleanup": true,
+              "original_native_conductance_restored": true,
+              "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+              "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "closure_identity": "6c0f03be14c18c240834b44c06e06e45d4a0977e2d4efd231313811d87da5a43",
+            "coherence_after": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_before": {
+              "0": 0.9,
+              "1": 0.6,
+              "2": 0.4
+            },
+            "coherence_transition_caused_by_readout": false,
+            "coherence_unchanged": true,
+            "g_effective": 0.3800293664761969,
+            "g_native": 0.6065306597126334,
+            "input_audit": {
+              "declared_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "exact_allowlist_match": true,
+              "observed_input_paths": [
+                "closure.complete_validated_state",
+                "closure.S_by_edge.1",
+                "policy.registered_edge_id",
+                "native.base_conductance.registered_edge",
+                "native.constitutive_semantic_modes",
+                "native.evolution_parameters",
+                "pipeline.after_compute_base_conductance_before_compute_potential"
+              ],
+              "prohibited_input_paths": [
+                "global_event_count",
+                "wall_clock",
+                "outcome_history",
+                "global_node_scan",
+                "semantic_route_labels",
+                "readout_result_feedback",
+                "unregistered_receipt_history"
+              ],
+              "prohibited_inputs_observed": [],
+              "unlisted_input_read_status": "none_observed"
+            },
+            "native_consumers": [
+              "pygrc.models.grc_9_v3_runtime.compute_potential",
+              "pygrc.models.grc_9_v3_runtime.compute_flux"
+            ],
+            "ordinary_LGRC_step_consumes_S": false,
+            "packet_amount_scaled_by_closure": false,
+            "packet_export_scheduled_by_closure": false,
+            "packet_transport_executed_during_readout": false,
+            "potential_by_node": {
+              "0": -1.6582900341776956,
+              "1": -1.265704092527065,
+              "2": -0.8760058732952394
+            },
+            "potential_flux_computation_authority": "native_GRC9V3_kernels",
+            "pre_application_native_identity": {
+              "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+              "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+            },
+            "readout_digest": "1045a834b09ceca27c39c19e83d629ae1825617135820e18c39ef22d0f793bb5",
+            "readout_kind": "native_potential_flux_diagnostic",
+            "readout_request_authority": "experiment_harness",
+            "row_id": "relaxation_step_4",
+            "scientific_readout_digest": "fc03e9561618542577db6da5c215b95f8e5d7a103ad86e1b65537cfc26ed67b8",
+            "signed_flux_on_registered_edge": 0.1480967673715728,
+            "state_mutating_native_transport_consequence_supported": false,
+            "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+            "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+          }
+        ],
+        "same_complete_native_state_different_S_changes_registered_readout": true,
+        "signed_flux_monotonic_decrease": true,
+        "state_mutating_native_transport_consequence_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_coherence_budget_and_topology_preserved_during_readout",
+      "detail": [
+        {
+          "S": 0.9,
+          "budget_after": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_before": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_unchanged": true,
+          "cleanup": {
+            "closure_conductance_not_left_for_unqualified_step": true,
+            "complete_changed_path_diff_after_cleanup": [],
+            "complete_snapshot_exact_after_cleanup": true,
+            "native_conductance_after_cleanup": 0.6065306597126334,
+            "native_identity_v1_exact_after_cleanup": true,
+            "native_identity_v2_exact_after_cleanup": true,
+            "original_native_conductance_restored": true,
+            "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+            "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "closure_identity": "c6089c7450ee361ed67459a7e8c73eb063caa2a3a1f731c428384fe9d3daed3a",
+          "coherence_after": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_before": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_transition_caused_by_readout": false,
+          "coherence_unchanged": true,
+          "g_effective": 0.5458775937413701,
+          "g_native": 0.6065306597126334,
+          "input_audit": {
+            "declared_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "prohibited_input_paths": [
+              "global_event_count",
+              "wall_clock",
+              "outcome_history",
+              "global_node_scan",
+              "semantic_route_labels",
+              "readout_result_feedback",
+              "unregistered_receipt_history"
+            ],
+            "prohibited_inputs_observed": [],
+            "unlisted_input_read_status": "none_observed"
+          },
+          "native_consumers": [
+            "pygrc.models.grc_9_v3_runtime.compute_potential",
+            "pygrc.models.grc_9_v3_runtime.compute_flux"
+          ],
+          "ordinary_LGRC_step_consumes_S": false,
+          "packet_amount_scaled_by_closure": false,
+          "packet_export_scheduled_by_closure": false,
+          "packet_transport_executed_during_readout": false,
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.2325344470740305,
+            "2": -0.9091755187482741
+          },
+          "potential_flux_computation_authority": "native_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_digest": "d2863cec2eb3521a9c832bc37cf89b8bbf383192317274b33f49d1bb7739e5c5",
+          "readout_kind": "native_potential_flux_diagnostic",
+          "readout_request_authority": "experiment_harness",
+          "row_id": "formed_hold",
+          "scientific_readout_digest": "615d252489b039c276206b7d0a060b7689d481bbe40650ea4db96b9d77589bf1",
+          "signed_flux_on_registered_edge": 0.1765143937092521,
+          "state_mutating_native_transport_consequence_supported": false,
+          "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+          "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+        },
+        {
+          "S": 0.8,
+          "budget_after": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_before": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_unchanged": true,
+          "cleanup": {
+            "closure_conductance_not_left_for_unqualified_step": true,
+            "complete_changed_path_diff_after_cleanup": [],
+            "complete_snapshot_exact_after_cleanup": true,
+            "native_conductance_after_cleanup": 0.6065306597126334,
+            "native_identity_v1_exact_after_cleanup": true,
+            "native_identity_v2_exact_after_cleanup": true,
+            "original_native_conductance_restored": true,
+            "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+            "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "closure_identity": "f92ddd9520c6630b001c410e05c128ac3403a0a992189c640e74b5829eb22ab8",
+          "coherence_after": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_before": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_transition_caused_by_readout": false,
+          "coherence_unchanged": true,
+          "g_effective": 0.4852245277701068,
+          "g_native": 0.6065306597126334,
+          "input_audit": {
+            "declared_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "prohibited_input_paths": [
+              "global_event_count",
+              "wall_clock",
+              "outcome_history",
+              "global_node_scan",
+              "semantic_route_labels",
+              "readout_result_feedback",
+              "unregistered_receipt_history"
+            ],
+            "prohibited_inputs_observed": [],
+            "unlisted_input_read_status": "none_observed"
+          },
+          "native_consumers": [
+            "pygrc.models.grc_9_v3_runtime.compute_potential",
+            "pygrc.models.grc_9_v3_runtime.compute_flux"
+          ],
+          "ordinary_LGRC_step_consumes_S": false,
+          "packet_amount_scaled_by_closure": false,
+          "packet_export_scheduled_by_closure": false,
+          "packet_transport_executed_during_readout": false,
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.2446650602682832,
+            "2": -0.8970449055540214
+          },
+          "potential_flux_computation_authority": "native_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_digest": "4895683659845443702193db234e68e346ce1eec7bf1680b31a31acaee3dce6c",
+          "readout_kind": "native_potential_flux_diagnostic",
+          "readout_request_authority": "experiment_harness",
+          "row_id": "relaxation_step_1",
+          "scientific_readout_digest": "5f40137e8351f2771fd8802269a5ae9de046bbd979d5f9f9cb4041a5c329cdef",
+          "signed_flux_on_registered_edge": 0.16867382541459913,
+          "state_mutating_native_transport_consequence_supported": false,
+          "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+          "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+        },
+        {
+          "S": 0.7250000000000001,
+          "budget_after": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_before": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_unchanged": true,
+          "cleanup": {
+            "closure_conductance_not_left_for_unqualified_step": true,
+            "complete_changed_path_diff_after_cleanup": [],
+            "complete_snapshot_exact_after_cleanup": true,
+            "native_conductance_after_cleanup": 0.6065306597126334,
+            "native_identity_v1_exact_after_cleanup": true,
+            "native_identity_v2_exact_after_cleanup": true,
+            "original_native_conductance_restored": true,
+            "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+            "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "closure_identity": "4e7d7f4786fac28d5c9a12253d9f4aec74f88a74df83adf15c0b1ccaea9e7a76",
+          "coherence_after": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_before": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_transition_caused_by_readout": false,
+          "coherence_unchanged": true,
+          "g_effective": 0.43973472829165927,
+          "g_native": 0.6065306597126334,
+          "input_audit": {
+            "declared_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "prohibited_input_paths": [
+              "global_event_count",
+              "wall_clock",
+              "outcome_history",
+              "global_node_scan",
+              "semantic_route_labels",
+              "readout_result_feedback",
+              "unregistered_receipt_history"
+            ],
+            "prohibited_inputs_observed": [],
+            "unlisted_input_read_status": "none_observed"
+          },
+          "native_consumers": [
+            "pygrc.models.grc_9_v3_runtime.compute_potential",
+            "pygrc.models.grc_9_v3_runtime.compute_flux"
+          ],
+          "ordinary_LGRC_step_consumes_S": false,
+          "packet_amount_scaled_by_closure": false,
+          "packet_export_scheduled_by_closure": false,
+          "packet_transport_executed_during_readout": false,
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.2537630201639725,
+            "2": -0.8879469456583319
+          },
+          "potential_flux_computation_authority": "native_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_digest": "73bfc0d220de1e499b2bed70f48d3fff12d0d030fe50540d2d82525ae3aa8f15",
+          "readout_kind": "native_potential_flux_diagnostic",
+          "readout_request_authority": "experiment_harness",
+          "row_id": "relaxation_step_2",
+          "scientific_readout_digest": "e62763666de466b0b937abc6d042d099b157a29f30c83cb479f74d8559ba06f0",
+          "signed_flux_on_registered_edge": 0.16086203212745925,
+          "state_mutating_native_transport_consequence_supported": false,
+          "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+          "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+        },
+        {
+          "S": 0.6687500000000001,
+          "budget_after": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_before": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_unchanged": true,
+          "cleanup": {
+            "closure_conductance_not_left_for_unqualified_step": true,
+            "complete_changed_path_diff_after_cleanup": [],
+            "complete_snapshot_exact_after_cleanup": true,
+            "native_conductance_after_cleanup": 0.6065306597126334,
+            "native_identity_v1_exact_after_cleanup": true,
+            "native_identity_v2_exact_after_cleanup": true,
+            "original_native_conductance_restored": true,
+            "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+            "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "closure_identity": "222c33b3107c6f2d44f6663259df0545de9d257555da6f04855b3f89cc43c585",
+          "coherence_after": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_before": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_transition_caused_by_readout": false,
+          "coherence_unchanged": true,
+          "g_effective": 0.40561737868282366,
+          "g_native": 0.6065306597126334,
+          "input_audit": {
+            "declared_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "prohibited_input_paths": [
+              "global_event_count",
+              "wall_clock",
+              "outcome_history",
+              "global_node_scan",
+              "semantic_route_labels",
+              "readout_result_feedback",
+              "unregistered_receipt_history"
+            ],
+            "prohibited_inputs_observed": [],
+            "unlisted_input_read_status": "none_observed"
+          },
+          "native_consumers": [
+            "pygrc.models.grc_9_v3_runtime.compute_potential",
+            "pygrc.models.grc_9_v3_runtime.compute_flux"
+          ],
+          "ordinary_LGRC_step_consumes_S": false,
+          "packet_amount_scaled_by_closure": false,
+          "packet_export_scheduled_by_closure": false,
+          "packet_transport_executed_during_readout": false,
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.2605864900857398,
+            "2": -0.8811234757365648
+          },
+          "potential_flux_computation_authority": "native_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_digest": "7e9448d857cfeb06664fc3e81685c17e1897569bfb592c609b68172a475659fc",
+          "readout_kind": "native_potential_flux_diagnostic",
+          "readout_request_authority": "experiment_harness",
+          "row_id": "relaxation_step_3",
+          "scientific_readout_digest": "2fa479cd65a1e804ce447694ca04391fa1437f8be5d1012c41a7ffe69d55d6bd",
+          "signed_flux_on_registered_edge": 0.15391679318739504,
+          "state_mutating_native_transport_consequence_supported": false,
+          "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+          "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+        },
+        {
+          "S": 0.6265625,
+          "budget_after": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_before": {
+            "budget_error": -2.220446049250313e-16,
+            "conserved_budget_total": 1.9,
+            "in_flight_packet_total": 0.0,
+            "node_coherence_total": 1.9
+          },
+          "budget_unchanged": true,
+          "cleanup": {
+            "closure_conductance_not_left_for_unqualified_step": true,
+            "complete_changed_path_diff_after_cleanup": [],
+            "complete_snapshot_exact_after_cleanup": true,
+            "native_conductance_after_cleanup": 0.6065306597126334,
+            "native_identity_v1_exact_after_cleanup": true,
+            "native_identity_v2_exact_after_cleanup": true,
+            "original_native_conductance_restored": true,
+            "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+            "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "closure_identity": "6c0f03be14c18c240834b44c06e06e45d4a0977e2d4efd231313811d87da5a43",
+          "coherence_after": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_before": {
+            "0": 0.9,
+            "1": 0.6,
+            "2": 0.4
+          },
+          "coherence_transition_caused_by_readout": false,
+          "coherence_unchanged": true,
+          "g_effective": 0.3800293664761969,
+          "g_native": 0.6065306597126334,
+          "input_audit": {
+            "declared_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "exact_allowlist_match": true,
+            "observed_input_paths": [
+              "closure.complete_validated_state",
+              "closure.S_by_edge.1",
+              "policy.registered_edge_id",
+              "native.base_conductance.registered_edge",
+              "native.constitutive_semantic_modes",
+              "native.evolution_parameters",
+              "pipeline.after_compute_base_conductance_before_compute_potential"
+            ],
+            "prohibited_input_paths": [
+              "global_event_count",
+              "wall_clock",
+              "outcome_history",
+              "global_node_scan",
+              "semantic_route_labels",
+              "readout_result_feedback",
+              "unregistered_receipt_history"
+            ],
+            "prohibited_inputs_observed": [],
+            "unlisted_input_read_status": "none_observed"
+          },
+          "native_consumers": [
+            "pygrc.models.grc_9_v3_runtime.compute_potential",
+            "pygrc.models.grc_9_v3_runtime.compute_flux"
+          ],
+          "ordinary_LGRC_step_consumes_S": false,
+          "packet_amount_scaled_by_closure": false,
+          "packet_export_scheduled_by_closure": false,
+          "packet_transport_executed_during_readout": false,
+          "potential_by_node": {
+            "0": -1.6582900341776956,
+            "1": -1.265704092527065,
+            "2": -0.8760058732952394
+          },
+          "potential_flux_computation_authority": "native_GRC9V3_kernels",
+          "pre_application_native_identity": {
+            "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+            "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+          },
+          "readout_digest": "1045a834b09ceca27c39c19e83d629ae1825617135820e18c39ef22d0f793bb5",
+          "readout_kind": "native_potential_flux_diagnostic",
+          "readout_request_authority": "experiment_harness",
+          "row_id": "relaxation_step_4",
+          "scientific_readout_digest": "fc03e9561618542577db6da5c215b95f8e5d7a103ad86e1b65537cfc26ed67b8",
+          "signed_flux_on_registered_edge": 0.1480967673715728,
+          "state_mutating_native_transport_consequence_supported": false,
+          "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+          "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "closure_observed_inputs_match_declared_allowlists",
+      "detail": {
+        "audit_method": "explicit_closure_function_field_read_review_and_emitted_paths",
+        "formation_exact_allowlist_match": true,
+        "prohibited_inputs_observed": [],
+        "readout_exact_allowlist_match": true,
+        "relaxation_exact_allowlist_match": true,
+        "unlisted_input_read_status": "none_observed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "readout_authority_and_diagnostic_boundary_explicit",
+      "detail": {
+        "authority": {
+          "embedded_computational_layer": "GRC9V3_native_kernels",
+          "ordinary_LGRC_step_consumes_S": false,
+          "potential_flux_computation_authority": "native_GRC9V3_kernels",
+          "readout_request_authority": "experiment_harness",
+          "runtime_layer": "LGRC9V3",
+          "state_mutating_native_transport_consequence_supported": false,
+          "susceptibility_and_conductance_insertion_authority": "candidate_C_closure"
+        },
+        "readout": {
+          "coherence_transition_caused_by_readout": false,
+          "complete_state_mediation_claimed": false,
+          "g_effective_weakening": 0.16584822726517323,
+          "load_bearing_mediator": "closure_S_applied_to_edge_1_conductance",
+          "mediation_strength": "bounded_partial_registered_edge_conductance",
+          "output_digest": "9a40ca3e5fd9e0246e320a794b7e41b35a24d6019742a7e415188c326b879c37",
+          "packet_transport_executed_during_readout": false,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_native_readout_matrix.json",
+          "readout_kind": "native_potential_flux_diagnostic",
+          "sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a",
+          "signed_flux_change": 0.028417626337679303,
+          "state_mutating_future_behavior_supported": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "closure_and_native_readout_replay_exact",
+      "detail": {
+        "composed_identity_output_digest": "adf87894d4a93f5928d483abb2769d8296ce083b2e63644cdb7c4c1f229adff0",
+        "composed_identity_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_composed_identities.json",
+        "formed_closure_internal_digest_exact": true,
+        "formed_readout_replay_exact": true,
+        "relaxed_closure_internal_digest_exact": true,
+        "relaxed_readout_replay_exact": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "candidate_C_lane_controls_resolved",
+      "detail": {
+        "DR5_control_gate_complete": false,
+        "artifact_kind": "n31_i9c_control_matrix",
+        "artifact_schema_version": "n31_i9c_control_matrix_v1",
+        "auxiliary_control_count": 2,
+        "complete_I10_control_matrix_claimed": false,
+        "controls": [
+          {
+            "cache_write_erased_by_native_rebuild": true,
+            "control_id": "conductance_label_only",
+            "control_status": "failed_closed",
+            "injected_cache_value": 0.123,
+            "native_baseline_value": 0.6065306597126334,
+            "native_recomputed_value": 0.6065306597126334,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "susceptibility_without_restoration",
+            "control_status": "failed_closed",
+            "missing_closure_blocked": true,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "history_carried_by_hidden_producer",
+            "control_status": "failed_closed",
+            "exact_receipt_ids_restored": true,
+            "malformed_closure_rejected": true,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "same_complete_C_different_S_changes_future",
+            "control_status": "passed",
+            "positive_claim_allowed": true,
+            "registered_readout_changed": true,
+            "same_native_v1_identity": true,
+            "same_native_v2_identity": true,
+            "strict_coherence_only_boundary_crossed": true
+          },
+          {
+            "candidate_closure_required_for_effect": true,
+            "control_id": "producer_closure_as_native_memory",
+            "control_status": "failed_closed",
+            "native_identity_excludes_candidate_closure": true,
+            "native_memory_claim_allowed": false,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "wall_clock_decay",
+            "control_status": "passed",
+            "event_receipt_count_is_internal_time": true,
+            "positive_claim_allowed": true,
+            "wall_clock_state_present": false
+          },
+          {
+            "control_id": "producer_scheduled_D0_decay",
+            "control_status": "failed_closed",
+            "native_D0_upgrade_allowed": false,
+            "positive_claim_allowed": false,
+            "relation_authority": "producer_mediated"
+          }
+        ],
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "lane_specific_control_count": 5,
+        "lane_specific_controls_resolved": 5,
+        "output_digest": "96b03510f0cfabf61e3b6b5d5cf0f48febf7b27d922d4fd1998317d2fe7f9aa2"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "carrier_ledger_and_native_memory_boundaries_preserved",
+      "detail": {
+        "causal_carrier": "versioned_candidate_closure_S_by_edge_1",
+        "closure_state_is_native_memory": false,
+        "free_noncoherence_state_naturalized": false,
+        "native_susceptibility_state_present": false,
+        "ordinary_LGRC_step_compatible_without_hook": false,
+        "resource_cost_supported": false,
+        "susceptibility_update_magnitude_ledger_role": "report_only_noncausal"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "functional_resemblance_not_overpromoted_as_strict_ontological_fidelity",
+      "detail": {
+        "candidate_C_naturalization_target": {
+          "preferred_form": "S_is_exactly_derived_from_source_current_C_JC_history_with_no_independent_causal_freedom",
+          "remove_and_recompute_S_must_recover_same_value": true,
+          "same_complete_C_JC_history_implies_same_S_required": true,
+          "stronger_form": "C_fast_C_slow_decomposition_where_route_use_changes_C_slow_and_ordinary_C_JC_dynamics_relax_it"
+        },
+        "functional_reflexive_geometry_resemblance": {
+          "candidate_C_is_closest": true,
+          "functional_resemblance_is_not_ontological_fidelity": true,
+          "reason": "prior_route_use_changes_S_then_effective_geometry_then_native_potential_flux_diagnostic",
+          "resemblance_order": [
+            "Candidate_C",
+            "D0a",
+            "Candidate_B",
+            "Candidate_A"
+          ]
+        },
+        "strict_2025_11_coherence_only_ontology": {
+          "alignment_order": [
+            "D0a",
+            "Candidate_B",
+            "Candidate_A",
+            "Candidate_C"
+          ],
+          "candidate_C_disposition": "effective_closure_or_possible_theory_extension_candidate",
+          "candidate_C_is_closest": false,
+          "closest_added_mechanism": "Candidate_B",
+          "reason": "independently_restored_noncoherence_S_changes_the_registered_readout_under_identical_complete_native_C_state"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_C_R_DR4_ceiling_preserved",
+      "detail": {
+        "D0_R_bridge_status": "not_tested",
+        "DR4_supported": true,
+        "DR5_supported": false,
+        "DR6_supported": false,
+        "candidate_rung_status": "provisional_pending_I10",
+        "current_decay_relation_ladder_rung": "DR4",
+        "native_decay_classification_unchanged": "D0a_DR2",
+        "native_upgrade_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contracts_unchanged",
+      "detail": [
+        "src",
+        "lib",
+        "specs",
+        "implementation",
+        "tests",
+        "examples",
+        "scripts",
+        "pyproject.toml",
+        "requirements.txt",
+        "uv.lock"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "pre_outcome_candidate_C_contract",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_preregistration.json",
+          "sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7"
+        },
+        {
+          "artifact_role": "post_registered_route_use_native_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+          "sha256": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3"
+        },
+        {
+          "artifact_role": "formed_susceptibility_closure",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_formed_susceptibility_closure.json",
+          "sha256": "08ef7aeacf9f8d629fa122f28ba6331b323ffc5243a6d549a8b91748351f41b3"
+        },
+        {
+          "artifact_role": "post_progression_active_native_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+          "sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f"
+        },
+        {
+          "artifact_role": "post_progression_omitted_native_snapshot",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_omitted_progression_snapshot.json",
+          "sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f"
+        },
+        {
+          "artifact_role": "relaxed_susceptibility_closure",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_relaxed_susceptibility_closure.json",
+          "sha256": "80db7940b444966bf002424b3f4877c8680841eb425e9cbe7d3af3c3830dd80c"
+        },
+        {
+          "artifact_role": "matched_native_progression_and_receipts",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_progression_receipt_matrix.json",
+          "sha256": "64e5417a99cdedefa058474f1959947fc15ce93aa1e646734c0d749745e90c80"
+        },
+        {
+          "artifact_role": "native_conductance_potential_flux_readout",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_native_readout_matrix.json",
+          "sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a"
+        },
+        {
+          "artifact_role": "candidate_C_selected_controls",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_control_matrix.json",
+          "sha256": "6aefb942d588e4df7df63df4afae3ccbca599aed5e6fc9f5d0f5419869cdda47"
+        },
+        {
+          "artifact_role": "native_closure_policy_topology_identity",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_composed_identities.json",
+          "sha256": "c94955dccf91b052a069c6544a2bda105807d53aaeb5a2fc169eefa9d85740a9"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "autonomous_relaxation": false,
+        "candidate_C_closest_to_strict_RC_ontology": false,
+        "communication": false,
+        "free_naturalized_noncoherence_state": false,
+        "native_decay": false,
+        "native_memory": false,
+        "native_support": false,
+        "native_susceptibility": false,
+        "ordinary_D0_R": false,
+        "trail_or_stigmergy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I10_obligations_preserved",
+      "detail": {
+        "DR5_control_gate_complete": false,
+        "artifact_kind": "n31_i9c_control_matrix",
+        "artifact_schema_version": "n31_i9c_control_matrix_v1",
+        "auxiliary_control_count": 2,
+        "complete_I10_control_matrix_claimed": false,
+        "controls": [
+          {
+            "cache_write_erased_by_native_rebuild": true,
+            "control_id": "conductance_label_only",
+            "control_status": "failed_closed",
+            "injected_cache_value": 0.123,
+            "native_baseline_value": 0.6065306597126334,
+            "native_recomputed_value": 0.6065306597126334,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "susceptibility_without_restoration",
+            "control_status": "failed_closed",
+            "missing_closure_blocked": true,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "history_carried_by_hidden_producer",
+            "control_status": "failed_closed",
+            "exact_receipt_ids_restored": true,
+            "malformed_closure_rejected": true,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "same_complete_C_different_S_changes_future",
+            "control_status": "passed",
+            "positive_claim_allowed": true,
+            "registered_readout_changed": true,
+            "same_native_v1_identity": true,
+            "same_native_v2_identity": true,
+            "strict_coherence_only_boundary_crossed": true
+          },
+          {
+            "candidate_closure_required_for_effect": true,
+            "control_id": "producer_closure_as_native_memory",
+            "control_status": "failed_closed",
+            "native_identity_excludes_candidate_closure": true,
+            "native_memory_claim_allowed": false,
+            "positive_claim_allowed": false
+          },
+          {
+            "control_id": "wall_clock_decay",
+            "control_status": "passed",
+            "event_receipt_count_is_internal_time": true,
+            "positive_claim_allowed": true,
+            "wall_clock_state_present": false
+          },
+          {
+            "control_id": "producer_scheduled_D0_decay",
+            "control_status": "failed_closed",
+            "native_D0_upgrade_allowed": false,
+            "positive_claim_allowed": false,
+            "relation_authority": "producer_mediated"
+          }
+        ],
+        "generated_at": "2026-07-17T00:00:00+00:00",
+        "lane_specific_control_count": 5,
+        "lane_specific_controls_resolved": 5,
+        "output_digest": "96b03510f0cfabf61e3b6b5d5cf0f48febf7b27d922d4fd1998317d2fe7f9aa2"
+      },
+      "passed": true
+    }
+  ],
+  "classification": {
+    "D0_R_bridge_status": "not_tested",
+    "DR4_supported": true,
+    "DR5_supported": false,
+    "DR6_supported": false,
+    "candidate_rung_status": "provisional_pending_I10",
+    "current_decay_relation_ladder_rung": "DR4",
+    "native_decay_classification_unchanged": "D0a_DR2",
+    "native_upgrade_allowed": false
+  },
+  "controls": {
+    "complete_I10_control_matrix_claimed": false,
+    "lane_specific_controls_resolved": 5,
+    "output_digest": "96b03510f0cfabf61e3b6b5d5cf0f48febf7b27d922d4fd1998317d2fe7f9aa2",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_control_matrix.json",
+    "sha256": "6aefb942d588e4df7df63df4afae3ccbca599aed5e6fc9f5d0f5419869cdda47"
+  },
+  "derived_report_only": false,
+  "experiment": "N31",
+  "failed_checks": [],
+  "formation": {
+    "authority": "registered_native_route_use_triggers_producer_owned_susceptibility_formation",
+    "budget_after": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.9,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.9
+    },
+    "budget_before": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.9,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.9
+    },
+    "closure_update": {
+      "S_after": 0.9,
+      "S_before": 0.5,
+      "declared_input_paths": [
+        "closure.S_by_edge.1",
+        "closure.formation_receipt_id",
+        "policy.S_max",
+        "policy.alpha",
+        "receipt.event_kind",
+        "receipt.edge_id",
+        "receipt.source_node_id",
+        "receipt.target_node_id",
+        "receipt.source_lineage_id",
+        "receipt.amount"
+      ],
+      "exact_allowlist_match": true,
+      "first_formation_receipt": true,
+      "formation_update_applied": true,
+      "observed_input_paths": [
+        "closure.S_by_edge.1",
+        "closure.formation_receipt_id",
+        "policy.S_max",
+        "policy.alpha",
+        "receipt.event_kind",
+        "receipt.edge_id",
+        "receipt.source_node_id",
+        "receipt.target_node_id",
+        "receipt.source_lineage_id",
+        "receipt.amount"
+      ],
+      "q_use": 0.4,
+      "receipt_matched_exact_registered_route_use": true,
+      "unlisted_input_read_status": "none_observed"
+    },
+    "formation_packet_exhausted": true,
+    "formed_S": 0.9,
+    "initial_S": 0.5,
+    "native_identity_after": {
+      "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+      "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+    },
+    "native_identity_before": {
+      "v1": "81e5714244dba1e3842c72400f55ec3d51c2d35d872be223222cd1dc7641b909",
+      "v2": "8ba43cbd613d3a1ce5cd9518de40a6c6de4c84f4be41deaf80dc41195e1d145a"
+    },
+    "receipt": {
+      "amount": 0.4,
+      "budget_error": 0.0,
+      "edge_id": 1,
+      "event_id": "lgrc9v3-packet-event-fdbfdf6bcdea9f4a",
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 2.0,
+      "packet_id": "lgrc9v3-packet-15d8ebc24f9d84ca",
+      "scheduler_event_index": 11,
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "registered_route_use_amount": 0.4
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "input_audit": {
+    "audit_method": "explicit_closure_function_field_read_review_and_emitted_paths",
+    "formation_exact_allowlist_match": true,
+    "prohibited_inputs_observed": [],
+    "readout_exact_allowlist_match": true,
+    "relaxation_exact_allowlist_match": true,
+    "unlisted_input_read_status": "none_observed"
+  },
+  "iteration": "9-C",
+  "native_readout": {
+    "coherence_transition_caused_by_readout": false,
+    "complete_state_mediation_claimed": false,
+    "g_effective_weakening": 0.16584822726517323,
+    "load_bearing_mediator": "closure_S_applied_to_edge_1_conductance",
+    "mediation_strength": "bounded_partial_registered_edge_conductance",
+    "output_digest": "9a40ca3e5fd9e0246e320a794b7e41b35a24d6019742a7e415188c326b879c37",
+    "packet_transport_executed_during_readout": false,
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_native_readout_matrix.json",
+    "readout_kind": "native_potential_flux_diagnostic",
+    "sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a",
+    "signed_flux_change": 0.028417626337679303,
+    "state_mutating_future_behavior_supported": false
+  },
+  "naturalization_debt": [
+    "independent_S_is_additional_causal_degree",
+    "independent_S_resource_cost_relation_missing",
+    "native_susceptibility_state_missing",
+    "native_update_and_relaxation_surface_missing",
+    "receipt_indexed_relaxation_clock_not_route_local_proper_time",
+    "state_mutating_native_transport_consequence_missing"
+  ],
+  "output_digest": "c9bd64cebc1127f67e178b0030b26e5d4a74e7ae3e77c7c47e5ccb1e04b74ee9",
+  "preregistration": {
+    "output_digest": "7c8a0688ab14bafa939598d90966109094fe561bf0cb9bd0911fbe1d2db96487",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_preregistration.json",
+    "sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7"
+  },
+  "producer_residue": [
+    "closure_orchestrated_partial_native_readout_pipeline",
+    "closure_updates_and_relaxes_state_then_modulates_local_conductance",
+    "cross_edge_receipt_clock_coupling",
+    "experiment_authored_progression_schedule",
+    "independent_susceptibility_state_owned_by_effective_closure"
+  ],
+  "progression": {
+    "active_S_sequence": [
+      0.8,
+      0.7250000000000001,
+      0.6687500000000001,
+      0.6265625
+    ],
+    "active_branch_receipts": [
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 3.0,
+        "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+        "scheduler_event_index": 21,
+        "source_lineage_id": "n31_C_progression_1",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+        "scheduler_event_index": 31,
+        "source_lineage_id": "n31_C_progression_2",
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+        "scheduler_event_index": 41,
+        "source_lineage_id": "n31_C_progression_3",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 6.0,
+        "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+        "scheduler_event_index": 51,
+        "source_lineage_id": "n31_C_progression_4",
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    ],
+    "active_branch_updates": [
+      {
+        "S_after": 0.8,
+        "S_before": 0.9,
+        "declared_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "delta_S": -0.09999999999999998,
+        "duplicate_receipt": false,
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 3.0,
+          "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+          "scheduler_event_index": 21,
+          "source_lineage_id": "n31_C_progression_1",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "receipt_matched_exact_progression_predicate": true,
+        "relaxation_update_applied": true,
+        "unlisted_input_read_status": "none_observed"
+      },
+      {
+        "S_after": 0.7250000000000001,
+        "S_before": 0.8,
+        "declared_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "delta_S": -0.07499999999999996,
+        "duplicate_receipt": false,
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 4.0,
+          "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+          "scheduler_event_index": 31,
+          "source_lineage_id": "n31_C_progression_2",
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        "receipt_matched_exact_progression_predicate": true,
+        "relaxation_update_applied": true,
+        "unlisted_input_read_status": "none_observed"
+      },
+      {
+        "S_after": 0.6687500000000001,
+        "S_before": 0.7250000000000001,
+        "declared_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "delta_S": -0.05625000000000002,
+        "duplicate_receipt": false,
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 5.0,
+          "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+          "scheduler_event_index": 41,
+          "source_lineage_id": "n31_C_progression_3",
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        "receipt_matched_exact_progression_predicate": true,
+        "relaxation_update_applied": true,
+        "unlisted_input_read_status": "none_observed"
+      },
+      {
+        "S_after": 0.6265625,
+        "S_before": 0.6687500000000001,
+        "declared_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "delta_S": -0.042187500000000044,
+        "duplicate_receipt": false,
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.S_by_edge.1",
+          "closure.processed_progression_event_ids",
+          "policy.S_floor",
+          "policy.rho",
+          "receipt.event_kind",
+          "receipt.event_id",
+          "receipt.edge_id",
+          "receipt.source_node_id",
+          "receipt.target_node_id",
+          "receipt.event_time_key",
+          "receipt.scheduler_event_index",
+          "receipt.source_lineage_id",
+          "receipt.amount"
+        ],
+        "receipt": {
+          "amount": 0.05,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 0,
+          "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 6.0,
+          "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+          "scheduler_event_index": 51,
+          "source_lineage_id": "n31_C_progression_4",
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        "receipt_matched_exact_progression_predicate": true,
+        "relaxation_update_applied": true,
+        "unlisted_input_read_status": "none_observed"
+      }
+    ],
+    "artifact_kind": "n31_i9c_progression_receipt_matrix",
+    "artifact_schema_version": "n31_i9c_progression_receipt_matrix_v1",
+    "closure_callback_is_producer_owned": true,
+    "generated_at": "2026-07-17T00:00:00+00:00",
+    "native_budget_equal_after_matched_progression": true,
+    "native_v1_identity_equal_after_matched_progression": true,
+    "native_v2_identity_equal_after_matched_progression": true,
+    "omitted_S": 0.9,
+    "omitted_branch_receipts": [
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-11da4224625714e2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 3.0,
+        "packet_id": "lgrc9v3-packet-969b258bf0dff2b7",
+        "scheduler_event_index": 21,
+        "source_lineage_id": "n31_C_progression_1",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-bc4d5065a77d7de2",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-943b11b429ad0895",
+        "scheduler_event_index": 31,
+        "source_lineage_id": "n31_C_progression_2",
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-a0e6bd7fb3de690e",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-6e8410740cab6302",
+        "scheduler_event_index": 41,
+        "source_lineage_id": "n31_C_progression_3",
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.05,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-2bd3b3f00514671a",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 6.0,
+        "packet_id": "lgrc9v3-packet-8dd36afc5dbef545",
+        "scheduler_event_index": 51,
+        "source_lineage_id": "n31_C_progression_4",
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    ],
+    "omitted_branch_updates": [],
+    "ordinary_autonomous_relaxation_claimed": false,
+    "output_digest": "267ae2b15187ea1efd8827106bed6a5474cf766b1189e5f3d73ac5c3e8fd4bd6",
+    "progression_is_experiment_scheduled": true,
+    "progression_is_native": true
+  },
+  "readout_authority": {
+    "embedded_computational_layer": "GRC9V3_native_kernels",
+    "ordinary_LGRC_step_consumes_S": false,
+    "potential_flux_computation_authority": "native_GRC9V3_kernels",
+    "readout_request_authority": "experiment_harness",
+    "runtime_layer": "LGRC9V3",
+    "state_mutating_native_transport_consequence_supported": false,
+    "susceptibility_and_conductance_insertion_authority": "candidate_C_closure"
+  },
+  "relation_authority": "producer_mediated_effective_non_markovian_closure",
+  "relaxation": {
+    "S_sequence": [
+      0.5,
+      0.9,
+      0.8,
+      0.7250000000000001,
+      0.6687500000000001,
+      0.6265625
+    ],
+    "S_weakening": 0.2734375,
+    "clock_trigger_locality": "edge_0_progression_receipts",
+    "formed_S": 0.9,
+    "internal_time_units": "declared_disjoint_native_progression_receipts",
+    "ordinary_autonomous_relaxation_claimed": false,
+    "progression_schedule_authority": "experiment_fixture",
+    "relaxation_callback_authority": "candidate_C_closure",
+    "relaxed_S": 0.6265625,
+    "route_local_proper_time_decay_supported": false,
+    "susceptibility_state_locality": "edge_1"
+  },
+  "representation_boundary": {
+    "causal_carrier": "versioned_candidate_closure_S_by_edge_1",
+    "closure_state_is_native_memory": false,
+    "free_noncoherence_state_naturalized": false,
+    "native_susceptibility_state_present": false,
+    "ordinary_LGRC_step_compatible_without_hook": false,
+    "resource_cost_supported": false,
+    "susceptibility_update_magnitude_ledger_role": "report_only_noncausal"
+  },
+  "restoration": {
+    "composed_identity_output_digest": "adf87894d4a93f5928d483abb2769d8296ce083b2e63644cdb7c4c1f229adff0",
+    "composed_identity_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_composed_identities.json",
+    "formed_closure_internal_digest_exact": true,
+    "formed_readout_replay_exact": true,
+    "relaxed_closure_internal_digest_exact": true,
+    "relaxed_readout_replay_exact": true
+  },
+  "semantic_class": "C",
+  "semantic_subtype": "C_R_route_susceptibility_relaxation",
+  "source_chain": [
+    {
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+    },
+    {
+      "actual_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+      "actual_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+      "expected_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+      "expected_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_admission_i9.json"
+    },
+    {
+      "actual_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+      "actual_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+      "expected_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+      "expected_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9_added_mechanism_admission_artifacts/n31_i9_candidate_contract_bundle.json"
+    }
+  ],
+  "source_current_runtime_artifact": true,
+  "status": "passed",
+  "theory_positioning": {
+    "candidate_C_naturalization_target": {
+      "preferred_form": "S_is_exactly_derived_from_source_current_C_JC_history_with_no_independent_causal_freedom",
+      "remove_and_recompute_S_must_recover_same_value": true,
+      "same_complete_C_JC_history_implies_same_S_required": true,
+      "stronger_form": "C_fast_C_slow_decomposition_where_route_use_changes_C_slow_and_ordinary_C_JC_dynamics_relax_it"
+    },
+    "functional_reflexive_geometry_resemblance": {
+      "candidate_C_is_closest": true,
+      "functional_resemblance_is_not_ontological_fidelity": true,
+      "reason": "prior_route_use_changes_S_then_effective_geometry_then_native_potential_flux_diagnostic",
+      "resemblance_order": [
+        "Candidate_C",
+        "D0a",
+        "Candidate_B",
+        "Candidate_A"
+      ]
+    },
+    "strict_2025_11_coherence_only_ontology": {
+      "alignment_order": [
+        "D0a",
+        "Candidate_B",
+        "Candidate_A",
+        "Candidate_C"
+      ],
+      "candidate_C_disposition": "effective_closure_or_possible_theory_extension_candidate",
+      "candidate_C_is_closest": false,
+      "closest_added_mechanism": "Candidate_B",
+      "reason": "independently_restored_noncoherence_S_changes_the_registered_readout_under_identical_complete_native_C_state"
+    }
+  },
+  "topology": {
+    "frozen_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c",
+    "matches_frozen_contract": true,
+    "reconstructed_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c",
+    "reconstructed_identity": {
+      "edge_ids": [
+        0,
+        1
+      ],
+      "edge_payloads": [
+        {
+          "conductance": 1.0,
+          "delay": 1.0,
+          "edge_id": 0,
+          "orientation": "canonical_source_to_target",
+          "payload": {
+            "fixture_relation": "source_to_susceptible_route"
+          },
+          "source_node_id": 0,
+          "source_port_id": 1,
+          "target_node_id": 1,
+          "target_port_id": 1
+        },
+        {
+          "conductance": 1.0,
+          "delay": 1.0,
+          "edge_id": 1,
+          "orientation": "canonical_source_to_target",
+          "payload": {
+            "fixture_relation": "susceptible_route_to_local_readout"
+          },
+          "source_node_id": 1,
+          "source_port_id": 2,
+          "target_node_id": 2,
+          "target_port_id": 1
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2
+      ],
+      "node_payloads": [
+        {
+          "node_id": 0,
+          "payload": {
+            "fixture_role": "source"
+          }
+        },
+        {
+          "node_id": 1,
+          "payload": {
+            "fixture_role": "susceptible_route_node"
+          }
+        },
+        {
+          "node_id": 2,
+          "payload": {
+            "fixture_role": "local_readout_receiver"
+          }
+        }
+      ],
+      "role_to_node_id": {
+        "local_readout_receiver": 2,
+        "source": 0,
+        "susceptible_route_node": 1
+      }
+    }
+  },
+  "unsafe_claim_flags": {
+    "agency": false,
+    "autonomous_relaxation": false,
+    "candidate_C_closest_to_strict_RC_ontology": false,
+    "communication": false,
+    "free_naturalized_noncoherence_state": false,
+    "native_decay": false,
+    "native_memory": false,
+    "native_support": false,
+    "native_susceptibility": false,
+    "ordinary_D0_R": false,
+    "trail_or_stigmergy": false
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "DR5_or_DR6_allowed": false,
+  "artifact_kind": "n31_i9c_preregistration",
+  "artifact_schema_version": "n31_i9c_preregistration_v1",
+  "candidate_id": "C_route_susceptibility_relaxation",
+  "claim_ceiling": "provisional_producer_mediated_C_R_DR4_pending_I10",
+  "declared_before_use": true,
+  "expected_formed_S": 0.9,
+  "expected_relaxation_sequence": [
+    0.8,
+    0.725,
+    0.66875,
+    0.6265625
+  ],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "initial_coherence": {
+    "0": 0.9,
+    "1": 1.0,
+    "2": 0.0
+  },
+  "input_allowlists": {
+    "formation": [
+      "closure.S_by_edge.1",
+      "closure.formation_receipt_id",
+      "policy.S_max",
+      "policy.alpha",
+      "receipt.event_kind",
+      "receipt.edge_id",
+      "receipt.source_node_id",
+      "receipt.target_node_id",
+      "receipt.source_lineage_id",
+      "receipt.amount"
+    ],
+    "prohibited": [
+      "global_event_count",
+      "wall_clock",
+      "outcome_history",
+      "global_node_scan",
+      "semantic_route_labels",
+      "readout_result_feedback",
+      "unregistered_receipt_history"
+    ],
+    "readout": [
+      "closure.complete_validated_state",
+      "closure.S_by_edge.1",
+      "policy.registered_edge_id",
+      "native.base_conductance.registered_edge",
+      "native.constitutive_semantic_modes",
+      "native.evolution_parameters",
+      "pipeline.after_compute_base_conductance_before_compute_potential"
+    ],
+    "relaxation": [
+      "closure.S_by_edge.1",
+      "closure.processed_progression_event_ids",
+      "policy.S_floor",
+      "policy.rho",
+      "receipt.event_kind",
+      "receipt.event_id",
+      "receipt.edge_id",
+      "receipt.source_node_id",
+      "receipt.target_node_id",
+      "receipt.event_time_key",
+      "receipt.scheduler_event_index",
+      "receipt.source_lineage_id",
+      "receipt.amount"
+    ]
+  },
+  "minimum_S_weakening": 0.25,
+  "minimum_effective_conductance_weakening": 0.15,
+  "minimum_signed_flux_change": 0.02,
+  "output_digest": "7c8a0688ab14bafa939598d90966109094fe561bf0cb9bd0911fbe1d2db96487",
+  "policy": {
+    "S_floor": 0.5,
+    "S_max": 1.0,
+    "alpha": 1.0,
+    "cleanup_phase": "restore_exact_pre_application_native_state",
+    "conductance_insertion_phase": "after_native_compute_base_conductance_before_native_compute_potential",
+    "formation_receipt_predicate": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "formation_relation": "S_after_use = min(S_max, S + alpha * q_use)",
+    "implementation_bindings": {
+      "closure_script_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_susceptibility_relaxation_i9c.py",
+      "closure_script_sha256": "1151666dcf53175803e238ad2b096eae581d992503e6a58ffeb425021db30a98",
+      "grc9v3_kernel_path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "grc9v3_kernel_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "lgrc9v3_runtime_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "lgrc9v3_runtime_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "runtime_revision": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6"
+    },
+    "outcome_tuning_allowed": false,
+    "policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+    "policy_schema": "n31_C_susceptibility_relaxation_v1",
+    "progression_receipt_predicate": {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "exact_registered_specs": [
+        [
+          0,
+          1,
+          2.0,
+          20,
+          "n31_C_progression_1"
+        ],
+        [
+          1,
+          0,
+          3.0,
+          30,
+          "n31_C_progression_2"
+        ],
+        [
+          0,
+          1,
+          4.0,
+          40,
+          "n31_C_progression_3"
+        ],
+        [
+          1,
+          0,
+          5.0,
+          50,
+          "n31_C_progression_4"
+        ]
+      ]
+    },
+    "readout_relation": "g_effective = S * g_native",
+    "registered_edge_id": 1,
+    "relaxation_relation": "S_next = S_floor + rho * (S - S_floor)",
+    "rho": 0.75
+  },
+  "progression_specs": [
+    {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_time_key": 2.0,
+      "expected_arrival_event_time_key": 3.0,
+      "expected_arrival_scheduler_event_index": 21,
+      "lineage": "n31_C_progression_1",
+      "scheduler_event_index": 20,
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_time_key": 3.0,
+      "expected_arrival_event_time_key": 4.0,
+      "expected_arrival_scheduler_event_index": 31,
+      "lineage": "n31_C_progression_2",
+      "scheduler_event_index": 30,
+      "source_node_id": 1,
+      "target_node_id": 0
+    },
+    {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_time_key": 4.0,
+      "expected_arrival_event_time_key": 5.0,
+      "expected_arrival_scheduler_event_index": 41,
+      "lineage": "n31_C_progression_3",
+      "scheduler_event_index": 40,
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_time_key": 5.0,
+      "expected_arrival_event_time_key": 6.0,
+      "expected_arrival_scheduler_event_index": 51,
+      "lineage": "n31_C_progression_4",
+      "scheduler_event_index": 50,
+      "source_node_id": 1,
+      "target_node_id": 0
+    }
+  ],
+  "readout_contract": {
+    "common_native_state_required": true,
+    "export_scheduling_allowed": false,
+    "native_consumers": [
+      "pygrc.models.grc_9_v3_runtime.compute_potential",
+      "pygrc.models.grc_9_v3_runtime.compute_flux"
+    ],
+    "only_pre_application_difference": "restored_candidate_closure_S",
+    "ordinary_LGRC_step_consumes_S": false,
+    "packet_amount_scaling_allowed": false,
+    "potential_flux_computation_authority": "native_GRC9V3_kernels",
+    "readout_request_authority": "experiment_harness",
+    "signed_flux_must_decrease_as_S_relaxes": true,
+    "state_mutating_native_transport_consequence_supported": false,
+    "susceptibility_and_conductance_insertion_authority": "candidate_C_closure"
+  },
+  "registered_route_use": {
+    "amount": 0.4,
+    "edge_id": 1,
+    "lineage": "n31_C_registered_route_use",
+    "source_node_id": 1,
+    "target_node_id": 2
+  }
+}

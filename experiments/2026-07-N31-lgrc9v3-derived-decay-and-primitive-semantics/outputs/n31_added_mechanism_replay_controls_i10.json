@@ -1,0 +1,900 @@
+{
+  "RCAE_admission": {
+    "I10_DR5_alone_is_selection": false,
+    "automatic_adoption_allowed": false,
+    "status": "pending_I11_comparative_classification_and_reusable_provider_contract"
+  },
+  "acceptance_state": "accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade",
+  "artifact_kind": "n31_added_mechanism_replay_controls",
+  "artifact_manifest": [
+    {
+      "artifact_role": "I10_preregistration",
+      "output_digest": "8ce6d1547ee5924d8f215c15e9f3cbc7583b0fc7e3681db9f95a8183c84207d8",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_preregistration.json",
+      "sha256": "fe747d7742013e212358618635afa237b3d943db5b29288eb159be7dbdd4eec6"
+    },
+    {
+      "artifact_role": "I10_source_artifact_replay",
+      "output_digest": "02d460f11f7e1f8c6f25b7e6f38e6257fa152f90270c1ccb4cacd8aaad0397f2",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_source_artifact_replay.json",
+      "sha256": "b71ffb6c46ab395a36e8c18170b0b925ec732673d60972cf2b803f21de4560e2"
+    },
+    {
+      "artifact_role": "I10_A_family_replay_controls",
+      "output_digest": "10169903b856bbf3a156d795ec80cb465a1d6f8fd7c98dc07a20ca57e06ba0df",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_A_family_replay_controls.json",
+      "sha256": "e1c2103dc2b2cf20dbe0990ed00762e5c5110b6d8cc4a0ac9810cb17facc5ba8"
+    },
+    {
+      "artifact_role": "I10_B_family_replay_controls",
+      "output_digest": "f719ebbd73e943eb959d54dded47ccd52c4aee50956d903d46e6acb59cba1b87",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_B_family_replay_controls.json",
+      "sha256": "dbd412c14983a612313ceeae823d9a58c17b8739a9b5a39ae5797c96fb3af80a"
+    },
+    {
+      "artifact_role": "I10_C_family_replay_controls",
+      "output_digest": "8f50db60fbf3fbbac0149353801afedf00fe3a88e760be6b2ff8f43b1ca6f8a6",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C_family_replay_controls.json",
+      "sha256": "252a188bd28fa71b67385fe75f57af2925d720d88d241b4d4eff47335babe375"
+    },
+    {
+      "artifact_role": "I10_complete_control_matrix",
+      "output_digest": "b9bd52284c3767715b2e537602b09309063ef054ecc3af989cecefeab811544b",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_complete_control_matrix.json",
+      "sha256": "c9cc17ed23ff82e65481ba1468759743d279f329ee187bcacddec8f27310c361"
+    },
+    {
+      "artifact_role": "I10_family_bundle_matrix",
+      "output_digest": "c7c9b42d1b3112c088da6862bf91fa1fcefcca89291dd8dd8736b23ff0d4f547",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_family_bundle_matrix.json",
+      "sha256": "e962b6a278e46b8aeadce892ce9a635754797fcb86020baa457987b06dd95e40"
+    },
+    {
+      "artifact_role": "I10_runtime_replay_control_trace",
+      "output_digest": "0c105781b62ebd4e2a6b4b066a3000f72348041ced4a27c9d8e1995b941a5c50",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_trace.json",
+      "sha256": "0a9a902be87033d8113c4303ab9dc385e932e61e5ff4a13baa912595958387d1"
+    },
+    {
+      "artifact_role": "I10_A_fresh_branch_one_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_A_fresh_branch_one.json",
+      "sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703"
+    },
+    {
+      "artifact_role": "I10_A_fresh_branch_two_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_A_fresh_branch_two.json",
+      "sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703"
+    },
+    {
+      "artifact_role": "I10_A_aged_branch_one_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_A_aged_branch_one.json",
+      "sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced"
+    },
+    {
+      "artifact_role": "I10_A_aged_branch_two_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_A_aged_branch_two.json",
+      "sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced"
+    },
+    {
+      "artifact_role": "I10_B_branch_one_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_B_branch_one.json",
+      "sha256": "08d6e3d7def1c4533dc0d40a39760f923ddf7259e24aab1024d73bc02d9adc26"
+    },
+    {
+      "artifact_role": "I10_B_branch_two_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_B_branch_two.json",
+      "sha256": "08d6e3d7def1c4533dc0d40a39760f923ddf7259e24aab1024d73bc02d9adc26"
+    },
+    {
+      "artifact_role": "I10_C2_formed_branch_one_post_transport_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json",
+      "sha256": "6cf6a9df0918ffbd5c4f463930afc9e203ab66539f019b37c6ef89db3edc9800"
+    },
+    {
+      "artifact_role": "I10_C2_formed_branch_two_post_transport_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_two_post_transport.json",
+      "sha256": "6cf6a9df0918ffbd5c4f463930afc9e203ab66539f019b37c6ef89db3edc9800"
+    },
+    {
+      "artifact_role": "I10_C2_progressed_branch_one_post_transport_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json",
+      "sha256": "60f4d2c1b2c88b724cf438e235532a814b46f8287c41ea56b94e4db478c209dc"
+    },
+    {
+      "artifact_role": "I10_C2_progressed_branch_two_post_transport_native_snapshot",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_two_post_transport.json",
+      "sha256": "60f4d2c1b2c88b724cf438e235532a814b46f8287c41ea56b94e4db478c209dc"
+    }
+  ],
+  "artifact_schema_version": "n31_added_mechanism_replay_controls_i10_v1",
+  "checks": [
+    {
+      "check_id": "all_exact_I2_I3_I8_I9_sources_consumed",
+      "detail": [
+        {
+          "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_decay_evidence",
+          "actual_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+          "actual_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+          "expected_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+          "expected_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+          "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+          "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+          "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+          "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10",
+          "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10",
+          "actual_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+          "actual_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+          "expected_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+          "expected_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_downstream_readout_i9a1.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10",
+          "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+          "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+          "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+          "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4",
+          "actual_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+          "actual_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+          "expected_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+          "expected_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10",
+          "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+          "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+          "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+          "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+          "actual_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+          "actual_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+          "expected_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+          "expected_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_generalized_relation_and_native_restoration_DR2_and_LGRC_faithful_producer_step_provisional_DR4_pending_I10_with_native_runtime_lane_DR0_and_deferred_conditional_naturalization_requirements_recorded",
+          "actual_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+          "actual_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+          "expected_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+          "expected_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_native_exact_history_closure_i9c2.json",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_source_artifact_manifests_replay_exact",
+      "detail": 66,
+      "passed": true
+    },
+    {
+      "check_id": "A_family_all_required_replays_pass",
+      "detail": {
+        "artifact_replay": "passed",
+        "branch_replay": "passed",
+        "duplicate_replay": "passed",
+        "snapshot_load_replay": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "A_family_DR5_gates_pass",
+      "detail": "DR5",
+      "passed": true
+    },
+    {
+      "check_id": "B_family_all_required_replays_pass",
+      "detail": {
+        "artifact_replay": "passed",
+        "branch_replay": "passed",
+        "duplicate_replay": "passed",
+        "snapshot_load_replay": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "B_family_DR5_gates_pass",
+      "detail": "DR5",
+      "passed": true
+    },
+    {
+      "check_id": "C_family_all_required_replays_pass",
+      "detail": {
+        "artifact_replay": "passed",
+        "branch_replay": "passed",
+        "duplicate_replay": "passed",
+        "post_feedback_restoration_replay": "passed",
+        "snapshot_load_replay": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "C2_post_feedback_final_state_restoration_witness_exact",
+      "detail": [
+        {
+          "complete_identity_equal": true,
+          "derived_S_exact": true,
+          "next_step_exact": true,
+          "roundtrip": {
+            "identity_v1_after": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+            "identity_v1_before": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+            "identity_v1_exact": true,
+            "identity_v2_after": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+            "identity_v2_before": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+            "identity_v2_exact": true,
+            "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+            "row_id": "C2_formed_native_history_post_transport",
+            "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json"
+          },
+          "row_id": "formed_native_history"
+        },
+        {
+          "complete_identity_equal": true,
+          "derived_S_exact": true,
+          "next_step_exact": true,
+          "roundtrip": {
+            "identity_v1_after": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+            "identity_v1_before": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+            "identity_v1_exact": true,
+            "identity_v2_after": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+            "identity_v2_before": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+            "identity_v2_exact": true,
+            "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+            "row_id": "C2_progressed_native_history_post_transport",
+            "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json"
+          },
+          "row_id": "progressed_native_history"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "C_family_candidate_specific_controls_pass",
+      "detail": "duplicate_wrong_lineage_wrong_direction_semantic_topology_and_physical_controls",
+      "passed": true
+    },
+    {
+      "check_id": "C_family_lane_specific_rungs_preserved",
+      "detail": {
+        "native": "DR0",
+        "producer": "DR5",
+        "relation": "DR2"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "C_and_C1_retained_as_separate_zero_weight_ancestry",
+      "detail": [
+        {
+          "authority": "producer_mediated_independent_state_closure",
+          "candidate_id": "C_route_susceptibility_relaxation",
+          "carrier": "independently_serialized_closure_S",
+          "comparison_weight": 0,
+          "historical_rung": "DR4",
+          "iteration": "I9-C",
+          "preserved_controls": "restoration_hidden_state_local_readout_and_native_relabel_boundaries_preserved_by_exact_source_and_manifest_replay",
+          "ranking_eligible": false,
+          "selection_eligible": false
+        },
+        {
+          "authority": "exact_derived_native_packet_history_closure",
+          "candidate_id": "C_derived_history_susceptibility",
+          "carrier": "fixture_exact_native_packet_history",
+          "comparison_weight": 0,
+          "historical_rung": "DR4",
+          "insertion_class": "producer_or_wrapper_mediated_constitutive_insertion",
+          "iteration": "I9-C.1",
+          "preserved_controls": "native_history_identity_exact_recomputation_injected_state_rejection_history_tamper_and_constitutive_insertion_boundaries_preserved_by_exact_source_and_manifest_replay",
+          "ranking_eligible": false,
+          "selection_eligible": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "complete_frozen_control_matrix_resolved",
+      "detail": {
+        "resolution_mode_counts": {
+          "inherited_schema_null": 76,
+          "positive_conformance_observation": 30,
+          "runtime_executed": 14,
+          "scope_not_applicable": 90
+        },
+        "status_counts": {
+          "A": {
+            "failed_closed": 25,
+            "failed_open": 0,
+            "not_applicable": 31,
+            "not_run": 0,
+            "passed": 14
+          },
+          "B": {
+            "failed_closed": 25,
+            "failed_open": 0,
+            "not_applicable": 28,
+            "not_run": 0,
+            "passed": 17
+          },
+          "C": {
+            "failed_closed": 26,
+            "failed_open": 0,
+            "not_applicable": 31,
+            "not_run": 0,
+            "passed": 13
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "family_bundles_prevent_double_counting",
+      "detail": [
+        {
+          "candidate_id": "A_release_efficacy_attenuation",
+          "candidate_native_runtime_lane": "not_admitted",
+          "candidate_native_support": false,
+          "comparison_axis": "producer_mediated_mechanism_quality",
+          "comparison_family": "A",
+          "evidence_bundle": [
+            "I9-A",
+            "I9-A.1"
+          ],
+          "existing_native_D0a_context_rung": "DR2",
+          "independent_comparison_weight": 1,
+          "lane_specific_rung": "DR5",
+          "replay_control_disposition": "admitted_for_I11_comparison"
+        },
+        {
+          "candidate_id": "B_conserved_source_leakage",
+          "candidate_native_runtime_lane": "not_admitted",
+          "candidate_native_support": false,
+          "comparison_axis": "producer_mediated_mechanism_quality",
+          "comparison_family": "B",
+          "evidence_bundle": [
+            "I9-B",
+            "I9-B.1"
+          ],
+          "existing_native_D0a_context_rung": "DR2",
+          "independent_comparison_weight": 1,
+          "lane_specific_rung": "DR5",
+          "replay_control_disposition": "admitted_for_I11_comparison"
+        },
+        {
+          "ancestor_evidence": [
+            "I9-C",
+            "I9-C.1"
+          ],
+          "ancestor_positive_weight": 0,
+          "ancestor_ranking_eligible": false,
+          "ancestor_selection_eligible": false,
+          "candidate_id": "C_native_exact_history_constitutive_closure",
+          "comparison_family": "C",
+          "comparison_lanes": {
+            "native_implementation_support": "DR0",
+            "producer_mediated_mechanism_quality": "DR5",
+            "relation_carrier_restoration": "DR2"
+          },
+          "evidence_bundle": [
+            "I9-C.2"
+          ],
+          "independent_comparison_weight": 1,
+          "maximum_label_across_ancestry_may_define_bundle_rung": false,
+          "replay_control_disposition": "admitted_for_I11_lane_specific_comparison"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I11_comparative_selection_not_preempted",
+      "detail": {
+        "I10_scope": "admission_only",
+        "added_mechanism_units": 3,
+        "required_profile_axes": [
+          "semantic_fit",
+          "strict_RC_theory_compatibility",
+          "coherence_conservation",
+          "local_causality",
+          "internal_time_ownership",
+          "carrier_authority",
+          "mediation_strength",
+          "restoration_completeness",
+          "native_mechanics_already_available",
+          "producer_residue",
+          "naturalization_debt",
+          "topology_scope",
+          "transfer_evidence",
+          "RCAE_relevance"
+        ],
+        "total_I11_rows": 6
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_and_protected_contracts_unchanged",
+      "detail": "236351695e36f88be85b7ed429911d58fad57b32",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "automatic_RCAE_adoption_claim_allowed": false,
+        "communication_claim_allowed": false,
+        "ecology_coordination_claim_allowed": false,
+        "general_decay_law_claim_allowed": false,
+        "learning_claim_allowed": false,
+        "memory_claim_allowed": false,
+        "native_autonomous_decay_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_or_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "strict_current_C_only_C2_claim_allowed": false,
+        "trail_or_stigmergy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "evaluated_after_payload",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "A, B, and C.2 producer-mediated mechanism families pass bounded I10 replay, restoration, invariant, and control gates at lane-specific DR5, without native or semantic promotion",
+    "blocked_claims": [
+      "native_autonomous_decay",
+      "strict_current_C_only_C2",
+      "general_decay_law",
+      "memory",
+      "trail_or_stigmergy",
+      "communication",
+      "ecology_coordination",
+      "learning",
+      "agency",
+      "selfhood",
+      "sentience",
+      "organism_or_life",
+      "native_support",
+      "phase8_completion",
+      "automatic_RCAE_adoption"
+    ],
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "automatic_RCAE_adoption_claim_allowed": false,
+      "communication_claim_allowed": false,
+      "ecology_coordination_claim_allowed": false,
+      "general_decay_law_claim_allowed": false,
+      "learning_claim_allowed": false,
+      "memory_claim_allowed": false,
+      "native_autonomous_decay_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_or_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "strict_current_C_only_C2_claim_allowed": false,
+      "trail_or_stigmergy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_added_mechanism_replay_controls_i10.py",
+  "comparison_admission": {
+    "I11_ranking_or_selection_performed": false,
+    "I11_required_profile_axes": [
+      "semantic_fit",
+      "strict_RC_theory_compatibility",
+      "coherence_conservation",
+      "local_causality",
+      "internal_time_ownership",
+      "carrier_authority",
+      "mediation_strength",
+      "restoration_completeness",
+      "native_mechanics_already_available",
+      "producer_residue",
+      "naturalization_debt",
+      "topology_scope",
+      "transfer_evidence",
+      "RCAE_relevance"
+    ],
+    "added_mechanism_comparison_unit_count": 3,
+    "admitted_Dx_comparison_row_count": 3,
+    "admitted_Dx_comparison_rows": [
+      {
+        "classification": {
+          "autonomous_weakening": "unsupported",
+          "decay_relation_ladder_rung": "DR2",
+          "formation": "supported",
+          "full_route_distribution_mediation": "unresolved",
+          "persistence": "supported",
+          "producer_authored_weakening_not_consumed": true,
+          "replay_status": "passed"
+        },
+        "comparison_row": "D0a",
+        "replay_mode": "source_identity_only"
+      },
+      {
+        "classification": {
+          "causal_mediation": false,
+          "claim_ceiling": "observable_only_below_causal_trail",
+          "ladder_rung": "DR3",
+          "persistence": true,
+          "status": "supported_finite_window_derived_observable",
+          "weakening": true
+        },
+        "comparison_row": "D0b",
+        "replay_mode": "source_identity_only"
+      },
+      {
+        "classification": {
+          "causal_mediation": false,
+          "claim_ceiling": "instantaneous_current_state_geometry_only",
+          "ladder_rung": "DR1",
+          "persistence": false,
+          "status": "supported_instantaneous_comparator"
+        },
+        "comparison_row": "D0c",
+        "replay_mode": "source_identity_only"
+      }
+    ],
+    "artifact_kind": "n31_i10_family_bundle_matrix",
+    "artifact_schema_version": "n31_i10_family_bundle_matrix_v1",
+    "claim_level_evidence_map": [
+      {
+        "claim_id": "A_core_release_expression_attenuation",
+        "replay_mode": "runtime_reexecuted",
+        "source_iteration": "I9-A"
+      },
+      {
+        "claim_id": "A_selected_independent_native_readout_split",
+        "replay_mode": "runtime_reexecuted",
+        "source_iteration": "I9-A.1"
+      },
+      {
+        "claim_id": "A_full_threshold_and_intervention_matrix",
+        "replay_mode": "artifact_reconstructed",
+        "source_iteration": "I9-A.1"
+      },
+      {
+        "claim_id": "B_core_conserved_export_and_readout",
+        "replay_mode": "runtime_reexecuted",
+        "source_iteration": "I9-B"
+      },
+      {
+        "claim_id": "B_multilevel_export_response_shape",
+        "replay_mode": "artifact_reconstructed",
+        "source_iteration": "I9-B.1"
+      },
+      {
+        "claim_id": "C2_generalized_history_derivation_and_transport",
+        "replay_mode": "runtime_reexecuted",
+        "source_iteration": "I9-C.2"
+      },
+      {
+        "claim_id": "C2_post_feedback_restoration_and_continuation",
+        "replay_mode": "runtime_reexecuted",
+        "source_iteration": "I10"
+      },
+      {
+        "claim_id": "C_and_C1_theory_boundary_ancestry",
+        "replay_mode": "source_identity_only",
+        "source_iteration": "I9-C_and_I9-C.1"
+      },
+      {
+        "claim_id": "I3_false_positive_fixture_rejection",
+        "replay_mode": "inherited_control_fixture",
+        "source_iteration": "I3"
+      }
+    ],
+    "comparison_policy": "one_comparison_unit_per_mechanism_family",
+    "excluded_Dx_rows": [
+      {
+        "comparison_row": "D0_R",
+        "reason": "not_instantiated_in_executed_D0_fixtures"
+      },
+      {
+        "comparison_row": "conditional_internal_reorganization",
+        "reason": "perturbation_control_not_D0_decay_relation"
+      }
+    ],
+    "generated_at": "2026-07-18T00:00:00+00:00",
+    "independent_comparison_unit_count": 3,
+    "output_digest": "c7c9b42d1b3112c088da6862bf91fa1fcefcca89291dd8dd8736b23ff0d4f547",
+    "plural_or_conditional_selection_allowed": true,
+    "raw_effect_magnitude_ranking_performed": false,
+    "rows": [
+      {
+        "candidate_id": "A_release_efficacy_attenuation",
+        "candidate_native_runtime_lane": "not_admitted",
+        "candidate_native_support": false,
+        "comparison_axis": "producer_mediated_mechanism_quality",
+        "comparison_family": "A",
+        "evidence_bundle": [
+          "I9-A",
+          "I9-A.1"
+        ],
+        "existing_native_D0a_context_rung": "DR2",
+        "independent_comparison_weight": 1,
+        "lane_specific_rung": "DR5",
+        "replay_control_disposition": "admitted_for_I11_comparison"
+      },
+      {
+        "candidate_id": "B_conserved_source_leakage",
+        "candidate_native_runtime_lane": "not_admitted",
+        "candidate_native_support": false,
+        "comparison_axis": "producer_mediated_mechanism_quality",
+        "comparison_family": "B",
+        "evidence_bundle": [
+          "I9-B",
+          "I9-B.1"
+        ],
+        "existing_native_D0a_context_rung": "DR2",
+        "independent_comparison_weight": 1,
+        "lane_specific_rung": "DR5",
+        "replay_control_disposition": "admitted_for_I11_comparison"
+      },
+      {
+        "ancestor_evidence": [
+          "I9-C",
+          "I9-C.1"
+        ],
+        "ancestor_positive_weight": 0,
+        "ancestor_ranking_eligible": false,
+        "ancestor_selection_eligible": false,
+        "candidate_id": "C_native_exact_history_constitutive_closure",
+        "comparison_family": "C",
+        "comparison_lanes": {
+          "native_implementation_support": "DR0",
+          "producer_mediated_mechanism_quality": "DR5",
+          "relation_carrier_restoration": "DR2"
+        },
+        "evidence_bundle": [
+          "I9-C.2"
+        ],
+        "independent_comparison_weight": 1,
+        "maximum_label_across_ancestry_may_define_bundle_rung": false,
+        "replay_control_disposition": "admitted_for_I11_lane_specific_comparison"
+      }
+    ],
+    "single_scalar_ranking_allowed": false,
+    "total_I11_comparison_row_count": 6,
+    "total_independent_comparison_weight": 3
+  },
+  "control_resolution": {
+    "all_dependent_controls_resolved": true,
+    "control_registry_rows_resolved": 70,
+    "deferred_conditional_C2_controls_in_I10_registry": false,
+    "failed_open_count": 0,
+    "family_control_resolution_row_count": 210,
+    "frozen_I10_control_registry_not_run_count": 0,
+    "inherited_schema_nulls_consumed": 76,
+    "not_applicable_rows": 90,
+    "positive_conformance_rows": 30,
+    "runtime_controls_executed": 14
+  },
+  "deferred_C2_naturalization": {
+    "controls_consumed_as_I10_gates": false,
+    "native_implementation_selected": false,
+    "native_runtime_modified": false,
+    "remains_outside_N31": true
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "family_classification": {
+    "A": {
+      "added_mechanism_ladder_rung": "DR5",
+      "candidate_native_runtime_lane": "not_admitted",
+      "candidate_native_support": false,
+      "claim_ceiling": "replay_control_backed_producer_mediated_expression_attenuation",
+      "existing_native_D0a_context_rung": "DR2",
+      "semantic_class": "A_expression_attenuation"
+    },
+    "B": {
+      "D0_R_bridge_status": "not_tested",
+      "added_mechanism_ladder_rung": "DR5",
+      "candidate_native_runtime_lane": "not_admitted",
+      "candidate_native_support": false,
+      "claim_ceiling": "replay_control_backed_producer_mediated_conserved_export",
+      "existing_native_D0a_context_rung": "DR2",
+      "semantic_class": "B_R_conserved_export_policy"
+    },
+    "C": {
+      "claim_ceiling": "replay_control_backed_producer_mediated_exact_history_closure",
+      "native_runtime_lane_rung": "DR0",
+      "producer_extension_lane_rung": "DR5",
+      "relation_carrier_lane_rung": "DR2",
+      "semantic_class": "effective_exact_history_constitutive_closure",
+      "strict_current_C_only_ontology_supported": false
+    }
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "governance": {
+    "governance_base_revision": "236351695e36f88be85b7ed429911d58fad57b32",
+    "protected_runtime_contract_diff_empty": true,
+    "src_diff_empty": true
+  },
+  "iteration": "10",
+  "n31_closeout_progress": {
+    "n31_closeout_ladder_rung_assigned": false,
+    "n31_closeout_progress_rung": "N31-C4",
+    "ready_for_iteration_11_comparative_classification": true,
+    "ready_for_iteration_12_closeout": false
+  },
+  "output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+  "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_added_mechanism_replay_controls_i10.py",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_decay_evidence",
+      "actual_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "actual_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "expected_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "expected_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+      "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10",
+      "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10",
+      "actual_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+      "actual_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+      "expected_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+      "expected_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_downstream_readout_i9a1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10",
+      "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4",
+      "actual_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+      "actual_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+      "expected_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+      "expected_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10",
+      "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+      "actual_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "actual_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "expected_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "expected_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_generalized_relation_and_native_restoration_DR2_and_LGRC_faithful_producer_step_provisional_DR4_pending_I10_with_native_runtime_lane_DR0_and_deferred_conditional_naturalization_requirements_recorded",
+      "actual_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+      "actual_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+      "expected_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+      "expected_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_native_exact_history_closure_i9c2.json",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,121 @@
+{
+  "A_contract_issue_blocked_by_failure": false,
+  "A_globally_rejected": false,
+  "A_not_selected_because_current_return_targets_field_state_semantics": true,
+  "B_R_D0_R_equivalence_supported": false,
+  "DR6_contract_only_does_not_mean": [
+    "cross_context_execution",
+    "native_implementation",
+    "ecology_evidence",
+    "provider_adoption",
+    "general_decay_law"
+  ],
+  "DR6_contract_only_means": "reusable_testable_semantics_and_acceptance_contract",
+  "artifact_kind": "n31_i12_claim_debt_and_nativeness_register",
+  "artifact_schema_version": "n31_i12_claim_debt_and_nativeness_register_v2",
+  "blocked_relabels": [
+    "one_general_decay_law",
+    "native_autonomous_decay",
+    "D0_R_success",
+    "B_R_as_D0_R",
+    "B_R_D0_R_equivalence",
+    "strict_current_C_only_C2",
+    "native_C2",
+    "trail_or_stigmergic_field",
+    "memory_or_learning",
+    "communication_or_coordination",
+    "ecology_regime",
+    "agency_or_selfhood",
+    "sentience_or_organism_life",
+    "native_support",
+    "phase8_completion",
+    "automatic_RCAE_adoption",
+    "cross_context_reuse"
+  ],
+  "claim_ceiling": "bounded graph-side decay-semantic classification and authority-qualified RCAE return contracts for conserved redistribution and effective susceptibility",
+  "contract_only_DR6_is_not_executed_DR6": true,
+  "cross_context_reuse_supported": false,
+  "d0_to_br_bridge_status": "not_tested",
+  "deferred_C2_native_implementation_exists": true,
+  "deferred_native_work_is_N31_closeout_blocker": false,
+  "future_native_lane_must_restart_from_DR0": true,
+  "native_D0a_relation_ceiling": "DR2",
+  "native_autonomous_weakening_supported": false,
+  "native_decay_provider_available": false,
+  "output_digest": "c620ea979ef9654e9181ab093549e957cc4fc91723aec34533aacd8b582db8ab",
+  "producer_DR5_may_not_seed_native_rung": true,
+  "producer_contracts_do_not_upgrade_native": true,
+  "producer_residue_by_candidate": {
+    "A_release_efficacy_attenuation": [
+      "release phase",
+      "efficacy rule",
+      "release invocation"
+    ],
+    "B_conserved_export_policy": [
+      "export eligibility",
+      "amount/cap",
+      "time",
+      "destination"
+    ],
+    "C2_exact_history_susceptibility_closure": [
+      "history functional application",
+      "effective conductance insertion",
+      "packet scheduling"
+    ],
+    "D0a_native_spatial_organization": [],
+    "D0b_finite_window_derived_observable": [
+      "experiment declares the diagnostic window but does not mutate state"
+    ],
+    "D0c_instantaneous_geometry_comparator": []
+  },
+  "remaining_debt_by_candidate": {
+    "A_release_efficacy_attenuation": [
+      "library-owned release-phase lifecycle or explicit retained closure status"
+    ],
+    "B_conserved_export_policy": [
+      "native route-local export lifecycle",
+      "full route-distribution mediation",
+      "separate D0-R bridge evidence"
+    ],
+    "C2_exact_history_susceptibility_closure": [
+      "packetization invariance",
+      "direct mediation controls",
+      "multi-cycle stability",
+      "topology lifecycle policy",
+      "cache/pruning semantics",
+      "native source-current re-admission"
+    ],
+    "D0a_native_spatial_organization": [
+      "ordinary autonomous weakening trajectory",
+      "full route-organization mediation"
+    ],
+    "D0b_finite_window_derived_observable": [
+      "causal mediator",
+      "local intervention-backed readout"
+    ],
+    "D0c_instantaneous_geometry_comparator": [
+      "persistence",
+      "weakening trajectory",
+      "causal mediation"
+    ]
+  },
+  "unsafe_claim_flags": {
+    "B_R_D0_R_equivalence_allowed": false,
+    "B_R_as_D0_R_allowed": false,
+    "D0_R_success_allowed": false,
+    "agency_or_selfhood_allowed": false,
+    "automatic_RCAE_adoption_allowed": false,
+    "communication_or_coordination_allowed": false,
+    "cross_context_reuse_allowed": false,
+    "ecology_regime_allowed": false,
+    "memory_or_learning_allowed": false,
+    "native_C2_allowed": false,
+    "native_autonomous_decay_allowed": false,
+    "native_support_allowed": false,
+    "one_general_decay_law_allowed": false,
+    "phase8_completion_allowed": false,
+    "sentience_or_organism_life_allowed": false,
+    "strict_current_C_only_C2_allowed": false,
+    "trail_or_stigmergic_field_allowed": false
+  }
+}

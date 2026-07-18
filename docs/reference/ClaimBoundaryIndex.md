@@ -284,8 +284,8 @@ Evidence pointers:
   Iteration-by-iteration evidence record, closeout interpretation, and
   closure-continuation positioning.
 - [N30+ shared-medium ecology handoff](../../experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md):
-  Active continuation record after N30, including the cross-project spiral,
-  candidate N31 interface status, and fixed-N31 blocker.
+  Active continuation record through N31, including the cross-project spiral,
+  N31 return status, and the explicit RCAE re-admission boundary.
 
 Claim ceiling: bounded artifact-level minimal shared-medium participation
 candidate. This does not claim shared-medium coordination, communication,
@@ -294,10 +294,40 @@ modulation, resonance, sentience, organism/life, ecology regime, executed
 agentic ecology runtime, fixed N31 selection, Phase 8 completion, or
 unrestricted autonomy.
 
-Continuation boundary: N30 exposes a candidate N31+ interface, but it does not
-select N31 by default. The next recommended step is a cross-project spiral
-through an agentic-ecology demand/composition pass, followed by whichever LGRC
-primitive or building block that pass actually selects.
+Continuation boundary at N30 closeout: N30 exposed a candidate N31+ interface
+without selecting N31 by default. The subsequent ecology demand pass selected
+decay semantics, which N31 now closes below.
+
+## N31 Decay Semantics And RCAE Return
+
+Bounded claim: N31 closes at `N31-C6` after separating six non-equivalent decay
+meanings. Native D0a supports route-local formation and persistence at `DR2`
+without autonomous weakening. D0b supports an exact-derived fading observable
+at `DR3` without causal mediation. B-R and C.2 reach producer-mediated `DR5`
+under replay/control validation and receive separate `DR6_contract_only`
+consumer contracts.
+
+Evidence pointers:
+
+- [N31 README](../../experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/README.md): Experiment question, semantic taxonomy, current state, and claim boundary.
+- [N31 I12 closeout report](../../experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/reports/n31_closeout_and_rcae_return_i12.md): Reader-facing final classification and RCAE re-admission boundary.
+- [N31 I12 machine return](../../experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_closeout_and_rcae_return_i12.json): Structured 107-field return, exact authorities, lane-qualified rungs, semantic-completeness checks, debts, and provider-contract recommendation.
+- [N31 B-R contract](../../experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_B_R_reusable_contract.json): Conservative coherence redistribution contract with explicit destination, local route weakening, and producer-owned export lifecycle; organization transfer to the destination remains unsupported.
+- [N31 C.2 contract](../../experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_C2_reusable_contract.json): Exact-history susceptibility/effective-geometry contract with producer-owned constitutive insertion.
+- [N31 I10 replay/control report](../../experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/reports/n31_added_mechanism_replay_controls_i10.md): Executed DR5 evidence and control matrix consumed by I11/I12.
+
+Claim ceiling: bounded graph-side decay-semantic classification and
+authority-qualified RCAE return contracts. `DR6_contract_only` does not mean
+cross-context execution or native support. N31 does not establish autonomous
+native decay, ordinary D0-R, one general decay law, trail/stigmergy, memory,
+communication, coordination, ecology, learning, agency, selfhood, sentience,
+organism/life, Phase 8 completion, or automatic RCAE adoption.
+
+Continuation boundary: RCAE P2-I3 may explicitly re-admit the exact B-R or C.2
+provider contract under its versioned identity. N31 positive evidence is not
+re-admitted. RCAE must generate new ecology-side evidence; a combined B-R+C.2
+provider is a new composition requiring separate controls. N32 remains
+unselected.
 
 ## Forward Catalog Orientation
 
@@ -305,7 +335,7 @@ The N30+ roadmap package is a planning and ontology layer for future
 experiments. It defines catalog layers, candidate directions, debt/failure
 language, and claim-hygiene expectations, but it is not itself a source of
 evidence for future N31+ claims. N30 is the first source-backed closeout under
-that roadmap.
+that roadmap, and N31 is the first completed demand-to-return cycle.
 
 Pointers:
 
@@ -315,4 +345,4 @@ Pointers:
 - [N30+ Candidate Directions](../../experiments/N30_plus_candidate_directions.md):
   Candidate shared-medium ecology directions for future experiments.
 - [N30+ Shared-Medium Ecology Handoff](../../experiments/N30_plus_LGRC_SharedMediumEcologyHandoff.md):
-  Active handoff after the N30 closeout.
+  Active handoff through the N31 closeout and back to RCAE re-admission.

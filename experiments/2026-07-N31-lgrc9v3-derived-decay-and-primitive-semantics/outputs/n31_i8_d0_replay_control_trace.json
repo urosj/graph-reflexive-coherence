@@ -1,0 +1,1454 @@
+{
+  "acceptance_state": "accepted_D0_replay_controls_and_classification_trace",
+  "artifact_kind": "D0_replay_control_trace",
+  "artifact_manifest": [
+    {
+      "artifact_role": "pre_outcome_I8_replay_and_amount_sweep_preregistration",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i8_d0_replay_control_artifacts/n31_i8_replay_and_amount_sweep_preregistration.json",
+      "sha256": "7df80a1e37fc56c5452bd79b8b9dc898174c06c8deb2815a7e8dd4c184f5d0e0"
+    }
+  ],
+  "artifact_replay": {
+    "all_reference_hashes_exact": true,
+    "duplicate_reference_count": 20,
+    "manifest_reference_count": 45,
+    "manifest_rows": [
+      {
+        "actual_sha256": "a8781a04980b0a650a0ebfeae41f34a067a188f72c57b71f140ad1048642d5ba",
+        "artifact_role": "I4R1_provenance_and_scientific_outcome_lineage",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i4_revision_lineage_r1.json",
+        "sha256": "a8781a04980b0a650a0ebfeae41f34a067a188f72c57b71f140ad1048642d5ba",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d",
+        "artifact_role": "source_current_D0c_runtime_trace",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+        "sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "4d0e0dded207fc7c1da61114ee603835a168f58d155b7912edb2e6f189957aa0",
+        "artifact_role": "I5R1_provenance_and_scientific_outcome_lineage",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_revision_lineage_r1.json",
+        "sha256": "4d0e0dded207fc7c1da61114ee603835a168f58d155b7912edb2e6f189957aa0",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039",
+        "artifact_role": "source_current_D0b_finite_window_runtime_trace",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i6_d0b_finite_window_source_current_trace.json",
+        "sha256": "42f7436351b59181b9a55a2869e97de36a37646b79b05adeae9e12fc9c1b2039",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "6fc0ee54222cc3824d23f2f7bf5993d9e93a394b529c6875938bfadad877fb78",
+        "artifact_role": "source_current_disjoint_hold_after_readout_attempt_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_after_readout_attempt.json",
+        "sha256": "6fc0ee54222cc3824d23f2f7bf5993d9e93a394b529c6875938bfadad877fb78",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "bba37179c7b154b0d3a67fbc39831a7994a5dc2d287cb793aed9937fef9f6212",
+        "artifact_role": "source_current_disjoint_hold_baseline_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_baseline.json",
+        "sha256": "bba37179c7b154b0d3a67fbc39831a7994a5dc2d287cb793aed9937fef9f6212",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "5d54a67c63489a073b2e30d16a12ad0b6122e0d0a7ba50c2bceb02f7ac2a3aeb",
+        "artifact_role": "source_current_disjoint_hold_formed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_formed.json",
+        "sha256": "5d54a67c63489a073b2e30d16a12ad0b6122e0d0a7ba50c2bceb02f7ac2a3aeb",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "fb0c510e26de7949755ad4aa7badec78362f9c19e764248126589ac972a07c14",
+        "artifact_role": "source_current_disjoint_hold_persisted_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_persisted.json",
+        "sha256": "fb0c510e26de7949755ad4aa7badec78362f9c19e764248126589ac972a07c14",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "56e04cf1042f709df574248ab9fafc5ffc5dd158735284beef99341b589792b5",
+        "artifact_role": "source_current_disjoint_hold_progressed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_progressed.json",
+        "sha256": "56e04cf1042f709df574248ab9fafc5ffc5dd158735284beef99341b589792b5",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "7c085460b8ae379c4bcf3ba0885edbb66428c02500236bc9aebb4be13ff933e9",
+        "artifact_role": "source_current_internal_reinforcement_after_readout_attempt_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_after_readout_attempt.json",
+        "sha256": "7c085460b8ae379c4bcf3ba0885edbb66428c02500236bc9aebb4be13ff933e9",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "bda932cedeff35eae167e896c3b32f082b177a6ba43f141f7fe56245432105d8",
+        "artifact_role": "source_current_internal_reinforcement_baseline_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_baseline.json",
+        "sha256": "bda932cedeff35eae167e896c3b32f082b177a6ba43f141f7fe56245432105d8",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "59fb9cd6b312e567a45ae9d22a8e411b27f57ffd6a5906a2e08a914106040cfe",
+        "artifact_role": "source_current_internal_reinforcement_formed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_formed.json",
+        "sha256": "59fb9cd6b312e567a45ae9d22a8e411b27f57ffd6a5906a2e08a914106040cfe",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "4ff0bb9e95f27e8ebeab12fe9ff4c48f2b11fb40c8a9c40d14c509ee42318891",
+        "artifact_role": "source_current_internal_reinforcement_persisted_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_persisted.json",
+        "sha256": "4ff0bb9e95f27e8ebeab12fe9ff4c48f2b11fb40c8a9c40d14c509ee42318891",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "b55d320dfc5aa43332d7a69f778fc1e8c2eb4c00b9ec35687aa25739615340ca",
+        "artifact_role": "source_current_internal_reinforcement_progressed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_progressed.json",
+        "sha256": "b55d320dfc5aa43332d7a69f778fc1e8c2eb4c00b9ec35687aa25739615340ca",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "artifact_role": "source_current_internal_weakening_after_readout_attempt_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_after_readout_attempt.json",
+        "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "8415327ecffae4ef93cc246f50c25b47bc9418da9d382fcd8dc3ef3f5ca7deb5",
+        "artifact_role": "source_current_internal_weakening_baseline_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_baseline.json",
+        "sha256": "8415327ecffae4ef93cc246f50c25b47bc9418da9d382fcd8dc3ef3f5ca7deb5",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "cb805e927e329ffa4b1191bad082b8760241d03a73ebba411bc89abccf217eb9",
+        "artifact_role": "source_current_internal_weakening_formed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_formed.json",
+        "sha256": "cb805e927e329ffa4b1191bad082b8760241d03a73ebba411bc89abccf217eb9",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "383b835a8c7cdf06f3e2efdf56cb4fd202245757cdeb662f215bb930c9cdea64",
+        "artifact_role": "source_current_internal_weakening_persisted_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_persisted.json",
+        "sha256": "383b835a8c7cdf06f3e2efdf56cb4fd202245757cdeb662f215bb930c9cdea64",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "artifact_role": "source_current_internal_weakening_progressed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_progressed.json",
+        "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "artifact_role": "source_current_intervention_hold_baseline_clamp_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp.json",
+        "sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "artifact_role": "source_current_intervention_hold_baseline_clamp_after_readout_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp_after_readout.json",
+        "sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "cd57fd6fb7c4b68579d4a514aedd1e414583328403dbf872f715281b6fab4a27",
+        "artifact_role": "source_current_intervention_weakened_formed_restore_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore.json",
+        "sha256": "cd57fd6fb7c4b68579d4a514aedd1e414583328403dbf872f715281b6fab4a27",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "64082d7b1967e1bf7e2aa441746698ec133c3869d2422fd1a592bca8d8eac16f",
+        "artifact_role": "source_current_intervention_weakened_formed_restore_after_readout_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore_after_readout.json",
+        "sha256": "64082d7b1967e1bf7e2aa441746698ec133c3869d2422fd1a592bca8d8eac16f",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "99886a6eb5e755ce409c1777d5c5eccdbd82144af08175fb24756a8f8b6b4047",
+        "artifact_role": "pre_outcome_threshold_and_attempt_preregistration",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/n31_i7_preregistration.json",
+        "sha256": "99886a6eb5e755ce409c1777d5c5eccdbd82144af08175fb24756a8f8b6b4047",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "5826425cc80c2fa6951d59f9d5099f101e018a06e63e0ace973235efd1540ede",
+        "artifact_role": "source_current_spatial_D0a_direction_and_intervention_trace",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_trace.json",
+        "sha256": "5826425cc80c2fa6951d59f9d5099f101e018a06e63e0ace973235efd1540ede",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "6fc0ee54222cc3824d23f2f7bf5993d9e93a394b529c6875938bfadad877fb78",
+        "artifact_role": "source_current_disjoint_hold_after_readout_attempt_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_after_readout_attempt.json",
+        "sha256": "6fc0ee54222cc3824d23f2f7bf5993d9e93a394b529c6875938bfadad877fb78",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "bba37179c7b154b0d3a67fbc39831a7994a5dc2d287cb793aed9937fef9f6212",
+        "artifact_role": "source_current_disjoint_hold_baseline_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_baseline.json",
+        "sha256": "bba37179c7b154b0d3a67fbc39831a7994a5dc2d287cb793aed9937fef9f6212",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "5d54a67c63489a073b2e30d16a12ad0b6122e0d0a7ba50c2bceb02f7ac2a3aeb",
+        "artifact_role": "source_current_disjoint_hold_formed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_formed.json",
+        "sha256": "5d54a67c63489a073b2e30d16a12ad0b6122e0d0a7ba50c2bceb02f7ac2a3aeb",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "fb0c510e26de7949755ad4aa7badec78362f9c19e764248126589ac972a07c14",
+        "artifact_role": "source_current_disjoint_hold_persisted_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_persisted.json",
+        "sha256": "fb0c510e26de7949755ad4aa7badec78362f9c19e764248126589ac972a07c14",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "56e04cf1042f709df574248ab9fafc5ffc5dd158735284beef99341b589792b5",
+        "artifact_role": "source_current_disjoint_hold_progressed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_progressed.json",
+        "sha256": "56e04cf1042f709df574248ab9fafc5ffc5dd158735284beef99341b589792b5",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "7c085460b8ae379c4bcf3ba0885edbb66428c02500236bc9aebb4be13ff933e9",
+        "artifact_role": "source_current_internal_reinforcement_after_readout_attempt_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_after_readout_attempt.json",
+        "sha256": "7c085460b8ae379c4bcf3ba0885edbb66428c02500236bc9aebb4be13ff933e9",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "bda932cedeff35eae167e896c3b32f082b177a6ba43f141f7fe56245432105d8",
+        "artifact_role": "source_current_internal_reinforcement_baseline_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_baseline.json",
+        "sha256": "bda932cedeff35eae167e896c3b32f082b177a6ba43f141f7fe56245432105d8",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "59fb9cd6b312e567a45ae9d22a8e411b27f57ffd6a5906a2e08a914106040cfe",
+        "artifact_role": "source_current_internal_reinforcement_formed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_formed.json",
+        "sha256": "59fb9cd6b312e567a45ae9d22a8e411b27f57ffd6a5906a2e08a914106040cfe",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "4ff0bb9e95f27e8ebeab12fe9ff4c48f2b11fb40c8a9c40d14c509ee42318891",
+        "artifact_role": "source_current_internal_reinforcement_persisted_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_persisted.json",
+        "sha256": "4ff0bb9e95f27e8ebeab12fe9ff4c48f2b11fb40c8a9c40d14c509ee42318891",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "b55d320dfc5aa43332d7a69f778fc1e8c2eb4c00b9ec35687aa25739615340ca",
+        "artifact_role": "source_current_internal_reinforcement_progressed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_progressed.json",
+        "sha256": "b55d320dfc5aa43332d7a69f778fc1e8c2eb4c00b9ec35687aa25739615340ca",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "artifact_role": "source_current_internal_weakening_after_readout_attempt_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_after_readout_attempt.json",
+        "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "8415327ecffae4ef93cc246f50c25b47bc9418da9d382fcd8dc3ef3f5ca7deb5",
+        "artifact_role": "source_current_internal_weakening_baseline_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_baseline.json",
+        "sha256": "8415327ecffae4ef93cc246f50c25b47bc9418da9d382fcd8dc3ef3f5ca7deb5",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "cb805e927e329ffa4b1191bad082b8760241d03a73ebba411bc89abccf217eb9",
+        "artifact_role": "source_current_internal_weakening_formed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_formed.json",
+        "sha256": "cb805e927e329ffa4b1191bad082b8760241d03a73ebba411bc89abccf217eb9",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "383b835a8c7cdf06f3e2efdf56cb4fd202245757cdeb662f215bb930c9cdea64",
+        "artifact_role": "source_current_internal_weakening_persisted_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_persisted.json",
+        "sha256": "383b835a8c7cdf06f3e2efdf56cb4fd202245757cdeb662f215bb930c9cdea64",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "artifact_role": "source_current_internal_weakening_progressed_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_progressed.json",
+        "sha256": "267845258eb92674d365b2ad4dcf3ea98ed5d4c519558fd90622853cc31067f0",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "artifact_role": "source_current_intervention_hold_baseline_clamp_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp.json",
+        "sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "artifact_role": "source_current_intervention_hold_baseline_clamp_after_readout_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp_after_readout.json",
+        "sha256": "6faa9bb4b8af0797be51c95450a4aeed2ed7babe764b00f6896d84cf0486ac4e",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "cd57fd6fb7c4b68579d4a514aedd1e414583328403dbf872f715281b6fab4a27",
+        "artifact_role": "source_current_intervention_weakened_formed_restore_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore.json",
+        "sha256": "cd57fd6fb7c4b68579d4a514aedd1e414583328403dbf872f715281b6fab4a27",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "64082d7b1967e1bf7e2aa441746698ec133c3869d2422fd1a592bca8d8eac16f",
+        "artifact_role": "source_current_intervention_weakened_formed_restore_after_readout_snapshot",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore_after_readout.json",
+        "sha256": "64082d7b1967e1bf7e2aa441746698ec133c3869d2422fd1a592bca8d8eac16f",
+        "sha256_exact": true
+      },
+      {
+        "actual_sha256": "99886a6eb5e755ce409c1777d5c5eccdbd82144af08175fb24756a8f8b6b4047",
+        "artifact_role": "pre_outcome_threshold_and_attempt_preregistration",
+        "exists": true,
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/n31_i7_preregistration.json",
+        "sha256": "99886a6eb5e755ce409c1777d5c5eccdbd82144af08175fb24756a8f8b6b4047",
+        "sha256_exact": true
+      }
+    ],
+    "source_output_identity_exact": true,
+    "unique_artifact_path_count": 25
+  },
+  "artifact_schema_version": "n31_i8_D0_replay_control_trace_v1",
+  "cache_and_execution_reconstruction": {
+    "D0a": "not_applicable_no_derived_runtime_cache",
+    "D0b": "passed_exact_not_persisted_projection",
+    "D0c": "not_applicable_no_persisted_derived_cache",
+    "execution_reconstruction": "passed_complete"
+  },
+  "checks": [
+    {
+      "check_id": "source_builders_replayed_exact",
+      "detail": [
+        {
+          "after_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+          "after_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+          "before_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+          "before_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+          "byte_identical": true,
+          "internal_output_digest_exact": true,
+          "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+          "return_code": 0,
+          "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_active_nulls_and_failure_baselines_i3.py",
+          "source_iteration": "I3",
+          "stderr": ""
+        },
+        {
+          "after_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+          "after_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+          "before_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+          "before_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+          "byte_identical": true,
+          "internal_output_digest_exact": true,
+          "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0c_instantaneous_geometry_comparator_i5.json",
+          "return_code": 0,
+          "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0c_instantaneous_geometry_comparator_i5.py",
+          "source_iteration": "I5",
+          "stderr": ""
+        },
+        {
+          "after_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+          "after_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+          "before_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+          "before_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+          "byte_identical": true,
+          "internal_output_digest_exact": true,
+          "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0b_finite_window_derived_relation_i6.json",
+          "return_code": 0,
+          "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0b_finite_window_derived_relation_i6.py",
+          "source_iteration": "I6",
+          "stderr": ""
+        },
+        {
+          "after_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+          "after_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+          "before_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+          "before_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+          "byte_identical": true,
+          "internal_output_digest_exact": true,
+          "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_source_current_causal_probe_i7.json",
+          "return_code": 0,
+          "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0a_source_current_causal_probe_i7.py",
+          "source_iteration": "I7",
+          "stderr": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_chain_exact",
+      "detail": [
+        {
+          "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_decay_evidence",
+          "actual_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+          "actual_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+          "expected_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+          "expected_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_source_current_D0c_DR1_instantaneous_geometry_comparator_no_persistence_no_decay",
+          "actual_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+          "actual_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+          "expected_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+          "expected_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0c_instantaneous_geometry_comparator_i5.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_source_current_D0b_DR3_finite_window_observable_below_causal_trail",
+          "actual_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+          "actual_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+          "expected_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+          "expected_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0b_finite_window_derived_relation_i6.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_native_spatial_D0a_DR2_formation_persistence_and_conditional_reorganization_probe",
+          "actual_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+          "actual_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+          "expected_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+          "expected_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_source_current_causal_probe_i7.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_source_current_spatial_D0a_direction_matrix_and_matched_causal_intervention_trace",
+          "actual_output_digest": "f70e6424ef15185968d21a8485f975dcc19078815ce9059b88d6d83d845d9a0a",
+          "actual_sha256": "5826425cc80c2fa6951d59f9d5099f101e018a06e63e0ace973235efd1540ede",
+          "expected_output_digest": "f70e6424ef15185968d21a8485f975dcc19078815ce9059b88d6d83d845d9a0a",
+          "expected_sha256": "5826425cc80c2fa6951d59f9d5099f101e018a06e63e0ace973235efd1540ede",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_trace.json",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_replay_exact",
+      "detail": {
+        "duplicate_reference_count": 20,
+        "manifest_reference_count": 45,
+        "unique_artifact_path_count": 25
+      },
+      "passed": true
+    },
+    {
+      "check_id": "snapshot_load_replay_exact",
+      "detail": 19,
+      "passed": true
+    },
+    {
+      "check_id": "execution_reconstruction_complete",
+      "detail": [
+        {
+          "attempt_mode": "disjoint_hold",
+          "duplicate_reconstruction_exact": true,
+          "first_reconstruction_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+          "second_reconstruction_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+          "source_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+          "source_reconstruction_exact": true
+        },
+        {
+          "attempt_mode": "internal_weakening",
+          "duplicate_reconstruction_exact": true,
+          "first_reconstruction_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+          "second_reconstruction_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+          "source_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+          "source_reconstruction_exact": true
+        },
+        {
+          "attempt_mode": "internal_reinforcement",
+          "duplicate_reconstruction_exact": true,
+          "first_reconstruction_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+          "second_reconstruction_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+          "source_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+          "source_reconstruction_exact": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_exact",
+      "detail": [
+        {
+          "attempt_mode": "disjoint_hold",
+          "duplicate_reconstruction_exact": true,
+          "first_reconstruction_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+          "second_reconstruction_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+          "source_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+          "source_reconstruction_exact": true
+        },
+        {
+          "attempt_mode": "internal_weakening",
+          "duplicate_reconstruction_exact": true,
+          "first_reconstruction_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+          "second_reconstruction_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+          "source_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+          "source_reconstruction_exact": true
+        },
+        {
+          "attempt_mode": "internal_reinforcement",
+          "duplicate_reconstruction_exact": true,
+          "first_reconstruction_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+          "second_reconstruction_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+          "source_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+          "source_reconstruction_exact": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "equal_state_continuation_passed",
+      "detail": {
+        "after_identity_v1_equal": true,
+        "after_identity_v2_equal": true,
+        "before_identity_v1_equal": true,
+        "before_identity_v2_equal": true,
+        "branch_source": "same_complete_disjoint_hold_pre_readout_snapshot",
+        "continuation_receipts_equal": true,
+        "direction_matrix_consumed_as_equal_state": false,
+        "mediation_evidence_added": false,
+        "passed": true,
+        "route_distribution_causality_evidence_added": false,
+        "scientific_role": "replay_correctness_only",
+        "weakening_selection_evidence_added": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I7_direction_matrix_not_consumed_as_equal_state",
+      "detail": "same_complete_disjoint_hold_pre_readout_snapshot",
+      "passed": true
+    },
+    {
+      "check_id": "readout_amount_sweep_passed",
+      "detail": [
+        {
+          "boundary_role": "not_upper_native_float_boundary",
+          "expected_region": "both_pass_below_or_at_weakened_source_C",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": true,
+          "hold_eligibility_margin": 0.060000000000000026,
+          "readout_amount": 0.18,
+          "weakened_admitted": true,
+          "weakened_eligibility_margin": 0.020000000000000018
+        },
+        {
+          "boundary_role": "not_upper_native_float_boundary",
+          "expected_region": "both_pass_below_or_at_weakened_source_C",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": true,
+          "hold_eligibility_margin": 0.04000000000000001,
+          "readout_amount": 0.2,
+          "weakened_admitted": true,
+          "weakened_eligibility_margin": 0.0
+        },
+        {
+          "boundary_role": "not_upper_native_float_boundary",
+          "expected_region": "differentiated_threshold_interval",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": true,
+          "hold_eligibility_margin": 0.030000000000000027,
+          "readout_amount": 0.21,
+          "weakened_admitted": false,
+          "weakened_eligibility_margin": -0.009999999999999981
+        },
+        {
+          "boundary_role": "not_upper_native_float_boundary",
+          "expected_region": "differentiated_threshold_interval",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": true,
+          "hold_eligibility_margin": 0.020000000000000018,
+          "readout_amount": 0.22,
+          "weakened_admitted": false,
+          "weakened_eligibility_margin": -0.01999999999999999
+        },
+        {
+          "boundary_role": "native_float_eligibility_boundary",
+          "expected_region": "differentiated_threshold_interval",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": true,
+          "hold_eligibility_margin": 2.7755575615628914e-17,
+          "readout_amount": 0.24,
+          "weakened_admitted": false,
+          "weakened_eligibility_margin": -0.03999999999999998
+        },
+        {
+          "boundary_role": "not_upper_native_float_boundary",
+          "expected_region": "both_fail_above_hold_source_C",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": false,
+          "hold_eligibility_margin": -0.009999999999999981,
+          "readout_amount": 0.25,
+          "weakened_admitted": false,
+          "weakened_eligibility_margin": -0.04999999999999999
+        },
+        {
+          "boundary_role": "not_upper_native_float_boundary",
+          "expected_region": "both_fail_above_hold_source_C",
+          "expected_region_behavior_passed": true,
+          "hold_admitted": false,
+          "hold_eligibility_margin": -0.01999999999999999,
+          "readout_amount": 0.26,
+          "weakened_admitted": false,
+          "weakened_eligibility_margin": -0.06
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_D0_controls_resolved",
+      "detail": {
+        "D0_common_schema_control_count": 52,
+        "I7_normalized_control_summary": {
+          "direction_matrix": "perturbation_control",
+          "forming_packet_exclusion": "passed",
+          "producer_scheduled_D0_decay": "failed_closed",
+          "proper_time_alignment": "not_applicable",
+          "route_mass_match": "passed"
+        },
+        "active_null_replay_scope": "governance_and_validator_baseline_not_direct_per_candidate_consumption",
+        "active_null_row_count": 70,
+        "all_active_nulls_failed_closed": true,
+        "all_controls_without_failed_open_or_not_run": true,
+        "all_required_controls_resolved": true,
+        "candidate_control_resolution_scope": "candidate_specific_I5_through_I7_executed_rows",
+        "candidate_control_status_counts": {
+          "failed_closed": 6,
+          "not_applicable": 2,
+          "passed": 22
+        },
+        "candidate_controls_by_iteration": {
+          "I5": [
+            {
+              "control_id": "label_only_decay",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR1_plus"
+            },
+            {
+              "control_id": "forming_activity_never_stopped",
+              "control_status": "passed",
+              "rung_effect": "blocks_post_formation_language"
+            },
+            {
+              "control_id": "instantaneous_geometry_as_durable_decay",
+              "control_status": "failed_closed",
+              "rung_effect": "caps_candidate_at_DR1"
+            },
+            {
+              "control_id": "route_mass_loss_as_organization_weakening_relabel",
+              "control_status": "passed",
+              "rung_effect": "blocks_organization_inference"
+            },
+            {
+              "control_id": "D0c_persistence_retained_as_same_D0c_row",
+              "control_status": "not_applicable",
+              "rung_effect": "blocks_in_place_semantic_upgrade"
+            },
+            {
+              "control_id": "post_withdrawal_history_as_current_candidate_specific",
+              "control_status": "failed_closed",
+              "rung_effect": "blocks_false_D0c_persistence"
+            }
+          ],
+          "I6": [
+            {
+              "control_id": "label_only_decay",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR1_plus"
+            },
+            {
+              "control_id": "wall_clock_decay",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR3_plus"
+            },
+            {
+              "control_id": "post_hoc_weakening_trace",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR3_plus"
+            },
+            {
+              "control_id": "forming_activity_never_stopped",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR2_plus"
+            },
+            {
+              "control_id": "relation_persists_but_does_not_weaken",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR3_plus"
+            },
+            {
+              "control_id": "missing_internal_time_owner",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR3_plus"
+            },
+            {
+              "control_id": "missing_invariant",
+              "control_status": "passed",
+              "rung_effect": "blocks_row"
+            },
+            {
+              "control_id": "missing_restoration_state",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR5_plus"
+            },
+            {
+              "control_id": "report_digest_as_runtime_state",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR1_plus"
+            },
+            {
+              "control_id": "derived_observable_as_causal_trail",
+              "control_status": "failed_closed",
+              "rung_effect": "blocks_DR4_plus"
+            },
+            {
+              "control_id": "cache_removed_and_recomputed",
+              "control_status": "failed_closed",
+              "rung_effect": "blocks_independent_state_claim"
+            },
+            {
+              "control_id": "cache_divergence",
+              "control_status": "passed",
+              "rung_effect": "blocks_exact_D0b"
+            },
+            {
+              "control_id": "observable_disconnected_from_transport",
+              "control_status": "failed_closed",
+              "rung_effect": "blocks_DR4_plus"
+            },
+            {
+              "control_id": "route_mass_loss_as_organization_weakening_relabel",
+              "control_status": "passed",
+              "rung_effect": "blocks_organization_inference"
+            },
+            {
+              "control_id": "D0b_transport_feedback_without_authority_reclassification",
+              "control_status": "passed",
+              "rung_effect": "blocks_unreclassified_DR4"
+            }
+          ],
+          "I7": [
+            {
+              "control_id": "forming_activity_never_stopped",
+              "control_status": "passed",
+              "rung_effect": "blocks_DR2_plus_if_false"
+            },
+            {
+              "control_id": "forming_packet_propagation_as_later_mediation",
+              "control_status": "passed",
+              "rung_effect": "blocks_independent_later_readout_language_if_false"
+            },
+            {
+              "control_id": "route_mass_loss_as_organization_weakening_relabel",
+              "control_status": "passed",
+              "rung_effect": "blocks_D0a_if_false"
+            },
+            {
+              "control_id": "hidden_producer_update",
+              "control_status": "passed",
+              "rung_effect": "reclassifies_or_blocks_if_false"
+            },
+            {
+              "control_id": "producer_scheduled_D0_decay",
+              "control_status": "failed_closed",
+              "rung_effect": "caps_native_D0a_at_DR2_and_blocks_autonomous_relaxation_relabel"
+            },
+            {
+              "control_id": "observable_disconnected_from_transport",
+              "control_status": "passed",
+              "rung_effect": "blocks_local_C_causal_effect_if_false"
+            },
+            {
+              "control_id": "node_scalar_match_as_complete_state_match",
+              "control_status": "passed",
+              "rung_effect": "blocks_intervention_if_false"
+            },
+            {
+              "control_id": "proper_time_annotation_as_causal_alignment",
+              "control_status": "not_applicable",
+              "rung_effect": "not_applicable_spatial_D0a"
+            },
+            {
+              "control_id": "label_only_decay",
+              "control_status": "passed",
+              "rung_effect": "blocks_all_positive_rungs_if_false"
+            }
+          ]
+        },
+        "candidate_failed_open_count": 0,
+        "candidate_not_run_count": 0,
+        "generic_active_nulls_consumed_as_each_positive_candidate_control": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_scheduled_decay_remains_failed_closed",
+      "detail": {
+        "direction_matrix": "perturbation_control",
+        "forming_packet_exclusion": "passed",
+        "producer_scheduled_D0_decay": "failed_closed",
+        "proper_time_alignment": "not_applicable",
+        "route_mass_match": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "cache_and_execution_reconstruction_separate",
+      "detail": {
+        "D0a": "not_applicable_no_derived_runtime_cache",
+        "D0b": "passed_exact_not_persisted_projection",
+        "D0c": "not_applicable_no_persisted_derived_cache",
+        "execution_reconstruction": "passed_complete"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "conservation_and_timing_audit_passed",
+      "detail": {
+        "I5_conservation_checks_passed": true,
+        "I6_conservation_checks_passed": true,
+        "I7_conservation_checks_passed": true,
+        "direction_matrix_equal_state_relabel_rejected": true,
+        "internal_time_owner": "native_LGRC9V3_event_queue",
+        "wall_clock_consumed": false
+      },
+      "passed": true
+    }
+  ],
+  "conservation_and_timing_audit": {
+    "I5_conservation_checks_passed": true,
+    "I6_conservation_checks_passed": true,
+    "I7_conservation_checks_passed": true,
+    "direction_matrix_equal_state_relabel_rejected": true,
+    "internal_time_owner": "native_LGRC9V3_event_queue",
+    "wall_clock_consumed": false
+  },
+  "control_matrix": {
+    "D0_common_schema_control_count": 52,
+    "I7_normalized_control_summary": {
+      "direction_matrix": "perturbation_control",
+      "forming_packet_exclusion": "passed",
+      "producer_scheduled_D0_decay": "failed_closed",
+      "proper_time_alignment": "not_applicable",
+      "route_mass_match": "passed"
+    },
+    "active_null_replay_scope": "governance_and_validator_baseline_not_direct_per_candidate_consumption",
+    "active_null_row_count": 70,
+    "all_active_nulls_failed_closed": true,
+    "all_controls_without_failed_open_or_not_run": true,
+    "all_required_controls_resolved": true,
+    "candidate_control_resolution_scope": "candidate_specific_I5_through_I7_executed_rows",
+    "candidate_control_status_counts": {
+      "failed_closed": 6,
+      "not_applicable": 2,
+      "passed": 22
+    },
+    "candidate_controls_by_iteration": {
+      "I5": [
+        {
+          "control_id": "label_only_decay",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR1_plus"
+        },
+        {
+          "control_id": "forming_activity_never_stopped",
+          "control_status": "passed",
+          "rung_effect": "blocks_post_formation_language"
+        },
+        {
+          "control_id": "instantaneous_geometry_as_durable_decay",
+          "control_status": "failed_closed",
+          "rung_effect": "caps_candidate_at_DR1"
+        },
+        {
+          "control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "control_status": "passed",
+          "rung_effect": "blocks_organization_inference"
+        },
+        {
+          "control_id": "D0c_persistence_retained_as_same_D0c_row",
+          "control_status": "not_applicable",
+          "rung_effect": "blocks_in_place_semantic_upgrade"
+        },
+        {
+          "control_id": "post_withdrawal_history_as_current_candidate_specific",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks_false_D0c_persistence"
+        }
+      ],
+      "I6": [
+        {
+          "control_id": "label_only_decay",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR1_plus"
+        },
+        {
+          "control_id": "wall_clock_decay",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR3_plus"
+        },
+        {
+          "control_id": "post_hoc_weakening_trace",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR3_plus"
+        },
+        {
+          "control_id": "forming_activity_never_stopped",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR2_plus"
+        },
+        {
+          "control_id": "relation_persists_but_does_not_weaken",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR3_plus"
+        },
+        {
+          "control_id": "missing_internal_time_owner",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR3_plus"
+        },
+        {
+          "control_id": "missing_invariant",
+          "control_status": "passed",
+          "rung_effect": "blocks_row"
+        },
+        {
+          "control_id": "missing_restoration_state",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR5_plus"
+        },
+        {
+          "control_id": "report_digest_as_runtime_state",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR1_plus"
+        },
+        {
+          "control_id": "derived_observable_as_causal_trail",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks_DR4_plus"
+        },
+        {
+          "control_id": "cache_removed_and_recomputed",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks_independent_state_claim"
+        },
+        {
+          "control_id": "cache_divergence",
+          "control_status": "passed",
+          "rung_effect": "blocks_exact_D0b"
+        },
+        {
+          "control_id": "observable_disconnected_from_transport",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks_DR4_plus"
+        },
+        {
+          "control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "control_status": "passed",
+          "rung_effect": "blocks_organization_inference"
+        },
+        {
+          "control_id": "D0b_transport_feedback_without_authority_reclassification",
+          "control_status": "passed",
+          "rung_effect": "blocks_unreclassified_DR4"
+        }
+      ],
+      "I7": [
+        {
+          "control_id": "forming_activity_never_stopped",
+          "control_status": "passed",
+          "rung_effect": "blocks_DR2_plus_if_false"
+        },
+        {
+          "control_id": "forming_packet_propagation_as_later_mediation",
+          "control_status": "passed",
+          "rung_effect": "blocks_independent_later_readout_language_if_false"
+        },
+        {
+          "control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "control_status": "passed",
+          "rung_effect": "blocks_D0a_if_false"
+        },
+        {
+          "control_id": "hidden_producer_update",
+          "control_status": "passed",
+          "rung_effect": "reclassifies_or_blocks_if_false"
+        },
+        {
+          "control_id": "producer_scheduled_D0_decay",
+          "control_status": "failed_closed",
+          "rung_effect": "caps_native_D0a_at_DR2_and_blocks_autonomous_relaxation_relabel"
+        },
+        {
+          "control_id": "observable_disconnected_from_transport",
+          "control_status": "passed",
+          "rung_effect": "blocks_local_C_causal_effect_if_false"
+        },
+        {
+          "control_id": "node_scalar_match_as_complete_state_match",
+          "control_status": "passed",
+          "rung_effect": "blocks_intervention_if_false"
+        },
+        {
+          "control_id": "proper_time_annotation_as_causal_alignment",
+          "control_status": "not_applicable",
+          "rung_effect": "not_applicable_spatial_D0a"
+        },
+        {
+          "control_id": "label_only_decay",
+          "control_status": "passed",
+          "rung_effect": "blocks_all_positive_rungs_if_false"
+        }
+      ]
+    },
+    "candidate_failed_open_count": 0,
+    "candidate_not_run_count": 0,
+    "generic_active_nulls_consumed_as_each_positive_candidate_control": false
+  },
+  "duplicate_replay": {
+    "source": "two independent fresh reconstructions per I7 attempt",
+    "status": "passed"
+  },
+  "equal_state_branch_continuation": {
+    "after_identity_v1_equal": true,
+    "after_identity_v2_equal": true,
+    "before_identity_v1_equal": true,
+    "before_identity_v2_equal": true,
+    "branch_source": "same_complete_disjoint_hold_pre_readout_snapshot",
+    "continuation_receipts_equal": true,
+    "direction_matrix_consumed_as_equal_state": false,
+    "mediation_evidence_added": false,
+    "passed": true,
+    "route_distribution_causality_evidence_added": false,
+    "scientific_role": "replay_correctness_only",
+    "weakening_selection_evidence_added": false
+  },
+  "execution_reconstruction": {
+    "duplicate_replay_status": "passed",
+    "execution_reconstruction_status": "passed_complete",
+    "rows": [
+      {
+        "attempt_mode": "disjoint_hold",
+        "duplicate_reconstruction_exact": true,
+        "first_reconstruction_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+        "second_reconstruction_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+        "source_digest": "3f0e94e95322815a7f05a8741a3a2eacbce88589d78bc3eae59e3a8a3da1cae8",
+        "source_reconstruction_exact": true
+      },
+      {
+        "attempt_mode": "internal_weakening",
+        "duplicate_reconstruction_exact": true,
+        "first_reconstruction_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+        "second_reconstruction_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+        "source_digest": "eeb2d615924020fd68adf525cac94b9b101cfdc2383d5d419ba92da4e2f3e66f",
+        "source_reconstruction_exact": true
+      },
+      {
+        "attempt_mode": "internal_reinforcement",
+        "duplicate_reconstruction_exact": true,
+        "first_reconstruction_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+        "second_reconstruction_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+        "source_digest": "e2d06ded1f59a23e4c4da96752808237c562f6a5618fe2b1da2f359828f2668e",
+        "source_reconstruction_exact": true
+      }
+    ]
+  },
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "8",
+  "output_digest": "29667fb70ec3da35bf490d93510655bd1698e747ccdca0633ea2ac56680b4d7f",
+  "readout_amount_sweep": {
+    "differentiated_interval": "0.20 < q <= 0.24",
+    "passed": true,
+    "rows": [
+      {
+        "boundary_role": "not_upper_native_float_boundary",
+        "expected_region": "both_pass_below_or_at_weakened_source_C",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": true,
+        "hold_eligibility_margin": 0.060000000000000026,
+        "readout_amount": 0.18,
+        "weakened_admitted": true,
+        "weakened_eligibility_margin": 0.020000000000000018
+      },
+      {
+        "boundary_role": "not_upper_native_float_boundary",
+        "expected_region": "both_pass_below_or_at_weakened_source_C",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": true,
+        "hold_eligibility_margin": 0.04000000000000001,
+        "readout_amount": 0.2,
+        "weakened_admitted": true,
+        "weakened_eligibility_margin": 0.0
+      },
+      {
+        "boundary_role": "not_upper_native_float_boundary",
+        "expected_region": "differentiated_threshold_interval",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": true,
+        "hold_eligibility_margin": 0.030000000000000027,
+        "readout_amount": 0.21,
+        "weakened_admitted": false,
+        "weakened_eligibility_margin": -0.009999999999999981
+      },
+      {
+        "boundary_role": "not_upper_native_float_boundary",
+        "expected_region": "differentiated_threshold_interval",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": true,
+        "hold_eligibility_margin": 0.020000000000000018,
+        "readout_amount": 0.22,
+        "weakened_admitted": false,
+        "weakened_eligibility_margin": -0.01999999999999999
+      },
+      {
+        "boundary_role": "native_float_eligibility_boundary",
+        "expected_region": "differentiated_threshold_interval",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": true,
+        "hold_eligibility_margin": 2.7755575615628914e-17,
+        "readout_amount": 0.24,
+        "weakened_admitted": false,
+        "weakened_eligibility_margin": -0.03999999999999998
+      },
+      {
+        "boundary_role": "not_upper_native_float_boundary",
+        "expected_region": "both_fail_above_hold_source_C",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": false,
+        "hold_eligibility_margin": -0.009999999999999981,
+        "readout_amount": 0.25,
+        "weakened_admitted": false,
+        "weakened_eligibility_margin": -0.04999999999999999
+      },
+      {
+        "boundary_role": "not_upper_native_float_boundary",
+        "expected_region": "both_fail_above_hold_source_C",
+        "expected_region_behavior_passed": true,
+        "hold_admitted": false,
+        "hold_eligibility_margin": -0.01999999999999999,
+        "readout_amount": 0.26,
+        "weakened_admitted": false,
+        "weakened_eligibility_margin": -0.06
+      }
+    ],
+    "scope": "narrow_native_source_C_departure_threshold_not_general_retuning",
+    "upper_endpoint_interpretation": "q=0.24 is the native floating-point eligibility boundary with effectively zero hold margin, not a meaningful positive margin"
+  },
+  "snapshot_load_replay": {
+    "all_snapshot_roundtrips_exact": true,
+    "reset_aware_identity_policy": "v2_verified_on_roundtrip; reset execution not applicable because no consumed candidate invokes reset",
+    "reset_sensitive_row_count": 0,
+    "rows": [
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_after_readout_attempt.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_baseline.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_formed.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_persisted.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/disjoint_hold_progressed.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_after_readout_attempt.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_baseline.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_formed.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_persisted.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_reinforcement_progressed.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_after_readout_attempt.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_baseline.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_formed.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_persisted.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/internal_weakening_progressed.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_hold_baseline_clamp_after_readout.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore.json"
+      },
+      {
+        "restoration_identity_v1_exact": true,
+        "restoration_identity_v2_exact": true,
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_probe_artifacts/intervention_weakened_formed_restore_after_readout.json"
+      }
+    ],
+    "snapshot_row_count": 19
+  },
+  "source_builder_replay": {
+    "all_source_builders_replayed_exact": true,
+    "directly_replayed_iterations": [
+      "I3",
+      "I5",
+      "I6",
+      "I7"
+    ],
+    "entire_evidence_stack_directly_rebuilt": false,
+    "rows": [
+      {
+        "after_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+        "after_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+        "before_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+        "before_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+        "byte_identical": true,
+        "internal_output_digest_exact": true,
+        "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+        "return_code": 0,
+        "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_active_nulls_and_failure_baselines_i3.py",
+        "source_iteration": "I3",
+        "stderr": ""
+      },
+      {
+        "after_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+        "after_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+        "before_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+        "before_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+        "byte_identical": true,
+        "internal_output_digest_exact": true,
+        "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0c_instantaneous_geometry_comparator_i5.json",
+        "return_code": 0,
+        "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0c_instantaneous_geometry_comparator_i5.py",
+        "source_iteration": "I5",
+        "stderr": ""
+      },
+      {
+        "after_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+        "after_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+        "before_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+        "before_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+        "byte_identical": true,
+        "internal_output_digest_exact": true,
+        "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0b_finite_window_derived_relation_i6.json",
+        "return_code": 0,
+        "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0b_finite_window_derived_relation_i6.py",
+        "source_iteration": "I6",
+        "stderr": ""
+      },
+      {
+        "after_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+        "after_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+        "before_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+        "before_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+        "byte_identical": true,
+        "internal_output_digest_exact": true,
+        "output": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_source_current_causal_probe_i7.json",
+        "return_code": 0,
+        "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0a_source_current_causal_probe_i7.py",
+        "source_iteration": "I7",
+        "stderr": ""
+      }
+    ],
+    "scope": "all positive D0 builders and the I3 active-null builder replayed directly; I2/I4 governance and representation dependencies verified transitively through exact source-chain identities",
+    "transitively_verified_dependencies": [
+      "I2",
+      "I3R1",
+      "I4",
+      "I4R1",
+      "I5R1"
+    ]
+  },
+  "source_chain": [
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_decay_evidence",
+      "actual_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "actual_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "expected_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "expected_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_D0c_DR1_instantaneous_geometry_comparator_no_persistence_no_decay",
+      "actual_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+      "actual_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+      "expected_output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+      "expected_sha256": "6b4707cd8b7a10d563cb55f5b61fd4d857161c7b644218ed18cdc7b541be7704",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0c_instantaneous_geometry_comparator_i5.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_D0b_DR3_finite_window_observable_below_causal_trail",
+      "actual_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+      "actual_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+      "expected_output_digest": "206088cbe96bb37e119aa88a543f728170d206ad3ce15e9da24f1b9a5f77313a",
+      "expected_sha256": "a076c8d78adeb0a92b0d28f1393f73a0e7731e9a39f16374b94d37b69ebf0a22",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0b_finite_window_derived_relation_i6.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_spatial_D0a_DR2_formation_persistence_and_conditional_reorganization_probe",
+      "actual_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+      "actual_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+      "expected_output_digest": "ada29118f7c3cad7db308ff0c026ee09270afbad620c3a613d378f28c35086d1",
+      "expected_sha256": "873bbb8bc74aec376ead0b824e8078f4f837ce33cdc558394d031d3d522458e9",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_source_current_causal_probe_i7.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_spatial_D0a_direction_matrix_and_matched_causal_intervention_trace",
+      "actual_output_digest": "f70e6424ef15185968d21a8485f975dcc19078815ce9059b88d6d83d845d9a0a",
+      "actual_sha256": "5826425cc80c2fa6951d59f9d5099f101e018a06e63e0ace973235efd1540ede",
+      "expected_output_digest": "f70e6424ef15185968d21a8485f975dcc19078815ce9059b88d6d83d845d9a0a",
+      "expected_sha256": "5826425cc80c2fa6951d59f9d5099f101e018a06e63e0ace973235efd1540ede",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i7_d0a_source_current_causal_trace.json",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

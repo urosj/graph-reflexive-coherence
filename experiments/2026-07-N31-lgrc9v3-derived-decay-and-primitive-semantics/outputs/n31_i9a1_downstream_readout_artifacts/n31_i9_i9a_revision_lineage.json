@@ -1,0 +1,34 @@
+{
+  "I9": {
+    "current_artifact_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+    "current_output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+    "exact_current_artifact_consumed_by_I9A1": true,
+    "previous_output_digest": "80572f132f679beb7d733b7ed5609a5efa5cd7815490e8f3fef711b14e7fbcee",
+    "review_corrections": [
+      "release_phase_made_load_bearing",
+      "producer_input_allowlist_tightened",
+      "numeric_topology_bindings_and_policy_identity_added"
+    ],
+    "scientific_admission_decision_changed": false
+  },
+  "I9A": {
+    "current_artifact_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+    "current_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+    "evidence_rung_classification_corrected": true,
+    "exact_current_artifact_consumed_by_I9A1": true,
+    "previous_artifact_sha256_available": false,
+    "previous_output_digest": "69eec2618fde6408482dfd17f8ad1e48634756f23e02298b2ef9b260841443e1",
+    "review_corrections": [
+      "provisional_DR4_demoted_to_DR3_pending_independent_readout",
+      "control_statuses_and_policy_ownership_normalized",
+      "composed_native_plus_closure_identity_added",
+      "floating_point_release_boundary_qualified"
+    ],
+    "scientific_numerical_outcome_changed": false
+  },
+  "artifact_kind": "n31_i9_i9a_revision_lineage",
+  "artifact_schema_version": "n31_i9_i9a_revision_lineage_v1",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "lineage_scope": "review_correction_provenance_only; no prior artifact is consumed as current evidence",
+  "output_digest": "a9301bd8e3b98894ad648637d1c0412df98e078432c1fc3ef9bcbdc1cc555ee3"
+}

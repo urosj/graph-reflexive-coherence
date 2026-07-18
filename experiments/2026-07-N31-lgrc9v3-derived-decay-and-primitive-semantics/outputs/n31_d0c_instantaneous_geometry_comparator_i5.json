@@ -1,0 +1,707 @@
+{
+  "D0a_persistence_supported": false,
+  "D0a_weakening_supported": false,
+  "acceptance_state": "accepted_source_current_D0c_DR1_instantaneous_geometry_comparator_no_persistence_no_decay",
+  "artifact_manifest": [
+    {
+      "artifact_role": "I4R1_provenance_and_scientific_outcome_lineage",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i4_revision_lineage_r1.json",
+      "sha256": "a8781a04980b0a650a0ebfeae41f34a067a188f72c57b71f140ad1048642d5ba"
+    },
+    {
+      "artifact_role": "source_current_D0c_runtime_trace",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+      "sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d"
+    }
+  ],
+  "candidate_row_count": 1,
+  "candidate_rows": [
+    {
+      "active_forming_carrier_interval": {
+        "classification": "continued_propagation_of_forming_packets",
+        "end_event_time_key": 1.0,
+        "post_formation_persistence_window": false,
+        "start_event_time_key": 0.0
+      },
+      "added_export_policy_present": false,
+      "added_mechanism_admission_reason": "not_applicable_D0c_native_comparator",
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "source_current_D0c_runtime_trace",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d"
+        }
+      ],
+      "artifact_sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d",
+      "blocked_relabels": [
+        "durable_aftereffect",
+        "D0a_persistence",
+        "D0a_weakening",
+        "causal_decay",
+        "causal_mediation",
+        "trail_or_stigmergic_field",
+        "semantic_memory",
+        "learning",
+        "communication",
+        "agency",
+        "selfhood",
+        "sentience",
+        "organism_or_life",
+        "native_support",
+        "phase8_completion",
+        "unrestricted_autonomy"
+      ],
+      "branch_continuation_status": "not_run_pending_iteration_8",
+      "candidate_disposition": "supported",
+      "candidate_id": "n31_i5_D0c_balanced_native_packet_cycle",
+      "candidate_schema_version": "n31_decay_candidate_schema_v2",
+      "candidate_semantic_contract": {
+        "candidate_specific_schema_id": "n31_i5_D0c_candidate_schema_v1",
+        "carrier_contract_id": "n31_i5_packet_current_carrier_v1",
+        "continuation_state_contract_id": "n31_i5_complete_LGRC9V3_current_state_v1",
+        "internal_time_policy": "model_owned_event_time_wall_clock_excluded_v1",
+        "load_bearing_organization_domain": "functional_coupling",
+        "organization_domain": "functional_coupling",
+        "primary_semantic_class": "D0c",
+        "representation_or_authority_class": "exact_derived_projection"
+      },
+      "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+      "candidate_specific_control_regeneration_count": 6,
+      "carrier_definition": "current native route C distribution plus in-flight packet current rates",
+      "causal_mediation_contract": {
+        "added_coincidence_or_resonance_policy_present": false,
+        "causal_mediation_contract_id": "n31_i5_no_causal_mediation_D0c_v1",
+        "direct_readout_path_excluded": true,
+        "formation_packet_exclusion_status": "not_applicable",
+        "hidden_selector_excluded": true,
+        "later_local_readout_definition": "not_run_I5_is_instantaneous_comparator",
+        "later_readout_changed": false,
+        "later_readout_probe_relation": "unresolved",
+        "local_transport_intervention_status": "not_run",
+        "mass_matched_during_organization_intervention": false,
+        "mediation_strength": "absent",
+        "organization_intervention_definition": "not_run",
+        "organization_intervention_valid": false,
+        "organization_mediated_readout_change": false,
+        "other_continuation_state_matched": false,
+        "packet_amount_matched_during_organization_intervention": false,
+        "spatial_organization_matched_during_temporal_intervention": false,
+        "temporal_intervention_matching_status": "not_applicable"
+      },
+      "claim_ceiling": "source_current_instantaneous_state_flux_geometry_comparator_no_persistence",
+      "coherence_budget_after": 3.5,
+      "coherence_budget_before": 3.5,
+      "complete_state_identity": {
+        "baseline": "3be45ade55adb42206557f2312343aee7489545b6d7a97f8252721fb3f373c6a",
+        "forming": "6eb96ba12f437b2be0f2b20ea877293029d80b6adad184278e99fc4e5e37249f",
+        "post_withdrawal": "c3a4d0763f4905415a26e6439e6855c51e51475a84aa68a2ea4555a0111c1d0a"
+      },
+      "continuation_state_definition": "complete LGRC9V3 current scientific state under restoration identity v1",
+      "control_results": [
+        {
+          "actual_result": "native_packet_current_trace_and_full_identities_present",
+          "blocked_condition": "label_or_report_without_source_current_relation",
+          "candidate_control_execution_id": "n31_i5_regenerated_label_only_decay_v1",
+          "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "forming_cycle_packets_in_flight",
+            "first_post_withdrawal_arrival_complete"
+          ],
+          "control_id": "label_only_decay",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "source_current_trace_required",
+          "matched_to_I3_null": false,
+          "regenerated_for_I5_candidate": true,
+          "rung_effect": "blocks_DR1_plus",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "5787aa8fc6d526817734f4514ae36f708b171ffda9ce034b5ca341bb14f2273b",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "label_only_decay",
+          "source_I3_row_digest": "be154f55d4337b17b7bf478c11889f25d706d16c9915d8c6188c2ded01ae4594"
+        },
+        {
+          "actual_result": "all_packets_arrived_queue_empty_no_post_calls",
+          "blocked_condition": "continued_departures_masquerade_as_post_formation",
+          "candidate_control_execution_id": "n31_i5_regenerated_forming_activity_never_stopped_v1",
+          "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "forming_cycle_packets_in_flight",
+            "first_post_withdrawal_arrival_complete"
+          ],
+          "control_id": "forming_activity_never_stopped",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "forming_schedule_exhausted",
+          "matched_to_I3_null": false,
+          "regenerated_for_I5_candidate": true,
+          "rung_effect": "blocks_post_formation_language",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "e92100b33b7fd7f2ca2dbc7a8ecc0d3bf7f4b9d85975bb47d614a5397fccf0b3",
+          "semantic_comparability_mismatches": [
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "forming_activity_never_stopped",
+          "source_I3_row_digest": "4ce870c0fc55b13a0406c748850fe7ae60ed80444b64a20381997fac0f67b945"
+        },
+        {
+          "actual_result": "first_post_checkpoint_current_component_equals_zero",
+          "blocked_condition": "D0c_current_component_relabelled_as_durable_decay",
+          "candidate_control_execution_id": "n31_i5_regenerated_instantaneous_geometry_as_durable_decay_v1",
+          "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "forming_cycle_packets_in_flight",
+            "first_post_withdrawal_arrival_complete"
+          ],
+          "control_id": "instantaneous_geometry_as_durable_decay",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "failed_closed",
+          "expected_result": "durable_claim_rejected_when_current_component_is_zero",
+          "matched_to_I3_null": false,
+          "regenerated_for_I5_candidate": true,
+          "rung_effect": "caps_candidate_at_DR1",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "8d648de708217c2adb6929feb94e561cbf3dd04961fddff07d6d233f877fe738",
+          "semantic_comparability_mismatches": [
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "instantaneous_geometry_as_durable_decay",
+          "source_I3_row_digest": "720d0888fa5a8ef90e9bdbcaa3effc9c253bdc6f0cf0288061b92247f050b2f6"
+        },
+        {
+          "actual_result": "forming_and_post_route_mass_equal",
+          "blocked_condition": "mass_change_substitutes_for_geometry_evidence",
+          "candidate_control_execution_id": "n31_i5_regenerated_route_mass_loss_as_organization_weakening_relabel_v1",
+          "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "forming_cycle_packets_in_flight",
+            "first_post_withdrawal_arrival_complete"
+          ],
+          "control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "passed",
+          "expected_result": "route_mass_matched",
+          "matched_to_I3_null": false,
+          "regenerated_for_I5_candidate": true,
+          "rung_effect": "blocks_organization_inference",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "0476ab8a3f3d2c327ecb9013fffec2bca06d65e1aa8569b3ce8e87d35af7656e",
+          "semantic_comparability_mismatches": [
+            "primary_semantic_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "route_mass_loss_as_organization_weakening_relabel",
+          "source_I3_row_digest": "b0e5211bdfdb65b928948f4eee6c11b1fdbb580460879bcbdb52e925dd1fa40e"
+        },
+        {
+          "actual_result": "no_persistence_observed",
+          "blocked_condition": "persistent_D0c_keeps_same_candidate_identity",
+          "candidate_control_execution_id": "n31_i5_regenerated_D0c_persistence_retained_as_same_D0c_row_v1",
+          "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "forming_cycle_packets_in_flight",
+            "first_post_withdrawal_arrival_complete"
+          ],
+          "control_id": "D0c_persistence_retained_as_same_D0c_row",
+          "control_origin": "regenerated_candidate_specific",
+          "control_status": "not_applicable",
+          "expected_result": "new_D0a_identity_if_persistence_appears",
+          "matched_to_I3_null": false,
+          "regenerated_for_I5_candidate": true,
+          "rung_effect": "blocks_in_place_semantic_upgrade",
+          "scope_reason_if_not_applicable": "no_persistent_relation_exists_in_I5",
+          "semantic_comparability_digest": "33a3f197c45a6868816ffc7e656f210223cc0cf1c2bf5e46e3a06ccad298c622",
+          "semantic_comparability_mismatches": [
+            "representation_or_authority_class",
+            "organization_domain",
+            "load_bearing_organization_domain",
+            "candidate_specific_schema_id",
+            "carrier_contract_id",
+            "continuation_state_contract_id"
+          ],
+          "source_I3_control_id": "D0c_persistence_retained_as_same_D0c_row",
+          "source_I3_row_digest": "7ba504174cd14d3a710bdfe9f201f6479b6ee785311fd4faa9a4bbef59aa9aea"
+        },
+        {
+          "actual_result": "history_present_but_projected_current_is_zero",
+          "blocked_condition": "arrived_packet_history_counted_as_active_current",
+          "candidate_control_execution_id": "n31_i5_regenerated_post_withdrawal_history_as_current_candidate_specific_v1",
+          "candidate_semantic_contract_digest": "558404f85e197b2384e36ec0cc353cbcf1696e371a6ea4e6f4a00a9d427474f8",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_artifact": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "control_execution_checkpoints": [
+            "forming_cycle_packets_in_flight",
+            "first_post_withdrawal_arrival_complete"
+          ],
+          "control_id": "post_withdrawal_history_as_current_candidate_specific",
+          "control_origin": "candidate_specific_no_I3_source_control",
+          "control_status": "failed_closed",
+          "expected_result": "only_in_flight_records_contribute_to_packet_current",
+          "matched_to_I3_null": false,
+          "regenerated_for_I5_candidate": true,
+          "rung_effect": "blocks_false_D0c_persistence",
+          "scope_reason_if_not_applicable": null,
+          "semantic_comparability_digest": "ca3bde5b3ed8b9f7de1723d6250724d4ec536558dc516c4c00b4667e7c7b4713",
+          "semantic_comparability_mismatches": [
+            "no_frozen_I3_control_identity"
+          ],
+          "source_I3_control_id": null,
+          "source_I3_row_digest": null
+        }
+      ],
+      "d0_subclass": "not_applicable",
+      "d0_to_br_bridge_status": "not_tested",
+      "decay_relation_ladder_rung": "DR1",
+      "derived_cache_recomputation_status": "passed_exact",
+      "derived_cache_status": "not_persisted_exact_projection",
+      "destination_trace_if_mass_moves": {
+        "scope_reason": "route_mass_does_not_move_across_boundary",
+        "status": "not_applicable"
+      },
+      "direct_I3_null_consumption_count": 0,
+      "equation_or_relation_id": "n31_i5_D0c_packet_current_geometry_v1",
+      "execution_reconstruction_status": "not_run_pending_iteration_8",
+      "export_policy_inputs": [],
+      "export_policy_owner": "not_applicable_no_export",
+      "formation_input_stop_checkpoint": "forming_cycle_packets_in_flight",
+      "formation_input_stopped": true,
+      "formation_source": "native_source_current_packet_cycle",
+      "formation_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+        "checkpoint_id": "forming_cycle_packets_in_flight"
+      },
+      "forming_activity_present": true,
+      "forming_activity_stopped": true,
+      "forming_carrier_exhausted": true,
+      "forming_carrier_exhaustion_checkpoint": "first_post_withdrawal_arrival_complete",
+      "internal_time_advance_event": "lgrc9v3_packet_arrival",
+      "internal_time_owner": "native_LGRC9V3_event_queue",
+      "invariant_id": "closed_system_node_plus_in_flight_coherence",
+      "invariant_tolerance": 1e-12,
+      "later_readout_changed": false,
+      "local_readout_trace": {
+        "scope_reason": "I5_is_instantaneous_comparator_not_mediation_probe",
+        "status": "not_applicable"
+      },
+      "mediator_intervention_trace": {
+        "scope_reason": "I5_does_not_test_causal_mediation",
+        "status": "not_applicable"
+      },
+      "missing_required_fields": [],
+      "naturalization_debt": [
+        "autonomous native formation of the same packet cycle is not claimed",
+        "persistence weakening and causal mediation remain untested"
+      ],
+      "ordinary_post_formation_flux_generated": false,
+      "organization_mediated_readout_change": false,
+      "persistence_trace": {
+        "artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+        "persistence_supported": false,
+        "result": "current_component_zero_at_first_post_checkpoint"
+      },
+      "post_formation_producer_call_policy": "no_calls",
+      "post_formation_producer_calls": [],
+      "post_formation_state_mutating_producer_calls": [],
+      "post_formation_window": "single_first_checkpoint_after_forming_carrier_exhaustion_no_persistence_window",
+      "primary_semantic_class": "D0c",
+      "producer_authors_aftereffect": false,
+      "producer_call_audit_status": "complete_no_mutation",
+      "producer_residue": [
+        "the forming packet cycle is experiment-scheduled input; no producer acts after formation"
+      ],
+      "producer_roles": [
+        "experiment_fixture_pre_formation_packet_schedule_only"
+      ],
+      "representation_or_authority_class": "exact_derived_projection",
+      "reset_status": "not_applicable_no_reset_sensitive_operation",
+      "restoration_identity_schema": "lgrc9v3_restoration_identity_v1",
+      "route_local_surface": "registered three-node internal packet cycle",
+      "route_mass_contract": {
+        "active_forming_carrier_interval": {
+          "classification": "continued_propagation_of_forming_packets",
+          "end_event_time_key": 1.0,
+          "post_formation_persistence_window": false,
+          "start_event_time_key": 0.0
+        },
+        "boundary_crossing_count_policy": "each_packet_or_flux_transfer_counted_exactly_once",
+        "boundary_flux_sign_policy": "positive_outward",
+        "boundary_measure": "registered boundary edge crossings",
+        "continuity_closed": true,
+        "continuity_residual": 0.0,
+        "continuity_tolerance": 1e-12,
+        "departure_arrival_accounting_policy": "internal departure debits node and adds in-flight amount; internal arrival removes in-flight amount and credits node",
+        "flux_quantity_semantics": "time_integrated_exported_coherence",
+        "in_flight_boundary_treatment": "internal in-flight packets counted once; no packet crosses boundary",
+        "mass_after": 3.0,
+        "mass_before": 3.0,
+        "mass_delta": 0.0,
+        "metric_measure_and_boundary_convention": "node coherence plus internal in-flight packet coherence; boundary edge 3; outward positive",
+        "moving_support_or_measure_correction": "not_applicable_fixed_support",
+        "net_outward_boundary_flux": 0.0,
+        "post_formation_integration_window": {
+          "scope_reason": "event_time_0_to_1_is_the_active_forming_carrier_interval_not_a_post_formation_persistence_window",
+          "status": "not_applicable"
+        },
+        "receiver_inside_or_outside_support": "all_cycle_receivers_inside_support",
+        "registered_route_boundary": [
+          3
+        ],
+        "registered_route_support": [
+          0,
+          1,
+          2
+        ],
+        "route_mass_contract_id": "n31_i5_balanced_cycle_route_mass_v1"
+      },
+      "route_mass_decreased": false,
+      "route_organization_contract": {
+        "instantaneous_current_component_withdrawn": true,
+        "load_bearing_organization_domain": "functional_coupling",
+        "mixed_domain_mediation_resolution": "not_applicable",
+        "observed_diagnostic_domains": [
+          "spatial_distribution",
+          "functional_coupling"
+        ],
+        "organization_after": {
+          "checkpoint": "first_post_withdrawal_arrival_complete",
+          "coherence_coordinates": {
+            "0": 0.3999999999999999,
+            "1": 0.19999999999999996
+          },
+          "packet_current_l1_norm": 0.0
+        },
+        "organization_authority": "exact_derived_projection",
+        "organization_before": {
+          "checkpoint": "forming_cycle_packets_in_flight",
+          "coherence_coordinates": {
+            "0": 0.3999999999999998,
+            "1": 0.19999999999999996
+          },
+          "packet_current_l1_norm": 0.30000000000000004
+        },
+        "organization_definition": "G_D0c(t) = (anchor-relative route C coordinates, oriented in-flight packet amount divided by native event-time transit duration); signed currents are retained in registered-route and canonical native-edge orientations",
+        "organization_domain": "functional_coupling",
+        "organization_has_independent_causal_freedom": false,
+        "organization_inputs": [
+          "current route node coherence",
+          "current in-flight internal packet records",
+          "packet departure and arrival event-time keys",
+          "registered route orientation",
+          "canonical native restoration-identity edge orientation"
+        ],
+        "organization_observable_id": "n31_i5_anchor_C_plus_packet_J_tuple_v1",
+        "organization_recomputation_status": "passed_exact",
+        "organization_update_owner": "native_LGRC9V3_packet_transport",
+        "organization_weakened": false,
+        "route_organization_contract_id": "n31_i5_D0c_geometry_contract_v1"
+      },
+      "route_organization_weakened": false,
+      "row_decision": "supported",
+      "row_digest": "d464264476937b59bc22d00a959183b81d8c73be973491614429879b2da0c988",
+      "row_specific_thresholds_declared_before_use": {
+        "closed_system_budget_tolerance": 1e-12,
+        "coherence_coordinate_tolerance": 1e-12,
+        "declared_before_runtime_execution": true,
+        "forming_packet_current_l1_minimum": 0.25,
+        "positive_D0c_requires": "source-current packet-current component above minimum during transit and at or below maximum at the first native post-arrival checkpoint",
+        "post_withdrawal_packet_current_l1_maximum": 1e-12,
+        "route_mass_tolerance": 1e-12,
+        "static_edge_flux_l1_maximum": 1e-12,
+        "threshold_record_id": "n31_i5_d0c_thresholds_v1"
+      },
+      "schema_change_record_id": "n31_pre_i1_mass_organization_mediation_normalization_v2",
+      "snapshot_load_status": "not_run_pending_iteration_8",
+      "source_current_inputs": [
+        "LGRC9V3RuntimeState.base_state.nodes[*].coherence",
+        "LGRC9V3RuntimeState.packet_ledger.packet_records",
+        "LGRC9V3RuntimeState.packet_ledger.event_queue_records",
+        "LGRC9V3RuntimeState.base_state.port_edges[*]"
+      ],
+      "source_iteration": "N31-I5",
+      "topology_contract_id": "n31_i5_three_node_cycle_plus_boundary_v1",
+      "units_by_state": {
+        "event_time": "native_event_time_key",
+        "node_coherence": "coherence",
+        "packet_current": "coherence_per_event_time",
+        "route_mass": "coherence"
+      },
+      "unsafe_claim_flags": {
+        "D0a_persistence_claim_allowed": false,
+        "D0a_weakening_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "causal_decay_claim_allowed": false,
+        "causal_mediation_claim_allowed": false,
+        "communication_claim_allowed": false,
+        "durable_aftereffect_claim_allowed": false,
+        "learning_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_or_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_memory_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "trail_or_stigmergic_field_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "update_phase": "native_packet_transit_then_immediate_arrival_completion",
+      "weakening_mode": "none",
+      "weakening_trace": {
+        "scope_reason": "no_persistent_relation_exists_to_weaken",
+        "status": "not_applicable"
+      },
+      "weakening_trajectory_class": "transient"
+    }
+  ],
+  "candidate_rows_classified": true,
+  "causal_mediation_supported": false,
+  "checks": [
+    {
+      "check_id": "I2_source_chain_exact",
+      "detail": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "passed": true
+    },
+    {
+      "check_id": "I3R1_source_chain_exact",
+      "detail": "N31-I3R1",
+      "passed": true
+    },
+    {
+      "check_id": "I4_handoff_exact_and_I5_ready",
+      "detail": "b7b6f34e3978ec4a410a77e36bc1b548f1baf96dbda7987803d544fc737c3597",
+      "passed": true
+    },
+    {
+      "check_id": "I4R1_revision_lineage_closed",
+      "detail": "N31-I4R1",
+      "passed": true
+    },
+    {
+      "check_id": "runtime_trace_passed",
+      "detail": "c5d2609960d765bd3b97b65664a2ca86e6d16228ad34bf0714e31d093f7fe395",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_schema_complete",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "source_current_D0c_relation_formed",
+      "detail": 0.30000000000000004,
+      "passed": true
+    },
+    {
+      "check_id": "instantaneous_component_absent_after_withdrawal",
+      "detail": 0.0,
+      "passed": true
+    },
+    {
+      "check_id": "mass_and_budget_invariants_pass",
+      "detail": 0.0,
+      "passed": true
+    },
+    {
+      "check_id": "no_post_formation_producer_authorship",
+      "detail": "complete_no_mutation",
+      "passed": true
+    },
+    {
+      "check_id": "instantaneous_as_durable_control_failed_closed",
+      "detail": "DR1 ceiling",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_specific_controls_regenerated",
+      "detail": {
+        "direct_I3": 0,
+        "regenerated": 6
+      },
+      "passed": true
+    },
+    {
+      "check_id": "current_orientation_and_divergence_contract_passed",
+      "detail": "registered and native orientation vectors retained",
+      "passed": true
+    },
+    {
+      "check_id": "formation_input_and_carrier_exhaustion_separate",
+      "detail": {
+        "classification": "continued_propagation_of_forming_packets",
+        "end_event_time_key": 1.0,
+        "post_formation_persistence_window": false,
+        "start_event_time_key": 0.0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_exact",
+      "detail": [
+        {
+          "artifact_role": "source_current_D0c_runtime_trace",
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+          "sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "positive_decay_claims_remain_closed",
+      "detail": "source_current_instantaneous_state_flux_geometry_comparator_no_persistence",
+      "passed": true
+    },
+    {
+      "check_id": "protected_runtime_contract_diff_empty",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "recursive",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_relabels": [
+      "durable_aftereffect",
+      "D0a_persistence",
+      "D0a_weakening",
+      "causal_decay",
+      "causal_mediation",
+      "trail_or_stigmergic_field",
+      "semantic_memory",
+      "learning",
+      "communication",
+      "agency",
+      "selfhood",
+      "sentience",
+      "organism_or_life",
+      "native_support",
+      "phase8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "source_current_D0c_instantaneous_state_flux_geometry_comparator_DR1",
+    "unsafe_claim_flags": {
+      "D0a_persistence_claim_allowed": false,
+      "D0a_weakening_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "causal_decay_claim_allowed": false,
+      "causal_mediation_claim_allowed": false,
+      "communication_claim_allowed": false,
+      "durable_aftereffect_claim_allowed": false,
+      "learning_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_or_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_memory_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "trail_or_stigmergic_field_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0c_instantaneous_geometry_comparator_i5.py",
+  "decay_relation_ladder_ceiling": "DR1_attributable_route_local_relation_formed",
+  "decay_relation_ladder_rung": "DR1",
+  "decay_relation_ladder_rung_assigned": true,
+  "experiment": "N31",
+  "failed_checks": [],
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "graph_scope": {
+    "I5_governance_base_revision": "a5fcdd67ed49a5a1e11456dd4d7fb4a5e32ba95b",
+    "protected_runtime_contract_diff_empty": true,
+    "runtime_modified": false,
+    "src_diff_empty": true
+  },
+  "iteration": "5",
+  "n31_c3_D0c_classification_component_satisfied": true,
+  "n31_c3_overall_pending_D0b_and_D0a_classification": true,
+  "n31_closeout_ceiling": "N31-C2_active_nulls_and_representation_boundary_established",
+  "n31_closeout_ladder_rung_assigned": false,
+  "n31_progress_rung": "N31-C2_active_nulls_and_representation_boundary_established",
+  "n31_progress_rung_assigned": true,
+  "output_digest": "95d1a1f2c3003a7eeaa1edeaf9a0e843ac92e2c4af010e04a045233b445ac88b",
+  "positive_decay_evidence_opened": false,
+  "positive_evidence_opened": true,
+  "positive_evidence_scope": "source_current_D0c_instantaneous_comparator_only",
+  "ready_for_iteration_6_D0b_finite_window_relation": true,
+  "ready_for_iteration_7_spatial_D0a_probe": true,
+  "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_d0c_instantaneous_geometry_comparator_i5.py",
+  "source_chain": {
+    "I2": {
+      "artifact_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json"
+    },
+    "I3R1": {
+      "I3_artifact_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "I3_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "I3_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+      "lineage_artifact_sha256": "2ac6582625b0898fd799c545de385a757925226eae4d38803d903549e2133398",
+      "lineage_output_digest": "b6f6c1948f723d5fbb6008348b804b778993718da18c4b7efb3a499a8757de64",
+      "lineage_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i3_revision_lineage_r1.json"
+    },
+    "I4": {
+      "artifact_sha256": "eab3b993ad9990c2a7ba47e2445f62b520e003d9c938bc9cbc9590e428dd3782",
+      "consumed_as": "D0_representation_and_I5_admission_boundary",
+      "output_digest": "b7b6f34e3978ec4a410a77e36bc1b548f1baf96dbda7987803d544fc737c3597",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0a_representation_gate_i4.json",
+      "revision_id": "N31-I4R1",
+      "revision_lineage_artifact_sha256": "a8781a04980b0a650a0ebfeae41f34a067a188f72c57b71f140ad1048642d5ba",
+      "revision_lineage_output_digest": "6dbd1441b5fcdce666d8eeca287cd59205cc4d34495016a0aefe3da9b818eb16",
+      "revision_lineage_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i4_revision_lineage_r1.json"
+    }
+  },
+  "source_current_D0c_candidate_supported": true,
+  "source_current_trace": {
+    "artifact_role": "source_current_D0c_runtime_trace",
+    "output_digest": "c5d2609960d765bd3b97b65664a2ca86e6d16228ad34bf0714e31d093f7fe395",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i5_d0c_source_current_trace.json",
+    "sha256": "4e726a0a3ba9b9988a11addf5dd2712c9dcd8da9bd20580229416e415f4d0c5d"
+  },
+  "status": "passed",
+  "threshold_declaration": {
+    "closed_system_budget_tolerance": 1e-12,
+    "coherence_coordinate_tolerance": 1e-12,
+    "declared_before_runtime_execution": true,
+    "forming_packet_current_l1_minimum": 0.25,
+    "positive_D0c_requires": "source-current packet-current component above minimum during transit and at or below maximum at the first native post-arrival checkpoint",
+    "post_withdrawal_packet_current_l1_maximum": 1e-12,
+    "route_mass_tolerance": 1e-12,
+    "static_edge_flux_l1_maximum": 1e-12,
+    "threshold_record_id": "n31_i5_d0c_thresholds_v1"
+  },
+  "threshold_declaration_digest": "e1f5c532a5663422080172587069e8160e36f8b7781f16021115c12f64be3ca3"
+}

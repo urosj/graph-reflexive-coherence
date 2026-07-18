@@ -1,0 +1,29 @@
+{
+  "artifact_kind": "n31_i9c1_composed_identities",
+  "artifact_schema_version": "n31_i9c1_composed_identities_v1",
+  "formed": {
+    "derived_S": 0.9,
+    "history_identity": "94364a31020f839c202c2f05a3f420ff621f299ed07ea5bff96d84f07265f5e1",
+    "native_identity": {
+      "v1": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+      "v2": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e"
+    }
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "implementation_binding": {
+    "script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_exact_derived_susceptibility_i9c1.py",
+    "script_sha256": "a2023d803b6a89f118a0be4643bb25edfc99d122f1486b767e13630cabab48fe",
+    "source_I9C_script": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_susceptibility_relaxation_i9c.py",
+    "source_I9C_script_sha256": "1151666dcf53175803e238ad2b096eae581d992503e6a58ffeb425021db30a98"
+  },
+  "output_digest": "c0845065d5a2e43f56dce8d9d2674af28786ff0db38096f46c8425098125daee",
+  "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+  "relaxed": {
+    "derived_S": 0.6265625,
+    "history_identity": "3266a276651a0ed8a0ff06e62ef9b3f5cca5b850a258be2db77cb32871f6ce5d",
+    "native_identity": {
+      "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+      "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+    }
+  }
+}

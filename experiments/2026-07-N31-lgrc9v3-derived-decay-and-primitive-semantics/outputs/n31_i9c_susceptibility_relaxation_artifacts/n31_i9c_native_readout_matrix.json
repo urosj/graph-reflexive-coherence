@@ -1,0 +1,547 @@
+{
+  "S_monotonic_decrease": true,
+  "artifact_kind": "n31_i9c_native_readout_matrix",
+  "artifact_schema_version": "n31_i9c_native_readout_matrix_v1",
+  "common_native_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+  "common_native_v1_identity": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+  "common_native_v2_identity": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+  "complete_native_state_mediation": false,
+  "complete_state_mediation_claimed": false,
+  "formed_to_relaxed_S_weakening": 0.2734375,
+  "formed_to_relaxed_g_effective_weakening": 0.16584822726517323,
+  "formed_to_relaxed_signed_flux_change": 0.028417626337679303,
+  "g_effective_monotonic_decrease": true,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "intervention_site": "registered_edge_1",
+  "load_bearing_mediator": "closure_S_applied_to_edge_1_conductance",
+  "mediation_strength": "bounded_partial_registered_edge_conductance",
+  "ordinary_LGRC_step_consumes_S": false,
+  "output_digest": "9a40ca3e5fd9e0246e320a794b7e41b35a24d6019742a7e415188c326b879c37",
+  "potential_solution_scope": "graph_level_native_kernel_computation",
+  "readout_authority": {
+    "potential_flux_computation": "native_GRC9V3_kernels",
+    "request": "experiment_harness",
+    "susceptibility_and_conductance_insertion": "candidate_C_closure"
+  },
+  "readout_kind": "native_potential_flux_diagnostic",
+  "rows": [
+    {
+      "S": 0.9,
+      "budget_after": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_before": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_unchanged": true,
+      "cleanup": {
+        "closure_conductance_not_left_for_unqualified_step": true,
+        "complete_changed_path_diff_after_cleanup": [],
+        "complete_snapshot_exact_after_cleanup": true,
+        "native_conductance_after_cleanup": 0.6065306597126334,
+        "native_identity_v1_exact_after_cleanup": true,
+        "native_identity_v2_exact_after_cleanup": true,
+        "original_native_conductance_restored": true,
+        "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "closure_identity": "c6089c7450ee361ed67459a7e8c73eb063caa2a3a1f731c428384fe9d3daed3a",
+      "coherence_after": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_before": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_transition_caused_by_readout": false,
+      "coherence_unchanged": true,
+      "g_effective": 0.5458775937413701,
+      "g_native": 0.6065306597126334,
+      "input_audit": {
+        "declared_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "prohibited_input_paths": [
+          "global_event_count",
+          "wall_clock",
+          "outcome_history",
+          "global_node_scan",
+          "semantic_route_labels",
+          "readout_result_feedback",
+          "unregistered_receipt_history"
+        ],
+        "prohibited_inputs_observed": [],
+        "unlisted_input_read_status": "none_observed"
+      },
+      "native_consumers": [
+        "pygrc.models.grc_9_v3_runtime.compute_potential",
+        "pygrc.models.grc_9_v3_runtime.compute_flux"
+      ],
+      "ordinary_LGRC_step_consumes_S": false,
+      "packet_amount_scaled_by_closure": false,
+      "packet_export_scheduled_by_closure": false,
+      "packet_transport_executed_during_readout": false,
+      "potential_by_node": {
+        "0": -1.6582900341776956,
+        "1": -1.2325344470740305,
+        "2": -0.9091755187482741
+      },
+      "potential_flux_computation_authority": "native_GRC9V3_kernels",
+      "pre_application_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "readout_digest": "d2863cec2eb3521a9c832bc37cf89b8bbf383192317274b33f49d1bb7739e5c5",
+      "readout_kind": "native_potential_flux_diagnostic",
+      "readout_request_authority": "experiment_harness",
+      "row_id": "formed_hold",
+      "scientific_readout_digest": "615d252489b039c276206b7d0a060b7689d481bbe40650ea4db96b9d77589bf1",
+      "signed_flux_on_registered_edge": 0.1765143937092521,
+      "state_mutating_native_transport_consequence_supported": false,
+      "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+      "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+    },
+    {
+      "S": 0.8,
+      "budget_after": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_before": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_unchanged": true,
+      "cleanup": {
+        "closure_conductance_not_left_for_unqualified_step": true,
+        "complete_changed_path_diff_after_cleanup": [],
+        "complete_snapshot_exact_after_cleanup": true,
+        "native_conductance_after_cleanup": 0.6065306597126334,
+        "native_identity_v1_exact_after_cleanup": true,
+        "native_identity_v2_exact_after_cleanup": true,
+        "original_native_conductance_restored": true,
+        "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "closure_identity": "f92ddd9520c6630b001c410e05c128ac3403a0a992189c640e74b5829eb22ab8",
+      "coherence_after": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_before": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_transition_caused_by_readout": false,
+      "coherence_unchanged": true,
+      "g_effective": 0.4852245277701068,
+      "g_native": 0.6065306597126334,
+      "input_audit": {
+        "declared_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "prohibited_input_paths": [
+          "global_event_count",
+          "wall_clock",
+          "outcome_history",
+          "global_node_scan",
+          "semantic_route_labels",
+          "readout_result_feedback",
+          "unregistered_receipt_history"
+        ],
+        "prohibited_inputs_observed": [],
+        "unlisted_input_read_status": "none_observed"
+      },
+      "native_consumers": [
+        "pygrc.models.grc_9_v3_runtime.compute_potential",
+        "pygrc.models.grc_9_v3_runtime.compute_flux"
+      ],
+      "ordinary_LGRC_step_consumes_S": false,
+      "packet_amount_scaled_by_closure": false,
+      "packet_export_scheduled_by_closure": false,
+      "packet_transport_executed_during_readout": false,
+      "potential_by_node": {
+        "0": -1.6582900341776956,
+        "1": -1.2446650602682832,
+        "2": -0.8970449055540214
+      },
+      "potential_flux_computation_authority": "native_GRC9V3_kernels",
+      "pre_application_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "readout_digest": "4895683659845443702193db234e68e346ce1eec7bf1680b31a31acaee3dce6c",
+      "readout_kind": "native_potential_flux_diagnostic",
+      "readout_request_authority": "experiment_harness",
+      "row_id": "relaxation_step_1",
+      "scientific_readout_digest": "5f40137e8351f2771fd8802269a5ae9de046bbd979d5f9f9cb4041a5c329cdef",
+      "signed_flux_on_registered_edge": 0.16867382541459913,
+      "state_mutating_native_transport_consequence_supported": false,
+      "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+      "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+    },
+    {
+      "S": 0.7250000000000001,
+      "budget_after": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_before": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_unchanged": true,
+      "cleanup": {
+        "closure_conductance_not_left_for_unqualified_step": true,
+        "complete_changed_path_diff_after_cleanup": [],
+        "complete_snapshot_exact_after_cleanup": true,
+        "native_conductance_after_cleanup": 0.6065306597126334,
+        "native_identity_v1_exact_after_cleanup": true,
+        "native_identity_v2_exact_after_cleanup": true,
+        "original_native_conductance_restored": true,
+        "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "closure_identity": "4e7d7f4786fac28d5c9a12253d9f4aec74f88a74df83adf15c0b1ccaea9e7a76",
+      "coherence_after": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_before": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_transition_caused_by_readout": false,
+      "coherence_unchanged": true,
+      "g_effective": 0.43973472829165927,
+      "g_native": 0.6065306597126334,
+      "input_audit": {
+        "declared_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "prohibited_input_paths": [
+          "global_event_count",
+          "wall_clock",
+          "outcome_history",
+          "global_node_scan",
+          "semantic_route_labels",
+          "readout_result_feedback",
+          "unregistered_receipt_history"
+        ],
+        "prohibited_inputs_observed": [],
+        "unlisted_input_read_status": "none_observed"
+      },
+      "native_consumers": [
+        "pygrc.models.grc_9_v3_runtime.compute_potential",
+        "pygrc.models.grc_9_v3_runtime.compute_flux"
+      ],
+      "ordinary_LGRC_step_consumes_S": false,
+      "packet_amount_scaled_by_closure": false,
+      "packet_export_scheduled_by_closure": false,
+      "packet_transport_executed_during_readout": false,
+      "potential_by_node": {
+        "0": -1.6582900341776956,
+        "1": -1.2537630201639725,
+        "2": -0.8879469456583319
+      },
+      "potential_flux_computation_authority": "native_GRC9V3_kernels",
+      "pre_application_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "readout_digest": "73bfc0d220de1e499b2bed70f48d3fff12d0d030fe50540d2d82525ae3aa8f15",
+      "readout_kind": "native_potential_flux_diagnostic",
+      "readout_request_authority": "experiment_harness",
+      "row_id": "relaxation_step_2",
+      "scientific_readout_digest": "e62763666de466b0b937abc6d042d099b157a29f30c83cb479f74d8559ba06f0",
+      "signed_flux_on_registered_edge": 0.16086203212745925,
+      "state_mutating_native_transport_consequence_supported": false,
+      "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+      "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+    },
+    {
+      "S": 0.6687500000000001,
+      "budget_after": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_before": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_unchanged": true,
+      "cleanup": {
+        "closure_conductance_not_left_for_unqualified_step": true,
+        "complete_changed_path_diff_after_cleanup": [],
+        "complete_snapshot_exact_after_cleanup": true,
+        "native_conductance_after_cleanup": 0.6065306597126334,
+        "native_identity_v1_exact_after_cleanup": true,
+        "native_identity_v2_exact_after_cleanup": true,
+        "original_native_conductance_restored": true,
+        "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "closure_identity": "222c33b3107c6f2d44f6663259df0545de9d257555da6f04855b3f89cc43c585",
+      "coherence_after": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_before": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_transition_caused_by_readout": false,
+      "coherence_unchanged": true,
+      "g_effective": 0.40561737868282366,
+      "g_native": 0.6065306597126334,
+      "input_audit": {
+        "declared_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "prohibited_input_paths": [
+          "global_event_count",
+          "wall_clock",
+          "outcome_history",
+          "global_node_scan",
+          "semantic_route_labels",
+          "readout_result_feedback",
+          "unregistered_receipt_history"
+        ],
+        "prohibited_inputs_observed": [],
+        "unlisted_input_read_status": "none_observed"
+      },
+      "native_consumers": [
+        "pygrc.models.grc_9_v3_runtime.compute_potential",
+        "pygrc.models.grc_9_v3_runtime.compute_flux"
+      ],
+      "ordinary_LGRC_step_consumes_S": false,
+      "packet_amount_scaled_by_closure": false,
+      "packet_export_scheduled_by_closure": false,
+      "packet_transport_executed_during_readout": false,
+      "potential_by_node": {
+        "0": -1.6582900341776956,
+        "1": -1.2605864900857398,
+        "2": -0.8811234757365648
+      },
+      "potential_flux_computation_authority": "native_GRC9V3_kernels",
+      "pre_application_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "readout_digest": "7e9448d857cfeb06664fc3e81685c17e1897569bfb592c609b68172a475659fc",
+      "readout_kind": "native_potential_flux_diagnostic",
+      "readout_request_authority": "experiment_harness",
+      "row_id": "relaxation_step_3",
+      "scientific_readout_digest": "2fa479cd65a1e804ce447694ca04391fa1437f8be5d1012c41a7ffe69d55d6bd",
+      "signed_flux_on_registered_edge": 0.15391679318739504,
+      "state_mutating_native_transport_consequence_supported": false,
+      "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+      "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+    },
+    {
+      "S": 0.6265625,
+      "budget_after": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_before": {
+        "budget_error": -2.220446049250313e-16,
+        "conserved_budget_total": 1.9,
+        "in_flight_packet_total": 0.0,
+        "node_coherence_total": 1.9
+      },
+      "budget_unchanged": true,
+      "cleanup": {
+        "closure_conductance_not_left_for_unqualified_step": true,
+        "complete_changed_path_diff_after_cleanup": [],
+        "complete_snapshot_exact_after_cleanup": true,
+        "native_conductance_after_cleanup": 0.6065306597126334,
+        "native_identity_v1_exact_after_cleanup": true,
+        "native_identity_v2_exact_after_cleanup": true,
+        "original_native_conductance_restored": true,
+        "post_cleanup_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "post_cleanup_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "pre_application_native_identity_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "pre_application_native_identity_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "closure_identity": "6c0f03be14c18c240834b44c06e06e45d4a0977e2d4efd231313811d87da5a43",
+      "coherence_after": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_before": {
+        "0": 0.9,
+        "1": 0.6,
+        "2": 0.4
+      },
+      "coherence_transition_caused_by_readout": false,
+      "coherence_unchanged": true,
+      "g_effective": 0.3800293664761969,
+      "g_native": 0.6065306597126334,
+      "input_audit": {
+        "declared_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "exact_allowlist_match": true,
+        "observed_input_paths": [
+          "closure.complete_validated_state",
+          "closure.S_by_edge.1",
+          "policy.registered_edge_id",
+          "native.base_conductance.registered_edge",
+          "native.constitutive_semantic_modes",
+          "native.evolution_parameters",
+          "pipeline.after_compute_base_conductance_before_compute_potential"
+        ],
+        "prohibited_input_paths": [
+          "global_event_count",
+          "wall_clock",
+          "outcome_history",
+          "global_node_scan",
+          "semantic_route_labels",
+          "readout_result_feedback",
+          "unregistered_receipt_history"
+        ],
+        "prohibited_inputs_observed": [],
+        "unlisted_input_read_status": "none_observed"
+      },
+      "native_consumers": [
+        "pygrc.models.grc_9_v3_runtime.compute_potential",
+        "pygrc.models.grc_9_v3_runtime.compute_flux"
+      ],
+      "ordinary_LGRC_step_consumes_S": false,
+      "packet_amount_scaled_by_closure": false,
+      "packet_export_scheduled_by_closure": false,
+      "packet_transport_executed_during_readout": false,
+      "potential_by_node": {
+        "0": -1.6582900341776956,
+        "1": -1.265704092527065,
+        "2": -0.8760058732952394
+      },
+      "potential_flux_computation_authority": "native_GRC9V3_kernels",
+      "pre_application_native_identity": {
+        "v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+      },
+      "readout_digest": "1045a834b09ceca27c39c19e83d629ae1825617135820e18c39ef22d0f793bb5",
+      "readout_kind": "native_potential_flux_diagnostic",
+      "readout_request_authority": "experiment_harness",
+      "row_id": "relaxation_step_4",
+      "scientific_readout_digest": "fc03e9561618542577db6da5c215b95f8e5d7a103ad86e1b65537cfc26ed67b8",
+      "signed_flux_on_registered_edge": 0.1480967673715728,
+      "state_mutating_native_transport_consequence_supported": false,
+      "susceptibility_and_conductance_insertion_authority": "candidate_C_closure",
+      "topology_digest": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+    }
+  ],
+  "same_complete_native_state_different_S_changes_registered_readout": true,
+  "signed_flux_monotonic_decrease": true,
+  "state_mutating_native_transport_consequence_supported": false
+}

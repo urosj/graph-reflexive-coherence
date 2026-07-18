@@ -1,0 +1,90 @@
+{
+  "all_mismatch_controls_failed_closed": true,
+  "artifact_kind": "n31_i9b_composed_transaction_mismatch_controls",
+  "artifact_schema_version": "n31_i9b_composed_transaction_mismatch_controls_v1",
+  "control_scope": "closure_receipt_and_native_export_packet_reconstructible_transaction",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "matched_positive_transaction_admitted": true,
+  "output_digest": "c31e5939f2df6e8fa929728c4ef8b7121bc271361ac0e4632fe2f8c2bfe02dba",
+  "rows": [
+    {
+      "actual_valid": true,
+      "expectation_matched": true,
+      "expected_valid": true,
+      "failed_closed": true,
+      "scenario_id": "matched_positive_transaction",
+      "validation": {
+        "packet_record_count": 1,
+        "receipt_consumed": true,
+        "receipt_q_emit": 0.04,
+        "rejection_reasons": [],
+        "valid": true
+      }
+    },
+    {
+      "actual_valid": false,
+      "expectation_matched": true,
+      "expected_valid": false,
+      "failed_closed": true,
+      "scenario_id": "consumed_receipt_export_packet_absent",
+      "validation": {
+        "packet_record_count": 0,
+        "receipt_consumed": true,
+        "receipt_q_emit": 0.04,
+        "rejection_reasons": [
+          "export_packet_count_mismatch"
+        ],
+        "valid": false
+      }
+    },
+    {
+      "actual_valid": false,
+      "expectation_matched": true,
+      "expected_valid": false,
+      "failed_closed": true,
+      "scenario_id": "unconsumed_receipt_export_packet_present",
+      "validation": {
+        "packet_record_count": 1,
+        "receipt_consumed": false,
+        "receipt_q_emit": 0.04,
+        "rejection_reasons": [
+          "unconsumed_receipt_has_export_state",
+          "export_packet_count_mismatch"
+        ],
+        "valid": false
+      }
+    },
+    {
+      "actual_valid": false,
+      "expectation_matched": true,
+      "expected_valid": false,
+      "failed_closed": true,
+      "scenario_id": "receipt_packet_amount_mismatch",
+      "validation": {
+        "packet_record_count": 1,
+        "receipt_consumed": true,
+        "receipt_q_emit": 0.04,
+        "rejection_reasons": [
+          "amount_mismatch"
+        ],
+        "valid": false
+      }
+    },
+    {
+      "actual_valid": false,
+      "expectation_matched": true,
+      "expected_valid": false,
+      "failed_closed": true,
+      "scenario_id": "receipt_packet_destination_mismatch",
+      "validation": {
+        "packet_record_count": 1,
+        "receipt_consumed": true,
+        "receipt_q_emit": 0.04,
+        "rejection_reasons": [
+          "target_node_id_mismatch"
+        ],
+        "valid": false
+      }
+    }
+  ]
+}

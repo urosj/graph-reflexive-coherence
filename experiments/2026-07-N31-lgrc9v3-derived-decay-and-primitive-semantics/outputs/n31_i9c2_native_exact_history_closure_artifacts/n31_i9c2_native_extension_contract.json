@@ -1,0 +1,188 @@
+{
+  "artifact_kind": "n31_i9c2_native_extension_contract",
+  "artifact_schema_version": "n31_i9c2_native_extension_contract_v1",
+  "candidate_id": "C_native_exact_history_constitutive_closure",
+  "claim_boundary": {
+    "DR1_relation_formation_supported": true,
+    "DR2_relation_restoration_supported": true,
+    "DR3_native_internal_weakening_supported": false,
+    "DR3_producer_mediated_weakening_supported": true,
+    "DR4_ordinary_native_transport_supported": false,
+    "DR4_producer_mediated_transport_supported": true,
+    "RCAE_admission_status": "blocked_until_DR5_and_reusable_provider_contract",
+    "current_state_D0a_supported": false,
+    "existing_native_support": false,
+    "native_D0a_ceiling": "DR2",
+    "native_candidate_extension_supported": false,
+    "native_runtime_lane_rung": "DR0",
+    "ordinary_D0_R_bridge_tested": false,
+    "producer_extension_lane_ceiling": "DR4",
+    "producer_extension_lane_rung": "provisional_DR4_pending_I10",
+    "relation_carrier_lane_rung": "DR2"
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "native_architecture_options": {
+    "either_architecture_may_be_native": true,
+    "integrated_native_step": "step_derives_relation_computes_geometry_admits_and_executes_transport",
+    "library_owned_native_producer_plus_executor": "canonical_library_producer_derives_relation_computes_geometry_and_schedules_work_then_step_executes_it",
+    "native_requirements": [
+      "library_owned_provider",
+      "native_spec_contract",
+      "canonical_runtime_invocation",
+      "no_experiment_harness_required",
+      "complete_provider_identity_restored",
+      "feature_default_off",
+      "derived_relation_has_no_external_authority",
+      "native_conservative_executor"
+    ]
+  },
+  "ordinary_runtime_requirements": {
+    "changed_packet_transition_required": true,
+    "experiment_wrapper_conductance_write_required": false,
+    "feature_default_off": true,
+    "manual_cleanup_required": false,
+    "node_plus_packet_coherence_conserved": true,
+    "ordinary_step_consumes_history_derived_geometry": true,
+    "reflexive_second_derivation_required": true,
+    "second_complete_transport_cycle_required": true
+  },
+  "output_digest": "bc9c894a3710a6df28eee8a9bcb771ecad3dc470940511a6d0b5ab4d6b64acdb",
+  "relation": {
+    "S_semantics": {
+      "S_floor": 0.5,
+      "S_floor_effect": "candidate_mode_conductance_is_floor_times_native",
+      "S_max": 1.0,
+      "S_max_effect": "unattenuated_native_conductance",
+      "above_native_enhancement": false
+    },
+    "allowed_causal_inputs": [
+      "transferred_coherence_amount",
+      "physical_edge_and_orientation",
+      "committed_event_kind",
+      "causal_order_or_local_proper_time_distance",
+      "registered_route_support"
+    ],
+    "broader_J_C_equivalence_established": false,
+    "executed_generalized_relation": {
+      "S_floor": 0.5,
+      "S_max": 1.0,
+      "alpha": 1.0,
+      "causal_fields": [
+        "committed_event_kind",
+        "transferred_coherence_amount",
+        "physical_edge",
+        "physical_orientation",
+        "causal_sequence_order",
+        "registered_route_support"
+      ],
+      "causal_order_source": "native_packet_processing_log_sequence",
+      "external_history_archive_allowed": false,
+      "fixture_specific_match_fields": [],
+      "formation_rule": "every_committed_arrival_on_registered_edge_in_registered_orientation",
+      "hard_coded_fixture_node_numbers": false,
+      "identifier_fields_used_for_duplicate_integrity_only": [
+        "event_id",
+        "packet_id"
+      ],
+      "independent_S_state_allowed": false,
+      "noncausal_fields": [
+        "event_id",
+        "packet_id",
+        "lineage_label",
+        "absolute_scheduler_index",
+        "absolute_event_time",
+        "topology_semantic_label"
+      ],
+      "progression_rule": "later_committed_arrivals_on_physical_edges_incident_to_route_source_excluding_registered_susceptibility_edge",
+      "registered_node_edge_ids_are_addressing_not_semantics": true,
+      "registered_susceptibility_route": {
+        "edge_id": 1,
+        "source_node_id": 1,
+        "target_node_id": 2
+      },
+      "relation": "S_e=S_floor+clip(sum(alpha*q_r*rho^N_later_local_progression),0,S_max-S_floor)",
+      "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+      "relation_schema": "n31_C2_general_physical_history_susceptibility_v1",
+      "rho": 0.75
+    },
+    "forbidden_causal_inputs": [
+      "event_id",
+      "packet_id",
+      "lineage_string_or_semantic_label",
+      "absolute_scheduler_index",
+      "hard_coded_timestamp",
+      "fixture_node_number"
+    ],
+    "form": "S_e(t)=S_floor+clip(sum(alpha*q_r*rho^delta_tau),0,S_max-S_floor)",
+    "history_domain": "admitted_coherence_current_history_for_edge_or_registered_local_route_support",
+    "packetization_invariance_status": "not_run_blocks_native_admission",
+    "theory_correspondence": "discrete_coherence_current_history_functional",
+    "weakening_class": "activity_indexed_local_susceptibility_relaxation"
+  },
+  "required_native_loop": [
+    "native_discrete_coherence_current_history",
+    "native_exact_derivation_of_S_e",
+    "native_effective_conductance",
+    "native_potential_and_flux",
+    "native_packet_admission_and_transport",
+    "conservative_C_update",
+    "packet_current_history_update",
+    "next_S_e_derived_from_changed_history"
+  ],
+  "rung_contract": {
+    "DR0": "contract_or_unexecuted_candidate_only",
+    "DR1": "native_history_derived_susceptibility_forms",
+    "DR2": "native_restoration_preserves_exact_derivability",
+    "DR3": "native_internal_progression_weakens_relation",
+    "DR4": "ordinary_native_transport_causally_depends_on_relation",
+    "DR5": "later_replay_invariants_controls_and_mismatch_refusal",
+    "DR6": "later_reusable_generalized_native_contract"
+  },
+  "stability_contract": {
+    "required": [
+      "bounded_or_declared_oscillatory_repeated_route_use",
+      "S_never_exceeds_S_max",
+      "one_arrival_adds_exactly_one_contribution",
+      "departure_arrival_not_double_counted",
+      "no_unbounded_recursive_event_cascade",
+      "saturation_behavior_explicit",
+      "progression_attenuation_exact_for_old_and_new_contributions",
+      "long_run_coherence_conserved_and_nonnegative"
+    ],
+    "status": "not_run_blocks_native_admission"
+  },
+  "state_authority": {
+    "approximate_truncated_cache_may_be_called_exact": false,
+    "authoritative_state": "serialized_native_C_JC_history",
+    "cache_history_mismatch_action": "fail_closed",
+    "cache_identity_must_include": [
+      "relation_parameters",
+      "topology_version",
+      "history_identity"
+    ],
+    "cache_independent_write_authority_allowed": false,
+    "exact_cache_allowed": true,
+    "exact_recomputation_required": true,
+    "full_history_recomputation_must_equal_incremental_cache": true,
+    "history_pruning_requires_declared_error_or_cutoff_contract": true,
+    "injected_cache_can_change_result": false,
+    "stored_S_allowed": false
+  },
+  "topology_lifecycle_contract": {
+    "admissible_policy_families": [
+      "frozen_topology_invalidates_relation",
+      "versioned_route_identity",
+      "explicit_registered_migration"
+    ],
+    "events_requiring_policy": [
+      "registered_edge_deleted",
+      "registered_edge_recreated",
+      "route_orientation_reversed",
+      "parallel_edge_replaces_original",
+      "route_source_changes",
+      "topology_version_changes"
+    ],
+    "silent_identifier_reuse_allowed": false,
+    "status": "unresolved_blocks_reusable_native_contract"
+  }
+}

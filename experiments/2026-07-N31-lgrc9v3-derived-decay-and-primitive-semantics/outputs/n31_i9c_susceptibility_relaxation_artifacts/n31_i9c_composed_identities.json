@@ -1,0 +1,30 @@
+{
+  "artifact_kind": "n31_i9c_composed_candidate_identities",
+  "artifact_schema_version": "n31_i9c_composed_candidate_identities_v1",
+  "formed": {
+    "closure_output_digest": "c6089c7450ee361ed67459a7e8c73eb063caa2a3a1f731c428384fe9d3daed3a",
+    "composed_identity": "184c4c8ed59c96d90a6ce887da48ef37cf10fefd37d3adcb14f5abecd8cc3b35",
+    "native_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+    "native_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "implementation_bindings": {
+    "closure_script_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_susceptibility_relaxation_i9c.py",
+    "closure_script_sha256": "1151666dcf53175803e238ad2b096eae581d992503e6a58ffeb425021db30a98",
+    "grc9v3_kernel_path": "src/pygrc/models/grc_9_v3_runtime.py",
+    "grc9v3_kernel_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+    "lgrc9v3_runtime_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+    "lgrc9v3_runtime_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+    "runtime_revision": "33951a8eebcd4d03e32581aa189eaf81c71bb8f6"
+  },
+  "native_identity_same_closure_identity_different": true,
+  "output_digest": "adf87894d4a93f5928d483abb2769d8296ce083b2e63644cdb7c4c1f229adff0",
+  "policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+  "relaxed": {
+    "closure_output_digest": "6c0f03be14c18c240834b44c06e06e45d4a0977e2d4efd231313811d87da5a43",
+    "composed_identity": "4cd70345a6ee86df7183bedaa1a23415c8d1de35a79d194478cfbe98923dfca9",
+    "native_v1": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+    "native_v2": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5"
+  },
+  "topology_identity": "56b54d0bdb60ccfb0b4e95b6fb5ef3eb5e3a1f558aeebc7b90c1fdd4bbe87d4c"
+}

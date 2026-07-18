@@ -1,0 +1,275 @@
+{
+  "acceptance_state": "accepted_source_current_representation_conformance_not_decay_evidence",
+  "artifact_kind": "D0a_spatial_projection_conformance_fixture",
+  "artifact_schema_version": "n31_i4_projection_conformance_fixture_v1",
+  "checks": [
+    {
+      "check_id": "identity_roundtrip_exact",
+      "detail": "7454fabe044c82382403283a9dd4a9193ac4768e3e876e0b33847918e8474062",
+      "passed": true
+    },
+    {
+      "check_id": "reconstruction_error_within_bound",
+      "detail": {
+        "bound": 1e-12,
+        "observed": 0.0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "same_mass_different_organization_contrast",
+      "detail": "same route mass and selected node scalar; different complete C distribution",
+      "passed": true
+    },
+    {
+      "check_id": "surgical_clamp_invariants_preserved",
+      "detail": {
+        "all_node_coherence_total_matched": true,
+        "allowed_as_autonomous_weakening_evidence": false,
+        "allowed_as_matched_intervention_fixture": true,
+        "allowed_as_native_formation_evidence": false,
+        "allowed_as_representation_separability_evidence": true,
+        "causal_interpretation": "representation_separability_only; future causal use requires native trajectory formation or explicit dependent-field recomputation, otherwise the clamp remains a narrow intervention",
+        "conserved_budget_total_matched": true,
+        "constitutive_dependent_fields_recomputed_after_clamp": false,
+        "contrast_all_node_coherence_nonnegative": true,
+        "contrast_all_node_coherence_total": 2.75,
+        "contrast_conserved_budget_total": 3.0,
+        "contrast_packet_ledger_budget_error": 0.0,
+        "intervention_class": "surgical_matched_state_clamp",
+        "packet_and_queue_context_matched": true,
+        "public_surface": "LGRC9V3.set_state",
+        "source_all_node_coherence_nonnegative": true,
+        "source_all_node_coherence_total": 2.75,
+        "source_conserved_budget_total": 3.0,
+        "source_packet_ledger_budget_error": 0.0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "projection_has_no_independent_state",
+      "detail": "n31_i4_registered_route_coordinate_projection_v1",
+      "passed": true
+    },
+    {
+      "check_id": "registered_boundary_flux_scope_is_bounded",
+      "detail": 0.03125,
+      "passed": true
+    }
+  ],
+  "derived_report_only": false,
+  "experiment": "N31",
+  "failed_checks": [],
+  "fixture_id": "n31_i4_four_node_route_with_internal_in_flight_packet_v1",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "intervention_admissibility_receipt": {
+    "all_node_coherence_total_matched": true,
+    "allowed_as_autonomous_weakening_evidence": false,
+    "allowed_as_matched_intervention_fixture": true,
+    "allowed_as_native_formation_evidence": false,
+    "allowed_as_representation_separability_evidence": true,
+    "causal_interpretation": "representation_separability_only; future causal use requires native trajectory formation or explicit dependent-field recomputation, otherwise the clamp remains a narrow intervention",
+    "conserved_budget_total_matched": true,
+    "constitutive_dependent_fields_recomputed_after_clamp": false,
+    "contrast_all_node_coherence_nonnegative": true,
+    "contrast_all_node_coherence_total": 2.75,
+    "contrast_conserved_budget_total": 3.0,
+    "contrast_packet_ledger_budget_error": 0.0,
+    "intervention_class": "surgical_matched_state_clamp",
+    "packet_and_queue_context_matched": true,
+    "public_surface": "LGRC9V3.set_state",
+    "source_all_node_coherence_nonnegative": true,
+    "source_all_node_coherence_total": 2.75,
+    "source_conserved_budget_total": 3.0,
+    "source_packet_ledger_budget_error": 0.0
+  },
+  "iteration": "4",
+  "mass_organization_separation_receipt": {
+    "boundary_transfer_matched": true,
+    "causal_mediation_tested": false,
+    "complete_identity_differs": true,
+    "contrast_boundary_transfer_digest": "ba67a92df67b145178be8cafed86793019cfaaeb1459ab19ae09a4971421f315",
+    "contrast_organization_digest": "92331a5efdedc7e88aec33117f7f0e040eda589fdc23ea42cfe7e46f63916c6a",
+    "contrast_route_mass": 2.5,
+    "contrast_selected_node_scalar": 0.75,
+    "exact_context_matched": true,
+    "paired_intervention_changed_native_state_paths": [
+      "base_state.nodes[0].coherence",
+      "base_state.nodes[2].coherence"
+    ],
+    "paired_intervention_held_native_state_paths_equal": "all_other_lgrc9v3_restoration_identity_v1_fields",
+    "paired_native_state_intervention_applied": true,
+    "paired_native_state_intervention_surface": "LGRC9V3.set_state",
+    "route_mass_matched": true,
+    "route_organization_differs": true,
+    "selected_node_scalar_id": 1,
+    "selected_node_scalar_matched": true,
+    "source_boundary_transfer_digest": "ba67a92df67b145178be8cafed86793019cfaaeb1459ab19ae09a4971421f315",
+    "source_organization_digest": "6e34fe8f2d0401f3034a09d182824d0e39c7e5eef70f91623d625b85678c686d",
+    "source_route_mass": 2.5,
+    "source_selected_node_scalar": 0.75
+  },
+  "output_digest": "c8bb5c619064f3b628e96e858941d5b56174d07c2fbe182d26ee5e0cf7500eb9",
+  "positive_decay_evidence_admissible": false,
+  "projection_contract": {
+    "anchor_node_id": 2,
+    "basis": "canonical_registered_route_pairwise_C_and_oriented_flux_coordinates",
+    "boundary_flux_coordinate_map": [
+      {
+        "channel": "boundary_transfer",
+        "coordinate_id": "flux_uv[2]",
+        "edge_id": 2,
+        "identity_path": "embedded_grc9v3_state.state.port_edges.2.flux_uv",
+        "node_u": 2,
+        "node_v": 3,
+        "orientation": "node_u_to_node_v_positive"
+      }
+    ],
+    "coherence_coordinate_map": [
+      {
+        "anchor_node_id": 2,
+        "coordinate_id": "C[0]-C[2]",
+        "identity_path": "embedded_grc9v3_state.state.nodes.0.coherence",
+        "node_id": 0,
+        "orientation": "node_minus_anchor"
+      },
+      {
+        "anchor_node_id": 2,
+        "coordinate_id": "C[1]-C[2]",
+        "identity_path": "embedded_grc9v3_state.state.nodes.1.coherence",
+        "node_id": 1,
+        "orientation": "node_minus_anchor"
+      }
+    ],
+    "context_excluded_state_paths": [
+      "embedded_grc9v3_state.state.nodes.0.coherence",
+      "embedded_grc9v3_state.state.nodes.1.coherence",
+      "embedded_grc9v3_state.state.port_edges.0.flux_uv",
+      "embedded_grc9v3_state.state.port_edges.1.flux_uv",
+      "embedded_grc9v3_state.state.port_edges.2.flux_uv"
+    ],
+    "context_reinsertion_paths": [
+      "embedded_grc9v3_state.state.nodes.0.coherence",
+      "embedded_grc9v3_state.state.nodes.1.coherence",
+      "embedded_grc9v3_state.state.port_edges.0.flux_uv",
+      "embedded_grc9v3_state.state.port_edges.1.flux_uv",
+      "embedded_grc9v3_state.state.port_edges.2.flux_uv"
+    ],
+    "coordinate_orientation": "node_minus_anchor_and_native_edge_u_to_v_positive",
+    "decomposition_operator": "factor route C into total node mass plus anchor-relative coordinates; retain internal signed flux as spatial organization; separate boundary signed flux as transfer; retain every other restoration-identity field in an exact matched context channel",
+    "internal_flux_coordinate_map": [
+      {
+        "channel": "spatial_organization",
+        "coordinate_id": "flux_uv[0]",
+        "edge_id": 0,
+        "identity_path": "embedded_grc9v3_state.state.port_edges.0.flux_uv",
+        "node_u": 0,
+        "node_v": 1,
+        "orientation": "node_u_to_node_v_positive"
+      },
+      {
+        "channel": "spatial_organization",
+        "coordinate_id": "flux_uv[1]",
+        "edge_id": 1,
+        "identity_path": "embedded_grc9v3_state.state.port_edges.1.flux_uv",
+        "node_u": 1,
+        "node_v": 2,
+        "orientation": "node_u_to_node_v_positive"
+      }
+    ],
+    "intervention_semantics": "paired full-state reconstruction may change only route C organization coordinates while route mass and exact context remain matched; this is a representation conformance intervention, not a causal decay result",
+    "no_independent_causal_state": true,
+    "observed_reconstruction_error": 0.0,
+    "ordered_route_node_ids": [
+      0,
+      1,
+      2
+    ],
+    "overlap_or_orthogonality_policy": "mass and pairwise C coordinates are algebraically independent; internal flux, boundary transfer, and other continuation state remain separate named channels",
+    "projection_contract_id": "n31_i4_registered_route_coordinate_projection_v1",
+    "projection_fed_back_into_runtime": false,
+    "projection_persisted_as_runtime_state": false,
+    "recomposition_operator": "solve anchor C from total node mass and pairwise coordinates; restore oriented flux coordinates; reinsert into exact context",
+    "reconstruction_error_bound": 1e-12,
+    "temporal_support": "single_source_current_checkpoint_no_history_window"
+  },
+  "projection_receipt": {
+    "boundary_transfer_channel": {
+      "oriented_boundary_flux_coordinates": {
+        "2": 0.03125
+      },
+      "quantity_semantics": "instantaneous_native_edge_flux_not_integrated_transfer"
+    },
+    "exact_context_channel_digest": "36fcc845730942d56e2192bb5d0036f591fe0eab0ab6dbca7868f82c3991a51b",
+    "identity_digest_equal_after_roundtrip": true,
+    "mass_channel": {
+      "in_flight_boundary_treatment": "count_packets_with_source_and_target_inside_support_once",
+      "internal_in_flight_packet_mass": 0.25,
+      "node_coherence_mass": 2.25,
+      "registered_route_mass": 2.5
+    },
+    "projection_context_digest": "36fcc845730942d56e2192bb5d0036f591fe0eab0ab6dbca7868f82c3991a51b",
+    "reconstructed_identity_digest": "7454fabe044c82382403283a9dd4a9193ac4768e3e876e0b33847918e8474062",
+    "reconstruction_within_bound": true,
+    "source_identity_digest": "7454fabe044c82382403283a9dd4a9193ac4768e3e876e0b33847918e8474062",
+    "spatial_organization_channel": {
+      "oriented_internal_flux_coordinates": {
+        "0": 0.125,
+        "1": -0.0625
+      },
+      "pairwise_coherence_coordinates_relative_to_anchor": {
+        "0": 0.5,
+        "1": 0.25
+      }
+    }
+  },
+  "registered_route": {
+    "boundary_edge_ids": [
+      2
+    ],
+    "boundary_exactly_enumerated": true,
+    "boundary_orientation": "inside_to_outside_positive",
+    "instantaneous_net_flux_exactly_measurable": true,
+    "internal_edge_ids": [
+      0,
+      1
+    ],
+    "net_outward_boundary_flux_quantity_semantics": "instantaneous_signed_native_edge_flux_not_time_integrated_export",
+    "net_outward_boundary_flux_rate": 0.03125,
+    "support_exactly_enumerated": true,
+    "support_node_ids": [
+      0,
+      1,
+      2
+    ],
+    "time_integrated_boundary_transfer_established": false
+  },
+  "runtime_execution": {
+    "event_queue_record_count": 1,
+    "forming_packet_departure_processed": true,
+    "internal_in_flight_packet_amount": 0.25,
+    "internal_in_flight_packet_count": 1,
+    "model_family": "LGRC9V3",
+    "public_operations": [
+      "LGRC9V3.from_state",
+      "LGRC9V3.schedule_packet_departure",
+      "LGRC9V3.run_event_queue",
+      "LGRC9V3.get_state",
+      "LGRC9V3.set_state",
+      "LGRC9V3.snapshot",
+      "lgrc9v3_restoration_identity_v1"
+    ]
+  },
+  "source_current_runtime_artifact": true,
+  "source_identity": {
+    "future_reset_sensitive_rows_require_v2": true,
+    "reset_sensitive_identity_digest": "a0fccc72ba23f74f107d4bf0ddbbe365d004e36d4c14b1a9b83db2384db7ddfe",
+    "reset_sensitive_identity_schema": "lgrc9v3_restoration_identity_v2",
+    "reset_sensitive_operation_performed": false,
+    "restoration_identity_digest": "7454fabe044c82382403283a9dd4a9193ac4768e3e876e0b33847918e8474062",
+    "restoration_identity_schema": "lgrc9v3_restoration_identity_v1",
+    "restoration_identity_scope": "current_scientific_state_only",
+    "v1_use_reason": "I4 projects current state and does not invoke reset or claim reset equivalence"
+  },
+  "status": "passed"
+}

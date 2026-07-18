@@ -88,6 +88,17 @@ at `version = "0.1"`.
   it does not establish communication, coordination, cooperation, agency, or
   native ecology. See the
   [N30 closeout](experiments/2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md).
+- **N31: derived decay semantics and RCAE return.** Closed the first full
+  ecology-demand-to-graph-return cycle at `N31-C6`. N31 separates native D0a
+  formation/persistence without autonomous weakening, fading derived
+  observables, release attenuation, conservative coherence redistribution, and
+  activity-indexed susceptibility instead of treating them as one decay law.
+  B-R and C.2 retain executed producer-mediated `DR5` while receiving separate
+  versioned `DR6_contract_only` provider contracts. Those contracts are
+  eligible for explicit RCAE re-admission, but N31 evidence is not ecology-side
+  evidence, cross-context reuse remains unsupported, and any combined provider
+  is a new composition candidate. See the
+  [N31 closeout](experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/reports/n31_closeout_and_rcae_return_i12.md).
 
 ### Project Structure And Documentation
 

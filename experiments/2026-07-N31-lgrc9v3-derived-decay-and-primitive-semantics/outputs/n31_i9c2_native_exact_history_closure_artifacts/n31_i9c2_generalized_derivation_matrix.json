@@ -1,0 +1,128 @@
+{
+  "artifact_kind": "n31_i9c2_generalized_derivation_matrix",
+  "artifact_schema_version": "n31_i9c2_generalized_derivation_matrix_v1",
+  "formation_supported": true,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "native_autonomous_progression_supported": false,
+  "other_incident_activity_relaxation": true,
+  "output_digest": "ceb403bd1ef9f80f7e344c1085802412911a9c71f5a09859fc677cb84c6f1976",
+  "packetization_invariance": {
+    "comparison_required": [
+      "one_0.10_progression_packet",
+      "two_0.05_progression_packets"
+    ],
+    "current_distance_measure": "qualifying_committed_arrival_count",
+    "decision_required": "equal_derived_S_or_event_granularity_declared_physically_load_bearing",
+    "matched_integrated_coherence_required": true,
+    "matched_physical_interval_required": true,
+    "preferred_future_measure": "integrated_local_activity_or_registered_proper_time_distance",
+    "status": "not_run_blocks_native_admission"
+  },
+  "quiescence_decay": false,
+  "relation": {
+    "S_floor": 0.5,
+    "S_max": 1.0,
+    "alpha": 1.0,
+    "causal_fields": [
+      "committed_event_kind",
+      "transferred_coherence_amount",
+      "physical_edge",
+      "physical_orientation",
+      "causal_sequence_order",
+      "registered_route_support"
+    ],
+    "causal_order_source": "native_packet_processing_log_sequence",
+    "external_history_archive_allowed": false,
+    "fixture_specific_match_fields": [],
+    "formation_rule": "every_committed_arrival_on_registered_edge_in_registered_orientation",
+    "hard_coded_fixture_node_numbers": false,
+    "identifier_fields_used_for_duplicate_integrity_only": [
+      "event_id",
+      "packet_id"
+    ],
+    "independent_S_state_allowed": false,
+    "noncausal_fields": [
+      "event_id",
+      "packet_id",
+      "lineage_label",
+      "absolute_scheduler_index",
+      "absolute_event_time",
+      "topology_semantic_label"
+    ],
+    "progression_rule": "later_committed_arrivals_on_physical_edges_incident_to_route_source_excluding_registered_susceptibility_edge",
+    "registered_node_edge_ids_are_addressing_not_semantics": true,
+    "registered_susceptibility_route": {
+      "edge_id": 1,
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "relation": "S_e=S_floor+clip(sum(alpha*q_r*rho^N_later_local_progression),0,S_max-S_floor)",
+    "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+    "relation_schema": "n31_C2_general_physical_history_susceptibility_v1",
+    "rho": 0.75
+  },
+  "route_use_reinforcement": true,
+  "rows": [
+    {
+      "clipped_contribution": 0.4,
+      "derived_S": 0.9,
+      "external_history_archive_required": false,
+      "formation_contributions": [
+        {
+          "causal_distance": 0,
+          "contribution": 0.4,
+          "formation_physical_record": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_kind": "lgrc9v3_packet_arrival",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        }
+      ],
+      "formation_count": 1,
+      "physical_history_identity": "7631da303525beb3663f79285a5b54fabe5c3f1cf0d63691c938cbb262293855",
+      "progression_edge_ids": [
+        0
+      ],
+      "raw_contribution": 0.4,
+      "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+      "row_id": "formed_native_history",
+      "source_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+      "stored_S_state_present": false
+    },
+    {
+      "clipped_contribution": 0.1265625,
+      "derived_S": 0.6265625,
+      "external_history_archive_required": false,
+      "formation_contributions": [
+        {
+          "causal_distance": 4,
+          "contribution": 0.1265625,
+          "formation_physical_record": {
+            "amount": 0.4,
+            "edge_id": 1,
+            "event_kind": "lgrc9v3_packet_arrival",
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        }
+      ],
+      "formation_count": 1,
+      "physical_history_identity": "6a1a20598600c2e7272cea438c794300754d4e632f0e349c963dbc79c7877bd5",
+      "progression_edge_ids": [
+        0
+      ],
+      "raw_contribution": 0.1265625,
+      "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+      "row_id": "progressed_native_history",
+      "source_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+      "stored_S_state_present": false
+    }
+  ],
+  "source_progression_authority": "experiment_scheduled_native_packet_processing_from_I9C",
+  "wall_clock_decay": false,
+  "weakening_amount": 0.2734375,
+  "weakening_class": "activity_indexed_local_susceptibility_relaxation",
+  "weakening_direction_observed": true
+}

@@ -1,0 +1,178 @@
+{
+  "DR6_contract_only_does_not_mean": [
+    "cross_context_execution",
+    "native_implementation",
+    "ecology_evidence",
+    "provider_adoption",
+    "general_decay_law"
+  ],
+  "DR6_contract_only_means": "reusable_testable_semantics_and_acceptance_contract",
+  "artifact_kind": "n31_i12_B_R_reusable_contract",
+  "artifact_schema_version": "n31_i12_B_R_reusable_contract_v2",
+  "authority": {
+    "export_lifecycle": "consumer_or_producer_owned_until_naturalized",
+    "native_upgrade_allowed": false,
+    "transport": "native_LGRC9V3_conservative_packet_transport"
+  },
+  "candidate_id": "B_conserved_export_policy",
+  "conformance_contract": {
+    "admissible_inputs": [
+      "source_current_native_coherence_and_packet_state",
+      "registered_route_support_and_boundary",
+      "explicit_destination_outside_the_readout_path",
+      "predeclared_export_eligibility_amount_time_and_destination_policy"
+    ],
+    "carrier_authority": "native_LGRC9V3_coherence_and_packet_state",
+    "claim_ceiling": "producer_mediated_B_R_DR5_with_DR6_contract_only",
+    "conservation_accounting_invariants": [
+      "source_debit_equals_in_flight_packet_amount",
+      "in_flight_packet_amount_equals_destination_credit",
+      "global_node_plus_packet_coherence_budget_closes"
+    ],
+    "consumer_control_set": [
+      "artifact_replay",
+      "snapshot_load_replay",
+      "branch_replay",
+      "duplicate_replay",
+      "explicit_destination_and_complete_conservation",
+      "source_C_clamp_reverses_readout",
+      "destination_C_clamp_preserves_readout",
+      "matched_route_mass_loss_without_contrast_change_preserves_readout",
+      "producer_omission_yields_zero_export",
+      "rejected_readout_is_atomic_and_state_neutral"
+    ],
+    "consumer_obligations": [
+      "predeclare_export_policy_and_destination",
+      "retain_separate_route_mass_and_route_contrast_fields",
+      "retain_producer_residue_and_naturalization_debt",
+      "generate_fresh_context_specific_evidence",
+      "apply_all_consumer_controls"
+    ],
+    "duplicate_behavior": "consumed_one_shot_receipt_refuses_second_export_without_mutation",
+    "forbidden_claims": [
+      "ordinary_post_formation_D0_R",
+      "autonomous_native_decay",
+      "susceptibility_relaxation",
+      "organization_transferred_to_destination",
+      "cross_context_reuse_evidence",
+      "native_support",
+      "general_decay_law",
+      "ecology_evidence"
+    ],
+    "forbidden_inputs": [
+      "hidden_producer_support",
+      "post_hoc_export_policy",
+      "unspecified_destination",
+      "label_only_route_state",
+      "report_derived_state_as_runtime_input"
+    ],
+    "formation_condition": "registered_native_route_contrast_forms_and_persists_before_export",
+    "later_readout_requirement": "local_source_C_admission_boundary_changes_while_destination_C_clamp_does_not",
+    "native_executor_authority": "LGRC9V3_packet_admission_transport_and_credit",
+    "producer_authority": "export_eligibility_amount_cap_time_and_destination_only",
+    "refusal_behavior": "ineligible_or_rejected_operations_are_atomic_and_state_neutral",
+    "restoration_identity": "lgrc9v3_restoration_identity_v2_plus_export_policy_identity",
+    "topology_scope": "declared_frozen_route_with_explicit_destination_outside_readout_path",
+    "transfer_limitations": [
+      "cross_context_reuse_unsupported",
+      "organization_at_destination_transferred_unsupported",
+      "D0_R_bridge_not_tested"
+    ],
+    "weakening_condition": "export_decreases_local_route_mass_and_route_contrast_by_attributable_amount"
+  },
+  "contract_id": "n31_B_R_conserved_redistribution_contract_v2",
+  "contract_status": {
+    "contract_semantics_rung": "DR6_contract_only",
+    "cross_context_reuse_evidence": "unsupported",
+    "executed_mechanism_rung": "DR5_producer_mediated",
+    "reusable_contract_status": "issued"
+  },
+  "mass_contract": {
+    "destination_must_be_explicit": true,
+    "equation": "source_debit == in_flight_packet_amount == destination_credit",
+    "global_coherence_budget_must_close": true,
+    "zero_export_row_required": true
+  },
+  "mediation_contract": {
+    "destination_C_clamp_must_preserve_readout": true,
+    "full_route_distribution_mediation": false,
+    "matched_mass_loss_without_organization_change_must_preserve_readout": true,
+    "scope": "bounded_partial_local_source_C",
+    "source_C_clamp_must_reverse_readout": true,
+    "supported": true
+  },
+  "must_not_use_as": [
+    "ordinary_post_formation_D0_R",
+    "autonomous_native_decay",
+    "susceptibility_relaxation",
+    "organization_transferred_to_destination",
+    "cross_context_reuse_evidence",
+    "native_support",
+    "general_decay_law",
+    "ecology_evidence"
+  ],
+  "naturalization_debt": [
+    "native route-local export lifecycle",
+    "full route-distribution mediation",
+    "separate D0-R bridge evidence"
+  ],
+  "organization_contract": {
+    "bounded_response_shape": "monotonic_linear_through_cap_boundary",
+    "native_route_state_weakened": true,
+    "organization_at_destination_transferred": "unsupported",
+    "organization_measure": "O_B route contrast from registered native coherence state",
+    "route_mass_and_organization_reported_separately": true
+  },
+  "output_digest": "7b8d171835eccf70df8debc0732eed0704867e1d7893ef955415d6c105e20873",
+  "producer_residue": [
+    "export eligibility",
+    "amount/cap",
+    "time",
+    "destination"
+  ],
+  "required_inputs": [
+    "source_current_native_coherence_and_packet_state",
+    "registered_route_support_and_boundary",
+    "explicit_destination_outside_the_readout_path",
+    "predeclared_export_eligibility_amount_time_and_destination_policy"
+  ],
+  "restoration_and_controls": {
+    "complete_I10_control_matrix_required": true,
+    "executed_evidence_rung": "DR5_producer_mediated",
+    "required_replay_modes": [
+      "artifact_replay",
+      "snapshot_load_replay",
+      "branch_replay",
+      "duplicate_replay"
+    ],
+    "restoration_identity": "lgrc9v3_restoration_identity_v2_plus_export_policy_identity"
+  },
+  "semantic_class": "B-R",
+  "source_I11_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+  "source_evidence": [
+    {
+      "artifact_role": "executed_DR5_replay_control_authority",
+      "output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+      "sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af"
+    },
+    {
+      "artifact_role": "B_R_family_execution_and_control_evidence",
+      "output_digest": "f719ebbd73e943eb959d54dded47ccd52c4aee50956d903d46e6acb59cba1b87",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_B_family_replay_controls.json",
+      "sha256": "dbd412c14983a612313ceeae823d9a58c17b8739a9b5a39ae5797c96fb3af80a"
+    },
+    {
+      "artifact_role": "comparative_semantic_authority",
+      "output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_comparative_semantic_native_admission_i11.json",
+      "sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4"
+    }
+  ],
+  "time_and_transition_owner": {
+    "export_decision_owner": "declared_consumer_or_producer_policy",
+    "native_event_progression": true,
+    "ordinary_autonomous_export_available": false
+  },
+  "use_when": "the consuming experiment requires conservative coherence redistribution to an explicit destination, with attributable local route-mass and route-contrast weakening"
+}

@@ -1,0 +1,181 @@
+{
+  "I11_ranking_or_selection_performed": false,
+  "I11_required_profile_axes": [
+    "semantic_fit",
+    "strict_RC_theory_compatibility",
+    "coherence_conservation",
+    "local_causality",
+    "internal_time_ownership",
+    "carrier_authority",
+    "mediation_strength",
+    "restoration_completeness",
+    "native_mechanics_already_available",
+    "producer_residue",
+    "naturalization_debt",
+    "topology_scope",
+    "transfer_evidence",
+    "RCAE_relevance"
+  ],
+  "added_mechanism_comparison_unit_count": 3,
+  "admitted_Dx_comparison_row_count": 3,
+  "admitted_Dx_comparison_rows": [
+    {
+      "classification": {
+        "autonomous_weakening": "unsupported",
+        "decay_relation_ladder_rung": "DR2",
+        "formation": "supported",
+        "full_route_distribution_mediation": "unresolved",
+        "persistence": "supported",
+        "producer_authored_weakening_not_consumed": true,
+        "replay_status": "passed"
+      },
+      "comparison_row": "D0a",
+      "replay_mode": "source_identity_only"
+    },
+    {
+      "classification": {
+        "causal_mediation": false,
+        "claim_ceiling": "observable_only_below_causal_trail",
+        "ladder_rung": "DR3",
+        "persistence": true,
+        "status": "supported_finite_window_derived_observable",
+        "weakening": true
+      },
+      "comparison_row": "D0b",
+      "replay_mode": "source_identity_only"
+    },
+    {
+      "classification": {
+        "causal_mediation": false,
+        "claim_ceiling": "instantaneous_current_state_geometry_only",
+        "ladder_rung": "DR1",
+        "persistence": false,
+        "status": "supported_instantaneous_comparator"
+      },
+      "comparison_row": "D0c",
+      "replay_mode": "source_identity_only"
+    }
+  ],
+  "artifact_kind": "n31_i10_family_bundle_matrix",
+  "artifact_schema_version": "n31_i10_family_bundle_matrix_v1",
+  "claim_level_evidence_map": [
+    {
+      "claim_id": "A_core_release_expression_attenuation",
+      "replay_mode": "runtime_reexecuted",
+      "source_iteration": "I9-A"
+    },
+    {
+      "claim_id": "A_selected_independent_native_readout_split",
+      "replay_mode": "runtime_reexecuted",
+      "source_iteration": "I9-A.1"
+    },
+    {
+      "claim_id": "A_full_threshold_and_intervention_matrix",
+      "replay_mode": "artifact_reconstructed",
+      "source_iteration": "I9-A.1"
+    },
+    {
+      "claim_id": "B_core_conserved_export_and_readout",
+      "replay_mode": "runtime_reexecuted",
+      "source_iteration": "I9-B"
+    },
+    {
+      "claim_id": "B_multilevel_export_response_shape",
+      "replay_mode": "artifact_reconstructed",
+      "source_iteration": "I9-B.1"
+    },
+    {
+      "claim_id": "C2_generalized_history_derivation_and_transport",
+      "replay_mode": "runtime_reexecuted",
+      "source_iteration": "I9-C.2"
+    },
+    {
+      "claim_id": "C2_post_feedback_restoration_and_continuation",
+      "replay_mode": "runtime_reexecuted",
+      "source_iteration": "I10"
+    },
+    {
+      "claim_id": "C_and_C1_theory_boundary_ancestry",
+      "replay_mode": "source_identity_only",
+      "source_iteration": "I9-C_and_I9-C.1"
+    },
+    {
+      "claim_id": "I3_false_positive_fixture_rejection",
+      "replay_mode": "inherited_control_fixture",
+      "source_iteration": "I3"
+    }
+  ],
+  "comparison_policy": "one_comparison_unit_per_mechanism_family",
+  "excluded_Dx_rows": [
+    {
+      "comparison_row": "D0_R",
+      "reason": "not_instantiated_in_executed_D0_fixtures"
+    },
+    {
+      "comparison_row": "conditional_internal_reorganization",
+      "reason": "perturbation_control_not_D0_decay_relation"
+    }
+  ],
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "independent_comparison_unit_count": 3,
+  "output_digest": "c7c9b42d1b3112c088da6862bf91fa1fcefcca89291dd8dd8736b23ff0d4f547",
+  "plural_or_conditional_selection_allowed": true,
+  "raw_effect_magnitude_ranking_performed": false,
+  "rows": [
+    {
+      "candidate_id": "A_release_efficacy_attenuation",
+      "candidate_native_runtime_lane": "not_admitted",
+      "candidate_native_support": false,
+      "comparison_axis": "producer_mediated_mechanism_quality",
+      "comparison_family": "A",
+      "evidence_bundle": [
+        "I9-A",
+        "I9-A.1"
+      ],
+      "existing_native_D0a_context_rung": "DR2",
+      "independent_comparison_weight": 1,
+      "lane_specific_rung": "DR5",
+      "replay_control_disposition": "admitted_for_I11_comparison"
+    },
+    {
+      "candidate_id": "B_conserved_source_leakage",
+      "candidate_native_runtime_lane": "not_admitted",
+      "candidate_native_support": false,
+      "comparison_axis": "producer_mediated_mechanism_quality",
+      "comparison_family": "B",
+      "evidence_bundle": [
+        "I9-B",
+        "I9-B.1"
+      ],
+      "existing_native_D0a_context_rung": "DR2",
+      "independent_comparison_weight": 1,
+      "lane_specific_rung": "DR5",
+      "replay_control_disposition": "admitted_for_I11_comparison"
+    },
+    {
+      "ancestor_evidence": [
+        "I9-C",
+        "I9-C.1"
+      ],
+      "ancestor_positive_weight": 0,
+      "ancestor_ranking_eligible": false,
+      "ancestor_selection_eligible": false,
+      "candidate_id": "C_native_exact_history_constitutive_closure",
+      "comparison_family": "C",
+      "comparison_lanes": {
+        "native_implementation_support": "DR0",
+        "producer_mediated_mechanism_quality": "DR5",
+        "relation_carrier_restoration": "DR2"
+      },
+      "evidence_bundle": [
+        "I9-C.2"
+      ],
+      "independent_comparison_weight": 1,
+      "maximum_label_across_ancestry_may_define_bundle_rung": false,
+      "replay_control_disposition": "admitted_for_I11_lane_specific_comparison"
+    }
+  ],
+  "single_scalar_ranking_allowed": false,
+  "total_I11_comparison_row_count": 6,
+  "total_independent_comparison_weight": 3
+}

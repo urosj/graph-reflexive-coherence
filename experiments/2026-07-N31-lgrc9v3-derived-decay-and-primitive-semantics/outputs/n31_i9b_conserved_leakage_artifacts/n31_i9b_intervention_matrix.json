@@ -1,0 +1,464 @@
+{
+  "all_rejected_readouts_atomic": true,
+  "artifact_kind": "n31_i9b_intervention_and_readout_matrix",
+  "artifact_schema_version": "n31_i9b_intervention_matrix_v1",
+  "destination_C_clamps_preserve_export_readout": true,
+  "duplicate_readout_replay_exact": true,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "matched_route_mass_loss_without_O_B_weakening_retains_readout": true,
+  "no_export_vs_export_readout_split": true,
+  "output_digest": "6fc6b5b1baa034aa539513ff8a90ef00233addb1053131c61f68fb8c35508d26",
+  "rows": [
+    {
+      "arrival_receipt": {
+        "amount": 0.37,
+        "budget_error": 2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-6aafe2e1170054fb",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-ac71030bcfa71537",
+        "scheduler_event_index": 6,
+        "source_lineage_id": "n31_B_readout_no_export",
+        "source_node_id": 1,
+        "target_node_id": 3
+      },
+      "branch_id": "no_export",
+      "departure_receipt": {
+        "amount": 0.37,
+        "budget_error": 0.0,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-daa84fe34c8746bd",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-ac71030bcfa71537",
+        "scheduler_event_index": 5,
+        "source_lineage_id": "n31_B_readout_no_export",
+        "source_node_id": 1,
+        "target_node_id": 3
+      },
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": null,
+      "node_C_before_readout": {
+        "0": 0.25,
+        "1": 0.39999999999999997,
+        "2": 0.2,
+        "3": 0.2
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": true,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": null,
+      "rejection_reason": null,
+      "route_before_readout": {
+        "C_formation_source": 0.25,
+        "C_leakage_source": 0.39999999999999997,
+        "route_mass_M_B": 0.6499999999999999,
+        "route_organization_O_B": 0.14999999999999997
+      },
+      "semantic_route_label_read": false
+    },
+    {
+      "arrival_receipt": null,
+      "branch_id": "export",
+      "departure_receipt": null,
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": null,
+      "node_C_before_readout": {
+        "0": 0.25,
+        "1": 0.36,
+        "2": 0.24000000000000002,
+        "3": 0.2
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": false,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": {
+        "atomic_state_neutral_refusal": true,
+        "comparisons": {
+          "budget": true,
+          "checkpoint_index": true,
+          "event_time_key": true,
+          "packet_ledger_digest": true,
+          "packet_record_count": true,
+          "queue_count": true,
+          "queue_digest": true,
+          "restoration_identity_v1": true,
+          "restoration_identity_v2": true,
+          "scheduler_event_index": true
+        },
+        "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+        "receipt_authority": "experiment_audit_of_native_refusal"
+      },
+      "rejection_reason": "source coherence is smaller than packet amount",
+      "route_before_readout": {
+        "C_formation_source": 0.25,
+        "C_leakage_source": 0.36,
+        "route_mass_M_B": 0.61,
+        "route_organization_O_B": 0.10999999999999999
+      },
+      "semantic_route_label_read": false
+    },
+    {
+      "arrival_receipt": {
+        "amount": 0.37,
+        "budget_error": 2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-1040377b170390f8",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-6d9cb3d659a1eb07",
+        "scheduler_event_index": 6,
+        "source_lineage_id": "n31_B_readout_export_source_C_restored",
+        "source_node_id": 1,
+        "target_node_id": 3
+      },
+      "branch_id": "export_source_C_restored",
+      "departure_receipt": {
+        "amount": 0.37,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-77f9efa1d427eb9a",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-6d9cb3d659a1eb07",
+        "scheduler_event_index": 5,
+        "source_lineage_id": "n31_B_readout_export_source_C_restored",
+        "source_node_id": 1,
+        "target_node_id": 3
+      },
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": {
+        "after": {
+          "0": 0.21,
+          "1": 0.39999999999999997
+        },
+        "authority": "experiment_diagnostic_intervention",
+        "before": {
+          "0": 0.25,
+          "1": 0.36
+        },
+        "intervention_id": "export_source_C_restored",
+        "node_deltas": {
+          "0": -0.04,
+          "1": 0.04
+        },
+        "total_C_delta": 0.0
+      },
+      "node_C_before_readout": {
+        "0": 0.21,
+        "1": 0.39999999999999997,
+        "2": 0.24000000000000002,
+        "3": 0.2
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": true,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": null,
+      "rejection_reason": null,
+      "route_before_readout": {
+        "C_formation_source": 0.21,
+        "C_leakage_source": 0.39999999999999997,
+        "route_mass_M_B": 0.61,
+        "route_organization_O_B": 0.18999999999999997
+      },
+      "semantic_route_label_read": false
+    },
+    {
+      "arrival_receipt": null,
+      "branch_id": "no_export_source_C_lowered",
+      "departure_receipt": null,
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": {
+        "after": {
+          "0": 0.29,
+          "1": 0.36
+        },
+        "authority": "experiment_diagnostic_intervention",
+        "before": {
+          "0": 0.25,
+          "1": 0.39999999999999997
+        },
+        "intervention_id": "no_export_source_C_lowered",
+        "node_deltas": {
+          "0": 0.04,
+          "1": -0.04
+        },
+        "total_C_delta": 0.0
+      },
+      "node_C_before_readout": {
+        "0": 0.29,
+        "1": 0.36,
+        "2": 0.2,
+        "3": 0.2
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": false,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": {
+        "atomic_state_neutral_refusal": true,
+        "comparisons": {
+          "budget": true,
+          "checkpoint_index": true,
+          "event_time_key": true,
+          "packet_ledger_digest": true,
+          "packet_record_count": true,
+          "queue_count": true,
+          "queue_digest": true,
+          "restoration_identity_v1": true,
+          "restoration_identity_v2": true,
+          "scheduler_event_index": true
+        },
+        "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+        "receipt_authority": "experiment_audit_of_native_refusal"
+      },
+      "rejection_reason": "source coherence is smaller than packet amount",
+      "route_before_readout": {
+        "C_formation_source": 0.29,
+        "C_leakage_source": 0.36,
+        "route_mass_M_B": 0.6499999999999999,
+        "route_organization_O_B": 0.07
+      },
+      "semantic_route_label_read": false
+    },
+    {
+      "arrival_receipt": null,
+      "branch_id": "export_destination_C_low",
+      "departure_receipt": null,
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": {
+        "after": {
+          "2": 0.2,
+          "3": 0.24000000000000002
+        },
+        "authority": "experiment_diagnostic_intervention",
+        "before": {
+          "2": 0.24000000000000002,
+          "3": 0.2
+        },
+        "intervention_id": "export_destination_C_low",
+        "node_deltas": {
+          "2": -0.04,
+          "3": 0.04
+        },
+        "total_C_delta": 0.0
+      },
+      "node_C_before_readout": {
+        "0": 0.25,
+        "1": 0.36,
+        "2": 0.2,
+        "3": 0.24000000000000002
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": false,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": {
+        "atomic_state_neutral_refusal": true,
+        "comparisons": {
+          "budget": true,
+          "checkpoint_index": true,
+          "event_time_key": true,
+          "packet_ledger_digest": true,
+          "packet_record_count": true,
+          "queue_count": true,
+          "queue_digest": true,
+          "restoration_identity_v1": true,
+          "restoration_identity_v2": true,
+          "scheduler_event_index": true
+        },
+        "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+        "receipt_authority": "experiment_audit_of_native_refusal"
+      },
+      "rejection_reason": "source coherence is smaller than packet amount",
+      "route_before_readout": {
+        "C_formation_source": 0.25,
+        "C_leakage_source": 0.36,
+        "route_mass_M_B": 0.61,
+        "route_organization_O_B": 0.10999999999999999
+      },
+      "semantic_route_label_read": false
+    },
+    {
+      "arrival_receipt": null,
+      "branch_id": "export_destination_C_high",
+      "departure_receipt": null,
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": {
+        "after": {
+          "2": 0.28,
+          "3": 0.16
+        },
+        "authority": "experiment_diagnostic_intervention",
+        "before": {
+          "2": 0.24000000000000002,
+          "3": 0.2
+        },
+        "intervention_id": "export_destination_C_high",
+        "node_deltas": {
+          "2": 0.04,
+          "3": -0.04
+        },
+        "total_C_delta": 0.0
+      },
+      "node_C_before_readout": {
+        "0": 0.25,
+        "1": 0.36,
+        "2": 0.28,
+        "3": 0.16
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": false,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": {
+        "atomic_state_neutral_refusal": true,
+        "comparisons": {
+          "budget": true,
+          "checkpoint_index": true,
+          "event_time_key": true,
+          "packet_ledger_digest": true,
+          "packet_record_count": true,
+          "queue_count": true,
+          "queue_digest": true,
+          "restoration_identity_v1": true,
+          "restoration_identity_v2": true,
+          "scheduler_event_index": true
+        },
+        "native_runtime_refusal_reason": "source coherence is smaller than packet amount",
+        "receipt_authority": "experiment_audit_of_native_refusal"
+      },
+      "rejection_reason": "source coherence is smaller than packet amount",
+      "route_before_readout": {
+        "C_formation_source": 0.25,
+        "C_leakage_source": 0.36,
+        "route_mass_M_B": 0.61,
+        "route_organization_O_B": 0.10999999999999999
+      },
+      "semantic_route_label_read": false
+    },
+    {
+      "arrival_receipt": {
+        "amount": 0.37,
+        "budget_error": 2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-6aafe2e1170054fb",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 5.0,
+        "packet_id": "lgrc9v3-packet-ac71030bcfa71537",
+        "scheduler_event_index": 6,
+        "source_lineage_id": "n31_B_readout_matched_route_mass_loss_without_O_B_weakening",
+        "source_node_id": 1,
+        "target_node_id": 3
+      },
+      "branch_id": "matched_route_mass_loss_without_O_B_weakening",
+      "departure_receipt": {
+        "amount": 0.37,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-daa84fe34c8746bd",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 4.0,
+        "packet_id": "lgrc9v3-packet-ac71030bcfa71537",
+        "scheduler_event_index": 5,
+        "source_lineage_id": "n31_B_readout_matched_route_mass_loss_without_O_B_weakening",
+        "source_node_id": 1,
+        "target_node_id": 3
+      },
+      "destination_node_2_on_readout_path": false,
+      "global_selector_read": false,
+      "in_flight_before_readout_request": 0.0,
+      "intervention": {
+        "after": {
+          "0": 0.23,
+          "1": 0.37999999999999995,
+          "2": 0.24000000000000002
+        },
+        "authority": "experiment_diagnostic_intervention",
+        "before": {
+          "0": 0.25,
+          "1": 0.39999999999999997,
+          "2": 0.2
+        },
+        "intervention_id": "matched_route_mass_loss_without_O_B_weakening",
+        "node_deltas": {
+          "0": -0.02,
+          "1": -0.02,
+          "2": 0.04
+        },
+        "total_C_delta": 0.0
+      },
+      "node_C_before_readout": {
+        "0": 0.23,
+        "1": 0.37999999999999995,
+        "2": 0.24000000000000002,
+        "3": 0.2
+      },
+      "q_readout": 0.37,
+      "queue_empty_before_readout_request": true,
+      "readout_admitted": true,
+      "readout_operation": "native_node_1_to_node_3_departure_on_edge_2",
+      "readout_path": [
+        0,
+        1,
+        3
+      ],
+      "rejection_atomicity": null,
+      "rejection_reason": null,
+      "route_before_readout": {
+        "C_formation_source": 0.23,
+        "C_leakage_source": 0.37999999999999995,
+        "route_mass_M_B": 0.61,
+        "route_organization_O_B": 0.14999999999999994
+      },
+      "semantic_route_label_read": false
+    }
+  ],
+  "source_C_clamps_reverse_readout": true
+}

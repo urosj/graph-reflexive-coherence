@@ -1,0 +1,94 @@
+{
+  "DR5_or_DR6_allowed": false,
+  "artifact_kind": "n31_i9c1_preregistration",
+  "artifact_schema_version": "n31_i9c1_preregistration_v1",
+  "candidate_id": "C_derived_history_susceptibility",
+  "claim_ceiling": "provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+  "declared_before_execution": true,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "independent_S_state_allowed": false,
+  "output_digest": "17454fd22814459390790078113c661c175656a83369fc13b2804777fcb355fb",
+  "relation_contract": {
+    "S_floor": 0.5,
+    "S_max": 1.0,
+    "alpha": 1.0,
+    "conductance_insertion_phase": "after_native_compute_base_conductance_before_native_compute_potential",
+    "derived_relation": "S = S_floor + clip(alpha * q_use * rho ** N_after_formation, 0, S_max - S_floor)",
+    "external_history_archive_allowed": false,
+    "fixture_bound_exact_history_functional": true,
+    "fixture_specific_match_fields": [
+      "source_node_id",
+      "target_node_id",
+      "event_time_key",
+      "scheduler_event_index",
+      "source_lineage_id"
+    ],
+    "formation_before_progression_precedence_load_bearing": true,
+    "formation_receipt_predicate": {
+      "amount": 0.4,
+      "edge_id": 1,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "source_lineage_id": "n31_C_registered_route_use",
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    "general_route_history_functional_supported": false,
+    "history_carrier_class": "native_serialized_causal_history_state",
+    "history_source": "native_snapshot.dynamics.lgrc9v3_runtime.packet_processing_log",
+    "identity_or_audit_fields_not_physical_inputs": [
+      "packet_id",
+      "event_id"
+    ],
+    "independent_S_state_allowed": false,
+    "ordering_among_equivalent_progression_receipts_load_bearing": false,
+    "outcome_tuning_allowed": false,
+    "progression_receipt_predicate": {
+      "amount": 0.05,
+      "edge_id": 0,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "exact_registered_specs": [
+        [
+          0,
+          1,
+          2.0,
+          20,
+          "n31_C_progression_1"
+        ],
+        [
+          1,
+          0,
+          3.0,
+          30,
+          "n31_C_progression_2"
+        ],
+        [
+          0,
+          1,
+          4.0,
+          40,
+          "n31_C_progression_3"
+        ],
+        [
+          1,
+          0,
+          5.0,
+          50,
+          "n31_C_progression_4"
+        ]
+      ]
+    },
+    "qualifying_progression_count_load_bearing": true,
+    "relation_identity": "8cc5f05c01be76e2c270953d9020e674b768ee048279551163667cce0c2b49d5",
+    "relation_schema": "n31_C1_exact_derived_history_susceptibility_v1",
+    "rho": 0.75,
+    "source_policy_identity": "8645bc23d1ada8a1cbaffa14ca9a234e4c9201a8fbf8d118590441947adb688b",
+    "storage_order_semantically_load_bearing": false,
+    "theory_correspondence": "operational_discrete_J_C_history_proxy",
+    "transfer_to_equivalent_event_identifiers_tested": false
+  },
+  "source_candidate": "C_route_susceptibility_relaxation",
+  "source_snapshot_sha256": {
+    "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+    "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3"
+  }
+}

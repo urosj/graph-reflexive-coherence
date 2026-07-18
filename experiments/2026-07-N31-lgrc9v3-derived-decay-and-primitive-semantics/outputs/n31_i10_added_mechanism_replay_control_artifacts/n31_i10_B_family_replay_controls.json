@@ -1,0 +1,119 @@
+{
+  "DR6_supported": false,
+  "added_mechanism_rung": "DR5",
+  "artifact_kind": "n31_i10_B_family_replay_controls",
+  "artifact_replay": "passed",
+  "artifact_schema_version": "n31_i10_B_family_replay_controls_v1",
+  "branch_replay": "passed",
+  "candidate_id": "B_conserved_source_leakage",
+  "consumed_one_shot_duplicate_control": {
+    "closure_unchanged": true,
+    "native_state_unchanged": true,
+    "producer_call": {
+      "mutated_native_state_paths": [],
+      "one_shot_receipt_already_consumed": true,
+      "operation": "refused_one_shot_receipt_already_consumed",
+      "producer_id": "n31_B_registered_route_local_export_policy_v1",
+      "receipt_matched_exact_predicate": true,
+      "scheduled_events": []
+    },
+    "status": "failed_closed"
+  },
+  "destination_on_readout_path": false,
+  "duplicate_replay": "passed",
+  "evidence_bundle": [
+    "I9-B",
+    "I9-B.1"
+  ],
+  "explicit_destination_and_complete_conservation": true,
+  "final_snapshot_v2_roundtrip": {
+    "identity_v1_after": "0dfb76b7fae44d5daee78556d1e40692915b8965cb13d22dfc0efd8fabc6fabc",
+    "identity_v1_before": "0dfb76b7fae44d5daee78556d1e40692915b8965cb13d22dfc0efd8fabc6fabc",
+    "identity_v1_exact": true,
+    "identity_v2_after": "b0cbd1dbcb392e73e91642483c71e5ba74c1cae327805f4a413fffa035be8514",
+    "identity_v2_before": "b0cbd1dbcb392e73e91642483c71e5ba74c1cae327805f4a413fffa035be8514",
+    "identity_v2_exact": true,
+    "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+    "row_id": "B_final",
+    "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_B_branch_one.json"
+  },
+  "first_export": {
+    "automatic_return_packet_count": 0,
+    "budget_after": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.05,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.05
+    },
+    "budget_before": {
+      "budget_error": -2.220446049250313e-16,
+      "conserved_budget_total": 1.0499999999999998,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.0499999999999998
+    },
+    "destination_credit": 0.04000000000000001,
+    "event_queue_empty_after_export": true,
+    "ordinary_post_formation_flux_packet_count": 0,
+    "packet_scheduled": true,
+    "q_emit": 0.04,
+    "route_after": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.36,
+      "route_mass_M_B": 0.61,
+      "route_organization_O_B": 0.10999999999999999
+    },
+    "route_before": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.39999999999999997,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.14999999999999997
+    },
+    "source_debit": 0.03999999999999998
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "global_selector_used": false,
+  "independent_comparison_weight": 1,
+  "later_native_readout_split_replayed": true,
+  "local_encounter_only": true,
+  "native_D0a_rung": "DR2",
+  "native_authority": "LGRC9V3_packet_admission_transport_and_credit",
+  "no_export_readout_admitted": true,
+  "output_digest": "f719ebbd73e943eb959d54dded47ccd52c4aee50956d903d46e6acb59cba1b87",
+  "post_export_readout_admitted": false,
+  "producer_authority": "experiment_owned_bounded_export_policy",
+  "rung_qualifier": "B_R_conserved_export_not_ordinary_D0_R",
+  "second_export": {
+    "automatic_return_packet_count": 0,
+    "budget_after": {
+      "budget_error": 0.0,
+      "conserved_budget_total": 1.05,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.05
+    },
+    "budget_before": {
+      "budget_error": -2.220446049250313e-16,
+      "conserved_budget_total": 1.0499999999999998,
+      "in_flight_packet_total": 0.0,
+      "node_coherence_total": 1.0499999999999998
+    },
+    "destination_credit": 0.04000000000000001,
+    "event_queue_empty_after_export": true,
+    "ordinary_post_formation_flux_packet_count": 0,
+    "packet_scheduled": true,
+    "q_emit": 0.04,
+    "route_after": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.36,
+      "route_mass_M_B": 0.61,
+      "route_organization_O_B": 0.10999999999999999
+    },
+    "route_before": {
+      "C_formation_source": 0.25,
+      "C_leakage_source": 0.39999999999999997,
+      "route_mass_M_B": 0.6499999999999999,
+      "route_organization_O_B": 0.14999999999999997
+    },
+    "source_debit": 0.03999999999999998
+  },
+  "snapshot_load_replay": "passed"
+}

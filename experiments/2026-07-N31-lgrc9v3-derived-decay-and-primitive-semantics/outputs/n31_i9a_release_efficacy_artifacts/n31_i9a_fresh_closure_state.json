@@ -1,0 +1,22 @@
+{
+  "applied_qualifying_event_id": null,
+  "artifact_kind": "n31_A_release_phase_closure_state",
+  "artifact_schema_version": "n31_A_release_phase_closure_state_v1",
+  "global_event_count_state_present": false,
+  "pending_qualifying_event_receipt": {
+    "amount": 0.2,
+    "budget_error": 0.0,
+    "edge_id": 0,
+    "event_id": "lgrc9v3-packet-event-a30235d8d4c60637",
+    "event_kind": "lgrc9v3_packet_arrival",
+    "event_time_key": 1.0,
+    "packet_id": "lgrc9v3-packet-2d6ec0fada9874a2",
+    "scheduler_event_index": 2,
+    "source_lineage_id": "n31_A_formation_lineage",
+    "source_node_id": 0,
+    "target_node_id": 1
+  },
+  "release_phase": "fresh",
+  "release_phase_receipt_count": 0,
+  "wall_clock_state_present": false
+}

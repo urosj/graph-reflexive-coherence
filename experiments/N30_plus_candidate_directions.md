@@ -38,6 +38,7 @@ All candidates inherit:
 - [Direction Addendum: N30 Selected Starting Point](#direction-addendum-n30-selected-starting-point)
 - [Direction Addendum: Cross-Project Spiral](#direction-addendum-cross-project-spiral)
 - [Direction Addendum: N30 Closeout Status](#direction-addendum-n30-closeout-status)
+- [Direction Addendum: N31 Selection And Closeout](#direction-addendum-n31-selection-and-closeout)
 
 ## Naming convention
 
@@ -638,3 +639,36 @@ N30 evidence pointers:
 - [N30 README](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md)
 - [N30 I8 closeout report](2026-07-N30-lgrc-minimal-shared-medium-participation/reports/n30_closeout_and_spiral_handoff_i8.md)
 - [N30 I8 closeout JSON](2026-07-N30-lgrc-minimal-shared-medium-participation/outputs/n30_closeout_and_spiral_handoff_i8.json)
+
+## Direction Addendum: N31 Selection And Closeout
+
+The first post-N30 ecology demand pass did not select the earlier generic
+"slow-memory conductance trace" candidate unchanged. RCAE P2-I3 exposed a more
+basic ambiguity: `decay` could mean weakening native route organization, a
+fading derived observable, conservative coherence redistribution, release
+attenuation, or susceptibility relaxation. N31 therefore became a semantic
+and runtime discrimination experiment before ecology composition resumed.
+
+N31 closes at `N31-C6` with no universal decay winner:
+
+```text
+D0a native formation/persistence = DR2; autonomous weakening unsupported
+D0b exact-derived fading observable = DR3 without causal mediation
+B-R conservative coherence redistribution = producer-mediated DR5
+C.2 exact-history susceptibility = relation DR2 / producer DR5 / native DR0
+B-R and C.2 reusable semantics = DR6 contract-only
+cross-context reuse = unsupported
+```
+
+This updates the candidate grammar without deleting the earlier direction. A
+future native slow-memory conductance trace remains an open naturalization
+target, especially for C.2. The immediate continuation, however, is not N32.
+RCAE must first perform explicit revision-bound P2-I3 re-admission of the exact
+B-R or C.2 provider contract and generate fresh ecology-side
+provider/composition evidence. N31 positive evidence is not re-admitted.
+
+N31 evidence pointers:
+
+- [N31 README](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/README.md)
+- [N31 I12 closeout report](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/reports/n31_closeout_and_rcae_return_i12.md)
+- [N31 I12 machine return](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_closeout_and_rcae_return_i12.json)

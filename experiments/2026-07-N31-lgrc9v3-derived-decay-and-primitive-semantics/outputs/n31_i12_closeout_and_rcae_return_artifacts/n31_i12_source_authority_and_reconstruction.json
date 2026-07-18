@@ -1,0 +1,100 @@
+{
+  "I10_committed_authority_revision": "e7fc5b4a30e707c42aec83e94d40d36546a2af60",
+  "I11_committed_authority_revision": "55d5f083bfbc09d917d7a0c1df0600d4fb85cc43",
+  "all_source_identities_exact": true,
+  "artifact_kind": "n31_i12_source_authority_and_reconstruction",
+  "artifact_schema_version": "n31_i12_source_authority_and_reconstruction_v1",
+  "branch": "experiment-N31",
+  "current_parent_revision": "55d5f083bfbc09d917d7a0c1df0600d4fb85cc43",
+  "derived_cache_recomputation_status": {
+    "A": "passed_exact_I10",
+    "B_R": "passed_exact_I10",
+    "C2": "passed_exact_I10",
+    "D0": "passed_exact_I8"
+  },
+  "execution_reconstruction_status": {
+    "A": "passed_complete_I10",
+    "B_R": "passed_complete_I10",
+    "C2": "passed_complete_including_post_feedback_next_step_I10",
+    "D0": "passed_complete_I8"
+  },
+  "graph_revision": "55d5f083bfbc09d917d7a0c1df0600d4fb85cc43",
+  "output_digest": "143f4472320e3b2e4d1c6a9a1ae92bbe29eedbd9d74c67f58d042ca6b2c82f94",
+  "protected_runtime_contract_diff_empty": true,
+  "protected_runtime_contract_path_scope": [
+    "src/**",
+    "lib/**",
+    "specs/**",
+    "implementation/**",
+    "tests/**",
+    "examples/**",
+    "scripts/**",
+    "pyproject.toml",
+    "requirements*.txt",
+    "uv.lock"
+  ],
+  "pygrc_version": "0.0.0",
+  "source_records": [
+    {
+      "acceptance_state": "accepted_source_and_authority_inventory_only_no_decay_evidence",
+      "actual_output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+      "actual_sha256": "1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79",
+      "expected_output_digest": "c8b1d7eb4b8009b418b7e7c240628b1c1a547d12e259156f2e53e63bb3dc9736",
+      "expected_sha256": "1aff8008e26e29001da019168c8340322fe3172be8b2d8ea60c3de1496f47d79",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_source_inventory_i1.json",
+      "source_role": "N31_source_and_demand_authority",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+      "source_role": "N31_schema_and_return_contract_authority",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+      "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+      "source_role": "executed_D0_family_classification",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade",
+      "actual_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "actual_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+      "expected_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "expected_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+      "source_role": "executed_added_mechanism_DR5_replay_control_authority",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multi_axis_conditional_primitive_closure_classification_ready_for_I12_return",
+      "actual_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+      "actual_sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4",
+      "expected_output_digest": "95d4577ea77f49afa185e49bccb3d29a2b404f1f1bb626c7a8840f2271c93eb6",
+      "expected_sha256": "e3bd4c5f23956edd35d18c42b383302d34132a259e2ba2d2e0cb336686e0edc4",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_comparative_semantic_native_admission_i11.json",
+      "source_role": "comparative_conditional_frontier_authority",
+      "status": "passed"
+    }
+  ],
+  "src_diff_empty_for_experiment_branch": true
+}

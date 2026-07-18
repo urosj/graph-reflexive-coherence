@@ -1,0 +1,74 @@
+{
+  "DR5_requires_complete_I10_control_matrix": true,
+  "artifact_kind": "independent_downstream_readout_preregistration",
+  "artifact_schema_version": "n31_i9a1_preregistration_v1",
+  "candidate_id": "A_release_efficacy_attenuation",
+  "claim_ceiling": "provisional_producer_mediated_DR4_pending_I10",
+  "experiment": "N31",
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "9-A.1",
+  "mediation_controls": {
+    "aged_receiver_clamped_to_fresh_C_expected": "admitted",
+    "all_clamps_preserve_total_node_coherence": true,
+    "common_target_C": 0.45,
+    "fresh_receiver_clamped_to_aged_C_expected": "rejected",
+    "full_complete_state_mediation_allowed": false,
+    "load_bearing_readout": "native_departure_admission_only",
+    "mediation_strength_ceiling": "bounded_partial_local_receiver_C",
+    "other_continuation_state_matched": "false_with_declared_mass_compensator",
+    "split_q": 0.35,
+    "target_clamp_expected_to_preserve_original_split": true
+  },
+  "native_readout_contract": {
+    "admission_and_transport_owner": "native_LGRC9V3_runtime",
+    "arrival_event_time_key": 5.0,
+    "departure_event_time_key": 4.0,
+    "endpoint_values_are_observed_binary_floats_not_theoretical_reals": true,
+    "expected_admission_by_phase": {
+      "aged": {
+        "0.25": true,
+        "0.30": true,
+        "0.35": false,
+        "0.40": false,
+        "0.45": false
+      },
+      "fresh": {
+        "0.25": true,
+        "0.30": true,
+        "0.35": true,
+        "0.40": true,
+        "0.45": false
+      }
+    },
+    "native_eligibility_relation": "source_C >= q_probe",
+    "nextafter_boundary_controls_pending_I10": true,
+    "observed_split_interval": "aged_C < q_probe <= fresh_C",
+    "operation": "receiver_node_2_packet_departure_to_node_1_on_edge_1",
+    "q_probes": [
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45
+    ],
+    "request_owner": "experiment_probe_harness",
+    "robust_tested_interior_q": 0.35,
+    "source_receiver_C_by_phase_from_prior_I9A": {
+      "aged": 0.3,
+      "fresh": 0.4
+    },
+    "thresholds_derived_from_prior_I9A_not_I9A1_outcomes": true
+  },
+  "native_upgrade_allowed": false,
+  "outcome_tuning_allowed": false,
+  "output_digest": "bd7d6642477140ecfab1b025a368ff589e0e04cf33daac235d36da084d52d2c4",
+  "producer_contract": {
+    "candidate_A_producer_calls_during_readout": 0,
+    "candidate_A_producer_loaded_during_readout": false,
+    "different_decay_producer_allowed": false,
+    "reason": "DR4_requires_a_downstream_consequence_of_the_I9A_relation; a_second_producer_would_confound_that_causal chain",
+    "same_candidate_A_producer_required": true
+  },
+  "readout_contract_identity": "5cc2521622dc60fc9d3f128297e408011257c1ec8d138920681355e4ee75ec1f",
+  "source_I9A_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0"
+}

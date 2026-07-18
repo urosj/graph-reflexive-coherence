@@ -1,0 +1,1064 @@
+{
+  "I10_committed_authority_receipt": {
+    "C2_DR5_disposition": "committed_as_confirmed_after_final_post_feedback_restoration_and_next_step_witness",
+    "C2_post_feedback_restoration_present_in_committed_I10": true,
+    "C2_post_feedback_witness": {
+      "check_id": "C2_post_feedback_final_state_restoration_witness_exact",
+      "detail": [
+        {
+          "complete_identity_equal": true,
+          "derived_S_exact": true,
+          "next_step_exact": true,
+          "roundtrip": {
+            "identity_v1_after": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+            "identity_v1_before": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+            "identity_v1_exact": true,
+            "identity_v2_after": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+            "identity_v2_before": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+            "identity_v2_exact": true,
+            "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+            "row_id": "C2_formed_native_history_post_transport",
+            "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json"
+          },
+          "row_id": "formed_native_history"
+        },
+        {
+          "complete_identity_equal": true,
+          "derived_S_exact": true,
+          "next_step_exact": true,
+          "roundtrip": {
+            "identity_v1_after": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+            "identity_v1_before": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+            "identity_v1_exact": true,
+            "identity_v2_after": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+            "identity_v2_before": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+            "identity_v2_exact": true,
+            "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+            "row_id": "C2_progressed_native_history_post_transport",
+            "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json"
+          },
+          "row_id": "progressed_native_history"
+        }
+      ],
+      "passed": true
+    },
+    "artifact_kind": "n31_i11_i10_committed_authority_receipt",
+    "artifact_schema_version": "n31_i11_i10_committed_authority_receipt_v1",
+    "committed_I10_identity": {
+      "git_revision": "e7fc5b4a30e707c42aec83e94d40d36546a2af60",
+      "output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+      "sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af"
+    },
+    "committed_artifact_unchanged_at_I11": true,
+    "committed_identity_is_I11_authority": true,
+    "generated_at": "2026-07-18T00:00:00+00:00",
+    "output_digest": "f395c72dd70062f32eb3904dae6b1c66dd19a8f0f5f02dbcc499e215fee2f969",
+    "post_commit_I10_corrections_applied": false,
+    "post_commit_I10_revision_detected": false,
+    "reviewed_identity_mismatch_disposition": "no_second_committed_I10_identity_exists; I11 consumes the exact e7fc5b4 authority",
+    "reviewed_identity_mismatch_reproduced_from_repository": false,
+    "scientific_A_B_conclusions_changed": false
+  },
+  "artifact_kind": "n31_i11_comparative_classification_trace",
+  "artifact_schema_version": "n31_i11_comparative_classification_trace_v1",
+  "bridge_audit": {
+    "B_R": {
+      "export_policy_owner": "experiment_producer",
+      "later_readout_changed": true,
+      "native_route_organization_state_weakened": true,
+      "native_transport_owner": "LGRC9V3",
+      "organization_mediation": "bounded_partial_local_source_C",
+      "route_mass_decreased": true,
+      "source_artifacts": [
+        "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+        "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+        "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+      ],
+      "status": "supported_producer_mediated_DR5"
+    },
+    "B_R_D0_R_equivalence_supported": false,
+    "D0_R": {
+      "comparison_eligible": false,
+      "globally_refuted": false,
+      "ordinary_post_formation_export_observed": false,
+      "source_artifacts": [
+        "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+        "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+      ],
+      "status": "not_instantiated_in_executed_D0_fixtures"
+    },
+    "artifact_kind": "n31_i11_d0r_br_bridge_audit",
+    "artifact_schema_version": "n31_i11_d0r_br_bridge_audit_v1",
+    "bounded_shape_analogy_status": "supported_non_promotional",
+    "conservation_promotes_B_R_to_D0_R": false,
+    "current_B_R_classified_as_D0_R": false,
+    "d0_to_br_bridge_status": "not_tested",
+    "generated_at": "2026-07-18T00:00:00+00:00",
+    "interpretation": "B-R is a bounded operational fallback with exact conservation, not evidence that ordinary D0-R exists",
+    "output_digest": "fdad50cd07effa7f745ec7577356c86f0176d1e5bdfd24e7489203ae78c79947"
+  },
+  "checks": [
+    {
+      "check_id": "all_exact_I2_I8_I9_I10_sources_consumed",
+      "detail": [
+        {
+          "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+          "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+          "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+          "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+          "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+          "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+          "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10",
+          "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+          "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10",
+          "actual_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+          "actual_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+          "expected_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+          "expected_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_downstream_readout_i9a1.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10",
+          "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+          "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+          "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+          "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4",
+          "actual_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+          "actual_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+          "expected_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+          "expected_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10",
+          "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+          "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+          "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+          "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+          "actual_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+          "actual_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+          "expected_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+          "expected_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_generalized_relation_and_native_restoration_DR2_and_LGRC_faithful_producer_step_provisional_DR4_pending_I10_with_native_runtime_lane_DR0_and_deferred_conditional_naturalization_requirements_recorded",
+          "actual_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+          "actual_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+          "expected_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+          "expected_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_native_exact_history_closure_i9c2.json",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade",
+          "actual_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+          "actual_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+          "expected_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+          "expected_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+          "identity_exact": true,
+          "internal_output_digest_exact": true,
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I8_admitted_three_D0_rows_and_I10_admitted_three_family_rows",
+      "detail": {
+        "D0_row_count": 3,
+        "added_mechanism_family_row_count": 3,
+        "total_I11_row_count": 6
+      },
+      "passed": true
+    },
+    {
+      "check_id": "six_comparison_rows_present_once",
+      "detail": [
+        "D0a_native_spatial_organization",
+        "D0b_finite_window_derived_observable",
+        "D0c_instantaneous_geometry_comparator",
+        "A_release_efficacy_attenuation",
+        "B_conserved_export_policy",
+        "C2_exact_history_susceptibility_closure"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_required_profile_axes_complete",
+      "detail": [
+        "semantic_fit",
+        "strict_RC_theory_compatibility",
+        "coherence_conservation",
+        "local_causality",
+        "internal_time_ownership",
+        "carrier_authority",
+        "mediation_strength",
+        "restoration_completeness",
+        "native_mechanics_already_available",
+        "producer_residue",
+        "naturalization_debt",
+        "topology_scope",
+        "transfer_evidence",
+        "RCAE_relevance"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "single_scalar_and_raw_effect_ranking_absent",
+      "detail": "candidates_answer_nonequivalent_semantic_demands",
+      "passed": true
+    },
+    {
+      "check_id": "D0_R_excluded_without_global_refutation",
+      "detail": {
+        "comparison_eligible": false,
+        "globally_refuted": false,
+        "ordinary_post_formation_export_observed": false,
+        "source_artifacts": [
+          "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+          "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+        ],
+        "status": "not_instantiated_in_executed_D0_fixtures"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "B_R_not_promoted_to_D0_R",
+      "detail": {
+        "B_R": {
+          "export_policy_owner": "experiment_producer",
+          "later_readout_changed": true,
+          "native_route_organization_state_weakened": true,
+          "native_transport_owner": "LGRC9V3",
+          "organization_mediation": "bounded_partial_local_source_C",
+          "route_mass_decreased": true,
+          "source_artifacts": [
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+          ],
+          "status": "supported_producer_mediated_DR5"
+        },
+        "B_R_D0_R_equivalence_supported": false,
+        "D0_R": {
+          "comparison_eligible": false,
+          "globally_refuted": false,
+          "ordinary_post_formation_export_observed": false,
+          "source_artifacts": [
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+            "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json"
+          ],
+          "status": "not_instantiated_in_executed_D0_fixtures"
+        },
+        "artifact_kind": "n31_i11_d0r_br_bridge_audit",
+        "artifact_schema_version": "n31_i11_d0r_br_bridge_audit_v1",
+        "bounded_shape_analogy_status": "supported_non_promotional",
+        "conservation_promotes_B_R_to_D0_R": false,
+        "current_B_R_classified_as_D0_R": false,
+        "d0_to_br_bridge_status": "not_tested",
+        "generated_at": "2026-07-18T00:00:00+00:00",
+        "interpretation": "B-R is a bounded operational fallback with exact conservation, not evidence that ordinary D0-R exists",
+        "output_digest": "fdad50cd07effa7f745ec7577356c86f0176d1e5bdfd24e7489203ae78c79947"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "route_mass_native_organization_derived_relations_and_mediation_typed_separately",
+      "detail": "seven independently typed fields per row",
+      "passed": true
+    },
+    {
+      "check_id": "native_D0a_ceiling_preserved",
+      "detail": {
+        "native_relation": "DR2"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "A_B_producer_DR5_without_native_upgrade",
+      "detail": [
+        {
+          "candidate_id": "D0a_native_spatial_organization",
+          "missing_native_surface": "autonomous weakening trajectory",
+          "native_admission": "existing_native_relation_DR2",
+          "producer_result_may_upgrade_native": false,
+          "provider_contract_eligible_in_I11": false
+        },
+        {
+          "candidate_id": "D0b_finite_window_derived_observable",
+          "missing_native_surface": "causal mediator",
+          "native_admission": "exact_derived_from_native_state_observable_DR3",
+          "producer_result_may_upgrade_native": false,
+          "provider_contract_eligible_in_I11": false
+        },
+        {
+          "candidate_id": "D0c_instantaneous_geometry_comparator",
+          "missing_native_surface": "persistence_weakening_and_mediation",
+          "native_admission": "instantaneous_derived_from_native_state_comparator_DR1",
+          "producer_result_may_upgrade_native": false,
+          "provider_contract_eligible_in_I11": false
+        },
+        {
+          "candidate_id": "A_release_efficacy_attenuation",
+          "missing_native_surface": "release_phase_lifecycle",
+          "native_admission": "not_admitted",
+          "producer_result_may_upgrade_native": false,
+          "provider_contract_eligible_in_I11": "expression_attenuation_only"
+        },
+        {
+          "candidate_id": "B_conserved_export_policy",
+          "missing_native_surface": "autonomous_route_local_export_policy",
+          "native_admission": "not_admitted",
+          "producer_result_may_upgrade_native": false,
+          "provider_contract_eligible_in_I11": "conditional_conserved_redistribution"
+        },
+        {
+          "candidate_id": "C2_exact_history_susceptibility_closure",
+          "missing_native_surface": "canonical_history_conditioned_constitutive_hook",
+          "native_admission": "DR0_existing_runtime",
+          "producer_result_may_upgrade_native": false,
+          "provider_contract_eligible_in_I11": "conditional_effective_susceptibility_closure"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "C2_three_lanes_preserved",
+      "detail": {
+        "native_runtime": "DR0",
+        "producer_extension": "DR5",
+        "relation_carrier": "DR2"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "non_ranked_conditional_frontiers_without_universal_selection",
+      "detail": [
+        {
+          "authority_ceiling": "producer_mediated_B_R_DR5",
+          "candidate_id": "B_conserved_export_policy",
+          "condition": "RCAE selects conservative route-mass and organization redistribution with an explicit destination"
+        },
+        {
+          "authority_ceiling": "producer_extension_DR5_relation_DR2_native_DR0",
+          "candidate_id": "C2_exact_history_susceptibility_closure",
+          "condition": "RCAE selects activity-indexed susceptibility or effective-geometry relaxation"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "nativity_preserved_as_claim_boundary_not_ranking_priority",
+      "detail": {
+        "conserved_redistribution_semantics": "B_conserved_export_policy",
+        "priority_relation": "non_ranked_semantically_distinct_conditional_frontiers",
+        "susceptibility_or_effective_geometry_semantics": "C2_exact_history_susceptibility_closure"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "A_retained_as_expression_boundary_not_field_decay",
+      "detail": {
+        "candidate_id": "A_release_efficacy_attenuation",
+        "current_RCAE_field_state_selection": false,
+        "use_only_when": "the demanded relation is release-expression attenuation rather than field-state decay"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I11_does_not_resume_positive_RCAE_evidence",
+      "detail": "I12 and RCAE source transition remain required",
+      "passed": true
+    },
+    {
+      "check_id": "DR6_not_assigned",
+      "detail": "DR6 requires I12 reusable return contract",
+      "passed": true
+    },
+    {
+      "check_id": "I11_preregistration_identity_exact",
+      "detail": {
+        "output_digest": "a7a9046b6e870e9b20e4542a544d082690f1f8da117a0b9cca71c251722f9ea2",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i11_comparative_classification_artifacts/n31_i11_preregistration.json",
+        "sha256": "cfde3012839b77a07b69ed4e0dc3349384d7ba563fa81dabd9292d3653e73145"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "I11_profile_axes_frozen_preclassification",
+      "detail": [
+        "semantic_fit",
+        "strict_RC_theory_compatibility",
+        "coherence_conservation",
+        "local_causality",
+        "internal_time_ownership",
+        "carrier_authority",
+        "mediation_strength",
+        "restoration_completeness",
+        "native_mechanics_already_available",
+        "producer_residue",
+        "naturalization_debt",
+        "topology_scope",
+        "transfer_evidence",
+        "RCAE_relevance"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "I11_selection_rules_frozen_preclassification",
+      "detail": {
+        "candidate_choice_follows_demanded_semantics": true,
+        "equal_selection_eligibility_does_not_imply_equal_implementation_maturity": true,
+        "selection_relation": "non_ranked_semantically_distinct_conditional_frontiers"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "post_outcome_axis_or_condition_edit_detected",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "committed_I10_authority_identity_exact",
+      "detail": {
+        "git_revision": "e7fc5b4a30e707c42aec83e94d40d36546a2af60",
+        "output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+        "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+        "sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "C2_committed_post_feedback_witness_exact",
+      "detail": [
+        {
+          "complete_identity_equal": true,
+          "derived_S_exact": true,
+          "next_step_exact": true,
+          "roundtrip": {
+            "identity_v1_after": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+            "identity_v1_before": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+            "identity_v1_exact": true,
+            "identity_v2_after": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+            "identity_v2_before": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+            "identity_v2_exact": true,
+            "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+            "row_id": "C2_formed_native_history_post_transport",
+            "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json"
+          },
+          "row_id": "formed_native_history"
+        },
+        {
+          "complete_identity_equal": true,
+          "derived_S_exact": true,
+          "next_step_exact": true,
+          "roundtrip": {
+            "identity_v1_after": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+            "identity_v1_before": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+            "identity_v1_exact": true,
+            "identity_v2_after": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+            "identity_v2_before": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+            "identity_v2_exact": true,
+            "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+            "row_id": "C2_progressed_native_history_post_transport",
+            "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json"
+          },
+          "row_id": "progressed_native_history"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "N31_C5_progress_only",
+      "detail": "terminal closeout rung remains unassigned",
+      "passed": true
+    },
+    {
+      "check_id": "src_and_protected_runtime_contracts_unchanged",
+      "detail": "e7fc5b4",
+      "passed": true
+    }
+  ],
+  "comparison_method": {
+    "candidate_semantics_preserved": true,
+    "conditional_frontiers_not_universal_score": true,
+    "mass_organization_mediation_separate": true,
+    "qualitative_multi_axis_profile": true,
+    "raw_effect_magnitude_ranking": false,
+    "single_scalar_ranking": false
+  },
+  "conditional_selection": {
+    "DR6_assigned": false,
+    "I12_return_contract_required": true,
+    "artifact_kind": "n31_i11_conditional_selection",
+    "artifact_schema_version": "n31_i11_conditional_selection_v1",
+    "automatic_RCAE_adoption_allowed": false,
+    "current_P2_I3_direction_set": {
+      "conserved_redistribution_semantics": "B_conserved_export_policy",
+      "priority_relation": "non_ranked_semantically_distinct_conditional_frontiers",
+      "susceptibility_or_effective_geometry_semantics": "C2_exact_history_susceptibility_closure"
+    },
+    "equal_implementation_maturity": false,
+    "equal_selection_eligibility": true,
+    "generated_at": "2026-07-18T00:00:00+00:00",
+    "nativity_used_as_claim_boundary_not_ranking_priority": true,
+    "naturalization_debt_preserved_as_contract_constraint": true,
+    "output_digest": "7241450a117182da0af7aaad2a0c00f10438501d4716dadd024c7b3e92791f9e",
+    "positive_P2_I3_evidence_may_resume_from_I11_alone": false,
+    "preregistration_identity": {
+      "output_digest": "a7a9046b6e870e9b20e4542a544d082690f1f8da117a0b9cca71c251722f9ea2",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i11_comparative_classification_artifacts/n31_i11_preregistration.json",
+      "sha256": "cfde3012839b77a07b69ed4e0dc3349384d7ba563fa81dabd9292d3653e73145"
+    },
+    "producer_residue_preserved_as_profile_axis": true,
+    "retained_diagnostics": [
+      "D0b_finite_window_derived_observable",
+      "D0c_instantaneous_geometry_comparator"
+    ],
+    "retained_native_foundation": "D0a_native_spatial_organization",
+    "retained_semantic_boundary": {
+      "candidate_id": "A_release_efficacy_attenuation",
+      "current_RCAE_field_state_selection": false,
+      "use_only_when": "the demanded relation is release-expression attenuation rather than field-state decay"
+    },
+    "selected_for_I12_reusable_contract_drafting": [
+      {
+        "authority_ceiling": "producer_mediated_B_R_DR5",
+        "candidate_id": "B_conserved_export_policy",
+        "condition": "RCAE selects conservative route-mass and organization redistribution with an explicit destination"
+      },
+      {
+        "authority_ceiling": "producer_extension_DR5_relation_DR2_native_DR0",
+        "candidate_id": "C2_exact_history_susceptibility_closure",
+        "condition": "RCAE selects activity-indexed susceptibility or effective-geometry relaxation"
+      }
+    ],
+    "selection_reason": "the RCAE demand separates field-magnitude redistribution, susceptibility relaxation, and expression attenuation; mechanism choice follows demanded semantics and evidence, not native-versus-producer authority",
+    "selection_relation": "non_ranked_semantically_distinct_conditional_frontiers"
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "native_admission_debt_matrix": {
+    "artifact_kind": "n31_i11_native_admission_debt_matrix",
+    "artifact_schema_version": "n31_i11_native_admission_debt_matrix_v1",
+    "deferred_C2_naturalization_remains_outside_N31": true,
+    "generated_at": "2026-07-18T00:00:00+00:00",
+    "native_runtime_modified": false,
+    "native_upgrade_assigned": false,
+    "output_digest": "43a9f289eee22bd06b505c4794e363fecdf43263f9cc23d4318a3ee59e532ee0",
+    "rows": [
+      {
+        "candidate_id": "D0a_native_spatial_organization",
+        "missing_native_surface": "autonomous weakening trajectory",
+        "native_admission": "existing_native_relation_DR2",
+        "producer_result_may_upgrade_native": false,
+        "provider_contract_eligible_in_I11": false
+      },
+      {
+        "candidate_id": "D0b_finite_window_derived_observable",
+        "missing_native_surface": "causal mediator",
+        "native_admission": "exact_derived_from_native_state_observable_DR3",
+        "producer_result_may_upgrade_native": false,
+        "provider_contract_eligible_in_I11": false
+      },
+      {
+        "candidate_id": "D0c_instantaneous_geometry_comparator",
+        "missing_native_surface": "persistence_weakening_and_mediation",
+        "native_admission": "instantaneous_derived_from_native_state_comparator_DR1",
+        "producer_result_may_upgrade_native": false,
+        "provider_contract_eligible_in_I11": false
+      },
+      {
+        "candidate_id": "A_release_efficacy_attenuation",
+        "missing_native_surface": "release_phase_lifecycle",
+        "native_admission": "not_admitted",
+        "producer_result_may_upgrade_native": false,
+        "provider_contract_eligible_in_I11": "expression_attenuation_only"
+      },
+      {
+        "candidate_id": "B_conserved_export_policy",
+        "missing_native_surface": "autonomous_route_local_export_policy",
+        "native_admission": "not_admitted",
+        "producer_result_may_upgrade_native": false,
+        "provider_contract_eligible_in_I11": "conditional_conserved_redistribution"
+      },
+      {
+        "candidate_id": "C2_exact_history_susceptibility_closure",
+        "missing_native_surface": "canonical_history_conditioned_constitutive_hook",
+        "native_admission": "DR0_existing_runtime",
+        "producer_result_may_upgrade_native": false,
+        "provider_contract_eligible_in_I11": "conditional_effective_susceptibility_closure"
+      }
+    ]
+  },
+  "output_digest": "93715eea899009f38a7a3464dd3e3a8321d63f3d98ad14e25015a46c9d4c2b7f",
+  "profile_matrix": {
+    "artifact_kind": "n31_i11_six_row_profile_matrix",
+    "artifact_schema_version": "n31_i11_six_row_profile_matrix_v1",
+    "conditional_frontiers": {
+      "derived_diagnostic_frontier": [
+        "D0b_finite_window_derived_observable",
+        "D0c_instantaneous_geometry_comparator"
+      ],
+      "expression_attenuation_frontier": "A_release_efficacy_attenuation",
+      "functional_reflexive_geometry_frontier": "C2_exact_history_susceptibility_closure",
+      "native_coherence_only_foundation": "D0a_native_spatial_organization",
+      "strict_ontology_added_mechanism_frontier": "B_conserved_export_policy"
+    },
+    "generated_at": "2026-07-18T00:00:00+00:00",
+    "output_digest": "9cf983200668e68d28cb63818358c4a3242f0d741c4830ea4474cad0448f2cc1",
+    "preregistration_identity": {
+      "output_digest": "a7a9046b6e870e9b20e4542a544d082690f1f8da117a0b9cca71c251722f9ea2",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i11_comparative_classification_artifacts/n31_i11_preregistration.json",
+      "sha256": "cfde3012839b77a07b69ed4e0dc3349384d7ba563fa81dabd9292d3653e73145"
+    },
+    "profile_axes": [
+      "semantic_fit",
+      "strict_RC_theory_compatibility",
+      "coherence_conservation",
+      "local_causality",
+      "internal_time_ownership",
+      "carrier_authority",
+      "mediation_strength",
+      "restoration_completeness",
+      "native_mechanics_already_available",
+      "producer_residue",
+      "naturalization_debt",
+      "topology_scope",
+      "transfer_evidence",
+      "RCAE_relevance"
+    ],
+    "profile_axes_frozen_preclassification": true,
+    "raw_effect_magnitude_ranking_performed": false,
+    "row_count": 6,
+    "rows": [
+      {
+        "RCAE_relevance": "native substrate baseline only; not a Q-005 decay provider",
+        "authority_lane": "native_relation",
+        "carrier_authority": "native complete coherence and packet state",
+        "coherence_conservation": "native LGRC invariant and replay closure passed",
+        "comparative_boundary_sources": [
+          "I10"
+        ],
+        "comparison_row_id": "D0a_native_spatial_organization",
+        "derived_organization_observable_weakened": "not_applicable",
+        "derived_susceptibility_relation_weakened": "not_applicable",
+        "evidence_basis": [
+          "I8"
+        ],
+        "internal_time_ownership": "native LGRC event progression",
+        "ladder_rungs": {
+          "native_relation": "DR2"
+        },
+        "later_readout_changed": false,
+        "local_causality": "formation and persistence are local; weakening causality is unsupported",
+        "mediation_strength": "full route-distribution mediation unresolved",
+        "native_mechanics_already_available": "formation and persistence available; autonomous weakening unavailable",
+        "native_route_organization_state_weakened": false,
+        "naturalization_debt": [
+          "ordinary autonomous weakening trajectory",
+          "full route-organization mediation"
+        ],
+        "organization_mediated_readout_change_supported": false,
+        "organization_mediation_scope": "unresolved",
+        "producer_residue": [],
+        "profile_axes_complete": true,
+        "restoration_completeness": "source-current replay and restoration passed in I8",
+        "route_mass_decreased": false,
+        "selection_disposition": "retained_native_foundation_not_selected_as_decay_provider",
+        "semantic_class": "D0a",
+        "semantic_fit": "native route-local coherence organization forms and persists; autonomous weakening is absent",
+        "strict_RC_theory_compatibility": "highest current ontological fit because complete native C/J_C carries the relation, but the requested decay trajectory is incomplete",
+        "topology_scope": "bounded route-local fixture",
+        "transfer_evidence": "not established"
+      },
+      {
+        "RCAE_relevance": "usable fading diagnostic below causal trail semantics",
+        "authority_lane": "exact_derived_observable",
+        "carrier_authority": "exact derived functional of source-current native state/history",
+        "coherence_conservation": "diagnostic is read-only over native conserved state",
+        "comparative_boundary_sources": [
+          "I10"
+        ],
+        "comparison_row_id": "D0b_finite_window_derived_observable",
+        "derived_organization_observable_weakened": true,
+        "derived_susceptibility_relation_weakened": "not_applicable",
+        "evidence_basis": [
+          "I8"
+        ],
+        "internal_time_ownership": "declared native event window",
+        "ladder_rungs": {
+          "observable_relation": "DR3"
+        },
+        "later_readout_changed": false,
+        "local_causality": "weakening observed but causal mediation of later transport is false",
+        "mediation_strength": "none established",
+        "native_mechanics_already_available": "diagnostic inputs available; causal trail mechanism absent",
+        "native_route_organization_state_weakened": "unsupported",
+        "naturalization_debt": [
+          "causal mediator",
+          "local intervention-backed readout"
+        ],
+        "organization_mediated_readout_change_supported": false,
+        "organization_mediation_scope": "none",
+        "producer_residue": [
+          "experiment declares the diagnostic window but does not mutate state"
+        ],
+        "profile_axes_complete": true,
+        "restoration_completeness": "observable reconstruction and replay passed in I8",
+        "route_mass_decreased": "not_required_for_observable",
+        "selection_disposition": "retained_diagnostic_not_selected_as_causal_provider",
+        "semantic_class": "D0b",
+        "semantic_fit": "finite-window organization observable weakens after formation",
+        "strict_RC_theory_compatibility": "strong derived-state fit because the observable adds no independent causal field",
+        "topology_scope": "bounded finite-window route diagnostic",
+        "transfer_evidence": "not established"
+      },
+      {
+        "RCAE_relevance": "useful instantaneous geometry diagnostic, not a field lifecycle",
+        "authority_lane": "instantaneous_derived_observable",
+        "carrier_authority": "current native geometry projection",
+        "coherence_conservation": "read-only diagnostic",
+        "comparative_boundary_sources": [
+          "I10"
+        ],
+        "comparison_row_id": "D0c_instantaneous_geometry_comparator",
+        "derived_organization_observable_weakened": false,
+        "derived_susceptibility_relation_weakened": "not_applicable",
+        "evidence_basis": [
+          "I8"
+        ],
+        "internal_time_ownership": "single source-current observation",
+        "ladder_rungs": {
+          "observable_relation": "DR1"
+        },
+        "later_readout_changed": false,
+        "local_causality": "no causal decay relation established",
+        "mediation_strength": "none",
+        "native_mechanics_already_available": "instantaneous comparator available",
+        "native_route_organization_state_weakened": false,
+        "naturalization_debt": [
+          "persistence",
+          "weakening trajectory",
+          "causal mediation"
+        ],
+        "organization_mediated_readout_change_supported": false,
+        "organization_mediation_scope": "none",
+        "producer_residue": [],
+        "profile_axes_complete": true,
+        "restoration_completeness": "current-state reconstruction passed in I8",
+        "route_mass_decreased": "not_applicable",
+        "selection_disposition": "retained_diagnostic_not_selected_as_decay_provider",
+        "semantic_class": "D0c",
+        "semantic_fit": "current-state geometric comparison without persistence or weakening trajectory",
+        "strict_RC_theory_compatibility": "strong diagnostic fit because it is derived from current coherence state",
+        "topology_scope": "single current-state route comparison",
+        "transfer_evidence": "not established"
+      },
+      {
+        "RCAE_relevance": "valid only if the ecology selects expression attenuation rather than field-state decay",
+        "authority_lane": "producer_mediated_expression_policy",
+        "carrier_authority": "native packet/coherence carrier plus producer-owned release-phase state",
+        "coherence_conservation": "exact source, packet, and receiver accounting passed",
+        "comparison_row_id": "A_release_efficacy_attenuation",
+        "derived_organization_observable_weakened": "not_applicable",
+        "derived_susceptibility_relation_weakened": "not_applicable",
+        "evidence_basis": [
+          "I9-A",
+          "I9-A.1",
+          "I10"
+        ],
+        "internal_time_ownership": "qualifying local native receipts advance experiment-owned phase",
+        "ladder_rungs": {
+          "candidate_native": "not_admitted",
+          "producer_mechanism": "DR5"
+        },
+        "later_readout_changed": true,
+        "local_causality": "bounded receiver-C mediation supports a later native admission split",
+        "mediation_strength": "bounded partial local receiver-C",
+        "native_mechanics_already_available": "native transport exists; release-efficacy lifecycle does not",
+        "native_route_organization_state_weakened": false,
+        "naturalization_debt": [
+          "library-owned release-phase lifecycle or explicit retained closure status"
+        ],
+        "organization_mediated_readout_change_supported": false,
+        "organization_mediation_scope": "none",
+        "producer_residue": [
+          "release phase",
+          "efficacy rule",
+          "release invocation"
+        ],
+        "profile_axes_complete": true,
+        "restoration_completeness": "composed native and producer state replay/restoration passed in I10",
+        "route_mass_decreased": false,
+        "selection_disposition": "retained_semantic_boundary_not_selected_for_current_field_state_demand",
+        "semantic_class": "A",
+        "semantic_fit": "old carrier expresses less at release while retained coherence and in-flight packets remain stable",
+        "strict_RC_theory_compatibility": "partial: coherence remains primary in transport, but independent receipt-indexed phase controls expression",
+        "topology_scope": "bounded local release/receiver route",
+        "transfer_evidence": "fixture-local only"
+      },
+      {
+        "RCAE_relevance": "primary conditional candidate when the demanded meaning is conservative field-magnitude redistribution",
+        "authority_lane": "producer_mediated_export_policy_native_transport",
+        "carrier_authority": "native coherence and packet transport; producer owns export lifecycle",
+        "coherence_conservation": "exact source debit, in-flight amount, destination credit, and global closure passed",
+        "comparison_row_id": "B_conserved_export_policy",
+        "derived_organization_observable_weakened": "not_applicable",
+        "derived_susceptibility_relation_weakened": "not_applicable",
+        "evidence_basis": [
+          "I9-B",
+          "I9-B.1",
+          "I10"
+        ],
+        "internal_time_ownership": "native event progression with experiment-owned local export callback",
+        "ladder_rungs": {
+          "candidate_native": "not_admitted",
+          "producer_mechanism": "DR5"
+        },
+        "later_readout_changed": true,
+        "local_causality": "bounded local source-C mediation shifts a later native admission boundary",
+        "mediation_strength": "bounded partial local leakage-source C",
+        "native_mechanics_already_available": "conservative packet transport exists; ordinary autonomous export policy does not",
+        "native_route_organization_state_weakened": true,
+        "naturalization_debt": [
+          "native route-local export lifecycle",
+          "full route-distribution mediation",
+          "separate D0-R bridge evidence"
+        ],
+        "organization_mediated_readout_change_supported": true,
+        "organization_mediation_scope": "bounded_partial_local_source_C",
+        "producer_residue": [
+          "export eligibility",
+          "amount/cap",
+          "time",
+          "destination"
+        ],
+        "profile_axes_complete": true,
+        "restoration_completeness": "composed export policy and native state replay/restoration passed in I10",
+        "route_mass_decreased": true,
+        "selection_disposition": "conditionally_selected_for_I12_conserved_redistribution_contract",
+        "semantic_class": "B-R",
+        "semantic_fit": "route mass and organization weaken through conservative export to an explicit destination",
+        "strict_RC_theory_compatibility": "closest added mechanism to the strict coherence-only ontology; the missing part is endogenous export policy, not a second field substance",
+        "topology_scope": "four-node route with explicit out-of-readout destination",
+        "transfer_evidence": "bounded response shape only; cross-topology transfer not established"
+      },
+      {
+        "RCAE_relevance": "conditional alternative when the demanded meaning is activity-indexed susceptibility or geometry relaxation",
+        "authority_lane": "exact_history_relation_plus_producer_constitutive_closure",
+        "carrier_authority": "exact native serialized packet history; S is recomputed, not independently stored",
+        "coherence_conservation": "native packet transport closes; derived S is dimensionless and adds no coherence mass",
+        "comparison_row_id": "C2_exact_history_susceptibility_closure",
+        "derived_organization_observable_weakened": "not_applicable",
+        "derived_susceptibility_relation_weakened": true,
+        "evidence_basis": [
+          "I9-C.2",
+          "I10"
+        ],
+        "internal_time_ownership": "qualifying committed-arrival history and later local native progression, not wall clock",
+        "ladder_rungs": {
+          "native_runtime": "DR0",
+          "producer_extension": "DR5",
+          "relation_carrier": "DR2"
+        },
+        "later_readout_changed": true,
+        "local_causality": "bounded effective geometry changes native transport; full direct-mediation isolation remains deferred",
+        "mediation_strength": "bounded effective-geometry mediation with native constitutive hook absent",
+        "native_mechanics_already_available": "history and packet execution exist; native history-conditioned conductance hook does not",
+        "native_route_organization_state_weakened": false,
+        "naturalization_debt": [
+          "packetization invariance",
+          "direct mediation controls",
+          "multi-cycle stability",
+          "topology lifecycle policy",
+          "cache/pruning semantics",
+          "native source-current re-admission"
+        ],
+        "organization_mediated_readout_change_supported": true,
+        "organization_mediation_scope": "bounded_effective_geometry",
+        "producer_residue": [
+          "history functional application",
+          "effective conductance insertion",
+          "packet scheduling"
+        ],
+        "profile_axes_complete": true,
+        "restoration_completeness": "native history, rederived S, post-feedback state, and next-step continuation passed in I10",
+        "route_mass_decreased": false,
+        "selection_disposition": "conditionally_selected_for_I12_susceptibility_closure_contract",
+        "semantic_class": "C.2",
+        "semantic_fit": "activity-indexed route susceptibility relaxes toward a floor through an exact functional of native packet history",
+        "strict_RC_theory_compatibility": "not strict current-C-only ontology; functionally closest to self-modifying geometry but depends on complete native history beyond current C",
+        "topology_scope": "role-preserving renumbering passed; topology lifecycle unresolved",
+        "transfer_evidence": "role-preserving representation transfer only"
+      }
+    ],
+    "single_scalar_ranking_performed": false,
+    "universal_selection_not_defined": true,
+    "universal_selection_not_defined_reason": "candidates_answer_nonequivalent_semantic_demands"
+  },
+  "source_records": [
+    {
+      "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+      "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10",
+      "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10",
+      "actual_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+      "actual_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+      "expected_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+      "expected_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_downstream_readout_i9a1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10",
+      "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4",
+      "actual_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+      "actual_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+      "expected_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+      "expected_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10",
+      "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+      "actual_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "actual_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "expected_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "expected_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_generalized_relation_and_native_restoration_DR2_and_LGRC_faithful_producer_step_provisional_DR4_pending_I10_with_native_runtime_lane_DR0_and_deferred_conditional_naturalization_requirements_recorded",
+      "actual_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+      "actual_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+      "expected_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+      "expected_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_native_exact_history_closure_i9c2.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade",
+      "actual_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "actual_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+      "expected_output_digest": "29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257",
+      "expected_sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+      "status": "passed"
+    }
+  ]
+}

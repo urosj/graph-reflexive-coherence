@@ -1,0 +1,120 @@
+{
+  "D0_R_bridge_status": "not_tested",
+  "DR5_supported": false,
+  "I10_response_row_diff_whitelist": {
+    "closure_allowed_paths": [
+      "producer_call_count",
+      "export_policy_receipt"
+    ],
+    "closure_reset_rule": "each response row starts from the exact unconsumed closure bound to the same formation receipt",
+    "diagnostic_preparation_allowed_paths": [
+      "base_state.nodes[0].coherence",
+      "base_state.nodes[1].coherence",
+      "base_state.nodes[2].coherence"
+    ],
+    "diagnostic_preparation_required_invariants": [
+      "node_3_unchanged",
+      "total_coherence_delta_zero",
+      "route_mass_equals_0.35",
+      "topology_unchanged"
+    ],
+    "native_export_allowed_paths": [
+      "base_state.nodes[1].coherence",
+      "base_state.nodes[2].coherence",
+      "packet_ledger",
+      "event_queue",
+      "scheduler_event_index",
+      "checkpoint_index",
+      "event_time_key",
+      "observables"
+    ],
+    "native_export_blocked_paths": [
+      "base_state.nodes[0].coherence",
+      "base_state.nodes[3].coherence",
+      "topology"
+    ]
+  },
+  "artifact_kind": "formation_and_bounded_export_response_preregistration",
+  "artifact_schema_version": "n31_i9b1_preregistration_v1",
+  "candidate_id": "B_conserved_source_leakage",
+  "candidate_policy": {
+    "C_floor": 0.2,
+    "equation": "q_emit = min(q_cap, max(0, C_leakage_source - C_floor))",
+    "producer_id": "n31_B_registered_route_local_export_policy_v1",
+    "q_cap": 0.04,
+    "second_export_or_decay_producer_added": false,
+    "topology_unchanged_from_I9B": true
+  },
+  "claim_ceiling": "provisional_producer_mediated_B_R_DR4_shape_support",
+  "experiment": "N31",
+  "formation_attribution": {
+    "expected_baseline_O_B": 0.05,
+    "expected_formation_effect_O_B": 0.1,
+    "expected_formed_O_B": 0.15,
+    "gate": "formed_O_B - baseline_O_B >= minimum_formation_effect",
+    "minimum_formation_effect": 0.04
+  },
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "iteration": "9-B.1",
+  "native_upgrade_allowed": false,
+  "output_digest": "3e65ebfc0d86f64d19c8cd495fce595b6176253bf2e5ef3306abd8ca4ec473e7",
+  "persistence_progression": {
+    "authority": "experiment_scheduled_native_runtime_trial",
+    "candidate_B_export_policy_invoked": false,
+    "expected_O_B_change": 0.0,
+    "expected_topology_events": 0,
+    "expected_topology_mutation": false,
+    "outward_flux_pressure": 0.0,
+    "parent_node_id": 2,
+    "rng_sample": 1.0,
+    "runtime_operation": "causal_boundary_birth_trial"
+  },
+  "readout_probe_contract": {
+    "floating_boundary_behavior": "record_not_presume",
+    "paired_boundary_shift_rule": "no_export_source_C - post_export_source_C == q_emit",
+    "probe_positions": [
+      "robust_below",
+      "nextafter_below",
+      "exact_boundary",
+      "nextafter_above",
+      "robust_above"
+    ],
+    "required_robust_behavior": "below_admitted_and_above_rejected",
+    "robust_offset": 0.005
+  },
+  "required_positive_q_levels": [
+    0.01,
+    0.02,
+    0.04
+  ],
+  "response_rows": [
+    {
+      "expected_q_emit": 0.0,
+      "formation_source_C": 0.14999999999999997,
+      "route_mass_before_export": 0.35,
+      "row_id": "source_C_0.20",
+      "source_C": 0.2
+    },
+    {
+      "expected_q_emit": 0.009999999999999981,
+      "formation_source_C": 0.13999999999999999,
+      "route_mass_before_export": 0.35,
+      "row_id": "source_C_0.21",
+      "source_C": 0.21
+    },
+    {
+      "expected_q_emit": 0.01999999999999999,
+      "formation_source_C": 0.12999999999999998,
+      "route_mass_before_export": 0.35,
+      "row_id": "source_C_0.22",
+      "source_C": 0.22
+    },
+    {
+      "expected_q_emit": 0.03999999999999998,
+      "formation_source_C": 0.10999999999999999,
+      "route_mass_before_export": 0.35,
+      "row_id": "source_C_0.24",
+      "source_C": 0.24
+    }
+  ]
+}

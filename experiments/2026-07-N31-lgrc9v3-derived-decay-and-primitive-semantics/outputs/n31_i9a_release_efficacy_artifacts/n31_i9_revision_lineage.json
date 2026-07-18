@@ -1,0 +1,33 @@
+{
+  "I9R1_identity": {
+    "artifact_sha256": "f8fe43568793a740fe568109f11e267ed181da68c8722481df3e29c58256e6ac",
+    "contract_output_digest": "bd29a2fca978bf04ce1826f211fe63f44b8373266932dd6919dbeb84f3b2dcaa",
+    "contract_sha256": "2e17f4c0812970dcb689f21de28f69a78b15a45cb89d9166260f56b9784f697f",
+    "output_digest": "80572f132f679beb7d733b7ed5609a5efa5cd7815490e8f3fef711b14e7fbcee",
+    "role": "corrected_admission_contract_consumed_by_initial_I9A_run"
+  },
+  "artifact_kind": "n31_i9_revision_lineage",
+  "artifact_schema_version": "n31_i9_revision_lineage_v1",
+  "current_I9R2_identity": {
+    "artifact_sha256": "957b31c539295b5fb924b9251132967b53a2ecd7fe3bedb747b0a49bf581ead5",
+    "contract_output_digest": "f54cbc0a6565f735d2764749fea9d8096172a3c05786a10211bbb2393b2cfd0d",
+    "contract_sha256": "ff5c0a264fd7b350be694766e0a9efd941dc7e93ee5961cb8f5c36cfc70d4313",
+    "output_digest": "4cf2043eebf54d26ce9b98aee77ad8a846cf90e4e1f452dc065fd327633b761d",
+    "role": "I9A_review_tightened_execution_contract_consumed_by_current_I9A"
+  },
+  "current_revision_changes": [
+    "release_phase_is_load_bearing_amount_input",
+    "receipt_count_is_validation_only",
+    "semantic_edge_payload_removed_from_producer_allowlist",
+    "numeric_topology_bindings_added",
+    "versioned_release_policy_identity_added"
+  ],
+  "exact_current_contract_consumed_by_I9A": true,
+  "generated_at": "2026-07-17T00:00:00+00:00",
+  "output_digest": "dedb00b9aed5c4e295f872ca3746e62f9c7a05fc51c37c4aa95903b612bb7df7",
+  "reviewed_pre_correction_I9_identity": {
+    "full_identity_available_in_review": false,
+    "output_digest_prefix_as_recorded_by_review": "30f29d73595e"
+  },
+  "scientific_admission_decision_changed": false
+}

@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "n31_i9c2_producer_step_matrix",
+  "artifact_schema_version": "n31_i9c2_producer_step_matrix_v1",
+  "composition_contract": {
+    "executor_phase": "LGRC9V3_step_processes_departure_then_arrival",
+    "producer_mutates_live_conductance": false,
+    "producer_mutates_node_coherence": false,
+    "producer_phase": "derive_history_relation_compute_native_geometry_and_schedule_one_packet",
+    "producer_processes_packet_itself": false,
+    "runtime_source_modified": false,
+    "source_pattern": "examples_lgrc9v3_producer_then_step_and_helper_chain"
+  },
+  "different_history_changes_transport_amount": true,
+  "direct_mediation_controls": {
+    "required": [
+      "common_S_clamp_removes_packet_split",
+      "derived_S_bypass_removes_history_conditioning",
+      "same_S_different_histories_same_packet_amount",
+      "same_history_recomputed_S_same_packet_amount"
+    ],
+    "status": "not_run_pending_I10"
+  },
+  "existing_native_support": false,
+  "feedback_depth": {
+    "complete_native_cycle_count": 1,
+    "completed_transport_to_second_derivation": "passed",
+    "multi_cycle_stability_supported": false,
+    "second_derivation_to_second_transport_to_third_derivation": "not_run"
+  },
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "native_runtime_lane_rung": "DR0",
+  "ordinary_LGRC_step_derives_relation": false,
+  "output_digest": "c90905979cda7b922e2982b87f8700745480912d52b74e8ff226dd424c1463b7",
+  "producer_extension_lane_ceiling": "DR4",
+  "producer_extension_lane_rung": "provisional_DR4_pending_I10",
+  "producer_input_audit": {
+    "allowed": [
+      "derived_S",
+      "exact_current_native_state_copy",
+      "registered_route",
+      "frozen_transport_integration_parameter"
+    ],
+    "current_implementation_uses_forbidden_inputs": false,
+    "forbidden": [
+      "branch_id",
+      "source_snapshot_name",
+      "outcome_history",
+      "semantic_labels",
+      "expected_packet_amount"
+    ]
+  },
+  "producer_mediated_DR3_supported": true,
+  "producer_mediated_DR4_supported": true,
+  "rows": [
+    {
+      "arrival_processed_event_kind": "lgrc9v3_packet_arrival",
+      "budget_after_arrival": 1.9000000000000001,
+      "budget_after_departure": 1.9000000000000001,
+      "budget_after_schedule": 1.9,
+      "budget_before": 1.9,
+      "conservation_error": 2.220446049250313e-16,
+      "departure_processed_event_kind": "lgrc9v3_packet_departure",
+      "existing_native_support": false,
+      "g_effective": 0.5458775937413701,
+      "g_native": 0.6065306597126334,
+      "geometry_computation_authority": "native_GRC9V3_kernels_on_state_copy",
+      "later_geometry_relation_changed": true,
+      "node_plus_packet_budget_conserved": true,
+      "ordinary_native_step_derived_S_itself": false,
+      "oriented_flux": 0.1765143937092521,
+      "packet_amount": 0.04412859842731302,
+      "packet_execution_authority": "LGRC9V3.step",
+      "packet_scheduling_authority": "experiment_candidate_producer",
+      "post_derived_S": 0.9441285984273131,
+      "pre_derived_S": 0.9,
+      "receiver_credit": 0.04412859842731304,
+      "receiver_credit_matches_packet": true,
+      "row_id": "formed_history_candidate_step",
+      "runtime_source_modified": false,
+      "source_debit": 0.04412859842731298,
+      "source_debit_matches_packet": true,
+      "source_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+      "step_class": "experiment_owned_LGRC_faithful_producer_executor_step",
+      "transport_entered_native_history": true,
+      "transport_scale": 0.25
+    },
+    {
+      "arrival_processed_event_kind": "lgrc9v3_packet_arrival",
+      "budget_after_arrival": 1.9,
+      "budget_after_departure": 1.9000000000000001,
+      "budget_after_schedule": 1.9,
+      "budget_before": 1.9,
+      "conservation_error": 0.0,
+      "departure_processed_event_kind": "lgrc9v3_packet_departure",
+      "existing_native_support": false,
+      "g_effective": 0.3800293664761969,
+      "g_native": 0.6065306597126334,
+      "geometry_computation_authority": "native_GRC9V3_kernels_on_state_copy",
+      "later_geometry_relation_changed": true,
+      "node_plus_packet_budget_conserved": true,
+      "ordinary_native_step_derived_S_itself": false,
+      "oriented_flux": 0.1480967673715728,
+      "packet_amount": 0.0370241918428932,
+      "packet_execution_authority": "LGRC9V3.step",
+      "packet_scheduling_authority": "experiment_candidate_producer",
+      "post_derived_S": 0.6635866918428932,
+      "pre_derived_S": 0.6265625,
+      "receiver_credit": 0.037024191842893184,
+      "receiver_credit_matches_packet": true,
+      "row_id": "progressed_history_candidate_step",
+      "runtime_source_modified": false,
+      "source_debit": 0.037024191842893184,
+      "source_debit_matches_packet": true,
+      "source_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+      "step_class": "experiment_owned_LGRC_faithful_producer_executor_step",
+      "transport_entered_native_history": true,
+      "transport_scale": 0.25
+    }
+  ],
+  "same_reduced_current_projection": true,
+  "transport_integration_contract": {
+    "current_authority": "preregistered_experiment_producer_parameter",
+    "equation": "q_packet=max(0,J_e)*delta_tau",
+    "executed_delta_tau": 0.25,
+    "future_required_controls": [
+      "flux_times_interval_units_close_to_coherence",
+      "zero_flux_emits_no_packet",
+      "negative_flux_reverses_or_refuses_by_frozen_rule",
+      "insufficient_source_refuses_atomically_or_clips_by_frozen_rule",
+      "packet_never_exceeds_available_source_coherence"
+    ],
+    "future_required_semantics": "native_integration_interval_or_packetization_interval_or_another_dimensioned_transport_measure",
+    "outcome_tuned": false,
+    "physical_or_numerical_meaning": "unresolved_naturalization_debt"
+  }
+}

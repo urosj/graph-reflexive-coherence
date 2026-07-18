@@ -1,0 +1,53 @@
+{
+  "artifact_kind": "n31_i11_native_admission_debt_matrix",
+  "artifact_schema_version": "n31_i11_native_admission_debt_matrix_v1",
+  "deferred_C2_naturalization_remains_outside_N31": true,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "native_runtime_modified": false,
+  "native_upgrade_assigned": false,
+  "output_digest": "43a9f289eee22bd06b505c4794e363fecdf43263f9cc23d4318a3ee59e532ee0",
+  "rows": [
+    {
+      "candidate_id": "D0a_native_spatial_organization",
+      "missing_native_surface": "autonomous weakening trajectory",
+      "native_admission": "existing_native_relation_DR2",
+      "producer_result_may_upgrade_native": false,
+      "provider_contract_eligible_in_I11": false
+    },
+    {
+      "candidate_id": "D0b_finite_window_derived_observable",
+      "missing_native_surface": "causal mediator",
+      "native_admission": "exact_derived_from_native_state_observable_DR3",
+      "producer_result_may_upgrade_native": false,
+      "provider_contract_eligible_in_I11": false
+    },
+    {
+      "candidate_id": "D0c_instantaneous_geometry_comparator",
+      "missing_native_surface": "persistence_weakening_and_mediation",
+      "native_admission": "instantaneous_derived_from_native_state_comparator_DR1",
+      "producer_result_may_upgrade_native": false,
+      "provider_contract_eligible_in_I11": false
+    },
+    {
+      "candidate_id": "A_release_efficacy_attenuation",
+      "missing_native_surface": "release_phase_lifecycle",
+      "native_admission": "not_admitted",
+      "producer_result_may_upgrade_native": false,
+      "provider_contract_eligible_in_I11": "expression_attenuation_only"
+    },
+    {
+      "candidate_id": "B_conserved_export_policy",
+      "missing_native_surface": "autonomous_route_local_export_policy",
+      "native_admission": "not_admitted",
+      "producer_result_may_upgrade_native": false,
+      "provider_contract_eligible_in_I11": "conditional_conserved_redistribution"
+    },
+    {
+      "candidate_id": "C2_exact_history_susceptibility_closure",
+      "missing_native_surface": "canonical_history_conditioned_constitutive_hook",
+      "native_admission": "DR0_existing_runtime",
+      "producer_result_may_upgrade_native": false,
+      "provider_contract_eligible_in_I11": "conditional_effective_susceptibility_closure"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "B_R_and_C2_may_be_instantiated_together": true,
+  "N31_positive_evidence_re_admitted_to_RCAE": false,
+  "RCAE_ecology_evidence_must_be_generated_fresh": true,
+  "RCAE_owns": [
+    "semantic_choice",
+    "provider_admission",
+    "topology_and_encounter_design",
+    "ecology_side_controls",
+    "later_trail_or_stigmergy_claim"
+  ],
+  "artifact_kind": "n31_i12_rcae_p2_i3_recommendation",
+  "artifact_schema_version": "n31_i12_rcae_p2_i3_recommendation_v2",
+  "automatic_adoption_allowed": false,
+  "combined_effect_may_inherit_individual_DR5": false,
+  "combined_provider_is_new_composition_candidate": true,
+  "combined_provider_required_attribution": [
+    "coherence_redistribution_caused_by_B_R",
+    "susceptibility_modification_caused_by_C2",
+    "interaction_or_interference_between_B_R_and_C2"
+  ],
+  "combined_provider_requires_separate_controls": true,
+  "generic_decay_provider_selection_fails_closed": true,
+  "n31_closeout_output_digest_source": {
+    "consumer_must_copy_exact_value": true,
+    "json_pointer": "/output_digest",
+    "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_closeout_and_rcae_return_i12.json"
+  },
+  "output_digest": "faa7a5c082434f818315b80e3f416f8735d55eeefb3dd34372e3874b0e34f120",
+  "positive_P2_I3_may_resume_without_RCAE_re_admission": false,
+  "provider_contract_re_admission_eligible": true,
+  "rcae_source_revision": "ae11be2008b1902df1749faec531420432056c37",
+  "required_RCAE_action": "record a named re-admission decision selecting the demanded semantics, exact provider contract identity, exact N31 closeout identity, authority ceiling, producer residue, naturalization debt, controls, and forbidden claims before generating fresh positive ecology evidence",
+  "required_re_admission_identity_fields": [
+    "n31_closeout_output_digest",
+    "contract_artifact_path",
+    "contract_artifact_sha256",
+    "contract_output_digest",
+    "candidate_id",
+    "semantic_route",
+    "authority_ceiling",
+    "executed_rung",
+    "contract_only_rung",
+    "producer_residue",
+    "naturalization_debt",
+    "consumer_control_set",
+    "forbidden_claims"
+  ],
+  "return_status": "provider_contract_eligible_for_explicit_revision_bound_re_admission",
+  "semantic_routes": {
+    "activity_indexed_susceptibility": {
+      "authority_ceiling": "relation_DR2_producer_extension_DR5_native_DR0",
+      "candidate_id": "C2_exact_history_susceptibility_closure",
+      "consumer_control_set": [
+        "artifact_replay",
+        "snapshot_load_replay",
+        "branch_replay",
+        "duplicate_replay",
+        "post_feedback_restoration_replay",
+        "exact_history_rederivation",
+        "wrong_edge_or_nonqualifying_event_invariance",
+        "wrong_lineage_invariance",
+        "semantic_label_invariance",
+        "role_preserving_topology_invariance",
+        "physical_progression_changes_relation",
+        "conservation_exact"
+      ],
+      "contract_artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_C2_reusable_contract.json",
+      "contract_artifact_sha256": "ad0126e201c39923278e643f2c511d30ac3691f682fe1de40c0a5ca02c16f4ea",
+      "contract_id": "n31_C2_exact_history_susceptibility_contract_v2",
+      "contract_only_rung": "DR6_contract_only",
+      "contract_output_digest": "8d21f49662951cdfb3ae71bb550e814bc60a6f5904dc9967eb0c8eeaa9f00b49",
+      "executed_rung": "DR5_producer_extension",
+      "forbidden_claims": [
+        "strict_current_C_only_relation",
+        "native_route_organization_weakening",
+        "native_C2",
+        "cross_context_reuse_evidence",
+        "native_support",
+        "general_decay_law",
+        "ecology_evidence"
+      ],
+      "naturalization_debt": [
+        "packetization invariance",
+        "direct mediation controls",
+        "multi-cycle stability",
+        "topology lifecycle policy",
+        "cache and pruning semantics",
+        "native source-current re-admission"
+      ],
+      "producer_residue": [
+        "history functional application",
+        "effective conductance insertion",
+        "packet scheduling"
+      ],
+      "recommendation": "reopen around effective susceptibility or geometry relaxation",
+      "semantic_route": "activity_indexed_susceptibility"
+    },
+    "conservative_coherence_redistribution": {
+      "authority_ceiling": "producer_mediated_B_R_DR5",
+      "candidate_id": "B_conserved_export_policy",
+      "consumer_control_set": [
+        "artifact_replay",
+        "snapshot_load_replay",
+        "branch_replay",
+        "duplicate_replay",
+        "explicit_destination_and_complete_conservation",
+        "source_C_clamp_reverses_readout",
+        "destination_C_clamp_preserves_readout",
+        "matched_route_mass_loss_without_contrast_change_preserves_readout",
+        "producer_omission_yields_zero_export",
+        "rejected_readout_is_atomic_and_state_neutral"
+      ],
+      "contract_artifact_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i12_closeout_and_rcae_return_artifacts/n31_i12_B_R_reusable_contract.json",
+      "contract_artifact_sha256": "bcbac46ceb2bc2ce9f42bbef6ab6f8aa8f160288fd6e40545ffec2bd689b0f29",
+      "contract_id": "n31_B_R_conserved_redistribution_contract_v2",
+      "contract_only_rung": "DR6_contract_only",
+      "contract_output_digest": "7b8d171835eccf70df8debc0732eed0704867e1d7893ef955415d6c105e20873",
+      "executed_rung": "DR5_producer_mediated",
+      "forbidden_claims": [
+        "ordinary_post_formation_D0_R",
+        "autonomous_native_decay",
+        "susceptibility_relaxation",
+        "organization_transferred_to_destination",
+        "cross_context_reuse_evidence",
+        "native_support",
+        "general_decay_law",
+        "ecology_evidence"
+      ],
+      "naturalization_debt": [
+        "native route-local export lifecycle",
+        "full route-distribution mediation",
+        "separate D0-R bridge evidence"
+      ],
+      "producer_residue": [
+        "export eligibility",
+        "amount/cap",
+        "time",
+        "destination"
+      ],
+      "recommendation": "reopen around conserved coherence redistribution with explicit destination and local route weakening",
+      "semantic_route": "conservative_coherence_redistribution"
+    },
+    "ordinary_native_D0_decay": {
+      "authority_ceiling": "native_D0a_DR2",
+      "contract_id": "none",
+      "recommendation": "preserve blocker; autonomous native weakening was not found"
+    },
+    "release_expression_attenuation": {
+      "authority_ceiling": "producer_mediated_A_DR5_boundary",
+      "candidate_id": "A_release_efficacy_attenuation",
+      "contract_id": "not_issued_current_demand",
+      "recommendation": "use A only if RCAE explicitly changes the demand to release expression"
+    }
+  },
+  "target_lane": "AE01_L03_P2_I3_I03_re_admission"
+}
