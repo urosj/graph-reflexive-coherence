@@ -1,0 +1,586 @@
+{
+  "DR6_supported": false,
+  "ancestor_evidence": [
+    "I9-C",
+    "I9-C.1"
+  ],
+  "ancestor_positive_weight": 0,
+  "ancestor_ranking_eligible": false,
+  "ancestor_records": [
+    {
+      "authority": "producer_mediated_independent_state_closure",
+      "candidate_id": "C_route_susceptibility_relaxation",
+      "carrier": "independently_serialized_closure_S",
+      "comparison_weight": 0,
+      "historical_rung": "DR4",
+      "iteration": "I9-C",
+      "preserved_controls": "restoration_hidden_state_local_readout_and_native_relabel_boundaries_preserved_by_exact_source_and_manifest_replay",
+      "ranking_eligible": false,
+      "selection_eligible": false
+    },
+    {
+      "authority": "exact_derived_native_packet_history_closure",
+      "candidate_id": "C_derived_history_susceptibility",
+      "carrier": "fixture_exact_native_packet_history",
+      "comparison_weight": 0,
+      "historical_rung": "DR4",
+      "insertion_class": "producer_or_wrapper_mediated_constitutive_insertion",
+      "iteration": "I9-C.1",
+      "preserved_controls": "native_history_identity_exact_recomputation_injected_state_rejection_history_tamper_and_constitutive_insertion_boundaries_preserved_by_exact_source_and_manifest_replay",
+      "ranking_eligible": false,
+      "selection_eligible": false
+    }
+  ],
+  "ancestor_selection_eligible": false,
+  "artifact_kind": "n31_i10_C_family_replay_controls",
+  "artifact_replay": "passed",
+  "artifact_schema_version": "n31_i10_C_family_replay_controls_v1",
+  "branch_replay": "passed",
+  "candidate_id": "C_native_exact_history_constitutive_closure",
+  "conservation_exact": true,
+  "deferred_naturalization_controls_consumed_as_I10_gates": false,
+  "duplicate_receipt_control": {
+    "result": {
+      "reason": "duplicate committed arrival identity",
+      "status": "blocked"
+    },
+    "status": "failed_closed"
+  },
+  "duplicate_replay": "passed",
+  "evidence_bundle": [
+    "I9-C.2"
+  ],
+  "existing_native_support": false,
+  "explicit_closure_and_complete_restoration": true,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "global_selector_used": false,
+  "history_carrier": "native_serialized_packet_processing_log",
+  "independent_S_state_present": false,
+  "independent_comparison_weight": 1,
+  "local_encounter_only": true,
+  "native_runtime_lane_rung": "DR0",
+  "output_digest": "8f50db60fbf3fbbac0149353801afedf00fe3a88e760be6b2ff8f43b1ca6f8a6",
+  "physical_progression_control": {
+    "baseline_S": 0.6265625,
+    "history_removed_S": 0.66875,
+    "physical_change_detected": true,
+    "status": "passed"
+  },
+  "post_feedback_restoration_replay": "passed",
+  "post_feedback_restoration_witness_exposed": true,
+  "producer_extension_lane_rung": "DR5",
+  "relation_carrier_lane_rung": "DR2",
+  "restored_receipt_set_control": "passed_exact_native_history_rederivation",
+  "role_preserving_topology_control": {
+    "invariant": true,
+    "status": "passed"
+  },
+  "rows": [
+    {
+      "branch_one_next_candidate_step": {
+        "conservation_error": -2.220446049250313e-16,
+        "existing_native_support": false,
+        "g_effective": 0.5726429416576821,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.14985465128377684,
+        "packet_amount": 0.03746366282094421,
+        "post_derived_S": 0.9815922612482573,
+        "pre_derived_S": 0.9441285984273131,
+        "receiver_credit": 0.03746366282094421,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.037463662820944266,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "branch_one_post_transport_derived": {
+        "clipped_contribution": 0.44412859842731306,
+        "derived_S": 0.9441285984273131,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 0,
+            "contribution": 0.4,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          },
+          {
+            "causal_distance": 0,
+            "contribution": 0.04412859842731302,
+            "formation_physical_record": {
+              "amount": 0.04412859842731302,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 2,
+        "physical_history_identity": "3b3e39077f94de58165fbe4c504ad093f2f333d3acb9429cc94bfb1265e8c18f",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.44412859842731306,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_one_post_transport_identities": {
+        "identity_v1": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+        "identity_v2": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000"
+      },
+      "branch_one_post_transport_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json",
+      "branch_one_pre_step_derived": {
+        "clipped_contribution": 0.4,
+        "derived_S": 0.9,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 0,
+            "contribution": 0.4,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 1,
+        "physical_history_identity": "7631da303525beb3663f79285a5b54fabe5c3f1cf0d63691c938cbb262293855",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.4,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_one_step": {
+        "conservation_error": 2.220446049250313e-16,
+        "existing_native_support": false,
+        "g_effective": 0.5458775937413701,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.1765143937092521,
+        "packet_amount": 0.04412859842731302,
+        "post_derived_S": 0.9441285984273131,
+        "pre_derived_S": 0.9,
+        "receiver_credit": 0.04412859842731304,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.04412859842731298,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "branch_two_next_candidate_step": {
+        "conservation_error": -2.220446049250313e-16,
+        "existing_native_support": false,
+        "g_effective": 0.5726429416576821,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.14985465128377684,
+        "packet_amount": 0.03746366282094421,
+        "post_derived_S": 0.9815922612482573,
+        "pre_derived_S": 0.9441285984273131,
+        "receiver_credit": 0.03746366282094421,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.037463662820944266,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "branch_two_post_transport_derived": {
+        "clipped_contribution": 0.44412859842731306,
+        "derived_S": 0.9441285984273131,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 0,
+            "contribution": 0.4,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          },
+          {
+            "causal_distance": 0,
+            "contribution": 0.04412859842731302,
+            "formation_physical_record": {
+              "amount": 0.04412859842731302,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 2,
+        "physical_history_identity": "3b3e39077f94de58165fbe4c504ad093f2f333d3acb9429cc94bfb1265e8c18f",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.44412859842731306,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_two_post_transport_identities": {
+        "identity_v1": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+        "identity_v2": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000"
+      },
+      "branch_two_post_transport_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_two_post_transport.json",
+      "branch_two_pre_step_derived": {
+        "clipped_contribution": 0.4,
+        "derived_S": 0.9,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 0,
+            "contribution": 0.4,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 1,
+        "physical_history_identity": "7631da303525beb3663f79285a5b54fabe5c3f1cf0d63691c938cbb262293855",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.4,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_two_step": {
+        "conservation_error": 2.220446049250313e-16,
+        "existing_native_support": false,
+        "g_effective": 0.5458775937413701,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.1765143937092521,
+        "packet_amount": 0.04412859842731302,
+        "post_derived_S": 0.9441285984273131,
+        "pre_derived_S": 0.9,
+        "receiver_credit": 0.04412859842731304,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.04412859842731298,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "complete_post_transport_native_identity_equal": true,
+      "duplicate_branch_replay_exact": true,
+      "duplicate_post_transport_derivation_exact": true,
+      "duplicate_pre_step_derivation_exact": true,
+      "post_transport_next_candidate_step_exact": true,
+      "post_transport_restored_derived_S_exact": true,
+      "post_transport_snapshot_roundtrip": {
+        "identity_v1_after": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+        "identity_v1_before": "816b2db48438fdd7d719039d9d2a9e20f7ff7d94e1b7297ba7495708831f8418",
+        "identity_v1_exact": true,
+        "identity_v2_after": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+        "identity_v2_before": "4e348690b4e939d11e0f30adb82773b3e7313afb6a82d0bc1b52695699f57000",
+        "identity_v2_exact": true,
+        "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+        "row_id": "C2_formed_native_history_post_transport",
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_formed_native_history_branch_one_post_transport.json"
+      },
+      "row_id": "formed_native_history",
+      "source_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+      "source_snapshot_roundtrip": {
+        "identity_v1_after": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+        "identity_v1_before": "376a7590ff4ef84926d36d195e132ade3320e62a0f09ee2317f2f5e812870dde",
+        "identity_v1_exact": true,
+        "identity_v2_after": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e",
+        "identity_v2_before": "2f93e1af79b9569d0c915507607eb6b1185e4178e1567bc5c365a7d57044714e",
+        "identity_v2_exact": true,
+        "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+        "row_id": "C2_formed_native_history_source",
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json"
+      }
+    },
+    {
+      "branch_one_next_candidate_step": {
+        "conservation_error": 0.0,
+        "existing_native_support": false,
+        "g_effective": 0.402485673979994,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.12585296364195175,
+        "packet_amount": 0.03146324091048794,
+        "post_derived_S": 0.6950499327533811,
+        "pre_derived_S": 0.6635866918428932,
+        "receiver_credit": 0.03146324091048791,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.03146324091048791,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "branch_one_post_transport_derived": {
+        "clipped_contribution": 0.1635866918428932,
+        "derived_S": 0.6635866918428932,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 4,
+            "contribution": 0.1265625,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          },
+          {
+            "causal_distance": 0,
+            "contribution": 0.0370241918428932,
+            "formation_physical_record": {
+              "amount": 0.0370241918428932,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 2,
+        "physical_history_identity": "0b366e4526669cbc968e508370244540a754c3ff8767dfa114634c27439b7c1f",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.1635866918428932,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_one_post_transport_identities": {
+        "identity_v1": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+        "identity_v2": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265"
+      },
+      "branch_one_post_transport_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json",
+      "branch_one_pre_step_derived": {
+        "clipped_contribution": 0.1265625,
+        "derived_S": 0.6265625,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 4,
+            "contribution": 0.1265625,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 1,
+        "physical_history_identity": "6a1a20598600c2e7272cea438c794300754d4e632f0e349c963dbc79c7877bd5",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.1265625,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_one_step": {
+        "conservation_error": 0.0,
+        "existing_native_support": false,
+        "g_effective": 0.3800293664761969,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.1480967673715728,
+        "packet_amount": 0.0370241918428932,
+        "post_derived_S": 0.6635866918428932,
+        "pre_derived_S": 0.6265625,
+        "receiver_credit": 0.037024191842893184,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.037024191842893184,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "branch_two_next_candidate_step": {
+        "conservation_error": 0.0,
+        "existing_native_support": false,
+        "g_effective": 0.402485673979994,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.12585296364195175,
+        "packet_amount": 0.03146324091048794,
+        "post_derived_S": 0.6950499327533811,
+        "pre_derived_S": 0.6635866918428932,
+        "receiver_credit": 0.03146324091048791,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.03146324091048791,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "branch_two_post_transport_derived": {
+        "clipped_contribution": 0.1635866918428932,
+        "derived_S": 0.6635866918428932,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 4,
+            "contribution": 0.1265625,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          },
+          {
+            "causal_distance": 0,
+            "contribution": 0.0370241918428932,
+            "formation_physical_record": {
+              "amount": 0.0370241918428932,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 2,
+        "physical_history_identity": "0b366e4526669cbc968e508370244540a754c3ff8767dfa114634c27439b7c1f",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.1635866918428932,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_two_post_transport_identities": {
+        "identity_v1": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+        "identity_v2": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265"
+      },
+      "branch_two_post_transport_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_two_post_transport.json",
+      "branch_two_pre_step_derived": {
+        "clipped_contribution": 0.1265625,
+        "derived_S": 0.6265625,
+        "external_history_archive_required": false,
+        "formation_contributions": [
+          {
+            "causal_distance": 4,
+            "contribution": 0.1265625,
+            "formation_physical_record": {
+              "amount": 0.4,
+              "edge_id": 1,
+              "event_kind": "lgrc9v3_packet_arrival",
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          }
+        ],
+        "formation_count": 1,
+        "physical_history_identity": "6a1a20598600c2e7272cea438c794300754d4e632f0e349c963dbc79c7877bd5",
+        "progression_edge_ids": [
+          0
+        ],
+        "raw_contribution": 0.1265625,
+        "relation_identity": "930071b2fe600bf9a4f03b0a1bbd03a4a1d44eb5f907b4dda6ec4f5ab4991c92",
+        "stored_S_state_present": false
+      },
+      "branch_two_step": {
+        "conservation_error": 0.0,
+        "existing_native_support": false,
+        "g_effective": 0.3800293664761969,
+        "g_native": 0.6065306597126334,
+        "later_geometry_relation_changed": true,
+        "node_plus_packet_budget_conserved": true,
+        "ordinary_native_step_derived_S_itself": false,
+        "oriented_flux": 0.1480967673715728,
+        "packet_amount": 0.0370241918428932,
+        "post_derived_S": 0.6635866918428932,
+        "pre_derived_S": 0.6265625,
+        "receiver_credit": 0.037024191842893184,
+        "receiver_credit_matches_packet": true,
+        "source_debit": 0.037024191842893184,
+        "source_debit_matches_packet": true,
+        "transport_entered_native_history": true,
+        "transport_scale": 0.25
+      },
+      "complete_post_transport_native_identity_equal": true,
+      "duplicate_branch_replay_exact": true,
+      "duplicate_post_transport_derivation_exact": true,
+      "duplicate_pre_step_derivation_exact": true,
+      "post_transport_next_candidate_step_exact": true,
+      "post_transport_restored_derived_S_exact": true,
+      "post_transport_snapshot_roundtrip": {
+        "identity_v1_after": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+        "identity_v1_before": "82730f764b27398236979e699f85c23d4f3f6dfe2f1e45beae1445b83a0d084c",
+        "identity_v1_exact": true,
+        "identity_v2_after": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+        "identity_v2_before": "dad26bb6a2618f97e3079fb2f5bdbf4f64dd0f1c65c35fa4cbdf11cb740bb265",
+        "identity_v2_exact": true,
+        "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+        "row_id": "C2_progressed_native_history_post_transport",
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i10_added_mechanism_replay_control_artifacts/n31_i10_C2_progressed_native_history_branch_one_post_transport.json"
+      },
+      "row_id": "progressed_native_history",
+      "source_snapshot": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+      "source_snapshot_roundtrip": {
+        "identity_v1_after": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "identity_v1_before": "5d6e0b4a8c2af76c45278d0939c1f69184930b2ed911a9bb9e5dcf1c0f65ce93",
+        "identity_v1_exact": true,
+        "identity_v2_after": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "identity_v2_before": "6ee3918c9eb5bc44e747022d25e299e2c4e669234cd6d15200ec99f1ab723ff5",
+        "identity_v2_exact": true,
+        "reset_sensitive_equivalence_identity": "lgrc9v3_restoration_identity_v2",
+        "row_id": "C2_progressed_native_history_source",
+        "source_path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json"
+      }
+    }
+  ],
+  "rung_qualifier": "effective_exact_history_closure_not_strict_current_C_only_D0a",
+  "semantic_label_control": {
+    "invariant": true,
+    "status": "passed"
+  },
+  "snapshot_load_replay": "passed",
+  "wrong_edge_or_nonqualifying_event_control": {
+    "baseline_S": 0.6265625,
+    "invariant": true,
+    "mutated_S": 0.6265625,
+    "status": "passed"
+  },
+  "wrong_lineage_control": {
+    "baseline_S": 0.6265625,
+    "invariant": true,
+    "mutated_S": 0.6265625,
+    "status": "passed"
+  }
+}

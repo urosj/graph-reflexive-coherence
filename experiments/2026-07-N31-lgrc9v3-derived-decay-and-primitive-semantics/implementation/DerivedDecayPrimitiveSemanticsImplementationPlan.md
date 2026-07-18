@@ -1655,6 +1655,55 @@ proxy wording, separates classification from fresh execution, and normalizes
 control meanings. Its provisional ceiling is unchanged; authority, scope, and
 debt are tighter.
 
+### I10+ Mechanism-Family Comparison Admission Policy
+
+Use one comparison unit per mechanism family. Strengthening iterations belong
+to their parent bundle; carrier-changing C revisions remain ancestry rather
+than independent positive rows:
+
+```text
+A-family bundle:
+  candidate = A_expression_attenuation
+  evidence = [I9-A, I9-A.1]
+  independent comparison weight = 1
+
+B-family bundle:
+  candidate = B_conserved_source_leakage
+  evidence = [I9-B, I9-B.1]
+  independent comparison weight = 1
+
+C-family bundle:
+  candidate = C_native_exact_history_constitutive_closure
+  evidence = [I9-C.2]
+  independent comparison weight = 1
+  ancestry = [I9-C, I9-C.1]
+  ancestor positive weight = 0
+```
+
+I9-C and I9-C.1 remain available for lineage, ablation, theory-boundary, and
+naturalization-debt interpretation. They are not comparison-, ranking-, or
+selection-eligible and may contribute no separate score, vote, or accumulated
+positive evidence. C.2 decisions must be supported by C.2 evidence alone.
+
+Rungs are lane-specific, not the maximum label found across a bundle:
+
+```text
+C.2 carrier/restoration comparison:
+  relation lane = DR2
+
+C.2 versus producer-mediated A/B mechanisms:
+  pre-I10 input = provisional DR4
+  post-I10 admitted producer-extension lane = DR5
+
+C.2 versus native D0/Dx implementation:
+  native-runtime lane = DR0
+```
+
+The producer lane cannot inflate native support. Native `DR0` cannot erase the
+demonstrated producer/executor viability. I10 should emit these bundles and
+their replay/control dispositions; I11 should compare only family bundles and
+eligible D0/Dx rows, not every sub-iteration as an independent candidate.
+
 ### Iteration 10 - Added-Mechanism Replay And Controls
 
 Apply candidate-specific intervention, replay, restoration, accounting,
@@ -1664,12 +1713,98 @@ fixture-exact-history C.1, and generalized-relation/producer-extension C.2 must
 retain separate carrier, authority, lane, rung, and debt records. C.2 producer
 success must not be consumed as existing native runtime support.
 
+#### I10 Implementation Record
+
+I10 consumes exact I2, I3, I8, I9-A/A.1, I9-B/B.1, and I9-C/C.1/C.2
+artifacts. It replays `66` manifest references and performs fresh family-level
+executions rather than classifying reports alone:
+
+```text
+A:
+  replay fresh and aged release branches
+  replay the independent q=0.35 native readout split
+  verify release-accounting conservation and receipt-count refusal
+
+B:
+  reconstruct the pre-export one-shot closure from the exact native receipt
+  replay the bounded export twice from the same post-formation state
+  verify explicit destination conservation and later native readout change
+  prove the already-consumed receipt schedules no second export
+
+C.2:
+  rederive S from formed and progressed native packet histories
+  replay the producer/native-step composition on both histories
+  retain both post-transport native branch states
+  verify v1/v2 restoration and exact S rederivation from each final state
+  replay the same next candidate step from the restored duplicate branches
+  verify duplicate-receipt refusal, lineage/label invariance, wrong-direction
+  exclusion, role-preserving renumbering, and physical-history effect
+```
+
+All source identities and manifest hashes replay exactly. Artifact,
+snapshot/load, duplicate, and branch replay pass for all three families. The
+frozen registry contains `70` control identities and `210` family-resolution
+rows. All registry rows have a terminal disposition, with `14` runtime-executed
+controls, `76` inherited I3 schema-null consumptions, `30` positive conformance
+observations, and `90` scope-not-applicable rows. This is registry resolution,
+not `70` family runtime executions. `failed_closed` retains its strict meaning:
+the exact I3 schema-validator fixture triggered a false-positive or unsafe
+relabel path and the stronger claim was rejected. Such rows are not family
+runtime failures and do not contribute to a family rung. Family-specific
+controls outside a candidate's scope are `not_applicable` only with a reason.
+
+C.2's post-feedback witness is load-bearing for its producer `DR5`. Both formed
+and progressed histories emit two equal post-transport native snapshots. Their
+v1 and v2 restoration identities are exact, their restored post-feedback `S`
+values equal the emitted values, and their next candidate-step results match.
+Source-state restoration without this final-state witness would have left C.2
+at producer `DR4`.
+
+I10 therefore admits these lane-specific results for I11 comparison:
+
+```text
+A expression attenuation producer lane = DR5
+B conserved export producer lane = DR5
+C.2 relation/carrier lane = DR2
+C.2 producer-extension lane = DR5
+C.2 existing native-runtime lane = DR0
+native spatial D0a = DR2 unchanged
+```
+
+I9-C and I9-C.1 remain separate zero-weight authority/carrier ancestry records.
+They are not ranking or selection candidates, and controls specific to their
+obsolete representations do not contribute to C.2's rung. A and B have no
+candidate-native runtime rung; the ambient native D0a `DR2` is recorded only as
+context. I10 performs no cross-family ranking or selection, assigns no `DR6`,
+does not test the D0-R/B-R bridge, and does not authorize RCAE adoption. The
+deferred C.2 naturalization requirements remain outside the frozen I10 control
+registry and are not silently treated as executed I10 gates.
+
+Artifacts:
+
+```text
+outputs/n31_i10_added_mechanism_replay_control_artifacts/
+outputs/n31_i10_added_mechanism_replay_control_trace.json
+outputs/n31_added_mechanism_replay_controls_i10.json
+reports/n31_added_mechanism_replay_controls_i10.md
+```
+
+The I10 output digest is
+`29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257`.
+
 ### Iteration 11 - Comparative Semantic And Native-Admission Classification
 
 Compare semantic fit, invariant closure, local causality, representation,
 restoration, hidden state, producer residue, transfer scope, and authority.
 Compare D0-R and B-R without presuming equivalence; record bridge status. Do not
-rank nonequivalent mechanisms by raw effect magnitude.
+rank nonequivalent mechanisms by raw effect magnitude. I11 receives three
+added-mechanism comparison units plus the admitted D0a, D0b, and D0c rows from
+I8; D0-R remains excluded unless separately admitted. It must use a multi-axis
+profile or Pareto classification across semantic fit, strict theory
+compatibility, conservation, locality, internal time, carrier authority,
+mediation, restoration, native mechanics, producer residue, naturalization
+debt, topology scope, transfer, and RCAE relevance. A single scalar ranking is
+not admissible; selection may remain plural or conditional.
 
 ### Iteration 12 - Closeout And RCAE Return Bundle
 

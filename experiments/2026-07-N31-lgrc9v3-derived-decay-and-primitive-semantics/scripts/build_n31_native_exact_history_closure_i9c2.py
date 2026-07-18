@@ -531,6 +531,7 @@ def run_lgrc_faithful_candidate_step(
     *,
     row_id: str,
     transport_scale: float = 0.25,
+    save_final_to: Path | None = None,
 ) -> dict[str, Any]:
     """Run a producer/step composition without modifying the LGRC runtime."""
 
@@ -613,6 +614,9 @@ def run_lgrc_faithful_candidate_step(
     budget_after_arrival = node_plus_packet_budget(model)
     post_snapshot = model.snapshot()
     post_derived = derive_generalized_s(post_snapshot, relation)
+    if save_final_to is not None:
+        save_final_to.parent.mkdir(parents=True, exist_ok=True)
+        model.save(str(save_final_to))
 
     source_debit = source_before - source_after_departure
     receiver_credit = receiver_after_arrival - receiver_before
@@ -1580,6 +1584,40 @@ def build() -> dict[str, Any]:
         for path, artifact in zip(artifact_paths, artifacts, strict=True)
     ]
 
+    comparison_admission_policy = {
+        "comparison_family": "C",
+        "canonical_comparison_candidate": (
+            "C_native_exact_history_constitutive_closure"
+        ),
+        "comparison_eligible": True,
+        "evidence_bundle": ("I9-C.2",),
+        "independent_comparison_weight": 1,
+        "excluded_ancestor_candidates": (
+            "C_route_susceptibility_relaxation",
+            "C_derived_history_susceptibility",
+        ),
+        "ancestor_iterations": ("I9-C", "I9-C.1"),
+        "ancestor_evidence_roles": (
+            "lineage",
+            "ablation",
+            "theory_boundary",
+            "naturalization_debt",
+        ),
+        "ancestor_positive_weight": 0,
+        "ancestor_ranking_eligible": False,
+        "ancestor_selection_eligible": False,
+        "decision_based_only_on_C2_evidence": True,
+        "comparison_lanes": {
+            "relation_carrier_restoration": "DR2",
+            "producer_mediated_mechanism_quality": (
+                "provisional_DR4_pending_I10"
+            ),
+            "native_implementation_support": "DR0",
+        },
+        "maximum_label_across_ancestry_may_define_bundle_rung": False,
+        "family_evidence_may_accumulate_independent_votes": False,
+    }
+
     checks = [
         check(
             "source_identities_exact",
@@ -1763,6 +1801,24 @@ def build() -> dict[str, Any]:
             c1_revision_receipt,
         ),
         check(
+            "C_family_comparison_policy_prevents_double_counting_and_lane_inflation",
+            comparison_admission_policy["canonical_comparison_candidate"]
+            == "C_native_exact_history_constitutive_closure"
+            and comparison_admission_policy["independent_comparison_weight"] == 1
+            and comparison_admission_policy["ancestor_positive_weight"] == 0
+            and comparison_admission_policy["ancestor_ranking_eligible"] is False
+            and comparison_admission_policy["ancestor_selection_eligible"] is False
+            and comparison_admission_policy["comparison_lanes"][
+                "native_implementation_support"
+            ]
+            == "DR0"
+            and comparison_admission_policy["comparison_lanes"][
+                "producer_mediated_mechanism_quality"
+            ]
+            == "provisional_DR4_pending_I10",
+            comparison_admission_policy,
+        ),
+        check(
             "src_and_protected_contracts_unchanged",
             git_diff_empty("src")
             and all(git_diff_empty(path) for path in PROTECTED_PATHS),
@@ -1847,6 +1903,7 @@ def build() -> dict[str, Any]:
             "control_plan_digest": control_plan["output_digest"],
             "phase8_handoff_digest": phase8_handoff["output_digest"],
             "C1_revision_receipt_digest": c1_revision_receipt["output_digest"],
+            "comparison_admission_policy": comparison_admission_policy,
             "scientific_conclusion": (
                 "C2_generalized_relation_forms_from_native_packet_history_and_"
                 "survives_native_restoration_and_an_LGRC_faithful_producer_step_"
@@ -1929,6 +1986,7 @@ def build() -> dict[str, Any]:
         "native_extension_contract": native_contract,
         "control_plan": control_plan,
         "C1_revision_receipt": c1_revision_receipt,
+        "comparison_admission_policy": comparison_admission_policy,
         "phase8_handoff": phase8_handoff,
         "governance": {
             "governance_base_revision": GOVERNANCE_BASE_REVISION,
@@ -2170,6 +2228,38 @@ history from eliminated independent `S`, fixture scope from generality,
 classification from fresh execution, and normalized control meanings. The
 provisional C.1 ceiling did not change; scope, authority, and debt became more
 precise.
+
+## I10/I11 Comparison Admission
+
+C.2 is the sole forward-facing C-family comparison representative. I9-C and
+I9-C.1 remain explanatory ancestry for lineage, ablation, theory-boundary, and
+naturalization-debt analysis. Their comparison weight is zero: they receive no
+separate score, rank, vote, or selection eligibility.
+
+```text
+C-family evidence bundle = [I9-C.2]
+independent comparison weight = 1
+ancestor iterations = [I9-C, I9-C.1]
+ancestor positive weight = 0
+```
+
+Comparisons must name the axis before consuming a rung:
+
+```text
+carrier/restoration comparison:
+  C.2 relation lane = DR2
+
+producer-mediated mechanism comparison:
+  C.2 producer-extension lane = provisional DR4 pending I10
+
+native implementation comparison:
+  C.2 native-runtime lane = DR0
+```
+
+The producer lane cannot inflate native support, and native `DR0` cannot erase
+the demonstrated producer/executor viability. A/B strengthening iterations are
+consumed as one family bundle with their parent rather than as independent
+comparison rows.
 
 ## Control Status
 

@@ -95,9 +95,9 @@
     },
     {
       "artifact_role": "n31_i9c2_native_exact_history_closure_admission_trace",
-      "output_digest": "b20406f1e8e05bdb52d6a7d81d87acb333c7680aea16d00c7413acddb7d1baf4",
+      "output_digest": "a6bd85e9ea719abebcb2a834ca4cf060bee383ff8e04801fb8d7c17307db91ad",
       "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_admission_trace.json",
-      "sha256": "a7e4a1cd41ff6465b7d655a16e81460fc9b7a7c00a573f5f3f4a692e9c1f8430"
+      "sha256": "a2553e8daa9e123c5b53900edad6d2338d93a80d49bb2aa837f3f6b9e5021d70"
     }
   ],
   "artifact_schema_version": "n31_native_exact_history_closure_i9c2_v1",
@@ -747,6 +747,44 @@
       "passed": true
     },
     {
+      "check_id": "C_family_comparison_policy_prevents_double_counting_and_lane_inflation",
+      "detail": {
+        "ancestor_evidence_roles": [
+          "lineage",
+          "ablation",
+          "theory_boundary",
+          "naturalization_debt"
+        ],
+        "ancestor_iterations": [
+          "I9-C",
+          "I9-C.1"
+        ],
+        "ancestor_positive_weight": 0,
+        "ancestor_ranking_eligible": false,
+        "ancestor_selection_eligible": false,
+        "canonical_comparison_candidate": "C_native_exact_history_constitutive_closure",
+        "comparison_eligible": true,
+        "comparison_family": "C",
+        "comparison_lanes": {
+          "native_implementation_support": "DR0",
+          "producer_mediated_mechanism_quality": "provisional_DR4_pending_I10",
+          "relation_carrier_restoration": "DR2"
+        },
+        "decision_based_only_on_C2_evidence": true,
+        "evidence_bundle": [
+          "I9-C.2"
+        ],
+        "excluded_ancestor_candidates": [
+          "C_route_susceptibility_relaxation",
+          "C_derived_history_susceptibility"
+        ],
+        "family_evidence_may_accumulate_independent_votes": false,
+        "independent_comparison_weight": 1,
+        "maximum_label_across_ancestry_may_define_bundle_rung": false
+      },
+      "passed": true
+    },
+    {
       "check_id": "src_and_protected_contracts_unchanged",
       "detail": {
         "governance_base_revision": "236351695e36f88be85b7ed429911d58fad57b32",
@@ -767,6 +805,40 @@
     }
   ],
   "command": ".venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_native_exact_history_closure_i9c2.py",
+  "comparison_admission_policy": {
+    "ancestor_evidence_roles": [
+      "lineage",
+      "ablation",
+      "theory_boundary",
+      "naturalization_debt"
+    ],
+    "ancestor_iterations": [
+      "I9-C",
+      "I9-C.1"
+    ],
+    "ancestor_positive_weight": 0,
+    "ancestor_ranking_eligible": false,
+    "ancestor_selection_eligible": false,
+    "canonical_comparison_candidate": "C_native_exact_history_constitutive_closure",
+    "comparison_eligible": true,
+    "comparison_family": "C",
+    "comparison_lanes": {
+      "native_implementation_support": "DR0",
+      "producer_mediated_mechanism_quality": "provisional_DR4_pending_I10",
+      "relation_carrier_restoration": "DR2"
+    },
+    "decision_based_only_on_C2_evidence": true,
+    "evidence_bundle": [
+      "I9-C.2"
+    ],
+    "excluded_ancestor_candidates": [
+      "C_route_susceptibility_relaxation",
+      "C_derived_history_susceptibility"
+    ],
+    "family_evidence_may_accumulate_independent_votes": false,
+    "independent_comparison_weight": 1,
+    "maximum_label_across_ancestry_may_define_bundle_rung": false
+  },
   "control_plan": {
     "artifact_kind": "n31_i9c2_invariance_and_null_plan",
     "artifact_schema_version": "n31_i9c2_invariance_and_null_plan_v1",
@@ -1297,7 +1369,7 @@
     ],
     "stored_S_required": false
   },
-  "output_digest": "08ebf453738430b74971cd481c3d614ac38d6eb04f4319068ff75068cea6570b",
+  "output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
   "phase8_handoff": {
     "I10_opened": false,
     "N31_consumption_after_future_implementation": [

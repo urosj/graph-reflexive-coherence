@@ -22,13 +22,19 @@ mandatory.
 ## Experiment State
 
 ```text
-status = initialized
-positive_evidence_opened = false
+status = in_progress_iteration_10_passed
+positive_evidence_opened = true
 decay_semantics_selected = false
 native_runtime_change_authorized = false
 candidate_schema_version = n31_decay_candidate_schema_v2
 schema_change_record_id = n31_pre_i1_mass_organization_mediation_normalization_v2
-n31_closeout_rung = N31-C0_initialized
+n31_closeout_progress_rung = N31-C4
+n31_closeout_ladder_rung_assigned = false
+native_D0a_ceiling = DR2
+added_mechanism_A_ceiling = DR5
+added_mechanism_B_ceiling = DR5
+added_mechanism_C2_ceiling = DR5
+C2_native_runtime_ceiling = DR0
 rcae_return_ready = false
 ```
 
@@ -281,7 +287,7 @@ C.2 therefore records three separate lanes:
 relation/carrier lane = DR2
   generalized formation plus exact native restoration
 
-producer-extension lane = DR4
+producer-extension lane = DR4 in I9-C.2; DR5 after I10 replay/controls
   history-conditioned geometry schedules conservative native packet transport
   and that transport enters the native history used by the later relation
 
@@ -302,12 +308,33 @@ relaxes it; quiescence and wall time do not. The correct name is
 **activity-indexed local susceptibility relaxation**.
 
 C.2 proves one conservative feedback depth, not stable repeated recursion. Its
-producer `DR4` is provisional pending I10. Packetization invariance, direct
+producer `DR4` was provisional in I9-C.2; I10 now admits the producer lane at
+`DR5` after artifact, restoration, duplicate, branch, invariant, and control
+replay. I10 retains both post-transport branches, proves exact v1/v2 identity
+after load, rederives the same post-feedback `S`, and reproduces the same next
+candidate step. Source-state restoration alone would not have admitted `DR5`.
+Packetization invariance, direct
 mediation clamps, transport-interval units, a second complete feedback cycle,
 long-run stability, topology lifecycle, exact cache/pruning semantics, and the
 feature-disabled native baseline remain open. The native lane must re-earn its
 rungs and cannot inherit producer evidence. RCAE consumption remains blocked
-until `DR5` and a reusable provider contract.
+until a reusable provider contract is selected and returned; I10 `DR5` alone
+does not authorize adoption.
+
+For I10 and later comparison, use one forward-facing representative per
+mechanism family. A/A.1 and B/B.1 are single strengthening bundles. C.2 alone
+represents the C family; C and C.1 remain zero-weight explanatory ancestry.
+Comparisons must select the lane first: C.2 is `DR2` for carrier/restoration,
+producer `DR5` for replay/control-backed added-mechanism viability, and
+native-runtime `DR0` for native implementation support. A and B are likewise
+producer-mediated `DR5` families; neither owns the ambient native D0a `DR2`
+context. No maximum rung may be inherited across ancestors or comparison axes.
+
+I10 resolves the frozen `70`-control registry without claiming `70` runtime
+executions. Runtime controls, inherited I3 schema-null fixtures, positive
+conformance observations, and scope-not-applicable rows are reported
+separately. I11 receives three added-mechanism units plus admitted D0a/D0b/D0c
+rows and must use a multi-axis or Pareto comparison rather than one scalar rank.
 
 ## Non-Negotiable Boundaries
 

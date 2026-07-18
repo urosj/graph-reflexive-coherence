@@ -124,7 +124,19 @@
   recovery from an attenuated floor, and preserves packetization, mediation,
   transport-units, stability, topology, cache, native re-admission, RCAE, and
   C.1 revision-lineage constraints. Deferred naturalization requirements are
-  explicitly outside N31; I10 remains the next experiment iteration.
+  explicitly outside N31. The subsequent I10 report resolves the producer lane
+  while leaving those naturalization requirements deferred.
+  It also explains why C.2 alone represents the C family and why comparison
+  must use carrier, producer, or native lanes rather than one maximum rung.
+
+## Iteration 10
+
+- `n31_added_mechanism_replay_controls_i10.md` explains the fresh family-level
+  replay, the resolved frozen control registry, A/B producer-mediated `DR5`, the
+  three separate C.2 lanes, C.2 post-feedback restoration/continuation, one-shot
+  B duplicate suppression, zero-weight C/C.1 ancestry, and why I10 admits six
+  lane-qualified comparison rows without scalar ranking, native promotion,
+  `DR6`, or automatic RCAE adoption.
 
 Reports must distinguish conformance from scientific evidence, observable
 weakening from causal mediation, and graph-side classification from later RCAE

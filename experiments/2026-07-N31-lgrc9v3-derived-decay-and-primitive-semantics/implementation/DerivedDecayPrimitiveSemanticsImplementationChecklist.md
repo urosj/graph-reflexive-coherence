@@ -1966,8 +1966,8 @@ RCAE_admission_status = blocked_until_DR5_and_reusable_provider_contract
 I9C_replaced = false
 I9C1_replaced = false
 I10_opened = false
-checks_passed = 19 / 19
-output_digest = 08ebf453738430b74971cd481c3d614ac38d6eb04f4319068ff75068cea6570b
+checks_passed = 20 / 20
+output_digest = 93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe
 ```
 
 ### Iteration 9-C.2 Geometric Interpretation
@@ -2037,22 +2037,159 @@ complete state, retained causal memory, fixture scope, discrete-current proxy
 wording, classification versus execution, and control semantics. The C.1
 provisional ceiling remained unchanged.
 
+### I10+ Mechanism-Family Comparison Admission Policy
+
+```text
+A-family:
+  evidence_bundle = [I9-A, I9-A.1]
+  independent_comparison_weight = 1
+
+B-family:
+  evidence_bundle = [I9-B, I9-B.1]
+  independent_comparison_weight = 1
+
+C-family:
+  canonical_comparison_candidate = C_native_exact_history_constitutive_closure
+  evidence_bundle = [I9-C.2]
+  ancestor_evidence = [I9-C, I9-C.1]
+  ancestor_positive_weight = 0
+  independent_comparison_weight = 1
+```
+
+- [x] Make C.2 the sole comparison-, ranking-, and selection-eligible C-family representative.
+- [x] Retain C/C.1 only for lineage, ablation, theory-boundary, and naturalization-debt interpretation.
+- [x] Prohibit separate scores, votes, ranks, or accumulated positive weight for C/C.1.
+- [x] Consume A/A.1 as one A-family evidence bundle rather than two candidates.
+- [x] Consume B/B.1 as one B-family evidence bundle rather than two candidates.
+- [x] Require comparison axis before rung consumption.
+- [x] Use C.2 `DR2` only for carrier/restoration comparison.
+- [x] Consume C.2 provisional producer `DR4` as the pre-I10 input and use producer `DR5` only after I10 final-state replay/control admission.
+- [x] Use C.2 native-runtime `DR0` for native implementation comparison.
+- [x] Prohibit maximum-label inheritance across ancestry or bundle members.
+- [x] Keep producer viability from inflating native support.
+- [x] Keep native `DR0` from erasing producer/executor viability.
+
 ## Iteration 10 - Added-Mechanism Replay And Controls
 
-- [ ] Consume every executed A/B/C candidate row explicitly.
-- [ ] Run artifact, snapshot/load, duplicate, and branch replay.
-- [ ] Run candidate-specific invariant controls.
-- [ ] For Candidate C, run duplicate-receipt, wrong-lineage, wrong-edge, nonqualifying-event, and restored-receipt-set controls.
-- [ ] Consume I9-C and I9-C.1 as separate carrier/authority rows; do not let C.1 retroactively naturalize C.
-- [ ] For Candidate C.1, preserve native-history identity, exact recomputation, injected-state rejection, history-tamper, and constitutive-insertion controls.
-- [ ] Consume I9-C.2 as three separate lane records; do not relabel its producer-extension `DR4` as native-runtime support.
-- [ ] Preserve C.2 generalized-relation invariance, native restoration, producer/executor authority, conservation, feedback, and no-`src` controls.
-- [ ] Run local-encounter and global-selector controls.
-- [ ] Run hidden-state and producer/native controls.
-- [ ] Run topology-specific controls.
-- [ ] Use v2 for reset-sensitive equivalence.
-- [ ] Demote or reject failed-open rows.
-- [ ] Emit replay/control JSON and report.
+- [x] Consume every executed A/B/C row as explicit bundle evidence without making every row an independent comparison candidate.
+- [x] Emit one comparison record per mechanism family rather than per sub-iteration.
+- [x] Record A/A.1 and B/B.1 as strengthening bundles with independent weight `1` each.
+- [x] Record C.2 as the sole C-family representative with independent weight `1`.
+- [x] Record C/C.1 ancestry with positive weight `0` and ranking/selection eligibility false.
+- [x] Record `comparison_axis` and lane-specific rung for every cross-family comparison.
+- [x] Run artifact, snapshot/load, duplicate, and branch replay.
+- [x] Run candidate-specific invariant controls.
+- [x] For Candidate C, run duplicate-receipt, wrong-lineage, wrong-edge, nonqualifying-event, and restored-receipt-set controls.
+- [x] Consume I9-C and I9-C.1 as separate carrier/authority rows; do not let C.1 retroactively naturalize C.
+- [x] For Candidate C.1, preserve native-history identity, exact recomputation, injected-state rejection, history-tamper, and constitutive-insertion controls.
+- [x] Consume I9-C.2 as three separate lane records; do not relabel its producer-extension `DR5` as native-runtime support.
+- [x] Preserve C.2 generalized-relation invariance, native restoration, producer/executor authority, conservation, feedback, and no-`src` controls.
+- [x] Retain C.2 post-transport native snapshots and verify exact v1/v2 restoration, post-feedback `S` rederivation, and the next candidate-step result.
+- [x] Separate runtime-executed controls, inherited I3 schema nulls, positive conformance observations, and scope-not-applicable rows.
+- [x] Keep inherited schema nulls and C/C.1 representation-boundary controls non-contributory to the C.2 rung.
+- [x] Separate A/B candidate-native runtime admission from the ambient native D0a context rung.
+- [x] Emit a claim-level replay-mode map for I11.
+- [x] Carry admitted D0a/D0b/D0c rows into I11 alongside the three added-mechanism units.
+- [x] Require multi-axis/Pareto comparison in I11; prohibit a single scalar ranking.
+- [x] Run local-encounter and global-selector controls.
+- [x] Run hidden-state and producer/native controls.
+- [x] Run topology-specific controls.
+- [x] Use v2 for reset-sensitive equivalence.
+- [x] Demote or reject failed-open rows.
+- [x] Emit replay/control JSON and report.
+
+### Iteration 10 Result
+
+```text
+status = passed
+acceptance_state = accepted_added_mechanism_family_replay_controls_with_lane_specific_DR5_and_no_native_upgrade
+source_artifact_manifest_references_replayed = 66
+all_source_identities_exact = true
+all_manifest_hashes_exact = true
+A_replay_modes = artifact + snapshot/load + duplicate + branch passed
+B_replay_modes = artifact + snapshot/load + duplicate + branch passed
+C_replay_modes = artifact + source/final snapshot-load + duplicate + branch + post-feedback continuation passed
+C2_post_feedback_restoration_witness = passed
+control_registry_rows_resolved = 70
+family_control_resolution_rows = 210
+runtime_controls_executed = 14
+inherited_schema_nulls_consumed = 76
+positive_conformance_observations = 30
+scope_not_applicable_rows = 90
+failed_open_count = 0
+frozen_I10_registry_not_run_count = 0
+deferred_conditional_C2_controls_in_I10_registry = false
+A_added_mechanism_rung = DR5
+B_added_mechanism_rung = DR5
+A_candidate_native_runtime_lane = not_admitted
+B_candidate_native_runtime_lane = not_admitted
+existing_native_D0a_context_rung = DR2
+C2_relation_carrier_rung = DR2
+C2_producer_extension_rung = DR5
+C2_native_runtime_rung = DR0
+native_D0a_rung = DR2 unchanged
+DR6_supported = false
+n31_closeout_progress_rung = N31-C4
+n31_closeout_ladder_rung_assigned = false
+ready_for_iteration_11_comparative_classification = true
+added_mechanism_comparison_unit_count = 3
+admitted_Dx_comparison_row_count = 3
+total_I11_comparison_row_count = 6
+single_scalar_I11_ranking_allowed = false
+RCAE_automatic_adoption_allowed = false
+src_diff_empty = true
+output_digest = 29314dc62908e445deeb868ad04719dc1c23bd856562ac159098f5a3b081e257
+```
+
+I10 is the first full added-mechanism family replay matrix. It reruns actual
+family behavior rather than merely aggregating I9 reports. A reproduces both
+the fresh/aged expression split and the later native readout split. B
+reconstructs the unconsumed one-shot closure from the exact formation receipt,
+reproduces export and readout behavior, and separately proves that the
+committed receipt cannot schedule a second export. C.2 rederives its relation
+from native packet history, replays producer/native-step transport, and retains
+the final post-arrival native state. Both duplicate branches have equal complete
+restoration identities, rederive the same post-feedback `S`, and produce the
+same next candidate-step result after load. This final-state witness, rather
+than source-state roundtrip alone, is what admits the C.2 producer lane at
+`DR5`.
+
+The `70` control count names the frozen registry, not `70` runtime executions.
+Each of the `210` family-resolution rows identifies its resolution mode and
+receipt. An inherited `failed_closed` result points to the exact I3
+schema-validator fixture and means that the false-positive claim was rejected;
+it is not a family runtime failure and does not raise a rung. Positive
+conformance observations and the `14` actually executed runtime controls are
+reported separately. Deferred conditional C.2 naturalization controls are not
+members of the frozen I10 registry.
+
+The result is lane-specific. A and B reach producer-mediated `DR5`; they do not
+become native D0. C.2 reaches producer-extension `DR5`, while its exact-history
+carrier remains `DR2` and the current native runtime remains `DR0`. Its
+producer result therefore cannot be used as native implementation evidence.
+Conversely, native `DR0` does not erase the viable producer/executor result.
+
+C and C.1 remain separate explanatory records for independent-state and
+fixture-exact-history authority. Each has comparison weight `0`; neither can
+add a score, vote, rank, or control-count contribution to C.2. A/A.1 and B/B.1
+are likewise consumed once per family. A and B do not own a native `DR2` lane;
+that rung belongs to the ambient D0a context. I10 admits three added-mechanism
+units and the admitted D0a/D0b/D0c rows for I11. I11 must compare all six rows
+as multi-axis profiles or a Pareto set, not collapse them into one scalar score.
+
+The deferred C.2 naturalization list is not an unfinished I10 control set.
+Packetization, native constitutive integration, multi-cycle stability,
+topology lifecycle, cache policy, and native readmission remain conditional
+future implementation requirements if C.2 is selected later.
+
+Artifacts:
+
+```text
+outputs/n31_i10_added_mechanism_replay_control_artifacts/
+outputs/n31_i10_added_mechanism_replay_control_trace.json
+outputs/n31_added_mechanism_replay_controls_i10.json
+reports/n31_added_mechanism_replay_controls_i10.md
+```
 
 ## Iteration 11 - Comparative Classification
 
@@ -2141,7 +2278,7 @@ blocked:
 This is not an unfinished N31 iteration and does not block I10, I11, or I12.
 It is a conditional implementation record for use only if a later decision
 selects C.2 for LGRC naturalization. C.2's current N31 evidence is complete at
-relation `DR2`, provisional producer-mediated `DR4` pending I10, and native
+relation `DR2`, replay/control-backed producer-mediated `DR5`, and native
 runtime `DR0`.
 
 - [ ] Test packetization invariance: one `0.10` versus two `0.05` progression packets under matched integrated coherence and physical interval.
@@ -2157,7 +2294,7 @@ runtime `DR0`.
 - [ ] Prove full-history recomputation equals any incremental cache.
 - [ ] Prove cache removal is neutral, injection has no authority, and mismatch fails closed.
 - [ ] Define exact history-pruning or approximation semantics.
-- [ ] Re-earn native `DR1` through `DR4` without inheriting producer `DR4`.
+- [ ] Re-earn native `DR1` through `DR4` without inheriting producer `DR5`.
 - [ ] Prove feature-disabled byte identity and provider mismatch refusal.
 - [ ] Keep RCAE admission blocked until `DR5` and a reusable provider contract.
 

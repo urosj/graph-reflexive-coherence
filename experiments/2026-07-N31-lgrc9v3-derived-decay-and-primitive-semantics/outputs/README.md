@@ -216,7 +216,32 @@
   `DR4` pending I10, and
   the unchanged existing native runtime at `DR0`. Producer `DR4` is explicitly
   provisional pending I10. It leaves C/C.1 intact, native D0a unchanged, RCAE
-  admission blocked, and I10 unopened.
+  admission blocked, and I10 unopened. Its comparison-admission policy makes
+  C.2 the sole weight-`1` C-family representative, assigns C/C.1 zero-weight
+  ancestry roles, and freezes lane-specific comparison rungs. Those statements
+  describe the immutable I9-C.2 source state; I10 subsequently resolves its
+  producer-extension lane to replay/control-backed `DR5` without changing the
+  `DR2` carrier or `DR0` native-runtime lanes.
+
+## Iteration 10
+
+- `n31_i10_added_mechanism_replay_control_artifacts/` contains the frozen I10
+  preregistration, exact source-artifact replay, fresh A/B/C.2 family replay
+  records, the resolved `70`-identity control registry, the family bundle
+  matrix, and the generated native branch snapshots used for restoration and
+  readout replay. The control record distinguishes runtime execution, inherited
+  I3 schema nulls, positive conformance observations, and scope exclusions.
+- `n31_i10_added_mechanism_replay_control_trace.json` records all exact source
+  identities, `66` manifest references, fresh executions, v2 snapshot/load
+  checks, duplicate and branch replay, C.2 post-feedback restoration and next-step
+  replay, candidate controls, and zero-weight C/C.1 ancestry records.
+- `n31_added_mechanism_replay_controls_i10.json` admits A and B at
+  producer-mediated `DR5`, and C.2 at relation `DR2`, producer-extension `DR5`,
+  and existing-native-runtime `DR0`. It retains native D0a at `DR2`, performs no
+  family selection, assigns no `DR6`, keeps A/B candidate-native lanes
+  unadmitted, and supplies I11 with three added-mechanism plus three admitted
+  D0/Dx comparison rows. RCAE adoption remains pending I11 and a reusable
+  provider contract.
 
 Committed outputs should contain structured source inventories, schema/control
 records, source-current candidate rows, replay/control matrices, comparative

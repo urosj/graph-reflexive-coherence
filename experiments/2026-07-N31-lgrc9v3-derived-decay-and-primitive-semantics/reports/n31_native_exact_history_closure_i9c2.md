@@ -216,6 +216,38 @@ classification from fresh execution, and normalized control meanings. The
 provisional C.1 ceiling did not change; scope, authority, and debt became more
 precise.
 
+## I10/I11 Comparison Admission
+
+C.2 is the sole forward-facing C-family comparison representative. I9-C and
+I9-C.1 remain explanatory ancestry for lineage, ablation, theory-boundary, and
+naturalization-debt analysis. Their comparison weight is zero: they receive no
+separate score, rank, vote, or selection eligibility.
+
+```text
+C-family evidence bundle = [I9-C.2]
+independent comparison weight = 1
+ancestor iterations = [I9-C, I9-C.1]
+ancestor positive weight = 0
+```
+
+Comparisons must name the axis before consuming a rung:
+
+```text
+carrier/restoration comparison:
+  C.2 relation lane = DR2
+
+producer-mediated mechanism comparison:
+  C.2 producer-extension lane = provisional DR4 pending I10
+
+native implementation comparison:
+  C.2 native-runtime lane = DR0
+```
+
+The producer lane cannot inflate native support, and native `DR0` cannot erase
+the demonstrated producer/executor viability. A/B strengthening iterations are
+consumed as one family bundle with their parent rather than as independent
+comparison rows.
+
 ## Control Status
 
 ```text
@@ -253,6 +285,7 @@ not mean every runtime control has executed.
 | `weakening_and_susceptibility_semantics_are_explicit` | true |
 | `deferred_naturalization_debt_and_readmission_gates_are_explicit` | true |
 | `C1_revision_lineage_is_explicit` | true |
+| `C_family_comparison_policy_prevents_double_counting_and_lane_inflation` | true |
 | `src_and_protected_contracts_unchanged` | true |
 | `I10_remains_unopened` | true |
 | `no_absolute_paths_in_records` | true |

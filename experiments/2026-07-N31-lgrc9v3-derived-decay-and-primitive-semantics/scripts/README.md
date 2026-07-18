@@ -231,11 +231,29 @@ Run with:
   `LGRC9V3.step()` alone performs state mutation. The result records separate
   relation/carrier, provisional producer-extension pending I10, and
   existing-native-runtime lanes, plus the still-open native re-admission gates.
+  The I10 builder consumes this source state and resolves its producer lane;
+  this I9-C.2 builder intentionally remains an immutable pre-I10 artifact.
 
 Run with:
 
 ```bash
 .venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_native_exact_history_closure_i9c2.py
+```
+
+## Iteration 10
+
+- `build_n31_added_mechanism_replay_controls_i10.py` consumes exact I2/I3/I8
+  and I9 family artifacts, replays every manifest, reruns A, B, and C.2 family
+  behavior, verifies source and post-feedback v1/v2 restoration plus
+  duplicate/branch/next-step replay, resolves the frozen `70`-identity control
+  registry with explicit resolution modes, and emits one comparison unit per
+  mechanism family plus the admitted D0/Dx handoff rows without selecting a
+  winner or modifying runtime code.
+
+Run with:
+
+```bash
+.venv/bin/python experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/scripts/build_n31_added_mechanism_replay_controls_i10.py
 ```
 
 Scripts should be deterministic, use repository-relative paths, consume exact

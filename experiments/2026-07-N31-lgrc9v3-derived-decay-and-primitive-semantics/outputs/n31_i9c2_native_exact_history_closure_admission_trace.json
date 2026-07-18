@@ -647,6 +647,44 @@
       "passed": true
     },
     {
+      "check_id": "C_family_comparison_policy_prevents_double_counting_and_lane_inflation",
+      "detail": {
+        "ancestor_evidence_roles": [
+          "lineage",
+          "ablation",
+          "theory_boundary",
+          "naturalization_debt"
+        ],
+        "ancestor_iterations": [
+          "I9-C",
+          "I9-C.1"
+        ],
+        "ancestor_positive_weight": 0,
+        "ancestor_ranking_eligible": false,
+        "ancestor_selection_eligible": false,
+        "canonical_comparison_candidate": "C_native_exact_history_constitutive_closure",
+        "comparison_eligible": true,
+        "comparison_family": "C",
+        "comparison_lanes": {
+          "native_implementation_support": "DR0",
+          "producer_mediated_mechanism_quality": "provisional_DR4_pending_I10",
+          "relation_carrier_restoration": "DR2"
+        },
+        "decision_based_only_on_C2_evidence": true,
+        "evidence_bundle": [
+          "I9-C.2"
+        ],
+        "excluded_ancestor_candidates": [
+          "C_route_susceptibility_relaxation",
+          "C_derived_history_susceptibility"
+        ],
+        "family_evidence_may_accumulate_independent_votes": false,
+        "independent_comparison_weight": 1,
+        "maximum_label_across_ancestry_may_define_bundle_rung": false
+      },
+      "passed": true
+    },
+    {
       "check_id": "src_and_protected_contracts_unchanged",
       "detail": {
         "governance_base_revision": "236351695e36f88be85b7ed429911d58fad57b32",
@@ -684,6 +722,40 @@
     "producer_extension_lane_rung": "provisional_DR4_pending_I10",
     "relation_carrier_lane_rung": "DR2"
   },
+  "comparison_admission_policy": {
+    "ancestor_evidence_roles": [
+      "lineage",
+      "ablation",
+      "theory_boundary",
+      "naturalization_debt"
+    ],
+    "ancestor_iterations": [
+      "I9-C",
+      "I9-C.1"
+    ],
+    "ancestor_positive_weight": 0,
+    "ancestor_ranking_eligible": false,
+    "ancestor_selection_eligible": false,
+    "canonical_comparison_candidate": "C_native_exact_history_constitutive_closure",
+    "comparison_eligible": true,
+    "comparison_family": "C",
+    "comparison_lanes": {
+      "native_implementation_support": "DR0",
+      "producer_mediated_mechanism_quality": "provisional_DR4_pending_I10",
+      "relation_carrier_restoration": "DR2"
+    },
+    "decision_based_only_on_C2_evidence": true,
+    "evidence_bundle": [
+      "I9-C.2"
+    ],
+    "excluded_ancestor_candidates": [
+      "C_route_susceptibility_relaxation",
+      "C_derived_history_susceptibility"
+    ],
+    "family_evidence_may_accumulate_independent_votes": false,
+    "independent_comparison_weight": 1,
+    "maximum_label_across_ancestry_may_define_bundle_rung": false
+  },
   "contract_digest": "bc9c894a3710a6df28eee8a9bcb771ecad3dc470940511a6d0b5ab4d6b64acdb",
   "control_plan_digest": "3d474b0baa50b8a0b512721f92efcace338b975683bf645f06e31ce034d2a500",
   "current_runtime_audit": {
@@ -711,7 +783,7 @@
   "native_runtime_extension_blocker": "N31_src_changes_not_allowed",
   "native_runtime_extension_executed": false,
   "native_runtime_lane_rung": "DR0",
-  "output_digest": "b20406f1e8e05bdb52d6a7d81d87acb333c7680aea16d00c7413acddb7d1baf4",
+  "output_digest": "a6bd85e9ea719abebcb2a834ca4cf060bee383ff8e04801fb8d7c17307db91ad",
   "phase8_handoff_digest": "fffcdff90f39498d5c8ca13131f95ac878557f7c82a3745e6154b28d77d26ff4",
   "producer_extension_lane_ceiling": "DR4",
   "producer_extension_lane_rung": "provisional_DR4_pending_I10",

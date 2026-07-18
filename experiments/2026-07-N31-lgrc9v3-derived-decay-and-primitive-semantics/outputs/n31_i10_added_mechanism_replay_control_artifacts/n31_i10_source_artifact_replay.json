@@ -1,0 +1,719 @@
+{
+  "all_manifest_references_exact": true,
+  "all_source_identities_exact": true,
+  "artifact_kind": "n31_i10_source_artifact_replay",
+  "artifact_schema_version": "n31_i10_source_artifact_replay_v1",
+  "duplicate_reference_count": 0,
+  "generated_at": "2026-07-18T00:00:00+00:00",
+  "manifest_reference_count": 66,
+  "output_digest": "02d460f11f7e1f8c6f25b7e6f38e6257fa152f90270c1ccb4cacd8aaad0397f2",
+  "references": [
+    {
+      "actual_sha256": "7df80a1e37fc56c5452bd79b8b9dc898174c06c8deb2815a7e8dd4c184f5d0e0",
+      "artifact_role": "I8_replay_and_amount_sweep_preregistration",
+      "exists": true,
+      "expected_sha256": "7df80a1e37fc56c5452bd79b8b9dc898174c06c8deb2815a7e8dd4c184f5d0e0",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i8_d0_replay_control_artifacts/n31_i8_replay_and_amount_sweep_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_d0_replay_controls_classification_i8"
+    },
+    {
+      "actual_sha256": "31c360eeb75c729a21f06e39ec66492a65a2148ebb943a4c6e020ae6764d69c6",
+      "artifact_role": "I8_replay_control_runtime_trace",
+      "exists": true,
+      "expected_sha256": "31c360eeb75c729a21f06e39ec66492a65a2148ebb943a4c6e020ae6764d69c6",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i8_d0_replay_control_trace.json",
+      "sha256_exact": true,
+      "source_id": "n31_d0_replay_controls_classification_i8"
+    },
+    {
+      "actual_sha256": "fbf397d6fe59d6f1a6fac0d4b1d296e83af1572be4a6d947d0864f903d07c036",
+      "artifact_role": "pre_outcome_release_efficacy_contract",
+      "exists": true,
+      "expected_sha256": "fbf397d6fe59d6f1a6fac0d4b1d296e83af1572be4a6d947d0864f903d07c036",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd",
+      "artifact_role": "I9_revision_lineage_and_exact_contract_binding",
+      "exists": true,
+      "expected_sha256": "37737bea6231c9a65f2addc57fe76cab6cf9e7dac1c9d7e47c83865d8f31bedd",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9_revision_lineage.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "58a7de9ae6c409556e843095dca1df5369e9f4b9261ef623f96a5180d1ef34ba",
+      "artifact_role": "shared_post_formation_native_snapshot",
+      "exists": true,
+      "expected_sha256": "58a7de9ae6c409556e843095dca1df5369e9f4b9261ef623f96a5180d1ef34ba",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_shared_post_formation_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "81ef946fae7b5a71761ff11a39829a550e3f7ce5316ff5db0999e9d45e1e2c0e",
+      "artifact_role": "fresh_release_phase_closure_state",
+      "exists": true,
+      "expected_sha256": "81ef946fae7b5a71761ff11a39829a550e3f7ce5316ff5db0999e9d45e1e2c0e",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_closure_state.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "4811b331d289f93edb6e9668fe93631f5536ac79ba2a46648273c45a36fa290f",
+      "artifact_role": "aged_release_phase_closure_state",
+      "exists": true,
+      "expected_sha256": "4811b331d289f93edb6e9668fe93631f5536ac79ba2a46648273c45a36fa290f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_closure_state.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703",
+      "artifact_role": "fresh_branch_final_native_snapshot",
+      "exists": true,
+      "expected_sha256": "f434a46d45d78c96a2ca9a58deeca1d04a5ed1b41a4881f7e22db6fe502f3703",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_fresh_final_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced",
+      "artifact_role": "aged_branch_final_native_snapshot",
+      "exists": true,
+      "expected_sha256": "4dc07b6c0803f54674eceac48b6da16ba46fddcaff6b9c3e309e71cd47feaced",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_aged_final_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a",
+      "artifact_role": "composed_native_closure_policy_topology_identity",
+      "exists": true,
+      "expected_sha256": "3a04a80d400271bfa3e2c3502b7699647c0357c0ea62674ec37e5cf96e7d6f0a",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a_release_efficacy_artifacts/n31_i9a_composed_candidate_identity.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_attenuation_i9a"
+    },
+    {
+      "actual_sha256": "a0b2a9ba60e3da831771fe748f805be5741384041f57bb6d24d81cc22deb9f00",
+      "artifact_role": "pre_outcome_independent_readout_contract",
+      "exists": true,
+      "expected_sha256": "a0b2a9ba60e3da831771fe748f805be5741384041f57bb6d24d81cc22deb9f00",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_downstream_readout_i9a1"
+    },
+    {
+      "actual_sha256": "fc318c280c7464b0b502ba6d7a18590ad0350188eb1eb6299949a0ca91c2f06a",
+      "artifact_role": "native_receiver_threshold_sweep",
+      "exists": true,
+      "expected_sha256": "fc318c280c7464b0b502ba6d7a18590ad0350188eb1eb6299949a0ca91c2f06a",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_threshold_sweep.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_downstream_readout_i9a1"
+    },
+    {
+      "actual_sha256": "508fccafa359f22fa1060ed95d2136601be9edc4c96805d94def4bf97781c28e",
+      "artifact_role": "receiver_and_target_mediation_interventions",
+      "exists": true,
+      "expected_sha256": "508fccafa359f22fa1060ed95d2136601be9edc4c96805d94def4bf97781c28e",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9a1_mediation_interventions.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_downstream_readout_i9a1"
+    },
+    {
+      "actual_sha256": "14b5a0e109d464969565c5a1252c8b51f855100ecedfaf5ceeacaefd8fa4a00d",
+      "artifact_role": "I9_and_I9A_review_revision_lineage",
+      "exists": true,
+      "expected_sha256": "14b5a0e109d464969565c5a1252c8b51f855100ecedfaf5ceeacaefd8fa4a00d",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9a1_downstream_readout_artifacts/n31_i9_i9a_revision_lineage.json",
+      "sha256_exact": true,
+      "source_id": "n31_release_efficacy_downstream_readout_i9a1"
+    },
+    {
+      "actual_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+      "artifact_role": "pre_outcome_B_R_export_and_readout_contract",
+      "exists": true,
+      "expected_sha256": "9896f926960e07536d7a2b0919ca51c9c93df7ab9da0d2f29c23af4c44a7d987",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01",
+      "artifact_role": "complete_native_post_formation_state",
+      "exists": true,
+      "expected_sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_post_formation_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "d18f9a92d097384ca8793f06ec985de192f52d0994bc0c328a0c05032638c0ce",
+      "artifact_role": "complete_native_post_export_state",
+      "exists": true,
+      "expected_sha256": "d18f9a92d097384ca8793f06ec985de192f52d0994bc0c328a0c05032638c0ce",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_final_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "c99abe6a2bbeb6754e7ab19508c47542758c51656b97446a3a62cab8375013cb",
+      "artifact_role": "versioned_one_shot_export_policy_receipt_state",
+      "exists": true,
+      "expected_sha256": "c99abe6a2bbeb6754e7ab19508c47542758c51656b97446a3a62cab8375013cb",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_closure_state.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+      "artifact_role": "bounded_export_amount_and_one_shot_control_matrix",
+      "exists": true,
+      "expected_sha256": "dd650c0eaf545ea04749aa3fce975118fdfbb5615d625ca6ac3b40a433cf4c6f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_export_policy_sweep.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e",
+      "artifact_role": "organization_mediation_and_destination_isolation_matrix",
+      "exists": true,
+      "expected_sha256": "4c61419aaea0020b9d102bf127fbb7a36b3a68394daaab143163f6a61a85429e",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_intervention_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "bb44ab0534781b8e7fbdaa4a9039515d56ec3dc022330e560fd7aa629bbc528e",
+      "artifact_role": "native_closure_policy_topology_composed_identity",
+      "exists": true,
+      "expected_sha256": "bb44ab0534781b8e7fbdaa4a9039515d56ec3dc022330e560fd7aa629bbc528e",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_candidate_identity.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab",
+      "artifact_role": "closure_receipt_native_event_mismatch_fail_closed_matrix",
+      "exists": true,
+      "expected_sha256": "d231a7e90ce85149d95712896a48cd7b3f65199579080d3da252bdbb37b6a3ab",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b_conserved_leakage_artifacts/n31_i9b_composed_transaction_mismatch_controls.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_i9b"
+    },
+    {
+      "actual_sha256": "3fca010b076ff5ccefb255be566672fb81dbbb724e6160bcaa0d398c3b1dbddd",
+      "artifact_role": "pre_outcome_I9B1_contract",
+      "exists": true,
+      "expected_sha256": "3fca010b076ff5ccefb255be566672fb81dbbb724e6160bcaa0d398c3b1dbddd",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "78ae36e12d6c20681c233ee8dc9619816a57fba08f3c27da4438f3b6ff3f17ee",
+      "artifact_role": "reviewed_to_corrected_I9B_identity_lineage",
+      "exists": true,
+      "expected_sha256": "78ae36e12d6c20681c233ee8dc9619816a57fba08f3c27da4438f3b6ff3f17ee",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b_revision_lineage_r1.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01",
+      "artifact_role": "reconstructed_native_formation_state",
+      "exists": true,
+      "expected_sha256": "8a1e1f43fe4def353d68de8210cfb321f8c568b900c2210e4742cf351deeba01",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_formation_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "01aa373b7d332ad56725b12d81a9128e526fbecdc42df0b7339265f67384bea3",
+      "artifact_role": "post_disjoint_native_progression_state",
+      "exists": true,
+      "expected_sha256": "01aa373b7d332ad56725b12d81a9128e526fbecdc42df0b7339265f67384bea3",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "d046939075c810fadeb7ad23be135f649e147e76efa0c12c4b9a4324aa4b6d9f",
+      "artifact_role": "independent_native_persistence_checkpoint",
+      "exists": true,
+      "expected_sha256": "d046939075c810fadeb7ad23be135f649e147e76efa0c12c4b9a4324aa4b6d9f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_persistence_checkpoint.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394",
+      "artifact_role": "multi_level_bounded_export_response_shape",
+      "exists": true,
+      "expected_sha256": "eab28554ea9e0a9984c66e4701b154d36f762fd25224b5ebc8243d200a43f394",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_export_response_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a",
+      "artifact_role": "paired_native_admission_boundary_shape",
+      "exists": true,
+      "expected_sha256": "9d08c1e920ebc46243fa3e7d037c0e43b6ad88af9ee494b597a8d4f71375e57a",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_readout_boundary_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+      "artifact_role": "source_C_0.20_no_export_native_state",
+      "exists": true,
+      "expected_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_pre_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+      "artifact_role": "source_C_0.20_post_export_native_state",
+      "exists": true,
+      "expected_sha256": "9246f0faacdfd02e0852500413d836a6b4173e875cec9ae4a14684c8969ba206",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.20_post_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "bac22986268941f1ccb7a18b56caf37f3c49bed9c7a5cd3657b605b8f8c9292c",
+      "artifact_role": "source_C_0.21_no_export_native_state",
+      "exists": true,
+      "expected_sha256": "bac22986268941f1ccb7a18b56caf37f3c49bed9c7a5cd3657b605b8f8c9292c",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_pre_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "fa5c50509f367a0531d466f22adb680f5d708d4a1fa149dc22c1ea0b73caaf78",
+      "artifact_role": "source_C_0.21_post_export_native_state",
+      "exists": true,
+      "expected_sha256": "fa5c50509f367a0531d466f22adb680f5d708d4a1fa149dc22c1ea0b73caaf78",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.21_post_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "14b73d5d4e014b41687328e4939cf5949f80649e5d062e84438d3390a5f1e364",
+      "artifact_role": "source_C_0.22_no_export_native_state",
+      "exists": true,
+      "expected_sha256": "14b73d5d4e014b41687328e4939cf5949f80649e5d062e84438d3390a5f1e364",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_pre_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "9fb36c2052c9b312e8972032654c61b74c0f627225b55a75cdc994210b77bfce",
+      "artifact_role": "source_C_0.22_post_export_native_state",
+      "exists": true,
+      "expected_sha256": "9fb36c2052c9b312e8972032654c61b74c0f627225b55a75cdc994210b77bfce",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.22_post_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "33c631d7c07c1775c4d788e89ae92a853c59636e80d8e8361708c5bac9bcac23",
+      "artifact_role": "source_C_0.24_no_export_native_state",
+      "exists": true,
+      "expected_sha256": "33c631d7c07c1775c4d788e89ae92a853c59636e80d8e8361708c5bac9bcac23",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_pre_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "7e7741745db4da4584b61348d08b929e75e39494bbfbab46e34e9354b98dfa3d",
+      "artifact_role": "source_C_0.24_post_export_native_state",
+      "exists": true,
+      "expected_sha256": "7e7741745db4da4584b61348d08b929e75e39494bbfbab46e34e9354b98dfa3d",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9b1_conserved_leakage_response_artifacts/n31_i9b1_source_C_0.24_post_export.json",
+      "sha256_exact": true,
+      "source_id": "n31_conserved_leakage_response_i9b1"
+    },
+    {
+      "actual_sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7",
+      "artifact_role": "pre_outcome_candidate_C_contract",
+      "exists": true,
+      "expected_sha256": "d6e01671ba183586cddd15bf1cd6b46fd35efb029b8ae10f9c2c6527983bbaa7",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3",
+      "artifact_role": "post_registered_route_use_native_snapshot",
+      "exists": true,
+      "expected_sha256": "67ca45402fdd64ea8ac7d57f72720cc05623e863a4a8d9dedf200302611b79d3",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_post_formation_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "08ef7aeacf9f8d629fa122f28ba6331b323ffc5243a6d549a8b91748351f41b3",
+      "artifact_role": "formed_susceptibility_closure",
+      "exists": true,
+      "expected_sha256": "08ef7aeacf9f8d629fa122f28ba6331b323ffc5243a6d549a8b91748351f41b3",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_formed_susceptibility_closure.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "artifact_role": "post_progression_active_native_snapshot",
+      "exists": true,
+      "expected_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_active_progression_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "artifact_role": "post_progression_omitted_native_snapshot",
+      "exists": true,
+      "expected_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_omitted_progression_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "80db7940b444966bf002424b3f4877c8680841eb425e9cbe7d3af3c3830dd80c",
+      "artifact_role": "relaxed_susceptibility_closure",
+      "exists": true,
+      "expected_sha256": "80db7940b444966bf002424b3f4877c8680841eb425e9cbe7d3af3c3830dd80c",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_relaxed_susceptibility_closure.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "64e5417a99cdedefa058474f1959947fc15ce93aa1e646734c0d749745e90c80",
+      "artifact_role": "matched_native_progression_and_receipts",
+      "exists": true,
+      "expected_sha256": "64e5417a99cdedefa058474f1959947fc15ce93aa1e646734c0d749745e90c80",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_progression_receipt_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a",
+      "artifact_role": "native_conductance_potential_flux_readout",
+      "exists": true,
+      "expected_sha256": "9261c4949c4b0a86bd1b211d11efb02eb0bbaa25255c7b5b87447f5f5bd4cf3a",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_native_readout_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "6aefb942d588e4df7df63df4afae3ccbca599aed5e6fc9f5d0f5419869cdda47",
+      "artifact_role": "candidate_C_selected_controls",
+      "exists": true,
+      "expected_sha256": "6aefb942d588e4df7df63df4afae3ccbca599aed5e6fc9f5d0f5419869cdda47",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_control_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "c94955dccf91b052a069c6544a2bda105807d53aaeb5a2fc169eefa9d85740a9",
+      "artifact_role": "native_closure_policy_topology_identity",
+      "exists": true,
+      "expected_sha256": "c94955dccf91b052a069c6544a2bda105807d53aaeb5a2fc169eefa9d85740a9",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c_susceptibility_relaxation_artifacts/n31_i9c_composed_identities.json",
+      "sha256_exact": true,
+      "source_id": "n31_susceptibility_relaxation_i9c"
+    },
+    {
+      "actual_sha256": "13d3958117ad404ed0a8e8831bdbbe6f61577198dbe1de0e3f3d786a8941f038",
+      "artifact_role": "pre_execution_exact_derived_relation_contract",
+      "exists": true,
+      "expected_sha256": "13d3958117ad404ed0a8e8831bdbbe6f61577198dbe1de0e3f3d786a8941f038",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "443871ed4e419761609b433c96e0e4b2744343573af73c2480493bafef0cd954",
+      "artifact_role": "formed_native_history_roundtrip",
+      "exists": true,
+      "expected_sha256": "443871ed4e419761609b433c96e0e4b2744343573af73c2480493bafef0cd954",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_formed_native_roundtrip.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "artifact_role": "relaxed_native_history_roundtrip",
+      "exists": true,
+      "expected_sha256": "21a6269e429bd9e2c23a0e4cc9646dcb4902ffdfd3b420234666b58a3751d79f",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_relaxed_native_roundtrip.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "292f2361ea6066e11b6b16c6cc20a2c9dab670b21111e6f6771e4e4305f62ce5",
+      "artifact_role": "history_identity_tamper_control",
+      "exists": true,
+      "expected_sha256": "292f2361ea6066e11b6b16c6cc20a2c9dab670b21111e6f6771e4e4305f62ce5",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_tampered_history_snapshot.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "ce82b871959aef27b0f2e135fa9712becc4d5cc2a6a220dc6f310ce27f17940b",
+      "artifact_role": "exact_derived_susceptibility_matrix",
+      "exists": true,
+      "expected_sha256": "ce82b871959aef27b0f2e135fa9712becc4d5cc2a6a220dc6f310ce27f17940b",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_derivation_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "959d104bc025b565d04d15e69f3e50821ed782e14e1813d941d0c208291c1795",
+      "artifact_role": "closure_orchestrated_lower_GRC9V3_kernel_readout_matrix",
+      "exists": true,
+      "expected_sha256": "959d104bc025b565d04d15e69f3e50821ed782e14e1813d941d0c208291c1795",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_readout_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "2552f5fdf493737e309c73870da0d8b7659a6993444c777ed4eb03a98702329c",
+      "artifact_role": "candidate_C1_selected_controls",
+      "exists": true,
+      "expected_sha256": "2552f5fdf493737e309c73870da0d8b7659a6993444c777ed4eb03a98702329c",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_control_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "8942779b0f08f54cfcd9db1744a7a587d85d967b3db6c4b13c0c5f2b29a1f223",
+      "artifact_role": "native_history_relation_implementation_identity",
+      "exists": true,
+      "expected_sha256": "8942779b0f08f54cfcd9db1744a7a587d85d967b3db6c4b13c0c5f2b29a1f223",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c1_exact_derived_susceptibility_artifacts/n31_i9c1_composed_identities.json",
+      "sha256_exact": true,
+      "source_id": "n31_exact_derived_susceptibility_i9c1"
+    },
+    {
+      "actual_sha256": "680d56f7407560f6c663a3abf8da3c3a76dcf56b7ebf6fd8a54942ed1d1c9ed7",
+      "artifact_role": "n31_i9c2_preregistration",
+      "exists": true,
+      "expected_sha256": "680d56f7407560f6c663a3abf8da3c3a76dcf56b7ebf6fd8a54942ed1d1c9ed7",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_preregistration.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "0e5ab972daaa2794a8a51f21c8ed32a13356a96165272d2adb7b7a08e8314410",
+      "artifact_role": "n31_i9c2_generalized_derivation_matrix",
+      "exists": true,
+      "expected_sha256": "0e5ab972daaa2794a8a51f21c8ed32a13356a96165272d2adb7b7a08e8314410",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_generalized_derivation_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "be10e03714cf772f85b4238e56a9227891da3611302dd633a3e3340f910b610b",
+      "artifact_role": "n31_i9c2_native_restoration_matrix",
+      "exists": true,
+      "expected_sha256": "be10e03714cf772f85b4238e56a9227891da3611302dd633a3e3340f910b610b",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_native_restoration_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "1d84bd028b2f2e59b4ce7e303fc7e52fa166f68610fc6bce453c0311e7283940",
+      "artifact_role": "n31_i9c2_invariance_matrix",
+      "exists": true,
+      "expected_sha256": "1d84bd028b2f2e59b4ce7e303fc7e52fa166f68610fc6bce453c0311e7283940",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_invariance_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "cdf8554547266db102097a650b3d99c528fc8791f58c9ceffad1afc07a560c90",
+      "artifact_role": "n31_i9c2_producer_step_matrix",
+      "exists": true,
+      "expected_sha256": "cdf8554547266db102097a650b3d99c528fc8791f58c9ceffad1afc07a560c90",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_producer_step_matrix.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "737803aac01de93f9f516a80d9635801639863d8b08f4059ac1ef08c6a1c46fc",
+      "artifact_role": "n31_i9c2_runtime_gap_audit",
+      "exists": true,
+      "expected_sha256": "737803aac01de93f9f516a80d9635801639863d8b08f4059ac1ef08c6a1c46fc",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_runtime_gap_audit.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "747b2c08b64db6878b1503d7895dc8d00a6074b33399cf8b6176e755681cb1be",
+      "artifact_role": "n31_i9c2_native_extension_contract",
+      "exists": true,
+      "expected_sha256": "747b2c08b64db6878b1503d7895dc8d00a6074b33399cf8b6176e755681cb1be",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_native_extension_contract.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "666e7972cb4a28e85bc93306ec7a7d08cd0b2a71ec7913fbe6932bb2e45b0f2b",
+      "artifact_role": "n31_i9c2_invariance_and_null_plan",
+      "exists": true,
+      "expected_sha256": "666e7972cb4a28e85bc93306ec7a7d08cd0b2a71ec7913fbe6932bb2e45b0f2b",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_invariance_and_null_plan.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "e800bc72f63420bc2dbc6d021dce6bf26328c11320bdf96b42978017fe65dbf0",
+      "artifact_role": "n31_i9c2_c1_revision_receipt",
+      "exists": true,
+      "expected_sha256": "e800bc72f63420bc2dbc6d021dce6bf26328c11320bdf96b42978017fe65dbf0",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_c1_revision_receipt.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "d4f36a72eb5560d4f967c60963c4f3831e85f546887499bc232a960535181c0c",
+      "artifact_role": "n31_i9c2_phase8_handoff",
+      "exists": true,
+      "expected_sha256": "d4f36a72eb5560d4f967c60963c4f3831e85f546887499bc232a960535181c0c",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_artifacts/n31_i9c2_phase8_handoff.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    },
+    {
+      "actual_sha256": "a2553e8daa9e123c5b53900edad6d2338d93a80d49bb2aa837f3f6b9e5021d70",
+      "artifact_role": "n31_i9c2_native_exact_history_closure_admission_trace",
+      "exists": true,
+      "expected_sha256": "a2553e8daa9e123c5b53900edad6d2338d93a80d49bb2aa837f3f6b9e5021d70",
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_i9c2_native_exact_history_closure_admission_trace.json",
+      "sha256_exact": true,
+      "source_id": "n31_native_exact_history_closure_i9c2"
+    }
+  ],
+  "source_records": [
+    {
+      "acceptance_state": "accepted_semantic_representation_control_schema_frozen_no_positive_evidence",
+      "actual_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "actual_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "expected_output_digest": "a61df7d4baadcecc691a4fefad6bb633a7081f11bd609eea07625740e80c68cf",
+      "expected_sha256": "9780aa2f8ac4a0aff5a3c62f13f4278fcdc780e48203dee32b436de09344d6d6",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_semantic_representation_control_schema_i2.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_decay_evidence",
+      "actual_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "actual_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "expected_output_digest": "e95b230d76113691d71282e227c61da15a5a1f7d5fa89c194af26ae4d653ddea",
+      "expected_sha256": "b41d43e6b0a0e411b488ce7a9692ccd9183b9a023da4d479cd2f531e3de026ff",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_active_nulls_and_failure_baselines_i3.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_D0_classification_with_native_D0a_DR2_ceiling_and_autonomous_weakening_mechanism_need",
+      "actual_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "actual_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "expected_output_digest": "bf7d5eb98ab6b84e16a86fe4eba662e9b99ac648abd9b9490dcc6598c40cb5d8",
+      "expected_sha256": "28a3d8b9e98b23ebdc7d852e9264fd802dad9bb45d48097d40efa2a0b1c9dc61",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_d0_replay_controls_classification_i8.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_producer_mediated_release_efficacy_attenuation_candidate_pending_I10",
+      "actual_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "actual_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "expected_output_digest": "cdb2bd7f27bfba52e6b007b5a54d9c2bd04d20723bf3037162d94268c69a22c0",
+      "expected_sha256": "b5824794ac802bf5cc787bf6d09410f56494a49b5f5af757bcd15dae68d61031",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_attenuation_i9a.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_DR4_independent_native_receiver_readout_pending_I10",
+      "actual_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+      "actual_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+      "expected_output_digest": "0a10639f3d6e9b42806655a2c90c4b9fdeb384c21d8b35622bcffd14d4149f91",
+      "expected_sha256": "9c6a818d2ecd47c54e30118790504141dcb702a517b5dcc106cea94393941ddb",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_release_efficacy_downstream_readout_i9a1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_B_R_DR4_conserved_leakage_pending_I10",
+      "actual_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "actual_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "expected_output_digest": "4427aa0c5d5d1e864f304873edbe2190ec3e975c0702e4f1ef3ed4ac81adc9b3",
+      "expected_sha256": "0ea586c7bfe23d3c8341fa874b07892ce4274125d58b8a6c77a284f77214d5ac",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_i9b.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_I9B1_formation_attribution_persistence_and_bounded_export_response_shape_at_provisional_B_R_DR4",
+      "actual_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+      "actual_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+      "expected_output_digest": "867337e1b5adf04356e5fb6172de3ca42f6c5e0619ce6f8d38e02766f5f4a15e",
+      "expected_sha256": "1f40fb8f2064996509eb3c2661c72408c9aab790d9119a9211f22458d2e18e87",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_conserved_leakage_response_i9b1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_producer_mediated_C_R_DR4_route_susceptibility_relaxation_pending_I10",
+      "actual_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "actual_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "expected_output_digest": "f9a7a96c26474277a5009ad2a5a56c7d5bfa000fe801bdbc5178c59e2c26f8ad",
+      "expected_sha256": "50f350a370ba96b1994f7ad1086dc46d9661f38e843e4a77679f1de65f7cdf5b",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_susceptibility_relaxation_i9c.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_exact_derived_fixture_history_C_R_DR4_pending_I10",
+      "actual_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "actual_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "expected_output_digest": "2853511bbb0e8604e69b5b1b805c6e49f22eb8b6b17d1630f669064adae3015e",
+      "expected_sha256": "30d2ceca6c208d11097bae5c699cdc90aa9e2b91c1ef2988bd3d333d3a89dbe9",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_exact_derived_susceptibility_i9c1.json",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_generalized_relation_and_native_restoration_DR2_and_LGRC_faithful_producer_step_provisional_DR4_pending_I10_with_native_runtime_lane_DR0_and_deferred_conditional_naturalization_requirements_recorded",
+      "actual_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+      "actual_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+      "expected_output_digest": "93d2c5341d0398e27991e6f6ca4d364e795e009ed502d223c1b8197f875402fe",
+      "expected_sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+      "identity_exact": true,
+      "internal_output_digest_exact": true,
+      "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_native_exact_history_closure_i9c2.json",
+      "status": "passed"
+    }
+  ],
+  "unique_artifact_path_count": 66
+}
