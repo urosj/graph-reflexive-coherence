@@ -415,15 +415,31 @@ The full test suite may take longer than a quick smoke check. For first-pass
 confidence, run the tests covering the surface you touched plus at least the
 import smoke tests.
 
-## Contribution scope
+## Participation and contribution
 
-Contributions should be graph-RC specific: papers, specs, code, examples,
-tests, documentation, landscape fixtures, graph/LGRC experiments, and
-reproducibility fixes for this repository.
+This repository locally governs what enters its maintained graph runtime,
+specifications, reusable examples, and historical evidence line. Direct
+contributions proposed for admission here should remain graph-RC specific:
+papers, specifications, code, examples, tests, documentation, landscape
+fixtures, graph/LGRC experiments, and reproducibility fixes.
 
-Use the related repositories for non-graph theory, PDE/voxel simulation,
-agentic-protocol work, or Reflexive Organism Model-specific material. See
-[CONTRIBUTING.md](CONTRIBUTING.md) for details.
+Participation in the wider research ecology does not require local admission.
+Independent graph/substrate continuations and external evidence returns may
+remain in their own repositories and still become consequential here through a
+later local encounter. Until inspected, reproduced, or admitted here, an
+external result remains source-reported rather than local validation.
+
+Experiments incubate candidate capabilities; success in an experiment does not
+by itself promote a result into reusable PyGRC runtime, specification, or
+example surfaces. That requires an explicit local promotion and compatibility
+decision, while the historical experiment retains the boundary under which it
+actually ran.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for this repository's direct-admission,
+independent-continuation, and external-return guidance. For the wider
+orientation, see
+[Research as Participation](https://github.com/urosj/geometric-reflexive-coherence/blob/main/docs/2026-08-ResearchAsParticipation.md).
+Related repositories define their own participation and admission boundaries.
 
 ## Citation
 

@@ -4,6 +4,24 @@ This directory contains historical evidence lanes for graph-native and LGRC
 Reflexive Coherence work. These lanes are not product demos. They are bounded
 research records with explicit claim ceilings, controls, reports, and artifacts.
 
+## Participation and Evidence Admission
+
+This index records experiment lanes admitted into this repository's historical
+evidence line. Independent experiments may remain external and still return
+relevant evidence without being merged here. Publication alone does not alter
+this index: an external result remains source-reported until it is encountered,
+inspected, reproduced, or explicitly admitted under this repository's local
+claim boundary.
+
+Local catalog inclusion does not automatically promote an experimental result
+into a reusable graph-substrate capability. Promotion into specifications,
+runtime, or reusable examples is a separate prospective decision. Historical
+experiments retain the runtime, producer/native status, controls, debts, and
+claim ceiling under which they actually ran.
+
+See [Contributing and Participating](../CONTRIBUTING.md) for direct contribution,
+independent continuation, and external evidence-return guidance.
+
 ## Reconstruction Pattern
 
 Use this sequence when inspecting or rerunning a lane:
