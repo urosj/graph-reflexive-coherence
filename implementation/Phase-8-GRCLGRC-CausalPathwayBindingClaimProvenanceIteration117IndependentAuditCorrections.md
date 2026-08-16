@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** B-01/B-02/B-03/B-04 correction slices complete; tranche remains open
+**Status:** B-01/B-02/B-03/B-04/B-05 correction slices complete; tranche remains open
 
 **Checkpoint commit:** `976c660`
 
@@ -116,15 +116,38 @@ a distinct content-addressed mechanism; BCF-011 independently repeats those
 checks. The CMP-05 `diagnostic_as_behavior`/`native packet admission`
 restatement therefore fails at declaration and in forged artifacts.
 
+## B-05 Selection-Scoped Dynamic Alternatives
+
+An alternatives declaration still performs no semantic selection. After the
+lock, the consumer opens `alternatives.selection_scope()` around one runtime
+decision. The first bound pathway call in that scope fixes the selected member.
+A call to a pathway outside the declared set, or to a second distinct member in
+the same scope, raises `BindingStateError` before callable resolution or
+delegation. An empty, interrupted, or rejected scope cannot be sealed into a
+receipt.
+
+Successful receipts tag every scoped invocation with its exact selection-scope
+identity and record the alternative set, selection authority, consumer-owned
+selected pathway, invocation indices, and returned-invocation indices. BCF-017
+reconstructs each witness and requires complete equality with the invocation
+records. A scoped invocation omitted from its witness, a forged C choice, or a
+scope spanning both A and B fails conformance.
+
+The constraint is deliberately local. A bound C call outside the A/B scope is
+ordinary unrelated work and retains a null alternative-scope identity. The
+I116 dynamic fixture executes such a GRC call before selecting the restoration
+branch, proving both the rejection and non-interference boundaries without
+claiming that the binder made the choice.
+
 ## Verification Gate
 
 Iteration 117 remains open until repository tests and the independent
 falsifiers agree. Commands use `.venv`; tool and dependency configuration
 comes from `pyproject.toml`.
 
-The completed focused slices close B-01 through B-04 at the implementation
-gate. Findings B-05, B-06, and M-01 remain acceptance blockers and must
-not be described as resolved. A second full independent revision is deferred
+The completed focused slices close B-01 through B-05 at the implementation
+gate. Findings B-06 and M-01 remain acceptance blockers and must not be
+described as resolved. A second full independent revision is deferred
 until B-06 and M-01 are complete.
 
 ## First-Slice Verification
@@ -182,3 +205,26 @@ mypy --python-version 3.12 selected binding surfaces = passed
 
 This is author-side focused correction evidence; the full independent revision
 remains deferred until B-06 and M-01 are complete.
+
+## B-05 Focused Verification
+
+The B-05 gate covers A or B selection, C rejection inside A/B, a second branch
+in one scope, incomplete/rejected scopes, forged C witnesses, removed scope
+tags, and unrelated C use outside the scope. The I116 dynamic dry run retains
+the exact consumer-owned selection witness and the unrelated null-scoped
+invocation.
+
+```text
+.venv focused binding/conformance/replay tests = 49 passed
+.venv full unittest discovery = 1,260 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This remains author-side correction evidence, not the deferred full independent
+revision.

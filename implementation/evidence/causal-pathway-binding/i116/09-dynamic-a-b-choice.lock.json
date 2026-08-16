@@ -12,6 +12,9 @@
   "artifact": "causal-pathways-binding-lock",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
+    "LGRC packet execution",
+    "generic causal admission",
+    "semantic action",
     "substrate-formed route",
     "native departure reason",
     "agency",
@@ -26,6 +29,48 @@
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_composition_bindings": [],
   "declared_pathway_bindings": [
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+      "composition_ids": [],
+      "configured_residue": [
+        "constitutive modes",
+        "backend selections",
+        "evolution parameters"
+      ],
+      "declared_stage_ids": [
+        "continuity_and_invariants"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "d953468b0e6a47acba9fd021e47c30f144f86ca9929501ac5503715bf07a84f3",
+            "definition_first_line": 1630,
+            "definition_source_sha256": "74c0223ad5be393b9c513d53963f5f0448c7a6e0ee8e36c8f89a1e246a3ff22d",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3.apply_continuity",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
+          "composition_ids": [],
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "qualified_symbol": "GRC9V3.apply_continuity",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "continuity_and_invariants",
+          "symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+        }
+      ],
+      "mechanism_ownership": "native",
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "producer_residue": []
+    },
     {
       "activation": "explicit_call",
       "availability": "installed",
@@ -113,10 +158,13 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "18443bc56d0654351ef22ff312fc5b9d90a8f9a63f73da5a8bfcb48d6a71d822",
+  "lock_digest": "1e16563d00dcae3c34401fc804e33daa796a41f7040cd06295322c218c8507bb",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
+      "LGRC packet execution",
+      "generic causal admission",
+      "semantic action",
       "substrate-formed route",
       "native departure reason",
       "agency",
@@ -128,6 +176,30 @@
     "composition_status_is_maturity_score": false,
     "constituent_composition_claim_ceilings": [],
     "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+        "blocked_claims": [
+          "LGRC packet execution",
+          "generic causal admission",
+          "semantic action"
+        ],
+        "constituent_claim_ceiling": [
+          "native synchronous GRC9V3 update mechanics"
+        ],
+        "mechanism_ownership": "native",
+        "pathway_id": "grc9v3.synchronous_update_cycle",
+        "required_qualifiers": {
+          "configured_residue": [
+            "constitutive modes",
+            "backend selections",
+            "evolution parameters"
+          ],
+          "naturalization_debt": [
+            "none for synchronous mechanics; semantic meanings remain outside substrate"
+          ],
+          "producer_residue": []
+        }
+      },
       {
         "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
         "blocked_claims": [
@@ -187,6 +259,14 @@
       "adapter_cuts": [],
       "candidate_relations": [],
       "configured_semantics": [
+        {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "residue": [
+            "constitutive modes",
+            "backend selections",
+            "evolution parameters"
+          ]
+        },
         {
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "residue": [

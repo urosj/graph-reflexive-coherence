@@ -118,7 +118,11 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       mechanism for candidates over known invalid endpoint pairs.
 - [x] Extend BCF-004 and BCF-011 to reconstruct candidate evidence and
       invalid-row conflicts independently.
-- [ ] Enforce selection-scoped dynamic alternatives for B-05.
+- [x] Enforce consumer-owned selection scopes for dynamic alternatives in
+      B-05.
+- [x] Reject an out-of-set pathway or a second alternative before delegation.
+- [x] Preserve unrelated bound work outside the selection scope.
+- [x] Extend BCF-017 to reconstruct exact scope and invocation witnesses.
 - [ ] Add the independent acceptance anchor for B-06.
 - [ ] Add mechanism-specific effect outcome vocabulary for M-01.
 - [ ] Re-run the independently updated full adversarial audit with zero blockers

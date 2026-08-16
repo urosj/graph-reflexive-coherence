@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "1596f2e13980d6d87609382584e207b382218cbca374c2f418f4db59fb2ec32c",
+  "policy_digest": "4396e9ff09c213c854bf2f5092b1dd9f075e2604729ec44629486e1518ac05fe",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -93,7 +93,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Dynamic pathway choices must stay within an explicit allowed set and record actual use.",
+      "description": "Dynamic pathway choices require explicit consumer-owned scopes that reject out-of-set or second-branch calls while leaving unscoped work unrelated.",
       "rule_id": "BCF-017",
       "severity": "fail_closed"
     },
@@ -117,7 +117,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "804fff0e6c65a07aee80b638c6c20930baca8a3d",
+  "source_revision": "defc08e4a372fd457f9671ec606618f7f07402a9",
   "staleness_rule": "binding-map, symbol, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until versioned re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

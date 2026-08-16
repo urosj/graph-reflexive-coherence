@@ -202,16 +202,29 @@ When consumer code may use pathway A or B, declare both pathway bindings and
 the allowed set before locking:
 
 ```python
-session.declare_alternatives(
+alternatives = session.declare_alternatives(
     alternative_set_id="consumer.packet_or_snapshot",
     pathway_ids=(packet.pathway_id, snapshot.pathway_id),
     selection_authority="consumer_boolean_branch",
 )
+
+session.freeze_lock()
+if consumer_selected_snapshot:
+    with alternatives.selection_scope():
+        snapshot()
 ```
 
 The alternatives object has no selection method. Consumer code makes the
-choice. The receipt reports the allowed set, selection authority, paths
-actually used, and declared-but-unused alternatives.
+choice, then opens `selection_scope()` around that one decision. The first
+bound pathway called in the scope fixes the branch. Another member or any
+out-of-set pathway in the same scope fails before delegation. Empty,
+interrupted, and rejected scopes cannot be sealed into a receipt.
+
+Calls outside the scope remain unrelated bound work and are not inferred as a
+dynamic choice merely because their pathway appears—or does not appear—in the
+allowed set. The receipt records the allowed set, selection authority,
+consumer-selected pathways, exact scope/invocation witnesses, returned paths,
+and declarations with no completed selection scope.
 
 If the selection mechanism itself is claimed as native causal behavior, that
 mechanism needs its own admitted pathway or composition. Native arbitration is
@@ -237,7 +250,8 @@ The receipt links to the exact lock digest and records:
   witnesses;
 - producer and adapter cuts used;
 - declared-but-unused identities;
-- allowed dynamic alternatives actually taken;
+- consumer-owned dynamic-selection scopes, exact invocations, and allowed
+  alternatives actually taken;
 - admitted and candidate-distinct graph nodes and edges;
 - a structured claim envelope and blocked claims;
 - accepted authority/source identities and a receipt digest.
@@ -254,6 +268,11 @@ candidates. The checker re-hashes candidate evidence and reconstructs the
 candidate scope from invocation indices; unscoped co-use, arbitrary strings,
 and renamed invalid-relabel restatements do not produce candidate graph
 elements or an experimental candidate claim.
+
+The B-05 correction prevents post-hoc global inference from ordinary pathway
+use. BCF-017 reconstructs every dynamic selection from its scoped invocation
+indices. C is rejected inside an A/B scope, while a null-scoped C invocation
+outside it remains unrelated and does not alter the A/B witness.
 
 ## Claim Qualification
 

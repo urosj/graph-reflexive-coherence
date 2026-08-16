@@ -52,6 +52,7 @@
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
@@ -187,7 +188,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "f1f4144e088961481daca7a664110e13cddae72eb3b6358f755703db417a5ca7",
+  "receipt_digest": "4a8be2d83b0a19ccb28f071df250f088cfc426fa7b605a9bbc3bcb4bb0cfaf22",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

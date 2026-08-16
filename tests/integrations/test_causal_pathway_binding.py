@@ -406,6 +406,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertEqual(2, len(alternatives.pathway_ids))
         self.assertEqual("consumer_fixture_branch", alternatives.selection_authority)
         self.assertFalse(hasattr(alternatives, "select"))
+        self.assertTrue(callable(alternatives.selection_scope))
 
     def test_unbound_execution_is_never_claim_qualified(self) -> None:
         classification = unbound_execution_classification()
@@ -851,6 +852,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
 
     def test_dynamic_choice_records_actual_branch_and_unused_alternative(self) -> None:
         model = _two_node_runtime()
+        grc_model = _two_node_grc_runtime()
         session = PathwayBindingSession(self.authority)
         packet = session.bind_pathway(
             "lgrc9v3.explicit_packet_transport",
@@ -862,19 +864,32 @@ class CausalPathwayBindingTest(unittest.TestCase):
         )
         packet.symbol("packet_schedule", instance=model)
         snapshot = restoration.symbol("snapshot_serialization", instance=model)
-        session.declare_alternatives(
+        unrelated = session.bind_pathway(
+            "grc9v3.synchronous_update_cycle",
+            stage_ids=("continuity_and_invariants",),
+        )
+        continuity = unrelated.symbol(
+            "continuity_and_invariants",
+            instance=grc_model,
+        )
+        alternatives = session.declare_alternatives(
             alternative_set_id="i114.dynamic_branch",
             pathway_ids=(packet.pathway_id, restoration.pathway_id),
             selection_authority="consumer_fixture_boolean",
         )
         session.freeze_lock()
 
-        snapshot()
+        continuity()
+        with alternatives.selection_scope():
+            snapshot()
         record = session.build_receipt().to_record()
 
         self.assertEqual(
-            ["pygrc.restoration_replay_identity"],
-            [item["pathway_id"] for item in record["actual_bound_pathways_used"]],
+            {
+                "grc9v3.synchronous_update_cycle",
+                "pygrc.restoration_replay_identity",
+            },
+            {item["pathway_id"] for item in record["actual_bound_pathways_used"]},
         )
         self.assertEqual(
             ["pathway:lgrc9v3.explicit_packet_transport"],
@@ -884,6 +899,92 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertEqual(
             ["pygrc.restoration_replay_identity"],
             alternative_use["actual_pathway_ids_used"],
+        )
+        self.assertEqual(
+            ["pygrc.restoration_replay_identity"],
+            alternative_use["selected_pathway_ids"],
+        )
+        self.assertEqual(1, len(alternative_use["selection_scopes"]))
+        self.assertEqual(
+            "consumer",
+            alternative_use["selection_scopes"][0]["selection_performed_by"],
+        )
+
+    def test_dynamic_choice_rejects_c_inside_ab_scope_before_execution(self) -> None:
+        model = _two_node_runtime()
+        grc_model = _two_node_grc_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        restoration = session.bind_pathway(
+            "pygrc.restoration_replay_identity",
+            stage_ids=("snapshot_serialization",),
+        )
+        unrelated = session.bind_pathway(
+            "grc9v3.synchronous_update_cycle",
+            stage_ids=("continuity_and_invariants",),
+        )
+        packet.symbol("packet_schedule", instance=model)
+        restoration.symbol("snapshot_serialization", instance=model)
+        continuity = unrelated.symbol(
+            "continuity_and_invariants",
+            instance=grc_model,
+        )
+        alternatives = session.declare_alternatives(
+            alternative_set_id="fixture.packet_or_snapshot",
+            pathway_ids=(packet.pathway_id, restoration.pathway_id),
+            selection_authority="fixture_boolean",
+        )
+        session.freeze_lock()
+
+        with (
+            self.assertRaisesRegex(BindingStateError, "outside alternative set"),
+            alternatives.selection_scope(),
+        ):
+            continuity()
+
+        self.assertEqual((), session.invocation_records)
+        with self.assertRaisesRegex(BindingStateError, "rejected choice"):
+            session.build_receipt()
+
+    def test_dynamic_scope_rejects_two_different_allowed_branches(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        restoration = session.bind_pathway(
+            "pygrc.restoration_replay_identity",
+            stage_ids=("snapshot_serialization",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        snapshot = restoration.symbol("snapshot_serialization", instance=model)
+        alternatives = session.declare_alternatives(
+            alternative_set_id="fixture.single_choice",
+            pathway_ids=(packet.pathway_id, restoration.pathway_id),
+            selection_authority="fixture_boolean",
+        )
+        session.freeze_lock()
+
+        with (
+            self.assertRaisesRegex(BindingStateError, "already selected"),
+            alternatives.selection_scope(),
+        ):
+            snapshot()
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+
+        self.assertEqual(1, len(session.invocation_records))
+        self.assertEqual(
+            "pygrc.restoration_replay_identity",
+            session.invocation_records[0].pathway_id,
         )
 
     def test_registered_chain_does_not_synthesize_larger_claim(self) -> None:

@@ -480,9 +480,15 @@ class CandidateMechanismEvidence:
 class AllowedPathwayAlternatives:
     """Declared dynamic alternatives; it contains no selection operation."""
 
+    _session: PathwayBindingSession = field(repr=False, compare=False)
     alternative_set_id: str
     pathway_ids: tuple[str, ...]
     selection_authority: str
+
+    def selection_scope(self) -> AlternativeSelectionScope:
+        """Return a non-selecting scope that constrains the consumer's choice."""
+
+        return AlternativeSelectionScope(session=self._session, alternatives=self)
 
 
 class CausalPathwayAuthority:
@@ -802,6 +808,7 @@ class InvocationRecord:
     execution_event_order: int = -1
     crossing_scope_id: str | None = None
     candidate_scope_id: str | None = None
+    alternative_selection_scope_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -1432,6 +1439,100 @@ class CompositionExecutionScope:
         }
 
 
+class AlternativeSelectionScope:
+    """Consumer-owned choice scope constrained to one declared alternative."""
+
+    def __init__(
+        self,
+        *,
+        session: PathwayBindingSession,
+        alternatives: AllowedPathwayAlternatives,
+    ) -> None:
+        self._session = session
+        self.alternatives = alternatives
+        self.scope_id = ""
+        self._selected_pathway_id: str | None = None
+        self._events: list[dict[str, Any]] = []
+        self._invalid_pathway_id: str | None = None
+        self._completed = False
+
+    def __enter__(self) -> Self:
+        self.scope_id = self._session._open_alternative_selection_scope(self)
+        return self
+
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> Literal[False]:
+        self._completed = exc_type is None and self._invalid_pathway_id is None
+        self._session._close_alternative_selection_scope(self)
+        return False
+
+    def _assert_pathway_allowed(self, pathway_id: str) -> None:
+        if pathway_id not in self.alternatives.pathway_ids:
+            self._invalid_pathway_id = pathway_id
+            raise BindingStateError(
+                f"pathway {pathway_id!r} is outside alternative set "
+                f"{self.alternatives.alternative_set_id!r}"
+            )
+        if (
+            self._selected_pathway_id is not None
+            and self._selected_pathway_id != pathway_id
+        ):
+            self._invalid_pathway_id = pathway_id
+            raise BindingStateError(
+                f"alternative set {self.alternatives.alternative_set_id!r} "
+                f"already selected {self._selected_pathway_id!r}; "
+                f"cannot also select {pathway_id!r} in the same scope"
+            )
+        self._selected_pathway_id = pathway_id
+
+    def _record_invocation(
+        self,
+        *,
+        invocation_index: int,
+        record: InvocationRecord,
+    ) -> None:
+        self._events.append(
+            {
+                "record_index": invocation_index,
+                "record": record,
+            }
+        )
+
+    def selection_witness(self) -> dict[str, Any] | None:
+        """Return one exact choice witness only for a complete scoped call."""
+
+        if (
+            not self._completed
+            or self._invalid_pathway_id is not None
+            or self._selected_pathway_id is None
+            or not self._events
+        ):
+            return None
+        if any(
+            event["record"].pathway_id != self._selected_pathway_id
+            or event["record"].alternative_selection_scope_id != self.scope_id
+            for event in self._events
+        ):
+            return None
+        return {
+            "selection_scope_id": self.scope_id,
+            "alternative_set_id": self.alternatives.alternative_set_id,
+            "selection_authority": self.alternatives.selection_authority,
+            "selected_pathway_id": self._selected_pathway_id,
+            "invocation_indices": [event["record_index"] for event in self._events],
+            "returned_invocation_indices": [
+                event["record_index"]
+                for event in self._events
+                if event["record"].outcome == "returned"
+            ],
+            "selection_performed_by": "consumer",
+        }
+
+
 class CandidateExecutionScope:
     """Observed constituent-use scope for one unregistered candidate."""
 
@@ -1646,6 +1747,10 @@ class PathwayBindingSession:
         self._active_composition_scope: CompositionExecutionScope | None = None
         self._candidate_scopes: list[CandidateExecutionScope] = []
         self._active_candidate_scope: CandidateExecutionScope | None = None
+        self._alternative_selection_scopes: list[AlternativeSelectionScope] = []
+        self._active_alternative_selection_scope: AlternativeSelectionScope | None = (
+            None
+        )
         self._execution_event_count = 0
         self._candidate_uses: list[CandidateUseRecord] = []
         self._lock: BindingLock | None = None
@@ -1771,6 +1876,8 @@ class PathwayBindingSession:
             raise BindingStateError(
                 f"symbol {symbol_id!r} is absent from binding lock {self._lock.digest}"
             )
+        if self._active_alternative_selection_scope is not None:
+            self._active_alternative_selection_scope._assert_pathway_allowed(pathway_id)
 
     def _record_invocation(self, record: InvocationRecord) -> None:
         invocation_index = len(self._invocations)
@@ -1792,6 +1899,11 @@ class PathwayBindingSession:
                 in self._active_candidate_scope.candidate.consumed_pathway_ids
                 else None
             ),
+            alternative_selection_scope_id=(
+                self._active_alternative_selection_scope.scope_id
+                if self._active_alternative_selection_scope is not None
+                else None
+            ),
         )
         self._invocations.append(record)
         if scope is not None and scoped_to_composition:
@@ -1807,6 +1919,11 @@ class PathwayBindingSession:
         ):
             candidate_scope._record_constituent(
                 event_order=self._execution_event_count,
+                invocation_index=invocation_index,
+                record=record,
+            )
+        if self._active_alternative_selection_scope is not None:
+            self._active_alternative_selection_scope._record_invocation(
                 invocation_index=invocation_index,
                 record=record,
             )
@@ -1880,6 +1997,37 @@ class PathwayBindingSession:
         if self._active_candidate_scope is not scope:
             raise BindingStateError("candidate evidence scope is not active")
         self._active_candidate_scope = None
+
+    def _open_alternative_selection_scope(
+        self,
+        scope: AlternativeSelectionScope,
+    ) -> str:
+        if self._phase != "locked" or self._lock is None:
+            raise BindingStateError(
+                "alternative selection scopes require a frozen binding lock"
+            )
+        if self._active_alternative_selection_scope is not None:
+            raise BindingStateError("alternative selection scopes cannot overlap")
+        alternatives = self._alternatives.get(scope.alternatives.alternative_set_id)
+        if alternatives is not scope.alternatives:
+            raise BindingStateError(
+                "alternative selection scope is not declared in this session"
+            )
+        scope_id = (
+            f"alternative:{scope.alternatives.alternative_set_id}:selection-scope:"
+            f"{len(self._alternative_selection_scopes)}"
+        )
+        self._active_alternative_selection_scope = scope
+        self._alternative_selection_scopes.append(scope)
+        return scope_id
+
+    def _close_alternative_selection_scope(
+        self,
+        scope: AlternativeSelectionScope,
+    ) -> None:
+        if self._active_alternative_selection_scope is not scope:
+            raise BindingStateError("alternative selection scope is not active")
+        self._active_alternative_selection_scope = None
 
     def _assert_crossing_invocation_allowed(
         self,
@@ -2314,6 +2462,18 @@ class PathwayBindingSession:
             witnesses.append(witness)
         return tuple(witnesses)
 
+    def _alternative_selection_witnesses(self) -> tuple[dict[str, Any], ...]:
+        witnesses: list[dict[str, Any]] = []
+        for scope in self._alternative_selection_scopes:
+            witness = scope.selection_witness()
+            if witness is None:
+                raise BindingStateError(
+                    f"alternative selection scope {scope.scope_id!r} is incomplete, "
+                    "empty, or contains a rejected choice"
+                )
+            witnesses.append(witness)
+        return tuple(witnesses)
+
     def _exercised_compositions(
         self,
         witnesses: Sequence[Mapping[str, Any]],
@@ -2489,9 +2649,14 @@ class PathwayBindingSession:
             raise BindingStateError(
                 "a receipt cannot be sealed inside a candidate evidence scope"
             )
+        if self._active_alternative_selection_scope is not None:
+            raise BindingStateError(
+                "a receipt cannot be sealed inside an alternative selection scope"
+            )
         self.authority.assert_current()
         actual_bindings = self._actual_pathway_bindings()
         composition_witnesses = self._composition_witnesses()
+        alternative_selection_witnesses = self._alternative_selection_witnesses()
         exercised_compositions = self._exercised_compositions(composition_witnesses)
         used_candidate_ids = {item.candidate_id for item in self._candidate_uses}
         used_candidates = tuple(
@@ -2546,6 +2711,7 @@ class PathwayBindingSession:
                 "execution_event_order": item.execution_event_order,
                 "crossing_scope_id": item.crossing_scope_id,
                 "candidate_scope_id": item.candidate_scope_id,
+                "alternative_selection_scope_id": (item.alternative_selection_scope_id),
             }
             for index, item in enumerate(self._invocations)
         ]
@@ -2566,24 +2732,37 @@ class PathwayBindingSession:
             }
             for index, item in enumerate(self._crossing_invocations)
         ]
-        alternative_uses = [
-            {
-                "alternative_set_id": alternatives.alternative_set_id,
-                "selection_authority": alternatives.selection_authority,
-                "allowed_pathway_ids": list(alternatives.pathway_ids),
-                "actual_pathway_ids_used": [
-                    pathway_id
-                    for pathway_id in alternatives.pathway_ids
-                    if any(
-                        binding.pathway_id == pathway_id for binding in actual_bindings
-                    )
-                ],
-            }
-            for alternatives in sorted(
-                self._alternatives.values(),
-                key=lambda item: item.alternative_set_id,
+        alternative_uses: list[dict[str, Any]] = []
+        for alternatives in sorted(
+            self._alternatives.values(),
+            key=lambda item: item.alternative_set_id,
+        ):
+            scopes = [
+                witness
+                for witness in alternative_selection_witnesses
+                if witness["alternative_set_id"] == alternatives.alternative_set_id
+            ]
+            returned_pathway_ids = [
+                str(witness["selected_pathway_id"])
+                for witness in scopes
+                if witness["returned_invocation_indices"]
+            ]
+            alternative_uses.append(
+                {
+                    "alternative_set_id": alternatives.alternative_set_id,
+                    "selection_authority": alternatives.selection_authority,
+                    "allowed_pathway_ids": list(alternatives.pathway_ids),
+                    "selected_pathway_ids": list(
+                        dict.fromkeys(
+                            str(witness["selected_pathway_id"]) for witness in scopes
+                        )
+                    ),
+                    "actual_pathway_ids_used": list(
+                        dict.fromkeys(returned_pathway_ids)
+                    ),
+                    "selection_scopes": [deepcopy(witness) for witness in scopes],
+                }
             )
-        ]
         record: dict[str, Any] = {
             "artifact": "causal-pathways-binding-receipt",
             "schema_version": "causal_pathways_binding_receipt_v1",
@@ -2764,6 +2943,7 @@ class PathwayBindingSession:
         if not selection_authority:
             raise CausalPathwayBindingError("selection_authority must be explicit")
         declaration = AllowedPathwayAlternatives(
+            _session=self,
             alternative_set_id=alternative_set_id,
             pathway_ids=unique_pathways,
             selection_authority=selection_authority,

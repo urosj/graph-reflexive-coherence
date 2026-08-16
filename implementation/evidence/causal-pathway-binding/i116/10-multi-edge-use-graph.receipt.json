@@ -248,6 +248,7 @@
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
       "callable_identity": {
         "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
@@ -273,6 +274,7 @@
       "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
@@ -298,6 +300,7 @@
       "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
@@ -323,6 +326,7 @@
       "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
@@ -348,6 +352,7 @@
       "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
       "callable_identity": {
         "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
@@ -373,6 +378,7 @@
       "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
       "callable_identity": {
         "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
@@ -815,7 +821,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "56a0b7403264d575748f6eb922446241b2a2226fb15580a59fc08147a1ff24b6",
+  "receipt_digest": "4b624643fc9ad8f93d86f03f895315eb7fbcccd16097136d6469f3c3d26a2a8c",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",

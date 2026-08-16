@@ -34,13 +34,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "0baafb5ba019d62ed3217f860ce3245a40d2eee83582d185e4c461111cc750d7",
+  "conformance_digest": "25b230de3e10b1d84cf044f628adaa2f34c95dd8180669c82c62761599702c08",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "1596f2e13980d6d87609382584e207b382218cbca374c2f418f4db59fb2ec32c",
+  "policy_digest": "4396e9ff09c213c854bf2f5092b1dd9f075e2604729ec44629486e1518ac05fe",
   "rule_count": 20,
   "rule_results": [
     {
@@ -140,7 +140,7 @@
       "status": "passed"
     },
     {
-      "description": "Dynamic pathway choices must stay within an explicit allowed set and record actual use.",
+      "description": "Dynamic pathway choices require explicit consumer-owned scopes that reject out-of-set or second-branch calls while leaving unscoped work unrelated.",
       "issue_count": 0,
       "rule_id": "BCF-017",
       "status": "passed"

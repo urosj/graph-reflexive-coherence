@@ -3,6 +3,54 @@
     {
       "activation": "explicit_call",
       "actual_stage_ids": [
+        "continuity_and_invariants"
+      ],
+      "actual_symbol_ids": [
+        "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+      "composition_ids": [],
+      "configured_residue": [
+        "constitutive modes",
+        "backend selections",
+        "evolution parameters"
+      ],
+      "declared_stage_ids": [
+        "continuity_and_invariants"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "d953468b0e6a47acba9fd021e47c30f144f86ca9929501ac5503715bf07a84f3",
+            "definition_first_line": 1630,
+            "definition_source_sha256": "74c0223ad5be393b9c513d53963f5f0448c7a6e0ee8e36c8f89a1e246a3ff22d",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3.apply_continuity",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
+          "composition_ids": [],
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "qualified_symbol": "GRC9V3.apply_continuity",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "continuity_and_invariants",
+          "symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+        }
+      ],
+      "mechanism_ownership": "native",
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "producer_residue": []
+    },
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
         "snapshot_serialization"
       ],
       "actual_symbol_ids": [
@@ -52,6 +100,31 @@
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
+      "alternative_selection_scope_id": null,
+      "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+      "callable_identity": {
+        "callable_identity_digest": "d953468b0e6a47acba9fd021e47c30f144f86ca9929501ac5503715bf07a84f3",
+        "definition_first_line": 1630,
+        "definition_source_sha256": "74c0223ad5be393b9c513d53963f5f0448c7a6e0ee8e36c8f89a1e246a3ff22d",
+        "module": "pygrc.models.grc_9_v3",
+        "qualified_symbol": "GRC9V3.apply_continuity",
+        "source_path": "src/pygrc/models/grc_9_v3.py",
+        "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+      },
+      "candidate_scope_id": null,
+      "composition_ids": [],
+      "crossing_scope_id": null,
+      "error_type": null,
+      "execution_event_order": 0,
+      "invocation_index": 0,
+      "outcome": "returned",
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "result_type": "NoneType",
+      "stage_id": "continuity_and_invariants",
+      "symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+    },
+    {
+      "alternative_selection_scope_id": "alternative:i116.consumer-branch:selection-scope:0",
       "binding_id": "pathway:pygrc.restoration_replay_identity",
       "callable_identity": {
         "callable_identity_digest": "37c2244be0a7a46615d9e0550a3f01becdda4b00713dbe8f412dc045904cb2e5",
@@ -66,8 +139,8 @@
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
-      "execution_event_order": 0,
-      "invocation_index": 0,
+      "execution_event_order": 1,
+      "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "pygrc.restoration_replay_identity",
       "result_type": "dict",
@@ -86,13 +159,34 @@
         "pygrc.restoration_replay_identity"
       ],
       "alternative_set_id": "i116.consumer-branch",
-      "selection_authority": "i116_consumer_boolean"
+      "selected_pathway_ids": [
+        "pygrc.restoration_replay_identity"
+      ],
+      "selection_authority": "i116_consumer_boolean",
+      "selection_scopes": [
+        {
+          "alternative_set_id": "i116.consumer-branch",
+          "invocation_indices": [
+            1
+          ],
+          "returned_invocation_indices": [
+            1
+          ],
+          "selected_pathway_id": "pygrc.restoration_replay_identity",
+          "selection_authority": "i116_consumer_boolean",
+          "selection_performed_by": "consumer",
+          "selection_scope_id": "alternative:i116.consumer-branch:selection-scope:0"
+        }
+      ]
     }
   ],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "18443bc56d0654351ef22ff312fc5b9d90a8f9a63f73da5a8bfcb48d6a71d822",
+  "binding_lock_digest": "1e16563d00dcae3c34401fc804e33daa796a41f7040cd06295322c218c8507bb",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
+    "LGRC packet execution",
+    "generic causal admission",
+    "semantic action",
     "byte identity requirement",
     "unrestricted behavioral identity",
     "semantic identity",
@@ -101,6 +195,9 @@
   "candidate_relations_exercised": [],
   "claim_envelope": {
     "blocked_claims": [
+      "LGRC packet execution",
+      "generic causal admission",
+      "semantic action",
       "byte identity requirement",
       "unrestricted behavioral identity",
       "semantic identity",
@@ -109,6 +206,30 @@
     "composition_status_is_maturity_score": false,
     "constituent_composition_claim_ceilings": [],
     "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "pathway:grc9v3.synchronous_update_cycle",
+        "blocked_claims": [
+          "LGRC packet execution",
+          "generic causal admission",
+          "semantic action"
+        ],
+        "constituent_claim_ceiling": [
+          "native synchronous GRC9V3 update mechanics"
+        ],
+        "mechanism_ownership": "native",
+        "pathway_id": "grc9v3.synchronous_update_cycle",
+        "required_qualifiers": {
+          "configured_residue": [
+            "constitutive modes",
+            "backend selections",
+            "evolution parameters"
+          ],
+          "naturalization_debt": [
+            "none for synchronous mechanics; semantic meanings remain outside substrate"
+          ],
+          "producer_residue": []
+        }
+      },
       {
         "binding_id": "pathway:pygrc.restoration_replay_identity",
         "blocked_claims": [
@@ -145,6 +266,14 @@
       "candidate_relations": [],
       "configured_semantics": [
         {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "residue": [
+            "constitutive modes",
+            "backend selections",
+            "evolution parameters"
+          ]
+        },
+        {
           "pathway_id": "pygrc.restoration_replay_identity",
           "residue": [
             "identity schema version",
@@ -178,6 +307,30 @@
     "nodes": [
       {
         "configured_residue": [
+          "constitutive modes",
+          "backend selections",
+          "evolution parameters"
+        ],
+        "mechanism_ownership": "native",
+        "node_id": "pathway:grc9v3.synchronous_update_cycle",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "grc9v3.synchronous_update_cycle",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "native",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+        ],
+        "stage_ids_used": [
+          "continuity_and_invariants"
+        ]
+      },
+      {
+        "configured_residue": [
           "identity schema version",
           "legacy compatibility policy",
           "replay scope"
@@ -204,7 +357,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "01705be059961e20214addde5534fa80ab1cd726274cfbb7fa5de382232e4b34",
+  "receipt_digest": "fffe9bc6e9a195804d79a6d9db151d48d1d679e4d7c850467f39cf5947a260f3",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

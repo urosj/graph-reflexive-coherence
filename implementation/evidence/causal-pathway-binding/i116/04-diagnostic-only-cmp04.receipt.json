@@ -83,6 +83,7 @@
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
       "callable_identity": {
         "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
@@ -108,6 +109,7 @@
       "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
       "callable_identity": {
         "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
@@ -309,7 +311,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "a813b2df4d44a4693d2a4b344ee04e2d3ff7659317252d36b8bf570ebf3a5665",
+  "receipt_digest": "f0475c3e223686fdb7984cfda62a85227109d409f51b99936a3d038932ae9bfd",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",

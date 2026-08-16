@@ -78,7 +78,7 @@ RULES = [
     ),
     (
         "BCF-017",
-        "Dynamic pathway choices must stay within an explicit allowed set and record actual use.",
+        "Dynamic pathway choices require explicit consumer-owned scopes that reject out-of-set or second-branch calls while leaving unscoped work unrelated.",
     ),
     (
         "BCF-018",
@@ -969,6 +969,18 @@ def validate_bundle(
             )
         else:
             execution_event_orders.append(event_order)
+        alternative_scope_id = invocation.get("alternative_selection_scope_id")
+        if "alternative_selection_scope_id" not in invocation or not (
+            alternative_scope_id is None
+            or isinstance(alternative_scope_id, str)
+            and bool(alternative_scope_id)
+        ):
+            add_issue(
+                issues,
+                "BCF-017",
+                f"receipt.actual_stage_symbol_invocations[{invocation_index}]",
+                "invocation has an invalid alternative-selection scope identity",
+            )
         locked_link = lock_links.get((binding_id, symbol_id))
         if locked_link is None:
             add_issue(
@@ -1856,18 +1868,14 @@ def validate_bundle(
             "allowed_pathway_alternatives",
             "dynamic alternative declarations and receipt differ",
         )
-    actual_pathway_ids = {
-        str(binding.get("pathway_id", "")) for binding in actual_bindings.values()
-    }
     declared_pathway_ids = {
         str(binding.get("pathway_id", "")) for binding in lock_bindings.values()
     }
+    witnessed_invocation_indices: set[int] = set()
+    witnessed_scope_ids: set[str] = set()
     for alternative_id, alternatives_record in alternatives.items():
         allowed = list(alternatives_record.get("pathway_ids", []))
         actual_record = actual_alternatives.get(alternative_id, {})
-        expected_actual = [
-            pathway_id for pathway_id in allowed if pathway_id in actual_pathway_ids
-        ]
         if (
             len(allowed) < 2
             or any(
@@ -1878,7 +1886,6 @@ def validate_bundle(
             or actual_record.get("allowed_pathway_ids") != allowed
             or actual_record.get("selection_authority")
             != alternatives_record.get("selection_authority")
-            or actual_record.get("actual_pathway_ids_used") != expected_actual
         ):
             add_issue(
                 issues,
@@ -1886,6 +1893,117 @@ def validate_bundle(
                 alternative_id,
                 "dynamic choice was undeclared, selected by binder, or misreported",
             )
+
+        raw_scopes = actual_record.get("selection_scopes", [])
+        if not isinstance(raw_scopes, list):
+            raw_scopes = []
+            add_issue(
+                issues,
+                "BCF-017",
+                alternative_id,
+                "dynamic choice scopes are not a list",
+            )
+        selected_pathway_ids: list[str] = []
+        returned_pathway_ids: list[str] = []
+        for scope_index, selection_scope in enumerate(raw_scopes):
+            location = f"{alternative_id}:selection_scopes[{scope_index}]"
+            if not isinstance(selection_scope, Mapping):
+                add_issue(
+                    issues,
+                    "BCF-017",
+                    location,
+                    "dynamic choice scope is not an object",
+                )
+                continue
+            scope_id = str(selection_scope.get("selection_scope_id", ""))
+            selected_pathway_id = str(selection_scope.get("selected_pathway_id", ""))
+            invocation_indices = selection_scope.get("invocation_indices", [])
+            returned_indices = selection_scope.get("returned_invocation_indices", [])
+            structurally_valid = (
+                bool(scope_id)
+                and scope_id not in witnessed_scope_ids
+                and selection_scope.get("alternative_set_id") == alternative_id
+                and selection_scope.get("selection_authority")
+                == alternatives_record.get("selection_authority")
+                and selection_scope.get("selection_performed_by") == "consumer"
+                and selected_pathway_id in allowed
+                and isinstance(invocation_indices, list)
+                and bool(invocation_indices)
+                and all(isinstance(index, int) for index in invocation_indices)
+                and len(invocation_indices) == len(set(invocation_indices))
+                and isinstance(returned_indices, list)
+                and all(isinstance(index, int) for index in returned_indices)
+                and len(returned_indices) == len(set(returned_indices))
+            )
+            selected_invocations: list[Mapping[str, Any]] = []
+            if structurally_valid:
+                try:
+                    selected_invocations = [
+                        invocations[index] for index in invocation_indices
+                    ]
+                except (IndexError, TypeError):
+                    structurally_valid = False
+            expected_returned_indices: list[int] = []
+            if structurally_valid:
+                expected_returned_indices = [
+                    index
+                    for index, invocation in zip(
+                        invocation_indices,
+                        selected_invocations,
+                        strict=True,
+                    )
+                    if invocation.get("outcome") == "returned"
+                ]
+            if structurally_valid and (
+                any(
+                    invocation.get("alternative_selection_scope_id") != scope_id
+                    or invocation.get("pathway_id") != selected_pathway_id
+                    for invocation in selected_invocations
+                )
+                or expected_returned_indices != returned_indices
+                or any(
+                    index in witnessed_invocation_indices
+                    for index in invocation_indices
+                )
+            ):
+                structurally_valid = False
+            if not structurally_valid:
+                add_issue(
+                    issues,
+                    "BCF-017",
+                    location,
+                    "dynamic choice scope is forged, out of set, or spans branches",
+                )
+                continue
+            witnessed_scope_ids.add(scope_id)
+            witnessed_invocation_indices.update(invocation_indices)
+            if selected_pathway_id not in selected_pathway_ids:
+                selected_pathway_ids.append(selected_pathway_id)
+            if returned_indices and selected_pathway_id not in returned_pathway_ids:
+                returned_pathway_ids.append(selected_pathway_id)
+        if (
+            actual_record.get("selected_pathway_ids") != selected_pathway_ids
+            or actual_record.get("actual_pathway_ids_used") != returned_pathway_ids
+        ):
+            add_issue(
+                issues,
+                "BCF-017",
+                alternative_id,
+                "dynamic choice aggregate differs from its scoped witnesses",
+            )
+
+    scoped_invocation_indices = {
+        index
+        for index, invocation in enumerate(invocations)
+        if invocation.get("alternative_selection_scope_id") is not None
+    }
+    if scoped_invocation_indices != witnessed_invocation_indices:
+        add_issue(
+            issues,
+            "BCF-017",
+            "receipt.actual_stage_symbol_invocations",
+            "alternative-scoped invocations differ from exact selection witnesses",
+        )
 
     if (
         lock.get("semantic_selection_performed_by_binder") is not False

@@ -254,6 +254,61 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-011"}, {item["rule_id"] for item in result["issues"]})
 
+    def test_dynamic_c_forged_into_ab_scope_fails_bcf017(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/09-dynamic-a-b-choice.lock.json",
+            receipt_path=EVIDENCE_DIR / "i116/09-dynamic-a-b-choice.receipt.json",
+        )
+        alternative_use = mutated["receipt"]["allowed_pathway_alternatives_actual_use"][
+            0
+        ]
+        c_pathway_id = "grc9v3.synchronous_update_cycle"
+        alternative_use["selection_scopes"][0]["selected_pathway_id"] = c_pathway_id
+        alternative_use["selected_pathway_ids"] = [c_pathway_id]
+        alternative_use["actual_pathway_ids_used"] = [c_pathway_id]
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-017"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-017"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_unscoped_dynamic_witness_fails_bcf017(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/09-dynamic-a-b-choice.lock.json",
+            receipt_path=EVIDENCE_DIR / "i116/09-dynamic-a-b-choice.receipt.json",
+        )
+        invocation = next(
+            item
+            for item in mutated["receipt"]["actual_stage_symbol_invocations"]
+            if item["alternative_selection_scope_id"] is not None
+        )
+        invocation["alternative_selection_scope_id"] = None
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-017"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-017"}, {item["rule_id"] for item in result["issues"]})
+
     def test_frozen_execution_records_are_canonical_and_passed(self) -> None:
         execution = json.loads(
             (EVIDENCE_DIR / "i115-conformance-execution.json").read_text(

@@ -169,6 +169,7 @@
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
       "callable_identity": {
         "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
@@ -194,6 +195,7 @@
       "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
@@ -219,6 +221,7 @@
       "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
@@ -244,6 +247,7 @@
       "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
     },
     {
+      "alternative_selection_scope_id": null,
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
       "callable_identity": {
         "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
@@ -563,7 +567,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "2445b1632851c84297d7f67ab8585e5c58702265c74bef1fb471cef8f7444930",
+  "receipt_digest": "a386243bb10ec593792b71792150d02cf32781657afed30e3c7004aa6ec6243b",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",

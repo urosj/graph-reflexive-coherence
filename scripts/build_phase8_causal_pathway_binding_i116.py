@@ -388,6 +388,10 @@ def _candidate(authority: CausalPathwayAuthority) -> dict[str, Any]:
 
 def _dynamic(authority: CausalPathwayAuthority) -> dict[str, Any]:
     model = _two_node_runtime()
+    grc_model = GRC9V3(
+        params=GRCParams.from_mapping({"dt": 1.0}),
+        state=model.get_state().base_state,
+    )
     session = PathwayBindingSession(authority)
     packet = session.bind_pathway(
         "lgrc9v3.explicit_packet_transport",
@@ -399,13 +403,23 @@ def _dynamic(authority: CausalPathwayAuthority) -> dict[str, Any]:
     )
     packet.symbol("packet_schedule", instance=model)
     snapshot = restoration.symbol("snapshot_serialization", instance=model)
-    session.declare_alternatives(
+    unrelated = session.bind_pathway(
+        "grc9v3.synchronous_update_cycle",
+        stage_ids=("continuity_and_invariants",),
+    )
+    continuity = unrelated.symbol(
+        "continuity_and_invariants",
+        instance=grc_model,
+    )
+    alternatives = session.declare_alternatives(
         alternative_set_id="i116.consumer-branch",
         pathway_ids=(packet.pathway_id, restoration.pathway_id),
         selection_authority="i116_consumer_boolean",
     )
     lock = session.freeze_lock()
-    snapshot()
+    continuity()
+    with alternatives.selection_scope():
+        snapshot()
     receipt = session.build_receipt()
     record = receipt.to_record()
     actual = record["allowed_pathway_alternatives_actual_use"][0]
@@ -416,7 +430,14 @@ def _dynamic(authority: CausalPathwayAuthority) -> dict[str, Any]:
         assertions={
             "allowed_pathway_ids": actual["allowed_pathway_ids"],
             "actual_pathway_ids_used": actual["actual_pathway_ids_used"],
+            "selected_pathway_ids": actual["selected_pathway_ids"],
+            "selection_scope_count": len(actual["selection_scopes"]),
             "selection_authority": actual["selection_authority"],
+            "unrelated_pathway_used_outside_scope": any(
+                invocation["pathway_id"] == unrelated.pathway_id
+                and invocation["alternative_selection_scope_id"] is None
+                for invocation in record["actual_stage_symbol_invocations"]
+            ),
             "binder_selected": record["semantic_selection_performed_by_binder"],
         },
     )
