@@ -6,7 +6,10 @@ bind it. Runtime mechanics remain in their existing model-specific modules.
 
 from .binding import (
     AUTHORITY_COORDINATES,
+    CLAIM_QUALIFYING_EFFECT_OUTCOMES,
+    EFFECT_OUTCOMES,
     EXECUTABLE_COMPOSITION_STATUSES,
+    RETURN_CATEGORIES,
     AllowedPathwayAlternatives,
     AlternativeSelectionScope,
     AuthorityDriftError,
@@ -27,6 +30,7 @@ from .binding import (
     CompositionExecutionScope,
     CrossingInvocationRecord,
     CrossingResultReference,
+    EffectOutcomeContract,
     InvalidCandidateError,
     InvocationRecord,
     PathwayBindingSession,
@@ -46,7 +50,10 @@ from .binding import (
 
 __all__ = [
     "AUTHORITY_COORDINATES",
+    "CLAIM_QUALIFYING_EFFECT_OUTCOMES",
+    "EFFECT_OUTCOMES",
     "EXECUTABLE_COMPOSITION_STATUSES",
+    "RETURN_CATEGORIES",
     "AllowedPathwayAlternatives",
     "AlternativeSelectionScope",
     "AuthorityDriftError",
@@ -67,6 +74,7 @@ __all__ = [
     "CompositionExecutionScope",
     "CrossingInvocationRecord",
     "CrossingResultReference",
+    "EffectOutcomeContract",
     "InvalidCandidateError",
     "InvocationRecord",
     "PathwayBindingSession",

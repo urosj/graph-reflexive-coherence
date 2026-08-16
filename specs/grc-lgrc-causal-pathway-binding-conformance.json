@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "520452034725c426ac68c649e1482087d8facb97b9a6fc8e7f9b2909c796eb67",
+  "policy_digest": "294661b58b51a8282fa742d8e5e1a7f88e044e0b807f0e45e2496876c07ac291",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -108,7 +108,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Unbound execution cannot present itself as claim-qualified pathway evidence.",
+      "description": "Only trusted symbol-specific committed or observed effects can present as claim-qualified pathway evidence.",
       "rule_id": "BCF-020",
       "severity": "fail_closed"
     }
@@ -117,7 +117,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "dde8afbcd661e4beab1795095c012e74bb2007cd",
+  "source_revision": "57d442577807fc12cc90295aa404f1a997401ef4",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

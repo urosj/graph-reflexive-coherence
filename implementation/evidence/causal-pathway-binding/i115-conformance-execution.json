@@ -32,19 +32,19 @@
     "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
   },
   "actual_invocation_count": 1,
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
   "binding_staleness_state": "current",
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "a3784b69badd27eadbf9786c62a3a8277c4c58baf10a71088b57b13790052274",
+  "conformance_digest": "cc58450124d1e1f34c15c81eb5b713ceb07e651706c4ef95906390f52cdcbf11",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "520452034725c426ac68c649e1482087d8facb97b9a6fc8e7f9b2909c796eb67",
+  "policy_digest": "294661b58b51a8282fa742d8e5e1a7f88e044e0b807f0e45e2496876c07ac291",
   "rule_count": 20,
   "rule_results": [
     {
@@ -162,7 +162,7 @@
       "status": "passed"
     },
     {
-      "description": "Unbound execution cannot present itself as claim-qualified pathway evidence.",
+      "description": "Only trusted symbol-specific committed or observed effects can present as claim-qualified pathway evidence.",
       "issue_count": 0,
       "rule_id": "BCF-020",
       "status": "passed"

@@ -44,6 +44,22 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-front-capacity-eligibility-observation-v1",
+            "effect_contract_digest": "592e1ac62dfbc85edf0f7c2daa815480932f8988accd8c3d99969bb38d9485f5",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "grc9v3.front_capacity_growth:front_capacity_growth_eligibility:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._growth_front_eligible_ports",
@@ -70,6 +86,28 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-front-propagation-transition-v1",
+            "effect_contract_digest": "4d80137d9bca9f25119381a8411781df986d9bcad1b52d10557b698f30b497d0",
+            "effect_kind": "state_transition",
+            "effect_probe": {
+              "changed_outcome": "committed",
+              "kind": "bound_instance_snapshot_digest",
+              "snapshot_method": "snapshot",
+              "unchanged_outcome": "no_op"
+            },
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "unknown",
+              "true": "unknown"
+            },
+            "symbol_id": "grc9v3.front_capacity_growth:front_propagation:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity",
@@ -128,6 +166,22 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-boundary-birth-commit-v1",
+            "effect_contract_digest": "3452cd42d0735e33508a5838881743c9334eb34bfd4539b14bc954418b9aaab4",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.boundary_birth:birth_trial_commit:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.boundary_birth",
           "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial",
@@ -154,6 +208,28 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-boundary-birth-production-v1",
+            "effect_contract_digest": "8a8d7dc6f003123390f712f0959a80c6974d8fc5737d50e0c8cbc2bb9a170f7a",
+            "effect_kind": "producer_effect",
+            "effect_probe": {
+              "attribute": "state_mutated",
+              "false_outcome": "no_op",
+              "kind": "boolean_attribute",
+              "true_outcome": "committed"
+            },
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "unknown",
+              "true": "unknown"
+            },
+            "symbol_id": "lgrc9v3.boundary_birth:birth_trial_production:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.boundary_birth",
           "qualified_symbol": "LGRC9V3.produce_events",
@@ -183,13 +259,19 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
         "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
       },
+      "claim_qualifying_effect": true,
       "composition_id": "CMP-26",
       "crossing_invocation_index": 0,
       "crossing_scope_id": "composition:CMP-26:crossing-scope:0",
+      "effect_contract_id": "M01-CMP-26-adapter-construction-v1",
+      "effect_evidence": null,
+      "effect_kind": "adapter_construction",
+      "effect_outcome": "committed",
       "error_type": null,
       "execution_event_order": 2,
       "outcome": "returned",
       "result_type": "LGRC9V3",
+      "return_category": "other",
       "source_binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
       "symbol_id": "CMP-26:crossing:build_lgrc9v3_corrected_cascade_runtime",
       "target_binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth"
@@ -209,16 +291,22 @@
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [
         "CMP-26"
       ],
       "crossing_scope_id": "composition:CMP-26:crossing-scope:0",
+      "effect_contract_id": "M01-front-capacity-eligibility-observation-v1",
+      "effect_evidence": null,
+      "effect_kind": "observation",
+      "effect_outcome": "observed",
       "error_type": null,
       "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "grc9v3.front_capacity_growth",
       "result_type": "dict",
+      "return_category": "empty",
       "stage_id": "front_capacity_growth_eligibility",
       "symbol_id": "grc9v3.front_capacity_growth:front_capacity_growth_eligibility:primary"
     },
@@ -235,16 +323,28 @@
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [
         "CMP-26"
       ],
       "crossing_scope_id": "composition:CMP-26:crossing-scope:0",
+      "effect_contract_id": "M01-front-propagation-transition-v1",
+      "effect_evidence": {
+        "after_digest": "446e04ce1d3d4b483940bc4c05d48726acdbea9cfd0b6f050c4f87911582e98f",
+        "before_digest": "35ec7b1fb71760aae111ec48c62978341a7ff171f8be235eed985d5b6da0ef18",
+        "changed": true,
+        "kind": "bound_instance_snapshot_digest",
+        "snapshot_method": "snapshot"
+      },
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
       "error_type": null,
       "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "grc9v3.front_capacity_growth",
       "result_type": "NoneType",
+      "return_category": "none",
       "stage_id": "front_propagation",
       "symbol_id": "grc9v3.front_capacity_growth:front_propagation:primary"
     },
@@ -261,16 +361,26 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [
         "CMP-26"
       ],
       "crossing_scope_id": "composition:CMP-26:crossing-scope:0",
+      "effect_contract_id": "M01-boundary-birth-production-v1",
+      "effect_evidence": {
+        "attribute": "state_mutated",
+        "kind": "boolean_attribute",
+        "observed_boolean": true
+      },
+      "effect_kind": "producer_effect",
+      "effect_outcome": "committed",
       "error_type": null,
       "execution_event_order": 3,
       "invocation_index": 2,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.boundary_birth",
       "result_type": "LGRC9V3AutonomousProductionResult",
+      "return_category": "other",
       "stage_id": "birth_trial_production",
       "symbol_id": "lgrc9v3.boundary_birth:birth_trial_production:primary"
     },
@@ -287,16 +397,22 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [
         "CMP-26"
       ],
       "crossing_scope_id": "composition:CMP-26:crossing-scope:0",
+      "effect_contract_id": "M01-boundary-birth-commit-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
       "error_type": null,
       "execution_event_order": 4,
       "invocation_index": 3,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.boundary_birth",
       "result_type": "list",
+      "return_category": "other",
       "stage_id": "birth_trial_commit",
       "symbol_id": "lgrc9v3.boundary_birth:birth_trial_commit:primary"
     }
@@ -310,9 +426,9 @@
   ],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "23011f4b87b602d67a8f9a14574c187a288abed30b4a7317c982511ba1bb4917",
+  "binding_lock_digest": "c72606e51351adc9158df79ca1c71d4c741880fc3fb1f74e02f2c10237623978",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "general autonomous basin formation",
@@ -480,6 +596,36 @@
     "composition_binding_ids": [],
     "pathway_binding_ids": []
   },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [
+      0
+    ],
+    "claim_qualifying_stage_invocation_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "crossing_invocation_counts": {
+      "committed": 1,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 3,
+      "no_op": 0,
+      "observed": 1,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -574,7 +720,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "c6bab778de4e373afea10828bc8edf2adad22b9745169dd5bf785a41e19727ed",
+  "receipt_digest": "ec3c7bceccfcde4d53326ab835fdb1293c1c8940161aa966d8afd8df62c64bc1",
   "registered_compositions_exercised": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
@@ -612,6 +758,22 @@
         },
         "composition_id": "CMP-26",
         "crossing_kind": "explicit_adapter_callable",
+        "effect_outcome_contract": {
+          "claim_qualifying_outcomes": [
+            "committed"
+          ],
+          "contract_id": "M01-CMP-26-adapter-construction-v1",
+          "effect_contract_digest": "191064d04c2494d5696b3ac53df31d0efab5f53cfc5e4de168b650cdd63e3411",
+          "effect_kind": "adapter_construction",
+          "return_outcomes": {
+            "empty": "no_op",
+            "false": "rejected",
+            "none": "rejected",
+            "other": "committed",
+            "true": "committed"
+          },
+          "symbol_id": "CMP-26:crossing:build_lgrc9v3_corrected_cascade_runtime"
+        },
         "module": "pygrc.models.lgrc_9_v3_construction",
         "qualified_symbol": "build_lgrc9v3_corrected_cascade_runtime",
         "source_argument_name": "base_model",

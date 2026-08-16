@@ -10,7 +10,7 @@
     }
   ],
   "artifact": "causal-pathways-binding-lock",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
@@ -59,6 +59,22 @@
             "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-continuity-invariants-observation-v1",
+            "effect_contract_digest": "fa199c6f654c88afbdb778de6a08cc6c91ba69c8e41effc9c1620237426a1049",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "observed",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "grc9v3.synchronous_update_cycle",
           "qualified_symbol": "GRC9V3.apply_continuity",
@@ -101,6 +117,22 @@
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-packet-schedule-transition-v1",
+            "effect_contract_digest": "57f0d6b4f6572db21fe9653786c309181b144eaf91a5eacd67f99ed7e92af639",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
@@ -143,6 +175,22 @@
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-snapshot-serialization-observation-v1",
+            "effect_contract_digest": "06e6d35f78d62ed01b745fcec762606f227787717e2670de84318a388b59576a",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "pygrc.restoration_replay_identity",
           "qualified_symbol": "LGRC9V3.snapshot",
@@ -158,9 +206,10 @@
       "producer_residue": []
     }
   ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "d855b6c5501540b3efecc2e7c2aac0e8a558f0c1ea2571e82ae233fa49b7505b",
+  "lock_digest": "b6282aaca3ffe174e361f1731d50b6c2eecb672e27f71c1085153a2308e266c7",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

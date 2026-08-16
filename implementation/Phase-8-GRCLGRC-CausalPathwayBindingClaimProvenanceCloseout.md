@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** Reopened at Iteration 117; independent audit corrections pending
+**Status:** Iteration 117 author corrections complete; independent re-audit pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
 
@@ -11,6 +11,13 @@
 The Iteration 116 closeout is superseded by the Iteration 117 independent-audit
 correction gate. The text below records the pre-audit checkpoint and is not a
 current acceptance decision.
+
+The author-side B-01 through B-06 and M-01 correction slices are complete.
+Locks and receipts are operation-scoped, callable and crossing identities are
+rechecked, candidate and dynamic-choice evidence is scoped, acceptance uses a
+separate trust anchor, and only trusted exact-symbol `committed` or `observed`
+effects qualify. The second full independent audit has not yet run, so this
+document remains a reopened closeout rather than an acceptance record.
 
 At the Iteration 116 checkpoint, one explicit linker model handled admitted
 native pathways, producer-mediated and adapter/diagnostic registered
@@ -42,8 +49,11 @@ envelope.
 - Dynamic alternatives remain caller-selected and actual use is receipted.
 - Endpoint co-use and registered chains do not synthesize new edges or claims.
 - Binding/source drift becomes `stale_pending_review` and blocks claims.
-- Unbound legacy code remains executable but cannot masquerade as
-  claim-qualified pathway evidence.
+- Unbound legacy code remains executable but cannot appear among a receipt's
+  recorded bound invocation evidence; the receipt does not claim whole-run
+  closure or absence of direct work.
+- A non-raising return is not actual use unless its trusted exact-symbol effect
+  contract classifies it as `committed` or `observed`.
 - Existing GRC/LGRC mechanism and numerical behavior is unchanged.
 
 ## Frozen Surface
@@ -55,7 +65,8 @@ The closeout consists of:
   receipt, graph, candidate, and unbound-classification surfaces;
 - canonical lock/receipt JSON artifacts and digests;
 - the 20-rule binding conformance policy and checker;
-- 20 global and 20 target-only negative controls;
+- 20 global and 20 target-only rule controls, plus three target-only M-01
+  effect-outcome forgery controls;
 - ten consumer dry runs and a separately-oracled low-context replay;
 - the Knowledge/Binding/Execution reference and contribution boundary.
 
@@ -72,13 +83,17 @@ binding conformance policy
           8ed42bdd9984e37917108d4963ccb3ef85236bf8b4e21d160ccb1f153c51e027
 ```
 
-## Maximum Claim
+## Current Maximum Claim Pending Re-Audit
 
-GRC/LGRC provides a versioned causal-pathway binding and provenance layer
-through which evidence-bearing consumers can bind admitted pathways and
-compositions or explicitly declare unregistered candidates, producing a
-validated pathway-use graph and conservative claim envelope while leaving
-mechanism-specific runtime execution unchanged.
+The author-corrected implementation provides an operation-scoped,
+versioned causal-pathway binding and provenance layer. Evidence-bearing
+consumers can bind admitted pathways and compositions or explicitly declare
+unregistered candidates. A receipt reports only identity-verified bound
+invocations whose independently anchored exact-symbol contracts classify their
+effects as committed or observed, plus conservative graph and claim-envelope
+projections of that recorded evidence. It does not establish whole-run causal
+closure, absence of direct work, or final acceptance before the pending
+independent re-audit.
 
 ## Remaining Boundaries
 

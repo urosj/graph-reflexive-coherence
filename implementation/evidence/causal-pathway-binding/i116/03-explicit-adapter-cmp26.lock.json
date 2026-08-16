@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
@@ -53,6 +53,22 @@
         },
         "composition_id": "CMP-26",
         "crossing_kind": "explicit_adapter_callable",
+        "effect_outcome_contract": {
+          "claim_qualifying_outcomes": [
+            "committed"
+          ],
+          "contract_id": "M01-CMP-26-adapter-construction-v1",
+          "effect_contract_digest": "191064d04c2494d5696b3ac53df31d0efab5f53cfc5e4de168b650cdd63e3411",
+          "effect_kind": "adapter_construction",
+          "return_outcomes": {
+            "empty": "no_op",
+            "false": "rejected",
+            "none": "rejected",
+            "other": "committed",
+            "true": "committed"
+          },
+          "symbol_id": "CMP-26:crossing:build_lgrc9v3_corrected_cascade_runtime"
+        },
         "module": "pygrc.models.lgrc_9_v3_construction",
         "qualified_symbol": "build_lgrc9v3_corrected_cascade_runtime",
         "source_argument_name": "base_model",
@@ -116,6 +132,22 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-front-capacity-eligibility-observation-v1",
+            "effect_contract_digest": "592e1ac62dfbc85edf0f7c2daa815480932f8988accd8c3d99969bb38d9485f5",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "grc9v3.front_capacity_growth:front_capacity_growth_eligibility:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._growth_front_eligible_ports",
@@ -142,6 +174,28 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-front-propagation-transition-v1",
+            "effect_contract_digest": "4d80137d9bca9f25119381a8411781df986d9bcad1b52d10557b698f30b497d0",
+            "effect_kind": "state_transition",
+            "effect_probe": {
+              "changed_outcome": "committed",
+              "kind": "bound_instance_snapshot_digest",
+              "snapshot_method": "snapshot",
+              "unchanged_outcome": "no_op"
+            },
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "unknown",
+              "true": "unknown"
+            },
+            "symbol_id": "grc9v3.front_capacity_growth:front_propagation:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity",
@@ -192,6 +246,22 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-boundary-birth-commit-v1",
+            "effect_contract_digest": "3452cd42d0735e33508a5838881743c9334eb34bfd4539b14bc954418b9aaab4",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.boundary_birth:birth_trial_commit:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.boundary_birth",
           "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial",
@@ -218,6 +288,28 @@
           "composition_ids": [
             "CMP-26"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-boundary-birth-production-v1",
+            "effect_contract_digest": "8a8d7dc6f003123390f712f0959a80c6974d8fc5737d50e0c8cbc2bb9a170f7a",
+            "effect_kind": "producer_effect",
+            "effect_probe": {
+              "attribute": "state_mutated",
+              "false_outcome": "no_op",
+              "kind": "boolean_attribute",
+              "true_outcome": "committed"
+            },
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "unknown",
+              "true": "unknown"
+            },
+            "symbol_id": "lgrc9v3.boundary_birth:birth_trial_production:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.boundary_birth",
           "qualified_symbol": "LGRC9V3.produce_events",
@@ -235,6 +327,7 @@
       "producer_residue": []
     }
   ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
@@ -243,7 +336,7 @@
     }
   ],
   "explicit_producers": [],
-  "lock_digest": "23011f4b87b602d67a8f9a14574c187a288abed30b4a7317c982511ba1bb4917",
+  "lock_digest": "c72606e51351adc9158df79ca1c71d4c741880fc3fb1f74e02f2c10237623978",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

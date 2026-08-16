@@ -20,7 +20,18 @@ from pygrc.causal_pathways import (
     sha256_file,
 )
 from pygrc.core import GRCParams, PortGraphBackend
-from pygrc.models import GRC9V3, LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
+from pygrc.models import (
+    CAUSAL_LAYER_MODE_PACKETIZED_FIXED_TOPOLOGY,
+    EDGE_DELAY_POLICY_CONSTANT_DELAY,
+    GRC9V3,
+    LAPSE_POLICY_UNIT,
+    LGRC9V3,
+    LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_POLICY_EMIT_ROWS,
+    LGRC_RUNTIME_LEVEL_LGRC2,
+    GRC9V3NodeState,
+    GRC9V3State,
+    PortEdge,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE_DIR = ROOT / "implementation/evidence/causal-pathway-binding/i116"
@@ -115,6 +126,50 @@ def _two_node_runtime() -> LGRC9V3:
     return LGRC9V3.from_state(_two_node_state(), {"dt": 1.0})
 
 
+def _feedback_ready_two_node_runtime() -> LGRC9V3:
+    model = LGRC9V3.from_state(
+        _two_node_state(),
+        {
+            "dt": 1.0,
+            "causal_modes": {
+                "causal_layer_mode": CAUSAL_LAYER_MODE_PACKETIZED_FIXED_TOPOLOGY,
+                "lgrc_runtime_level": LGRC_RUNTIME_LEVEL_LGRC2,
+                "lapse_policy": LAPSE_POLICY_UNIT,
+                "edge_delay_policy": EDGE_DELAY_POLICY_CONSTANT_DELAY,
+                "event_time_policy": "explicit_event_time_key",
+                "proper_time_accumulation_policy": "local_event_frontier",
+                "causal_pulse_substrate_surface_enabled": True,
+                "causal_pulse_substrate_surface_policy": (
+                    LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_POLICY_EMIT_ROWS
+                ),
+                "causal_pulse_substrate_surface_validated": False,
+            },
+        },
+    )
+    model.schedule_packet_departure(
+        source_node_id=0,
+        target_node_id=1,
+        edge_id=0,
+        amount=0.25,
+        departure_event_time_key=1.0,
+        scheduler_event_index=1,
+    )
+    model.step()
+    model.emit_feedback_eligibility_surface_row(
+        front_node_ids=(1,),
+        rear_node_ids=(0,),
+        feedback_threshold=0.0,
+    )
+    model.set_feedback_coupled_pulse_producer(
+        source_node_id=0,
+        target_node_id=1,
+        edge_id=0,
+        threshold=0.0,
+        packet_amount=0.1,
+    )
+    return model
+
+
 def _packet_links(pathway: Any, model: LGRC9V3) -> tuple[Callable[..., Any], ...]:
     return (
         pathway.symbol("packet_schedule", instance=model),
@@ -191,7 +246,7 @@ def _simple_native(authority: CausalPathwayAuthority) -> dict[str, Any]:
 
 
 def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
-    model = _two_node_runtime()
+    model = _feedback_ready_two_node_runtime()
     session = PathwayBindingSession(authority)
     composition = session.bind_composition("CMP-20")
     producer = composition.pathway("lgrc9v3.feedback_eligibility_producer")
@@ -200,8 +255,39 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
     links = _packet_links(transport, model)
     lock = session.freeze_lock()
     with composition.evidence_scope():
-        produce(policy="packet_departure_from_feedback_eligibility_policy")
-        _run_packet_lifecycle(model, links)
+        production = produce(
+            policy="packet_departure_from_feedback_eligibility_policy"
+        )
+        schedule, debit, credit = links
+        schedule(
+            source_node_id=0,
+            target_node_id=1,
+            edge_id=0,
+            amount=0.25,
+            departure_event_time_key=2.0,
+            scheduler_event_index=10,
+            packet_index=100,
+        )
+        runtime_state = model.get_state()
+        ledger = runtime_state.packet_ledger
+        if ledger is None:
+            raise RuntimeError("feedback producer dry run lacks packet ledger")
+        produced_event_id = production.production_records[0].scheduled_event_id
+        queued_departure = next(
+            event
+            for event in ledger.event_queue_records
+            if event.event_id == produced_event_id
+        )
+        departure = debit(
+            runtime_state.base_state,
+            ledger,
+            queued_departure=queued_departure,
+        )
+        credit(
+            runtime_state.base_state,
+            departure.ledger,
+            packet_id=departure.packet_record.packet_id,
+        )
     receipt = session.build_receipt()
     record = receipt.to_record()
     return _freeze_case(
@@ -221,10 +307,42 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
 
 def _cmp26(authority: CausalPathwayAuthority) -> dict[str, Any]:
     source_runtime = _two_node_runtime()
-    grc_model = GRC9V3(
-        params=GRCParams.from_mapping({"dt": 1.0}),
-        state=source_runtime.get_state().base_state,
+    source_state = source_runtime.get_state().base_state
+    source_state.nodes[0] = GRC9V3NodeState(coherence=4.0)
+    edge = source_state.port_edges[0]
+    source_state.port_edges[0] = PortEdge(
+        edge.node_u,
+        edge.port_u,
+        edge.node_v,
+        edge.port_v,
+        conductance=edge.conductance,
+        flux_uv=2.0,
     )
+    grc_model = GRC9V3(
+        params=GRCParams.from_mapping(
+            {
+                "dt": 1.0,
+                "evolution": {
+                    "lambda_birth": 1.0,
+                    "alpha_seed": 0.25,
+                    "w_bond": 1.5,
+                },
+            }
+        ),
+        state=source_state,
+    )
+    grc_model.get_state().cached_quantities[
+        "grcl9v3_growth_parent_capacity_sources"
+    ] = {
+        "0": {
+            "construct_id": "I116-CMP26-front",
+            "inactive_parent_port": 2,
+            "propagate_child_front": True,
+            "child_front_port": 2,
+            "child_front_max_depth": 1,
+            "front_generation_depth": 0,
+        }
+    }
     session = PathwayBindingSession(authority)
     composition = session.bind_composition("CMP-26")
     front = composition.pathway("grc9v3.front_capacity_growth")
@@ -250,7 +368,7 @@ def _cmp26(authority: CausalPathwayAuthority) -> dict[str, Any]:
             parent_node_id=0,
             parent_port_id=2,
             outward_flux_pressure=1.0,
-            rng_sample=0.5,
+            rng_sample=0.0,
         )
     receipt = session.build_receipt()
     record = receipt.to_record()
@@ -464,7 +582,7 @@ def _dynamic(authority: CausalPathwayAuthority) -> dict[str, Any]:
 
 
 def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
-    packet_model = _two_node_runtime()
+    packet_model = _feedback_ready_two_node_runtime()
     diagnostic_runtime = _two_node_runtime()
     diagnostic_model = GRC9V3(
         params=diagnostic_runtime.get_params(),
@@ -482,8 +600,39 @@ def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
     rebuild = diagnostic.symbol("diagnostic_rebuild", instance=diagnostic_model)
     lock = session.freeze_lock()
     with producer_composition.evidence_scope():
-        produce(policy="packet_departure_from_feedback_eligibility_policy")
-        _run_packet_lifecycle(packet_model, packet_links)
+        production = produce(
+            policy="packet_departure_from_feedback_eligibility_policy"
+        )
+        schedule, debit, credit = packet_links
+        schedule(
+            source_node_id=0,
+            target_node_id=1,
+            edge_id=0,
+            amount=0.25,
+            departure_event_time_key=2.0,
+            scheduler_event_index=10,
+            packet_index=100,
+        )
+        runtime_state = packet_model.get_state()
+        ledger = runtime_state.packet_ledger
+        if ledger is None:
+            raise RuntimeError("multi-edge producer dry run lacks packet ledger")
+        produced_event_id = production.production_records[0].scheduled_event_id
+        queued_departure = next(
+            event
+            for event in ledger.event_queue_records
+            if event.event_id == produced_event_id
+        )
+        departure = debit(
+            runtime_state.base_state,
+            ledger,
+            queued_departure=queued_departure,
+        )
+        credit(
+            runtime_state.base_state,
+            departure.ledger,
+            packet_id=departure.packet_record.packet_id,
+        )
     with diagnostic_composition.evidence_scope():
         prepare(diagnostic_runtime)
         rebuild()

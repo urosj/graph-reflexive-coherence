@@ -24,8 +24,19 @@ from pygrc.causal_pathways import (
     sha256_file,
     unbound_execution_classification,
 )
-from pygrc.core import PortGraphBackend
-from pygrc.models import GRC9V3, LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
+from pygrc.core import GRCParams, PortGraphBackend
+from pygrc.models import (
+    CAUSAL_LAYER_MODE_PACKETIZED_FIXED_TOPOLOGY,
+    EDGE_DELAY_POLICY_CONSTANT_DELAY,
+    GRC9V3,
+    LAPSE_POLICY_UNIT,
+    LGRC9V3,
+    LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_POLICY_EMIT_ROWS,
+    LGRC_RUNTIME_LEVEL_LGRC2,
+    GRC9V3NodeState,
+    GRC9V3State,
+    PortEdge,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 ACCEPTANCE_ANCHOR_PATH = (
@@ -34,7 +45,7 @@ ACCEPTANCE_ANCHOR_PATH = (
     "binding-acceptance-anchor.json"
 )
 TRUSTED_ACCEPTANCE_ANCHOR_DIGEST = (
-    "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709"
+    "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2"
 )
 CANDIDATE_EVIDENCE_PATH = Path(
     "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json"
@@ -91,10 +102,90 @@ def _two_node_runtime() -> LGRC9V3:
 
 def _two_node_grc_runtime() -> GRC9V3:
     runtime = _two_node_runtime()
-    return GRC9V3(
-        params=runtime.get_params(),
-        state=runtime.get_state().base_state,
+    state = runtime.get_state().base_state
+    state.nodes[0] = GRC9V3NodeState(coherence=4.0)
+    edge = state.port_edges[0]
+    state.port_edges[0] = PortEdge(
+        edge.node_u,
+        edge.port_u,
+        edge.node_v,
+        edge.port_v,
+        conductance=edge.conductance,
+        flux_uv=2.0,
     )
+    return GRC9V3(
+        params=GRCParams.from_mapping(
+            {
+                "dt": 1.0,
+                "evolution": {
+                    "lambda_birth": 1.0,
+                    "alpha_seed": 0.25,
+                    "w_bond": 1.5,
+                },
+            }
+        ),
+        state=state,
+    )
+
+
+def _prepare_front_propagation(model: GRC9V3) -> None:
+    model.get_state().cached_quantities[
+        "grcl9v3_growth_parent_capacity_sources"
+    ] = {
+        "0": {
+            "construct_id": "M01-fixture-front",
+            "inactive_parent_port": 2,
+            "propagate_child_front": True,
+            "child_front_port": 2,
+            "child_front_max_depth": 1,
+            "front_generation_depth": 0,
+        }
+    }
+
+
+def _feedback_ready_two_node_runtime() -> LGRC9V3:
+    state = _two_node_runtime().get_state().base_state
+    model = LGRC9V3.from_state(
+        state,
+        {
+            "dt": 1.0,
+            "causal_modes": {
+                "causal_layer_mode": CAUSAL_LAYER_MODE_PACKETIZED_FIXED_TOPOLOGY,
+                "lgrc_runtime_level": LGRC_RUNTIME_LEVEL_LGRC2,
+                "lapse_policy": LAPSE_POLICY_UNIT,
+                "edge_delay_policy": EDGE_DELAY_POLICY_CONSTANT_DELAY,
+                "event_time_policy": "explicit_event_time_key",
+                "proper_time_accumulation_policy": "local_event_frontier",
+                "causal_pulse_substrate_surface_enabled": True,
+                "causal_pulse_substrate_surface_policy": (
+                    LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_POLICY_EMIT_ROWS
+                ),
+                "causal_pulse_substrate_surface_validated": False,
+            },
+        },
+    )
+    model.schedule_packet_departure(
+        source_node_id=0,
+        target_node_id=1,
+        edge_id=0,
+        amount=0.25,
+        departure_event_time_key=1.0,
+        scheduler_event_index=1,
+    )
+    model.step()
+    model.emit_feedback_eligibility_surface_row(
+        front_node_ids=(1,),
+        rear_node_ids=(0,),
+        feedback_threshold=0.0,
+    )
+    model.set_feedback_coupled_pulse_producer(
+        source_node_id=0,
+        target_node_id=1,
+        edge_id=0,
+        threshold=0.0,
+        packet_amount=0.1,
+    )
+    return model
 
 
 class CausalPathwayBindingTest(unittest.TestCase):
@@ -687,8 +778,142 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertFalse(record["claim_qualified"])
         self.assertEqual([], record["actual_bound_pathways_used"])
 
-    def test_cmp20_receipt_retains_producer_cut_and_matrix_ceiling(self) -> None:
+    def test_false_return_is_rejected_and_not_claim_qualified(self) -> None:
         model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        session.freeze_lock()
+
+        with patch.object(
+            schedule,
+            "_assert_current_callable",
+            return_value=(lambda **_: False, schedule.callable_identity),
+        ):
+            self.assertIs(schedule(), False)
+        record = session.build_receipt().to_record()
+        invocation = record["actual_stage_symbol_invocations"][0]
+
+        self.assertEqual("returned", invocation["outcome"])
+        self.assertEqual("false", invocation["return_category"])
+        self.assertEqual("rejected", invocation["effect_outcome"])
+        self.assertFalse(invocation["claim_qualifying_effect"])
+        self.assertFalse(record["claim_qualified"])
+        self.assertEqual([], record["actual_bound_pathways_used"])
+        self.assertEqual(
+            [0],
+            record["effect_outcome_summary"][
+                "non_qualifying_returned_stage_invocation_indices"
+            ],
+        )
+
+    def test_empty_commit_return_is_no_op_and_not_claim_qualified(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        birth = session.bind_pathway(
+            "lgrc9v3.boundary_birth",
+            stage_ids=("birth_trial_commit",),
+        )
+        commit = birth.symbol("birth_trial_commit", instance=model)
+        session.freeze_lock()
+
+        self.assertEqual(
+            [],
+            commit(
+                parent_node_id=0,
+                parent_port_id=2,
+                outward_flux_pressure=1.0,
+                rng_sample=0.0,
+            ),
+        )
+        record = session.build_receipt().to_record()
+        invocation = record["actual_stage_symbol_invocations"][0]
+
+        self.assertEqual("empty", invocation["return_category"])
+        self.assertEqual("no_op", invocation["effect_outcome"])
+        self.assertFalse(invocation["claim_qualifying_effect"])
+        self.assertFalse(record["claim_qualified"])
+
+    def test_producer_without_state_mutation_is_no_op(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        producer = session.bind_pathway(
+            "lgrc9v3.feedback_eligibility_producer",
+            stage_ids=("feedback_packet_schedule",),
+        )
+        produce = producer.symbol("feedback_packet_schedule", instance=model)
+        session.freeze_lock()
+
+        result = produce(policy="packet_departure_from_feedback_eligibility_policy")
+        self.assertFalse(result.state_mutated)
+        record = session.build_receipt().to_record()
+        invocation = record["actual_stage_symbol_invocations"][0]
+
+        self.assertEqual("no_op", invocation["effect_outcome"])
+        self.assertEqual(
+            {
+                "kind": "boolean_attribute",
+                "attribute": "state_mutated",
+                "observed_boolean": False,
+            },
+            invocation["effect_evidence"],
+        )
+        self.assertFalse(invocation["claim_qualifying_effect"])
+        self.assertFalse(record["claim_qualified"])
+
+    def test_none_return_without_snapshot_change_is_no_op(self) -> None:
+        model = _two_node_grc_runtime()
+        session = PathwayBindingSession(self.authority)
+        growth = session.bind_pathway(
+            "grc9v3.front_capacity_growth",
+            stage_ids=("front_propagation",),
+        )
+        propagate = growth.symbol("front_propagation", instance=model)
+        session.freeze_lock()
+
+        self.assertIsNone(
+            propagate(parent_node_id=0, parent_port_id=2, child_node_id=1)
+        )
+        record = session.build_receipt().to_record()
+        invocation = record["actual_stage_symbol_invocations"][0]
+
+        self.assertEqual("none", invocation["return_category"])
+        self.assertEqual("no_op", invocation["effect_outcome"])
+        self.assertEqual(False, invocation["effect_evidence"]["changed"])
+        self.assertFalse(invocation["claim_qualifying_effect"])
+        self.assertFalse(record["claim_qualified"])
+
+    def test_unreviewed_symbol_return_remains_unknown(self) -> None:
+        model = _two_node_grc_runtime()
+        session = PathwayBindingSession(self.authority)
+        growth = session.bind_pathway(
+            "grc9v3.front_capacity_growth",
+            stage_ids=("growth_commit",),
+        )
+        commit = growth.symbol("growth_commit", instance=model)
+        session.freeze_lock()
+
+        marker = object()
+        with patch.object(
+            commit,
+            "_assert_current_callable",
+            return_value=(lambda **_: marker, commit.callable_identity),
+        ):
+            self.assertIs(commit(), marker)
+        record = session.build_receipt().to_record()
+        invocation = record["actual_stage_symbol_invocations"][0]
+
+        self.assertIsNone(invocation["effect_contract_id"])
+        self.assertEqual("unreviewed", invocation["effect_kind"])
+        self.assertEqual("unknown", invocation["effect_outcome"])
+        self.assertFalse(invocation["claim_qualifying_effect"])
+        self.assertFalse(record["claim_qualified"])
+
+    def test_cmp20_receipt_retains_producer_cut_and_matrix_ceiling(self) -> None:
+        model = _feedback_ready_two_node_runtime()
         session = PathwayBindingSession(self.authority)
         composition = session.bind_composition("CMP-20")
         producer = composition.pathway("lgrc9v3.feedback_eligibility_producer")
@@ -700,20 +925,31 @@ class CausalPathwayBindingTest(unittest.TestCase):
         lock = session.freeze_lock().to_record()
 
         with composition.evidence_scope():
-            produce(policy="packet_departure_from_feedback_eligibility_policy")
+            production = produce(
+                policy="packet_departure_from_feedback_eligibility_policy"
+            )
             schedule(
                 source_node_id=0,
                 target_node_id=1,
                 edge_id=0,
                 amount=0.25,
+                departure_event_time_key=2.0,
+                scheduler_event_index=10,
+                packet_index=100,
             )
             runtime_state = model.get_state()
             ledger = runtime_state.packet_ledger
             assert ledger is not None
+            produced_event_id = production.production_records[0].scheduled_event_id
+            queued_departure = next(
+                event
+                for event in ledger.event_queue_records
+                if event.event_id == produced_event_id
+            )
             departure = debit(
                 runtime_state.base_state,
                 ledger,
-                queued_departure=ledger.event_queue_records[0],
+                queued_departure=queued_departure,
             )
             credit(
                 runtime_state.base_state,
@@ -818,6 +1054,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
 
     def test_cmp26_requires_and_records_exact_adapter_crossing(self) -> None:
         grc_model = _two_node_grc_runtime()
+        _prepare_front_propagation(grc_model)
         session = PathwayBindingSession(self.authority)
         composition = session.bind_composition("CMP-26")
         front = composition.source_binding
@@ -883,6 +1120,13 @@ class CausalPathwayBindingTest(unittest.TestCase):
             ),
         )
         self.assertEqual(1, len(record["pathway_use_graph"]["edges"]))
+        propagation = next(
+            invocation
+            for invocation in record["actual_stage_symbol_invocations"]
+            if invocation["stage_id"] == "front_propagation"
+        )
+        self.assertEqual("committed", propagation["effect_outcome"])
+        self.assertEqual(True, propagation["effect_evidence"]["changed"])
 
     def test_cmp26_lock_rejects_missing_adapter_crossing(self) -> None:
         session = PathwayBindingSession(self.authority)

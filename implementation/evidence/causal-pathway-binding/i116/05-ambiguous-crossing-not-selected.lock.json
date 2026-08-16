@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
@@ -63,6 +63,7 @@
       ]
     }
   ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [
     {
@@ -80,7 +81,7 @@
       ]
     }
   ],
-  "lock_digest": "6432327a85af8b9fd1780194871bc7646cfa91402f8e44a322e052e1546604e5",
+  "lock_digest": "42a1bb96be5c5cffeb2ddcf225fef6c3faeb989626a23e6dbc6e1e3ae61846d2",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

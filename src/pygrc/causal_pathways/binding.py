@@ -604,6 +604,263 @@ class AllowedPathwayAlternatives:
         return AlternativeSelectionScope(session=self._session, alternatives=self)
 
 
+RETURN_CATEGORIES: Final[tuple[str, ...]] = (
+    "false",
+    "true",
+    "none",
+    "empty",
+    "other",
+)
+EFFECT_OUTCOMES: Final[frozenset[str]] = frozenset(
+    {"committed", "observed", "rejected", "no_op", "unknown"}
+)
+CLAIM_QUALIFYING_EFFECT_OUTCOMES: Final[frozenset[str]] = frozenset(
+    {"committed", "observed"}
+)
+
+
+def _return_category(result: object) -> str:
+    """Classify only stable Python return shapes, without semantic inference."""
+
+    if result is False:
+        return "false"
+    if result is True:
+        return "true"
+    if result is None:
+        return "none"
+    if isinstance(result, (str, bytes, tuple, list, dict, set, frozenset)) and not result:
+        return "empty"
+    return "other"
+
+
+@dataclass(frozen=True)
+class EffectOutcomeContract:
+    """Trusted return-to-effect meaning for one exact mechanism symbol."""
+
+    contract_id: str
+    symbol_id: str
+    effect_kind: str
+    return_outcomes: Mapping[str, str]
+    claim_qualifying_outcomes: frozenset[str]
+    effect_probe: Mapping[str, Any] | None
+    effect_contract_digest: str
+
+    @classmethod
+    def from_record(cls, record: Mapping[str, Any]) -> EffectOutcomeContract:
+        return_outcomes = record.get("return_outcomes")
+        qualifying = record.get("claim_qualifying_outcomes")
+        raw_probe = record.get("effect_probe")
+        probe_outcomes: set[Any] = set()
+        probe_is_valid = raw_probe is None
+        if isinstance(raw_probe, Mapping):
+            probe_kind = raw_probe.get("kind")
+            if probe_kind == "boolean_attribute":
+                probe_is_valid = (
+                    set(raw_probe)
+                    == {"kind", "attribute", "true_outcome", "false_outcome"}
+                    and isinstance(raw_probe.get("attribute"), str)
+                    and bool(raw_probe.get("attribute"))
+                    and raw_probe.get("true_outcome") in EFFECT_OUTCOMES
+                    and raw_probe.get("false_outcome") in EFFECT_OUTCOMES
+                )
+                probe_outcomes = {
+                    raw_probe.get("true_outcome"),
+                    raw_probe.get("false_outcome"),
+                }
+            elif probe_kind == "bound_instance_snapshot_digest":
+                probe_is_valid = (
+                    set(raw_probe)
+                    == {
+                        "kind",
+                        "snapshot_method",
+                        "changed_outcome",
+                        "unchanged_outcome",
+                    }
+                    and isinstance(raw_probe.get("snapshot_method"), str)
+                    and bool(raw_probe.get("snapshot_method"))
+                    and raw_probe.get("changed_outcome") in EFFECT_OUTCOMES
+                    and raw_probe.get("unchanged_outcome") in EFFECT_OUTCOMES
+                )
+                probe_outcomes = {
+                    raw_probe.get("changed_outcome"),
+                    raw_probe.get("unchanged_outcome"),
+                }
+        if (
+            not isinstance(return_outcomes, Mapping)
+            or set(return_outcomes) != set(RETURN_CATEGORIES)
+            or any(value not in EFFECT_OUTCOMES for value in return_outcomes.values())
+        ):
+            raise AuthorityDriftError(
+                "effect-outcome contract must classify every stable return category"
+            )
+        if (
+            not isinstance(qualifying, list)
+            or len(qualifying) != len(set(qualifying))
+            or not set(qualifying) <= CLAIM_QUALIFYING_EFFECT_OUTCOMES
+            or not set(qualifying)
+            <= (set(return_outcomes.values()) | probe_outcomes)
+        ):
+            raise AuthorityDriftError(
+                "effect-outcome contract has invalid claim-qualifying outcomes"
+            )
+        if not probe_is_valid:
+            raise AuthorityDriftError(
+                "effect-outcome contract has an invalid result probe"
+            )
+        contract_id = str(record.get("contract_id", ""))
+        symbol_id = str(record.get("symbol_id", ""))
+        effect_kind = str(record.get("effect_kind", ""))
+        declared_digest = str(record.get("effect_contract_digest", ""))
+        if (
+            not contract_id
+            or not symbol_id
+            or not effect_kind
+            or re.fullmatch(r"[0-9a-f]{64}", declared_digest) is None
+            or canonical_digest(record, excluding="effect_contract_digest")
+            != declared_digest
+        ):
+            raise AuthorityDriftError(
+                "effect-outcome contract identity or content digest is invalid"
+            )
+        return cls(
+            contract_id=contract_id,
+            symbol_id=symbol_id,
+            effect_kind=effect_kind,
+            return_outcomes=MappingProxyType(dict(return_outcomes)),
+            claim_qualifying_outcomes=frozenset(str(item) for item in qualifying),
+            effect_probe=(
+                None
+                if raw_probe is None
+                else MappingProxyType(dict(raw_probe))
+            ),
+            effect_contract_digest=declared_digest,
+        )
+
+    def to_record(self) -> dict[str, Any]:
+        record = {
+            "contract_id": self.contract_id,
+            "symbol_id": self.symbol_id,
+            "effect_kind": self.effect_kind,
+            "return_outcomes": dict(self.return_outcomes),
+            "claim_qualifying_outcomes": sorted(self.claim_qualifying_outcomes),
+            "effect_contract_digest": self.effect_contract_digest,
+        }
+        if self.effect_probe is not None:
+            record["effect_probe"] = dict(self.effect_probe)
+        return record
+
+    @staticmethod
+    def _bound_instance_snapshot_digest(
+        target: Callable[..., Any],
+        snapshot_method: str,
+    ) -> str | None:
+        owner = _callable_bound_owner(target)
+        snapshot = getattr(owner, snapshot_method, None)
+        if not callable(snapshot):
+            return None
+        try:
+            return _canonical_value_digest(snapshot())
+        except Exception:  # noqa: BLE001 - probe failure must classify as unknown
+            return None
+
+    def capture_pre_call_evidence(
+        self,
+        target: Callable[..., Any],
+    ) -> Mapping[str, Any] | None:
+        """Capture trusted pre-call evidence without changing call semantics."""
+
+        if (
+            self.effect_probe is None
+            or self.effect_probe.get("kind")
+            != "bound_instance_snapshot_digest"
+        ):
+            return None
+        snapshot_method = str(self.effect_probe["snapshot_method"])
+        return MappingProxyType(
+            {
+                "before_digest": self._bound_instance_snapshot_digest(
+                    target,
+                    snapshot_method,
+                )
+            }
+        )
+
+    def classify(
+        self,
+        result: object,
+        *,
+        target: Callable[..., Any],
+        pre_call_evidence: Mapping[str, Any] | None,
+    ) -> tuple[str, str, bool, Mapping[str, Any] | None]:
+        """Return category, explicit effect, claim eligibility, and probe evidence."""
+
+        category = _return_category(result)
+        outcome = self.return_outcomes[category]
+        effect_evidence: Mapping[str, Any] | None = None
+        if (
+            self.effect_probe is not None
+            and self.effect_probe.get("kind") == "boolean_attribute"
+        ):
+            attribute = str(self.effect_probe["attribute"])
+            observed = getattr(result, attribute, None)
+            observed_boolean = observed if isinstance(observed, bool) else None
+            effect_evidence = MappingProxyType(
+                {
+                    "kind": "boolean_attribute",
+                    "attribute": attribute,
+                    "observed_boolean": observed_boolean,
+                }
+            )
+            if observed_boolean is True:
+                outcome = str(self.effect_probe["true_outcome"])
+            elif observed_boolean is False:
+                outcome = str(self.effect_probe["false_outcome"])
+            else:
+                outcome = "unknown"
+        elif (
+            self.effect_probe is not None
+            and self.effect_probe.get("kind")
+            == "bound_instance_snapshot_digest"
+        ):
+            snapshot_method = str(self.effect_probe["snapshot_method"])
+            before_digest = (
+                pre_call_evidence.get("before_digest")
+                if pre_call_evidence is not None
+                else None
+            )
+            after_digest = self._bound_instance_snapshot_digest(
+                target,
+                snapshot_method,
+            )
+            changed = (
+                before_digest != after_digest
+                if isinstance(before_digest, str)
+                and isinstance(after_digest, str)
+                else None
+            )
+            effect_evidence = MappingProxyType(
+                {
+                    "kind": "bound_instance_snapshot_digest",
+                    "snapshot_method": snapshot_method,
+                    "before_digest": before_digest,
+                    "after_digest": after_digest,
+                    "changed": changed,
+                }
+            )
+            if changed is True:
+                outcome = str(self.effect_probe["changed_outcome"])
+            elif changed is False:
+                outcome = str(self.effect_probe["unchanged_outcome"])
+            else:
+                outcome = "unknown"
+        return (
+            category,
+            outcome,
+            outcome in self.claim_qualifying_outcomes,
+            effect_evidence,
+        )
+
+
 @dataclass(frozen=True)
 class BindingAcceptanceAnchor:
     """Independently trusted acceptance decision for one exact binding map."""
@@ -613,7 +870,12 @@ class BindingAcceptanceAnchor:
     accepted_source_revision: str
     accepted_binding_semantics_digest: str
     accepted_source_manifest_digest: str
+    effect_outcome_contracts_digest: str
     anchor_digest: str
+    _effect_outcome_contracts: Mapping[str, EffectOutcomeContract] = field(
+        repr=False,
+        compare=False,
+    )
     _record: Mapping[str, Any] = field(repr=False, compare=False)
 
     @classmethod
@@ -653,6 +915,41 @@ class BindingAcceptanceAnchor:
         source_manifest_digest = str(
             record.get("accepted_source_manifest_digest", "")
         )
+        contract_records = record.get("effect_outcome_contracts")
+        if not isinstance(contract_records, list):
+            raise AuthorityDriftError(
+                "binding-acceptance anchor lacks effect-outcome contracts"
+            )
+        contracts: dict[str, EffectOutcomeContract] = {}
+        contract_ids: set[str] = set()
+        for contract_record in contract_records:
+            if not isinstance(contract_record, Mapping):
+                raise AuthorityDriftError(
+                    "effect-outcome contract must be a JSON object"
+                )
+            contract = EffectOutcomeContract.from_record(contract_record)
+            if contract.symbol_id in contracts or contract.contract_id in contract_ids:
+                raise AuthorityDriftError(
+                    "effect-outcome contract symbol and contract IDs must be unique"
+                )
+            contracts[contract.symbol_id] = contract
+            contract_ids.add(contract.contract_id)
+        declared_contracts_digest = str(
+            record.get("effect_outcome_contracts_digest", "")
+        )
+        if (
+            record.get("effect_outcome_contract_count") != len(contracts)
+            or _canonical_value_digest(
+                [
+                    contracts[symbol_id].to_record()
+                    for symbol_id in sorted(contracts)
+                ]
+            )
+            != declared_contracts_digest
+        ):
+            raise AuthorityDriftError(
+                "binding-acceptance effect-outcome contract set is stale"
+            )
         if not anchor_id or any(
             re.fullmatch(r"[0-9a-f]{64}", value) is None
             for value in (map_digest, semantics_digest, source_manifest_digest)
@@ -670,7 +967,9 @@ class BindingAcceptanceAnchor:
             accepted_source_revision=source_revision,
             accepted_binding_semantics_digest=semantics_digest,
             accepted_source_manifest_digest=source_manifest_digest,
+            effect_outcome_contracts_digest=declared_contracts_digest,
             anchor_digest=declared_digest,
+            _effect_outcome_contracts=MappingProxyType(contracts),
             _record=MappingProxyType(deepcopy(dict(record))),
         )
 
@@ -700,6 +999,34 @@ class BindingAcceptanceAnchor:
                 "binding map is self-consistent but pending independent review: "
                 f"anchor mismatches {mismatched}"
             )
+        known_symbol_ids = {
+            str(symbol.get("symbol_id", ""))
+            for stage in bindings.get("stage_bindings", [])
+            if isinstance(stage, Mapping)
+            for symbol in stage.get("symbols", [])
+            if isinstance(symbol, Mapping)
+        }
+        known_symbol_ids.update(
+            str(symbol.get("symbol_id", ""))
+            for crossing in bindings.get("composition_crossing_bindings", [])
+            if isinstance(crossing, Mapping)
+            for symbol in (crossing.get("symbol", {}),)
+            if isinstance(symbol, Mapping)
+        )
+        unknown_contract_symbols = sorted(
+            set(self._effect_outcome_contracts) - known_symbol_ids
+        )
+        if unknown_contract_symbols:
+            raise AuthorityDriftError(
+                "binding-acceptance anchor has contracts for unknown symbols: "
+                f"{unknown_contract_symbols}"
+            )
+
+    def effect_outcome_contract(
+        self,
+        symbol_id: str,
+    ) -> EffectOutcomeContract | None:
+        return self._effect_outcome_contracts.get(symbol_id)
 
 
 class CausalPathwayAuthority:
@@ -792,6 +1119,24 @@ class CausalPathwayAuthority:
             return ""
         return self._binding_acceptance_anchor.anchor_digest
 
+    @property
+    def effect_outcome_contracts_digest(self) -> str:
+        """Return the trusted mechanism-effect contract-set identity."""
+
+        if self._binding_acceptance_anchor is None:
+            return ""
+        return self._binding_acceptance_anchor.effect_outcome_contracts_digest
+
+    def effect_outcome_contract(
+        self,
+        symbol_id: str,
+    ) -> EffectOutcomeContract | None:
+        """Return the reviewed contract for a symbol, or no contract."""
+
+        if self._binding_acceptance_anchor is None:
+            return None
+        return self._binding_acceptance_anchor.effect_outcome_contract(symbol_id)
+
     def artifact_identities(self) -> Mapping[str, str]:
         """Return the accepted digests consumed by one binding lock."""
 
@@ -807,6 +1152,9 @@ class CausalPathwayAuthority:
                 "binding_acceptance_status": self.binding_acceptance_status,
                 "binding_acceptance_anchor_digest": (
                     self.binding_acceptance_anchor_digest
+                ),
+                "effect_outcome_contracts_digest": (
+                    self.effect_outcome_contracts_digest
                 ),
             }
         )
@@ -1077,6 +1425,34 @@ class CausalPathwayAuthority:
         )
 
 
+def _classify_returned_effect(
+    authority: CausalPathwayAuthority,
+    symbol_id: str,
+    result: object,
+    *,
+    target: Callable[..., Any],
+    pre_call_evidence: Mapping[str, Any] | None,
+) -> tuple[str, str | None, str, str, bool, Mapping[str, Any] | None]:
+    """Apply only the trusted exact-symbol outcome contract to a return."""
+
+    contract = authority.effect_outcome_contract(symbol_id)
+    if contract is None:
+        return _return_category(result), None, "unreviewed", "unknown", False, None
+    category, outcome, qualifying, effect_evidence = contract.classify(
+        result,
+        target=target,
+        pre_call_evidence=pre_call_evidence,
+    )
+    return (
+        category,
+        contract.contract_id,
+        contract.effect_kind,
+        outcome,
+        qualifying,
+        effect_evidence,
+    )
+
+
 @dataclass(frozen=True)
 class InvocationRecord:
     """One in-memory I113 use record around real-callable delegation."""
@@ -1087,6 +1463,12 @@ class InvocationRecord:
     symbol_id: str
     composition_ids: tuple[str, ...]
     outcome: str
+    return_category: str | None
+    effect_contract_id: str | None
+    effect_kind: str
+    effect_outcome: str
+    claim_qualifying_effect: bool
+    effect_evidence: Mapping[str, Any] | None
     result_type: str | None
     error_type: str | None
     callable_identity: Mapping[str, Any]
@@ -1107,6 +1489,12 @@ class CrossingInvocationRecord:
     source_binding_id: str
     target_binding_id: str
     outcome: str
+    return_category: str | None
+    effect_contract_id: str | None
+    effect_kind: str
+    effect_outcome: str
+    claim_qualifying_effect: bool
+    effect_evidence: Mapping[str, Any] | None
     result_type: str | None
     error_type: str | None
     callable_identity: Mapping[str, Any]
@@ -1255,11 +1643,19 @@ class VerifiedCallable:
             composition_ids=self._composition_ids,
         )
         target, callable_identity = self._assert_current_callable()
+        effect_contract = self._session.authority.effect_outcome_contract(
+            self._symbol.symbol_id
+        )
         for name, expected in self._symbol.required_keyword_arguments.items():
             if kwargs.get(name) != expected:
                 raise SymbolBindingError(
                     f"binding {self._symbol.symbol_id!r} requires {name}={expected!r}"
                 )
+        pre_call_effect_evidence = (
+            effect_contract.capture_pre_call_evidence(target)
+            if effect_contract is not None
+            else None
+        )
         try:
             result = target(*args, **kwargs)
         except Exception as exc:
@@ -1271,12 +1667,40 @@ class VerifiedCallable:
                     symbol_id=self._symbol.symbol_id,
                     composition_ids=self._composition_ids,
                     outcome="raised",
+                    return_category=None,
+                    effect_contract_id=(
+                        effect_contract.contract_id
+                        if effect_contract is not None
+                        else None
+                    ),
+                    effect_kind=(
+                        effect_contract.effect_kind
+                        if effect_contract is not None
+                        else "unreviewed"
+                    ),
+                    effect_outcome="unknown",
+                    claim_qualifying_effect=False,
+                    effect_evidence=None,
                     result_type=None,
                     error_type=type(exc).__name__,
                     callable_identity=callable_identity,
                 )
             )
             raise
+        (
+            return_category,
+            effect_contract_id,
+            effect_kind,
+            effect_outcome,
+            claim_qualifying_effect,
+            effect_evidence,
+        ) = _classify_returned_effect(
+            self._session.authority,
+            self._symbol.symbol_id,
+            result,
+            target=target,
+            pre_call_evidence=pre_call_effect_evidence,
+        )
         self._session._record_invocation(
             InvocationRecord(
                 binding_id=self._binding_id,
@@ -1285,6 +1709,12 @@ class VerifiedCallable:
                 symbol_id=self._symbol.symbol_id,
                 composition_ids=self._composition_ids,
                 outcome="returned",
+                return_category=return_category,
+                effect_contract_id=effect_contract_id,
+                effect_kind=effect_kind,
+                effect_outcome=effect_outcome,
+                claim_qualifying_effect=claim_qualifying_effect,
+                effect_evidence=effect_evidence,
                 result_type=type(result).__name__,
                 error_type=None,
                 callable_identity=callable_identity,
@@ -1362,6 +1792,9 @@ class VerifiedCompositionCrossing:
             symbol_id=self.symbol_id,
         )
         target, callable_identity = self._assert_current_callable()
+        effect_contract = self._session.authority.effect_outcome_contract(
+            self.symbol_id
+        )
         try:
             arguments = inspect.signature(target).bind(*args, **kwargs).arguments
         except TypeError as exc:
@@ -1374,6 +1807,11 @@ class VerifiedCompositionCrossing:
                 f"composition crossing {self.symbol_id!r} must consume the "
                 "declared source instance"
             )
+        pre_call_effect_evidence = (
+            effect_contract.capture_pre_call_evidence(target)
+            if effect_contract is not None
+            else None
+        )
         try:
             result = target(*args, **kwargs)
         except Exception as exc:
@@ -1387,6 +1825,20 @@ class VerifiedCompositionCrossing:
                     source_binding_id=self._composition.source_binding.binding_id,
                     target_binding_id=self._composition.target_binding.binding_id,
                     outcome="raised",
+                    return_category=None,
+                    effect_contract_id=(
+                        effect_contract.contract_id
+                        if effect_contract is not None
+                        else None
+                    ),
+                    effect_kind=(
+                        effect_contract.effect_kind
+                        if effect_contract is not None
+                        else "unreviewed"
+                    ),
+                    effect_outcome="unknown",
+                    claim_qualifying_effect=False,
+                    effect_evidence=None,
                     result_type=None,
                     error_type=type(exc).__name__,
                     callable_identity=callable_identity,
@@ -1394,6 +1846,20 @@ class VerifiedCompositionCrossing:
             )
             raise
         self._result_reference._set(result)
+        (
+            return_category,
+            effect_contract_id,
+            effect_kind,
+            effect_outcome,
+            claim_qualifying_effect,
+            effect_evidence,
+        ) = _classify_returned_effect(
+            self._session.authority,
+            self.symbol_id,
+            result,
+            target=target,
+            pre_call_evidence=pre_call_effect_evidence,
+        )
         self._session._record_crossing_invocation(
             scope,
             CrossingInvocationRecord(
@@ -1404,6 +1870,12 @@ class VerifiedCompositionCrossing:
                 source_binding_id=self._composition.source_binding.binding_id,
                 target_binding_id=self._composition.target_binding.binding_id,
                 outcome="returned",
+                return_category=return_category,
+                effect_contract_id=effect_contract_id,
+                effect_kind=effect_kind,
+                effect_outcome=effect_outcome,
+                claim_qualifying_effect=claim_qualifying_effect,
+                effect_evidence=effect_evidence,
                 result_type=type(result).__name__,
                 error_type=None,
                 callable_identity=callable_identity,
@@ -1658,7 +2130,7 @@ class CompositionExecutionScope:
                 event
                 for event in self._events
                 if event["event_kind"] == "endpoint_stage"
-                and event["record"].outcome == "returned"
+                and event["record"].claim_qualifying_effect
                 and event["record"].binding_id == source_binding.binding_id
                 and event["record"].stage_id == stage_id
             ]
@@ -1670,7 +2142,7 @@ class CompositionExecutionScope:
                 event
                 for event in self._events
                 if event["event_kind"] == "endpoint_stage"
-                and event["record"].outcome == "returned"
+                and event["record"].claim_qualifying_effect
                 and event["record"].binding_id == target_binding.binding_id
                 and event["record"].stage_id == stage_id
             ]
@@ -1686,7 +2158,7 @@ class CompositionExecutionScope:
             event
             for event in self._events
             if event["event_kind"] == "crossing_callable"
-            and event["record"].outcome == "returned"
+            and event["record"].claim_qualifying_effect
             and event["record"].binding_id == self.composition.binding_id
         ]
         adapter_required = (
@@ -1814,6 +2286,11 @@ class AlternativeSelectionScope:
                 for event in self._events
                 if event["record"].outcome == "returned"
             ],
+            "claim_qualifying_invocation_indices": [
+                event["record_index"]
+                for event in self._events
+                if event["record"].claim_qualifying_effect
+            ],
             "selection_performed_by": "consumer",
         }
 
@@ -1867,28 +2344,30 @@ class CandidateExecutionScope:
 
         if not self._completed:
             return None
-        returned = [
-            event for event in self._events if event["record"].outcome == "returned"
+        qualifying = [
+            event
+            for event in self._events
+            if event["record"].claim_qualifying_effect
         ]
         if self.candidate.candidate_kind == "pathway":
-            if not returned:
+            if not qualifying:
                 return None
             return {
                 "candidate_scope_id": self.scope_id,
                 "candidate_id": self.candidate.candidate_id,
                 "witness_kind": "content_addressed_constituent_execution",
                 "constituent_invocation_indices": [
-                    event["record_index"] for event in returned
+                    event["record_index"] for event in qualifying
                 ],
             }
 
         source_id = self.candidate.proposed_source_pathway_id
         target_id = self.candidate.proposed_target_pathway_id
         source_events = [
-            event for event in returned if event["record"].pathway_id == source_id
+            event for event in qualifying if event["record"].pathway_id == source_id
         ]
         target_events = [
-            event for event in returned if event["record"].pathway_id == target_id
+            event for event in qualifying if event["record"].pathway_id == target_id
         ]
         if source_id == target_id:
             if len(source_events) < 2:
@@ -2083,6 +2562,7 @@ class PathwayBindingSession:
     ) -> None:
         self._require_declaration_phase()
         key = (binding_id, symbol.symbol_id)
+        effect_contract = self.authority.effect_outcome_contract(symbol.symbol_id)
         self._linked_symbols[key] = {
             "binding_id": binding_id,
             "pathway_id": pathway_id,
@@ -2096,6 +2576,9 @@ class PathwayBindingSession:
             "source_path": symbol.source_path,
             "source_sha256": symbol.source_sha256,
             "required_keyword_arguments": dict(symbol.required_keyword_arguments),
+            "effect_outcome_contract": (
+                effect_contract.to_record() if effect_contract is not None else None
+            ),
             "callable_identity": dict(callable_identity),
         }
         self._linked_instances[key] = instance
@@ -2115,6 +2598,7 @@ class PathwayBindingSession:
                 f"composition binding {composition.binding_id!r} already has a crossing"
             )
         symbol = crossing.symbol
+        effect_contract = self.authority.effect_outcome_contract(symbol.symbol_id)
         self._crossing_links[composition.binding_id] = {
             "binding_id": composition.binding_id,
             "composition_id": composition.composition_id,
@@ -2131,6 +2615,9 @@ class PathwayBindingSession:
             "call_kind": symbol.call_kind,
             "source_path": symbol.source_path,
             "source_sha256": symbol.source_sha256,
+            "effect_outcome_contract": (
+                effect_contract.to_record() if effect_contract is not None else None
+            ),
             "callable_identity": dict(callable_identity),
         }
         self._crossing_runtime_links[composition.binding_id] = (
@@ -2774,7 +3261,7 @@ class PathwayBindingSession:
         successful_binding_ids = {
             record.binding_id
             for record in self._invocations
-            if record.outcome == "returned"
+            if record.claim_qualifying_effect
         }
         return tuple(
             binding
@@ -2789,7 +3276,7 @@ class PathwayBindingSession:
         exercised_compositions: Sequence[BoundComposition],
     ) -> dict[str, Any]:
         successful = [
-            record for record in self._invocations if record.outcome == "returned"
+            record for record in self._invocations if record.claim_qualifying_effect
         ]
         nodes: list[dict[str, Any]] = []
         for pathway_binding in sorted(
@@ -2990,6 +3477,16 @@ class PathwayBindingSession:
                 "symbol_id": item.symbol_id,
                 "composition_ids": list(item.composition_ids),
                 "outcome": item.outcome,
+                "return_category": item.return_category,
+                "effect_contract_id": item.effect_contract_id,
+                "effect_kind": item.effect_kind,
+                "effect_outcome": item.effect_outcome,
+                "claim_qualifying_effect": item.claim_qualifying_effect,
+                "effect_evidence": (
+                    None
+                    if item.effect_evidence is None
+                    else dict(item.effect_evidence)
+                ),
                 "result_type": item.result_type,
                 "error_type": item.error_type,
                 "callable_identity": dict(item.callable_identity),
@@ -3010,6 +3507,16 @@ class PathwayBindingSession:
                 "source_binding_id": item.source_binding_id,
                 "target_binding_id": item.target_binding_id,
                 "outcome": item.outcome,
+                "return_category": item.return_category,
+                "effect_contract_id": item.effect_contract_id,
+                "effect_kind": item.effect_kind,
+                "effect_outcome": item.effect_outcome,
+                "claim_qualifying_effect": item.claim_qualifying_effect,
+                "effect_evidence": (
+                    None
+                    if item.effect_evidence is None
+                    else dict(item.effect_evidence)
+                ),
                 "result_type": item.result_type,
                 "error_type": item.error_type,
                 "callable_identity": dict(item.callable_identity),
@@ -3027,10 +3534,10 @@ class PathwayBindingSession:
                 for witness in alternative_selection_witnesses
                 if witness["alternative_set_id"] == alternatives.alternative_set_id
             ]
-            returned_pathway_ids = [
+            qualifying_pathway_ids = [
                 str(witness["selected_pathway_id"])
                 for witness in scopes
-                if witness["returned_invocation_indices"]
+                if witness["claim_qualifying_invocation_indices"]
             ]
             alternative_uses.append(
                 {
@@ -3043,7 +3550,7 @@ class PathwayBindingSession:
                         )
                     ),
                     "actual_pathway_ids_used": list(
-                        dict.fromkeys(returned_pathway_ids)
+                        dict.fromkeys(qualifying_pathway_ids)
                     ),
                     "selection_scopes": [deepcopy(witness) for witness in scopes],
                 }
@@ -3061,7 +3568,7 @@ class PathwayBindingSession:
                             item.stage_id
                             for item in self._invocations
                             if item.binding_id == binding.binding_id
-                            and item.outcome == "returned"
+                            and item.claim_qualifying_effect
                         )
                     ),
                     "actual_symbol_ids": list(
@@ -3069,7 +3576,7 @@ class PathwayBindingSession:
                             item.symbol_id
                             for item in self._invocations
                             if item.binding_id == binding.binding_id
-                            and item.outcome == "returned"
+                            and item.claim_qualifying_effect
                         )
                     ),
                 }
@@ -3096,6 +3603,53 @@ class PathwayBindingSession:
                 for item in self._candidate_uses
             ],
             "declared_but_unused": declared_but_unused,
+            "effect_outcome_summary": {
+                "stage_invocation_counts": {
+                    outcome: sum(
+                        item.effect_outcome == outcome for item in self._invocations
+                    )
+                    for outcome in sorted(EFFECT_OUTCOMES)
+                },
+                "claim_qualifying_stage_invocation_indices": [
+                    index
+                    for index, item in enumerate(self._invocations)
+                    if item.claim_qualifying_effect
+                ],
+                "non_qualifying_returned_stage_invocation_indices": [
+                    index
+                    for index, item in enumerate(self._invocations)
+                    if item.outcome == "returned"
+                    and not item.claim_qualifying_effect
+                ],
+                "raised_stage_invocation_indices": [
+                    index
+                    for index, item in enumerate(self._invocations)
+                    if item.outcome == "raised"
+                ],
+                "crossing_invocation_counts": {
+                    outcome: sum(
+                        item.effect_outcome == outcome
+                        for item in self._crossing_invocations
+                    )
+                    for outcome in sorted(EFFECT_OUTCOMES)
+                },
+                "claim_qualifying_crossing_invocation_indices": [
+                    index
+                    for index, item in enumerate(self._crossing_invocations)
+                    if item.claim_qualifying_effect
+                ],
+                "non_qualifying_returned_crossing_invocation_indices": [
+                    index
+                    for index, item in enumerate(self._crossing_invocations)
+                    if item.outcome == "returned"
+                    and not item.claim_qualifying_effect
+                ],
+                "raised_crossing_invocation_indices": [
+                    index
+                    for index, item in enumerate(self._crossing_invocations)
+                    if item.outcome == "raised"
+                ],
+            },
             "pathway_use_graph": graph,
             "claim_envelope": claim_envelope,
             "blocked_claims": list(claim_envelope["blocked_claims"]),

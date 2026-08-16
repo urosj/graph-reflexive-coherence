@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Reopened at Iteration 117; independent audit corrections pending
+**Status:** Iteration 117 author corrections complete; independent re-audit pending
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -51,8 +51,9 @@ registry or matrix rewriting
 runtime-mechanics normalization
 ```
 
-Legacy direct calls remain valid execution. They are not claim-qualified
-pathway evidence and cannot produce an accepted binding receipt.
+Legacy direct calls remain valid execution. They cannot appear among a
+receipt's recorded bound evidence; an accepted operation-scoped receipt does
+not establish their absence or qualify them.
 
 ## Authority Inputs
 

@@ -34,6 +34,22 @@
             "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-continuity-invariants-observation-v1",
+            "effect_contract_digest": "fa199c6f654c88afbdb778de6a08cc6c91ba69c8e41effc9c1620237426a1049",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "observed",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "grc9v3.synchronous_update_cycle",
           "qualified_symbol": "GRC9V3.apply_continuity",
@@ -82,6 +98,22 @@
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-snapshot-serialization-observation-v1",
+            "effect_contract_digest": "06e6d35f78d62ed01b745fcec762606f227787717e2670de84318a388b59576a",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "pygrc.restoration_replay_identity",
           "qualified_symbol": "LGRC9V3.snapshot",
@@ -112,14 +144,20 @@
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [],
       "crossing_scope_id": null,
+      "effect_contract_id": "M01-continuity-invariants-observation-v1",
+      "effect_evidence": null,
+      "effect_kind": "observation",
+      "effect_outcome": "observed",
       "error_type": null,
       "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "grc9v3.synchronous_update_cycle",
       "result_type": "NoneType",
+      "return_category": "none",
       "stage_id": "continuity_and_invariants",
       "symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary"
     },
@@ -136,14 +174,20 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [],
       "crossing_scope_id": null,
+      "effect_contract_id": "M01-snapshot-serialization-observation-v1",
+      "effect_evidence": null,
+      "effect_kind": "observation",
+      "effect_outcome": "observed",
       "error_type": null,
       "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "pygrc.restoration_replay_identity",
       "result_type": "dict",
+      "return_category": "other",
       "stage_id": "snapshot_serialization",
       "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
     }
@@ -166,6 +210,9 @@
       "selection_scopes": [
         {
           "alternative_set_id": "i116.consumer-branch",
+          "claim_qualifying_invocation_indices": [
+            1
+          ],
           "invocation_indices": [
             1
           ],
@@ -181,9 +228,9 @@
     }
   ],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "d855b6c5501540b3efecc2e7c2aac0e8a558f0c1ea2571e82ae233fa49b7505b",
+  "binding_lock_digest": "b6282aaca3ffe174e361f1731d50b6c2eecb672e27f71c1085153a2308e266c7",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "LGRC packet execution",
@@ -301,6 +348,32 @@
       "pathway:lgrc9v3.explicit_packet_transport"
     ]
   },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [],
+    "claim_qualifying_stage_invocation_indices": [
+      0,
+      1
+    ],
+    "crossing_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 2,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -359,7 +432,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "82d526ca136b72579d72699aa072486c208b683c4343935943a440c2e6aaf99b",
+  "receipt_digest": "ae8f3d5e43e4f19b56227cdf378f9c89550fded8740742c04eef886243d46615",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

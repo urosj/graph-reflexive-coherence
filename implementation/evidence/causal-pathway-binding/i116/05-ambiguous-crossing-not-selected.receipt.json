@@ -5,9 +5,9 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "6432327a85af8b9fd1780194871bc7646cfa91402f8e44a322e052e1546604e5",
+  "binding_lock_digest": "42a1bb96be5c5cffeb2ddcf225fef6c3faeb989626a23e6dbc6e1e3ae61846d2",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [],
   "candidate_relations_exercised": [],
@@ -43,6 +43,29 @@
       "ambiguous-endpoint:1"
     ]
   },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [],
+    "claim_qualifying_stage_invocation_indices": [],
+    "crossing_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -52,7 +75,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "8b34d996ca33acfad6923b3aa137928d252bb3409f5fddf963a2be95f317a5c4",
+  "receipt_digest": "6bdaca45aa8c38d66eacaef99fa522133a3041b860c6fb60eacc3fb5947ff822",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

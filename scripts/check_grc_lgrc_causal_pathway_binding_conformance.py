@@ -91,7 +91,7 @@ RULES = [
     ),
     (
         "BCF-020",
-        "Unbound execution cannot present itself as claim-qualified pathway evidence.",
+        "Only trusted symbol-specific committed or observed effects can present as claim-qualified pathway evidence.",
     ),
 ]
 
@@ -110,6 +110,10 @@ EXECUTABLE_STATUSES = {
     "diagnostic_only",
     "producer_mediated",
 }
+
+RETURN_CATEGORIES = {"false", "true", "none", "empty", "other"}
+EFFECT_OUTCOMES = {"committed", "observed", "rejected", "no_op", "unknown"}
+CLAIM_QUALIFYING_EFFECT_OUTCOMES = {"committed", "observed"}
 
 
 def sha256_bytes(value: bytes) -> str:
@@ -159,18 +163,22 @@ def binding_semantics_digest(bindings: Mapping[str, Any]) -> str:
             for field in _BINDING_SEMANTIC_SYMBOL_FIELDS
         }
 
+    def symbol_sort_key(symbol: Mapping[str, Any]) -> str:
+        return str(symbol.get("symbol_id", ""))
+
+    def semantic_symbols(stage: Mapping[str, Any]) -> list[dict[str, Any]]:
+        symbols: list[dict[str, Any]] = [
+            semantic_symbol(symbol)
+            for symbol in stage.get("symbols", [])
+            if isinstance(symbol, Mapping)
+        ]
+        return sorted(symbols, key=symbol_sort_key)
+
     stage_bindings = [
         {
             "pathway_id": str(stage.get("pathway_id", "")),
             "stage_id": str(stage.get("stage_id", "")),
-            "symbols": sorted(
-                (
-                    semantic_symbol(symbol)
-                    for symbol in stage.get("symbols", [])
-                    if isinstance(symbol, Mapping)
-                ),
-                key=lambda symbol: str(symbol["symbol_id"]),
-            ),
+            "symbols": semantic_symbols(stage),
         }
         for stage in bindings.get("stage_bindings", [])
         if isinstance(stage, Mapping)
@@ -240,6 +248,225 @@ def binding_source_manifest_digest(bindings: Mapping[str, Any]) -> str:
     )
 
 
+def _effect_outcome_contracts(
+    acceptance_anchor: Mapping[str, Any],
+) -> tuple[dict[str, Mapping[str, Any]], str | None]:
+    """Return exact trusted contracts or the reason the set is invalid."""
+
+    raw_contracts = acceptance_anchor.get("effect_outcome_contracts")
+    if not isinstance(raw_contracts, list):
+        return {}, "binding-acceptance anchor lacks effect-outcome contracts"
+    contracts: dict[str, Mapping[str, Any]] = {}
+    contract_ids: set[str] = set()
+    for index, contract in enumerate(raw_contracts):
+        if not isinstance(contract, Mapping):
+            return {}, f"effect-outcome contract {index} is not an object"
+        return_outcomes = contract.get("return_outcomes")
+        qualifying = contract.get("claim_qualifying_outcomes")
+        effect_probe = contract.get("effect_probe")
+        contract_id = str(contract.get("contract_id", ""))
+        symbol_id = str(contract.get("symbol_id", ""))
+        effect_kind = str(contract.get("effect_kind", ""))
+        contract_digest = str(contract.get("effect_contract_digest", ""))
+        probe_outcomes: set[Any] = set()
+        probe_is_valid = effect_probe is None
+        if isinstance(effect_probe, Mapping):
+            probe_kind = effect_probe.get("kind")
+            if probe_kind == "boolean_attribute":
+                probe_is_valid = (
+                    set(effect_probe)
+                    == {"kind", "attribute", "true_outcome", "false_outcome"}
+                    and isinstance(effect_probe.get("attribute"), str)
+                    and bool(effect_probe.get("attribute"))
+                    and effect_probe.get("true_outcome") in EFFECT_OUTCOMES
+                    and effect_probe.get("false_outcome") in EFFECT_OUTCOMES
+                )
+                probe_outcomes = {
+                    effect_probe.get("true_outcome"),
+                    effect_probe.get("false_outcome"),
+                }
+            elif probe_kind == "bound_instance_snapshot_digest":
+                probe_is_valid = (
+                    set(effect_probe)
+                    == {
+                        "kind",
+                        "snapshot_method",
+                        "changed_outcome",
+                        "unchanged_outcome",
+                    }
+                    and isinstance(effect_probe.get("snapshot_method"), str)
+                    and bool(effect_probe.get("snapshot_method"))
+                    and effect_probe.get("changed_outcome") in EFFECT_OUTCOMES
+                    and effect_probe.get("unchanged_outcome") in EFFECT_OUTCOMES
+                )
+                probe_outcomes = {
+                    effect_probe.get("changed_outcome"),
+                    effect_probe.get("unchanged_outcome"),
+                }
+        if (
+            not isinstance(return_outcomes, Mapping)
+            or set(return_outcomes) != RETURN_CATEGORIES
+            or any(outcome not in EFFECT_OUTCOMES for outcome in return_outcomes.values())
+            or not isinstance(qualifying, list)
+            or len(qualifying) != len(set(qualifying))
+            or not set(qualifying) <= CLAIM_QUALIFYING_EFFECT_OUTCOMES
+            or not set(qualifying)
+            <= (set(return_outcomes.values()) | probe_outcomes)
+            or not contract_id
+            or not symbol_id
+            or not effect_kind
+            or not probe_is_valid
+            or symbol_id in contracts
+            or contract_id in contract_ids
+            or re.fullmatch(r"[0-9a-f]{64}", contract_digest) is None
+            or digest_without(contract, "effect_contract_digest") != contract_digest
+        ):
+            return {}, f"effect-outcome contract {index} is invalid or duplicated"
+        contracts[symbol_id] = contract
+        contract_ids.add(contract_id)
+    expected_digest = canonical_digest(
+        [contracts[symbol_id] for symbol_id in sorted(contracts)]
+    )
+    if (
+        acceptance_anchor.get("effect_outcome_contract_count") != len(contracts)
+        or acceptance_anchor.get("effect_outcome_contracts_digest")
+        != expected_digest
+    ):
+        return {}, "binding-acceptance effect-outcome contract set is stale"
+    return contracts, None
+
+
+def _invocation_effect_issue(
+    invocation: Mapping[str, Any],
+    contract: Mapping[str, Any] | None,
+) -> str | None:
+    """Validate a receipt outcome against one exact trusted symbol contract."""
+
+    outcome = invocation.get("outcome")
+    expected_contract_id = contract.get("contract_id") if contract is not None else None
+    expected_effect_kind = (
+        contract.get("effect_kind") if contract is not None else "unreviewed"
+    )
+    if outcome == "raised":
+        expected = {
+            "return_category": None,
+            "effect_contract_id": expected_contract_id,
+            "effect_kind": expected_effect_kind,
+            "effect_outcome": "unknown",
+            "claim_qualifying_effect": False,
+            "effect_evidence": None,
+        }
+    elif outcome == "returned":
+        category = invocation.get("return_category")
+        if category not in RETURN_CATEGORIES:
+            return "returned invocation lacks a stable return category"
+        expected_effect_outcome = (
+            contract.get("return_outcomes", {}).get(category)
+            if contract is not None
+            else "unknown"
+        )
+        qualifying_outcomes = (
+            set(contract.get("claim_qualifying_outcomes", []))
+            if contract is not None
+            else set()
+        )
+        effect_probe = contract.get("effect_probe") if contract is not None else None
+        expected_effect_evidence: Mapping[str, Any] | None = None
+        if (
+            isinstance(effect_probe, Mapping)
+            and effect_probe.get("kind") == "boolean_attribute"
+        ):
+            actual_effect_evidence = invocation.get("effect_evidence")
+            if not isinstance(actual_effect_evidence, Mapping):
+                return "probe-governed invocation lacks effect evidence"
+            observed_boolean = actual_effect_evidence.get("observed_boolean")
+            expected_effect_evidence = {
+                "kind": "boolean_attribute",
+                "attribute": effect_probe.get("attribute"),
+                "observed_boolean": observed_boolean,
+            }
+            if observed_boolean is True:
+                expected_effect_outcome = effect_probe.get("true_outcome")
+            elif observed_boolean is False:
+                expected_effect_outcome = effect_probe.get("false_outcome")
+            elif observed_boolean is None:
+                expected_effect_outcome = "unknown"
+            else:
+                return "effect probe observation is not boolean or unknown"
+        elif (
+            isinstance(effect_probe, Mapping)
+            and effect_probe.get("kind")
+            == "bound_instance_snapshot_digest"
+        ):
+            actual_effect_evidence = invocation.get("effect_evidence")
+            if (
+                not isinstance(actual_effect_evidence, Mapping)
+                or set(actual_effect_evidence)
+                != {
+                    "kind",
+                    "snapshot_method",
+                    "before_digest",
+                    "after_digest",
+                    "changed",
+                }
+                or actual_effect_evidence.get("kind")
+                != "bound_instance_snapshot_digest"
+                or actual_effect_evidence.get("snapshot_method")
+                != effect_probe.get("snapshot_method")
+            ):
+                return "snapshot-governed invocation lacks exact effect evidence"
+            before_digest = actual_effect_evidence.get("before_digest")
+            after_digest = actual_effect_evidence.get("after_digest")
+            if any(
+                digest is not None
+                and (
+                    not isinstance(digest, str)
+                    or re.fullmatch(r"[0-9a-f]{64}", digest) is None
+                )
+                for digest in (before_digest, after_digest)
+            ):
+                return "snapshot effect evidence contains an invalid digest"
+            expected_changed = (
+                before_digest != after_digest
+                if isinstance(before_digest, str)
+                and isinstance(after_digest, str)
+                else None
+            )
+            if actual_effect_evidence.get("changed") is not expected_changed:
+                return "snapshot effect evidence change flag is inconsistent"
+            expected_effect_evidence = {
+                "kind": "bound_instance_snapshot_digest",
+                "snapshot_method": effect_probe.get("snapshot_method"),
+                "before_digest": before_digest,
+                "after_digest": after_digest,
+                "changed": expected_changed,
+            }
+            if expected_changed is True:
+                expected_effect_outcome = effect_probe.get("changed_outcome")
+            elif expected_changed is False:
+                expected_effect_outcome = effect_probe.get("unchanged_outcome")
+            else:
+                expected_effect_outcome = "unknown"
+        expected = {
+            "return_category": category,
+            "effect_contract_id": expected_contract_id,
+            "effect_kind": expected_effect_kind,
+            "effect_outcome": expected_effect_outcome,
+            "claim_qualifying_effect": (
+                expected_effect_outcome in qualifying_outcomes
+            ),
+            "effect_evidence": expected_effect_evidence,
+        }
+    else:
+        return "invocation outcome is neither returned nor raised"
+    mismatched = [
+        field for field, value in expected.items() if invocation.get(field) != value
+    ]
+    if mismatched:
+        return f"effect outcome differs from trusted contract fields {mismatched}"
+    return None
+
+
 def binding_acceptance_issue(
     bindings: Mapping[str, Any],
     acceptance_anchor: Mapping[str, Any] | None,
@@ -289,6 +516,25 @@ def binding_acceptance_issue(
         is None
     ):
         return "binding-acceptance anchor source revision is malformed"
+    contracts, contracts_issue = _effect_outcome_contracts(acceptance_anchor)
+    if contracts_issue is not None:
+        return contracts_issue
+    known_symbol_ids = {
+        str(symbol.get("symbol_id", ""))
+        for stage in bindings.get("stage_bindings", [])
+        if isinstance(stage, Mapping)
+        for symbol in stage.get("symbols", [])
+        if isinstance(symbol, Mapping)
+    }
+    known_symbol_ids.update(
+        str(symbol.get("symbol_id", ""))
+        for crossing in bindings.get("composition_crossing_bindings", [])
+        if isinstance(crossing, Mapping)
+        for symbol in (crossing.get("symbol", {}),)
+        if isinstance(symbol, Mapping)
+    )
+    if set(contracts) - known_symbol_ids:
+        return "binding-acceptance anchor contracts refer to unknown symbols"
     actual = {
         "accepted_binding_map_digest": bindings.get("binding_map_digest"),
         "accepted_source_revision": bindings.get("source_revision"),
@@ -640,6 +886,12 @@ def validate_bundle(
             "binding_acceptance_anchor",
             acceptance_issue,
         )
+    effect_outcome_contracts, _ = (
+        _effect_outcome_contracts(acceptance_anchor)
+        if acceptance_anchor is not None
+        else ({}, "binding-acceptance anchor is absent")
+    )
+    effect_contracts_available = acceptance_issue is None
 
     expected_rules = [
         {"rule_id": rule_id, "description": description, "severity": "fail_closed"}
@@ -699,6 +951,11 @@ def validate_bundle(
         "conformance_policy_digest": consolidation_policy.get("policy_digest"),
         "binding_acceptance_status": "accepted",
         "binding_acceptance_anchor_digest": trusted_anchor_digest,
+        "effect_outcome_contracts_digest": (
+            acceptance_anchor.get("effect_outcome_contracts_digest")
+            if acceptance_anchor is not None
+            else None
+        ),
     }
     for artifact_name, artifact in (("lock", lock), ("receipt", receipt)):
         for field, expected in artifact_expected.items():
@@ -714,6 +971,7 @@ def validate_bundle(
                     "source_revision",
                     "binding_acceptance_status",
                     "binding_acceptance_anchor_digest",
+                    "effect_outcome_contracts_digest",
                 }
                 else "BCF-012"
             )
@@ -831,6 +1089,15 @@ def validate_bundle(
                     "BCF-016",
                     f"{binding_id}:{symbol_id}",
                     "locked callable fingerprint is absent, stale, or inconsistent",
+                )
+            if effect_contracts_available and link.get(
+                "effect_outcome_contract"
+            ) != effect_outcome_contracts.get(symbol_id):
+                add_issue(
+                    issues,
+                    "BCF-020",
+                    f"{binding_id}:{symbol_id}",
+                    "locked effect-outcome contract differs from the trusted anchor",
                 )
 
     lock_compositions, duplicate_lock_compositions = _unique_index(
@@ -993,6 +1260,16 @@ def validate_bundle(
                 binding_id,
                 "frozen adapter callable fingerprint is absent or inconsistent",
             )
+        crossing_symbol_id = str(expected_crossing.get("symbol_id", ""))
+        if effect_contracts_available and expected_crossing.get(
+            "effect_outcome_contract"
+        ) != effect_outcome_contracts.get(crossing_symbol_id):
+            add_issue(
+                issues,
+                "BCF-020",
+                f"{binding_id}:{crossing_symbol_id}",
+                "frozen crossing effect-outcome contract differs from the trusted anchor",
+            )
 
     declared_candidates, duplicate_candidates = _unique_index(
         lock.get("candidate_declarations", []), "candidate_id"
@@ -1146,8 +1423,8 @@ def validate_bundle(
         )
 
     invocations = receipt.get("actual_stage_symbol_invocations", [])
-    returned_binding_ids: set[str] = set()
-    returned_stage_symbols: dict[str, list[tuple[str, str]]] = {}
+    qualifying_binding_ids: set[str] = set()
+    qualifying_stage_symbols: dict[str, list[tuple[str, str]]] = {}
     execution_event_orders: list[int] = []
     for invocation_index, invocation in enumerate(invocations):
         binding_id = str(invocation.get("binding_id", ""))
@@ -1210,21 +1487,36 @@ def validate_bundle(
                 f"{binding_id}:{symbol_id}",
                 "invocation outcome is invalid",
             )
-        if invocation.get("outcome") == "returned":
-            returned_binding_ids.add(binding_id)
-            returned_stage_symbols.setdefault(binding_id, []).append(
+        effect_issue = (
+            _invocation_effect_issue(
+                invocation,
+                effect_outcome_contracts.get(symbol_id),
+            )
+            if effect_contracts_available
+            else None
+        )
+        if effect_issue is not None:
+            add_issue(
+                issues,
+                "BCF-020",
+                f"{binding_id}:{symbol_id}",
+                effect_issue,
+            )
+        if invocation.get("claim_qualifying_effect") is True:
+            qualifying_binding_ids.add(binding_id)
+            qualifying_stage_symbols.setdefault(binding_id, []).append(
                 (str(invocation.get("stage_id", "")), symbol_id)
             )
 
     actual_bindings, duplicate_actual_bindings = _unique_index(
         receipt.get("actual_bound_pathways_used", []), "binding_id"
     )
-    if duplicate_actual_bindings or set(actual_bindings) != returned_binding_ids:
+    if duplicate_actual_bindings or set(actual_bindings) != qualifying_binding_ids:
         add_issue(
             issues,
             "BCF-015",
             "receipt.actual_bound_pathways_used",
-            "successful actual bindings do not match returned invocations",
+            "actual bindings do not match claim-qualifying effects",
         )
     for binding_id, actual in actual_bindings.items():
         locked = lock_bindings.get(binding_id)
@@ -1241,7 +1533,7 @@ def validate_bundle(
                     binding_id,
                     f"actual binding changed locked field {field}",
                 )
-        stage_symbols = returned_stage_symbols.get(binding_id, [])
+        stage_symbols = qualifying_stage_symbols.get(binding_id, [])
         expected_stages = list(dict.fromkeys(stage for stage, _ in stage_symbols))
         expected_symbols = list(dict.fromkeys(symbol for _, symbol in stage_symbols))
         if (
@@ -1305,6 +1597,79 @@ def validate_bundle(
                 f"{binding_id}:crossing:{crossing_index}",
                 "adapter invocation lacks a scope or valid outcome",
             )
+        effect_issue = (
+            _invocation_effect_issue(
+                invocation,
+                effect_outcome_contracts.get(
+                    str(invocation.get("symbol_id", ""))
+                ),
+            )
+            if effect_contracts_available
+            else None
+        )
+        if effect_issue is not None:
+            add_issue(
+                issues,
+                "BCF-020",
+                f"{binding_id}:crossing:{crossing_index}",
+                effect_issue,
+            )
+
+    expected_effect_outcome_summary = {
+        "stage_invocation_counts": {
+            outcome: sum(
+                invocation.get("effect_outcome") == outcome
+                for invocation in invocations
+            )
+            for outcome in sorted(EFFECT_OUTCOMES)
+        },
+        "claim_qualifying_stage_invocation_indices": [
+            index
+            for index, invocation in enumerate(invocations)
+            if invocation.get("claim_qualifying_effect") is True
+        ],
+        "non_qualifying_returned_stage_invocation_indices": [
+            index
+            for index, invocation in enumerate(invocations)
+            if invocation.get("outcome") == "returned"
+            and invocation.get("claim_qualifying_effect") is not True
+        ],
+        "raised_stage_invocation_indices": [
+            index
+            for index, invocation in enumerate(invocations)
+            if invocation.get("outcome") == "raised"
+        ],
+        "crossing_invocation_counts": {
+            outcome: sum(
+                invocation.get("effect_outcome") == outcome
+                for invocation in crossing_invocations
+            )
+            for outcome in sorted(EFFECT_OUTCOMES)
+        },
+        "claim_qualifying_crossing_invocation_indices": [
+            index
+            for index, invocation in enumerate(crossing_invocations)
+            if invocation.get("claim_qualifying_effect") is True
+        ],
+        "non_qualifying_returned_crossing_invocation_indices": [
+            index
+            for index, invocation in enumerate(crossing_invocations)
+            if invocation.get("outcome") == "returned"
+            and invocation.get("claim_qualifying_effect") is not True
+        ],
+        "raised_crossing_invocation_indices": [
+            index
+            for index, invocation in enumerate(crossing_invocations)
+            if invocation.get("outcome") == "raised"
+        ],
+    }
+    if receipt.get("effect_outcome_summary") != expected_effect_outcome_summary:
+        add_issue(
+            issues,
+            "BCF-020",
+            "receipt.effect_outcome_summary",
+            "effect outcome summary differs from exact invocation records",
+        )
 
     if len(execution_event_orders) != len(set(execution_event_orders)) or sorted(
         execution_event_orders
@@ -1395,7 +1760,7 @@ def validate_bundle(
                 invocation.get("binding_id") != binding_id
                 or invocation.get("pathway_id") != pathway_id
                 or invocation.get("stage_id") != stage_id
-                or invocation.get("outcome") != "returned"
+                or invocation.get("claim_qualifying_effect") is not True
                 or invocation.get("crossing_scope_id") != expected_scope_id
                 for invocation, stage_id in zip(selected, stage_ids, strict=True)
             ):
@@ -1461,7 +1826,7 @@ def validate_bundle(
                     crossing.get("binding_id") == binding_id
                     and crossing.get("composition_id") == composition_id
                     and crossing.get("crossing_scope_id") == scope_id
-                    and crossing.get("outcome") == "returned"
+                    and crossing.get("claim_qualifying_effect") is True
                     and max(from_orders)
                     < int(crossing.get("execution_event_order", -1))
                     < min(to_orders)
@@ -1557,7 +1922,7 @@ def validate_bundle(
             except (IndexError, TypeError):
                 return None
             if any(
-                invocation.get("outcome") != "returned"
+                invocation.get("claim_qualifying_effect") is not True
                 or invocation.get("candidate_scope_id") != scope_id
                 or (
                     pathway_id is not None
@@ -1631,7 +1996,7 @@ def validate_bundle(
             )
 
     expected_unused = {
-        "pathway_binding_ids": sorted(set(lock_bindings) - returned_binding_ids),
+        "pathway_binding_ids": sorted(set(lock_bindings) - qualifying_binding_ids),
         "composition_binding_ids": sorted(set(lock_compositions) - set(exercised)),
         "candidate_ids": sorted(set(declared_candidates) - set(used_candidates)),
     }
@@ -2101,7 +2466,7 @@ def validate_bundle(
                 "dynamic choice scopes are not a list",
             )
         selected_pathway_ids: list[str] = []
-        returned_pathway_ids: list[str] = []
+        qualifying_pathway_ids: list[str] = []
         for scope_index, selection_scope in enumerate(raw_scopes):
             location = f"{alternative_id}:selection_scopes[{scope_index}]"
             if not isinstance(selection_scope, Mapping):
@@ -2116,6 +2481,9 @@ def validate_bundle(
             selected_pathway_id = str(selection_scope.get("selected_pathway_id", ""))
             invocation_indices = selection_scope.get("invocation_indices", [])
             returned_indices = selection_scope.get("returned_invocation_indices", [])
+            qualifying_indices = selection_scope.get(
+                "claim_qualifying_invocation_indices", []
+            )
             structurally_valid = (
                 bool(scope_id)
                 and scope_id not in witnessed_scope_ids
@@ -2131,6 +2499,9 @@ def validate_bundle(
                 and isinstance(returned_indices, list)
                 and all(isinstance(index, int) for index in returned_indices)
                 and len(returned_indices) == len(set(returned_indices))
+                and isinstance(qualifying_indices, list)
+                and all(isinstance(index, int) for index in qualifying_indices)
+                and len(qualifying_indices) == len(set(qualifying_indices))
             )
             selected_invocations: list[Mapping[str, Any]] = []
             if structurally_valid:
@@ -2141,6 +2512,7 @@ def validate_bundle(
                 except (IndexError, TypeError):
                     structurally_valid = False
             expected_returned_indices: list[int] = []
+            expected_qualifying_indices: list[int] = []
             if structurally_valid:
                 expected_returned_indices = [
                     index
@@ -2151,6 +2523,15 @@ def validate_bundle(
                     )
                     if invocation.get("outcome") == "returned"
                 ]
+                expected_qualifying_indices = [
+                    index
+                    for index, invocation in zip(
+                        invocation_indices,
+                        selected_invocations,
+                        strict=True,
+                    )
+                    if invocation.get("claim_qualifying_effect") is True
+                ]
             if structurally_valid and (
                 any(
                     invocation.get("alternative_selection_scope_id") != scope_id
@@ -2158,6 +2539,7 @@ def validate_bundle(
                     for invocation in selected_invocations
                 )
                 or expected_returned_indices != returned_indices
+                or expected_qualifying_indices != qualifying_indices
                 or any(
                     index in witnessed_invocation_indices
                     for index in invocation_indices
@@ -2176,11 +2558,14 @@ def validate_bundle(
             witnessed_invocation_indices.update(invocation_indices)
             if selected_pathway_id not in selected_pathway_ids:
                 selected_pathway_ids.append(selected_pathway_id)
-            if returned_indices and selected_pathway_id not in returned_pathway_ids:
-                returned_pathway_ids.append(selected_pathway_id)
+            if (
+                qualifying_indices
+                and selected_pathway_id not in qualifying_pathway_ids
+            ):
+                qualifying_pathway_ids.append(selected_pathway_id)
         if (
             actual_record.get("selected_pathway_ids") != selected_pathway_ids
-            or actual_record.get("actual_pathway_ids_used") != returned_pathway_ids
+            or actual_record.get("actual_pathway_ids_used") != qualifying_pathway_ids
         ):
             add_issue(
                 issues,
@@ -2230,13 +2615,13 @@ def validate_bundle(
             "co-use synthesized an edge or larger chain claim",
         )
 
-    any_success = bool(returned_binding_ids or used_candidates)
+    any_success = bool(qualifying_binding_ids or used_candidates)
     if receipt.get("claim_qualified") is not any_success:
         add_issue(
             issues,
             "BCF-020",
             "receipt.claim_qualified",
-            "claim qualification does not match successful bound use",
+            "claim qualification does not match contract-qualified bound effects",
         )
     if (
         lock.get("claim_scope") != "bound_invocations_only"

@@ -34,6 +34,22 @@
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-packet-schedule-transition-v1",
+            "effect_contract_digest": "57f0d6b4f6572db21fe9653786c309181b144eaf91a5eacd67f99ed7e92af639",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
@@ -64,14 +80,20 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [],
       "crossing_scope_id": null,
+      "effect_contract_id": "M01-packet-schedule-transition-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
       "error_type": null,
       "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "NoneType",
+      "return_category": "none",
       "stage_id": "packet_schedule",
       "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
     }
@@ -79,9 +101,9 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "4456c573dee0164c68e574c1c8b37262558943580c60502a2bdf501c444837ea",
+  "binding_lock_digest": "bb18cd227cc2d2507a0013b85a03279c4f7097f85cf6a56fe8d0d6d653cbf151",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
@@ -156,6 +178,31 @@
     "composition_binding_ids": [],
     "pathway_binding_ids": []
   },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [],
+    "claim_qualifying_stage_invocation_indices": [
+      0
+    ],
+    "crossing_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 1,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -190,7 +237,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "1923dcbff01ec9e9a48eafce4dab0f4c0d9145e9a94edd1b52f792593fd7a1ed",
+  "receipt_digest": "0c065b1f2906ea83386ef30638879fd46194916506e1d0e604cd5b98e9531699",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

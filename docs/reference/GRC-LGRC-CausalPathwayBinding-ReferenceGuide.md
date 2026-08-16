@@ -43,7 +43,7 @@ use, and conservative claim provenance:
   freezes a content-addressed callable identity;
 - `freeze_lock()` closes declarations before claim-bearing execution;
 - verified callables re-resolve that identity immediately before delegation
-  and record returned and raised invocations;
+  and record invocation transport separately from contract-classified effects;
 - `build_receipt()` emits actual use, the use graph, and the claim envelope.
 
 The [binding-symbol map](../../specs/grc-lgrc-causal-pathway-bindings.json) is
@@ -113,7 +113,8 @@ a completely different signature or several exact symbols. There is no shared
 mechanism interface.
 
 Declaring the packet pathway does not create a composition. The receipt lists
-only stages and symbols that actually returned through the bound surface.
+as actual only stages and symbols whose trusted exact-symbol contracts classify
+their effects as `committed` or `observed`.
 
 ## Binding A Registered Composition
 
@@ -151,9 +152,10 @@ may cross it. Unsupported missing crossings and invalid relabels cannot be
 bound as admitted executable compositions.
 
 A composition counts as exercised only when one completed evidence scope
-contains every matrix-required source and target stage in order. Endpoint
-co-use outside that scope forms no edge. CMP-26 additionally requires one
-returned, identity-verified adapter crossing between those endpoint groups.
+contains a claim-qualifying effect for every matrix-required source and target
+stage in order. Endpoint co-use outside that scope forms no edge. CMP-26
+additionally requires one claim-qualifying, identity-verified adapter crossing
+between those endpoint groups.
 
 ## Declaring An Unregistered Candidate
 
@@ -231,8 +233,9 @@ interrupted, and rejected scopes cannot be sealed into a receipt.
 Calls outside the scope remain unrelated bound work and are not inferred as a
 dynamic choice merely because their pathway appears—or does not appear—in the
 allowed set. The receipt records the allowed set, selection authority,
-consumer-selected pathways, exact scope/invocation witnesses, returned paths,
-and declarations with no completed selection scope.
+consumer-selected pathways, exact scope/invocation witnesses, returned and
+claim-qualifying invocation indices, actual qualifying paths, and declarations
+with no completed selection scope.
 
 If the selection mechanism itself is claimed as native causal behavior, that
 mechanism needs its own admitted pathway or composition. Native arbitration is
@@ -250,10 +253,10 @@ close after it. Authority or source drift at lock or receipt time fails closed.
 
 The receipt links to the exact lock digest and records:
 
-- returned and raised stage/symbol invocations;
+- returned and raised stage/symbol invocations with return category, trusted
+  effect contract, effect outcome, and qualifying flag;
 - ordered composition-scope witnesses and explicit-adapter invocations;
-- returned pathway and registered-composition use under the current outcome
-  vocabulary;
+- contract-qualified pathway and registered-composition use;
 - candidate use, content-addressed mechanism evidence, and scoped execution
   witnesses;
 - producer and adapter cuts used;
@@ -290,6 +293,9 @@ caller configuration. The loader never discovers either value automatically.
 The anchor pins the full binding-map digest, source revision, stage/crossing
 semantic projection, and source path/content manifest. Locks and receipts
 retain the exact anchor digest used for their acceptance decision.
+The same anchor pins the exact-symbol effect-outcome contracts and their set
+digest; those contracts cannot be supplied by a receipt or inferred from
+generic Python truthiness.
 
 ## Claim Qualification
 
@@ -301,10 +307,23 @@ The lock and receipt therefore carry `claim_scope = bound_invocations_only`,
 `whole_run_causal_closure_claimed = false`, and an explicit statement that
 external or untracked causal input is not observable by the binding plane.
 
-A declaration without returned bound use is visible but not invocation
-evidence. A raised call remains visible but does not become returned behavioral
-evidence. The returned/committed/no-op distinction remains part of the open
-Iteration 117 correction gate.
+A declaration without a contract-qualified bound effect is visible but not
+actual-use evidence. A raised call remains visible with effect `unknown`. A
+non-raising return is classified by the trusted exact-symbol contract as one
+of `committed`, `observed`, `rejected`, `no_op`, or `unknown`; only the first
+two qualify. `False`, empty, and unreviewed results therefore cannot become
+actual use merely because the callable returned. Producer result contracts can
+also inspect a pinned boolean result attribute such as `state_mutated`, making
+a normal “no eligible work” result an explicit `no_op`. Guarded mutators that
+return `None` can instead pin a bound-instance snapshot method: equal canonical
+pre/post digests classify as `no_op`, while a changed digest classifies as
+`committed`.
+
+The receipt's `effect_outcome_summary` gives exact stage and crossing counts,
+claim-qualifying indices, non-qualifying returned indices, and raised indices.
+Actual pathways, composition and candidate witnesses, dynamic actual-use
+summaries, graph elements, and `claim_qualified` are all derived from the same
+qualifying-effect predicate.
 
 For direct legacy execution, use:
 
@@ -338,8 +357,10 @@ Validate the frozen prospective fixture or supply another exact lock/receipt:
 
 Binding/source drift becomes `stale_pending_review` and blocks
 claim-qualified artifacts. So does a missing anchor or a self-consistent map
-that differs from the independently trusted anchor. The checker validates
-structure and provenance; it does not dispatch or rerun causal dynamics.
+that differs from the independently trusted anchor. BCF-020 also reconstructs
+every receipted effect from the trusted contract and checks the aggregate
+effect summary. The checker validates structure and provenance; it does not
+dispatch or rerun causal dynamics.
 
 ## Boundaries
 

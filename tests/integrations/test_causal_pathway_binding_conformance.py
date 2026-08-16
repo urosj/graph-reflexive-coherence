@@ -7,7 +7,7 @@ import importlib.util
 import json
 import unittest
 from pathlib import Path
-from typing import Any, ClassVar
+from typing import Any, ClassVar, cast
 
 ROOT = Path(__file__).resolve().parents[2]
 CHECKER_PATH = ROOT / "scripts/check_grc_lgrc_causal_pathway_binding_conformance.py"
@@ -16,7 +16,7 @@ POLICY_PATH = ROOT / "specs/grc-lgrc-causal-pathway-binding-conformance.json"
 EVIDENCE_DIR = ROOT / "implementation/evidence/causal-pathway-binding"
 ACCEPTANCE_ANCHOR_PATH = EVIDENCE_DIR / "binding-acceptance-anchor.json"
 TRUSTED_ACCEPTANCE_ANCHOR_DIGEST = (
-    "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709"
+    "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2"
 )
 
 
@@ -59,13 +59,16 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         policy: dict[str, Any],
         active_rule_ids: set[str] | None = None,
     ) -> dict[str, Any]:
-        return self.checker.validate_bundle(
-            root,
-            bundle,
-            policy,
-            active_rule_ids=active_rule_ids,
-            acceptance_anchor=copy.deepcopy(self.acceptance_anchor),
-            trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+        return cast(
+            dict[str, Any],
+            self.checker.validate_bundle(
+                root,
+                bundle,
+                policy,
+                active_rule_ids=active_rule_ids,
+                acceptance_anchor=copy.deepcopy(self.acceptance_anchor),
+                trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+            ),
         )
 
     def test_current_lock_and_receipt_pass_all_twenty_rules(self) -> None:
@@ -226,6 +229,24 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
 
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-020"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_false_noop_and_unknown_effect_forgeries_fail_bcf020(self) -> None:
+        for case_id, _ in self.builder.EFFECT_OUTCOME_CASES:
+            with self.subTest(case_id=case_id):
+                mutated = copy.deepcopy(self.bundle)
+                self.builder.apply_effect_outcome_mutation(case_id, mutated)
+                result = self._validate(
+                    ROOT,
+                    mutated,
+                    copy.deepcopy(self.policy),
+                    active_rule_ids={"BCF-020"},
+                )
+
+                self.assertEqual("failed_closed", result["status"])
+                self.assertEqual(
+                    {"BCF-020"},
+                    {item["rule_id"] for item in result["issues"]},
+                )
 
     def test_invocation_callable_identity_drift_fails_bcf016(self) -> None:
         mutated = copy.deepcopy(self.bundle)
@@ -442,6 +463,8 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual(0, negative["rule_isolation_failed_open_count"])
         self.assertEqual(2, negative["independent_anchor_control_count"])
         self.assertEqual(0, negative["independent_anchor_failed_open_count"])
+        self.assertEqual(3, negative["effect_outcome_control_count"])
+        self.assertEqual(0, negative["effect_outcome_failed_open_count"])
         self.assertEqual(
             negative["execution_digest"],
             self.checker.digest_without(negative, "execution_digest"),

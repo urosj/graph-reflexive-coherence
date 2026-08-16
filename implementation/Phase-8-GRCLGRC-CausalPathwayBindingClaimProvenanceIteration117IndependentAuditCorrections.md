@@ -1,10 +1,10 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** B-01/B-02/B-03/B-04/B-05/B-06 correction slices complete; tranche remains open
+**Status:** B-01 through B-06 and M-01 author correction slices complete; independent re-audit pending
 
 **Checkpoint commit:** `976c660`
 
-**Independent-audit disposition:** `reject_pending_correction`
+**Independent-audit disposition:** `author_corrections_complete_pending_independent_reaudit`
 
 ## Purpose
 
@@ -71,7 +71,8 @@ conformance checker can compare it with the exact locked link.
 
 A registered composition is exercised only by a completed
 `composition.evidence_scope()` witness. The witness requires every matrix
-source stage to return before every matrix target stage. Endpoint calls outside
+source stage to produce a claim-qualifying effect before every matrix target
+stage does. Endpoint calls outside
 that scope remain pathway invocation evidence but cannot synthesize a
 composition edge, adapter/producer cut, or composition claim ceiling.
 
@@ -79,7 +80,8 @@ CMP-26 additionally freezes the exact
 `build_lgrc9v3_corrected_cascade_runtime(...)` callable. Its source-stage
 handles must use the exact GRC instance declared as the adapter input, while
 its target-stage handles use the adapter's deferred result reference. The real
-adapter must return between the source and target stages. The receipt records
+adapter must produce a claim-qualifying effect between the source and target
+stages. The receipt records
 the crossing callable identity, global execution order, and endpoint/crossing
 indices; the conformance checker reconstructs and validates that ordering.
 
@@ -95,7 +97,7 @@ The correction therefore rejects all three forms of the audit falsifier:
 Candidate declaration remains open and non-promoting, but declaration is not
 use. A candidate can enter a receipt only when its lock freezes a repository-
 relative content-addressed JSON mechanism artifact and one completed
-`candidate.evidence_scope()` observes returned calls through the declared
+`candidate.evidence_scope()` observes claim-qualifying effects through the declared
 constituent bindings. Composition candidates require all observed source calls
 before all observed target calls. Ordinary endpoint co-use outside this scope
 does not exercise the candidate.
@@ -128,7 +130,8 @@ receipt.
 
 Successful receipts tag every scoped invocation with its exact selection-scope
 identity and record the alternative set, selection authority, consumer-owned
-selected pathway, invocation indices, and returned-invocation indices. BCF-017
+selected pathway, invocation indices, returned-invocation indices, and
+claim-qualifying invocation indices. BCF-017
 reconstructs each witness and requires complete equality with the invocation
 records. A scoped invocation omitted from its witness, a forged C choice, or a
 scope spanning both A and B fails conformance.
@@ -156,7 +159,8 @@ binding-map digest, declared source revision, a canonical stage/crossing
 semantic projection, and a canonical manifest of source paths and content
 hashes. Its `automatic_re_admission` field is false. Accepted locks and
 receipts retain both `binding_acceptance_status = accepted` and the trusted
-anchor digest.
+anchor digest. The anchor also carries the exact-symbol effect contracts used
+by M-01 and a digest over that contract set.
 
 BCF-014 independently repeats the anchor validation. A missing external anchor
 blocks current-looking artifacts as `stale_pending_review`. The focused
@@ -165,16 +169,56 @@ controls also recompute the binding-map digest and binding-policy digest after
 all-zero source revision. Both coordinated candidates remain pending because
 they cannot change the independently supplied anchor or its trusted digest.
 
+## M-01 Effect Outcome Contracts
+
+Invocation transport and causal effect are now separate receipt facts. A
+wrapper still records whether the callable `returned` or `raised`, but actual
+pathway use, composition/candidate witnesses, dynamic actual-use summaries,
+the use graph, and `claim_qualified` depend only on a trusted effect outcome.
+
+The independently supplied acceptance anchor carries exact-symbol contracts
+with the closed vocabulary:
+
+```text
+committed
+observed
+rejected
+no_op
+unknown
+```
+
+Only `committed` and `observed` may qualify. Stable Python return categories
+(`false`, `true`, `none`, `empty`, and `other`) have no generic truthiness
+meaning; each reviewed symbol maps them explicitly. An exact symbol without a
+reviewed contract returns `unknown` and stays non-qualifying. Producer result
+objects additionally use a contract-pinned `state_mutated` boolean probe, so a
+normal “no eligible work” result becomes `no_op`, not committed work. The
+guarded front-propagation mutator pins canonical pre/post `snapshot()` digests;
+an unchanged `None` return is therefore `no_op`, while only a changed snapshot
+is `committed`.
+
+Locks freeze each symbol's exact contract or an explicit null for an unreviewed
+symbol. Receipts record return category, contract identity, effect kind,
+outcome, qualifying flag, optional probe evidence, and aggregate outcome
+counts. BCF-020 reconstructs those fields from the trusted anchor, verifies
+the lock copy and receipt summary, and derives actual use from qualifying
+effects rather than non-raising returns.
+
+The focused controls cover the audit's controlled `False` return, an empty
+commit result, a producer result with `state_mutated = false`, a guarded `None`
+return with an unchanged bound-instance snapshot, an unreviewed symbol return,
+and forged `False`/`no_op`/`unknown` receipt claims. None can become actual or
+claim-qualified use.
+
 ## Verification Gate
 
 Iteration 117 remains open until repository tests and the independent
 falsifiers agree. Commands use `.venv`; tool and dependency configuration
 comes from `pyproject.toml`.
 
-The completed focused slices close B-01 through B-06 at the implementation
-gate. Finding M-01 remains an acceptance blocker and must not be described as
-resolved. A second full independent revision is deferred until M-01 is
-complete, as agreed for the combined B-06/M-01 correction boundary.
+The completed focused slices close B-01 through B-06 and M-01 at the author
+implementation gate. This is not an acceptance result. The agreed second full
+independent revision is the next gate and remains outstanding.
 
 ## First-Slice Verification
 
@@ -277,5 +321,28 @@ compileall selected changed surfaces = passed
 git diff --check = passed
 ```
 
-This remains author-side correction evidence. M-01 and the deferred full
-independent revision remain open.
+This remains author-side correction evidence. The deferred full independent
+revision remains open.
+
+## M-01 Focused Verification
+
+The M-01 gate covers real committed/observed effects, exceptions, controlled
+`False`, empty/no-op returns, producer mutation probes, unreviewed symbols,
+contract drift, summary drift, and forged claim-qualifying outcomes. I115 adds
+three BCF-020-only effect forgery controls, all of which fail closed.
+
+```text
+.venv focused binding/conformance/replay tests = 62 passed
+.venv full unittest discovery = 1,273 passed
+I115 effect-outcome mutation controls = 3 passed, 0 failed open
+I115/I116 evidence regeneration with trusted outcome contracts = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This is author-side correction evidence only. The full independent revision
+has not yet been run and remains the acceptance gate.

@@ -48,6 +48,21 @@ NEGATIVE_CASES = [
     ("BNC-020", "unbound execution presents claim-qualified evidence", "BCF-020"),
 ]
 
+EFFECT_OUTCOME_CASES = [
+    (
+        "M01-FALSE-AS-COMMITTED",
+        "False return is forged as a committed claim-qualifying effect",
+    ),
+    (
+        "M01-NO-OP-AS-QUALIFIED",
+        "empty no-op return is forged as claim-qualifying",
+    ),
+    (
+        "M01-UNKNOWN-AS-COMMITTED",
+        "unreviewed effect contract is forged as committed",
+    ),
+]
+
 
 def load_checker() -> Any:
     spec = importlib.util.spec_from_file_location(
@@ -373,6 +388,28 @@ def apply_negative_mutation(case_id: str, bundle: dict[str, Any]) -> None:
         raise ValueError(case_id)
 
 
+def apply_effect_outcome_mutation(case_id: str, bundle: dict[str, Any]) -> None:
+    invocation = bundle["receipt"]["actual_stage_symbol_invocations"][0]
+    if case_id == "M01-FALSE-AS-COMMITTED":
+        invocation["return_category"] = "false"
+        invocation["effect_outcome"] = "committed"
+        invocation["claim_qualifying_effect"] = True
+    elif case_id == "M01-NO-OP-AS-QUALIFIED":
+        invocation["return_category"] = "empty"
+        invocation["effect_outcome"] = "no_op"
+        invocation["claim_qualifying_effect"] = True
+    elif case_id == "M01-UNKNOWN-AS-COMMITTED":
+        bundle["lock"]["declared_pathway_bindings"][0][
+            "expected_concrete_symbols"
+        ][0]["effect_outcome_contract"] = None
+        invocation["effect_contract_id"] = None
+        invocation["effect_kind"] = "unreviewed"
+        invocation["effect_outcome"] = "committed"
+        invocation["claim_qualifying_effect"] = True
+    else:
+        raise ValueError(case_id)
+
+
 def apply_independent_anchor_mutation(
     case_id: str,
     bundle: dict[str, Any],
@@ -540,6 +577,33 @@ def main(
                 ),
             }
         )
+    effect_outcome_control_rows = []
+    for case_id, description in EFFECT_OUTCOME_CASES:
+        mutated = copy.deepcopy(base_bundle)
+        apply_effect_outcome_mutation(case_id, mutated)
+        outcome = checker.validate_bundle(
+            ROOT,
+            mutated,
+            policy,
+            active_rule_ids={"BCF-020"},
+            acceptance_anchor=acceptance_anchor,
+            trusted_anchor_digest=trusted_anchor_digest,
+        )
+        triggered = sorted({issue["rule_id"] for issue in outcome["issues"]})
+        effect_outcome_control_rows.append(
+            {
+                "case_id": case_id,
+                "description": description,
+                "active_rule_ids": ["BCF-020"],
+                "triggered_rule_ids": triggered,
+                "status": (
+                    "passed"
+                    if outcome["status"] == "failed_closed"
+                    and triggered == ["BCF-020"]
+                    else "failed_open"
+                ),
+            }
+        )
     negative = {
         "artifact": "Phase 8 GRC/LGRC causal pathway binding I115 negative-control execution",
         "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
@@ -567,12 +631,18 @@ def main(
         "independent_anchor_failed_open_count": sum(
             row["status"] == "failed_open" for row in anchor_control_rows
         ),
+        "effect_outcome_control_count": len(effect_outcome_control_rows),
+        "effect_outcome_controls": effect_outcome_control_rows,
+        "effect_outcome_failed_open_count": sum(
+            row["status"] == "failed_open" for row in effect_outcome_control_rows
+        ),
     }
     negative["status"] = (
         "passed"
         if negative["failed_open_count"] == 0
         and negative["rule_isolation_failed_open_count"] == 0
         and negative["independent_anchor_failed_open_count"] == 0
+        and negative["effect_outcome_failed_open_count"] == 0
         and negative["binding_drift_control_becomes_stale_pending_review"]
         else "failed"
     )

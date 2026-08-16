@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
@@ -75,6 +75,22 @@
           "composition_ids": [
             "CMP-04"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-diagnostic-model-observation-v1",
+            "effect_contract_digest": "68e3efffd31621efd22103bf49bb224bbacd6bf90b56191c3cd8351b04802f61",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_construction",
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
@@ -100,6 +116,22 @@
           "composition_ids": [
             "CMP-04"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-diagnostic-rebuild-transition-v1",
+            "effect_contract_digest": "373b9d16a0917381a45986906fa75f62066e13966f82c493202b6adf922ab5c4",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "GRC9V3.rebuild_transport_state",
@@ -115,9 +147,10 @@
       "producer_residue": []
     }
   ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "1664fdae82d46e2f930f8ef1d0e6b5e5e325d068b7d1d71ccd5ae581ea75b2da",
+  "lock_digest": "dec01a56d6fcd26d83e687bc81ec836a19841dcaee81723a7e2349d7ce9a0d59",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

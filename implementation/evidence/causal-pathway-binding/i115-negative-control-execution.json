@@ -213,7 +213,44 @@
       ]
     }
   ],
-  "execution_digest": "7e177d191ee3c471c753f7fddfd31142fa5a373a63c00755911b736f14c0a6a6",
+  "effect_outcome_control_count": 3,
+  "effect_outcome_controls": [
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "M01-FALSE-AS-COMMITTED",
+      "description": "False return is forged as a committed claim-qualifying effect",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "M01-NO-OP-AS-QUALIFIED",
+      "description": "empty no-op return is forged as claim-qualifying",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "M01-UNKNOWN-AS-COMMITTED",
+      "description": "unreviewed effect contract is forged as committed",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    }
+  ],
+  "effect_outcome_failed_open_count": 0,
+  "execution_digest": "758de12482f4a5655f4a2b9f70d5877e8b9c80216a4bad1a63d373f68a2f2556",
   "failed_open_count": 0,
   "independent_anchor_control_count": 2,
   "independent_anchor_controls": [
@@ -486,6 +523,6 @@
   "rule_isolation_failed_open_count": 0,
   "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
-  "source_revision": "dde8afbcd661e4beab1795095c012e74bb2007cd",
+  "source_revision": "57d442577807fc12cc90295aa404f1a997401ef4",
   "status": "passed"
 }

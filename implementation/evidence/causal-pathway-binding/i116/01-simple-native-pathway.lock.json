@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
@@ -45,6 +45,22 @@
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-packet-schedule-transition-v1",
+            "effect_contract_digest": "57f0d6b4f6572db21fe9653786c309181b144eaf91a5eacd67f99ed7e92af639",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
@@ -68,6 +84,22 @@
             "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-source-debit-transition-v1",
+            "effect_contract_digest": "d981ff4ee2ef9ac3cc069fe4245f31fb41cfa80554aa1f2ed7206d85fff243ac",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_packets",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
@@ -91,6 +123,22 @@
             "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
           },
           "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-target-credit-transition-v1",
+            "effect_contract_digest": "81d0795e32df01a9702d6de81df3da539985dd097339933188c97ef817089d23",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_packets",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "process_lgrc9v3_packet_arrival",
@@ -106,9 +154,10 @@
       "producer_residue": []
     }
   ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "1747bb42e6c8214abdd73a851f001c5f32a2fcbfec94693c4fe44fdf18ae6cde",
+  "lock_digest": "da5ece500e2dae414f891c4071f95b2cda15cf6774f2bc8024a65257ef3d27b2",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

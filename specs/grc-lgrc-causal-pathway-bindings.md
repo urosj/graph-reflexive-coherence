@@ -1,6 +1,6 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Iteration 117 B-03 crossing-evidence extension; tranche remains open
+**Status:** Iteration 117 author corrections complete; independent re-audit pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -66,16 +66,30 @@ not claim process-wide observation or whole-run causal closure.
 
 Returned endpoint stages do not by themselves establish a composition. A
 consumer must run the required source and target stages inside one explicit
-composition evidence scope and in matrix order. The receipt records the scope,
-the ordered endpoint invocation indices, and any required crossing-callable
+composition evidence scope and in matrix order, and every required invocation
+must have a trusted claim-qualifying effect. The receipt records the scope, the
+ordered endpoint invocation indices, and any required crossing-callable
 invocation.
 
 CMP-26 has the stronger explicit-adapter rule. Before lock, its source stages
 must bind to the same declared GRC instance consumed by the adapter, and its
 target stages must bind to the adapter's deferred LGRC result reference. The
-real registered adapter must return after all source stages and before all
-target stages. Missing, substituted, out-of-order, or unrelated-instance
-crossings cannot form an exercised composition edge.
+real registered adapter must produce a claim-qualifying effect after all source
+stages and before all target stages. Missing, substituted, out-of-order,
+non-qualifying, or unrelated-instance crossings cannot form an exercised
+composition edge.
+
+## Effect Outcome Contracts
+
+Invocation transport (`returned` or `raised`) is distinct from effect outcome.
+The independently trusted binding-acceptance anchor pins exact-symbol mappings
+to `committed`, `observed`, `rejected`, `no_op`, or `unknown`. Only committed
+and observed effects count as actual use. `False`, empty, unreviewed, and
+producer `state_mutated = false` results remain non-qualifying even though the
+call returned normally. A guarded `None`-returning mutator may additionally
+require a changed canonical bound-instance snapshot before it qualifies. Locks
+freeze the applicable contract and receipts carry the classified outcome and
+aggregate summary for BCF-020 reconstruction.
 
 See the
 [binding and claim-provenance reference guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)

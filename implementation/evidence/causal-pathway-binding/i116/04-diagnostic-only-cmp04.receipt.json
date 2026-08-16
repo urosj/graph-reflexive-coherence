@@ -40,6 +40,22 @@
           "composition_ids": [
             "CMP-04"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-diagnostic-model-observation-v1",
+            "effect_contract_digest": "68e3efffd31621efd22103bf49bb224bbacd6bf90b56191c3cd8351b04802f61",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+          },
           "module": "pygrc.models.lgrc_9_v3_construction",
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
@@ -65,6 +81,22 @@
           "composition_ids": [
             "CMP-04"
           ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-diagnostic-rebuild-transition-v1",
+            "effect_contract_digest": "373b9d16a0917381a45986906fa75f62066e13966f82c493202b6adf922ab5c4",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+          },
           "module": "pygrc.models.grc_9_v3",
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "GRC9V3.rebuild_transport_state",
@@ -95,16 +127,22 @@
         "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [
         "CMP-04"
       ],
       "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
+      "effect_contract_id": "M01-diagnostic-model-observation-v1",
+      "effect_evidence": null,
+      "effect_kind": "observation",
+      "effect_outcome": "observed",
       "error_type": null,
       "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "result_type": "LGRC9V3",
+      "return_category": "other",
       "stage_id": "diagnostic_model_construction",
       "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
     },
@@ -121,16 +159,22 @@
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
       "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
       "composition_ids": [
         "CMP-04"
       ],
       "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
+      "effect_contract_id": "M01-diagnostic-rebuild-transition-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
       "error_type": null,
       "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "result_type": "NoneType",
+      "return_category": "none",
       "stage_id": "diagnostic_rebuild",
       "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
     }
@@ -138,9 +182,9 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "1664fdae82d46e2f930f8ef1d0e6b5e5e325d068b7d1d71ccd5ae581ea75b2da",
+  "binding_lock_digest": "dec01a56d6fcd26d83e687bc81ec836a19841dcaee81723a7e2349d7ce9a0d59",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
@@ -255,6 +299,32 @@
     "composition_binding_ids": [],
     "pathway_binding_ids": []
   },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [],
+    "claim_qualifying_stage_invocation_indices": [
+      0,
+      1
+    ],
+    "crossing_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 1,
+      "no_op": 0,
+      "observed": 1,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -313,7 +383,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "40b87aa7de13d6f89e3e77a4baa39e5deb9de74d10752cc807e2a0daa2dbb96b",
+  "receipt_digest": "81e897ac1752b2808eb6df926f3c088ba8f0593beb69c3bb7af20cdcb1cea870",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
