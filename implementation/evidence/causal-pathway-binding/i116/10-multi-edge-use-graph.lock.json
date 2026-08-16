@@ -43,6 +43,7 @@
         "diagnostic_model_construction"
       ],
       "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
       "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "to_stage_ids": [
         "diagnostic_rebuild"
@@ -75,6 +76,7 @@
         "feedback_packet_schedule"
       ],
       "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
       "to_pathway_id": "lgrc9v3.explicit_packet_transport",
       "to_stage_ids": [
         "packet_schedule",
@@ -136,6 +138,7 @@
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
           "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
           "stage_id": "diagnostic_model_construction",
@@ -177,6 +180,10 @@
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "GRC9V3.rebuild_transport_state",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:1",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "diagnostic_rebuild",
@@ -248,6 +255,10 @@
           "required_keyword_arguments": {
             "policy": "packet_departure_from_feedback_eligibility_policy"
           },
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "feedback_packet_schedule",
@@ -314,6 +325,10 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "packet_schedule",
@@ -355,6 +370,7 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
           "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
           "stage_id": "source_debit",
@@ -396,6 +412,7 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "process_lgrc9v3_packet_arrival",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
           "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
           "stage_id": "target_credit",
@@ -429,7 +446,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "fb1b5c9ad25d10ad7daae806d1a89699f50713a4b7a0f223df8dd5ac04ed079f",
+  "lock_digest": "03b347afc965b451fd57a55238b0feaa2172b4c5cc418b984431b3526e10ddb4",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

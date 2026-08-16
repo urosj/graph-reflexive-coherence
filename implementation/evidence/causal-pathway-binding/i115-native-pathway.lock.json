@@ -63,6 +63,10 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "packet_schedule",
@@ -77,7 +81,7 @@
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "bb18cd227cc2d2507a0013b85a03279c4f7097f85cf6a56fe8d0d6d653cbf151",
+  "lock_digest": "e2cfa6be96ee0c902d1d298d5f5722c354df5361a49356d550634962b51a994a",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

@@ -1,6 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iteration 117 author corrections complete; independent re-audit pending
+**Status:** Round-two re-audit rejected; R2-B01 author correction complete,
+R2-B02 and R2-B03 pending
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 

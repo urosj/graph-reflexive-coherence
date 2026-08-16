@@ -49,6 +49,10 @@ AUTHORITY_COORDINATES: Final[tuple[str, ...]] = (
 
 CLAIM_SCOPE_BOUND_INVOCATIONS: Final[str] = "bound_invocations_only"
 UNTRACKED_EXECUTION_STATUS: Final[str] = "not_observable_by_binding_plane"
+EXPLICIT_ADAPTER_DATAFLOW: Final[str] = (
+    "exact_explicit_adapter_result_reference"
+)
+SHARED_INSTANCE_DATAFLOW: Final[str] = "shared_bound_endpoint_instance"
 
 
 class CausalPathwayBindingError(ValueError):
@@ -2164,6 +2168,7 @@ class CompositionExecutionScope:
         adapter_required = (
             contract["composition_status"] == "lawful_with_explicit_adapter"
         )
+        dataflow_witness: dict[str, Any] | None
         if adapter_required:
             if len(crossing_events) != 1:
                 return None
@@ -2176,6 +2181,23 @@ class CompositionExecutionScope:
                 return None
         elif crossing_events:
             return None
+
+        if adapter_required:
+            dataflow_requirement = EXPLICIT_ADAPTER_DATAFLOW
+            dataflow_witness = {
+                "witness_kind": EXPLICIT_ADAPTER_DATAFLOW,
+                "crossing_invocation_index": crossing_events[0]["record_index"],
+                "source_instance_role": "declared_adapter_source_instance",
+                "target_instance_role": "adapter_result_reference",
+            }
+        else:
+            dataflow_requirement = SHARED_INSTANCE_DATAFLOW
+            dataflow_witness = self._shared_instance_dataflow_witness(
+                source_events,
+                target_events,
+            )
+            if dataflow_witness is None:
+                return None
 
         return {
             "crossing_scope_id": self.scope_id,
@@ -2193,7 +2215,49 @@ class CompositionExecutionScope:
             "to_invocation_indices": [event["record_index"] for event in target_events],
             "explicit_adapter_required": adapter_required,
             "explicit_adapter_observed": bool(crossing_events),
+            "dataflow_requirement": dataflow_requirement,
+            "dataflow_witness": dataflow_witness,
         }
+
+    def _shared_instance_dataflow_witness(
+        self,
+        source_events: Sequence[Mapping[str, Any]],
+        target_events: Sequence[Mapping[str, Any]],
+    ) -> dict[str, Any] | None:
+        """Prove that two endpoint calls acted on one exact bound object."""
+
+        for source_event in source_events:
+            source_record = source_event["record"]
+            source_key = (source_record.binding_id, source_record.symbol_id)
+            source_link = self._session._linked_symbols[source_key]
+            source_runtime = source_link.get("runtime_instance_binding")
+            source_instance = self._session._linked_instances.get(source_key)
+            if (
+                not isinstance(source_runtime, Mapping)
+                or source_runtime.get("kind") != "direct_bound_instance"
+                or source_instance is None
+            ):
+                continue
+            for target_event in target_events:
+                target_record = target_event["record"]
+                target_key = (target_record.binding_id, target_record.symbol_id)
+                target_link = self._session._linked_symbols[target_key]
+                target_runtime = target_link.get("runtime_instance_binding")
+                target_instance = self._session._linked_instances.get(target_key)
+                if (
+                    target_runtime != source_runtime
+                    or target_instance is not source_instance
+                ):
+                    continue
+                return {
+                    "witness_kind": SHARED_INSTANCE_DATAFLOW,
+                    "runtime_instance_binding_id": source_runtime["instance_id"],
+                    "source_invocation_index": source_event["record_index"],
+                    "source_symbol_id": source_record.symbol_id,
+                    "target_invocation_index": target_event["record_index"],
+                    "target_symbol_id": target_record.symbol_id,
+                }
+        return None
 
 
 class AlternativeSelectionScope:
@@ -2500,6 +2564,7 @@ class PathwayBindingSession:
         self._alternatives: dict[str, AllowedPathwayAlternatives] = {}
         self._linked_symbols: dict[tuple[str, str], dict[str, Any]] = {}
         self._linked_instances: dict[tuple[str, str], object | None] = {}
+        self._direct_runtime_instances: list[object] = []
         self._crossing_links: dict[str, dict[str, Any]] = {}
         self._crossing_runtime_links: dict[
             str,
@@ -2563,6 +2628,10 @@ class PathwayBindingSession:
         self._require_declaration_phase()
         key = (binding_id, symbol.symbol_id)
         effect_contract = self.authority.effect_outcome_contract(symbol.symbol_id)
+        runtime_instance_binding = self._runtime_instance_binding(
+            instance,
+            call_kind=symbol.call_kind,
+        )
         self._linked_symbols[key] = {
             "binding_id": binding_id,
             "pathway_id": pathway_id,
@@ -2579,9 +2648,38 @@ class PathwayBindingSession:
             "effect_outcome_contract": (
                 effect_contract.to_record() if effect_contract is not None else None
             ),
+            "runtime_instance_binding": runtime_instance_binding,
             "callable_identity": dict(callable_identity),
         }
         self._linked_instances[key] = instance
+
+    def _runtime_instance_binding(
+        self,
+        instance: object | CrossingResultReference | None,
+        *,
+        call_kind: str,
+    ) -> dict[str, str] | None:
+        """Assign deterministic lock-local identity to one bound call owner."""
+
+        if call_kind != "instance_method" or instance is None:
+            return None
+        if isinstance(instance, CrossingResultReference):
+            return {
+                "kind": "adapter_result_reference",
+                "instance_id": f"adapter-result:{instance.composition_id}",
+            }
+        for index, known in enumerate(self._direct_runtime_instances):
+            if known is instance:
+                return {
+                    "kind": "direct_bound_instance",
+                    "instance_id": f"session-instance:{index}",
+                }
+        index = len(self._direct_runtime_instances)
+        self._direct_runtime_instances.append(instance)
+        return {
+            "kind": "direct_bound_instance",
+            "instance_id": f"session-instance:{index}",
+        }
 
     def _register_crossing_link(
         self,
@@ -2867,6 +2965,11 @@ class PathwayBindingSession:
 
     def _composition_record(self, binding: BoundComposition) -> dict[str, Any]:
         contract = binding.contract
+        dataflow_requirement = (
+            EXPLICIT_ADAPTER_DATAFLOW
+            if contract["composition_status"] == "lawful_with_explicit_adapter"
+            else SHARED_INSTANCE_DATAFLOW
+        )
         return {
             "binding_id": binding.binding_id,
             "composition_id": binding.composition_id,
@@ -2884,6 +2987,7 @@ class PathwayBindingSession:
             ],
             "claim_ceiling": contract["claim_ceiling"],
             "blocked_relabels": list(contract["blocked_relabels"]),
+            "runtime_dataflow_requirement": dataflow_requirement,
             "expected_crossing_callable": deepcopy(
                 self._crossing_links.get(binding.binding_id)
             ),

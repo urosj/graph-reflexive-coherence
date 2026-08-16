@@ -1,6 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Iteration 117 author corrections complete; independent re-audit pending
+**Status:** Round-two re-audit rejected; R2-B01 author correction complete,
+R2-B02 and R2-B03 pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -67,9 +68,13 @@ not claim process-wide observation or whole-run causal closure.
 Returned endpoint stages do not by themselves establish a composition. A
 consumer must run the required source and target stages inside one explicit
 composition evidence scope and in matrix order, and every required invocation
-must have a trusted claim-qualifying effect. The receipt records the scope, the
-ordered endpoint invocation indices, and any required crossing-callable
-invocation.
+must have a trusted claim-qualifying effect. Every non-explicit-adapter
+composition additionally requires one qualifying source invocation and one
+qualifying target invocation bound to the exact same direct runtime instance.
+The lock assigns that owner a deterministic session-local identity, and the
+receipt records the exact source/target invocation pair that shares it. If the
+binding surface cannot prove this continuity, the composition remains
+declared-but-unused and emits no graph edge or composition claim.
 
 CMP-26 has the stronger explicit-adapter rule. Before lock, its source stages
 must bind to the same declared GRC instance consumed by the adapter, and its
@@ -78,6 +83,12 @@ real registered adapter must produce a claim-qualifying effect after all source
 stages and before all target stages. Missing, substituted, out-of-order,
 non-qualifying, or unrelated-instance crossings cannot form an exercised
 composition edge.
+
+This rule intentionally leaves CMP-04 unexercised with the current binding
+surface. `prepare_lgrc9v3_grc9v3_diagnostics(...)` returns its LGRC input, but
+the separately bound `GRC9V3.rebuild_transport_state()` owner is not that
+object. Ordered calls on an unrelated GRC object therefore remain pathway
+evidence only and cannot claim the diagnostic composition.
 
 ## Effect Outcome Contracts
 

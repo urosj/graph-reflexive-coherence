@@ -79,6 +79,10 @@
           "pathway_id": "grc9v3.synchronous_update_cycle",
           "qualified_symbol": "GRC9V3.apply_continuity",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:1",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "continuity_and_invariants",
@@ -137,6 +141,10 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "packet_schedule",
@@ -195,6 +203,10 @@
           "pathway_id": "pygrc.restoration_replay_identity",
           "qualified_symbol": "LGRC9V3.snapshot",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "snapshot_serialization",
@@ -209,7 +221,7 @@
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "b6282aaca3ffe174e361f1731d50b6c2eecb672e27f71c1085153a2308e266c7",
+  "lock_digest": "ac753ff66068dc91e75a7a5b8013ef3f328423a617793d17db3e19630790c22b",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

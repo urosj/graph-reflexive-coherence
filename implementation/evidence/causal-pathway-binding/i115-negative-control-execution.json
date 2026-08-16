@@ -53,7 +53,8 @@
       "triggered_rule_ids": [
         "BCF-002",
         "BCF-005",
-        "BCF-015"
+        "BCF-015",
+        "BCF-019"
       ]
     },
     {
@@ -64,7 +65,8 @@
       "triggered_rule_ids": [
         "BCF-002",
         "BCF-006",
-        "BCF-015"
+        "BCF-015",
+        "BCF-019"
       ]
     },
     {
@@ -75,7 +77,8 @@
       "triggered_rule_ids": [
         "BCF-002",
         "BCF-007",
-        "BCF-015"
+        "BCF-015",
+        "BCF-019"
       ]
     },
     {
@@ -109,7 +112,8 @@
       "triggered_rule_ids": [
         "BCF-002",
         "BCF-010",
-        "BCF-015"
+        "BCF-015",
+        "BCF-019"
       ]
     },
     {
@@ -250,7 +254,7 @@
     }
   ],
   "effect_outcome_failed_open_count": 0,
-  "execution_digest": "758de12482f4a5655f4a2b9f70d5877e8b9c80216a4bad1a63d373f68a2f2556",
+  "execution_digest": "6ce7ff4b45ed7b1ac2aaf44be5f02481bbada2cf161ed7d8e16eadb115d3b579",
   "failed_open_count": 0,
   "independent_anchor_control_count": 2,
   "independent_anchor_controls": [
@@ -523,6 +527,6 @@
   "rule_isolation_failed_open_count": 0,
   "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
-  "source_revision": "57d442577807fc12cc90295aa404f1a997401ef4",
+  "source_revision": "c1b0bcf261d43422c3462773e739b9fb35a8d25e",
   "status": "passed"
 }

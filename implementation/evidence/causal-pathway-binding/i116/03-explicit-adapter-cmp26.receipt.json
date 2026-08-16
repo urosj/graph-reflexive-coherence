@@ -64,6 +64,10 @@
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._growth_front_eligible_ports",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "front_capacity_growth_eligibility",
@@ -112,6 +116,10 @@
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "front_propagation",
@@ -186,6 +194,10 @@
           "pathway_id": "lgrc9v3.boundary_birth",
           "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "adapter-result:CMP-26",
+            "kind": "adapter_result_reference"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "birth_trial_commit",
@@ -235,6 +247,10 @@
           "qualified_symbol": "LGRC9V3.produce_events",
           "required_keyword_arguments": {
             "policy": "boundary_birth_trial_policy"
+          },
+          "runtime_instance_binding": {
+            "instance_id": "adapter-result:CMP-26",
+            "kind": "adapter_result_reference"
           },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
@@ -428,7 +444,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "c72606e51351adc9158df79ca1c71d4c741880fc3fb1f74e02f2c10237623978",
+  "binding_lock_digest": "5e130b57fdb48fe4b99900d7385294dadbcf73bc45eaea4eb16a9669b97788c3",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "general autonomous basin formation",
@@ -576,6 +592,13 @@
         0
       ],
       "crossing_scope_id": "composition:CMP-26:crossing-scope:0",
+      "dataflow_requirement": "exact_explicit_adapter_result_reference",
+      "dataflow_witness": {
+        "crossing_invocation_index": 0,
+        "source_instance_role": "declared_adapter_source_instance",
+        "target_instance_role": "adapter_result_reference",
+        "witness_kind": "exact_explicit_adapter_result_reference"
+      },
       "explicit_adapter_observed": true,
       "explicit_adapter_required": true,
       "from_invocation_indices": [
@@ -720,7 +743,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "ec3c7bceccfcde4d53326ab835fdb1293c1c8940161aa966d8afd8df62c64bc1",
+  "receipt_digest": "91074de7ffd88842f16c630e48aab0173495f50517a62a73382e2cc4c35d1468",
   "registered_compositions_exercised": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
@@ -793,6 +816,7 @@
         "front_propagation"
       ],
       "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "runtime_dataflow_requirement": "exact_explicit_adapter_result_reference",
       "to_pathway_id": "lgrc9v3.boundary_birth",
       "to_stage_ids": [
         "birth_trial_production",

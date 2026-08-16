@@ -45,6 +45,7 @@
         "feedback_packet_schedule"
       ],
       "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
       "to_pathway_id": "lgrc9v3.explicit_packet_transport",
       "to_stage_ids": [
         "packet_schedule",
@@ -115,6 +116,10 @@
           "required_keyword_arguments": {
             "policy": "packet_departure_from_feedback_eligibility_policy"
           },
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "feedback_packet_schedule",
@@ -181,6 +186,10 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "packet_schedule",
@@ -222,6 +231,7 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
           "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
           "stage_id": "source_debit",
@@ -263,6 +273,7 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "process_lgrc9v3_packet_arrival",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
           "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
           "stage_id": "target_credit",
@@ -296,7 +307,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "d6f6a896bf956481c03f58a8f44145f62011a08522a784e7e1e13f46ed5830b7",
+  "lock_digest": "09af21b51bf0799cd727444dfef23160b305b2474a8ef0fa55942f8e09df48ee",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

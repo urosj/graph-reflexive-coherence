@@ -36,6 +36,7 @@
         "diagnostic_model_construction"
       ],
       "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
       "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "to_stage_ids": [
         "diagnostic_rebuild"
@@ -95,6 +96,7 @@
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
           "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
           "stage_id": "diagnostic_model_construction",
@@ -136,6 +138,10 @@
           "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
           "qualified_symbol": "GRC9V3.rebuild_transport_state",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "diagnostic_rebuild",
@@ -150,7 +156,7 @@
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "dec01a56d6fcd26d83e687bc81ec836a19841dcaee81723a7e2349d7ce9a0d59",
+  "lock_digest": "15a730ed937e99d0b27b98cd0242185b499edbca2f4d945b2a3ba9b72dc7e3c5",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

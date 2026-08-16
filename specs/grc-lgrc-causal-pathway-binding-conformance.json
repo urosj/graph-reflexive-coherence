@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "294661b58b51a8282fa742d8e5e1a7f88e044e0b807f0e45e2496876c07ac291",
+  "policy_digest": "a312f4184a64d548286bc82c14eeb83e1eb3975d4eddb3b0d17645076be62f32",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -103,7 +103,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Endpoint co-use and chained compositions must not synthesize edges or claim ceilings.",
+      "description": "Registered composition edges require exact scoped order and verified runtime object flow; endpoint co-use and chains must not synthesize edges or claim ceilings.",
       "rule_id": "BCF-019",
       "severity": "fail_closed"
     },
@@ -117,7 +117,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "57d442577807fc12cc90295aa404f1a997401ef4",
+  "source_revision": "c1b0bcf261d43422c3462773e739b9fb35a8d25e",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

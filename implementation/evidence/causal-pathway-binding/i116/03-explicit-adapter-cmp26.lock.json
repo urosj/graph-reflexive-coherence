@@ -88,6 +88,7 @@
         "front_propagation"
       ],
       "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "runtime_dataflow_requirement": "exact_explicit_adapter_result_reference",
       "to_pathway_id": "lgrc9v3.boundary_birth",
       "to_stage_ids": [
         "birth_trial_production",
@@ -152,6 +153,10 @@
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._growth_front_eligible_ports",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "front_capacity_growth_eligibility",
@@ -200,6 +205,10 @@
           "pathway_id": "grc9v3.front_capacity_growth",
           "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "front_propagation",
@@ -266,6 +275,10 @@
           "pathway_id": "lgrc9v3.boundary_birth",
           "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "adapter-result:CMP-26",
+            "kind": "adapter_result_reference"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "birth_trial_commit",
@@ -316,6 +329,10 @@
           "required_keyword_arguments": {
             "policy": "boundary_birth_trial_policy"
           },
+          "runtime_instance_binding": {
+            "instance_id": "adapter-result:CMP-26",
+            "kind": "adapter_result_reference"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "birth_trial_production",
@@ -336,7 +353,7 @@
     }
   ],
   "explicit_producers": [],
-  "lock_digest": "c72606e51351adc9158df79ca1c71d4c741880fc3fb1f74e02f2c10237623978",
+  "lock_digest": "5e130b57fdb48fe4b99900d7385294dadbcf73bc45eaea4eb16a9669b97788c3",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

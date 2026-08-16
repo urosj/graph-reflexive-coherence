@@ -60,6 +60,10 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "LGRC9V3.schedule_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "packet_schedule",
@@ -99,6 +103,7 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
           "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
           "stage_id": "source_debit",
@@ -138,6 +143,7 @@
           "pathway_id": "lgrc9v3.explicit_packet_transport",
           "qualified_symbol": "process_lgrc9v3_packet_arrival",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
           "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
           "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
           "stage_id": "target_credit",
@@ -247,7 +253,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "da5ece500e2dae414f891c4071f95b2cda15cf6774f2bc8024a65257ef3d27b2",
+  "binding_lock_digest": "14e34ead989e77799a2fd0128f4276398d110578e3a6bf6d964c3e60487a7026",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
@@ -387,7 +393,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "daaebf95a6892d9c9d1bfe095668d48cc736c52001d86ce7c5165e3d3597fa58",
+  "receipt_digest": "3220b9e71d29ace57a0d5604de2271f56826146eb96e5e9c3d029e5b1c61f997",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

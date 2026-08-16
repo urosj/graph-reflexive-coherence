@@ -54,6 +54,10 @@
           "pathway_id": "grc9v3.synchronous_update_cycle",
           "qualified_symbol": "GRC9V3.apply_continuity",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:1",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
           "stage_id": "continuity_and_invariants",
@@ -118,6 +122,10 @@
           "pathway_id": "pygrc.restoration_replay_identity",
           "qualified_symbol": "LGRC9V3.snapshot",
           "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
           "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
           "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
           "stage_id": "snapshot_serialization",
@@ -230,7 +238,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "b6282aaca3ffe174e361f1731d50b6c2eecb672e27f71c1085153a2308e266c7",
+  "binding_lock_digest": "ac753ff66068dc91e75a7a5b8013ef3f328423a617793d17db3e19630790c22b",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "LGRC packet execution",
@@ -432,7 +440,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "ae8f3d5e43e4f19b56227cdf378f9c89550fded8740742c04eef886243d46615",
+  "receipt_digest": "bdc18abf7356ddb40337f8d81352e04f4fbdc6b4eab5d064f76ecbc216a57bc7",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

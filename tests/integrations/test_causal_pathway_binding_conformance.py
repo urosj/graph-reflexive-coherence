@@ -295,6 +295,33 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-019"}, {item["rule_id"] for item in result["issues"]})
 
+    def test_non_adapter_object_flow_forgery_fails_bcf019(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.lock.json",
+            receipt_path=(
+                EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.receipt.json"
+            ),
+        )
+        witness = mutated["receipt"]["composition_crossing_witnesses"][0]
+        witness["dataflow_witness"]["runtime_instance_binding_id"] = (
+            "session-instance:999"
+        )
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-019"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-019"}, {item["rule_id"] for item in result["issues"]})
+
     def test_cmp26_crossing_identity_drift_fails_bcf006(self) -> None:
         mutated = self.checker.load_bundle(
             ROOT,

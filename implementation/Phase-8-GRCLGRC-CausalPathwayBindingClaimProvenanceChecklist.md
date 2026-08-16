@@ -125,5 +125,22 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Extend BCF-017 to reconstruct exact scope and invocation witnesses.
 - [x] Add the independent acceptance anchor for B-06.
 - [x] Add mechanism-specific effect outcome vocabulary for M-01.
-- [ ] Re-run the independently updated full adversarial audit with zero blockers
-      and zero unresolved majors.
+- [x] Run the second independent adversarial audit; record its
+      `reject_pending_correction` disposition and three round-two blockers.
+
+## Round-Two Independent Audit Corrections
+
+- [x] R2-B01: require exact runtime dataflow closure for every registered
+      composition edge.
+- [x] Preserve CMP-26's exact adapter-source/result-reference flow rule.
+- [x] Require non-explicit compositions to share one exact directly bound
+      runtime owner across a qualifying source/target invocation pair.
+- [x] Keep CMP-04 declared-but-unused when its ordered endpoint calls act on
+      unrelated runtime objects.
+- [x] Extend BCF-019 and add runtime/checker adversarial controls for forged or
+      unrelated object flow.
+- [ ] R2-B02: require candidate-specific mechanism execution and close semantic
+      invalid-relabel paraphrases.
+- [ ] R2-B03: independently canonicalize every claim-envelope field.
+- [ ] Re-run a new full independent adversarial audit with zero blockers and
+      zero unresolved majors after R2-B02 and R2-B03 close.

@@ -290,6 +290,9 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
         )
     receipt = session.build_receipt()
     record = receipt.to_record()
+    flow_witness = record["composition_crossing_witnesses"][0][
+        "dataflow_witness"
+    ]
     return _freeze_case(
         case_id="02-producer-mediated-cmp20",
         lock=lock,
@@ -298,6 +301,10 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
             "composition_ids": [
                 item["composition_id"]
                 for item in record["registered_compositions_exercised"]
+            ],
+            "dataflow_witness_kind": flow_witness["witness_kind"],
+            "runtime_instance_binding_id": flow_witness[
+                "runtime_instance_binding_id"
             ],
             "contains_producer_cut": record["claim_envelope"]["contains_producer_cut"],
             "lawful_native_blocked": "lawful_native" in record["blocked_claims"],
@@ -419,6 +426,12 @@ def _diagnostic(authority: CausalPathwayAuthority) -> dict[str, Any]:
             ],
             "claim_status": record["claim_envelope"]["overall_claim_status"],
             "blocked_claims": record["blocked_claims"],
+            "composition_edge_count": len(record["pathway_use_graph"]["edges"]),
+            "composition_witness_count": len(
+                record["composition_crossing_witnesses"]
+            ),
+            "composition_declared_unused": composition.binding_id
+            in record["declared_but_unused"]["composition_binding_ids"],
         },
     )
 

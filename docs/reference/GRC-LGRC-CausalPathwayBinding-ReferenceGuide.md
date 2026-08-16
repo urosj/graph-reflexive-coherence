@@ -267,12 +267,23 @@ The receipt links to the exact lock digest and records:
 - a structured claim envelope and blocked claims;
 - accepted authority/source identities and a receipt digest.
 
-The Iteration 117 B-03 correction prevents registered edges from being formed
-by endpoint co-use alone. The checker independently reconstructs each witness
-from scoped invocation indices and global execution order; CMP-26 also checks
-the frozen and invoked adapter identity. Multiple registered edges still do
-not synthesize a larger semantic ceiling unless that larger composition is
-itself registered.
+The Iteration 117 B-03 correction and the round-two R2-B01 correction prevent
+registered edges from being formed by endpoint co-use or order alone. The
+checker independently reconstructs each witness from scoped invocation
+indices, global execution order, and its frozen runtime-dataflow requirement.
+For non-explicit-adapter compositions, a qualifying source call and target call
+must share the exact directly bound runtime owner. The lock gives that owner a
+deterministic session-local identity; both runtime identity and object identity
+are checked before the receipt can emit an edge. CMP-26 retains its stricter
+declared-adapter-source to adapter-result-reference rule.
+
+This proof is deliberately fail-closed. A composition whose crossing is not
+observable through those binding relations remains declared-but-unused even
+when its endpoints execute in order. In particular, CMP-04 does not produce a
+composition edge from `prepare_lgrc9v3_grc9v3_diagnostics(...)` followed by
+`GRC9V3.rebuild_transport_state()` on a separate object. Multiple registered
+edges still do not synthesize a larger semantic ceiling unless that larger
+composition is itself registered.
 
 The B-04 correction applies the same declaration-is-not-use boundary to
 candidates. The checker re-hashes candidate evidence and reconstructs the

@@ -1,10 +1,11 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** B-01 through B-06 and M-01 author correction slices complete; independent re-audit pending
+**Status:** Round-two re-audit rejected; R2-B01 author correction complete,
+R2-B02 and R2-B03 pending
 
 **Checkpoint commit:** `976c660`
 
-**Independent-audit disposition:** `author_corrections_complete_pending_independent_reaudit`
+**Independent-audit disposition:** `reject_pending_correction`
 
 ## Purpose
 
@@ -12,6 +13,13 @@ Iteration 117 reopens the Iteration 112-116 tranche against the independent
 adversarial audit. The checkpoint preserves the exact audited implementation;
 it is not an acceptance commit. No closeout or maximum claim is current until
 the blocker and major findings are corrected and independently replayed.
+
+The second independent audit closed B-01, B-02, B-05, B-06, and M-01, partially
+closed B-03 and B-04, and reported three new blocker IDs: R2-B01 for missing
+non-explicit composition object flow, R2-B02 for metadata-only candidate use
+and invalid-relabel paraphrases, and R2-B03 for incomplete claim-envelope
+canonicalization. The sections below retain the first-round correction record;
+the round-two correction ledger follows it.
 
 ## Correction Contract
 
@@ -216,9 +224,10 @@ Iteration 117 remains open until repository tests and the independent
 falsifiers agree. Commands use `.venv`; tool and dependency configuration
 comes from `pyproject.toml`.
 
-The completed focused slices close B-01 through B-06 and M-01 at the author
-implementation gate. This is not an acceptance result. The agreed second full
-independent revision is the next gate and remains outstanding.
+The completed focused slices closed B-01 through B-06 and M-01 at the author
+implementation gate. The second full independent revision then returned
+`reject_pending_correction`. This is not an acceptance result; another full
+independent revision remains required after all round-two blockers close.
 
 ## First-Slice Verification
 
@@ -345,4 +354,57 @@ git diff --check = passed
 ```
 
 This is author-side correction evidence only. The full independent revision
-has not yet been run and remains the acceptance gate.
+that followed rejected the candidate on R2-B01, R2-B02, and R2-B03.
+
+## Round-Two Re-Audit Result
+
+The independent round-two audit executed 40 cases: 34 passed, six failed their
+criterion, and none errored. It recorded three blocker classes and no separate
+major or minor findings:
+
+```text
+R2-B01 non-explicit composition edge lacks runtime dataflow closure
+R2-B02 candidate use remains self-attestable and relabels paraphraseable
+R2-B03 checker does not canonicalize the complete claim envelope
+disposition = reject_pending_correction
+```
+
+## R2-B01 Runtime Dataflow Closure
+
+R2-B01 is corrected author-side by making runtime flow an explicit frozen
+composition obligation. CMP-26 continues to require the exact declared adapter
+source and deferred adapter-result reference. Every other executable status
+requires at least one claim-qualifying source invocation and one
+claim-qualifying target invocation bound to the exact same direct Python
+runtime object. Locks serialize a deterministic session-local owner identity;
+witnesses cite the exact invocation pair, symbols, and owner identity; BCF-019
+reconstructs the relation from the locked links and receipt records.
+
+The rule is conservative. If direct object continuity is not observable, the
+composition is not exercised: no witness, graph edge, composition ceiling, or
+cut is emitted. The audited CMP-04 falsifier now returns LGRC runtime A from
+`prepare_lgrc9v3_grc9v3_diagnostics(...)`, invokes diagnostic rebuild on
+unrelated GRC runtime B, and leaves CMP-04 declared-but-unused. The existing
+CMP-04 I116 case is frozen with the same honest zero-edge result because its
+former target was also unrelated. CMP-20 remains positive because its producer
+and packet stages act on one exact LGRC runtime.
+
+The runtime controls cover CMP-04 on unrelated endpoints and CMP-20 on two
+distinct owners. A digest-resealed BCF-019 control forges the positive CMP-20
+owner identity and fails closed. Frozen I116 assertions record the positive
+CMP-20 flow identity and the negative CMP-04 witness/edge counts.
+
+```text
+.venv focused binding/conformance/I116 tests = 65 passed
+.venv full unittest discovery = 1,276 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This is author-side correction evidence only. R2-B02 and R2-B03 remain open,
+and a new full independent audit remains the acceptance gate.

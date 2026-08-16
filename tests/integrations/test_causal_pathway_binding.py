@@ -960,6 +960,17 @@ class CausalPathwayBindingTest(unittest.TestCase):
 
         self.assertTrue(lock["explicit_producers"])
         self.assertEqual(1, len(record["registered_compositions_exercised"]))
+        flow_witness = record["composition_crossing_witnesses"][0][
+            "dataflow_witness"
+        ]
+        self.assertEqual(
+            "shared_bound_endpoint_instance",
+            flow_witness["witness_kind"],
+        )
+        self.assertEqual(
+            "session-instance:0",
+            flow_witness["runtime_instance_binding_id"],
+        )
         envelope = record["claim_envelope"]
         self.assertTrue(envelope["contains_producer_cut"])
         self.assertEqual(
@@ -1051,6 +1062,80 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertEqual([], record["composition_crossing_witnesses"])
         self.assertEqual([], record["registered_compositions_exercised"])
         self.assertEqual([], record["pathway_use_graph"]["edges"])
+
+    def test_cmp20_distinct_endpoint_owners_do_not_create_edge(self) -> None:
+        producer_model = _feedback_ready_two_node_runtime()
+        transport_model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-20")
+        producer = composition.source_binding
+        transport = composition.target_binding
+        produce = producer.symbol(
+            "feedback_packet_schedule",
+            instance=producer_model,
+        )
+        schedule = transport.symbol("packet_schedule", instance=transport_model)
+        debit = transport.symbol("source_debit")
+        credit = transport.symbol("target_credit")
+        session.freeze_lock()
+
+        with composition.evidence_scope():
+            production = produce(
+                policy="packet_departure_from_feedback_eligibility_policy"
+            )
+            self.assertTrue(production.state_mutated)
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+            runtime_state = transport_model.get_state()
+            ledger = runtime_state.packet_ledger
+            assert ledger is not None
+            departure = debit(
+                runtime_state.base_state,
+                ledger,
+                queued_departure=ledger.event_queue_records[0],
+            )
+            credit(
+                runtime_state.base_state,
+                departure.ledger,
+                packet_id=departure.packet_record.packet_id,
+            )
+        record = session.build_receipt().to_record()
+
+        self.assertEqual([], record["composition_crossing_witnesses"])
+        self.assertEqual([], record["registered_compositions_exercised"])
+        self.assertEqual([], record["pathway_use_graph"]["edges"])
+
+    def test_cmp04_unrelated_endpoint_objects_do_not_create_edge(self) -> None:
+        source_runtime = _two_node_runtime()
+        unrelated_target = _two_node_grc_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-04")
+        diagnostic = composition.pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction"
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        rebuild = diagnostic.symbol(
+            "diagnostic_rebuild",
+            instance=unrelated_target,
+        )
+        session.freeze_lock()
+
+        with composition.evidence_scope():
+            self.assertIs(prepare(source_runtime), source_runtime)
+            rebuild()
+        record = session.build_receipt().to_record()
+
+        self.assertEqual([], record["composition_crossing_witnesses"])
+        self.assertEqual([], record["registered_compositions_exercised"])
+        self.assertEqual([], record["pathway_use_graph"]["edges"])
+        self.assertIn(
+            composition.binding_id,
+            record["declared_but_unused"]["composition_binding_ids"],
+        )
 
     def test_cmp26_requires_and_records_exact_adapter_crossing(self) -> None:
         grc_model = _two_node_grc_runtime()

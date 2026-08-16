@@ -87,7 +87,11 @@ RULES = [
     ),
     (
         "BCF-019",
-        "Endpoint co-use and chained compositions must not synthesize edges or claim ceilings.",
+        (
+            "Registered composition edges require exact scoped order and verified "
+            "runtime object flow; endpoint co-use and chains must not synthesize "
+            "edges or claim ceilings."
+        ),
     ),
     (
         "BCF-020",
@@ -114,6 +118,8 @@ EXECUTABLE_STATUSES = {
 RETURN_CATEGORIES = {"false", "true", "none", "empty", "other"}
 EFFECT_OUTCOMES = {"committed", "observed", "rejected", "no_op", "unknown"}
 CLAIM_QUALIFYING_EFFECT_OUTCOMES = {"committed", "observed"}
+EXPLICIT_ADAPTER_DATAFLOW = "exact_explicit_adapter_result_reference"
+SHARED_INSTANCE_DATAFLOW = "shared_bound_endpoint_instance"
 
 
 def sha256_bytes(value: bytes) -> str:
@@ -1099,6 +1105,38 @@ def validate_bundle(
                     f"{binding_id}:{symbol_id}",
                     "locked effect-outcome contract differs from the trusted anchor",
                 )
+            runtime_instance = link.get("runtime_instance_binding")
+            if runtime_instance is not None and (
+                link.get("call_kind") != "instance_method"
+                or not isinstance(runtime_instance, Mapping)
+                or set(runtime_instance) != {"kind", "instance_id"}
+                or runtime_instance.get("kind")
+                not in {"direct_bound_instance", "adapter_result_reference"}
+                or not isinstance(runtime_instance.get("instance_id"), str)
+                or not runtime_instance.get("instance_id")
+                or (
+                    runtime_instance.get("kind") == "direct_bound_instance"
+                    and re.fullmatch(
+                        r"session-instance:[0-9]+",
+                        str(runtime_instance.get("instance_id")),
+                    )
+                    is None
+                )
+                or (
+                    runtime_instance.get("kind") == "adapter_result_reference"
+                    and re.fullmatch(
+                        r"adapter-result:CMP-[0-9]+",
+                        str(runtime_instance.get("instance_id")),
+                    )
+                    is None
+                )
+            ):
+                add_issue(
+                    issues,
+                    "BCF-019",
+                    f"{binding_id}:{symbol_id}",
+                    "locked runtime-instance identity is malformed",
+                )
 
     lock_compositions, duplicate_lock_compositions = _unique_index(
         lock.get("declared_composition_bindings", []), "binding_id"
@@ -1119,6 +1157,21 @@ def validate_bundle(
             )
             continue
         status = composition_row.get("composition_status")
+        expected_dataflow_requirement = (
+            EXPLICIT_ADAPTER_DATAFLOW
+            if status == "lawful_with_explicit_adapter"
+            else SHARED_INSTANCE_DATAFLOW
+        )
+        if (
+            declared.get("runtime_dataflow_requirement")
+            != expected_dataflow_requirement
+        ):
+            add_issue(
+                issues,
+                "BCF-019",
+                binding_id,
+                "composition does not freeze its exact runtime dataflow requirement",
+            )
         if status == "unsupported_missing_crossing":
             add_issue(
                 issues,
@@ -1784,6 +1837,12 @@ def validate_bundle(
         adapter_required = (
             witness_row.get("composition_status") == "lawful_with_explicit_adapter"
         )
+        expected_dataflow_requirement = (
+            EXPLICIT_ADAPTER_DATAFLOW
+            if adapter_required
+            else SHARED_INSTANCE_DATAFLOW
+        )
+        dataflow_witness = witness.get("dataflow_witness")
         expected_ordering_rule = (
             "all_from_stages_before_crossing_before_all_to_stages"
             if adapter_required
@@ -1807,6 +1866,11 @@ def validate_bundle(
             and witness.get("ordering_rule") == expected_ordering_rule
             and witness.get("explicit_adapter_required") is adapter_required
             and witness.get("explicit_adapter_observed") is adapter_required
+            and witness.get("dataflow_requirement")
+            == expected_dataflow_requirement
+            and witness_declaration.get("runtime_dataflow_requirement")
+            == expected_dataflow_requirement
+            and isinstance(dataflow_witness, Mapping)
             and selected_crossings is not None
             and len(selected_crossings) == (1 if adapter_required else 0)
         )
@@ -1831,12 +1895,103 @@ def validate_bundle(
                     < int(crossing.get("execution_event_order", -1))
                     < min(to_orders)
                 )
+            if not isinstance(dataflow_witness, Mapping):
+                structurally_valid = False
+            elif structurally_valid and adapter_required:
+                structurally_valid = (
+                    set(dataflow_witness)
+                    == {
+                        "witness_kind",
+                        "crossing_invocation_index",
+                        "source_instance_role",
+                        "target_instance_role",
+                    }
+                    and dataflow_witness.get("witness_kind")
+                    == EXPLICIT_ADAPTER_DATAFLOW
+                    and dataflow_witness.get("crossing_invocation_index")
+                    == crossing_indices[0]
+                    and dataflow_witness.get("source_instance_role")
+                    == "declared_adapter_source_instance"
+                    and dataflow_witness.get("target_instance_role")
+                    == "adapter_result_reference"
+                )
+            elif structurally_valid:
+                source_flow_index = dataflow_witness.get("source_invocation_index")
+                target_flow_index = dataflow_witness.get("target_invocation_index")
+                source_flow = (
+                    invocations[source_flow_index]
+                    if isinstance(source_flow_index, int)
+                    and source_flow_index in from_indices
+                    else None
+                )
+                target_flow = (
+                    invocations[target_flow_index]
+                    if isinstance(target_flow_index, int)
+                    and target_flow_index in to_indices
+                    else None
+                )
+
+                def locked_invocation_link(
+                    invocation: Mapping[str, Any] | None,
+                ) -> Mapping[str, Any] | None:
+                    if invocation is None:
+                        return None
+                    locked_binding = lock_bindings.get(
+                        str(invocation.get("binding_id", "")),
+                        {},
+                    )
+                    matches = [
+                        link
+                        for link in locked_binding.get(
+                            "expected_concrete_symbols", []
+                        )
+                        if link.get("symbol_id") == invocation.get("symbol_id")
+                    ]
+                    return matches[0] if len(matches) == 1 else None
+
+                source_flow_link = locked_invocation_link(source_flow)
+                target_flow_link = locked_invocation_link(target_flow)
+                source_runtime_instance = (
+                    source_flow_link.get("runtime_instance_binding")
+                    if source_flow_link is not None
+                    else None
+                )
+                target_runtime_instance = (
+                    target_flow_link.get("runtime_instance_binding")
+                    if target_flow_link is not None
+                    else None
+                )
+                structurally_valid = (
+                    set(dataflow_witness)
+                    == {
+                        "witness_kind",
+                        "runtime_instance_binding_id",
+                        "source_invocation_index",
+                        "source_symbol_id",
+                        "target_invocation_index",
+                        "target_symbol_id",
+                    }
+                    and dataflow_witness.get("witness_kind")
+                    == SHARED_INSTANCE_DATAFLOW
+                    and source_flow is not None
+                    and target_flow is not None
+                    and dataflow_witness.get("source_symbol_id")
+                    == source_flow.get("symbol_id")
+                    and dataflow_witness.get("target_symbol_id")
+                    == target_flow.get("symbol_id")
+                    and isinstance(source_runtime_instance, Mapping)
+                    and source_runtime_instance.get("kind")
+                    == "direct_bound_instance"
+                    and source_runtime_instance == target_runtime_instance
+                    and dataflow_witness.get("runtime_instance_binding_id")
+                    == source_runtime_instance.get("instance_id")
+                )
         if not structurally_valid:
             add_issue(
                 issues,
                 "BCF-019",
                 binding_id,
-                "composition witness lacks exact scoped endpoints or crossing order",
+                "composition witness lacks exact scoped endpoints, order, or runtime dataflow closure",
             )
             continue
         valid_witness_ids.add(binding_id)

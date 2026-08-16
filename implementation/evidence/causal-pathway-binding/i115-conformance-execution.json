@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "cc58450124d1e1f34c15c81eb5b713ceb07e651706c4ef95906390f52cdcbf11",
+  "conformance_digest": "ccbfa5377fc7d9f095006f2b2ba5fd237468384e9289871476b38574bf504eda",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "294661b58b51a8282fa742d8e5e1a7f88e044e0b807f0e45e2496876c07ac291",
+  "policy_digest": "a312f4184a64d548286bc82c14eeb83e1eb3975d4eddb3b0d17645076be62f32",
   "rule_count": 20,
   "rule_results": [
     {
@@ -156,7 +156,7 @@
       "status": "passed"
     },
     {
-      "description": "Endpoint co-use and chained compositions must not synthesize edges or claim ceilings.",
+      "description": "Registered composition edges require exact scoped order and verified runtime object flow; endpoint co-use and chains must not synthesize edges or claim ceilings.",
       "issue_count": 0,
       "rule_id": "BCF-019",
       "status": "passed"
