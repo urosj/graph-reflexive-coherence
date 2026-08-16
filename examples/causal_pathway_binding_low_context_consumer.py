@@ -112,6 +112,8 @@ def run_replay(
     lock_path: Path,
     receipt_path: Path,
     result_path: Path,
+    acceptance_anchor_path: Path,
+    trusted_anchor_digest: str,
 ) -> dict[str, Any]:
     """Select from authority, bind exactly, execute, and write provenance."""
 
@@ -123,7 +125,11 @@ def run_replay(
     pathway_id = str(selected_case["selected_pathway_ids"][0])
     mechanism_arguments = dict(specification["mechanism_arguments"])
 
-    authority = CausalPathwayAuthority.load(repository_root)
+    authority = CausalPathwayAuthority.load(
+        repository_root,
+        acceptance_anchor=_load_object(acceptance_anchor_path),
+        trusted_anchor_digest=trusted_anchor_digest,
+    )
     schedule_stage_id, schedule_symbol_id = _select_mechanism_link(
         authority,
         pathway_id=pathway_id,
@@ -216,6 +222,8 @@ def main() -> int:
     parser.add_argument("--lock", type=Path, required=True)
     parser.add_argument("--receipt", type=Path, required=True)
     parser.add_argument("--result", type=Path, required=True)
+    parser.add_argument("--acceptance-anchor", type=Path, required=True)
+    parser.add_argument("--trusted-anchor-digest", required=True)
     args = parser.parse_args()
     root = args.root.resolve()
 
@@ -228,6 +236,8 @@ def main() -> int:
         lock_path=resolve(args.lock),
         receipt_path=resolve(args.receipt),
         result_path=resolve(args.result),
+        acceptance_anchor_path=resolve(args.acceptance_anchor),
+        trusted_anchor_digest=args.trusted_anchor_digest,
     )
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0

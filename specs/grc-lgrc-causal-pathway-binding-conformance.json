@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "4396e9ff09c213c854bf2f5092b1dd9f075e2604729ec44629486e1518ac05fe",
+  "policy_digest": "520452034725c426ac68c649e1482087d8facb97b9a6fc8e7f9b2909c796eb67",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -78,7 +78,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "The binding map, concrete symbols, source hashes, and binding policy must be current.",
+      "description": "The binding map, concrete symbols, source hashes, and binding policy must match an independently supplied acceptance anchor.",
       "rule_id": "BCF-014",
       "severity": "fail_closed"
     },
@@ -117,8 +117,8 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "defc08e4a372fd457f9671ec606618f7f07402a9",
-  "staleness_rule": "binding-map, symbol, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until versioned re-admission",
+  "source_revision": "dde8afbcd661e4beab1795095c012e74bb2007cd",
+  "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false
 }

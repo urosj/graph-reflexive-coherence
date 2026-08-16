@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** B-01/B-02/B-03/B-04/B-05 correction slices complete; tranche remains open
+**Status:** B-01/B-02/B-03/B-04/B-05/B-06 correction slices complete; tranche remains open
 
 **Checkpoint commit:** `976c660`
 
@@ -139,16 +139,42 @@ I116 dynamic fixture executes such a GRC call before selecting the restoration
 branch, proving both the rejection and non-interference boundaries without
 claiming that the binder made the choice.
 
+## B-06 Independent Binding Acceptance
+
+Authority loading now separates internal consistency from acceptance. A
+binding map can be loaded without an acceptance anchor for inspection, but its
+status is `pending_independent_review`; `freeze_lock()` fails before producing
+a claim-bearing artifact. An accepted load requires two caller-supplied inputs:
+
+```text
+acceptance anchor record
+expected SHA-256 of that exact anchor from an independent trust source
+```
+
+Neither input is auto-discovered by the runtime or checker. The anchor pins the
+binding-map digest, declared source revision, a canonical stage/crossing
+semantic projection, and a canonical manifest of source paths and content
+hashes. Its `automatic_re_admission` field is false. Accepted locks and
+receipts retain both `binding_acceptance_status = accepted` and the trusted
+anchor digest.
+
+BCF-014 independently repeats the anchor validation. A missing external anchor
+blocks current-looking artifacts as `stale_pending_review`. The focused
+controls also recompute the binding-map digest and binding-policy digest after
+(1) changing packet scheduling to `LGRC9V3.step` and (2) substituting an
+all-zero source revision. Both coordinated candidates remain pending because
+they cannot change the independently supplied anchor or its trusted digest.
+
 ## Verification Gate
 
 Iteration 117 remains open until repository tests and the independent
 falsifiers agree. Commands use `.venv`; tool and dependency configuration
 comes from `pyproject.toml`.
 
-The completed focused slices close B-01 through B-05 at the implementation
-gate. Findings B-06 and M-01 remain acceptance blockers and must not be
-described as resolved. A second full independent revision is deferred
-until B-06 and M-01 are complete.
+The completed focused slices close B-01 through B-06 at the implementation
+gate. Finding M-01 remains an acceptance blocker and must not be described as
+resolved. A second full independent revision is deferred until M-01 is
+complete, as agreed for the combined B-06/M-01 correction boundary.
 
 ## First-Slice Verification
 
@@ -228,3 +254,28 @@ git diff --check = passed
 
 This remains author-side correction evidence, not the deferred full independent
 revision.
+
+## B-06 Focused Verification
+
+The B-06 gate covers an accepted external anchor, a self-consistent but
+unanchored authority, a wrong trusted anchor digest, coordinated binding-map
+and policy changes, a false source revision, and exact anchor identity in locks
+and receipts. The I115 negative-control record includes both coordinated
+mutation cases and requires each to fail BCF-014 in isolation as
+`stale_pending_review`.
+
+```text
+.venv focused binding/conformance tests = 53 passed
+.venv full unittest discovery = 1,267 passed
+I115 independent-anchor mutation controls = 2 passed, 0 failed open
+I115/I116 evidence regeneration with caller-supplied trust root = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This remains author-side correction evidence. M-01 and the deferred full
+independent revision remain open.

@@ -181,7 +181,9 @@
     }
   ],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "1e16563d00dcae3c34401fc804e33daa796a41f7040cd06295322c218c8507bb",
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
+  "binding_lock_digest": "d855b6c5501540b3efecc2e7c2aac0e8a558f0c1ea2571e82ae233fa49b7505b",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "LGRC packet execution",
@@ -357,7 +359,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "fffe9bc6e9a195804d79a6d9db151d48d1d679e4d7c850467f39cf5947a260f3",
+  "receipt_digest": "82d526ca136b72579d72699aa072486c208b683c4343935943a440c2e6aaf99b",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

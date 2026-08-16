@@ -23,6 +23,8 @@
   ],
   "actual_authority_digests": {
     "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+    "binding_semantics_digest": "0769cd5dd0fa7e42eb324f7a59385563846fabb952e474d9863d5dd3b8a56991",
+    "binding_source_manifest_digest": "5843485730cadaded2864cc98a22c67d84635a93e22cf7736a3b83130a90dd15",
     "consolidation_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
     "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
     "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -30,17 +32,19 @@
     "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
   },
   "actual_invocation_count": 1,
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
   "binding_staleness_state": "current",
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "25b230de3e10b1d84cf044f628adaa2f34c95dd8180669c82c62761599702c08",
+  "conformance_digest": "a3784b69badd27eadbf9786c62a3a8277c4c58baf10a71088b57b13790052274",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "4396e9ff09c213c854bf2f5092b1dd9f075e2604729ec44629486e1518ac05fe",
+  "policy_digest": "520452034725c426ac68c649e1482087d8facb97b9a6fc8e7f9b2909c796eb67",
   "rule_count": 20,
   "rule_results": [
     {
@@ -122,7 +126,7 @@
       "status": "passed"
     },
     {
-      "description": "The binding map, concrete symbols, source hashes, and binding policy must be current.",
+      "description": "The binding map, concrete symbols, source hashes, and binding policy must match an independently supplied acceptance anchor.",
       "issue_count": 0,
       "rule_id": "BCF-014",
       "status": "passed"

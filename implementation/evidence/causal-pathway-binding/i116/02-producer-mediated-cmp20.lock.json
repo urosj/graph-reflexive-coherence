@@ -1,6 +1,8 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "native feedback",
@@ -223,7 +225,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "b58471f2cded6fdfcbf49875957814252a73abe3fb031573e44e418eeca9f380",
+  "lock_digest": "271d4b4018378784a80e8597fd2b9ad947e77e64298a32f6ff5144b2b7f9a1f1",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

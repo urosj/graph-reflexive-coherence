@@ -96,6 +96,119 @@ def canonical_digest(value: Mapping[str, Any], *, excluding: str) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def _canonical_value_digest(value: Any) -> str:
+    """Return a canonical SHA-256 digest for any JSON-compatible value."""
+
+    encoded = json.dumps(
+        value,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+_BINDING_SEMANTIC_SYMBOL_FIELDS: Final[tuple[str, ...]] = (
+    "symbol_id",
+    "module",
+    "qualified_symbol",
+    "binding_role",
+    "call_kind",
+    "required_keyword_arguments",
+)
+
+
+def binding_semantics_digest(bindings: Mapping[str, Any]) -> str:
+    """Digest the stage/crossing meaning independently of source-file hashes."""
+
+    def semantic_symbol(symbol: Mapping[str, Any]) -> dict[str, Any]:
+        return {
+            field: deepcopy(symbol.get(field, {} if field.endswith("arguments") else ""))
+            for field in _BINDING_SEMANTIC_SYMBOL_FIELDS
+        }
+
+    stage_bindings: list[dict[str, Any]] = [
+        {
+            "pathway_id": str(stage.get("pathway_id", "")),
+            "stage_id": str(stage.get("stage_id", "")),
+            "symbols": sorted(
+                (
+                    semantic_symbol(symbol)
+                    for symbol in stage.get("symbols", [])
+                    if isinstance(symbol, Mapping)
+                ),
+                key=lambda symbol: str(symbol["symbol_id"]),
+            ),
+        }
+        for stage in bindings.get("stage_bindings", [])
+        if isinstance(stage, Mapping)
+    ]
+    stage_bindings.sort(
+        key=lambda stage: (str(stage["pathway_id"]), str(stage["stage_id"]))
+    )
+    crossing_bindings: list[dict[str, Any]] = []
+    for crossing in bindings.get("composition_crossing_bindings", []):
+        if not isinstance(crossing, Mapping):
+            continue
+        symbol = crossing.get("symbol", {})
+        crossing_bindings.append(
+            {
+                "composition_id": str(crossing.get("composition_id", "")),
+                "crossing_kind": str(crossing.get("crossing_kind", "")),
+                "source_pathway_id": str(crossing.get("source_pathway_id", "")),
+                "source_argument_name": str(
+                    crossing.get("source_argument_name", "")
+                ),
+                "target_pathway_id": str(crossing.get("target_pathway_id", "")),
+                "symbol": semantic_symbol(symbol)
+                if isinstance(symbol, Mapping)
+                else {},
+            }
+        )
+    crossing_bindings.sort(key=lambda crossing: str(crossing["composition_id"]))
+    return _canonical_value_digest(
+        {
+            "stage_bindings": stage_bindings,
+            "composition_crossing_bindings": crossing_bindings,
+        }
+    )
+
+
+def binding_source_manifest_digest(bindings: Mapping[str, Any]) -> str:
+    """Digest the exact source paths and content hashes consumed by a map."""
+
+    source_records: set[tuple[str, str]] = set()
+    for stage in bindings.get("stage_bindings", []):
+        if not isinstance(stage, Mapping):
+            continue
+        for symbol in stage.get("symbols", []):
+            if isinstance(symbol, Mapping):
+                source_records.add(
+                    (
+                        str(symbol.get("source_path", "")),
+                        str(symbol.get("source_sha256", "")),
+                    )
+                )
+    for crossing in bindings.get("composition_crossing_bindings", []):
+        if not isinstance(crossing, Mapping):
+            continue
+        symbol = crossing.get("symbol", {})
+        if isinstance(symbol, Mapping):
+            source_records.add(
+                (
+                    str(symbol.get("source_path", "")),
+                    str(symbol.get("source_sha256", "")),
+                )
+            )
+    return _canonical_value_digest(
+        [
+            {"source_path": path, "source_sha256": digest}
+            for path, digest in sorted(source_records)
+        ]
+    )
+
+
 def sha256_file(path: Path) -> str:
     """Return the SHA-256 digest of a file."""
 
@@ -491,6 +604,104 @@ class AllowedPathwayAlternatives:
         return AlternativeSelectionScope(session=self._session, alternatives=self)
 
 
+@dataclass(frozen=True)
+class BindingAcceptanceAnchor:
+    """Independently trusted acceptance decision for one exact binding map."""
+
+    anchor_id: str
+    accepted_binding_map_digest: str
+    accepted_source_revision: str
+    accepted_binding_semantics_digest: str
+    accepted_source_manifest_digest: str
+    anchor_digest: str
+    _record: Mapping[str, Any] = field(repr=False, compare=False)
+
+    @classmethod
+    def from_record(
+        cls,
+        record: Mapping[str, Any],
+        *,
+        trusted_anchor_digest: str,
+    ) -> BindingAcceptanceAnchor:
+        """Validate an anchor against a digest supplied outside the bundle."""
+
+        if re.fullmatch(r"[0-9a-f]{64}", trusted_anchor_digest) is None:
+            raise AuthorityDriftError(
+                "trusted binding-acceptance anchor digest must be lowercase SHA-256"
+            )
+        declared_digest = str(record.get("anchor_digest", ""))
+        actual_digest = canonical_digest(record, excluding="anchor_digest")
+        if declared_digest != trusted_anchor_digest or actual_digest != declared_digest:
+            raise AuthorityDriftError(
+                "binding-acceptance anchor is not the independently trusted record"
+            )
+        expected_header = {
+            "artifact": "causal-pathway-binding-acceptance-anchor",
+            "schema_version": "causal_pathway_binding_acceptance_anchor_v1",
+            "status": "accepted",
+            "automatic_re_admission": False,
+            "candidate_bundle_auto_discovery": False,
+        }
+        if any(record.get(field) != value for field, value in expected_header.items()):
+            raise AuthorityDriftError(
+                "binding-acceptance anchor header or review status is invalid"
+            )
+        anchor_id = str(record.get("anchor_id", ""))
+        map_digest = str(record.get("accepted_binding_map_digest", ""))
+        source_revision = str(record.get("accepted_source_revision", ""))
+        semantics_digest = str(record.get("accepted_binding_semantics_digest", ""))
+        source_manifest_digest = str(
+            record.get("accepted_source_manifest_digest", "")
+        )
+        if not anchor_id or any(
+            re.fullmatch(r"[0-9a-f]{64}", value) is None
+            for value in (map_digest, semantics_digest, source_manifest_digest)
+        ):
+            raise AuthorityDriftError(
+                "binding-acceptance anchor identities are missing or malformed"
+            )
+        if re.fullmatch(r"[0-9a-f]{40}", source_revision) is None:
+            raise AuthorityDriftError(
+                "binding-acceptance anchor source revision is malformed"
+            )
+        return cls(
+            anchor_id=anchor_id,
+            accepted_binding_map_digest=map_digest,
+            accepted_source_revision=source_revision,
+            accepted_binding_semantics_digest=semantics_digest,
+            accepted_source_manifest_digest=source_manifest_digest,
+            anchor_digest=declared_digest,
+            _record=MappingProxyType(deepcopy(dict(record))),
+        )
+
+    def to_record(self) -> dict[str, Any]:
+        """Return a copy of the externally supplied acceptance decision."""
+
+        return deepcopy(dict(self._record))
+
+    def assert_accepts(self, bindings: Mapping[str, Any]) -> None:
+        """Reject a self-consistent map that differs from the reviewed anchor."""
+
+        actual = {
+            "binding_map_digest": str(bindings.get("binding_map_digest", "")),
+            "source_revision": str(bindings.get("source_revision", "")),
+            "binding_semantics_digest": binding_semantics_digest(bindings),
+            "source_manifest_digest": binding_source_manifest_digest(bindings),
+        }
+        expected = {
+            "binding_map_digest": self.accepted_binding_map_digest,
+            "source_revision": self.accepted_source_revision,
+            "binding_semantics_digest": self.accepted_binding_semantics_digest,
+            "source_manifest_digest": self.accepted_source_manifest_digest,
+        }
+        mismatched = [field for field, value in expected.items() if actual[field] != value]
+        if mismatched:
+            raise AuthorityDriftError(
+                "binding map is self-consistent but pending independent review: "
+                f"anchor mismatches {mismatched}"
+            )
+
+
 class CausalPathwayAuthority:
     """Validated immutable view over accepted knowledge and binding artifacts."""
 
@@ -503,6 +714,8 @@ class CausalPathwayAuthority:
         compositions: Mapping[str, Mapping[str, Any]],
         stage_symbols: Mapping[tuple[str, str], tuple[SourceSymbolBinding, ...]],
         composition_crossings: Mapping[str, CompositionCrossingBinding],
+        binding_acceptance_anchor: BindingAcceptanceAnchor | None = None,
+        trusted_anchor_digest: str | None = None,
     ) -> None:
         self._repository_root = repository_root
         self._documents = MappingProxyType(dict(documents))
@@ -510,6 +723,24 @@ class CausalPathwayAuthority:
         self._compositions = MappingProxyType(dict(compositions))
         self._stage_symbols = MappingProxyType(dict(stage_symbols))
         self._composition_crossings = MappingProxyType(dict(composition_crossings))
+        if binding_acceptance_anchor is None:
+            if trusted_anchor_digest is not None:
+                raise AuthorityDriftError(
+                    "an independently trusted digest requires its acceptance anchor"
+                )
+            validated_anchor = None
+        else:
+            if trusted_anchor_digest is None:
+                raise AuthorityDriftError(
+                    "an acceptance anchor requires its independently trusted digest"
+                )
+            validated_anchor = BindingAcceptanceAnchor.from_record(
+                binding_acceptance_anchor.to_record(),
+                trusted_anchor_digest=trusted_anchor_digest,
+            )
+            validated_anchor.assert_accepts(documents["bindings"])
+        self._binding_acceptance_anchor = validated_anchor
+        self._trusted_anchor_digest = trusted_anchor_digest
 
     @property
     def repository_root(self) -> Path:
@@ -543,6 +774,24 @@ class CausalPathwayAuthority:
     def source_revision(self) -> str:
         return str(self._documents["bindings"]["source_revision"])
 
+    @property
+    def binding_acceptance_status(self) -> str:
+        """Return whether this self-consistent authority is externally accepted."""
+
+        return (
+            "accepted"
+            if self._binding_acceptance_anchor is not None
+            else "pending_independent_review"
+        )
+
+    @property
+    def binding_acceptance_anchor_digest(self) -> str:
+        """Return the independently trusted acceptance-anchor identity."""
+
+        if self._binding_acceptance_anchor is None:
+            return ""
+        return self._binding_acceptance_anchor.anchor_digest
+
     def artifact_identities(self) -> Mapping[str, str]:
         """Return the accepted digests consumed by one binding lock."""
 
@@ -555,16 +804,33 @@ class CausalPathwayAuthority:
                 "selector_digest": self.selector_digest,
                 "binding_map_digest": self.binding_map_digest,
                 "conformance_policy_digest": self.policy_digest,
+                "binding_acceptance_status": self.binding_acceptance_status,
+                "binding_acceptance_anchor_digest": (
+                    self.binding_acceptance_anchor_digest
+                ),
             }
         )
 
     def assert_current(self) -> None:
         """Fail closed if any consumed authority or source link has drifted."""
 
-        current = type(self).load(self.repository_root)
+        current = type(self).load(
+            self.repository_root,
+            acceptance_anchor=(
+                self._binding_acceptance_anchor.to_record()
+                if self._binding_acceptance_anchor is not None
+                else None
+            ),
+            trusted_anchor_digest=self._trusted_anchor_digest,
+        )
         if dict(current.artifact_identities()) != dict(self.artifact_identities()):
             raise AuthorityDriftError(
                 "loaded causal-pathway authority is no longer current"
+            )
+        if self._binding_acceptance_anchor is None:
+            raise AuthorityDriftError(
+                "self-consistent binding authority is pending independent review; "
+                "claim artifacts require an independently supplied acceptance anchor"
             )
 
     def pathway(self, pathway_id: str) -> Mapping[str, Any]:
@@ -631,8 +897,14 @@ class CausalPathwayAuthority:
             ) from exc
 
     @classmethod
-    def load(cls, repository_root: str | Path) -> CausalPathwayAuthority:
-        """Load and validate all accepted knowledge and linkage artifacts."""
+    def load(
+        cls,
+        repository_root: str | Path,
+        *,
+        acceptance_anchor: Mapping[str, Any] | None = None,
+        trusted_anchor_digest: str | None = None,
+    ) -> CausalPathwayAuthority:
+        """Load self-consistent authorities and optionally establish acceptance."""
 
         root = Path(repository_root).resolve()
         documents = {
@@ -656,6 +928,17 @@ class CausalPathwayAuthority:
                 )
 
         bindings = documents["bindings"]
+        parsed_anchor: BindingAcceptanceAnchor | None = None
+        if acceptance_anchor is not None or trusted_anchor_digest is not None:
+            if acceptance_anchor is None or trusted_anchor_digest is None:
+                raise AuthorityDriftError(
+                    "acceptance anchor and independently trusted digest are both required"
+                )
+            parsed_anchor = BindingAcceptanceAnchor.from_record(
+                acceptance_anchor,
+                trusted_anchor_digest=trusted_anchor_digest,
+            )
+            parsed_anchor.assert_accepts(bindings)
         consumed_digests = {
             "registry_digest": documents["registry"]["registry_digest"],
             "crosswalk_digest": documents["crosswalk"]["crosswalk_digest"],
@@ -789,6 +1072,8 @@ class CausalPathwayAuthority:
             compositions=compositions,
             stage_symbols=stage_symbols,
             composition_crossings=composition_crossings,
+            binding_acceptance_anchor=parsed_anchor,
+            trusted_anchor_digest=trusted_anchor_digest,
         )
 
 

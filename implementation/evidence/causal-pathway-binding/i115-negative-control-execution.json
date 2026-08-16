@@ -213,8 +213,32 @@
       ]
     }
   ],
-  "execution_digest": "3958a098fcc60ecfb3b8aef354f084558462bdeed6558f47500541c05ec77d5c",
+  "execution_digest": "7e177d191ee3c471c753f7fddfd31142fa5a373a63c00755911b736f14c0a6a6",
   "failed_open_count": 0,
+  "independent_anchor_control_count": 2,
+  "independent_anchor_controls": [
+    {
+      "binding_staleness_state": "stale_pending_review",
+      "candidate_map_and_policy_self_consistent": true,
+      "case_id": "BNC-014-COORDINATED-P1-P2",
+      "description": "coordinated packet-schedule to step map and policy re-admission",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-014"
+      ]
+    },
+    {
+      "binding_staleness_state": "stale_pending_review",
+      "candidate_map_and_policy_self_consistent": true,
+      "case_id": "BNC-014-FALSE-REVISION",
+      "description": "coordinated false source-revision and policy re-admission",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-014"
+      ]
+    }
+  ],
+  "independent_anchor_failed_open_count": 0,
   "iteration": 115,
   "rule_isolation_control_count": 20,
   "rule_isolation_controls": [
@@ -462,6 +486,6 @@
   "rule_isolation_failed_open_count": 0,
   "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
-  "source_revision": "defc08e4a372fd457f9671ec606618f7f07402a9",
+  "source_revision": "dde8afbcd661e4beab1795095c012e74bb2007cd",
   "status": "passed"
 }

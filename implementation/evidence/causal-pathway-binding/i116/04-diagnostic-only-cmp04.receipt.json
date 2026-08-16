@@ -138,7 +138,9 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "f77b9a7ddad9b774e3814bb44f626da7f6517edf9d00471d8d11162ed35e477a",
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
+  "binding_lock_digest": "1664fdae82d46e2f930f8ef1d0e6b5e5e325d068b7d1d71ccd5ae581ea75b2da",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
@@ -311,7 +313,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "f0475c3e223686fdb7984cfda62a85227109d409f51b99936a3d038932ae9bfd",
+  "receipt_digest": "40b87aa7de13d6f89e3e77a4baa39e5deb9de74d10752cc807e2a0daa2dbb96b",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",

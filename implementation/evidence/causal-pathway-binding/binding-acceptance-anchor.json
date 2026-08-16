@@ -1,0 +1,14 @@
+{
+  "accepted_binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "accepted_binding_semantics_digest": "0769cd5dd0fa7e42eb324f7a59385563846fabb952e474d9863d5dd3b8a56991",
+  "accepted_source_manifest_digest": "5843485730cadaded2864cc98a22c67d84635a93e22cf7736a3b83130a90dd15",
+  "accepted_source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "anchor_id": "phase8-i117-b06-reviewed-binding-source-anchor",
+  "artifact": "causal-pathway-binding-acceptance-anchor",
+  "automatic_re_admission": false,
+  "candidate_bundle_auto_discovery": false,
+  "review_scope": "exact stage and composition-crossing semantics plus bound source contents",
+  "schema_version": "causal_pathway_binding_acceptance_anchor_v1",
+  "status": "accepted"
+}

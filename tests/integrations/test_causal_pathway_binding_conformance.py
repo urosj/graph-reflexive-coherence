@@ -14,6 +14,10 @@ CHECKER_PATH = ROOT / "scripts/check_grc_lgrc_causal_pathway_binding_conformance
 BUILDER_PATH = ROOT / "scripts/build_phase8_causal_pathway_binding_i115.py"
 POLICY_PATH = ROOT / "specs/grc-lgrc-causal-pathway-binding-conformance.json"
 EVIDENCE_DIR = ROOT / "implementation/evidence/causal-pathway-binding"
+ACCEPTANCE_ANCHOR_PATH = EVIDENCE_DIR / "binding-acceptance-anchor.json"
+TRUSTED_ACCEPTANCE_ANCHOR_DIGEST = (
+    "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709"
+)
 
 
 def _load_module(name: str, path: Path) -> Any:
@@ -32,20 +36,40 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
     builder: ClassVar[Any]
     policy: ClassVar[dict[str, Any]]
     bundle: ClassVar[dict[str, Any]]
+    acceptance_anchor: ClassVar[dict[str, Any]]
 
     @classmethod
     def setUpClass(cls) -> None:
         cls.checker = _load_module("binding_conformance_checker", CHECKER_PATH)
         cls.builder = _load_module("binding_conformance_builder", BUILDER_PATH)
         cls.policy = json.loads(POLICY_PATH.read_text(encoding="utf-8"))
+        cls.acceptance_anchor = json.loads(
+            ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8")
+        )
         cls.bundle = cls.checker.load_bundle(
             ROOT,
             lock_path=EVIDENCE_DIR / "i115-native-pathway.lock.json",
             receipt_path=EVIDENCE_DIR / "i115-native-pathway.receipt.json",
         )
 
+    def _validate(
+        self,
+        root: Path,
+        bundle: dict[str, Any],
+        policy: dict[str, Any],
+        active_rule_ids: set[str] | None = None,
+    ) -> dict[str, Any]:
+        return self.checker.validate_bundle(
+            root,
+            bundle,
+            policy,
+            active_rule_ids=active_rule_ids,
+            acceptance_anchor=copy.deepcopy(self.acceptance_anchor),
+            trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+        )
+
     def test_current_lock_and_receipt_pass_all_twenty_rules(self) -> None:
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             copy.deepcopy(self.bundle),
             copy.deepcopy(self.policy),
@@ -62,7 +86,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             with self.subTest(case_id=case_id, expected_rule=expected_rule):
                 mutated = copy.deepcopy(self.bundle)
                 self.builder.apply_negative_mutation(case_id, mutated)
-                result = self.checker.validate_bundle(
+                result = self._validate(
                     ROOT,
                     mutated,
                     copy.deepcopy(self.policy),
@@ -76,7 +100,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             with self.subTest(case_id=case_id, expected_rule=expected_rule):
                 mutated = copy.deepcopy(self.bundle)
                 self.builder.apply_negative_mutation(case_id, mutated)
-                result = self.checker.validate_bundle(
+                result = self._validate(
                     ROOT,
                     mutated,
                     copy.deepcopy(self.policy),
@@ -90,12 +114,97 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         mutated = copy.deepcopy(self.bundle)
         self.builder.apply_negative_mutation("BNC-014", mutated)
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
         )
 
+        self.assertEqual("stale_pending_review", result["binding_staleness_state"])
+        self.assertTrue(result["claim_qualified_artifacts_blocked"])
+
+    def test_current_bundle_without_external_anchor_stays_pending_review(self) -> None:
+        result = self.checker.validate_bundle(
+            ROOT,
+            copy.deepcopy(self.bundle),
+            copy.deepcopy(self.policy),
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual("stale_pending_review", result["binding_staleness_state"])
+        self.assertEqual(
+            {"BCF-014"},
+            {item["rule_id"] for item in result["issues"]},
+        )
+
+    def test_coordinated_p1_to_p2_map_and_policy_edit_stays_pending(self) -> None:
+        mutated = copy.deepcopy(self.bundle)
+        policy = copy.deepcopy(self.policy)
+        stage = next(
+            item
+            for item in mutated["bindings"]["stage_bindings"]
+            if item["pathway_id"] == "lgrc9v3.explicit_packet_transport"
+            and item["stage_id"] == "packet_schedule"
+        )
+        stage["symbols"][0]["qualified_symbol"] = "LGRC9V3.step"
+        map_digest = self.checker.digest_without(
+            mutated["bindings"],
+            "binding_map_digest",
+        )
+        mutated["bindings"]["binding_map_digest"] = map_digest
+        policy["accepted_digests"]["binding_map_digest"] = map_digest
+        policy["policy_digest"] = self.checker.digest_without(
+            policy,
+            "policy_digest",
+        )
+        for artifact_name in ("lock", "receipt"):
+            mutated[artifact_name]["binding_map_digest"] = map_digest
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            policy,
+            active_rule_ids={"BCF-014"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual("stale_pending_review", result["binding_staleness_state"])
+        self.assertTrue(result["claim_qualified_artifacts_blocked"])
+        self.assertTrue(
+            any(
+                item["location"] == "binding_acceptance_anchor"
+                and "pending independent review" in item["message"]
+                for item in result["issues"]
+            )
+        )
+
+    def test_coordinated_false_revision_readmission_stays_pending(self) -> None:
+        mutated = copy.deepcopy(self.bundle)
+        policy = copy.deepcopy(self.policy)
+        false_revision = "0" * 40
+        mutated["bindings"]["source_revision"] = false_revision
+        map_digest = self.checker.digest_without(
+            mutated["bindings"],
+            "binding_map_digest",
+        )
+        mutated["bindings"]["binding_map_digest"] = map_digest
+        policy["accepted_digests"]["binding_map_digest"] = map_digest
+        policy["policy_digest"] = self.checker.digest_without(
+            policy,
+            "policy_digest",
+        )
+        for artifact_name in ("lock", "receipt"):
+            mutated[artifact_name]["source_revision"] = false_revision
+            mutated[artifact_name]["binding_map_digest"] = map_digest
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            policy,
+            active_rule_ids={"BCF-014"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
         self.assertEqual("stale_pending_review", result["binding_staleness_state"])
         self.assertTrue(result["claim_qualified_artifacts_blocked"])
 
@@ -108,7 +217,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             receipt, "receipt_digest"
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -132,7 +241,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             receipt, "receipt_digest"
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -155,7 +264,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "receipt_digest",
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -178,7 +287,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "receipt_digest",
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -201,7 +310,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "receipt_digest",
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -244,7 +353,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "receipt_digest",
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -272,7 +381,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "receipt_digest",
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -299,7 +408,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "receipt_digest",
         )
 
-        result = self.checker.validate_bundle(
+        result = self._validate(
             ROOT,
             mutated,
             copy.deepcopy(self.policy),
@@ -331,6 +440,8 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual(20, negative["rule_isolation_control_count"])
         self.assertEqual(0, negative["failed_open_count"])
         self.assertEqual(0, negative["rule_isolation_failed_open_count"])
+        self.assertEqual(2, negative["independent_anchor_control_count"])
+        self.assertEqual(0, negative["independent_anchor_failed_open_count"])
         self.assertEqual(
             negative["execution_digest"],
             self.checker.digest_without(negative, "execution_digest"),

@@ -123,7 +123,7 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Reject an out-of-set pathway or a second alternative before delegation.
 - [x] Preserve unrelated bound work outside the selection scope.
 - [x] Extend BCF-017 to reconstruct exact scope and invocation witnesses.
-- [ ] Add the independent acceptance anchor for B-06.
+- [x] Add the independent acceptance anchor for B-06.
 - [ ] Add mechanism-specific effect outcome vocabulary for M-01.
 - [ ] Re-run the independently updated full adversarial audit with zero blockers
       and zero unresolved majors.

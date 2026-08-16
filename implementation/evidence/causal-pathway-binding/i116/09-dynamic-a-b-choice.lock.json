@@ -10,6 +10,8 @@
     }
   ],
   "artifact": "causal-pathways-binding-lock",
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "LGRC packet execution",
@@ -158,7 +160,7 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "1e16563d00dcae3c34401fc804e33daa796a41f7040cd06295322c218c8507bb",
+  "lock_digest": "d855b6c5501540b3efecc2e7c2aac0e8a558f0c1ea2571e82ae233fa49b7505b",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

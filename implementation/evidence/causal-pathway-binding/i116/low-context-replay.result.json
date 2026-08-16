@@ -10,8 +10,8 @@
     "implementation/evidence/causal-pathway-binding/i116-low-context-consumer-specification.json"
   ],
   "expected_identity_oracle_consumed": false,
-  "lock_digest": "175dac3763ebb53fbca2e7e86eedc344c041a16bc581daa9b39b3759bd5cf44f",
-  "receipt_digest": "ba697b59a2af100dc2453e95441e402fc7f571a9c5ebc69ee3eda1860bd51d56",
+  "lock_digest": "1747bb42e6c8214abdd73a851f001c5f32a2fcbfec94693c4fe44fdf18ae6cde",
+  "receipt_digest": "1e25fa4552f5793c5c60740e2e21674ec9eb973f08fdeda43d5eb2246f9ba23c",
   "schema_version": "i116_low_context_causal_pathway_consumer_replay_v1",
   "selected_pathway_id": "lgrc9v3.explicit_packet_transport",
   "selected_stage_ids": [

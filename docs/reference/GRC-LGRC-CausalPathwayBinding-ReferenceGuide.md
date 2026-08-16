@@ -71,6 +71,7 @@ The consumer chooses an exact identity first. It then chooses the exact stage
 symbol before locking:
 
 ```python
+import json
 from pathlib import Path
 
 from pygrc.causal_pathways import (
@@ -79,7 +80,14 @@ from pygrc.causal_pathways import (
     sha256_file,
 )
 
-authority = CausalPathwayAuthority.load(Path.cwd())
+repository_root = Path.cwd()
+# Both values below come from trusted caller configuration.
+acceptance_anchor = json.loads(trusted_anchor_path.read_text(encoding="utf-8"))
+authority = CausalPathwayAuthority.load(
+    repository_root,
+    acceptance_anchor=acceptance_anchor,
+    trusted_anchor_digest=trusted_anchor_digest,
+)
 session = PathwayBindingSession(authority)
 packet = session.bind_pathway(
     "lgrc9v3.explicit_packet_transport",
@@ -274,6 +282,15 @@ use. BCF-017 reconstructs every dynamic selection from its scoped invocation
 indices. C is rejected inside an A/B scope, while a null-scoped C invocation
 outside it remains unrelated and does not alter the A/B witness.
 
+The B-06 correction separates a self-consistent candidate map from an accepted
+map. Loading without an anchor remains available for inspection, but the
+authority reports `pending_independent_review` and cannot freeze a claim lock.
+Acceptance requires both an anchor record and its expected digest from trusted
+caller configuration. The loader never discovers either value automatically.
+The anchor pins the full binding-map digest, source revision, stage/crossing
+semantic projection, and source path/content manifest. Locks and receipts
+retain the exact anchor digest used for their acceptance decision.
+
 ## Claim Qualification
 
 Claim qualification is operation-scoped. A receipt proves only the callable
@@ -308,16 +325,21 @@ every internal Python call inside an admitted mechanism.
 Validate the frozen prospective fixture or supply another exact lock/receipt:
 
 ```bash
-.venv/bin/python scripts/check_grc_lgrc_causal_pathway_binding_conformance.py
+.venv/bin/python scripts/check_grc_lgrc_causal_pathway_binding_conformance.py \
+  --acceptance-anchor "$TRUSTED_BINDING_ANCHOR_PATH" \
+  --trusted-anchor-digest "$TRUSTED_BINDING_ANCHOR_DIGEST"
 
 .venv/bin/python scripts/check_grc_lgrc_causal_pathway_binding_conformance.py \
   --lock path/to/causal-pathways.lock.json \
-  --receipt path/to/causal-pathways.receipt.json
+  --receipt path/to/causal-pathways.receipt.json \
+  --acceptance-anchor "$TRUSTED_BINDING_ANCHOR_PATH" \
+  --trusted-anchor-digest "$TRUSTED_BINDING_ANCHOR_DIGEST"
 ```
 
 Binding/source drift becomes `stale_pending_review` and blocks
-claim-qualified artifacts. The checker validates structure and provenance; it
-does not dispatch or rerun causal dynamics.
+claim-qualified artifacts. So does a missing anchor or a self-consistent map
+that differs from the independently trusted anchor. The checker validates
+structure and provenance; it does not dispatch or rerun causal dynamics.
 
 ## Boundaries
 

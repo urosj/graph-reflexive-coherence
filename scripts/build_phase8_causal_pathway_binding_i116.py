@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 import subprocess
@@ -60,6 +61,25 @@ def _write_json(path: Path, value: Any) -> None:
     path.write_text(
         json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
         encoding="utf-8",
+    )
+
+
+def _portable_command_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return str(resolved.relative_to(ROOT))
+    except ValueError:
+        return str(resolved)
+
+
+def _load_accepted_authority(
+    acceptance_anchor: dict[str, Any],
+    trusted_anchor_digest: str,
+) -> CausalPathwayAuthority:
+    return CausalPathwayAuthority.load(
+        ROOT,
+        acceptance_anchor=acceptance_anchor,
+        trusted_anchor_digest=trusted_anchor_digest,
     )
 
 
@@ -488,7 +508,12 @@ def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
     )
 
 
-def _run_low_context_replay(checker: Any, policy: dict[str, Any]) -> dict[str, Any]:
+def _run_low_context_replay(
+    checker: Any,
+    policy: dict[str, Any],
+    acceptance_anchor_path: Path,
+    trusted_anchor_digest: str,
+) -> dict[str, Any]:
     command = [
         ".venv/bin/python",
         "examples/causal_pathway_binding_low_context_consumer.py",
@@ -500,6 +525,10 @@ def _run_low_context_replay(checker: Any, policy: dict[str, Any]) -> dict[str, A
         str(REPLAY_RECEIPT_PATH.relative_to(ROOT)),
         "--result",
         str(REPLAY_RESULT_PATH.relative_to(ROOT)),
+        "--acceptance-anchor",
+        _portable_command_path(acceptance_anchor_path),
+        "--trusted-anchor-digest",
+        trusted_anchor_digest,
     ]
     completed = subprocess.run(
         command,
@@ -568,6 +597,8 @@ def _run_low_context_replay(checker: Any, policy: dict[str, Any]) -> dict[str, A
             receipt_path=REPLAY_RECEIPT_PATH,
         ),
         policy,
+        acceptance_anchor=_load_json(acceptance_anchor_path),
+        trusted_anchor_digest=trusted_anchor_digest,
     )
     if not oracle["identity_match"] or conformance["status"] != "passed":
         raise RuntimeError("low-context replay or post-freeze oracle failed")
@@ -583,9 +614,17 @@ def _run_low_context_replay(checker: Any, policy: dict[str, Any]) -> dict[str, A
     }
 
 
-def main() -> int:
+def main(
+    *,
+    acceptance_anchor_path: Path,
+    trusted_anchor_digest: str,
+) -> int:
     EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
-    authority = CausalPathwayAuthority.load(ROOT)
+    acceptance_anchor = _load_json(acceptance_anchor_path)
+    authority = _load_accepted_authority(
+        acceptance_anchor,
+        trusted_anchor_digest,
+    )
     checker = _load_module("binding_conformance_i116", CHECKER_PATH)
     policy = _load_json(POLICY_PATH)
     cases = [
@@ -622,6 +661,8 @@ def main() -> int:
                 receipt_path=ROOT / case["receipt_path"],
             ),
             policy,
+            acceptance_anchor=acceptance_anchor,
+            trusted_anchor_digest=trusted_anchor_digest,
         )
         conformance_rows.append(
             {
@@ -632,7 +673,12 @@ def main() -> int:
         )
     if any(row["status"] != "passed" for row in conformance_rows):
         raise RuntimeError(json.dumps(conformance_rows, indent=2))
-    replay = _run_low_context_replay(checker, policy)
+    replay = _run_low_context_replay(
+        checker,
+        policy,
+        acceptance_anchor_path,
+        trusted_anchor_digest,
+    )
     summary = {
         "artifact": "Phase 8 GRC/LGRC causal pathway binding I116 consumer dry runs",
         "schema_version": "phase8_grclgrc_causal_pathway_binding_i116_dry_runs_v1",
@@ -656,4 +702,13 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--acceptance-anchor", type=Path, required=True)
+    parser.add_argument("--trusted-anchor-digest", required=True)
+    arguments = parser.parse_args()
+    raise SystemExit(
+        main(
+            acceptance_anchor_path=arguments.acceptance_anchor,
+            trusted_anchor_digest=arguments.trusted_anchor_digest,
+        )
+    )

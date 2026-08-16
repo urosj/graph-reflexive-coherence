@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import re
@@ -66,7 +67,7 @@ RULES = [
     ),
     (
         "BCF-014",
-        "The binding map, concrete symbols, source hashes, and binding policy must be current.",
+        "The binding map, concrete symbols, source hashes, and binding policy must match an independently supplied acceptance anchor.",
     ),
     (
         "BCF-015",
@@ -135,6 +136,176 @@ def digest_without(document: Mapping[str, Any], field: str) -> str:
     return canonical_digest(
         {key: value for key, value in document.items() if key != field}
     )
+
+
+_BINDING_SEMANTIC_SYMBOL_FIELDS = (
+    "symbol_id",
+    "module",
+    "qualified_symbol",
+    "binding_role",
+    "call_kind",
+    "required_keyword_arguments",
+)
+
+
+def binding_semantics_digest(bindings: Mapping[str, Any]) -> str:
+    """Digest exact stage/crossing semantics without source-file hashes."""
+
+    def semantic_symbol(symbol: Mapping[str, Any]) -> dict[str, Any]:
+        return {
+            field: copy.deepcopy(
+                symbol.get(field, {} if field.endswith("arguments") else "")
+            )
+            for field in _BINDING_SEMANTIC_SYMBOL_FIELDS
+        }
+
+    stage_bindings = [
+        {
+            "pathway_id": str(stage.get("pathway_id", "")),
+            "stage_id": str(stage.get("stage_id", "")),
+            "symbols": sorted(
+                (
+                    semantic_symbol(symbol)
+                    for symbol in stage.get("symbols", [])
+                    if isinstance(symbol, Mapping)
+                ),
+                key=lambda symbol: str(symbol["symbol_id"]),
+            ),
+        }
+        for stage in bindings.get("stage_bindings", [])
+        if isinstance(stage, Mapping)
+    ]
+    stage_bindings.sort(
+        key=lambda stage: (str(stage["pathway_id"]), str(stage["stage_id"]))
+    )
+    crossing_bindings = []
+    for crossing in bindings.get("composition_crossing_bindings", []):
+        if not isinstance(crossing, Mapping):
+            continue
+        symbol = crossing.get("symbol", {})
+        crossing_bindings.append(
+            {
+                "composition_id": str(crossing.get("composition_id", "")),
+                "crossing_kind": str(crossing.get("crossing_kind", "")),
+                "source_pathway_id": str(crossing.get("source_pathway_id", "")),
+                "source_argument_name": str(
+                    crossing.get("source_argument_name", "")
+                ),
+                "target_pathway_id": str(crossing.get("target_pathway_id", "")),
+                "symbol": semantic_symbol(symbol)
+                if isinstance(symbol, Mapping)
+                else {},
+            }
+        )
+    crossing_bindings.sort(key=lambda crossing: str(crossing["composition_id"]))
+    return canonical_digest(
+        {
+            "stage_bindings": stage_bindings,
+            "composition_crossing_bindings": crossing_bindings,
+        }
+    )
+
+
+def binding_source_manifest_digest(bindings: Mapping[str, Any]) -> str:
+    """Digest the exact source paths and content hashes consumed by a map."""
+
+    source_records: set[tuple[str, str]] = set()
+    for stage in bindings.get("stage_bindings", []):
+        if not isinstance(stage, Mapping):
+            continue
+        for symbol in stage.get("symbols", []):
+            if isinstance(symbol, Mapping):
+                source_records.add(
+                    (
+                        str(symbol.get("source_path", "")),
+                        str(symbol.get("source_sha256", "")),
+                    )
+                )
+    for crossing in bindings.get("composition_crossing_bindings", []):
+        if not isinstance(crossing, Mapping):
+            continue
+        symbol = crossing.get("symbol", {})
+        if isinstance(symbol, Mapping):
+            source_records.add(
+                (
+                    str(symbol.get("source_path", "")),
+                    str(symbol.get("source_sha256", "")),
+                )
+            )
+    return canonical_digest(
+        [
+            {"source_path": path, "source_sha256": digest}
+            for path, digest in sorted(source_records)
+        ]
+    )
+
+
+def binding_acceptance_issue(
+    bindings: Mapping[str, Any],
+    acceptance_anchor: Mapping[str, Any] | None,
+    trusted_anchor_digest: str | None,
+) -> str | None:
+    """Return why an external anchor does not accept this candidate map."""
+
+    if acceptance_anchor is None or trusted_anchor_digest is None:
+        return "independently supplied binding-acceptance anchor is absent"
+    if re.fullmatch(r"[0-9a-f]{64}", trusted_anchor_digest) is None:
+        return "trusted binding-acceptance anchor digest is malformed"
+    declared_digest = str(acceptance_anchor.get("anchor_digest", ""))
+    if (
+        declared_digest != trusted_anchor_digest
+        or digest_without(acceptance_anchor, "anchor_digest") != declared_digest
+    ):
+        return "binding-acceptance anchor does not match the external trust root"
+    expected_header = {
+        "artifact": "causal-pathway-binding-acceptance-anchor",
+        "schema_version": "causal_pathway_binding_acceptance_anchor_v1",
+        "status": "accepted",
+        "automatic_re_admission": False,
+        "candidate_bundle_auto_discovery": False,
+    }
+    if any(
+        acceptance_anchor.get(field) != value
+        for field, value in expected_header.items()
+    ):
+        return "binding-acceptance anchor header or review status is invalid"
+    anchor_id = str(acceptance_anchor.get("anchor_id", ""))
+    hash_fields = (
+        "accepted_binding_map_digest",
+        "accepted_binding_semantics_digest",
+        "accepted_source_manifest_digest",
+    )
+    if not anchor_id or any(
+        re.fullmatch(r"[0-9a-f]{64}", str(acceptance_anchor.get(field, "")))
+        is None
+        for field in hash_fields
+    ):
+        return "binding-acceptance anchor identities are missing or malformed"
+    if (
+        re.fullmatch(
+            r"[0-9a-f]{40}",
+            str(acceptance_anchor.get("accepted_source_revision", "")),
+        )
+        is None
+    ):
+        return "binding-acceptance anchor source revision is malformed"
+    actual = {
+        "accepted_binding_map_digest": bindings.get("binding_map_digest"),
+        "accepted_source_revision": bindings.get("source_revision"),
+        "accepted_binding_semantics_digest": binding_semantics_digest(bindings),
+        "accepted_source_manifest_digest": binding_source_manifest_digest(bindings),
+    }
+    mismatched = [
+        field
+        for field, value in actual.items()
+        if acceptance_anchor.get(field) != value
+    ]
+    if mismatched:
+        return (
+            "self-consistent binding map is pending independent review; "
+            f"anchor mismatches {mismatched}"
+        )
+    return None
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -261,6 +432,9 @@ def validate_bundle(
     bundle: dict[str, Any],
     policy: dict[str, Any],
     active_rule_ids: set[str] | None = None,
+    *,
+    acceptance_anchor: Mapping[str, Any] | None = None,
+    trusted_anchor_digest: str | None = None,
 ) -> dict[str, Any]:
     """Validate one exact lock/receipt pair against current authorities."""
 
@@ -406,6 +580,8 @@ def validate_bundle(
             consolidation_policy, "policy_digest"
         ),
         "binding_map_digest": digest_without(bindings, "binding_map_digest"),
+        "binding_semantics_digest": binding_semantics_digest(bindings),
+        "binding_source_manifest_digest": binding_source_manifest_digest(bindings),
     }
     declared_authority_digests = {
         "registry_digest": registry.get("registry_digest"),
@@ -450,6 +626,19 @@ def validate_bundle(
             "BCF-014",
             "binding_map_digest",
             "accepted binding-map digest is stale",
+        )
+
+    acceptance_issue = binding_acceptance_issue(
+        bindings,
+        acceptance_anchor,
+        trusted_anchor_digest,
+    )
+    if acceptance_issue is not None:
+        add_issue(
+            issues,
+            "BCF-014",
+            "binding_acceptance_anchor",
+            acceptance_issue,
         )
 
     expected_rules = [
@@ -508,6 +697,8 @@ def validate_bundle(
         "selector_digest": selector.get("selector_digest"),
         "binding_map_digest": bindings.get("binding_map_digest"),
         "conformance_policy_digest": consolidation_policy.get("policy_digest"),
+        "binding_acceptance_status": "accepted",
+        "binding_acceptance_anchor_digest": trusted_anchor_digest,
     }
     for artifact_name, artifact in (("lock", lock), ("receipt", receipt)):
         for field, expected in artifact_expected.items():
@@ -517,7 +708,13 @@ def validate_bundle(
                 "BCF-013"
                 if field == "matrix_digest"
                 else "BCF-014"
-                if field in {"binding_map_digest", "source_revision"}
+                if field
+                in {
+                    "binding_map_digest",
+                    "source_revision",
+                    "binding_acceptance_status",
+                    "binding_acceptance_anchor_digest",
+                }
                 else "BCF-012"
             )
             add_issue(
@@ -2100,6 +2297,10 @@ def validate_bundle(
         if binding_drift
         else "current",
         "claim_qualified_artifacts_blocked": binding_drift,
+        "binding_acceptance_status": "stale_pending_review"
+        if binding_drift
+        else "accepted",
+        "binding_acceptance_anchor_digest": trusted_anchor_digest,
         "actual_authority_digests": actual_authority_digests,
         "pathway_binding_count": len(lock_bindings),
         "composition_binding_count": len(lock_compositions),
@@ -2131,6 +2332,15 @@ def main() -> int:
             "implementation/evidence/causal-pathway-binding/i115-native-pathway.receipt.json"
         ),
     )
+    parser.add_argument(
+        "--acceptance-anchor",
+        type=Path,
+        help="independently supplied binding/source acceptance-anchor record",
+    )
+    parser.add_argument(
+        "--trusted-anchor-digest",
+        help="externally trusted SHA-256 of the acceptance-anchor record",
+    )
     parser.add_argument("--output", type=Path)
     parser.add_argument(
         "--active-rule",
@@ -2154,6 +2364,12 @@ def main() -> int:
         bundle,
         policy,
         active_rule_ids=set(args.active_rule) if args.active_rule else None,
+        acceptance_anchor=(
+            load_json(resolve(args.acceptance_anchor))
+            if args.acceptance_anchor is not None
+            else None
+        ),
+        trusted_anchor_digest=args.trusted_anchor_digest,
     )
     result["policy_digest"] = policy.get("policy_digest")
     result["conformance_digest"] = canonical_digest(result)

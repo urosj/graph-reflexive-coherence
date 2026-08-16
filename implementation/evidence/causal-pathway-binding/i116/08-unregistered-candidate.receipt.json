@@ -151,7 +151,9 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "5511f020231b16190896b2c9c8464f56d9841a3754e05e5446063dcb86365455",
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
+  "binding_lock_digest": "33ecd5fd5caf7ad54d69a7c776f2a2f33af76f55eb1c8f5114c2ce4c0124c78d",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
@@ -478,7 +480,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "6f3c016edb17acdaf074ceaa1ce48d6f3e3eb82a66c10499a1bcceb1ccfb127f",
+  "receipt_digest": "d2811d3de2f2b482ed995be46ed40f70dcf9e7b1aece89b60fc21909649f8cb6",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

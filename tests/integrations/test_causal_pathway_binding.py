@@ -2,12 +2,16 @@
 
 from __future__ import annotations
 
+import copy
+import json
 import unittest
 from pathlib import Path
-from typing import ClassVar
+from typing import Any, ClassVar
 from unittest.mock import patch
 
+import pygrc.causal_pathways.binding as binding_module
 from pygrc.causal_pathways import (
+    AuthorityDriftError,
     BindingStateError,
     CausalPathwayAuthority,
     InvalidCandidateError,
@@ -24,6 +28,14 @@ from pygrc.core import PortGraphBackend
 from pygrc.models import GRC9V3, LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
 
 ROOT = Path(__file__).resolve().parents[2]
+ACCEPTANCE_ANCHOR_PATH = (
+    ROOT
+    / "implementation/evidence/causal-pathway-binding/"
+    "binding-acceptance-anchor.json"
+)
+TRUSTED_ACCEPTANCE_ANCHOR_DIGEST = (
+    "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709"
+)
 CANDIDATE_EVIDENCE_PATH = Path(
     "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json"
 )
@@ -36,6 +48,16 @@ def _candidate_mechanism_evidence() -> dict[str, str]:
         "path": CANDIDATE_EVIDENCE_PATH.as_posix(),
         "sha256": sha256_file(ROOT / CANDIDATE_EVIDENCE_PATH),
     }
+
+
+def _accepted_authority() -> CausalPathwayAuthority:
+    return CausalPathwayAuthority.load(
+        ROOT,
+        acceptance_anchor=json.loads(
+            ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8")
+        ),
+        trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+    )
 
 
 def _two_node_runtime() -> LGRC9V3:
@@ -82,7 +104,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.authority = CausalPathwayAuthority.load(ROOT)
+        cls.authority = _accepted_authority()
 
     def test_authority_loads_complete_current_stage_map(self) -> None:
         self.assertEqual(
@@ -97,6 +119,104 @@ class CausalPathwayBindingTest(unittest.TestCase):
             ("packet_schedule", "source_debit", "target_credit"),
             self.authority.stage_ids("lgrc9v3.explicit_packet_transport"),
         )
+        self.assertEqual("accepted", self.authority.binding_acceptance_status)
+        self.assertEqual(
+            TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+            self.authority.binding_acceptance_anchor_digest,
+        )
+
+    def test_self_consistent_authority_without_anchor_cannot_freeze(self) -> None:
+        authority = CausalPathwayAuthority.load(ROOT)
+        self.assertEqual(
+            "pending_independent_review",
+            authority.binding_acceptance_status,
+        )
+        session = PathwayBindingSession(authority)
+        session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        with self.assertRaisesRegex(
+            AuthorityDriftError,
+            "pending independent review",
+        ):
+            session.freeze_lock()
+
+    def test_anchor_rejects_self_consistent_p1_to_p2_map(self) -> None:
+        original_load = binding_module._load_json
+
+        def mutated_load(path: Path) -> dict[str, Any]:
+            document = copy.deepcopy(original_load(path))
+            if path.name != "grc-lgrc-causal-pathway-bindings.json":
+                return document
+            stage = next(
+                item
+                for item in document["stage_bindings"]
+                if item["pathway_id"] == "lgrc9v3.explicit_packet_transport"
+                and item["stage_id"] == "packet_schedule"
+            )
+            stage["symbols"][0]["qualified_symbol"] = "LGRC9V3.step"
+            document["binding_map_digest"] = canonical_digest(
+                document,
+                excluding="binding_map_digest",
+            )
+            return document
+
+        anchor = json.loads(ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8"))
+        with (
+            patch(
+                "pygrc.causal_pathways.binding._load_json",
+                side_effect=mutated_load,
+            ),
+            self.assertRaisesRegex(AuthorityDriftError, "pending independent review"),
+        ):
+            CausalPathwayAuthority.load(
+                ROOT,
+                acceptance_anchor=anchor,
+                trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+            )
+
+    def test_anchor_rejects_self_consistent_false_source_revision(self) -> None:
+        original_load = binding_module._load_json
+
+        def mutated_load(path: Path) -> dict[str, Any]:
+            document = copy.deepcopy(original_load(path))
+            if path.name != "grc-lgrc-causal-pathway-bindings.json":
+                return document
+            document["source_revision"] = "0" * 40
+            document["binding_map_digest"] = canonical_digest(
+                document,
+                excluding="binding_map_digest",
+            )
+            return document
+
+        anchor = json.loads(ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8"))
+        with (
+            patch(
+                "pygrc.causal_pathways.binding._load_json",
+                side_effect=mutated_load,
+            ),
+            self.assertRaisesRegex(AuthorityDriftError, "pending independent review"),
+        ):
+            CausalPathwayAuthority.load(
+                ROOT,
+                acceptance_anchor=anchor,
+                trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+            )
+
+    def test_anchor_record_cannot_replace_external_trusted_digest(self) -> None:
+        anchor = json.loads(ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8"))
+        forged_digest = "0" * 64
+
+        with self.assertRaisesRegex(
+            AuthorityDriftError,
+            "not the independently trusted record",
+        ):
+            CausalPathwayAuthority.load(
+                ROOT,
+                acceptance_anchor=anchor,
+                trusted_anchor_digest=forged_digest,
+            )
 
     def test_unknown_admitted_identity_fails_closed(self) -> None:
         session = PathwayBindingSession(self.authority)

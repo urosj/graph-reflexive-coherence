@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import copy
 import importlib.util
 import json
@@ -68,6 +69,24 @@ def write_json(path: Path, value: Any) -> None:
     )
 
 
+def load_acceptance_anchor(path: Path) -> dict[str, Any]:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise TypeError("binding-acceptance anchor must contain a JSON object")
+    return value
+
+
+def load_accepted_authority(
+    acceptance_anchor: dict[str, Any],
+    trusted_anchor_digest: str,
+) -> CausalPathwayAuthority:
+    return CausalPathwayAuthority.load(
+        ROOT,
+        acceptance_anchor=acceptance_anchor,
+        trusted_anchor_digest=trusted_anchor_digest,
+    )
+
+
 def git(*args: str) -> str:
     return subprocess.check_output(
         ["git", *args],
@@ -106,9 +125,14 @@ def _two_node_runtime() -> LGRC9V3:
     return LGRC9V3.from_state(state, {"dt": 1.0})
 
 
-def build_positive_fixture() -> None:
+def build_positive_fixture(
+    acceptance_anchor: dict[str, Any],
+    trusted_anchor_digest: str,
+) -> None:
     model = _two_node_runtime()
-    session = PathwayBindingSession(CausalPathwayAuthority.load(ROOT))
+    session = PathwayBindingSession(
+        load_accepted_authority(acceptance_anchor, trusted_anchor_digest)
+    )
     packet = session.bind_pathway(
         "lgrc9v3.explicit_packet_transport",
         stage_ids=("packet_schedule",),
@@ -127,8 +151,15 @@ def build_positive_fixture() -> None:
     receipt.write(RECEIPT_PATH)
 
 
-def build_policy(checker: Any) -> dict[str, Any]:
-    authority = CausalPathwayAuthority.load(ROOT)
+def build_policy(
+    checker: Any,
+    acceptance_anchor: dict[str, Any],
+    trusted_anchor_digest: str,
+) -> dict[str, Any]:
+    authority = load_accepted_authority(
+        acceptance_anchor,
+        trusted_anchor_digest,
+    )
     accepted = dict(authority.artifact_identities())
     policy = {
         "artifact": "GRC/LGRC causal pathway binding conformance policy",
@@ -153,8 +184,9 @@ def build_policy(checker: Any) -> dict[str, Any]:
             for rule_id, description in checker.RULES
         ],
         "staleness_rule": (
-            "binding-map, symbol, or source drift becomes stale_pending_review "
-            "and blocks claim-qualified artifacts until versioned re-admission"
+            "A missing or mismatched independent acceptance anchor, binding-map "
+            "drift, symbol drift, or source drift becomes stale_pending_review "
+            "and blocks claim-qualified artifacts until reviewed re-admission"
         ),
         "candidate_promotion_automated": False,
         "runtime_dispatcher_created": False,
@@ -341,17 +373,61 @@ def apply_negative_mutation(case_id: str, bundle: dict[str, Any]) -> None:
         raise ValueError(case_id)
 
 
-def main() -> int:
+def apply_independent_anchor_mutation(
+    case_id: str,
+    bundle: dict[str, Any],
+    policy: dict[str, Any],
+    checker: Any,
+) -> None:
+    """Keep candidate artifacts self-consistent while violating external review."""
+
+    if case_id == "BNC-014-COORDINATED-P1-P2":
+        stage = next(
+            item
+            for item in bundle["bindings"]["stage_bindings"]
+            if item["pathway_id"] == "lgrc9v3.explicit_packet_transport"
+            and item["stage_id"] == "packet_schedule"
+        )
+        stage["symbols"][0]["qualified_symbol"] = "LGRC9V3.step"
+    elif case_id == "BNC-014-FALSE-REVISION":
+        bundle["bindings"]["source_revision"] = "0" * 40
+        bundle["lock"]["source_revision"] = "0" * 40
+        bundle["receipt"]["source_revision"] = "0" * 40
+    else:
+        raise ValueError(case_id)
+    map_digest = checker.digest_without(
+        bundle["bindings"],
+        "binding_map_digest",
+    )
+    bundle["bindings"]["binding_map_digest"] = map_digest
+    bundle["lock"]["binding_map_digest"] = map_digest
+    bundle["receipt"]["binding_map_digest"] = map_digest
+    policy["accepted_digests"]["binding_map_digest"] = map_digest
+    policy["policy_digest"] = checker.digest_without(policy, "policy_digest")
+
+
+def main(
+    *,
+    acceptance_anchor_path: Path,
+    trusted_anchor_digest: str,
+) -> int:
     checker = load_checker()
-    policy = build_policy(checker)
+    acceptance_anchor = load_acceptance_anchor(acceptance_anchor_path)
+    policy = build_policy(checker, acceptance_anchor, trusted_anchor_digest)
     write_json(POLICY_PATH, policy)
-    build_positive_fixture()
+    build_positive_fixture(acceptance_anchor, trusted_anchor_digest)
     base_bundle = checker.load_bundle(
         ROOT,
         lock_path=LOCK_PATH,
         receipt_path=RECEIPT_PATH,
     )
-    execution = checker.validate_bundle(ROOT, copy.deepcopy(base_bundle), policy)
+    execution = checker.validate_bundle(
+        ROOT,
+        copy.deepcopy(base_bundle),
+        policy,
+        acceptance_anchor=acceptance_anchor,
+        trusted_anchor_digest=trusted_anchor_digest,
+    )
     execution["policy_digest"] = policy["policy_digest"]
     execution["conformance_digest"] = checker.canonical_digest(execution)
     write_json(EXECUTION_PATH, execution)
@@ -363,7 +439,13 @@ def main() -> int:
     for case_id, description, expected_rule in NEGATIVE_CASES:
         mutated = copy.deepcopy(base_bundle)
         apply_negative_mutation(case_id, mutated)
-        outcome = checker.validate_bundle(ROOT, mutated, policy)
+        outcome = checker.validate_bundle(
+            ROOT,
+            mutated,
+            policy,
+            acceptance_anchor=acceptance_anchor,
+            trusted_anchor_digest=trusted_anchor_digest,
+        )
         triggered = sorted({issue["rule_id"] for issue in outcome["issues"]})
         control_rows.append(
             {
@@ -384,6 +466,8 @@ def main() -> int:
             mutated,
             policy,
             active_rule_ids={expected_rule},
+            acceptance_anchor=acceptance_anchor,
+            trusted_anchor_digest=trusted_anchor_digest,
         )
         isolated_triggered = sorted({issue["rule_id"] for issue in isolated["issues"]})
         isolation_rows.append(
@@ -404,7 +488,58 @@ def main() -> int:
 
     drift_bundle = copy.deepcopy(base_bundle)
     apply_negative_mutation("BNC-014", drift_bundle)
-    drift_outcome = checker.validate_bundle(ROOT, drift_bundle, policy)
+    drift_outcome = checker.validate_bundle(
+        ROOT,
+        drift_bundle,
+        policy,
+        acceptance_anchor=acceptance_anchor,
+        trusted_anchor_digest=trusted_anchor_digest,
+    )
+    anchor_control_rows = []
+    for case_id, description in (
+        (
+            "BNC-014-COORDINATED-P1-P2",
+            "coordinated packet-schedule to step map and policy re-admission",
+        ),
+        (
+            "BNC-014-FALSE-REVISION",
+            "coordinated false source-revision and policy re-admission",
+        ),
+    ):
+        mutated = copy.deepcopy(base_bundle)
+        mutated_policy = copy.deepcopy(policy)
+        apply_independent_anchor_mutation(
+            case_id,
+            mutated,
+            mutated_policy,
+            checker,
+        )
+        outcome = checker.validate_bundle(
+            ROOT,
+            mutated,
+            mutated_policy,
+            active_rule_ids={"BCF-014"},
+            acceptance_anchor=acceptance_anchor,
+            trusted_anchor_digest=trusted_anchor_digest,
+        )
+        triggered = sorted({issue["rule_id"] for issue in outcome["issues"]})
+        anchor_control_rows.append(
+            {
+                "case_id": case_id,
+                "description": description,
+                "candidate_map_and_policy_self_consistent": True,
+                "triggered_rule_ids": triggered,
+                "binding_staleness_state": outcome["binding_staleness_state"],
+                "status": (
+                    "passed"
+                    if outcome["status"] == "failed_closed"
+                    and triggered == ["BCF-014"]
+                    and outcome["binding_staleness_state"]
+                    == "stale_pending_review"
+                    else "failed_open"
+                ),
+            }
+        )
     negative = {
         "artifact": "Phase 8 GRC/LGRC causal pathway binding I115 negative-control execution",
         "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
@@ -427,11 +562,17 @@ def main() -> int:
         "binding_drift_control_becomes_stale_pending_review": (
             drift_outcome["binding_staleness_state"] == "stale_pending_review"
         ),
+        "independent_anchor_control_count": len(anchor_control_rows),
+        "independent_anchor_controls": anchor_control_rows,
+        "independent_anchor_failed_open_count": sum(
+            row["status"] == "failed_open" for row in anchor_control_rows
+        ),
     }
     negative["status"] = (
         "passed"
         if negative["failed_open_count"] == 0
         and negative["rule_isolation_failed_open_count"] == 0
+        and negative["independent_anchor_failed_open_count"] == 0
         and negative["binding_drift_control_becomes_stale_pending_review"]
         else "failed"
     )
@@ -443,4 +584,13 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--acceptance-anchor", type=Path, required=True)
+    parser.add_argument("--trusted-anchor-digest", required=True)
+    arguments = parser.parse_args()
+    raise SystemExit(
+        main(
+            acceptance_anchor_path=arguments.acceptance_anchor,
+            trusted_anchor_digest=arguments.trusted_anchor_digest,
+        )
+    )

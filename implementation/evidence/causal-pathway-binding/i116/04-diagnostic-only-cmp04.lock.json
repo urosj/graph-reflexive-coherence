@@ -1,6 +1,8 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
+  "binding_acceptance_anchor_digest": "f4cbc8519437c5c982c2c777fc50c7d61292708a7dd565e0d863416d2bfef709",
+  "binding_acceptance_status": "accepted",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
@@ -115,7 +117,7 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "f77b9a7ddad9b774e3814bb44f626da7f6517edf9d00471d8d11162ed35e477a",
+  "lock_digest": "1664fdae82d46e2f930f8ef1d0e6b5e5e325d068b7d1d71ccd5ae581ea75b2da",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
