@@ -1,0 +1,40 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway consolidation Iteration 107 artifact freeze",
+  "iteration": 107,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "i106_artifact_bundle_digest": "65b4f85eaeffde94c69f10f544488bd08e26909c2de2c875d7d22ae568583f8c",
+  "artifacts": [
+    {
+      "path": "scripts/build_phase8_causal_pathway_i107.py",
+      "sha256": "dbbb9dce800d7783c7d78b942973949caa0bbd205eeab00674ba1e147298631a",
+      "revision": "iteration_107_working_artifact",
+      "evidence_role": "iteration_107_artifact"
+    },
+    {
+      "path": "specs/grc-lgrc-causal-pathway-evidence-crosswalk.json",
+      "sha256": "01b72cd8ddb9be58ee3db6684218829219601c88c85ac91617e76907eb1e0f05",
+      "revision": "iteration_107_working_artifact",
+      "evidence_role": "iteration_107_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107TestExecution.json",
+      "sha256": "3d9451c4fc9a82e22a6bed3a6972d9668896a1ecb9d44e86b7e3aa69e961c859",
+      "revision": "iteration_107_working_artifact",
+      "evidence_role": "iteration_107_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.json",
+      "sha256": "11be323e3820c7d3af3090ec8863fa477f1558fe2cbc5cd8485fa76e7dc709eb",
+      "revision": "iteration_107_working_artifact",
+      "evidence_role": "iteration_107_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.md",
+      "sha256": "6f91959443a457a89ef9eb6a559f7989a04e3b45ae7a642c2dfc5a322045454f",
+      "revision": "iteration_107_working_artifact",
+      "evidence_role": "iteration_107_artifact"
+    }
+  ],
+  "artifact_bundle_digest": "8bb201a0a061210407bc8230f879663c92a5967351efa6594d7f93c6c44f7889",
+  "runtime_behavior_changed": false
+}

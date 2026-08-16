@@ -1,0 +1,170 @@
+{
+  "artifact": "GRC/LGRC causal pathway conformance policy",
+  "schema_version": "grc_lgrc_causal_pathway_conformance_policy_v1",
+  "iteration": 110,
+  "status": "frozen",
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "accepted_digests": {
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+    "i108_artifact_bundle_digest": "d2bd07c662acc7185f1e5cb62c03d48c9a2469f96511ec3cefd1dfde75eec8d3",
+    "i109_artifact_bundle_digest": "d61a2189d016c0213ae89942db3d36515fa02de6d6f9519e47203e2f2cc306c9",
+    "i108_reconciliation_digest": "27d120cce54f47bde1ed399735134cd5537a588cf7986000141d5804d7b64756",
+    "i109_reconciliation_digest": "06327b2bb019b2ad83287fbf1baaf5ae58104074a88a2c8cef4b2a0c54185dad"
+  },
+  "rules": [
+    {
+      "rule_id": "CF-001",
+      "description": "Accepted artifact and predecessor digests must match.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-002",
+      "description": "Registry entries and stages must satisfy the frozen schema and version fields.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-003",
+      "description": "Referenced repository paths and SHA-256 values must resolve.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-004",
+      "description": "Every pathway and stage must expose complete time, space, and authority coordinates.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-005",
+      "description": "Native and native-with-configured-semantics stages must retain current test evidence.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-006",
+      "description": "Producer pathways and compositions must retain explicit producer ownership.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-007",
+      "description": "Composition endpoints, statuses, and crossing evidence must satisfy matrix rules.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-008",
+      "description": "Explicit-adapter compositions must retain adapter identity and non-native ownership.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-009",
+      "description": "Registered missing crossings must remain explicit absences rather than endpoint inference.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-010",
+      "description": "Diagnostic-only crossings must not be promoted to behavioral crossings.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-011",
+      "description": "Configured routes and candidates must not be promoted to formed routes or candidates.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-012",
+      "description": "Selection results must resolve to current pathway and composition identities.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-013",
+      "description": "Unregistered pairs must remain unclassified until a source audit registers them.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-014",
+      "description": "Ambiguous registered crossings must retain all alternatives until semantics disambiguate them.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-015",
+      "description": "Composition status must not be used as a maturity score.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-016",
+      "description": "Selection must not authorize an extension.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-017",
+      "description": "Substrate selection must not infer ecological or agentic meaning.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-018",
+      "description": "Relevant source drift must fail closed as stale_pending_review.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-019",
+      "description": "Registry, crosswalk, matrix, and selector authority must remain non-overlapping.",
+      "severity": "fail_closed"
+    },
+    {
+      "rule_id": "CF-020",
+      "description": "The consolidation bundle must not claim runtime behavior changes or behavioral repair.",
+      "severity": "fail_closed"
+    }
+  ],
+  "artifact_authority": {
+    "registry_projection": {
+      "registry": "intrinsic pathway and stage facts",
+      "crosswalk": "source specification test and evidence relations",
+      "composition_matrix": "directional inter-pathway relations",
+      "selection_guide": "derived explanation only"
+    },
+    "selector_rule": "registry owns pathway facts; crosswalk owns evidence attachment; matrix owns directional crossing facts; selector only derives selection outcomes"
+  },
+  "staleness_rule": "relevant source or accepted-artifact digest drift fails closed; affected pathway must become stale_pending_review before re-admission",
+  "supersession_rule": "superseded artifacts remain provenance and cannot act as alternate accepted predecessors",
+  "i109_supersession": {
+    "superseded_working_bundle_digest": "6e6aa217f9eb95d22e48b25f36b8dfb79a52adaa8dc20bb16f76be87bc81dbcf",
+    "superseded_selector_digest": "4f6306b7cde805e6331e31e9efe5e575d7c43e081094dbd7b73511b2e3305d22",
+    "accepted_current_bundle_digest": "d61a2189d016c0213ae89942db3d36515fa02de6d6f9519e47203e2f2cc306c9",
+    "accepted_current_selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+    "reconciliation_digest": "06327b2bb019b2ad83287fbf1baaf5ae58104074a88a2c8cef4b2a0c54185dad"
+  },
+  "readmission_lifecycle": {
+    "ordered_steps": [
+      "detect relevant source or authority-artifact drift",
+      "mark affected pathways stale_pending_review and block dependent selection",
+      "derive affected stages pathways compositions and selection cases from current dependency references",
+      "rerun affected I106 classification and source digests",
+      "rerun affected I107 source test evidence and claim ceilings",
+      "rerun affected I108 directional crossings and controls",
+      "rerun affected I109 selections and ambiguity handling",
+      "issue versioned successor artifacts and explicit supersession records",
+      "update accepted digests prospectively after review",
+      "run full I110 conformance global negatives and rule isolation",
+      "restore current status only after every affected dependency passes"
+    ],
+    "dependency_scoped_where_complete": true,
+    "full_reaudit_when_dependency_scope_is_incomplete": true,
+    "accepted_digests_updated_only_after_review": true,
+    "stale_state_cannot_self_authorize_readmission": true,
+    "dependency_scope": {
+      "source_to_stage": "pathway_implementation_refs and cross-cutting dependency refs",
+      "stage_to_pathway": "pathway_id plus stage_id",
+      "pathway_to_composition": "from_pathway_id and to_pathway_id",
+      "composition_to_selection": "required_directional_composition_id and registered alternatives"
+    },
+    "documentation_neutral_change_rule": "A change outside the declared dependency closure does not stale unrelated pathways; uncertainty in dependency coverage requires the broader re-audit.",
+    "readmission_claim_rule": "A successor becomes current only through versioned artifacts, explicit supersession, refreshed evidence and crossings, full conformance, and fail-closed controls."
+  },
+  "repair_rule": "behavioral discrepancies open a separate repair identity",
+  "behavioral_repair_allowed": false,
+  "runtime_dispatcher_created": false,
+  "experiment_declaration_guidance": "Substantial experiments may declare consumed pathway IDs, producer additions, diagnostic surfaces, attempted compositions, and missing crossings when useful; this is review guidance rather than universal boilerplate.",
+  "runtime_behavior_changed": false,
+  "policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9"
+}

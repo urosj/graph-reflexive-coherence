@@ -1,0 +1,53 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway consolidation Iteration 109 artifact freeze",
+  "schema_version": "phase8_grclgrc_causal_pathway_iteration_109_artifact_freeze_v1",
+  "iteration": 109,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "i108_artifact_bundle_digest": "d2bd07c662acc7185f1e5cb62c03d48c9a2469f96511ec3cefd1dfde75eec8d3",
+  "artifacts": [
+    {
+      "path": "scripts/build_phase8_causal_pathway_i109.py",
+      "sha256": "faf56a36c5ebd120db187116761805fb79fb2a1235c1095ea87ef0558a52a141",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    },
+    {
+      "path": "specs/grc-lgrc-causal-pathway-selection-guide.json",
+      "sha256": "6cb4c1b320df9725e2c7347216ad00fbb19c3231ce03b8fc7a10fc5228c770cc",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    },
+    {
+      "path": "docs/reference/GRC-LGRC-CausalPathwayGuide.md",
+      "sha256": "04cf215d99681d025bc0868efe89206da3af00124155a7f0a98a1fc56d699c91",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ValidationExecution.json",
+      "sha256": "5ea5cc3dc2f8cfe6451cb9f13589d32447009e928e1c047281f3f796738af985",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactBundleSupersession.json",
+      "sha256": "f04399944b99c3a47af069f7d26d467bb7d166f2819e4a887564b72acd8b76ae",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.json",
+      "sha256": "52948c3ae3b0b04416944531f5aae72acc64bbf8d0e175d0763b9934ca280ab1",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md",
+      "sha256": "bf2188ffe5c46b7056b21939449699bf74221f8b02c2a4e8362c681f2a6f45c5",
+      "revision": "iteration_109_working_artifact",
+      "evidence_role": "iteration_109_artifact"
+    }
+  ],
+  "artifact_bundle_digest": "d61a2189d016c0213ae89942db3d36515fa02de6d6f9519e47203e2f2cc306c9",
+  "runtime_behavior_changed": false
+}

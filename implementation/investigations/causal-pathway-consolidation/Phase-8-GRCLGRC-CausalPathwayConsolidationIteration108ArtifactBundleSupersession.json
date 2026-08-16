@@ -1,0 +1,27 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway Iteration 108 artifact-bundle supersession",
+  "schema_version": "phase8_grclgrc_causal_pathway_i108_artifact_bundle_supersession_v1",
+  "status": "reconciled",
+  "recorded_during_iteration": 109,
+  "superseded_working_bundle_digest": "475ba6a76adc00515f63e16f9e9f75c8d56077fe2784d8657ac8f2442c495148",
+  "accepted_current_bundle_digest": "d2bd07c662acc7185f1e5cb62c03d48c9a2469f96511ec3cefd1dfde75eec8d3",
+  "accepted_current_freeze_path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactFreeze.json",
+  "accepted_current_freeze_sha256": "3789d02f6413d5a0f262b67dc61cef6ffc718e802952c27d9e0eaa1c385ae4cb",
+  "transition_reason": "Post-I108 review integration clarified that composition status is not maturity and that a missing crossing does not itself authorize an extension.",
+  "changed_artifact_paths": [
+    "scripts/build_phase8_causal_pathway_i108.py",
+    "docs/reference/GRC-LGRC-CompositionMatrix.md",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md"
+  ],
+  "unchanged_scientific_artifact_digests": {
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "result_digest": "559a82d28edbf89232a24a00af99c66659b56a42eca6974484a6ecddc3d35c3c",
+    "crossing_test_execution_digest": "e196fa7c8f44ed99da22426e8f800eb2f30c262881b6c61a1246eb40cf756843"
+  },
+  "matrix_classification_changed": false,
+  "crossing_test_set_or_result_changed": false,
+  "runtime_behavior_changed": false,
+  "historical_bundle_bytes_retained_as_current_artifact": false,
+  "authority_rule": "I109 and later iterations consume only accepted_current_bundle_digest; the superseded digest remains provenance, not an alternate predecessor.",
+  "reconciliation_digest": "27d120cce54f47bde1ed399735134cd5537a588cf7986000141d5804d7b64756"
+}

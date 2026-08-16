@@ -108,13 +108,24 @@ reopening this closeout.
 
 ## Iteration 10: GRC/LGRC Causal Pathway Reference
 
-- [ ] Complete the draft [causal pathway selection guide](../docs/reference/GRC-LGRC-CausalPathwayGuide.md).
-- [ ] Complete the draft [causal pathway composition matrix](../docs/reference/GRC-LGRC-CompositionMatrix.md).
-- [ ] Freeze the supporting registry and source/test/evidence crosswalk under the
+- [x] Complete the [causal pathway selection guide](../docs/reference/GRC-LGRC-CausalPathwayGuide.md).
+- [x] Complete the [causal pathway composition matrix](../docs/reference/GRC-LGRC-CompositionMatrix.md).
+- [x] Freeze the supporting registry and source/test/evidence crosswalk under the
   separate Phase 8 consolidation tranche.
-- [ ] Validate that the guides preserve configured, producer-mediated,
+- [x] Validate that the guides preserve configured, producer-mediated,
   diagnostic, and native-behavior distinctions.
 
-Status: draft. Phase 8 Iteration 105 froze the initial source anchor and
-twelve-family admission census; Iterations 106-111 remain pending and these
-guides are not yet normative selection or composition authorities.
+Status: selection and conformance surfaces complete. Phase 8 Iteration 110 froze
+the source-complete V1 audit, 23-pathway registry, 52-row stage-local evidence
+crosswalk, 26-row directional composition matrix, evidence-derived worked
+selection guide, and 20-rule machine conformance policy. Iteration 111 then
+closed the tranche with 22 expert-normalized pressure descriptions across 11
+categories, seven raw-domain demands, and one answer-free blind replay frozen
+before separate oracle validation. The raw layer includes pathway-only and
+genuinely unregistered outcomes. The conformance surface includes 20 global
+negative controls, 19 target-only rule-isolation controls, explicit I109/I110
+provenance reconciliation, and versioned stale-to-reviewed re-admission.
+The six I106-I111 reproducibility builders are stored under `scripts/`, with
+their source-audit and supporting evidence indexed under
+`implementation/investigations/causal-pathway-consolidation/` and their
+path-only evidence-identity migrations recorded explicitly.

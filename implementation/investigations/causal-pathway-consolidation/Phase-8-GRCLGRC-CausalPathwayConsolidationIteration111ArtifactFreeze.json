@@ -1,0 +1,98 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway consolidation Iteration 111 artifact freeze",
+  "schema_version": "phase8_grclgrc_causal_pathway_iteration_111_artifact_freeze_v1",
+  "iteration": 111,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "i110_artifact_bundle_digest": "510f442c38d12018cec20951136019319895866b3e74c3fe57c8db48cddd079b",
+  "i110_reconciliation_digest": "bdfd7d70d9def96c994f21715c5eba7ac2174721d8853e1fcbd3f37c866473c8",
+  "layout_relocation_digest": "d73f7abcf85a043b8bff8706954eb3393fd0e530f68cc36d1643462574f2f561",
+  "artifacts": [
+    {
+      "path": "scripts/build_phase8_causal_pathway_i111.py",
+      "sha256": "fcaa7730611246d6a6965d5531e21f8adab9849c039564aa10007186e3dd4db8",
+      "artifact_role": "reproducible_builder"
+    },
+    {
+      "path": "scripts/check_grc_lgrc_pressure_consumer_selection.py",
+      "sha256": "9ab7b1e6ed0dd9ee63ab28c809262463331a598a1495ccfac598ee2a02ac54b3",
+      "artifact_role": "blind_replay_checker"
+    },
+    {
+      "path": "scripts/validate_grc_lgrc_pressure_consumer_recovery.py",
+      "sha256": "14312402ac1a293495ccea941fceafef9d63bcd00b0167a13270bc639e01770d",
+      "artifact_role": "post_freeze_oracle_validator"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationLayoutRelocation.json",
+      "sha256": "ab4168c1a2d00a3be712c38989b0e6e5d799fab4961a65325c67d3f81f97c378",
+      "artifact_role": "layout_relocation_reconciliation"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactBundleSupersession.json",
+      "sha256": "40733e91859bbc92584d1f4ce01287804824bb8eaa03475391ec1f026321b376",
+      "artifact_role": "i110_predecessor_reconciliation"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111PressureConsumerDescriptions.json",
+      "sha256": "59f03a1d9a93d2f6dd9e7f421db82c2c469471f7480348fce9c86733b86be739",
+      "artifact_role": "bounded_consumer_descriptions"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111PressureConsumerExecution.json",
+      "sha256": "f8084fa250c3407952e8ae593e871e894db2e258034e256d8a14b09490a95da3",
+      "artifact_role": "pressure_execution"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111RawDemandDescriptions.json",
+      "sha256": "f7efe63eeae61be4f7e7127687c41f9b8b7d6681e973ef19484566aa76685c34",
+      "artifact_role": "raw_domain_descriptions"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111RawDemandExecution.json",
+      "sha256": "64c1f8adc1184281185434c3e2c57d55fe7769425ba0cb9a4b5999f5d42a708b",
+      "artifact_role": "raw_domain_execution"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerBlindInput.json",
+      "sha256": "4a47097dd97c846f9690f52a305a78a1ea83537c3508124a9a932ec5ee8470c4",
+      "artifact_role": "blind_consumer_input"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayExecution.json",
+      "sha256": "ea99d74f14f223cff4d5c6887b0680f2fc19d6acb794a66097617136d2c525a0",
+      "artifact_role": "blind_replay_execution"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayFreeze.json",
+      "sha256": "d96a31e303c694bae832ba4744b809660743b114f31239e78b1daf90fe6aab6d",
+      "artifact_role": "blind_replay_freeze"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerExpectedRecovery.json",
+      "sha256": "5d427deb907267a779765d250fea4607a13d4c88cd06a0289c2aed942130f4b8",
+      "artifact_role": "separate_expected_recovery_oracle"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindValidationExecution.json",
+      "sha256": "1909de1f7b28cf966494b285c9e6e203ffd567560c3800cfbf1dcfb2842885cf",
+      "artifact_role": "post_freeze_oracle_validation"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.json",
+      "sha256": "5612f853515693a5f701b76769bd59e8c3c6c49898b57df9e187c6ba0e8fda7f",
+      "artifact_role": "iteration_result"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md",
+      "sha256": "76647f360dc3b7f4a959ff0b66ab3185a78e727861e0e81197fdee150dcda43a",
+      "artifact_role": "iteration_report"
+    },
+    {
+      "path": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md",
+      "sha256": "c9828c26b2dc0988327031010b0daa7727f7a86a94389e90b53a806329e80faa",
+      "artifact_role": "tranche_closeout"
+    }
+  ],
+  "artifact_bundle_digest": "a226fd7ce8a575cac11ff7c31c4b83695e3f3d820d4d138da456505a41868da2",
+  "runtime_behavior_changed": false
+}

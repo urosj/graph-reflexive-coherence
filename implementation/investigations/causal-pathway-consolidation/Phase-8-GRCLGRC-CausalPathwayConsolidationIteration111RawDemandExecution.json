@@ -1,0 +1,257 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 raw-domain demand interpretation execution",
+  "schema_version": "phase8_grclgrc_i111_raw_demand_execution_v1",
+  "iteration": 111,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "raw_description_digest": "d79488cb35a5ab4e1e937b177e2b6373b717b2ab62c08120dde32901a15d4aee",
+  "interpretation_boundary": "Expert-authored demand-to-substrate decomposition is visible and auditable; this is not automatic natural-language selection.",
+  "raw_demand_count": 7,
+  "raw_rows": [
+    {
+      "raw_demand_id": "RAW-01",
+      "consumer_language": "I already know the source, receiver, amount, and delay. I only need the amount to leave, remain in flight, and arrive without creating a second composition.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "explicit supplied packet lifecycle only",
+      "normalization_reason": "The demand supplies route, amount, and time and requires no crossing beyond packet transport.",
+      "selection_kind": "guide_case",
+      "resolution_kind": "existing_pathway",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "selected_composition_ids": [],
+      "adapter_owners": [
+        "none"
+      ],
+      "claim_ceiling": [
+        "native packet accounting and queue-processing mechanics"
+      ],
+      "blocked_claims": [
+        "substrate-formed route",
+        "native departure reason",
+        "agency"
+      ],
+      "missing_relation": "none",
+      "missing_crossing_claim": false,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "use selected bounded pathway/composition",
+      "status": "passed"
+    },
+    {
+      "raw_demand_id": "RAW-02",
+      "consumer_language": "A participant is depleted while nearby regions have excess capacity. I want current state to form possible receivers and decide a viable continuation without supplying a fixed target.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "state-conditioned surplus should form candidate receivers before native arbitration",
+      "normalization_reason": "The representative matrix contains no surplus-to-candidate-formation crossing; absence is not a missing-crossing finding.",
+      "selection_kind": "unregistered_pair",
+      "resolution_kind": "unregistered_not_classified",
+      "selected_pathway_ids": [
+        "lgrc9v3.route_aspect_surplus",
+        "lgrc9v3.native_route_arbitration"
+      ],
+      "selected_composition_ids": [],
+      "adapter_owners": [],
+      "claim_ceiling": "No composition or missing-crossing claim; the directional pair requires source audit and registration if retained.",
+      "blocked_claims": [
+        "unregistered pair as unsupported_missing_crossing",
+        "automatic extension authorization",
+        "native receiver or route formation"
+      ],
+      "missing_relation": "unclassified_directional_pair_requires_source_audit",
+      "missing_crossing_claim": false,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "source audit and new registration if the demand remains important",
+      "status": "passed"
+    },
+    {
+      "raw_demand_id": "RAW-03",
+      "consumer_language": "Several routes look possible. I want current sink compatibility to determine which route becomes scheduled rather than supplying the route myself.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "sink compatibility should author an event-time route schedule",
+      "normalization_reason": "The registered sink-choice-to-route-schedule crossing is explicitly absent.",
+      "selection_kind": "composition",
+      "resolution_kind": "precise_missing_crossing",
+      "selected_pathway_ids": [
+        "grc9v3.sink_compatibility_choice",
+        "lgrc9v3.configured_flux_route"
+      ],
+      "selected_composition_ids": [
+        "CMP-06"
+      ],
+      "adapter_owners": [
+        "none"
+      ],
+      "claim_ceiling": [
+        "Unsupported until an explicit admission and scheduling relation is supplied."
+      ],
+      "blocked_claims": [
+        "semantic choice",
+        "native route formation"
+      ],
+      "missing_relation": "LGRC runtime has no consumer of GRC9V3 choice_registry or collapse_registry",
+      "missing_crossing_claim": true,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "use selected bounded pathway/composition",
+      "status": "passed"
+    },
+    {
+      "raw_demand_id": "RAW-04",
+      "consumer_language": "A trace from earlier packet activity survives replay. I need to know whether persistence alone means later native behavior reads that trace.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "persisted ledger history should become a constitutive later read",
+      "normalization_reason": "Restoration retains ledger state but no native constitutive consumer reads it.",
+      "selection_kind": "composition",
+      "resolution_kind": "precise_missing_crossing",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "pygrc.restoration_replay_identity"
+      ],
+      "selected_composition_ids": [
+        "CMP-18"
+      ],
+      "adapter_owners": [
+        "none"
+      ],
+      "claim_ceiling": [
+        "Ledger persistence and replay identity only."
+      ],
+      "blocked_claims": [
+        "native Read-Back",
+        "memory-mediated action"
+      ],
+      "missing_relation": "restoration preserves packet ledger but no native constitutive consumer reads ledger history to alter later eligibility or geometry",
+      "missing_crossing_claim": true,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "use selected bounded pathway/composition",
+      "status": "passed"
+    },
+    {
+      "raw_demand_id": "RAW-05",
+      "consumer_language": "One participant changes a non-private trace and a later encounter with that trace should change whether another packet is scheduled.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "packet arrival records a surface, lineage is read by a producer, and producer eligibility schedules a later packet",
+      "normalization_reason": "Surface emission is native/configured, while both read-back eligibility and later scheduling remain producer-owned.",
+      "selection_kind": "composition_chain",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "lgrc9v3.causal_pulse_surface_lineage",
+        "lgrc9v3.feedback_eligibility_producer"
+      ],
+      "selected_composition_ids": [
+        "CMP-21",
+        "CMP-22",
+        "CMP-20"
+      ],
+      "adapter_owners": [
+        "native_with_configured_semantics",
+        "installed_producer",
+        "installed_producer"
+      ],
+      "claim_ceiling": [
+        "Native configured packet-to-surface recording mechanics.",
+        "Producer-mediated lineage-aware feedback scheduling.",
+        "Producer-mediated feedback eligibility followed by native packet mechanics."
+      ],
+      "blocked_claims": [
+        "native memory",
+        "Read-Back",
+        "lawful_native",
+        "native Read-Back",
+        "native feedback admission"
+      ],
+      "missing_relation": "none",
+      "missing_crossing_claim": false,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "use selected bounded pathway/composition",
+      "status": "passed"
+    },
+    {
+      "raw_demand_id": "RAW-06",
+      "consumer_language": "Local outward pressure at a capacity-bearing boundary should create and fund a child topology without treating birth eligibility as generic exchange admission.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "outward flux and configured front capacity admit topology-specific boundary birth",
+      "normalization_reason": "The native/configured birth crossing is registered and remains topology-specific.",
+      "selection_kind": "composition",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.boundary_birth"
+      ],
+      "selected_composition_ids": [
+        "CMP-13"
+      ],
+      "adapter_owners": [
+        "native_with_configured_semantics"
+      ],
+      "claim_ceiling": [
+        "Native configured boundary-birth mechanics only."
+      ],
+      "blocked_claims": [
+        "generic admission",
+        "semantic reproduction"
+      ],
+      "missing_relation": "none",
+      "missing_crossing_claim": false,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "use selected bounded pathway/composition",
+      "status": "passed"
+    },
+    {
+      "raw_demand_id": "RAW-07",
+      "consumer_language": "After a topology commit I want child-basin and flow-window records, but I need to know whether those records caused the basin or only describe it.",
+      "interpretation_owner": "I111 expert demand-to-substrate decomposition",
+      "normalization": "post-commit topology is projected into child-basin diagnostics",
+      "normalization_reason": "The records follow the commit and do not own topology mutation.",
+      "selection_kind": "composition",
+      "resolution_kind": "diagnostic_surface_only",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.multi_basin_record_validation"
+      ],
+      "selected_composition_ids": [
+        "CMP-24"
+      ],
+      "adapter_owners": [
+        "runtime_diagnostic_hook"
+      ],
+      "claim_ceiling": [
+        "Diagnostic records over a committed native/configured topology event."
+      ],
+      "blocked_claims": [
+        "basin formation by record",
+        "general robustness"
+      ],
+      "missing_relation": "none",
+      "missing_crossing_claim": false,
+      "extension_authorized": false,
+      "ecological_success_inferred": false,
+      "n32_selected": false,
+      "next_action": "use selected bounded pathway/composition",
+      "status": "passed"
+    }
+  ],
+  "unregistered_not_classified_count": 1,
+  "pathway_only_count": 1,
+  "misrouting_count": 0,
+  "ambiguity_threshold": {
+    "maximum_unresolved": 1,
+    "observed_unresolved": 0,
+    "status": "passed"
+  },
+  "unregistered_demand_does_not_claim_missing_crossing": true,
+  "pathway_only_demand_does_not_overcompose": true,
+  "status": "passed",
+  "runtime_behavior_changed": false,
+  "execution_digest": "98d8ea218070663d5e36527a063e16b14ad9067d3501441d6898be56bbb14787"
+}

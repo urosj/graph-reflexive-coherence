@@ -1,0 +1,96 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway I109 selection-case validation",
+  "schema_version": "phase8_grclgrc_causal_pathway_i109_validation_v1",
+  "iteration": 109,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "validation_kind": "deterministic_selection_contract_cases_not_runtime_tests",
+  "case_count": 10,
+  "cases": [
+    {
+      "case_id": "SEL-01",
+      "expected_resolution_kind": "existing_pathway",
+      "actual_resolution_kind": "existing_pathway",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-02",
+      "expected_resolution_kind": "existing_lawful_composition",
+      "actual_resolution_kind": "existing_lawful_composition",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-03",
+      "expected_resolution_kind": "existing_composition_with_explicit_adapter",
+      "actual_resolution_kind": "existing_composition_with_explicit_adapter",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-04",
+      "expected_resolution_kind": "diagnostic_surface_only",
+      "actual_resolution_kind": "diagnostic_surface_only",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-05",
+      "expected_resolution_kind": "producer_mediated_composition",
+      "actual_resolution_kind": "producer_mediated_composition",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-06",
+      "expected_resolution_kind": "precise_missing_crossing",
+      "actual_resolution_kind": "precise_missing_crossing",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-07",
+      "expected_resolution_kind": "rejected_invalid_relabel",
+      "actual_resolution_kind": "rejected_invalid_relabel",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-08",
+      "expected_resolution_kind": "existing_lawful_composition",
+      "actual_resolution_kind": "existing_lawful_composition",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-09",
+      "expected_resolution_kind": "unregistered_not_classified",
+      "actual_resolution_kind": "unregistered_not_classified",
+      "status": "passed"
+    },
+    {
+      "case_id": "SEL-10",
+      "expected_resolution_kind": "ambiguous_registered_crossing",
+      "actual_resolution_kind": "ambiguous_registered_crossing",
+      "status": "passed"
+    }
+  ],
+  "validation_checks": {
+    "source_authority_digests_match": true,
+    "i108_predecessor_bundle_reconciled": true,
+    "i108_scientific_digests_unchanged_across_supersession": true,
+    "all_requested_pathways_resolve": true,
+    "all_human_guide_pathway_ids_resolve": true,
+    "all_expected_resolution_kinds_match": true,
+    "all_expected_composition_statuses_match": true,
+    "required_temporal_semantics_use_registry_vocabulary": true,
+    "all_six_i108_statuses_exercised": true,
+    "pathway_only_case_requires_no_composition": true,
+    "unsupported_case_names_exact_registered_crossing": true,
+    "unregistered_pair_not_promoted_to_missing_crossing": true,
+    "ambiguous_pair_returns_all_registered_alternatives": true,
+    "diagnostic_behavioral_pair_shares_origin_but_not_status": true,
+    "adapter_and_producer_owners_remain_visible": true,
+    "composition_status_never_used_as_maturity": true,
+    "no_selection_authorizes_extension": true,
+    "no_selection_infers_ecological_meaning": true,
+    "protected_source_hashes_match_i105_baseline": true,
+    "protected_src_test_example_diff_empty": true
+  },
+  "runtime_tests_run": false,
+  "runtime_tests_not_run_reason": "I109 derives and validates selection semantics without changing runtime, tests, examples, or the frozen I108 crossing-test set.",
+  "status": "passed",
+  "execution_digest": "287f6c4c0e899a986607df5dafedbcaa2c047629c29973740d1e2414a9a489ff"
+}

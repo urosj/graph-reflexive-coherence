@@ -1,0 +1,306 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 bounded pressure-consumer descriptions",
+  "schema_version": "phase8_grclgrc_i111_pressure_descriptions_v1",
+  "iteration": 111,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "accepted_artifact_digests": {
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+  },
+  "description_rule": "Consumer language is normalized to declared substrate relations; this corpus is not a universal natural-language dispatcher.",
+  "category_count": 11,
+  "pressure_count": 22,
+  "pressure_consumers": [
+    {
+      "pressure_id": "PC-L04-01",
+      "category": "rcae_l04_support_side",
+      "consumer_language": "Use a declared support-side feedback surface to schedule bounded packet work while preserving the owner of eligibility and direction.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-20",
+      "expected_composition_status": "producer_mediated",
+      "nearby_rejections": [
+        "native support",
+        "native feedback admission",
+        "ecological support success"
+      ]
+    },
+    {
+      "pressure_id": "PC-BND-01",
+      "category": "boundary_conditioned_exchange",
+      "consumer_language": "Carry GRC front-capacity state into an LGRC boundary-birth runtime without pretending synchronous history became event history.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-26",
+      "expected_composition_status": "lawful_with_explicit_adapter",
+      "nearby_rejections": [
+        "lawful native crossing",
+        "automatic time conversion"
+      ]
+    },
+    {
+      "pressure_id": "PC-BND-02",
+      "category": "boundary_conditioned_exchange",
+      "consumer_language": "Commit configured outward-flux and front-capacity evidence as a topology-specific child birth.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-13",
+      "expected_composition_status": "lawful_native",
+      "nearby_rejections": [
+        "generic work admission",
+        "semantic reproduction"
+      ]
+    },
+    {
+      "pressure_id": "PC-BND-03",
+      "category": "boundary_conditioned_exchange",
+      "consumer_language": "Reuse boundary-birth eligibility as generic packet-exchange admission.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-14",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "shared queue infrastructure implies shared contract"
+      ]
+    },
+    {
+      "pressure_id": "PC-CIRC-01",
+      "category": "circulation",
+      "consumer_language": "Move a supplied packet through debit, in-flight retention, arrival, and target credit as one bounded circulation leg.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-02",
+      "expected_composition_status": "lawful_native",
+      "nearby_rejections": [
+        "native circulation policy",
+        "native route formation",
+        "self-sustaining loop"
+      ]
+    },
+    {
+      "pressure_id": "PC-AP45-01",
+      "category": "ap4_ap5",
+      "consumer_language": "Turn a GRC sink-compatibility result into an LGRC route schedule and target without inventing the admission bridge.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-06",
+      "expected_composition_status": "unsupported_missing_crossing",
+      "nearby_rejections": [
+        "semantic choice",
+        "native route selection",
+        "AP4/AP5 closure"
+      ]
+    },
+    {
+      "pressure_id": "PC-AP45-02",
+      "category": "ap4_ap5",
+      "consumer_language": "Treat a configured route and target as a natively formed role or proxy relation.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-11",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "configured route as formed route",
+        "configured target as semantic proxy"
+      ]
+    },
+    {
+      "pressure_id": "PC-SM-01",
+      "category": "shared_medium_response",
+      "consumer_language": "Record a configured pulse surface after packet arrival while keeping recording distinct from read-back.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-21",
+      "expected_composition_status": "lawful_native",
+      "nearby_rejections": [
+        "native memory",
+        "shared-medium response",
+        "coordination"
+      ]
+    },
+    {
+      "pressure_id": "PC-SM-02",
+      "category": "shared_medium_response",
+      "consumer_language": "Use transported surface lineage to condition later packet scheduling with producer ownership visible.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-22",
+      "expected_composition_status": "producer_mediated",
+      "nearby_rejections": [
+        "native Read-Back",
+        "native shared-medium organization"
+      ]
+    },
+    {
+      "pressure_id": "PC-SM-03",
+      "category": "shared_medium_response",
+      "consumer_language": "Carry the producer eligibility decision into native packet mechanics without promoting the producer cut.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-20",
+      "expected_composition_status": "producer_mediated",
+      "nearby_rejections": [
+        "lawful native feedback",
+        "communication",
+        "cooperation"
+      ]
+    },
+    {
+      "pressure_id": "PC-ROLE-01",
+      "category": "route_or_role_formation",
+      "consumer_language": "Commit one supplied arbitration candidate through native collapse mechanics while leaving candidate formation external.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-07",
+      "expected_composition_status": "lawful_native",
+      "nearby_rejections": [
+        "native candidate formation",
+        "semantic role formation"
+      ]
+    },
+    {
+      "pressure_id": "PC-ROLE-02",
+      "category": "route_or_role_formation",
+      "consumer_language": "Treat native arbitration over supplied scores as native formation of candidates and values.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-08",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "native route formation",
+        "semantic valuation"
+      ]
+    },
+    {
+      "pressure_id": "PC-ROLE-03",
+      "category": "route_or_role_formation",
+      "consumer_language": "Treat configured route execution as endogenous role formation.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-11",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "semantic role",
+        "native target formation"
+      ]
+    },
+    {
+      "pressure_id": "PC-N32-01",
+      "category": "future_n32_candidate_class",
+      "consumer_language": "Let exact route history temporarily condition conductance and later flux as a bounded future building-block candidate.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-17",
+      "expected_composition_status": "producer_mediated",
+      "nearby_rejections": [
+        "native history read path",
+        "native D0 decay",
+        "N32 selected"
+      ]
+    },
+    {
+      "pressure_id": "PC-DIAG-01",
+      "category": "diagnostic_vs_behavioral",
+      "consumer_language": "Reconstruct bounded GRC diagnostics over an LGRC checkpoint without claiming ordinary LGRC behavior consumed them.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-04",
+      "expected_composition_status": "diagnostic_only",
+      "nearby_rejections": [
+        "behavioral update",
+        "native event-to-action crossing"
+      ]
+    },
+    {
+      "pressure_id": "PC-DIAG-02",
+      "category": "diagnostic_vs_behavioral",
+      "consumer_language": "Use reconstructed diagnostics as direct packet-admission behavior.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-05",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "diagnostic output as constitutive state"
+      ]
+    },
+    {
+      "pressure_id": "PC-CONFIG-01",
+      "category": "configured_vs_formed_route",
+      "consumer_language": "Execute a configured route but ask whether its existence proves the substrate formed that route.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-11",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "execution evidence as formation evidence"
+      ]
+    },
+    {
+      "pressure_id": "PC-ARB-01",
+      "category": "arbitration_vs_candidate_formation",
+      "consumer_language": "Select and commit among supplied candidates with native arbitration.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-07",
+      "expected_composition_status": "lawful_native",
+      "nearby_rejections": [
+        "native score formation",
+        "native candidate formation"
+      ]
+    },
+    {
+      "pressure_id": "PC-ARB-02",
+      "category": "arbitration_vs_candidate_formation",
+      "consumer_language": "Use native selection to claim that candidate and score formation were native.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-08",
+      "expected_composition_status": "invalid_relabel",
+      "nearby_rejections": [
+        "selection as formation",
+        "semantic valuation"
+      ]
+    },
+    {
+      "pressure_id": "PC-ARB-03",
+      "category": "arbitration_vs_candidate_formation",
+      "consumer_language": "Request arbitration-to-collapse behavior without specifying direct commit versus lineage-aware transport.",
+      "normalization_rule": "consumer demand preserves declared ambiguity rather than selecting the first registered crossing",
+      "query_kind": "selection_guide_case",
+      "guide_case_id": "SEL-10",
+      "expected_composition_status": "ambiguous_registered_crossing",
+      "nearby_rejections": [
+        "arbitrary first match",
+        "shared endpoints imply equivalent semantics"
+      ]
+    },
+    {
+      "pressure_id": "PC-LEDGER-01",
+      "category": "ledger_vs_constitutive_history",
+      "consumer_language": "Persist packet ledger history and ask whether replay identity itself makes that history a later native cause.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-18",
+      "expected_composition_status": "unsupported_missing_crossing",
+      "nearby_rejections": [
+        "persistence as Read-Back",
+        "ledger retention as memory-mediated action"
+      ]
+    },
+    {
+      "pressure_id": "PC-LEDGER-02",
+      "category": "ledger_vs_constitutive_history",
+      "consumer_language": "Use an explicit producer to derive temporary conductance from exact history while retaining the producer cut.",
+      "normalization_rule": "consumer demand is decomposed to one registered directional crossing without changing matrix semantics",
+      "query_kind": "registered_directional_composition",
+      "composition_id": "CMP-17",
+      "expected_composition_status": "producer_mediated",
+      "nearby_rejections": [
+        "producer-derived history as native ledger consumption"
+      ]
+    }
+  ],
+  "runtime_behavior_changed": false,
+  "description_digest": "ebe228aa94fe035164234469c2fd94e70c9459df643d036fab44455fda163ccf"
+}

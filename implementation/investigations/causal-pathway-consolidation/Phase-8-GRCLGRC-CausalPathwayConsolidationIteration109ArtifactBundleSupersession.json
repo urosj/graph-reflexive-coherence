@@ -1,0 +1,40 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway Iteration 109 artifact-bundle supersession",
+  "schema_version": "phase8_grclgrc_causal_pathway_i109_artifact_bundle_supersession_v1",
+  "status": "reconciled",
+  "recorded_during_iteration": 110,
+  "superseded_working_bundle_digest": "6e6aa217f9eb95d22e48b25f36b8dfb79a52adaa8dc20bb16f76be87bc81dbcf",
+  "superseded_selector_digest": "4f6306b7cde805e6331e31e9efe5e575d7c43e081094dbd7b73511b2e3305d22",
+  "superseded_result_digest": "1543928149b4e63b6d4b2360072cfc37d4848693b6d7f025daeee64ab3df214a",
+  "superseded_artifact_count": 6,
+  "accepted_current_bundle_digest": "d61a2189d016c0213ae89942db3d36515fa02de6d6f9519e47203e2f2cc306c9",
+  "accepted_current_selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "accepted_current_result_digest": "a9e23ebe10e0ebf2ed4ac2d06018d86ebf798f5a0934737828eff25efadf9679",
+  "accepted_current_artifact_count": 7,
+  "accepted_current_freeze": {
+    "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactFreeze.json",
+    "sha256": "233706dba4641725677d2eaf1241230e5932d3bfa3be6761166ab5d493f2c0ed"
+  },
+  "transition_reason": "Post-I109 review reconciliation made the I108 predecessor-bundle supersession explicit in the selector, validation, result, report, and freeze.",
+  "changed_artifact_paths": [
+    "scripts/build_phase8_causal_pathway_i109.py",
+    "specs/grc-lgrc-causal-pathway-selection-guide.json",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ValidationExecution.json",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.json",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactFreeze.json"
+  ],
+  "added_artifact_paths": [
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactBundleSupersession.json"
+  ],
+  "selection_case_count_before": 10,
+  "selection_case_count_after": 10,
+  "selection_case_results_changed": false,
+  "composition_status_coverage_changed": false,
+  "selection_semantics_changed": false,
+  "scientific_claim_changed": false,
+  "runtime_behavior_changed": false,
+  "historical_bundle_bytes_retained_as_current_artifact": false,
+  "supersession_relation": "The accepted current I109 bundle supersedes the pre-review working bundle for repository authority; the earlier full digests remain provenance and are not alternate accepted predecessors.",
+  "reconciliation_digest": "06327b2bb019b2ad83287fbf1baaf5ae58104074a88a2c8cef4b2a0c54185dad"
+}

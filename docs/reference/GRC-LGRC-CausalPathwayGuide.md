@@ -1,187 +1,336 @@
 # GRC/LGRC Causal Pathway Guide
 
-**Status:** Draft selection guide pending Phase 8 Iteration 109
+**Status:** Phase 8 Iteration 109 evidence-derived selection guide frozen
+
+**Machine guide:** [`grc-lgrc-causal-pathway-selection-guide.json`](../../specs/grc-lgrc-causal-pathway-selection-guide.json)
 
 **Registry:** [`grc-lgrc-causal-pathway-contracts.json`](../../specs/grc-lgrc-causal-pathway-contracts.json)
+
+**Evidence crosswalk:** [`grc-lgrc-causal-pathway-evidence-crosswalk.json`](../../specs/grc-lgrc-causal-pathway-evidence-crosswalk.json)
+
 **Composition matrix:** [`GRC-LGRC-CompositionMatrix.md`](./GRC-LGRC-CompositionMatrix.md)
 
-## Why This Guide Exists
+## Purpose And Authority
 
-GRC and LGRC expose several ways to reconstruct current, move coherence,
-evaluate candidates, schedule events, commit topology, retain history, and
-restore state. Similar-looking outputs do not imply identical causal paths.
+Use this guide to select an existing GRC9V3/LGRC9V3 pathway or registered
+directional crossing while retaining its owner, residue, evidence status, and
+claim ceiling. The guide is derived from the registry, crosswalk, and matrix.
+It is not an execution API and cannot create pathway or crossing facts.
 
-Use this guide to choose an existing pathway and keep its authority and claim
-boundary visible. Do not use it as evidence that a pathway ran.
-
-The first guide version is limited to GRC9V3, LGRC9V3, and directly consumed
-shared PyGRC utilities. It is derived from the registry, evidence crosswalk,
-and composition matrix. It must not introduce pathway or composition facts
-that those sources do not contain.
-
-## First Question: What Time Semantics Are Required?
-
-### Global synchronous update
-
-Use `grc9v3.synchronous_transport` when graph state should be reconstructed and
-advanced through the ordinary synchronous GRC9V3 step.
-
-This supports native synchronous GRC transport. It is not LGRC packet
-execution.
-
-### Causal delay and event ordering
-
-Use `lgrc9v3.explicit_packet_transport` when the route and packet work are
-known and the experiment needs source debit, in-flight state, deterministic
-event order, delayed arrival, and target credit.
-
-The mechanics are native. The supplied route and work do not become
-substrate-formed.
-
-### Synchronous-limit observation over LGRC state
-
-Use `lgrc9v3.diagnostic_grc_reconstruction` when a checkpoint or explicit
-helper should expose GRC differential, transport, choice, or identity surfaces
-over LGRC base state.
-
-This is diagnostic unless a separate admitted adapter consumes the result.
-
-### Snapshot, reset, or replay equivalence
-
-Use `pygrc.restoration_replay_identity`. Restoration identity establishes the
-declared state-equivalence boundary, not work eligibility or semantic
-identity.
-
-## Second Question: Is The Route Known, Arbitrated, Or Expected To Form?
-
-### Route is explicitly part of the fixture
-
-Use explicit packet transport or `lgrc9v3.configured_flux_route`.
-
-Record the configured route as residue. Do not call it native route formation.
-
-### Route aspect and pole semantics are declared
-
-Use `lgrc9v3.route_aspect_surplus` when the intended contract is a configured
-pole-mass surplus threshold that schedules work along a declared channel.
-
-The runtime owns surplus evaluation, budget checks, scheduling records, and
-packet mechanics. It does not own the pole's ecological or agentic meaning.
-
-### Candidates exist and selection is the subject
-
-Use `lgrc9v3.native_route_arbitration` when candidate records, scores, and
-budget predictions are available and native validation/selection/commitment is
-what is being tested.
-
-Candidate and score formation remain separately attributed.
-
-### Route should arise from state, history, or current
-
-No generic native pathway is admitted. Use a bounded producer probe or record
-an unsupported crossing. Do not join current reconstruction to packet
-scheduling and call the result native without a new source-backed contract.
-
-## Third Question: Which Part Is Claimed Native?
-
-Answer separately:
-
-| Question | Example native owner | Typical residue |
-| --- | --- | --- |
-| What determines direction? | GRC oriented flux, spark detector, arbitration record | configured route or candidate score |
-| What supplies funding? | source/parent coherence, budget invariant | configured packet amount |
-| What establishes eligibility? | mechanism-specific native predicate | producer threshold or mask |
-| What schedules work? | native producer, runtime rebuild, caller | external orchestration |
-| What commits mutation? | `step()`, topology integrator, choice rebuild | none if only diagnostic |
-| What receives the result? | target node, selected sink, child topology | experiment-level interpretation |
-
-Native commitment does not naturalize externally authored eligibility.
-
-## Fourth Question: What Retained Relation Is Needed?
-
-### Present state
-
-Consume current model state under the chosen pathway.
-
-### Causal history
-
-Use packet, event, lineage, or topology records only at their declared runtime
-scope.
-
-### Derived history functional
-
-Classify it as diagnostic or producer-mediated unless the runtime natively
-consumes it in later constitutive dynamics.
-
-### Persistent geometry or topology
-
-Use source-backed topology and restoration pathways. Persistence does not by
-itself establish semantic identity or Read-Back.
-
-### Configured policy
-
-Keep it visible as policy state. Configuration is not formation evidence.
-
-## Common Choices
-
-### Sink compatibility or collapse
-
-Use `grc9v3.sink_compatibility_choice` when native outgoing flux should be
-aggregated by reachable sink and the choice/collapse registry is the intended
-surface.
-
-Do not treat the compatibility score as the generator of current or an
-automatic packet schedule.
-
-### Flux-conditioned topology growth
-
-Use `lgrc9v3.boundary_birth` for the specific default-off contract that combines
-outward flux pressure, eligible parent capacity, parent funding, birth policy,
-queued trial, and topology commit.
-
-Do not generalize this specialized chain into universal current-to-action
-admission.
-
-### Spark-driven refinement
-
-Use `lgrc9v3.spark_topology_integration` when hybrid spark diagnostics and
-enabled LGRC-3 topology integration are the intended path.
-
-Diagnostic candidate detection remains distinct from identity acceptance or
-semantic creation.
-
-### Collapse/reabsorption transport
-
-Use `lgrc9v3.collapse_reabsorption` when explicit or natively arbitrated
-topology events should transport packet, lineage, and active-state records.
-
-Selection input and RC identity claims remain separately gated.
-
-## When No Pathway Fits
-
-Record:
+The guide distinguishes:
 
 ```text
-consumed pathway IDs
-required missing crossing
-producer or adapter proposed
-native mechanics retained
-claim ceiling
-controls that isolate the missing crossing
+existing pathway
+existing lawful native composition
+lawful composition with explicit adapter
+diagnostic-only composition
+producer-mediated composition
+registered unsupported crossing
+invalid relabel
+unregistered directional pair
+ambiguous registered crossing
 ```
 
-This turns an ambiguous mechanism request into a precise substrate demand.
+An unregistered pair is unclassified, not evidence of a missing crossing. A
+registered missing crossing does not authorize an extension. Composition
+status is not maturity, and no selection establishes ecology or agency.
 
-## Pressure Consumers
+## Selection Sequence
 
-L04 support-side work, boundary exchange, circulation, AP4/AP5, shared-medium
-response, role migration, and future N32 candidates may use this guide as an
-acceptance probe. They do not inherit support, ecology, agency, or native
-admission from it.
+1. State the required time semantics.
+2. State whether the route is explicit, configured, selected over supplied
+   candidates, or expected to form.
+3. State the required retained relation.
+4. Select the pathway whose registry contract actually supplies that surface.
+5. If two pathways must interact, look up the exact directional matrix row.
+6. Preserve adapter/producer ownership, configured residue, claim ceiling, and
+   blocked relabels from the authoritative records.
+7. If no exact row exists, report the pair as unregistered and audit it; do not
+   infer `unsupported_missing_crossing` from absent matrix coverage.
+8. If several rows share endpoints, specify the required crossing semantics;
+   do not select the first match.
+
+## Time-Semantics Index
+
+| Required semantics | Registered pathways |
+| --- | --- |
+| `caller_checkpoint` | `lgrc9v3.diagnostic_grc_reconstruction` |
+| `checkpoint_time` | `pygrc.restoration_replay_identity` |
+| `configuration_time` | `lgrc9v3.configured_flux_route` |
+| `derived_event_time` | `lgrc9v3.causal_history_annotation`, `lgrc9v3.fixed_topology_eligibility` |
+| `event_time` | `lgrc9v3.boundary_birth`, `lgrc9v3.causal_pulse_surface_lineage`, `lgrc9v3.causal_spark_topology_integration`, `lgrc9v3.collapse_reabsorption`, `lgrc9v3.explicit_packet_transport`, `lgrc9v3.multi_basin_record_validation`, `lgrc9v3.native_route_arbitration`, `lgrc9v3.proper_time_identity_acceptance` |
+| `explicit_call` | `lgrc9v3.native_route_arbitration` |
+| `global_synchronous_step` | `grc9v3.front_capacity_growth`, `grc9v3.hybrid_spark_refinement`, `grc9v3.identity_basin_reconstruction`, `grc9v3.legacy_inactive_port_growth`, `grc9v3.sink_compatibility_choice`, `grc9v3.synchronous_update_cycle` |
+| `producer_frontier` | `lgrc9v3.boundary_birth`, `lgrc9v3.feedback_eligibility_producer`, `lgrc9v3.pulse_substrate_coupling_producer`, `lgrc9v3.route_aspect_surplus` |
+| `producer_frontier_then_event_time` | `lgrc9v3.configured_flux_route`, `lgrc9v3.feedback_eligibility_producer`, `lgrc9v3.pulse_substrate_coupling_producer`, `lgrc9v3.route_aspect_surplus` |
+| `proper_time_and_event_time` | `lgrc9v3.proper_time_identity_evaluation` |
+| `replay_window` | `lgrc9v3.multi_basin_record_validation`, `pygrc.restoration_replay_identity` |
+| `synchronous_limit_at_checkpoint` | `lgrc9v3.diagnostic_grc_reconstruction` |
+
+Time compatibility at a crossing still comes from its matrix row. Sharing a
+time label does not establish interoperability.
+
+## Route And Authority Questions
+
+| Demand | Candidate pathway | Boundary |
+| --- | --- | --- |
+| Explicit packet endpoints and schedule | `lgrc9v3.explicit_packet_transport` | Route, amount, and times remain supplied. |
+| Configured causal route producer | `lgrc9v3.configured_flux_route` | Configuration is not route formation. |
+| Configured pole/aspect surplus | `lgrc9v3.route_aspect_surplus` | Pole meaning and thresholds remain configured. |
+| Selection over supplied candidates | `lgrc9v3.native_route_arbitration` | Candidate and score formation remain separate. |
+| Route expected from state/history/current | No generic V1 pathway | Use a registered mediated crossing or record the exact unclassified/missing relation. |
+
+For every candidate, answer separately who owns direction, funding,
+eligibility, scheduling, commitment, and reception. Native commitment does not
+naturalize externally authored eligibility.
+
+## Retained Relations
+
+| Required relation | Candidate surface | Boundary |
+| --- | --- | --- |
+| Present synchronous state | `grc9v3.synchronous_update_cycle` | Current transport/continuity only. |
+| Event-time packet history | `lgrc9v3.explicit_packet_transport` | Packet/queue settlement only. |
+| Causal annotation | `lgrc9v3.causal_history_annotation` | Diagnostic unless a registered producer consumes it. |
+| Pulse surface lineage | `lgrc9v3.causal_pulse_surface_lineage` | Configured surface records and lineage only. |
+| Persistent topology event | `lgrc9v3.boundary_birth`, `lgrc9v3.collapse_reabsorption`, or `lgrc9v3.causal_spark_topology_integration` | Use the mechanism-specific contract; no generic admission follows. |
+| Snapshot/reset/replay relation | `pygrc.restoration_replay_identity` | Versioned restoration identity, not semantic identity. |
+
+## Composition Outcomes
+
+The I108 matrix contains 26 representative
+directional rows: 10 lawful native,
+1 lawful with explicit adapter,
+2 diagnostic only,
+4 producer mediated,
+3 unsupported missing crossings,
+and 6 invalid relabels.
+
+| Case | Demand | Resolution | Composition | Owner |
+| --- | --- | --- | --- | --- |
+| `SEL-01` | Existing event-time packet pathway | `existing_pathway` | `none` | `none` |
+| `SEL-02` | Native packet lifecycle crossing | `existing_lawful_composition` | `CMP-02` | `native` |
+| `SEL-03` | Explicit cross-runtime front-capacity adapter | `existing_composition_with_explicit_adapter` | `CMP-26` | `library_construction_adapter_invoked_by_caller` |
+| `SEL-04` | Post-commit multi-basin diagnostic | `diagnostic_surface_only` | `CMP-24` | `runtime_diagnostic_hook` |
+| `SEL-05` | Producer-owned feedback eligibility | `producer_mediated_composition` | `CMP-20` | `installed_producer` |
+| `SEL-06` | Missing sink-choice to route-schedule crossing | `precise_missing_crossing` | `CMP-06` | `none` |
+| `SEL-07` | Diagnostic-as-behavioral relabel rejection | `rejected_invalid_relabel` | `CMP-05` | `none` |
+| `SEL-08` | Arbitration-backed behavioral topology commit | `existing_lawful_composition` | `CMP-07` | `native` |
+| `SEL-09` | Unregistered pair remains unclassified | `unregistered_not_classified` | `none` | `none` |
+| `SEL-10` | Multiple crossings require semantic disambiguation | `ambiguous_registered_crossing` | `none` | `none` |
+
+## Worked Cases
+
+### SEL-01: Existing event-time packet pathway
+
+Execute a declared packet schedule with debit, in-flight retention, arrival, and target credit without claiming route formation.
+
+```text
+resolution = existing_pathway
+pathways = lgrc9v3.explicit_packet_transport
+composition = none
+composition status = not_applicable_pathway_only
+adapter/producer owner = none
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.explicit_packet_transport`. Configured residue: `route endpoints`, `amount`, `departure/arrival times`.
+
+Claim ceiling: native packet accounting and queue-processing mechanics
+
+Blocked nearby interpretation: `substrate-formed route`, `native departure reason`, `agency`.
+
+### SEL-02: Native packet lifecycle crossing
+
+Carry one supplied packet identity through schedule, debit, in-flight state, and arrival credit.
+
+```text
+resolution = existing_lawful_composition
+pathways = lgrc9v3.explicit_packet_transport
+composition = CMP-02
+composition status = lawful_native
+adapter/producer owner = native
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.explicit_packet_transport`. Configured residue: `route endpoints`, `amount`, `departure/arrival times`.
+
+Claim ceiling: Native packet debit/arrival mechanics; route, amount, and schedule remain supplied.
+
+Blocked nearby interpretation: `native route formation`, `generic work admission`.
+
+### SEL-03: Explicit cross-runtime front-capacity adapter
+
+Place GRC front-capacity state at a declared LGRC event-time boundary-birth frontier while keeping construction ownership visible.
+
+```text
+resolution = existing_composition_with_explicit_adapter
+pathways = grc9v3.front_capacity_growth, lgrc9v3.boundary_birth
+composition = CMP-26
+composition status = lawful_with_explicit_adapter
+adapter/producer owner = library_construction_adapter_invoked_by_caller
+missing relation = none
+```
+
+Selected pathways: `grc9v3.front_capacity_growth`, `lgrc9v3.boundary_birth`. Configured residue: `GRCL9V3 front-capacity eligibility mode`, `front-capacity map`, `birth alpha`, `RNG policy`, `front propagation`, `eligibility mode`, `front-capacity source`, `birth probability`, `edge delay`.
+
+Claim ceiling: Lawful explicit construction adapter; not native cross-runtime formation or inherited event history.
+
+Blocked nearby interpretation: `lawful_native`, `automatic time-semantics conversion`, `native role formation`.
+
+### SEL-04: Post-commit multi-basin diagnostic
+
+Read validated child-basin and flow-window records after an arbitration-backed topology commit without treating records as the mutation.
+
+```text
+resolution = diagnostic_surface_only
+pathways = lgrc9v3.native_route_arbitration, lgrc9v3.multi_basin_record_validation
+composition = CMP-24
+composition status = diagnostic_only
+adapter/producer owner = runtime_diagnostic_hook
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.native_route_arbitration`, `lgrc9v3.multi_basin_record_validation`. Configured residue: `candidate schema`, `score/order policy`, `claim flags`, `budget prediction`, `multi-basin policy`, `window`, `metrics`, `control thresholds`.
+
+Claim ceiling: Diagnostic records over a committed native/configured topology event.
+
+Blocked nearby interpretation: `basin formation by record`, `general robustness`.
+
+### SEL-05: Producer-owned feedback eligibility
+
+Let an installed producer read a feedback surface and schedule native packet mechanics while retaining eligibility and direction ownership.
+
+```text
+resolution = producer_mediated_composition
+pathways = lgrc9v3.feedback_eligibility_producer, lgrc9v3.explicit_packet_transport
+composition = CMP-20
+composition status = producer_mediated
+adapter/producer owner = installed_producer
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.feedback_eligibility_producer`, `lgrc9v3.explicit_packet_transport`. Configured residue: `feedback masks`, `thresholds`, `route`, `amount`, `route endpoints`, `departure/arrival times`.
+
+Claim ceiling: Producer-mediated feedback eligibility followed by native packet mechanics.
+
+Blocked nearby interpretation: `lawful_native`, `native feedback admission`.
+
+### SEL-06: Missing sink-choice to route-schedule crossing
+
+Use a GRC sink-compatibility result to schedule LGRC route work without inventing an admission bridge.
+
+```text
+resolution = precise_missing_crossing
+pathways = grc9v3.sink_compatibility_choice, lgrc9v3.configured_flux_route
+composition = CMP-06
+composition status = unsupported_missing_crossing
+adapter/producer owner = none
+missing relation = CMP-06
+```
+
+Selected pathways: `grc9v3.sink_compatibility_choice`, `lgrc9v3.configured_flux_route`. Configured residue: `choice backend`, `epsilon choice`, `epsilon collapse`, `learning rate`, `budget policy`, `route`, `target`, `amount source`, `arrival delay`.
+
+Claim ceiling: Unsupported until an explicit admission and scheduling relation is supplied.
+
+Blocked nearby interpretation: `semantic choice`, `native route formation`.
+
+### SEL-07: Diagnostic-as-behavioral relabel rejection
+
+Treat an explicit GRC reconstruction over LGRC state as if ordinary LGRC packet behavior had consumed it.
+
+```text
+resolution = rejected_invalid_relabel
+pathways = lgrc9v3.diagnostic_grc_reconstruction, lgrc9v3.explicit_packet_transport
+composition = CMP-05
+composition status = invalid_relabel
+adapter/producer owner = none
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.diagnostic_grc_reconstruction`, `lgrc9v3.explicit_packet_transport`. Configured residue: `diagnostic modes`, `copied params`, `route endpoints`, `amount`, `departure/arrival times`.
+
+Claim ceiling: No ordinary LGRC behavior claim is allowed.
+
+Blocked nearby interpretation: `diagnostic_as_behavior`, `native packet admission`.
+
+### SEL-08: Arbitration-backed behavioral topology commit
+
+Commit the selected arbitration candidate through collapse and reabsorption while keeping candidate and score formation external.
+
+```text
+resolution = existing_lawful_composition
+pathways = lgrc9v3.native_route_arbitration, lgrc9v3.collapse_reabsorption
+composition = CMP-07
+composition status = lawful_native
+adapter/producer owner = native
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.native_route_arbitration`, `lgrc9v3.collapse_reabsorption`. Configured residue: `candidate schema`, `score/order policy`, `claim flags`, `budget prediction`, `collapse policy`, `explicit or arbitration input`, `reabsorption modes`.
+
+Claim ceiling: Native arbitration-to-collapse commit mechanics; candidate and score formation remain external/configured.
+
+Blocked nearby interpretation: `native candidate formation`, `semantic choice`.
+
+### SEL-09: Unregistered pair remains unclassified
+
+Ask whether synchronous GRC transport composes directly into restoration identity when I108 registered no such crossing.
+
+```text
+resolution = unregistered_not_classified
+pathways = grc9v3.synchronous_update_cycle, pygrc.restoration_replay_identity
+composition = none
+composition status = unregistered_not_classified
+adapter/producer owner = none
+missing relation = unclassified_directional_pair_requires_source_audit
+```
+
+Selected pathways: `grc9v3.synchronous_update_cycle`, `pygrc.restoration_replay_identity`. Configured residue: `constitutive modes`, `backend selections`, `evolution parameters`, `identity schema version`, `legacy compatibility policy`, `replay scope`.
+
+Claim ceiling: No composition claim; the directional pair was not registered in I108.
+
+Blocked nearby interpretation: `unregistered pair as unsupported_missing_crossing`, `endpoint evidence as crossing evidence`, `automatic extension authorization`.
+
+### SEL-10: Multiple crossings require semantic disambiguation
+
+Select an arbitration-to-collapse relation without specifying whether direct commit or lineage-aware transport is required.
+
+```text
+resolution = ambiguous_registered_crossing
+pathways = lgrc9v3.native_route_arbitration, lgrc9v3.collapse_reabsorption
+composition = none
+composition status = ambiguous_registered_crossing
+adapter/producer owner = none
+missing relation = none
+```
+
+Selected pathways: `lgrc9v3.native_route_arbitration`, `lgrc9v3.collapse_reabsorption`. Configured residue: `candidate schema`, `score/order policy`, `claim flags`, `budget prediction`, `collapse policy`, `explicit or arbitration input`, `reabsorption modes`.
+
+Claim ceiling: No selection until the required crossing semantics are specified.
+
+Blocked nearby interpretation: `first matching composition as selected crossing`, `shared endpoints as equivalent composition semantics`.
+
+## Diagnostic Versus Behavioral Pair
+
+`SEL-04` and `SEL-08` begin from
+`lgrc9v3.native_route_arbitration`, but they do not have the same crossing.
+`CMP-07` commits selected topology behavior through collapse/reabsorption.
+`CMP-24` emits diagnostic multi-basin records after a commit. Shared origin and
+current crossing evidence do not let the diagnostic record become the
+mutation, and the behavioral commit does not establish the record's broader
+interpretation.
+
+## When No Registered Crossing Fits
+
+Record the two endpoint pathway IDs, required direction, missing state/time/
+budget/authority mapping, proposed adapter or producer owner, native mechanics
+retained, claim ceiling, and controls. If the pair is absent from the
+representative matrix, call it `unregistered_not_classified` until a source
+audit establishes one of the six composition statuses.
 
 ## Claim Boundary
 
-The guide helps select and describe pathways. Only runtime artifacts, tests,
-and experiment evidence can establish that a pathway executed and support a
-bounded claim. A pathway selection also does not admit a primitive, building
-block, motif, or regime in the N30+ experiment catalog.
+Only runtime artifacts, tests, and experiment evidence can establish that a
+selected pathway executed. This guide does not admit a primitive, building
+block, motif, regime, support relation, role, shared-medium behavior, agency,
+native Read-Back, or N32.

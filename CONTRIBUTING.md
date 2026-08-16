@@ -173,6 +173,12 @@ under its own evidence boundary.
 An experiment may discover a capability, but only explicit local promotion
 makes that capability part of the reusable graph substrate.
 
+When a promoted GRC/LGRC mechanism changes or composes an existing causal
+pathway, consult the [causal pathway guide](docs/reference/GRC-LGRC-CausalPathwayGuide.md)
+and run the [conformance checker](scripts/check_grc_lgrc_causal_pathway_conformance.py).
+This is promotion-time review guidance, not mandatory registry boilerplate for
+unrelated or exploratory contributions.
+
 ## External Returns and Independent Continuations
 
 An external result can become consequential here without moving its

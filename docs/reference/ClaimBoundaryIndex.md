@@ -105,7 +105,7 @@ native support.
 
 ## GRC/LGRC Causal Pathway Contracts
 
-Bounded claim: the repository is consolidating existing GRC/LGRC execution,
+Bounded claim: the repository has consolidated existing GRC/LGRC execution,
 diagnostic, producer, topology, and restoration pathways through a common
 analytical registry and composition matrix. The common coordinates make
 distributed authority visible; they do not define a universal mechanism.
@@ -117,12 +117,53 @@ Evidence and contract pointers:
   the closed event-local implementation boundary.
 - [Iteration 105 baseline](../../implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md):
   Freezes current source behavior and the initial pathway census.
+- [Iteration 106 schema freeze](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.md):
+  Freezes the source-complete V1 audit, 23 intrinsic pathway contracts, and 52
+  stage-local authority records without changing runtime behavior.
 - [Causal pathway contract specification](../../specs/grc-lgrc-causal-pathway-contracts.md):
-  Defines pathway coordinates, status classes, and claim boundaries.
+  Defines pathway coordinates, orthogonal status axes, stage contracts, and
+  claim boundaries.
 - [Machine registry](../../specs/grc-lgrc-causal-pathway-contracts.json):
-  Draft source-backed pathway entries for conformance work; not evidence.
-- [Selection guide](GRC-LGRC-CausalPathwayGuide.md): Explains how temporal,
-  route, native-claim, and retention needs select different pathways.
+  Frozen intrinsic pathway entries for conformance work; not evidence.
+- [Iteration 107 evidence crosswalk](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.md):
+  Grounds pathway stages in current source, tests, controls, and bounded
+  historical evidence.
+- [Iteration 108 composition matrix](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md):
+  Separates endpoint evidence from directional crossing evidence.
+- [Iteration 109 selection result](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md):
+  Validates all six composition statuses plus unregistered and ambiguous
+  crossing controls.
+- [Iteration 110 conformance result](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.md):
+  Mechanically validates artifact identities, references, authority,
+  ownership, crossing status, selection boundaries, and staleness with 20
+  global fail-closed controls and 19 target-only rule-isolation controls.
+- [Iteration 111 pressure-consumer result](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md):
+  Routes 22 expert-normalized demands across 11 categories, interprets seven
+  raw-domain demands without hiding ownership, preserves pathway-only and
+  unregistered outcomes, and passes an answer-free blind replay whose recovery
+  is validated only after replay freeze. Missing crossings, ambiguity, and
+  blocked ecological claims remain explicit.
+- [Causal pathway consolidation closeout](../../implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md):
+  Closes the documentation/conformance tranche without creating a runtime
+  dispatcher, generic admission mechanism, ecological success, or N32 choice.
+- [Iteration 109 bundle supersession](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactBundleSupersession.json):
+  Reconciles the pre-review and accepted I109 identities while recording that
+  selection semantics and scientific claims did not change.
+- [Iteration 110 bundle supersession](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactBundleSupersession.json):
+  Reconciles the review-reported pre-revision bundle identity with the accepted
+  I110 identity while preserving the absence of an unavailable old per-file
+  manifest.
+- [I106-I111 layout relocation](../../implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationLayoutRelocation.json):
+  Maps the original evidence bundles through the builder-only intermediate
+  chain to the accepted chain after moving builders to `scripts/` and
+  supporting records into the indexed investigation package; it records no
+  scientific, conformance-semantic, pressure-outcome, or runtime change.
+- [Conformance policy](../../specs/grc-lgrc-causal-pathway-conformance.json):
+  Frozen maintenance rules for the registry, crosswalk, composition matrix,
+  and selector; not a runtime dispatcher or evidence source.
+- [Selection guide](GRC-LGRC-CausalPathwayGuide.md): Derives temporal, route,
+  native-claim, retention, and crossing selections without creating source
+  facts.
 - [Composition matrix](GRC-LGRC-CompositionMatrix.md): Classifies lawful,
   adapter-mediated, diagnostic, producer-mediated, unsupported, and invalid
   compositions.
@@ -131,9 +172,10 @@ Evidence and contract pointers:
   native current-source admission block.
 
 Claim ceiling: architecture legibility and composition honesty over existing
-mechanisms. This does not claim a universal causal-work API, causal-work owner,
-generic native admission, route formation, Read-Back, ecological support,
-shared-medium coordination, agency, or N32.
+mechanisms, with machine-checked maintenance boundaries. Passing conformance is
+not behavioral evidence. This does not claim a universal causal-work API,
+causal-work owner, generic native admission, route formation, Read-Back,
+ecological support, shared-medium coordination, agency, or N32.
 
 ## N05-N11 Foundation Arc
 

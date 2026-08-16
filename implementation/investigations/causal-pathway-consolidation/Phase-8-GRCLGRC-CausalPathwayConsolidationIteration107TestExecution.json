@@ -1,0 +1,161 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway I107 test execution",
+  "iteration": 107,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "branch": "main",
+  "environment": ".venv",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/models/test_grc_9_v3_step.py",
+    "tests/models/test_grc_9_v3_transport.py",
+    "tests/models/test_grc_9_v3_choice_budget.py",
+    "tests/models/test_grc_9_v3_sparks.py",
+    "tests/models/test_grc_9_v3_grcl9v3_lowering.py",
+    "tests/models/test_grc_9_v3_hessian_readiness.py",
+    "tests/models/test_grc_9_v3_column_h_assisted.py",
+    "tests/models/test_grc_9_v3_state.py",
+    "tests/models/test_lgrc_9_v3_contract.py",
+    "tests/models/test_lgrc_9_v3_runtime.py",
+    "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+    "tests/models/test_lgrc_9_v3_construction.py",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+    "tests/models/test_lgrc_9_v3_restoration.py",
+    "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+    "tests/models/test_reset_baseline_persistence.py",
+    "tests/telemetry/test_lgrc9v3_contract.py"
+  ],
+  "status": "passed",
+  "pytest_test_count": 528,
+  "pytest_subtest_count": 231,
+  "test_file_count": 20,
+  "test_files": [
+    {
+      "path": "tests/models/test_grc_9_v3_step.py",
+      "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_transport.py",
+      "sha256": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_choice_budget.py",
+      "sha256": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_sparks.py",
+      "sha256": "53b6337b50ffa97bfa4cbe34676b5817837fd6864cbe5870c5ed0acf256b310b",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "a94250d721c479475a39d014c43494b5fc5e204b2b32d076526deeb6f476ed29",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_hessian_readiness.py",
+      "sha256": "c1ed11fe4fcab3d83ce29caf9457a0999e110857e486385dd7d157289a282936",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_column_h_assisted.py",
+      "sha256": "11216319f7bd26b38316d0fa0b1b0ad5dd482eafeabda0e97e10efb411228858",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_state.py",
+      "sha256": "fd1bf3f4fe3752c416fdc419f39d1a85bac608d194b5c434634a3602f7f74246",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_contract.py",
+      "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_runtime.py",
+      "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+      "sha256": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_construction.py",
+      "sha256": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+      "sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py",
+      "sha256": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py",
+      "sha256": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+      "sha256": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration.py",
+      "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+      "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/models/test_reset_baseline_persistence.py",
+      "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    },
+    {
+      "path": "tests/telemetry/test_lgrc9v3_contract.py",
+      "sha256": "6331bf72bc41fc3545f5f6cef4b8a8bfc767a89b9c5d9d426b013ffc75884a2c",
+      "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "evidence_role": "executed_current_source_test"
+    }
+  ],
+  "runtime_or_test_source_modified_by_iteration": false,
+  "execution_digest": "243952987d2f037d4108d4699e0b33aa95899d1ca1662e7f914460f5bfd23b5a"
+}

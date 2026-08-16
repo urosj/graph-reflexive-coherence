@@ -1,0 +1,31 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway consolidation Iteration 110 result",
+  "schema_version": "phase8_grclgrc_causal_pathway_iteration_110_result_v1",
+  "iteration": 110,
+  "status": "passed",
+  "repository_branch": "main",
+  "repository_head": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "i109_reconciliation_digest": "06327b2bb019b2ad83287fbf1baaf5ae58104074a88a2c8cef4b2a0c54185dad",
+  "conformance_execution_digest": "14a4ee2a4cc2dc4beca4ce056a15548df90ed4f0d33a707d33facc1a1ce1c6b2",
+  "negative_control_execution_digest": "7d9cc7b5c8358d38add2fa2a17327347411285b05f7f958fd1f5733caa356a80",
+  "rule_count": 20,
+  "negative_control_count": 20,
+  "rule_isolation_control_count": 19,
+  "checks": {
+    "positive_conformance_passed": true,
+    "all_20_rules_passed_current_bundle": true,
+    "all_20_negative_controls_failed_closed": true,
+    "all_19_non_digest_rules_reject_independently": true,
+    "every_rule_has_negative_control": true,
+    "i109_bundle_reconciliation_recorded": true,
+    "legal_readmission_lifecycle_frozen": true,
+    "registry_crosswalk_matrix_selector_counts_preserved": true,
+    "runtime_dispatcher_not_created": true,
+    "behavioral_repair_not_owned": true,
+    "protected_src_test_example_diff_empty": true
+  },
+  "runtime_behavior_changed": false,
+  "iteration_111_ready": true,
+  "result_digest": "32639ae39e1aef46c82c17371be12d86911214f1532645e6f989ad82939d9003"
+}

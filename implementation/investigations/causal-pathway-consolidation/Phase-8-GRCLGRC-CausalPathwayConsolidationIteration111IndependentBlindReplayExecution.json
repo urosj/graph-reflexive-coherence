@@ -1,0 +1,128 @@
+{
+  "artifact": "Phase 8 GRC/LGRC low-context pressure-consumer replay",
+  "schema_version": "phase8_grclgrc_i111_independent_replay_v1",
+  "iteration": 111,
+  "status": "passed",
+  "loaded_input_paths": [
+    "specs/grc-lgrc-causal-pathway-selection-guide.json",
+    "specs/grc-lgrc-causal-pathway-contracts.json",
+    "specs/grc-lgrc-causal-pathway-composition-matrix.json",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerBlindInput.json"
+  ],
+  "loaded_input_roles": [
+    "selection_guide",
+    "registry",
+    "composition_matrix",
+    "blind_consumer_input"
+  ],
+  "loaded_artifact_digests": {
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+  },
+  "source_or_test_files_read": [],
+  "evidence_crosswalk_read": false,
+  "earlier_iteration_report_read": false,
+  "semantic_match_rule": "exact normalized time/route/retained-relation signature",
+  "blind_input_answer_fields_present": [],
+  "match_count": 1,
+  "recovery": {
+    "selected_guide_case_id": "SEL-05",
+    "selected_pathway_ids": [
+      "lgrc9v3.feedback_eligibility_producer",
+      "lgrc9v3.explicit_packet_transport"
+    ],
+    "required_directional_composition_id": "CMP-20",
+    "composition_status": "producer_mediated",
+    "adapter_id": "feedback_eligibility_producer",
+    "adapter_owner": "installed_producer",
+    "configured_residue": [
+      "feedback masks",
+      "thresholds",
+      "route",
+      "amount",
+      "route endpoints",
+      "departure/arrival times"
+    ],
+    "producer_residue": [
+      "feedback surface formation and eligibility"
+    ],
+    "authority_transferred": [
+      "eligibility",
+      "direction",
+      "threshold",
+      "schedule"
+    ],
+    "native_or_bounded_claim": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+    "blocked_claims": [
+      "lawful_native",
+      "native feedback admission"
+    ],
+    "missing_crossing": "none",
+    "nearby_alternatives_rejected": [
+      {
+        "case_id": "SEL-01",
+        "matching_signature_field_count": 1,
+        "matching_signature_fields": [
+          "required_temporal_semantics"
+        ],
+        "why_wrong": [
+          {
+            "field": "route_relation",
+            "required": "producer_supplied_feedback_route",
+            "alternative": "explicit_fixture_route"
+          },
+          {
+            "field": "retained_relation",
+            "required": "surface_to_packet_producer_record",
+            "alternative": "packet_and_queue_history_through_settlement"
+          }
+        ]
+      },
+      {
+        "case_id": "SEL-02",
+        "matching_signature_field_count": 1,
+        "matching_signature_fields": [
+          "required_temporal_semantics"
+        ],
+        "why_wrong": [
+          {
+            "field": "route_relation",
+            "required": "producer_supplied_feedback_route",
+            "alternative": "explicit_fixture_route"
+          },
+          {
+            "field": "retained_relation",
+            "required": "surface_to_packet_producer_record",
+            "alternative": "packet_identity_and_ledger_state"
+          }
+        ]
+      },
+      {
+        "case_id": "SEL-04",
+        "matching_signature_field_count": 1,
+        "matching_signature_fields": [
+          "required_temporal_semantics"
+        ],
+        "why_wrong": [
+          {
+            "field": "route_relation",
+            "required": "producer_supplied_feedback_route",
+            "alternative": "supplied_candidates_native_selection"
+          },
+          {
+            "field": "retained_relation",
+            "required": "surface_to_packet_producer_record",
+            "alternative": "diagnostic_projection_of_committed_topology"
+          }
+        ]
+      }
+    ]
+  },
+  "error_count": 0,
+  "errors": [],
+  "runtime_behavior_changed": false,
+  "ecological_meaning_inferred": false,
+  "extension_authorized": false,
+  "execution_digest": "02f8a53060244c7b0f73375f9fea62e50c2eea7ce291e3d1a3753e4b7338162a"
+}

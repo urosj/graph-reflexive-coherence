@@ -1,0 +1,49 @@
+{
+  "artifact": "Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106ArtifactFreeze",
+  "schema_version": "phase8_grclgrc_causal_pathway_iteration_106_artifact_freeze_v1",
+  "iteration": 106,
+  "status": "frozen",
+  "repository_branch": "main",
+  "repository_head": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "result_digest": "9ac8c967c6cdf1d098ad99df569ce05aebd2b1c03d94ff03096aaf3952f6e3b0",
+  "frozen_artifacts": [
+    {
+      "path": "specs/grc-lgrc-causal-pathway-contracts.json",
+      "sha256": "0aab2d6e1e515b58b057effde5bd0a013256615d3cf3fee548b49a1d2edd9141",
+      "artifact_role": "machine_registry"
+    },
+    {
+      "path": "specs/grc-lgrc-causal-pathway-contracts.md",
+      "sha256": "9a2b7487d1c93581d83a033a474bfc1f5cc1534f7f60e9e62e8f720337548468",
+      "artifact_role": "registry_specification"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.json",
+      "sha256": "89e3efc09ec7741d7f0ae2f33b350e2d43ee23847d3b49260136f5807eef2375",
+      "artifact_role": "iteration_result"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.md",
+      "sha256": "a822908a9c4c9f89c5431f3c860c09d8bb8175998104d3b51734d1bcc661fd74",
+      "artifact_role": "iteration_report"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationSourceManifest.json",
+      "sha256": "5d5b3a190349279cb93f8999e1b524f7de66dcb8d700e3a44fe4ace85eb422e8",
+      "artifact_role": "source_manifest"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationUnmappedSurfaceReport.md",
+      "sha256": "652524c31b02cd7e097a47fb4c6a789eb988d029b89ab320f04bdcba0e36caba",
+      "artifact_role": "unmapped_surface_report"
+    },
+    {
+      "path": "scripts/build_phase8_causal_pathway_i106.py",
+      "sha256": "fe8a0f6b49cd035d7a96edaabd6f4180f6db9e5692e92226874c359036cb34f3",
+      "artifact_role": "reproducible_builder"
+    }
+  ],
+  "self_hash_policy": "artifact_freeze_excluded_to_avoid_recursive_digest",
+  "bundle_digest": "d850f81751d4a538a9ae92ee421e8e35c79beaa4e21ef16726d9156edf6c442e"
+}

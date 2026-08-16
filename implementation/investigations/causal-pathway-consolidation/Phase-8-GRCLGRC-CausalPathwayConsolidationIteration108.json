@@ -1,0 +1,42 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway consolidation Iteration 108 result",
+  "iteration": 108,
+  "status": "passed",
+  "acceptance_state": "accepted_directional_crossing_evidence_matrix_no_runtime_change",
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "branch": "main",
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "test_execution_digest": "e196fa7c8f44ed99da22426e8f800eb2f30c262881b6c61a1246eb40cf756843",
+  "composition_count": 26,
+  "status_counts": {
+    "lawful_native": 10,
+    "lawful_with_explicit_adapter": 1,
+    "diagnostic_only": 2,
+    "producer_mediated": 4,
+    "unsupported_missing_crossing": 3,
+    "invalid_relabel": 6
+  },
+  "selected_crossing_test_count": 37,
+  "checks": {
+    "i106_registry_digest_matches": true,
+    "i107_crosswalk_digest_matches": true,
+    "all_26_composition_ids_unique": true,
+    "all_status_classes_represented": true,
+    "all_endpoint_pathways_and_stages_resolve": true,
+    "endpoint_evidence_never_used_as_crossing_evidence": true,
+    "lawful_native_rows_have_source_and_current_crossing_evidence": true,
+    "adapter_rows_name_adapter_and_non_native_owner": true,
+    "producer_rows_retain_non_native_owner": true,
+    "unsupported_rows_record_absence_audit": true,
+    "invalid_relabels_name_blocked_claims": true,
+    "all_rows_record_compatibility_authority_and_loss": true,
+    "selected_crossing_tests_passed": true,
+    "runtime_behavior_unchanged": true,
+    "iteration_109_ready": true
+  },
+  "runtime_behavior_changed": false,
+  "iteration_109_ready": true,
+  "result_digest": "559a82d28edbf89232a24a00af99c66659b56a42eca6974484a6ecddc3d35c3c"
+}

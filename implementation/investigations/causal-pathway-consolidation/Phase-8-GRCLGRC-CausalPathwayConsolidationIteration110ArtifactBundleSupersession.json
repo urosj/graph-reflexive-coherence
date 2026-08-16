@@ -1,0 +1,53 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway Iteration 110 artifact-bundle supersession",
+  "schema_version": "phase8_grclgrc_causal_pathway_i110_artifact_bundle_supersession_v2",
+  "status": "reconciled",
+  "recorded_during_iteration": 111,
+  "superseded_working_bundle_digest": "aed84583410b4746d043ed550029ad5ccd8d47c8e30ccc59fabc233bb8fffd8c",
+  "superseded_identity_source": "external review record supplied before I110 review revisions",
+  "superseded_full_artifact_manifest_available": false,
+  "superseded_bundle_is_alternate_authority": false,
+  "pre_relocation_accepted_bundle_digest": "1b3b94f987733fc2c5f06740b6e27a1725309fe36c54d8ac7bfcaf76ba6f7fe7",
+  "builder_only_intermediate_bundle_digest": "d271c13d0b68c78adda90fbd6168119ef77a41ac46c21d15c2c4acedfbff5381",
+  "accepted_current_bundle_digest": "510f442c38d12018cec20951136019319895866b3e74c3fe57c8db48cddd079b",
+  "accepted_current_freeze": {
+    "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactFreeze.json",
+    "sha256": "f372cb1e0e63cb51bcf51ddf3fd6520e586cf9e13dc32d987a9cc85a83bf81a9"
+  },
+  "transition_chain": [
+    {
+      "from": "aed84583410b4746d043ed550029ad5ccd8d47c8e30ccc59fabc233bb8fffd8c",
+      "to": "1b3b94f987733fc2c5f06740b6e27a1725309fe36c54d8ac7bfcaf76ba6f7fe7",
+      "reason": "I110 review added explicit I109 provenance reconciliation, target-only rule isolation, and the legal stale-to-reviewed re-admission lifecycle.",
+      "conformance_strength_changed": true,
+      "scientific_pathway_claim_changed": false
+    },
+    {
+      "from": "1b3b94f987733fc2c5f06740b6e27a1725309fe36c54d8ac7bfcaf76ba6f7fe7",
+      "to": "d271c13d0b68c78adda90fbd6168119ef77a41ac46c21d15c2c4acedfbff5381",
+      "reason": "The reproducibility builder moved from implementation/ to scripts/ and predecessor identity assertions were regenerated in order.",
+      "conformance_strength_changed": false,
+      "scientific_pathway_claim_changed": false
+    },
+    {
+      "from": "d271c13d0b68c78adda90fbd6168119ef77a41ac46c21d15c2c4acedfbff5381",
+      "to": "510f442c38d12018cec20951136019319895866b3e74c3fe57c8db48cddd079b",
+      "reason": "Supporting I106-I111 records moved from the implementation root into the indexed causal-pathway investigation package.",
+      "conformance_strength_changed": false,
+      "scientific_pathway_claim_changed": false
+    }
+  ],
+  "changed_or_added_surfaces": [
+    "I109 artifact-bundle supersession record",
+    "I110 conformance policy and checker",
+    "I110 global and target-only negative-control execution",
+    "I110 result, report, and freeze",
+    "builder and supporting-evidence path relocation with propagated predecessor identities"
+  ],
+  "conformance_strength_changed": true,
+  "selection_semantics_changed": false,
+  "scientific_pathway_claim_changed": false,
+  "runtime_behavior_changed": false,
+  "reconciliation_boundary": "The old bundle digest is preserved, but its per-file manifest is unavailable in the current worktree and must not be reconstructed or treated as accepted authority.",
+  "reconciliation_digest": "bdfd7d70d9def96c994f21715c5eba7ac2174721d8853e1fcbd3f37c866473c8"
+}

@@ -263,9 +263,37 @@ Phase 8 GRC/LGRC causal-pathway contract consolidation checklist:
 Phase 8 GRC/LGRC causal-pathway baseline freeze:
 [Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md](./Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md)
 
-This is a documentation and conformance tranche. Iteration 105 is complete;
-Iterations 106-111 remain pending. It does not reopen the closed event-local
-geometry-integration runtime proposal or change GRC/LGRC behavior.
+Phase 8 GRC/LGRC causal-pathway Iteration 106 schema freeze:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.md](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.md)
+
+Phase 8 GRC/LGRC causal-pathway Iteration 107 evidence crosswalk:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.md](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.md)
+
+Phase 8 GRC/LGRC causal-pathway Iteration 108 composition matrix:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md)
+
+Phase 8 GRC/LGRC causal-pathway Iteration 109 selection guide:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md)
+
+Phase 8 GRC/LGRC causal-pathway Iteration 110 conformance:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.md](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.md)
+
+Phase 8 GRC/LGRC causal-pathway Iteration 111 pressure validation:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md)
+
+Phase 8 GRC/LGRC causal-pathway consolidation closeout:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md](./Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md)
+
+This documentation and conformance tranche is complete through Iteration 111.
+Its closeout includes 22 expert-normalized pressure cases, seven raw-domain
+demands, and an answer-free blind replay frozen before separate oracle
+validation. It preserves pathway-only and unregistered outcomes without
+creating an automatic natural-language selector. Its reproducibility builders
+live under `scripts/`; the essential lifecycle documents remain here, and the
+supporting evidence package is indexed at
+[`investigations/causal-pathway-consolidation/`](./investigations/causal-pathway-consolidation/README.md).
+It does not reopen the closed
+event-local geometry-integration runtime proposal or change GRC/LGRC behavior.
 
 LGRC9V3 executable target specification:
 [lgrc-9-v3-spec.md](../specs/lgrc-9-v3-spec.md)

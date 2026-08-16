@@ -1412,17 +1412,30 @@ gates remain closed.
 
 ## Separate Causal Pathway Consolidation Tranche
 
-The next Phase 8 work is not an Event-Local Geometry Integration rescue. A
-separate documentation/conformance tranche starts at Iteration 105:
+The follow-on Phase 8 work was not an Event-Local Geometry Integration rescue.
+The separate documentation/conformance tranche is complete through Iteration
+111:
 
 - [`Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md)
 - [`Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md)
 - [`Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md)
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md`](./investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md)
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md)
 - [`../specs/grc-lgrc-causal-pathway-contracts.md`](../specs/grc-lgrc-causal-pathway-contracts.md)
 - [`../docs/reference/GRC-LGRC-CausalPathwayGuide.md`](../docs/reference/GRC-LGRC-CausalPathwayGuide.md)
 - [`../docs/reference/GRC-LGRC-CompositionMatrix.md`](../docs/reference/GRC-LGRC-CompositionMatrix.md)
 
 The tranche maps existing pathways, distributed authorities, lawful
-compositions, adapters, and claim ceilings. Initial source behavior remains
-unchanged. L04, boundary/circulation, AP4/AP5, shared-medium, route/role, and
-future N32 work are pressure consumers only; none is selected or implemented.
+compositions, adapters, and claim ceilings. Its final 22-row expert pressure
+corpus, seven raw-domain demands, and answer-free blind replay validate bounded
+selection without hidden source reading. The raw layer preserves pathway-only
+and unregistered outcomes, and the replay is frozen before separate oracle
+validation. Initial source behavior remains unchanged. L04,
+boundary/circulation, AP4/AP5, shared-medium, route/role, and future N32 work
+remain pressure consumers only; none is selected or implemented.
+
+The tranche's I106-I111 reproducibility builders live under `scripts/`.
+The essential lifecycle documents remain at the `implementation/` root, while
+the source audit and I106-I111 supporting evidence are indexed under
+[`investigations/causal-pathway-consolidation/`](./investigations/causal-pathway-consolidation/README.md).
+The path-only bundle transitions are preserved in the layout-relocation record.

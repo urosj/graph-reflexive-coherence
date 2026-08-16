@@ -1,0 +1,785 @@
+{
+  "artifact": "GRC/LGRC causal pathway evidence-derived selection guide",
+  "schema_version": "grc_lgrc_causal_pathway_selection_guide_v1",
+  "iteration": 109,
+  "status": "frozen",
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "i108_predecessor_reconciliation": {
+    "status": "reconciled",
+    "superseded_working_bundle_digest": "475ba6a76adc00515f63e16f9e9f75c8d56077fe2784d8657ac8f2442c495148",
+    "accepted_current_bundle_digest": "d2bd07c662acc7185f1e5cb62c03d48c9a2469f96511ec3cefd1dfde75eec8d3",
+    "reconciliation_digest": "27d120cce54f47bde1ed399735134cd5537a588cf7986000141d5804d7b64756"
+  },
+  "authority_rule": "registry owns pathway facts; crosswalk owns evidence attachment; matrix owns directional crossing facts; selector only derives selection outcomes",
+  "selection_sequence": [
+    "declare required temporal semantics",
+    "declare explicit/configured/arbitrated/formed route relation",
+    "declare retained relation",
+    "select registered pathway",
+    "look up exact directional composition where interaction is required",
+    "preserve owner, residue, claim ceiling, blocked relabels, and missing relation"
+  ],
+  "time_semantics_index": {
+    "caller_checkpoint": [
+      "lgrc9v3.diagnostic_grc_reconstruction"
+    ],
+    "checkpoint_time": [
+      "pygrc.restoration_replay_identity"
+    ],
+    "configuration_time": [
+      "lgrc9v3.configured_flux_route"
+    ],
+    "derived_event_time": [
+      "lgrc9v3.causal_history_annotation",
+      "lgrc9v3.fixed_topology_eligibility"
+    ],
+    "event_time": [
+      "lgrc9v3.boundary_birth",
+      "lgrc9v3.causal_pulse_surface_lineage",
+      "lgrc9v3.causal_spark_topology_integration",
+      "lgrc9v3.collapse_reabsorption",
+      "lgrc9v3.explicit_packet_transport",
+      "lgrc9v3.multi_basin_record_validation",
+      "lgrc9v3.native_route_arbitration",
+      "lgrc9v3.proper_time_identity_acceptance"
+    ],
+    "explicit_call": [
+      "lgrc9v3.native_route_arbitration"
+    ],
+    "global_synchronous_step": [
+      "grc9v3.front_capacity_growth",
+      "grc9v3.hybrid_spark_refinement",
+      "grc9v3.identity_basin_reconstruction",
+      "grc9v3.legacy_inactive_port_growth",
+      "grc9v3.sink_compatibility_choice",
+      "grc9v3.synchronous_update_cycle"
+    ],
+    "producer_frontier": [
+      "lgrc9v3.boundary_birth",
+      "lgrc9v3.feedback_eligibility_producer",
+      "lgrc9v3.pulse_substrate_coupling_producer",
+      "lgrc9v3.route_aspect_surplus"
+    ],
+    "producer_frontier_then_event_time": [
+      "lgrc9v3.configured_flux_route",
+      "lgrc9v3.feedback_eligibility_producer",
+      "lgrc9v3.pulse_substrate_coupling_producer",
+      "lgrc9v3.route_aspect_surplus"
+    ],
+    "proper_time_and_event_time": [
+      "lgrc9v3.proper_time_identity_evaluation"
+    ],
+    "replay_window": [
+      "lgrc9v3.multi_basin_record_validation",
+      "pygrc.restoration_replay_identity"
+    ],
+    "synchronous_limit_at_checkpoint": [
+      "lgrc9v3.diagnostic_grc_reconstruction"
+    ]
+  },
+  "human_guide_pathway_refs": [
+    "grc9v3.synchronous_update_cycle",
+    "lgrc9v3.boundary_birth",
+    "lgrc9v3.causal_history_annotation",
+    "lgrc9v3.causal_pulse_surface_lineage",
+    "lgrc9v3.causal_spark_topology_integration",
+    "lgrc9v3.collapse_reabsorption",
+    "lgrc9v3.configured_flux_route",
+    "lgrc9v3.explicit_packet_transport",
+    "lgrc9v3.native_route_arbitration",
+    "lgrc9v3.route_aspect_surplus",
+    "pygrc.restoration_replay_identity"
+  ],
+  "unregistered_pair_rule": "absence from the representative I108 matrix means unregistered_not_classified, not unsupported_missing_crossing",
+  "ambiguity_rule": "multiple rows with the same endpoints require crossing-semantic disambiguation; first-match selection is forbidden",
+  "maturity_rule": "composition status is not a maturity score",
+  "extension_rule": "unsupported or unregistered crossings do not automatically authorize implementation",
+  "ecology_rule": "selection does not establish ecological or agentic meaning",
+  "status_to_resolution": {
+    "lawful_native": "existing_lawful_composition",
+    "lawful_with_explicit_adapter": "existing_composition_with_explicit_adapter",
+    "diagnostic_only": "diagnostic_surface_only",
+    "producer_mediated": "producer_mediated_composition",
+    "unsupported_missing_crossing": "precise_missing_crossing",
+    "invalid_relabel": "rejected_invalid_relabel"
+  },
+  "worked_cases": [
+    {
+      "case_id": "SEL-01",
+      "title": "Existing event-time packet pathway",
+      "demand": "Execute a declared packet schedule with debit, in-flight retention, arrival, and target credit without claiming route formation.",
+      "required_temporal_semantics": [
+        "event_time"
+      ],
+      "route_relation": "explicit_fixture_route",
+      "retained_relation": "packet_and_queue_history_through_settlement",
+      "resolution_kind": "existing_pathway",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "from_pathway_id": null,
+      "to_pathway_id": null,
+      "required_directional_composition_id": null,
+      "composition_status": "not_applicable_pathway_only",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "producer_residue": [],
+      "claim_ceiling": [
+        "native packet accounting and queue-processing mechanics"
+      ],
+      "blocked_nearby_interpretation": [
+        "substrate-formed route",
+        "native departure reason",
+        "agency"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [],
+      "pathway_evidence_statuses": [
+        "current_source_passed"
+      ],
+      "source_authority_refs": [
+        "registry:lgrc9v3.explicit_packet_transport",
+        "crosswalk:lgrc9v3.explicit_packet_transport:packet_schedule",
+        "crosswalk:lgrc9v3.explicit_packet_transport:source_debit",
+        "crosswalk:lgrc9v3.explicit_packet_transport:target_credit"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-02",
+      "title": "Native packet lifecycle crossing",
+      "demand": "Carry one supplied packet identity through schedule, debit, in-flight state, and arrival credit.",
+      "required_temporal_semantics": [
+        "event_time"
+      ],
+      "route_relation": "explicit_fixture_route",
+      "retained_relation": "packet_identity_and_ledger_state",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "from_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "required_directional_composition_id": "CMP-02",
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "producer_residue": [],
+      "claim_ceiling": "Native packet debit/arrival mechanics; route, amount, and schedule remain supplied.",
+      "blocked_nearby_interpretation": [
+        "native route formation",
+        "generic work admission"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Packet ID and ledger state survive every lifecycle stage."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Event-time queue orders departure before arrival."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Declared source, edge, and target endpoints remain explicit."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Source plus in-flight plus target coherence is conserved."
+      },
+      "authority_retained": [
+        "packet endpoint direction",
+        "caller-supplied schedule",
+        "LGRC step commitment"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "No lifecycle state is discarded.",
+      "source_authority_refs": [
+        "registry:lgrc9v3.explicit_packet_transport",
+        "registry:lgrc9v3.explicit_packet_transport",
+        "matrix:CMP-02",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_runtime.py",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_contract.py",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_packets.py",
+        "crossing_evidence:tests/models/test_lgrc_9_v3_contract.py::LGRC9V3ContractTest::test_lgrc2_scheduled_packet_processes_departure_then_arrival"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-03",
+      "title": "Explicit cross-runtime front-capacity adapter",
+      "demand": "Place GRC front-capacity state at a declared LGRC event-time boundary-birth frontier while keeping construction ownership visible.",
+      "required_temporal_semantics": [
+        "global_synchronous_step",
+        "event_time"
+      ],
+      "route_relation": "cross_runtime_construction",
+      "retained_relation": "front_capacity_state_without_synchronous_history_conversion",
+      "resolution_kind": "existing_composition_with_explicit_adapter",
+      "selected_pathway_ids": [
+        "grc9v3.front_capacity_growth",
+        "lgrc9v3.boundary_birth"
+      ],
+      "from_pathway_id": "grc9v3.front_capacity_growth",
+      "to_pathway_id": "lgrc9v3.boundary_birth",
+      "required_directional_composition_id": "CMP-26",
+      "composition_status": "lawful_with_explicit_adapter",
+      "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+      "adapter_owner": "library_construction_adapter_invoked_by_caller",
+      "configured_residue": [
+        "GRCL9V3 front-capacity eligibility mode",
+        "front-capacity map",
+        "birth alpha",
+        "RNG policy",
+        "front propagation",
+        "eligibility mode",
+        "front-capacity source",
+        "birth probability",
+        "edge delay"
+      ],
+      "producer_residue": [],
+      "claim_ceiling": "Lawful explicit construction adapter; not native cross-runtime formation or inherited event history.",
+      "blocked_nearby_interpretation": [
+        "lawful_native",
+        "automatic time-semantics conversion",
+        "native role formation"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [],
+      "state_identity_mapping": {
+        "status": "explicit_construction_mapping",
+        "detail": "LGRC9V3.from_state carries GRC base state; construction policy supplies LGRC modes."
+      },
+      "temporal_compatibility": {
+        "status": "adapter_required",
+        "detail": "Synchronous GRC state is placed at an explicit LGRC event-time frontier."
+      },
+      "spatial_compatibility": {
+        "status": "front_metadata_preserved",
+        "detail": "Configured front-capacity parent/port metadata is retained."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible_when_declared",
+        "detail": "Construction and birth policies must preserve parent/child coherence budget."
+      },
+      "authority_retained": [
+        "GRC front-capacity state",
+        "LGRC native/configured birth commit"
+      ],
+      "authority_transferred": [
+        "runtime wrapping",
+        "causal modes",
+        "queue priming"
+      ],
+      "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "source_authority_refs": [
+        "registry:grc9v3.front_capacity_growth",
+        "registry:lgrc9v3.boundary_birth",
+        "matrix:CMP-26",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_construction.py",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_runtime.py",
+        "crossing_evidence:tests/models/test_lgrc_9_v3_construction.py::LGRC9V3ConstructionTest::test_corrected_cascade_queue_policy_is_explicit"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-04",
+      "title": "Post-commit multi-basin diagnostic",
+      "demand": "Read validated child-basin and flow-window records after an arbitration-backed topology commit without treating records as the mutation.",
+      "required_temporal_semantics": [
+        "event_time"
+      ],
+      "route_relation": "supplied_candidates_native_selection",
+      "retained_relation": "diagnostic_projection_of_committed_topology",
+      "confusion_pair_id": "PAIR-01",
+      "confusion_role": "diagnostic",
+      "resolution_kind": "diagnostic_surface_only",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.multi_basin_record_validation"
+      ],
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "to_pathway_id": "lgrc9v3.multi_basin_record_validation",
+      "required_directional_composition_id": "CMP-24",
+      "composition_status": "diagnostic_only",
+      "adapter_id": null,
+      "adapter_owner": "runtime_diagnostic_hook",
+      "configured_residue": [
+        "candidate schema",
+        "score/order policy",
+        "claim flags",
+        "budget prediction",
+        "multi-basin policy",
+        "window",
+        "metrics",
+        "control thresholds"
+      ],
+      "producer_residue": [
+        "candidate and score formation when experiment supplied"
+      ],
+      "claim_ceiling": "Diagnostic records over a committed native/configured topology event.",
+      "blocked_nearby_interpretation": [
+        "basin formation by record",
+        "general robustness"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [],
+      "state_identity_mapping": {
+        "status": "exact_diagnostic_projection",
+        "detail": "Records cite committed topology and candidate identities."
+      },
+      "temporal_compatibility": {
+        "status": "post_commit",
+        "detail": "Emission occurs only after the topology commit."
+      },
+      "spatial_compatibility": {
+        "status": "child_parent_regions",
+        "detail": "Records project the affected child/parent regions."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "descriptive",
+        "detail": "Records observe budget/flux and do not authorize mutation."
+      },
+      "authority_retained": [
+        "native topology commit",
+        "diagnostic record validation"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Runtime state is compressed to flow-window and child-basin schemas.",
+      "source_authority_refs": [
+        "registry:lgrc9v3.native_route_arbitration",
+        "registry:lgrc9v3.multi_basin_record_validation",
+        "matrix:CMP-24",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_runtime.py",
+        "crossing_evidence:tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_commit_emits_multi_basin_candidate_records_when_enabled"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-05",
+      "title": "Producer-owned feedback eligibility",
+      "demand": "Let an installed producer read a feedback surface and schedule native packet mechanics while retaining eligibility and direction ownership.",
+      "required_temporal_semantics": [
+        "event_time"
+      ],
+      "route_relation": "producer_supplied_feedback_route",
+      "retained_relation": "surface_to_packet_producer_record",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.feedback_eligibility_producer",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "required_directional_composition_id": "CMP-20",
+      "composition_status": "producer_mediated",
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "configured_residue": [
+        "feedback masks",
+        "thresholds",
+        "route",
+        "amount",
+        "route endpoints",
+        "departure/arrival times"
+      ],
+      "producer_residue": [
+        "feedback surface formation and eligibility"
+      ],
+      "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+      "blocked_nearby_interpretation": [
+        "lawful_native",
+        "native feedback admission"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [],
+      "state_identity_mapping": {
+        "status": "exact_with_producer",
+        "detail": "Producer record links consumed surface to scheduled packet ID."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Producer read and packet schedule are time-scoped."
+      },
+      "spatial_compatibility": {
+        "status": "configured",
+        "detail": "Feedback relation and packet route are configured."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Native packet lifecycle enforces budget after producer schedule."
+      },
+      "authority_retained": [
+        "native packet mutation",
+        "surface lineage validity"
+      ],
+      "authority_transferred": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "source_authority_refs": [
+        "registry:lgrc9v3.feedback_eligibility_producer",
+        "registry:lgrc9v3.explicit_packet_transport",
+        "matrix:CMP-20",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_runtime.py",
+        "crossing_evidence:tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_feedback_surface_and_producer_schedule_via_packet_queue_only"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-06",
+      "title": "Missing sink-choice to route-schedule crossing",
+      "demand": "Use a GRC sink-compatibility result to schedule LGRC route work without inventing an admission bridge.",
+      "required_temporal_semantics": [
+        "global_synchronous_step",
+        "producer_frontier_then_event_time"
+      ],
+      "route_relation": "expected_from_sink_compatibility",
+      "retained_relation": "sink_score_to_route_schedule",
+      "resolution_kind": "precise_missing_crossing",
+      "selected_pathway_ids": [
+        "grc9v3.sink_compatibility_choice",
+        "lgrc9v3.configured_flux_route"
+      ],
+      "from_pathway_id": "grc9v3.sink_compatibility_choice",
+      "to_pathway_id": "lgrc9v3.configured_flux_route",
+      "required_directional_composition_id": "CMP-06",
+      "composition_status": "unsupported_missing_crossing",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [
+        "choice backend",
+        "epsilon choice",
+        "epsilon collapse",
+        "learning rate",
+        "budget policy",
+        "route",
+        "target",
+        "amount source",
+        "arrival delay"
+      ],
+      "producer_residue": [],
+      "claim_ceiling": "Unsupported until an explicit admission and scheduling relation is supplied.",
+      "blocked_nearby_interpretation": [
+        "semantic choice",
+        "native route formation"
+      ],
+      "missing_relation": "CMP-06",
+      "registered_alternatives": [],
+      "state_identity_mapping": {
+        "status": "missing",
+        "detail": "Choice registry has no admitted mapping to LGRC route records."
+      },
+      "temporal_compatibility": {
+        "status": "incompatible",
+        "detail": "Synchronous choice rebuild has no event-time scheduling bridge."
+      },
+      "spatial_compatibility": {
+        "status": "unmapped",
+        "detail": "Sink IDs do not define LGRC source-edge-target route identity."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "unmapped",
+        "detail": "Choice state supplies no packet amount or debit authority."
+      },
+      "authority_retained": [
+        "GRC choice mechanics",
+        "LGRC configured-route mechanics"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Score, sink, amount, and schedule mapping are absent.",
+      "source_authority_refs": [
+        "registry:grc9v3.sink_compatibility_choice",
+        "registry:lgrc9v3.configured_flux_route",
+        "matrix:CMP-06"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-07",
+      "title": "Diagnostic-as-behavioral relabel rejection",
+      "demand": "Treat an explicit GRC reconstruction over LGRC state as if ordinary LGRC packet behavior had consumed it.",
+      "required_temporal_semantics": [
+        "caller_checkpoint",
+        "event_time"
+      ],
+      "route_relation": "diagnostic_output_claimed_as_packet_admission",
+      "retained_relation": "none_at_proposed_causal_crossing",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "required_directional_composition_id": "CMP-05",
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [
+        "diagnostic modes",
+        "copied params",
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "producer_residue": [],
+      "claim_ceiling": "No ordinary LGRC behavior claim is allowed.",
+      "blocked_nearby_interpretation": [
+        "diagnostic_as_behavior",
+        "native packet admission"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [],
+      "state_identity_mapping": {
+        "status": "missing",
+        "detail": "No constitutive mapping from diagnostic output to packet scheduling is declared."
+      },
+      "temporal_compatibility": {
+        "status": "incompatible",
+        "detail": "Explicit checkpoint diagnostics do not become event-queue causes."
+      },
+      "spatial_compatibility": {
+        "status": "unmapped",
+        "detail": "Diagnostic graph scope supplies no packet endpoint mapping."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "unmapped",
+        "detail": "Diagnostic values carry no packet funding authority."
+      },
+      "authority_retained": [
+        "diagnostic helper"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "All causal authority is absent at the proposed crossing.",
+      "source_authority_refs": [
+        "registry:lgrc9v3.diagnostic_grc_reconstruction",
+        "registry:lgrc9v3.explicit_packet_transport",
+        "matrix:CMP-05"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-08",
+      "title": "Arbitration-backed behavioral topology commit",
+      "demand": "Commit the selected arbitration candidate through collapse and reabsorption while keeping candidate and score formation external.",
+      "required_temporal_semantics": [
+        "event_time"
+      ],
+      "route_relation": "supplied_candidates_native_selection",
+      "retained_relation": "candidate_and_topology_digest_across_commit",
+      "confusion_pair_id": "PAIR-01",
+      "confusion_role": "behavioral",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.collapse_reabsorption"
+      ],
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "to_pathway_id": "lgrc9v3.collapse_reabsorption",
+      "required_directional_composition_id": "CMP-07",
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "configured_residue": [
+        "candidate schema",
+        "score/order policy",
+        "claim flags",
+        "budget prediction",
+        "collapse policy",
+        "explicit or arbitration input",
+        "reabsorption modes"
+      ],
+      "producer_residue": [
+        "candidate and score formation when experiment supplied",
+        "candidate formation when externally supplied"
+      ],
+      "claim_ceiling": "Native arbitration-to-collapse commit mechanics; candidate and score formation remain external/configured.",
+      "blocked_nearby_interpretation": [
+        "native candidate formation",
+        "semantic choice"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [
+        "CMP-16"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Candidate, arbitration, and selected topology digests are checked across the call."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Commit occurs at the explicit arbitration frontier."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Candidate sink/loser/lineage fields map directly to collapse scope."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Predicted budget and committed topology digest are validated."
+      },
+      "authority_retained": [
+        "native highest-score arbitration",
+        "native topology commitment"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Unselected candidate details remain in audit records rather than mutation input.",
+      "source_authority_refs": [
+        "registry:lgrc9v3.native_route_arbitration",
+        "registry:lgrc9v3.collapse_reabsorption",
+        "matrix:CMP-07",
+        "crossing_source:src/pygrc/models/lgrc_9_v3_runtime.py",
+        "crossing_evidence:tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_arbitration_commit_integrates_topology_and_producer"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-09",
+      "title": "Unregistered pair remains unclassified",
+      "demand": "Ask whether synchronous GRC transport composes directly into restoration identity when I108 registered no such crossing.",
+      "required_temporal_semantics": [
+        "global_synchronous_step",
+        "checkpoint_time"
+      ],
+      "route_relation": "none",
+      "retained_relation": "proposed_transport_to_restoration_relation",
+      "resolution_kind": "unregistered_not_classified",
+      "selected_pathway_ids": [
+        "grc9v3.synchronous_update_cycle",
+        "pygrc.restoration_replay_identity"
+      ],
+      "from_pathway_id": "grc9v3.synchronous_update_cycle",
+      "to_pathway_id": "pygrc.restoration_replay_identity",
+      "required_directional_composition_id": null,
+      "composition_status": "unregistered_not_classified",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [
+        "constitutive modes",
+        "backend selections",
+        "evolution parameters",
+        "identity schema version",
+        "legacy compatibility policy",
+        "replay scope"
+      ],
+      "producer_residue": [],
+      "claim_ceiling": "No composition claim; the directional pair was not registered in I108.",
+      "blocked_nearby_interpretation": [
+        "unregistered pair as unsupported_missing_crossing",
+        "endpoint evidence as crossing evidence",
+        "automatic extension authorization"
+      ],
+      "missing_relation": "unclassified_directional_pair_requires_source_audit",
+      "registered_alternatives": [],
+      "source_authority_refs": [
+        "registry:grc9v3.synchronous_update_cycle",
+        "registry:pygrc.restoration_replay_identity",
+        "matrix:no_registered_directional_row"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    },
+    {
+      "case_id": "SEL-10",
+      "title": "Multiple crossings require semantic disambiguation",
+      "demand": "Select an arbitration-to-collapse relation without specifying whether direct commit or lineage-aware transport is required.",
+      "required_temporal_semantics": [
+        "event_time"
+      ],
+      "route_relation": "supplied_candidates_native_selection",
+      "retained_relation": "unspecified_commit_or_lineage_scope",
+      "resolution_kind": "ambiguous_registered_crossing",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.collapse_reabsorption"
+      ],
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "to_pathway_id": "lgrc9v3.collapse_reabsorption",
+      "required_directional_composition_id": null,
+      "composition_status": "ambiguous_registered_crossing",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [
+        "candidate schema",
+        "score/order policy",
+        "claim flags",
+        "budget prediction",
+        "collapse policy",
+        "explicit or arbitration input",
+        "reabsorption modes"
+      ],
+      "producer_residue": [
+        "candidate and score formation when experiment supplied",
+        "candidate formation when externally supplied"
+      ],
+      "claim_ceiling": "No selection until the required crossing semantics are specified.",
+      "blocked_nearby_interpretation": [
+        "first matching composition as selected crossing",
+        "shared endpoints as equivalent composition semantics"
+      ],
+      "missing_relation": "none",
+      "registered_alternatives": [
+        "CMP-07",
+        "CMP-16"
+      ],
+      "source_authority_refs": [
+        "registry:lgrc9v3.native_route_arbitration",
+        "registry:lgrc9v3.collapse_reabsorption",
+        "matrix:CMP-07",
+        "matrix:CMP-16"
+      ],
+      "composition_status_is_maturity": false,
+      "ecological_meaning_inferred": false,
+      "extension_authorized": false
+    }
+  ],
+  "confusion_pairs": [
+    {
+      "pair_id": "PAIR-01",
+      "shared_origin_pathway_id": "lgrc9v3.native_route_arbitration",
+      "diagnostic_case_id": "SEL-04",
+      "diagnostic_composition_id": "CMP-24",
+      "behavioral_case_id": "SEL-08",
+      "behavioral_composition_id": "CMP-07",
+      "distinction": "post-commit diagnostic record emission versus native/configured topology commitment"
+    }
+  ],
+  "validation_execution_digest": "287f6c4c0e899a986607df5dafedbcaa2c047629c29973740d1e2414a9a489ff",
+  "runtime_behavior_changed": false,
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+}

@@ -42,14 +42,42 @@ The implementation strategy assumed by these specs is:
   evidence over `GRC9V3`; behavior-changing LGRC-1 is opt-in and semi-causal
   unless causal availability buffers exist.
 - `grc-lgrc-causal-pathway-contracts.md`
-  Draft cross-family registry of GRC/LGRC execution, diagnostic, producer, and
-  restoration pathways. It exposes time, scope, distributed authority,
-  configured residue, composition boundaries, and claim ceilings without
+  Iteration 106-frozen V1 contract for GRC/LGRC execution, diagnostic,
+  producer, and restoration pathways. It exposes stage-local time, scope,
+  distributed authority, configured residue, and claim ceilings without
   introducing a universal runtime API.
 - `grc-lgrc-causal-pathway-contracts.json`
-  Machine-readable draft registry seed for the Phase 8 causal-pathway
-  consolidation tranche. It is a conformance input, not an evidence source or
-  runtime dispatcher.
+  Machine-readable 23-pathway, 52-stage registry for the Phase 8
+  causal-pathway consolidation tranche. It is a conformance input, not an
+  evidence source or runtime dispatcher.
+- `grc-lgrc-causal-pathway-evidence-crosswalk.json`
+  Iteration 107-frozen stage-local source, specification, test, historical
+  evidence, negative-control, migration, ownership, and claim-ceiling map over
+  all 52 stages. It records evidence status but does not establish composition.
+- `grc-lgrc-causal-pathway-composition-matrix.json`
+  Iteration 108-frozen 26-row directional crossing matrix. It separates endpoint
+  grounding from crossing evidence and records compatibility, authority,
+  adapter ownership, information loss, controls, claim ceilings, missing
+  crossings, and invalid relabels.
+- `grc-lgrc-causal-pathway-selection-guide.json`
+  Iteration 109-frozen machine selection surface derived from the registry,
+  crosswalk, and directional matrix. Its worked cases preserve owner, residue,
+  claim ceiling, unregistered-pair, and ambiguity boundaries; it is not a
+  runtime dispatcher or evidence source.
+- `grc-lgrc-causal-pathway-conformance.json`
+  Iteration 110-frozen maintenance policy for the registry, crosswalk,
+  composition matrix, and selection guide. The reusable checker validates
+  identities, references, ownership, staleness, rule isolation, legal
+  re-admission, and claim boundaries without executing pathways or changing
+  runtime behavior. Iteration 111 validates the frozen selection surfaces
+  against 22 expert-normalized pressure descriptions, seven raw-domain demands,
+  and one answer-free blind replay frozen before separate oracle validation.
+  The raw layer preserves pathway-only and genuinely unregistered results
+  without changing this policy or introducing a dispatcher. I106-I111
+  reproducibility builders are stored under `scripts/`; the generated evidence
+  package is indexed under
+  `implementation/investigations/causal-pathway-consolidation/`, and its chain
+  records the resulting path-only bundle transitions.
 - `lgrc-9-v3-restoration-identity.md`
   Implemented and validated versioned LGRC9V3 restoration-identity contract
   over LGRC runtime state and a read-only projection of its embedded GRC9V3

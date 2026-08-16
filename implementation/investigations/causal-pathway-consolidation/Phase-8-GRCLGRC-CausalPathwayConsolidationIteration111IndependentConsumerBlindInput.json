@@ -1,0 +1,17 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 independent blind consumer input",
+  "schema_version": "phase8_grclgrc_i111_independent_blind_input_v1",
+  "iteration": 111,
+  "consumer_id": "I111-INDEPENDENT-L04-SUPPORT-SIDE",
+  "consumer_language": "Let an installed producer read one declared feedback surface and schedule bounded packet mechanics while retaining eligibility, direction, threshold, and schedule ownership.",
+  "declared_constraints": {
+    "temporal_semantics": [
+      "event_time"
+    ],
+    "route_relation": "producer_supplied_feedback_route",
+    "retained_relation": "surface_to_packet_producer_record"
+  },
+  "answer_bearing_fields_included": false,
+  "runtime_behavior_changed": false,
+  "description_digest": "ce0a33ba6dbdfc7137abf5557dc6d7d166ea2600b590b49b9cd5ed65276d7809"
+}

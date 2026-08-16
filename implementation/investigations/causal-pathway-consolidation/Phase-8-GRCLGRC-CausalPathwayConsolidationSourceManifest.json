@@ -1,0 +1,919 @@
+{
+  "artifact": "Phase-8-GRCLGRC-CausalPathwayConsolidationSourceManifest",
+  "schema_version": "phase8_grclgrc_causal_pathway_source_manifest_v1",
+  "iteration": 106,
+  "repository_branch": "main",
+  "repository_head": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "repository_tree": "47631f0d6d7ba9089c6a921702ab40609af63930",
+  "full_git_status_short": [
+    " M CONTRIBUTING.md",
+    " M docs/README.md",
+    " M docs/reference/ClaimBoundaryIndex.md",
+    " M docs/reference/GRC-LGRC-CausalPathwayGuide.md",
+    " M docs/reference/GRC-LGRC-CompositionMatrix.md",
+    " M docs/reference/README.md",
+    " M implementation/Documentation-Checklist.md",
+    " M implementation/ImplementationPhases.md",
+    " M implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md",
+    " M implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md",
+    " M implementation/Phase-8-LGRC9-Handoff.md",
+    " M implementation/Phase-8-LGRC9-ImplementationChecklist.md",
+    " M specs/README.md",
+    " M specs/grc-lgrc-causal-pathway-contracts.json",
+    " M specs/grc-lgrc-causal-pathway-contracts.md",
+    "?? implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md",
+    "?? implementation/investigations/causal-pathway-consolidation/",
+    "?? scripts/build_phase8_causal_pathway_i106.py",
+    "?? scripts/build_phase8_causal_pathway_i107.py",
+    "?? scripts/build_phase8_causal_pathway_i108.py",
+    "?? scripts/build_phase8_causal_pathway_i109.py",
+    "?? scripts/build_phase8_causal_pathway_i110.py",
+    "?? scripts/build_phase8_causal_pathway_i111.py",
+    "?? scripts/check_grc_lgrc_causal_pathway_conformance.py",
+    "?? scripts/check_grc_lgrc_pressure_consumer_selection.py",
+    "?? scripts/validate_grc_lgrc_pressure_consumer_recovery.py",
+    "?? specs/grc-lgrc-causal-pathway-composition-matrix.json",
+    "?? specs/grc-lgrc-causal-pathway-conformance.json",
+    "?? specs/grc-lgrc-causal-pathway-evidence-crosswalk.json",
+    "?? specs/grc-lgrc-causal-pathway-selection-guide.json"
+  ],
+  "registry_scope_v1": [
+    "GRC9V3",
+    "LGRC9V3",
+    "directly_consumed_shared_PyGRC_utilities"
+  ],
+  "dependency_closure_method": "recursive_internal_import_closure_from_grc_9_v3_star_lgrc_9_v3_star_and_lgrc9v3_telemetry_contract",
+  "surface_count": 71,
+  "surface_classification_counts": {
+    "cross_cutting_contract": 40,
+    "explicit_exclusion": 21,
+    "pathway": 10
+  },
+  "unclassified_surface_count": 0,
+  "unclassified_behavior_changing_surface_count": 0,
+  "zero_unclassified_behavior_changing_surfaces": true,
+  "protected_source_test_example_diff_empty": true,
+  "normative_contract_anchor_mode": "committed_I106_input_authority_at_repository_head",
+  "normative_contract_anchors": [
+    {
+      "path": "specs/lgrc-9-v3-spec.md",
+      "sha256": "f65b1324961dd28253cd7ff60d45b58ca051ad44a0cb09dae9e376e84ae8da4c",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "docs/reference/ClaimBoundaryIndex.md",
+      "sha256": "bc8d67a7a4502d5123465112ab465b9e83ac3881355043494750649fbb5ed3a9",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "docs/reference/GRC-Runtime-ReferenceGuide.md",
+      "sha256": "ebf9f4ae603c7b4a2c1ea61c17d7d4f86cfaa63acc63ed511fa9080ed3102dc5",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-ImplementationPlan.md",
+      "sha256": "bc63eef95f6193f26fc7aacd9116260c1f5ac843f03725512237e1a7920cad10",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-ImplementationChecklist.md",
+      "sha256": "243e195034577ec148572e9b852cb00a09edc2cd0bfdb395be6874926405e684",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-Handoff.md",
+      "sha256": "9fefd3c78205766ac5a50bbdaa4220517b596eb1ccbbd9a675f41ffcc580b16b",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md",
+      "sha256": "99450463cb969da9cecb9c0c8d25300f18103379c56758ac669042cf6e8a47f5",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md",
+      "sha256": "0cf75879ee94196404f9e67e6361ad1e5c01038aad0c331caf27031446a9f9be",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    }
+  ],
+  "working_contract_anchor_mode": "final_I106_working_contract_bytes_separate_from_committed_inputs",
+  "working_contract_anchors": [
+    {
+      "path": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md",
+      "sha256": "d2580bc332be956c6eabb12bce754ebd5611faf67f19c18926fd656af7ddb7ae",
+      "anchor_revision": "iteration_106_working_contract"
+    },
+    {
+      "path": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md",
+      "sha256": "152b3108daec88b7429f0baea17de122a99670104a7c9d449d0bd1978141f966",
+      "anchor_revision": "iteration_106_working_contract"
+    },
+    {
+      "path": "scripts/build_phase8_causal_pathway_i106.py",
+      "sha256": "fe8a0f6b49cd035d7a96edaabd6f4180f6db9e5692e92226874c359036cb34f3",
+      "anchor_revision": "iteration_106_working_contract"
+    },
+    {
+      "path": "specs/grc-lgrc-causal-pathway-contracts.md",
+      "sha256": "9a2b7487d1c93581d83a033a474bfc1f5cc1534f7f60e9e62e8f720337548468",
+      "anchor_revision": "iteration_106_working_contract"
+    }
+  ],
+  "predecessor_evidence_anchors": [
+    {
+      "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.json",
+      "sha256": "c715672ff27235207d5db5fa75f87c2c0591a3b4ebb3be994731e43c87e57b91",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.md",
+      "sha256": "217ef83acd0b4f657d132e8ced67f646f5bbc1966c13676bbe3af62018cba6ea",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationStatus.json",
+      "sha256": "d8846e3c6f1c95c8db4afbce67c3db98294cc831764c649ac53ad291c67468dd",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationPostC1ScopeInterpretation.json",
+      "sha256": "1fac50eaee9f3eda59cbe5004c70e4801c697d83078ce14d6629f07ed63fcec0",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkOwnershipPressureMap.json",
+      "sha256": "4d781524aac324b99666844c38b94147643f04281c762fa5afbedfbe717ba2ef",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    },
+    {
+      "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.json",
+      "sha256": "919b6f343a5a1c2aabb82afd91ba2658802760d370695b231811caf39c846ac7",
+      "anchor_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+    }
+  ],
+  "surfaces": [
+    {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+      "surface_kind": "restoration_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_restoration_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "surface_kind": "restoration_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_restoration_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.core_runtime_contract"
+      ],
+      "reason": "Shared PyGRC type, graph, parameter, backend, mutation, error, serialization, or identity utility directly imported by in-scope modules."
+    },
+    {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.landscape_seed_construction_contract"
+      ],
+      "reason": "Construction-time landscape input, validation, loading, and equivalence surface; not runtime causal execution."
+    },
+    {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.landscape_seed_construction_contract"
+      ],
+      "reason": "Construction-time landscape input, validation, loading, and equivalence surface; not runtime causal execution."
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcl9v3.source_and_lowering_contract"
+      ],
+      "reason": "Source schema, manifest, selector, or facade consumed during construction/lowering only."
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Fixture/example provider imported through the GRCL9V3 facade; not a load-bearing runtime pathway."
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Fixture/example provider imported through the GRCL9V3 facade; not a load-bearing runtime pathway."
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcl9v3.source_and_lowering_contract"
+      ],
+      "reason": "Source schema, manifest, selector, or facade consumed during construction/lowering only."
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcl9v3.source_and_lowering_contract"
+      ],
+      "reason": "Source schema, manifest, selector, or facade consumed during construction/lowering only."
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcl9v3.source_and_lowering_contract"
+      ],
+      "reason": "Source schema, manifest, selector, or facade consumed during construction/lowering only."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.landscape_seed_construction_contract"
+      ],
+      "reason": "Construction-time landscape input, validation, loading, and equivalence surface; not runtime causal execution."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f",
+      "surface_kind": "transitive_or_fixture_surface",
+      "behavior_role": "descriptive_or_unconsumed",
+      "mapping_kind": "explicit_exclusion",
+      "mapping_ids": [],
+      "reason": "Reached through broad landscape-package re-exports but not imported as a consumed GRC9V3/LGRC9V3 pathway surface."
+    },
+    {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.landscape_seed_construction_contract"
+      ],
+      "reason": "Construction-time landscape input, validation, loading, and equivalence surface; not runtime causal execution."
+    },
+    {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.landscape_seed_construction_contract"
+      ],
+      "reason": "Construction-time landscape input, validation, loading, and equivalence surface; not runtime causal execution."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grc9.coarse_graining_contract"
+      ],
+      "reason": "Coarse cache and split utilities called by the synchronous update cycle."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grc9.expansion_contract"
+      ],
+      "reason": "Mechanical expansion utilities consumed by GRC9V3 spark refinement."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grc9.port_coordinate_contract"
+      ],
+      "reason": "Port/slot/row-column coordinate translation."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grc9.shared_state_contract"
+      ],
+      "reason": "Port-edge and expansion state shared by GRC9V3/LGRC9V3."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "grc9v3.synchronous_update_cycle",
+        "grc9v3.identity_basin_reconstruction",
+        "grc9v3.sink_compatibility_choice",
+        "grc9v3.hybrid_spark_refinement",
+        "grc9v3.legacy_inactive_port_growth",
+        "grc9v3.front_capacity_growth",
+        "pygrc.restoration_replay_identity"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "grc9v3.sink_compatibility_choice"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcl9v3.lowering_contract"
+      ],
+      "reason": "Source-to-runtime lowering; construction path rather than causal execution path."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+      "surface_kind": "construction_or_lowering_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcl9v3.provenance_contract"
+      ],
+      "reason": "Lowering provenance payloads retained by construction surfaces."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "grc9v3.synchronous_update_cycle",
+        "grc9v3.identity_basin_reconstruction"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "grc9v3.hybrid_spark_refinement"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grc9v3.state_contract"
+      ],
+      "reason": "State identity and cached runtime fields consumed by GRC9V3 pathways."
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcv3.differential_contract"
+      ],
+      "reason": "Weighted least-squares differential helper consumed by GRC9V3."
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "grcv3.state_type_contract"
+      ],
+      "reason": "Shared differential-state types; not a GRCV3 pathway admission."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "lgrc9v3.public_facade"
+      ],
+      "reason": "Public import facade; does not add independent runtime behavior."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "lgrc9v3.construction_contract"
+      ],
+      "reason": "Landscape lowering, runtime construction, route extraction, and explicit queue priming."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "surface_kind": "shared_runtime_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "lgrc9v3.artifact_contract_vocabulary"
+      ],
+      "reason": "Artifact schemas, validation, digests, policies, and route-aspect contracts."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "lgrc9v3.proper_time_identity_evaluation",
+        "lgrc9v3.proper_time_identity_acceptance"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+      "surface_kind": "restoration_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "pygrc.restoration_replay_identity"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "lgrc9v3.configured_flux_route",
+        "lgrc9v3.route_aspect_surplus",
+        "lgrc9v3.pulse_substrate_coupling_producer",
+        "lgrc9v3.feedback_eligibility_producer",
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.boundary_birth",
+        "lgrc9v3.causal_spark_topology_integration",
+        "lgrc9v3.collapse_reabsorption",
+        "lgrc9v3.proper_time_identity_acceptance",
+        "lgrc9v3.causal_pulse_surface_lineage",
+        "lgrc9v3.multi_basin_record_validation",
+        "lgrc9v3.diagnostic_grc_reconstruction",
+        "pygrc.restoration_replay_identity"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "surface_kind": "state_or_identity_contract",
+      "behavior_role": "behavior_enabling",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "lgrc9v3.runtime_state_contract"
+      ],
+      "reason": "Queue, ledger, policy, record, and restoration state consumed across LGRC9V3 pathways."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "lgrc9v3.causal_history_annotation",
+        "lgrc9v3.fixed_topology_eligibility"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+      "surface_kind": "pathway_implementation",
+      "behavior_role": "behavior_changing",
+      "mapping_kind": "pathway",
+      "mapping_ids": [
+        "lgrc9v3.causal_spark_topology_integration",
+        "lgrc9v3.collapse_reabsorption",
+        "lgrc9v3.causal_pulse_surface_lineage"
+      ],
+      "reason": "Defines load-bearing state transformation or native/producer/diagnostic pathway stages."
+    },
+    {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929",
+      "surface_kind": "observability_contract",
+      "behavior_role": "descriptive",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.telemetry_io_contract"
+      ],
+      "reason": "Telemetry serialization utility; descriptive rather than runtime authority."
+    },
+    {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+      "surface_kind": "observability_contract",
+      "behavior_role": "descriptive",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "lgrc9v3.telemetry_observability_contract"
+      ],
+      "reason": "LGRC9V3 event, step, run-summary, checkpoint, and diagnostic projection; observes but does not authorize runtime behavior."
+    },
+    {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc",
+      "surface_kind": "observability_contract",
+      "behavior_role": "descriptive",
+      "mapping_kind": "cross_cutting_contract",
+      "mapping_ids": [
+        "pygrc.telemetry_schema_contract"
+      ],
+      "reason": "Shared telemetry row and checkpoint schemas."
+    }
+  ]
+}

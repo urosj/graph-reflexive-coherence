@@ -1,10 +1,8 @@
 {
   "artifact": "grc-lgrc-causal-pathway-contracts",
-  "schema_version": "grc_lgrc_causal_pathway_contract_registry_draft_v1",
-  "status": "draft_registry_seed_pending_phase8_iteration_106_freeze",
-  "date": "2026-08-16",
-  "entry_schema_frozen": false,
-  "initial_seed_is_final_pathway_decomposition": false,
+  "registry_schema_version": "grc_lgrc_causal_pathway_contract_registry_v1",
+  "status": "iteration_106_schema_frozen_crosswalk_and_composition_refs_pending",
+  "iteration": 106,
   "registry_scope_v1": [
     "GRC9V3",
     "LGRC9V3",
@@ -15,468 +13,3934 @@
   "universal_causal_work_API_supported": false,
   "generic_native_admission_supported": false,
   "ownership_model_selected": false,
-  "provisional_seed_fields_pending_iteration_106": [
+  "required_entry_fields": [
     "pathway_id",
+    "entry_version",
     "name",
     "purpose",
     "substrate_layer",
-    "status_class",
+    "contract_kind",
+    "mechanism_ownership",
+    "availability",
+    "activation",
     "state_consumed",
     "state_produced",
     "time_semantics",
     "spatial_scope",
-    "authority",
-    "configured_residue",
-    "restoration_and_serialization_identity",
-    "supported_claims",
-    "blocked_claims",
-    "source_implementation",
-    "source_specification",
-    "tests_and_evidence",
-    "composes_with",
-    "does_not_compose_with",
-    "requires_explicit_adapter"
-  ],
-  "provisional_pathway_summary_authority_fields": [
-    "direction",
-    "funding",
-    "eligibility",
-    "scheduling",
-    "commitment",
-    "reception"
-  ],
-  "provisional_compressed_status_classes_pending_decomposition": [
-    "native_behavior",
-    "native_mechanics_with_configured_semantics",
-    "producer_mediated",
-    "diagnostic_only",
-    "restoration_or_replay_utility",
-    "experimental_composition",
-    "unsupported_crossing"
-  ],
-  "composition_statuses": [
-    "lawful_native",
-    "lawful_with_explicit_adapter",
-    "diagnostic_only",
-    "producer_mediated",
-    "unsupported_missing_crossing",
-    "invalid_relabel"
-  ],
-  "iteration_106_required_status_axes": {
-    "mechanism_ownership": [
-      "native",
-      "native_with_configured_semantics",
-      "producer",
-      "external_adapter",
-      "diagnostic",
-      "utility"
-    ],
-    "availability": [
-      "installed",
-      "experiment_local",
-      "bounded_external",
-      "historical",
-      "absent"
-    ],
-    "activation": [
-      "default_on",
-      "default_off",
-      "explicit_call",
-      "externally_orchestrated"
-    ]
-  },
-  "iteration_106_required_contract_additions": [
-    "contract_kind",
-    "stage_sequence",
     "trigger_surface",
     "event_locus",
     "causal_information_scope",
+    "authority_summary",
+    "stage_sequence",
+    "configured_residue",
+    "producer_residue",
+    "naturalization_debt",
     "budget_and_invariants",
     "state_identity_fields",
     "history_consumed",
     "history_retained_but_not_consumed",
-    "producer_residue",
-    "naturalization_debt",
     "fail_closed_conditions",
-    "entry_version",
+    "restoration_and_serialization_identity",
+    "supported_claims",
+    "blocked_claims",
+    "evidence_refs",
+    "composition_refs",
+    "catalog_relation_refs",
+    "source_commit",
     "source_digest",
     "last_verified_commit",
     "staleness_state",
     "supersedes",
     "superseded_by"
   ],
-  "legacy_seed_fields_to_replace_with_refs": [
-    "source_implementation",
-    "source_specification",
-    "tests_and_evidence",
-    "composes_with",
-    "does_not_compose_with",
-    "requires_explicit_adapter"
+  "required_stage_fields": [
+    "stage_id",
+    "trigger",
+    "state_consumed",
+    "state_produced",
+    "direction_authority",
+    "funding_authority",
+    "eligibility_authority",
+    "scheduling_authority",
+    "commit_authority",
+    "reception_authority",
+    "action_scope",
+    "mutation_scope",
+    "time_semantics",
+    "spatial_scope",
+    "failure_or_noop_semantics"
   ],
-  "future_reference_fields": [
-    "evidence_refs",
-    "composition_refs",
-    "catalog_relation_refs"
+  "mechanism_ownership_values": [
+    "native",
+    "native_with_configured_semantics",
+    "producer",
+    "external_adapter",
+    "diagnostic",
+    "utility"
   ],
+  "availability_values": [
+    "installed",
+    "experiment_local",
+    "bounded_external",
+    "historical",
+    "absent"
+  ],
+  "activation_values": [
+    "default_on",
+    "default_off",
+    "explicit_call",
+    "externally_orchestrated"
+  ],
+  "staleness_values": [
+    "current_at_iteration_106_freeze",
+    "stale_pending_review",
+    "superseded"
+  ],
+  "artifact_authority": {
+    "registry": "intrinsic pathway and stage facts",
+    "crosswalk": "source specification test and evidence relations",
+    "composition_matrix": "directional inter-pathway relations",
+    "selection_guide": "derived explanation only"
+  },
+  "pathway_catalog_boundary": "Pathway execution contracts do not admit primitive building-block motif or regime claims.",
+  "source_manifest": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationSourceManifest.json",
+  "pathway_count": 23,
   "pathways": [
     {
-      "pathway_id": "grc9v3.synchronous_transport",
-      "name": "Synchronous GRC9V3 Transport",
-      "purpose": "reconstruct differential_transport_and_flux_state_and_apply_synchronous_continuity",
+      "pathway_id": "grc9v3.front_capacity_growth",
+      "entry_version": 1,
+      "name": "GRC9V3 Front-Capacity Growth",
+      "purpose": "Apply configured GRCL9V3 front-capacity eligibility and transfer parent coherence into a new child topology.",
       "substrate_layer": "GRC9V3",
-      "status_class": "native_behavior",
-      "state_consumed": ["node_coherence", "topology", "edge_conductance", "constitutive_parameters"],
-      "state_produced": ["gradient", "potential", "oriented_flux", "updated_node_coherence"],
-      "time_semantics": "global_synchronous_step",
-      "spatial_scope": "graph_wide_reconstruction_and_node_updates",
-      "authority": {
-        "direction": "native_oriented_edge_flux",
-        "funding": "node_coherence_and_global_budget",
-        "eligibility": "declared_GRC9V3_constitutive_step",
-        "scheduling": "GRC9V3_step",
-        "commitment": "GRC9V3_step",
-        "reception": "synchronous_node_state_update"
+      "contract_kind": "topology_subpathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "RNG state",
+        "child free ports",
+        "free port",
+        "front_capacity",
+        "growth parameters",
+        "inactive_ports",
+        "outward_flux",
+        "parent coherence",
+        "source front record"
+      ],
+      "state_produced": [
+        "birth_probability",
+        "child front capacity",
+        "child node",
+        "coherence transfer",
+        "eligible_parent_ports",
+        "growth event",
+        "optional outlet",
+        "parent-child edge"
+      ],
+      "time_semantics": [
+        "global_synchronous_step"
+      ],
+      "spatial_scope": [
+        "new_child_local",
+        "parent_and_child_local",
+        "parent_port_local"
+      ],
+      "trigger_surface": "GRC9V3.apply_growth with growth_parent_eligibility=grcl9v3_front_capacity",
+      "event_locus": "synchronous_growth_stage",
+      "causal_information_scope": "current outward flux, inactive ports admitted by configured front capacity, and RNG state",
+      "authority_summary": {
+        "direction": [
+          "accepted parent port",
+          "configured child front",
+          "outward flux at front-admitted port"
+        ],
+        "funding": [
+          "configured outlet coherence",
+          "parent coherence"
+        ],
+        "eligibility": [
+          "GRCL9V3 front-capacity eligibility",
+          "probability and RNG",
+          "propagation policy"
+        ],
+        "scheduling": [
+          "GRC9V3.step",
+          "growth commit",
+          "growth stage"
+        ],
+        "commit": [
+          "GRC9V3 topology mutation",
+          "growth trial"
+        ],
+        "reception": [
+          "child front/outlet",
+          "child node",
+          "eligible parent port"
+        ]
       },
-      "configured_residue": ["constitutive_modes", "evolution_parameters"],
-      "restoration_and_serialization_identity": "GRC9V3_snapshot_and_reset_baseline_contract",
-      "supported_claims": ["native_synchronous_GRC_transport"],
-      "blocked_claims": ["LGRC_packet_execution", "native_route_formation", "causal_work_ownership"],
-      "source_implementation": ["src/pygrc/models/grc_9_v3.py", "src/pygrc/models/grc_9_v3_runtime.py"],
-      "source_specification": ["specs/grc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_grc_9_v3_transport.py", "tests/models/test_grc_9_v3_step.py"],
-      "composes_with": ["grc9v3.sink_compatibility_choice"],
-      "does_not_compose_with": ["lgrc9v3.explicit_packet_transport_as_implicit_native_adapter"],
-      "requires_explicit_adapter": ["GRC_flux_to_LGRC_packet_work"]
+      "stage_sequence": [
+        {
+          "stage_id": "front_capacity_growth_eligibility",
+          "trigger": "growth stage with positive lambda_birth and grcl9v3_front_capacity mode",
+          "state_consumed": [
+            "outward_flux",
+            "inactive_ports",
+            "front_capacity",
+            "growth parameters"
+          ],
+          "state_produced": [
+            "eligible_parent_ports",
+            "birth_probability"
+          ],
+          "direction_authority": "outward flux at front-admitted port",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "GRCL9V3 front-capacity eligibility",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "growth trial",
+          "reception_authority": "eligible parent port",
+          "action_scope": "evaluate front-capacity growth",
+          "mutation_scope": "growth caches",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "parent_port_local",
+          "failure_or_noop_semantics": "zero lambda, missing front capacity, or ineligible parent/port is no-op"
+        },
+        {
+          "stage_id": "growth_commit",
+          "trigger": "eligible trial and RNG acceptance",
+          "state_consumed": [
+            "parent coherence",
+            "free port",
+            "RNG state"
+          ],
+          "state_produced": [
+            "child node",
+            "parent-child edge",
+            "coherence transfer",
+            "growth event"
+          ],
+          "direction_authority": "accepted parent port",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "probability and RNG",
+          "scheduling_authority": "growth stage",
+          "commit_authority": "GRC9V3 topology mutation",
+          "reception_authority": "child node",
+          "action_scope": "commit child birth",
+          "mutation_scope": "topology, coherence, event log, RNG",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "parent_and_child_local",
+          "failure_or_noop_semantics": "failed RNG or occupied port is no-op"
+        },
+        {
+          "stage_id": "front_propagation",
+          "trigger": "configured propagated-front policy",
+          "state_consumed": [
+            "source front record",
+            "child free ports"
+          ],
+          "state_produced": [
+            "child front capacity",
+            "optional outlet"
+          ],
+          "direction_authority": "configured child front",
+          "funding_authority": "configured outlet coherence",
+          "eligibility_authority": "propagation policy",
+          "scheduling_authority": "growth commit",
+          "commit_authority": "GRC9V3 topology mutation",
+          "reception_authority": "child front/outlet",
+          "action_scope": "propagate declared front",
+          "mutation_scope": "cached front map and optional outlet topology",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "new_child_local",
+          "failure_or_noop_semantics": "missing/disabled propagation is no-op"
+        }
+      ],
+      "configured_residue": [
+        "GRCL9V3 front-capacity eligibility mode",
+        "front-capacity map",
+        "birth alpha",
+        "RNG policy",
+        "front propagation"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "front role is authored by lowering/configuration rather than formed semantically"
+      ],
+      "budget_and_invariants": [
+        "parent debit equals child credit",
+        "port capacity",
+        "RNG restoration"
+      ],
+      "state_identity_fields": [
+        "topology",
+        "growth event",
+        "RNG state",
+        "front-capacity cache"
+      ],
+      "history_consumed": [
+        "configured front lineage"
+      ],
+      "history_retained_but_not_consumed": [
+        "legacy eligibility records and ecological role labels are not consumed"
+      ],
+      "fail_closed_conditions": [
+        "zero lambda",
+        "missing front capacity",
+        "no free admitted port",
+        "failed RNG",
+        "invalid transfer"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3 snapshot growth and RNG fields",
+      "supported_claims": [
+        "native mechanics for configured front-capacity growth"
+      ],
+      "blocked_claims": [
+        "general autonomous basin formation",
+        "semantic reproduction"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "7f9e98763322005479e8574a2ebe8d1349f29fe71d3fe4d223abc1bc736952e4",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "grc9v3.hybrid_spark_refinement",
+      "entry_version": 1,
+      "name": "GRC9V3 Hybrid Spark Refinement",
+      "purpose": "Detect Hessian/gradient spark candidates and apply bounded mechanical expansion under declared spark policies.",
+      "substrate_layer": "GRC9V3",
+      "contract_kind": "topology_subpathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_on",
+      "state_consumed": [
+        "column_h_history",
+        "expansion policy",
+        "free ports",
+        "gradient_rows",
+        "parent coherence",
+        "signed_hessian_rows",
+        "spark parameters",
+        "spark_candidate"
+      ],
+      "state_produced": [
+        "child topology",
+        "coherence transfer",
+        "lineage record",
+        "spark_candidate_events"
+      ],
+      "time_semantics": [
+        "global_synchronous_step"
+      ],
+      "spatial_scope": [
+        "candidate_local",
+        "candidate_node_or_column"
+      ],
+      "trigger_surface": "GRC9V3 hybrid spark stages",
+      "event_locus": "synchronous_spark_and_refinement_stage",
+      "causal_information_scope": "current/previous differential summaries and configured spark backend",
+      "authority_summary": {
+        "direction": [
+          "candidate geometry and expansion policy",
+          "native differential geometry"
+        ],
+        "funding": [
+          "not_yet_funded",
+          "parent coherence"
+        ],
+        "eligibility": [
+          "enabled mechanical expansion gate",
+          "hybrid spark predicate"
+        ],
+        "scheduling": [
+          "GRC9V3.step",
+          "spark stage"
+        ],
+        "commit": [
+          "GRC9V3 topology mutation",
+          "candidate event log"
+        ],
+        "reception": [
+          "candidate registry",
+          "child node and lineage"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "spark_candidate_detection",
+          "trigger": "pre-flux and post-flux differential state",
+          "state_consumed": [
+            "gradient_rows",
+            "signed_hessian_rows",
+            "column_h_history",
+            "spark parameters"
+          ],
+          "state_produced": [
+            "spark_candidate_events"
+          ],
+          "direction_authority": "native differential geometry",
+          "funding_authority": "not_yet_funded",
+          "eligibility_authority": "hybrid spark predicate",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "candidate event log",
+          "reception_authority": "candidate registry",
+          "action_scope": "detect candidates",
+          "mutation_scope": "candidate/history caches",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "candidate_node_or_column",
+          "failure_or_noop_semantics": "predicate miss emits no candidate"
+        },
+        {
+          "stage_id": "mechanical_expansion",
+          "trigger": "eligible spark candidate and enabled backend",
+          "state_consumed": [
+            "spark_candidate",
+            "parent coherence",
+            "free ports",
+            "expansion policy"
+          ],
+          "state_produced": [
+            "child topology",
+            "coherence transfer",
+            "lineage record"
+          ],
+          "direction_authority": "candidate geometry and expansion policy",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "enabled mechanical expansion gate",
+          "scheduling_authority": "spark stage",
+          "commit_authority": "GRC9V3 topology mutation",
+          "reception_authority": "child node and lineage",
+          "action_scope": "expand topology",
+          "mutation_scope": "topology, node coherence, expansion history",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "candidate_local",
+          "failure_or_noop_semantics": "capacity or port failure blocks expansion"
+        }
+      ],
+      "configured_residue": [
+        "spark backend",
+        "thresholds",
+        "expansion distribution",
+        "stabilization policy"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "spark candidate meaning and semantic creation remain unclaimed"
+      ],
+      "budget_and_invariants": [
+        "coherence transfer conservation",
+        "port capacity",
+        "topology validity"
+      ],
+      "state_identity_fields": [
+        "candidate IDs",
+        "expansion lineage",
+        "topology"
+      ],
+      "history_consumed": [
+        "previous column-H history where configured"
+      ],
+      "history_retained_but_not_consumed": [
+        "candidate labels not consumed as semantic meaning"
+      ],
+      "fail_closed_conditions": [
+        "predicate miss",
+        "no port capacity",
+        "disabled backend"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3 snapshot spark/expansion fields",
+      "supported_claims": [
+        "native bounded hybrid spark detection and mechanical refinement"
+      ],
+      "blocked_claims": [
+        "semantic creation",
+        "agency",
+        "general basin birth"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "937ef4e069cbc95a883280a09d360bce3c726092282efe1df69b1f8bd5a0a4ea",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "grc9v3.identity_basin_reconstruction",
+      "entry_version": 1,
+      "name": "GRC9V3 Identity And Basin Reconstruction",
+      "purpose": "Detect current flux-topology identities, validate basin seeds, and compute effective basin masses.",
+      "substrate_layer": "GRC9V3",
+      "contract_kind": "runtime_subpathway",
+      "mechanism_ownership": "native",
+      "availability": "installed",
+      "activation": "default_on",
+      "state_consumed": [
+        "identity_candidates",
+        "node_coherence",
+        "oriented_flux",
+        "quadrature",
+        "topology"
+      ],
+      "state_produced": [
+        "basin_assignments",
+        "effective_basin_masses",
+        "identity_candidates",
+        "validated_basin_seeds"
+      ],
+      "time_semantics": [
+        "global_synchronous_step"
+      ],
+      "spatial_scope": [
+        "basin_regions",
+        "graph_wide"
+      ],
+      "trigger_surface": "GRC9V3.rebuild_identity_state",
+      "event_locus": "synchronous_identity_rebuild_stage",
+      "causal_information_scope": "current flux, topology, and coherence only",
+      "authority_summary": {
+        "direction": [
+          "identity_candidate_graph",
+          "native_oriented_flux"
+        ],
+        "funding": [
+          "node_coherence",
+          "not_applicable"
+        ],
+        "eligibility": [
+          "flux_topology_predicate",
+          "geometric_seed_validation"
+        ],
+        "scheduling": [
+          "GRC9V3.step",
+          "identity_rebuild"
+        ],
+        "commit": [
+          "identity_rebuild"
+        ],
+        "reception": [
+          "basin mass cache",
+          "basin_cache"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "detect_flux_topology_identities",
+          "trigger": "transport state available",
+          "state_consumed": [
+            "oriented_flux",
+            "topology"
+          ],
+          "state_produced": [
+            "identity_candidates",
+            "basin_assignments"
+          ],
+          "direction_authority": "native_oriented_flux",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "flux_topology_predicate",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "identity_rebuild",
+          "reception_authority": "basin_cache",
+          "action_scope": "derive current identity graph",
+          "mutation_scope": "identity caches",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "graph_wide",
+          "failure_or_noop_semantics": "invalid flux/topology rejects"
+        },
+        {
+          "stage_id": "validate_and_mass_basins",
+          "trigger": "identity candidates available",
+          "state_consumed": [
+            "identity_candidates",
+            "node_coherence",
+            "quadrature"
+          ],
+          "state_produced": [
+            "validated_basin_seeds",
+            "effective_basin_masses"
+          ],
+          "direction_authority": "identity_candidate_graph",
+          "funding_authority": "node_coherence",
+          "eligibility_authority": "geometric_seed_validation",
+          "scheduling_authority": "identity_rebuild",
+          "commit_authority": "identity_rebuild",
+          "reception_authority": "basin mass cache",
+          "action_scope": "validate and aggregate basins",
+          "mutation_scope": "basin attributes and caches",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "basin_regions",
+          "failure_or_noop_semantics": "invalid seeds are rejected or excluded"
+        }
+      ],
+      "configured_residue": [
+        "identity backend",
+        "geometric seed thresholds"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "retained basin IDs are not constitutive memory without a read path"
+      ],
+      "budget_and_invariants": [
+        "finite effective mass",
+        "current topology consistency"
+      ],
+      "state_identity_fields": [
+        "basin assignment",
+        "basin mass",
+        "topology"
+      ],
+      "history_consumed": [
+        "current flux topology"
+      ],
+      "history_retained_but_not_consumed": [
+        "prior basin labels unless explicitly consumed by a downstream path"
+      ],
+      "fail_closed_conditions": [
+        "missing flux",
+        "invalid basin seed"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3 snapshot identity fields",
+      "supported_claims": [
+        "native current-state basin reconstruction"
+      ],
+      "blocked_claims": [
+        "selfhood",
+        "semantic identity",
+        "Read-Back"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "7f9e98763322005479e8574a2ebe8d1349f29fe71d3fe4d223abc1bc736952e4",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "grc9v3.legacy_inactive_port_growth",
+      "entry_version": 1,
+      "name": "GRC9V3 Legacy Inactive-Port Growth",
+      "purpose": "Apply the legacy any-inactive-port growth policy and transfer parent coherence into a new child topology.",
+      "substrate_layer": "GRC9V3",
+      "contract_kind": "topology_subpathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "RNG state",
+        "free port",
+        "growth parameters",
+        "inactive_ports",
+        "outward_flux",
+        "parent coherence"
+      ],
+      "state_produced": [
+        "birth_probability",
+        "child node",
+        "coherence transfer",
+        "eligible_parent_ports",
+        "growth event",
+        "parent-child edge"
+      ],
+      "time_semantics": [
+        "global_synchronous_step"
+      ],
+      "spatial_scope": [
+        "parent_and_child_local",
+        "parent_port_local"
+      ],
+      "trigger_surface": "GRC9V3.apply_growth with growth_parent_eligibility=legacy_any_inactive_port",
+      "event_locus": "synchronous_growth_stage",
+      "causal_information_scope": "current outward flux, any inactive port, configured growth parameters, and RNG state",
+      "authority_summary": {
+        "direction": [
+          "accepted first inactive parent port",
+          "outward flux at first inactive port"
+        ],
+        "funding": [
+          "parent coherence"
+        ],
+        "eligibility": [
+          "legacy any-inactive-port mode",
+          "probability and RNG"
+        ],
+        "scheduling": [
+          "GRC9V3.step",
+          "growth stage"
+        ],
+        "commit": [
+          "GRC9V3 topology mutation",
+          "growth trial"
+        ],
+        "reception": [
+          "child node",
+          "eligible parent port"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "legacy_growth_eligibility",
+          "trigger": "growth stage with positive lambda_birth and legacy_any_inactive_port mode",
+          "state_consumed": [
+            "outward_flux",
+            "inactive_ports",
+            "growth parameters"
+          ],
+          "state_produced": [
+            "eligible_parent_ports",
+            "birth_probability"
+          ],
+          "direction_authority": "outward flux at first inactive port",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "legacy any-inactive-port mode",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "growth trial",
+          "reception_authority": "eligible parent port",
+          "action_scope": "evaluate legacy growth",
+          "mutation_scope": "growth caches",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "parent_port_local",
+          "failure_or_noop_semantics": "zero lambda, no inactive port, or nonpositive outward flux is no-op"
+        },
+        {
+          "stage_id": "legacy_growth_commit",
+          "trigger": "eligible legacy trial and RNG acceptance",
+          "state_consumed": [
+            "parent coherence",
+            "free port",
+            "RNG state"
+          ],
+          "state_produced": [
+            "child node",
+            "parent-child edge",
+            "coherence transfer",
+            "growth event"
+          ],
+          "direction_authority": "accepted first inactive parent port",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "probability and RNG",
+          "scheduling_authority": "growth stage",
+          "commit_authority": "GRC9V3 topology mutation",
+          "reception_authority": "child node",
+          "action_scope": "commit child birth",
+          "mutation_scope": "topology, coherence, event log, RNG",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "parent_and_child_local",
+          "failure_or_noop_semantics": "failed RNG or occupied port is no-op"
+        }
+      ],
+      "configured_residue": [
+        "legacy any-inactive-port eligibility mode",
+        "birth alpha",
+        "RNG policy"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "legacy eligibility is not GRCL9V3 front capacity and should not be used as its evidence"
+      ],
+      "budget_and_invariants": [
+        "parent debit equals child credit",
+        "port capacity",
+        "RNG restoration"
+      ],
+      "state_identity_fields": [
+        "topology",
+        "growth event",
+        "RNG state"
+      ],
+      "history_consumed": [],
+      "history_retained_but_not_consumed": [
+        "front-capacity records are not consumed"
+      ],
+      "fail_closed_conditions": [
+        "zero lambda",
+        "no inactive port",
+        "nonpositive outward flux",
+        "failed RNG",
+        "invalid transfer"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3 snapshot growth and RNG fields",
+      "supported_claims": [
+        "native mechanics for configured legacy inactive-port growth"
+      ],
+      "blocked_claims": [
+        "front-capacity growth",
+        "RC-proper boundary formation",
+        "semantic reproduction"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "7f9e98763322005479e8574a2ebe8d1349f29fe71d3fe4d223abc1bc736952e4",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
       "pathway_id": "grc9v3.sink_compatibility_choice",
-      "name": "GRC9V3 Sink Compatibility Choice And Collapse",
-      "purpose": "score_reachable_sinks_from_positive_outgoing_flux_and_update_choice_or_collapse_state",
+      "entry_version": 1,
+      "name": "GRC9V3 Sink Compatibility Choice",
+      "purpose": "Score reachable sinks from current positive outgoing flux and update bounded choice/collapse state.",
       "substrate_layer": "GRC9V3",
-      "status_class": "native_behavior",
-      "state_consumed": ["oriented_flux", "successor_map", "sink_set", "prior_choice_registry"],
-      "state_produced": ["compatibility_scores", "choice_registry", "collapse_registry", "basin_assignment"],
-      "time_semantics": "synchronous_rebuild_stage",
-      "spatial_scope": "node_to_reachable_sink_relations",
-      "authority": {
-        "direction": "positive_outgoing_native_flux",
-        "funding": "not_a_packet_funding_path",
-        "eligibility": "sink_compatibility_backend_and_epsilon_thresholds",
-        "scheduling": "GRC9V3_choice_rebuild",
-        "commitment": "choice_rebuild_registry_and_basin_assignment",
-        "reception": "selected_sink_or_resolved_choice_state"
+      "contract_kind": "runtime_subpathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_on",
+      "state_consumed": [
+        "compatibility_scores",
+        "configured thresholds",
+        "oriented_flux",
+        "prior_choice_registry",
+        "sink_set",
+        "successor_map"
+      ],
+      "state_produced": [
+        "bounded_learning_update",
+        "choice_registry",
+        "collapse_registry",
+        "compatibility_scores"
+      ],
+      "time_semantics": [
+        "global_synchronous_step"
+      ],
+      "spatial_scope": [
+        "node_and_sink_relations",
+        "node_to_reachable_sink"
+      ],
+      "trigger_surface": "GRC9V3.rebuild_choice_state",
+      "event_locus": "synchronous_choice_stage",
+      "causal_information_scope": "current successor/flux graph and configured thresholds",
+      "authority_summary": {
+        "direction": [
+          "positive outgoing native flux",
+          "selected compatible sink"
+        ],
+        "funding": [
+          "declared coherence budget",
+          "not_a_packet_path"
+        ],
+        "eligibility": [
+          "choice/collapse thresholds",
+          "reachable_sink_and_threshold"
+        ],
+        "scheduling": [
+          "GRC9V3.step",
+          "choice rebuild"
+        ],
+        "commit": [
+          "choice rebuild and budget policy",
+          "choice_rebuild"
+        ],
+        "reception": [
+          "choice/collapse state",
+          "compatibility registry"
+        ]
       },
-      "configured_residue": ["choice_backend", "epsilon_choice", "epsilon_collapse", "sink_set"],
-      "restoration_and_serialization_identity": "GRC9V3_snapshot_choice_and_collapse_state",
-      "supported_claims": ["native_sink_compatibility_scoring", "native_bounded_choice_collapse_state"],
-      "blocked_claims": ["semantic_choice", "current_generation", "packet_departure_eligibility", "agency"],
-      "source_implementation": ["src/pygrc/models/grc_9_v3_choice.py", "src/pygrc/models/grc_9_v3.py"],
-      "source_specification": ["specs/grc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_grc_9_v3_choice_budget.py"],
-      "composes_with": ["grc9v3.synchronous_transport"],
-      "does_not_compose_with": ["sink_compatibility_as_current_source", "compatibility_as_route_scheduling"],
-      "requires_explicit_adapter": ["sink_compatibility_to_LGRC_work"]
+      "stage_sequence": [
+        {
+          "stage_id": "sink_compatibility_scoring",
+          "trigger": "identity state rebuilt",
+          "state_consumed": [
+            "oriented_flux",
+            "successor_map",
+            "sink_set"
+          ],
+          "state_produced": [
+            "compatibility_scores"
+          ],
+          "direction_authority": "positive outgoing native flux",
+          "funding_authority": "not_a_packet_path",
+          "eligibility_authority": "reachable_sink_and_threshold",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "choice_rebuild",
+          "reception_authority": "compatibility registry",
+          "action_scope": "score reachable sinks",
+          "mutation_scope": "compatibility cache",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "node_to_reachable_sink",
+          "failure_or_noop_semantics": "no reachable sink yields no compatible selection"
+        },
+        {
+          "stage_id": "choice_collapse_update",
+          "trigger": "compatibility scores available",
+          "state_consumed": [
+            "compatibility_scores",
+            "prior_choice_registry",
+            "configured thresholds"
+          ],
+          "state_produced": [
+            "choice_registry",
+            "collapse_registry",
+            "bounded_learning_update"
+          ],
+          "direction_authority": "selected compatible sink",
+          "funding_authority": "declared coherence budget",
+          "eligibility_authority": "choice/collapse thresholds",
+          "scheduling_authority": "choice rebuild",
+          "commit_authority": "choice rebuild and budget policy",
+          "reception_authority": "choice/collapse state",
+          "action_scope": "update bounded registry state",
+          "mutation_scope": "choice, collapse, and optional coherence update",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "node_and_sink_relations",
+          "failure_or_noop_semantics": "budget or threshold failure rejects update"
+        }
+      ],
+      "configured_residue": [
+        "choice backend",
+        "epsilon choice",
+        "epsilon collapse",
+        "learning rate",
+        "budget policy"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "candidate formation and semantic valuation are not native choice"
+      ],
+      "budget_and_invariants": [
+        "declared budget target",
+        "finite compatibility"
+      ],
+      "state_identity_fields": [
+        "choice registry",
+        "collapse registry",
+        "params identity"
+      ],
+      "history_consumed": [
+        "prior choice registry when configured"
+      ],
+      "history_retained_but_not_consumed": [
+        "unconsumed semantic labels"
+      ],
+      "fail_closed_conditions": [
+        "missing sink",
+        "budget failure",
+        "unsupported backend"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3 snapshot choice/collapse fields",
+      "supported_claims": [
+        "native bounded sink-compatibility and choice/collapse mechanics"
+      ],
+      "blocked_claims": [
+        "semantic choice",
+        "intention",
+        "agency",
+        "current generation"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "1a6e67ca543583f947b3a292a4e89de90ca73fca1eca4f1db38f7706428a3c93",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
-      "pathway_id": "lgrc9v3.explicit_packet_transport",
-      "name": "Explicit LGRC9V3 Packet Transport",
-      "purpose": "process_declared_departure_source_debit_in_flight_state_arrival_and_target_credit",
-      "substrate_layer": "LGRC9V3",
-      "status_class": "native_mechanics_with_configured_semantics",
-      "state_consumed": ["declared_source_target_edge_amount_and_times", "source_coherence", "packet_ledger"],
-      "state_produced": ["source_debit", "in_flight_packet", "target_credit", "packet_event_history"],
-      "time_semantics": "event_time_and_deterministic_queue_order",
-      "spatial_scope": "declared_edge_endpoints",
-      "authority": {
-        "direction": "caller_supplied_route",
-        "funding": "source_node_coherence",
-        "eligibility": "endpoint_amount_time_and_budget_validation",
-        "scheduling": "caller_or_producer",
-        "commitment": "LGRC9V3_step_packet_processing",
-        "reception": "target_node_credit"
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "entry_version": 1,
+      "name": "GRC9V3 Synchronous Update Cycle",
+      "purpose": "Reconstruct differential and transport state, apply continuity and invariants, then refresh current observables.",
+      "substrate_layer": "GRC9V3",
+      "contract_kind": "runtime_composite",
+      "mechanism_ownership": "native",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "boundary state",
+        "edge conductance",
+        "edge labels",
+        "gradient_rows",
+        "node_coherence",
+        "oriented_flux",
+        "port_edges",
+        "topology"
+      ],
+      "state_produced": [
+        "budget_adjustment",
+        "gradient_rows",
+        "net_flux_summaries",
+        "oriented_flux",
+        "potential",
+        "signed_hessian_rows",
+        "step_observables",
+        "updated_edge_labels",
+        "updated_node_coherence"
+      ],
+      "time_semantics": [
+        "global_synchronous_step"
+      ],
+      "spatial_scope": [
+        "graph_wide"
+      ],
+      "trigger_surface": "GRC9V3.step",
+      "event_locus": "global_step_frontier",
+      "causal_information_scope": "current GRC9V3 graph state and declared constitutive parameters",
+      "authority_summary": {
+        "direction": [
+          "native_reconstructed_flux"
+        ],
+        "funding": [
+          "node_coherence"
+        ],
+        "eligibility": [
+          "declared_step_contract"
+        ],
+        "scheduling": [
+          "GRC9V3.step"
+        ],
+        "commit": [
+          "GRC9V3.step"
+        ],
+        "reception": [
+          "graph_state"
+        ]
       },
-      "configured_residue": ["source", "target", "edge", "amount", "event_times"],
-      "restoration_and_serialization_identity": "LGRC9V3_packet_ledger_and_restoration_identity",
-      "supported_claims": ["native_packet_transport_mechanics", "native_debit_in_flight_credit_accounting"],
-      "blocked_claims": ["substrate_formed_route", "native_departure_reason", "agency"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_packets.py", "src/pygrc/models/lgrc_9_v3_runtime.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_runtime.py", "tests/models/test_lgrc_9_v3_contract.py"],
-      "composes_with": ["lgrc9v3.configured_flux_route", "lgrc9v3.route_aspect_surplus"],
-      "does_not_compose_with": ["GRC_flux_as_implicit_packet_schedule"],
-      "requires_explicit_adapter": ["any_state_derived_departure_policy"]
-    },
-    {
-      "pathway_id": "lgrc9v3.configured_flux_route",
-      "name": "Configured Causal Flux Route Continuation",
-      "purpose": "schedule_packet_departures_over_declared_causal_flux_routes",
-      "substrate_layer": "LGRC9V3",
-      "status_class": "native_mechanics_with_configured_semantics",
-      "state_consumed": ["causal_flux_routes", "source_coherence", "producer_policy"],
-      "state_produced": ["queued_packet_departures", "producer_records"],
-      "time_semantics": "producer_evaluation_then_event_queue",
-      "spatial_scope": "configured_route_endpoints",
-      "authority": {
-        "direction": "configured_route",
-        "funding": "aggregate_source_coherence_preflight",
-        "eligibility": "valid_route_positive_amount_and_idempotency",
-        "scheduling": "native_autonomous_producer",
-        "commitment": "LGRC9V3_step",
-        "reception": "packet_target"
-      },
-      "configured_residue": ["route", "target", "amount_source", "arrival_time"],
-      "restoration_and_serialization_identity": "LGRC9V3_runtime_route_and_producer_state",
-      "supported_claims": ["native_scheduling_over_configured_routes"],
-      "blocked_claims": ["native_route_formation", "semantic_role_formation"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_autonomy_contract.py", "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py"],
-      "composes_with": ["lgrc9v3.explicit_packet_transport"],
-      "does_not_compose_with": ["configured_route_as_native_formed_relation"],
-      "requires_explicit_adapter": []
-    },
-    {
-      "pathway_id": "lgrc9v3.route_aspect_surplus",
-      "name": "Route-Aspect Surplus Packet Production",
-      "purpose": "schedule_packet_departure_when_configured_pole_mass_surplus_crosses_threshold",
-      "substrate_layer": "LGRC9V3",
-      "status_class": "native_mechanics_with_configured_semantics",
-      "state_consumed": ["route_aspect", "pole_mass", "reference_mass", "threshold", "source_coherence"],
-      "state_produced": ["queued_packet_departure", "surplus_and_self_rearm_evidence"],
-      "time_semantics": "producer_evaluation_then_event_queue_with_proper_time_evidence",
-      "spatial_scope": "configured_pole_regions_and_first_channel_hop",
-      "authority": {
-        "direction": "configured_route_aspect_channel",
-        "funding": "source_node_coherence",
-        "eligibility": "observed_surplus_over_configured_reference_and_threshold",
-        "scheduling": "native_route_surplus_producer",
-        "commitment": "LGRC9V3_step",
-        "reception": "configured_channel_target"
-      },
-      "configured_residue": ["pole_regions", "channel", "reference_mass", "threshold", "packet_amount"],
-      "restoration_and_serialization_identity": "LGRC9V3_route_aspect_and_producer_records",
-      "supported_claims": ["native_surplus_evaluation_and_packet_scheduling_under_configured_route_semantics"],
-      "blocked_claims": ["native_pole_meaning", "generic_current_source_admission", "support_seeking"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py", "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py"],
-      "composes_with": ["lgrc9v3.explicit_packet_transport"],
-      "does_not_compose_with": ["configured_pole_as_native_ecological_role"],
-      "requires_explicit_adapter": []
-    },
-    {
-      "pathway_id": "lgrc9v3.producer_feedback_eligibility",
-      "name": "Producer-Mediated Feedback Or Eligibility",
-      "purpose": "use_registered_masks_thresholds_or_relations_to_schedule_bounded_work",
-      "substrate_layer": "producer_over_LGRC9V3",
-      "status_class": "producer_mediated",
-      "state_consumed": ["runtime_visible_state", "producer_configuration", "registered_thresholds_or_masks"],
-      "state_produced": ["producer_decision_record", "optional_scheduled_work"],
-      "time_semantics": "producer_evaluation_at_declared_frontier",
-      "spatial_scope": "producer_declared",
-      "authority": {
-        "direction": "producer_or_registered_relation",
-        "funding": "native_budget_checks_where_work_is_scheduled",
-        "eligibility": "producer_owned",
-        "scheduling": "producer",
-        "commitment": "native_runtime_if_work_is_admitted",
-        "reception": "native_target_or_topology_surface"
-      },
-      "configured_residue": ["mask", "threshold", "relation", "target_or_role_semantics"],
-      "restoration_and_serialization_identity": "must_be_declared_by_each_producer_contract",
-      "supported_claims": ["bounded_producer_mediated_probe"],
-      "blocked_claims": ["native_eligibility", "native_support", "agency"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_autonomy_contract.py"],
-      "composes_with": ["lgrc9v3.explicit_packet_transport", "lgrc9v3.boundary_birth"],
-      "does_not_compose_with": ["producer_success_as_native_mechanism"],
-      "requires_explicit_adapter": ["producer_contract_and_residue_ledger"]
-    },
-    {
-      "pathway_id": "lgrc9v3.native_route_arbitration",
-      "name": "Native Route Arbitration Over Supplied Candidates",
-      "purpose": "validate_order_score_and_select_committed_topology_candidate_records",
-      "substrate_layer": "LGRC9V3",
-      "status_class": "native_mechanics_with_configured_semantics",
-      "state_consumed": ["committed_candidate_set", "candidate_scores", "budget_predictions", "visible_inputs"],
-      "state_produced": ["arbitration_record", "selected_topology_event"],
-      "time_semantics": "candidate_window_then_explicit_commit",
-      "spatial_scope": "candidate_declared_topology_route",
-      "authority": {
-        "direction": "candidate_scores_and_order",
-        "funding": "candidate_budget_prediction",
-        "eligibility": "source_surface_order_budget_visibility_and_tie_checks",
-        "scheduling": "explicit_arbitration_API",
-        "commitment": "arbitration_commit_and_topology_integrator",
-        "reception": "selected_sink_and_topology_lineage"
-      },
-      "configured_residue": ["candidate_formation", "score_components", "tie_policy", "topology_intent"],
-      "restoration_and_serialization_identity": "candidate_set_arbitration_and_topology_digest_chain",
-      "supported_claims": ["native_validation_arbitration_and_commit_over_supplied_candidates"],
-      "blocked_claims": ["native_candidate_formation", "semantic_choice", "agency"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py", "src/pygrc/models/lgrc_9_v3_contract.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_contract.py", "tests/models/test_lgrc_9_v3_runtime.py"],
-      "composes_with": ["lgrc9v3.collapse_reabsorption"],
-      "does_not_compose_with": ["external_score_formation_as_native_route_formation"],
-      "requires_explicit_adapter": ["candidate_formation_contract"]
+      "stage_sequence": [
+        {
+          "stage_id": "differential_rebuild",
+          "trigger": "GRC9V3.step",
+          "state_consumed": [
+            "node_coherence",
+            "topology",
+            "port_edges"
+          ],
+          "state_produced": [
+            "gradient_rows",
+            "signed_hessian_rows",
+            "net_flux_summaries"
+          ],
+          "direction_authority": "native_reconstructed_flux",
+          "funding_authority": "node_coherence",
+          "eligibility_authority": "declared_step_contract",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "GRC9V3.step",
+          "reception_authority": "graph_state",
+          "action_scope": "reconstruct differential summaries",
+          "mutation_scope": "cached differential fields",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "graph_wide",
+          "failure_or_noop_semantics": "invalid topology or non-finite state rejects"
+        },
+        {
+          "stage_id": "transport_rebuild",
+          "trigger": "differential_rebuild complete",
+          "state_consumed": [
+            "node_coherence",
+            "gradient_rows",
+            "edge conductance",
+            "edge labels"
+          ],
+          "state_produced": [
+            "potential",
+            "oriented_flux",
+            "updated_edge_labels"
+          ],
+          "direction_authority": "native_reconstructed_flux",
+          "funding_authority": "node_coherence",
+          "eligibility_authority": "declared_step_contract",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "GRC9V3.step",
+          "reception_authority": "graph_state",
+          "action_scope": "reconstruct transport",
+          "mutation_scope": "transport caches and edge flux",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "graph_wide",
+          "failure_or_noop_semantics": "invalid labels or conductance reject"
+        },
+        {
+          "stage_id": "continuity_and_invariants",
+          "trigger": "all configured substages complete",
+          "state_consumed": [
+            "node_coherence",
+            "oriented_flux",
+            "boundary state"
+          ],
+          "state_produced": [
+            "updated_node_coherence",
+            "budget_adjustment",
+            "step_observables"
+          ],
+          "direction_authority": "native_reconstructed_flux",
+          "funding_authority": "node_coherence",
+          "eligibility_authority": "declared_step_contract",
+          "scheduling_authority": "GRC9V3.step",
+          "commit_authority": "GRC9V3.step",
+          "reception_authority": "graph_state",
+          "action_scope": "apply continuity and invariant closure",
+          "mutation_scope": "node coherence and step metadata",
+          "time_semantics": "global_synchronous_step",
+          "spatial_scope": "graph_wide",
+          "failure_or_noop_semantics": "budget or state validation failure rejects step"
+        }
+      ],
+      "configured_residue": [
+        "constitutive modes",
+        "backend selections",
+        "evolution parameters"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "none for synchronous mechanics; semantic meanings remain outside substrate"
+      ],
+      "budget_and_invariants": [
+        "quadrature budget",
+        "finite coherence",
+        "topology consistency"
+      ],
+      "state_identity_fields": [
+        "topology",
+        "node coherence",
+        "port edges",
+        "params identity",
+        "step index"
+      ],
+      "history_consumed": [
+        "current cached differential and transport state"
+      ],
+      "history_retained_but_not_consumed": [
+        "event history not used unless a named subpathway consumes it"
+      ],
+      "fail_closed_conditions": [
+        "unsupported backend",
+        "invalid state",
+        "budget failure"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3 snapshot/reset-baseline contract",
+      "supported_claims": [
+        "native synchronous GRC9V3 update mechanics"
+      ],
+      "blocked_claims": [
+        "LGRC packet execution",
+        "generic causal admission",
+        "semantic action"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "7f9e98763322005479e8574a2ebe8d1349f29fe71d3fe4d223abc1bc736952e4",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
       "pathway_id": "lgrc9v3.boundary_birth",
-      "name": "Flux-Conditioned Causal Boundary Birth",
-      "purpose": "schedule_and_commit_default_off_topology_birth_from_outward_flux_and_parent_capacity",
+      "entry_version": 1,
+      "name": "LGRC9V3 Causal Boundary Birth",
+      "purpose": "Evaluate configured outward-flux/front-capacity eligibility, schedule a causal trial, and commit parent-funded topology birth.",
       "substrate_layer": "LGRC9V3",
-      "status_class": "native_behavior",
-      "state_consumed": ["outward_flux_pressure", "inactive_or_front_capacity_port", "parent_coherence", "birth_policy"],
-      "state_produced": ["boundary_birth_trial", "parent_debit", "child_credit", "new_node_and_edge", "proper_time_inheritance"],
-      "time_semantics": "producer_scheduled_trial_then_step_commit",
-      "spatial_scope": "eligible_parent_boundary_port",
-      "authority": {
-        "direction": "native_outward_flux_pressure",
-        "funding": "parent_node_coherence",
-        "eligibility": "port_capacity_positive_pressure_probability_and_policy",
-        "scheduling": "native_boundary_birth_producer",
-        "commitment": "LGRC9V3_step_and_birth_integrator",
-        "reception": "new_child_node_and_topology"
+      "contract_kind": "causal_topology_pathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "RNG state",
+        "birth policy",
+        "free port",
+        "inactive ports",
+        "outward flux",
+        "parent capacity",
+        "parent coherence",
+        "queued trial"
+      ],
+      "state_produced": [
+        "birth event",
+        "child topology",
+        "coherence transfer",
+        "production record",
+        "queued boundary-birth trial"
+      ],
+      "time_semantics": [
+        "event_time",
+        "producer_frontier"
+      ],
+      "spatial_scope": [
+        "parent_and_child_local",
+        "parent_port_local"
+      ],
+      "trigger_surface": "produce_events or schedule_causal_boundary_birth_trial",
+      "event_locus": "producer_and_boundary_birth_queue_frontier",
+      "causal_information_scope": "current outward flux, inactive ports, parent capacity, configured policy, and RNG",
+      "authority_summary": {
+        "direction": [
+          "outward flux at eligible port",
+          "queued eligible parent port"
+        ],
+        "funding": [
+          "parent coherence"
+        ],
+        "eligibility": [
+          "birth probability and RNG",
+          "configured parent eligibility mode"
+        ],
+        "scheduling": [
+          "event queue",
+          "native producer"
+        ],
+        "commit": [
+          "LGRC9V3 topology integrator",
+          "birth trial queue"
+        ],
+        "reception": [
+          "child node",
+          "parent port"
+        ]
       },
-      "configured_residue": ["lambda_birth", "parent_eligibility_mode", "alpha_seed", "bond_and_delay_policy"],
-      "restoration_and_serialization_identity": "LGRC9V3_topology_event_and_runtime_snapshot",
-      "supported_claims": ["native_default_off_flux_conditioned_boundary_birth_under_declared_policy"],
-      "blocked_claims": ["generic_current_to_packet_admission", "general_new_basin_formation", "agency"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_runtime.py"],
-      "composes_with": ["lgrc9v3.spark_topology_integration", "pygrc.restoration_replay_identity"],
-      "does_not_compose_with": ["birth_policy_as_universal_action_admission"],
-      "requires_explicit_adapter": []
+      "stage_sequence": [
+        {
+          "stage_id": "birth_trial_production",
+          "trigger": "produce_events",
+          "state_consumed": [
+            "outward flux",
+            "inactive ports",
+            "parent capacity",
+            "birth policy"
+          ],
+          "state_produced": [
+            "queued boundary-birth trial",
+            "production record"
+          ],
+          "direction_authority": "outward flux at eligible port",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "configured parent eligibility mode",
+          "scheduling_authority": "native producer",
+          "commit_authority": "birth trial queue",
+          "reception_authority": "parent port",
+          "action_scope": "schedule trial",
+          "mutation_scope": "boundary-birth queue",
+          "time_semantics": "producer_frontier",
+          "spatial_scope": "parent_port_local",
+          "failure_or_noop_semantics": "no capacity or duplicate trial is no-op"
+        },
+        {
+          "stage_id": "birth_trial_commit",
+          "trigger": "trial reaches queue front",
+          "state_consumed": [
+            "queued trial",
+            "parent coherence",
+            "RNG state",
+            "free port"
+          ],
+          "state_produced": [
+            "child topology",
+            "coherence transfer",
+            "birth event"
+          ],
+          "direction_authority": "queued eligible parent port",
+          "funding_authority": "parent coherence",
+          "eligibility_authority": "birth probability and RNG",
+          "scheduling_authority": "event queue",
+          "commit_authority": "LGRC9V3 topology integrator",
+          "reception_authority": "child node",
+          "action_scope": "commit birth",
+          "mutation_scope": "topology, coherence, event history, RNG",
+          "time_semantics": "event_time",
+          "spatial_scope": "parent_and_child_local",
+          "failure_or_noop_semantics": "failed RNG/port/budget blocks without partial mutation"
+        }
+      ],
+      "configured_residue": [
+        "eligibility mode",
+        "front-capacity source",
+        "birth probability",
+        "edge delay",
+        "RNG policy"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "specialized birth eligibility does not naturalize generic admission"
+      ],
+      "budget_and_invariants": [
+        "parent debit equals child credit",
+        "port capacity",
+        "queue order",
+        "RNG restoration"
+      ],
+      "state_identity_fields": [
+        "trial ID",
+        "topology event ID",
+        "lineage",
+        "RNG state"
+      ],
+      "history_consumed": [
+        "queued trial and parent capacity"
+      ],
+      "history_retained_but_not_consumed": [
+        "unrelated packet history"
+      ],
+      "fail_closed_conditions": [
+        "no capacity",
+        "occupied port",
+        "failed RNG",
+        "budget failure"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 boundary queue/topology/RNG restoration",
+      "supported_claims": [
+        "native mechanics for configured causal boundary birth"
+      ],
+      "blocked_claims": [
+        "universal current-to-action admission",
+        "semantic reproduction"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c38ec596174869dfef5dbbd3479dd05a46d7b7b35665b0328764b8b0284040a",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
-      "pathway_id": "lgrc9v3.spark_topology_integration",
-      "name": "Causal Spark Diagnostics And Topology Integration",
-      "purpose": "detect_hybrid_spark_candidates_and_route_enabled_candidates_to_mechanical_refinement",
-      "substrate_layer": "LGRC9V3_over_GRC9V3",
-      "status_class": "native_behavior",
-      "state_consumed": ["committed_runtime_state", "spark_diagnostic_parameters", "topology_policies"],
-      "state_produced": ["spark_candidate_records", "mechanical_expansion", "lineage_and_proper_time_records"],
-      "time_semantics": "event_triggered_diagnostic_evaluation_and_immediate_topology_integration_path",
-      "spatial_scope": "candidate_sink_and_refinement_neighborhood",
-      "authority": {
-        "direction": "hybrid_spark_detector",
-        "funding": "mechanical_expansion_and_budget_contract",
-        "eligibility": "spark_thresholds_and_explicit_LGRC3_topology_policies",
-        "scheduling": "arrival_local_update_path_or_explicit_diagnostic_call",
-        "commitment": "causal_topology_integrator",
-        "reception": "refined_topology_and_child_state"
+      "pathway_id": "lgrc9v3.causal_history_annotation",
+      "entry_version": 1,
+      "name": "LGRC9V3 Causal-History Annotation",
+      "purpose": "Derive lapse, delay, distance, cone, and causal-basin annotations from GRC9V3 state and event history.",
+      "substrate_layer": "LGRC9V3 diagnostic layer",
+      "contract_kind": "diagnostic_derivation",
+      "mechanism_ownership": "diagnostic",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "GRC9V3 state",
+        "distances",
+        "event history",
+        "event times",
+        "timing modes"
+      ],
+      "state_produced": [
+        "annotation artifact",
+        "causal basin core",
+        "causal cones",
+        "edge delays",
+        "geometric/causal/functional distances",
+        "lapse"
+      ],
+      "time_semantics": [
+        "derived_event_time"
+      ],
+      "spatial_scope": [
+        "graph_wide_or_source_scoped"
+      ],
+      "trigger_surface": "annotate_lgrc9v3_causal_history",
+      "event_locus": "explicit_annotation_call",
+      "causal_information_scope": "declared graph state, event records, and timing policy",
+      "authority_summary": {
+        "direction": [
+          "derived metric graph",
+          "graph and timing policy"
+        ],
+        "funding": [
+          "not_applicable"
+        ],
+        "eligibility": [
+          "annotation input validation",
+          "annotation schema"
+        ],
+        "scheduling": [
+          "caller",
+          "helper"
+        ],
+        "commit": [
+          "annotation helper",
+          "artifact construction"
+        ],
+        "reception": [
+          "annotation artifact",
+          "caller"
+        ]
       },
-      "configured_residue": ["spark_lane", "evolution_thresholds", "topology_policy"],
-      "restoration_and_serialization_identity": "topology_event_lineage_and_LGRC9V3_snapshot",
-      "supported_claims": ["native_default_off_spark_to_mechanical_topology_integration"],
-      "blocked_claims": ["semantic_creation", "identity_acceptance", "agency"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py", "src/pygrc/models/grc_9_v3.py"],
-      "source_specification": ["specs/grc-9-v3-spec.md", "specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_grc_9_v3_sparks.py", "tests/models/test_lgrc_9_v3_runtime.py"],
-      "composes_with": ["lgrc9v3.collapse_reabsorption", "lgrc9v3.boundary_birth"],
-      "does_not_compose_with": ["diagnostic_candidate_as_identity_acceptance"],
-      "requires_explicit_adapter": []
+      "stage_sequence": [
+        {
+          "stage_id": "derive_causal_metrics",
+          "trigger": "explicit annotation request",
+          "state_consumed": [
+            "GRC9V3 state",
+            "event history",
+            "timing modes"
+          ],
+          "state_produced": [
+            "lapse",
+            "edge delays",
+            "geometric/causal/functional distances"
+          ],
+          "direction_authority": "graph and timing policy",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "annotation input validation",
+          "scheduling_authority": "caller",
+          "commit_authority": "annotation helper",
+          "reception_authority": "annotation artifact",
+          "action_scope": "derive causal metrics",
+          "mutation_scope": "none outside returned artifact",
+          "time_semantics": "derived_event_time",
+          "spatial_scope": "graph_wide_or_source_scoped",
+          "failure_or_noop_semantics": "missing/invalid timing inputs reject"
+        },
+        {
+          "stage_id": "assemble_causal_annotation",
+          "trigger": "metrics available",
+          "state_consumed": [
+            "distances",
+            "event times"
+          ],
+          "state_produced": [
+            "causal cones",
+            "causal basin core",
+            "annotation artifact"
+          ],
+          "direction_authority": "derived metric graph",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "annotation schema",
+          "scheduling_authority": "helper",
+          "commit_authority": "artifact construction",
+          "reception_authority": "caller",
+          "action_scope": "assemble diagnostic",
+          "mutation_scope": "returned artifact only",
+          "time_semantics": "derived_event_time",
+          "spatial_scope": "graph_wide_or_source_scoped",
+          "failure_or_noop_semantics": "empty sources produce bounded empty annotation"
+        }
+      ],
+      "configured_residue": [
+        "lapse policy",
+        "delay policy",
+        "distance modes",
+        "source nodes"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "annotation is not active causal execution"
+      ],
+      "budget_and_invariants": [
+        "finite distances",
+        "schema validity"
+      ],
+      "state_identity_fields": [
+        "source state digest",
+        "annotation schema"
+      ],
+      "history_consumed": [
+        "declared event records"
+      ],
+      "history_retained_but_not_consumed": [
+        "unreferenced ledger history"
+      ],
+      "fail_closed_conditions": [
+        "invalid timing mode",
+        "missing edge values"
+      ],
+      "restoration_and_serialization_identity": "annotation artifact restoration contract",
+      "supported_claims": [
+        "source-backed causal-history diagnostic"
+      ],
+      "blocked_claims": [
+        "native event propagation",
+        "causal work admission"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c8a7d8758e7086e2b7d0523edd77d102146de35fddd2e6acdc79e2ec828a33d",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "entry_version": 1,
+      "name": "LGRC9V3 Causal-Pulse Surface Lineage",
+      "purpose": "Emit configured pulse-contact surface rows and transport, supersede, or reabsorb them across topology events.",
+      "substrate_layer": "LGRC9V3",
+      "contract_kind": "runtime_surface_lineage",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "arrival result",
+        "lineage transfer map",
+        "local runtime state",
+        "reabsorption map",
+        "surface lineage",
+        "surface policy",
+        "surface row"
+      ],
+      "state_produced": [
+        "lineage record",
+        "reabsorbed or superseded surface state",
+        "supersession record",
+        "surface event",
+        "surface row",
+        "transported row"
+      ],
+      "time_semantics": [
+        "event_time"
+      ],
+      "spatial_scope": [
+        "affected_topology_region",
+        "collapsed_region",
+        "contact_local"
+      ],
+      "trigger_surface": "packet arrival and topology event hooks",
+      "event_locus": "arrival_or_topology_event_frontier",
+      "causal_information_scope": "packet contact, configured surface policy, topology lineage, and reabsorption records",
+      "authority_summary": {
+        "direction": [
+          "candidate_or_policy_specific",
+          "packet contact and configured surface key"
+        ],
+        "funding": [
+          "not_a_coherence_transfer",
+          "parent_or_losing_basin_coherence"
+        ],
+        "eligibility": [
+          "mechanism_specific_gate",
+          "surface policy predicate"
+        ],
+        "scheduling": [
+          "LGRC9V3.step",
+          "caller_or_native_producer"
+        ],
+        "commit": [
+          "LGRC9V3_topology_integrator",
+          "runtime surface log"
+        ],
+        "reception": [
+          "local surface state",
+          "runtime_topology_and_lineage"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "surface_row_emission",
+          "trigger": "qualifying packet contact",
+          "state_consumed": [
+            "arrival result",
+            "surface policy",
+            "local runtime state"
+          ],
+          "state_produced": [
+            "surface row",
+            "surface event"
+          ],
+          "direction_authority": "packet contact and configured surface key",
+          "funding_authority": "not_a_coherence_transfer",
+          "eligibility_authority": "surface policy predicate",
+          "scheduling_authority": "LGRC9V3.step",
+          "commit_authority": "runtime surface log",
+          "reception_authority": "local surface state",
+          "action_scope": "emit runtime surface row",
+          "mutation_scope": "surface records",
+          "time_semantics": "event_time",
+          "spatial_scope": "contact_local",
+          "failure_or_noop_semantics": "disabled/nonqualifying policy is no-op"
+        },
+        {
+          "stage_id": "surface_lineage_transport",
+          "trigger": "committed topology event",
+          "state_consumed": [
+            "surface row",
+            "lineage transfer map"
+          ],
+          "state_produced": [
+            "transported row",
+            "lineage record",
+            "supersession record"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "transport surface identity",
+          "mutation_scope": "surface/lineage records",
+          "time_semantics": "event_time",
+          "spatial_scope": "affected_topology_region",
+          "failure_or_noop_semantics": "missing lineage blocks clean transport"
+        },
+        {
+          "stage_id": "surface_reabsorption",
+          "trigger": "collapse/reabsorption event",
+          "state_consumed": [
+            "surface lineage",
+            "reabsorption map"
+          ],
+          "state_produced": [
+            "reabsorbed or superseded surface state"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "reabsorb active surface",
+          "mutation_scope": "surface records",
+          "time_semantics": "event_time",
+          "spatial_scope": "collapsed_region",
+          "failure_or_noop_semantics": "missing reabsorption record leaves explicit debt"
+        }
+      ],
+      "configured_residue": [
+        "surface policy",
+        "keys",
+        "update policy",
+        "lineage mode"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "surface meaning and constitutive consumption remain absent unless a named producer/pathway reads it"
+      ],
+      "budget_and_invariants": [
+        "idempotency",
+        "lineage completeness",
+        "no hidden coherence budget"
+      ],
+      "state_identity_fields": [
+        "surface digest",
+        "lineage record ID",
+        "topology event ID"
+      ],
+      "history_consumed": [
+        "packet contact and topology lineage"
+      ],
+      "history_retained_but_not_consumed": [
+        "surface history not consumed by constitutive transport"
+      ],
+      "fail_closed_conditions": [
+        "policy disabled",
+        "stale/missing lineage",
+        "duplicate row"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 runtime surface/lineage restoration",
+      "supported_claims": [
+        "native configured surface recording and lineage transport mechanics"
+      ],
+      "blocked_claims": [
+        "native memory",
+        "Read-Back",
+        "support"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "214b18e6b46b2c8021f16e00b82ccac941f2b5ed89c669116bb16c2ce09ca97e",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_spark_topology_integration",
+      "entry_version": 1,
+      "name": "LGRC9V3 Causal Spark Topology Integration",
+      "purpose": "Evaluate causal spark diagnostics at an arrival/local-update boundary and optionally commit mechanical refinement with packet and lineage transport.",
+      "substrate_layer": "LGRC9V3",
+      "contract_kind": "causal_topology_pathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "arrival result",
+        "candidate event",
+        "local differential state",
+        "packet ledger",
+        "parent coherence",
+        "proper time state",
+        "spark policy",
+        "topology event",
+        "topology policy"
+      ],
+      "state_produced": [
+        "causal spark candidate event",
+        "coherence transfer",
+        "lineage map",
+        "proper time inheritance",
+        "refined topology",
+        "topology event",
+        "transported packets"
+      ],
+      "time_semantics": [
+        "event_time"
+      ],
+      "spatial_scope": [
+        "affected_topology_region",
+        "arrival_local",
+        "candidate_local"
+      ],
+      "trigger_surface": "packet arrival local-update boundary",
+      "event_locus": "arrival_then_local_update_then_spark_frontier",
+      "causal_information_scope": "current arrival result, local diagnostics, configured spark/integration policies",
+      "authority_summary": {
+        "direction": [
+          "candidate_or_policy_specific",
+          "local differential geometry"
+        ],
+        "funding": [
+          "not_yet_funded",
+          "parent_or_losing_basin_coherence"
+        ],
+        "eligibility": [
+          "causal spark predicate",
+          "mechanism_specific_gate"
+        ],
+        "scheduling": [
+          "LGRC9V3.step",
+          "caller_or_native_producer"
+        ],
+        "commit": [
+          "LGRC9V3_topology_integrator",
+          "candidate event log"
+        ],
+        "reception": [
+          "integration gate",
+          "runtime_topology_and_lineage"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "causal_spark_diagnostic",
+          "trigger": "packet arrival and local update",
+          "state_consumed": [
+            "arrival result",
+            "local differential state",
+            "spark policy"
+          ],
+          "state_produced": [
+            "causal spark candidate event"
+          ],
+          "direction_authority": "local differential geometry",
+          "funding_authority": "not_yet_funded",
+          "eligibility_authority": "causal spark predicate",
+          "scheduling_authority": "LGRC9V3.step",
+          "commit_authority": "candidate event log",
+          "reception_authority": "integration gate",
+          "action_scope": "evaluate candidate",
+          "mutation_scope": "diagnostic/event records",
+          "time_semantics": "event_time",
+          "spatial_scope": "arrival_local",
+          "failure_or_noop_semantics": "predicate miss emits no candidate"
+        },
+        {
+          "stage_id": "topology_integration",
+          "trigger": "eligible candidate and enabled policy",
+          "state_consumed": [
+            "candidate event",
+            "parent coherence",
+            "topology policy"
+          ],
+          "state_produced": [
+            "refined topology",
+            "coherence transfer",
+            "topology event"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "commit refinement",
+          "mutation_scope": "topology, coherence, lineage",
+          "time_semantics": "event_time",
+          "spatial_scope": "candidate_local",
+          "failure_or_noop_semantics": "disabled policy/capacity failure blocks"
+        },
+        {
+          "stage_id": "packet_and_lineage_transport",
+          "trigger": "topology integration committed",
+          "state_consumed": [
+            "topology event",
+            "packet ledger",
+            "proper time state"
+          ],
+          "state_produced": [
+            "transported packets",
+            "lineage map",
+            "proper time inheritance"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "transport active state",
+          "mutation_scope": "packet/runtime lineage state",
+          "time_semantics": "event_time",
+          "spatial_scope": "affected_topology_region",
+          "failure_or_noop_semantics": "transport mismatch blocks replay-clean claim"
+        }
+      ],
+      "configured_residue": [
+        "spark modes",
+        "integration policy",
+        "expansion distribution",
+        "proper-time policy"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "candidate semantics and identity acceptance remain separate"
+      ],
+      "budget_and_invariants": [
+        "coherence conservation",
+        "packet budget",
+        "lineage completeness"
+      ],
+      "state_identity_fields": [
+        "candidate ID",
+        "topology event ID",
+        "lineage IDs",
+        "packet IDs"
+      ],
+      "history_consumed": [
+        "arrival and topology history required for integration/transport"
+      ],
+      "history_retained_but_not_consumed": [
+        "other ledger history"
+      ],
+      "fail_closed_conditions": [
+        "predicate miss",
+        "disabled policy",
+        "capacity failure",
+        "transport mismatch"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 topology/packet/lineage restoration",
+      "supported_claims": [
+        "native causal spark evaluation and enabled topology-integration mechanics"
+      ],
+      "blocked_claims": [
+        "semantic creation",
+        "identity acceptance",
+        "generic admission"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "b8331d6cc99fa9008998f17b11435242b2283efd50e91887b931d134ac64df8b",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
       "pathway_id": "lgrc9v3.collapse_reabsorption",
-      "name": "Collapse Reabsorption And Topology-State Transport",
-      "purpose": "commit_explicit_or_arbitrated_collapse_reabsorption_and_transport_lineage_packets_and_active_state",
+      "entry_version": 1,
+      "name": "LGRC9V3 Collapse And Reabsorption",
+      "purpose": "Commit explicit or arbitrated collapse/reabsorption and transport packet, lineage, surface, and active-state records.",
       "substrate_layer": "LGRC9V3",
-      "status_class": "native_mechanics_with_configured_semantics",
-      "state_consumed": ["explicit_or_arbitrated_topology_event", "lineage_map", "packet_ledger", "active_state"],
-      "state_produced": ["collapse_or_reabsorption_event", "transported_packets", "lineage_and_reabsorption_records"],
-      "time_semantics": "explicit_or_arbitrated_topology_commit_order",
-      "spatial_scope": "declared_competing_selected_losing_and_transferred_nodes",
-      "authority": {
-        "direction": "explicit_or_arbitrated_selected_sink",
-        "funding": "declared_coherence_transfer_and_budget_invariant",
-        "eligibility": "policy_enablement_and_arbitration_digest_checks_when_present",
-        "scheduling": "caller_or_native_route_arbitration",
-        "commitment": "collapse_reabsorption_integrator",
-        "reception": "selected_sink_lineage_and_transported_topology_state"
+      "contract_kind": "causal_topology_pathway",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "active state",
+        "coherence",
+        "collapse event",
+        "losing nodes",
+        "packet ledger",
+        "pending flux",
+        "policy",
+        "runtime context",
+        "selected sink",
+        "surface rows",
+        "topology"
+      ],
+      "state_produced": [
+        "lineage event",
+        "reabsorbed surfaces",
+        "reabsorbed topology",
+        "redirected/settled packets",
+        "transferred coherence",
+        "transport records",
+        "validated collapse event"
+      ],
+      "time_semantics": [
+        "event_time"
+      ],
+      "spatial_scope": [
+        "affected_topology_region",
+        "selected_basin_region"
+      ],
+      "trigger_surface": "process_causal_collapse_reabsorption",
+      "event_locus": "explicit_or_arbitrated_topology_event_frontier",
+      "causal_information_scope": "selected sinks/losers, runtime topology, packet ledger, and configured policy",
+      "authority_summary": {
+        "direction": [
+          "candidate_or_policy_specific",
+          "explicit/arbitrated collapse relation"
+        ],
+        "funding": [
+          "losing basin coherence",
+          "parent_or_losing_basin_coherence"
+        ],
+        "eligibility": [
+          "collapse policy and context validation",
+          "mechanism_specific_gate"
+        ],
+        "scheduling": [
+          "caller or arbitrator",
+          "caller_or_native_producer"
+        ],
+        "commit": [
+          "LGRC9V3_topology_integrator",
+          "collapse processor"
+        ],
+        "reception": [
+          "runtime_topology_and_lineage",
+          "selected sink"
+        ]
       },
-      "configured_residue": ["event_kind", "sink_sets", "lineage_map", "transferred_nodes_when_not_arbitrated"],
-      "restoration_and_serialization_identity": "topology_event_lineage_reabsorption_and_packet_digest_chain",
-      "supported_claims": ["native_collapse_reabsorption_transport_mechanics_under_explicit_or_arbitrated_input"],
-      "blocked_claims": ["native_sink_formation", "RC_identity_collapse", "semantic_identity"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_runtime.py", "src/pygrc/models/lgrc_9_v3_packets.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_runtime.py", "tests/models/test_lgrc_9_v3_contract.py"],
-      "composes_with": ["lgrc9v3.native_route_arbitration", "pygrc.restoration_replay_identity"],
-      "does_not_compose_with": ["transported_identity_as_RC_identity_acceptance"],
-      "requires_explicit_adapter": ["candidate_or_explicit_topology_event_formation"]
+      "stage_sequence": [
+        {
+          "stage_id": "collapse_event_admission",
+          "trigger": "explicit request or arbitration selection",
+          "state_consumed": [
+            "selected sink",
+            "losing nodes",
+            "policy",
+            "runtime context"
+          ],
+          "state_produced": [
+            "validated collapse event"
+          ],
+          "direction_authority": "explicit/arbitrated collapse relation",
+          "funding_authority": "losing basin coherence",
+          "eligibility_authority": "collapse policy and context validation",
+          "scheduling_authority": "caller or arbitrator",
+          "commit_authority": "collapse processor",
+          "reception_authority": "selected sink",
+          "action_scope": "validate collapse",
+          "mutation_scope": "none before commit",
+          "time_semantics": "event_time",
+          "spatial_scope": "selected_basin_region",
+          "failure_or_noop_semantics": "invalid relation rejects atomically"
+        },
+        {
+          "stage_id": "topology_reabsorption_commit",
+          "trigger": "validated event",
+          "state_consumed": [
+            "collapse event",
+            "topology",
+            "coherence"
+          ],
+          "state_produced": [
+            "reabsorbed topology",
+            "transferred coherence",
+            "lineage event"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "commit reabsorption",
+          "mutation_scope": "topology, coherence, lineage",
+          "time_semantics": "event_time",
+          "spatial_scope": "selected_basin_region",
+          "failure_or_noop_semantics": "budget/topology failure blocks atomically"
+        },
+        {
+          "stage_id": "active_state_transport",
+          "trigger": "topology commit complete",
+          "state_consumed": [
+            "packet ledger",
+            "pending flux",
+            "surface rows",
+            "active state"
+          ],
+          "state_produced": [
+            "redirected/settled packets",
+            "reabsorbed surfaces",
+            "transport records"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "transport active state",
+          "mutation_scope": "packet/runtime records",
+          "time_semantics": "event_time",
+          "spatial_scope": "affected_topology_region",
+          "failure_or_noop_semantics": "unmapped active state blocks clean replay"
+        }
+      ],
+      "configured_residue": [
+        "collapse policy",
+        "explicit or arbitration input",
+        "reabsorption modes"
+      ],
+      "producer_residue": [
+        "candidate formation when externally supplied"
+      ],
+      "naturalization_debt": [
+        "native collapse reason and semantic identity"
+      ],
+      "budget_and_invariants": [
+        "coherence/packet budget",
+        "lineage completeness",
+        "endpoint validity"
+      ],
+      "state_identity_fields": [
+        "collapse event ID",
+        "lineage map",
+        "packet/surface record IDs"
+      ],
+      "history_consumed": [
+        "selected event, packet, lineage, and surface history"
+      ],
+      "history_retained_but_not_consumed": [
+        "semantic identity labels"
+      ],
+      "fail_closed_conditions": [
+        "invalid sink/loser",
+        "budget mismatch",
+        "unmapped endpoint",
+        "duplicate event"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 topology and active-state restoration",
+      "supported_claims": [
+        "native collapse/reabsorption and active-state transport mechanics"
+      ],
+      "blocked_claims": [
+        "semantic death",
+        "identity acceptance",
+        "native candidate formation"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "b8331d6cc99fa9008998f17b11435242b2283efd50e91887b931d134ac64df8b",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.configured_flux_route",
+      "entry_version": 1,
+      "name": "Configured Causal-Flux Route Producer",
+      "purpose": "Schedule packet departures over caller-configured causal routes using native producer and packet mechanics.",
+      "substrate_layer": "LGRC9V3 producer layer",
+      "contract_kind": "configured_producer",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "producer policy",
+        "route map",
+        "route specs",
+        "source coherence"
+      ],
+      "state_produced": [
+        "production record",
+        "queued packet departure",
+        "runtime route map"
+      ],
+      "time_semantics": [
+        "configuration_time",
+        "producer_frontier_then_event_time"
+      ],
+      "spatial_scope": [
+        "configured_route",
+        "declared_endpoints"
+      ],
+      "trigger_surface": "produce_events with causal_flux_routes",
+      "event_locus": "producer_frontier_before_queue_processing",
+      "causal_information_scope": "configured route map and current source coherence",
+      "authority_summary": {
+        "direction": [
+          "configured route"
+        ],
+        "funding": [
+          "not_yet_funded",
+          "source coherence"
+        ],
+        "eligibility": [
+          "route schema",
+          "route validity and producer policy"
+        ],
+        "scheduling": [
+          "caller",
+          "native producer"
+        ],
+        "commit": [
+          "packet scheduler",
+          "runtime config state"
+        ],
+        "reception": [
+          "configured target",
+          "producer"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "route_registration",
+          "trigger": "set_causal_flux_routes",
+          "state_consumed": [
+            "route specs"
+          ],
+          "state_produced": [
+            "runtime route map"
+          ],
+          "direction_authority": "configured route",
+          "funding_authority": "not_yet_funded",
+          "eligibility_authority": "route schema",
+          "scheduling_authority": "caller",
+          "commit_authority": "runtime config state",
+          "reception_authority": "producer",
+          "action_scope": "register routes",
+          "mutation_scope": "runtime policy state",
+          "time_semantics": "configuration_time",
+          "spatial_scope": "declared_endpoints",
+          "failure_or_noop_semantics": "invalid route rejects"
+        },
+        {
+          "stage_id": "route_departure_production",
+          "trigger": "produce_events and empty/idempotent route slot",
+          "state_consumed": [
+            "route map",
+            "source coherence",
+            "producer policy"
+          ],
+          "state_produced": [
+            "queued packet departure",
+            "production record"
+          ],
+          "direction_authority": "configured route",
+          "funding_authority": "source coherence",
+          "eligibility_authority": "route validity and producer policy",
+          "scheduling_authority": "native producer",
+          "commit_authority": "packet scheduler",
+          "reception_authority": "configured target",
+          "action_scope": "produce packet work",
+          "mutation_scope": "packet queue and producer log",
+          "time_semantics": "producer_frontier_then_event_time",
+          "spatial_scope": "configured_route",
+          "failure_or_noop_semantics": "insufficient budget or duplicate key emits no work"
+        }
+      ],
+      "configured_residue": [
+        "route",
+        "target",
+        "amount source",
+        "arrival delay"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "route formation and role meaning remain configured residue"
+      ],
+      "budget_and_invariants": [
+        "aggregate source preflight",
+        "idempotency",
+        "packet budget"
+      ],
+      "state_identity_fields": [
+        "route map",
+        "producer record IDs",
+        "packet ledger"
+      ],
+      "history_consumed": [
+        "producer idempotency history"
+      ],
+      "history_retained_but_not_consumed": [
+        "unrelated route history"
+      ],
+      "fail_closed_conditions": [
+        "invalid route",
+        "insufficient source",
+        "duplicate production"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 runtime route and producer state",
+      "supported_claims": [
+        "native scheduling mechanics over configured routes"
+      ],
+      "blocked_claims": [
+        "native route formation",
+        "semantic role formation"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c38ec596174869dfef5dbbd3479dd05a46d7b7b35665b0328764b8b0284040a",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
       "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "entry_version": 1,
       "name": "Diagnostic GRC Reconstruction Over LGRC State",
-      "purpose": "explicitly_rebuild_GRC_transport_choice_or_identity_surfaces_over_LGRC_base_state",
-      "substrate_layer": "diagnostic_over_LGRC9V3",
-      "status_class": "diagnostic_only",
-      "state_consumed": ["LGRC9V3_base_state", "GRC9V3_parameters"],
-      "state_produced": ["diagnostic_GRC_differential_transport_choice_or_identity_surfaces"],
-      "time_semantics": "explicit_checkpoint_or_helper_invocation",
-      "spatial_scope": "graph_wide_diagnostic_reconstruction",
-      "authority": {
-        "direction": "reconstructed_GRC_flux",
-        "funding": "none_until_separate_work_adapter",
-        "eligibility": "explicit_diagnostic_call",
-        "scheduling": "caller",
-        "commitment": "diagnostic_helper_only",
-        "reception": "diagnostic_record_or_mutated_base_cache_at_declared_scope"
+      "purpose": "Explicitly reconstruct synchronous GRC9V3 differential, transport, identity, and choice surfaces over an LGRC base-state copy.",
+      "substrate_layer": "diagnostic over LGRC9V3",
+      "contract_kind": "diagnostic_reconstruction",
+      "mechanism_ownership": "diagnostic",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "GRC params",
+        "LGRC base state",
+        "copied state"
+      ],
+      "state_produced": [
+        "choice diagnostics",
+        "diagnostic GRC9V3 model",
+        "differential",
+        "flux",
+        "identity"
+      ],
+      "time_semantics": [
+        "caller_checkpoint",
+        "synchronous_limit_at_checkpoint"
+      ],
+      "spatial_scope": [
+        "copied_graph"
+      ],
+      "trigger_surface": "prepare_lgrc9v3_grc9v3_diagnostics or explicit reconstruction helper",
+      "event_locus": "caller_selected_checkpoint",
+      "causal_information_scope": "LGRC base state copied into an explicit GRC9V3 diagnostic model",
+      "authority_summary": {
+        "direction": [
+          "GRC reconstruction",
+          "copied graph state"
+        ],
+        "funding": [
+          "not_a_transport_budget",
+          "not_applied_to_LGRC"
+        ],
+        "eligibility": [
+          "caller-selected reconstruction",
+          "explicit diagnostic request"
+        ],
+        "scheduling": [
+          "caller"
+        ],
+        "commit": [
+          "helper-local model",
+          "helper-local rebuild"
+        ],
+        "reception": [
+          "diagnostic pipeline",
+          "returned diagnostic"
+        ]
       },
-      "configured_residue": ["helper_invocation", "selected_reconstruction_surfaces"],
-      "restoration_and_serialization_identity": "diagnostic_result_must_cite_source_snapshot_or_state_digest",
-      "supported_claims": ["bounded_diagnostic_or_synchronous_limit_readout"],
-      "blocked_claims": ["ordinary_LGRC_step_execution", "native_event_closure", "native_Read_Back"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_construction.py", "src/pygrc/models/grc_9_v3.py"],
-      "source_specification": ["specs/lgrc-9-v3-spec.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_construction.py"],
-      "composes_with": ["experimental_composition_with_explicit_adapter"],
-      "does_not_compose_with": ["diagnostic_reconstruction_as_ordinary_LGRC_behavior"],
-      "requires_explicit_adapter": ["diagnostic_result_to_runtime_work"]
+      "stage_sequence": [
+        {
+          "stage_id": "diagnostic_model_construction",
+          "trigger": "explicit helper call",
+          "state_consumed": [
+            "LGRC base state",
+            "GRC params"
+          ],
+          "state_produced": [
+            "diagnostic GRC9V3 model"
+          ],
+          "direction_authority": "copied graph state",
+          "funding_authority": "not_a_transport_budget",
+          "eligibility_authority": "caller-selected reconstruction",
+          "scheduling_authority": "caller",
+          "commit_authority": "helper-local model",
+          "reception_authority": "diagnostic pipeline",
+          "action_scope": "construct diagnostic model",
+          "mutation_scope": "helper-local state",
+          "time_semantics": "caller_checkpoint",
+          "spatial_scope": "copied_graph",
+          "failure_or_noop_semantics": "invalid state/params reject"
+        },
+        {
+          "stage_id": "diagnostic_rebuild",
+          "trigger": "diagnostic model available",
+          "state_consumed": [
+            "copied state"
+          ],
+          "state_produced": [
+            "differential",
+            "flux",
+            "identity",
+            "choice diagnostics"
+          ],
+          "direction_authority": "GRC reconstruction",
+          "funding_authority": "not_applied_to_LGRC",
+          "eligibility_authority": "explicit diagnostic request",
+          "scheduling_authority": "caller",
+          "commit_authority": "helper-local rebuild",
+          "reception_authority": "returned diagnostic",
+          "action_scope": "rebuild diagnostics",
+          "mutation_scope": "helper-local state only",
+          "time_semantics": "synchronous_limit_at_checkpoint",
+          "spatial_scope": "copied_graph",
+          "failure_or_noop_semantics": "failure does not mutate original LGRC"
+        }
+      ],
+      "configured_residue": [
+        "diagnostic modes",
+        "copied params"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "ordinary LGRC step does not consume the reconstruction"
+      ],
+      "budget_and_invariants": [
+        "original LGRC state unchanged",
+        "copy identity"
+      ],
+      "state_identity_fields": [
+        "source checkpoint digest",
+        "diagnostic model identity"
+      ],
+      "history_consumed": [
+        "selected checkpoint only"
+      ],
+      "history_retained_but_not_consumed": [
+        "other LGRC history"
+      ],
+      "fail_closed_conditions": [
+        "copy mismatch",
+        "invalid params",
+        "attempted write-back"
+      ],
+      "restoration_and_serialization_identity": "diagnostic copy/snapshot contract",
+      "supported_claims": [
+        "explicit bounded GRC diagnostic over LGRC state"
+      ],
+      "blocked_claims": [
+        "ordinary LGRC behavior",
+        "native current-to-packet adapter"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "04c4906f7f32028b6bc03331e2544f6ec748ffcb31f5456926eb1b85c13c0dae",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "entry_version": 1,
+      "name": "Explicit LGRC9V3 Packet Transport",
+      "purpose": "Validate and process a declared packet through source debit, in-flight state, arrival, and target credit.",
+      "substrate_layer": "LGRC9V3",
+      "contract_kind": "event_transport",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "amount",
+        "edge",
+        "event times",
+        "in_flight packet",
+        "packet ledger",
+        "queued departure",
+        "source",
+        "source coherence",
+        "target",
+        "target state"
+      ],
+      "state_produced": [
+        "arrival event",
+        "in_flight packet",
+        "processing record",
+        "queued departure record",
+        "settled packet",
+        "source debit",
+        "target credit"
+      ],
+      "time_semantics": [
+        "event_time"
+      ],
+      "spatial_scope": [
+        "declared_edge",
+        "source_and_edge",
+        "target_and_edge"
+      ],
+      "trigger_surface": "schedule_packet_departure or queued packet event",
+      "event_locus": "packet_event_queue_frontier",
+      "causal_information_scope": "declared packet record plus source/target state",
+      "authority_summary": {
+        "direction": [
+          "supplied_packet_endpoints"
+        ],
+        "funding": [
+          "source_node_coherence"
+        ],
+        "eligibility": [
+          "packet_validation"
+        ],
+        "scheduling": [
+          "caller_or_registered_producer"
+        ],
+        "commit": [
+          "LGRC9V3.step"
+        ],
+        "reception": [
+          "target_node"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "packet_schedule",
+          "trigger": "explicit call or registered producer",
+          "state_consumed": [
+            "source",
+            "target",
+            "edge",
+            "amount",
+            "event times",
+            "packet ledger"
+          ],
+          "state_produced": [
+            "queued departure record"
+          ],
+          "direction_authority": "supplied_packet_endpoints",
+          "funding_authority": "source_node_coherence",
+          "eligibility_authority": "packet_validation",
+          "scheduling_authority": "caller_or_registered_producer",
+          "commit_authority": "LGRC9V3.step",
+          "reception_authority": "target_node",
+          "action_scope": "validate and queue packet",
+          "mutation_scope": "packet ledger queue",
+          "time_semantics": "event_time",
+          "spatial_scope": "declared_edge",
+          "failure_or_noop_semantics": "invalid endpoints, amount, time, or budget rejects"
+        },
+        {
+          "stage_id": "source_debit",
+          "trigger": "departure event reaches queue front",
+          "state_consumed": [
+            "queued departure",
+            "source coherence"
+          ],
+          "state_produced": [
+            "source debit",
+            "in_flight packet",
+            "arrival event"
+          ],
+          "direction_authority": "supplied_packet_endpoints",
+          "funding_authority": "source_node_coherence",
+          "eligibility_authority": "packet_validation",
+          "scheduling_authority": "caller_or_registered_producer",
+          "commit_authority": "LGRC9V3.step",
+          "reception_authority": "target_node",
+          "action_scope": "commit departure",
+          "mutation_scope": "source coherence and packet ledger",
+          "time_semantics": "event_time",
+          "spatial_scope": "source_and_edge",
+          "failure_or_noop_semantics": "insufficient source budget rejects atomically"
+        },
+        {
+          "stage_id": "target_credit",
+          "trigger": "arrival event reaches queue front",
+          "state_consumed": [
+            "in_flight packet",
+            "target state"
+          ],
+          "state_produced": [
+            "target credit",
+            "settled packet",
+            "processing record"
+          ],
+          "direction_authority": "supplied_packet_endpoints",
+          "funding_authority": "source_node_coherence",
+          "eligibility_authority": "packet_validation",
+          "scheduling_authority": "caller_or_registered_producer",
+          "commit_authority": "LGRC9V3.step",
+          "reception_authority": "target_node",
+          "action_scope": "commit arrival",
+          "mutation_scope": "target coherence and packet ledger",
+          "time_semantics": "event_time",
+          "spatial_scope": "target_and_edge",
+          "failure_or_noop_semantics": "invalid arrival alignment rejects atomically"
+        }
+      ],
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "native route formation and departure reason remain absent"
+      ],
+      "budget_and_invariants": [
+        "source debit equals in-flight amount equals target credit",
+        "deterministic queue order",
+        "fixed packet identity"
+      ],
+      "state_identity_fields": [
+        "packet ID",
+        "event IDs",
+        "ledger",
+        "scheduler index",
+        "topology endpoints"
+      ],
+      "history_consumed": [
+        "packet and queue history required for settlement"
+      ],
+      "history_retained_but_not_consumed": [
+        "unrelated event history"
+      ],
+      "fail_closed_conditions": [
+        "budget failure",
+        "endpoint mismatch",
+        "event ordering mismatch",
+        "duplicate event"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 runtime-state and packet-ledger restoration",
+      "supported_claims": [
+        "native packet accounting and queue-processing mechanics"
+      ],
+      "blocked_claims": [
+        "substrate-formed route",
+        "native departure reason",
+        "agency"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "d50e73aa23da660408d8e1aa9e18f866d822f336ffabd009fc6a69c22d5f2eed",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "entry_version": 1,
+      "name": "Feedback-Eligibility Producer",
+      "purpose": "Use an experiment-authored feedback surface and eligibility policy to schedule bounded packet work.",
+      "substrate_layer": "producer over LGRC9V3",
+      "contract_kind": "producer_adapter",
+      "mechanism_ownership": "producer",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "feedback policy",
+        "feedback row",
+        "route config",
+        "runtime-visible state",
+        "source coherence"
+      ],
+      "state_produced": [
+        "feedback eligibility surface row",
+        "producer result",
+        "queued packet"
+      ],
+      "time_semantics": [
+        "producer_frontier",
+        "producer_frontier_then_event_time"
+      ],
+      "spatial_scope": [
+        "producer_declared",
+        "producer_declared_route"
+      ],
+      "trigger_surface": "emit_feedback_eligibility_surface_row and produce_events",
+      "event_locus": "producer_frontier",
+      "causal_information_scope": "registered feedback surface, masks, thresholds, and current source state",
+      "authority_summary": {
+        "direction": [
+          "producer relation",
+          "producer route"
+        ],
+        "funding": [
+          "not_yet_funded",
+          "source coherence"
+        ],
+        "eligibility": [
+          "producer feedback predicate",
+          "producer-authored surface rule"
+        ],
+        "scheduling": [
+          "producer"
+        ],
+        "commit": [
+          "native packet scheduler",
+          "runtime surface record"
+        ],
+        "reception": [
+          "configured target",
+          "feedback producer"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "feedback_surface_registration",
+          "trigger": "explicit producer call",
+          "state_consumed": [
+            "runtime-visible state",
+            "feedback policy"
+          ],
+          "state_produced": [
+            "feedback eligibility surface row"
+          ],
+          "direction_authority": "producer relation",
+          "funding_authority": "not_yet_funded",
+          "eligibility_authority": "producer-authored surface rule",
+          "scheduling_authority": "producer",
+          "commit_authority": "runtime surface record",
+          "reception_authority": "feedback producer",
+          "action_scope": "emit bounded eligibility row",
+          "mutation_scope": "producer-owned runtime record",
+          "time_semantics": "producer_frontier",
+          "spatial_scope": "producer_declared",
+          "failure_or_noop_semantics": "invalid row rejects"
+        },
+        {
+          "stage_id": "feedback_packet_schedule",
+          "trigger": "qualifying feedback row",
+          "state_consumed": [
+            "feedback row",
+            "source coherence",
+            "route config"
+          ],
+          "state_produced": [
+            "queued packet",
+            "producer result"
+          ],
+          "direction_authority": "producer route",
+          "funding_authority": "source coherence",
+          "eligibility_authority": "producer feedback predicate",
+          "scheduling_authority": "producer",
+          "commit_authority": "native packet scheduler",
+          "reception_authority": "configured target",
+          "action_scope": "schedule packet",
+          "mutation_scope": "packet queue and producer log",
+          "time_semantics": "producer_frontier_then_event_time",
+          "spatial_scope": "producer_declared_route",
+          "failure_or_noop_semantics": "stale/missing row or budget failure blocks"
+        }
+      ],
+      "configured_residue": [
+        "feedback masks",
+        "thresholds",
+        "route",
+        "amount"
+      ],
+      "producer_residue": [
+        "feedback surface formation and eligibility"
+      ],
+      "naturalization_debt": [
+        "native feedback or generic admission"
+      ],
+      "budget_and_invariants": [
+        "native packet budget",
+        "surface freshness",
+        "idempotency"
+      ],
+      "state_identity_fields": [
+        "feedback surface ID",
+        "producer record",
+        "packet ledger"
+      ],
+      "history_consumed": [
+        "latest eligible feedback row"
+      ],
+      "history_retained_but_not_consumed": [
+        "nonconsumed feedback history"
+      ],
+      "fail_closed_conditions": [
+        "missing/stale row",
+        "predicate miss",
+        "budget failure"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 feedback producer state restoration",
+      "supported_claims": [
+        "producer-mediated feedback eligibility candidate"
+      ],
+      "blocked_claims": [
+        "native feedback",
+        "semantic intention",
+        "agency"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c38ec596174869dfef5dbbd3479dd05a46d7b7b35665b0328764b8b0284040a",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.fixed_topology_eligibility",
+      "entry_version": 1,
+      "name": "LGRC9V3 Fixed-Topology Eligibility",
+      "purpose": "Compute bounded semi-causal fixed-topology eligibility from declared timing and state surfaces.",
+      "substrate_layer": "LGRC9V3 diagnostic layer",
+      "contract_kind": "diagnostic_eligibility",
+      "mechanism_ownership": "diagnostic",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "GRC9V3 state",
+        "causal annotation",
+        "eligibility policy"
+      ],
+      "state_produced": [
+        "eligibility artifact"
+      ],
+      "time_semantics": [
+        "derived_event_time"
+      ],
+      "spatial_scope": [
+        "fixed_topology_relation"
+      ],
+      "trigger_surface": "compute_lgrc9v3_fixed_topology_eligibility",
+      "event_locus": "explicit_eligibility_call",
+      "causal_information_scope": "current fixed topology and declared causal-history inputs",
+      "authority_summary": {
+        "direction": [
+          "declared source/target relation"
+        ],
+        "funding": [
+          "not_a_transport_budget"
+        ],
+        "eligibility": [
+          "fixed-topology predicate"
+        ],
+        "scheduling": [
+          "caller"
+        ],
+        "commit": [
+          "eligibility helper"
+        ],
+        "reception": [
+          "caller"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "fixed_topology_eligibility",
+          "trigger": "explicit eligibility request",
+          "state_consumed": [
+            "GRC9V3 state",
+            "causal annotation",
+            "eligibility policy"
+          ],
+          "state_produced": [
+            "eligibility artifact"
+          ],
+          "direction_authority": "declared source/target relation",
+          "funding_authority": "not_a_transport_budget",
+          "eligibility_authority": "fixed-topology predicate",
+          "scheduling_authority": "caller",
+          "commit_authority": "eligibility helper",
+          "reception_authority": "caller",
+          "action_scope": "compute eligibility",
+          "mutation_scope": "returned artifact only",
+          "time_semantics": "derived_event_time",
+          "spatial_scope": "fixed_topology_relation",
+          "failure_or_noop_semantics": "topology change or missing inputs rejects"
+        }
+      ],
+      "configured_residue": [
+        "eligibility thresholds",
+        "timing policy"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "computed eligibility is not packet scheduling or generic admission"
+      ],
+      "budget_and_invariants": [
+        "fixed topology signature",
+        "finite inputs"
+      ],
+      "state_identity_fields": [
+        "topology signature",
+        "eligibility schema"
+      ],
+      "history_consumed": [
+        "declared annotation"
+      ],
+      "history_retained_but_not_consumed": [
+        "other ledger history"
+      ],
+      "fail_closed_conditions": [
+        "topology mismatch",
+        "invalid policy"
+      ],
+      "restoration_and_serialization_identity": "eligibility artifact restoration contract",
+      "supported_claims": [
+        "bounded fixed-topology eligibility diagnostic"
+      ],
+      "blocked_claims": [
+        "packet departure",
+        "native generic admission"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c8a7d8758e7086e2b7d0523edd77d102146de35fddd2e6acdc79e2ec828a33d",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.multi_basin_record_validation",
+      "entry_version": 1,
+      "name": "LGRC9V3 Multi-Basin Record And Validation",
+      "purpose": "Emit child-basin/flow-window records after committed topology events and validate replay plus merge/leakage controls.",
+      "substrate_layer": "LGRC9V3 diagnostic layer",
+      "contract_kind": "diagnostic_validation",
+      "mechanism_ownership": "diagnostic",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "active state",
+        "child record",
+        "control policy",
+        "edge/packet flux",
+        "flow record",
+        "multi-basin policy",
+        "snapshot/replay state",
+        "topology event"
+      ],
+      "state_produced": [
+        "child-basin state record",
+        "flow-window record",
+        "merge/leakage control record",
+        "replay validation"
+      ],
+      "time_semantics": [
+        "event_time",
+        "replay_window"
+      ],
+      "spatial_scope": [
+        "affected_child_region",
+        "child_and_parent_regions"
+      ],
+      "trigger_surface": "committed topology event with multi-basin policy",
+      "event_locus": "post_topology_diagnostic_frontier",
+      "causal_information_scope": "committed topology, child metrics, packet/edge flux traces, and validation policy",
+      "authority_summary": {
+        "direction": [
+          "committed topology relation",
+          "recorded child relation"
+        ],
+        "funding": [
+          "descriptive budget trace"
+        ],
+        "eligibility": [
+          "multi-basin record schema",
+          "replay/control predicates"
+        ],
+        "scheduling": [
+          "caller",
+          "runtime post-commit hook"
+        ],
+        "commit": [
+          "diagnostic record log",
+          "validation record"
+        ],
+        "reception": [
+          "caller/telemetry",
+          "telemetry/validator"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "flow_and_child_record_emission",
+          "trigger": "topology event committed",
+          "state_consumed": [
+            "topology event",
+            "active state",
+            "edge/packet flux",
+            "multi-basin policy"
+          ],
+          "state_produced": [
+            "flow-window record",
+            "child-basin state record"
+          ],
+          "direction_authority": "committed topology relation",
+          "funding_authority": "descriptive budget trace",
+          "eligibility_authority": "multi-basin record schema",
+          "scheduling_authority": "runtime post-commit hook",
+          "commit_authority": "diagnostic record log",
+          "reception_authority": "telemetry/validator",
+          "action_scope": "emit diagnostic records",
+          "mutation_scope": "runtime diagnostic records",
+          "time_semantics": "event_time",
+          "spatial_scope": "affected_child_region",
+          "failure_or_noop_semantics": "missing metrics blocks positive record"
+        },
+        {
+          "stage_id": "replay_and_control_validation",
+          "trigger": "explicit validation request",
+          "state_consumed": [
+            "child record",
+            "flow record",
+            "snapshot/replay state",
+            "control policy"
+          ],
+          "state_produced": [
+            "replay validation",
+            "merge/leakage control record"
+          ],
+          "direction_authority": "recorded child relation",
+          "funding_authority": "descriptive budget trace",
+          "eligibility_authority": "replay/control predicates",
+          "scheduling_authority": "caller",
+          "commit_authority": "validation record",
+          "reception_authority": "caller/telemetry",
+          "action_scope": "validate records",
+          "mutation_scope": "validation records only",
+          "time_semantics": "replay_window",
+          "spatial_scope": "child_and_parent_regions",
+          "failure_or_noop_semantics": "failed control remains explicit and blocks support"
+        }
+      ],
+      "configured_residue": [
+        "multi-basin policy",
+        "window",
+        "metrics",
+        "control thresholds"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "record emission does not itself form a basin or prove broad robustness"
+      ],
+      "budget_and_invariants": [
+        "budget trace closure",
+        "record digest",
+        "replay mapping ratios"
+      ],
+      "state_identity_fields": [
+        "topology event ID",
+        "child record ID",
+        "flow record ID",
+        "replay digest"
+      ],
+      "history_consumed": [
+        "committed topology and replay history"
+      ],
+      "history_retained_but_not_consumed": [
+        "unconsumed semantic basin labels"
+      ],
+      "fail_closed_conditions": [
+        "missing topology event",
+        "replay mismatch",
+        "merge/leakage control failure"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 multi-basin record restoration",
+      "supported_claims": [
+        "native diagnostic record emission and replay/control validation"
+      ],
+      "blocked_claims": [
+        "native basin formation by record",
+        "agency",
+        "general robustness"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "1d3d40f3b071f9f9f2e408ba536b00531c9b43fdd1cdce92d87859ea4da70442",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.native_route_arbitration",
+      "entry_version": 1,
+      "name": "Native Route Arbitration",
+      "purpose": "Validate, order, select, and commit over supplied route-candidate records and scores.",
+      "substrate_layer": "LGRC9V3",
+      "contract_kind": "candidate_arbitration",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "candidate set",
+        "candidate specs",
+        "referenced topology event",
+        "runtime context",
+        "runtime state",
+        "scores",
+        "selected candidate"
+      ],
+      "state_produced": [
+        "arbitration record",
+        "candidate set",
+        "committed topology event",
+        "lineage state",
+        "ordered candidates",
+        "selected candidate",
+        "validated candidate records"
+      ],
+      "time_semantics": [
+        "event_time",
+        "explicit_call"
+      ],
+      "spatial_scope": [
+        "candidate_routes",
+        "candidate_set",
+        "selected_route"
+      ],
+      "trigger_surface": "emit/arbitrate/commit native route candidate set",
+      "event_locus": "explicit_arbitration_frontier",
+      "causal_information_scope": "supplied candidates, scores, budget predictions, and current runtime context",
+      "authority_summary": {
+        "direction": [
+          "candidate_or_policy_specific",
+          "supplied candidate direction and scores",
+          "supplied candidate routes"
+        ],
+        "funding": [
+          "parent_or_losing_basin_coherence",
+          "predicted candidate budgets",
+          "validated budget prediction"
+        ],
+        "eligibility": [
+          "mechanism_specific_gate",
+          "native candidate schema validation",
+          "native ordering and eligibility checks"
+        ],
+        "scheduling": [
+          "caller",
+          "caller_or_native_producer"
+        ],
+        "commit": [
+          "LGRC9V3_topology_integrator",
+          "candidate-set record",
+          "native arbitration record"
+        ],
+        "reception": [
+          "arbitrator",
+          "runtime_topology_and_lineage",
+          "selected candidate"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "candidate_set_admission",
+          "trigger": "emit_native_route_candidate_set",
+          "state_consumed": [
+            "candidate specs",
+            "runtime context"
+          ],
+          "state_produced": [
+            "validated candidate records",
+            "candidate set"
+          ],
+          "direction_authority": "supplied candidate routes",
+          "funding_authority": "predicted candidate budgets",
+          "eligibility_authority": "native candidate schema validation",
+          "scheduling_authority": "caller",
+          "commit_authority": "candidate-set record",
+          "reception_authority": "arbitrator",
+          "action_scope": "admit candidate set",
+          "mutation_scope": "candidate records",
+          "time_semantics": "explicit_call",
+          "spatial_scope": "candidate_routes",
+          "failure_or_noop_semantics": "invalid context or prediction rejects"
+        },
+        {
+          "stage_id": "native_arbitration",
+          "trigger": "arbitrate_native_route_candidate_set",
+          "state_consumed": [
+            "candidate set",
+            "scores",
+            "runtime state"
+          ],
+          "state_produced": [
+            "ordered candidates",
+            "selected candidate",
+            "arbitration record"
+          ],
+          "direction_authority": "supplied candidate direction and scores",
+          "funding_authority": "validated budget prediction",
+          "eligibility_authority": "native ordering and eligibility checks",
+          "scheduling_authority": "caller",
+          "commit_authority": "native arbitration record",
+          "reception_authority": "selected candidate",
+          "action_scope": "select candidate",
+          "mutation_scope": "arbitration records",
+          "time_semantics": "explicit_call",
+          "spatial_scope": "candidate_set",
+          "failure_or_noop_semantics": "no valid candidate yields fail-closed result"
+        },
+        {
+          "stage_id": "selection_commit",
+          "trigger": "commit_native_route_arbitration_selection",
+          "state_consumed": [
+            "selected candidate",
+            "referenced topology event"
+          ],
+          "state_produced": [
+            "committed topology event",
+            "lineage state"
+          ],
+          "direction_authority": "candidate_or_policy_specific",
+          "funding_authority": "parent_or_losing_basin_coherence",
+          "eligibility_authority": "mechanism_specific_gate",
+          "scheduling_authority": "caller_or_native_producer",
+          "commit_authority": "LGRC9V3_topology_integrator",
+          "reception_authority": "runtime_topology_and_lineage",
+          "action_scope": "commit selected event",
+          "mutation_scope": "runtime topology and lineage",
+          "time_semantics": "event_time",
+          "spatial_scope": "selected_route",
+          "failure_or_noop_semantics": "missing/mismatched event blocks commit"
+        }
+      ],
+      "configured_residue": [
+        "candidate schema",
+        "score/order policy",
+        "claim flags",
+        "budget prediction"
+      ],
+      "producer_residue": [
+        "candidate and score formation when experiment supplied"
+      ],
+      "naturalization_debt": [
+        "native route formation and semantic valuation"
+      ],
+      "budget_and_invariants": [
+        "candidate budget prediction",
+        "order validity",
+        "runtime context digest"
+      ],
+      "state_identity_fields": [
+        "candidate-set digest",
+        "arbitration ID",
+        "topology event ID"
+      ],
+      "history_consumed": [
+        "candidate and arbitration records"
+      ],
+      "history_retained_but_not_consumed": [
+        "semantic candidate labels"
+      ],
+      "fail_closed_conditions": [
+        "invalid candidate",
+        "budget mismatch",
+        "missing event",
+        "duplicate commit"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 candidate/arbitration runtime restoration",
+      "supported_claims": [
+        "native validation, ordering, selection, and commit mechanics over supplied candidates"
+      ],
+      "blocked_claims": [
+        "native candidate formation",
+        "semantic choice",
+        "agency"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c38ec596174869dfef5dbbd3479dd05a46d7b7b35665b0328764b8b0284040a",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.proper_time_identity_acceptance",
+      "entry_version": 1,
+      "name": "LGRC9V3 Proper-Time Identity Acceptance",
+      "purpose": "Emit an explicit identity-acceptance event only after a passing evaluation and enabled policy.",
+      "substrate_layer": "LGRC9V3",
+      "contract_kind": "policy_gated_event_emission",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "acceptance eligibility",
+        "acceptance policy",
+        "event identity fields",
+        "identity evaluation",
+        "runtime context"
+      ],
+      "state_produced": [
+        "acceptance eligibility",
+        "identity acceptance event"
+      ],
+      "time_semantics": [
+        "event_time"
+      ],
+      "spatial_scope": [
+        "sink_local"
+      ],
+      "trigger_surface": "emit_causal_identity_acceptance",
+      "event_locus": "explicit_acceptance_frontier",
+      "causal_information_scope": "passing identity evaluation and enabled acceptance policy",
+      "authority_summary": {
+        "direction": [
+          "accepted lineage",
+          "evaluated sink-local lineage"
+        ],
+        "funding": [
+          "not_a_coherence_transfer"
+        ],
+        "eligibility": [
+          "passed gate",
+          "passing evaluation plus enabled policy"
+        ],
+        "scheduling": [
+          "caller"
+        ],
+        "commit": [
+          "LGRC9V3 event log",
+          "acceptance gate"
+        ],
+        "reception": [
+          "event emitter",
+          "runtime event history"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "acceptance_gate",
+          "trigger": "explicit acceptance request",
+          "state_consumed": [
+            "identity evaluation",
+            "acceptance policy",
+            "runtime context"
+          ],
+          "state_produced": [
+            "acceptance eligibility"
+          ],
+          "direction_authority": "evaluated sink-local lineage",
+          "funding_authority": "not_a_coherence_transfer",
+          "eligibility_authority": "passing evaluation plus enabled policy",
+          "scheduling_authority": "caller",
+          "commit_authority": "acceptance gate",
+          "reception_authority": "event emitter",
+          "action_scope": "gate event emission",
+          "mutation_scope": "none before pass",
+          "time_semantics": "event_time",
+          "spatial_scope": "sink_local",
+          "failure_or_noop_semantics": "disabled or failed evaluation emits no event"
+        },
+        {
+          "stage_id": "acceptance_event_emission",
+          "trigger": "gate passes",
+          "state_consumed": [
+            "acceptance eligibility",
+            "event identity fields"
+          ],
+          "state_produced": [
+            "identity acceptance event"
+          ],
+          "direction_authority": "accepted lineage",
+          "funding_authority": "not_a_coherence_transfer",
+          "eligibility_authority": "passed gate",
+          "scheduling_authority": "caller",
+          "commit_authority": "LGRC9V3 event log",
+          "reception_authority": "runtime event history",
+          "action_scope": "emit event",
+          "mutation_scope": "event log",
+          "time_semantics": "event_time",
+          "spatial_scope": "sink_local",
+          "failure_or_noop_semantics": "duplicate event ID blocks"
+        }
+      ],
+      "configured_residue": [
+        "acceptance policy",
+        "event schema"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "semantic selfhood and organism identity remain blocked"
+      ],
+      "budget_and_invariants": [
+        "evaluation pass",
+        "idempotent event ID"
+      ],
+      "state_identity_fields": [
+        "evaluation ID",
+        "acceptance event ID",
+        "lineage"
+      ],
+      "history_consumed": [
+        "passing evaluation"
+      ],
+      "history_retained_but_not_consumed": [
+        "unrelated retained history"
+      ],
+      "fail_closed_conditions": [
+        "policy disabled",
+        "evaluation failed",
+        "duplicate event"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 event/runtime restoration",
+      "supported_claims": [
+        "native gated acceptance-event emission mechanics"
+      ],
+      "blocked_claims": [
+        "selfhood",
+        "semantic identity",
+        "organism status"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6cd7259f8584d5f9a67eb6c82b483f8bc2f01aeaf34ad7783fdc457f76b5c6e9",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.proper_time_identity_evaluation",
+      "entry_version": 1,
+      "name": "LGRC9V3 Proper-Time Identity Evaluation",
+      "purpose": "Evaluate bounded proper-time identity-persistence criteria over topology and causal-history records.",
+      "substrate_layer": "LGRC9V3 diagnostic layer",
+      "contract_kind": "diagnostic_evaluation",
+      "mechanism_ownership": "diagnostic",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "identity policy",
+        "proper-time state",
+        "topology lineage"
+      ],
+      "state_produced": [
+        "persistence evaluation artifact"
+      ],
+      "time_semantics": [
+        "proper_time_and_event_time"
+      ],
+      "spatial_scope": [
+        "sink_local_lineage"
+      ],
+      "trigger_surface": "evaluate_lgrc9v3_proper_time_identity_persistence",
+      "event_locus": "explicit_identity_evaluation_frontier",
+      "causal_information_scope": "proper-time, topology, lineage, and policy records",
+      "authority_summary": {
+        "direction": [
+          "declared sink-local lineage"
+        ],
+        "funding": [
+          "not_applicable"
+        ],
+        "eligibility": [
+          "identity persistence predicate"
+        ],
+        "scheduling": [
+          "caller"
+        ],
+        "commit": [
+          "evaluation helper"
+        ],
+        "reception": [
+          "caller or acceptance gate"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "proper_time_identity_evaluation",
+          "trigger": "explicit evaluation request",
+          "state_consumed": [
+            "proper-time state",
+            "topology lineage",
+            "identity policy"
+          ],
+          "state_produced": [
+            "persistence evaluation artifact"
+          ],
+          "direction_authority": "declared sink-local lineage",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "identity persistence predicate",
+          "scheduling_authority": "caller",
+          "commit_authority": "evaluation helper",
+          "reception_authority": "caller or acceptance gate",
+          "action_scope": "evaluate persistence",
+          "mutation_scope": "evaluation artifact only",
+          "time_semantics": "proper_time_and_event_time",
+          "spatial_scope": "sink_local_lineage",
+          "failure_or_noop_semantics": "failed criteria produce negative evaluation"
+        }
+      ],
+      "configured_residue": [
+        "identity persistence policy",
+        "thresholds"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "evaluation does not establish selfhood or acceptance"
+      ],
+      "budget_and_invariants": [
+        "lineage ordering",
+        "finite proper time",
+        "policy validity"
+      ],
+      "state_identity_fields": [
+        "evaluation ID",
+        "lineage IDs",
+        "proper-time state"
+      ],
+      "history_consumed": [
+        "declared topology and proper-time history"
+      ],
+      "history_retained_but_not_consumed": [
+        "unreferenced packet history"
+      ],
+      "fail_closed_conditions": [
+        "missing lineage",
+        "criterion failure",
+        "invalid policy"
+      ],
+      "restoration_and_serialization_identity": "identity evaluation artifact restoration",
+      "supported_claims": [
+        "native diagnostic evaluation mechanics"
+      ],
+      "blocked_claims": [
+        "selfhood",
+        "semantic identity",
+        "identity acceptance"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6cd7259f8584d5f9a67eb6c82b483f8bc2f01aeaf34ad7783fdc457f76b5c6e9",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.pulse_substrate_coupling_producer",
+      "entry_version": 1,
+      "name": "Pulse-Substrate Coupling Producer",
+      "purpose": "Use an experiment-configured pulse-contact surface and coupling policy to schedule bounded packet work.",
+      "substrate_layer": "producer over LGRC9V3",
+      "contract_kind": "producer_adapter",
+      "mechanism_ownership": "producer",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "configured route",
+        "coupling config",
+        "decision",
+        "latest pulse-contact surface",
+        "source coherence"
+      ],
+      "state_produced": [
+        "producer eligibility decision",
+        "producer result",
+        "queued packet"
+      ],
+      "time_semantics": [
+        "producer_frontier",
+        "producer_frontier_then_event_time"
+      ],
+      "spatial_scope": [
+        "producer_declared_route",
+        "producer_declared_surface"
+      ],
+      "trigger_surface": "produce_events with pulse_substrate_coupling_producer",
+      "event_locus": "producer_frontier",
+      "causal_information_scope": "runtime-visible pulse-contact surface plus producer configuration",
+      "authority_summary": {
+        "direction": [
+          "producer-configured relation",
+          "producer-configured route"
+        ],
+        "funding": [
+          "not_yet_funded",
+          "source coherence"
+        ],
+        "eligibility": [
+          "producer predicate"
+        ],
+        "scheduling": [
+          "producer"
+        ],
+        "commit": [
+          "native packet scheduler",
+          "producer decision record"
+        ],
+        "reception": [
+          "configured target",
+          "packet adapter"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "pulse_surface_read",
+          "trigger": "produce_events",
+          "state_consumed": [
+            "latest pulse-contact surface",
+            "coupling config"
+          ],
+          "state_produced": [
+            "producer eligibility decision"
+          ],
+          "direction_authority": "producer-configured relation",
+          "funding_authority": "not_yet_funded",
+          "eligibility_authority": "producer predicate",
+          "scheduling_authority": "producer",
+          "commit_authority": "producer decision record",
+          "reception_authority": "packet adapter",
+          "action_scope": "read and classify surface",
+          "mutation_scope": "producer decision log",
+          "time_semantics": "producer_frontier",
+          "spatial_scope": "producer_declared_surface",
+          "failure_or_noop_semantics": "missing/stale/nonqualifying surface is no-op"
+        },
+        {
+          "stage_id": "coupled_packet_schedule",
+          "trigger": "producer predicate passes",
+          "state_consumed": [
+            "decision",
+            "source coherence",
+            "configured route"
+          ],
+          "state_produced": [
+            "queued packet",
+            "producer result"
+          ],
+          "direction_authority": "producer-configured route",
+          "funding_authority": "source coherence",
+          "eligibility_authority": "producer predicate",
+          "scheduling_authority": "producer",
+          "commit_authority": "native packet scheduler",
+          "reception_authority": "configured target",
+          "action_scope": "schedule bounded packet",
+          "mutation_scope": "packet queue and producer log",
+          "time_semantics": "producer_frontier_then_event_time",
+          "spatial_scope": "producer_declared_route",
+          "failure_or_noop_semantics": "budget/idempotency failure blocks"
+        }
+      ],
+      "configured_residue": [
+        "surface keys",
+        "thresholds",
+        "route",
+        "amount policy"
+      ],
+      "producer_residue": [
+        "pulse-to-work eligibility and relation"
+      ],
+      "naturalization_debt": [
+        "native pulse-conditioned admission"
+      ],
+      "budget_and_invariants": [
+        "native packet budget",
+        "producer idempotency"
+      ],
+      "state_identity_fields": [
+        "producer config",
+        "surface digest",
+        "packet ledger"
+      ],
+      "history_consumed": [
+        "latest declared pulse-contact row"
+      ],
+      "history_retained_but_not_consumed": [
+        "other retained surface history"
+      ],
+      "fail_closed_conditions": [
+        "surface stale",
+        "predicate miss",
+        "budget failure"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 producer and packet state restoration",
+      "supported_claims": [
+        "producer-mediated pulse-conditioned packet candidate"
+      ],
+      "blocked_claims": [
+        "native pulse admission",
+        "agency"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c38ec596174869dfef5dbbd3479dd05a46d7b7b35665b0328764b8b0284040a",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "pathway_id": "lgrc9v3.route_aspect_surplus",
+      "entry_version": 1,
+      "name": "Route-Aspect Surplus Producer",
+      "purpose": "Evaluate configured pole-mass surplus and schedule bounded packet continuation along a declared route-aspect channel.",
+      "substrate_layer": "LGRC9V3 producer layer",
+      "contract_kind": "configured_producer",
+      "mechanism_ownership": "native_with_configured_semantics",
+      "availability": "installed",
+      "activation": "default_off",
+      "state_consumed": [
+        "packet amount policy",
+        "pole mass",
+        "reference mass",
+        "route aspect",
+        "selected channel",
+        "source coherence",
+        "threshold"
+      ],
+      "state_produced": [
+        "queued packet",
+        "selected trigger channel",
+        "self-rearm evidence",
+        "surplus amount"
+      ],
+      "time_semantics": [
+        "producer_frontier",
+        "producer_frontier_then_event_time"
+      ],
+      "spatial_scope": [
+        "configured_pole_regions",
+        "first_channel_hop"
+      ],
+      "trigger_surface": "produce_events with route_aspect_surplus_trigger",
+      "event_locus": "producer_frontier",
+      "causal_information_scope": "configured route aspect, current pole mass, and source coherence",
+      "authority_summary": {
+        "direction": [
+          "configured channel"
+        ],
+        "funding": [
+          "not_yet_funded",
+          "source coherence"
+        ],
+        "eligibility": [
+          "native surplus predicate over configured semantics",
+          "positive surplus and packet validation"
+        ],
+        "scheduling": [
+          "native producer"
+        ],
+        "commit": [
+          "packet scheduler",
+          "producer result"
+        ],
+        "reception": [
+          "channel target",
+          "selected channel"
+        ]
+      },
+      "stage_sequence": [
+        {
+          "stage_id": "surplus_evaluation",
+          "trigger": "produce_events",
+          "state_consumed": [
+            "route aspect",
+            "pole mass",
+            "reference mass",
+            "threshold"
+          ],
+          "state_produced": [
+            "surplus amount",
+            "selected trigger channel"
+          ],
+          "direction_authority": "configured channel",
+          "funding_authority": "not_yet_funded",
+          "eligibility_authority": "native surplus predicate over configured semantics",
+          "scheduling_authority": "native producer",
+          "commit_authority": "producer result",
+          "reception_authority": "selected channel",
+          "action_scope": "evaluate surplus",
+          "mutation_scope": "producer result cache",
+          "time_semantics": "producer_frontier",
+          "spatial_scope": "configured_pole_regions",
+          "failure_or_noop_semantics": "below threshold is no-op"
+        },
+        {
+          "stage_id": "surplus_packet_schedule",
+          "trigger": "positive bounded surplus",
+          "state_consumed": [
+            "selected channel",
+            "source coherence",
+            "packet amount policy"
+          ],
+          "state_produced": [
+            "queued packet",
+            "self-rearm evidence"
+          ],
+          "direction_authority": "configured channel",
+          "funding_authority": "source coherence",
+          "eligibility_authority": "positive surplus and packet validation",
+          "scheduling_authority": "native producer",
+          "commit_authority": "packet scheduler",
+          "reception_authority": "channel target",
+          "action_scope": "schedule packet",
+          "mutation_scope": "packet queue and evidence log",
+          "time_semantics": "producer_frontier_then_event_time",
+          "spatial_scope": "first_channel_hop",
+          "failure_or_noop_semantics": "budget or idempotency failure blocks"
+        }
+      ],
+      "configured_residue": [
+        "pole regions",
+        "channel sequence",
+        "reference mass",
+        "threshold",
+        "packet amount"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "pole meaning and ecological role are not substrate-formed"
+      ],
+      "budget_and_invariants": [
+        "packet budget",
+        "surplus threshold",
+        "idempotency"
+      ],
+      "state_identity_fields": [
+        "route-aspect digest",
+        "producer record",
+        "packet ledger"
+      ],
+      "history_consumed": [
+        "previous channel/self-rearm evidence where configured"
+      ],
+      "history_retained_but_not_consumed": [
+        "semantic route labels"
+      ],
+      "fail_closed_conditions": [
+        "below threshold",
+        "invalid route aspect",
+        "budget failure"
+      ],
+      "restoration_and_serialization_identity": "LGRC9V3 route-aspect and producer restoration",
+      "supported_claims": [
+        "native surplus evaluation and packet scheduling under configured semantics"
+      ],
+      "blocked_claims": [
+        "native pole meaning",
+        "generic current source",
+        "support seeking"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "6c38ec596174869dfef5dbbd3479dd05a46d7b7b35665b0328764b8b0284040a",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     },
     {
       "pathway_id": "pygrc.restoration_replay_identity",
+      "entry_version": 1,
       "name": "PyGRC Restoration And Replay Identity",
-      "purpose": "define_which_state_is_preserved_compared_and_replayed_across_snapshot_load_and_reset",
-      "substrate_layer": "PyGRC_utility",
-      "status_class": "restoration_or_replay_utility",
-      "state_consumed": ["snapshot", "current_runtime_state", "reset_baseline", "versioned_identity_contract"],
-      "state_produced": ["restored_model", "restoration_identity", "replay_validation"],
-      "time_semantics": "snapshot_load_reset_and_replay_boundaries",
-      "spatial_scope": "serialized_model_state",
-      "authority": {
-        "direction": "none",
-        "funding": "none",
-        "eligibility": "snapshot_schema_and_identity_validation",
-        "scheduling": "caller",
-        "commitment": "load_reset_or_replay_utility",
-        "reception": "restored_runtime_or_validation_result"
+      "purpose": "Serialize, restore, compare, reset, and replay GRC9V3/LGRC9V3 state under versioned identity contracts.",
+      "substrate_layer": "shared PyGRC/GRC9V3/LGRC9V3",
+      "contract_kind": "restoration_utility",
+      "mechanism_ownership": "utility",
+      "availability": "installed",
+      "activation": "explicit_call",
+      "state_consumed": [
+        "before/after state",
+        "canonical snapshot",
+        "event/topology records",
+        "identity schema",
+        "model state",
+        "reset baseline",
+        "reset baseline bundle",
+        "runtime artifacts"
+      ],
+      "state_produced": [
+        "canonical snapshot",
+        "identity digest",
+        "replay result",
+        "restored model",
+        "restored reset behavior"
+      ],
+      "time_semantics": [
+        "checkpoint_time",
+        "replay_window"
+      ],
+      "spatial_scope": [
+        "declared_identity_scope",
+        "full_declared_model_scope"
+      ],
+      "trigger_surface": "snapshot/load/reset/restoration identity/replay validation",
+      "event_locus": "serialization_or_replay_frontier",
+      "causal_information_scope": "declared snapshot state and versioned identity schema",
+      "authority_summary": {
+        "direction": [
+          "declared identity projection",
+          "not_applicable"
+        ],
+        "funding": [
+          "not_applicable"
+        ],
+        "eligibility": [
+          "snapshot schema",
+          "versioned comparison/replay contract",
+          "versioned compatibility policy"
+        ],
+        "scheduling": [
+          "caller"
+        ],
+        "commit": [
+          "model loader/reset",
+          "serialization utility",
+          "validation utility"
+        ],
+        "reception": [
+          "caller",
+          "restored model",
+          "snapshot consumer"
+        ]
       },
-      "configured_residue": ["identity_schema_version", "legacy_rebase_policy", "replay_scope"],
-      "restoration_and_serialization_identity": "LGRC9V3_restoration_identity_v1_or_v2_and_reset_baseline_contract",
-      "supported_claims": ["versioned_restoration_identity", "bounded_replay_equivalence_when_tested"],
-      "blocked_claims": ["raw_snapshot_byte_identity", "unrestricted_behavioral_identity", "RC_identity", "agency"],
-      "source_implementation": ["src/pygrc/models/lgrc_9_v3_restoration.py"],
-      "source_specification": ["specs/lgrc-9-v3-restoration-identity.md", "specs/grc-reset-baseline-persistence.md"],
-      "tests_and_evidence": ["tests/models/test_lgrc_9_v3_restoration.py", "tests/models/test_lgrc_9_v3_restoration_matrix.py"],
-      "composes_with": ["all_serializable_pathways_at_their_declared_scope"],
-      "does_not_compose_with": ["identity_equality_as_action_eligibility", "ledger_presence_as_Read_Back"],
-      "requires_explicit_adapter": []
+      "stage_sequence": [
+        {
+          "stage_id": "snapshot_serialization",
+          "trigger": "snapshot/save",
+          "state_consumed": [
+            "model state",
+            "reset baseline",
+            "runtime artifacts"
+          ],
+          "state_produced": [
+            "canonical snapshot"
+          ],
+          "direction_authority": "not_applicable",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "snapshot schema",
+          "scheduling_authority": "caller",
+          "commit_authority": "serialization utility",
+          "reception_authority": "snapshot consumer",
+          "action_scope": "serialize state",
+          "mutation_scope": "snapshot bytes only",
+          "time_semantics": "checkpoint_time",
+          "spatial_scope": "full_declared_model_scope",
+          "failure_or_noop_semantics": "unsupported/malformed state rejects"
+        },
+        {
+          "stage_id": "load_and_reset_restoration",
+          "trigger": "load/reset",
+          "state_consumed": [
+            "canonical snapshot",
+            "reset baseline bundle"
+          ],
+          "state_produced": [
+            "restored model",
+            "restored reset behavior"
+          ],
+          "direction_authority": "not_applicable",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "versioned compatibility policy",
+          "scheduling_authority": "caller",
+          "commit_authority": "model loader/reset",
+          "reception_authority": "restored model",
+          "action_scope": "restore state",
+          "mutation_scope": "new/restored model state",
+          "time_semantics": "checkpoint_time",
+          "spatial_scope": "full_declared_model_scope",
+          "failure_or_noop_semantics": "legacy/malformed baseline follows explicit compatibility policy"
+        },
+        {
+          "stage_id": "identity_and_replay_validation",
+          "trigger": "identity or replay request",
+          "state_consumed": [
+            "before/after state",
+            "identity schema",
+            "event/topology records"
+          ],
+          "state_produced": [
+            "identity digest",
+            "replay result"
+          ],
+          "direction_authority": "declared identity projection",
+          "funding_authority": "not_applicable",
+          "eligibility_authority": "versioned comparison/replay contract",
+          "scheduling_authority": "caller",
+          "commit_authority": "validation utility",
+          "reception_authority": "caller",
+          "action_scope": "validate equivalence",
+          "mutation_scope": "validation artifact only",
+          "time_semantics": "replay_window",
+          "spatial_scope": "declared_identity_scope",
+          "failure_or_noop_semantics": "mismatch fails without rewriting state"
+        }
+      ],
+      "configured_residue": [
+        "identity schema version",
+        "legacy compatibility policy",
+        "replay scope"
+      ],
+      "producer_residue": [],
+      "naturalization_debt": [
+        "identity equality remains scope-bounded and does not imply semantic identity or work eligibility"
+      ],
+      "budget_and_invariants": [
+        "canonical serialization",
+        "reset-baseline preservation",
+        "included scientific state equality"
+      ],
+      "state_identity_fields": [
+        "snapshot schema",
+        "reset baseline",
+        "runtime artifact",
+        "identity version"
+      ],
+      "history_consumed": [
+        "declared replay/event history"
+      ],
+      "history_retained_but_not_consumed": [
+        "representation-only caches excluded by schema"
+      ],
+      "fail_closed_conditions": [
+        "schema mismatch",
+        "included-state mismatch",
+        "malformed baseline",
+        "replay divergence"
+      ],
+      "restoration_and_serialization_identity": "GRC9V3/LGRC9V3 restoration identity v1/v2 and reset-baseline contracts",
+      "supported_claims": [
+        "versioned restoration and replay identity"
+      ],
+      "blocked_claims": [
+        "byte identity requirement",
+        "unrestricted behavioral identity",
+        "semantic identity",
+        "action eligibility"
+      ],
+      "evidence_refs": [],
+      "composition_refs": [],
+      "catalog_relation_refs": [],
+      "source_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "source_digest": "3e99179bd45cf38bbbb828a781785ff132fcee0abbd434f2d65662ecd21f0540",
+      "last_verified_commit": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+      "staleness_state": "current_at_iteration_106_freeze",
+      "supersedes": [],
+      "superseded_by": []
     }
   ],
-  "blocked_relabels": [
-    "diagnostic_as_behavioral",
-    "configured_semantics_as_substrate_formed",
-    "scheduling_as_eligibility",
-    "commitment_as_causal_reason",
-    "restoration_identity_as_RC_identity",
-    "history_presence_as_constitutive_read_back",
-    "producer_success_as_native_support",
-    "pathway_registry_as_evidence",
-    "N32"
-  ]
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b"
 }

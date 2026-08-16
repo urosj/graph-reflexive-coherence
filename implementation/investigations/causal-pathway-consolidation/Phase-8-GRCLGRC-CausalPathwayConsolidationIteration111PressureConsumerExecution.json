@@ -1,0 +1,1404 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 pressure-consumer dry-run execution",
+  "schema_version": "phase8_grclgrc_i111_pressure_execution_v1",
+  "iteration": 111,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "accepted_artifact_digests": {
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+  },
+  "loaded_authority_surfaces": [
+    "specs/grc-lgrc-causal-pathway-contracts.json",
+    "specs/grc-lgrc-causal-pathway-composition-matrix.json",
+    "specs/grc-lgrc-causal-pathway-selection-guide.json"
+  ],
+  "source_or_test_files_read_for_selection": [],
+  "pressure_count": 22,
+  "category_count": 11,
+  "ambiguity_threshold": {
+    "metric": "declared_unresolved_ambiguity_count",
+    "maximum": 1,
+    "observed": 1,
+    "misrouting_maximum": 0,
+    "misrouting_observed": 0,
+    "status": "passed"
+  },
+  "resolution_counts": {
+    "declared_ambiguity": 1,
+    "diagnostic_surface_only": 1,
+    "existing_composition_with_explicit_adapter": 1,
+    "existing_lawful_composition": 5,
+    "precise_missing_crossing": 2,
+    "producer_mediated_composition": 5,
+    "rejected_invalid_relabel": 7
+  },
+  "pressure_rows": [
+    {
+      "pressure_id": "PC-L04-01",
+      "category": "rcae_l04_support_side",
+      "consumer_language": "Use a declared support-side feedback surface to schedule bounded packet work while preserving the owner of eligibility and direction.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.feedback_eligibility_producer",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "selected_composition_ids": [
+        "CMP-20"
+      ],
+      "composition_status": "producer_mediated",
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "configured_residue": [],
+      "producer_residue": [
+        "installed_producer"
+      ],
+      "compatibility": {
+        "state": {
+          "status": "exact_with_producer",
+          "detail": "Producer record links consumed surface to scheduled packet ID."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Producer read and packet schedule are time-scoped."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Feedback relation and packet route are configured."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Native packet lifecycle enforces budget after producer schedule."
+        }
+      },
+      "authority_retained": [
+        "native packet mutation",
+        "surface lineage validity"
+      ],
+      "authority_transferred": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+      "blocked_claims": [
+        "lawful_native",
+        "native feedback admission"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native support",
+        "native feedback admission",
+        "ecological support success"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-BND-01",
+      "category": "boundary_conditioned_exchange",
+      "consumer_language": "Carry GRC front-capacity state into an LGRC boundary-birth runtime without pretending synchronous history became event history.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "existing_composition_with_explicit_adapter",
+      "selected_pathway_ids": [
+        "grc9v3.front_capacity_growth",
+        "lgrc9v3.boundary_birth"
+      ],
+      "selected_composition_ids": [
+        "CMP-26"
+      ],
+      "composition_status": "lawful_with_explicit_adapter",
+      "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+      "adapter_owner": "library_construction_adapter_invoked_by_caller",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "explicit_construction_mapping",
+          "detail": "LGRC9V3.from_state carries GRC base state; construction policy supplies LGRC modes."
+        },
+        "time": {
+          "status": "adapter_required",
+          "detail": "Synchronous GRC state is placed at an explicit LGRC event-time frontier."
+        },
+        "space": {
+          "status": "front_metadata_preserved",
+          "detail": "Configured front-capacity parent/port metadata is retained."
+        },
+        "budget": {
+          "status": "compatible_when_declared",
+          "detail": "Construction and birth policies must preserve parent/child coherence budget."
+        }
+      },
+      "authority_retained": [
+        "GRC front-capacity state",
+        "LGRC native/configured birth commit"
+      ],
+      "authority_transferred": [
+        "runtime wrapping",
+        "causal modes",
+        "queue priming"
+      ],
+      "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "claim_ceiling": "Lawful explicit construction adapter; not native cross-runtime formation or inherited event history.",
+      "blocked_claims": [
+        "lawful_native",
+        "automatic time-semantics conversion",
+        "native role formation"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "lawful native crossing",
+        "automatic time conversion"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-BND-02",
+      "category": "boundary_conditioned_exchange",
+      "consumer_language": "Commit configured outward-flux and front-capacity evidence as a topology-specific child birth.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.boundary_birth"
+      ],
+      "selected_composition_ids": [
+        "CMP-13"
+      ],
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact",
+          "detail": "Trial identity carries parent, port, pressure, and RNG evidence to commit."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Queued trial and event-time commit are explicit."
+        },
+        "space": {
+          "status": "compatible_configured",
+          "detail": "Front-capacity metadata scopes the parent port."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Parent debit equals child credit."
+        }
+      },
+      "authority_retained": [
+        "native/configured eligibility",
+        "LGRC topology commitment"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "No hidden topology relation is introduced after trial admission.",
+      "claim_ceiling": "Native configured boundary-birth mechanics only.",
+      "blocked_claims": [
+        "generic admission",
+        "semantic reproduction"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "generic work admission",
+        "semantic reproduction"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-BND-03",
+      "category": "boundary_conditioned_exchange",
+      "consumer_language": "Reuse boundary-birth eligibility as generic packet-exchange admission.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.boundary_birth",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "selected_composition_ids": [
+        "CMP-14"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "incompatible",
+          "detail": "Birth trial fields do not map to packet source/target/amount."
+        },
+        "time": {
+          "status": "distinct_queues",
+          "detail": "Birth and packet queues share scheduling infrastructure but different contracts."
+        },
+        "space": {
+          "status": "topology_specific",
+          "detail": "Birth eligibility is parent-port local, not a packet route."
+        },
+        "budget": {
+          "status": "distinct",
+          "detail": "Birth transfer and packet amount have separate invariants."
+        }
+      },
+      "authority_retained": [
+        "event queue machinery"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "All generic packet admission coordinates are missing.",
+      "claim_ceiling": "Boundary-birth eligibility remains topology-specific.",
+      "blocked_claims": [
+        "generic current-to-packet admission"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "shared queue infrastructure implies shared contract"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-CIRC-01",
+      "category": "circulation",
+      "consumer_language": "Move a supplied packet through debit, in-flight retention, arrival, and target credit as one bounded circulation leg.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "selected_composition_ids": [
+        "CMP-02"
+      ],
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact",
+          "detail": "Packet ID and ledger state survive every lifecycle stage."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Event-time queue orders departure before arrival."
+        },
+        "space": {
+          "status": "compatible",
+          "detail": "Declared source, edge, and target endpoints remain explicit."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Source plus in-flight plus target coherence is conserved."
+        }
+      },
+      "authority_retained": [
+        "packet endpoint direction",
+        "caller-supplied schedule",
+        "LGRC step commitment"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "No lifecycle state is discarded.",
+      "claim_ceiling": "Native packet debit/arrival mechanics; route, amount, and schedule remain supplied.",
+      "blocked_claims": [
+        "native route formation",
+        "generic work admission"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native circulation policy",
+        "native route formation",
+        "self-sustaining loop"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-AP45-01",
+      "category": "ap4_ap5",
+      "consumer_language": "Turn a GRC sink-compatibility result into an LGRC route schedule and target without inventing the admission bridge.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "precise_missing_crossing",
+      "selected_pathway_ids": [
+        "grc9v3.sink_compatibility_choice",
+        "lgrc9v3.configured_flux_route"
+      ],
+      "selected_composition_ids": [
+        "CMP-06"
+      ],
+      "composition_status": "unsupported_missing_crossing",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "missing",
+          "detail": "Choice registry has no admitted mapping to LGRC route records."
+        },
+        "time": {
+          "status": "incompatible",
+          "detail": "Synchronous choice rebuild has no event-time scheduling bridge."
+        },
+        "space": {
+          "status": "unmapped",
+          "detail": "Sink IDs do not define LGRC source-edge-target route identity."
+        },
+        "budget": {
+          "status": "unmapped",
+          "detail": "Choice state supplies no packet amount or debit authority."
+        }
+      },
+      "authority_retained": [
+        "GRC choice mechanics",
+        "LGRC configured-route mechanics"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Score, sink, amount, and schedule mapping are absent.",
+      "claim_ceiling": "Unsupported until an explicit admission and scheduling relation is supplied.",
+      "blocked_claims": [
+        "semantic choice",
+        "native route formation"
+      ],
+      "missing_crossing": "LGRC runtime has no consumer of GRC9V3 choice_registry or collapse_registry",
+      "why_nearby_alternatives_are_wrong": [
+        "semantic choice",
+        "native route selection",
+        "AP4/AP5 closure"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-AP45-02",
+      "category": "ap4_ap5",
+      "consumer_language": "Treat a configured route and target as a natively formed role or proxy relation.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.configured_flux_route"
+      ],
+      "selected_composition_ids": [
+        "CMP-11"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "configuration_or_producer",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact_configured",
+          "detail": "Registered route identity is consumed exactly."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Configured event times are honored."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Source, edge, and target are supplied."
+        },
+        "budget": {
+          "status": "configured",
+          "detail": "Amount/fraction policy remains supplied."
+        }
+      },
+      "authority_retained": [
+        "native packet queue mutation"
+      ],
+      "authority_transferred": [
+        "route role",
+        "route topology meaning",
+        "amount policy"
+      ],
+      "information_lost_or_compressed": "No formation process is represented.",
+      "claim_ceiling": "Configured-route packet production only.",
+      "blocked_claims": [
+        "native route formation",
+        "semantic role formation"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "configured route as formed route",
+        "configured target as semantic proxy"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-SM-01",
+      "category": "shared_medium_response",
+      "consumer_language": "Record a configured pulse surface after packet arrival while keeping recording distinct from read-back.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "lgrc9v3.causal_pulse_surface_lineage"
+      ],
+      "selected_composition_ids": [
+        "CMP-21"
+      ],
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact",
+          "detail": "Surface row cites committed packet/event identity."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Row emission occurs after packet commit at the same event frontier."
+        },
+        "space": {
+          "status": "contact_local",
+          "detail": "Surface key is scoped to the arrival contact."
+        },
+        "budget": {
+          "status": "no_hidden_budget",
+          "detail": "Surface emission is descriptive and does not move coherence."
+        }
+      },
+      "authority_retained": [
+        "native packet commit",
+        "configured surface emission"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Packet state is projected to a declared surface schema.",
+      "claim_ceiling": "Native configured packet-to-surface recording mechanics.",
+      "blocked_claims": [
+        "native memory",
+        "Read-Back"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native memory",
+        "shared-medium response",
+        "coordination"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-SM-02",
+      "category": "shared_medium_response",
+      "consumer_language": "Use transported surface lineage to condition later packet scheduling with producer ownership visible.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.causal_pulse_surface_lineage",
+        "lgrc9v3.feedback_eligibility_producer"
+      ],
+      "selected_composition_ids": [
+        "CMP-22"
+      ],
+      "composition_status": "producer_mediated",
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "configured_residue": [],
+      "producer_residue": [
+        "installed_producer"
+      ],
+      "compatibility": {
+        "state": {
+          "status": "exact_with_producer",
+          "detail": "Lineage and supersession records identify the consumable successor row."
+        },
+        "time": {
+          "status": "time_scoped",
+          "detail": "Producer read is constrained to the transported row's valid window."
+        },
+        "space": {
+          "status": "lineage_mapped",
+          "detail": "Topology lineage maps source surface to successor region."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Surface transport is budget-neutral; packet budget begins at producer scheduling."
+        }
+      },
+      "authority_retained": [
+        "native surface lineage",
+        "native packet lifecycle"
+      ],
+      "authority_transferred": [
+        "feedback eligibility",
+        "packet schedule"
+      ],
+      "information_lost_or_compressed": "Surface history is compressed to producer threshold/order evidence.",
+      "claim_ceiling": "Producer-mediated lineage-aware feedback scheduling.",
+      "blocked_claims": [
+        "lawful_native",
+        "native Read-Back"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native Read-Back",
+        "native shared-medium organization"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-SM-03",
+      "category": "shared_medium_response",
+      "consumer_language": "Carry the producer eligibility decision into native packet mechanics without promoting the producer cut.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.feedback_eligibility_producer",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "selected_composition_ids": [
+        "CMP-20"
+      ],
+      "composition_status": "producer_mediated",
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "configured_residue": [],
+      "producer_residue": [
+        "installed_producer"
+      ],
+      "compatibility": {
+        "state": {
+          "status": "exact_with_producer",
+          "detail": "Producer record links consumed surface to scheduled packet ID."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Producer read and packet schedule are time-scoped."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Feedback relation and packet route are configured."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Native packet lifecycle enforces budget after producer schedule."
+        }
+      },
+      "authority_retained": [
+        "native packet mutation",
+        "surface lineage validity"
+      ],
+      "authority_transferred": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+      "blocked_claims": [
+        "lawful_native",
+        "native feedback admission"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "lawful native feedback",
+        "communication",
+        "cooperation"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-ROLE-01",
+      "category": "route_or_role_formation",
+      "consumer_language": "Commit one supplied arbitration candidate through native collapse mechanics while leaving candidate formation external.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.collapse_reabsorption"
+      ],
+      "selected_composition_ids": [
+        "CMP-07"
+      ],
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact",
+          "detail": "Candidate, arbitration, and selected topology digests are checked across the call."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Commit occurs at the explicit arbitration frontier."
+        },
+        "space": {
+          "status": "compatible",
+          "detail": "Candidate sink/loser/lineage fields map directly to collapse scope."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Predicted budget and committed topology digest are validated."
+        }
+      },
+      "authority_retained": [
+        "native highest-score arbitration",
+        "native topology commitment"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Unselected candidate details remain in audit records rather than mutation input.",
+      "claim_ceiling": "Native arbitration-to-collapse commit mechanics; candidate and score formation remain external/configured.",
+      "blocked_claims": [
+        "native candidate formation",
+        "semantic choice"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native candidate formation",
+        "semantic role formation"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-ROLE-02",
+      "category": "route_or_role_formation",
+      "consumer_language": "Treat native arbitration over supplied scores as native formation of candidates and values.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration"
+      ],
+      "selected_composition_ids": [
+        "CMP-08"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "external_or_configured_candidate_producer",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "configured_input",
+          "detail": "Arbitration consumes committed candidate score records exactly as supplied."
+        },
+        "time": {
+          "status": "compatible_but_external",
+          "detail": "Ordering is native after external candidate admission."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Candidate topology scope is supplied."
+        },
+        "budget": {
+          "status": "configured",
+          "detail": "Candidate budget prediction is supplied and validated."
+        }
+      },
+      "authority_retained": [
+        "native arbitration"
+      ],
+      "authority_transferred": [
+        "candidate formation",
+        "score formation"
+      ],
+      "information_lost_or_compressed": "The origin of candidates and score semantics is outside arbitration.",
+      "claim_ceiling": "Native selection over supplied candidates only.",
+      "blocked_claims": [
+        "native route formation",
+        "semantic valuation"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native route formation",
+        "semantic valuation"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-ROLE-03",
+      "category": "route_or_role_formation",
+      "consumer_language": "Treat configured route execution as endogenous role formation.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.configured_flux_route"
+      ],
+      "selected_composition_ids": [
+        "CMP-11"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "configuration_or_producer",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact_configured",
+          "detail": "Registered route identity is consumed exactly."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Configured event times are honored."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Source, edge, and target are supplied."
+        },
+        "budget": {
+          "status": "configured",
+          "detail": "Amount/fraction policy remains supplied."
+        }
+      },
+      "authority_retained": [
+        "native packet queue mutation"
+      ],
+      "authority_transferred": [
+        "route role",
+        "route topology meaning",
+        "amount policy"
+      ],
+      "information_lost_or_compressed": "No formation process is represented.",
+      "claim_ceiling": "Configured-route packet production only.",
+      "blocked_claims": [
+        "native route formation",
+        "semantic role formation"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "semantic role",
+        "native target formation"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-N32-01",
+      "category": "future_n32_candidate_class",
+      "consumer_language": "Let exact route history temporarily condition conductance and later flux as a bounded future building-block candidate.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.causal_history_annotation",
+        "grc9v3.synchronous_update_cycle"
+      ],
+      "selected_composition_ids": [
+        "CMP-17"
+      ],
+      "composition_status": "producer_mediated",
+      "adapter_id": "N31_C2_exact_history_closure",
+      "adapter_owner": "experiment_producer",
+      "configured_residue": [],
+      "producer_residue": [
+        "experiment_producer"
+      ],
+      "compatibility": {
+        "state": {
+          "status": "producer_projection",
+          "detail": "Experiment-local closure derives conductance from native history; runtime does not own the mapping."
+        },
+        "time": {
+          "status": "pre_step_adapter",
+          "detail": "The producer applies a bounded pre-step closure before native transport rebuild."
+        },
+        "space": {
+          "status": "route_local",
+          "detail": "History and conductance mapping are restricted to declared route edges."
+        },
+        "budget": {
+          "status": "conservative_adapter",
+          "detail": "Producer must preserve coherence and declare conductance bounds."
+        }
+      },
+      "authority_retained": [
+        "native history",
+        "native GRC transport"
+      ],
+      "authority_transferred": [
+        "history functional",
+        "conductance update",
+        "decay/progression schedule"
+      ],
+      "information_lost_or_compressed": "History is compressed to one temporary conductance multiplier.",
+      "claim_ceiling": "Producer-mediated exact-history conductance candidate; not a native read path.",
+      "blocked_claims": [
+        "lawful_native",
+        "native D0 decay",
+        "coherence-only ontology closure"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native history read path",
+        "native D0 decay",
+        "N32 selected"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-DIAG-01",
+      "category": "diagnostic_vs_behavioral",
+      "consumer_language": "Reconstruct bounded GRC diagnostics over an LGRC checkpoint without claiming ordinary LGRC behavior consumed them.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "diagnostic_surface_only",
+      "selected_pathway_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction"
+      ],
+      "selected_composition_ids": [
+        "CMP-04"
+      ],
+      "composition_status": "diagnostic_only",
+      "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+      "adapter_owner": "library_helper_invoked_by_caller",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "bounded_projection",
+          "detail": "LGRC base state is reconstructed through an explicit GRC9V3 diagnostic helper."
+        },
+        "time": {
+          "status": "caller_checkpoint",
+          "detail": "Caller selects the checkpoint; no ordinary LGRC event schedules it."
+        },
+        "space": {
+          "status": "compatible",
+          "detail": "The diagnostic uses the current copied graph topology."
+        },
+        "budget": {
+          "status": "not_a_transport",
+          "detail": "The helper reconstructs labels and does not authorize packet work."
+        }
+      },
+      "authority_retained": [
+        "caller selection",
+        "GRC diagnostic mechanics"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+      "blocked_claims": [
+        "ordinary LGRC behavior",
+        "native event-to-action crossing"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "behavioral update",
+        "native event-to-action crossing"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-DIAG-02",
+      "category": "diagnostic_vs_behavioral",
+      "consumer_language": "Use reconstructed diagnostics as direct packet-admission behavior.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "selected_composition_ids": [
+        "CMP-05"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "missing",
+          "detail": "No constitutive mapping from diagnostic output to packet scheduling is declared."
+        },
+        "time": {
+          "status": "incompatible",
+          "detail": "Explicit checkpoint diagnostics do not become event-queue causes."
+        },
+        "space": {
+          "status": "unmapped",
+          "detail": "Diagnostic graph scope supplies no packet endpoint mapping."
+        },
+        "budget": {
+          "status": "unmapped",
+          "detail": "Diagnostic values carry no packet funding authority."
+        }
+      },
+      "authority_retained": [
+        "diagnostic helper"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "All causal authority is absent at the proposed crossing.",
+      "claim_ceiling": "No ordinary LGRC behavior claim is allowed.",
+      "blocked_claims": [
+        "diagnostic_as_behavior",
+        "native packet admission"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "diagnostic output as constitutive state"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-CONFIG-01",
+      "category": "configured_vs_formed_route",
+      "consumer_language": "Execute a configured route but ask whether its existence proves the substrate formed that route.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.configured_flux_route"
+      ],
+      "selected_composition_ids": [
+        "CMP-11"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "configuration_or_producer",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact_configured",
+          "detail": "Registered route identity is consumed exactly."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Configured event times are honored."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Source, edge, and target are supplied."
+        },
+        "budget": {
+          "status": "configured",
+          "detail": "Amount/fraction policy remains supplied."
+        }
+      },
+      "authority_retained": [
+        "native packet queue mutation"
+      ],
+      "authority_transferred": [
+        "route role",
+        "route topology meaning",
+        "amount policy"
+      ],
+      "information_lost_or_compressed": "No formation process is represented.",
+      "claim_ceiling": "Configured-route packet production only.",
+      "blocked_claims": [
+        "native route formation",
+        "semantic role formation"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "execution evidence as formation evidence"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-ARB-01",
+      "category": "arbitration_vs_candidate_formation",
+      "consumer_language": "Select and commit among supplied candidates with native arbitration.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "existing_lawful_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.collapse_reabsorption"
+      ],
+      "selected_composition_ids": [
+        "CMP-07"
+      ],
+      "composition_status": "lawful_native",
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "exact",
+          "detail": "Candidate, arbitration, and selected topology digests are checked across the call."
+        },
+        "time": {
+          "status": "compatible",
+          "detail": "Commit occurs at the explicit arbitration frontier."
+        },
+        "space": {
+          "status": "compatible",
+          "detail": "Candidate sink/loser/lineage fields map directly to collapse scope."
+        },
+        "budget": {
+          "status": "compatible",
+          "detail": "Predicted budget and committed topology digest are validated."
+        }
+      },
+      "authority_retained": [
+        "native highest-score arbitration",
+        "native topology commitment"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Unselected candidate details remain in audit records rather than mutation input.",
+      "claim_ceiling": "Native arbitration-to-collapse commit mechanics; candidate and score formation remain external/configured.",
+      "blocked_claims": [
+        "native candidate formation",
+        "semantic choice"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "native score formation",
+        "native candidate formation"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-ARB-02",
+      "category": "arbitration_vs_candidate_formation",
+      "consumer_language": "Use native selection to claim that candidate and score formation were native.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "rejected_invalid_relabel",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration"
+      ],
+      "selected_composition_ids": [
+        "CMP-08"
+      ],
+      "composition_status": "invalid_relabel",
+      "adapter_id": null,
+      "adapter_owner": "external_or_configured_candidate_producer",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "configured_input",
+          "detail": "Arbitration consumes committed candidate score records exactly as supplied."
+        },
+        "time": {
+          "status": "compatible_but_external",
+          "detail": "Ordering is native after external candidate admission."
+        },
+        "space": {
+          "status": "configured",
+          "detail": "Candidate topology scope is supplied."
+        },
+        "budget": {
+          "status": "configured",
+          "detail": "Candidate budget prediction is supplied and validated."
+        }
+      },
+      "authority_retained": [
+        "native arbitration"
+      ],
+      "authority_transferred": [
+        "candidate formation",
+        "score formation"
+      ],
+      "information_lost_or_compressed": "The origin of candidates and score semantics is outside arbitration.",
+      "claim_ceiling": "Native selection over supplied candidates only.",
+      "blocked_claims": [
+        "native route formation",
+        "semantic valuation"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "selection as formation",
+        "semantic valuation"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-ARB-03",
+      "category": "arbitration_vs_candidate_formation",
+      "consumer_language": "Request arbitration-to-collapse behavior without specifying direct commit versus lineage-aware transport.",
+      "normalized_query_kind": "selection_guide_case",
+      "resolution_kind": "declared_ambiguity",
+      "selected_pathway_ids": [
+        "lgrc9v3.native_route_arbitration",
+        "lgrc9v3.collapse_reabsorption"
+      ],
+      "selected_composition_ids": [
+        "CMP-07",
+        "CMP-16"
+      ],
+      "composition_status": "ambiguous_registered_crossing",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [
+        "candidate schema",
+        "score/order policy",
+        "claim flags",
+        "budget prediction",
+        "collapse policy",
+        "explicit or arbitration input",
+        "reabsorption modes"
+      ],
+      "producer_residue": [
+        "candidate and score formation when experiment supplied",
+        "candidate formation when externally supplied"
+      ],
+      "compatibility": {
+        "state": "unresolved_until_semantics_disambiguate",
+        "time": "event_time_endpoints_compatible_but_crossing_scope_ambiguous",
+        "space": "shared_endpoints_do_not_resolve_crossing_semantics",
+        "budget": "depends_on_selected_crossing"
+      },
+      "authority_retained": [],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "Selection is withheld; no crossing projection is performed.",
+      "claim_ceiling": "No selection until the required crossing semantics are specified.",
+      "blocked_claims": [
+        "first matching composition as selected crossing",
+        "shared endpoints as equivalent composition semantics"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "arbitrary first match",
+        "shared endpoints imply equivalent semantics"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-LEDGER-01",
+      "category": "ledger_vs_constitutive_history",
+      "consumer_language": "Persist packet ledger history and ask whether replay identity itself makes that history a later native cause.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "precise_missing_crossing",
+      "selected_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "pygrc.restoration_replay_identity"
+      ],
+      "selected_composition_ids": [
+        "CMP-18"
+      ],
+      "composition_status": "unsupported_missing_crossing",
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "configured_residue": [],
+      "producer_residue": [],
+      "compatibility": {
+        "state": {
+          "status": "persisted_not_consumed",
+          "detail": "Restoration identity preserves ledger state but does not add a read path."
+        },
+        "time": {
+          "status": "replay_compatible",
+          "detail": "Ledger can survive replay without becoming a later cause."
+        },
+        "space": {
+          "status": "persisted_scope",
+          "detail": "Packet endpoints remain represented."
+        },
+        "budget": {
+          "status": "descriptive_only",
+          "detail": "Restored budget identity does not authorize new work."
+        }
+      },
+      "authority_retained": [
+        "packet persistence",
+        "restoration validation"
+      ],
+      "authority_transferred": [],
+      "information_lost_or_compressed": "No constitutive write/read interaction is produced.",
+      "claim_ceiling": "Ledger persistence and replay identity only.",
+      "blocked_claims": [
+        "native Read-Back",
+        "memory-mediated action"
+      ],
+      "missing_crossing": "restoration preserves packet ledger but no native constitutive consumer reads ledger history to alter later eligibility or geometry",
+      "why_nearby_alternatives_are_wrong": [
+        "persistence as Read-Back",
+        "ledger retention as memory-mediated action"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    },
+    {
+      "pressure_id": "PC-LEDGER-02",
+      "category": "ledger_vs_constitutive_history",
+      "consumer_language": "Use an explicit producer to derive temporary conductance from exact history while retaining the producer cut.",
+      "normalized_query_kind": "registered_directional_composition",
+      "resolution_kind": "producer_mediated_composition",
+      "selected_pathway_ids": [
+        "lgrc9v3.causal_history_annotation",
+        "grc9v3.synchronous_update_cycle"
+      ],
+      "selected_composition_ids": [
+        "CMP-17"
+      ],
+      "composition_status": "producer_mediated",
+      "adapter_id": "N31_C2_exact_history_closure",
+      "adapter_owner": "experiment_producer",
+      "configured_residue": [],
+      "producer_residue": [
+        "experiment_producer"
+      ],
+      "compatibility": {
+        "state": {
+          "status": "producer_projection",
+          "detail": "Experiment-local closure derives conductance from native history; runtime does not own the mapping."
+        },
+        "time": {
+          "status": "pre_step_adapter",
+          "detail": "The producer applies a bounded pre-step closure before native transport rebuild."
+        },
+        "space": {
+          "status": "route_local",
+          "detail": "History and conductance mapping are restricted to declared route edges."
+        },
+        "budget": {
+          "status": "conservative_adapter",
+          "detail": "Producer must preserve coherence and declare conductance bounds."
+        }
+      },
+      "authority_retained": [
+        "native history",
+        "native GRC transport"
+      ],
+      "authority_transferred": [
+        "history functional",
+        "conductance update",
+        "decay/progression schedule"
+      ],
+      "information_lost_or_compressed": "History is compressed to one temporary conductance multiplier.",
+      "claim_ceiling": "Producer-mediated exact-history conductance candidate; not a native read path.",
+      "blocked_claims": [
+        "lawful_native",
+        "native D0 decay",
+        "coherence-only ontology closure"
+      ],
+      "missing_crossing": "none",
+      "why_nearby_alternatives_are_wrong": [
+        "producer-derived history as native ledger consumption"
+      ],
+      "ordinary_selection_source_read_required": false,
+      "endpoint_evidence_promoted_to_crossing_evidence": false,
+      "substrate_success_inherited": false,
+      "ecological_success_inferred": false,
+      "extension_authorized": false,
+      "n32_selected": false,
+      "status": "passed"
+    }
+  ],
+  "all_required_categories_present": true,
+  "all_pressure_consumers_routed": true,
+  "ordinary_selection_required_hidden_source_reading": false,
+  "runtime_behavior_changed": false,
+  "status": "passed",
+  "execution_digest": "41091365a8b93eb5e7cb6ae27f9c2f188d7a1243ee0987c21c62180cae7af891"
+}

@@ -1,0 +1,454 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway I110 negative-control execution",
+  "schema_version": "phase8_grclgrc_causal_pathway_i110_negative_controls_v1",
+  "iteration": 110,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "control_count": 20,
+  "controls": [
+    {
+      "case_id": "NC-001",
+      "description": "missing registry field",
+      "expected_rule_id": "CF-002",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-002",
+        "CF-004"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-002",
+      "description": "missing source path",
+      "expected_rule_id": "CF-003",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-003",
+        "CF-018"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-003",
+      "description": "missing authority coordinate",
+      "expected_rule_id": "CF-004",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-004"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-004",
+      "description": "native stage evidence removed",
+      "expected_rule_id": "CF-005",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-005"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-005",
+      "description": "producer owner erased",
+      "expected_rule_id": "CF-006",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-006",
+        "CF-012"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-006",
+      "description": "composition endpoint missing",
+      "expected_rule_id": "CF-007",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-007",
+        "CF-014"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-007",
+      "description": "explicit adapter owner erased",
+      "expected_rule_id": "CF-008",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-008",
+        "CF-012"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-008",
+      "description": "missing crossing supplied a source ref",
+      "expected_rule_id": "CF-009",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-009"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-009",
+      "description": "diagnostic crossing promoted to behavioral",
+      "expected_rule_id": "CF-010",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-010",
+        "CF-012"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-010",
+      "description": "configured route promoted to formed route",
+      "expected_rule_id": "CF-011",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-007",
+        "CF-011"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-011",
+      "description": "selector owner differs from matrix",
+      "expected_rule_id": "CF-012",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-012"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-012",
+      "description": "unregistered pair promoted to missing crossing",
+      "expected_rule_id": "CF-013",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-013"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-013",
+      "description": "ambiguous alternatives collapsed",
+      "expected_rule_id": "CF-014",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-014"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-014",
+      "description": "composition status promoted to maturity",
+      "expected_rule_id": "CF-015",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-015"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-015",
+      "description": "selection authorizes extension",
+      "expected_rule_id": "CF-016",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-016"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-016",
+      "description": "selection infers ecology",
+      "expected_rule_id": "CF-017",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-017"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-017",
+      "description": "source drift left current",
+      "expected_rule_id": "CF-018",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-003",
+        "CF-018"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-018",
+      "description": "selector authority overlaps registry",
+      "expected_rule_id": "CF-019",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-019"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-019",
+      "description": "conformance tranche claims runtime change",
+      "expected_rule_id": "CF-020",
+      "triggered_rule_ids": [
+        "CF-001",
+        "CF-020"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-020",
+      "description": "accepted matrix digest stale",
+      "expected_rule_id": "CF-001",
+      "triggered_rule_ids": [
+        "CF-001"
+      ],
+      "status": "passed"
+    }
+  ],
+  "rule_isolation_control_count": 19,
+  "rule_isolation_controls": [
+    {
+      "case_id": "NC-001",
+      "description": "missing registry field",
+      "active_rule_ids": [
+        "CF-002"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-002"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-002",
+      "description": "missing source path",
+      "active_rule_ids": [
+        "CF-003"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-003"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-003",
+      "description": "missing authority coordinate",
+      "active_rule_ids": [
+        "CF-004"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-004"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-004",
+      "description": "native stage evidence removed",
+      "active_rule_ids": [
+        "CF-005"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-005"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-005",
+      "description": "producer owner erased",
+      "active_rule_ids": [
+        "CF-006"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-006"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-006",
+      "description": "composition endpoint missing",
+      "active_rule_ids": [
+        "CF-007"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-007"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-007",
+      "description": "explicit adapter owner erased",
+      "active_rule_ids": [
+        "CF-008"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-008"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-008",
+      "description": "missing crossing supplied a source ref",
+      "active_rule_ids": [
+        "CF-009"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-009"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-009",
+      "description": "diagnostic crossing promoted to behavioral",
+      "active_rule_ids": [
+        "CF-010"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-010"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-010",
+      "description": "configured route promoted to formed route",
+      "active_rule_ids": [
+        "CF-011"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-011"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-011",
+      "description": "selector owner differs from matrix",
+      "active_rule_ids": [
+        "CF-012"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-012"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-012",
+      "description": "unregistered pair promoted to missing crossing",
+      "active_rule_ids": [
+        "CF-013"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-013"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-013",
+      "description": "ambiguous alternatives collapsed",
+      "active_rule_ids": [
+        "CF-014"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-014"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-014",
+      "description": "composition status promoted to maturity",
+      "active_rule_ids": [
+        "CF-015"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-015"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-015",
+      "description": "selection authorizes extension",
+      "active_rule_ids": [
+        "CF-016"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-016"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-016",
+      "description": "selection infers ecology",
+      "active_rule_ids": [
+        "CF-017"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-017"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-017",
+      "description": "source drift left current",
+      "active_rule_ids": [
+        "CF-018"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-018"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-018",
+      "description": "selector authority overlaps registry",
+      "active_rule_ids": [
+        "CF-019"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-019"
+      ],
+      "status": "passed"
+    },
+    {
+      "case_id": "NC-019",
+      "description": "conformance tranche claims runtime change",
+      "active_rule_ids": [
+        "CF-020"
+      ],
+      "digest_guard_active": false,
+      "triggered_rule_ids": [
+        "CF-020"
+      ],
+      "status": "passed"
+    }
+  ],
+  "rule_isolation_policy": "CF-001 is inactive and only the intended target rule participates in each isolated decision.",
+  "all_rules_have_deliberate_failure_control": true,
+  "failed_open_count": 0,
+  "rule_isolation_failed_open_count": 0,
+  "all_non_digest_rules_have_isolated_control": true,
+  "status": "passed",
+  "execution_digest": "7d9cc7b5c8358d38add2fa2a17327347411285b05f7f958fd1f5733caa356a80"
+}

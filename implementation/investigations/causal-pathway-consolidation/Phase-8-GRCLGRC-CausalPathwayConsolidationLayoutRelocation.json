@@ -1,0 +1,282 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway layout relocation",
+  "schema_version": "phase8_grclgrc_causal_pathway_layout_relocation_v1",
+  "status": "reconciled",
+  "recorded_during_iteration": 111,
+  "reason": "Reproducibility builders are executable utilities and belong under scripts/; accepted supporting investigation records belong in one indexed package rather than the implementation root.",
+  "builder_path_mappings": [
+    {
+      "iteration": 106,
+      "from": "implementation/build_phase8_causal_pathway_i106.py",
+      "to": "scripts/build_phase8_causal_pathway_i106.py"
+    },
+    {
+      "iteration": 107,
+      "from": "implementation/build_phase8_causal_pathway_i107.py",
+      "to": "scripts/build_phase8_causal_pathway_i107.py"
+    },
+    {
+      "iteration": 108,
+      "from": "implementation/build_phase8_causal_pathway_i108.py",
+      "to": "scripts/build_phase8_causal_pathway_i108.py"
+    },
+    {
+      "iteration": 109,
+      "from": "implementation/build_phase8_causal_pathway_i109.py",
+      "to": "scripts/build_phase8_causal_pathway_i109.py"
+    },
+    {
+      "iteration": 110,
+      "from": "implementation/build_phase8_causal_pathway_i110.py",
+      "to": "scripts/build_phase8_causal_pathway_i110.py"
+    },
+    {
+      "iteration": 111,
+      "from": "implementation/build_phase8_causal_pathway_i111.py",
+      "to": "scripts/build_phase8_causal_pathway_i111.py"
+    }
+  ],
+  "supporting_evidence_path_mappings": [
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106ArtifactFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration106ArtifactFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107ArtifactFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107ArtifactFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107TestExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration107TestExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactBundleSupersession.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactBundleSupersession.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108ArtifactFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108TestExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108TestExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactBundleSupersession.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactBundleSupersession.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ArtifactFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ValidationExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration109ValidationExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactBundleSupersession.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactBundleSupersession.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ArtifactFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ConformanceExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110ConformanceExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110NegativeControlExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration110NegativeControlExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111ArtifactFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111ArtifactFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayFreeze.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayFreeze.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindValidationExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindValidationExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerBlindInput.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerBlindInput.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerExpectedRecovery.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerExpectedRecovery.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111PressureConsumerDescriptions.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111PressureConsumerDescriptions.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111PressureConsumerExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111PressureConsumerExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111RawDemandDescriptions.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111RawDemandDescriptions.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111RawDemandExecution.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111RawDemandExecution.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationSourceManifest.json",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationSourceManifest.json"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationUnmappedSurfaceReport.md",
+      "to": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationUnmappedSurfaceReport.md"
+    }
+  ],
+  "supporting_evidence_file_count": 37,
+  "essential_implementation_root_files": [
+    "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.json",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md"
+  ],
+  "bundle_identity_mappings": [
+    {
+      "iteration": 106,
+      "pre_relocation_bundle_digest": "b84c30d13eba8a179d628a64eca3a0605f77df5c7c7157fe822b0fcac4bd2127",
+      "builder_only_intermediate_bundle_digest": "404492bc15c160cacd5c13609c2749fee8dfb3507de8751322ff4f2cb03e66c3",
+      "accepted_post_relocation_bundle_digest": "d850f81751d4a538a9ae92ee421e8e35c79beaa4e21ef16726d9156edf6c442e"
+    },
+    {
+      "iteration": 107,
+      "pre_relocation_bundle_digest": "70e9d525bfdac4f7c3f73e11610cd6f58d68f307da362f6fd9ab0b4d61dd8aa2",
+      "builder_only_intermediate_bundle_digest": "1b3bd98dbc522deedf8f9ee78aa10ba93f3e1142b849d9f4ec410580ac22b026",
+      "accepted_post_relocation_bundle_digest": "8bb201a0a061210407bc8230f879663c92a5967351efa6594d7f93c6c44f7889"
+    },
+    {
+      "iteration": 108,
+      "pre_relocation_bundle_digest": "79bc60b3cfdf25155182d58c94c7bff524b6e4ee59259fe9af0ca7163f37f84f",
+      "builder_only_intermediate_bundle_digest": "f44db8636862f328334f33d61beb7186673bd10652f39ef06b9e5048e1aba954",
+      "accepted_post_relocation_bundle_digest": "d2bd07c662acc7185f1e5cb62c03d48c9a2469f96511ec3cefd1dfde75eec8d3"
+    },
+    {
+      "iteration": 109,
+      "pre_relocation_bundle_digest": "e5cc2fb6495150a2d559f14e21d0b97fa11de0cd26c8f23f9e42de4ca18b01c2",
+      "builder_only_intermediate_bundle_digest": "218245e43511922243751034e1b4e17e2c0589b9cae5428c741e1153ee269f60",
+      "accepted_post_relocation_bundle_digest": "d61a2189d016c0213ae89942db3d36515fa02de6d6f9519e47203e2f2cc306c9"
+    },
+    {
+      "iteration": 110,
+      "pre_relocation_bundle_digest": "1b3b94f987733fc2c5f06740b6e27a1725309fe36c54d8ac7bfcaf76ba6f7fe7",
+      "builder_only_intermediate_bundle_digest": "d271c13d0b68c78adda90fbd6168119ef77a41ac46c21d15c2c4acedfbff5381",
+      "accepted_post_relocation_bundle_digest": "510f442c38d12018cec20951136019319895866b3e74c3fe57c8db48cddd079b"
+    },
+    {
+      "iteration": 111,
+      "pre_relocation_bundle_digest": "e301b305d0f218b2054bf525f58103d461592898153f5d625551a203a292d621",
+      "builder_only_intermediate_bundle_digest": "18e384c13dccf6fb16e08b071fd8831659902750232230c81f4aee37275a9c1d",
+      "accepted_post_relocation_bundle_digest": "established_by_the_containing_iteration_111_artifact_freeze"
+    }
+  ],
+  "iteration_111_pre_relocation_bundle_is_alternate_authority": false,
+  "builder_only_intermediate_bundles_are_alternate_authority": false,
+  "iteration_111_post_relocation_authority_rule": "The accepted post-relocation I111 bundle is the artifact freeze that contains this relocation record; embedding that bundle digest here would create a circular identity.",
+  "changed_builder_content_scope": [
+    "self and predecessor builder path literals",
+    "supporting evidence input and output path literals",
+    "predecessor artifact digest assertions propagated after ordered rebuild",
+    "this relocation provenance record"
+  ],
+  "unchanged_content_invariants": {
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "pathway_count": 23,
+    "stage_local_evidence_row_count": 52,
+    "composition_count": 26,
+    "composition_status_counts": {
+      "lawful_native": 10,
+      "lawful_with_explicit_adapter": 1,
+      "diagnostic_only": 2,
+      "producer_mediated": 4,
+      "unsupported_missing_crossing": 3,
+      "invalid_relabel": 6
+    },
+    "selection_case_count": 10,
+    "conformance_rule_count": 20,
+    "pressure_count": 22,
+    "pressure_misrouting_count": 0,
+    "raw_demand_count": 7,
+    "raw_demand_misrouting_count": 0
+  },
+  "scientific_registry_entries_changed": false,
+  "stage_local_evidence_rows_changed": false,
+  "composition_status_counts_changed": false,
+  "selection_case_meanings_changed": false,
+  "conformance_rule_meanings_changed": false,
+  "pressure_consumer_outcomes_changed": false,
+  "runtime_behavior_changed": false,
+  "protected_src_test_example_diff_empty": true,
+  "rebuild_order": [
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "authority_boundary": "Pre-relocation and builder-only intermediate bundle identities remain provenance only. Future consumers use the accepted post-layout freezes and do not treat path-only supersession as scientific change.",
+  "relocation_digest": "d73f7abcf85a043b8bff8706954eb3393fd0e530f68cc36d1643462574f2f561"
+}

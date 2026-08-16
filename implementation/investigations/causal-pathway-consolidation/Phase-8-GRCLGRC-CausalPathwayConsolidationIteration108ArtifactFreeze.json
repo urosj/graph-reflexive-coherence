@@ -1,0 +1,46 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway consolidation Iteration 108 artifact freeze",
+  "iteration": 108,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "i107_artifact_bundle_digest": "8bb201a0a061210407bc8230f879663c92a5967351efa6594d7f93c6c44f7889",
+  "artifacts": [
+    {
+      "path": "scripts/build_phase8_causal_pathway_i108.py",
+      "sha256": "ca84bb60163e2e7bacbad07c58f8a5ddae9fa40762a058e1a6cc65f9e642f8ef",
+      "revision": "iteration_108_working_artifact",
+      "evidence_role": "iteration_108_artifact"
+    },
+    {
+      "path": "specs/grc-lgrc-causal-pathway-composition-matrix.json",
+      "sha256": "6220a7be74c90f85892fd0f61a4f2126218e9ac104cb6451e9c1667d73c942c1",
+      "revision": "iteration_108_working_artifact",
+      "evidence_role": "iteration_108_artifact"
+    },
+    {
+      "path": "docs/reference/GRC-LGRC-CompositionMatrix.md",
+      "sha256": "cb50e76f86c7e024fdedcebab5488636f931d29c0558d0a9a05e1dba17d616d8",
+      "revision": "iteration_108_working_artifact",
+      "evidence_role": "iteration_108_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108TestExecution.json",
+      "sha256": "6f2431285437c4c7ad134b216628fa26065d66c3f43bde926ba622916b556e8b",
+      "revision": "iteration_108_working_artifact",
+      "evidence_role": "iteration_108_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.json",
+      "sha256": "14d832550f5d37284368f90afd9f201b0c32467b99ec7b9aafdbe4b50cf7479a",
+      "revision": "iteration_108_working_artifact",
+      "evidence_role": "iteration_108_artifact"
+    },
+    {
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration108.md",
+      "sha256": "ebac78b68d63121716f0a96d5d82cb8aa1c445985d934a1387572f8388405528",
+      "revision": "iteration_108_working_artifact",
+      "evidence_role": "iteration_108_artifact"
+    }
+  ],
+  "artifact_bundle_digest": "d2bd07c662acc7185f1e5cb62c03d48c9a2469f96511ec3cefd1dfde75eec8d3",
+  "runtime_behavior_changed": false
+}

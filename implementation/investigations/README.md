@@ -15,6 +15,11 @@ An investigation belongs here when it:
 
 Current investigations:
 
+- [Causal-pathway consolidation](./causal-pathway-consolidation/README.md):
+  accepted source-audit and I106-I111 supporting evidence for the completed
+  documentation/conformance tranche. The essential plan, checklist, baseline
+  freeze, and closeout remain at the `implementation/` root, and the
+  reproducibility builders live under `scripts/`.
 - [Event-local geometry integration](./event-local-geometry-integration/README.md):
   closed without runtime change after gated C0/C1 evidence exposed a recurring
   causal-work admission and ownership pattern. Its result motivated the

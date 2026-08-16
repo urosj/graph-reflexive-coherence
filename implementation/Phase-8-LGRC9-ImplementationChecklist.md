@@ -3406,12 +3406,26 @@ Iteration 97, RCAE return, or N32 successor is opened.
 - [x] Freeze source hashes and initial pathway-family census.
 - [x] Create draft pathway contract and registry surfaces.
 - [x] Create draft selection-guide and composition-matrix surfaces.
-- [ ] Freeze registry schema and entries in Iteration 106.
-- [ ] Complete source/test/evidence crosswalk in Iteration 107.
-- [ ] Freeze composition matrix in Iteration 108.
-- [ ] Freeze selection guide in Iteration 109.
-- [ ] Add conformance checks and repository integration in Iteration 110.
-- [ ] Run pressure-consumer dry runs and close in Iteration 111.
+- [x] Freeze registry schema and entries in Iteration 106.
+- [x] Complete source/test/evidence crosswalk in Iteration 107.
+- [x] Freeze composition matrix in Iteration 108.
+- [x] Freeze selection guide in Iteration 109.
+- [x] Add conformance checks and repository integration in Iteration 110.
+- [x] Run pressure-consumer dry runs and close in Iteration 111.
+- [x] Keep the essential lifecycle documents at the implementation root, move
+  reproducibility builders to `scripts/`, and index source-audit and I106-I111
+  supporting evidence under `implementation/investigations/causal-pathway-consolidation/`.
 
 No runtime behavior, generic admission block, ownership model, RCAE L04
 mechanism, or N32 candidate is introduced by this tranche.
+
+The closeout routes 22 expert-normalized pressure descriptions across 11
+categories with zero misroutes, interprets seven raw-domain demands while
+preserving pathway-only and genuinely unregistered outcomes, retains one
+declared crossing ambiguity, and passes one answer-free blind replay without
+reading hidden source/test evidence. Recovery is validated against a separate
+oracle only after replay freeze.
+
+The six I106-I111 reproducibility builders reside under `scripts/`. Their
+ordered rebuild and old-to-new bundle mapping are recorded as provenance; no
+runtime or scientific claim changed.

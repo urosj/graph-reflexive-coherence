@@ -1,0 +1,33 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 blind-recovery oracle validation",
+  "schema_version": "phase8_grclgrc_i111_blind_validation_v1",
+  "iteration": 111,
+  "status": "passed",
+  "loaded_input_paths": [
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayExecution.json",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentBlindReplayFreeze.json",
+    "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111IndependentConsumerExpectedRecovery.json"
+  ],
+  "blind_input_loaded": false,
+  "guide_registry_or_matrix_loaded": false,
+  "replay_frozen_before_oracle_comparison": true,
+  "compared_fields": [
+    "adapter_id",
+    "adapter_owner",
+    "authority_transferred",
+    "blocked_claims",
+    "composition_status",
+    "configured_residue",
+    "missing_crossing",
+    "native_or_bounded_claim",
+    "nearby_alternatives_rejected",
+    "producer_residue",
+    "required_directional_composition_id",
+    "selected_guide_case_id",
+    "selected_pathway_ids"
+  ],
+  "error_count": 0,
+  "errors": [],
+  "runtime_behavior_changed": false,
+  "validation_digest": "cbadc30cfed1150ba7568283ffc7c62dc43e1b7ffcabbf42808ba56db0e5d473"
+}

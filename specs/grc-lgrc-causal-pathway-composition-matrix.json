@@ -1,0 +1,3074 @@
+{
+  "artifact": "GRC/LGRC directional causal-pathway composition matrix",
+  "schema_version": "grc_lgrc_causal_pathway_composition_matrix_v1",
+  "iteration": 108,
+  "status": "frozen",
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "test_execution_digest": "e196fa7c8f44ed99da22426e8f800eb2f30c262881b6c61a1246eb40cf756843",
+  "endpoint_evidence_rule": "endpoint coverage is prerequisite context and is never crossing evidence",
+  "lawful_native_rule": "lawful_native requires source semantics for the crossing and current crossing-specific evidence",
+  "directionality_rule": "A -> B never implies B -> A",
+  "composition_status_values": [
+    "lawful_native",
+    "lawful_with_explicit_adapter",
+    "diagnostic_only",
+    "producer_mediated",
+    "unsupported_missing_crossing",
+    "invalid_relabel"
+  ],
+  "composition_count": 26,
+  "status_counts": {
+    "lawful_native": 10,
+    "lawful_with_explicit_adapter": 1,
+    "diagnostic_only": 2,
+    "producer_mediated": 4,
+    "unsupported_missing_crossing": 3,
+    "invalid_relabel": 6
+  },
+  "compositions": [
+    {
+      "composition_id": "CMP-01",
+      "name": "GRC transport into synchronous continuity",
+      "from_pathway_id": "grc9v3.synchronous_update_cycle",
+      "from_stage_ids": [
+        "transport_rebuild"
+      ],
+      "to_pathway_id": "grc9v3.synchronous_update_cycle",
+      "to_stage_ids": [
+        "continuity_and_invariants"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "rebuild differential",
+        "rebuild transport",
+        "apply continuity and invariants"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "One GRC9V3 state object carries transport outputs into continuity."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Both stages execute in one global synchronous step."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Both stages address the same graph-wide state."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Continuity closes the declared GRC budget after transport."
+      },
+      "authority_retained": [
+        "GRC9V3.step scheduling",
+        "native flux direction",
+        "node coherence funding"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "information_lost_or_compressed": "No state projection at the crossing.",
+      "shared_carrier_surface": "GRC9V3 state",
+      "visible_interaction_term": "oriented flux consumed by continuity",
+      "separable_and_combined_controls": [
+        "full-step execution",
+        "fixed-budget control"
+      ],
+      "transfer_scope": "one synchronous GRC9V3 step",
+      "evidence_status": "current_source_crossing_passed",
+      "claim_ceiling": "Native synchronous transport-to-continuity mechanics only.",
+      "blocked_relabels": [
+        "LGRC packet execution",
+        "semantic action"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "stages": [
+            {
+              "stage_id": "transport_rebuild",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "stages": [
+            {
+              "stage_id": "continuity_and_invariants",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/grc_9_v3.py",
+          "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/grc_9_v3_runtime.py",
+          "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_grc_9_v3_step.py::GRC9V3StepLoopTest::test_step_executes_documented_loop_and_advances_time",
+          "path": "tests/models/test_grc_9_v3_step.py",
+          "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_grc_9_v3_step.py::GRC9V3StepLoopTest::test_step_preserves_fixed_budget_after_continuity_and_invalidates_coarse_cache",
+          "path": "tests/models/test_grc_9_v3_step.py",
+          "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_budget_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "45d68db67dc7fa548be4491ae088bbc6465eea44839f0b3afb10d0fc6ceebba7"
+    },
+    {
+      "composition_id": "CMP-02",
+      "name": "Packet schedule through debit and arrival credit",
+      "from_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "from_stage_ids": [
+        "packet_schedule",
+        "source_debit"
+      ],
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "target_credit"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "schedule packet",
+        "debit source",
+        "retain in flight",
+        "credit target"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Packet ID and ledger state survive every lifecycle stage."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Event-time queue orders departure before arrival."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Declared source, edge, and target endpoints remain explicit."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Source plus in-flight plus target coherence is conserved."
+      },
+      "authority_retained": [
+        "packet endpoint direction",
+        "caller-supplied schedule",
+        "LGRC step commitment"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "information_lost_or_compressed": "No lifecycle state is discarded.",
+      "shared_carrier_surface": "packet ledger",
+      "visible_interaction_term": "packet/event identity and conserved amount",
+      "separable_and_combined_controls": [
+        "departure-arrival lifecycle",
+        "budget closure",
+        "event ordering"
+      ],
+      "transfer_scope": "one explicit packet lifecycle",
+      "evidence_status": "current_source_crossing_passed",
+      "claim_ceiling": "Native packet debit/arrival mechanics; route, amount, and schedule remain supplied.",
+      "blocked_relabels": [
+        "native route formation",
+        "generic work admission"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "source_debit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "target_credit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+          "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+          "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_contract.py::LGRC9V3ContractTest::test_lgrc2_scheduled_packet_processes_departure_then_arrival",
+          "path": "tests/models/test_lgrc_9_v3_contract.py",
+          "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_departure_arrival_lifecycle_preserves_budget",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_budget_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "20aa6a3ba174767c6b22315e1f979644ac688e8f67012416dca0869954ac1766"
+    },
+    {
+      "composition_id": "CMP-03",
+      "name": "GRC flux into bounded packet work",
+      "from_pathway_id": "grc9v3.synchronous_update_cycle",
+      "from_stage_ids": [
+        "transport_rebuild"
+      ],
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule"
+      ],
+      "composition_status": "producer_mediated",
+      "composition_order": [
+        "read GRC flux",
+        "select sign/source/amount",
+        "schedule LGRC packet"
+      ],
+      "state_identity_mapping": {
+        "status": "adapter_projection",
+        "detail": "A producer projects continuous reconstructed flux into a packet contract."
+      },
+      "temporal_compatibility": {
+        "status": "adapter_required",
+        "detail": "Global synchronous flux must be assigned an event-time schedule."
+      },
+      "spatial_compatibility": {
+        "status": "adapter_required",
+        "detail": "GRC edge orientation must be mapped to LGRC packet endpoints."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "bounded_by_adapter",
+        "detail": "The adapter must convert flux to an explicit packet amount without hidden funding."
+      },
+      "authority_retained": [
+        "GRC flux reconstruction",
+        "LGRC packet debit/arrival"
+      ],
+      "authority_transferred": [
+        "direction",
+        "eligibility",
+        "amount",
+        "schedule"
+      ],
+      "adapter_id": "flux_to_packet_adapter",
+      "adapter_owner": "experiment_or_consumer_producer",
+      "information_lost_or_compressed": "Continuous flux detail is compressed to one packet relation.",
+      "shared_carrier_surface": "explicit adapter record",
+      "visible_interaction_term": "producer-authored sign, amount, source, target, and event time",
+      "separable_and_combined_controls": [
+        "adapter omitted",
+        "sign reversal",
+        "overdraw",
+        "endpoint swap"
+      ],
+      "transfer_scope": "bounded producer-authored flux-to-packet projection",
+      "evidence_status": "bounded_producer_evidence_only",
+      "claim_ceiling": "Producer-mediated GRC-flux-to-LGRC-packet candidate; not native causal admission.",
+      "blocked_relabels": [
+        "lawful_native",
+        "native current-to-action admission"
+      ],
+      "source_absence_audit": {
+        "inspected_paths": [
+          "src/pygrc/models/grc_9_v3.py",
+          "src/pygrc/models/lgrc_9_v3_runtime.py"
+        ],
+        "missing_crossing": "no native GRC-flux consumer schedules LGRC packet work",
+        "result": "producer_or_adapter_required"
+      },
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "stages": [
+            {
+              "stage_id": "transport_rebuild",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [],
+      "crossing_evidence_refs": [
+        {
+          "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.json",
+          "sha256": "c715672ff27235207d5db5fa75f87c2c0591a3b4ebb3be994731e43c87e57b91",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "bounded_negative_and_ownership_evidence"
+        },
+        {
+          "path": "implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.json",
+          "sha256": "919b6f343a5a1c2aabb82afd91ba2658802760d370695b231811caf39c846ac7",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "producer_pattern_evidence"
+        }
+      ],
+      "crossing_negative_control_refs": [],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "922a2f51fdc6f8f458f5dc6374fffb3e38a71ee0482a51bfcf4bbff69f94db73"
+    },
+    {
+      "composition_id": "CMP-04",
+      "name": "LGRC checkpoint into explicit GRC diagnostic reconstruction",
+      "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "from_stage_ids": [
+        "diagnostic_model_construction"
+      ],
+      "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "to_stage_ids": [
+        "diagnostic_rebuild"
+      ],
+      "composition_status": "diagnostic_only",
+      "composition_order": [
+        "select LGRC checkpoint",
+        "construct GRC9V3 diagnostic view",
+        "rebuild diagnostic state"
+      ],
+      "state_identity_mapping": {
+        "status": "bounded_projection",
+        "detail": "LGRC base state is reconstructed through an explicit GRC9V3 diagnostic helper."
+      },
+      "temporal_compatibility": {
+        "status": "caller_checkpoint",
+        "detail": "Caller selects the checkpoint; no ordinary LGRC event schedules it."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "The diagnostic uses the current copied graph topology."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "not_a_transport",
+        "detail": "The helper reconstructs labels and does not authorize packet work."
+      },
+      "authority_retained": [
+        "caller selection",
+        "GRC diagnostic mechanics"
+      ],
+      "authority_transferred": [],
+      "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+      "adapter_owner": "library_helper_invoked_by_caller",
+      "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "shared_carrier_surface": "LGRC base state",
+      "visible_interaction_term": "explicit helper call",
+      "separable_and_combined_controls": [
+        "explicit invocation",
+        "no ordinary-step claim",
+        "topology nonmutation"
+      ],
+      "transfer_scope": "caller-selected checkpoint diagnostic",
+      "evidence_status": "current_source_diagnostic_crossing_passed",
+      "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+      "blocked_relabels": [
+        "ordinary LGRC behavior",
+        "native event-to-action crossing"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "stages": [
+            {
+              "stage_id": "diagnostic_model_construction",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "stages": [
+            {
+              "stage_id": "diagnostic_rebuild",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_construction.py::LGRC9V3ConstructionTest::test_corrected_cascade_queue_policy_is_explicit",
+          "path": "tests/models/test_lgrc_9_v3_construction.py",
+          "sha256": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_explicit_causal_diagnostic_preserves_lane_a_signed_hessian_attribution",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_boundary_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "37d501391f79342235ae12684b889034957dfe9d08d0b580ddb6508544c0e506"
+    },
+    {
+      "composition_id": "CMP-05",
+      "name": "Diagnostic reconstruction relabeled as ordinary LGRC behavior",
+      "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "from_stage_ids": [
+        "diagnostic_rebuild"
+      ],
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule"
+      ],
+      "composition_status": "invalid_relabel",
+      "composition_order": [
+        "run diagnostic",
+        "claim ordinary LGRC consumed it"
+      ],
+      "state_identity_mapping": {
+        "status": "missing",
+        "detail": "No constitutive mapping from diagnostic output to packet scheduling is declared."
+      },
+      "temporal_compatibility": {
+        "status": "incompatible",
+        "detail": "Explicit checkpoint diagnostics do not become event-queue causes."
+      },
+      "spatial_compatibility": {
+        "status": "unmapped",
+        "detail": "Diagnostic graph scope supplies no packet endpoint mapping."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "unmapped",
+        "detail": "Diagnostic values carry no packet funding authority."
+      },
+      "authority_retained": [
+        "diagnostic helper"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "All causal authority is absent at the proposed crossing.",
+      "shared_carrier_surface": "none",
+      "visible_interaction_term": "none",
+      "separable_and_combined_controls": [
+        "diagnostic-only control",
+        "ordinary step omission"
+      ],
+      "transfer_scope": "invalid diagnostic-to-runtime promotion",
+      "evidence_status": "claim_boundary_rejected",
+      "claim_ceiling": "No ordinary LGRC behavior claim is allowed.",
+      "blocked_relabels": [
+        "diagnostic_as_behavior",
+        "native packet admission"
+      ],
+      "source_absence_audit": {
+        "inspected_paths": [
+          "src/pygrc/models/lgrc_9_v3_construction.py",
+          "src/pygrc/models/lgrc_9_v3_runtime.py"
+        ],
+        "missing_crossing": "ordinary LGRC step does not consume explicit GRC diagnostic reconstruction",
+        "result": "invalid_relabel"
+      },
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "stages": [
+            {
+              "stage_id": "diagnostic_rebuild",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_explicit_causal_diagnostic_preserves_lane_a_signed_hessian_attribution",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "ac0bc8d1b4c6f836712ca7970fb8840fbad8f8b868b4f13bb992e17b933dc1ed"
+    },
+    {
+      "composition_id": "CMP-06",
+      "name": "Sink compatibility into route scheduling",
+      "from_pathway_id": "grc9v3.sink_compatibility_choice",
+      "from_stage_ids": [
+        "choice_collapse_update"
+      ],
+      "to_pathway_id": "lgrc9v3.configured_flux_route",
+      "to_stage_ids": [
+        "route_departure_production"
+      ],
+      "composition_status": "unsupported_missing_crossing",
+      "composition_order": [
+        "compute sink compatibility",
+        "schedule route work"
+      ],
+      "state_identity_mapping": {
+        "status": "missing",
+        "detail": "Choice registry has no admitted mapping to LGRC route records."
+      },
+      "temporal_compatibility": {
+        "status": "incompatible",
+        "detail": "Synchronous choice rebuild has no event-time scheduling bridge."
+      },
+      "spatial_compatibility": {
+        "status": "unmapped",
+        "detail": "Sink IDs do not define LGRC source-edge-target route identity."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "unmapped",
+        "detail": "Choice state supplies no packet amount or debit authority."
+      },
+      "authority_retained": [
+        "GRC choice mechanics",
+        "LGRC configured-route mechanics"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "Score, sink, amount, and schedule mapping are absent.",
+      "shared_carrier_surface": "none",
+      "visible_interaction_term": "none",
+      "separable_and_combined_controls": [
+        "source consumer audit",
+        "no hidden scheduler"
+      ],
+      "transfer_scope": "missing choice-to-route crossing",
+      "evidence_status": "source_audit_missing_crossing",
+      "claim_ceiling": "Unsupported until an explicit admission and scheduling relation is supplied.",
+      "blocked_relabels": [
+        "semantic choice",
+        "native route formation"
+      ],
+      "source_absence_audit": {
+        "inspected_paths": [
+          "src/pygrc/models/grc_9_v3.py",
+          "src/pygrc/models/lgrc_9_v3_runtime.py"
+        ],
+        "missing_crossing": "LGRC runtime has no consumer of GRC9V3 choice_registry or collapse_registry",
+        "result": "unsupported_missing_crossing"
+      },
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "grc9v3.sink_compatibility_choice",
+          "stages": [
+            {
+              "stage_id": "choice_collapse_update",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.configured_flux_route",
+          "stages": [
+            {
+              "stage_id": "route_departure_production",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "9c1caf33d12c0f227d68d389f4a5d9fa184bbe989ca21e5aca6f0122a1b1c736"
+    },
+    {
+      "composition_id": "CMP-07",
+      "name": "Native arbitration selection into collapse commit",
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "from_stage_ids": [
+        "native_arbitration",
+        "selection_commit"
+      ],
+      "to_pathway_id": "lgrc9v3.collapse_reabsorption",
+      "to_stage_ids": [
+        "collapse_event_admission",
+        "topology_reabsorption_commit"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "select committed candidate",
+        "validate arbitration reference",
+        "invoke collapse/reabsorption commit"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Candidate, arbitration, and selected topology digests are checked across the call."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Commit occurs at the explicit arbitration frontier."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Candidate sink/loser/lineage fields map directly to collapse scope."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Predicted budget and committed topology digest are validated."
+      },
+      "authority_retained": [
+        "native highest-score arbitration",
+        "native topology commitment"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native",
+      "information_lost_or_compressed": "Unselected candidate details remain in audit records rather than mutation input.",
+      "shared_carrier_surface": "candidate/arbitration/topology records",
+      "visible_interaction_term": "commit_native_route_arbitration_selection calls process_causal_collapse_reabsorption",
+      "separable_and_combined_controls": [
+        "stale candidate",
+        "missing record",
+        "digest drift",
+        "duplicate commit"
+      ],
+      "transfer_scope": "selected collapse/reabsorption candidate only",
+      "evidence_status": "current_source_crossing_passed",
+      "claim_ceiling": "Native arbitration-to-collapse commit mechanics; candidate and score formation remain external/configured.",
+      "blocked_relabels": [
+        "native candidate formation",
+        "semantic choice"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "stages": [
+            {
+              "stage_id": "native_arbitration",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "selection_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.collapse_reabsorption",
+          "stages": [
+            {
+              "stage_id": "collapse_event_admission",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "topology_reabsorption_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_arbitration_commit_integrates_topology_and_producer",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_arbitration_commit_rejects_stale_candidate_set",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "30a54eb65c8acd21c62b96b623b0ac3829b12331923e187775c5879502ef7ee5"
+    },
+    {
+      "composition_id": "CMP-08",
+      "name": "External score formation relabeled as native route formation",
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "from_stage_ids": [
+        "candidate_set_admission"
+      ],
+      "to_pathway_id": "lgrc9v3.native_route_arbitration",
+      "to_stage_ids": [
+        "native_arbitration"
+      ],
+      "composition_status": "invalid_relabel",
+      "composition_order": [
+        "externally author candidates and scores",
+        "run native arbitration",
+        "claim native formation"
+      ],
+      "state_identity_mapping": {
+        "status": "configured_input",
+        "detail": "Arbitration consumes committed candidate score records exactly as supplied."
+      },
+      "temporal_compatibility": {
+        "status": "compatible_but_external",
+        "detail": "Ordering is native after external candidate admission."
+      },
+      "spatial_compatibility": {
+        "status": "configured",
+        "detail": "Candidate topology scope is supplied."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "configured",
+        "detail": "Candidate budget prediction is supplied and validated."
+      },
+      "authority_retained": [
+        "native arbitration"
+      ],
+      "authority_transferred": [
+        "candidate formation",
+        "score formation"
+      ],
+      "adapter_id": null,
+      "adapter_owner": "external_or_configured_candidate_producer",
+      "information_lost_or_compressed": "The origin of candidates and score semantics is outside arbitration.",
+      "shared_carrier_surface": "candidate records",
+      "visible_interaction_term": "configured candidate score",
+      "separable_and_combined_controls": [
+        "hidden selection rejection",
+        "experiment if/else rejection",
+        "preselected sink rejection"
+      ],
+      "transfer_scope": "claim-boundary rejection",
+      "evidence_status": "claim_boundary_rejected",
+      "claim_ceiling": "Native selection over supplied candidates only.",
+      "blocked_relabels": [
+        "native route formation",
+        "semantic valuation"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "stages": [
+            {
+              "stage_id": "candidate_set_admission",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "stages": [
+            {
+              "stage_id": "native_arbitration",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_candidate_emission_rejects_hidden_route_selection",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        },
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_candidate_emission_rejects_experiment_if_else_input",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "a9b83dc3ca081378de961b8141c6b3f0cb8de487ac7e17c63a881f43f9d4e5d2"
+    },
+    {
+      "composition_id": "CMP-09",
+      "name": "Basin assignment into later transport",
+      "from_pathway_id": "grc9v3.identity_basin_reconstruction",
+      "from_stage_ids": [
+        "validate_and_mass_basins"
+      ],
+      "to_pathway_id": "grc9v3.synchronous_update_cycle",
+      "to_stage_ids": [
+        "transport_rebuild"
+      ],
+      "composition_status": "unsupported_missing_crossing",
+      "composition_order": [
+        "assign basin",
+        "later transport reads basin identity"
+      ],
+      "state_identity_mapping": {
+        "status": "retained_not_consumed",
+        "detail": "Basin assignments are retained but not a constitutive transport input."
+      },
+      "temporal_compatibility": {
+        "status": "same_step_but_unread",
+        "detail": "Shared synchronous timing does not create causal consumption."
+      },
+      "spatial_compatibility": {
+        "status": "available_but_unmapped",
+        "detail": "Basin regions exist, but transport consumes edge/node state instead."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "no_budget_authority",
+        "detail": "Basin ID supplies no conductance or coherence transfer term."
+      },
+      "authority_retained": [
+        "identity reconstruction",
+        "transport reconstruction"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "No basin-to-conductance/potential/flux read path exists.",
+      "shared_carrier_surface": "none",
+      "visible_interaction_term": "none",
+      "separable_and_combined_controls": [
+        "source read-path audit"
+      ],
+      "transfer_scope": "missing retained-state read path",
+      "evidence_status": "source_audit_missing_crossing",
+      "claim_ceiling": "Current basin assignment may be described, not claimed as transport mediation.",
+      "blocked_relabels": [
+        "constitutive memory",
+        "Read-Back"
+      ],
+      "source_absence_audit": {
+        "inspected_paths": [
+          "src/pygrc/models/grc_9_v3.py",
+          "src/pygrc/models/grc_9_v3_runtime.py"
+        ],
+        "missing_crossing": "transport rebuild does not consume basin assignment or basin mass",
+        "result": "unsupported_missing_crossing"
+      },
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "grc9v3.identity_basin_reconstruction",
+          "stages": [
+            {
+              "stage_id": "validate_and_mass_basins",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "stages": [
+            {
+              "stage_id": "transport_rebuild",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "768cd6716a399bf6611a5b11aea2752f145c444e7f7f78b4a60b9f036419898a"
+    },
+    {
+      "composition_id": "CMP-10",
+      "name": "Event queue mutation relabeled as causal eligibility",
+      "from_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "from_stage_ids": [
+        "packet_schedule"
+      ],
+      "to_pathway_id": "lgrc9v3.fixed_topology_eligibility",
+      "to_stage_ids": [
+        "fixed_topology_eligibility"
+      ],
+      "composition_status": "invalid_relabel",
+      "composition_order": [
+        "insert event",
+        "claim queue presence explains eligibility"
+      ],
+      "state_identity_mapping": {
+        "status": "distinct",
+        "detail": "Queue state records scheduled work; eligibility remains a separate declared predicate."
+      },
+      "temporal_compatibility": {
+        "status": "ordered_not_explanatory",
+        "detail": "Event time orders work but does not explain why it became eligible."
+      },
+      "spatial_compatibility": {
+        "status": "endpoint_only",
+        "detail": "Queue endpoints do not define generic eligibility scope."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "funding_after_admission",
+        "detail": "Packet budget validation occurs after supplied eligibility/scheduling."
+      },
+      "authority_retained": [
+        "queue commitment order",
+        "packet budget"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "The reason for admission is absent from queue mutation.",
+      "shared_carrier_surface": "event queue",
+      "visible_interaction_term": "scheduled event record",
+      "separable_and_combined_controls": [
+        "fixed-topology eligibility opt-in",
+        "queue ordering"
+      ],
+      "transfer_scope": "claim-boundary rejection",
+      "evidence_status": "claim_boundary_rejected",
+      "claim_ceiling": "Queue mutation supports scheduled execution, not native causal eligibility.",
+      "blocked_relabels": [
+        "native work admission",
+        "reason from event order"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.fixed_topology_eligibility",
+          "stages": [
+            {
+              "stage_id": "fixed_topology_eligibility",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+          "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_contract.py::LGRC9V3FixedTopologyEligibilityTest::test_fixed_topology_eligibility_is_opt_in_and_semi_causal",
+          "path": "tests/models/test_lgrc_9_v3_contract.py",
+          "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        },
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_contract.py::LGRC9V3ContractTest::test_lgrc2_packet_ledger_orders_queue_events_deterministically",
+          "path": "tests/models/test_lgrc_9_v3_contract.py",
+          "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_boundary_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "9773d058ded59782237df169bf606f9f2c1364be2c1ad2e6350c7bb53e4a90b3"
+    },
+    {
+      "composition_id": "CMP-11",
+      "name": "Configured route relabeled as native formed role",
+      "from_pathway_id": "lgrc9v3.configured_flux_route",
+      "from_stage_ids": [
+        "route_registration"
+      ],
+      "to_pathway_id": "lgrc9v3.configured_flux_route",
+      "to_stage_ids": [
+        "route_departure_production"
+      ],
+      "composition_status": "invalid_relabel",
+      "composition_order": [
+        "register route",
+        "schedule route packet",
+        "claim route formed natively"
+      ],
+      "state_identity_mapping": {
+        "status": "exact_configured",
+        "detail": "Registered route identity is consumed exactly."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Configured event times are honored."
+      },
+      "spatial_compatibility": {
+        "status": "configured",
+        "detail": "Source, edge, and target are supplied."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "configured",
+        "detail": "Amount/fraction policy remains supplied."
+      },
+      "authority_retained": [
+        "native packet queue mutation"
+      ],
+      "authority_transferred": [
+        "route role",
+        "route topology meaning",
+        "amount policy"
+      ],
+      "adapter_id": null,
+      "adapter_owner": "configuration_or_producer",
+      "information_lost_or_compressed": "No formation process is represented.",
+      "shared_carrier_surface": "configured route table",
+      "visible_interaction_term": "route policy record",
+      "separable_and_combined_controls": [
+        "disabled producer",
+        "static route autonomy boundary"
+      ],
+      "transfer_scope": "claim-boundary rejection",
+      "evidence_status": "claim_boundary_rejected",
+      "claim_ceiling": "Configured-route packet production only.",
+      "blocked_relabels": [
+        "native route formation",
+        "semantic role formation"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.configured_flux_route",
+          "stages": [
+            {
+              "stage_id": "route_registration",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.configured_flux_route",
+          "stages": [
+            {
+              "stage_id": "route_departure_production",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py::LGRC9V3NativePacketLoopBaselineTest::test_existing_static_route_autonomy_is_not_d2_3_equivalent",
+          "path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+          "sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "0a725002fc4e49db2f61a98a67281e5ad4b54c64612182178789e4f2a32f8232"
+    },
+    {
+      "composition_id": "CMP-12",
+      "name": "Route surplus into packet continuation",
+      "from_pathway_id": "lgrc9v3.route_aspect_surplus",
+      "from_stage_ids": [
+        "surplus_evaluation",
+        "surplus_packet_schedule"
+      ],
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "evaluate configured surplus",
+        "schedule packet",
+        "process packet lifecycle"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Scheduled packet ID and event IDs link surplus evidence to transport."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Producer event time and packet event times are explicit."
+      },
+      "spatial_compatibility": {
+        "status": "compatible_configured",
+        "detail": "Configured channel first hop supplies packet endpoints."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Packet amount is checked against source coherence and lifecycle budget."
+      },
+      "authority_retained": [
+        "native surplus evaluator",
+        "native packet lifecycle"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "information_lost_or_compressed": "Surplus is compressed to one configured packet amount.",
+      "shared_carrier_surface": "autonomous production record and packet ledger",
+      "visible_interaction_term": "schedule_packet_departure call with surplus evidence",
+      "separable_and_combined_controls": [
+        "subthreshold",
+        "overdraw",
+        "idempotency",
+        "parent-arrival requirement"
+      ],
+      "transfer_scope": "configured route-aspect channel",
+      "evidence_status": "current_source_crossing_passed_with_configured_semantics",
+      "claim_ceiling": "Native mechanics for configured surplus-to-packet continuation.",
+      "blocked_relabels": [
+        "semantic abundance",
+        "native route formation",
+        "general self-rearm"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.route_aspect_surplus",
+          "stages": [
+            {
+              "stage_id": "surplus_evaluation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "surplus_packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "source_debit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "target_credit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py::LGRC9V3RouteAspectSurplusTriggerTest::test_self_rearm_candidate_and_completion_chain_are_native_artifacts",
+          "path": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+          "sha256": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py::LGRC9V3RouteAspectSurplusTriggerTest::test_self_rearm_candidate_requires_prior_parent_arrival",
+          "path": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+          "sha256": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "e226c5ad891171d6812f704d993258d54081b29ad37ce8c0e0bcb8b0225f8594"
+    },
+    {
+      "composition_id": "CMP-13",
+      "name": "Outward flux and front capacity into boundary birth",
+      "from_pathway_id": "lgrc9v3.boundary_birth",
+      "from_stage_ids": [
+        "birth_trial_production"
+      ],
+      "to_pathway_id": "lgrc9v3.boundary_birth",
+      "to_stage_ids": [
+        "birth_trial_commit"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "evaluate front-capacity birth",
+        "queue trial",
+        "commit accepted trial"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Trial identity carries parent, port, pressure, and RNG evidence to commit."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Queued trial and event-time commit are explicit."
+      },
+      "spatial_compatibility": {
+        "status": "compatible_configured",
+        "detail": "Front-capacity metadata scopes the parent port."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Parent debit equals child credit."
+      },
+      "authority_retained": [
+        "native/configured eligibility",
+        "LGRC topology commitment"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "information_lost_or_compressed": "No hidden topology relation is introduced after trial admission.",
+      "shared_carrier_surface": "boundary-birth trial queue",
+      "visible_interaction_term": "accepted trial consumed by step",
+      "separable_and_combined_controls": [
+        "policy disabled",
+        "missing front capacity",
+        "RNG rejection",
+        "budget"
+      ],
+      "transfer_scope": "one configured parent-port birth",
+      "evidence_status": "current_source_crossing_passed_with_configured_semantics",
+      "claim_ceiling": "Native configured boundary-birth mechanics only.",
+      "blocked_relabels": [
+        "generic admission",
+        "semantic reproduction"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "stages": [
+            {
+              "stage_id": "birth_trial_production",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "stages": [
+            {
+              "stage_id": "birth_trial_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_causal_boundary_birth_uses_grc9v3_probability_and_preserves_budget",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_causal_boundary_birth_front_capacity_rejects_missing_or_wrong_port",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "67e9423f4471d67a9be9184e4739f8bef9aec1d405ac04f5f65e57b104e527be"
+    },
+    {
+      "composition_id": "CMP-14",
+      "name": "Boundary-birth admission relabeled as generic packet admission",
+      "from_pathway_id": "lgrc9v3.boundary_birth",
+      "from_stage_ids": [
+        "birth_trial_production"
+      ],
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule"
+      ],
+      "composition_status": "invalid_relabel",
+      "composition_order": [
+        "admit topology birth",
+        "claim any current can schedule packet work"
+      ],
+      "state_identity_mapping": {
+        "status": "incompatible",
+        "detail": "Birth trial fields do not map to packet source/target/amount."
+      },
+      "temporal_compatibility": {
+        "status": "distinct_queues",
+        "detail": "Birth and packet queues share scheduling infrastructure but different contracts."
+      },
+      "spatial_compatibility": {
+        "status": "topology_specific",
+        "detail": "Birth eligibility is parent-port local, not a packet route."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "distinct",
+        "detail": "Birth transfer and packet amount have separate invariants."
+      },
+      "authority_retained": [
+        "event queue machinery"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "All generic packet admission coordinates are missing.",
+      "shared_carrier_surface": "shared event scheduler only",
+      "visible_interaction_term": "none",
+      "separable_and_combined_controls": [
+        "birth-only queue",
+        "interleaved queue",
+        "packet starvation control"
+      ],
+      "transfer_scope": "invalid topology-specific-to-generic promotion",
+      "evidence_status": "claim_boundary_rejected",
+      "claim_ceiling": "Boundary-birth eligibility remains topology-specific.",
+      "blocked_relabels": [
+        "generic current-to-packet admission"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "stages": [
+            {
+              "stage_id": "birth_trial_production",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_run_event_queue_processes_birth_only_queue",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_boundary_control"
+        },
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_run_event_queue_interleaves_packet_and_birth_queues",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_boundary_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "f7eb3d5563e95a9e478d4fe7ca21eee9f4d43eb622a5a621a6f077f28a39a08a"
+    },
+    {
+      "composition_id": "CMP-15",
+      "name": "Causal spark candidate into mechanical refinement",
+      "from_pathway_id": "lgrc9v3.causal_spark_topology_integration",
+      "from_stage_ids": [
+        "causal_spark_diagnostic"
+      ],
+      "to_pathway_id": "lgrc9v3.causal_spark_topology_integration",
+      "to_stage_ids": [
+        "topology_integration",
+        "packet_and_lineage_transport"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "emit candidate",
+        "validate enabled integration",
+        "commit refinement",
+        "transport lineage"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Candidate and topology event identities connect diagnostic to commit."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Arrival-local candidate precedes topology integration in event time."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Candidate-local topology region determines refinement scope."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Parent coherence transfer and packet lineage budgets are checked."
+      },
+      "authority_retained": [
+        "native diagnostic predicate",
+        "configured integration gate",
+        "native topology commit"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "information_lost_or_compressed": "Candidate diagnostics are reduced to the declared mechanical integration payload.",
+      "shared_carrier_surface": "candidate and topology event records",
+      "visible_interaction_term": "active topology integration consumes causal candidate",
+      "separable_and_combined_controls": [
+        "large-gradient block",
+        "policy disabled",
+        "missing lineage",
+        "budget mismatch"
+      ],
+      "transfer_scope": "enabled LGRC-3 causal spark policy",
+      "evidence_status": "current_source_crossing_passed_with_configured_semantics",
+      "claim_ceiling": "Native configured spark-to-refinement mechanics.",
+      "blocked_relabels": [
+        "semantic creation",
+        "identity acceptance"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.causal_spark_topology_integration",
+          "stages": [
+            {
+              "stage_id": "causal_spark_diagnostic",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.causal_spark_topology_integration",
+          "stages": [
+            {
+              "stage_id": "topology_integration",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "packet_and_lineage_transport",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_active_topology_integration_expands_causal_lane_b_candidate",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_causal_lane_b_large_gradient_column_h_hit_is_blocked",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "d9a4aa19a57ffa58907d26d85279fa8d9a085efaa1453e9a2c9555ee0b513f6b"
+    },
+    {
+      "composition_id": "CMP-16",
+      "name": "Arbitrated collapse into lineage and active-state transport",
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "from_stage_ids": [
+        "selection_commit"
+      ],
+      "to_pathway_id": "lgrc9v3.collapse_reabsorption",
+      "to_stage_ids": [
+        "topology_reabsorption_commit",
+        "active_state_transport"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "commit selected collapse",
+        "transport packet/lineage/surface state"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Topology event, lineage map, packet ledger, and active-state digests are linked."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Active-state transport follows the committed topology event."
+      },
+      "spatial_compatibility": {
+        "status": "compatible",
+        "detail": "Reabsorption maps old nodes to the selected sink region."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Coherence and packet budgets remain closed."
+      },
+      "authority_retained": [
+        "native arbitration commit",
+        "native reabsorption transport"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "information_lost_or_compressed": "Old endpoint identities are mapped or explicitly superseded.",
+      "shared_carrier_surface": "topology event and lineage transfer map",
+      "visible_interaction_term": "process_causal_collapse_reabsorption plus state reabsorption",
+      "separable_and_combined_controls": [
+        "missing lineage",
+        "missing topology event",
+        "direct rewrite",
+        "budget drift"
+      ],
+      "transfer_scope": "selected collapse/reabsorption region",
+      "evidence_status": "current_source_crossing_passed_with_configured_semantics",
+      "claim_ceiling": "Native commit and state-transport mechanics; candidate formation remains separate.",
+      "blocked_relabels": [
+        "semantic death",
+        "native candidate formation"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "stages": [
+            {
+              "stage_id": "selection_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.collapse_reabsorption",
+          "stages": [
+            {
+              "stage_id": "topology_reabsorption_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "active_state_transport",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_arbitration_commit_integrates_topology_and_producer",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        },
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_topology_state_reabsorption_updates_active_state_after_collapse",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_topology_state_reabsorption_requires_complete_lineage",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "8acfa2ab19bd23d587068ef65d02798685e1b64ee739e3907ac2c1e0ab54a0e6"
+    },
+    {
+      "composition_id": "CMP-17",
+      "name": "Derived history into temporary conductance and later flux",
+      "from_pathway_id": "lgrc9v3.causal_history_annotation",
+      "from_stage_ids": [
+        "assemble_causal_annotation"
+      ],
+      "to_pathway_id": "grc9v3.synchronous_update_cycle",
+      "to_stage_ids": [
+        "transport_rebuild"
+      ],
+      "composition_status": "producer_mediated",
+      "composition_order": [
+        "derive exact history",
+        "producer maps history to conductance",
+        "rebuild later flux"
+      ],
+      "state_identity_mapping": {
+        "status": "producer_projection",
+        "detail": "Experiment-local closure derives conductance from native history; runtime does not own the mapping."
+      },
+      "temporal_compatibility": {
+        "status": "pre_step_adapter",
+        "detail": "The producer applies a bounded pre-step closure before native transport rebuild."
+      },
+      "spatial_compatibility": {
+        "status": "route_local",
+        "detail": "History and conductance mapping are restricted to declared route edges."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "conservative_adapter",
+        "detail": "Producer must preserve coherence and declare conductance bounds."
+      },
+      "authority_retained": [
+        "native history",
+        "native GRC transport"
+      ],
+      "authority_transferred": [
+        "history functional",
+        "conductance update",
+        "decay/progression schedule"
+      ],
+      "adapter_id": "N31_C2_exact_history_closure",
+      "adapter_owner": "experiment_producer",
+      "information_lost_or_compressed": "History is compressed to one temporary conductance multiplier.",
+      "shared_carrier_surface": "N31 composed identity and closure record",
+      "visible_interaction_term": "producer-derived temporary conductance",
+      "separable_and_combined_controls": [
+        "same native state/different history",
+        "tampered history",
+        "producer omitted",
+        "replay"
+      ],
+      "transfer_scope": "bounded N31 C2 route-local closure",
+      "evidence_status": "producer_evidence_only",
+      "claim_ceiling": "Producer-mediated exact-history conductance candidate; not a native read path.",
+      "blocked_relabels": [
+        "lawful_native",
+        "native D0 decay",
+        "coherence-only ontology closure"
+      ],
+      "source_absence_audit": {
+        "inspected_paths": [
+          "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "src/pygrc/models/grc_9_v3.py"
+        ],
+        "missing_crossing": "ordinary runtime has no history-to-conductance read path",
+        "result": "producer_required"
+      },
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.causal_history_annotation",
+          "stages": [
+            {
+              "stage_id": "assemble_causal_annotation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "grc9v3.synchronous_update_cycle",
+          "stages": [
+            {
+              "stage_id": "transport_rebuild",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [],
+      "crossing_evidence_refs": [
+        {
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_native_exact_history_closure_i9c2.json",
+          "sha256": "035c7f7b0933ddca649ab17809222efd5e1e27da08980dc33e4f2abf32a26995",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "producer_crossing_evidence"
+        },
+        {
+          "path": "experiments/2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/outputs/n31_added_mechanism_replay_controls_i10.json",
+          "sha256": "c8bf981ae9b5d59e2e486dc1c53bf84a1859ddf4569d4eea4c253e85039872af",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "producer_replay_and_controls"
+        }
+      ],
+      "crossing_negative_control_refs": [],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "d08d4f6be3c29cb0f64044777a449b831ef64e4b6879f8ff7cb776c10a97f8e1"
+    },
+    {
+      "composition_id": "CMP-18",
+      "name": "Ledger persistence into native Read-Back",
+      "from_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "from_stage_ids": [
+        "target_credit"
+      ],
+      "to_pathway_id": "pygrc.restoration_replay_identity",
+      "to_stage_ids": [
+        "identity_and_replay_validation"
+      ],
+      "composition_status": "unsupported_missing_crossing",
+      "composition_order": [
+        "retain ledger",
+        "restore it",
+        "claim later constitutive read"
+      ],
+      "state_identity_mapping": {
+        "status": "persisted_not_consumed",
+        "detail": "Restoration identity preserves ledger state but does not add a read path."
+      },
+      "temporal_compatibility": {
+        "status": "replay_compatible",
+        "detail": "Ledger can survive replay without becoming a later cause."
+      },
+      "spatial_compatibility": {
+        "status": "persisted_scope",
+        "detail": "Packet endpoints remain represented."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "descriptive_only",
+        "detail": "Restored budget identity does not authorize new work."
+      },
+      "authority_retained": [
+        "packet persistence",
+        "restoration validation"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "No constitutive write/read interaction is produced.",
+      "shared_carrier_surface": "snapshot and restoration identity",
+      "visible_interaction_term": "none",
+      "separable_and_combined_controls": [
+        "identity sensitivity",
+        "equal-input replay",
+        "no semantic promotion"
+      ],
+      "transfer_scope": "missing retained-ledger read path",
+      "evidence_status": "source_audit_missing_crossing",
+      "claim_ceiling": "Ledger persistence and replay identity only.",
+      "blocked_relabels": [
+        "native Read-Back",
+        "memory-mediated action"
+      ],
+      "source_absence_audit": {
+        "inspected_paths": [
+          "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "src/pygrc/models/lgrc_9_v3_restoration.py"
+        ],
+        "missing_crossing": "restoration preserves packet ledger but no native constitutive consumer reads ledger history to alter later eligibility or geometry",
+        "result": "unsupported_missing_crossing"
+      },
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "target_credit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "stages": [
+            {
+              "stage_id": "identity_and_replay_validation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "35c7db7c8dd2803ea2ce91dfa763c9320cb52762c40e4d70ec3ddb2b78aace43"
+    },
+    {
+      "composition_id": "CMP-19",
+      "name": "Restoration identity relabeled as unrestricted identity",
+      "from_pathway_id": "pygrc.restoration_replay_identity",
+      "from_stage_ids": [
+        "identity_and_replay_validation"
+      ],
+      "to_pathway_id": "pygrc.restoration_replay_identity",
+      "to_stage_ids": [
+        "identity_and_replay_validation"
+      ],
+      "composition_status": "invalid_relabel",
+      "composition_order": [
+        "compare versioned projection",
+        "claim unrestricted behavioral identity"
+      ],
+      "state_identity_mapping": {
+        "status": "scope_bounded",
+        "detail": "Identity includes only schema-declared scientific state."
+      },
+      "temporal_compatibility": {
+        "status": "replay_scoped",
+        "detail": "Equal-input continuation is tested only within declared replay scope."
+      },
+      "spatial_compatibility": {
+        "status": "model_scoped",
+        "detail": "Identity covers the declared model projection."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "not_applicable",
+        "detail": "Digest equality is not a budget or action authority."
+      },
+      "authority_retained": [
+        "versioned comparison contract"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "none",
+      "information_lost_or_compressed": "Representation-only caches and out-of-schema meanings are excluded intentionally.",
+      "shared_carrier_surface": "restoration identity projection",
+      "visible_interaction_term": "versioned equality predicate",
+      "separable_and_combined_controls": [
+        "included-state sensitivity",
+        "cache-only normalization",
+        "legacy baseline policy"
+      ],
+      "transfer_scope": "claim-boundary rejection",
+      "evidence_status": "claim_boundary_rejected",
+      "claim_ceiling": "Versioned restoration/replay identity only.",
+      "blocked_relabels": [
+        "byte identity",
+        "unrestricted behavioral identity",
+        "semantic selfhood"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "stages": [
+            {
+              "stage_id": "identity_and_replay_validation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "stages": [
+            {
+              "stage_id": "identity_and_replay_validation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+          "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_restoration_matrix.py::LGRC9V3RestorationSensitivityMatrixTests::test_lgrc_queue_clock_ledger_route_topology_and_producer_sensitivity",
+          "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+          "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_boundary_control"
+        },
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_restoration.py::LGRC9V3CompositeRestorationIdentityTests::test_public_identity_rejects_unsupported_or_malformed_sources",
+          "path": "tests/models/test_lgrc_9_v3_restoration.py",
+          "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "58dfe266e6b64d787c39eb54750000d55aaecb56ef2813dc0c12492d69e9563d"
+    },
+    {
+      "composition_id": "CMP-20",
+      "name": "Feedback eligibility producer into packet mechanics",
+      "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "from_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ],
+      "composition_status": "producer_mediated",
+      "composition_order": [
+        "producer reads feedback surface",
+        "producer schedules packet",
+        "native lifecycle commits"
+      ],
+      "state_identity_mapping": {
+        "status": "exact_with_producer",
+        "detail": "Producer record links consumed surface to scheduled packet ID."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Producer read and packet schedule are time-scoped."
+      },
+      "spatial_compatibility": {
+        "status": "configured",
+        "detail": "Feedback relation and packet route are configured."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Native packet lifecycle enforces budget after producer schedule."
+      },
+      "authority_retained": [
+        "native packet mutation",
+        "surface lineage validity"
+      ],
+      "authority_transferred": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "shared_carrier_surface": "surface lineage and autonomous production record",
+      "visible_interaction_term": "producer schedule_packet_departure call",
+      "separable_and_combined_controls": [
+        "policy disabled",
+        "wrong polarity",
+        "order mismatch",
+        "budget violation",
+        "duplicate"
+      ],
+      "transfer_scope": "configured feedback surface and route",
+      "evidence_status": "current_source_producer_crossing_passed",
+      "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+      "blocked_relabels": [
+        "lawful_native",
+        "native feedback admission"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "stages": [
+            {
+              "stage_id": "feedback_packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "source_debit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "target_credit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_feedback_surface_and_producer_schedule_via_packet_queue_only",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_feedback_coupled_pulse_budget_violation_fails_closed",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "c18a2bd253def7c1f9800405fb0bd764265df2eb0ca49c3e912f65dd260477c1"
+    },
+    {
+      "composition_id": "CMP-21",
+      "name": "Packet arrival into causal pulse surface emission",
+      "from_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "from_stage_ids": [
+        "target_credit"
+      ],
+      "to_pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "to_stage_ids": [
+        "surface_row_emission"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "commit packet arrival",
+        "emit configured surface row"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Surface row cites committed packet/event identity."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Row emission occurs after packet commit at the same event frontier."
+      },
+      "spatial_compatibility": {
+        "status": "contact_local",
+        "detail": "Surface key is scoped to the arrival contact."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "no_hidden_budget",
+        "detail": "Surface emission is descriptive and does not move coherence."
+      },
+      "authority_retained": [
+        "native packet commit",
+        "configured surface emission"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "information_lost_or_compressed": "Packet state is projected to a declared surface schema.",
+      "shared_carrier_surface": "packet event and surface row",
+      "visible_interaction_term": "post-commit surface hook",
+      "separable_and_combined_controls": [
+        "surface policy disabled",
+        "sub-LGRC2",
+        "early producer",
+        "digest mismatch"
+      ],
+      "transfer_scope": "qualifying configured packet contact",
+      "evidence_status": "current_source_crossing_passed_with_configured_semantics",
+      "claim_ceiling": "Native configured packet-to-surface recording mechanics.",
+      "blocked_relabels": [
+        "native memory",
+        "Read-Back"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "stages": [
+            {
+              "stage_id": "target_credit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+          "stages": [
+            {
+              "stage_id": "surface_row_emission",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_enabled_pulse_substrate_surface_emits_after_committed_packet_event",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_pulse_substrate_surface_is_default_off_for_packet_events",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "3bddb606d1470f9b45a3b18867381aab1f7fe8f7f00e0cb3585540c5f13ce774"
+    },
+    {
+      "composition_id": "CMP-22",
+      "name": "Transported surface lineage into feedback scheduling",
+      "from_pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "from_stage_ids": [
+        "surface_lineage_transport",
+        "surface_reabsorption"
+      ],
+      "to_pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "to_stage_ids": [
+        "feedback_surface_registration",
+        "feedback_packet_schedule"
+      ],
+      "composition_status": "producer_mediated",
+      "composition_order": [
+        "transport/reabsorb surface",
+        "producer reads successor row",
+        "producer schedules packet"
+      ],
+      "state_identity_mapping": {
+        "status": "exact_with_producer",
+        "detail": "Lineage and supersession records identify the consumable successor row."
+      },
+      "temporal_compatibility": {
+        "status": "time_scoped",
+        "detail": "Producer read is constrained to the transported row's valid window."
+      },
+      "spatial_compatibility": {
+        "status": "lineage_mapped",
+        "detail": "Topology lineage maps source surface to successor region."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible",
+        "detail": "Surface transport is budget-neutral; packet budget begins at producer scheduling."
+      },
+      "authority_retained": [
+        "native surface lineage",
+        "native packet lifecycle"
+      ],
+      "authority_transferred": [
+        "feedback eligibility",
+        "packet schedule"
+      ],
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "information_lost_or_compressed": "Surface history is compressed to producer threshold/order evidence.",
+      "shared_carrier_surface": "surface lineage and production record",
+      "visible_interaction_term": "producer reads transported successor row",
+      "separable_and_combined_controls": [
+        "stale superseded row",
+        "missing reabsorption",
+        "order mismatch",
+        "duplicate"
+      ],
+      "transfer_scope": "transported configured surface lineage",
+      "evidence_status": "current_source_producer_crossing_passed",
+      "claim_ceiling": "Producer-mediated lineage-aware feedback scheduling.",
+      "blocked_relabels": [
+        "lawful_native",
+        "native Read-Back"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+          "stages": [
+            {
+              "stage_id": "surface_lineage_transport",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "surface_reabsorption",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "stages": [
+            {
+              "stage_id": "feedback_surface_registration",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "feedback_packet_schedule",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_feedback_producer_reads_transported_successor_row",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_feedback_producer_blocks_stale_superseded_surface_row",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "5540572131b95a470cb309142f8b1e93d70014d9824ea603441885484d98f806"
+    },
+    {
+      "composition_id": "CMP-23",
+      "name": "Collapse commit into surface lineage reabsorption",
+      "from_pathway_id": "lgrc9v3.collapse_reabsorption",
+      "from_stage_ids": [
+        "topology_reabsorption_commit",
+        "active_state_transport"
+      ],
+      "to_pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "to_stage_ids": [
+        "surface_lineage_transport",
+        "surface_reabsorption"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "commit topology event",
+        "transport/supersede rows",
+        "reabsorb active surface"
+      ],
+      "state_identity_mapping": {
+        "status": "exact",
+        "detail": "Topology event and lineage map anchor each surface transition."
+      },
+      "temporal_compatibility": {
+        "status": "compatible",
+        "detail": "Surface transport follows the committed topology event."
+      },
+      "spatial_compatibility": {
+        "status": "lineage_mapped",
+        "detail": "Affected nodes map to selected successor region."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "budget_neutral_surface",
+        "detail": "Surface transport moves no coherence and cites packet budget records."
+      },
+      "authority_retained": [
+        "native/configured collapse commit",
+        "native/configured surface lineage"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_with_configured_semantics",
+      "information_lost_or_compressed": "Stale source rows are superseded rather than silently copied.",
+      "shared_carrier_surface": "topology event and lineage records",
+      "visible_interaction_term": "topology reabsorption hook updates active surface state",
+      "separable_and_combined_controls": [
+        "partial lineage map",
+        "missing topology event",
+        "duplicate",
+        "stale read"
+      ],
+      "transfer_scope": "affected topology region",
+      "evidence_status": "current_source_crossing_passed_with_configured_semantics",
+      "claim_ceiling": "Native configured topology-to-surface-lineage mechanics.",
+      "blocked_relabels": [
+        "semantic identity continuity",
+        "native memory"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.collapse_reabsorption",
+          "stages": [
+            {
+              "stage_id": "topology_reabsorption_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "active_state_transport",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+          "stages": [
+            {
+              "stage_id": "surface_lineage_transport",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "surface_reabsorption",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_topology_state_reabsorption_updates_active_state_after_collapse",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        },
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_surface_lineage_transports_rows_with_complete_node_map",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_surface_lineage_transport_partial_map_fails_closed_to_supersession",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "a108fd14939be66fc431954ab0512a6b4fc998d953471748d9b6da775a8e4820"
+    },
+    {
+      "composition_id": "CMP-24",
+      "name": "Arbitration topology commit into multi-basin records",
+      "from_pathway_id": "lgrc9v3.native_route_arbitration",
+      "from_stage_ids": [
+        "selection_commit"
+      ],
+      "to_pathway_id": "lgrc9v3.multi_basin_record_validation",
+      "to_stage_ids": [
+        "flow_and_child_record_emission"
+      ],
+      "composition_status": "diagnostic_only",
+      "composition_order": [
+        "commit selected topology",
+        "emit flow and child-basin records"
+      ],
+      "state_identity_mapping": {
+        "status": "exact_diagnostic_projection",
+        "detail": "Records cite committed topology and candidate identities."
+      },
+      "temporal_compatibility": {
+        "status": "post_commit",
+        "detail": "Emission occurs only after the topology commit."
+      },
+      "spatial_compatibility": {
+        "status": "child_parent_regions",
+        "detail": "Records project the affected child/parent regions."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "descriptive",
+        "detail": "Records observe budget/flux and do not authorize mutation."
+      },
+      "authority_retained": [
+        "native topology commit",
+        "diagnostic record validation"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "runtime_diagnostic_hook",
+      "information_lost_or_compressed": "Runtime state is compressed to flow-window and child-basin schemas.",
+      "shared_carrier_surface": "committed topology event",
+      "visible_interaction_term": "post-commit multi-basin emitter",
+      "separable_and_combined_controls": [
+        "policy disabled",
+        "malformed event",
+        "duplicate",
+        "replay mismatch"
+      ],
+      "transfer_scope": "enabled multi-basin diagnostic policy",
+      "evidence_status": "current_source_diagnostic_crossing_passed",
+      "claim_ceiling": "Diagnostic records over a committed native/configured topology event.",
+      "blocked_relabels": [
+        "basin formation by record",
+        "general robustness"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "stages": [
+            {
+              "stage_id": "selection_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.multi_basin_record_validation",
+          "stages": [
+            {
+              "stage_id": "flow_and_child_record_emission",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_commit_emits_multi_basin_candidate_records_when_enabled",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_native_route_multi_basin_wrong_policy_emits_no_records",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "9295dc76657d49b037cc309a4f7cc57c5559c4aa52a110003af598f91b320248"
+    },
+    {
+      "composition_id": "CMP-25",
+      "name": "Snapshot through load/reset and restoration validation",
+      "from_pathway_id": "pygrc.restoration_replay_identity",
+      "from_stage_ids": [
+        "snapshot_serialization"
+      ],
+      "to_pathway_id": "pygrc.restoration_replay_identity",
+      "to_stage_ids": [
+        "load_and_reset_restoration",
+        "identity_and_replay_validation"
+      ],
+      "composition_status": "lawful_native",
+      "composition_order": [
+        "serialize snapshot",
+        "load/reset baseline",
+        "validate identity and replay"
+      ],
+      "state_identity_mapping": {
+        "status": "versioned_exact",
+        "detail": "Schema-declared scientific state and reset baseline are restored."
+      },
+      "temporal_compatibility": {
+        "status": "checkpoint_and_replay",
+        "detail": "Identity is evaluated at declared checkpoints/windows."
+      },
+      "spatial_compatibility": {
+        "status": "model_scope",
+        "detail": "The declared model projection is preserved."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "not_applicable",
+        "detail": "Restoration validates included state rather than authorizing transfer."
+      },
+      "authority_retained": [
+        "versioned loader",
+        "identity validator"
+      ],
+      "authority_transferred": [],
+      "adapter_id": null,
+      "adapter_owner": "native_utility",
+      "information_lost_or_compressed": "Representation-only caches are excluded by versioned contract.",
+      "shared_carrier_surface": "canonical snapshot and identity projection",
+      "visible_interaction_term": "load plus identity/replay validator",
+      "separable_and_combined_controls": [
+        "legacy baseline",
+        "malformed source",
+        "included-state sensitivity",
+        "repeated save/load"
+      ],
+      "transfer_scope": "versioned restoration schema",
+      "evidence_status": "current_source_crossing_passed",
+      "claim_ceiling": "Versioned restoration/reset/replay utility mechanics.",
+      "blocked_relabels": [
+        "byte identity",
+        "unrestricted behavioral identity",
+        "semantic identity"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "stages": [
+            {
+              "stage_id": "snapshot_serialization",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "stages": [
+            {
+              "stage_id": "load_and_reset_restoration",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "identity_and_replay_validation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+          "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/grc_9_v3.py",
+          "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_reset_baseline_persistence.py::ResetBaselinePersistenceTests::test_lgrc_identity_v2_is_stable_across_save_load",
+          "path": "tests/models/test_reset_baseline_persistence.py",
+          "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_reset_baseline_persistence.py::ResetBaselinePersistenceTests::test_legacy_snapshot_loads_but_reset_requires_explicit_rebase",
+          "path": "tests/models/test_reset_baseline_persistence.py",
+          "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "dbd356176b6dd31149f19733e7efa2ab5845662deed5622845198d3758beb282"
+    },
+    {
+      "composition_id": "CMP-26",
+      "name": "GRC front-capacity state into LGRC boundary-birth runtime",
+      "from_pathway_id": "grc9v3.front_capacity_growth",
+      "from_stage_ids": [
+        "front_capacity_growth_eligibility",
+        "front_propagation"
+      ],
+      "to_pathway_id": "lgrc9v3.boundary_birth",
+      "to_stage_ids": [
+        "birth_trial_production",
+        "birth_trial_commit"
+      ],
+      "composition_status": "lawful_with_explicit_adapter",
+      "composition_order": [
+        "construct LGRC from GRC base state",
+        "supply explicit causal modes",
+        "prime boundary trial",
+        "commit through LGRC step"
+      ],
+      "state_identity_mapping": {
+        "status": "explicit_construction_mapping",
+        "detail": "LGRC9V3.from_state carries GRC base state; construction policy supplies LGRC modes."
+      },
+      "temporal_compatibility": {
+        "status": "adapter_required",
+        "detail": "Synchronous GRC state is placed at an explicit LGRC event-time frontier."
+      },
+      "spatial_compatibility": {
+        "status": "front_metadata_preserved",
+        "detail": "Configured front-capacity parent/port metadata is retained."
+      },
+      "budget_or_invariant_compatibility": {
+        "status": "compatible_when_declared",
+        "detail": "Construction and birth policies must preserve parent/child coherence budget."
+      },
+      "authority_retained": [
+        "GRC front-capacity state",
+        "LGRC native/configured birth commit"
+      ],
+      "authority_transferred": [
+        "runtime wrapping",
+        "causal modes",
+        "queue priming"
+      ],
+      "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+      "adapter_owner": "library_construction_adapter_invoked_by_caller",
+      "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "shared_carrier_surface": "GRC base state plus explicit construction policy",
+      "visible_interaction_term": "GRC-to-LGRC construction and queue priming helper",
+      "separable_and_combined_controls": [
+        "missing front metadata",
+        "policy disabled",
+        "wrong port",
+        "budget"
+      ],
+      "transfer_scope": "explicit corrected-cascade construction only",
+      "evidence_status": "current_source_adapter_crossing_passed",
+      "claim_ceiling": "Lawful explicit construction adapter; not native cross-runtime formation or inherited event history.",
+      "blocked_relabels": [
+        "lawful_native",
+        "automatic time-semantics conversion",
+        "native role formation"
+      ],
+      "source_absence_audit": null,
+      "endpoint_evidence_refs": [
+        {
+          "pathway_id": "grc9v3.front_capacity_growth",
+          "stages": [
+            {
+              "stage_id": "front_capacity_growth_eligibility",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "front_propagation",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        },
+        {
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "stages": [
+            {
+              "stage_id": "birth_trial_production",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            },
+            {
+              "stage_id": "birth_trial_commit",
+              "evidence_status": "current_source_passed",
+              "test_execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5"
+            }
+          ],
+          "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+        }
+      ],
+      "crossing_source_refs": [
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        },
+        {
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "evidence_role": "crossing_source_semantics"
+        }
+      ],
+      "crossing_evidence_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_construction.py::LGRC9V3ConstructionTest::test_corrected_cascade_queue_policy_is_explicit",
+          "path": "tests/models/test_lgrc_9_v3_construction.py",
+          "sha256": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_positive"
+        }
+      ],
+      "crossing_negative_control_refs": [
+        {
+          "node_id": "tests/models/test_lgrc_9_v3_runtime.py::LGRC9V3RuntimeTest::test_causal_boundary_birth_front_capacity_rejects_missing_or_wrong_port",
+          "path": "tests/models/test_lgrc_9_v3_runtime.py",
+          "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+          "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+          "execution_status": "current_source_passed",
+          "evidence_role": "crossing_negative_control"
+        }
+      ],
+      "endpoint_coverage_used_as_crossing_evidence": false,
+      "row_digest": "ee3900f5902d74d7a63753dfe9649be422d65787ff2cbf41e9de81fa91545179"
+    }
+  ],
+  "runtime_behavior_changed": false,
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90"
+}

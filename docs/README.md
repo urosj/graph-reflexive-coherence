@@ -35,11 +35,19 @@ Current guides:
 - [Motion](reference/Motion-ReferenceGuide.md)
 - [Telemetry](reference/Telemetry-ReferenceGuide.md)
 
-The causal pathway guide and composition matrix are draft surfaces from the
-Phase 8 causal-pathway consolidation tranche. Iteration 105 has frozen their
-initial source anchor and twelve-family admission census; the exhaustive
-surface audit, final registry decomposition, crosswalk, matrix, and selection
-guidance remain pending Iterations 106-111.
+The causal pathway guide is an evidence-derived selection surface from the
+completed Phase 8 causal-pathway consolidation tranche. Iteration 111 closes
+the source-complete V1 audit, 23-pathway registry, 52-row stage-local evidence
+crosswalk, 26-row directional composition matrix, six-class worked selection
+guide, and 20-rule conformance policy. Its 22 expert-normalized pressure cases,
+seven raw-domain demands, and answer-free blind replay preserve mechanism
+ownership, novelty, and claim boundaries without hidden source reading. The
+replay is frozen before a separate oracle validates recovery. No runtime
+dispatcher or behavior was added. Reproducibility builders live under
+`scripts/`; essential lifecycle documents remain at the `implementation/`
+root, and the source audit plus I106-I111 supporting evidence are indexed in
+`implementation/investigations/causal-pathway-consolidation/`. The path-only
+evidence-identity transitions are recorded explicitly.
 
 Status notes:
 

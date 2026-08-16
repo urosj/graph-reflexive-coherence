@@ -1,0 +1,11 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 independent blind replay freeze",
+  "schema_version": "phase8_grclgrc_i111_blind_replay_freeze_v1",
+  "iteration": 111,
+  "blind_input_sha256": "4a47097dd97c846f9690f52a305a78a1ea83537c3508124a9a932ec5ee8470c4",
+  "blind_input_description_digest": "ce0a33ba6dbdfc7137abf5557dc6d7d166ea2600b590b49b9cd5ed65276d7809",
+  "replay_sha256": "ea99d74f14f223cff4d5c6887b0680f2fc19d6acb794a66097617136d2c525a0",
+  "replay_execution_digest": "02f8a53060244c7b0f73375f9fea62e50c2eea7ce291e3d1a3753e4b7338162a",
+  "oracle_compared": false,
+  "freeze_digest": "e74a09b2c962d242c179f01aa0b3601b86e38334992fcd082bd55c2426c1c98b"
+}

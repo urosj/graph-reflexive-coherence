@@ -24,9 +24,20 @@ All planned guides in the current documentation checklist are present and
 cross-linked. Future additions should extend this index and update
 `Documentation-Checklist.md`.
 
-The causal pathway guide and composition matrix are draft Phase 8
-consolidation surfaces. They classify existing contracts and do not introduce
-runtime behavior or independently prove that a pathway executed.
+The causal pathway guide is frozen as a Phase 8 evidence-derived selection
+surface. The intrinsic 23-pathway registry, 52-row stage-local evidence
+crosswalk, 26-row directional composition matrix, ten worked selection cases,
+and 20-rule machine conformance policy are complete through Iteration 111. The
+20 global negative controls and 19 non-digest rule-isolation controls fail
+closed. A 22-row, 11-category expert pressure corpus, seven raw-domain demands,
+and one answer-free blind replay pass without hidden source reading or claim
+promotion. The raw layer preserves pathway-only and genuinely unregistered
+outcomes; the replay is frozen before separate oracle validation. These
+artifacts do not introduce runtime behavior, and the policy retains versioned
+stale-to-reviewed re-admission. I106-I111 builders live under `scripts/`; their
+supporting evidence is indexed under
+`implementation/investigations/causal-pathway-consolidation/`, and earlier
+bundle identities remain explicit provenance rather than alternate authority.
 
 GRC9V3 Lane B interpretation is split by responsibility:
 `GRC-Runtime-ReferenceGuide.md` covers lane behavior, `Telemetry-ReferenceGuide.md`

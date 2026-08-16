@@ -1,0 +1,40 @@
+{
+  "artifact": "Phase 8 GRC/LGRC I111 raw-domain demand descriptions",
+  "schema_version": "phase8_grclgrc_i111_raw_demand_descriptions_v1",
+  "iteration": 111,
+  "source_revision": "e234fde9fd8c2e894eb4eba305ea90f7e4156ae5",
+  "description_rule": "These inputs contain consumer language only; expert normalization and substrate selection are recorded separately.",
+  "raw_demand_count": 7,
+  "raw_demands": [
+    {
+      "raw_demand_id": "RAW-01",
+      "consumer_language": "I already know the source, receiver, amount, and delay. I only need the amount to leave, remain in flight, and arrive without creating a second composition."
+    },
+    {
+      "raw_demand_id": "RAW-02",
+      "consumer_language": "A participant is depleted while nearby regions have excess capacity. I want current state to form possible receivers and decide a viable continuation without supplying a fixed target."
+    },
+    {
+      "raw_demand_id": "RAW-03",
+      "consumer_language": "Several routes look possible. I want current sink compatibility to determine which route becomes scheduled rather than supplying the route myself."
+    },
+    {
+      "raw_demand_id": "RAW-04",
+      "consumer_language": "A trace from earlier packet activity survives replay. I need to know whether persistence alone means later native behavior reads that trace."
+    },
+    {
+      "raw_demand_id": "RAW-05",
+      "consumer_language": "One participant changes a non-private trace and a later encounter with that trace should change whether another packet is scheduled."
+    },
+    {
+      "raw_demand_id": "RAW-06",
+      "consumer_language": "Local outward pressure at a capacity-bearing boundary should create and fund a child topology without treating birth eligibility as generic exchange admission."
+    },
+    {
+      "raw_demand_id": "RAW-07",
+      "consumer_language": "After a topology commit I want child-basin and flow-window records, but I need to know whether those records caused the basin or only describe it."
+    }
+  ],
+  "runtime_behavior_changed": false,
+  "description_digest": "d79488cb35a5ab4e1e937b177e2b6373b717b2ab62c08120dde32901a15d4aee"
+}
