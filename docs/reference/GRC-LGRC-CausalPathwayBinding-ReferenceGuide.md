@@ -73,7 +73,11 @@ symbol before locking:
 ```python
 from pathlib import Path
 
-from pygrc.causal_pathways import CausalPathwayAuthority, PathwayBindingSession
+from pygrc.causal_pathways import (
+    CausalPathwayAuthority,
+    PathwayBindingSession,
+    sha256_file,
+)
 
 authority = CausalPathwayAuthority.load(Path.cwd())
 session = PathwayBindingSession(authority)
@@ -159,6 +163,14 @@ candidate = session.declare_candidate(
     proposed_relation="new post-packet snapshot relation",
     authority={"direction": "experiment producer"},
     evidence_owner="experiment_fixture",
+    mechanism_evidence={
+        "evidence_kind": "content_addressed_artifact",
+        "mechanism_id": "experiment.packet_then_snapshot",
+        "path": "implementation/evidence/packet-then-snapshot.json",
+        "sha256": sha256_file(
+            ROOT / "implementation/evidence/packet-then-snapshot.json"
+        ),
+    },
 )
 ```
 
@@ -166,10 +178,20 @@ All omitted authority coordinates become `unresolved`. Candidate claim ceiling
 is fixed to `experimental_unregistered`, promotion status is fixed to `none`,
 and native/admitted/promotion relabels are blocked.
 
-After the lock is frozen, `record_candidate_use(...)` attaches an explicit
-evidence reference. Candidate pathway nodes and composition edges are visibly
-different from admitted graph elements. A candidate can consume admitted
-constituents but cannot inherit their native or admitted status.
+The evidence path must be repository-relative and name a non-empty JSON
+artifact whose schema, mechanism identity, candidate kind, endpoints, and
+supported relation match the declaration. Its SHA-256 is frozen before use.
+For a composition candidate, execute the declared source and target handles in
+order inside `with candidate.evidence_scope():`, then call
+`record_candidate_use(candidate.candidate_id)`. The method accepts no free-form
+evidence string and revalidates the artifact before recording the derived
+scope and invocation indices.
+
+Candidate pathway nodes and composition edges are visibly different from
+admitted graph elements. A candidate can consume admitted constituents but
+cannot inherit their native or admitted status. A candidate over endpoints
+occupied by a registered invalid relabel requires a distinct content-addressed
+mechanism, and its proposed relation may not restate that row's blocked labels.
 
 Candidate declaration does not update the registry, matrix, selection guide,
 or binding map. Promotion remains a separate evidence and review process.
@@ -211,7 +233,8 @@ The receipt links to the exact lock digest and records:
 - ordered composition-scope witnesses and explicit-adapter invocations;
 - returned pathway and registered-composition use under the current outcome
   vocabulary;
-- candidate use and evidence references;
+- candidate use, content-addressed mechanism evidence, and scoped execution
+  witnesses;
 - producer and adapter cuts used;
 - declared-but-unused identities;
 - allowed dynamic alternatives actually taken;
@@ -225,6 +248,12 @@ from scoped invocation indices and global execution order; CMP-26 also checks
 the frozen and invoked adapter identity. Multiple registered edges still do
 not synthesize a larger semantic ceiling unless that larger composition is
 itself registered.
+
+The B-04 correction applies the same declaration-is-not-use boundary to
+candidates. The checker re-hashes candidate evidence and reconstructs the
+candidate scope from invocation indices; unscoped co-use, arbitrary strings,
+and renamed invalid-relabel restatements do not produce candidate graph
+elements or an experimental candidate claim.
 
 ## Claim Qualification
 

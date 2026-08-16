@@ -11,7 +11,7 @@
   ],
   "expected_identity_oracle_consumed": false,
   "lock_digest": "175dac3763ebb53fbca2e7e86eedc344c041a16bc581daa9b39b3759bd5cf44f",
-  "receipt_digest": "d9be1a04462cfa396de532322c61a8f22176ad719617d8c623085bc1004d693f",
+  "receipt_digest": "6b0a8eb8348c0085e9ba1f28d6e53f9375b3560197648a1768ed73b36d609bef",
   "schema_version": "i116_low_context_causal_pathway_consumer_replay_v1",
   "selected_pathway_id": "lgrc9v3.explicit_packet_transport",
   "selected_stage_ids": [

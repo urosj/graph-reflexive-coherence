@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** B-01/B-02/B-03 correction slices complete; tranche remains open
+**Status:** B-01/B-02/B-03/B-04 correction slices complete; tranche remains open
 
 **Checkpoint commit:** `976c660`
 
@@ -90,14 +90,40 @@ The correction therefore rejects all three forms of the audit falsifier:
 - a receipt with a removed or substituted CMP-26 adapter invocation fails
   conformance.
 
+## B-04 Candidate Mechanism Evidence
+
+Candidate declaration remains open and non-promoting, but declaration is not
+use. A candidate can enter a receipt only when its lock freezes a repository-
+relative content-addressed JSON mechanism artifact and one completed
+`candidate.evidence_scope()` observes returned calls through the declared
+constituent bindings. Composition candidates require all observed source calls
+before all observed target calls. Ordinary endpoint co-use outside this scope
+does not exercise the candidate.
+
+`record_candidate_use(...)` accepts only the candidate identity. It re-hashes
+and re-validates the frozen artifact and derives invocation indices from the
+completed scope; it no longer accepts a caller-authored evidence-reference
+string. The receipt and graph retain the exact artifact identity, candidate
+scope, binding identities, invocation indices, and ordering rule. BCF-004
+independently reconstructs that evidence from current repository content and
+the receipted invocation records.
+
+Composition-candidate declarations are also compared with every registered
+`invalid_relabel` row sharing the same ordered endpoints. Known blocked-relabel
+vocabulary is rejected even under a new candidate ID. A genuinely different
+relation over that endpoint pair must disclose the conflicting row and supply
+a distinct content-addressed mechanism; BCF-011 independently repeats those
+checks. The CMP-05 `diagnostic_as_behavior`/`native packet admission`
+restatement therefore fails at declaration and in forged artifacts.
+
 ## Verification Gate
 
 Iteration 117 remains open until repository tests and the independent
 falsifiers agree. Commands use `.venv`; tool and dependency configuration
 comes from `pyproject.toml`.
 
-The completed focused slices close B-01, B-02, and B-03 at the implementation
-gate. Findings B-04 through B-06 and M-01 remain acceptance blockers and must
+The completed focused slices close B-01 through B-04 at the implementation
+gate. Findings B-05, B-06, and M-01 remain acceptance blockers and must
 not be described as resolved. A second full independent revision is deferred
 until B-06 and M-01 are complete.
 
@@ -136,3 +162,23 @@ compileall selected changed surfaces = passed
 
 This is author-side focused correction evidence, not the deferred second full
 independent revision and not final tranche acceptance.
+
+## B-04 Focused Verification
+
+The B-04 gate covers declaration-only, legacy arbitrary-string, unscoped
+endpoint co-use, stale/mismatched content evidence, renamed CMP-05 relabel,
+and conformance-witness mutation controls. The I116 candidate dry run freezes
+the mechanism artifact and source-before-target invocation witness.
+
+```text
+.venv focused binding/conformance/replay tests = 45 passed
+.venv full unittest discovery = 1,256 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+```
+
+This is author-side focused correction evidence; the full independent revision
+remains deferred until B-06 and M-01 are complete.

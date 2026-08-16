@@ -114,6 +114,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": null,
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
@@ -136,6 +137,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
+      "candidate_scope_id": null,
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
@@ -158,6 +160,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
+      "candidate_scope_id": null,
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
@@ -286,7 +289,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "d9be1a04462cfa396de532322c61a8f22176ad719617d8c623085bc1004d693f",
+  "receipt_digest": "6b0a8eb8348c0085e9ba1f28d6e53f9375b3560197648a1768ed73b36d609bef",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

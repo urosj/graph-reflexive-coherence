@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
@@ -25,7 +26,7 @@ RULES = [
     ),
     (
         "BCF-004",
-        "Candidate declarations and uses must remain experimental, unregistered, and unpromoted.",
+        "Candidate uses require current content-addressed mechanism evidence and scoped constituent execution while remaining experimental and unpromoted.",
     ),
     (
         "BCF-005",
@@ -51,7 +52,10 @@ RULES = [
         "BCF-010",
         "Unsupported missing crossings cannot be bound as admitted compositions.",
     ),
-    ("BCF-011", "Invalid relabels cannot be bound or reused as candidate identities."),
+    (
+        "BCF-011",
+        "Invalid relabels cannot be bound, reused, or laundered through renamed candidates without a distinct mechanism.",
+    ),
     (
         "BCF-012",
         "Locks and receipts must consume the accepted registry and knowledge-plane digests.",
@@ -190,6 +194,66 @@ def _candidate_is_bounded(candidate: Mapping[str, Any]) -> bool:
         }
         <= blocked
     )
+
+
+def _normalized_claim_text(value: str) -> str:
+    return " ".join(re.findall(r"[a-z0-9]+", value.lower()))
+
+
+def _candidate_evidence_issue(
+    root: Path,
+    candidate: Mapping[str, Any],
+) -> str | None:
+    evidence = candidate.get("mechanism_evidence")
+    if not isinstance(evidence, Mapping):
+        return "content-addressed mechanism evidence is absent"
+    expected_fields = {"evidence_kind", "mechanism_id", "path", "sha256"}
+    if set(evidence) != expected_fields:
+        return "mechanism evidence fields are incomplete or widened"
+    if evidence.get("evidence_kind") != "content_addressed_artifact":
+        return "mechanism evidence kind is not content-addressed"
+    mechanism_id = str(evidence.get("mechanism_id", ""))
+    relative = Path(str(evidence.get("path", "")))
+    expected_sha256 = str(evidence.get("sha256", ""))
+    if (
+        not mechanism_id
+        or not str(relative)
+        or relative.is_absolute()
+        or ".." in relative.parts
+        or re.fullmatch(r"[0-9a-f]{64}", expected_sha256) is None
+    ):
+        return "mechanism evidence identity, path, or SHA-256 is invalid"
+    resolved_root = root.resolve()
+    target = (resolved_root / relative).resolve()
+    try:
+        target.relative_to(resolved_root)
+    except ValueError:
+        return "mechanism evidence path escapes the repository"
+    if not target.is_file() or target.stat().st_size == 0:
+        return "mechanism evidence artifact is missing or empty"
+    if sha256_file(target) != expected_sha256:
+        return "mechanism evidence content address is stale"
+    try:
+        artifact = load_json(target)
+    except (OSError, TypeError, ValueError, json.JSONDecodeError):
+        return "mechanism evidence is not a JSON object"
+    expected_artifact = {
+        "artifact": "causal-pathway-candidate-mechanism-evidence",
+        "schema_version": "causal_pathway_candidate_mechanism_evidence_v1",
+        "mechanism_id": mechanism_id,
+        "candidate_kind": candidate.get("candidate_kind"),
+        "proposed_source_pathway_id": candidate.get("proposed_source_pathway_id"),
+        "proposed_target_pathway_id": candidate.get("proposed_target_pathway_id"),
+        "supported_relation": candidate.get("proposed_relation"),
+    }
+    mismatched = [
+        field
+        for field, value in expected_artifact.items()
+        if artifact.get(field) != value
+    ]
+    if mismatched:
+        return f"mechanism evidence mismatches declaration fields {mismatched}"
+    return None
 
 
 def validate_bundle(
@@ -776,6 +840,64 @@ def validate_bundle(
                 candidate_id,
                 "composition candidate lacks distinct endpoints or new relation",
             )
+        evidence_issue = (
+            _candidate_evidence_issue(root, candidate)
+            if candidate.get("mechanism_evidence") is not None
+            else None
+        )
+        if evidence_issue is not None:
+            add_issue(issues, "BCF-004", candidate_id, evidence_issue)
+        source_id = candidate.get("proposed_source_pathway_id")
+        target_id = candidate.get("proposed_target_pathway_id")
+        invalid_conflicts = sorted(
+            (
+                composition
+                for composition in compositions.values()
+                if composition.get("composition_status") == "invalid_relabel"
+                and composition.get("from_pathway_id") == source_id
+                and composition.get("to_pathway_id") == target_id
+            ),
+            key=lambda item: str(item.get("composition_id", "")),
+        )
+        expected_conflict_ids = [
+            str(composition.get("composition_id", ""))
+            for composition in invalid_conflicts
+        ]
+        if candidate.get("invalid_relabel_conflict_ids") != expected_conflict_ids:
+            add_issue(
+                issues,
+                "BCF-011",
+                candidate_id,
+                "candidate does not disclose its exact invalid-relabel endpoint conflicts",
+            )
+        normalized_relation = _normalized_claim_text(
+            str(candidate.get("proposed_relation", ""))
+        )
+        restated = sorted(
+            str(relabel)
+            for composition in invalid_conflicts
+            for relabel in composition.get("blocked_relabels", [])
+            if _normalized_claim_text(str(relabel)) in normalized_relation
+        )
+        if restated:
+            add_issue(
+                issues,
+                "BCF-011",
+                candidate_id,
+                f"candidate restates registered invalid relabels {restated}",
+            )
+        evidence = candidate.get("mechanism_evidence")
+        if invalid_conflicts and (
+            not isinstance(evidence, Mapping)
+            or evidence_issue is not None
+            or evidence.get("mechanism_id") in expected_conflict_ids
+        ):
+            add_issue(
+                issues,
+                "BCF-011",
+                candidate_id,
+                "candidate over an invalid endpoint pair lacks a distinct current mechanism",
+            )
         for pathway_id in candidate.get("consumed_admitted_pathway_ids", []):
             if pathway_id not in pathways:
                 add_issue(
@@ -784,6 +906,16 @@ def validate_bundle(
                     candidate_id,
                     "candidate consumes an unadmitted pathway",
                 )
+        if candidate.get("candidate_kind") == "composition" and not {
+            source_id,
+            target_id,
+        } <= set(candidate.get("consumed_admitted_pathway_ids", [])):
+            add_issue(
+                issues,
+                "BCF-004",
+                candidate_id,
+                "candidate endpoints are not explicit consumed admitted pathways",
+            )
         for composition_id in candidate.get("consumed_admitted_composition_ids", []):
             if (
                 composition_id not in compositions
@@ -1181,12 +1313,112 @@ def validate_bundle(
             add_issue(
                 issues, "BCF-004", candidate_id, "candidate use widened its declaration"
             )
-        if not candidate.get("evidence_reference"):
+        evidence_issue = _candidate_evidence_issue(root, candidate)
+        if evidence_issue is not None:
             add_issue(
                 issues,
                 "BCF-004",
                 candidate_id,
-                "candidate use lacks evidence reference",
+                evidence_issue,
+            )
+        candidate_witness = candidate.get("candidate_execution_witness")
+        structurally_valid = isinstance(candidate_witness, Mapping)
+        if isinstance(candidate_witness, Mapping):
+            scope_id = candidate_witness.get("candidate_scope_id")
+            structurally_valid = bool(scope_id) and (
+                candidate_witness.get("candidate_id") == candidate_id
+            )
+
+        def selected_candidate_invocations(
+            indices: object,
+            *,
+            scope_id: object,
+            pathway_id: object | None = None,
+            binding_id: object | None = None,
+        ) -> list[Mapping[str, Any]] | None:
+            if (
+                not isinstance(indices, list)
+                or not indices
+                or any(not isinstance(index, int) for index in indices)
+                or len(indices) != len(set(indices))
+            ):
+                return None
+            try:
+                selected = [invocations[index] for index in indices]
+            except (IndexError, TypeError):
+                return None
+            if any(
+                invocation.get("outcome") != "returned"
+                or invocation.get("candidate_scope_id") != scope_id
+                or (
+                    pathway_id is not None
+                    and invocation.get("pathway_id") != pathway_id
+                )
+                or (
+                    binding_id is not None
+                    and invocation.get("binding_id") != binding_id
+                )
+                for invocation in selected
+            ):
+                return None
+            return selected
+
+        if structurally_valid and isinstance(candidate_witness, Mapping):
+            scope_id = candidate_witness.get("candidate_scope_id")
+            if candidate.get("candidate_kind") == "composition":
+                source_invocations = selected_candidate_invocations(
+                    candidate_witness.get("source_invocation_indices"),
+                    scope_id=scope_id,
+                    pathway_id=candidate.get("proposed_source_pathway_id"),
+                    binding_id=candidate_witness.get("source_binding_id"),
+                )
+                target_invocations = selected_candidate_invocations(
+                    candidate_witness.get("target_invocation_indices"),
+                    scope_id=scope_id,
+                    pathway_id=candidate.get("proposed_target_pathway_id"),
+                    binding_id=candidate_witness.get("target_binding_id"),
+                )
+                structurally_valid = (
+                    candidate_witness.get("witness_kind")
+                    == "content_addressed_source_before_target"
+                    and candidate_witness.get("source_pathway_id")
+                    == candidate.get("proposed_source_pathway_id")
+                    and candidate_witness.get("target_pathway_id")
+                    == candidate.get("proposed_target_pathway_id")
+                    and candidate_witness.get("ordering_rule")
+                    == "all_source_invocations_before_all_target_invocations"
+                    and source_invocations is not None
+                    and target_invocations is not None
+                    and max(
+                        int(item.get("execution_event_order", -1))
+                        for item in source_invocations
+                    )
+                    < min(
+                        int(item.get("execution_event_order", -1))
+                        for item in target_invocations
+                    )
+                )
+            else:
+                constituent = selected_candidate_invocations(
+                    candidate_witness.get("constituent_invocation_indices"),
+                    scope_id=scope_id,
+                )
+                structurally_valid = (
+                    candidate_witness.get("witness_kind")
+                    == "content_addressed_constituent_execution"
+                    and constituent is not None
+                    and all(
+                        item.get("pathway_id")
+                        in candidate.get("consumed_admitted_pathway_ids", [])
+                        for item in constituent
+                    )
+                )
+        if not structurally_valid:
+            add_issue(
+                issues,
+                "BCF-004",
+                candidate_id,
+                "candidate use lacks an exact scoped constituent-execution witness",
             )
 
     expected_unused = {
@@ -1248,7 +1480,15 @@ def validate_bundle(
                 )
         elif node.get("node_kind") == "experimental_unregistered_candidate":
             candidate_id = str(node.get("candidate_id", ""))
-            if candidate_id not in used_candidates or not _candidate_is_bounded(node):
+            used_candidate = used_candidates.get(candidate_id)
+            if (
+                used_candidate is None
+                or not _candidate_is_bounded(node)
+                or node.get("mechanism_evidence")
+                != used_candidate.get("mechanism_evidence")
+                or node.get("candidate_execution_witness")
+                != used_candidate.get("candidate_execution_witness")
+            ):
                 add_issue(
                     issues,
                     "BCF-003",
@@ -1314,7 +1554,21 @@ def validate_bundle(
         elif edge.get("edge_kind") == "experimental_unregistered_candidate":
             candidate_id = str(edge.get("candidate_id", ""))
             graph_candidate_ids.add(candidate_id)
-            if candidate_id not in used_candidates or not _candidate_is_bounded(edge):
+            used_candidate = used_candidates.get(candidate_id)
+            witness = (
+                used_candidate.get("candidate_execution_witness", {})
+                if used_candidate is not None
+                else {}
+            )
+            if (
+                used_candidate is None
+                or not _candidate_is_bounded(edge)
+                or edge.get("mechanism_evidence")
+                != used_candidate.get("mechanism_evidence")
+                or edge.get("candidate_execution_witness") != witness
+                or edge.get("source_node_id") != witness.get("source_binding_id")
+                or edge.get("target_node_id") != witness.get("target_binding_id")
+            ):
                 add_issue(
                     issues,
                     "BCF-003",

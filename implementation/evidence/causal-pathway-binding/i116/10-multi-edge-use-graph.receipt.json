@@ -258,6 +258,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-20"
       ],
@@ -282,6 +283,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-20"
       ],
@@ -306,6 +308,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-20"
       ],
@@ -330,6 +333,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-20"
       ],
@@ -354,6 +358,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
         "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-04"
       ],
@@ -378,6 +383,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-04"
       ],
@@ -809,7 +815,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "22034fae34d512ff99ef1d024a63e0787aba9d0c399e5b75c84b8134205aac32",
+  "receipt_digest": "56a0b7403264d575748f6eb922446241b2a2226fb15580a59fc08147a1ff24b6",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",

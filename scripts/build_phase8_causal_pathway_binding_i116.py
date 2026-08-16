@@ -16,6 +16,7 @@ from pygrc.causal_pathways import (
     CausalPathwayAuthority,
     PathwayBindingSession,
     UnbindableCompositionError,
+    sha256_file,
 )
 from pygrc.core import GRCParams, PortGraphBackend
 from pygrc.models import GRC9V3, LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
@@ -33,6 +34,9 @@ REPLAY_LOCK_PATH = EVIDENCE_DIR / "low-context-replay.lock.json"
 REPLAY_RECEIPT_PATH = EVIDENCE_DIR / "low-context-replay.receipt.json"
 REPLAY_RESULT_PATH = EVIDENCE_DIR / "low-context-replay.result.json"
 REPLAY_ORACLE_PATH = EVIDENCE_DIR / "low-context-replay.oracle.json"
+CANDIDATE_EVIDENCE_PATH = (
+    ROOT / "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json"
+)
 
 
 def _load_module(name: str, path: Path) -> Any:
@@ -353,14 +357,18 @@ def _candidate(authority: CausalPathwayAuthority) -> dict[str, Any]:
         proposed_target_pathway_id=restoration.pathway_id,
         proposed_relation="fixture-only post-packet snapshot relation",
         evidence_owner="i116_fixture",
+        mechanism_evidence={
+            "evidence_kind": "content_addressed_artifact",
+            "mechanism_id": "fixture.packet_schedule_then_snapshot",
+            "path": str(CANDIDATE_EVIDENCE_PATH.relative_to(ROOT)),
+            "sha256": sha256_file(CANDIDATE_EVIDENCE_PATH),
+        },
     )
     lock = session.freeze_lock()
-    schedule(source_node_id=0, target_node_id=1, edge_id=0, amount=0.25)
-    snapshot()
-    session.record_candidate_use(
-        candidate.candidate_id,
-        evidence_reference=str(SUMMARY_PATH.relative_to(ROOT)),
-    )
+    with candidate.evidence_scope():
+        schedule(source_node_id=0, target_node_id=1, edge_id=0, amount=0.25)
+        snapshot()
+    session.record_candidate_use(candidate.candidate_id)
     receipt = session.build_receipt()
     record = receipt.to_record()
     return _freeze_case(

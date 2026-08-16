@@ -207,6 +207,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-26"
       ],
@@ -231,6 +232,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-26"
       ],
@@ -255,6 +257,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-26"
       ],
@@ -279,6 +282,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-26"
       ],
@@ -564,7 +568,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "1790138e60e707fb17d8d7d2417390c50b85899616d694f274060da26e32f4ae",
+  "receipt_digest": "05ddc0a1f28cd1dc75a4621e1112330217e65e800abb1288d7aa93fe3fc4f4dd",
   "registered_compositions_exercised": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",

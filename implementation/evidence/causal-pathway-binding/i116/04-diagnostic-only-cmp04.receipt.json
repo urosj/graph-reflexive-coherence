@@ -93,6 +93,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
         "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-04"
       ],
@@ -117,6 +118,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_scope_id": null,
       "composition_ids": [
         "CMP-04"
       ],
@@ -307,7 +309,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "979468dc00d313ee352e30a2575a9ad43c2f2a6ce663d9007266c6ef28e63f55",
+  "receipt_digest": "a813b2df4d44a4693d2a4b344ee04e2d3ff7659317252d36b8bf570ebf3a5665",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",

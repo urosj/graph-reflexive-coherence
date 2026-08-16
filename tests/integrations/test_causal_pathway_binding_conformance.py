@@ -188,6 +188,72 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-006"}, {item["rule_id"] for item in result["issues"]})
 
+    def test_candidate_without_scoped_witness_fails_bcf004(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        candidate = mutated["receipt"]["candidate_relations_exercised"][0]
+        candidate.pop("candidate_execution_witness")
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-004"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-004"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_renamed_cmp05_candidate_relabel_fails_bcf011(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        declaration = mutated["lock"]["candidate_declarations"][0]
+        use = mutated["receipt"]["candidate_relations_exercised"][0]
+        for candidate in (declaration, use):
+            candidate["consumed_admitted_pathway_ids"] = [
+                "lgrc9v3.diagnostic_grc_reconstruction",
+                "lgrc9v3.explicit_packet_transport",
+            ]
+            candidate["proposed_source_pathway_id"] = (
+                "lgrc9v3.diagnostic_grc_reconstruction"
+            )
+            candidate["proposed_target_pathway_id"] = (
+                "lgrc9v3.explicit_packet_transport"
+            )
+            candidate["proposed_relation"] = (
+                "diagnostic_as_behavior and native packet admission"
+            )
+            candidate["invalid_relabel_conflict_ids"] = ["CMP-05"]
+        mutated["lock"]["lock_digest"] = self.checker.digest_without(
+            mutated["lock"],
+            "lock_digest",
+        )
+        mutated["receipt"]["binding_lock_digest"] = mutated["lock"]["lock_digest"]
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-011"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-011"}, {item["rule_id"] for item in result["issues"]})
+
     def test_frozen_execution_records_are_canonical_and_passed(self) -> None:
         execution = json.loads(
             (EVIDENCE_DIR / "i115-conformance-execution.json").read_text(

@@ -40,6 +40,13 @@
         "pygrc.restoration_replay_identity"
       ],
       "evidence_owner": "i116_fixture",
+      "invalid_relabel_conflict_ids": [],
+      "mechanism_evidence": {
+        "evidence_kind": "content_addressed_artifact",
+        "mechanism_id": "fixture.packet_schedule_then_snapshot",
+        "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+        "sha256": "454c6d333f2bef948a54a97a0685d5b931a05c595e1122acb827332515a7cf89"
+      },
       "owner": "i116_fixture",
       "producer_residue": [],
       "promotion_status": "none",
@@ -141,7 +148,7 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "f37c71e0c47c34a45c495e2b671d32ebeea88555fd38654ebdb80da255687ef3",
+  "lock_digest": "5511f020231b16190896b2c9c8464f56d9841a3754e05e5446063dcb86365455",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
@@ -242,6 +249,13 @@
             "pygrc.restoration_replay_identity"
           ],
           "evidence_owner": "i116_fixture",
+          "invalid_relabel_conflict_ids": [],
+          "mechanism_evidence": {
+            "evidence_kind": "content_addressed_artifact",
+            "mechanism_id": "fixture.packet_schedule_then_snapshot",
+            "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+            "sha256": "454c6d333f2bef948a54a97a0685d5b931a05c595e1122acb827332515a7cf89"
+          },
           "owner": "i116_fixture",
           "producer_residue": [],
           "promotion_status": "none",

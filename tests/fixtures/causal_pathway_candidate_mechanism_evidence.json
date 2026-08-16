@@ -1,0 +1,10 @@
+{
+  "artifact": "causal-pathway-candidate-mechanism-evidence",
+  "candidate_kind": "composition",
+  "description": "Fixture-only observation of a packet schedule followed by a versioned runtime snapshot.",
+  "mechanism_id": "fixture.packet_schedule_then_snapshot",
+  "proposed_source_pathway_id": "lgrc9v3.explicit_packet_transport",
+  "proposed_target_pathway_id": "pygrc.restoration_replay_identity",
+  "schema_version": "causal_pathway_candidate_mechanism_evidence_v1",
+  "supported_relation": "fixture-only post-packet snapshot relation"
+}

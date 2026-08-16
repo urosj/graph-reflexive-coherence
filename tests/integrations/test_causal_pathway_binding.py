@@ -17,12 +17,25 @@ from pygrc.causal_pathways import (
     UnknownCompositionError,
     UnknownPathwayError,
     canonical_digest,
+    sha256_file,
     unbound_execution_classification,
 )
 from pygrc.core import PortGraphBackend
 from pygrc.models import GRC9V3, LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
 
 ROOT = Path(__file__).resolve().parents[2]
+CANDIDATE_EVIDENCE_PATH = Path(
+    "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json"
+)
+
+
+def _candidate_mechanism_evidence() -> dict[str, str]:
+    return {
+        "evidence_kind": "content_addressed_artifact",
+        "mechanism_id": "fixture.packet_schedule_then_snapshot",
+        "path": CANDIDATE_EVIDENCE_PATH.as_posix(),
+        "sha256": sha256_file(ROOT / CANDIDATE_EVIDENCE_PATH),
+    }
 
 
 def _two_node_runtime() -> LGRC9V3:
@@ -246,6 +259,137 @@ class CausalPathwayBindingTest(unittest.TestCase):
                 purpose="collision",
                 owner="fixture",
                 evidence_owner="fixture",
+            )
+
+    def test_candidate_declaration_and_arbitrary_string_are_not_use(self) -> None:
+        session = PathwayBindingSession(self.authority)
+        candidate = session.declare_candidate(
+            candidate_id="experiment.fixture.unused_candidate",
+            candidate_kind="pathway",
+            purpose="Prove that declaration and prose are not execution evidence.",
+            owner="fixture",
+            evidence_owner="fixture",
+        )
+        session.freeze_lock()
+
+        with self.assertRaises(TypeError):
+            session.record_candidate_use(  # type: ignore[call-arg]
+                candidate.candidate_id,
+                evidence_reference="arbitrary string",
+            )
+        with self.assertRaises(InvalidCandidateError):
+            session.record_candidate_use(candidate.candidate_id)
+
+        record = session.build_receipt().to_record()
+        self.assertFalse(record["claim_qualified"])
+        self.assertEqual([], record["candidate_relations_exercised"])
+        self.assertEqual(
+            [candidate.candidate_id],
+            record["declared_but_unused"]["candidate_ids"],
+        )
+
+    def test_candidate_rejects_cmp05_invalid_relabel_laundering(self) -> None:
+        session = PathwayBindingSession(self.authority)
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "registered invalid relabels",
+        ):
+            session.declare_candidate(
+                candidate_id="experiment.fixture.diagnostic_as_behavior",
+                candidate_kind="composition",
+                purpose="Attempt to relabel the CMP-05 diagnostic relation.",
+                owner="fixture",
+                consumed_pathway_ids=(
+                    "lgrc9v3.diagnostic_grc_reconstruction",
+                    "lgrc9v3.explicit_packet_transport",
+                ),
+                proposed_source_pathway_id=("lgrc9v3.diagnostic_grc_reconstruction"),
+                proposed_target_pathway_id="lgrc9v3.explicit_packet_transport",
+                proposed_relation=(
+                    "diagnostic_as_behavior and native packet admission"
+                ),
+                evidence_owner="fixture",
+            )
+
+    def test_candidate_endpoint_co_use_outside_scope_is_not_use(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        restoration = session.bind_pathway(
+            "pygrc.restoration_replay_identity",
+            stage_ids=("snapshot_serialization",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        snapshot = restoration.symbol("snapshot_serialization", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id="experiment.fixture.unscoped_candidate",
+            candidate_kind="composition",
+            purpose="Prove ordinary endpoint co-use is not candidate evidence.",
+            owner="fixture",
+            consumed_pathway_ids=(packet.pathway_id, restoration.pathway_id),
+            proposed_source_pathway_id=packet.pathway_id,
+            proposed_target_pathway_id=restoration.pathway_id,
+            proposed_relation="fixture-only post-packet snapshot relation",
+            evidence_owner="fixture",
+            mechanism_evidence=_candidate_mechanism_evidence(),
+        )
+        session.freeze_lock()
+        schedule(source_node_id=0, target_node_id=1, edge_id=0, amount=0.25)
+        snapshot()
+
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "exactly one completed evidence scope",
+        ):
+            session.record_candidate_use(candidate.candidate_id)
+
+        record = session.build_receipt().to_record()
+        self.assertEqual([], record["candidate_relations_exercised"])
+        self.assertFalse(record["claim_envelope"]["experimental_unregistered"])
+
+    def test_invalid_endpoint_pair_requires_distinct_mechanism_evidence(self) -> None:
+        session = PathwayBindingSession(self.authority)
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "distinct content-addressed mechanism evidence",
+        ):
+            session.declare_candidate(
+                candidate_id="experiment.fixture.cmp05_new_relation",
+                candidate_kind="composition",
+                purpose="Propose distinct work across a known invalid pair.",
+                owner="fixture",
+                consumed_pathway_ids=(
+                    "lgrc9v3.diagnostic_grc_reconstruction",
+                    "lgrc9v3.explicit_packet_transport",
+                ),
+                proposed_source_pathway_id=("lgrc9v3.diagnostic_grc_reconstruction"),
+                proposed_target_pathway_id="lgrc9v3.explicit_packet_transport",
+                proposed_relation="new externally owned diagnostic packet adapter",
+                evidence_owner="fixture",
+            )
+
+    def test_candidate_rejects_stale_mechanism_content_address(self) -> None:
+        session = PathwayBindingSession(self.authority)
+        stale = _candidate_mechanism_evidence()
+        stale["sha256"] = "0" * 64
+        with self.assertRaisesRegex(InvalidCandidateError, "content is stale"):
+            session.declare_candidate(
+                candidate_id="experiment.fixture.stale_candidate_evidence",
+                candidate_kind="composition",
+                purpose="Reject a stale candidate artifact.",
+                owner="fixture",
+                consumed_pathway_ids=(
+                    "lgrc9v3.explicit_packet_transport",
+                    "pygrc.restoration_replay_identity",
+                ),
+                proposed_source_pathway_id="lgrc9v3.explicit_packet_transport",
+                proposed_target_pathway_id="pygrc.restoration_replay_identity",
+                proposed_relation="fixture-only post-packet snapshot relation",
+                evidence_owner="fixture",
+                mechanism_evidence=stale,
             )
 
     def test_dynamic_alternatives_declare_but_do_not_select(self) -> None:
@@ -673,20 +817,19 @@ class CausalPathwayBindingTest(unittest.TestCase):
             proposed_target_pathway_id=restoration.pathway_id,
             proposed_relation="fixture-only post-packet snapshot relation",
             evidence_owner="i114_fixture",
+            mechanism_evidence=_candidate_mechanism_evidence(),
         )
         session.freeze_lock()
 
-        schedule(
-            source_node_id=0,
-            target_node_id=1,
-            edge_id=0,
-            amount=0.25,
-        )
-        snapshot()
-        session.record_candidate_use(
-            candidate.candidate_id,
-            evidence_reference="tests/integrations/test_causal_pathway_binding.py",
-        )
+        with candidate.evidence_scope():
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+            snapshot()
+        session.record_candidate_use(candidate.candidate_id)
         record = session.build_receipt().to_record()
 
         candidate_edges = [
@@ -696,6 +839,10 @@ class CausalPathwayBindingTest(unittest.TestCase):
         ]
         self.assertEqual(1, len(candidate_edges))
         self.assertEqual("none", candidate_edges[0]["promotion_status"])
+        self.assertEqual(
+            "content_addressed_source_before_target",
+            candidate_edges[0]["candidate_execution_witness"]["witness_kind"],
+        )
         self.assertTrue(record["claim_envelope"]["experimental_unregistered"])
         self.assertEqual(
             "experimental_unregistered",

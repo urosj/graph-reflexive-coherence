@@ -34,13 +34,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "3952a754a7c4bd016305f7b41f7dd450bc51127e14061b4ef4169fcf23f2f718",
+  "conformance_digest": "0baafb5ba019d62ed3217f860ce3245a40d2eee83582d185e4c461111cc750d7",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "aba41ea847eb2ee5917afa58b7b5af785e2b989014efece23bdd73b11ddfca68",
+  "policy_digest": "1596f2e13980d6d87609382584e207b382218cbca374c2f418f4db59fb2ec32c",
   "rule_count": 20,
   "rule_results": [
     {
@@ -62,7 +62,7 @@
       "status": "passed"
     },
     {
-      "description": "Candidate declarations and uses must remain experimental, unregistered, and unpromoted.",
+      "description": "Candidate uses require current content-addressed mechanism evidence and scoped constituent execution while remaining experimental and unpromoted.",
       "issue_count": 0,
       "rule_id": "BCF-004",
       "status": "passed"
@@ -104,7 +104,7 @@
       "status": "passed"
     },
     {
-      "description": "Invalid relabels cannot be bound or reused as candidate identities.",
+      "description": "Invalid relabels cannot be bound, reused, or laundered through renamed candidates without a distinct mechanism.",
       "issue_count": 0,
       "rule_id": "BCF-011",
       "status": "passed"

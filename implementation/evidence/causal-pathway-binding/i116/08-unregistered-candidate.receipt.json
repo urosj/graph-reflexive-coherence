@@ -110,6 +110,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": "candidate:experiment.i116.packet_to_snapshot_relation:evidence-scope:0",
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
@@ -132,6 +133,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": "candidate:experiment.i116.packet_to_snapshot_relation:evidence-scope:0",
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
@@ -147,7 +149,7 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "f37c71e0c47c34a45c495e2b671d32ebeea88555fd38654ebdb80da255687ef3",
+  "binding_lock_digest": "5511f020231b16190896b2c9c8464f56d9841a3754e05e5446063dcb86365455",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
@@ -177,6 +179,22 @@
         "candidate relation is native",
         "candidate declaration is promotion"
       ],
+      "candidate_execution_witness": {
+        "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+        "candidate_scope_id": "candidate:experiment.i116.packet_to_snapshot_relation:evidence-scope:0",
+        "ordering_rule": "all_source_invocations_before_all_target_invocations",
+        "source_binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+        "source_invocation_indices": [
+          0
+        ],
+        "source_pathway_id": "lgrc9v3.explicit_packet_transport",
+        "target_binding_id": "pathway:pygrc.restoration_replay_identity",
+        "target_invocation_indices": [
+          1
+        ],
+        "target_pathway_id": "pygrc.restoration_replay_identity",
+        "witness_kind": "content_addressed_source_before_target"
+      },
       "candidate_id": "experiment.i116.packet_to_snapshot_relation",
       "candidate_kind": "composition",
       "claim_ceiling": "experimental_unregistered",
@@ -187,7 +205,13 @@
         "pygrc.restoration_replay_identity"
       ],
       "evidence_owner": "i116_fixture",
-      "evidence_reference": "implementation/evidence/causal-pathway-binding/i116/consumer-dry-run-summary.json",
+      "invalid_relabel_conflict_ids": [],
+      "mechanism_evidence": {
+        "evidence_kind": "content_addressed_artifact",
+        "mechanism_id": "fixture.packet_schedule_then_snapshot",
+        "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+        "sha256": "454c6d333f2bef948a54a97a0685d5b931a05c595e1122acb827332515a7cf89"
+      },
       "owner": "i116_fixture",
       "producer_residue": [],
       "promotion_status": "none",
@@ -296,6 +320,13 @@
             "pygrc.restoration_replay_identity"
           ],
           "evidence_owner": "i116_fixture",
+          "invalid_relabel_conflict_ids": [],
+          "mechanism_evidence": {
+            "evidence_kind": "content_addressed_artifact",
+            "mechanism_id": "fixture.packet_schedule_then_snapshot",
+            "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+            "sha256": "454c6d333f2bef948a54a97a0685d5b931a05c595e1122acb827332515a7cf89"
+          },
           "owner": "i116_fixture",
           "producer_residue": [],
           "promotion_status": "none",
@@ -357,12 +388,33 @@
           "candidate relation is native",
           "candidate declaration is promotion"
         ],
+        "candidate_execution_witness": {
+          "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+          "candidate_scope_id": "candidate:experiment.i116.packet_to_snapshot_relation:evidence-scope:0",
+          "ordering_rule": "all_source_invocations_before_all_target_invocations",
+          "source_binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+          "source_invocation_indices": [
+            0
+          ],
+          "source_pathway_id": "lgrc9v3.explicit_packet_transport",
+          "target_binding_id": "pathway:pygrc.restoration_replay_identity",
+          "target_invocation_indices": [
+            1
+          ],
+          "target_pathway_id": "pygrc.restoration_replay_identity",
+          "witness_kind": "content_addressed_source_before_target"
+        },
         "candidate_id": "experiment.i116.packet_to_snapshot_relation",
         "claim_ceiling": "experimental_unregistered",
         "configured_residue": [],
         "edge_id": "candidate:experiment.i116.packet_to_snapshot_relation",
         "edge_kind": "experimental_unregistered_candidate",
-        "evidence_reference": "implementation/evidence/causal-pathway-binding/i116/consumer-dry-run-summary.json",
+        "mechanism_evidence": {
+          "evidence_kind": "content_addressed_artifact",
+          "mechanism_id": "fixture.packet_schedule_then_snapshot",
+          "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+          "sha256": "454c6d333f2bef948a54a97a0685d5b931a05c595e1122acb827332515a7cf89"
+        },
         "producer_residue": [],
         "promotion_status": "none",
         "proposed_relation": "fixture-only post-packet snapshot relation",
@@ -424,7 +476,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "ddd732a56c71c89c01f72ebb28ca3acc3a3d1e145d5ba803952ac484a6d9011c",
+  "receipt_digest": "1568cb747134380f3c8217afcc88b7d2ef34abfc9c1c38f24f2dcc0488b56b71",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

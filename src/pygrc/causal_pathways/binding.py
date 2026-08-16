@@ -10,6 +10,7 @@ import hashlib
 import importlib
 import inspect
 import json
+import re
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from copy import deepcopy
 from dataclasses import dataclass, field, replace
@@ -99,6 +100,12 @@ def sha256_file(path: Path) -> str:
     """Return the SHA-256 digest of a file."""
 
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _normalized_claim_text(value: str) -> str:
+    """Normalize claim labels so punctuation cannot hide a blocked relabel."""
+
+    return " ".join(re.findall(r"[a-z0-9]+", value.lower()))
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -308,6 +315,7 @@ class CompositionCrossingBinding:
 class CandidateDeclaration:
     """An explicit unregistered pathway or composition candidate."""
 
+    _session: PathwayBindingSession = field(repr=False, compare=False)
     candidate_id: str
     candidate_kind: str
     purpose: str
@@ -323,6 +331,8 @@ class CandidateDeclaration:
     configured_residue: tuple[str, ...]
     evidence_owner: str
     blocked_claims: tuple[str, ...]
+    mechanism_evidence: CandidateMechanismEvidence | None
+    invalid_relabel_conflict_ids: tuple[str, ...]
     claim_ceiling: str = "experimental_unregistered"
     promotion_status: str = "none"
 
@@ -344,10 +354,126 @@ class CandidateDeclaration:
             "adapter_residue": list(self.adapter_residue),
             "configured_residue": list(self.configured_residue),
             "evidence_owner": self.evidence_owner,
+            "mechanism_evidence": (
+                self.mechanism_evidence.to_record()
+                if self.mechanism_evidence is not None
+                else None
+            ),
+            "invalid_relabel_conflict_ids": list(self.invalid_relabel_conflict_ids),
             "claim_ceiling": self.claim_ceiling,
             "blocked_claims": list(self.blocked_claims),
             "promotion_status": self.promotion_status,
         }
+
+    def evidence_scope(self) -> CandidateExecutionScope:
+        """Return an explicit observed-use scope for this candidate."""
+
+        return CandidateExecutionScope(session=self._session, candidate=self)
+
+
+@dataclass(frozen=True)
+class CandidateMechanismEvidence:
+    """Pre-lock content address for a candidate-specific mechanism artifact."""
+
+    evidence_kind: str
+    mechanism_id: str
+    path: str
+    sha256: str
+
+    @classmethod
+    def from_record(
+        cls,
+        record: Mapping[str, Any],
+    ) -> CandidateMechanismEvidence:
+        """Parse the intentionally small candidate-evidence contract."""
+
+        evidence = cls(
+            evidence_kind=str(record.get("evidence_kind", "")),
+            mechanism_id=str(record.get("mechanism_id", "")),
+            path=str(record.get("path", "")),
+            sha256=str(record.get("sha256", "")),
+        )
+        if evidence.evidence_kind != "content_addressed_artifact":
+            raise InvalidCandidateError(
+                "candidate mechanism evidence must be content_addressed_artifact"
+            )
+        if not evidence.mechanism_id:
+            raise InvalidCandidateError(
+                "candidate mechanism evidence requires a mechanism_id"
+            )
+        if not evidence.path:
+            raise InvalidCandidateError("candidate mechanism evidence requires a path")
+        if not re.fullmatch(r"[0-9a-f]{64}", evidence.sha256):
+            raise InvalidCandidateError(
+                "candidate mechanism evidence requires a lowercase SHA-256"
+            )
+        return evidence
+
+    def to_record(self) -> dict[str, str]:
+        """Return the exact evidence identity frozen into lock and receipt."""
+
+        return {
+            "evidence_kind": self.evidence_kind,
+            "mechanism_id": self.mechanism_id,
+            "path": self.path,
+            "sha256": self.sha256,
+        }
+
+    def assert_current(
+        self,
+        repository_root: Path,
+        *,
+        candidate_kind: str,
+        proposed_source_pathway_id: str | None,
+        proposed_target_pathway_id: str | None,
+        proposed_relation: str | None,
+    ) -> None:
+        """Validate the address and candidate semantics of the evidence artifact."""
+
+        relative = Path(self.path)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise InvalidCandidateError(
+                "candidate mechanism evidence path must stay repository-relative"
+            )
+        root = repository_root.resolve()
+        target = (root / relative).resolve()
+        try:
+            target.relative_to(root)
+        except ValueError as exc:
+            raise InvalidCandidateError(
+                "candidate mechanism evidence path escapes the repository"
+            ) from exc
+        if not target.is_file() or target.stat().st_size == 0:
+            raise InvalidCandidateError(
+                f"candidate mechanism evidence {self.path!r} is missing or empty"
+            )
+        if sha256_file(target) != self.sha256:
+            raise InvalidCandidateError(
+                f"candidate mechanism evidence {self.path!r} content is stale"
+            )
+        try:
+            artifact = _load_json(target)
+        except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+            raise InvalidCandidateError(
+                "candidate mechanism evidence must be a JSON artifact"
+            ) from exc
+        expected = {
+            "artifact": "causal-pathway-candidate-mechanism-evidence",
+            "schema_version": "causal_pathway_candidate_mechanism_evidence_v1",
+            "mechanism_id": self.mechanism_id,
+            "candidate_kind": candidate_kind,
+            "proposed_source_pathway_id": proposed_source_pathway_id,
+            "proposed_target_pathway_id": proposed_target_pathway_id,
+            "supported_relation": proposed_relation,
+        }
+        mismatched = [
+            field for field, value in expected.items() if artifact.get(field) != value
+        ]
+        if mismatched:
+            raise InvalidCandidateError(
+                "candidate mechanism evidence does not match its declaration: "
+                f"{mismatched}"
+            )
 
 
 @dataclass(frozen=True)
@@ -451,6 +577,21 @@ class CausalPathwayAuthority:
                 f"composition {composition_id!r} is not registered; "
                 "declare a candidate instead"
             ) from exc
+
+    def invalid_relabels_for_endpoints(
+        self,
+        source_pathway_id: str,
+        target_pathway_id: str,
+    ) -> tuple[Mapping[str, Any], ...]:
+        """Return every registered invalid relabel for an exact endpoint pair."""
+
+        return tuple(
+            deepcopy(composition)
+            for composition in self._compositions.values()
+            if composition["composition_status"] == "invalid_relabel"
+            and composition["from_pathway_id"] == source_pathway_id
+            and composition["to_pathway_id"] == target_pathway_id
+        )
 
     def stage_ids(self, pathway_id: str) -> tuple[str, ...]:
         pathway = self.pathway(pathway_id)
@@ -660,6 +801,7 @@ class InvocationRecord:
     callable_identity: Mapping[str, Any]
     execution_event_order: int = -1
     crossing_scope_id: str | None = None
+    candidate_scope_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -1290,12 +1432,114 @@ class CompositionExecutionScope:
         }
 
 
+class CandidateExecutionScope:
+    """Observed constituent-use scope for one unregistered candidate."""
+
+    def __init__(
+        self,
+        *,
+        session: PathwayBindingSession,
+        candidate: CandidateDeclaration,
+    ) -> None:
+        self._session = session
+        self.candidate = candidate
+        self.scope_id = ""
+        self._events: list[dict[str, Any]] = []
+        self._completed = False
+
+    def __enter__(self) -> Self:
+        self.scope_id = self._session._open_candidate_scope(self)
+        return self
+
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> Literal[False]:
+        self._completed = exc_type is None
+        self._session._close_candidate_scope(self)
+        return False
+
+    def _record_constituent(
+        self,
+        *,
+        event_order: int,
+        invocation_index: int,
+        record: InvocationRecord,
+    ) -> None:
+        self._events.append(
+            {
+                "event_order": event_order,
+                "record_index": invocation_index,
+                "record": record,
+            }
+        )
+
+    def exercise_witness(self) -> dict[str, Any] | None:
+        """Return evidence only for completed, returned constituent execution."""
+
+        if not self._completed:
+            return None
+        returned = [
+            event for event in self._events if event["record"].outcome == "returned"
+        ]
+        if self.candidate.candidate_kind == "pathway":
+            if not returned:
+                return None
+            return {
+                "candidate_scope_id": self.scope_id,
+                "candidate_id": self.candidate.candidate_id,
+                "witness_kind": "content_addressed_constituent_execution",
+                "constituent_invocation_indices": [
+                    event["record_index"] for event in returned
+                ],
+            }
+
+        source_id = self.candidate.proposed_source_pathway_id
+        target_id = self.candidate.proposed_target_pathway_id
+        source_events = [
+            event for event in returned if event["record"].pathway_id == source_id
+        ]
+        target_events = [
+            event for event in returned if event["record"].pathway_id == target_id
+        ]
+        if source_id == target_id:
+            if len(source_events) < 2:
+                return None
+            target_events = source_events[1:]
+            source_events = source_events[:1]
+        if not source_events or not target_events:
+            return None
+        if max(event["event_order"] for event in source_events) >= min(
+            event["event_order"] for event in target_events
+        ):
+            return None
+        return {
+            "candidate_scope_id": self.scope_id,
+            "candidate_id": self.candidate.candidate_id,
+            "witness_kind": "content_addressed_source_before_target",
+            "source_pathway_id": source_id,
+            "source_binding_id": source_events[0]["record"].binding_id,
+            "source_invocation_indices": [
+                event["record_index"] for event in source_events
+            ],
+            "target_pathway_id": target_id,
+            "target_binding_id": target_events[0]["record"].binding_id,
+            "target_invocation_indices": [
+                event["record_index"] for event in target_events
+            ],
+            "ordering_rule": "all_source_invocations_before_all_target_invocations",
+        }
+
+
 @dataclass(frozen=True)
 class CandidateUseRecord:
     """Explicit evidence that a declared candidate relation was exercised."""
 
     candidate_id: str
-    evidence_reference: str
+    mechanism_evidence: Mapping[str, str]
+    execution_witness: Mapping[str, Any]
 
 
 class BindingArtifact:
@@ -1400,6 +1644,8 @@ class PathwayBindingSession:
         self._crossing_invocations: list[CrossingInvocationRecord] = []
         self._composition_scopes: list[CompositionExecutionScope] = []
         self._active_composition_scope: CompositionExecutionScope | None = None
+        self._candidate_scopes: list[CandidateExecutionScope] = []
+        self._active_candidate_scope: CandidateExecutionScope | None = None
         self._execution_event_count = 0
         self._candidate_uses: list[CandidateUseRecord] = []
         self._lock: BindingLock | None = None
@@ -1539,10 +1785,27 @@ class PathwayBindingSession:
             crossing_scope_id=(
                 scope.scope_id if scope is not None and scoped_to_composition else None
             ),
+            candidate_scope_id=(
+                self._active_candidate_scope.scope_id
+                if self._active_candidate_scope is not None
+                and record.pathway_id
+                in self._active_candidate_scope.candidate.consumed_pathway_ids
+                else None
+            ),
         )
         self._invocations.append(record)
         if scope is not None and scoped_to_composition:
             scope._record_endpoint(
+                event_order=self._execution_event_count,
+                invocation_index=invocation_index,
+                record=record,
+            )
+        candidate_scope = self._active_candidate_scope
+        if (
+            candidate_scope is not None
+            and record.pathway_id in candidate_scope.candidate.consumed_pathway_ids
+        ):
+            candidate_scope._record_constituent(
                 event_order=self._execution_event_count,
                 invocation_index=invocation_index,
                 record=record,
@@ -1572,8 +1835,11 @@ class PathwayBindingSession:
             raise BindingStateError(
                 "composition evidence scopes require a frozen binding lock"
             )
-        if self._active_composition_scope is not None:
-            raise BindingStateError("composition evidence scopes cannot overlap")
+        if (
+            self._active_composition_scope is not None
+            or self._active_candidate_scope is not None
+        ):
+            raise BindingStateError("execution evidence scopes cannot overlap")
         if scope.composition.binding_id not in self._composition_bindings:
             raise BindingStateError("composition scope is not declared in this session")
         scope_id = (
@@ -1588,6 +1854,32 @@ class PathwayBindingSession:
         if self._active_composition_scope is not scope:
             raise BindingStateError("composition evidence scope is not active")
         self._active_composition_scope = None
+
+    def _open_candidate_scope(self, scope: CandidateExecutionScope) -> str:
+        if self._phase != "locked" or self._lock is None:
+            raise BindingStateError(
+                "candidate evidence scopes require a frozen binding lock"
+            )
+        if (
+            self._active_composition_scope is not None
+            or self._active_candidate_scope is not None
+        ):
+            raise BindingStateError("execution evidence scopes cannot overlap")
+        candidate = self._candidates.get(scope.candidate.candidate_id)
+        if candidate is not scope.candidate:
+            raise BindingStateError("candidate scope is not declared in this session")
+        scope_id = (
+            f"candidate:{scope.candidate.candidate_id}:evidence-scope:"
+            f"{len(self._candidate_scopes)}"
+        )
+        self._active_candidate_scope = scope
+        self._candidate_scopes.append(scope)
+        return scope_id
+
+    def _close_candidate_scope(self, scope: CandidateExecutionScope) -> None:
+        if self._active_candidate_scope is not scope:
+            raise BindingStateError("candidate evidence scope is not active")
+        self._active_candidate_scope = None
 
     def _assert_crossing_invocation_allowed(
         self,
@@ -1882,6 +2174,15 @@ class PathwayBindingSession:
                 f"callable before lock: {missing_crossings}"
             )
         self._validate_explicit_crossing_dataflow()
+        for candidate in self._candidates.values():
+            if candidate.mechanism_evidence is not None:
+                candidate.mechanism_evidence.assert_current(
+                    self.authority.repository_root,
+                    candidate_kind=candidate.candidate_kind,
+                    proposed_source_pathway_id=(candidate.proposed_source_pathway_id),
+                    proposed_target_pathway_id=(candidate.proposed_target_pathway_id),
+                    proposed_relation=candidate.proposed_relation,
+                )
         declared_pathway_ids = {binding.pathway_id for binding in bindings}
         for alternatives in self._alternatives.values():
             missing = sorted(set(alternatives.pathway_ids) - declared_pathway_ids)
@@ -1950,10 +2251,8 @@ class PathwayBindingSession:
     def record_candidate_use(
         self,
         candidate_id: str,
-        *,
-        evidence_reference: str,
     ) -> CandidateUseRecord:
-        """Record explicit candidate use without promoting or executing it."""
+        """Record one scoped candidate use against its frozen content address."""
 
         if self._phase != "locked":
             raise BindingStateError("candidate use requires a frozen binding lock")
@@ -1961,15 +2260,39 @@ class PathwayBindingSession:
             raise InvalidCandidateError(
                 f"candidate {candidate_id!r} was not declared before lock"
             )
-        if not evidence_reference:
-            raise InvalidCandidateError("candidate use needs an evidence reference")
         if any(item.candidate_id == candidate_id for item in self._candidate_uses):
             raise InvalidCandidateError(
                 f"candidate {candidate_id!r} already has a use record"
             )
+        candidate = self._candidates[candidate_id]
+        evidence = candidate.mechanism_evidence
+        if evidence is None:
+            raise InvalidCandidateError(
+                "candidate use requires content-addressed mechanism evidence "
+                "declared before lock"
+            )
+        evidence.assert_current(
+            self.authority.repository_root,
+            candidate_kind=candidate.candidate_kind,
+            proposed_source_pathway_id=candidate.proposed_source_pathway_id,
+            proposed_target_pathway_id=candidate.proposed_target_pathway_id,
+            proposed_relation=candidate.proposed_relation,
+        )
+        witnesses = [
+            witness
+            for scope in self._candidate_scopes
+            if scope.candidate is candidate
+            if (witness := scope.exercise_witness()) is not None
+        ]
+        if len(witnesses) != 1:
+            raise InvalidCandidateError(
+                "candidate use requires exactly one completed evidence scope with "
+                "returned constituent execution"
+            )
         use = CandidateUseRecord(
             candidate_id=candidate_id,
-            evidence_reference=evidence_reference,
+            mechanism_evidence=MappingProxyType(evidence.to_record()),
+            execution_witness=MappingProxyType(deepcopy(witnesses[0])),
         )
         self._candidate_uses.append(use)
         return use
@@ -2101,7 +2424,8 @@ class PathwayBindingSession:
                         "candidate_id": candidate.candidate_id,
                         "claim_ceiling": candidate.claim_ceiling,
                         "promotion_status": candidate.promotion_status,
-                        "evidence_reference": use.evidence_reference,
+                        "mechanism_evidence": dict(use.mechanism_evidence),
+                        "candidate_execution_witness": dict(use.execution_witness),
                         "authority": dict(candidate.authority),
                         "producer_residue": list(candidate.producer_residue),
                         "adapter_residue": list(candidate.adapter_residue),
@@ -2112,9 +2436,15 @@ class PathwayBindingSession:
                 continue
             assert candidate.proposed_source_pathway_id is not None
             assert candidate.proposed_target_pathway_id is not None
+            source_binding_id = str(use.execution_witness.get("source_binding_id", ""))
+            target_binding_id = str(use.execution_witness.get("target_binding_id", ""))
             if (
                 candidate.proposed_source_pathway_id not in actual_by_pathway
                 or candidate.proposed_target_pathway_id not in actual_by_pathway
+                or source_binding_id
+                not in {binding.binding_id for binding in actual_bindings}
+                or target_binding_id
+                not in {binding.binding_id for binding in actual_bindings}
             ):
                 raise BindingStateError(
                     f"used candidate {candidate.candidate_id!r} lacks actual bound "
@@ -2125,16 +2455,13 @@ class PathwayBindingSession:
                     "edge_id": f"candidate:{candidate.candidate_id}",
                     "edge_kind": "experimental_unregistered_candidate",
                     "candidate_id": candidate.candidate_id,
-                    "source_node_id": actual_by_pathway[
-                        candidate.proposed_source_pathway_id
-                    ],
-                    "target_node_id": actual_by_pathway[
-                        candidate.proposed_target_pathway_id
-                    ],
+                    "source_node_id": source_binding_id,
+                    "target_node_id": target_binding_id,
                     "proposed_relation": candidate.proposed_relation,
                     "claim_ceiling": candidate.claim_ceiling,
                     "promotion_status": candidate.promotion_status,
-                    "evidence_reference": use.evidence_reference,
+                    "mechanism_evidence": dict(use.mechanism_evidence),
+                    "candidate_execution_witness": dict(use.execution_witness),
                     "authority": dict(candidate.authority),
                     "producer_residue": list(candidate.producer_residue),
                     "adapter_residue": list(candidate.adapter_residue),
@@ -2158,6 +2485,10 @@ class PathwayBindingSession:
             raise BindingStateError(
                 "a receipt cannot be sealed inside a composition evidence scope"
             )
+        if self._active_candidate_scope is not None:
+            raise BindingStateError(
+                "a receipt cannot be sealed inside a candidate evidence scope"
+            )
         self.authority.assert_current()
         actual_bindings = self._actual_pathway_bindings()
         composition_witnesses = self._composition_witnesses()
@@ -2167,6 +2498,15 @@ class PathwayBindingSession:
             self._candidates[candidate_id]
             for candidate_id in sorted(used_candidate_ids)
         )
+        for candidate in used_candidates:
+            assert candidate.mechanism_evidence is not None
+            candidate.mechanism_evidence.assert_current(
+                self.authority.repository_root,
+                candidate_kind=candidate.candidate_kind,
+                proposed_source_pathway_id=candidate.proposed_source_pathway_id,
+                proposed_target_pathway_id=candidate.proposed_target_pathway_id,
+                proposed_relation=candidate.proposed_relation,
+            )
         graph = self._use_graph(
             actual_bindings=actual_bindings,
             exercised_compositions=exercised_compositions,
@@ -2205,6 +2545,7 @@ class PathwayBindingSession:
                 "callable_identity": dict(item.callable_identity),
                 "execution_event_order": item.execution_event_order,
                 "crossing_scope_id": item.crossing_scope_id,
+                "candidate_scope_id": item.candidate_scope_id,
             }
             for index, item in enumerate(self._invocations)
         ]
@@ -2286,7 +2627,7 @@ class PathwayBindingSession:
             "candidate_relations_exercised": [
                 {
                     **self._candidates[item.candidate_id].to_record(),
-                    "evidence_reference": item.evidence_reference,
+                    "candidate_execution_witness": dict(item.execution_witness),
                 }
                 for item in self._candidate_uses
             ],
@@ -2447,6 +2788,7 @@ class PathwayBindingSession:
         adapter_residue: Sequence[str] = (),
         configured_residue: Sequence[str] = (),
         evidence_owner: str,
+        mechanism_evidence: Mapping[str, Any] | None = None,
         blocked_claims: Sequence[str] = (),
     ) -> CandidateDeclaration:
         """Declare experimental work without altering admitted authorities."""
@@ -2486,6 +2828,12 @@ class PathwayBindingSession:
                 raise InvalidCandidateError(
                     f"candidate cannot consume non-executable composition {composition_id}"
                 )
+        parsed_evidence = (
+            CandidateMechanismEvidence.from_record(mechanism_evidence)
+            if mechanism_evidence is not None
+            else None
+        )
+        invalid_relabel_conflicts: tuple[Mapping[str, Any], ...] = ()
         if candidate_kind == "composition":
             if not proposed_source_pathway_id or not proposed_target_pathway_id:
                 raise InvalidCandidateError(
@@ -2497,6 +2845,60 @@ class PathwayBindingSession:
                 raise InvalidCandidateError(
                     "composition candidate requires a genuinely new relation description"
                 )
+            if (
+                proposed_source_pathway_id not in consumed_pathways
+                or proposed_target_pathway_id not in consumed_pathways
+            ):
+                raise InvalidCandidateError(
+                    "composition candidate endpoints must be explicit consumed "
+                    "admitted pathways"
+                )
+            invalid_relabel_conflicts = self.authority.invalid_relabels_for_endpoints(
+                proposed_source_pathway_id,
+                proposed_target_pathway_id,
+            )
+            normalized_relation = _normalized_claim_text(proposed_relation)
+            blocked_relabels = {
+                str(relabel)
+                for composition in invalid_relabel_conflicts
+                for relabel in composition["blocked_relabels"]
+            }
+            restated = sorted(
+                relabel
+                for relabel in blocked_relabels
+                if _normalized_claim_text(relabel) in normalized_relation
+            )
+            if restated:
+                raise InvalidCandidateError(
+                    "candidate relation restates registered invalid relabels: "
+                    f"{restated}"
+                )
+            if invalid_relabel_conflicts and parsed_evidence is None:
+                conflict_ids = sorted(
+                    str(item["composition_id"]) for item in invalid_relabel_conflicts
+                )
+                raise InvalidCandidateError(
+                    "candidate endpoint pair conflicts with invalid relabel rows "
+                    f"{conflict_ids}; distinct content-addressed mechanism "
+                    "evidence is required"
+                )
+            if invalid_relabel_conflicts and parsed_evidence is not None:
+                reserved_ids = {
+                    str(item["composition_id"]) for item in invalid_relabel_conflicts
+                }
+                if parsed_evidence.mechanism_id in reserved_ids:
+                    raise InvalidCandidateError(
+                        "candidate mechanism identity must be distinct from the "
+                        "conflicting invalid composition"
+                    )
+        if parsed_evidence is not None:
+            parsed_evidence.assert_current(
+                self.authority.repository_root,
+                candidate_kind=candidate_kind,
+                proposed_source_pathway_id=proposed_source_pathway_id,
+                proposed_target_pathway_id=proposed_target_pathway_id,
+                proposed_relation=proposed_relation,
+            )
         raw_authority = dict(authority or {})
         unknown_coordinates = sorted(set(raw_authority) - set(AUTHORITY_COORDINATES))
         if unknown_coordinates:
@@ -2518,6 +2920,7 @@ class PathwayBindingSession:
             )
         )
         declaration = CandidateDeclaration(
+            _session=self,
             candidate_id=candidate_id,
             candidate_kind=candidate_kind,
             purpose=purpose,
@@ -2533,6 +2936,10 @@ class PathwayBindingSession:
             configured_residue=tuple(configured_residue),
             evidence_owner=evidence_owner,
             blocked_claims=blocked,
+            mechanism_evidence=parsed_evidence,
+            invalid_relabel_conflict_ids=tuple(
+                str(item["composition_id"]) for item in invalid_relabel_conflicts
+            ),
         )
         self._candidates[candidate_id] = declaration
         return declaration

@@ -110,7 +110,14 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       object flow.
 - [x] Reject endpoint-only, missing-adapter, and forged-adapter composition
       evidence.
-- [ ] Replace string-only candidate-use attestation for B-04.
+- [x] Replace string-only candidate-use attestation with pre-lock,
+      content-addressed mechanism evidence for B-04.
+- [x] Require candidate-specific constituent execution scopes and reject
+      unscoped endpoint co-use.
+- [x] Reject renamed invalid-relabel restatements and require a distinct
+      mechanism for candidates over known invalid endpoint pairs.
+- [x] Extend BCF-004 and BCF-011 to reconstruct candidate evidence and
+      invalid-row conflicts independently.
 - [ ] Enforce selection-scoped dynamic alternatives for B-05.
 - [ ] Add the independent acceptance anchor for B-06.
 - [ ] Add mechanism-specific effect outcome vocabulary for M-01.

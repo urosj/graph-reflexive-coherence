@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "aba41ea847eb2ee5917afa58b7b5af785e2b989014efece23bdd73b11ddfca68",
+  "policy_digest": "1596f2e13980d6d87609382584e207b382218cbca374c2f418f4db59fb2ec32c",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -28,7 +28,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Candidate declarations and uses must remain experimental, unregistered, and unpromoted.",
+      "description": "Candidate uses require current content-addressed mechanism evidence and scoped constituent execution while remaining experimental and unpromoted.",
       "rule_id": "BCF-004",
       "severity": "fail_closed"
     },
@@ -63,7 +63,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Invalid relabels cannot be bound or reused as candidate identities.",
+      "description": "Invalid relabels cannot be bound, reused, or laundered through renamed candidates without a distinct mechanism.",
       "rule_id": "BCF-011",
       "severity": "fail_closed"
     },
@@ -117,7 +117,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "976c66080736492c87a52a12a8423c01b76ed68b",
+  "source_revision": "804fff0e6c65a07aee80b638c6c20930baca8a3d",
   "staleness_rule": "binding-map, symbol, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until versioned re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

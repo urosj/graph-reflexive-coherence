@@ -41,6 +41,7 @@
       "status": "passed",
       "triggered_rule_ids": [
         "BCF-004",
+        "BCF-011",
         "BCF-015"
       ]
     },
@@ -212,7 +213,7 @@
       ]
     }
   ],
-  "execution_digest": "6deead50fc9eb4c22c12b74ec2bf95d831293914d90a2ae9aef1103bdfb72c14",
+  "execution_digest": "83b895d4d2af31c84ea053cd1affe8ceefc213ad87a3f54dbaa39fa36e5c9dfb",
   "failed_open_count": 0,
   "iteration": 115,
   "rule_isolation_control_count": 20,
@@ -461,6 +462,6 @@
   "rule_isolation_failed_open_count": 0,
   "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
-  "source_revision": "976c66080736492c87a52a12a8423c01b76ed68b",
+  "source_revision": "804fff0e6c65a07aee80b638c6c20930baca8a3d",
   "status": "passed"
 }

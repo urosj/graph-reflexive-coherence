@@ -62,6 +62,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_scope_id": null,
       "composition_ids": [],
       "crossing_scope_id": null,
       "error_type": null,
@@ -203,7 +204,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "31b7c3221da470f4255463286d9aa2c576434c418f2c80d25cd0d8942fcfbc30",
+  "receipt_digest": "01705be059961e20214addde5534fa80ab1cd726274cfbb7fa5de382232e4b34",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",
