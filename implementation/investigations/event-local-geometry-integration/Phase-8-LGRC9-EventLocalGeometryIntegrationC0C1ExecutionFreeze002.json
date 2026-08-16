@@ -1,0 +1,31 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1ExecutionFreeze002",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_c0_c1_execution_freeze_v1",
+  "date": "2026-08-16",
+  "iteration": 96,
+  "freeze_id": "PHASE8-ELGI-C0C1-FREEZE-002",
+  "source_commit": "47a8a096e86a33b36466bee92738c52bf966ec50",
+  "attempt_limit": 1,
+  "output_create_once": true,
+  "scientific_contract_changed_from_freeze_001": false,
+  "repair_scope": "Python output-object boolean token only",
+  "files": [
+    {"path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Reregistration.json", "sha256": "8099f5521de67b3c8b7e640d81c5264f25965aa0fb7da144b08233f8997670e9"},
+    {"path": "implementation/run_phase8_event_local_geometry_c0_c1_reregistered.py", "sha256": "9c4474779a1ecdfa87e2fdac1d8c0034f2b8d5dbe124d4a29449db0f1284413f"},
+    {"path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Attempt1Failure.json", "sha256": "f87372e5b1ee04f61a5d67e97e1a479ba2c7e394cfc4719f36d0138531c683e1"},
+    {"path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineFreeze.json", "sha256": "0677e7d05177c174fa5149d85a96bb9422cc31a5ee19ca4e3ca31dd97bb20bd4"},
+    {"path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineSourceHashes.json", "sha256": "a30fbebd98ebc112e24e35c4d5a0b643c37e1b5f0c3b7b85060fdc0d9269a303"},
+    {"path": "src/pygrc/models/lgrc_9_v3_contract.py", "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680"},
+    {"path": "src/pygrc/models/lgrc_9_v3_runtime_state.py", "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c"},
+    {"path": "src/pygrc/models/lgrc_9_v3_runtime.py", "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"},
+    {"path": "src/pygrc/models/lgrc_9_v3_timing.py", "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"},
+    {"path": "src/pygrc/models/lgrc_9_v3_packets.py", "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"},
+    {"path": "src/pygrc/models/lgrc_9_v3_restoration.py", "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"},
+    {"path": "src/pygrc/models/__init__.py", "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"}
+  ],
+  "output": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1RawEvidence.json",
+  "reconstruction_output": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.json",
+  "source_behavior_change_allowed": false,
+  "phase8_runtime_implementation_opened": false,
+  "n32_selected": false
+}

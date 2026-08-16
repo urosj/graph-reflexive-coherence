@@ -1,0 +1,209 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_causal_work_admission_pattern_audit_v1",
+  "date": "2026-08-16",
+  "status": "source_audit_complete_recurring_grammar_observed_generic_block_absent",
+  "scientific_execution_performed": false,
+  "runtime_source_modified": false,
+  "source_authorities": {
+    "graph_rc_commit": "47a8a096e86a33b36466bee92738c52bf966ec50",
+    "grc9v3_runtime": {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"
+    },
+    "grc9v3_choice": {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"
+    },
+    "lgrc9v3_runtime": {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+    },
+    "lgrc9v3_packets": {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+    },
+    "c1_raw_evidence": {
+      "path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1RawEvidence.json",
+      "sha256": "f7dc0709c41a9adeda2b3167109c712d989bdc480f93bae00d3499bf601a0363"
+    },
+    "ownership_pressure_map": {
+      "path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkOwnershipPressureMap.json",
+      "consumption": "prior_interpretive_input_not_runtime_authority"
+    }
+  },
+  "audit_question": "whether_existing_LGRC_mechanisms_compose_direction_funding_eligibility_scheduling_commitment_and_reception_through_a_reusable_native_admission_relation",
+  "provisional_relation": {
+    "orientation_authority": "native_relation_or_current",
+    "funding_authority": "source_coherence_or_mechanism_specific_capacity",
+    "eligibility_authority": "native_or_configured_mechanism_specific_predicate",
+    "scheduling_authority": "producer_caller_or_evaluation_path",
+    "commit_authority": "step_or_mechanism_specific_runtime_integrator",
+    "reception_authority": "target_credit_or_topology_state_transition"
+  },
+  "pattern_rows": [
+    {
+      "mechanism_id": "caller_scheduled_packet_departure",
+      "direction_proposer": "caller_supplies_source_target_edge_and_amount",
+      "funding": "source_node_coherence_checked_and_debited_at_departure_processing",
+      "eligibility": "endpoint_positive_amount_time_order_and_source_budget_checks",
+      "scheduler": "caller",
+      "committer": "packet_event_processing_through_LGRC9V3_step",
+      "configured_residue": ["source", "target", "edge", "amount", "arrival_time"],
+      "generalizability": "transport_contract_only_no_native_reason_for_departure"
+    },
+    {
+      "mechanism_id": "packet_arrival_and_local_eligibility",
+      "direction_proposer": "in_flight_packet_fixes_target_and_edge",
+      "funding": "in_flight_packet_amount",
+      "eligibility": "arrival_state_and_order_plus_passed_local_update_and_spark_eligibility_booleans",
+      "scheduler": "prior_departure_and_queue_order",
+      "committer": "LGRC9V3_step_credits_target_and_emits_eligibility_and_local_update_records",
+      "configured_residue": ["local_update_eligible", "spark_diagnostic_eligible"],
+      "generalizability": "native_reception_with_no_general_derived_downstream_admission_predicate"
+    },
+    {
+      "mechanism_id": "configured_causal_flux_route_departure",
+      "direction_proposer": "configured_causal_flux_route",
+      "funding": "aggregate_source_coherence_preflight",
+      "eligibility": "valid_route_positive_amount_and_idempotency",
+      "scheduler": "native_producer_over_configured_routes",
+      "committer": "LGRC9V3_step_processes_queued_departure",
+      "configured_residue": ["route", "target", "amount_source", "arrival_time"],
+      "generalizability": "reusable_scheduling_machinery_but_relation_and_meaning_remain_configured"
+    },
+    {
+      "mechanism_id": "route_aspect_surplus_departure",
+      "direction_proposer": "configured_route_aspect_pole_and_first_channel_hop",
+      "funding": "source_node_coherence",
+      "eligibility": "observed_pole_mass_surplus_over_configured_reference_and_threshold",
+      "scheduler": "native_autonomous_surplus_producer",
+      "committer": "LGRC9V3_step_processes_queued_departure",
+      "configured_residue": ["pole_regions", "channel", "reference_mass", "threshold", "packet_amount"],
+      "generalizability": "strong_packet_admission_analogue_but_policy_semantics_remain_configured_and_route_specific"
+    },
+    {
+      "mechanism_id": "spark_diagnostics_and_topology_integration",
+      "direction_proposer": "hybrid_spark_detector_candidate_node",
+      "funding": "mechanical_expansion_and_budget_machinery",
+      "eligibility": "diagnostic_thresholds_plus_explicit_LGRC3_topology_and_expansion_policies",
+      "scheduler": "arrival_local_update_path_or_explicit_diagnostic_call",
+      "committer": "causal_topology_integrator",
+      "configured_residue": ["spark_lane", "evolution_thresholds", "topology_policy"],
+      "generalizability": "distributed_detection_to_commit_pattern_specialized_to_spark_refinement"
+    },
+    {
+      "mechanism_id": "sink_compatibility_choice_and_collapse",
+      "direction_proposer": "positive_outgoing_flux_aggregated_by_reachable_sink",
+      "funding": "existing_graph_state_no_generic_packet_funding",
+      "eligibility": "choice_backend_epsilon_thresholds_and_prior_choice_state",
+      "scheduler": "deterministic_choice_rebuild_or_explicit_LGRC_collapse_path",
+      "committer": "choice_rebuild_registry_and_basin_assignment_or_LGRC_collapse_integrator",
+      "configured_residue": ["sink_set", "successor_map", "epsilon_choice", "epsilon_collapse"],
+      "generalizability": "native_compatibility_scoring_but_not_generic_causal_work_admission"
+    },
+    {
+      "mechanism_id": "native_route_arbitration",
+      "direction_proposer": "candidate_route_scores_and_declared_order",
+      "funding": "candidate_budget_prediction_must_close",
+      "eligibility": "committed_source_surface_visible_inputs_valid_order_budget_and_tie_policy",
+      "scheduler": "explicit_arbitration_API",
+      "committer": "explicit_commit_validates_digest_freshness_then_runs_collapse_or_reabsorption",
+      "configured_residue": ["candidate_specs", "score_components", "tie_policy", "topology_intent"],
+      "generalizability": "reusable_arbitration_and_stale_guards_not_source_current_packet_admission"
+    },
+    {
+      "mechanism_id": "boundary_birth",
+      "direction_proposer": "native_outward_flux_pressure_at_eligible_parent_port",
+      "funding": "parent_coherence_debit",
+      "eligibility": "opt_in_policy_port_capacity_positive_pressure_probability_RNG_and_idempotency",
+      "scheduler": "native_boundary_birth_producer",
+      "committer": "LGRC9V3_step_consumes_trial_and_birth_application_mutates_topology",
+      "configured_residue": ["lambda_birth", "parent_eligibility_policy", "alpha_seed", "bond_and_delay_policy"],
+      "generalizability": "complete_distributed_chain_but_specialized_to_topology_birth"
+    },
+    {
+      "mechanism_id": "time_replay_and_stale_guards",
+      "direction_proposer": "none",
+      "funding": "none",
+      "eligibility": "event_time_proper_time_idempotency_lineage_and_digest_freshness",
+      "scheduler": "existing_mechanism_scheduler",
+      "committer": "existing_mechanism_committer",
+      "configured_residue": ["guard_policy", "recorded_lineage"],
+      "generalizability": "cross_cutting_constraints_not_action_selection"
+    }
+  ],
+  "shared_roles_observed": [
+    "relation_or_candidate_proposal",
+    "local_budget_or_capacity",
+    "pre_mutation_eligibility",
+    "scheduling_or_candidate_materialization",
+    "runtime_owned_commit",
+    "target_or_topology_reception",
+    "time_lineage_budget_idempotency_and_stale_guards"
+  ],
+  "load_bearing_differences": [
+    "packet_departure_accepts_external_route_and_amount",
+    "route_surplus_uses_configured_pole_and_channel_semantics",
+    "spark_integration_uses_detector_thresholds_and_topology_policy",
+    "sink_compatibility_uses_sink_sets_successor_relations_and_epsilon_thresholds",
+    "route_arbitration_uses_candidate_specs_and_score_components",
+    "boundary_birth_uses_front_capacity_outward_pressure_and_stochastic_birth_policy"
+  ],
+  "current_source_crossing": {
+    "required_relation": "native_current_plus_source_local_causal_availability_plus_source_funding_to_native_departure_eligibility",
+    "current_orientation_present": true,
+    "source_funding_present": true,
+    "packet_scheduling_present": true,
+    "runtime_commit_present": true,
+    "source_local_causal_availability_present": false,
+    "generic_crossing_present": false,
+    "configured_analogues_present": true,
+    "configured_analogues_support_native_generic_claim": false
+  },
+  "outcome_assessment": {
+    "existing_native_composition": "recurring_descriptive_grammar_only_not_reusable_generic_contract",
+    "missing_generic_admission_block": "source_supported_as_absence_but_not_yet_justified_for_implementation",
+    "no_common_composition": "not_selected_because_shared_roles_recur_but_mechanism_specific_eligibility_remains_load_bearing",
+    "best_current_classification": "fragmented_native_admission_grammar_with_missing_generic_current_source_crossing"
+  },
+  "future_contract_admission_rule": {
+    "minimum_independent_consumers": 2,
+    "must_preserve_mechanism_specific_eligibility": true,
+    "must_not_relabel_configuration_as_native_state": true,
+    "must_separate": [
+      "orientation_evidence",
+      "funding_evidence",
+      "eligibility_evidence",
+      "scheduling_record",
+      "commit_record",
+      "reception_record",
+      "configured_residue"
+    ],
+    "threshold_currently_met": false
+  },
+  "decision_state": {
+    "ownership_model_selected": false,
+    "distributed_native_authority_source_supported": true,
+    "distributed_admission_grammar_observed": true,
+    "generic_causal_work_admission_runtime_block_present": false,
+    "generic_causal_work_admission_extension_selected": false,
+    "current_source_local_eligibility_present": false,
+    "phase8_runtime_implementation_opened": false,
+    "iteration_97_opened": false,
+    "rcae_l04_return_opened": false,
+    "n32_selected": false
+  },
+  "blocked_relabels": [
+    "recurring_pattern_as_generic_runtime_primitive",
+    "configured_route_as_native_current_source_eligibility",
+    "source_funding_as_action_ownership",
+    "event_queue_commit_as_causal_reason",
+    "boundary_birth_policy_as_general_action_admission",
+    "sink_compatibility_as_semantic_choice",
+    "read_back",
+    "shared_medium_coordination",
+    "agency",
+    "N32"
+  ]
+}

@@ -17,6 +17,11 @@ numbers. They are indexed under
 [`implementation/corrections/`](./corrections/README.md), with their own plans,
 checklists, closeouts, and claim boundaries.
 
+Bounded studies that close without runtime change are indexed under
+[`implementation/investigations/`](./investigations/README.md). They preserve
+gated evidence and may motivate a later implementation or conformance tranche,
+but they are not implementation-success records.
+
 Operator-facing reference documentation lives under
 [`docs/reference/`](../docs/reference/README.md). Start there for current usage
 guides:
@@ -248,6 +253,19 @@ Phase 8 LGRC9 multi-basin formation continuation checklist:
 
 Phase 8 LGRC9 multi-basin formation closeout:
 [Phase-8-LGRC9-MultiBasinFormationCloseout.md](./Phase-8-LGRC9-MultiBasinFormationCloseout.md)
+
+Phase 8 GRC/LGRC causal-pathway contract consolidation plan:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md](./Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md)
+
+Phase 8 GRC/LGRC causal-pathway contract consolidation checklist:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md](./Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md)
+
+Phase 8 GRC/LGRC causal-pathway baseline freeze:
+[Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md](./Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md)
+
+This is a documentation and conformance tranche. Iteration 105 is complete;
+Iterations 106-111 remain pending. It does not reopen the closed event-local
+geometry-integration runtime proposal or change GRC/LGRC behavior.
 
 LGRC9V3 executable target specification:
 [lgrc-9-v3-spec.md](../specs/lgrc-9-v3-spec.md)

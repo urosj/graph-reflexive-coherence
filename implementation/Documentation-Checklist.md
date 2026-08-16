@@ -1,6 +1,6 @@
 # Documentation Checklist
 
-Status: complete
+Status: complete through Iteration 9; Iteration 10 draft opened
 
 This checklist tracks the operator-facing reference documentation layer. The canonical home for user/reference guides is `docs/reference/`. The `implementation/` directory remains the engineering-history and phase-planning record.
 
@@ -105,3 +105,16 @@ checks passed.
 Remaining missing guides: none in the current documentation checklist. Future
 guide candidates should be opened as new checklist iterations rather than
 reopening this closeout.
+
+## Iteration 10: GRC/LGRC Causal Pathway Reference
+
+- [ ] Complete the draft [causal pathway selection guide](../docs/reference/GRC-LGRC-CausalPathwayGuide.md).
+- [ ] Complete the draft [causal pathway composition matrix](../docs/reference/GRC-LGRC-CompositionMatrix.md).
+- [ ] Freeze the supporting registry and source/test/evidence crosswalk under the
+  separate Phase 8 consolidation tranche.
+- [ ] Validate that the guides preserve configured, producer-mediated,
+  diagnostic, and native-behavior distinctions.
+
+Status: draft. Phase 8 Iteration 105 froze the initial source anchor and
+twelve-family admission census; Iterations 106-111 remain pending and these
+guides are not yet normative selection or composition authorities.

@@ -1,0 +1,99 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationContractSchema",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_contract_schema_v0",
+  "date": "2026-08-16",
+  "status": "retained_prospective_schema_gate_closed_without_runtime_change",
+  "purpose": "freeze_candidate_default_off_policy_and_record_contracts_before_event_local_geometry_runtime_changes",
+  "default_flags": {
+    "event_local_geometry_integration_enabled": false,
+    "event_local_geometry_integration_policy": "disabled",
+    "event_local_geometry_integration_validated": false,
+    "event_local_geometry_integration_supported": false
+  },
+  "candidate_policy_ids": [
+    "disabled",
+    "event_arrival_dependency_closed_geometry_v1"
+  ],
+  "record_types": {
+    "causal_availability": {
+      "artifact_kind": "lgrc9v3_event_local_causal_availability_record",
+      "artifact_schema_version": "lgrc9v3_event_local_causal_availability_record_v1",
+      "digest_field": "causal_availability_digest"
+    },
+    "geometry_proposal": {
+      "artifact_kind": "lgrc9v3_event_local_geometry_proposal_record",
+      "artifact_schema_version": "lgrc9v3_event_local_geometry_proposal_record_v1",
+      "digest_field": "proposal_digest"
+    },
+    "current_realization": {
+      "artifact_kind": "lgrc9v3_event_local_current_realization_record",
+      "artifact_schema_version": "lgrc9v3_event_local_current_realization_record_v1",
+      "digest_field": "current_realization_digest",
+      "statuses": [
+        "proposed",
+        "rejected",
+        "eligible",
+        "committed",
+        "packetized",
+        "consumed",
+        "superseded",
+        "invalidated"
+      ]
+    }
+  },
+  "idempotency_keys": {
+    "causal_availability": [
+      "policy_id",
+      "trigger_event_id",
+      "trigger_node_id",
+      "source_state_digest"
+    ],
+    "geometry_proposal": [
+      "policy_id",
+      "causal_availability_digest",
+      "reconstruction_policy_id"
+    ],
+    "current_realization": [
+      "policy_id",
+      "proposal_digest",
+      "integration_interval_id",
+      "trigger_node_id"
+    ]
+  },
+  "packet_linkage_fields": [
+    "source_proposal_id",
+    "source_current_realization_id",
+    "source_current_realization_digest",
+    "integration_interval_id",
+    "packetization_policy_id"
+  ],
+  "schema_guards": {
+    "enabled_requires_active_policy": true,
+    "validated_requires_enabled": true,
+    "supported_requires_validated": true,
+    "rejects_future_event_inputs": true,
+    "rejects_hidden_fixture_targets": true,
+    "rejects_action_scope_leaks": true,
+    "rejects_overlapping_current_intervals": true,
+    "rejects_duplicate_current_realization": true,
+    "rejects_stale_proposal_commitment": true,
+    "rejects_underfunded_partial_scheduling": true,
+    "rejects_packet_work_without_current_realization": true,
+    "proposal_is_non_mutating": true,
+    "packet_execution_owns_budget_mutation": true,
+    "does_not_promote_n32_or_ecology_claims": true
+  },
+  "claim_flags": {
+    "native_event_local_geometry_claim_allowed": false,
+    "native_event_to_current_closure_claim_allowed": false,
+    "native_current_to_packet_claim_allowed": false,
+    "n32_claim_allowed": false,
+    "full_rc_readback_claim_allowed": false,
+    "learning_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "ecology_claim_allowed": false,
+    "formative_plurality_claim_allowed": false
+  },
+  "next_gate": "closed_after_C1_SCOPE_no_iteration_97_opened"
+}

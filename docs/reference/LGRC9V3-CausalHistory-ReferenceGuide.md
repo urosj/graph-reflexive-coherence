@@ -53,6 +53,14 @@ Use this guide when you want to:
 - understand which active LGRC-3 and executable LGRC9V3 runtime surfaces are
   implemented and which claims remain out of scope.
 
+For the draft cross-family inventory of who authorizes, schedules, commits,
+and receives causal work, see the
+[GRC/LGRC Causal Pathway Guide](./GRC-LGRC-CausalPathwayGuide.md). For draft
+composition compatibility and conflict records, see the
+[GRC/LGRC Composition Matrix](./GRC-LGRC-CompositionMatrix.md). Those documents
+belong to a separate documentation/conformance tranche and do not change the
+runtime behavior described here.
+
 ## Synchronous GRC And LGRC Execution Roles
 
 Synchronous GRC-family runtimes and native LGRC execution serve different

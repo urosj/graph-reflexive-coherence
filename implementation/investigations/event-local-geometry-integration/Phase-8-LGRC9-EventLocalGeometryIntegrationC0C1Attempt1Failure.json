@@ -1,0 +1,21 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Attempt1Failure",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_c0_c1_attempt_failure_v1",
+  "date": "2026-08-16",
+  "iteration": 96,
+  "experiment_id": "PHASE8-ELGI-C0C1-001",
+  "attempt": 1,
+  "registration_sha256": "17a5ea65ff228e6b6cf7298ad9a78e4a0012f257b6605b666e9d1b38d816fb05",
+  "runner_sha256": "877a21b64a6bf72eae38128ca9c4f757c9f0245fe7f61a8bdfc7d6681bc95e47",
+  "execution_freeze_id": "PHASE8-ELGI-C0C1-FREEZE-001",
+  "process_exit_code": 1,
+  "failure_stage": "final_raw_evidence_object_assembly_before_output_write",
+  "exception_type": "NameError",
+  "exception_message": "name 'false' is not defined; Python boolean False was required",
+  "claim_output_written": false,
+  "claim_output_path_was_absent_after_failure": true,
+  "scientific_evidence_admissible": false,
+  "gate_effect": "blocks_use_of_attempt_1",
+  "repair_scope": "replace one non-scientific Python boolean token in a new runner identity; do not change fixture, arms, policies, controls, tolerances, or outcome classes",
+  "original_registration_and_runner_preserved": true
+}

@@ -41,6 +41,15 @@ The implementation strategy assumed by these specs is:
   `LGRC9V3`. The first implementation level is LGRC-0 annotation/timing
   evidence over `GRC9V3`; behavior-changing LGRC-1 is opt-in and semi-causal
   unless causal availability buffers exist.
+- `grc-lgrc-causal-pathway-contracts.md`
+  Draft cross-family registry of GRC/LGRC execution, diagnostic, producer, and
+  restoration pathways. It exposes time, scope, distributed authority,
+  configured residue, composition boundaries, and claim ceilings without
+  introducing a universal runtime API.
+- `grc-lgrc-causal-pathway-contracts.json`
+  Machine-readable draft registry seed for the Phase 8 causal-pathway
+  consolidation tranche. It is a conformance input, not an evidence source or
+  runtime dispatcher.
 - `lgrc-9-v3-restoration-identity.md`
   Implemented and validated versioned LGRC9V3 restoration-identity contract
   over LGRC runtime state and a read-only projection of its embedded GRC9V3

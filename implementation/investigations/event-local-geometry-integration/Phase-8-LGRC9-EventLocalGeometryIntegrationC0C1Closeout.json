@@ -1,0 +1,109 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout",
+  "blocked_claims": [
+    "native_event_local_geometry_integration",
+    "native_event_to_current_closure",
+    "native_current_to_packet_closure",
+    "phase8_runtime_implementation",
+    "post_implementation_validation",
+    "N32",
+    "full_RC_Read_Back",
+    "learning",
+    "semantic_choice",
+    "agency",
+    "ecology_regime"
+  ],
+  "c0": {
+    "classification": "C0-EQUIV",
+    "maximum_coherence_delta": 0.0
+  },
+  "c1": {
+    "classification": "C1-SCOPE",
+    "independent_later_effect_passed": false,
+    "maximum_non_tied_order_delta": 0.0,
+    "observed_numerical_classification": "C1-NULL",
+    "positive_direct_funding_passed": true,
+    "positive_geometry_derived_packet_count": 0,
+    "scope_interpretation": "Native reconstructed current was incoming at the trigger node; the registered trigger-node-owned outward action scope emitted no work. The reversed-direction negative control changed state, but cannot support the registered mapping."
+  },
+  "closeout_digest": "085f841a4a0d855b098e111ff37ecbbb57fc7df8ad3676e0e6fce1a64d3fa5cb",
+  "controls": {
+    "budget_conservation": {
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "status": "passed"
+    },
+    "c0_full_drain_null": {
+      "maximum_coherence_delta": 0.0,
+      "status": "passed"
+    },
+    "direction": {
+      "maximum_coherence_delta": 0.08339310232498054,
+      "status": "failed_closed"
+    },
+    "funding": {
+      "status": "failed_open"
+    },
+    "geometry_off": {
+      "history_order_delta": 0.0,
+      "positive_path_difference": 0.0,
+      "status": "failed_open"
+    },
+    "label_only": {
+      "status": "failed_closed"
+    },
+    "mutation_and_basin_identity": {
+      "status": "passed"
+    },
+    "packetization_off": {
+      "history_order_delta": 0.0,
+      "positive_path_difference": 0.0,
+      "status": "failed_open"
+    },
+    "replay": {
+      "status": "passed"
+    },
+    "restoration": {
+      "status": "passed"
+    },
+    "same_frontier_scheduler_batching": {
+      "maximum_coherence_delta": 0.0,
+      "status": "passed"
+    },
+    "scale": {
+      "maximum_coherence_delta": 0.0,
+      "status": "failed_open"
+    },
+    "scope_leak": {
+      "status": "failed_closed"
+    },
+    "stale_proposal": {
+      "status": "failed_closed"
+    }
+  },
+  "date": "2026-08-16",
+  "gate_requirements": {
+    "alternative_explanations_rejected": false,
+    "c0_stable_full_drain_null_or_bounded_domain": true,
+    "c1_non_tied_order_effect_beyond_c0": false,
+    "geometry_dependence": false,
+    "independent_later_effect": false,
+    "packet_transduction_dependence": false,
+    "positive_path_directly_funded": true,
+    "remaining_hidden_mechanism_identified": true,
+    "replay_and_provenance": true
+  },
+  "independent_reconstruction_imported_pygrc": false,
+  "iteration": 96,
+  "n32_selected": false,
+  "phase8_runtime_implementation_opened": false,
+  "post_implementation_validation_opened": false,
+  "raw_evidence_digest_verified": true,
+  "raw_evidence_path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1RawEvidence.json",
+  "raw_evidence_sha256": "f7dc0709c41a9adeda2b3167109c712d989bdc480f93bae00d3499bf601a0363",
+  "registration_path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Reregistration.json",
+  "registration_sha256": "8099f5521de67b3c8b7e640d81c5264f25965aa0fb7da144b08233f8997670e9",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_c0_c1_closeout_v1",
+  "source_change_gate_disposition": "close_without_runtime_change",
+  "source_commit": "47a8a096e86a33b36466bee92738c52bf966ec50",
+  "strongest_supported_claim": "C0 is a stable full-drain equivalence result, but C1 closes at the registered action-scope boundary: native reconstructed current was incoming at the trigger node, so no trigger-node-owned geometry-derived packet work or independent order effect was produced."
+}

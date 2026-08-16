@@ -1,0 +1,165 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Reregistration",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_c0_c1_reregistration_v1",
+  "date": "2026-08-16",
+  "iteration": 96,
+  "status": "prospectively_reregistered_after_non_scientific_output_serialization_failure",
+  "experiment_id": "PHASE8-ELGI-C0C1-002",
+  "supersedes_invalid_execution_only": "PHASE8-ELGI-C0C1-001",
+  "repair_record": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Attempt1Failure.json",
+  "scientific_contract_changed_from_attempt_1": false,
+  "source_authority": {
+    "repository": "graph-reflexive-coherence",
+    "branch": "main",
+    "commit": "47a8a096e86a33b36466bee92738c52bf966ec50",
+    "baseline_freeze": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineFreeze.json",
+    "source_hash_manifest": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineSourceHashes.json"
+  },
+  "external_inputs": {
+    "c0_c1_bridge_sha256": "1a564bd39ec300033471cc65e50924d06b82311e8c20c2281afb8d6089decd62",
+    "gate_a_sha256": "9260f92787d4dcf48e8099a9ce391948c7dec24c2978cfcc305468ee5320c67e",
+    "gate_b_sha256": "9faf46e5c0b9d5b70b7a42a3b5a0a91cb045156fb33017c39702c526fddf33ad"
+  },
+  "question": "Does producer-mediated event-triggered global geometry reconstruction and directly funded packet transduction create a bounded non-tied order effect beyond a full-drain composition null, with the external orchestrator remaining the identified missing ownership layer?",
+  "fixture": {
+    "topology": "fixed_three_node_fork",
+    "nodes": {"0": "centre", "1": "left", "2": "right"},
+    "edges": {"0": [0, 1], "1": [0, 2]},
+    "initial_coherence": [0.4, 0.35, 0.35],
+    "base_conductance": [1.0, 1.0],
+    "prior_flux": [0.0, 0.0],
+    "budget_target": 1.1,
+    "exogenous_packet_amount": 0.06,
+    "exogenous_departure_time": 0.0,
+    "non_tied_arrival_times": [1.0, 3.0],
+    "same_frontier_arrival_time": 1.0,
+    "generated_departure_offset": 0.01,
+    "generated_arrival_offset": 0.5,
+    "integration_amount": 0.1,
+    "direct_funding_domain": "sum of trigger-owned generated packet amounts must not exceed current trigger-node coherence plus tolerance",
+    "params": {
+      "dt": 0.1,
+      "evolution": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "gamma": 1.0,
+        "delta": 1.0,
+        "eta": 1.0,
+        "rho": 1.0,
+        "v0": 1.0,
+        "kappa_c": 1.0,
+        "eps_gradient": 1e-12,
+        "eps_hessian": 1e-12,
+        "eps_spark": 0.0,
+        "eps_tau": 1e-12,
+        "site_potential_selection": "quadratic",
+        "site_potential_params": {"mu": 0.0, "scale": 0.0},
+        "compatibility_score_params": {"epsilon_choice": 1.0, "epsilon_collapse": 2.0}
+      },
+      "constitutive_semantic_modes": {
+        "hessian_backend": "row_basis_diagonal",
+        "curvature_backend": "none",
+        "edge_label_selection": "all",
+        "choice_backend": "sink_compatibility",
+        "boundary_mode": "prune"
+      }
+    }
+  },
+  "histories": {
+    "H12": "left contribution arrives at t=1; right contribution arrives at t=3",
+    "H21": "right contribution arrives at t=1; left contribution arrives at t=3",
+    "F12": "left then right at the same t=1 frontier, batched before one proposal",
+    "F21": "right then left at the same t=1 frontier, batched before one proposal"
+  },
+  "policies": {
+    "c0_full_drain": "drain both exogenous packet lifecycles, reconstruct once, packetize trigger-node-owned outward current once, then fully drain",
+    "c1_interleaving": "after each committed exogenous arrival and its local update, reconstruct once at the completed causal frontier and packetize trigger-node-owned outward current",
+    "same_frontier": "batch_all_committed_arrivals_at_equal_event_time_then_reconstruct_once",
+    "trigger_scope": "committed exogenous packet arrival and local update at node 0",
+    "read_scope": "fixed connected three-node dependency closure available at the completed frontier",
+    "action_scope": "outward current owned by trigger node 0 only",
+    "reconstruction_sequence": [
+      "rebuild_differential_state",
+      "rebuild_transport_state",
+      "rebuild_differential_state",
+      "rebuild_identity_state",
+      "rebuild_choice_state"
+    ],
+    "reconstruction_count_per_trigger": 1,
+    "packetization_rule": "amount = integration_amount * abs(flux_uv); sign selects physical direction",
+    "funding_failure": "reject complete proposal before scheduling; no scaling, borrowing, or partial schedule",
+    "independent_later_effect": "fresh post-drain GRC reconstruction over final committed LGRC coherence, recording potential, flux, sink set, and choice state; active proposal current and route score are not consumed"
+  },
+  "arms": [
+    "C0_H12", "C0_H21", "C1_H12", "C1_H21",
+    "C1_F12", "C1_F21", "C1_GEOMETRY_OFF_H12", "C1_GEOMETRY_OFF_H21",
+    "C1_PACKETIZATION_OFF_H12", "C1_PACKETIZATION_OFF_H21",
+    "C1_LABEL_ONLY_H12", "C1_HALF_SCALE_H12", "C1_WRONG_DIRECTION_H12",
+    "C1_RESTORATION_H12", "C1_REPLAY_H12", "C1_OVERDRAW_H12"
+  ],
+  "controls": [
+    "c0_full_drain_null",
+    "same_frontier_scheduler_batching",
+    "geometry_off",
+    "packetization_off",
+    "stale_proposal",
+    "scope_leak",
+    "label_only",
+    "direction",
+    "scale",
+    "funding",
+    "restoration",
+    "replay",
+    "mutation_leak",
+    "basin_identity",
+    "budget_conservation"
+  ],
+  "tolerances": {
+    "float_equality": 1e-12,
+    "budget": 1e-12,
+    "funding": 1e-12,
+    "flux_zero": 1e-15,
+    "minimum_order_effect": 1e-9,
+    "minimum_negative_control_difference": 1e-9
+  },
+  "execution_policy": {
+    "attempt_limit": 1,
+    "claim_matrix_execution_count": 1,
+    "output_create_once": true,
+    "runtime_event_limit_per_arm": 200,
+    "scientific_rerun_after_registration": false,
+    "independent_reconstruction_may_not_import_pygrc": true
+  },
+  "outcome_classes": {
+    "C0-EQUIV": "full-drain histories are equivalent and the one-checkpoint transduction is stable",
+    "C0-DOMAIN": "full-drain result is bounded by a declared direct-funding domain",
+    "C0-DRIFT": "repeated full-drain composition drifts beyond tolerance",
+    "C0-ORDER": "full-drain result depends on legal history order",
+    "C0-RUNTIME": "current runtime cannot express the registered C0 composition",
+    "C0-INVALID": "source, freeze, execution, or evidence integrity fails",
+    "C1-ORDER": "non-tied histories differ beyond C0 and all registered controls pass",
+    "C1-NULL": "non-tied histories remain equivalent beyond tolerance",
+    "C1-TIE": "apparent effect is explained by same-frontier scheduler order",
+    "C1-PROPOSAL": "effect is proposal-only or self-proved by active proposal current",
+    "C1-PACKET": "effect is not dependent on packet transduction",
+    "C1-FUNDING": "positive path leaves the direct-funding domain",
+    "C1-SCOPE": "effect requires action outside trigger ownership or future/hidden reads",
+    "C1-RUNTIME": "current runtime cannot express the registered producer-mediated probe",
+    "C1-INVALID": "source, freeze, execution, or evidence integrity fails"
+  },
+  "maximum_claim": "Source-current producer-mediated C0/C1 evidence may justify a separate owner decision about naturalizing the external event-local geometry orchestrator. It is not native event-local geometry integration or Phase 8 implementation evidence.",
+  "blocked_claims": [
+    "native_event_local_geometry_integration",
+    "native_event_to_current_closure",
+    "native_current_to_packet_closure",
+    "phase8_runtime_implementation",
+    "post_implementation_validation",
+    "N32",
+    "full_RC_Read_Back",
+    "learning",
+    "semantic_choice",
+    "agency",
+    "ecology_regime"
+  ],
+  "qualified_identifier_rule": "C2 means event-local geometry integration C2 and must not be conflated with N31 Candidate C.2"
+}

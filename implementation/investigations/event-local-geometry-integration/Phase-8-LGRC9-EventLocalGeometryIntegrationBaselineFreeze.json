@@ -1,0 +1,102 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineFreeze",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_baseline_freeze_v1",
+  "date": "2026-08-16",
+  "status": "baseline_frozen_no_source_behavior_change",
+  "iteration": 95,
+  "source_identity": {
+    "repository": "graph-reflexive-coherence",
+    "branch": "main",
+    "head": "47a8a096e86a33b36466bee92738c52bf966ec50",
+    "external_evidence_source": "47a8a096e86a33b36466bee92738c52bf966ec50",
+    "head_matches_external_source": true,
+    "source_drift": "none",
+    "worktree_clean_before_import_pressure_record": true
+  },
+  "archive_verification": {
+    "outer_archive_sha256": "e71b5326fcafc19ff61f3d6975d25fa9a79d54ea367aee5d7196c82f3a43fead",
+    "outer_adjacent_checksum_available": false,
+    "outer_gzip_integrity": "passed",
+    "package_checksum_count": 35,
+    "package_checksums_passed": 35,
+    "nested_archive_count": 5,
+    "nested_archive_checksums_passed": 5,
+    "nested_internal_manifest_count": 5,
+    "nested_internal_manifests_passed": 5,
+    "nested_recorded_file_checks_passed": 3592,
+    "json_files_parsed": 2398,
+    "json_parse_failures": 0,
+    "load_bearing_missing_files": [],
+    "non_blocking_path_defect": "three sidecars retain stale absolute mnt_data names while their digest values match bundled files"
+  },
+  "external_evidence": {
+    "gate_a": {
+      "archive_sha256": "9260f92787d4dcf48e8099a9ce391948c7dec24c2978cfcc305468ee5320c67e",
+      "decision": "bounded_external_admission",
+      "locally_reproduced": false,
+      "claim_ceiling": "bounded_positive_state_mediated_synchronous_limit_readout"
+    },
+    "gate_b": {
+      "archive_sha256": "9faf46e5c0b9d5b70b7a42a3b5a0a91cb045156fb33017c39702c526fddf33ad",
+      "decision": "bounded_external_admission",
+      "locally_reproduced": false,
+      "claim_ceiling": "B-DOMAIN"
+    },
+    "c0_c1_bridge": {
+      "archive_sha256": "1a564bd39ec300033471cc65e50924d06b82311e8c20c2281afb8d6089decd62",
+      "decision": "external_requirements_input_pending_local_execution"
+    },
+    "post_n31_archive_sha256": "6ace8106c3aaaed4dc4363c802a26a228d5d38e05950d55dbde1be8f878d5c16",
+    "n26_n29_supplement_archive_sha256": "d75167560e2472e1b8f9a7d3b6e88986335586ead3ade9f4a1a8cd36f5c04841"
+  },
+  "absence_audit": {
+    "ordinary_lgrc_event_to_geometry_trigger": false,
+    "event_local_geometry_proposal_record": false,
+    "current_realization_lifecycle": false,
+    "native_geometry_derived_packet_work": false,
+    "event_queue_owned_geometry_recurrence": false,
+    "existing_causal_availability_vocabulary_is_equivalent": false,
+    "candidate_policy_or_record_present_under_other_name": false
+  },
+  "tests": {
+    "focused": {
+      "tests_run": 348,
+      "result": "passed",
+      "duration_seconds": 4.244
+    },
+    "full": {
+      "command": ".venv/bin/python -m unittest discover -s tests -p 'test_*.py'",
+      "tests_run": 1211,
+      "result": "passed",
+      "duration_seconds": 248.123
+    }
+  },
+  "source_hash_manifest": {
+    "path": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineSourceHashes.json",
+    "sha256": "a30fbebd98ebc112e24e35c4d5a0b643c37e1b5f0c3b7b85060fdc0d9269a303"
+  },
+  "candidate_source_change_envelope_frozen": true,
+  "iteration_number": {
+    "selected": 95,
+    "collision": false,
+    "next_iteration": 96
+  },
+  "boundary": {
+    "source_behavior_changed": false,
+    "c0_c1_local_evidence_opened": false,
+    "c2_source_change_gate": "closed_pending_iteration_96",
+    "phase8_runtime_implementation_opened": false,
+    "post_implementation_validation_opened": false,
+    "n32_selected": false
+  },
+  "claim_flags": {
+    "phase8_extension_ready_to_implement": false,
+    "native_event_local_geometry_claim_allowed": false,
+    "n32_claim_allowed": false,
+    "full_rc_readback_claim_allowed": false,
+    "learning_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "ecology_claim_allowed": false
+  },
+  "next_action": "iteration_96_c0_c1_registration_and_evidence_gate"
+}

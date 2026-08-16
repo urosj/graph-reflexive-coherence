@@ -1357,3 +1357,72 @@ reset_baseline_admission = explicit_rebase_from_legacy_checkpoint
 historical_construction_baseline_recovered = false
 post_rebase_v2_used_prospectively = true
 ```
+
+## Post-N31 Event-Local Geometry Integration Evidence Closure
+
+The external preparation package was verified and locally governed through
+Iterations 95-96. Current authority is:
+
+```text
+Graph RC source = main@47a8a096e86a33b36466bee92738c52bf966ec50
+source drift from external evidence = none
+Gate A = bounded external admission
+Gate B = bounded external admission
+C0 = C0-EQUIV
+C1 = C1-SCOPE (numerical C1-NULL)
+event-local geometry integration C2 source-change gate = closed
+disposition = close_without_runtime_change
+Phase 8 runtime implementation opened = false
+post-implementation validation opened = false
+N32 selected = false
+```
+
+The registered trigger node had incoming native reconstructed current and no
+eligible trigger-owned outward packet work. A wrong-direction control produced
+a change, but that result cannot support the registered mapping. The dedicated
+status and evidence handoff are:
+
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationStatus.json`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationStatus.json)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationEvidenceHandoff.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationEvidenceHandoff.md)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.md)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationPostC1ScopeInterpretation.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationPostC1ScopeInterpretation.md)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkOwnershipPressureMap.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkOwnershipPressureMap.md)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.md)
+
+The prospective contract/schema remains documentation only. Any later attempt
+must begin with a new evidence question and registration; it may not treat the
+closed C1 result as implementation authority.
+
+The post-C1 interpretation additionally records that node 0 was the event locus
+and current sink while nodes 1 and 2 were the native current sources. This
+opens no implementation. Receptive, source-owned, or field-owned continuations
+remain separate prospective questions rather than repairs of C1.
+
+The completed ownership pressure map further records that native authority is
+distributed across oriented current, source debit, target credit, producer
+scheduling, and `step()` mutation. It selects no causal-work owner, Phase 8
+extension, RCAE return, or N32 successor.
+
+The completed admission-pattern audit finds a recurring native authority-chain
+grammar but no shared native eligibility contract. In particular, reconstructed
+current plus source funding does not become source-local packet-departure
+eligibility without a mechanism-specific producer or configured relation. This
+is a source-backed gap record, not implementation authority; all continuation
+gates remain closed.
+
+## Separate Causal Pathway Consolidation Tranche
+
+The next Phase 8 work is not an Event-Local Geometry Integration rescue. A
+separate documentation/conformance tranche starts at Iteration 105:
+
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md)
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md)
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md)
+- [`../specs/grc-lgrc-causal-pathway-contracts.md`](../specs/grc-lgrc-causal-pathway-contracts.md)
+- [`../docs/reference/GRC-LGRC-CausalPathwayGuide.md`](../docs/reference/GRC-LGRC-CausalPathwayGuide.md)
+- [`../docs/reference/GRC-LGRC-CompositionMatrix.md`](../docs/reference/GRC-LGRC-CompositionMatrix.md)
+
+The tranche maps existing pathways, distributed authorities, lawful
+compositions, adapters, and claim ceilings. Initial source behavior remains
+unchanged. L04, boundary/circulation, AP4/AP5, shared-medium, route/role, and
+future N32 work are pressure consumers only; none is selected or implemented.

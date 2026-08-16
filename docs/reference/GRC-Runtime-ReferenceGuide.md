@@ -8,6 +8,14 @@ Use this guide when you want the runtime API itself. Use the telemetry,
 landscape compiler, GRCL, and visualization guides for artifact review and
 source-language workflows.
 
+When choosing among synchronous GRC transport, LGRC packet transport,
+configured producers, diagnostic reconstruction, topology integration, or
+restoration/replay surfaces, also consult the
+[GRC/LGRC Causal Pathway Guide](GRC-LGRC-CausalPathwayGuide.md) and
+[Composition Matrix](GRC-LGRC-CompositionMatrix.md). Those documents classify
+pathways and their authority boundaries; this guide remains the runtime API
+reference.
+
 ## Scope
 
 This guide covers:

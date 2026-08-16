@@ -1,0 +1,79 @@
+{
+  "artifact": "Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze",
+  "schema_version": "phase8_grclgrc_causal_pathway_consolidation_baseline_v1",
+  "iteration": 105,
+  "date": "2026-08-16",
+  "status": "passed",
+  "branch": "main",
+  "source_commit": "47a8a096e86a33b36466bee92738c52bf966ec50",
+  "source_behavior_changed": false,
+  "src_test_example_diff_empty": true,
+  "runtime_source_anchor_complete": true,
+  "closed_predecessor_boundary_complete": true,
+  "initial_pathway_admission_census_frozen": true,
+  "final_pathway_decomposition_complete": false,
+  "normative_contract_anchor_complete": false,
+  "unmapped_behavior_surface_audit_complete": false,
+  "source_hash_scope": "initial_load_bearing_anchor_not_exhaustive_v1_surface_manifest",
+  "registry_scope_v1": {
+    "in_scope": [
+      "GRC9V3",
+      "LGRC9V3",
+      "directly_consumed_shared_PyGRC_state_restoration_timing_topology_provenance_and_telemetry_contract_utilities"
+    ],
+    "out_of_scope_unless_directly_consumed": [
+      "GRCV2",
+      "GRCV3",
+      "earlier_GRC9_variants",
+      "GRCL9_and_other_lowering_families"
+    ]
+  },
+  "predecessor_boundary": {
+    "event_local_disposition": "close_without_runtime_change",
+    "iterations_97_104": "closed_historical_prospective_design_pressure_not_reused",
+    "distributed_admission_grammar_observed": true,
+    "generic_native_admission_block_present": false,
+    "current_source_local_eligibility_present": false,
+    "ownership_model_selected": false,
+    "n32_selected": false
+  },
+  "source_hashes": [
+    {"path": "src/pygrc/models/grc_9_v3.py", "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"},
+    {"path": "src/pygrc/models/grc_9_v3_runtime.py", "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"},
+    {"path": "src/pygrc/models/grc_9_v3_choice.py", "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"},
+    {"path": "src/pygrc/models/lgrc_9_v3_runtime.py", "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"},
+    {"path": "src/pygrc/models/lgrc_9_v3_packets.py", "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"},
+    {"path": "src/pygrc/models/lgrc_9_v3_construction.py", "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"},
+    {"path": "src/pygrc/models/lgrc_9_v3_restoration.py", "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"},
+    {"path": "src/pygrc/models/lgrc_9_v3_contract.py", "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680"}
+  ],
+  "initial_pathway_families": [
+    "grc9v3.synchronous_transport",
+    "grc9v3.sink_compatibility_choice",
+    "lgrc9v3.explicit_packet_transport",
+    "lgrc9v3.configured_flux_route",
+    "lgrc9v3.route_aspect_surplus",
+    "lgrc9v3.producer_feedback_eligibility",
+    "lgrc9v3.native_route_arbitration",
+    "lgrc9v3.boundary_birth",
+    "lgrc9v3.spark_topology_integration",
+    "lgrc9v3.collapse_reabsorption",
+    "lgrc9v3.diagnostic_grc_reconstruction",
+    "pygrc.restoration_replay_identity"
+  ],
+  "pathway_family_count": 12,
+  "final_pathway_family_count": null,
+  "iteration_106_ready": true,
+  "iteration_106_first_gate": "complete_source_normative_authority_and_unmapped_behavior_surface_audit_before_schema_freeze",
+  "runtime_tests_rerun": false,
+  "runtime_tests_not_rerun_reason": "documentation_and_machine_readable_contract_records_only",
+  "blocked_claims": [
+    "universal_causal_work_API",
+    "generic_native_admission",
+    "causal_work_ownership",
+    "event_local_runtime_implementation",
+    "ecological_support_or_coordination",
+    "agency",
+    "N32"
+  ]
+}

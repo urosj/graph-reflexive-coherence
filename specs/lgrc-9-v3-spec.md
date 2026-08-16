@@ -1535,3 +1535,61 @@ The `LGRC9V3` implementation is acceptable only when:
 - LGRC-2 compact pending-flux artifacts are budget-equivalent derived views of
   in-flight packet records and preserve packet/lineage audit fields;
 - old `GRC9V3` snapshots and artifacts remain loadable.
+
+## Prospective Event-Local Geometry Integration Reference
+
+[`lgrc-9-v3-event-local-geometry-integration.md`](./lgrc-9-v3-event-local-geometry-integration.md)
+retains a complete candidate requirements surface for event-local geometry
+proposal, current realization, and directly funded packet work. It does not
+alter this specification or current LGRC9V3 behavior.
+
+Its source-current Iteration 96 gate closed as:
+
+```text
+C0 = C0-EQUIV
+C1 = C1-SCOPE (observed numerical result C1-NULL)
+source-change disposition = close_without_runtime_change
+```
+
+No candidate policy, record type, trigger, proposal, current lifecycle, packet
+transduction, or runtime recurrence from that document is installed. N32
+remains unselected.
+
+The associated
+[`post-C1 scope interpretation`](../implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationPostC1ScopeInterpretation.md)
+records that event locus, native current source, and causal-work owner are
+distinct. In the registered fixture node 0 was the event locus and current
+sink, while nodes 1 and 2 sourced the native current. This interpretation opens
+no implementation; any source-owned or field-owned continuation requires a new
+identity and prospective registration.
+
+The subsequent
+[`causal-work ownership pressure map`](../implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkOwnershipPressureMap.md)
+finds no single native work owner: GRC current is relational, packet debit is
+source-local, packet credit is target-local, scheduling is producer-owned, and
+mutation is committed by `step()`. No ownership model or N32 direction is
+selected.
+
+The follow-on
+[`native causal-work admission pattern audit`](../implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.md)
+finds a recurring distributed admission grammar across existing specialized
+mechanisms, but no generic native current-source admission block. In
+particular, no source-current surface derives packet-departure eligibility from
+current orientation, source-local causal availability, and source funding
+without mechanism-specific configuration. The audit changes no runtime
+contract and opens no Phase 8 or N32 gate.
+
+## Cross-Family Causal Pathway Consolidation
+
+The separate
+[`GRC/LGRC causal pathway consolidation plan`](../implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md)
+and draft
+[`causal pathway contract registry`](./grc-lgrc-causal-pathway-contracts.md)
+classify existing GRC/LGRC execution, diagnostic, producer, topology, and
+restoration paths. They expose common analytical coordinates without changing
+this runtime specification.
+
+In particular, registry presence does not install an adapter between GRC flux
+and LGRC packet work, make diagnostic reconstruction part of ordinary
+`LGRC9V3.step()`, naturalize configured route semantics, or turn restoration
+history into constitutive Read-Back.

@@ -103,6 +103,38 @@ Claim ceiling: causal-history and topology-capable substrate. This does not
 claim general agency, intention, biological identity, personhood, sentience, or
 native support.
 
+## GRC/LGRC Causal Pathway Contracts
+
+Bounded claim: the repository is consolidating existing GRC/LGRC execution,
+diagnostic, producer, topology, and restoration pathways through a common
+analytical registry and composition matrix. The common coordinates make
+distributed authority visible; they do not define a universal mechanism.
+
+Evidence and contract pointers:
+
+- [Consolidation plan](../../implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md):
+  Defines the separate Phase 8 documentation/conformance tranche and preserves
+  the closed event-local implementation boundary.
+- [Iteration 105 baseline](../../implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md):
+  Freezes current source behavior and the initial pathway census.
+- [Causal pathway contract specification](../../specs/grc-lgrc-causal-pathway-contracts.md):
+  Defines pathway coordinates, status classes, and claim boundaries.
+- [Machine registry](../../specs/grc-lgrc-causal-pathway-contracts.json):
+  Draft source-backed pathway entries for conformance work; not evidence.
+- [Selection guide](GRC-LGRC-CausalPathwayGuide.md): Explains how temporal,
+  route, native-claim, and retention needs select different pathways.
+- [Composition matrix](GRC-LGRC-CompositionMatrix.md): Classifies lawful,
+  adapter-mediated, diagnostic, producer-mediated, unsupported, and invalid
+  compositions.
+- [Native admission audit](../../implementation/investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.md):
+  Source audit that found a recurring distributed grammar but no generic
+  native current-source admission block.
+
+Claim ceiling: architecture legibility and composition honesty over existing
+mechanisms. This does not claim a universal causal-work API, causal-work owner,
+generic native admission, route formation, Read-Back, ecological support,
+shared-medium coordination, agency, or N32.
+
 ## N05-N11 Foundation Arc
 
 Bounded claim: N05-N11 record a bounded LGRC agentic-like foundation arc with

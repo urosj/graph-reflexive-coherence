@@ -1,0 +1,37 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineSourceHashes",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_source_hashes_v1",
+  "date": "2026-08-16",
+  "iteration": 95,
+  "repository": "graph-reflexive-coherence",
+  "branch": "main",
+  "head": "47a8a096e86a33b36466bee92738c52bf966ec50",
+  "hash_algorithm": "sha256",
+  "files": [
+    {"path": "src/pygrc/models/lgrc_9_v3_contract.py", "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680", "role": "candidate_source"},
+    {"path": "src/pygrc/models/lgrc_9_v3_runtime_state.py", "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c", "role": "candidate_source"},
+    {"path": "src/pygrc/models/lgrc_9_v3_runtime.py", "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4", "role": "candidate_source"},
+    {"path": "src/pygrc/models/lgrc_9_v3_timing.py", "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c", "role": "candidate_source"},
+    {"path": "src/pygrc/models/lgrc_9_v3_packets.py", "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f", "role": "candidate_source"},
+    {"path": "src/pygrc/models/lgrc_9_v3_restoration.py", "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931", "role": "candidate_source"},
+    {"path": "src/pygrc/models/__init__.py", "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70", "role": "candidate_source"},
+    {"path": "specs/lgrc-9-v3-spec.md", "sha256": "a272102d8463359c2f9d7a40ce63b3be52509b517da67579127ab6845ff36dc4", "role": "current_normative_spec"},
+    {"path": "tests/models/test_grc_9_v3_transport.py", "sha256": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd", "role": "focused_baseline_test"},
+    {"path": "tests/models/test_grc_9_v3_step.py", "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69", "role": "focused_baseline_test"},
+    {"path": "tests/models/test_grc_9_v3_choice_budget.py", "sha256": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9", "role": "focused_baseline_test"},
+    {"path": "tests/models/test_lgrc_9_v3_contract.py", "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b", "role": "focused_baseline_test"},
+    {"path": "tests/models/test_lgrc_9_v3_runtime.py", "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b", "role": "focused_baseline_test"},
+    {"path": "tests/models/test_lgrc_9_v3_restoration.py", "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97", "role": "focused_baseline_test"},
+    {"path": "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py", "sha256": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd", "role": "focused_baseline_test"},
+    {"path": "tests/telemetry/test_lgrc9v3_contract.py", "sha256": "6331bf72bc41fc3545f5f6cef4b8a8bfc767a89b9c5d9d426b013ffc75884a2c", "role": "focused_baseline_test"},
+    {"path": "implementation/Phase-8-LGRC9-ImplementationPlan.md", "sha256": "c86749a3c684acf980fa2af2b974a509108ff8efb4710a7022295c795d1c697e", "role": "phase8_authority_before_merge"},
+    {"path": "implementation/Phase-8-LGRC9-ImplementationChecklist.md", "sha256": "2558d4c6ebfca1ab8e6c7392b22509c2d23aac6b1871422df4177751a159401b", "role": "phase8_authority_before_merge"},
+    {"path": "implementation/Phase-8-LGRC9-Handoff.md", "sha256": "88da1337125c572dfe5ded9d57e3f239fd0fb6d254917f91a2358ba1777a3361", "role": "phase8_authority_before_merge"}
+  ],
+  "absent_future_files": [
+    "src/pygrc/models/lgrc_9_v3_geometry.py",
+    "tests/models/test_lgrc_9_v3_event_local_geometry.py"
+  ],
+  "source_behavior_changed": false,
+  "event_local_geometry_integration_present": false
+}

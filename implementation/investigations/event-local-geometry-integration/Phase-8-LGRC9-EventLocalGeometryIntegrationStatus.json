@@ -1,0 +1,109 @@
+{
+  "artifact": "Phase-8-LGRC9-EventLocalGeometryIntegrationStatus",
+  "schema_version": "phase8_lgrc9_event_local_geometry_integration_status_v1",
+  "date": "2026-08-16",
+  "status": "closed_without_runtime_change_after_c1_scope",
+  "source_authorities": {
+    "graph_rc": "47a8a096e86a33b36466bee92738c52bf966ec50",
+    "geometric_rc_external_input": "5a8b01ae60165054da617db649c5a039755a18ec",
+    "rcae_external_input": "c276309e3fb67efc0dd1af764fc42492572e7394"
+  },
+  "package": {
+    "logical_id": "2026-08-16-Phase8-LGRC9-EventLocalGeometryIntegration-PreparationPackage",
+    "sha256": "e71b5326fcafc19ff61f3d6975d25fa9a79d54ea367aee5d7196c82f3a43fead",
+    "verification": "passed"
+  },
+  "local_repository_admission": {
+    "status": "complete",
+    "pressure_record": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationImportPressure.md",
+    "source_drift": "none"
+  },
+  "gate_a_local_admission_or_reproduction": {
+    "status": "bounded_external_admission",
+    "locally_reproduced": false,
+    "claim_ceiling_preserved": true
+  },
+  "gate_b_local_admission_or_reproduction": {
+    "status": "bounded_external_admission",
+    "locally_reproduced": false,
+    "claim_ceiling_preserved": true
+  },
+  "iteration_95": {
+    "status": "baseline_frozen_no_source_behavior_change",
+    "baseline_freeze": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationBaselineFreeze.json",
+    "focused_tests": "348_passed",
+    "full_tests": "1211_passed"
+  },
+  "c0_c1_registration": {
+    "status": "complete_via_scientifically_unchanged_reregistration",
+    "valid_registration": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Reregistration.json",
+    "invalid_attempt_record": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Attempt1Failure.json"
+  },
+  "c0_c1_execution": {
+    "status": "complete_one_valid_claim_execution",
+    "raw_evidence": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1RawEvidence.json",
+    "raw_evidence_sha256": "f7dc0709c41a9adeda2b3167109c712d989bdc480f93bae00d3499bf601a0363",
+    "independent_reconstruction": "passed_without_pygrc_import",
+    "c0_classification": "C0-EQUIV",
+    "c1_classification": "C1-SCOPE",
+    "c1_observed_numerical_classification": "C1-NULL"
+  },
+  "c2_source_change_gate": {
+    "status": "closed",
+    "disposition": "close_without_runtime_change",
+    "eligible_for_separate_owner_implementation_decision": false,
+    "qualified_identifier": "event-local geometry integration C2; not N31 Candidate C.2"
+  },
+  "post_c1_scope_interpretation": {
+    "status": "complete_no_new_scientific_execution",
+    "record": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationPostC1ScopeInterpretation.json",
+    "event_locus": 0,
+    "native_current_sources": [
+      1,
+      2
+    ],
+    "native_current_sink": 0,
+    "causal_work_owner": "unresolved",
+    "future_question_requires_new_identity_and_registration": true
+  },
+  "causal_work_ownership_investigation": {
+    "status": "pressure_map_complete_ownership_model_unselected",
+    "record": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkOwnershipPressureMap.json",
+    "scientific_execution_performed": false,
+    "source_owned_successor_selected": false,
+    "field_owned_extension_selected": false,
+    "rcae_l04_return_selected": false,
+    "ownership_model_selected": false
+  },
+  "causal_work_admission_pattern_audit": {
+    "status": "source_audit_complete_recurring_grammar_observed_generic_block_absent",
+    "record": "implementation/Phase-8-LGRC9-EventLocalGeometryIntegrationCausalWorkAdmissionPatternAudit.json",
+    "scientific_execution_performed": false,
+    "distributed_admission_grammar_observed": true,
+    "generic_causal_work_admission_runtime_block_present": false,
+    "generic_causal_work_admission_extension_selected": false,
+    "current_source_local_eligibility_present": false,
+    "phase8_runtime_implementation_opened": false,
+    "iteration_97_opened": false,
+    "rcae_l04_return_opened": false,
+    "n32_selected": false
+  },
+  "phase8_runtime_implementation_opened": false,
+  "post_implementation_validation_opened": false,
+  "n32_selected": false,
+  "source_behavior_changed": false,
+  "verification": {
+    "focused_unittest": "348_passed",
+    "full_unittest": "1211_passed",
+    "active_i96_scripts_ruff": "passed",
+    "repository_ruff_src_tests": "executed_failed_with_1160_pre_existing_findings",
+    "repository_mypy_src_tests": "executed_failed_with_1516_pre_existing_errors_in_177_files",
+    "json_parse_and_internal_digest_audit": "passed",
+    "markdown_link_audit": "passed",
+    "machine_local_path_audit": "passed",
+    "source_envelope_diff_audit": "passed_no_source_test_example_or_telemetry_changes",
+    "git_diff_check": "passed"
+  },
+  "strongest_supported_claim": "C0 is a stable full-drain equivalence result, while C1 closes at the registered action-scope boundary because native reconstructed current is incoming at the trigger node and produces no trigger-node-owned geometry-derived packet work or independent order effect.",
+  "next_action": "no_scientific_execution; require concrete multi-mechanism demand before considering a generic causal-work admission contract, and keep mechanism-specific eligibility visible"
+}

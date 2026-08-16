@@ -1,0 +1,21 @@
+{
+  "artifact": "event-local-geometry-integration-relocation-manifest",
+  "schema_version": "implementation_investigation_relocation_v1",
+  "date": "2026-08-16",
+  "record_count": 26,
+  "historical_directory": "implementation",
+  "current_directory": "implementation/investigations/event-local-geometry-integration",
+  "moved_name_pattern": "Phase-8-LGRC9-EventLocalGeometryIntegration*",
+  "resolution_rule": "For a historical path under the historical directory whose basename matches the moved name pattern, resolve the same basename under current_directory.",
+  "historical_paths_are_execution_time_provenance": true,
+  "historical_json_payloads_rewritten": false,
+  "runtime_behavior_changed": false,
+  "source_test_example_changes": false,
+  "execution_utilities_relocated": false,
+  "execution_utilities": [
+    "implementation/run_phase8_event_local_geometry_c0_c1.py",
+    "implementation/run_phase8_event_local_geometry_c0_c1_reregistered.py",
+    "implementation/reconstruct_phase8_event_local_geometry_c0_c1.py"
+  ],
+  "claim_boundary": "Repository relocation only; does not reopen the investigation, alter its evidence, add event-local geometry integration, or open N32."
+}

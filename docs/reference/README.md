@@ -9,6 +9,8 @@ Canonical operator-facing guides live here. Implementation plans and checklists 
 - [Landscape Inference Reference Guide](LandscapeInference-ReferenceGuide.md)
 - [Graph Visualization Reference Guide](GraphVisualization-ReferenceGuide.md)
 - [GRC Runtime Reference Guide](GRC-Runtime-ReferenceGuide.md)
+- [GRC/LGRC Causal Pathway Guide](GRC-LGRC-CausalPathwayGuide.md)
+- [GRC/LGRC Composition Matrix](GRC-LGRC-CompositionMatrix.md)
 - [GRCL Reference Guide](GRCL-ReferenceGuide.md)
 - [Landscape Compiler And Lowering Reference Guide](LandscapeCompiler-ReferenceGuide.md)
 - [Landscape Language Reference Guide](LandscapeLanguage-ReferenceGuide.md)
@@ -21,6 +23,10 @@ Canonical operator-facing guides live here. Implementation plans and checklists 
 All planned guides in the current documentation checklist are present and
 cross-linked. Future additions should extend this index and update
 `Documentation-Checklist.md`.
+
+The causal pathway guide and composition matrix are draft Phase 8
+consolidation surfaces. They classify existing contracts and do not introduce
+runtime behavior or independently prove that a pathway executed.
 
 GRC9V3 Lane B interpretation is split by responsibility:
 `GRC-Runtime-ReferenceGuide.md` covers lane behavior, `Telemetry-ReferenceGuide.md`

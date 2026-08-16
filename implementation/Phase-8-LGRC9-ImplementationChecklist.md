@@ -3360,3 +3360,58 @@ projection to the native helper; no silent success upgrade is allowed.
 - [ ] Landscape-general validation:
       define held-out landscape suites only after LGRC-2/LGRC-3 fixtures are
       stable.
+
+## Event-Local Geometry Integration Evidence Tranche
+
+Iterations 95-96 are complete in the dedicated checklist:
+
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationChecklist.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationChecklist.md)
+
+```text
+Iteration 95 baseline = baseline_frozen_no_source_behavior_change
+Gate A = bounded external admission; not locally reproduced
+Gate B = bounded external admission; not locally reproduced
+C0 = C0-EQUIV
+C1 = C1-SCOPE; observed numerical result C1-NULL
+C2 source-change gate = close_without_runtime_change
+Iteration 97 opened = false
+runtime behavior changed = false
+N32 selected = false
+```
+
+The prospective Iterations 97-104 remain unchecked and unopened. They must not
+be inferred from the existence of the retained candidate specification.
+
+The completed post-C1 scope interpretation records the non-equivalence of event
+locus, native current source, and causal-work owner. It opens no execution and
+requires a new identity and prospective registration before any source-owned or
+field-owned continuation is considered.
+
+The follow-on non-executing causal-work ownership pressure map is also
+complete. It selects no ownership model, source extension, RCAE return, or N32
+successor.
+
+The native causal-work admission pattern audit is complete as a source-only
+comparison. It finds a recurring proposal/funding/eligibility/scheduling/
+commit/reception grammar, but no generic native current-source eligibility
+block. Existing mechanisms remain policy-specific. No source extension,
+Iteration 97, RCAE return, or N32 successor is opened.
+
+## GRC/LGRC Causal Pathway Contract Consolidation
+
+- [x] Create a separate Phase 8 consolidation identity.
+- [x] Keep Event-Local Geometry Integration closed.
+- [x] Keep Iterations 97-104 historical and unopened.
+- [x] Start consolidation at Iteration 105.
+- [x] Freeze source hashes and initial pathway-family census.
+- [x] Create draft pathway contract and registry surfaces.
+- [x] Create draft selection-guide and composition-matrix surfaces.
+- [ ] Freeze registry schema and entries in Iteration 106.
+- [ ] Complete source/test/evidence crosswalk in Iteration 107.
+- [ ] Freeze composition matrix in Iteration 108.
+- [ ] Freeze selection guide in Iteration 109.
+- [ ] Add conformance checks and repository integration in Iteration 110.
+- [ ] Run pressure-consumer dry runs and close in Iteration 111.
+
+No runtime behavior, generic admission block, ownership model, RCAE L04
+mechanism, or N32 candidate is introduced by this tranche.

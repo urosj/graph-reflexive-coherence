@@ -1328,3 +1328,61 @@ Phase 8 planning is accepted when:
 - default `GRC9`/`GRC9V3` behavior remains unchanged;
 - any behavior-changing mode is opt-in and labelled;
 - synchronous-limit/no-regression tests are specified before code changes.
+
+## Event-Local Geometry Integration Evidence Tranche (Iterations 95-96)
+
+A post-N31 conditional continuation was admitted and evaluated in:
+
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationPlan.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationPlan.md)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationChecklist.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationChecklist.md)
+- [`Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.md`](./investigations/event-local-geometry-integration/Phase-8-LGRC9-EventLocalGeometryIntegrationC0C1Closeout.md)
+- [`../specs/lgrc-9-v3-event-local-geometry-integration.md`](../specs/lgrc-9-v3-event-local-geometry-integration.md)
+
+Iteration 95 admitted Gate A and Gate B at their existing external claim
+ceilings and froze exact `main@47a8a096...` source behavior. Iteration 96 then
+closed:
+
+```text
+C0 = C0-EQUIV
+C1 = C1-SCOPE (observed numerical result C1-NULL)
+source-change disposition = close_without_runtime_change
+```
+
+Native reconstructed current was incoming at the registered trigger node, so
+the trigger-node-owned outward action scope emitted no geometry-derived packet
+work or independent order effect. No source-changing Iteration 97 opened. The
+full candidate design remains a prospective requirements reference only; it is
+not installed runtime behavior and does not select N32.
+
+The completed post-C1 interpretation separates event locus, current source,
+and action ownership. In the registered fixture node 0 was the event locus and
+sink, while nodes 1 and 2 sourced native current. Any source-owned or
+field-owned continuation requires a new identity and registration; it is not a
+repair of the closed C1 mechanism.
+
+A non-executing causal-work ownership pressure map has since compared trigger,
+source-node, edge/current, route/composite, event-queue, and external
+orchestrator models. It finds native authority distributed across current,
+debit, credit, scheduling, and mutation, and therefore selects no implementation
+or N32 successor.
+
+A subsequent source-only native causal-work admission pattern audit finds that
+the same broad authority roles recur across specialized mechanisms. It does not
+find a generic current-source admission block: the load-bearing eligibility
+rules remain route-, spark-, collapse-, arbitration-, or birth-specific and
+retain configured residue. The source-change tranche therefore remains closed.
+
+## GRC/LGRC Causal Pathway Contract Consolidation
+
+The closed event-local investigation exposed a broader documentation and
+composition need without justifying a new runtime primitive. A separate Phase
+8 identity now begins at Iteration 105:
+
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationPlan.md)
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationChecklist.md)
+- [`Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md`](./Phase-8-GRCLGRC-CausalPathwayConsolidationBaselineFreeze.md)
+
+The tranche initially owns specification, registry, reference, composition,
+and conformance work only. It preserves multiple mechanism-specific pathways
+and does not reopen Iterations 97-104, install generic admission, select an
+owner, or select N32.
