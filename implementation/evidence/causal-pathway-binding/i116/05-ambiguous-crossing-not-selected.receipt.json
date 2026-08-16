@@ -1,0 +1,58 @@
+{
+  "actual_bound_pathways_used": [],
+  "actual_stage_symbol_invocations": [],
+  "adapters_used": [],
+  "allowed_pathway_alternatives_actual_use": [],
+  "artifact": "causal-pathways-binding-receipt",
+  "binding_lock_digest": "0ab1e09d91820426da075a9e117fee1984e5c13b42c06efc2c60de05efb43a86",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [],
+  "candidate_relations_exercised": [],
+  "claim_envelope": {
+    "blocked_claims": [],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": false,
+    "experimental_unregistered": false,
+    "overall_claim_status": "admitted_bounded",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [],
+      "diagnostic_only_relations": [],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "claim_qualified": false,
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_but_unused": {
+    "candidate_ids": [],
+    "composition_binding_ids": [],
+    "pathway_binding_ids": [
+      "ambiguous-endpoint:0",
+      "ambiguous-endpoint:1"
+    ]
+  },
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pathway_use_graph": {
+    "edges": [],
+    "larger_chain_claim_synthesized": false,
+    "nodes": [],
+    "unregistered_edge_synthesized_from_endpoint_co_use": false
+  },
+  "producer_cuts_used": [],
+  "receipt_digest": "65ef6aa94db310861f96c0317f230de4393ff4df66e94f2c245a27faa3c2ca76",
+  "registered_compositions_exercised": [],
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_receipt_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unbound_execution_accepted_as_evidence": false,
+  "undeclared_use_violations": []
+}

@@ -1,0 +1,28 @@
+{
+  "actual_composition_ids": [],
+  "actual_pathway_ids": [
+    "lgrc9v3.explicit_packet_transport"
+  ],
+  "actual_stage_ids": [
+    "packet_schedule",
+    "source_debit",
+    "target_credit"
+  ],
+  "artifact": "I116 low-context replay post-freeze identity oracle",
+  "expected_composition_ids": [],
+  "expected_pathway_ids": [
+    "lgrc9v3.explicit_packet_transport"
+  ],
+  "expected_stage_ids": [
+    "packet_schedule",
+    "source_debit",
+    "target_credit"
+  ],
+  "identity_match": true,
+  "lock_digest": "ce5a4c6873572326e886c29c4e602ba4dffaa97bae18b24755fb98195c440f4c",
+  "oracle_consumed_by_consumer": false,
+  "oracle_created_after_consumer_replay": true,
+  "oracle_digest": "c4c1c7abe78c663df6bca36acf8cdb628394ff865831372f141848bbe79326ae",
+  "receipt_digest": "477099ba5db7399135df4ecef27f73a98147c9ad21aa665aec2b10da5161cea4",
+  "schema_version": "i116_low_context_replay_oracle_v1"
+}

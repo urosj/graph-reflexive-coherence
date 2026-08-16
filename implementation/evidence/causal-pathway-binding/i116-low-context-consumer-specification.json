@@ -1,0 +1,21 @@
+{
+  "artifact": "I116 bounded low-context causal-pathway consumer specification",
+  "schema_version": "i116_low_context_causal_pathway_consumer_specification_v1",
+  "consumer_scope": "Schedule one explicit event-time packet over an already configured two-node route.",
+  "demand": "Execute a declared packet schedule with debit, in-flight retention, arrival, and target credit without claiming route formation.",
+  "required_temporal_semantics": [
+    "event_time"
+  ],
+  "route_relation": "explicit_fixture_route",
+  "retained_relation": "packet_and_queue_history_through_settlement",
+  "mechanism_arguments": {
+    "source_node_id": 0,
+    "target_node_id": 1,
+    "edge_id": 0,
+    "amount": 0.25
+  },
+  "expected_pathway_ids_supplied": false,
+  "expected_composition_ids_supplied": false,
+  "expected_stage_ids_supplied": false,
+  "expected_symbol_ids_supplied": false
+}

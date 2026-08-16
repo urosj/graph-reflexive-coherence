@@ -1,0 +1,200 @@
+{
+  "allowed_pathway_alternatives": [],
+  "artifact": "causal-pathways-binding-lock",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [
+    "native candidate formation",
+    "semantic choice",
+    "agency",
+    "semantic death",
+    "identity acceptance"
+  ],
+  "candidate_declarations": [],
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_composition_bindings": [],
+  "declared_pathway_bindings": [
+    {
+      "activation": "default_off",
+      "availability": "installed",
+      "binding_id": "ambiguous-endpoint:0",
+      "composition_ids": [],
+      "configured_residue": [
+        "candidate schema",
+        "score/order policy",
+        "claim flags",
+        "budget prediction"
+      ],
+      "declared_stage_ids": [
+        "candidate_set_admission",
+        "native_arbitration",
+        "selection_commit"
+      ],
+      "expected_concrete_symbols": [],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.native_route_arbitration",
+      "producer_residue": [
+        "candidate and score formation when experiment supplied"
+      ]
+    },
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "ambiguous-endpoint:1",
+      "composition_ids": [],
+      "configured_residue": [
+        "collapse policy",
+        "explicit or arbitration input",
+        "reabsorption modes"
+      ],
+      "declared_stage_ids": [
+        "collapse_event_admission",
+        "topology_reabsorption_commit",
+        "active_state_transport"
+      ],
+      "expected_concrete_symbols": [],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.collapse_reabsorption",
+      "producer_residue": [
+        "candidate formation when externally supplied"
+      ]
+    }
+  ],
+  "explicit_adapters": [],
+  "explicit_producers": [
+    {
+      "pathway_id": "lgrc9v3.native_route_arbitration",
+      "producer_identity": "emit/arbitrate/commit native route candidate set",
+      "producer_owned_authorities": [
+        "candidate and score formation when experiment supplied"
+      ]
+    },
+    {
+      "pathway_id": "lgrc9v3.collapse_reabsorption",
+      "producer_identity": "process_causal_collapse_reabsorption",
+      "producer_owned_authorities": [
+        "candidate formation when externally supplied"
+      ]
+    }
+  ],
+  "lock_digest": "0ab1e09d91820426da075a9e117fee1984e5c13b42c06efc2c60de05efb43a86",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pre_execution_claim_envelope": {
+    "blocked_claims": [
+      "native candidate formation",
+      "semantic choice",
+      "agency",
+      "semantic death",
+      "identity acceptance"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "ambiguous-endpoint:0",
+        "blocked_claims": [
+          "native candidate formation",
+          "semantic choice",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "native validation, ordering, selection, and commit mechanics over supplied candidates"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.native_route_arbitration",
+        "required_qualifiers": {
+          "configured_residue": [
+            "candidate schema",
+            "score/order policy",
+            "claim flags",
+            "budget prediction"
+          ],
+          "naturalization_debt": [
+            "native route formation and semantic valuation"
+          ],
+          "producer_residue": [
+            "candidate and score formation when experiment supplied"
+          ]
+        }
+      },
+      {
+        "binding_id": "ambiguous-endpoint:1",
+        "blocked_claims": [
+          "semantic death",
+          "identity acceptance",
+          "native candidate formation"
+        ],
+        "constituent_claim_ceiling": [
+          "native collapse/reabsorption and active-state transport mechanics"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.collapse_reabsorption",
+        "required_qualifiers": {
+          "configured_residue": [
+            "collapse policy",
+            "explicit or arbitration input",
+            "reabsorption modes"
+          ],
+          "naturalization_debt": [
+            "native collapse reason and semantic identity"
+          ],
+          "producer_residue": [
+            "candidate formation when externally supplied"
+          ]
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": true,
+    "experimental_unregistered": false,
+    "overall_claim_status": "bounded_with_explicit_ownership_cuts",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "residue": [
+            "candidate schema",
+            "score/order policy",
+            "claim flags",
+            "budget prediction"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.collapse_reabsorption",
+          "residue": [
+            "collapse policy",
+            "explicit or arbitration input",
+            "reabsorption modes"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [],
+      "producer_cuts": [
+        {
+          "pathway_id": "lgrc9v3.native_route_arbitration",
+          "producer_identity": "emit/arbitrate/commit native route candidate set",
+          "producer_owned_authorities": [
+            "candidate and score formation when experiment supplied"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.collapse_reabsorption",
+          "producer_identity": "process_causal_collapse_reabsorption",
+          "producer_owned_authorities": [
+            "candidate formation when externally supplied"
+          ]
+        }
+      ]
+    },
+    "synthesized_chain_claim": false
+  },
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_lock_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unregistered_relation_bound_without_candidate": false
+}

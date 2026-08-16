@@ -1,0 +1,61 @@
+"""Causal-pathway binding and claim-provenance surface.
+
+Use the selection guide to decide an exact identity, then use this package to
+bind it. Runtime mechanics remain in their existing model-specific modules.
+"""
+
+from .binding import (
+    AUTHORITY_COORDINATES,
+    EXECUTABLE_COMPOSITION_STATUSES,
+    AllowedPathwayAlternatives,
+    AuthorityDriftError,
+    BindingLock,
+    BindingReceipt,
+    BindingStateError,
+    BoundComposition,
+    BoundPathway,
+    CandidateDeclaration,
+    CandidateUseRecord,
+    CausalPathwayAuthority,
+    CausalPathwayBindingError,
+    InvalidCandidateError,
+    InvocationRecord,
+    PathwayBindingSession,
+    SourceSymbolBinding,
+    SymbolBindingError,
+    UnbindableCompositionError,
+    UnknownCompositionError,
+    UnknownPathwayError,
+    VerifiedCallable,
+    canonical_digest,
+    sha256_file,
+    unbound_execution_classification,
+)
+
+__all__ = [
+    "AUTHORITY_COORDINATES",
+    "EXECUTABLE_COMPOSITION_STATUSES",
+    "AllowedPathwayAlternatives",
+    "AuthorityDriftError",
+    "BindingLock",
+    "BindingReceipt",
+    "BindingStateError",
+    "BoundComposition",
+    "BoundPathway",
+    "CandidateDeclaration",
+    "CandidateUseRecord",
+    "CausalPathwayAuthority",
+    "CausalPathwayBindingError",
+    "InvalidCandidateError",
+    "InvocationRecord",
+    "PathwayBindingSession",
+    "SourceSymbolBinding",
+    "SymbolBindingError",
+    "UnbindableCompositionError",
+    "UnknownCompositionError",
+    "UnknownPathwayError",
+    "VerifiedCallable",
+    "canonical_digest",
+    "sha256_file",
+    "unbound_execution_classification",
+]

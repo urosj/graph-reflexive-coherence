@@ -129,3 +129,16 @@ The six I106-I111 reproducibility builders are stored under `scripts/`, with
 their source-audit and supporting evidence indexed under
 `implementation/investigations/causal-pathway-consolidation/` and their
 path-only evidence-identity migrations recorded explicitly.
+
+## Iteration 11: GRC/LGRC Causal Pathway Binding Reference
+
+- [x] Add the [binding and claim-provenance guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md).
+- [x] Explain the Knowledge, Binding, and Execution planes.
+- [x] Document admitted pathway/composition binding and explicit candidates.
+- [x] Document locks, receipts, use graphs, dynamic choice, and conformance.
+- [x] Preserve unbound compatibility while rejecting unbound claim provenance.
+
+Status: complete through Phase 8 Iteration 116. The binding layer consumes the
+closed I105-I111 knowledge plane and delegates unchanged mechanism-specific
+runtime callables. Accepted causal-pathway claims require a valid receipt;
+unrelated code and internal mechanism calls do not acquire binding boilerplate.

@@ -1,0 +1,248 @@
+# GRC/LGRC Causal Pathway Binding And Claim Provenance
+
+Use this guide when code will make an evidence-bearing claim that it consumed
+a particular GRC/LGRC causal pathway or registered composition.
+
+The short version is:
+
+> Use the selection guide to decide what you intend to consume. Use the
+> binding layer to make that identity part of the evidence-bearing program.
+> Use the existing mechanism-specific callable to execute it.
+
+If no admitted relation exists, declare an unregistered candidate. Do not
+invent a native or admitted claim.
+
+## The Three Planes
+
+### Knowledge Plane
+
+The knowledge plane defines what is known and what may be claimed:
+
+- the [pathway guide](GRC-LGRC-CausalPathwayGuide.md) helps a researcher decide
+  which exact pathway or crossing matches the intended semantics;
+- the [registry](../../specs/grc-lgrc-causal-pathway-contracts.json) owns
+  pathway and stage facts;
+- the [evidence crosswalk](../../specs/grc-lgrc-causal-pathway-evidence-crosswalk.json)
+  owns source and test relations;
+- the [composition matrix](../../specs/grc-lgrc-causal-pathway-composition-matrix.json)
+  owns directional crossing facts;
+- the selection guide derives bounded choices from those authorities.
+
+The knowledge plane does not execute a mechanism.
+
+### Binding Plane
+
+The binding plane records the declared identity, exact Python symbol, actual
+use, and conservative claim provenance:
+
+- `CausalPathwayAuthority` validates current knowledge and source-link
+  identities;
+- `PathwayBindingSession` declares admitted pathways, registered executable
+  compositions, candidates, and allowed dynamic alternatives;
+- `BoundPathway.symbol(...)` links one exact stage to its real callable;
+- `freeze_lock()` closes declarations before claim-bearing execution;
+- verified callables record returned and raised invocations;
+- `build_receipt()` emits actual use, the use graph, and the claim envelope.
+
+The [binding-symbol map](../../specs/grc-lgrc-causal-pathway-bindings.json) is
+separate from the registry. It maps every admitted stage to the current module,
+qualified symbol, call kind, source path, and source hash.
+
+The binding plane never chooses pathway semantics and has no generic
+`execute(pathway_id, **generic_args)` operation.
+
+### Execution Plane
+
+GRC9V3, LGRC9V3, their producers, adapters, diagnostic helpers, and
+mechanism-specific module functions remain the execution plane. A verified
+callable delegates the original arguments and result without translating them
+into a common causal-work schema.
+
+Existing unbound code remains executable for compatibility. It is classified
+as unbound and cannot present itself as accepted pathway-provenance evidence.
+
+## Binding One Admitted Pathway
+
+The consumer chooses an exact identity first. It then chooses the exact stage
+symbol before locking:
+
+```python
+from pathlib import Path
+
+from pygrc.causal_pathways import CausalPathwayAuthority, PathwayBindingSession
+
+authority = CausalPathwayAuthority.load(Path.cwd())
+session = PathwayBindingSession(authority)
+packet = session.bind_pathway(
+    "lgrc9v3.explicit_packet_transport",
+    stage_ids=("packet_schedule",),
+)
+schedule = packet.symbol("packet_schedule", instance=model)
+
+lock = session.freeze_lock()
+schedule(
+    source_node_id=0,
+    target_node_id=1,
+    edge_id=0,
+    amount=0.25,
+)
+receipt = session.build_receipt()
+
+lock.write("causal-pathways.lock.json")
+receipt.write("causal-pathways.receipt.json")
+```
+
+The handle exposes the real scheduling signature. Another pathway may expose
+a completely different signature or several exact symbols. There is no shared
+mechanism interface.
+
+Declaring the packet pathway does not create a composition. The receipt lists
+only stages and symbols that actually returned through the bound surface.
+
+## Binding A Registered Composition
+
+Use an exact matrix identity when the intended claim crosses pathways:
+
+```python
+composition = session.bind_composition("CMP-20")
+producer = composition.pathway("lgrc9v3.feedback_eligibility_producer")
+transport = composition.pathway("lgrc9v3.explicit_packet_transport")
+
+produce = producer.symbol("feedback_packet_schedule", instance=model)
+schedule = transport.symbol("packet_schedule", instance=model)
+```
+
+The lock and receipt retain the matrix status and ceiling. For CMP-20 they also
+retain the feedback producer identity, installed-producer owner, and the
+producer-owned eligibility, direction, threshold, and schedule authorities.
+The combined result cannot be relabeled `lawful_native`.
+
+An explicit-adapter composition similarly retains the adapter ID and non-native
+owner. A diagnostic-only composition retains the diagnostic cut; no behavioral
+claim may cross it. Unsupported missing crossings and invalid relabels cannot
+be bound as admitted executable compositions.
+
+A composition counts as exercised only after every matrix-required endpoint
+stage returns through that composition binding.
+
+## Declaring An Unregistered Candidate
+
+Candidate declaration is the explicit open continuation route:
+
+```python
+candidate = session.declare_candidate(
+    candidate_id="experiment.packet_to_snapshot_relation",
+    candidate_kind="composition",
+    purpose="Pressure a new fixture-only relation.",
+    owner="experiment_fixture",
+    consumed_pathway_ids=(packet.pathway_id, snapshot.pathway_id),
+    proposed_source_pathway_id=packet.pathway_id,
+    proposed_target_pathway_id=snapshot.pathway_id,
+    proposed_relation="new post-packet snapshot relation",
+    authority={"direction": "experiment producer"},
+    evidence_owner="experiment_fixture",
+)
+```
+
+All omitted authority coordinates become `unresolved`. Candidate claim ceiling
+is fixed to `experimental_unregistered`, promotion status is fixed to `none`,
+and native/admitted/promotion relabels are blocked.
+
+After the lock is frozen, `record_candidate_use(...)` attaches an explicit
+evidence reference. Candidate pathway nodes and composition edges are visibly
+different from admitted graph elements. A candidate can consume admitted
+constituents but cannot inherit their native or admitted status.
+
+Candidate declaration does not update the registry, matrix, selection guide,
+or binding map. Promotion remains a separate evidence and review process.
+
+## Dynamic Consumer Choice
+
+When consumer code may use pathway A or B, declare both pathway bindings and
+the allowed set before locking:
+
+```python
+session.declare_alternatives(
+    alternative_set_id="consumer.packet_or_snapshot",
+    pathway_ids=(packet.pathway_id, snapshot.pathway_id),
+    selection_authority="consumer_boolean_branch",
+)
+```
+
+The alternatives object has no selection method. Consumer code makes the
+choice. The receipt reports the allowed set, selection authority, paths
+actually used, and declared-but-unused alternatives.
+
+If the selection mechanism itself is claimed as native causal behavior, that
+mechanism needs its own admitted pathway or composition. Native arbitration is
+not native candidate formation.
+
+## Lock, Receipt, And Use Graph
+
+The lock is a causal-architecture record, not a dependency lockfile. It freezes
+current authority and binding-map digests, declared identities, exact symbols
+and source hashes, producer and adapter cuts, residue, alternatives,
+candidates, blocked claims, and the pre-execution claim envelope.
+
+No verified callable can run before the lock. Declarations and symbol choices
+close after it. Authority or source drift at lock or receipt time fails closed.
+
+The receipt links to the exact lock digest and records:
+
+- returned and raised stage/symbol invocations;
+- successful pathway and registered-composition use;
+- candidate use and evidence references;
+- producer and adapter cuts used;
+- declared-but-unused identities;
+- allowed dynamic alternatives actually taken;
+- admitted and candidate-distinct graph nodes and edges;
+- a structured claim envelope and blocked claims;
+- accepted authority/source identities and a receipt digest.
+
+Endpoint co-use does not create an edge. Multiple registered edges do not
+synthesize a larger semantic ceiling unless that larger composition is itself
+registered.
+
+## Claim Qualification
+
+Accepted pathway or composition claims require a valid binding receipt. A
+declaration without successful bound use is visible but not evidence. A failed
+call remains visible as a raised invocation but does not become successful
+behavioral evidence.
+
+For direct legacy execution, use:
+
+```python
+from pygrc.causal_pathways import unbound_execution_classification
+
+classification = unbound_execution_classification()
+```
+
+It returns `causal_pathway_provenance = unbound`, `claim_qualified = false`,
+and `accepted_binding_receipt = false`.
+
+This rule applies to claim-bearing or promotion-bearing consumers, not to
+every internal Python call inside an admitted mechanism.
+
+## Conformance
+
+Validate the frozen prospective fixture or supply another exact lock/receipt:
+
+```bash
+.venv/bin/python scripts/check_grc_lgrc_causal_pathway_binding_conformance.py
+
+.venv/bin/python scripts/check_grc_lgrc_causal_pathway_binding_conformance.py \
+  --lock path/to/causal-pathways.lock.json \
+  --receipt path/to/causal-pathways.receipt.json
+```
+
+Binding/source drift becomes `stale_pending_review` and blocks
+claim-qualified artifacts. The checker validates structure and provenance; it
+does not dispatch or rerun causal dynamics.
+
+## Boundaries
+
+The layer supports versioned pathway binding and conservative provenance. It
+does not provide universal causal routing, automatic selection, generic work
+admission, native candidate formation, ecological interpretation, agency,
+Read-Back, or N32.

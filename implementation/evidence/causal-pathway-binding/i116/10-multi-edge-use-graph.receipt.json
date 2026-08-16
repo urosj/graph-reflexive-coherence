@@ -1,0 +1,724 @@
+{
+  "actual_bound_pathways_used": [
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
+        "diagnostic_model_construction",
+        "diagnostic_rebuild"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+        "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "configured_residue": [
+        "diagnostic modes",
+        "copied params"
+      ],
+      "declared_stage_ids": [
+        "diagnostic_model_construction",
+        "diagnostic_rebuild"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "module_function",
+          "composition_ids": [
+            "CMP-04"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_construction",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+          "stage_id": "diagnostic_model_construction",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+        },
+        {
+          "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-04"
+          ],
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "GRC9V3.rebuild_transport_state",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "diagnostic_rebuild",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+        }
+      ],
+      "mechanism_ownership": "diagnostic",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "producer_residue": []
+    },
+    {
+      "activation": "default_off",
+      "actual_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "configured_residue": [
+        "feedback masks",
+        "thresholds",
+        "route",
+        "amount"
+      ],
+      "declared_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+          "binding_role": "producer_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "qualified_symbol": "LGRC9V3.produce_events",
+          "required_keyword_arguments": {
+            "policy": "packet_departure_from_feedback_eligibility_policy"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "feedback_packet_schedule",
+          "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+        }
+      ],
+      "mechanism_ownership": "producer",
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "producer_residue": [
+        "feedback surface formation and eligibility"
+      ]
+    },
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
+        "lgrc9v3.explicit_packet_transport:source_debit:primary",
+        "lgrc9v3.explicit_packet_transport:target_credit:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "declared_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "packet_schedule",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+        },
+        {
+          "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+          "binding_role": "load_bearing_internal",
+          "call_kind": "module_function",
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_packets",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+          "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+          "stage_id": "source_debit",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
+        },
+        {
+          "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+          "binding_role": "stage_entrypoint",
+          "call_kind": "module_function",
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_packets",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "process_lgrc9v3_packet_arrival",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+          "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+          "stage_id": "target_credit",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "producer_residue": []
+    }
+  ],
+  "actual_stage_symbol_invocations": [
+    {
+      "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "error_type": null,
+      "invocation_index": 0,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "result_type": "LGRC9V3AutonomousProductionResult",
+      "stage_id": "feedback_packet_schedule",
+      "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+    },
+    {
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "error_type": null,
+      "invocation_index": 1,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "result_type": "NoneType",
+      "stage_id": "packet_schedule",
+      "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+    },
+    {
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "error_type": null,
+      "invocation_index": 2,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "result_type": "LGRC9V3PacketProcessingResult",
+      "stage_id": "source_debit",
+      "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
+    },
+    {
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "error_type": null,
+      "invocation_index": 3,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "result_type": "LGRC9V3PacketProcessingResult",
+      "stage_id": "target_credit",
+      "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
+    },
+    {
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "error_type": null,
+      "invocation_index": 4,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "result_type": "LGRC9V3",
+      "stage_id": "diagnostic_model_construction",
+      "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+    },
+    {
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "error_type": null,
+      "invocation_index": 5,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "result_type": "NoneType",
+      "stage_id": "diagnostic_rebuild",
+      "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+    }
+  ],
+  "adapters_used": [],
+  "allowed_pathway_alternatives_actual_use": [],
+  "artifact": "causal-pathways-binding-receipt",
+  "binding_lock_digest": "7abe625288d2b0996e1300c6e27e4ac8c8c1c87b7cc57151f60b93a48997d18a",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [
+    "ordinary LGRC behavior",
+    "native current-to-packet adapter",
+    "native feedback",
+    "semantic intention",
+    "agency",
+    "substrate-formed route",
+    "native departure reason",
+    "native event-to-action crossing",
+    "lawful_native",
+    "native feedback admission"
+  ],
+  "candidate_relations_exercised": [],
+  "claim_envelope": {
+    "blocked_claims": [
+      "ordinary LGRC behavior",
+      "native current-to-packet adapter",
+      "native feedback",
+      "semantic intention",
+      "agency",
+      "substrate-formed route",
+      "native departure reason",
+      "native event-to-action crossing",
+      "lawful_native",
+      "native feedback admission"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [
+      {
+        "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "adapter_owner": "library_helper_invoked_by_caller",
+        "authority_retained": [
+          "caller selection",
+          "GRC diagnostic mechanics"
+        ],
+        "authority_transferred": [],
+        "binding_id": "composition:CMP-04",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native event-to-action crossing"
+        ],
+        "composition_id": "CMP-04",
+        "composition_status": "diagnostic_only",
+        "constituent_claim_ceiling": "Explicit bounded diagnostic reconstruction only."
+      },
+      {
+        "adapter_id": "feedback_eligibility_producer",
+        "adapter_owner": "installed_producer",
+        "authority_retained": [
+          "native packet mutation",
+          "surface lineage validity"
+        ],
+        "authority_transferred": [
+          "eligibility",
+          "direction",
+          "threshold",
+          "schedule"
+        ],
+        "binding_id": "composition:CMP-20",
+        "blocked_claims": [
+          "lawful_native",
+          "native feedback admission"
+        ],
+        "composition_id": "CMP-20",
+        "composition_status": "producer_mediated",
+        "constituent_claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics."
+      }
+    ],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native current-to-packet adapter"
+        ],
+        "constituent_claim_ceiling": [
+          "explicit bounded GRC diagnostic over LGRC state"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "required_qualifiers": {
+          "configured_residue": [
+            "diagnostic modes",
+            "copied params"
+          ],
+          "naturalization_debt": [
+            "ordinary LGRC step does not consume the reconstruction"
+          ],
+          "producer_residue": []
+        }
+      },
+      {
+        "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+        "blocked_claims": [
+          "native feedback",
+          "semantic intention",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "producer-mediated feedback eligibility candidate"
+        ],
+        "mechanism_ownership": "producer",
+        "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+        "required_qualifiers": {
+          "configured_residue": [
+            "feedback masks",
+            "thresholds",
+            "route",
+            "amount"
+          ],
+          "naturalization_debt": [
+            "native feedback or generic admission"
+          ],
+          "producer_residue": [
+            "feedback surface formation and eligibility"
+          ]
+        }
+      },
+      {
+        "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+        "blocked_claims": [
+          "substrate-formed route",
+          "native departure reason",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "native packet accounting and queue-processing mechanics"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "required_qualifiers": {
+          "configured_residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ],
+          "naturalization_debt": [
+            "native route formation and departure reason remain absent"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": true,
+    "contains_producer_cut": true,
+    "experimental_unregistered": false,
+    "overall_claim_status": "bounded_with_diagnostic_cut",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "residue": [
+            "diagnostic modes",
+            "copied params"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "residue": [
+            "feedback masks",
+            "thresholds",
+            "route",
+            "amount"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [
+        {
+          "identity": "lgrc9v3.diagnostic_grc_reconstruction",
+          "kind": "pathway"
+        },
+        {
+          "identity": "CMP-04",
+          "kind": "composition"
+        }
+      ],
+      "producer_cuts": [
+        {
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "producer_identity": "emit_feedback_eligibility_surface_row and produce_events",
+          "producer_owned_authorities": [
+            "feedback surface formation and eligibility"
+          ]
+        },
+        {
+          "composition_id": "CMP-20",
+          "producer_identity": "feedback_eligibility_producer",
+          "producer_owned_authorities": [
+            "eligibility",
+            "direction",
+            "threshold",
+            "schedule"
+          ],
+          "producer_owner": "installed_producer"
+        }
+      ]
+    },
+    "synthesized_chain_claim": false
+  },
+  "claim_qualified": true,
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_but_unused": {
+    "candidate_ids": [],
+    "composition_binding_ids": [],
+    "pathway_binding_ids": []
+  },
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pathway_use_graph": {
+    "edges": [
+      {
+        "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "adapter_owner": "library_helper_invoked_by_caller",
+        "authority_retained": [
+          "caller selection",
+          "GRC diagnostic mechanics"
+        ],
+        "authority_transferred": [],
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native event-to-action crossing"
+        ],
+        "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+        "composition_id": "CMP-04",
+        "composition_status": "diagnostic_only",
+        "edge_id": "composition:CMP-04",
+        "edge_kind": "registered_composition",
+        "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+        "producer_owner": null,
+        "source_node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "target_node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction"
+      },
+      {
+        "adapter_id": "feedback_eligibility_producer",
+        "adapter_owner": "installed_producer",
+        "authority_retained": [
+          "native packet mutation",
+          "surface lineage validity"
+        ],
+        "authority_transferred": [
+          "eligibility",
+          "direction",
+          "threshold",
+          "schedule"
+        ],
+        "blocked_claims": [
+          "lawful_native",
+          "native feedback admission"
+        ],
+        "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+        "composition_id": "CMP-20",
+        "composition_status": "producer_mediated",
+        "edge_id": "composition:CMP-20",
+        "edge_kind": "registered_composition",
+        "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+        "producer_owner": "installed_producer",
+        "source_node_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+        "target_node_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport"
+      }
+    ],
+    "larger_chain_claim_synthesized": false,
+    "nodes": [
+      {
+        "configured_residue": [
+          "diagnostic modes",
+          "copied params"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "diagnostic",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+          "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+        ],
+        "stage_ids_used": [
+          "diagnostic_model_construction",
+          "diagnostic_rebuild"
+        ]
+      },
+      {
+        "configured_residue": [
+          "feedback masks",
+          "thresholds",
+          "route",
+          "amount"
+        ],
+        "mechanism_ownership": "producer",
+        "node_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+        "pathway_status": {
+          "activation": "default_off",
+          "availability": "installed",
+          "mechanism_ownership": "producer",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [
+          "feedback surface formation and eligibility"
+        ],
+        "source_bindings_used": [
+          "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+        ],
+        "stage_ids_used": [
+          "feedback_packet_schedule"
+        ]
+      },
+      {
+        "configured_residue": [
+          "route endpoints",
+          "amount",
+          "departure/arrival times"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "node_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "native_with_configured_semantics",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
+          "lgrc9v3.explicit_packet_transport:source_debit:primary",
+          "lgrc9v3.explicit_packet_transport:target_credit:primary"
+        ],
+        "stage_ids_used": [
+          "packet_schedule",
+          "source_debit",
+          "target_credit"
+        ]
+      }
+    ],
+    "unregistered_edge_synthesized_from_endpoint_co_use": false
+  },
+  "producer_cuts_used": [
+    {
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "producer_identity": "emit_feedback_eligibility_surface_row and produce_events",
+      "producer_owned_authorities": [
+        "feedback surface formation and eligibility"
+      ]
+    },
+    {
+      "composition_id": "CMP-20",
+      "producer_identity": "feedback_eligibility_producer",
+      "producer_owned_authorities": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "producer_owner": "installed_producer"
+    }
+  ],
+  "receipt_digest": "18e41bf87179e9746a5d7a17917096d1e21b64b41609755f7f9a115502c864f1",
+  "registered_compositions_exercised": [
+    {
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "authority_retained": [
+        "native packet mutation",
+        "surface lineage validity"
+      ],
+      "authority_transferred": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "binding_id": "composition:CMP-20",
+      "blocked_relabels": [
+        "lawful_native",
+        "native feedback admission"
+      ],
+      "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+      "composition_id": "CMP-20",
+      "composition_status": "producer_mediated",
+      "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "from_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ]
+    },
+    {
+      "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+      "adapter_owner": "library_helper_invoked_by_caller",
+      "authority_retained": [
+        "caller selection",
+        "GRC diagnostic mechanics"
+      ],
+      "authority_transferred": [],
+      "binding_id": "composition:CMP-04",
+      "blocked_relabels": [
+        "ordinary LGRC behavior",
+        "native event-to-action crossing"
+      ],
+      "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+      "composition_id": "CMP-04",
+      "composition_status": "diagnostic_only",
+      "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "from_stage_ids": [
+        "diagnostic_model_construction"
+      ],
+      "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "to_stage_ids": [
+        "diagnostic_rebuild"
+      ]
+    }
+  ],
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_receipt_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unbound_execution_accepted_as_evidence": false,
+  "undeclared_use_violations": []
+}

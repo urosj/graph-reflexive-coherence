@@ -9,9 +9,19 @@ Public import policy for the source-installable research workspace:
   unless they are used by an example, spec, or reference guide.
 """
 
-from . import core, integrations, landscapes, models, telemetry, utils, visualization
+from . import (
+    causal_pathways,
+    core,
+    integrations,
+    landscapes,
+    models,
+    telemetry,
+    utils,
+    visualization,
+)
 
 PUBLIC_API_SURFACES: dict[str, str] = {
+    "pygrc.causal_pathways": "exact causal-pathway binding and claim provenance",
     "pygrc.core": "shared model interfaces, params, graph backends, events, snapshots",
     "pygrc.models": "runtime model families, states, lowering adapters",
     "pygrc.landscapes": "landscape seeds, validation, GRCL/PDE bridges, inference",
@@ -28,6 +38,7 @@ RESEARCH_TOOLING_SURFACES: dict[str, str] = {
 __all__ = [
     "PUBLIC_API_SURFACES",
     "RESEARCH_TOOLING_SURFACES",
+    "causal_pathways",
     "core",
     "integrations",
     "landscapes",

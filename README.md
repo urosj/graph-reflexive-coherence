@@ -80,6 +80,13 @@ still at `DR2`, and cross-context reuse unsupported. The next step returns to
 RCAE for explicit revision-bound provider-contract re-admission and fresh
 ecology-side evidence; N32 is not yet selected.
 
+The GRC/LGRC causal-pathway knowledge plane is closed through Iteration 111,
+and the follow-on binding and claim-provenance tranche is complete through
+Iteration 116. Evidence-bearing consumers can bind exact admitted pathways or
+registered compositions, or declare visibly unregistered candidates, while
+the existing mechanism-specific runtime remains unchanged. See the
+[binding reference guide](docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md).
+
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current
 theory and fully native RC mechanisms while keeping the distinction between

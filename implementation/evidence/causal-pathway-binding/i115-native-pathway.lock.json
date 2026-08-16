@@ -1,0 +1,116 @@
+{
+  "allowed_pathway_alternatives": [],
+  "artifact": "causal-pathways-binding-lock",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [
+    "substrate-formed route",
+    "native departure reason",
+    "agency"
+  ],
+  "candidate_declarations": [],
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_composition_bindings": [],
+  "declared_pathway_bindings": [
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [],
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "declared_stage_ids": [
+        "packet_schedule"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [],
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "packet_schedule",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "producer_residue": []
+    }
+  ],
+  "explicit_adapters": [],
+  "explicit_producers": [],
+  "lock_digest": "e486c4f6f37d02b53708afc67938b788f657fb7059d9f4744c39234e7906eb6f",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pre_execution_claim_envelope": {
+    "blocked_claims": [
+      "substrate-formed route",
+      "native departure reason",
+      "agency"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+        "blocked_claims": [
+          "substrate-formed route",
+          "native departure reason",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "native packet accounting and queue-processing mechanics"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "required_qualifiers": {
+          "configured_residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ],
+          "naturalization_debt": [
+            "native route formation and departure reason remain absent"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": false,
+    "experimental_unregistered": false,
+    "overall_claim_status": "admitted_bounded",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_lock_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unregistered_relation_bound_without_candidate": false
+}

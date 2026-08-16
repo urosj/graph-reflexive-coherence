@@ -1,0 +1,310 @@
+{
+  "allowed_pathway_alternatives": [],
+  "artifact": "causal-pathways-binding-lock",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [
+    "general autonomous basin formation",
+    "semantic reproduction",
+    "universal current-to-action admission",
+    "lawful_native",
+    "automatic time-semantics conversion",
+    "native role formation"
+  ],
+  "candidate_declarations": [],
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_composition_bindings": [
+    {
+      "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+      "adapter_owner": "library_construction_adapter_invoked_by_caller",
+      "authority_retained": [
+        "GRC front-capacity state",
+        "LGRC native/configured birth commit"
+      ],
+      "authority_transferred": [
+        "runtime wrapping",
+        "causal modes",
+        "queue priming"
+      ],
+      "binding_id": "composition:CMP-26",
+      "blocked_relabels": [
+        "lawful_native",
+        "automatic time-semantics conversion",
+        "native role formation"
+      ],
+      "claim_ceiling": "Lawful explicit construction adapter; not native cross-runtime formation or inherited event history.",
+      "composition_id": "CMP-26",
+      "composition_status": "lawful_with_explicit_adapter",
+      "from_pathway_id": "grc9v3.front_capacity_growth",
+      "from_stage_ids": [
+        "front_capacity_growth_eligibility",
+        "front_propagation"
+      ],
+      "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "to_pathway_id": "lgrc9v3.boundary_birth",
+      "to_stage_ids": [
+        "birth_trial_production",
+        "birth_trial_commit"
+      ]
+    }
+  ],
+  "declared_pathway_bindings": [
+    {
+      "activation": "default_off",
+      "availability": "installed",
+      "binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
+      "composition_ids": [
+        "CMP-26"
+      ],
+      "configured_residue": [
+        "GRCL9V3 front-capacity eligibility mode",
+        "front-capacity map",
+        "birth alpha",
+        "RNG policy",
+        "front propagation"
+      ],
+      "declared_stage_ids": [
+        "front_capacity_growth_eligibility",
+        "front_propagation"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
+          "binding_role": "load_bearing_internal",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-26"
+          ],
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "grc9v3.front_capacity_growth",
+          "qualified_symbol": "GRC9V3._growth_front_eligible_ports",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "front_capacity_growth_eligibility",
+          "symbol_id": "grc9v3.front_capacity_growth:front_capacity_growth_eligibility:primary"
+        },
+        {
+          "binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
+          "binding_role": "load_bearing_internal",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-26"
+          ],
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "grc9v3.front_capacity_growth",
+          "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "front_propagation",
+          "symbol_id": "grc9v3.front_capacity_growth:front_propagation:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "grc9v3.front_capacity_growth",
+      "producer_residue": []
+    },
+    {
+      "activation": "default_off",
+      "availability": "installed",
+      "binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
+      "composition_ids": [
+        "CMP-26"
+      ],
+      "configured_residue": [
+        "eligibility mode",
+        "front-capacity source",
+        "birth probability",
+        "edge delay",
+        "RNG policy"
+      ],
+      "declared_stage_ids": [
+        "birth_trial_production",
+        "birth_trial_commit"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-26"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "birth_trial_commit",
+          "symbol_id": "lgrc9v3.boundary_birth:birth_trial_commit:primary"
+        },
+        {
+          "binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
+          "binding_role": "producer_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-26"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "qualified_symbol": "LGRC9V3.produce_events",
+          "required_keyword_arguments": {
+            "policy": "boundary_birth_trial_policy"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "birth_trial_production",
+          "symbol_id": "lgrc9v3.boundary_birth:birth_trial_production:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.boundary_birth",
+      "producer_residue": []
+    }
+  ],
+  "explicit_adapters": [
+    {
+      "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+      "adapter_owner": "library_construction_adapter_invoked_by_caller",
+      "composition_id": "CMP-26"
+    }
+  ],
+  "explicit_producers": [],
+  "lock_digest": "4ee536431d9e1dc3c503dcea8b9db385ebee94293ccf12ff68a91f484c32cfb2",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pre_execution_claim_envelope": {
+    "blocked_claims": [
+      "general autonomous basin formation",
+      "semantic reproduction",
+      "universal current-to-action admission",
+      "lawful_native",
+      "automatic time-semantics conversion",
+      "native role formation"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [
+      {
+        "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+        "adapter_owner": "library_construction_adapter_invoked_by_caller",
+        "authority_retained": [
+          "GRC front-capacity state",
+          "LGRC native/configured birth commit"
+        ],
+        "authority_transferred": [
+          "runtime wrapping",
+          "causal modes",
+          "queue priming"
+        ],
+        "binding_id": "composition:CMP-26",
+        "blocked_claims": [
+          "lawful_native",
+          "automatic time-semantics conversion",
+          "native role formation"
+        ],
+        "composition_id": "CMP-26",
+        "composition_status": "lawful_with_explicit_adapter",
+        "constituent_claim_ceiling": "Lawful explicit construction adapter; not native cross-runtime formation or inherited event history."
+      }
+    ],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
+        "blocked_claims": [
+          "general autonomous basin formation",
+          "semantic reproduction"
+        ],
+        "constituent_claim_ceiling": [
+          "native mechanics for configured front-capacity growth"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "grc9v3.front_capacity_growth",
+        "required_qualifiers": {
+          "configured_residue": [
+            "GRCL9V3 front-capacity eligibility mode",
+            "front-capacity map",
+            "birth alpha",
+            "RNG policy",
+            "front propagation"
+          ],
+          "naturalization_debt": [
+            "front role is authored by lowering/configuration rather than formed semantically"
+          ],
+          "producer_residue": []
+        }
+      },
+      {
+        "binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
+        "blocked_claims": [
+          "universal current-to-action admission",
+          "semantic reproduction"
+        ],
+        "constituent_claim_ceiling": [
+          "native mechanics for configured causal boundary birth"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.boundary_birth",
+        "required_qualifiers": {
+          "configured_residue": [
+            "eligibility mode",
+            "front-capacity source",
+            "birth probability",
+            "edge delay",
+            "RNG policy"
+          ],
+          "naturalization_debt": [
+            "specialized birth eligibility does not naturalize generic admission"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": true,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": false,
+    "experimental_unregistered": false,
+    "overall_claim_status": "bounded_with_explicit_ownership_cuts",
+    "required_qualifiers": {
+      "adapter_cuts": [
+        {
+          "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+          "adapter_owner": "library_construction_adapter_invoked_by_caller",
+          "composition_id": "CMP-26"
+        }
+      ],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "grc9v3.front_capacity_growth",
+          "residue": [
+            "GRCL9V3 front-capacity eligibility mode",
+            "front-capacity map",
+            "birth alpha",
+            "RNG policy",
+            "front propagation"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.boundary_birth",
+          "residue": [
+            "eligibility mode",
+            "front-capacity source",
+            "birth probability",
+            "edge delay",
+            "RNG policy"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_lock_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unregistered_relation_bound_without_candidate": false
+}

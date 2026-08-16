@@ -1,0 +1,286 @@
+{
+  "actual_bound_pathways_used": [
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
+        "diagnostic_model_construction",
+        "diagnostic_rebuild"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+        "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "configured_residue": [
+        "diagnostic modes",
+        "copied params"
+      ],
+      "declared_stage_ids": [
+        "diagnostic_model_construction",
+        "diagnostic_rebuild"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "module_function",
+          "composition_ids": [
+            "CMP-04"
+          ],
+          "module": "pygrc.models.lgrc_9_v3_construction",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+          "stage_id": "diagnostic_model_construction",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+        },
+        {
+          "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [
+            "CMP-04"
+          ],
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "GRC9V3.rebuild_transport_state",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "diagnostic_rebuild",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+        }
+      ],
+      "mechanism_ownership": "diagnostic",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "producer_residue": []
+    }
+  ],
+  "actual_stage_symbol_invocations": [
+    {
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "error_type": null,
+      "invocation_index": 0,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "result_type": "LGRC9V3",
+      "stage_id": "diagnostic_model_construction",
+      "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+    },
+    {
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "error_type": null,
+      "invocation_index": 1,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "result_type": "NoneType",
+      "stage_id": "diagnostic_rebuild",
+      "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+    }
+  ],
+  "adapters_used": [],
+  "allowed_pathway_alternatives_actual_use": [],
+  "artifact": "causal-pathways-binding-receipt",
+  "binding_lock_digest": "74c6d2747a599e4b0689202673286c5cb7ee98078621fadece8ab517414d15b5",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [
+    "ordinary LGRC behavior",
+    "native current-to-packet adapter",
+    "native event-to-action crossing"
+  ],
+  "candidate_relations_exercised": [],
+  "claim_envelope": {
+    "blocked_claims": [
+      "ordinary LGRC behavior",
+      "native current-to-packet adapter",
+      "native event-to-action crossing"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [
+      {
+        "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "adapter_owner": "library_helper_invoked_by_caller",
+        "authority_retained": [
+          "caller selection",
+          "GRC diagnostic mechanics"
+        ],
+        "authority_transferred": [],
+        "binding_id": "composition:CMP-04",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native event-to-action crossing"
+        ],
+        "composition_id": "CMP-04",
+        "composition_status": "diagnostic_only",
+        "constituent_claim_ceiling": "Explicit bounded diagnostic reconstruction only."
+      }
+    ],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native current-to-packet adapter"
+        ],
+        "constituent_claim_ceiling": [
+          "explicit bounded GRC diagnostic over LGRC state"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "required_qualifiers": {
+          "configured_residue": [
+            "diagnostic modes",
+            "copied params"
+          ],
+          "naturalization_debt": [
+            "ordinary LGRC step does not consume the reconstruction"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": true,
+    "contains_producer_cut": false,
+    "experimental_unregistered": false,
+    "overall_claim_status": "bounded_with_diagnostic_cut",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "residue": [
+            "diagnostic modes",
+            "copied params"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [
+        {
+          "identity": "lgrc9v3.diagnostic_grc_reconstruction",
+          "kind": "pathway"
+        },
+        {
+          "identity": "CMP-04",
+          "kind": "composition"
+        }
+      ],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "claim_qualified": true,
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_but_unused": {
+    "candidate_ids": [],
+    "composition_binding_ids": [],
+    "pathway_binding_ids": []
+  },
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pathway_use_graph": {
+    "edges": [
+      {
+        "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "adapter_owner": "library_helper_invoked_by_caller",
+        "authority_retained": [
+          "caller selection",
+          "GRC diagnostic mechanics"
+        ],
+        "authority_transferred": [],
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native event-to-action crossing"
+        ],
+        "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+        "composition_id": "CMP-04",
+        "composition_status": "diagnostic_only",
+        "edge_id": "composition:CMP-04",
+        "edge_kind": "registered_composition",
+        "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+        "producer_owner": null,
+        "source_node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "target_node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction"
+      }
+    ],
+    "larger_chain_claim_synthesized": false,
+    "nodes": [
+      {
+        "configured_residue": [
+          "diagnostic modes",
+          "copied params"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "diagnostic",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+          "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+        ],
+        "stage_ids_used": [
+          "diagnostic_model_construction",
+          "diagnostic_rebuild"
+        ]
+      }
+    ],
+    "unregistered_edge_synthesized_from_endpoint_co_use": false
+  },
+  "producer_cuts_used": [],
+  "receipt_digest": "f2b3478077d06396adbfd0d7cf22cc055d9869c3f69d2f96e10d7261686df1e3",
+  "registered_compositions_exercised": [
+    {
+      "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+      "adapter_owner": "library_helper_invoked_by_caller",
+      "authority_retained": [
+        "caller selection",
+        "GRC diagnostic mechanics"
+      ],
+      "authority_transferred": [],
+      "binding_id": "composition:CMP-04",
+      "blocked_relabels": [
+        "ordinary LGRC behavior",
+        "native event-to-action crossing"
+      ],
+      "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+      "composition_id": "CMP-04",
+      "composition_status": "diagnostic_only",
+      "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "from_stage_ids": [
+        "diagnostic_model_construction"
+      ],
+      "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "to_stage_ids": [
+        "diagnostic_rebuild"
+      ]
+    }
+  ],
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_receipt_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unbound_execution_accepted_as_evidence": false,
+  "undeclared_use_violations": []
+}

@@ -1,0 +1,191 @@
+{
+  "actual_bound_pathways_used": [
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
+        "snapshot_serialization"
+      ],
+      "actual_symbol_ids": [
+        "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "pathway:pygrc.restoration_replay_identity",
+      "composition_ids": [],
+      "configured_residue": [
+        "identity schema version",
+        "legacy compatibility policy",
+        "replay scope"
+      ],
+      "declared_stage_ids": [
+        "snapshot_serialization"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:pygrc.restoration_replay_identity",
+          "binding_role": "restoration_entrypoint",
+          "call_kind": "instance_method",
+          "composition_ids": [],
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "qualified_symbol": "LGRC9V3.snapshot",
+          "required_keyword_arguments": {},
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "snapshot_serialization",
+          "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+        }
+      ],
+      "mechanism_ownership": "utility",
+      "pathway_id": "pygrc.restoration_replay_identity",
+      "producer_residue": []
+    }
+  ],
+  "actual_stage_symbol_invocations": [
+    {
+      "binding_id": "pathway:pygrc.restoration_replay_identity",
+      "composition_ids": [],
+      "error_type": null,
+      "invocation_index": 0,
+      "outcome": "returned",
+      "pathway_id": "pygrc.restoration_replay_identity",
+      "result_type": "dict",
+      "stage_id": "snapshot_serialization",
+      "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+    }
+  ],
+  "adapters_used": [],
+  "allowed_pathway_alternatives_actual_use": [
+    {
+      "actual_pathway_ids_used": [
+        "pygrc.restoration_replay_identity"
+      ],
+      "allowed_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "pygrc.restoration_replay_identity"
+      ],
+      "alternative_set_id": "i116.consumer-branch",
+      "selection_authority": "i116_consumer_boolean"
+    }
+  ],
+  "artifact": "causal-pathways-binding-receipt",
+  "binding_lock_digest": "a1bb50a7dbb77667973320dbe21b35ad8ea8ad1694034d4efa12b62d8d5166ac",
+  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "blocked_claims": [
+    "byte identity requirement",
+    "unrestricted behavioral identity",
+    "semantic identity",
+    "action eligibility"
+  ],
+  "candidate_relations_exercised": [],
+  "claim_envelope": {
+    "blocked_claims": [
+      "byte identity requirement",
+      "unrestricted behavioral identity",
+      "semantic identity",
+      "action eligibility"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "pathway:pygrc.restoration_replay_identity",
+        "blocked_claims": [
+          "byte identity requirement",
+          "unrestricted behavioral identity",
+          "semantic identity",
+          "action eligibility"
+        ],
+        "constituent_claim_ceiling": [
+          "versioned restoration and replay identity"
+        ],
+        "mechanism_ownership": "utility",
+        "pathway_id": "pygrc.restoration_replay_identity",
+        "required_qualifiers": {
+          "configured_residue": [
+            "identity schema version",
+            "legacy compatibility policy",
+            "replay scope"
+          ],
+          "naturalization_debt": [
+            "identity equality remains scope-bounded and does not imply semantic identity or work eligibility"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": false,
+    "experimental_unregistered": false,
+    "overall_claim_status": "admitted_bounded",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "residue": [
+            "identity schema version",
+            "legacy compatibility policy",
+            "replay scope"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "claim_qualified": true,
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_but_unused": {
+    "candidate_ids": [],
+    "composition_binding_ids": [],
+    "pathway_binding_ids": [
+      "pathway:lgrc9v3.explicit_packet_transport"
+    ]
+  },
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pathway_use_graph": {
+    "edges": [],
+    "larger_chain_claim_synthesized": false,
+    "nodes": [
+      {
+        "configured_residue": [
+          "identity schema version",
+          "legacy compatibility policy",
+          "replay scope"
+        ],
+        "mechanism_ownership": "utility",
+        "node_id": "pathway:pygrc.restoration_replay_identity",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "pygrc.restoration_replay_identity",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "utility",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+        ],
+        "stage_ids_used": [
+          "snapshot_serialization"
+        ]
+      }
+    ],
+    "unregistered_edge_synthesized_from_endpoint_co_use": false
+  },
+  "producer_cuts_used": [],
+  "receipt_digest": "961a5740042371dbed936eccaa22b3edeb3b4ab7a8606b756d2d3cd4aca27923",
+  "registered_compositions_exercised": [],
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_receipt_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unbound_execution_accepted_as_evidence": false,
+  "undeclared_use_violations": []
+}

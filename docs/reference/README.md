@@ -10,6 +10,7 @@ Canonical operator-facing guides live here. Implementation plans and checklists 
 - [Graph Visualization Reference Guide](GraphVisualization-ReferenceGuide.md)
 - [GRC Runtime Reference Guide](GRC-Runtime-ReferenceGuide.md)
 - [GRC/LGRC Causal Pathway Guide](GRC-LGRC-CausalPathwayGuide.md)
+- [GRC/LGRC Causal Pathway Binding And Claim Provenance](GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
 - [GRC/LGRC Composition Matrix](GRC-LGRC-CompositionMatrix.md)
 - [GRCL Reference Guide](GRCL-ReferenceGuide.md)
 - [Landscape Compiler And Lowering Reference Guide](LandscapeCompiler-ReferenceGuide.md)
@@ -38,6 +39,13 @@ stale-to-reviewed re-admission. I106-I111 builders live under `scripts/`; their
 supporting evidence is indexed under
 `implementation/investigations/causal-pathway-consolidation/`, and earlier
 bundle identities remain explicit provenance rather than alternate authority.
+
+The follow-on Iterations 112-116 binding tranche adds a separate binding plane
+without changing those knowledge authorities or the mechanism runtime. Its
+23-pathway/52-stage symbol map, exact pre-execution lock, actual-use receipt,
+use graph, candidate boundary, and 20-rule prospective checker make admitted
+pathway identity structural for accepted claim-bearing consumers. Unbound code
+remains executable but is not claim-qualified evidence.
 
 GRC9V3 Lane B interpretation is split by responsibility:
 `GRC-Runtime-ReferenceGuide.md` covers lane behavior, `Telemetry-ReferenceGuide.md`

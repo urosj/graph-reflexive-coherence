@@ -34,6 +34,7 @@ The current example focus has these entry points:
 - [GRC9V3 Examples](grc9v3/README.md)
 - [LGRC9V3 Examples](lgrc9v3/README.md)
 - [Landscape Examples](landscapes/README.md)
+- [Low-context causal-pathway binding consumer](causal_pathway_binding_low_context_consumer.py)
 
 GRC9V3 is the best current synchronous runtime target because it now has:
 
@@ -46,6 +47,11 @@ GRC9V3 is the best current synchronous runtime target because it now has:
 LGRC9V3 is the current executable causal-history target. Use it when you want
 packet event queues, causal event-time/proper-time evidence, causally scheduled
 Lane A/Lane B diagnostics, or LGRC9V3 telemetry/visual overlays.
+
+The low-context binding consumer is a bounded provenance replay. It resolves a
+semantic demand through the accepted selection authority, binds the selected
+mechanism-specific packet stages, and writes an exact lock and receipt. It is
+not a generic pathway dispatcher.
 
 ## Scripts Versus Notebooks
 
@@ -111,3 +117,4 @@ Use these guides while reading examples:
 - [Graph Visualization Reference Guide](../docs/reference/GraphVisualization-ReferenceGuide.md)
 - [Landscape Language Reference Guide](../docs/reference/LandscapeLanguage-ReferenceGuide.md)
 - [Landscape Compiler And Lowering Reference Guide](../docs/reference/LandscapeCompiler-ReferenceGuide.md)
+- [GRC/LGRC Causal Pathway Binding And Claim Provenance](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
