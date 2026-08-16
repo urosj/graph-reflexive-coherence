@@ -475,6 +475,29 @@ def validate_bundle(
                     f"{binding_id}:{symbol_id}",
                     "locked wrapper identity differs from binding map",
                 )
+            callable_identity = link.get("callable_identity", {})
+            if (
+                not isinstance(callable_identity, Mapping)
+                or any(
+                    callable_identity.get(field) != source_symbol.get(field)
+                    for field in (
+                        "module",
+                        "qualified_symbol",
+                        "source_path",
+                        "source_sha256",
+                    )
+                )
+                or not isinstance(callable_identity.get("definition_first_line"), int)
+                or not callable_identity.get("definition_source_sha256")
+                or callable_identity.get("callable_identity_digest")
+                != digest_without(callable_identity, "callable_identity_digest")
+            ):
+                add_issue(
+                    issues,
+                    "BCF-016",
+                    f"{binding_id}:{symbol_id}",
+                    "locked callable fingerprint is absent, stale, or inconsistent",
+                )
 
     lock_compositions, duplicate_lock_compositions = _unique_index(
         lock.get("declared_composition_bindings", []), "binding_id"
@@ -632,12 +655,15 @@ def validate_bundle(
             or invocation.get("stage_id") != locked_link.get("stage_id")
             or invocation.get("composition_ids")
             != locked_binding.get("composition_ids")
+            or invocation.get("callable_identity")
+            != locked_link.get("callable_identity")
         ):
             add_issue(
                 issues,
                 "BCF-016",
                 f"{binding_id}:{symbol_id}",
-                "wrapper invocation changed its frozen pathway, stage, or composition",
+                "wrapper invocation changed its frozen pathway, stage, composition, "
+                "or callable identity",
             )
         if invocation.get("outcome") not in {"returned", "raised"}:
             add_issue(
@@ -1238,6 +1264,22 @@ def validate_bundle(
             "BCF-020",
             "receipt.claim_qualified",
             "claim qualification does not match successful bound use",
+        )
+    if (
+        lock.get("claim_scope") != "bound_invocations_only"
+        or receipt.get("claim_scope") != "bound_invocations_only"
+        or lock.get("whole_run_causal_closure_claimed") is not False
+        or receipt.get("whole_run_causal_closure_claimed") is not False
+        or lock.get("untracked_execution_observable_by_binding_plane") is not False
+        or receipt.get("untracked_execution_observable_by_binding_plane") is not False
+        or receipt.get("external_or_untracked_causal_input")
+        != "not_observable_by_binding_plane"
+    ):
+        add_issue(
+            issues,
+            "BCF-020",
+            "receipt.claim_scope",
+            "receipt does not preserve the operation-scoped untracked-execution boundary",
         )
     if receipt.get("unbound_execution_accepted_as_evidence") is not False:
         add_issue(

@@ -10,6 +10,7 @@
     "identity acceptance"
   ],
   "candidate_declarations": [],
+  "claim_scope": "bound_invocations_only",
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_composition_bindings": [],
@@ -77,7 +78,7 @@
       ]
     }
   ],
-  "lock_digest": "0ab1e09d91820426da075a9e117fee1984e5c13b42c06efc2c60de05efb43a86",
+  "lock_digest": "b78b5e8014008ca97886a36b30f6a4acdf8fe8bb798a7d163b371843a1dcaecb",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
@@ -196,5 +197,7 @@
   "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
   "semantic_selection_performed_by_binder": false,
   "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
-  "unregistered_relation_bound_without_candidate": false
+  "unregistered_relation_bound_without_candidate": false,
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
 }

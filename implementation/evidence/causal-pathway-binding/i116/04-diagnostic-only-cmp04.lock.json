@@ -8,6 +8,7 @@
     "native event-to-action crossing"
   ],
   "candidate_declarations": [],
+  "claim_scope": "bound_invocations_only",
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_composition_bindings": [
@@ -59,6 +60,15 @@
           "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
           "binding_role": "diagnostic_entrypoint",
           "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
+            "definition_first_line": 288,
+            "definition_source_sha256": "2274ad33ebda740bb0dfd84888691ee948787f0b090580709ff40ae3c1ef76f7",
+            "module": "pygrc.models.lgrc_9_v3_construction",
+            "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+            "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+            "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+          },
           "composition_ids": [
             "CMP-04"
           ],
@@ -75,6 +85,15 @@
           "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
           "binding_role": "diagnostic_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
+            "definition_first_line": 1122,
+            "definition_source_sha256": "228cd67dec92ef3cf7ddfdff7c8bcf480358e9061fb9e07ad96e234906814cda",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3.rebuild_transport_state",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
           "composition_ids": [
             "CMP-04"
           ],
@@ -95,7 +114,7 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "74c6d2747a599e4b0689202673286c5cb7ee98078621fadece8ab517414d15b5",
+  "lock_digest": "1b77484c00b85972c27ecbc8c2ae73c95a74e5e2ccffb82e9924f285ccc6eb37",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
@@ -183,5 +202,7 @@
   "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
   "semantic_selection_performed_by_binder": false,
   "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
-  "unregistered_relation_bound_without_candidate": false
+  "unregistered_relation_bound_without_candidate": false,
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
 }

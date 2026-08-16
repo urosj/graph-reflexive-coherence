@@ -30,6 +30,15 @@
           "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
           "binding_role": "mechanism_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+            "definition_first_line": 8124,
+            "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
           "composition_ids": [],
           "module": "pygrc.models.lgrc_9_v3_runtime",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -44,6 +53,15 @@
           "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
           "binding_role": "load_bearing_internal",
           "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
+            "definition_first_line": 1552,
+            "definition_source_sha256": "44b108d19d484f2e032e36a0554e9d4a8234efc4e015569c0101a3aeb572ab7b",
+            "module": "pygrc.models.lgrc_9_v3_packets",
+            "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+            "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+          },
           "composition_ids": [],
           "module": "pygrc.models.lgrc_9_v3_packets",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -58,6 +76,15 @@
           "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
           "binding_role": "stage_entrypoint",
           "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
+            "definition_first_line": 1682,
+            "definition_source_sha256": "98b422c57df6c6856d76a7276fb61aa3e509b8578a08885627028beb4f6e4691",
+            "module": "pygrc.models.lgrc_9_v3_packets",
+            "qualified_symbol": "process_lgrc9v3_packet_arrival",
+            "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+            "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+          },
           "composition_ids": [],
           "module": "pygrc.models.lgrc_9_v3_packets",
           "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -77,6 +104,15 @@
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+        "definition_first_line": 8124,
+        "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+        "module": "pygrc.models.lgrc_9_v3_runtime",
+        "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+        "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+      },
       "composition_ids": [],
       "error_type": null,
       "invocation_index": 0,
@@ -88,6 +124,15 @@
     },
     {
       "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
+        "definition_first_line": 1552,
+        "definition_source_sha256": "44b108d19d484f2e032e36a0554e9d4a8234efc4e015569c0101a3aeb572ab7b",
+        "module": "pygrc.models.lgrc_9_v3_packets",
+        "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+        "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+      },
       "composition_ids": [],
       "error_type": null,
       "invocation_index": 1,
@@ -99,6 +144,15 @@
     },
     {
       "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
+        "definition_first_line": 1682,
+        "definition_source_sha256": "98b422c57df6c6856d76a7276fb61aa3e509b8578a08885627028beb4f6e4691",
+        "module": "pygrc.models.lgrc_9_v3_packets",
+        "qualified_symbol": "process_lgrc9v3_packet_arrival",
+        "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+      },
       "composition_ids": [],
       "error_type": null,
       "invocation_index": 2,
@@ -112,7 +166,7 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "ce5a4c6873572326e886c29c4e602ba4dffaa97bae18b24755fb98195c440f4c",
+  "binding_lock_digest": "910a654c14cbfb5cb6537246514cccdd0b0a16657266c0983e5236c54b2318cd",
   "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
   "blocked_claims": [
     "substrate-formed route",
@@ -178,6 +232,7 @@
     "synthesized_chain_claim": false
   },
   "claim_qualified": true,
+  "claim_scope": "bound_invocations_only",
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -185,6 +240,7 @@
     "composition_binding_ids": [],
     "pathway_binding_ids": []
   },
+  "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
     "edges": [],
@@ -222,7 +278,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "477099ba5db7399135df4ecef27f73a98147c9ad21aa665aec2b10da5161cea4",
+  "receipt_digest": "d42ad0c2ad5c9206194edc3ef5472a0067e39c917d1feb33dc7b9d74620def10",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",
@@ -230,5 +286,7 @@
   "semantic_selection_performed_by_binder": false,
   "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
   "unbound_execution_accepted_as_evidence": false,
-  "undeclared_use_violations": []
+  "undeclared_use_violations": [],
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
 }

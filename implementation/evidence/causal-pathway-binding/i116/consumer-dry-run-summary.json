@@ -53,9 +53,9 @@
         "composition_edge_count": 0
       },
       "case_id": "01-simple-native-pathway",
-      "lock_digest": "ce5a4c6873572326e886c29c4e602ba4dffaa97bae18b24755fb98195c440f4c",
+      "lock_digest": "910a654c14cbfb5cb6537246514cccdd0b0a16657266c0983e5236c54b2318cd",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.lock.json",
-      "receipt_digest": "477099ba5db7399135df4ecef27f73a98147c9ad21aa665aec2b10da5161cea4",
+      "receipt_digest": "d42ad0c2ad5c9206194edc3ef5472a0067e39c917d1feb33dc7b9d74620def10",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.receipt.json",
       "status": "passed"
     },
@@ -68,9 +68,9 @@
         "lawful_native_blocked": true
       },
       "case_id": "02-producer-mediated-cmp20",
-      "lock_digest": "ee4b03280fae2f402bdda240059e40f2f92a0d0a038d4374cd5b74b96851f302",
+      "lock_digest": "413698b30e73706aad5787817464c4732376c096a3bdcca4effdd4402972a9dc",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.lock.json",
-      "receipt_digest": "5b6c717734003c2b4bb796863cd27ad8be78f2424880e3f1e9863679c1aa072e",
+      "receipt_digest": "1b737a653a39b0975e65ad53025938368b8be2dede7110bcd180932e476cff6f",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.receipt.json",
       "status": "passed"
     },
@@ -82,9 +82,9 @@
         "contains_adapter_cut": true
       },
       "case_id": "03-explicit-adapter-cmp26",
-      "lock_digest": "4ee536431d9e1dc3c503dcea8b9db385ebee94293ccf12ff68a91f484c32cfb2",
+      "lock_digest": "4d3897fb1248fcc2371575030551addda63ecb7d66ec720a6e506ea18558516c",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.lock.json",
-      "receipt_digest": "bccfb51b49853b8076f2b97a5d27513bc1459648bf73304b1d6cc6791efd1ee3",
+      "receipt_digest": "fb5ab7f5da32d13a1e6c02911c587ba7fd3ea28d21721821954dd65ee7bef213",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.receipt.json",
       "status": "passed"
     },
@@ -99,9 +99,9 @@
         "contains_diagnostic_only_relation": true
       },
       "case_id": "04-diagnostic-only-cmp04",
-      "lock_digest": "74c6d2747a599e4b0689202673286c5cb7ee98078621fadece8ab517414d15b5",
+      "lock_digest": "1b77484c00b85972c27ecbc8c2ae73c95a74e5e2ccffb82e9924f285ccc6eb37",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.lock.json",
-      "receipt_digest": "f2b3478077d06396adbfd0d7cf22cc055d9869c3f69d2f96e10d7261686df1e3",
+      "receipt_digest": "34f63d290a27fea992ff5895968b762f98ba39b0a2ebdd2841516ed27e918a6b",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.receipt.json",
       "status": "passed"
     },
@@ -116,9 +116,9 @@
         "registered_compositions_exercised": []
       },
       "case_id": "05-ambiguous-crossing-not-selected",
-      "lock_digest": "0ab1e09d91820426da075a9e117fee1984e5c13b42c06efc2c60de05efb43a86",
+      "lock_digest": "b78b5e8014008ca97886a36b30f6a4acdf8fe8bb798a7d163b371843a1dcaecb",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.lock.json",
-      "receipt_digest": "65ef6aa94db310861f96c0317f230de4393ff4df66e94f2c245a27faa3c2ca76",
+      "receipt_digest": "b1ec8dadbb058e13e42485c497c2ed56566bdc8473b797128f1f3ddbe648310b",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.receipt.json",
       "status": "passed"
     },
@@ -148,9 +148,9 @@
         "promotion_status": "none"
       },
       "case_id": "08-unregistered-candidate",
-      "lock_digest": "c52a7740f630d468b98dc3376324e6b3759c95281c034aef24ad11e0fb4f35b0",
+      "lock_digest": "30fdb07a47245f75e556d060796c42f7f998c9f0b379f4929b640350838d09ee",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
-      "receipt_digest": "6c690cf32ef143b774f5446968b14d73eaf6a712f626ef634a315c78a9192d30",
+      "receipt_digest": "c1f7b928921cc7194efc82acf57fd57ac3799fbeadfd9d4c3e18c4eafe392668",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
       "status": "passed"
     },
@@ -167,9 +167,9 @@
         "selection_authority": "i116_consumer_boolean"
       },
       "case_id": "09-dynamic-a-b-choice",
-      "lock_digest": "a1bb50a7dbb77667973320dbe21b35ad8ea8ad1694034d4efa12b62d8d5166ac",
+      "lock_digest": "b0c176dd0d2a35182b2c305d5a496693f3c990c141b46b33d284a3519fb1eecf",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.lock.json",
-      "receipt_digest": "961a5740042371dbed936eccaa22b3edeb3b4ab7a8606b756d2d3cd4aca27923",
+      "receipt_digest": "9bdd2a1faae528f922f8b4976af5cd3f048b9f7111d4c20a46ec7ce75516a7e2",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.receipt.json",
       "status": "passed"
     },
@@ -184,9 +184,9 @@
         "synthesized_chain_claim": false
       },
       "case_id": "10-multi-edge-use-graph",
-      "lock_digest": "7abe625288d2b0996e1300c6e27e4ac8c8c1c87b7cc57151f60b93a48997d18a",
+      "lock_digest": "561cf78ff1944f0f295266a35b2aa807db1841d4aa9c875e41b9e71e401a4975",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.lock.json",
-      "receipt_digest": "18e41bf87179e9746a5d7a17917096d1e21b64b41609755f7f9a115502c864f1",
+      "receipt_digest": "5c834d16de381be9a8aaa64134369bc6dd974960e4872795ac1a1d9d70364c56",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.receipt.json",
       "status": "passed"
     }
@@ -209,7 +209,7 @@
     "consumer_input_contains_expected_ids": false,
     "consumer_result_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.result.json",
     "identity_match": true,
-    "oracle_digest": "c4c1c7abe78c663df6bca36acf8cdb628394ff865831372f141848bbe79326ae",
+    "oracle_digest": "cdeb664746fc657db234366fa7aca610180f3c79de59c374c33905100841a664",
     "oracle_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.oracle.json",
     "status": "passed"
   },
@@ -217,5 +217,5 @@
   "runtime_behavior_changed": false,
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i116_dry_runs_v1",
   "status": "passed",
-  "summary_digest": "e45f06d11b1a02da8872937f6ac94edd24d3f9e97ce44a29938108cae941bdd4"
+  "summary_digest": "66d6e754a3717461ecfc4ce8a84be6f91853ed49352808d930a0bde047dcd362"
 }

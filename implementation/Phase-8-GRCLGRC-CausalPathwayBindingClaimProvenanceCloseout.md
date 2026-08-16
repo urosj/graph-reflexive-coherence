@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** Complete through Iteration 116
+**Status:** Reopened at Iteration 117; independent audit corrections pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
 
@@ -8,7 +8,11 @@
 
 ## Decision
 
-The tranche closes successfully. One explicit linker model handles admitted
+The Iteration 116 closeout is superseded by the Iteration 117 independent-audit
+correction gate. The text below records the pre-audit checkpoint and is not a
+current acceptance decision.
+
+At the Iteration 116 checkpoint, one explicit linker model handled admitted
 native pathways, producer-mediated and adapter/diagnostic registered
 compositions, dynamic caller choice, and genuinely unregistered candidates
 without a generic causal dispatcher or common mechanism API.

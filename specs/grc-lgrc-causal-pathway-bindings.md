@@ -45,13 +45,15 @@ producer.
 
 ## Non-Dispatch Rule
 
-The binder imports the recorded callable and delegates the caller's native
-arguments unchanged. It does not expose `execute(pathway_id, **kwargs)`, infer
-a pathway from intent, translate arguments into common causal-work fields, or
-synthesize compositions from endpoint co-use.
+The binder imports the recorded callable, freezes a definition fingerprint,
+re-resolves it immediately before every invocation, and delegates the caller's
+native arguments unchanged. It does not expose `execute(pathway_id, **kwargs)`,
+infer a pathway from intent, or translate arguments into common causal-work
+fields.
 
 Direct unbound calls remain available. They do not produce claim-qualified
-binding provenance.
+binding invocation provenance. Receipts are scoped to bound invocations and do
+not claim process-wide observation or whole-run causal closure.
 
 See the
 [binding and claim-provenance reference guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)

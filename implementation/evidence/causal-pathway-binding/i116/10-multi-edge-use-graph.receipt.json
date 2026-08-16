@@ -28,6 +28,15 @@
           "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
           "binding_role": "diagnostic_entrypoint",
           "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
+            "definition_first_line": 288,
+            "definition_source_sha256": "2274ad33ebda740bb0dfd84888691ee948787f0b090580709ff40ae3c1ef76f7",
+            "module": "pygrc.models.lgrc_9_v3_construction",
+            "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+            "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+            "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+          },
           "composition_ids": [
             "CMP-04"
           ],
@@ -44,6 +53,15 @@
           "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
           "binding_role": "diagnostic_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
+            "definition_first_line": 1122,
+            "definition_source_sha256": "228cd67dec92ef3cf7ddfdff7c8bcf480358e9061fb9e07ad96e234906814cda",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3.rebuild_transport_state",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
           "composition_ids": [
             "CMP-04"
           ],
@@ -88,6 +106,15 @@
           "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
           "binding_role": "producer_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
+            "definition_first_line": 7747,
+            "definition_source_sha256": "3ff964eeb82bee9816543004f750fd8c0092ed3c2047c1ffdd0a3633b095eee7",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.produce_events",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
           "composition_ids": [
             "CMP-20"
           ],
@@ -141,6 +168,15 @@
           "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
           "binding_role": "mechanism_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+            "definition_first_line": 8124,
+            "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
           "composition_ids": [
             "CMP-20"
           ],
@@ -157,6 +193,15 @@
           "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
           "binding_role": "load_bearing_internal",
           "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
+            "definition_first_line": 1552,
+            "definition_source_sha256": "44b108d19d484f2e032e36a0554e9d4a8234efc4e015569c0101a3aeb572ab7b",
+            "module": "pygrc.models.lgrc_9_v3_packets",
+            "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+            "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+          },
           "composition_ids": [
             "CMP-20"
           ],
@@ -173,6 +218,15 @@
           "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
           "binding_role": "stage_entrypoint",
           "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
+            "definition_first_line": 1682,
+            "definition_source_sha256": "98b422c57df6c6856d76a7276fb61aa3e509b8578a08885627028beb4f6e4691",
+            "module": "pygrc.models.lgrc_9_v3_packets",
+            "qualified_symbol": "process_lgrc9v3_packet_arrival",
+            "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+            "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+          },
           "composition_ids": [
             "CMP-20"
           ],
@@ -194,6 +248,15 @@
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+      "callable_identity": {
+        "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
+        "definition_first_line": 7747,
+        "definition_source_sha256": "3ff964eeb82bee9816543004f750fd8c0092ed3c2047c1ffdd0a3633b095eee7",
+        "module": "pygrc.models.lgrc_9_v3_runtime",
+        "qualified_symbol": "LGRC9V3.produce_events",
+        "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+      },
       "composition_ids": [
         "CMP-20"
       ],
@@ -207,6 +270,15 @@
     },
     {
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+        "definition_first_line": 8124,
+        "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+        "module": "pygrc.models.lgrc_9_v3_runtime",
+        "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+        "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+      },
       "composition_ids": [
         "CMP-20"
       ],
@@ -220,6 +292,15 @@
     },
     {
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
+        "definition_first_line": 1552,
+        "definition_source_sha256": "44b108d19d484f2e032e36a0554e9d4a8234efc4e015569c0101a3aeb572ab7b",
+        "module": "pygrc.models.lgrc_9_v3_packets",
+        "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+        "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+      },
       "composition_ids": [
         "CMP-20"
       ],
@@ -233,6 +314,15 @@
     },
     {
       "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
+        "definition_first_line": 1682,
+        "definition_source_sha256": "98b422c57df6c6856d76a7276fb61aa3e509b8578a08885627028beb4f6e4691",
+        "module": "pygrc.models.lgrc_9_v3_packets",
+        "qualified_symbol": "process_lgrc9v3_packet_arrival",
+        "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+      },
       "composition_ids": [
         "CMP-20"
       ],
@@ -246,6 +336,15 @@
     },
     {
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "callable_identity": {
+        "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
+        "definition_first_line": 288,
+        "definition_source_sha256": "2274ad33ebda740bb0dfd84888691ee948787f0b090580709ff40ae3c1ef76f7",
+        "module": "pygrc.models.lgrc_9_v3_construction",
+        "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+        "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+      },
       "composition_ids": [
         "CMP-04"
       ],
@@ -259,6 +358,15 @@
     },
     {
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "callable_identity": {
+        "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
+        "definition_first_line": 1122,
+        "definition_source_sha256": "228cd67dec92ef3cf7ddfdff7c8bcf480358e9061fb9e07ad96e234906814cda",
+        "module": "pygrc.models.grc_9_v3",
+        "qualified_symbol": "GRC9V3.rebuild_transport_state",
+        "source_path": "src/pygrc/models/grc_9_v3.py",
+        "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+      },
       "composition_ids": [
         "CMP-04"
       ],
@@ -274,7 +382,7 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "7abe625288d2b0996e1300c6e27e4ac8c8c1c87b7cc57151f60b93a48997d18a",
+  "binding_lock_digest": "561cf78ff1944f0f295266a35b2aa807db1841d4aa9c875e41b9e71e401a4975",
   "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
   "blocked_claims": [
     "ordinary LGRC behavior",
@@ -487,6 +595,7 @@
     "synthesized_chain_claim": false
   },
   "claim_qualified": true,
+  "claim_scope": "bound_invocations_only",
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -494,6 +603,7 @@
     "composition_binding_ids": [],
     "pathway_binding_ids": []
   },
+  "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
     "edges": [
@@ -652,7 +762,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "18e41bf87179e9746a5d7a17917096d1e21b64b41609755f7f9a115502c864f1",
+  "receipt_digest": "5c834d16de381be9a8aaa64134369bc6dd974960e4872795ac1a1d9d70364c56",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",
@@ -720,5 +830,7 @@
   "semantic_selection_performed_by_binder": false,
   "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
   "unbound_execution_accepted_as_evidence": false,
-  "undeclared_use_violations": []
+  "undeclared_use_violations": [],
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
 }

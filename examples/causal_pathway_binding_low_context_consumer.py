@@ -91,7 +91,9 @@ def _select_mechanism_link(
     matches: list[tuple[str, str]] = []
     for stage_id in authority.stage_ids(pathway_id):
         for symbol in authority.symbols(pathway_id, stage_id):
-            parameters = inspect.signature(symbol.resolve()).parameters
+            parameters = inspect.signature(
+                symbol.resolve(authority.repository_root)
+            ).parameters
             if symbol.call_kind == "instance_method" and "self" not in parameters:
                 continue
             if argument_names <= set(parameters):

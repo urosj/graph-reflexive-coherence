@@ -1,5 +1,8 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
+**Status:** Reopened at Iteration 117. Checked Iteration 112-116 items describe
+the pre-audit checkpoint and do not constitute current tranche acceptance.
+
 ## Global Boundaries
 
 - [x] Use a separate tranche identity beginning at Iteration 112.
@@ -88,3 +91,24 @@
 - [x] Update contribution, reference, specification, and implementation indexes.
 - [x] Run `ruff`, `mypy`, compile checks, `git diff --check`, and final tests.
 - [x] Publish closeout with exact remaining boundaries.
+
+## Iteration 117: Independent Audit Corrections
+
+- [x] Preserve the audited candidate at checkpoint commit `976c660`.
+- [x] Reopen the tranche and supersede the pre-audit closeout.
+- [x] Freeze a correction contract for B-01 through B-06, M-01, and N-01.
+- [x] Scope locks and receipts to recorded bound invocations.
+- [x] Disclaim whole-run closure and untracked-execution observability.
+- [x] Freeze definition-level callable identities in locks and receipts.
+- [x] Re-resolve callable identity immediately before every invocation.
+- [x] Reject post-load and post-lock P1-to-P2 substitution before delegation.
+- [x] Extend BCF-016 and BCF-020 for callable identity and receipt scope.
+- [x] Regenerate I115/I116 evidence with the corrected schema.
+- [x] Run focused tests, both conformance checkers, lint, typing, and full suite.
+- [ ] Require composition-specific crossing evidence for B-03.
+- [ ] Replace string-only candidate-use attestation for B-04.
+- [ ] Enforce selection-scoped dynamic alternatives for B-05.
+- [ ] Add the independent acceptance anchor for B-06.
+- [ ] Add mechanism-specific effect outcome vocabulary for M-01.
+- [ ] Re-run the independently updated full adversarial audit with zero blockers
+      and zero unresolved majors.

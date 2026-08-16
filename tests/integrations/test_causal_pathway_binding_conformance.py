@@ -99,6 +99,49 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual("stale_pending_review", result["binding_staleness_state"])
         self.assertTrue(result["claim_qualified_artifacts_blocked"])
 
+    def test_whole_run_claim_scope_fails_bcf020_in_isolation(self) -> None:
+        mutated = copy.deepcopy(self.bundle)
+        receipt = mutated["receipt"]
+        receipt["claim_scope"] = "whole_run"
+        receipt["whole_run_causal_closure_claimed"] = True
+        receipt["receipt_digest"] = self.checker.digest_without(
+            receipt, "receipt_digest"
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-020"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-020"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_invocation_callable_identity_drift_fails_bcf016(self) -> None:
+        mutated = copy.deepcopy(self.bundle)
+        receipt = mutated["receipt"]
+        invocation = receipt["actual_stage_symbol_invocations"][0]
+        invocation["callable_identity"]["qualified_symbol"] = "LGRC9V3.step"
+        invocation["callable_identity"]["callable_identity_digest"] = (
+            self.checker.digest_without(
+                invocation["callable_identity"], "callable_identity_digest"
+            )
+        )
+        receipt["receipt_digest"] = self.checker.digest_without(
+            receipt, "receipt_digest"
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-016"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-016"}, {item["rule_id"] for item in result["issues"]})
+
     def test_frozen_execution_records_are_canonical_and_passed(self) -> None:
         execution = json.loads(
             (EVIDENCE_DIR / "i115-conformance-execution.json").read_text(

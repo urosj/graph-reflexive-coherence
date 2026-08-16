@@ -212,7 +212,7 @@
       ]
     }
   ],
-  "execution_digest": "83d09a93b6c8ec246bae6400016a49c74aea165dc1422b7752f3998dfcdc27d8",
+  "execution_digest": "6deead50fc9eb4c22c12b74ec2bf95d831293914d90a2ae9aef1103bdfb72c14",
   "failed_open_count": 0,
   "iteration": 115,
   "rule_isolation_control_count": 20,
@@ -461,6 +461,6 @@
   "rule_isolation_failed_open_count": 0,
   "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
-  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "source_revision": "976c66080736492c87a52a12a8423c01b76ed68b",
   "status": "passed"
 }

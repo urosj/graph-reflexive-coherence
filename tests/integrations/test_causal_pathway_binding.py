@@ -5,6 +5,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 from typing import ClassVar
+from unittest.mock import patch
 
 from pygrc.causal_pathways import (
     BindingStateError,
@@ -118,6 +119,50 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertEqual("packet_schedule", invocation.stage_id)
         self.assertEqual("returned", invocation.outcome)
         self.assertEqual((), invocation.composition_ids)
+        self.assertEqual(
+            "LGRC9V3.schedule_packet_departure",
+            invocation.callable_identity["qualified_symbol"],
+        )
+
+    def test_link_rejects_post_load_p1_to_p2_symbol_substitution(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        with (
+            patch.object(
+                LGRC9V3,
+                "schedule_packet_departure",
+                LGRC9V3.step,
+            ),
+            self.assertRaises(SymbolBindingError),
+        ):
+            packet.symbol("packet_schedule", instance=model)
+
+        self.assertEqual((), session.invocation_records)
+
+    def test_invocation_rejects_post_lock_callable_identity_drift(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        session.freeze_lock()
+        with (
+            patch.object(
+                LGRC9V3,
+                "schedule_packet_departure",
+                LGRC9V3.step,
+            ),
+            self.assertRaises(SymbolBindingError),
+        ):
+            schedule()
+
+        self.assertEqual((), session.invocation_records)
 
     def test_composition_retains_cmp20_producer_identity_and_policy(self) -> None:
         model = _two_node_runtime()
@@ -216,6 +261,40 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertFalse(classification["claim_qualified"])
         self.assertFalse(classification["accepted_binding_receipt"])
 
+    def test_mixed_bound_and_direct_work_is_explicitly_operation_scoped(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        session.freeze_lock()
+
+        schedule(
+            source_node_id=0,
+            target_node_id=1,
+            edge_id=0,
+            amount=0.25,
+        )
+        model.step()
+        receipt = session.build_receipt().to_record()
+
+        self.assertTrue(receipt["claim_qualified"])
+        self.assertEqual("bound_invocations_only", receipt["claim_scope"])
+        self.assertFalse(receipt["whole_run_causal_closure_claimed"])
+        self.assertFalse(receipt["untracked_execution_observable_by_binding_plane"])
+        self.assertEqual(
+            "not_observable_by_binding_plane",
+            receipt["external_or_untracked_causal_input"],
+        )
+        self.assertFalse(receipt["unbound_execution_accepted_as_evidence"])
+        self.assertEqual(1, len(receipt["actual_stage_symbol_invocations"]))
+        self.assertEqual(
+            "packet_schedule",
+            receipt["actual_stage_symbol_invocations"][0]["stage_id"],
+        )
+
     def test_bound_call_requires_lock_and_lock_closes_declarations(self) -> None:
         model = _two_node_runtime()
         session = PathwayBindingSession(self.authority)
@@ -266,6 +345,15 @@ class CausalPathwayBindingTest(unittest.TestCase):
         self.assertEqual(lock.digest, record["binding_lock_digest"])
         self.assertEqual(1, len(record["actual_bound_pathways_used"]))
         self.assertEqual([], record["registered_compositions_exercised"])
+        self.assertEqual("bound_invocations_only", record["claim_scope"])
+        self.assertFalse(record["whole_run_causal_closure_claimed"])
+        locked_link = lock.to_record()["declared_pathway_bindings"][0][
+            "expected_concrete_symbols"
+        ][0]
+        self.assertEqual(
+            locked_link["callable_identity"],
+            record["actual_stage_symbol_invocations"][0]["callable_identity"],
+        )
         self.assertEqual(
             "admitted_bounded",
             record["claim_envelope"]["overall_claim_status"],

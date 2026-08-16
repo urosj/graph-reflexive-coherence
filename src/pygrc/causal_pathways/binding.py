@@ -46,6 +46,9 @@ AUTHORITY_COORDINATES: Final[tuple[str, ...]] = (
     "reception",
 )
 
+CLAIM_SCOPE_BOUND_INVOCATIONS: Final[str] = "bound_invocations_only"
+UNTRACKED_EXECUTION_STATUS: Final[str] = "not_observable_by_binding_plane"
+
 
 class CausalPathwayBindingError(ValueError):
     """Base error for fail-closed binding operations."""
@@ -122,6 +125,49 @@ def _index_unique(
     return index
 
 
+def _callable_definition(target: Callable[..., Any]) -> Callable[..., Any]:
+    """Return the underlying Python definition for a callable or bound method."""
+
+    definition = getattr(target, "__func__", target)
+    return cast(Callable[..., Any], inspect.unwrap(definition))
+
+
+def _callable_bound_owner(target: Callable[..., Any]) -> object | None:
+    """Return the instance/class owner carried by a bound method."""
+
+    return getattr(target, "__self__", None)
+
+
+@dataclass(frozen=True)
+class CallableIdentity:
+    """Content-addressed identity for one resolved mechanism callable."""
+
+    module: str
+    qualified_symbol: str
+    source_path: str
+    source_sha256: str
+    definition_first_line: int
+    definition_source_sha256: str
+
+    def to_record(self) -> dict[str, Any]:
+        """Return the canonical identity record frozen into locks and receipts."""
+
+        record: dict[str, Any] = {
+            "module": self.module,
+            "qualified_symbol": self.qualified_symbol,
+            "source_path": self.source_path,
+            "source_sha256": self.source_sha256,
+            "definition_first_line": self.definition_first_line,
+            "definition_source_sha256": self.definition_source_sha256,
+            "callable_identity_digest": "",
+        }
+        record["callable_identity_digest"] = canonical_digest(
+            record,
+            excluding="callable_identity_digest",
+        )
+        return record
+
+
 @dataclass(frozen=True)
 class SourceSymbolBinding:
     """One exact stage-to-source link from the machine binding map."""
@@ -151,8 +197,57 @@ class SourceSymbolBinding:
             required_keyword_arguments=MappingProxyType(dict(required)),
         )
 
-    def resolve(self) -> Callable[..., Any]:
-        """Import the exact callable recorded by this link."""
+    def callable_identity(
+        self,
+        target: Callable[..., Any],
+        repository_root: Path,
+    ) -> CallableIdentity:
+        """Validate and describe a resolved callable against its source link."""
+
+        definition = _callable_definition(target)
+        module = str(getattr(definition, "__module__", ""))
+        qualified_symbol = str(getattr(definition, "__qualname__", ""))
+        if module != self.module or qualified_symbol != self.qualified_symbol:
+            raise SymbolBindingError(
+                f"binding symbol {self.symbol_id!r} resolved as "
+                f"{module}.{qualified_symbol}, expected "
+                f"{self.module}.{self.qualified_symbol}"
+            )
+
+        source_file = inspect.getsourcefile(definition)
+        if source_file is None:
+            raise SymbolBindingError(
+                f"binding symbol {self.symbol_id!r} has no inspectable source file"
+            )
+        expected_source = (repository_root / self.source_path).resolve()
+        actual_source = Path(source_file).resolve()
+        if actual_source != expected_source:
+            raise SymbolBindingError(
+                f"binding symbol {self.symbol_id!r} resolved from {actual_source}, "
+                f"expected {expected_source}"
+            )
+        if sha256_file(actual_source) != self.source_sha256:
+            raise SymbolBindingError(
+                f"binding symbol {self.symbol_id!r} source content is stale"
+            )
+        try:
+            source_lines, first_line = inspect.getsourcelines(definition)
+        except (OSError, TypeError) as exc:
+            raise SymbolBindingError(
+                f"binding symbol {self.symbol_id!r} definition is not inspectable"
+            ) from exc
+        definition_source = "".join(source_lines).encode("utf-8")
+        return CallableIdentity(
+            module=module,
+            qualified_symbol=qualified_symbol,
+            source_path=self.source_path,
+            source_sha256=self.source_sha256,
+            definition_first_line=first_line,
+            definition_source_sha256=hashlib.sha256(definition_source).hexdigest(),
+        )
+
+    def resolve(self, repository_root: Path | None = None) -> Callable[..., Any]:
+        """Import and identity-check the exact callable recorded by this link."""
 
         target: Any = importlib.import_module(self.module)
         try:
@@ -166,7 +261,21 @@ class SourceSymbolBinding:
             raise SymbolBindingError(
                 f"binding symbol {self.symbol_id!r} is no longer callable"
             )
-        return cast(Callable[..., Any], target)
+        resolved = cast(Callable[..., Any], target)
+        definition = _callable_definition(resolved)
+        actual_identity = (
+            str(getattr(definition, "__module__", "")),
+            str(getattr(definition, "__qualname__", "")),
+        )
+        if actual_identity != (self.module, self.qualified_symbol):
+            raise SymbolBindingError(
+                f"binding symbol {self.symbol_id!r} resolved as "
+                f"{actual_identity[0]}.{actual_identity[1]}, expected "
+                f"{self.module}.{self.qualified_symbol}"
+            )
+        if repository_root is not None:
+            self.callable_identity(resolved, repository_root)
+        return resolved
 
 
 @dataclass(frozen=True)
@@ -414,7 +523,7 @@ class CausalPathwayAuthority:
                     raise AuthorityDriftError(
                         f"binding source is stale: {symbol.source_path}"
                     )
-                symbol.resolve()
+                symbol.resolve(root)
             stage_symbols[key] = symbols
         if set(stage_symbols) != expected_stages:
             missing = sorted(expected_stages - set(stage_symbols))
@@ -447,6 +556,7 @@ class InvocationRecord:
     outcome: str
     result_type: str | None
     error_type: str | None
+    callable_identity: Mapping[str, Any]
 
 
 class VerifiedCallable:
@@ -463,13 +573,15 @@ class VerifiedCallable:
         symbol: SourceSymbolBinding,
         instance: object | None,
     ) -> None:
-        target = symbol.resolve()
+        repository_root = session.authority.repository_root
+        target = symbol.resolve(repository_root)
         if instance is not None:
             if symbol.call_kind != "instance_method":
                 raise SymbolBindingError(
                     f"{symbol.symbol_id!r} is not an instance method"
                 )
             target = target.__get__(instance, type(instance))
+        identity = symbol.callable_identity(target, repository_root)
         self._session = session
         self._binding_id = binding_id
         self._pathway_id = pathway_id
@@ -477,6 +589,9 @@ class VerifiedCallable:
         self._composition_ids = composition_ids
         self._symbol = symbol
         self._target = target
+        self._expected_definition = _callable_definition(target)
+        self._expected_bound_owner = _callable_bound_owner(target)
+        self._callable_identity = identity
         self.__name__ = getattr(target, "__name__", symbol.qualified_symbol)
         self.__doc__ = getattr(target, "__doc__", None)
         self.__signature__ = inspect.signature(target)
@@ -489,6 +604,42 @@ class VerifiedCallable:
     def linked_callable(self) -> Callable[..., Any]:
         return self._target
 
+    @property
+    def callable_identity(self) -> Mapping[str, Any]:
+        """Return the callable identity frozen for this handle."""
+
+        return MappingProxyType(self._callable_identity.to_record())
+
+    def _assert_current_callable(self) -> Mapping[str, Any]:
+        """Fail before delegation if the resolved or stored target has changed."""
+
+        repository_root = self._session.authority.repository_root
+        current = self._symbol.resolve(repository_root)
+        if self._symbol.call_kind == "instance_method":
+            if self._expected_bound_owner is None:
+                raise SymbolBindingError(
+                    f"binding {self._symbol.symbol_id!r} lost its instance owner"
+                )
+            current = current.__get__(
+                self._expected_bound_owner,
+                type(self._expected_bound_owner),
+            )
+        current_identity = self._symbol.callable_identity(current, repository_root)
+        if current_identity.to_record() != self._callable_identity.to_record():
+            raise SymbolBindingError(
+                f"binding {self._symbol.symbol_id!r} callable fingerprint drifted"
+            )
+        if (
+            _callable_definition(current) is not self._expected_definition
+            or _callable_definition(self._target) is not self._expected_definition
+            or _callable_bound_owner(current) is not self._expected_bound_owner
+            or _callable_bound_owner(self._target) is not self._expected_bound_owner
+        ):
+            raise SymbolBindingError(
+                f"binding {self._symbol.symbol_id!r} callable identity changed"
+            )
+        return MappingProxyType(current_identity.to_record())
+
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         self._session._assert_invocation_allowed(
             binding_id=self._binding_id,
@@ -497,6 +648,7 @@ class VerifiedCallable:
             symbol_id=self._symbol.symbol_id,
             composition_ids=self._composition_ids,
         )
+        callable_identity = self._assert_current_callable()
         for name, expected in self._symbol.required_keyword_arguments.items():
             if kwargs.get(name) != expected:
                 raise SymbolBindingError(
@@ -515,6 +667,7 @@ class VerifiedCallable:
                     outcome="raised",
                     result_type=None,
                     error_type=type(exc).__name__,
+                    callable_identity=callable_identity,
                 )
             )
             raise
@@ -528,6 +681,7 @@ class VerifiedCallable:
                 outcome="returned",
                 result_type=type(result).__name__,
                 error_type=None,
+                callable_identity=callable_identity,
             )
         )
         return result
@@ -585,14 +739,7 @@ class BoundPathway:
                     f"{self.pathway_id}:{stage_id}"
                 )
             selected = matches[0]
-        self._session._register_link(
-            binding_id=self.binding_id,
-            pathway_id=self.pathway_id,
-            stage_id=stage_id,
-            composition_ids=self.composition_ids,
-            symbol=selected,
-        )
-        return VerifiedCallable(
+        linked = VerifiedCallable(
             session=self._session,
             binding_id=self.binding_id,
             pathway_id=self.pathway_id,
@@ -601,6 +748,15 @@ class BoundPathway:
             symbol=selected,
             instance=instance,
         )
+        self._session._register_link(
+            binding_id=self.binding_id,
+            pathway_id=self.pathway_id,
+            stage_id=stage_id,
+            composition_ids=self.composition_ids,
+            symbol=selected,
+            callable_identity=linked.callable_identity,
+        )
+        return linked
 
 
 class BoundComposition:
@@ -767,6 +923,7 @@ class PathwayBindingSession:
         stage_id: str,
         composition_ids: tuple[str, ...],
         symbol: SourceSymbolBinding,
+        callable_identity: Mapping[str, Any],
     ) -> None:
         self._require_declaration_phase()
         key = (binding_id, symbol.symbol_id)
@@ -783,6 +940,7 @@ class PathwayBindingSession:
             "source_path": symbol.source_path,
             "source_sha256": symbol.source_sha256,
             "required_keyword_arguments": dict(symbol.required_keyword_arguments),
+            "callable_identity": dict(callable_identity),
         }
 
     def _assert_invocation_allowed(
@@ -1062,6 +1220,9 @@ class PathwayBindingSession:
             ),
             "pre_execution_claim_envelope": claim_envelope,
             "blocked_claims": list(claim_envelope["blocked_claims"]),
+            "claim_scope": CLAIM_SCOPE_BOUND_INVOCATIONS,
+            "whole_run_causal_closure_claimed": False,
+            "untracked_execution_observable_by_binding_plane": False,
             "semantic_selection_performed_by_binder": False,
             "unregistered_relation_bound_without_candidate": False,
             "lock_digest": "",
@@ -1325,6 +1486,7 @@ class PathwayBindingSession:
                 "outcome": item.outcome,
                 "result_type": item.result_type,
                 "error_type": item.error_type,
+                "callable_identity": dict(item.callable_identity),
             }
             for index, item in enumerate(self._invocations)
         ]
@@ -1397,6 +1559,10 @@ class PathwayBindingSession:
             "blocked_claims": list(claim_envelope["blocked_claims"]),
             "undeclared_use_violations": [],
             "claim_qualified": bool(actual_bindings or self._candidate_uses),
+            "claim_scope": CLAIM_SCOPE_BOUND_INVOCATIONS,
+            "whole_run_causal_closure_claimed": False,
+            "untracked_execution_observable_by_binding_plane": False,
+            "external_or_untracked_causal_input": UNTRACKED_EXECUTION_STATUS,
             "unbound_execution_accepted_as_evidence": False,
             "semantic_selection_performed_by_binder": False,
             "receipt_digest": "",

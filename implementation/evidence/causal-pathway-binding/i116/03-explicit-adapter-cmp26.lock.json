@@ -11,6 +11,7 @@
     "native role formation"
   ],
   "candidate_declarations": [],
+  "claim_scope": "bound_invocations_only",
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_composition_bindings": [
@@ -72,6 +73,15 @@
           "binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
           "binding_role": "load_bearing_internal",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "f12048c07e4eab35c1e6bb1f1ae2aed4a9b33ac3e313b89cbd213c4ea3b21134",
+            "definition_first_line": 1577,
+            "definition_source_sha256": "e0c01c1d3c07a0247e9dabcbf69c4507568234032098b98ffcb9ab1c126790c7",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3._growth_front_eligible_ports",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
           "composition_ids": [
             "CMP-26"
           ],
@@ -88,6 +98,15 @@
           "binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
           "binding_role": "load_bearing_internal",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "d63af2971882b76fd184d112e18dfc406ebb9f63c9e757a559f7a560b6e8e135",
+            "definition_first_line": 1456,
+            "definition_source_sha256": "101cc763fd4d9194adc3598e140b51c0bd9e0053d1f9bb9980f81b79a9af0bf8",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
           "composition_ids": [
             "CMP-26"
           ],
@@ -128,6 +147,15 @@
           "binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
           "binding_role": "mechanism_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "d23bb3c89c0fe95c0f7e57fe1519643f61cadd72f28343f2284b8ca71d061511",
+            "definition_first_line": 8232,
+            "definition_source_sha256": "b585912d0de7ad88e2f1de25bbd5e010122eb75a070dbb39dea818c9e4c38917",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
           "composition_ids": [
             "CMP-26"
           ],
@@ -144,6 +172,15 @@
           "binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
           "binding_role": "producer_entrypoint",
           "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
+            "definition_first_line": 7747,
+            "definition_source_sha256": "3ff964eeb82bee9816543004f750fd8c0092ed3c2047c1ffdd0a3633b095eee7",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.produce_events",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
           "composition_ids": [
             "CMP-26"
           ],
@@ -172,7 +209,7 @@
     }
   ],
   "explicit_producers": [],
-  "lock_digest": "4ee536431d9e1dc3c503dcea8b9db385ebee94293ccf12ff68a91f484c32cfb2",
+  "lock_digest": "4d3897fb1248fcc2371575030551addda63ecb7d66ec720a6e506ea18558516c",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
@@ -306,5 +343,7 @@
   "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
   "semantic_selection_performed_by_binder": false,
   "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
-  "unregistered_relation_bound_without_candidate": false
+  "unregistered_relation_bound_without_candidate": false,
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
 }

@@ -39,9 +39,11 @@ use, and conservative claim provenance:
   identities;
 - `PathwayBindingSession` declares admitted pathways, registered executable
   compositions, candidates, and allowed dynamic alternatives;
-- `BoundPathway.symbol(...)` links one exact stage to its real callable;
+- `BoundPathway.symbol(...)` links one exact stage to its real callable and
+  freezes a content-addressed callable identity;
 - `freeze_lock()` closes declarations before claim-bearing execution;
-- verified callables record returned and raised invocations;
+- verified callables re-resolve that identity immediately before delegation
+  and record returned and raised invocations;
 - `build_receipt()` emits actual use, the use graph, and the claim envelope.
 
 The [binding-symbol map](../../specs/grc-lgrc-causal-pathway-bindings.json) is
@@ -59,7 +61,9 @@ callable delegates the original arguments and result without translating them
 into a common causal-work schema.
 
 Existing unbound code remains executable for compatibility. It is classified
-as unbound and cannot present itself as accepted pathway-provenance evidence.
+as unbound and cannot appear among the receipt's recorded bound invocations.
+The binding plane is not a process-wide tracer and cannot establish that no
+other direct causal work occurred.
 
 ## Binding One Admitted Pathway
 
@@ -180,9 +184,9 @@ not native candidate formation.
 ## Lock, Receipt, And Use Graph
 
 The lock is a causal-architecture record, not a dependency lockfile. It freezes
-current authority and binding-map digests, declared identities, exact symbols
-and source hashes, producer and adapter cuts, residue, alternatives,
-candidates, blocked claims, and the pre-execution claim envelope.
+current authority and binding-map digests, declared identities, exact symbols,
+callable fingerprints and source hashes, producer and adapter cuts, residue,
+alternatives, candidates, blocked claims, and the pre-execution claim envelope.
 
 No verified callable can run before the lock. Declarations and symbol choices
 close after it. Authority or source drift at lock or receipt time fails closed.
@@ -190,7 +194,8 @@ close after it. Authority or source drift at lock or receipt time fails closed.
 The receipt links to the exact lock digest and records:
 
 - returned and raised stage/symbol invocations;
-- successful pathway and registered-composition use;
+- returned pathway and registered-composition use under the current outcome
+  vocabulary;
 - candidate use and evidence references;
 - producer and adapter cuts used;
 - declared-but-unused identities;
@@ -199,16 +204,27 @@ The receipt links to the exact lock digest and records:
 - a structured claim envelope and blocked claims;
 - accepted authority/source identities and a receipt digest.
 
-Endpoint co-use does not create an edge. Multiple registered edges do not
-synthesize a larger semantic ceiling unless that larger composition is itself
-registered.
+The independent audit found that the current composition-exercise rule can
+form a registered edge from returned endpoint stages without proving the
+crossing. Registered composition edges are therefore not accepted crossing
+evidence until the open Iteration 117 B-03 correction is complete. Multiple
+registered edges still do not synthesize a larger semantic ceiling unless that
+larger composition is itself registered.
 
 ## Claim Qualification
 
-Accepted pathway or composition claims require a valid binding receipt. A
-declaration without successful bound use is visible but not evidence. A failed
-call remains visible as a raised invocation but does not become successful
-behavioral evidence.
+Claim qualification is operation-scoped. A receipt proves only the callable
+identities and outcomes listed in `actual_stage_symbol_invocations`; it does
+not prove whole-run causal closure, qualify a direct call, or qualify the final
+state of a runtime that may also have been changed outside the binding surface.
+The lock and receipt therefore carry `claim_scope = bound_invocations_only`,
+`whole_run_causal_closure_claimed = false`, and an explicit statement that
+external or untracked causal input is not observable by the binding plane.
+
+A declaration without returned bound use is visible but not invocation
+evidence. A raised call remains visible but does not become returned behavioral
+evidence. The returned/committed/no-op distinction remains part of the open
+Iteration 117 correction gate.
 
 For direct legacy execution, use:
 

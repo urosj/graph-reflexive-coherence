@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "8ed42bdd9984e37917108d4963ccb3ef85236bf8b4e21d160ccb1f153c51e027",
+  "policy_digest": "d113b7186be0d663552bd3ddd1acaff9a7b7fbf7071cb611944429b779d4d30e",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -117,7 +117,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "source_revision": "976c66080736492c87a52a12a8423c01b76ed68b",
   "staleness_rule": "binding-map, symbol, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until versioned re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

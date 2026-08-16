@@ -34,13 +34,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "6dc4371815f8abd0465077a55d79df5992e1ade3e560118d53ddb78755d064c8",
+  "conformance_digest": "053a6a1ed1794a8973f61f6c647a871d6ec2de675d844dff7277911ed0c6d53a",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "8ed42bdd9984e37917108d4963ccb3ef85236bf8b4e21d160ccb1f153c51e027",
+  "policy_digest": "d113b7186be0d663552bd3ddd1acaff9a7b7fbf7071cb611944429b779d4d30e",
   "rule_count": 20,
   "rule_results": [
     {
