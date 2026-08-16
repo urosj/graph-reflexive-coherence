@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
     "native departure reason",
@@ -58,7 +58,7 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "7e63b7ae91d70f781a2464b980dc5ffbfa9f33c1ea77bbee06ea431dc285c689",
+  "lock_digest": "067c39ee8e50630e8f83bd4b97b3efd4b519079b64bfc71e7c5396ed07d615ee",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

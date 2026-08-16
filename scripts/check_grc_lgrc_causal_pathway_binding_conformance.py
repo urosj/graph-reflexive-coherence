@@ -247,6 +247,79 @@ def validate_bundle(
             else:
                 binding_symbols[symbol_id] = (*stage_key, symbol)
 
+    crossing_bindings, duplicate_crossing_bindings = _unique_index(
+        bindings.get("composition_crossing_bindings", []),
+        "composition_id",
+    )
+    if duplicate_crossing_bindings:
+        add_issue(
+            issues,
+            "BCF-014",
+            "bindings.composition_crossing_bindings",
+            "composition crossing identities are missing or duplicated",
+        )
+    required_crossing_ids = {
+        composition_id
+        for composition_id, composition in compositions.items()
+        if composition.get("composition_status") == "lawful_with_explicit_adapter"
+    }
+    if set(crossing_bindings) != required_crossing_ids or bindings.get(
+        "composition_crossing_binding_count"
+    ) != len(crossing_bindings):
+        add_issue(
+            issues,
+            "BCF-006",
+            "bindings.composition_crossing_bindings",
+            "explicit-adapter crossing closure differs from the matrix",
+        )
+    crossing_symbols: dict[str, Mapping[str, Any]] = {}
+    for composition_id, crossing in crossing_bindings.items():
+        row = compositions.get(composition_id, {})
+        symbol = crossing.get("symbol", {})
+        symbol_id = str(symbol.get("symbol_id", ""))
+        if (
+            crossing.get("crossing_kind") != "explicit_adapter_callable"
+            or crossing.get("source_pathway_id") != row.get("from_pathway_id")
+            or not crossing.get("source_argument_name")
+            or crossing.get("target_pathway_id") != row.get("to_pathway_id")
+            or symbol.get("qualified_symbol") != row.get("adapter_id")
+            or symbol.get("binding_role") != "composition_adapter_entrypoint"
+            or symbol.get("call_kind") != "module_function"
+        ):
+            add_issue(
+                issues,
+                "BCF-006",
+                composition_id,
+                "composition crossing does not identify the matrix adapter",
+            )
+        if (
+            not symbol_id
+            or symbol_id in binding_symbols
+            or symbol_id in crossing_symbols
+        ):
+            add_issue(
+                issues,
+                "BCF-014",
+                symbol_id or composition_id,
+                "composition crossing symbol is missing or duplicated",
+            )
+        else:
+            crossing_symbols[symbol_id] = symbol
+        relative = str(symbol.get("source_path", ""))
+        target = root / relative
+        if (
+            not relative
+            or Path(relative).is_absolute()
+            or not target.is_file()
+            or sha256_file(target) != symbol.get("source_sha256")
+        ):
+            add_issue(
+                issues,
+                "BCF-014",
+                symbol_id or composition_id,
+                "composition crossing source path or hash is stale",
+            )
+
     expected_stage_keys = {
         (pathway_id, str(stage.get("stage_id", "")))
         for pathway_id, pathway in pathways.items()
@@ -511,13 +584,13 @@ def validate_bundle(
         )
     for binding_id, declared in lock_compositions.items():
         composition_id = str(declared.get("composition_id", ""))
-        row = compositions.get(composition_id)
-        if row is None:
+        composition_row = compositions.get(composition_id)
+        if composition_row is None:
             add_issue(
                 issues, "BCF-002", binding_id, "declared composition is not registered"
             )
             continue
-        status = row.get("composition_status")
+        status = composition_row.get("composition_status")
         if status == "unsupported_missing_crossing":
             add_issue(
                 issues,
@@ -542,13 +615,123 @@ def validate_bundle(
                 "information_lost_or_compressed",
                 "claim_ceiling",
             )
-            if any(declared.get(field) != row.get(field) for field in fields):
+            if any(
+                declared.get(field) != composition_row.get(field) for field in fields
+            ):
                 add_issue(
                     issues,
                     "BCF-002",
                     binding_id,
                     "composition projection differs from matrix",
                 )
+        expected_crossing = declared.get("expected_crossing_callable")
+        if status != "lawful_with_explicit_adapter":
+            if expected_crossing is not None:
+                add_issue(
+                    issues,
+                    "BCF-006",
+                    binding_id,
+                    "non-adapter composition freezes an adapter crossing",
+                )
+            continue
+        mapped_crossing = crossing_bindings.get(composition_id)
+        if not isinstance(expected_crossing, Mapping) or mapped_crossing is None:
+            add_issue(
+                issues,
+                "BCF-006",
+                binding_id,
+                "explicit-adapter composition lacks its frozen crossing callable",
+            )
+            continue
+        mapped_symbol = mapped_crossing.get("symbol", {})
+        crossing_fields = (
+            "crossing_kind",
+            "source_pathway_id",
+            "source_argument_name",
+            "target_pathway_id",
+        )
+        symbol_fields = (
+            "symbol_id",
+            "module",
+            "qualified_symbol",
+            "binding_role",
+            "call_kind",
+            "source_path",
+            "source_sha256",
+        )
+        source_binding = lock_bindings.get(
+            str(expected_crossing.get("source_binding_id", "")),
+            {},
+        )
+        target_binding = lock_bindings.get(
+            str(expected_crossing.get("target_binding_id", "")),
+            {},
+        )
+        if (
+            expected_crossing.get("binding_id") != binding_id
+            or expected_crossing.get("composition_id") != composition_id
+            or any(
+                expected_crossing.get(field) != mapped_crossing.get(field)
+                for field in crossing_fields
+            )
+            or any(
+                expected_crossing.get(field) != mapped_symbol.get(field)
+                for field in symbol_fields
+            )
+            or source_binding.get("pathway_id")
+            != composition_row.get("from_pathway_id")
+            or source_binding.get("composition_ids") != [composition_id]
+            or target_binding.get("pathway_id") != composition_row.get("to_pathway_id")
+            or target_binding.get("composition_ids") != [composition_id]
+            or expected_crossing.get("source_instance_binding")
+            != "exact_declared_adapter_source_instance"
+            or expected_crossing.get("target_instance_binding")
+            != "exact_adapter_result_reference"
+        ):
+            add_issue(
+                issues,
+                "BCF-006",
+                binding_id,
+                "frozen crossing identity or endpoint binding differs from the map",
+            )
+        for endpoint_binding, expected_role in (
+            (source_binding, "declared_adapter_source_instance"),
+            (target_binding, "adapter_result_reference"),
+        ):
+            for link in endpoint_binding.get("expected_concrete_symbols", []):
+                if (
+                    link.get("call_kind") != "instance_method"
+                    or link.get("composition_crossing_instance_role") != expected_role
+                ):
+                    add_issue(
+                        issues,
+                        "BCF-006",
+                        binding_id,
+                        "adapter endpoint is not bound to the declared object flow",
+                    )
+        callable_identity = expected_crossing.get("callable_identity", {})
+        if (
+            not isinstance(callable_identity, Mapping)
+            or any(
+                callable_identity.get(field) != mapped_symbol.get(field)
+                for field in (
+                    "module",
+                    "qualified_symbol",
+                    "source_path",
+                    "source_sha256",
+                )
+            )
+            or not isinstance(callable_identity.get("definition_first_line"), int)
+            or not callable_identity.get("definition_source_sha256")
+            or callable_identity.get("callable_identity_digest")
+            != digest_without(callable_identity, "callable_identity_digest")
+        ):
+            add_issue(
+                issues,
+                "BCF-006",
+                binding_id,
+                "frozen adapter callable fingerprint is absent or inconsistent",
+            )
 
     declared_candidates, duplicate_candidates = _unique_index(
         lock.get("candidate_declarations", []), "candidate_id"
@@ -636,10 +819,24 @@ def validate_bundle(
     invocations = receipt.get("actual_stage_symbol_invocations", [])
     returned_binding_ids: set[str] = set()
     returned_stage_symbols: dict[str, list[tuple[str, str]]] = {}
-    successful_composition_stages: set[tuple[str, str, str]] = set()
-    for invocation in invocations:
+    execution_event_orders: list[int] = []
+    for invocation_index, invocation in enumerate(invocations):
         binding_id = str(invocation.get("binding_id", ""))
         symbol_id = str(invocation.get("symbol_id", ""))
+        event_order = invocation.get("execution_event_order")
+        if (
+            invocation.get("invocation_index") != invocation_index
+            or not isinstance(event_order, int)
+            or event_order < 0
+        ):
+            add_issue(
+                issues,
+                "BCF-015",
+                f"receipt.actual_stage_symbol_invocations[{invocation_index}]",
+                "stage invocation index or execution order is invalid",
+            )
+        else:
+            execution_event_orders.append(event_order)
         locked_link = lock_links.get((binding_id, symbol_id))
         if locked_link is None:
             add_issue(
@@ -677,14 +874,6 @@ def validate_bundle(
             returned_stage_symbols.setdefault(binding_id, []).append(
                 (str(invocation.get("stage_id", "")), symbol_id)
             )
-            for composition_id in invocation.get("composition_ids", []):
-                successful_composition_stages.add(
-                    (
-                        str(invocation.get("pathway_id", "")),
-                        str(invocation.get("stage_id", "")),
-                        str(composition_id),
-                    )
-                )
 
     actual_bindings, duplicate_actual_bindings = _unique_index(
         receipt.get("actual_bound_pathways_used", []), "binding_id"
@@ -725,23 +914,228 @@ def validate_bundle(
                 "actual stage/symbol summary differs from invocations",
             )
 
-    expected_exercised_ids: set[str] = set()
-    for binding_id, declared in lock_compositions.items():
-        row = compositions.get(str(declared.get("composition_id", "")))
-        if row is None or row.get("composition_status") not in EXECUTABLE_STATUSES:
+    crossing_invocations = receipt.get(
+        "actual_composition_crossing_invocations",
+        [],
+    )
+    for crossing_index, invocation in enumerate(crossing_invocations):
+        binding_id = str(invocation.get("binding_id", ""))
+        declared = lock_compositions.get(binding_id, {})
+        expected_crossing = declared.get("expected_crossing_callable")
+        event_order = invocation.get("execution_event_order")
+        if (
+            invocation.get("crossing_invocation_index") != crossing_index
+            or not isinstance(event_order, int)
+            or event_order < 0
+        ):
+            add_issue(
+                issues,
+                "BCF-015",
+                f"receipt.actual_composition_crossing_invocations[{crossing_index}]",
+                "crossing invocation index or execution order is invalid",
+            )
+        else:
+            execution_event_orders.append(event_order)
+        exact_fields = (
+            "binding_id",
+            "composition_id",
+            "symbol_id",
+            "source_binding_id",
+            "target_binding_id",
+            "callable_identity",
+        )
+        if not isinstance(expected_crossing, Mapping) or any(
+            invocation.get(field) != expected_crossing.get(field)
+            for field in exact_fields
+        ):
+            add_issue(
+                issues,
+                "BCF-006",
+                f"{binding_id}:crossing:{crossing_index}",
+                "adapter invocation differs from its frozen crossing callable",
+            )
+        if not invocation.get("crossing_scope_id") or invocation.get("outcome") not in {
+            "returned",
+            "raised",
+        }:
+            add_issue(
+                issues,
+                "BCF-015",
+                f"{binding_id}:crossing:{crossing_index}",
+                "adapter invocation lacks a scope or valid outcome",
+            )
+
+    if len(execution_event_orders) != len(set(execution_event_orders)) or sorted(
+        execution_event_orders
+    ) != list(range(len(execution_event_orders))):
+        add_issue(
+            issues,
+            "BCF-015",
+            "receipt.execution_event_order",
+            "stage and crossing invocation order is not one complete sequence",
+        )
+
+    witnesses, duplicate_witnesses = _unique_index(
+        receipt.get("composition_crossing_witnesses", []),
+        "binding_id",
+    )
+    if duplicate_witnesses:
+        add_issue(
+            issues,
+            "BCF-019",
+            "receipt.composition_crossing_witnesses",
+            "composition evidence witnesses are missing identities or duplicated",
+        )
+    valid_witness_ids: set[str] = set()
+    for binding_id, witness in witnesses.items():
+        witness_declaration = lock_compositions.get(binding_id)
+        if witness_declaration is None:
+            add_issue(
+                issues,
+                "BCF-019",
+                binding_id,
+                "composition witness is absent from the lock",
+            )
             continue
-        required = {
-            *(
-                (str(row["from_pathway_id"]), str(stage_id), str(row["composition_id"]))
-                for stage_id in row["from_stage_ids"]
-            ),
-            *(
-                (str(row["to_pathway_id"]), str(stage_id), str(row["composition_id"]))
-                for stage_id in row["to_stage_ids"]
-            ),
-        }
-        if required <= successful_composition_stages:
-            expected_exercised_ids.add(binding_id)
+        composition_id = str(witness_declaration.get("composition_id", ""))
+        witness_row = compositions.get(composition_id)
+        scope_id = witness.get("crossing_scope_id")
+        if (
+            witness_row is None
+            or not scope_id
+            or witness.get("composition_id") != composition_id
+        ):
+            add_issue(
+                issues,
+                "BCF-019",
+                binding_id,
+                "composition witness identity is invalid",
+            )
+            continue
+
+        endpoint_binding_ids: dict[str, str] = {}
+        endpoint_binding_ambiguous = False
+        for pathway_id in {
+            witness_row["from_pathway_id"],
+            witness_row["to_pathway_id"],
+        }:
+            matches = [
+                candidate_id
+                for candidate_id, candidate in lock_bindings.items()
+                if candidate.get("pathway_id") == pathway_id
+                and candidate.get("composition_ids") == [composition_id]
+            ]
+            if len(matches) != 1:
+                endpoint_binding_ambiguous = True
+            else:
+                endpoint_binding_ids[str(pathway_id)] = matches[0]
+
+        from_indices = witness.get("from_invocation_indices", [])
+        to_indices = witness.get("to_invocation_indices", [])
+        crossing_indices = witness.get("crossing_invocation_indices", [])
+
+        def selected_stage_invocations(
+            indices: Any,
+            *,
+            binding_id: str | None,
+            pathway_id: str,
+            stage_ids: list[str],
+            expected_scope_id: object,
+        ) -> list[Mapping[str, Any]] | None:
+            if (
+                not isinstance(indices, list)
+                or len(indices) != len(stage_ids)
+                or any(not isinstance(index, int) for index in indices)
+                or any(index < 0 or index >= len(invocations) for index in indices)
+            ):
+                return None
+            selected = [invocations[index] for index in indices]
+            if any(
+                invocation.get("binding_id") != binding_id
+                or invocation.get("pathway_id") != pathway_id
+                or invocation.get("stage_id") != stage_id
+                or invocation.get("outcome") != "returned"
+                or invocation.get("crossing_scope_id") != expected_scope_id
+                for invocation, stage_id in zip(selected, stage_ids, strict=True)
+            ):
+                return None
+            return selected
+
+        selected_from = selected_stage_invocations(
+            from_indices,
+            binding_id=endpoint_binding_ids.get(str(witness_row["from_pathway_id"])),
+            pathway_id=str(witness_row["from_pathway_id"]),
+            stage_ids=[str(item) for item in witness_row["from_stage_ids"]],
+            expected_scope_id=scope_id,
+        )
+        selected_to = selected_stage_invocations(
+            to_indices,
+            binding_id=endpoint_binding_ids.get(str(witness_row["to_pathway_id"])),
+            pathway_id=str(witness_row["to_pathway_id"]),
+            stage_ids=[str(item) for item in witness_row["to_stage_ids"]],
+            expected_scope_id=scope_id,
+        )
+        adapter_required = (
+            witness_row.get("composition_status") == "lawful_with_explicit_adapter"
+        )
+        expected_ordering_rule = (
+            "all_from_stages_before_crossing_before_all_to_stages"
+            if adapter_required
+            else "all_from_stages_before_all_to_stages"
+        )
+        selected_crossings: list[Mapping[str, Any]] | None = None
+        if (
+            isinstance(crossing_indices, list)
+            and all(isinstance(index, int) for index in crossing_indices)
+            and all(
+                0 <= index < len(crossing_invocations) for index in crossing_indices
+            )
+        ):
+            selected_crossings = [
+                crossing_invocations[index] for index in crossing_indices
+            ]
+        structurally_valid = (
+            not endpoint_binding_ambiguous
+            and selected_from is not None
+            and selected_to is not None
+            and witness.get("ordering_rule") == expected_ordering_rule
+            and witness.get("explicit_adapter_required") is adapter_required
+            and witness.get("explicit_adapter_observed") is adapter_required
+            and selected_crossings is not None
+            and len(selected_crossings) == (1 if adapter_required else 0)
+        )
+        if structurally_valid:
+            from_orders = [
+                int(invocation["execution_event_order"])
+                for invocation in selected_from or []
+            ]
+            to_orders = [
+                int(invocation["execution_event_order"])
+                for invocation in selected_to or []
+            ]
+            structurally_valid = max(from_orders) < min(to_orders)
+            if adapter_required and selected_crossings:
+                crossing = selected_crossings[0]
+                structurally_valid = structurally_valid and (
+                    crossing.get("binding_id") == binding_id
+                    and crossing.get("composition_id") == composition_id
+                    and crossing.get("crossing_scope_id") == scope_id
+                    and crossing.get("outcome") == "returned"
+                    and max(from_orders)
+                    < int(crossing.get("execution_event_order", -1))
+                    < min(to_orders)
+                )
+        if not structurally_valid:
+            add_issue(
+                issues,
+                "BCF-019",
+                binding_id,
+                "composition witness lacks exact scoped endpoints or crossing order",
+            )
+            continue
+        valid_witness_ids.add(binding_id)
+
+    expected_exercised_ids = valid_witness_ids
     exercised, duplicate_exercised = _unique_index(
         receipt.get("registered_compositions_exercised", []), "binding_id"
     )
@@ -750,8 +1144,16 @@ def validate_bundle(
             issues,
             "BCF-015",
             "receipt.registered_compositions_exercised",
-            "exercised compositions differ from successful required stages",
+            "exercised compositions differ from valid scoped crossing witnesses",
         )
+    for binding_id, exercised_record in exercised.items():
+        if exercised_record != lock_compositions.get(binding_id):
+            add_issue(
+                issues,
+                "BCF-002",
+                binding_id,
+                "exercised composition differs from its frozen declaration",
+            )
 
     used_candidates, duplicate_used_candidates = _unique_index(
         receipt.get("candidate_relations_exercised", []), "candidate_id"
@@ -867,9 +1269,9 @@ def validate_bundle(
         if edge.get("edge_kind") == "registered_composition":
             binding_id = str(edge.get("edge_id", ""))
             graph_registered_ids.add(binding_id)
-            exercised_record = exercised.get(binding_id)
-            row = compositions.get(str(edge.get("composition_id", "")))
-            if exercised_record is None or row is None:
+            graph_exercised_record = exercised.get(binding_id)
+            graph_row = compositions.get(str(edge.get("composition_id", "")))
+            if graph_exercised_record is None or graph_row is None:
                 add_issue(
                     issues,
                     "BCF-002",
@@ -877,18 +1279,18 @@ def validate_bundle(
                     "registered graph edge is not exercised and registered",
                 )
                 continue
-            if edge.get("composition_status") != row.get(
+            if edge.get("composition_status") != graph_row.get(
                 "composition_status"
-            ) or edge.get("claim_ceiling") != row.get("claim_ceiling"):
+            ) or edge.get("claim_ceiling") != graph_row.get("claim_ceiling"):
                 add_issue(
                     issues,
                     "BCF-002",
                     binding_id,
                     "registered edge widened matrix status or ceiling",
                 )
-            if row.get("composition_status") == "producer_mediated" and (
-                edge.get("producer_owner") != row.get("adapter_owner")
-                or edge.get("adapter_id") != row.get("adapter_id")
+            if graph_row.get("composition_status") == "producer_mediated" and (
+                edge.get("producer_owner") != graph_row.get("adapter_owner")
+                or edge.get("adapter_id") != graph_row.get("adapter_id")
             ):
                 add_issue(
                     issues,
@@ -896,9 +1298,11 @@ def validate_bundle(
                     binding_id,
                     "producer graph edge erased producer identity",
                 )
-            if row.get("composition_status") == "lawful_with_explicit_adapter" and (
-                edge.get("adapter_id") != row.get("adapter_id")
-                or edge.get("adapter_owner") != row.get("adapter_owner")
+            if graph_row.get(
+                "composition_status"
+            ) == "lawful_with_explicit_adapter" and (
+                edge.get("adapter_id") != graph_row.get("adapter_id")
+                or edge.get("adapter_owner") != graph_row.get("adapter_owner")
                 or edge.get("adapter_owner") in {None, "none", "native"}
             ):
                 add_issue(

@@ -114,6 +114,12 @@ transport = composition.pathway("lgrc9v3.explicit_packet_transport")
 
 produce = producer.symbol("feedback_packet_schedule", instance=model)
 schedule = transport.symbol("packet_schedule", instance=model)
+
+lock = session.freeze_lock()
+with composition.evidence_scope():
+    produce(policy="packet_departure_from_feedback_eligibility_policy")
+    schedule(...)
+# Run the remaining matrix-required target stages in the same scope.
 ```
 
 The lock and receipt retain the matrix status and ceiling. For CMP-20 they also
@@ -121,13 +127,21 @@ retain the feedback producer identity, installed-producer owner, and the
 producer-owned eligibility, direction, threshold, and schedule authorities.
 The combined result cannot be relabeled `lawful_native`.
 
-An explicit-adapter composition similarly retains the adapter ID and non-native
-owner. A diagnostic-only composition retains the diagnostic cut; no behavioral
-claim may cross it. Unsupported missing crossings and invalid relabels cannot
-be bound as admitted executable compositions.
+An explicit-adapter composition additionally binds its exact adapter callable.
+For CMP-26, call `composition.crossing(source_instance=grc_model)` before the
+lock, bind target-stage handles to `crossing.result_reference`, then invoke the
+adapter between the required source and target calls inside the evidence
+scope. The source handles, adapter argument, and target result reference are
+checked as one object-flow relation.
 
-A composition counts as exercised only after every matrix-required endpoint
-stage returns through that composition binding.
+A diagnostic-only composition retains the diagnostic cut; no behavioral claim
+may cross it. Unsupported missing crossings and invalid relabels cannot be
+bound as admitted executable compositions.
+
+A composition counts as exercised only when one completed evidence scope
+contains every matrix-required source and target stage in order. Endpoint
+co-use outside that scope forms no edge. CMP-26 additionally requires one
+returned, identity-verified adapter crossing between those endpoint groups.
 
 ## Declaring An Unregistered Candidate
 
@@ -194,6 +208,7 @@ close after it. Authority or source drift at lock or receipt time fails closed.
 The receipt links to the exact lock digest and records:
 
 - returned and raised stage/symbol invocations;
+- ordered composition-scope witnesses and explicit-adapter invocations;
 - returned pathway and registered-composition use under the current outcome
   vocabulary;
 - candidate use and evidence references;
@@ -204,12 +219,12 @@ The receipt links to the exact lock digest and records:
 - a structured claim envelope and blocked claims;
 - accepted authority/source identities and a receipt digest.
 
-The independent audit found that the current composition-exercise rule can
-form a registered edge from returned endpoint stages without proving the
-crossing. Registered composition edges are therefore not accepted crossing
-evidence until the open Iteration 117 B-03 correction is complete. Multiple
-registered edges still do not synthesize a larger semantic ceiling unless that
-larger composition is itself registered.
+The Iteration 117 B-03 correction prevents registered edges from being formed
+by endpoint co-use alone. The checker independently reconstructs each witness
+from scoped invocation indices and global execution order; CMP-26 also checks
+the frozen and invoked adapter identity. Multiple registered edges still do
+not synthesize a larger semantic ceiling unless that larger composition is
+itself registered.
 
 ## Claim Qualification
 

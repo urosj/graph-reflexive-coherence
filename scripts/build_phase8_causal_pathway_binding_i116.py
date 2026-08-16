@@ -175,8 +175,9 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
     produce = producer.symbol("feedback_packet_schedule", instance=model)
     links = _packet_links(transport, model)
     lock = session.freeze_lock()
-    produce(policy="packet_departure_from_feedback_eligibility_policy")
-    _run_packet_lifecycle(model, links)
+    with composition.evidence_scope():
+        produce(policy="packet_departure_from_feedback_eligibility_policy")
+        _run_packet_lifecycle(model, links)
     receipt = session.build_receipt()
     record = receipt.to_record()
     return _freeze_case(
@@ -195,10 +196,10 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
 
 
 def _cmp26(authority: CausalPathwayAuthority) -> dict[str, Any]:
-    lgrc_model = _two_node_runtime()
+    source_runtime = _two_node_runtime()
     grc_model = GRC9V3(
         params=GRCParams.from_mapping({"dt": 1.0}),
-        state=lgrc_model.get_state().base_state,
+        state=source_runtime.get_state().base_state,
     )
     session = PathwayBindingSession(authority)
     composition = session.bind_composition("CMP-26")
@@ -206,18 +207,27 @@ def _cmp26(authority: CausalPathwayAuthority) -> dict[str, Any]:
     birth = composition.pathway("lgrc9v3.boundary_birth")
     eligible = front.symbol("front_capacity_growth_eligibility", instance=grc_model)
     propagate = front.symbol("front_propagation", instance=grc_model)
-    produce = birth.symbol("birth_trial_production", instance=lgrc_model)
-    commit = birth.symbol("birth_trial_commit", instance=lgrc_model)
-    lock = session.freeze_lock()
-    eligible()
-    propagate(parent_node_id=0, parent_port_id=2, child_node_id=1)
-    produce(policy="boundary_birth_trial_policy")
-    commit(
-        parent_node_id=0,
-        parent_port_id=2,
-        outward_flux_pressure=1.0,
-        rng_sample=0.5,
+    crossing = composition.crossing(source_instance=grc_model)
+    produce = birth.symbol(
+        "birth_trial_production",
+        instance=crossing.result_reference,
     )
+    commit = birth.symbol(
+        "birth_trial_commit",
+        instance=crossing.result_reference,
+    )
+    lock = session.freeze_lock()
+    with composition.evidence_scope():
+        eligible()
+        propagate(parent_node_id=0, parent_port_id=2, child_node_id=1)
+        lgrc_model = crossing(grc_model)
+        produce(policy="boundary_birth_trial_policy")
+        commit(
+            parent_node_id=0,
+            parent_port_id=2,
+            outward_flux_pressure=1.0,
+            rng_sample=0.5,
+        )
     receipt = session.build_receipt()
     record = receipt.to_record()
     edge = record["pathway_use_graph"]["edges"][0]
@@ -230,6 +240,12 @@ def _cmp26(authority: CausalPathwayAuthority) -> dict[str, Any]:
             "adapter_id": edge["adapter_id"],
             "adapter_owner": edge["adapter_owner"],
             "contains_adapter_cut": record["claim_envelope"]["contains_adapter_cut"],
+            "adapter_result_is_target_instance": (
+                crossing.result_reference.resolve() is lgrc_model
+            ),
+            "crossing_invocation_count": len(
+                record["actual_composition_crossing_invocations"]
+            ),
         },
     )
 
@@ -246,8 +262,9 @@ def _diagnostic(authority: CausalPathwayAuthority) -> dict[str, Any]:
     prepare = diagnostic.symbol("diagnostic_model_construction")
     rebuild = diagnostic.symbol("diagnostic_rebuild", instance=diagnostic_model)
     lock = session.freeze_lock()
-    prepare(model)
-    rebuild()
+    with composition.evidence_scope():
+        prepare(model)
+        rebuild()
     receipt = session.build_receipt()
     record = receipt.to_record()
     return _freeze_case(
@@ -415,10 +432,12 @@ def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
     prepare = diagnostic.symbol("diagnostic_model_construction")
     rebuild = diagnostic.symbol("diagnostic_rebuild", instance=diagnostic_model)
     lock = session.freeze_lock()
-    produce(policy="packet_departure_from_feedback_eligibility_policy")
-    _run_packet_lifecycle(packet_model, packet_links)
-    prepare(diagnostic_runtime)
-    rebuild()
+    with producer_composition.evidence_scope():
+        produce(policy="packet_departure_from_feedback_eligibility_policy")
+        _run_packet_lifecycle(packet_model, packet_links)
+    with diagnostic_composition.evidence_scope():
+        prepare(diagnostic_runtime)
+        rebuild()
     receipt = session.build_receipt()
     record = receipt.to_record()
     return _freeze_case(

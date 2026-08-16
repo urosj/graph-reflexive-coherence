@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** B-01/B-02 correction slice complete; tranche remains open
+**Status:** B-01/B-02/B-03 correction slices complete; tranche remains open
 
 **Checkpoint commit:** `976c660`
 
@@ -67,15 +67,39 @@ identity drift raises `SymbolBindingError` before the target executes. The
 receipt copies the verified identity into the invocation record so the
 conformance checker can compare it with the exact locked link.
 
+## B-03 Composition Crossing Evidence
+
+A registered composition is exercised only by a completed
+`composition.evidence_scope()` witness. The witness requires every matrix
+source stage to return before every matrix target stage. Endpoint calls outside
+that scope remain pathway invocation evidence but cannot synthesize a
+composition edge, adapter/producer cut, or composition claim ceiling.
+
+CMP-26 additionally freezes the exact
+`build_lgrc9v3_corrected_cascade_runtime(...)` callable. Its source-stage
+handles must use the exact GRC instance declared as the adapter input, while
+its target-stage handles use the adapter's deferred result reference. The real
+adapter must return between the source and target stages. The receipt records
+the crossing callable identity, global execution order, and endpoint/crossing
+indices; the conformance checker reconstructs and validates that ordering.
+
+The correction therefore rejects all three forms of the audit falsifier:
+
+- endpoint co-use outside a composition scope forms no edge;
+- CMP-26 cannot freeze with a missing crossing or unrelated target instance;
+- a receipt with a removed or substituted CMP-26 adapter invocation fails
+  conformance.
+
 ## Verification Gate
 
 Iteration 117 remains open until repository tests and the independent
 falsifiers agree. Commands use `.venv`; tool and dependency configuration
 comes from `pyproject.toml`.
 
-The first correction slice closes only B-01 and B-02. Findings B-03 through
-B-06 and M-01 remain acceptance blockers after that slice and must not be
-described as resolved.
+The completed focused slices close B-01, B-02, and B-03 at the implementation
+gate. Findings B-04 through B-06 and M-01 remain acceptance blockers and must
+not be described as resolved. A second full independent revision is deferred
+until B-06 and M-01 are complete.
 
 ## First-Slice Verification
 
@@ -98,3 +122,17 @@ does not apply its sibling cases' explicit-scope alternative. That predicate
 must be aligned before the independent suite can report the B-01 correction
 consistently; the implementation does not write a false undeclared-use
 violation merely to satisfy the inconsistent predicate.
+
+## B-03 Focused Verification
+
+```text
+.venv focused binding and conformance tests = 35 passed
+CMP-26 real adapter/dataflow dry run = passed
+I116 consumer dry runs and low-context replay = passed
+binding conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+compileall selected changed surfaces = passed
+```
+
+This is author-side focused correction evidence, not the deferred second full
+independent revision and not final tranche acceptance.

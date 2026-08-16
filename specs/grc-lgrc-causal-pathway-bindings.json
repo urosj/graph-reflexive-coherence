@@ -11,13 +11,33 @@
   "policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "pathway_count": 23,
   "stage_binding_count": 52,
+  "composition_crossing_binding_count": 1,
+  "composition_crossing_bindings": [
+    {
+      "composition_id": "CMP-26",
+      "crossing_kind": "explicit_adapter_callable",
+      "source_pathway_id": "grc9v3.front_capacity_growth",
+      "source_argument_name": "base_model",
+      "target_pathway_id": "lgrc9v3.boundary_birth",
+      "symbol": {
+        "symbol_id": "CMP-26:crossing:build_lgrc9v3_corrected_cascade_runtime",
+        "module": "pygrc.models.lgrc_9_v3_construction",
+        "qualified_symbol": "build_lgrc9v3_corrected_cascade_runtime",
+        "binding_role": "composition_adapter_entrypoint",
+        "call_kind": "module_function",
+        "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+        "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+      }
+    }
+  ],
   "binding_roles": [
     "mechanism_entrypoint",
     "stage_entrypoint",
     "load_bearing_internal",
     "diagnostic_entrypoint",
     "producer_entrypoint",
-    "restoration_entrypoint"
+    "restoration_entrypoint",
+    "composition_adapter_entrypoint"
   ],
   "call_kinds": [
     "module_function",
@@ -26,7 +46,7 @@
   ],
   "linkage_rule": "A binding resolves a declared registered stage to the exact current callable; it does not normalize arguments, choose semantics, or dispatch causal work.",
   "unbound_rule": "Direct execution remains available but cannot produce claim-qualified pathway provenance.",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "stage_bindings": [
     {
       "pathway_id": "grc9v3.front_capacity_growth",

@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "native candidate formation",
     "semantic choice",
@@ -78,7 +78,7 @@
       ]
     }
   ],
-  "lock_digest": "b78b5e8014008ca97886a36b30f6a4acdf8fe8bb798a7d163b371843a1dcaecb",
+  "lock_digest": "e3d76c731457bde1ff3ce6a085a39f123a868f28d5e6588891c1f49c81c84fd9",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

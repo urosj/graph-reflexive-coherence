@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
     "native current-to-packet adapter",
@@ -35,6 +35,7 @@
       "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
       "composition_id": "CMP-04",
       "composition_status": "diagnostic_only",
+      "expected_crossing_callable": null,
       "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "from_stage_ids": [
         "diagnostic_model_construction"
@@ -66,6 +67,7 @@
       "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
       "composition_id": "CMP-20",
       "composition_status": "producer_mediated",
+      "expected_crossing_callable": null,
       "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
       "from_stage_ids": [
         "feedback_packet_schedule"
@@ -322,7 +324,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "561cf78ff1944f0f295266a35b2aa807db1841d4aa9c875e41b9e71e401a4975",
+  "lock_digest": "eabdc0a4ab1f3672eafb0c963caa2f9c6d12b48af8798df0d8698afc292cf24b",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

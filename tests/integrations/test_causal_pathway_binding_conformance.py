@@ -142,6 +142,52 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-016"}, {item["rule_id"] for item in result["issues"]})
 
+    def test_cmp26_edge_without_crossing_invocation_fails_bcf019(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/03-explicit-adapter-cmp26.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/03-explicit-adapter-cmp26.receipt.json"),
+        )
+        receipt = mutated["receipt"]
+        receipt["actual_composition_crossing_invocations"] = []
+        receipt["receipt_digest"] = self.checker.digest_without(
+            receipt,
+            "receipt_digest",
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-019"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-019"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_cmp26_crossing_identity_drift_fails_bcf006(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/03-explicit-adapter-cmp26.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/03-explicit-adapter-cmp26.receipt.json"),
+        )
+        crossing = mutated["receipt"]["actual_composition_crossing_invocations"][0]
+        crossing["symbol_id"] = "CMP-26:crossing:forged"
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self.checker.validate_bundle(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-006"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-006"}, {item["rule_id"] for item in result["issues"]})
+
     def test_frozen_execution_records_are_canonical_and_passed(self) -> None:
         execution = json.loads(
             (EVIDENCE_DIR / "i115-conformance-execution.json").read_text(

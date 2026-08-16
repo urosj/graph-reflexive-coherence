@@ -105,7 +105,11 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Extend BCF-016 and BCF-020 for callable identity and receipt scope.
 - [x] Regenerate I115/I116 evidence with the corrected schema.
 - [x] Run focused tests, both conformance checkers, lint, typing, and full suite.
-- [ ] Require composition-specific crossing evidence for B-03.
+- [x] Require ordered composition-specific crossing evidence for B-03.
+- [x] Bind CMP-26 source and target stages through the real registered adapter
+      object flow.
+- [x] Reject endpoint-only, missing-adapter, and forged-adapter composition
+      evidence.
 - [ ] Replace string-only candidate-use attestation for B-04.
 - [ ] Enforce selection-scoped dynamic alternatives for B-05.
 - [ ] Add the independent acceptance anchor for B-06.

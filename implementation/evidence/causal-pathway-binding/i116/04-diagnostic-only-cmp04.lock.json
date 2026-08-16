@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
     "native current-to-packet adapter",
@@ -28,6 +28,7 @@
       "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
       "composition_id": "CMP-04",
       "composition_status": "diagnostic_only",
+      "expected_crossing_callable": null,
       "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "from_stage_ids": [
         "diagnostic_model_construction"
@@ -114,7 +115,7 @@
   ],
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "1b77484c00b85972c27ecbc8c2ae73c95a74e5e2ccffb82e9924f285ccc6eb37",
+  "lock_digest": "f77b9a7ddad9b774e3814bb44f626da7f6517edf9d00471d8d11162ed35e477a",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

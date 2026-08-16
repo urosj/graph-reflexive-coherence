@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "native feedback",
     "semantic intention",
@@ -37,6 +37,7 @@
       "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
       "composition_id": "CMP-20",
       "composition_status": "producer_mediated",
+      "expected_crossing_callable": null,
       "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
       "from_stage_ids": [
         "feedback_packet_schedule"
@@ -222,7 +223,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "413698b30e73706aad5787817464c4732376c096a3bdcca4effdd4402972a9dc",
+  "lock_digest": "b58471f2cded6fdfcbf49875957814252a73abe3fb031573e44e418eeca9f380",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

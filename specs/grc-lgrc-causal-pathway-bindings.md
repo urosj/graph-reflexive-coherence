@@ -1,6 +1,6 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Frozen linkage authority consumed through Iteration 116
+**Status:** Iteration 117 B-03 crossing-evidence extension; tranche remains open
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -21,6 +21,10 @@ stage records one or more exact modules, qualified symbols, call kinds, binding
 roles, source paths, and source hashes. Shared symbols remain shared. A stage
 with several load-bearing entrypoints retains all of them.
 
+The map additionally closes the explicit-adapter crossing set. CMP-26 binds
+`build_lgrc9v3_corrected_cascade_runtime(...)` as its exact composition
+adapter; the map contains no generic crossing dispatcher.
+
 ## Binding Roles
 
 - `mechanism_entrypoint` identifies an ordinary mechanism-specific public
@@ -31,6 +35,9 @@ with several load-bearing entrypoints retains all of them.
 - `diagnostic_entrypoint` remains diagnostic.
 - `producer_entrypoint` retains producer ownership.
 - `restoration_entrypoint` remains bounded to restoration/replay identity.
+- `composition_adapter_entrypoint` identifies an exact registered adapter
+  callable that must execute between the composition's source and target
+  stages.
 
 Binding an internal symbol does not promote it to stable general-purpose API.
 The map versions the exact source relation for claim provenance.
@@ -54,6 +61,21 @@ fields.
 Direct unbound calls remain available. They do not produce claim-qualified
 binding invocation provenance. Receipts are scoped to bound invocations and do
 not claim process-wide observation or whole-run causal closure.
+
+## Composition Crossing Evidence
+
+Returned endpoint stages do not by themselves establish a composition. A
+consumer must run the required source and target stages inside one explicit
+composition evidence scope and in matrix order. The receipt records the scope,
+the ordered endpoint invocation indices, and any required crossing-callable
+invocation.
+
+CMP-26 has the stronger explicit-adapter rule. Before lock, its source stages
+must bind to the same declared GRC instance consumed by the adapter, and its
+target stages must bind to the adapter's deferred LGRC result reference. The
+real registered adapter must return after all source stages and before all
+target stages. Missing, substituted, out-of-order, or unrelated-instance
+crossings cannot form an exercised composition edge.
 
 See the
 [binding and claim-provenance reference guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)

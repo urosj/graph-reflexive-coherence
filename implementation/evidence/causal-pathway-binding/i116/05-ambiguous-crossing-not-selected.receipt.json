@@ -1,11 +1,12 @@
 {
   "actual_bound_pathways_used": [],
+  "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [],
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "b78b5e8014008ca97886a36b30f6a4acdf8fe8bb798a7d163b371843a1dcaecb",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_lock_digest": "e3d76c731457bde1ff3ce6a085a39f123a868f28d5e6588891c1f49c81c84fd9",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [],
   "candidate_relations_exercised": [],
   "claim_envelope": {
@@ -29,6 +30,7 @@
   },
   "claim_qualified": false,
   "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [],
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -48,7 +50,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "b1ec8dadbb058e13e42485c497c2ed56566bdc8473b797128f1f3ddbe648310b",
+  "receipt_digest": "bd1c0930c30f0405d79b5c311750d73e3b2532022d453edf6207f28b834ac532",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

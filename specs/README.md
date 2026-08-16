@@ -80,10 +80,11 @@ The implementation strategy assumed by these specs is:
   records the resulting path-only bundle transitions.
 - `grc-lgrc-causal-pathway-bindings.json` and
   `grc-lgrc-causal-pathway-bindings.md`
-  Iteration 113-frozen separate Python linkage authority for all 23 admitted
-  pathways and 52 stages. It records exact modules, qualified symbols, call
-  kinds, binding roles, source paths, and source hashes without adding Python
-  linkage fields to the semantic registry or creating a dispatcher.
+  Separate Python linkage authority for all 23 admitted pathways and 52 stages,
+  extended at the Iteration 117 B-03 correction with the exact CMP-26 adapter
+  crossing. It records modules, qualified symbols, call kinds, binding roles,
+  source paths, and source hashes without adding Python linkage fields to the
+  semantic registry or creating a dispatcher.
 - `grc-lgrc-causal-pathway-binding-conformance.json`
   Iteration 115-frozen prospective policy for exact locks, receipts, use
   graphs, candidates, and structured claim envelopes. Its separate checker

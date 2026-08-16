@@ -22,7 +22,7 @@
     "BCF-020"
   ],
   "actual_authority_digests": {
-    "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+    "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
     "consolidation_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
     "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
     "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -34,13 +34,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "053a6a1ed1794a8973f61f6c647a871d6ec2de675d844dff7277911ed0c6d53a",
+  "conformance_digest": "3952a754a7c4bd016305f7b41f7dd450bc51127e14061b4ef4169fcf23f2f718",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "d113b7186be0d663552bd3ddd1acaff9a7b7fbf7071cb611944429b779d4d30e",
+  "policy_digest": "aba41ea847eb2ee5917afa58b7b5af785e2b989014efece23bdd73b11ddfca68",
   "rule_count": 20,
   "rule_results": [
     {

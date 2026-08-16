@@ -97,6 +97,7 @@
       "producer_residue": []
     }
   ],
+  "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
@@ -110,7 +111,9 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "composition_ids": [],
+      "crossing_scope_id": null,
       "error_type": null,
+      "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -130,7 +133,9 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "composition_ids": [],
+      "crossing_scope_id": null,
       "error_type": null,
+      "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "pygrc.restoration_replay_identity",
@@ -142,8 +147,8 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "30fdb07a47245f75e556d060796c42f7f998c9f0b379f4929b640350838d09ee",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_lock_digest": "f37c71e0c47c34a45c495e2b671d32ebeea88555fd38654ebdb80da255687ef3",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
     "native departure reason",
@@ -325,6 +330,7 @@
   },
   "claim_qualified": true,
   "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [],
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -418,7 +424,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "c1f7b928921cc7194efc82acf57fd57ac3799fbeadfd9d4c3e18c4eafe392668",
+  "receipt_digest": "ddd732a56c71c89c01f72ebb28ca3acc3a3d1e145d5ba803952ac484a6d9011c",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

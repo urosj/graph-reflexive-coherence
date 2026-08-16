@@ -49,6 +49,7 @@
       "producer_residue": []
     }
   ],
+  "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "pathway:pygrc.restoration_replay_identity",
@@ -62,7 +63,9 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "composition_ids": [],
+      "crossing_scope_id": null,
       "error_type": null,
+      "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "pygrc.restoration_replay_identity",
@@ -86,8 +89,8 @@
     }
   ],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "b0c176dd0d2a35182b2c305d5a496693f3c990c141b46b33d284a3519fb1eecf",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_lock_digest": "18443bc56d0654351ef22ff312fc5b9d90a8f9a63f73da5a8bfcb48d6a71d822",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "byte identity requirement",
     "unrestricted behavioral identity",
@@ -156,6 +159,7 @@
   },
   "claim_qualified": true,
   "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [],
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -199,7 +203,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "9bdd2a1faae528f922f8b4976af5cd3f048b9f7111d4c20a46ec7ce75516a7e2",
+  "receipt_digest": "31b7c3221da470f4255463286d9aa2c576434c418f2c80d25cd0d8942fcfbc30",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

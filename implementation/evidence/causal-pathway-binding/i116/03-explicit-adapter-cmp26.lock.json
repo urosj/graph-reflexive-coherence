@@ -1,7 +1,7 @@
 {
   "allowed_pathway_alternatives": [],
   "artifact": "causal-pathways-binding-lock",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "general autonomous basin formation",
     "semantic reproduction",
@@ -36,6 +36,34 @@
       "claim_ceiling": "Lawful explicit construction adapter; not native cross-runtime formation or inherited event history.",
       "composition_id": "CMP-26",
       "composition_status": "lawful_with_explicit_adapter",
+      "expected_crossing_callable": {
+        "binding_id": "composition:CMP-26",
+        "binding_role": "composition_adapter_entrypoint",
+        "call_kind": "module_function",
+        "callable_identity": {
+          "callable_identity_digest": "b3c29c54a21ed3cad8ca644c91cbcb4e999175b96e924ec23f637de5e9763934",
+          "definition_first_line": 300,
+          "definition_source_sha256": "ce34398339cdb098fad3b465942bce2360a48b4d8a76428a5effed33e7722fef",
+          "module": "pygrc.models.lgrc_9_v3_construction",
+          "qualified_symbol": "build_lgrc9v3_corrected_cascade_runtime",
+          "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+        },
+        "composition_id": "CMP-26",
+        "crossing_kind": "explicit_adapter_callable",
+        "module": "pygrc.models.lgrc_9_v3_construction",
+        "qualified_symbol": "build_lgrc9v3_corrected_cascade_runtime",
+        "source_argument_name": "base_model",
+        "source_binding_id": "composition:CMP-26:from:grc9v3.front_capacity_growth",
+        "source_instance_binding": "exact_declared_adapter_source_instance",
+        "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+        "source_pathway_id": "grc9v3.front_capacity_growth",
+        "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+        "symbol_id": "CMP-26:crossing:build_lgrc9v3_corrected_cascade_runtime",
+        "target_binding_id": "composition:CMP-26:to:lgrc9v3.boundary_birth",
+        "target_instance_binding": "exact_adapter_result_reference",
+        "target_pathway_id": "lgrc9v3.boundary_birth"
+      },
       "from_pathway_id": "grc9v3.front_capacity_growth",
       "from_stage_ids": [
         "front_capacity_growth_eligibility",
@@ -82,6 +110,7 @@
             "source_path": "src/pygrc/models/grc_9_v3.py",
             "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
           },
+          "composition_crossing_instance_role": "declared_adapter_source_instance",
           "composition_ids": [
             "CMP-26"
           ],
@@ -107,6 +136,7 @@
             "source_path": "src/pygrc/models/grc_9_v3.py",
             "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
           },
+          "composition_crossing_instance_role": "declared_adapter_source_instance",
           "composition_ids": [
             "CMP-26"
           ],
@@ -156,6 +186,7 @@
             "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
+          "composition_crossing_instance_role": "adapter_result_reference",
           "composition_ids": [
             "CMP-26"
           ],
@@ -181,6 +212,7 @@
             "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
             "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
           },
+          "composition_crossing_instance_role": "adapter_result_reference",
           "composition_ids": [
             "CMP-26"
           ],
@@ -209,7 +241,7 @@
     }
   ],
   "explicit_producers": [],
-  "lock_digest": "4d3897fb1248fcc2371575030551addda63ecb7d66ec720a6e506ea18558516c",
+  "lock_digest": "23f1651e87ac43ea5441e007a32f5815c81585e68217b76e0d47dc56a17fbf3d",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

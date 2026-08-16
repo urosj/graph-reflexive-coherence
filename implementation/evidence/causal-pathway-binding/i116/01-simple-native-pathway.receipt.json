@@ -101,6 +101,7 @@
       "producer_residue": []
     }
   ],
+  "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
@@ -114,7 +115,9 @@
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
       "composition_ids": [],
+      "crossing_scope_id": null,
       "error_type": null,
+      "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -134,7 +137,9 @@
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
       "composition_ids": [],
+      "crossing_scope_id": null,
       "error_type": null,
+      "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -154,7 +159,9 @@
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
       "composition_ids": [],
+      "crossing_scope_id": null,
       "error_type": null,
+      "execution_event_order": 2,
       "invocation_index": 2,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -166,8 +173,8 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "910a654c14cbfb5cb6537246514cccdd0b0a16657266c0983e5236c54b2318cd",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_lock_digest": "175dac3763ebb53fbca2e7e86eedc344c041a16bc581daa9b39b3759bd5cf44f",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
     "native departure reason",
@@ -233,6 +240,7 @@
   },
   "claim_qualified": true,
   "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [],
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -278,7 +286,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "d42ad0c2ad5c9206194edc3ef5472a0067e39c917d1feb33dc7b9d74620def10",
+  "receipt_digest": "d9be1a04462cfa396de532322c61a8f22176ad719617d8c623085bc1004d693f",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

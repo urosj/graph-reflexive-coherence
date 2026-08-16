@@ -80,6 +80,7 @@
       "producer_residue": []
     }
   ],
+  "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
@@ -95,7 +96,9 @@
       "composition_ids": [
         "CMP-04"
       ],
+      "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
       "error_type": null,
+      "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
@@ -117,7 +120,9 @@
       "composition_ids": [
         "CMP-04"
       ],
+      "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
       "error_type": null,
+      "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
@@ -129,8 +134,8 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "1b77484c00b85972c27ecbc8c2ae73c95a74e5e2ccffb82e9924f285ccc6eb37",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_lock_digest": "f77b9a7ddad9b774e3814bb44f626da7f6517edf9d00471d8d11162ed35e477a",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
     "native current-to-packet adapter",
@@ -220,6 +225,23 @@
   },
   "claim_qualified": true,
   "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [
+    {
+      "binding_id": "composition:CMP-04",
+      "composition_id": "CMP-04",
+      "crossing_invocation_indices": [],
+      "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
+      "explicit_adapter_observed": false,
+      "explicit_adapter_required": false,
+      "from_invocation_indices": [
+        0
+      ],
+      "ordering_rule": "all_from_stages_before_all_to_stages",
+      "to_invocation_indices": [
+        1
+      ]
+    }
+  ],
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -285,7 +307,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "34f63d290a27fea992ff5895968b762f98ba39b0a2ebdd2841516ed27e918a6b",
+  "receipt_digest": "979468dc00d313ee352e30a2575a9ad43c2f2a6ce663d9007266c6ef28e63f55",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
@@ -303,6 +325,7 @@
       "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
       "composition_id": "CMP-04",
       "composition_status": "diagnostic_only",
+      "expected_crossing_callable": null,
       "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "from_stage_ids": [
         "diagnostic_model_construction"

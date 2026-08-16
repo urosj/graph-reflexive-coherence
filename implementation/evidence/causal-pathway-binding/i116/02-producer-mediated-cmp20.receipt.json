@@ -166,6 +166,7 @@
       "producer_residue": []
     }
   ],
+  "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
       "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
@@ -181,7 +182,9 @@
       "composition_ids": [
         "CMP-20"
       ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
       "error_type": null,
+      "execution_event_order": 0,
       "invocation_index": 0,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.feedback_eligibility_producer",
@@ -203,7 +206,9 @@
       "composition_ids": [
         "CMP-20"
       ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
       "error_type": null,
+      "execution_event_order": 1,
       "invocation_index": 1,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -225,7 +230,9 @@
       "composition_ids": [
         "CMP-20"
       ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
       "error_type": null,
+      "execution_event_order": 2,
       "invocation_index": 2,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -247,7 +254,9 @@
       "composition_ids": [
         "CMP-20"
       ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
       "error_type": null,
+      "execution_event_order": 3,
       "invocation_index": 3,
       "outcome": "returned",
       "pathway_id": "lgrc9v3.explicit_packet_transport",
@@ -259,8 +268,8 @@
   "adapters_used": [],
   "allowed_pathway_alternatives_actual_use": [],
   "artifact": "causal-pathways-binding-receipt",
-  "binding_lock_digest": "413698b30e73706aad5787817464c4732376c096a3bdcca4effdd4402972a9dc",
-  "binding_map_digest": "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+  "binding_lock_digest": "b58471f2cded6fdfcbf49875957814252a73abe3fb031573e44e418eeca9f380",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "native feedback",
     "semantic intention",
@@ -412,6 +421,25 @@
   },
   "claim_qualified": true,
   "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [
+    {
+      "binding_id": "composition:CMP-20",
+      "composition_id": "CMP-20",
+      "crossing_invocation_indices": [],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
+      "explicit_adapter_observed": false,
+      "explicit_adapter_required": false,
+      "from_invocation_indices": [
+        0
+      ],
+      "ordering_rule": "all_from_stages_before_all_to_stages",
+      "to_invocation_indices": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
   "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
   "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
   "declared_but_unused": {
@@ -531,7 +559,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "1b737a653a39b0975e65ad53025938368b8be2dede7110bcd180932e476cff6f",
+  "receipt_digest": "b8e8941f508fc0684ea4eda91e48b0233fc7e6f88bf90345694ef58112d3ccc4",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",
@@ -554,6 +582,7 @@
       "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
       "composition_id": "CMP-20",
       "composition_status": "producer_mediated",
+      "expected_crossing_callable": null,
       "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
       "from_stage_ids": [
         "feedback_packet_schedule"

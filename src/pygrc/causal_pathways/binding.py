@@ -12,10 +12,10 @@ import inspect
 import json
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from copy import deepcopy
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
-from types import MappingProxyType
-from typing import Any, Final, cast
+from types import MappingProxyType, TracebackType
+from typing import Any, Final, Literal, Self, cast
 
 AUTHORITY_PATHS: Final[Mapping[str, str]] = MappingProxyType(
     {
@@ -279,6 +279,32 @@ class SourceSymbolBinding:
 
 
 @dataclass(frozen=True)
+class CompositionCrossingBinding:
+    """Concrete crossing callable for a registered explicit-adapter row."""
+
+    composition_id: str
+    crossing_kind: str
+    source_pathway_id: str
+    source_argument_name: str
+    target_pathway_id: str
+    symbol: SourceSymbolBinding
+
+    @classmethod
+    def from_record(
+        cls,
+        record: Mapping[str, Any],
+    ) -> CompositionCrossingBinding:
+        return cls(
+            composition_id=str(record["composition_id"]),
+            crossing_kind=str(record["crossing_kind"]),
+            source_pathway_id=str(record["source_pathway_id"]),
+            source_argument_name=str(record["source_argument_name"]),
+            target_pathway_id=str(record["target_pathway_id"]),
+            symbol=SourceSymbolBinding.from_record(record["symbol"]),
+        )
+
+
+@dataclass(frozen=True)
 class CandidateDeclaration:
     """An explicit unregistered pathway or composition candidate."""
 
@@ -344,12 +370,14 @@ class CausalPathwayAuthority:
         pathways: Mapping[str, Mapping[str, Any]],
         compositions: Mapping[str, Mapping[str, Any]],
         stage_symbols: Mapping[tuple[str, str], tuple[SourceSymbolBinding, ...]],
+        composition_crossings: Mapping[str, CompositionCrossingBinding],
     ) -> None:
         self._repository_root = repository_root
         self._documents = MappingProxyType(dict(documents))
         self._pathways = MappingProxyType(dict(pathways))
         self._compositions = MappingProxyType(dict(compositions))
         self._stage_symbols = MappingProxyType(dict(stage_symbols))
+        self._composition_crossings = MappingProxyType(dict(composition_crossings))
 
     @property
     def repository_root(self) -> Path:
@@ -439,6 +467,20 @@ class CausalPathwayAuthority:
         except KeyError as exc:
             raise SymbolBindingError(
                 f"stage {pathway_id}:{stage_id} has no current binding"
+            ) from exc
+
+    def composition_crossing(
+        self,
+        composition_id: str,
+    ) -> CompositionCrossingBinding:
+        """Return the registered concrete crossing for an adapter composition."""
+
+        self.composition(composition_id)
+        try:
+            return self._composition_crossings[composition_id]
+        except KeyError as exc:
+            raise SymbolBindingError(
+                f"composition {composition_id!r} has no explicit crossing callable"
             ) from exc
 
     @classmethod
@@ -535,12 +577,71 @@ class CausalPathwayAuthority:
             raise AuthorityDriftError("binding-map pathway count is stale")
         if int(bindings["stage_binding_count"]) != len(stage_symbols):
             raise AuthorityDriftError("binding-map stage count is stale")
+
+        composition_crossings: dict[str, CompositionCrossingBinding] = {}
+        for crossing_record in bindings.get("composition_crossing_bindings", []):
+            crossing = CompositionCrossingBinding.from_record(crossing_record)
+            if crossing.composition_id in composition_crossings:
+                raise AuthorityDriftError(
+                    f"duplicate composition crossing {crossing.composition_id!r}"
+                )
+            try:
+                composition = compositions[crossing.composition_id]
+            except KeyError as exc:
+                raise AuthorityDriftError(
+                    f"crossing references unknown composition {crossing.composition_id!r}"
+                ) from exc
+            if (
+                crossing.crossing_kind != "explicit_adapter_callable"
+                or composition["composition_status"] != "lawful_with_explicit_adapter"
+                or crossing.source_pathway_id != composition["from_pathway_id"]
+                or crossing.target_pathway_id != composition["to_pathway_id"]
+                or crossing.symbol.qualified_symbol != composition["adapter_id"]
+                or crossing.symbol.call_kind != "module_function"
+            ):
+                raise AuthorityDriftError(
+                    f"composition crossing {crossing.composition_id!r} "
+                    "does not match its matrix row"
+                )
+            if crossing.symbol.symbol_id in symbol_ids:
+                raise AuthorityDriftError(
+                    f"duplicate binding symbol {crossing.symbol.symbol_id!r}"
+                )
+            symbol_ids.add(crossing.symbol.symbol_id)
+            source_path = root / crossing.symbol.source_path
+            if (
+                not source_path.is_file()
+                or sha256_file(source_path) != crossing.symbol.source_sha256
+            ):
+                raise AuthorityDriftError(
+                    f"composition crossing source is stale: "
+                    f"{crossing.symbol.source_path}"
+                )
+            crossing.symbol.resolve(root)
+            composition_crossings[crossing.composition_id] = crossing
+
+        required_crossings = {
+            composition_id
+            for composition_id, composition in compositions.items()
+            if composition["composition_status"] == "lawful_with_explicit_adapter"
+        }
+        if set(composition_crossings) != required_crossings:
+            raise AuthorityDriftError(
+                "explicit-adapter crossing closure mismatch; "
+                f"required={sorted(required_crossings)}, "
+                f"actual={sorted(composition_crossings)}"
+            )
+        if int(bindings.get("composition_crossing_binding_count", -1)) != len(
+            composition_crossings
+        ):
+            raise AuthorityDriftError("composition-crossing binding count is stale")
         return cls(
             repository_root=root,
             documents=documents,
             pathways=pathways,
             compositions=compositions,
             stage_symbols=stage_symbols,
+            composition_crossings=composition_crossings,
         )
 
 
@@ -557,6 +658,53 @@ class InvocationRecord:
     result_type: str | None
     error_type: str | None
     callable_identity: Mapping[str, Any]
+    execution_event_order: int = -1
+    crossing_scope_id: str | None = None
+
+
+@dataclass(frozen=True)
+class CrossingInvocationRecord:
+    """One invocation of a registered composition crossing callable."""
+
+    crossing_scope_id: str
+    binding_id: str
+    composition_id: str
+    symbol_id: str
+    source_binding_id: str
+    target_binding_id: str
+    outcome: str
+    result_type: str | None
+    error_type: str | None
+    callable_identity: Mapping[str, Any]
+    execution_event_order: int = -1
+
+
+_UNRESOLVED_CROSSING_RESULT: Final[object] = object()
+
+
+class CrossingResultReference:
+    """Deferred instance reference to a real crossing callable's result."""
+
+    def __init__(self, *, composition_id: str, target_pathway_id: str) -> None:
+        self.composition_id = composition_id
+        self.target_pathway_id = target_pathway_id
+        self._value: object = _UNRESOLVED_CROSSING_RESULT
+
+    def _set(self, value: object) -> None:
+        if self._value is not _UNRESOLVED_CROSSING_RESULT:
+            raise BindingStateError(
+                f"composition {self.composition_id!r} crossing already returned"
+            )
+        self._value = value
+
+    def resolve(self) -> object:
+        """Return the adapter result or fail before target-stage delegation."""
+
+        if self._value is _UNRESOLVED_CROSSING_RESULT:
+            raise BindingStateError(
+                f"composition {self.composition_id!r} crossing has not returned"
+            )
+        return self._value
 
 
 class VerifiedCallable:
@@ -571,11 +719,19 @@ class VerifiedCallable:
         stage_id: str,
         composition_ids: tuple[str, ...],
         symbol: SourceSymbolBinding,
-        instance: object | None,
+        instance: object | CrossingResultReference | None,
     ) -> None:
         repository_root = session.authority.repository_root
         target = symbol.resolve(repository_root)
-        if instance is not None:
+        instance_reference = (
+            instance if isinstance(instance, CrossingResultReference) else None
+        )
+        if instance_reference is not None:
+            if symbol.call_kind != "instance_method":
+                raise SymbolBindingError(
+                    f"{symbol.symbol_id!r} cannot use a deferred instance"
+                )
+        elif instance is not None:
             if symbol.call_kind != "instance_method":
                 raise SymbolBindingError(
                     f"{symbol.symbol_id!r} is not an instance method"
@@ -589,12 +745,18 @@ class VerifiedCallable:
         self._composition_ids = composition_ids
         self._symbol = symbol
         self._target = target
+        self._instance_reference = instance_reference
         self._expected_definition = _callable_definition(target)
         self._expected_bound_owner = _callable_bound_owner(target)
         self._callable_identity = identity
         self.__name__ = getattr(target, "__name__", symbol.qualified_symbol)
         self.__doc__ = getattr(target, "__doc__", None)
-        self.__signature__ = inspect.signature(target)
+        signature = inspect.signature(target)
+        if instance_reference is not None:
+            parameters = tuple(signature.parameters.values())
+            if parameters and parameters[0].name in {"self", "cls"}:
+                signature = signature.replace(parameters=parameters[1:])
+        self.__signature__ = signature
 
     @property
     def symbol_id(self) -> str:
@@ -602,7 +764,10 @@ class VerifiedCallable:
 
     @property
     def linked_callable(self) -> Callable[..., Any]:
-        return self._target
+        if self._instance_reference is None:
+            return self._target
+        target, _ = self._assert_current_callable()
+        return target
 
     @property
     def callable_identity(self) -> Mapping[str, Any]:
@@ -610,35 +775,42 @@ class VerifiedCallable:
 
         return MappingProxyType(self._callable_identity.to_record())
 
-    def _assert_current_callable(self) -> Mapping[str, Any]:
+    def _assert_current_callable(
+        self,
+    ) -> tuple[Callable[..., Any], Mapping[str, Any]]:
         """Fail before delegation if the resolved or stored target has changed."""
 
         repository_root = self._session.authority.repository_root
         current = self._symbol.resolve(repository_root)
         if self._symbol.call_kind == "instance_method":
-            if self._expected_bound_owner is None:
+            if self._instance_reference is not None:
+                owner = self._instance_reference.resolve()
+            else:
+                owner = self._expected_bound_owner
+            if owner is None:
                 raise SymbolBindingError(
                     f"binding {self._symbol.symbol_id!r} lost its instance owner"
                 )
-            current = current.__get__(
-                self._expected_bound_owner,
-                type(self._expected_bound_owner),
-            )
+            current = current.__get__(owner, type(owner))
         current_identity = self._symbol.callable_identity(current, repository_root)
         if current_identity.to_record() != self._callable_identity.to_record():
             raise SymbolBindingError(
                 f"binding {self._symbol.symbol_id!r} callable fingerprint drifted"
             )
-        if (
+        identity_changed = (
             _callable_definition(current) is not self._expected_definition
             or _callable_definition(self._target) is not self._expected_definition
-            or _callable_bound_owner(current) is not self._expected_bound_owner
-            or _callable_bound_owner(self._target) is not self._expected_bound_owner
-        ):
+        )
+        if self._instance_reference is None:
+            identity_changed = identity_changed or (
+                _callable_bound_owner(current) is not self._expected_bound_owner
+                or _callable_bound_owner(self._target) is not self._expected_bound_owner
+            )
+        if identity_changed:
             raise SymbolBindingError(
                 f"binding {self._symbol.symbol_id!r} callable identity changed"
             )
-        return MappingProxyType(current_identity.to_record())
+        return current, MappingProxyType(current_identity.to_record())
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         self._session._assert_invocation_allowed(
@@ -648,14 +820,14 @@ class VerifiedCallable:
             symbol_id=self._symbol.symbol_id,
             composition_ids=self._composition_ids,
         )
-        callable_identity = self._assert_current_callable()
+        target, callable_identity = self._assert_current_callable()
         for name, expected in self._symbol.required_keyword_arguments.items():
             if kwargs.get(name) != expected:
                 raise SymbolBindingError(
                     f"binding {self._symbol.symbol_id!r} requires {name}={expected!r}"
                 )
         try:
-            result = self._target(*args, **kwargs)
+            result = target(*args, **kwargs)
         except Exception as exc:
             self._session._record_invocation(
                 InvocationRecord(
@@ -687,6 +859,125 @@ class VerifiedCallable:
         return result
 
 
+class VerifiedCompositionCrossing:
+    """Verified mechanism-specific callable for a registered adapter crossing."""
+
+    def __init__(
+        self,
+        *,
+        session: PathwayBindingSession,
+        composition: BoundComposition,
+        crossing: CompositionCrossingBinding,
+        source_instance: object,
+    ) -> None:
+        target = crossing.symbol.resolve(session.authority.repository_root)
+        self._session = session
+        self._composition = composition
+        self._crossing = crossing
+        self._source_instance = source_instance
+        self._target = target
+        self._expected_definition = _callable_definition(target)
+        self._callable_identity = crossing.symbol.callable_identity(
+            target,
+            session.authority.repository_root,
+        )
+        self._result_reference = CrossingResultReference(
+            composition_id=composition.composition_id,
+            target_pathway_id=crossing.target_pathway_id,
+        )
+        self.__name__ = getattr(
+            target,
+            "__name__",
+            crossing.symbol.qualified_symbol,
+        )
+        self.__doc__ = getattr(target, "__doc__", None)
+        self.__signature__ = inspect.signature(target)
+
+    @property
+    def symbol_id(self) -> str:
+        return self._crossing.symbol.symbol_id
+
+    @property
+    def result_reference(self) -> CrossingResultReference:
+        """Return the deferred target-instance reference for endpoint links."""
+
+        return self._result_reference
+
+    @property
+    def callable_identity(self) -> Mapping[str, Any]:
+        return MappingProxyType(self._callable_identity.to_record())
+
+    def _assert_current_callable(self) -> tuple[Callable[..., Any], Mapping[str, Any]]:
+        symbol = self._crossing.symbol
+        repository_root = self._session.authority.repository_root
+        current = symbol.resolve(repository_root)
+        current_identity = symbol.callable_identity(current, repository_root)
+        if (
+            current_identity.to_record() != self._callable_identity.to_record()
+            or _callable_definition(current) is not self._expected_definition
+            or _callable_definition(self._target) is not self._expected_definition
+        ):
+            raise SymbolBindingError(
+                f"composition crossing {symbol.symbol_id!r} callable identity changed"
+            )
+        return current, MappingProxyType(current_identity.to_record())
+
+    def __call__(self, *args: Any, **kwargs: Any) -> Any:
+        scope = self._session._assert_crossing_invocation_allowed(
+            composition=self._composition,
+            symbol_id=self.symbol_id,
+        )
+        target, callable_identity = self._assert_current_callable()
+        try:
+            arguments = inspect.signature(target).bind(*args, **kwargs).arguments
+        except TypeError as exc:
+            raise SymbolBindingError(
+                f"composition crossing {self.symbol_id!r} arguments are invalid"
+            ) from exc
+        source_argument = self._crossing.source_argument_name
+        if arguments.get(source_argument) is not self._source_instance:
+            raise SymbolBindingError(
+                f"composition crossing {self.symbol_id!r} must consume the "
+                "declared source instance"
+            )
+        try:
+            result = target(*args, **kwargs)
+        except Exception as exc:
+            self._session._record_crossing_invocation(
+                scope,
+                CrossingInvocationRecord(
+                    crossing_scope_id=scope.scope_id,
+                    binding_id=self._composition.binding_id,
+                    composition_id=self._composition.composition_id,
+                    symbol_id=self.symbol_id,
+                    source_binding_id=self._composition.source_binding.binding_id,
+                    target_binding_id=self._composition.target_binding.binding_id,
+                    outcome="raised",
+                    result_type=None,
+                    error_type=type(exc).__name__,
+                    callable_identity=callable_identity,
+                ),
+            )
+            raise
+        self._result_reference._set(result)
+        self._session._record_crossing_invocation(
+            scope,
+            CrossingInvocationRecord(
+                crossing_scope_id=scope.scope_id,
+                binding_id=self._composition.binding_id,
+                composition_id=self._composition.composition_id,
+                symbol_id=self.symbol_id,
+                source_binding_id=self._composition.source_binding.binding_id,
+                target_binding_id=self._composition.target_binding.binding_id,
+                outcome="returned",
+                result_type=type(result).__name__,
+                error_type=None,
+                callable_identity=callable_identity,
+            ),
+        )
+        return result
+
+
 class BoundPathway:
     """An exact admitted pathway declaration and its stage links."""
 
@@ -714,10 +1005,18 @@ class BoundPathway:
         stage_id: str,
         *,
         symbol_id: str | None = None,
-        instance: object | None = None,
+        instance: object | CrossingResultReference | None = None,
     ) -> VerifiedCallable:
         """Link one declared stage to an exact real source callable."""
 
+        if (
+            isinstance(instance, CrossingResultReference)
+            and instance.target_pathway_id != self.pathway_id
+        ):
+            raise SymbolBindingError(
+                f"crossing {instance.composition_id!r} returns "
+                f"{instance.target_pathway_id!r}, not {self.pathway_id!r}"
+            )
         if stage_id not in self.stage_ids:
             raise SymbolBindingError(
                 f"stage {stage_id!r} was not declared for binding {self.binding_id!r}"
@@ -754,6 +1053,7 @@ class BoundPathway:
             stage_id=stage_id,
             composition_ids=self.composition_ids,
             symbol=selected,
+            instance=instance,
             callable_identity=linked.callable_identity,
         )
         return linked
@@ -775,6 +1075,7 @@ class BoundComposition:
         self.composition_id = str(composition["composition_id"])
         self._composition = deepcopy(composition)
         self._endpoints = dict(endpoints)
+        self._crossing_handle: VerifiedCompositionCrossing | None = None
 
     @property
     def contract(self) -> Mapping[str, Any]:
@@ -796,6 +1097,14 @@ class BoundComposition:
     def endpoint_bindings(self) -> tuple[BoundPathway, ...]:
         return tuple(self._endpoints.values())
 
+    @property
+    def source_binding(self) -> BoundPathway:
+        return self.pathway(str(self._composition["from_pathway_id"]))
+
+    @property
+    def target_binding(self) -> BoundPathway:
+        return self.pathway(str(self._composition["to_pathway_id"]))
+
     def pathway(self, pathway_id: str) -> BoundPathway:
         try:
             return self._endpoints[pathway_id]
@@ -803,6 +1112,182 @@ class BoundComposition:
             raise UnknownPathwayError(
                 f"{pathway_id!r} is not an endpoint of {self.composition_id}"
             ) from exc
+
+    def crossing(
+        self,
+        *,
+        source_instance: object,
+    ) -> VerifiedCompositionCrossing:
+        """Link the exact registered adapter callable for this composition."""
+
+        self._session._require_declaration_phase()
+        if self._crossing_handle is not None:
+            raise CausalPathwayBindingError(
+                f"composition {self.composition_id!r} crossing is already linked"
+            )
+        crossing = self._session.authority.composition_crossing(self.composition_id)
+        handle = VerifiedCompositionCrossing(
+            session=self._session,
+            composition=self,
+            crossing=crossing,
+            source_instance=source_instance,
+        )
+        self._session._register_crossing_link(
+            composition=self,
+            crossing=crossing,
+            source_instance=source_instance,
+            result_reference=handle.result_reference,
+            callable_identity=handle.callable_identity,
+        )
+        self._crossing_handle = handle
+        return handle
+
+    def evidence_scope(self) -> CompositionExecutionScope:
+        """Return an explicit provenance-only scope for one crossing use."""
+
+        return CompositionExecutionScope(session=self._session, composition=self)
+
+
+class CompositionExecutionScope:
+    """Ordered observed-use scope; it does not dispatch composition mechanics."""
+
+    def __init__(
+        self,
+        *,
+        session: PathwayBindingSession,
+        composition: BoundComposition,
+    ) -> None:
+        self._session = session
+        self.composition = composition
+        self.scope_id = ""
+        self._events: list[dict[str, Any]] = []
+        self._completed = False
+
+    def __enter__(self) -> Self:
+        self.scope_id = self._session._open_composition_scope(self)
+        return self
+
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> Literal[False]:
+        self._completed = exc_type is None
+        self._session._close_composition_scope(self)
+        return False
+
+    def _record_endpoint(
+        self,
+        *,
+        event_order: int,
+        invocation_index: int,
+        record: InvocationRecord,
+    ) -> None:
+        self._events.append(
+            {
+                "event_order": event_order,
+                "event_kind": "endpoint_stage",
+                "record_index": invocation_index,
+                "record": record,
+            }
+        )
+
+    def _record_crossing(
+        self,
+        *,
+        event_order: int,
+        invocation_index: int,
+        record: CrossingInvocationRecord,
+    ) -> None:
+        self._events.append(
+            {
+                "event_order": event_order,
+                "event_kind": "crossing_callable",
+                "record_index": invocation_index,
+                "record": record,
+            }
+        )
+
+    def exercise_witness(self) -> dict[str, Any] | None:
+        """Return a witness only for complete ordered observed crossing use."""
+
+        if not self._completed:
+            return None
+        contract = self.composition.contract
+        source_binding = self.composition.source_binding
+        target_binding = self.composition.target_binding
+        source_events: list[dict[str, Any]] = []
+        target_events: list[dict[str, Any]] = []
+        for stage_id in contract["from_stage_ids"]:
+            matches = [
+                event
+                for event in self._events
+                if event["event_kind"] == "endpoint_stage"
+                and event["record"].outcome == "returned"
+                and event["record"].binding_id == source_binding.binding_id
+                and event["record"].stage_id == stage_id
+            ]
+            if not matches:
+                return None
+            source_events.append(matches[0])
+        for stage_id in contract["to_stage_ids"]:
+            matches = [
+                event
+                for event in self._events
+                if event["event_kind"] == "endpoint_stage"
+                and event["record"].outcome == "returned"
+                and event["record"].binding_id == target_binding.binding_id
+                and event["record"].stage_id == stage_id
+            ]
+            if not matches:
+                return None
+            target_events.append(matches[0])
+        if max(event["event_order"] for event in source_events) >= min(
+            event["event_order"] for event in target_events
+        ):
+            return None
+
+        crossing_events = [
+            event
+            for event in self._events
+            if event["event_kind"] == "crossing_callable"
+            and event["record"].outcome == "returned"
+            and event["record"].binding_id == self.composition.binding_id
+        ]
+        adapter_required = (
+            contract["composition_status"] == "lawful_with_explicit_adapter"
+        )
+        if adapter_required:
+            if len(crossing_events) != 1:
+                return None
+            crossing_order = crossing_events[0]["event_order"]
+            if not (
+                max(event["event_order"] for event in source_events)
+                < crossing_order
+                < min(event["event_order"] for event in target_events)
+            ):
+                return None
+        elif crossing_events:
+            return None
+
+        return {
+            "crossing_scope_id": self.scope_id,
+            "binding_id": self.composition.binding_id,
+            "composition_id": self.composition.composition_id,
+            "ordering_rule": "all_from_stages_before_crossing_before_all_to_stages"
+            if adapter_required
+            else "all_from_stages_before_all_to_stages",
+            "from_invocation_indices": [
+                event["record_index"] for event in source_events
+            ],
+            "crossing_invocation_indices": [
+                event["record_index"] for event in crossing_events
+            ],
+            "to_invocation_indices": [event["record_index"] for event in target_events],
+            "explicit_adapter_required": adapter_required,
+            "explicit_adapter_observed": bool(crossing_events),
+        }
 
 
 @dataclass(frozen=True)
@@ -866,6 +1351,26 @@ class BindingLock(BindingArtifact):
             )
         return False
 
+    def contains_crossing_link(
+        self,
+        *,
+        binding_id: str,
+        composition_id: str,
+        symbol_id: str,
+    ) -> bool:
+        """Return whether the lock freezes one explicit crossing callable."""
+
+        for binding in self.to_record()["declared_composition_bindings"]:
+            crossing = binding.get("expected_crossing_callable")
+            if (
+                binding.get("binding_id") == binding_id
+                and binding.get("composition_id") == composition_id
+                and isinstance(crossing, dict)
+                and crossing.get("symbol_id") == symbol_id
+            ):
+                return True
+        return False
+
 
 class BindingReceipt(BindingArtifact):
     """Exact post-use receipt linked to one binding lock."""
@@ -885,7 +1390,17 @@ class PathwayBindingSession:
         self._candidates: dict[str, CandidateDeclaration] = {}
         self._alternatives: dict[str, AllowedPathwayAlternatives] = {}
         self._linked_symbols: dict[tuple[str, str], dict[str, Any]] = {}
+        self._linked_instances: dict[tuple[str, str], object | None] = {}
+        self._crossing_links: dict[str, dict[str, Any]] = {}
+        self._crossing_runtime_links: dict[
+            str,
+            tuple[object, CrossingResultReference],
+        ] = {}
         self._invocations: list[InvocationRecord] = []
+        self._crossing_invocations: list[CrossingInvocationRecord] = []
+        self._composition_scopes: list[CompositionExecutionScope] = []
+        self._active_composition_scope: CompositionExecutionScope | None = None
+        self._execution_event_count = 0
         self._candidate_uses: list[CandidateUseRecord] = []
         self._lock: BindingLock | None = None
 
@@ -896,6 +1411,10 @@ class PathwayBindingSession:
     @property
     def invocation_records(self) -> tuple[InvocationRecord, ...]:
         return tuple(self._invocations)
+
+    @property
+    def crossing_invocation_records(self) -> tuple[CrossingInvocationRecord, ...]:
+        return tuple(self._crossing_invocations)
 
     @property
     def candidates(self) -> tuple[CandidateDeclaration, ...]:
@@ -923,6 +1442,7 @@ class PathwayBindingSession:
         stage_id: str,
         composition_ids: tuple[str, ...],
         symbol: SourceSymbolBinding,
+        instance: object | CrossingResultReference | None,
         callable_identity: Mapping[str, Any],
     ) -> None:
         self._require_declaration_phase()
@@ -942,6 +1462,45 @@ class PathwayBindingSession:
             "required_keyword_arguments": dict(symbol.required_keyword_arguments),
             "callable_identity": dict(callable_identity),
         }
+        self._linked_instances[key] = instance
+
+    def _register_crossing_link(
+        self,
+        *,
+        composition: BoundComposition,
+        crossing: CompositionCrossingBinding,
+        source_instance: object,
+        result_reference: CrossingResultReference,
+        callable_identity: Mapping[str, Any],
+    ) -> None:
+        self._require_declaration_phase()
+        if composition.binding_id in self._crossing_links:
+            raise CausalPathwayBindingError(
+                f"composition binding {composition.binding_id!r} already has a crossing"
+            )
+        symbol = crossing.symbol
+        self._crossing_links[composition.binding_id] = {
+            "binding_id": composition.binding_id,
+            "composition_id": composition.composition_id,
+            "crossing_kind": crossing.crossing_kind,
+            "source_binding_id": composition.source_binding.binding_id,
+            "source_pathway_id": crossing.source_pathway_id,
+            "source_argument_name": crossing.source_argument_name,
+            "target_binding_id": composition.target_binding.binding_id,
+            "target_pathway_id": crossing.target_pathway_id,
+            "symbol_id": symbol.symbol_id,
+            "module": symbol.module,
+            "qualified_symbol": symbol.qualified_symbol,
+            "binding_role": symbol.binding_role,
+            "call_kind": symbol.call_kind,
+            "source_path": symbol.source_path,
+            "source_sha256": symbol.source_sha256,
+            "callable_identity": dict(callable_identity),
+        }
+        self._crossing_runtime_links[composition.binding_id] = (
+            source_instance,
+            result_reference,
+        )
 
     def _assert_invocation_allowed(
         self,
@@ -968,7 +1527,100 @@ class PathwayBindingSession:
             )
 
     def _record_invocation(self, record: InvocationRecord) -> None:
+        invocation_index = len(self._invocations)
+        scope = self._active_composition_scope
+        scoped_to_composition = (
+            scope is not None
+            and scope.composition.composition_id in record.composition_ids
+        )
+        record = replace(
+            record,
+            execution_event_order=self._execution_event_count,
+            crossing_scope_id=(
+                scope.scope_id if scope is not None and scoped_to_composition else None
+            ),
+        )
         self._invocations.append(record)
+        if scope is not None and scoped_to_composition:
+            scope._record_endpoint(
+                event_order=self._execution_event_count,
+                invocation_index=invocation_index,
+                record=record,
+            )
+        self._execution_event_count += 1
+
+    def _record_crossing_invocation(
+        self,
+        scope: CompositionExecutionScope,
+        record: CrossingInvocationRecord,
+    ) -> None:
+        invocation_index = len(self._crossing_invocations)
+        record = replace(
+            record,
+            execution_event_order=self._execution_event_count,
+        )
+        self._crossing_invocations.append(record)
+        scope._record_crossing(
+            event_order=self._execution_event_count,
+            invocation_index=invocation_index,
+            record=record,
+        )
+        self._execution_event_count += 1
+
+    def _open_composition_scope(self, scope: CompositionExecutionScope) -> str:
+        if self._phase != "locked" or self._lock is None:
+            raise BindingStateError(
+                "composition evidence scopes require a frozen binding lock"
+            )
+        if self._active_composition_scope is not None:
+            raise BindingStateError("composition evidence scopes cannot overlap")
+        if scope.composition.binding_id not in self._composition_bindings:
+            raise BindingStateError("composition scope is not declared in this session")
+        scope_id = (
+            f"{scope.composition.binding_id}:crossing-scope:"
+            f"{len(self._composition_scopes)}"
+        )
+        self._active_composition_scope = scope
+        self._composition_scopes.append(scope)
+        return scope_id
+
+    def _close_composition_scope(self, scope: CompositionExecutionScope) -> None:
+        if self._active_composition_scope is not scope:
+            raise BindingStateError("composition evidence scope is not active")
+        self._active_composition_scope = None
+
+    def _assert_crossing_invocation_allowed(
+        self,
+        *,
+        composition: BoundComposition,
+        symbol_id: str,
+    ) -> CompositionExecutionScope:
+        if self._phase != "locked" or self._lock is None:
+            raise BindingStateError(
+                "composition crossing calls require a frozen binding lock"
+            )
+        scope = self._active_composition_scope
+        if scope is None or scope.composition is not composition:
+            raise BindingStateError(
+                "composition crossing calls require their explicit evidence scope"
+            )
+        if not self._lock.contains_crossing_link(
+            binding_id=composition.binding_id,
+            composition_id=composition.composition_id,
+            symbol_id=symbol_id,
+        ):
+            raise BindingStateError(
+                f"crossing symbol {symbol_id!r} is absent from the binding lock"
+            )
+        if any(
+            item.binding_id == composition.binding_id
+            for item in self._crossing_invocations
+        ):
+            raise BindingStateError(
+                f"composition {composition.composition_id!r} crossing was already "
+                "invoked"
+            )
+        return scope
 
     def _all_pathway_bindings(self) -> tuple[BoundPathway, ...]:
         endpoints = (
@@ -1020,6 +1672,9 @@ class PathwayBindingSession:
             ],
             "claim_ceiling": contract["claim_ceiling"],
             "blocked_relabels": list(contract["blocked_relabels"]),
+            "expected_crossing_callable": deepcopy(
+                self._crossing_links.get(binding.binding_id)
+            ),
         }
 
     def _derive_claim_envelope(
@@ -1161,12 +1816,72 @@ class PathwayBindingSession:
             "synthesized_chain_claim": False,
         }
 
+    def _validate_explicit_crossing_dataflow(self) -> None:
+        """Bind explicit-adapter endpoints to the adapter's exact object flow."""
+
+        for composition in self._composition_bindings.values():
+            if composition.composition_status != "lawful_with_explicit_adapter":
+                continue
+            try:
+                source_instance, result_reference = self._crossing_runtime_links[
+                    composition.binding_id
+                ]
+            except KeyError as exc:
+                raise BindingStateError(
+                    f"explicit-adapter composition {composition.composition_id!r} "
+                    "lacks a crossing runtime link"
+                ) from exc
+            endpoint_roles = (
+                (
+                    composition.source_binding,
+                    source_instance,
+                    "declared_adapter_source_instance",
+                ),
+                (
+                    composition.target_binding,
+                    result_reference,
+                    "adapter_result_reference",
+                ),
+            )
+            for endpoint, expected_instance, role in endpoint_roles:
+                for key, link in self._linked_symbols.items():
+                    if key[0] != endpoint.binding_id:
+                        continue
+                    if link["call_kind"] != "instance_method":
+                        raise BindingStateError(
+                            f"explicit-adapter endpoint {endpoint.pathway_id!r} "
+                            "requires instance-bound stage symbols"
+                        )
+                    if self._linked_instances.get(key) is not expected_instance:
+                        raise BindingStateError(
+                            f"explicit-adapter endpoint {endpoint.pathway_id!r} "
+                            f"must use its {role.replace('_', ' ')}"
+                        )
+                    link["composition_crossing_instance_role"] = role
+            crossing_link = self._crossing_links[composition.binding_id]
+            crossing_link["source_instance_binding"] = (
+                "exact_declared_adapter_source_instance"
+            )
+            crossing_link["target_instance_binding"] = "exact_adapter_result_reference"
+
     def freeze_lock(self) -> BindingLock:
         """Close declarations and freeze exact symbols before execution."""
 
         self._require_declaration_phase()
         self.authority.assert_current()
         bindings = self._all_pathway_bindings()
+        missing_crossings = sorted(
+            binding.composition_id
+            for binding in self._composition_bindings.values()
+            if binding.composition_status == "lawful_with_explicit_adapter"
+            and binding.binding_id not in self._crossing_links
+        )
+        if missing_crossings:
+            raise BindingStateError(
+                "explicit-adapter compositions require their exact crossing "
+                f"callable before lock: {missing_crossings}"
+            )
+        self._validate_explicit_crossing_dataflow()
         declared_pathway_ids = {binding.pathway_id for binding in bindings}
         for alternatives in self._alternatives.values():
             missing = sorted(set(alternatives.pathway_ids) - declared_pathway_ids)
@@ -1259,37 +1974,33 @@ class PathwayBindingSession:
         self._candidate_uses.append(use)
         return use
 
-    def _exercised_compositions(self) -> tuple[BoundComposition, ...]:
-        successful_stages = {
-            (record.pathway_id, record.stage_id, composition_id)
-            for record in self._invocations
-            if record.outcome == "returned"
-            for composition_id in record.composition_ids
-        }
-        exercised: list[BoundComposition] = []
-        for binding in self._composition_bindings.values():
-            contract = binding.contract
-            required = {
-                *(
-                    (
-                        str(contract["from_pathway_id"]),
-                        str(stage_id),
-                        binding.composition_id,
-                    )
-                    for stage_id in contract["from_stage_ids"]
-                ),
-                *(
-                    (
-                        str(contract["to_pathway_id"]),
-                        str(stage_id),
-                        binding.composition_id,
-                    )
-                    for stage_id in contract["to_stage_ids"]
-                ),
-            }
-            if required <= successful_stages:
-                exercised.append(binding)
-        return tuple(exercised)
+    def _composition_witnesses(self) -> tuple[dict[str, Any], ...]:
+        witnesses: list[dict[str, Any]] = []
+        witnessed_binding_ids: set[str] = set()
+        for scope in self._composition_scopes:
+            witness = scope.exercise_witness()
+            if witness is None:
+                continue
+            binding_id = str(witness["binding_id"])
+            if binding_id in witnessed_binding_ids:
+                raise BindingStateError(
+                    f"composition binding {binding_id!r} has multiple complete "
+                    "execution scopes"
+                )
+            witnessed_binding_ids.add(binding_id)
+            witnesses.append(witness)
+        return tuple(witnesses)
+
+    def _exercised_compositions(
+        self,
+        witnesses: Sequence[Mapping[str, Any]],
+    ) -> tuple[BoundComposition, ...]:
+        witnessed_binding_ids = {str(witness["binding_id"]) for witness in witnesses}
+        return tuple(
+            binding
+            for binding in self._composition_bindings.values()
+            if binding.binding_id in witnessed_binding_ids
+        )
 
     def _actual_pathway_bindings(self) -> tuple[BoundPathway, ...]:
         successful_binding_ids = {
@@ -1443,9 +2154,14 @@ class PathwayBindingSession:
 
         if self._phase != "locked" or self._lock is None:
             raise BindingStateError("a receipt requires one active binding lock")
+        if self._active_composition_scope is not None:
+            raise BindingStateError(
+                "a receipt cannot be sealed inside a composition evidence scope"
+            )
         self.authority.assert_current()
         actual_bindings = self._actual_pathway_bindings()
-        exercised_compositions = self._exercised_compositions()
+        composition_witnesses = self._composition_witnesses()
+        exercised_compositions = self._exercised_compositions(composition_witnesses)
         used_candidate_ids = {item.candidate_id for item in self._candidate_uses}
         used_candidates = tuple(
             self._candidates[candidate_id]
@@ -1487,8 +2203,27 @@ class PathwayBindingSession:
                 "result_type": item.result_type,
                 "error_type": item.error_type,
                 "callable_identity": dict(item.callable_identity),
+                "execution_event_order": item.execution_event_order,
+                "crossing_scope_id": item.crossing_scope_id,
             }
             for index, item in enumerate(self._invocations)
+        ]
+        crossing_uses = [
+            {
+                "crossing_invocation_index": index,
+                "crossing_scope_id": item.crossing_scope_id,
+                "binding_id": item.binding_id,
+                "composition_id": item.composition_id,
+                "symbol_id": item.symbol_id,
+                "source_binding_id": item.source_binding_id,
+                "target_binding_id": item.target_binding_id,
+                "outcome": item.outcome,
+                "result_type": item.result_type,
+                "error_type": item.error_type,
+                "callable_identity": dict(item.callable_identity),
+                "execution_event_order": item.execution_event_order,
+            }
+            for index, item in enumerate(self._crossing_invocations)
         ]
         alternative_uses = [
             {
@@ -1536,6 +2271,8 @@ class PathwayBindingSession:
                 for binding in sorted(actual_bindings, key=lambda item: item.binding_id)
             ],
             "actual_stage_symbol_invocations": actual_uses,
+            "actual_composition_crossing_invocations": crossing_uses,
+            "composition_crossing_witnesses": list(composition_witnesses),
             "allowed_pathway_alternatives_actual_use": alternative_uses,
             "registered_compositions_exercised": [
                 self._composition_record(binding) for binding in exercised_compositions

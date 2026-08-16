@@ -20,7 +20,7 @@ from pygrc.causal_pathways import (
     unbound_execution_classification,
 )
 from pygrc.core import PortGraphBackend
-from pygrc.models import LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
+from pygrc.models import GRC9V3, LGRC9V3, GRC9V3NodeState, GRC9V3State, PortEdge
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -54,6 +54,14 @@ def _two_node_runtime() -> LGRC9V3:
     return LGRC9V3.from_state(state, {"dt": 1.0})
 
 
+def _two_node_grc_runtime() -> GRC9V3:
+    runtime = _two_node_runtime()
+    return GRC9V3(
+        params=runtime.get_params(),
+        state=runtime.get_state().base_state,
+    )
+
+
 class CausalPathwayBindingTest(unittest.TestCase):
     """Validate exact identity, candidate, and callable-link boundaries."""
 
@@ -69,7 +77,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
             self.authority.registry_digest,
         )
         self.assertEqual(
-            "fde515ea4d3337c3ac0a17772e573bb546a9edf5e25f87621a56c24c6851b5ea",
+            "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
             self.authority.binding_map_digest,
         )
         self.assertEqual(
@@ -426,6 +434,54 @@ class CausalPathwayBindingTest(unittest.TestCase):
         credit = transport.symbol("target_credit")
         lock = session.freeze_lock().to_record()
 
+        with composition.evidence_scope():
+            produce(policy="packet_departure_from_feedback_eligibility_policy")
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+            runtime_state = model.get_state()
+            ledger = runtime_state.packet_ledger
+            assert ledger is not None
+            departure = debit(
+                runtime_state.base_state,
+                ledger,
+                queued_departure=ledger.event_queue_records[0],
+            )
+            credit(
+                runtime_state.base_state,
+                departure.ledger,
+                packet_id=departure.packet_record.packet_id,
+            )
+        record = session.build_receipt().to_record()
+
+        self.assertTrue(lock["explicit_producers"])
+        self.assertEqual(1, len(record["registered_compositions_exercised"]))
+        envelope = record["claim_envelope"]
+        self.assertTrue(envelope["contains_producer_cut"])
+        self.assertEqual(
+            "bounded_with_explicit_ownership_cuts",
+            envelope["overall_claim_status"],
+        )
+        self.assertIn("lawful_native", envelope["blocked_claims"])
+        edge = record["pathway_use_graph"]["edges"][0]
+        self.assertEqual("installed_producer", edge["producer_owner"])
+        self.assertEqual("producer_mediated", edge["composition_status"])
+
+    def test_endpoint_co_use_outside_scope_does_not_claim_composition(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-20")
+        producer = composition.source_binding
+        transport = composition.target_binding
+        produce = producer.symbol("feedback_packet_schedule", instance=model)
+        schedule = transport.symbol("packet_schedule", instance=model)
+        debit = transport.symbol("source_debit")
+        credit = transport.symbol("target_credit")
+        session.freeze_lock()
+
         produce(policy="packet_departure_from_feedback_eligibility_policy")
         schedule(
             source_node_id=0,
@@ -448,18 +504,151 @@ class CausalPathwayBindingTest(unittest.TestCase):
         )
         record = session.build_receipt().to_record()
 
-        self.assertTrue(lock["explicit_producers"])
-        self.assertEqual(1, len(record["registered_compositions_exercised"]))
-        envelope = record["claim_envelope"]
-        self.assertTrue(envelope["contains_producer_cut"])
+        self.assertEqual([], record["composition_crossing_witnesses"])
+        self.assertEqual([], record["registered_compositions_exercised"])
+        self.assertEqual([], record["pathway_use_graph"]["edges"])
         self.assertEqual(
-            "bounded_with_explicit_ownership_cuts",
-            envelope["overall_claim_status"],
+            ["composition:CMP-20"],
+            record["declared_but_unused"]["composition_binding_ids"],
         )
-        self.assertIn("lawful_native", envelope["blocked_claims"])
-        edge = record["pathway_use_graph"]["edges"][0]
-        self.assertEqual("installed_producer", edge["producer_owner"])
-        self.assertEqual("producer_mediated", edge["composition_status"])
+
+    def test_out_of_order_composition_scope_does_not_claim_edge(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-20")
+        producer = composition.source_binding
+        transport = composition.target_binding
+        produce = producer.symbol("feedback_packet_schedule", instance=model)
+        schedule = transport.symbol("packet_schedule", instance=model)
+        debit = transport.symbol("source_debit")
+        credit = transport.symbol("target_credit")
+        session.freeze_lock()
+
+        with composition.evidence_scope():
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+            runtime_state = model.get_state()
+            ledger = runtime_state.packet_ledger
+            assert ledger is not None
+            departure = debit(
+                runtime_state.base_state,
+                ledger,
+                queued_departure=ledger.event_queue_records[0],
+            )
+            credit(
+                runtime_state.base_state,
+                departure.ledger,
+                packet_id=departure.packet_record.packet_id,
+            )
+            produce(policy="packet_departure_from_feedback_eligibility_policy")
+        record = session.build_receipt().to_record()
+
+        self.assertEqual([], record["composition_crossing_witnesses"])
+        self.assertEqual([], record["registered_compositions_exercised"])
+        self.assertEqual([], record["pathway_use_graph"]["edges"])
+
+    def test_cmp26_requires_and_records_exact_adapter_crossing(self) -> None:
+        grc_model = _two_node_grc_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-26")
+        front = composition.source_binding
+        birth = composition.target_binding
+        eligible = front.symbol(
+            "front_capacity_growth_eligibility",
+            instance=grc_model,
+        )
+        propagate = front.symbol("front_propagation", instance=grc_model)
+        crossing = composition.crossing(source_instance=grc_model)
+        produce = birth.symbol(
+            "birth_trial_production",
+            instance=crossing.result_reference,
+        )
+        commit = birth.symbol(
+            "birth_trial_commit",
+            instance=crossing.result_reference,
+        )
+        lock = session.freeze_lock().to_record()
+
+        with composition.evidence_scope():
+            eligible()
+            propagate(parent_node_id=0, parent_port_id=2, child_node_id=1)
+            lgrc_model = crossing(grc_model)
+            produce(policy="boundary_birth_trial_policy")
+            commit(
+                parent_node_id=0,
+                parent_port_id=2,
+                outward_flux_pressure=1.0,
+                rng_sample=0.5,
+            )
+        record = session.build_receipt().to_record()
+
+        expected_crossing = lock["declared_composition_bindings"][0][
+            "expected_crossing_callable"
+        ]
+        actual_crossing = record["actual_composition_crossing_invocations"][0]
+        witness = record["composition_crossing_witnesses"][0]
+        self.assertIs(crossing.result_reference.resolve(), lgrc_model)
+        self.assertEqual(
+            expected_crossing["callable_identity"],
+            actual_crossing["callable_identity"],
+        )
+        self.assertEqual("returned", actual_crossing["outcome"])
+        self.assertTrue(witness["explicit_adapter_required"])
+        self.assertTrue(witness["explicit_adapter_observed"])
+        self.assertLess(
+            max(
+                record["actual_stage_symbol_invocations"][index][
+                    "execution_event_order"
+                ]
+                for index in witness["from_invocation_indices"]
+            ),
+            actual_crossing["execution_event_order"],
+        )
+        self.assertLess(
+            actual_crossing["execution_event_order"],
+            min(
+                record["actual_stage_symbol_invocations"][index][
+                    "execution_event_order"
+                ]
+                for index in witness["to_invocation_indices"]
+            ),
+        )
+        self.assertEqual(1, len(record["pathway_use_graph"]["edges"]))
+
+    def test_cmp26_lock_rejects_missing_adapter_crossing(self) -> None:
+        session = PathwayBindingSession(self.authority)
+        session.bind_composition("CMP-26")
+
+        with self.assertRaises(BindingStateError):
+            session.freeze_lock()
+
+    def test_cmp26_rejects_target_endpoints_bound_outside_adapter_flow(self) -> None:
+        grc_model = _two_node_grc_runtime()
+        unrelated_lgrc_model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-26")
+        front = composition.source_binding
+        birth = composition.target_binding
+        front.symbol(
+            "front_capacity_growth_eligibility",
+            instance=grc_model,
+        )
+        front.symbol("front_propagation", instance=grc_model)
+        composition.crossing(source_instance=grc_model)
+        birth.symbol(
+            "birth_trial_production",
+            instance=unrelated_lgrc_model,
+        )
+        birth.symbol(
+            "birth_trial_commit",
+            instance=unrelated_lgrc_model,
+        )
+        with self.assertRaises(BindingStateError):
+            session.freeze_lock()
 
     def test_candidate_use_builds_distinct_edge_and_experimental_envelope(self) -> None:
         model = _two_node_runtime()
