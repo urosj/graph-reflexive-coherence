@@ -865,3 +865,56 @@ git diff --check = passed
 
 These are author-side correction results. R6-B01 is corrected author-side; a
 new full independent audit remains the acceptance gate.
+
+## Round-Seven Disposition And R7-B01 Correction
+
+The round-seven independent audit returned `reject_pending_correction` with one
+new blocker and independently closed R6-B01, including equal branches,
+dependency outside the selected request path, unsupported expressions, and a
+forged live-request digest. R7-B01 showed that the source-absence oracle always
+substituted `None`, even when the pinned callable's actual default was another
+value. A `source_result=1` callable therefore received a false dependency proof
+when both the live source and actual omission selected the same request.
+
+R7-B01 is corrected author-side by defining absence as argument omission under
+the content-addressed callable contract. The reviewed source parameter must
+have a safely reconstructable positional or keyword default. The runtime parses
+that exact default, compares its canonical digest with the loaded callable's
+actual signature default, and evaluates the selected request path using it. A
+required source parameter or a default outside the safe expression subset
+cannot produce a dependency proof.
+
+The raw proof is versioned to `reviewed_candidate_source_dependency_v2`. It
+retains the established proof kind and now freezes both
+`source_parameter_default_digest` and `source_omitted_request_digest`. The live
+request must match `source_present_request_digest`, and the present and omitted
+request digests must differ. The checker independently derives the pinned AST
+default and the same omitted request before accepting the proof or edge.
+
+Consequently, an honest callable with `default=None` whose selected request
+changes under omission still qualifies. The exact `default=1` Round 7
+falsifier, required parameters, unsafe defaults, equal branches, and source
+dependencies outside the selected request all fail closed.
+
+## R7-B01 Author-Side Verification
+
+The supplied round-seven harness passes 47 cases with no failures or errors
+against the corrected runtime and checker. Project controls cover honest
+default-based omission, the exact non-null-default falsifier, required and
+unsupported defaults, and all retained prior-round controls.
+
+```text
+supplied independent round-seven harness = 47 passed, 0 failed, 0 errors
+.venv focused binding/conformance/I116 tests = 97 passed
+.venv full unittest discovery = 1,308 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed Python surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall = passed
+git diff --check = passed
+```
+
+These are author-side correction results. R7-B01 is corrected author-side; a
+new full independent audit remains the acceptance gate.

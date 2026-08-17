@@ -65,8 +65,9 @@ RULES = [
             "conflicting candidates require an independently reviewed structural "
             "distinction, a non-no-op executable result, and exact source-dependent "
             "flow through the frozen source-result parameter to the candidate "
-            "result and target request in the externally trusted raw transcript, "
-            "plus every structured block."
+            "result and target request, using its frozen callable default for the "
+            "omission counterfactual, in the externally trusted raw transcript, plus "
+            "every structured block."
         ),
     ),
     (
@@ -954,8 +955,9 @@ def _candidate_request_flow_issue(value: Any) -> str | None:
         "proof_kind",
         "source_result_parameter",
         "candidate_result_request_path",
+        "source_parameter_default_digest",
         "source_present_request_digest",
-        "source_absent_request_digest",
+        "source_omitted_request_digest",
     }
     if (
         not isinstance(value, Mapping)
@@ -999,7 +1001,7 @@ def _candidate_request_flow_issue(value: Any) -> str | None:
         or not isinstance(dependency, Mapping)
         or set(dependency) != dependency_fields
         or dependency.get("schema_version")
-        != "reviewed_candidate_source_dependency_v1"
+        != "reviewed_candidate_source_dependency_v2"
         or dependency.get("proof_kind")
         != "source_presence_changes_exact_target_request"
         or re.fullmatch(
@@ -1012,14 +1014,15 @@ def _candidate_request_flow_issue(value: Any) -> str | None:
             re.fullmatch(r"[0-9a-f]{64}", str(dependency.get(field, "")))
             is None
             for field in (
+                "source_parameter_default_digest",
                 "source_present_request_digest",
-                "source_absent_request_digest",
+                "source_omitted_request_digest",
             )
         )
         or dependency.get("source_present_request_digest")
         != value.get("candidate_result_request_digest")
         or dependency.get("source_present_request_digest")
-        == dependency.get("source_absent_request_digest")
+        == dependency.get("source_omitted_request_digest")
     ):
         return "candidate target-request flow is incomplete or invalid"
     return None
@@ -1122,7 +1125,17 @@ def _function_returns_distinct_nonempty_mapping(
         parameter_names.add(definition.args.vararg.arg)
     if definition.args.kwarg is not None:
         parameter_names.add(definition.args.kwarg.arg)
+    try:
+        source_default = _safe_source_parameter_default(
+            definition.args,
+            source_result_parameter=source_result_parameter,
+        )
+        canonical_digest(source_default)
+    except (ArithmeticError, TypeError, ValueError):
+        return False
     return (
+        not definition.decorator_list
+        and
         len(executable_body) == 1
         and isinstance(executable_body[0], ast.Return)
         and isinstance(executable_body[0].value, ast.Dict)
@@ -1221,6 +1234,42 @@ def _safe_source_expression(
     raise ValueError
 
 
+def _safe_source_parameter_default(
+    arguments: ast.arguments,
+    *,
+    source_result_parameter: str,
+) -> Any:
+    """Independently derive the default used by source-argument omission."""
+
+    positional = [*arguments.posonlyargs, *arguments.args]
+    default_offset = len(positional) - len(arguments.defaults)
+    for index, argument in enumerate(positional):
+        if argument.arg != source_result_parameter:
+            continue
+        if index < default_offset:
+            raise ValueError
+        return _safe_source_expression(
+            arguments.defaults[index - default_offset],
+            source_result_parameter="",
+            source_value=None,
+        )
+    for argument, default in zip(
+        arguments.kwonlyargs,
+        arguments.kw_defaults,
+        strict=True,
+    ):
+        if argument.arg != source_result_parameter:
+            continue
+        if default is None:
+            raise ValueError
+        return _safe_source_expression(
+            default,
+            source_result_parameter="",
+            source_value=None,
+        )
+    raise ValueError
+
+
 def _source_dependency_proof(
     definition: ast.FunctionDef,
     *,
@@ -1255,35 +1304,41 @@ def _source_dependency_proof(
         expression = matches[0]
     source_present = object()
     try:
+        source_default = _safe_source_parameter_default(
+            definition.args,
+            source_result_parameter=source_result_parameter,
+        )
+        source_default_digest = canonical_digest(source_default)
         present = _safe_source_expression(
             expression,
             source_result_parameter=source_result_parameter,
             source_value=source_present,
         )
-        absent = _safe_source_expression(
+        omitted = _safe_source_expression(
             expression,
             source_result_parameter=source_result_parameter,
-            source_value=None,
+            source_value=source_default,
         )
         present_digest = canonical_digest(present)
-        absent_digest = canonical_digest(absent)
+        omitted_digest = canonical_digest(omitted)
     except (ArithmeticError, TypeError, ValueError):
         return None
     if (
         not isinstance(present, dict)
         or not present
-        or not isinstance(absent, dict)
-        or not absent
-        or present_digest == absent_digest
+        or not isinstance(omitted, dict)
+        or not omitted
+        or present_digest == omitted_digest
     ):
         return None
     return {
-        "schema_version": "reviewed_candidate_source_dependency_v1",
+        "schema_version": "reviewed_candidate_source_dependency_v2",
         "proof_kind": "source_presence_changes_exact_target_request",
         "source_result_parameter": source_result_parameter,
         "candidate_result_request_path": request_path,
+        "source_parameter_default_digest": source_default_digest,
         "source_present_request_digest": present_digest,
-        "source_absent_request_digest": absent_digest,
+        "source_omitted_request_digest": omitted_digest,
     }
 
 

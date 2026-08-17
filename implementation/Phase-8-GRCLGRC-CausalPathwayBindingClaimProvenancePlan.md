@@ -218,6 +218,19 @@ BCF-019 must validate that record and independently reconstruct it from the
 content-addressed executable. Equal-branch and algebraically neutral source
 expressions must not retain an experimental edge.
 
+## Round-Seven R7-B01 Correction
+
+Define source absence by the pinned callable's real omission contract. Require
+the reviewed parameter to have a safely reconstructable default, verify that
+default against the loaded signature, and use it for the selected request-path
+counterfactual. Required parameters and unsupported defaults fail closed.
+
+Version the raw dependency proof to freeze the default digest and the exact
+source-present and source-omitted request digests. The checker must independently
+reconstruct the default and omitted request from content-addressed source. A
+non-`None` default that produces the same request as the live source must not
+retain a reviewed candidate edge.
+
 ## Maximum Claim
 
 If Iterations 112-116 pass, the layer may claim versioned pathway binding and

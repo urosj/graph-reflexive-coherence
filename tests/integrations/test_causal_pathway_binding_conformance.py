@@ -1129,6 +1129,52 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
 
         self.assertIsNone(proof)
 
+    def test_round7_checker_honors_frozen_source_default(self) -> None:
+        evidence_path = ROOT / (
+            "tests/fixtures/"
+            "causal_pathway_candidate_cmp05_nonnull_default_evidence.json"
+        )
+        evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+        executable = evidence["executable_symbol"]
+        source = ROOT / executable["source_path"]
+        tree = ast.parse(source.read_text(encoding="utf-8"))
+        definition = next(
+            node
+            for node in tree.body
+            if isinstance(node, ast.FunctionDef)
+            and node.name == executable["qualified_symbol"]
+        )
+
+        proof = self.checker._source_dependency_proof(
+            definition,
+            source_result_parameter="diagnostic_result",
+            request_path=["packet_schedule_arguments"],
+        )
+
+        self.assertIsNone(proof)
+
+    def test_round7_checker_rejects_missing_or_unsafe_source_default(self) -> None:
+        sources = (
+            """
+def reviewed(source_result):
+    return {"amount": 0.25 if source_result is not None else 0.0}
+""",
+            """
+def reviewed(source_result=object()):
+    return {"amount": 0.25 if source_result is not None else 0.0}
+""",
+        )
+        for source in sources:
+            with self.subTest(source=source.strip().splitlines()[0]):
+                definition = ast.parse(source).body[0]
+                self.assertIsInstance(definition, ast.FunctionDef)
+                proof = self.checker._source_dependency_proof(
+                    definition,
+                    source_result_parameter="source_result",
+                    request_path=[],
+                )
+                self.assertIsNone(proof)
+
     def test_self_issued_invalid_pair_review_is_not_a_trust_root(self) -> None:
         mutated = self.checker.load_bundle(
             ROOT,

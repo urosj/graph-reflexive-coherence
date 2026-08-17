@@ -298,6 +298,89 @@ def _safe_source_expression(
     raise ValueError("unsupported reviewed source-dependency expression")
 
 
+def _safe_source_parameter_default(
+    arguments: ast.arguments,
+    *,
+    source_result_parameter: str,
+) -> Any:
+    """Return the frozen safe default used when the source argument is omitted."""
+
+    positional = [*arguments.posonlyargs, *arguments.args]
+    default_offset = len(positional) - len(arguments.defaults)
+    for index, argument in enumerate(positional):
+        if argument.arg != source_result_parameter:
+            continue
+        if index < default_offset:
+            raise ValueError("reviewed source parameter has no omission default")
+        return _safe_source_expression(
+            arguments.defaults[index - default_offset],
+            source_result_parameter="",
+            source_value=None,
+        )
+    for argument, default in zip(
+        arguments.kwonlyargs,
+        arguments.kw_defaults,
+        strict=True,
+    ):
+        if argument.arg != source_result_parameter:
+            continue
+        if default is None:
+            raise ValueError("reviewed source parameter has no omission default")
+        return _safe_source_expression(
+            default,
+            source_result_parameter="",
+            source_value=None,
+        )
+    raise ValueError("reviewed source parameter is not a fixed named parameter")
+
+
+def _source_parameter_default_contract(
+    definition: Callable[..., Any],
+    *,
+    source_result_parameter: str,
+) -> tuple[Any, str] | None:
+    """Match one safe source default to the loaded callable signature."""
+
+    try:
+        tree = ast.parse(textwrap.dedent(inspect.getsource(definition)))
+    except (OSError, TypeError, SyntaxError):
+        return None
+    definitions = [node for node in tree.body if isinstance(node, ast.FunctionDef)]
+    if len(definitions) != 1 or definitions[0].decorator_list:
+        return None
+    try:
+        source_default = _safe_source_parameter_default(
+            definitions[0].args,
+            source_result_parameter=source_result_parameter,
+        )
+        runtime_parameter = inspect.signature(definition).parameters.get(
+            source_result_parameter
+        )
+        if (
+            runtime_parameter is None
+            or runtime_parameter.kind
+            not in {
+                inspect.Parameter.POSITIONAL_ONLY,
+                inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                inspect.Parameter.KEYWORD_ONLY,
+            }
+            or runtime_parameter.default is inspect.Parameter.empty
+        ):
+            return None
+        source_default_payload = _candidate_request_payload(source_default)
+        runtime_default_payload = _candidate_request_payload(
+            runtime_parameter.default
+        )
+        source_default_digest = _canonical_value_digest(source_default_payload)
+        if source_default_digest != _canonical_value_digest(
+            runtime_default_payload
+        ):
+            return None
+    except (ArithmeticError, BindingStateError, TypeError, ValueError):
+        return None
+    return source_default, source_default_digest
+
+
 def _source_dependent_request_proof(
     definition: Callable[..., Any],
     *,
@@ -313,7 +396,8 @@ def _source_dependent_request_proof(
     definitions = [node for node in tree.body if isinstance(node, ast.FunctionDef)]
     if len(definitions) != 1:
         return None
-    body = list(definitions[0].body)
+    parsed_definition = definitions[0]
+    body = list(parsed_definition.body)
     if (
         body
         and isinstance(body[0], ast.Expr)
@@ -342,38 +426,46 @@ def _source_dependent_request_proof(
             return None
         request_expression = matches[0]
     try:
+        default_contract = _source_parameter_default_contract(
+            definition,
+            source_result_parameter=source_result_parameter,
+        )
+        if default_contract is None:
+            return None
+        source_default, source_default_digest = default_contract
         present = _safe_source_expression(
             request_expression,
             source_result_parameter=source_result_parameter,
             source_value=_SOURCE_PRESENT,
         )
-        absent = _safe_source_expression(
+        omitted = _safe_source_expression(
             request_expression,
             source_result_parameter=source_result_parameter,
-            source_value=None,
+            source_value=source_default,
         )
         present_payload = _candidate_request_payload(present)
-        absent_payload = _candidate_request_payload(absent)
+        omitted_payload = _candidate_request_payload(omitted)
     except (ArithmeticError, BindingStateError, TypeError, ValueError):
         return None
     if (
         not isinstance(present_payload, dict)
         or not present_payload
-        or not isinstance(absent_payload, dict)
-        or not absent_payload
+        or not isinstance(omitted_payload, dict)
+        or not omitted_payload
     ):
         return None
     present_digest = _canonical_value_digest(present_payload)
-    absent_digest = _canonical_value_digest(absent_payload)
-    if present_digest == absent_digest:
+    omitted_digest = _canonical_value_digest(omitted_payload)
+    if present_digest == omitted_digest:
         return None
     return {
-        "schema_version": "reviewed_candidate_source_dependency_v1",
+        "schema_version": "reviewed_candidate_source_dependency_v2",
         "proof_kind": "source_presence_changes_exact_target_request",
         "source_result_parameter": source_result_parameter,
         "candidate_result_request_path": list(request_path),
+        "source_parameter_default_digest": source_default_digest,
         "source_present_request_digest": present_digest,
-        "source_absent_request_digest": absent_digest,
+        "source_omitted_request_digest": omitted_digest,
     }
 
 
@@ -2803,6 +2895,20 @@ class VerifiedCandidateMechanism:
             raise InvalidCandidateError(
                 "reviewed candidate executable lacks its frozen source-result "
                 "parameter"
+            )
+        if (
+            relation_review is not None
+            and _source_parameter_default_contract(
+                definition,
+                source_result_parameter=(
+                    relation_review.source_result_parameter
+                ),
+            )
+            is None
+        ):
+            raise InvalidCandidateError(
+                "reviewed candidate source-result parameter requires one safe "
+                "frozen omission default"
             )
         self._session = session
         self._candidate_id = candidate_id

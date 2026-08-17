@@ -248,3 +248,21 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Cover honest flow and the exact equal-branch Round 6 falsifier at both
       runtime and checker surfaces.
 - [ ] Re-run a new full independent adversarial audit after R6-B01 closes.
+
+## Round-Seven Independent Audit Correction
+
+- [x] Record R6-B01 as independently closed and R7-B01 as the remaining
+      omission-oracle blocker.
+- [x] Replace synthetic `None` absence with the reviewed parameter's exact
+      frozen callable default.
+- [x] Require the default to be safely reconstructable and to match the loaded
+      callable signature; fail closed for required or unsupported defaults.
+- [x] Version the raw proof and freeze the default, source-present request, and
+      source-omitted request digests.
+- [x] Require the live request to match the present digest and differ from the
+      real omitted-request digest.
+- [x] Make the checker independently reconstruct the frozen default and omitted
+      request from content-addressed source.
+- [x] Cover honest `default=None`, exact `default=1`, missing-default, and
+      unsafe-default controls while retaining all Round 6 pressures.
+- [ ] Re-run a new full independent adversarial audit after R7-B01 closes.

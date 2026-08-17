@@ -7,7 +7,7 @@
     "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
     "qualified_symbol": "diagnostic_to_packet_candidate_crossing",
     "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
-    "source_sha256": "6bf458987e753ecec34ebbc30932903ef7d1b3bfc0c944e7844ddfb02b639a4e",
+    "source_sha256": "bd5b96b6b204535f88d07ee70cb4cd5614662c66bede0e979899f5866b181125",
     "symbol_id": "candidate-mechanism:fixture.distinct_diagnostic_packet_adapter"
   },
   "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",

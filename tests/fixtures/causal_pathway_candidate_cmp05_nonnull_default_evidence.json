@@ -5,14 +5,14 @@
     "binding_role": "candidate_mechanism_entrypoint",
     "call_kind": "module_function",
     "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
-    "qualified_symbol": "synonym_noop_candidate_crossing",
+    "qualified_symbol": "diagnostic_to_packet_candidate_nonnull_default",
     "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
     "source_sha256": "bd5b96b6b204535f88d07ee70cb4cd5614662c66bede0e979899f5866b181125",
-    "symbol_id": "candidate-mechanism:fixture.synonym_noop_diagnostic_packet"
+    "symbol_id": "candidate-mechanism:fixture.nonnull_default_diagnostic_packet"
   },
-  "mechanism_id": "fixture.synonym_noop_diagnostic_packet",
+  "mechanism_id": "fixture.nonnull_default_diagnostic_packet",
   "proposed_source_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
   "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
   "schema_version": "causal_pathway_candidate_mechanism_evidence_v2",
-  "supported_relation": "forensic reconstruction dictates routine packet conduct"
+  "supported_relation": "new externally owned diagnostic packet adapter"
 }

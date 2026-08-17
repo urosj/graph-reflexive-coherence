@@ -162,6 +162,16 @@ independently reconstructs the same counterfactual proof from source. Equal
 branches, algebraically equivalent results, and unsupported expression forms
 fail closed and cannot witness a reviewed candidate edge.
 
+R7-B01 makes the absence side of that counterfactual match the pinned callable.
+The reviewed source parameter must have a safely reconstructable default; the
+runtime verifies its digest against the loaded signature and uses that value to
+derive the omitted-argument request. The v2 raw proof freezes the default,
+present-request, and omitted-request digests. The checker independently parses
+the same default from content-addressed source. A non-`None` default that makes
+omission equivalent to the live source therefore yields equal request digests
+and no reviewed candidate edge. Required parameters and unsupported defaults
+also fail closed rather than treating call arity as causal dependence.
+
 ## Complete Claim-Envelope Canonicalization
 
 The binding checker independently derives the entire pre-execution and receipt

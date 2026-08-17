@@ -62,6 +62,9 @@ CMP05_SYNONYM_NOOP_EVIDENCE_PATH = Path(
 CMP05_SOURCE_NOOP_EVIDENCE_PATH = Path(
     "tests/fixtures/causal_pathway_candidate_cmp05_source_noop_evidence.json"
 )
+CMP05_NONNULL_DEFAULT_EVIDENCE_PATH = Path(
+    "tests/fixtures/causal_pathway_candidate_cmp05_nonnull_default_evidence.json"
+)
 
 
 def _candidate_mechanism_evidence() -> dict[str, str]:
@@ -97,6 +100,15 @@ def _cmp05_source_noop_mechanism_evidence() -> dict[str, str]:
         "mechanism_id": "fixture.source_noop_diagnostic_packet",
         "path": CMP05_SOURCE_NOOP_EVIDENCE_PATH.as_posix(),
         "sha256": sha256_file(ROOT / CMP05_SOURCE_NOOP_EVIDENCE_PATH),
+    }
+
+
+def _cmp05_nonnull_default_mechanism_evidence() -> dict[str, str]:
+    return {
+        "evidence_kind": "executable_candidate_mechanism",
+        "mechanism_id": "fixture.nonnull_default_diagnostic_packet",
+        "path": CMP05_NONNULL_DEFAULT_EVIDENCE_PATH.as_posix(),
+        "sha256": sha256_file(ROOT / CMP05_NONNULL_DEFAULT_EVIDENCE_PATH),
     }
 
 
@@ -867,6 +879,10 @@ class CausalPathwayBindingTest(unittest.TestCase):
         ]
         dependency = request_flow["source_dependency_proof"]
         self.assertEqual(
+            "reviewed_candidate_source_dependency_v2",
+            dependency["schema_version"],
+        )
+        self.assertEqual(
             "source_presence_changes_exact_target_request",
             dependency["proof_kind"],
         )
@@ -876,7 +892,11 @@ class CausalPathwayBindingTest(unittest.TestCase):
         )
         self.assertNotEqual(
             dependency["source_present_request_digest"],
-            dependency["source_absent_request_digest"],
+            dependency["source_omitted_request_digest"],
+        )
+        self.assertRegex(
+            dependency["source_parameter_default_digest"],
+            r"^[0-9a-f]{64}$",
         )
 
     def test_reviewed_cmp05_candidate_result_must_supply_target_request(
@@ -1038,6 +1058,56 @@ class CausalPathwayBindingTest(unittest.TestCase):
             diagnostic_result = prepare(model)
             request = crossing(diagnostic_result)
             schedule(**request["packet_schedule_arguments"])
+
+        self.assertIsNone(session.invocation_records[-1].candidate_request_flow)
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "exactly one completed evidence scope",
+        ):
+            session.record_candidate_use(candidate.candidate_id)
+
+    def test_reviewed_cmp05_source_omission_uses_frozen_default(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        candidate_id = "experiment.fixture.cmp05_nonnull_source_default"
+        proposed_relation = "new externally owned diagnostic packet adapter"
+        mechanism_evidence = _cmp05_nonnull_default_mechanism_evidence()
+        relation_review, trusted_review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=proposed_relation,
+            mechanism_evidence=mechanism_evidence,
+        )
+        diagnostic = session.bind_pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            stage_ids=("diagnostic_model_construction",),
+        )
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        schedule = packet.symbol("packet_schedule", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id=candidate_id,
+            candidate_kind="composition",
+            purpose="Reject a source whose omission uses an equivalent default.",
+            owner="fixture",
+            consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
+            proposed_source_pathway_id=diagnostic.pathway_id,
+            proposed_target_pathway_id=packet.pathway_id,
+            proposed_relation=proposed_relation,
+            evidence_owner="fixture",
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=trusted_review_digest,
+        )
+        crossing = candidate.mechanism()
+        session.freeze_lock()
+
+        with candidate.evidence_scope():
+            diagnostic_result = prepare(model)
+            request_with_source = crossing(diagnostic_result)
+            schedule(**request_with_source["packet_schedule_arguments"])
 
         self.assertIsNone(session.invocation_records[-1].candidate_request_flow)
         with self.assertRaisesRegex(

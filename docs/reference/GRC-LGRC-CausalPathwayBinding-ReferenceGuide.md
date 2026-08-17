@@ -403,6 +403,15 @@ records this counterfactual proof, while the checker independently derives and
 compares it. A conditional whose two branches are equal is therefore a source
 mention, not source-to-request flow, and cannot support the experimental edge.
 
+R7-B01 corrects the meaning of the absent-source evaluation. It now uses the
+reviewed parameter's actual frozen default rather than assuming `None`. The
+runtime requires a safely reconstructable default and checks its digest against
+the loaded callable signature. `reviewed_candidate_source_dependency_v2`
+records that default digest together with the source-present and truly omitted
+request digests. The checker independently reconstructs all three values from
+the pinned source. If `source_result=1` and both a supplied source and omission
+produce the same request, no dependency proof or candidate edge is available.
+
 The round-two R2-B03 correction makes the claim envelope an independently
 reconstructed projection rather than a trusted receipt summary. BCF-015 builds
 the complete expected lock envelope from declared bindings and current
