@@ -266,55 +266,172 @@ roughly 6.3-KLOC module with dozens of top-level classes, a state-heavy
 attributes and methods. The public surface in `pygrc.causal_pathways` is clean;
 Iteration 118 makes the implementation boundary match that surface.
 
+This is a refactor and usability tranche, not an architectural correction.
+The accepted binder already links declared causal identity to exact executable
+use, evidence provenance, and a bounded claim without selecting mechanisms for
+the consumer or becoming a generic causal-work executor. Preserve that
+mechanism-specific execution model and its explicit
+`semantic_selection_performed_by_binder = false` boundary.
+
+The documentation must keep the binder's observability boundary prominent. A
+binding receipt certifies the causal operations represented in that receipt
+under `bound_invocations_only`; it is not proof that no unbound operation or
+other influence affected the containing process or experiment. A consumer
+making a whole-experiment causal claim must establish its own closed evidence
+boundary around the receipts. Iteration 118 must not present the binder as a
+process-wide causal monitor.
+
 Replace the monolith with an internal package organized around explicit
 responsibilities:
 
 ```text
 pygrc/causal_pathways/binding/
   __init__.py   compatibility exports for the existing binding module surface
-  authority.py  accepted authorities, declarations, reviews, and source maps
   identity.py   callable/source verification and canonical identity helpers
   effects.py    effect contracts, classification, and evidence records
-  scopes.py     bound handles and execution/selection/candidate scopes
-  artifacts.py lock, receipt, invocation, and use artifact records
+  authority.py  accepted authority loading, admission, and staleness
+  candidates.py candidate declarations, reviews, proofs, and witnesses
+  scopes.py     runtime evidence scopes and invocation records
+  artifacts.py pure lock, receipt, graph, and claim-envelope construction
   session.py    orchestration and mutation ownership
 ```
 
-Keep `pygrc.causal_pathways.__init__` byte-for-byte compatible at the import
-surface, including the existing public names. Preserve compatibility for code
-that imports `pygrc.causal_pathways.binding`. Internal modules may move classes
-and helpers, but digest field names, schema versions, canonical ordering,
-serialized values, and lock/receipt/conformance bytes must not change.
+Candidate continuation is a first-class internal subsystem, distinct from the
+ordinary admitted-binding path. `candidates.py` owns candidate declarations,
+mechanism evidence, relation review, verified candidate mechanisms, request
+provenance, invalid-relabel constraints, exact source-result consumption,
+omission counterfactuals, type-preserving defaults, and candidate execution
+witnesses. This keeps the unusually defensive BCF-011 boundary concentrated in
+the exceptional candidate path instead of redistributing it across effects,
+scopes, and session orchestration.
+
+Freeze the permitted dependency direction rather than requiring only generic
+acyclicity. In dependency-provider-first order, the layers are:
+
+```text
+identity
+  -> effects
+  -> authority
+  -> candidates
+  -> scopes
+  -> artifacts
+  -> session
+```
+
+Each module may import only preceding layers in that list; dependencies may
+skip layers. In particular, `identity.py` should use only the standard library
+where practical;
+`effects.py` may depend on identity; `authority.py` on identity and effects;
+`candidates.py` on identity, effects, and authority; `scopes.py` on identity,
+effects, candidates, and narrow protocols; `artifacts.py` on authority,
+effects, candidates, and scopes; and `session.py` may orchestrate all preceding
+modules. `scopes.py` must never depend on the concrete
+`PathwayBindingSession`. A small private `protocols.py` is permitted only if
+actual dependency pressure requires it, not as a default extra layer.
+
+Assign the following cohesive responsibilities:
+
+- `identity.py`: canonical digests, source-file verification,
+  `CallableIdentity`, `SourceSymbolBinding`, `CompositionCrossingBinding`,
+  callable resolution/fingerprinting, and source-manifest semantics, without
+  claim interpretation.
+- `effects.py`: `EffectOutcomeContract`, return/effect classification, effect
+  evidence, effect-level runtime object descriptors, and only those
+  source-dependency primitives that are not candidate-specific.
+- `authority.py`: `CausalPathwayAuthority`, `BindingAcceptanceAnchor`, registry,
+  matrix, and binding-map loading, staleness, admission lookup, and accepted
+  effect contracts. Loaded authority state should remain mostly immutable.
+- `candidates.py`: the complete candidate subsystem described above, kept
+  separable from ordinary admitted binding.
+- `scopes.py`: invocation, crossing, and candidate invocation records;
+  composition, alternative-selection, and candidate execution scopes; and
+  crossing and flow-derived references. Scopes depend on a narrow recorder or
+  provenance protocol rather than the session implementation.
+- `artifacts.py`: near-pure construction and canonicalization of binding locks,
+  receipts, pathway-use graphs, claim envelopes, execution transcript digests,
+  and canonical serialization from immutable input records.
+- `session.py`: orchestration only, including phase transitions, declarations,
+  link registration, active scopes, runtime ledgers, binding handles, freeze,
+  and seal. Bound handles and verified callables may live here, but effect,
+  authority, and artifact-derivation algorithms may not.
+
+Keep `pygrc.causal_pathways` and `pygrc.causal_pathways.binding` behaviorally
+compatible. Before the refactor, freeze public symbol names, import paths,
+class and function signatures, method signatures, exception types and
+important exception conditions, context-manager behavior, and return object
+types in a machine-readable `I118PublicAPICompatibilityFreeze.json` or
+equivalent. Internal module paths are explicitly non-contractual. Digest field
+names, schema versions, canonical ordering, serialized values, and
+lock/receipt/conformance bytes must not change.
 
 Reduce nominal encapsulation by introducing explicit internal collaborator
 interfaces. `PathwayBindingSession` remains the public orchestration object but
 must not remain a bag of unrelated mutable fields: group runtime ledgers and
-scope state behind cohesive owners. Bound pathways, compositions, candidate
-scopes, and verified callables should call narrow collaborator methods instead
-of reading another object's raw `_session`, `_binding_id`, or mutable ledgers.
-Avoid circular imports through dependency direction, protocols, and
-type-check-only imports rather than restoring the monolith through re-export
-cycles.
+scope, object-flow identity, and artifact state behind cohesive owners. Bound
+pathways, compositions, candidate scopes, and verified callables should call
+narrow collaborator methods instead of reading another object's raw
+`_session`, `_binding_id`, or mutable ledgers. Enforce the dependency DAG,
+including the absence of concrete session dependencies from scope, effect, and
+artifact collaborators, with an architecture test.
+
+Freeze before-refactor canonical bytes and digests for the full practical
+accepted I115/I116 binder fixture corpus, not merely representative outputs.
+The corpus must cover at least native pathways; producer, adapter, and
+diagnostic compositions; dynamic choice; candidate pathways and compositions;
+reviewed invalid-pair candidates; unused declarations; non-qualifying returned
+effects; raised effects; and multi-edge graphs. Identical frozen inputs must
+produce byte-identical locks, receipts, conformance outputs, negative-control
+outputs, schemas, fields, ordering, and digests after the refactor. Bound
+executions must also preserve runtime state, results, return types, exception
+behavior, and context-manager behavior.
+
+Keep the independent binding conformance checker epistemically independent.
+It may share schemas or constants where harmless, but it must not import
+load-bearing semantic derivation or validation implementations from the new
+binder package for binding semantics digests, source manifests, effect
+contracts, candidate source dependencies, composition dataflow, claim
+envelopes, witnesses, or claim qualification.
 
 Add runnable binder examples for an admitted pathway, a registered
 composition, an explicit dynamic choice, and an unregistered candidate with
-conservative claim handling. Add a user-and-agent guide covering selection,
-authority loading, declaration, linking, locking, execution scopes, sealing,
-conformance, failure interpretation, and safe extension practices. Revise the
-binding reference guide so its public API and artifact-field descriptions map
-to the modular implementation without exposing internal layout as contract.
+conservative claim handling. Add a fifth example contrasting valid direct
+unbound use, which is deliberately supported but not claim-qualified, with a
+bound evidence-bearing invocation.
+
+Build the user-and-agent guide around the conceptual sequence `select -> bind
+-> lock -> execute -> seal -> validate`: selection remains consumer-owned;
+binding links the selected identity to exact mechanism-specific symbols; lock
+freezes expected causal architecture and claim ceiling; execution uses verified
+handles; seal derives actual use, witnesses, graph, and claim envelope; and
+validation independently checks the receipt against authority and trust
+anchors. Present `declare candidate -> experimental provenance` as the path
+when no relation is admitted, never invention of a native path identifier.
+
+Revise the stable binding reference so its public API, behaviors, and exact
+artifact-field descriptions map to the modular implementation without making
+internal paths contractual. Describe the final candidate contract directly;
+keep historical R4-B01 through R8-B01 correction chronology in implementation
+and audit evidence rather than requiring it in the user-facing guide.
 
 Update every repository-level discovery surface affected by those additions,
 including the root README, `docs/README.md`, `docs/reference/README.md`, the
 claim-boundary index, `examples/README.md`, `specs/README.md`, and any more
 specific example/reference indexes introduced during implementation.
 
-Acceptance requires import-compatibility tests, an architectural dependency
-test, and before/after golden-byte comparisons for representative locks,
-receipts, conformance results, and negative controls. The 1,315-test project
-suite, the accepted 68-case independent semantic gate, both 20-rule
-conformance policies, examples, Ruff, mypy, compileall, and diff checks must
-pass before Iteration 118 can close.
+Acceptance requires the public behavioral compatibility freeze, the internal
+dependency test, exhaustive practical-corpus golden-byte comparison, and
+before/after runtime-state and result comparison. Replay mutation falsifiers
+for erased producer/adapter owners, source-symbol substitution, candidate
+native promotion, diagnostic-to-behavioral and configured-to-formed relabels,
+unsupported composition admission, a second dynamic branch, claim-envelope
+widening, endpoint co-use without composition flow, hard-coded candidate target
+requests, source-present-but-unused candidates, and stale source content. Each
+relevant independent gate must still fail closed.
+
+The 1,315-test project suite, accepted 68-case independent semantic gate, both
+20-rule conformance policies, all examples, Ruff, mypy, compileall, and diff
+checks must pass before Iteration 118 can close. Closure requires zero semantic,
+artifact, or runtime differences attributable to the refactor.
 
 ## Maximum Claim
 

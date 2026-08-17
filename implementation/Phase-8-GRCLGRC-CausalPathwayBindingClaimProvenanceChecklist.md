@@ -300,32 +300,80 @@ Checked Iteration 112-117 items retain their historical acceptance meaning.
 
 ## Iteration 118: Modular Binder Architecture And Guidance
 
-- [ ] Freeze before-refactor canonical bytes and digests for representative
-      locks, receipts, conformance outputs, and negative controls.
+- [ ] Treat I118 as a refactor and usability tranche; preserve the accepted
+      mechanism-specific architecture and
+      `semantic_selection_performed_by_binder = false` boundary.
+- [ ] State prominently that `bound_invocations_only` receipts certify only
+      represented bound operations, not whole-run causal closure or the absence
+      of unbound influences.
+- [ ] Freeze before-refactor public symbol names, import paths, class/function
+      and method signatures, exception types and important conditions,
+      context-manager behavior, and return object types in a machine-readable
+      `I118PublicAPICompatibilityFreeze.json` or equivalent.
+- [ ] Freeze before-refactor canonical bytes and digests for the full practical
+      accepted I115/I116 binder fixture corpus.
+- [ ] Cover native pathways; producer, adapter, and diagnostic compositions;
+      dynamic choice; candidate pathways and compositions; reviewed
+      invalid-pair candidates; unused declarations; non-qualifying and raised
+      effects; negative controls; and multi-edge graphs in that corpus.
 - [ ] Replace the binding monolith with an internal package containing
-      `authority.py`, `identity.py`, `effects.py`, `scopes.py`, `artifacts.py`,
-      and `session.py` behind a compatibility `binding/__init__.py`.
+      `identity.py`, `effects.py`, `authority.py`, `candidates.py`, `scopes.py`,
+      `artifacts.py`, and `session.py` behind a compatibility
+      `binding/__init__.py`.
 - [ ] Preserve every existing public export from `pygrc.causal_pathways` and
-      compatibility imports from `pygrc.causal_pathways.binding`.
+      behavioral compatibility from `pygrc.causal_pathways.binding`; mark new
+      internal module paths explicitly non-contractual.
 - [ ] Keep artifact schema versions, field names, field values, canonical
       ordering, serialized bytes, and digests unchanged.
-- [ ] Give session mutation, runtime ledgers, and active-scope state cohesive
-      owners instead of retaining unrelated mutable fields on one class.
+- [ ] Preserve runtime state, results, return types, exception behavior, and
+      context-manager behavior for identical bound executions.
+- [ ] Make candidate declarations, relation reviews, request provenance,
+      invalid-relabel constraints, source-consumption proofs, omission
+      counterfactuals, typed defaults, and witnesses the responsibility of the
+      first-class `candidates.py` subsystem.
+- [ ] Give session phase state, mutation, invocation ledgers, object-flow
+      identity, active-scope state, and artifact state cohesive owners instead
+      of retaining unrelated mutable fields on one class.
 - [ ] Replace cross-object `_`-attribute reads and broad session fan-out with
       narrow internal collaborator methods or protocols.
-- [ ] Enforce an acyclic internal dependency direction and add an architecture
-      test that rejects prohibited module dependencies.
+- [ ] Freeze and test the dependency-provider-first order: `identity -> effects
+      -> authority -> candidates -> scopes -> artifacts -> session`; each
+      module may import only preceding layers, though it may skip layers.
+- [ ] Keep concrete `PathwayBindingSession` dependencies out of scope, effect,
+      and artifact collaborators; scopes use narrow recorder/provenance
+      protocols.
+- [ ] Keep identity free of claim interpretation, authority mostly immutable,
+      artifact derivation near-pure over immutable records, and session limited
+      to orchestration.
+- [ ] Keep the independent binding conformance checker independently
+      implemented; do not import load-bearing binder derivation or validation
+      logic into the checker.
 - [ ] Add runnable examples for an admitted pathway, registered composition,
-      explicit dynamic choice, and conservative unregistered candidate flow.
-- [ ] Add a user-and-agent guide for selecting, binding, locking, executing,
-      sealing, validating, debugging, and safely extending binder use.
+      explicit dynamic choice, conservative unregistered candidate flow, and
+      valid direct-unbound/non-claim-qualified use.
+- [ ] Build the user-and-agent guide around `select -> bind -> lock -> execute
+      -> seal -> validate`, with selection consumer-owned and candidate
+      declaration leading only to experimental provenance.
+- [ ] Cover authority loading, declarations, scopes, conformance, failure
+      interpretation, debugging, and safe extension practices in the guide.
 - [ ] Revise the binding reference guide for the stable public API and exact
       artifact schemas without making internal module layout contractual.
+- [ ] Describe the final candidate contract directly in stable guidance; keep
+      R4-B01 through R8-B01 chronology in implementation and audit evidence.
 - [ ] Update the root README, docs indexes, claim-boundary index, examples
       index, specs index, and any new local example/reference indexes.
-- [ ] Add public-import compatibility and before/after golden-byte tests.
+- [ ] Add public behavioral-API compatibility and full practical-corpus
+      before/after golden-byte tests.
+- [ ] Compare bound-before and bound-after runtime state and results.
+- [ ] Replay mutation falsifiers for owner erasure, symbol substitution,
+      candidate promotion, prohibited relabels, unsupported composition,
+      dynamic branching, claim widening, endpoint co-use without flow,
+      hard-coded or source-unused candidate requests, and stale source content;
+      require the relevant independent gates to fail closed.
 - [ ] Run all binder examples and focused binding/conformance/I116 tests.
 - [ ] Run the full project suite (current baseline: 1,315 tests).
 - [ ] Replay the accepted 68-case independent semantic gate.
 - [ ] Pass both 20-rule conformance policies, Ruff, mypy, compileall, and
       `git diff --check` before closing Iteration 118.
+- [ ] Close only with zero semantic, artifact, or runtime differences
+      attributable to the refactor.
