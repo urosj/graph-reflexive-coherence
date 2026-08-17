@@ -174,7 +174,7 @@ candidate = session.declare_candidate(
     authority={"direction": "experiment producer"},
     evidence_owner="experiment_fixture",
     mechanism_evidence={
-        "evidence_kind": "content_addressed_artifact",
+        "evidence_kind": "executable_candidate_mechanism",
         "mechanism_id": "experiment.packet_then_snapshot",
         "path": "implementation/evidence/packet-then-snapshot.json",
         "sha256": sha256_file(
@@ -182,26 +182,50 @@ candidate = session.declare_candidate(
         ),
     },
 )
+
+crossing = candidate.mechanism()
+session.freeze_lock()
+with candidate.evidence_scope():
+    schedule_result = packet_schedule(...)
+    crossing(schedule_result)
+    snapshot()
+session.record_candidate_use(candidate.candidate_id)
 ```
 
 All omitted authority coordinates become `unresolved`. Candidate claim ceiling
 is fixed to `experimental_unregistered`, promotion status is fixed to `none`,
 and native/admitted/promotion relabels are blocked.
 
-The evidence path must be repository-relative and name a non-empty JSON
-artifact whose schema, mechanism identity, candidate kind, endpoints, and
-supported relation match the declaration. Its SHA-256 is frozen before use.
-For a composition candidate, execute the declared source and target handles in
-order inside `with candidate.evidence_scope():`, then call
-`record_candidate_use(candidate.candidate_id)`. The method accepts no free-form
-evidence string and revalidates the artifact before recording the derived
-scope and invocation indices.
+The evidence path must be repository-relative and name a non-empty version-2
+JSON artifact whose schema, mechanism identity, candidate kind, endpoints, and
+supported relation match the declaration. The artifact must identify one
+repository-relative module-function entrypoint with its source SHA-256. The
+binder resolves that unregistered callable directly from its pinned source,
+freezes its definition-level identity, and rejects a callable already used by
+an admitted stage or registered crossing. Both the artifact and executable
+source are revalidated before use.
+
+`candidate.mechanism()` returns only that exact candidate-specific callable.
+It may execute once, after lock, inside the same completed
+`candidate.evidence_scope()` as the qualifying constituent invocations. For a
+composition candidate, every qualifying source call must precede the candidate
+mechanism, which must precede every qualifying target call. Then
+`record_candidate_use(candidate.candidate_id)` derives the scope, mechanism,
+and constituent invocation indices. It accepts no caller-authored evidence
+string. A returned candidate call proves identity-verified experimental
+execution; it does not promote the callable or independently claim an admitted
+effect contract.
 
 Candidate pathway nodes and composition edges are visibly different from
 admitted graph elements. A candidate can consume admitted constituents but
 cannot inherit their native or admitted status. A candidate over endpoints
-occupied by a registered invalid relabel requires a distinct content-addressed
-mechanism, and its proposed relation may not restate that row's blocked labels.
+occupied by a registered invalid relabel requires a distinct executable
+mechanism. Its proposed relation may not restate that row's blocked labels
+literally or by retaining their load-bearing semantic tokens. Every conflicting
+row and blocked relabel is retained structurally in the lock, receipt, node,
+and edge. The proposed free-text relation is marked
+`descriptive_unreviewed_not_claim_qualified`; it cannot supersede those
+structured prohibitions.
 
 Candidate declaration does not update the registry, matrix, selection guide,
 or binding map. Promotion remains a separate evidence and review process.
@@ -257,8 +281,8 @@ The receipt links to the exact lock digest and records:
   effect contract, effect outcome, and qualifying flag;
 - ordered composition-scope witnesses and explicit-adapter invocations;
 - contract-qualified pathway and registered-composition use;
-- candidate use, content-addressed mechanism evidence, and scoped execution
-  witnesses;
+- candidate use, source-pinned executable mechanism identity and invocation,
+  and scoped constituent-execution witnesses;
 - producer and adapter cuts used;
 - declared-but-unused identities;
 - consumer-owned dynamic-selection scopes, exact invocations, and allowed
@@ -285,11 +309,14 @@ composition edge from `prepare_lgrc9v3_grc9v3_diagnostics(...)` followed by
 edges still do not synthesize a larger semantic ceiling unless that larger
 composition is itself registered.
 
-The B-04 correction applies the same declaration-is-not-use boundary to
-candidates. The checker re-hashes candidate evidence and reconstructs the
-candidate scope from invocation indices; unscoped co-use, arbitrary strings,
-and renamed invalid-relabel restatements do not produce candidate graph
-elements or an experimental candidate claim.
+The B-04 and round-two R2-B02 corrections apply the same
+declaration-is-not-use boundary to candidates. The checker independently
+re-hashes the candidate artifact and executable source, reconstructs the exact
+definition identity and candidate invocation, and verifies its order within
+the candidate scope. Metadata-only evidence, an admitted-callable alias,
+unscoped co-use, arbitrary strings, and literal or semantic invalid-relabel
+restatements do not produce candidate graph elements or an experimental
+candidate claim.
 
 The B-05 correction prevents post-hoc global inference from ordinary pathway
 use. BCF-017 reconstructs every dynamic selection from its scoped invocation

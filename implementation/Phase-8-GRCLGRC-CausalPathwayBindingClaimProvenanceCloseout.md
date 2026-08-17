@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** Reopened by round-two rejection; R2-B01 author correction complete,
-R2-B02 and R2-B03 pending
+**Status:** Reopened by round-two rejection; R2-B01 and R2-B02 author
+corrections complete, R2-B03 pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
 
@@ -17,8 +17,11 @@ The author-side B-01 through B-06 and M-01 correction slices completed before
 the second independent audit, which returned `reject_pending_correction` with
 three blocker findings. R2-B01 is now corrected author-side: non-explicit
 composition edges require exact shared-runtime-owner flow, and a crossing that
-cannot prove that relation remains declared-but-unused. R2-B02 and R2-B03
-remain open, so this document is not an acceptance record.
+cannot prove that relation remains declared-but-unused. R2-B02 is also
+corrected author-side: candidate use now requires an identity-verified,
+source-pinned executable invocation, while invalid-row prohibitions remain
+structured and cannot be erased by relation prose. R2-B03 remains open, so
+this document is not an acceptance record.
 
 Locks and receipts are operation-scoped, callable and crossing identities are
 rechecked, candidate and dynamic-choice evidence is scoped, acceptance uses a
@@ -53,6 +56,9 @@ envelope.
 - Diagnostic relations cannot become behavioral crossings.
 - Unsupported and invalid matrix rows cannot bind as admitted execution.
 - Candidate work remains usable, unregistered, unpromoted, and claim-bounded.
+- Candidate use requires one distinct source-pinned executable invocation in
+  its evidence scope; metadata-only declarations and invalid-relabel semantic
+  paraphrases remain unqualified.
 - Dynamic alternatives remain caller-selected and actual use is receipted.
 - Endpoint co-use and registered chains do not synthesize new edges or claims.
 - Non-explicit composition edges require a qualifying source and target call
@@ -90,7 +96,7 @@ selector  f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b
 policy    7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9
 bindings  73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556
 binding conformance policy
-          a312f4184a64d548286bc82c14eeb83e1eb3975d4eddb3b0d17645076be62f32
+          2e280ca81f7fb5f8e5e2dd3345a8f93ea7928a9a81055901038a8408356359e7
 ```
 
 ## Current Maximum Claim Pending Further Correction And Re-Audit
@@ -102,8 +108,8 @@ unregistered candidates. A receipt reports only identity-verified bound
 invocations whose independently anchored exact-symbol contracts classify their
 effects as committed or observed, plus conservative graph and claim-envelope
 projections of that recorded evidence. It does not establish whole-run causal
-closure, absence of direct work, or final acceptance while R2-B02 and R2-B03
-remain open and the next independent audit is pending.
+closure, absence of direct work, or final acceptance while R2-B03 remains open
+and the next independent audit is pending.
 
 ## Remaining Boundaries
 

@@ -155,6 +155,7 @@
       "producer_residue": []
     }
   ],
+  "actual_candidate_mechanism_invocations": [],
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
@@ -393,7 +394,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "3220b9e71d29ace57a0d5604de2271f56826146eb96e5e9c3d029e5b1c61f997",
+  "receipt_digest": "b58ccd4b2c2dcdbba0a9239c779ce612f6b51389f68f18374119831b9ee51482",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

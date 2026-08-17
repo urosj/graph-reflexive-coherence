@@ -368,6 +368,51 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-004"}, {item["rule_id"] for item in result["issues"]})
 
+    def test_candidate_without_executable_invocation_fails_bcf004(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        mutated["receipt"]["actual_candidate_mechanism_invocations"] = []
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-004"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-004"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_candidate_executable_identity_forgery_fails_bcf004(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        invocation = mutated["receipt"]["actual_candidate_mechanism_invocations"][0]
+        invocation["symbol_id"] = "candidate-mechanism:forged"
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-004"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-004"}, {item["rule_id"] for item in result["issues"]})
+
     def test_renamed_cmp05_candidate_relabel_fails_bcf011(self) -> None:
         mutated = self.checker.load_bundle(
             ROOT,
@@ -388,7 +433,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 "lgrc9v3.explicit_packet_transport"
             )
             candidate["proposed_relation"] = (
-                "diagnostic_as_behavior and native packet admission"
+                "diagnostic reconstruction governs ordinary runtime packet behavior"
             )
             candidate["invalid_relabel_conflict_ids"] = ["CMP-05"]
         mutated["lock"]["lock_digest"] = self.checker.digest_without(
@@ -396,6 +441,34 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "lock_digest",
         )
         mutated["receipt"]["binding_lock_digest"] = mutated["lock"]["lock_digest"]
+        mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
+            mutated["receipt"],
+            "receipt_digest",
+        )
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-011"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-011"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_candidate_graph_cannot_omit_invalid_row_fields_bcf011(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        edge = next(
+            item
+            for item in mutated["receipt"]["pathway_use_graph"]["edges"]
+            if item["edge_kind"] == "experimental_unregistered_candidate"
+        )
+        edge.pop("invalid_relabel_conflict_ids")
+        edge.pop("invalid_relabel_blocked_claims")
         mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
             mutated["receipt"],
             "receipt_digest",

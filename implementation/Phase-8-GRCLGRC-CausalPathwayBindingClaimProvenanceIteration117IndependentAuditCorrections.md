@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** Round-two re-audit rejected; R2-B01 author correction complete,
-R2-B02 and R2-B03 pending
+**Status:** Round-two re-audit rejected; R2-B01 and R2-B02 author corrections
+complete, R2-B03 pending
 
 **Checkpoint commit:** `976c660`
 
@@ -406,5 +406,58 @@ compileall selected changed surfaces = passed
 git diff --check = passed
 ```
 
-This is author-side correction evidence only. R2-B02 and R2-B03 remain open,
-and a new full independent audit remains the acceptance gate.
+This is author-side correction evidence only. The following R2-B02 correction
+does not close R2-B03, and a new full independent audit remains the acceptance
+gate.
+
+## R2-B02 Candidate-Specific Executable Provenance
+
+R2-B02 is corrected author-side by replacing metadata-only candidate
+attestation with one exact candidate-specific executable. The version-2
+candidate artifact names a repository-relative module function, source
+SHA-256, mechanism ID, candidate shape, endpoints, and supported relation. The
+binder resolves the function directly from the pinned source, freezes its
+definition-level callable identity, and rejects any callable already registered
+as an admitted stage or crossing. Both the JSON artifact and executable source
+are revalidated at use and receipt time.
+
+Every exercised candidate now has exactly one returned candidate-mechanism
+invocation inside its completed evidence scope. For a composition candidate,
+the checker reconstructs the stricter event order:
+
+```text
+all qualifying source calls
+< exact candidate mechanism call
+< all qualifying target calls
+```
+
+The receipt retains that invocation separately from admitted effect evidence.
+Its return proves execution of the identity-verified experimental mechanism;
+it does not imply an admitted `committed` or `observed` effect contract.
+Removing the invocation or substituting a forged executable identity fails
+BCF-004 even when both admitted endpoint calls remain.
+
+The invalid-row boundary is structural as well as lexical. Every matching
+`invalid_relabel` ID and every blocked relabel from those rows is copied into
+the candidate declaration, lock, receipt, graph node, and graph edge. A
+proposed relation is rejected when it is a literal restatement or preserves
+the load-bearing semantic tokens of a blocked relabel. Any permitted relation
+prose is marked `descriptive_unreviewed_not_claim_qualified`; it cannot replace
+or weaken the structured blocks. The audited CMP-05 paraphrase is rejected,
+while a separate positive control remains usable only with a distinct
+executable crossing and retains both CMP-05 blocked relabels.
+
+```text
+.venv focused binding/conformance/I116 tests = 72 passed
+.venv full unittest discovery = 1,283 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This remains author-side correction evidence only. R2-B03 remains open, and a
+new full independent audit remains the acceptance gate.

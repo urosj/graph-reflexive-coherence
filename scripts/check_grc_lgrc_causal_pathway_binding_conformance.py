@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import copy
 import hashlib
 import json
@@ -27,7 +28,10 @@ RULES = [
     ),
     (
         "BCF-004",
-        "Candidate uses require current content-addressed mechanism evidence and scoped constituent execution while remaining experimental and unpromoted.",
+        (
+            "Candidate uses require a current distinct executable identity and its "
+            "exact scoped invocation while remaining experimental and unpromoted."
+        ),
     ),
     (
         "BCF-005",
@@ -55,7 +59,11 @@ RULES = [
     ),
     (
         "BCF-011",
-        "Invalid relabels cannot be bound, reused, or laundered through renamed candidates without a distinct mechanism.",
+        (
+            "Invalid relabels cannot be bound, semantically restated, or laundered; "
+            "conflicting candidates require a distinct executable and retain every "
+            "structured block."
+        ),
     ),
     (
         "BCF-012",
@@ -623,18 +631,51 @@ def _normalized_claim_text(value: str) -> str:
     return " ".join(re.findall(r"[a-z0-9]+", value.lower()))
 
 
+def _claim_semantic_tokens(value: str) -> set[str]:
+    stopwords = {"a", "an", "and", "as", "from", "is", "of", "or", "the", "to"}
+    return set(_normalized_claim_text(value).split()) - stopwords
+
+
+def _restates_blocked_relabel(relation: str, blocked_relabel: str) -> bool:
+    normalized_relation = _normalized_claim_text(relation)
+    normalized_blocked = _normalized_claim_text(blocked_relabel)
+    blocked_tokens = _claim_semantic_tokens(blocked_relabel)
+    return normalized_blocked in normalized_relation or (
+        bool(blocked_tokens) and blocked_tokens <= _claim_semantic_tokens(relation)
+    )
+
+
+def _function_body_contains_yield(definition: ast.FunctionDef) -> bool:
+    """Return whether the entrypoint itself, rather than a nested body, yields."""
+
+    pending: list[ast.AST] = list(definition.body)
+    while pending:
+        node = pending.pop()
+        if isinstance(node, (ast.Yield, ast.YieldFrom)):
+            return True
+        pending.extend(
+            child
+            for child in ast.iter_child_nodes(node)
+            if not isinstance(
+                child,
+                (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda, ast.ClassDef),
+            )
+        )
+    return False
+
+
 def _candidate_evidence_issue(
     root: Path,
     candidate: Mapping[str, Any],
 ) -> str | None:
     evidence = candidate.get("mechanism_evidence")
     if not isinstance(evidence, Mapping):
-        return "content-addressed mechanism evidence is absent"
+        return "executable candidate mechanism evidence is absent"
     expected_fields = {"evidence_kind", "mechanism_id", "path", "sha256"}
     if set(evidence) != expected_fields:
         return "mechanism evidence fields are incomplete or widened"
-    if evidence.get("evidence_kind") != "content_addressed_artifact":
-        return "mechanism evidence kind is not content-addressed"
+    if evidence.get("evidence_kind") != "executable_candidate_mechanism":
+        return "mechanism evidence kind is not executable candidate evidence"
     mechanism_id = str(evidence.get("mechanism_id", ""))
     relative = Path(str(evidence.get("path", "")))
     expected_sha256 = str(evidence.get("sha256", ""))
@@ -662,7 +703,7 @@ def _candidate_evidence_issue(
         return "mechanism evidence is not a JSON object"
     expected_artifact = {
         "artifact": "causal-pathway-candidate-mechanism-evidence",
-        "schema_version": "causal_pathway_candidate_mechanism_evidence_v1",
+        "schema_version": "causal_pathway_candidate_mechanism_evidence_v2",
         "mechanism_id": mechanism_id,
         "candidate_kind": candidate.get("candidate_kind"),
         "proposed_source_pathway_id": candidate.get("proposed_source_pathway_id"),
@@ -676,6 +717,104 @@ def _candidate_evidence_issue(
     ]
     if mismatched:
         return f"mechanism evidence mismatches declaration fields {mismatched}"
+    if set(artifact) != {*expected_artifact, "executable_symbol"}:
+        return "mechanism evidence artifact fields are incomplete or widened"
+    executable = artifact.get("executable_symbol")
+    expected_symbol_fields = {
+        "symbol_id",
+        "module",
+        "qualified_symbol",
+        "binding_role",
+        "call_kind",
+        "source_path",
+        "source_sha256",
+    }
+    if not isinstance(executable, Mapping) or set(executable) != expected_symbol_fields:
+        return "mechanism evidence lacks one exact executable symbol"
+    if (
+        executable.get("symbol_id") != f"candidate-mechanism:{mechanism_id}"
+        or executable.get("binding_role") != "candidate_mechanism_entrypoint"
+        or executable.get("call_kind") != "module_function"
+    ):
+        return "candidate executable identity or binding role is invalid"
+    source_relative = Path(str(executable.get("source_path", "")))
+    source_digest = str(executable.get("source_sha256", ""))
+    module = str(executable.get("module", ""))
+    qualified_symbol = str(executable.get("qualified_symbol", ""))
+    if (
+        not str(source_relative)
+        or source_relative.is_absolute()
+        or ".." in source_relative.parts
+        or re.fullmatch(r"[0-9a-f]{64}", source_digest) is None
+        or re.fullmatch(
+            r"[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*",
+            module,
+        )
+        is None
+        or re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", qualified_symbol) is None
+    ):
+        return "candidate executable source identity is malformed"
+    source = (resolved_root / source_relative).resolve()
+    try:
+        source.relative_to(resolved_root)
+    except ValueError:
+        return "candidate executable source path escapes the repository"
+    if not source.is_file() or sha256_file(source) != source_digest:
+        return "candidate executable source is absent or stale"
+    try:
+        source_text = source.read_text(encoding="utf-8")
+        module_tree = ast.parse(source_text)
+    except (OSError, UnicodeDecodeError, SyntaxError):
+        return "candidate executable source is not parseable Python"
+    definitions = [
+        node
+        for node in module_tree.body
+        if isinstance(node, ast.FunctionDef)
+        and node.name == qualified_symbol
+    ]
+    if len(definitions) != 1 or definitions[0].end_lineno is None:
+        return "candidate executable symbol is absent or ambiguous"
+    definition = definitions[0]
+    if _function_body_contains_yield(definition):
+        return "candidate executable must run as one synchronous function call"
+    first_line = min(
+        [definition.lineno, *(item.lineno for item in definition.decorator_list)]
+    )
+    source_lines = source_text.splitlines(keepends=True)
+    definition_digest = hashlib.sha256(
+        "".join(source_lines[first_line - 1 : definition.end_lineno]).encode("utf-8")
+    ).hexdigest()
+    link = candidate.get("candidate_mechanism_link")
+    expected_link = {
+        "mechanism_id": mechanism_id,
+        **dict(executable),
+    }
+    if not isinstance(link, Mapping) or any(
+        link.get(field) != value for field, value in expected_link.items()
+    ):
+        return "candidate declaration does not freeze its executable symbol"
+    if set(link) != {*expected_link, "callable_identity"}:
+        return "candidate executable link fields are incomplete or widened"
+    callable_identity = link.get("callable_identity")
+    expected_identity = {
+        "module": module,
+        "qualified_symbol": qualified_symbol,
+        "source_path": source_relative.as_posix(),
+        "source_sha256": source_digest,
+        "definition_first_line": first_line,
+        "definition_source_sha256": definition_digest,
+    }
+    if (
+        not isinstance(callable_identity, Mapping)
+        or any(
+            callable_identity.get(field) != value
+            for field, value in expected_identity.items()
+        )
+        or set(callable_identity) != {*expected_identity, "callable_identity_digest"}
+        or callable_identity.get("callable_identity_digest")
+        != digest_without(callable_identity, "callable_identity_digest")
+    ):
+        return "candidate executable callable identity is stale or inconsistent"
     return None
 
 
@@ -1334,6 +1473,46 @@ def validate_bundle(
             "lock.candidate_declarations",
             "candidate identities are missing or duplicated",
         )
+    registered_callable_identities = {
+        (
+            str(symbol.get("module", "")),
+            str(symbol.get("qualified_symbol", "")),
+        )
+        for stage in bindings.get("stage_bindings", [])
+        if isinstance(stage, Mapping)
+        for symbol in stage.get("symbols", [])
+        if isinstance(symbol, Mapping)
+    }
+    registered_callable_identities.update(
+        (
+            str(symbol.get("module", "")),
+            str(symbol.get("qualified_symbol", "")),
+        )
+        for crossing in bindings.get("composition_crossing_bindings", [])
+        if isinstance(crossing, Mapping)
+        for symbol in (crossing.get("symbol"),)
+        if isinstance(symbol, Mapping)
+    )
+    registered_callable_sources = {
+        (
+            str((root.resolve() / str(symbol.get("source_path", ""))).resolve()),
+            str(symbol.get("qualified_symbol", "")),
+        )
+        for stage in bindings.get("stage_bindings", [])
+        if isinstance(stage, Mapping)
+        for symbol in stage.get("symbols", [])
+        if isinstance(symbol, Mapping)
+    }
+    registered_callable_sources.update(
+        (
+            str((root.resolve() / str(symbol.get("source_path", ""))).resolve()),
+            str(symbol.get("qualified_symbol", "")),
+        )
+        for crossing in bindings.get("composition_crossing_bindings", [])
+        if isinstance(crossing, Mapping)
+        for symbol in (crossing.get("symbol"),)
+        if isinstance(symbol, Mapping)
+    )
     for candidate_id, candidate in declared_candidates.items():
         if candidate_id in pathways or candidate_id in compositions:
             rule = (
@@ -1374,6 +1553,50 @@ def validate_bundle(
         )
         if evidence_issue is not None:
             add_issue(issues, "BCF-004", candidate_id, evidence_issue)
+        mechanism_link = candidate.get("candidate_mechanism_link")
+        if candidate.get("mechanism_evidence") is None:
+            if mechanism_link is not None:
+                add_issue(
+                    issues,
+                    "BCF-004",
+                    candidate_id,
+                    "candidate freezes an executable without mechanism evidence",
+                )
+        elif isinstance(mechanism_link, Mapping) and (
+            (
+                str(mechanism_link.get("module", "")),
+                str(mechanism_link.get("qualified_symbol", "")),
+            )
+            in registered_callable_identities
+            or (
+                str(
+                    (
+                        root.resolve()
+                        / str(mechanism_link.get("source_path", ""))
+                    ).resolve()
+                ),
+                str(mechanism_link.get("qualified_symbol", "")),
+            )
+            in registered_callable_sources
+        ):
+            add_issue(
+                issues,
+                "BCF-004",
+                candidate_id,
+                "candidate executable aliases a registered callable",
+            )
+        expected_relation_status = (
+            "descriptive_unreviewed_not_claim_qualified"
+            if candidate.get("proposed_relation") is not None
+            else None
+        )
+        if candidate.get("proposed_relation_claim_status") != expected_relation_status:
+            add_issue(
+                issues,
+                "BCF-011",
+                candidate_id,
+                "candidate prose is presented as a claim-qualified relation",
+            )
         source_id = candidate.get("proposed_source_pathway_id")
         target_id = candidate.get("proposed_target_pathway_id")
         invalid_conflicts = sorted(
@@ -1397,14 +1620,31 @@ def validate_bundle(
                 candidate_id,
                 "candidate does not disclose its exact invalid-relabel endpoint conflicts",
             )
-        normalized_relation = _normalized_claim_text(
-            str(candidate.get("proposed_relation", ""))
+        expected_invalid_blocks = list(
+            dict.fromkeys(
+                str(relabel)
+                for composition in invalid_conflicts
+                for relabel in composition.get("blocked_relabels", [])
+            )
         )
+        if (
+            candidate.get("invalid_relabel_blocked_claims")
+            != expected_invalid_blocks
+            or not set(expected_invalid_blocks)
+            <= set(candidate.get("blocked_claims", []))
+        ):
+            add_issue(
+                issues,
+                "BCF-011",
+                candidate_id,
+                "candidate does not retain every conflicting invalid-row block",
+            )
+        proposed_relation = str(candidate.get("proposed_relation", ""))
         restated = sorted(
             str(relabel)
             for composition in invalid_conflicts
             for relabel in composition.get("blocked_relabels", [])
-            if _normalized_claim_text(str(relabel)) in normalized_relation
+            if _restates_blocked_relabel(proposed_relation, str(relabel))
         )
         if restated:
             add_issue(
@@ -1561,6 +1801,67 @@ def validate_bundle(
                 (str(invocation.get("stage_id", "")), symbol_id)
             )
 
+    candidate_mechanism_invocations = receipt.get(
+        "actual_candidate_mechanism_invocations",
+        [],
+    )
+    for mechanism_index, invocation in enumerate(candidate_mechanism_invocations):
+        candidate_id = str(invocation.get("candidate_id", ""))
+        declared_candidate = declared_candidates.get(candidate_id, {})
+        mechanism_link = declared_candidate.get("candidate_mechanism_link")
+        event_order = invocation.get("execution_event_order")
+        if (
+            invocation.get("candidate_mechanism_invocation_index")
+            != mechanism_index
+            or not isinstance(event_order, int)
+            or event_order < 0
+        ):
+            add_issue(
+                issues,
+                "BCF-015",
+                f"receipt.actual_candidate_mechanism_invocations[{mechanism_index}]",
+                "candidate mechanism index or execution order is invalid",
+            )
+        else:
+            execution_event_orders.append(event_order)
+        candidate_exact_fields = (
+            "mechanism_id",
+            "symbol_id",
+            "callable_identity",
+        )
+        if (
+            not isinstance(mechanism_link, Mapping)
+            or invocation.get("candidate_id") != candidate_id
+            or any(
+                invocation.get(field) != mechanism_link.get(field)
+                for field in candidate_exact_fields
+            )
+        ):
+            add_issue(
+                issues,
+                "BCF-004",
+                f"{candidate_id}:mechanism:{mechanism_index}",
+                "candidate mechanism invocation differs from its frozen executable",
+            )
+        outcome = invocation.get("outcome")
+        valid_result = (
+            outcome == "returned"
+            and isinstance(invocation.get("result_type"), str)
+            and bool(invocation.get("result_type"))
+            and invocation.get("error_type") is None
+        ) or (
+            outcome == "raised"
+            and invocation.get("result_type") is None
+            and isinstance(invocation.get("error_type"), str)
+            and bool(invocation.get("error_type"))
+        )
+        if not invocation.get("candidate_scope_id") or not valid_result:
+            add_issue(
+                issues,
+                "BCF-004",
+                f"{candidate_id}:mechanism:{mechanism_index}",
+                "candidate mechanism lacks an exact scope or execution outcome",
+            )
     actual_bindings, duplicate_actual_bindings = _unique_index(
         receipt.get("actual_bound_pathways_used", []), "binding_id"
     )
@@ -1622,7 +1923,7 @@ def validate_bundle(
             )
         else:
             execution_event_orders.append(event_order)
-        exact_fields = (
+        crossing_exact_fields = (
             "binding_id",
             "composition_id",
             "symbol_id",
@@ -1632,7 +1933,7 @@ def validate_bundle(
         )
         if not isinstance(expected_crossing, Mapping) or any(
             invocation.get(field) != expected_crossing.get(field)
-            for field in exact_fields
+            for field in crossing_exact_fields
         ):
             add_issue(
                 issues,
@@ -1731,7 +2032,7 @@ def validate_bundle(
             issues,
             "BCF-015",
             "receipt.execution_event_order",
-            "stage and crossing invocation order is not one complete sequence",
+            "stage, crossing, and candidate invocation order is not one complete sequence",
         )
 
     witnesses, duplicate_witnesses = _unique_index(
@@ -2026,9 +2327,10 @@ def validate_bundle(
             "receipt.candidate_relations_exercised",
             "candidate use identities are duplicated",
         )
+    witnessed_candidate_mechanism_indices: set[int] = set()
     for candidate_id, candidate in used_candidates.items():
-        declared_candidate = declared_candidates.get(candidate_id)
-        if declared_candidate is None:
+        locked_candidate = declared_candidates.get(candidate_id)
+        if locked_candidate is None:
             add_issue(
                 issues,
                 "BCF-003",
@@ -2036,8 +2338,8 @@ def validate_bundle(
                 "candidate use lacks a lock declaration",
             )
         elif any(
-            candidate.get(field) != declared_candidate.get(field)
-            for field in declared_candidate
+            candidate.get(field) != locked_candidate.get(field)
+            for field in locked_candidate
         ):
             add_issue(
                 issues, "BCF-004", candidate_id, "candidate use widened its declaration"
@@ -2064,10 +2366,11 @@ def validate_bundle(
             scope_id: object,
             pathway_id: object | None = None,
             binding_id: object | None = None,
+            allow_empty: bool = False,
         ) -> list[Mapping[str, Any]] | None:
             if (
                 not isinstance(indices, list)
-                or not indices
+                or (not indices and not allow_empty)
                 or any(not isinstance(index, int) for index in indices)
                 or len(indices) != len(set(indices))
             ):
@@ -2094,6 +2397,28 @@ def validate_bundle(
 
         if structurally_valid and isinstance(candidate_witness, Mapping):
             scope_id = candidate_witness.get("candidate_scope_id")
+            witness_mechanism_index = candidate_witness.get(
+                "candidate_mechanism_invocation_index"
+            )
+            mechanism_invocation = (
+                candidate_mechanism_invocations[witness_mechanism_index]
+                if isinstance(witness_mechanism_index, int)
+                and 0
+                <= witness_mechanism_index
+                < len(candidate_mechanism_invocations)
+                else None
+            )
+            mechanism_link = candidate.get("candidate_mechanism_link")
+            structurally_valid = (
+                mechanism_invocation is not None
+                and isinstance(mechanism_link, Mapping)
+                and mechanism_invocation.get("candidate_id") == candidate_id
+                and mechanism_invocation.get("candidate_scope_id") == scope_id
+                and mechanism_invocation.get("outcome") == "returned"
+                and candidate_witness.get("candidate_mechanism_symbol_id")
+                == mechanism_link.get("symbol_id")
+                == mechanism_invocation.get("symbol_id")
+            )
             if candidate.get("candidate_kind") == "composition":
                 source_invocations = selected_candidate_invocations(
                     candidate_witness.get("source_invocation_indices"),
@@ -2108,19 +2433,44 @@ def validate_bundle(
                     binding_id=candidate_witness.get("target_binding_id"),
                 )
                 structurally_valid = (
+                    structurally_valid
+                    and set(candidate_witness)
+                    == {
+                        "candidate_scope_id",
+                        "candidate_id",
+                        "witness_kind",
+                        "candidate_mechanism_invocation_index",
+                        "candidate_mechanism_symbol_id",
+                        "source_pathway_id",
+                        "source_binding_id",
+                        "source_invocation_indices",
+                        "target_pathway_id",
+                        "target_binding_id",
+                        "target_invocation_indices",
+                        "ordering_rule",
+                    }
+                    and
                     candidate_witness.get("witness_kind")
-                    == "content_addressed_source_before_target"
+                    == "identity_verified_candidate_crossing_execution"
                     and candidate_witness.get("source_pathway_id")
                     == candidate.get("proposed_source_pathway_id")
                     and candidate_witness.get("target_pathway_id")
                     == candidate.get("proposed_target_pathway_id")
                     and candidate_witness.get("ordering_rule")
-                    == "all_source_invocations_before_all_target_invocations"
+                    == (
+                        "all_source_invocations_before_candidate_mechanism_before_"
+                        "all_target_invocations"
+                    )
                     and source_invocations is not None
                     and target_invocations is not None
                     and max(
                         int(item.get("execution_event_order", -1))
                         for item in source_invocations
+                    )
+                    < int(
+                        mechanism_invocation.get("execution_event_order", -1)
+                        if mechanism_invocation is not None
+                        else -1
                     )
                     < min(
                         int(item.get("execution_event_order", -1))
@@ -2128,17 +2478,33 @@ def validate_bundle(
                     )
                 )
             else:
+                consumed_pathways = candidate.get(
+                    "consumed_admitted_pathway_ids",
+                    [],
+                )
                 constituent = selected_candidate_invocations(
                     candidate_witness.get("constituent_invocation_indices"),
                     scope_id=scope_id,
+                    allow_empty=not consumed_pathways,
                 )
                 structurally_valid = (
+                    structurally_valid
+                    and set(candidate_witness)
+                    == {
+                        "candidate_scope_id",
+                        "candidate_id",
+                        "witness_kind",
+                        "candidate_mechanism_invocation_index",
+                        "candidate_mechanism_symbol_id",
+                        "constituent_invocation_indices",
+                    }
+                    and
                     candidate_witness.get("witness_kind")
-                    == "content_addressed_constituent_execution"
+                    == "identity_verified_candidate_mechanism_execution"
                     and constituent is not None
                     and all(
                         item.get("pathway_id")
-                        in candidate.get("consumed_admitted_pathway_ids", [])
+                        in consumed_pathways
                         for item in constituent
                     )
                 )
@@ -2147,8 +2513,27 @@ def validate_bundle(
                 issues,
                 "BCF-004",
                 candidate_id,
-                "candidate use lacks an exact scoped constituent-execution witness",
+                "candidate use lacks exact identity-verified mechanism execution",
             )
+        elif isinstance(candidate_witness, Mapping):
+            witnessed_mechanism_index = candidate_witness.get(
+                "candidate_mechanism_invocation_index"
+            )
+            if isinstance(witnessed_mechanism_index, int):
+                witnessed_candidate_mechanism_indices.add(witnessed_mechanism_index)
+
+    returned_candidate_mechanism_indices = {
+        index
+        for index, invocation in enumerate(candidate_mechanism_invocations)
+        if invocation.get("outcome") == "returned"
+    }
+    if witnessed_candidate_mechanism_indices != returned_candidate_mechanism_indices:
+        add_issue(
+            issues,
+            "BCF-004",
+            "receipt.actual_candidate_mechanism_invocations",
+            "returned candidate mechanisms differ from exact candidate-use witnesses",
+        )
 
     expected_unused = {
         "pathway_binding_ids": sorted(set(lock_bindings) - qualifying_binding_ids),
@@ -2210,11 +2595,27 @@ def validate_bundle(
         elif node.get("node_kind") == "experimental_unregistered_candidate":
             candidate_id = str(node.get("candidate_id", ""))
             used_candidate = used_candidates.get(candidate_id)
+            if used_candidate is not None and (
+                node.get("invalid_relabel_conflict_ids")
+                != used_candidate.get("invalid_relabel_conflict_ids")
+                or node.get("invalid_relabel_blocked_claims")
+                != used_candidate.get("invalid_relabel_blocked_claims")
+                or node.get("blocked_claims")
+                != used_candidate.get("blocked_claims")
+            ):
+                add_issue(
+                    issues,
+                    "BCF-011",
+                    candidate_id,
+                    "candidate graph node erased structured invalid-row blocks",
+                )
             if (
                 used_candidate is None
                 or not _candidate_is_bounded(node)
                 or node.get("mechanism_evidence")
                 != used_candidate.get("mechanism_evidence")
+                or node.get("candidate_mechanism_link")
+                != used_candidate.get("candidate_mechanism_link")
                 or node.get("candidate_execution_witness")
                 != used_candidate.get("candidate_execution_witness")
             ):
@@ -2289,12 +2690,32 @@ def validate_bundle(
                 if used_candidate is not None
                 else {}
             )
+            if used_candidate is not None and (
+                edge.get("invalid_relabel_conflict_ids")
+                != used_candidate.get("invalid_relabel_conflict_ids")
+                or edge.get("invalid_relabel_blocked_claims")
+                != used_candidate.get("invalid_relabel_blocked_claims")
+                or edge.get("blocked_claims")
+                != used_candidate.get("blocked_claims")
+            ):
+                add_issue(
+                    issues,
+                    "BCF-011",
+                    candidate_id,
+                    "candidate graph edge erased structured invalid-row blocks",
+                )
             if (
                 used_candidate is None
                 or not _candidate_is_bounded(edge)
                 or edge.get("mechanism_evidence")
                 != used_candidate.get("mechanism_evidence")
+                or edge.get("candidate_mechanism_link")
+                != used_candidate.get("candidate_mechanism_link")
                 or edge.get("candidate_execution_witness") != witness
+                or edge.get("proposed_relation")
+                != used_candidate.get("proposed_relation")
+                or edge.get("proposed_relation_claim_status")
+                != "descriptive_unreviewed_not_claim_qualified"
                 or edge.get("source_node_id") != witness.get("source_binding_id")
                 or edge.get("target_node_id") != witness.get("target_binding_id")
             ):

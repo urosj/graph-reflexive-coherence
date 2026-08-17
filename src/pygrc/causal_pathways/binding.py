@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import importlib
+import importlib.util
 import inspect
 import json
 import re
@@ -225,6 +226,24 @@ def _normalized_claim_text(value: str) -> str:
     return " ".join(re.findall(r"[a-z0-9]+", value.lower()))
 
 
+def _claim_semantic_tokens(value: str) -> set[str]:
+    """Return load-bearing tokens for order-independent relabel comparison."""
+
+    stopwords = {"a", "an", "and", "as", "from", "is", "of", "or", "the", "to"}
+    return set(_normalized_claim_text(value).split()) - stopwords
+
+
+def _restates_blocked_relabel(relation: str, blocked_relabel: str) -> bool:
+    """Reject literal or order-independent restatements of a blocked label."""
+
+    normalized_relation = _normalized_claim_text(relation)
+    normalized_blocked = _normalized_claim_text(blocked_relabel)
+    blocked_tokens = _claim_semantic_tokens(blocked_relabel)
+    return normalized_blocked in normalized_relation or (
+        bool(blocked_tokens) and blocked_tokens <= _claim_semantic_tokens(relation)
+    )
+
+
 def _load_json(path: Path) -> dict[str, Any]:
     value = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
@@ -402,6 +421,49 @@ class SourceSymbolBinding:
         return resolved
 
 
+def _resolve_candidate_symbol(
+    symbol: SourceSymbolBinding,
+    repository_root: Path,
+) -> Callable[..., Any]:
+    """Load an unregistered candidate callable from its pinned repository file."""
+
+    root = repository_root.resolve()
+    source = (root / symbol.source_path).resolve()
+    try:
+        source.relative_to(root)
+    except ValueError as exc:
+        raise InvalidCandidateError(
+            "candidate executable source path escapes the repository"
+        ) from exc
+    spec = importlib.util.spec_from_file_location(symbol.module, source)
+    if spec is None or spec.loader is None:
+        raise InvalidCandidateError(
+            f"candidate executable module {symbol.module!r} cannot be loaded"
+        )
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+        target: Any = module
+        for part in symbol.qualified_symbol.split("."):
+            target = getattr(target, part)
+    except (AttributeError, ImportError, OSError) as exc:
+        raise InvalidCandidateError(
+            f"candidate executable {symbol.qualified_symbol!r} cannot be loaded"
+        ) from exc
+    if not callable(target):
+        raise InvalidCandidateError(
+            f"candidate executable {symbol.qualified_symbol!r} is not callable"
+        )
+    resolved = cast(Callable[..., Any], target)
+    try:
+        symbol.callable_identity(resolved, repository_root)
+    except SymbolBindingError as exc:
+        raise InvalidCandidateError(
+            "candidate executable symbol is absent, stale, or inconsistent"
+        ) from exc
+    return resolved
+
+
 @dataclass(frozen=True)
 class CompositionCrossingBinding:
     """Concrete crossing callable for a registered explicit-adapter row."""
@@ -449,7 +511,9 @@ class CandidateDeclaration:
     evidence_owner: str
     blocked_claims: tuple[str, ...]
     mechanism_evidence: CandidateMechanismEvidence | None
+    mechanism_link: Mapping[str, Any] | None
     invalid_relabel_conflict_ids: tuple[str, ...]
+    invalid_relabel_blocked_claims: tuple[str, ...]
     claim_ceiling: str = "experimental_unregistered"
     promotion_status: str = "none"
 
@@ -476,7 +540,20 @@ class CandidateDeclaration:
                 if self.mechanism_evidence is not None
                 else None
             ),
+            "candidate_mechanism_link": (
+                dict(self.mechanism_link)
+                if self.mechanism_link is not None
+                else None
+            ),
             "invalid_relabel_conflict_ids": list(self.invalid_relabel_conflict_ids),
+            "invalid_relabel_blocked_claims": list(
+                self.invalid_relabel_blocked_claims
+            ),
+            "proposed_relation_claim_status": (
+                "descriptive_unreviewed_not_claim_qualified"
+                if self.proposed_relation is not None
+                else None
+            ),
             "claim_ceiling": self.claim_ceiling,
             "blocked_claims": list(self.blocked_claims),
             "promotion_status": self.promotion_status,
@@ -487,10 +564,15 @@ class CandidateDeclaration:
 
         return CandidateExecutionScope(session=self._session, candidate=self)
 
+    def mechanism(self) -> VerifiedCandidateMechanism:
+        """Return the exact candidate-specific executable linked before lock."""
+
+        return self._session._candidate_mechanism(self.candidate_id)
+
 
 @dataclass(frozen=True)
 class CandidateMechanismEvidence:
-    """Pre-lock content address for a candidate-specific mechanism artifact."""
+    """Pre-lock content address for candidate-specific executable evidence."""
 
     evidence_kind: str
     mechanism_id: str
@@ -510,9 +592,9 @@ class CandidateMechanismEvidence:
             path=str(record.get("path", "")),
             sha256=str(record.get("sha256", "")),
         )
-        if evidence.evidence_kind != "content_addressed_artifact":
+        if evidence.evidence_kind != "executable_candidate_mechanism":
             raise InvalidCandidateError(
-                "candidate mechanism evidence must be content_addressed_artifact"
+                "candidate mechanism evidence must be executable_candidate_mechanism"
             )
         if not evidence.mechanism_id:
             raise InvalidCandidateError(
@@ -544,8 +626,8 @@ class CandidateMechanismEvidence:
         proposed_source_pathway_id: str | None,
         proposed_target_pathway_id: str | None,
         proposed_relation: str | None,
-    ) -> None:
-        """Validate the address and candidate semantics of the evidence artifact."""
+    ) -> SourceSymbolBinding:
+        """Validate and return the artifact's exact executable symbol."""
 
         relative = Path(self.path)
         if relative.is_absolute() or ".." in relative.parts:
@@ -576,7 +658,7 @@ class CandidateMechanismEvidence:
             ) from exc
         expected = {
             "artifact": "causal-pathway-candidate-mechanism-evidence",
-            "schema_version": "causal_pathway_candidate_mechanism_evidence_v1",
+            "schema_version": "causal_pathway_candidate_mechanism_evidence_v2",
             "mechanism_id": self.mechanism_id,
             "candidate_kind": candidate_kind,
             "proposed_source_pathway_id": proposed_source_pathway_id,
@@ -591,6 +673,63 @@ class CandidateMechanismEvidence:
                 "candidate mechanism evidence does not match its declaration: "
                 f"{mismatched}"
             )
+        if set(artifact) != {*expected, "executable_symbol"}:
+            raise InvalidCandidateError(
+                "candidate mechanism artifact fields are incomplete or widened"
+            )
+        executable = artifact.get("executable_symbol")
+        expected_symbol_fields = {
+            "symbol_id",
+            "module",
+            "qualified_symbol",
+            "binding_role",
+            "call_kind",
+            "source_path",
+            "source_sha256",
+        }
+        if not isinstance(executable, Mapping) or set(executable) != (
+            expected_symbol_fields
+        ):
+            raise InvalidCandidateError(
+                "candidate mechanism evidence requires one exact executable symbol"
+            )
+        if (
+            executable.get("symbol_id")
+            != f"candidate-mechanism:{self.mechanism_id}"
+            or executable.get("binding_role") != "candidate_mechanism_entrypoint"
+            or executable.get("call_kind") != "module_function"
+        ):
+            raise InvalidCandidateError(
+                "candidate executable identity or binding role is invalid"
+            )
+        module = str(executable.get("module", ""))
+        qualified_symbol = str(executable.get("qualified_symbol", ""))
+        if (
+            re.fullmatch(
+                r"[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*",
+                module,
+            )
+            is None
+            or re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", qualified_symbol) is None
+        ):
+            raise InvalidCandidateError(
+                "candidate executable module or qualified symbol is invalid"
+            )
+        source_relative = Path(str(executable.get("source_path", "")))
+        if source_relative.is_absolute() or ".." in source_relative.parts:
+            raise InvalidCandidateError(
+                "candidate executable source path must stay repository-relative"
+            )
+        resolved_root = repository_root.resolve()
+        try:
+            (resolved_root / source_relative).resolve().relative_to(resolved_root)
+        except ValueError as exc:
+            raise InvalidCandidateError(
+                "candidate executable source path escapes the repository"
+            ) from exc
+        symbol = SourceSymbolBinding.from_record(executable)
+        _resolve_candidate_symbol(symbol, repository_root)
+        return symbol
 
 
 @dataclass(frozen=True)
@@ -1248,6 +1387,30 @@ class CausalPathwayAuthority:
                 f"composition {composition_id!r} has no explicit crossing callable"
             ) from exc
 
+    def callable_is_registered(self, symbol: SourceSymbolBinding) -> bool:
+        """Return whether a candidate symbol aliases an admitted callable."""
+
+        registered = (
+            symbol
+            for symbols in self._stage_symbols.values()
+            for symbol in symbols
+        )
+        crossings = (
+            crossing.symbol for crossing in self._composition_crossings.values()
+        )
+        candidate_source = (
+            self.repository_root / symbol.source_path
+        ).resolve()
+        return any(
+            existing.qualified_symbol == symbol.qualified_symbol
+            and (
+                existing.module == symbol.module
+                or (self.repository_root / existing.source_path).resolve()
+                == candidate_source
+            )
+            for existing in (*registered, *crossings)
+        )
+
     @classmethod
     def load(
         cls,
@@ -1499,6 +1662,21 @@ class CrossingInvocationRecord:
     effect_outcome: str
     claim_qualifying_effect: bool
     effect_evidence: Mapping[str, Any] | None
+    result_type: str | None
+    error_type: str | None
+    callable_identity: Mapping[str, Any]
+    execution_event_order: int = -1
+
+
+@dataclass(frozen=True)
+class CandidateMechanismInvocationRecord:
+    """One identity-verified invocation of an unregistered candidate callable."""
+
+    candidate_scope_id: str
+    candidate_id: str
+    mechanism_id: str
+    symbol_id: str
+    outcome: str
     result_type: str | None
     error_type: str | None
     callable_identity: Mapping[str, Any]
@@ -1880,6 +2058,122 @@ class VerifiedCompositionCrossing:
                 effect_outcome=effect_outcome,
                 claim_qualifying_effect=claim_qualifying_effect,
                 effect_evidence=effect_evidence,
+                result_type=type(result).__name__,
+                error_type=None,
+                callable_identity=callable_identity,
+            ),
+        )
+        return result
+
+
+class VerifiedCandidateMechanism:
+    """Exact executable link for one explicitly unregistered candidate."""
+
+    def __init__(
+        self,
+        *,
+        session: PathwayBindingSession,
+        candidate_id: str,
+        mechanism_id: str,
+        symbol: SourceSymbolBinding,
+    ) -> None:
+        if symbol.call_kind != "module_function":
+            raise InvalidCandidateError(
+                "candidate mechanisms must expose one module-function entrypoint"
+            )
+        target = _resolve_candidate_symbol(
+            symbol,
+            session.authority.repository_root,
+        )
+        definition = _callable_definition(target)
+        if (
+            inspect.iscoroutinefunction(definition)
+            or inspect.isasyncgenfunction(definition)
+            or inspect.isgeneratorfunction(definition)
+        ):
+            raise InvalidCandidateError(
+                "candidate mechanisms must execute as synchronous functions"
+            )
+        self._session = session
+        self._candidate_id = candidate_id
+        self._mechanism_id = mechanism_id
+        self._symbol = symbol
+        self._target = target
+        self._expected_definition = definition
+        self._callable_identity = symbol.callable_identity(
+            target,
+            session.authority.repository_root,
+        )
+        self.__name__ = getattr(target, "__name__", symbol.qualified_symbol)
+        self.__doc__ = getattr(target, "__doc__", None)
+        self.__signature__ = inspect.signature(target)
+
+    @property
+    def symbol_id(self) -> str:
+        return self._symbol.symbol_id
+
+    @property
+    def link_record(self) -> Mapping[str, Any]:
+        """Return the executable identity frozen into the candidate declaration."""
+
+        return MappingProxyType(
+            {
+                "mechanism_id": self._mechanism_id,
+                "symbol_id": self._symbol.symbol_id,
+                "module": self._symbol.module,
+                "qualified_symbol": self._symbol.qualified_symbol,
+                "binding_role": self._symbol.binding_role,
+                "call_kind": self._symbol.call_kind,
+                "source_path": self._symbol.source_path,
+                "source_sha256": self._symbol.source_sha256,
+                "callable_identity": self._callable_identity.to_record(),
+            }
+        )
+
+    def _assert_current_callable(self) -> tuple[Callable[..., Any], Mapping[str, Any]]:
+        repository_root = self._session.authority.repository_root
+        current = _resolve_candidate_symbol(self._symbol, repository_root)
+        current_identity = self._symbol.callable_identity(current, repository_root)
+        if (
+            current_identity.to_record() != self._callable_identity.to_record()
+            or _callable_definition(self._target) is not self._expected_definition
+        ):
+            raise SymbolBindingError(
+                f"candidate mechanism {self.symbol_id!r} callable identity changed"
+            )
+        return current, MappingProxyType(current_identity.to_record())
+
+    def __call__(self, *args: Any, **kwargs: Any) -> Any:
+        scope = self._session._assert_candidate_mechanism_invocation_allowed(
+            candidate_id=self._candidate_id,
+            symbol_id=self.symbol_id,
+        )
+        target, callable_identity = self._assert_current_callable()
+        try:
+            result = target(*args, **kwargs)
+        except Exception as exc:
+            self._session._record_candidate_mechanism_invocation(
+                scope,
+                CandidateMechanismInvocationRecord(
+                    candidate_scope_id=scope.scope_id,
+                    candidate_id=self._candidate_id,
+                    mechanism_id=self._mechanism_id,
+                    symbol_id=self.symbol_id,
+                    outcome="raised",
+                    result_type=None,
+                    error_type=type(exc).__name__,
+                    callable_identity=callable_identity,
+                ),
+            )
+            raise
+        self._session._record_candidate_mechanism_invocation(
+            scope,
+            CandidateMechanismInvocationRecord(
+                candidate_scope_id=scope.scope_id,
+                candidate_id=self._candidate_id,
+                mechanism_id=self._mechanism_id,
+                symbol_id=self.symbol_id,
+                outcome="returned",
                 result_type=type(result).__name__,
                 error_type=None,
                 callable_identity=callable_identity,
@@ -2372,6 +2666,7 @@ class CandidateExecutionScope:
         self.candidate = candidate
         self.scope_id = ""
         self._events: list[dict[str, Any]] = []
+        self._mechanism_events: list[dict[str, Any]] = []
         self._completed = False
 
     def __enter__(self) -> Self:
@@ -2403,6 +2698,21 @@ class CandidateExecutionScope:
             }
         )
 
+    def _record_mechanism(
+        self,
+        *,
+        event_order: int,
+        invocation_index: int,
+        record: CandidateMechanismInvocationRecord,
+    ) -> None:
+        self._mechanism_events.append(
+            {
+                "event_order": event_order,
+                "record_index": invocation_index,
+                "record": record,
+            }
+        )
+
     def exercise_witness(self) -> dict[str, Any] | None:
         """Return evidence only for completed, returned constituent execution."""
 
@@ -2413,13 +2723,26 @@ class CandidateExecutionScope:
             for event in self._events
             if event["record"].claim_qualifying_effect
         ]
+        mechanism_events = [
+            event
+            for event in self._mechanism_events
+            if event["record"].outcome == "returned"
+        ]
+        if len(mechanism_events) != 1:
+            return None
+        mechanism_event = mechanism_events[0]
+        mechanism_record = mechanism_event["record"]
         if self.candidate.candidate_kind == "pathway":
-            if not qualifying:
+            if self.candidate.consumed_pathway_ids and not qualifying:
                 return None
             return {
                 "candidate_scope_id": self.scope_id,
                 "candidate_id": self.candidate.candidate_id,
-                "witness_kind": "content_addressed_constituent_execution",
+                "witness_kind": "identity_verified_candidate_mechanism_execution",
+                "candidate_mechanism_invocation_index": mechanism_event[
+                    "record_index"
+                ],
+                "candidate_mechanism_symbol_id": mechanism_record.symbol_id,
                 "constituent_invocation_indices": [
                     event["record_index"] for event in qualifying
                 ],
@@ -2444,10 +2767,18 @@ class CandidateExecutionScope:
             event["event_order"] for event in target_events
         ):
             return None
+        if not (
+            max(event["event_order"] for event in source_events)
+            < mechanism_event["event_order"]
+            < min(event["event_order"] for event in target_events)
+        ):
+            return None
         return {
             "candidate_scope_id": self.scope_id,
             "candidate_id": self.candidate.candidate_id,
-            "witness_kind": "content_addressed_source_before_target",
+            "witness_kind": "identity_verified_candidate_crossing_execution",
+            "candidate_mechanism_invocation_index": mechanism_event["record_index"],
+            "candidate_mechanism_symbol_id": mechanism_record.symbol_id,
             "source_pathway_id": source_id,
             "source_binding_id": source_events[0]["record"].binding_id,
             "source_invocation_indices": [
@@ -2458,7 +2789,10 @@ class CandidateExecutionScope:
             "target_invocation_indices": [
                 event["record_index"] for event in target_events
             ],
-            "ordering_rule": "all_source_invocations_before_all_target_invocations",
+            "ordering_rule": (
+                "all_source_invocations_before_candidate_mechanism_before_"
+                "all_target_invocations"
+            ),
         }
 
 
@@ -2544,6 +2878,22 @@ class BindingLock(BindingArtifact):
                 return True
         return False
 
+    def contains_candidate_mechanism_link(
+        self,
+        *,
+        candidate_id: str,
+        symbol_id: str,
+    ) -> bool:
+        """Return whether the lock freezes one exact candidate callable."""
+
+        for candidate in self.to_record()["candidate_declarations"]:
+            link = candidate.get("candidate_mechanism_link")
+            if candidate.get("candidate_id") == candidate_id and isinstance(
+                link, Mapping
+            ):
+                return link.get("symbol_id") == symbol_id
+        return False
+
 
 class BindingReceipt(BindingArtifact):
     """Exact post-use receipt linked to one binding lock."""
@@ -2561,6 +2911,9 @@ class PathwayBindingSession:
         self._pathway_bindings: dict[str, BoundPathway] = {}
         self._composition_bindings: dict[str, BoundComposition] = {}
         self._candidates: dict[str, CandidateDeclaration] = {}
+        self._candidate_mechanism_handles: dict[
+            str, VerifiedCandidateMechanism
+        ] = {}
         self._alternatives: dict[str, AllowedPathwayAlternatives] = {}
         self._linked_symbols: dict[tuple[str, str], dict[str, Any]] = {}
         self._linked_instances: dict[tuple[str, str], object | None] = {}
@@ -2572,6 +2925,9 @@ class PathwayBindingSession:
         ] = {}
         self._invocations: list[InvocationRecord] = []
         self._crossing_invocations: list[CrossingInvocationRecord] = []
+        self._candidate_mechanism_invocations: list[
+            CandidateMechanismInvocationRecord
+        ] = []
         self._composition_scopes: list[CompositionExecutionScope] = []
         self._active_composition_scope: CompositionExecutionScope | None = None
         self._candidate_scopes: list[CandidateExecutionScope] = []
@@ -2597,8 +2953,25 @@ class PathwayBindingSession:
         return tuple(self._crossing_invocations)
 
     @property
+    def candidate_mechanism_invocation_records(
+        self,
+    ) -> tuple[CandidateMechanismInvocationRecord, ...]:
+        return tuple(self._candidate_mechanism_invocations)
+
+    @property
     def candidates(self) -> tuple[CandidateDeclaration, ...]:
         return tuple(self._candidates.values())
+
+    def _candidate_mechanism(
+        self,
+        candidate_id: str,
+    ) -> VerifiedCandidateMechanism:
+        try:
+            return self._candidate_mechanism_handles[candidate_id]
+        except KeyError as exc:
+            raise InvalidCandidateError(
+                f"candidate {candidate_id!r} lacks executable mechanism evidence"
+            ) from exc
 
     @property
     def alternatives(self) -> tuple[AllowedPathwayAlternatives, ...]:
@@ -2817,6 +3190,24 @@ class PathwayBindingSession:
         )
         self._execution_event_count += 1
 
+    def _record_candidate_mechanism_invocation(
+        self,
+        scope: CandidateExecutionScope,
+        record: CandidateMechanismInvocationRecord,
+    ) -> None:
+        invocation_index = len(self._candidate_mechanism_invocations)
+        record = replace(
+            record,
+            execution_event_order=self._execution_event_count,
+        )
+        self._candidate_mechanism_invocations.append(record)
+        scope._record_mechanism(
+            event_order=self._execution_event_count,
+            invocation_index=invocation_index,
+            record=record,
+        )
+        self._execution_event_count += 1
+
     def _open_composition_scope(self, scope: CompositionExecutionScope) -> str:
         if self._phase != "locked" or self._lock is None:
             raise BindingStateError(
@@ -2929,6 +3320,37 @@ class PathwayBindingSession:
             raise BindingStateError(
                 f"composition {composition.composition_id!r} crossing was already "
                 "invoked"
+            )
+        return scope
+
+    def _assert_candidate_mechanism_invocation_allowed(
+        self,
+        *,
+        candidate_id: str,
+        symbol_id: str,
+    ) -> CandidateExecutionScope:
+        if self._phase != "locked" or self._lock is None:
+            raise BindingStateError(
+                "candidate mechanism calls require a frozen binding lock"
+            )
+        scope = self._active_candidate_scope
+        if scope is None or scope.candidate.candidate_id != candidate_id:
+            raise BindingStateError(
+                "candidate mechanism calls require their explicit evidence scope"
+            )
+        if not self._lock.contains_candidate_mechanism_link(
+            candidate_id=candidate_id,
+            symbol_id=symbol_id,
+        ):
+            raise BindingStateError(
+                f"candidate mechanism {symbol_id!r} is absent from the binding lock"
+            )
+        if any(
+            item.candidate_id == candidate_id
+            for item in self._candidate_mechanism_invocations
+        ):
+            raise BindingStateError(
+                f"candidate {candidate_id!r} mechanism was already invoked"
             )
         return scope
 
@@ -3276,7 +3698,7 @@ class PathwayBindingSession:
         self,
         candidate_id: str,
     ) -> CandidateUseRecord:
-        """Record one scoped candidate use against its frozen content address."""
+        """Record one scoped use of the frozen candidate executable."""
 
         if self._phase != "locked":
             raise BindingStateError("candidate use requires a frozen binding lock")
@@ -3292,7 +3714,7 @@ class PathwayBindingSession:
         evidence = candidate.mechanism_evidence
         if evidence is None:
             raise InvalidCandidateError(
-                "candidate use requires content-addressed mechanism evidence "
+                "candidate use requires executable mechanism evidence "
                 "declared before lock"
             )
         evidence.assert_current(
@@ -3311,7 +3733,7 @@ class PathwayBindingSession:
         if len(witnesses) != 1:
             raise InvalidCandidateError(
                 "candidate use requires exactly one completed evidence scope with "
-                "returned constituent execution"
+                "returned candidate-mechanism execution"
             )
         use = CandidateUseRecord(
             candidate_id=candidate_id,
@@ -3461,11 +3883,20 @@ class PathwayBindingSession:
                         "claim_ceiling": candidate.claim_ceiling,
                         "promotion_status": candidate.promotion_status,
                         "mechanism_evidence": dict(use.mechanism_evidence),
+                        "candidate_mechanism_link": dict(
+                            candidate.mechanism_link or {}
+                        ),
                         "candidate_execution_witness": dict(use.execution_witness),
                         "authority": dict(candidate.authority),
                         "producer_residue": list(candidate.producer_residue),
                         "adapter_residue": list(candidate.adapter_residue),
                         "configured_residue": list(candidate.configured_residue),
+                        "invalid_relabel_conflict_ids": list(
+                            candidate.invalid_relabel_conflict_ids
+                        ),
+                        "invalid_relabel_blocked_claims": list(
+                            candidate.invalid_relabel_blocked_claims
+                        ),
                         "blocked_claims": list(candidate.blocked_claims),
                     }
                 )
@@ -3494,14 +3925,26 @@ class PathwayBindingSession:
                     "source_node_id": source_binding_id,
                     "target_node_id": target_binding_id,
                     "proposed_relation": candidate.proposed_relation,
+                    "proposed_relation_claim_status": (
+                        "descriptive_unreviewed_not_claim_qualified"
+                    ),
                     "claim_ceiling": candidate.claim_ceiling,
                     "promotion_status": candidate.promotion_status,
                     "mechanism_evidence": dict(use.mechanism_evidence),
+                    "candidate_mechanism_link": dict(
+                        candidate.mechanism_link or {}
+                    ),
                     "candidate_execution_witness": dict(use.execution_witness),
                     "authority": dict(candidate.authority),
                     "producer_residue": list(candidate.producer_residue),
                     "adapter_residue": list(candidate.adapter_residue),
                     "configured_residue": list(candidate.configured_residue),
+                    "invalid_relabel_conflict_ids": list(
+                        candidate.invalid_relabel_conflict_ids
+                    ),
+                    "invalid_relabel_blocked_claims": list(
+                        candidate.invalid_relabel_blocked_claims
+                    ),
                     "blocked_claims": list(candidate.blocked_claims),
                 }
             )
@@ -3539,6 +3982,19 @@ class PathwayBindingSession:
             self._candidates[candidate_id]
             for candidate_id in sorted(used_candidate_ids)
         )
+        witnessed_candidate_mechanisms = {
+            int(item.execution_witness["candidate_mechanism_invocation_index"])
+            for item in self._candidate_uses
+        }
+        returned_candidate_mechanisms = {
+            index
+            for index, item in enumerate(self._candidate_mechanism_invocations)
+            if item.outcome == "returned"
+        }
+        if witnessed_candidate_mechanisms != returned_candidate_mechanisms:
+            raise BindingStateError(
+                "returned candidate mechanisms require exact candidate-use witnesses"
+            )
         for candidate in used_candidates:
             assert candidate.mechanism_evidence is not None
             candidate.mechanism_evidence.assert_current(
@@ -3628,6 +4084,21 @@ class PathwayBindingSession:
             }
             for index, item in enumerate(self._crossing_invocations)
         ]
+        candidate_mechanism_uses = [
+            {
+                "candidate_mechanism_invocation_index": index,
+                "candidate_scope_id": item.candidate_scope_id,
+                "candidate_id": item.candidate_id,
+                "mechanism_id": item.mechanism_id,
+                "symbol_id": item.symbol_id,
+                "outcome": item.outcome,
+                "result_type": item.result_type,
+                "error_type": item.error_type,
+                "callable_identity": dict(item.callable_identity),
+                "execution_event_order": item.execution_event_order,
+            }
+            for index, item in enumerate(self._candidate_mechanism_invocations)
+        ]
         alternative_uses: list[dict[str, Any]] = []
         for alternatives in sorted(
             self._alternatives.values(),
@@ -3688,6 +4159,7 @@ class PathwayBindingSession:
             ],
             "actual_stage_symbol_invocations": actual_uses,
             "actual_composition_crossing_invocations": crossing_uses,
+            "actual_candidate_mechanism_invocations": candidate_mechanism_uses,
             "composition_crossing_witnesses": list(composition_witnesses),
             "allowed_pathway_alternatives_actual_use": alternative_uses,
             "registered_compositions_exercised": [
@@ -3956,6 +4428,7 @@ class PathwayBindingSession:
             if mechanism_evidence is not None
             else None
         )
+        mechanism_handle: VerifiedCandidateMechanism | None = None
         invalid_relabel_conflicts: tuple[Mapping[str, Any], ...] = ()
         if candidate_kind == "composition":
             if not proposed_source_pathway_id or not proposed_target_pathway_id:
@@ -3980,7 +4453,6 @@ class PathwayBindingSession:
                 proposed_source_pathway_id,
                 proposed_target_pathway_id,
             )
-            normalized_relation = _normalized_claim_text(proposed_relation)
             blocked_relabels = {
                 str(relabel)
                 for composition in invalid_relabel_conflicts
@@ -3989,7 +4461,7 @@ class PathwayBindingSession:
             restated = sorted(
                 relabel
                 for relabel in blocked_relabels
-                if _normalized_claim_text(relabel) in normalized_relation
+                if _restates_blocked_relabel(proposed_relation, relabel)
             )
             if restated:
                 raise InvalidCandidateError(
@@ -4002,7 +4474,7 @@ class PathwayBindingSession:
                 )
                 raise InvalidCandidateError(
                     "candidate endpoint pair conflicts with invalid relabel rows "
-                    f"{conflict_ids}; distinct content-addressed mechanism "
+                    f"{conflict_ids}; distinct executable candidate mechanism "
                     "evidence is required"
                 )
             if invalid_relabel_conflicts and parsed_evidence is not None:
@@ -4015,12 +4487,23 @@ class PathwayBindingSession:
                         "conflicting invalid composition"
                     )
         if parsed_evidence is not None:
-            parsed_evidence.assert_current(
+            executable_symbol = parsed_evidence.assert_current(
                 self.authority.repository_root,
                 candidate_kind=candidate_kind,
                 proposed_source_pathway_id=proposed_source_pathway_id,
                 proposed_target_pathway_id=proposed_target_pathway_id,
                 proposed_relation=proposed_relation,
+            )
+            if self.authority.callable_is_registered(executable_symbol):
+                raise InvalidCandidateError(
+                    "candidate executable must be distinct from every admitted "
+                    "stage and registered crossing callable"
+                )
+            mechanism_handle = VerifiedCandidateMechanism(
+                session=self,
+                candidate_id=candidate_id,
+                mechanism_id=parsed_evidence.mechanism_id,
+                symbol=executable_symbol,
             )
         raw_authority = dict(authority or {})
         unknown_coordinates = sorted(set(raw_authority) - set(AUTHORITY_COORDINATES))
@@ -4036,6 +4519,11 @@ class PathwayBindingSession:
             dict.fromkeys(
                 (
                     *blocked_claims,
+                    *(
+                        str(relabel)
+                        for composition in invalid_relabel_conflicts
+                        for relabel in composition["blocked_relabels"]
+                    ),
                     "candidate relation is admitted",
                     "candidate relation is native",
                     "candidate declaration is promotion",
@@ -4060,11 +4548,25 @@ class PathwayBindingSession:
             evidence_owner=evidence_owner,
             blocked_claims=blocked,
             mechanism_evidence=parsed_evidence,
+            mechanism_link=(
+                mechanism_handle.link_record
+                if mechanism_handle is not None
+                else None
+            ),
             invalid_relabel_conflict_ids=tuple(
                 str(item["composition_id"]) for item in invalid_relabel_conflicts
             ),
+            invalid_relabel_blocked_claims=tuple(
+                dict.fromkeys(
+                    str(relabel)
+                    for composition in invalid_relabel_conflicts
+                    for relabel in composition["blocked_relabels"]
+                )
+            ),
         )
         self._candidates[candidate_id] = declaration
+        if mechanism_handle is not None:
+            self._candidate_mechanism_handles[candidate_id] = mechanism_handle
         return declaration
 
 

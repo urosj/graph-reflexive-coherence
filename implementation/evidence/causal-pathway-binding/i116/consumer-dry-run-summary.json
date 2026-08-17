@@ -55,7 +55,7 @@
       "case_id": "01-simple-native-pathway",
       "lock_digest": "14e34ead989e77799a2fd0128f4276398d110578e3a6bf6d964c3e60487a7026",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.lock.json",
-      "receipt_digest": "3220b9e71d29ace57a0d5604de2271f56826146eb96e5e9c3d029e5b1c61f997",
+      "receipt_digest": "b58ccd4b2c2dcdbba0a9239c779ce612f6b51389f68f18374119831b9ee51482",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.receipt.json",
       "status": "passed"
     },
@@ -72,7 +72,7 @@
       "case_id": "02-producer-mediated-cmp20",
       "lock_digest": "09af21b51bf0799cd727444dfef23160b305b2474a8ef0fa55942f8e09df48ee",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.lock.json",
-      "receipt_digest": "faaaa9b934bcae7da89ec92f111a0a6df3b1169e0de1f89fb3a1bdc72c2fa014",
+      "receipt_digest": "3e4fa19510d67b4c450eff5d60679f1de518d4bf4cd8cfa64533b6d13ca35531",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.receipt.json",
       "status": "passed"
     },
@@ -88,7 +88,7 @@
       "case_id": "03-explicit-adapter-cmp26",
       "lock_digest": "5e130b57fdb48fe4b99900d7385294dadbcf73bc45eaea4eb16a9669b97788c3",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.lock.json",
-      "receipt_digest": "91074de7ffd88842f16c630e48aab0173495f50517a62a73382e2cc4c35d1468",
+      "receipt_digest": "6cd87169609902340532987b416d5e2a8ecdf6107ef5a57412fc5402852d09dd",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.receipt.json",
       "status": "passed"
     },
@@ -107,7 +107,7 @@
       "case_id": "04-diagnostic-only-cmp04",
       "lock_digest": "15a730ed937e99d0b27b98cd0242185b499edbca2f4d945b2a3ba9b72dc7e3c5",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.lock.json",
-      "receipt_digest": "0cc95ef49488bc3e957b2a8e1bca6246d9934e8ee6df1904cb6389fb6e1d5f4d",
+      "receipt_digest": "7ab3574a1e7c7999e1a5fb484afa7409983db38b8db7b50a572dec569969db1b",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.receipt.json",
       "status": "passed"
     },
@@ -124,7 +124,7 @@
       "case_id": "05-ambiguous-crossing-not-selected",
       "lock_digest": "42a1bb96be5c5cffeb2ddcf225fef6c3faeb989626a23e6dbc6e1e3ae61846d2",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.lock.json",
-      "receipt_digest": "6bdaca45aa8c38d66eacaef99fa522133a3041b860c6fb60eacc3fb5947ff822",
+      "receipt_digest": "4fa6752420f269bf254797632fb556a39161ff4445e9f069a64a8fcb54fa280a",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.receipt.json",
       "status": "passed"
     },
@@ -150,13 +150,16 @@
       "assertions": {
         "candidate_edge_kind": "experimental_unregistered_candidate",
         "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+        "candidate_mechanism_invocation_count": 1,
+        "candidate_witness_kind": "identity_verified_candidate_crossing_execution",
         "experimental_unregistered": true,
-        "promotion_status": "none"
+        "promotion_status": "none",
+        "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified"
       },
       "case_id": "08-unregistered-candidate",
-      "lock_digest": "5a653e539c51d0573fd48c4b54087608beb23907d60140eb73b30a0cba19ef3f",
+      "lock_digest": "abf786270792a2e9df5bfbb6f2c1e09abab3f0607d745754e19e10bfb5fc50a4",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
-      "receipt_digest": "643b9370945e4c932aaab5ab809390e00974c2cf66450b1aa0f4feedbc8069bf",
+      "receipt_digest": "edbfdb3e505c93d2143306532222b08498f1ee601468e254527b8040950882ba",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
       "status": "passed"
     },
@@ -180,7 +183,7 @@
       "case_id": "09-dynamic-a-b-choice",
       "lock_digest": "ac753ff66068dc91e75a7a5b8013ef3f328423a617793d17db3e19630790c22b",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.lock.json",
-      "receipt_digest": "bdc18abf7356ddb40337f8d81352e04f4fbdc6b4eab5d064f76ecbc216a57bc7",
+      "receipt_digest": "6b6ac2793a8c3ed5a88931f1df254bb4adee77f26d021589999dd4468525f22e",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.receipt.json",
       "status": "passed"
     },
@@ -196,7 +199,7 @@
       "case_id": "10-multi-edge-use-graph",
       "lock_digest": "03b347afc965b451fd57a55238b0feaa2172b4c5cc418b984431b3526e10ddb4",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.lock.json",
-      "receipt_digest": "00c3c4f48cb4d4b7d20fdb2fce93004e053bd3d6f422a237380d5bbf33686b2a",
+      "receipt_digest": "a4327f9b72ef744f553b87311ffb96399584151bbeaef0abb3a65094bbedad14",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.receipt.json",
       "status": "passed"
     }
@@ -223,7 +226,7 @@
     "consumer_input_contains_expected_ids": false,
     "consumer_result_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.result.json",
     "identity_match": true,
-    "oracle_digest": "4e031e50e008b9a8057709c6356151177b1bc6ab4ac6df6527a00496a6a8640c",
+    "oracle_digest": "2a78e24ae1cbc16405b32b072f5f7de7040445977e787b7dadda81a440fe7878",
     "oracle_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.oracle.json",
     "status": "passed"
   },
@@ -231,5 +234,5 @@
   "runtime_behavior_changed": false,
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i116_dry_runs_v1",
   "status": "passed",
-  "summary_digest": "8dfc023f281a053b092cf71af893874777274ddb6fbae2fd76d95c28cb848b32"
+  "summary_digest": "edebddf19a20393f6b8fad2094f98efc8e796e339f2b2c7894ea9dedab2e1490"
 }

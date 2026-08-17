@@ -263,6 +263,7 @@
       "producer_residue": []
     }
   ],
+  "actual_candidate_mechanism_invocations": [],
   "actual_composition_crossing_invocations": [
     {
       "binding_id": "composition:CMP-26",
@@ -743,7 +744,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "91074de7ffd88842f16c630e48aab0173495f50517a62a73382e2cc4c35d1468",
+  "receipt_digest": "6cd87169609902340532987b416d5e2a8ecdf6107ef5a57412fc5402852d09dd",
   "registered_compositions_exercised": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",

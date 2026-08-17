@@ -1,7 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Round-two re-audit rejected; R2-B01 author correction complete,
-R2-B02 and R2-B03 pending
+**Status:** Round-two re-audit rejected; R2-B01 and R2-B02 author corrections
+complete, R2-B03 pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -89,6 +89,27 @@ surface. `prepare_lgrc9v3_grc9v3_diagnostics(...)` returns its LGRC input, but
 the separately bound `GRC9V3.rebuild_transport_state()` owner is not that
 object. Ordered calls on an unrelated GRC object therefore remain pathway
 evidence only and cannot claim the diagnostic composition.
+
+## Candidate Executable Provenance
+
+An unregistered candidate is exercisable only when its declaration freezes a
+version-2 candidate-mechanism artifact and one exact executable module
+function. The artifact, executable source, definition fingerprint, and
+callable identity are content-addressed and revalidated. A candidate callable
+cannot alias an admitted stage or registered crossing callable.
+
+The exact candidate mechanism must return once inside the completed candidate
+evidence scope. For a composition candidate it must execute after every
+qualifying source invocation and before every qualifying target invocation.
+Metadata-only evidence and endpoint co-use cannot form a candidate graph
+element. Candidate execution remains experimental and unregistered; it is not
+an admitted effect contract.
+
+For a candidate over an endpoint pair occupied by an `invalid_relabel` matrix
+row, all conflicting IDs and blocked relabels remain structured prohibitions in
+the lock and receipt. Literal and load-bearing-token restatements are rejected,
+and the free-text proposed relation is explicitly descriptive, unreviewed, and
+not claim-qualified.
 
 ## Effect Outcome Contracts
 

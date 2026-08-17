@@ -139,8 +139,18 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       unrelated runtime objects.
 - [x] Extend BCF-019 and add runtime/checker adversarial controls for forged or
       unrelated object flow.
-- [ ] R2-B02: require candidate-specific mechanism execution and close semantic
+- [x] R2-B02: require candidate-specific mechanism execution and close semantic
       invalid-relabel paraphrases.
+- [x] Reject metadata-only candidate evidence and freeze one exact executable,
+      source, definition, and callable identity before lock.
+- [x] Require exactly one returned candidate-mechanism invocation inside its
+      completed scope and, for compositions, between source and target calls.
+- [x] Reject candidate mechanisms that alias an admitted stage or registered
+      crossing callable.
+- [x] Retain exact invalid-row conflicts and blocked relabels structurally;
+      classify proposed relation prose as descriptive and non-claim-qualified.
+- [x] Extend BCF-004/BCF-011 and runtime controls for missing, forged,
+      metadata-only, and semantically paraphrased candidate evidence.
 - [ ] R2-B03: independently canonicalize every claim-envelope field.
 - [ ] Re-run a new full independent adversarial audit with zero blockers and
-      zero unresolved majors after R2-B02 and R2-B03 close.
+      zero unresolved majors after R2-B03 closes.

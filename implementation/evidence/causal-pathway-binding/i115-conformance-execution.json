@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "ccbfa5377fc7d9f095006f2b2ba5fd237468384e9289871476b38574bf504eda",
+  "conformance_digest": "59edb1a52a99135cba7793828483978ca219a33d08c4692660b7c345bebd60d6",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "a312f4184a64d548286bc82c14eeb83e1eb3975d4eddb3b0d17645076be62f32",
+  "policy_digest": "2e280ca81f7fb5f8e5e2dd3345a8f93ea7928a9a81055901038a8408356359e7",
   "rule_count": 20,
   "rule_results": [
     {
@@ -66,7 +66,7 @@
       "status": "passed"
     },
     {
-      "description": "Candidate uses require current content-addressed mechanism evidence and scoped constituent execution while remaining experimental and unpromoted.",
+      "description": "Candidate uses require a current distinct executable identity and its exact scoped invocation while remaining experimental and unpromoted.",
       "issue_count": 0,
       "rule_id": "BCF-004",
       "status": "passed"
@@ -108,7 +108,7 @@
       "status": "passed"
     },
     {
-      "description": "Invalid relabels cannot be bound, reused, or laundered through renamed candidates without a distinct mechanism.",
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require a distinct executable and retain every structured block.",
       "issue_count": 0,
       "rule_id": "BCF-011",
       "status": "passed"

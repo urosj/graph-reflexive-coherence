@@ -246,6 +246,7 @@
       "producer_residue": []
     }
   ],
+  "actual_candidate_mechanism_invocations": [],
   "actual_composition_crossing_invocations": [],
   "actual_stage_symbol_invocations": [
     {
@@ -714,7 +715,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "faaaa9b934bcae7da89ec92f111a0a6df3b1169e0de1f89fb3a1bdc72c2fa014",
+  "receipt_digest": "3e4fa19510d67b4c450eff5d60679f1de518d4bf4cd8cfa64533b6d13ca35531",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",

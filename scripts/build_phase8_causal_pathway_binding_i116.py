@@ -509,15 +509,22 @@ def _candidate(authority: CausalPathwayAuthority) -> dict[str, Any]:
         proposed_relation="fixture-only post-packet snapshot relation",
         evidence_owner="i116_fixture",
         mechanism_evidence={
-            "evidence_kind": "content_addressed_artifact",
+            "evidence_kind": "executable_candidate_mechanism",
             "mechanism_id": "fixture.packet_schedule_then_snapshot",
             "path": str(CANDIDATE_EVIDENCE_PATH.relative_to(ROOT)),
             "sha256": sha256_file(CANDIDATE_EVIDENCE_PATH),
         },
     )
+    crossing = candidate.mechanism()
     lock = session.freeze_lock()
     with candidate.evidence_scope():
-        schedule(source_node_id=0, target_node_id=1, edge_id=0, amount=0.25)
+        scheduled = schedule(
+            source_node_id=0,
+            target_node_id=1,
+            edge_id=0,
+            amount=0.25,
+        )
+        crossing(scheduled)
         snapshot()
     session.record_candidate_use(candidate.candidate_id)
     receipt = session.build_receipt()
@@ -533,6 +540,15 @@ def _candidate(authority: CausalPathwayAuthority) -> dict[str, Any]:
             ],
             "promotion_status": candidate.promotion_status,
             "candidate_edge_kind": record["pathway_use_graph"]["edges"][0]["edge_kind"],
+            "candidate_mechanism_invocation_count": len(
+                record["actual_candidate_mechanism_invocations"]
+            ),
+            "candidate_witness_kind": record["candidate_relations_exercised"][0][
+                "candidate_execution_witness"
+            ]["witness_kind"],
+            "proposed_relation_claim_status": record["pathway_use_graph"]["edges"][
+                0
+            ]["proposed_relation_claim_status"],
         },
     )
 
