@@ -55,6 +55,9 @@ CANDIDATE_EVIDENCE_PATH = Path(
 CMP05_CANDIDATE_EVIDENCE_PATH = Path(
     "tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json"
 )
+CMP05_SYNONYM_NOOP_EVIDENCE_PATH = Path(
+    "tests/fixtures/causal_pathway_candidate_cmp05_synonym_noop_evidence.json"
+)
 
 
 def _candidate_mechanism_evidence() -> dict[str, str]:
@@ -73,6 +76,56 @@ def _cmp05_candidate_mechanism_evidence() -> dict[str, str]:
         "path": CMP05_CANDIDATE_EVIDENCE_PATH.as_posix(),
         "sha256": sha256_file(ROOT / CMP05_CANDIDATE_EVIDENCE_PATH),
     }
+
+
+def _cmp05_synonym_noop_mechanism_evidence() -> dict[str, str]:
+    return {
+        "evidence_kind": "executable_candidate_mechanism",
+        "mechanism_id": "fixture.synonym_noop_diagnostic_packet",
+        "path": CMP05_SYNONYM_NOOP_EVIDENCE_PATH.as_posix(),
+        "sha256": sha256_file(ROOT / CMP05_SYNONYM_NOOP_EVIDENCE_PATH),
+    }
+
+
+def _cmp05_relation_review(
+    *,
+    candidate_id: str,
+    proposed_relation: str,
+    mechanism_evidence: dict[str, str],
+) -> tuple[dict[str, Any], str]:
+    review: dict[str, Any] = {
+        "artifact": "causal-pathway-candidate-relation-review",
+        "schema_version": "causal_pathway_candidate_relation_review_v1",
+        "review_id": f"fixture-review:{candidate_id}",
+        "reviewer": "independent-fixture-reviewer",
+        "review_status": "accepted_structural_distinction",
+        "candidate_id": candidate_id,
+        "candidate_kind": "composition",
+        "proposed_source_pathway_id": (
+            "lgrc9v3.diagnostic_grc_reconstruction"
+        ),
+        "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
+        "proposed_relation": proposed_relation,
+        "invalid_relabel_conflict_ids": ["CMP-05"],
+        "invalid_relabel_blocked_claims": [
+            "diagnostic_as_behavior",
+            "native packet admission",
+        ],
+        "mechanism_evidence": {
+            "mechanism_id": mechanism_evidence["mechanism_id"],
+            "path": mechanism_evidence["path"],
+            "sha256": mechanism_evidence["sha256"],
+        },
+        "structural_distinction": {
+            "distinction_kind": "reviewed_external_adapter",
+            "source_binding": "candidate_callable_consumes_source_result",
+            "mechanism_effect": "distinct_nonempty_mapping_result",
+            "target_binding": "candidate_result_supplies_follow_on_request",
+        },
+    }
+    review_digest = canonical_digest(review, excluding="review_digest")
+    review["review_digest"] = review_digest
+    return review, review_digest
 
 
 def _accepted_authority() -> CausalPathwayAuthority:
@@ -692,6 +745,14 @@ class CausalPathwayBindingTest(unittest.TestCase):
     def test_distinct_cmp05_candidate_retains_structured_invalid_blocks(self) -> None:
         model = _two_node_runtime()
         session = PathwayBindingSession(self.authority)
+        candidate_id = "experiment.fixture.distinct_cmp05_mechanism"
+        proposed_relation = "new externally owned diagnostic packet adapter"
+        mechanism_evidence = _cmp05_candidate_mechanism_evidence()
+        relation_review, trusted_review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=proposed_relation,
+            mechanism_evidence=mechanism_evidence,
+        )
         diagnostic = session.bind_pathway(
             "lgrc9v3.diagnostic_grc_reconstruction",
             stage_ids=("diagnostic_model_construction",),
@@ -703,24 +764,28 @@ class CausalPathwayBindingTest(unittest.TestCase):
         prepare = diagnostic.symbol("diagnostic_model_construction")
         schedule = packet.symbol("packet_schedule", instance=model)
         candidate = session.declare_candidate(
-            candidate_id="experiment.fixture.distinct_cmp05_mechanism",
+            candidate_id=candidate_id,
             candidate_kind="composition",
             purpose="Exercise a distinct experimental mechanism over CMP-05 endpoints.",
             owner="fixture",
             consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
             proposed_source_pathway_id=diagnostic.pathway_id,
             proposed_target_pathway_id=packet.pathway_id,
-            proposed_relation="new externally owned diagnostic packet adapter",
+            proposed_relation=proposed_relation,
             evidence_owner="fixture",
-            mechanism_evidence=_cmp05_candidate_mechanism_evidence(),
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=trusted_review_digest,
         )
         crossing = candidate.mechanism()
         session.freeze_lock()
 
         with candidate.evidence_scope():
             diagnostic_result = prepare(model)
-            self.assertIs(crossing(diagnostic_result), diagnostic_result)
-            schedule(source_node_id=0, target_node_id=1, edge_id=0, amount=0.25)
+            request = crossing(diagnostic_result)
+            self.assertIsNot(request, diagnostic_result)
+            self.assertIsInstance(request, dict)
+            schedule(**request["packet_schedule_arguments"])
         session.record_candidate_use(candidate.candidate_id)
         record = session.build_receipt().to_record()
         used = record["candidate_relations_exercised"][0]
@@ -752,6 +817,101 @@ class CausalPathwayBindingTest(unittest.TestCase):
             "descriptive_unreviewed_not_claim_qualified",
             used["proposed_relation_claim_status"],
         )
+        self.assertEqual(
+            trusted_review_digest,
+            used["invalid_relabel_relation_review"]["review_digest"],
+        )
+        self.assertEqual(
+            used["invalid_relabel_relation_review"],
+            edge["invalid_relabel_relation_review"],
+        )
+
+    def test_cmp05_synonym_noop_requires_independent_relation_review(self) -> None:
+        session = PathwayBindingSession(self.authority)
+
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "independently trusted structural-distinction review",
+        ):
+            session.declare_candidate(
+                candidate_id="experiment.fixture.cmp05_synonym_noop",
+                candidate_kind="composition",
+                purpose="Reproduce the Round 3 synonym-renamed no-op falsifier.",
+                owner="fixture",
+                consumed_pathway_ids=(
+                    "lgrc9v3.diagnostic_grc_reconstruction",
+                    "lgrc9v3.explicit_packet_transport",
+                ),
+                proposed_source_pathway_id=(
+                    "lgrc9v3.diagnostic_grc_reconstruction"
+                ),
+                proposed_target_pathway_id=(
+                    "lgrc9v3.explicit_packet_transport"
+                ),
+                proposed_relation=(
+                    "forensic reconstruction dictates routine packet conduct"
+                ),
+                evidence_owner="fixture",
+                mechanism_evidence=(
+                    _cmp05_synonym_noop_mechanism_evidence()
+                ),
+            )
+
+    def test_reviewed_cmp05_synonym_noop_cannot_form_candidate_edge(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        candidate_id = "experiment.fixture.reviewed_cmp05_synonym_noop"
+        proposed_relation = (
+            "forensic reconstruction dictates routine packet conduct"
+        )
+        mechanism_evidence = _cmp05_synonym_noop_mechanism_evidence()
+        relation_review, trusted_review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=proposed_relation,
+            mechanism_evidence=mechanism_evidence,
+        )
+        diagnostic = session.bind_pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            stage_ids=("diagnostic_model_construction",),
+        )
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        schedule = packet.symbol("packet_schedule", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id=candidate_id,
+            candidate_kind="composition",
+            purpose="Prove a reviewed no-op still cannot witness a new relation.",
+            owner="fixture",
+            consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
+            proposed_source_pathway_id=diagnostic.pathway_id,
+            proposed_target_pathway_id=packet.pathway_id,
+            proposed_relation=proposed_relation,
+            evidence_owner="fixture",
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=trusted_review_digest,
+        )
+        crossing = candidate.mechanism()
+        session.freeze_lock()
+
+        with candidate.evidence_scope():
+            diagnostic_result = prepare(model)
+            self.assertIsNone(crossing(diagnostic_result))
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "exactly one completed evidence scope",
+        ):
+            session.record_candidate_use(candidate.candidate_id)
 
     def test_candidate_rejects_stale_mechanism_content_address(self) -> None:
         session = PathwayBindingSession(self.authority)

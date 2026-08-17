@@ -58,7 +58,19 @@ ATTESTED_OBJECT_FLOW_DATAFLOW: Final[str] = (
     "externally_attested_runtime_object_flow"
 )
 EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT: Final[str] = (
-    "externally_supplied_digest_for_registered_composition"
+    "externally_supplied_digest_for_registered_composition_or_reviewed_candidate"
+)
+INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT: Final[str] = (
+    "externally_supplied_digest_for_invalid_relabel_candidate_review"
+)
+
+_REVIEWED_STRUCTURAL_DISTINCTION: Final[Mapping[str, str]] = MappingProxyType(
+    {
+        "distinction_kind": "reviewed_external_adapter",
+        "source_binding": "candidate_callable_consumes_source_result",
+        "mechanism_effect": "distinct_nonempty_mapping_result",
+        "target_binding": "candidate_result_supplies_follow_on_request",
+    }
 )
 
 _SPECIAL_COMPOSITION_DATAFLOW_PORTS: Final[
@@ -619,6 +631,7 @@ class CandidateDeclaration:
     mechanism_link: Mapping[str, Any] | None
     invalid_relabel_conflict_ids: tuple[str, ...]
     invalid_relabel_blocked_claims: tuple[str, ...]
+    invalid_relabel_relation_review: CandidateRelationReview | None
     claim_ceiling: str = "experimental_unregistered"
     promotion_status: str = "none"
 
@@ -653,6 +666,16 @@ class CandidateDeclaration:
             "invalid_relabel_conflict_ids": list(self.invalid_relabel_conflict_ids),
             "invalid_relabel_blocked_claims": list(
                 self.invalid_relabel_blocked_claims
+            ),
+            "invalid_relabel_relation_review": (
+                self.invalid_relabel_relation_review.to_record()
+                if self.invalid_relabel_relation_review is not None
+                else None
+            ),
+            "invalid_relabel_relation_review_trust_requirement": (
+                INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+                if self.invalid_relabel_relation_review is not None
+                else None
             ),
             "proposed_relation_claim_status": (
                 "descriptive_unreviewed_not_claim_qualified"
@@ -835,6 +858,168 @@ class CandidateMechanismEvidence:
         symbol = SourceSymbolBinding.from_record(executable)
         _resolve_candidate_symbol(symbol, repository_root)
         return symbol
+
+
+@dataclass(frozen=True)
+class CandidateRelationReview:
+    """Separately trusted structural distinction for one invalid-pair candidate."""
+
+    review_id: str
+    reviewer: str
+    candidate_id: str
+    candidate_kind: str
+    proposed_source_pathway_id: str
+    proposed_target_pathway_id: str
+    proposed_relation: str
+    invalid_relabel_conflict_ids: tuple[str, ...]
+    invalid_relabel_blocked_claims: tuple[str, ...]
+    mechanism_evidence: Mapping[str, str]
+    structural_distinction: Mapping[str, str]
+    review_digest: str
+
+    @classmethod
+    def from_record(
+        cls,
+        record: Mapping[str, Any],
+        *,
+        trusted_digest: str | None,
+    ) -> CandidateRelationReview:
+        """Parse one review only when its digest comes from caller trust input."""
+
+        expected_fields = {
+            "artifact",
+            "schema_version",
+            "review_id",
+            "reviewer",
+            "review_status",
+            "candidate_id",
+            "candidate_kind",
+            "proposed_source_pathway_id",
+            "proposed_target_pathway_id",
+            "proposed_relation",
+            "invalid_relabel_conflict_ids",
+            "invalid_relabel_blocked_claims",
+            "mechanism_evidence",
+            "structural_distinction",
+            "review_digest",
+        }
+        review_digest = str(record.get("review_digest", ""))
+        if (
+            set(record) != expected_fields
+            or record.get("artifact") != "causal-pathway-candidate-relation-review"
+            or record.get("schema_version")
+            != "causal_pathway_candidate_relation_review_v1"
+            or record.get("review_status") != "accepted_structural_distinction"
+            or not str(record.get("review_id", ""))
+            or not str(record.get("reviewer", ""))
+            or re.fullmatch(r"[0-9a-f]{64}", review_digest) is None
+            or canonical_digest(record, excluding="review_digest") != review_digest
+        ):
+            raise InvalidCandidateError(
+                "invalid-relabel candidate review is malformed or self-inconsistent"
+            )
+        if trusted_digest != review_digest:
+            raise InvalidCandidateError(
+                "invalid-relabel candidate requires an independently trusted "
+                "structural-distinction review digest"
+            )
+        conflicts = record.get("invalid_relabel_conflict_ids")
+        blocks = record.get("invalid_relabel_blocked_claims")
+        mechanism_evidence = record.get("mechanism_evidence")
+        distinction = record.get("structural_distinction")
+        if (
+            not isinstance(conflicts, list)
+            or not conflicts
+            or not all(isinstance(item, str) and item for item in conflicts)
+            or not isinstance(blocks, list)
+            or not blocks
+            or not all(isinstance(item, str) and item for item in blocks)
+            or not isinstance(mechanism_evidence, Mapping)
+            or set(mechanism_evidence) != {"mechanism_id", "path", "sha256"}
+            or not isinstance(distinction, Mapping)
+            or dict(distinction) != dict(_REVIEWED_STRUCTURAL_DISTINCTION)
+        ):
+            raise InvalidCandidateError(
+                "invalid-relabel candidate review lacks its structural contract"
+            )
+        return cls(
+            review_id=str(record["review_id"]),
+            reviewer=str(record["reviewer"]),
+            candidate_id=str(record["candidate_id"]),
+            candidate_kind=str(record["candidate_kind"]),
+            proposed_source_pathway_id=str(record["proposed_source_pathway_id"]),
+            proposed_target_pathway_id=str(record["proposed_target_pathway_id"]),
+            proposed_relation=str(record["proposed_relation"]),
+            invalid_relabel_conflict_ids=tuple(conflicts),
+            invalid_relabel_blocked_claims=tuple(blocks),
+            mechanism_evidence=MappingProxyType(
+                {str(key): str(value) for key, value in mechanism_evidence.items()}
+            ),
+            structural_distinction=MappingProxyType(
+                {str(key): str(value) for key, value in distinction.items()}
+            ),
+            review_digest=review_digest,
+        )
+
+    def assert_matches(
+        self,
+        *,
+        candidate_id: str,
+        candidate_kind: str,
+        proposed_source_pathway_id: str,
+        proposed_target_pathway_id: str,
+        proposed_relation: str,
+        invalid_relabel_conflict_ids: Sequence[str],
+        invalid_relabel_blocked_claims: Sequence[str],
+        mechanism_evidence: CandidateMechanismEvidence,
+    ) -> None:
+        """Require the trusted review to bind every load-bearing candidate fact."""
+
+        expected_mechanism = {
+            "mechanism_id": mechanism_evidence.mechanism_id,
+            "path": mechanism_evidence.path,
+            "sha256": mechanism_evidence.sha256,
+        }
+        if (
+            self.candidate_id != candidate_id
+            or self.candidate_kind != candidate_kind
+            or self.proposed_source_pathway_id != proposed_source_pathway_id
+            or self.proposed_target_pathway_id != proposed_target_pathway_id
+            or self.proposed_relation != proposed_relation
+            or self.invalid_relabel_conflict_ids
+            != tuple(invalid_relabel_conflict_ids)
+            or self.invalid_relabel_blocked_claims
+            != tuple(invalid_relabel_blocked_claims)
+            or dict(self.mechanism_evidence) != expected_mechanism
+        ):
+            raise InvalidCandidateError(
+                "trusted structural-distinction review does not match candidate"
+            )
+
+    def to_record(self) -> dict[str, Any]:
+        """Return the exact independently trusted review frozen into artifacts."""
+
+        return {
+            "artifact": "causal-pathway-candidate-relation-review",
+            "schema_version": "causal_pathway_candidate_relation_review_v1",
+            "review_id": self.review_id,
+            "reviewer": self.reviewer,
+            "review_status": "accepted_structural_distinction",
+            "candidate_id": self.candidate_id,
+            "candidate_kind": self.candidate_kind,
+            "proposed_source_pathway_id": self.proposed_source_pathway_id,
+            "proposed_target_pathway_id": self.proposed_target_pathway_id,
+            "proposed_relation": self.proposed_relation,
+            "invalid_relabel_conflict_ids": list(
+                self.invalid_relabel_conflict_ids
+            ),
+            "invalid_relabel_blocked_claims": list(
+                self.invalid_relabel_blocked_claims
+            ),
+            "mechanism_evidence": dict(self.mechanism_evidence),
+            "structural_distinction": dict(self.structural_distinction),
+            "review_digest": self.review_digest,
+        }
 
 
 @dataclass(frozen=True)
@@ -1786,6 +1971,8 @@ class CandidateMechanismInvocationRecord:
     result_type: str | None
     error_type: str | None
     callable_identity: Mapping[str, Any]
+    relation_review_digest: str | None
+    structural_result_observed: bool | None
     execution_event_order: int = -1
 
 
@@ -2295,6 +2482,7 @@ class VerifiedCandidateMechanism:
         candidate_id: str,
         mechanism_id: str,
         symbol: SourceSymbolBinding,
+        relation_review: CandidateRelationReview | None,
     ) -> None:
         if symbol.call_kind != "module_function":
             raise InvalidCandidateError(
@@ -2317,6 +2505,7 @@ class VerifiedCandidateMechanism:
         self._candidate_id = candidate_id
         self._mechanism_id = mechanism_id
         self._symbol = symbol
+        self._relation_review = relation_review
         self._target = target
         self._expected_definition = definition
         self._callable_identity = symbol.callable_identity(
@@ -2382,9 +2571,24 @@ class VerifiedCandidateMechanism:
                     result_type=None,
                     error_type=type(exc).__name__,
                     callable_identity=callable_identity,
+                    relation_review_digest=(
+                        self._relation_review.review_digest
+                        if self._relation_review is not None
+                        else None
+                    ),
+                    structural_result_observed=(
+                        False if self._relation_review is not None else None
+                    ),
                 ),
             )
             raise
+        structural_result_observed = (
+            isinstance(result, Mapping)
+            and bool(result)
+            and all(result is not argument for argument in (*args, *kwargs.values()))
+            if self._relation_review is not None
+            else None
+        )
         self._session._record_candidate_mechanism_invocation(
             scope,
             CandidateMechanismInvocationRecord(
@@ -2396,6 +2600,12 @@ class VerifiedCandidateMechanism:
                 result_type=type(result).__name__,
                 error_type=None,
                 callable_identity=callable_identity,
+                relation_review_digest=(
+                    self._relation_review.review_digest
+                    if self._relation_review is not None
+                    else None
+                ),
+                structural_result_observed=structural_result_observed,
             ),
         )
         return result
@@ -3069,6 +3279,13 @@ class CandidateExecutionScope:
             return None
         mechanism_event = mechanism_events[0]
         mechanism_record = mechanism_event["record"]
+        relation_review = self.candidate.invalid_relabel_relation_review
+        if relation_review is not None and (
+            mechanism_record.relation_review_digest
+            != relation_review.review_digest
+            or mechanism_record.structural_result_observed is not True
+        ):
+            return None
         if self.candidate.candidate_kind == "pathway":
             if self.candidate.consumed_pathway_ids and not qualifying:
                 return None
@@ -4468,6 +4685,16 @@ class PathwayBindingSession:
                         "invalid_relabel_blocked_claims": list(
                             candidate.invalid_relabel_blocked_claims
                         ),
+                        "invalid_relabel_relation_review": (
+                            candidate.invalid_relabel_relation_review.to_record()
+                            if candidate.invalid_relabel_relation_review is not None
+                            else None
+                        ),
+                        "invalid_relabel_relation_review_trust_requirement": (
+                            INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+                            if candidate.invalid_relabel_relation_review is not None
+                            else None
+                        ),
                         "blocked_claims": list(candidate.blocked_claims),
                     }
                 )
@@ -4515,6 +4742,16 @@ class PathwayBindingSession:
                     ),
                     "invalid_relabel_blocked_claims": list(
                         candidate.invalid_relabel_blocked_claims
+                    ),
+                    "invalid_relabel_relation_review": (
+                        candidate.invalid_relabel_relation_review.to_record()
+                        if candidate.invalid_relabel_relation_review is not None
+                        else None
+                    ),
+                    "invalid_relabel_relation_review_trust_requirement": (
+                        INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+                        if candidate.invalid_relabel_relation_review is not None
+                        else None
                     ),
                     "blocked_claims": list(candidate.blocked_claims),
                 }
@@ -4667,6 +4904,8 @@ class PathwayBindingSession:
                 "result_type": item.result_type,
                 "error_type": item.error_type,
                 "callable_identity": dict(item.callable_identity),
+                "relation_review_digest": item.relation_review_digest,
+                "structural_result_observed": item.structural_result_observed,
                 "execution_event_order": item.execution_event_order,
             }
             for index, item in enumerate(self._candidate_mechanism_invocations)
@@ -4966,6 +5205,8 @@ class PathwayBindingSession:
         configured_residue: Sequence[str] = (),
         evidence_owner: str,
         mechanism_evidence: Mapping[str, Any] | None = None,
+        invalid_relabel_relation_review: Mapping[str, Any] | None = None,
+        trusted_relation_review_digest: str | None = None,
         blocked_claims: Sequence[str] = (),
     ) -> CandidateDeclaration:
         """Declare experimental work without altering admitted authorities."""
@@ -5011,6 +5252,7 @@ class PathwayBindingSession:
             else None
         )
         mechanism_handle: VerifiedCandidateMechanism | None = None
+        parsed_relation_review: CandidateRelationReview | None = None
         invalid_relabel_conflicts: tuple[Mapping[str, Any], ...] = ()
         if candidate_kind == "composition":
             if not proposed_source_pathway_id or not proposed_target_pathway_id:
@@ -5051,13 +5293,23 @@ class PathwayBindingSession:
                     f"{restated}"
                 )
             if invalid_relabel_conflicts and parsed_evidence is None:
-                conflict_ids = sorted(
+                missing_mechanism_conflict_ids = sorted(
                     str(item["composition_id"]) for item in invalid_relabel_conflicts
                 )
                 raise InvalidCandidateError(
                     "candidate endpoint pair conflicts with invalid relabel rows "
-                    f"{conflict_ids}; distinct executable candidate mechanism "
+                    f"{missing_mechanism_conflict_ids}; distinct executable candidate mechanism "
                     "evidence is required"
+                )
+            if invalid_relabel_conflicts and invalid_relabel_relation_review is None:
+                raise InvalidCandidateError(
+                    "candidate endpoint pair conflicts with invalid relabel rows; "
+                    "an independently trusted structural-distinction review is required"
+                )
+            if not invalid_relabel_conflicts and invalid_relabel_relation_review is not None:
+                raise InvalidCandidateError(
+                    "invalid-relabel relation reviews are only valid for conflicting "
+                    "endpoint pairs"
                 )
             if invalid_relabel_conflicts and parsed_evidence is not None:
                 reserved_ids = {
@@ -5081,11 +5333,39 @@ class PathwayBindingSession:
                     "candidate executable must be distinct from every admitted "
                     "stage and registered crossing callable"
                 )
+            if invalid_relabel_conflicts:
+                assert invalid_relabel_relation_review is not None
+                parsed_relation_review = CandidateRelationReview.from_record(
+                    invalid_relabel_relation_review,
+                    trusted_digest=trusted_relation_review_digest,
+                )
+                conflict_ids = tuple(
+                    str(item["composition_id"])
+                    for item in invalid_relabel_conflicts
+                )
+                invalid_blocks = tuple(
+                    dict.fromkeys(
+                        str(relabel)
+                        for composition in invalid_relabel_conflicts
+                        for relabel in composition["blocked_relabels"]
+                    )
+                )
+                parsed_relation_review.assert_matches(
+                    candidate_id=candidate_id,
+                    candidate_kind=candidate_kind,
+                    proposed_source_pathway_id=str(proposed_source_pathway_id),
+                    proposed_target_pathway_id=str(proposed_target_pathway_id),
+                    proposed_relation=str(proposed_relation),
+                    invalid_relabel_conflict_ids=conflict_ids,
+                    invalid_relabel_blocked_claims=invalid_blocks,
+                    mechanism_evidence=parsed_evidence,
+                )
             mechanism_handle = VerifiedCandidateMechanism(
                 session=self,
                 candidate_id=candidate_id,
                 mechanism_id=parsed_evidence.mechanism_id,
                 symbol=executable_symbol,
+                relation_review=parsed_relation_review,
             )
         raw_authority = dict(authority or {})
         unknown_coordinates = sorted(set(raw_authority) - set(AUTHORITY_COORDINATES))
@@ -5145,6 +5425,7 @@ class PathwayBindingSession:
                     for relabel in composition["blocked_relabels"]
                 )
             ),
+            invalid_relabel_relation_review=parsed_relation_review,
         )
         self._candidates[candidate_id] = declaration
         if mechanism_handle is not None:

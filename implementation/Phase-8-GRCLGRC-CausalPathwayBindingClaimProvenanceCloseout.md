@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** Round-three R3-B01 and R3-M01 corrected author-side; R3-B02
-correction and full independent re-audit pending
+**Status:** All round-three findings corrected author-side; full independent
+re-audit pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
 
@@ -31,8 +31,11 @@ that digest through an external trust input for every registered composition.
 R3-M01 is corrected author-side by freezing a representable stage/port
 dataflow contract for all 17 executable rows, including module-function
 arguments/results and CMP-04's explicit consumer-bound state-copy derivation.
-R3-B02 remains open. This document remains a pending correction record, not an
-acceptance record.
+R3-B02 is now corrected author-side by requiring a separately trusted review
+of the exact invalid-pair candidate distinction, a structurally non-no-op
+mapping result, and independent checker validation of both review and raw
+execution. This document remains a pending re-audit record, not an acceptance
+record.
 
 Locks and receipts are operation-scoped, callable and crossing identities are
 rechecked, candidate and dynamic-choice evidence is scoped, acceptance uses a
@@ -70,6 +73,10 @@ envelope.
 - Candidate use requires one distinct source-pinned executable invocation in
   its evidence scope; metadata-only declarations and invalid-relabel semantic
   paraphrases remain unqualified.
+- A candidate over invalid-relabel endpoints requires an independently trusted
+  structural review of the exact relation and executable. A `None`,
+  pass-through, scalar, or empty result cannot form an experimental edge, even
+  after coherent artifact resealing.
 - Dynamic alternatives remain caller-selected and actual use is receipted.
 - Endpoint co-use and registered chains do not synthesize new edges or claims.
 - Non-explicit composition edges require a qualifying source and target call
@@ -114,7 +121,7 @@ selector  f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b
 policy    7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9
 bindings  73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556
 binding conformance policy
-          696830f2f8bb9f0420190a74f1f3337b2ae916752ed8e6d87db8f5dab0ac913c
+          75da29e93b5dbfa350651f4579f25ecf420a85377b0841e6ef293262a7de5592
 ```
 
 ## Current Maximum Claim Pending Independent Re-Audit

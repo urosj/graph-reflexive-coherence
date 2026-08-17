@@ -183,7 +183,14 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Add a consumer-bound, equivalent-state-copy target reference so CMP-04
       is executable without binder dispatch or a false object-identity claim.
 - [x] Regenerate I115/I116 evidence; exercise CMP-04 as a diagnostic-only edge.
-- [ ] R3-B02: require independently reviewed structural distinction for a
+- [x] R3-B02: require independently reviewed structural distinction for a
       candidate over an invalid endpoint pair; a synonym/no-op candidate must
       not produce an exercised edge.
+- [x] Bind the external review to the exact candidate, endpoints, relation,
+      invalid-row blocks, and mechanism content address.
+- [x] Require a distinct nonempty mapping result and retain its review digest
+      and structural predicate in the raw execution transcript.
+- [x] Reject the exact synonym-renamed `return None` mechanism at runtime and
+      under coherently resealed checker artifacts with all trust inputs.
+- [x] Retain the trusted review in candidate receipt and graph projections.
 - [ ] Re-run a full independent adversarial audit after R3-B02 closes.

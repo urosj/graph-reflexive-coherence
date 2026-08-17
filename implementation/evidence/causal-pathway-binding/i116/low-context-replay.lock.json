@@ -161,10 +161,10 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "7c50dcb8cd66408bef157d5378f8f227dc2bee6eb1dc5791ae627436aa5d676d",
+  "lock_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

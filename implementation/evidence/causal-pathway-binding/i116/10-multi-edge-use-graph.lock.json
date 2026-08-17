@@ -441,7 +441,7 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "explicit_adapters": [],
   "explicit_producers": [
     {
@@ -463,7 +463,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "a558f02a44951e069120eb3df444187eafed08f77659fbe27030398ff33a5c73",
+  "lock_digest": "359651112e86c23cb2ccfde04500a1e922438718453aba3582387159eb8b6e6f",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

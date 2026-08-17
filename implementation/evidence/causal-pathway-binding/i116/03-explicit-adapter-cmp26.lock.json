@@ -353,7 +353,7 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "explicit_adapters": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
@@ -362,7 +362,7 @@
     }
   ],
   "explicit_producers": [],
-  "lock_digest": "d38cf3803fe96692e8e50696e48f66769fd0e23522308666fa4cd54c02702c1b",
+  "lock_digest": "fd98de606a66fb5d1bc5a9abc6c9df188c1d6caaf33c1b3fc14da3a99f96eba5",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

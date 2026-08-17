@@ -210,6 +210,9 @@ def build_policy(
         "execution_transcript_trust_requirement": (
             checker.EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
         ),
+        "invalid_relabel_candidate_review_trust_requirement": (
+            checker.INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+        ),
         "runtime_dispatcher_created": False,
         "semantic_selection_performed_by_binder": False,
         "unbound_execution_claim_qualified": False,

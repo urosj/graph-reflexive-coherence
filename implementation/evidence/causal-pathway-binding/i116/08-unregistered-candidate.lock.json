@@ -38,19 +38,19 @@
         "binding_role": "candidate_mechanism_entrypoint",
         "call_kind": "module_function",
         "callable_identity": {
-          "callable_identity_digest": "3760fa1ebfe2ac1a2cebc5b477a426b936f905ce76b12b92d6cf82831c73a270",
+          "callable_identity_digest": "bdbb0432e62e403e7e443613f43c0fb7220f5924792d1e6c83bb489be99f8664",
           "definition_first_line": 8,
           "definition_source_sha256": "54d3ed777a35638894ec2b13e4b046483a80741f011809d7999ac0c923d0c054",
           "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
           "qualified_symbol": "packet_schedule_to_snapshot_crossing",
           "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
-          "source_sha256": "2885bb99cc60c949673a62b4a81e73e6905998792c640291eb8e1d0f8d59d1ed"
+          "source_sha256": "9b4a61d074596a5786c9725e912f6368b0f38258cff71eec78e44d8cd1ec10b7"
         },
         "mechanism_id": "fixture.packet_schedule_then_snapshot",
         "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
         "qualified_symbol": "packet_schedule_to_snapshot_crossing",
         "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
-        "source_sha256": "2885bb99cc60c949673a62b4a81e73e6905998792c640291eb8e1d0f8d59d1ed",
+        "source_sha256": "9b4a61d074596a5786c9725e912f6368b0f38258cff71eec78e44d8cd1ec10b7",
         "symbol_id": "candidate-mechanism:fixture.packet_schedule_then_snapshot"
       },
       "claim_ceiling": "experimental_unregistered",
@@ -63,11 +63,13 @@
       "evidence_owner": "i116_fixture",
       "invalid_relabel_blocked_claims": [],
       "invalid_relabel_conflict_ids": [],
+      "invalid_relabel_relation_review": null,
+      "invalid_relabel_relation_review_trust_requirement": null,
       "mechanism_evidence": {
         "evidence_kind": "executable_candidate_mechanism",
         "mechanism_id": "fixture.packet_schedule_then_snapshot",
         "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
-        "sha256": "e15aaf980ae3f0abe9fd75e331628b5a909daf29407717c86968195764ed6f13"
+        "sha256": "3c4cecb90b46522d87e3d2773529966701c4111ef5f2c60b0490daccb42dd51a"
       },
       "owner": "i116_fixture",
       "producer_residue": [],
@@ -210,10 +212,10 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "eff76a8b70669c2adce478f24d3d21041d3ef10aac69683fd3da49ca28c4177d",
+  "lock_digest": "da542ca4f1469139375719b1b7cf1ff4cf3adcfc0b6aff06d47ad8e5225885e4",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [
@@ -310,19 +312,19 @@
             "binding_role": "candidate_mechanism_entrypoint",
             "call_kind": "module_function",
             "callable_identity": {
-              "callable_identity_digest": "3760fa1ebfe2ac1a2cebc5b477a426b936f905ce76b12b92d6cf82831c73a270",
+              "callable_identity_digest": "bdbb0432e62e403e7e443613f43c0fb7220f5924792d1e6c83bb489be99f8664",
               "definition_first_line": 8,
               "definition_source_sha256": "54d3ed777a35638894ec2b13e4b046483a80741f011809d7999ac0c923d0c054",
               "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
               "qualified_symbol": "packet_schedule_to_snapshot_crossing",
               "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
-              "source_sha256": "2885bb99cc60c949673a62b4a81e73e6905998792c640291eb8e1d0f8d59d1ed"
+              "source_sha256": "9b4a61d074596a5786c9725e912f6368b0f38258cff71eec78e44d8cd1ec10b7"
             },
             "mechanism_id": "fixture.packet_schedule_then_snapshot",
             "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
             "qualified_symbol": "packet_schedule_to_snapshot_crossing",
             "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
-            "source_sha256": "2885bb99cc60c949673a62b4a81e73e6905998792c640291eb8e1d0f8d59d1ed",
+            "source_sha256": "9b4a61d074596a5786c9725e912f6368b0f38258cff71eec78e44d8cd1ec10b7",
             "symbol_id": "candidate-mechanism:fixture.packet_schedule_then_snapshot"
           },
           "claim_ceiling": "experimental_unregistered",
@@ -335,11 +337,13 @@
           "evidence_owner": "i116_fixture",
           "invalid_relabel_blocked_claims": [],
           "invalid_relabel_conflict_ids": [],
+          "invalid_relabel_relation_review": null,
+          "invalid_relabel_relation_review_trust_requirement": null,
           "mechanism_evidence": {
             "evidence_kind": "executable_candidate_mechanism",
             "mechanism_id": "fixture.packet_schedule_then_snapshot",
             "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
-            "sha256": "e15aaf980ae3f0abe9fd75e331628b5a909daf29407717c86968195764ed6f13"
+            "sha256": "3c4cecb90b46522d87e3d2773529966701c4111ef5f2c60b0490daccb42dd51a"
           },
           "owner": "i116_fixture",
           "producer_residue": [],

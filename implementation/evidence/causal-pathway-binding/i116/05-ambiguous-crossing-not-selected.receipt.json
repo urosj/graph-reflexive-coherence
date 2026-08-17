@@ -8,7 +8,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "d6b08dafca174ad60021d1df2204044eeaa547fee427589c226dff65c0815ac4",
+  "binding_lock_digest": "352cb02d94e3f0a15f121bad221aecc8f25cd77512d695488818145d3657723d",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [],
   "candidate_relations_exercised": [],
@@ -67,8 +67,8 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "5795ee66580249a216a077a3b0633ad74e92e7b59528668a88c706dcaeeb9f6a",
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_digest": "6b35868aadb0b1d92777abe6d1d6ca5ce0ce4c8447132560c5b3dc9f87f746bb",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -78,7 +78,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "9ae29096ce6e0b8453ec76151ae125fbd194eb686c52ec6b0f1a93e949d0ec64",
+  "receipt_digest": "8f894af9c1872b6b11d7299cb99ce099dd54263a8f789fd90ea1a82293de7185",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

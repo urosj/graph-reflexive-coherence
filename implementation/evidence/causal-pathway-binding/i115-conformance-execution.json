@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "a3826b9475ff8e83428c0c6e7bdc42c095c43a48b9341e8cc60f7b781aa926af",
+  "conformance_digest": "626cbe09a41c9b972f2bb90883b247b3a1e5bc4850cda3adec6750877b87a4ff",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "696830f2f8bb9f0420190a74f1f3337b2ae916752ed8e6d87db8f5dab0ac913c",
+  "policy_digest": "75da29e93b5dbfa350651f4579f25ecf420a85377b0841e6ef293262a7de5592",
   "rule_count": 20,
   "rule_results": [
     {
@@ -108,7 +108,7 @@
       "status": "passed"
     },
     {
-      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require a distinct executable and retain every structured block.",
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and every structured block.",
       "issue_count": 0,
       "rule_id": "BCF-011",
       "status": "passed"
@@ -169,6 +169,7 @@
     }
   ],
   "status": "passed",
+  "trusted_candidate_review_digests": [],
   "trusted_execution_transcript_digest": null,
   "validation_scope": "full_conformance"
 }

@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** Round-three R3-B01 and R3-M01 corrected author-side; R3-B02
-correction and full independent re-audit pending
+**Status:** All round-three findings corrected author-side; full independent
+re-audit pending
 
 **Checkpoint commit:** `976c660`
 
@@ -523,9 +523,10 @@ R3-M01 six structurally unwitnessable registered rows = major
 prior complete claim-envelope blocker = independently closed
 ```
 
-This correction slice closes R3-B01 and R3-M01 author-side together. R3-B02 is
-unchanged and remains open. No round-three acceptance is claimed before that
-blocker is corrected and another full independent audit completes.
+The first round-three correction slice closed R3-B01 and R3-M01 author-side
+together. The following R3-B02 slice closes the remaining reported finding
+author-side. No round-three acceptance is claimed before another full
+independent audit completes.
 
 ## R3-B01 Independently Trusted Execution Transcript
 
@@ -545,12 +546,13 @@ actual_candidate_mechanism_invocations
 Derived composition witnesses, graph edges, exercised projections, claim
 envelopes, and the receipt digest are outside this transcript digest. Locks and
 receipts freeze
-`externally_supplied_digest_for_registered_composition` as the trust
-requirement. BCF-019 independently recomputes the raw transcript digest and
-accepts a registered witness only when the caller also supplies the exact
-trusted digest through a separate checker argument. A digest read from the
-submitted receipt proves only self-consistency and is not an independent trust
-source.
+`externally_supplied_digest_for_registered_composition_or_reviewed_candidate`
+as the trust requirement. BCF-019 independently recomputes the raw transcript
+digest and accepts a registered witness only when the caller also supplies the
+exact trusted digest through a separate checker argument. The R3-B02
+correction applies that same external transcript requirement to reviewed
+invalid-pair candidate witnesses. A digest read from the submitted receipt
+proves only self-consistency and is not an independent trust source.
 
 The focused falsifier changes CMP-20's target lock and actual-use owner from
 `session-instance:1` to `session-instance:0`, changes the target raw object ID
@@ -590,6 +592,52 @@ Wrong-return and distinct-carrier controls fail before delegation; the I116
 CMP-04 dry run now emits one diagnostic-only registered edge and remains under
 its matrix claim ceiling.
 
+## R3-B02 Independently Reviewed Candidate Distinction
+
+R3-B02 is corrected author-side by separating relation prose and executable
+novelty from an accepted structural distinction. Any composition candidate
+whose ordered endpoints conflict with an `invalid_relabel` row must supply a
+`causal_pathway_candidate_relation_review_v1` record and the expected digest
+of that exact record through caller-controlled trust configuration. The
+review binds all load-bearing facts:
+
+```text
+candidate ID and kind
+source and target pathway IDs
+proposed relation
+invalid-row IDs and blocked relabels
+candidate mechanism ID, artifact path, and SHA-256
+reviewed structural-distinction contract
+```
+
+The record cannot be self-trusting: the binder compares it with the separately
+supplied expected digest, and BCF-011 requires its digest in the checker's
+external trusted-review set. A review on a non-conflicting endpoint pair is
+also rejected. Structured invalid-row blocks remain in the declaration,
+receipt, claim envelope, graph node or edge, and cannot be displaced by the
+review.
+
+The reviewed structural contract requires the candidate callable to consume
+the source result and produce a distinct nonempty mapping that supplies the
+follow-on request. Runtime invocation records freeze the review digest and a
+`structural_result_observed` predicate. Only a distinct nonempty mapping can
+set that predicate; a returned `None`, pass-through object, scalar, empty
+mapping, or raised call cannot yield a candidate-use witness. The checker also
+parses the content-addressed executable source and requires the narrow
+nonempty-mapping return structure rather than trusting the receipted flag.
+Finally, a reviewed candidate edge requires the independently supplied digest
+of its raw lock-linked execution transcript.
+
+The exact audit falsifier is frozen as
+`forensic reconstruction dictates routine packet conduct` backed by a
+distinct synchronous function whose body returns `None`. Declaration without
+an independent review fails. Even with a coherent review, a forged positive
+structural flag, a recomputed transcript, fully resealed lock and receipt, and
+both external digest arguments supplied, BCF-011 rejects the no-op executable
+and no experimental edge is accepted. A positive CMP-05-endpoint control uses
+a separately reviewed executable that returns a distinct packet-request
+mapping and retains both CMP-05 blocked relabels.
+
 ## Round-Three Author-Side Verification
 
 ```text
@@ -605,5 +653,30 @@ compileall selected changed surfaces = passed
 git diff --check = passed
 ```
 
-These results are author-side correction evidence only. R3-B02 and the full
-independent re-audit remain pending.
+These results cover the R3-B01/R3-M01 slice. The R3-B02 verification below
+supersedes the open-finding statement; the full independent re-audit remains
+pending.
+
+## R3-B02 Author-Side Verification
+
+The final author-side gate reproduces both the runtime and checker forms of the
+synonym/no-op falsifier. It also covers missing review, a self-issued review
+digest, reviewed positive mapping flow, graph review retention, and the
+ordinary non-conflicting candidate path.
+
+```text
+.venv focused binding/conformance/I116 tests = 88 passed
+.venv full unittest discovery = 1,299 passed
+I115/I116 evidence regeneration = passed
+I116 checker-evaluated consumer cases = 10 passed, 0 issues
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+These results are author-side correction evidence only. All round-three
+findings are corrected author-side; a new full independent audit remains the
+acceptance gate.

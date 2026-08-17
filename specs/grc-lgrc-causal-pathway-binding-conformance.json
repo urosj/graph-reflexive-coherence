@@ -69,9 +69,10 @@
       }
     }
   },
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "invalid_relabel_candidate_review_trust_requirement": "externally_supplied_digest_for_invalid_relabel_candidate_review",
   "iteration": 115,
-  "policy_digest": "696830f2f8bb9f0420190a74f1f3337b2ae916752ed8e6d87db8f5dab0ac913c",
+  "policy_digest": "75da29e93b5dbfa350651f4579f25ecf420a85377b0841e6ef293262a7de5592",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -124,7 +125,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require a distinct executable and retain every structured block.",
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and every structured block.",
       "rule_id": "BCF-011",
       "severity": "fail_closed"
     },
@@ -178,7 +179,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "a77f669b5b340facd2869e2b70c40143fbfbdba1",
+  "source_revision": "afc7b0990e3b1f2eb644ea0e69d8ea1dd8a564fd",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

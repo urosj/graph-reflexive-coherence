@@ -62,8 +62,8 @@ RULES = [
         "BCF-011",
         (
             "Invalid relabels cannot be bound, semantically restated, or laundered; "
-            "conflicting candidates require a distinct executable and retain every "
-            "structured block."
+            "conflicting candidates require an independently reviewed structural "
+            "distinction, a non-no-op executable result, and every structured block."
         ),
     ),
     (
@@ -150,6 +150,8 @@ CANDIDATE_DECLARATION_FIELDS = (
     "candidate_mechanism_link",
     "invalid_relabel_conflict_ids",
     "invalid_relabel_blocked_claims",
+    "invalid_relabel_relation_review",
+    "invalid_relabel_relation_review_trust_requirement",
     "proposed_relation_claim_status",
     "claim_ceiling",
     "blocked_claims",
@@ -159,8 +161,17 @@ CLAIM_QUALIFYING_EFFECT_OUTCOMES = {"committed", "observed"}
 EXPLICIT_ADAPTER_DATAFLOW = "exact_explicit_adapter_result_reference"
 ATTESTED_OBJECT_FLOW_DATAFLOW = "externally_attested_runtime_object_flow"
 EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT = (
-    "externally_supplied_digest_for_registered_composition"
+    "externally_supplied_digest_for_registered_composition_or_reviewed_candidate"
 )
+INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT = (
+    "externally_supplied_digest_for_invalid_relabel_candidate_review"
+)
+REVIEWED_STRUCTURAL_DISTINCTION = {
+    "distinction_kind": "reviewed_external_adapter",
+    "source_binding": "candidate_callable_consumes_source_result",
+    "mechanism_effect": "distinct_nonempty_mapping_result",
+    "target_binding": "candidate_result_supplies_follow_on_request",
+}
 
 SPECIAL_COMPOSITION_DATAFLOW_PORTS = {
     "CMP-01": (
@@ -970,6 +981,44 @@ def _function_body_contains_yield(definition: ast.FunctionDef) -> bool:
     return False
 
 
+def _function_returns_distinct_nonempty_mapping(
+    definition: ast.FunctionDef,
+) -> bool:
+    """Prove the narrow reviewed-adapter result shape from source structure."""
+
+    executable_body = list(definition.body)
+    if (
+        executable_body
+        and isinstance(executable_body[0], ast.Expr)
+        and isinstance(executable_body[0].value, ast.Constant)
+        and isinstance(executable_body[0].value.value, str)
+    ):
+        executable_body = executable_body[1:]
+    parameter_names = {
+        argument.arg
+        for argument in (
+            *definition.args.posonlyargs,
+            *definition.args.args,
+            *definition.args.kwonlyargs,
+        )
+    }
+    if definition.args.vararg is not None:
+        parameter_names.add(definition.args.vararg.arg)
+    if definition.args.kwarg is not None:
+        parameter_names.add(definition.args.kwarg.arg)
+    return (
+        len(executable_body) == 1
+        and isinstance(executable_body[0], ast.Return)
+        and isinstance(executable_body[0].value, ast.Dict)
+        and bool(executable_body[0].value.keys)
+        and all(key is not None for key in executable_body[0].value.keys)
+        and any(
+            isinstance(node, ast.Name) and node.id in parameter_names
+            for node in ast.walk(executable_body[0].value)
+        )
+    )
+
+
 def _candidate_evidence_issue(
     root: Path,
     candidate: Mapping[str, Any],
@@ -1083,6 +1132,15 @@ def _candidate_evidence_issue(
     definition = definitions[0]
     if _function_body_contains_yield(definition):
         return "candidate executable must run as one synchronous function call"
+    if (
+        candidate.get("invalid_relabel_conflict_ids")
+        and candidate.get("invalid_relabel_relation_review") is not None
+        and not _function_returns_distinct_nonempty_mapping(definition)
+    ):
+        return (
+            "reviewed invalid-pair executable does not structurally return one "
+            "distinct nonempty mapping"
+        )
     first_line = min(
         [definition.lineno, *(item.lineno for item in definition.decorator_list)]
     )
@@ -1121,6 +1179,92 @@ def _candidate_evidence_issue(
         != digest_without(callable_identity, "callable_identity_digest")
     ):
         return "candidate executable callable identity is stale or inconsistent"
+    return None
+
+
+def _candidate_relation_review_issue(
+    candidate: Mapping[str, Any],
+    *,
+    trusted_review_digests: set[str],
+) -> str | None:
+    """Validate a separately trusted review of an invalid-pair distinction."""
+
+    conflict_ids = candidate.get("invalid_relabel_conflict_ids")
+    has_conflicts = isinstance(conflict_ids, list) and bool(conflict_ids)
+    review = candidate.get("invalid_relabel_relation_review")
+    requirement = candidate.get(
+        "invalid_relabel_relation_review_trust_requirement"
+    )
+    if not has_conflicts:
+        if review is not None or requirement is not None:
+            return "relation review is present without an invalid endpoint conflict"
+        return None
+    if requirement != INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT:
+        return "invalid-pair relation review lacks its external trust requirement"
+    expected_fields = {
+        "artifact",
+        "schema_version",
+        "review_id",
+        "reviewer",
+        "review_status",
+        "candidate_id",
+        "candidate_kind",
+        "proposed_source_pathway_id",
+        "proposed_target_pathway_id",
+        "proposed_relation",
+        "invalid_relabel_conflict_ids",
+        "invalid_relabel_blocked_claims",
+        "mechanism_evidence",
+        "structural_distinction",
+        "review_digest",
+    }
+    if not isinstance(review, Mapping) or set(review) != expected_fields:
+        return "invalid-pair relation review fields are absent, incomplete, or widened"
+    review_digest = str(review.get("review_digest", ""))
+    if (
+        review.get("artifact")
+        != "causal-pathway-candidate-relation-review"
+        or review.get("schema_version")
+        != "causal_pathway_candidate_relation_review_v1"
+        or review.get("review_status") != "accepted_structural_distinction"
+        or not str(review.get("review_id", ""))
+        or not str(review.get("reviewer", ""))
+        or re.fullmatch(r"[0-9a-f]{64}", review_digest) is None
+        or digest_without(review, "review_digest") != review_digest
+    ):
+        return "invalid-pair relation review is malformed or self-inconsistent"
+    if review_digest not in trusted_review_digests:
+        return "invalid-pair relation review digest is not independently trusted"
+    exact_candidate_fields = (
+        "candidate_id",
+        "candidate_kind",
+        "proposed_source_pathway_id",
+        "proposed_target_pathway_id",
+        "proposed_relation",
+        "invalid_relabel_conflict_ids",
+        "invalid_relabel_blocked_claims",
+    )
+    if any(
+        review.get(field) != candidate.get(field)
+        for field in exact_candidate_fields
+    ):
+        return "trusted relation review does not bind the exact candidate declaration"
+    evidence = candidate.get("mechanism_evidence")
+    expected_mechanism = (
+        {
+            "mechanism_id": evidence.get("mechanism_id"),
+            "path": evidence.get("path"),
+            "sha256": evidence.get("sha256"),
+        }
+        if isinstance(evidence, Mapping)
+        else None
+    )
+    if (
+        review.get("mechanism_evidence") != expected_mechanism
+        or review.get("structural_distinction")
+        != REVIEWED_STRUCTURAL_DISTINCTION
+    ):
+        return "trusted relation review lacks the exact structural distinction contract"
     return None
 
 
@@ -1301,6 +1445,7 @@ def validate_bundle(
     acceptance_anchor: Mapping[str, Any] | None = None,
     trusted_anchor_digest: str | None = None,
     trusted_execution_transcript_digest: str | None = None,
+    trusted_candidate_review_digests: Iterable[str] = (),
 ) -> dict[str, Any]:
     """Validate one exact lock/receipt pair against current authorities."""
 
@@ -1313,6 +1458,7 @@ def validate_bundle(
     bindings = bundle["bindings"]
     lock = bundle["lock"]
     receipt = bundle["receipt"]
+    trusted_review_digests = set(trusted_candidate_review_digests)
 
     if (
         policy.get("execution_transcript_trust_requirement")
@@ -1325,6 +1471,16 @@ def validate_bundle(
             "BCF-019",
             "policy.composition_dataflow_contract_policy",
             "binding policy lacks the exact transcript trust and row-specific flow contracts",
+        )
+    if (
+        policy.get("invalid_relabel_candidate_review_trust_requirement")
+        != INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+    ):
+        add_issue(
+            issues,
+            "BCF-011",
+            "policy.invalid_relabel_candidate_review_trust_requirement",
+            "binding policy lacks the external invalid-pair review trust contract",
         )
 
     pathways, duplicate_pathways = _unique_index(
@@ -2254,6 +2410,17 @@ def validate_bundle(
                 candidate_id,
                 "candidate over an invalid endpoint pair lacks a distinct current mechanism",
             )
+        relation_review_issue = _candidate_relation_review_issue(
+            candidate,
+            trusted_review_digests=trusted_review_digests,
+        )
+        if relation_review_issue is not None:
+            add_issue(
+                issues,
+                "BCF-011",
+                candidate_id,
+                relation_review_issue,
+            )
         for pathway_id in candidate.get("consumed_admitted_pathway_ids", []):
             if pathway_id not in pathways:
                 add_issue(
@@ -2313,7 +2480,7 @@ def validate_bundle(
             issues,
             "BCF-019",
             "execution_transcript_trust_requirement",
-            "lock and receipt do not require an external composition transcript digest",
+            "lock and receipt do not require an external composition-or-reviewed-candidate transcript digest",
         )
 
     invocations = receipt.get("actual_stage_symbol_invocations", [])
@@ -2478,6 +2645,33 @@ def validate_bundle(
                 "BCF-004",
                 f"{candidate_id}:mechanism:{mechanism_index}",
                 "candidate mechanism lacks an exact scope or execution outcome",
+            )
+        relation_review = declared_candidate.get(
+            "invalid_relabel_relation_review"
+        )
+        if isinstance(relation_review, Mapping):
+            expected_structural_result = outcome == "returned"
+            if (
+                invocation.get("relation_review_digest")
+                != relation_review.get("review_digest")
+                or invocation.get("structural_result_observed")
+                is not expected_structural_result
+            ):
+                add_issue(
+                    issues,
+                    "BCF-011",
+                    f"{candidate_id}:mechanism:{mechanism_index}",
+                    "reviewed candidate invocation lacks its structural result",
+                )
+        elif (
+            invocation.get("relation_review_digest") is not None
+            or invocation.get("structural_result_observed") is not None
+        ):
+            add_issue(
+                issues,
+                "BCF-011",
+                f"{candidate_id}:mechanism:{mechanism_index}",
+                "unreviewed candidate invocation claims a reviewed structural result",
             )
     actual_bindings, duplicate_actual_bindings = _unique_index(
         receipt.get("actual_bound_pathways_used", []), "binding_id"
@@ -3161,6 +3355,28 @@ def validate_bundle(
                 == mechanism_link.get("symbol_id")
                 == mechanism_invocation.get("symbol_id")
             )
+            relation_review = candidate.get(
+                "invalid_relabel_relation_review"
+            )
+            if isinstance(relation_review, Mapping):
+                reviewed_structure_is_valid = (
+                    mechanism_invocation is not None
+                    and mechanism_invocation.get("relation_review_digest")
+                    == relation_review.get("review_digest")
+                    and mechanism_invocation.get("structural_result_observed")
+                    is True
+                    and transcript_is_independently_trusted
+                )
+                structurally_valid = (
+                    structurally_valid and reviewed_structure_is_valid
+                )
+                if not transcript_is_independently_trusted:
+                    add_issue(
+                        issues,
+                        "BCF-011",
+                        candidate_id,
+                        "reviewed invalid-pair witness lacks its independently trusted execution transcript digest",
+                    )
             if candidate.get("candidate_kind") == "composition":
                 source_invocations = selected_candidate_invocations(
                     candidate_witness.get("source_invocation_indices"),
@@ -3343,6 +3559,14 @@ def validate_bundle(
                 != used_candidate.get("invalid_relabel_conflict_ids")
                 or node.get("invalid_relabel_blocked_claims")
                 != used_candidate.get("invalid_relabel_blocked_claims")
+                or node.get("invalid_relabel_relation_review")
+                != used_candidate.get("invalid_relabel_relation_review")
+                or node.get(
+                    "invalid_relabel_relation_review_trust_requirement"
+                )
+                != used_candidate.get(
+                    "invalid_relabel_relation_review_trust_requirement"
+                )
                 or node.get("blocked_claims")
                 != used_candidate.get("blocked_claims")
             ):
@@ -3438,6 +3662,14 @@ def validate_bundle(
                 != used_candidate.get("invalid_relabel_conflict_ids")
                 or edge.get("invalid_relabel_blocked_claims")
                 != used_candidate.get("invalid_relabel_blocked_claims")
+                or edge.get("invalid_relabel_relation_review")
+                != used_candidate.get("invalid_relabel_relation_review")
+                or edge.get(
+                    "invalid_relabel_relation_review_trust_requirement"
+                )
+                != used_candidate.get(
+                    "invalid_relabel_relation_review_trust_requirement"
+                )
                 or edge.get("blocked_claims")
                 != used_candidate.get("blocked_claims")
             ):
@@ -4078,6 +4310,7 @@ def validate_bundle(
         "trusted_execution_transcript_digest": (
             trusted_execution_transcript_digest
         ),
+        "trusted_candidate_review_digests": sorted(trusted_review_digests),
         "actual_authority_digests": actual_authority_digests,
         "pathway_binding_count": len(lock_bindings),
         "composition_binding_count": len(lock_compositions),
@@ -4122,8 +4355,14 @@ def main() -> int:
         "--trusted-execution-transcript-digest",
         help=(
             "externally frozen SHA-256 of this receipt's raw execution transcript; "
-            "required for registered composition claims"
+            "required for registered composition and reviewed-candidate claims"
         ),
+    )
+    parser.add_argument(
+        "--trusted-candidate-review-digest",
+        action="append",
+        default=[],
+        help="externally trusted SHA-256 of an invalid-pair candidate review",
     )
     parser.add_argument("--output", type=Path)
     parser.add_argument(
@@ -4156,6 +4395,9 @@ def main() -> int:
         trusted_anchor_digest=args.trusted_anchor_digest,
         trusted_execution_transcript_digest=(
             args.trusted_execution_transcript_digest
+        ),
+        trusted_candidate_review_digests=(
+            args.trusted_candidate_review_digest
         ),
     )
     result["policy_digest"] = policy.get("policy_digest")

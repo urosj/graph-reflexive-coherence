@@ -19,10 +19,10 @@
     "target_credit"
   ],
   "identity_match": true,
-  "lock_digest": "7c50dcb8cd66408bef157d5378f8f227dc2bee6eb1dc5791ae627436aa5d676d",
+  "lock_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
   "oracle_consumed_by_consumer": false,
   "oracle_created_after_consumer_replay": true,
-  "oracle_digest": "057b42ae5a31f45c0ea7a98386444460f4a7aab2dbd04e983faa2b42b537823d",
-  "receipt_digest": "b01a77aa4ccb390d674273ac400893acb4547fc5f2b2c304ee03ac301aa1572d",
+  "oracle_digest": "ea75b8f2e12c9273ebd928c8a2a6d74a9a373746b90098d37417f706044d5cc9",
+  "receipt_digest": "f8e7d263cd51e48ebc6d59d63cf89d40804fb136cf21382bb093017111f749b6",
   "schema_version": "i116_low_context_replay_oracle_v1"
 }

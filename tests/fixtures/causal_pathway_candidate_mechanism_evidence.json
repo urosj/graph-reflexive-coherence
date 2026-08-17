@@ -7,7 +7,7 @@
     "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
     "qualified_symbol": "packet_schedule_to_snapshot_crossing",
     "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
-    "source_sha256": "2885bb99cc60c949673a62b4a81e73e6905998792c640291eb8e1d0f8d59d1ed",
+    "source_sha256": "9b4a61d074596a5786c9725e912f6368b0f38258cff71eec78e44d8cd1ec10b7",
     "symbol_id": "candidate-mechanism:fixture.packet_schedule_then_snapshot"
   },
   "mechanism_id": "fixture.packet_schedule_then_snapshot",

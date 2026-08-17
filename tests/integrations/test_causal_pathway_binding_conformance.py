@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import copy
+import importlib
 import importlib.util
 import json
 import unittest
 from pathlib import Path
 from typing import Any, ClassVar, cast
+
+from pygrc.causal_pathways import SourceSymbolBinding
 
 ROOT = Path(__file__).resolve().parents[2]
 CHECKER_PATH = ROOT / "scripts/check_grc_lgrc_causal_pathway_binding_conformance.py"
@@ -60,6 +63,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         active_rule_ids: set[str] | None = None,
         *,
         trusted_execution_transcript_digest: str | None = None,
+        trusted_candidate_review_digests: tuple[str, ...] = (),
     ) -> dict[str, Any]:
         return cast(
             dict[str, Any],
@@ -72,6 +76,9 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
                 trusted_execution_transcript_digest=(
                     trusted_execution_transcript_digest
+                ),
+                trusted_candidate_review_digests=(
+                    trusted_candidate_review_digests
                 ),
             ),
         )
@@ -99,6 +106,155 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             bundle["receipt"],
             "receipt_digest",
         )
+
+    def _install_round3_cmp05_noop_claim(
+        self,
+        bundle: dict[str, Any],
+    ) -> str:
+        """Coherently reseal the exact synonym/no-op Round 3 falsifier."""
+
+        candidate_id = "experiment.i116.packet_to_snapshot_relation"
+        relation = "forensic reconstruction dictates routine packet conduct"
+        evidence_path = Path(
+            "tests/fixtures/causal_pathway_candidate_cmp05_synonym_noop_evidence.json"
+        )
+        evidence_artifact = json.loads(
+            (ROOT / evidence_path).read_text(encoding="utf-8")
+        )
+        evidence = {
+            "evidence_kind": "executable_candidate_mechanism",
+            "mechanism_id": evidence_artifact["mechanism_id"],
+            "path": evidence_path.as_posix(),
+            "sha256": self.checker.sha256_file(ROOT / evidence_path),
+        }
+        executable = evidence_artifact["executable_symbol"]
+        symbol = SourceSymbolBinding.from_record(executable)
+        module = importlib.import_module(executable["module"])
+        target = getattr(module, executable["qualified_symbol"])
+        mechanism_link = {
+            "mechanism_id": evidence["mechanism_id"],
+            **executable,
+            "callable_identity": symbol.callable_identity(
+                target,
+                ROOT,
+            ).to_record(),
+        }
+        review: dict[str, Any] = {
+            "artifact": "causal-pathway-candidate-relation-review",
+            "schema_version": "causal_pathway_candidate_relation_review_v1",
+            "review_id": "round3-audit-synonym-noop-review",
+            "reviewer": "independent-round3-fixture",
+            "review_status": "accepted_structural_distinction",
+            "candidate_id": candidate_id,
+            "candidate_kind": "composition",
+            "proposed_source_pathway_id": (
+                "lgrc9v3.diagnostic_grc_reconstruction"
+            ),
+            "proposed_target_pathway_id": (
+                "lgrc9v3.explicit_packet_transport"
+            ),
+            "proposed_relation": relation,
+            "invalid_relabel_conflict_ids": ["CMP-05"],
+            "invalid_relabel_blocked_claims": [
+                "diagnostic_as_behavior",
+                "native packet admission",
+            ],
+            "mechanism_evidence": {
+                field: evidence[field]
+                for field in ("mechanism_id", "path", "sha256")
+            },
+            "structural_distinction": {
+                "distinction_kind": "reviewed_external_adapter",
+                "source_binding": "candidate_callable_consumes_source_result",
+                "mechanism_effect": "distinct_nonempty_mapping_result",
+                "target_binding": "candidate_result_supplies_follow_on_request",
+            },
+        }
+        review_digest = str(
+            self.checker.digest_without(review, "review_digest")
+        )
+        review["review_digest"] = review_digest
+        declaration = bundle["lock"]["candidate_declarations"][0]
+        use = bundle["receipt"]["candidate_relations_exercised"][0]
+        for candidate in (declaration, use):
+            candidate["consumed_admitted_pathway_ids"] = [
+                "lgrc9v3.diagnostic_grc_reconstruction",
+                "lgrc9v3.explicit_packet_transport",
+            ]
+            candidate["proposed_source_pathway_id"] = review[
+                "proposed_source_pathway_id"
+            ]
+            candidate["proposed_target_pathway_id"] = review[
+                "proposed_target_pathway_id"
+            ]
+            candidate["proposed_relation"] = relation
+            candidate["mechanism_evidence"] = copy.deepcopy(evidence)
+            candidate["candidate_mechanism_link"] = copy.deepcopy(
+                mechanism_link
+            )
+            candidate["invalid_relabel_conflict_ids"] = ["CMP-05"]
+            candidate["invalid_relabel_blocked_claims"] = [
+                "diagnostic_as_behavior",
+                "native packet admission",
+            ]
+            candidate["blocked_claims"] = list(
+                dict.fromkeys(
+                    [
+                        *candidate["blocked_claims"],
+                        "diagnostic_as_behavior",
+                        "native packet admission",
+                    ]
+                )
+            )
+            candidate["invalid_relabel_relation_review"] = copy.deepcopy(
+                review
+            )
+            candidate[
+                "invalid_relabel_relation_review_trust_requirement"
+            ] = self.checker.INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+        witness = use["candidate_execution_witness"]
+        witness["candidate_mechanism_symbol_id"] = executable["symbol_id"]
+        mechanism_invocation = bundle["receipt"][
+            "actual_candidate_mechanism_invocations"
+        ][0]
+        mechanism_invocation.update(
+            {
+                "mechanism_id": evidence["mechanism_id"],
+                "symbol_id": executable["symbol_id"],
+                "result_type": "NoneType",
+                "callable_identity": copy.deepcopy(
+                    mechanism_link["callable_identity"]
+                ),
+                "relation_review_digest": review_digest,
+                "structural_result_observed": True,
+            }
+        )
+        for node in bundle["receipt"]["pathway_use_graph"]["nodes"]:
+            if node.get("candidate_id") == candidate_id:
+                node["invalid_relabel_conflict_ids"] = ["CMP-05"]
+                node["invalid_relabel_blocked_claims"] = [
+                    "diagnostic_as_behavior",
+                    "native packet admission",
+                ]
+                node["invalid_relabel_relation_review"] = copy.deepcopy(review)
+                node[
+                    "invalid_relabel_relation_review_trust_requirement"
+                ] = self.checker.INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+                node["blocked_claims"] = copy.deepcopy(use["blocked_claims"])
+        for edge in bundle["receipt"]["pathway_use_graph"]["edges"]:
+            if edge.get("candidate_id") == candidate_id:
+                edge["invalid_relabel_conflict_ids"] = ["CMP-05"]
+                edge["invalid_relabel_blocked_claims"] = [
+                    "diagnostic_as_behavior",
+                    "native packet admission",
+                ]
+                edge["invalid_relabel_relation_review"] = copy.deepcopy(review)
+                edge[
+                    "invalid_relabel_relation_review_trust_requirement"
+                ] = self.checker.INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT
+                edge["blocked_claims"] = copy.deepcopy(use["blocked_claims"])
+        self._reseal(bundle)
+        return review_digest
 
     def test_current_lock_and_receipt_pass_all_twenty_rules(self) -> None:
         result = self._validate(
@@ -767,6 +923,62 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
 
         self.assertEqual("failed_closed", result["status"])
         self.assertEqual({"BCF-011"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_round3_synonym_noop_fails_with_trusted_review_and_transcript(
+        self,
+    ) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        review_digest = self._install_round3_cmp05_noop_claim(mutated)
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-011"},
+            trusted_execution_transcript_digest=mutated["receipt"][
+                "execution_transcript_digest"
+            ],
+            trusted_candidate_review_digests=(review_digest,),
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-011"}, {item["rule_id"] for item in result["issues"]})
+        self.assertTrue(
+            any(
+                "distinct current mechanism" in item["message"]
+                for item in result["issues"]
+            )
+        )
+
+    def test_self_issued_invalid_pair_review_is_not_a_trust_root(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/08-unregistered-candidate.lock.json",
+            receipt_path=(EVIDENCE_DIR / "i116/08-unregistered-candidate.receipt.json"),
+        )
+        self._install_round3_cmp05_noop_claim(mutated)
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-011"},
+            trusted_execution_transcript_digest=mutated["receipt"][
+                "execution_transcript_digest"
+            ],
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertTrue(
+            any(
+                "not independently trusted" in item["message"]
+                for item in result["issues"]
+            )
+        )
 
     def test_candidate_graph_cannot_omit_invalid_row_fields_bcf011(self) -> None:
         mutated = self.checker.load_bundle(

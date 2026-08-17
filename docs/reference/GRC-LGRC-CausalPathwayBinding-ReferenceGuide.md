@@ -328,12 +328,12 @@ require exact live-object continuity; CMP-04 records the consumer-bound
 equivalent-state-copy derivation. CMP-26 retains its stricter
 declared-adapter-source to adapter-result-reference rule.
 
-Registered-composition verification also requires
-`--trusted-execution-transcript-digest` (or the equivalent library argument)
-from caller-controlled trust configuration. The checker recomputes the digest
-from the lock identity and raw stage/crossing/candidate invocation arrays. A
-digest copied from the submitted receipt is only self-consistency evidence and
-must not be treated as the independent trust input.
+Registered-composition and reviewed invalid-pair-candidate verification also
+require `--trusted-execution-transcript-digest` (or the equivalent library
+argument) from caller-controlled trust configuration. The checker recomputes
+the digest from the lock identity and raw stage/crossing/candidate invocation
+arrays. A digest copied from the submitted receipt is only self-consistency
+evidence and must not be treated as the independent trust input.
 
 This proof is deliberately fail-closed. A composition whose crossing is not
 observable through its row-specific relation remains declared-but-unused even
@@ -351,6 +351,26 @@ the candidate scope. Metadata-only evidence, an admitted-callable alias,
 unscoped co-use, arbitrary strings, and literal or semantic invalid-relabel
 restatements do not produce candidate graph elements or an experimental
 candidate claim.
+
+The round-three R3-B02 correction adds a separate acceptance boundary for any
+candidate over endpoints already occupied by an `invalid_relabel` row. The
+declaration must include an exact `causal_pathway_candidate_relation_review_v1`
+record and receive its expected digest through caller-controlled trust input;
+the checker requires the same digest through repeatable
+`--trusted-candidate-review-digest` options. The review binds the candidate
+identity, endpoints, proposed relation, every invalid-row block, mechanism
+content address, and the structural adapter contract. It does not weaken the
+experimental ceiling or turn relation prose into a qualified claim.
+
+Such a reviewed callable must consume its source result and return a distinct
+nonempty mapping used to construct the follow-on request. The runtime freezes
+the review digest and observed structural-result predicate in the raw
+candidate invocation transcript. The checker independently validates the
+review, the pinned source's nonempty-mapping return structure, the invocation
+predicate, graph retention, and external transcript trust. A renamed relation
+backed by `return None`, a pass-through result, a scalar, or an empty mapping
+therefore cannot form an experimental edge even when all submitted artifacts
+are coherently resealed.
 
 The round-two R2-B03 correction makes the claim envelope an independently
 reconstructed projection rather than a trusted receipt summary. BCF-015 builds
@@ -438,6 +458,14 @@ Validate the frozen prospective fixture or supply another exact lock/receipt:
   --acceptance-anchor "$TRUSTED_BINDING_ANCHOR_PATH" \
   --trusted-anchor-digest "$TRUSTED_BINDING_ANCHOR_DIGEST"
 ```
+
+For a receipt that claims a registered composition, also supply its separately
+trusted raw transcript digest with
+`--trusted-execution-transcript-digest`. A reviewed candidate over an invalid
+endpoint pair requires that option plus one
+`--trusted-candidate-review-digest` for each accepted review. Neither value may
+be discovered from the submitted lock or receipt and treated as its own trust
+root.
 
 Binding/source drift becomes `stale_pending_review` and blocks
 claim-qualified artifacts. So does a missing anchor or a self-consistent map

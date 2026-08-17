@@ -1,7 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Round-three R3-B01 and R3-M01 corrected author-side; R3-B02
-correction and full independent re-audit pending
+**Status:** All round-three findings corrected author-side; full independent
+re-audit pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -122,9 +122,16 @@ an admitted effect contract.
 
 For a candidate over an endpoint pair occupied by an `invalid_relabel` matrix
 row, all conflicting IDs and blocked relabels remain structured prohibitions in
-the lock and receipt. Literal and load-bearing-token restatements are rejected,
-and the free-text proposed relation is explicitly descriptive, unreviewed, and
-not claim-qualified.
+the lock, receipt, and use graph. Literal and load-bearing-token restatements
+are rejected, and the free-text proposed relation is explicitly descriptive,
+unreviewed, and not claim-qualified. A remaining distinct relation requires a
+separately supplied, independently trusted structural-review digest that binds
+the exact candidate, endpoints, prose, conflicts, blocks, and executable
+content address. The reviewed executable must return a distinct nonempty
+mapping that supplies the follow-on request; `None`, pass-through, scalar, or
+empty results cannot witness a candidate edge. The checker independently
+validates the review, executable source shape, runtime structural-result flag,
+and raw execution transcript before accepting the experimental edge.
 
 ## Complete Claim-Envelope Canonicalization
 

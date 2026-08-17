@@ -246,7 +246,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "b6f06309af4bb980965cc0d6ad3c790fe2ec6699d30d7d1b2b4d05bde8230e51",
+  "binding_lock_digest": "87785901941e89adeead5a217fa017b9a944c56d7b0f2af6dc0ca6377cc15159",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "ordinary LGRC behavior",
@@ -402,8 +402,8 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "c93438f3b28403148689259c99b3440ab01761226e957dee73ad2bb9e1e00a82",
-  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
+  "execution_transcript_digest": "dd621f4fef4250e7e1b6a0da829404f7e41f8121156feadc8ba1dc4bc6598b47",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -462,7 +462,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "fb2cdb242134a3fe13619eb064343cc54895f2d253d469d05b1045334e2c57a1",
+  "receipt_digest": "2a378b3858e69acae6e11858f57768a94e3ba0e9ee738b154384ffee36f386a6",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
