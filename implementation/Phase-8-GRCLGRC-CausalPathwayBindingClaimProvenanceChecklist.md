@@ -193,4 +193,23 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Reject the exact synonym-renamed `return None` mechanism at runtime and
       under coherently resealed checker artifacts with all trust inputs.
 - [x] Retain the trusted review in candidate receipt and graph projections.
-- [ ] Re-run a full independent adversarial audit after R3-B02 closes.
+- [x] Re-run a full independent adversarial audit after R3-B02 closes; record
+      its round-four `reject_pending_correction` disposition.
+
+## Round-Four Independent Audit Correction
+
+- [x] Record the round-four `reject_pending_correction` disposition with the
+      remaining R4-B01 reviewed-candidate continuity blocker.
+- [x] Preserve `target(**request)` while exposing reviewed candidate results as
+      read-only provenance-carrying JSON mappings.
+- [x] Record source-result to candidate-argument identity in the raw candidate
+      invocation and candidate-result to target-request derivation in the raw
+      target invocation.
+- [x] Require the reviewed candidate witness to identify exact source,
+      candidate, and target invocation indices plus matching runtime-object and
+      canonical request digests.
+- [x] Make BCF-011/BCF-019 independently reconstruct the complete raw flow
+      before accepting the experimental edge.
+- [x] Cover the flowed mapping, ignored mapping with equivalent hard-coded
+      arguments, and coherently resealed missing-flow transcript controls.
+- [ ] Re-run a new full independent adversarial audit after R4-B01 closes.

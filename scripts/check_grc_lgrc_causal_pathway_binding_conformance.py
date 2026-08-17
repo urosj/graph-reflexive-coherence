@@ -63,7 +63,9 @@ RULES = [
         (
             "Invalid relabels cannot be bound, semantically restated, or laundered; "
             "conflicting candidates require an independently reviewed structural "
-            "distinction, a non-no-op executable result, and every structured block."
+            "distinction, a non-no-op executable result, exact source-result to "
+            "candidate-result to target-request flow in the externally trusted raw "
+            "transcript, and every structured block."
         ),
     ),
     (
@@ -908,6 +910,79 @@ def _runtime_object_flow_issue(value: Any) -> str | None:
         )
     ):
         return "runtime object-flow derivation is invalid"
+    return None
+
+
+def _candidate_request_flow_issue(value: Any) -> str | None:
+    """Validate one raw reviewed-candidate target-request derivation."""
+
+    if value is None:
+        return None
+    expected_fields = {
+        "schema_version",
+        "binding_rule",
+        "candidate_scope_id",
+        "candidate_id",
+        "candidate_mechanism_invocation_index",
+        "candidate_result",
+        "candidate_result_request_path",
+        "candidate_result_request_digest",
+        "target_bound_arguments_digest",
+        "target_binding_id",
+        "target_pathway_id",
+        "target_symbol_id",
+    }
+    descriptor = value.get("candidate_result") if isinstance(value, Mapping) else None
+    request_path = (
+        value.get("candidate_result_request_path")
+        if isinstance(value, Mapping)
+        else None
+    )
+    digest_fields = (
+        "candidate_result_request_digest",
+        "target_bound_arguments_digest",
+    )
+    if (
+        not isinstance(value, Mapping)
+        or set(value) != expected_fields
+        or value.get("schema_version")
+        != "reviewed_candidate_target_request_flow_v1"
+        or value.get("binding_rule")
+        != "candidate_result_mapping_supplies_complete_target_keyword_request"
+        or any(
+            not isinstance(value.get(field), str) or not value.get(field)
+            for field in (
+                "candidate_scope_id",
+                "candidate_id",
+                "target_binding_id",
+                "target_pathway_id",
+                "target_symbol_id",
+            )
+        )
+        or not isinstance(
+            value.get("candidate_mechanism_invocation_index"),
+            int,
+        )
+        or value.get("candidate_mechanism_invocation_index", -1) < 0
+        or not isinstance(descriptor, Mapping)
+        or set(descriptor) != {"object_id", "type"}
+        or re.fullmatch(
+            r"runtime-object:[0-9]+",
+            str(descriptor.get("object_id", "")),
+        )
+        is None
+        or not isinstance(descriptor.get("type"), str)
+        or not descriptor.get("type")
+        or not isinstance(request_path, list)
+        or any(not isinstance(item, str) or not item for item in request_path)
+        or any(
+            re.fullmatch(r"[0-9a-f]{64}", str(value.get(field, ""))) is None
+            for field in digest_fields
+        )
+        or value.get("candidate_result_request_digest")
+        != value.get("target_bound_arguments_digest")
+    ):
+        return "candidate target-request flow is incomplete or invalid"
     return None
 
 
@@ -2574,6 +2649,42 @@ def validate_bundle(
                 f"{binding_id}:{symbol_id}",
                 flow_issue,
             )
+        candidate_request_flow = invocation.get("candidate_request_flow")
+        candidate_request_issue = _candidate_request_flow_issue(
+            candidate_request_flow
+        )
+        if candidate_request_issue is not None:
+            add_issue(
+                issues,
+                "BCF-019",
+                f"{binding_id}:{symbol_id}",
+                candidate_request_issue,
+            )
+        elif isinstance(candidate_request_flow, Mapping):
+            flow_candidate = declared_candidates.get(
+                str(candidate_request_flow.get("candidate_id", "")),
+                {},
+            )
+            if (
+                not isinstance(
+                    flow_candidate.get("invalid_relabel_relation_review"),
+                    Mapping,
+                )
+                or invocation.get("candidate_scope_id")
+                != candidate_request_flow.get("candidate_scope_id")
+                or candidate_request_flow.get("target_binding_id") != binding_id
+                or candidate_request_flow.get("target_pathway_id")
+                != invocation.get("pathway_id")
+                or candidate_request_flow.get("target_pathway_id")
+                != flow_candidate.get("proposed_target_pathway_id")
+                or candidate_request_flow.get("target_symbol_id") != symbol_id
+            ):
+                add_issue(
+                    issues,
+                    "BCF-011",
+                    f"{binding_id}:{symbol_id}",
+                    "candidate target-request flow does not match its reviewed target invocation",
+                )
         if (
             invocation.get("claim_qualifying_effect") is True
             and effect_issue is None
@@ -2672,6 +2783,16 @@ def validate_bundle(
                 "BCF-011",
                 f"{candidate_id}:mechanism:{mechanism_index}",
                 "unreviewed candidate invocation claims a reviewed structural result",
+            )
+        mechanism_flow_issue = _runtime_object_flow_issue(
+            invocation.get("runtime_object_flow")
+        )
+        if mechanism_flow_issue is not None:
+            add_issue(
+                issues,
+                "BCF-019",
+                f"{candidate_id}:mechanism:{mechanism_index}",
+                mechanism_flow_issue,
             )
     actual_bindings, duplicate_actual_bindings = _unique_index(
         receipt.get("actual_bound_pathways_used", []), "binding_id"
@@ -3390,23 +3511,135 @@ def validate_bundle(
                     pathway_id=candidate.get("proposed_target_pathway_id"),
                     binding_id=candidate_witness.get("target_binding_id"),
                 )
+                expected_witness_fields = {
+                    "candidate_scope_id",
+                    "candidate_id",
+                    "witness_kind",
+                    "candidate_mechanism_invocation_index",
+                    "candidate_mechanism_symbol_id",
+                    "source_pathway_id",
+                    "source_binding_id",
+                    "source_invocation_indices",
+                    "target_pathway_id",
+                    "target_binding_id",
+                    "target_invocation_indices",
+                    "ordering_rule",
+                }
+                reviewed_dataflow_is_valid = True
+                if isinstance(relation_review, Mapping):
+                    expected_witness_fields.add("candidate_dataflow_witness")
+                    dataflow_witness = candidate_witness.get(
+                        "candidate_dataflow_witness"
+                    )
+                    dataflow_fields = {
+                        "witness_kind",
+                        "source_invocation_index",
+                        "source_result",
+                        "candidate_argument_name",
+                        "candidate_mechanism_invocation_index",
+                        "candidate_result",
+                        "candidate_result_request_path",
+                        "target_invocation_index",
+                        "target_request_digest",
+                    }
+                    source_flow_invocation = None
+                    target_flow_invocation = None
+                    if isinstance(dataflow_witness, Mapping):
+                        source_flow_index = dataflow_witness.get(
+                            "source_invocation_index"
+                        )
+                        target_flow_index = dataflow_witness.get(
+                            "target_invocation_index"
+                        )
+                        if (
+                            isinstance(source_flow_index, int)
+                            and 0 <= source_flow_index < len(invocations)
+                            and source_flow_index
+                            in candidate_witness.get(
+                                "source_invocation_indices",
+                                [],
+                            )
+                        ):
+                            source_flow_invocation = invocations[source_flow_index]
+                        if (
+                            isinstance(target_flow_index, int)
+                            and 0 <= target_flow_index < len(invocations)
+                            and target_flow_index
+                            in candidate_witness.get(
+                                "target_invocation_indices",
+                                [],
+                            )
+                        ):
+                            target_flow_invocation = invocations[target_flow_index]
+                    mechanism_flow = (
+                        mechanism_invocation.get("runtime_object_flow", {})
+                        if isinstance(mechanism_invocation, Mapping)
+                        else {}
+                    )
+                    candidate_arguments = mechanism_flow.get("arguments", {})
+                    candidate_argument_name = (
+                        dataflow_witness.get("candidate_argument_name")
+                        if isinstance(dataflow_witness, Mapping)
+                        else None
+                    )
+                    source_result = (
+                        source_flow_invocation.get("runtime_object_flow", {}).get(
+                            "result"
+                        )
+                        if isinstance(source_flow_invocation, Mapping)
+                        else None
+                    )
+                    target_request_flow = (
+                        target_flow_invocation.get("candidate_request_flow")
+                        if isinstance(target_flow_invocation, Mapping)
+                        else None
+                    )
+                    candidate_result = mechanism_flow.get("result")
+                    reviewed_dataflow_is_valid = (
+                        isinstance(dataflow_witness, Mapping)
+                        and set(dataflow_witness) == dataflow_fields
+                        and dataflow_witness.get("witness_kind")
+                        == "externally_attested_candidate_request_flow"
+                        and isinstance(candidate_argument_name, str)
+                        and bool(candidate_argument_name)
+                        and isinstance(candidate_arguments, Mapping)
+                        and candidate_arguments.get(candidate_argument_name)
+                        == source_result
+                        == dataflow_witness.get("source_result")
+                        and isinstance(candidate_result, Mapping)
+                        and dataflow_witness.get("candidate_result")
+                        == candidate_result
+                        and dataflow_witness.get(
+                            "candidate_mechanism_invocation_index"
+                        )
+                        == witness_mechanism_index
+                        and isinstance(target_request_flow, Mapping)
+                        and _candidate_request_flow_issue(target_request_flow)
+                        is None
+                        and target_request_flow.get("candidate_scope_id")
+                        == scope_id
+                        and target_request_flow.get("candidate_id")
+                        == candidate_id
+                        and target_request_flow.get(
+                            "candidate_mechanism_invocation_index"
+                        )
+                        == witness_mechanism_index
+                        and target_request_flow.get("candidate_result")
+                        == candidate_result
+                        and target_request_flow.get(
+                            "candidate_result_request_path"
+                        )
+                        == dataflow_witness.get(
+                            "candidate_result_request_path"
+                        )
+                        and target_request_flow.get(
+                            "target_bound_arguments_digest"
+                        )
+                        == dataflow_witness.get("target_request_digest")
+                    )
                 structurally_valid = (
                     structurally_valid
-                    and set(candidate_witness)
-                    == {
-                        "candidate_scope_id",
-                        "candidate_id",
-                        "witness_kind",
-                        "candidate_mechanism_invocation_index",
-                        "candidate_mechanism_symbol_id",
-                        "source_pathway_id",
-                        "source_binding_id",
-                        "source_invocation_indices",
-                        "target_pathway_id",
-                        "target_binding_id",
-                        "target_invocation_indices",
-                        "ordering_rule",
-                    }
+                    and set(candidate_witness) == expected_witness_fields
                     and
                     candidate_witness.get("witness_kind")
                     == "identity_verified_candidate_crossing_execution"
@@ -3434,6 +3667,7 @@ def validate_bundle(
                         int(item.get("execution_event_order", -1))
                         for item in target_invocations
                     )
+                    and reviewed_dataflow_is_valid
                 )
             else:
                 consumed_pathways = candidate.get(

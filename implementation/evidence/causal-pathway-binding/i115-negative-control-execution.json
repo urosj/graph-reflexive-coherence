@@ -256,7 +256,7 @@
     }
   ],
   "effect_outcome_failed_open_count": 0,
-  "execution_digest": "0d5e71fab9947676b95d9de4a823724aa3e09227f1d0e0e51ad614470a6bb2bd",
+  "execution_digest": "467f177a0c77dc2f35d87a81ffcf3a66e11bc210fc9b12aa002e40c7ac0405d4",
   "failed_open_count": 0,
   "independent_anchor_control_count": 2,
   "independent_anchor_controls": [
@@ -529,6 +529,6 @@
   "rule_isolation_failed_open_count": 0,
   "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
-  "source_revision": "afc7b0990e3b1f2eb644ea0e69d8ea1dd8a564fd",
+  "source_revision": "bb9f49a22eba26b22ba77df14f69df6fbc47a676",
   "status": "passed"
 }

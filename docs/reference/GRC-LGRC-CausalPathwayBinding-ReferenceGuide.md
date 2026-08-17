@@ -372,6 +372,18 @@ backed by `return None`, a pass-through result, a scalar, or an empty mapping
 therefore cannot form an experimental edge even when all submitted artifacts
 are coherently resealed.
 
+R4-B01 adds the missing runtime meaning of “used to construct.” For a reviewed
+invalid-pair candidate, the verified mechanism returns a read-only
+provenance-carrying JSON mapping. Existing consumer code still expands it with
+`target(**request)` (or expands a nested request mapping). The wrapper records
+`candidate_request_flow` only when every target keyword is the exact value
+exposed by that mapping. The candidate witness then links the qualifying source
+result descriptor to one candidate argument, the candidate result descriptor
+to that request derivation, and the derivation to one qualifying target
+invocation. BCF-011 reconstructs all three links from the raw transcript. An
+equivalent call written with hard-coded values records no request flow and
+cannot be used as evidence for the reviewed candidate edge.
+
 The round-two R2-B03 correction makes the claim envelope an independently
 reconstructed projection rather than a trusted receipt summary. BCF-015 builds
 the complete expected lock envelope from declared bindings and current

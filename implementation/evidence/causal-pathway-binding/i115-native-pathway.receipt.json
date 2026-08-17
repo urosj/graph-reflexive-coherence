@@ -84,6 +84,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [],
@@ -232,7 +233,7 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "3adf5513f9487f48be2ab4b10bf3fee19e19c5e5185348b8aeb8dd282ee65503",
+  "execution_transcript_digest": "11210229b09267236e954d1db8012b5635eff08691966f00672d69d836e83f75",
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -268,7 +269,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "c9c492995836f501e09d9b1359f16724f917a9ff8de825e3909e0dff3c7467d5",
+  "receipt_digest": "8abd9ff2ed1405d6c59e59155ded735b9d67277128ba9530314a84ebd9c58de8",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

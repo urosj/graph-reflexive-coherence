@@ -13,7 +13,7 @@ import inspect
 import json
 import pickle
 import re
-from collections.abc import Callable, Iterable, Mapping, Sequence
+from collections.abc import Callable, Iterable, Iterator, Mapping, Sequence
 from copy import deepcopy
 from dataclasses import dataclass, field, replace
 from pathlib import Path
@@ -1930,6 +1930,7 @@ class InvocationRecord:
     error_type: str | None
     callable_identity: Mapping[str, Any]
     runtime_object_flow: Mapping[str, Any]
+    candidate_request_flow: Mapping[str, Any] | None
     execution_event_order: int = -1
     crossing_scope_id: str | None = None
     candidate_scope_id: str | None = None
@@ -1973,10 +1974,116 @@ class CandidateMechanismInvocationRecord:
     callable_identity: Mapping[str, Any]
     relation_review_digest: str | None
     structural_result_observed: bool | None
+    runtime_object_flow: Mapping[str, Any]
     execution_event_order: int = -1
 
 
 _UNRESOLVED_CROSSING_RESULT: Final[object] = object()
+
+
+class _CandidateRequestInt(int):
+    """Integer preserving one candidate-request value identity."""
+
+
+class _CandidateRequestFloat(float):
+    """Float preserving one candidate-request value identity."""
+
+
+class _CandidateRequestStr(str):
+    """String preserving one candidate-request value identity."""
+
+
+def _candidate_request_payload(value: Any) -> Any:
+    """Freeze one reviewed candidate mapping as a canonical JSON value."""
+
+    if isinstance(value, Mapping):
+        if any(not isinstance(key, str) or not key for key in value):
+            raise BindingStateError(
+                "reviewed candidate request mappings require nonempty string keys"
+            )
+        return {
+            key: _candidate_request_payload(item)
+            for key, item in value.items()
+        }
+    if isinstance(value, (list, tuple)):
+        return [_candidate_request_payload(item) for item in value]
+    if value is None or isinstance(value, (bool, int, float, str)):
+        _canonical_value_digest(value)
+        return value
+    raise BindingStateError(
+        "reviewed candidate requests must contain only canonical JSON values"
+    )
+
+
+class _CandidateRequestMapping(Mapping[str, Any]):
+    """Read-only mapping whose expanded values retain candidate provenance."""
+
+    def __init__(
+        self,
+        value: Mapping[str, Any],
+        *,
+        root: _CandidateRequestMapping | None = None,
+        path: tuple[str, ...] = (),
+        normalized: bool = False,
+    ) -> None:
+        payload = dict(value) if normalized else _candidate_request_payload(value)
+        self._payload = cast(dict[str, Any], payload)
+        self._root = self if root is None else root
+        self._path = path
+        self._cache: dict[str, Any] = {}
+
+    @property
+    def root(self) -> _CandidateRequestMapping:
+        return self._root
+
+    def __len__(self) -> int:
+        return len(self._payload)
+
+    def __iter__(self) -> Iterator[str]:
+        return iter(self._payload)
+
+    def __getitem__(self, key: str) -> Any:
+        if key in self._cache:
+            return self._cache[key]
+        value = self._payload[key]
+        if isinstance(value, dict):
+            exposed: Any = _CandidateRequestMapping(
+                value,
+                root=self._root,
+                path=(*self._path, key),
+                normalized=True,
+            )
+        elif type(value) is int:
+            exposed = _CandidateRequestInt(value)
+        elif type(value) is float:
+            exposed = _CandidateRequestFloat(value)
+        elif type(value) is str:
+            exposed = _CandidateRequestStr(value)
+        else:
+            exposed = value
+        self._cache[key] = exposed
+        return exposed
+
+    def _matching_request(
+        self,
+        keyword_arguments: Mapping[str, Any],
+    ) -> tuple[tuple[str, ...], Mapping[str, Any]] | None:
+        """Return the exact candidate submapping expanded into target kwargs."""
+
+        if set(keyword_arguments) == set(self._payload) and all(
+            type(self._payload[name]) not in {bool, type(None)}
+            and keyword_arguments[name] is self[name]
+            for name in self._payload
+        ):
+            return self._path, self._payload
+        for name, value in self._payload.items():
+            if not isinstance(value, dict):
+                continue
+            child = self[name]
+            assert isinstance(child, _CandidateRequestMapping)
+            if (match := child._matching_request(keyword_arguments)) is not None:
+                return match
+        return None
 
 
 class CrossingResultReference:
@@ -2200,6 +2307,13 @@ class VerifiedCallable:
             composition_ids=self._composition_ids,
         )
         target, callable_identity = self._assert_current_callable()
+        candidate_request_flow = self._session._candidate_target_request_flow(
+            binding_id=self._binding_id,
+            pathway_id=self._pathway_id,
+            symbol_id=self._symbol.symbol_id,
+            positional_arguments=args,
+            keyword_arguments=kwargs,
+        )
         effect_contract = self._session.authority.effect_outcome_contract(
             self._symbol.symbol_id
         )
@@ -2257,6 +2371,7 @@ class VerifiedCallable:
                     error_type=type(exc).__name__,
                     callable_identity=callable_identity,
                     runtime_object_flow=runtime_object_flow,
+                    candidate_request_flow=candidate_request_flow,
                 )
             )
             raise
@@ -2301,6 +2416,7 @@ class VerifiedCallable:
                 error_type=None,
                 callable_identity=callable_identity,
                 runtime_object_flow=runtime_object_flow,
+                candidate_request_flow=candidate_request_flow,
             )
         )
         self._session._record_invocation_result(
@@ -2558,8 +2674,19 @@ class VerifiedCandidateMechanism:
         )
         target, callable_identity = self._assert_current_callable()
         try:
+            bound_arguments = dict(
+                inspect.signature(target).bind(*args, **kwargs).arguments
+            )
+        except TypeError:
+            bound_arguments = {}
+        try:
             result = target(*args, **kwargs)
         except Exception as exc:
+            runtime_object_flow = self._session._runtime_object_flow(
+                target=target,
+                arguments=bound_arguments,
+                result=None,
+            )
             self._session._record_candidate_mechanism_invocation(
                 scope,
                 CandidateMechanismInvocationRecord(
@@ -2579,15 +2706,34 @@ class VerifiedCandidateMechanism:
                     structural_result_observed=(
                         False if self._relation_review is not None else None
                     ),
+                    runtime_object_flow=runtime_object_flow,
                 ),
+                result=None,
             )
             raise
-        structural_result_observed = (
+        structurally_distinct_mapping = (
             isinstance(result, Mapping)
             and bool(result)
             and all(result is not argument for argument in (*args, *kwargs.values()))
             if self._relation_review is not None
-            else None
+            else False
+        )
+        exposed_result = result
+        structural_result_observed: bool | None = None
+        if self._relation_review is not None:
+            if structurally_distinct_mapping:
+                try:
+                    exposed_result = _CandidateRequestMapping(result)
+                except BindingStateError:
+                    exposed_result = result
+            structural_result_observed = isinstance(
+                exposed_result,
+                _CandidateRequestMapping,
+            )
+        runtime_object_flow = self._session._runtime_object_flow(
+            target=target,
+            arguments=bound_arguments,
+            result=exposed_result,
         )
         self._session._record_candidate_mechanism_invocation(
             scope,
@@ -2597,7 +2743,7 @@ class VerifiedCandidateMechanism:
                 mechanism_id=self._mechanism_id,
                 symbol_id=self.symbol_id,
                 outcome="returned",
-                result_type=type(result).__name__,
+                result_type=type(exposed_result).__name__,
                 error_type=None,
                 callable_identity=callable_identity,
                 relation_review_digest=(
@@ -2606,9 +2752,11 @@ class VerifiedCandidateMechanism:
                     else None
                 ),
                 structural_result_observed=structural_result_observed,
+                runtime_object_flow=runtime_object_flow,
             ),
+            result=exposed_result,
         )
-        return result
+        return exposed_result
 
 
 class BoundPathway:
@@ -3251,14 +3399,140 @@ class CandidateExecutionScope:
         event_order: int,
         invocation_index: int,
         record: CandidateMechanismInvocationRecord,
+        result: object | None,
     ) -> None:
         self._mechanism_events.append(
             {
                 "event_order": event_order,
                 "record_index": invocation_index,
                 "record": record,
+                "result": result,
             }
         )
+
+    def target_request_flow(
+        self,
+        *,
+        binding_id: str,
+        pathway_id: str,
+        symbol_id: str,
+        positional_arguments: Sequence[Any],
+        keyword_arguments: Mapping[str, Any],
+    ) -> dict[str, Any] | None:
+        """Attest one exact reviewed-candidate mapping expansion."""
+
+        if (
+            self.candidate.invalid_relabel_relation_review is None
+            or self.candidate.candidate_kind != "composition"
+            or pathway_id != self.candidate.proposed_target_pathway_id
+            or positional_arguments
+        ):
+            return None
+        returned = [
+            event
+            for event in self._mechanism_events
+            if event["record"].outcome == "returned"
+        ]
+        if len(returned) != 1:
+            return None
+        mechanism_event = returned[0]
+        result = mechanism_event["result"]
+        if not isinstance(result, _CandidateRequestMapping):
+            return None
+        match = result._matching_request(keyword_arguments)
+        if match is None:
+            return None
+        request_path, request_payload = match
+        request_digest = _canonical_value_digest(request_payload)
+        if request_digest != _canonical_value_digest(dict(keyword_arguments)):
+            return None
+        result_descriptor = mechanism_event["record"].runtime_object_flow.get(
+            "result"
+        )
+        if not isinstance(result_descriptor, Mapping):
+            return None
+        return {
+            "schema_version": "reviewed_candidate_target_request_flow_v1",
+            "binding_rule": (
+                "candidate_result_mapping_supplies_complete_target_keyword_request"
+            ),
+            "candidate_scope_id": self.scope_id,
+            "candidate_id": self.candidate.candidate_id,
+            "candidate_mechanism_invocation_index": mechanism_event[
+                "record_index"
+            ],
+            "candidate_result": dict(result_descriptor),
+            "candidate_result_request_path": list(request_path),
+            "candidate_result_request_digest": request_digest,
+            "target_bound_arguments_digest": request_digest,
+            "target_binding_id": binding_id,
+            "target_pathway_id": pathway_id,
+            "target_symbol_id": symbol_id,
+        }
+
+    @staticmethod
+    def _reviewed_dataflow_witness(
+        *,
+        source_events: Sequence[Mapping[str, Any]],
+        target_events: Sequence[Mapping[str, Any]],
+        mechanism_event: Mapping[str, Any],
+    ) -> dict[str, Any] | None:
+        """Reconstruct source-result -> candidate-result -> target-request flow."""
+
+        mechanism_record = mechanism_event["record"]
+        mechanism_flow = mechanism_record.runtime_object_flow
+        candidate_arguments = mechanism_flow.get("arguments")
+        candidate_result = mechanism_flow.get("result")
+        if not isinstance(candidate_arguments, Mapping) or not isinstance(
+            candidate_result,
+            Mapping,
+        ):
+            return None
+        for source_event in source_events:
+            source_result = source_event["record"].runtime_object_flow.get("result")
+            if not isinstance(source_result, Mapping):
+                continue
+            matching_argument_names = [
+                name
+                for name, descriptor in candidate_arguments.items()
+                if descriptor == source_result
+            ]
+            if len(matching_argument_names) != 1:
+                continue
+            for target_event in target_events:
+                request_flow = target_event["record"].candidate_request_flow
+                if not isinstance(request_flow, Mapping):
+                    continue
+                if not (
+                    request_flow.get("candidate_scope_id")
+                    == mechanism_record.candidate_scope_id
+                    and request_flow.get("candidate_id")
+                    == mechanism_record.candidate_id
+                    and request_flow.get("candidate_mechanism_invocation_index")
+                    == mechanism_event["record_index"]
+                    and request_flow.get("candidate_result") == candidate_result
+                    and request_flow.get("target_bound_arguments_digest")
+                    == request_flow.get("candidate_result_request_digest")
+                ):
+                    continue
+                return {
+                    "witness_kind": "externally_attested_candidate_request_flow",
+                    "source_invocation_index": source_event["record_index"],
+                    "source_result": dict(source_result),
+                    "candidate_argument_name": matching_argument_names[0],
+                    "candidate_mechanism_invocation_index": mechanism_event[
+                        "record_index"
+                    ],
+                    "candidate_result": dict(candidate_result),
+                    "candidate_result_request_path": list(
+                        request_flow["candidate_result_request_path"]
+                    ),
+                    "target_invocation_index": target_event["record_index"],
+                    "target_request_digest": request_flow[
+                        "target_bound_arguments_digest"
+                    ],
+                }
+        return None
 
     def exercise_witness(self) -> dict[str, Any] | None:
         """Return evidence only for completed, returned constituent execution."""
@@ -3327,6 +3601,15 @@ class CandidateExecutionScope:
             < min(event["event_order"] for event in target_events)
         ):
             return None
+        candidate_dataflow_witness = None
+        if relation_review is not None:
+            candidate_dataflow_witness = self._reviewed_dataflow_witness(
+                source_events=source_events,
+                target_events=target_events,
+                mechanism_event=mechanism_event,
+            )
+            if candidate_dataflow_witness is None:
+                return None
         return {
             "candidate_scope_id": self.scope_id,
             "candidate_id": self.candidate.candidate_id,
@@ -3346,6 +3629,11 @@ class CandidateExecutionScope:
             "ordering_rule": (
                 "all_source_invocations_before_candidate_mechanism_before_"
                 "all_target_invocations"
+            ),
+            **(
+                {"candidate_dataflow_witness": candidate_dataflow_witness}
+                if candidate_dataflow_witness is not None
+                else {}
             ),
         }
 
@@ -3775,6 +4063,28 @@ class PathwayBindingSession:
         if self._active_alternative_selection_scope is not None:
             self._active_alternative_selection_scope._assert_pathway_allowed(pathway_id)
 
+    def _candidate_target_request_flow(
+        self,
+        *,
+        binding_id: str,
+        pathway_id: str,
+        symbol_id: str,
+        positional_arguments: Sequence[Any],
+        keyword_arguments: Mapping[str, Any],
+    ) -> Mapping[str, Any] | None:
+        """Return a live-derived reviewed-candidate target request record."""
+
+        scope = self._active_candidate_scope
+        if scope is None:
+            return None
+        return scope.target_request_flow(
+            binding_id=binding_id,
+            pathway_id=pathway_id,
+            symbol_id=symbol_id,
+            positional_arguments=positional_arguments,
+            keyword_arguments=keyword_arguments,
+        )
+
     def _record_invocation(self, record: InvocationRecord) -> None:
         invocation_index = len(self._invocations)
         scope = self._active_composition_scope
@@ -3967,6 +4277,8 @@ class PathwayBindingSession:
         self,
         scope: CandidateExecutionScope,
         record: CandidateMechanismInvocationRecord,
+        *,
+        result: object | None,
     ) -> None:
         invocation_index = len(self._candidate_mechanism_invocations)
         record = replace(
@@ -3978,6 +4290,7 @@ class PathwayBindingSession:
             event_order=self._execution_event_count,
             invocation_index=invocation_index,
             record=record,
+            result=result,
         )
         self._execution_event_count += 1
 
@@ -4859,6 +5172,11 @@ class PathwayBindingSession:
                 "error_type": item.error_type,
                 "callable_identity": dict(item.callable_identity),
                 "runtime_object_flow": deepcopy(item.runtime_object_flow),
+                "candidate_request_flow": (
+                    None
+                    if item.candidate_request_flow is None
+                    else deepcopy(item.candidate_request_flow)
+                ),
                 "execution_event_order": item.execution_event_order,
                 "crossing_scope_id": item.crossing_scope_id,
                 "candidate_scope_id": item.candidate_scope_id,
@@ -4906,6 +5224,7 @@ class PathwayBindingSession:
                 "callable_identity": dict(item.callable_identity),
                 "relation_review_digest": item.relation_review_digest,
                 "structural_result_observed": item.structural_result_observed,
+                "runtime_object_flow": deepcopy(item.runtime_object_flow),
                 "execution_event_order": item.execution_event_order,
             }
             for index, item in enumerate(self._candidate_mechanism_invocations)

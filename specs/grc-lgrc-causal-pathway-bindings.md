@@ -1,7 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** All round-three findings corrected author-side; full independent
-re-audit pending
+**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -132,6 +132,16 @@ mapping that supplies the follow-on request; `None`, pass-through, scalar, or
 empty results cannot witness a candidate edge. The checker independently
 validates the review, executable source shape, runtime structural-result flag,
 and raw execution transcript before accepting the experimental edge.
+
+The R4-B01 correction makes “supplies” an observed dataflow relation rather
+than an order-and-shape assertion. A reviewed candidate handle exposes its
+JSON request as a read-only provenance-carrying mapping. Expanding that mapping
+into the exact declared target preserves the candidate-result origin of every
+target keyword. The raw transcript links the qualifying source result to the
+candidate argument, records the distinct candidate-result object, and records
+the exact candidate submapping and canonical request digest consumed by the
+target. A target call made with equivalent hard-coded values has no such raw
+request-flow record and cannot produce a reviewed candidate witness or edge.
 
 ## Complete Claim-Envelope Canonicalization
 

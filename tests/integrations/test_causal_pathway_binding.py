@@ -6,6 +6,7 @@ import copy
 import inspect
 import json
 import unittest
+from collections.abc import Mapping
 from dataclasses import replace
 from pathlib import Path
 from typing import Any, ClassVar
@@ -784,7 +785,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
             diagnostic_result = prepare(model)
             request = crossing(diagnostic_result)
             self.assertIsNot(request, diagnostic_result)
-            self.assertIsInstance(request, dict)
+            self.assertIsInstance(request, Mapping)
             schedule(**request["packet_schedule_arguments"])
         session.record_candidate_use(candidate.candidate_id)
         record = session.build_receipt().to_record()
@@ -813,6 +814,19 @@ class CausalPathwayBindingTest(unittest.TestCase):
             edge["invalid_relabel_blocked_claims"],
         )
         self.assertEqual(used["blocked_claims"], edge["blocked_claims"])
+        witness = used["candidate_execution_witness"][
+            "candidate_dataflow_witness"
+        ]
+        self.assertEqual(
+            "externally_attested_candidate_request_flow",
+            witness["witness_kind"],
+        )
+        self.assertEqual(
+            witness["candidate_result"],
+            record["actual_candidate_mechanism_invocations"][0][
+                "runtime_object_flow"
+            ]["result"],
+        )
         self.assertEqual(
             "descriptive_unreviewed_not_claim_qualified",
             used["proposed_relation_claim_status"],
@@ -825,6 +839,63 @@ class CausalPathwayBindingTest(unittest.TestCase):
             used["invalid_relabel_relation_review"],
             edge["invalid_relabel_relation_review"],
         )
+
+    def test_reviewed_cmp05_candidate_result_must_supply_target_request(
+        self,
+    ) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        candidate_id = "experiment.fixture.ignored_cmp05_mechanism_result"
+        proposed_relation = "new externally owned diagnostic packet adapter"
+        mechanism_evidence = _cmp05_candidate_mechanism_evidence()
+        relation_review, trusted_review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=proposed_relation,
+            mechanism_evidence=mechanism_evidence,
+        )
+        diagnostic = session.bind_pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            stage_ids=("diagnostic_model_construction",),
+        )
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        schedule = packet.symbol("packet_schedule", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id=candidate_id,
+            candidate_kind="composition",
+            purpose="Reject an ignored reviewed-candidate mapping.",
+            owner="fixture",
+            consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
+            proposed_source_pathway_id=diagnostic.pathway_id,
+            proposed_target_pathway_id=packet.pathway_id,
+            proposed_relation=proposed_relation,
+            evidence_owner="fixture",
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=trusted_review_digest,
+        )
+        crossing = candidate.mechanism()
+        session.freeze_lock()
+
+        with candidate.evidence_scope():
+            diagnostic_result = prepare(model)
+            crossing(diagnostic_result)
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+            )
+
+        self.assertIsNone(session.invocation_records[-1].candidate_request_flow)
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "exactly one completed evidence scope",
+        ):
+            session.record_candidate_use(candidate.candidate_id)
 
     def test_cmp05_synonym_noop_requires_independent_relation_review(self) -> None:
         session = PathwayBindingSession(self.authority)

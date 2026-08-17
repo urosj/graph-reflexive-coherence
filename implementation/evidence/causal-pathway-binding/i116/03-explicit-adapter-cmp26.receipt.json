@@ -307,6 +307,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -358,6 +359,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -416,6 +418,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -476,6 +479,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -740,7 +744,7 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "2c5a3ad838daa870ad8e68afb3807ac476a92300597b6e01eba2f39b1e2174a8",
+  "execution_transcript_digest": "1abd13307e18050ce443be67ee1f26e6f45cff687c1f66cce4fe3e459d2c04d4",
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -836,7 +840,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "268849d3d61a06fb99cc5ef85f86722436bba339af090427b9540b6ef2422935",
+  "receipt_digest": "6b783d75f914ec508de974d5d11a392db432aa814ae60ea38832589edc13007c",
   "registered_compositions_exercised": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",

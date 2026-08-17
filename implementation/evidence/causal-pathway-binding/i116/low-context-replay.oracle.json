@@ -22,7 +22,7 @@
   "lock_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
   "oracle_consumed_by_consumer": false,
   "oracle_created_after_consumer_replay": true,
-  "oracle_digest": "ea75b8f2e12c9273ebd928c8a2a6d74a9a373746b90098d37417f706044d5cc9",
-  "receipt_digest": "f8e7d263cd51e48ebc6d59d63cf89d40804fb136cf21382bb093017111f749b6",
+  "oracle_digest": "dd1f4a5d4c326dc73af053f01943bbdbe4c42b2d2360b643f3a3fa2ea0b3f000",
+  "receipt_digest": "a3b5602100d2024f90fdf67e6b80994150b1240faaf68a42d8bcd00374f848de",
   "schema_version": "i116_low_context_replay_oracle_v1"
 }

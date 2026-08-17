@@ -157,6 +157,18 @@
       "outcome": "returned",
       "relation_review_digest": null,
       "result_type": "NoneType",
+      "runtime_object_flow": {
+        "arguments": {
+          "schedule_result": null
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": null,
+        "result_base_state": null,
+        "result_state": null
+      },
       "structural_result_observed": null,
       "symbol_id": "candidate-mechanism:fixture.packet_schedule_then_snapshot"
     }
@@ -175,6 +187,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": "candidate:experiment.i116.packet_to_snapshot_relation:evidence-scope:0",
       "claim_qualifying_effect": true,
       "composition_ids": [],
@@ -229,6 +242,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": "candidate:experiment.i116.packet_to_snapshot_relation:evidence-scope:0",
       "claim_qualifying_effect": true,
       "composition_ids": [],
@@ -569,7 +583,7 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "ab07ec8b3d2e8064262db8a3ae3d69c08f25802bffb7c3aaabd21c3750a0267b",
+  "execution_transcript_digest": "d85b31af7656886d9d8902cda3283c0b034d26f08b1891e29aea798ccfbd3e83",
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -704,7 +718,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "554aadde02c383cca44011d13c357581e4785c0a5aef61dbc0bb96b8499ceb22",
+  "receipt_digest": "4f5dff618283c234b318b18d31ecdfb72d43a06a08a405557ee9f4edd7a87217",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

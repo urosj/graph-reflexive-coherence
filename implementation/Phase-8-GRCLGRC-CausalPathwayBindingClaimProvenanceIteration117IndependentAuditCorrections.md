@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** All round-three findings corrected author-side; full independent
-re-audit pending
+**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+pending
 
 **Checkpoint commit:** `976c660`
 
@@ -680,3 +680,77 @@ git diff --check = passed
 These results are author-side correction evidence only. All round-three
 findings are corrected author-side; a new full independent audit remains the
 acceptance gate.
+
+## Round-Four Disposition And R4-B01 Correction
+
+The round-four independent audit returned `reject_pending_correction` with one
+remaining blocker. A reviewed candidate could return a valid mapping, the
+consumer could ignore that mapping and call the target with equivalent
+hard-coded arguments, and the runtime and checker still emitted and accepted
+the experimental edge. The flowed and ignored cases had identical trusted raw
+transcript digests. The audit independently confirmed R3-B01, R3-B02, R3-M01,
+and the complete claim-envelope correction as closed.
+
+R4-B01 is corrected author-side by replacing the candidate witness's
+order-and-shape inference with an exact three-event dataflow proof:
+
+```text
+qualifying source result object
+  -> exact candidate argument descriptor
+  -> distinct provenance-carrying candidate result mapping
+  -> exact expanded target keyword request
+  -> qualifying declared target invocation
+```
+
+The reviewed candidate handle snapshots its nonempty JSON result in a
+read-only mapping. Integer, float, and string request leaves retain unique
+request-local identity when expanded as keywords; nested request mappings
+retain the same root candidate identity and an explicit path. This preserves
+the established `target(**request)` consumer form without adding semantic
+selection or a generic dispatcher. Boolean or null request leaves cannot be
+used as identity evidence because their process-wide singleton identities are
+not provenance-bearing.
+
+Raw candidate invocation records now include the same receiver/argument/result
+object-flow schema used for admitted stage calls. Raw target invocation records
+include `candidate_request_flow` only after the runtime matches the complete
+keyword request to one exact candidate-result mapping or nested submapping.
+That record freezes the candidate scope and mechanism index, candidate-result
+descriptor, request path, canonical request digest, and exact target binding,
+pathway, and symbol. It is part of the separately digested raw transcript.
+
+The runtime will not create a reviewed candidate-use witness unless one
+qualifying source result is the candidate input and one qualifying target
+invocation carries the exact request-flow record for that candidate result.
+The checker independently reconstructs those links and exact invocation
+indices before retaining the candidate use or graph edge. A hard-coded target
+call therefore remains valid pathway work but cannot qualify the reviewed
+candidate relation. Removing the raw request flow and coherently resealing the
+receipt also fails closed even when the new transcript and review digests are
+supplied through the explicit trust inputs.
+
+## R4-B01 Author-Side Verification
+
+The focused controls reproduce both audited executions: the flowed mapping
+produces a checker-accepted raw dataflow witness, while the distinct mapping
+followed by equivalent hard-coded target arguments has no request-flow record
+and cannot be recorded as candidate use. A separately resealed checker control
+removes the raw target-request flow from the positive bundle and fails closed
+even when the recomputed transcript digest and candidate-review digest are
+explicitly trusted.
+
+```text
+.venv focused binding/conformance/I116 tests = 90 passed
+.venv full unittest discovery = 1,301 passed
+I115/I116 evidence regeneration = passed
+I116 checker-evaluated consumer cases = 10 passed, 0 issues
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This is author-side correction evidence only. R4-B01 is corrected author-side;
+a new full independent audit remains the acceptance gate.

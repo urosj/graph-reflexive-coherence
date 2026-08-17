@@ -261,6 +261,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -321,6 +322,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
         "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -380,6 +382,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -438,6 +441,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
         "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -707,7 +711,7 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "b685cb805c40e46d52cdc80f7d75ed0c0124950eeaf6980e290235f83bcc1d07",
+  "execution_transcript_digest": "e87d3a9410dbb78c2242cdf39cd9165b80966f7d880f0b768243b3c43730a01d",
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -821,7 +825,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "18d89af946eaf0d3bb992a489e5dda7c70e8597246e2630ae741a30b06f743f9",
+  "receipt_digest": "74a122add37eb0088c9153e521ecd3a39bf2b72ef65f362a58dac735b5608a07",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",

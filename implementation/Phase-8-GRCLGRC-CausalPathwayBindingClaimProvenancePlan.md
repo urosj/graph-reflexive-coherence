@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** All round-three findings corrected author-side; full independent
-re-audit pending
+**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+pending
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -172,6 +172,22 @@ held oracle after replay freeze.
 Close only after focused, affected GRC/LGRC, existing consolidation, full-suite,
 negative-control, replay/restoration, formatting, and protected-behavior checks
 pass.
+
+## Round-Four R4-B01 Correction
+
+Close the remaining reviewed-candidate continuity gap without adding a generic
+dispatcher. Preserve the existing `target(**request)` consumer call shape, but
+have the reviewed candidate handle expose a provenance-carrying request
+mapping. The runtime transcript must bind one qualifying source-result object
+to the candidate argument, the distinct candidate-result object to the exact
+expanded target request, and the target request to its declared binding,
+pathway, and symbol. Candidate use fails closed when the target instead receives
+equivalent hard-coded values.
+
+BCF-011 and BCF-019 independently reconstruct that three-event relationship
+from the externally trusted raw transcript. A coherently resealed receipt that
+removes or invents the target-request derivation must not retain an accepted
+experimental edge.
 
 ## Maximum Claim
 

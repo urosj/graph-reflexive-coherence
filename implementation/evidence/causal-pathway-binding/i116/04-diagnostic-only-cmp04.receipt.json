@@ -132,6 +132,7 @@
         "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
         "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -188,6 +189,7 @@
         "source_path": "src/pygrc/models/grc_9_v3.py",
         "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
       },
+      "candidate_request_flow": null,
       "candidate_scope_id": null,
       "claim_qualifying_effect": true,
       "composition_ids": [
@@ -402,7 +404,7 @@
       "unknown": 0
     }
   },
-  "execution_transcript_digest": "dd621f4fef4250e7e1b6a0da829404f7e41f8121156feadc8ba1dc4bc6598b47",
+  "execution_transcript_digest": "cf3c2a65ac608304e9698fbb0efb53f51257a7e417ae610acda6b5917b42d96c",
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
@@ -462,7 +464,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "2a378b3858e69acae6e11858f57768a94e3ba0e9ee738b154384ffee36f386a6",
+  "receipt_digest": "1c77fadab1939e1d71eca489f67a93f791ae873c2a9dbae121c590cd3eaf2081",
   "registered_compositions_exercised": [
     {
       "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",

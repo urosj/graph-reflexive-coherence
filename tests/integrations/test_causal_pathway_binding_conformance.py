@@ -10,7 +10,11 @@ import unittest
 from pathlib import Path
 from typing import Any, ClassVar, cast
 
-from pygrc.causal_pathways import SourceSymbolBinding
+from pygrc.causal_pathways import PathwayBindingSession, SourceSymbolBinding
+from tests.integrations.test_causal_pathway_binding import (
+    _cmp05_candidate_mechanism_evidence,
+    _cmp05_relation_review,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 CHECKER_PATH = ROOT / "scripts/check_grc_lgrc_causal_pathway_binding_conformance.py"
@@ -255,6 +259,63 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 edge["blocked_claims"] = copy.deepcopy(use["blocked_claims"])
         self._reseal(bundle)
         return review_digest
+
+    def _round4_reviewed_candidate_bundle(
+        self,
+    ) -> tuple[dict[str, Any], str]:
+        """Build one live reviewed CMP-05 candidate with exact request flow."""
+
+        session = PathwayBindingSession(
+            self.builder.load_accepted_authority(
+                copy.deepcopy(self.acceptance_anchor),
+                TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+            )
+        )
+        model = self.builder._two_node_runtime()
+        candidate_id = "experiment.round4.reviewed_cmp05_request"
+        relation = "new externally owned diagnostic packet adapter"
+        mechanism_evidence = _cmp05_candidate_mechanism_evidence()
+        relation_review, review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=relation,
+            mechanism_evidence=mechanism_evidence,
+        )
+        diagnostic = session.bind_pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            stage_ids=("diagnostic_model_construction",),
+            binding_id="round4-diagnostic",
+        )
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+            binding_id="round4-packet",
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        schedule = packet.symbol("packet_schedule", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id=candidate_id,
+            candidate_kind="composition",
+            purpose="Prove reviewed candidate-result request continuity.",
+            owner="round4-fixture",
+            consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
+            proposed_source_pathway_id=diagnostic.pathway_id,
+            proposed_target_pathway_id=packet.pathway_id,
+            proposed_relation=relation,
+            evidence_owner="round4-fixture",
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=review_digest,
+        )
+        lock = session.freeze_lock().to_record()
+        with candidate.evidence_scope():
+            diagnostic_result = prepare(model)
+            request = candidate.mechanism()(diagnostic_result)
+            schedule(**request["packet_schedule_arguments"])
+        session.record_candidate_use(candidate.candidate_id)
+        bundle = copy.deepcopy(self.bundle)
+        bundle["lock"] = lock
+        bundle["receipt"] = session.build_receipt().to_record()
+        return bundle, review_digest
 
     def test_current_lock_and_receipt_pass_all_twenty_rules(self) -> None:
         result = self._validate(
@@ -951,6 +1012,46 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             any(
                 "distinct current mechanism" in item["message"]
                 for item in result["issues"]
+            )
+        )
+
+    def test_round4_reviewed_candidate_requires_raw_target_request_flow(
+        self,
+    ) -> None:
+        bundle, review_digest = self._round4_reviewed_candidate_bundle()
+        receipt = bundle["receipt"]
+        flowed_result = self._validate(
+            ROOT,
+            copy.deepcopy(bundle),
+            copy.deepcopy(self.policy),
+            trusted_execution_transcript_digest=receipt[
+                "execution_transcript_digest"
+            ],
+            trusted_candidate_review_digests=(review_digest,),
+        )
+        self.assertEqual("passed", flowed_result["status"])
+
+        ignored = copy.deepcopy(bundle)
+        target_invocation = ignored["receipt"][
+            "actual_stage_symbol_invocations"
+        ][-1]
+        target_invocation["candidate_request_flow"] = None
+        self._reseal(ignored)
+        ignored_result = self._validate(
+            ROOT,
+            ignored,
+            copy.deepcopy(self.policy),
+            trusted_execution_transcript_digest=ignored["receipt"][
+                "execution_transcript_digest"
+            ],
+            trusted_candidate_review_digests=(review_digest,),
+        )
+
+        self.assertEqual("failed_closed", ignored_result["status"])
+        self.assertTrue(
+            any(
+                "identity-verified mechanism execution" in item["message"]
+                for item in ignored_result["issues"]
             )
         )
 

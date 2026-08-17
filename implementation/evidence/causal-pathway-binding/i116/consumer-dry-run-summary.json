@@ -55,7 +55,7 @@
       "case_id": "01-simple-native-pathway",
       "lock_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.lock.json",
-      "receipt_digest": "f8e7d263cd51e48ebc6d59d63cf89d40804fb136cf21382bb093017111f749b6",
+      "receipt_digest": "a3b5602100d2024f90fdf67e6b80994150b1240faaf68a42d8bcd00374f848de",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.receipt.json",
       "status": "passed"
     },
@@ -73,7 +73,7 @@
       "case_id": "02-producer-mediated-cmp20",
       "lock_digest": "39f0e56dd2cf33daf60df852ea8f70f3a6b3d7ced00781328330f43647479014",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.lock.json",
-      "receipt_digest": "18d89af946eaf0d3bb992a489e5dda7c70e8597246e2630ae741a30b06f743f9",
+      "receipt_digest": "74a122add37eb0088c9153e521ecd3a39bf2b72ef65f362a58dac735b5608a07",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.receipt.json",
       "status": "passed"
     },
@@ -89,7 +89,7 @@
       "case_id": "03-explicit-adapter-cmp26",
       "lock_digest": "fd98de606a66fb5d1bc5a9abc6c9df188c1d6caaf33c1b3fc14da3a99f96eba5",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.lock.json",
-      "receipt_digest": "268849d3d61a06fb99cc5ef85f86722436bba339af090427b9540b6ef2422935",
+      "receipt_digest": "6b783d75f914ec508de974d5d11a392db432aa814ae60ea38832589edc13007c",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.receipt.json",
       "status": "passed"
     },
@@ -109,7 +109,7 @@
       "case_id": "04-diagnostic-only-cmp04",
       "lock_digest": "87785901941e89adeead5a217fa017b9a944c56d7b0f2af6dc0ca6377cc15159",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.lock.json",
-      "receipt_digest": "2a378b3858e69acae6e11858f57768a94e3ba0e9ee738b154384ffee36f386a6",
+      "receipt_digest": "1c77fadab1939e1d71eca489f67a93f791ae873c2a9dbae121c590cd3eaf2081",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.receipt.json",
       "status": "passed"
     },
@@ -161,7 +161,7 @@
       "case_id": "08-unregistered-candidate",
       "lock_digest": "da542ca4f1469139375719b1b7cf1ff4cf3adcfc0b6aff06d47ad8e5225885e4",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
-      "receipt_digest": "554aadde02c383cca44011d13c357581e4785c0a5aef61dbc0bb96b8499ceb22",
+      "receipt_digest": "4f5dff618283c234b318b18d31ecdfb72d43a06a08a405557ee9f4edd7a87217",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
       "status": "passed"
     },
@@ -185,7 +185,7 @@
       "case_id": "09-dynamic-a-b-choice",
       "lock_digest": "2a84e2984b2654b4dd214e42deee707067baf2148a54e97d9f3236f7e85fcd97",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.lock.json",
-      "receipt_digest": "ab6f5e39ab7fe6219dbfedce3d6a8f360b5f0154d6b129bf77f378d03bcaeefb",
+      "receipt_digest": "0e9b75ad8d83c75076645fa246a448977eeb49fff4b234761a357a661145addb",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.receipt.json",
       "status": "passed"
     },
@@ -202,7 +202,7 @@
       "case_id": "10-multi-edge-use-graph",
       "lock_digest": "359651112e86c23cb2ccfde04500a1e922438718453aba3582387159eb8b6e6f",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.lock.json",
-      "receipt_digest": "e069b9092c982a57536235dc1ad90c009ec4d08ddaedea2ad5020b5e4571b7d7",
+      "receipt_digest": "a97eab3ff1372d8519bada4db6d7ae19f068da0c5f34daeb8d19807ee7fb7cb5",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.receipt.json",
       "status": "passed"
     }
@@ -229,7 +229,7 @@
     "consumer_input_contains_expected_ids": false,
     "consumer_result_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.result.json",
     "identity_match": true,
-    "oracle_digest": "ea75b8f2e12c9273ebd928c8a2a6d74a9a373746b90098d37417f706044d5cc9",
+    "oracle_digest": "dd1f4a5d4c326dc73af053f01943bbdbe4c42b2d2360b643f3a3fa2ea0b3f000",
     "oracle_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.oracle.json",
     "status": "passed"
   },
@@ -237,5 +237,5 @@
   "runtime_behavior_changed": false,
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i116_dry_runs_v1",
   "status": "passed",
-  "summary_digest": "9b77c6311e48189a9e484232d14f8853bf3edf3aff8fb78ace87d283860de4a5"
+  "summary_digest": "6a0dd4b24259d9622f93539777c326dc55f4698344ef6596e4457fcf9949aa9e"
 }
