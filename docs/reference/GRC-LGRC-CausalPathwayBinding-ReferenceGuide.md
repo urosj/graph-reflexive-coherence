@@ -394,6 +394,15 @@ object appears there. Thus `candidate(unrelated, context=source_result)` fails
 when the review names `source_result`, even if `context` is present and the
 candidate-to-target request flow is otherwise exact.
 
+R6-B01 makes that named source reference semantically load-bearing for the
+exact target request. For the candidate-result path expanded into target
+keywords, the runtime derives canonical request mappings from the pinned AST
+with the reviewed parameter present and absent. The digests must differ, and
+the present digest must match the live request. `candidate_request_flow`
+records this counterfactual proof, while the checker independently derives and
+compares it. A conditional whose two branches are equal is therefore a source
+mention, not source-to-request flow, and cannot support the experimental edge.
+
 The round-two R2-B03 correction makes the claim envelope an independently
 reconstructed projection rather than a trusted receipt summary. BCF-015 builds
 the complete expected lock envelope from declared bindings and current

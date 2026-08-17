@@ -152,6 +152,16 @@ reference the reviewed parameter and requires the raw witness to name it. An
 exact source object carried only through unused `context` is therefore presence
 without consumption and cannot witness the candidate edge.
 
+R6-B01 distinguishes a source mention from a source-dependent request. Once an
+exact candidate-result path is expanded into the target call, the runtime
+safely evaluates that pinned return subtree with the reviewed source parameter
+present and absent. The two nonempty canonical request mappings must have
+different digests, and the present digest must equal the live target request.
+The raw request-flow record freezes the path and both digests. The checker
+independently reconstructs the same counterfactual proof from source. Equal
+branches, algebraically equivalent results, and unsupported expression forms
+fail closed and cannot witness a reviewed candidate edge.
+
 ## Complete Claim-Envelope Canonicalization
 
 The binding checker independently derives the entire pre-execution and receipt

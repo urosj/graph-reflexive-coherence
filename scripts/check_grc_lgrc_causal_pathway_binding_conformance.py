@@ -63,10 +63,10 @@ RULES = [
         (
             "Invalid relabels cannot be bound, semantically restated, or laundered; "
             "conflicting candidates require an independently reviewed structural "
-            "distinction, a non-no-op executable result, exact flow through the "
-            "frozen source-result parameter to the candidate result and target "
-            "request in the externally trusted raw transcript, and every structured "
-            "block."
+            "distinction, a non-no-op executable result, and exact source-dependent "
+            "flow through the frozen source-result parameter to the candidate "
+            "result and target request in the externally trusted raw transcript, "
+            "plus every structured block."
         ),
     ),
     (
@@ -929,6 +929,7 @@ def _candidate_request_flow_issue(value: Any) -> str | None:
         "candidate_result_request_path",
         "candidate_result_request_digest",
         "target_bound_arguments_digest",
+        "source_dependency_proof",
         "target_binding_id",
         "target_pathway_id",
         "target_symbol_id",
@@ -943,6 +944,19 @@ def _candidate_request_flow_issue(value: Any) -> str | None:
         "candidate_result_request_digest",
         "target_bound_arguments_digest",
     )
+    dependency = (
+        value.get("source_dependency_proof")
+        if isinstance(value, Mapping)
+        else None
+    )
+    dependency_fields = {
+        "schema_version",
+        "proof_kind",
+        "source_result_parameter",
+        "candidate_result_request_path",
+        "source_present_request_digest",
+        "source_absent_request_digest",
+    }
     if (
         not isinstance(value, Mapping)
         or set(value) != expected_fields
@@ -982,6 +996,30 @@ def _candidate_request_flow_issue(value: Any) -> str | None:
         )
         or value.get("candidate_result_request_digest")
         != value.get("target_bound_arguments_digest")
+        or not isinstance(dependency, Mapping)
+        or set(dependency) != dependency_fields
+        or dependency.get("schema_version")
+        != "reviewed_candidate_source_dependency_v1"
+        or dependency.get("proof_kind")
+        != "source_presence_changes_exact_target_request"
+        or re.fullmatch(
+            r"[A-Za-z_][A-Za-z0-9_]*",
+            str(dependency.get("source_result_parameter", "")),
+        )
+        is None
+        or dependency.get("candidate_result_request_path") != request_path
+        or any(
+            re.fullmatch(r"[0-9a-f]{64}", str(dependency.get(field, "")))
+            is None
+            for field in (
+                "source_present_request_digest",
+                "source_absent_request_digest",
+            )
+        )
+        or dependency.get("source_present_request_digest")
+        != value.get("candidate_result_request_digest")
+        or dependency.get("source_present_request_digest")
+        == dependency.get("source_absent_request_digest")
     ):
         return "candidate target-request flow is incomplete or invalid"
     return None
@@ -1095,6 +1133,191 @@ def _function_returns_distinct_nonempty_mapping(
             isinstance(node, ast.Name) and node.id == source_result_parameter
             for node in ast.walk(executable_body[0].value)
         )
+    )
+
+
+def _safe_source_expression(
+    node: ast.expr,
+    *,
+    source_result_parameter: str,
+    source_value: object,
+) -> Any:
+    """Independently evaluate the pure reviewed source-expression subset."""
+
+    def evaluate(child: ast.expr) -> Any:
+        return _safe_source_expression(
+            child,
+            source_result_parameter=source_result_parameter,
+            source_value=source_value,
+        )
+
+    if isinstance(node, ast.Constant):
+        return node.value
+    if isinstance(node, ast.Name) and node.id == source_result_parameter:
+        return source_value
+    if isinstance(node, ast.Dict):
+        if any(key is None for key in node.keys):
+            raise ValueError
+        keys = [evaluate(key) for key in node.keys if key is not None]
+        if not all(isinstance(key, str) for key in keys) or len(set(keys)) != len(keys):
+            raise ValueError
+        return {
+            key: evaluate(value)
+            for key, value in zip(keys, node.values, strict=True)
+        }
+    if isinstance(node, (ast.List, ast.Tuple)):
+        return [evaluate(item) for item in node.elts]
+    if isinstance(node, ast.IfExp):
+        return evaluate(node.body if bool(evaluate(node.test)) else node.orelse)
+    if isinstance(node, ast.Compare) and len(node.ops) == len(node.comparators) == 1:
+        left = evaluate(node.left)
+        right = evaluate(node.comparators[0])
+        operator = node.ops[0]
+        if isinstance(operator, ast.Is):
+            return left is right
+        if isinstance(operator, ast.IsNot):
+            return left is not right
+        if isinstance(operator, ast.Eq):
+            return left == right
+        if isinstance(operator, ast.NotEq):
+            return left != right
+    if isinstance(node, ast.UnaryOp):
+        operand = evaluate(node.operand)
+        if isinstance(node.op, ast.Not):
+            return not operand
+        if isinstance(node.op, ast.UAdd):
+            return +operand
+        if isinstance(node.op, ast.USub):
+            return -operand
+    if isinstance(node, ast.BoolOp):
+        result = evaluate(node.values[0])
+        if isinstance(node.op, ast.And):
+            for item in node.values[1:]:
+                if not bool(result):
+                    return result
+                result = evaluate(item)
+            return result
+        if isinstance(node.op, ast.Or):
+            for item in node.values[1:]:
+                if bool(result):
+                    return result
+                result = evaluate(item)
+            return result
+    if isinstance(node, ast.BinOp):
+        left = evaluate(node.left)
+        right = evaluate(node.right)
+        if isinstance(node.op, ast.Add):
+            return left + right
+        if isinstance(node.op, ast.Sub):
+            return left - right
+        if isinstance(node.op, ast.Mult):
+            return left * right
+        if isinstance(node.op, ast.Div):
+            return left / right
+        if isinstance(node.op, ast.FloorDiv):
+            return left // right
+        if isinstance(node.op, ast.Mod):
+            return left % right
+    raise ValueError
+
+
+def _source_dependency_proof(
+    definition: ast.FunctionDef,
+    *,
+    source_result_parameter: str,
+    request_path: list[str],
+) -> dict[str, Any] | None:
+    """Reconstruct source-presence dependency for the exact target request."""
+
+    body = list(definition.body)
+    if (
+        body
+        and isinstance(body[0], ast.Expr)
+        and isinstance(body[0].value, ast.Constant)
+        and isinstance(body[0].value.value, str)
+    ):
+        body = body[1:]
+    if len(body) != 1 or not isinstance(body[0], ast.Return):
+        return None
+    expression = body[0].value
+    if expression is None:
+        return None
+    for segment in request_path:
+        if not isinstance(expression, ast.Dict):
+            return None
+        matches = [
+            value
+            for key, value in zip(expression.keys, expression.values, strict=True)
+            if isinstance(key, ast.Constant) and key.value == segment
+        ]
+        if len(matches) != 1:
+            return None
+        expression = matches[0]
+    source_present = object()
+    try:
+        present = _safe_source_expression(
+            expression,
+            source_result_parameter=source_result_parameter,
+            source_value=source_present,
+        )
+        absent = _safe_source_expression(
+            expression,
+            source_result_parameter=source_result_parameter,
+            source_value=None,
+        )
+        present_digest = canonical_digest(present)
+        absent_digest = canonical_digest(absent)
+    except (ArithmeticError, TypeError, ValueError):
+        return None
+    if (
+        not isinstance(present, dict)
+        or not present
+        or not isinstance(absent, dict)
+        or not absent
+        or present_digest == absent_digest
+    ):
+        return None
+    return {
+        "schema_version": "reviewed_candidate_source_dependency_v1",
+        "proof_kind": "source_presence_changes_exact_target_request",
+        "source_result_parameter": source_result_parameter,
+        "candidate_result_request_path": request_path,
+        "source_present_request_digest": present_digest,
+        "source_absent_request_digest": absent_digest,
+    }
+
+
+def _candidate_source_dependency_proof(
+    root: Path,
+    candidate: Mapping[str, Any],
+    *,
+    request_path: list[str],
+) -> dict[str, Any] | None:
+    """Load the pinned candidate and independently derive its path proof."""
+
+    evidence = candidate.get("mechanism_evidence")
+    review = candidate.get("invalid_relabel_relation_review")
+    if not isinstance(evidence, Mapping) or not isinstance(review, Mapping):
+        return None
+    try:
+        artifact = load_json(root / str(evidence["path"]))
+        executable = artifact["executable_symbol"]
+        source = root / str(executable["source_path"])
+        tree = ast.parse(source.read_text(encoding="utf-8"))
+    except (KeyError, OSError, SyntaxError, TypeError, UnicodeDecodeError):
+        return None
+    definitions = [
+        node
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef)
+        and node.name == executable.get("qualified_symbol")
+    ]
+    if len(definitions) != 1:
+        return None
+    return _source_dependency_proof(
+        definitions[0],
+        source_result_parameter=str(review.get("source_result_parameter", "")),
+        request_path=request_path,
     )
 
 
@@ -3613,6 +3836,24 @@ def validate_bundle(
                         if isinstance(target_flow_invocation, Mapping)
                         else None
                     )
+                    request_path = (
+                        target_request_flow.get("candidate_result_request_path")
+                        if isinstance(target_request_flow, Mapping)
+                        else None
+                    )
+                    expected_dependency_proof = (
+                        _candidate_source_dependency_proof(
+                            root,
+                            candidate,
+                            request_path=request_path,
+                        )
+                        if isinstance(request_path, list)
+                        and all(
+                            isinstance(segment, str) and segment
+                            for segment in request_path
+                        )
+                        else None
+                    )
                     candidate_result = mechanism_flow.get("result")
                     reviewed_dataflow_is_valid = (
                         isinstance(dataflow_witness, Mapping)
@@ -3657,6 +3898,9 @@ def validate_bundle(
                             "target_bound_arguments_digest"
                         )
                         == dataflow_witness.get("target_request_digest")
+                        and expected_dependency_proof is not None
+                        and target_request_flow.get("source_dependency_proof")
+                        == expected_dependency_proof
                     )
                 structurally_valid = (
                     structurally_valid

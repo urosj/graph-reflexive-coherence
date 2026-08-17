@@ -4,10 +4,10 @@
   "executable_symbol": {
     "binding_role": "candidate_mechanism_entrypoint",
     "call_kind": "module_function",
-    "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
+    "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
     "qualified_symbol": "diagnostic_to_packet_candidate_crossing",
-    "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
-    "source_sha256": "3898ef4d747db32ea6f51e8f73547fb1b2c5ef2aa4ef1d0b21def496cd443475",
+    "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+    "source_sha256": "6bf458987e753ecec34ebbc30932903ef7d1b3bfc0c944e7844ddfb02b639a4e",
     "symbol_id": "candidate-mechanism:fixture.distinct_diagnostic_packet_adapter"
   },
   "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",

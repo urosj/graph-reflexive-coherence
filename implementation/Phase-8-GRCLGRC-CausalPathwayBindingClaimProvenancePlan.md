@@ -204,6 +204,20 @@ is referenced by the pinned callable's returned mapping, equals the witness's
 raw candidate invocation. A source object passed only through unused context
 must not retain an experimental edge.
 
+## Round-Six R6-B01 Correction
+
+Join the frozen source parameter to the exact target-request value, not merely
+to syntax in the candidate return. For the candidate-result path expanded into
+the target call, derive source-present and source-absent mappings through a
+small side-effect-free AST evaluator. Both must be canonical nonempty request
+mappings, their digests must differ, and the live target request must match the
+source-present digest.
+
+Freeze the path and both counterfactual digests in raw request flow. BCF-011 and
+BCF-019 must validate that record and independently reconstruct it from the
+content-addressed executable. Equal-branch and algebraically neutral source
+expressions must not retain an experimental edge.
+
 ## Maximum Claim
 
 If Iterations 112-116 pass, the layer may claim versioned pathway binding and

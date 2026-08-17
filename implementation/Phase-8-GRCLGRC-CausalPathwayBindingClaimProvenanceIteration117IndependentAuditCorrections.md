@@ -809,3 +809,59 @@ These results include the exact live unused-`context` falsifier and a separate
 checker-side coherent reseal. They are author-side correction evidence only;
 R5-B01 is corrected author-side and a new full independent audit remains the
 acceptance gate.
+
+## Round-Six Disposition And R6-B01 Correction
+
+The round-six independent audit returned `reject_pending_correction` with one
+new blocker and independently closed R5-B01. The remaining R6-B01 falsifier
+used the reviewed source parameter only in an equal-branch expression:
+`0.25 if source_result is not None else 0.25`. The source descriptor occupied
+the correct argument, but the exact target request was unchanged when the
+source was removed. The prior structural source-name test therefore confused a
+syntactic mention with semantic source-to-request flow.
+
+R6-B01 is corrected author-side with a path-specific counterfactual proof over
+the content-addressed candidate definition. After the runtime identifies the
+exact returned mapping or nested mapping expanded into the target request, it
+evaluates that return subtree in a deliberately small, side-effect-free AST
+language twice: once with the reviewed source parameter present and once with
+it absent. Both results must be nonempty canonical JSON mappings, their digests
+must differ, and the source-present digest must equal the request actually
+supplied to the target.
+
+The raw `candidate_request_flow` now freezes the proof kind, reviewed parameter,
+exact result path, and both counterfactual digests. The checker validates that
+record structurally, then independently reloads the pinned executable source,
+selects the same return path, repeats the safe counterfactual evaluation, and
+requires exact equality with the recorded proof. Unsupported expressions fail
+closed; no candidate code is executed to manufacture the proof.
+
+Consequently, an honest request whose selected amount changes from `0.0` to
+`0.25` retains its reviewed edge. The exact equal-branch Round 6 falsifier has
+no source-dependency proof, receives no target-request flow attestation, and
+cannot be recorded as candidate use even though its source argument and target
+request provenance are otherwise exact.
+
+## R6-B01 Author-Side Verification
+
+The focused controls include the honest nested-request path, the exact
+equal-branch source no-op, and an independent checker evaluation of the pinned
+no-op expression. The supplied independent round-six harness was also run
+against the corrected production binding and checker in its disposable audit
+checkout and returned 44 passed, 0 failed, 0 errors.
+
+```text
+supplied independent round-six harness = 44 passed, 0 failed, 0 errors
+.venv focused binding/conformance/I116 tests = 94 passed
+.venv full unittest discovery = 1,305 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed Python surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall = passed
+git diff --check = passed
+```
+
+These are author-side correction results. R6-B01 is corrected author-side; a
+new full independent audit remains the acceptance gate.

@@ -230,3 +230,21 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Cover the honest reviewed source parameter, the exact unused-`context`
       decoy, and a coherently resealed checker transcript naming `context`.
 - [ ] Re-run a new full independent adversarial audit after R5-B01 closes.
+
+## Round-Six Independent Audit Correction
+
+- [x] Record R5-B01 as independently closed and R6-B01 as the remaining
+      semantic source-dependence blocker.
+- [x] Bind the dependency proof to the exact candidate-result submapping used
+      as the target request, not to an arbitrary source mention elsewhere.
+- [x] Safely derive source-present and source-absent canonical request digests
+      from the pinned candidate definition and require them to differ.
+- [x] Require the source-present digest to equal the request observed at the
+      declared target invocation.
+- [x] Freeze the proof path, reviewed parameter, and both digests in the raw
+      request-flow transcript.
+- [x] Make the checker independently reconstruct the same proof from pinned
+      source and reject unsupported or degenerate expressions.
+- [x] Cover honest flow and the exact equal-branch Round 6 falsifier at both
+      runtime and checker surfaces.
+- [ ] Re-run a new full independent adversarial audit after R6-B01 closes.

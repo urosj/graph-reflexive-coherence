@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ast
 import copy
 import importlib
 import importlib.util
@@ -1103,6 +1104,30 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 for item in result["issues"]
             )
         )
+
+    def test_round6_checker_rejects_syntactic_source_noop(self) -> None:
+        evidence_path = ROOT / (
+            "tests/fixtures/"
+            "causal_pathway_candidate_cmp05_source_noop_evidence.json"
+        )
+        evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+        executable = evidence["executable_symbol"]
+        source = ROOT / executable["source_path"]
+        tree = ast.parse(source.read_text(encoding="utf-8"))
+        definition = next(
+            node
+            for node in tree.body
+            if isinstance(node, ast.FunctionDef)
+            and node.name == executable["qualified_symbol"]
+        )
+
+        proof = self.checker._source_dependency_proof(
+            definition,
+            source_result_parameter="diagnostic_result",
+            request_path=["packet_schedule_arguments"],
+        )
+
+        self.assertIsNone(proof)
 
     def test_self_issued_invalid_pair_review_is_not_a_trust_root(self) -> None:
         mutated = self.checker.load_bundle(

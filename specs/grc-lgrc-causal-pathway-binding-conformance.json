@@ -72,7 +72,7 @@
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "invalid_relabel_candidate_review_trust_requirement": "externally_supplied_digest_for_invalid_relabel_candidate_review",
   "iteration": 115,
-  "policy_digest": "de2dd9069e10c0983373c2ed1b882febbb9a73c99a0592d77479cdc511f492af",
+  "policy_digest": "d8b11b8193392b9491d459d8a2727820f3b8ad30dd9356b8c138cafde6a6f3c2",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -125,7 +125,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, exact flow through the frozen source-result parameter to the candidate result and target request in the externally trusted raw transcript, and every structured block.",
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and exact source-dependent flow through the frozen source-result parameter to the candidate result and target request in the externally trusted raw transcript, plus every structured block.",
       "rule_id": "BCF-011",
       "severity": "fail_closed"
     },
@@ -179,7 +179,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "753ec003a882c196ae2266a9e4d7e26381bde8a0",
+  "source_revision": "38bbf68bffeeb8575677d832bf5c7c9a407777be",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

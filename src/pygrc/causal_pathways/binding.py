@@ -6,6 +6,7 @@ callables.  It deliberately does not select pathways or dispatch causal work.
 
 from __future__ import annotations
 
+import ast
 import hashlib
 import importlib
 import importlib.util
@@ -13,6 +14,7 @@ import inspect
 import json
 import pickle
 import re
+import textwrap
 from collections.abc import Callable, Iterable, Iterator, Mapping, Sequence
 from copy import deepcopy
 from dataclasses import dataclass, field, replace
@@ -207,6 +209,172 @@ def _canonical_value_digest(value: Any) -> str:
         allow_nan=False,
     ).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
+
+
+_SOURCE_PRESENT: Final[object] = object()
+
+
+def _safe_source_expression(
+    node: ast.expr,
+    *,
+    source_result_parameter: str,
+    source_value: object,
+) -> Any:
+    """Evaluate the small pure expression language admitted for source flow."""
+
+    def evaluate(child: ast.expr) -> Any:
+        return _safe_source_expression(
+            child,
+            source_result_parameter=source_result_parameter,
+            source_value=source_value,
+        )
+    if isinstance(node, ast.Constant):
+        return node.value
+    if isinstance(node, ast.Name) and node.id == source_result_parameter:
+        return source_value
+    if isinstance(node, ast.Dict):
+        if any(key is None for key in node.keys):
+            raise ValueError("mapping unpacking is not a reviewed source expression")
+        keys = [evaluate(key) for key in node.keys if key is not None]
+        if not all(isinstance(key, str) for key in keys) or len(set(keys)) != len(keys):
+            raise ValueError("reviewed request mappings require unique string keys")
+        return {
+            key: evaluate(value)
+            for key, value in zip(keys, node.values, strict=True)
+        }
+    if isinstance(node, (ast.List, ast.Tuple)):
+        return [evaluate(item) for item in node.elts]
+    if isinstance(node, ast.IfExp):
+        return evaluate(node.body if bool(evaluate(node.test)) else node.orelse)
+    if isinstance(node, ast.Compare) and len(node.ops) == len(node.comparators) == 1:
+        left = evaluate(node.left)
+        right = evaluate(node.comparators[0])
+        operator = node.ops[0]
+        if isinstance(operator, ast.Is):
+            return left is right
+        if isinstance(operator, ast.IsNot):
+            return left is not right
+        if isinstance(operator, ast.Eq):
+            return left == right
+        if isinstance(operator, ast.NotEq):
+            return left != right
+    if isinstance(node, ast.UnaryOp):
+        operand = evaluate(node.operand)
+        if isinstance(node.op, ast.Not):
+            return not operand
+        if isinstance(node.op, ast.UAdd):
+            return +operand
+        if isinstance(node.op, ast.USub):
+            return -operand
+    if isinstance(node, ast.BoolOp):
+        result = evaluate(node.values[0])
+        if isinstance(node.op, ast.And):
+            for item in node.values[1:]:
+                if not bool(result):
+                    return result
+                result = evaluate(item)
+            return result
+        if isinstance(node.op, ast.Or):
+            for item in node.values[1:]:
+                if bool(result):
+                    return result
+                result = evaluate(item)
+            return result
+    if isinstance(node, ast.BinOp):
+        left = evaluate(node.left)
+        right = evaluate(node.right)
+        if isinstance(node.op, ast.Add):
+            return left + right
+        if isinstance(node.op, ast.Sub):
+            return left - right
+        if isinstance(node.op, ast.Mult):
+            return left * right
+        if isinstance(node.op, ast.Div):
+            return left / right
+        if isinstance(node.op, ast.FloorDiv):
+            return left // right
+        if isinstance(node.op, ast.Mod):
+            return left % right
+    raise ValueError("unsupported reviewed source-dependency expression")
+
+
+def _source_dependent_request_proof(
+    definition: Callable[..., Any],
+    *,
+    source_result_parameter: str,
+    request_path: Sequence[str],
+) -> dict[str, Any] | None:
+    """Prove that one exact returned request changes with source presence."""
+
+    try:
+        tree = ast.parse(textwrap.dedent(inspect.getsource(definition)))
+    except (OSError, TypeError, SyntaxError):
+        return None
+    definitions = [node for node in tree.body if isinstance(node, ast.FunctionDef)]
+    if len(definitions) != 1:
+        return None
+    body = list(definitions[0].body)
+    if (
+        body
+        and isinstance(body[0], ast.Expr)
+        and isinstance(body[0].value, ast.Constant)
+        and isinstance(body[0].value.value, str)
+    ):
+        body = body[1:]
+    if len(body) != 1 or not isinstance(body[0], ast.Return):
+        return None
+    request_expression = body[0].value
+    if request_expression is None:
+        return None
+    for segment in request_path:
+        if not isinstance(request_expression, ast.Dict):
+            return None
+        matches = [
+            value
+            for key, value in zip(
+                request_expression.keys,
+                request_expression.values,
+                strict=True,
+            )
+            if isinstance(key, ast.Constant) and key.value == segment
+        ]
+        if len(matches) != 1:
+            return None
+        request_expression = matches[0]
+    try:
+        present = _safe_source_expression(
+            request_expression,
+            source_result_parameter=source_result_parameter,
+            source_value=_SOURCE_PRESENT,
+        )
+        absent = _safe_source_expression(
+            request_expression,
+            source_result_parameter=source_result_parameter,
+            source_value=None,
+        )
+        present_payload = _candidate_request_payload(present)
+        absent_payload = _candidate_request_payload(absent)
+    except (ArithmeticError, BindingStateError, TypeError, ValueError):
+        return None
+    if (
+        not isinstance(present_payload, dict)
+        or not present_payload
+        or not isinstance(absent_payload, dict)
+        or not absent_payload
+    ):
+        return None
+    present_digest = _canonical_value_digest(present_payload)
+    absent_digest = _canonical_value_digest(absent_payload)
+    if present_digest == absent_digest:
+        return None
+    return {
+        "schema_version": "reviewed_candidate_source_dependency_v1",
+        "proof_kind": "source_presence_changes_exact_target_request",
+        "source_result_parameter": source_result_parameter,
+        "candidate_result_request_path": list(request_path),
+        "source_present_request_digest": present_digest,
+        "source_absent_request_digest": absent_digest,
+    }
 
 
 def execution_transcript_digest(
@@ -2655,6 +2823,22 @@ class VerifiedCandidateMechanism:
     def symbol_id(self) -> str:
         return self._symbol.symbol_id
 
+    def source_dependency_proof(
+        self,
+        request_path: Sequence[str],
+    ) -> dict[str, Any] | None:
+        """Prove source-sensitive construction of one exact target request."""
+
+        if self._relation_review is None:
+            return None
+        return _source_dependent_request_proof(
+            self._expected_definition,
+            source_result_parameter=(
+                self._relation_review.source_result_parameter
+            ),
+            request_path=request_path,
+        )
+
     @property
     def link_record(self) -> Mapping[str, Any]:
         """Return the executable identity frozen into the candidate declaration."""
@@ -3465,6 +3649,15 @@ class CandidateExecutionScope:
         request_digest = _canonical_value_digest(request_payload)
         if request_digest != _canonical_value_digest(dict(keyword_arguments)):
             return None
+        dependency_proof = self._session._candidate_mechanism(
+            self.candidate.candidate_id
+        ).source_dependency_proof(request_path)
+        if (
+            dependency_proof is None
+            or dependency_proof["source_present_request_digest"]
+            != request_digest
+        ):
+            return None
         result_descriptor = mechanism_event["record"].runtime_object_flow.get(
             "result"
         )
@@ -3484,6 +3677,7 @@ class CandidateExecutionScope:
             "candidate_result_request_path": list(request_path),
             "candidate_result_request_digest": request_digest,
             "target_bound_arguments_digest": request_digest,
+            "source_dependency_proof": dependency_proof,
             "target_binding_id": binding_id,
             "target_pathway_id": pathway_id,
             "target_symbol_id": symbol_id,
