@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Reopened at Iteration 117. Checked Iteration 112-116 items describe
-the pre-audit checkpoint and do not constitute current tranche acceptance.
+**Status:** Iteration 117 accepted; Iteration 118 planned and not started.
+Checked Iteration 112-117 items retain their historical acceptance meaning.
 
 ## Global Boundaries
 
@@ -297,3 +297,35 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Refresh the cached stamp only after identical pinned content re-verifies.
 - [x] Cover unchanged cache hits, identical-content stamp invalidation, and
       changed-content refusal without mutating repository files in tests.
+
+## Iteration 118: Modular Binder Architecture And Guidance
+
+- [ ] Freeze before-refactor canonical bytes and digests for representative
+      locks, receipts, conformance outputs, and negative controls.
+- [ ] Replace the binding monolith with an internal package containing
+      `authority.py`, `identity.py`, `effects.py`, `scopes.py`, `artifacts.py`,
+      and `session.py` behind a compatibility `binding/__init__.py`.
+- [ ] Preserve every existing public export from `pygrc.causal_pathways` and
+      compatibility imports from `pygrc.causal_pathways.binding`.
+- [ ] Keep artifact schema versions, field names, field values, canonical
+      ordering, serialized bytes, and digests unchanged.
+- [ ] Give session mutation, runtime ledgers, and active-scope state cohesive
+      owners instead of retaining unrelated mutable fields on one class.
+- [ ] Replace cross-object `_`-attribute reads and broad session fan-out with
+      narrow internal collaborator methods or protocols.
+- [ ] Enforce an acyclic internal dependency direction and add an architecture
+      test that rejects prohibited module dependencies.
+- [ ] Add runnable examples for an admitted pathway, registered composition,
+      explicit dynamic choice, and conservative unregistered candidate flow.
+- [ ] Add a user-and-agent guide for selecting, binding, locking, executing,
+      sealing, validating, debugging, and safely extending binder use.
+- [ ] Revise the binding reference guide for the stable public API and exact
+      artifact schemas without making internal module layout contractual.
+- [ ] Update the root README, docs indexes, claim-boundary index, examples
+      index, specs index, and any new local example/reference indexes.
+- [ ] Add public-import compatibility and before/after golden-byte tests.
+- [ ] Run all binder examples and focused binding/conformance/I116 tests.
+- [ ] Run the full project suite (current baseline: 1,315 tests).
+- [ ] Replay the accepted 68-case independent semantic gate.
+- [ ] Pass both 20-rule conformance policies, Ruff, mypy, compileall, and
+      `git diff --check` before closing Iteration 118.

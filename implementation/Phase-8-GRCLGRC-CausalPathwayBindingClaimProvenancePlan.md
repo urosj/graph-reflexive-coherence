@@ -1,7 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
-pending
+**Status:** Iteration 117 accepted; Iteration 118 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -257,6 +256,65 @@ object identity. Replace the unconditional source hash and source-path
 resolution with one `(st_mtime_ns, st_size)` comparison. Stamp drift must force
 the pinned SHA-256 check before delegation; mismatched content fails closed,
 while identical content refreshes the stamp for subsequent calls.
+
+## Iteration 118: Modular Binder Architecture And Guidance
+
+Refactor the binder's internal architecture without changing its public API,
+artifact schemas, or canonical output bytes. The current implementation is a
+roughly 6.3-KLOC module with dozens of top-level classes, a state-heavy
+`PathwayBindingSession`, and frequent cross-class access to `_`-prefixed
+attributes and methods. The public surface in `pygrc.causal_pathways` is clean;
+Iteration 118 makes the implementation boundary match that surface.
+
+Replace the monolith with an internal package organized around explicit
+responsibilities:
+
+```text
+pygrc/causal_pathways/binding/
+  __init__.py   compatibility exports for the existing binding module surface
+  authority.py  accepted authorities, declarations, reviews, and source maps
+  identity.py   callable/source verification and canonical identity helpers
+  effects.py    effect contracts, classification, and evidence records
+  scopes.py     bound handles and execution/selection/candidate scopes
+  artifacts.py lock, receipt, invocation, and use artifact records
+  session.py    orchestration and mutation ownership
+```
+
+Keep `pygrc.causal_pathways.__init__` byte-for-byte compatible at the import
+surface, including the existing public names. Preserve compatibility for code
+that imports `pygrc.causal_pathways.binding`. Internal modules may move classes
+and helpers, but digest field names, schema versions, canonical ordering,
+serialized values, and lock/receipt/conformance bytes must not change.
+
+Reduce nominal encapsulation by introducing explicit internal collaborator
+interfaces. `PathwayBindingSession` remains the public orchestration object but
+must not remain a bag of unrelated mutable fields: group runtime ledgers and
+scope state behind cohesive owners. Bound pathways, compositions, candidate
+scopes, and verified callables should call narrow collaborator methods instead
+of reading another object's raw `_session`, `_binding_id`, or mutable ledgers.
+Avoid circular imports through dependency direction, protocols, and
+type-check-only imports rather than restoring the monolith through re-export
+cycles.
+
+Add runnable binder examples for an admitted pathway, a registered
+composition, an explicit dynamic choice, and an unregistered candidate with
+conservative claim handling. Add a user-and-agent guide covering selection,
+authority loading, declaration, linking, locking, execution scopes, sealing,
+conformance, failure interpretation, and safe extension practices. Revise the
+binding reference guide so its public API and artifact-field descriptions map
+to the modular implementation without exposing internal layout as contract.
+
+Update every repository-level discovery surface affected by those additions,
+including the root README, `docs/README.md`, `docs/reference/README.md`, the
+claim-boundary index, `examples/README.md`, `specs/README.md`, and any more
+specific example/reference indexes introduced during implementation.
+
+Acceptance requires import-compatibility tests, an architectural dependency
+test, and before/after golden-byte comparisons for representative locks,
+receipts, conformance results, and negative controls. The 1,315-test project
+suite, the accepted 68-case independent semantic gate, both 20-rule
+conformance policies, examples, Ruff, mypy, compileall, and diff checks must
+pass before Iteration 118 can close.
 
 ## Maximum Claim
 
