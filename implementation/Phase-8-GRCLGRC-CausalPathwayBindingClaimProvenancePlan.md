@@ -245,6 +245,19 @@ produce the same proof as direct Python supplied-versus-omitted behavior for
 the frozen default matrix or fail closed. In particular, a tuple default tested
 against an empty list must not manufacture a dependency.
 
+## Post-Acceptance Callable-Identity Cache
+
+Keep full content-addressed verification at link and lock boundaries, but cache
+the resolved source path, verified source digest, definition identity, and
+canonical callable-identity record within the session. Key source verification
+by resolved path so multiple symbols in one source do not repeat the file hash.
+
+On every invocation, continue to re-resolve the symbol and compare callable
+object identity. Replace the unconditional source hash and source-path
+resolution with one `(st_mtime_ns, st_size)` comparison. Stamp drift must force
+the pinned SHA-256 check before delegation; mismatched content fails closed,
+while identical content refreshes the stamp for subsequent calls.
+
 ## Maximum Claim
 
 If Iterations 112-116 pass, the layer may claim versioned pathway binding and

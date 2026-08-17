@@ -181,6 +181,17 @@ the selected expression has been evaluated, so JSON-equivalent defaults cannot
 manufacture a dependency through Python equality, concatenation, or another
 admitted type-sensitive operator. Unsupported combinations fail closed.
 
+Callable source verification is cached without weakening the per-invocation
+identity boundary. Linking performs the full source-path resolution, SHA-256
+check, and definition inspection once. A session shares that verification by
+resolved source path and freezes the resulting callable identity record. Each
+invocation still re-resolves the registered symbol to reject callable
+substitution, then compares the source file's `(st_mtime_ns, st_size)` stamp.
+An unchanged stamp reuses the frozen identity; a changed stamp forces a full
+SHA-256 check before delegation, refreshes the cache only for identical pinned
+content, and otherwise refuses the call. The independently anchored source and
+artifact digests remain authoritative for deliberate identical-stamp forgery.
+
 ## Complete Claim-Envelope Canonicalization
 
 The binding checker independently derives the entire pre-execution and receipt

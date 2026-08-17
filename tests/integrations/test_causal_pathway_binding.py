@@ -501,6 +501,107 @@ class CausalPathwayBindingTest(unittest.TestCase):
 
         self.assertEqual((), session.invocation_records)
 
+    def test_unchanged_callable_identity_uses_stat_guard_without_rehash(
+        self,
+    ) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        session.freeze_lock()
+
+        with (
+            patch.object(
+                binding_module,
+                "sha256_file",
+                wraps=binding_module.sha256_file,
+            ) as source_hash,
+            patch.object(
+                binding_module.inspect,
+                "getsourcefile",
+                wraps=binding_module.inspect.getsourcefile,
+            ) as source_lookup,
+        ):
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.1,
+            )
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.2,
+            )
+
+        source_hash.assert_not_called()
+        source_lookup.assert_not_called()
+        self.assertEqual(2, len(session.invocation_records))
+
+    def test_source_stat_drift_rehashes_and_refuses_content_drift(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        session.freeze_lock()
+        self.assertEqual(1, len(session._verified_source_files))
+        source_file = next(iter(session._verified_source_files.values()))
+        source_file.stamp = (source_file.stamp[0] + 1, source_file.stamp[1])
+
+        with (
+            patch.object(binding_module, "sha256_file", return_value="0" * 64) as rehash,
+            self.assertRaisesRegex(SymbolBindingError, "source .* content is stale"),
+        ):
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.1,
+            )
+
+        rehash.assert_called_once()
+        self.assertEqual((), session.invocation_records)
+
+    def test_source_stat_drift_rehashes_once_and_refreshes_cache(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        schedule = packet.symbol("packet_schedule", instance=model)
+        session.freeze_lock()
+        source_file = next(iter(session._verified_source_files.values()))
+        source_file.stamp = (source_file.stamp[0] + 1, source_file.stamp[1])
+
+        with patch.object(
+            binding_module,
+            "sha256_file",
+            wraps=binding_module.sha256_file,
+        ) as rehash:
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.1,
+            )
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.2,
+            )
+
+        rehash.assert_called_once()
+        self.assertEqual(2, len(session.invocation_records))
+
     def test_composition_retains_cmp20_producer_identity_and_policy(self) -> None:
         model = _two_node_runtime()
         session = PathwayBindingSession(self.authority)

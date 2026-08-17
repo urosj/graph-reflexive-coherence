@@ -1,7 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** Round-eight R8-B01 corrected author-side; new full independent audit
-pending
+**Status:** Accepted by the Round 9 independent audit; no findings remain
 
 **Checkpoint commit:** `976c660`
 
@@ -971,3 +970,61 @@ git diff --check = passed
 
 These are author-side correction results. R8-B01 is corrected author-side; a
 new full independent audit remains the acceptance gate.
+
+## Round-Nine Acceptance
+
+The Round 9 independent audit returned `accept` at commit `8f30346`. All 58
+retained Round 8 cases and 10 additional recursive type/operator differential
+cases passed. The exact tuple/list falsifier produced no dependency proof,
+candidate use, or edge. Focused project tests and both 20-rule conformance
+policies passed, and the audit reported zero blockers, majors, or minors.
+
+```text
+supplied independent round-nine harness = 68 passed, 0 failed, 0 errors
+.venv focused binding/conformance/I116 tests = 101 passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+full unittest discovery = not rerun by owner direction
+```
+
+R8-B01 is independently closed. No further correction round is required by the
+audit, and the Iteration 117 tranche is accepted at the audited identity.
+
+## Post-Acceptance Callable-Identity Cache
+
+The accepted semantics are retained while removing unconditional source-file
+hashing and path resolution from every bound call. Each session now performs
+full source-path, SHA-256, and definition verification at link time and shares
+the verified source file by resolved path. It also freezes the canonical
+callable-identity record once instead of re-canonicalizing it per invocation.
+
+The invocation path continues to re-resolve registered symbols and reject
+callable object substitution. It then performs one source `stat` and reuses the
+frozen identity while `(st_mtime_ns, st_size)` is unchanged. Stamp drift invokes
+the pinned SHA-256 check before delegation. Mismatched content is refused;
+identical content refreshes the cached stamp. Candidate mechanisms also reuse
+their loaded, identity-checked target rather than reloading the module on every
+call. Deliberate identical-byte/identical-stamp forgery remains assigned to the
+independent anchor, lock, receipt, and transcript digest tier, as before.
+
+Post-acceptance controls prove that two unchanged calls invoke neither
+`sha256_file` nor `inspect.getsourcefile`; simulated stamp drift invokes exactly
+one re-hash, refreshes the cache only when pinned content matches, and refuses
+mismatched content before the mechanism executes. An illustrative local timing
+on the 430-KB runtime source measured the complete cached identity assertion at
+about 18.8 microseconds and one full identity verification at about 2.57
+milliseconds, a 136-fold reduction per avoided full verification. The former
+hot path performed two full verifications.
+
+```text
+supplied round-nine semantic replay after cache = 68 passed, 0 failed, 0 errors
+.venv focused binding/conformance/I116 tests = 104 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed Python surfaces = passed
+mypy --python-version 3.12 selected binding surface = passed
+compileall = passed
+git diff --check = passed
+full unittest discovery = not rerun by owner direction
+```

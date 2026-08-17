@@ -729,6 +729,56 @@ class CallableIdentity:
         return record
 
 
+@dataclass
+class _VerifiedSourceFile:
+    """One fully verified source file with a cheap change-detection stamp."""
+
+    path: Path
+    expected_sha256: str
+    stamp: tuple[int, int]
+
+    @staticmethod
+    def _stamp(path: Path) -> tuple[int, int]:
+        try:
+            status = path.stat()
+        except OSError as exc:
+            raise SymbolBindingError(
+                f"binding source {path} is absent or unreadable"
+            ) from exc
+        return status.st_mtime_ns, status.st_size
+
+    @classmethod
+    def verify(cls, path: Path, *, expected_sha256: str) -> _VerifiedSourceFile:
+        """Hash one source and bind the result to a stable file stamp."""
+
+        before = cls._stamp(path)
+        if sha256_file(path) != expected_sha256:
+            raise SymbolBindingError(f"binding source {path} content is stale")
+        after = cls._stamp(path)
+        if before != after:
+            raise SymbolBindingError(
+                f"binding source {path} changed during identity verification"
+            )
+        return cls(path=path, expected_sha256=expected_sha256, stamp=after)
+
+    def assert_current(self) -> None:
+        """Reuse verification while the file stamp is unchanged."""
+
+        current = self._stamp(self.path)
+        if current == self.stamp:
+            return
+        if sha256_file(self.path) != self.expected_sha256:
+            raise SymbolBindingError(
+                f"binding source {self.path} content is stale"
+            )
+        verified = self._stamp(self.path)
+        if current != verified:
+            raise SymbolBindingError(
+                f"binding source {self.path} changed during identity verification"
+            )
+        self.stamp = verified
+
+
 @dataclass(frozen=True)
 class SourceSymbolBinding:
     """One exact stage-to-source link from the machine binding map."""
@@ -758,13 +808,10 @@ class SourceSymbolBinding:
             required_keyword_arguments=MappingProxyType(dict(required)),
         )
 
-    def callable_identity(
+    def _validated_definition(
         self,
         target: Callable[..., Any],
-        repository_root: Path,
-    ) -> CallableIdentity:
-        """Validate and describe a resolved callable against its source link."""
-
+    ) -> tuple[Callable[..., Any], str, str]:
         definition = _callable_definition(target)
         module = str(getattr(definition, "__module__", ""))
         qualified_symbol = str(getattr(definition, "__qualname__", ""))
@@ -774,23 +821,37 @@ class SourceSymbolBinding:
                 f"{module}.{qualified_symbol}, expected "
                 f"{self.module}.{self.qualified_symbol}"
             )
+        return definition, module, qualified_symbol
 
+    def _resolved_source_path(
+        self,
+        definition: Callable[..., Any],
+        repository_root: Path,
+        *,
+        expected_source: Path | None = None,
+    ) -> Path:
         source_file = inspect.getsourcefile(definition)
         if source_file is None:
             raise SymbolBindingError(
                 f"binding symbol {self.symbol_id!r} has no inspectable source file"
             )
-        expected_source = (repository_root / self.source_path).resolve()
+        if expected_source is None:
+            expected_source = (repository_root / self.source_path).resolve()
         actual_source = Path(source_file).resolve()
         if actual_source != expected_source:
             raise SymbolBindingError(
                 f"binding symbol {self.symbol_id!r} resolved from {actual_source}, "
                 f"expected {expected_source}"
             )
-        if sha256_file(actual_source) != self.source_sha256:
-            raise SymbolBindingError(
-                f"binding symbol {self.symbol_id!r} source content is stale"
-            )
+        return actual_source
+
+    def _identity_from_verified_source(
+        self,
+        definition: Callable[..., Any],
+        *,
+        module: str,
+        qualified_symbol: str,
+    ) -> CallableIdentity:
         try:
             source_lines, first_line = inspect.getsourcelines(definition)
         except (OSError, TypeError) as exc:
@@ -806,6 +867,27 @@ class SourceSymbolBinding:
             definition_first_line=first_line,
             definition_source_sha256=hashlib.sha256(definition_source).hexdigest(),
         )
+
+    def callable_identity(
+        self,
+        target: Callable[..., Any],
+        repository_root: Path,
+    ) -> CallableIdentity:
+        """Validate and describe a resolved callable against its source link."""
+
+        definition, module, qualified_symbol = self._validated_definition(target)
+        source = self._resolved_source_path(definition, repository_root)
+        source_file = _VerifiedSourceFile.verify(
+            source,
+            expected_sha256=self.source_sha256,
+        )
+        identity = self._identity_from_verified_source(
+            definition,
+            module=module,
+            qualified_symbol=qualified_symbol,
+        )
+        source_file.assert_current()
+        return identity
 
     def resolve(self, repository_root: Path | None = None) -> Callable[..., Any]:
         """Import and identity-check the exact callable recorded by this link."""
@@ -839,9 +921,33 @@ class SourceSymbolBinding:
         return resolved
 
 
+@dataclass(frozen=True)
+class _CallableIdentityGuard:
+    """Cached callable identity guarded by one verified source file."""
+
+    symbol: SourceSymbolBinding
+    expected_definition: Callable[..., Any]
+    source_file: _VerifiedSourceFile
+    identity: CallableIdentity
+    identity_record: Mapping[str, Any]
+
+    def assert_current(self, target: Callable[..., Any]) -> Mapping[str, Any]:
+        """Reject callable replacement and re-hash only after source stat drift."""
+
+        definition, _, _ = self.symbol._validated_definition(target)
+        if definition is not self.expected_definition:
+            raise SymbolBindingError(
+                f"binding {self.symbol.symbol_id!r} callable identity changed"
+            )
+        self.source_file.assert_current()
+        return self.identity_record
+
+
 def _resolve_candidate_symbol(
     symbol: SourceSymbolBinding,
     repository_root: Path,
+    *,
+    verify_source: bool = True,
 ) -> Callable[..., Any]:
     """Load an unregistered candidate callable from its pinned repository file."""
 
@@ -873,12 +979,13 @@ def _resolve_candidate_symbol(
             f"candidate executable {symbol.qualified_symbol!r} is not callable"
         )
     resolved = cast(Callable[..., Any], target)
-    try:
-        symbol.callable_identity(resolved, repository_root)
-    except SymbolBindingError as exc:
-        raise InvalidCandidateError(
-            "candidate executable symbol is absent, stale, or inconsistent"
-        ) from exc
+    if verify_source:
+        try:
+            symbol.callable_identity(resolved, repository_root)
+        except SymbolBindingError as exc:
+            raise InvalidCandidateError(
+                "candidate executable symbol is absent, stale, or inconsistent"
+            ) from exc
     return resolved
 
 
@@ -2513,8 +2620,7 @@ class VerifiedCallable:
         symbol: SourceSymbolBinding,
         instance: object | CrossingResultReference | FlowDerivedInstanceReference | None,
     ) -> None:
-        repository_root = session.authority.repository_root
-        target = symbol.resolve(repository_root)
+        target = symbol.resolve()
         instance_reference = (
             instance
             if isinstance(
@@ -2534,7 +2640,7 @@ class VerifiedCallable:
                     f"{symbol.symbol_id!r} is not an instance method"
                 )
             target = target.__get__(instance, type(instance))
-        identity = symbol.callable_identity(target, repository_root)
+        identity_guard = session._callable_identity_guard(symbol, target)
         self._session = session
         self._binding_id = binding_id
         self._pathway_id = pathway_id
@@ -2545,7 +2651,7 @@ class VerifiedCallable:
         self._instance_reference = instance_reference
         self._expected_definition = _callable_definition(target)
         self._expected_bound_owner = _callable_bound_owner(target)
-        self._callable_identity = identity
+        self._identity_guard = identity_guard
         self.__name__ = getattr(target, "__name__", symbol.qualified_symbol)
         self.__doc__ = getattr(target, "__doc__", None)
         signature = inspect.signature(target)
@@ -2570,15 +2676,14 @@ class VerifiedCallable:
     def callable_identity(self) -> Mapping[str, Any]:
         """Return the callable identity frozen for this handle."""
 
-        return MappingProxyType(self._callable_identity.to_record())
+        return self._identity_guard.identity_record
 
     def _assert_current_callable(
         self,
     ) -> tuple[Callable[..., Any], Mapping[str, Any]]:
         """Fail before delegation if the resolved or stored target has changed."""
 
-        repository_root = self._session.authority.repository_root
-        current = self._symbol.resolve(repository_root)
+        current = self._symbol.resolve()
         if self._symbol.call_kind == "instance_method":
             if self._instance_reference is not None:
                 owner = self._instance_reference.resolve()
@@ -2589,11 +2694,6 @@ class VerifiedCallable:
                     f"binding {self._symbol.symbol_id!r} lost its instance owner"
                 )
             current = current.__get__(owner, type(owner))
-        current_identity = self._symbol.callable_identity(current, repository_root)
-        if current_identity.to_record() != self._callable_identity.to_record():
-            raise SymbolBindingError(
-                f"binding {self._symbol.symbol_id!r} callable fingerprint drifted"
-            )
         identity_changed = (
             _callable_definition(current) is not self._expected_definition
             or _callable_definition(self._target) is not self._expected_definition
@@ -2607,7 +2707,8 @@ class VerifiedCallable:
             raise SymbolBindingError(
                 f"binding {self._symbol.symbol_id!r} callable identity changed"
             )
-        return current, MappingProxyType(current_identity.to_record())
+        current_identity = self._identity_guard.assert_current(current)
+        return current, current_identity
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         self._session._assert_invocation_allowed(
@@ -2749,16 +2850,16 @@ class VerifiedCompositionCrossing:
         crossing: CompositionCrossingBinding,
         source_instance: object,
     ) -> None:
-        target = crossing.symbol.resolve(session.authority.repository_root)
+        target = crossing.symbol.resolve()
         self._session = session
         self._composition = composition
         self._crossing = crossing
         self._source_instance = source_instance
         self._target = target
         self._expected_definition = _callable_definition(target)
-        self._callable_identity = crossing.symbol.callable_identity(
+        self._identity_guard = session._callable_identity_guard(
+            crossing.symbol,
             target,
-            session.authority.repository_root,
         )
         self._result_reference = CrossingResultReference(
             composition_id=composition.composition_id,
@@ -2784,22 +2885,20 @@ class VerifiedCompositionCrossing:
 
     @property
     def callable_identity(self) -> Mapping[str, Any]:
-        return MappingProxyType(self._callable_identity.to_record())
+        return self._identity_guard.identity_record
 
     def _assert_current_callable(self) -> tuple[Callable[..., Any], Mapping[str, Any]]:
         symbol = self._crossing.symbol
-        repository_root = self._session.authority.repository_root
-        current = symbol.resolve(repository_root)
-        current_identity = symbol.callable_identity(current, repository_root)
+        current = symbol.resolve()
         if (
-            current_identity.to_record() != self._callable_identity.to_record()
-            or _callable_definition(current) is not self._expected_definition
+            _callable_definition(current) is not self._expected_definition
             or _callable_definition(self._target) is not self._expected_definition
         ):
             raise SymbolBindingError(
                 f"composition crossing {symbol.symbol_id!r} callable identity changed"
             )
-        return current, MappingProxyType(current_identity.to_record())
+        current_identity = self._identity_guard.assert_current(current)
+        return current, current_identity
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         scope = self._session._assert_crossing_invocation_allowed(
@@ -2918,6 +3017,7 @@ class VerifiedCandidateMechanism:
         target = _resolve_candidate_symbol(
             symbol,
             session.authority.repository_root,
+            verify_source=False,
         )
         definition = _callable_definition(target)
         if (
@@ -2958,10 +3058,16 @@ class VerifiedCandidateMechanism:
         self._relation_review = relation_review
         self._target = target
         self._expected_definition = definition
-        self._callable_identity = symbol.callable_identity(
-            target,
-            session.authority.repository_root,
-        )
+        try:
+            self._identity_guard = session._callable_identity_guard(
+                symbol,
+                target,
+            )
+        except SymbolBindingError as exc:
+            raise InvalidCandidateError(
+                "candidate executable symbol is absent, stale, or inconsistent"
+            ) from exc
+        self._callable_identity = self._identity_guard.identity
         self.__name__ = getattr(target, "__name__", symbol.qualified_symbol)
         self.__doc__ = getattr(target, "__doc__", None)
         self.__signature__ = inspect.signature(target)
@@ -3005,17 +3111,12 @@ class VerifiedCandidateMechanism:
         )
 
     def _assert_current_callable(self) -> tuple[Callable[..., Any], Mapping[str, Any]]:
-        repository_root = self._session.authority.repository_root
-        current = _resolve_candidate_symbol(self._symbol, repository_root)
-        current_identity = self._symbol.callable_identity(current, repository_root)
-        if (
-            current_identity.to_record() != self._callable_identity.to_record()
-            or _callable_definition(self._target) is not self._expected_definition
-        ):
+        if _callable_definition(self._target) is not self._expected_definition:
             raise SymbolBindingError(
                 f"candidate mechanism {self.symbol_id!r} callable identity changed"
             )
-        return current, MappingProxyType(current_identity.to_record())
+        current_identity = self._identity_guard.assert_current(self._target)
+        return self._target, current_identity
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         scope = self._session._assert_candidate_mechanism_invocation_allowed(
@@ -4146,6 +4247,66 @@ class PathwayBindingSession:
         self._execution_event_count = 0
         self._candidate_uses: list[CandidateUseRecord] = []
         self._lock: BindingLock | None = None
+        self._resolved_source_paths: dict[str, Path] = {}
+        self._verified_source_files: dict[Path, _VerifiedSourceFile] = {}
+        self._callable_identity_guards: dict[str, _CallableIdentityGuard] = {}
+
+    def _callable_identity_guard(
+        self,
+        symbol: SourceSymbolBinding,
+        target: Callable[..., Any],
+    ) -> _CallableIdentityGuard:
+        """Fully verify a symbol once and return its session-level guard."""
+
+        existing = self._callable_identity_guards.get(symbol.symbol_id)
+        if existing is not None:
+            if existing.symbol != symbol:
+                raise SymbolBindingError(
+                    f"binding symbol {symbol.symbol_id!r} has conflicting identities"
+                )
+            existing.assert_current(target)
+            return existing
+
+        definition, module, qualified_symbol = symbol._validated_definition(target)
+        expected_source = self._resolved_source_paths.get(symbol.source_path)
+        if expected_source is None:
+            expected_source = (
+                self.authority.repository_root / symbol.source_path
+            ).resolve()
+            self._resolved_source_paths[symbol.source_path] = expected_source
+        source = symbol._resolved_source_path(
+            definition,
+            self.authority.repository_root,
+            expected_source=expected_source,
+        )
+        source_file = self._verified_source_files.get(source)
+        if source_file is None:
+            source_file = _VerifiedSourceFile.verify(
+                source,
+                expected_sha256=symbol.source_sha256,
+            )
+            self._verified_source_files[source] = source_file
+        else:
+            if source_file.expected_sha256 != symbol.source_sha256:
+                raise SymbolBindingError(
+                    f"binding source {source} has inconsistent expected digests"
+                )
+            source_file.assert_current()
+        identity = symbol._identity_from_verified_source(
+            definition,
+            module=module,
+            qualified_symbol=qualified_symbol,
+        )
+        source_file.assert_current()
+        guard = _CallableIdentityGuard(
+            symbol=symbol,
+            expected_definition=definition,
+            source_file=source_file,
+            identity=identity,
+            identity_record=MappingProxyType(identity.to_record()),
+        )
+        self._callable_identity_guards[symbol.symbol_id] = guard
+        return guard
 
     @property
     def phase(self) -> str:

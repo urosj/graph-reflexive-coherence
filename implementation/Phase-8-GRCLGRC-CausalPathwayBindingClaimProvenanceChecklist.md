@@ -283,4 +283,17 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
 - [x] Cover the exact tuple/list falsifier, the frozen supported-default matrix,
       recursive type distinctions, and unsupported concatenation.
 - [x] Re-run the supplied 58-case Round 8 independent adversarial audit.
-- [ ] Obtain a new full independent audit after R8-B01 closes.
+- [x] Obtain a new full independent audit after R8-B01 closes (Round 9:
+      `accept`, 68 passed, 0 failed, 0 errors, no findings).
+
+## Post-Acceptance Callable-Identity Cache
+
+- [x] Cache each resolved source path, successful SHA-256 verification,
+      definition identity, and canonical callable-identity record per session.
+- [x] Preserve per-invocation registered-symbol re-resolution and callable
+      object-identity checks.
+- [x] Use `(st_mtime_ns, st_size)` as the unchanged-source fast-path guard.
+- [x] Re-hash before delegation on stamp drift and reject mismatched content.
+- [x] Refresh the cached stamp only after identical pinned content re-verifies.
+- [x] Cover unchanged cache hits, identical-content stamp invalidation, and
+      changed-content refusal without mutating repository files in tests.

@@ -72,7 +72,7 @@
   "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
   "invalid_relabel_candidate_review_trust_requirement": "externally_supplied_digest_for_invalid_relabel_candidate_review",
   "iteration": 115,
-  "policy_digest": "35fa2018e9dacaf7ff82637144af075a423a5ac7872b2b17ef8b17cde9ced852",
+  "policy_digest": "9a6f27cf7d38d86d4ecaa092de7dc9d455976c4d96987d8dab35e45be2a14335",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -179,7 +179,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "365263e5b167939463271d83bdb4bd99269e1775",
+  "source_revision": "8f30346d58f9a659f141e4c888d925a1b1eb1a4b",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false
