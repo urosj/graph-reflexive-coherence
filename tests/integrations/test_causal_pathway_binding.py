@@ -96,7 +96,7 @@ def _cmp05_relation_review(
 ) -> tuple[dict[str, Any], str]:
     review: dict[str, Any] = {
         "artifact": "causal-pathway-candidate-relation-review",
-        "schema_version": "causal_pathway_candidate_relation_review_v1",
+        "schema_version": "causal_pathway_candidate_relation_review_v2",
         "review_id": f"fixture-review:{candidate_id}",
         "reviewer": "independent-fixture-reviewer",
         "review_status": "accepted_structural_distinction",
@@ -117,6 +117,7 @@ def _cmp05_relation_review(
             "path": mechanism_evidence["path"],
             "sha256": mechanism_evidence["sha256"],
         },
+        "source_result_parameter": "diagnostic_result",
         "structural_distinction": {
             "distinction_kind": "reviewed_external_adapter",
             "source_binding": "candidate_callable_consumes_source_result",
@@ -836,6 +837,16 @@ class CausalPathwayBindingTest(unittest.TestCase):
             used["invalid_relabel_relation_review"]["review_digest"],
         )
         self.assertEqual(
+            "diagnostic_result",
+            used["invalid_relabel_relation_review"][
+                "source_result_parameter"
+            ],
+        )
+        self.assertEqual(
+            "diagnostic_result",
+            witness["candidate_argument_name"],
+        )
+        self.assertEqual(
             used["invalid_relabel_relation_review"],
             edge["invalid_relabel_relation_review"],
         )
@@ -891,6 +902,66 @@ class CausalPathwayBindingTest(unittest.TestCase):
             )
 
         self.assertIsNone(session.invocation_records[-1].candidate_request_flow)
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "exactly one completed evidence scope",
+        ):
+            session.record_candidate_use(candidate.candidate_id)
+
+    def test_reviewed_cmp05_source_cannot_hide_in_unused_context(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        candidate_id = "experiment.fixture.decoy_cmp05_source_context"
+        proposed_relation = "new externally owned diagnostic packet adapter"
+        mechanism_evidence = _cmp05_candidate_mechanism_evidence()
+        relation_review, trusted_review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=proposed_relation,
+            mechanism_evidence=mechanism_evidence,
+        )
+        diagnostic = session.bind_pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            stage_ids=("diagnostic_model_construction",),
+        )
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        schedule = packet.symbol("packet_schedule", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id=candidate_id,
+            candidate_kind="composition",
+            purpose="Reject a qualifying source hidden in unused context.",
+            owner="fixture",
+            consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
+            proposed_source_pathway_id=diagnostic.pathway_id,
+            proposed_target_pathway_id=packet.pathway_id,
+            proposed_relation=proposed_relation,
+            evidence_owner="fixture",
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=trusted_review_digest,
+        )
+        crossing = candidate.mechanism()
+        session.freeze_lock()
+
+        with candidate.evidence_scope():
+            diagnostic_result = prepare(model)
+            request = crossing(object(), context=diagnostic_result)
+            schedule(**request["packet_schedule_arguments"])
+
+        source_result = session.invocation_records[0].runtime_object_flow[
+            "result"
+        ]
+        candidate_arguments = session.candidate_mechanism_invocation_records[
+            0
+        ].runtime_object_flow["arguments"]
+        self.assertEqual(source_result, candidate_arguments["context"])
+        self.assertNotEqual(
+            source_result,
+            candidate_arguments["diagnostic_result"],
+        )
         with self.assertRaisesRegex(
             InvalidCandidateError,
             "exactly one completed evidence scope",

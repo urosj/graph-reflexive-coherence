@@ -13,6 +13,7 @@ def packet_schedule_to_snapshot_crossing(schedule_result: Any) -> Any:
 
 def diagnostic_to_packet_candidate_crossing(
     diagnostic_result: Any,
+    context: Any = None,
 ) -> dict[str, Any]:
     """Build a distinct packet request from one diagnostic result."""
 

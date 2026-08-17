@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
 pending
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
@@ -188,6 +188,21 @@ BCF-011 and BCF-019 independently reconstruct that three-event relationship
 from the externally trusted raw transcript. A coherently resealed receipt that
 removes or invents the target-request derivation must not retain an accepted
 experimental edge.
+
+## Round-Five R5-B01 Correction
+
+Join source-code review authority to runtime argument identity. The separately
+trusted invalid-pair review must use schema v2 and name one exact
+`source_result_parameter` in the content-addressed candidate callable. The
+runtime must require the qualifying source-result object at that parameter,
+whether the call used positional or keyword syntax; a matching object in any
+other argument is irrelevant.
+
+The checker must independently establish that the reviewed parameter exists,
+is referenced by the pinned callable's returned mapping, equals the witness's
+`candidate_argument_name`, and carries the qualifying source descriptor in the
+raw candidate invocation. A source object passed only through unused context
+must not retain an experimental edge.
 
 ## Maximum Claim
 

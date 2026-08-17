@@ -212,4 +212,21 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       before accepting the experimental edge.
 - [x] Cover the flowed mapping, ignored mapping with equivalent hard-coded
       arguments, and coherently resealed missing-flow transcript controls.
-- [ ] Re-run a new full independent adversarial audit after R4-B01 closes.
+- [x] Re-run a full independent adversarial audit after R4-B01 closes; record
+      its round-five `reject_pending_correction` disposition.
+
+## Round-Five Independent Audit Correction
+
+- [x] Record R4-B01 as independently closed and R5-B01 as the remaining
+      source-role continuity blocker.
+- [x] Version the trusted relation review to v2 and bind the source role to one
+      exact `source_result_parameter`.
+- [x] Require that parameter to exist in the pinned candidate callable before
+      runtime execution.
+- [x] Require the qualifying source-result descriptor at that exact argument;
+      do not search arbitrary candidate arguments for a matching object.
+- [x] Make the checker prove that the pinned nonempty mapping return references
+      the reviewed parameter and that the raw witness uses the same name.
+- [x] Cover the honest reviewed source parameter, the exact unused-`context`
+      decoy, and a coherently resealed checker transcript naming `context`.
+- [ ] Re-run a new full independent adversarial audit after R5-B01 closes.

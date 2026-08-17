@@ -1,6 +1,6 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
 pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
@@ -142,6 +142,15 @@ candidate argument, records the distinct candidate-result object, and records
 the exact candidate submapping and canonical request digest consumed by the
 target. A target call made with equivalent hard-coded values has no such raw
 request-flow record and cannot produce a reviewed candidate witness or edge.
+
+R5-B01 closes the source-side ambiguity. The trusted relation review is now a
+v2 record that freezes one exact `source_result_parameter` from the pinned
+candidate callable. Runtime flow accepts the qualifying source-result
+descriptor only at that named argument; it never substitutes another matching
+argument. The checker also requires the pinned mapping-return expression to
+reference the reviewed parameter and requires the raw witness to name it. An
+exact source object carried only through unused `context` is therefore presence
+without consumption and cannot witness the candidate edge.
 
 ## Complete Claim-Envelope Canonicalization
 

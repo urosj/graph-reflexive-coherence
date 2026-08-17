@@ -354,7 +354,7 @@ candidate claim.
 
 The round-three R3-B02 correction adds a separate acceptance boundary for any
 candidate over endpoints already occupied by an `invalid_relabel` row. The
-declaration must include an exact `causal_pathway_candidate_relation_review_v1`
+declaration must include an exact `causal_pathway_candidate_relation_review_v2`
 record and receive its expected digest through caller-controlled trust input;
 the checker requires the same digest through repeatable
 `--trusted-candidate-review-digest` options. The review binds the candidate
@@ -383,6 +383,16 @@ to that request derivation, and the derivation to one qualifying target
 invocation. BCF-011 reconstructs all three links from the raw transcript. An
 equivalent call written with hard-coded values records no request flow and
 cannot be used as evidence for the reviewed candidate edge.
+
+R5-B01 makes the source link parameter-specific. The v2 review adds
+`source_result_parameter`, which must be an exact parameter of the pinned
+candidate function. The checker parses that function and requires its returned
+mapping to reference the named parameter. At execution, the witness compares
+the qualifying source-result descriptor only with the raw argument descriptor
+under that name. It does not select another parameter merely because the same
+object appears there. Thus `candidate(unrelated, context=source_result)` fails
+when the review names `source_result`, even if `context` is present and the
+candidate-to-target request flow is otherwise exact.
 
 The round-two R2-B03 correction makes the claim envelope an independently
 reconstructed projection rather than a trusted receipt summary. BCF-015 builds

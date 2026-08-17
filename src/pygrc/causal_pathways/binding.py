@@ -874,6 +874,7 @@ class CandidateRelationReview:
     invalid_relabel_conflict_ids: tuple[str, ...]
     invalid_relabel_blocked_claims: tuple[str, ...]
     mechanism_evidence: Mapping[str, str]
+    source_result_parameter: str
     structural_distinction: Mapping[str, str]
     review_digest: str
 
@@ -900,6 +901,7 @@ class CandidateRelationReview:
             "invalid_relabel_conflict_ids",
             "invalid_relabel_blocked_claims",
             "mechanism_evidence",
+            "source_result_parameter",
             "structural_distinction",
             "review_digest",
         }
@@ -908,7 +910,7 @@ class CandidateRelationReview:
             set(record) != expected_fields
             or record.get("artifact") != "causal-pathway-candidate-relation-review"
             or record.get("schema_version")
-            != "causal_pathway_candidate_relation_review_v1"
+            != "causal_pathway_candidate_relation_review_v2"
             or record.get("review_status") != "accepted_structural_distinction"
             or not str(record.get("review_id", ""))
             or not str(record.get("reviewer", ""))
@@ -926,6 +928,7 @@ class CandidateRelationReview:
         conflicts = record.get("invalid_relabel_conflict_ids")
         blocks = record.get("invalid_relabel_blocked_claims")
         mechanism_evidence = record.get("mechanism_evidence")
+        source_result_parameter = str(record.get("source_result_parameter", ""))
         distinction = record.get("structural_distinction")
         if (
             not isinstance(conflicts, list)
@@ -936,6 +939,11 @@ class CandidateRelationReview:
             or not all(isinstance(item, str) and item for item in blocks)
             or not isinstance(mechanism_evidence, Mapping)
             or set(mechanism_evidence) != {"mechanism_id", "path", "sha256"}
+            or re.fullmatch(
+                r"[A-Za-z_][A-Za-z0-9_]*",
+                source_result_parameter,
+            )
+            is None
             or not isinstance(distinction, Mapping)
             or dict(distinction) != dict(_REVIEWED_STRUCTURAL_DISTINCTION)
         ):
@@ -955,6 +963,7 @@ class CandidateRelationReview:
             mechanism_evidence=MappingProxyType(
                 {str(key): str(value) for key, value in mechanism_evidence.items()}
             ),
+            source_result_parameter=source_result_parameter,
             structural_distinction=MappingProxyType(
                 {str(key): str(value) for key, value in distinction.items()}
             ),
@@ -1001,7 +1010,7 @@ class CandidateRelationReview:
 
         return {
             "artifact": "causal-pathway-candidate-relation-review",
-            "schema_version": "causal_pathway_candidate_relation_review_v1",
+            "schema_version": "causal_pathway_candidate_relation_review_v2",
             "review_id": self.review_id,
             "reviewer": self.reviewer,
             "review_status": "accepted_structural_distinction",
@@ -1017,6 +1026,7 @@ class CandidateRelationReview:
                 self.invalid_relabel_blocked_claims
             ),
             "mechanism_evidence": dict(self.mechanism_evidence),
+            "source_result_parameter": self.source_result_parameter,
             "structural_distinction": dict(self.structural_distinction),
             "review_digest": self.review_digest,
         }
@@ -2617,6 +2627,15 @@ class VerifiedCandidateMechanism:
             raise InvalidCandidateError(
                 "candidate mechanisms must execute as synchronous functions"
             )
+        if (
+            relation_review is not None
+            and relation_review.source_result_parameter
+            not in inspect.signature(target).parameters
+        ):
+            raise InvalidCandidateError(
+                "reviewed candidate executable lacks its frozen source-result "
+                "parameter"
+            )
         self._session = session
         self._candidate_id = candidate_id
         self._mechanism_id = mechanism_id
@@ -3476,6 +3495,7 @@ class CandidateExecutionScope:
         source_events: Sequence[Mapping[str, Any]],
         target_events: Sequence[Mapping[str, Any]],
         mechanism_event: Mapping[str, Any],
+        source_result_parameter: str,
     ) -> dict[str, Any] | None:
         """Reconstruct source-result -> candidate-result -> target-request flow."""
 
@@ -3492,12 +3512,7 @@ class CandidateExecutionScope:
             source_result = source_event["record"].runtime_object_flow.get("result")
             if not isinstance(source_result, Mapping):
                 continue
-            matching_argument_names = [
-                name
-                for name, descriptor in candidate_arguments.items()
-                if descriptor == source_result
-            ]
-            if len(matching_argument_names) != 1:
+            if candidate_arguments.get(source_result_parameter) != source_result:
                 continue
             for target_event in target_events:
                 request_flow = target_event["record"].candidate_request_flow
@@ -3519,7 +3534,7 @@ class CandidateExecutionScope:
                     "witness_kind": "externally_attested_candidate_request_flow",
                     "source_invocation_index": source_event["record_index"],
                     "source_result": dict(source_result),
-                    "candidate_argument_name": matching_argument_names[0],
+                    "candidate_argument_name": source_result_parameter,
                     "candidate_mechanism_invocation_index": mechanism_event[
                         "record_index"
                     ],
@@ -3607,6 +3622,7 @@ class CandidateExecutionScope:
                 source_events=source_events,
                 target_events=target_events,
                 mechanism_event=mechanism_event,
+                source_result_parameter=relation_review.source_result_parameter,
             )
             if candidate_dataflow_witness is None:
                 return None

@@ -145,7 +145,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         }
         review: dict[str, Any] = {
             "artifact": "causal-pathway-candidate-relation-review",
-            "schema_version": "causal_pathway_candidate_relation_review_v1",
+            "schema_version": "causal_pathway_candidate_relation_review_v2",
             "review_id": "round3-audit-synonym-noop-review",
             "reviewer": "independent-round3-fixture",
             "review_status": "accepted_structural_distinction",
@@ -167,6 +167,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 field: evidence[field]
                 for field in ("mechanism_id", "path", "sha256")
             },
+            "source_result_parameter": "diagnostic_result",
             "structural_distinction": {
                 "distinction_kind": "reviewed_external_adapter",
                 "source_binding": "candidate_callable_consumes_source_result",
@@ -1052,6 +1053,54 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             any(
                 "identity-verified mechanism execution" in item["message"]
                 for item in ignored_result["issues"]
+            )
+        )
+
+    def test_round5_reviewed_source_must_use_frozen_parameter(self) -> None:
+        bundle, review_digest = self._round4_reviewed_candidate_bundle()
+        receipt = bundle["receipt"]
+        candidate_id = "experiment.round4.reviewed_cmp05_request"
+        mechanism_flow = receipt["actual_candidate_mechanism_invocations"][0][
+            "runtime_object_flow"
+        ]
+        source_descriptor = mechanism_flow["arguments"]["diagnostic_result"]
+        mechanism_flow["arguments"]["diagnostic_result"] = {
+            "object_id": "runtime-object:999",
+            "type": "builtins.object",
+        }
+        mechanism_flow["arguments"]["context"] = source_descriptor
+
+        use = receipt["candidate_relations_exercised"][0]
+        use["candidate_execution_witness"]["candidate_dataflow_witness"][
+            "candidate_argument_name"
+        ] = "context"
+        for graph_record in (
+            *receipt["pathway_use_graph"]["nodes"],
+            *receipt["pathway_use_graph"]["edges"],
+        ):
+            if graph_record.get("candidate_id") != candidate_id:
+                continue
+            graph_record["candidate_execution_witness"][
+                "candidate_dataflow_witness"
+            ]["candidate_argument_name"] = "context"
+        self._reseal(bundle)
+
+        result = self._validate(
+            ROOT,
+            bundle,
+            copy.deepcopy(self.policy),
+            trusted_execution_transcript_digest=receipt[
+                "execution_transcript_digest"
+            ],
+            trusted_candidate_review_digests=(review_digest,),
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertTrue(
+            any(
+                item["rule_id"] == "BCF-004"
+                and "identity-verified mechanism execution" in item["message"]
+                for item in result["issues"]
             )
         )
 

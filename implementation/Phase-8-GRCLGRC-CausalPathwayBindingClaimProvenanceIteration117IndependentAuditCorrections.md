@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
 pending
 
 **Checkpoint commit:** `976c660`
@@ -597,7 +597,7 @@ its matrix claim ceiling.
 R3-B02 is corrected author-side by separating relation prose and executable
 novelty from an accepted structural distinction. Any composition candidate
 whose ordered endpoints conflict with an `invalid_relabel` row must supply a
-`causal_pathway_candidate_relation_review_v1` record and the expected digest
+`causal_pathway_candidate_relation_review_v2` record and the expected digest
 of that exact record through caller-controlled trust configuration. The
 review binds all load-bearing facts:
 
@@ -754,3 +754,58 @@ git diff --check = passed
 
 This is author-side correction evidence only. R4-B01 is corrected author-side;
 a new full independent audit remains the acceptance gate.
+
+## Round-Five Disposition And R5-B01 Correction
+
+The round-five independent audit returned `reject_pending_correction` with one
+new blocker and independently closed R4-B01. Honest candidate-to-target flow
+passed, while hard-coded, identity-losing copied, changed, and resealed
+missing-flow target requests all failed closed. The remaining R5-B01 falsifier
+placed the exact qualifying source result in an unused `context` argument while
+an unrelated object occupied the candidate callable's real `source_result`
+argument. Runtime and checker searched for the source descriptor in any
+argument, selected `context`, and accepted the edge.
+
+R5-B01 is corrected author-side by making source-role authority explicit and
+joining all three proof surfaces. The separately trusted relation review is
+versioned to `causal_pathway_candidate_relation_review_v2` and adds one exact
+`source_result_parameter`. Its digest therefore binds the parameter name along
+with candidate identity, endpoints, relation, invalid-row blocks, executable
+content address, and structural distinction.
+
+Before execution, the runtime requires the reviewed parameter to exist in the
+pinned callable signature. During witness construction it compares the
+qualifying source-result descriptor only with the raw candidate argument under
+that name. It does not search or substitute any auxiliary argument. The
+checker independently parses the pinned function and requires its nonempty
+mapping-return expression to reference the reviewed parameter. It then requires
+the witness's `candidate_argument_name`, raw candidate argument descriptor, and
+qualifying source descriptor all to match that same frozen authority field.
+
+Consequently, the honest `diagnostic_result=<exact result>` execution retains
+its candidate edge. The audited form
+`candidate(unrelated, context=<exact result>)` records exact source presence but
+not reviewed-parameter consumption, so candidate use fails. A coherently
+resealed transcript that moves the descriptor and witness name to `context`
+also fails checker reconstruction even with new explicit transcript and review
+trust inputs.
+
+## R5-B01 Author-Side Verification
+
+```text
+.venv focused binding/conformance/I116 tests = 92 passed
+.venv full unittest discovery = 1,303 passed
+I115/I116 evidence regeneration = passed
+I116 checker-evaluated consumer cases = 10 passed, 0 issues
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+These results include the exact live unused-`context` falsifier and a separate
+checker-side coherent reseal. They are author-side correction evidence only;
+R5-B01 is corrected author-side and a new full independent audit remains the
+acceptance gate.

@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "72517656230278228b2599e7ffed15df7a1c63b1a6cc31b498c66eb648fd5433",
+  "conformance_digest": "565ef726619f8d578d58ddb6083bfac99f64cabcafd0c2a03542f32cb0281c41",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "7ac0e0fc11023fc5fbf54c4af22bb5313313512efd8a41287a741692e1d317c4",
+  "policy_digest": "de2dd9069e10c0983373c2ed1b882febbb9a73c99a0592d77479cdc511f492af",
   "rule_count": 20,
   "rule_results": [
     {
@@ -108,7 +108,7 @@
       "status": "passed"
     },
     {
-      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, exact source-result to candidate-result to target-request flow in the externally trusted raw transcript, and every structured block.",
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, exact flow through the frozen source-result parameter to the candidate result and target request in the externally trusted raw transcript, and every structured block.",
       "issue_count": 0,
       "rule_id": "BCF-011",
       "status": "passed"

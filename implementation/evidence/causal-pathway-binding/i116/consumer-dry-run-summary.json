@@ -159,9 +159,9 @@
         "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified"
       },
       "case_id": "08-unregistered-candidate",
-      "lock_digest": "da542ca4f1469139375719b1b7cf1ff4cf3adcfc0b6aff06d47ad8e5225885e4",
+      "lock_digest": "e1c728e8ad882dc1aace3525ab94bfbd3eef90264e67cf1a25d9dfa2c8bcf019",
       "lock_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
-      "receipt_digest": "4f5dff618283c234b318b18d31ecdfb72d43a06a08a405557ee9f4edd7a87217",
+      "receipt_digest": "6a4b87c7c77b8a23e62143a6c479b9bbaa2b9671c3a2164d50695d1890129572",
       "receipt_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
       "status": "passed"
     },
@@ -237,5 +237,5 @@
   "runtime_behavior_changed": false,
   "schema_version": "phase8_grclgrc_causal_pathway_binding_i116_dry_runs_v1",
   "status": "passed",
-  "summary_digest": "6a0dd4b24259d9622f93539777c326dc55f4698344ef6596e4457fcf9949aa9e"
+  "summary_digest": "d00ca5cc49911c14347ce19660b06cb1568b1b3f1dc24fc967cc5225021e2f7e"
 }

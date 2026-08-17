@@ -63,9 +63,10 @@ RULES = [
         (
             "Invalid relabels cannot be bound, semantically restated, or laundered; "
             "conflicting candidates require an independently reviewed structural "
-            "distinction, a non-no-op executable result, exact source-result to "
-            "candidate-result to target-request flow in the externally trusted raw "
-            "transcript, and every structured block."
+            "distinction, a non-no-op executable result, exact flow through the "
+            "frozen source-result parameter to the candidate result and target "
+            "request in the externally trusted raw transcript, and every structured "
+            "block."
         ),
     ),
     (
@@ -1058,6 +1059,8 @@ def _function_body_contains_yield(definition: ast.FunctionDef) -> bool:
 
 def _function_returns_distinct_nonempty_mapping(
     definition: ast.FunctionDef,
+    *,
+    source_result_parameter: str,
 ) -> bool:
     """Prove the narrow reviewed-adapter result shape from source structure."""
 
@@ -1087,8 +1090,9 @@ def _function_returns_distinct_nonempty_mapping(
         and isinstance(executable_body[0].value, ast.Dict)
         and bool(executable_body[0].value.keys)
         and all(key is not None for key in executable_body[0].value.keys)
+        and source_result_parameter in parameter_names
         and any(
-            isinstance(node, ast.Name) and node.id in parameter_names
+            isinstance(node, ast.Name) and node.id == source_result_parameter
             for node in ast.walk(executable_body[0].value)
         )
     )
@@ -1207,14 +1211,23 @@ def _candidate_evidence_issue(
     definition = definitions[0]
     if _function_body_contains_yield(definition):
         return "candidate executable must run as one synchronous function call"
+    relation_review = candidate.get("invalid_relabel_relation_review")
+    source_result_parameter = (
+        str(relation_review.get("source_result_parameter", ""))
+        if isinstance(relation_review, Mapping)
+        else ""
+    )
     if (
         candidate.get("invalid_relabel_conflict_ids")
-        and candidate.get("invalid_relabel_relation_review") is not None
-        and not _function_returns_distinct_nonempty_mapping(definition)
+        and relation_review is not None
+        and not _function_returns_distinct_nonempty_mapping(
+            definition,
+            source_result_parameter=source_result_parameter,
+        )
     ):
         return (
             "reviewed invalid-pair executable does not structurally return one "
-            "distinct nonempty mapping"
+            "distinct nonempty mapping from its frozen source-result parameter"
         )
     first_line = min(
         [definition.lineno, *(item.lineno for item in definition.decorator_list)]
@@ -1290,6 +1303,7 @@ def _candidate_relation_review_issue(
         "invalid_relabel_conflict_ids",
         "invalid_relabel_blocked_claims",
         "mechanism_evidence",
+        "source_result_parameter",
         "structural_distinction",
         "review_digest",
     }
@@ -1300,10 +1314,15 @@ def _candidate_relation_review_issue(
         review.get("artifact")
         != "causal-pathway-candidate-relation-review"
         or review.get("schema_version")
-        != "causal_pathway_candidate_relation_review_v1"
+        != "causal_pathway_candidate_relation_review_v2"
         or review.get("review_status") != "accepted_structural_distinction"
         or not str(review.get("review_id", ""))
         or not str(review.get("reviewer", ""))
+        or re.fullmatch(
+            r"[A-Za-z_][A-Za-z0-9_]*",
+            str(review.get("source_result_parameter", "")),
+        )
+        is None
         or re.fullmatch(r"[0-9a-f]{64}", review_digest) is None
         or digest_without(review, "review_digest") != review_digest
     ):
@@ -3602,6 +3621,8 @@ def validate_bundle(
                         == "externally_attested_candidate_request_flow"
                         and isinstance(candidate_argument_name, str)
                         and bool(candidate_argument_name)
+                        and candidate_argument_name
+                        == relation_review.get("source_result_parameter")
                         and isinstance(candidate_arguments, Mapping)
                         and candidate_arguments.get(candidate_argument_name)
                         == source_result

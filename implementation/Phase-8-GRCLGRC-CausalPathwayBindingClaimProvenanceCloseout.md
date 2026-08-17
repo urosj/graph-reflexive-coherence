@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** Round-four R4-B01 corrected author-side; full independent re-audit
+**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
 pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
@@ -38,8 +38,12 @@ execution. The round-four audit confirmed those earlier closures but found
 that equivalent hard-coded target arguments could still satisfy the reviewed
 candidate witness. R4-B01 is now corrected author-side by requiring the raw
 transcript and checker reconstruction to prove exact source-result to
-candidate-result to target-request continuity. This document remains a pending
-re-audit record, not an acceptance record.
+candidate-result to target-request continuity. The round-five audit confirmed
+that target-side closure but found that source presence in an unused argument
+could impersonate consumption by the reviewed parameter. R5-B01 is now
+corrected author-side by freezing that parameter in review schema v2 and
+requiring runtime and checker flow through that exact name. This document
+remains a pending re-audit record, not an acceptance record.
 
 Locks and receipts are operation-scoped, callable and crossing identities are
 rechecked, candidate and dynamic-choice evidence is scoped, acceptance uses a
@@ -82,8 +86,9 @@ envelope.
   pass-through, scalar, or empty result cannot form an experimental edge, even
   after coherent artifact resealing.
 - The reviewed candidate's qualifying source result must be the candidate
-  input, and its provenance-carrying mapping must supply the complete target
-  keyword request. Equivalent hard-coded values carry no candidate provenance.
+  input at the exact parameter frozen by trusted review authority, and its
+  provenance-carrying mapping must supply the complete target keyword request.
+  An unused decoy argument or equivalent hard-coded values do not qualify.
 - Dynamic alternatives remain caller-selected and actual use is receipted.
 - Endpoint co-use and registered chains do not synthesize new edges or claims.
 - Non-explicit composition edges require a qualifying source and target call
@@ -128,7 +133,7 @@ selector  f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b
 policy    7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9
 bindings  73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556
 binding conformance policy
-          7ac0e0fc11023fc5fbf54c4af22bb5313313512efd8a41287a741692e1d317c4
+          de2dd9069e10c0983373c2ed1b882febbb9a73c99a0592d77479cdc511f492af
 ```
 
 ## Current Maximum Claim Pending Independent Re-Audit
