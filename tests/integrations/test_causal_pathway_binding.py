@@ -65,6 +65,9 @@ CMP05_SOURCE_NOOP_EVIDENCE_PATH = Path(
 CMP05_NONNULL_DEFAULT_EVIDENCE_PATH = Path(
     "tests/fixtures/causal_pathway_candidate_cmp05_nonnull_default_evidence.json"
 )
+CMP05_TUPLE_DEFAULT_EVIDENCE_PATH = Path(
+    "tests/fixtures/causal_pathway_candidate_cmp05_tuple_default_evidence.json"
+)
 
 
 def _candidate_mechanism_evidence() -> dict[str, str]:
@@ -109,6 +112,15 @@ def _cmp05_nonnull_default_mechanism_evidence() -> dict[str, str]:
         "mechanism_id": "fixture.nonnull_default_diagnostic_packet",
         "path": CMP05_NONNULL_DEFAULT_EVIDENCE_PATH.as_posix(),
         "sha256": sha256_file(ROOT / CMP05_NONNULL_DEFAULT_EVIDENCE_PATH),
+    }
+
+
+def _cmp05_tuple_default_mechanism_evidence() -> dict[str, str]:
+    return {
+        "evidence_kind": "executable_candidate_mechanism",
+        "mechanism_id": "fixture.tuple_default_diagnostic_packet",
+        "path": CMP05_TUPLE_DEFAULT_EVIDENCE_PATH.as_posix(),
+        "sha256": sha256_file(ROOT / CMP05_TUPLE_DEFAULT_EVIDENCE_PATH),
     }
 
 
@@ -1091,6 +1103,56 @@ class CausalPathwayBindingTest(unittest.TestCase):
             candidate_id=candidate_id,
             candidate_kind="composition",
             purpose="Reject a source whose omission uses an equivalent default.",
+            owner="fixture",
+            consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
+            proposed_source_pathway_id=diagnostic.pathway_id,
+            proposed_target_pathway_id=packet.pathway_id,
+            proposed_relation=proposed_relation,
+            evidence_owner="fixture",
+            mechanism_evidence=mechanism_evidence,
+            invalid_relabel_relation_review=relation_review,
+            trusted_relation_review_digest=trusted_review_digest,
+        )
+        crossing = candidate.mechanism()
+        session.freeze_lock()
+
+        with candidate.evidence_scope():
+            diagnostic_result = prepare(model)
+            request_with_source = crossing(diagnostic_result)
+            schedule(**request_with_source["packet_schedule_arguments"])
+
+        self.assertIsNone(session.invocation_records[-1].candidate_request_flow)
+        with self.assertRaisesRegex(
+            InvalidCandidateError,
+            "exactly one completed evidence scope",
+        ):
+            session.record_candidate_use(candidate.candidate_id)
+
+    def test_reviewed_cmp05_source_omission_preserves_tuple_type(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        candidate_id = "experiment.fixture.cmp05_tuple_source_default"
+        proposed_relation = "new externally owned diagnostic packet adapter"
+        mechanism_evidence = _cmp05_tuple_default_mechanism_evidence()
+        relation_review, trusted_review_digest = _cmp05_relation_review(
+            candidate_id=candidate_id,
+            proposed_relation=proposed_relation,
+            mechanism_evidence=mechanism_evidence,
+        )
+        diagnostic = session.bind_pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            stage_ids=("diagnostic_model_construction",),
+        )
+        packet = session.bind_pathway(
+            "lgrc9v3.explicit_packet_transport",
+            stage_ids=("packet_schedule",),
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        schedule = packet.symbol("packet_schedule", instance=model)
+        candidate = session.declare_candidate(
+            candidate_id=candidate_id,
+            candidate_kind="composition",
+            purpose="Reject tuple/list type collapse in source omission.",
             owner="fixture",
             consumed_pathway_ids=(diagnostic.pathway_id, packet.pathway_id),
             proposed_source_pathway_id=diagnostic.pathway_id,

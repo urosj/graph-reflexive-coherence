@@ -265,4 +265,22 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       request from content-addressed source.
 - [x] Cover honest `default=None`, exact `default=1`, missing-default, and
       unsafe-default controls while retaining all Round 6 pressures.
-- [ ] Re-run a new full independent adversarial audit after R7-B01 closes.
+- [x] Re-run a full independent adversarial audit after R7-B01 closes (Round
+      8: 56 passed, 2 failed, 0 errors; R8-B01 isolated).
+
+## Round-Eight Independent Audit Correction
+
+- [x] Record the scalar-default R7-B01 case as independently closed and R8-B01
+      as the remaining type-erasing omission blocker.
+- [x] Evaluate AST list and tuple literals as their distinct Python types.
+- [x] Bind the source default to a recursive type-preserving digest at both the
+      loaded runtime signature and independent checker surfaces.
+- [x] Admit only `None`, scalar, list, tuple, and string-keyed mapping defaults
+      whose nested values can be represented without type loss.
+- [x] Apply canonical request serialization only after Python expression
+      evaluation; type-sensitive equality and concatenation must agree with
+      direct Python or fail closed.
+- [x] Cover the exact tuple/list falsifier, the frozen supported-default matrix,
+      recursive type distinctions, and unsupported concatenation.
+- [x] Re-run the supplied 58-case Round 8 independent adversarial audit.
+- [ ] Obtain a new full independent audit after R8-B01 closes.

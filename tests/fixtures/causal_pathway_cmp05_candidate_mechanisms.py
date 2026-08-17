@@ -54,6 +54,21 @@ def diagnostic_to_packet_candidate_nonnull_default(
     }
 
 
+def diagnostic_to_packet_candidate_tuple_default(
+    diagnostic_result: Any = (),
+) -> dict[str, Any]:
+    """Expose the Round 8 tuple/list omission falsifier."""
+
+    return {
+        "packet_schedule_arguments": {
+            "source_node_id": 0,
+            "target_node_id": 1,
+            "edge_id": 0,
+            "amount": 0.25 if diagnostic_result == [] else 0.5,
+        },
+    }
+
+
 def synonym_noop_candidate_crossing(diagnostic_result: Any = None) -> None:
     """Represent the Round 3 synonym-renamed no-op falsifier exactly."""
 

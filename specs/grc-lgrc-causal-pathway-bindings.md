@@ -172,6 +172,15 @@ omission equivalent to the live source therefore yields equal request digests
 and no reviewed candidate edge. Required parameters and unsupported defaults
 also fail closed rather than treating call arity as causal dependence.
 
+R8-B01 preserves Python value types across that omission proof. Lists and
+tuples are evaluated as their real runtime types, and the frozen-default digest
+recursively tags `None`, booleans, integers, floats, strings, lists, tuples, and
+string-keyed mappings. The source AST default and loaded signature default must
+have the same tagged digest. Canonical request serialization occurs only after
+the selected expression has been evaluated, so JSON-equivalent defaults cannot
+manufacture a dependency through Python equality, concatenation, or another
+admitted type-sensitive operator. Unsupported combinations fail closed.
+
 ## Complete Claim-Envelope Canonicalization
 
 The binding checker independently derives the entire pre-execution and receipt

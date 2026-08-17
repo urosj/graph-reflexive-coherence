@@ -231,6 +231,20 @@ reconstruct the default and omitted request from content-addressed source. A
 non-`None` default that produces the same request as the live source must not
 retain a reviewed candidate edge.
 
+## Round-Eight R8-B01 Correction
+
+Preserve the exact recursive Python type of every admitted omission default.
+The safe evaluator must distinguish list and tuple literals, and the frozen
+default digest must distinguish `None`, booleans, integers, floats, strings,
+lists, tuples, and string-keyed mappings at every nesting level. Compare that
+typed digest with the loaded signature before evaluating the counterfactual.
+
+Evaluate equality, concatenation, and every other admitted operator with those
+Python values before canonical request serialization. Runtime and checker must
+produce the same proof as direct Python supplied-versus-omitted behavior for
+the frozen default matrix or fail closed. In particular, a tuple default tested
+against an empty list must not manufacture a dependency.
+
 ## Maximum Claim
 
 If Iterations 112-116 pass, the layer may claim versioned pathway binding and

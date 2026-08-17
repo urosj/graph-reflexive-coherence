@@ -65,9 +65,9 @@ RULES = [
             "conflicting candidates require an independently reviewed structural "
             "distinction, a non-no-op executable result, and exact source-dependent "
             "flow through the frozen source-result parameter to the candidate "
-            "result and target request, using its frozen callable default for the "
-            "omission counterfactual, in the externally trusted raw transcript, plus "
-            "every structured block."
+            "result and target request, using its recursively type-preserving "
+            "frozen callable default for the omission counterfactual, in the "
+            "externally trusted raw transcript, plus every structured block."
         ),
     ),
     (
@@ -359,6 +359,49 @@ def canonical_digest(value: Any) -> str:
             allow_nan=False,
         ).encode("utf-8")
     )
+
+
+def _source_default_payload(value: Any) -> dict[str, Any]:
+    """Independently preserve Python types in one admitted default."""
+
+    value_type = type(value)
+    if value is None:
+        return {"python_type": "none"}
+    if value_type is bool:
+        return {"python_type": "bool", "value": value}
+    if value_type is int:
+        return {"python_type": "int", "value": value}
+    if value_type is float:
+        return {"python_type": "float", "value": value}
+    if value_type is str:
+        return {"python_type": "str", "value": value}
+    if value_type is list:
+        return {
+            "python_type": "list",
+            "items": [_source_default_payload(item) for item in value],
+        }
+    if value_type is tuple:
+        return {
+            "python_type": "tuple",
+            "items": [_source_default_payload(item) for item in value],
+        }
+    if value_type is dict:
+        if not all(type(key) is str for key in value):
+            raise ValueError
+        return {
+            "python_type": "dict",
+            "items": {
+                key: _source_default_payload(item)
+                for key, item in value.items()
+            },
+        }
+    raise ValueError
+
+
+def _source_default_digest(value: Any) -> str:
+    """Digest an admitted default without JSON type collapse."""
+
+    return canonical_digest(_source_default_payload(value))
 
 
 def digest_without(document: Mapping[str, Any], field: str) -> str:
@@ -1130,7 +1173,7 @@ def _function_returns_distinct_nonempty_mapping(
             definition.args,
             source_result_parameter=source_result_parameter,
         )
-        canonical_digest(source_default)
+        _source_default_digest(source_default)
     except (ArithmeticError, TypeError, ValueError):
         return False
     return (
@@ -1178,8 +1221,10 @@ def _safe_source_expression(
             key: evaluate(value)
             for key, value in zip(keys, node.values, strict=True)
         }
-    if isinstance(node, (ast.List, ast.Tuple)):
+    if isinstance(node, ast.List):
         return [evaluate(item) for item in node.elts]
+    if isinstance(node, ast.Tuple):
+        return tuple(evaluate(item) for item in node.elts)
     if isinstance(node, ast.IfExp):
         return evaluate(node.body if bool(evaluate(node.test)) else node.orelse)
     if isinstance(node, ast.Compare) and len(node.ops) == len(node.comparators) == 1:
@@ -1308,7 +1353,7 @@ def _source_dependency_proof(
             definition.args,
             source_result_parameter=source_result_parameter,
         )
-        source_default_digest = canonical_digest(source_default)
+        source_default_digest = _source_default_digest(source_default)
         present = _safe_source_expression(
             expression,
             source_result_parameter=source_result_parameter,

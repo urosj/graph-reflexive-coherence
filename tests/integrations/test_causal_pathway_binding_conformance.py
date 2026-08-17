@@ -1175,6 +1175,114 @@ def reviewed(source_result=object()):
                 )
                 self.assertIsNone(proof)
 
+    def test_round8_checker_preserves_source_default_python_types(self) -> None:
+        self.assertNotEqual(
+            self.checker._source_default_digest(()),
+            self.checker._source_default_digest([]),
+        )
+        self.assertNotEqual(
+            self.checker._source_default_digest(
+                {"nested": (True, 1, [None])}
+            ),
+            self.checker._source_default_digest(
+                {"nested": [True, 1, [None]]}
+            ),
+        )
+        self.assertNotEqual(
+            self.checker._source_default_digest(True),
+            self.checker._source_default_digest(1),
+        )
+
+    def test_round8_checker_matches_frozen_default_matrix(self) -> None:
+        cases = (
+            (
+                "none",
+                "source_result=None",
+                "source_result is not None",
+                True,
+            ),
+            (
+                "scalar",
+                "source_result=1",
+                "source_result is not None",
+                False,
+            ),
+            (
+                "tuple_list_equality",
+                "source_result=()",
+                "source_result == []",
+                False,
+            ),
+            (
+                "list",
+                "source_result=[]",
+                "source_result == []",
+                True,
+            ),
+            (
+                "mapping",
+                'source_result={"marker": 1}',
+                'source_result == {"marker": 1}',
+                True,
+            ),
+            (
+                "positional_only",
+                "source_result=None, /",
+                "source_result is not None",
+                True,
+            ),
+            (
+                "keyword_only",
+                "*, source_result=None",
+                "source_result is not None",
+                True,
+            ),
+            (
+                "nested",
+                'source_result={"items": [(1, None)]}',
+                'source_result == {"items": [(1, None)]}',
+                True,
+            ),
+        )
+        for name, signature, expression, expected in cases:
+            with self.subTest(name=name):
+                definition = ast.parse(
+                    f"""
+def reviewed({signature}):
+    return {{"amount": 0.25 if {expression} else 0.5}}
+"""
+                ).body[0]
+                self.assertIsInstance(definition, ast.FunctionDef)
+                proof = self.checker._source_dependency_proof(
+                    definition,
+                    source_result_parameter="source_result",
+                    request_path=[],
+                )
+                self.assertEqual(expected, proof is not None)
+
+    def test_round8_checker_fails_closed_on_type_sensitive_concatenation(
+        self,
+    ) -> None:
+        definition = ast.parse(
+            """
+def reviewed(source_result=(1,)):
+    return {
+        "amount": 0.25
+        if ([] if source_result is not None else source_result) + [] == []
+        else 0.5
+    }
+"""
+        ).body[0]
+        self.assertIsInstance(definition, ast.FunctionDef)
+
+        proof = self.checker._source_dependency_proof(
+            definition,
+            source_result_parameter="source_result",
+            request_path=[],
+        )
+
+        self.assertIsNone(proof)
+
     def test_self_issued_invalid_pair_review_is_not_a_trust_root(self) -> None:
         mutated = self.checker.load_bundle(
             ROOT,

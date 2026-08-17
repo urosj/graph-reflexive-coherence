@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "ffaf1abfe8ca55dab3753144ced143fd182a2e53d0080c6ecf8d56df3e983176",
+  "conformance_digest": "7fabd19b2cbdec86ef444e0cb5655d7c1b94b5d7cc69a5a9e651ea6f9c408ee9",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "4c54ba04e93b2c0086cb7ebe4952d280ff01646047836a53fef96443ae1b52e8",
+  "policy_digest": "35fa2018e9dacaf7ff82637144af075a423a5ac7872b2b17ef8b17cde9ced852",
   "rule_count": 20,
   "rule_results": [
     {
@@ -108,7 +108,7 @@
       "status": "passed"
     },
     {
-      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and exact source-dependent flow through the frozen source-result parameter to the candidate result and target request, using its frozen callable default for the omission counterfactual, in the externally trusted raw transcript, plus every structured block.",
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and exact source-dependent flow through the frozen source-result parameter to the candidate result and target request, using its recursively type-preserving frozen callable default for the omission counterfactual, in the externally trusted raw transcript, plus every structured block.",
       "issue_count": 0,
       "rule_id": "BCF-011",
       "status": "passed"

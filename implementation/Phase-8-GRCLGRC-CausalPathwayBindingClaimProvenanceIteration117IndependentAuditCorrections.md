@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
+**Status:** Round-eight R8-B01 corrected author-side; new full independent audit
 pending
 
 **Checkpoint commit:** `976c660`
@@ -917,4 +917,57 @@ git diff --check = passed
 ```
 
 These are author-side correction results. R7-B01 is corrected author-side; a
+new full independent audit remains the acceptance gate.
+
+## Round-Eight Disposition And R8-B01 Correction
+
+The round-eight independent audit returned `reject_pending_correction` with one
+blocker expressed by two failing assertions. It independently closed the Round
+7 scalar-default falsifier and retained all prior closures. R8-B01 showed that
+both runtime and checker evaluated `ast.Tuple` and `ast.List` defaults as Python
+lists and compared source and signature defaults only after JSON-compatible
+normalization. A callable with `source_result=()` and the condition
+`source_result == []` therefore received a synthetic dependency proof even
+though direct Python supplied and omitted calls returned the same request.
+
+R8-B01 is corrected author-side at the evaluation and attestation boundaries.
+The safe expression evaluators now produce a tuple for `ast.Tuple` and a list
+for `ast.List`, so every admitted operator observes real Python container
+semantics. Runtime and checker also derive the default digest from a recursive
+type-tagged record. The admitted default domain is exactly `None`, booleans,
+integers, floats, strings, lists, tuples, and string-keyed dictionaries whose
+nested values are in the same domain. Unsupported values fail closed.
+
+The runtime compares that type-preserving digest between the content-addressed
+source default and loaded callable signature. The checker independently derives
+the same record from source. Canonical request serialization remains separate
+and occurs only after expression evaluation. Consequently, JSON-equivalent
+Python defaults cannot manufacture dependence through equality, concatenation,
+or another admitted type-sensitive operator. The established
+`reviewed_candidate_source_dependency_v2` envelope remains compatible while
+its `source_parameter_default_digest` now attests the exact recursive Python
+type and value.
+
+## R8-B01 Author-Side Verification
+
+The complete supplied Round 8 harness now passes all 58 frozen cases, including
+the tuple/list falsifier, the supported and rejected default matrix, mutable
+default drift, type-sensitive operators, and every retained prior-round case.
+Project controls reproduce the exact runtime exploit and independently cover
+recursive type distinctions, the frozen matrix, and fail-closed concatenation.
+
+```text
+supplied independent round-eight harness = 58 passed, 0 failed, 0 errors
+.venv focused binding/conformance tests = 98 passed
+.venv full unittest discovery = 1,312 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed Python surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall = passed
+git diff --check = passed
+```
+
+These are author-side correction results. R8-B01 is corrected author-side; a
 new full independent audit remains the acceptance gate.

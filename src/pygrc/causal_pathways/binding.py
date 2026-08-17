@@ -211,6 +211,49 @@ def _canonical_value_digest(value: Any) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def _source_default_payload(value: Any) -> dict[str, Any]:
+    """Return a type-preserving record for one admitted Python default."""
+
+    value_type = type(value)
+    if value is None:
+        return {"python_type": "none"}
+    if value_type is bool:
+        return {"python_type": "bool", "value": value}
+    if value_type is int:
+        return {"python_type": "int", "value": value}
+    if value_type is float:
+        return {"python_type": "float", "value": value}
+    if value_type is str:
+        return {"python_type": "str", "value": value}
+    if value_type is list:
+        return {
+            "python_type": "list",
+            "items": [_source_default_payload(item) for item in value],
+        }
+    if value_type is tuple:
+        return {
+            "python_type": "tuple",
+            "items": [_source_default_payload(item) for item in value],
+        }
+    if value_type is dict:
+        if not all(type(key) is str for key in value):
+            raise ValueError("reviewed source defaults require string mapping keys")
+        return {
+            "python_type": "dict",
+            "items": {
+                key: _source_default_payload(item)
+                for key, item in value.items()
+            },
+        }
+    raise ValueError("unsupported reviewed source-parameter default")
+
+
+def _source_default_digest(value: Any) -> str:
+    """Digest an admitted default without erasing Python container types."""
+
+    return _canonical_value_digest(_source_default_payload(value))
+
+
 _SOURCE_PRESENT: Final[object] = object()
 
 
@@ -242,8 +285,10 @@ def _safe_source_expression(
             key: evaluate(value)
             for key, value in zip(keys, node.values, strict=True)
         }
-    if isinstance(node, (ast.List, ast.Tuple)):
+    if isinstance(node, ast.List):
         return [evaluate(item) for item in node.elts]
+    if isinstance(node, ast.Tuple):
+        return tuple(evaluate(item) for item in node.elts)
     if isinstance(node, ast.IfExp):
         return evaluate(node.body if bool(evaluate(node.test)) else node.orelse)
     if isinstance(node, ast.Compare) and len(node.ops) == len(node.comparators) == 1:
@@ -367,13 +412,9 @@ def _source_parameter_default_contract(
             or runtime_parameter.default is inspect.Parameter.empty
         ):
             return None
-        source_default_payload = _candidate_request_payload(source_default)
-        runtime_default_payload = _candidate_request_payload(
+        source_default_digest = _source_default_digest(source_default)
+        if source_default_digest != _source_default_digest(
             runtime_parameter.default
-        )
-        source_default_digest = _canonical_value_digest(source_default_payload)
-        if source_default_digest != _canonical_value_digest(
-            runtime_default_payload
         ):
             return None
     except (ArithmeticError, BindingStateError, TypeError, ValueError):

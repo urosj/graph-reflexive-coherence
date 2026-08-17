@@ -7,7 +7,7 @@
     "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
     "qualified_symbol": "diagnostic_to_packet_candidate_nonnull_default",
     "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
-    "source_sha256": "bd5b96b6b204535f88d07ee70cb4cd5614662c66bede0e979899f5866b181125",
+    "source_sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd",
     "symbol_id": "candidate-mechanism:fixture.nonnull_default_diagnostic_packet"
   },
   "mechanism_id": "fixture.nonnull_default_diagnostic_packet",
