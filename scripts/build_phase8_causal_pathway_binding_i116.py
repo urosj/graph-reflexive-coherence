@@ -303,9 +303,8 @@ def _cmp20(authority: CausalPathwayAuthority) -> dict[str, Any]:
                 for item in record["registered_compositions_exercised"]
             ],
             "dataflow_witness_kind": flow_witness["witness_kind"],
-            "runtime_instance_binding_id": flow_witness[
-                "runtime_instance_binding_id"
-            ],
+            "dataflow_contract_id": flow_witness["dataflow_contract_id"],
+            "runtime_object_id": flow_witness["runtime_object_id"],
             "contains_producer_cut": record["claim_envelope"]["contains_producer_cut"],
             "lawful_native_blocked": "lawful_native" in record["blocked_claims"],
         },
@@ -401,18 +400,26 @@ def _cmp26(authority: CausalPathwayAuthority) -> dict[str, Any]:
 
 def _diagnostic(authority: CausalPathwayAuthority) -> dict[str, Any]:
     model = _two_node_runtime()
-    diagnostic_model = GRC9V3(
-        params=model.get_params(),
-        state=model.get_state().base_state,
-    )
     session = PathwayBindingSession(authority)
     composition = session.bind_composition("CMP-04")
     diagnostic = composition.pathway("lgrc9v3.diagnostic_grc_reconstruction")
     prepare = diagnostic.symbol("diagnostic_model_construction")
-    rebuild = diagnostic.symbol("diagnostic_rebuild", instance=diagnostic_model)
+    target_reference = composition.flow_derived_target_instance(source=prepare)
+    rebuild = diagnostic.symbol(
+        "diagnostic_rebuild",
+        instance=target_reference,
+    )
     lock = session.freeze_lock()
     with composition.evidence_scope():
-        prepare(model)
+        prepared = prepare(model)
+        diagnostic_model = GRC9V3(
+            params=prepared.get_params(),
+            state=prepared.get_state().base_state,
+        )
+        target_reference.bind(
+            source_result=prepared,
+            target_instance=diagnostic_model,
+        )
         rebuild()
     receipt = session.build_receipt()
     record = receipt.to_record()
@@ -613,10 +620,6 @@ def _dynamic(authority: CausalPathwayAuthority) -> dict[str, Any]:
 def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
     packet_model = _feedback_ready_two_node_runtime()
     diagnostic_runtime = _two_node_runtime()
-    diagnostic_model = GRC9V3(
-        params=diagnostic_runtime.get_params(),
-        state=diagnostic_runtime.get_state().base_state,
-    )
     session = PathwayBindingSession(authority)
     producer_composition = session.bind_composition("CMP-20")
     diagnostic_composition = session.bind_composition("CMP-04")
@@ -626,7 +629,13 @@ def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
     packet_links = _packet_links(transport, packet_model)
     diagnostic = diagnostic_composition.pathway("lgrc9v3.diagnostic_grc_reconstruction")
     prepare = diagnostic.symbol("diagnostic_model_construction")
-    rebuild = diagnostic.symbol("diagnostic_rebuild", instance=diagnostic_model)
+    target_reference = diagnostic_composition.flow_derived_target_instance(
+        source=prepare
+    )
+    rebuild = diagnostic.symbol(
+        "diagnostic_rebuild",
+        instance=target_reference,
+    )
     lock = session.freeze_lock()
     with producer_composition.evidence_scope():
         production = produce(
@@ -663,7 +672,15 @@ def _multi_edge(authority: CausalPathwayAuthority) -> dict[str, Any]:
             packet_id=departure.packet_record.packet_id,
         )
     with diagnostic_composition.evidence_scope():
-        prepare(diagnostic_runtime)
+        prepared = prepare(diagnostic_runtime)
+        diagnostic_model = GRC9V3(
+            params=prepared.get_params(),
+            state=prepared.get_state().base_state,
+        )
+        target_reference.bind(
+            source_result=prepared,
+            target_instance=diagnostic_model,
+        )
         rebuild()
     receipt = session.build_receipt()
     record = receipt.to_record()
@@ -831,6 +848,7 @@ def main(
     for case in cases:
         if "lock_path" not in case:
             continue
+        receipt_record = _load_json(ROOT / case["receipt_path"])
         outcome = checker.validate_bundle(
             ROOT,
             checker.load_bundle(
@@ -841,6 +859,9 @@ def main(
             policy,
             acceptance_anchor=acceptance_anchor,
             trusted_anchor_digest=trusted_anchor_digest,
+            trusted_execution_transcript_digest=receipt_record.get(
+                "execution_transcript_digest"
+            ),
         )
         conformance_rows.append(
             {

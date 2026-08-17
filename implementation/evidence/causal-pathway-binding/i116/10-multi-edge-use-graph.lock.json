@@ -43,7 +43,15 @@
         "diagnostic_model_construction"
       ],
       "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
-      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "consumer_bound_equivalent_state_copy",
+        "contract_id": "CMP-04:runtime-object-flow:v1",
+        "source_port": "result_base_state",
+        "source_stage_id": "diagnostic_model_construction",
+        "target_port": "receiver_state",
+        "target_stage_id": "diagnostic_rebuild"
+      },
+      "runtime_dataflow_requirement": "externally_attested_runtime_object_flow",
       "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
       "to_stage_ids": [
         "diagnostic_rebuild"
@@ -76,7 +84,15 @@
         "feedback_packet_schedule"
       ],
       "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
-      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "exact_object_identity",
+        "contract_id": "CMP-20:runtime-object-flow:v1",
+        "source_port": "receiver",
+        "source_stage_id": "*",
+        "target_port": "receiver",
+        "target_stage_id": "*"
+      },
+      "runtime_dataflow_requirement": "externally_attested_runtime_object_flow",
       "to_pathway_id": "lgrc9v3.explicit_packet_transport",
       "to_stage_ids": [
         "packet_schedule",
@@ -181,8 +197,8 @@
           "qualified_symbol": "GRC9V3.rebuild_transport_state",
           "required_keyword_arguments": {},
           "runtime_instance_binding": {
-            "instance_id": "session-instance:1",
-            "kind": "direct_bound_instance"
+            "instance_id": "flow-result:CMP-04",
+            "kind": "flow_derived_instance_reference"
           },
           "source_path": "src/pygrc/models/grc_9_v3.py",
           "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
@@ -425,6 +441,7 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "explicit_adapters": [],
   "explicit_producers": [
     {
@@ -446,7 +463,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "03b347afc965b451fd57a55238b0feaa2172b4c5cc418b984431b3526e10ddb4",
+  "lock_digest": "a558f02a44951e069120eb3df444187eafed08f77659fbe27030398ff33a5c73",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

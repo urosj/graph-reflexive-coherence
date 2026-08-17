@@ -58,6 +58,8 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         bundle: dict[str, Any],
         policy: dict[str, Any],
         active_rule_ids: set[str] | None = None,
+        *,
+        trusted_execution_transcript_digest: str | None = None,
     ) -> dict[str, Any]:
         return cast(
             dict[str, Any],
@@ -68,6 +70,9 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 active_rule_ids=active_rule_ids,
                 acceptance_anchor=copy.deepcopy(self.acceptance_anchor),
                 trusted_anchor_digest=TRUSTED_ACCEPTANCE_ANCHOR_DIGEST,
+                trusted_execution_transcript_digest=(
+                    trusted_execution_transcript_digest
+                ),
             ),
         )
 
@@ -77,6 +82,19 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             "lock_digest",
         )
         bundle["receipt"]["binding_lock_digest"] = bundle["lock"]["lock_digest"]
+        receipt = bundle["receipt"]
+        receipt["execution_transcript_digest"] = (
+            self.checker.execution_transcript_digest(
+                binding_lock_digest=receipt["binding_lock_digest"],
+                stage_invocations=receipt["actual_stage_symbol_invocations"],
+                crossing_invocations=receipt[
+                    "actual_composition_crossing_invocations"
+                ],
+                candidate_mechanism_invocations=receipt[
+                    "actual_candidate_mechanism_invocations"
+                ],
+            )
+        )
         bundle["receipt"]["receipt_digest"] = self.checker.digest_without(
             bundle["receipt"],
             "receipt_digest",
@@ -120,6 +138,9 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                     bundle,
                     copy.deepcopy(self.policy),
                     active_rule_ids={"BCF-015"},
+                    trusted_execution_transcript_digest=bundle["receipt"].get(
+                        "execution_transcript_digest"
+                    ),
                 )
 
                 self.assertEqual("passed", result["status"])
@@ -260,6 +281,9 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                     mutated,
                     copy.deepcopy(self.policy),
                     active_rule_ids={"BCF-015"},
+                    trusted_execution_transcript_digest=mutated["receipt"].get(
+                        "execution_transcript_digest"
+                    ),
                 )
 
                 self.assertEqual("failed_closed", result["status"])
@@ -463,6 +487,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             receipt_path=(EVIDENCE_DIR / "i116/03-explicit-adapter-cmp26.receipt.json"),
         )
         receipt = mutated["receipt"]
+        trusted_transcript_digest = receipt["execution_transcript_digest"]
         receipt["actual_composition_crossing_invocations"] = []
         receipt["receipt_digest"] = self.checker.digest_without(
             receipt,
@@ -474,6 +499,7 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             mutated,
             copy.deepcopy(self.policy),
             active_rule_ids={"BCF-019"},
+            trusted_execution_transcript_digest=trusted_transcript_digest,
         )
 
         self.assertEqual("failed_closed", result["status"])
@@ -487,10 +513,11 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
                 EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.receipt.json"
             ),
         )
+        trusted_transcript_digest = mutated["receipt"][
+            "execution_transcript_digest"
+        ]
         witness = mutated["receipt"]["composition_crossing_witnesses"][0]
-        witness["dataflow_witness"]["runtime_instance_binding_id"] = (
-            "session-instance:999"
-        )
+        witness["dataflow_witness"]["runtime_object_id"] = "runtime-object:999"
         mutated["receipt"]["receipt_digest"] = self.checker.digest_without(
             mutated["receipt"],
             "receipt_digest",
@@ -501,6 +528,107 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             mutated,
             copy.deepcopy(self.policy),
             active_rule_ids={"BCF-019"},
+            trusted_execution_transcript_digest=trusted_transcript_digest,
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-019"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_registered_edge_requires_external_transcript_trust_bcf019(self) -> None:
+        bundle = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.lock.json",
+            receipt_path=(
+                EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.receipt.json"
+            ),
+        )
+        trusted_transcript_digest = bundle["receipt"][
+            "execution_transcript_digest"
+        ]
+
+        trusted_result = self._validate(
+            ROOT,
+            copy.deepcopy(bundle),
+            copy.deepcopy(self.policy),
+            trusted_execution_transcript_digest=trusted_transcript_digest,
+        )
+        untrusted_result = self._validate(
+            ROOT,
+            copy.deepcopy(bundle),
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-019"},
+        )
+
+        self.assertEqual("passed", trusted_result["status"])
+        self.assertEqual("failed_closed", untrusted_result["status"])
+        self.assertEqual(
+            {"BCF-019"},
+            {item["rule_id"] for item in untrusted_result["issues"]},
+        )
+
+    def test_round3_coherent_cmp20_rewrite_cannot_reuse_trusted_digest(self) -> None:
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.lock.json",
+            receipt_path=(
+                EVIDENCE_DIR / "i116/02-producer-mediated-cmp20.receipt.json"
+            ),
+        )
+        receipt = mutated["receipt"]
+        witness = receipt["composition_crossing_witnesses"][0][
+            "dataflow_witness"
+        ]
+        source_invocation = receipt["actual_stage_symbol_invocations"][
+            witness["source_invocation_index"]
+        ]
+        target_invocation = receipt["actual_stage_symbol_invocations"][
+            witness["target_invocation_index"]
+        ]
+        source_descriptor = source_invocation["runtime_object_flow"][
+            witness["source_port"]
+        ]
+        target_flow = target_invocation["runtime_object_flow"]
+        target_port = witness["target_port"]
+
+        for artifact_name, binding_field in (
+            ("lock", "declared_pathway_bindings"),
+            ("receipt", "actual_bound_pathways_used"),
+        ):
+            for binding in mutated[artifact_name][binding_field]:
+                for link in binding["expected_concrete_symbols"]:
+                    if link["symbol_id"] == target_invocation["symbol_id"]:
+                        link["runtime_instance_binding"] = {
+                            "kind": "direct_bound_instance",
+                            "instance_id": "session-instance:1",
+                        }
+
+        target_flow[target_port] = {
+            "object_id": "runtime-object:999",
+            "type": source_descriptor["type"],
+        }
+        self._reseal(mutated)
+        trusted_distinct_transcript = receipt["execution_transcript_digest"]
+
+        for artifact_name, binding_field in (
+            ("lock", "declared_pathway_bindings"),
+            ("receipt", "actual_bound_pathways_used"),
+        ):
+            for binding in mutated[artifact_name][binding_field]:
+                for link in binding["expected_concrete_symbols"]:
+                    if link["symbol_id"] == target_invocation["symbol_id"]:
+                        link["runtime_instance_binding"] = {
+                            "kind": "direct_bound_instance",
+                            "instance_id": "session-instance:0",
+                        }
+        target_flow[target_port] = copy.deepcopy(source_descriptor)
+        self._reseal(mutated)
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-019"},
+            trusted_execution_transcript_digest=trusted_distinct_transcript,
         )
 
         self.assertEqual("failed_closed", result["status"])

@@ -219,9 +219,10 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "explicit_adapters": [],
   "explicit_producers": [],
-  "lock_digest": "ac753ff66068dc91e75a7a5b8013ef3f328423a617793d17db3e19630790c22b",
+  "lock_digest": "23f644dd15c939c32eec8a0758e696e541b273f5ab3344a3dcbfaa830f6c5a3e",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

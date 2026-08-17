@@ -88,6 +88,14 @@
         "front_propagation"
       ],
       "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "exact_adapter_reference",
+        "contract_id": "CMP-26:explicit-adapter-result:v1",
+        "source_port": "declared_adapter_source_instance",
+        "source_stage_id": "*",
+        "target_port": "adapter_result_reference",
+        "target_stage_id": "*"
+      },
       "runtime_dataflow_requirement": "exact_explicit_adapter_result_reference",
       "to_pathway_id": "lgrc9v3.boundary_birth",
       "to_stage_ids": [
@@ -345,6 +353,7 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "explicit_adapters": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
@@ -353,7 +362,7 @@
     }
   ],
   "explicit_producers": [],
-  "lock_digest": "5e130b57fdb48fe4b99900d7385294dadbcf73bc45eaea4eb16a9669b97788c3",
+  "lock_digest": "d38cf3803fe96692e8e50696e48f66769fd0e23522308666fa4cd54c02702c1b",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

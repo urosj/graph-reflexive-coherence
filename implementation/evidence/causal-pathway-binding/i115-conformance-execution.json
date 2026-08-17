@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "2dcf85bf97bf9e99fa7ecfa09fad9b5cbb4d95abc6bcb579ca553882248b6fe9",
+  "conformance_digest": "a3826b9475ff8e83428c0c6e7bdc42c095c43a48b9341e8cc60f7b781aa926af",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "2fac383468fc190e17fafc53e3b0f25d268825cd3dcd93c9966a265be00184f3",
+  "policy_digest": "696830f2f8bb9f0420190a74f1f3337b2ae916752ed8e6d87db8f5dab0ac913c",
   "rule_count": 20,
   "rule_results": [
     {
@@ -156,7 +156,7 @@
       "status": "passed"
     },
     {
-      "description": "Registered composition edges require exact scoped order and verified runtime object flow; endpoint co-use and chains must not synthesize edges or claim ceilings.",
+      "description": "Registered composition edges require exact scoped order, a row-specific runtime object-flow contract, and an independently trusted execution transcript; endpoint co-use and chains must not synthesize edges or claim ceilings.",
       "issue_count": 0,
       "rule_id": "BCF-019",
       "status": "passed"
@@ -169,5 +169,6 @@
     }
   ],
   "status": "passed",
+  "trusted_execution_transcript_digest": null,
   "validation_scope": "full_conformance"
 }

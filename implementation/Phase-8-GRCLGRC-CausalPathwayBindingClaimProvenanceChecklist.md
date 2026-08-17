@@ -165,3 +165,25 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       replay-block deletion.
 - [ ] Re-run a new full independent adversarial audit with zero blockers and
       zero unresolved majors against the complete author-corrected branch.
+
+## Round-Three Independent Audit Corrections
+
+- [x] Record the round-three `reject_pending_correction` disposition: R3-B01,
+      R3-B02, and R3-M01.
+- [x] R3-B01: digest the lock-linked raw execution transcript independently of
+      its witness, graph, and claim-envelope projections.
+- [x] Require an externally supplied trusted transcript digest before BCF-019
+      accepts any registered composition witness.
+- [x] Reproduce the coordinated CMP-20 runtime-instance/object-flow rewrite,
+      reseal both artifacts, and prove it cannot reuse the honest digest.
+- [x] R3-M01: freeze an independently derived stage/port dataflow contract for
+      every executable composition row.
+- [x] Cover module-function arguments/results for CMP-01, CMP-02, CMP-03,
+      CMP-04, CMP-17, and CMP-21.
+- [x] Add a consumer-bound, equivalent-state-copy target reference so CMP-04
+      is executable without binder dispatch or a false object-identity claim.
+- [x] Regenerate I115/I116 evidence; exercise CMP-04 as a diagnostic-only edge.
+- [ ] R3-B02: require independently reviewed structural distinction for a
+      candidate over an invalid endpoint pair; a synonym/no-op candidate must
+      not produce an exercised edge.
+- [ ] Re-run a full independent adversarial audit after R3-B02 closes.

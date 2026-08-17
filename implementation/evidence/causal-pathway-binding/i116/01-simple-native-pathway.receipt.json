@@ -185,6 +185,30 @@
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "NoneType",
       "return_category": "none",
+      "runtime_object_flow": {
+        "arguments": {
+          "amount": null,
+          "edge_id": null,
+          "source_node_id": null,
+          "target_node_id": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:2",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": null,
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "packet_schedule",
       "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
     },
@@ -215,6 +239,32 @@
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "LGRC9V3PacketProcessingResult",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "ledger": {
+            "object_id": "runtime-object:3",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketLedger"
+          },
+          "queued_departure": {
+            "object_id": "runtime-object:4",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketQueueEventRecord"
+          },
+          "state": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:5",
+          "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketProcessingResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "source_debit",
       "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
     },
@@ -245,6 +295,29 @@
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "LGRC9V3PacketProcessingResult",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "ledger": {
+            "object_id": "runtime-object:6",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketLedger"
+          },
+          "packet_id": null,
+          "state": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:7",
+          "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketProcessingResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "target_credit",
       "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
     }
@@ -254,7 +327,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "14e34ead989e77799a2fd0128f4276398d110578e3a6bf6d964c3e60487a7026",
+  "binding_lock_digest": "7c50dcb8cd66408bef157d5378f8f227dc2bee6eb1dc5791ae627436aa5d676d",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "substrate-formed route",
@@ -356,6 +429,8 @@
       "unknown": 0
     }
   },
+  "execution_transcript_digest": "96f6b3d75930fa1a936acf2b86b05ac645dffa3bceb6f11b96df1122462e4512",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -394,7 +469,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "b58ccd4b2c2dcdbba0a9239c779ce612f6b51389f68f18374119831b9ee51482",
+  "receipt_digest": "b01a77aa4ccb390d674273ac400893acb4547fc5f2b2c304ee03ac301aa1572d",
   "registered_compositions_exercised": [],
   "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
   "schema_version": "causal_pathways_binding_receipt_v1",

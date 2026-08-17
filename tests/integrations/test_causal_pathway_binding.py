@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import inspect
 import json
 import unittest
 from dataclasses import replace
@@ -1134,13 +1135,15 @@ class CausalPathwayBindingTest(unittest.TestCase):
             "dataflow_witness"
         ]
         self.assertEqual(
-            "shared_bound_endpoint_instance",
+            "externally_attested_runtime_object_flow",
             flow_witness["witness_kind"],
         )
         self.assertEqual(
-            "session-instance:0",
-            flow_witness["runtime_instance_binding_id"],
+            "CMP-20:runtime-object-flow:v1",
+            flow_witness["dataflow_contract_id"],
         )
+        self.assertEqual("receiver", flow_witness["source_port"])
+        self.assertEqual("receiver", flow_witness["target_port"])
         envelope = record["claim_envelope"]
         self.assertTrue(envelope["contains_producer_cut"])
         self.assertEqual(
@@ -1151,6 +1154,156 @@ class CausalPathwayBindingTest(unittest.TestCase):
         edge = record["pathway_use_graph"]["edges"][0]
         self.assertEqual("installed_producer", edge["producer_owner"])
         self.assertEqual("producer_mediated", edge["composition_status"])
+
+    def test_cmp02_module_argument_flow_creates_attested_edge(self) -> None:
+        model = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-02")
+        transport = composition.pathway("lgrc9v3.explicit_packet_transport")
+        schedule = transport.symbol("packet_schedule", instance=model)
+        debit = transport.symbol("source_debit")
+        credit = transport.symbol("target_credit")
+        session.freeze_lock()
+
+        with composition.evidence_scope():
+            schedule(
+                source_node_id=0,
+                target_node_id=1,
+                edge_id=0,
+                amount=0.25,
+                departure_event_time_key=2.0,
+                scheduler_event_index=10,
+                packet_index=100,
+            )
+            runtime_state = model.get_state()
+            ledger = runtime_state.packet_ledger
+            assert ledger is not None
+            departure = debit(
+                runtime_state.base_state,
+                ledger,
+                queued_departure=ledger.event_queue_records[0],
+            )
+            credit(
+                runtime_state.base_state,
+                departure.ledger,
+                packet_id=departure.packet_record.packet_id,
+            )
+
+        record = session.build_receipt().to_record()
+        witness = record["composition_crossing_witnesses"][0][
+            "dataflow_witness"
+        ]
+
+        self.assertEqual("CMP-02:runtime-object-flow:v1", witness["dataflow_contract_id"])
+        self.assertEqual("argument:state", witness["source_port"])
+        self.assertEqual("argument:state", witness["target_port"])
+        self.assertEqual(
+            record["actual_stage_symbol_invocations"][1]["runtime_object_flow"][
+                "arguments"
+            ]["state"],
+            record["actual_stage_symbol_invocations"][2]["runtime_object_flow"][
+                "arguments"
+            ]["state"],
+        )
+        self.assertEqual(["CMP-02"], [
+            item["composition_id"]
+            for item in record["registered_compositions_exercised"]
+        ])
+
+    def test_every_registered_composition_has_a_representable_flow_contract(self) -> None:
+        matrix = json.loads(
+            (ROOT / "specs/grc-lgrc-causal-pathway-composition-matrix.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        executable = {
+            "lawful_native",
+            "lawful_with_explicit_adapter",
+            "diagnostic_only",
+            "producer_mediated",
+        }
+        special_rows = {"CMP-01", "CMP-02", "CMP-03", "CMP-04", "CMP-17", "CMP-21"}
+        observed_special_rows: set[str] = set()
+
+        def port_is_representable(
+            pathway_id: str,
+            stage_id: str,
+            port: str,
+        ) -> bool:
+            symbols = self.authority.symbols(pathway_id, stage_id)
+            if port in {"receiver", "receiver_state", "receiver_base_state"}:
+                return any(symbol.call_kind == "instance_method" for symbol in symbols)
+            if port.startswith("argument:"):
+                argument_name = port.removeprefix("argument:")
+                return any(
+                    argument_name
+                    in inspect.signature(symbol.resolve(ROOT)).parameters
+                    for symbol in symbols
+                )
+            return port in {"result", "result_state", "result_base_state"}
+
+        for row in matrix["compositions"]:
+            if row["composition_status"] not in executable:
+                continue
+            composition_id = row["composition_id"]
+            contract = binding_module.composition_dataflow_contract(
+                composition_id,
+                explicit_adapter=(
+                    row["composition_status"] == "lawful_with_explicit_adapter"
+                ),
+            )
+            self.assertTrue(contract["contract_id"])
+            self.assertTrue(contract["source_port"])
+            self.assertTrue(contract["target_port"])
+            self.assertIn(
+                contract["source_stage_id"],
+                {"*", *row["from_stage_ids"]},
+            )
+            self.assertIn(
+                contract["target_stage_id"],
+                {"*", *row["to_stage_ids"]},
+            )
+            if row["composition_status"] == "lawful_with_explicit_adapter":
+                self.assertEqual(
+                    "exact_adapter_reference",
+                    contract["continuity_kind"],
+                )
+                continue
+            source_stage_ids = (
+                row["from_stage_ids"]
+                if contract["source_stage_id"] == "*"
+                else [contract["source_stage_id"]]
+            )
+            target_stage_ids = (
+                row["to_stage_ids"]
+                if contract["target_stage_id"] == "*"
+                else [contract["target_stage_id"]]
+            )
+            self.assertTrue(
+                any(
+                    port_is_representable(
+                        row["from_pathway_id"],
+                        stage_id,
+                        contract["source_port"],
+                    )
+                    for stage_id in source_stage_ids
+                )
+            )
+            self.assertTrue(
+                any(
+                    port_is_representable(
+                        row["to_pathway_id"],
+                        stage_id,
+                        contract["target_port"],
+                    )
+                    for stage_id in target_stage_ids
+                )
+            )
+            if composition_id in special_rows:
+                self.assertNotEqual("receiver", contract["source_port"])
+                observed_special_rows.add(composition_id)
+
+        self.assertEqual(special_rows, observed_special_rows)
 
     def test_endpoint_co_use_outside_scope_does_not_claim_composition(self) -> None:
         model = _two_node_runtime()
@@ -1306,6 +1459,129 @@ class CausalPathwayBindingTest(unittest.TestCase):
             composition.binding_id,
             record["declared_but_unused"]["composition_binding_ids"],
         )
+
+    def test_cmp04_consumer_binds_exact_flow_derived_target(self) -> None:
+        source_runtime = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-04")
+        diagnostic = composition.pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction"
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        target_reference = composition.flow_derived_target_instance(source=prepare)
+        rebuild = diagnostic.symbol(
+            "diagnostic_rebuild",
+            instance=target_reference,
+        )
+        lock = session.freeze_lock().to_record()
+
+        with composition.evidence_scope():
+            prepared = prepare(source_runtime)
+            target = GRC9V3(
+                params=prepared.get_params(),
+                state=prepared.get_state().base_state,
+            )
+            target_reference.bind(
+                source_result=prepared,
+                target_instance=target,
+            )
+            rebuild()
+        record = session.build_receipt().to_record()
+        witness = record["composition_crossing_witnesses"][0][
+            "dataflow_witness"
+        ]
+
+        target_link = next(
+            link
+            for binding in lock["declared_pathway_bindings"]
+            for link in binding["expected_concrete_symbols"]
+            if link["stage_id"] == "diagnostic_rebuild"
+        )
+        self.assertEqual(
+            {
+                "kind": "flow_derived_instance_reference",
+                "instance_id": "flow-result:CMP-04",
+            },
+            target_link["runtime_instance_binding"],
+        )
+        self.assertEqual(
+            "CMP-04:runtime-object-flow:v1",
+            witness["dataflow_contract_id"],
+        )
+        self.assertEqual("result_base_state", witness["source_port"])
+        self.assertEqual("receiver_state", witness["target_port"])
+        self.assertEqual(
+            "consumer_bound_equivalent_state_copy",
+            witness["continuity_kind"],
+        )
+        derivation = record["actual_stage_symbol_invocations"][1][
+            "runtime_object_flow"
+        ]["flow_derivation"]
+        self.assertEqual(
+            derivation["source_value_digest"],
+            derivation["target_value_digest"],
+        )
+        self.assertEqual(
+            derivation["source_value_digest"],
+            witness["state_value_digest"],
+        )
+        self.assertEqual(
+            ["CMP-04"],
+            [
+                item["composition_id"]
+                for item in record["registered_compositions_exercised"]
+            ],
+        )
+
+    def test_cmp04_flow_derived_target_rejects_wrong_source_result(self) -> None:
+        source_runtime = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-04")
+        diagnostic = composition.pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction"
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        target_reference = composition.flow_derived_target_instance(source=prepare)
+        diagnostic.symbol("diagnostic_rebuild", instance=target_reference)
+        session.freeze_lock()
+
+        with composition.evidence_scope():
+            prepared = prepare(source_runtime)
+            target = GRC9V3(
+                params=prepared.get_params(),
+                state=prepared.get_state().base_state,
+            )
+            with self.assertRaisesRegex(
+                BindingStateError,
+                "not the exact source return",
+            ):
+                target_reference.bind(
+                    source_result=_two_node_runtime(),
+                    target_instance=target,
+                )
+
+    def test_cmp04_flow_derived_target_rejects_distinct_carrier(self) -> None:
+        source_runtime = _two_node_runtime()
+        session = PathwayBindingSession(self.authority)
+        composition = session.bind_composition("CMP-04")
+        diagnostic = composition.pathway(
+            "lgrc9v3.diagnostic_grc_reconstruction"
+        )
+        prepare = diagnostic.symbol("diagnostic_model_construction")
+        target_reference = composition.flow_derived_target_instance(source=prepare)
+        diagnostic.symbol("diagnostic_rebuild", instance=target_reference)
+        session.freeze_lock()
+
+        with composition.evidence_scope():
+            prepared = prepare(source_runtime)
+            with self.assertRaisesRegex(
+                BindingStateError,
+                "does not preserve the contracted object carrier",
+            ):
+                target_reference.bind(
+                    source_result=prepared,
+                    target_instance=_two_node_grc_runtime(),
+                )
 
     def test_cmp26_requires_and_records_exact_adapter_crossing(self) -> None:
         grc_model = _two_node_grc_runtime()

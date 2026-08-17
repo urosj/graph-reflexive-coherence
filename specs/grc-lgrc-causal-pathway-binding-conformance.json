@@ -9,8 +9,69 @@
   },
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
+  "composition_dataflow_contract_policy": {
+    "default_non_adapter": {
+      "continuity_kind": "exact_object_identity",
+      "source_port": "receiver",
+      "source_stage_id": "*",
+      "target_port": "receiver",
+      "target_stage_id": "*"
+    },
+    "explicit_adapter": {
+      "continuity_kind": "exact_adapter_reference",
+      "source_port": "declared_adapter_source_instance",
+      "source_stage_id": "*",
+      "target_port": "adapter_result_reference",
+      "target_stage_id": "*"
+    },
+    "specialized_non_adapter": {
+      "CMP-01": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "argument:state",
+        "source_stage_id": "transport_rebuild",
+        "target_port": "receiver_state",
+        "target_stage_id": "continuity_and_invariants"
+      },
+      "CMP-02": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "argument:state",
+        "source_stage_id": "source_debit",
+        "target_port": "argument:state",
+        "target_stage_id": "target_credit"
+      },
+      "CMP-03": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "argument:state",
+        "source_stage_id": "transport_rebuild",
+        "target_port": "receiver_base_state",
+        "target_stage_id": "packet_schedule"
+      },
+      "CMP-04": {
+        "continuity_kind": "consumer_bound_equivalent_state_copy",
+        "source_port": "result_base_state",
+        "source_stage_id": "diagnostic_model_construction",
+        "target_port": "receiver_state",
+        "target_stage_id": "diagnostic_rebuild"
+      },
+      "CMP-17": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "result",
+        "source_stage_id": "assemble_causal_annotation",
+        "target_port": "argument:evolution",
+        "target_stage_id": "transport_rebuild"
+      },
+      "CMP-21": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "result",
+        "source_stage_id": "target_credit",
+        "target_port": "argument:processing_result",
+        "target_stage_id": "surface_row_emission"
+      }
+    }
+  },
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "iteration": 115,
-  "policy_digest": "2fac383468fc190e17fafc53e3b0f25d268825cd3dcd93c9966a265be00184f3",
+  "policy_digest": "696830f2f8bb9f0420190a74f1f3337b2ae916752ed8e6d87db8f5dab0ac913c",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -103,7 +164,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Registered composition edges require exact scoped order and verified runtime object flow; endpoint co-use and chains must not synthesize edges or claim ceilings.",
+      "description": "Registered composition edges require exact scoped order, a row-specific runtime object-flow contract, and an independently trusted execution transcript; endpoint co-use and chains must not synthesize edges or claim ceilings.",
       "rule_id": "BCF-019",
       "severity": "fail_closed"
     },
@@ -117,7 +178,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "49ce5e2a704b663445a52f174ae8739868283029",
+  "source_revision": "a77f669b5b340facd2869e2b70c40143fbfbdba1",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

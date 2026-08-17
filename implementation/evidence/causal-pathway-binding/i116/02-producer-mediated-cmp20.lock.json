@@ -45,7 +45,15 @@
         "feedback_packet_schedule"
       ],
       "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
-      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "exact_object_identity",
+        "contract_id": "CMP-20:runtime-object-flow:v1",
+        "source_port": "receiver",
+        "source_stage_id": "*",
+        "target_port": "receiver",
+        "target_stage_id": "*"
+      },
+      "runtime_dataflow_requirement": "externally_attested_runtime_object_flow",
       "to_pathway_id": "lgrc9v3.explicit_packet_transport",
       "to_stage_ids": [
         "packet_schedule",
@@ -286,6 +294,7 @@
     }
   ],
   "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "explicit_adapters": [],
   "explicit_producers": [
     {
@@ -307,7 +316,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "lock_digest": "09af21b51bf0799cd727444dfef23160b305b2474a8ef0fa55942f8e09df48ee",
+  "lock_digest": "2db4af2bb4f48f01da9a3cfdf9aabfe709d1e2f2572d93f4e3ad5e77f08c0800",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pre_execution_claim_envelope": {
     "blocked_claims": [

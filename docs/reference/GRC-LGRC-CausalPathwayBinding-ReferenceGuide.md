@@ -157,6 +157,33 @@ stage in order. Endpoint co-use outside that scope forms no edge. CMP-26
 additionally requires one claim-qualifying, identity-verified adapter crossing
 between those endpoint groups.
 
+Rows with module-function crossings use their frozen argument/result flow
+ports. CMP-04 additionally needs a target constructed after its source helper
+returns:
+
+```python
+prepare = diagnostic.symbol("diagnostic_model_construction")
+target_reference = composition.flow_derived_target_instance(source=prepare)
+rebuild = diagnostic.symbol("diagnostic_rebuild", instance=target_reference)
+
+lock = session.freeze_lock()
+with composition.evidence_scope():
+    prepared = prepare(model)
+    diagnostic_model = GRC9V3(
+        params=prepared.get_params(),
+        state=prepared.get_state().base_state,
+    )
+    target_reference.bind(
+        source_result=prepared,
+        target_instance=diagnostic_model,
+    )
+    rebuild()
+```
+
+The reference validates the exact returned object and equivalent state
+fingerprints before target delegation. It does not construct the target or
+choose the mechanics for the consumer.
+
 ## Declaring An Unregistered Candidate
 
 Candidate declaration is the explicit open continuation route:
@@ -291,23 +318,30 @@ The receipt links to the exact lock digest and records:
 - a structured claim envelope and blocked claims;
 - accepted authority/source identities and a receipt digest.
 
-The Iteration 117 B-03 correction and the round-two R2-B01 correction prevent
-registered edges from being formed by endpoint co-use or order alone. The
-checker independently reconstructs each witness from scoped invocation
-indices, global execution order, and its frozen runtime-dataflow requirement.
-For non-explicit-adapter compositions, a qualifying source call and target call
-must share the exact directly bound runtime owner. The lock gives that owner a
-deterministic session-local identity; both runtime identity and object identity
-are checked before the receipt can emit an edge. CMP-26 retains its stricter
+The Iteration 117 B-03, round-two R2-B01, and round-three R3-B01/R3-M01
+corrections prevent registered edges from being formed by endpoint co-use,
+order, or mutually consistent artifact labels alone. The checker independently
+reconstructs each witness from scoped invocation indices, global execution
+order, and the row's frozen stage/port dataflow contract. Raw records retain
+receiver, argument, result, and state-carrier object identities. Most rows
+require exact live-object continuity; CMP-04 records the consumer-bound
+equivalent-state-copy derivation. CMP-26 retains its stricter
 declared-adapter-source to adapter-result-reference rule.
 
+Registered-composition verification also requires
+`--trusted-execution-transcript-digest` (or the equivalent library argument)
+from caller-controlled trust configuration. The checker recomputes the digest
+from the lock identity and raw stage/crossing/candidate invocation arrays. A
+digest copied from the submitted receipt is only self-consistency evidence and
+must not be treated as the independent trust input.
+
 This proof is deliberately fail-closed. A composition whose crossing is not
-observable through those binding relations remains declared-but-unused even
-when its endpoints execute in order. In particular, CMP-04 does not produce a
-composition edge from `prepare_lgrc9v3_grc9v3_diagnostics(...)` followed by
-`GRC9V3.rebuild_transport_state()` on a separate object. Multiple registered
-edges still do not synthesize a larger semantic ceiling unless that larger
-composition is itself registered.
+observable through its row-specific relation remains declared-but-unused even
+when its endpoints execute in order. CMP-04 therefore rejects an unrelated GRC
+target but can exercise its registered diagnostic edge through the explicit
+consumer-bound derivation above. Multiple registered edges still do not
+synthesize a larger semantic ceiling unless that larger composition is itself
+registered.
 
 The B-04 and round-two R2-B02 corrections apply the same
 declaration-is-not-use boundary to candidates. The checker independently

@@ -324,6 +324,25 @@
       "pathway_id": "grc9v3.front_capacity_growth",
       "result_type": "dict",
       "return_category": "empty",
+      "runtime_object_flow": {
+        "arguments": {},
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.grc_9_v3.GRC9V3"
+        },
+        "receiver_base_state": null,
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "result": {
+          "object_id": "runtime-object:2",
+          "type": "builtins.dict"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "front_capacity_growth_eligibility",
       "symbol_id": "grc9v3.front_capacity_growth:front_capacity_growth_eligibility:primary"
     },
@@ -362,6 +381,26 @@
       "pathway_id": "grc9v3.front_capacity_growth",
       "result_type": "NoneType",
       "return_category": "none",
+      "runtime_object_flow": {
+        "arguments": {
+          "child_node_id": null,
+          "parent_node_id": null,
+          "parent_port_id": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.grc_9_v3.GRC9V3"
+        },
+        "receiver_base_state": null,
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "result": null,
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "front_propagation",
       "symbol_id": "grc9v3.front_capacity_growth:front_propagation:primary"
     },
@@ -398,6 +437,30 @@
       "pathway_id": "lgrc9v3.boundary_birth",
       "result_type": "LGRC9V3AutonomousProductionResult",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "policy": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:3",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:5",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:4",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": {
+          "object_id": "runtime-object:6",
+          "type": "pygrc.models.lgrc_9_v3_contract.LGRC9V3AutonomousProductionResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "birth_trial_production",
       "symbol_id": "lgrc9v3.boundary_birth:birth_trial_production:primary"
     },
@@ -430,6 +493,33 @@
       "pathway_id": "lgrc9v3.boundary_birth",
       "result_type": "list",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "outward_flux_pressure": null,
+          "parent_node_id": null,
+          "parent_port_id": null,
+          "rng_sample": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:3",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:5",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:4",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": {
+          "object_id": "runtime-object:7",
+          "type": "builtins.list"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "birth_trial_commit",
       "symbol_id": "lgrc9v3.boundary_birth:birth_trial_commit:primary"
     }
@@ -445,7 +535,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "5e130b57fdb48fe4b99900d7385294dadbcf73bc45eaea4eb16a9669b97788c3",
+  "binding_lock_digest": "d38cf3803fe96692e8e50696e48f66769fd0e23522308666fa4cd54c02702c1b",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "general autonomous basin formation",
@@ -650,6 +740,8 @@
       "unknown": 0
     }
   },
+  "execution_transcript_digest": "21463f3b3d691d922c018c27305f5be80acee2a2011efd0b5c29687141709350",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -744,7 +836,7 @@
     "unregistered_edge_synthesized_from_endpoint_co_use": false
   },
   "producer_cuts_used": [],
-  "receipt_digest": "6cd87169609902340532987b416d5e2a8ecdf6107ef5a57412fc5402852d09dd",
+  "receipt_digest": "fdcc895e0dc16dbf5ca39454a7ba178bfb9b18c6ff29d9a9d53b00a8eae55273",
   "registered_compositions_exercised": [
     {
       "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
@@ -817,6 +909,14 @@
         "front_propagation"
       ],
       "information_lost_or_compressed": "Synchronous execution history is not converted into LGRC event history.",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "exact_adapter_reference",
+        "contract_id": "CMP-26:explicit-adapter-result:v1",
+        "source_port": "declared_adapter_source_instance",
+        "source_stage_id": "*",
+        "target_port": "adapter_result_reference",
+        "target_stage_id": "*"
+      },
       "runtime_dataflow_requirement": "exact_explicit_adapter_result_reference",
       "to_pathway_id": "lgrc9v3.boundary_birth",
       "to_stage_ids": [

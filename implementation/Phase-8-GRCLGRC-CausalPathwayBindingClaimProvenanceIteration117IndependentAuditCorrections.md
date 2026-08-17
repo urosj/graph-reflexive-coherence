@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** All round-two blockers corrected author-side; full independent
-re-audit pending
+**Status:** Round-three R3-B01 and R3-M01 corrected author-side; R3-B02
+correction and full independent re-audit pending
 
 **Checkpoint commit:** `976c660`
 
@@ -508,3 +508,102 @@ git diff --check = passed
 This remains author-side correction evidence only. All reported round-two
 blockers are now corrected author-side; the new full independent audit remains
 the acceptance gate.
+
+## Round-Three Independent Audit Disposition
+
+The round-three independent audit reviewed checkpoint
+`a77f669b5b340facd2869e2b70c40143fbfbdba1` and returned
+`reject_pending_correction`. Its 44-case independent suite reported 41 passing
+criteria, three failures, and no errors:
+
+```text
+R3-B01 coherently resealed shared-instance composition forgery = blocker
+R3-B02 synonym-renamed invalid relation plus no-op candidate = blocker
+R3-M01 six structurally unwitnessable registered rows = major
+prior complete claim-envelope blocker = independently closed
+```
+
+This correction slice closes R3-B01 and R3-M01 author-side together. R3-B02 is
+unchanged and remains open. No round-three acceptance is claimed before that
+blocker is corrected and another full independent audit completes.
+
+## R3-B01 Independently Trusted Execution Transcript
+
+The serialized `session-instance:N` label is retained as a lock-local
+declaration aid but no longer proves runtime continuity. Every invocation now
+records raw live-object descriptors for its receiver, receiver state and base
+state, named arguments, result, and result state and base state. The receipt
+separately computes `execution_transcript_digest` from only:
+
+```text
+binding_lock_digest
+actual_stage_symbol_invocations
+actual_composition_crossing_invocations
+actual_candidate_mechanism_invocations
+```
+
+Derived composition witnesses, graph edges, exercised projections, claim
+envelopes, and the receipt digest are outside this transcript digest. Locks and
+receipts freeze
+`externally_supplied_digest_for_registered_composition` as the trust
+requirement. BCF-019 independently recomputes the raw transcript digest and
+accepts a registered witness only when the caller also supplies the exact
+trusted digest through a separate checker argument. A digest read from the
+submitted receipt proves only self-consistency and is not an independent trust
+source.
+
+The focused falsifier changes CMP-20's target lock and actual-use owner from
+`session-instance:1` to `session-instance:0`, changes the target raw object ID
+to the source object ID, and reseals the lock, transcript, receipt, witness,
+and projections. The rewritten candidate cannot reuse the trusted digest of
+the distinct-object execution and fails BCF-019. Missing external transcript
+trust also fails BCF-019 even for an otherwise canonical registered edge.
+
+## R3-M01 Per-Composition Dataflow Contracts
+
+The policy, lock, library, and checker now freeze and independently derive an
+exact stage/port contract for every executable composition. The six rows that
+cannot use the default receiver-to-receiver identity predicate are:
+
+| Row | Source flow port | Target flow port | Continuity |
+| --- | --- | --- | --- |
+| CMP-01 | `transport_rebuild argument:state` | `continuity_and_invariants receiver_state` | exact object identity |
+| CMP-02 | `source_debit argument:state` | `target_credit argument:state` | exact object identity |
+| CMP-03 | `transport_rebuild argument:state` | `packet_schedule receiver_base_state` | exact object identity |
+| CMP-04 | `diagnostic_model_construction result_base_state` | `diagnostic_rebuild receiver_state` | consumer-bound equivalent-state copy |
+| CMP-17 | `assemble_causal_annotation result` | `transport_rebuild argument:evolution` | exact object identity |
+| CMP-21 | `target_credit result` | `surface_row_emission argument:processing_result` | exact object identity |
+
+Static checker and library controls inventory all 17 executable rows and fail
+if either endpoint port is not representable by the binding map's actual call
+shape. CMP-02 supplies an exercised module-argument positive control.
+
+CMP-04 additionally exposes `flow_derived_target_instance(source=...)`. The
+consumer declares this reference and target handle before lock, invokes the
+diagnostic construction source inside the composition scope, constructs the
+GRC diagnostic target itself, then explicitly binds the exact source return to
+the target. The reference verifies the live source result, source and target
+state fingerprints, active scope, and invocation cardinality before target
+delegation. The raw target invocation records the derivation. The binder does
+not construct, select, or invoke the diagnostic target for the consumer.
+Wrong-return and distinct-carrier controls fail before delegation; the I116
+CMP-04 dry run now emits one diagnostic-only registered edge and remains under
+its matrix claim ceiling.
+
+## Round-Three Author-Side Verification
+
+```text
+.venv focused binding/conformance/I116 tests = 84 passed
+.venv full unittest discovery = 1,295 passed
+I115/I116 evidence regeneration = passed
+I116 checker-evaluated consumer cases = 8 passed, 0 issues
+binding conformance (I115, CMP-20, CMP-04) = 20 passed, 0 issues each
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+These results are author-side correction evidence only. R3-B02 and the full
+independent re-audit remain pending.

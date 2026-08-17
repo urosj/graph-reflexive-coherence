@@ -1,7 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** All round-two blockers corrected author-side; full independent
-re-audit pending
+**Status:** Round-three R3-B01 and R3-M01 corrected author-side; R3-B02
+correction and full independent re-audit pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -68,13 +68,29 @@ not claim process-wide observation or whole-run causal closure.
 Returned endpoint stages do not by themselves establish a composition. A
 consumer must run the required source and target stages inside one explicit
 composition evidence scope and in matrix order, and every required invocation
-must have a trusted claim-qualifying effect. Every non-explicit-adapter
-composition additionally requires one qualifying source invocation and one
-qualifying target invocation bound to the exact same direct runtime instance.
-The lock assigns that owner a deterministic session-local identity, and the
-receipt records the exact source/target invocation pair that shares it. If the
-binding surface cannot prove this continuity, the composition remains
-declared-but-unused and emits no graph edge or composition claim.
+must have a trusted claim-qualifying effect. Every non-explicit-adapter row
+freezes its own source-stage/port to target-stage/port dataflow contract. Raw
+invocation records expose receivers, arguments, results, and their established
+state/base-state carriers. Most rows require exact live-object identity across
+the two selected ports; module-function rows instead name the actual argument
+or result port that carries their crossing.
+
+CMP-04 uses a narrower consumer-bound equivalent-state-copy contract. Before
+lock, the consumer declares a deferred target owner from the exact diagnostic
+construction handle. Inside the evidence scope it invokes that source, creates
+the GRC diagnostic target, and binds the target to the exact returned source
+and equivalent source/target state fingerprints before invoking the target
+stage. The binder observes and records this derivation but does not construct,
+select, or dispatch the diagnostic mechanics. A wrong return, a distinct state
+carrier, or an unresolved reference fails before target delegation.
+
+The receipt's raw execution transcript is digested separately from its derived
+witness, graph, and claim envelope. BCF-019 accepts a registered edge only when
+the checker is given that digest from an independent trust source and it equals
+the checker-recomputed digest of the lock-linked raw transcript. The receipt's
+self-reported digest does not establish trust. A coherently resealed object-ID,
+lock, witness, graph, and envelope rewrite therefore cannot reuse the original
+trusted transcript identity.
 
 CMP-26 has the stronger explicit-adapter rule. Before lock, its source stages
 must bind to the same declared GRC instance consumed by the adapter, and its
@@ -84,11 +100,10 @@ stages and before all target stages. Missing, substituted, out-of-order,
 non-qualifying, or unrelated-instance crossings cannot form an exercised
 composition edge.
 
-This rule intentionally leaves CMP-04 unexercised with the current binding
-surface. `prepare_lgrc9v3_grc9v3_diagnostics(...)` returns its LGRC input, but
-the separately bound `GRC9V3.rebuild_transport_state()` owner is not that
-object. Ordered calls on an unrelated GRC object therefore remain pathway
-evidence only and cannot claim the diagnostic composition.
+Ordered CMP-04 calls on an unrelated GRC object remain pathway evidence only
+and cannot claim the diagnostic composition. The I116 diagnostic dry run uses
+the consumer-bound derivation and now exercises CMP-04 without widening its
+diagnostic-only ceiling.
 
 ## Candidate Executable Provenance
 

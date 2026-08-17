@@ -204,6 +204,12 @@ def build_policy(
             "and blocks claim-qualified artifacts until reviewed re-admission"
         ),
         "candidate_promotion_automated": False,
+        "composition_dataflow_contract_policy": (
+            checker.composition_dataflow_policy_record()
+        ),
+        "execution_transcript_trust_requirement": (
+            checker.EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
+        ),
         "runtime_dispatcher_created": False,
         "semantic_selection_performed_by_binder": False,
         "unbound_execution_claim_qualified": False,

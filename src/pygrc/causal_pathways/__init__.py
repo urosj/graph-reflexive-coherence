@@ -5,10 +5,12 @@ bind it. Runtime mechanics remain in their existing model-specific modules.
 """
 
 from .binding import (
+    ATTESTED_OBJECT_FLOW_DATAFLOW,
     AUTHORITY_COORDINATES,
     CLAIM_QUALIFYING_EFFECT_OUTCOMES,
     EFFECT_OUTCOMES,
     EXECUTABLE_COMPOSITION_STATUSES,
+    EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT,
     RETURN_CATEGORIES,
     AllowedPathwayAlternatives,
     AlternativeSelectionScope,
@@ -31,6 +33,7 @@ from .binding import (
     CrossingInvocationRecord,
     CrossingResultReference,
     EffectOutcomeContract,
+    FlowDerivedInstanceReference,
     InvalidCandidateError,
     InvocationRecord,
     PathwayBindingSession,
@@ -44,15 +47,19 @@ from .binding import (
     binding_semantics_digest,
     binding_source_manifest_digest,
     canonical_digest,
+    composition_dataflow_contract,
+    execution_transcript_digest,
     sha256_file,
     unbound_execution_classification,
 )
 
 __all__ = [
+    "ATTESTED_OBJECT_FLOW_DATAFLOW",
     "AUTHORITY_COORDINATES",
     "CLAIM_QUALIFYING_EFFECT_OUTCOMES",
     "EFFECT_OUTCOMES",
     "EXECUTABLE_COMPOSITION_STATUSES",
+    "EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT",
     "RETURN_CATEGORIES",
     "AllowedPathwayAlternatives",
     "AlternativeSelectionScope",
@@ -75,6 +82,7 @@ __all__ = [
     "CrossingInvocationRecord",
     "CrossingResultReference",
     "EffectOutcomeContract",
+    "FlowDerivedInstanceReference",
     "InvalidCandidateError",
     "InvocationRecord",
     "PathwayBindingSession",
@@ -88,6 +96,8 @@ __all__ = [
     "binding_semantics_digest",
     "binding_source_manifest_digest",
     "canonical_digest",
+    "composition_dataflow_contract",
+    "execution_transcript_digest",
     "sha256_file",
     "unbound_execution_classification",
 ]

@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** All round-two blockers corrected author-side; full independent
-re-audit pending
+**Status:** Round-three R3-B01 and R3-M01 corrected author-side; R3-B02
+correction and full independent re-audit pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
 
@@ -16,15 +16,23 @@ current acceptance decision.
 The author-side B-01 through B-06 and M-01 correction slices completed before
 the second independent audit, which returned `reject_pending_correction` with
 three blocker findings. R2-B01 is now corrected author-side: non-explicit
-composition edges require exact shared-runtime-owner flow, and a crossing that
+composition edges require row-specific runtime dataflow, and a crossing that
 cannot prove that relation remains declared-but-unused. R2-B02 is also
 corrected author-side: candidate use now requires an identity-verified,
 source-pinned executable invocation, while invalid-row prohibitions remain
 structured and cannot be erased by relation prose. R2-B03 is now corrected
 author-side as well: the checker independently derives the complete lock and
 receipt claim envelopes and their aggregate projections.
-This document remains a pending correction record, not an acceptance record,
-until the new full independent audit completes.
+
+The round-three independent audit then returned `reject_pending_correction`.
+R3-B01 is corrected author-side by separating the raw execution transcript
+digest from self-issued artifact labels and requiring the checker to receive
+that digest through an external trust input for every registered composition.
+R3-M01 is corrected author-side by freezing a representable stage/port
+dataflow contract for all 17 executable rows, including module-function
+arguments/results and CMP-04's explicit consumer-bound state-copy derivation.
+R3-B02 remains open. This document remains a pending correction record, not an
+acceptance record.
 
 Locks and receipts are operation-scoped, callable and crossing identities are
 rechecked, candidate and dynamic-choice evidence is scoped, acceptance uses a
@@ -65,8 +73,11 @@ envelope.
 - Dynamic alternatives remain caller-selected and actual use is receipted.
 - Endpoint co-use and registered chains do not synthesize new edges or claims.
 - Non-explicit composition edges require a qualifying source and target call
-  bound to the exact same direct runtime owner; unprovable crossings remain
-  declared-but-unused.
+  satisfying the exact row-specific receiver/argument/result dataflow
+  contract; unprovable crossings remain declared-but-unused.
+- Registered edges require an independently supplied digest of the lock-linked
+  raw execution transcript; coherent artifact resealing cannot replace that
+  trust input.
 - Binding/source drift becomes `stale_pending_review` and blocks claims.
 - Unbound legacy code remains executable but cannot appear among a receipt's
   recorded bound invocation evidence; the receipt does not claim whole-run
@@ -103,7 +114,7 @@ selector  f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b
 policy    7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9
 bindings  73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556
 binding conformance policy
-          2fac383468fc190e17fafc53e3b0f25d268825cd3dcd93c9966a265be00184f3
+          696830f2f8bb9f0420190a74f1f3337b2ae916752ed8e6d87db8f5dab0ac913c
 ```
 
 ## Current Maximum Claim Pending Independent Re-Audit

@@ -10,6 +10,7 @@ import hashlib
 import json
 import re
 from collections.abc import Iterable, Mapping
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -99,9 +100,10 @@ RULES = [
     (
         "BCF-019",
         (
-            "Registered composition edges require exact scoped order and verified "
-            "runtime object flow; endpoint co-use and chains must not synthesize "
-            "edges or claim ceilings."
+            "Registered composition edges require exact scoped order, a row-specific "
+            "runtime object-flow contract, and an independently trusted execution "
+            "transcript; endpoint co-use and chains must not synthesize edges or "
+            "claim ceilings."
         ),
     ),
     (
@@ -155,7 +157,120 @@ CANDIDATE_DECLARATION_FIELDS = (
 )
 CLAIM_QUALIFYING_EFFECT_OUTCOMES = {"committed", "observed"}
 EXPLICIT_ADAPTER_DATAFLOW = "exact_explicit_adapter_result_reference"
-SHARED_INSTANCE_DATAFLOW = "shared_bound_endpoint_instance"
+ATTESTED_OBJECT_FLOW_DATAFLOW = "externally_attested_runtime_object_flow"
+EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT = (
+    "externally_supplied_digest_for_registered_composition"
+)
+
+SPECIAL_COMPOSITION_DATAFLOW_PORTS = {
+    "CMP-01": (
+        "transport_rebuild",
+        "argument:state",
+        "continuity_and_invariants",
+        "receiver_state",
+    ),
+    "CMP-02": (
+        "source_debit",
+        "argument:state",
+        "target_credit",
+        "argument:state",
+    ),
+    "CMP-03": (
+        "transport_rebuild",
+        "argument:state",
+        "packet_schedule",
+        "receiver_base_state",
+    ),
+    "CMP-04": (
+        "diagnostic_model_construction",
+        "result_base_state",
+        "diagnostic_rebuild",
+        "receiver_state",
+    ),
+    "CMP-17": (
+        "assemble_causal_annotation",
+        "result",
+        "transport_rebuild",
+        "argument:evolution",
+    ),
+    "CMP-21": (
+        "target_credit",
+        "result",
+        "surface_row_emission",
+        "argument:processing_result",
+    ),
+}
+
+
+def composition_dataflow_contract(
+    composition_id: str,
+    *,
+    explicit_adapter: bool,
+) -> dict[str, str]:
+    """Independently derive the exact flow predicate for one matrix row."""
+
+    if explicit_adapter:
+        return {
+            "contract_id": f"{composition_id}:explicit-adapter-result:v1",
+            "continuity_kind": "exact_adapter_reference",
+            "source_stage_id": "*",
+            "source_port": "declared_adapter_source_instance",
+            "target_stage_id": "*",
+            "target_port": "adapter_result_reference",
+        }
+    ports = SPECIAL_COMPOSITION_DATAFLOW_PORTS.get(composition_id)
+    if ports is None:
+        ports = ("*", "receiver", "*", "receiver")
+    source_stage_id, source_port, target_stage_id, target_port = ports
+    return {
+        "contract_id": f"{composition_id}:runtime-object-flow:v1",
+        "continuity_kind": (
+            "consumer_bound_equivalent_state_copy"
+            if composition_id == "CMP-04"
+            else "exact_object_identity"
+        ),
+        "source_stage_id": source_stage_id,
+        "source_port": source_port,
+        "target_stage_id": target_stage_id,
+        "target_port": target_port,
+    }
+
+
+def composition_dataflow_policy_record() -> dict[str, Any]:
+    """Return the frozen machine-readable family of per-row flow predicates."""
+
+    return {
+        "default_non_adapter": {
+            "continuity_kind": "exact_object_identity",
+            "source_stage_id": "*",
+            "source_port": "receiver",
+            "target_stage_id": "*",
+            "target_port": "receiver",
+        },
+        "explicit_adapter": {
+            "continuity_kind": "exact_adapter_reference",
+            "source_stage_id": "*",
+            "source_port": "declared_adapter_source_instance",
+            "target_stage_id": "*",
+            "target_port": "adapter_result_reference",
+        },
+        "specialized_non_adapter": {
+            composition_id: {
+                "continuity_kind": (
+                    "consumer_bound_equivalent_state_copy"
+                    if composition_id == "CMP-04"
+                    else "exact_object_identity"
+                ),
+                "source_stage_id": ports[0],
+                "source_port": ports[1],
+                "target_stage_id": ports[2],
+                "target_port": ports[3],
+            }
+            for composition_id, ports in sorted(
+                SPECIAL_COMPOSITION_DATAFLOW_PORTS.items()
+            )
+        },
+    }
 
 
 def sha256_bytes(value: bytes) -> str:
@@ -164,6 +279,59 @@ def sha256_bytes(value: bytes) -> str:
 
 def sha256_file(path: Path) -> str:
     return sha256_bytes(path.read_bytes())
+
+
+@lru_cache(maxsize=256)
+def source_symbol_parameter_names(
+    root: Path,
+    relative: str,
+    qualified_symbol: str,
+    source_sha256: str,
+) -> frozenset[str]:
+    """Read one source-pinned callable signature without importing runtime code."""
+
+    del source_sha256  # Cache identity binds the parse to the declared source.
+    target = root / relative
+    if not relative or not qualified_symbol or not target.is_file():
+        return frozenset()
+    try:
+        tree = ast.parse(target.read_text(encoding="utf-8"))
+    except (OSError, SyntaxError, UnicodeError):
+        return frozenset()
+    body: list[ast.stmt] = tree.body
+    parts = qualified_symbol.split(".")
+    for index, part in enumerate(parts):
+        matches = [
+            node
+            for node in body
+            if isinstance(
+                node,
+                (ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef),
+            )
+            and node.name == part
+        ]
+        if len(matches) != 1:
+            return frozenset()
+        selected = matches[0]
+        if index == len(parts) - 1:
+            if not isinstance(
+                selected,
+                (ast.FunctionDef, ast.AsyncFunctionDef),
+            ):
+                return frozenset()
+            arguments = selected.args
+            return frozenset(
+                argument.arg
+                for argument in (
+                    *arguments.posonlyargs,
+                    *arguments.args,
+                    *arguments.kwonlyargs,
+                )
+            )
+        if not isinstance(selected, ast.ClassDef):
+            return frozenset()
+        body = selected.body
+    return frozenset()
 
 
 def canonical_digest(value: Any) -> str:
@@ -181,6 +349,26 @@ def canonical_digest(value: Any) -> str:
 def digest_without(document: Mapping[str, Any], field: str) -> str:
     return canonical_digest(
         {key: value for key, value in document.items() if key != field}
+    )
+
+
+def execution_transcript_digest(
+    *,
+    binding_lock_digest: str,
+    stage_invocations: list[Mapping[str, Any]],
+    crossing_invocations: list[Mapping[str, Any]],
+    candidate_mechanism_invocations: list[Mapping[str, Any]],
+) -> str:
+    """Digest the raw event transcript independently of derived claims."""
+
+    return canonical_digest(
+        {
+            "schema_version": "causal_pathway_execution_transcript_v1",
+            "binding_lock_digest": binding_lock_digest,
+            "stage_invocations": stage_invocations,
+            "crossing_invocations": crossing_invocations,
+            "candidate_mechanism_invocations": candidate_mechanism_invocations,
+        }
     )
 
 
@@ -641,6 +829,96 @@ def _unique_index(
     return index, duplicate
 
 
+def _runtime_object_flow_issue(value: Any) -> str | None:
+    """Validate one exact raw receiver/argument/result object-flow record."""
+
+    expected_fields = {
+        "receiver",
+        "receiver_state",
+        "receiver_base_state",
+        "arguments",
+        "result",
+        "result_state",
+        "result_base_state",
+        "flow_derivation",
+    }
+    if not isinstance(value, Mapping) or set(value) != expected_fields:
+        return "runtime object-flow fields are incomplete or widened"
+
+    def descriptor_issue(descriptor: Any) -> bool:
+        return descriptor is not None and (
+            not isinstance(descriptor, Mapping)
+            or set(descriptor) != {"object_id", "type"}
+            or re.fullmatch(
+                r"runtime-object:[0-9]+",
+                str(descriptor.get("object_id", "")),
+            )
+            is None
+            or not isinstance(descriptor.get("type"), str)
+            or not descriptor.get("type")
+        )
+
+    arguments = value.get("arguments")
+    if not isinstance(arguments, Mapping) or any(
+        not isinstance(name, str) or not name or descriptor_issue(descriptor)
+        for name, descriptor in arguments.items()
+    ):
+        return "runtime object-flow argument descriptors are invalid"
+    descriptor_fields = expected_fields - {"arguments", "flow_derivation"}
+    if any(
+        descriptor_issue(value.get(field))
+        for field in descriptor_fields
+    ):
+        return "runtime object-flow descriptors are invalid"
+    derivation = value.get("flow_derivation")
+    if derivation is not None and (
+        not isinstance(derivation, Mapping)
+        or set(derivation)
+        != {
+            "contract_id",
+            "derivation_kind",
+            "source_invocation_index",
+            "source_port",
+            "source_object",
+            "source_value_digest",
+            "target_port",
+            "target_object",
+            "target_value_digest",
+        }
+        or derivation.get("derivation_kind")
+        != "consumer_bound_equivalent_state_copy"
+        or not isinstance(derivation.get("source_invocation_index"), int)
+        or descriptor_issue(derivation.get("source_object"))
+        or descriptor_issue(derivation.get("target_object"))
+        or any(
+            re.fullmatch(r"[0-9a-f]{64}", str(derivation.get(field, "")))
+            is None
+            for field in ("source_value_digest", "target_value_digest")
+        )
+    ):
+        return "runtime object-flow derivation is invalid"
+    return None
+
+
+def _flow_port(
+    invocation: Mapping[str, Any],
+    port: str,
+) -> Mapping[str, Any] | None:
+    flow = invocation.get("runtime_object_flow")
+    if not isinstance(flow, Mapping):
+        return None
+    if port.startswith("argument:"):
+        arguments = flow.get("arguments")
+        value = (
+            arguments.get(port.removeprefix("argument:"))
+            if isinstance(arguments, Mapping)
+            else None
+        )
+    else:
+        value = flow.get(port)
+    return value if isinstance(value, Mapping) else None
+
+
 def _candidate_is_bounded(candidate: Mapping[str, Any]) -> bool:
     blocked = set(candidate.get("blocked_claims", []))
     return (
@@ -1022,6 +1300,7 @@ def validate_bundle(
     *,
     acceptance_anchor: Mapping[str, Any] | None = None,
     trusted_anchor_digest: str | None = None,
+    trusted_execution_transcript_digest: str | None = None,
 ) -> dict[str, Any]:
     """Validate one exact lock/receipt pair against current authorities."""
 
@@ -1034,6 +1313,19 @@ def validate_bundle(
     bindings = bundle["bindings"]
     lock = bundle["lock"]
     receipt = bundle["receipt"]
+
+    if (
+        policy.get("execution_transcript_trust_requirement")
+        != EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
+        or policy.get("composition_dataflow_contract_policy")
+        != composition_dataflow_policy_record()
+    ):
+        add_issue(
+            issues,
+            "BCF-019",
+            "policy.composition_dataflow_contract_policy",
+            "binding policy lacks the exact transcript trust and row-specific flow contracts",
+        )
 
     pathways, duplicate_pathways = _unique_index(
         registry.get("pathways", []), "pathway_id"
@@ -1157,6 +1449,80 @@ def validate_bundle(
             "bindings.stage_bindings",
             "binding-map stage closure differs from registry",
         )
+
+    def port_is_representable(
+        pathway_id: str,
+        stage_id: str,
+        port: str,
+    ) -> bool:
+        stage = binding_stages.get((pathway_id, stage_id), {})
+        symbols = stage.get("symbols", [])
+        if not isinstance(symbols, list) or not symbols:
+            return False
+        if port in {"receiver", "receiver_state", "receiver_base_state"}:
+            return any(
+                isinstance(symbol, Mapping)
+                and symbol.get("call_kind") == "instance_method"
+                for symbol in symbols
+            )
+        if port.startswith("argument:"):
+            argument_name = port.removeprefix("argument:")
+            return any(
+                isinstance(symbol, Mapping)
+                and argument_name
+                in source_symbol_parameter_names(
+                    root,
+                    str(symbol.get("source_path", "")),
+                    str(symbol.get("qualified_symbol", "")),
+                    str(symbol.get("source_sha256", "")),
+                )
+                for symbol in symbols
+            )
+        return port in {"result", "result_state", "result_base_state"}
+
+    for composition_id, composition in compositions.items():
+        status = composition.get("composition_status")
+        if status not in EXECUTABLE_STATUSES or status == "lawful_with_explicit_adapter":
+            continue
+        contract = composition_dataflow_contract(
+            composition_id,
+            explicit_adapter=False,
+        )
+        source_stages = (
+            list(composition.get("from_stage_ids", []))
+            if contract["source_stage_id"] == "*"
+            else [contract["source_stage_id"]]
+        )
+        target_stages = (
+            list(composition.get("to_stage_ids", []))
+            if contract["target_stage_id"] == "*"
+            else [contract["target_stage_id"]]
+        )
+        source_representable = any(
+            stage_id in composition.get("from_stage_ids", [])
+            and port_is_representable(
+                str(composition.get("from_pathway_id", "")),
+                str(stage_id),
+                contract["source_port"],
+            )
+            for stage_id in source_stages
+        )
+        target_representable = any(
+            stage_id in composition.get("to_stage_ids", [])
+            and port_is_representable(
+                str(composition.get("to_pathway_id", "")),
+                str(stage_id),
+                contract["target_port"],
+            )
+            for stage_id in target_stages
+        )
+        if not source_representable or not target_representable:
+            add_issue(
+                issues,
+                "BCF-019",
+                composition_id,
+                "registered composition lacks a representable runtime object-flow contract",
+            )
 
     actual_authority_digests = {
         "registry_digest": digest_without(registry, "registry_digest"),
@@ -1446,7 +1812,11 @@ def validate_bundle(
                 or not isinstance(runtime_instance, Mapping)
                 or set(runtime_instance) != {"kind", "instance_id"}
                 or runtime_instance.get("kind")
-                not in {"direct_bound_instance", "adapter_result_reference"}
+                not in {
+                    "direct_bound_instance",
+                    "adapter_result_reference",
+                    "flow_derived_instance_reference",
+                }
                 or not isinstance(runtime_instance.get("instance_id"), str)
                 or not runtime_instance.get("instance_id")
                 or (
@@ -1461,6 +1831,15 @@ def validate_bundle(
                     runtime_instance.get("kind") == "adapter_result_reference"
                     and re.fullmatch(
                         r"adapter-result:CMP-[0-9]+",
+                        str(runtime_instance.get("instance_id")),
+                    )
+                    is None
+                )
+                or (
+                    runtime_instance.get("kind")
+                    == "flow_derived_instance_reference"
+                    and re.fullmatch(
+                        r"flow-result:CMP-[0-9]+",
                         str(runtime_instance.get("instance_id")),
                     )
                     is None
@@ -1492,20 +1871,27 @@ def validate_bundle(
             )
             continue
         status = composition_row.get("composition_status")
+        explicit_adapter = status == "lawful_with_explicit_adapter"
         expected_dataflow_requirement = (
             EXPLICIT_ADAPTER_DATAFLOW
-            if status == "lawful_with_explicit_adapter"
-            else SHARED_INSTANCE_DATAFLOW
+            if explicit_adapter
+            else ATTESTED_OBJECT_FLOW_DATAFLOW
+        )
+        expected_dataflow_contract = composition_dataflow_contract(
+            composition_id,
+            explicit_adapter=explicit_adapter,
         )
         if (
             declared.get("runtime_dataflow_requirement")
             != expected_dataflow_requirement
+            or declared.get("runtime_dataflow_contract")
+            != expected_dataflow_contract
         ):
             add_issue(
                 issues,
                 "BCF-019",
                 binding_id,
-                "composition does not freeze its exact runtime dataflow requirement",
+                "composition does not freeze its exact runtime dataflow contract",
             )
         if status == "unsupported_missing_crossing":
             add_issue(
@@ -1917,6 +2303,18 @@ def validate_bundle(
             "receipt.binding_lock_digest",
             "receipt does not identify the exact lock",
         )
+    if (
+        lock.get("execution_transcript_trust_requirement")
+        != EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
+        or receipt.get("execution_transcript_trust_requirement")
+        != EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
+    ):
+        add_issue(
+            issues,
+            "BCF-019",
+            "execution_transcript_trust_requirement",
+            "lock and receipt do not require an external composition transcript digest",
+        )
 
     invocations = receipt.get("actual_stage_symbol_invocations", [])
     qualifying_binding_ids: set[str] = set()
@@ -1999,9 +2397,20 @@ def validate_bundle(
                 f"{binding_id}:{symbol_id}",
                 effect_issue,
             )
+        flow_issue = _runtime_object_flow_issue(
+            invocation.get("runtime_object_flow")
+        )
+        if flow_issue is not None:
+            add_issue(
+                issues,
+                "BCF-019",
+                f"{binding_id}:{symbol_id}",
+                flow_issue,
+            )
         if (
             invocation.get("claim_qualifying_effect") is True
             and effect_issue is None
+            and flow_issue is None
         ):
             qualifying_binding_ids.add(binding_id)
             valid_qualifying_invocation_indices.add(invocation_index)
@@ -2180,6 +2589,37 @@ def validate_bundle(
         elif invocation.get("claim_qualifying_effect") is True:
             valid_qualifying_crossing_indices.add(crossing_index)
 
+    derived_execution_transcript_digest = execution_transcript_digest(
+        binding_lock_digest=str(receipt.get("binding_lock_digest", "")),
+        stage_invocations=list(invocations),
+        crossing_invocations=list(crossing_invocations),
+        candidate_mechanism_invocations=list(candidate_mechanism_invocations),
+    )
+    submitted_execution_transcript_digest = receipt.get(
+        "execution_transcript_digest"
+    )
+    transcript_is_self_consistent = (
+        submitted_execution_transcript_digest
+        == derived_execution_transcript_digest
+    )
+    if not transcript_is_self_consistent:
+        add_issue(
+            issues,
+            "BCF-019",
+            "receipt.execution_transcript_digest",
+            "execution transcript digest differs from the raw invocation transcript",
+        )
+    transcript_is_independently_trusted = (
+        transcript_is_self_consistent
+        and re.fullmatch(
+            r"[0-9a-f]{64}",
+            str(trusted_execution_transcript_digest or ""),
+        )
+        is not None
+        and trusted_execution_transcript_digest
+        == submitted_execution_transcript_digest
+    )
+
     expected_effect_outcome_summary = {
         "stage_invocation_counts": {
             outcome: sum(
@@ -2356,7 +2796,11 @@ def validate_bundle(
         expected_dataflow_requirement = (
             EXPLICIT_ADAPTER_DATAFLOW
             if adapter_required
-            else SHARED_INSTANCE_DATAFLOW
+            else ATTESTED_OBJECT_FLOW_DATAFLOW
+        )
+        expected_dataflow_contract = composition_dataflow_contract(
+            composition_id,
+            explicit_adapter=adapter_required,
         )
         dataflow_witness = witness.get("dataflow_witness")
         expected_ordering_rule = (
@@ -2386,9 +2830,12 @@ def validate_bundle(
             == expected_dataflow_requirement
             and witness_declaration.get("runtime_dataflow_requirement")
             == expected_dataflow_requirement
+            and witness_declaration.get("runtime_dataflow_contract")
+            == expected_dataflow_contract
             and isinstance(dataflow_witness, Mapping)
             and selected_crossings is not None
             and len(selected_crossings) == (1 if adapter_required else 0)
+            and transcript_is_independently_trusted
             and (
                 not adapter_required
                 or all(
@@ -2454,62 +2901,127 @@ def validate_bundle(
                     else None
                 )
 
-                def locked_invocation_link(
-                    invocation: Mapping[str, Any] | None,
-                ) -> Mapping[str, Any] | None:
-                    if invocation is None:
-                        return None
-                    locked_binding = lock_bindings.get(
-                        str(invocation.get("binding_id", "")),
-                        {},
-                    )
-                    matches = [
-                        link
-                        for link in locked_binding.get(
-                            "expected_concrete_symbols", []
-                        )
-                        if link.get("symbol_id") == invocation.get("symbol_id")
-                    ]
-                    return matches[0] if len(matches) == 1 else None
-
-                source_flow_link = locked_invocation_link(source_flow)
-                target_flow_link = locked_invocation_link(target_flow)
-                source_runtime_instance = (
-                    source_flow_link.get("runtime_instance_binding")
-                    if source_flow_link is not None
+                source_descriptor = (
+                    _flow_port(source_flow, expected_dataflow_contract["source_port"])
+                    if source_flow is not None
                     else None
                 )
-                target_runtime_instance = (
-                    target_flow_link.get("runtime_instance_binding")
-                    if target_flow_link is not None
+                target_descriptor = (
+                    _flow_port(target_flow, expected_dataflow_contract["target_port"])
+                    if target_flow is not None
                     else None
                 )
-                structurally_valid = (
-                    set(dataflow_witness)
-                    == {
-                        "witness_kind",
-                        "runtime_instance_binding_id",
-                        "source_invocation_index",
-                        "source_symbol_id",
-                        "target_invocation_index",
-                        "target_symbol_id",
-                    }
-                    and dataflow_witness.get("witness_kind")
-                    == SHARED_INSTANCE_DATAFLOW
+                common_flow_valid = (
+                    dataflow_witness.get("witness_kind")
+                    == ATTESTED_OBJECT_FLOW_DATAFLOW
+                    and dataflow_witness.get("dataflow_contract_id")
+                    == expected_dataflow_contract["contract_id"]
+                    and dataflow_witness.get("continuity_kind")
+                    == expected_dataflow_contract["continuity_kind"]
                     and source_flow is not None
                     and target_flow is not None
+                    and expected_dataflow_contract["source_stage_id"]
+                    in {"*", source_flow.get("stage_id")}
+                    and expected_dataflow_contract["target_stage_id"]
+                    in {"*", target_flow.get("stage_id")}
                     and dataflow_witness.get("source_symbol_id")
                     == source_flow.get("symbol_id")
+                    and dataflow_witness.get("source_port")
+                    == expected_dataflow_contract["source_port"]
                     and dataflow_witness.get("target_symbol_id")
                     == target_flow.get("symbol_id")
-                    and isinstance(source_runtime_instance, Mapping)
-                    and source_runtime_instance.get("kind")
-                    == "direct_bound_instance"
-                    and source_runtime_instance == target_runtime_instance
-                    and dataflow_witness.get("runtime_instance_binding_id")
-                    == source_runtime_instance.get("instance_id")
+                    and dataflow_witness.get("target_port")
+                    == expected_dataflow_contract["target_port"]
+                    and source_descriptor is not None
+                    and target_descriptor is not None
                 )
+                source_object_id = (
+                    source_descriptor.get("object_id")
+                    if isinstance(source_descriptor, Mapping)
+                    else None
+                )
+                target_object_id = (
+                    target_descriptor.get("object_id")
+                    if isinstance(target_descriptor, Mapping)
+                    else None
+                )
+                continuity_kind = expected_dataflow_contract["continuity_kind"]
+                if continuity_kind == "exact_object_identity":
+                    structurally_valid = common_flow_valid and (
+                        set(dataflow_witness)
+                        == {
+                            "witness_kind",
+                            "dataflow_contract_id",
+                            "continuity_kind",
+                            "runtime_object_id",
+                            "source_invocation_index",
+                            "source_symbol_id",
+                            "source_port",
+                            "target_invocation_index",
+                            "target_symbol_id",
+                            "target_port",
+                        }
+                        and source_descriptor == target_descriptor
+                        and dataflow_witness.get("runtime_object_id")
+                        == source_object_id
+                    )
+                else:
+                    target_runtime_flow = (
+                        target_flow.get("runtime_object_flow", {})
+                        if isinstance(target_flow, Mapping)
+                        else {}
+                    )
+                    derivation = (
+                        target_runtime_flow.get("flow_derivation")
+                        if isinstance(target_runtime_flow, Mapping)
+                        else None
+                    )
+                    structurally_valid = common_flow_valid and (
+                        continuity_kind
+                        == "consumer_bound_equivalent_state_copy"
+                        and set(dataflow_witness)
+                        == {
+                            "witness_kind",
+                            "dataflow_contract_id",
+                            "continuity_kind",
+                            "source_runtime_object_id",
+                            "target_runtime_object_id",
+                            "state_value_digest",
+                            "source_invocation_index",
+                            "source_symbol_id",
+                            "source_port",
+                            "target_invocation_index",
+                            "target_symbol_id",
+                            "target_port",
+                        }
+                        and isinstance(derivation, Mapping)
+                        and derivation.get("contract_id")
+                        == expected_dataflow_contract["contract_id"]
+                        and derivation.get("derivation_kind") == continuity_kind
+                        and derivation.get("source_invocation_index")
+                        == source_flow_index
+                        and derivation.get("source_port")
+                        == expected_dataflow_contract["source_port"]
+                        and derivation.get("target_port")
+                        == expected_dataflow_contract["target_port"]
+                        and derivation.get("source_object") == source_descriptor
+                        and derivation.get("target_object") == target_descriptor
+                        and derivation.get("source_value_digest")
+                        == derivation.get("target_value_digest")
+                        == dataflow_witness.get("state_value_digest")
+                        and dataflow_witness.get("source_runtime_object_id")
+                        == source_object_id
+                        and dataflow_witness.get("target_runtime_object_id")
+                        == target_object_id
+                    )
         if not structurally_valid:
+            if not transcript_is_independently_trusted:
+                add_issue(
+                    issues,
+                    "BCF-019",
+                    binding_id,
+                    "composition witness lacks its independently trusted execution transcript digest",
+                )
             add_issue(
                 issues,
                 "BCF-019",
@@ -3563,6 +4075,9 @@ def validate_bundle(
         if binding_drift
         else "accepted",
         "binding_acceptance_anchor_digest": trusted_anchor_digest,
+        "trusted_execution_transcript_digest": (
+            trusted_execution_transcript_digest
+        ),
         "actual_authority_digests": actual_authority_digests,
         "pathway_binding_count": len(lock_bindings),
         "composition_binding_count": len(lock_compositions),
@@ -3603,6 +4118,13 @@ def main() -> int:
         "--trusted-anchor-digest",
         help="externally trusted SHA-256 of the acceptance-anchor record",
     )
+    parser.add_argument(
+        "--trusted-execution-transcript-digest",
+        help=(
+            "externally frozen SHA-256 of this receipt's raw execution transcript; "
+            "required for registered composition claims"
+        ),
+    )
     parser.add_argument("--output", type=Path)
     parser.add_argument(
         "--active-rule",
@@ -3632,6 +4154,9 @@ def main() -> int:
             else None
         ),
         trusted_anchor_digest=args.trusted_anchor_digest,
+        trusted_execution_transcript_digest=(
+            args.trusted_execution_transcript_digest
+        ),
     )
     result["policy_digest"] = policy.get("policy_digest")
     result["conformance_digest"] = canonical_digest(result)

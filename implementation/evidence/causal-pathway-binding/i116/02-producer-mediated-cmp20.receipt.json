@@ -282,6 +282,30 @@
       "pathway_id": "lgrc9v3.feedback_eligibility_producer",
       "result_type": "LGRC9V3AutonomousProductionResult",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "policy": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:2",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": {
+          "object_id": "runtime-object:3",
+          "type": "pygrc.models.lgrc_9_v3_contract.LGRC9V3AutonomousProductionResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "feedback_packet_schedule",
       "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
     },
@@ -314,6 +338,33 @@
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "NoneType",
       "return_category": "none",
+      "runtime_object_flow": {
+        "arguments": {
+          "amount": null,
+          "departure_event_time_key": null,
+          "edge_id": null,
+          "packet_index": null,
+          "scheduler_event_index": null,
+          "source_node_id": null,
+          "target_node_id": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:2",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": null,
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "packet_schedule",
       "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
     },
@@ -346,6 +397,32 @@
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "LGRC9V3PacketProcessingResult",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "ledger": {
+            "object_id": "runtime-object:4",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketLedger"
+          },
+          "queued_departure": {
+            "object_id": "runtime-object:5",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketQueueEventRecord"
+          },
+          "state": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:6",
+          "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketProcessingResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "source_debit",
       "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
     },
@@ -378,6 +455,29 @@
       "pathway_id": "lgrc9v3.explicit_packet_transport",
       "result_type": "LGRC9V3PacketProcessingResult",
       "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "ledger": {
+            "object_id": "runtime-object:7",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketLedger"
+          },
+          "packet_id": null,
+          "state": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:8",
+          "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketProcessingResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
       "stage_id": "target_credit",
       "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
     }
@@ -387,7 +487,7 @@
   "artifact": "causal-pathways-binding-receipt",
   "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
   "binding_acceptance_status": "accepted",
-  "binding_lock_digest": "09af21b51bf0799cd727444dfef23160b305b2474a8ef0fa55942f8e09df48ee",
+  "binding_lock_digest": "2db4af2bb4f48f01da9a3cfdf9aabfe709d1e2f2572d93f4e3ad5e77f08c0800",
   "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
   "blocked_claims": [
     "native feedback",
@@ -546,14 +646,18 @@
       "composition_id": "CMP-20",
       "crossing_invocation_indices": [],
       "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
-      "dataflow_requirement": "shared_bound_endpoint_instance",
+      "dataflow_requirement": "externally_attested_runtime_object_flow",
       "dataflow_witness": {
-        "runtime_instance_binding_id": "session-instance:0",
+        "continuity_kind": "exact_object_identity",
+        "dataflow_contract_id": "CMP-20:runtime-object-flow:v1",
+        "runtime_object_id": "runtime-object:0",
         "source_invocation_index": 0,
+        "source_port": "receiver",
         "source_symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary",
         "target_invocation_index": 1,
+        "target_port": "receiver",
         "target_symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
-        "witness_kind": "shared_bound_endpoint_instance"
+        "witness_kind": "externally_attested_runtime_object_flow"
       },
       "explicit_adapter_observed": false,
       "explicit_adapter_required": false,
@@ -603,6 +707,8 @@
       "unknown": 0
     }
   },
+  "execution_transcript_digest": "d4c7a2ac5936de38061d4bc875a2fa26aebd129c98fe3cb563f9929ed0dcc13e",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition",
   "external_or_untracked_causal_input": "not_observable_by_binding_plane",
   "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
   "pathway_use_graph": {
@@ -715,7 +821,7 @@
       "producer_owner": "installed_producer"
     }
   ],
-  "receipt_digest": "3e4fa19510d67b4c450eff5d60679f1de518d4bf4cd8cfa64533b6d13ca35531",
+  "receipt_digest": "c65cdffb88f195f565891ac25aefddf954cd16b03eac53c83a5637f6153e9eda",
   "registered_compositions_exercised": [
     {
       "adapter_id": "feedback_eligibility_producer",
@@ -744,7 +850,15 @@
         "feedback_packet_schedule"
       ],
       "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
-      "runtime_dataflow_requirement": "shared_bound_endpoint_instance",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "exact_object_identity",
+        "contract_id": "CMP-20:runtime-object-flow:v1",
+        "source_port": "receiver",
+        "source_stage_id": "*",
+        "target_port": "receiver",
+        "target_stage_id": "*"
+      },
+      "runtime_dataflow_requirement": "externally_attested_runtime_object_flow",
       "to_pathway_id": "lgrc9v3.explicit_packet_transport",
       "to_stage_ids": [
         "packet_schedule",

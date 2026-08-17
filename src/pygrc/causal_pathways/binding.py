@@ -11,6 +11,7 @@ import importlib
 import importlib.util
 import inspect
 import json
+import pickle
 import re
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from copy import deepcopy
@@ -53,7 +54,89 @@ UNTRACKED_EXECUTION_STATUS: Final[str] = "not_observable_by_binding_plane"
 EXPLICIT_ADAPTER_DATAFLOW: Final[str] = (
     "exact_explicit_adapter_result_reference"
 )
-SHARED_INSTANCE_DATAFLOW: Final[str] = "shared_bound_endpoint_instance"
+ATTESTED_OBJECT_FLOW_DATAFLOW: Final[str] = (
+    "externally_attested_runtime_object_flow"
+)
+EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT: Final[str] = (
+    "externally_supplied_digest_for_registered_composition"
+)
+
+_SPECIAL_COMPOSITION_DATAFLOW_PORTS: Final[
+    Mapping[str, tuple[str, str, str, str]]
+] = MappingProxyType(
+    {
+        "CMP-01": (
+            "transport_rebuild",
+            "argument:state",
+            "continuity_and_invariants",
+            "receiver_state",
+        ),
+        "CMP-02": (
+            "source_debit",
+            "argument:state",
+            "target_credit",
+            "argument:state",
+        ),
+        "CMP-03": (
+            "transport_rebuild",
+            "argument:state",
+            "packet_schedule",
+            "receiver_base_state",
+        ),
+        "CMP-04": (
+            "diagnostic_model_construction",
+            "result_base_state",
+            "diagnostic_rebuild",
+            "receiver_state",
+        ),
+        "CMP-17": (
+            "assemble_causal_annotation",
+            "result",
+            "transport_rebuild",
+            "argument:evolution",
+        ),
+        "CMP-21": (
+            "target_credit",
+            "result",
+            "surface_row_emission",
+            "argument:processing_result",
+        ),
+    }
+)
+
+
+def composition_dataflow_contract(
+    composition_id: str,
+    *,
+    explicit_adapter: bool,
+) -> dict[str, str]:
+    """Return the exact checker-visible flow predicate for one matrix row."""
+
+    if explicit_adapter:
+        return {
+            "contract_id": f"{composition_id}:explicit-adapter-result:v1",
+            "continuity_kind": "exact_adapter_reference",
+            "source_stage_id": "*",
+            "source_port": "declared_adapter_source_instance",
+            "target_stage_id": "*",
+            "target_port": "adapter_result_reference",
+        }
+    ports = _SPECIAL_COMPOSITION_DATAFLOW_PORTS.get(composition_id)
+    if ports is None:
+        ports = ("*", "receiver", "*", "receiver")
+    source_stage_id, source_port, target_stage_id, target_port = ports
+    return {
+        "contract_id": f"{composition_id}:runtime-object-flow:v1",
+        "continuity_kind": (
+            "consumer_bound_equivalent_state_copy"
+            if composition_id == "CMP-04"
+            else "exact_object_identity"
+        ),
+        "source_stage_id": source_stage_id,
+        "source_port": source_port,
+        "target_stage_id": target_stage_id,
+        "target_port": target_port,
+    }
 
 
 class CausalPathwayBindingError(ValueError):
@@ -112,6 +195,28 @@ def _canonical_value_digest(value: Any) -> str:
         allow_nan=False,
     ).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
+
+
+def execution_transcript_digest(
+    *,
+    binding_lock_digest: str,
+    stage_invocations: Sequence[Mapping[str, Any]],
+    crossing_invocations: Sequence[Mapping[str, Any]],
+    candidate_mechanism_invocations: Sequence[Mapping[str, Any]],
+) -> str:
+    """Digest only raw live-execution records, not their derived claims."""
+
+    return _canonical_value_digest(
+        {
+            "schema_version": "causal_pathway_execution_transcript_v1",
+            "binding_lock_digest": binding_lock_digest,
+            "stage_invocations": list(stage_invocations),
+            "crossing_invocations": list(crossing_invocations),
+            "candidate_mechanism_invocations": list(
+                candidate_mechanism_invocations
+            ),
+        }
+    )
 
 
 _BINDING_SEMANTIC_SYMBOL_FIELDS: Final[tuple[str, ...]] = (
@@ -1639,6 +1744,7 @@ class InvocationRecord:
     result_type: str | None
     error_type: str | None
     callable_identity: Mapping[str, Any]
+    runtime_object_flow: Mapping[str, Any]
     execution_event_order: int = -1
     crossing_scope_id: str | None = None
     candidate_scope_id: str | None = None
@@ -1711,6 +1817,83 @@ class CrossingResultReference:
         return self._value
 
 
+class FlowDerivedInstanceReference:
+    """Deferred target owner bound by the consumer to an exact source result."""
+
+    def __init__(
+        self,
+        *,
+        session: PathwayBindingSession,
+        composition: BoundComposition,
+        source_binding_id: str,
+        target_binding_id: str,
+        target_pathway_id: str,
+        source_stage_id: str,
+        source_symbol_id: str,
+        target_stage_id: str,
+        source_port: str,
+        target_port: str,
+    ) -> None:
+        self._session = session
+        self.composition_id = composition.composition_id
+        self.binding_id = composition.binding_id
+        self.source_binding_id = source_binding_id
+        self.target_binding_id = target_binding_id
+        self.target_pathway_id = target_pathway_id
+        self.source_stage_id = source_stage_id
+        self.source_symbol_id = source_symbol_id
+        self.target_stage_id = target_stage_id
+        self.source_port = source_port
+        self.target_port = target_port
+        self._value: object = _UNRESOLVED_CROSSING_RESULT
+        self._derivation: Mapping[str, Any] | None = None
+
+    def bind(
+        self,
+        *,
+        source_result: object,
+        target_instance: object,
+    ) -> None:
+        """Bind one consumer-created target whose carrier is the exact result flow."""
+
+        self._session._bind_flow_derived_instance(
+            reference=self,
+            source_result=source_result,
+            target_instance=target_instance,
+        )
+
+    def _set(
+        self,
+        value: object,
+        *,
+        derivation: Mapping[str, Any],
+    ) -> None:
+        if self._value is not _UNRESOLVED_CROSSING_RESULT:
+            raise BindingStateError(
+                f"composition {self.composition_id!r} flow target is already bound"
+            )
+        self._value = value
+        self._derivation = dict(derivation)
+
+    def derivation_record(self) -> Mapping[str, Any]:
+        """Return the live-validated derivation attached to the target call."""
+
+        if self._derivation is None:
+            raise BindingStateError(
+                f"composition {self.composition_id!r} flow target is unresolved"
+            )
+        return MappingProxyType(dict(self._derivation))
+
+    def resolve(self) -> object:
+        """Return the exact consumer-bound target instance."""
+
+        if self._value is _UNRESOLVED_CROSSING_RESULT:
+            raise BindingStateError(
+                f"composition {self.composition_id!r} flow target is unresolved"
+            )
+        return self._value
+
+
 class VerifiedCallable:
     """Callable link that preserves the linked mechanism's arguments and result."""
 
@@ -1723,12 +1906,17 @@ class VerifiedCallable:
         stage_id: str,
         composition_ids: tuple[str, ...],
         symbol: SourceSymbolBinding,
-        instance: object | CrossingResultReference | None,
+        instance: object | CrossingResultReference | FlowDerivedInstanceReference | None,
     ) -> None:
         repository_root = session.authority.repository_root
         target = symbol.resolve(repository_root)
         instance_reference = (
-            instance if isinstance(instance, CrossingResultReference) else None
+            instance
+            if isinstance(
+                instance,
+                (CrossingResultReference, FlowDerivedInstanceReference),
+            )
+            else None
         )
         if instance_reference is not None:
             if symbol.call_kind != "instance_method":
@@ -1839,8 +2027,23 @@ class VerifiedCallable:
             else None
         )
         try:
+            bound_arguments = dict(
+                inspect.signature(target).bind(*args, **kwargs).arguments
+            )
+        except TypeError:
+            bound_arguments = {}
+        try:
             result = target(*args, **kwargs)
         except Exception as exc:
+            runtime_object_flow = self._session._runtime_object_flow(
+                target=target,
+                arguments=bound_arguments,
+                result=None,
+            )
+            runtime_object_flow = self._session._attach_flow_derivation(
+                runtime_object_flow,
+                self._instance_reference,
+            )
             self._session._record_invocation(
                 InvocationRecord(
                     binding_id=self._binding_id,
@@ -1866,9 +2069,19 @@ class VerifiedCallable:
                     result_type=None,
                     error_type=type(exc).__name__,
                     callable_identity=callable_identity,
+                    runtime_object_flow=runtime_object_flow,
                 )
             )
             raise
+        runtime_object_flow = self._session._runtime_object_flow(
+            target=target,
+            arguments=bound_arguments,
+            result=result,
+        )
+        runtime_object_flow = self._session._attach_flow_derivation(
+            runtime_object_flow,
+            self._instance_reference,
+        )
         (
             return_category,
             effect_contract_id,
@@ -1900,7 +2113,13 @@ class VerifiedCallable:
                 result_type=type(result).__name__,
                 error_type=None,
                 callable_identity=callable_identity,
+                runtime_object_flow=runtime_object_flow,
             )
+        )
+        self._session._record_invocation_result(
+            binding_id=self._binding_id,
+            symbol_id=self._symbol.symbol_id,
+            result=result,
         )
         return result
 
@@ -2209,7 +2428,12 @@ class BoundPathway:
         stage_id: str,
         *,
         symbol_id: str | None = None,
-        instance: object | CrossingResultReference | None = None,
+        instance: (
+            object
+            | CrossingResultReference
+            | FlowDerivedInstanceReference
+            | None
+        ) = None,
     ) -> VerifiedCallable:
         """Link one declared stage to an exact real source callable."""
 
@@ -2220,6 +2444,15 @@ class BoundPathway:
             raise SymbolBindingError(
                 f"crossing {instance.composition_id!r} returns "
                 f"{instance.target_pathway_id!r}, not {self.pathway_id!r}"
+            )
+        if isinstance(instance, FlowDerivedInstanceReference) and (
+            instance.target_binding_id != self.binding_id
+            or instance.target_pathway_id != self.pathway_id
+            or instance.target_stage_id != stage_id
+        ):
+            raise SymbolBindingError(
+                f"flow-derived target for {instance.composition_id!r} requires "
+                f"{instance.target_pathway_id}:{instance.target_stage_id}"
             )
         if stage_id not in self.stage_ids:
             raise SymbolBindingError(
@@ -2345,6 +2578,56 @@ class BoundComposition:
         )
         self._crossing_handle = handle
         return handle
+
+    def flow_derived_target_instance(
+        self,
+        *,
+        source: VerifiedCallable,
+    ) -> FlowDerivedInstanceReference:
+        """Declare a target owner whose state must derive from one source result."""
+
+        self._session._require_declaration_phase()
+        if self.composition_status == "lawful_with_explicit_adapter":
+            raise BindingStateError(
+                "explicit-adapter compositions must use their crossing result"
+            )
+        contract = composition_dataflow_contract(
+            self.composition_id,
+            explicit_adapter=False,
+        )
+        if not (
+            contract["source_port"].startswith("result")
+            and contract["target_port"].startswith("receiver")
+            and contract["source_stage_id"] != "*"
+            and contract["target_stage_id"] != "*"
+        ):
+            raise BindingStateError(
+                f"composition {self.composition_id!r} has no flow-derived "
+                "target-instance contract"
+            )
+        if (
+            source._session is not self._session
+            or source._binding_id != self.source_binding.binding_id
+            or source._pathway_id != self.source_binding.pathway_id
+            or source._stage_id != contract["source_stage_id"]
+            or self.composition_id not in source._composition_ids
+        ):
+            raise SymbolBindingError(
+                f"source handle is not the declared {self.composition_id!r} "
+                "flow-contract source"
+            )
+        return FlowDerivedInstanceReference(
+            session=self._session,
+            composition=self,
+            source_binding_id=source._binding_id,
+            target_binding_id=self.target_binding.binding_id,
+            target_pathway_id=self.target_binding.pathway_id,
+            source_stage_id=source._stage_id,
+            source_symbol_id=source.symbol_id,
+            target_stage_id=contract["target_stage_id"],
+            source_port=contract["source_port"],
+            target_port=contract["target_port"],
+        )
 
     def evidence_scope(self) -> CompositionExecutionScope:
         """Return an explicit provenance-only scope for one crossing use."""
@@ -2485,8 +2768,8 @@ class CompositionExecutionScope:
                 "target_instance_role": "adapter_result_reference",
             }
         else:
-            dataflow_requirement = SHARED_INSTANCE_DATAFLOW
-            dataflow_witness = self._shared_instance_dataflow_witness(
+            dataflow_requirement = ATTESTED_OBJECT_FLOW_DATAFLOW
+            dataflow_witness = self._attested_object_flow_witness(
                 source_events,
                 target_events,
             )
@@ -2513,43 +2796,97 @@ class CompositionExecutionScope:
             "dataflow_witness": dataflow_witness,
         }
 
-    def _shared_instance_dataflow_witness(
+    @staticmethod
+    def _flow_port(
+        record: InvocationRecord,
+        port: str,
+    ) -> Mapping[str, str] | None:
+        flow = record.runtime_object_flow
+        if port.startswith("argument:"):
+            arguments = flow.get("arguments", {})
+            if not isinstance(arguments, Mapping):
+                return None
+            value = arguments.get(port.removeprefix("argument:"))
+        else:
+            value = flow.get(port)
+        return value if isinstance(value, Mapping) else None
+
+    def _attested_object_flow_witness(
         self,
         source_events: Sequence[Mapping[str, Any]],
         target_events: Sequence[Mapping[str, Any]],
     ) -> dict[str, Any] | None:
-        """Prove that two endpoint calls acted on one exact bound object."""
+        """Derive the row-specific live object-flow relation."""
 
+        contract = composition_dataflow_contract(
+            self.composition.composition_id,
+            explicit_adapter=False,
+        )
         for source_event in source_events:
             source_record = source_event["record"]
-            source_key = (source_record.binding_id, source_record.symbol_id)
-            source_link = self._session._linked_symbols[source_key]
-            source_runtime = source_link.get("runtime_instance_binding")
-            source_instance = self._session._linked_instances.get(source_key)
-            if (
-                not isinstance(source_runtime, Mapping)
-                or source_runtime.get("kind") != "direct_bound_instance"
-                or source_instance is None
-            ):
+            if contract["source_stage_id"] not in {"*", source_record.stage_id}:
+                continue
+            source_flow = self._flow_port(source_record, contract["source_port"])
+            if source_flow is None:
                 continue
             for target_event in target_events:
                 target_record = target_event["record"]
-                target_key = (target_record.binding_id, target_record.symbol_id)
-                target_link = self._session._linked_symbols[target_key]
-                target_runtime = target_link.get("runtime_instance_binding")
-                target_instance = self._session._linked_instances.get(target_key)
-                if (
-                    target_runtime != source_runtime
-                    or target_instance is not source_instance
+                if contract["target_stage_id"] not in {
+                    "*",
+                    target_record.stage_id,
+                }:
+                    continue
+                target_flow = self._flow_port(
+                    target_record,
+                    contract["target_port"],
+                )
+                if target_flow is None:
+                    continue
+                if source_flow == target_flow:
+                    return {
+                        "witness_kind": ATTESTED_OBJECT_FLOW_DATAFLOW,
+                        "dataflow_contract_id": contract["contract_id"],
+                        "continuity_kind": contract["continuity_kind"],
+                        "runtime_object_id": source_flow["object_id"],
+                        "source_invocation_index": source_event["record_index"],
+                        "source_symbol_id": source_record.symbol_id,
+                        "source_port": contract["source_port"],
+                        "target_invocation_index": target_event["record_index"],
+                        "target_symbol_id": target_record.symbol_id,
+                        "target_port": contract["target_port"],
+                    }
+                derivation = target_record.runtime_object_flow.get(
+                    "flow_derivation"
+                )
+                if not (
+                    contract["continuity_kind"]
+                    == "consumer_bound_equivalent_state_copy"
+                    and isinstance(derivation, Mapping)
+                    and derivation.get("contract_id") == contract["contract_id"]
+                    and derivation.get("source_invocation_index")
+                    == source_event["record_index"]
+                    and derivation.get("source_port") == contract["source_port"]
+                    and derivation.get("target_port") == contract["target_port"]
+                    and derivation.get("source_object") == source_flow
+                    and derivation.get("target_object") == target_flow
+                    and derivation.get("source_value_digest")
+                    == derivation.get("target_value_digest")
                 ):
                     continue
+                assert isinstance(derivation, Mapping)
                 return {
-                    "witness_kind": SHARED_INSTANCE_DATAFLOW,
-                    "runtime_instance_binding_id": source_runtime["instance_id"],
+                    "witness_kind": ATTESTED_OBJECT_FLOW_DATAFLOW,
+                    "dataflow_contract_id": contract["contract_id"],
+                    "continuity_kind": contract["continuity_kind"],
+                    "source_runtime_object_id": source_flow["object_id"],
+                    "target_runtime_object_id": target_flow["object_id"],
+                    "state_value_digest": derivation["source_value_digest"],
                     "source_invocation_index": source_event["record_index"],
                     "source_symbol_id": source_record.symbol_id,
+                    "source_port": contract["source_port"],
                     "target_invocation_index": target_event["record_index"],
                     "target_symbol_id": target_record.symbol_id,
+                    "target_port": contract["target_port"],
                 }
         return None
 
@@ -2916,14 +3253,22 @@ class PathwayBindingSession:
         ] = {}
         self._alternatives: dict[str, AllowedPathwayAlternatives] = {}
         self._linked_symbols: dict[tuple[str, str], dict[str, Any]] = {}
-        self._linked_instances: dict[tuple[str, str], object | None] = {}
+        self._linked_instances: dict[
+            tuple[str, str],
+            object
+            | CrossingResultReference
+            | FlowDerivedInstanceReference
+            | None,
+        ] = {}
         self._direct_runtime_instances: list[object] = []
+        self._runtime_flow_objects: list[object] = []
         self._crossing_links: dict[str, dict[str, Any]] = {}
         self._crossing_runtime_links: dict[
             str,
             tuple[object, CrossingResultReference],
         ] = {}
         self._invocations: list[InvocationRecord] = []
+        self._invocation_results: dict[int, object] = {}
         self._crossing_invocations: list[CrossingInvocationRecord] = []
         self._candidate_mechanism_invocations: list[
             CandidateMechanismInvocationRecord
@@ -2957,6 +3302,82 @@ class PathwayBindingSession:
         self,
     ) -> tuple[CandidateMechanismInvocationRecord, ...]:
         return tuple(self._candidate_mechanism_invocations)
+
+    def _runtime_object_descriptor(
+        self,
+        value: object | None,
+    ) -> dict[str, str] | None:
+        """Assign one deterministic transcript identity to a live object."""
+
+        if value is None or isinstance(value, (bool, int, float, str, bytes)):
+            return None
+        for index, known in enumerate(self._runtime_flow_objects):
+            if known is value:
+                object_id = f"runtime-object:{index}"
+                break
+        else:
+            object_id = f"runtime-object:{len(self._runtime_flow_objects)}"
+            self._runtime_flow_objects.append(value)
+        value_type = type(value)
+        return {
+            "object_id": object_id,
+            "type": f"{value_type.__module__}.{value_type.__qualname__}",
+        }
+
+    @staticmethod
+    def _state_surfaces(value: object | None) -> tuple[object | None, object | None]:
+        """Expose only the established GRC/LGRC runtime state carriers."""
+
+        if value is None:
+            return None, None
+        get_state = getattr(value, "get_state", None)
+        if not callable(get_state):
+            return None, None
+        state = get_state()
+        return state, getattr(state, "base_state", None)
+
+    def _runtime_object_flow(
+        self,
+        *,
+        target: Callable[..., Any],
+        arguments: Mapping[str, object],
+        result: object | None,
+    ) -> dict[str, Any]:
+        """Capture receiver, argument, result, and runtime-state object flow."""
+
+        receiver = _callable_bound_owner(target)
+        receiver_state, receiver_base_state = self._state_surfaces(receiver)
+        result_state, result_base_state = self._state_surfaces(result)
+        return {
+            "receiver": self._runtime_object_descriptor(receiver),
+            "receiver_state": self._runtime_object_descriptor(receiver_state),
+            "receiver_base_state": self._runtime_object_descriptor(
+                receiver_base_state
+            ),
+            "arguments": {
+                name: self._runtime_object_descriptor(value)
+                for name, value in arguments.items()
+            },
+            "result": self._runtime_object_descriptor(result),
+            "result_state": self._runtime_object_descriptor(result_state),
+            "result_base_state": self._runtime_object_descriptor(result_base_state),
+            "flow_derivation": None,
+        }
+
+    @staticmethod
+    def _attach_flow_derivation(
+        runtime_object_flow: dict[str, Any],
+        instance_reference: (
+            CrossingResultReference | FlowDerivedInstanceReference | None
+        ),
+    ) -> dict[str, Any]:
+        """Attach only a live-validated deferred-instance derivation event."""
+
+        if isinstance(instance_reference, FlowDerivedInstanceReference):
+            runtime_object_flow["flow_derivation"] = dict(
+                instance_reference.derivation_record()
+            )
+        return runtime_object_flow
 
     @property
     def candidates(self) -> tuple[CandidateDeclaration, ...]:
@@ -2995,7 +3416,12 @@ class PathwayBindingSession:
         stage_id: str,
         composition_ids: tuple[str, ...],
         symbol: SourceSymbolBinding,
-        instance: object | CrossingResultReference | None,
+        instance: (
+            object
+            | CrossingResultReference
+            | FlowDerivedInstanceReference
+            | None
+        ),
         callable_identity: Mapping[str, Any],
     ) -> None:
         self._require_declaration_phase()
@@ -3028,7 +3454,12 @@ class PathwayBindingSession:
 
     def _runtime_instance_binding(
         self,
-        instance: object | CrossingResultReference | None,
+        instance: (
+            object
+            | CrossingResultReference
+            | FlowDerivedInstanceReference
+            | None
+        ),
         *,
         call_kind: str,
     ) -> dict[str, str] | None:
@@ -3040,6 +3471,11 @@ class PathwayBindingSession:
             return {
                 "kind": "adapter_result_reference",
                 "instance_id": f"adapter-result:{instance.composition_id}",
+            }
+        if isinstance(instance, FlowDerivedInstanceReference):
+            return {
+                "kind": "flow_derived_instance_reference",
+                "instance_id": f"flow-result:{instance.composition_id}",
             }
         for index, known in enumerate(self._direct_runtime_instances):
             if known is instance:
@@ -3171,6 +3607,126 @@ class PathwayBindingSession:
                 record=record,
             )
         self._execution_event_count += 1
+
+    def _record_invocation_result(
+        self,
+        *,
+        binding_id: str,
+        symbol_id: str,
+        result: object,
+    ) -> None:
+        """Retain the live result behind the just-recorded transcript entry."""
+
+        invocation_index = len(self._invocations) - 1
+        if invocation_index < 0:
+            raise BindingStateError("cannot retain a result without an invocation")
+        invocation = self._invocations[invocation_index]
+        if (
+            invocation.binding_id != binding_id
+            or invocation.symbol_id != symbol_id
+            or invocation.outcome != "returned"
+        ):
+            raise BindingStateError("invocation result does not match its transcript")
+        self._invocation_results[invocation_index] = result
+
+    @staticmethod
+    def _live_flow_port(value: object, port: str) -> object | None:
+        """Resolve one approved live-object port without serializing identity."""
+
+        if port in {"result", "receiver"}:
+            return value
+        state, base_state = PathwayBindingSession._state_surfaces(value)
+        if port in {"result_state", "receiver_state"}:
+            return state
+        if port in {"result_base_state", "receiver_base_state"}:
+            return base_state
+        return None
+
+    @staticmethod
+    def _live_value_digest(value: object) -> str:
+        """Fingerprint one in-process value for an observed copy derivation."""
+
+        try:
+            payload = pickle.dumps(value, protocol=5)
+        except (pickle.PicklingError, AttributeError, TypeError) as exc:
+            raise BindingStateError(
+                "flow-derived carrier cannot be deterministically fingerprinted"
+            ) from exc
+        return hashlib.sha256(payload).hexdigest()
+
+    def _bind_flow_derived_instance(
+        self,
+        *,
+        reference: FlowDerivedInstanceReference,
+        source_result: object,
+        target_instance: object,
+    ) -> None:
+        """Validate and bind one consumer-created target to exact live object flow."""
+
+        scope = self._active_composition_scope
+        if self._phase != "locked" or self._lock is None or scope is None:
+            raise BindingStateError(
+                "flow-derived targets must be bound inside a locked composition scope"
+            )
+        if (
+            scope.composition.binding_id != reference.binding_id
+            or scope.composition.composition_id != reference.composition_id
+        ):
+            raise BindingStateError(
+                "flow-derived target does not belong to the active composition scope"
+            )
+        matching_indices = [
+            index
+            for index, invocation in enumerate(self._invocations)
+            if invocation.binding_id == reference.source_binding_id
+            and invocation.stage_id == reference.source_stage_id
+            and invocation.symbol_id == reference.source_symbol_id
+            and invocation.crossing_scope_id == scope.scope_id
+            and invocation.outcome == "returned"
+        ]
+        if len(matching_indices) != 1:
+            raise BindingStateError(
+                "flow-derived target requires exactly one returned source invocation"
+            )
+        retained_result = self._invocation_results.get(matching_indices[0])
+        if retained_result is not source_result:
+            raise BindingStateError(
+                "flow-derived target source_result is not the exact source return"
+            )
+        source_carrier = self._live_flow_port(
+            source_result,
+            reference.source_port,
+        )
+        target_carrier = self._live_flow_port(
+            target_instance,
+            reference.target_port,
+        )
+        if source_carrier is None or target_carrier is None:
+            raise BindingStateError(
+                "flow-derived target does not preserve the contracted object carrier"
+            )
+        source_value_digest = self._live_value_digest(source_carrier)
+        target_value_digest = self._live_value_digest(target_carrier)
+        if source_value_digest != target_value_digest:
+            raise BindingStateError(
+                "flow-derived target does not preserve the contracted object carrier"
+            )
+        reference._set(
+            target_instance,
+            derivation={
+                "contract_id": (
+                    f"{reference.composition_id}:runtime-object-flow:v1"
+                ),
+                "derivation_kind": "consumer_bound_equivalent_state_copy",
+                "source_invocation_index": matching_indices[0],
+                "source_port": reference.source_port,
+                "source_object": self._runtime_object_descriptor(source_carrier),
+                "source_value_digest": source_value_digest,
+                "target_port": reference.target_port,
+                "target_object": self._runtime_object_descriptor(target_carrier),
+                "target_value_digest": target_value_digest,
+            },
+        )
 
     def _record_crossing_invocation(
         self,
@@ -3387,10 +3943,13 @@ class PathwayBindingSession:
 
     def _composition_record(self, binding: BoundComposition) -> dict[str, Any]:
         contract = binding.contract
+        explicit_adapter = (
+            contract["composition_status"] == "lawful_with_explicit_adapter"
+        )
         dataflow_requirement = (
             EXPLICIT_ADAPTER_DATAFLOW
-            if contract["composition_status"] == "lawful_with_explicit_adapter"
-            else SHARED_INSTANCE_DATAFLOW
+            if explicit_adapter
+            else ATTESTED_OBJECT_FLOW_DATAFLOW
         )
         return {
             "binding_id": binding.binding_id,
@@ -3410,6 +3969,10 @@ class PathwayBindingSession:
             "claim_ceiling": contract["claim_ceiling"],
             "blocked_relabels": list(contract["blocked_relabels"]),
             "runtime_dataflow_requirement": dataflow_requirement,
+            "runtime_dataflow_contract": composition_dataflow_contract(
+                binding.composition_id,
+                explicit_adapter=explicit_adapter,
+            ),
             "expected_crossing_callable": deepcopy(
                 self._crossing_links.get(binding.binding_id)
             ),
@@ -3687,6 +4250,9 @@ class PathwayBindingSession:
             ),
             "pre_execution_claim_envelope": claim_envelope,
             "blocked_claims": list(claim_envelope["blocked_claims"]),
+            "execution_transcript_trust_requirement": (
+                EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
+            ),
             "claim_scope": CLAIM_SCOPE_BOUND_INVOCATIONS,
             "whole_run_causal_closure_claimed": False,
             "untracked_execution_observable_by_binding_plane": False,
@@ -4055,6 +4621,7 @@ class PathwayBindingSession:
                 "result_type": item.result_type,
                 "error_type": item.error_type,
                 "callable_identity": dict(item.callable_identity),
+                "runtime_object_flow": deepcopy(item.runtime_object_flow),
                 "execution_event_order": item.execution_event_order,
                 "crossing_scope_id": item.crossing_scope_id,
                 "candidate_scope_id": item.candidate_scope_id,
@@ -4104,6 +4671,12 @@ class PathwayBindingSession:
             }
             for index, item in enumerate(self._candidate_mechanism_invocations)
         ]
+        transcript_digest = execution_transcript_digest(
+            binding_lock_digest=self._lock.digest,
+            stage_invocations=actual_uses,
+            crossing_invocations=crossing_uses,
+            candidate_mechanism_invocations=candidate_mechanism_uses,
+        )
         alternative_uses: list[dict[str, Any]] = []
         for alternatives in sorted(
             self._alternatives.values(),
@@ -4165,6 +4738,10 @@ class PathwayBindingSession:
             "actual_stage_symbol_invocations": actual_uses,
             "actual_composition_crossing_invocations": crossing_uses,
             "actual_candidate_mechanism_invocations": candidate_mechanism_uses,
+            "execution_transcript_digest": transcript_digest,
+            "execution_transcript_trust_requirement": (
+                EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT
+            ),
             "composition_crossing_witnesses": list(composition_witnesses),
             "allowed_pathway_alternatives_actual_use": alternative_uses,
             "registered_compositions_exercised": [
