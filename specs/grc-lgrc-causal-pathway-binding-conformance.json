@@ -10,7 +10,7 @@
   "artifact": "GRC/LGRC causal pathway binding conformance policy",
   "candidate_promotion_automated": false,
   "iteration": 115,
-  "policy_digest": "2e280ca81f7fb5f8e5e2dd3345a8f93ea7928a9a81055901038a8408356359e7",
+  "policy_digest": "2fac383468fc190e17fafc53e3b0f25d268825cd3dcd93c9966a265be00184f3",
   "rules": [
     {
       "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
@@ -83,7 +83,7 @@
       "severity": "fail_closed"
     },
     {
-      "description": "Receipts must match the exact lock and expose declared, actual, and unused links.",
+      "description": "Locks and receipts must expose exact declared, actual, and unused links and match independently canonicalized claim envelopes.",
       "rule_id": "BCF-015",
       "severity": "fail_closed"
     },
@@ -117,7 +117,7 @@
   "runtime_dispatcher_created": false,
   "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
   "semantic_selection_performed_by_binder": false,
-  "source_revision": "9434b1fc755717d775d50f452f070de66f41fc16",
+  "source_revision": "49ce5e2a704b663445a52f174ae8739868283029",
   "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
   "status": "frozen",
   "unbound_execution_claim_qualified": false

@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Closeout
 
-**Status:** Reopened by round-two rejection; R2-B01 and R2-B02 author
-corrections complete, R2-B03 pending
+**Status:** All round-two blockers corrected author-side; full independent
+re-audit pending
 
 **Branch:** `feat/causal-pathway-binding-claim-provenance`
 
@@ -20,14 +20,17 @@ composition edges require exact shared-runtime-owner flow, and a crossing that
 cannot prove that relation remains declared-but-unused. R2-B02 is also
 corrected author-side: candidate use now requires an identity-verified,
 source-pinned executable invocation, while invalid-row prohibitions remain
-structured and cannot be erased by relation prose. R2-B03 remains open, so
-this document is not an acceptance record.
+structured and cannot be erased by relation prose. R2-B03 is now corrected
+author-side as well: the checker independently derives the complete lock and
+receipt claim envelopes and their aggregate projections.
+This document remains a pending correction record, not an acceptance record,
+until the new full independent audit completes.
 
 Locks and receipts are operation-scoped, callable and crossing identities are
 rechecked, candidate and dynamic-choice evidence is scoped, acceptance uses a
 separate trust anchor, and only trusted exact-symbol `committed` or `observed`
-effects qualify. A further full independent audit remains required after all
-round-two blockers are corrected.
+effects qualify. A further full independent audit is now required against the
+complete author-corrected branch.
 
 At the Iteration 116 checkpoint, one explicit linker model handled admitted
 native pathways, producer-mediated and adapter/diagnostic registered
@@ -70,6 +73,9 @@ envelope.
   closure or absence of direct work.
 - A non-raising return is not actual use unless its trusted exact-symbol effect
   contract classifies it as `committed` or `observed`.
+- Every claim-envelope constituent, qualifier, status, flag, aggregate block,
+  and duplicated producer/adapter projection must equal an independent
+  checker-side canonical derivation.
 - Existing GRC/LGRC mechanism and numerical behavior is unchanged.
 
 ## Frozen Surface
@@ -82,7 +88,8 @@ The closeout consists of:
 - canonical lock/receipt JSON artifacts and digests;
 - the 20-rule binding conformance policy and checker;
 - 20 global and 20 target-only rule controls, plus three target-only M-01
-  effect-outcome forgery controls;
+  effect-outcome forgery controls and the target-only R2-B03 envelope-field,
+  diagnostic-widening, projection, and aggregate-block controls;
 - ten consumer dry runs and a separately-oracled low-context replay;
 - the Knowledge/Binding/Execution reference and contribution boundary.
 
@@ -96,10 +103,10 @@ selector  f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b
 policy    7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9
 bindings  73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556
 binding conformance policy
-          2e280ca81f7fb5f8e5e2dd3345a8f93ea7928a9a81055901038a8408356359e7
+          2fac383468fc190e17fafc53e3b0f25d268825cd3dcd93c9966a265be00184f3
 ```
 
-## Current Maximum Claim Pending Further Correction And Re-Audit
+## Current Maximum Claim Pending Independent Re-Audit
 
 The author-corrected implementation provides an operation-scoped,
 versioned causal-pathway binding and provenance layer. Evidence-bearing
@@ -108,8 +115,8 @@ unregistered candidates. A receipt reports only identity-verified bound
 invocations whose independently anchored exact-symbol contracts classify their
 effects as committed or observed, plus conservative graph and claim-envelope
 projections of that recorded evidence. It does not establish whole-run causal
-closure, absence of direct work, or final acceptance while R2-B03 remains open
-and the next independent audit is pending.
+closure, absence of direct work, or final acceptance while the new independent
+audit is pending.
 
 ## Remaining Boundaries
 

@@ -512,6 +512,32 @@ class CausalPathwayBindingTest(unittest.TestCase):
             record["declared_but_unused"]["candidate_ids"],
         )
 
+    def test_candidate_claim_envelope_order_is_canonical(self) -> None:
+        session = PathwayBindingSession(self.authority)
+        for candidate_id in (
+            "experiment.fixture.z_candidate",
+            "experiment.fixture.a_candidate",
+        ):
+            session.declare_candidate(
+                candidate_id=candidate_id,
+                candidate_kind="pathway",
+                purpose="Pressure deterministic claim-envelope ordering.",
+                owner="fixture",
+                evidence_owner="fixture",
+            )
+
+        lock = session.freeze_lock().to_record()
+
+        self.assertEqual(
+            ["experiment.fixture.a_candidate", "experiment.fixture.z_candidate"],
+            [
+                item["candidate_id"]
+                for item in lock["pre_execution_claim_envelope"][
+                    "required_qualifiers"
+                ]["candidate_relations"]
+            ],
+        )
+
     def test_candidate_rejects_cmp05_invalid_relabel_laundering(self) -> None:
         session = PathwayBindingSession(self.authority)
         with self.assertRaisesRegex(

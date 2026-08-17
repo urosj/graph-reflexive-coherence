@@ -1,7 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Round-two re-audit rejected; R2-B01 and R2-B02 author corrections
-complete, R2-B03 pending
+**Status:** All round-two blockers corrected author-side; full independent
+re-audit pending
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 
@@ -110,6 +110,22 @@ row, all conflicting IDs and blocked relabels remain structured prohibitions in
 the lock and receipt. Literal and load-bearing-token restatements are rejected,
 and the free-text proposed relation is explicitly descriptive, unreviewed, and
 not claim-qualified.
+
+## Complete Claim-Envelope Canonicalization
+
+The binding checker independently derives the entire pre-execution and receipt
+claim envelopes. Lock derivation uses current registry and matrix authority plus
+the exact declared pathway, composition, and candidate records. Receipt
+derivation uses qualifying stage invocations, validated composition witnesses,
+and validated candidate-mechanism witnesses; it does not trust the submitted
+claim envelope to decide what was used.
+
+The submitted envelope must exactly equal the canonical structure, including
+constituent ceilings, configured semantics, producer/adapter/diagnostic cuts,
+candidate relations, every summary boolean, aggregate blocked claims, overall
+claim status, and the maturity/chain non-synthesis fields. Lock and receipt
+copies of aggregate blocks and producer/adapter cuts must match the same
+derivation. Digest-resealed omissions or widenings therefore fail BCF-015.
 
 ## Effect Outcome Contracts
 

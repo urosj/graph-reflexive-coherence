@@ -151,6 +151,17 @@ the pre-audit checkpoint and do not constitute current tranche acceptance.
       classify proposed relation prose as descriptive and non-claim-qualified.
 - [x] Extend BCF-004/BCF-011 and runtime controls for missing, forged,
       metadata-only, and semantically paraphrased candidate evidence.
-- [ ] R2-B03: independently canonicalize every claim-envelope field.
+- [x] R2-B03: independently canonicalize every claim-envelope field.
+- [x] Derive the lock envelope from current authority and exact declarations,
+      without consulting the submitted envelope.
+- [x] Derive the receipt envelope from qualifying invocations, valid
+      composition witnesses, and valid candidate-mechanism witnesses.
+- [x] Require exact structural equality for every constituent, qualifier,
+      status, flag, aggregate block, and non-synthesis field.
+- [x] Canonicalize top-level blocked-claim and producer/adapter projections
+      against the same independently derived envelope.
+- [x] Add target-only BCF-015 controls for every top-level/qualifier envelope
+      field, the exact audit diagnostic widening, ownership-cut deletion, and
+      replay-block deletion.
 - [ ] Re-run a new full independent adversarial audit with zero blockers and
-      zero unresolved majors after R2-B03 closes.
+      zero unresolved majors against the complete author-corrected branch.

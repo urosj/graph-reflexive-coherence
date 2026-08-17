@@ -71,6 +71,17 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
             ),
         )
 
+    def _reseal(self, bundle: dict[str, Any]) -> None:
+        bundle["lock"]["lock_digest"] = self.checker.digest_without(
+            bundle["lock"],
+            "lock_digest",
+        )
+        bundle["receipt"]["binding_lock_digest"] = bundle["lock"]["lock_digest"]
+        bundle["receipt"]["receipt_digest"] = self.checker.digest_without(
+            bundle["receipt"],
+            "receipt_digest",
+        )
+
     def test_current_lock_and_receipt_pass_all_twenty_rules(self) -> None:
         result = self._validate(
             ROOT,
@@ -83,6 +94,179 @@ class CausalPathwayBindingConformanceTest(unittest.TestCase):
         self.assertEqual(0, result["failed_rule_count"])
         self.assertEqual("current", result["binding_staleness_state"])
         self.assertFalse(result["claim_qualified_artifacts_blocked"])
+
+    def test_all_i116_envelopes_match_independent_canonical_derivation(self) -> None:
+        i116 = EVIDENCE_DIR / "i116"
+        fixture_names = (
+            "01-simple-native-pathway",
+            "02-producer-mediated-cmp20",
+            "03-explicit-adapter-cmp26",
+            "04-diagnostic-only-cmp04",
+            "05-ambiguous-crossing-not-selected",
+            "08-unregistered-candidate",
+            "09-dynamic-a-b-choice",
+            "10-multi-edge-use-graph",
+            "low-context-replay",
+        )
+        for fixture_name in fixture_names:
+            with self.subTest(fixture_name=fixture_name):
+                bundle = self.checker.load_bundle(
+                    ROOT,
+                    lock_path=i116 / f"{fixture_name}.lock.json",
+                    receipt_path=i116 / f"{fixture_name}.receipt.json",
+                )
+                result = self._validate(
+                    ROOT,
+                    bundle,
+                    copy.deepcopy(self.policy),
+                    active_rule_ids={"BCF-015"},
+                )
+
+                self.assertEqual("passed", result["status"])
+                self.assertEqual([], result["issues"])
+
+    def test_every_claim_envelope_field_is_canonical_bcf015(self) -> None:
+        envelope_locations = (
+            ("lock", "pre_execution_claim_envelope"),
+            ("receipt", "claim_envelope"),
+        )
+        for artifact_name, envelope_name in envelope_locations:
+            honest_envelope = self.bundle[artifact_name][envelope_name]
+            for field, honest_value in honest_envelope.items():
+                if field == "required_qualifiers":
+                    continue
+                with self.subTest(
+                    artifact_name=artifact_name,
+                    envelope_field=field,
+                ):
+                    mutated = copy.deepcopy(self.bundle)
+                    if isinstance(honest_value, bool):
+                        forged_value: Any = not honest_value
+                    elif isinstance(honest_value, str):
+                        forged_value = "forged_claim_status"
+                    elif isinstance(honest_value, list):
+                        forged_value = [*honest_value, {"forged": True}]
+                    else:
+                        self.fail(f"unsupported envelope field type for {field}")
+                    mutated[artifact_name][envelope_name][field] = forged_value
+                    self._reseal(mutated)
+
+                    result = self._validate(
+                        ROOT,
+                        mutated,
+                        copy.deepcopy(self.policy),
+                        active_rule_ids={"BCF-015"},
+                    )
+
+                    self.assertEqual("failed_closed", result["status"])
+                    self.assertEqual(
+                        {"BCF-015"},
+                        {item["rule_id"] for item in result["issues"]},
+                    )
+
+            qualifiers = honest_envelope["required_qualifiers"]
+            for qualifier_name, honest_value in qualifiers.items():
+                with self.subTest(
+                    artifact_name=artifact_name,
+                    qualifier_name=qualifier_name,
+                ):
+                    mutated = copy.deepcopy(self.bundle)
+                    mutated[artifact_name][envelope_name]["required_qualifiers"][
+                        qualifier_name
+                    ] = [*honest_value, {"forged": True}]
+                    self._reseal(mutated)
+
+                    result = self._validate(
+                        ROOT,
+                        mutated,
+                        copy.deepcopy(self.policy),
+                        active_rule_ids={"BCF-015"},
+                    )
+
+                    self.assertEqual("failed_closed", result["status"])
+                    self.assertEqual(
+                        {"BCF-015"},
+                        {item["rule_id"] for item in result["issues"]},
+                    )
+
+    def test_audit_diagnostic_status_and_flag_widening_fails_bcf015(self) -> None:
+        i116 = EVIDENCE_DIR / "i116"
+        mutated = self.checker.load_bundle(
+            ROOT,
+            lock_path=i116 / "04-diagnostic-only-cmp04.lock.json",
+            receipt_path=i116 / "04-diagnostic-only-cmp04.receipt.json",
+        )
+        for envelope in (
+            mutated["lock"]["pre_execution_claim_envelope"],
+            mutated["receipt"]["claim_envelope"],
+        ):
+            envelope["overall_claim_status"] = "admitted_bounded"
+            envelope["contains_diagnostic_only_relation"] = False
+        self._reseal(mutated)
+
+        result = self._validate(
+            ROOT,
+            mutated,
+            copy.deepcopy(self.policy),
+            active_rule_ids={"BCF-015"},
+        )
+
+        self.assertEqual("failed_closed", result["status"])
+        self.assertEqual({"BCF-015"}, {item["rule_id"] for item in result["issues"]})
+
+    def test_envelope_projection_and_replay_block_forgery_fails_bcf015(self) -> None:
+        i116 = EVIDENCE_DIR / "i116"
+        mutation_cases = (
+            (
+                "02-producer-mediated-cmp20",
+                lambda bundle: (
+                    bundle["lock"].__setitem__("explicit_producers", []),
+                    bundle["receipt"].__setitem__("producer_cuts_used", []),
+                ),
+            ),
+            (
+                "03-explicit-adapter-cmp26",
+                lambda bundle: (
+                    bundle["lock"].__setitem__("explicit_adapters", []),
+                    bundle["receipt"].__setitem__("adapters_used", []),
+                ),
+            ),
+            (
+                "09-dynamic-a-b-choice",
+                lambda bundle: (
+                    bundle["lock"]["pre_execution_claim_envelope"].__setitem__(
+                        "blocked_claims", []
+                    ),
+                    bundle["receipt"]["claim_envelope"].__setitem__(
+                        "blocked_claims", []
+                    ),
+                    bundle["lock"].__setitem__("blocked_claims", []),
+                    bundle["receipt"].__setitem__("blocked_claims", []),
+                ),
+            ),
+        )
+        for fixture_name, mutate in mutation_cases:
+            with self.subTest(fixture_name=fixture_name):
+                mutated = self.checker.load_bundle(
+                    ROOT,
+                    lock_path=i116 / f"{fixture_name}.lock.json",
+                    receipt_path=i116 / f"{fixture_name}.receipt.json",
+                )
+                mutate(mutated)
+                self._reseal(mutated)
+
+                result = self._validate(
+                    ROOT,
+                    mutated,
+                    copy.deepcopy(self.policy),
+                    active_rule_ids={"BCF-015"},
+                )
+
+                self.assertEqual("failed_closed", result["status"])
+                self.assertEqual(
+                    {"BCF-015"},
+                    {item["rule_id"] for item in result["issues"]},
+                )
 
     def test_all_twenty_negative_controls_fail_their_target_rule(self) -> None:
         for case_id, _, expected_rule in self.builder.NEGATIVE_CASES:

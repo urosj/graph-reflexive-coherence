@@ -1,7 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Iteration 117
 
-**Status:** Round-two re-audit rejected; R2-B01 and R2-B02 author corrections
-complete, R2-B03 pending
+**Status:** All round-two blockers corrected author-side; full independent
+re-audit pending
 
 **Checkpoint commit:** `976c660`
 
@@ -459,5 +459,52 @@ compileall selected changed surfaces = passed
 git diff --check = passed
 ```
 
-This remains author-side correction evidence only. R2-B03 remains open, and a
-new full independent audit remains the acceptance gate.
+At this checkpoint R2-B03 remained open. The following correction closes it
+author-side; a new full independent audit remains the acceptance gate.
+
+## R2-B03 Complete Claim-Envelope Canonicalization
+
+R2-B03 is corrected author-side by making BCF-015 independently construct the
+entire expected claim envelope. The lock derivation consumes current registry
+and matrix authority plus exact declared pathway, composition, and candidate
+records. The receipt derivation starts separately from claim-qualifying stage
+invocations, composition witnesses that pass exact order/dataflow validation,
+and candidate uses that pass exact executable-witness validation. Neither
+derivation reads the submitted envelope to decide its expected claims.
+
+The checker requires exact structural equality for:
+
+- constituent pathway and composition ceilings;
+- configured-semantics, producer, adapter, diagnostic, and candidate
+  qualifiers;
+- producer/adapter/diagnostic/candidate summary flags;
+- aggregate blocked claims and overall claim status; and
+- composition-maturity and synthesized-chain non-claim fields.
+
+The lock's top-level blocked claims and explicit producer/adapter records, and
+the receipt's blocked claims and used producer/adapter records, must match the
+same canonical envelopes. Candidate and composition ordering is deterministic,
+so list order cannot become an unchecked degree of freedom.
+
+The controls reproduce the audit's digest-resealed diagnostic mutation
+(`bounded_with_diagnostic_cut` to `admitted_bounded` with its diagnostic flag
+cleared), mutate every top-level and qualifier lock/receipt envelope field
+under target-only BCF-015, delete producer/adapter projections, and clear replay
+blocked-claim aggregates. Nine varied I116 lock/receipt pairs remain positive
+controls.
+
+```text
+.venv focused binding/conformance/I116 tests = 77 passed
+.venv full unittest discovery = 1,288 passed
+I115/I116 evidence regeneration = passed
+binding conformance = 20 passed, 0 issues
+predecessor consolidation conformance = 20 passed, 0 issues
+ruff selected changed surfaces = passed
+mypy --python-version 3.12 selected binding surfaces = passed
+compileall selected changed surfaces = passed
+git diff --check = passed
+```
+
+This remains author-side correction evidence only. All reported round-two
+blockers are now corrected author-side; the new full independent audit remains
+the acceptance gate.

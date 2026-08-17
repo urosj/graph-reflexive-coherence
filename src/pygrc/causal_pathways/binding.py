@@ -3478,7 +3478,8 @@ class PathwayBindingSession:
             blocked_claims.extend(str(item) for item in contract["blocked_claims"])
 
         for composition_binding in sorted(
-            composition_bindings, key=lambda item: item.composition_id
+            composition_bindings,
+            key=lambda item: (item.composition_id, item.binding_id),
         ):
             contract = composition_binding.contract
             status = str(contract["composition_status"])
@@ -3523,8 +3524,12 @@ class PathwayBindingSession:
                 )
             blocked_claims.extend(str(item) for item in contract["blocked_relabels"])
 
-        candidate_records = [candidate.to_record() for candidate in candidates]
-        for candidate in candidates:
+        ordered_candidates = sorted(
+            candidates,
+            key=lambda item: item.candidate_id,
+        )
+        candidate_records = [candidate.to_record() for candidate in ordered_candidates]
+        for candidate in ordered_candidates:
             blocked_claims.extend(candidate.blocked_claims)
         if candidates:
             overall_status = "experimental_unregistered"

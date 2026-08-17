@@ -79,7 +79,10 @@ RULES = [
     ),
     (
         "BCF-015",
-        "Receipts must match the exact lock and expose declared, actual, and unused links.",
+        (
+            "Locks and receipts must expose exact declared, actual, and unused links "
+            "and match independently canonicalized claim envelopes."
+        ),
     ),
     (
         "BCF-016",
@@ -125,6 +128,31 @@ EXECUTABLE_STATUSES = {
 
 RETURN_CATEGORIES = {"false", "true", "none", "empty", "other"}
 EFFECT_OUTCOMES = {"committed", "observed", "rejected", "no_op", "unknown"}
+
+CANDIDATE_DECLARATION_FIELDS = (
+    "candidate_id",
+    "candidate_kind",
+    "purpose",
+    "owner",
+    "consumed_admitted_pathway_ids",
+    "consumed_admitted_composition_ids",
+    "proposed_source_pathway_id",
+    "proposed_target_pathway_id",
+    "proposed_relation",
+    "authority",
+    "producer_residue",
+    "adapter_residue",
+    "configured_residue",
+    "evidence_owner",
+    "mechanism_evidence",
+    "candidate_mechanism_link",
+    "invalid_relabel_conflict_ids",
+    "invalid_relabel_blocked_claims",
+    "proposed_relation_claim_status",
+    "claim_ceiling",
+    "blocked_claims",
+    "promotion_status",
+)
 CLAIM_QUALIFYING_EFFECT_OUTCOMES = {"committed", "observed"}
 EXPLICIT_ADAPTER_DATAFLOW = "exact_explicit_adapter_result_reference"
 SHARED_INSTANCE_DATAFLOW = "shared_bound_endpoint_instance"
@@ -816,6 +844,174 @@ def _candidate_evidence_issue(
     ):
         return "candidate executable callable identity is stale or inconsistent"
     return None
+
+
+def _canonical_claim_envelope(
+    *,
+    pathways: Mapping[str, Mapping[str, Any]],
+    compositions: Mapping[str, Mapping[str, Any]],
+    pathway_bindings: Mapping[str, Mapping[str, Any]],
+    composition_bindings: Mapping[str, Mapping[str, Any]],
+    candidates: Mapping[str, Mapping[str, Any]],
+) -> dict[str, Any]:
+    """Independently derive the complete conservative claim envelope."""
+
+    pathway_claims: list[dict[str, Any]] = []
+    composition_claims: list[dict[str, Any]] = []
+    producer_cuts: list[dict[str, Any]] = []
+    adapter_cuts: list[dict[str, Any]] = []
+    diagnostic_relations: list[dict[str, str]] = []
+    configured_semantics: list[dict[str, Any]] = []
+    blocked_claims: list[str] = []
+
+    ordered_pathway_bindings = sorted(
+        pathway_bindings.items(),
+        key=lambda item: item[0],
+    )
+    for binding_id, binding in ordered_pathway_bindings:
+        pathway_id = str(binding.get("pathway_id", ""))
+        pathway = pathways.get(pathway_id, {})
+        supported_claims = list(pathway.get("supported_claims", []))
+        configured_residue = list(pathway.get("configured_residue", []))
+        producer_residue = list(pathway.get("producer_residue", []))
+        naturalization_debt = list(pathway.get("naturalization_debt", []))
+        pathway_blocks = [str(item) for item in pathway.get("blocked_claims", [])]
+        mechanism_ownership = pathway.get("mechanism_ownership")
+        pathway_claims.append(
+            {
+                "binding_id": binding_id,
+                "pathway_id": pathway_id,
+                "constituent_claim_ceiling": supported_claims,
+                "mechanism_ownership": mechanism_ownership,
+                "required_qualifiers": {
+                    "configured_residue": configured_residue,
+                    "producer_residue": producer_residue,
+                    "naturalization_debt": naturalization_debt,
+                },
+                "blocked_claims": pathway_blocks,
+            }
+        )
+        if configured_residue:
+            configured_semantics.append(
+                {
+                    "pathway_id": pathway_id,
+                    "residue": configured_residue,
+                }
+            )
+        if producer_residue or mechanism_ownership == "producer":
+            producer_cuts.append(
+                {
+                    "pathway_id": pathway_id,
+                    "producer_identity": pathway.get("trigger_surface"),
+                    "producer_owned_authorities": producer_residue,
+                }
+            )
+        if mechanism_ownership == "diagnostic":
+            diagnostic_relations.append(
+                {
+                    "kind": "pathway",
+                    "identity": pathway_id,
+                }
+            )
+        blocked_claims.extend(pathway_blocks)
+
+    ordered_composition_bindings = sorted(
+        composition_bindings.items(),
+        key=lambda item: (
+            str(item[1].get("composition_id", "")),
+            item[0],
+        ),
+    )
+    for binding_id, binding in ordered_composition_bindings:
+        composition_id = str(binding.get("composition_id", ""))
+        composition = compositions.get(composition_id, {})
+        status = str(composition.get("composition_status", ""))
+        composition_blocks = [
+            str(item) for item in composition.get("blocked_relabels", [])
+        ]
+        authority_retained = list(composition.get("authority_retained", []))
+        authority_transferred = list(
+            composition.get("authority_transferred", [])
+        )
+        composition_claims.append(
+            {
+                "binding_id": binding_id,
+                "composition_id": composition_id,
+                "composition_status": status,
+                "constituent_claim_ceiling": composition.get("claim_ceiling"),
+                "adapter_id": composition.get("adapter_id"),
+                "adapter_owner": composition.get("adapter_owner"),
+                "authority_retained": authority_retained,
+                "authority_transferred": authority_transferred,
+                "blocked_claims": composition_blocks,
+            }
+        )
+        if status == "producer_mediated":
+            producer_cuts.append(
+                {
+                    "composition_id": composition_id,
+                    "producer_identity": composition.get("adapter_id"),
+                    "producer_owner": composition.get("adapter_owner"),
+                    "producer_owned_authorities": authority_transferred,
+                }
+            )
+        if status == "lawful_with_explicit_adapter":
+            adapter_cuts.append(
+                {
+                    "composition_id": composition_id,
+                    "adapter_id": composition.get("adapter_id"),
+                    "adapter_owner": composition.get("adapter_owner"),
+                }
+            )
+        if status == "diagnostic_only":
+            diagnostic_relations.append(
+                {
+                    "kind": "composition",
+                    "identity": composition_id,
+                }
+            )
+        blocked_claims.extend(composition_blocks)
+
+    candidate_records = [
+        {
+            field: copy.deepcopy(candidate.get(field))
+            for field in CANDIDATE_DECLARATION_FIELDS
+        }
+        for _, candidate in sorted(candidates.items(), key=lambda item: item[0])
+    ]
+    for candidate in candidate_records:
+        candidate_blocks = candidate.get("blocked_claims")
+        if isinstance(candidate_blocks, list):
+            blocked_claims.extend(str(item) for item in candidate_blocks)
+
+    if candidate_records:
+        overall_status = "experimental_unregistered"
+    elif diagnostic_relations:
+        overall_status = "bounded_with_diagnostic_cut"
+    elif producer_cuts or adapter_cuts:
+        overall_status = "bounded_with_explicit_ownership_cuts"
+    else:
+        overall_status = "admitted_bounded"
+
+    return {
+        "constituent_pathway_claim_ceilings": pathway_claims,
+        "constituent_composition_claim_ceilings": composition_claims,
+        "required_qualifiers": {
+            "configured_semantics": configured_semantics,
+            "producer_cuts": producer_cuts,
+            "adapter_cuts": adapter_cuts,
+            "diagnostic_only_relations": diagnostic_relations,
+            "candidate_relations": candidate_records,
+        },
+        "contains_producer_cut": bool(producer_cuts),
+        "contains_adapter_cut": bool(adapter_cuts),
+        "contains_diagnostic_only_relation": bool(diagnostic_relations),
+        "experimental_unregistered": bool(candidate_records),
+        "blocked_claims": list(dict.fromkeys(blocked_claims)),
+        "overall_claim_status": overall_status,
+        "composition_status_is_maturity_score": False,
+        "synthesized_chain_claim": False,
+    }
 
 
 def validate_bundle(
@@ -1514,6 +1710,13 @@ def validate_bundle(
         if isinstance(symbol, Mapping)
     )
     for candidate_id, candidate in declared_candidates.items():
+        if set(candidate) != set(CANDIDATE_DECLARATION_FIELDS):
+            add_issue(
+                issues,
+                "BCF-004",
+                candidate_id,
+                "candidate declaration fields are incomplete or widened",
+            )
         if candidate_id in pathways or candidate_id in compositions:
             rule = (
                 "BCF-011"
@@ -1718,6 +1921,7 @@ def validate_bundle(
     invocations = receipt.get("actual_stage_symbol_invocations", [])
     qualifying_binding_ids: set[str] = set()
     qualifying_stage_symbols: dict[str, list[tuple[str, str]]] = {}
+    valid_qualifying_invocation_indices: set[int] = set()
     execution_event_orders: list[int] = []
     for invocation_index, invocation in enumerate(invocations):
         binding_id = str(invocation.get("binding_id", ""))
@@ -1795,8 +1999,12 @@ def validate_bundle(
                 f"{binding_id}:{symbol_id}",
                 effect_issue,
             )
-        if invocation.get("claim_qualifying_effect") is True:
+        if (
+            invocation.get("claim_qualifying_effect") is True
+            and effect_issue is None
+        ):
             qualifying_binding_ids.add(binding_id)
+            valid_qualifying_invocation_indices.add(invocation_index)
             qualifying_stage_symbols.setdefault(binding_id, []).append(
                 (str(invocation.get("stage_id", "")), symbol_id)
             )
@@ -1905,6 +2113,7 @@ def validate_bundle(
         "actual_composition_crossing_invocations",
         [],
     )
+    valid_qualifying_crossing_indices: set[int] = set()
     for crossing_index, invocation in enumerate(crossing_invocations):
         binding_id = str(invocation.get("binding_id", ""))
         declared = lock_compositions.get(binding_id, {})
@@ -1968,6 +2177,8 @@ def validate_bundle(
                 f"{binding_id}:crossing:{crossing_index}",
                 effect_issue,
             )
+        elif invocation.get("claim_qualifying_effect") is True:
+            valid_qualifying_crossing_indices.add(crossing_index)
 
     expected_effect_outcome_summary = {
         "stage_invocation_counts": {
@@ -2107,6 +2318,10 @@ def validate_bundle(
                 or len(indices) != len(stage_ids)
                 or any(not isinstance(index, int) for index in indices)
                 or any(index < 0 or index >= len(invocations) for index in indices)
+                or any(
+                    index not in valid_qualifying_invocation_indices
+                    for index in indices
+                )
             ):
                 return None
             selected = [invocations[index] for index in indices]
@@ -2174,6 +2389,13 @@ def validate_bundle(
             and isinstance(dataflow_witness, Mapping)
             and selected_crossings is not None
             and len(selected_crossings) == (1 if adapter_required else 0)
+            and (
+                not adapter_required
+                or all(
+                    index in valid_qualifying_crossing_indices
+                    for index in crossing_indices
+                )
+            )
         )
         if structurally_valid:
             from_orders = [
@@ -2328,8 +2550,10 @@ def validate_bundle(
             "candidate use identities are duplicated",
         )
     witnessed_candidate_mechanism_indices: set[int] = set()
+    valid_used_candidate_ids: set[str] = set()
     for candidate_id, candidate in used_candidates.items():
         locked_candidate = declared_candidates.get(candidate_id)
+        candidate_declaration_valid = locked_candidate is not None
         if locked_candidate is None:
             add_issue(
                 issues,
@@ -2337,15 +2561,17 @@ def validate_bundle(
                 candidate_id,
                 "candidate use lacks a lock declaration",
             )
-        elif any(
+        elif set(candidate) != {*locked_candidate, "candidate_execution_witness"} or any(
             candidate.get(field) != locked_candidate.get(field)
             for field in locked_candidate
         ):
+            candidate_declaration_valid = False
             add_issue(
                 issues, "BCF-004", candidate_id, "candidate use widened its declaration"
             )
         evidence_issue = _candidate_evidence_issue(root, candidate)
         if evidence_issue is not None:
+            candidate_declaration_valid = False
             add_issue(
                 issues,
                 "BCF-004",
@@ -2373,6 +2599,10 @@ def validate_bundle(
                 or (not indices and not allow_empty)
                 or any(not isinstance(index, int) for index in indices)
                 or len(indices) != len(set(indices))
+                or any(
+                    index not in valid_qualifying_invocation_indices
+                    for index in indices
+                )
             ):
                 return None
             try:
@@ -2515,7 +2745,8 @@ def validate_bundle(
                 candidate_id,
                 "candidate use lacks exact identity-verified mechanism execution",
             )
-        elif isinstance(candidate_witness, Mapping):
+        elif isinstance(candidate_witness, Mapping) and candidate_declaration_valid:
+            valid_used_candidate_ids.add(candidate_id)
             witnessed_mechanism_index = candidate_witness.get(
                 "candidate_mechanism_invocation_index"
             )
@@ -2750,6 +2981,76 @@ def validate_bundle(
             "BCF-003",
             "receipt.pathway_use_graph.edges",
             "candidate graph edges differ from candidate composition uses",
+        )
+
+    expected_lock_envelope = _canonical_claim_envelope(
+        pathways=pathways,
+        compositions=compositions,
+        pathway_bindings=lock_bindings,
+        composition_bindings=lock_compositions,
+        candidates=declared_candidates,
+    )
+    expected_receipt_pathways = {
+        binding_id: lock_bindings[binding_id]
+        for binding_id in sorted(qualifying_binding_ids)
+        if binding_id in lock_bindings
+    }
+    expected_receipt_compositions = {
+        binding_id: lock_compositions[binding_id]
+        for binding_id in sorted(valid_witness_ids)
+        if binding_id in lock_compositions
+    }
+    expected_receipt_candidates = {
+        candidate_id: declared_candidates[candidate_id]
+        for candidate_id in sorted(valid_used_candidate_ids)
+        if candidate_id in declared_candidates
+    }
+    expected_receipt_envelope = _canonical_claim_envelope(
+        pathways=pathways,
+        compositions=compositions,
+        pathway_bindings=expected_receipt_pathways,
+        composition_bindings=expected_receipt_compositions,
+        candidates=expected_receipt_candidates,
+    )
+    if lock.get("pre_execution_claim_envelope") != expected_lock_envelope:
+        add_issue(
+            issues,
+            "BCF-015",
+            "lock.pre_execution_claim_envelope",
+            "pre-execution claim envelope differs from independent canonical derivation",
+        )
+    if receipt.get("claim_envelope") != expected_receipt_envelope:
+        add_issue(
+            issues,
+            "BCF-015",
+            "receipt.claim_envelope",
+            "receipt claim envelope differs from independent canonical derivation",
+        )
+    if (
+        lock.get("blocked_claims") != expected_lock_envelope["blocked_claims"]
+        or lock.get("explicit_producers")
+        != expected_lock_envelope["required_qualifiers"]["producer_cuts"]
+        or lock.get("explicit_adapters")
+        != expected_lock_envelope["required_qualifiers"]["adapter_cuts"]
+    ):
+        add_issue(
+            issues,
+            "BCF-015",
+            "lock.claim_envelope_projections",
+            "lock claim projections differ from the canonical envelope",
+        )
+    if (
+        receipt.get("blocked_claims") != expected_receipt_envelope["blocked_claims"]
+        or receipt.get("producer_cuts_used")
+        != expected_receipt_envelope["required_qualifiers"]["producer_cuts"]
+        or receipt.get("adapters_used")
+        != expected_receipt_envelope["required_qualifiers"]["adapter_cuts"]
+    ):
+        add_issue(
+            issues,
+            "BCF-015",
+            "receipt.claim_envelope_projections",
+            "receipt claim projections differ from the canonical envelope",
         )
 
     def validate_envelope(
@@ -3191,7 +3492,7 @@ def validate_bundle(
             "co-use synthesized an edge or larger chain claim",
         )
 
-    any_success = bool(qualifying_binding_ids or used_candidates)
+    any_success = bool(qualifying_binding_ids or valid_used_candidate_ids)
     if receipt.get("claim_qualified") is not any_success:
         add_issue(
             issues,

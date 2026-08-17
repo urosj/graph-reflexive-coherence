@@ -318,6 +318,18 @@ unscoped co-use, arbitrary strings, and literal or semantic invalid-relabel
 restatements do not produce candidate graph elements or an experimental
 candidate claim.
 
+The round-two R2-B03 correction makes the claim envelope an independently
+reconstructed projection rather than a trusted receipt summary. BCF-015 builds
+the complete expected lock envelope from declared bindings and current
+registry/matrix authority. It builds the receipt envelope separately from
+claim-qualifying stage invocations, valid composition-flow witnesses, and
+valid candidate-mechanism witnesses. Exact structural equality is required for
+every constituent ceiling, qualifier list, summary flag, aggregate blocked
+claim, overall status, and the non-synthesis fields. The duplicated top-level
+blocked claims and producer/adapter projections must equal that same canonical
+envelope. Adding, deleting, reordering, or widening any field fails closed even
+when the artifact digests are recomputed.
+
 The B-05 correction prevents post-hoc global inference from ordinary pathway
 use. BCF-017 reconstructs every dynamic selection from its scoped invocation
 indices. C is rejected inside an A/B scope, while a null-scoped C invocation

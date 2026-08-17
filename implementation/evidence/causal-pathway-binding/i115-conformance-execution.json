@@ -38,13 +38,13 @@
   "candidate_declaration_count": 0,
   "claim_qualified_artifacts_blocked": false,
   "composition_binding_count": 0,
-  "conformance_digest": "59edb1a52a99135cba7793828483978ca219a33d08c4692660b7c345bebd60d6",
+  "conformance_digest": "2dcf85bf97bf9e99fa7ecfa09fad9b5cbb4d95abc6bcb579ca553882248b6fe9",
   "failed_rule_count": 0,
   "issue_count": 0,
   "issues": [],
   "passed_rule_count": 20,
   "pathway_binding_count": 1,
-  "policy_digest": "2e280ca81f7fb5f8e5e2dd3345a8f93ea7928a9a81055901038a8408356359e7",
+  "policy_digest": "2fac383468fc190e17fafc53e3b0f25d268825cd3dcd93c9966a265be00184f3",
   "rule_count": 20,
   "rule_results": [
     {
@@ -132,7 +132,7 @@
       "status": "passed"
     },
     {
-      "description": "Receipts must match the exact lock and expose declared, actual, and unused links.",
+      "description": "Locks and receipts must expose exact declared, actual, and unused links and match independently canonicalized claim envelopes.",
       "issue_count": 0,
       "rule_id": "BCF-015",
       "status": "passed"
