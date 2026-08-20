@@ -6,10 +6,8 @@ the private compatibility module into cohesive provider modules.
 
 from ._legacy import (
     ATTESTED_OBJECT_FLOW_DATAFLOW,
-    AUTHORITY_COORDINATES,
     EXECUTABLE_COMPOSITION_STATUSES,
     EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT,
-    INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT,
     AllowedPathwayAlternatives,
     AlternativeSelectionScope,
     BindingLock,
@@ -17,16 +15,11 @@ from ._legacy import (
     BindingStateError,
     BoundComposition,
     BoundPathway,
-    CandidateDeclaration,
     CandidateExecutionScope,
-    CandidateMechanismEvidence,
-    CandidateRelationReview,
-    CandidateUseRecord,
     CompositionExecutionScope,
     CrossingInvocationRecord,
     CrossingResultReference,
     FlowDerivedInstanceReference,
-    InvalidCandidateError,
     InvocationRecord,
     PathwayBindingSession,
     UnbindableCompositionError,
@@ -41,6 +34,15 @@ from .authority import (
     CausalPathwayAuthority,
     UnknownCompositionError,
     UnknownPathwayError,
+)
+from .candidates import (
+    AUTHORITY_COORDINATES,
+    INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT,
+    CandidateDeclaration,
+    CandidateMechanismEvidence,
+    CandidateRelationReview,
+    CandidateUseRecord,
+    InvalidCandidateError,
 )
 from .effects import (
     CLAIM_QUALIFYING_EFFECT_OUTCOMES,

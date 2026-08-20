@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iterations 118-120 complete; Iterations 121-125 planned
+**Status:** Iterations 118-121 complete; Iterations 122-125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -523,6 +523,18 @@ proofs, and invalid-relabel controls into `candidates.py`. Introduce the narrow
 factory or recorder protocol needed to avoid candidate/session/scope cycles.
 Replay the candidate-focused R4-R8 regressions and mutation pressures at this
 checkpoint.
+
+Iteration 121 passed with candidate declaration and invalid-relabel validation,
+review authority, executable identity, request provenance, type-preserving
+omission counterfactuals, source-dependency proofs, and candidate witness
+construction isolated in `candidates.py`. A six-method structural host protocol
+and two runtime adapters avoid a candidate/session/scope import cycle. The I118
+oracle remained byte-stable, all 124 focused tests passed, both 20-rule
+conformance policies retained their accepted digests, and the R4-B01 through
+R8-B01 regressions plus candidate mutation controls replayed successfully. The
+full project suite remains deferred to the planned I123 structural-completion
+gate. See the
+[Iteration 121 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration121.md).
 
 ## Iteration 122: Runtime Scopes And State Ownership
 

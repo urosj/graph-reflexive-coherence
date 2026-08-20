@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iterations 118-120 complete; Iterations 121-125 planned and not
+**Status:** Iterations 118-121 complete; Iterations 122-125 planned and not
 started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
@@ -362,19 +362,19 @@ next.
 
 ## Iteration 121: Candidate Subsystem
 
-- [ ] Make candidate declarations, relation reviews, request provenance,
+- [x] Make candidate declarations, relation reviews, request provenance,
       invalid-relabel constraints, source-consumption proofs, omission
       counterfactuals, typed defaults, and witnesses the responsibility of the
       first-class `candidates.py` subsystem.
-- [ ] Move verified candidate mechanisms, candidate request wrappers, AST and
+- [x] Move verified candidate mechanisms, candidate request wrappers, AST and
       type-preserving default evaluation, and candidate execution proof
       primitives into that subsystem.
-- [ ] Introduce only the narrow factory or recorder protocol required to avoid
+- [x] Introduce only the narrow factory or recorder protocol required to avoid
       candidate/session/scope cycles; do not introduce a concrete session
       dependency.
-- [ ] Replay the candidate-focused R4-B01 through R8-B01 regressions and
+- [x] Replay the candidate-focused R4-B01 through R8-B01 regressions and
       candidate mutation falsifiers before continuing.
-- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+- [x] Pass the focused binder, API-freeze, golden-corpus, conformance, and
       static gates before continuing.
 
 ## Iteration 122: Runtime Scopes And State Ownership

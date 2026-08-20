@@ -20,6 +20,7 @@ FACADE_PATH = BINDING_PACKAGE_PATH / "__init__.py"
 IDENTITY_PATH = BINDING_PACKAGE_PATH / "identity.py"
 EFFECTS_PATH = BINDING_PACKAGE_PATH / "effects.py"
 AUTHORITY_PATH = BINDING_PACKAGE_PATH / "authority.py"
+CANDIDATES_PATH = BINDING_PACKAGE_PATH / "candidates.py"
 LEGACY_PATH = BINDING_PACKAGE_PATH / "_legacy.py"
 ACCEPTANCE_ANCHOR_PATH = (
     ROOT
@@ -89,11 +90,15 @@ class CausalPathwayBindingI120Test(unittest.TestCase):
         self.assertEqual({"identity"}, _relative_imports(EFFECTS_PATH))
         self.assertEqual({"effects", "identity"}, _relative_imports(AUTHORITY_PATH))
         self.assertEqual(
-            {"authority", "effects", "identity"},
+            {"authority", "identity"},
+            _relative_imports(CANDIDATES_PATH),
+        )
+        self.assertEqual(
+            {"authority", "candidates", "effects", "identity"},
             _relative_imports(LEGACY_PATH),
         )
         self.assertEqual(
-            {"_legacy", "authority", "effects", "identity"},
+            {"_legacy", "authority", "candidates", "effects", "identity"},
             _relative_imports(FACADE_PATH),
         )
         self.assertNotIn("PathwayBindingSession", EFFECTS_PATH.read_text())
