@@ -21,10 +21,11 @@ IDENTITY_PATH = BINDING_PACKAGE_PATH / "identity.py"
 EFFECTS_PATH = BINDING_PACKAGE_PATH / "effects.py"
 AUTHORITY_PATH = BINDING_PACKAGE_PATH / "authority.py"
 CANDIDATES_PATH = BINDING_PACKAGE_PATH / "candidates.py"
-LEGACY_PATH = BINDING_PACKAGE_PATH / "_legacy.py"
+SCOPES_PATH = BINDING_PACKAGE_PATH / "scopes.py"
+ARTIFACTS_PATH = BINDING_PACKAGE_PATH / "artifacts.py"
+SESSION_PATH = BINDING_PACKAGE_PATH / "session.py"
 ACCEPTANCE_ANCHOR_PATH = (
-    ROOT
-    / "implementation/evidence/causal-pathway-binding/"
+    ROOT / "implementation/evidence/causal-pathway-binding/"
     "binding-acceptance-anchor.json"
 )
 TRUSTED_ACCEPTANCE_ANCHOR_DIGEST = (
@@ -94,11 +95,34 @@ class CausalPathwayBindingI120Test(unittest.TestCase):
             _relative_imports(CANDIDATES_PATH),
         )
         self.assertEqual(
-            {"authority", "candidates", "effects", "identity"},
-            _relative_imports(LEGACY_PATH),
+            {"candidates", "identity"},
+            _relative_imports(SCOPES_PATH),
         )
         self.assertEqual(
-            {"_legacy", "authority", "candidates", "effects", "identity"},
+            {"authority", "candidates", "effects", "identity", "scopes"},
+            _relative_imports(ARTIFACTS_PATH),
+        )
+        self.assertEqual(
+            {
+                "artifacts",
+                "authority",
+                "candidates",
+                "effects",
+                "identity",
+                "scopes",
+            },
+            _relative_imports(SESSION_PATH),
+        )
+        self.assertEqual(
+            {
+                "artifacts",
+                "authority",
+                "candidates",
+                "effects",
+                "identity",
+                "scopes",
+                "session",
+            },
             _relative_imports(FACADE_PATH),
         )
         self.assertNotIn("PathwayBindingSession", EFFECTS_PATH.read_text())
@@ -108,8 +132,7 @@ class CausalPathwayBindingI120Test(unittest.TestCase):
         self.assertEqual(PUBLIC_EFFECT_NAMES, set(effects_api.__all__))
         _assert_owned_by(self, effects_api, {"EffectOutcomeContract"})
         self.assertTrue(
-            PRIVATE_EFFECT_DEFINITIONS
-            <= _top_level_definitions(EFFECTS_PATH)
+            PRIVATE_EFFECT_DEFINITIONS <= _top_level_definitions(EFFECTS_PATH)
         )
         for name in sorted(PUBLIC_EFFECT_NAMES):
             with self.subTest(name=name):
@@ -120,25 +143,24 @@ class CausalPathwayBindingI120Test(unittest.TestCase):
         self.assertEqual(PUBLIC_AUTHORITY_NAMES, set(authority_api.__all__))
         _assert_owned_by(self, authority_api, PUBLIC_AUTHORITY_NAMES)
         self.assertTrue(
-            PRIVATE_AUTHORITY_DEFINITIONS
-            <= _top_level_definitions(AUTHORITY_PATH)
+            PRIVATE_AUTHORITY_DEFINITIONS <= _top_level_definitions(AUTHORITY_PATH)
         )
         for name in sorted(PUBLIC_AUTHORITY_NAMES):
             with self.subTest(name=name):
                 self.assertIs(getattr(authority_api, name), getattr(binding_api, name))
                 self.assertIs(getattr(binding_api, name), getattr(public_api, name))
 
-    def test_extracted_definitions_are_absent_from_legacy_module(self) -> None:
+    def test_extracted_definitions_are_absent_from_session_module(self) -> None:
         extracted = (
             {"EffectOutcomeContract"}
             | PRIVATE_EFFECT_DEFINITIONS
             | PUBLIC_AUTHORITY_NAMES
             | PRIVATE_AUTHORITY_DEFINITIONS
         )
-        self.assertTrue(extracted.isdisjoint(_top_level_definitions(LEGACY_PATH)))
-        legacy_source = LEGACY_PATH.read_text(encoding="utf-8")
-        self.assertNotIn("RETURN_CATEGORIES:", legacy_source)
-        self.assertNotIn("AUTHORITY_PATHS:", legacy_source)
+        self.assertTrue(extracted.isdisjoint(_top_level_definitions(SESSION_PATH)))
+        session_source = SESSION_PATH.read_text(encoding="utf-8")
+        self.assertNotIn("RETURN_CATEGORIES:", session_source)
+        self.assertNotIn("AUTHORITY_PATHS:", session_source)
 
     def test_loaded_authority_state_is_read_only_and_defensively_returned(
         self,

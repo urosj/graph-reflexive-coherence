@@ -102,6 +102,33 @@ class _CandidateExecutionScope(Protocol):
 CandidateExecutionScope = _CandidateExecutionScope
 
 
+class _CandidateRuntime(Protocol):
+    """Execution collaborator required by a verified candidate mechanism."""
+
+    def authorize_candidate_mechanism(
+        self,
+        *,
+        candidate_id: str,
+        symbol_id: str,
+    ) -> CandidateExecutionScope: ...
+
+    def observe_object_flow(
+        self,
+        *,
+        target: Callable[..., Any],
+        arguments: Mapping[str, object],
+        result: object | None,
+    ) -> dict[str, Any]: ...
+
+    def record_candidate_mechanism_event(
+        self,
+        scope: CandidateExecutionScope,
+        event: _CandidateMechanismEvent,
+        *,
+        result: object | None,
+    ) -> None: ...
+
+
 class PathwayBindingSession(Protocol):
     """Narrow candidate factory and recorder host supplied by the runtime."""
 
@@ -123,28 +150,7 @@ class PathwayBindingSession(Protocol):
         candidate_id: str,
     ) -> VerifiedCandidateMechanism: ...
 
-    def _assert_candidate_mechanism_invocation_allowed(
-        self,
-        *,
-        candidate_id: str,
-        symbol_id: str,
-    ) -> CandidateExecutionScope: ...
-
-    def _runtime_object_flow(
-        self,
-        *,
-        target: Callable[..., Any],
-        arguments: Mapping[str, object],
-        result: object | None,
-    ) -> dict[str, Any]: ...
-
-    def _record_candidate_mechanism_event(
-        self,
-        scope: CandidateExecutionScope,
-        event: _CandidateMechanismEvent,
-        *,
-        result: object | None,
-    ) -> None: ...
+    def _candidate_runtime(self) -> _CandidateRuntime: ...
 
 
 def _source_default_payload(value: Any) -> dict[str, Any]:
@@ -1107,7 +1113,7 @@ class VerifiedCandidateMechanism:
                 "reviewed candidate source-result parameter requires one safe "
                 "frozen omission default"
             )
-        self._session = session
+        self._runtime = session._candidate_runtime()
         self._candidate_id = candidate_id
         self._mechanism_id = mechanism_id
         self._symbol = symbol
@@ -1175,7 +1181,7 @@ class VerifiedCandidateMechanism:
         return self._target, current_identity
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
-        scope = self._session._assert_candidate_mechanism_invocation_allowed(
+        scope = self._runtime.authorize_candidate_mechanism(
             candidate_id=self._candidate_id,
             symbol_id=self.symbol_id,
         )
@@ -1189,12 +1195,12 @@ class VerifiedCandidateMechanism:
         try:
             result = target(*args, **kwargs)
         except Exception as exc:
-            runtime_object_flow = self._session._runtime_object_flow(
+            runtime_object_flow = self._runtime.observe_object_flow(
                 target=target,
                 arguments=bound_arguments,
                 result=None,
             )
-            self._session._record_candidate_mechanism_event(
+            self._runtime.record_candidate_mechanism_event(
                 scope,
                 _CandidateMechanismEvent(
                     candidate_id=self._candidate_id,
@@ -1236,12 +1242,12 @@ class VerifiedCandidateMechanism:
                 exposed_result,
                 _CandidateRequestMapping,
             )
-        runtime_object_flow = self._session._runtime_object_flow(
+        runtime_object_flow = self._runtime.observe_object_flow(
             target=target,
             arguments=bound_arguments,
             result=exposed_result,
         )
-        self._session._record_candidate_mechanism_event(
+        self._runtime.record_candidate_mechanism_event(
             scope,
             _CandidateMechanismEvent(
                 candidate_id=self._candidate_id,

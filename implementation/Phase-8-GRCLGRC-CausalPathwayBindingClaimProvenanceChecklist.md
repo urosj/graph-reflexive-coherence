@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iterations 118-121 complete; Iterations 122-125 planned and not
+**Status:** Iterations 118-123 complete; Iterations 124-125 planned and not
 started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
@@ -379,47 +379,47 @@ next.
 
 ## Iteration 122: Runtime Scopes And State Ownership
 
-- [ ] Extract invocation, crossing, and candidate records; crossing and
+- [x] Extract invocation, crossing, and candidate records; crossing and
       flow-derived references; and composition, alternative-selection, and
       candidate execution scopes into `scopes.py`.
-- [ ] Give invocation ledgers, object-flow identity, and active-scope state
+- [x] Give invocation ledgers, object-flow identity, and active-scope state
       cohesive owners instead of retaining unrelated mutable fields on one
       class.
-- [ ] Replace cross-object `_`-attribute reads and broad session fan-out with
+- [x] Replace cross-object `_`-attribute reads and broad session fan-out with
       narrow internal collaborator methods or protocols.
-- [ ] Keep concrete `PathwayBindingSession` dependencies out of scope, effect,
+- [x] Keep concrete `PathwayBindingSession` dependencies out of scope, effect,
       and artifact collaborators; scopes use narrow recorder/provenance
       protocols.
-- [ ] Replay composition-flow, dynamic-choice, producer/adapter-owner, and
+- [x] Replay composition-flow, dynamic-choice, producer/adapter-owner, and
       endpoint-co-use-without-flow pressures before continuing.
-- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+- [x] Pass the focused binder, API-freeze, golden-corpus, conformance, and
       static gates before continuing.
 
 ## Iteration 123: Artifacts And Session Consolidation
 
-- [ ] Complete the internal package with `identity.py`, `effects.py`,
+- [x] Complete the internal package with `identity.py`, `effects.py`,
       `authority.py`, `candidates.py`, `scopes.py`, `artifacts.py`, and
       `session.py` behind the compatibility `binding/__init__.py`.
-- [ ] Extract lock, receipt, pathway-use graph, execution-transcript digest,
+- [x] Extract lock, receipt, pathway-use graph, execution-transcript digest,
       claim-envelope, and canonical serialization construction into
       `artifacts.py` as near-pure operations over immutable records.
-- [ ] Keep identity free of claim interpretation, authority mostly immutable,
+- [x] Keep identity free of claim interpretation, authority mostly immutable,
       artifact derivation near-pure over immutable records, and session limited
       to orchestration.
-- [ ] Reduce `session.py` to phase control, declarations, linking, active-scope
+- [x] Reduce `session.py` to phase control, declarations, linking, active-scope
       orchestration, runtime-state ownership, binding handles, freeze, and seal.
-- [ ] Give phase, declaration, link, and artifact state cohesive owners within
+- [x] Give phase, declaration, link, and artifact state cohesive owners within
       the remaining orchestration boundary.
-- [ ] Remove the temporary monolith.
-- [ ] Freeze and test the complete dependency-provider-first order: `identity
+- [x] Remove the temporary monolith.
+- [x] Freeze and test the complete dependency-provider-first order: `identity
       -> effects -> authority -> candidates -> scopes -> artifacts -> session`;
       each module may import only preceding layers, though it may skip layers.
-- [ ] Keep the independent binding conformance checker independently
+- [x] Keep the independent binding conformance checker independently
       implemented after extraction; schemas and harmless constants may be
       shared, but load-bearing derivations may not.
-- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+- [x] Pass the focused binder, API-freeze, golden-corpus, conformance, and
       static gates after removing the temporary monolith.
-- [ ] Run the full project suite after the production refactor becomes
+- [x] Run the full project suite after the production refactor becomes
       structurally complete.
 
 ## Iteration 124: Binder Examples And Guidance
@@ -459,7 +459,7 @@ next.
       hard-coded or source-unused candidate requests, and stale source content;
       require the relevant independent gates to fail closed.
 - [ ] Run all binder examples and focused binding/conformance/I116 tests.
-- [ ] Run the full project suite (current baseline: 1,320 tests).
+- [ ] Run the full project suite (current baseline: 1,348 tests).
 - [ ] Replay the accepted 68-case independent semantic gate.
 - [ ] Pass both 20-rule conformance policies, Ruff, mypy, compileall, and
       `git diff --check` before closing Iteration 125.

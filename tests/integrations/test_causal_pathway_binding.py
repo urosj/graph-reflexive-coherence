@@ -555,8 +555,9 @@ class CausalPathwayBindingTest(unittest.TestCase):
         )
         schedule = packet.symbol("packet_schedule", instance=model)
         session.freeze_lock()
-        self.assertEqual(1, len(session._verified_source_files))
-        source_file = next(iter(session._verified_source_files.values()))
+        source_files = session._verified_source_file_records()
+        self.assertEqual(1, len(source_files))
+        source_file = next(iter(source_files.values()))
         source_file.stamp = (source_file.stamp[0] + 1, source_file.stamp[1])
 
         with (
@@ -582,7 +583,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
         )
         schedule = packet.symbol("packet_schedule", instance=model)
         session.freeze_lock()
-        source_file = next(iter(session._verified_source_files.values()))
+        source_file = next(iter(session._verified_source_file_records().values()))
         source_file.stamp = (source_file.stamp[0] + 1, source_file.stamp[1])
 
         with patch.object(

@@ -34,10 +34,11 @@ facade.
   hashing and verification, callable definition/owner resolution, callable
   identities and cached guards, source-symbol bindings, crossing bindings, and
   the errors required to fail those operations closed.
-- [`binding/_legacy.py`](../src/pygrc/causal_pathways/binding/_legacy.py) retains
-  authority, effects, candidates, scopes, artifacts, and session orchestration
-  until their assigned iterations. It depends on `identity.py`; `identity.py`
-  has no reciprocal package dependency and no session reference.
+- the I119 `binding/_legacy.py` compatibility implementation was removed by
+  I123; its remaining responsibilities now live in
+  [`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py).
+  `identity.py` retains no reciprocal package dependency and no session
+  reference.
 - The former `src/pygrc/causal_pathways/binding.py` no longer exists, so Python
   never has to choose between a same-named module and package.
 

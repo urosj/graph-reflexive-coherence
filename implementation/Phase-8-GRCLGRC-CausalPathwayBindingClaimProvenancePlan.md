@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iterations 118-121 complete; Iterations 122-125 planned
+**Status:** Iterations 118-123 complete; Iterations 124-125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -441,7 +441,8 @@ checker guard, 109 focused tests, and 1,320 full-suite tests. See the
   [`pygrc.causal_pathways` public surface](../src/pygrc/causal_pathways/__init__.py),
   pre-refactor binder monolith identified by the I118 source commit, path, and
   SHA-256, its current
-  [private compatibility successor](../src/pygrc/causal_pathways/binding/_legacy.py),
+  private compatibility successor (removed in I123; see
+  [`session.py`](../src/pygrc/causal_pathways/binding/session.py)),
   [project configuration](../pyproject.toml), and
   [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json).
 - Authority specifications: the
@@ -544,6 +545,19 @@ with narrow protocols and introduce cohesive owners for invocation ledgers,
 active scopes, object-flow identity, and related runtime state. Replay
 composition-flow, dynamic-choice, and owner-erasure pressures.
 
+Iteration 122 passed. Invocation, crossing, and candidate mechanism records;
+crossing and flow-derived references; and all three execution scopes now live
+in `scopes.py`. A cohesive runtime-state collaborator owns invocation ledgers,
+retained results, deterministic object identity, event ordering, and active
+scope state. Scope objects and executable wrappers retain that collaborator
+instead of a concrete session, and candidate execution uses a three-method
+runtime protocol. The I118 oracle remained byte-stable, all 130 focused tests
+passed, both 20-rule conformance policies retained their accepted digests, and
+the 15 composition-flow, dynamic-choice, producer/adapter-owner, and endpoint
+co-use pressures replayed successfully. The full project suite remains
+deferred to the planned I123 structural-completion gate. See the
+[Iteration 122 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration122.md).
+
 ## Iteration 123: Artifacts And Session Consolidation
 
 Extract lock, receipt, use-graph, transcript, and claim-envelope construction
@@ -551,6 +565,17 @@ into `artifacts.py`. Reduce `session.py` to phase control, declarations,
 linking, binding handles, freeze, seal, and collaborator orchestration. Remove
 the temporary monolith and enforce the complete dependency DAG with the
 architecture test.
+
+Iteration 123 passed. Canonical lock, receipt, use-graph, transcript, and
+claim-envelope construction now lives in the session-independent
+`artifacts.py` provider. Binding handles and the remaining declaration, link,
+phase, identity-cache, freeze, seal, and collaborator orchestration live in
+`session.py`, with cohesive state owners rather than a flat mutable session.
+The temporary `_legacy.py` module is removed and the complete provider-first
+dependency DAG is enforced. The I118 oracle remained byte-stable, all 137
+focused tests passed, the full 1,348-test project suite passed, and both 20-rule
+conformance policies retained their accepted digests. See the
+[Iteration 123 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration123.md).
 
 ## Iteration 124: Binder Examples And Guidance
 
@@ -584,7 +609,7 @@ widening, endpoint co-use without composition flow, hard-coded candidate target
 requests, source-present-but-unused candidates, and stale source content. Each
 relevant independent gate must still fail closed.
 
-The 1,320-test project suite, accepted 68-case independent semantic gate, both
+The 1,348-test project suite, accepted 68-case independent semantic gate, both
 20-rule conformance policies, all examples, Ruff, mypy, compileall, and diff
 checks must pass before Iteration 125 can close. Closure requires zero
 semantic, artifact, or runtime differences attributable to the refactor.

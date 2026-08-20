@@ -17,6 +17,7 @@ BINDING_PACKAGE_PATH = ROOT / "src/pygrc/causal_pathways/binding"
 FACADE_PATH = BINDING_PACKAGE_PATH / "__init__.py"
 IDENTITY_PATH = BINDING_PACKAGE_PATH / "identity.py"
 LEGACY_PATH = BINDING_PACKAGE_PATH / "_legacy.py"
+SESSION_PATH = BINDING_PACKAGE_PATH / "session.py"
 
 PUBLIC_IDENTITY_NAMES = {
     "AuthorityDriftError",
@@ -78,17 +79,16 @@ class CausalPathwayBindingI119Test(unittest.TestCase):
         self.assertFalse(BINDING_MODULE_PATH.exists())
         self.assertTrue(FACADE_PATH.is_file())
         self.assertTrue(IDENTITY_PATH.is_file())
-        self.assertTrue(LEGACY_PATH.is_file())
+        self.assertFalse(LEGACY_PATH.exists())
+        self.assertTrue(SESSION_PATH.is_file())
         self.assertEqual(FACADE_PATH.resolve(), Path(binding_api.__file__).resolve())
 
     def test_identity_is_a_session_independent_leaf_provider(self) -> None:
         self.assertEqual(set(), _relative_imports(IDENTITY_PATH))
         self.assertNotIn("PathwayBindingSession", IDENTITY_PATH.read_text())
         self.assertTrue(IDENTITY_NAMES <= _top_level_definitions(IDENTITY_PATH))
-        self.assertTrue(
-            IDENTITY_NAMES.isdisjoint(_top_level_definitions(LEGACY_PATH))
-        )
-        self.assertIn("identity", _relative_imports(LEGACY_PATH))
+        self.assertTrue(IDENTITY_NAMES.isdisjoint(_top_level_definitions(SESSION_PATH)))
+        self.assertIn("identity", _relative_imports(SESSION_PATH))
 
     def test_public_identity_exports_are_owned_by_identity_provider(self) -> None:
         self.assertEqual(PUBLIC_IDENTITY_NAMES, set(identity_api.__all__))

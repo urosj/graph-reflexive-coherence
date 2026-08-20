@@ -4,28 +4,10 @@ Public imports remain stable while implementation responsibilities move from
 the private compatibility module into cohesive provider modules.
 """
 
-from ._legacy import (
-    ATTESTED_OBJECT_FLOW_DATAFLOW,
-    EXECUTABLE_COMPOSITION_STATUSES,
+from .artifacts import (
     EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT,
-    AllowedPathwayAlternatives,
-    AlternativeSelectionScope,
     BindingLock,
     BindingReceipt,
-    BindingStateError,
-    BoundComposition,
-    BoundPathway,
-    CandidateExecutionScope,
-    CompositionExecutionScope,
-    CrossingInvocationRecord,
-    CrossingResultReference,
-    FlowDerivedInstanceReference,
-    InvocationRecord,
-    PathwayBindingSession,
-    UnbindableCompositionError,
-    VerifiedCallable,
-    VerifiedCompositionCrossing,
-    composition_dataflow_contract,
     execution_transcript_digest,
     unbound_execution_classification,
 )
@@ -61,6 +43,28 @@ from .identity import (
     binding_source_manifest_digest,
     canonical_digest,
     sha256_file,
+)
+from .scopes import (
+    ATTESTED_OBJECT_FLOW_DATAFLOW,
+    AllowedPathwayAlternatives,
+    AlternativeSelectionScope,
+    BindingStateError,
+    CandidateExecutionScope,
+    CompositionExecutionScope,
+    CrossingInvocationRecord,
+    CrossingResultReference,
+    FlowDerivedInstanceReference,
+    InvocationRecord,
+    composition_dataflow_contract,
+)
+from .session import (
+    EXECUTABLE_COMPOSITION_STATUSES,
+    BoundComposition,
+    BoundPathway,
+    PathwayBindingSession,
+    UnbindableCompositionError,
+    VerifiedCallable,
+    VerifiedCompositionCrossing,
 )
 
 __all__ = [

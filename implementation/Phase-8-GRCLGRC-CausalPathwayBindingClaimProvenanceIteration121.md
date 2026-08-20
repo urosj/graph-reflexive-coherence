@@ -132,7 +132,8 @@ identity, effect, and authority dependency assertion.
 Implementation and enforcement:
 
 - [`binding/candidates.py`](../src/pygrc/causal_pathways/binding/candidates.py)
-- [`binding/_legacy.py`](../src/pygrc/causal_pathways/binding/_legacy.py)
+- [`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py), the
+  I123 successor to the temporary compatibility module
 - [`binding/__init__.py`](../src/pygrc/causal_pathways/binding/__init__.py)
 - [I121 architecture tests](../tests/integrations/test_causal_pathway_binding_i121.py)
 - [I120 dependency tests](../tests/integrations/test_causal_pathway_binding_i120.py)
