@@ -177,6 +177,42 @@ not behavioral evidence. This does not claim a universal causal-work API,
 causal-work owner, generic native admission, route formation, Read-Back,
 ecological support, shared-medium coordination, agency, or N32.
 
+## Causal-Pathway Binding And Claim Provenance
+
+Bounded claim: evidence-bearing consumers can bind exact admitted pathways and
+executable registered compositions, declare consumer-owned dynamic
+alternatives, or retain distinct unregistered work as experimental provenance.
+Locks freeze expected architecture before execution; receipts derive actual
+use, row-specific witnesses, a use graph, and a conservative claim envelope.
+
+Evidence and usage pointers:
+
+- [Stable binding reference](GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md):
+  Public API, exact artifact-field contracts, claim qualification, candidate
+  contract, and independent conformance requirements.
+- [User and agent guide](GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md):
+  The `select -> bind -> lock -> execute -> seal -> validate` workflow,
+  failure interpretation, debugging, and safe extension rules.
+- [Runnable binder examples](../../examples/causal_pathway_binding/README.md):
+  Admitted pathway, registered composition, dynamic choice, unregistered
+  candidate, and direct-unbound comparisons.
+- [Binding map](../../specs/grc-lgrc-causal-pathway-bindings.json): Exact
+  content-addressed stage and crossing linkage authority.
+- [Binding conformance policy](../../specs/grc-lgrc-causal-pathway-binding-conformance.json):
+  Independent prospective rules for locks, receipts, witnesses, candidates,
+  use graphs, and claim envelopes.
+- [Binding acceptance anchor](../../implementation/evidence/causal-pathway-binding/binding-acceptance-anchor.json):
+  Reviewed binding-map, source-manifest, semantic, and effect-contract
+  identity; its expected digest must arrive through separate trust input.
+- [Binding closeout](../../implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md):
+  Original I112-I116 delivery boundary and evidence package.
+
+Claim ceiling: versioned, operation-scoped pathway binding and conservative
+claim provenance for represented verified calls. `claim_scope =
+bound_invocations_only` does not establish whole-run causal closure, absence of
+unbound influences, generic work admission, automatic selection, candidate
+promotion, native route formation, agency, Read-Back, or N32.
+
 ## N05-N11 Foundation Arc
 
 Bounded claim: N05-N11 record a bounded LGRC agentic-like foundation arc with

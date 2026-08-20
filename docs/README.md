@@ -28,6 +28,7 @@ Current guides:
 - [GRC Runtime](reference/GRC-Runtime-ReferenceGuide.md)
 - [GRC/LGRC Causal Pathway Guide](reference/GRC-LGRC-CausalPathwayGuide.md)
 - [GRC/LGRC Causal Pathway Binding And Claim Provenance](reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
+- [GRC/LGRC Causal Pathway Binding User And Agent Guide](reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md)
 - [GRC/LGRC Composition Matrix](reference/GRC-LGRC-CompositionMatrix.md)
 - [GRCL](reference/GRCL-ReferenceGuide.md)
 - [Landscape Language](reference/LandscapeLanguage-ReferenceGuide.md)
@@ -50,10 +51,13 @@ root, and the source audit plus I106-I111 supporting evidence are indexed in
 `implementation/investigations/causal-pathway-consolidation/`. The path-only
 evidence-identity transitions are recorded explicitly.
 
-The causal-pathway binding guide covers the Iterations 112-116 binding plane:
-exact mechanism-specific linkage, pre-execution locks, actual-use receipts,
-candidate declarations, conservative claim provenance, and prospective
-conformance. It does not add a runtime dispatcher or change GRC/LGRC dynamics.
+The causal-pathway binding reference covers the stable public API, exact
+artifact fields, mechanism-specific linkage, pre-execution locks, actual-use
+receipts, candidate declarations, conservative claim provenance, and
+prospective conformance. The companion user-and-agent guide and
+[runnable examples](../examples/causal_pathway_binding/README.md) cover the
+`select -> bind -> lock -> execute -> seal -> validate` workflow. They do not
+add a runtime dispatcher or change GRC/LGRC dynamics.
 
 Status notes:
 

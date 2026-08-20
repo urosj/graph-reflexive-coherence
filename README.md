@@ -85,7 +85,11 @@ and the follow-on binding and claim-provenance tranche is complete through
 Iteration 116. Evidence-bearing consumers can bind exact admitted pathways or
 registered compositions, or declare visibly unregistered candidates, while
 the existing mechanism-specific runtime remains unchanged. See the
-[binding reference guide](docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md).
+[binding reference guide](docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md),
+the task-oriented [user and agent guide](docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md),
+and the [five runnable binder examples](examples/causal_pathway_binding/README.md).
+Binding receipts are operation-scoped: `bound_invocations_only` does not prove
+whole-run closure or the absence of unbound influences.
 
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current

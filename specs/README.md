@@ -89,7 +89,10 @@ The implementation strategy assumed by these specs is:
   Iteration 115-frozen prospective policy for exact locks, receipts, use
   graphs, candidates, and structured claim envelopes. Its separate checker
   enforces 20 rules and stale-to-pending-review behavior without executing
-  causal mechanisms.
+  causal mechanisms. Operator-facing use is documented in the
+  [binding reference](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md),
+  [user and agent guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md),
+  and [runnable examples](../examples/causal_pathway_binding/README.md).
 - `lgrc-9-v3-restoration-identity.md`
   Implemented and validated versioned LGRC9V3 restoration-identity contract
   over LGRC runtime state and a read-only projection of its embedded GRC9V3

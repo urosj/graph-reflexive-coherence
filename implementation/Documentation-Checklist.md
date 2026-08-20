@@ -137,8 +137,14 @@ path-only evidence-identity migrations recorded explicitly.
 - [x] Document admitted pathway/composition binding and explicit candidates.
 - [x] Document locks, receipts, use graphs, dynamic choice, and conformance.
 - [x] Preserve unbound compatibility while rejecting unbound claim provenance.
+- [x] Add the [binding user and agent guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md).
+- [x] Add [five runnable binder examples](../examples/causal_pathway_binding/README.md).
+- [x] Document the stable public surface, exact artifact fields, final
+      candidate contract, and operation-scoped provenance warning.
 
-Status: complete through Phase 8 Iteration 116. The binding layer consumes the
+Status: complete through Phase 8 Iteration 124. The binding layer consumes the
 closed I105-I111 knowledge plane and delegates unchanged mechanism-specific
 runtime callables. Accepted causal-pathway claims require a valid receipt;
 unrelated code and internal mechanism calls do not acquire binding boilerplate.
+The stable reference and task-oriented guide explicitly preserve the
+`bound_invocations_only` claim boundary.

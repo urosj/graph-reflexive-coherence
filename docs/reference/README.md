@@ -11,6 +11,7 @@ Canonical operator-facing guides live here. Implementation plans and checklists 
 - [GRC Runtime Reference Guide](GRC-Runtime-ReferenceGuide.md)
 - [GRC/LGRC Causal Pathway Guide](GRC-LGRC-CausalPathwayGuide.md)
 - [GRC/LGRC Causal Pathway Binding And Claim Provenance](GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
+- [GRC/LGRC Causal Pathway Binding User And Agent Guide](GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md)
 - [GRC/LGRC Composition Matrix](GRC-LGRC-CompositionMatrix.md)
 - [GRCL Reference Guide](GRCL-ReferenceGuide.md)
 - [Landscape Compiler And Lowering Reference Guide](LandscapeCompiler-ReferenceGuide.md)
@@ -46,6 +47,12 @@ without changing those knowledge authorities or the mechanism runtime. Its
 use graph, candidate boundary, and 20-rule prospective checker make admitted
 pathway identity structural for accepted claim-bearing consumers. Unbound code
 remains executable but is not claim-qualified evidence.
+
+Iteration 124 adds five runnable declaration examples and separates the
+task-oriented user-and-agent workflow from the exact stable reference. Both
+state that `bound_invocations_only` is operation-scoped and cannot establish
+whole-run closure or the absence of unbound influences. Start the examples at
+[examples/causal_pathway_binding/README.md](../../examples/causal_pathway_binding/README.md).
 
 GRC9V3 Lane B interpretation is split by responsibility:
 `GRC-Runtime-ReferenceGuide.md` covers lane behavior, `Telemetry-ReferenceGuide.md`

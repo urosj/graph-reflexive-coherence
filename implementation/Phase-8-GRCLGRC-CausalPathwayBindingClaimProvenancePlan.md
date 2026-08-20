@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iterations 118-123 complete; Iterations 124-125 planned
+**Status:** Iterations 118-124 complete; Iteration 125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -583,6 +583,19 @@ Add the five runnable examples, the user-and-agent guide, the revised stable
 reference, the operation-scoped provenance warning, and all repository
 discovery links. Perform this only after the public implementation surface has
 settled.
+
+Iteration 124 passed. Five runnable examples now cover admitted pathway use,
+registered composition, both branches of consumer-owned dynamic choice, an
+executable unregistered candidate, and direct-unbound versus bound execution.
+The new user-and-agent guide covers `select -> bind -> lock -> execute -> seal
+-> validate`, failures, debugging, conformance, and safe extension. The stable
+reference lists all 48 frozen exports, exact V1 lock/receipt fields, and the
+final candidate contract directly without making internal modules
+contractual. All planned repository discovery surfaces now link both guides and
+the examples. The I118 oracle remained byte-stable, all 143 focused tests
+passed, and both 20-rule conformance policies retained their accepted digests.
+See the
+[Iteration 124 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration124.md).
 
 ## Iteration 125: Independent Pressure And Closeout
 

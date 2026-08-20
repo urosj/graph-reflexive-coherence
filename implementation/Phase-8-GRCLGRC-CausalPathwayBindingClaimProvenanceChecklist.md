@@ -1,7 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iterations 118-123 complete; Iterations 124-125 planned and not
-started.
+**Status:** Iterations 118-124 complete; Iteration 125 planned and not started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
 ## Global Boundaries
@@ -424,22 +423,22 @@ next.
 
 ## Iteration 124: Binder Examples And Guidance
 
-- [ ] State prominently that `bound_invocations_only` receipts certify only
+- [x] State prominently that `bound_invocations_only` receipts certify only
       represented bound operations, not whole-run causal closure or the absence
       of unbound influences.
-- [ ] Add runnable examples for an admitted pathway, registered composition,
+- [x] Add runnable examples for an admitted pathway, registered composition,
       explicit dynamic choice, conservative unregistered candidate flow, and
       valid direct-unbound/non-claim-qualified use.
-- [ ] Build the user-and-agent guide around `select -> bind -> lock -> execute
+- [x] Build the user-and-agent guide around `select -> bind -> lock -> execute
       -> seal -> validate`, with selection consumer-owned and candidate
       declaration leading only to experimental provenance.
-- [ ] Cover authority loading, declarations, scopes, conformance, failure
+- [x] Cover authority loading, declarations, scopes, conformance, failure
       interpretation, debugging, and safe extension practices in the guide.
-- [ ] Revise the binding reference guide for the stable public API and exact
+- [x] Revise the binding reference guide for the stable public API and exact
       artifact schemas without making internal module layout contractual.
-- [ ] Describe the final candidate contract directly in stable guidance; keep
+- [x] Describe the final candidate contract directly in stable guidance; keep
       R4-B01 through R8-B01 chronology in implementation and audit evidence.
-- [ ] Update the root README, docs indexes, claim-boundary index, examples
+- [x] Update the root README, docs indexes, claim-boundary index, examples
       index, specs index, and any new local example/reference indexes.
 
 ## Iteration 125: Independent Pressure And Closeout
