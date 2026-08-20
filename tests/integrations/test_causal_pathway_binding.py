@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import copy
 import inspect
 import json
 import unittest
@@ -13,6 +12,7 @@ from typing import Any, ClassVar
 from unittest.mock import patch
 
 import pygrc.causal_pathways.binding as binding_module
+import pygrc.causal_pathways.binding.identity as identity_module
 from pygrc.causal_pathways import (
     AuthorityDriftError,
     BindingStateError,
@@ -339,12 +339,17 @@ class CausalPathwayBindingTest(unittest.TestCase):
             session.freeze_lock()
 
     def test_anchor_rejects_self_consistent_p1_to_p2_map(self) -> None:
-        original_load = binding_module._load_json
+        original_read_text = Path.read_text
 
-        def mutated_load(path: Path) -> dict[str, Any]:
-            document = copy.deepcopy(original_load(path))
+        def mutated_read_text(
+            path: Path,
+            encoding: str | None = None,
+            errors: str | None = None,
+        ) -> str:
+            source = original_read_text(path, encoding=encoding, errors=errors)
             if path.name != "grc-lgrc-causal-pathway-bindings.json":
-                return document
+                return source
+            document = json.loads(source)
             stage = next(
                 item
                 for item in document["stage_bindings"]
@@ -356,14 +361,11 @@ class CausalPathwayBindingTest(unittest.TestCase):
                 document,
                 excluding="binding_map_digest",
             )
-            return document
+            return json.dumps(document)
 
         anchor = json.loads(ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8"))
         with (
-            patch(
-                "pygrc.causal_pathways.binding._load_json",
-                side_effect=mutated_load,
-            ),
+            patch.object(Path, "read_text", mutated_read_text),
             self.assertRaisesRegex(AuthorityDriftError, "pending independent review"),
         ):
             CausalPathwayAuthority.load(
@@ -373,25 +375,27 @@ class CausalPathwayBindingTest(unittest.TestCase):
             )
 
     def test_anchor_rejects_self_consistent_false_source_revision(self) -> None:
-        original_load = binding_module._load_json
+        original_read_text = Path.read_text
 
-        def mutated_load(path: Path) -> dict[str, Any]:
-            document = copy.deepcopy(original_load(path))
+        def mutated_read_text(
+            path: Path,
+            encoding: str | None = None,
+            errors: str | None = None,
+        ) -> str:
+            source = original_read_text(path, encoding=encoding, errors=errors)
             if path.name != "grc-lgrc-causal-pathway-bindings.json":
-                return document
+                return source
+            document = json.loads(source)
             document["source_revision"] = "0" * 40
             document["binding_map_digest"] = canonical_digest(
                 document,
                 excluding="binding_map_digest",
             )
-            return document
+            return json.dumps(document)
 
         anchor = json.loads(ACCEPTANCE_ANCHOR_PATH.read_text(encoding="utf-8"))
         with (
-            patch(
-                "pygrc.causal_pathways.binding._load_json",
-                side_effect=mutated_load,
-            ),
+            patch.object(Path, "read_text", mutated_read_text),
             self.assertRaisesRegex(AuthorityDriftError, "pending independent review"),
         ):
             CausalPathwayAuthority.load(
@@ -515,14 +519,14 @@ class CausalPathwayBindingTest(unittest.TestCase):
 
         with (
             patch.object(
-                binding_module,
+                identity_module,
                 "sha256_file",
-                wraps=binding_module.sha256_file,
+                wraps=identity_module.sha256_file,
             ) as source_hash,
             patch.object(
-                binding_module.inspect,
+                inspect,
                 "getsourcefile",
-                wraps=binding_module.inspect.getsourcefile,
+                wraps=inspect.getsourcefile,
             ) as source_lookup,
         ):
             schedule(
@@ -556,7 +560,7 @@ class CausalPathwayBindingTest(unittest.TestCase):
         source_file.stamp = (source_file.stamp[0] + 1, source_file.stamp[1])
 
         with (
-            patch.object(binding_module, "sha256_file", return_value="0" * 64) as rehash,
+            patch.object(identity_module, "sha256_file", return_value="0" * 64) as rehash,
             self.assertRaisesRegex(SymbolBindingError, "source .* content is stale"),
         ):
             schedule(
@@ -582,9 +586,9 @@ class CausalPathwayBindingTest(unittest.TestCase):
         source_file.stamp = (source_file.stamp[0] + 1, source_file.stamp[1])
 
         with patch.object(
-            binding_module,
+            identity_module,
             "sha256_file",
-            wraps=binding_module.sha256_file,
+            wraps=identity_module.sha256_file,
         ) as rehash:
             schedule(
                 source_node_id=0,

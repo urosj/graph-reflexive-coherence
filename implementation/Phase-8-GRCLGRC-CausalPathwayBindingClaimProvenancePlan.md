@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iteration 118 complete; Iterations 119-125 planned
+**Status:** Iterations 118-119 complete; Iterations 120-125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -439,7 +439,9 @@ checker guard, 109 focused tests, and 1,320 full-suite tests. See the
   [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md).
 - Frozen production inputs: the
   [`pygrc.causal_pathways` public surface](../src/pygrc/causal_pathways/__init__.py),
-  [pre-refactor binder monolith](../src/pygrc/causal_pathways/binding.py),
+  pre-refactor binder monolith identified by the I118 source commit, path, and
+  SHA-256, its current
+  [private compatibility successor](../src/pygrc/causal_pathways/binding/_legacy.py),
   [project configuration](../pyproject.toml), and
   [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json).
 - Authority specifications: the
@@ -490,6 +492,14 @@ then extract `identity.py`. Keep every public re-export stable. Move tests away
 from private monolith patch points such as `binding.inspect` and
 `binding._load_json`; those hooks are not part of the public compatibility
 freeze.
+
+Iteration 119 passed with an atomic module-to-package replacement, a 48-export
+compatibility facade, a session-independent `identity.py` provider, explicit
+architecture enforcement, removal of the two private monolith test hooks, 114
+focused tests, byte-identical I118 corpus output, and both 20-rule conformance
+policies. The full project suite remains at the accepted 1,320-test I118
+baseline and is next required after structural completion in I123. See the
+[Iteration 119 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration119.md).
 
 ## Iteration 120: Effects And Authority
 

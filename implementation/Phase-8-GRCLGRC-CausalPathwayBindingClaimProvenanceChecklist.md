@@ -1,6 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iteration 118 complete; Iterations 119-125 planned and not started.
+**Status:** Iterations 118-119 complete; Iterations 120-125 planned and not
+started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
 ## Global Boundaries
@@ -327,24 +328,24 @@ next.
 
 ## Iteration 119: Package Boundary And Identity Foundation
 
-- [ ] Atomically replace `binding.py` with the `binding/` package; never leave
+- [x] Atomically replace `binding.py` with the `binding/` package; never leave
       the same import name present as both a module and package.
-- [ ] Preserve the unchanged monolith temporarily as a private implementation
+- [x] Preserve the unchanged monolith temporarily as a private implementation
       module behind `binding/__init__.py` so package creation and semantic
       extraction remain separate reviewable changes.
-- [ ] Establish `binding/__init__.py` as the compatibility facade and add the
+- [x] Establish `binding/__init__.py` as the compatibility facade and add the
       first permanent provider module, `identity.py`; later iterations complete
       the target package.
-- [ ] Preserve every existing public export from `pygrc.causal_pathways` and
+- [x] Preserve every existing public export from `pygrc.causal_pathways` and
       behavioral compatibility from `pygrc.causal_pathways.binding`; mark new
       internal module paths explicitly non-contractual.
-- [ ] Extract canonical digests, source verification, callable identities,
+- [x] Extract canonical digests, source verification, callable identities,
       source-symbol and crossing bindings, source manifests, and cached
       callable guards into `identity.py` without claim interpretation.
-- [ ] Move tests away from private monolith patch points such as
+- [x] Move tests away from private monolith patch points such as
       `binding.inspect` and `binding._load_json`; do not add them to the public
       compatibility contract.
-- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+- [x] Pass the focused binder, API-freeze, golden-corpus, conformance, and
       static gates before continuing.
 
 ## Iteration 120: Effects And Authority
