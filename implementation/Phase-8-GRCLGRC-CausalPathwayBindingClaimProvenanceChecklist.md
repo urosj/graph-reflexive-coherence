@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iterations 118-119 complete; Iterations 120-125 planned and not
+**Status:** Iterations 118-120 complete; Iterations 121-125 planned and not
 started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
@@ -350,14 +350,14 @@ next.
 
 ## Iteration 120: Effects And Authority
 
-- [ ] Extract effect contracts, return/effect classification, evidence, and
+- [x] Extract effect contracts, return/effect classification, evidence, and
       genuinely effect-level runtime descriptors into `effects.py`.
-- [ ] Extract authority and acceptance-anchor loading, admission lookup,
+- [x] Extract authority and acceptance-anchor loading, admission lookup,
       source-map semantics, accepted effect contracts, and staleness into
       `authority.py`; keep loaded authority state mostly immutable.
-- [ ] Establish and test the permanent dependency chain `identity -> effects
+- [x] Establish and test the permanent dependency chain `identity -> effects
       -> authority` without changing session behavior.
-- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+- [x] Pass the focused binder, API-freeze, golden-corpus, conformance, and
       static gates before continuing.
 
 ## Iteration 121: Candidate Subsystem

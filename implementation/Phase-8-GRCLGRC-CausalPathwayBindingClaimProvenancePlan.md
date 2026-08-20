@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iterations 118-119 complete; Iterations 120-125 planned
+**Status:** Iterations 118-120 complete; Iterations 121-125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -506,6 +506,14 @@ baseline and is next required after structural completion in I123. See the
 Extract `effects.py` and `authority.py`, keep loaded authority state mostly
 immutable, and establish the first permanent dependency chain `identity ->
 effects -> authority` without changing session behavior.
+
+Iteration 120 passed with effect classification and evidence isolated in an
+identity-dependent `effects.py`, authority and acceptance loading isolated in
+`authority.py`, an enforced acyclic provider graph, defensive/read-only loaded
+authority state, 119 focused tests, byte-identical I118 corpus output, and both
+20-rule conformance policies. The full project suite remains deferred to the
+planned I123 structural-completion gate. See the
+[Iteration 120 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration120.md).
 
 ## Iteration 121: Candidate Subsystem
 
