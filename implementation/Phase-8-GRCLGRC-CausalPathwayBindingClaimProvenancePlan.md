@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iteration 117 accepted; Iteration 118 planned
+**Status:** Iteration 117 accepted; Iterations 118-125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -257,14 +257,14 @@ resolution with one `(st_mtime_ns, st_size)` comparison. Stamp drift must force
 the pinned SHA-256 check before delegation; mismatched content fails closed,
 while identical content refreshes the stamp for subsequent calls.
 
-## Iteration 118: Modular Binder Architecture And Guidance
+## Iterations 118-125: Modular Binder Architecture And Guidance
 
 Refactor the binder's internal architecture without changing its public API,
 artifact schemas, or canonical output bytes. The current implementation is a
 roughly 6.3-KLOC module with dozens of top-level classes, a state-heavy
 `PathwayBindingSession`, and frequent cross-class access to `_`-prefixed
 attributes and methods. The public surface in `pygrc.causal_pathways` is clean;
-Iteration 118 makes the implementation boundary match that surface.
+Iterations 118-125 make the implementation boundary match that surface.
 
 This is a refactor and usability tranche, not an architectural correction.
 The accepted binder already links declared causal identity to exact executable
@@ -278,7 +278,7 @@ binding receipt certifies the causal operations represented in that receipt
 under `bound_invocations_only`; it is not proof that no unbound operation or
 other influence affected the containing process or experiment. A consumer
 making a whole-experiment causal claim must establish its own closed evidence
-boundary around the receipts. Iteration 118 must not present the binder as a
+boundary around the receipts. This tranche must not present the binder as a
 process-wide causal monitor.
 
 Replace the monolith with an internal package organized around explicit
@@ -320,8 +320,8 @@ identity
 
 Each module may import only preceding layers in that list; dependencies may
 skip layers. In particular, `identity.py` should use only the standard library
-where practical;
-`effects.py` may depend on identity; `authority.py` on identity and effects;
+where practical; `effects.py` may depend on identity; `authority.py` on
+identity and effects;
 `candidates.py` on identity, effects, and authority; `scopes.py` on identity,
 effects, candidates, and narrow protocols; `artifacts.py` on authority,
 effects, candidates, and scopes; and `session.py` may orchestrate all preceding
@@ -418,6 +418,77 @@ including the root README, `docs/README.md`, `docs/reference/README.md`, the
 claim-boundary index, `examples/README.md`, `specs/README.md`, and any more
 specific example/reference indexes introduced during implementation.
 
+## Iteration 118: Compatibility And Refactor Baseline
+
+Create the machine-readable public behavioral API freeze, freeze the full
+practical I115/I116 artifact and runtime corpus, add compatibility and
+golden-byte tests, add the independent-checker import guard, and record the
+pre-refactor focused and full-suite baselines. This iteration changes tests and
+evidence only, not binder runtime code.
+
+## Iteration 119: Package Boundary And Identity Foundation
+
+Atomically replace `binding.py` with the `binding/` package; never leave the
+module and package present together. Preserve the unchanged monolith
+temporarily as a private implementation module behind `binding/__init__.py`,
+then extract `identity.py`. Keep every public re-export stable. Move tests away
+from private monolith patch points such as `binding.inspect` and
+`binding._load_json`; those hooks are not part of the public compatibility
+freeze.
+
+## Iteration 120: Effects And Authority
+
+Extract `effects.py` and `authority.py`, keep loaded authority state mostly
+immutable, and establish the first permanent dependency chain `identity ->
+effects -> authority` without changing session behavior.
+
+## Iteration 121: Candidate Subsystem
+
+Extract candidate declarations, relation reviews, mechanism evidence, verified
+mechanisms, request wrappers, AST and default evaluation, source-consumption
+proofs, and invalid-relabel controls into `candidates.py`. Introduce the narrow
+factory or recorder protocol needed to avoid candidate/session/scope cycles.
+Replay the candidate-focused R4-R8 regressions and mutation pressures at this
+checkpoint.
+
+## Iteration 122: Runtime Scopes And State Ownership
+
+Extract invocation records, result references, composition scopes, alternative
+scopes, and candidate scopes into `scopes.py`. Replace concrete session access
+with narrow protocols and introduce cohesive owners for invocation ledgers,
+active scopes, object-flow identity, and related runtime state. Replay
+composition-flow, dynamic-choice, and owner-erasure pressures.
+
+## Iteration 123: Artifacts And Session Consolidation
+
+Extract lock, receipt, use-graph, transcript, and claim-envelope construction
+into `artifacts.py`. Reduce `session.py` to phase control, declarations,
+linking, binding handles, freeze, seal, and collaborator orchestration. Remove
+the temporary monolith and enforce the complete dependency DAG with the
+architecture test.
+
+## Iteration 124: Binder Examples And Guidance
+
+Add the five runnable examples, the user-and-agent guide, the revised stable
+reference, the operation-scoped provenance warning, and all repository
+discovery links. Perform this only after the public implementation surface has
+settled.
+
+## Iteration 125: Independent Pressure And Closeout
+
+Compare the complete frozen API, artifact, and runtime corpus; replay every
+mutation falsifier and the accepted 68-case independent gate; run both
+conformance policies, all examples, the full project suite, and all static
+checks; and close only with no attributable semantic, artifact, or runtime
+differences.
+
+Every code-moving iteration ends in a reviewable checkpoint commit. Run the
+focused binder tests, public compatibility freeze, golden corpus, conformance
+checks, Ruff, mypy, compileall, and `git diff --check` before proceeding to the
+next iteration. Run the full suite in Iteration 118, after the production
+refactor becomes structurally complete in Iteration 123, and again at the
+Iteration 125 closeout.
+
 Acceptance requires the public behavioral compatibility freeze, the internal
 dependency test, exhaustive practical-corpus golden-byte comparison, and
 before/after runtime-state and result comparison. Replay mutation falsifiers
@@ -430,14 +501,16 @@ relevant independent gate must still fail closed.
 
 The 1,315-test project suite, accepted 68-case independent semantic gate, both
 20-rule conformance policies, all examples, Ruff, mypy, compileall, and diff
-checks must pass before Iteration 118 can close. Closure requires zero semantic,
-artifact, or runtime differences attributable to the refactor.
+checks must pass before Iteration 125 can close. Closure requires zero
+semantic, artifact, or runtime differences attributable to the refactor.
 
 ## Maximum Claim
 
 If Iterations 112-116 pass, the layer may claim versioned pathway binding and
 claim provenance for evidence-bearing GRC/LGRC consumers while existing
 mechanism-specific execution remains unchanged.
+
+Iterations 118-125 do not expand that maximum claim.
 
 It may not claim universal causal routing, generic work admission, automatic
 selection, native candidate formation, ecological interpretation, agency,

@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iteration 117 accepted; Iteration 118 planned and not started.
+**Status:** Iteration 117 accepted; Iterations 118-125 planned and not started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
 ## Global Boundaries
@@ -298,14 +298,16 @@ Checked Iteration 112-117 items retain their historical acceptance meaning.
 - [x] Cover unchanged cache hits, identical-content stamp invalidation, and
       changed-content refusal without mutating repository files in tests.
 
-## Iteration 118: Modular Binder Architecture And Guidance
+## Iterations 118-125: Modular Binder Architecture And Guidance
 
-- [ ] Treat I118 as a refactor and usability tranche; preserve the accepted
-      mechanism-specific architecture and
+Execute each iteration with a clean checkpoint commit before proceeding to the
+next.
+
+## Iteration 118: Compatibility And Refactor Baseline
+
+- [ ] Treat Iterations 118-125 as a refactor and usability tranche; preserve
+      the accepted mechanism-specific architecture and
       `semantic_selection_performed_by_binder = false` boundary.
-- [ ] State prominently that `bound_invocations_only` receipts certify only
-      represented bound operations, not whole-run causal closure or the absence
-      of unbound influences.
 - [ ] Freeze before-refactor public symbol names, import paths, class/function
       and method signatures, exception types and important conditions,
       context-manager behavior, and return object types in a machine-readable
@@ -316,38 +318,114 @@ Checked Iteration 112-117 items retain their historical acceptance meaning.
       dynamic choice; candidate pathways and compositions; reviewed
       invalid-pair candidates; unused declarations; non-qualifying and raised
       effects; negative controls; and multi-edge graphs in that corpus.
-- [ ] Replace the binding monolith with an internal package containing
-      `identity.py`, `effects.py`, `authority.py`, `candidates.py`, `scopes.py`,
-      `artifacts.py`, and `session.py` behind a compatibility
-      `binding/__init__.py`.
+- [ ] Add public behavioral-API compatibility, runtime-observation, and full
+      practical-corpus golden-byte tests before moving production code.
+- [ ] Add a guard that prevents the independent binding conformance checker
+      from importing load-bearing binder derivation or validation logic.
+- [ ] Record the pre-refactor focused and full-project baselines using the
+      repository `.venv`; do not change binder runtime code in this iteration.
+
+## Iteration 119: Package Boundary And Identity Foundation
+
+- [ ] Atomically replace `binding.py` with the `binding/` package; never leave
+      the same import name present as both a module and package.
+- [ ] Preserve the unchanged monolith temporarily as a private implementation
+      module behind `binding/__init__.py` so package creation and semantic
+      extraction remain separate reviewable changes.
+- [ ] Establish `binding/__init__.py` as the compatibility facade and add the
+      first permanent provider module, `identity.py`; later iterations complete
+      the target package.
 - [ ] Preserve every existing public export from `pygrc.causal_pathways` and
       behavioral compatibility from `pygrc.causal_pathways.binding`; mark new
       internal module paths explicitly non-contractual.
-- [ ] Keep artifact schema versions, field names, field values, canonical
-      ordering, serialized bytes, and digests unchanged.
-- [ ] Preserve runtime state, results, return types, exception behavior, and
-      context-manager behavior for identical bound executions.
+- [ ] Extract canonical digests, source verification, callable identities,
+      source-symbol and crossing bindings, source manifests, and cached
+      callable guards into `identity.py` without claim interpretation.
+- [ ] Move tests away from private monolith patch points such as
+      `binding.inspect` and `binding._load_json`; do not add them to the public
+      compatibility contract.
+- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+      static gates before continuing.
+
+## Iteration 120: Effects And Authority
+
+- [ ] Extract effect contracts, return/effect classification, evidence, and
+      genuinely effect-level runtime descriptors into `effects.py`.
+- [ ] Extract authority and acceptance-anchor loading, admission lookup,
+      source-map semantics, accepted effect contracts, and staleness into
+      `authority.py`; keep loaded authority state mostly immutable.
+- [ ] Establish and test the permanent dependency chain `identity -> effects
+      -> authority` without changing session behavior.
+- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+      static gates before continuing.
+
+## Iteration 121: Candidate Subsystem
+
 - [ ] Make candidate declarations, relation reviews, request provenance,
       invalid-relabel constraints, source-consumption proofs, omission
       counterfactuals, typed defaults, and witnesses the responsibility of the
       first-class `candidates.py` subsystem.
-- [ ] Give session phase state, mutation, invocation ledgers, object-flow
-      identity, active-scope state, and artifact state cohesive owners instead
-      of retaining unrelated mutable fields on one class.
+- [ ] Move verified candidate mechanisms, candidate request wrappers, AST and
+      type-preserving default evaluation, and candidate execution proof
+      primitives into that subsystem.
+- [ ] Introduce only the narrow factory or recorder protocol required to avoid
+      candidate/session/scope cycles; do not introduce a concrete session
+      dependency.
+- [ ] Replay the candidate-focused R4-B01 through R8-B01 regressions and
+      candidate mutation falsifiers before continuing.
+- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+      static gates before continuing.
+
+## Iteration 122: Runtime Scopes And State Ownership
+
+- [ ] Extract invocation, crossing, and candidate records; crossing and
+      flow-derived references; and composition, alternative-selection, and
+      candidate execution scopes into `scopes.py`.
+- [ ] Give invocation ledgers, object-flow identity, and active-scope state
+      cohesive owners instead of retaining unrelated mutable fields on one
+      class.
 - [ ] Replace cross-object `_`-attribute reads and broad session fan-out with
       narrow internal collaborator methods or protocols.
-- [ ] Freeze and test the dependency-provider-first order: `identity -> effects
-      -> authority -> candidates -> scopes -> artifacts -> session`; each
-      module may import only preceding layers, though it may skip layers.
 - [ ] Keep concrete `PathwayBindingSession` dependencies out of scope, effect,
       and artifact collaborators; scopes use narrow recorder/provenance
       protocols.
+- [ ] Replay composition-flow, dynamic-choice, producer/adapter-owner, and
+      endpoint-co-use-without-flow pressures before continuing.
+- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+      static gates before continuing.
+
+## Iteration 123: Artifacts And Session Consolidation
+
+- [ ] Complete the internal package with `identity.py`, `effects.py`,
+      `authority.py`, `candidates.py`, `scopes.py`, `artifacts.py`, and
+      `session.py` behind the compatibility `binding/__init__.py`.
+- [ ] Extract lock, receipt, pathway-use graph, execution-transcript digest,
+      claim-envelope, and canonical serialization construction into
+      `artifacts.py` as near-pure operations over immutable records.
 - [ ] Keep identity free of claim interpretation, authority mostly immutable,
       artifact derivation near-pure over immutable records, and session limited
       to orchestration.
+- [ ] Reduce `session.py` to phase control, declarations, linking, active-scope
+      orchestration, runtime-state ownership, binding handles, freeze, and seal.
+- [ ] Give phase, declaration, link, and artifact state cohesive owners within
+      the remaining orchestration boundary.
+- [ ] Remove the temporary monolith.
+- [ ] Freeze and test the complete dependency-provider-first order: `identity
+      -> effects -> authority -> candidates -> scopes -> artifacts -> session`;
+      each module may import only preceding layers, though it may skip layers.
 - [ ] Keep the independent binding conformance checker independently
-      implemented; do not import load-bearing binder derivation or validation
-      logic into the checker.
+      implemented after extraction; schemas and harmless constants may be
+      shared, but load-bearing derivations may not.
+- [ ] Pass the focused binder, API-freeze, golden-corpus, conformance, and
+      static gates after removing the temporary monolith.
+- [ ] Run the full project suite after the production refactor becomes
+      structurally complete.
+
+## Iteration 124: Binder Examples And Guidance
+
+- [ ] State prominently that `bound_invocations_only` receipts certify only
+      represented bound operations, not whole-run causal closure or the absence
+      of unbound influences.
 - [ ] Add runnable examples for an admitted pathway, registered composition,
       explicit dynamic choice, conservative unregistered candidate flow, and
       valid direct-unbound/non-claim-qualified use.
@@ -362,8 +440,17 @@ Checked Iteration 112-117 items retain their historical acceptance meaning.
       R4-B01 through R8-B01 chronology in implementation and audit evidence.
 - [ ] Update the root README, docs indexes, claim-boundary index, examples
       index, specs index, and any new local example/reference indexes.
-- [ ] Add public behavioral-API compatibility and full practical-corpus
-      before/after golden-byte tests.
+
+## Iteration 125: Independent Pressure And Closeout
+
+- [ ] Recheck the complete public behavioral API freeze after all refactoring.
+- [ ] Confirm artifact schema versions, field names and values, canonical
+      ordering, serialized bytes, and digests remain unchanged.
+- [ ] Confirm runtime state, results, return types, exception behavior, and
+      context-manager behavior remain unchanged for identical bound executions.
+- [ ] Compare the full practical before/after corpus byte-for-byte, including
+      locks, receipts, conformance results, negative controls, schemas, field
+      ordering, and digests.
 - [ ] Compare bound-before and bound-after runtime state and results.
 - [ ] Replay mutation falsifiers for owner erasure, symbol substitution,
       candidate promotion, prohibited relabels, unsupported composition,
@@ -374,6 +461,6 @@ Checked Iteration 112-117 items retain their historical acceptance meaning.
 - [ ] Run the full project suite (current baseline: 1,315 tests).
 - [ ] Replay the accepted 68-case independent semantic gate.
 - [ ] Pass both 20-rule conformance policies, Ruff, mypy, compileall, and
-      `git diff --check` before closing Iteration 118.
+      `git diff --check` before closing Iteration 125.
 - [ ] Close only with zero semantic, artifact, or runtime differences
       attributable to the refactor.
