@@ -1,0 +1,610 @@
+{
+  "artifact": "I118 artifact and runtime compatibility freeze",
+  "binder_source_path": "src/pygrc/causal_pathways/binding.py",
+  "binder_source_sha256": "84d5499687888b68e91809b15ea79d8b06e197f7876da5a875ee44bb7b23f979",
+  "canonical_i115_i116_fixture_manifest": [
+    {
+      "byte_length": 6166,
+      "path": "implementation/evidence/causal-pathway-binding/i115-native-pathway.lock.json",
+      "sha256": "1968d5cab0efbd19fb33258f253fa2e4d2c6d4c7512e1cbb8ba94952a767291d"
+    },
+    {
+      "byte_length": 10787,
+      "path": "implementation/evidence/causal-pathway-binding/i115-native-pathway.receipt.json",
+      "sha256": "fc5fc66a863b5a1481dd8d7e2d40151c01c112f7e539c12e4b50d3e56777d9b8"
+    },
+    {
+      "byte_length": 6632,
+      "path": "implementation/evidence/causal-pathway-binding/i115-conformance-execution.json",
+      "sha256": "09943f34df9996add5c2e2486dd17ec58fa6c1f13b5c71577e4d25bf9040a3ff"
+    },
+    {
+      "byte_length": 13680,
+      "path": "implementation/evidence/causal-pathway-binding/i115-negative-control-execution.json",
+      "sha256": "5d2d4063a6e25e3b13797e5eb04529a27fced3e70588eca6866f9092d0ae9688"
+    },
+    {
+      "byte_length": 875,
+      "path": "implementation/evidence/causal-pathway-binding/i116-low-context-consumer-specification.json",
+      "sha256": "e12f863e87294e2982c2de78529731667819ad8ccf2c969ad62b2cd9be6fa963"
+    },
+    {
+      "byte_length": 10246,
+      "path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.lock.json",
+      "sha256": "ae91073be073cfabb744a535369f0bf24f5cae8a77a9b7492814dede1e502c10"
+    },
+    {
+      "byte_length": 19695,
+      "path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.receipt.json",
+      "sha256": "542d1d458c3e93d69df61a64536fc9cefd2c27aa1e6516e7ce21f574274638ad"
+    },
+    {
+      "byte_length": 18234,
+      "path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.lock.json",
+      "sha256": "90fdbdecde0500713b755eabbfe2f5c58a404bd7332b7ca816051a0f6c506d12"
+    },
+    {
+      "byte_length": 33785,
+      "path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.receipt.json",
+      "sha256": "4f9d04994df520ab96500da774b4f5f1de217c2931d39bf2665ace752f33b9f9"
+    },
+    {
+      "byte_length": 21060,
+      "path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.lock.json",
+      "sha256": "39da91d467f158746cddb0fb9a2ce134f8c39642400a7d2331e8ff6a2e6907a8"
+    },
+    {
+      "byte_length": 37607,
+      "path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.receipt.json",
+      "sha256": "4101ca0b421b47e1b10a78551c45219a7db35dbbdf686add7d76ac8776d978aa"
+    },
+    {
+      "byte_length": 10684,
+      "path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.lock.json",
+      "sha256": "b46ae9b9fb336615d6fb9d2c941c3426c4f2541114803b0a63bd7adfcb7abefc"
+    },
+    {
+      "byte_length": 20728,
+      "path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.receipt.json",
+      "sha256": "053faf39cbce097512063db53fa88258dfc92c025078485af0e3bdfccc1bf675"
+    },
+    {
+      "byte_length": 7255,
+      "path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.lock.json",
+      "sha256": "afba74da4c31f30a813e28e153bba20b6be978778426dc85a85f25d7e8a37f28"
+    },
+    {
+      "byte_length": 3825,
+      "path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.receipt.json",
+      "sha256": "309522b832c4eae99c72cf18e073ef2c28cdeb21b95a8a3dbd8bc9c759f9bf4b"
+    },
+    {
+      "byte_length": 16824,
+      "path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
+      "sha256": "33fefe518ee57a2f080c6da010c3bbb8405d109e329d8247045b02b83f3819c6"
+    },
+    {
+      "byte_length": 31088,
+      "path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
+      "sha256": "cd87f46b34a8d1cfce4d7223b4604c3f37cd51851ba3af333b1efdedd4b46da4"
+    },
+    {
+      "byte_length": 14248,
+      "path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.lock.json",
+      "sha256": "aa1daf6603914a0b25b49b8f0addddb221bfe099511f00aecfff230909c02e0d"
+    },
+    {
+      "byte_length": 18717,
+      "path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.receipt.json",
+      "sha256": "e32342b3bba105304764f44059817686bbbe194303fe156b1551ef43cddb869a"
+    },
+    {
+      "byte_length": 26565,
+      "path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.lock.json",
+      "sha256": "041d59cf7fa7c26ae507d5ab92311dbcd439b159b865f1205c18adacb265e08a"
+    },
+    {
+      "byte_length": 50701,
+      "path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.receipt.json",
+      "sha256": "e4ecb11b1b7afbb95c072bec6a0f3aff614100d9c74679819784141d80e64434"
+    },
+    {
+      "byte_length": 10167,
+      "path": "implementation/evidence/causal-pathway-binding/i116/consumer-dry-run-summary.json",
+      "sha256": "be3aee6b5827d0e52318c30e8b470c07db894f6fedd265ac21b8a99aad0fe02d"
+    },
+    {
+      "byte_length": 10246,
+      "path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.lock.json",
+      "sha256": "ae91073be073cfabb744a535369f0bf24f5cae8a77a9b7492814dede1e502c10"
+    },
+    {
+      "byte_length": 899,
+      "path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.oracle.json",
+      "sha256": "b02f635577262ae62b1ec102e1a4f98f3ab30fa03e562a9d76b1b0c378cb4caf"
+    },
+    {
+      "byte_length": 19695,
+      "path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.receipt.json",
+      "sha256": "542d1d458c3e93d69df61a64536fc9cefd2c27aa1e6516e7ce21f574274638ad"
+    },
+    {
+      "byte_length": 1305,
+      "path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.result.json",
+      "sha256": "ccd9a329faf4adc3e350b4994632181f20b57f12e34c31ccaea5ccf5f5cc07fc"
+    }
+  ],
+  "date": "2026-08-20",
+  "exception_contracts": [
+    {
+      "condition_id": "untrusted_acceptance_anchor_digest",
+      "exception_type": "AuthorityDriftError",
+      "message": "binding-acceptance anchor is not the independently trusted record"
+    },
+    {
+      "condition_id": "unknown_pathway_identity",
+      "exception_type": "UnknownPathwayError",
+      "message": "pathway 'missing.pathway' is not admitted; declare a candidate instead"
+    },
+    {
+      "condition_id": "unknown_composition_identity",
+      "exception_type": "UnknownCompositionError",
+      "message": "composition 'CMP-999' is not registered; declare a candidate instead"
+    },
+    {
+      "condition_id": "unsupported_composition",
+      "exception_type": "UnbindableCompositionError",
+      "message": "composition CMP-06 has non-bindable status unsupported_missing_crossing; open a distinct candidate only for genuinely new experimental work"
+    },
+    {
+      "condition_id": "invalid_candidate_kind",
+      "exception_type": "InvalidCandidateError",
+      "message": "candidate_kind must be pathway or composition"
+    },
+    {
+      "condition_id": "declaration_after_lock",
+      "exception_type": "BindingStateError",
+      "message": "binding declarations are closed in session phase 'locked'"
+    },
+    {
+      "condition_id": "missing_source_symbol",
+      "exception_type": "SymbolBindingError",
+      "message": "binding symbol 'lgrc9v3.explicit_packet_transport:packet_schedule:primary' no longer resolves"
+    }
+  ],
+  "freeze_digest": "5808866c4567db959700a51ea896daae3d502e9a970c16c4ee36ceb75b38550e",
+  "iteration": 118,
+  "regenerated_corpus_cases": [
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
+          "byte_length": 10246,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.lock.json",
+          "sha256": "ae91073be073cfabb744a535369f0bf24f5cae8a77a9b7492814dede1e502c10"
+        },
+        {
+          "artifact_digest": "a3b5602100d2024f90fdf67e6b80994150b1240faaf68a42d8bcd00374f848de",
+          "byte_length": 19695,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.receipt.json",
+          "sha256": "542d1d458c3e93d69df61a64536fc9cefd2c27aa1e6516e7ce21f574274638ad"
+        }
+      ],
+      "case_id": "01-simple-native-pathway",
+      "observations": {
+        "actual_pathway_ids": [
+          "lgrc9v3.explicit_packet_transport"
+        ],
+        "claim_status": "admitted_bounded",
+        "composition_edge_count": 0
+      },
+      "semantic_families": [
+        "native_pathway"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "39f0e56dd2cf33daf60df852ea8f70f3a6b3d7ced00781328330f43647479014",
+          "byte_length": 18234,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.lock.json",
+          "sha256": "90fdbdecde0500713b755eabbfe2f5c58a404bd7332b7ca816051a0f6c506d12"
+        },
+        {
+          "artifact_digest": "74a122add37eb0088c9153e521ecd3a39bf2b72ef65f362a58dac735b5608a07",
+          "byte_length": 33785,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.receipt.json",
+          "sha256": "4f9d04994df520ab96500da774b4f5f1de217c2931d39bf2665ace752f33b9f9"
+        }
+      ],
+      "case_id": "02-producer-mediated-cmp20",
+      "observations": {
+        "composition_ids": [
+          "CMP-20"
+        ],
+        "contains_producer_cut": true,
+        "dataflow_contract_id": "CMP-20:runtime-object-flow:v1",
+        "dataflow_witness_kind": "externally_attested_runtime_object_flow",
+        "lawful_native_blocked": true,
+        "runtime_object_id": "runtime-object:0"
+      },
+      "semantic_families": [
+        "producer_composition"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "fd98de606a66fb5d1bc5a9abc6c9df188c1d6caaf33c1b3fc14da3a99f96eba5",
+          "byte_length": 21060,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.lock.json",
+          "sha256": "39da91d467f158746cddb0fb9a2ce134f8c39642400a7d2331e8ff6a2e6907a8"
+        },
+        {
+          "artifact_digest": "6b783d75f914ec508de974d5d11a392db432aa814ae60ea38832589edc13007c",
+          "byte_length": 37607,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.receipt.json",
+          "sha256": "4101ca0b421b47e1b10a78551c45219a7db35dbbdf686add7d76ac8776d978aa"
+        }
+      ],
+      "case_id": "03-explicit-adapter-cmp26",
+      "observations": {
+        "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+        "adapter_owner": "library_construction_adapter_invoked_by_caller",
+        "adapter_result_is_target_instance": true,
+        "composition_status": "lawful_with_explicit_adapter",
+        "contains_adapter_cut": true,
+        "crossing_invocation_count": 1
+      },
+      "semantic_families": [
+        "adapter_composition"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "87785901941e89adeead5a217fa017b9a944c56d7b0f2af6dc0ca6377cc15159",
+          "byte_length": 10684,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.lock.json",
+          "sha256": "b46ae9b9fb336615d6fb9d2c941c3426c4f2541114803b0a63bd7adfcb7abefc"
+        },
+        {
+          "artifact_digest": "1c77fadab1939e1d71eca489f67a93f791ae873c2a9dbae121c590cd3eaf2081",
+          "byte_length": 20728,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.receipt.json",
+          "sha256": "053faf39cbce097512063db53fa88258dfc92c025078485af0e3bdfccc1bf675"
+        }
+      ],
+      "case_id": "04-diagnostic-only-cmp04",
+      "observations": {
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native current-to-packet adapter",
+          "native event-to-action crossing"
+        ],
+        "claim_status": "bounded_with_diagnostic_cut",
+        "composition_declared_unused": false,
+        "composition_edge_count": 1,
+        "composition_witness_count": 1,
+        "contains_diagnostic_only_relation": true
+      },
+      "semantic_families": [
+        "diagnostic_composition",
+        "non_qualifying_returned_effect"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "352cb02d94e3f0a15f121bad221aecc8f25cd77512d695488818145d3657723d",
+          "byte_length": 7255,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.lock.json",
+          "sha256": "afba74da4c31f30a813e28e153bba20b6be978778426dc85a85f25d7e8a37f28"
+        },
+        {
+          "artifact_digest": "8f894af9c1872b6b11d7299cb99ce099dd54263a8f789fd90ea1a82293de7185",
+          "byte_length": 3825,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.receipt.json",
+          "sha256": "309522b832c4eae99c72cf18e073ef2c28cdeb21b95a8a3dbd8bc9c759f9bf4b"
+        }
+      ],
+      "case_id": "05-ambiguous-crossing-not-selected",
+      "observations": {
+        "claim_qualified": false,
+        "graph_edge_count": 0,
+        "registered_alternatives_retained": [
+          "CMP-07",
+          "CMP-16"
+        ],
+        "registered_compositions_exercised": []
+      },
+      "semantic_families": [
+        "unused_declaration",
+        "ambiguous_crossing"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "e1c728e8ad882dc1aace3525ab94bfbd3eef90264e67cf1a25d9dfa2c8bcf019",
+          "byte_length": 16824,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
+          "sha256": "33fefe518ee57a2f080c6da010c3bbb8405d109e329d8247045b02b83f3819c6"
+        },
+        {
+          "artifact_digest": "6a4b87c7c77b8a23e62143a6c479b9bbaa2b9671c3a2164d50695d1890129572",
+          "byte_length": 31088,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
+          "sha256": "cd87f46b34a8d1cfce4d7223b4604c3f37cd51851ba3af333b1efdedd4b46da4"
+        }
+      ],
+      "case_id": "08-unregistered-candidate",
+      "observations": {
+        "candidate_edge_kind": "experimental_unregistered_candidate",
+        "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+        "candidate_mechanism_invocation_count": 1,
+        "candidate_witness_kind": "identity_verified_candidate_crossing_execution",
+        "experimental_unregistered": true,
+        "promotion_status": "none",
+        "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified"
+      },
+      "semantic_families": [
+        "candidate_composition"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "2a84e2984b2654b4dd214e42deee707067baf2148a54e97d9f3236f7e85fcd97",
+          "byte_length": 14248,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.lock.json",
+          "sha256": "aa1daf6603914a0b25b49b8f0addddb221bfe099511f00aecfff230909c02e0d"
+        },
+        {
+          "artifact_digest": "0e9b75ad8d83c75076645fa246a448977eeb49fff4b234761a357a661145addb",
+          "byte_length": 18717,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.receipt.json",
+          "sha256": "e32342b3bba105304764f44059817686bbbe194303fe156b1551ef43cddb869a"
+        }
+      ],
+      "case_id": "09-dynamic-a-b-choice",
+      "observations": {
+        "actual_pathway_ids_used": [
+          "pygrc.restoration_replay_identity"
+        ],
+        "allowed_pathway_ids": [
+          "lgrc9v3.explicit_packet_transport",
+          "pygrc.restoration_replay_identity"
+        ],
+        "binder_selected": false,
+        "selected_pathway_ids": [
+          "pygrc.restoration_replay_identity"
+        ],
+        "selection_authority": "i116_consumer_boolean",
+        "selection_scope_count": 1,
+        "unrelated_pathway_used_outside_scope": true
+      },
+      "semantic_families": [
+        "dynamic_choice",
+        "unused_declaration"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "359651112e86c23cb2ccfde04500a1e922438718453aba3582387159eb8b6e6f",
+          "byte_length": 26565,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.lock.json",
+          "sha256": "041d59cf7fa7c26ae507d5ab92311dbcd439b159b865f1205c18adacb265e08a"
+        },
+        {
+          "artifact_digest": "a97eab3ff1372d8519bada4db6d7ae19f068da0c5f34daeb8d19807ee7fb7cb5",
+          "byte_length": 50701,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.receipt.json",
+          "sha256": "e4ecb11b1b7afbb95c072bec6a0f3aff614100d9c74679819784141d80e64434"
+        }
+      ],
+      "case_id": "10-multi-edge-use-graph",
+      "observations": {
+        "composition_ids": [
+          "CMP-04",
+          "CMP-20"
+        ],
+        "edge_count": 2,
+        "larger_chain_claim_synthesized": false,
+        "synthesized_chain_claim": false
+      },
+      "semantic_families": [
+        "multi_edge_graph"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "fd7bfade9e130f48ac052ce0f6d564e5d67e3b612fd29207466cea940760867d",
+          "byte_length": 20792,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/11-reviewed-invalid-pair-candidate.lock.json",
+          "sha256": "51e1e612803b5cf3d02bc8cf04d77dfa336151ac6ab24e671817e9ab31227856"
+        },
+        {
+          "artifact_digest": "cfadcdf64c7b3efce28f6b2db1530846e1689ce1938bf130ac37b9d5b0c189b8",
+          "byte_length": 40996,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/11-reviewed-invalid-pair-candidate.receipt.json",
+          "sha256": "4c512d28f29c600fd7d3e07804415f332dd40d7706168b81995ff25cbacc9632"
+        }
+      ],
+      "case_id": "11-reviewed-invalid-pair-candidate",
+      "observations": {
+        "blocked_claims": [
+          "diagnostic_as_behavior",
+          "native packet admission"
+        ],
+        "claim_status": "experimental_unregistered",
+        "invalid_relabel_conflict_ids": [
+          "CMP-05"
+        ],
+        "request_dependency_proof_kind": "source_presence_changes_exact_target_request",
+        "source_result_parameter": "diagnostic_result",
+        "witness_kind": "externally_attested_candidate_request_flow"
+      },
+      "semantic_families": [
+        "reviewed_invalid_pair_candidate",
+        "candidate_composition"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "b6624facbb961161ba9cc2d71b781375ad5be020506233bd21a5f6c86a169f19",
+          "byte_length": 5437,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/12-unused-candidate-pathway.lock.json",
+          "sha256": "fc3ae3a8b15a726047ff4ca0ab94d5b203b620861db4acc7b3ab02d797cfe5a0"
+        },
+        {
+          "artifact_digest": "49fdc28545168cb444e6173c216bbb12b5efa3f46f4f0ada61602de9212b86bb",
+          "byte_length": 3815,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/12-unused-candidate-pathway.receipt.json",
+          "sha256": "db0fb8674bb6893246bcbbb60f830979c81e0f5a85271d25974a7b80285f83d4"
+        }
+      ],
+      "case_id": "12-unused-candidate-pathway",
+      "observations": {
+        "candidate_id": "experiment.i118.unused-candidate-pathway",
+        "candidate_relations_exercised": [],
+        "claim_qualified": false,
+        "declared_but_unused_candidate_ids": [
+          "experiment.i118.unused-candidate-pathway"
+        ]
+      },
+      "semantic_families": [
+        "candidate_pathway",
+        "unused_declaration"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "0d32895a3fdd9cb4b63ea0daa9115b74a308e33b67b6fb4f6d7ff607d2bdcf92",
+          "byte_length": 6261,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/13-non-qualifying-returned-effect.lock.json",
+          "sha256": "a7196265e33cf0b645a77cbcb29f53897f5fe2bf76c5bd0cb4c4b5cc66473ff0"
+        },
+        {
+          "artifact_digest": "6f99bc130f37516490ba9de4cecd8354ed0115673a975f262825bfffbdd1a35c",
+          "byte_length": 6034,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/13-non-qualifying-returned-effect.receipt.json",
+          "sha256": "c7ff288719af1f66e9e8165b82b4e40a402c133d933b9c7602068b900f0faf78"
+        }
+      ],
+      "case_id": "13-non-qualifying-returned-effect",
+      "observations": {
+        "claim_qualified": false,
+        "claim_qualifying_effect": false,
+        "effect_outcome": "no_op",
+        "result_type": "list",
+        "return_category": "empty"
+      },
+      "semantic_families": [
+        "non_qualifying_returned_effect"
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "artifact_digest": "c67e06e80fb71b89a871a78fa7192ed93a05275ca59d12453cb3c800612faacd",
+          "byte_length": 6166,
+          "digest_field": "lock_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/14-raised-effect.lock.json",
+          "sha256": "1968d5cab0efbd19fb33258f253fa2e4d2c6d4c7512e1cbb8ba94952a767291d"
+        },
+        {
+          "artifact_digest": "8d2afd947c697ab4beb2e13150c3967a67a4982d987c37054ff250612fbd32c7",
+          "byte_length": 5970,
+          "digest_field": "receipt_digest",
+          "path": "implementation/evidence/causal-pathway-binding/i118/corpus/14-raised-effect.receipt.json",
+          "sha256": "1097a5fb86dc977afba2291dfef51850f5f1a660b32ca2c4f0f43e8c01f11774"
+        }
+      ],
+      "case_id": "14-raised-effect",
+      "observations": {
+        "actual_bound_pathways_used": [],
+        "claim_qualified": false,
+        "error_type": "ValueError",
+        "outcome": "raised",
+        "raised_type": "ValueError"
+      },
+      "semantic_families": [
+        "raised_effect"
+      ]
+    }
+  ],
+  "runtime_behavior_changed": false,
+  "runtime_contracts": {
+    "context_managers": [
+      {
+        "enter_returns_self": true,
+        "exit_return": false,
+        "factory": "BoundComposition.evidence_scope",
+        "scope_type": "CompositionExecutionScope",
+        "session_phase_after_exit": "locked"
+      },
+      {
+        "enter_returns_self": true,
+        "exit_return": false,
+        "factory": "AllowedPathwayAlternatives.selection_scope",
+        "scope_type": "AlternativeSelectionScope",
+        "session_phase_after_exit": "locked"
+      },
+      {
+        "enter_returns_self": true,
+        "exit_return": false,
+        "factory": "CandidateDeclaration.evidence_scope",
+        "scope_type": "CandidateExecutionScope",
+        "session_phase_after_exit": "locked"
+      }
+    ],
+    "return_object_types": {
+      "BindingLock.to_record": "dict",
+      "BindingReceipt.to_record": "dict",
+      "BoundPathway.symbol": "VerifiedCallable",
+      "CausalPathwayAuthority.load": "CausalPathwayAuthority",
+      "PathwayBindingSession": "PathwayBindingSession",
+      "PathwayBindingSession.bind_pathway": "BoundPathway",
+      "PathwayBindingSession.build_receipt": "BindingReceipt",
+      "PathwayBindingSession.freeze_lock": "BindingLock",
+      "VerifiedCallable.__call__": "NoneType",
+      "unbound_execution_classification": "mappingproxy"
+    },
+    "unbound_execution_classification": {
+      "accepted_binding_receipt": false,
+      "causal_pathway_provenance": "unbound",
+      "claim_qualified": false
+    }
+  },
+  "schema_version": "i118_artifact_runtime_compatibility_freeze_v1",
+  "source_commit": "8e07e17688db3d49420d933f41ba936e5dab9dcb",
+  "source_tree": "984df49232285e0f63e48c98c37606b04873bd84",
+  "status": "frozen"
+}

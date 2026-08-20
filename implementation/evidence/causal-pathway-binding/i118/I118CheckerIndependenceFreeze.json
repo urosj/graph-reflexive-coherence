@@ -1,0 +1,77 @@
+{
+  "artifact": "I118 checker independence freeze",
+  "binder_source_path": "src/pygrc/causal_pathways/binding.py",
+  "binder_source_sha256": "84d5499687888b68e91809b15ea79d8b06e197f7876da5a875ee44bb7b23f979",
+  "checker_independence_contract": {
+    "checker_path": "scripts/check_grc_lgrc_causal_pathway_binding_conformance.py",
+    "checker_sha256": "5502d6e9581036e421f7099116921d7b28784b400176d42c61a94576f22933cb",
+    "dynamic_imports": [],
+    "forbidden_binding_imports": [],
+    "imports": [
+      {
+        "kind": "from",
+        "line": 4,
+        "module": "__future__"
+      },
+      {
+        "kind": "import",
+        "line": 6,
+        "module": "argparse"
+      },
+      {
+        "kind": "import",
+        "line": 7,
+        "module": "ast"
+      },
+      {
+        "kind": "import",
+        "line": 8,
+        "module": "copy"
+      },
+      {
+        "kind": "import",
+        "line": 9,
+        "module": "hashlib"
+      },
+      {
+        "kind": "import",
+        "line": 10,
+        "module": "json"
+      },
+      {
+        "kind": "import",
+        "line": 11,
+        "module": "re"
+      },
+      {
+        "kind": "from",
+        "line": 12,
+        "module": "collections.abc"
+      },
+      {
+        "kind": "from",
+        "line": 13,
+        "module": "functools"
+      },
+      {
+        "kind": "from",
+        "line": 14,
+        "module": "pathlib"
+      },
+      {
+        "kind": "from",
+        "line": 15,
+        "module": "typing"
+      }
+    ],
+    "load_bearing_derivations_remain_independent": true
+  },
+  "date": "2026-08-20",
+  "freeze_digest": "13af63b147b83cea4d7883116617c379e02732089b170031ed0115e8e5043397",
+  "iteration": 118,
+  "runtime_behavior_changed": false,
+  "schema_version": "i118_checker_independence_freeze_v1",
+  "source_commit": "8e07e17688db3d49420d933f41ba936e5dab9dcb",
+  "source_tree": "984df49232285e0f63e48c98c37606b04873bd84",
+  "status": "frozen"
+}

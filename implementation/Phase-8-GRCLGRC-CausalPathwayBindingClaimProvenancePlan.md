@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iteration 117 accepted; Iterations 118-125 planned
+**Status:** Iteration 118 complete; Iterations 119-125 planned
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -426,6 +426,61 @@ golden-byte tests, add the independent-checker import guard, and record the
 pre-refactor focused and full-suite baselines. This iteration changes tests and
 evidence only, not binder runtime code.
 
+Iteration 118 passed with a 48-export public API freeze, 12-case regenerated
+artifact/runtime corpus, 26-file canonical I115/I116 manifest, independent
+checker guard, 109 focused tests, and 1,320 full-suite tests. See the
+[Iteration 118 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md).
+
+### Related files and artifacts
+
+- Iteration control: the
+  [I118 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md),
+  [plan](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md), and
+  [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md).
+- Frozen production inputs: the
+  [`pygrc.causal_pathways` public surface](../src/pygrc/causal_pathways/__init__.py),
+  [pre-refactor binder monolith](../src/pygrc/causal_pathways/binding.py),
+  [project configuration](../pyproject.toml), and
+  [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json).
+- Authority specifications: the
+  [pathway registry](../specs/grc-lgrc-causal-pathway-contracts.json),
+  [evidence crosswalk](../specs/grc-lgrc-causal-pathway-evidence-crosswalk.json),
+  [composition matrix](../specs/grc-lgrc-causal-pathway-composition-matrix.json),
+  [selection guide](../specs/grc-lgrc-causal-pathway-selection-guide.json),
+  [pathway conformance policy](../specs/grc-lgrc-causal-pathway-conformance.json),
+  [binding map](../specs/grc-lgrc-causal-pathway-bindings.json), and
+  [binding conformance policy](../specs/grc-lgrc-causal-pathway-binding-conformance.json).
+- Builders and checkers: the
+  [I118 freeze builder](../scripts/build_phase8_causal_pathway_binding_i118.py),
+  [I116 corpus builder](../scripts/build_phase8_causal_pathway_binding_i116.py),
+  [binding conformance checker](../scripts/check_grc_lgrc_causal_pathway_binding_conformance.py),
+  and [predecessor pathway checker](../scripts/check_grc_lgrc_causal_pathway_conformance.py).
+- Tests and fixtures: the
+  [I118 enforcement tests](../tests/integrations/test_causal_pathway_binding_i118.py),
+  [core binder tests](../tests/integrations/test_causal_pathway_binding.py),
+  [binding conformance tests](../tests/integrations/test_causal_pathway_binding_conformance.py),
+  [I116 tests](../tests/integrations/test_causal_pathway_binding_i116.py), and
+  [reviewed CMP-05 mechanism fixture](../tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json).
+- I118 machine evidence: the
+  [public API freeze](evidence/causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json),
+  [artifact/runtime freeze](evidence/causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json),
+  [checker-independence freeze](evidence/causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json),
+  [baseline execution record](evidence/causal-pathway-binding/i118/I118BaselineExecution.json),
+  and [supplemental corpus](evidence/causal-pathway-binding/i118/corpus/).
+- Inherited accepted evidence: the
+  [I115 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration115.md),
+  [I116 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration116.md),
+  [I117 correction record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration117IndependentAuditCorrections.md),
+  [I116 corpus](evidence/causal-pathway-binding/i116/), I115
+  [native lock](evidence/causal-pathway-binding/i115-native-pathway.lock.json),
+  [native receipt](evidence/causal-pathway-binding/i115-native-pathway.receipt.json),
+  [conformance execution](evidence/causal-pathway-binding/i115-conformance-execution.json),
+  [negative-control execution](evidence/causal-pathway-binding/i115-negative-control-execution.json),
+  and [I116 low-context consumer specification](evidence/causal-pathway-binding/i116-low-context-consumer-specification.json).
+
+The artifact/runtime freeze is the authoritative exhaustive 26-file inherited
+manifest; this subsection is the human navigation index.
+
 ## Iteration 119: Package Boundary And Identity Foundation
 
 Atomically replace `binding.py` with the `binding/` package; never leave the
@@ -499,7 +554,7 @@ widening, endpoint co-use without composition flow, hard-coded candidate target
 requests, source-present-but-unused candidates, and stale source content. Each
 relevant independent gate must still fail closed.
 
-The 1,315-test project suite, accepted 68-case independent semantic gate, both
+The 1,320-test project suite, accepted 68-case independent semantic gate, both
 20-rule conformance policies, all examples, Ruff, mypy, compileall, and diff
 checks must pass before Iteration 125 can close. Closure requires zero
 semantic, artifact, or runtime differences attributable to the refactor.

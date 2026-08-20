@@ -1,6 +1,6 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Checklist
 
-**Status:** Iteration 117 accepted; Iterations 118-125 planned and not started.
+**Status:** Iteration 118 complete; Iterations 119-125 planned and not started.
 Checked Iteration 112-117 items retain their historical acceptance meaning.
 
 ## Global Boundaries
@@ -305,24 +305,24 @@ next.
 
 ## Iteration 118: Compatibility And Refactor Baseline
 
-- [ ] Treat Iterations 118-125 as a refactor and usability tranche; preserve
+- [x] Treat Iterations 118-125 as a refactor and usability tranche; preserve
       the accepted mechanism-specific architecture and
       `semantic_selection_performed_by_binder = false` boundary.
-- [ ] Freeze before-refactor public symbol names, import paths, class/function
+- [x] Freeze before-refactor public symbol names, import paths, class/function
       and method signatures, exception types and important conditions,
       context-manager behavior, and return object types in a machine-readable
       `I118PublicAPICompatibilityFreeze.json` or equivalent.
-- [ ] Freeze before-refactor canonical bytes and digests for the full practical
+- [x] Freeze before-refactor canonical bytes and digests for the full practical
       accepted I115/I116 binder fixture corpus.
-- [ ] Cover native pathways; producer, adapter, and diagnostic compositions;
+- [x] Cover native pathways; producer, adapter, and diagnostic compositions;
       dynamic choice; candidate pathways and compositions; reviewed
       invalid-pair candidates; unused declarations; non-qualifying and raised
       effects; negative controls; and multi-edge graphs in that corpus.
-- [ ] Add public behavioral-API compatibility, runtime-observation, and full
+- [x] Add public behavioral-API compatibility, runtime-observation, and full
       practical-corpus golden-byte tests before moving production code.
-- [ ] Add a guard that prevents the independent binding conformance checker
+- [x] Add a guard that prevents the independent binding conformance checker
       from importing load-bearing binder derivation or validation logic.
-- [ ] Record the pre-refactor focused and full-project baselines using the
+- [x] Record the pre-refactor focused and full-project baselines using the
       repository `.venv`; do not change binder runtime code in this iteration.
 
 ## Iteration 119: Package Boundary And Identity Foundation
@@ -458,7 +458,7 @@ next.
       hard-coded or source-unused candidate requests, and stale source content;
       require the relevant independent gates to fail closed.
 - [ ] Run all binder examples and focused binding/conformance/I116 tests.
-- [ ] Run the full project suite (current baseline: 1,315 tests).
+- [ ] Run the full project suite (current baseline: 1,320 tests).
 - [ ] Replay the accepted 68-case independent semantic gate.
 - [ ] Pass both 20-rule conformance policies, Ruff, mypy, compileall, and
       `git diff --check` before closing Iteration 125.
