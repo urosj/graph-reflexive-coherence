@@ -181,7 +181,7 @@ dirty_or_failing_baseline or missing_exact_source_identity stops execution
 - [x] Freeze the post-GRV1 contradiction route for any later protected-path discovery.
 - [x] Emit `instrumentation_validation.json`, `fixture_registry.json`, and report.
 - [x] Emit and validate the GRV1 result receipt.
-- [ ] Record GRV1 scientific acceptance in a separate accepted anchor before GRV2.
+- [x] Record GRV1 scientific acceptance in a separate accepted anchor before GRV2.
 - [x] Assign no branch, continuation, retention, or read-back claim.
 
 GRV1 mechanical result:
@@ -297,7 +297,8 @@ node_values / edge_values = unknown and carried into GRV3 closure
   each selected branch.
 - [ ] Record distance from positivity, conductance-floor, spark, basin/sink, growth, and event boundaries.
 - [ ] Emit `fixed_branch_registry.json` and report.
-- [ ] Emit and validate the GRV2 result receipt and separate acceptance anchor.
+- [ ] Emit and validate the GRV2 result receipt.
+- [ ] Record the GRV2 acceptance decision in a separate human anchor after review.
 - [ ] State explicitly that branch existence is not continuation or retention.
 
 ## Iteration 4 - GRV3 Causal State And Complete Transition Jacobian

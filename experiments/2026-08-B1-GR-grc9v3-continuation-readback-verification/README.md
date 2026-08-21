@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv1_P1_1_executed_awaiting_scientific_acceptance
+status = grv1_accepted_grv2_P2_prepared
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -28,8 +28,8 @@ positive_continuation_evidence_opened = false
 positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
-verification_closeout_rung = GRV-C1
-verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
+verification_closeout_rung = GRV-C2
+verification_closeout_ceiling = GRV-C2
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -75,8 +75,14 @@ and fresh-process replay, and explicit transition-environment/RNG accounting.
 The strengthened rerun from clean input revision `416f49e` passes mechanically.
 Receipt `9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a`
 binds the new authority map and instrumentation artifacts and explicitly
-supersedes the earlier unaccepted receipt. GRV-C2 remains a candidate pending
-separate authorized human acceptance.
+supersedes the earlier unaccepted receipt. That receipt remained a `GRV-C2`
+candidate until the separate acceptance below.
+
+The strengthened GRV1 result is accepted by the experiment owner in separate
+anchor commit `bc12787`. Iteration 2 is therefore closed at `GRV-C2`, still
+without branch, continuation, retention, read-back, or write-back evidence.
+GRV2 is prepared as the first gate eligible to produce a source-current formed-
+branch candidate; its output remains provisional until separately accepted.
 
 ## Central Question
 

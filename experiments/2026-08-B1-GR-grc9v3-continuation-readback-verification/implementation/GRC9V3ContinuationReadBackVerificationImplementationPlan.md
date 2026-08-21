@@ -400,6 +400,26 @@ zero-current branches under complete double-refresh runtime semantics.
     root, deduplication rule, continuation lineage, selection rule, and a
     held-out replay/validation run for selected branches.
 
+### Committed P2 search realization
+
+GRV2 realizes the sealed method with a bounded, source-derived parameter grid,
+not an outcome-conditioned search. `F1` certifies the homogeneous two-node
+family directly. `F2` and `F3` use damped Newton search in reduced zero-sum
+coherence coordinates under fixed total coherence. The committed grid varies
+quadratic site-potential scale, timestep, and transport rate; keeps the existing
+source-valid near-neutral anchor `alpha = beta = gamma = 1e-12`, fixed topology,
+disabled choice, zero birth rate, and unit-measure budget enforcement; and stays
+below the accepted budget of 256 rows per family.
+
+The grid includes the source-derived scales at which the occupied graph
+Laplacian and quadratic site-potential derivative can balance, but this does
+not admit a branch by construction. Every retained row must still pass the
+unchanged complete step, fresh internal-stage replay, numerical no-op budget
+correction, event/topology exclusion, symmetry and port controls, save/load
+replay, and a selection-independent held-out replay. Symmetry siblings remain
+visible and receive permutation-orbit identifiers rather than being discarded
+by Euclidean deduplication.
+
 ### Required outputs
 
 ```text

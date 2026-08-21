@@ -9,6 +9,7 @@ from artifact_io import EXPERIMENT_ROOT, git, sha256_file, write_json
 from capture_repository_baseline import capture
 from gate_receipts import finalize_receipt, validate_receipt
 from serialize_theory_contract import serialize
+from solve_strong_fixed_branches import run_grv2
 from validate_instrumentation import run_grv1
 
 
@@ -19,6 +20,13 @@ def grv0_output_paths(output_root: Path) -> list[Path]:
         for path in output_root.rglob("*")
         if path.is_file() and path.name != ".gitkeep" and path != receipt_path
     )
+
+
+def prerequisite_anchor_path(gate: str) -> Path:
+    index = int(gate.removeprefix("GRV"))
+    if index <= 0:
+        raise ValueError("GRV0 has no prerequisite acceptance anchor")
+    return EXPERIMENT_ROOT / f"outputs/gates/grv{index - 1}_acceptance_anchor.json"
 
 
 def write_report(capture_result: dict[str, object], output_paths: list[Path]) -> Path:
@@ -102,8 +110,15 @@ def main() -> None:
         run_grv1()
         print("GRV1 mechanically validated; scientific acceptance anchor is pending.")
         return
+    if args.gate == "GRV2":
+        anchor = prerequisite_anchor_path(args.gate)
+        if not anchor.exists():
+            raise SystemExit(f"{args.gate} blocked: prerequisite accepted anchor is missing")
+        run_grv2()
+        print("GRV2 mechanically validated; scientific acceptance anchor is pending.")
+        return
     if args.gate != "GRV0":
-        anchor = EXPERIMENT_ROOT / f"outputs/gates/grv{int(args.gate[-1]) - 1}_acceptance_anchor.json"
+        anchor = prerequisite_anchor_path(args.gate)
         if not anchor.exists():
             raise SystemExit(f"{args.gate} blocked: prerequisite accepted anchor is missing")
         raise SystemExit(f"{args.gate} is not executable in the P0 package revision")

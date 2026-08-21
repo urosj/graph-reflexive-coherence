@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-import subprocess
 import sys
 import tempfile
 import unittest
@@ -10,6 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from run_all import prerequisite_anchor_path  # noqa: E402
 from serialize_theory_contract import serialize  # noqa: E402
 
 
@@ -26,15 +26,17 @@ class GateDependencyTest(unittest.TestCase):
         for index in range(1, 9):
             self.assertEqual([gates[index - 1]], payload["dependencies"][gates[index]])
 
-    def test_orchestrator_refuses_missing_acceptance_anchor(self) -> None:
-        result = subprocess.run(
-            [sys.executable, str(ROOT / "scripts/run_all.py"), "--gate", "GRV2"],
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
+    def test_orchestrator_maps_each_gate_to_predecessor_anchor(self) -> None:
+        self.assertEqual(
+            ROOT / "outputs/gates/grv1_acceptance_anchor.json",
+            prerequisite_anchor_path("GRV2"),
         )
-        self.assertNotEqual(0, result.returncode)
-        self.assertIn("prerequisite accepted anchor is missing", result.stdout)
+        self.assertEqual(
+            ROOT / "outputs/gates/grv7_acceptance_anchor.json",
+            prerequisite_anchor_path("GRV8"),
+        )
+        with self.assertRaises(ValueError):
+            prerequisite_anchor_path("GRV0")
 
 
 if __name__ == "__main__":

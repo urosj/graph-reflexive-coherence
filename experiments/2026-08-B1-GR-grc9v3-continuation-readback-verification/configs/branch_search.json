@@ -1,11 +1,66 @@
 {
-  "schema_version": "b1_grv0_branch_search_v1",
+  "schema_version": "b1_grv2_branch_search_v2",
   "seed": 31001,
   "candidate_fixtures": ["F1", "F2", "F3"],
   "search_budget_per_family": 256,
-  "residual_norm": "l2_on_admitted_physical_projection",
-  "residual_tolerance": 1e-9,
-  "selection_rule": "predeclared_lowest_residual_then_lexicographic_fixture_parameter_identity",
+  "common_runtime_envelope": {
+    "alpha": 1e-12,
+    "beta": 1e-12,
+    "gamma": 1e-12,
+    "kappa_c": 1.0,
+    "lambda_birth": 0.0,
+    "site_potential_selection": "quadratic",
+    "site_potential_mu": 0.0,
+    "choice_backend": "disabled",
+    "boundary_mode": "prune",
+    "curvature_backend": "none",
+    "frame_mode": "fixed_port_chart",
+    "quadrature_mode": "unit_measure",
+    "spark_lane": "current_hybrid_signed_hessian"
+  },
+  "parameter_grid": {
+    "site_potential_scales": [0.0, 0.5, 1.0, 1.5],
+    "dt_values": [0.05, 0.1],
+    "eta_values": [0.5, 1.0]
+  },
+  "fixture_searches": {
+    "F1": {
+      "total_coherence": 4.0,
+      "coherence_seeds": [[2.0, 2.0]],
+      "search_kind": "analytic_homogeneous_family_certification"
+    },
+    "F2": {
+      "total_coherence": 4.0,
+      "coherence_seeds": [[1.0, 3.0], [3.0, 1.0], [1.5, 2.5], [2.5, 1.5]],
+      "search_kind": "bounded_damped_newton_reduced_zero_sum_coordinates"
+    },
+    "F3": {
+      "total_coherence": 6.0,
+      "coherence_seeds": [[1.0, 2.0, 3.0], [2.0, 3.0, 1.0], [3.0, 1.0, 2.0], [1.0, 1.5, 3.5]],
+      "search_kind": "bounded_damped_newton_reduced_zero_sum_coordinates"
+    }
+  },
+  "solver": {
+    "maximum_iterations": 24,
+    "finite_difference_step": 1e-06,
+    "root_l_inf_tolerance": 1e-11,
+    "minimum_backtracking_factor": 0.0009765625,
+    "minimum_positive_coherence": 1e-08,
+    "nonuniform_contrast_minimum": 0.25
+  },
+  "certification": {
+    "analytic_absolute_l_inf_tolerance": 1e-10,
+    "numerical_absolute_l_inf_tolerance": 1e-09,
+    "relative_residual_tolerance": 1e-08,
+    "budget_correction_l_inf_tolerance": 1e-12,
+    "conductance_floor": 1e-12,
+    "causal_strong_branch_upgrade_gate": "GRV3"
+  },
+  "residual_norm": "full_step_and_internal_stage_block_norms_on_admitted_physical_projection",
+  "selection_rule": "predeclared_lowest_full_step_l_inf_then_lexicographic_fixture_parameter_branch_identity",
+  "deduplication_rule": "retain_all_symmetry_related_rows_and_assign_permutation_orbit_ids_from_sorted_coherence_and_parameter_hash",
+  "continuation_lineage_rule": "independent_seed_parameter_rows_no_retrospective_continuation",
   "complete_selection_accounting_required": true,
-  "held_out_validation_required": true
+  "held_out_validation_required": true,
+  "negative_search_scope": "bounded_to_declared_seed_parameter_grid_solver_and_compute_budget_no_global_nonexistence_claim"
 }
