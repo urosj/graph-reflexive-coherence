@@ -1,6 +1,6 @@
 {
-  "schema_version": "b1_grv2_p2_package_manifest_v1_1",
-  "package_status": "clean_P2_1_preacceptance_replay_correction_when_contained_in_committed_revision",
+  "schema_version": "b1_grv2_p2_package_manifest_v1_2",
+  "package_status": "clean_P2_2_preacceptance_orientation_correction_when_contained_in_committed_revision",
   "gate_id": "GRV2",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -27,19 +27,35 @@
     "tests/test_strong_fixed_branches.py"
   ],
   "search_contract": "configs/branch_search.json",
-  "preacceptance_execution_correction": {
-    "failed_input_revision": "5bf082d0dc34a4763b9deefc7100c733a13e1245",
-    "result_receipt_emitted": false,
-    "partial_branch_snapshots_admitted": false,
-    "failure": "triangle_closing_edge_load_recanonicalized_a_numerical_zero_current_and_exact_replay_gate_rejected_it",
-    "correction": "apply_existing_per_block_numerical_tolerances_to_save_load_replay_and_record_raw_representation_normalization_separately",
-    "method_changed": false,
-    "threshold_changed": false,
-    "fixture_changed": false,
-    "runtime_changed": false,
-    "claim_ceiling_changed": false,
-    "complete_GRV2_reexecution_required": true
-  },
+  "preacceptance_execution_corrections": [
+    {
+      "failed_input_revision": "5bf082d0dc34a4763b9deefc7100c733a13e1245",
+      "result_receipt_emitted": false,
+      "partial_branch_snapshots_admitted": false,
+      "failure": "triangle_closing_edge_load_recanonicalized_a_numerical_zero_current_and_exact_replay_gate_rejected_it",
+      "correction": "apply_existing_per_block_numerical_tolerances_to_save_load_replay_and_record_raw_representation_normalization_separately",
+      "method_changed": false,
+      "threshold_changed": false,
+      "fixture_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV2_reexecution_required": true
+    },
+    {
+      "failed_input_revision": "050639ad9652cae7225388eb8a39b0f132161dcb",
+      "result_receipt_emitted": false,
+      "partial_branch_snapshots_admitted": false,
+      "failure": "triangle_builder_topology_endpoint_order_disagreed_with_the_runtime_canonical_current_coordinate_on_the_closing_edge",
+      "correction": "canonicalize_topology_endpoints_and_port_edge_orientation_together_before_GRC9V3_construction",
+      "method_changed": false,
+      "threshold_changed": false,
+      "fixture_graph_changed": false,
+      "fixture_coordinate_orientation_corrected": true,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV2_reexecution_required": true
+    }
+  ],
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV2",
   "claim_ceiling": "existence_and_local_source_identity_of_GRC_formed_fixed_branches_only"
 }

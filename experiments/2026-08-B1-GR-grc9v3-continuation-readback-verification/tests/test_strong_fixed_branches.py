@@ -14,6 +14,7 @@ from solve_strong_fixed_branches import (  # noqa: E402
     assert_search_contract,
     build_params,
     block_projection,
+    build_state,
     certify_branch,
     replay_saved_branch,
     search_space_size,
@@ -33,6 +34,15 @@ class StrongFixedBranchTest(unittest.TestCase):
         self.assertEqual(16, search_space_size(self.config, "F1"))
         self.assertEqual(64, search_space_size(self.config, "F2"))
         self.assertEqual(64, search_space_size(self.config, "F3"))
+
+    def test_triangle_builder_uses_canonical_edge_orientation(self) -> None:
+        state = build_state("F3", [1.0, 2.0, 3.0])
+        closing_topology_edge = state["topology"]["edges"][2]
+        closing_port_edge = state["port_edges"]["2"]
+        self.assertEqual(0, closing_topology_edge["endpoint_a"]["node_id"])
+        self.assertEqual(2, closing_topology_edge["endpoint_b"]["node_id"])
+        self.assertEqual(0, closing_port_edge["node_u"])
+        self.assertEqual(2, closing_port_edge["node_v"])
 
     def test_homogeneous_two_node_branch_passes_strong_certification(self) -> None:
         params = build_params(0.5, 0.1, 1.0, 31001)

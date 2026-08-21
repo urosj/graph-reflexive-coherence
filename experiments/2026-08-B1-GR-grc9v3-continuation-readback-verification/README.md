@@ -93,6 +93,15 @@ accepted per-block tolerances while continuing to report raw representation
 normalization separately. No partial snapshot is evidence, and the complete
 gate must be rerun from clean committed input.
 
+The P2.1 rerun from `050639a` passed the first triangle rows but failed closed on
+a more asymmetric row. That exposed the underlying experiment-builder defect:
+the undirected closing edge retained topology endpoint order `2 -> 0` while the
+runtime current coordinate had already been canonicalized to `0 -> 2`. P2.2
+canonicalizes the topology endpoint and `PortEdge` orientation together, as
+required by the frozen orientation convention. The graph, parameter grid,
+thresholds, runtime, and claim ceiling are unchanged; all partial outputs remain
+unadmitted and a complete clean rerun is required.
+
 ## Central Question
 
 ```text

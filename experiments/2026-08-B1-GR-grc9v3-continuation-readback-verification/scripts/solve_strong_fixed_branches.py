@@ -83,6 +83,12 @@ def build_state(
     for edge_id, (node_u, node_v, port_u_raw, port_v_raw) in enumerate(edges):
         port_u = int(ports.get(port_u_raw, port_u_raw))
         port_v = int(ports.get(port_v_raw, port_v_raw))
+        endpoint_u = (node_u, port_u)
+        endpoint_v = (node_v, port_v)
+        if endpoint_v < endpoint_u:
+            endpoint_u, endpoint_v = endpoint_v, endpoint_u
+        node_u, port_u = endpoint_u
+        node_v, port_v = endpoint_v
         topology_edge_rows.append(
             {
                 "edge_id": edge_id,
