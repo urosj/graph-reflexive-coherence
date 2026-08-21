@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv2_P2_3_adversarial_hardening_prepared_pending_clean_execution
+status = grv2_P2_3_executed_awaiting_scientific_acceptance
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV2_P2_3_prepared_pending_clean_execution
+current_gate = GRV2_P2_3_executed_awaiting_authorized_human_acceptance
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C3_candidate_pending_P2_3_execution_and_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -357,11 +357,11 @@ excluded and administrative fields admit a closed causal state before any
 - [x] Record full canonical branch signatures, symmetry-orbit counts, and row-count
   nonindependence.
 - [x] Add experiment-local regression tests for the new controls.
-- [ ] Commit the clean P2.3 input revision before execution.
-- [ ] Rerun all 144 rows from the clean P2.3 input.
-- [ ] Regenerate and validate every branch snapshot, registry, ledger, report,
+- [x] Commit the clean P2.3 input revision before execution.
+- [x] Rerun all 144 rows from the clean P2.3 input.
+- [x] Regenerate and validate every branch snapshot, registry, ledger, report,
   protected manifest, and GRV2 receipt.
-- [ ] Record the superseding P2.3 result and keep scientific acceptance pending
+- [x] Record the superseding P2.3 result and keep scientific acceptance pending
   a separate authorized human anchor.
 
 Adversarial-review disposition:
@@ -397,6 +397,38 @@ Adversarial-review disposition:
 - [x] Require save/load replay for every branch and selected fresh-process replay.
 - [x] Record that a solver-tolerance sweep is not part of sealed GRV2 and make no
   numerical-tolerance-robustness claim.
+
+P2.3 result:
+
+```text
+input_revision = 228e1d4f1f13af7ab7ff464dca592d4decd609f9
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+receipt_payload_sha256 = 73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63
+search_rows = 144
+accepted_provisional_physical_strong_branch_rows = 48
+unique_canonical_symmetry_orbits = 32
+rejected_nonuniform_rows = 96_homogeneous_roots_outside_target
+administrative_phase_hold_beats_per_branch = 4
+administrative_phase_hold_rows = 192
+maximum_four_beat_cumulative_physical_l_inf = 6.537703711728682e-10
+maximum_authoritative_current_l_inf = 6.117240047785867e-11
+minimum_budget_active_set_margin = 1.0000000000020002
+all_canonicalization_admissions = passed
+all_authoritative_surface_assertions = passed
+all_budget_active_set_and_no_clipping_controls = passed
+all_four_beat_physical_holds = passed
+all_noncache_excluded_state_exact = true
+cache_refresh_observed = 48_of_48_branches
+cache_and_complete_causal_state_status = deferred_to_GRV3
+causal_strong_branch = deferred_to_GRV3
+candidate_closeout_ceiling = GRV-C3
+positive_evidence_opened = false_pending_authorized_human_acceptance
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
 
 ## Iteration 4 - GRV3 Causal State And Complete Transition Jacobian
 

@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv2_P2_3_adversarial_hardening_prepared_pending_clean_execution
+status = grv2_P2_3_executed_awaiting_scientific_acceptance
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C3_candidate_pending_P2_3_execution_and_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -128,8 +128,22 @@ P2.3 preserves the sealed search grid, solver, fixtures, runtime, thresholds,
 and claim ceiling. It adds a four-beat physical hold, explicit authoritative
 `W/J` admission, continuity/budget diagnostics, and symmetry-orbit
 nonindependence accounting. Cache refresh and complete causal-state closure
-remain GRV3 debt. The full gate must be rerun from a clean committed P2.3 input
-before GRV2 can be reviewed for acceptance.
+remain GRV3 debt. A full gate rerun from a clean committed P2.3 input was
+therefore required before GRV2 could be reviewed for acceptance.
+
+The complete P2.3 rerun from clean input revision `228e1d4` passes. It preserves
+the 144-row search result: 48 provisional branch rows and 96 bounded
+nonuniform-search rejections. The 48 rows occupy 32 canonical symmetry orbits;
+the row count is not an independent-branch count. Every retained row passes
+canonical load-bearing-state admission, authoritative `W/J` checks, continuity
+and budget active-set controls, save/load replay, and the four-beat physical
+hold. Across 192 hold beats, the maximum cumulative physical `L_inf` residual
+is about `6.54e-10`, below the declared `1e-9` numerical branch limit. All
+non-cache excluded state stays exact; cache refresh occurs on every row and
+remains explicit GRV3 causal-closure debt. Receipt
+`73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63`
+binds the superseding result to P2.3. GRV2 remains a `GRV-C3` candidate pending
+separate scientific acceptance.
 
 ## Central Question
 

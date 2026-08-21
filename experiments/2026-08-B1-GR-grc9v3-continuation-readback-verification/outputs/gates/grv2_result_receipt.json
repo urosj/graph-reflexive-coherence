@@ -9,8 +9,8 @@
   ],
   "claim_ceiling": "GRV-C3_candidate_formed_branch_existence_and_local_source_identity_only_pending_authorized_human_acceptance",
   "gate_id": "GRV2",
-  "input_execution_revision": "d224a10302bfa030da817105dbf65c2a23f41483",
-  "input_experiment_tree_sha256": "3e6543ec51b1d6a7161707b19df5f9829592028a01a629869bb959398da244c8",
+  "input_execution_revision": "228e1d4f1f13af7ab7ff464dca592d4decd609f9",
+  "input_experiment_tree_sha256": "0ae18e79c82cc5c53e19fba8676dae231078a69988fec304ee0962623bfab1ae",
   "output_artifact_digests": {
     "outputs/branches/grv2-f1-001.json": "24a72626b505c93263ac54b32fefc1a6cf5ba2f57c51e252a21b77698b091738",
     "outputs/branches/grv2-f1-002.json": "d9ac31bad940d49e595f245445dc033069cba9d08527b03c823e31b4a560b520",
@@ -60,10 +60,10 @@
     "outputs/branches/grv2-f3-046.json": "cbb02a927ea2ad4b928c92c4059a7e96cef22181b6994633a25cd6d3cc889b87",
     "outputs/branches/grv2-f3-047.json": "922bb80b0bd91581a03817316d0ea030c91ab07635be4bf81d05365fdf5f2bf4",
     "outputs/branches/grv2-f3-048.json": "a0493c04444a0382aad7b566e9636a46e28870e1afe9b2368d4abf832d62da1f",
-    "outputs/fixed_branch_registry.json": "59f58e64b16d6c3ad3a9a55f605e0ddc9299a1cabadd9311416b9f4bbf1ebeda",
-    "outputs/grv2_branch_search_ledger.json": "e6a7f994fce9b3ebc872408d8d4c5ae19031d8c73f6e6b9da750cb30e4f6a66c",
+    "outputs/fixed_branch_registry.json": "56bd1857f892f187c6b99d6fcbd419ddd68ae0e17133b3a0bf7dda79b197e366",
+    "outputs/grv2_branch_search_ledger.json": "28bea99953849a5e10cf62ac17751c19d289d5e91ef779fb4269f27efa968609",
     "outputs/protected_path_manifest_v2.json": "f474a752eb44bf41fef9f90ef05bf4f4987130061a8e10c973b148da97bb6874",
-    "reports/b1_grv2_strong_formed_branches.md": "5476a27ba74287cdb2c91b13b3a568a6f39dae9a695c899dcf608955bba52a22"
+    "reports/b1_grv2_strong_formed_branches.md": "c85aa136e033ab479b6d7402eac7c2581901f3142444bdb76ee965ceb282d273"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -76,7 +76,7 @@
   "prerequisite_result_receipt_digests": [
     "9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a"
   ],
-  "receipt_payload_sha256": "967f1adc5d8b36c2cdf0fb5c0153ac43b37e14f5fd6c0f1bcb76d92f38f43c94",
+  "receipt_payload_sha256": "73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }

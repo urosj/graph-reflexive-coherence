@@ -463,6 +463,25 @@ threshold, or claim ceiling. The P2.2 receipt remains historical and cannot
 authorize GRV3; a complete clean P2.3 rerun and separate human acceptance are
 required.
 
+### P2.3 execution result
+
+The complete rerun from clean input revision `228e1d4` executes all 144 rows
+and preserves the bounded P2.2 portfolio: 48 provisional physical strong-branch
+rows and 96 homogeneous roots rejected from the F2/F3 nonuniform target. The
+accepted rows occupy 32 canonical symmetry orbits. All accepted rows pass the
+new canonicalization, authoritative-current, conductance consistency, budget
+active-set, no-clipping, and four-beat physical-hold gates.
+
+The 192 total hold beats have a maximum cumulative physical `L_inf` residual of
+approximately `6.54e-10`, within the declared `1e-9` numerical limit. The
+minimum budget active-set margin remains above `1.0`, and the maximum admitted
+authoritative current is approximately `6.12e-11`, below its `1e-10` tolerance.
+All non-cache excluded state is exact across the hold. Cache refresh is observed
+on every branch and remains GRV3 closure debt, so P2.3 neither claims a causal
+fixed state nor upgrades branch existence to stability, continuation, or
+retention. Receipt `73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63`
+records the result at a `GRV-C3` candidate ceiling pending human acceptance.
+
 ### Required outputs
 
 ```text

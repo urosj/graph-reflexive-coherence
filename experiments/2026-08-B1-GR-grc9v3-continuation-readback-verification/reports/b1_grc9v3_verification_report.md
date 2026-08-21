@@ -1,6 +1,6 @@
 # B1-GR Verification Report
 
-Status: GRV0 and GRV1 accepted; GRV2 P2.2 superseded before acceptance and P2.3 adversarial hardening prepared.
+Status: GRV0 and GRV1 accepted; GRV2 P2.3 executed and awaiting scientific review.
 
 Gate-local reports are added only after execution from a clean committed input
 revision. This report becomes the cross-gate synthesis at GRV8.
