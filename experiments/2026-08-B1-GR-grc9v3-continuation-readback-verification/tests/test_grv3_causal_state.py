@@ -16,7 +16,12 @@ from pygrc.models import GRC9V3  # noqa: E402
 
 from compute_complete_step_jacobian import (  # noqa: E402
     GRV2_RECEIPT_SHA256,
+    _symmetry_coordinate_transport,
+    basis_covariance_audit,
     codec_audit,
+    counterfactual_audit,
+    omitted_state_decomposition_audit,
+    phase_operator_audit,
     stratum_and_jacobian_audit,
 )
 from state_codec import BranchCoordinateChart  # noqa: E402
@@ -117,6 +122,105 @@ class GRV3CausalStateTest(unittest.TestCase):
         self.assertEqual(1e-6, spectral["eigenvalue_cluster_membership_tolerance"])
         self.assertEqual(1e-8, spectral["invariant_subspace_residual_max"])
         self.assertFalse(spectral["post_result_threshold_adjustment_allowed"])
+
+    def test_p3_4_hardening_contract_is_explicit(self) -> None:
+        hardening = self.config["p3_4_hardening"]
+        self.assertEqual([0, 1, 2, 4], hardening["administrative_phase_offsets"])
+        self.assertTrue(
+            hardening["phase_invariance_required_for_temporal_interpretation"]
+        )
+        self.assertTrue(hardening["omitted_cache_subfields_must_be_decomposed"])
+        self.assertFalse(hardening["block_metric"]["joint_C_W_mode_claim_allowed"])
+        self.assertTrue(
+            hardening["basis_covariance"][
+                "required_for_temporal_interpretation"
+            ]
+        )
+
+    def test_derivative_columns_gate_decoder_rng_and_branch_residual(self) -> None:
+        model = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-017.json"))
+        chart = BranchCoordinateChart.from_model(model, ("C", "W"))
+        audit = stratum_and_jacobian_audit(
+            model,
+            chart,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
+        )
+        self.assertEqual("admitted", audit["square_transition_jacobian_status"])
+        self.assertTrue(audit["column_audits"])
+        for row in audit["column_audits"]:
+            self.assertTrue(row["decoder_correction"]["passed"])
+            self.assertTrue(row["rng_control"]["passed"])
+            self.assertTrue(row["branch_residual_passed"])
+
+    def test_reference_reduction_passes_phase_and_basis_covariance(self) -> None:
+        model = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-017.json"))
+        chart = BranchCoordinateChart.from_model(model, ("C", "W"))
+        audit = stratum_and_jacobian_audit(
+            model,
+            chart,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
+        )
+        phase = phase_operator_audit(
+            model,
+            chart,
+            audit,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
+        )
+        basis = basis_covariance_audit(
+            model,
+            chart,
+            audit,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
+        )
+        self.assertTrue(phase["passed"])
+        self.assertTrue(basis["passed"])
+
+    def test_omitted_state_is_decomposed_and_j_even_odd_is_separate(self) -> None:
+        chart = BranchCoordinateChart.from_model(self.model, ("C", "W", "J"))
+        omitted = omitted_state_decomposition_audit(
+            self.model, chart, self.config, self.tolerances
+        )
+        self.assertTrue(omitted["rows"])
+        self.assertFalse(omitted["whole_cache_admitted_as_state"])
+        self.assertIn(
+            "node_values",
+            {row["field_id"] for row in omitted["rows"]},
+        )
+        counterfactual = counterfactual_audit(
+            self.model,
+            chart,
+            self.config,
+            self.tolerances,
+            {"C": True, "C_W": True},
+        )
+        nonlinear = counterfactual["J_even_odd_response"]
+        self.assertTrue(nonlinear["rows"])
+        self.assertFalse(nonlinear["J_eliminability_claim_allowed"])
+
+    def test_symmetry_transport_is_invertible_for_f2_pair(self) -> None:
+        source = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-017.json"))
+        target = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-018.json"))
+        source_chart = BranchCoordinateChart.from_model(source, ("C", "W"))
+        target_chart = BranchCoordinateChart.from_model(target, ("C", "W"))
+        transport, node_map, edge_map = _symmetry_coordinate_transport(
+            source_chart, target_chart
+        )
+        self.assertEqual(transport.shape[0], transport.shape[1])
+        self.assertEqual(transport.shape[0], np.linalg.matrix_rank(transport))
+        self.assertEqual(2, len(node_map))
+        self.assertEqual(1, len(edge_map))
 
     def test_nonuniform_reference_admits_reduced_not_full_coordinate(self) -> None:
         model = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-017.json"))

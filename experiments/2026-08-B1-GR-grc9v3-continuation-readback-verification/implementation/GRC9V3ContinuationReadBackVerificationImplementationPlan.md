@@ -560,6 +560,33 @@ summary. This does not change the method or respond to observed spectra by
 moving a threshold; a complete rerun remains required to bind the explicit
 contract to the output receipt.
 
+P3.3 remains unaccepted after adversarial causal-state review. P3.4 is a
+preacceptance method completion, not a threshold response to the P3.3 spectra.
+It preserves the exact branch registry, fixtures, runtime, coordinate
+candidates, finite-difference steps, spectral thresholds, and claim ceiling,
+while adding validity gates already required by the sealed causal-closure and
+covariance discipline:
+
+```text
+administrative phase / step-index derivative invariance
+per-subfield omitted-state and cache decomposition
+decoder correction relative to each derivative step
+RNG start, consumption, and post-step equality
+formed-branch residual relative to each derivative step
+separate first-order J and sign-even J^2 response diagnostics
+declared cross-block metric with joint C-W claims disabled
+alternate zero-sum basis covariance
+symmetry-orbit Jacobian conjugacy
+```
+
+P3.4 does not repair zero-current stratum crossings, admit the full cache as a
+state block, reinterpret a first-order `J` null as nonlinear eliminability, or
+promote endpoint symmetry labels into crossing evidence. A reduced matrix may
+remain measured while its fixed-operator spectral interpretation is blocked by
+phase, basis, or symmetry covariance. P3.3 artifacts remain preliminary and
+are superseded by the complete clean P3.4 rerun; no GRV3 acceptance anchor is
+created automatically.
+
 ### Work
 
 1. Admit a branch-relative continuous causal-state encoder/decoder and classify
@@ -588,6 +615,18 @@ contract to the output receipt.
 12. Classify counterfactual sensitivity, constitutive independence,
     runtime-causal independence, and eliminability separately for every
     candidate state block.
+13. Prove or reject derivative-level invariance across the preregistered
+    administrative phase offsets before interpreting a fixed `A_*`.
+14. Decompose omitted cache and placeholder fields one by one over the bounded
+    codec horizons; never admit the serialization dictionary wholesale.
+15. Gate every derivative column on decoder correction, RNG consumption
+    equality, and branch-residual-to-step separation.
+16. Keep odd first-order `J` response and even quadratic `J^2` response outside
+    the transition eigensystem and outside eliminability claims.
+17. Report raw and declared-scale block participation as diagnostic only, with
+    joint `C-W` mode claims disabled.
+18. Require alternate-basis covariance and symmetry-orbit conjugacy before a
+    reduced matrix supports temporal interpretation.
 13. Assign structural validity, constitutive consistency, runtime reachability,
     and runtime-causal independence from their separate operational gates.
 14. Test whether a C-only or C-W reduction is valid on any bounded branch.

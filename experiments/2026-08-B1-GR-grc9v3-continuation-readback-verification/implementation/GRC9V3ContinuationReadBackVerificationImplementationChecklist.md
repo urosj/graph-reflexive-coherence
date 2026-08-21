@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv3_P3_clean_input_prepared_execution_pending
+status = grv3_P3_4_method_frozen_pending_clean_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV3_P3_input_freeze
+current_gate = GRV3_P3_4_execution
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_accepted
+verification_closeout_ceiling = GRV-C3_with_GRV3_acceptance_blocked_pending_P3_4
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -480,47 +480,128 @@ writeback = unsupported
   in the explicit P3.3 method config before scientific acceptance.
 - [x] Record every otherwise admitted but interpretation-blocked matrix by
   branch and coordinate in the final machine summary.
+- [x] Supersede unaccepted P3.3 after adversarial review identified missing
+  phase, omitted-state, decoder, RNG, residual, nonlinear-current, metric, and
+  covariance admission gates.
+- [x] Preserve the P3.3 branch scope, fixtures, runtime, coordinate candidates,
+  finite-difference steps, spectral thresholds, and claim ceiling in P3.4.
+- [x] Freeze derivative-level administrative phase offsets and require phase
+  invariance before fixed-operator spectral interpretation.
+- [x] Freeze per-cache-key and placeholder-field omission audits over the
+  declared codec horizons; forbid whole-cache admission.
+- [x] Freeze decoder-correction-over-`h`, RNG-consumption, and
+  branch-residual-over-`h` gates for every derivative column.
+- [x] Freeze separate odd first-order and even quadratic `J` diagnostics without
+  using either as eigensystem or eliminability evidence.
+- [x] Freeze a declared branch-scale block metric, retain raw and normalized
+  participation as diagnostic only, and block joint `C-W` mode claims.
+- [x] Freeze alternate zero-sum basis covariance and symmetry-orbit conjugacy.
+- [ ] Execute P3.4 from a clean committed input revision.
+- [ ] Confirm all P3.4 machine gates and classify any blocked matrices without
+  numerical repair.
 
-- [ ] Freeze and test the branch-relative causal-state encoder and decoder.
-- [ ] Require coordinate round trip `E_X(D_X(x)) ~= x`.
-- [ ] Require reached-state canonicalization `D_X(E_X(S)) ~causal S`.
-- [ ] Require transition commutation `E_X(F(S)) ~= F_X(E_X(S))`.
-- [ ] Require preregistered bounded-horizon commutation for every codec horizon.
-- [ ] Report bounded-horizon causal closure without promoting it to global Markov sufficiency.
-- [ ] Apply exact categorical/identifier equality and block-specific numerical
+- [x] Freeze and test the branch-relative causal-state encoder and decoder.
+- [x] Require coordinate round trip `E_X(D_X(x)) ~= x`.
+- [x] Require reached-state canonicalization `D_X(E_X(S)) ~causal S`.
+- [x] Require transition commutation `E_X(F(S)) ~= F_X(E_X(S))`.
+- [x] Require preregistered bounded-horizon commutation for every codec horizon.
+- [x] Report bounded-horizon causal closure without promoting it to global Markov sufficiency.
+- [x] Apply exact categorical/identifier equality and block-specific numerical
   tolerances with declared per-horizon accumulated-error bounds.
-- [ ] Admit a continuous square causal-state coordinate before eigenanalysis.
-- [ ] Represent causally relevant categorical state as a discrete stratum and
+- [x] Admit a continuous square causal-state coordinate before eigenanalysis.
+- [x] Represent causally relevant categorical state as a discrete stratum and
   differentiate only within a fixed stratum.
-- [ ] Record positive two-sided stratum margins and matching runtime paths for every derivative column.
-- [ ] Run matched `C,J` with differing valid `W` through canonical interventions.
-- [ ] Run matched `C,W` with differing `J`.
-- [ ] Run matched `C,W` with sign-reversed `J`.
-- [ ] Compare branch-consistent and perturbed derived surfaces.
-- [ ] Separate reachable-history and synthetic-valid pairs.
-- [ ] Audit every excluded physical/administrative field for causal relevance.
-- [ ] Classify synthetic states as structurally valid, constitutively consistent, and runtime reachable separately.
-- [ ] Freeze admitted causal coordinate and zero-sum tangent order.
-- [ ] Freeze interior-safe `W`, `J`, and zero-coordinate perturbation policies.
-- [ ] Compute the square complete-step causal-transition Jacobian.
-- [ ] Compute smooth derived response Jacobians separately.
-- [ ] Record categorical/event surfaces as margins and threshold records, not eigensystem rows.
-- [ ] Verify relative column, matrix norm, eigenvalue-cluster, and subspace-angle convergence.
-- [ ] Record `C/W/J` blocks and residuals.
-- [ ] Record left/right eigensystems and conditioning.
-- [ ] Identify conservation, gauge, and branch-tangent modes.
-- [ ] Apply the preregistered nonnormal evidence mode.
-- [ ] Apply the preregistered fast/slow rule where applicable.
-- [ ] Classify stable slow, neutral, oscillatory, and unstable clusters.
-- [ ] Classify counterfactual sensitivity, constitutive independence,
+- [x] Record positive two-sided stratum margins and matching runtime paths for every derivative column.
+- [x] Run matched `C,J` with differing valid `W` through canonical interventions.
+- [x] Run matched `C,W` with differing `J`.
+- [x] Run matched `C,W` with sign-reversed `J`.
+- [x] Compare branch-consistent and perturbed derived surfaces.
+- [x] Separate reachable-history and synthetic-valid pairs.
+- [x] Audit every excluded physical/administrative field for causal relevance.
+- [x] Classify synthetic states as structurally valid, constitutively consistent, and runtime reachable separately.
+- [x] Freeze admitted causal coordinate and zero-sum tangent order.
+- [x] Freeze interior-safe `W`, `J`, and zero-coordinate perturbation policies.
+- [x] Compute square complete-step causal-transition Jacobians only for admitted charts.
+- [x] Compute smooth derived response Jacobians separately.
+- [x] Record categorical/event surfaces as margins and threshold records, not eigensystem rows.
+- [x] Verify relative column, matrix norm, eigenvalue-cluster, and subspace-angle convergence.
+- [x] Record `C/W/J` blocks and residuals.
+- [x] Record left/right eigensystems and conditioning.
+- [x] Record conservation, gauge, and branch-tangent identification statuses.
+- [x] Apply the preregistered nonnormal evidence mode.
+- [x] Apply the preregistered fast/slow rule where applicable.
+- [x] Classify stable slow, neutral, oscillatory, and unstable clusters.
+- [x] Classify counterfactual sensitivity, constitutive independence,
   runtime-causal independence, and eliminability separately for each candidate block.
-- [ ] Enforce distinct structural-validity, constitutive-consistency,
+- [x] Enforce distinct structural-validity, constitutive-consistency,
   runtime-reachability, and runtime-causal-independence admission gates.
-- [ ] Test bounded C-only and joint C-W reductions.
-- [ ] Upgrade only codec- and closure-admitted GRV2 branches to `causal_strong_branch`.
-- [ ] Emit `complete_step_jacobians.json`, `slow_cluster_registry.json`, and report.
-- [ ] Emit and validate the GRV3 result receipt and separate acceptance anchor.
-- [ ] Do not equate a slow joint mode with core retention.
+- [x] Test bounded C-only and joint C-W reductions.
+- [x] Gate `causal_strong_branch` candidate status on codec and closure admission;
+  leave the scientific upgrade pending human review.
+- [x] Emit `complete_step_jacobians.json`, `slow_cluster_registry.json`, and report.
+- [x] Emit and validate the GRV3 result receipt.
+- [ ] Emit a separate GRV3 acceptance anchor only after human scientific review.
+- [x] Do not equate a slow joint mode with core retention.
+
+### Iteration 4 Result
+
+P3.3 is retained as superseded preliminary evidence. It has no scientific
+acceptance anchor and cannot authorize GRV4. The P3.4 result will replace the
+block below after clean execution.
+
+```text
+result_status = superseded_unaccepted_by_P3_4_method_completion
+input_execution_revision = 0a323d2d5920b3bedaef052fd193777942add9be
+receipt_payload_sha256 = 7cf749fa8a46f6b219a27515504e4ad671a386144b2ef8626fb14e63a4fb104d
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+branches_audited = 48
+bounded_C_W_J_codec_closure_candidates = 48
+full_C_W_J_square_jacobians = 0
+reduced_square_jacobians = 64
+reduced_branch_rows = 32
+reduced_symmetry_orbits = 16
+temporal_mode_interpretation_pass_matrices = 61
+response_convergence_pass_matrices = 64
+finite_horizon_nonnormal_pass_matrices = 64
+individual_eigenvector_condition_block_matrices = 2
+cluster_fallback_block_matrices = 2
+branches_with_at_least_one_temporal_candidate = 32
+GRV_C4 = unsupported_pending_GRV4
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+Every full `(C,W,J)` chart is blocked at the classical derivative gate by at
+least one non-smooth current/sink/basin stratum column. This does not undo the
+48 bounded codec-closure candidates. The two frozen reductions admit 64
+matrices: `C-W` and `C` on each of 32 F2/F3 branch rows. Sixty-one matrices pass
+the complete temporal interpretation gate. `grv2-f3-036/C-W` is blocked by a
+fast-subspace dimension change across the step sweep;
+`grv2-f3-037/C-W` and `grv2-f3-041/C-W` are additionally blocked by the frozen
+eigenvector-condition and full-cluster fallback gates. The separately frozen
+`C` chart passes on all three rows, so no branch was retained through post-hoc
+coordinate selection.
+
+All 64 admitted matrices pass response convergence and the finite-horizon
+nonnormal bound; maximum amplification is about `1.00000000004` against the
+frozen ceiling `2.0`. Maximum adjacent derivative-column error is about
+`1.74e-11`; maximum response error is about `7.38e-11`. The two ill-conditioned
+`C-W` eigensystems reach condition number about `9.13e38`, so their individual
+eigenvectors are diagnostic only and their unresolved cluster spans do not
+rescue interpretation. The fast/slow current assumption is `not_applicable` on
+all admitted matrices because no separate current-relaxation sector or two
+finite decaying clusters were identified.
+
+The 192 counterfactual rows are structurally valid synthetic pairs, not reached
+history pairs. `W` and `J` changes produce no resolved next-step physical
+sensitivity in this bounded test, and the derived-potential perturbation is
+overwritten by the complete step. These results constrain candidate-block
+interpretation; they do not establish global eliminability. The result opens no
+stability, continuation, retention, read-back, or write-back claim. GRV4 remains
+required before `GRV-C4` can be considered.
 
 ## Iteration 5 - GRV4 Frozen-Conductance Versus Full Recurrence
 

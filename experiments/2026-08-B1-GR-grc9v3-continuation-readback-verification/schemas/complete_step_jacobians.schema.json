@@ -4,7 +4,7 @@
   "type": "object",
   "required": ["schema_version", "metadata", "payload", "payload_sha256"],
   "properties": {
-    "schema_version": {"const": "b1_grv3_complete_step_jacobians_v1_1"},
+    "schema_version": {"const": "b1_grv3_complete_step_jacobians_v1_2"},
     "metadata": {"type": "object"},
     "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "payload": {

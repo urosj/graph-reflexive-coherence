@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv2_P2_3_accepted_GRV3_next
+status = grv3_P3_4_method_frozen_pending_clean_execution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_accepted
+verification_closeout_ceiling = GRV-C3_with_GRV3_acceptance_blocked_pending_P3_4
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -160,6 +160,40 @@ response matrix, or spectrum only where every two-sided perturbation remains
 inside one declared causal stratum. The known zero-current sink/basin boundary
 may therefore admit causal closure while blocking ordinary Jacobians, which is
 a valid bounded result rather than a GRV2 failure.
+
+The final GRV3 P3.3 rerun from clean input revision `0a323d2` passes
+mechanically and remains pending human scientific review. All 48 accepted GRV2
+rows pass bounded `(C,W,J)` codec closure through horizons 1, 2, 5, and 10, but
+no full `(C,W,J)` classical Jacobian is admitted because every full chart meets
+a non-smooth current/sink/basin stratum boundary. The two preregistered reduced
+charts produce 64 square matrices across 32 rows and 16 symmetry orbits. All 64
+pass response convergence and finite-horizon nonnormal control; 61 pass the
+complete temporal interpretation gate. The three blocked interpretations are
+the `C-W` candidates on `grv2-f3-036`, `grv2-f3-037`, and `grv2-f3-041`:
+the first changes fast-subspace dimension across the step sweep, while the last
+two also fail the frozen eigenvector-condition and full-cluster fallback gates.
+Their separately preregistered `C` candidates pass, so all 32 reduced-coordinate
+rows retain at least one bounded temporal candidate. No primary reduced chart
+is selected after seeing the spectra.
+
+Receipt `7cf749fa8a46f6b219a27515504e4ad671a386144b2ef8626fb14e63a4fb104d`
+binds the result to P3.3. GRV3 supports at most bounded causal-state,
+reduced-transition, temporal-cluster, and response candidates pending review.
+Individual eigenvectors remain blocked where conditioning fails; fast/slow
+current slaving is `not_applicable` because no separate current-relaxation
+sector or two finite decaying clusters were identified. Stability,
+continuation, retention, read-back, write-back, and `GRV-C4` remain unsupported;
+GRV4 is still required for the frozen/full comparison.
+
+Adversarial review keeps that P3.3 result unaccepted and supersedes it with a
+frozen P3.4 hardening pass. The earlier result reset omitted causal state while
+testing encoded iteration and did not machine-gate derivative invariance across
+`step_index`, per-subfield cache omission, decoder correction, RNG consumption,
+branch residual relative to `h`, odd versus even `J` response, declared block
+normalization, alternate-basis covariance, or symmetry conjugacy. P3.4 adds
+those checks without changing `src/`, GRV2 branches, fixtures, finite-difference
+steps, spectral thresholds, or the claim ceiling. Until its clean rerun is
+reviewed, P3.3 remains preliminary evidence and GRV4 is blocked.
 
 ## Central Question
 

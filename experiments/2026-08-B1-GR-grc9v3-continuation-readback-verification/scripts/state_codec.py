@@ -51,12 +51,16 @@ class BranchCoordinateChart:
     base_coherence: NDArray[np.float64]
     coherence_basis: NDArray[np.float64]
     admitted_blocks: tuple[str, ...]
+    basis_id: str
 
     @classmethod
     def from_model(
         cls,
         model: GRC9V3,
         admitted_blocks: Iterable[str] = ("C", "W", "J"),
+        *,
+        coherence_basis: NDArray[np.float64] | None = None,
+        basis_id: str = "canonical_zero_sum",
     ) -> "BranchCoordinateChart":
         blocks = tuple(admitted_blocks)
         if (
@@ -72,14 +76,34 @@ class BranchCoordinateChart:
             [float(state.nodes[node_id].coherence) for node_id in node_order],
             dtype=float,
         )
+        basis = (
+            zero_sum_basis(len(node_order))
+            if coherence_basis is None
+            else np.asarray(coherence_basis, dtype=float)
+        )
+        expected_shape = (len(node_order), max(0, len(node_order) - 1))
+        if basis.shape != expected_shape:
+            raise ValueError("coherence basis shape does not match node tangent space")
+        if basis.shape[1]:
+            gram = basis.T @ basis
+            if not np.allclose(gram, np.eye(basis.shape[1]), atol=1e-12, rtol=0.0):
+                raise ValueError("coherence basis must be orthonormal")
+            if not np.allclose(
+                np.ones(len(node_order), dtype=float) @ basis,
+                np.zeros(basis.shape[1], dtype=float),
+                atol=1e-12,
+                rtol=0.0,
+            ):
+                raise ValueError("coherence basis must lie in the conserved zero-sum tangent")
         return cls(
             base_state=deepcopy(state),
             params=dict(model.get_params().raw_config),
             node_order=node_order,
             edge_order=edge_order,
             base_coherence=coherence,
-            coherence_basis=zero_sum_basis(len(node_order)),
+            coherence_basis=basis,
             admitted_blocks=blocks,
+            basis_id=basis_id,
         )
 
     @property
@@ -164,6 +188,8 @@ class BranchCoordinateChart:
                 key: list(value) for key, value in self.block_slices.items()
             },
             "coherence_basis": self.coherence_basis.tolist(),
+            "basis_id": self.basis_id,
+            "conservation_mode_policy": "uniform_C_direction_quotiented_out_not_absent",
             "decoder_omitted_state_policy": "reset_to_exact_branch_snapshot_then_apply_declared_coordinate",
         }
 

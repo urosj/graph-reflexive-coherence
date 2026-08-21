@@ -221,6 +221,114 @@ def codec_audit(
     }
 
 
+def omitted_state_decomposition_audit(
+    model: GRC9V3,
+    chart: BranchCoordinateChart,
+    config: dict[str, Any],
+    tolerances: dict[str, Any],
+) -> dict[str, Any]:
+    hardening = config["p3_4_hardening"]
+    horizons = [int(value) for value in hardening["omitted_state_horizons"]]
+    maximum_horizon = max(horizons)
+    base_state = deepcopy(model.get_state())
+    mutation_specs: list[tuple[str, str, Any]] = [
+        ("cached_quantities", str(key), key)
+        for key in sorted(base_state.cached_quantities, key=str)
+    ]
+    mutation_specs.extend(
+        ("placeholder_field", field, field)
+        for field in hardening["unknown_placeholder_fields"]
+    )
+    rows = []
+    for surface, field_id, mutation_key in mutation_specs:
+        candidate_state = deepcopy(base_state)
+        original_value = (
+            candidate_state.cached_quantities.get(mutation_key)
+            if surface == "cached_quantities"
+            else getattr(candidate_state, mutation_key)
+        )
+        if surface == "cached_quantities":
+            candidate_state.cached_quantities.pop(mutation_key, None)
+            intervention = "remove_single_cache_subfield"
+        elif original_value is None:
+            intervention = "confirm_absent_placeholder"
+        else:
+            setattr(candidate_state, mutation_key, None)
+            intervention = "replace_unknown_placeholder_with_none"
+        horizon_rows = []
+        execution_error = None
+        try:
+            reference = GRC9V3.from_state(deepcopy(base_state), chart.params)
+            candidate = GRC9V3.from_state(candidate_state, chart.params)
+            for beat in range(1, maximum_horizon + 1):
+                reference.step()
+                candidate.step()
+                if beat not in horizons:
+                    continue
+                reference_blocks = physical_continuous_blocks(
+                    reference, chart.node_order, chart.edge_order
+                )
+                observed_blocks = physical_continuous_blocks(
+                    candidate, chart.node_order, chart.edge_order
+                )
+                errors = _block_errors(reference_blocks, observed_blocks)
+                categorical_equal = categorical_signature(
+                    reference,
+                    current_zero_band=float(config["grv3_b"]["current_zero_band"]),
+                ) == categorical_signature(
+                    candidate,
+                    current_zero_band=float(config["grv3_b"]["current_zero_band"]),
+                )
+                horizon_rows.append(
+                    {
+                        "horizon": beat,
+                        "physical_block_l_inf": errors,
+                        "categorical_signature_equal": categorical_equal,
+                        "passed": bool(
+                            categorical_equal
+                            and _block_passes(
+                                errors, reference_blocks, tolerances, beat
+                            )
+                        ),
+                    }
+                )
+        except (ValueError, ArithmeticError, KeyError, TypeError) as error:
+            execution_error = type(error).__name__
+        passed = bool(
+            execution_error is None
+            and len(horizon_rows) == len(horizons)
+            and all(row["passed"] for row in horizon_rows)
+        )
+        if surface == "placeholder_field" and original_value is None:
+            classification = "absent_placeholder_on_source_branch"
+        elif passed:
+            classification = "reconstructed_or_inert_on_declared_envelope"
+        else:
+            classification = "causal_or_unresolved_on_declared_envelope"
+        rows.append(
+            {
+                "surface": surface,
+                "field_id": field_id,
+                "intervention": intervention,
+                "source_value_absent": original_value is None,
+                "classification": classification,
+                "horizon_rows": horizon_rows,
+                "execution_error": execution_error,
+                "omission_closure_passed": passed,
+                "global_inertness_claimed": False,
+            }
+        )
+    passed = bool(rows and all(row["omission_closure_passed"] for row in rows))
+    return {
+        "audit_scope": "subfield_by_subfield_on_declared_branch_envelope",
+        "horizons": horizons,
+        "rows": rows,
+        "all_omitted_subfields_resolved_on_envelope": passed,
+        "whole_cache_admitted_as_state": False,
+        "global_causal_eliminability_claimed": False,
+    }
+
+
 def _output_delta(
     reference: GRC9V3,
     observed: GRC9V3,
@@ -324,7 +432,79 @@ def counterfactual_audit(
             ),
             "global_eliminability_claimed": False,
         }
-    return {"rows": rows, "candidate_block_decisions": decisions}
+    base_coordinate = chart.encode_model(model)
+    baseline = chart.decode_model(base_coordinate)
+    baseline.step()
+    baseline_blocks = physical_continuous_blocks(
+        baseline, chart.node_order, chart.edge_order
+    )
+    even_odd_rows = []
+    j_start, j_end = chart.block_slices["J"]
+    for column in range(j_start, j_end):
+        for step_size in config["p3_4_hardening"]["j_even_odd_step_sizes"]:
+            h = float(step_size)
+            plus_coordinate = base_coordinate.copy()
+            minus_coordinate = base_coordinate.copy()
+            plus_coordinate[column] += h
+            minus_coordinate[column] -= h
+            plus = chart.decode_model(plus_coordinate)
+            minus = chart.decode_model(minus_coordinate)
+            plus.step()
+            minus.step()
+            plus_blocks = physical_continuous_blocks(
+                plus, chart.node_order, chart.edge_order
+            )
+            minus_blocks = physical_continuous_blocks(
+                minus, chart.node_order, chart.edge_order
+            )
+            odd_l_inf = {}
+            even_l_inf = {}
+            for block in ("C", "W", "J"):
+                plus_values = np.asarray(plus_blocks[block], dtype=float)
+                minus_values = np.asarray(minus_blocks[block], dtype=float)
+                base_values = np.asarray(baseline_blocks[block], dtype=float)
+                odd_l_inf[block] = float(
+                    np.linalg.norm((plus_values - minus_values) / (2.0 * h), ord=np.inf)
+                )
+                even_l_inf[block] = float(
+                    np.linalg.norm(
+                        (plus_values + minus_values - 2.0 * base_values) / (h * h),
+                        ord=np.inf,
+                    )
+                )
+            even_odd_rows.append(
+                {
+                    "J_column_index": column - j_start,
+                    "J_coordinate_label": chart.coordinate_labels[column],
+                    "step_size": h,
+                    "odd_first_order_block_l_inf": odd_l_inf,
+                    "even_second_order_block_l_inf": even_l_inf,
+                    "plus_minus_categorical_signatures_equal": categorical_signature(
+                        plus,
+                        current_zero_band=float(
+                            config["grv3_b"]["current_zero_band"]
+                        ),
+                    )
+                    == categorical_signature(
+                        minus,
+                        current_zero_band=float(
+                            config["grv3_b"]["current_zero_band"]
+                        ),
+                    ),
+                    "classical_J_derivative_admitted": False,
+                    "nonlinear_J_causality_eliminability_claim_allowed": False,
+                }
+            )
+    return {
+        "rows": rows,
+        "candidate_block_decisions": decisions,
+        "J_even_odd_response": {
+            "status": "diagnostic_only_separate_from_transition_eigensystem",
+            "rows": even_odd_rows,
+            "first_order_null_does_not_exclude_quadratic_causality": True,
+            "J_eliminability_claim_allowed": False,
+        },
+    }
 
 
 def _stratum_margin(model: GRC9V3) -> dict[str, float]:
@@ -384,6 +564,27 @@ def _smooth_response_surfaces(
     }
 
 
+def _block_characteristic_scales(
+    chart: BranchCoordinateChart, config: dict[str, Any]
+) -> dict[str, float]:
+    metric = config["p3_4_hardening"]["block_metric"]
+    floors = metric["scale_floors"]
+    state = chart.base_state
+    values = {
+        "C": [float(state.nodes[node_id].coherence) for node_id in chart.node_order],
+        "W": [float(state.base_conductance[edge_id]) for edge_id in chart.edge_order],
+        "J": [float(state.port_edges[edge_id].flux_uv) for edge_id in chart.edge_order],
+    }
+    result = {}
+    for block in chart.admitted_blocks:
+        rms = math.sqrt(
+            sum(value * value for value in values[block])
+            / max(1, len(values[block]))
+        )
+        result[block] = max(float(floors[block]), rms)
+    return result
+
+
 def _matrix_diagnostics(
     matrix: np.ndarray,
     chart: BranchCoordinateChart,
@@ -396,21 +597,36 @@ def _matrix_diagnostics(
     right_residuals = []
     participation = []
     slices = chart.block_slices
+    block_scales = _block_characteristic_scales(chart, config)
     for index, value in enumerate(eigenvalues):
         vector = right_vectors[:, index]
         right_residuals.append(
             float(np.linalg.norm(matrix @ vector - value * vector, ord=2))
         )
         denominator = float(np.vdot(vector, vector).real)
-        participation.append(
-            {
-                block: float(
+        raw = {
+            block: float(
                     np.vdot(vector[start:end], vector[start:end]).real
                     / max(denominator, 1e-300)
                 )
-                for block, (start, end) in slices.items()
-            }
+            for block, (start, end) in slices.items()
+        }
+        normalized_vector = vector.copy()
+        for block, (start, end) in slices.items():
+            normalized_vector[start:end] /= block_scales[block]
+        normalized_denominator = float(
+            np.vdot(normalized_vector, normalized_vector).real
         )
+        normalized = {
+            block: float(
+                np.vdot(
+                    normalized_vector[start:end], normalized_vector[start:end]
+                ).real
+                / max(normalized_denominator, 1e-300)
+            )
+            for block, (start, end) in slices.items()
+        }
+        participation.append({"raw": raw, "normalized": normalized})
     left_residuals = [
         float(
             np.linalg.norm(
@@ -458,6 +674,8 @@ def _matrix_diagnostics(
                 "classification": classification,
                 "right_residual_l2": right_residuals[index],
                 "block_participation": participation[index],
+                "block_participation_interpretation": "diagnostic_only",
+                "joint_C_W_mode_claim_allowed": False,
                 "individual_eigenvector_interpretation_allowed": individual_mode_allowed,
                 "retention_interpretation_allowed": False,
             }
@@ -577,6 +795,10 @@ def _matrix_diagnostics(
         "conservation_mode_policy": "removed_by_zero_sum_C_tangent_basis",
         "gauge_mode_status": "none_declared_in_admitted_coordinate",
         "branch_tangent_status": "not_separately_identified",
+        "block_metric": {
+            **config["p3_4_hardening"]["block_metric"],
+            "branch_characteristic_scales": block_scales,
+        },
     }
 
 
@@ -689,6 +911,36 @@ def _subspace_angle(left: np.ndarray, right: np.ndarray) -> float | None:
     return float(np.arccos(min(1.0, minimum)))
 
 
+def _rng_digest(model: GRC9V3) -> str:
+    return semantic_digest(model.get_state().rng_state)
+
+
+def _branch_coordinate_residual(
+    model: GRC9V3, chart: BranchCoordinateChart
+) -> float:
+    before = chart.encode_model(model)
+    after = GRC9V3.from_state(
+        deepcopy(model.get_state()), dict(model.get_params().raw_config)
+    )
+    after.step()
+    return float(np.linalg.norm(chart.encode_model(after) - before, ord=np.inf))
+
+
+def _decoder_correction(
+    chart: BranchCoordinateChart, coordinate: np.ndarray, step_size: float
+) -> dict[str, Any]:
+    decoded = chart.decode_model(coordinate)
+    observed = chart.encode_model(decoded)
+    error = float(np.linalg.norm(observed - coordinate, ord=np.inf))
+    ratio = error / step_size
+    return {
+        "requested_coordinate": coordinate.tolist(),
+        "decoded_coordinate": observed.tolist(),
+        "coordinate_l_inf": error,
+        "correction_over_h": ratio,
+    }
+
+
 def stratum_and_jacobian_audit(
     model: GRC9V3,
     chart: BranchCoordinateChart,
@@ -704,6 +956,8 @@ def stratum_and_jacobian_audit(
     )
     baseline_margin = _stratum_margin(model)
     minimum_margin = float(config["grv3_b"]["minimum_positive_stratum_margin"])
+    hardening = config["p3_4_hardening"]
+    branch_residual = _branch_coordinate_residual(model, chart)
     column_rows = []
     matrices: list[list[list[float]]] = []
     all_columns_admitted = True
@@ -718,8 +972,12 @@ def stratum_and_jacobian_audit(
             plus_coordinate[column] += step_size
             minus_coordinate[column] -= step_size
             try:
+                plus_decoder = _decoder_correction(chart, plus_coordinate, step_size)
+                minus_decoder = _decoder_correction(chart, minus_coordinate, step_size)
                 plus = chart.decode_model(plus_coordinate)
                 minus = chart.decode_model(minus_coordinate)
+                plus_rng_before = _rng_digest(plus)
+                minus_rng_before = _rng_digest(minus)
                 pre_plus = categorical_signature(
                     plus,
                     current_zero_band=float(config["grv3_b"]["current_zero_band"]),
@@ -730,6 +988,8 @@ def stratum_and_jacobian_audit(
                 )
                 plus_result = plus.step()
                 minus_result = minus.step()
+                plus_rng_after = _rng_digest(plus)
+                minus_rng_after = _rng_digest(minus)
                 post_plus = categorical_signature(
                     plus,
                     current_zero_band=float(config["grv3_b"]["current_zero_band"]),
@@ -746,11 +1006,44 @@ def stratum_and_jacobian_audit(
                 positive_margin = (
                     baseline_margin["current_sign_identity"] > minimum_margin
                 )
+                decoder_correction_passed = bool(
+                    plus_decoder["correction_over_h"]
+                    <= float(hardening["decoder_correction_over_h_max"])
+                    and minus_decoder["correction_over_h"]
+                    <= float(hardening["decoder_correction_over_h_max"])
+                )
+                rng_start_equal = plus_rng_before == minus_rng_before
+                rng_post_equal = plus_rng_after == minus_rng_after
+                rng_not_consumed = bool(
+                    plus_rng_before == plus_rng_after
+                    and minus_rng_before == minus_rng_after
+                )
+                rng_passed = bool(
+                    (rng_start_equal or not hardening["rng_start_equality_required"])
+                    and (
+                        rng_post_equal
+                        or not hardening["rng_post_step_equality_required"]
+                    )
+                    and (
+                        rng_not_consumed
+                        or not hardening[
+                            "rng_no_consumption_required_on_no_event_envelope"
+                        ]
+                    )
+                )
+                branch_residual_over_h = branch_residual / step_size
+                branch_residual_passed = bool(
+                    branch_residual_over_h
+                    <= float(hardening["branch_residual_over_h_max"])
+                )
                 admitted = bool(
                     same_pre
                     and same_post
                     and same_path
                     and positive_margin
+                    and decoder_correction_passed
+                    and rng_passed
+                    and branch_residual_passed
                     and not plus_result.events
                     and not minus_result.events
                 )
@@ -760,7 +1053,19 @@ def stratum_and_jacobian_audit(
                     else (
                         "blocked_zero_current_sink_basin_identity_margin"
                         if not positive_margin
-                        else "blocked_categorical_or_runtime_path_change"
+                        else (
+                            "blocked_decoder_correction"
+                            if not decoder_correction_passed
+                            else (
+                                "blocked_rng_consumption_or_asymmetry"
+                                if not rng_passed
+                                else (
+                                    "blocked_branch_residual_over_h"
+                                    if not branch_residual_passed
+                                    else "blocked_categorical_or_runtime_path_change"
+                                )
+                            )
+                        )
                     )
                 )
                 if admitted:
@@ -772,6 +1077,15 @@ def stratum_and_jacobian_audit(
                 same_post = False
                 same_path = False
                 positive_margin = False
+                plus_decoder = None
+                minus_decoder = None
+                rng_start_equal = False
+                rng_post_equal = False
+                rng_not_consumed = False
+                rng_passed = False
+                decoder_correction_passed = False
+                branch_residual_over_h = branch_residual / step_size
+                branch_residual_passed = False
                 admitted = False
                 reason = (
                     f"blocked_invalid_two_sided_intervention:{type(error).__name__}"
@@ -785,6 +1099,26 @@ def stratum_and_jacobian_audit(
                 "same_pre_step_signature": same_pre,
                 "same_post_step_signature": same_post,
                 "same_runtime_path": same_path,
+                "decoder_correction": {
+                    "plus": plus_decoder,
+                    "minus": minus_decoder,
+                    "maximum_correction_over_h": float(
+                        hardening["decoder_correction_over_h_max"]
+                    ),
+                    "passed": decoder_correction_passed,
+                },
+                "rng_control": {
+                    "start_state_equal": rng_start_equal,
+                    "post_step_state_equal": rng_post_equal,
+                    "no_rng_consumption": rng_not_consumed,
+                    "passed": rng_passed,
+                },
+                "branch_residual_l_inf": branch_residual,
+                "branch_residual_over_h": branch_residual_over_h,
+                "branch_residual_over_h_max": float(
+                    hardening["branch_residual_over_h_max"]
+                ),
+                "branch_residual_passed": branch_residual_passed,
                 "derivative_column_admitted": admitted,
                 "decision": reason,
             }
@@ -934,6 +1268,7 @@ def stratum_and_jacobian_audit(
         "coordinate_order": list(chart.coordinate_labels),
         "baseline_categorical_signature": baseline_signature,
         "baseline_stratum_margins": baseline_margin,
+        "branch_coordinate_residual_l_inf": branch_residual,
         "column_audits": column_rows,
         "all_columns_admitted": all_columns_admitted,
         "column_gate_passed": column_gate_passed,
@@ -981,6 +1316,377 @@ def stratum_and_jacobian_audit(
     }
 
 
+def _alternate_coherence_basis(chart: BranchCoordinateChart) -> tuple[np.ndarray, np.ndarray]:
+    dimension = chart.coherence_basis.shape[1]
+    transform = np.eye(dimension, dtype=float)
+    if dimension == 1:
+        transform[0, 0] = -1.0
+    elif dimension >= 2:
+        cosine = math.sqrt(0.5)
+        transform[:2, :2] = np.asarray(
+            [[cosine, -cosine], [cosine, cosine]], dtype=float
+        )
+    return chart.coherence_basis @ transform, transform
+
+
+def _coordinate_basis_transport(
+    chart: BranchCoordinateChart, coherence_transform: np.ndarray
+) -> np.ndarray:
+    transport = np.eye(len(chart.coordinate_labels), dtype=float)
+    c_start, c_end = chart.block_slices["C"]
+    transport[c_start:c_end, c_start:c_end] = coherence_transform
+    return transport
+
+
+def basis_covariance_audit(
+    model: GRC9V3,
+    chart: BranchCoordinateChart,
+    reference_audit: dict[str, Any],
+    config: dict[str, Any],
+    tolerances: dict[str, Any],
+    nonnormal_config: dict[str, Any],
+    fast_slow_config: dict[str, Any],
+) -> dict[str, Any]:
+    if reference_audit["square_transition_jacobian_status"] != "admitted":
+        return {"status": "not_applicable_reference_matrix_not_admitted", "passed": False}
+    alternate_basis, transform = _alternate_coherence_basis(chart)
+    alternate_chart = BranchCoordinateChart.from_model(
+        model,
+        chart.admitted_blocks,
+        coherence_basis=alternate_basis,
+        basis_id="fixed_alternate_zero_sum",
+    )
+    alternate_audit = stratum_and_jacobian_audit(
+        model,
+        alternate_chart,
+        config,
+        tolerances,
+        nonnormal_config,
+        fast_slow_config,
+    )
+    if alternate_audit["square_transition_jacobian_status"] != "admitted":
+        return {
+            "status": "blocked_alternate_basis_matrix_not_admitted",
+            "passed": False,
+            "alternate_matrix_status": alternate_audit[
+                "square_transition_jacobian_status"
+            ],
+        }
+    reference = np.asarray(reference_audit["jacobian"], dtype=float)
+    alternate = np.asarray(alternate_audit["jacobian"], dtype=float)
+    transport = _coordinate_basis_transport(chart, transform)
+    alternate_in_reference = transport @ alternate @ np.linalg.inv(transport)
+    relative_error = float(
+        np.linalg.norm(reference - alternate_in_reference, ord=2)
+        / max(1.0, float(np.linalg.norm(reference, ord=2)))
+    )
+    eigenvalue_error = _eigenvalue_set_error(reference, alternate)
+    maximum = float(
+        config["p3_4_hardening"]["basis_covariance"][
+            "relative_matrix_error_max"
+        ]
+    )
+    passed = bool(relative_error <= maximum and eigenvalue_error <= maximum)
+    return {
+        "status": "passed" if passed else "failed_covariance",
+        "basis_rule": config["p3_4_hardening"]["basis_covariance"][
+            "alternate_basis_rule"
+        ],
+        "reference_basis_id": chart.basis_id,
+        "alternate_basis_id": alternate_chart.basis_id,
+        "alternate_coherence_basis": alternate_basis.tolist(),
+        "alternate_to_reference_coordinate_transport": transport.tolist(),
+        "relative_conjugacy_error": relative_error,
+        "eigenvalue_set_error": eigenvalue_error,
+        "maximum_allowed": maximum,
+        "passed": passed,
+    }
+
+
+def phase_operator_audit(
+    model: GRC9V3,
+    chart: BranchCoordinateChart,
+    reference_audit: dict[str, Any],
+    config: dict[str, Any],
+    tolerances: dict[str, Any],
+    nonnormal_config: dict[str, Any],
+    fast_slow_config: dict[str, Any],
+) -> dict[str, Any]:
+    hardening = config["p3_4_hardening"]
+    offsets = [int(value) for value in hardening["administrative_phase_offsets"]]
+    rows = []
+    matrices: list[np.ndarray] = []
+    for offset in offsets:
+        if offset == 0:
+            phase_model = GRC9V3.from_state(
+                deepcopy(model.get_state()), dict(model.get_params().raw_config)
+            )
+            audit = reference_audit
+        else:
+            phase_model = GRC9V3.from_state(
+                deepcopy(model.get_state()), dict(model.get_params().raw_config)
+            )
+            for _ in range(offset):
+                phase_model.step()
+            phase_chart = BranchCoordinateChart.from_model(
+                phase_model, chart.admitted_blocks
+            )
+            audit = stratum_and_jacobian_audit(
+                phase_model,
+                phase_chart,
+                config,
+                tolerances,
+                nonnormal_config,
+                fast_slow_config,
+            )
+        admitted = audit["square_transition_jacobian_status"] == "admitted"
+        if admitted:
+            matrices.append(np.asarray(audit["jacobian"], dtype=float))
+        phase_state = phase_model.get_state()
+        rows.append(
+            {
+                "phase_offset": offset,
+                "step_index": int(phase_state.step_index),
+                "time": float(phase_state.time),
+                "matrix_status": audit["square_transition_jacobian_status"],
+                "matrix_admitted": admitted,
+            }
+        )
+    errors = []
+    if len(matrices) == len(offsets):
+        reference = matrices[0]
+        errors = [
+            float(
+                np.linalg.norm(reference - matrix, ord=2)
+                / max(1.0, float(np.linalg.norm(reference, ord=2)))
+            )
+            for matrix in matrices[1:]
+        ]
+    maximum = float(hardening["phase_operator_relative_error_max"])
+    passed = bool(
+        len(matrices) == len(offsets) and all(error <= maximum for error in errors)
+    )
+    return {
+        "phase_offsets": offsets,
+        "rows": rows,
+        "phase_relative_matrix_errors_against_offset_0": errors,
+        "maximum_allowed": maximum,
+        "passed": passed,
+        "operator_classification": (
+            "autonomous_on_declared_administrative_phase_envelope"
+            if passed
+            else "phase_dependent_or_not_identifiable"
+        ),
+        "fixed_A_star_spectral_interpretation_allowed": passed,
+    }
+
+
+def _symmetry_coordinate_transport(
+    source: BranchCoordinateChart, target: BranchCoordinateChart
+) -> tuple[np.ndarray, dict[int, int], dict[int, int]]:
+    source_state = source.base_state
+    target_state = target.base_state
+    available = set(target.node_order)
+    node_map = {}
+    for source_node in source.node_order:
+        source_value = float(source_state.nodes[source_node].coherence)
+        target_node = min(
+            available,
+            key=lambda node_id: abs(
+                float(target_state.nodes[node_id].coherence) - source_value
+            ),
+        )
+        if abs(float(target_state.nodes[target_node].coherence) - source_value) > 1e-8:
+            raise ValueError("symmetry node mapping is not uniquely coherence-matched")
+        node_map[source_node] = target_node
+        available.remove(target_node)
+    node_permutation = np.zeros(
+        (len(target.node_order), len(source.node_order)), dtype=float
+    )
+    target_node_index = {node_id: index for index, node_id in enumerate(target.node_order)}
+    source_node_index = {node_id: index for index, node_id in enumerate(source.node_order)}
+    for source_node, target_node in node_map.items():
+        node_permutation[target_node_index[target_node], source_node_index[source_node]] = 1.0
+    edge_map = {}
+    for source_edge in source.edge_order:
+        edge = source_state.port_edges[source_edge]
+        mapped_endpoints = {node_map[edge.node_u], node_map[edge.node_v]}
+        matches = [
+            target_edge
+            for target_edge in target.edge_order
+            if {
+                target_state.port_edges[target_edge].node_u,
+                target_state.port_edges[target_edge].node_v,
+            }
+            == mapped_endpoints
+        ]
+        if len(matches) != 1:
+            raise ValueError("symmetry edge transport is not unique")
+        edge_map[source_edge] = matches[0]
+    transport = np.zeros(
+        (len(target.coordinate_labels), len(source.coordinate_labels)), dtype=float
+    )
+    source_c = source.block_slices["C"]
+    target_c = target.block_slices["C"]
+    transport[target_c[0] : target_c[1], source_c[0] : source_c[1]] = (
+        target.coherence_basis.T @ node_permutation @ source.coherence_basis
+    )
+    for block in ("W", "J"):
+        if block not in source.block_slices or block not in target.block_slices:
+            continue
+        source_start = source.block_slices[block][0]
+        target_start = target.block_slices[block][0]
+        for source_index, source_edge in enumerate(source.edge_order):
+            target_edge = edge_map[source_edge]
+            target_index = target.edge_order.index(target_edge)
+            sign = 1.0
+            if block == "J":
+                source_record = source_state.port_edges[source_edge]
+                target_record = target_state.port_edges[target_edge]
+                sign = (
+                    1.0
+                    if (
+                        node_map[source_record.node_u] == target_record.node_u
+                        and node_map[source_record.node_v] == target_record.node_v
+                    )
+                    else -1.0
+                )
+            transport[target_start + target_index, source_start + source_index] = sign
+    return transport, node_map, edge_map
+
+
+def apply_symmetry_covariance_audit(
+    branch_rows: list[dict[str, Any]],
+    source_branches: list[dict[str, Any]],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    branch_by_id = {row["branch_id"]: row for row in source_branches}
+    result_by_id = {row["branch_id"]: row for row in branch_rows}
+    orbit_groups: dict[str, list[str]] = {}
+    for row in source_branches:
+        orbit_groups.setdefault(row["symmetry_orbit_id"], []).append(row["branch_id"])
+    for row in branch_rows:
+        row["symmetry_covariance_by_coordinate"] = {}
+    pair_rows = []
+    maximum = float(
+        config["p3_4_hardening"]["symmetry_covariance"][
+            "relative_conjugacy_error_max"
+        ]
+    )
+    for orbit_id, branch_ids in orbit_groups.items():
+        if len(branch_ids) == 1:
+            for key in ("C_W", "C"):
+                result_by_id[branch_ids[0]]["symmetry_covariance_by_coordinate"][key] = {
+                    "status": "not_applicable_singleton_orbit",
+                    "passed": True,
+                }
+            continue
+        source_id = branch_ids[0]
+        source_meta = branch_by_id[source_id]
+        source_model = GRC9V3.load(
+            str(REPO_ROOT / source_meta["state_snapshot_path"])
+        )
+        for key, blocks in (("C_W", ("C", "W")), ("C", ("C",))):
+            source_audit = result_by_id[source_id][
+                "coordinate_stratum_and_jacobian_audits"
+            ][key]
+            key_rows = []
+            for target_id in branch_ids[1:]:
+                target_meta = branch_by_id[target_id]
+                target_audit = result_by_id[target_id][
+                    "coordinate_stratum_and_jacobian_audits"
+                ][key]
+                if (
+                    source_audit["square_transition_jacobian_status"] != "admitted"
+                    or target_audit["square_transition_jacobian_status"] != "admitted"
+                ):
+                    pair = {
+                        "orbit_id": orbit_id,
+                        "coordinate_candidate": key,
+                        "source_branch_id": source_id,
+                        "target_branch_id": target_id,
+                        "status": "blocked_missing_admitted_matrix",
+                        "passed": False,
+                    }
+                else:
+                    target_model = GRC9V3.load(
+                        str(REPO_ROOT / target_meta["state_snapshot_path"])
+                    )
+                    source_chart = BranchCoordinateChart.from_model(
+                        source_model, blocks
+                    )
+                    target_chart = BranchCoordinateChart.from_model(
+                        target_model, blocks
+                    )
+                    try:
+                        transport, node_map, edge_map = _symmetry_coordinate_transport(
+                            source_chart, target_chart
+                        )
+                        source_matrix = np.asarray(source_audit["jacobian"], dtype=float)
+                        target_matrix = np.asarray(target_audit["jacobian"], dtype=float)
+                        predicted = transport @ source_matrix @ np.linalg.inv(transport)
+                        relative_error = float(
+                            np.linalg.norm(target_matrix - predicted, ord=2)
+                            / max(1.0, float(np.linalg.norm(target_matrix, ord=2)))
+                        )
+                        passed = relative_error <= maximum
+                        pair = {
+                            "orbit_id": orbit_id,
+                            "coordinate_candidate": key,
+                            "source_branch_id": source_id,
+                            "target_branch_id": target_id,
+                            "status": "passed" if passed else "failed_conjugacy",
+                            "node_map": {str(k): v for k, v in node_map.items()},
+                            "edge_map": {str(k): v for k, v in edge_map.items()},
+                            "coordinate_transport": transport.tolist(),
+                            "relative_conjugacy_error": relative_error,
+                            "maximum_allowed": maximum,
+                            "passed": passed,
+                        }
+                    except (ValueError, ArithmeticError) as error:
+                        pair = {
+                            "orbit_id": orbit_id,
+                            "coordinate_candidate": key,
+                            "source_branch_id": source_id,
+                            "target_branch_id": target_id,
+                            "status": f"blocked_transport:{type(error).__name__}",
+                            "passed": False,
+                        }
+                pair_rows.append(pair)
+                key_rows.append(pair)
+            key_passed = bool(key_rows and all(row["passed"] for row in key_rows))
+            status = "passed" if key_passed else "failed_or_blocked"
+            for branch_id in branch_ids:
+                result_by_id[branch_id]["symmetry_covariance_by_coordinate"][key] = {
+                    "status": status,
+                    "passed": key_passed,
+                    "orbit_id": orbit_id,
+                    "pair_count": len(key_rows),
+                }
+    for row in branch_rows:
+        row["convergence_and_nonnormal_admitted_temporal_coordinates"] = [
+            key
+            for key in row["convergence_and_nonnormal_admitted_temporal_coordinates"]
+            if row["symmetry_covariance_by_coordinate"].get(key, {}).get(
+                "passed", False
+            )
+        ]
+        row["temporal_mode_evidence_supported"] = bool(
+            row["convergence_and_nonnormal_admitted_temporal_coordinates"]
+        )
+    return {
+        "mapping_rule": config["p3_4_hardening"]["symmetry_covariance"][
+            "mapping_rule"
+        ],
+        "pair_rows": pair_rows,
+        "passed_pair_count": sum(row["passed"] for row in pair_rows),
+        "failed_or_blocked_pair_count": sum(not row["passed"] for row in pair_rows),
+        "all_multirow_orbit_pairs_passed": bool(
+            pair_rows and all(row["passed"] for row in pair_rows)
+        ),
+    }
+
+
 def field_inventory() -> list[dict[str, Any]]:
     return [
         {
@@ -1010,11 +1716,11 @@ def field_inventory() -> list[dict[str, Any]]:
         },
         {
             "field": "step_index_and_time",
-            "classification": "deterministic_administrative_advancement_on_tested_envelope",
+            "classification": "causal_or_administrative_phase_pending_explicit_derivative_invariance_audit",
         },
         {
             "field": "rng_state",
-            "classification": "fixed_discrete_state_no_random_path_exercised",
+            "classification": "fixed_discrete_state_with_per_probe_consumption_equality_gate",
         },
         {
             "field": "hierarchy_and_event_registries",
@@ -1022,11 +1728,11 @@ def field_inventory() -> list[dict[str, Any]]:
         },
         {
             "field": "node_values_edge_values",
-            "classification": "excluded_unknown_globally_bounded_by_codec_only_here",
+            "classification": "subfield_audited_absent_or_unresolved_on_each_branch_envelope",
         },
         {
             "field": "cached_quantities",
-            "classification": "mixed_reconstructed_and_observer_surfaces_bounded_by_codec_only_here",
+            "classification": "decomposed_per_key_as_reconstructed_inert_causal_or_unresolved",
         },
         {
             "field": "Phi_G_Hs_Kcache_labels_identity",
@@ -1203,6 +1909,9 @@ def run_grv3() -> None:
         model = GRC9V3.load(str(snapshot_path))
         full_chart = BranchCoordinateChart.from_model(model, ("C", "W", "J"))
         codec = codec_audit(model, full_chart, config, tolerances)
+        omitted_state = omitted_state_decomposition_audit(
+            model, full_chart, config, tolerances
+        )
         reduction_audits = {}
         reduction_status = {}
         reduction_charts = {}
@@ -1265,6 +1974,39 @@ def run_grv3() -> None:
                     "response_jacobian_status": "blocked_with_codec",
                     "categorical_surface_status": "retained_in_full_chart_audit",
                 }
+        phase_operator_audits = {}
+        basis_covariance_audits = {}
+        for key in ("C_W", "C"):
+            audit = coordinate_jacobians[key]
+            if audit["square_transition_jacobian_status"] == "admitted":
+                phase_operator_audits[key] = phase_operator_audit(
+                    model,
+                    reduction_charts[key],
+                    audit,
+                    config,
+                    tolerances,
+                    nonnormal_config,
+                    fast_slow_config,
+                )
+                basis_covariance_audits[key] = basis_covariance_audit(
+                    model,
+                    reduction_charts[key],
+                    audit,
+                    config,
+                    tolerances,
+                    nonnormal_config,
+                    fast_slow_config,
+                )
+            else:
+                phase_operator_audits[key] = {
+                    "status": "not_applicable_reference_matrix_not_admitted",
+                    "passed": False,
+                    "fixed_A_star_spectral_interpretation_allowed": False,
+                }
+                basis_covariance_audits[key] = {
+                    "status": "not_applicable_reference_matrix_not_admitted",
+                    "passed": False,
+                }
         admitted_coordinates = [
             key
             for key, audit in coordinate_jacobians.items()
@@ -1277,6 +2019,8 @@ def run_grv3() -> None:
             and coordinate_jacobians[key]["temporal_mode_diagnostics"][
                 "nonnormal_control"
             ]["finite_horizon_passed"]
+            and phase_operator_audits[key]["passed"]
+            and basis_covariance_audits[key]["passed"]
             and (
                 coordinate_jacobians[key]["temporal_mode_diagnostics"][
                     "nonnormal_control"
@@ -1295,7 +2039,10 @@ def run_grv3() -> None:
             if coordinate_jacobians[key]["response_jacobian_status"]
             == "computed_and_converged"
         ]
-        causal_closure = bool(codec["bounded_causal_closure_passed"])
+        causal_closure = bool(
+            codec["bounded_causal_closure_passed"]
+            and omitted_state["all_omitted_subfields_resolved_on_envelope"]
+        )
         row = {
             "branch_id": branch["branch_id"],
             "fixture_id": branch["fixture_id"],
@@ -1304,9 +2051,12 @@ def run_grv3() -> None:
             "source_snapshot_sha256": branch["state_snapshot_sha256"],
             "source_branch_class": branch["branch_class"],
             "causal_codec": codec,
+            "omitted_state_decomposition": omitted_state,
             "candidate_reduction_audits": reduction_audits,
             "counterfactual_closure": counterfactual,
             "coordinate_stratum_and_jacobian_audits": coordinate_jacobians,
+            "phase_operator_audits": phase_operator_audits,
+            "basis_covariance_audits": basis_covariance_audits,
             "full_C_W_J_stratum_and_jacobian": coordinate_jacobians["C_W_J"],
             "admitted_temporal_coordinate_candidates": admitted_coordinates,
             "convergence_and_nonnormal_admitted_temporal_coordinates": temporally_supported_coordinates,
@@ -1316,7 +2066,7 @@ def run_grv3() -> None:
             "causal_strong_branch_status": (
                 "bounded_candidate_pending_human_review"
                 if causal_closure
-                else "blocked_by_codec"
+                else "blocked_by_codec_or_omitted_state_decomposition"
             ),
             "temporal_mode_evidence_supported": bool(temporally_supported_coordinates),
             "smooth_response_evidence_supported": bool(response_supported_coordinates),
@@ -1355,6 +2105,17 @@ def run_grv3() -> None:
                     "retention_interpretation_allowed": False,
                 }
             )
+    symmetry_covariance = apply_symmetry_covariance_audit(
+        branch_rows, branches, config
+    )
+    branch_result_by_id = {row["branch_id"]: row for row in branch_rows}
+    for row in slow_rows:
+        symmetry = branch_result_by_id[row["branch_id"]][
+            "symmetry_covariance_by_coordinate"
+        ].get(row["coordinate_candidate"])
+        row["symmetry_covariance"] = symmetry
+        if symmetry is not None and not symmetry["passed"]:
+            row["status"] = "interpretation_blocked_by_symmetry_covariance"
     causal_count = sum(
         bool(row["causal_strong_branch_candidate"]) for row in branch_rows
     )
@@ -1450,6 +2211,17 @@ def run_grv3() -> None:
                 cluster["cluster_interpretation_allowed"]
                 for cluster in audit["temporal_mode_diagnostics"]["clusters"]
             ),
+            "administrative_phase_operator_passed": row["phase_operator_audits"]
+            .get(key, {})
+            .get("passed", False),
+            "basis_covariance_passed": row["basis_covariance_audits"]
+            .get(key, {})
+            .get("passed", False),
+            "symmetry_covariance_passed": row[
+                "symmetry_covariance_by_coordinate"
+            ]
+            .get(key, {})
+            .get("passed", False),
         }
         for row in branch_rows
         for key, audit in row["coordinate_stratum_and_jacobian_audits"].items()
@@ -1526,6 +2298,28 @@ def run_grv3() -> None:
         "branches_with_temporal_mode_evidence_after_all_gates": temporal_mode_pass_count,
         "temporal_mode_interpretation_pass_matrix_count": temporal_mode_pass_matrix_count,
         "temporal_mode_interpretation_blocked_matrix_rows": temporal_mode_blocked_matrix_rows,
+        "phase_operator_pass_matrix_count": sum(
+            audit.get("passed", False)
+            for row in branch_rows
+            for audit in row["phase_operator_audits"].values()
+        ),
+        "basis_covariance_pass_matrix_count": sum(
+            audit.get("passed", False)
+            for row in branch_rows
+            for audit in row["basis_covariance_audits"].values()
+        ),
+        "symmetry_covariance_passed_pair_count": symmetry_covariance[
+            "passed_pair_count"
+        ],
+        "symmetry_covariance_failed_or_blocked_pair_count": symmetry_covariance[
+            "failed_or_blocked_pair_count"
+        ],
+        "omitted_state_decomposition_pass_branch_count": sum(
+            row["omitted_state_decomposition"][
+                "all_omitted_subfields_resolved_on_envelope"
+            ]
+            for row in branch_rows
+        ),
         "maximum_finite_eigenvector_condition_number": max(
             finite_conditions, default=None
         ),
@@ -1576,6 +2370,7 @@ def run_grv3() -> None:
             ),
         },
         "causal_field_inventory": field_inventory(),
+        "symmetry_covariance_audit": symmetry_covariance,
         "branches": branch_rows,
         "summary": summary,
         "claim_boundary": {
@@ -1585,6 +2380,9 @@ def run_grv3() -> None:
             > 0,
             "bounded_reduced_coordinate_temporal_modes_supported": temporal_mode_pass_count
             > 0,
+            "fixed_A_star_requires_phase_invariance": True,
+            "joint_C_W_mode_claim_allowed": False,
+            "J_first_order_null_excludes_quadratic_causality": False,
             "individual_eigenvector_mode_interpretation_supported_for_all_admitted_matrices": bool(
                 admitted_audits
                 and eigenvector_condition_pass_count == len(admitted_audits)
@@ -1607,7 +2405,7 @@ def run_grv3() -> None:
     output_root = EXPERIMENT_ROOT / "outputs"
     result = artifact_envelope(
         payload,
-        schema_version="b1_grv3_complete_step_jacobians_v1_1",
+        schema_version="b1_grv3_complete_step_jacobians_v1_2",
         generating_command=COMMAND,
         reproducibility_class="tolerance_reproducible",
     )
