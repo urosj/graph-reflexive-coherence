@@ -295,6 +295,21 @@ supporting evidence package is indexed at
 It does not reopen the closed
 event-local geometry-integration runtime proposal or change GRC/LGRC behavior.
 
+Phase 8 GRC/LGRC causal-pathway binding and claim-provenance plan:
+[Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md](./Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
+
+Phase 8 GRC/LGRC causal-pathway binding and claim-provenance checklist:
+[Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md](./Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
+
+Phase 8 GRC/LGRC causal-pathway binding and claim-provenance closeout:
+[Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md](./Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md)
+
+This tranche is complete through Iteration 125 with disposition
+`accept_with_nonblocking_debt`. Essential lifecycle documents remain here;
+the supporting iteration and independent-audit records are indexed at
+[`evidence/causal-pathway-binding-iterations/`](./evidence/causal-pathway-binding-iterations/README.md),
+separate from the frozen 39-file machine-evidence corpus.
+
 LGRC9V3 executable target specification:
 [lgrc-9-v3-spec.md](../specs/lgrc-9-v3-spec.md)
 

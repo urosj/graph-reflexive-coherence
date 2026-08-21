@@ -1,0 +1,119 @@
+"""Compatibility facade for causal-pathway binding and claim provenance.
+
+Public imports remain stable while implementation responsibilities move from
+the private compatibility module into cohesive provider modules.
+"""
+
+from .artifacts import (
+    EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT,
+    BindingLock,
+    BindingReceipt,
+    execution_transcript_digest,
+    unbound_execution_classification,
+)
+from .authority import (
+    BindingAcceptanceAnchor,
+    CausalPathwayAuthority,
+    UnknownCompositionError,
+    UnknownPathwayError,
+)
+from .candidates import (
+    AUTHORITY_COORDINATES,
+    INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT,
+    CandidateDeclaration,
+    CandidateMechanismEvidence,
+    CandidateRelationReview,
+    CandidateUseRecord,
+    InvalidCandidateError,
+)
+from .effects import (
+    CLAIM_QUALIFYING_EFFECT_OUTCOMES,
+    EFFECT_OUTCOMES,
+    RETURN_CATEGORIES,
+    EffectOutcomeContract,
+)
+from .identity import (
+    AuthorityDriftError,
+    CallableIdentity,
+    CausalPathwayBindingError,
+    CompositionCrossingBinding,
+    SourceSymbolBinding,
+    SymbolBindingError,
+    binding_semantics_digest,
+    binding_source_manifest_digest,
+    canonical_digest,
+    sha256_file,
+)
+from .scopes import (
+    ATTESTED_OBJECT_FLOW_DATAFLOW,
+    AllowedPathwayAlternatives,
+    AlternativeSelectionScope,
+    BindingStateError,
+    CandidateExecutionScope,
+    CompositionExecutionScope,
+    CrossingInvocationRecord,
+    CrossingResultReference,
+    FlowDerivedInstanceReference,
+    InvocationRecord,
+    composition_dataflow_contract,
+)
+from .session import (
+    EXECUTABLE_COMPOSITION_STATUSES,
+    BoundComposition,
+    BoundPathway,
+    PathwayBindingSession,
+    UnbindableCompositionError,
+    VerifiedCallable,
+    VerifiedCompositionCrossing,
+)
+
+__all__ = [
+    "ATTESTED_OBJECT_FLOW_DATAFLOW",
+    "AUTHORITY_COORDINATES",
+    "CLAIM_QUALIFYING_EFFECT_OUTCOMES",
+    "EFFECT_OUTCOMES",
+    "EXECUTABLE_COMPOSITION_STATUSES",
+    "EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT",
+    "INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT",
+    "RETURN_CATEGORIES",
+    "AllowedPathwayAlternatives",
+    "AlternativeSelectionScope",
+    "AuthorityDriftError",
+    "BindingAcceptanceAnchor",
+    "BindingLock",
+    "BindingReceipt",
+    "BindingStateError",
+    "BoundComposition",
+    "BoundPathway",
+    "CallableIdentity",
+    "CandidateDeclaration",
+    "CandidateExecutionScope",
+    "CandidateMechanismEvidence",
+    "CandidateRelationReview",
+    "CandidateUseRecord",
+    "CausalPathwayAuthority",
+    "CausalPathwayBindingError",
+    "CompositionCrossingBinding",
+    "CompositionExecutionScope",
+    "CrossingInvocationRecord",
+    "CrossingResultReference",
+    "EffectOutcomeContract",
+    "FlowDerivedInstanceReference",
+    "InvalidCandidateError",
+    "InvocationRecord",
+    "PathwayBindingSession",
+    "SourceSymbolBinding",
+    "SymbolBindingError",
+    "UnbindableCompositionError",
+    "UnknownCompositionError",
+    "UnknownPathwayError",
+    "VerifiedCallable",
+    "VerifiedCompositionCrossing",
+    "binding_semantics_digest",
+    "binding_source_manifest_digest",
+    "canonical_digest",
+    "composition_dataflow_contract",
+    "execution_transcript_digest",
+    "sha256_file",
+    "unbound_execution_classification",
+]

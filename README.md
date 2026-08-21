@@ -80,6 +80,22 @@ still at `DR2`, and cross-context reuse unsupported. The next step returns to
 RCAE for explicit revision-bound provider-contract re-admission and fresh
 ecology-side evidence; N32 is not yet selected.
 
+The GRC/LGRC causal-pathway knowledge plane is closed through Iteration 111,
+and the follow-on binding and claim-provenance tranche is complete through
+Iteration 125 with disposition `accept_with_nonblocking_debt`. Evidence-bearing
+consumers can bind exact admitted pathways or registered compositions, or
+declare visibly unregistered candidates, while the existing mechanism-specific
+runtime remains unchanged. See the
+[binding reference guide](docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md),
+the task-oriented [user and agent guide](docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md),
+the [five runnable binder examples](examples/causal_pathway_binding/README.md),
+the [accepted closeout](implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md),
+and the [iteration and audit evidence](implementation/evidence/causal-pathway-binding-iterations/README.md).
+Binding receipts are operation-scoped: `bound_invocations_only` does not prove
+whole-run closure or the absence of unbound influences. The retained I125-N01
+debt concerns the unavailable historical external 68-case harness, not an
+observed implementation failure.
+
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current
 theory and fully native RC mechanisms while keeping the distinction between
@@ -177,6 +193,7 @@ Shared workflow surfaces compose with those model families:
 | --- | --- | --- |
 | First-contact workflows | [examples/README.md](examples/README.md), [examples/quickstart/README.md](examples/quickstart/README.md) | Source-tree scripts that construct models, run steps, capture telemetry, and render outputs. |
 | Landscape and GRCL lowering | [examples/landscapes/README.md](examples/landscapes/README.md), [docs/reference/LandscapeCompiler-ReferenceGuide.md](docs/reference/LandscapeCompiler-ReferenceGuide.md) | Seed loading, validation, lowering, inference, motion surfaces, and replay into runtime states. |
+| Causal-pathway binding | [binding workflow](docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md), [stable reference](docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md), [examples](examples/causal_pathway_binding/README.md) | Exact admitted-pathway and registered-composition binding, explicit experimental candidates, locks, receipts, validation, and operation-scoped claim provenance. |
 | Telemetry and visualization | [docs/reference/Telemetry-ReferenceGuide.md](docs/reference/Telemetry-ReferenceGuide.md), [docs/reference/GraphVisualization-ReferenceGuide.md](docs/reference/GraphVisualization-ReferenceGuide.md) | Step/event rows, run summaries, checkpoints, graph rendering, visual bundles, and evidence catalogs. |
 | Experiment reconstruction | `experiments/*/README.md` | Experiment-local scripts, configs, reports, and selected outputs for reconstructing historical evidence lanes. |
 

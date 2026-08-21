@@ -1,0 +1,18 @@
+{
+  "artifact": "causal-pathway-candidate-mechanism-evidence",
+  "candidate_kind": "composition",
+  "executable_symbol": {
+    "binding_role": "candidate_mechanism_entrypoint",
+    "call_kind": "module_function",
+    "module": "causal_pathway_binding_example_candidate",
+    "qualified_symbol": "packet_schedule_to_snapshot",
+    "source_path": "examples/causal_pathway_binding/candidate_mechanism.py",
+    "source_sha256": "cba44917063aaf9f44d47121dc3724a03b2bbb6326c6f745753d77a8a4175da8",
+    "symbol_id": "candidate-mechanism:example.packet_schedule_then_snapshot"
+  },
+  "mechanism_id": "example.packet_schedule_then_snapshot",
+  "proposed_source_pathway_id": "lgrc9v3.explicit_packet_transport",
+  "proposed_target_pathway_id": "pygrc.restoration_replay_identity",
+  "schema_version": "causal_pathway_candidate_mechanism_evidence_v2",
+  "supported_relation": "example-only post-packet snapshot relation"
+}

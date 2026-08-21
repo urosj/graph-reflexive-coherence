@@ -1,0 +1,389 @@
+{
+  "allowed_pathway_alternatives": [],
+  "artifact": "causal-pathways-binding-lock",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+  "binding_acceptance_status": "accepted",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "blocked_claims": [
+    "substrate-formed route",
+    "native departure reason",
+    "agency",
+    "byte identity requirement",
+    "unrestricted behavioral identity",
+    "semantic identity",
+    "action eligibility",
+    "candidate relation is admitted",
+    "candidate relation is native",
+    "candidate declaration is promotion"
+  ],
+  "candidate_declarations": [
+    {
+      "adapter_residue": [],
+      "authority": {
+        "commit": "unresolved",
+        "direction": "unresolved",
+        "eligibility": "unresolved",
+        "funding": "unresolved",
+        "reception": "unresolved",
+        "scheduling": "unresolved"
+      },
+      "blocked_claims": [
+        "candidate relation is admitted",
+        "candidate relation is native",
+        "candidate declaration is promotion"
+      ],
+      "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+      "candidate_kind": "composition",
+      "candidate_mechanism_link": {
+        "binding_role": "candidate_mechanism_entrypoint",
+        "call_kind": "module_function",
+        "callable_identity": {
+          "callable_identity_digest": "1e28ca41e4cf47beb1dcee339db8dde88ae663c3bff6933ebf610fceed155e83",
+          "definition_first_line": 8,
+          "definition_source_sha256": "54d3ed777a35638894ec2b13e4b046483a80741f011809d7999ac0c923d0c054",
+          "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
+          "qualified_symbol": "packet_schedule_to_snapshot_crossing",
+          "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
+          "source_sha256": "3898ef4d747db32ea6f51e8f73547fb1b2c5ef2aa4ef1d0b21def496cd443475"
+        },
+        "mechanism_id": "fixture.packet_schedule_then_snapshot",
+        "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
+        "qualified_symbol": "packet_schedule_to_snapshot_crossing",
+        "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
+        "source_sha256": "3898ef4d747db32ea6f51e8f73547fb1b2c5ef2aa4ef1d0b21def496cd443475",
+        "symbol_id": "candidate-mechanism:fixture.packet_schedule_then_snapshot"
+      },
+      "claim_ceiling": "experimental_unregistered",
+      "configured_residue": [],
+      "consumed_admitted_composition_ids": [],
+      "consumed_admitted_pathway_ids": [
+        "lgrc9v3.explicit_packet_transport",
+        "pygrc.restoration_replay_identity"
+      ],
+      "evidence_owner": "i116_fixture",
+      "invalid_relabel_blocked_claims": [],
+      "invalid_relabel_conflict_ids": [],
+      "invalid_relabel_relation_review": null,
+      "invalid_relabel_relation_review_trust_requirement": null,
+      "mechanism_evidence": {
+        "evidence_kind": "executable_candidate_mechanism",
+        "mechanism_id": "fixture.packet_schedule_then_snapshot",
+        "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+        "sha256": "0ff1e5c0d636564b06d687a461b7e6de1040dd0845cd021f95c6d47766e5c017"
+      },
+      "owner": "i116_fixture",
+      "producer_residue": [],
+      "promotion_status": "none",
+      "proposed_relation": "fixture-only post-packet snapshot relation",
+      "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified",
+      "proposed_source_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "proposed_target_pathway_id": "pygrc.restoration_replay_identity",
+      "purpose": "Bounded I116 unregistered-candidate dry run."
+    }
+  ],
+  "claim_scope": "bound_invocations_only",
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_composition_bindings": [],
+  "declared_pathway_bindings": [
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [],
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "declared_stage_ids": [
+        "packet_schedule"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+            "definition_first_line": 8124,
+            "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
+          "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-packet-schedule-transition-v1",
+            "effect_contract_digest": "57f0d6b4f6572db21fe9653786c309181b144eaf91a5eacd67f99ed7e92af639",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "packet_schedule",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "producer_residue": []
+    },
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "pathway:pygrc.restoration_replay_identity",
+      "composition_ids": [],
+      "configured_residue": [
+        "identity schema version",
+        "legacy compatibility policy",
+        "replay scope"
+      ],
+      "declared_stage_ids": [
+        "snapshot_serialization"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:pygrc.restoration_replay_identity",
+          "binding_role": "restoration_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "37c2244be0a7a46615d9e0550a3f01becdda4b00713dbe8f412dc045904cb2e5",
+            "definition_first_line": 9795,
+            "definition_source_sha256": "03154597f336eb7594fee24d9f10f3b1cae77b12fa52931ec6f53aea97f3a816",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.snapshot",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
+          "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-snapshot-serialization-observation-v1",
+            "effect_contract_digest": "06e6d35f78d62ed01b745fcec762606f227787717e2670de84318a388b59576a",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "qualified_symbol": "LGRC9V3.snapshot",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "snapshot_serialization",
+          "symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary"
+        }
+      ],
+      "mechanism_ownership": "utility",
+      "pathway_id": "pygrc.restoration_replay_identity",
+      "producer_residue": []
+    }
+  ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "explicit_adapters": [],
+  "explicit_producers": [],
+  "lock_digest": "e1c728e8ad882dc1aace3525ab94bfbd3eef90264e67cf1a25d9dfa2c8bcf019",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pre_execution_claim_envelope": {
+    "blocked_claims": [
+      "substrate-formed route",
+      "native departure reason",
+      "agency",
+      "byte identity requirement",
+      "unrestricted behavioral identity",
+      "semantic identity",
+      "action eligibility",
+      "candidate relation is admitted",
+      "candidate relation is native",
+      "candidate declaration is promotion"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+        "blocked_claims": [
+          "substrate-formed route",
+          "native departure reason",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "native packet accounting and queue-processing mechanics"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "required_qualifiers": {
+          "configured_residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ],
+          "naturalization_debt": [
+            "native route formation and departure reason remain absent"
+          ],
+          "producer_residue": []
+        }
+      },
+      {
+        "binding_id": "pathway:pygrc.restoration_replay_identity",
+        "blocked_claims": [
+          "byte identity requirement",
+          "unrestricted behavioral identity",
+          "semantic identity",
+          "action eligibility"
+        ],
+        "constituent_claim_ceiling": [
+          "versioned restoration and replay identity"
+        ],
+        "mechanism_ownership": "utility",
+        "pathway_id": "pygrc.restoration_replay_identity",
+        "required_qualifiers": {
+          "configured_residue": [
+            "identity schema version",
+            "legacy compatibility policy",
+            "replay scope"
+          ],
+          "naturalization_debt": [
+            "identity equality remains scope-bounded and does not imply semantic identity or work eligibility"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": false,
+    "experimental_unregistered": true,
+    "overall_claim_status": "experimental_unregistered",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [
+        {
+          "adapter_residue": [],
+          "authority": {
+            "commit": "unresolved",
+            "direction": "unresolved",
+            "eligibility": "unresolved",
+            "funding": "unresolved",
+            "reception": "unresolved",
+            "scheduling": "unresolved"
+          },
+          "blocked_claims": [
+            "candidate relation is admitted",
+            "candidate relation is native",
+            "candidate declaration is promotion"
+          ],
+          "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+          "candidate_kind": "composition",
+          "candidate_mechanism_link": {
+            "binding_role": "candidate_mechanism_entrypoint",
+            "call_kind": "module_function",
+            "callable_identity": {
+              "callable_identity_digest": "1e28ca41e4cf47beb1dcee339db8dde88ae663c3bff6933ebf610fceed155e83",
+              "definition_first_line": 8,
+              "definition_source_sha256": "54d3ed777a35638894ec2b13e4b046483a80741f011809d7999ac0c923d0c054",
+              "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
+              "qualified_symbol": "packet_schedule_to_snapshot_crossing",
+              "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
+              "source_sha256": "3898ef4d747db32ea6f51e8f73547fb1b2c5ef2aa4ef1d0b21def496cd443475"
+            },
+            "mechanism_id": "fixture.packet_schedule_then_snapshot",
+            "module": "tests.fixtures.causal_pathway_candidate_mechanisms",
+            "qualified_symbol": "packet_schedule_to_snapshot_crossing",
+            "source_path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
+            "source_sha256": "3898ef4d747db32ea6f51e8f73547fb1b2c5ef2aa4ef1d0b21def496cd443475",
+            "symbol_id": "candidate-mechanism:fixture.packet_schedule_then_snapshot"
+          },
+          "claim_ceiling": "experimental_unregistered",
+          "configured_residue": [],
+          "consumed_admitted_composition_ids": [],
+          "consumed_admitted_pathway_ids": [
+            "lgrc9v3.explicit_packet_transport",
+            "pygrc.restoration_replay_identity"
+          ],
+          "evidence_owner": "i116_fixture",
+          "invalid_relabel_blocked_claims": [],
+          "invalid_relabel_conflict_ids": [],
+          "invalid_relabel_relation_review": null,
+          "invalid_relabel_relation_review_trust_requirement": null,
+          "mechanism_evidence": {
+            "evidence_kind": "executable_candidate_mechanism",
+            "mechanism_id": "fixture.packet_schedule_then_snapshot",
+            "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+            "sha256": "0ff1e5c0d636564b06d687a461b7e6de1040dd0845cd021f95c6d47766e5c017"
+          },
+          "owner": "i116_fixture",
+          "producer_residue": [],
+          "promotion_status": "none",
+          "proposed_relation": "fixture-only post-packet snapshot relation",
+          "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified",
+          "proposed_source_pathway_id": "lgrc9v3.explicit_packet_transport",
+          "proposed_target_pathway_id": "pygrc.restoration_replay_identity",
+          "purpose": "Bounded I116 unregistered-candidate dry run."
+        }
+      ],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ]
+        },
+        {
+          "pathway_id": "pygrc.restoration_replay_identity",
+          "residue": [
+            "identity schema version",
+            "legacy compatibility policy",
+            "replay scope"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_lock_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unregistered_relation_bound_without_candidate": false,
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
+}

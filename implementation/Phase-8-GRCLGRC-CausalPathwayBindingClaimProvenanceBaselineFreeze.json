@@ -1,0 +1,154 @@
+{
+  "artifact": "Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceBaselineFreeze",
+  "schema_version": "phase8_grclgrc_causal_pathway_binding_claim_provenance_baseline_v1",
+  "iteration": 112,
+  "date": "2026-08-16",
+  "status": "passed",
+  "branch": "feat/causal-pathway-binding-claim-provenance",
+  "source_commit": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "source_tree": "40cfb7cdf72dbe5e0149362bd22fe37d0a6d7286",
+  "source_behavior_changed": false,
+  "protected_source_test_example_diff_empty": true,
+  "authority_inputs": [
+    {
+      "role": "pathway_registry",
+      "path": "specs/grc-lgrc-causal-pathway-contracts.json",
+      "sha256": "0aab2d6e1e515b58b057effde5bd0a013256615d3cf3fee548b49a1d2edd9141",
+      "embedded_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b"
+    },
+    {
+      "role": "evidence_crosswalk",
+      "path": "specs/grc-lgrc-causal-pathway-evidence-crosswalk.json",
+      "sha256": "01b72cd8ddb9be58ee3db6684218829219601c88c85ac91617e76907eb1e0f05",
+      "embedded_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06"
+    },
+    {
+      "role": "composition_matrix",
+      "path": "specs/grc-lgrc-causal-pathway-composition-matrix.json",
+      "sha256": "6220a7be74c90f85892fd0f61a4f2126218e9ac104cb6451e9c1667d73c942c1",
+      "embedded_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90"
+    },
+    {
+      "role": "selection_guide",
+      "path": "specs/grc-lgrc-causal-pathway-selection-guide.json",
+      "sha256": "6cb4c1b320df9725e2c7347216ad00fbb19c3231ce03b8fc7a10fc5228c770cc",
+      "embedded_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+    },
+    {
+      "role": "conformance_policy",
+      "path": "specs/grc-lgrc-causal-pathway-conformance.json",
+      "sha256": "5500ae9dfa9d26ad05f11286bf72fce983d1241fe3ffa9f21aea1c5a0eb02a1f",
+      "embedded_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9"
+    },
+    {
+      "role": "conformance_checker",
+      "path": "scripts/check_grc_lgrc_causal_pathway_conformance.py",
+      "sha256": "1ac974743113e2c385c198bbf2fc3fbe5341548df36971e08d6786f6d9b025a6"
+    },
+    {
+      "role": "iteration_111_result",
+      "path": "implementation/investigations/causal-pathway-consolidation/Phase-8-GRCLGRC-CausalPathwayConsolidationIteration111.md",
+      "sha256": "76647f360dc3b7f4a959ff0b66ab3185a78e727861e0e81197fdee150dcda43a"
+    },
+    {
+      "role": "iteration_111_closeout",
+      "path": "implementation/Phase-8-GRCLGRC-CausalPathwayConsolidationCloseout.md",
+      "sha256": "c9828c26b2dc0988327031010b0daa7727f7a86a94389e90b53a806329e80faa"
+    },
+    {
+      "role": "claim_boundary_index",
+      "path": "docs/reference/ClaimBoundaryIndex.md",
+      "sha256": "37fb49a7333ea49b7fb17dc0ccbfbfad940bf3747de44cb9086aee659c09b2de"
+    },
+    {
+      "role": "pathway_reference_guide",
+      "path": "docs/reference/GRC-LGRC-CausalPathwayGuide.md",
+      "sha256": "04cf215d99681d025bc0868efe89206da3af00124155a7f0a98a1fc56d699c91"
+    },
+    {
+      "role": "composition_reference_matrix",
+      "path": "docs/reference/GRC-LGRC-CompositionMatrix.md",
+      "sha256": "cb50e76f86c7e024fdedcebab5488636f931d29c0558d0a9a05e1dba17d616d8"
+    }
+  ],
+  "accepted_authority_counts": {
+    "pathways": 23,
+    "stages": 52,
+    "compositions": 26,
+    "selection_cases": 10,
+    "conformance_rules": 20
+  },
+  "protected_trees": [
+    {
+      "path": "src",
+      "git_tree": "3e712f89f9a99c2eef6366409d21b40c55f34311",
+      "tracked_file_count": 174,
+      "sorted_sha256_manifest_digest": "ef368a2bbc79a43eb433c984edaa7f4dadd8d8cb252c3ff716932c2889f27f79"
+    },
+    {
+      "path": "tests",
+      "git_tree": "5c7b4078951045a590d1e2881fc3d6491f5595f3",
+      "tracked_file_count": 175,
+      "sorted_sha256_manifest_digest": "8db6c54e209d8b663b473d71af53c30dbb1e6086b5d42ed245a096ecf3bc64bb"
+    },
+    {
+      "path": "examples",
+      "git_tree": "bc31ce3a8567a6bb896805571501e31d24e0242e",
+      "tracked_file_count": 32,
+      "sorted_sha256_manifest_digest": "847a31fc48bf0299f36a64ab8adf2f32af8b3b82ea2310ac82fbb13093b56365"
+    }
+  ],
+  "environment_inputs": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "b96f7e82c3e398502d12037548701e88aaf82b5b7c47f7153306fcea747a6d8b"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "0cac0e472eba3359aa79e9674ff11a5fd0484b9c465fc1cb774c30938edcc5d7"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "c8a8b1bf3d2b25ac085dc45f84750614b1204fa5f483c1a2eee530da1b528802"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "8935f5c29dd72daf9755b5c495be6e1af5fbbd933e9ce9c6f226a02027c3d3f7"
+    }
+  ],
+  "pre_change_verification": {
+    "python": "3.12.3",
+    "environment": ".venv",
+    "focused_command": "PYTHONPATH=src .venv/bin/python -m unittest -q <20 accepted I107 modules>",
+    "focused_tests_run": 528,
+    "focused_status": "passed",
+    "focused_duration_seconds": 12.536,
+    "full_command": "PYTHONPATH=src .venv/bin/python -m unittest discover tests -q",
+    "full_tests_run": 1211,
+    "full_status": "passed",
+    "full_duration_seconds": 309.891,
+    "conformance_command": ".venv/bin/python scripts/check_grc_lgrc_causal_pathway_conformance.py",
+    "conformance_rules_passed": 20,
+    "conformance_issue_count": 0,
+    "conformance_digest": "14a4ee2a4cc2dc4beca4ce056a15548df90ed4f0d33a707d33facc1a1ce1c6b2"
+  },
+  "pressure_cases": [
+    "admitted_pathway_only_explicit_packet_transport",
+    "registered_producer_mediated_composition_CMP_20",
+    "distinct_unregistered_candidate_composition"
+  ],
+  "binding_model_decision": "accepted_verified_mechanism_specific_callable_linker",
+  "iteration_113_ready": true,
+  "blocked_claims": [
+    "universal_causal_work_API",
+    "runtime_dispatcher",
+    "automatic_pathway_selection",
+    "generic_native_admission",
+    "native_candidate_formation",
+    "candidate_as_promotion",
+    "ecological_support_or_coordination",
+    "agency",
+    "native_Read_Back",
+    "N32"
+  ]
+}

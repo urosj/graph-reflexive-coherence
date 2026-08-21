@@ -1,0 +1,175 @@
+{
+  "active_rule_ids": [
+    "BCF-001",
+    "BCF-002",
+    "BCF-003",
+    "BCF-004",
+    "BCF-005",
+    "BCF-006",
+    "BCF-007",
+    "BCF-008",
+    "BCF-009",
+    "BCF-010",
+    "BCF-011",
+    "BCF-012",
+    "BCF-013",
+    "BCF-014",
+    "BCF-015",
+    "BCF-016",
+    "BCF-017",
+    "BCF-018",
+    "BCF-019",
+    "BCF-020"
+  ],
+  "actual_authority_digests": {
+    "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+    "binding_semantics_digest": "0769cd5dd0fa7e42eb324f7a59385563846fabb952e474d9863d5dd3b8a56991",
+    "binding_source_manifest_digest": "5843485730cadaded2864cc98a22c67d84635a93e22cf7736a3b83130a90dd15",
+    "consolidation_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+    "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+  },
+  "actual_invocation_count": 1,
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+  "binding_acceptance_status": "accepted",
+  "binding_staleness_state": "current",
+  "candidate_declaration_count": 0,
+  "claim_qualified_artifacts_blocked": false,
+  "composition_binding_count": 0,
+  "conformance_digest": "eb54f646569cf4b91e5f410fe94d6bbd0aae6706871e83431ee9d919cc42c823",
+  "failed_rule_count": 0,
+  "issue_count": 0,
+  "issues": [],
+  "passed_rule_count": 20,
+  "pathway_binding_count": 1,
+  "policy_digest": "9a6f27cf7d38d86d4ecaa092de7dc9d455976c4d96987d8dab35e45be2a14335",
+  "rule_count": 20,
+  "rule_results": [
+    {
+      "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
+      "issue_count": 0,
+      "rule_id": "BCF-001",
+      "status": "passed"
+    },
+    {
+      "description": "Every registered composition binding must resolve exactly to the composition matrix.",
+      "issue_count": 0,
+      "rule_id": "BCF-002",
+      "status": "passed"
+    },
+    {
+      "description": "Unregistered relations require explicit candidate declarations and distinct graph identities.",
+      "issue_count": 0,
+      "rule_id": "BCF-003",
+      "status": "passed"
+    },
+    {
+      "description": "Candidate uses require a current distinct executable identity and its exact scoped invocation while remaining experimental and unpromoted.",
+      "issue_count": 0,
+      "rule_id": "BCF-004",
+      "status": "passed"
+    },
+    {
+      "description": "Producer pathways and compositions must retain producer identity and authority cuts.",
+      "issue_count": 0,
+      "rule_id": "BCF-005",
+      "status": "passed"
+    },
+    {
+      "description": "Explicit-adapter compositions must retain adapter identity and non-native ownership.",
+      "issue_count": 0,
+      "rule_id": "BCF-006",
+      "status": "passed"
+    },
+    {
+      "description": "Diagnostic-only relations must not carry behavioral claims across the relation.",
+      "issue_count": 0,
+      "rule_id": "BCF-007",
+      "status": "passed"
+    },
+    {
+      "description": "Configured route semantics must not be widened to formed-route claims.",
+      "issue_count": 0,
+      "rule_id": "BCF-008",
+      "status": "passed"
+    },
+    {
+      "description": "Native arbitration must not be widened to native candidate formation.",
+      "issue_count": 0,
+      "rule_id": "BCF-009",
+      "status": "passed"
+    },
+    {
+      "description": "Unsupported missing crossings cannot be bound as admitted compositions.",
+      "issue_count": 0,
+      "rule_id": "BCF-010",
+      "status": "passed"
+    },
+    {
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and exact source-dependent flow through the frozen source-result parameter to the candidate result and target request, using its recursively type-preserving frozen callable default for the omission counterfactual, in the externally trusted raw transcript, plus every structured block.",
+      "issue_count": 0,
+      "rule_id": "BCF-011",
+      "status": "passed"
+    },
+    {
+      "description": "Locks and receipts must consume the accepted registry and knowledge-plane digests.",
+      "issue_count": 0,
+      "rule_id": "BCF-012",
+      "status": "passed"
+    },
+    {
+      "description": "Locks and receipts must consume the accepted composition-matrix digest.",
+      "issue_count": 0,
+      "rule_id": "BCF-013",
+      "status": "passed"
+    },
+    {
+      "description": "The binding map, concrete symbols, source hashes, and binding policy must match an independently supplied acceptance anchor.",
+      "issue_count": 0,
+      "rule_id": "BCF-014",
+      "status": "passed"
+    },
+    {
+      "description": "Locks and receipts must expose exact declared, actual, and unused links and match independently canonicalized claim envelopes.",
+      "issue_count": 0,
+      "rule_id": "BCF-015",
+      "status": "passed"
+    },
+    {
+      "description": "Every wrapper invocation must retain the pathway and stage frozen for its symbol.",
+      "issue_count": 0,
+      "rule_id": "BCF-016",
+      "status": "passed"
+    },
+    {
+      "description": "Dynamic pathway choices require explicit consumer-owned scopes that reject out-of-set or second-branch calls while leaving unscoped work unrelated.",
+      "issue_count": 0,
+      "rule_id": "BCF-017",
+      "status": "passed"
+    },
+    {
+      "description": "The binder must not select or automatically resolve ambiguous registered crossings.",
+      "issue_count": 0,
+      "rule_id": "BCF-018",
+      "status": "passed"
+    },
+    {
+      "description": "Registered composition edges require exact scoped order, a row-specific runtime object-flow contract, and an independently trusted execution transcript; endpoint co-use and chains must not synthesize edges or claim ceilings.",
+      "issue_count": 0,
+      "rule_id": "BCF-019",
+      "status": "passed"
+    },
+    {
+      "description": "Only trusted symbol-specific committed or observed effects can present as claim-qualified pathway evidence.",
+      "issue_count": 0,
+      "rule_id": "BCF-020",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "trusted_candidate_review_digests": [],
+  "trusted_execution_transcript_digest": null,
+  "validation_scope": "full_conformance"
+}

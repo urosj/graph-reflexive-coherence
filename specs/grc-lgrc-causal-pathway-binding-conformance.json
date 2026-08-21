@@ -1,0 +1,186 @@
+{
+  "accepted_digests": {
+    "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+    "consolidation_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+    "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b"
+  },
+  "artifact": "GRC/LGRC causal pathway binding conformance policy",
+  "candidate_promotion_automated": false,
+  "composition_dataflow_contract_policy": {
+    "default_non_adapter": {
+      "continuity_kind": "exact_object_identity",
+      "source_port": "receiver",
+      "source_stage_id": "*",
+      "target_port": "receiver",
+      "target_stage_id": "*"
+    },
+    "explicit_adapter": {
+      "continuity_kind": "exact_adapter_reference",
+      "source_port": "declared_adapter_source_instance",
+      "source_stage_id": "*",
+      "target_port": "adapter_result_reference",
+      "target_stage_id": "*"
+    },
+    "specialized_non_adapter": {
+      "CMP-01": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "argument:state",
+        "source_stage_id": "transport_rebuild",
+        "target_port": "receiver_state",
+        "target_stage_id": "continuity_and_invariants"
+      },
+      "CMP-02": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "argument:state",
+        "source_stage_id": "source_debit",
+        "target_port": "argument:state",
+        "target_stage_id": "target_credit"
+      },
+      "CMP-03": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "argument:state",
+        "source_stage_id": "transport_rebuild",
+        "target_port": "receiver_base_state",
+        "target_stage_id": "packet_schedule"
+      },
+      "CMP-04": {
+        "continuity_kind": "consumer_bound_equivalent_state_copy",
+        "source_port": "result_base_state",
+        "source_stage_id": "diagnostic_model_construction",
+        "target_port": "receiver_state",
+        "target_stage_id": "diagnostic_rebuild"
+      },
+      "CMP-17": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "result",
+        "source_stage_id": "assemble_causal_annotation",
+        "target_port": "argument:evolution",
+        "target_stage_id": "transport_rebuild"
+      },
+      "CMP-21": {
+        "continuity_kind": "exact_object_identity",
+        "source_port": "result",
+        "source_stage_id": "target_credit",
+        "target_port": "argument:processing_result",
+        "target_stage_id": "surface_row_emission"
+      }
+    }
+  },
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "invalid_relabel_candidate_review_trust_requirement": "externally_supplied_digest_for_invalid_relabel_candidate_review",
+  "iteration": 115,
+  "policy_digest": "9a6f27cf7d38d86d4ecaa092de7dc9d455976c4d96987d8dab35e45be2a14335",
+  "rules": [
+    {
+      "description": "Every admitted pathway binding must resolve exactly to the registry and binding map.",
+      "rule_id": "BCF-001",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Every registered composition binding must resolve exactly to the composition matrix.",
+      "rule_id": "BCF-002",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Unregistered relations require explicit candidate declarations and distinct graph identities.",
+      "rule_id": "BCF-003",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Candidate uses require a current distinct executable identity and its exact scoped invocation while remaining experimental and unpromoted.",
+      "rule_id": "BCF-004",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Producer pathways and compositions must retain producer identity and authority cuts.",
+      "rule_id": "BCF-005",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Explicit-adapter compositions must retain adapter identity and non-native ownership.",
+      "rule_id": "BCF-006",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Diagnostic-only relations must not carry behavioral claims across the relation.",
+      "rule_id": "BCF-007",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Configured route semantics must not be widened to formed-route claims.",
+      "rule_id": "BCF-008",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Native arbitration must not be widened to native candidate formation.",
+      "rule_id": "BCF-009",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Unsupported missing crossings cannot be bound as admitted compositions.",
+      "rule_id": "BCF-010",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Invalid relabels cannot be bound, semantically restated, or laundered; conflicting candidates require an independently reviewed structural distinction, a non-no-op executable result, and exact source-dependent flow through the frozen source-result parameter to the candidate result and target request, using its recursively type-preserving frozen callable default for the omission counterfactual, in the externally trusted raw transcript, plus every structured block.",
+      "rule_id": "BCF-011",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Locks and receipts must consume the accepted registry and knowledge-plane digests.",
+      "rule_id": "BCF-012",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Locks and receipts must consume the accepted composition-matrix digest.",
+      "rule_id": "BCF-013",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "The binding map, concrete symbols, source hashes, and binding policy must match an independently supplied acceptance anchor.",
+      "rule_id": "BCF-014",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Locks and receipts must expose exact declared, actual, and unused links and match independently canonicalized claim envelopes.",
+      "rule_id": "BCF-015",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Every wrapper invocation must retain the pathway and stage frozen for its symbol.",
+      "rule_id": "BCF-016",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Dynamic pathway choices require explicit consumer-owned scopes that reject out-of-set or second-branch calls while leaving unscoped work unrelated.",
+      "rule_id": "BCF-017",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "The binder must not select or automatically resolve ambiguous registered crossings.",
+      "rule_id": "BCF-018",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Registered composition edges require exact scoped order, a row-specific runtime object-flow contract, and an independently trusted execution transcript; endpoint co-use and chains must not synthesize edges or claim ceilings.",
+      "rule_id": "BCF-019",
+      "severity": "fail_closed"
+    },
+    {
+      "description": "Only trusted symbol-specific committed or observed effects can present as claim-qualified pathway evidence.",
+      "rule_id": "BCF-020",
+      "severity": "fail_closed"
+    }
+  ],
+  "runtime_behavior_changed": false,
+  "runtime_dispatcher_created": false,
+  "schema_version": "grc_lgrc_causal_pathway_binding_conformance_policy_v1",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "8f30346d58f9a659f141e4c888d925a1b1eb1a4b",
+  "staleness_rule": "A missing or mismatched independent acceptance anchor, binding-map drift, symbol drift, or source drift becomes stale_pending_review and blocks claim-qualified artifacts until reviewed re-admission",
+  "status": "frozen",
+  "unbound_execution_claim_qualified": false
+}

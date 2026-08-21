@@ -1,0 +1,131 @@
+{
+  "allowed_pathway_alternatives": [],
+  "artifact": "causal-pathways-binding-lock",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+  "binding_acceptance_status": "accepted",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "blocked_claims": [
+    "candidate relation is admitted",
+    "candidate relation is native",
+    "candidate declaration is promotion"
+  ],
+  "candidate_declarations": [
+    {
+      "adapter_residue": [],
+      "authority": {
+        "commit": "unresolved",
+        "direction": "unresolved",
+        "eligibility": "unresolved",
+        "funding": "unresolved",
+        "reception": "unresolved",
+        "scheduling": "unresolved"
+      },
+      "blocked_claims": [
+        "candidate relation is admitted",
+        "candidate relation is native",
+        "candidate declaration is promotion"
+      ],
+      "candidate_id": "experiment.i118.unused-candidate-pathway",
+      "candidate_kind": "pathway",
+      "candidate_mechanism_link": null,
+      "claim_ceiling": "experimental_unregistered",
+      "configured_residue": [],
+      "consumed_admitted_composition_ids": [],
+      "consumed_admitted_pathway_ids": [],
+      "evidence_owner": "i118_fixture",
+      "invalid_relabel_blocked_claims": [],
+      "invalid_relabel_conflict_ids": [],
+      "invalid_relabel_relation_review": null,
+      "invalid_relabel_relation_review_trust_requirement": null,
+      "mechanism_evidence": null,
+      "owner": "i118_fixture",
+      "producer_residue": [],
+      "promotion_status": "none",
+      "proposed_relation": null,
+      "proposed_relation_claim_status": null,
+      "proposed_source_pathway_id": null,
+      "proposed_target_pathway_id": null,
+      "purpose": "Freeze declared-but-unused candidate-pathway behavior."
+    }
+  ],
+  "claim_scope": "bound_invocations_only",
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_composition_bindings": [],
+  "declared_pathway_bindings": [],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "explicit_adapters": [],
+  "explicit_producers": [],
+  "lock_digest": "b6624facbb961161ba9cc2d71b781375ad5be020506233bd21a5f6c86a169f19",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pre_execution_claim_envelope": {
+    "blocked_claims": [
+      "candidate relation is admitted",
+      "candidate relation is native",
+      "candidate declaration is promotion"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": false,
+    "experimental_unregistered": true,
+    "overall_claim_status": "experimental_unregistered",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [
+        {
+          "adapter_residue": [],
+          "authority": {
+            "commit": "unresolved",
+            "direction": "unresolved",
+            "eligibility": "unresolved",
+            "funding": "unresolved",
+            "reception": "unresolved",
+            "scheduling": "unresolved"
+          },
+          "blocked_claims": [
+            "candidate relation is admitted",
+            "candidate relation is native",
+            "candidate declaration is promotion"
+          ],
+          "candidate_id": "experiment.i118.unused-candidate-pathway",
+          "candidate_kind": "pathway",
+          "candidate_mechanism_link": null,
+          "claim_ceiling": "experimental_unregistered",
+          "configured_residue": [],
+          "consumed_admitted_composition_ids": [],
+          "consumed_admitted_pathway_ids": [],
+          "evidence_owner": "i118_fixture",
+          "invalid_relabel_blocked_claims": [],
+          "invalid_relabel_conflict_ids": [],
+          "invalid_relabel_relation_review": null,
+          "invalid_relabel_relation_review_trust_requirement": null,
+          "mechanism_evidence": null,
+          "owner": "i118_fixture",
+          "producer_residue": [],
+          "promotion_status": "none",
+          "proposed_relation": null,
+          "proposed_relation_claim_status": null,
+          "proposed_source_pathway_id": null,
+          "proposed_target_pathway_id": null,
+          "purpose": "Freeze declared-but-unused candidate-pathway behavior."
+        }
+      ],
+      "configured_semantics": [],
+      "diagnostic_only_relations": [],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_lock_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unregistered_relation_bound_without_candidate": false,
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
+}

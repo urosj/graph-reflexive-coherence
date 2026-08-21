@@ -1,0 +1,9 @@
+{
+  "artifact": "causal-pathway-candidate-mechanism-evidence",
+  "candidate_kind": "pathway",
+  "mechanism_id": "fixture.metadata-only-candidate",
+  "proposed_source_pathway_id": null,
+  "proposed_target_pathway_id": null,
+  "schema_version": "causal_pathway_candidate_mechanism_evidence_v2",
+  "supported_relation": null
+}

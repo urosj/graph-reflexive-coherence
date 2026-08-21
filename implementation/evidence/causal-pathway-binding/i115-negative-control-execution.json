@@ -1,0 +1,534 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway binding I115 negative-control execution",
+  "binding_drift_control_becomes_stale_pending_review": true,
+  "control_count": 20,
+  "controls": [
+    {
+      "case_id": "BNC-001",
+      "description": "unknown pathway passed as an admitted binding",
+      "expected_rule_id": "BCF-001",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-001",
+        "BCF-015",
+        "BCF-020"
+      ]
+    },
+    {
+      "case_id": "BNC-002",
+      "description": "unknown composition passed as a registered binding",
+      "expected_rule_id": "BCF-002",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-002",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-003",
+      "description": "unregistered relation bound without candidate declaration",
+      "expected_rule_id": "BCF-003",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-003",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-004",
+      "description": "candidate described as native and promoted",
+      "expected_rule_id": "BCF-004",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-004",
+        "BCF-011",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-005",
+      "description": "CMP-20-style producer identity erased",
+      "expected_rule_id": "BCF-005",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-002",
+        "BCF-005",
+        "BCF-015",
+        "BCF-019"
+      ]
+    },
+    {
+      "case_id": "BNC-006",
+      "description": "explicit adapter identity erased",
+      "expected_rule_id": "BCF-006",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-002",
+        "BCF-006",
+        "BCF-015",
+        "BCF-019"
+      ]
+    },
+    {
+      "case_id": "BNC-007",
+      "description": "diagnostic relation claimed behavioral",
+      "expected_rule_id": "BCF-007",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-002",
+        "BCF-007",
+        "BCF-015",
+        "BCF-019"
+      ]
+    },
+    {
+      "case_id": "BNC-008",
+      "description": "configured route claimed formed",
+      "expected_rule_id": "BCF-008",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-008",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-009",
+      "description": "native arbitration claimed candidate formation",
+      "expected_rule_id": "BCF-009",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-001",
+        "BCF-008",
+        "BCF-009",
+        "BCF-015",
+        "BCF-016"
+      ]
+    },
+    {
+      "case_id": "BNC-010",
+      "description": "unsupported crossing treated as existing",
+      "expected_rule_id": "BCF-010",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-002",
+        "BCF-010",
+        "BCF-015",
+        "BCF-019"
+      ]
+    },
+    {
+      "case_id": "BNC-011",
+      "description": "invalid relabel reused as a candidate identity",
+      "expected_rule_id": "BCF-011",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-004",
+        "BCF-011",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-012",
+      "description": "stale registry digest accepted",
+      "expected_rule_id": "BCF-012",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-012",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-013",
+      "description": "stale matrix digest accepted",
+      "expected_rule_id": "BCF-013",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-013",
+        "BCF-015"
+      ]
+    },
+    {
+      "case_id": "BNC-014",
+      "description": "stale binding-map source-symbol digest accepted",
+      "expected_rule_id": "BCF-014",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-014"
+      ]
+    },
+    {
+      "case_id": "BNC-015",
+      "description": "receipt invokes an undeclared symbol",
+      "expected_rule_id": "BCF-015",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015",
+        "BCF-019",
+        "BCF-020"
+      ]
+    },
+    {
+      "case_id": "BNC-016",
+      "description": "wrapper invocation changes locked pathway identity",
+      "expected_rule_id": "BCF-016",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015",
+        "BCF-016",
+        "BCF-019"
+      ]
+    },
+    {
+      "case_id": "BNC-017",
+      "description": "runtime records an undeclared alternative path",
+      "expected_rule_id": "BCF-017",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015",
+        "BCF-017"
+      ]
+    },
+    {
+      "case_id": "BNC-018",
+      "description": "binder automatically resolves an ambiguous crossing",
+      "expected_rule_id": "BCF-018",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015",
+        "BCF-018"
+      ]
+    },
+    {
+      "case_id": "BNC-019",
+      "description": "chained compositions synthesize an unregistered claim",
+      "expected_rule_id": "BCF-019",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015",
+        "BCF-019"
+      ]
+    },
+    {
+      "case_id": "BNC-020",
+      "description": "unbound execution presents claim-qualified evidence",
+      "expected_rule_id": "BCF-020",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015",
+        "BCF-020"
+      ]
+    }
+  ],
+  "effect_outcome_control_count": 3,
+  "effect_outcome_controls": [
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "M01-FALSE-AS-COMMITTED",
+      "description": "False return is forged as a committed claim-qualifying effect",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "M01-NO-OP-AS-QUALIFIED",
+      "description": "empty no-op return is forged as claim-qualifying",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "M01-UNKNOWN-AS-COMMITTED",
+      "description": "unreviewed effect contract is forged as committed",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    }
+  ],
+  "effect_outcome_failed_open_count": 0,
+  "execution_digest": "b00deaf875858a3af9519735bdabfefe93a621e1a103051f3b94685f726f7e5e",
+  "failed_open_count": 0,
+  "independent_anchor_control_count": 2,
+  "independent_anchor_controls": [
+    {
+      "binding_staleness_state": "stale_pending_review",
+      "candidate_map_and_policy_self_consistent": true,
+      "case_id": "BNC-014-COORDINATED-P1-P2",
+      "description": "coordinated packet-schedule to step map and policy re-admission",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-014"
+      ]
+    },
+    {
+      "binding_staleness_state": "stale_pending_review",
+      "candidate_map_and_policy_self_consistent": true,
+      "case_id": "BNC-014-FALSE-REVISION",
+      "description": "coordinated false source-revision and policy re-admission",
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-014"
+      ]
+    }
+  ],
+  "independent_anchor_failed_open_count": 0,
+  "iteration": 115,
+  "rule_isolation_control_count": 20,
+  "rule_isolation_controls": [
+    {
+      "active_rule_ids": [
+        "BCF-001"
+      ],
+      "case_id": "BNC-001",
+      "description": "unknown pathway passed as an admitted binding",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-001"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-002"
+      ],
+      "case_id": "BNC-002",
+      "description": "unknown composition passed as a registered binding",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-002"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-003"
+      ],
+      "case_id": "BNC-003",
+      "description": "unregistered relation bound without candidate declaration",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-003"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-004"
+      ],
+      "case_id": "BNC-004",
+      "description": "candidate described as native and promoted",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-004"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-005"
+      ],
+      "case_id": "BNC-005",
+      "description": "CMP-20-style producer identity erased",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-005"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-006"
+      ],
+      "case_id": "BNC-006",
+      "description": "explicit adapter identity erased",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-006"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-007"
+      ],
+      "case_id": "BNC-007",
+      "description": "diagnostic relation claimed behavioral",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-007"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-008"
+      ],
+      "case_id": "BNC-008",
+      "description": "configured route claimed formed",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-008"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-009"
+      ],
+      "case_id": "BNC-009",
+      "description": "native arbitration claimed candidate formation",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-009"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-010"
+      ],
+      "case_id": "BNC-010",
+      "description": "unsupported crossing treated as existing",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-010"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-011"
+      ],
+      "case_id": "BNC-011",
+      "description": "invalid relabel reused as a candidate identity",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-011"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-012"
+      ],
+      "case_id": "BNC-012",
+      "description": "stale registry digest accepted",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-012"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-013"
+      ],
+      "case_id": "BNC-013",
+      "description": "stale matrix digest accepted",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-013"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-014"
+      ],
+      "case_id": "BNC-014",
+      "description": "stale binding-map source-symbol digest accepted",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-014"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-015"
+      ],
+      "case_id": "BNC-015",
+      "description": "receipt invokes an undeclared symbol",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-015"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-016"
+      ],
+      "case_id": "BNC-016",
+      "description": "wrapper invocation changes locked pathway identity",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-016"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-017"
+      ],
+      "case_id": "BNC-017",
+      "description": "runtime records an undeclared alternative path",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-017"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-018"
+      ],
+      "case_id": "BNC-018",
+      "description": "binder automatically resolves an ambiguous crossing",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-018"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-019"
+      ],
+      "case_id": "BNC-019",
+      "description": "chained compositions synthesize an unregistered claim",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-019"
+      ]
+    },
+    {
+      "active_rule_ids": [
+        "BCF-020"
+      ],
+      "case_id": "BNC-020",
+      "description": "unbound execution presents claim-qualified evidence",
+      "general_artifact_digest_guard_active": false,
+      "status": "passed",
+      "triggered_rule_ids": [
+        "BCF-020"
+      ]
+    }
+  ],
+  "rule_isolation_failed_open_count": 0,
+  "rule_isolation_policy": "Only the target semantic rule participates; lock, receipt, and authority digest findings owned by unrelated rules are inactive.",
+  "schema_version": "phase8_grclgrc_causal_pathway_binding_i115_negative_controls_v1",
+  "source_revision": "8f30346d58f9a659f141e4c888d925a1b1eb1a4b",
+  "status": "passed"
+}

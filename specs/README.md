@@ -78,6 +78,26 @@ The implementation strategy assumed by these specs is:
   package is indexed under
   `implementation/investigations/causal-pathway-consolidation/`, and its chain
   records the resulting path-only bundle transitions.
+- `grc-lgrc-causal-pathway-bindings.json` and
+  `grc-lgrc-causal-pathway-bindings.md`
+  Separate Python linkage authority for all 23 admitted pathways and 52 stages,
+  extended at the Iteration 117 B-03 correction with the exact CMP-26 adapter
+  crossing. It records modules, qualified symbols, call kinds, binding roles,
+  source paths, and source hashes without adding Python linkage fields to the
+  semantic registry or creating a dispatcher.
+- `grc-lgrc-causal-pathway-binding-conformance.json`
+  Iteration 115-frozen prospective policy for exact locks, receipts, use
+  graphs, candidates, and structured claim envelopes. Its separate checker
+  enforces 20 rules and stale-to-pending-review behavior without executing
+  causal mechanisms. Operator-facing use is documented in the
+  [binding reference](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md),
+  [user and agent guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md),
+  and [runnable examples](../examples/causal_pathway_binding/README.md).
+  The binding tranche is accepted through Iteration 125; the
+  [closeout](../implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md)
+  and [iteration/audit evidence index](../implementation/evidence/causal-pathway-binding-iterations/README.md)
+  record the preserved public, artifact, runtime, checker, and claim boundaries
+  and the nonblocking I125-N01 evidence-retention debt.
 - `lgrc-9-v3-restoration-identity.md`
   Implemented and validated versioned LGRC9V3 restoration-identity contract
   over LGRC runtime state and a read-only projection of its embedded GRC9V3

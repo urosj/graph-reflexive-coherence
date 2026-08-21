@@ -1,0 +1,462 @@
+{
+  "allowed_pathway_alternatives": [],
+  "artifact": "causal-pathways-binding-lock",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+  "binding_acceptance_status": "accepted",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "blocked_claims": [
+    "ordinary LGRC behavior",
+    "native current-to-packet adapter",
+    "substrate-formed route",
+    "native departure reason",
+    "agency",
+    "diagnostic_as_behavior",
+    "native packet admission",
+    "candidate relation is admitted",
+    "candidate relation is native",
+    "candidate declaration is promotion"
+  ],
+  "candidate_declarations": [
+    {
+      "adapter_residue": [],
+      "authority": {
+        "commit": "unresolved",
+        "direction": "unresolved",
+        "eligibility": "unresolved",
+        "funding": "unresolved",
+        "reception": "unresolved",
+        "scheduling": "unresolved"
+      },
+      "blocked_claims": [
+        "diagnostic_as_behavior",
+        "native packet admission",
+        "candidate relation is admitted",
+        "candidate relation is native",
+        "candidate declaration is promotion"
+      ],
+      "candidate_id": "experiment.i118.reviewed-cmp05-mechanism",
+      "candidate_kind": "composition",
+      "candidate_mechanism_link": {
+        "binding_role": "candidate_mechanism_entrypoint",
+        "call_kind": "module_function",
+        "callable_identity": {
+          "callable_identity_digest": "d746562fcdf80f6c51c08e6d1191841acf584539cecf6520b7b508e727ce6ffd",
+          "definition_first_line": 8,
+          "definition_source_sha256": "3538a50ee585697790cdd1b36226c1450bafff359ee7c4562a59b60819770ebb",
+          "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
+          "qualified_symbol": "diagnostic_to_packet_candidate_crossing",
+          "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+          "source_sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd"
+        },
+        "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",
+        "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
+        "qualified_symbol": "diagnostic_to_packet_candidate_crossing",
+        "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+        "source_sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd",
+        "symbol_id": "candidate-mechanism:fixture.distinct_diagnostic_packet_adapter"
+      },
+      "claim_ceiling": "experimental_unregistered",
+      "configured_residue": [],
+      "consumed_admitted_composition_ids": [],
+      "consumed_admitted_pathway_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction",
+        "lgrc9v3.explicit_packet_transport"
+      ],
+      "evidence_owner": "i118_fixture",
+      "invalid_relabel_blocked_claims": [
+        "diagnostic_as_behavior",
+        "native packet admission"
+      ],
+      "invalid_relabel_conflict_ids": [
+        "CMP-05"
+      ],
+      "invalid_relabel_relation_review": {
+        "artifact": "causal-pathway-candidate-relation-review",
+        "candidate_id": "experiment.i118.reviewed-cmp05-mechanism",
+        "candidate_kind": "composition",
+        "invalid_relabel_blocked_claims": [
+          "diagnostic_as_behavior",
+          "native packet admission"
+        ],
+        "invalid_relabel_conflict_ids": [
+          "CMP-05"
+        ],
+        "mechanism_evidence": {
+          "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",
+          "path": "tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json",
+          "sha256": "cc1a4c6a8519c6ad4e988215a2972e6aa08ab06920376880ddcda27d83d0b608"
+        },
+        "proposed_relation": "new externally owned diagnostic packet adapter",
+        "proposed_source_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
+        "review_digest": "4ce7cf8db22e237b69ad556e57487bd4f77cf65769c99637b3639db18c0cd65a",
+        "review_id": "fixture-review:experiment.i118.reviewed-cmp05-mechanism",
+        "review_status": "accepted_structural_distinction",
+        "reviewer": "independent-fixture-reviewer",
+        "schema_version": "causal_pathway_candidate_relation_review_v2",
+        "source_result_parameter": "diagnostic_result",
+        "structural_distinction": {
+          "distinction_kind": "reviewed_external_adapter",
+          "mechanism_effect": "distinct_nonempty_mapping_result",
+          "source_binding": "candidate_callable_consumes_source_result",
+          "target_binding": "candidate_result_supplies_follow_on_request"
+        }
+      },
+      "invalid_relabel_relation_review_trust_requirement": "externally_supplied_digest_for_invalid_relabel_candidate_review",
+      "mechanism_evidence": {
+        "evidence_kind": "executable_candidate_mechanism",
+        "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",
+        "path": "tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json",
+        "sha256": "cc1a4c6a8519c6ad4e988215a2972e6aa08ab06920376880ddcda27d83d0b608"
+      },
+      "owner": "i118_fixture",
+      "producer_residue": [],
+      "promotion_status": "none",
+      "proposed_relation": "new externally owned diagnostic packet adapter",
+      "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified",
+      "proposed_source_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "purpose": "Freeze a distinct reviewed mechanism over CMP-05 endpoints."
+    }
+  ],
+  "claim_scope": "bound_invocations_only",
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_composition_bindings": [],
+  "declared_pathway_bindings": [
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [],
+      "configured_residue": [
+        "diagnostic modes",
+        "copied params"
+      ],
+      "declared_stage_ids": [
+        "diagnostic_model_construction"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
+            "definition_first_line": 288,
+            "definition_source_sha256": "2274ad33ebda740bb0dfd84888691ee948787f0b090580709ff40ae3c1ef76f7",
+            "module": "pygrc.models.lgrc_9_v3_construction",
+            "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+            "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+            "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+          },
+          "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-diagnostic-model-observation-v1",
+            "effect_contract_digest": "68e3efffd31621efd22103bf49bb224bbacd6bf90b56191c3cd8351b04802f61",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_construction",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
+          "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+          "stage_id": "diagnostic_model_construction",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+        }
+      ],
+      "mechanism_ownership": "diagnostic",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "producer_residue": []
+    },
+    {
+      "activation": "explicit_call",
+      "availability": "installed",
+      "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [],
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "declared_stage_ids": [
+        "packet_schedule"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+            "definition_first_line": 8124,
+            "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
+          "composition_ids": [],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-packet-schedule-transition-v1",
+            "effect_contract_digest": "57f0d6b4f6572db21fe9653786c309181b144eaf91a5eacd67f99ed7e92af639",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "packet_schedule",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "producer_residue": []
+    }
+  ],
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "explicit_adapters": [],
+  "explicit_producers": [],
+  "lock_digest": "fd7bfade9e130f48ac052ce0f6d564e5d67e3b612fd29207466cea940760867d",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pre_execution_claim_envelope": {
+    "blocked_claims": [
+      "ordinary LGRC behavior",
+      "native current-to-packet adapter",
+      "substrate-formed route",
+      "native departure reason",
+      "agency",
+      "diagnostic_as_behavior",
+      "native packet admission",
+      "candidate relation is admitted",
+      "candidate relation is native",
+      "candidate declaration is promotion"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native current-to-packet adapter"
+        ],
+        "constituent_claim_ceiling": [
+          "explicit bounded GRC diagnostic over LGRC state"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "required_qualifiers": {
+          "configured_residue": [
+            "diagnostic modes",
+            "copied params"
+          ],
+          "naturalization_debt": [
+            "ordinary LGRC step does not consume the reconstruction"
+          ],
+          "producer_residue": []
+        }
+      },
+      {
+        "binding_id": "pathway:lgrc9v3.explicit_packet_transport",
+        "blocked_claims": [
+          "substrate-formed route",
+          "native departure reason",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "native packet accounting and queue-processing mechanics"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "required_qualifiers": {
+          "configured_residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ],
+          "naturalization_debt": [
+            "native route formation and departure reason remain absent"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": true,
+    "contains_producer_cut": false,
+    "experimental_unregistered": true,
+    "overall_claim_status": "experimental_unregistered",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [
+        {
+          "adapter_residue": [],
+          "authority": {
+            "commit": "unresolved",
+            "direction": "unresolved",
+            "eligibility": "unresolved",
+            "funding": "unresolved",
+            "reception": "unresolved",
+            "scheduling": "unresolved"
+          },
+          "blocked_claims": [
+            "diagnostic_as_behavior",
+            "native packet admission",
+            "candidate relation is admitted",
+            "candidate relation is native",
+            "candidate declaration is promotion"
+          ],
+          "candidate_id": "experiment.i118.reviewed-cmp05-mechanism",
+          "candidate_kind": "composition",
+          "candidate_mechanism_link": {
+            "binding_role": "candidate_mechanism_entrypoint",
+            "call_kind": "module_function",
+            "callable_identity": {
+              "callable_identity_digest": "d746562fcdf80f6c51c08e6d1191841acf584539cecf6520b7b508e727ce6ffd",
+              "definition_first_line": 8,
+              "definition_source_sha256": "3538a50ee585697790cdd1b36226c1450bafff359ee7c4562a59b60819770ebb",
+              "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
+              "qualified_symbol": "diagnostic_to_packet_candidate_crossing",
+              "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+              "source_sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd"
+            },
+            "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",
+            "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
+            "qualified_symbol": "diagnostic_to_packet_candidate_crossing",
+            "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+            "source_sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd",
+            "symbol_id": "candidate-mechanism:fixture.distinct_diagnostic_packet_adapter"
+          },
+          "claim_ceiling": "experimental_unregistered",
+          "configured_residue": [],
+          "consumed_admitted_composition_ids": [],
+          "consumed_admitted_pathway_ids": [
+            "lgrc9v3.diagnostic_grc_reconstruction",
+            "lgrc9v3.explicit_packet_transport"
+          ],
+          "evidence_owner": "i118_fixture",
+          "invalid_relabel_blocked_claims": [
+            "diagnostic_as_behavior",
+            "native packet admission"
+          ],
+          "invalid_relabel_conflict_ids": [
+            "CMP-05"
+          ],
+          "invalid_relabel_relation_review": {
+            "artifact": "causal-pathway-candidate-relation-review",
+            "candidate_id": "experiment.i118.reviewed-cmp05-mechanism",
+            "candidate_kind": "composition",
+            "invalid_relabel_blocked_claims": [
+              "diagnostic_as_behavior",
+              "native packet admission"
+            ],
+            "invalid_relabel_conflict_ids": [
+              "CMP-05"
+            ],
+            "mechanism_evidence": {
+              "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",
+              "path": "tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json",
+              "sha256": "cc1a4c6a8519c6ad4e988215a2972e6aa08ab06920376880ddcda27d83d0b608"
+            },
+            "proposed_relation": "new externally owned diagnostic packet adapter",
+            "proposed_source_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+            "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
+            "review_digest": "4ce7cf8db22e237b69ad556e57487bd4f77cf65769c99637b3639db18c0cd65a",
+            "review_id": "fixture-review:experiment.i118.reviewed-cmp05-mechanism",
+            "review_status": "accepted_structural_distinction",
+            "reviewer": "independent-fixture-reviewer",
+            "schema_version": "causal_pathway_candidate_relation_review_v2",
+            "source_result_parameter": "diagnostic_result",
+            "structural_distinction": {
+              "distinction_kind": "reviewed_external_adapter",
+              "mechanism_effect": "distinct_nonempty_mapping_result",
+              "source_binding": "candidate_callable_consumes_source_result",
+              "target_binding": "candidate_result_supplies_follow_on_request"
+            }
+          },
+          "invalid_relabel_relation_review_trust_requirement": "externally_supplied_digest_for_invalid_relabel_candidate_review",
+          "mechanism_evidence": {
+            "evidence_kind": "executable_candidate_mechanism",
+            "mechanism_id": "fixture.distinct_diagnostic_packet_adapter",
+            "path": "tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json",
+            "sha256": "cc1a4c6a8519c6ad4e988215a2972e6aa08ab06920376880ddcda27d83d0b608"
+          },
+          "owner": "i118_fixture",
+          "producer_residue": [],
+          "promotion_status": "none",
+          "proposed_relation": "new externally owned diagnostic packet adapter",
+          "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified",
+          "proposed_source_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
+          "purpose": "Freeze a distinct reviewed mechanism over CMP-05 endpoints."
+        }
+      ],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "residue": [
+            "diagnostic modes",
+            "copied params"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [
+        {
+          "identity": "lgrc9v3.diagnostic_grc_reconstruction",
+          "kind": "pathway"
+        }
+      ],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_lock_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unregistered_relation_bound_without_candidate": false,
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
+}

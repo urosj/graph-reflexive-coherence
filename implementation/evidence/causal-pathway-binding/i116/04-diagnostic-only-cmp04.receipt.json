@@ -1,0 +1,515 @@
+{
+  "actual_bound_pathways_used": [
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
+        "diagnostic_model_construction",
+        "diagnostic_rebuild"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+        "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "configured_residue": [
+        "diagnostic modes",
+        "copied params"
+      ],
+      "declared_stage_ids": [
+        "diagnostic_model_construction",
+        "diagnostic_rebuild"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
+            "definition_first_line": 288,
+            "definition_source_sha256": "2274ad33ebda740bb0dfd84888691ee948787f0b090580709ff40ae3c1ef76f7",
+            "module": "pygrc.models.lgrc_9_v3_construction",
+            "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+            "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+            "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+          },
+          "composition_ids": [
+            "CMP-04"
+          ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "observed"
+            ],
+            "contract_id": "M01-diagnostic-model-observation-v1",
+            "effect_contract_digest": "68e3efffd31621efd22103bf49bb224bbacd6bf90b56191c3cd8351b04802f61",
+            "effect_kind": "observation",
+            "return_outcomes": {
+              "empty": "observed",
+              "false": "observed",
+              "none": "unknown",
+              "other": "observed",
+              "true": "observed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_construction",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
+          "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+          "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+          "stage_id": "diagnostic_model_construction",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+        },
+        {
+          "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+          "binding_role": "diagnostic_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
+            "definition_first_line": 1122,
+            "definition_source_sha256": "228cd67dec92ef3cf7ddfdff7c8bcf480358e9061fb9e07ad96e234906814cda",
+            "module": "pygrc.models.grc_9_v3",
+            "qualified_symbol": "GRC9V3.rebuild_transport_state",
+            "source_path": "src/pygrc/models/grc_9_v3.py",
+            "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+          },
+          "composition_ids": [
+            "CMP-04"
+          ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-diagnostic-rebuild-transition-v1",
+            "effect_contract_digest": "373b9d16a0917381a45986906fa75f62066e13966f82c493202b6adf922ab5c4",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+          },
+          "module": "pygrc.models.grc_9_v3",
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "qualified_symbol": "GRC9V3.rebuild_transport_state",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "flow-result:CMP-04",
+            "kind": "flow_derived_instance_reference"
+          },
+          "source_path": "src/pygrc/models/grc_9_v3.py",
+          "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+          "stage_id": "diagnostic_rebuild",
+          "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+        }
+      ],
+      "mechanism_ownership": "diagnostic",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "producer_residue": []
+    }
+  ],
+  "actual_candidate_mechanism_invocations": [],
+  "actual_composition_crossing_invocations": [],
+  "actual_stage_symbol_invocations": [
+    {
+      "alternative_selection_scope_id": null,
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "callable_identity": {
+        "callable_identity_digest": "09753268943693460cc27aa0d19e835127bdf9d0a52d7ce73bd4e019c107f6fd",
+        "definition_first_line": 288,
+        "definition_source_sha256": "2274ad33ebda740bb0dfd84888691ee948787f0b090580709ff40ae3c1ef76f7",
+        "module": "pygrc.models.lgrc_9_v3_construction",
+        "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+        "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+      },
+      "candidate_request_flow": null,
+      "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
+      "effect_contract_id": "M01-diagnostic-model-observation-v1",
+      "effect_evidence": null,
+      "effect_kind": "observation",
+      "effect_outcome": "observed",
+      "error_type": null,
+      "execution_event_order": 0,
+      "invocation_index": 0,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "result_type": "LGRC9V3",
+      "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "model": {
+            "object_id": "runtime-object:0",
+            "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "result_base_state": {
+          "object_id": "runtime-object:2",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "result_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        }
+      },
+      "stage_id": "diagnostic_model_construction",
+      "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary"
+    },
+    {
+      "alternative_selection_scope_id": null,
+      "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+      "callable_identity": {
+        "callable_identity_digest": "094f22f72161636c5fe1d8c59cae7cd0b6b2a31eeba01332bf71807730349f23",
+        "definition_first_line": 1122,
+        "definition_source_sha256": "228cd67dec92ef3cf7ddfdff7c8bcf480358e9061fb9e07ad96e234906814cda",
+        "module": "pygrc.models.grc_9_v3",
+        "qualified_symbol": "GRC9V3.rebuild_transport_state",
+        "source_path": "src/pygrc/models/grc_9_v3.py",
+        "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+      },
+      "candidate_request_flow": null,
+      "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
+      "composition_ids": [
+        "CMP-04"
+      ],
+      "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
+      "effect_contract_id": "M01-diagnostic-rebuild-transition-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
+      "error_type": null,
+      "execution_event_order": 1,
+      "invocation_index": 1,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "result_type": "NoneType",
+      "return_category": "none",
+      "runtime_object_flow": {
+        "arguments": {},
+        "flow_derivation": {
+          "contract_id": "CMP-04:runtime-object-flow:v1",
+          "derivation_kind": "consumer_bound_equivalent_state_copy",
+          "source_invocation_index": 0,
+          "source_object": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          },
+          "source_port": "result_base_state",
+          "source_value_digest": "cda0c9c53afcb67249feaa74a1e744bdd1fedd92d08c8d9b6bbcce8fa0bcfc63",
+          "target_object": {
+            "object_id": "runtime-object:3",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          },
+          "target_port": "receiver_state",
+          "target_value_digest": "cda0c9c53afcb67249feaa74a1e744bdd1fedd92d08c8d9b6bbcce8fa0bcfc63"
+        },
+        "receiver": {
+          "object_id": "runtime-object:4",
+          "type": "pygrc.models.grc_9_v3.GRC9V3"
+        },
+        "receiver_base_state": null,
+        "receiver_state": {
+          "object_id": "runtime-object:3",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "result": null,
+        "result_base_state": null,
+        "result_state": null
+      },
+      "stage_id": "diagnostic_rebuild",
+      "symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+    }
+  ],
+  "adapters_used": [],
+  "allowed_pathway_alternatives_actual_use": [],
+  "artifact": "causal-pathways-binding-receipt",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+  "binding_acceptance_status": "accepted",
+  "binding_lock_digest": "87785901941e89adeead5a217fa017b9a944c56d7b0f2af6dc0ca6377cc15159",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "blocked_claims": [
+    "ordinary LGRC behavior",
+    "native current-to-packet adapter",
+    "native event-to-action crossing"
+  ],
+  "candidate_relations_exercised": [],
+  "claim_envelope": {
+    "blocked_claims": [
+      "ordinary LGRC behavior",
+      "native current-to-packet adapter",
+      "native event-to-action crossing"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [
+      {
+        "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "adapter_owner": "library_helper_invoked_by_caller",
+        "authority_retained": [
+          "caller selection",
+          "GRC diagnostic mechanics"
+        ],
+        "authority_transferred": [],
+        "binding_id": "composition:CMP-04",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native event-to-action crossing"
+        ],
+        "composition_id": "CMP-04",
+        "composition_status": "diagnostic_only",
+        "constituent_claim_ceiling": "Explicit bounded diagnostic reconstruction only."
+      }
+    ],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native current-to-packet adapter"
+        ],
+        "constituent_claim_ceiling": [
+          "explicit bounded GRC diagnostic over LGRC state"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "required_qualifiers": {
+          "configured_residue": [
+            "diagnostic modes",
+            "copied params"
+          ],
+          "naturalization_debt": [
+            "ordinary LGRC step does not consume the reconstruction"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": true,
+    "contains_producer_cut": false,
+    "experimental_unregistered": false,
+    "overall_claim_status": "bounded_with_diagnostic_cut",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+          "residue": [
+            "diagnostic modes",
+            "copied params"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [
+        {
+          "identity": "lgrc9v3.diagnostic_grc_reconstruction",
+          "kind": "pathway"
+        },
+        {
+          "identity": "CMP-04",
+          "kind": "composition"
+        }
+      ],
+      "producer_cuts": []
+    },
+    "synthesized_chain_claim": false
+  },
+  "claim_qualified": true,
+  "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [
+    {
+      "binding_id": "composition:CMP-04",
+      "composition_id": "CMP-04",
+      "crossing_invocation_indices": [],
+      "crossing_scope_id": "composition:CMP-04:crossing-scope:0",
+      "dataflow_requirement": "externally_attested_runtime_object_flow",
+      "dataflow_witness": {
+        "continuity_kind": "consumer_bound_equivalent_state_copy",
+        "dataflow_contract_id": "CMP-04:runtime-object-flow:v1",
+        "source_invocation_index": 0,
+        "source_port": "result_base_state",
+        "source_runtime_object_id": "runtime-object:2",
+        "source_symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+        "state_value_digest": "cda0c9c53afcb67249feaa74a1e744bdd1fedd92d08c8d9b6bbcce8fa0bcfc63",
+        "target_invocation_index": 1,
+        "target_port": "receiver_state",
+        "target_runtime_object_id": "runtime-object:3",
+        "target_symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary",
+        "witness_kind": "externally_attested_runtime_object_flow"
+      },
+      "explicit_adapter_observed": false,
+      "explicit_adapter_required": false,
+      "from_invocation_indices": [
+        0
+      ],
+      "ordering_rule": "all_from_stages_before_all_to_stages",
+      "to_invocation_indices": [
+        1
+      ]
+    }
+  ],
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_but_unused": {
+    "candidate_ids": [],
+    "composition_binding_ids": [],
+    "pathway_binding_ids": []
+  },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [],
+    "claim_qualifying_stage_invocation_indices": [
+      0,
+      1
+    ],
+    "crossing_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 1,
+      "no_op": 0,
+      "observed": 1,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
+  "execution_transcript_digest": "cf3c2a65ac608304e9698fbb0efb53f51257a7e417ae610acda6b5917b42d96c",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "external_or_untracked_causal_input": "not_observable_by_binding_plane",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pathway_use_graph": {
+    "edges": [
+      {
+        "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+        "adapter_owner": "library_helper_invoked_by_caller",
+        "authority_retained": [
+          "caller selection",
+          "GRC diagnostic mechanics"
+        ],
+        "authority_transferred": [],
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native event-to-action crossing"
+        ],
+        "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+        "composition_id": "CMP-04",
+        "composition_status": "diagnostic_only",
+        "edge_id": "composition:CMP-04",
+        "edge_kind": "registered_composition",
+        "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+        "producer_owner": null,
+        "source_node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "target_node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction"
+      }
+    ],
+    "larger_chain_claim_synthesized": false,
+    "nodes": [
+      {
+        "configured_residue": [
+          "diagnostic modes",
+          "copied params"
+        ],
+        "mechanism_ownership": "diagnostic",
+        "node_id": "composition:CMP-04:pathway:lgrc9v3.diagnostic_grc_reconstruction",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "diagnostic",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary",
+          "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary"
+        ],
+        "stage_ids_used": [
+          "diagnostic_model_construction",
+          "diagnostic_rebuild"
+        ]
+      }
+    ],
+    "unregistered_edge_synthesized_from_endpoint_co_use": false
+  },
+  "producer_cuts_used": [],
+  "receipt_digest": "1c77fadab1939e1d71eca489f67a93f791ae873c2a9dbae121c590cd3eaf2081",
+  "registered_compositions_exercised": [
+    {
+      "adapter_id": "prepare_lgrc9v3_grc9v3_diagnostics",
+      "adapter_owner": "library_helper_invoked_by_caller",
+      "authority_retained": [
+        "caller selection",
+        "GRC diagnostic mechanics"
+      ],
+      "authority_transferred": [],
+      "binding_id": "composition:CMP-04",
+      "blocked_relabels": [
+        "ordinary LGRC behavior",
+        "native event-to-action crossing"
+      ],
+      "claim_ceiling": "Explicit bounded diagnostic reconstruction only.",
+      "composition_id": "CMP-04",
+      "composition_status": "diagnostic_only",
+      "expected_crossing_callable": null,
+      "from_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "from_stage_ids": [
+        "diagnostic_model_construction"
+      ],
+      "information_lost_or_compressed": "LGRC queue/event history is not part of the GRC diagnostic projection.",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "consumer_bound_equivalent_state_copy",
+        "contract_id": "CMP-04:runtime-object-flow:v1",
+        "source_port": "result_base_state",
+        "source_stage_id": "diagnostic_model_construction",
+        "target_port": "receiver_state",
+        "target_stage_id": "diagnostic_rebuild"
+      },
+      "runtime_dataflow_requirement": "externally_attested_runtime_object_flow",
+      "to_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "to_stage_ids": [
+        "diagnostic_rebuild"
+      ]
+    }
+  ],
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_receipt_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unbound_execution_accepted_as_evidence": false,
+  "undeclared_use_violations": [],
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
+}

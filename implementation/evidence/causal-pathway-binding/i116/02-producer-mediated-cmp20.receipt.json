@@ -1,0 +1,883 @@
+{
+  "actual_bound_pathways_used": [
+    {
+      "activation": "default_off",
+      "actual_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "configured_residue": [
+        "feedback masks",
+        "thresholds",
+        "route",
+        "amount"
+      ],
+      "declared_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+          "binding_role": "producer_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
+            "definition_first_line": 7747,
+            "definition_source_sha256": "3ff964eeb82bee9816543004f750fd8c0092ed3c2047c1ffdd0a3633b095eee7",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.produce_events",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-feedback-packet-production-v1",
+            "effect_contract_digest": "e319c30fa841941e4be1f911d23092d1bb08dc0f038b8d1bd8308da9f54bfb86",
+            "effect_kind": "producer_effect",
+            "effect_probe": {
+              "attribute": "state_mutated",
+              "false_outcome": "no_op",
+              "kind": "boolean_attribute",
+              "true_outcome": "committed"
+            },
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "unknown",
+              "true": "unknown"
+            },
+            "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "qualified_symbol": "LGRC9V3.produce_events",
+          "required_keyword_arguments": {
+            "policy": "packet_departure_from_feedback_eligibility_policy"
+          },
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "feedback_packet_schedule",
+          "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+        }
+      ],
+      "mechanism_ownership": "producer",
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "producer_residue": [
+        "feedback surface formation and eligibility"
+      ]
+    },
+    {
+      "activation": "explicit_call",
+      "actual_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ],
+      "actual_symbol_ids": [
+        "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
+        "lgrc9v3.explicit_packet_transport:source_debit:primary",
+        "lgrc9v3.explicit_packet_transport:target_credit:primary"
+      ],
+      "availability": "installed",
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "configured_residue": [
+        "route endpoints",
+        "amount",
+        "departure/arrival times"
+      ],
+      "declared_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ],
+      "expected_concrete_symbols": [
+        {
+          "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+          "binding_role": "mechanism_entrypoint",
+          "call_kind": "instance_method",
+          "callable_identity": {
+            "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+            "definition_first_line": 8124,
+            "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+            "module": "pygrc.models.lgrc_9_v3_runtime",
+            "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+            "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+          },
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-packet-schedule-transition-v1",
+            "effect_contract_digest": "57f0d6b4f6572db21fe9653786c309181b144eaf91a5eacd67f99ed7e92af639",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "committed",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_runtime",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": {
+            "instance_id": "session-instance:0",
+            "kind": "direct_bound_instance"
+          },
+          "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+          "stage_id": "packet_schedule",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+        },
+        {
+          "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+          "binding_role": "load_bearing_internal",
+          "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
+            "definition_first_line": 1552,
+            "definition_source_sha256": "44b108d19d484f2e032e36a0554e9d4a8234efc4e015569c0101a3aeb572ab7b",
+            "module": "pygrc.models.lgrc_9_v3_packets",
+            "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+            "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+            "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+          },
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-source-debit-transition-v1",
+            "effect_contract_digest": "d981ff4ee2ef9ac3cc069fe4245f31fb41cfa80554aa1f2ed7206d85fff243ac",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_packets",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
+          "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+          "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+          "stage_id": "source_debit",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
+        },
+        {
+          "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+          "binding_role": "stage_entrypoint",
+          "call_kind": "module_function",
+          "callable_identity": {
+            "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
+            "definition_first_line": 1682,
+            "definition_source_sha256": "98b422c57df6c6856d76a7276fb61aa3e509b8578a08885627028beb4f6e4691",
+            "module": "pygrc.models.lgrc_9_v3_packets",
+            "qualified_symbol": "process_lgrc9v3_packet_arrival",
+            "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+            "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+          },
+          "composition_ids": [
+            "CMP-20"
+          ],
+          "effect_outcome_contract": {
+            "claim_qualifying_outcomes": [
+              "committed"
+            ],
+            "contract_id": "M01-target-credit-transition-v1",
+            "effect_contract_digest": "81d0795e32df01a9702d6de81df3da539985dd097339933188c97ef817089d23",
+            "effect_kind": "state_transition",
+            "return_outcomes": {
+              "empty": "no_op",
+              "false": "rejected",
+              "none": "unknown",
+              "other": "committed",
+              "true": "committed"
+            },
+            "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
+          },
+          "module": "pygrc.models.lgrc_9_v3_packets",
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "qualified_symbol": "process_lgrc9v3_packet_arrival",
+          "required_keyword_arguments": {},
+          "runtime_instance_binding": null,
+          "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+          "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+          "stage_id": "target_credit",
+          "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
+        }
+      ],
+      "mechanism_ownership": "native_with_configured_semantics",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "producer_residue": []
+    }
+  ],
+  "actual_candidate_mechanism_invocations": [],
+  "actual_composition_crossing_invocations": [],
+  "actual_stage_symbol_invocations": [
+    {
+      "alternative_selection_scope_id": null,
+      "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+      "callable_identity": {
+        "callable_identity_digest": "b7d5abcca4ba56837e035b25e3c2262ce63312fb681d1c91ccd4d28c2309cfb9",
+        "definition_first_line": 7747,
+        "definition_source_sha256": "3ff964eeb82bee9816543004f750fd8c0092ed3c2047c1ffdd0a3633b095eee7",
+        "module": "pygrc.models.lgrc_9_v3_runtime",
+        "qualified_symbol": "LGRC9V3.produce_events",
+        "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+      },
+      "candidate_request_flow": null,
+      "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
+      "effect_contract_id": "M01-feedback-packet-production-v1",
+      "effect_evidence": {
+        "attribute": "state_mutated",
+        "kind": "boolean_attribute",
+        "observed_boolean": true
+      },
+      "effect_kind": "producer_effect",
+      "effect_outcome": "committed",
+      "error_type": null,
+      "execution_event_order": 0,
+      "invocation_index": 0,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "result_type": "LGRC9V3AutonomousProductionResult",
+      "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "policy": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:2",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": {
+          "object_id": "runtime-object:3",
+          "type": "pygrc.models.lgrc_9_v3_contract.LGRC9V3AutonomousProductionResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
+      "stage_id": "feedback_packet_schedule",
+      "symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+    },
+    {
+      "alternative_selection_scope_id": null,
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "7a9ad7d2179769e78ac13d7ebdd43d973cd7e49c27fe370fac0f1b05aeb9178b",
+        "definition_first_line": 8124,
+        "definition_source_sha256": "905c81195fb7fd196ba49cbf6c9145e699ed989b09f43e029330bb3cb97b20c0",
+        "module": "pygrc.models.lgrc_9_v3_runtime",
+        "qualified_symbol": "LGRC9V3.schedule_packet_departure",
+        "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+      },
+      "candidate_request_flow": null,
+      "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
+      "effect_contract_id": "M01-packet-schedule-transition-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
+      "error_type": null,
+      "execution_event_order": 1,
+      "invocation_index": 1,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "result_type": "NoneType",
+      "return_category": "none",
+      "runtime_object_flow": {
+        "arguments": {
+          "amount": null,
+          "departure_event_time_key": null,
+          "edge_id": null,
+          "packet_index": null,
+          "scheduler_event_index": null,
+          "source_node_id": null,
+          "target_node_id": null
+        },
+        "flow_derivation": null,
+        "receiver": {
+          "object_id": "runtime-object:0",
+          "type": "pygrc.models.lgrc_9_v3_runtime.LGRC9V3"
+        },
+        "receiver_base_state": {
+          "object_id": "runtime-object:2",
+          "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+        },
+        "receiver_state": {
+          "object_id": "runtime-object:1",
+          "type": "pygrc.models.lgrc_9_v3_runtime_state.LGRC9V3RuntimeState"
+        },
+        "result": null,
+        "result_base_state": null,
+        "result_state": null
+      },
+      "stage_id": "packet_schedule",
+      "symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary"
+    },
+    {
+      "alternative_selection_scope_id": null,
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "014a03fb79f87bd600854092faaa5d448863a7039f7fb08e9dd42ab387b8ce1a",
+        "definition_first_line": 1552,
+        "definition_source_sha256": "44b108d19d484f2e032e36a0554e9d4a8234efc4e015569c0101a3aeb572ab7b",
+        "module": "pygrc.models.lgrc_9_v3_packets",
+        "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure",
+        "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+      },
+      "candidate_request_flow": null,
+      "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
+      "effect_contract_id": "M01-source-debit-transition-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
+      "error_type": null,
+      "execution_event_order": 2,
+      "invocation_index": 2,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "result_type": "LGRC9V3PacketProcessingResult",
+      "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "ledger": {
+            "object_id": "runtime-object:4",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketLedger"
+          },
+          "queued_departure": {
+            "object_id": "runtime-object:5",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketQueueEventRecord"
+          },
+          "state": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:6",
+          "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketProcessingResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
+      "stage_id": "source_debit",
+      "symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary"
+    },
+    {
+      "alternative_selection_scope_id": null,
+      "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+      "callable_identity": {
+        "callable_identity_digest": "ba5315763a64002bfd18317d2a44411e82d0f5ea0f72d90a4c250bc295cd39a5",
+        "definition_first_line": 1682,
+        "definition_source_sha256": "98b422c57df6c6856d76a7276fb61aa3e509b8578a08885627028beb4f6e4691",
+        "module": "pygrc.models.lgrc_9_v3_packets",
+        "qualified_symbol": "process_lgrc9v3_packet_arrival",
+        "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+      },
+      "candidate_request_flow": null,
+      "candidate_scope_id": null,
+      "claim_qualifying_effect": true,
+      "composition_ids": [
+        "CMP-20"
+      ],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
+      "effect_contract_id": "M01-target-credit-transition-v1",
+      "effect_evidence": null,
+      "effect_kind": "state_transition",
+      "effect_outcome": "committed",
+      "error_type": null,
+      "execution_event_order": 3,
+      "invocation_index": 3,
+      "outcome": "returned",
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "result_type": "LGRC9V3PacketProcessingResult",
+      "return_category": "other",
+      "runtime_object_flow": {
+        "arguments": {
+          "ledger": {
+            "object_id": "runtime-object:7",
+            "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketLedger"
+          },
+          "packet_id": null,
+          "state": {
+            "object_id": "runtime-object:2",
+            "type": "pygrc.models.grc_9_v3_state.GRC9V3State"
+          }
+        },
+        "flow_derivation": null,
+        "receiver": null,
+        "receiver_base_state": null,
+        "receiver_state": null,
+        "result": {
+          "object_id": "runtime-object:8",
+          "type": "pygrc.models.lgrc_9_v3_packets.LGRC9V3PacketProcessingResult"
+        },
+        "result_base_state": null,
+        "result_state": null
+      },
+      "stage_id": "target_credit",
+      "symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary"
+    }
+  ],
+  "adapters_used": [],
+  "allowed_pathway_alternatives_actual_use": [],
+  "artifact": "causal-pathways-binding-receipt",
+  "binding_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+  "binding_acceptance_status": "accepted",
+  "binding_lock_digest": "39f0e56dd2cf33daf60df852ea8f70f3a6b3d7ced00781328330f43647479014",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "blocked_claims": [
+    "native feedback",
+    "semantic intention",
+    "agency",
+    "substrate-formed route",
+    "native departure reason",
+    "lawful_native",
+    "native feedback admission"
+  ],
+  "candidate_relations_exercised": [],
+  "claim_envelope": {
+    "blocked_claims": [
+      "native feedback",
+      "semantic intention",
+      "agency",
+      "substrate-formed route",
+      "native departure reason",
+      "lawful_native",
+      "native feedback admission"
+    ],
+    "composition_status_is_maturity_score": false,
+    "constituent_composition_claim_ceilings": [
+      {
+        "adapter_id": "feedback_eligibility_producer",
+        "adapter_owner": "installed_producer",
+        "authority_retained": [
+          "native packet mutation",
+          "surface lineage validity"
+        ],
+        "authority_transferred": [
+          "eligibility",
+          "direction",
+          "threshold",
+          "schedule"
+        ],
+        "binding_id": "composition:CMP-20",
+        "blocked_claims": [
+          "lawful_native",
+          "native feedback admission"
+        ],
+        "composition_id": "CMP-20",
+        "composition_status": "producer_mediated",
+        "constituent_claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics."
+      }
+    ],
+    "constituent_pathway_claim_ceilings": [
+      {
+        "binding_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+        "blocked_claims": [
+          "native feedback",
+          "semantic intention",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "producer-mediated feedback eligibility candidate"
+        ],
+        "mechanism_ownership": "producer",
+        "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+        "required_qualifiers": {
+          "configured_residue": [
+            "feedback masks",
+            "thresholds",
+            "route",
+            "amount"
+          ],
+          "naturalization_debt": [
+            "native feedback or generic admission"
+          ],
+          "producer_residue": [
+            "feedback surface formation and eligibility"
+          ]
+        }
+      },
+      {
+        "binding_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+        "blocked_claims": [
+          "substrate-formed route",
+          "native departure reason",
+          "agency"
+        ],
+        "constituent_claim_ceiling": [
+          "native packet accounting and queue-processing mechanics"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "required_qualifiers": {
+          "configured_residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ],
+          "naturalization_debt": [
+            "native route formation and departure reason remain absent"
+          ],
+          "producer_residue": []
+        }
+      }
+    ],
+    "contains_adapter_cut": false,
+    "contains_diagnostic_only_relation": false,
+    "contains_producer_cut": true,
+    "experimental_unregistered": false,
+    "overall_claim_status": "bounded_with_explicit_ownership_cuts",
+    "required_qualifiers": {
+      "adapter_cuts": [],
+      "candidate_relations": [],
+      "configured_semantics": [
+        {
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "residue": [
+            "feedback masks",
+            "thresholds",
+            "route",
+            "amount"
+          ]
+        },
+        {
+          "pathway_id": "lgrc9v3.explicit_packet_transport",
+          "residue": [
+            "route endpoints",
+            "amount",
+            "departure/arrival times"
+          ]
+        }
+      ],
+      "diagnostic_only_relations": [],
+      "producer_cuts": [
+        {
+          "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+          "producer_identity": "emit_feedback_eligibility_surface_row and produce_events",
+          "producer_owned_authorities": [
+            "feedback surface formation and eligibility"
+          ]
+        },
+        {
+          "composition_id": "CMP-20",
+          "producer_identity": "feedback_eligibility_producer",
+          "producer_owned_authorities": [
+            "eligibility",
+            "direction",
+            "threshold",
+            "schedule"
+          ],
+          "producer_owner": "installed_producer"
+        }
+      ]
+    },
+    "synthesized_chain_claim": false
+  },
+  "claim_qualified": true,
+  "claim_scope": "bound_invocations_only",
+  "composition_crossing_witnesses": [
+    {
+      "binding_id": "composition:CMP-20",
+      "composition_id": "CMP-20",
+      "crossing_invocation_indices": [],
+      "crossing_scope_id": "composition:CMP-20:crossing-scope:0",
+      "dataflow_requirement": "externally_attested_runtime_object_flow",
+      "dataflow_witness": {
+        "continuity_kind": "exact_object_identity",
+        "dataflow_contract_id": "CMP-20:runtime-object-flow:v1",
+        "runtime_object_id": "runtime-object:0",
+        "source_invocation_index": 0,
+        "source_port": "receiver",
+        "source_symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary",
+        "target_invocation_index": 1,
+        "target_port": "receiver",
+        "target_symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
+        "witness_kind": "externally_attested_runtime_object_flow"
+      },
+      "explicit_adapter_observed": false,
+      "explicit_adapter_required": false,
+      "from_invocation_indices": [
+        0
+      ],
+      "ordering_rule": "all_from_stages_before_all_to_stages",
+      "to_invocation_indices": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "conformance_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "declared_but_unused": {
+    "candidate_ids": [],
+    "composition_binding_ids": [],
+    "pathway_binding_ids": []
+  },
+  "effect_outcome_contracts_digest": "b906fb568ecca0eb845102ec70282505f0f322fce9c1b0aa177ab7720f352f11",
+  "effect_outcome_summary": {
+    "claim_qualifying_crossing_invocation_indices": [],
+    "claim_qualifying_stage_invocation_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "crossing_invocation_counts": {
+      "committed": 0,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    },
+    "non_qualifying_returned_crossing_invocation_indices": [],
+    "non_qualifying_returned_stage_invocation_indices": [],
+    "raised_crossing_invocation_indices": [],
+    "raised_stage_invocation_indices": [],
+    "stage_invocation_counts": {
+      "committed": 4,
+      "no_op": 0,
+      "observed": 0,
+      "rejected": 0,
+      "unknown": 0
+    }
+  },
+  "execution_transcript_digest": "e87d3a9410dbb78c2242cdf39cd9165b80966f7d880f0b768243b3c43730a01d",
+  "execution_transcript_trust_requirement": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate",
+  "external_or_untracked_causal_input": "not_observable_by_binding_plane",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "pathway_use_graph": {
+    "edges": [
+      {
+        "adapter_id": "feedback_eligibility_producer",
+        "adapter_owner": "installed_producer",
+        "authority_retained": [
+          "native packet mutation",
+          "surface lineage validity"
+        ],
+        "authority_transferred": [
+          "eligibility",
+          "direction",
+          "threshold",
+          "schedule"
+        ],
+        "blocked_claims": [
+          "lawful_native",
+          "native feedback admission"
+        ],
+        "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+        "composition_id": "CMP-20",
+        "composition_status": "producer_mediated",
+        "edge_id": "composition:CMP-20",
+        "edge_kind": "registered_composition",
+        "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+        "producer_owner": "installed_producer",
+        "source_node_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+        "target_node_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport"
+      }
+    ],
+    "larger_chain_claim_synthesized": false,
+    "nodes": [
+      {
+        "configured_residue": [
+          "feedback masks",
+          "thresholds",
+          "route",
+          "amount"
+        ],
+        "mechanism_ownership": "producer",
+        "node_id": "composition:CMP-20:from:lgrc9v3.feedback_eligibility_producer",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+        "pathway_status": {
+          "activation": "default_off",
+          "availability": "installed",
+          "mechanism_ownership": "producer",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [
+          "feedback surface formation and eligibility"
+        ],
+        "source_bindings_used": [
+          "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary"
+        ],
+        "stage_ids_used": [
+          "feedback_packet_schedule"
+        ]
+      },
+      {
+        "configured_residue": [
+          "route endpoints",
+          "amount",
+          "departure/arrival times"
+        ],
+        "mechanism_ownership": "native_with_configured_semantics",
+        "node_id": "composition:CMP-20:to:lgrc9v3.explicit_packet_transport",
+        "node_kind": "admitted_pathway",
+        "pathway_id": "lgrc9v3.explicit_packet_transport",
+        "pathway_status": {
+          "activation": "explicit_call",
+          "availability": "installed",
+          "mechanism_ownership": "native_with_configured_semantics",
+          "staleness_state": "current_at_iteration_106_freeze"
+        },
+        "producer_residue": [],
+        "source_bindings_used": [
+          "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
+          "lgrc9v3.explicit_packet_transport:source_debit:primary",
+          "lgrc9v3.explicit_packet_transport:target_credit:primary"
+        ],
+        "stage_ids_used": [
+          "packet_schedule",
+          "source_debit",
+          "target_credit"
+        ]
+      }
+    ],
+    "unregistered_edge_synthesized_from_endpoint_co_use": false
+  },
+  "producer_cuts_used": [
+    {
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "producer_identity": "emit_feedback_eligibility_surface_row and produce_events",
+      "producer_owned_authorities": [
+        "feedback surface formation and eligibility"
+      ]
+    },
+    {
+      "composition_id": "CMP-20",
+      "producer_identity": "feedback_eligibility_producer",
+      "producer_owned_authorities": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "producer_owner": "installed_producer"
+    }
+  ],
+  "receipt_digest": "74a122add37eb0088c9153e521ecd3a39bf2b72ef65f362a58dac735b5608a07",
+  "registered_compositions_exercised": [
+    {
+      "adapter_id": "feedback_eligibility_producer",
+      "adapter_owner": "installed_producer",
+      "authority_retained": [
+        "native packet mutation",
+        "surface lineage validity"
+      ],
+      "authority_transferred": [
+        "eligibility",
+        "direction",
+        "threshold",
+        "schedule"
+      ],
+      "binding_id": "composition:CMP-20",
+      "blocked_relabels": [
+        "lawful_native",
+        "native feedback admission"
+      ],
+      "claim_ceiling": "Producer-mediated feedback eligibility followed by native packet mechanics.",
+      "composition_id": "CMP-20",
+      "composition_status": "producer_mediated",
+      "expected_crossing_callable": null,
+      "from_pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "from_stage_ids": [
+        "feedback_packet_schedule"
+      ],
+      "information_lost_or_compressed": "Feedback surface is reduced to one packet schedule decision.",
+      "runtime_dataflow_contract": {
+        "continuity_kind": "exact_object_identity",
+        "contract_id": "CMP-20:runtime-object-flow:v1",
+        "source_port": "receiver",
+        "source_stage_id": "*",
+        "target_port": "receiver",
+        "target_stage_id": "*"
+      },
+      "runtime_dataflow_requirement": "externally_attested_runtime_object_flow",
+      "to_pathway_id": "lgrc9v3.explicit_packet_transport",
+      "to_stage_ids": [
+        "packet_schedule",
+        "source_debit",
+        "target_credit"
+      ]
+    }
+  ],
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "schema_version": "causal_pathways_binding_receipt_v1",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "semantic_selection_performed_by_binder": false,
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "unbound_execution_accepted_as_evidence": false,
+  "undeclared_use_violations": [],
+  "untracked_execution_observable_by_binding_plane": false,
+  "whole_run_causal_closure_claimed": false
+}

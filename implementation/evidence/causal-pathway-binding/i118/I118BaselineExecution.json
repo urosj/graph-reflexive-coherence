@@ -1,0 +1,107 @@
+{
+  "artifact": "I118 pre-refactor baseline execution",
+  "schema_version": "i118_pre_refactor_baseline_execution_v1",
+  "iteration": 118,
+  "date": "2026-08-20",
+  "status": "passed",
+  "branch": "feat/causal-pathway-binding-claim-provenance",
+  "source_commit": "8e07e17688db3d49420d933f41ba936e5dab9dcb",
+  "source_tree": "984df49232285e0f63e48c98c37606b04873bd84",
+  "binder_source_path": "src/pygrc/causal_pathways/binding.py",
+  "binder_source_sha256": "84d5499687888b68e91809b15ea79d8b06e197f7876da5a875ee44bb7b23f979",
+  "environment": {
+    "path": ".venv",
+    "python": "3.12.3",
+    "ruff": "0.16.3",
+    "mypy": "2.3.1"
+  },
+  "production_source_changed": false,
+  "runtime_behavior_changed": false,
+  "freeze_verification": {
+    "command": "PYTHONPATH=src:. .venv/bin/python scripts/build_phase8_causal_pathway_binding_i118.py --check",
+    "status": "passed",
+    "public_export_count": 48,
+    "regenerated_case_count": 12,
+    "canonical_i115_i116_manifest_file_count": 26,
+    "exception_condition_count": 7,
+    "context_manager_contract_count": 3,
+    "forbidden_checker_binding_import_count": 0
+  },
+  "focused_tests": {
+    "command": "PYTHONPATH=src:. .venv/bin/python -m unittest -q tests.integrations.test_causal_pathway_binding tests.integrations.test_causal_pathway_binding_conformance tests.integrations.test_causal_pathway_binding_i116 tests.integrations.test_causal_pathway_binding_i118",
+    "status": "passed",
+    "tests_run": 109,
+    "duration_seconds": 32.052
+  },
+  "full_tests": {
+    "command": "PYTHONPATH=src:. .venv/bin/python -m unittest discover tests -q",
+    "status": "passed",
+    "tests_run": 1320,
+    "duration_seconds": 444.848,
+    "wall_seconds": 447.79
+  },
+  "predecessor_conformance": {
+    "command": ".venv/bin/python scripts/check_grc_lgrc_causal_pathway_conformance.py",
+    "status": "passed",
+    "rules_passed": 20,
+    "rule_count": 20,
+    "issue_count": 0,
+    "conformance_digest": "14a4ee2a4cc2dc4beca4ce056a15548df90ed4f0d33a707d33facc1a1ce1c6b2"
+  },
+  "binding_conformance": {
+    "command": ".venv/bin/python scripts/check_grc_lgrc_causal_pathway_binding_conformance.py --lock implementation/evidence/causal-pathway-binding/i115-native-pathway.lock.json --receipt implementation/evidence/causal-pathway-binding/i115-native-pathway.receipt.json --acceptance-anchor implementation/evidence/causal-pathway-binding/binding-acceptance-anchor.json --trusted-anchor-digest 127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2",
+    "status": "passed",
+    "rules_passed": 20,
+    "rule_count": 20,
+    "issue_count": 0,
+    "conformance_digest": "eb54f646569cf4b91e5f410fe94d6bbd0aae6706871e83431ee9d919cc42c823"
+  },
+  "accepted_static_checks": {
+    "ruff": {
+      "scope": "binder, I115-I118 builders, binding checker, and binding integration tests",
+      "status": "passed"
+    },
+    "mypy": {
+      "command": "MYPYPATH=src .venv/bin/mypy --python-version 3.12 src/pygrc/causal_pathways/binding.py tests/integrations/test_causal_pathway_binding_i118.py",
+      "status": "passed",
+      "files_checked": 2
+    },
+    "compileall": {
+      "command": ".venv/bin/python -m compileall -q src tests scripts examples",
+      "status": "passed"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  },
+  "repository_wide_static_diagnostics": {
+    "gate_status": "not_used_as_i118_acceptance_gate",
+    "ruff": {
+      "command": ".venv/bin/ruff check .",
+      "status": "pre_existing_repository_wide_findings",
+      "finding_count": 3471,
+      "i118_files_pass_independently": true
+    },
+    "mypy": {
+      "command": ".venv/bin/mypy",
+      "status": "pre_existing_environment_and_import_findings",
+      "finding_count": 9,
+      "affected_file_count": 8,
+      "causes": [
+        "missing third-party stubs",
+        "existing landscape fixture import paths",
+        "Python 3.11 target parsing Python 3.12-only installed NumPy stubs"
+      ]
+    },
+    "focused_mypy_private_hook_diagnostic": {
+      "command": "MYPYPATH=src .venv/bin/mypy --python-version 3.12 src/pygrc/causal_pathways/binding.py tests/integrations/test_causal_pathway_binding.py tests/integrations/test_causal_pathway_binding_conformance.py tests/integrations/test_causal_pathway_binding_i116.py tests/integrations/test_causal_pathway_binding_i118.py",
+      "status": "two_pre_existing_private_hook_findings",
+      "finding_count": 2,
+      "condition": "test_causal_pathway_binding.py reaches through binding.inspect",
+      "scheduled_resolution": "Iteration 119 moves tests away from private monolith patch points"
+    }
+  },
+  "iteration_119_ready": true,
+  "execution_digest": "6c046ae09122727c3dac29ab2b36e249d73db6a4b40175ba6fdf25eeea76c3df"
+}

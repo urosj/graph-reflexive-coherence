@@ -1,0 +1,1314 @@
+{
+  "artifact": "I118 public API compatibility freeze",
+  "binder_source_path": "src/pygrc/causal_pathways/binding.py",
+  "binder_source_sha256": "84d5499687888b68e91809b15ea79d8b06e197f7876da5a875ee44bb7b23f979",
+  "date": "2026-08-20",
+  "freeze_digest": "45254d8b627fad7bc0afef7e0a0e858537318d44146a7070f4371fb257d62812",
+  "iteration": 118,
+  "public_api_contract": {
+    "binding_has_every_root_export": true,
+    "binding_import_path": "pygrc.causal_pathways.binding",
+    "exports": [
+      {
+        "kind": "constant",
+        "name": "ATTESTED_OBJECT_FLOW_DATAFLOW",
+        "python_type": "str",
+        "root_and_binding_identity_equal": true,
+        "value": "externally_attested_runtime_object_flow"
+      },
+      {
+        "kind": "constant",
+        "name": "AUTHORITY_COORDINATES",
+        "python_type": "tuple",
+        "root_and_binding_identity_equal": true,
+        "value": {
+          "items": [
+            "direction",
+            "funding",
+            "eligibility",
+            "scheduling",
+            "commit",
+            "reception"
+          ],
+          "python_type": "tuple"
+        }
+      },
+      {
+        "dataclass_fields": [
+          "_session",
+          "alternative_set_id",
+          "pathway_ids",
+          "selection_authority"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, _session: 'PathwayBindingSession', alternative_set_id: 'str', pathway_ids: 'tuple[str, ...]', selection_authority: 'str') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "selection_scope",
+            "signature": "(self) -> 'AlternativeSelectionScope'"
+          }
+        ],
+        "name": "AllowedPathwayAlternatives",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(_session: 'PathwayBindingSession', alternative_set_id: 'str', pathway_ids: 'tuple[str, ...]', selection_authority: 'str') -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__enter__",
+            "signature": "(self) -> 'Self'"
+          },
+          {
+            "kind": "method",
+            "name": "__exit__",
+            "signature": "(self, exc_type: 'type[BaseException] | None', exc: 'BaseException | None', traceback: 'TracebackType | None') -> 'Literal[False]'"
+          },
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', alternatives: 'AllowedPathwayAlternatives') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "selection_witness",
+            "signature": "(self) -> 'dict[str, Any] | None'"
+          }
+        ],
+        "name": "AlternativeSelectionScope",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', alternatives: 'AllowedPathwayAlternatives') -> 'None'"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "AuthorityDriftError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [
+          "anchor_id",
+          "accepted_binding_map_digest",
+          "accepted_source_revision",
+          "accepted_binding_semantics_digest",
+          "accepted_source_manifest_digest",
+          "effect_outcome_contracts_digest",
+          "anchor_digest",
+          "_effect_outcome_contracts",
+          "_record"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, anchor_id: 'str', accepted_binding_map_digest: 'str', accepted_source_revision: 'str', accepted_binding_semantics_digest: 'str', accepted_source_manifest_digest: 'str', effect_outcome_contracts_digest: 'str', anchor_digest: 'str', _effect_outcome_contracts: 'Mapping[str, EffectOutcomeContract]', _record: 'Mapping[str, Any]') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "assert_accepts",
+            "signature": "(self, bindings: 'Mapping[str, Any]') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "effect_outcome_contract",
+            "signature": "(self, symbol_id: 'str') -> 'EffectOutcomeContract | None'"
+          },
+          {
+            "kind": "classmethod",
+            "name": "from_record",
+            "signature": "(cls, record: 'Mapping[str, Any]', *, trusted_anchor_digest: 'str') -> 'BindingAcceptanceAnchor'"
+          },
+          {
+            "kind": "method",
+            "name": "to_record",
+            "signature": "(self) -> 'dict[str, Any]'"
+          }
+        ],
+        "name": "BindingAcceptanceAnchor",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(anchor_id: 'str', accepted_binding_map_digest: 'str', accepted_source_revision: 'str', accepted_binding_semantics_digest: 'str', accepted_source_manifest_digest: 'str', effect_outcome_contracts_digest: 'str', anchor_digest: 'str', _effect_outcome_contracts: 'Mapping[str, EffectOutcomeContract]', _record: 'Mapping[str, Any]') -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, record: 'Mapping[str, Any]') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "contains_candidate_mechanism_link",
+            "signature": "(self, *, candidate_id: 'str', symbol_id: 'str') -> 'bool'"
+          },
+          {
+            "kind": "method",
+            "name": "contains_crossing_link",
+            "signature": "(self, *, binding_id: 'str', composition_id: 'str', symbol_id: 'str') -> 'bool'"
+          },
+          {
+            "kind": "method",
+            "name": "contains_link",
+            "signature": "(self, *, binding_id: 'str', pathway_id: 'str', stage_id: 'str', symbol_id: 'str', composition_ids: 'Sequence[str]') -> 'bool'"
+          }
+        ],
+        "name": "BindingLock",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(record: 'Mapping[str, Any]') -> 'None'"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, record: 'Mapping[str, Any]') -> 'None'"
+          }
+        ],
+        "name": "BindingReceipt",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(record: 'Mapping[str, Any]') -> 'None'"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "BindingStateError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', binding_id: 'str', composition: 'Mapping[str, Any]', endpoints: 'Mapping[str, BoundPathway]') -> 'None'"
+          },
+          {
+            "kind": "property",
+            "name": "adapter_id",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "adapter_owner",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "composition_status",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "contract",
+            "signature": "(self) -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "method",
+            "name": "crossing",
+            "signature": "(self, *, source_instance: 'object') -> 'VerifiedCompositionCrossing'"
+          },
+          {
+            "kind": "property",
+            "name": "endpoint_bindings",
+            "signature": "(self) -> 'tuple[BoundPathway, ...]'"
+          },
+          {
+            "kind": "method",
+            "name": "evidence_scope",
+            "signature": "(self) -> 'CompositionExecutionScope'"
+          },
+          {
+            "kind": "method",
+            "name": "flow_derived_target_instance",
+            "signature": "(self, *, source: 'VerifiedCallable') -> 'FlowDerivedInstanceReference'"
+          },
+          {
+            "kind": "method",
+            "name": "pathway",
+            "signature": "(self, pathway_id: 'str') -> 'BoundPathway'"
+          },
+          {
+            "kind": "property",
+            "name": "source_binding",
+            "signature": "(self) -> 'BoundPathway'"
+          },
+          {
+            "kind": "property",
+            "name": "target_binding",
+            "signature": "(self) -> 'BoundPathway'"
+          }
+        ],
+        "name": "BoundComposition",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', binding_id: 'str', composition: 'Mapping[str, Any]', endpoints: 'Mapping[str, BoundPathway]') -> 'None'"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', binding_id: 'str', pathway_id: 'str', stage_ids: 'Sequence[str]', composition_ids: 'Sequence[str]' = ()) -> 'None'"
+          },
+          {
+            "kind": "property",
+            "name": "contract",
+            "signature": "(self) -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "method",
+            "name": "symbol",
+            "signature": "(self, stage_id: 'str', *, symbol_id: 'str | None' = None, instance: 'object | CrossingResultReference | FlowDerivedInstanceReference | None' = None) -> 'VerifiedCallable'"
+          }
+        ],
+        "name": "BoundPathway",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', binding_id: 'str', pathway_id: 'str', stage_ids: 'Sequence[str]', composition_ids: 'Sequence[str]' = ()) -> 'None'"
+      },
+      {
+        "kind": "constant",
+        "name": "CLAIM_QUALIFYING_EFFECT_OUTCOMES",
+        "python_type": "frozenset",
+        "root_and_binding_identity_equal": true,
+        "value": {
+          "items": [
+            "committed",
+            "observed"
+          ],
+          "python_type": "frozenset"
+        }
+      },
+      {
+        "dataclass_fields": [
+          "module",
+          "qualified_symbol",
+          "source_path",
+          "source_sha256",
+          "definition_first_line",
+          "definition_source_sha256"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, module: 'str', qualified_symbol: 'str', source_path: 'str', source_sha256: 'str', definition_first_line: 'int', definition_source_sha256: 'str') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "to_record",
+            "signature": "(self) -> 'dict[str, Any]'"
+          }
+        ],
+        "name": "CallableIdentity",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(module: 'str', qualified_symbol: 'str', source_path: 'str', source_sha256: 'str', definition_first_line: 'int', definition_source_sha256: 'str') -> None"
+      },
+      {
+        "dataclass_fields": [
+          "_session",
+          "candidate_id",
+          "candidate_kind",
+          "purpose",
+          "owner",
+          "consumed_pathway_ids",
+          "consumed_composition_ids",
+          "proposed_source_pathway_id",
+          "proposed_target_pathway_id",
+          "proposed_relation",
+          "authority",
+          "producer_residue",
+          "adapter_residue",
+          "configured_residue",
+          "evidence_owner",
+          "blocked_claims",
+          "mechanism_evidence",
+          "mechanism_link",
+          "invalid_relabel_conflict_ids",
+          "invalid_relabel_blocked_claims",
+          "invalid_relabel_relation_review",
+          "claim_ceiling",
+          "promotion_status"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, _session: 'PathwayBindingSession', candidate_id: 'str', candidate_kind: 'str', purpose: 'str', owner: 'str', consumed_pathway_ids: 'tuple[str, ...]', consumed_composition_ids: 'tuple[str, ...]', proposed_source_pathway_id: 'str | None', proposed_target_pathway_id: 'str | None', proposed_relation: 'str | None', authority: 'Mapping[str, str]', producer_residue: 'tuple[str, ...]', adapter_residue: 'tuple[str, ...]', configured_residue: 'tuple[str, ...]', evidence_owner: 'str', blocked_claims: 'tuple[str, ...]', mechanism_evidence: 'CandidateMechanismEvidence | None', mechanism_link: 'Mapping[str, Any] | None', invalid_relabel_conflict_ids: 'tuple[str, ...]', invalid_relabel_blocked_claims: 'tuple[str, ...]', invalid_relabel_relation_review: 'CandidateRelationReview | None', claim_ceiling: 'str' = 'experimental_unregistered', promotion_status: 'str' = 'none') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "evidence_scope",
+            "signature": "(self) -> 'CandidateExecutionScope'"
+          },
+          {
+            "kind": "method",
+            "name": "mechanism",
+            "signature": "(self) -> 'VerifiedCandidateMechanism'"
+          },
+          {
+            "kind": "method",
+            "name": "to_record",
+            "signature": "(self) -> 'dict[str, Any]'"
+          }
+        ],
+        "name": "CandidateDeclaration",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(_session: 'PathwayBindingSession', candidate_id: 'str', candidate_kind: 'str', purpose: 'str', owner: 'str', consumed_pathway_ids: 'tuple[str, ...]', consumed_composition_ids: 'tuple[str, ...]', proposed_source_pathway_id: 'str | None', proposed_target_pathway_id: 'str | None', proposed_relation: 'str | None', authority: 'Mapping[str, str]', producer_residue: 'tuple[str, ...]', adapter_residue: 'tuple[str, ...]', configured_residue: 'tuple[str, ...]', evidence_owner: 'str', blocked_claims: 'tuple[str, ...]', mechanism_evidence: 'CandidateMechanismEvidence | None', mechanism_link: 'Mapping[str, Any] | None', invalid_relabel_conflict_ids: 'tuple[str, ...]', invalid_relabel_blocked_claims: 'tuple[str, ...]', invalid_relabel_relation_review: 'CandidateRelationReview | None', claim_ceiling: 'str' = 'experimental_unregistered', promotion_status: 'str' = 'none') -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__enter__",
+            "signature": "(self) -> 'Self'"
+          },
+          {
+            "kind": "method",
+            "name": "__exit__",
+            "signature": "(self, exc_type: 'type[BaseException] | None', exc: 'BaseException | None', traceback: 'TracebackType | None') -> 'Literal[False]'"
+          },
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', candidate: 'CandidateDeclaration') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "exercise_witness",
+            "signature": "(self) -> 'dict[str, Any] | None'"
+          },
+          {
+            "kind": "method",
+            "name": "target_request_flow",
+            "signature": "(self, *, binding_id: 'str', pathway_id: 'str', symbol_id: 'str', positional_arguments: 'Sequence[Any]', keyword_arguments: 'Mapping[str, Any]') -> 'dict[str, Any] | None'"
+          }
+        ],
+        "name": "CandidateExecutionScope",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', candidate: 'CandidateDeclaration') -> 'None'"
+      },
+      {
+        "dataclass_fields": [
+          "evidence_kind",
+          "mechanism_id",
+          "path",
+          "sha256"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, evidence_kind: 'str', mechanism_id: 'str', path: 'str', sha256: 'str') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "assert_current",
+            "signature": "(self, repository_root: 'Path', *, candidate_kind: 'str', proposed_source_pathway_id: 'str | None', proposed_target_pathway_id: 'str | None', proposed_relation: 'str | None') -> 'SourceSymbolBinding'"
+          },
+          {
+            "kind": "classmethod",
+            "name": "from_record",
+            "signature": "(cls, record: 'Mapping[str, Any]') -> 'CandidateMechanismEvidence'"
+          },
+          {
+            "kind": "method",
+            "name": "to_record",
+            "signature": "(self) -> 'dict[str, str]'"
+          }
+        ],
+        "name": "CandidateMechanismEvidence",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(evidence_kind: 'str', mechanism_id: 'str', path: 'str', sha256: 'str') -> None"
+      },
+      {
+        "dataclass_fields": [
+          "review_id",
+          "reviewer",
+          "candidate_id",
+          "candidate_kind",
+          "proposed_source_pathway_id",
+          "proposed_target_pathway_id",
+          "proposed_relation",
+          "invalid_relabel_conflict_ids",
+          "invalid_relabel_blocked_claims",
+          "mechanism_evidence",
+          "source_result_parameter",
+          "structural_distinction",
+          "review_digest"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, review_id: 'str', reviewer: 'str', candidate_id: 'str', candidate_kind: 'str', proposed_source_pathway_id: 'str', proposed_target_pathway_id: 'str', proposed_relation: 'str', invalid_relabel_conflict_ids: 'tuple[str, ...]', invalid_relabel_blocked_claims: 'tuple[str, ...]', mechanism_evidence: 'Mapping[str, str]', source_result_parameter: 'str', structural_distinction: 'Mapping[str, str]', review_digest: 'str') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "assert_matches",
+            "signature": "(self, *, candidate_id: 'str', candidate_kind: 'str', proposed_source_pathway_id: 'str', proposed_target_pathway_id: 'str', proposed_relation: 'str', invalid_relabel_conflict_ids: 'Sequence[str]', invalid_relabel_blocked_claims: 'Sequence[str]', mechanism_evidence: 'CandidateMechanismEvidence') -> 'None'"
+          },
+          {
+            "kind": "classmethod",
+            "name": "from_record",
+            "signature": "(cls, record: 'Mapping[str, Any]', *, trusted_digest: 'str | None') -> 'CandidateRelationReview'"
+          },
+          {
+            "kind": "method",
+            "name": "to_record",
+            "signature": "(self) -> 'dict[str, Any]'"
+          }
+        ],
+        "name": "CandidateRelationReview",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(review_id: 'str', reviewer: 'str', candidate_id: 'str', candidate_kind: 'str', proposed_source_pathway_id: 'str', proposed_target_pathway_id: 'str', proposed_relation: 'str', invalid_relabel_conflict_ids: 'tuple[str, ...]', invalid_relabel_blocked_claims: 'tuple[str, ...]', mechanism_evidence: 'Mapping[str, str]', source_result_parameter: 'str', structural_distinction: 'Mapping[str, str]', review_digest: 'str') -> None"
+      },
+      {
+        "dataclass_fields": [
+          "candidate_id",
+          "mechanism_evidence",
+          "execution_witness"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, candidate_id: 'str', mechanism_evidence: 'Mapping[str, str]', execution_witness: 'Mapping[str, Any]') -> None"
+          }
+        ],
+        "name": "CandidateUseRecord",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(candidate_id: 'str', mechanism_evidence: 'Mapping[str, str]', execution_witness: 'Mapping[str, Any]') -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, repository_root: 'Path', documents: 'Mapping[str, Mapping[str, Any]]', pathways: 'Mapping[str, Mapping[str, Any]]', compositions: 'Mapping[str, Mapping[str, Any]]', stage_symbols: 'Mapping[tuple[str, str], tuple[SourceSymbolBinding, ...]]', composition_crossings: 'Mapping[str, CompositionCrossingBinding]', binding_acceptance_anchor: 'BindingAcceptanceAnchor | None' = None, trusted_anchor_digest: 'str | None' = None) -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "artifact_identities",
+            "signature": "(self) -> 'Mapping[str, str]'"
+          },
+          {
+            "kind": "method",
+            "name": "assert_current",
+            "signature": "(self) -> 'None'"
+          },
+          {
+            "kind": "property",
+            "name": "binding_acceptance_anchor_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "binding_acceptance_status",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "binding_map_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "method",
+            "name": "callable_is_registered",
+            "signature": "(self, symbol: 'SourceSymbolBinding') -> 'bool'"
+          },
+          {
+            "kind": "method",
+            "name": "composition",
+            "signature": "(self, composition_id: 'str') -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "method",
+            "name": "composition_crossing",
+            "signature": "(self, composition_id: 'str') -> 'CompositionCrossingBinding'"
+          },
+          {
+            "kind": "property",
+            "name": "crosswalk_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "method",
+            "name": "effect_outcome_contract",
+            "signature": "(self, symbol_id: 'str') -> 'EffectOutcomeContract | None'"
+          },
+          {
+            "kind": "property",
+            "name": "effect_outcome_contracts_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "method",
+            "name": "invalid_relabels_for_endpoints",
+            "signature": "(self, source_pathway_id: 'str', target_pathway_id: 'str') -> 'tuple[Mapping[str, Any], ...]'"
+          },
+          {
+            "kind": "classmethod",
+            "name": "load",
+            "signature": "(cls, repository_root: 'str | Path', *, acceptance_anchor: 'Mapping[str, Any] | None' = None, trusted_anchor_digest: 'str | None' = None) -> 'CausalPathwayAuthority'"
+          },
+          {
+            "kind": "property",
+            "name": "matrix_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "method",
+            "name": "pathway",
+            "signature": "(self, pathway_id: 'str') -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "property",
+            "name": "policy_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "registry_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "repository_root",
+            "signature": "(self) -> 'Path'"
+          },
+          {
+            "kind": "property",
+            "name": "selector_digest",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "property",
+            "name": "source_revision",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "method",
+            "name": "stage_ids",
+            "signature": "(self, pathway_id: 'str') -> 'tuple[str, ...]'"
+          },
+          {
+            "kind": "method",
+            "name": "symbols",
+            "signature": "(self, pathway_id: 'str', stage_id: 'str') -> 'tuple[SourceSymbolBinding, ...]'"
+          }
+        ],
+        "name": "CausalPathwayAuthority",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, repository_root: 'Path', documents: 'Mapping[str, Mapping[str, Any]]', pathways: 'Mapping[str, Mapping[str, Any]]', compositions: 'Mapping[str, Mapping[str, Any]]', stage_symbols: 'Mapping[tuple[str, str], tuple[SourceSymbolBinding, ...]]', composition_crossings: 'Mapping[str, CompositionCrossingBinding]', binding_acceptance_anchor: 'BindingAcceptanceAnchor | None' = None, trusted_anchor_digest: 'str | None' = None) -> 'None'"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "CausalPathwayBindingError",
+        "public_exception_bases": [
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [
+          "composition_id",
+          "crossing_kind",
+          "source_pathway_id",
+          "source_argument_name",
+          "target_pathway_id",
+          "symbol"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, composition_id: 'str', crossing_kind: 'str', source_pathway_id: 'str', source_argument_name: 'str', target_pathway_id: 'str', symbol: 'SourceSymbolBinding') -> None"
+          },
+          {
+            "kind": "classmethod",
+            "name": "from_record",
+            "signature": "(cls, record: 'Mapping[str, Any]') -> 'CompositionCrossingBinding'"
+          }
+        ],
+        "name": "CompositionCrossingBinding",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(composition_id: 'str', crossing_kind: 'str', source_pathway_id: 'str', source_argument_name: 'str', target_pathway_id: 'str', symbol: 'SourceSymbolBinding') -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__enter__",
+            "signature": "(self) -> 'Self'"
+          },
+          {
+            "kind": "method",
+            "name": "__exit__",
+            "signature": "(self, exc_type: 'type[BaseException] | None', exc: 'BaseException | None', traceback: 'TracebackType | None') -> 'Literal[False]'"
+          },
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', composition: 'BoundComposition') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "exercise_witness",
+            "signature": "(self) -> 'dict[str, Any] | None'"
+          }
+        ],
+        "name": "CompositionExecutionScope",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', composition: 'BoundComposition') -> 'None'"
+      },
+      {
+        "dataclass_fields": [
+          "crossing_scope_id",
+          "binding_id",
+          "composition_id",
+          "symbol_id",
+          "source_binding_id",
+          "target_binding_id",
+          "outcome",
+          "return_category",
+          "effect_contract_id",
+          "effect_kind",
+          "effect_outcome",
+          "claim_qualifying_effect",
+          "effect_evidence",
+          "result_type",
+          "error_type",
+          "callable_identity",
+          "execution_event_order"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, crossing_scope_id: 'str', binding_id: 'str', composition_id: 'str', symbol_id: 'str', source_binding_id: 'str', target_binding_id: 'str', outcome: 'str', return_category: 'str | None', effect_contract_id: 'str | None', effect_kind: 'str', effect_outcome: 'str', claim_qualifying_effect: 'bool', effect_evidence: 'Mapping[str, Any] | None', result_type: 'str | None', error_type: 'str | None', callable_identity: 'Mapping[str, Any]', execution_event_order: 'int' = -1) -> None"
+          }
+        ],
+        "name": "CrossingInvocationRecord",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(crossing_scope_id: 'str', binding_id: 'str', composition_id: 'str', symbol_id: 'str', source_binding_id: 'str', target_binding_id: 'str', outcome: 'str', return_category: 'str | None', effect_contract_id: 'str | None', effect_kind: 'str', effect_outcome: 'str', claim_qualifying_effect: 'bool', effect_evidence: 'Mapping[str, Any] | None', result_type: 'str | None', error_type: 'str | None', callable_identity: 'Mapping[str, Any]', execution_event_order: 'int' = -1) -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, composition_id: 'str', target_pathway_id: 'str') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "resolve",
+            "signature": "(self) -> 'object'"
+          }
+        ],
+        "name": "CrossingResultReference",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, composition_id: 'str', target_pathway_id: 'str') -> 'None'"
+      },
+      {
+        "kind": "constant",
+        "name": "EFFECT_OUTCOMES",
+        "python_type": "frozenset",
+        "root_and_binding_identity_equal": true,
+        "value": {
+          "items": [
+            "committed",
+            "no_op",
+            "observed",
+            "rejected",
+            "unknown"
+          ],
+          "python_type": "frozenset"
+        }
+      },
+      {
+        "kind": "constant",
+        "name": "EXECUTABLE_COMPOSITION_STATUSES",
+        "python_type": "frozenset",
+        "root_and_binding_identity_equal": true,
+        "value": {
+          "items": [
+            "diagnostic_only",
+            "lawful_native",
+            "lawful_with_explicit_adapter",
+            "producer_mediated"
+          ],
+          "python_type": "frozenset"
+        }
+      },
+      {
+        "kind": "constant",
+        "name": "EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT",
+        "python_type": "str",
+        "root_and_binding_identity_equal": true,
+        "value": "externally_supplied_digest_for_registered_composition_or_reviewed_candidate"
+      },
+      {
+        "dataclass_fields": [
+          "contract_id",
+          "symbol_id",
+          "effect_kind",
+          "return_outcomes",
+          "claim_qualifying_outcomes",
+          "effect_probe",
+          "effect_contract_digest"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, contract_id: 'str', symbol_id: 'str', effect_kind: 'str', return_outcomes: 'Mapping[str, str]', claim_qualifying_outcomes: 'frozenset[str]', effect_probe: 'Mapping[str, Any] | None', effect_contract_digest: 'str') -> None"
+          },
+          {
+            "kind": "method",
+            "name": "capture_pre_call_evidence",
+            "signature": "(self, target: 'Callable[..., Any]') -> 'Mapping[str, Any] | None'"
+          },
+          {
+            "kind": "method",
+            "name": "classify",
+            "signature": "(self, result: 'object', *, target: 'Callable[..., Any]', pre_call_evidence: 'Mapping[str, Any] | None') -> 'tuple[str, str, bool, Mapping[str, Any] | None]'"
+          },
+          {
+            "kind": "classmethod",
+            "name": "from_record",
+            "signature": "(cls, record: 'Mapping[str, Any]') -> 'EffectOutcomeContract'"
+          },
+          {
+            "kind": "method",
+            "name": "to_record",
+            "signature": "(self) -> 'dict[str, Any]'"
+          }
+        ],
+        "name": "EffectOutcomeContract",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(contract_id: 'str', symbol_id: 'str', effect_kind: 'str', return_outcomes: 'Mapping[str, str]', claim_qualifying_outcomes: 'frozenset[str]', effect_probe: 'Mapping[str, Any] | None', effect_contract_digest: 'str') -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', composition: 'BoundComposition', source_binding_id: 'str', target_binding_id: 'str', target_pathway_id: 'str', source_stage_id: 'str', source_symbol_id: 'str', target_stage_id: 'str', source_port: 'str', target_port: 'str') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "bind",
+            "signature": "(self, *, source_result: 'object', target_instance: 'object') -> 'None'"
+          },
+          {
+            "kind": "method",
+            "name": "derivation_record",
+            "signature": "(self) -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "method",
+            "name": "resolve",
+            "signature": "(self) -> 'object'"
+          }
+        ],
+        "name": "FlowDerivedInstanceReference",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', composition: 'BoundComposition', source_binding_id: 'str', target_binding_id: 'str', target_pathway_id: 'str', source_stage_id: 'str', source_symbol_id: 'str', target_stage_id: 'str', source_port: 'str', target_port: 'str') -> 'None'"
+      },
+      {
+        "kind": "constant",
+        "name": "INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT",
+        "python_type": "str",
+        "root_and_binding_identity_equal": true,
+        "value": "externally_supplied_digest_for_invalid_relabel_candidate_review"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "InvalidCandidateError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [
+          "binding_id",
+          "pathway_id",
+          "stage_id",
+          "symbol_id",
+          "composition_ids",
+          "outcome",
+          "return_category",
+          "effect_contract_id",
+          "effect_kind",
+          "effect_outcome",
+          "claim_qualifying_effect",
+          "effect_evidence",
+          "result_type",
+          "error_type",
+          "callable_identity",
+          "runtime_object_flow",
+          "candidate_request_flow",
+          "execution_event_order",
+          "crossing_scope_id",
+          "candidate_scope_id",
+          "alternative_selection_scope_id"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, binding_id: 'str', pathway_id: 'str', stage_id: 'str', symbol_id: 'str', composition_ids: 'tuple[str, ...]', outcome: 'str', return_category: 'str | None', effect_contract_id: 'str | None', effect_kind: 'str', effect_outcome: 'str', claim_qualifying_effect: 'bool', effect_evidence: 'Mapping[str, Any] | None', result_type: 'str | None', error_type: 'str | None', callable_identity: 'Mapping[str, Any]', runtime_object_flow: 'Mapping[str, Any]', candidate_request_flow: 'Mapping[str, Any] | None', execution_event_order: 'int' = -1, crossing_scope_id: 'str | None' = None, candidate_scope_id: 'str | None' = None, alternative_selection_scope_id: 'str | None' = None) -> None"
+          }
+        ],
+        "name": "InvocationRecord",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(binding_id: 'str', pathway_id: 'str', stage_id: 'str', symbol_id: 'str', composition_ids: 'tuple[str, ...]', outcome: 'str', return_category: 'str | None', effect_contract_id: 'str | None', effect_kind: 'str', effect_outcome: 'str', claim_qualifying_effect: 'bool', effect_evidence: 'Mapping[str, Any] | None', result_type: 'str | None', error_type: 'str | None', callable_identity: 'Mapping[str, Any]', runtime_object_flow: 'Mapping[str, Any]', candidate_request_flow: 'Mapping[str, Any] | None', execution_event_order: 'int' = -1, crossing_scope_id: 'str | None' = None, candidate_scope_id: 'str | None' = None, alternative_selection_scope_id: 'str | None' = None) -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, authority: 'CausalPathwayAuthority') -> 'None'"
+          },
+          {
+            "kind": "property",
+            "name": "alternatives",
+            "signature": "(self) -> 'tuple[AllowedPathwayAlternatives, ...]'"
+          },
+          {
+            "kind": "method",
+            "name": "bind_composition",
+            "signature": "(self, composition_id: 'str', *, binding_id: 'str | None' = None) -> 'BoundComposition'"
+          },
+          {
+            "kind": "method",
+            "name": "bind_pathway",
+            "signature": "(self, pathway_id: 'str', *, stage_ids: 'Sequence[str] | None' = None, binding_id: 'str | None' = None) -> 'BoundPathway'"
+          },
+          {
+            "kind": "property",
+            "name": "binding_lock",
+            "signature": "(self) -> 'BindingLock | None'"
+          },
+          {
+            "kind": "method",
+            "name": "build_receipt",
+            "signature": "(self) -> 'BindingReceipt'"
+          },
+          {
+            "kind": "property",
+            "name": "candidate_mechanism_invocation_records",
+            "signature": "(self) -> 'tuple[CandidateMechanismInvocationRecord, ...]'"
+          },
+          {
+            "kind": "property",
+            "name": "candidates",
+            "signature": "(self) -> 'tuple[CandidateDeclaration, ...]'"
+          },
+          {
+            "kind": "property",
+            "name": "crossing_invocation_records",
+            "signature": "(self) -> 'tuple[CrossingInvocationRecord, ...]'"
+          },
+          {
+            "kind": "method",
+            "name": "declare_alternatives",
+            "signature": "(self, *, alternative_set_id: 'str', pathway_ids: 'Sequence[str]', selection_authority: 'str') -> 'AllowedPathwayAlternatives'"
+          },
+          {
+            "kind": "method",
+            "name": "declare_candidate",
+            "signature": "(self, *, candidate_id: 'str', candidate_kind: 'str', purpose: 'str', owner: 'str', consumed_pathway_ids: 'Sequence[str]' = (), consumed_composition_ids: 'Sequence[str]' = (), proposed_source_pathway_id: 'str | None' = None, proposed_target_pathway_id: 'str | None' = None, proposed_relation: 'str | None' = None, authority: 'Mapping[str, str] | None' = None, producer_residue: 'Sequence[str]' = (), adapter_residue: 'Sequence[str]' = (), configured_residue: 'Sequence[str]' = (), evidence_owner: 'str', mechanism_evidence: 'Mapping[str, Any] | None' = None, invalid_relabel_relation_review: 'Mapping[str, Any] | None' = None, trusted_relation_review_digest: 'str | None' = None, blocked_claims: 'Sequence[str]' = ()) -> 'CandidateDeclaration'"
+          },
+          {
+            "kind": "method",
+            "name": "freeze_lock",
+            "signature": "(self) -> 'BindingLock'"
+          },
+          {
+            "kind": "property",
+            "name": "invocation_records",
+            "signature": "(self) -> 'tuple[InvocationRecord, ...]'"
+          },
+          {
+            "kind": "property",
+            "name": "phase",
+            "signature": "(self) -> 'str'"
+          },
+          {
+            "kind": "method",
+            "name": "record_candidate_use",
+            "signature": "(self, candidate_id: 'str') -> 'CandidateUseRecord'"
+          }
+        ],
+        "name": "PathwayBindingSession",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(authority: 'CausalPathwayAuthority') -> 'None'"
+      },
+      {
+        "kind": "constant",
+        "name": "RETURN_CATEGORIES",
+        "python_type": "tuple",
+        "root_and_binding_identity_equal": true,
+        "value": {
+          "items": [
+            "false",
+            "true",
+            "none",
+            "empty",
+            "other"
+          ],
+          "python_type": "tuple"
+        }
+      },
+      {
+        "dataclass_fields": [
+          "symbol_id",
+          "module",
+          "qualified_symbol",
+          "binding_role",
+          "call_kind",
+          "source_path",
+          "source_sha256",
+          "required_keyword_arguments"
+        ],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, symbol_id: 'str', module: 'str', qualified_symbol: 'str', binding_role: 'str', call_kind: 'str', source_path: 'str', source_sha256: 'str', required_keyword_arguments: 'Mapping[str, Any]' = <factory>) -> None"
+          },
+          {
+            "kind": "method",
+            "name": "callable_identity",
+            "signature": "(self, target: 'Callable[..., Any]', repository_root: 'Path') -> 'CallableIdentity'"
+          },
+          {
+            "kind": "classmethod",
+            "name": "from_record",
+            "signature": "(cls, record: 'Mapping[str, Any]') -> 'SourceSymbolBinding'"
+          },
+          {
+            "kind": "method",
+            "name": "resolve",
+            "signature": "(self, repository_root: 'Path | None' = None) -> 'Callable[..., Any]'"
+          }
+        ],
+        "name": "SourceSymbolBinding",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(symbol_id: 'str', module: 'str', qualified_symbol: 'str', binding_role: 'str', call_kind: 'str', source_path: 'str', source_sha256: 'str', required_keyword_arguments: 'Mapping[str, Any]' = <factory>) -> None"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "SymbolBindingError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "UnbindableCompositionError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "UnknownCompositionError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [],
+        "name": "UnknownPathwayError",
+        "public_exception_bases": [
+          "CausalPathwayBindingError",
+          "ValueError",
+          "Exception",
+          "BaseException"
+        ],
+        "root_and_binding_identity_equal": true,
+        "signature": null
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__call__",
+            "signature": "(self, *args: 'Any', **kwargs: 'Any') -> 'Any'"
+          },
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', binding_id: 'str', pathway_id: 'str', stage_id: 'str', composition_ids: 'tuple[str, ...]', symbol: 'SourceSymbolBinding', instance: 'object | CrossingResultReference | FlowDerivedInstanceReference | None') -> 'None'"
+          },
+          {
+            "kind": "property",
+            "name": "callable_identity",
+            "signature": "(self) -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "property",
+            "name": "linked_callable",
+            "signature": "(self) -> 'Callable[..., Any]'"
+          },
+          {
+            "kind": "property",
+            "name": "symbol_id",
+            "signature": "(self) -> 'str'"
+          }
+        ],
+        "name": "VerifiedCallable",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', binding_id: 'str', pathway_id: 'str', stage_id: 'str', composition_ids: 'tuple[str, ...]', symbol: 'SourceSymbolBinding', instance: 'object | CrossingResultReference | FlowDerivedInstanceReference | None') -> 'None'"
+      },
+      {
+        "dataclass_fields": [],
+        "kind": "class",
+        "members": [
+          {
+            "kind": "method",
+            "name": "__call__",
+            "signature": "(self, *args: 'Any', **kwargs: 'Any') -> 'Any'"
+          },
+          {
+            "kind": "method",
+            "name": "__init__",
+            "signature": "(self, *, session: 'PathwayBindingSession', composition: 'BoundComposition', crossing: 'CompositionCrossingBinding', source_instance: 'object') -> 'None'"
+          },
+          {
+            "kind": "property",
+            "name": "callable_identity",
+            "signature": "(self) -> 'Mapping[str, Any]'"
+          },
+          {
+            "kind": "property",
+            "name": "result_reference",
+            "signature": "(self) -> 'CrossingResultReference'"
+          },
+          {
+            "kind": "property",
+            "name": "symbol_id",
+            "signature": "(self) -> 'str'"
+          }
+        ],
+        "name": "VerifiedCompositionCrossing",
+        "public_exception_bases": [],
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, session: 'PathwayBindingSession', composition: 'BoundComposition', crossing: 'CompositionCrossingBinding', source_instance: 'object') -> 'None'"
+      },
+      {
+        "kind": "function",
+        "name": "binding_semantics_digest",
+        "root_and_binding_identity_equal": true,
+        "signature": "(bindings: 'Mapping[str, Any]') -> 'str'"
+      },
+      {
+        "kind": "function",
+        "name": "binding_source_manifest_digest",
+        "root_and_binding_identity_equal": true,
+        "signature": "(bindings: 'Mapping[str, Any]') -> 'str'"
+      },
+      {
+        "kind": "function",
+        "name": "canonical_digest",
+        "root_and_binding_identity_equal": true,
+        "signature": "(value: 'Mapping[str, Any]', *, excluding: 'str') -> 'str'"
+      },
+      {
+        "kind": "function",
+        "name": "composition_dataflow_contract",
+        "root_and_binding_identity_equal": true,
+        "signature": "(composition_id: 'str', *, explicit_adapter: 'bool') -> 'dict[str, str]'"
+      },
+      {
+        "kind": "function",
+        "name": "execution_transcript_digest",
+        "root_and_binding_identity_equal": true,
+        "signature": "(*, binding_lock_digest: 'str', stage_invocations: 'Sequence[Mapping[str, Any]]', crossing_invocations: 'Sequence[Mapping[str, Any]]', candidate_mechanism_invocations: 'Sequence[Mapping[str, Any]]') -> 'str'"
+      },
+      {
+        "kind": "function",
+        "name": "sha256_file",
+        "root_and_binding_identity_equal": true,
+        "signature": "(path: 'Path') -> 'str'"
+      },
+      {
+        "kind": "function",
+        "name": "unbound_execution_classification",
+        "root_and_binding_identity_equal": true,
+        "signature": "() -> 'Mapping[str, Any]'"
+      }
+    ],
+    "root_all_order": [
+      "ATTESTED_OBJECT_FLOW_DATAFLOW",
+      "AUTHORITY_COORDINATES",
+      "CLAIM_QUALIFYING_EFFECT_OUTCOMES",
+      "EFFECT_OUTCOMES",
+      "EXECUTABLE_COMPOSITION_STATUSES",
+      "EXECUTION_TRANSCRIPT_TRUST_REQUIREMENT",
+      "INVALID_RELABEL_CANDIDATE_REVIEW_TRUST_REQUIREMENT",
+      "RETURN_CATEGORIES",
+      "AllowedPathwayAlternatives",
+      "AlternativeSelectionScope",
+      "AuthorityDriftError",
+      "BindingAcceptanceAnchor",
+      "BindingLock",
+      "BindingReceipt",
+      "BindingStateError",
+      "BoundComposition",
+      "BoundPathway",
+      "CallableIdentity",
+      "CandidateDeclaration",
+      "CandidateExecutionScope",
+      "CandidateMechanismEvidence",
+      "CandidateRelationReview",
+      "CandidateUseRecord",
+      "CausalPathwayAuthority",
+      "CausalPathwayBindingError",
+      "CompositionCrossingBinding",
+      "CompositionExecutionScope",
+      "CrossingInvocationRecord",
+      "CrossingResultReference",
+      "EffectOutcomeContract",
+      "FlowDerivedInstanceReference",
+      "InvalidCandidateError",
+      "InvocationRecord",
+      "PathwayBindingSession",
+      "SourceSymbolBinding",
+      "SymbolBindingError",
+      "UnbindableCompositionError",
+      "UnknownCompositionError",
+      "UnknownPathwayError",
+      "VerifiedCallable",
+      "VerifiedCompositionCrossing",
+      "binding_semantics_digest",
+      "binding_source_manifest_digest",
+      "canonical_digest",
+      "composition_dataflow_contract",
+      "execution_transcript_digest",
+      "sha256_file",
+      "unbound_execution_classification"
+    ],
+    "root_import_path": "pygrc.causal_pathways"
+  },
+  "runtime_behavior_changed": false,
+  "schema_version": "i118_public_api_compatibility_freeze_v1",
+  "source_commit": "8e07e17688db3d49420d933f41ba936e5dab9dcb",
+  "source_tree": "984df49232285e0f63e48c98c37606b04873bd84",
+  "status": "frozen"
+}

@@ -1,0 +1,321 @@
+{
+  "artifact": "grc-lgrc-causal-pathway-bindings",
+  "schema_version": "grc_lgrc_causal_pathway_bindings_v1",
+  "iteration": 113,
+  "status": "current",
+  "source_revision": "f612a93154ba31b5b62fa0f7d3b7590035468d3a",
+  "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+  "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+  "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+  "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+  "policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+  "pathway_count": 23,
+  "stage_binding_count": 52,
+  "composition_crossing_binding_count": 1,
+  "composition_crossing_bindings": [
+    {
+      "composition_id": "CMP-26",
+      "crossing_kind": "explicit_adapter_callable",
+      "source_pathway_id": "grc9v3.front_capacity_growth",
+      "source_argument_name": "base_model",
+      "target_pathway_id": "lgrc9v3.boundary_birth",
+      "symbol": {
+        "symbol_id": "CMP-26:crossing:build_lgrc9v3_corrected_cascade_runtime",
+        "module": "pygrc.models.lgrc_9_v3_construction",
+        "qualified_symbol": "build_lgrc9v3_corrected_cascade_runtime",
+        "binding_role": "composition_adapter_entrypoint",
+        "call_kind": "module_function",
+        "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+        "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+      }
+    }
+  ],
+  "binding_roles": [
+    "mechanism_entrypoint",
+    "stage_entrypoint",
+    "load_bearing_internal",
+    "diagnostic_entrypoint",
+    "producer_entrypoint",
+    "restoration_entrypoint",
+    "composition_adapter_entrypoint"
+  ],
+  "call_kinds": [
+    "module_function",
+    "instance_method",
+    "class_method"
+  ],
+  "linkage_rule": "A binding resolves a declared registered stage to the exact current callable; it does not normalize arguments, choose semantics, or dispatch causal work.",
+  "unbound_rule": "Direct execution remains available but cannot produce claim-qualified pathway provenance.",
+  "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+  "stage_bindings": [
+    {
+      "pathway_id": "grc9v3.front_capacity_growth",
+      "stage_id": "front_capacity_growth_eligibility",
+      "symbols": [{"symbol_id": "grc9v3.front_capacity_growth:front_capacity_growth_eligibility:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3._growth_front_eligible_ports", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.front_capacity_growth",
+      "stage_id": "growth_commit",
+      "symbols": [{"symbol_id": "grc9v3.front_capacity_growth:growth_commit:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3.apply_growth", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.front_capacity_growth",
+      "stage_id": "front_propagation",
+      "symbols": [{"symbol_id": "grc9v3.front_capacity_growth:front_propagation:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3._propagate_grcl9v3_front_capacity", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.hybrid_spark_refinement",
+      "stage_id": "spark_candidate_detection",
+      "symbols": [{"symbol_id": "grc9v3.hybrid_spark_refinement:spark_candidate_detection:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3.detect_hybrid_spark_candidates", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.hybrid_spark_refinement",
+      "stage_id": "mechanical_expansion",
+      "symbols": [{"symbol_id": "grc9v3.hybrid_spark_refinement:mechanical_expansion:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3.apply_hybrid_sparks", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.identity_basin_reconstruction",
+      "stage_id": "detect_flux_topology_identities",
+      "symbols": [{"symbol_id": "grc9v3.identity_basin_reconstruction:detect_flux_topology_identities:primary", "module": "pygrc.models.grc_9_v3_runtime", "qualified_symbol": "detect_flux_topology_identities", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_runtime.py", "source_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"}]
+    },
+    {
+      "pathway_id": "grc9v3.identity_basin_reconstruction",
+      "stage_id": "validate_and_mass_basins",
+      "symbols": [
+        {"symbol_id": "grc9v3.identity_basin_reconstruction:validate_and_mass_basins:validate", "module": "pygrc.models.grc_9_v3_runtime", "qualified_symbol": "validate_geometric_basin_seeds", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_runtime.py", "source_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"},
+        {"symbol_id": "grc9v3.identity_basin_reconstruction:validate_and_mass_basins:mass", "module": "pygrc.models.grc_9_v3_runtime", "qualified_symbol": "compute_effective_basin_masses", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_runtime.py", "source_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"}
+      ]
+    },
+    {
+      "pathway_id": "grc9v3.legacy_inactive_port_growth",
+      "stage_id": "legacy_growth_eligibility",
+      "symbols": [{"symbol_id": "grc9v3.legacy_inactive_port_growth:legacy_growth_eligibility:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3._inactive_port_ids", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.legacy_inactive_port_growth",
+      "stage_id": "legacy_growth_commit",
+      "symbols": [{"symbol_id": "grc9v3.legacy_inactive_port_growth:legacy_growth_commit:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3.apply_growth", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "grc9v3.sink_compatibility_choice",
+      "stage_id": "sink_compatibility_scoring",
+      "symbols": [{"symbol_id": "grc9v3.sink_compatibility_choice:sink_compatibility_scoring:primary", "module": "pygrc.models.grc_9_v3_choice", "qualified_symbol": "_sink_compatibility_for_node", "binding_role": "load_bearing_internal", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_choice.py", "source_sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"}]
+    },
+    {
+      "pathway_id": "grc9v3.sink_compatibility_choice",
+      "stage_id": "choice_collapse_update",
+      "symbols": [{"symbol_id": "grc9v3.sink_compatibility_choice:choice_collapse_update:primary", "module": "pygrc.models.grc_9_v3_choice", "qualified_symbol": "rebuild_grc9v3_choice_state", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_choice.py", "source_sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"}]
+    },
+    {
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "stage_id": "differential_rebuild",
+      "symbols": [{"symbol_id": "grc9v3.synchronous_update_cycle:differential_rebuild:primary", "module": "pygrc.models.grc_9_v3_runtime", "qualified_symbol": "rebuild_grc9v3_differential_state", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_runtime.py", "source_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"}]
+    },
+    {
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "stage_id": "transport_rebuild",
+      "symbols": [{"symbol_id": "grc9v3.synchronous_update_cycle:transport_rebuild:primary", "module": "pygrc.models.grc_9_v3_runtime", "qualified_symbol": "rebuild_grc9v3_transport_state", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/grc_9_v3_runtime.py", "source_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"}]
+    },
+    {
+      "pathway_id": "grc9v3.synchronous_update_cycle",
+      "stage_id": "continuity_and_invariants",
+      "symbols": [{"symbol_id": "grc9v3.synchronous_update_cycle:continuity_and_invariants:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3.apply_continuity", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.boundary_birth",
+      "stage_id": "birth_trial_production",
+      "symbols": [{"symbol_id": "lgrc9v3.boundary_birth:birth_trial_production:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.produce_events", "binding_role": "producer_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4", "required_keyword_arguments": {"policy": "boundary_birth_trial_policy"}}]
+    },
+    {
+      "pathway_id": "lgrc9v3.boundary_birth",
+      "stage_id": "birth_trial_commit",
+      "symbols": [{"symbol_id": "lgrc9v3.boundary_birth:birth_trial_commit:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.apply_causal_boundary_birth_trial", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_history_annotation",
+      "stage_id": "derive_causal_metrics",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_history_annotation:derive_causal_metrics:primary", "module": "pygrc.models.lgrc_9_v3_timing", "qualified_symbol": "annotate_lgrc9v3_causal_history", "binding_role": "diagnostic_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_timing.py", "source_sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_history_annotation",
+      "stage_id": "assemble_causal_annotation",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_history_annotation:assemble_causal_annotation:primary", "module": "pygrc.models.lgrc_9_v3_timing", "qualified_symbol": "build_lgrc9v3_causal_history_artifact", "binding_role": "diagnostic_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_timing.py", "source_sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "stage_id": "surface_row_emission",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_pulse_surface_lineage:surface_row_emission:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._emit_causal_pulse_substrate_surface_event", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "stage_id": "surface_lineage_transport",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_pulse_surface_lineage:surface_lineage_transport:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._emit_surface_supersession_for_topology_event", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_pulse_surface_lineage",
+      "stage_id": "surface_reabsorption",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_pulse_surface_lineage:surface_reabsorption:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._apply_collapse_topology_state_reabsorption", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_spark_topology_integration",
+      "stage_id": "causal_spark_diagnostic",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_spark_topology_integration:causal_spark_diagnostic:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.evaluate_causal_spark_diagnostics", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_spark_topology_integration",
+      "stage_id": "topology_integration",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_spark_topology_integration:topology_integration:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._apply_causal_topology_integration", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.causal_spark_topology_integration",
+      "stage_id": "packet_and_lineage_transport",
+      "symbols": [{"symbol_id": "lgrc9v3.causal_spark_topology_integration:packet_and_lineage_transport:primary", "module": "pygrc.models.lgrc_9_v3_topology", "qualified_symbol": "transport_lgrc9v3_packets_through_refinement", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_topology.py", "source_sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.collapse_reabsorption",
+      "stage_id": "collapse_event_admission",
+      "symbols": [{"symbol_id": "lgrc9v3.collapse_reabsorption:collapse_event_admission:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.process_causal_collapse_reabsorption", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.collapse_reabsorption",
+      "stage_id": "topology_reabsorption_commit",
+      "symbols": [{"symbol_id": "lgrc9v3.collapse_reabsorption:topology_reabsorption_commit:primary", "module": "pygrc.models.lgrc_9_v3_topology", "qualified_symbol": "process_lgrc9v3_collapse_reabsorption", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_topology.py", "source_sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.collapse_reabsorption",
+      "stage_id": "active_state_transport",
+      "symbols": [{"symbol_id": "lgrc9v3.collapse_reabsorption:active_state_transport:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._apply_collapse_topology_state_reabsorption", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.configured_flux_route",
+      "stage_id": "route_registration",
+      "symbols": [{"symbol_id": "lgrc9v3.configured_flux_route:route_registration:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.set_causal_flux_routes", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.configured_flux_route",
+      "stage_id": "route_departure_production",
+      "symbols": [{"symbol_id": "lgrc9v3.configured_flux_route:route_departure_production:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.produce_events", "binding_role": "producer_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4", "required_keyword_arguments": {"policy": "packet_departure_from_flux_route_policy"}}]
+    },
+    {
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "stage_id": "diagnostic_model_construction",
+      "symbols": [{"symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_model_construction:primary", "module": "pygrc.models.lgrc_9_v3_construction", "qualified_symbol": "prepare_lgrc9v3_grc9v3_diagnostics", "binding_role": "diagnostic_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_construction.py", "source_sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+      "stage_id": "diagnostic_rebuild",
+      "symbols": [{"symbol_id": "lgrc9v3.diagnostic_grc_reconstruction:diagnostic_rebuild:primary", "module": "pygrc.models.grc_9_v3", "qualified_symbol": "GRC9V3.rebuild_transport_state", "binding_role": "diagnostic_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/grc_9_v3.py", "source_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "stage_id": "packet_schedule",
+      "symbols": [{"symbol_id": "lgrc9v3.explicit_packet_transport:packet_schedule:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.schedule_packet_departure", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "stage_id": "source_debit",
+      "symbols": [{"symbol_id": "lgrc9v3.explicit_packet_transport:source_debit:primary", "module": "pygrc.models.lgrc_9_v3_packets", "qualified_symbol": "_process_lgrc9v3_scheduled_packet_departure", "binding_role": "load_bearing_internal", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_packets.py", "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.explicit_packet_transport",
+      "stage_id": "target_credit",
+      "symbols": [{"symbol_id": "lgrc9v3.explicit_packet_transport:target_credit:primary", "module": "pygrc.models.lgrc_9_v3_packets", "qualified_symbol": "process_lgrc9v3_packet_arrival", "binding_role": "stage_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_packets.py", "source_sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "stage_id": "feedback_surface_registration",
+      "symbols": [{"symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_surface_registration:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.emit_feedback_eligibility_surface_row", "binding_role": "producer_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.feedback_eligibility_producer",
+      "stage_id": "feedback_packet_schedule",
+      "symbols": [{"symbol_id": "lgrc9v3.feedback_eligibility_producer:feedback_packet_schedule:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.produce_events", "binding_role": "producer_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4", "required_keyword_arguments": {"policy": "packet_departure_from_feedback_eligibility_policy"}}]
+    },
+    {
+      "pathway_id": "lgrc9v3.fixed_topology_eligibility",
+      "stage_id": "fixed_topology_eligibility",
+      "symbols": [{"symbol_id": "lgrc9v3.fixed_topology_eligibility:fixed_topology_eligibility:primary", "module": "pygrc.models.lgrc_9_v3_timing", "qualified_symbol": "compute_lgrc9v3_fixed_topology_eligibility", "binding_role": "diagnostic_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_timing.py", "source_sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.multi_basin_record_validation",
+      "stage_id": "flow_and_child_record_emission",
+      "symbols": [{"symbol_id": "lgrc9v3.multi_basin_record_validation:flow_and_child_record_emission:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._emit_multi_basin_records_for_committed_topology", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.multi_basin_record_validation",
+      "stage_id": "replay_and_control_validation",
+      "symbols": [
+        {"symbol_id": "lgrc9v3.multi_basin_record_validation:replay_and_control_validation:replay", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.validate_multi_basin_child_basin_replay", "binding_role": "diagnostic_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"},
+        {"symbol_id": "lgrc9v3.multi_basin_record_validation:replay_and_control_validation:controls", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.validate_multi_basin_merge_leakage_controls", "binding_role": "diagnostic_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}
+      ]
+    },
+    {
+      "pathway_id": "lgrc9v3.native_route_arbitration",
+      "stage_id": "candidate_set_admission",
+      "symbols": [{"symbol_id": "lgrc9v3.native_route_arbitration:candidate_set_admission:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.emit_native_route_candidate_set", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.native_route_arbitration",
+      "stage_id": "native_arbitration",
+      "symbols": [{"symbol_id": "lgrc9v3.native_route_arbitration:native_arbitration:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.arbitrate_native_route_candidate_set", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.native_route_arbitration",
+      "stage_id": "selection_commit",
+      "symbols": [{"symbol_id": "lgrc9v3.native_route_arbitration:selection_commit:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.commit_native_route_arbitration_selection", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.proper_time_identity_acceptance",
+      "stage_id": "acceptance_gate",
+      "symbols": [{"symbol_id": "lgrc9v3.proper_time_identity_acceptance:acceptance_gate:primary", "module": "pygrc.models.lgrc_9_v3_identity", "qualified_symbol": "evaluate_lgrc9v3_proper_time_identity_persistence", "binding_role": "diagnostic_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_identity.py", "source_sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.proper_time_identity_acceptance",
+      "stage_id": "acceptance_event_emission",
+      "symbols": [{"symbol_id": "lgrc9v3.proper_time_identity_acceptance:acceptance_event_emission:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.emit_causal_identity_acceptance", "binding_role": "mechanism_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.proper_time_identity_evaluation",
+      "stage_id": "proper_time_identity_evaluation",
+      "symbols": [{"symbol_id": "lgrc9v3.proper_time_identity_evaluation:proper_time_identity_evaluation:primary", "module": "pygrc.models.lgrc_9_v3_identity", "qualified_symbol": "evaluate_lgrc9v3_proper_time_identity_persistence", "binding_role": "diagnostic_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_identity.py", "source_sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.pulse_substrate_coupling_producer",
+      "stage_id": "pulse_surface_read",
+      "symbols": [{"symbol_id": "lgrc9v3.pulse_substrate_coupling_producer:pulse_surface_read:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._latest_route_local_pulse_contact_surface_row", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.pulse_substrate_coupling_producer",
+      "stage_id": "coupled_packet_schedule",
+      "symbols": [{"symbol_id": "lgrc9v3.pulse_substrate_coupling_producer:coupled_packet_schedule:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.produce_events", "binding_role": "producer_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4", "required_keyword_arguments": {"policy": "packet_departure_from_pulse_substrate_coupling_policy"}}]
+    },
+    {
+      "pathway_id": "lgrc9v3.route_aspect_surplus",
+      "stage_id": "surplus_evaluation",
+      "symbols": [{"symbol_id": "lgrc9v3.route_aspect_surplus:surplus_evaluation:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3._route_aspect_pole_mass", "binding_role": "load_bearing_internal", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "lgrc9v3.route_aspect_surplus",
+      "stage_id": "surplus_packet_schedule",
+      "symbols": [{"symbol_id": "lgrc9v3.route_aspect_surplus:surplus_packet_schedule:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.produce_events", "binding_role": "producer_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4", "required_keyword_arguments": {"policy": "packet_departure_from_route_aspect_surplus_policy"}}]
+    },
+    {
+      "pathway_id": "pygrc.restoration_replay_identity",
+      "stage_id": "snapshot_serialization",
+      "symbols": [{"symbol_id": "pygrc.restoration_replay_identity:snapshot_serialization:primary", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.snapshot", "binding_role": "restoration_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}]
+    },
+    {
+      "pathway_id": "pygrc.restoration_replay_identity",
+      "stage_id": "load_and_reset_restoration",
+      "symbols": [
+        {"symbol_id": "pygrc.restoration_replay_identity:load_and_reset_restoration:load", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.load", "binding_role": "restoration_entrypoint", "call_kind": "class_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"},
+        {"symbol_id": "pygrc.restoration_replay_identity:load_and_reset_restoration:reset", "module": "pygrc.models.lgrc_9_v3_runtime", "qualified_symbol": "LGRC9V3.reset", "binding_role": "restoration_entrypoint", "call_kind": "instance_method", "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py", "source_sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"}
+      ]
+    },
+    {
+      "pathway_id": "pygrc.restoration_replay_identity",
+      "stage_id": "identity_and_replay_validation",
+      "symbols": [{"symbol_id": "pygrc.restoration_replay_identity:identity_and_replay_validation:primary", "module": "pygrc.models.lgrc_9_v3_restoration", "qualified_symbol": "lgrc9v3_restoration_identity_v2", "binding_role": "restoration_entrypoint", "call_kind": "module_function", "source_path": "src/pygrc/models/lgrc_9_v3_restoration.py", "source_sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"}]
+    }
+  ]
+}

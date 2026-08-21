@@ -179,6 +179,15 @@ and run the [conformance checker](scripts/check_grc_lgrc_causal_pathway_conforma
 This is promotion-time review guidance, not mandatory registry boilerplate for
 unrelated or exploratory contributions.
 
+When evidence-bearing consumer, integration, producer, or adapter code makes
+an accepted claim that it used an admitted GRC/LGRC pathway or composition,
+follow the [binding and claim-provenance guide](docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
+and include a valid lock and actual-use receipt. If no admitted relation exists,
+declare a distinct unregistered candidate. A candidate declaration is not
+promotion, and unbound direct execution is not claim-qualified provenance.
+This requirement applies to accepted causal-pathway claims, not to unrelated
+code or ordinary internal calls inside an admitted mechanism.
+
 ## External Returns and Independent Continuations
 
 An external result can become consequential here without moving its

@@ -1,0 +1,29 @@
+{
+  "artifact": "I116 low-context causal-pathway consumer replay result",
+  "claim_qualified": true,
+  "consumer_inputs": [
+    "docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md",
+    "specs/grc-lgrc-causal-pathway-contracts.json",
+    "specs/grc-lgrc-causal-pathway-composition-matrix.json",
+    "specs/grc-lgrc-causal-pathway-selection-guide.json",
+    "specs/grc-lgrc-causal-pathway-bindings.json",
+    "implementation/evidence/causal-pathway-binding/i116-low-context-consumer-specification.json"
+  ],
+  "expected_identity_oracle_consumed": false,
+  "lock_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
+  "receipt_digest": "a3b5602100d2024f90fdf67e6b80994150b1240faaf68a42d8bcd00374f848de",
+  "schema_version": "i116_low_context_causal_pathway_consumer_replay_v1",
+  "selected_pathway_id": "lgrc9v3.explicit_packet_transport",
+  "selected_stage_ids": [
+    "packet_schedule",
+    "source_debit",
+    "target_credit"
+  ],
+  "selected_symbol_ids": [
+    "lgrc9v3.explicit_packet_transport:packet_schedule:primary",
+    "lgrc9v3.explicit_packet_transport:source_debit:primary",
+    "lgrc9v3.explicit_packet_transport:target_credit:primary"
+  ],
+  "selection_case_title": "Existing event-time packet pathway",
+  "semantic_selection_performed_by_binder": false
+}

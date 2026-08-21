@@ -6,7 +6,6 @@ import pathlib
 import sys
 import unittest
 
-
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
 
@@ -19,6 +18,7 @@ class ImportSmokeTest(unittest.TestCase):
 
     def test_package_imports(self) -> None:
         import pygrc
+        import pygrc.causal_pathways
         import pygrc.core
         import pygrc.integrations
         import pygrc.landscapes
@@ -26,6 +26,7 @@ class ImportSmokeTest(unittest.TestCase):
         import pygrc.utils
 
         self.assertIsNotNone(pygrc)
+        self.assertIsNotNone(pygrc.causal_pathways)
         self.assertIsNotNone(pygrc.core)
         self.assertIsNotNone(pygrc.integrations)
         self.assertIsNotNone(pygrc.landscapes)

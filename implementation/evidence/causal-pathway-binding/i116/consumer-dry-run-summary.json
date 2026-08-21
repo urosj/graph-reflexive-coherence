@@ -1,0 +1,241 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway binding I116 consumer dry runs",
+  "binding_conformance": [
+    {
+      "case_id": "01-simple-native-pathway",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "02-producer-mediated-cmp20",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "03-explicit-adapter-cmp26",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "04-diagnostic-only-cmp04",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "05-ambiguous-crossing-not-selected",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "08-unregistered-candidate",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "09-dynamic-a-b-choice",
+      "issue_count": 0,
+      "status": "passed"
+    },
+    {
+      "case_id": "10-multi-edge-use-graph",
+      "issue_count": 0,
+      "status": "passed"
+    }
+  ],
+  "case_count": 10,
+  "cases": [
+    {
+      "assertions": {
+        "actual_pathway_ids": [
+          "lgrc9v3.explicit_packet_transport"
+        ],
+        "claim_status": "admitted_bounded",
+        "composition_edge_count": 0
+      },
+      "case_id": "01-simple-native-pathway",
+      "lock_digest": "6a66223359546e32a55bf08e128b89106346e217874df4cb74d591f1dafec493",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.lock.json",
+      "receipt_digest": "a3b5602100d2024f90fdf67e6b80994150b1240faaf68a42d8bcd00374f848de",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/01-simple-native-pathway.receipt.json",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "composition_ids": [
+          "CMP-20"
+        ],
+        "contains_producer_cut": true,
+        "dataflow_contract_id": "CMP-20:runtime-object-flow:v1",
+        "dataflow_witness_kind": "externally_attested_runtime_object_flow",
+        "lawful_native_blocked": true,
+        "runtime_object_id": "runtime-object:0"
+      },
+      "case_id": "02-producer-mediated-cmp20",
+      "lock_digest": "39f0e56dd2cf33daf60df852ea8f70f3a6b3d7ced00781328330f43647479014",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.lock.json",
+      "receipt_digest": "74a122add37eb0088c9153e521ecd3a39bf2b72ef65f362a58dac735b5608a07",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/02-producer-mediated-cmp20.receipt.json",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "adapter_id": "build_lgrc9v3_corrected_cascade_runtime",
+        "adapter_owner": "library_construction_adapter_invoked_by_caller",
+        "adapter_result_is_target_instance": true,
+        "composition_status": "lawful_with_explicit_adapter",
+        "contains_adapter_cut": true,
+        "crossing_invocation_count": 1
+      },
+      "case_id": "03-explicit-adapter-cmp26",
+      "lock_digest": "fd98de606a66fb5d1bc5a9abc6c9df188c1d6caaf33c1b3fc14da3a99f96eba5",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.lock.json",
+      "receipt_digest": "6b783d75f914ec508de974d5d11a392db432aa814ae60ea38832589edc13007c",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/03-explicit-adapter-cmp26.receipt.json",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "blocked_claims": [
+          "ordinary LGRC behavior",
+          "native current-to-packet adapter",
+          "native event-to-action crossing"
+        ],
+        "claim_status": "bounded_with_diagnostic_cut",
+        "composition_declared_unused": false,
+        "composition_edge_count": 1,
+        "composition_witness_count": 1,
+        "contains_diagnostic_only_relation": true
+      },
+      "case_id": "04-diagnostic-only-cmp04",
+      "lock_digest": "87785901941e89adeead5a217fa017b9a944c56d7b0f2af6dc0ca6377cc15159",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.lock.json",
+      "receipt_digest": "1c77fadab1939e1d71eca489f67a93f791ae873c2a9dbae121c590cd3eaf2081",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/04-diagnostic-only-cmp04.receipt.json",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "claim_qualified": false,
+        "graph_edge_count": 0,
+        "registered_alternatives_retained": [
+          "CMP-07",
+          "CMP-16"
+        ],
+        "registered_compositions_exercised": []
+      },
+      "case_id": "05-ambiguous-crossing-not-selected",
+      "lock_digest": "352cb02d94e3f0a15f121bad221aecc8f25cd77512d695488818145d3657723d",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.lock.json",
+      "receipt_digest": "8f894af9c1872b6b11d7299cb99ce099dd54263a8f789fd90ea1a82293de7185",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/05-ambiguous-crossing-not-selected.receipt.json",
+      "status": "passed"
+    },
+    {
+      "accepted_as_admitted": false,
+      "case_id": "06-unsupported-crossing-rejected",
+      "composition_id": "CMP-06",
+      "matrix_status": "unsupported_missing_crossing",
+      "rejection_message": "composition CMP-06 has non-bindable status unsupported_missing_crossing; open a distinct candidate only for genuinely new experimental work",
+      "rejection_type": "UnbindableCompositionError",
+      "status": "passed"
+    },
+    {
+      "accepted_as_admitted": false,
+      "case_id": "07-invalid-relabel-rejected",
+      "composition_id": "CMP-05",
+      "matrix_status": "invalid_relabel",
+      "rejection_message": "composition CMP-05 has non-bindable status invalid_relabel; open a distinct candidate only for genuinely new experimental work",
+      "rejection_type": "UnbindableCompositionError",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "candidate_edge_kind": "experimental_unregistered_candidate",
+        "candidate_id": "experiment.i116.packet_to_snapshot_relation",
+        "candidate_mechanism_invocation_count": 1,
+        "candidate_witness_kind": "identity_verified_candidate_crossing_execution",
+        "experimental_unregistered": true,
+        "promotion_status": "none",
+        "proposed_relation_claim_status": "descriptive_unreviewed_not_claim_qualified"
+      },
+      "case_id": "08-unregistered-candidate",
+      "lock_digest": "e1c728e8ad882dc1aace3525ab94bfbd3eef90264e67cf1a25d9dfa2c8bcf019",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.lock.json",
+      "receipt_digest": "6a4b87c7c77b8a23e62143a6c479b9bbaa2b9671c3a2164d50695d1890129572",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/08-unregistered-candidate.receipt.json",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "actual_pathway_ids_used": [
+          "pygrc.restoration_replay_identity"
+        ],
+        "allowed_pathway_ids": [
+          "lgrc9v3.explicit_packet_transport",
+          "pygrc.restoration_replay_identity"
+        ],
+        "binder_selected": false,
+        "selected_pathway_ids": [
+          "pygrc.restoration_replay_identity"
+        ],
+        "selection_authority": "i116_consumer_boolean",
+        "selection_scope_count": 1,
+        "unrelated_pathway_used_outside_scope": true
+      },
+      "case_id": "09-dynamic-a-b-choice",
+      "lock_digest": "2a84e2984b2654b4dd214e42deee707067baf2148a54e97d9f3236f7e85fcd97",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.lock.json",
+      "receipt_digest": "0e9b75ad8d83c75076645fa246a448977eeb49fff4b234761a357a661145addb",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/09-dynamic-a-b-choice.receipt.json",
+      "status": "passed"
+    },
+    {
+      "assertions": {
+        "composition_ids": [
+          "CMP-04",
+          "CMP-20"
+        ],
+        "edge_count": 2,
+        "larger_chain_claim_synthesized": false,
+        "synthesized_chain_claim": false
+      },
+      "case_id": "10-multi-edge-use-graph",
+      "lock_digest": "359651112e86c23cb2ccfde04500a1e922438718453aba3582387159eb8b6e6f",
+      "lock_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.lock.json",
+      "receipt_digest": "a97eab3ff1372d8519bada4db6d7ae19f068da0c5f34daeb8d19807ee7fb7cb5",
+      "receipt_path": "implementation/evidence/causal-pathway-binding/i116/10-multi-edge-use-graph.receipt.json",
+      "status": "passed"
+    }
+  ],
+  "iteration": 116,
+  "low_context_replay": {
+    "binding_conformance_passed": true,
+    "consumer_command": [
+      ".venv/bin/python",
+      "examples/causal_pathway_binding_low_context_consumer.py",
+      "--specification",
+      "implementation/evidence/causal-pathway-binding/i116-low-context-consumer-specification.json",
+      "--lock",
+      "implementation/evidence/causal-pathway-binding/i116/low-context-replay.lock.json",
+      "--receipt",
+      "implementation/evidence/causal-pathway-binding/i116/low-context-replay.receipt.json",
+      "--result",
+      "implementation/evidence/causal-pathway-binding/i116/low-context-replay.result.json",
+      "--acceptance-anchor",
+      "implementation/evidence/causal-pathway-binding/binding-acceptance-anchor.json",
+      "--trusted-anchor-digest",
+      "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2"
+    ],
+    "consumer_input_contains_expected_ids": false,
+    "consumer_result_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.result.json",
+    "identity_match": true,
+    "oracle_digest": "dd1f4a5d4c326dc73af053f01943bbdbe4c42b2d2360b643f3a3fa2ea0b3f000",
+    "oracle_path": "implementation/evidence/causal-pathway-binding/i116/low-context-replay.oracle.json",
+    "status": "passed"
+  },
+  "passed_case_count": 10,
+  "runtime_behavior_changed": false,
+  "schema_version": "phase8_grclgrc_causal_pathway_binding_i116_dry_runs_v1",
+  "status": "passed",
+  "summary_digest": "d00ca5cc49911c14347ce19660b06cb1568b1b3f1dc24fc967cc5225021e2f7e"
+}

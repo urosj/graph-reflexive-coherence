@@ -1,0 +1,18 @@
+{
+  "artifact": "causal-pathway-candidate-mechanism-evidence",
+  "candidate_kind": "composition",
+  "executable_symbol": {
+    "binding_role": "candidate_mechanism_entrypoint",
+    "call_kind": "module_function",
+    "module": "tests.fixtures.causal_pathway_cmp05_candidate_mechanisms",
+    "qualified_symbol": "diagnostic_to_packet_candidate_nonnull_default",
+    "source_path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+    "source_sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd",
+    "symbol_id": "candidate-mechanism:fixture.nonnull_default_diagnostic_packet"
+  },
+  "mechanism_id": "fixture.nonnull_default_diagnostic_packet",
+  "proposed_source_pathway_id": "lgrc9v3.diagnostic_grc_reconstruction",
+  "proposed_target_pathway_id": "lgrc9v3.explicit_packet_transport",
+  "schema_version": "causal_pathway_candidate_mechanism_evidence_v2",
+  "supported_relation": "new externally owned diagnostic packet adapter"
+}
