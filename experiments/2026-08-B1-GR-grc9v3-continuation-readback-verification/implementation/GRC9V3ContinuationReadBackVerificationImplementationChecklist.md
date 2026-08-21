@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv0_executed_awaiting_scientific_acceptance
+status = grv0_accepted_grv1_P1_prepared_execution_not_started
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,9 +12,9 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV0_executed_awaiting_authorized_human_acceptance
-verification_closeout_ladder_rung_assigned = false
-verification_closeout_ceiling = GRV-C1_candidate_pending_authorized_human_acceptance
+current_gate = GRV1_P1_prepared_execution_not_started
+verification_closeout_ladder_rung_assigned = true
+verification_closeout_ceiling = GRV-C1_accepted
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -135,8 +135,8 @@ l04_selected = false
 - [x] Verify no `src/` or existing-test diff during P0 preparation.
 - [x] Emit GRV0 JSON artifacts and report.
 - [x] Emit and validate the GRV0 result receipt.
-- [ ] Record GRV0 scientific acceptance in a separate accepted anchor before GRV1.
-- [ ] Assign `GRV-C1` only if exact baseline and tests are admitted.
+- [x] Record GRV0 scientific acceptance in a separate accepted anchor before GRV1.
+- [x] Assign `GRV-C1` only if exact baseline and tests are admitted.
 - [x] Keep all scientific evidence flags false.
 
 GRV0 mechanical result:

@@ -1,0 +1,28 @@
+{
+  "schema_version": "b1_grv1_p1_package_manifest_v1",
+  "package_status": "clean_P1_input_when_contained_in_committed_revision",
+  "gate_id": "GRV1",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV0",
+    "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
+    "receipt_payload_sha256": "a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df",
+    "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+    "acceptance_anchor_commit": "454b2c55d1682c3ead46f6036ed725445b37fc08"
+  },
+  "gate_input_change_class": "implementation_only_no_method_change",
+  "protocol_readmission_required": false,
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "positive_evidence_opened": false
+  },
+  "executable_surfaces": [
+    "scripts/validate_instrumentation.py",
+    "scripts/run_all.py",
+    "tests/test_instrumentation.py"
+  ],
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+  "claim_ceiling": "exact_runtime_dependency_and_orientation_semantics_only"
+}

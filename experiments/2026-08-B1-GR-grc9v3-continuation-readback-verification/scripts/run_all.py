@@ -1,4 +1,4 @@
-"""Serial B1-GR gate orchestrator. Only GRV0 is executable at P0."""
+"""Serial B1-GR gate orchestrator through the implemented gate boundary."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ from artifact_io import EXPERIMENT_ROOT, git, sha256_file, write_json
 from capture_repository_baseline import capture
 from gate_receipts import finalize_receipt, validate_receipt
 from serialize_theory_contract import serialize
+from validate_instrumentation import run_grv1
 
 
 def grv0_output_paths(output_root: Path) -> list[Path]:
@@ -97,6 +98,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--gate", choices=[f"GRV{index}" for index in range(9)], required=True)
     args = parser.parse_args()
+    if args.gate == "GRV1":
+        run_grv1()
+        print("GRV1 mechanically validated; scientific acceptance anchor is pending.")
+        return
     if args.gate != "GRV0":
         anchor = EXPERIMENT_ROOT / f"outputs/gates/grv{int(args.gate[-1]) - 1}_acceptance_anchor.json"
         if not anchor.exists():

@@ -28,7 +28,7 @@ class GateDependencyTest(unittest.TestCase):
 
     def test_orchestrator_refuses_missing_acceptance_anchor(self) -> None:
         result = subprocess.run(
-            [sys.executable, str(ROOT / "scripts/run_all.py"), "--gate", "GRV1"],
+            [sys.executable, str(ROOT / "scripts/run_all.py"), "--gate", "GRV2"],
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
