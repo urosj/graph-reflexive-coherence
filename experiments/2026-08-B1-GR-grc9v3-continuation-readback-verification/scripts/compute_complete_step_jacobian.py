@@ -343,10 +343,175 @@ def _stratum_margin(model: GRC9V3) -> dict[str, float]:
     }
 
 
+def _flatten_numbers(value: Any) -> list[float]:
+    if isinstance(value, bool):
+        return []
+    if isinstance(value, (int, float)):
+        return [float(value)]
+    if isinstance(value, dict):
+        result: list[float] = []
+        for key in sorted(value, key=str):
+            result.extend(_flatten_numbers(value[key]))
+        return result
+    if isinstance(value, (list, tuple)):
+        result = []
+        for child in value:
+            result.extend(_flatten_numbers(child))
+        return result
+    return []
+
+
+def _smooth_response_surfaces(
+    model: GRC9V3, chart: BranchCoordinateChart
+) -> dict[str, list[float]]:
+    state = model.get_state()
+    return {
+        "Phi": [float(state.potential[node_id]) for node_id in chart.node_order],
+        "G": [
+            float(value)
+            for node_id in chart.node_order
+            for value in state.nodes[node_id].gradient_row_basis
+        ],
+        "Hs": [
+            float(value)
+            for node_id in chart.node_order
+            for value in state.nodes[node_id].signed_hessian_row_basis
+        ],
+        "Kcache": _flatten_numbers(
+            state.cached_quantities.get("hybrid_node_tensors", {})
+        ),
+    }
+
+
+def _matrix_diagnostics(
+    matrix: np.ndarray,
+    chart: BranchCoordinateChart,
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    eigenvalues, right_vectors = np.linalg.eig(matrix)
+    left_values, left_vectors = np.linalg.eig(matrix.T)
+    right_residuals = []
+    participation = []
+    slices = chart.block_slices
+    for index, value in enumerate(eigenvalues):
+        vector = right_vectors[:, index]
+        right_residuals.append(
+            float(np.linalg.norm(matrix @ vector - value * vector, ord=2))
+        )
+        denominator = float(np.vdot(vector, vector).real)
+        participation.append(
+            {
+                block: float(
+                    np.vdot(vector[start:end], vector[start:end]).real
+                    / max(denominator, 1e-300)
+                )
+                for block, (start, end) in slices.items()
+            }
+        )
+    left_residuals = [
+        float(
+            np.linalg.norm(
+                matrix.T @ left_vectors[:, index]
+                - left_values[index] * left_vectors[:, index],
+                ord=2,
+            )
+        )
+        for index in range(len(left_values))
+    ]
+    mode_rows = []
+    for index, value in enumerate(eigenvalues):
+        magnitude = abs(value)
+        if magnitude > 1.0 + 1e-6:
+            classification = "unstable"
+        elif abs(magnitude - 1.0) <= 1e-6:
+            classification = "neutral_or_marginal"
+        elif abs(value.imag) > 1e-8:
+            classification = "stable_oscillatory"
+        elif magnitude >= 0.9:
+            classification = "stable_slow"
+        else:
+            classification = "stable_fast_or_intermediate"
+        mode_rows.append(
+            {
+                "mode_index": index,
+                "eigenvalue": {"real": float(value.real), "imag": float(value.imag)},
+                "magnitude": float(magnitude),
+                "classification": classification,
+                "right_residual_l2": right_residuals[index],
+                "block_participation": participation[index],
+                "retention_interpretation_allowed": False,
+            }
+        )
+    finite_horizon = []
+    for horizon in config["grv3_a"]["codec_horizons"]:
+        propagator = np.linalg.matrix_power(matrix, int(horizon))
+        singular_values = np.linalg.svd(propagator, compute_uv=False)
+        finite_horizon.append(
+            {
+                "horizon_complete_beats": int(horizon),
+                "largest_singular_value": float(max(singular_values, default=0.0)),
+                "state_norm": "euclidean_on_declared_tangent_coordinate",
+            }
+        )
+    condition = float(np.linalg.cond(right_vectors))
+    clusters = [
+        {
+            "cluster_id": f"mode-{row['mode_index']}",
+            "mode_indices": [row["mode_index"]],
+            "classification": row["classification"],
+            "retention_interpretation_allowed": False,
+        }
+        for row in mode_rows
+    ]
+    return {
+        "modes": mode_rows,
+        "clusters": clusters,
+        "maximum_right_residual_l2": max(right_residuals, default=0.0),
+        "maximum_left_residual_l2": max(left_residuals, default=0.0),
+        "eigenvector_condition_number": condition,
+        "finite_horizon_nonnormal_diagnostics": finite_horizon,
+        "nonnormal_primary_mode": "finite_horizon",
+        "fast_slow_status": "not_identifiable_without_separate_cluster_separation_review",
+        "conservation_mode_policy": "removed_by_zero_sum_C_tangent_basis",
+        "gauge_mode_status": "none_declared_in_admitted_coordinate",
+        "branch_tangent_status": "not_separately_identified",
+    }
+
+
+def _response_jacobians(
+    chart: BranchCoordinateChart,
+    base_coordinate: np.ndarray,
+    step_size: float,
+) -> dict[str, list[list[float]]]:
+    matrices: dict[str, np.ndarray] = {}
+    for column in range(len(base_coordinate)):
+        plus_coordinate = base_coordinate.copy()
+        minus_coordinate = base_coordinate.copy()
+        plus_coordinate[column] += step_size
+        minus_coordinate[column] -= step_size
+        plus = chart.decode_model(plus_coordinate)
+        minus = chart.decode_model(minus_coordinate)
+        plus.step()
+        minus.step()
+        plus_surfaces = _smooth_response_surfaces(plus, chart)
+        minus_surfaces = _smooth_response_surfaces(minus, chart)
+        for surface in plus_surfaces:
+            if surface not in matrices:
+                matrices[surface] = np.zeros(
+                    (len(plus_surfaces[surface]), len(base_coordinate)), dtype=float
+                )
+            matrices[surface][:, column] = (
+                np.asarray(plus_surfaces[surface], dtype=float)
+                - np.asarray(minus_surfaces[surface], dtype=float)
+            ) / (2.0 * step_size)
+    return {key: value.tolist() for key, value in matrices.items()}
+
+
 def stratum_and_jacobian_audit(
     model: GRC9V3,
     chart: BranchCoordinateChart,
     config: dict[str, Any],
+    tolerances: dict[str, Any],
 ) -> dict[str, Any]:
     base_coordinate = chart.encode_model(model)
     baseline_signature = categorical_signature(
@@ -444,42 +609,86 @@ def stratum_and_jacobian_audit(
         column_rows.extend(step_rows)
         if all(row["derivative_column_admitted"] for row in step_rows):
             matrices.append(matrix.tolist())
-    square_admitted = bool(
+    column_gate_passed = bool(
         all_columns_admitted
         and len(matrices) == len(config["grv3_b"]["finite_difference_steps"])
     )
+    convergence_errors = []
+    if column_gate_passed:
+        for left, right in zip(matrices, matrices[1:], strict=False):
+            left_array = np.asarray(left, dtype=float)
+            right_array = np.asarray(right, dtype=float)
+            convergence_errors.append(
+                float(
+                    np.linalg.norm(left_array - right_array, ord=2)
+                    / max(1.0, float(np.linalg.norm(right_array, ord=2)))
+                )
+            )
+    convergence_passed = bool(
+        column_gate_passed
+        and all(
+            value <= float(tolerances["adjacent_step_relative_column_error_max"])
+            for value in convergence_errors
+        )
+    )
+    square_admitted = bool(column_gate_passed and convergence_passed)
     if square_admitted:
         selected = np.asarray(matrices[-1], dtype=float)
-        eigenvalues = np.linalg.eigvals(selected)
-        eigen_records = [
-            {"real": float(value.real), "imag": float(value.imag)}
-            for value in eigenvalues
-        ]
+        diagnostics = _matrix_diagnostics(selected, chart, config)
         jacobian: list[list[float]] | None = selected.tolist()
+        response_jacobians = _response_jacobians(
+            chart,
+            base_coordinate,
+            float(config["grv3_b"]["finite_difference_steps"][-1]),
+        )
     else:
-        eigen_records = []
+        diagnostics = {
+            "modes": [],
+            "clusters": [],
+            "blocked_reason": (
+                "non_smooth_stratum"
+                if not column_gate_passed
+                else "finite_difference_nonconvergence"
+            ),
+        }
         jacobian = None
+        response_jacobians = {}
+    if square_admitted:
+        status = "admitted"
+    elif not column_gate_passed:
+        status = "blocked_non_smooth_stratum"
+    else:
+        status = "blocked_finite_difference_nonconvergence"
     return {
+        "causal_coordinate": list(chart.admitted_blocks),
+        "coordinate_order": list(chart.coordinate_labels),
         "baseline_categorical_signature": baseline_signature,
         "baseline_stratum_margins": baseline_margin,
         "column_audits": column_rows,
         "all_columns_admitted": all_columns_admitted,
-        "square_transition_jacobian_status": (
-            "admitted" if square_admitted else "blocked_non_smooth_stratum"
-        ),
+        "column_gate_passed": column_gate_passed,
+        "finite_difference_convergence": {
+            "adjacent_matrix_relative_errors": convergence_errors,
+            "maximum_allowed": float(
+                tolerances["adjacent_step_relative_column_error_max"]
+            ),
+            "passed": convergence_passed,
+        },
+        "square_transition_jacobian_status": status,
         "jacobian": jacobian,
         "candidate_step_matrices": matrices if square_admitted else [],
-        "eigenvalues": eigen_records,
+        "temporal_mode_diagnostics": diagnostics,
+        "smooth_response_jacobians": response_jacobians,
         "slow_cluster_status": (
-            "eligible_for_classification"
+            "classified_without_retention_promotion"
             if square_admitted
             else "not_computed_derivative_blocked"
         ),
         "response_jacobian_status": (
-            "eligible" if square_admitted else "blocked_with_input_derivative"
+            "computed" if square_admitted else "blocked_with_input_derivative"
         ),
         "categorical_surface_status": "recorded_separately",
-        "blocked_is_not_unconverged": not square_admitted,
+        "stratum_blocked_is_not_unconverged": not column_gate_passed,
     }
 
 
@@ -598,8 +807,10 @@ def write_report(payload: dict[str, Any]) -> Path:
         "scientific_acceptance = awaiting_human_review",
         f"branches_audited = {summary['branch_count']}",
         f"bounded_causal_closure_candidates = {summary['causal_closure_pass_count']}",
-        f"classical_square_jacobians_admitted = {summary['jacobian_admitted_count']}",
-        f"derivative_blocked_branches = {summary['jacobian_blocked_count']}",
+        f"full_C_W_J_square_jacobians_admitted = {summary['full_C_W_J_jacobian_admitted_count']}",
+        f"reduced_coordinate_matrices_admitted = {summary['reduced_coordinate_matrix_count']}",
+        f"branches_with_reduced_temporal_coordinates = {summary['branches_with_admitted_reduced_temporal_coordinate']}",
+        f"branches_without_admitted_temporal_coordinates = {summary['branches_without_any_admitted_temporal_coordinate']}",
         "continuation = unsupported",
         "retention = unsupported",
         "readback = unsupported",
@@ -622,18 +833,25 @@ def write_report(payload: dict[str, Any]) -> Path:
         "",
         "## GRV3-B: Classical Derivative Admission",
         "",
-        "The accepted GRV2 branches have zero authoritative current. Their sink/basin",
-        "identity therefore has zero two-sided current-sign margin. Under the sealed",
-        "GRV3 rule, a column without positive two-sided stratum margin is blocked, not",
-        "reported as an unconverged derivative. No matrix, eigenvalue, slow cluster,",
-        "or temporal multiplier is inferred for a blocked branch.",
+        "All accepted rows satisfy the GRV2 authoritative zero-current tolerance;",
+        f"`{summary['exact_zero_current_margin_branch_count']}` rows are exactly on the",
+        "current-sign boundary, while the remaining rows retain only small numerical",
+        "distance from it. Every full `(C,W,J)` chart has at least one blocked column,",
+        "so no complete `(C,W,J)` matrix is emitted. A failed stratum column is blocked,",
+        "not reported as an unconverged derivative.",
+        "",
+        f"The frozen reduction audit admits `{summary['reduced_coordinate_matrix_count']}`",
+        f"reduced matrices across `{summary['branches_with_admitted_reduced_temporal_coordinate']}`",
+        "branches. Both `C-W` and `C` candidates are retained where admitted; GRV3 does",
+        "not select one primary coordinate after seeing spectra. These are bounded",
+        "branch-envelope reductions, not global elimination of `W` or `J`.",
         "",
         "## GRV3-C: Response And Categorical Surfaces",
         "",
-        "Smooth response Jacobians inherit the GRV3-B input-column gate and remain",
-        "blocked where the classical derivative is unavailable. Current-sign, sink,",
-        "basin, event, and budget-active-set behavior is retained as categorical",
-        "threshold evidence rather than inserted into an eigensystem.",
+        "Smooth response Jacobians are computed only for admitted reduced-coordinate",
+        "matrices and remain blocked for unavailable charts. Current-sign, sink, basin,",
+        "event, and budget-active-set behavior is retained as categorical threshold",
+        "evidence rather than inserted into an eigensystem.",
         "",
         "## Claim Boundary",
         "",
@@ -676,16 +894,46 @@ def run_grv3() -> None:
         codec = codec_audit(model, full_chart, config, tolerances)
         reduction_audits = {}
         reduction_status = {}
+        reduction_charts = {}
         for blocks in (("C", "W"), ("C",)):
             chart = BranchCoordinateChart.from_model(model, blocks)
             audit = codec_audit(model, chart, config, tolerances)
             key = "C_W" if blocks == ("C", "W") else "C"
             reduction_audits[key] = audit
             reduction_status[key] = bool(audit["bounded_causal_closure_passed"])
+            reduction_charts[key] = chart
         counterfactual = counterfactual_audit(
             model, full_chart, config, tolerances, reduction_status
         )
-        stratum = stratum_and_jacobian_audit(model, full_chart, config)
+        coordinate_jacobians = {
+            "C_W_J": stratum_and_jacobian_audit(model, full_chart, config, tolerances)
+        }
+        for key in ("C_W", "C"):
+            if reduction_status[key]:
+                coordinate_jacobians[key] = stratum_and_jacobian_audit(
+                    model, reduction_charts[key], config, tolerances
+                )
+            else:
+                coordinate_jacobians[key] = {
+                    "causal_coordinate": list(reduction_charts[key].admitted_blocks),
+                    "coordinate_order": list(reduction_charts[key].coordinate_labels),
+                    "square_transition_jacobian_status": "blocked_by_codec",
+                    "jacobian": None,
+                    "temporal_mode_diagnostics": {
+                        "modes": [],
+                        "clusters": [],
+                        "blocked_reason": "reduction_codec_failed",
+                    },
+                    "smooth_response_jacobians": {},
+                    "slow_cluster_status": "not_computed_codec_blocked",
+                    "response_jacobian_status": "blocked_with_codec",
+                    "categorical_surface_status": "retained_in_full_chart_audit",
+                }
+        admitted_coordinates = [
+            key
+            for key, audit in coordinate_jacobians.items()
+            if audit["square_transition_jacobian_status"] == "admitted"
+        ]
         causal_closure = bool(codec["bounded_causal_closure_passed"])
         row = {
             "branch_id": branch["branch_id"],
@@ -697,17 +945,17 @@ def run_grv3() -> None:
             "causal_codec": codec,
             "candidate_reduction_audits": reduction_audits,
             "counterfactual_closure": counterfactual,
-            "stratum_and_jacobian": stratum,
+            "coordinate_stratum_and_jacobian_audits": coordinate_jacobians,
+            "full_C_W_J_stratum_and_jacobian": coordinate_jacobians["C_W_J"],
+            "admitted_temporal_coordinate_candidates": admitted_coordinates,
+            "primary_temporal_coordinate_selected": False,
             "causal_strong_branch_candidate": causal_closure,
             "causal_strong_branch_status": (
                 "bounded_candidate_pending_human_review"
                 if causal_closure
                 else "blocked_by_codec"
             ),
-            "temporal_mode_evidence_supported": stratum[
-                "square_transition_jacobian_status"
-            ]
-            == "admitted",
+            "temporal_mode_evidence_supported": bool(admitted_coordinates),
             "continuation_claim_allowed": False,
             "retention_claim_allowed": False,
             "readback_claim_allowed": False,
@@ -725,19 +973,51 @@ def run_grv3() -> None:
                 "live_get_state_mutated": False,
             }
         )
-        slow_rows.append(
-            {
-                "branch_id": branch["branch_id"],
-                "status": stratum["slow_cluster_status"],
-                "clusters": [],
-                "retention_interpretation_allowed": False,
-            }
-        )
+        for key, audit in coordinate_jacobians.items():
+            diagnostics = audit["temporal_mode_diagnostics"]
+            slow_rows.append(
+                {
+                    "branch_id": branch["branch_id"],
+                    "coordinate_candidate": key,
+                    "status": audit["slow_cluster_status"],
+                    "clusters": diagnostics.get("clusters", []),
+                    "modes": diagnostics.get("modes", []),
+                    "retention_interpretation_allowed": False,
+                }
+            )
     causal_count = sum(
         bool(row["causal_strong_branch_candidate"]) for row in branch_rows
     )
-    jacobian_count = sum(
-        row["stratum_and_jacobian"]["square_transition_jacobian_status"] == "admitted"
+    admitted_matrix_count = sum(
+        audit["square_transition_jacobian_status"] == "admitted"
+        for row in branch_rows
+        for audit in row["coordinate_stratum_and_jacobian_audits"].values()
+    )
+    admitted_branch_count = sum(
+        bool(row["admitted_temporal_coordinate_candidates"]) for row in branch_rows
+    )
+    full_matrix_count = sum(
+        row["full_C_W_J_stratum_and_jacobian"]["square_transition_jacobian_status"]
+        == "admitted"
+        for row in branch_rows
+    )
+    admitted_column_count = sum(
+        bool(column["derivative_column_admitted"])
+        for row in branch_rows
+        for audit in row["coordinate_stratum_and_jacobian_audits"].values()
+        for column in audit.get("column_audits", [])
+    )
+    blocked_column_count = sum(
+        not bool(column["derivative_column_admitted"])
+        for row in branch_rows
+        for audit in row["coordinate_stratum_and_jacobian_audits"].values()
+        for column in audit.get("column_audits", [])
+    )
+    exact_zero_margin_branch_count = sum(
+        row["full_C_W_J_stratum_and_jacobian"]["baseline_stratum_margins"][
+            "current_sign_identity"
+        ]
+        == 0.0
         for row in branch_rows
     )
     summary = {
@@ -749,8 +1029,14 @@ def run_grv3() -> None:
             {row["symmetry_orbit_id"] for row in branch_rows}
         ),
         "causal_closure_pass_count": causal_count,
-        "jacobian_admitted_count": jacobian_count,
-        "jacobian_blocked_count": len(branch_rows) - jacobian_count,
+        "full_C_W_J_jacobian_admitted_count": full_matrix_count,
+        "reduced_coordinate_matrix_count": admitted_matrix_count - full_matrix_count,
+        "branches_with_admitted_reduced_temporal_coordinate": admitted_branch_count,
+        "branches_without_any_admitted_temporal_coordinate": len(branch_rows)
+        - admitted_branch_count,
+        "admitted_derivative_column_count": admitted_column_count,
+        "blocked_derivative_column_count": blocked_column_count,
+        "exact_zero_current_margin_branch_count": exact_zero_margin_branch_count,
         "all_branches_consumed_without_symmetry_reduction": len(branch_rows) == 48,
         "grv3_a_status": (
             "bounded_candidate_passed"
@@ -758,13 +1044,13 @@ def run_grv3() -> None:
             else "partial"
         ),
         "grv3_b_status": (
-            "passed"
-            if jacobian_count == len(branch_rows)
+            "partial_reduced_coordinate_temporal_mode_evidence"
+            if admitted_matrix_count > 0
             else "blocked_on_non_smooth_stratum"
         ),
         "grv3_c_status": (
-            "passed"
-            if jacobian_count == len(branch_rows)
+            "partial_reduced_coordinate_response_evidence_and_full_categorical_surfaces"
+            if admitted_matrix_count > 0
             else "categorical_surfaces_only_smooth_responses_blocked"
         ),
         "grv_c4_supported": False,
@@ -790,8 +1076,12 @@ def run_grv3() -> None:
         "summary": summary,
         "claim_boundary": {
             "causal_strong_branch_candidate": causal_count > 0,
-            "classical_transition_jacobian_supported": jacobian_count > 0,
-            "slow_cluster_supported": jacobian_count > 0,
+            "full_C_W_J_transition_jacobian_supported": full_matrix_count > 0,
+            "bounded_reduced_coordinate_transition_jacobian_supported": admitted_matrix_count
+            > 0,
+            "bounded_reduced_coordinate_temporal_modes_supported": admitted_matrix_count
+            > 0,
+            "primary_temporal_coordinate_selected": False,
             "continuation_supported": False,
             "retention_supported": False,
             "readback_supported": False,

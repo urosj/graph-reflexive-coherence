@@ -531,6 +531,13 @@ two-sided stratum margin. Such a result is recorded as a non-smooth derivative
 boundary, never as an unconverged finite difference and never as a matrix or
 spectrum.
 
+The first unaccepted P3 execution exposed a runner-completeness defect: it
+applied GRV3-B only to the full `(C,W,J)` chart even when a preregistered `C-W`
+or `C` reduction codec passed. P3.1 does not alter branches, fixtures,
+thresholds, or reduction definitions. It applies the same GRV3-B/C gates to
+every codec-admitted frozen candidate and reports all admitted candidates
+without selecting a preferred coordinate after spectra are visible.
+
 ### Work
 
 1. Admit a branch-relative continuous causal-state encoder/decoder and classify

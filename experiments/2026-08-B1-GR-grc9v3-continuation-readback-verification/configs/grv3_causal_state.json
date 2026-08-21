@@ -12,6 +12,8 @@
   "grv3_a": {
     "initial_candidate_blocks": ["C", "W", "J"],
     "candidate_reductions": [["C", "W"], ["C"]],
+    "evaluate_every_codec_admitted_reduction_under_grv3_b_and_grv3_c": true,
+    "post_result_primary_coordinate_selection_allowed": false,
     "codec_horizons": [1, 2, 5, 10],
     "audit_variants": ["branch", "C_positive", "C_negative", "W_positive", "J_positive", "J_negative"],
     "causal_closure_claim": "bounded_horizon_only",

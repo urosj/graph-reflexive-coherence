@@ -67,7 +67,9 @@ class GRV3CausalStateTest(unittest.TestCase):
 
     def test_zero_current_identity_margin_blocks_classical_jacobian(self) -> None:
         chart = BranchCoordinateChart.from_model(self.model, ("C", "W", "J"))
-        audit = stratum_and_jacobian_audit(self.model, chart, self.config)
+        audit = stratum_and_jacobian_audit(
+            self.model, chart, self.config, self.tolerances
+        )
         self.assertEqual(
             0.0, audit["baseline_stratum_margins"]["current_sign_identity"]
         )
@@ -76,7 +78,7 @@ class GRV3CausalStateTest(unittest.TestCase):
             audit["square_transition_jacobian_status"],
         )
         self.assertIsNone(audit["jacobian"])
-        self.assertTrue(audit["blocked_is_not_unconverged"])
+        self.assertTrue(audit["stratum_blocked_is_not_unconverged"])
         self.assertFalse(
             any(row["derivative_column_admitted"] for row in audit["column_audits"])
         )
@@ -89,6 +91,39 @@ class GRV3CausalStateTest(unittest.TestCase):
         self.assertFalse(boundaries["runtime_change_authorized"])
         self.assertFalse(boundaries["src_change_authorized"])
         self.assertFalse(boundaries["existing_test_change_authorized"])
+
+    def test_every_codec_admitted_reduction_must_reach_grv3_b_c(self) -> None:
+        contract = self.config["grv3_a"]
+        self.assertTrue(
+            contract["evaluate_every_codec_admitted_reduction_under_grv3_b_and_grv3_c"]
+        )
+        self.assertFalse(contract["post_result_primary_coordinate_selection_allowed"])
+
+    def test_nonuniform_reference_admits_reduced_not_full_coordinate(self) -> None:
+        model = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-017.json"))
+        full = BranchCoordinateChart.from_model(model, ("C", "W", "J"))
+        reduced = BranchCoordinateChart.from_model(model, ("C", "W"))
+        full_result = stratum_and_jacobian_audit(
+            model, full, self.config, self.tolerances
+        )
+        reduced_result = stratum_and_jacobian_audit(
+            model, reduced, self.config, self.tolerances
+        )
+        self.assertEqual(
+            "blocked_non_smooth_stratum",
+            full_result["square_transition_jacobian_status"],
+        )
+        self.assertEqual(
+            "admitted", reduced_result["square_transition_jacobian_status"]
+        )
+        self.assertTrue(reduced_result["smooth_response_jacobians"])
+        self.assertTrue(reduced_result["temporal_mode_diagnostics"]["modes"])
+        self.assertTrue(
+            all(
+                not mode["retention_interpretation_allowed"]
+                for mode in reduced_result["temporal_mode_diagnostics"]["modes"]
+            )
+        )
 
 
 if __name__ == "__main__":

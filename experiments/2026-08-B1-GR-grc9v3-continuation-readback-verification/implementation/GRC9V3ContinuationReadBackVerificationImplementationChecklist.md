@@ -461,6 +461,11 @@ writeback = unsupported
 - [x] Freeze the `(C,W,J)` candidate chart, bounded reductions, horizons, step sizes,
   categorical surfaces, and claim ceiling in `configs/grv3_causal_state.json`.
 - [x] Keep runtime, `src/`, and pre-existing tests unchanged.
+- [x] Supersede the unaccepted P3 execution because the runner audited reduced
+  codecs but did not apply GRV3-B/C to codec-admitted reductions.
+- [x] Preserve branches, fixtures, thresholds, reduction definitions, and claim ceiling.
+- [x] Apply GRV3-B/C to every codec-admitted `C-W` and `C` candidate in P3.1.
+- [x] Forbid outcome-driven selection of one primary reduced coordinate.
 
 - [ ] Freeze and test the branch-relative causal-state encoder and decoder.
 - [ ] Require coordinate round trip `E_X(D_X(x)) ~= x`.

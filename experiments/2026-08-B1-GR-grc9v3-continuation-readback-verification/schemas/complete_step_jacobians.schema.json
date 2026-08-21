@@ -19,8 +19,11 @@
         "summary": {
           "type": "object",
           "required": [
-            "branch_count", "causal_closure_pass_count", "jacobian_admitted_count",
-            "jacobian_blocked_count", "all_branches_consumed_without_symmetry_reduction"
+            "branch_count", "causal_closure_pass_count",
+            "full_C_W_J_jacobian_admitted_count", "reduced_coordinate_matrix_count",
+            "branches_with_admitted_reduced_temporal_coordinate",
+            "branches_without_any_admitted_temporal_coordinate",
+            "all_branches_consumed_without_symmetry_reduction"
           ]
         }
       }
