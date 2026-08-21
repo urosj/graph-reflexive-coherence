@@ -538,6 +538,19 @@ thresholds, or reduction definitions. It applies the same GRV3-B/C gates to
 every codec-admitted frozen candidate and reports all admitted candidates
 without selecting a preferred coordinate after spectra are visible.
 
+The unaccepted P3.1 execution then exposed an interpretation-gate defect rather
+than a branch or finite-difference failure. Its reduced matrices converged and
+had bounded finite-horizon amplification, but some eigenvector matrices were
+severely ill-conditioned; response Jacobians and eigenvalue/subspace convergence
+were diagnostic rather than complete machine gates. P3.2 preserves the same
+branches, fixtures, coordinate candidates, thresholds, runtime, and claim
+ceiling. It gates each derivative column, eigenvalue set, near-unit and fast
+invariant subspace, smooth response surface, and finite-horizon nonnormal
+diagnostic. Individual eigenvectors are interpretation-blocked when the frozen
+condition-number limit fails; a cluster is admissible only when its full span
+is resolved and its invariant-subspace residual passes. Neither path supports
+retention.
+
 ### Work
 
 1. Admit a branch-relative continuous causal-state encoder/decoder and classify

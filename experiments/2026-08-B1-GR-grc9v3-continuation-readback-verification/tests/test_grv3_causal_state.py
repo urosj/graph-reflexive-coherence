@@ -31,6 +31,12 @@ class GRV3CausalStateTest(unittest.TestCase):
         cls.tolerances = json.loads(
             (ROOT / "configs/numerical_tolerances.json").read_text(encoding="utf-8")
         )
+        cls.nonnormal = json.loads(
+            (ROOT / "configs/nonnormal_control.json").read_text(encoding="utf-8")
+        )
+        cls.fast_slow = json.loads(
+            (ROOT / "configs/fast_slow_control.json").read_text(encoding="utf-8")
+        )
         cls.model = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f1-001.json"))
 
     def test_branch_scope_is_frozen_before_spectra(self) -> None:
@@ -68,7 +74,12 @@ class GRV3CausalStateTest(unittest.TestCase):
     def test_zero_current_identity_margin_blocks_classical_jacobian(self) -> None:
         chart = BranchCoordinateChart.from_model(self.model, ("C", "W", "J"))
         audit = stratum_and_jacobian_audit(
-            self.model, chart, self.config, self.tolerances
+            self.model,
+            chart,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
         )
         self.assertEqual(
             0.0, audit["baseline_stratum_margins"]["current_sign_identity"]
@@ -104,10 +115,20 @@ class GRV3CausalStateTest(unittest.TestCase):
         full = BranchCoordinateChart.from_model(model, ("C", "W", "J"))
         reduced = BranchCoordinateChart.from_model(model, ("C", "W"))
         full_result = stratum_and_jacobian_audit(
-            model, full, self.config, self.tolerances
+            model,
+            full,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
         )
         reduced_result = stratum_and_jacobian_audit(
-            model, reduced, self.config, self.tolerances
+            model,
+            reduced,
+            self.config,
+            self.tolerances,
+            self.nonnormal,
+            self.fast_slow,
         )
         self.assertEqual(
             "blocked_non_smooth_stratum",
@@ -117,7 +138,19 @@ class GRV3CausalStateTest(unittest.TestCase):
             "admitted", reduced_result["square_transition_jacobian_status"]
         )
         self.assertTrue(reduced_result["smooth_response_jacobians"])
+        self.assertEqual(
+            "computed_and_converged", reduced_result["response_jacobian_status"]
+        )
+        self.assertTrue(reduced_result["spectral_convergence"]["passed"])
         self.assertTrue(reduced_result["temporal_mode_diagnostics"]["modes"])
+        self.assertIn(
+            "individual_eigenvector_condition_passed",
+            reduced_result["temporal_mode_diagnostics"]["nonnormal_control"],
+        )
+        self.assertIn(
+            "status",
+            reduced_result["temporal_mode_diagnostics"]["fast_slow_control"],
+        )
         self.assertTrue(
             all(
                 not mode["retention_interpretation_allowed"]

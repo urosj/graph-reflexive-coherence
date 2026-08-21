@@ -1,6 +1,6 @@
 {
-  "schema_version": "b1_grv3_p3_package_manifest_v1_1",
-  "package_status": "clean_P3_1_reduced_coordinate_execution_completion_when_contained_in_committed_revision",
+  "schema_version": "b1_grv3_p3_package_manifest_v1_2",
+  "package_status": "clean_P3_2_spectral_response_and_nonnormal_gate_completion_when_contained_in_committed_revision",
   "gate_id": "GRV3",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -37,6 +37,21 @@
       "scientific_acceptance_anchor_emitted": false,
       "failure": "runner_applied_GRV3_B_only_to_the_full_C_W_J_chart_even_when_frozen_C_W_or_C_reduction_codecs_passed",
       "correction": "apply_the_existing_stratum_convergence_response_and_mode_gates_to_every_codec_admitted_frozen_reduction_without_selecting_a_primary_coordinate",
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    },
+    {
+      "superseded_input_revision": "49bdae13ebaed30cdedec5f74b4d346955b281f3",
+      "superseded_result_receipt_payload_sha256": "d560ede2fa0516d0df1fe817196d100028a4fff1206f718e3bba36805371a033",
+      "superseded_result_payload_sha256": "b77a44aeb3e4de561f15260e90761aad4fa93281b31a17731c25ce11430e1ebf",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "P3_1_recorded_matrix_level_convergence_and_nonnormal_diagnostics_but_did_not_machine_gate_per_column_eigenvalue_subspace_response_convergence_or_ill_conditioned_individual_eigenvectors",
+      "correction": "apply_the_preregistered_nonnormal_and_fast_slow_controls_and_require_column_spectral_invariant_subspace_and_response_convergence_before_temporal_or_response_evidence_is_supported",
       "branch_scope_changed": false,
       "thresholds_changed": false,
       "fixtures_changed": false,

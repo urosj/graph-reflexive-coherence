@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import math
 from pathlib import Path
 import sys
 from typing import Any, Iterable
@@ -387,6 +388,8 @@ def _matrix_diagnostics(
     matrix: np.ndarray,
     chart: BranchCoordinateChart,
     config: dict[str, Any],
+    nonnormal_config: dict[str, Any],
+    fast_slow_config: dict[str, Any],
 ) -> dict[str, Any]:
     eigenvalues, right_vectors = np.linalg.eig(matrix)
     left_values, left_vectors = np.linalg.eig(matrix.T)
@@ -418,6 +421,14 @@ def _matrix_diagnostics(
         )
         for index in range(len(left_values))
     ]
+    raw_condition = float(np.linalg.cond(right_vectors))
+    condition_is_finite = math.isfinite(raw_condition)
+    condition = raw_condition if condition_is_finite else None
+    individual_mode_allowed = bool(
+        condition_is_finite
+        and raw_condition
+        <= float(nonnormal_config["asymptotic_sensitivity"]["condition_number_max"])
+    )
     mode_rows = []
     for index, value in enumerate(eigenvalues):
         magnitude = abs(value)
@@ -439,6 +450,7 @@ def _matrix_diagnostics(
                 "classification": classification,
                 "right_residual_l2": right_residuals[index],
                 "block_participation": participation[index],
+                "individual_eigenvector_interpretation_allowed": individual_mode_allowed,
                 "retention_interpretation_allowed": False,
             }
         )
@@ -453,32 +465,114 @@ def _matrix_diagnostics(
                 "state_norm": "euclidean_on_declared_tangent_coordinate",
             }
         )
-    condition = float(np.linalg.cond(right_vectors))
-    clusters = [
-        {
-            "cluster_id": f"mode-{row['mode_index']}",
-            "mode_indices": [row["mode_index"]],
-            "classification": row["classification"],
-            "retention_interpretation_allowed": False,
-        }
-        for row in mode_rows
-    ]
+    remaining = set(range(len(eigenvalues)))
+    clusters = []
+    cluster_tolerance = 1e-6
+    while remaining:
+        seed = min(remaining)
+        members = sorted(
+            index
+            for index in remaining
+            if abs(eigenvalues[index] - eigenvalues[seed]) <= cluster_tolerance
+        )
+        remaining.difference_update(members)
+        vectors = right_vectors[:, members]
+        u, singular_values, _ = np.linalg.svd(vectors, full_matrices=False)
+        rank = int(
+            sum(
+                value > max(vectors.shape) * np.finfo(float).eps * max(singular_values)
+                for value in singular_values
+            )
+        )
+        basis = u[:, :rank]
+        projected = basis @ (basis.conj().T @ matrix @ basis)
+        subspace_residual = float(np.linalg.norm(matrix @ basis - projected, ord=2))
+        classes = sorted({mode_rows[index]["classification"] for index in members})
+        cluster_interpretation_allowed = bool(
+            rank == len(members)
+            and math.isfinite(subspace_residual)
+            and subspace_residual <= 1e-8
+        )
+        clusters.append(
+            {
+                "cluster_id": f"cluster-{len(clusters)}",
+                "mode_indices": members,
+                "classification": classes[0] if len(classes) == 1 else "mixed",
+                "algebraic_multiplicity": len(members),
+                "eigenvector_span_rank": rank,
+                "defective_or_unresolved": rank < len(members),
+                "invariant_subspace_residual_l2": subspace_residual,
+                "cluster_interpretation_allowed": cluster_interpretation_allowed,
+                "retention_interpretation_allowed": False,
+            }
+        )
+    maximum_amplification = max(
+        (row["largest_singular_value"] for row in finite_horizon), default=0.0
+    )
+    finite_horizon_passed = maximum_amplification <= float(
+        nonnormal_config["transient_amplification_max"]
+    )
+    finite_effective_decay_rates = sorted(
+        -math.log(float(abs(value)))
+        for value in eigenvalues
+        if 1e-12 < abs(value) < 1.0 - 1e-6
+    )
+    if len(finite_effective_decay_rates) >= 2:
+        separation_ratio = (
+            finite_effective_decay_rates[-1] / finite_effective_decay_rates[0]
+        )
+        fast_slow_status = (
+            "bounded_separation_candidate"
+            if separation_ratio >= float(fast_slow_config["minimum_separation_ratio"])
+            else "finite_decay_rates_not_separated"
+        )
+    else:
+        separation_ratio = None
+        fast_slow_status = "not_applicable_fewer_than_two_finite_decaying_clusters"
     return {
         "modes": mode_rows,
         "clusters": clusters,
         "maximum_right_residual_l2": max(right_residuals, default=0.0),
         "maximum_left_residual_l2": max(left_residuals, default=0.0),
         "eigenvector_condition_number": condition,
+        "eigenvector_condition_number_finite": condition_is_finite,
         "finite_horizon_nonnormal_diagnostics": finite_horizon,
         "nonnormal_primary_mode": "finite_horizon",
-        "fast_slow_status": "not_identifiable_without_separate_cluster_separation_review",
+        "nonnormal_control": {
+            "finite_horizon_maximum_amplification": maximum_amplification,
+            "finite_horizon_threshold": float(
+                nonnormal_config["transient_amplification_max"]
+            ),
+            "finite_horizon_passed": finite_horizon_passed,
+            "eigenvector_condition_limit": float(
+                nonnormal_config["asymptotic_sensitivity"]["condition_number_max"]
+            ),
+            "individual_eigenvector_condition_passed": individual_mode_allowed,
+            "individual_eigenvector_interpretation_allowed": individual_mode_allowed,
+            "cluster_or_invariant_subspace_required": not individual_mode_allowed,
+        },
+        "fast_slow_control": {
+            "primary_measure": fast_slow_config["primary_measure"],
+            "minimum_separation_ratio": float(
+                fast_slow_config["minimum_separation_ratio"]
+            ),
+            "finite_effective_decay_rates": finite_effective_decay_rates,
+            "observed_separation_ratio": separation_ratio,
+            "status": fast_slow_status,
+            "separate_current_relaxation_sector_status": fast_slow_config[
+                "no_separate_current_relaxation_sector"
+            ],
+            "zero_multiplier_directions_are_descriptive_only": True,
+            "retention_interpretation_allowed": False,
+        },
+        "fast_slow_status": fast_slow_status,
         "conservation_mode_policy": "removed_by_zero_sum_C_tangent_basis",
         "gauge_mode_status": "none_declared_in_admitted_coordinate",
         "branch_tangent_status": "not_separately_identified",
     }
 
 
-def _response_jacobians(
+def _response_jacobians_at_step(
     chart: BranchCoordinateChart,
     base_coordinate: np.ndarray,
     step_size: float,
@@ -507,11 +601,89 @@ def _response_jacobians(
     return {key: value.tolist() for key, value in matrices.items()}
 
 
+def _response_jacobian_convergence(
+    chart: BranchCoordinateChart,
+    base_coordinate: np.ndarray,
+    step_sizes: list[float],
+    maximum_error: float,
+) -> dict[str, Any]:
+    per_step = [
+        _response_jacobians_at_step(chart, base_coordinate, step_size)
+        for step_size in step_sizes
+    ]
+    result = {}
+    for surface in per_step[0]:
+        matrices = [row[surface] for row in per_step]
+        errors = []
+        for left, right in zip(matrices, matrices[1:], strict=False):
+            left_array = np.asarray(left, dtype=float)
+            right_array = np.asarray(right, dtype=float)
+            errors.append(
+                float(
+                    np.linalg.norm(left_array - right_array, ord=2)
+                    / max(1.0, float(np.linalg.norm(right_array, ord=2)))
+                )
+            )
+        result[surface] = {
+            "selected_matrix": matrices[-1],
+            "step_sizes": step_sizes,
+            "adjacent_matrix_relative_errors": errors,
+            "maximum_allowed": maximum_error,
+            "convergence_passed": all(error <= maximum_error for error in errors),
+        }
+    return result
+
+
+def _eigenvalue_set_error(left: np.ndarray, right: np.ndarray) -> float:
+    left_values = list(np.linalg.eigvals(left))
+    unmatched = list(np.linalg.eigvals(right))
+    maximum = 0.0
+    for value in left_values:
+        index = min(
+            range(len(unmatched)), key=lambda item: abs(value - unmatched[item])
+        )
+        maximum = max(maximum, float(abs(value - unmatched[index])))
+        unmatched.pop(index)
+    return maximum
+
+
+def _spectral_subspace_basis(matrix: np.ndarray, *, near_unit: bool) -> np.ndarray:
+    values, vectors = np.linalg.eig(matrix)
+    indices = [
+        index for index, value in enumerate(values) if (abs(value) >= 0.9) == near_unit
+    ]
+    if not indices:
+        return np.zeros((matrix.shape[0], 0), dtype=complex)
+    u, singular_values, _ = np.linalg.svd(vectors[:, indices], full_matrices=False)
+    rank = int(
+        sum(
+            value
+            > max(vectors[:, indices].shape)
+            * np.finfo(float).eps
+            * max(singular_values)
+            for value in singular_values
+        )
+    )
+    return u[:, :rank]
+
+
+def _subspace_angle(left: np.ndarray, right: np.ndarray) -> float | None:
+    if left.shape[1] != right.shape[1]:
+        return None
+    if left.shape[1] == 0:
+        return 0.0
+    singular_values = np.linalg.svd(left.conj().T @ right, compute_uv=False)
+    minimum = min(max(float(value), 0.0) for value in singular_values)
+    return float(np.arccos(min(1.0, minimum)))
+
+
 def stratum_and_jacobian_audit(
     model: GRC9V3,
     chart: BranchCoordinateChart,
     config: dict[str, Any],
     tolerances: dict[str, Any],
+    nonnormal_config: dict[str, Any],
+    fast_slow_config: dict[str, Any],
 ) -> dict[str, Any]:
     base_coordinate = chart.encode_model(model)
     baseline_signature = categorical_signature(
@@ -614,6 +786,7 @@ def stratum_and_jacobian_audit(
         and len(matrices) == len(config["grv3_b"]["finite_difference_steps"])
     )
     convergence_errors = []
+    column_convergence_errors = []
     if column_gate_passed:
         for left, right in zip(matrices, matrices[1:], strict=False):
             left_array = np.asarray(left, dtype=float)
@@ -624,22 +797,78 @@ def stratum_and_jacobian_audit(
                     / max(1.0, float(np.linalg.norm(right_array, ord=2)))
                 )
             )
+            column_convergence_errors.append(
+                [
+                    float(
+                        np.linalg.norm(
+                            left_array[:, column] - right_array[:, column], ord=2
+                        )
+                        / max(
+                            1.0,
+                            float(np.linalg.norm(right_array[:, column], ord=2)),
+                        )
+                    )
+                    for column in range(right_array.shape[1])
+                ]
+            )
     convergence_passed = bool(
         column_gate_passed
         and all(
             value <= float(tolerances["adjacent_step_relative_column_error_max"])
             for value in convergence_errors
         )
+        and all(
+            value <= float(tolerances["adjacent_step_relative_column_error_max"])
+            for row in column_convergence_errors
+            for value in row
+        )
     )
     square_admitted = bool(column_gate_passed and convergence_passed)
     if square_admitted:
         selected = np.asarray(matrices[-1], dtype=float)
-        diagnostics = _matrix_diagnostics(selected, chart, config)
+        diagnostics = _matrix_diagnostics(
+            selected, chart, config, nonnormal_config, fast_slow_config
+        )
         jacobian: list[list[float]] | None = selected.tolist()
-        response_jacobians = _response_jacobians(
+        response_jacobians = _response_jacobian_convergence(
             chart,
             base_coordinate,
-            float(config["grv3_b"]["finite_difference_steps"][-1]),
+            [float(value) for value in config["grv3_b"]["finite_difference_steps"]],
+            float(tolerances["adjacent_step_relative_column_error_max"]),
+        )
+        response_convergence_passed = all(
+            row["convergence_passed"] for row in response_jacobians.values()
+        )
+        matrix_arrays = [np.asarray(value, dtype=float) for value in matrices]
+        eigenvalue_errors = [
+            _eigenvalue_set_error(left, right)
+            for left, right in zip(matrix_arrays, matrix_arrays[1:], strict=False)
+        ]
+        slow_angles = [
+            _subspace_angle(
+                _spectral_subspace_basis(left, near_unit=True),
+                _spectral_subspace_basis(right, near_unit=True),
+            )
+            for left, right in zip(matrix_arrays, matrix_arrays[1:], strict=False)
+        ]
+        fast_angles = [
+            _subspace_angle(
+                _spectral_subspace_basis(left, near_unit=False),
+                _spectral_subspace_basis(right, near_unit=False),
+            )
+            for left, right in zip(matrix_arrays, matrix_arrays[1:], strict=False)
+        ]
+        spectral_convergence_passed = bool(
+            all(
+                value <= float(tolerances["adjacent_step_relative_column_error_max"])
+                for value in eigenvalue_errors
+            )
+            and all(
+                value is not None
+                and value
+                <= float(tolerances["adjacent_step_relative_column_error_max"])
+                for value in [*slow_angles, *fast_angles]
+            )
         )
     else:
         diagnostics = {
@@ -653,6 +882,11 @@ def stratum_and_jacobian_audit(
         }
         jacobian = None
         response_jacobians = {}
+        response_convergence_passed = False
+        eigenvalue_errors = []
+        slow_angles = []
+        fast_angles = []
+        spectral_convergence_passed = False
     if square_admitted:
         status = "admitted"
     elif not column_gate_passed:
@@ -669,6 +903,7 @@ def stratum_and_jacobian_audit(
         "column_gate_passed": column_gate_passed,
         "finite_difference_convergence": {
             "adjacent_matrix_relative_errors": convergence_errors,
+            "adjacent_column_relative_errors": column_convergence_errors,
             "maximum_allowed": float(
                 tolerances["adjacent_step_relative_column_error_max"]
             ),
@@ -678,6 +913,15 @@ def stratum_and_jacobian_audit(
         "jacobian": jacobian,
         "candidate_step_matrices": matrices if square_admitted else [],
         "temporal_mode_diagnostics": diagnostics,
+        "spectral_convergence": {
+            "adjacent_eigenvalue_set_errors": eigenvalue_errors,
+            "adjacent_near_unit_subspace_angles_radians": slow_angles,
+            "adjacent_fast_subspace_angles_radians": fast_angles,
+            "maximum_allowed": float(
+                tolerances["adjacent_step_relative_column_error_max"]
+            ),
+            "passed": spectral_convergence_passed,
+        },
         "smooth_response_jacobians": response_jacobians,
         "slow_cluster_status": (
             "classified_without_retention_promotion"
@@ -685,7 +929,13 @@ def stratum_and_jacobian_audit(
             else "not_computed_derivative_blocked"
         ),
         "response_jacobian_status": (
-            "computed" if square_admitted else "blocked_with_input_derivative"
+            "computed_and_converged"
+            if square_admitted and response_convergence_passed
+            else (
+                "computed_but_not_converged"
+                if square_admitted
+                else "blocked_with_input_derivative"
+            )
         ),
         "categorical_surface_status": "recorded_separately",
         "stratum_blocked_is_not_unconverged": not column_gate_passed,
@@ -809,7 +1059,13 @@ def write_report(payload: dict[str, Any]) -> Path:
         f"bounded_causal_closure_candidates = {summary['causal_closure_pass_count']}",
         f"full_C_W_J_square_jacobians_admitted = {summary['full_C_W_J_jacobian_admitted_count']}",
         f"reduced_coordinate_matrices_admitted = {summary['reduced_coordinate_matrix_count']}",
+        f"admitted_reduced_symmetry_orbits = {summary['admitted_reduced_symmetry_orbit_count']}",
         f"branches_with_reduced_temporal_coordinates = {summary['branches_with_admitted_reduced_temporal_coordinate']}",
+        f"spectral_convergence_pass_matrices = {summary['spectral_convergence_pass_matrix_count']}",
+        f"response_convergence_pass_matrices = {summary['response_convergence_pass_matrix_count']}",
+        f"finite_horizon_nonnormal_pass_matrices = {summary['finite_horizon_nonnormal_pass_matrix_count']}",
+        f"individual_eigenvector_condition_block_matrices = {summary['individual_eigenvector_condition_block_matrix_count']}",
+        f"cluster_interpretation_pass_matrices = {summary['all_cluster_interpretation_pass_matrix_count']}",
         f"branches_without_admitted_temporal_coordinates = {summary['branches_without_any_admitted_temporal_coordinate']}",
         "continuation = unsupported",
         "retention = unsupported",
@@ -842,14 +1098,24 @@ def write_report(payload: dict[str, Any]) -> Path:
         "",
         f"The frozen reduction audit admits `{summary['reduced_coordinate_matrix_count']}`",
         f"reduced matrices across `{summary['branches_with_admitted_reduced_temporal_coordinate']}`",
-        "branches. Both `C-W` and `C` candidates are retained where admitted; GRV3 does",
+        f"branches and `{summary['admitted_reduced_symmetry_orbit_count']}` symmetry orbits.",
+        "The matrix count includes both `C-W` and `C` candidate charts for each",
+        "admitted branch; it is not a count of independent branches. Both candidates",
+        "are retained where admitted; GRV3 does",
         "not select one primary coordinate after seeing spectra. These are bounded",
         "branch-envelope reductions, not global elimination of `W` or `J`.",
+        "Each admitted matrix is separately gated on column, matrix, eigenvalue-set,",
+        "near-unit/fast invariant-subspace, response-surface, and finite-horizon",
+        "nonnormal convergence. Ill-conditioned eigenvector matrices block individual",
+        "eigenvector interpretation; converged cluster spans are reported separately",
+        "and neither object is promoted to retention evidence.",
         "",
         "## GRV3-C: Response And Categorical Surfaces",
         "",
         "Smooth response Jacobians are computed only for admitted reduced-coordinate",
-        "matrices and remain blocked for unavailable charts. Current-sign, sink, basin,",
+        "matrices, audited at every preregistered finite-difference step, and supported",
+        "only when adjacent-step convergence passes. They remain blocked for unavailable",
+        "charts. Current-sign, sink, basin,",
         "event, and budget-active-set behavior is retained as categorical threshold",
         "evidence rather than inserted into an eigensystem.",
         "",
@@ -871,6 +1137,8 @@ def run_grv3() -> None:
     receipt2, anchor2 = validate_prerequisite()
     config = read_json(EXPERIMENT_ROOT / "configs/grv3_causal_state.json")
     tolerances = read_json(EXPERIMENT_ROOT / "configs/numerical_tolerances.json")
+    nonnormal_config = read_json(EXPERIMENT_ROOT / "configs/nonnormal_control.json")
+    fast_slow_config = read_json(EXPERIMENT_ROOT / "configs/fast_slow_control.json")
     registry_path = EXPERIMENT_ROOT / config["branch_scope"]["source_registry_path"]
     if sha256_file(registry_path) != config["branch_scope"]["source_registry_sha256"]:
         raise ValueError("GRV2 fixed-branch registry file digest mismatch")
@@ -906,12 +1174,24 @@ def run_grv3() -> None:
             model, full_chart, config, tolerances, reduction_status
         )
         coordinate_jacobians = {
-            "C_W_J": stratum_and_jacobian_audit(model, full_chart, config, tolerances)
+            "C_W_J": stratum_and_jacobian_audit(
+                model,
+                full_chart,
+                config,
+                tolerances,
+                nonnormal_config,
+                fast_slow_config,
+            )
         }
         for key in ("C_W", "C"):
             if reduction_status[key]:
                 coordinate_jacobians[key] = stratum_and_jacobian_audit(
-                    model, reduction_charts[key], config, tolerances
+                    model,
+                    reduction_charts[key],
+                    config,
+                    tolerances,
+                    nonnormal_config,
+                    fast_slow_config,
                 )
             else:
                 coordinate_jacobians[key] = {
@@ -924,6 +1204,16 @@ def run_grv3() -> None:
                         "clusters": [],
                         "blocked_reason": "reduction_codec_failed",
                     },
+                    "spectral_convergence": {
+                        "adjacent_eigenvalue_set_errors": [],
+                        "adjacent_near_unit_subspace_angles_radians": [],
+                        "adjacent_fast_subspace_angles_radians": [],
+                        "maximum_allowed": float(
+                            tolerances["adjacent_step_relative_column_error_max"]
+                        ),
+                        "passed": False,
+                        "blocked_reason": "reduction_codec_failed",
+                    },
                     "smooth_response_jacobians": {},
                     "slow_cluster_status": "not_computed_codec_blocked",
                     "response_jacobian_status": "blocked_with_codec",
@@ -933,6 +1223,31 @@ def run_grv3() -> None:
             key
             for key, audit in coordinate_jacobians.items()
             if audit["square_transition_jacobian_status"] == "admitted"
+        ]
+        temporally_supported_coordinates = [
+            key
+            for key in admitted_coordinates
+            if coordinate_jacobians[key]["spectral_convergence"]["passed"]
+            and coordinate_jacobians[key]["temporal_mode_diagnostics"][
+                "nonnormal_control"
+            ]["finite_horizon_passed"]
+            and (
+                coordinate_jacobians[key]["temporal_mode_diagnostics"][
+                    "nonnormal_control"
+                ]["individual_eigenvector_interpretation_allowed"]
+                or all(
+                    cluster["cluster_interpretation_allowed"]
+                    for cluster in coordinate_jacobians[key][
+                        "temporal_mode_diagnostics"
+                    ]["clusters"]
+                )
+            )
+        ]
+        response_supported_coordinates = [
+            key
+            for key in admitted_coordinates
+            if coordinate_jacobians[key]["response_jacobian_status"]
+            == "computed_and_converged"
         ]
         causal_closure = bool(codec["bounded_causal_closure_passed"])
         row = {
@@ -948,6 +1263,8 @@ def run_grv3() -> None:
             "coordinate_stratum_and_jacobian_audits": coordinate_jacobians,
             "full_C_W_J_stratum_and_jacobian": coordinate_jacobians["C_W_J"],
             "admitted_temporal_coordinate_candidates": admitted_coordinates,
+            "convergence_and_nonnormal_admitted_temporal_coordinates": temporally_supported_coordinates,
+            "converged_response_coordinate_candidates": response_supported_coordinates,
             "primary_temporal_coordinate_selected": False,
             "causal_strong_branch_candidate": causal_closure,
             "causal_strong_branch_status": (
@@ -955,7 +1272,8 @@ def run_grv3() -> None:
                 if causal_closure
                 else "blocked_by_codec"
             ),
-            "temporal_mode_evidence_supported": bool(admitted_coordinates),
+            "temporal_mode_evidence_supported": bool(temporally_supported_coordinates),
+            "smooth_response_evidence_supported": bool(response_supported_coordinates),
             "continuation_claim_allowed": False,
             "retention_claim_allowed": False,
             "readback_claim_allowed": False,
@@ -982,6 +1300,12 @@ def run_grv3() -> None:
                     "status": audit["slow_cluster_status"],
                     "clusters": diagnostics.get("clusters", []),
                     "modes": diagnostics.get("modes", []),
+                    "spectral_convergence": audit.get(
+                        "spectral_convergence", {"passed": False}
+                    ),
+                    "nonnormal_control": diagnostics.get("nonnormal_control"),
+                    "fast_slow_control": diagnostics.get("fast_slow_control"),
+                    "response_jacobian_status": audit["response_jacobian_status"],
                     "retention_interpretation_allowed": False,
                 }
             )
@@ -1020,6 +1344,89 @@ def run_grv3() -> None:
         == 0.0
         for row in branch_rows
     )
+    admitted_audits = [
+        audit
+        for row in branch_rows
+        for audit in row["coordinate_stratum_and_jacobian_audits"].values()
+        if audit["square_transition_jacobian_status"] == "admitted"
+    ]
+    spectral_pass_count = sum(
+        bool(audit["spectral_convergence"]["passed"]) for audit in admitted_audits
+    )
+    response_pass_count = sum(
+        audit["response_jacobian_status"] == "computed_and_converged"
+        for audit in admitted_audits
+    )
+    finite_horizon_pass_count = sum(
+        bool(
+            audit["temporal_mode_diagnostics"]["nonnormal_control"][
+                "finite_horizon_passed"
+            ]
+        )
+        for audit in admitted_audits
+    )
+    eigenvector_condition_pass_count = sum(
+        bool(
+            audit["temporal_mode_diagnostics"]["nonnormal_control"][
+                "individual_eigenvector_condition_passed"
+            ]
+        )
+        for audit in admitted_audits
+    )
+    cluster_interpretation_pass_count = sum(
+        bool(audit["temporal_mode_diagnostics"]["clusters"])
+        and all(
+            cluster["cluster_interpretation_allowed"]
+            for cluster in audit["temporal_mode_diagnostics"]["clusters"]
+        )
+        for audit in admitted_audits
+    )
+    temporal_mode_pass_count = sum(
+        bool(row["convergence_and_nonnormal_admitted_temporal_coordinates"])
+        for row in branch_rows
+    )
+    admitted_symmetry_orbits = {
+        row["symmetry_orbit_id"]
+        for row in branch_rows
+        if row["admitted_temporal_coordinate_candidates"]
+    }
+    finite_conditions = [
+        audit["temporal_mode_diagnostics"]["eigenvector_condition_number"]
+        for audit in admitted_audits
+        if audit["temporal_mode_diagnostics"]["eigenvector_condition_number"]
+        is not None
+    ]
+    response_errors = [
+        error
+        for audit in admitted_audits
+        for surface in audit["smooth_response_jacobians"].values()
+        for error in surface["adjacent_matrix_relative_errors"]
+    ]
+    spectral_errors = [
+        error
+        for audit in admitted_audits
+        for key in (
+            "adjacent_eigenvalue_set_errors",
+            "adjacent_near_unit_subspace_angles_radians",
+            "adjacent_fast_subspace_angles_radians",
+        )
+        for error in audit["spectral_convergence"][key]
+        if error is not None
+    ]
+    column_errors = [
+        error
+        for audit in admitted_audits
+        for row in audit["finite_difference_convergence"][
+            "adjacent_column_relative_errors"
+        ]
+        for error in row
+    ]
+    maximum_amplifications = [
+        audit["temporal_mode_diagnostics"]["nonnormal_control"][
+            "finite_horizon_maximum_amplification"
+        ]
+        for audit in admitted_audits
+    ]
     summary = {
         "mechanical_status": (
             "passed" if causal_count == len(branch_rows) else "partial"
@@ -1031,12 +1438,32 @@ def run_grv3() -> None:
         "causal_closure_pass_count": causal_count,
         "full_C_W_J_jacobian_admitted_count": full_matrix_count,
         "reduced_coordinate_matrix_count": admitted_matrix_count - full_matrix_count,
+        "admitted_reduced_symmetry_orbit_count": len(admitted_symmetry_orbits),
         "branches_with_admitted_reduced_temporal_coordinate": admitted_branch_count,
         "branches_without_any_admitted_temporal_coordinate": len(branch_rows)
         - admitted_branch_count,
         "admitted_derivative_column_count": admitted_column_count,
         "blocked_derivative_column_count": blocked_column_count,
         "exact_zero_current_margin_branch_count": exact_zero_margin_branch_count,
+        "spectral_convergence_pass_matrix_count": spectral_pass_count,
+        "response_convergence_pass_matrix_count": response_pass_count,
+        "finite_horizon_nonnormal_pass_matrix_count": finite_horizon_pass_count,
+        "individual_eigenvector_condition_pass_matrix_count": eigenvector_condition_pass_count,
+        "individual_eigenvector_condition_block_matrix_count": len(admitted_audits)
+        - eigenvector_condition_pass_count,
+        "all_cluster_interpretation_pass_matrix_count": cluster_interpretation_pass_count,
+        "branches_with_temporal_mode_evidence_after_all_gates": temporal_mode_pass_count,
+        "maximum_finite_eigenvector_condition_number": max(
+            finite_conditions, default=None
+        ),
+        "maximum_finite_horizon_amplification": max(
+            maximum_amplifications, default=None
+        ),
+        "maximum_adjacent_column_relative_error": max(column_errors, default=None),
+        "maximum_spectral_convergence_error_or_angle": max(
+            spectral_errors, default=None
+        ),
+        "maximum_response_jacobian_relative_error": max(response_errors, default=None),
         "all_branches_consumed_without_symmetry_reduction": len(branch_rows) == 48,
         "grv3_a_status": (
             "bounded_candidate_passed"
@@ -1045,11 +1472,15 @@ def run_grv3() -> None:
         ),
         "grv3_b_status": (
             "partial_reduced_coordinate_temporal_mode_evidence"
+            if temporal_mode_pass_count > 0
+            else "reduced_coordinate_matrices_without_admissible_mode_interpretation"
             if admitted_matrix_count > 0
             else "blocked_on_non_smooth_stratum"
         ),
         "grv3_c_status": (
             "partial_reduced_coordinate_response_evidence_and_full_categorical_surfaces"
+            if response_pass_count > 0
+            else "response_jacobians_computed_but_not_converged"
             if admitted_matrix_count > 0
             else "categorical_surfaces_only_smooth_responses_blocked"
         ),
@@ -1079,7 +1510,17 @@ def run_grv3() -> None:
             "full_C_W_J_transition_jacobian_supported": full_matrix_count > 0,
             "bounded_reduced_coordinate_transition_jacobian_supported": admitted_matrix_count
             > 0,
-            "bounded_reduced_coordinate_temporal_modes_supported": admitted_matrix_count
+            "bounded_reduced_coordinate_temporal_modes_supported": temporal_mode_pass_count
+            > 0,
+            "individual_eigenvector_mode_interpretation_supported_for_all_admitted_matrices": bool(
+                admitted_audits
+                and eigenvector_condition_pass_count == len(admitted_audits)
+            ),
+            "cluster_or_invariant_subspace_interpretation_supported_for_all_admitted_matrices": bool(
+                admitted_audits
+                and cluster_interpretation_pass_count == len(admitted_audits)
+            ),
+            "bounded_reduced_coordinate_response_jacobians_supported": response_pass_count
             > 0,
             "primary_temporal_coordinate_selected": False,
             "continuation_supported": False,
@@ -1093,7 +1534,7 @@ def run_grv3() -> None:
     output_root = EXPERIMENT_ROOT / "outputs"
     result = artifact_envelope(
         payload,
-        schema_version="b1_grv3_complete_step_jacobians_v1",
+        schema_version="b1_grv3_complete_step_jacobians_v1_1",
         generating_command=COMMAND,
         reproducibility_class="tolerance_reproducible",
     )

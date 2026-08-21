@@ -466,6 +466,16 @@ writeback = unsupported
 - [x] Preserve branches, fixtures, thresholds, reduction definitions, and claim ceiling.
 - [x] Apply GRV3-B/C to every codec-admitted `C-W` and `C` candidate in P3.1.
 - [x] Forbid outcome-driven selection of one primary reduced coordinate.
+- [x] Supersede unaccepted P3.1 because spectral/subspace, response, and
+  ill-conditioned-eigenvector diagnostics were not yet complete machine gates.
+- [x] Preserve the exact P3.1 branch scope, fixtures, coordinate candidates,
+  finite-difference steps, thresholds, runtime, and claim ceiling in P3.2.
+- [x] Require eigenvalue-set and invariant-subspace convergence before temporal
+  mode evidence, and response-surface convergence before response evidence.
+- [x] Apply the preregistered nonnormal condition and finite-horizon bounds;
+  block individual eigenvector interpretation when conditioning fails.
+- [x] Require a full-rank, low-residual cluster span before using a cluster as
+  the fallback interpretation object.
 
 - [ ] Freeze and test the branch-relative causal-state encoder and decoder.
 - [ ] Require coordinate round trip `E_X(D_X(x)) ~= x`.
