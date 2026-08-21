@@ -11,6 +11,15 @@ from gate_receipts import finalize_receipt, validate_receipt
 from serialize_theory_contract import serialize
 
 
+def grv0_output_paths(output_root: Path) -> list[Path]:
+    receipt_path = output_root / "gates/grv0_result_receipt.json"
+    return sorted(
+        path
+        for path in output_root.rglob("*")
+        if path.is_file() and path.name != ".gitkeep" and path != receipt_path
+    )
+
+
 def write_report(capture_result: dict[str, object], output_paths: list[Path]) -> Path:
     baseline = capture_result["baseline"]
     payload = baseline["payload"]  # type: ignore[index]
@@ -63,7 +72,7 @@ def run_grv0() -> None:
     output_root = EXPERIMENT_ROOT / "outputs"
     serialize(output_root)
     captured = capture(output_root, clean_input_already_verified=True)
-    output_paths = sorted(path for path in output_root.rglob("*") if path.is_file() and path.name != ".gitkeep")
+    output_paths = grv0_output_paths(output_root)
     report = write_report(captured, output_paths)
     output_paths.append(report)
     baseline_payload = captured["baseline"]["payload"]

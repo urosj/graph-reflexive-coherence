@@ -2,12 +2,14 @@ from __future__ import annotations
 
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from gate_receipts import finalize_receipt, prerequisite_is_authorized, validate_acceptance_anchor, validate_receipt  # noqa: E402
+from run_all import grv0_output_paths  # noqa: E402
 
 
 class GateReceiptTest(unittest.TestCase):
@@ -29,6 +31,17 @@ class GateReceiptTest(unittest.TestCase):
         anchor["accepted_by"] = "run_all.py"
         with self.assertRaises(ValueError):
             validate_acceptance_anchor(anchor)
+
+    def test_grv0_rerun_excludes_existing_receipt_from_output_artifacts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output_root = Path(temporary_directory)
+            artifact = output_root / "baseline_manifest.json"
+            receipt = output_root / "gates/grv0_result_receipt.json"
+            artifact.write_text("{}\n", encoding="utf-8")
+            receipt.parent.mkdir(parents=True)
+            receipt.write_text("{}\n", encoding="utf-8")
+
+            self.assertEqual([artifact], grv0_output_paths(output_root))
 
 
 if __name__ == "__main__":

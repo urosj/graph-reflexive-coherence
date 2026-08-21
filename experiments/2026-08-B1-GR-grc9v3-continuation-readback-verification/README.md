@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv0_preacceptance_correction_prepared_pending_reexecution
+status = grv0_preacceptance_corrections_prepared_pending_reexecution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -44,6 +44,13 @@ not the separately required `specification_id`. The correction is classified
 as `bug_fix_preserving_protocol`; it changes no fixture, threshold, method,
 runtime, theory contract, or claim envelope. The original result remains in
 history and is superseded only by a clean replacement run.
+
+The first replacement attempt from `431dcf8` then failed closed before receipt
+emission because the orchestrator included the existing unaccepted receipt in
+the replacement receipt's output-artifact set. P0.2 excludes the exact receipt
+target from its own digest enumeration and adds a rerun regression test. This
+is also packaging-only: no partial P0.1 result is admitted, and a complete clean
+GRV0 rerun remains required.
 
 ## Central Question
 
