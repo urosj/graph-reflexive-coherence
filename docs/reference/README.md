@@ -41,17 +41,23 @@ supporting evidence is indexed under
 `implementation/investigations/causal-pathway-consolidation/`, and earlier
 bundle identities remain explicit provenance rather than alternate authority.
 
-The follow-on Iterations 112-116 binding tranche adds a separate binding plane
-without changing those knowledge authorities or the mechanism runtime. Its
-23-pathway/52-stage symbol map, exact pre-execution lock, actual-use receipt,
-use graph, candidate boundary, and 20-rule prospective checker make admitted
-pathway identity structural for accepted claim-bearing consumers. Unbound code
-remains executable but is not claim-qualified evidence.
+The follow-on Iterations 112-125 binding and claim-provenance tranche adds a
+separate binding plane without changing those knowledge authorities or the
+mechanism runtime. Its 23-pathway/52-stage symbol map, exact pre-execution lock,
+actual-use receipt, use graph, candidate boundary, and 20-rule prospective
+checker make admitted pathway identity structural for accepted claim-bearing
+consumers. Iterations 118-123 preserve that behavior and its byte-stable
+artifacts while replacing the binder monolith with an acyclic provider package.
+Unbound code remains executable but is not claim-qualified evidence.
 
 Iteration 124 adds five runnable declaration examples and separates the
-task-oriented user-and-agent workflow from the exact stable reference. Both
-state that `bound_invocations_only` is operation-scoped and cannot establish
-whole-run closure or the absence of unbound influences. Start the examples at
+task-oriented user-and-agent workflow from the exact stable reference.
+Iteration 125 independently accepts the tranche with I125-N01 retained as
+nonblocking evidence-reproducibility debt. The [closeout](../../implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md)
+and [iteration/audit evidence index](../../implementation/evidence/causal-pathway-binding-iterations/README.md)
+record the final boundary. Both guides state that `bound_invocations_only` is
+operation-scoped and cannot establish whole-run closure or the absence of
+unbound influences. Start the examples at
 [examples/causal_pathway_binding/README.md](../../examples/causal_pathway_binding/README.md).
 
 GRC9V3 Lane B interpretation is split by responsibility:

@@ -93,6 +93,11 @@ The implementation strategy assumed by these specs is:
   [binding reference](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md),
   [user and agent guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md),
   and [runnable examples](../examples/causal_pathway_binding/README.md).
+  The binding tranche is accepted through Iteration 125; the
+  [closeout](../implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md)
+  and [iteration/audit evidence index](../implementation/evidence/causal-pathway-binding-iterations/README.md)
+  record the preserved public, artifact, runtime, checker, and claim boundaries
+  and the nonblocking I125-N01 evidence-retention debt.
 - `lgrc-9-v3-restoration-identity.md`
   Implemented and validated versioned LGRC9V3 restoration-identity contract
   over LGRC runtime state and a read-only projection of its embedded GRC9V3

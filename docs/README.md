@@ -57,7 +57,11 @@ receipts, candidate declarations, conservative claim provenance, and
 prospective conformance. The companion user-and-agent guide and
 [runnable examples](../examples/causal_pathway_binding/README.md) cover the
 `select -> bind -> lock -> execute -> seal -> validate` workflow. They do not
-add a runtime dispatcher or change GRC/LGRC dynamics.
+add a runtime dispatcher or change GRC/LGRC dynamics. The tranche is accepted
+through Iteration 125; its [closeout](../implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md)
+and [indexed iteration/audit evidence](../implementation/evidence/causal-pathway-binding-iterations/README.md)
+record the preserved public, artifact, runtime, and claim boundaries plus the
+nonblocking I125-N01 historical-harness retention debt.
 
 Status notes:
 
