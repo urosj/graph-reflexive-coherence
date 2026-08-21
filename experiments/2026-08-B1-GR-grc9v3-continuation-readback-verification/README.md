@@ -84,6 +84,15 @@ without branch, continuation, retention, read-back, or write-back evidence.
 GRV2 is prepared as the first gate eligible to produce a source-current formed-
 branch candidate; its output remains provisional until separately accepted.
 
+The first GRV2 execution from P2 commit `5bf082d` failed closed before receipt
+emission. A triangle snapshot reload re-canonicalized one closing-edge current
+whose theoretical branch value is zero; the observed load delta was about
+`3.22e-11`, below the already frozen `J` tolerance of `1e-10`, but the P2
+replay check had incorrectly required exact numeric equality. P2.1 applies the
+accepted per-block tolerances while continuing to report raw representation
+normalization separately. No partial snapshot is evidence, and the complete
+gate must be rerun from clean committed input.
+
 ## Central Question
 
 ```text

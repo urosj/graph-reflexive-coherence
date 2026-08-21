@@ -842,24 +842,73 @@ def symmetry_class(fixture_id: str, coherence: list[float]) -> str:
 def replay_saved_branch(
     snapshot_path: Path,
     reference: dict[str, Any],
+    tolerances: dict[str, Any],
 ) -> dict[str, Any]:
     restored = GRC9V3.load(str(snapshot_path))
     loaded_projection = block_projection(restored)
     load_residual = residual_metrics(reference, loaded_projection)
+    load_per_block = {
+        block: residual_metrics(reference[block], loaded_projection[block])
+        for block in ("C", "W", "J", "Phi", "G", "identity", "budget")
+    }
     result = restored.step()
     replay_projection = block_projection(restored)
     replay_residual = residual_metrics(reference, replay_projection)
+    replay_per_block = {
+        block: residual_metrics(reference[block], replay_projection[block])
+        for block in ("C", "W", "J", "Phi", "G", "identity", "budget")
+    }
+    absolute = tolerances["absolute_tolerances"]
+    relative = tolerances["relative_tolerances"]
+    block_tolerances = {
+        "C": (float(absolute["C"]), float(relative["C"])),
+        "W": (float(absolute["W"]), float(relative["W"])),
+        "J": (float(absolute["J"]), float(relative["J"])),
+        "Phi": (
+            float(absolute["derived_surface"]),
+            float(relative["derived_surface"]),
+        ),
+        "G": (
+            float(absolute["derived_surface"]),
+            float(relative["derived_surface"]),
+        ),
+        "identity": (
+            float(absolute["derived_surface"]),
+            float(relative["derived_surface"]),
+        ),
+        "budget": (float(absolute["C"]), float(relative["C"])),
+    }
+
+    def blocks_pass(rows: dict[str, dict[str, Any]]) -> bool:
+        return all(
+            bool(row["categorical_equal"])
+            and float(row["l_inf"]) <= block_tolerances[block][0]
+            and float(row["relative"]) <= block_tolerances[block][1]
+            for block, row in rows.items()
+        )
+
+    load_passed = blocks_pass(load_per_block)
+    replay_passed = blocks_pass(replay_per_block)
     return {
         "load_projection_residual": load_residual,
+        "load_per_block_residuals": load_per_block,
         "one_step_replay_residual": replay_residual,
+        "one_step_replay_per_block_residuals": replay_per_block,
+        "declared_block_tolerances": {
+            block: {"absolute": values[0], "relative": values[1]}
+            for block, values in block_tolerances.items()
+        },
+        "load_projection_exact": load_residual["l_inf"] == 0.0
+        and load_residual["categorical_equal"],
+        "load_projection_within_declared_tolerance": load_passed,
+        "one_step_replay_within_declared_tolerance": replay_passed,
+        "representation_normalization_is_not_restoration_failure": load_passed,
         "events": [event.kind for event in result.events],
         "fixed_topology": reference["topology"] == replay_projection["topology"],
         "raw_loaded_snapshot_sha256": semantic_digest(restored.snapshot()),
         "status": "passed"
-        if load_residual["l_inf"] == 0.0
-        and load_residual["categorical_equal"]
-        and replay_residual["l_inf"] <= 1e-9
-        and replay_residual["categorical_equal"]
+        if load_passed
+        and replay_passed
         and not result.events
         and reference["topology"] == replay_projection["topology"]
         else "failed",
@@ -1008,6 +1057,9 @@ def validate_prerequisite() -> tuple[dict[str, Any], dict[str, Any]]:
 
 def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
     config = read_json(EXPERIMENT_ROOT / "configs/branch_search.json")
+    numerical_tolerances = read_json(
+        EXPERIMENT_ROOT / "configs/numerical_tolerances.json"
+    )
     assert_search_contract(config)
     snapshots_root = output_root / "branches"
     snapshots_root.mkdir(parents=True, exist_ok=True)
@@ -1095,7 +1147,9 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
                 snapshot_path = snapshots_root / f"{branch_id}.json"
                 model.save(str(snapshot_path))
                 reference = block_projection(model)
-                replay = replay_saved_branch(snapshot_path, reference)
+                replay = replay_saved_branch(
+                    snapshot_path, reference, numerical_tolerances
+                )
                 if replay["status"] != "passed":
                     raise RuntimeError(f"accepted branch replay failed: {branch_id}")
                 branch = {

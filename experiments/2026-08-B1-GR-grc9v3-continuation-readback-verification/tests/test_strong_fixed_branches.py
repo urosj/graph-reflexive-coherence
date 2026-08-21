@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 
@@ -12,7 +13,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from solve_strong_fixed_branches import (  # noqa: E402
     assert_search_contract,
     build_params,
+    block_projection,
     certify_branch,
+    replay_saved_branch,
     search_space_size,
     solve_seed,
 )
@@ -70,6 +73,27 @@ class StrongFixedBranchTest(unittest.TestCase):
         self.assertEqual(
             "GRV3",
             self.config["certification"]["causal_strong_branch_upgrade_gate"],
+        )
+
+    def test_triangle_snapshot_orientation_normalization_uses_frozen_tolerance(self) -> None:
+        params = build_params(1.5, 0.05, 0.5, 31001)
+        model, result = certify_branch("F3", [1.0, 2.0, 3.0], params, self.config)
+        self.assertEqual(
+            "provisional_physical_strong_branch", result["branch_class"]
+        )
+        model.rebase_reset_baseline()
+        tolerances = json.loads(
+            (ROOT / "configs/numerical_tolerances.json").read_text(encoding="utf-8")
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "triangle.json"
+            model.save(str(path))
+            replay = replay_saved_branch(path, block_projection(model), tolerances)
+        self.assertEqual("passed", replay["status"])
+        self.assertTrue(replay["load_projection_within_declared_tolerance"])
+        self.assertLessEqual(
+            replay["load_per_block_residuals"]["J"]["l_inf"],
+            tolerances["absolute_tolerances"]["J"],
         )
 
 
