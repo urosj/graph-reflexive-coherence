@@ -1,0 +1,11 @@
+{
+  "schema_version": "b1_grv0_fixture_registry_v1",
+  "fixtures": [
+    {"fixture_id": "F0", "path": "fixtures/two_node_transport.json", "status": "canonical_existing_test_anchor", "first_gate": "GRV1"},
+    {"fixture_id": "F1", "path": "fixtures/two_node_homogeneous_branch.json", "status": "canonical_family", "first_gate": "GRV2"},
+    {"fixture_id": "F2", "path": "fixtures/two_node_nonuniform_seed.json", "status": "noncanonical_candidate_seed", "first_gate": "GRV2"},
+    {"fixture_id": "F3", "path": "fixtures/triangle_same_row_seed.json", "status": "noncanonical_candidate_seed", "first_gate": "GRV2"},
+    {"fixture_id": "F4", "path": "fixtures/triangle_port_controls.json", "status": "control_family", "first_gate": "GRV1"}
+  ],
+  "return_orbit_search_family": {"fixture_id": "F5", "config_path": "configs/orbit_search.json", "status": "search_family", "first_gate": "GRV6"}
+}

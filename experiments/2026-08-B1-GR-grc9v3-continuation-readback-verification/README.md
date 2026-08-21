@@ -17,9 +17,9 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = initialized_plan_and_checklist_only
+status = p0_package_prepared_execution_not_started
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
-controlling_specification_sha256 = REQUIRED_AT_P0
+controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
 runtime_change_authorized = false
 src_change_authorized = false
@@ -33,6 +33,10 @@ B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
 ```
+
+The digest above is the SHA-256 of the controlling specification committed in
+the documentation scaffold. GRV0 must reproduce it from the clean `P0` input
+revision; changing the specification requires protocol readmission.
 
 ## Central Question
 

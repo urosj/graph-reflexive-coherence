@@ -1,0 +1,11 @@
+{
+  "schema_version": "b1_grv0_branch_search_v1",
+  "seed": 31001,
+  "candidate_fixtures": ["F1", "F2", "F3"],
+  "search_budget_per_family": 256,
+  "residual_norm": "l2_on_admitted_physical_projection",
+  "residual_tolerance": 1e-9,
+  "selection_rule": "predeclared_lowest_residual_then_lexicographic_fixture_parameter_identity",
+  "complete_selection_accounting_required": true,
+  "held_out_validation_required": true
+}

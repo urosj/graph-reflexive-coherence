@@ -1,0 +1,9 @@
+{
+  "schema_version": "b1_grv0_nonnormal_control_v1",
+  "primary_mode": "finite_horizon",
+  "horizons": [1, 2, 5, 10],
+  "state_norm": "euclidean_on_declared_tangent_coordinate",
+  "required_diagnostic": "largest_propagator_singular_value",
+  "transient_amplification_max": 2.0,
+  "asymptotic_sensitivity": {"diagnostic": "eigenvector_or_invariant_subspace_condition_number", "condition_number_max": 1000000.0}
+}

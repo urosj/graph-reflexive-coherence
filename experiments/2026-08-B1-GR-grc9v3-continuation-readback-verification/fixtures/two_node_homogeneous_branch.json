@@ -1,0 +1,1 @@
+{"fixture_id":"F1","status":"canonical_family_not_yet_certified","topology":{"nodes":[0,1],"oriented_edges":[[0,1]]},"seed_coherence":[2.0,2.0],"candidate_only":true,"first_executable_gate":"GRV2"}

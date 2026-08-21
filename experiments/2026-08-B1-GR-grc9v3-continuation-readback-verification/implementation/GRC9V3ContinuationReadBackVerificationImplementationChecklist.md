@@ -4,15 +4,15 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = initialized_plan_and_checklist_only
+status = p0_package_prepared_execution_not_started
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
-controlling_specification_sha256 = REQUIRED_AT_P0
+controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
 runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = not_started
+current_gate = GRV0_P0_prepared_execution_not_started
 verification_closeout_ladder_rung_assigned = false
 verification_closeout_ceiling = GRV-C0_specification_package_initialized_execution_not_started
 B1_L_execution_authorized = false
@@ -41,7 +41,7 @@ l04_selected = false
 - [x] Preserve unchanged-runtime, no-`src/`, and no-existing-test-change boundaries.
 - [x] Keep N32 unselected.
 - [x] Create B1-L as a deferred provenance/prerequisite record only.
-- [ ] Review and accept the B1-GR specification, plan, and checklist before GRV0.
+- [x] Review and accept the B1-GR specification, plan, and checklist before GRV0.
 
 ## Global Execution Rules
 
@@ -88,8 +88,8 @@ l04_selected = false
 
 ## Iteration 1 - GRV0 Specification And Baseline Admission
 
-- [ ] Accept Draft 3.4.1 as the exact controlling specification version.
-- [ ] Materialize GRV0 package surfaces and commit the clean `P0`
+- [x] Accept Draft 3.4.1 as the exact controlling specification version.
+- [x] Materialize GRV0 package surfaces and commit the clean `P0`
   package-preparation revision before execution.
 - [ ] Record exact graph repository revision.
 - [ ] Record exact geometric-theory repository revision.
@@ -109,30 +109,30 @@ l04_selected = false
 - [ ] Serialize the theory debt register.
 - [ ] Serialize proof-note and traceability records.
 - [ ] Serialize the gate dependency map.
-- [ ] Materialize all six normative `hypotheses/` views.
-- [ ] Materialize and map all normative scripts to GRV gates.
-- [ ] Freeze contradiction and theory-reopening schemas.
-- [ ] Freeze canonical JSON, semantic digest, path, artifact, result-receipt, and acceptance-anchor schemas.
-- [ ] Verify dedicated schema or named `$defs` coverage for every required
+- [x] Materialize all six normative `hypotheses/` views.
+- [x] Materialize and map all normative scripts to GRV gates.
+- [x] Freeze contradiction and theory-reopening schemas.
+- [x] Freeze canonical JSON, semantic digest, path, artifact, result-receipt, and acceptance-anchor schemas.
+- [x] Verify dedicated schema or named `$defs` coverage for every required
   manifest and final decision artifact.
-- [ ] Add experiment-local schema, state-codec, tangent-basis, intervention, receipt, and convergence tests.
-- [ ] Add and pass `test_edge_space.py` for projector algebra and covariance.
-- [ ] Add and pass `test_spec_propagation.py` against the current specification
+- [x] Add experiment-local schema, state-codec, tangent-basis, intervention, receipt, and convergence tests.
+- [x] Add and pass `test_edge_space.py` for projector algebra and covariance.
+- [x] Add and pass `test_spec_propagation.py` against the current specification
   ID/digest, README, plan, checklist, gate/artifact names, and GRV0 obligations.
-- [ ] Freeze experiment-local numerical dependency policy.
+- [x] Freeze experiment-local numerical dependency policy.
 - [ ] Emit the complete numerical environment record.
-- [ ] Preregister the `A-NONNORMAL-CONTROL` evidence mode and threshold.
-- [ ] Preregister the `A-FAST-SLOW` measure and threshold where applicable.
-- [ ] Preregister the present-current convention and acceptance authority/review policy.
-- [ ] Serialize the complete fixed-topology envelope.
-- [ ] Validate every specification-name to exact runtime-parameter mapping in the envelope.
-- [ ] Freeze orthonormal zero-sum coherence tangent bases.
-- [ ] Freeze ambient coordinate identification and branch-dependent metric transport.
-- [ ] Freeze block-specific causal-equivalence tolerances, RNG treatment,
+- [x] Preregister the `A-NONNORMAL-CONTROL` evidence mode and threshold.
+- [x] Preregister the `A-FAST-SLOW` measure and threshold where applicable.
+- [x] Preregister the present-current convention and acceptance authority/review policy.
+- [x] Serialize the complete fixed-topology envelope implementation for GRV0 emission.
+- [x] Validate every specification-name to exact runtime-parameter mapping in the envelope implementation.
+- [x] Freeze orthonormal zero-sum coherence tangent bases.
+- [x] Freeze ambient coordinate identification and branch-dependent metric transport.
+- [x] Freeze block-specific causal-equivalence tolerances, RNG treatment,
   administrative advancement, duplicate-surface reconciliation, and
   per-horizon accumulated-error rules.
-- [ ] Freeze gate-input revision-change classifications and protocol-readmission rules.
-- [ ] Verify no `src/` or existing-test diff.
+- [x] Freeze gate-input revision-change classifications and protocol-readmission rules.
+- [x] Verify no `src/` or existing-test diff during P0 preparation.
 - [ ] Emit GRV0 JSON artifacts and report.
 - [ ] Emit and validate the GRV0 result receipt.
 - [ ] Record GRV0 scientific acceptance in a separate accepted anchor before GRV1.

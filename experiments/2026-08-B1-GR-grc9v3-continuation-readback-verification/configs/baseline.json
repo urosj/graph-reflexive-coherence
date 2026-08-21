@@ -1,0 +1,17 @@
+{
+  "experiment_id": "B1-GR",
+  "repository": "github.com/urosj/graph-reflexive-coherence",
+  "theory_repository": "github.com/urosj/geometric-reflexive-coherence",
+  "controlling_specification": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+  "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+  "existing_test_command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_*.py",
+  "protected_tracked_path_patterns": [
+    "src/pygrc/**/*.py",
+    "specs/grc-9-spec.md",
+    "specs/grc-9-v3-spec.md",
+    "tests/**/*.py"
+  ],
+  "runtime_change_authorized": false,
+  "src_change_authorized": false,
+  "existing_test_change_authorized": false
+}

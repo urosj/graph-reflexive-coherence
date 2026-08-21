@@ -1,0 +1,2 @@
+# B1-GR uses only the repository runtime dependencies and Python standard library.
+# NumPy is already present transitively and is used for experiment-local linear algebra.

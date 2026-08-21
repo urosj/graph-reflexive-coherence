@@ -27,6 +27,14 @@ The controlling source order is:
 The implementation plan and checklist organize execution. They are not
 evidence and cannot strengthen a claim from the controlling specification.
 
+```text
+controlling_specification_id = b1_grc9v3_continuation_readback_verification_v3_4_1
+controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
+```
+
+The clean `P0` input must reproduce this digest. A different digest is a
+protocol-readmission event, not an implementation-only correction.
+
 ## Experiment Boundary
 
 ```text
