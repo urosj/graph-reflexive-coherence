@@ -142,9 +142,11 @@ path-only evidence-identity migrations recorded explicitly.
 - [x] Document the stable public surface, exact artifact fields, final
       candidate contract, and operation-scoped provenance warning.
 
-Status: complete through Phase 8 Iteration 124. The binding layer consumes the
+Status: complete through Phase 8 Iteration 125. The binding layer consumes the
 closed I105-I111 knowledge plane and delegates unchanged mechanism-specific
 runtime callables. Accepted causal-pathway claims require a valid receipt;
 unrelated code and internal mechanism calls do not acquire binding boilerplate.
 The stable reference and task-oriented guide explicitly preserve the
-`bound_invocations_only` claim boundary.
+`bound_invocations_only` claim boundary. Iteration 125 independently accepted
+the I124 guidance with I125-N01 retained as nonblocking evidence-reproducibility
+debt.

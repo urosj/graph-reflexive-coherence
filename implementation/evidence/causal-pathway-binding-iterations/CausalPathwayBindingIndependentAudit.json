@@ -1,0 +1,217 @@
+{
+  "artifact": "GRC/LGRC causal-pathway binding independent audit",
+  "schema_version": "causal_pathway_binding_independent_audit_v1",
+  "iteration": 125,
+  "date": "2026-08-21",
+  "audit_scope": "independent pressure and evaluation of iterations 118-124",
+  "report_only": true,
+  "closeout_modified": false,
+  "final_disposition": "accept_with_nonblocking_debt",
+  "audited_candidate": {
+    "branch": "feat/causal-pathway-binding-claim-provenance",
+    "head": "04d5aca62e1792b6c7415041272853fc225e99f9",
+    "tree": "8f278de98d5375ce969aef25896a0e4ae44311ca",
+    "initial_status": "clean",
+    "final_isolated_status": "clean"
+  },
+  "before_refactor_baseline": {
+    "head": "82c63225a37cdc0baa6136c40c40a2a3772d7f7d",
+    "tree": "15f4b7fcc3966bce9697b13949b9c73f061ee936",
+    "binder_source_path": "src/pygrc/causal_pathways/binding.py",
+    "binder_source_sha256": "84d5499687888b68e91809b15ea79d8b06e197f7876da5a875ee44bb7b23f979"
+  },
+  "isolation": {
+    "candidate_clone": "/tmp/grc-cpb-i125-audit.UGysYJ/repo",
+    "baseline_clone": "/tmp/grc-cpb-i125-audit.UGysYJ/baseline",
+    "independent_harness_root": "/tmp/grc-cpb-i125-audit.UGysYJ",
+    "canonical_worktree_used_for_execution": false,
+    "proof_matrix_frozen_before_candidate_self_reports": true,
+    "proof_matrix_sha256": "4baff7a79bbc975517bb404e049d7a49a93e2a236c6635a33da2ec5879ce0755"
+  },
+  "authority_file_sha256": {
+    "registry": "0aab2d6e1e515b58b057effde5bd0a013256615d3cf3fee548b49a1d2edd9141",
+    "crosswalk": "01b72cd8ddb9be58ee3db6684218829219601c88c85ac91617e76907eb1e0f05",
+    "matrix": "6220a7be74c90f85892fd0f61a4f2126218e9ac104cb6451e9c1667d73c942c1",
+    "selector": "6cb4c1b320df9725e2c7347216ad00fbb19c3231ce03b8fc7a10fc5228c770cc",
+    "predecessor_policy": "5500ae9dfa9d26ad05f11286bf72fce983d1241fe3ffa9f21aea1c5a0eb02a1f",
+    "binding_map": "c2ddf2b41fe556f446c10e3b54b762e112d595e6f2b9520384228767d0441137",
+    "binding_policy": "346f54d1bfffd0dc69d0ad0dfed811e3755f2b620d935dc4d896a2c2e511dc20",
+    "acceptance_anchor": "958b5f8695885d02ceea8b5ec7b7e96c2e623d3b7928fc7517a9eff6c779e09c",
+    "independent_binding_checker": "5502d6e9581036e421f7099116921d7b28784b400176d42c61a94576f22933cb"
+  },
+  "logical_authority_digests": {
+    "registry_digest": "a266b33da10778e8caf5ad7d4a4bfe4b71aed9d0df563fd6c74e7d4ed6cb486b",
+    "crosswalk_digest": "0036dcdf54f4663bed183387db1c8f657eb44a694252ef44421be56fb239ff06",
+    "matrix_digest": "d1dbbdcb911cf34b399562c2dfe5122606c0de8d48d9634bc6af1e3d92e09e90",
+    "selector_digest": "f57545997fac63c9e465d21e0c840971aee073bd89aff135fb5d93a1ce134e1b",
+    "consolidation_policy_digest": "7227c764e41b3d9964f306eff2830ded17afd8ace30df2eec4a58b0296ababf9",
+    "binding_map_digest": "73d08edb5734b2dc7790ed475713f6eac503913402bb498800b49497f2ef0556",
+    "binding_semantics_digest": "0769cd5dd0fa7e42eb324f7a59385563846fabb952e474d9863d5dd3b8a56991",
+    "binding_source_manifest_digest": "5843485730cadaded2864cc98a22c67d84635a93e22cf7736a3b83130a90dd15",
+    "trusted_acceptance_anchor_digest": "127382ebd0b8f70a5990971190bec5de614f39f03b47c7ffaffe4f53e5970ae2"
+  },
+  "provider_source_sha256": {
+    "__init__.py": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34",
+    "identity.py": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23",
+    "effects.py": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90",
+    "authority.py": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2",
+    "candidates.py": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9",
+    "scopes.py": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c",
+    "artifacts.py": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59",
+    "session.py": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972"
+  },
+  "architecture": {
+    "provider_order": [
+      "identity",
+      "effects",
+      "authority",
+      "candidates",
+      "scopes",
+      "artifacts",
+      "session"
+    ],
+    "forbidden_or_reverse_edges": [],
+    "facade_executable_definitions": [],
+    "checker_binding_imports": [],
+    "legacy_monolith_present": false,
+    "generic_dispatcher_found": false,
+    "automatic_semantic_selection_found": false,
+    "concrete_session_imported_by_earlier_provider": false,
+    "entrypoints": [
+      "PathwayBindingSession.bind_pathway",
+      "PathwayBindingSession.bind_composition",
+      "PathwayBindingSession.declare_alternatives",
+      "PathwayBindingSession.declare_candidate",
+      "PathwayBindingSession.freeze_lock",
+      "PathwayBindingSession.build_receipt"
+    ]
+  },
+  "proof_obligations": [
+    {"id": "A", "obligation": "exact authority and source identity", "result": "passed"},
+    {"id": "B", "obligation": "public API compatibility", "result": "passed"},
+    {"id": "C", "obligation": "canonical artifact corpus compatibility", "result": "passed"},
+    {"id": "D", "obligation": "runtime and exception transparency", "result": "passed"},
+    {"id": "E", "obligation": "provider dependency order", "result": "passed"},
+    {"id": "F", "obligation": "responsibility and state cohesion", "result": "passed"},
+    {"id": "G", "obligation": "accepted semantic defenses retained", "result": "passed"},
+    {"id": "H", "obligation": "mutation falsifiers fail closed", "result": "passed"},
+    {"id": "I", "obligation": "runnable conservative guidance", "result": "passed"},
+    {"id": "J", "obligation": "repository gates", "result": "passed"},
+    {"id": "K", "obligation": "mixed bound/unbound claim boundary", "result": "passed"},
+    {"id": "L", "obligation": "historical external 68-case artifact replay", "result": "not_reproducible_exactly; superseding pressure passed"}
+  ],
+  "compatibility_results": {
+    "public_export_count_before": 48,
+    "public_export_count_after": 48,
+    "export_order_equal": true,
+    "root_facade_identity_equal": true,
+    "signature_field_constant_and_exception_differences": 0,
+    "internal_defining_module_changes": 40,
+    "internal_defining_module_paths_contractual": false,
+    "runtime_probe_byte_equal": true,
+    "runtime_probe_sha256_before": "99b31dd40fc204800929b842471cff88dd0a19e181afe0c4f2a9cb46a4d55fba",
+    "runtime_probe_sha256_after": "99b31dd40fc204800929b842471cff88dd0a19e181afe0c4f2a9cb46a4d55fba",
+    "direct_and_bound_runtime_state_equal": true,
+    "artifact_evidence_file_count": 39,
+    "artifact_evidence_manifest_sha256_before": "e464996123147029b130d710c11c9ca0d11df1548fc11f222b491018e9dd1b13",
+    "artifact_evidence_manifest_sha256_after": "e464996123147029b130d710c11c9ca0d11df1548fc11f222b491018e9dd1b13",
+    "i118_regeneration_before": "passed",
+    "i118_regeneration_after": "passed"
+  },
+  "mixed_bound_unbound_results": {
+    "variants": [
+      "direct instance method",
+      "class-function alias",
+      "callable exposed by a verified handle",
+      "bound producer followed by direct packet operation"
+    ],
+    "claim_scope": "bound_invocations_only",
+    "whole_run_causal_closure_claimed": false,
+    "unbound_execution_accepted_as_evidence": false,
+    "external_or_untracked_causal_input": "not_observable_by_binding_plane",
+    "direct_operations_in_bound_invocation_ledger": false,
+    "before_after_outputs_byte_equal": true
+  },
+  "independent_mutation_results": {
+    "semantic_checker_cases": 13,
+    "semantic_checker_passed": 13,
+    "runtime_falsifier_cases": 8,
+    "runtime_falsifiers_passed": 8,
+    "checker_mutations": [
+      {"case": "producer owner erased", "target": "BCF-005", "outcome": "failed_closed"},
+      {"case": "adapter owner erased", "target": "BCF-006", "outcome": "failed_closed"},
+      {"case": "candidate promoted native", "target": "BCF-004", "outcome": "failed_closed"},
+      {"case": "diagnostic promoted behavioral", "target": "BCF-007", "outcome": "failed_closed"},
+      {"case": "configured route promoted formed", "target": "BCF-008", "outcome": "failed_closed"},
+      {"case": "claim envelope widened", "target": "BCF-015", "outcome": "failed_closed"},
+      {"case": "declaration substituted for actual use", "target": "BCF-015", "outcome": "failed_closed"},
+      {"case": "wrong locked symbol invoked", "target": "BCF-016", "outcome": "failed_closed"},
+      {"case": "dynamic undeclared branch accepted", "target": "BCF-017", "outcome": "failed_closed"},
+      {"case": "binder auto-selects ambiguity", "target": "BCF-018", "outcome": "failed_closed"},
+      {"case": "composition flow identity forged", "target": "BCF-019", "outcome": "failed_closed"},
+      {"case": "mixed unbound operation promoted", "target": "BCF-020", "outcome": "failed_closed"},
+      {"case": "stale source identity accepted", "target": "BCF-014", "outcome": "failed_closed"}
+    ],
+    "runtime_falsifiers": [
+      {"case": "bind-time P1 to P2 substitution", "outcome": "SymbolBindingError before link"},
+      {"case": "invoke-time P1 to P2 substitution", "outcome": "SymbolBindingError; zero recorded invocations"},
+      {"case": "invalid relabel CMP-05 admitted", "outcome": "UnbindableCompositionError"},
+      {"case": "unsupported CMP-06 admitted", "outcome": "UnbindableCompositionError"},
+      {"case": "hard-coded candidate target request", "outcome": "InvalidCandidateError; no candidate use"},
+      {"case": "source hidden in unused context", "outcome": "InvalidCandidateError; no candidate use"},
+      {"case": "syntactic source with no request dependency", "outcome": "InvalidCandidateError; no candidate use"},
+      {"case": "tuple/list omission type collapse", "outcome": "InvalidCandidateError; no candidate use"}
+    ]
+  },
+  "repository_corroboration": {
+    "focused_tests": {"status": "passed", "tests_run": 143, "duration_seconds": 61.931},
+    "full_tests": {"status": "passed", "tests_run": 1354, "duration_seconds": 506.562, "wall_seconds": 509.51},
+    "binding_conformance": {"status": "passed", "rules": 20, "issues": 0, "digest": "eb54f646569cf4b91e5f410fe94d6bbd0aae6706871e83431ee9d919cc42c823"},
+    "predecessor_conformance": {"status": "passed", "rules": 20, "issues": 0, "digest": "14a4ee2a4cc2dc4beca4ce056a15548df90ed4f0d33a707d33facc1a1ce1c6b2"},
+    "examples": {"status": "passed", "entrypoints": 5, "dynamic_branches": 2},
+    "ruff": "passed",
+    "mypy_scoped_follow_imports_silent": {"status": "passed", "explicit_source_files": 29},
+    "compileall": "passed",
+    "git_diff_check": "passed"
+  },
+  "historical_68_case_gate": {
+    "accepted_record": "Iteration 117 records 68 passed, 0 failed, 0 errors at accepted commit 8f30346 and after the callable-identity cache change.",
+    "exact_harness_tracked": false,
+    "exact_harness_found_in_current_attachments": false,
+    "exact_harness_found_in_reachable_or_unreachable_git_objects": false,
+    "exact_replay_claimed_by_this_audit": false,
+    "current_successor_pressure": "The named R4-B01 through R8-B01 boundaries and the recursive type/operator boundary are retained in runtime/checker controls; all focused controls and 21 new independent mutations/falsifiers passed.",
+    "impact": "evidence reproducibility debt only; no observed implementation failure"
+  },
+  "self_report_discrepancies": {
+    "material_discrepancy_count": 0,
+    "notes": [
+      "I119-I124 claims about package shape, provider ownership, corpus stability, examples, focused tests, and conformance were corroborated.",
+      "The current full-suite count is 1,354 rather than the I123 baseline of 1,348 because I124 added six tests.",
+      "The candidate reports explicitly treat internal defining-module paths as noncontractual; 40 such internal ownership moves were observed with zero frozen public descriptor differences."
+    ]
+  },
+  "findings": [
+    {
+      "id": "I125-N01",
+      "severity": "minor",
+      "title": "The accepted external 68-case harness is not retained as a replayable artifact",
+      "scope": "audit evidence reproducibility",
+      "smallest_evidence": "Iteration 117 records the result but the harness itself is absent from the repository, available attachments, /tmp, and recoverable Git blobs.",
+      "implementation_impact": "none observed",
+      "closeout_impact": "Do not state that the exact historical harness was replayed. Archive it, or explicitly approve the independently reconstructed successor pressure as the I125 replacement gate."
+    }
+  ],
+  "finding_counts": {"blocker": 0, "major": 0, "minor": 1},
+  "strongest_justified_claim": "At candidate HEAD 04d5aca, iterations 118-124 preserve the I118-frozen public API, canonical evidence bytes, runtime results and state, exceptions, context behavior, semantic claim boundaries, and independent checker behavior while replacing the monolith with an acyclic provider package and adding conservative runnable guidance.",
+  "explicitly_unsupported_stronger_claims": [
+    "whole-run causal closure",
+    "absence or detection of unbound causal influences",
+    "universal causal routing or generic work dispatch",
+    "automatic semantic or pathway selection",
+    "candidate admission or native promotion",
+    "native route or candidate formation",
+    "ecological interpretation, agency, Read-Back, or N32",
+    "an exact replay of the unavailable historical 68-case harness"
+  ]
+}

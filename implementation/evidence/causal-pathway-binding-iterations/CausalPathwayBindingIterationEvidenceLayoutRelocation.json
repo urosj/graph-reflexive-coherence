@@ -1,0 +1,94 @@
+{
+  "artifact": "Phase 8 GRC/LGRC causal pathway binding iteration evidence layout relocation",
+  "schema_version": "phase8_grclgrc_causal_pathway_binding_iteration_evidence_layout_relocation_v1",
+  "status": "reconciled",
+  "recorded_after_iteration": 125,
+  "recorded_on": "2026-08-21",
+  "reason": "Accepted supporting iteration and audit records belong in one indexed evidence package rather than the implementation root. The separately frozen machine-evidence tree remains unchanged.",
+  "supporting_evidence_path_mappings": [
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration112PressureReport.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration112PressureReport.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration113.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration113.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration114.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration114.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration115.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration115.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration116.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration116.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration117IndependentAuditCorrections.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration117IndependentAuditCorrections.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration119.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration119.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration120.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration120.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration121.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration121.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration122.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration122.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration123.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration123.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration124.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration124.md"
+    },
+    {
+      "from": "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration125.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration125.md"
+    },
+    {
+      "from": "implementation/CausalPathwayBindingIndependentAudit.md",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/CausalPathwayBindingIndependentAudit.md"
+    },
+    {
+      "from": "implementation/CausalPathwayBindingIndependentAudit.json",
+      "to": "implementation/evidence/causal-pathway-binding-iterations/CausalPathwayBindingIndependentAudit.json"
+    }
+  ],
+  "supporting_evidence_file_count": 16,
+  "audit_report_content_digests": {
+    "CausalPathwayBindingIndependentAudit.md": "f75f532f26acdedd7fb7c98526a764027550c4a15a69a3dd5c4aa01bc8b3ec1b",
+    "CausalPathwayBindingIndependentAudit.json": "5acb856a3d6fffe2f6842c1b043dd4095e6843127d3b12720d8d88d5086b0992"
+  },
+  "iteration_record_content_change": "Relative Markdown links repaired for the accepted package location; findings, results, and dispositions are unchanged.",
+  "machine_evidence_tree": {
+    "path": "implementation/evidence/causal-pathway-binding",
+    "file_count": 39,
+    "membership_changed": false,
+    "content_changed": false
+  },
+  "essential_implementation_root_files": [
+    "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceBaselineFreeze.md",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceBaselineFreeze.json",
+    "implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md"
+  ],
+  "runtime_or_claim_change": false
+}

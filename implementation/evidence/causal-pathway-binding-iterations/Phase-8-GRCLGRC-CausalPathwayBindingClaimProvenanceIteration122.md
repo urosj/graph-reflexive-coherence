@@ -27,7 +27,7 @@ candidate provider is 1,763 lines after adding its narrow runtime protocol.
 
 ## Scope Provider
 
-[`binding/scopes.py`](../src/pygrc/causal_pathways/binding/scopes.py) owns:
+[`binding/scopes.py`](../../../src/pygrc/causal_pathways/binding/scopes.py) owns:
 
 - `InvocationRecord`, `CrossingInvocationRecord`, and the private
   candidate-mechanism invocation record consumed by receipt construction;
@@ -121,7 +121,7 @@ paths remain noncontractual.
 
 ## Architecture Enforcement
 
-[I122 architecture tests](../tests/integrations/test_causal_pathway_binding_i122.py)
+[I122 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i122.py)
 enforce:
 
 - the scope provider's exact acyclic imports and structural one-method host;
@@ -143,31 +143,31 @@ reduced candidate host and separate three-method runtime protocol.
 
 Implementation and enforcement:
 
-- [`binding/scopes.py`](../src/pygrc/causal_pathways/binding/scopes.py)
-- [`binding/candidates.py`](../src/pygrc/causal_pathways/binding/candidates.py)
-- [`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py), the
+- [`binding/scopes.py`](../../../src/pygrc/causal_pathways/binding/scopes.py)
+- [`binding/candidates.py`](../../../src/pygrc/causal_pathways/binding/candidates.py)
+- [`binding/session.py`](../../../src/pygrc/causal_pathways/binding/session.py), the
   I123 successor to the temporary compatibility module
-- [`binding/__init__.py`](../src/pygrc/causal_pathways/binding/__init__.py)
-- [I122 architecture tests](../tests/integrations/test_causal_pathway_binding_i122.py)
-- [I121 candidate-boundary tests](../tests/integrations/test_causal_pathway_binding_i121.py)
-- [I120 dependency tests](../tests/integrations/test_causal_pathway_binding_i120.py)
-- [focused binding and pressure tests](../tests/integrations/test_causal_pathway_binding.py)
-- [binding conformance tests](../tests/integrations/test_causal_pathway_binding_conformance.py)
+- [`binding/__init__.py`](../../../src/pygrc/causal_pathways/binding/__init__.py)
+- [I122 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i122.py)
+- [I121 candidate-boundary tests](../../../tests/integrations/test_causal_pathway_binding_i121.py)
+- [I120 dependency tests](../../../tests/integrations/test_causal_pathway_binding_i120.py)
+- [focused binding and pressure tests](../../../tests/integrations/test_causal_pathway_binding.py)
+- [binding conformance tests](../../../tests/integrations/test_causal_pathway_binding_conformance.py)
 
 Frozen compatibility and authority inputs:
 
-- [I118 public API freeze](evidence/causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
-- [I118 artifact/runtime freeze](evidence/causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
-- [I118 checker-independence freeze](evidence/causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
-- [I118 golden corpus](evidence/causal-pathway-binding/i118/corpus)
-- [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json)
-- [binding conformance policy](../specs/grc-lgrc-causal-pathway-binding-conformance.json)
-- [predecessor conformance policy](../specs/grc-lgrc-causal-pathway-conformance.json)
+- [I118 public API freeze](../causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
+- [I118 artifact/runtime freeze](../causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
+- [I118 checker-independence freeze](../causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
+- [I118 golden corpus](../causal-pathway-binding/i118/corpus)
+- [binding acceptance anchor](../causal-pathway-binding/binding-acceptance-anchor.json)
+- [binding conformance policy](../../../specs/grc-lgrc-causal-pathway-binding-conformance.json)
+- [predecessor conformance policy](../../../specs/grc-lgrc-causal-pathway-conformance.json)
 
 Planning and iteration control:
 
-- [plan](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
-- [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
+- [plan](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
+- [checklist](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
 - [I121 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration121.md)
 
 ## Verification

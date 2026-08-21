@@ -4,7 +4,7 @@
 
 **Checkpoint commit:** `976c660`
 
-**Independent-audit disposition:** `reject_pending_correction`
+**Opening independent-audit disposition:** `reject_pending_correction`
 
 ## Purpose
 

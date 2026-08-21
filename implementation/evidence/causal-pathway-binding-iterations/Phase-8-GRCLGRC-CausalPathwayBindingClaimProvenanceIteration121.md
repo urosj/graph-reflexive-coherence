@@ -26,7 +26,7 @@ lines.
 
 ## Candidate Provider
 
-[`binding/candidates.py`](../src/pygrc/causal_pathways/binding/candidates.py)
+[`binding/candidates.py`](../../../src/pygrc/causal_pathways/binding/candidates.py)
 owns:
 
 - `CandidateDeclaration`, `CandidateMechanismEvidence`,
@@ -113,7 +113,7 @@ noncontractual.
 
 ## Architecture Enforcement
 
-[I121 architecture tests](../tests/integrations/test_causal_pathway_binding_i121.py)
+[I121 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i121.py)
 enforce:
 
 - the candidate provider's exact acyclic imports and structural six-method host;
@@ -131,29 +131,29 @@ identity, effect, and authority dependency assertion.
 
 Implementation and enforcement:
 
-- [`binding/candidates.py`](../src/pygrc/causal_pathways/binding/candidates.py)
-- [`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py), the
+- [`binding/candidates.py`](../../../src/pygrc/causal_pathways/binding/candidates.py)
+- [`binding/session.py`](../../../src/pygrc/causal_pathways/binding/session.py), the
   I123 successor to the temporary compatibility module
-- [`binding/__init__.py`](../src/pygrc/causal_pathways/binding/__init__.py)
-- [I121 architecture tests](../tests/integrations/test_causal_pathway_binding_i121.py)
-- [I120 dependency tests](../tests/integrations/test_causal_pathway_binding_i120.py)
-- [focused binding and pressure tests](../tests/integrations/test_causal_pathway_binding.py)
-- [binding conformance tests](../tests/integrations/test_causal_pathway_binding_conformance.py)
+- [`binding/__init__.py`](../../../src/pygrc/causal_pathways/binding/__init__.py)
+- [I121 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i121.py)
+- [I120 dependency tests](../../../tests/integrations/test_causal_pathway_binding_i120.py)
+- [focused binding and pressure tests](../../../tests/integrations/test_causal_pathway_binding.py)
+- [binding conformance tests](../../../tests/integrations/test_causal_pathway_binding_conformance.py)
 
 Frozen compatibility and authority inputs:
 
-- [I118 public API freeze](evidence/causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
-- [I118 artifact/runtime freeze](evidence/causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
-- [I118 checker-independence freeze](evidence/causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
-- [I118 golden corpus](evidence/causal-pathway-binding/i118/corpus)
-- [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json)
-- [binding conformance policy](../specs/grc-lgrc-causal-pathway-binding-conformance.json)
-- [predecessor conformance policy](../specs/grc-lgrc-causal-pathway-conformance.json)
+- [I118 public API freeze](../causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
+- [I118 artifact/runtime freeze](../causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
+- [I118 checker-independence freeze](../causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
+- [I118 golden corpus](../causal-pathway-binding/i118/corpus)
+- [binding acceptance anchor](../causal-pathway-binding/binding-acceptance-anchor.json)
+- [binding conformance policy](../../../specs/grc-lgrc-causal-pathway-binding-conformance.json)
+- [predecessor conformance policy](../../../specs/grc-lgrc-causal-pathway-conformance.json)
 
 Planning and iteration control:
 
-- [plan](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
-- [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
+- [plan](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
+- [checklist](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
 - [I120 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration120.md)
 
 ## Verification

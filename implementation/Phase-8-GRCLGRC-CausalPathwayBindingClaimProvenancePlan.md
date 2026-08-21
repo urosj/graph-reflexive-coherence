@@ -1,6 +1,7 @@
 # Phase 8 GRC/LGRC Causal Pathway Binding And Claim Provenance Plan
 
-**Status:** Iterations 118-124 complete; Iteration 125 planned
+**Status:** Iterations 118-125 complete; accepted with I125-N01 nonblocking
+evidence-reproducibility debt
 
 **Identity:** `Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenance`
 
@@ -429,12 +430,12 @@ evidence only, not binder runtime code.
 Iteration 118 passed with a 48-export public API freeze, 12-case regenerated
 artifact/runtime corpus, 26-file canonical I115/I116 manifest, independent
 checker guard, 109 focused tests, and 1,320 full-suite tests. See the
-[Iteration 118 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md).
+[Iteration 118 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md).
 
 ### Related files and artifacts
 
 - Iteration control: the
-  [I118 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md),
+  [I118 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration118.md),
   [plan](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md), and
   [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md).
 - Frozen production inputs: the
@@ -471,9 +472,9 @@ checker guard, 109 focused tests, and 1,320 full-suite tests. See the
   [baseline execution record](evidence/causal-pathway-binding/i118/I118BaselineExecution.json),
   and [supplemental corpus](evidence/causal-pathway-binding/i118/corpus/).
 - Inherited accepted evidence: the
-  [I115 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration115.md),
-  [I116 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration116.md),
-  [I117 correction record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration117IndependentAuditCorrections.md),
+  [I115 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration115.md),
+  [I116 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration116.md),
+  [I117 correction record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration117IndependentAuditCorrections.md),
   [I116 corpus](evidence/causal-pathway-binding/i116/), I115
   [native lock](evidence/causal-pathway-binding/i115-native-pathway.lock.json),
   [native receipt](evidence/causal-pathway-binding/i115-native-pathway.receipt.json),
@@ -500,7 +501,7 @@ architecture enforcement, removal of the two private monolith test hooks, 114
 focused tests, byte-identical I118 corpus output, and both 20-rule conformance
 policies. The full project suite remains at the accepted 1,320-test I118
 baseline and is next required after structural completion in I123. See the
-[Iteration 119 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration119.md).
+[Iteration 119 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration119.md).
 
 ## Iteration 120: Effects And Authority
 
@@ -514,7 +515,7 @@ identity-dependent `effects.py`, authority and acceptance loading isolated in
 authority state, 119 focused tests, byte-identical I118 corpus output, and both
 20-rule conformance policies. The full project suite remains deferred to the
 planned I123 structural-completion gate. See the
-[Iteration 120 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration120.md).
+[Iteration 120 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration120.md).
 
 ## Iteration 121: Candidate Subsystem
 
@@ -535,7 +536,7 @@ conformance policies retained their accepted digests, and the R4-B01 through
 R8-B01 regressions plus candidate mutation controls replayed successfully. The
 full project suite remains deferred to the planned I123 structural-completion
 gate. See the
-[Iteration 121 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration121.md).
+[Iteration 121 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration121.md).
 
 ## Iteration 122: Runtime Scopes And State Ownership
 
@@ -556,7 +557,7 @@ passed, both 20-rule conformance policies retained their accepted digests, and
 the 15 composition-flow, dynamic-choice, producer/adapter-owner, and endpoint
 co-use pressures replayed successfully. The full project suite remains
 deferred to the planned I123 structural-completion gate. See the
-[Iteration 122 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration122.md).
+[Iteration 122 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration122.md).
 
 ## Iteration 123: Artifacts And Session Consolidation
 
@@ -575,7 +576,7 @@ The temporary `_legacy.py` module is removed and the complete provider-first
 dependency DAG is enforced. The I118 oracle remained byte-stable, all 137
 focused tests passed, the full 1,348-test project suite passed, and both 20-rule
 conformance policies retained their accepted digests. See the
-[Iteration 123 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration123.md).
+[Iteration 123 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration123.md).
 
 ## Iteration 124: Binder Examples And Guidance
 
@@ -595,15 +596,34 @@ contractual. All planned repository discovery surfaces now link both guides and
 the examples. The I118 oracle remained byte-stable, all 143 focused tests
 passed, and both 20-rule conformance policies retained their accepted digests.
 See the
-[Iteration 124 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration124.md).
+[Iteration 124 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration124.md).
 
 ## Iteration 125: Independent Pressure And Closeout
 
 Compare the complete frozen API, artifact, and runtime corpus; replay every
-mutation falsifier and the accepted 68-case independent gate; run both
+mutation falsifier and the accepted 68-case independent gate when its exact
+harness is retained; otherwise record the retention gap and require explicitly
+approved independent successor pressure over the same boundaries. Run both
 conformance policies, all examples, the full project suite, and all static
-checks; and close only with no attributable semantic, artifact, or runtime
+checks; close only with no attributable semantic, artifact, or runtime
 differences.
+
+Iteration 125 passed with disposition `accept_with_nonblocking_debt`. The
+independent audit found zero blockers, zero majors, and one minor
+evidence-retention debt. All 48 public exports matched, the runtime probe and
+39-file evidence corpus were byte-identical, 21 new independent
+mutations/falsifiers and all retained semantic controls passed, the focused
+suite passed 143/143, the full suite passed 1,354/1,354, both conformance
+policies passed 20/20, and all examples and static gates passed. The historical
+external 68-case harness is unavailable, so exact replay is not claimed; the
+independently reconstructed successor pressure plus retained focused controls
+is explicitly accepted as the I125 replacement gate, with I125-N01 retained as
+nonblocking evidence-reproducibility debt. See the
+[Iteration 125 record](evidence/causal-pathway-binding-iterations/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration125.md),
+[independent audit](evidence/causal-pathway-binding-iterations/CausalPathwayBindingIndependentAudit.md), and
+[canonical closeout](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md).
+The complete supporting sequence is indexed in the
+[iteration and audit evidence package](evidence/causal-pathway-binding-iterations/README.md).
 
 Every code-moving iteration ends in a reviewable checkpoint commit. Run the
 focused binder tests, public compatibility freeze, golden corpus, conformance
@@ -622,10 +642,11 @@ widening, endpoint co-use without composition flow, hard-coded candidate target
 requests, source-present-but-unused candidates, and stale source content. Each
 relevant independent gate must still fail closed.
 
-The 1,348-test project suite, accepted 68-case independent semantic gate, both
-20-rule conformance policies, all examples, Ruff, mypy, compileall, and diff
-checks must pass before Iteration 125 can close. Closure requires zero
-semantic, artifact, or runtime differences attributable to the refactor.
+The current 1,354-test project suite, both 20-rule conformance policies, all
+examples, Ruff, mypy, compileall, and diff checks passed. Closure found zero
+semantic, artifact, or runtime differences attributable to the refactor. The
+unavailable historical 68-case script is not represented as replayed; its
+successor pressure is accepted under the explicit I125-N01 debt above.
 
 ## Maximum Claim
 
@@ -641,7 +662,8 @@ Read-Back, or N32.
 
 ## Closeout
 
-Iterations 112-116 are complete. The canonical tranche result is
+Iterations 112-125 are complete. The canonical tranche result is
 [the closeout](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md),
-with iteration records, prospective conformance evidence, ten consumer dry
-runs, and the low-context post-freeze oracle retained under this identity.
+with iteration records, prospective conformance evidence, independent I125
+audit reports, ten consumer dry runs, the low-context post-freeze oracle, and
+I125-N01 retained under this identity.

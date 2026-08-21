@@ -23,7 +23,7 @@ public compatibility facade.
 
 ## Effect Provider
 
-[`binding/effects.py`](../src/pygrc/causal_pathways/binding/effects.py) owns:
+[`binding/effects.py`](../../../src/pygrc/causal_pathways/binding/effects.py) owns:
 
 - the three public return/effect category constants;
 - `EffectOutcomeContract` parsing, validation, canonical records, and
@@ -39,7 +39,7 @@ Consequently, effect classification does not import or know about
 
 ## Authority Provider
 
-[`binding/authority.py`](../src/pygrc/causal_pathways/binding/authority.py) owns:
+[`binding/authority.py`](../../../src/pygrc/causal_pathways/binding/authority.py) owns:
 
 - the six-file authority-path map and JSON authority loading;
 - `BindingAcceptanceAnchor` parsing, trusted-digest validation, accepted
@@ -79,7 +79,7 @@ noncontractual.
 
 ## Architecture Enforcement
 
-[I120 architecture tests](../tests/integrations/test_causal_pathway_binding_i120.py)
+[I120 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i120.py)
 enforce:
 
 - the exact acyclic import graph across identity, effects, authority, legacy,

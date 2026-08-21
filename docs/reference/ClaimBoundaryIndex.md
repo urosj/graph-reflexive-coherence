@@ -204,8 +204,19 @@ Evidence and usage pointers:
 - [Binding acceptance anchor](../../implementation/evidence/causal-pathway-binding/binding-acceptance-anchor.json):
   Reviewed binding-map, source-manifest, semantic, and effect-contract
   identity; its expected digest must arrive through separate trust input.
+- [Iteration and audit evidence index](../../implementation/evidence/causal-pathway-binding-iterations/README.md):
+  Accepted I112-I125 iteration records and the final independent audit,
+  separated from the frozen machine-evidence corpus.
+- [Independent I125 audit](../../implementation/evidence/causal-pathway-binding-iterations/CausalPathwayBindingIndependentAudit.md):
+  Accepts the modular binder with zero blockers, zero majors, and one
+  nonblocking historical-harness retention debt.
+- [Evidence layout relocation](../../implementation/evidence/causal-pathway-binding-iterations/CausalPathwayBindingIterationEvidenceLayoutRelocation.json):
+  Maps the former top-level iteration and audit paths into the indexed evidence
+  package without changing production behavior, claims, or the frozen
+  machine-evidence tree.
 - [Binding closeout](../../implementation/Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceCloseout.md):
-  Original I112-I116 delivery boundary and evidence package.
+  Accepted I112-I125 delivery, modularization, guidance, pressure, and final
+  claim boundary.
 
 Claim ceiling: versioned, operation-scoped pathway binding and conservative
 claim provenance for represented verified calls. `claim_scope =

@@ -1,7 +1,7 @@
 # GRC/LGRC Causal Pathway Bindings
 
-**Status:** Round-five R5-B01 corrected author-side; full independent re-audit
-pending
+**Status:** Accepted through Iteration 125 with I125-N01 nonblocking
+evidence-reproducibility debt
 
 **Machine map:** [`grc-lgrc-causal-pathway-bindings.json`](./grc-lgrc-causal-pathway-bindings.json)
 

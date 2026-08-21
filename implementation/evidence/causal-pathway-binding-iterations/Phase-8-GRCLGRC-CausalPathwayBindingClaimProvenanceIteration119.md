@@ -26,17 +26,17 @@ facade.
 
 ## Package Boundary
 
-- [`binding/__init__.py`](../src/pygrc/causal_pathways/binding/__init__.py)
+- [`binding/__init__.py`](../../../src/pygrc/causal_pathways/binding/__init__.py)
   preserves all imports from `pygrc.causal_pathways.binding` and object identity
   with the root `pygrc.causal_pathways` exports.
-- [`binding/identity.py`](../src/pygrc/causal_pathways/binding/identity.py) owns
+- [`binding/identity.py`](../../../src/pygrc/causal_pathways/binding/identity.py) owns
   canonical digests, binding-semantic and source-manifest digests, source-file
   hashing and verification, callable definition/owner resolution, callable
   identities and cached guards, source-symbol bindings, crossing bindings, and
   the errors required to fail those operations closed.
 - the I119 `binding/_legacy.py` compatibility implementation was removed by
   I123; its remaining responsibilities now live in
-  [`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py).
+  [`binding/session.py`](../../../src/pygrc/causal_pathways/binding/session.py).
   `identity.py` retains no reciprocal package dependency and no session
   reference.
 - The former `src/pygrc/causal_pathways/binding.py` no longer exists, so Python
@@ -66,7 +66,7 @@ scope that previously reported two private-hook findings is now clean.
 
 ## Architecture Enforcement
 
-[I119 architecture tests](../tests/integrations/test_causal_pathway_binding_i119.py)
+[I119 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i119.py)
 enforce:
 
 - exclusive package layout with no same-named `binding.py`;

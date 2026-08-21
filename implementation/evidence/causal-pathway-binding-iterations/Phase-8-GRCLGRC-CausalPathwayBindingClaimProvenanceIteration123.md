@@ -30,7 +30,7 @@ scopes, 922 for artifacts, and 1,444 for session; the facade is 119 lines. The
 
 ## Artifact Provider
 
-[`binding/artifacts.py`](../src/pygrc/causal_pathways/binding/artifacts.py)
+[`binding/artifacts.py`](../../../src/pygrc/causal_pathways/binding/artifacts.py)
 owns:
 
 - `BindingLock`, `BindingReceipt`, and their immutable canonical artifact base;
@@ -52,7 +52,7 @@ content remain unchanged under the I118 corpus.
 
 ## Session Provider
 
-[`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py) owns:
+[`binding/session.py`](../../../src/pygrc/causal_pathways/binding/session.py) owns:
 
 - `BoundPathway`, `BoundComposition`, `VerifiedCallable`, and
   `VerifiedCompositionCrossing` handles;
@@ -124,7 +124,7 @@ The I118 checker-independence digest and file manifest remain unchanged.
 
 ## Architecture Enforcement
 
-[I123 architecture tests](../tests/integrations/test_causal_pathway_binding_i123.py)
+[I123 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i123.py)
 enforce:
 
 - the exact complete seven-provider DAG and absence of `_legacy.py`;
@@ -143,31 +143,31 @@ protocol, and pressure-test assertion.
 
 Implementation and enforcement:
 
-- [`binding/artifacts.py`](../src/pygrc/causal_pathways/binding/artifacts.py)
-- [`binding/session.py`](../src/pygrc/causal_pathways/binding/session.py)
-- [`binding/scopes.py`](../src/pygrc/causal_pathways/binding/scopes.py)
-- [`binding/candidates.py`](../src/pygrc/causal_pathways/binding/candidates.py)
-- [`binding/__init__.py`](../src/pygrc/causal_pathways/binding/__init__.py)
-- [I123 architecture tests](../tests/integrations/test_causal_pathway_binding_i123.py)
-- [I122 architecture tests](../tests/integrations/test_causal_pathway_binding_i122.py)
-- [focused binding and pressure tests](../tests/integrations/test_causal_pathway_binding.py)
-- [binding conformance tests](../tests/integrations/test_causal_pathway_binding_conformance.py)
-- [independent binding checker](../scripts/check_grc_lgrc_causal_pathway_binding_conformance.py)
+- [`binding/artifacts.py`](../../../src/pygrc/causal_pathways/binding/artifacts.py)
+- [`binding/session.py`](../../../src/pygrc/causal_pathways/binding/session.py)
+- [`binding/scopes.py`](../../../src/pygrc/causal_pathways/binding/scopes.py)
+- [`binding/candidates.py`](../../../src/pygrc/causal_pathways/binding/candidates.py)
+- [`binding/__init__.py`](../../../src/pygrc/causal_pathways/binding/__init__.py)
+- [I123 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i123.py)
+- [I122 architecture tests](../../../tests/integrations/test_causal_pathway_binding_i122.py)
+- [focused binding and pressure tests](../../../tests/integrations/test_causal_pathway_binding.py)
+- [binding conformance tests](../../../tests/integrations/test_causal_pathway_binding_conformance.py)
+- [independent binding checker](../../../scripts/check_grc_lgrc_causal_pathway_binding_conformance.py)
 
 Frozen compatibility and authority inputs:
 
-- [I118 public API freeze](evidence/causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
-- [I118 artifact/runtime freeze](evidence/causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
-- [I118 checker-independence freeze](evidence/causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
-- [I118 golden corpus](evidence/causal-pathway-binding/i118/corpus)
-- [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json)
-- [binding conformance policy](../specs/grc-lgrc-causal-pathway-binding-conformance.json)
-- [predecessor conformance policy](../specs/grc-lgrc-causal-pathway-conformance.json)
+- [I118 public API freeze](../causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
+- [I118 artifact/runtime freeze](../causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
+- [I118 checker-independence freeze](../causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
+- [I118 golden corpus](../causal-pathway-binding/i118/corpus)
+- [binding acceptance anchor](../causal-pathway-binding/binding-acceptance-anchor.json)
+- [binding conformance policy](../../../specs/grc-lgrc-causal-pathway-binding-conformance.json)
+- [predecessor conformance policy](../../../specs/grc-lgrc-causal-pathway-conformance.json)
 
 Planning and iteration control:
 
-- [plan](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
-- [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
+- [plan](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
+- [checklist](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
 - [I122 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration122.md)
 
 ## Verification

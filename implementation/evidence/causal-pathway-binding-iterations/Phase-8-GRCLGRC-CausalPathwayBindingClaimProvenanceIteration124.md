@@ -34,7 +34,7 @@ artifact schema, no conformance policy or checker, and no runtime behavior.
 
 ## Runnable Examples
 
-[`examples/causal_pathway_binding/`](../examples/causal_pathway_binding/README.md)
+[`examples/causal_pathway_binding/`](../../../examples/causal_pathway_binding/README.md)
 contains five entry points:
 
 1. `admitted_pathway.py` binds the complete explicit packet lifecycle and
@@ -58,7 +58,7 @@ it does not depend on a test fixture.
 ## User And Agent Guide
 
 The
-[user and agent guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md)
+[user and agent guide](../../../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md)
 covers:
 
 - consumer-owned semantic selection and the four binder outcomes;
@@ -78,7 +78,7 @@ covers:
 ## Stable Reference
 
 The revised
-[binding reference](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
+[binding reference](../../../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
 keeps both supported facade import paths contractual while stating that
 internal provider paths and class ownership are not. It directly describes the
 final candidate contract and removes correction-round chronology from stable
@@ -120,42 +120,42 @@ the exact claim ceiling and trust/evidence pointers.
 
 Guidance and discovery:
 
-- [user and agent guide](../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md)
-- [stable binding reference](../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
-- [claim-boundary index](../docs/reference/ClaimBoundaryIndex.md)
-- [example index](../examples/causal_pathway_binding/README.md)
-- [root README](../README.md)
-- [docs index](../docs/README.md)
-- [reference index](../docs/reference/README.md)
-- [repository examples index](../examples/README.md)
-- [specifications index](../specs/README.md)
-- [documentation checklist](Documentation-Checklist.md)
+- [user and agent guide](../../../docs/reference/GRC-LGRC-CausalPathwayBinding-User-Agent-Guide.md)
+- [stable binding reference](../../../docs/reference/GRC-LGRC-CausalPathwayBinding-ReferenceGuide.md)
+- [claim-boundary index](../../../docs/reference/ClaimBoundaryIndex.md)
+- [example index](../../../examples/causal_pathway_binding/README.md)
+- [root README](../../../README.md)
+- [docs index](../../../docs/README.md)
+- [reference index](../../../docs/reference/README.md)
+- [repository examples index](../../../examples/README.md)
+- [specifications index](../../../specs/README.md)
+- [documentation checklist](../../Documentation-Checklist.md)
 
 Runnable examples and enforcement:
 
-- [admitted pathway example](../examples/causal_pathway_binding/admitted_pathway.py)
-- [registered composition example](../examples/causal_pathway_binding/registered_composition.py)
-- [dynamic choice example](../examples/causal_pathway_binding/dynamic_choice.py)
-- [unregistered candidate example](../examples/causal_pathway_binding/unregistered_candidate.py)
-- [direct-unbound example](../examples/causal_pathway_binding/direct_unbound.py)
-- [candidate mechanism](../examples/causal_pathway_binding/candidate_mechanism.py)
-- [candidate mechanism evidence](../examples/causal_pathway_binding/candidate_mechanism_evidence.json)
-- [shared example support](../examples/causal_pathway_binding/_shared.py)
-- [I124 documentation/example tests](../tests/integrations/test_causal_pathway_binding_i124.py)
+- [admitted pathway example](../../../examples/causal_pathway_binding/admitted_pathway.py)
+- [registered composition example](../../../examples/causal_pathway_binding/registered_composition.py)
+- [dynamic choice example](../../../examples/causal_pathway_binding/dynamic_choice.py)
+- [unregistered candidate example](../../../examples/causal_pathway_binding/unregistered_candidate.py)
+- [direct-unbound example](../../../examples/causal_pathway_binding/direct_unbound.py)
+- [candidate mechanism](../../../examples/causal_pathway_binding/candidate_mechanism.py)
+- [candidate mechanism evidence](../../../examples/causal_pathway_binding/candidate_mechanism_evidence.json)
+- [shared example support](../../../examples/causal_pathway_binding/_shared.py)
+- [I124 documentation/example tests](../../../tests/integrations/test_causal_pathway_binding_i124.py)
 
 Frozen authority and compatibility inputs:
 
-- [I118 public API freeze](evidence/causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
-- [I118 artifact/runtime freeze](evidence/causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
-- [I118 checker-independence freeze](evidence/causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
-- [I116 practical artifact examples](evidence/causal-pathway-binding/i116)
-- [binding acceptance anchor](evidence/causal-pathway-binding/binding-acceptance-anchor.json)
-- [binding conformance policy](../specs/grc-lgrc-causal-pathway-binding-conformance.json)
+- [I118 public API freeze](../causal-pathway-binding/i118/I118PublicAPICompatibilityFreeze.json)
+- [I118 artifact/runtime freeze](../causal-pathway-binding/i118/I118ArtifactRuntimeFreeze.json)
+- [I118 checker-independence freeze](../causal-pathway-binding/i118/I118CheckerIndependenceFreeze.json)
+- [I116 practical artifact examples](../causal-pathway-binding/i116)
+- [binding acceptance anchor](../causal-pathway-binding/binding-acceptance-anchor.json)
+- [binding conformance policy](../../../specs/grc-lgrc-causal-pathway-binding-conformance.json)
 
 Planning and predecessor:
 
-- [plan](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
-- [checklist](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
+- [plan](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenancePlan.md)
+- [checklist](../../Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceChecklist.md)
 - [I123 record](Phase-8-GRCLGRC-CausalPathwayBindingClaimProvenanceIteration123.md)
 
 ## Verification

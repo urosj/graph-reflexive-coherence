@@ -93,7 +93,7 @@ All accepted commands used the repository `.venv` and the package metadata in
 | `git diff --check` | Passed |
 
 The machine execution record preserves the exact commands and digests in
-[I118BaselineExecution.json](evidence/causal-pathway-binding/i118/I118BaselineExecution.json).
+[I118BaselineExecution.json](../causal-pathway-binding/i118/I118BaselineExecution.json).
 
 ## Static-Scope Note
 
