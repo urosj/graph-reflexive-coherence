@@ -551,6 +551,15 @@ condition-number limit fails; a cluster is admissible only when its full span
 is resolved and its invariant-subspace residual passes. Neither path supports
 retention.
 
+P3.3 is a traceability-only completion discovered before scientific acceptance.
+It moves the already committed P3.2 spectral partition (`0.9`), neutral and
+cluster tolerances (`1e-6`), and invariant-subspace residual limit (`1e-8`)
+into `configs/grv3_causal_state.json` without changing their values. It also
+records the final interpretation-blocked matrix identities in the machine
+summary. This does not change the method or respond to observed spectra by
+moving a threshold; a complete rerun remains required to bind the explicit
+contract to the output receipt.
+
 ### Work
 
 1. Admit a branch-relative continuous causal-state encoder/decoder and classify

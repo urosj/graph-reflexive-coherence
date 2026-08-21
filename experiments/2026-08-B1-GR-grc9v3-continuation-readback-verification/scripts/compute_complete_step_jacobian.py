@@ -429,16 +429,24 @@ def _matrix_diagnostics(
         and raw_condition
         <= float(nonnormal_config["asymptotic_sensitivity"]["condition_number_max"])
     )
+    spectral_config = config["grv3_spectral"]
+    unstable_slack = float(spectral_config["unstable_multiplier_slack"])
+    neutral_tolerance = float(spectral_config["neutral_magnitude_tolerance"])
+    slow_minimum = float(spectral_config["stable_slow_minimum_magnitude"])
+    cluster_tolerance = float(
+        spectral_config["eigenvalue_cluster_membership_tolerance"]
+    )
+    subspace_residual_max = float(spectral_config["invariant_subspace_residual_max"])
     mode_rows = []
     for index, value in enumerate(eigenvalues):
         magnitude = abs(value)
-        if magnitude > 1.0 + 1e-6:
+        if magnitude > 1.0 + unstable_slack:
             classification = "unstable"
-        elif abs(magnitude - 1.0) <= 1e-6:
+        elif abs(magnitude - 1.0) <= neutral_tolerance:
             classification = "neutral_or_marginal"
         elif abs(value.imag) > 1e-8:
             classification = "stable_oscillatory"
-        elif magnitude >= 0.9:
+        elif magnitude >= slow_minimum:
             classification = "stable_slow"
         else:
             classification = "stable_fast_or_intermediate"
@@ -467,7 +475,6 @@ def _matrix_diagnostics(
         )
     remaining = set(range(len(eigenvalues)))
     clusters = []
-    cluster_tolerance = 1e-6
     while remaining:
         seed = min(remaining)
         members = sorted(
@@ -491,7 +498,7 @@ def _matrix_diagnostics(
         cluster_interpretation_allowed = bool(
             rank == len(members)
             and math.isfinite(subspace_residual)
-            and subspace_residual <= 1e-8
+            and subspace_residual <= subspace_residual_max
         )
         clusters.append(
             {
@@ -566,6 +573,7 @@ def _matrix_diagnostics(
             "retention_interpretation_allowed": False,
         },
         "fast_slow_status": fast_slow_status,
+        "spectral_thresholds": spectral_config,
         "conservation_mode_policy": "removed_by_zero_sum_C_tangent_basis",
         "gauge_mode_status": "none_declared_in_admitted_coordinate",
         "branch_tangent_status": "not_separately_identified",
@@ -647,10 +655,14 @@ def _eigenvalue_set_error(left: np.ndarray, right: np.ndarray) -> float:
     return maximum
 
 
-def _spectral_subspace_basis(matrix: np.ndarray, *, near_unit: bool) -> np.ndarray:
+def _spectral_subspace_basis(
+    matrix: np.ndarray, *, near_unit: bool, minimum_magnitude: float
+) -> np.ndarray:
     values, vectors = np.linalg.eig(matrix)
     indices = [
-        index for index, value in enumerate(values) if (abs(value) >= 0.9) == near_unit
+        index
+        for index, value in enumerate(values)
+        if (abs(value) >= minimum_magnitude) == near_unit
     ]
     if not indices:
         return np.zeros((matrix.shape[0], 0), dtype=complex)
@@ -846,15 +858,39 @@ def stratum_and_jacobian_audit(
         ]
         slow_angles = [
             _subspace_angle(
-                _spectral_subspace_basis(left, near_unit=True),
-                _spectral_subspace_basis(right, near_unit=True),
+                _spectral_subspace_basis(
+                    left,
+                    near_unit=True,
+                    minimum_magnitude=float(
+                        config["grv3_spectral"]["stable_slow_minimum_magnitude"]
+                    ),
+                ),
+                _spectral_subspace_basis(
+                    right,
+                    near_unit=True,
+                    minimum_magnitude=float(
+                        config["grv3_spectral"]["stable_slow_minimum_magnitude"]
+                    ),
+                ),
             )
             for left, right in zip(matrix_arrays, matrix_arrays[1:], strict=False)
         ]
         fast_angles = [
             _subspace_angle(
-                _spectral_subspace_basis(left, near_unit=False),
-                _spectral_subspace_basis(right, near_unit=False),
+                _spectral_subspace_basis(
+                    left,
+                    near_unit=False,
+                    minimum_magnitude=float(
+                        config["grv3_spectral"]["stable_slow_minimum_magnitude"]
+                    ),
+                ),
+                _spectral_subspace_basis(
+                    right,
+                    near_unit=False,
+                    minimum_magnitude=float(
+                        config["grv3_spectral"]["stable_slow_minimum_magnitude"]
+                    ),
+                ),
             )
             for left, right in zip(matrix_arrays, matrix_arrays[1:], strict=False)
         ]
@@ -919,6 +955,9 @@ def stratum_and_jacobian_audit(
             "adjacent_fast_subspace_angles_radians": fast_angles,
             "maximum_allowed": float(
                 tolerances["adjacent_step_relative_column_error_max"]
+            ),
+            "subspace_partition_minimum_magnitude": float(
+                config["grv3_spectral"]["stable_slow_minimum_magnitude"]
             ),
             "passed": spectral_convergence_passed,
         },
@@ -1062,6 +1101,7 @@ def write_report(payload: dict[str, Any]) -> Path:
         f"admitted_reduced_symmetry_orbits = {summary['admitted_reduced_symmetry_orbit_count']}",
         f"branches_with_reduced_temporal_coordinates = {summary['branches_with_admitted_reduced_temporal_coordinate']}",
         f"spectral_convergence_pass_matrices = {summary['spectral_convergence_pass_matrix_count']}",
+        f"temporal_mode_interpretation_pass_matrices = {summary['temporal_mode_interpretation_pass_matrix_count']}",
         f"response_convergence_pass_matrices = {summary['response_convergence_pass_matrix_count']}",
         f"finite_horizon_nonnormal_pass_matrices = {summary['finite_horizon_nonnormal_pass_matrix_count']}",
         f"individual_eigenvector_condition_block_matrices = {summary['individual_eigenvector_condition_block_matrix_count']}",
@@ -1109,6 +1149,9 @@ def write_report(payload: dict[str, Any]) -> Path:
         "nonnormal convergence. Ill-conditioned eigenvector matrices block individual",
         "eigenvector interpretation; converged cluster spans are reported separately",
         "and neither object is promoted to retention evidence.",
+        f"`{len(summary['temporal_mode_interpretation_blocked_matrix_rows'])}`",
+        "otherwise admitted matrices remain interpretation-blocked by those gates;",
+        "their branch and coordinate identities are retained in the machine summary.",
         "",
         "## GRV3-C: Response And Categorical Surfaces",
         "",
@@ -1210,6 +1253,9 @@ def run_grv3() -> None:
                         "adjacent_fast_subspace_angles_radians": [],
                         "maximum_allowed": float(
                             tolerances["adjacent_step_relative_column_error_max"]
+                        ),
+                        "subspace_partition_minimum_magnitude": float(
+                            config["grv3_spectral"]["stable_slow_minimum_magnitude"]
                         ),
                         "passed": False,
                         "blocked_reason": "reduction_codec_failed",
@@ -1385,6 +1431,31 @@ def run_grv3() -> None:
         bool(row["convergence_and_nonnormal_admitted_temporal_coordinates"])
         for row in branch_rows
     )
+    temporal_mode_pass_matrix_count = sum(
+        len(row["convergence_and_nonnormal_admitted_temporal_coordinates"])
+        for row in branch_rows
+    )
+    temporal_mode_blocked_matrix_rows = [
+        {
+            "branch_id": row["branch_id"],
+            "coordinate_candidate": key,
+            "spectral_convergence_passed": audit["spectral_convergence"]["passed"],
+            "finite_horizon_nonnormal_passed": audit["temporal_mode_diagnostics"][
+                "nonnormal_control"
+            ]["finite_horizon_passed"],
+            "individual_eigenvector_condition_passed": audit[
+                "temporal_mode_diagnostics"
+            ]["nonnormal_control"]["individual_eigenvector_condition_passed"],
+            "all_cluster_interpretations_passed": all(
+                cluster["cluster_interpretation_allowed"]
+                for cluster in audit["temporal_mode_diagnostics"]["clusters"]
+            ),
+        }
+        for row in branch_rows
+        for key, audit in row["coordinate_stratum_and_jacobian_audits"].items()
+        if audit["square_transition_jacobian_status"] == "admitted"
+        and key not in row["convergence_and_nonnormal_admitted_temporal_coordinates"]
+    ]
     admitted_symmetry_orbits = {
         row["symmetry_orbit_id"]
         for row in branch_rows
@@ -1453,6 +1524,8 @@ def run_grv3() -> None:
         - eigenvector_condition_pass_count,
         "all_cluster_interpretation_pass_matrix_count": cluster_interpretation_pass_count,
         "branches_with_temporal_mode_evidence_after_all_gates": temporal_mode_pass_count,
+        "temporal_mode_interpretation_pass_matrix_count": temporal_mode_pass_matrix_count,
+        "temporal_mode_interpretation_blocked_matrix_rows": temporal_mode_blocked_matrix_rows,
         "maximum_finite_eigenvector_condition_number": max(
             finite_conditions, default=None
         ),

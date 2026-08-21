@@ -30,6 +30,8 @@
             "individual_eigenvector_condition_pass_matrix_count",
             "individual_eigenvector_condition_block_matrix_count",
             "all_cluster_interpretation_pass_matrix_count",
+            "temporal_mode_interpretation_pass_matrix_count",
+            "temporal_mode_interpretation_blocked_matrix_rows",
             "all_branches_consumed_without_symmetry_reduction"
           ]
         }

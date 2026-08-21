@@ -476,6 +476,10 @@ writeback = unsupported
   block individual eigenvector interpretation when conditioning fails.
 - [x] Require a full-rank, low-residual cluster span before using a cluster as
   the fallback interpretation object.
+- [x] Surface the unchanged P3.2 spectral window, cluster, and residual values
+  in the explicit P3.3 method config before scientific acceptance.
+- [x] Record every otherwise admitted but interpretation-blocked matrix by
+  branch and coordinate in the final machine summary.
 
 - [ ] Freeze and test the branch-relative causal-state encoder and decoder.
 - [ ] Require coordinate round trip `E_X(D_X(x)) ~= x`.

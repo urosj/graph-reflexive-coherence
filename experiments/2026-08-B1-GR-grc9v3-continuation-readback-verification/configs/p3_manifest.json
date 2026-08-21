@@ -1,6 +1,6 @@
 {
-  "schema_version": "b1_grv3_p3_package_manifest_v1_2",
-  "package_status": "clean_P3_2_spectral_response_and_nonnormal_gate_completion_when_contained_in_committed_revision",
+  "schema_version": "b1_grv3_p3_package_manifest_v1_3",
+  "package_status": "clean_P3_3_explicit_spectral_contract_completion_when_contained_in_committed_revision",
   "gate_id": "GRV3",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -52,6 +52,21 @@
       "scientific_acceptance_anchor_emitted": false,
       "failure": "P3_1_recorded_matrix_level_convergence_and_nonnormal_diagnostics_but_did_not_machine_gate_per_column_eigenvalue_subspace_response_convergence_or_ill_conditioned_individual_eigenvectors",
       "correction": "apply_the_preregistered_nonnormal_and_fast_slow_controls_and_require_column_spectral_invariant_subspace_and_response_convergence_before_temporal_or_response_evidence_is_supported",
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    },
+    {
+      "superseded_input_revision": "8db3975bc21a5fa692b8d33d617e5219d243a15b",
+      "superseded_result_receipt_payload_sha256": "83a6a10abd2b45f7671bdce84c05f9535336ea2ee2345e30b5e62fb850efa3d6",
+      "superseded_result_payload_sha256": "3e26c8c7bb36a97bdd36dec00cb03dd78313b8347b453b75186fb0b58e77f64b",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "P3_2_froze_spectral_window_cluster_and_residual_thresholds_in_committed_code_but_did_not_surface_the_unchanged_values_in_the_explicit_GRV3_method_contract",
+      "correction": "move_the_already_frozen_0_9_1e_6_and_1e_8_values_into_grv3_causal_state_config_without_changing_values_and_record_final_per_matrix_interpretation_blocks",
       "branch_scope_changed": false,
       "thresholds_changed": false,
       "fixtures_changed": false,

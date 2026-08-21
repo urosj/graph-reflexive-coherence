@@ -33,6 +33,15 @@
     "blocked_column_policy": "do_not_emit_classical_derivative_or_spectrum",
     "partial_matrix_policy": "do_not_call_square_transition_jacobian"
   },
+  "grv3_spectral": {
+    "unstable_multiplier_slack": 1e-6,
+    "neutral_magnitude_tolerance": 1e-6,
+    "stable_slow_minimum_magnitude": 0.9,
+    "eigenvalue_cluster_membership_tolerance": 1e-6,
+    "invariant_subspace_residual_max": 1e-8,
+    "threshold_source": "values_already_frozen_in_committed_P3_2_runner_before_execution",
+    "post_result_threshold_adjustment_allowed": false
+  },
   "grv3_c": {
     "smooth_response_surfaces": ["Phi", "G", "Hs", "Kcache"],
     "categorical_surfaces": ["current_sign", "sink_set", "basins", "hierarchy", "spark_eligibility", "event_classes", "budget_active_set"],

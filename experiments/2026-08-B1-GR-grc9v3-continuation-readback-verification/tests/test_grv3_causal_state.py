@@ -110,6 +110,14 @@ class GRV3CausalStateTest(unittest.TestCase):
         )
         self.assertFalse(contract["post_result_primary_coordinate_selection_allowed"])
 
+    def test_spectral_interpretation_thresholds_are_explicit_and_frozen(self) -> None:
+        spectral = self.config["grv3_spectral"]
+        self.assertEqual(0.9, spectral["stable_slow_minimum_magnitude"])
+        self.assertEqual(1e-6, spectral["neutral_magnitude_tolerance"])
+        self.assertEqual(1e-6, spectral["eigenvalue_cluster_membership_tolerance"])
+        self.assertEqual(1e-8, spectral["invariant_subspace_residual_max"])
+        self.assertFalse(spectral["post_result_threshold_adjustment_allowed"])
+
     def test_nonuniform_reference_admits_reduced_not_full_coordinate(self) -> None:
         model = GRC9V3.load(str(ROOT / "outputs/branches/grv2-f2-017.json"))
         full = BranchCoordinateChart.from_model(model, ("C", "W", "J"))
@@ -142,6 +150,12 @@ class GRV3CausalStateTest(unittest.TestCase):
             "computed_and_converged", reduced_result["response_jacobian_status"]
         )
         self.assertTrue(reduced_result["spectral_convergence"]["passed"])
+        self.assertEqual(
+            0.9,
+            reduced_result["spectral_convergence"][
+                "subspace_partition_minimum_magnitude"
+            ],
+        )
         self.assertTrue(reduced_result["temporal_mode_diagnostics"]["modes"])
         self.assertIn(
             "individual_eigenvector_condition_passed",
