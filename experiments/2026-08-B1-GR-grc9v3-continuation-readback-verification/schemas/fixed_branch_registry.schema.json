@@ -17,6 +17,7 @@
         "held_out_validation",
         "bounded_search_evidence",
         "symmetry_and_port_controls",
+        "adversarial_hardening_audit",
         "claim_boundary"
       ],
       "properties": {
@@ -30,13 +31,21 @@
               "parameter_hash",
               "state_snapshot_path",
               "state_snapshot_sha256",
+              "canonical_branch_signature",
+              "nonuniformity",
               "full_step_residual",
               "internal_stage_residuals",
               "budget_residual",
+              "canonicalization_admission",
+              "authoritative_surface_assertions",
+              "constraint_and_projection_controls",
+              "administrative_phase_hold",
               "event_and_topology_assertions",
               "symmetry_class",
               "solver_record",
               "continuity_and_budget_states",
+              "solver_converged",
+              "branch_certified",
               "branch_class",
               "distance_from_non_smooth_boundaries",
               "grv3_causal_branch_upgrade_status",
@@ -48,6 +57,7 @@
         "held_out_validation": {"type": "object"},
         "bounded_search_evidence": {"type": "object"},
         "symmetry_and_port_controls": {"type": "object"},
+        "adversarial_hardening_audit": {"type": "object"},
         "claim_boundary": {"type": "object"}
       }
     }

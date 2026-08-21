@@ -1,5 +1,5 @@
 {
-  "schema_version": "b1_grv2_branch_search_v2",
+  "schema_version": "b1_grv2_branch_search_v3",
   "seed": 31001,
   "candidate_fixtures": ["F1", "F2", "F3"],
   "search_budget_per_family": 256,
@@ -53,6 +53,10 @@
     "numerical_absolute_l_inf_tolerance": 1e-09,
     "relative_residual_tolerance": 1e-08,
     "budget_correction_l_inf_tolerance": 1e-12,
+    "canonicalization_load_bearing_l_inf_tolerance": 1e-09,
+    "authoritative_current_l_inf_tolerance": 1e-10,
+    "authoritative_conductance_consistency_l_inf_tolerance": 1e-10,
+    "administrative_phase_hold_beats": 4,
     "conductance_floor": 1e-12,
     "causal_strong_branch_upgrade_gate": "GRV3"
   },

@@ -57,6 +57,19 @@ class StrongFixedBranchTest(unittest.TestCase):
         self.assertTrue(
             result["event_and_topology_assertions"]["full_step_no_events"]
         )
+        self.assertTrue(result["canonicalization_admission"]["admitted"])
+        self.assertTrue(
+            result["constraint_and_projection_controls"][
+                "budget_active_set_unchanged"
+            ]
+        )
+        self.assertTrue(result["administrative_phase_hold"]["physical_hold_passed"])
+        self.assertEqual(
+            4, result["administrative_phase_hold"]["declared_hold_beats"]
+        )
+        self.assertFalse(
+            result["administrative_phase_hold"]["causal_fixed_state_claim_allowed"]
+        )
 
     def test_two_node_source_critical_nonuniform_seed_is_retained(self) -> None:
         params = build_params(1.0, 0.1, 1.0, 31001)
@@ -69,6 +82,12 @@ class StrongFixedBranchTest(unittest.TestCase):
         self.assertEqual(
             "provisional_physical_strong_branch", result["branch_class"]
         )
+        self.assertTrue(
+            result["authoritative_surface_assertions"][
+                "authoritative_zero_current_within_tolerance"
+            ]
+        )
+        self.assertTrue(result["administrative_phase_hold"]["physical_hold_passed"])
 
     def test_triangle_source_critical_nonuniform_seed_is_retained(self) -> None:
         params = build_params(1.5, 0.05, 0.5, 31001)
@@ -84,6 +103,15 @@ class StrongFixedBranchTest(unittest.TestCase):
             "GRV3",
             self.config["certification"]["causal_strong_branch_upgrade_gate"],
         )
+        self.assertTrue(result["canonicalization_admission"]["admitted"])
+        self.assertTrue(result["administrative_phase_hold"]["physical_hold_passed"])
+
+    def test_nonuniform_search_uses_opposite_symmetry_seed_directions(self) -> None:
+        self.assertIn([1.0, 3.0], self.config["fixture_searches"]["F2"]["coherence_seeds"])
+        self.assertIn([3.0, 1.0], self.config["fixture_searches"]["F2"]["coherence_seeds"])
+        triangle_seeds = self.config["fixture_searches"]["F3"]["coherence_seeds"]
+        self.assertIn([1.0, 2.0, 3.0], triangle_seeds)
+        self.assertIn([3.0, 1.0, 2.0], triangle_seeds)
 
     def test_triangle_snapshot_orientation_normalization_uses_frozen_tolerance(self) -> None:
         params = build_params(1.5, 0.05, 0.5, 31001)

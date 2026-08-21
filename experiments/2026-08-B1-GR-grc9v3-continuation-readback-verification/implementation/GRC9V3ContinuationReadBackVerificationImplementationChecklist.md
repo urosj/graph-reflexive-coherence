@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv2_P2_2_executed_awaiting_scientific_acceptance
+status = grv2_P2_3_adversarial_hardening_prepared_pending_clean_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV2_P2_2_executed_awaiting_authorized_human_acceptance
+current_gate = GRV2_P2_3_prepared_pending_clean_execution
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C3_candidate_pending_P2_3_execution_and_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -304,12 +304,12 @@ node_values / edge_values = unknown and carried into GRV3 closure
 - [ ] Record the GRV2 acceptance decision in a separate human anchor after review.
 - [x] State explicitly that branch existence is not continuation or retention.
 
-### Iteration 3 result
+### P2.2 provisional result, never accepted
 
 ```text
 input_revision = d224a10302bfa030da817105dbf65c2a23f41483
 mechanical_status = passed
-scientific_acceptance = awaiting_human_review
+scientific_acceptance = never_accepted_superseded_by_P2_3_adversarial_hardening
 receipt_payload_sha256 = 967f1adc5d8b36c2cdf0fb5c0153ac43b37e14f5fd6c0f1bcb76d92f38f43c94
 search_rows = 144
 accepted_provisional_physical_strong_branches = 48
@@ -341,6 +341,62 @@ the declared grid, not a global branch theorem. Every zero-current row remains
 on a basin/sink identity boundary, so GRV3 must still determine whether the
 excluded and administrative fields admit a closed causal state before any
 `causal_strong_branch` upgrade or transition-Jacobian interpretation.
+
+### P2.3 preacceptance adversarial hardening
+
+- [x] Preserve the exact P2.2 search grid, solver, fixtures, runtime, thresholds,
+  and claim ceiling.
+- [x] Record raw-candidate to canonical `C/W/J` deltas and require load-bearing
+  canonicalization admission.
+- [x] Require authoritative old-current zero and authoritative conductance-surface
+  consistency within declared tolerances.
+- [x] Record continuity delta, budget correction, active-set identity, clipping,
+  and active-set margin per branch.
+- [x] Add a four-beat unperturbed physical hold across advancing `step_index` and time.
+- [x] Keep cache refresh and complete causal-state closure explicitly deferred to GRV3.
+- [x] Record full canonical branch signatures, symmetry-orbit counts, and row-count
+  nonindependence.
+- [x] Add experiment-local regression tests for the new controls.
+- [ ] Commit the clean P2.3 input revision before execution.
+- [ ] Rerun all 144 rows from the clean P2.3 input.
+- [ ] Regenerate and validate every branch snapshot, registry, ledger, report,
+  protected manifest, and GRV2 receipt.
+- [ ] Record the superseding P2.3 result and keep scientific acceptance pending
+  a separate authorized human anchor.
+
+Adversarial-review disposition:
+
+- [x] Require complete-step and internal-stage certification; classify internal
+  excursion/cycle and projection-supported alternatives separately.
+- [x] Require numerical-no-op budget correction, unchanged active set, no
+  clipping, and positive active-set margin.
+- [x] Record the representable nonsmooth margin vector and carry the intrinsic
+  zero-current sink/basin boundary into GRV3 rather than rejecting GRV2.
+- [x] Canonicalize through native reconstruction, quantify raw-to-canonical
+  load-bearing deltas, and exclude reconstructed fields from solver coordinates.
+- [x] Require authoritative old `J` to be zero within tolerance and authoritative
+  conductance surfaces to agree.
+- [x] Hold every accepted physical branch for four unperturbed complete beats;
+  do not promote this to stability, retention, or causal-state closure.
+- [x] Keep solver convergence and independent branch certification separate.
+- [x] Require absolute and relative blockwise residuals for `C/W/J/Phi/G`,
+  identity, and budget surfaces.
+- [x] Require explicit nonuniform contrast and distance from the homogeneous
+  branch for F2/F3.
+- [x] Preserve raw branch IDs, full canonical signatures, symmetry-orbit IDs,
+  nontrivial F2/F3 controls, opposite seed directions, and row-count
+  nonindependence.
+- [x] Keep exploratory values as seeds only and emit new solved-state digests and
+  certificates.
+- [x] Keep complete bounded-search accounting and classify numerical failures as
+  unresolved rather than negative branch evidence.
+- [x] Preserve the committed parameter grid and fixed exogenous parameters.
+- [x] Treat the complete double-refresh beat as authoritative without claiming
+  that its second refresh is causally necessary.
+- [x] Use the runtime canonical potential gauge.
+- [x] Require save/load replay for every branch and selected fresh-process replay.
+- [x] Record that a solver-tolerance sweep is not part of sealed GRV2 and make no
+  numerical-tolerance-robustness claim.
 
 ## Iteration 4 - GRV3 Causal State And Complete Transition Jacobian
 

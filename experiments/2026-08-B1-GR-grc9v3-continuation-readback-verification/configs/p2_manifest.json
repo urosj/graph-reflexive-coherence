@@ -1,6 +1,6 @@
 {
-  "schema_version": "b1_grv2_p2_package_manifest_v1_2",
-  "package_status": "clean_P2_2_preacceptance_orientation_correction_when_contained_in_committed_revision",
+  "schema_version": "b1_grv2_p2_package_manifest_v1_3",
+  "package_status": "clean_P2_3_preacceptance_adversarial_hardening_when_contained_in_committed_revision",
   "gate_id": "GRV2",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -56,6 +56,25 @@
       "complete_GRV2_reexecution_required": true
     }
   ],
+  "preacceptance_review_hardening": {
+    "superseded_unaccepted_result_revision": "d150a078da6d66f4a04da32b8e5ad0a2db44a206",
+    "result_receipt_emitted": true,
+    "scientific_acceptance_anchor_emitted": false,
+    "disposition": "superseded_before_acceptance_by_P2_3_adversarial_hardening",
+    "added_controls": [
+      "raw_candidate_to_canonical_load_bearing_delta",
+      "authoritative_zero_current_and_conductance_consistency",
+      "continuity_delta_and_budget_active_set",
+      "four_beat_unperturbed_administrative_phase_hold",
+      "explicit_symmetry_orbit_and_nonindependence_accounting"
+    ],
+    "search_grid_changed": false,
+    "solver_changed": false,
+    "fixture_changed": false,
+    "runtime_changed": false,
+    "claim_ceiling_changed": false,
+    "complete_GRV2_reexecution_required": true
+  },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV2",
   "claim_ceiling": "existence_and_local_source_identity_of_GRC_formed_fixed_branches_only"
 }

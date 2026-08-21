@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv2_P2_2_executed_awaiting_scientific_acceptance
+status = grv2_P2_3_adversarial_hardening_prepared_pending_clean_execution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C3_candidate_pending_P2_3_execution_and_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -118,6 +118,18 @@ scientific acceptance. The branches remain
 `provisional_physical_strong_branch`; the zero-current identity boundary and
 excluded causal fields keep `causal_strong_branch` deferred to GRV3. Branch
 existence does not establish continuation, retention, read-back, or write-back.
+
+Before acceptance, adversarial review identified three controls that P2.2 made
+implicit rather than machine-visible: raw-candidate to canonical load-bearing
+state deltas, budget active-set/clipping status, and physical stationarity over
+several unperturbed beats while administrative phase advances. The P2.2 result
+at `d150a07` is therefore never accepted and is superseded by P2.3 hardening.
+P2.3 preserves the sealed search grid, solver, fixtures, runtime, thresholds,
+and claim ceiling. It adds a four-beat physical hold, explicit authoritative
+`W/J` admission, continuity/budget diagnostics, and symmetry-orbit
+nonindependence accounting. Cache refresh and complete causal-state closure
+remain GRV3 debt. The full gate must be rerun from a clean committed P2.3 input
+before GRV2 can be reviewed for acceptance.
 
 ## Central Question
 

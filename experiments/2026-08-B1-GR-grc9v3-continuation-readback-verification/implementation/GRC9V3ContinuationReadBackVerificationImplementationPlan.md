@@ -420,7 +420,7 @@ replay, and a selection-independent held-out replay. Symmetry siblings remain
 visible and receive permutation-orbit identifiers rather than being discarded
 by Euclidean deduplication.
 
-### P2.2 execution result
+### P2.2 unaccepted execution result
 
 The complete clean run executes 144 rows and retains 48 provisional physical
 strong-branch candidates: 16 homogeneous F1 rows, 16 nonuniform F2 rows at
@@ -435,6 +435,33 @@ of `1e-9`.
 This is a `GRV-C3` candidate pending human acceptance. The zero-current
 basin/sink boundary and fields excluded from the physical projection keep the
 causal-state upgrade in GRV3. No continuation or retention claim is opened.
+
+### P2.3 preacceptance adversarial hardening
+
+P2.2 is not accepted. Adversarial review requires the complete gate to expose
+three previously implicit controls before acceptance:
+
+1. quantify raw-candidate to canonical-state changes separately for `C`,
+   authoritative `W`, and authoritative old `J`, while recording derived and
+   identity reconstruction without treating those surfaces as solver variables;
+2. record continuity deltas, budget correction, active-set identity, clipping
+   status, and positive active-set margin explicitly;
+3. hold every accepted physical branch for four complete unperturbed beats as
+   `step_index` and time advance, checking each beat's staged residual, budget
+   no-op, topology/event status, authoritative current, and cumulative physical
+   residual.
+
+P2.3 also records full canonical branch signatures, symmetry-orbit counts, and
+that accepted row count is not an independent-branch count. The hold tests
+administrative-phase dependence of the physical projection only. Cache refresh,
+complete causal-state closure, stability, retention, and continuation remain
+outside GRV2 and cannot be inferred from a passing hold.
+
+This is a revision-distinct preacceptance instrumentation strengthening. It
+changes no search row, solver, fixture, runtime parameter, numerical branch
+threshold, or claim ceiling. The P2.2 receipt remains historical and cannot
+authorize GRV3; a complete clean P2.3 rerun and separate human acceptance are
+required.
 
 ### Required outputs
 

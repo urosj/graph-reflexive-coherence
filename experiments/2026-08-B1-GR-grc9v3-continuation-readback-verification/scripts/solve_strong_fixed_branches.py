@@ -265,6 +265,40 @@ def block_projection(model: GRC9V3) -> dict[str, Any]:
     }
 
 
+def authoritative_surface_metrics(model: GRC9V3) -> dict[str, Any]:
+    state = model.get_state()
+    current_values = [abs(edge.flux_uv) for edge in state.port_edges.values()]
+    conductance_deltas = [
+        abs(
+            float(state.base_conductance[edge_id])
+            - float(state.port_edges[edge_id].conductance)
+        )
+        for edge_id in state.port_edges
+        if edge_id in state.base_conductance
+    ]
+    return {
+        "authoritative_current_l_inf": max(current_values, default=0.0),
+        "base_conductance_surface_materialized": set(state.base_conductance)
+        == set(state.port_edges),
+        "base_to_port_conductance_l_inf": max(conductance_deltas, default=0.0),
+    }
+
+
+def excluded_state_projection(model: GRC9V3) -> dict[str, Any]:
+    """Fields outside GRV2's physical projection that GRV3 must close."""
+    state = model.get_state()
+    return {
+        "budget_target": state.budget_target,
+        "rng_state": state.rng_state,
+        "hierarchy": deepcopy(state.hierarchy),
+        "choice_registry": deepcopy(state.choice_registry),
+        "collapse_registry": deepcopy(state.collapse_registry),
+        "expansion_registry": deepcopy(state.expansion_registry),
+        "node_values": deepcopy(state.node_values),
+        "edge_values": deepcopy(state.edge_values),
+    }
+
+
 def _differences(left: Any, right: Any) -> tuple[list[float], bool]:
     if isinstance(left, bool) or isinstance(right, bool):
         return ([], left == right)
@@ -332,6 +366,8 @@ def max_block_l_inf(rows: dict[str, dict[str, Any]]) -> float:
 
 
 def canonicalize_branch(model: GRC9V3) -> dict[str, Any]:
+    raw_candidate = block_projection(model)
+    raw_authoritative_surfaces = authoritative_surface_metrics(model)
     initial_events = len(model.get_state().event_log)
     model.rebuild_differential_state()
     model.rebuild_transport_state()
@@ -352,7 +388,16 @@ def canonicalize_branch(model: GRC9V3) -> dict[str, Any]:
     model.rebuild_differential_state()
     model.rebuild_identity_state()
     model.refresh_coarse_cache()
+    canonical_candidate = block_projection(model)
     return {
+        "raw_candidate_state": raw_candidate,
+        "canonical_candidate_state": canonical_candidate,
+        "raw_to_canonical_per_block_residuals": {
+            block: residual_metrics(raw_candidate[block], canonical_candidate[block])
+            for block in ("C", "W", "J", "Phi", "G", "identity", "budget")
+        },
+        "raw_authoritative_surfaces": raw_authoritative_surfaces,
+        "canonical_authoritative_surfaces": authoritative_surface_metrics(model),
         "pre_continuity": pre_continuity,
         "post_continuity_pre_budget": post_continuity,
         "budget_correction_vector": [
@@ -423,6 +468,24 @@ def execute_staged_replay(model: GRC9V3) -> dict[str, Any]:
             pre_budget_coherence, post_budget_coherence, strict=True
         )
     ]
+    pre_continuity_coherence = [
+        float(pre_continuity["C"][key]) for key in sorted(pre_continuity["C"])
+    ]
+    post_continuity_coherence = [
+        float(post_continuity["C"][key]) for key in sorted(post_continuity["C"])
+    ]
+    continuity_delta = [
+        after - before
+        for before, after in zip(
+            pre_continuity_coherence, post_continuity_coherence, strict=True
+        )
+    ]
+    pre_budget_active_set = [
+        index for index, value in enumerate(pre_budget_coherence) if value > 0.0
+    ]
+    post_budget_active_set = [
+        index for index, value in enumerate(post_budget_coherence) if value > 0.0
+    ]
     return {
         "reference_state_sha256": semantic_digest(reference),
         "stages": stages,
@@ -435,8 +498,21 @@ def execute_staged_replay(model: GRC9V3) -> dict[str, Any]:
         ),
         "pre_continuity_state": pre_continuity,
         "post_continuity_pre_budget_state": post_continuity,
+        "continuity_delta_vector": continuity_delta,
+        "continuity_delta_l_inf": max(
+            (abs(value) for value in continuity_delta), default=0.0
+        ),
         "budget_correction_vector": correction,
         "budget_correction_l_inf": max((abs(value) for value in correction), default=0.0),
+        "pre_budget_active_set": pre_budget_active_set,
+        "post_budget_active_set": post_budget_active_set,
+        "budget_active_set_unchanged": pre_budget_active_set
+        == post_budget_active_set,
+        "budget_no_node_clipped": len(post_budget_active_set)
+        == len(post_budget_coherence),
+        "budget_active_set_margin": min(
+            [*pre_budget_coherence, *post_budget_coherence], default=0.0
+        ),
         "budget_summary": budget_summary,
         "post_budget_state": post_budget,
         "final_refresh_state": final_refresh,
@@ -620,12 +696,169 @@ def stage_passes(
         stage_trace["maximum_internal_stage_l_inf"] <= absolute_tolerance
         and stage_trace["all_stage_categories_equal"]
         and stage_trace["budget_correction_l_inf"] <= budget_tolerance
+        and stage_trace["budget_active_set_unchanged"]
+        and stage_trace["budget_no_node_clipped"]
         and all(
             float(block["relative"]) <= relative_tolerance
             for stage in stage_trace["stages"]
             for block in stage["block_residuals"].values()
         )
     )
+
+
+def administrative_phase_hold(
+    model: GRC9V3,
+    params: dict[str, Any],
+    config: dict[str, Any],
+    *,
+    absolute_tolerance: float,
+    relative_tolerance: float,
+    budget_tolerance: float,
+) -> dict[str, Any]:
+    hold_model = GRC9V3.from_state(deepcopy(model.get_state()), params)
+    reference = block_projection(hold_model)
+    excluded_reference = excluded_state_projection(hold_model)
+    cache_reference_sha256 = semantic_digest(
+        hold_model.get_state().cached_quantities
+    )
+    hold_beats = int(config["certification"]["administrative_phase_hold_beats"])
+    current_tolerance = float(
+        config["certification"]["authoritative_current_l_inf_tolerance"]
+    )
+    rows: list[dict[str, Any]] = []
+    maximum_reference_l_inf = 0.0
+    all_physical_rows_passed = True
+    all_excluded_rows_exact = True
+
+    for beat in range(1, hold_beats + 1):
+        before = block_projection(hold_model)
+        before_state = hold_model.get_state()
+        before_step_index = int(before_state.step_index)
+        before_time = float(before_state.time)
+        before_rng_sha256 = semantic_digest(before_state.rng_state)
+        before_event_count = len(before_state.event_log)
+
+        staged = GRC9V3.from_state(deepcopy(before_state), params)
+        stage_trace = execute_staged_replay(staged)
+        stage_passed = stage_passes(
+            stage_trace,
+            absolute_tolerance=absolute_tolerance,
+            relative_tolerance=relative_tolerance,
+            budget_tolerance=budget_tolerance,
+        )
+
+        result = hold_model.step()
+        after = block_projection(hold_model)
+        after_state = hold_model.get_state()
+        reference_residual = residual_metrics(reference, after)
+        consecutive_residual = residual_metrics(before, after)
+        per_block = {
+            block: residual_metrics(reference[block], after[block])
+            for block in ("C", "W", "J", "Phi", "G", "identity", "budget")
+        }
+        authoritative_current_l_inf = authoritative_surface_metrics(hold_model)[
+            "authoritative_current_l_inf"
+        ]
+        physical_row_passed = bool(
+            reference_residual["l_inf"] <= absolute_tolerance
+            and reference_residual["relative"] <= relative_tolerance
+            and reference_residual["categorical_equal"]
+            and all(
+                row["l_inf"] <= absolute_tolerance
+                and row["relative"] <= relative_tolerance
+                and row["categorical_equal"]
+                for row in per_block.values()
+            )
+            and stage_passed
+            and authoritative_current_l_inf <= current_tolerance
+            and not result.events
+            and before["topology"] == after["topology"]
+        )
+        excluded_after = excluded_state_projection(hold_model)
+        excluded_state_exact = excluded_after == excluded_reference
+        all_excluded_rows_exact = all_excluded_rows_exact and excluded_state_exact
+        all_physical_rows_passed = all_physical_rows_passed and physical_row_passed
+        maximum_reference_l_inf = max(
+            maximum_reference_l_inf, float(reference_residual["l_inf"])
+        )
+        rows.append(
+            {
+                "beat": beat,
+                "physical_reference_residual": reference_residual,
+                "physical_consecutive_residual": consecutive_residual,
+                "physical_reference_per_block_residuals": per_block,
+                "internal_stage_l_inf": stage_trace[
+                    "maximum_internal_stage_l_inf"
+                ],
+                "continuity_delta_l_inf": stage_trace[
+                    "continuity_delta_l_inf"
+                ],
+                "budget_correction_l_inf": stage_trace[
+                    "budget_correction_l_inf"
+                ],
+                "budget_active_set_unchanged": stage_trace[
+                    "budget_active_set_unchanged"
+                ],
+                "budget_no_node_clipped": stage_trace[
+                    "budget_no_node_clipped"
+                ],
+                "authoritative_current_l_inf": authoritative_current_l_inf,
+                "authoritative_current_l_inf_tolerance": current_tolerance,
+                "authoritative_current_within_tolerance": authoritative_current_l_inf
+                <= current_tolerance,
+                "events": [event.kind for event in result.events],
+                "fixed_topology": before["topology"] == after["topology"],
+                "step_index_before": before_step_index,
+                "step_index_after": int(after_state.step_index),
+                "step_index_advanced_once": int(after_state.step_index)
+                == before_step_index + 1,
+                "time_before": before_time,
+                "time_after": float(after_state.time),
+                "time_advanced_by_dt": math.isclose(
+                    float(after_state.time) - before_time,
+                    float(params["dt"]),
+                    rel_tol=0.0,
+                    abs_tol=1e-15,
+                ),
+                "rng_unchanged": semantic_digest(after_state.rng_state)
+                == before_rng_sha256,
+                "event_log_unchanged": len(after_state.event_log)
+                == before_event_count,
+                "excluded_noncache_state_exact": excluded_state_exact,
+                "cached_quantities_sha256": semantic_digest(
+                    after_state.cached_quantities
+                ),
+                "physical_row_passed": physical_row_passed,
+            }
+        )
+
+    administrative_progression_passed = all(
+        row["step_index_advanced_once"]
+        and row["time_advanced_by_dt"]
+        and row["rng_unchanged"]
+        and row["event_log_unchanged"]
+        for row in rows
+    )
+    return {
+        "declared_hold_beats": hold_beats,
+        "rows": rows,
+        "physical_hold_passed": all_physical_rows_passed
+        and administrative_progression_passed,
+        "maximum_reference_l_inf": maximum_reference_l_inf,
+        "administrative_progression_passed": administrative_progression_passed,
+        "excluded_noncache_state_exact_all_beats": all_excluded_rows_exact,
+        "initial_cached_quantities_sha256": cache_reference_sha256,
+        "cache_refresh_observed": any(
+            row["cached_quantities_sha256"] != cache_reference_sha256
+            for row in rows
+        ),
+        "administrative_phase_dependence_observed": not all_physical_rows_passed,
+        "hold_scope": "unperturbed_physical_branch_across_advancing_step_index_and_time",
+        "cache_and_complete_causal_state_status": "deferred_to_GRV3_closure",
+        "causal_fixed_state_claim_allowed": False,
+        "stability_claim_allowed": False,
+        "retention_claim_allowed": False,
+    }
 
 
 def classify_branch(
@@ -637,6 +870,9 @@ def classify_branch(
     budget_tolerance: float,
     no_events: bool,
     fixed_topology: bool,
+    canonicalization_admitted: bool,
+    authoritative_surfaces_admitted: bool,
+    administrative_phase_hold_passed: bool,
 ) -> str:
     full_pass = bool(
         full_residual["l_inf"] <= absolute_tolerance
@@ -651,8 +887,18 @@ def classify_branch(
         relative_tolerance=relative_tolerance,
         budget_tolerance=budget_tolerance,
     )
-    if full_pass and internal_pass:
+    if (
+        full_pass
+        and internal_pass
+        and canonicalization_admitted
+        and authoritative_surfaces_admitted
+        and administrative_phase_hold_passed
+    ):
         return "provisional_physical_strong_branch"
+    if full_pass and stage_trace["budget_correction_l_inf"] > budget_tolerance:
+        return "budget_projection_supported_fixed_point"
+    if full_pass and not internal_pass:
+        return "complete_step_fixed_internal_cycle_or_constraint_supported_point"
     if full_pass:
         return "step_boundary_only_fixed_point"
     if internal_pass:
@@ -756,6 +1002,32 @@ def certify_branch(
     budget_tolerance = float(
         certification["budget_correction_l_inf_tolerance"]
     )
+    canonicalization_tolerance = float(
+        certification["canonicalization_load_bearing_l_inf_tolerance"]
+    )
+    current_tolerance = float(
+        certification["authoritative_current_l_inf_tolerance"]
+    )
+    conductance_consistency_tolerance = float(
+        certification[
+            "authoritative_conductance_consistency_l_inf_tolerance"
+        ]
+    )
+    canonicalization_load_bearing = {
+        block: canonicalization["raw_to_canonical_per_block_residuals"][block]
+        for block in ("C", "W", "J")
+    }
+    canonicalization_admitted = all(
+        row["l_inf"] <= canonicalization_tolerance
+        for row in canonicalization_load_bearing.values()
+    )
+    canonical_authority = canonicalization["canonical_authoritative_surfaces"]
+    authoritative_surfaces_admitted = bool(
+        canonical_authority["authoritative_current_l_inf"] <= current_tolerance
+        and canonical_authority["base_conductance_surface_materialized"]
+        and canonical_authority["base_to_port_conductance_l_inf"]
+        <= conductance_consistency_tolerance
+    )
     no_events = bool(
         not canonicalization["events"]
         and canonicalization["event_log_delta"] == 0
@@ -765,6 +1037,14 @@ def certify_branch(
         and len(stepped.get_state().event_log) == initial_event_count
     )
     fixed_topology = topology_before == topology_after
+    hold = administrative_phase_hold(
+        model,
+        params,
+        config,
+        absolute_tolerance=absolute_tolerance,
+        relative_tolerance=relative_tolerance,
+        budget_tolerance=budget_tolerance,
+    )
     branch_class = classify_branch(
         full_residual,
         stage_trace,
@@ -773,9 +1053,67 @@ def certify_branch(
         budget_tolerance=budget_tolerance,
         no_events=no_events,
         fixed_topology=fixed_topology,
+        canonicalization_admitted=canonicalization_admitted,
+        authoritative_surfaces_admitted=authoritative_surfaces_admitted,
+        administrative_phase_hold_passed=hold["physical_hold_passed"],
     )
+    boundary_record = boundary_distances(model, config)
+    constraint_and_projection_controls = {
+        "continuity_delta_vector": stage_trace["continuity_delta_vector"],
+        "continuity_delta_l_inf": stage_trace["continuity_delta_l_inf"],
+        "budget_correction_vector": stage_trace["budget_correction_vector"],
+        "budget_correction_l_inf": stage_trace["budget_correction_l_inf"],
+        "budget_numerical_noop": stage_trace["budget_correction_l_inf"]
+        <= budget_tolerance,
+        "pre_budget_active_set": stage_trace["pre_budget_active_set"],
+        "post_budget_active_set": stage_trace["post_budget_active_set"],
+        "budget_active_set_unchanged": stage_trace[
+            "budget_active_set_unchanged"
+        ],
+        "budget_no_node_clipped": stage_trace["budget_no_node_clipped"],
+        "budget_active_set_margin": stage_trace["budget_active_set_margin"],
+        "coherence_positivity_constraint_inactive": boundary_record[
+            "positivity_margin"
+        ]
+        > float(config["solver"]["minimum_positive_coherence"]),
+        "conductance_floor_inactive": boundary_record[
+            "conductance_floor_margin"
+        ]
+        > 0.0,
+        "spark_event_inactive": boundary_record["spark_candidate_count"] == 0,
+        "growth_disabled_by_preregistered_zero_lambda_birth": boundary_record[
+            "growth_lambda_birth"
+        ]
+        == 0.0,
+        "boundary_stage_noop": boundary_record["boundary_action_status"]
+        == "prune_noop",
+        "intrinsic_zero_current_identity_boundary_carried_to_GRV3": True,
+    }
     return model, {
         "canonicalization": canonicalization,
+        "canonicalization_admission": {
+            "load_bearing_blocks": canonicalization_load_bearing,
+            "declared_l_inf_tolerance": canonicalization_tolerance,
+            "admitted": canonicalization_admitted,
+            "derived_and_identity_reconstruction_changes_are_recorded_not_solver_coordinates": True,
+        },
+        "authoritative_surface_assertions": {
+            **canonical_authority,
+            "authoritative_current_l_inf_tolerance": current_tolerance,
+            "authoritative_conductance_consistency_l_inf_tolerance": conductance_consistency_tolerance,
+            "authoritative_zero_current_within_tolerance": canonical_authority[
+                "authoritative_current_l_inf"
+            ]
+            <= current_tolerance,
+            "authoritative_conductance_surfaces_consistent": canonical_authority[
+                "base_conductance_surface_materialized"
+            ]
+            and canonical_authority["base_to_port_conductance_l_inf"]
+            <= conductance_consistency_tolerance,
+            "admitted": authoritative_surfaces_admitted,
+        },
+        "constraint_and_projection_controls": constraint_and_projection_controls,
+        "administrative_phase_hold": hold,
         "full_step_residual": full_residual,
         "internal_stage_residuals": stage_trace,
         "event_and_topology_assertions": {
@@ -794,7 +1132,7 @@ def certify_branch(
             "budget_correction_l_inf": budget_tolerance,
         },
         "branch_class": branch_class,
-        "distance_from_non_smooth_boundaries": boundary_distances(model, config),
+        "distance_from_non_smooth_boundaries": boundary_record,
     }
 
 
@@ -829,12 +1167,18 @@ def assert_search_contract(config: dict[str, Any]) -> None:
 
 
 def orbit_id(fixture_id: str, coherence: list[float], parameter_hash: str) -> str:
+    return f"orbit-{canonical_branch_signature(fixture_id, coherence, parameter_hash)[:16]}"
+
+
+def canonical_branch_signature(
+    fixture_id: str, coherence: list[float], parameter_hash: str
+) -> str:
     normalized = {
         "fixture_id": fixture_id,
         "sorted_coherence": sorted(round(value, 12) for value in coherence),
         "parameter_hash": parameter_hash,
     }
-    return f"orbit-{semantic_digest(normalized)[:16]}"
+    return semantic_digest(normalized)
 
 
 def symmetry_class(fixture_id: str, coherence: list[float]) -> str:
@@ -1125,12 +1469,18 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
                 }
                 if solver_record["status"] not in {"converged", "analytic_candidate"}:
                     row["decision"] = "rejected_solver_did_not_converge"
+                    row["search_evidence_class"] = (
+                        "unresolved_numerical_search_not_negative_branch_evidence"
+                    )
                     rows.append(row)
                     continue
                 if nonuniform_required and contrast < float(
                     config["solver"]["nonuniform_contrast_minimum"]
                 ):
                     row["decision"] = "rejected_homogeneous_root_outside_nonuniform_target"
+                    row["search_evidence_class"] = (
+                        "bounded_negative_nonuniform_search_evidence"
+                    )
                     rows.append(row)
                     continue
                 model, certification = certify_branch(
@@ -1144,6 +1494,9 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
                 }
                 if certification["branch_class"] != "provisional_physical_strong_branch":
                     row["decision"] = "rejected_strong_certification_failed"
+                    row["search_evidence_class"] = (
+                        "solver_root_rejected_by_independent_branch_certification"
+                    )
                     rows.append(row)
                     continue
 
@@ -1160,14 +1513,36 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
                     raise RuntimeError(f"accepted branch replay failed: {branch_id}")
                 branch = {
                     "branch_id": branch_id,
+                    "raw_branch_id": candidate_id,
                     "source_candidate_id": candidate_id,
                     "fixture_id": fixture_id,
                     "parameter_hash": parameter_hash,
                     "params": params,
                     "coherence": coherence,
+                    "nonuniformity": {
+                        "coherence_contrast": contrast,
+                        "coherence_contrast_threshold": config["solver"][
+                            "nonuniform_contrast_minimum"
+                        ],
+                        "distance_to_homogeneous_l2": math.sqrt(
+                            sum(
+                                (value - sum(coherence) / len(coherence)) ** 2
+                                for value in coherence
+                            )
+                        ),
+                        "nonuniform_required": nonuniform_required,
+                        "nonuniform_admitted": not nonuniform_required
+                        or contrast
+                        >= float(
+                            config["solver"]["nonuniform_contrast_minimum"]
+                        ),
+                    },
                     "state_snapshot_path": repo_relative(snapshot_path),
                     "state_snapshot_sha256": sha256_file(snapshot_path),
                     "state_snapshot_semantic_sha256": semantic_digest(model.snapshot()),
+                    "canonical_branch_signature": canonical_branch_signature(
+                        fixture_id, coherence, parameter_hash
+                    ),
                     "full_step_residual": certification["full_step_residual"],
                     "internal_stage_residuals": certification["internal_stage_residuals"],
                     "budget_residual": {
@@ -1176,14 +1551,46 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
                         "correction_l_inf": certification["internal_stage_residuals"]["budget_correction_l_inf"],
                         "numerical_noop": certification["internal_stage_residuals"]["budget_correction_l_inf"]
                         <= float(config["certification"]["budget_correction_l_inf_tolerance"]),
+                        "active_set_unchanged": certification[
+                            "constraint_and_projection_controls"
+                        ]["budget_active_set_unchanged"],
+                        "no_node_clipped": certification[
+                            "constraint_and_projection_controls"
+                        ]["budget_no_node_clipped"],
+                        "active_set_margin": certification[
+                            "constraint_and_projection_controls"
+                        ]["budget_active_set_margin"],
                     },
+                    "canonicalization_admission": certification[
+                        "canonicalization_admission"
+                    ],
+                    "authoritative_surface_assertions": certification[
+                        "authoritative_surface_assertions"
+                    ],
+                    "constraint_and_projection_controls": certification[
+                        "constraint_and_projection_controls"
+                    ],
+                    "administrative_phase_hold": certification[
+                        "administrative_phase_hold"
+                    ],
                     "event_and_topology_assertions": certification["event_and_topology_assertions"],
                     "symmetry_class": symmetry_class(fixture_id, coherence),
                     "symmetry_orbit_id": orbit_id(fixture_id, coherence, parameter_hash),
+                    "symmetry_equivalence_basis": "graph_automorphism_sorted_coherence_with_fixed_parameter_hash",
                     "solver_record": solver_record,
+                    "solver_converged": solver_record["status"]
+                    in {"converged", "analytic_candidate"},
+                    "branch_certified": certification["branch_class"]
+                    == "provisional_physical_strong_branch",
                     "continuity_and_budget_states": {
                         "pre_continuity_state": certification["internal_stage_residuals"]["pre_continuity_state"],
                         "post_continuity_pre_budget_state": certification["internal_stage_residuals"]["post_continuity_pre_budget_state"],
+                        "continuity_delta_vector": certification[
+                            "internal_stage_residuals"
+                        ]["continuity_delta_vector"],
+                        "continuity_delta_l_inf": certification[
+                            "internal_stage_residuals"
+                        ]["continuity_delta_l_inf"],
                         "budget_correction_vector": certification["internal_stage_residuals"]["budget_correction_vector"],
                         "post_budget_state": certification["internal_stage_residuals"]["post_budget_state"],
                         "final_refresh_state": certification["internal_stage_residuals"]["final_refresh_state"],
@@ -1198,6 +1605,9 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
                 }
                 branches.append(branch)
                 row["decision"] = "accepted_provisional_physical_strong_branch"
+                row["search_evidence_class"] = (
+                    "source_current_provisional_physical_strong_branch_candidate"
+                )
                 row["branch_id"] = branch_id
                 rows.append(row)
 
@@ -1256,6 +1666,13 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
             "selection_rule": config["selection_rule"],
             "deduplication_rule": config["deduplication_rule"],
             "all_symmetry_related_rows_retained": True,
+            "accepted_rows_are_not_claimed_as_independent_branch_count": True,
+            "unique_symmetry_orbit_count": len(
+                {branch["symmetry_orbit_id"] for branch in branches}
+            ),
+            "unique_canonical_branch_signature_count": len(
+                {branch["canonical_branch_signature"] for branch in branches}
+            ),
             "selected_branch_ids": selected,
             "accepted_branch_count": len(branches),
             "search_ledger_path": "outputs/grv2_branch_search_ledger.json",
@@ -1276,6 +1693,41 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
             "global_nonexistence_claim_allowed": False,
         },
         "symmetry_and_port_controls": controls,
+        "adversarial_hardening_audit": {
+            "internal_stage_branch_classification_required": True,
+            "budget_projection_and_active_set_required": True,
+            "canonical_load_bearing_state_admission_required": True,
+            "authoritative_zero_current_required": True,
+            "unperturbed_administrative_phase_hold_required": True,
+            "administrative_phase_hold_beats": config["certification"][
+                "administrative_phase_hold_beats"
+            ],
+            "symmetry_aware_search_and_accounting_required": True,
+            "solver_coordinates": "reduced_zero_sum_coherence_only",
+            "reconstructed_fields_are_not_solver_coordinates": True,
+            "full_double_refresh_is_authoritative_map": True,
+            "double_refresh_causal_necessity_claim_allowed": False,
+            "potential_gauge_policy": "runtime_canonical_reconstruction_gauge",
+            "exogenous_parameters_are_fixed_per_preregistered_grid": True,
+            "numerical_tolerance_sweep_run": False,
+            "numerical_tolerance_robustness_claim_allowed": False,
+            "save_load_replay_all_branches_required": True,
+            "fresh_process_replay_selected_branches_required": True,
+            "all_accepted_rows_pass": all(
+                branch["branch_certified"]
+                and branch["canonicalization_admission"]["admitted"]
+                and branch["authoritative_surface_assertions"]["admitted"]
+                and branch["constraint_and_projection_controls"][
+                    "budget_active_set_unchanged"
+                ]
+                and branch["constraint_and_projection_controls"][
+                    "budget_no_node_clipped"
+                ]
+                and branch["administrative_phase_hold"]["physical_hold_passed"]
+                for branch in branches
+            ),
+            "causal_state_closure_claim_allowed": False,
+        },
         "claim_boundary": {
             "positive_branch_evidence_candidate": True,
             "positive_evidence_opened": False,
@@ -1292,7 +1744,7 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
     return (
         artifact_envelope(
             registry_payload,
-            schema_version="b1_grv2_fixed_branch_registry_v1",
+            schema_version="b1_grv2_fixed_branch_registry_v2",
             generating_command=COMMAND,
         ),
         artifact_envelope(
@@ -1306,6 +1758,13 @@ def search_and_certify(output_root: Path) -> tuple[dict[str, Any], dict[str, Any
 def write_report(registry: dict[str, Any], ledger: dict[str, Any]) -> Path:
     payload = registry["payload"]
     per_fixture = ledger["payload"]["per_fixture"]
+    maximum_hold_residual = max(
+        (
+            float(branch["administrative_phase_hold"]["maximum_reference_l_inf"])
+            for branch in payload["branches"]
+        ),
+        default=0.0,
+    )
     report = EXPERIMENT_ROOT / "reports/b1_grv2_strong_formed_branches.md"
     lines = [
         "# B1-GR GRV2 Strong Formed Branches",
@@ -1359,8 +1818,14 @@ def write_report(registry: dict[str, Any], ledger: dict[str, Any]) -> Path:
             "- Budget correction is a numerical no-op on every accepted branch.",
             "- Every accepted branch emits no event and preserves topology.",
             "- Every accepted branch passes save/load and one-step replay.",
+            "- Every accepted branch passes raw-to-canonical load-bearing-state admission,",
+            "  authoritative zero-current/conductance checks, and explicit budget active-set controls.",
+            f"- Every accepted branch passes the declared four-beat unperturbed physical hold; maximum cumulative physical `L_inf` = `{maximum_hold_residual}`.",
+            f"- Accepted rows occupy `{payload['selection_accounting']['unique_symmetry_orbit_count']}` symmetry orbits; row count is not claimed as an independent-branch count.",
             "- Zero-current branches lie on a basin/sink identity boundary; GRV3 must",
             "  admit a causal stratum before any causal-branch upgrade or derivative claim.",
+            "- Cache refresh and complete causal-state closure remain GRV3 debt; the hold is",
+            "  not a stability, retention, continuation, or causal fixed-state test.",
             "",
             "## Claim Boundary",
             "",
