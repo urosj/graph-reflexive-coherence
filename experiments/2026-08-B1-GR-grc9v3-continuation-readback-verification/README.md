@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = p0_package_prepared_execution_not_started
+status = grv0_preacceptance_correction_prepared_pending_reexecution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -37,6 +37,13 @@ l04_selected = false
 The digest above is the SHA-256 of the controlling specification committed in
 the documentation scaffold. GRV0 must reproduce it from the clean `P0` input
 revision; changing the specification requires protocol readmission.
+
+The first unaccepted GRV0 result revision (`05fc8f6`) exposed one packaging
+omission: `baseline_manifest.json` carried the correct specification digest but
+not the separately required `specification_id`. The correction is classified
+as `bug_fix_preserving_protocol`; it changes no fixture, threshold, method,
+runtime, theory contract, or claim envelope. The original result remains in
+history and is superseded only by a clean replacement run.
 
 ## Central Question
 

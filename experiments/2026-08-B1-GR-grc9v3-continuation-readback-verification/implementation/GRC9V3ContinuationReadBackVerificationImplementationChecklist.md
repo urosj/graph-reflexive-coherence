@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = p0_package_prepared_execution_not_started
+status = grv0_preacceptance_correction_prepared_pending_reexecution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,7 +12,7 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV0_P0_prepared_execution_not_started
+current_gate = GRV0_preacceptance_bug_fix_pending_clean_reexecution
 verification_closeout_ladder_rung_assigned = false
 verification_closeout_ceiling = GRV-C0_specification_package_initialized_execution_not_started
 B1_L_execution_authorized = false

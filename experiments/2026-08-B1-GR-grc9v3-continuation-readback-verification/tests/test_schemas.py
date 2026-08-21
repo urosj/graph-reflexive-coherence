@@ -30,6 +30,15 @@ class SchemaCoverageTest(unittest.TestCase):
         required = {"protectedPathManifest", "experimentPathManifest", "theorySourceManifest", "numericalEnvironment", "contradictionRegister", "theoryReopeningDecision", "extensionDecision", "artifactEnvelope"}
         self.assertTrue(required.issubset(common["$defs"]))
 
+    def test_baseline_schema_requires_exact_specification_identity(self) -> None:
+        baseline = json.loads((ROOT / "schemas/baseline_manifest.schema.json").read_text(encoding="utf-8"))
+        payload = baseline["properties"]["payload"]
+        self.assertIn("specification_id", payload["required"])
+        self.assertEqual(
+            "b1_grc9v3_continuation_readback_verification_v3_4_1",
+            payload["properties"]["specification_id"]["const"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
