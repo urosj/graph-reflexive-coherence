@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "interventions": [
+      {
+        "base_snapshot_sha256": "dd63743f4f36dfea8890521c98a44411543e94d72ec463bb5086c16c619c8828",
+        "causal_state_projection_after": "F0_with_declared_old_J_intervention",
+        "causal_state_projection_before": "F0_declared_state",
+        "coordinate_semantics": "canonical_edge_0_u_to_v_flux_uv",
+        "fields_directly_changed": [
+          "port_edges.0.flux_uv"
+        ],
+        "fields_explicitly_held_fixed": [
+          "topology",
+          "nodes",
+          "params"
+        ],
+        "fields_rebuilt_afterward": [
+          "differential_state",
+          "transport_state"
+        ],
+        "intervention_id": "GRV1-INT-J-POSITIVE",
+        "physical_projection_after": {
+          "coherence": [
+            1.0,
+            3.0
+          ],
+          "flux_uv_after_rebuild": [
+            3.9999999998559996
+          ],
+          "flux_uv_before_rebuild": [
+            4.0
+          ]
+        },
+        "physical_projection_before": {
+          "coherence": [
+            1.0,
+            3.0
+          ],
+          "flux_uv": [
+            0.0
+          ]
+        },
+        "reachability_status": "synthetic_valid_counterfactual_not_claimed_reached",
+        "rebuild_order": [
+          "rebuild_differential_state",
+          "rebuild_transport_state"
+        ],
+        "validity_checks": {
+          "canonical_json_round_trip_exact": true,
+          "clone_first_source_unchanged": true,
+          "declared_path_changed": true,
+          "deep_clone_non_aliasing": true,
+          "raw_snapshot_and_derived_projection_separate": true,
+          "runtime_snapshot_replay_physical_projection_exact": true
+        }
+      }
+    ]
+  },
+  "payload_sha256": "a7707436f718e04d12354b1a9f46fb6584736a2904b315973fea0a0d0719d48d",
+  "schema_version": "b1_grv1_intervention_registry_v1"
+}

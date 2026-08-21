@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv0_accepted_grv1_P1_prepared_execution_not_started
+status = grv1_executed_awaiting_scientific_acceptance
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C1
-verification_closeout_ceiling = GRV-C1_accepted
+verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -56,6 +56,14 @@ rerun passed mechanically with receipt digest `a583d763b2d5e72af3f3e2ad5401aca8c
 GRV0 scientific acceptance is recorded separately in anchor commit `454b2c5`.
 Iteration 1 is closed at GRV-C1; this does not open scientific continuation,
 retention, read-back, or write-back evidence.
+
+GRV1 then executed from clean committed P1 revision `cbe52fe`. Its mechanical
+source-fidelity checks pass, and result receipt
+`c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf`
+binds the generated artifacts to that input revision and the accepted GRV0
+anchor. GRV1 remains at a `GRV-C2` candidate ceiling until a separate
+authorized human acceptance anchor is recorded. It opens no branch,
+continuation, retention, read-back, or write-back evidence.
 
 ## Central Question
 

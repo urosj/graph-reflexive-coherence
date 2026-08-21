@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv0_accepted_grv1_P1_prepared_execution_not_started
+status = grv1_executed_awaiting_scientific_acceptance
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,9 +12,9 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV1_P1_prepared_execution_not_started
+current_gate = GRV1_executed_awaiting_authorized_human_acceptance
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_ceiling = GRV-C1_accepted
+verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -163,25 +163,52 @@ dirty_or_failing_baseline or missing_exact_source_identity stops execution
 
 ## Iteration 2 - GRV1 Instrumentation And Source Fidelity
 
-- [ ] Reproduce the existing two-node transport anchor.
-- [ ] Capture and verify complete canonical `step()` order.
-- [ ] Verify fixed topology and no-event envelope.
-- [ ] Run separate transport-stage and full-step materialized-`K` counterfactuals.
-- [ ] Classify direct use, overwrite-before-use, diagnostic status, or unknown; route source mismatch separately.
-- [ ] Run physical `J -> -J` controls.
-- [ ] Run edge-coordinate reorientation/covariance controls separately.
-- [ ] Classify magnitude, axis, orientation, and reconstruction separately.
-- [ ] Inventory every excluded or administratively advancing field.
-- [ ] Carry causal and unknown excluded fields into GRV3 closure candidates.
-- [ ] Validate canonical deep-clone intervention and rebuild behavior.
-- [ ] Validate raw snapshot and derived-artifact separation.
-- [ ] Validate replay tolerances and canonical serialization.
-- [ ] Emit `protected_path_manifest_v1` with only source-base-matching additions,
+- [x] Reproduce the existing two-node transport anchor.
+- [x] Capture and verify complete canonical `step()` order.
+- [x] Verify fixed topology and no-event envelope.
+- [x] Run separate transport-stage and full-step materialized-`K` counterfactuals.
+- [x] Classify direct use, overwrite-before-use, diagnostic status, or unknown; route source mismatch separately.
+- [x] Run physical `J -> -J` controls.
+- [x] Run edge-coordinate reorientation/covariance controls separately.
+- [x] Classify magnitude, axis, orientation, and reconstruction separately.
+- [x] Inventory every excluded or administratively advancing field.
+- [x] Carry causal and unknown excluded fields into GRV3 closure candidates.
+- [x] Validate canonical deep-clone intervention and rebuild behavior.
+- [x] Validate raw snapshot and derived-artifact separation.
+- [x] Validate replay tolerances and canonical serialization.
+- [x] Emit `protected_path_manifest_v1` with only source-base-matching additions,
   or as an explicit unchanged successor when GRV1 discovers no added path.
-- [ ] Freeze the post-GRV1 contradiction route for any later protected-path discovery.
-- [ ] Emit `instrumentation_validation.json`, `fixture_registry.json`, and report.
-- [ ] Emit and validate the GRV1 result receipt and separate acceptance anchor.
-- [ ] Assign no branch, continuation, retention, or read-back claim.
+- [x] Freeze the post-GRV1 contradiction route for any later protected-path discovery.
+- [x] Emit `instrumentation_validation.json`, `fixture_registry.json`, and report.
+- [x] Emit and validate the GRV1 result receipt.
+- [ ] Record GRV1 scientific acceptance in a separate accepted anchor before GRV2.
+- [x] Assign no branch, continuation, retention, or read-back claim.
+
+GRV1 mechanical result:
+
+```text
+clean_input_revision = cbe52fe454c82c8cb10ad3f66175c711bc0c803e
+substrate_base_revision = 589f933e5649c34d3ad54a5f8dbdba2a20e968d7
+input_experiment_tree_sha256 = d4ae404c001c08e755f2a8f20f93775f34f750b8f5d0da2ce4bf9361bb331bfe
+protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2
+protected_file_count = 379
+receipt_payload_sha256 = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
+mechanical_status = passed
+scientific_acceptance = awaiting_authorized_human_anchor
+candidate_closeout_ceiling = GRV-C2
+positive_evidence_opened = false
+```
+
+Bounded interpretation:
+
+```text
+K cache = diagnostic-only for transport and overwritten before full-step use
+old J magnitude = exact sign-even J^2 source path, unresolved at the F0 W tolerance
+old J orientation = not retained across transport or the complete step
+edge-coordinate reversal plus J sign mapping = covariant
+current = reconstructed anew by transport
+formed branch / continuation / retention / read-back / write-back = unsupported
+```
 
 ## Iteration 3 - GRV2 Strong Formed Branches
 

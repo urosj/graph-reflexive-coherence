@@ -1,0 +1,523 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "K_counterfactual": {
+      "base_k_digest": "2a8d2719b7d3103afbd61ad6d0791944e137ad0e8e0be34d9c9cbcff08e2f3c4",
+      "checks": {
+        "counterfactual_cache_differs": true,
+        "differential_stage_overwrites_counterfactual_cache": true,
+        "full_step_physical_outputs_equal": true,
+        "transport_outputs_equal": true
+      },
+      "classification": "diagnostic_only_not_transport_input_overwritten_before_full_step_use",
+      "counterfactual_k_digest": "08c194ce09df11f37b544cc9d7284ffa45c301922441868d52ef4f168d675eb2",
+      "full_step_physical_max_delta": 0.0,
+      "intervened_surface": "cached_quantities.hybrid_node_tensors",
+      "status": "passed",
+      "transport_max_delta": 0.0
+    },
+    "checks": {
+      "K_counterfactual_passed": true,
+      "all_runtime_fields_classified": true,
+      "clone_and_replay_control_passed": true,
+      "current_sign_control_passed": true,
+      "edge_reorientation_control_passed": true,
+      "step_trace_and_fixed_topology_passed": true,
+      "transport_anchor_passed": true
+    },
+    "claim_boundary": {
+      "continuation_supported": false,
+      "exact_orientation_semantics_supported": true,
+      "exact_runtime_dependency_semantics_supported": true,
+      "formed_branch_supported": false,
+      "readback_supported": false,
+      "retention_supported": false,
+      "runtime_change": false,
+      "writeback_supported": false
+    },
+    "clone_serialization_and_replay": {
+      "checks": {
+        "canonical_json_round_trip_exact": true,
+        "clone_first_source_unchanged": true,
+        "declared_path_changed": true,
+        "deep_clone_non_aliasing": true,
+        "raw_snapshot_and_derived_projection_separate": true,
+        "runtime_snapshot_replay_physical_projection_exact": true
+      },
+      "derived_projection_sha256": "a633643ae1b8bf980c28f0531952b99553e4b5854ad5c49d5af9f8cdfb6fc1df",
+      "raw_snapshot_committed": false,
+      "raw_snapshot_sha256": "98b884f9459c09cab6ba63dcc56b5d1a2958b7ca4159a35403ef97fba16d51ca",
+      "runtime_snapshot_replay_max_delta": 0.0,
+      "status": "passed"
+    },
+    "current_sign_control": {
+      "J4_vs_J0_base_conductance_absolute_delta": 8.000045070843953e-12,
+      "checks": {
+        "hybrid_tensor_channel_is_sign_even": true,
+        "matched_sign_reversal_full_step_outputs_equal": true,
+        "matched_sign_reversal_transport_outputs_equal": true,
+        "old_current_magnitude_enters_conductance_exactly": true,
+        "pre_transport_net_flux_summary_tracks_sign": true
+      },
+      "classification": {
+        "current_reconstructed_anew": true,
+        "magnitude_persistence": "direct_sign_even_input_to_next_conductance_but_F0_effect_below_declared_W_tolerance",
+        "orientation_persistence": "not_retained_across_transport_or_complete_step",
+        "transient_sign_summary": "reconstructed_pre_transport_then_overwritten_after_new_flux",
+        "unoriented_axis_persistence": "single_edge_sign_even_channel_only_not_distinct_from_magnitude"
+      },
+      "declared_W_absolute_tolerance": 1e-10,
+      "full_step_sign_pair_max_delta": 0.0,
+      "magnitude_effect_resolved_at_declared_tolerance": false,
+      "physical_reversal": "fixed_edge_coordinates_J_to_minus_J",
+      "status": "passed",
+      "transport_sign_pair_max_delta": 0.0
+    },
+    "edge_reorientation_control": {
+      "checks": {
+        "current_coordinate_sign_mapped": true,
+        "physical_transport_covariant": true,
+        "raw_coordinate_orientation_changed": true
+      },
+      "classification": "coordinate_covariance_passed_distinct_from_physical_current_reversal",
+      "control": "edge_coordinate_reorientation_with_J_sign_map",
+      "normal_raw_endpoints": {
+        "edge_id": 0,
+        "endpoint_a": {
+          "node_id": 0,
+          "slot": 0
+        },
+        "endpoint_b": {
+          "node_id": 1,
+          "slot": 0
+        },
+        "payload": {}
+      },
+      "reoriented_raw_endpoints": {
+        "edge_id": 0,
+        "endpoint_a": {
+          "node_id": 1,
+          "slot": 0
+        },
+        "endpoint_b": {
+          "node_id": 0,
+          "slot": 0
+        },
+        "payload": {}
+      },
+      "status": "passed",
+      "transport_max_delta": 0.0
+    },
+    "excluded_and_administrative_field_inventory": {
+      "all_runtime_fields_classified": true,
+      "extra_fields": [],
+      "grv3_closure_candidates": [
+        "topology",
+        "step_index",
+        "budget_target",
+        "cached_quantities",
+        "rng_state",
+        "nodes",
+        "port_edges",
+        "hierarchy",
+        "expansion_registry",
+        "choice_registry",
+        "collapse_registry"
+      ],
+      "missing_fields": [],
+      "records": [
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "topology",
+          "grv3_closure_candidate": true,
+          "reason": "controls adjacency and port incidence"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "node_values",
+          "grv3_closure_candidate": false,
+          "reason": "unused family-neutral placeholder in GRC9V3"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "edge_values",
+          "grv3_closure_candidate": false,
+          "reason": "unused family-neutral placeholder in GRC9V3"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "causal_runtime_state",
+          "field": "step_index",
+          "grv3_closure_candidate": true,
+          "reason": "administratively advances and keys spark, growth, choice, and event state"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "deterministic_administrative_advancement",
+          "field": "time",
+          "grv3_closure_candidate": false,
+          "reason": "advances by dt and is not read by current transition decisions"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "budget_target",
+          "grv3_closure_candidate": true,
+          "reason": "sets the quadrature correction target"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "remainder",
+          "grv3_closure_candidate": false,
+          "reason": "recomputed by quadrature-budget enforcement"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "cached_quantities",
+          "grv3_closure_candidate": true,
+          "reason": "mixed cache; hessian history and growth-front records are read later while K is diagnostic-only"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "observer_only_state",
+          "field": "event_log",
+          "grv3_closure_candidate": false,
+          "reason": "append-only event history and current-step slicing surface"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "observer_only_state",
+          "field": "observables",
+          "grv3_closure_candidate": false,
+          "reason": "reported observer surface; no physical transition reads found"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "rng_state",
+          "grv3_closure_candidate": true,
+          "reason": "restores deterministic growth sampling state"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "params_identity",
+          "grv3_closure_candidate": false,
+          "reason": "restored from current parameter hash"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "nodes",
+          "grv3_closure_candidate": true,
+          "reason": "coherence is causal; differential and basin subfields are rebuilt or maintained"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "port_edges",
+          "grv3_closure_candidate": true,
+          "reason": "old flux enters next conductance through J squared; edge carrier is canonical"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "base_conductance",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt before potential and flux"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "geometric_length",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt analytic pre-flux edge label"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "temporal_delay",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt analytic post-flux edge label"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "flux_coupling",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt absolute-flux edge label"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "potential",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt from coherence and conductance"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "sink_set",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt from current flux topology"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "basins",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt from current flux topology"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "hierarchy",
+          "grv3_closure_candidate": true,
+          "reason": "persists completed child relations across steps"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "expansion_registry",
+          "grv3_closure_candidate": true,
+          "reason": "persists expansion schedules and topology-growth history"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "choice_registry",
+          "grv3_closure_candidate": true,
+          "reason": "previous choice state is read by choice/collapse update"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "collapse_registry",
+          "grv3_closure_candidate": true,
+          "reason": "persists collapse records"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "observer_only_state",
+          "field": "coarse_cache",
+          "grv3_closure_candidate": false,
+          "reason": "operator output cache invalidated on transport or topology change"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "edge_label_computation_mode",
+          "grv3_closure_candidate": false,
+          "reason": "derived from declared constitutive modes"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "edge_label_params",
+          "grv3_closure_candidate": false,
+          "reason": "derived from declared parameters and label selection"
+        }
+      ],
+      "runtime_dataclass": "pygrc.models.grc_9_v3_state.GRC9V3State"
+    },
+    "gate_id": "GRV1",
+    "load_bearing_source_paths": [
+      "src/pygrc/core/serialization.py",
+      "src/pygrc/core/storage.py",
+      "src/pygrc/core/types.py",
+      "src/pygrc/models/grc_9_ports.py",
+      "src/pygrc/models/grc_9_state.py",
+      "src/pygrc/models/grc_9_v3.py",
+      "src/pygrc/models/grc_9_v3_choice.py",
+      "src/pygrc/models/grc_9_v3_runtime.py",
+      "src/pygrc/models/grc_9_v3_sparks.py",
+      "src/pygrc/models/grc_9_v3_state.py",
+      "src/pygrc/models/grc_v3_differential.py"
+    ],
+    "specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+    "status": "passed",
+    "step_order_and_fixed_topology": {
+      "checks": {
+        "boundary_noop": true,
+        "emitted_trace_matches_frozen_order": true,
+        "fixed_topology": true,
+        "instrumentation_noninterfering": true,
+        "instrumented_and_ordinary_runtime_snapshots_equal": true,
+        "no_events": true,
+        "observed_high_level_calls_match_runtime_structure": true,
+        "runtime_expected_trace_matches_frozen_order": true
+      },
+      "events": [],
+      "frozen_step_order": [
+        "compute_row_basis_gradient_pre_flux",
+        "compute_signed_hessian_row_basis_pre_flux",
+        "compute_net_flux_summary_pre_flux",
+        "compute_node_tensors",
+        "compute_base_conductance",
+        "compute_edge_labels_pre_flux",
+        "compute_potential",
+        "compute_flux",
+        "compute_edge_labels_post_flux",
+        "refresh_differential_summary_post_flux",
+        "detect_flux_topology_identities",
+        "validate_geometric_basin_seeds",
+        "compute_effective_basin_masses",
+        "detect_hybrid_spark_candidates",
+        "apply_mechanical_expansion",
+        "refresh_after_expansion",
+        "evaluate_child_basin_stabilization",
+        "register_completed_hybrid_sparks",
+        "update_hierarchy",
+        "update_choice_collapse_learning",
+        "apply_growth",
+        "apply_boundary_behavior",
+        "apply_continuity",
+        "enforce_quadrature_budget",
+        "refresh_runtime_state_final",
+        "refresh_or_invalidate_coarse_cache",
+        "compute_observables"
+      ],
+      "instrumented_and_ordinary_runtime_snapshots_equal": true,
+      "instrumented_vs_ordinary_max_delta": 0.0,
+      "observed_high_level_call_order": [
+        "rebuild_differential_state",
+        "rebuild_transport_state",
+        "rebuild_differential_state",
+        "rebuild_identity_state",
+        "apply_hybrid_spark_stages",
+        "rebuild_choice_state",
+        "apply_growth",
+        "apply_boundary_behavior",
+        "apply_continuity",
+        "enforce_quadrature_budget",
+        "rebuild_differential_state",
+        "rebuild_transport_state",
+        "rebuild_differential_state",
+        "rebuild_identity_state",
+        "refresh_coarse_cache",
+        "compute_observables"
+      ],
+      "runtime_emitted_step_order": [
+        "compute_row_basis_gradient_pre_flux",
+        "compute_signed_hessian_row_basis_pre_flux",
+        "compute_net_flux_summary_pre_flux",
+        "compute_node_tensors",
+        "compute_base_conductance",
+        "compute_edge_labels_pre_flux",
+        "compute_potential",
+        "compute_flux",
+        "compute_edge_labels_post_flux",
+        "refresh_differential_summary_post_flux",
+        "detect_flux_topology_identities",
+        "validate_geometric_basin_seeds",
+        "compute_effective_basin_masses",
+        "detect_hybrid_spark_candidates",
+        "apply_mechanical_expansion",
+        "refresh_after_expansion",
+        "evaluate_child_basin_stabilization",
+        "register_completed_hybrid_sparks",
+        "update_hierarchy",
+        "update_choice_collapse_learning",
+        "apply_growth",
+        "apply_boundary_behavior",
+        "apply_continuity",
+        "enforce_quadrature_budget",
+        "refresh_runtime_state_final",
+        "refresh_or_invalidate_coarse_cache",
+        "compute_observables"
+      ],
+      "status": "passed",
+      "topology_after": {
+        "edges": [
+          0
+        ],
+        "nodes": [
+          0,
+          1
+        ]
+      },
+      "topology_before": {
+        "edges": [
+          0
+        ],
+        "nodes": [
+          0,
+          1
+        ]
+      }
+    },
+    "transport_anchor": {
+      "absolute_residuals": {
+        "base_conductance": 1.000000082740371e-11,
+        "flux_coupling": 8.000000661922968e-11,
+        "flux_uv": 8.000000661922968e-11,
+        "geometric_length": 9.000133971426294e-12,
+        "potential_0": 2.000000165480742e-11,
+        "potential_1": 2.000000165480742e-11,
+        "temporal_delay": 4.960004629239734e-12
+      },
+      "declared_tolerance": 1e-09,
+      "evidence_role": "canonical_existing_test_anchor_not_new_scientific_evidence",
+      "expected": {
+        "base_conductance": {
+          "0": 1.0
+        },
+        "flux_coupling": {
+          "0": 4.0
+        },
+        "flux_uv": {
+          "0": 4.0
+        },
+        "geometric_length": {
+          "0": 1.0
+        },
+        "potential": {
+          "0": -2.0,
+          "1": 2.0
+        },
+        "temporal_delay": {
+          "0": 0.2
+        }
+      },
+      "fixture_id": "F0",
+      "maximum_absolute_residual": 8.000000661922968e-11,
+      "observed": {
+        "base_conductance": {
+          "0": 0.99999999999
+        },
+        "flux_coupling": {
+          "0": 3.99999999992
+        },
+        "flux_uv": {
+          "0": 3.99999999992
+        },
+        "geometric_length": {
+          "0": 1.0000000000090001
+        },
+        "potential": {
+          "0": -1.99999999998,
+          "1": 1.99999999998
+        },
+        "temporal_delay": {
+          "0": 0.20000000000496002
+        }
+      },
+      "runtime_methods": [
+        "GRC9V3.rebuild_differential_state",
+        "GRC9V3.rebuild_transport_state"
+      ],
+      "source_test": "tests/models/test_grc_9_v3_transport.py::_two_node_state_and_transport_params",
+      "status": "passed"
+    }
+  },
+  "payload_sha256": "140327e6c4728a40d552b0338e9937da776531aad70d57c457dd908366a58a5e",
+  "schema_version": "b1_grv1_instrumentation_validation_v1"
+}

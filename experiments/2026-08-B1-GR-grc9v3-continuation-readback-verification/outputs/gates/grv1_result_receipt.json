@@ -1,0 +1,35 @@
+{
+  "blocked_gates": [
+    "GRV2",
+    "GRV3",
+    "GRV4",
+    "GRV5",
+    "GRV6",
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "GRV-C2_candidate_exact_runtime_dependency_and_orientation_semantics_only_pending_authorized_human_acceptance",
+  "gate_id": "GRV1",
+  "input_execution_revision": "cbe52fe454c82c8cb10ad3f66175c711bc0c803e",
+  "input_experiment_tree_sha256": "d4ae404c001c08e755f2a8f20f93775f34f750b8f5d0da2ce4bf9361bb331bfe",
+  "output_artifact_digests": {
+    "outputs/fixture_registry.json": "bdc049e8fc260ba2019d9df4dc048f8ee233a326e09187501d37971872dd7601",
+    "outputs/instrumentation_validation.json": "19c47e91f64ed58587fa3a53fffeab5f945fb09a82143e44c586e1fabb833f2e",
+    "outputs/intervention_registry.json": "3f7c1ffa4efef72ce887f4d2933de8a885b099314e1645c050b54619fdcc2328",
+    "outputs/protected_path_manifest_v1.json": "04fbc6291d06980b47c0551704479ebfa301872a0566ca21649724d10af5392e",
+    "reports/b1_grv1_instrumentation_and_source_fidelity.md": "348c9d383779d4393f612e7b70bfc4094974d47f6dcda445fd4f75f4fc7344ba"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+      "gate_id": "GRV0",
+      "immutable_ref": "git:454b2c55d1682c3ead46f6036ed725445b37fc08"
+    }
+  ],
+  "prerequisite_result_receipt_digests": [
+    "a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df"
+  ],
+  "receipt_payload_sha256": "c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}
