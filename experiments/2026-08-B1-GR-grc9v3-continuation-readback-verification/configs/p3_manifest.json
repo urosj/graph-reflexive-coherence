@@ -1,0 +1,35 @@
+{
+  "schema_version": "b1_grv3_p3_package_manifest_v1",
+  "package_status": "clean_P3_input_when_contained_in_committed_revision",
+  "gate_id": "GRV3",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV2",
+    "result_revision": "e1dc01f4948b7791c733eb62c15179d04619cd8e",
+    "receipt_payload_sha256": "73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63",
+    "acceptance_anchor_path": "outputs/gates/grv2_acceptance_anchor.json",
+    "acceptance_anchor_commit": "b5506d9c5dcab787b602652549bfbf09054d53eb"
+  },
+  "gate_input_change_class": "gate_local_implementation_of_sealed_GRV3_method",
+  "protocol_readmission_required": false,
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "continuation_evidence_opened": false,
+    "retention_evidence_opened": false,
+    "readback_evidence_opened": false,
+    "writeback_evidence_opened": false
+  },
+  "executable_surfaces": [
+    "scripts/compute_complete_step_jacobian.py",
+    "scripts/state_codec.py",
+    "scripts/run_all.py",
+    "tests/test_grv3_causal_state.py",
+    "tests/test_state_codec.py"
+  ],
+  "execution_contract": "configs/grv3_causal_state.json",
+  "branch_scope": "all_48_accepted_GRV2_registry_rows_without_symmetry_reduction",
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV3",
+  "claim_ceiling": "bounded_causal_state_and_temporal_mode_evidence_only"
+}

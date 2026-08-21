@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv2_P2_3_accepted_GRV3_next
+status = grv3_P3_clean_input_prepared_execution_pending
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,7 +12,7 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV3_not_started
+current_gate = GRV3_P3_input_freeze
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
 verification_closeout_ceiling = GRV-C3_accepted
@@ -447,6 +447,20 @@ writeback = unsupported
 ```
 
 ## Iteration 4 - GRV3 Causal State And Complete Transition Jacobian
+
+### Pre-Execution Contract
+
+- [x] Bind GRV3 to the exact accepted GRV2 registry, receipt, and acceptance anchor.
+- [x] Freeze execution over all 48 accepted branch rows before spectra.
+- [x] Keep all 32 symmetry-orbit labels as dependence metadata, not branch selection.
+- [x] Forbid post-spectrum branch selection.
+- [x] Freeze `GRV3-A -> GRV3-B -> GRV3-C` execution order.
+- [x] Permit GRV3-A to pass while GRV3-B is blocked on a non-smooth stratum.
+- [x] Require positive two-sided stratum margin for every classical derivative column.
+- [x] Classify a failed stratum gate as blocked, not unconverged.
+- [x] Freeze the `(C,W,J)` candidate chart, bounded reductions, horizons, step sizes,
+  categorical surfaces, and claim ceiling in `configs/grv3_causal_state.json`.
+- [x] Keep runtime, `src/`, and pre-existing tests unchanged.
 
 - [ ] Freeze and test the branch-relative causal-state encoder and decoder.
 - [ ] Require coordinate round trip `E_X(D_X(x)) ~= x`.

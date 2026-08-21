@@ -7,6 +7,7 @@ from pathlib import Path
 
 from artifact_io import EXPERIMENT_ROOT, git, sha256_file, write_json
 from capture_repository_baseline import capture
+from compute_complete_step_jacobian import run_grv3
 from gate_receipts import finalize_receipt, validate_receipt
 from serialize_theory_contract import serialize
 from solve_strong_fixed_branches import run_grv2
@@ -70,7 +71,10 @@ def write_report(capture_result: dict[str, object], output_paths: list[Path]) ->
         "## Emitted Artifacts",
         "",
     ]
-    lines.extend(f"- `{path.relative_to(EXPERIMENT_ROOT).as_posix()}`" for path in sorted(output_paths))
+    lines.extend(
+        f"- `{path.relative_to(EXPERIMENT_ROOT).as_posix()}`"
+        for path in sorted(output_paths)
+    )
     report.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return report
 
@@ -85,18 +89,25 @@ def run_grv0() -> None:
     report = write_report(captured, output_paths)
     output_paths.append(report)
     baseline_payload = captured["baseline"]["payload"]
-    receipt = finalize_receipt({
-        "gate_id": "GRV0",
-        "input_execution_revision": baseline_payload["experiment_execution_revision"],
-        "substrate_base_revision": baseline_payload["substrate_base_revision"],
-        "input_experiment_tree_sha256": baseline_payload["experiment_tree_sha256"],
-        "prerequisite_result_receipt_digests": [],
-        "prerequisite_acceptance_anchors": [],
-        "output_artifact_digests": {path.relative_to(EXPERIMENT_ROOT).as_posix(): sha256_file(path) for path in sorted(output_paths)},
-        "status": "awaiting_scientific_review",
-        "blocked_gates": [f"GRV{index}" for index in range(1, 9)],
-        "claim_ceiling": "GRV-C1_candidate_pending_authorized_human_acceptance_no_scientific_evidence",
-    })
+    receipt = finalize_receipt(
+        {
+            "gate_id": "GRV0",
+            "input_execution_revision": baseline_payload[
+                "experiment_execution_revision"
+            ],
+            "substrate_base_revision": baseline_payload["substrate_base_revision"],
+            "input_experiment_tree_sha256": baseline_payload["experiment_tree_sha256"],
+            "prerequisite_result_receipt_digests": [],
+            "prerequisite_acceptance_anchors": [],
+            "output_artifact_digests": {
+                path.relative_to(EXPERIMENT_ROOT).as_posix(): sha256_file(path)
+                for path in sorted(output_paths)
+            },
+            "status": "awaiting_scientific_review",
+            "blocked_gates": [f"GRV{index}" for index in range(1, 9)],
+            "claim_ceiling": "GRV-C1_candidate_pending_authorized_human_acceptance_no_scientific_evidence",
+        }
+    )
     validate_receipt(receipt)
     write_json(output_root / "gates/grv0_result_receipt.json", receipt)
     print("GRV0 mechanically validated; scientific acceptance anchor is pending.")
@@ -104,7 +115,9 @@ def run_grv0() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--gate", choices=[f"GRV{index}" for index in range(9)], required=True)
+    parser.add_argument(
+        "--gate", choices=[f"GRV{index}" for index in range(9)], required=True
+    )
     args = parser.parse_args()
     if args.gate == "GRV1":
         run_grv1()
@@ -113,14 +126,27 @@ def main() -> None:
     if args.gate == "GRV2":
         anchor = prerequisite_anchor_path(args.gate)
         if not anchor.exists():
-            raise SystemExit(f"{args.gate} blocked: prerequisite accepted anchor is missing")
+            raise SystemExit(
+                f"{args.gate} blocked: prerequisite accepted anchor is missing"
+            )
         run_grv2()
         print("GRV2 mechanically validated; scientific acceptance anchor is pending.")
+        return
+    if args.gate == "GRV3":
+        anchor = prerequisite_anchor_path(args.gate)
+        if not anchor.exists():
+            raise SystemExit(
+                f"{args.gate} blocked: prerequisite accepted anchor is missing"
+            )
+        run_grv3()
+        print("GRV3 mechanically validated; scientific acceptance anchor is pending.")
         return
     if args.gate != "GRV0":
         anchor = prerequisite_anchor_path(args.gate)
         if not anchor.exists():
-            raise SystemExit(f"{args.gate} blocked: prerequisite accepted anchor is missing")
+            raise SystemExit(
+                f"{args.gate} blocked: prerequisite accepted anchor is missing"
+            )
         raise SystemExit(f"{args.gate} is not executable in the P0 package revision")
     run_grv0()
 

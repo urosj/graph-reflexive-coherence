@@ -509,6 +509,28 @@ or retention evidence.
 Determine the branch-local causal coordinates and temporal mode structure of
 the complete synchronous transition.
 
+### Pre-Execution Scope Freeze
+
+GRV3 consumes every one of the 48 accepted GRV2 registry rows. The 32
+symmetry-orbit labels state dependence between rows; they are not an execution
+reduction and cannot be used to select interesting branches after spectra are
+visible. This rule and the exact GRV2 registry digest are frozen in
+`configs/grv3_causal_state.json` before GRV3 executes.
+
+GRV3 proceeds in strict order:
+
+```text
+GRV3-A causal-state codec and discrete-stratum admission
+  -> GRV3-B square transition Jacobian only on admitted branches/columns
+  -> GRV3-C smooth response Jacobians plus separate categorical surfaces
+```
+
+A branch may pass bounded GRV3-A causal closure while GRV3-B is blocked. In
+particular, a zero-current branch on the sink/basin identity boundary has zero
+two-sided stratum margin. Such a result is recorded as a non-smooth derivative
+boundary, never as an unconverged finite difference and never as a matrix or
+spectrum.
+
 ### Work
 
 1. Admit a branch-relative continuous causal-state encoder/decoder and classify

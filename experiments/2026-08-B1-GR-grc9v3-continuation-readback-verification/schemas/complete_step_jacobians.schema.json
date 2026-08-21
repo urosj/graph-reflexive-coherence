@@ -1,1 +1,29 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"b1/complete_step_jacobians.schema.json","type":"object","required":["branch_id","causal_coordinate","row_order","column_order","state_projection","perturbation_convention","method","step_sizes","convergence","stratum_margins","jacobian"],"properties":{"branch_id":{"type":"string"},"causal_coordinate":{"type":"array"},"row_order":{"type":"array"},"column_order":{"type":"array"},"state_projection":{"type":"array"},"perturbation_convention":{"type":"string"},"method":{"type":"string"},"step_sizes":{"type":"array"},"convergence":{"type":"object"},"stratum_margins":{"type":"array"},"jacobian":{"type":"array"}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/complete_step_jacobians.schema.json",
+  "type": "object",
+  "required": ["schema_version", "metadata", "payload", "payload_sha256"],
+  "properties": {
+    "schema_version": {"const": "b1_grv3_complete_step_jacobians_v1"},
+    "metadata": {"type": "object"},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "payload": {
+      "type": "object",
+      "required": [
+        "gate_id", "source_contract", "branch_selection", "causal_field_inventory",
+        "branches", "summary", "claim_boundary"
+      ],
+      "properties": {
+        "gate_id": {"const": "GRV3"},
+        "branches": {"type": "array", "minItems": 48, "maxItems": 48},
+        "summary": {
+          "type": "object",
+          "required": [
+            "branch_count", "causal_closure_pass_count", "jacobian_admitted_count",
+            "jacobian_blocked_count", "all_branches_consumed_without_symmetry_reduction"
+          ]
+        }
+      }
+    }
+  }
+}

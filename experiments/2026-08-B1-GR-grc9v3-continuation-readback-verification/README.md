@@ -153,6 +153,14 @@ write-back remain unopened. GRV3 is next and must begin with causal-state and
 stratum admission over all 48 accepted rows before any Jacobian or spectrum is
 interpreted.
 
+The clean GRV3 P3 input now freezes that scope explicitly. All 48 rows will be
+audited; symmetry orbits are interpretation metadata only. GRV3-A tests the
+branch-relative causal codec first. GRV3-B/C can emit a classical derivative,
+response matrix, or spectrum only where every two-sided perturbation remains
+inside one declared causal stratum. The known zero-current sink/basin boundary
+may therefore admit causal closure while blocking ordinary Jacobians, which is
+a valid bounded result rather than a GRV2 failure.
+
 ## Central Question
 
 ```text

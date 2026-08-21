@@ -1,0 +1,55 @@
+{
+  "schema_version": "b1_grv3_causal_state_contract_v1",
+  "branch_scope": {
+    "source_registry_path": "outputs/fixed_branch_registry.json",
+    "source_registry_sha256": "56bd1857f892f187c6b99d6fcbd419ddd68ae0e17133b3a0bf7dda79b197e366",
+    "selection_rule": "all_registry_rows_with_branch_certified_true_in_committed_registry_order",
+    "expected_selected_branch_count": 48,
+    "symmetry_reduction_for_execution": false,
+    "symmetry_orbits_are_interpretive_only": true,
+    "post_spectrum_branch_selection_allowed": false
+  },
+  "grv3_a": {
+    "initial_candidate_blocks": ["C", "W", "J"],
+    "candidate_reductions": [["C", "W"], ["C"]],
+    "codec_horizons": [1, 2, 5, 10],
+    "audit_variants": ["branch", "C_positive", "C_negative", "W_positive", "J_positive", "J_negative"],
+    "causal_closure_claim": "bounded_horizon_only",
+    "round_trip_required": true,
+    "reached_state_canonicalization_required": true,
+    "transition_commutation_required": true,
+    "physical_blocks_compared_for_reductions": ["C", "W", "J"]
+  },
+  "grv3_b": {
+    "finite_difference_method": "two_sided_central_only_within_one_causal_stratum",
+    "finite_difference_steps": [0.0001, 0.00005, 0.000025],
+    "minimum_positive_stratum_margin": 1e-12,
+    "current_zero_band": 1e-10,
+    "require_same_pre_step_signature": true,
+    "require_same_post_step_signature": true,
+    "require_same_runtime_path": true,
+    "blocked_column_policy": "do_not_emit_classical_derivative_or_spectrum",
+    "partial_matrix_policy": "do_not_call_square_transition_jacobian"
+  },
+  "grv3_c": {
+    "smooth_response_surfaces": ["Phi", "G", "Hs", "Kcache"],
+    "categorical_surfaces": ["current_sign", "sink_set", "basins", "hierarchy", "spark_eligibility", "event_classes", "budget_active_set"],
+    "response_derivative_requires_admitted_grv3_b_input_column": true
+  },
+  "counterfactuals": {
+    "W_amplitude": 0.01,
+    "J_amplitude": 1.0,
+    "derived_surface_amplitude": 1.0,
+    "sensitivity_uses_declared_block_tolerances": true,
+    "synthetic_valid_is_not_runtime_reachable": true
+  },
+  "claim_boundary": {
+    "grv3_a_may_upgrade_causal_strong_branch": true,
+    "grv3_b_may_be_blocked_when_grv3_a_passes": true,
+    "slow_mode_is_retention": false,
+    "continuation_supported": false,
+    "retention_supported": false,
+    "readback_supported": false,
+    "writeback_supported": false
+  }
+}
