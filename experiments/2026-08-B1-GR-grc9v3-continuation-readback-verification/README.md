@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv1_executed_awaiting_scientific_acceptance
+status = grv1_candidate_superseded_P1_1_strengthening_prepared_execution_not_started
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C1
-verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C1_accepted_GRV-C2_candidate_superseded_pending_rerun
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -64,6 +64,14 @@ binds the generated artifacts to that input revision and the accepted GRV0
 anchor. GRV1 remains at a `GRV-C2` candidate ceiling until a separate
 authorized human acceptance anchor is recorded. It opens no branch,
 continuation, retention, read-back, or write-back evidence.
+
+Before acceptance, source-fidelity review identified additional controls needed
+to make later stage-local interpretation safer. The unaccepted GRV1 candidate
+at `45435c8` is therefore superseded, not rejected, by a P1.1 instrumentation
+strengthening. P1.1 preserves the sealed specification and claim ceiling while
+adding observation noninterference, clone isolation, W/J/K authority mapping,
+valid multi-amplitude K interventions, stagewise sign attribution, public-stage
+and fresh-process replay, and explicit transition-environment/RNG accounting.
 
 ## Central Question
 

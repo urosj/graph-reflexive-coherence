@@ -10,10 +10,14 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate_instrumentation import (  # noqa: E402
     build_grv1_records,
     edge_reorientation_control,
+    fresh_process_replay_control,
     k_counterfactual,
     load_fixture,
+    observation_noninterference_control,
+    public_stage_replay_control,
     state_field_inventory,
     step_trace_control,
+    surface_authority_map,
 )
 
 
@@ -31,6 +35,31 @@ class InstrumentationValidationTest(unittest.TestCase):
         self.assertEqual("passed", orientation["status"])
         self.assertIn("diagnostic_only", K_result["classification"])
         self.assertIn("coordinate_covariance", orientation["classification"])
+
+    def test_observation_and_public_stage_replay_are_noninterfering(self) -> None:
+        fixture = load_fixture()
+        observation = observation_noninterference_control(fixture)
+        public_replay = public_stage_replay_control(fixture)
+        self.assertEqual("passed", observation["status"])
+        self.assertEqual("passed", public_replay["status"])
+        self.assertTrue(
+            public_replay["checks"]["final_complete_runtime_state_equal"]
+        )
+
+    def test_surface_authority_controls_separate_W_J_and_K(self) -> None:
+        fixture = load_fixture()
+        K_result = k_counterfactual(fixture)
+        authority = surface_authority_map(fixture, K_result)
+        self.assertEqual("passed", authority["status"])
+        self.assertEqual(
+            ["W_base_conductance", "J_signed_edge_current", "K_hybrid_node_tensor"],
+            [record["logical_quantity"] for record in authority["records"]],
+        )
+
+    def test_fresh_process_replay_is_exact(self) -> None:
+        result = fresh_process_replay_control(load_fixture())
+        self.assertEqual("passed", result["status"])
+        self.assertTrue(result["checks"]["fresh_python_process_equal"])
 
     def test_every_runtime_state_field_is_classified(self) -> None:
         inventory = state_field_inventory()

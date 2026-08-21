@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv1_executed_awaiting_scientific_acceptance
+status = grv1_candidate_superseded_P1_1_strengthening_prepared_execution_not_started
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,9 +12,9 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV1_executed_awaiting_authorized_human_acceptance
+current_gate = GRV1_P1_1_strengthening_prepared_execution_not_started
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C1_accepted_GRV-C2_candidate_superseded_pending_rerun
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -209,6 +209,34 @@ edge-coordinate reversal plus J sign mapping = covariant
 current = reconstructed anew by transport
 formed branch / continuation / retention / read-back / write-back = unsupported
 ```
+
+Pre-acceptance review disposition:
+
+```text
+candidate_result_revision = 45435c8e2da28908fabe58ba93c2c1af4b08930c
+candidate_receipt_payload_sha256 = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
+acceptance_status = never_accepted
+disposition = superseded_by_P1_1_source_fidelity_strengthening
+specification_change = false
+claim_ceiling_change = false
+```
+
+GRV1 P1.1 hardening:
+
+- [ ] Prove snapshot, diagnostic read, hashing, save, and load observation are nonmutating.
+- [ ] Prove nested clone isolation for conductance, current, caches, K, and RNG state.
+- [ ] Emit and validate the W/J/K duplicated-surface authority map.
+- [ ] Replace arbitrary K perturbation with structurally valid small, moderate,
+  and large fixed-path counterfactuals.
+- [ ] Record stagewise `J -> -J` use, sign erasure, and overwrite boundaries.
+- [ ] Verify coordinate reorientation is involutive and compare after inverse identification.
+- [ ] Prove native `step()` and exact public-stage replay agree at every captured boundary.
+- [ ] Record call ordinal, multiplicity, input/output digests, and changed fields.
+- [ ] Record fixed transition environment and explicit RNG before/after status.
+- [ ] Reproduce the F0 result under same-input object reuse, fresh instance,
+  snapshot/load, and a fresh Python process.
+- [ ] Expand the confirmed load-bearing source map without altering the protected tree.
+- [ ] Keep all scientific evidence flags false and preserve the GRV1 claim ceiling.
 
 ## Iteration 3 - GRV2 Strong Formed Branches
 

@@ -345,6 +345,13 @@ than replacing it.
 9. Freeze the rule that any later-discovered load-bearing path creates a
    `source_or_specification_mismatch` contradiction and blocks dependent work;
    v1 is never silently amended.
+10. Before GRV1 acceptance, strengthen source fidelity with observation
+    noninterference, deep-clone isolation, duplicated-surface authority,
+    structurally valid multi-amplitude `K`, stagewise `J -> -J`, involutive
+    coordinate reorientation, public-stage replay, call multiplicity and
+    boundary digests, transition-environment/RNG accounting, and fresh-process
+    replay controls. These controls refine instrumentation only; they do not
+    change the sealed method or claim ceiling.
 
 ### Required outputs
 
@@ -352,6 +359,7 @@ than replacing it.
 outputs/instrumentation_validation.json
 outputs/fixture_registry.json
 outputs/intervention_registry.json
+outputs/surface_authority_map.json
 outputs/protected_path_manifest_v1.json
 outputs/gates/grv1_result_receipt.json
 outputs/gates/grv1_acceptance_anchor.json
