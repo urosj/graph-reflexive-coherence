@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "records": [
+      {
+        "Claim or debt": "T-S02`, `D-M01",
+        "GRC extension route": "enlarge state only if closure fails",
+        "LGRC route": "test queue, delay, phase, proper-time state",
+        "Maximum positive claim": "branch-specific runtime causal state",
+        "Negative or ambiguous result means": "smaller state may suffice, assumption fails, or state is unidentifiable",
+        "Primary gate": "GRV3",
+        "Reopen condition": "same accepted present state, different future",
+        "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
+        "Required control": "matched-state closure tests; reached and synthetic states separated"
+      },
+      {
+        "Claim or debt": "T-RW01`, `T-RW06`, `T-RW11",
+        "GRC extension route": "carrier or read extension only for missing role",
+        "LGRC route": "separate transit, retention, and native read",
+        "Maximum positive claim": "bounded arrow or closed-loop evidence",
+        "Negative or ambiguous result means": "absence of one arrow does not erase others",
+        "Primary gate": "GRV5`, `GRV8",
+        "Reopen condition": "causal-role matrix cannot classify outcome",
+        "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-REACHABLE",
+        "Required control": "retention, read, write, reset, swap, and authorship evaluated separately"
+      },
+      {
+        "Claim or debt": "T-RW02`, `T-RW07",
+        "GRC extension route": "oriented read extension only if target requires it",
+        "LGRC route": "event-driven native read test",
+        "Maximum positive claim": "passive retained-conditioned response candidate",
+        "Negative or ambiguous result means": "generic geometry-conditioned transport, failed null, or no read path",
+        "Primary gate": "GRV5",
+        "Reopen condition": "passive-null convention cannot be implemented",
+        "Required assumptions": "`A-PASSIVE`, `A-SMOOTH`; `A-LOOP-INVERT` for slaving",
+        "Required control": "zero-present-probe and matched-retained-state controls"
+      },
+      {
+        "Claim or debt": "T-RW08",
+        "GRC extension route": "no extension unless target needs missing order",
+        "LGRC route": "packet orientation may preserve first-order state",
+        "Maximum positive claim": "first- versus second-order channel separation",
+        "Negative or ambiguous result means": "assumption failure, channel conflation, or different mechanism",
+        "Primary gate": "GRV1`, `GRV5",
+        "Reopen condition": "source contradicts perturbative classification",
+        "Required assumptions": "A-PASSIVE`, `A-SMOOTH`, `A-SIGN-EVEN",
+        "Required control": "linear current perturbation and quadratic sign-even write compared"
+      },
+      {
+        "Claim or debt": "T-RW09",
+        "GRC extension route": "oriented one-form/cycle channel",
+        "LGRC route": "packet/route orientation investigation",
+        "Maximum positive claim": "magnitude, axis, or orientation semantics",
+        "Negative or ambiguous result means": "orientation is reconstructed, erased, or convention is invalid",
+        "Primary gate": "GRV1-D`, `GRV5`, `GRV6",
+        "Reopen condition": "sign control changes through hidden state",
+        "Required assumptions": "A-ORIENTATION`, `A-SIGN-EVEN",
+        "Required control": "$J$ versus $-J$ and cycle-orientation controls"
+      },
+      {
+        "Claim or debt": "T-RW10",
+        "GRC extension route": "cycle-current extension only if required",
+        "LGRC route": "return-map/current equivalence",
+        "Maximum positive claim": "field-, current-, or full-level equivalence",
+        "Negative or ambiguous result means": "field match is insufficient",
+        "Primary gate": "GRV6",
+        "Reopen condition": "equivalence level cannot be isolated",
+        "Required assumptions": "`A-ORIENTATION`, `A-CONSERVE`, `A-TRANSPORT` where needed",
+        "Required control": "compare divergence, current, geometry, and future state"
+      },
+      {
+        "Claim or debt": "T-M01`, `T-C01",
+        "GRC extension route": "analysis comparator only",
+        "LGRC route": "preserve same distinction",
+        "Maximum positive claim": "bounded relation or non-equivalence",
+        "Negative or ambiguous result means": "no universal identification",
+        "Primary gate": "GRV4`, `GRV7",
+        "Reopen condition": "verified universal relation contradicts boundary",
+        "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-CONSERVE",
+        "Required control": "spatial, frozen structural, and full temporal operators compared"
+      },
+      {
+        "Claim or debt": "T-M02`, `T-M03`, `D-M02",
+        "GRC extension route": "analysis first; constitutive carrier later",
+        "LGRC route": "return-map slow sector",
+        "Maximum positive claim": "branch- and clock-specific slow cluster",
+        "Negative or ambiguous result means": "growth, staging, delay, or non-normal transient",
+        "Primary gate": "GRV3`, `GRV5`, `GRV6",
+        "Reopen condition": "no declared clock explains result",
+        "Required assumptions": "`A-BRANCH`, `A-CLOCK`, `A-ISOLATION`, `A-NONNORMAL-CONTROL` as applicable",
+        "Required control": "stable/neutral/unstable classification and finite-horizon controls"
+      },
+      {
+        "Claim or debt": "T-C02`, `T-C03",
+        "GRC extension route": "geometry/mobility or branch extension",
+        "LGRC route": "inherit accepted baseline",
+        "Maximum positive claim": "reduced structural comparator and dynamic branch classification",
+        "Negative or ambiguous result means": "reduction fails or branch is not dynamically formed",
+        "Primary gate": "GRV2`, `GRV4",
+        "Reopen condition": "source-level sign or branch assumptions fail",
+        "Required assumptions": "A-BRANCH`, `A-SMOOTH`, `A-CONSERVE",
+        "Required control": "strong branch, fixed-$W$, and full-map comparison"
+      },
+      {
+        "Claim or debt": "T-B02`, `T-B03",
+        "GRC extension route": "analysis transport only",
+        "LGRC route": "needed for event return maps",
+        "Maximum positive claim": "branch-relative mode or subspace evidence",
+        "Negative or ambiguous result means": "labels are non-invariant or branch fit is retrospective",
+        "Primary gate": "GRV2`, `GRV3`, `GRV6",
+        "Reopen condition": "results depend on retrospective branch fit",
+        "Required assumptions": "A-BRANCH`, `A-ISOLATION`, `A-TRANSPORT",
+        "Required control": "branch rule fixed before spectrum; cluster-level matching"
+      },
+      {
+        "Claim or debt": "T-B04`, `D-T01",
+        "GRC extension route": "none in fixed GRC",
+        "LGRC route": "mandatory LGRC gate",
+        "Maximum positive claim": "topology-relative continuation candidate",
+        "Negative or ambiguous result means": "lineage is identity bookkeeping only",
+        "Primary gate": "Part III only",
+        "Reopen condition": "topology claim attempted without transport",
+        "Required assumptions": "A-TRANSPORT",
+        "Required control": "explicit interspace map and lineage null"
+      },
+      {
+        "Claim or debt": "T-A01`, `T-A02`, `D-A01",
+        "GRC extension route": "selectable temporal/current extension if targeted",
+        "LGRC route": "event-cycle return map",
+        "Maximum positive claim": "temporal current semantics of unchanged GRC",
+        "Negative or ambiguous result means": "current is overwritten, sign-even, potential-derived, or assumptions fail",
+        "Primary gate": "GRV3`, `GRV6",
+        "Reopen condition": "algebraic fast-limit interpretation contradicted",
+        "Required assumptions": "`A-SMOOTH`, `A-REGULAR-SLAVING`, `A-LOOP-INVERT`, `A-FAST-SLOW` as applicable",
+        "Required control": "current Jacobian, seed, saturation, fixed/return map"
+      },
+      {
+        "Claim or debt": "T-A03`, `T-A04",
+        "GRC extension route": "do not add selection unless target requires it",
+        "LGRC route": "producer/event asymmetry distinguished",
+        "Maximum positive claim": "seed amplification or threshold separation",
+        "Negative or ambiguous result means": "no autonomous ignition claim",
+        "Primary gate": "GRV6`, `GRV8",
+        "Reopen condition": "exact zero leaves under satisfied symmetry assumptions",
+        "Required assumptions": "A-UNIQUENESS`, `A-ORIENTATION",
+        "Required control": "exact-zero, finite-seed, sign, spark/collapse exclusion"
+      },
+      {
+        "Claim or debt": "T-A05",
+        "GRC extension route": "cycle-current extension only if targeted",
+        "LGRC route": "packet through-flow separated from closed circulation",
+        "Maximum positive claim": "exclusion of regular gradient stationary circulation",
+        "Negative or ambiguous result means": "boundary or null-sector alternative remains",
+        "Primary gate": "GRV6",
+        "Reopen condition": "nonzero closed gradient current under satisfied assumptions",
+        "Required assumptions": "A-CLOSED`, `A-MOBILITY`, `A-CONSERVE",
+        "Required control": "closed cycle-current and boundary-drive controls"
+      },
+      {
+        "Claim or debt": "T-O01`, `D-R03",
+        "GRC extension route": "oriented read extension only after evidence",
+        "LGRC route": "packet direction remains transit until mediation shown",
+        "Maximum positive claim": "operational bridge candidate",
+        "Negative or ambiguous result means": "no canonical read channel",
+        "Primary gate": "GRV5`, `GRV8",
+        "Reopen condition": "a unique bridge is derived",
+        "Required assumptions": "A-ORIENTATION`, `A-PASSIVE",
+        "Required control": "Section 8.7 typed scalar/joint-to-edge mediation"
+      },
+      {
+        "Claim or debt": "T-O02`, `D-C02",
+        "GRC extension route": "no unified API or runtime label",
+        "LGRC route": "return-map-specific generator",
+        "Maximum positive claim": "bounded common reduction",
+        "Negative or ambiguous result means": "keep objects separate",
+        "Primary gate": "GRV3`, `GRV4`, `GRV6",
+        "Reopen condition": "one generator derived and validated",
+        "Required assumptions": "branch-specific",
+        "Required control": "separate spectra and full-map comparison"
+      },
+      {
+        "Claim or debt": "T-O03`, `D-M01",
+        "GRC extension route": "add state only if synchronous GRC needs it",
+        "LGRC route": "central LGRC admission question",
+        "Maximum positive claim": "bounded Markov sufficiency",
+        "Negative or ambiguous result means": "missing history or phase",
+        "Primary gate": "`GRV3`, `GRV5`, Part III",
+        "Reopen condition": "future differs under identical accepted state",
+        "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
+        "Required control": "matched present-state counterfactuals"
+      }
+    ],
+    "results_pending": true
+  },
+  "payload_sha256": "f0bcad41632c745e52bc43e3c927c8f41f249db86c87d4d8c817d41384554c38",
+  "schema_version": "b1_theory_test_traceability_v1"
+}

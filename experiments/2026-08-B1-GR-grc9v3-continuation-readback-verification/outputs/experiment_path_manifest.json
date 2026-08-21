@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "excluded": [
+      "outputs/",
+      "reports/",
+      "outputs/experiment_path_manifest.json"
+    ],
+    "files": [
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/README.md",
+        "sha256": "78ebdcc4a5dae7c868df76a4f1e336c64bab0865d272c9d717c7c459802a2885",
+        "size_bytes": 4686
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/baseline.json",
+        "sha256": "cc761a4e9c844d9c06b3c61e4965dd60b1a2d253470b0ced1dcc6532e453af85",
+        "size_bytes": 811
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/branch_search.json",
+        "sha256": "1d041cd1d9b7d1853f9a7afc78ea3cdcf60893ae31cbb5c6a1c40451ce7c0c0a",
+        "size_bytes": 421
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/cycle_space.json",
+        "sha256": "b9006a91b67d95ca0762c8d2fe2118cf6b21481d877cc707fc7e5f8c27b39e01",
+        "size_bytes": 528
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/fast_slow_control.json",
+        "sha256": "c75d4de2d7b0a4139eb0102b33a4ee3e4bc58c77fd57b1aeff11a33b6a616467",
+        "size_bytes": 347
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/fixture_registry.json",
+        "sha256": "44e42cabcc315149080e17913ced9bb2117e7bb9abd34e3b500632ac9b9908a6",
+        "size_bytes": 888
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/nonnormal_control.json",
+        "sha256": "e03513e5f5712b412017ae4448a23036a1a77d589b49cb8160077573518eb03a",
+        "size_bytes": 413
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/numerical_tolerances.json",
+        "sha256": "c4d1323f14f7b21735777e9aa407f491707fef6cbae386bf4f2637c64ffa174f",
+        "size_bytes": 856
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/orbit_search.json",
+        "sha256": "35f29044c269e256c2d7f671ea3018ee16f27dc60b84b683bb86bb149bb7b956",
+        "size_bytes": 423
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/p0_manifest.json",
+        "sha256": "56c196107cdf3a05ed0b7155b304874daf9ff925c508f988886b59fcc9296cfc",
+        "size_bytes": 1387
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/persistence_protocol.json",
+        "sha256": "19a21b0e51c2343505be4eb0a207a0ee5fa2ff485d9b66cd43c9524569a5e6e6",
+        "size_bytes": 313
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/preregistration.json",
+        "sha256": "ac8fcf6c5328f1dfadb40e277a68c0ec279637f0fd889e8382d10bf00277e622",
+        "size_bytes": 2073
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/fixtures/triangle_port_controls.json",
+        "sha256": "3d5c2f17c7280d9746e6ec10c6c26ff9554ca7dd8ed1227cfe9b46dca0235133",
+        "size_bytes": 311
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/fixtures/triangle_same_row_seed.json",
+        "sha256": "19dc575f361dd9a152408351a06605f3c2fa968e0c1a03164ad1c9074764d72b",
+        "size_bytes": 245
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/fixtures/two_node_homogeneous_branch.json",
+        "sha256": "3a1a560b2c05728a5fd5bc0aa9568da8d1bba28f556543ba920700ff7b1a2b7a",
+        "size_bytes": 198
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/fixtures/two_node_nonuniform_seed.json",
+        "sha256": "cc5a2c13c6c4aba722a976918ac5f15c67cfc3b0d0490edc28d5c438c4b12728",
+        "size_bytes": 199
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/fixtures/two_node_transport.json",
+        "sha256": "6124f224126de82f2e722498ebd2f77569022ba7eba7b8d765eb2c94ea794042",
+        "size_bytes": 1508
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/README.md",
+        "sha256": "4246ca5156b10112243b2b68fbede72626b7c828b39811d40114f381a2ffcc0f",
+        "size_bytes": 379
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/assumption_registry.md",
+        "sha256": "abc027637f7acb9879b0f8c80a0e56c8e96f54d518f94d9091eca647a7cdc93d",
+        "size_bytes": 355
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/claim_ledger.md",
+        "sha256": "5eaea322f8201a7edce10b90c8247b0855bc264fe2d6b8a3ae1db26946ffa2bc",
+        "size_bytes": 469
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/derivation_status_appendix.md",
+        "sha256": "b938af956d80f70f398856356f9cfe33455b3b6aced6ccc0e86cf2a48af81485",
+        "size_bytes": 379
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/gate_dependency_map.md",
+        "sha256": "eff122258ee4ef015aeb6b172e372fbae2b76a4e2b8649eb4c6ed9429755d69b",
+        "size_bytes": 301
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/theory_debt_register.md",
+        "sha256": "9613ecf4bc964111379c8c2e8785b7c3b56331cc186b803a456e837304977f8c",
+        "size_bytes": 310
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/hypotheses/theory_test_traceability.md",
+        "sha256": "147594cb87112c81cc635a3d97c01a4afe84d1b80adade8eb8db66f046426830",
+        "size_bytes": 305
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationImplementationChecklist.md",
+        "sha256": "21cb7ad007aa4f9d141ae7be4f767cea1c46c42c717a432b44c5e2cbf17483ed",
+        "size_bytes": 24249
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationImplementationPlan.md",
+        "sha256": "314bc803fb8f85988de992da22ae36032ca8b114fa29788d903be6e8aa4e9dbc",
+        "size_bytes": 30282
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+        "sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+        "size_bytes": 182973
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification_Draft3_2.md",
+        "sha256": "b3cabcc097af042030444e9af9ef3ff669da7034c1723bc632bb7e122e23723c",
+        "size_bytes": 141893
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification_Draft3_3.md",
+        "sha256": "bfa397f7221f529f423cc71f24b504ff34e63f43c09fe6cc4eaa10c3b6e6f6c2",
+        "size_bytes": 159177
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification_Draft3_4.md",
+        "sha256": "9905313ea0ccc56bdfc10de3cd435b58b6a61d93a60d149fc9af0800da618b58",
+        "size_bytes": 169612
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/requirements-experiment.txt",
+        "sha256": "d78778c7be02ba15feca3d8ff0ff0573ae1f597619d18ea721e881974478cee7",
+        "size_bytes": 172
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/assumption_status_matrix.schema.json",
+        "sha256": "37cb8e202f326464a2a988ee45bd15a57102b70c034c9cdaa22088ba1b5e3e6e",
+        "size_bytes": 386
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/baseline_manifest.schema.json",
+        "sha256": "b5ca8085df75445a9ad58e50e2fe32f4122c86c993fe6e5b880a5a82455bd257",
+        "size_bytes": 979
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/causal_role_matrix.schema.json",
+        "sha256": "f49ee51eb438cd4d6f1b0cc2353fdd58b98285470fca9b5fd8fe59880c0a20cd",
+        "size_bytes": 340
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/common_artifact.schema.json",
+        "sha256": "df44be2f2f8e4e8f0b7a8780e81ca10f0bf45641c883ec39c53fe759f7aa328d",
+        "size_bytes": 2031
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/complete_step_jacobians.schema.json",
+        "sha256": "69adca03ae86c1fa4518bfff2b4491d63e71c20535d6fed527c5cd75170584cb",
+        "size_bytes": 679
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/evidence_bundle_manifest.schema.json",
+        "sha256": "1b91b65b19a9e32e57cd8a9a3f4873d5d9f0a2026df4e8d92259b6d31b3adb5d",
+        "size_bytes": 518
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/fixed_branch_registry.schema.json",
+        "sha256": "a536cd6d0d74530b2b1cfbc2017c4ba431d50049f98f8fdfff781c773ec9b359",
+        "size_bytes": 313
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/gate_acceptance.schema.json",
+        "sha256": "e613c0254d442d6f056431295f5f46d0d4226ed0dd4a3cef906ae463e6c54210",
+        "size_bytes": 858
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/gate_result_receipt.schema.json",
+        "sha256": "da921b826b62b0e79a37ac5a67f1975c445d38797e7e0a32684a8ec177aa3798",
+        "size_bytes": 1082
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/intervention_registry.schema.json",
+        "sha256": "4e7eaaab250e7ed28e41258fd525ca07038b269345f6b4685c1862a549064615",
+        "size_bytes": 562
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/lgrc_handoff.schema.json",
+        "sha256": "1a2e99b5210c2207cfd072518087f8fd81bf8239a3afa8fd4b81e8d72b78106b",
+        "size_bytes": 572
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/return_orbit_registry.schema.json",
+        "sha256": "a43d0024495728541ba91f8081ad6bc7576e28a6da17d8473fb1e5a0203b3927",
+        "size_bytes": 414
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/state_codec.schema.json",
+        "sha256": "a7204d3ac3b2c86f14c84adc9749b332ec85bb1b5f80be01f988c154010c1df8",
+        "size_bytes": 680
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/artifact_io.py",
+        "sha256": "ee33904a90920347df1186c9515e1fc5d58e23c45c3d20736cef8312f8bdedc2",
+        "size_bytes": 4489
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/branch_continuation.py",
+        "sha256": "42a4b35109725324476201145d45a6e9d44178980aea75437e47e7a7b6c06660",
+        "size_bytes": 625
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/build_lgrc_handoff.py",
+        "sha256": "e468d90418fe68ed425a3b8ff5ce2d561a0201af4ffb29d3ba2c2845fe6aed2b",
+        "size_bytes": 257
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+        "sha256": "d2e9787a997f28e3a66be379edc6d9e43141827a90c3860ffeebc602bdf23cb6",
+        "size_bytes": 12647
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/classify_claims_and_extensions.py",
+        "sha256": "556acb14fdf35db84094b81e704edb383f9c620685c04dca7dcb96091cbff378",
+        "size_bytes": 271
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/compare_frozen_and_full_dynamics.py",
+        "sha256": "6b8f4a07e95d998a60e1b07f51125bc2b9d26451af1ee965c18c41973b448b85",
+        "size_bytes": 275
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/compute_complete_step_jacobian.py",
+        "sha256": "72eb31bef6a176d049b818c5c219d5044dfd04740c1a92d2e78667b0a228fbc8",
+        "size_bytes": 273
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/edge_space.py",
+        "sha256": "502dd98ac98529fe852431f29c7107a97958bb11a267eca6343278f2c40a775b",
+        "size_bytes": 1940
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/gate_receipts.py",
+        "sha256": "e3288f6d039bed990efc3eee10f98ad979a4953b051052ac610fb15446f66592",
+        "size_bytes": 2340
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/interventions.py",
+        "sha256": "8dd2bf20b01106e4ccc3aa543b6cfb6934b2edc13383d98bbe953992e5bba254",
+        "size_bytes": 1136
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/numerical_convergence.py",
+        "sha256": "169be64d7281586bbb3d120fe171e7de26ed13407f9ab238ef0f050e9ebcb5ba",
+        "size_bytes": 866
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/route_contradictions_and_theory_reopening.py",
+        "sha256": "abdc7044521f36c6becb5229f090b1e3810d08a71025186f2f8f0c294912d4bc",
+        "size_bytes": 266
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py",
+        "sha256": "aadb88f0b18e609177e2967e8b4dc3e988b619c7597ea08cf63a2458f3c634ae",
+        "size_bytes": 4493
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_preparation_persistence_probe.py",
+        "sha256": "20c1d92b6ba01299c91ae7af85866d79f7276da9c859067d391753eb8a70598d",
+        "size_bytes": 276
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/search_return_orbits.py",
+        "sha256": "c8ef4881dfa7083ea89d6900ca7698ac09e7b963b52247aa1438a58aebe32543",
+        "size_bytes": 263
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+        "sha256": "f4b5bb01ad661ae5b8a4c03980e15579684ecfb1ab3ceaec9ab2ce3baecadfef",
+        "size_bytes": 6055
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/solve_strong_fixed_branches.py",
+        "sha256": "fcd0beb92d7c163e10cd500e5e04f1e27037ddea34a3ea99e93b629c86585f81",
+        "size_bytes": 270
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/state_codec.py",
+        "sha256": "64581ac10cec0d02283e41bcd464f16a0e00ee4153c9e4ed35a98717c9f98e74",
+        "size_bytes": 606
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/sweep_temporal_and_spatial_thresholds.py",
+        "sha256": "44f66ab8037a268a6702bc8e4bace16c91ecdf8c90201717329507e27d21df67",
+        "size_bytes": 280
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/tangent_basis.py",
+        "sha256": "b151d23252c163d7c9537ff585713e4c78c6bda9668defe6f36d461962e47c72",
+        "size_bytes": 907
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/validate_instrumentation.py",
+        "sha256": "5c8ef3e0aca318af243f11b26d92e34595adcdbf9db583396467af1c31cc4c69",
+        "size_bytes": 267
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_canonical_json.py",
+        "sha256": "218edee9ff0cf973a35d8ea18e9885492917e3b33e73e2f074ecb2e09f6c3448",
+        "size_bytes": 1430
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_edge_space.py",
+        "sha256": "ca2131c1b55059b9124c92a9627f4cba6128cb46e1fbbe9581e348395c372ffe",
+        "size_bytes": 1416
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_gate_dependencies.py",
+        "sha256": "675b698fbb830a2ca4bbbf31ccf6d3ffaa041c1abe96c20cd15aaf6b67c0eb45",
+        "size_bytes": 1421
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_gate_receipts.py",
+        "sha256": "1c3f93057f8197b5264212154f4ea7865bfa1cf11bc22a2000390a5f663e3121",
+        "size_bytes": 1783
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_interventions.py",
+        "sha256": "2e61ef2a8c729fcc28e39b9f17b94c4b21c54e31e7109d8b12d6e41da5d74e54",
+        "size_bytes": 1010
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_numerical_convergence.py",
+        "sha256": "69e8ba7708cfb8df0b7bdbd94c85265d2db8856bb46ad5837d84426c46a7c509",
+        "size_bytes": 620
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_schemas.py",
+        "sha256": "88deff7dba8c196319981879ed5cebae6633e561dc9cee925f8fe7054c969f3c",
+        "size_bytes": 1693
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_spec_propagation.py",
+        "sha256": "1b757e0ff0d1cf0f8c045d3889495d7a0f24070b868d3ae7f48b3d6527ca1739",
+        "size_bytes": 3514
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_state_codec.py",
+        "sha256": "a7f19532776fd4cb400780d5e3915843aadb39b158fea6883aed4b7d7f2b5fa7",
+        "size_bytes": 852
+      },
+      {
+        "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_tangent_basis.py",
+        "sha256": "6e1028a9d642e7dda3762760c86b9353d945c504c69b241e96a28e9fe73b25cb",
+        "size_bytes": 810
+      }
+    ],
+    "manifest_id": "experiment_path_manifest",
+    "scope": "all_committed_experiment_files_except_outputs_reports_and_self",
+    "tree_sha256": "a011c53c6767c171f8b9d59372a0cdbcae6eb839df635ec0c93de197c4349bbe"
+  },
+  "payload_sha256": "5d52ccb211340ac0a0a21018ce214ffa6018d0301f834adf9820f4ae6832128a",
+  "schema_version": "b1_experiment_path_manifest_v1"
+}

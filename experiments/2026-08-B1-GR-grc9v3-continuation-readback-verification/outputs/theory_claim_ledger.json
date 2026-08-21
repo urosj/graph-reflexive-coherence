@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "positive_GRC9V3_status_assigned": false,
+    "records": [
+      {
+        "Claim ID": "T-S01",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "Does not establish `A-STATE-CLOSURE` for any runtime.",
+        "Source anchor": "*Read-Back*; mature RC state declaration",
+        "Statement": "The mature primitive coherence state is $(C,J_C)$."
+      },
+      {
+        "Claim ID": "T-S02",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-BRANCH`, `A-CLOCK`, `A-CONSERVE`; branch- and realization-relative.",
+        "Source anchor": "B0; B1-C",
+        "Statement": "Core primitive state, runtime causal state, and analytical perturbation state are distinct questions."
+      },
+      {
+        "Claim ID": "T-RW01",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "None implies another; each requires its own acceptance contract.",
+        "Source anchor": "*Read-Back*",
+        "Statement": "Retention, read-back, and write-back are distinct causal roles."
+      },
+      {
+        "Claim ID": "T-RW02",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "`A-PASSIVE`; same present-current convention across comparisons.",
+        "Source anchor": "*Read-Back*",
+        "Statement": "Read-back obeys the passive null $\\mathfrak R_M(\\mathcal T_M,h;0)=0$."
+      },
+      {
+        "Claim ID": "T-RW03",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "`A-ORIENTATION` for directional claims; realization may be explicit, eliminated, or distributed.",
+        "Source anchor": "*Read-Back*",
+        "Statement": "$j$ is a derived current-like contribution, not another primitive conserved stream."
+      },
+      {
+        "Claim ID": "T-RW04",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "It suppresses retention selectivity by construction.",
+        "Source anchor": "*Read-Back*",
+        "Statement": "$j=J_C$ is a declared simplifying limit, not a derivation of general read-back."
+      },
+      {
+        "Claim ID": "T-RW05",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-STATE-CLOSURE` is required before a historical ledger is declared unnecessary.",
+        "Source anchor": "B1-RW",
+        "Statement": "Retention capacity, retained content, and historical record are different."
+      },
+      {
+        "Claim ID": "T-RW06",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "Full reflexive closure requires all claimed arrows and mediation.",
+        "Source anchor": "B1-RW pressure result",
+        "Statement": "Retention, read-back, and write-back must be accepted or rejected arrow by arrow; the full loop is not required to establish one arrow."
+      },
+      {
+        "Claim ID": "T-RW07",
+        "Provenance": "core_inherited` + `core_derived",
+        "Required assumptions and limits": "`A-SMOOTH`; active slaving additionally requires `A-LOOP-INVERT`.",
+        "Source anchor": "*Read-Back*; B1-RW",
+        "Statement": "Baseline current, direct read current, and effective closed-loop feedback are distinct."
+      },
+      {
+        "Claim ID": "T-RW08",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-PASSIVE`, `A-SMOOTH`, `A-SIGN-EVEN`; evaluated at $J_*=j_*=0$.",
+        "Source anchor": "B1-Cb-1",
+        "Statement": "At zero background, linear read response and sign-even quadratic geometric inscription occur at different perturbative orders."
+      },
+      {
+        "Claim ID": "T-RW09",
+        "Provenance": "core_inherited` + `core_derived",
+        "Required assumptions and limits": "`A-ORIENTATION`, `A-SIGN-EVEN`; an oriented carrier may add information.",
+        "Source anchor": "*Read-Back*; B1-Cb-2.1",
+        "Statement": "$j\\otimes j$ and sign-even graph quantities preserve magnitude or an unoriented axis, not current orientation."
+      },
+      {
+        "Claim ID": "T-RW10",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-ORIENTATION`, `A-CONSERVE`; equal divergence does not imply equal current or geometry.",
+        "Source anchor": "B1-Cb-1.2; B1-Cb-2",
+        "Statement": "Field-trajectory, current-level, and full reflexive equivalence are progressively stronger claims."
+      },
+      {
+        "Claim ID": "T-RW11",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-BRANCH`, `A-CLOCK`; projector and branch motion require causal attribution.",
+        "Source anchor": "B1-RW",
+        "Statement": "Sector update, effective retained write, and reflexive write-back are separate claim levels."
+      },
+      {
+        "Claim ID": "T-M01",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "Alignment may be claimed only under an explicitly demonstrated closure and clock.",
+        "Source anchor": "*The Continuation Spectrum*; *Read-Back*",
+        "Statement": "Low spatial modes are not generally dynamically slow retained modes."
+      },
+      {
+        "Claim ID": "T-M02",
+        "Provenance": "core_inherited` + `core_derived",
+        "Required assumptions and limits": "`A-BRANCH`, `A-CLOCK`, `A-TRANSPORT`; no closure-independent projector.",
+        "Source anchor": "Both controlling papers; B1-Cb-1.2",
+        "Statement": "Dynamic retention belongs to the temporal closure, clock, branch, representation, and horizon actually declared."
+      },
+      {
+        "Claim ID": "T-M03",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-CLOCK`; discrete multipliers and continuous rates must be translated explicitly.",
+        "Source anchor": "B1-C",
+        "Statement": "Stable slow retention, exact neutrality, and growing formative instability are different."
+      },
+      {
+        "Claim ID": "T-M04",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-CLOCK`, `A-NONNORMAL-CONTROL`, `A-STATE-CLOSURE`; depends on horizon, norm, and path.",
+        "Source anchor": "B1-Cb-3",
+        "Statement": "Finite-horizon persistence under non-normal dynamics is generally observer-relative unless the runtime has the required predictive state or declared schedule."
+      },
+      {
+        "Claim ID": "T-C01",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "Relations require an explicit reduction and shared branch envelope.",
+        "Source anchor": "Both controlling papers",
+        "Statement": "Spatial scale, continuation curvature, relaxation rate, read-back gain, spatial Hessian, and transition multiplier are distinct objects."
+      },
+      {
+        "Claim ID": "T-C02",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "`A-BRANCH`, `A-SMOOTH`, `A-CONSERVE`; independently variable active-current continuation remains open.",
+        "Source anchor": "*The Continuation Spectrum*",
+        "Statement": "The published continuation Hessian applies to no-current, frozen-current, or smoothly slaved-current branches."
+      },
+      {
+        "Claim ID": "T-C03",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-BRANCH`; coincidence requires a compatible temporal closure.",
+        "Source anchor": "B1-C",
+        "Statement": "Structural formation and dynamic realization are separate requirements."
+      },
+      {
+        "Claim ID": "T-B01",
+        "Provenance": "core_inherited` + `core_derived",
+        "Required assumptions and limits": "`A-BRANCH`; retained displacement is reference-relative.",
+        "Source anchor": "*The Continuation Spectrum*; B1-C",
+        "Statement": "Formed state, formed branch, tracked reference branch, and actual trajectory are different."
+      },
+      {
+        "Claim ID": "T-B02",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-BRANCH`; retrospective fitting is inadmissible.",
+        "Source anchor": "B1-C; B1-Cb-3",
+        "Statement": "The reference branch and branch gauge must be declared before evaluating retained displacement."
+      },
+      {
+        "Claim ID": "T-B03",
+        "Provenance": "core_inherited` + `core_derived",
+        "Required assumptions and limits": "`A-ISOLATION`, `A-TRANSPORT`; non-normal claims also require `A-NONNORMAL-CONTROL`.",
+        "Source anchor": "*The Continuation Spectrum*; B1-Cb-3",
+        "Statement": "Individual mode identity is valid only while the mode is simple and isolated; otherwise the continuing object is a cluster or subspace."
+      },
+      {
+        "Claim ID": "T-B04",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-TRANSPORT`; deferred to LGRC after GRC stabilization.",
+        "Source anchor": "B0; B1-Cb-3",
+        "Statement": "Topology-changing continuation requires an explicit interspace transport; lineage is not automatically that transport."
+      },
+      {
+        "Claim ID": "T-A01",
+        "Provenance": "candidate_constitutive_completion",
+        "Required assumptions and limits": "`A-SMOOTH`, `A-LOOP-INVERT`, `A-FAST-SLOW`; one admissible class, not a unique law.",
+        "Source anchor": "B1-Cb-2.2",
+        "Statement": "Algebraic read-back may be a normally attracting fast temporal limit."
+      },
+      {
+        "Claim ID": "T-A02",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-SMOOTH`, `A-REGULAR-SLAVING`; does not select one temporal completion.",
+        "Source anchor": "B1-Cb-2.1/2.2",
+        "Statement": "Loss of local current-block invertibility prevents the regular algebraic elimination of the corresponding critical current direction; a claimed branch passage must retain that direction as an explicit local coordinate or provide another justified higher-order resolution."
+      },
+      {
+        "Claim ID": "T-A03",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-UNIQUENESS`, `A-ORIENTATION`; instability amplifies perturbations but does not create distinguishing information.",
+        "Source anchor": "B1-Cb-2.1/2.2",
+        "Statement": "In a deterministic locally unique reversal-symmetric system, exact symmetric zero cannot select an oriented active branch without a seed, bias, inherited oriented state, boundary asymmetry, or declared stochasticity."
+      },
+      {
+        "Claim ID": "T-A04",
+        "Provenance": "core_inherited` + `core_derived",
+        "Required assumptions and limits": "Their nonlinear ordering is conditional.",
+        "Source anchor": "Both controlling papers; B1-Cb-2.1/3",
+        "Statement": "Current deslavement, structural marginality, spark, basin birth, collapse, and tracking failure are distinct thresholds."
+      },
+      {
+        "Claim ID": "T-A05",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-CLOSED`, `A-MOBILITY`, `A-CONSERVE`; circulation, harmonic/null sectors, boundary drive, or another mechanism remain possible.",
+        "Source anchor": "B1-Cb-2",
+        "Statement": "On a closed no-through-flow branch with positive nondegenerate mobility and regular gradient/potential current, a nonzero stationary current cannot be supplied by the dissipative gradient sector alone."
+      },
+      {
+        "Claim ID": "T-A06",
+        "Provenance": "core_derived",
+        "Required assumptions and limits": "`A-BRANCH`, `A-CLOCK`, `A-ISOLATION`; requires finite branch forcing or slow-to-fast leakage.",
+        "Source anchor": "B1-Cb-3",
+        "Statement": "Tracking failure can occur while the instantaneous branch remains structurally and temporally stable."
+      },
+      {
+        "Claim ID": "T-O01",
+        "Provenance": "open",
+        "Required assumptions and limits": "`A-ORIENTATION`; the Hodge/cochain construction remains a candidate.",
+        "Source anchor": "*Read-Back* open closure; B1-C",
+        "Statement": "The scalar or joint retained sector does not yet canonically determine the directional one-form read-back response."
+      },
+      {
+        "Claim ID": "T-O02",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "A bounded common generator may be derived only under additional assumptions.",
+        "Source anchor": "Both controlling papers",
+        "Statement": "No universal generator yet unifies $\\alpha$, $\\gamma$, $\\beta$, and discrete temporal multipliers."
+      },
+      {
+        "Claim ID": "T-O03",
+        "Provenance": "core_inherited",
+        "Required assumptions and limits": "A positive claim requires `A-STATE-CLOSURE`; delay, phase, or history may require extra state.",
+        "Source anchor": "*Read-Back*",
+        "Statement": "Markov sufficiency of the declared present state remains open."
+      }
+    ]
+  },
+  "payload_sha256": "a77f5e3f2acd22a2a24720057513af42858029faaf11a81c738206b818160e37",
+  "schema_version": "b1_theory_claim_ledger_v1"
+}

@@ -1,0 +1,41 @@
+{
+  "blocked_gates": [
+    "GRV1",
+    "GRV2",
+    "GRV3",
+    "GRV4",
+    "GRV5",
+    "GRV6",
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "GRV-C1_candidate_pending_authorized_human_acceptance_no_scientific_evidence",
+  "gate_id": "GRV0",
+  "input_execution_revision": "231e43710a3ea818c6c8736bc7df175221a73c1e",
+  "input_experiment_tree_sha256": "a011c53c6767c171f8b9d59372a0cdbcae6eb839df635ec0c93de197c4349bbe",
+  "output_artifact_digests": {
+    "outputs/baseline_manifest.json": "d790d2377f7cec97bd4b60c098eb6e3946c03348e910687798920cbc1a28cc87",
+    "outputs/contradiction_register.json": "09af0d09a49290c303d5f6cdcff0985d17e52b4039608914b2e8513cf7e64c43",
+    "outputs/experiment_path_manifest.json": "a3f259da8a8f852f8913246880644636c0f7576f92b887b56f6987be4f5f4fa5",
+    "outputs/fixed_topology_envelope.json": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
+    "outputs/gate_dependency_map.json": "66a3b6cb86be8cfbc3df9a51717d36352996a243823da258f10b3fb3b193d218",
+    "outputs/logs/grv0_existing_tests.log": "1ad6fa80668c8b682ad90d7c40f36509bc88e04f16c6c230adcd1c8aa1b632c8",
+    "outputs/numerical_environment.json": "5fb90bd7e7c49073558ad9a6e700a0bc8ef16b4df9789f4399f94e5b315c3631",
+    "outputs/proof_note_registry.json": "600b10cb0df9e24dd5b8b7e84cfdf8d38268544fc9fc08cfe7ea1f9f65f6d7c4",
+    "outputs/protected_path_manifest_v0.json": "c37199b2d9cd14a03b59a76e1235127abb97a9143601bd76b0ce241d2a99c4be",
+    "outputs/tangent_basis_registry.json": "8a5bd7e831738f882d170b2e743bedf85e4d97315654f8b46c4fbb255f723c8a",
+    "outputs/theory_assumption_registry.json": "0b133e1a9dda5178345bd66000a1bbfa09c745cf04f26997b75ce29f60d8ca1a",
+    "outputs/theory_claim_ledger.json": "92134a64fecc6fc71cdf516539ba38bbae35b889b8df88bfecbce77fb2904168",
+    "outputs/theory_contract_identity.json": "14209879dcfd9b538822c17e4ae5a42e21f39cab2f47b06b62ef3600d5e0bb8b",
+    "outputs/theory_debt_register.json": "3f8d176c121d26602fecab4efe62ccbb6aeed159093cec2874a550d6e72af298",
+    "outputs/theory_derivation_status.json": "f06770d75c7f4122dc6812e6c6b0e54947657990ad6168ac9640efe32cee5f73",
+    "outputs/theory_source_manifest.json": "9f63667aca76185e58637dfe15302fb1cb9615e513e7f5ad75e17f688f6381d3",
+    "outputs/theory_test_traceability.json": "1398b21fd20d5e5df5d81a9e45a1ac9cfb1d633acb2cf6218029da357f8f7f93",
+    "reports/b1_grv0_baseline_admission.md": "77438275d36567d6761536ecaa582340dbe955205630363aa0fd756459e22e9c"
+  },
+  "prerequisite_acceptance_anchors": [],
+  "prerequisite_result_receipt_digests": [],
+  "receipt_payload_sha256": "79588424b3021a10d81330d2ff6b16ea86b8b9ade7b45eb19a02aa0e722f5bf2",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}

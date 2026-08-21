@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "records": [
+      {
+        "body_sha256": "e568ba7800e1ea68f01d462cc1e240dbd8289ca0121fe1a45f55aa0b23b94c2d",
+        "proof_note_id": "PN-RW08",
+        "source_section": "## A.1 `PN-RW08` — zero-background perturbative order",
+        "title": "zero-background perturbative order"
+      },
+      {
+        "body_sha256": "a6c870cfde6b6749fd0adadec872985ca8059f3faaa695cc6836449b4579c65d",
+        "proof_note_id": "PN-RW09",
+        "source_section": "## A.2 `PN-RW09` — axis is not orientation",
+        "title": "axis is not orientation"
+      },
+      {
+        "body_sha256": "ef718a039ad2768cb48a0752553470b68b9baa0b0d62803cebf9b71c8d085ca3",
+        "proof_note_id": "PN-RW10",
+        "source_section": "## A.3 `PN-RW10` — equivalence hierarchy",
+        "title": "equivalence hierarchy"
+      },
+      {
+        "body_sha256": "a5db6539672e3b92eeded2c6ddd96f56c49393bb80342a7c16eb847b576fc2bc",
+        "proof_note_id": "PN-C03",
+        "source_section": "## A.4 `PN-C03` — structural formation versus dynamic realization",
+        "title": "structural formation versus dynamic realization"
+      },
+      {
+        "body_sha256": "9c888e097b8c5a0fcc9c428970216f7a671d863b6a6291d60c52ed42874cec4c",
+        "proof_note_id": "PN-A02",
+        "source_section": "## A.5 `PN-A02` — failure of regular current elimination",
+        "title": "failure of regular current elimination"
+      },
+      {
+        "body_sha256": "456b12f482a0d9da6e0bc0ebf7dcabc3812f505b3372924723005faeb0e6b54c",
+        "proof_note_id": "PN-A03",
+        "source_section": "## A.6 `PN-A03` — exact symmetric zero",
+        "title": "exact symmetric zero"
+      },
+      {
+        "body_sha256": "f823c75cf1d6845f9e8d5d3633f231151b56e76465b7f1857fd87c8b64bf3a31",
+        "proof_note_id": "PN-A05",
+        "source_section": "## A.7 `PN-A05` — closed stationary gradient current",
+        "title": "closed stationary gradient current"
+      },
+      {
+        "body_sha256": "d768aad0c6c96de402d5f374780aa24ccc34a47d772173f2ad20e977b3b7851c",
+        "proof_note_id": "PN-A06",
+        "source_section": "## A.8 `PN-A06` — tracking failure on a stable instantaneous branch",
+        "title": "tracking failure on a stable instantaneous branch"
+      },
+      {
+        "body_sha256": "2f3e7a3984a70e3d10246145b06aba856cfda68543ddef89ba1c020f53f43a89",
+        "proof_note_id": "PN-M04",
+        "source_section": "## A.9 `PN-M04` — non-normal finite-horizon persistence",
+        "title": "non-normal finite-horizon persistence"
+      },
+      {
+        "body_sha256": "0ce76bcf551847f345e5514dc897a81baeb101658a688942eddb808742027772",
+        "proof_note_id": "PN-B03",
+        "source_section": "## A.10 `PN-B03` — individual mode versus cluster identity",
+        "title": "individual mode versus cluster identity"
+      },
+      {
+        "body_sha256": "9c34cdc19f0dfa530468689978b6114a2e1ef134d004279f61da4bcfb992d6c9",
+        "proof_note_id": "PN-B04",
+        "source_section": "## A.11 `PN-B04` — topology-changing transport",
+        "title": "topology-changing transport"
+      },
+      {
+        "body_sha256": "ddebb9f22fe32ef0e3d79b1fcbd6567cb936b8c8f296129aba2863a515cf75fb",
+        "proof_note_id": "PN-ZB01",
+        "source_section": "## A.12 `PN-ZB01` — nonempty common zero-background witness",
+        "title": "nonempty common zero-background witness"
+      }
+    ]
+  },
+  "payload_sha256": "41c76f2f465cf8b6329121e6dfbdafd86e090f5902f41e17951429e919a2940e",
+  "schema_version": "b1_proof_note_registry_v1"
+}

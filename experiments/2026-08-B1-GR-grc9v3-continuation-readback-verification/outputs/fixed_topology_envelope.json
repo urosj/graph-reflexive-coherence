@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "all_specification_names_mapped": true,
+    "ambient_coordinate_identification": "canonical_coordinate_identity_with_fixed_dimension_node_edge_row_port_order_and_orientation",
+    "branch_dependent_metric_transport": "explicit_fixed_reference_isometry_congruence_or_normalization_required_when_metric_varies",
+    "fixed_topology": true,
+    "mappings": {
+      "boundary_action_required": {
+        "runtime_surface": "GRC9V3.step/apply_boundary_behavior plus per-row no-topology-change assertion",
+        "value": "prune_noop"
+      },
+      "boundary_mode": {
+        "runtime_surface": "GRCParams.constitutive_semantic_modes.boundary_mode",
+        "value": "prune"
+      },
+      "choice_backend": {
+        "runtime_surface": "GRCParams.constitutive_semantic_modes.choice_backend",
+        "value": "disabled"
+      },
+      "curvature_backend": {
+        "runtime_surface": "GRCParams.constitutive_semantic_modes.curvature_backend",
+        "value": "none"
+      },
+      "frame_mode": {
+        "runtime_surface": "GRCParams.constitutive_semantic_modes.frame_mode",
+        "value": "fixed_port_chart"
+      },
+      "lambda_birth": {
+        "runtime_surface": "GRCParams.evolution.lambda_birth",
+        "value": 0.0
+      },
+      "model_family": {
+        "runtime_surface": "src/pygrc/models/grc_9_v3.py::GRC9V3",
+        "value": "GRC9V3"
+      },
+      "quadrature_mode": {
+        "runtime_surface": "GRCParams.constitutive_semantic_modes.quadrature_mode",
+        "value": "unit_measure"
+      },
+      "rng_seed": {
+        "runtime_surface": "GRCParams.evolution.rng_seed",
+        "value": 31000
+      },
+      "spark_lane": {
+        "runtime_surface": "GRCParams.constitutive_semantic_modes.spark_lane",
+        "value": "current_hybrid_signed_hessian"
+      }
+    },
+    "required_runtime_assertions": [
+      "strictly_positive_nodes",
+      "no_spark_candidates",
+      "no_expansion_events",
+      "no_growth_events",
+      "no_choice_or_collapse_events",
+      "no_topology_change",
+      "budget_correction_is_noop_for_tangent_perturbations"
+    ]
+  },
+  "payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
+  "schema_version": "b1_fixed_topology_envelope_v1"
+}
