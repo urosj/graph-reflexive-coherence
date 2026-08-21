@@ -420,6 +420,22 @@ replay, and a selection-independent held-out replay. Symmetry siblings remain
 visible and receive permutation-orbit identifiers rather than being discarded
 by Euclidean deduplication.
 
+### P2.2 execution result
+
+The complete clean run executes 144 rows and retains 48 provisional physical
+strong-branch candidates: 16 homogeneous F1 rows, 16 nonuniform F2 rows at
+scale `1.0`, and 16 nonuniform F3 rows at scale `1.5`. The remaining 96 F2/F3
+rows converge to homogeneous roots and are rejected from the nonuniform target.
+All retained rows pass the full step, every internal block, budget no-op,
+event/topology, and save/load replay gates; all symmetry/port and selected
+held-out fresh-process controls pass. The maximum full-step and internal-stage
+`L_inf` residual is approximately `1.63e-10`, below the numerical branch limit
+of `1e-9`.
+
+This is a `GRV-C3` candidate pending human acceptance. The zero-current
+basin/sink boundary and fields excluded from the physical projection keep the
+causal-state upgrade in GRV3. No continuation or retention claim is opened.
+
 ### Required outputs
 
 ```text

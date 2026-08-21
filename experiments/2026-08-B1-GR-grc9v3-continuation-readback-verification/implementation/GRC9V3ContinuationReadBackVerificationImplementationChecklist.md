@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv1_P1_1_executed_awaiting_scientific_acceptance
+status = grv2_P2_2_executed_awaiting_scientific_acceptance
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,9 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV1_P1_1_executed_awaiting_authorized_human_acceptance
+current_gate = GRV2_P2_2_executed_awaiting_authorized_human_acceptance
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
+verification_closeout_rung = GRV-C2
+verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -151,7 +152,8 @@ experiment_tree_sha256 = f132c8917da074118b47563c1d8d4020e20243a93dd7fb6c471f9cd
 receipt_payload_sha256 = a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df
 existing_tests = 1354_passed_0_failed_0_skipped
 mechanical_status = passed
-scientific_acceptance = awaiting_authorized_human_anchor
+receipt_status = awaiting_scientific_review
+scientific_acceptance = accepted_anchor_commit_454b2c55d1682c3ead46f6036ed725445b37fc08
 positive_evidence_opened = false
 ```
 
@@ -194,7 +196,7 @@ protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa
 protected_file_count = 379
 receipt_payload_sha256 = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
 mechanical_status = passed
-scientific_acceptance = awaiting_authorized_human_anchor
+scientific_acceptance = never_accepted_superseded_by_P1.1
 candidate_closeout_ceiling = GRV-C2
 positive_evidence_opened = false
 ```
@@ -249,7 +251,8 @@ protected_file_count = 379
 receipt_payload_sha256 = 9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a
 superseded_candidate_receipt = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
 mechanical_status = passed
-scientific_acceptance = awaiting_authorized_human_anchor
+receipt_status = awaiting_scientific_review
+scientific_acceptance = accepted_anchor_commit_bc12787e885b9dcc7d939c98a7e2e3ea84f2d213
 candidate_closeout_ceiling = GRV-C2
 positive_evidence_opened = false
 ```
@@ -274,32 +277,70 @@ node_values / edge_values = unknown and carried into GRV3 closure
 
 ## Iteration 3 - GRV2 Strong Formed Branches
 
-- [ ] Certify a homogeneous two-node zero-current branch.
-- [ ] Search for a nonuniform two-node branch and certify every accepted result.
-- [ ] Search for and classify nonuniform triangle branches and certify every accepted result.
-- [ ] Preserve bounded negative search evidence when no nonuniform branch is
+- [x] Certify a homogeneous two-node zero-current branch.
+- [x] Search for a nonuniform two-node branch and certify every accepted result.
+- [x] Search for and classify nonuniform triangle branches and certify every accepted result.
+- [x] Preserve bounded negative search evidence when no nonuniform branch is
   found; do not infer global nonexistence or fail a valid homogeneous result.
-- [ ] Run symmetry controls.
-- [ ] Run port-relabel controls.
-- [ ] Record full-step residuals.
-- [ ] Record per-block `C/W/J/Phi/G/identity/budget` internal-stage residuals,
+- [x] Run symmetry controls.
+- [x] Run port-relabel controls.
+- [x] Record full-step residuals.
+- [x] Record per-block `C/W/J/Phi/G/identity/budget` internal-stage residuals,
   including budget-correction no-op status.
-- [ ] Record pre-continuity, pre-budget, budget-correction, post-budget, and final-refresh states.
-- [ ] Require budget correction to be a numerical no-op for an unqualified strong branch.
-- [ ] Classify provisional physical strong, projection-supported,
+- [x] Record pre-continuity, pre-budget, budget-correction, post-budget, and final-refresh states.
+- [x] Require budget correction to be a numerical no-op for an unqualified strong branch.
+- [x] Classify provisional physical strong, projection-supported,
   step-boundary-only, and internally periodic alternatives explicitly.
-- [ ] Defer `causal_strong_branch` upgrade until the GRV3 closure audit passes.
-- [ ] Verify event and topology assertions.
-- [ ] Save, load, and replay every accepted branch.
-- [ ] Record solver seeds, tolerance, convergence, and rejected searches.
-- [ ] Record the complete search space/budget, all accepted and rejected roots,
+- [x] Defer `causal_strong_branch` upgrade until the GRV3 closure audit passes.
+- [x] Verify event and topology assertions.
+- [x] Save, load, and replay every accepted branch.
+- [x] Record solver seeds, tolerance, convergence, and rejected searches.
+- [x] Record the complete search space/budget, all accepted and rejected roots,
   deduplication, continuation lineage, selection rule, and held-out replay for
   each selected branch.
-- [ ] Record distance from positivity, conductance-floor, spark, basin/sink, growth, and event boundaries.
-- [ ] Emit `fixed_branch_registry.json` and report.
-- [ ] Emit and validate the GRV2 result receipt.
+- [x] Record distance from positivity, conductance-floor, spark, basin/sink, growth, and event boundaries.
+- [x] Emit `fixed_branch_registry.json` and report.
+- [x] Emit and validate the GRV2 result receipt.
 - [ ] Record the GRV2 acceptance decision in a separate human anchor after review.
-- [ ] State explicitly that branch existence is not continuation or retention.
+- [x] State explicitly that branch existence is not continuation or retention.
+
+### Iteration 3 result
+
+```text
+input_revision = d224a10302bfa030da817105dbf65c2a23f41483
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+receipt_payload_sha256 = 967f1adc5d8b36c2cdf0fb5c0153ac43b37e14f5fd6c0f1bcb76d92f38f43c94
+search_rows = 144
+accepted_provisional_physical_strong_branches = 48
+F1_homogeneous_branches = 16
+F2_nonuniform_branches = 16_at_site_potential_scale_1.0
+F3_nonuniform_branches = 16_at_site_potential_scale_1.5
+rejected_nonuniform_rows = 96_homogeneous_roots_outside_target
+maximum_full_step_l_inf = 1.6344259279321705e-10
+maximum_internal_stage_l_inf = 1.6344259279321705e-10
+maximum_budget_correction_l_inf = 2.220446049250313e-16
+save_load_replay = 48_of_48_passed
+symmetry_and_port_controls = 9_of_9_passed
+held_out_fresh_process_replay = 3_of_3_passed
+protected_runtime_spec_root_test_tree = unchanged
+branch_class = provisional_physical_strong_branch
+causal_strong_branch = deferred_to_GRV3
+candidate_closeout_ceiling = GRV-C3
+positive_evidence_opened = false_pending_authorized_human_acceptance
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+The accepted candidate rows show that the current unchanged GRC9V3 runtime has
+bounded homogeneous and nonuniform formed fixed branches under the committed
+near-neutral transport envelope. The F2/F3 scale localization is evidence from
+the declared grid, not a global branch theorem. Every zero-current row remains
+on a basin/sink identity boundary, so GRV3 must still determine whether the
+excluded and administrative fields admit a closed causal state before any
+`causal_strong_branch` upgrade or transition-Jacobian interpretation.
 
 ## Iteration 4 - GRV3 Causal State And Complete Transition Jacobian
 

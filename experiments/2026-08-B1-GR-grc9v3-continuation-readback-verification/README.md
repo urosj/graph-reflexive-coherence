@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv1_accepted_grv2_P2_prepared
+status = grv2_P2_2_executed_awaiting_scientific_acceptance
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C2
+verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -101,6 +101,23 @@ canonicalizes the topology endpoint and `PortEdge` orientation together, as
 required by the frozen orientation convention. The graph, parameter grid,
 thresholds, runtime, and claim ceiling are unchanged; all partial outputs remain
 unadmitted and a complete clean rerun is required.
+
+The complete GRV2 rerun from clean P2.2 input revision `d224a10` passes
+mechanically. It executes all 144 preregistered rows and retains 48 provisional
+physical strong-branch candidates: 16 homogeneous F1 rows, 16 nonuniform F2
+rows at site-potential scale `1.0`, and 16 nonuniform F3 rows at scale `1.5`.
+The other 96 nonuniform-search rows converge only to homogeneous roots and are
+rejected from the nonuniform target; this is bounded search evidence, not a
+global nonexistence result. All accepted candidates pass internal-stage,
+budget, event/topology, save/load, symmetry/port, and held-out replay controls.
+Receipt `967f1adc5d8b36c2cdf0fb5c0153ac43b37e14f5fd6c0f1bcb76d92f38f43c94`
+binds the result to P2.2 and the accepted GRV1 anchor.
+
+GRV2 therefore reaches only a `GRV-C3` candidate ceiling pending separate
+scientific acceptance. The branches remain
+`provisional_physical_strong_branch`; the zero-current identity boundary and
+excluded causal fields keep `causal_strong_branch` deferred to GRV3. Branch
+existence does not establish continuation, retention, read-back, or write-back.
 
 ## Central Question
 
