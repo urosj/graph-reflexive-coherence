@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv0_preacceptance_corrections_prepared_pending_reexecution
+status = grv0_executed_awaiting_scientific_acceptance
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -28,7 +28,8 @@ positive_continuation_evidence_opened = false
 positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
-verification_closeout_rung = GRV-C0_not_yet_assigned
+verification_closeout_rung = not_assigned_pending_authorized_human_acceptance
+verification_closeout_ceiling = GRV-C1_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -43,14 +44,17 @@ omission: `baseline_manifest.json` carried the correct specification digest but
 not the separately required `specification_id`. The correction is classified
 as `bug_fix_preserving_protocol`; it changes no fixture, threshold, method,
 runtime, theory contract, or claim envelope. The original result remains in
-history and is superseded only by a clean replacement run.
+history and is superseded by replacement result revision `97a9a6b`, generated
+from clean P0.2 input revision `5f92973`.
 
 The first replacement attempt from `431dcf8` then failed closed before receipt
 emission because the orchestrator included the existing unaccepted receipt in
 the replacement receipt's output-artifact set. P0.2 excludes the exact receipt
 target from its own digest enumeration and adds a rerun regression test. This
-is also packaging-only: no partial P0.1 result is admitted, and a complete clean
-GRV0 rerun remains required.
+is also packaging-only: no partial P0.1 result was admitted. The complete P0.2
+rerun passed mechanically with receipt digest `a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df`.
+Scientific acceptance and GRV-C1 assignment remain pending a separate
+authorized human anchor.
 
 ## Central Question
 

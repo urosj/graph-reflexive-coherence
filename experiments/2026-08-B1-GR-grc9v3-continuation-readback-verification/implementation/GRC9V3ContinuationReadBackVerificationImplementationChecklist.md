@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv0_preacceptance_corrections_prepared_pending_reexecution
+status = grv0_executed_awaiting_scientific_acceptance
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,9 +12,9 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV0_preacceptance_bug_fixes_pending_clean_reexecution
+current_gate = GRV0_executed_awaiting_authorized_human_acceptance
 verification_closeout_ladder_rung_assigned = false
-verification_closeout_ceiling = GRV-C0_specification_package_initialized_execution_not_started
+verification_closeout_ceiling = GRV-C1_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -91,24 +91,24 @@ l04_selected = false
 - [x] Accept Draft 3.4.1 as the exact controlling specification version.
 - [x] Materialize GRV0 package surfaces and commit the clean `P0`
   package-preparation revision before execution.
-- [ ] Record exact graph repository revision.
-- [ ] Record exact geometric-theory repository revision.
-- [ ] Digest both controlling core papers.
-- [ ] Record both paper paths, roles, blob identities where available, and
+- [x] Record exact graph repository revision.
+- [x] Record exact geometric-theory repository revision.
+- [x] Digest both controlling core papers.
+- [x] Record both paper paths, roles, blob identities where available, and
   SHA-256 digests in `theory_source_manifest.json`.
-- [ ] Freeze `protected_path_manifest_v0` for GRC source/spec/test paths.
-- [ ] Freeze `experiment_path_manifest.json` and the exact non-self-referential experiment-tree digest scope.
-- [ ] Include every discovered load-bearing source in the protected manifest.
-- [ ] Record substrate base and experiment execution revisions separately.
-- [ ] Verify a clean execution checkout.
-- [ ] Run the complete existing test suite in `.venv`.
-- [ ] Record test command, environment, duration, pass/fail/skip counts, and logs.
-- [ ] Serialize the theory claim ledger.
-- [ ] Serialize the theory assumption registry.
-- [ ] Serialize the derivation-status appendix.
-- [ ] Serialize the theory debt register.
-- [ ] Serialize proof-note and traceability records.
-- [ ] Serialize the gate dependency map.
+- [x] Freeze `protected_path_manifest_v0` for GRC source/spec/test paths.
+- [x] Freeze `experiment_path_manifest.json` and the exact non-self-referential experiment-tree digest scope.
+- [x] Include every discovered load-bearing source in the protected manifest.
+- [x] Record substrate base and experiment execution revisions separately.
+- [x] Verify a clean execution checkout.
+- [x] Run the complete existing test suite in `.venv`.
+- [x] Record test command, environment, duration, pass/fail/skip counts, and logs.
+- [x] Serialize the theory claim ledger.
+- [x] Serialize the theory assumption registry.
+- [x] Serialize the derivation-status appendix.
+- [x] Serialize the theory debt register.
+- [x] Serialize proof-note and traceability records.
+- [x] Serialize the gate dependency map.
 - [x] Materialize all six normative `hypotheses/` views.
 - [x] Materialize and map all normative scripts to GRV gates.
 - [x] Freeze contradiction and theory-reopening schemas.
@@ -120,7 +120,7 @@ l04_selected = false
 - [x] Add and pass `test_spec_propagation.py` against the current specification
   ID/digest, README, plan, checklist, gate/artifact names, and GRV0 obligations.
 - [x] Freeze experiment-local numerical dependency policy.
-- [ ] Emit the complete numerical environment record.
+- [x] Emit the complete numerical environment record.
 - [x] Preregister the `A-NONNORMAL-CONTROL` evidence mode and threshold.
 - [x] Preregister the `A-FAST-SLOW` measure and threshold where applicable.
 - [x] Preregister the present-current convention and acceptance authority/review policy.
@@ -133,11 +133,27 @@ l04_selected = false
   per-horizon accumulated-error rules.
 - [x] Freeze gate-input revision-change classifications and protocol-readmission rules.
 - [x] Verify no `src/` or existing-test diff during P0 preparation.
-- [ ] Emit GRV0 JSON artifacts and report.
-- [ ] Emit and validate the GRV0 result receipt.
+- [x] Emit GRV0 JSON artifacts and report.
+- [x] Emit and validate the GRV0 result receipt.
 - [ ] Record GRV0 scientific acceptance in a separate accepted anchor before GRV1.
 - [ ] Assign `GRV-C1` only if exact baseline and tests are admitted.
-- [ ] Keep all scientific evidence flags false.
+- [x] Keep all scientific evidence flags false.
+
+GRV0 mechanical result:
+
+```text
+clean_input_revision = 5f9297378a26b8093f523cd11f8cb9f0f0aef723
+result_revision = 97a9a6bf9cd20ca6c1adcc0feee26712df9569fb
+substrate_base_revision = 589f933e5649c34d3ad54a5f8dbdba2a20e968d7
+theory_revision = 5a8b01ae60165054da617db649c5a039755a18ec
+protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2
+experiment_tree_sha256 = f132c8917da074118b47563c1d8d4020e20243a93dd7fb6c471f9cdb79783c8d
+receipt_payload_sha256 = a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df
+existing_tests = 1354_passed_0_failed_0_skipped
+mechanical_status = passed
+scientific_acceptance = awaiting_authorized_human_anchor
+positive_evidence_opened = false
+```
 
 Stop condition:
 
