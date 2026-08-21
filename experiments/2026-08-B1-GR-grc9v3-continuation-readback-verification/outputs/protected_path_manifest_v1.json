@@ -1903,9 +1903,21 @@
     ],
     "later_discovery_policy": "source_or_specification_mismatch_blocks_dependent_work_v1_never_silently_amended",
     "load_bearing_paths_confirmed": [
+      "src/pygrc/core/__init__.py",
+      "src/pygrc/core/backends.py",
+      "src/pygrc/core/capabilities.py",
+      "src/pygrc/core/errors.py",
+      "src/pygrc/core/events.py",
+      "src/pygrc/core/graph.py",
+      "src/pygrc/core/ids.py",
+      "src/pygrc/core/interfaces.py",
+      "src/pygrc/core/mutations.py",
+      "src/pygrc/core/observables.py",
+      "src/pygrc/core/params.py",
       "src/pygrc/core/serialization.py",
       "src/pygrc/core/storage.py",
       "src/pygrc/core/types.py",
+      "src/pygrc/models/grc_9_coarse.py",
       "src/pygrc/models/grc_9_ports.py",
       "src/pygrc/models/grc_9_state.py",
       "src/pygrc/models/grc_9_v3.py",
@@ -1925,6 +1937,6 @@
     "tree_sha256": "4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2",
     "unchanged_successor": true
   },
-  "payload_sha256": "b926bde82422692e6a8ba05ebb5ed4362376a8ef3354e4a659d44e1d5575c128",
+  "payload_sha256": "77d8c9acc06e6868cf2b441fb7aaec94bbe09c4a8fcccdb21ee3c48618cb7f56",
   "schema_version": "b1_protected_path_manifest_v1"
 }

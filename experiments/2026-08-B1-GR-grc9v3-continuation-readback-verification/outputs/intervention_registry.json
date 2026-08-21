@@ -54,12 +54,13 @@
           "clone_first_source_unchanged": true,
           "declared_path_changed": true,
           "deep_clone_non_aliasing": true,
+          "nested_clone_isolation_passed": true,
           "raw_snapshot_and_derived_projection_separate": true,
           "runtime_snapshot_replay_physical_projection_exact": true
         }
       }
     ]
   },
-  "payload_sha256": "a7707436f718e04d12354b1a9f46fb6584736a2904b315973fea0a0d0719d48d",
+  "payload_sha256": "5e02e9ce162ac747420fae0d76f33eb75eeca434fdb33767860d8c05104afb69",
   "schema_version": "b1_grv1_intervention_registry_v1"
 }

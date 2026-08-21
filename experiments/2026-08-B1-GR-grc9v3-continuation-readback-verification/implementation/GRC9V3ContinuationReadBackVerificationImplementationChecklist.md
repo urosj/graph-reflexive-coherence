@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv1_candidate_superseded_P1_1_strengthening_prepared_execution_not_started
+status = grv1_P1_1_executed_awaiting_scientific_acceptance
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,9 +12,9 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = false
-current_gate = GRV1_P1_1_strengthening_prepared_execution_not_started
+current_gate = GRV1_P1_1_executed_awaiting_authorized_human_acceptance
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_ceiling = GRV-C1_accepted_GRV-C2_candidate_superseded_pending_rerun
+verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -223,20 +223,54 @@ claim_ceiling_change = false
 
 GRV1 P1.1 hardening:
 
-- [ ] Prove snapshot, diagnostic read, hashing, save, and load observation are nonmutating.
-- [ ] Prove nested clone isolation for conductance, current, caches, K, and RNG state.
-- [ ] Emit and validate the W/J/K duplicated-surface authority map.
-- [ ] Replace arbitrary K perturbation with structurally valid small, moderate,
+- [x] Prove snapshot, diagnostic read, hashing, save, and load observation are nonmutating.
+- [x] Prove nested clone isolation for conductance, current, caches, K, and RNG state.
+- [x] Emit and validate the W/J/K duplicated-surface authority map.
+- [x] Replace arbitrary K perturbation with structurally valid small, moderate,
   and large fixed-path counterfactuals.
-- [ ] Record stagewise `J -> -J` use, sign erasure, and overwrite boundaries.
-- [ ] Verify coordinate reorientation is involutive and compare after inverse identification.
-- [ ] Prove native `step()` and exact public-stage replay agree at every captured boundary.
-- [ ] Record call ordinal, multiplicity, input/output digests, and changed fields.
-- [ ] Record fixed transition environment and explicit RNG before/after status.
-- [ ] Reproduce the F0 result under same-input object reuse, fresh instance,
+- [x] Record stagewise `J -> -J` use, sign erasure, and overwrite boundaries.
+- [x] Verify coordinate reorientation is involutive and compare after inverse identification.
+- [x] Prove native `step()` and exact public-stage replay agree at every captured boundary.
+- [x] Record call ordinal, multiplicity, input/output digests, and changed fields.
+- [x] Record fixed transition environment and explicit RNG before/after status.
+- [x] Reproduce the F0 result under same-input object reuse, fresh instance,
   snapshot/load, and a fresh Python process.
-- [ ] Expand the confirmed load-bearing source map without altering the protected tree.
-- [ ] Keep all scientific evidence flags false and preserve the GRV1 claim ceiling.
+- [x] Expand the confirmed load-bearing source map without altering the protected tree.
+- [x] Keep all scientific evidence flags false and preserve the GRV1 claim ceiling.
+
+GRV1 P1.1 mechanical result:
+
+```text
+clean_input_revision = 416f49e9cc05a21a86aaa7c7765cd9d64690f709
+substrate_base_revision = 589f933e5649c34d3ad54a5f8dbdba2a20e968d7
+input_experiment_tree_sha256 = fb8cb0577f3937dcbfec735d0d9dfabdaee87a2f38f97db0488ad3e9cdc40b5a
+protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2
+protected_file_count = 379
+receipt_payload_sha256 = 9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a
+superseded_candidate_receipt = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
+mechanical_status = passed
+scientific_acceptance = awaiting_authorized_human_anchor
+candidate_closeout_ceiling = GRV-C2
+positive_evidence_opened = false
+```
+
+P1.1 strengthening outcome:
+
+```text
+instrumentation / ordinary complete state = exact
+native step / public-stage boundary trace = exact
+observation mutation = none detected
+nested clone aliasing = none detected
+W authority = state.base_conductance
+J authority = state.port_edges[*].flux_uv
+K consumer on tested F0 path = not identified
+K global causal absence = not claimed
+old J sign = visible pre-transport, erased by current reconstruction
+coordinate reorientation = involutive and covariant
+RNG = causal state, unchanged in lambda-birth-zero F0
+fresh-process replay = exact
+node_values / edge_values = unknown and carried into GRV3 closure
+```
 
 ## Iteration 3 - GRV2 Strong Formed Branches
 

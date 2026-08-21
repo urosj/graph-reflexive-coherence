@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv1_candidate_superseded_P1_1_strengthening_prepared_execution_not_started
+status = grv1_P1_1_executed_awaiting_scientific_acceptance
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C1
-verification_closeout_ceiling = GRV-C1_accepted_GRV-C2_candidate_superseded_pending_rerun
+verification_closeout_ceiling = GRV-C2_candidate_pending_authorized_human_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -72,6 +72,11 @@ strengthening. P1.1 preserves the sealed specification and claim ceiling while
 adding observation noninterference, clone isolation, W/J/K authority mapping,
 valid multi-amplitude K interventions, stagewise sign attribution, public-stage
 and fresh-process replay, and explicit transition-environment/RNG accounting.
+The strengthened rerun from clean input revision `416f49e` passes mechanically.
+Receipt `9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a`
+binds the new authority map and instrumentation artifacts and explicitly
+supersedes the earlier unaccepted receipt. GRV-C2 remains a candidate pending
+separate authorized human acceptance.
 
 ## Central Question
 

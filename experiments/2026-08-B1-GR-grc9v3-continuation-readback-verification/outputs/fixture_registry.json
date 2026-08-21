@@ -9,6 +9,10 @@
     "F0_source_sha256": "6124f224126de82f2e722498ebd2f77569022ba7eba7b8d765eb2c94ea794042",
     "F3_scientific_candidate_consumed": false,
     "F4_consumption_status": "not_consumed_full_triangle_control_family_deferred",
+    "F4_control_definitions_consumed": [
+      "edge_orientation_reversal_with_current_sign_change",
+      "sign_reversed_old_current_at_matched_C_W"
+    ],
     "fixtures": [
       {
         "first_gate": "GRV1",
@@ -49,6 +53,6 @@
     "source_registry_path": "configs/fixture_registry.json",
     "source_registry_sha256": "44e42cabcc315149080e17913ced9bb2117e7bb9abd34e3b500632ac9b9908a6"
   },
-  "payload_sha256": "3777decf380c00585df10b6315d1886c1ffcb05e836b0af799785f025650f6e9",
+  "payload_sha256": "8193464a88c09cf915eced2bbb5605c808bedabeae81ac81a8e197be91ce0762",
   "schema_version": "b1_grv1_fixture_registry_v1"
 }
