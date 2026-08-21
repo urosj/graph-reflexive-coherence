@@ -12,8 +12,8 @@
     "files": [
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/README.md",
-        "sha256": "78ebdcc4a5dae7c868df76a4f1e336c64bab0865d272c9d717c7c459802a2885",
-        "size_bytes": 4686
+        "sha256": "c84b48c10f964052aa446ad6ad58d7e753dd10ddcad12608d3b934c49530ee9f",
+        "size_bytes": 5574
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/baseline.json",
@@ -57,8 +57,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/p0_manifest.json",
-        "sha256": "56c196107cdf3a05ed0b7155b304874daf9ff925c508f988886b59fcc9296cfc",
-        "size_bytes": 1387
+        "sha256": "f0b4544ad2a6bdeb169194740ebf4a63ec9d4d8a5d556f4cb9260e1dc04e4581",
+        "size_bytes": 2889
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/persistence_protocol.json",
@@ -132,8 +132,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationImplementationChecklist.md",
-        "sha256": "21cb7ad007aa4f9d141ae7be4f767cea1c46c42c717a432b44c5e2cbf17483ed",
-        "size_bytes": 24249
+        "sha256": "95e11abb1148f1a8acaee744da5f0a163b62699f8ccddaf0a5fd8843919889e7",
+        "size_bytes": 24283
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationImplementationPlan.md",
@@ -172,8 +172,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/baseline_manifest.schema.json",
-        "sha256": "b5ca8085df75445a9ad58e50e2fe32f4122c86c993fe6e5b880a5a82455bd257",
-        "size_bytes": 979
+        "sha256": "ea3bc7dcccc396c15ae15597ae8d7041ad28b03ada30d3ad3be622fdaa72c46e",
+        "size_bytes": 1096
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/schemas/causal_role_matrix.schema.json",
@@ -247,8 +247,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
-        "sha256": "d2e9787a997f28e3a66be379edc6d9e43141827a90c3860ffeebc602bdf23cb6",
-        "size_bytes": 12647
+        "sha256": "8cec3343b503f82f40de1a9f0d8f60991c72381eb30ecaf8ae4549f4d82d791c",
+        "size_bytes": 12758
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/classify_claims_and_extensions.py",
@@ -292,8 +292,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py",
-        "sha256": "aadb88f0b18e609177e2967e8b4dc3e988b619c7597ea08cf63a2458f3c634ae",
-        "size_bytes": 4493
+        "sha256": "be9db80389f70d8691c893dd268f36f23fc5a86fa544bdbc7f5da9b329416683",
+        "size_bytes": 4714
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_preparation_persistence_probe.py",
@@ -352,8 +352,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_gate_receipts.py",
-        "sha256": "1c3f93057f8197b5264212154f4ea7865bfa1cf11bc22a2000390a5f663e3121",
-        "size_bytes": 1783
+        "sha256": "dc2a86f3829798fce2f8ba7a661934a40d8b4cc8f96802bf4ba03d990590b849",
+        "size_bytes": 2425
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_interventions.py",
@@ -367,8 +367,8 @@
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_schemas.py",
-        "sha256": "88deff7dba8c196319981879ed5cebae6633e561dc9cee925f8fe7054c969f3c",
-        "size_bytes": 1693
+        "sha256": "75002ddc5c956409e408da5a00b82739f0b62f7eeb58216dc9c6ba59fc088cea",
+        "size_bytes": 2166
       },
       {
         "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/tests/test_spec_propagation.py",
@@ -388,8 +388,8 @@
     ],
     "manifest_id": "experiment_path_manifest",
     "scope": "all_committed_experiment_files_except_outputs_reports_and_self",
-    "tree_sha256": "a011c53c6767c171f8b9d59372a0cdbcae6eb839df635ec0c93de197c4349bbe"
+    "tree_sha256": "f132c8917da074118b47563c1d8d4020e20243a93dd7fb6c471f9cdb79783c8d"
   },
-  "payload_sha256": "5d52ccb211340ac0a0a21018ce214ffa6018d0301f834adf9820f4ae6832128a",
+  "payload_sha256": "56c9ec7d4de50f690813e79ac2f6e530dc050dbfc5e73728afeffa7ef1ce7dac",
   "schema_version": "b1_experiment_path_manifest_v1"
 }

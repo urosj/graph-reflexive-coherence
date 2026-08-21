@@ -11,15 +11,15 @@
   ],
   "claim_ceiling": "GRV-C1_candidate_pending_authorized_human_acceptance_no_scientific_evidence",
   "gate_id": "GRV0",
-  "input_execution_revision": "231e43710a3ea818c6c8736bc7df175221a73c1e",
-  "input_experiment_tree_sha256": "a011c53c6767c171f8b9d59372a0cdbcae6eb839df635ec0c93de197c4349bbe",
+  "input_execution_revision": "5f9297378a26b8093f523cd11f8cb9f0f0aef723",
+  "input_experiment_tree_sha256": "f132c8917da074118b47563c1d8d4020e20243a93dd7fb6c471f9cdb79783c8d",
   "output_artifact_digests": {
-    "outputs/baseline_manifest.json": "d790d2377f7cec97bd4b60c098eb6e3946c03348e910687798920cbc1a28cc87",
+    "outputs/baseline_manifest.json": "b7636dba7e957115d95809812ed5b31e8fddc7b2d796c6bf9f11410efc4d5e96",
     "outputs/contradiction_register.json": "09af0d09a49290c303d5f6cdcff0985d17e52b4039608914b2e8513cf7e64c43",
-    "outputs/experiment_path_manifest.json": "a3f259da8a8f852f8913246880644636c0f7576f92b887b56f6987be4f5f4fa5",
+    "outputs/experiment_path_manifest.json": "691d123afe53d169ff6b625549c752d22fc09fc3daae5e5ad093f120915257a0",
     "outputs/fixed_topology_envelope.json": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
     "outputs/gate_dependency_map.json": "66a3b6cb86be8cfbc3df9a51717d36352996a243823da258f10b3fb3b193d218",
-    "outputs/logs/grv0_existing_tests.log": "1ad6fa80668c8b682ad90d7c40f36509bc88e04f16c6c230adcd1c8aa1b632c8",
+    "outputs/logs/grv0_existing_tests.log": "09f753e45dcbbb9fd57e01db0cf0fa628f0505e0fe357d56b7524c7ab5cc81a3",
     "outputs/numerical_environment.json": "5fb90bd7e7c49073558ad9a6e700a0bc8ef16b4df9789f4399f94e5b315c3631",
     "outputs/proof_note_registry.json": "600b10cb0df9e24dd5b8b7e84cfdf8d38268544fc9fc08cfe7ea1f9f65f6d7c4",
     "outputs/protected_path_manifest_v0.json": "c37199b2d9cd14a03b59a76e1235127abb97a9143601bd76b0ce241d2a99c4be",
@@ -31,11 +31,11 @@
     "outputs/theory_derivation_status.json": "f06770d75c7f4122dc6812e6c6b0e54947657990ad6168ac9640efe32cee5f73",
     "outputs/theory_source_manifest.json": "9f63667aca76185e58637dfe15302fb1cb9615e513e7f5ad75e17f688f6381d3",
     "outputs/theory_test_traceability.json": "1398b21fd20d5e5df5d81a9e45a1ac9cfb1d633acb2cf6218029da357f8f7f93",
-    "reports/b1_grv0_baseline_admission.md": "77438275d36567d6761536ecaa582340dbe955205630363aa0fd756459e22e9c"
+    "reports/b1_grv0_baseline_admission.md": "747199e35deee63ebaa3d53f3c4f65f83b1841155ba1daf74382e75f1f4c86f0"
   },
   "prerequisite_acceptance_anchors": [],
   "prerequisite_result_receipt_digests": [],
-  "receipt_payload_sha256": "79588424b3021a10d81330d2ff6b16ea86b8b9ade7b45eb19a02aa0e722f5bf2",
+  "receipt_payload_sha256": "a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }
