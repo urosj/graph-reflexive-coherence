@@ -1,6 +1,6 @@
 # B1-GR Verification Report
 
-Status: GRV0 and GRV1 accepted; GRV2 P2.3 executed and awaiting scientific review.
+Status: GRV0, GRV1, and bounded GRV2 P2.3 accepted; GRV3 is next.
 
 Gate-local reports are added only after execution from a clean committed input
 revision. This report becomes the cross-gate synthesis at GRV8.

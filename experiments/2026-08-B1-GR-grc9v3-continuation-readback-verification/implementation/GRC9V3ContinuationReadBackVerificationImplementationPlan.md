@@ -482,6 +482,12 @@ fixed state nor upgrades branch existence to stability, continuation, or
 retention. Receipt `73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63`
 records the result at a `GRV-C3` candidate ceiling pending human acceptance.
 
+The experiment owner subsequently accepts this bounded result. The acceptance
+opens only source-current physical formed-branch existence at `GRV-C3` and does
+not upgrade any row to `causal_strong_branch` or support stability,
+continuation, retention, read-back, or write-back. GRV3 must consume the exact
+registry and receipt through the separate GRV2 acceptance anchor.
+
 ### Required outputs
 
 ```text

@@ -4,18 +4,18 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv2_P2_3_executed_awaiting_scientific_acceptance
+status = grv2_P2_3_accepted_GRV3_next
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
 runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
-positive_evidence_opened = false
-current_gate = GRV2_P2_3_executed_awaiting_authorized_human_acceptance
+positive_evidence_opened = true_bounded_physical_branch_existence_only
+current_gate = GRV3_not_started
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
+verification_closeout_rung = GRV-C3
+verification_closeout_ceiling = GRV-C3_accepted
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -301,7 +301,7 @@ node_values / edge_values = unknown and carried into GRV3 closure
 - [x] Record distance from positivity, conductance-floor, spark, basin/sink, growth, and event boundaries.
 - [x] Emit `fixed_branch_registry.json` and report.
 - [x] Emit and validate the GRV2 result receipt.
-- [ ] Record the GRV2 acceptance decision in a separate human anchor after review.
+- [x] Record the GRV2 acceptance decision in a separate human anchor after review.
 - [x] State explicitly that branch existence is not continuation or retention.
 
 ### P2.2 provisional result, never accepted
@@ -327,7 +327,7 @@ protected_runtime_spec_root_test_tree = unchanged
 branch_class = provisional_physical_strong_branch
 causal_strong_branch = deferred_to_GRV3
 candidate_closeout_ceiling = GRV-C3
-positive_evidence_opened = false_pending_authorized_human_acceptance
+positive_evidence_opened = true_bounded_physical_branch_existence_only
 continuation = unsupported
 retention = unsupported
 readback = unsupported
@@ -403,7 +403,7 @@ P2.3 result:
 ```text
 input_revision = 228e1d4f1f13af7ab7ff464dca592d4decd609f9
 mechanical_status = passed
-scientific_acceptance = awaiting_human_review
+scientific_acceptance = accepted_anchor_pending_commit_reference
 receipt_payload_sha256 = 73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63
 search_rows = 144
 accepted_provisional_physical_strong_branch_rows = 48
@@ -424,6 +424,22 @@ cache_and_complete_causal_state_status = deferred_to_GRV3
 causal_strong_branch = deferred_to_GRV3
 candidate_closeout_ceiling = GRV-C3
 positive_evidence_opened = false_pending_authorized_human_acceptance
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+GRV2 acceptance disposition:
+
+```text
+acceptance_status = accepted
+acceptance_role = experiment_owner
+accepted_result_revision = e1dc01f4948b7791c733eb62c15179d04619cd8e
+accepted_receipt_payload_sha256 = 73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63
+accepted_closeout_rung = GRV-C3
+physical_formed_branch_existence = accepted_bounded_candidate_evidence
+causal_strong_branch = deferred_to_GRV3
 continuation = unsupported
 retention = unsupported
 readback = unsupported

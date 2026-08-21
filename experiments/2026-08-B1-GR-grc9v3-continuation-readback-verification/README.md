@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv2_P2_3_executed_awaiting_scientific_acceptance
+status = grv2_P2_3_accepted_GRV3_next
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -28,8 +28,8 @@ positive_continuation_evidence_opened = false
 positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
-verification_closeout_rung = GRV-C2
-verification_closeout_ceiling = GRV-C3_candidate_pending_authorized_human_acceptance
+verification_closeout_rung = GRV-C3
+verification_closeout_ceiling = GRV-C3_accepted
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -144,6 +144,14 @@ remains explicit GRV3 causal-closure debt. Receipt
 `73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63`
 binds the superseding result to P2.3. GRV2 remains a `GRV-C3` candidate pending
 separate scientific acceptance.
+
+The experiment owner accepts the bounded P2.3 result in a separate GRV2 anchor
+at the next commit. GRV2 is therefore closed at `GRV-C3`: source-current
+physical formed-branch existence is accepted under the declared envelope.
+`causal_strong_branch`, stability, continuation, retention, read-back, and
+write-back remain unopened. GRV3 is next and must begin with causal-state and
+stratum admission over all 48 accepted rows before any Jacobian or spectrum is
+interpreted.
 
 ## Central Question
 
