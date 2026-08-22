@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv3_P3_4_1_mechanically_passed_awaiting_human_review
+status = grv3_P3_4_1_bounded_result_accepted_GRV4_authorized
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_candidate_awaiting_acceptance
+verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_evidence_GRV4_pending
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -209,8 +209,11 @@ Receipt `83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc`
 binds the current result. No full `(C,W,J)` classical derivative, joint `C-W`
 mode claim, global cache eliminability, continuation, retention, read-back, or
 write-back is supported. The complete-beat odd/even `J` response is unresolved
-and does not negate the GRV1 stage-local `J^2` path. GRV3 remains pending human
-scientific review; no acceptance anchor exists and GRV4 remains blocked.
+and does not negate the GRV1 stage-local `J^2` path. The experiment owner
+accepted this bounded GRV3 result at revision `0dedbf9`. The acceptance does
+not upgrade any blocked full-state, stability, continuation, retention,
+read-back, or write-back interpretation. GRV4 is now authorized and remains
+required before `GRV-C4` can be considered.
 
 ## Central Question
 

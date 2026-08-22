@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv3_P3_4_1_mechanically_passed_awaiting_human_review
+status = grv3_P3_4_1_bounded_result_accepted_GRV4_authorized
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV3_scientific_review
+current_gate = GRV4_method_freeze
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_candidate_awaiting_acceptance
+verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_evidence_GRV4_pending
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -540,7 +540,7 @@ writeback = unsupported
   leave the scientific upgrade pending human review.
 - [x] Emit `complete_step_jacobians.json`, `slow_cluster_registry.json`, and report.
 - [x] Emit and validate the GRV3 result receipt.
-- [ ] Emit a separate GRV3 acceptance anchor only after human scientific review.
+- [x] Emit a separate GRV3 acceptance anchor only after human scientific review.
 - [x] Do not equate a slow joint mode with core retention.
 
 ### Iteration 4 Result
@@ -554,7 +554,7 @@ result_status = superseded_unaccepted_by_P3_4_method_completion
 input_execution_revision = 0a323d2d5920b3bedaef052fd193777942add9be
 receipt_payload_sha256 = 7cf749fa8a46f6b219a27515504e4ad671a386144b2ef8626fb14e63a4fb104d
 mechanical_status = passed
-scientific_acceptance = awaiting_human_review
+scientific_acceptance = never_accepted_superseded_by_P3_4
 branches_audited = 48
 bounded_C_W_J_codec_closure_candidates = 48
 full_C_W_J_square_jacobians = 0
@@ -609,7 +609,7 @@ required before `GRV-C4` can be considered.
 input_execution_revision = b1c233be164c6e88d21f5386ae2483cb2e08ecad
 receipt_payload_sha256 = 83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc
 mechanical_status = passed
-scientific_acceptance = awaiting_human_review
+scientific_acceptance = accepted_bounded_result_at_revision_0dedbf9
 branches_audited = 48
 bounded_causal_closure_candidates = 48
 omitted_state_decomposition_pass_branches = 48
@@ -645,8 +645,10 @@ This does not erase GRV1's stage-local sign-even `J^2` path, does not establish
 `J` eliminability, and does not reopen the non-smooth full-chart derivative.
 Raw and declared-scale participation remain diagnostic and no joint `C-W` mode
 claim is made. The same three `C-W` interpretations remain blocked as in P3.3;
-their separately frozen `C` candidates pass. No GRV3 acceptance anchor has
-been emitted.
+their separately frozen `C` candidates pass. The experiment owner accepted the
+bounded result at revision `0dedbf9`; the acceptance anchor binds that revision
+and its exact result-receipt digest. GRV4 is authorized without upgrading any
+blocked full-state or continuation interpretation.
 
 ## Iteration 5 - GRV4 Frozen-Conductance Versus Full Recurrence
 
