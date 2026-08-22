@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv5_scientifically_accepted_grv6_method_frozen_pending_clean_execution
+status = grv6_mechanically_passed_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,10 +13,10 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_clean_execution_pending
+current_gate = GRV6_scientific_review_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_and_GRV7
+verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -1161,7 +1161,7 @@ acceptance_anchor = outputs/gates/grv5_acceptance_anchor.json
 accepted_maximum_local_rung = GRR2
 accepted_closeout_rung = GRV-C4
 GRV_C5_assigned = false
-GRV6_status = authorized_but_not_started_user_pause
+GRV6_status = mechanically_passed_awaiting_human_review
 native_readback_supported = false
 writeback_supported = false
 closed_loop_supported = false
@@ -1190,40 +1190,101 @@ runtime_change_authorized = false
 - [x] Freeze direct rank-revealed cycle projection with no silent regularization or primary-projector pseudoinverse.
 - [x] Freeze full-state, proper-divisor, categorical, administrative, held-out replay, and Floquet admission gates.
 
-- [ ] Record closure, mobility, conservation, uniqueness, and orientation assumption statuses where required.
-- [ ] Freeze oriented edge order and node-by-edge incidence convention.
-- [ ] Freeze `W_*^-1` as the primary native conductance-compatible edge metric,
+- [x] Record closure, mobility, conservation, uniqueness, and orientation assumption statuses where required.
+- [x] Freeze oriented edge order and node-by-edge incidence convention.
+- [x] Freeze `W_*^-1` as the primary native conductance-compatible edge metric,
   or prove that another primary metric annihilates native potential-flow cycle projection.
-- [ ] Preregister minimum conductance, `W_*` and projected-Gram condition limits,
+- [x] Preregister minimum conductance, `W_*` and projected-Gram condition limits,
   singularity/rejection thresholds, and a no-silent-regularization policy.
-- [ ] Freeze cycle-space and potential-complement projectors, branch/orbit
+- [x] Freeze cycle-space and potential-complement projectors, branch/orbit
   metric policy, plus rank and divergence tolerances.
-- [ ] Verify projector idempotence, metric orthogonality, and decomposition reconstruction.
-- [ ] Verify native weighted potential-flow annihilation under the primary projector.
-- [ ] Verify edge-reorientation covariance of incidence, current, metric, and cycle projection.
-- [ ] Certify each cycle seed against the declared incidence/orientation convention.
-- [ ] Run a stationary divergence-free cycle-current control.
-- [ ] Test exact-zero current.
-- [ ] Test positive and negative finite current seeds.
-- [ ] Test sign-even magnitude-matched preparations.
-- [ ] Test cycle-space seeds where topology permits.
-- [ ] Record initial cycle content, conductance inscription, reconstructed current, and remaining cycle projection.
-- [ ] Search period-two return orbits.
-- [ ] Search higher-period and possible complex-unit-circle return behavior.
-- [ ] Record complete orbit search space/budget, all seeds and roots,
+- [x] Verify projector idempotence, metric orthogonality, and decomposition reconstruction.
+- [x] Verify native weighted potential-flow annihilation under the primary projector.
+- [x] Verify edge-reorientation covariance of incidence, current, metric, and cycle projection.
+- [x] Certify each cycle seed against the declared incidence/orientation convention.
+- [x] Run a stationary divergence-free cycle-current control.
+- [x] Test exact-zero current.
+- [x] Test positive and negative finite current seeds.
+- [x] Test sign-even magnitude-matched preparations.
+- [x] Test cycle-space seeds where topology permits.
+- [x] Record initial cycle content, conductance inscription, reconstructed current, and remaining cycle projection.
+- [x] Search period-two return orbits.
+- [x] Search higher-period and possible complex-unit-circle return behavior.
+- [x] Record complete orbit search space/budget, all seeds and roots,
   rejection/deduplication rules, continuation lineage, selection rule, and
   held-out replay for selected orbits.
-- [ ] Require causal-state return and reject all proper divisors in causal coordinates.
-- [ ] Require one continuous causal stratum at every intermediate orbit point and derivative probe before assigning Floquet multipliers.
-- [ ] Compute the monodromy product only from admitted causal-map derivatives.
-- [ ] Record stratum-crossing cycles as hybrid/categorical returns without an ordinary Floquet spectrum.
-- [ ] Require causally relevant categorical event-state equality at return.
-- [ ] Classify physical-only closure as `physical_projection_return`.
-- [ ] Replay every accepted return orbit from snapshots.
-- [ ] Classify potential-flow orbit, synchronous transport orbit, undetermined recurrence, or stationary cycle current.
-- [ ] Emit `return_orbit_registry.json` and report.
-- [ ] Emit and validate the GRV6 result receipt and separate acceptance anchor.
-- [ ] Do not relabel recurrent nonzero current as active circulation or Read-Back.
+- [x] Require causal-state return and reject all proper divisors in causal coordinates.
+- [x] Require one continuous causal stratum at every intermediate orbit point and derivative probe before assigning Floquet multipliers.
+- [x] Compute the monodromy product only from admitted causal-map derivatives; no orbit met the prerequisite, so no spectrum was emitted.
+- [x] Record stratum-crossing cycles as hybrid/categorical returns without an ordinary Floquet spectrum; none were admitted.
+- [x] Require causally relevant categorical event-state equality at return.
+- [x] Classify physical-only closure as `physical_projection_return`; none were admitted.
+- [x] Replay every accepted return orbit from snapshots; held-out replay is explicitly not applicable because no orbit was admitted.
+- [x] Classify potential-flow orbit, synchronous transport orbit, undetermined recurrence, or stationary cycle current.
+- [x] Emit `return_orbit_registry.json` and report.
+- [x] Emit and validate the GRV6 result receipt.
+- [ ] Emit the separate GRV6 acceptance anchor only after human scientific review.
+- [x] Do not relabel recurrent nonzero current as active circulation or Read-Back.
+
+Mechanically completed result:
+
+```text
+input_execution_revision = 69f1a11633a47bf7dc972f94bdd0c53aff6b15cb
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+current_control_branch_count = 48
+cycle_control_branch_count = 16
+cycle_seed_row_count = 32
+cycle_seed_persistence_count = 0
+maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+all_edge_space_checks_passed = true
+all_sign_even_controls_passed = true
+all_budget_controls_passed = true
+maximum_budget_error = 1.7763568394002505e-15
+all_topology_and_event_controls_passed = true
+periods = [2, 3, 4, 5, 6, 8]
+search_budget_per_period = 256
+orbit_search_row_count = 1536
+all_48_branches_consumed_each_period = true
+converged_search_candidate_count = 671
+proper_divisor_rejected_count = 670
+converged_but_not_return_count = 1
+return_jacobian_ill_conditioned_no_regularization_count = 865
+primitive_return_orbit_count = 0
+physical_projection_return_count = 0
+hybrid_or_categorical_return_count = 0
+ordinary_floquet_spectrum_count = 0
+stationary_cycle_current_supported = false
+recurrence_evidence_opened = false
+active_circulation_supported = false
+readback_supported = false
+writeback_supported = false
+GRV_C5_assigned = false
+return_orbit_registry_payload_sha256 = 451a06b660796433bcc9d81417b76e3bf44b1d149bd6895dcc7a66bf41a51c31
+contract_audit_payload_sha256 = 075bd85712ed59a19544481d9e7186b92b1db9247b3786c916b2be91ce8182a2
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = 2d266835b7bc4e06f53c92dcaaaa7dfc6d8e787f044dd52e57116494711cac55
+B1_GR_tests = 80_passed
+ruff = passed
+src_files_changed_by_GRV6 = 0
+```
+
+The resolved search rows do not contain an admitted primitive period-two-or-
+higher causal-state return: 670 numerical candidates reduce to period one or
+another proper divisor, while one misses the declared return tolerance. The
+865 condition-blocked rows are unresolved under the preregistered
+no-silent-regularization rule and are not counted as orbit-absence evidence.
+Accordingly, this is a bounded negative recurrence result, not a global
+nonexistence result.
+
+The current controls are stronger within their declared topology envelope.
+All signed divergence-free cycle seeds are overwritten by native potential-flow
+reconstruction, and the post-step cycle projection is numerical zero at the
+recorded scale. This blocks stationary native cycle-current persistence on the
+16 tested triangle branches. It does not block every possible recurrent orbit,
+boundary-driven through-flow, or a future explicitly added cycle-current
+mechanism. GRV6 opens neither active circulation nor Read-Back, and GRV7 remains
+blocked until a separate GRV6 acceptance anchor is committed.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

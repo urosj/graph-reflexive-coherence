@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv5_scientifically_accepted_grv6_method_frozen_pending_clean_execution
+status = grv6_mechanically_passed_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_and_GRV7
+verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -286,10 +286,31 @@ branch without the synthetic intervention. Native read-back, write-back,
 `GRR3+`, and closed-loop claims remain blocked.
 
 The experiment owner accepted that bounded result in
-`outputs/gates/grv5_acceptance_anchor.json`. This authorizes GRV6 but does not
-assign `GRV-C5`, which also requires GRV6 recurrence and GRV7 threshold
-evidence. The requested verification is complete; GRV6 now has a frozen
-experiment-local execution contract and remains pending clean execution.
+`outputs/gates/grv5_acceptance_anchor.json`. This authorized GRV6 but did not
+assign `GRV-C5`, which also requires accepted GRV6 and GRV7 threshold evidence.
+
+GRV6 has now executed mechanically from clean revision `69f1a11`. All 48
+certified branches receive exact-zero and signed finite-current controls; all
+16 triangle branches receive both orientations of a certified divergence-free
+cycle seed. None of the 32 cycle seeds persists after native potential-flow
+reconstruction, with maximum post-step cycle component
+`1.3498100806892346e-26`. Conservation closes to
+`1.7763568394002505e-15`, and topology/event controls remain clean.
+
+The bounded period-`2,3,4,5,6,8` search executes all 1,536 preregistered rows.
+Of 671 converged numerical candidates, 670 are rejected as period-one or other
+proper-divisor closures and one misses the return tolerance. The other 865
+rows are blocked by an ill-conditioned return Jacobian under the frozen
+no-silent-regularization rule and remain unresolved; they are not negative
+orbit evidence. No primitive causal-state orbit, physical-only return,
+hybrid/categorical return, or ordinary Floquet spectrum is admitted. This is a
+bounded negative recurrence result, not a global nonexistence result.
+
+The GRV6 result receipt is `2d266835...` and remains
+`awaiting_scientific_review`. No GRV6 acceptance anchor exists yet, `GRV-C5`
+is not assigned, and GRV7 remains blocked. Stationary cycle-current persistence
+is unsupported in the tested triangle envelope; active circulation, Read-Back,
+write-back, and self-sustaining identity remain unopened.
 
 ## Central Question
 

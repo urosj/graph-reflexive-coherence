@@ -1,0 +1,62 @@
+{
+  "blocked_gates": [
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "bounded_search_found_no_primitive_period_2_to_8_return_and_cycle_seeds_were_overwritten_without_global_nonexistence_claim_pending_human_review",
+  "contract_audit_payload_sha256": "075bd85712ed59a19544481d9e7186b92b1db9247b3786c916b2be91ce8182a2",
+  "gate_id": "GRV6",
+  "grv6_summary": {
+    "GRV_C5_assigned": false,
+    "GRV_C5_status": "blocked_pending_GRV7_even_if_GRV6_recurrence_candidate_exists",
+    "active_circulation_supported": false,
+    "all_budget_controls_passed": true,
+    "all_cycle_seeds_certified": true,
+    "all_edge_space_checks_passed": true,
+    "all_sign_even_controls_passed": true,
+    "all_topology_and_event_controls_passed": true,
+    "converged_but_not_return_count": 1,
+    "converged_search_candidate_count": 671,
+    "current_control_branch_count": 48,
+    "cycle_control_branch_count": 16,
+    "cycle_seed_persistence_count": 0,
+    "cycle_seed_row_count": 32,
+    "full_causal_state_return_orbit_count": 0,
+    "hybrid_or_categorical_return_count": 0,
+    "maximum_budget_error": 1.7763568394002505e-15,
+    "maximum_post_step_cycle_component_l2": 1.3498100806892346e-26,
+    "mechanical_status": "passed",
+    "orbit_search_row_count": 1536,
+    "ordinary_floquet_spectrum_count": 0,
+    "physical_projection_return_count": 0,
+    "primitive_return_orbit_count": 0,
+    "proper_divisor_rejected_count": 670,
+    "readback_supported": false,
+    "recurrence_evidence_opened": false,
+    "return_jacobian_ill_conditioned_count": 865,
+    "stationary_cycle_current_supported": false,
+    "writeback_supported": false
+  },
+  "input_execution_revision": "69f1a11633a47bf7dc972f94bdd0c53aff6b15cb",
+  "input_experiment_tree_sha256": "a8f42562b1000c35db9681df833966422ec380414cb0c986b82e4d5bb8cc9e2b",
+  "output_artifact_digests": {
+    "outputs/grv6_contract_audit.json": "90ae0790ab9d6c51ca604a8863ea7203e14485c5910edf9a53e6128358e0514b",
+    "outputs/protected_path_manifest_v6.json": "a4de764bd3357b67793375cf41f210f124ba61fe73a7e06caaeb74d351be44c2",
+    "outputs/return_orbit_registry.json": "a758e70b5552b89709c477560e40f1d6fc8095b102994fe404d63b299d0ec35c",
+    "reports/b1_grv6_current_recurrence_and_return_orbits.md": "76ebcf7095284fcae44625376debeb688dd906b7d086f0514cd5eb0d3b68d17c"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+      "gate_id": "GRV5",
+      "immutable_ref": "git:948db9b37069bc2a972f4bc2471287fa7140f677"
+    }
+  ],
+  "prerequisite_acceptance_status": "accepted",
+  "prerequisite_result_receipt_digests": [
+    "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35"
+  ],
+  "receipt_payload_sha256": "2d266835b7bc4e06f53c92dcaaaa7dfc6d8e787f044dd52e57116494711cac55",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}

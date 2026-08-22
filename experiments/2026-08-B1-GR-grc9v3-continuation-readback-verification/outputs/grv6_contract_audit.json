@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV6",
+    "reproducibility_class": "tolerance_reproducible"
+  },
+  "payload": {
+    "all_review_points_passed": true,
+    "audit_id": "grv6_current_recurrence_contract_audit_v1",
+    "gate_id": "GRV6",
+    "review_point_count": 34,
+    "review_points": [
+      {
+        "passed": true,
+        "point_id": "edge_order_and_incidence_frozen",
+        "point_index": 1
+      },
+      {
+        "passed": true,
+        "point_id": "native_inverse_conductance_metric_used",
+        "point_index": 2
+      },
+      {
+        "passed": true,
+        "point_id": "no_silent_regularization",
+        "point_index": 3
+      },
+      {
+        "passed": true,
+        "point_id": "projector_idempotence",
+        "point_index": 4
+      },
+      {
+        "passed": true,
+        "point_id": "metric_orthogonality",
+        "point_index": 5
+      },
+      {
+        "passed": true,
+        "point_id": "decomposition_reconstruction",
+        "point_index": 6
+      },
+      {
+        "passed": true,
+        "point_id": "native_potential_flow_annihilation",
+        "point_index": 7
+      },
+      {
+        "passed": true,
+        "point_id": "edge_reorientation_covariance",
+        "point_index": 8
+      },
+      {
+        "passed": true,
+        "point_id": "cycle_seed_certified_before_runtime",
+        "point_index": 9
+      },
+      {
+        "passed": true,
+        "point_id": "all_cycle_topology_branches_consumed",
+        "point_index": 10
+      },
+      {
+        "passed": true,
+        "point_id": "exact_zero_controls_run",
+        "point_index": 11
+      },
+      {
+        "passed": true,
+        "point_id": "positive_seed_controls_run",
+        "point_index": 12
+      },
+      {
+        "passed": true,
+        "point_id": "negative_seed_controls_run",
+        "point_index": 13
+      },
+      {
+        "passed": true,
+        "point_id": "sign_even_controls_run",
+        "point_index": 14
+      },
+      {
+        "passed": true,
+        "point_id": "cycle_seed_controls_run",
+        "point_index": 15
+      },
+      {
+        "passed": true,
+        "point_id": "assumption_statuses_recorded",
+        "point_index": 16
+      },
+      {
+        "passed": true,
+        "point_id": "budget_conservation_passed",
+        "point_index": 17
+      },
+      {
+        "passed": true,
+        "point_id": "topology_and_event_controls_passed",
+        "point_index": 18
+      },
+      {
+        "passed": true,
+        "point_id": "parameter_sweep_consumed_all_branches",
+        "point_index": 19
+      },
+      {
+        "passed": true,
+        "point_id": "multiplier_continuation_accounted",
+        "point_index": 20
+      },
+      {
+        "passed": true,
+        "point_id": "direct_residual_minimization_executed",
+        "point_index": 21
+      },
+      {
+        "passed": true,
+        "point_id": "search_budget_complete",
+        "point_index": 22
+      },
+      {
+        "passed": true,
+        "point_id": "all_seeds_and_roots_recorded",
+        "point_index": 23
+      },
+      {
+        "passed": true,
+        "point_id": "proper_divisor_gate_executed",
+        "point_index": 24
+      },
+      {
+        "passed": true,
+        "point_id": "categorical_return_gate_recorded",
+        "point_index": 25
+      },
+      {
+        "passed": true,
+        "point_id": "administrative_advancement_gate_recorded",
+        "point_index": 26
+      },
+      {
+        "passed": true,
+        "point_id": "physical_only_return_class_frozen",
+        "point_index": 27
+      },
+      {
+        "passed": true,
+        "point_id": "hybrid_return_class_frozen",
+        "point_index": 28
+      },
+      {
+        "passed": true,
+        "point_id": "floquet_stratum_gate_enforced",
+        "point_index": 29
+      },
+      {
+        "passed": true,
+        "point_id": "held_out_replay_accounted",
+        "point_index": 30
+      },
+      {
+        "passed": true,
+        "point_id": "nonzero_current_not_relabelled_active_circulation",
+        "point_index": 31
+      },
+      {
+        "passed": true,
+        "point_id": "readback_not_opened",
+        "point_index": 32
+      },
+      {
+        "passed": true,
+        "point_id": "runtime_unchanged",
+        "point_index": 33
+      },
+      {
+        "passed": true,
+        "point_id": "GRV_C5_not_assigned_by_GRV6_alone",
+        "point_index": 34
+      }
+    ],
+    "source_result_payload_sha256": "451a06b660796433bcc9d81417b76e3bf44b1d149bd6895dcc7a66bf41a51c31"
+  },
+  "payload_sha256": "075bd85712ed59a19544481d9e7186b92b1db9247b3786c916b2be91ce8182a2",
+  "schema_version": "b1_grv6_contract_audit_v1"
+}
