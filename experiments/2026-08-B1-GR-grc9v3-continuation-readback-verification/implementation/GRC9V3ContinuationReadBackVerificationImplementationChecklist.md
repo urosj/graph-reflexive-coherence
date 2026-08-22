@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv4_P4_method_frozen_pending_clean_execution
+status = grv4_mechanically_passed_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV4_clean_execution
+current_gate = GRV4_scientific_review
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_evidence_GRV4_pending
+verification_closeout_ceiling = GRV-C4_candidate_pending_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -678,19 +678,69 @@ refresh stages are excluded and recorded as reduction assumptions. The
 complete-step side is consumed from the accepted GRV3 matrices; P4 does not
 rerun or reinterpret blocked GRV3 derivatives.
 
-- [ ] Complete the runtime sign audit.
-- [ ] State whether `P_G`, `-P_G`, neither, or only a small-step limit is monotone.
-- [ ] Separate analytic semidiscrete sign, runtime-timestep behavior, and timestep sweep.
-- [ ] Construct the frozen-`W` constrained comparator outside `src/`.
-- [ ] Use the same conserved tangent basis as GRV3.
-- [ ] Construct the declared mobility, semidiscrete, and explicit-step comparators.
-- [ ] Label analytical comparator objects as non-runtime state.
-- [ ] Compare frozen spectra with complete-step multipliers.
-- [ ] Compare modes/subspaces and stability classifications.
-- [ ] Record every reduction and elimination assumption.
-- [ ] Emit `frozen_full_comparison.json` and report.
-- [ ] Emit and validate the GRV4 result receipt and separate acceptance anchor.
-- [ ] Do not claim the full core continuation operator.
+- [x] Complete the runtime sign audit.
+- [x] State whether `P_G`, `-P_G`, neither, or only a small-step limit is monotone.
+- [x] Separate analytic semidiscrete sign, runtime-timestep behavior, and timestep sweep.
+- [x] Construct the frozen-`W` constrained comparator outside `src/`.
+- [x] Use the same conserved tangent basis as GRV3.
+- [x] Construct the declared mobility, semidiscrete, and explicit-step comparators.
+- [x] Label analytical comparator objects as non-runtime state.
+- [x] Compare frozen spectra with complete-step multipliers.
+- [x] Compare modes/subspaces and stability classifications.
+- [x] Record every reduction and elimination assumption.
+- [x] Emit `frozen_full_comparison.json` and report.
+- [x] Emit and validate the GRV4 result receipt.
+- [ ] Emit a separate GRV4 acceptance anchor only after human scientific review.
+- [x] Do not claim the full core continuation operator.
+
+### Iteration 5 Result
+
+```text
+input_execution_revision = e21ec2cd9f3dcfdacb2b707d707b6480ce856bf0
+receipt_payload_sha256 = 46420b14840bda5258d415463e7376bbc929557a907055b10f4d2fb23b4fc3fc
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+branches_audited = 48
+standalone_frozen_comparators = 48
+primary_full_map_comparisons = 32
+blocked_full_map_comparisons = 16
+primary_agreement_count = 32
+primary_bounded_difference_count = 0
+secondary_C_W_comparison_count = 29
+secondary_C_W_GRV3_block_count = 3
+verified_strong_disagreement_count = 0
+sign_audit_rows = 1536
+positive_functional_delta_rows = 288
+stationary_within_tolerance_rows = 1248
+negative_functional_delta_rows = 0
+runtime_sign = P_G_weakly_increases_and_negative_P_G_weakly_decreases
+GRV_C4 = candidate_pending_human_review
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+GRV4 supports a bounded agreement result rather than the stronger disagreement
+case. Across the 32 GRV3-admitted primary `C` comparisons, the maximum slow
+multiplier-set error is about `2.27e-11`, the maximum slow-subspace angle is
+about `2.59e-8` radians, and no stability classification changes. The
+secondary evolving-conductance diagnostic agrees on 29 rows; the same three
+`C-W` rows blocked by GRV3 remain diagnostic-only and are not rescued here.
+
+The sign audit separates the exact semidiscrete identity from finite explicit
+steps. Across both tangent signs, two amplitudes, and six timestep multipliers,
+the minimum computed functional change is about `-6.39e-15`, inside the frozen
+`1e-12` tolerance. Maximum staged-runtime equivalence error is about
+`1.78e-15`; the potential and flux identities agree to about `8.89e-16` and
+`2.23e-15`. The result therefore uses weak monotonicity, including stationary
+equality, and makes no strict-increase claim.
+
+The 16 exact-zero-current boundary rows still receive frozen structural
+comparators, but their full-map relation remains blocked by GRV3 coordinate
+admission. Agreement on the other rows does not make the analytical comparator
+native runtime state, eliminate `W`, identify a joint `C-W` mode, or establish
+the full core continuation operator.
 
 ## Iteration 6 - GRV5 Preparation, Persistence, And Matched-Probe Mediation
 

@@ -1,0 +1,59 @@
+{
+  "blocked_gates": [
+    "GRV5",
+    "GRV6",
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_bounded_full_recurrence_relation_pending_human_review",
+  "gate_id": "GRV4",
+  "grv4_summary": {
+    "branch_count": 48,
+    "continuation_supported": false,
+    "full_comparison_blocked_count": 16,
+    "grv_c4_candidate": true,
+    "maximum_flux_identity_linf": 2.2204458259632465e-15,
+    "maximum_functional_formula_error": 1.0658143601074992e-14,
+    "maximum_potential_identity_linf": 8.881784197001252e-16,
+    "maximum_runtime_stage_equivalence_linf": 1.7763568394002505e-15,
+    "mechanical_status": "passed",
+    "minimum_finite_step_P_delta": -6.394884004019703e-15,
+    "negative_functional_delta_row_count": 0,
+    "positive_functional_delta_row_count": 288,
+    "primary_agreement_count": 32,
+    "primary_bounded_difference_count": 0,
+    "primary_full_comparison_count": 32,
+    "readback_supported": false,
+    "retention_supported": false,
+    "runtime_sign_classification": "P_G_increases_and_negative_P_G_decreases_weakly_over_tested_discrete_sweep",
+    "sign_audit_row_count": 1536,
+    "standalone_frozen_comparator_count": 48,
+    "stationary_within_tolerance_row_count": 1248,
+    "strong_result_supported": false,
+    "symmetry_failed_orbit_count": 0,
+    "symmetry_orbit_count": 32,
+    "verified_strong_disagreement_count": 0,
+    "writeback_supported": false
+  },
+  "input_execution_revision": "e21ec2cd9f3dcfdacb2b707d707b6480ce856bf0",
+  "input_experiment_tree_sha256": "e9d630386928758639f80521825d778cddd0ba0e9060d4c12887882823183242",
+  "output_artifact_digests": {
+    "outputs/frozen_full_comparison.json": "0d47ffb17ed45147b719717f568a376ae489bee15cdbaade45dceb6ae3c4533b",
+    "outputs/protected_path_manifest_v4.json": "d65120c4e4b6bcbcb0b9139f56aa7a8d05a17afe6700e9617e23965a262b2fcd",
+    "reports/b1_grv4_frozen_conductance_full_recurrence.md": "65232ac5e5658d757d8d30944b40913415391169ae1fb0abe43b29a8bc06363a"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+      "gate_id": "GRV3",
+      "immutable_ref": "git:8b82df4f077cecf3af780165e71bfb42b6bf5575"
+    }
+  ],
+  "prerequisite_receipt_status": "awaiting_scientific_review",
+  "prerequisite_result_receipt_digests": [
+    "83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc"
+  ],
+  "receipt_payload_sha256": "46420b14840bda5258d415463e7376bbc929557a907055b10f4d2fb23b4fc3fc",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}

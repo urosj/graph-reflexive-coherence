@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv4_P4_method_frozen_pending_clean_execution
+status = grv4_mechanically_passed_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_GRV4_method_frozen_execution_pending
+verification_closeout_ceiling = GRV-C4_candidate_pending_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -225,6 +225,23 @@ the native timestep, and a preregistered timestep/amplitude sweep. Its staged
 path calls the existing potential, flux, and continuity implementations while
 holding `W` fixed, so it is a declared reduction rather than an alternative
 native `step()`.
+
+The clean GRV4 run from P4 revision `e21ec2c` passes mechanically. It emits 48
+standalone fixed-`W` comparators and the preregistered 32 primary full-map
+comparisons. All 32 agree in stability class, slow multiplier set, and slow
+subspace within the frozen thresholds; no strong disagreement is supported.
+The maximum primary slow-multiplier error is about `2.27e-11`, and the maximum
+primary slow-subspace angle is about `2.59e-8` radians. The secondary `C-W`
+diagnostic agrees on 29 rows and preserves the three GRV3 temporal blocks.
+
+The 1,536-row sign matrix has 288 positive and 1,248 stationary-within-tolerance
+functional changes, with no negative row beyond the `1e-12` tolerance. Its
+maximum staged-runtime equivalence error is about `1.78e-15`. This supports the
+weak sign classification only for the declared fixed-`W` reduction. Receipt
+`46420b14840bda5258d415463e7376bbc929557a907055b10f4d2fb23b4fc3fc`
+binds the result. `GRV-C4` remains a candidate pending scientific review; no
+continuation, retention, read-back, write-back, joint `C-W`, or `W`
+eliminability claim is opened.
 
 ## Central Question
 
