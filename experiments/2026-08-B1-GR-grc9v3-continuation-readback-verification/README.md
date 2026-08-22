@@ -226,7 +226,8 @@ path calls the existing potential, flux, and continuity implementations while
 holding `W` fixed, so it is a declared reduction rather than an alternative
 native `step()`.
 
-The clean GRV4 run from P4 revision `e21ec2c` passes mechanically. It emits 48
+The clean GRV4 run from P4 revision `e21ec2c` passed its original mechanical
+checks and emitted 48
 standalone fixed-`W` comparators and the preregistered 32 primary full-map
 comparisons. All 32 agree in stability class, slow multiplier set, and slow
 subspace within the frozen thresholds; no strong disagreement is supported.
@@ -239,7 +240,14 @@ functional changes, with no negative row beyond the `1e-12` tolerance. Its
 maximum staged-runtime equivalence error is about `1.78e-15`. This supports the
 weak sign classification only for the declared fixed-`W` reduction. Receipt
 `46420b14840bda5258d415463e7376bbc929557a907055b10f4d2fb23b4fc3fc`
-binds the result. `GRV-C4` remains a candidate pending scientific review; no
+binds that preliminary result. A subsequent thirty-point operator review found
+that its metric, cluster, uncertainty, restoring-sign, mode-mapping, mobility,
+and matrix-symmetry controls were not sufficient for acceptance. No GRV4
+acceptance anchor was created. P4.1 therefore preserves commit `1c18bda` as
+useful unaccepted evidence and requires a full clean rerun with `H_cont=-H_P`,
+`A_W H_cont` temporal rates, GRV3-metric embeddings, real invariant clusters,
+deadbeat exclusion, uncertainty-aware decisions, and matrix-level symmetry
+conjugacy. Until that result is reviewed, `GRV-C4` is not assigned; no
 continuation, retention, read-back, write-back, joint `C-W`, or `W`
 eliminability claim is opened.
 

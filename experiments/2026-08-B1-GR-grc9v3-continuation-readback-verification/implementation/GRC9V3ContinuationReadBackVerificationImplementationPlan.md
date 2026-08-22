@@ -674,6 +674,11 @@ runtime recurrence and determine where the two agree or diverge.
 
 ### Frozen P4 Execution Contract
 
+The first P4 execution at commit `1c18bda` is useful but unaccepted preliminary
+evidence. The thirty-point GRV4 review exposed operator, metric, clustering, and
+uncertainty assumptions that require a full P4.1 rerun. No GRV4 acceptance
+anchor exists, and P4.1 supersedes rather than edits that result in prose.
+
 P4 consumes the accepted bounded GRV3 result without selecting branches or
 coordinates after observing spectra. It constructs a standalone frozen-`W`
 comparator for all 48 accepted branches. The primary full-map relation is
@@ -684,20 +689,71 @@ GRV3 temporal-interpretation block.
 
 The sign audit freezes the graph functional, potential, mobility, and
 continuity identities before execution. It checks every canonical tangent
-direction in both signs at amplitudes `1e-3` and `1e-2`, over runtime timestep
+direction plus deduplicated structural-eigenvector and deterministic mixed
+directions in both signs at amplitudes `1e-3` and `1e-2`, over runtime timestep
 multipliers `0.125, 0.25, 0.5, 1, 2, 4`. The staged comparator calls the
 unchanged potential, flux, and continuity implementations while holding `W`
 fixed. Conductance reconstruction and semantic/topology stages are excluded by
 construction and recorded as reduction assumptions. Weak monotonicity includes
 stationary equality; it is not reported as strict increase.
 
-Frozen structural eigenvalues, semidiscrete rates, explicit-step multipliers,
-full-map multipliers, stability class, slow-subspace angle, and symmetry-orbit
-covariance use frozen thresholds and the same conserved tangent basis as GRV3.
+P4.1 defines `H_P` as the fixed-`W` second derivative of the runtime-compatible
+functional and `H_cont = -H_P` as the restoring-sign comparator. Structural
+curvature, the temporal relaxation operator `A_W H_cont`, and the explicit map
+`I - dt A_W H_cont` are reported separately. The self-adjoint representative
+`A_W^(1/2) H_cont A_W^(1/2)` supplies rates only after its modes and projectors
+are mapped back to physical `C` coordinates. The comparator is classified as
+`clamped_counterfactual_only`: algebraic elimination and fast slaving remain
+unverified.
+
+Frozen/full comparisons use the accepted GRV3 block metric, declared `C`
+embedding and projection, real invariant planes for complex pairs, clustered
+subspaces near degeneracy, explicit exclusion of deadbeat overwrite modes, and
+an uncertainty budget combining finite-difference, branch-residual, matrix,
+eigenvector-condition, and cluster terms. Symmetry is checked by matrix
+conjugacy, not spectrum equality alone. A full-map timestep sweep is not used as
+continuous-time numerical convergence because the conductance recurrence does
+not share a demonstrated timestep scaling with continuity.
+
 Agreement is a valid bounded result. A strong result requires a verified
 stability-class or slow-subspace disagreement, but absence of disagreement does
 not fail the gate. Neither outcome permits `W` elimination, a joint `C-W` mode,
 or a full core continuation operator claim.
+
+### P4.1 Thirty-Point Review Disposition
+
+| # | Disposition frozen before rerun |
+|---:|---|
+| 1 | Full comparison only on GRV3-admitted temporal maps; blocked branches remain explicit. |
+| 2 | `W` is clamped for the whole analytical comparator beat in structural and mobility uses; one `C` update is recorded. |
+| 3 | Every row is `clamped_counterfactual_only`; elimination/slaving are not inferred. |
+| 4 | Evaluate `F_clamp(C*)-C*`; failure blocks temporal stability but not structural calculation. |
+| 5 | Verify runtime potential, flux, functional directional derivative, and sign numerically. |
+| 6 | Probe canonical, structural, and mixed zero-sum directions in both signs and amplitudes. |
+| 7 | Separate semidiscrete, local discrete, and runtime-timestep signs; projection/clipping/boundary must remain absent. |
+| 8 | Frozen timestep sweep tests its discretization; no full-map continuous-time convergence claim is made. |
+| 9 | Reuse the exact GRV3 tangent; record `H_P`, `H_cont=-H_P`, and finite-difference/factor audit. |
+| 10 | Report structural spectrum, `A_W H_cont`, explicit multipliers, and the mobility/Hessian commutator separately. |
+| 11 | Map symmetrized modes/projectors back through `A_W^(1/2)` / `A_W^(-1/2)`. |
+| 12 | Record connectivity, `W` range/floor distance, reduced conditioning, and extra mobility nulls. |
+| 13 | State that clamping freezes geometry and mobility together; no separate attribution is allowed. |
+| 14 | Consume authoritative branch `base_conductance`, digest it, and verify duplicate port-edge consistency. |
+| 15 | Record the exact site backend and finite-difference `V''`; nonsmooth rows would block. |
+| 16 | Keep potential gauge outside the continuation spectrum. |
+| 17 | Declare `iota_C`, `pi_C`, outside-`C` fraction, and embedded-subspace invariance defect. |
+| 18 | Reuse the GRV3 block metric and report physical `C` projection separately. |
+| 19 | Compare complex pairs as real invariant planes. |
+| 20 | Compare near-degenerate modes as clustered subspaces/projectors. |
+| 21 | Count and exclude deadbeat overwrite modes from slow disagreement. |
+| 22 | Report structural, semidiscrete, and discrete-beat classifications separately. |
+| 23 | Require uncertainty-aware robust unit-circle and subspace disagreement. |
+| 24 | Verify matrix-level symmetry conjugacy for `H_cont`, mobility, frozen map, and admitted full `C` map. |
+| 25 | Retain the preregistered 48/32 branch scope without post-spectrum selection. |
+| 26 | Bind branch, parameters, ordering, tangent, metric, and timestep locally per row. |
+| 27 | Interpret robust disagreement only as conductance-recurrence dependence. |
+| 28 | Interpret agreement only as no detected load-bearing difference in the tested envelope. |
+| 29 | Keep the gate first-order local; finite-amplitude `J^2 -> W` effects remain open. |
+| 30 | Open no preparation, persistence, retention, mediation, read-back, or write-back claim. |
 
 ### Required outputs
 

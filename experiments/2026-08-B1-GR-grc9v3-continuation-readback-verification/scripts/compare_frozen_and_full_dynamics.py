@@ -28,6 +28,19 @@ from gate_receipts import (
     validate_acceptance_anchor,
     validate_receipt,
 )
+from grv4_hardening import (
+    build_probe_directions,
+    conjugacy_error,
+    finite_difference_potential_audit,
+    graph_connectivity,
+    metric_subspace_comparison,
+    positive_condition_number,
+    principal_angle,
+    real_invariant_basis,
+    relative_matrix_error,
+    robust_multiplier_rows,
+    structural_temporal_diagnostics,
+)
 from state_codec import BranchCoordinateChart
 
 SRC_ROOT = REPO_ROOT / "src"
@@ -141,7 +154,9 @@ def principal_subspace_angle(left: np.ndarray, right: np.ndarray) -> float | Non
     return float(math.acos(minimum))
 
 
-def frozen_components(model: GRC9V3) -> dict[str, Any]:
+def frozen_components(
+    model: GRC9V3, hardening_config: dict[str, Any] | None = None
+) -> dict[str, Any]:
     chart = BranchCoordinateChart.from_model(model, ("C",))
     state = model.get_state()
     node_index = {node_id: index for index, node_id in enumerate(chart.node_order)}
@@ -163,13 +178,22 @@ def frozen_components(model: GRC9V3) -> dict[str, Any]:
     mu = float(site.get("mu", 0.0))
     dt = float(params["dt"])
     laplacian = incidence @ np.diag(conductance) @ incidence.T
-    hessian = kappa * laplacian - 2.0 * scale * np.eye(len(chart.node_order))
+    h_p = kappa * laplacian - 2.0 * scale * np.eye(len(chart.node_order))
     mobility = eta * laplacian
     basis = chart.coherence_basis
-    hessian_tangent = basis.T @ hessian @ basis
+    h_p_tangent = basis.T @ h_p @ basis
     mobility_tangent = basis.T @ mobility @ basis
-    generator = mobility_tangent @ hessian_tangent
-    multiplier = np.eye(generator.shape[0]) + dt * generator
+    hardening = hardening_config or {
+        "mobility_eigenvalue_floor": 1e-12,
+        "structural_classification_tolerance": 1e-10,
+    }
+    structural = structural_temporal_diagnostics(
+        h_p_tangent=h_p_tangent,
+        mobility_tangent=mobility_tangent,
+        dt=dt,
+        eigenvalue_floor=float(hardening["mobility_eigenvalue_floor"]),
+        structural_tolerance=float(hardening["structural_classification_tolerance"]),
+    )
     coherence = np.asarray(
         [float(state.nodes[node_id].coherence) for node_id in chart.node_order],
         dtype=float,
@@ -183,13 +207,18 @@ def frozen_components(model: GRC9V3) -> dict[str, Any]:
         "incidence": incidence,
         "conductance": conductance,
         "laplacian": laplacian,
-        "hessian": hessian,
+        "hessian": h_p,
+        "h_p": h_p,
+        "h_cont": -h_p,
         "mobility": mobility,
         "basis": basis,
-        "hessian_tangent": hessian_tangent,
+        "hessian_tangent": h_p_tangent,
+        "h_p_tangent": h_p_tangent,
+        "h_cont_tangent": -h_p_tangent,
         "mobility_tangent": mobility_tangent,
-        "generator": generator,
-        "multiplier": multiplier,
+        "generator": np.asarray(structural["semidiscrete_generator"], dtype=float),
+        "multiplier": np.asarray(structural["explicit_step_multiplier"], dtype=float),
+        "structural_temporal_diagnostics": structural,
         "gradient": gradient,
         "branch_velocity": mobility @ gradient,
         "kappa": kappa,
@@ -237,12 +266,37 @@ def runtime_compatible_frozen_step(
         [float(result_state.nodes[node_id].coherence) for node_id in chart.node_order],
         dtype=float,
     )
-    return {"potential": potential, "flux": flux, "coherence": result}
+    return {
+        "potential": potential,
+        "flux": flux,
+        "coherence": result,
+        "minimum_input_coherence": float(np.min(coherence)),
+        "minimum_output_coherence": float(np.min(result)),
+        "positivity_preserved": bool(np.min(coherence) > 0.0 and np.min(result) > 0.0),
+        "budget_projection_stage_present": False,
+        "positivity_clipping_stage_present": False,
+        "boundary_stage_present": False,
+        "complete_C_continuity_update_count": 1,
+        "final_transport_refresh_present": False,
+    }
+
+
+def runtime_frozen_potential(
+    components: dict[str, Any], coherence: np.ndarray
+) -> np.ndarray:
+    chart: BranchCoordinateChart = components["chart"]
+    state = deepcopy(chart.base_state)
+    for node_id, value in zip(chart.node_order, coherence, strict=True):
+        state.nodes[node_id].coherence = float(value)
+    compute_potential(state, evolution=chart.params["evolution"])
+    return np.asarray(
+        [float(state.potential[node_id]) for node_id in chart.node_order], dtype=float
+    )
 
 
 def sign_audit_rows(
     branch_id: str, components: dict[str, Any], config: dict[str, Any]
-) -> tuple[list[dict[str, Any]], dict[str, float]]:
+) -> tuple[list[dict[str, Any]], dict[str, float], list[dict[str, Any]]]:
     rows = []
     maxima = {
         "runtime_stage_equivalence_linf": 0.0,
@@ -251,12 +305,16 @@ def sign_audit_rows(
         "functional_formula_error": 0.0,
     }
     base = components["coherence"]
-    basis = components["basis"]
+    directions = build_probe_directions(
+        components["basis"],
+        components["h_cont_tangent"],
+        dedup_tolerance=float(config["hardening"]["direction_dedup_tolerance"]),
+    )
     hessian = components["hessian"]
     mobility = components["mobility"]
     sign_config = config["sign_audit"]
-    for direction_index in range(basis.shape[1]):
-        direction = basis[:, direction_index]
+    for direction_row in directions:
+        direction = np.asarray(direction_row["node_direction"], dtype=float)
         for amplitude in sign_config["tangent_amplitudes"]:
             for direction_sign in (-1.0, 1.0):
                 coherence = base + direction_sign * float(amplitude) * direction
@@ -301,7 +359,9 @@ def sign_audit_rows(
                     rows.append(
                         {
                             "branch_id": branch_id,
-                            "direction_index": direction_index,
+                            "direction_id": direction_row["direction_id"],
+                            "direction_family": direction_row["direction_family"],
+                            "direction_source_index": direction_row["source_index"],
                             "direction_sign": int(direction_sign),
                             "amplitude": float(amplitude),
                             "dt_multiplier": float(dt_multiplier),
@@ -313,47 +373,93 @@ def sign_audit_rows(
                             "potential_identity_linf": potential_error,
                             "flux_identity_linf": flux_error,
                             "functional_formula_error": formula_error,
+                            "positivity_preserved": staged["positivity_preserved"],
+                            "budget_projection_stage_present": staged[
+                                "budget_projection_stage_present"
+                            ],
+                            "positivity_clipping_stage_present": staged[
+                                "positivity_clipping_stage_present"
+                            ],
+                            "boundary_stage_present": staged["boundary_stage_present"],
                         }
                     )
-    return rows, maxima
+    return rows, maxima, directions
 
 
 def compare_temporal_operator(
     frozen: np.ndarray,
-    full: np.ndarray,
+    full_audit: dict[str, Any],
     config: dict[str, Any],
     *,
-    embed_frozen_in_full: bool,
+    coordinate_name: str,
 ) -> dict[str, Any]:
+    full = np.asarray(full_audit["jacobian"], dtype=float)
     policy = config["full_map_comparison"]
-    frozen_class = multiplier_classification(
-        frozen,
-        unstable_slack=float(policy["unstable_multiplier_slack"]),
-        neutral_tolerance=float(policy["neutral_magnitude_tolerance"]),
+    temporal = full_audit["temporal_mode_diagnostics"]
+    finite_difference_uncertainty = max(
+        full_audit["finite_difference_convergence"][
+            "adjacent_matrix_relative_errors"
+        ],
+        default=0.0,
     )
-    full_class = multiplier_classification(
-        full,
-        unstable_slack=float(policy["unstable_multiplier_slack"]),
-        neutral_tolerance=float(policy["neutral_magnitude_tolerance"]),
+    branch_residual_over_h = max(
+        (row["branch_residual_over_h"] for row in full_audit["column_audits"]),
+        default=0.0,
     )
+    matrix_residual = max(
+        float(temporal.get("maximum_left_residual_l2", 0.0)),
+        float(temporal.get("maximum_right_residual_l2", 0.0)),
+    )
+    eigenvector_condition = float(temporal.get("eigenvector_condition_number", 1.0))
+    condition_uncertainty = eigenvector_condition * np.finfo(float).eps
+    cluster_uncertainty = float(
+        temporal["spectral_thresholds"]["eigenvalue_cluster_membership_tolerance"]
+    )
+    uncertainty = max(
+        float(policy["unit_circle_uncertainty_floor"]),
+        finite_difference_uncertainty,
+        branch_residual_over_h,
+        matrix_residual,
+        condition_uncertainty,
+        cluster_uncertainty,
+    )
+    frozen_class = robust_multiplier_rows(frozen, uncertainty=uncertainty)
+    full_class = robust_multiplier_rows(full, uncertainty=uncertainty)
     threshold = float(policy["slow_subspace_minimum_multiplier_magnitude"])
-    frozen_basis, frozen_values = _slow_subspace(frozen, threshold)
-    full_basis, full_values = _slow_subspace(full, threshold)
-    if embed_frozen_in_full:
-        embedded = np.zeros((full.shape[0], frozen_basis.shape[1]), dtype=complex)
-        embedded[: frozen.shape[0], :] = frozen_basis
-        frozen_basis = embedded
-    angle = principal_subspace_angle(frozen_basis, full_basis)
+    frozen_basis, frozen_clusters = real_invariant_basis(
+        frozen,
+        minimum_magnitude=threshold,
+        complex_tolerance=float(policy["complex_pair_tolerance"]),
+    )
+    block_scales = temporal["block_metric"]["branch_characteristic_scales"]
+    subspace = metric_subspace_comparison(
+        frozen_mode_basis=frozen_basis,
+        full_matrix=full,
+        c_dimension=frozen.shape[0],
+        block_scales=block_scales,
+        slow_minimum_magnitude=threshold,
+        complex_tolerance=float(policy["complex_pair_tolerance"]),
+        uncertainty=uncertainty,
+        deadbeat_tolerance=float(policy["deadbeat_multiplier_tolerance"]),
+    )
+    frozen_values = [value for value in np.linalg.eigvals(frozen) if abs(value) >= threshold]
+    full_values = [value for value in np.linalg.eigvals(full) if abs(value) >= threshold]
     value_error = eigenvalue_set_error(
         np.diag(np.asarray(frozen_values, dtype=complex)),
         np.diag(np.asarray(full_values, dtype=complex)),
     )
     stability_agrees = (
-        frozen_class["dominant_stability_class"]
-        == full_class["dominant_stability_class"]
+        frozen_class["aggregate_classification"]
+        == full_class["aggregate_classification"]
+    )
+    angle = subspace["metric_principal_angle_radians"]
+    dimension_agrees = (
+        subspace["frozen_embedded_subspace_dimension"]
+        == subspace["full_metric_slow_subspace_dimension"]
     )
     subspace_agrees = bool(
-        angle is not None
+        dimension_agrees
+        and angle is not None
         and angle <= float(policy["principal_subspace_angle_max_radians"])
     )
     eigenvalues_agree = bool(
@@ -361,26 +467,215 @@ def compare_temporal_operator(
         and value_error <= float(policy["eigenvalue_set_error_max"])
     )
     return {
+        "coordinate_name": coordinate_name,
+        "uncertainty_budget": {
+            "finite_difference_uncertainty": finite_difference_uncertainty,
+            "branch_residual_over_h": branch_residual_over_h,
+            "matrix_reconstruction_residual": matrix_residual,
+            "eigenvector_condition_estimate": eigenvector_condition,
+            "eigenvector_condition_uncertainty": condition_uncertainty,
+            "cluster_uncertainty": cluster_uncertainty,
+            "combined_unit_circle_uncertainty": uncertainty,
+        },
         "frozen_multiplier_classification": frozen_class,
         "full_multiplier_classification": full_class,
+        "frozen_real_invariant_clusters": frozen_clusters,
         "frozen_slow_multiplier_values": [_complex_record(v) for v in frozen_values],
         "full_slow_multiplier_values": [_complex_record(v) for v in full_values],
-        "slow_subspace_dimension_frozen": len(frozen_values),
-        "slow_subspace_dimension_full": len(full_values),
+        "slow_subspace_dimension_frozen": frozen_basis.shape[1],
+        "slow_subspace_dimension_full": subspace[
+            "full_metric_slow_subspace_dimension"
+        ],
         "slow_multiplier_set_error": value_error,
         "principal_subspace_angle_radians": angle,
+        "metric_and_embedding_audit": subspace,
         "stability_classification_agrees": stability_agrees,
         "slow_multiplier_values_agree": eigenvalues_agree,
         "slow_subspace_agrees": subspace_agrees,
         "verified_stability_or_slow_subspace_disagreement": bool(
-            not stability_agrees or (angle is not None and not subspace_agrees)
+            (
+                not stability_agrees
+                and "marginal_within_uncertainty"
+                not in {
+                    frozen_class["aggregate_classification"],
+                    full_class["aggregate_classification"],
+                }
+            )
+            or (dimension_agrees and angle is not None and not subspace_agrees)
         ),
+        "deadbeat_or_overwrite_modes_excluded": True,
+        "cluster_and_real_invariant_plane_policy_applied": True,
         "bounded_relation": (
             "agreement"
             if stability_agrees and eigenvalues_agree and subspace_agrees
             else "bounded_difference"
         ),
     }
+
+
+def frozen_branch_and_source_audit(
+    model: GRC9V3, components: dict[str, Any], config: dict[str, Any]
+) -> dict[str, Any]:
+    state = model.get_state()
+    hardening = config["hardening"]
+    staged = runtime_compatible_frozen_step(
+        components, components["coherence"], components["dt"]
+    )
+    residual = staged["coherence"] - components["coherence"]
+    base_w = [
+        float(state.base_conductance[edge_id]) for edge_id in components["edge_order"]
+    ]
+    duplicate_w = [
+        float(state.port_edges[edge_id].conductance)
+        for edge_id in components["edge_order"]
+    ]
+    connectivity = graph_connectivity(
+        components["incidence"],
+        components["conductance"],
+        conductance_floor=float(hardening["conductance_connectivity_floor"]),
+    )
+    laplacian_tangent = (
+        components["basis"].T @ components["laplacian"] @ components["basis"]
+    )
+    minimum_w = min(base_w, default=0.0)
+    w_floor = float(hardening["conductance_connectivity_floor"])
+    return {
+        "frozen_W_definition": {
+            "comparator": "F_clamp_C_Wstar",
+            "clamp_scope": "accepted_branch_W_held_fixed_in_structural_laplacian_and_transport_mobility_for_whole_comparator_beat",
+            "conductance_update_law": "omitted",
+            "W_dependence_on_perturbed_C": "omitted",
+            "W_dependence_on_perturbed_J": "omitted",
+            "C_continuity_update_count": 1,
+            "final_derived_transport_refresh": "not_present_and_not_a_second_C_update",
+            "runtime_step_monkey_patched": False,
+        },
+        "reduction_classification": "clamped_counterfactual_only",
+        "reduction_not_claimed": [
+            "algebraic_W_elimination",
+            "fast_slaving_W_elimination",
+            "full_joint_C_W_dynamics",
+        ],
+        "authoritative_W": {
+            "source": "GRC9V3State.base_conductance_from_accepted_GRV2_snapshot",
+            "taken_at": "accepted_branch_before_any_GRV4_perturbation",
+            "branch_W_semantic_sha256": semantic_digest(base_w),
+            "duplicate_surface": "port_edges[*].conductance",
+            "duplicate_surface_consistency_linf": _linf(base_w, duplicate_w),
+            "duplicate_surface_consistent": bool(
+                _linf(base_w, duplicate_w)
+                <= float(hardening["duplicate_W_consistency_linf_max"])
+            ),
+        },
+        "frozen_fixed_point": {
+            "map_residual_linf": float(np.linalg.norm(residual, ord=np.inf)),
+            "maximum_allowed": float(
+                config["frozen_comparator"]["branch_residual_linf_max"]
+            ),
+            "passed": bool(
+                np.linalg.norm(residual, ord=np.inf)
+                <= float(config["frozen_comparator"]["branch_residual_linf_max"])
+            ),
+            "failure_effect": "blocks_frozen_temporal_stability_but_preserves_structural_second_variation",
+        },
+        "mobility_and_connectivity": {
+            **connectivity,
+            "minimum_W": minimum_w,
+            "maximum_W": max(base_w, default=0.0),
+            "conductance_connectivity_floor": w_floor,
+            "distance_from_conductance_floor": minimum_w - w_floor,
+            "reduced_L_W_condition_number": positive_condition_number(
+                laplacian_tangent,
+                eigenvalue_floor=float(hardening["mobility_eigenvalue_floor"]),
+            ),
+            "A_W_condition_number": positive_condition_number(
+                components["mobility_tangent"],
+                eigenvalue_floor=float(hardening["mobility_eigenvalue_floor"]),
+            ),
+            "additional_mobility_null_directions": components[
+                "structural_temporal_diagnostics"
+            ]["additional_mobility_nullity"],
+        },
+        "runtime_shadow_envelope": {
+            "runtime_dt_only": True,
+            "full_recurrence_dt_sweep_performed": False,
+            "full_recurrence_dt_sweep_not_numerical_convergence_claim": True,
+            "positivity_preserved": staged["positivity_preserved"],
+            "budget_projection_stage_present": staged[
+                "budget_projection_stage_present"
+            ],
+            "positivity_clipping_stage_present": staged[
+                "positivity_clipping_stage_present"
+            ],
+            "boundary_stage_present": staged["boundary_stage_present"],
+        },
+    }
+
+
+def potential_and_site_audit(
+    components: dict[str, Any],
+    directions: list[dict[str, Any]],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    step = float(config["hardening"]["potential_finite_difference_step"])
+    audit = finite_difference_potential_audit(
+        coherence=components["coherence"],
+        basis=components["basis"],
+        analytic_h_p_tangent=components["h_p_tangent"],
+        potential=lambda coherence: runtime_frozen_potential(components, coherence),
+        functional=lambda coherence: functional_value(coherence, components),
+        directions=directions,
+        step=step,
+    )
+    site_second_derivative = 2.0 * components["scale"]
+    site_fd = []
+    for value in components["coherence"]:
+        derivative_plus = 2.0 * components["scale"] * (value + step) + components["mu"]
+        derivative_minus = 2.0 * components["scale"] * (value - step) + components["mu"]
+        site_fd.append((derivative_plus - derivative_minus) / (2.0 * step))
+    audit["site_potential"] = {
+        "backend": "quadratic",
+        "V_prime_formula": "2*scale*C+mu",
+        "V_second_formula": "2*scale",
+        "analytic_V_second": [
+            site_second_derivative for _ in components["coherence"]
+        ],
+        "finite_difference_V_second": [float(value) for value in site_fd],
+        "maximum_V_second_error": max(
+            (abs(value - site_second_derivative) for value in site_fd), default=0.0
+        ),
+        "twice_differentiable_in_probe_region": True,
+    }
+    audit["potential_gauge"] = {
+        "additive_potential_constant_is_transport_null": True,
+        "separate_potential_gauge_mode_introduced": False,
+        "continuation_spectrum_space": "conserved_C_tangent_only",
+    }
+    return audit
+
+
+def grv3_uncertainty_upper_bound(audit: dict[str, Any], config: dict[str, Any]) -> float:
+    temporal = audit["temporal_mode_diagnostics"]
+    return max(
+        float(config["full_map_comparison"]["unit_circle_uncertainty_floor"]),
+        max(
+            audit["finite_difference_convergence"][
+                "adjacent_matrix_relative_errors"
+            ],
+            default=0.0,
+        ),
+        max(
+            (row["branch_residual_over_h"] for row in audit["column_audits"]),
+            default=0.0,
+        ),
+        float(temporal.get("maximum_left_residual_l2", 0.0)),
+        float(temporal.get("maximum_right_residual_l2", 0.0)),
+        float(
+            temporal["spectral_thresholds"][
+                "eigenvalue_cluster_membership_tolerance"
+            ]
+        ),
+    )
 
 
 def validate_prerequisite() -> tuple[dict[str, Any], dict[str, Any]]:
@@ -426,48 +721,72 @@ def protected_manifest_v4() -> dict[str, Any]:
     )
 
 
-def _symmetry_audit(branch_rows: list[dict[str, Any]], tolerance: float) -> dict[str, Any]:
-    groups: dict[str, list[dict[str, Any]]] = {}
-    for row in branch_rows:
-        groups.setdefault(row["symmetry_orbit_id"], []).append(row)
-    rows = []
-    for orbit_id, members in sorted(groups.items()):
-        if len(members) == 1:
-            rows.append(
-                {
-                    "symmetry_orbit_id": orbit_id,
-                    "member_branch_ids": [members[0]["branch_id"]],
-                    "status": "not_applicable_singleton_orbit",
-                    "passed": True,
-                }
-            )
+def _symmetry_audit(
+    branch_rows: list[dict[str, Any]],
+    grv3_symmetry: dict[str, Any],
+    tolerance: float,
+) -> dict[str, Any]:
+    by_id = {row["branch_id"]: row for row in branch_rows}
+    pair_rows = []
+    for source_pair in grv3_symmetry["pair_rows"]:
+        if source_pair["coordinate_candidate"] != "C":
             continue
-        reference = np.asarray(members[0]["frozen_explicit_multiplier"], dtype=float)
-        comparisons = []
-        for member in members[1:]:
-            candidate = np.asarray(member["frozen_explicit_multiplier"], dtype=float)
-            error = eigenvalue_set_error(reference, candidate)
-            comparisons.append(
-                {
-                    "branch_id": member["branch_id"],
-                    "frozen_multiplier_spectrum_error": error,
-                    "passed": bool(error is not None and error <= tolerance),
-                }
+        source = by_id[source_pair["source_branch_id"]]
+        target = by_id[source_pair["target_branch_id"]]
+        transport = np.asarray(source_pair["coordinate_transport"], dtype=float)
+        errors = {
+            "H_cont_matrix_conjugacy_error": conjugacy_error(
+                np.asarray(source["H_cont_tangent"], dtype=float),
+                np.asarray(target["H_cont_tangent"], dtype=float),
+                transport,
+            ),
+            "mobility_matrix_conjugacy_error": conjugacy_error(
+                np.asarray(source["fixed_W_mobility"], dtype=float),
+                np.asarray(target["fixed_W_mobility"], dtype=float),
+                transport,
+            ),
+            "frozen_multiplier_matrix_conjugacy_error": conjugacy_error(
+                np.asarray(source["frozen_explicit_multiplier"], dtype=float),
+                np.asarray(target["frozen_explicit_multiplier"], dtype=float),
+                transport,
+            ),
+        }
+        source_primary = source["primary_C_full_recurrence_comparison"]
+        target_primary = target["primary_C_full_recurrence_comparison"]
+        if source_primary["status"] == "compared" and target_primary["status"] == "compared":
+            errors["full_C_matrix_conjugacy_error"] = conjugacy_error(
+                np.asarray(source_primary["full_transition_matrix"], dtype=float),
+                np.asarray(target_primary["full_transition_matrix"], dtype=float),
+                transport,
             )
-        rows.append(
+        else:
+            errors["full_C_matrix_conjugacy_error"] = None
+        numerical_errors = [value for value in errors.values() if value is not None]
+        passed = all(value <= tolerance for value in numerical_errors)
+        pair_rows.append(
             {
-                "symmetry_orbit_id": orbit_id,
-                "member_branch_ids": [member["branch_id"] for member in members],
-                "comparisons": comparisons,
-                "status": "passed" if all(row["passed"] for row in comparisons) else "failed",
-                "passed": all(row["passed"] for row in comparisons),
+                "symmetry_orbit_id": source_pair["orbit_id"],
+                "source_branch_id": source_pair["source_branch_id"],
+                "target_branch_id": source_pair["target_branch_id"],
+                "coordinate_transport": source_pair["coordinate_transport"],
+                "matrix_conjugacy_errors": errors,
+                "maximum_allowed": tolerance,
+                "passed": passed,
             }
         )
+    orbit_ids = {row["symmetry_orbit_id"] for row in branch_rows}
+    multirow_orbits = {row["symmetry_orbit_id"] for row in pair_rows}
     return {
-        "rows": rows,
-        "orbit_count": len(rows),
-        "multirow_orbit_count": sum(len(row["member_branch_ids"]) > 1 for row in rows),
-        "failed_orbit_count": sum(not row["passed"] for row in rows),
+        "mapping_rule": grv3_symmetry["mapping_rule"],
+        "audit_kind": "matrix_level_conjugacy_not_spectrum_only",
+        "pair_rows": pair_rows,
+        "orbit_count": len(orbit_ids),
+        "multirow_orbit_count": len(multirow_orbits),
+        "singleton_orbit_count": len(orbit_ids - multirow_orbits),
+        "failed_pair_count": sum(not row["passed"] for row in pair_rows),
+        "failed_orbit_count": len(
+            {row["symmetry_orbit_id"] for row in pair_rows if not row["passed"]}
+        ),
     }
 
 
@@ -576,6 +895,10 @@ def run_grv4() -> None:
         "potential_identity_linf": 0.0,
         "flux_identity_linf": 0.0,
         "functional_formula_error": 0.0,
+        "h_p_finite_difference_relative_error": 0.0,
+        "h_p_finite_difference_absolute_linf_error": 0.0,
+        "directional_functional_error": 0.0,
+        "site_V_second_error": 0.0,
     }
     policy = config["full_map_comparison"]
     for branch in branches:
@@ -583,29 +906,57 @@ def run_grv4() -> None:
         if sha256_file(snapshot_path) != branch["state_snapshot_sha256"]:
             raise ValueError(f"branch snapshot digest mismatch: {branch['branch_id']}")
         model = GRC9V3.load(str(snapshot_path))
-        components = frozen_components(model)
-        sign_rows, maxima = sign_audit_rows(branch["branch_id"], components, config)
+        components = frozen_components(model, config["hardening"])
+        sign_rows, maxima, directions = sign_audit_rows(
+            branch["branch_id"], components, config
+        )
+        source_audit = frozen_branch_and_source_audit(model, components, config)
+        potential_audit = potential_and_site_audit(components, directions, config)
+        maxima["h_p_finite_difference_relative_error"] = potential_audit[
+            "h_p_relative_error"
+        ]
+        maxima["h_p_finite_difference_absolute_linf_error"] = potential_audit[
+            "h_p_absolute_linf_error"
+        ]
+        maxima["directional_functional_error"] = potential_audit[
+            "maximum_directional_functional_error"
+        ]
+        maxima["site_V_second_error"] = potential_audit["site_potential"][
+            "maximum_V_second_error"
+        ]
         all_sign_rows.extend(sign_rows)
         for key in global_maxima:
             global_maxima[key] = max(global_maxima[key], maxima[key])
         grv3_row = grv3_by_id[branch["branch_id"]]
         full_audits = grv3_row["coordinate_stratum_and_jacobian_audits"]
         primary_audit = full_audits["C"]
-        if primary_audit["square_transition_jacobian_status"] == "admitted":
+        primary_temporal_allowed = "C" in grv3_row[
+            "convergence_and_nonnormal_admitted_temporal_coordinates"
+        ]
+        if (
+            primary_audit["square_transition_jacobian_status"] == "admitted"
+            and primary_temporal_allowed
+        ):
             primary = {
                 "status": "compared",
-                "GRV3_temporal_interpretation_allowed": "C"
-                in grv3_row["convergence_and_nonnormal_admitted_temporal_coordinates"],
+                "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
+                "GRV3_temporal_interpretation_allowed": True,
+                "full_transition_matrix": primary_audit["jacobian"],
                 **compare_temporal_operator(
                     components["multiplier"],
-                    np.asarray(primary_audit["jacobian"], dtype=float),
+                    primary_audit,
                     config,
-                    embed_frozen_in_full=False,
+                    coordinate_name="C",
                 ),
             }
         else:
             primary = {
                 "status": "blocked_by_GRV3_C_coordinate_admission",
+                "branch_admission_status": (
+                    "classical_jacobian_blocked"
+                    if primary_audit["square_transition_jacobian_status"] != "admitted"
+                    else "square_transition_accepted_temporal_interpretation_blocked"
+                ),
                 "blocked_reason": primary_audit["square_transition_jacobian_status"],
                 "GRV3_temporal_interpretation_allowed": False,
                 "verified_stability_or_slow_subspace_disagreement": False,
@@ -621,11 +972,12 @@ def run_grv4() -> None:
             secondary = {
                 "status": "compared_as_diagnostic_evolving_conductance_coordinate",
                 "GRV3_temporal_interpretation_allowed": True,
+                "full_transition_matrix": secondary_audit["jacobian"],
                 **compare_temporal_operator(
                     components["multiplier"],
-                    np.asarray(secondary_audit["jacobian"], dtype=float),
+                    secondary_audit,
                     config,
-                    embed_frozen_in_full=True,
+                    coordinate_name="C_W",
                 ),
                 "joint_C_W_mode_claim_allowed": False,
             }
@@ -645,7 +997,7 @@ def run_grv4() -> None:
                 "verified_stability_or_slow_subspace_disagreement": False,
                 "joint_C_W_mode_claim_allowed": False,
             }
-        structural_values = np.linalg.eigvalsh(components["hessian_tangent"])
+        structural_values = np.linalg.eigvalsh(components["h_cont_tangent"])
         branch_rows.append(
             {
                 "branch_id": branch["branch_id"],
@@ -659,11 +1011,15 @@ def run_grv4() -> None:
                 "coherence_basis": components["basis"].tolist(),
                 "fixed_conductance": components["conductance"].tolist(),
                 "graph_laplacian": components["laplacian"].tolist(),
-                "constrained_second_variation": components["hessian_tangent"].tolist(),
+                "H_P_tangent": components["h_p_tangent"].tolist(),
+                "H_cont_tangent": components["h_cont_tangent"].tolist(),
+                "constrained_second_variation": components["h_cont_tangent"].tolist(),
                 "fixed_W_mobility": components["mobility_tangent"].tolist(),
                 "semidiscrete_generator": components["generator"].tolist(),
                 "frozen_explicit_multiplier": components["multiplier"].tolist(),
-                "frozen_structural_eigenvalues": [float(value) for value in structural_values],
+                "frozen_restoring_structural_eigenvalues": [
+                    float(value) for value in structural_values
+                ],
                 "frozen_semidiscrete_rates": [
                     _complex_record(value)
                     for value in _ordered_eigenvalues(components["generator"])
@@ -671,30 +1027,42 @@ def run_grv4() -> None:
                 "frozen_branch_velocity_linf": float(
                     np.linalg.norm(components["branch_velocity"], ord=np.inf)
                 ),
-                "frozen_branch_residual_passed": bool(
-                    np.linalg.norm(components["branch_velocity"], ord=np.inf)
-                    <= float(config["frozen_comparator"]["branch_residual_linf_max"])
-                ),
+                "frozen_branch_map_residual": source_audit["frozen_fixed_point"],
+                "frozen_branch_residual_passed": source_audit["frozen_fixed_point"][
+                    "passed"
+                ],
+                "authoritative_W_and_reduction_audit": source_audit,
+                "potential_functional_and_site_audit": potential_audit,
+                "structural_temporal_separation": components[
+                    "structural_temporal_diagnostics"
+                ],
+                "probe_direction_registry": directions,
                 "sign_audit_row_count": len(sign_rows),
                 "sign_audit_maxima": maxima,
                 "primary_C_full_recurrence_comparison": primary,
                 "secondary_C_W_full_recurrence_comparison": secondary,
                 "reduction_and_elimination_assumptions": {
                     "fixed_topology": "satisfied_on_GRV2_branch",
-                    "fixed_W": "experiment_local_counterfactual_reduction",
+                    "fixed_W": "experiment_local_whole_beat_counterfactual_clamp",
                     "quadratic_site_potential": "satisfied",
                     "conserved_zero_sum_C_tangent": "same_basis_as_GRV3",
                     "identity_spark_choice_growth_boundary_budget_stages": "excluded_from_frozen_comparator",
                     "full_runtime_recurrence_source": "unchanged_GRV3_complete_step_matrix",
-                    "W_elimination": "not_claimed",
+                    "W_elimination": "not_verified_and_not_claimed",
+                    "fast_slaving": "not_verified_and_not_claimed",
                     "joint_C_W_mode": "not_claimed"
                 },
                 "frozen_operator_class": "substrate_reduced",
+                "frozen_comparator_reduction_classification": "clamped_counterfactual_only",
+                "first_order_local_gate_only": True,
+                "J_squared_nonlinear_conductance_effects_remain_open": True,
                 "full_core_continuation_operator_claim_allowed": False,
             }
         )
     symmetry = _symmetry_audit(
-        branch_rows, float(policy["symmetry_spectrum_error_max"])
+        branch_rows,
+        grv3["symmetry_covariance_audit"],
+        float(policy["symmetry_matrix_conjugacy_error_max"]),
     )
     sign_tolerance = float(config["sign_audit"]["functional_delta_tolerance"])
     minimum_delta = min(
@@ -733,10 +1101,55 @@ def run_grv4() -> None:
         and global_maxima["functional_formula_error"]
         <= float(config["sign_audit"]["functional_formula_consistency_max"])
     )
+    hardening = config["hardening"]
+    hessian_fd_pass = all(
+        (
+            row["potential_functional_and_site_audit"]["h_p_relative_error"]
+            <= float(hardening["h_p_finite_difference_relative_error_max"])
+        )
+        or (
+            np.linalg.norm(np.asarray(row["H_P_tangent"], dtype=float), ord=np.inf)
+            <= float(hardening["h_p_near_zero_norm_threshold"])
+            and row["potential_functional_and_site_audit"][
+                "h_p_absolute_linf_error"
+            ]
+            <= float(hardening["h_p_finite_difference_absolute_linf_error_max"])
+        )
+        for row in branch_rows
+    )
+    derivative_audit_pass = bool(
+        hessian_fd_pass
+        and global_maxima["directional_functional_error"]
+        <= float(hardening["directional_functional_error_max"])
+        and global_maxima["site_V_second_error"]
+        <= float(hardening["site_V_second_error_max"])
+    )
+    clamp_and_mobility_pass = all(
+        row["frozen_comparator_reduction_classification"]
+        == "clamped_counterfactual_only"
+        and row["authoritative_W_and_reduction_audit"]["authoritative_W"][
+            "duplicate_surface_consistent"
+        ]
+        and row["authoritative_W_and_reduction_audit"]["mobility_and_connectivity"][
+            "connected"
+        ]
+        and row["structural_temporal_separation"]["mobility_positive_definite"]
+        for row in branch_rows
+    )
+    projection_noop_pass = all(
+        row["positivity_preserved"]
+        and not row["budget_projection_stage_present"]
+        and not row["positivity_clipping_stage_present"]
+        and not row["boundary_stage_present"]
+        for row in all_sign_rows
+    )
     primary_count = len(primary_rows)
     blocked_count = len(branch_rows) - primary_count
     mechanical_pass = bool(
         source_stage_pass
+        and derivative_audit_pass
+        and clamp_and_mobility_pass
+        and projection_noop_pass
         and negative_delta_count == 0
         and all(row["frozen_branch_residual_passed"] for row in branch_rows)
         and primary_count == int(scope["expected_primary_full_comparison_count"])
@@ -766,6 +1179,19 @@ def run_grv4() -> None:
         "maximum_potential_identity_linf": global_maxima["potential_identity_linf"],
         "maximum_flux_identity_linf": global_maxima["flux_identity_linf"],
         "maximum_functional_formula_error": global_maxima["functional_formula_error"],
+        "maximum_H_P_finite_difference_relative_error": global_maxima[
+            "h_p_finite_difference_relative_error"
+        ],
+        "maximum_H_P_finite_difference_absolute_linf_error": global_maxima[
+            "h_p_finite_difference_absolute_linf_error"
+        ],
+        "maximum_directional_functional_error": global_maxima[
+            "directional_functional_error"
+        ],
+        "maximum_site_V_second_error": global_maxima["site_V_second_error"],
+        "derivative_audit_passed": derivative_audit_pass,
+        "clamp_and_mobility_audit_passed": clamp_and_mobility_pass,
+        "projection_clipping_boundary_noop_audit_passed": projection_noop_pass,
         "symmetry_orbit_count": symmetry["orbit_count"],
         "symmetry_failed_orbit_count": symmetry["failed_orbit_count"],
         "grv_c4_candidate": mechanical_pass,
@@ -773,6 +1199,8 @@ def run_grv4() -> None:
         "retention_supported": False,
         "readback_supported": False,
         "writeback_supported": False,
+        "grv4_result_scope": "first_order_local_clamped_W_counterfactual_relation_only",
+        "nonlinear_J_squared_conductance_effects_resolved": False,
     }
     if not mechanical_pass:
         raise ValueError(f"GRV4 mechanical gates failed: {summary}")

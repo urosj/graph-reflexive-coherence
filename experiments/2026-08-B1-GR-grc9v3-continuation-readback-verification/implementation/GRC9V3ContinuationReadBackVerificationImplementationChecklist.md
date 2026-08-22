@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv4_mechanically_passed_awaiting_human_review
+status = grv4_preliminary_result_unaccepted_P4_1_hardening_pending_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV4_scientific_review
+current_gate = GRV4_P4_1_hardening_method_pending_clean_execution
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C4_candidate_pending_acceptance
+verification_closeout_ceiling = GRV-C3_until_P4_1_review
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -664,8 +664,17 @@ sign_probe_amplitudes = [0.001, 0.01]
 runtime_dt_multipliers = [0.125, 0.25, 0.5, 1.0, 2.0, 4.0]
 weak_monotonicity_includes_stationary_equality = true
 post_spectrum_branch_or_coordinate_selection = false
-frozen_operator_class = substrate_reduced
+frozen_operator_class = substrate_reduced_clamped_counterfactual_only
+H_P = runtime_functional_second_variation
+H_cont = -H_P
+temporal_operator = A_W_H_cont_not_H_cont_alone
+state_metric = accepted_GRV3_branch_metric
+mode_matching = clustered_real_invariant_subspaces
+unit_circle_decisions = uncertainty_aware
+symmetry_check = matrix_conjugacy
 W_elimination_claim = blocked
+fast_slaving_claim = blocked
+geometry_only_or_mobility_only_attribution = blocked
 joint_C_W_mode_claim = blocked
 full_core_continuation_operator_claim = blocked
 ```
@@ -693,13 +702,15 @@ rerun or reinterpret blocked GRV3 derivatives.
 - [ ] Emit a separate GRV4 acceptance anchor only after human scientific review.
 - [x] Do not claim the full core continuation operator.
 
-### Iteration 5 Result
+### Preliminary P4 Result Superseded Before Acceptance
 
 ```text
 input_execution_revision = e21ec2cd9f3dcfdacb2b707d707b6480ce856bf0
 receipt_payload_sha256 = 46420b14840bda5258d415463e7376bbc929557a907055b10f4d2fb23b4fc3fc
 mechanical_status = passed
 scientific_acceptance = awaiting_human_review
+review_disposition = unaccepted_preliminary_evidence_superseded_by_P4_1
+acceptance_anchor_exists = false
 branches_audited = 48
 standalone_frozen_comparators = 48
 primary_full_map_comparisons = 32
@@ -741,6 +752,29 @@ comparators, but their full-map relation remains blocked by GRV3 coordinate
 admission. Agreement on the other rows does not make the analytical comparator
 native runtime state, eliminate `W`, identify a joint `C-W` mode, or establish
 the full core continuation operator.
+
+### P4.1 Thirty-Point Hardening
+
+- [x] Preserve the P4 result at commit `1c18bda` as preliminary evidence.
+- [x] Keep GRV4 unaccepted and create no acceptance anchor.
+- [x] Freeze whole-beat clamped-`W` semantics separately from elimination and slaving.
+- [x] Freeze `H_P`, restoring `H_cont = -H_P`, `A_W H_cont`, and explicit-map roles.
+- [x] Add runtime-potential directional derivatives and finite-difference Hessian/site checks.
+- [x] Add canonical, structural, and deterministic mixed directions.
+- [x] Add exact frozen-map branch residual and projection/clipping/boundary no-op checks.
+- [x] Add conductance authority, duplicate consistency, connectivity, floor, nullity, and conditioning records.
+- [x] Add the self-adjoint representative and physical mode/projector mapping rules.
+- [x] Reuse the GRV3 state metric with explicit embedding/projection diagnostics.
+- [x] Compare complex pairs and near-degenerate modes as real invariant subspaces.
+- [x] Exclude deadbeat overwrite modes from slow-subspace disagreement.
+- [x] Add finite-difference, residual, conditioning, cluster, and unit-circle uncertainty records.
+- [x] Replace spectrum-only symmetry checks with matrix-level conjugacy checks.
+- [x] Preserve first-order-local, nonlinear-`J^2`, and no-retention boundaries.
+- [ ] Commit the complete P4.1 method revision.
+- [ ] Execute P4.1 from that clean committed revision.
+- [ ] Verify all mechanical controls and inspect every branch-level classification.
+- [ ] Emit a superseding GRV4 result receipt pending human scientific review.
+- [ ] Emit a GRV4 acceptance anchor only after that review.
 
 ## Iteration 6 - GRV5 Preparation, Persistence, And Matched-Probe Mediation
 

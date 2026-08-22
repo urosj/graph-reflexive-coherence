@@ -1,6 +1,6 @@
 {
-  "schema_version": "b1_grv4_p4_package_manifest_v1",
-  "package_status": "clean_P4_GRV4_method_when_contained_in_committed_revision",
+  "schema_version": "b1_grv4_p4_package_manifest_v2_p4_1",
+  "package_status": "P4_1_hardening_method_pending_clean_committed_execution",
   "gate_id": "GRV4",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -10,7 +10,7 @@
     "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
     "acceptance_anchor_commit": "8b82df4f077cecf3af780165e71bfb42b6bf5575"
   },
-  "gate_input_change_class": "gate_local_implementation_of_sealed_GRV4_method",
+  "gate_input_change_class": "preacceptance_GRV4_method_hardening_after_thirty_point_review",
   "protocol_readmission_required": false,
   "protected_boundaries": {
     "runtime_change_authorized": false,
@@ -23,12 +23,19 @@
   },
   "executable_surfaces": [
     "scripts/compare_frozen_and_full_dynamics.py",
+    "scripts/grv4_hardening.py",
     "scripts/run_all.py",
     "tests/test_grv4_frozen_full.py"
   ],
   "execution_contract": "configs/grv4_frozen_full_comparison.json",
   "branch_scope": "all_48_certified_rows_with_32_predeclared_GRV3_C_full_map_comparisons",
-  "comparison_policy": "no_branch_or_coordinate_selection_after_spectra",
+  "comparison_policy": "no_branch_or_coordinate_selection_after_spectra_with_metric_cluster_uncertainty_and_matrix_symmetry_controls",
+  "preliminary_evidence": {
+    "result_commit": "1c18bda2e72263ff15ba9cf42d171009cebce49e",
+    "status": "useful_unaccepted_preliminary_evidence",
+    "supersession_rule": "P4_1_requires_full_rerun_and_new_receipt_before_GRV4_can_be_reviewed",
+    "GRV4_acceptance_anchor_exists": false
+  },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV4",
   "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_bounded_relation_to_admitted_full_recurrence"
 }
