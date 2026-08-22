@@ -919,49 +919,51 @@ This is a revision-distinct confirmatory audit after P5.1/P5.2. It may block or
 demote the result, but cannot upgrade the existing rung. The final
 machine-readable dispositions live in `outputs/grv5_36_point_review_audit.json`.
 
-- [ ] 01. Freeze carrier hypotheses without retrospective rung promotion.
-- [ ] 02. Preserve separate GRV3-admitted and GRV3-blocked claim ceilings.
-- [ ] 03. Record preparation boundaries and exact `k=0`/`k=1` semantics.
-- [ ] 04. Measure endogenous activity and classify the persistence path.
-- [ ] 05. Keep direct experiment-authored `W` below write-back.
-- [ ] 06. Separate synthetic old-current input from reached current history.
-- [ ] 07. Stage direct `J^2 -> W` and indirect `J -> C -> W` effects.
-- [ ] 08. Compare `+J/-J` immediately and after the standardized full step.
-- [ ] 09. Run the fixed confirmatory preparation-amplitude ladder.
-- [ ] 10. Audit direct-`W` metric symmetry, positivity, and surfaces.
-- [ ] 11. Record carrier vectors, correlation, projection, and leakage.
-- [ ] 12. Keep the original branch fixed through all horizons.
-- [ ] 13. Separate growing displacement from stable retention.
-- [ ] 14. Use only accepted slow subspaces and allow no interpreted projection.
-- [ ] 15. Preserve transient/deadbeat mediation as its own class.
-- [ ] 16. Use fresh unprobed clones for horizons and `2x2` cells.
-- [ ] 17. Audit full admitted non-carrier and categorical matching.
-- [ ] 18. Prove matching preserves authoritative `W`.
-- [ ] 19. Keep `W`-only nulls from rejecting joint/transferred carriers.
-- [ ] 20. Keep full-step, immediate-stage, and frozen-`W` lanes separate.
-- [ ] 21. Preserve the preregistered present-current convention.
-- [ ] 22. Record the full carrier-by-probe `2x2` cells.
-- [ ] 23. Compute the oriented interaction vector before norms.
-- [ ] 24. Keep zero-probe baseline transport separate from read effect.
-- [ ] 25. Record carrier state before and after each probe readout.
-- [ ] 26. Record signed fits plus odd/even decomposition.
-- [ ] 27. Run wrong-location controls where a multi-edge route exists.
-- [ ] 28. Record graded reset/swap/equal/shuffle mediation.
-- [ ] 29. Verify authoritative and duplicate conductance surfaces.
-- [ ] 30. Separate instantaneous write from retained write.
-- [ ] 31. Require one linked chain before loop closure.
-- [ ] 32. Freeze separate response/later-write clone policy.
-- [ ] 33. Record detection floors and frozen-`W` positive sensitivity.
-- [ ] 34. Report all frozen horizons without post-hoc selection.
-- [ ] 35. Fail closed on event, topology, stratum, budget, RNG, or positivity debt.
-- [ ] 36. Keep core Read-Back below its independent directional gate.
+- [x] 01. Freeze carrier hypotheses without retrospective rung promotion.
+- [x] 02. Preserve separate GRV3-admitted and GRV3-blocked claim ceilings.
+- [x] 03. Record preparation boundaries and exact `k=0`/`k=1` semantics.
+- [x] 04. Measure endogenous activity and classify the persistence path.
+- [x] 05. Keep direct experiment-authored `W` below write-back.
+- [x] 06. Separate synthetic old-current input from reached current history.
+- [x] 07. Stage direct `J^2 -> W` and indirect `J -> C -> W` effects.
+- [x] 08. Compare `+J/-J` immediately and after the standardized full step.
+- [x] 09. Run the fixed confirmatory preparation-amplitude ladder.
+- [x] 10. Audit direct-`W` metric symmetry, positivity, and surfaces.
+- [x] 11. Record carrier vectors, correlation, projection, and leakage.
+- [x] 12. Keep the original branch fixed through all horizons.
+- [x] 13. Separate growing displacement from stable retention.
+- [x] 14. Use only accepted slow subspaces and allow no interpreted projection.
+- [x] 15. Preserve transient/deadbeat mediation as its own class.
+- [x] 16. Use fresh unprobed clones for horizons and `2x2` cells.
+- [x] 17. Audit full admitted non-carrier and categorical matching.
+- [x] 18. Prove matching preserves authoritative `W`.
+- [x] 19. Keep `W`-only nulls from rejecting joint/transferred carriers.
+- [x] 20. Keep full-step, immediate-stage, and frozen-`W` lanes separate.
+- [x] 21. Preserve the preregistered present-current convention.
+- [x] 22. Record the full carrier-by-probe `2x2` cells.
+- [x] 23. Compute the oriented interaction vector before norms.
+- [x] 24. Keep zero-probe baseline transport separate from read effect.
+- [x] 25. Record carrier state before and after each probe readout.
+- [x] 26. Record signed fits plus odd/even decomposition.
+- [x] 27. Run wrong-location controls where a multi-edge route exists.
+- [x] 28. Record graded reset/swap/equal/shuffle mediation.
+- [x] 29. Verify authoritative and duplicate conductance surfaces.
+- [x] 30. Separate instantaneous write from retained write.
+- [x] 31. Require one linked chain before loop closure.
+- [x] 32. Freeze separate response/later-write clone policy.
+- [x] 33. Record detection floors and frozen-`W` positive sensitivity.
+- [x] 34. Report all frozen horizons without post-hoc selection.
+- [x] 35. Fail closed on event, topology, stratum, budget, RNG, or positivity debt.
+- [x] 36. Keep core Read-Back below its independent directional gate.
 
 Result:
 
 ```text
-input_execution_revision = 319b523fcc5be379f3b80afd38251e62b07e4764
+input_execution_revision = c2cc6668a2e4b8e8d3c8a08f82c4a8d0eb563203
 mechanical_status = passed
 scientific_acceptance = awaiting_human_review
+P5_3_review_points_mechanically_accounted_for = 36/36
+P5_3_hardening_changed_primary_rung = false
 branch_count = 48
 preparation_candidate_row_count = 144
 GRR0_row_count = 64
@@ -980,6 +982,19 @@ GRV_C5_candidate_pending_human_review = true
 native_readback_supported = false
 writeback_supported = false
 closed_loop_supported = false
+matching_failure_count = 0
+authoritative_W_reset_equal_swap_maximum_error = 0.0
+authoritative_W_surface_inconsistency_count = 0
+multi_edge_wrong_location_control_count = 224
+current_sign_stratum_blocked_horizon_row_count = 224
+event_failure_count = 0
+topology_failure_count = 0
+budget_failure_count = 0
+preparation_amplitude_ladder_row_count = 192
+maximum_sign_even_W_error = 0.0
+maximum_per_edge_response_shape_error = 1.0495077029659683e-16
+maximum_direct_W_metric_symmetry_error = 1.9081958235744878e-16
+minimum_direct_prepared_W = 0.9899999999901
 protected_path_manifest_unchanged = true
 ```
 
@@ -988,7 +1003,10 @@ The 48 exact first-transport-stage rows show a sign-even `J^2 -> W` write and
 reach `GRR1`, but the conductance separation is overwritten by the next full
 step. The forming old-current value is a synthetic experiment input, not a
 runtime-reached native history; its magnitude follows from the frozen
-`gamma = 1e-12` and the preregistered `0.01` attenuation exponent.
+`gamma = 1e-12` and the preregistered `0.01` global amplitude-squared
+attenuation coordinate. On a multi-edge carrier, each edge receives that
+coordinate multiplied by its squared canonical carrier-direction component;
+the intervention is not a uniform `0.01` edgewise attenuation.
 
 On the 32 nonuniform F2/F3 branches, the transient stage-local write leaves a
 complete-step reached, coherence-dominated joint-state displacement. That
@@ -998,10 +1016,17 @@ state persistence. The 16 homogeneous F1 branches produce no such complete-
 step displacement and remain `GRR0` in this lane.
 
 No candidate occupies an accepted isolated slow cluster, so `GRR3` is blocked.
+The 32 `GRR2` rows are neutral/marginal, coherence-dominated transferred
+joint-state persistence candidates after `W` is overwritten; they are not
+stable conductance-retention rows. All 224 horizon rows that cross a current-
+sign categorical stratum belong to the stage-local `P-J` preparation and are
+retained as blocked `GRR1` evidence rather than being treated as persistence.
 All native full-step and immediate-stage carrier-by-probe interactions remain
 unresolved. The 192 resolved interactions occur only in frozen-`W` reduced
 comparators; reset, equal-carrier, swap, zero-probe, replay, event, and topology
-controls all pass. Thus the causal matrix closes as 32
+controls all pass. Reset, equalization, and swap modify the authoritative `W`
+surface with maximum recorded intervention error `0.0`; all duplicate
+conductance surfaces agree. Thus the causal matrix closes as 32
 `retention_without_read`, 48 `write_before_read`, and 64 ordinary/authored
 carrier rows. It does not establish core Read-Back, orientation retention,
 write-back, memory, learning, or a closed read/write loop.
@@ -1009,18 +1034,68 @@ write-back, memory, learning, or a closed read/write loop.
 Verification:
 
 ```text
-B1_GR_tests = 68_passed
+B1_GR_tests = 72_passed
 ruff = passed
 required_replay_rows = 432_passed
 canonical_intervention_records = 192_complete
-candidate_rows_payload_sha256 = 97f1fa6c65554f1fcdde85083654c6643730bb0051a64f9312c9a0f655baa71a
-P5_1_to_P5_2_candidate_rows_unchanged = true
-conductance_retention_payload_sha256 = 494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a
-causal_role_matrix_payload_sha256 = 0d09aae9ff0899c1801a304c6f15d54cefce08645f5e9f34ff209e34e7c34340
-intervention_registry_payload_sha256 = 2b1bc150d8246279524bfa31df2164b11e131c37a0d038fe0390e6bc1ef5530b
+P5_2_complete_candidate_schema_projection_sha256 = 27f560a221898401d59b80a046334d9e20ee95a9edbc39348eaabbfd76745f94
+P5_3_complete_candidate_schema_projection_sha256 = 27f560a221898401d59b80a046334d9e20ee95a9edbc39348eaabbfd76745f94
+P5_3_primary_numerical_projection_sha256 = d75de825ff29f6d9708fe2f13e03f270b96f90119ec0f643c5bb2d9631c5eccd
+conductance_retention_payload_sha256 = 1edb81949ad2094f29f321ed6037a562ecebe3411644d97f5a739a8383cfcaa3
+causal_role_matrix_payload_sha256 = 7c7196db7be1d6a6a76ad057719d8a0151d7332d1e0a5873b453743f7d7963d1
+intervention_registry_payload_sha256 = 2909c5432989d45ac11aca052bc6b0338ddf48f3402387996a2f0c24cd54d57a
+review_audit_payload_sha256 = 4dda2cd40d2e57b597387cfa38519f8853506dadb1f7599455496f7477ad624a
 protected_manifest_payload_sha256 = 8374740696b6572effd66326cb72f8e24a95e367debef27c94e5e0b438fa692f
-result_receipt_payload_sha256 = 5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a
+result_receipt_payload_sha256 = 941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f
 src_files_changed_by_GRV5 = 0
+```
+
+### P5.4 Acceptance Clarification
+
+The P5.3 acceptance review retained `GRR2` but identified three boundaries that
+must be explicit in every machine and report surface before acceptance. This is
+a non-upgrading clarification; branch scope, thresholds, numerical methods,
+and rung assignments remain frozen.
+
+- [x] Quantify each `GRR2` displacement against the admitted GRV3 zero-sum `C`
+  basis and its source branch.
+- [x] Record that GRV3 did not separately identify a branch tangent.
+- [x] Keep branch relocation as an unresolved rival and block transverse
+  branch-relative retention wording.
+- [x] Separate the native stage-local `W` write from the later `C` consequence.
+- [x] Record that no stage-matched `W`-only mediation control was run and that
+  specific transient-`W` mediation is not established.
+- [x] Distinguish an unchanged-runtime successor of a synthetic intervention
+  from a state reachable from an accepted branch by unchanged runtime alone.
+- [x] Prohibit unqualified `runtime-reached` shorthand for that successor.
+- [x] Verify that the P5.3 review audit source digest binds the current source
+  result rather than only a predecessor.
+- [x] Freeze future acceptance-anchor provenance across the original P5.2
+  result/receipt and the superseding P5.4 result/audit/receipt.
+- [ ] Execute P5.4 from a clean committed method revision.
+- [ ] Confirm all 36 hardened review points still pass.
+- [ ] Confirm the primary numerical projection and maximum rung are unchanged.
+- [ ] Record the P5.4 payload and receipt identities below.
+
+Pre-execution disposition:
+
+```text
+P5_4_status = method_frozen_pending_clean_committed_execution
+P5_4_may_upgrade_or_reclassify_GRR2 = false
+branch_scope_changed = false
+thresholds_changed = false
+numerical_method_changed = false
+GRR2_allowed_wording = bounded_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved
+transverse_branch_relative_retention_supported = false
+later_C_mediation_specifically_by_transient_W_supported = false
+complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone = false
+runtime_reached_shorthand_allowed = false
+P5_2_result_payload_sha256 = 494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a
+P5_2_receipt_payload_sha256 = 5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a
+P5_3_result_payload_sha256 = 1edb81949ad2094f29f321ed6037a562ecebe3411644d97f5a739a8383cfcaa3
+P5_3_review_audit_payload_sha256 = 4dda2cd40d2e57b597387cfa38519f8853506dadb1f7599455496f7477ad624a
+P5_3_receipt_payload_sha256 = 941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f
+scientific_acceptance = awaiting_clean_P5_4_execution_and_human_review
 ```
 
 ## Iteration 7 - GRV6 Current Recurrence And Return Orbits

@@ -927,6 +927,142 @@ def classify_persistence(
     }
 
 
+def branch_relocation_audit(
+    baseline: GRC9V3,
+    horizon_rows: list[dict[str, Any]],
+    grv3_row: dict[str, Any],
+    *,
+    required_horizon: int,
+    tolerance: float,
+) -> dict[str, Any]:
+    """Separate neutral-coordinate persistence from transverse retention."""
+    reduction = grv3_row["candidate_reduction_audits"].get("C", {})
+    c_audit = grv3_row["coordinate_stratum_and_jacobian_audits"].get("C", {})
+    basis_rows = reduction.get("coherence_basis", [])
+    if not basis_rows or c_audit.get("square_transition_jacobian_status") != "admitted":
+        return {
+            "status": "not_admitted_GRV3_C_coordinate",
+            "branch_relocation_rival_status": "not_assessed",
+            "transverse_branch_relative_retention_supported": False,
+        }
+
+    basis = np.asarray(basis_rows, dtype=float)
+    source_c = coherence_vector(baseline)
+    initial = horizon_rows[0]
+    required = next(
+        row
+        for row in horizon_rows
+        if row["horizon_complete_steps"] == required_horizon
+    )
+
+    def source_offset(state: dict[str, Any]) -> dict[str, Any]:
+        delta = np.asarray(state["C"], dtype=float) - source_c
+        projected = basis @ (basis.T @ delta)
+        residual = delta - projected
+        return {
+            "source_branch_C_offset_l2": float(np.linalg.norm(delta)),
+            "admitted_C_coordinate": (basis.T @ delta).tolist(),
+            "admitted_C_projection_residual_l2": float(np.linalg.norm(residual)),
+            "budget_delta_from_source": float(np.sum(delta)),
+        }
+
+    def horizon_drift(member: str) -> float:
+        return float(
+            np.linalg.norm(
+                np.asarray(required[member]["C"], dtype=float)
+                - np.asarray(initial[member]["C"], dtype=float)
+            )
+        )
+
+    offsets = {
+        "state_a_at_k0": source_offset(initial["state_a"]),
+        "state_b_at_k0": source_offset(initial["state_b"]),
+        "state_a_at_required_horizon": source_offset(required["state_a"]),
+        "state_b_at_required_horizon": source_offset(required["state_b"]),
+    }
+    projection_residual_max = max(
+        row["admitted_C_projection_residual_l2"] for row in offsets.values()
+    )
+    budget_delta_max = max(
+        abs(row["budget_delta_from_source"]) for row in offsets.values()
+    )
+    jacobian = np.asarray(c_audit["jacobian"], dtype=float)
+    branch_tangent_status = c_audit["temporal_mode_diagnostics"].get(
+        "branch_tangent_status", "missing"
+    )
+    c_persistence_candidate = required["separation"]["block_l2"]["C"] > tolerance
+    if not c_persistence_candidate:
+        rival_status = "not_applicable_no_resolved_C_persistence"
+        allowed_interpretation = "no_C_dominated_persistence_candidate"
+    elif branch_tangent_status != "separately_identified":
+        rival_status = "branch_relocation_rival_unresolved_not_excluded"
+        allowed_interpretation = (
+            "bounded_C_dominated_neutral_direction_persistence_with_"
+            "branch_relocation_rival_unresolved"
+        )
+    else:
+        rival_status = (
+            "branch_tangent_separately_identified_requires_future_transverse_audit"
+        )
+        allowed_interpretation = "C_persistence_pending_transverse_audit"
+    return {
+        "status": "completed_non_upgrading_acceptance_clarification",
+        "source_branch_id": grv3_row["branch_id"],
+        "admitted_C_basis_id": reduction.get("basis_id", "missing"),
+        "branch_tangent_status": branch_tangent_status,
+        "source_offset_audit": offsets,
+        "maximum_admitted_C_projection_residual_l2": projection_residual_max,
+        "all_offsets_within_admitted_C_coordinate_to_tolerance": (
+            projection_residual_max <= tolerance
+        ),
+        "maximum_budget_delta_from_source": budget_delta_max,
+        "required_horizon": required_horizon,
+        "C_drift_from_k0_to_required_horizon_l2": {
+            "state_a": horizon_drift("state_a"),
+            "state_b": horizon_drift("state_b"),
+        },
+        "C_transition_jacobian_identity_error_linf": float(
+            np.linalg.norm(jacobian - np.eye(jacobian.shape[0]), ord=np.inf)
+        ),
+        "C_persistence_candidate": c_persistence_candidate,
+        "branch_relocation_rival_status": rival_status,
+        "transverse_branch_relative_retention_supported": False,
+        "allowed_interpretation": allowed_interpretation,
+    }
+
+
+def reachability_classification(preparation_id: str) -> dict[str, Any]:
+    if preparation_id == "P-J-activity-complete-step-vs-zero":
+        post_state = "produced_by_unchanged_runtime_from_synthetic_intervention"
+    elif preparation_id == "P-J-activity-stage-vs-zero":
+        post_state = "produced_by_exact_native_stage_from_synthetic_intervention"
+    else:
+        post_state = "producer_authored_synthetic_conductance_state"
+    return {
+        "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+        "post_intervention_state_status": post_state,
+        "reachable_from_accepted_branch_by_unchanged_runtime_alone": False,
+        "runtime_reached_shorthand_allowed": False,
+    }
+
+
+def transient_W_mediation_classification(preparation_id: str) -> dict[str, Any]:
+    complete = preparation_id == "P-J-activity-complete-step-vs-zero"
+    return {
+        "status": "not_established" if complete else "not_applicable",
+        "native_stage_local_W_write_observed": preparation_id.startswith("P-J-"),
+        "later_C_dominated_consequence_observed": complete,
+        "stage_matched_W_only_mediation_control_run": False,
+        "later_C_mediation_specifically_by_transient_W_supported": False,
+        "allowed_interpretation": (
+            "cooccurring_stage_local_W_write_and_later_C_consequence_without_"
+            "specific_transient_W_mediation_identification"
+            if complete
+            else "no_later_C_mediation_claim_in_this_lane"
+        ),
+    }
+
+
 def branch_result(
     branch: dict[str, Any],
     grv3_row: dict[str, Any],
@@ -1084,6 +1220,17 @@ def branch_result(
             activity_trace=activity_trace,
             config=config,
         )
+        relocation_audit = branch_relocation_audit(
+            baseline,
+            horizon_rows,
+            grv3_row,
+            required_horizon=required_horizon,
+            tolerance=tolerance,
+        )
+        reachability = reachability_classification(pair["preparation_id"])
+        transient_w_mediation = transient_W_mediation_classification(
+            pair["preparation_id"]
+        )
         native_read = any(
             row["native_mediation_gate_passed"]
             for horizon in read_rows
@@ -1113,6 +1260,11 @@ def branch_result(
         )
         if rung == "GRR4" and replay_pass:
             rung = "GRR5"
+        if rung == "GRR2":
+            persistence_classification["retention_class"] = (
+                "C_dominated_neutral_direction_persistence_candidate_"
+                "branch_relocation_rival_unresolved"
+            )
         row = {
             "branch_id": branch["branch_id"],
             "fixture_id": branch["fixture_id"],
@@ -1138,6 +1290,9 @@ def branch_result(
             "horizon_rows": horizon_rows,
             "persistence_activity_trace": activity_trace,
             "persistence_classification": persistence_classification,
+            "branch_relocation_audit": relocation_audit,
+            "reachability_classification": reachability,
+            "transient_W_mediation_classification": transient_w_mediation,
             "matched_probe_rows": read_rows,
             "bounded_persistence_supported": persisted,
             "native_mediation_supported": native_read,
@@ -1172,8 +1327,9 @@ def branch_result(
         if persisted:
             possibility = "retention_without_read"
             maximum_claim = (
-                "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_"
-                "isolated_slow_cluster_or_native_read_effect"
+                "bounded_synthetic_old_current_conditioned_C_dominated_neutral_"
+                "direction_persistence_with_branch_relocation_rival_unresolved_"
+                "and_without_specific_transient_W_mediation_or_native_read_effect"
             )
         elif write_supported:
             possibility = "write_before_read"
@@ -1209,6 +1365,12 @@ def branch_result(
                 "local_evidence_ladder_rung": rung,
                 "maximum_claim": maximum_claim,
                 "blocked_claims": blocked_claims,
+                "branch_relocation_rival_status": relocation_audit[
+                    "branch_relocation_rival_status"
+                ],
+                "transverse_branch_relative_retention_supported": False,
+                "transient_W_mediation_status": transient_w_mediation["status"],
+                "reachability_classification": reachability,
             }
         )
     return branch_rows, preparation_controls, causal_rows
@@ -1251,6 +1413,9 @@ def intervention_registry(
                     "fields_rebuilt_afterward": [],
                     "rebuild_order": [],
                     "reachability_status": "synthetic_valid_not_runtime_reached",
+                    "reachability_classification": reachability_classification(
+                        "P-W-direct-opposite"
+                    ),
                     "physical_projection_after": {
                         "positive": projections["direct_positive"],
                         "negative": projections["direct_negative"],
@@ -1278,6 +1443,9 @@ def intervention_registry(
                         "rebuild_transport_state",
                     ],
                     "reachability_status": "exact_native_stage_from_synthetic_old_current_input",
+                    "reachability_classification": reachability_classification(
+                        "P-J-activity-stage-vs-zero"
+                    ),
                     "physical_projection_after": {
                         "activity": projections["activity_stage"],
                         "zero": projections["activity_stage_zero"],
@@ -1306,6 +1474,15 @@ def intervention_registry(
                         "rebuild_transport_state",
                     ],
                     "reachability_status": "synthetic_sign_reversal_control",
+                    "reachability_classification": {
+                        **reachability_classification(
+                            "P-J-activity-stage-vs-zero"
+                        ),
+                        "post_intervention_state_status": (
+                            "sign_reversal_control_produced_by_exact_native_stage_"
+                            "from_synthetic_intervention"
+                        ),
+                    },
                     "physical_projection_after": {
                         "positive": projections["activity_stage"],
                         "negative": projections["activity_sign_reversed_stage"],
@@ -1323,6 +1500,9 @@ def intervention_registry(
                     "fields_rebuilt_afterward": ["complete_GRC9V3_step"],
                     "rebuild_order": ["GRC9V3.step"],
                     "reachability_status": "complete_step_reached_from_synthetic_old_current_input",
+                    "reachability_classification": reachability_classification(
+                        "P-J-activity-complete-step-vs-zero"
+                    ),
                     "physical_projection_after": {
                         "activity": projections["activity_complete_step"],
                         "zero": projections["activity_complete_step_zero"],
@@ -1493,17 +1673,29 @@ def build_36_point_review_audit(
             all(
                 "persistence_activity_trace" in row
                 and "persistence_classification" in row
+                and "branch_relocation_audit" in row
                 for row in rows
+            )
+            and all(
+                row["branch_relocation_audit"][
+                    "branch_relocation_rival_status"
+                ]
+                == "branch_relocation_rival_unresolved_not_excluded"
+                and not row["branch_relocation_audit"][
+                    "transverse_branch_relative_retention_supported"
+                ]
+                for row in rows
+                if row["local_evidence_ladder_rung"] == "GRR2"
             ),
-            "passed",
+            "passed_with_branch_relocation_rival_unresolved",
             [
                 "candidate_rows.*.persistence_activity_trace",
                 "candidate_rows.*.persistence_classification",
+                "candidate_rows.*.branch_relocation_audit",
             ],
             (
-                "positive rows resolve as transferred;_any_future_activity_"
-                "associated_W_row_remains_maintained_vs_regenerated_unresolved_"
-                "until_stagewise_survival_is_identified"
+                "GRR2_records_neutral_direction_persistence_with_branch_"
+                "relocation_unresolved_not_transverse_branch_relative_retention"
             ),
         ),
         point(
@@ -1521,25 +1713,49 @@ def build_36_point_review_audit(
         point(
             6,
             "synthetic_old_current_separated_from_reached_history",
-            payload["summary"]["forming_old_current_input_runtime_reached"] is False,
-            "passed",
+            payload["summary"]["forming_old_current_input_runtime_reached"] is False
+            and all(
+                not row["reachability_classification"][
+                    "reachable_from_accepted_branch_by_unchanged_runtime_alone"
+                ]
+                and not row["reachability_classification"][
+                    "runtime_reached_shorthand_allowed"
+                ]
+                for row in rows
+            ),
+            "passed_with_conditional_runtime_successor_wording",
             [
                 "summary.forming_old_current_input_runtime_reached",
                 "preparation_controls.*.activity_input_class",
+                "candidate_rows.*.reachability_classification",
             ],
-            "no naturally reached write claim",
+            "unchanged-runtime successor of synthetic intervention is not native branch reachability",
         ),
         point(
             7,
             "direct_and_indirect_write_paths_staged",
-            all("activity_stage_boundary_trace" in row for row in controls),
-            "passed",
+            all("activity_stage_boundary_trace" in row for row in controls)
+            and all(
+                row["transient_W_mediation_classification"]["status"]
+                == "not_established"
+                and not row["transient_W_mediation_classification"][
+                    "stage_matched_W_only_mediation_control_run"
+                ]
+                and not row["transient_W_mediation_classification"][
+                    "later_C_mediation_specifically_by_transient_W_supported"
+                ]
+                for row in rows
+                if row["preparation_id"]
+                == "P-J-activity-complete-step-vs-zero"
+            ),
+            "passed_with_specific_transient_W_mediation_unresolved",
             [
                 "activity_stage_boundary_trace.*.after_first_native_transport_write",
                 "activity_stage_boundary_trace.*.after_continuity_before_budget",
                 "activity_stage_boundary_trace.*.after_complete_preparation_step",
+                "candidate_rows.*.transient_W_mediation_classification",
             ],
-            "stage-local W write and later C consequence remain separate",
+            "stage-local W write and later C consequence coexist without identified W-specific mediation",
         ),
         point(
             8,
@@ -1917,13 +2133,17 @@ def build_36_point_review_audit(
     ]
     return {
         "gate_id": "GRV5",
-        "audit_id": "P5.3_36_point_causal_identification_hardening",
+        "audit_id": (
+            "P5.3_36_point_causal_identification_hardening_with_"
+            "P5.4_acceptance_clarifications"
+        ),
         "review_point_count": len(review_points),
         "all_review_points_mechanically_accounted_for": all(
             row["mechanical_check_passed"] for row in review_points
         ),
         "evidence_upgrade_allowed": False,
         "branch_scope_or_primary_threshold_changed": False,
+        "P5_4_acceptance_clarification_changed_primary_rung": False,
         "review_points": review_points,
     }
 
@@ -1946,21 +2166,30 @@ def write_report(payload: dict[str, Any]) -> Path:
         f"native_mediation_count = {summary['native_mediation_count']}",
         f"substrate_reduced_sensitivity_count = {summary['substrate_reduced_sensitivity_count']}",
         f"maximum_local_rung = {summary['maximum_local_evidence_ladder_rung']}",
+        f"GRR2_branch_relocation_rival_unresolved = {summary['branch_relocation_rival_unresolved_GRR2_row_count']}",
+        f"specific_transient_W_mediation_supported = {summary['later_C_mediation_specifically_by_transient_W_supported']}",
+        f"native_branch_only_reachability_supported = {summary['complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone']}",
         f"review_points_accounted_for = {summary['review_point_count']}/36",
         f"P5_3_changed_primary_rung = {summary['P5_3_hardening_changed_primary_rung']}",
+        f"P5_4_changed_primary_rung = {summary['P5_4_acceptance_clarification_changed_primary_rung']}",
         "scientific_acceptance = awaiting_human_review",
         "```",
         "",
         "## Interpretation",
         "",
-        "GRV5 resolves the four causal arrows separately. An experiment-authored",
-        "old-current state changes conductance at the first exact native transport",
-        "reconstruction. The unchanged complete step reconstructs current and",
-        "conductance again and erases that conductance inscription, but the transient",
-        "write can leave a complete-step reached coherence/joint-state displacement.",
-        "GRV5 therefore tests that reached pair separately from the stage-local pair.",
+        "GRV5 resolves the four causal arrows separately. A synthetic experiment-",
+        "authored old-current state changes conductance at the first exact native",
+        "transport reconstruction. One unchanged complete step then reconstructs",
+        "current and conductance, erases that conductance inscription, and produces",
+        "a later coherence-dominated consequence. GRV5 does not isolate transient",
+        "`W` from every other state produced by the synthetic old-current preparation,",
+        "so it does not establish that transient `W` specifically mediates later `C`.",
+        "It tests the unchanged-runtime successor separately from the stage-local pair.",
         "Direct authored conductance differences are overwritten by reconstruction.",
-        "The old-current forming input is synthetic and not claimed runtime-reached;",
+        "The old-current forming input is synthetic and not native-runtime reachable.",
+        "The resulting complete-step state is an unchanged-runtime successor of that",
+        "synthetic intervention; it is not shown reachable from an accepted branch by",
+        "unchanged runtime evolution alone and is never shortened to `runtime-reached`.",
         "its large magnitude follows from the frozen `gamma = 1e-12` branch parameter",
         "and the preregistered 0.01 amplitude-squared attenuation coordinate.",
         "On multi-edge fixtures the realized per-edge log-conductance change is",
@@ -1979,16 +2208,21 @@ def write_report(payload: dict[str, Any]) -> Path:
         "does not establish core Read-Back, orientation retention, or a closed",
         "read/write loop.",
         "The persistent F2/F3 displacement is neutral/marginal within the declared",
-        "finite-horizon ratio tolerance and C-dominated after W overwrite. It is",
-        "therefore recorded as bounded transferred joint-state persistence, not",
-        "stable W retention. P5.3 is a revision-distinct confirmatory audit after",
-        "the preliminary P5 results and cannot upgrade the existing GRR2 rung.",
+        "finite-horizon ratio tolerance and C-dominated after W overwrite. Every",
+        "`GRR2` displacement lies in the admitted zero-sum `C` coordinate to numerical",
+        "precision and changes negligibly through horizon 10. GRV3 did not separately",
+        "identify a branch tangent, so relocation along a neutral branch family remains",
+        "an unresolved rival. The result is bounded C-dominated neutral-direction",
+        "persistence, not transverse branch-relative retention or stable W retention.",
+        "P5.3 and the P5.4 acceptance clarification cannot upgrade the GRR2 rung.",
         "",
         "## Causal Boundaries",
         "",
         "- `P-W`: producer-authored conductance carrier; synthetic-valid only.",
         "- `P-J`: exact native stage response to a synthetic old-current input.",
-        "- `P-J complete`: complete-step reached joint-state consequence of that input.",
+        "- `P-J complete`: unchanged-runtime successor of a synthetic old-current intervention; native branch-only reachability is not demonstrated.",
+        "- Transient `W` mediation: not established; no stage-matched W-only mediation control was run.",
+        "- GRR2 branch relation: neutral-coordinate persistence with branch relocation unresolved.",
         "- `P-J-sign`: confirms the source-current-squared write is sign-even.",
         "- Native complete-step persistence: evaluated after forming input stops.",
         "- Frozen-`W` response: reduced diagnostic; cannot upgrade native evidence.",
@@ -2079,6 +2313,11 @@ def run_grv5() -> None:
             max(row["activity_input_amplitude"] for row in preparation_controls),
         ],
         "forming_old_current_input_runtime_reached": False,
+        "complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone": False,
+        "synthetic_complete_step_runtime_successor_row_count": sum(
+            row["preparation_id"] == "P-J-activity-complete-step-vs-zero"
+            for row in branch_rows
+        ),
         "bounded_persistence_count": sum(
             row["bounded_persistence_supported"] for row in branch_rows
         ),
@@ -2092,6 +2331,34 @@ def run_grv5() -> None:
         "sign_reversal_controls_passed": sign_controls_pass,
         "all_branch_preparation_horizon_matrix_complete": matrix_complete,
         "maximum_local_evidence_ladder_rung": maximum_rung,
+        "branch_relocation_rival_unresolved_GRR2_row_count": sum(
+            row["local_evidence_ladder_rung"] == "GRR2"
+            and row["branch_relocation_audit"]["branch_relocation_rival_status"]
+            == "branch_relocation_rival_unresolved_not_excluded"
+            for row in branch_rows
+        ),
+        "transverse_branch_relative_retention_supported": False,
+        "later_C_mediation_specifically_by_transient_W_supported": False,
+        "maximum_GRR2_admitted_C_projection_residual_l2": max(
+            (
+                row["branch_relocation_audit"][
+                    "maximum_admitted_C_projection_residual_l2"
+                ]
+                for row in branch_rows
+                if row["local_evidence_ladder_rung"] == "GRR2"
+            ),
+            default=0.0,
+        ),
+        "maximum_GRR2_C_transition_jacobian_identity_error_linf": max(
+            (
+                row["branch_relocation_audit"][
+                    "C_transition_jacobian_identity_error_linf"
+                ]
+                for row in branch_rows
+                if row["local_evidence_ladder_rung"] == "GRR2"
+            ),
+            default=0.0,
+        ),
         "retention_supported": any(
             row["bounded_persistence_supported"] for row in branch_rows
         ),
@@ -2099,6 +2366,7 @@ def run_grv5() -> None:
         "writeback_supported": False,
         "closed_loop_supported": False,
         "grv_c5_candidate_pending_human_review": True,
+        "P5_4_acceptance_clarification_changed_primary_rung": False,
     }
     if not required_replays_pass or not sign_controls_pass or not matrix_complete:
         raise ValueError(f"GRV5 mechanical controls failed: {summary}")
@@ -2111,6 +2379,9 @@ def run_grv5() -> None:
             "branch_registry_path": scope["branch_registry_path"],
             "GRV3_result_path": scope["grv3_result_path"],
             "GRV4_result_path": scope["grv4_result_path"],
+            "P5_4_acceptance_provenance_contract": config[
+                "p5_4_acceptance_clarification"
+            ]["acceptance_provenance_contract"],
         },
         "assumption_statuses": {
             **config["assumption_statuses"],
@@ -2125,12 +2396,16 @@ def run_grv5() -> None:
         "claim_boundary": {
             **config["claim_boundary"],
             "maximum_supported_claim": (
-                "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_"
-                "isolated_slow_cluster_or_native_readback"
+                "bounded_synthetic_old_current_conditioned_C_dominated_neutral_"
+                "direction_persistence_with_branch_relocation_rival_unresolved_"
+                "without_specific_transient_W_mediation_or_native_readback"
                 if summary["retention_supported"]
                 else "stage_local_activity_conditioned_write_without_complete_step_persistence"
             ),
             "frozen_W_sensitivity_does_not_upgrade_native": True,
+            "branch_relocation_rival_must_remain_open": True,
+            "specific_transient_W_mediation_claim_allowed": False,
+            "runtime_reached_shorthand_for_synthetic_successor_allowed": False,
             "GRV_C5_candidate_pending_human_review": True,
         },
     }
@@ -2158,7 +2433,7 @@ def run_grv5() -> None:
         result_path,
         artifact_envelope(
             payload,
-            schema_version="b1_grv5_conductance_retention_probe_v1",
+            schema_version="b1_grv5_conductance_retention_probe_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -2177,7 +2452,7 @@ def run_grv5() -> None:
         causal_path,
         artifact_envelope(
             causal_payload,
-            schema_version="b1_grv5_causal_role_matrix_v1",
+            schema_version="b1_grv5_causal_role_matrix_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -2187,7 +2462,7 @@ def run_grv5() -> None:
         intervention_path,
         artifact_envelope(
             intervention_payload,
-            schema_version="b1_grv5_intervention_registry_v1",
+            schema_version="b1_grv5_intervention_registry_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -2197,7 +2472,7 @@ def run_grv5() -> None:
         review_audit_path,
         artifact_envelope(
             review_audit_payload,
-            schema_version="b1_grv5_36_point_review_audit_v1",
+            schema_version="b1_grv5_36_point_review_audit_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -2238,8 +2513,10 @@ def run_grv5() -> None:
             "status": "awaiting_scientific_review",
             "blocked_gates": [f"GRV{index}" for index in range(6, 9)],
             "claim_ceiling": (
-                "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_"
-                "isolated_slow_cluster_or_native_readback_pending_human_review"
+                "bounded_synthetic_old_current_conditioned_C_dominated_neutral_"
+                "direction_persistence_with_branch_relocation_rival_unresolved_"
+                "without_specific_transient_W_mediation_or_native_readback_"
+                "pending_human_review"
                 if summary["retention_supported"]
                 else "stage_local_write_without_complete_step_retention_or_native_readback_pending_human_review"
             ),

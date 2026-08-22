@@ -887,6 +887,32 @@ claim effect for all 36 points. A blocked or out-of-scope point may be complete
 when the corresponding stronger claim is explicitly unavailable; it may not be
 silently marked as positive evidence.
 
+### P5.4 Acceptance Clarification
+
+The P5.3 acceptance review exposed three interpretation boundaries that must be
+machine-visible before GRV5 can be accepted. This clarification is
+non-upgrading: it cannot change branch scope, thresholds, numerical methods, or
+the existing `GRR2` ceiling.
+
+1. Audit whether each `GRR2` displacement lies in the admitted GRV3 `C`
+   coordinate. Because GRV3 did not separately identify a branch tangent,
+   persistence in that neutral coordinate must retain branch relocation as an
+   unresolved rival. It cannot be called transverse branch-relative retention.
+2. Keep the native stage-local `J^2 -> W` write separate from the later
+   `C`-dominated consequence. Without a stage-matched intervention isolating
+   transient `W` from every other consequence of the synthetic old-current
+   preparation, specific mediation of later `C` by transient `W` is not
+   established.
+3. State reachability precisely. The complete-step state is produced by the
+   unchanged runtime *from a synthetic intervention*. It is not shown reachable
+   from an accepted branch by unchanged runtime evolution alone, and shorthand
+   `runtime-reached` wording is prohibited.
+
+Any GRV5 acceptance anchor must bind the original P5.2 evidence identities and
+the superseding P5.4 result, audit, receipt, and execution revision. The P5.3
+audit source digest must bind the current source result rather than only its
+predecessor.
+
 ### Required outputs
 
 ```text

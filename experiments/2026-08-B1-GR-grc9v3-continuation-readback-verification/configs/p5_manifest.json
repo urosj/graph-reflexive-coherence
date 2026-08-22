@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv5_p5_package_manifest_v1",
-  "package_status": "P5_3_mediation_intervention_accuracy_pending_clean_committed_execution",
+  "package_status": "P5_4_acceptance_clarification_pending_clean_committed_execution",
   "gate_id": "GRV5",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -102,6 +102,37 @@
     "human_acceptance_anchor_created": false,
     "supersession_reason": "reset_swap_equal_response_controls_passed_but_their_W_intervention_accuracy_was_not_quantified_in_each_machine_row",
     "threshold_branch_scope_or_scientific_classification_changed": false,
+    "full_clean_rerun_required": true
+  },
+  "superseded_p5_3_mediation_accuracy_execution": {
+    "input_revision": "c2cc6668a2e4b8e8d3c8a08f82c4a8d0eb563203",
+    "status": "mechanically_passed_pending_human_review",
+    "review_point_count": 36,
+    "all_review_points_mechanically_accounted_for": true,
+    "primary_numerical_projection_matches_P5_2": true,
+    "primary_numerical_projection_sha256": "d75de825ff29f6d9708fe2f13e03f270b96f90119ec0f643c5bb2d9631c5eccd",
+    "complete_P5_2_candidate_schema_projection_sha256": "27f560a221898401d59b80a046334d9e20ee95a9edbc39348eaabbfd76745f94",
+    "maximum_local_evidence_ladder_rung": "GRR2",
+    "authoritative_W_reset_equal_swap_maximum_error": 0.0,
+    "matching_failure_count": 0,
+    "current_sign_stratum_blocked_horizon_row_count": 224,
+    "human_acceptance_anchor_created": false,
+    "receipt_payload_sha256": "941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f",
+    "supersession_reason": "acceptance_review_required_machine_visible_branch_relocation_transient_W_mediation_and_synthetic_successor_reachability_boundaries",
+    "threshold_branch_scope_or_scientific_classification_changed": false,
+    "full_clean_rerun_required": true
+  },
+  "pending_p5_4_acceptance_clarification": {
+    "status": "method_frozen_pending_clean_committed_execution",
+    "may_upgrade_or_reclassify_existing_GRR_rung": false,
+    "branch_scope_threshold_or_numerical_method_change_allowed": false,
+    "required_machine_boundaries": [
+      "branch_relocation_rival_unresolved_for_GRR2",
+      "specific_transient_W_mediation_not_established",
+      "unchanged_runtime_successor_of_synthetic_intervention_not_native_branch_reachability",
+      "future_acceptance_anchor_binds_P5_2_and_superseding_P5_4"
+    ],
+    "human_acceptance_anchor_created": false,
     "full_clean_rerun_required": true
   },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",

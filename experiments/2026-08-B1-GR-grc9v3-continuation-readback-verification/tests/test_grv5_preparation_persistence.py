@@ -32,9 +32,12 @@ from grv5_methods import (  # noqa: E402
     swap_carrier,
 )
 from run_preparation_persistence_probe import (  # noqa: E402
+    branch_relocation_audit,
     build_36_point_review_audit,
     intervention_registry,
     preparation_pairs,
+    reachability_classification,
+    transient_W_mediation_classification,
 )
 from pygrc.models import GRC9V3  # noqa: E402
 
@@ -57,6 +60,16 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         )
         cls.nonuniform_model = GRC9V3.load(
             str(REPO_ROOT / cls.nonuniform_branch["state_snapshot_path"])
+        )
+        grv3 = json.loads(
+            (ROOT / "outputs/complete_step_jacobians.json").read_text(
+                encoding="utf-8"
+            )
+        )["payload"]
+        cls.nonuniform_grv3 = next(
+            row
+            for row in grv3["branches"]
+            if row["branch_id"] == cls.nonuniform_branch["branch_id"]
         )
 
     def test_method_is_all_branch_and_claim_bounded(self) -> None:
@@ -292,6 +305,54 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
             1e-10,
         )
 
+    def test_p5_4_reachability_and_transient_W_claims_fail_closed(self) -> None:
+        reachability = reachability_classification(
+            "P-J-activity-complete-step-vs-zero"
+        )
+        self.assertEqual(
+            "produced_by_unchanged_runtime_from_synthetic_intervention",
+            reachability["post_intervention_state_status"],
+        )
+        self.assertFalse(
+            reachability["reachable_from_accepted_branch_by_unchanged_runtime_alone"]
+        )
+        self.assertFalse(reachability["runtime_reached_shorthand_allowed"])
+        mediation = transient_W_mediation_classification(
+            "P-J-activity-complete-step-vs-zero"
+        )
+        self.assertEqual("not_established", mediation["status"])
+        self.assertFalse(mediation["stage_matched_W_only_mediation_control_run"])
+        self.assertFalse(
+            mediation["later_C_mediation_specifically_by_transient_W_supported"]
+        )
+
+    def test_p5_4_branch_relocation_rival_is_machine_visible(self) -> None:
+        result = json.loads(
+            (ROOT / "outputs/conductance_retention_probe.json").read_text(
+                encoding="utf-8"
+            )
+        )["payload"]
+        row = next(
+            candidate
+            for candidate in result["candidate_rows"]
+            if candidate["branch_id"] == self.nonuniform_branch["branch_id"]
+            and candidate["preparation_id"]
+            == "P-J-activity-complete-step-vs-zero"
+        )
+        audit = branch_relocation_audit(
+            self.nonuniform_model,
+            row["horizon_rows"],
+            self.nonuniform_grv3,
+            required_horizon=10,
+            tolerance=1e-10,
+        )
+        self.assertTrue(audit["all_offsets_within_admitted_C_coordinate_to_tolerance"])
+        self.assertEqual(
+            "branch_relocation_rival_unresolved_not_excluded",
+            audit["branch_relocation_rival_status"],
+        )
+        self.assertFalse(audit["transverse_branch_relative_retention_supported"])
+
     def test_review_artifact_remains_bounded_when_present(self) -> None:
         path = ROOT / "outputs/conductance_retention_probe.json"
         if not path.exists():
@@ -304,8 +365,29 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertTrue(
             payload["claim_boundary"]["frozen_W_sensitivity_does_not_upgrade_native"]
         )
-        if payload["summary"].get(
-            "all_36_review_points_mechanically_accounted_for", False
+        if envelope["schema_version"] == "b1_grv5_conductance_retention_probe_v2":
+            self.assertFalse(
+                payload["summary"][
+                    "later_C_mediation_specifically_by_transient_W_supported"
+                ]
+            )
+            self.assertFalse(
+                payload["summary"][
+                    "complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone"
+                ]
+            )
+            self.assertEqual(
+                32,
+                payload["summary"][
+                    "branch_relocation_rival_unresolved_GRR2_row_count"
+                ],
+            )
+        if (
+            envelope["schema_version"]
+            == "b1_grv5_conductance_retention_probe_v2"
+            and payload["summary"].get(
+                "all_36_review_points_mechanically_accounted_for", False
+            )
         ):
             audit = build_36_point_review_audit(payload, self.config)
             self.assertEqual(36, audit["review_point_count"])
@@ -330,6 +412,7 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
             "rebuild_order",
             "validity_checks",
             "reachability_status",
+            "reachability_classification",
             "physical_projection_before",
             "physical_projection_after",
             "causal_state_projection_before",
