@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv4_preliminary_result_unaccepted_P4_1_hardening_pending_execution
+status = grv4_P4_1_mechanically_passed_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV4_P4_1_hardening_method_pending_clean_execution
+current_gate = GRV4_P4_1_scientific_review
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_until_P4_1_review
+verification_closeout_ceiling = GRV-C4_candidate_pending_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -779,11 +779,74 @@ the full core continuation operator.
 - [x] Record the mechanically passing `c276fcc` run without accepting it.
 - [x] Add explicit local comparison identity and mapped-projector records.
 - [x] Expand the generated report to expose the hardening controls and bounded result.
-- [ ] Commit the final artifact-schema/report completion.
-- [ ] Execute the final P4.1 full clean rerun.
-- [ ] Verify all mechanical controls and inspect every branch-level classification.
-- [ ] Emit a superseding GRV4 result receipt pending human scientific review.
+- [x] Commit the final artifact-schema/report completion at `01389d9`.
+- [x] Execute the final P4.1 full clean rerun.
+- [x] Verify all mechanical controls and inspect every branch-level classification.
+- [x] Emit a superseding GRV4 result receipt pending human scientific review.
 - [ ] Emit a GRV4 acceptance anchor only after that review.
+
+### Final P4.1 Review Candidate
+
+```text
+input_execution_revision = 01389d9877bfdf68daa3e31786f832ab17742c86
+receipt_payload_sha256 = 2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e
+result_payload_sha256 = 48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+branches_audited = 48
+primary_full_map_comparisons = 32
+blocked_full_map_comparisons = 16
+primary_bounded_agreement_count = 32
+verified_strong_disagreement_count = 0
+sign_audit_rows = 3072
+negative_functional_delta_rows = 0
+maximum_frozen_map_fixed_point_residual = 1.11609e-11
+maximum_H_P_absolute_finite_difference_error = 9.28939e-10
+maximum_directional_functional_error = 7.07858e-09
+maximum_site_V_second_error = 1.30751e-09
+maximum_primary_metric_subspace_angle_radians = 2.10734e-08
+primary_unit_circle_uncertainty = 1e-6
+secondary_deadbeat_overwrite_modes_excluded = 55
+matrix_symmetry_failed_pair_count = 0
+reduction_classification = clamped_counterfactual_only
+GRV_C4 = candidate_pending_human_review
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+All 48 weighted graphs are connected and their reduced mobility is positive
+definite. Authoritative branch conductance and duplicate port-edge surfaces
+agree exactly. The potential, flux, functional, site derivative, restoring
+sign, mobility/Hessian, mapped projector, state-metric, cluster, deadbeat,
+uncertainty, and matrix-symmetry controls pass. Thirty-six near-zero `H_P` rows
+use the frozen absolute finite-difference gate; the 12 nonzero rows have maximum
+relative Hessian error about `8.66e-11`.
+
+The result finds no robust stability-class or clustered slow-subspace
+disagreement between the whole-beat clamped-`W` comparator and the admitted full
+`C` recurrence in this envelope. All primary modes are marginal within the
+frozen `1e-6` uncertainty. This is bounded agreement, not proof of algebraic
+elimination, fast slaving, geometry-only or mobility-only causation, universal
+validity, retention, or the core continuation operator. Finite-amplitude
+`J^2 -> W` effects remain open.
+
+Verification:
+
+```text
+B1_GR_and_GRC9V3_model_tests = 181_passed_122_subtests_passed
+repository_wide_suite = 1858_passed_26_failed_1041_subtests_passed
+repository_wide_failure_scope = 25_ignored_output_fixture_dependencies_plus_1_unrelated_telemetry_snapshot_digest_mismatch
+src_files_changed_by_GRV4 = 0
+protected_path_manifest_unchanged = true
+```
+
+The repository-wide failures are not promoted to GRV4 failures: the discovery
+and cross-family telemetry tests depend on ignored session artifacts absent
+from this checkout, and the remaining representative-telemetry digest mismatch
+is outside the B1-GR surfaces. They remain visible rather than being repaired or
+excluded from the reported run.
 
 ## Iteration 6 - GRV5 Preparation, Persistence, And Matched-Probe Mediation
 

@@ -251,6 +251,16 @@ conjugacy. Until that result is reviewed, `GRV-C4` is not assigned; no
 continuation, retention, read-back, write-back, joint `C-W`, or `W`
 eliminability claim is opened.
 
+The superseding P4.1 execution from revision `01389d9` passes all hardened
+mechanical controls. It preserves the 48/32/16 preregistered scope and finds
+bounded agreement on all 32 admitted primary rows under the GRV3 block metric,
+real invariant-cluster comparison, deadbeat exclusion, and a `1e-6`
+unit-circle uncertainty. All 48 clamps are fixed within `1.12e-11`; matrix-level
+symmetry covariance has no failed pair. Receipt
+`2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e`
+binds the result. `GRV-C4` is a review candidate only; an acceptance anchor has
+not been created.
+
 ## Central Question
 
 ```text
