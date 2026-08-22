@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_P6_1_mechanically_passed_awaiting_human_review
+status = grv6_P6_2_transport_kernel_trace_pending_clean_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_P6_1_scientific_review_pending
+current_gate = GRV6_P6_2_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
@@ -1384,9 +1384,37 @@ levels that old cycle orientation is consumed by the sign-even conductance
 write and erased at the first native transport reconstruction. Those seeds are
 experiment-authored structural probes, not runtime-reached currents. The orbit
 search remains bounded: 865 condition-blocked rows are unresolved, and relative
-periodic orbits were not searched. The result is ready for human acceptance as
-a bounded cycle-current overwrite and no-admitted-exact-return result, not as a
-global recurrence nonexistence claim.
+periodic orbits were not searched. The generated P6.1 interpretation classified
+the result as ready for human acceptance as a bounded cycle-current overwrite
+and no-admitted-exact-return result, not as a global recurrence nonexistence
+claim. The source-level correction below supersedes that readiness decision.
+
+The generated P6.1 audit initially marked review point 7 passed from the public
+transport-wrapper trace. Direct source inspection showed that this was not
+granular enough for the external requirement to observe conductance formation,
+potential reconstruction, and native current reconstruction separately. The
+P6.1 receipt remains unaccepted and is superseded for acceptance by P6.2.
+
+### P6.2 Transport-Kernel And Event-Eligibility Hardening
+
+- [x] Trace `compute_base_conductance`, pre-flux edge labels,
+  `compute_potential`, `compute_flux`, and post-flux edge labels separately for
+  both first and final transport reconstructions.
+- [x] Keep `rebuild_transport_state()` authoritative and prove the diagnostic
+  kernel sequence matches its physical and transport surfaces.
+- [x] Preserve complete-step parity after both diagnostic kernel traces.
+- [x] Locate sign-even conductance writing at conductance formation and cycle
+  orientation erasure at native current reconstruction.
+- [x] Compare hybrid-spark eligibility before and after seed insertion.
+- [x] Record disabled choice, zero growth rate, non-isolated topology, boundary
+  mode, and absence of an external-current state surface.
+- [x] Extend regression tests for kernel-stage presence, wrapper parity, and
+  event-eligibility certification.
+- [ ] Commit the P6.2 method revision and rerun GRV6 from that clean revision.
+- [ ] Require the regenerated 36-point audit to bind kernel-stage parity at
+  review point 7 and report zero current-result acceptance blockers.
+- [ ] Commit the superseding P6.2 result artifacts for human review.
+- [ ] Emit a GRV6 acceptance anchor only after human review of P6.2.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

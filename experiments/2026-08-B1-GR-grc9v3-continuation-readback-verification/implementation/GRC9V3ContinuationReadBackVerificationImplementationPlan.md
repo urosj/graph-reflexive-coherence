@@ -1058,6 +1058,23 @@ The committed result at revision `1134009` remains historical preliminary
 evidence. A clean P6.1 rerun must supersede it before scientific acceptance can
 be considered.
 
+### P6.2 Source-Kernel Stage And Eligibility Hardening
+
+P6.1 traced every public GRC9V3 method used by `step()`, but its transport trace
+observed `rebuild_transport_state()` as one stage. Review point 7 is stricter:
+conductance formation, potential reconstruction, and native current
+reconstruction must be distinguishable. P6.2 uses the unchanged source-current
+transport kernels as diagnostic functions, records both first and final
+transport sequences, then compares their final physical and transport surfaces
+against the authoritative public wrapper. A mismatch blocks point 7.
+
+P6.2 also replaces the seed certificate's declarative no-event statement with
+measured hybrid-spark eligibility parity plus explicit choice, growth,
+boundary-pruning, and external-current-surface checks. These diagnostics do not
+create an alternative runtime step, authorize source changes, or make the
+experiment-authored seeds runtime-reached. They only expose the native wrapper's
+internal source semantics at the resolution required by the review.
+
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 
 ### Objective

@@ -106,6 +106,37 @@ class GRV6ReturnOrbitTest(unittest.TestCase):
         assert stage_pair is not None
         self.assertTrue(stage_pair["orientation_overwritten_at_first_transport"])
         self.assertTrue(stage_pair["both_manual_stage_traces_match_complete_step"])
+        self.assertTrue(
+            stage_pair["both_transport_kernel_traces_match_public_wrapper"]
+        )
+        required_stages = {
+            "after_first_conductance_formation",
+            "after_first_potential_reconstruction",
+            "after_first_native_current_reconstruction",
+            "after_final_conductance_formation",
+            "after_final_potential_reconstruction",
+            "after_final_native_current_reconstruction",
+        }
+        for sign in ("positive", "negative"):
+            trace = stage_pair[sign]
+            self.assertTrue(
+                trace["both_transport_kernel_traces_match_public_wrapper"]
+            )
+            self.assertTrue(
+                required_stages.issubset(
+                    {row["stage"] for row in trace["stages"]}
+                )
+            )
+            self.assertTrue(
+                trace["first_transport_kernel_audit"][
+                    "kernel_vs_public_wrapper_transport_surface_equal"
+                ]
+            )
+            self.assertTrue(
+                trace["final_transport_kernel_audit"][
+                    "kernel_vs_public_wrapper_transport_surface_equal"
+                ]
+            )
         self.assertEqual(
             4,
             len(row["cycle_activity_amplitude_ladder"]),
@@ -128,6 +159,11 @@ class GRV6ReturnOrbitTest(unittest.TestCase):
         largest = row["cycle_activity_amplitude_ladder"][-1]
         for sign in ("positive", "negative"):
             certification = largest[f"{sign}_seed_certification"]
+            self.assertTrue(
+                certification["event_eligibility_audit"][
+                    "no_event_eligibility_crossing"
+                ]
+            )
             self.assertLessEqual(
                 certification["seed_divergence_l2"],
                 certification["seed_divergence_effective_tolerance"],

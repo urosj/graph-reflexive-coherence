@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_P6_1_mechanically_passed_awaiting_human_review
+status = grv6_P6_2_transport_kernel_trace_pending_clean_execution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -321,18 +321,26 @@ revalidation, dependency resets, fresh-process candidate replay, and extended
 Floquet controls were not executed because no orbit was admitted. They remain
 explicit positive-candidate gates rather than being marked passed.
 
-The superseding P6.1 execution completed from clean method revision `50aa178`.
+The P6.1 execution completed from clean method revision `50aa178`.
 Its scientific counts are unchanged from the preliminary result, while the
 stronger current controls add 256 signed amplitude-ladder rows, 16 exact native
 stage-trace pairs, scale-aware full seed certification, and explicit symmetric
 versus nonsymmetric exact-zero classification. The external-review audit
 accounts for all 36 points with 20 direct passes, 14 positive-orbit-conditional
 gates, one bounded-scope disposition, one current-pass/orbit-conditional
-disposition, and zero current-result acceptance blockers. Its receipt is
-`f9c89506...` and remains `awaiting_scientific_review`; no GRV6 acceptance
-anchor exists, `GRV-C5` is not assigned, and GRV7 remains blocked. Active
-circulation, Read-Back, write-back, and self-sustaining identity remain
-unopened.
+disposition, and zero generated current-result acceptance blockers. Its receipt
+is `f9c89506...` and remains unaccepted.
+
+A direct source-level review then found that point 7 was traced only at the
+public `rebuild_transport_state()` boundary. The external review explicitly
+requires separate conductance-formation, potential-reconstruction, and
+current-reconstruction observations. P6.2 therefore supersedes the P6.1 audit
+for acceptance: it invokes those same source-current kernels diagnostically,
+records each surface, proves exact parity with the public wrapper, and adds
+pre-runtime event-eligibility certification. A clean P6.2 rerun is pending; no
+GRV6 acceptance anchor exists, `GRV-C5` is not assigned, and GRV7 remains
+blocked. Active circulation, Read-Back, write-back, and self-sustaining
+identity remain unopened.
 
 ## Central Question
 

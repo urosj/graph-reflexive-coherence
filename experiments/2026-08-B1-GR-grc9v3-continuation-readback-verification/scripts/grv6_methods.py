@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from dataclasses import replace
+from dataclasses import fields, replace
 from pathlib import Path
 import tempfile
 from typing import Any, Iterable
@@ -29,6 +29,12 @@ from grv5_methods import (
 from state_codec import BranchCoordinateChart, categorical_signature
 
 from pygrc.models import GRC9V3
+from pygrc.models.grc_9_v3_runtime import (
+    compute_base_conductance,
+    compute_edge_labels,
+    compute_flux,
+    compute_potential,
+)
 
 
 def oriented_incidence(
@@ -255,6 +261,55 @@ def seed_certification(
     cycle_reconstruction = float(np.linalg.norm(projector @ seed - seed, ord=2))
     state = model.get_state()
     seeded_state = seeded.get_state()
+    baseline_eligibility_model = clone_model(model)
+    seeded_eligibility_model = clone_model(seeded)
+    baseline_eligibility_model.rebuild_differential_state()
+    seeded_eligibility_model.rebuild_differential_state()
+    baseline_spark_candidates = baseline_eligibility_model.detect_hybrid_spark_candidates()
+    seeded_spark_candidates = seeded_eligibility_model.detect_hybrid_spark_candidates()
+
+    def spark_candidate_digests(candidates: list[Any]) -> list[str]:
+        return [
+            semantic_digest(
+                {
+                    "kind": candidate.kind,
+                    "step_index": candidate.step_index,
+                    "payload": dict(candidate.payload),
+                    "source_family": candidate.source_family,
+                }
+            )
+            for candidate in candidates
+        ]
+
+    baseline_candidate_digests = spark_candidate_digests(
+        baseline_spark_candidates
+    )
+    seeded_candidate_digests = spark_candidate_digests(
+        seeded_spark_candidates
+    )
+    state_field_names = {field.name for field in fields(type(state))}
+    external_boundary_surface_names = {
+        "boundary_current",
+        "boundary_flux",
+        "external_current",
+        "external_flux",
+        "source_current",
+    }
+    present_external_boundary_surfaces = sorted(
+        state_field_names & external_boundary_surface_names
+    )
+    params = model.get_params()
+    modes = params.constitutive_semantic_modes
+    all_nodes_have_incident_edges = all(
+        bool(tuple(state.topology.incident_edge_ids(node_id)))
+        for node_id in state.topology.iter_live_node_ids()
+    )
+    no_event_eligibility_crossing = bool(
+        baseline_candidate_digests == seeded_candidate_digests
+        and str(modes["choice_backend"]) == "disabled"
+        and float(params.evolution["lambda_birth"]) == 0.0
+        and all_nodes_have_incident_edges
+    )
     control = config["current_controls"]
     edge = config["edge_space"]
     divergence_effective_tolerance = float(edge["divergence_tolerance"]) + (
@@ -294,7 +349,8 @@ def seed_certification(
             and state.time == seeded_state.time
         ),
         "positive_conductance": bool(np.all(conductance_vector(seeded) > 0.0)),
-        "no_external_boundary_drive": True,
+        "no_external_boundary_drive": not present_external_boundary_surfaces,
+        "no_event_eligibility_crossing": no_event_eligibility_crossing,
     }
     return {
         "provenance": "experiment_authored_synthetic_structurally_valid_seed",
@@ -311,6 +367,18 @@ def seed_certification(
         / max(seed_norm, 1e-30),
         "cycle_membership_effective_tolerance": cycle_reconstruction_effective_tolerance,
         "require_cycle_membership": require_cycle_membership,
+        "event_eligibility_audit": {
+            "baseline_hybrid_spark_candidate_digests": baseline_candidate_digests,
+            "seeded_hybrid_spark_candidate_digests": seeded_candidate_digests,
+            "hybrid_spark_eligibility_matched": baseline_candidate_digests
+            == seeded_candidate_digests,
+            "choice_backend": str(modes["choice_backend"]),
+            "growth_lambda_birth": float(params.evolution["lambda_birth"]),
+            "all_nodes_have_incident_edges": all_nodes_have_incident_edges,
+            "boundary_mode": str(modes["boundary_mode"]),
+            "present_external_boundary_surfaces": present_external_boundary_surfaces,
+            "no_event_eligibility_crossing": no_event_eligibility_crossing,
+        },
         "checks": checks,
         "certified_before_runtime": all(checks.values()),
     }
@@ -367,10 +435,10 @@ def native_seed_stage_trace(
     manual = set_current(model, seed)
     stages = []
 
-    def record(stage: str) -> None:
+    def record(stage: str, candidate: GRC9V3 | None = None) -> None:
         stages.append(
             stage_projection(
-                manual,
+                manual if candidate is None else candidate,
                 reference,
                 stage=stage,
                 fixed_projector=fixed_projector,
@@ -379,11 +447,97 @@ def native_seed_stage_trace(
             )
         )
 
+    def transport_surface(model_at_stage: GRC9V3) -> dict[str, Any]:
+        state_at_stage = model_at_stage.get_state()
+        return {
+            "base_conductance": {
+                str(key): float(value)
+                for key, value in sorted(state_at_stage.base_conductance.items())
+            },
+            "potential": {
+                str(key): float(value)
+                for key, value in sorted(state_at_stage.potential.items())
+            },
+            "port_edges": {
+                str(key): {
+                    "conductance": float(value.conductance),
+                    "flux_uv": float(value.flux_uv),
+                }
+                for key, value in sorted(state_at_stage.port_edges.items())
+            },
+            "geometric_length": {
+                str(key): float(value)
+                for key, value in sorted(state_at_stage.geometric_length.items())
+            },
+            "flux_coupling": {
+                str(key): float(value)
+                for key, value in sorted(state_at_stage.flux_coupling.items())
+            },
+            "temporal_delay": {
+                str(key): float(value)
+                for key, value in sorted(state_at_stage.temporal_delay.items())
+            },
+        }
+
+    def trace_transport_kernels(prefix: str) -> dict[str, Any]:
+        diagnostic = clone_model(manual)
+        diagnostic_state = diagnostic.get_state()
+        params = diagnostic.get_params()
+        compute_base_conductance(
+            diagnostic_state,
+            evolution=params.evolution,
+            modes=params.constitutive_semantic_modes,
+        )
+        record(f"after_{prefix}_conductance_formation", diagnostic)
+        compute_edge_labels(
+            diagnostic_state,
+            evolution=params.evolution,
+            modes=params.constitutive_semantic_modes,
+            pre_flux_only=True,
+        )
+        record(f"after_{prefix}_pre_flux_edge_labels", diagnostic)
+        compute_potential(diagnostic_state, evolution=params.evolution)
+        record(f"after_{prefix}_potential_reconstruction", diagnostic)
+        compute_flux(diagnostic_state, evolution=params.evolution)
+        record(f"after_{prefix}_native_current_reconstruction", diagnostic)
+        compute_edge_labels(
+            diagnostic_state,
+            evolution=params.evolution,
+            modes=params.constitutive_semantic_modes,
+            pre_flux_only=False,
+        )
+        record(f"after_{prefix}_post_flux_edge_labels", diagnostic)
+        diagnostic_surface = transport_surface(diagnostic)
+
+        manual.rebuild_transport_state()
+        record(f"after_{prefix}_public_transport_wrapper")
+        physical_parity = block_residual(diagnostic, manual)
+        surface_equal = diagnostic_surface == transport_surface(manual)
+        maximum_physical_parity = max(physical_parity.values(), default=0.0)
+        tolerance = float(
+            config["current_controls"]["transport_kernel_wrapper_parity_tolerance"]
+        )
+        return {
+            "kernel_stage_order": [
+                f"after_{prefix}_conductance_formation",
+                f"after_{prefix}_pre_flux_edge_labels",
+                f"after_{prefix}_potential_reconstruction",
+                f"after_{prefix}_native_current_reconstruction",
+                f"after_{prefix}_post_flux_edge_labels",
+            ],
+            "public_wrapper_stage": f"after_{prefix}_public_transport_wrapper",
+            "kernel_vs_public_wrapper_block_linf": physical_parity,
+            "kernel_vs_public_wrapper_maximum_linf": maximum_physical_parity,
+            "kernel_vs_public_wrapper_transport_surface_equal": surface_equal,
+            "kernel_trace_matches_public_wrapper": bool(
+                maximum_physical_parity <= tolerance and surface_equal
+            ),
+        }
+
     record("after_direct_old_current_input")
     manual.rebuild_differential_state()
     record("after_pre_flux_differential_rebuild")
-    manual.rebuild_transport_state()
-    record("after_first_transport_reconstruction")
+    first_transport_kernel_audit = trace_transport_kernels("first")
     manual.rebuild_differential_state()
     record("after_post_flux_differential_refresh")
     manual.rebuild_identity_state()
@@ -402,8 +556,7 @@ def native_seed_stage_trace(
     record("after_budget_enforcement")
     manual.rebuild_differential_state()
     record("after_final_differential_rebuild_1")
-    manual.rebuild_transport_state()
-    record("after_final_transport_reconstruction")
+    final_transport_kernel_audit = trace_transport_kernels("final")
     manual.rebuild_differential_state()
     record("after_final_differential_rebuild_2")
     manual.rebuild_identity_state()
@@ -426,6 +579,12 @@ def native_seed_stage_trace(
         "stages": stages,
         "after_complete_native_step": complete_projection,
         "budget_enforcement_summary": budget_summary,
+        "first_transport_kernel_audit": first_transport_kernel_audit,
+        "final_transport_kernel_audit": final_transport_kernel_audit,
+        "both_transport_kernel_traces_match_public_wrapper": bool(
+            first_transport_kernel_audit["kernel_trace_matches_public_wrapper"]
+            and final_transport_kernel_audit["kernel_trace_matches_public_wrapper"]
+        ),
         "manual_stage_vs_complete_step_block_linf": parity,
         "manual_stage_vs_complete_step_maximum_linf": parity_maximum,
         "manual_stage_vs_complete_step_categorical_equal": bool(
@@ -704,15 +863,25 @@ def branch_current_control(
             incidence=incidence,
             config=config,
         )
-        positive_first_transport = next(
+        positive_first_conductance = next(
             row
             for row in positive_stage_trace["stages"]
-            if row["stage"] == "after_first_transport_reconstruction"
+            if row["stage"] == "after_first_conductance_formation"
         )
-        negative_first_transport = next(
+        negative_first_conductance = next(
             row
             for row in negative_stage_trace["stages"]
-            if row["stage"] == "after_first_transport_reconstruction"
+            if row["stage"] == "after_first_conductance_formation"
+        )
+        positive_first_current = next(
+            row
+            for row in positive_stage_trace["stages"]
+            if row["stage"] == "after_first_native_current_reconstruction"
+        )
+        negative_first_current = next(
+            row
+            for row in negative_stage_trace["stages"]
+            if row["stage"] == "after_first_native_current_reconstruction"
         )
         cycle_stage_trace_pair = {
             "target_activity_exponent": float(control["stage_trace_target_exponent"]),
@@ -721,23 +890,23 @@ def branch_current_control(
             "negative": negative_stage_trace,
             "first_transport_W_sign_even_linf": float(
                 np.linalg.norm(
-                    np.asarray(positive_first_transport["W"])
-                    - np.asarray(negative_first_transport["W"]),
+                    np.asarray(positive_first_conductance["W"])
+                    - np.asarray(negative_first_conductance["W"]),
                     ord=np.inf,
                 )
             ),
-            "positive_first_transport_cycle_component_l2": positive_first_transport[
+            "positive_first_transport_cycle_component_l2": positive_first_current[
                 "phase_local_projection"
             ]["cycle_component_l2"],
-            "negative_first_transport_cycle_component_l2": negative_first_transport[
+            "negative_first_transport_cycle_component_l2": negative_first_current[
                 "phase_local_projection"
             ]["cycle_component_l2"],
             "orientation_overwritten_at_first_transport": bool(
-                positive_first_transport["phase_local_projection"][
+                positive_first_current["phase_local_projection"][
                     "cycle_component_l2"
                 ]
                 <= float(config["edge_space"]["algebra_tolerance"])
-                and negative_first_transport["phase_local_projection"][
+                and negative_first_current["phase_local_projection"][
                     "cycle_component_l2"
                 ]
                 <= float(config["edge_space"]["algebra_tolerance"])
@@ -745,6 +914,14 @@ def branch_current_control(
             "both_manual_stage_traces_match_complete_step": bool(
                 positive_stage_trace["manual_stage_trace_matches_complete_step"]
                 and negative_stage_trace["manual_stage_trace_matches_complete_step"]
+            ),
+            "both_transport_kernel_traces_match_public_wrapper": bool(
+                positive_stage_trace[
+                    "both_transport_kernel_traces_match_public_wrapper"
+                ]
+                and negative_stage_trace[
+                    "both_transport_kernel_traces_match_public_wrapper"
+                ]
             ),
         }
     finite_activity_ladder = activity_amplitude_ladder(

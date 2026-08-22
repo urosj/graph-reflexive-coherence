@@ -434,7 +434,7 @@ def build_36_point_review_audit(
         row(4, "varying_W_orbit_metric_policy", conditional, "phase-local metric frozen; no orbit admitted", no_orbit),
         row(5, "divergence_and_cycle_projection_separate", "passed", "absolute divergence and fixed/phase-local projections recorded", True),
         row(6, "cycle_seed_certified_before_runtime", "passed", "full seed certification object per sign and ladder row", summary["all_cycle_seeds_certified"] and summary["all_activity_ladder_seeds_certified"]),
-        row(7, "cycle_seed_stage_trace", "passed", "public native stage trace with complete-step parity", summary["all_cycle_seed_stage_traces_match_complete_step"]),
+        row(7, "cycle_seed_stage_trace", "passed", "source-current transport kernels recorded separately and matched to the public wrapper and complete step", summary["all_cycle_seed_stage_traces_match_complete_step"] and summary["all_cycle_transport_kernel_traces_match_public_wrapper"]),
         row(8, "cycle_average_transport_classification", conditional, "required before positive orbit admission", no_orbit),
         row(9, "T_A05_assumption_envelope", "passed", "closure mobility conservation and no constraint support recorded", summary["activity_ladder_constraint_supported_row_count"] == 0),
         row(10, "seed_amplitude_ladders", "passed", "four preregistered activity levels with sign and quadratic controls", summary["all_activity_response_shape_controls_passed"]),
@@ -693,6 +693,10 @@ def run_grv6() -> None:
         "cycle_seed_stage_trace_pair_count": len(stage_trace_pairs),
         "all_cycle_seed_stage_traces_match_complete_step": all(
             row["both_manual_stage_traces_match_complete_step"]
+            for row in stage_trace_pairs
+        ),
+        "all_cycle_transport_kernel_traces_match_public_wrapper": all(
+            row["both_transport_kernel_traces_match_public_wrapper"]
             for row in stage_trace_pairs
         ),
         "all_cycle_orientations_overwritten_at_first_transport": all(

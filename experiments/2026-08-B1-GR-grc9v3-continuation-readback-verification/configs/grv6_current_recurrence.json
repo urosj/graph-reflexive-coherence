@@ -40,6 +40,7 @@
     "activity_response_shape_relative_error_max": 1e-8,
     "state_symmetry_tolerance": 1e-12,
     "stage_trace_complete_step_parity_tolerance": 1e-12,
+    "transport_kernel_wrapper_parity_tolerance": 1e-12,
     "current_zero_band": 1e-10,
     "required_seed_classes": [
       "exact_zero",
