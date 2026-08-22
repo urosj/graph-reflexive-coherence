@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv4_mechanically_passed_awaiting_human_review
+status = grv5_scientifically_accepted_grv6_authorized_but_paused
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -25,11 +25,11 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_continuation_evidence_opened = false
-positive_retention_evidence_opened = false
+positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
-verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C4_candidate_pending_acceptance
+verification_closeout_rung = GRV-C4
+verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_and_GRV7
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -273,6 +273,22 @@ The corrected bounded result is accepted at revision `e99a8a3` by
 `outputs/gates/grv4_acceptance_anchor.json`, assigning `GRV-C4` without opening
 equivalence, continuation, retention, read-back, or write-back. GRV5 is now
 authorized.
+
+GRV5 then executed through P5.4 from clean method revision `83c2cbc`; committed
+result revision `317092e` and receipt `a42ccda9...` bind the 144-row preparation,
+persistence, and matched-probe matrix. The accepted ceiling is `GRR2`: 32
+nonuniform rows retain a C-dominated neutral-direction displacement after the
+synthetic forming intervention stops. Branch relocation remains unresolved
+because GRV3 did not separately identify a branch tangent. The native
+stage-local `W` write is not identified as the specific mediator of later `C`,
+and the unchanged-runtime successor is not shown reachable from an accepted
+branch without the synthetic intervention. Native read-back, write-back,
+`GRR3+`, and closed-loop claims remain blocked.
+
+The experiment owner accepted that bounded result in
+`outputs/gates/grv5_acceptance_anchor.json`. This authorizes GRV6 but does not
+assign `GRV-C5`, which also requires GRV6 recurrence and GRV7 threshold
+evidence. GRV6 is intentionally not started pending the requested review.
 
 ## Central Question
 

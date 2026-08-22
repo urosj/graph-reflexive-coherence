@@ -4,18 +4,19 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv4_P4_1_mechanically_passed_awaiting_human_review
+status = grv5_scientifically_accepted_grv6_authorized_but_paused
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
 runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
-positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV4_P4_1_scientific_review
+positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
+positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
+current_gate = GRV6_authorized_but_not_started_user_pause
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C4_candidate_pending_acceptance
+verification_closeout_rung = GRV-C4
+verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_and_GRV7
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -910,7 +911,7 @@ excluded from the reported run.
   `grv5_intervention_registry.json`, `grv5_36_point_review_audit.json`, and
   report.
 - [x] Emit and validate the GRV5 result receipt.
-- [ ] Record human acceptance in a separate GRV5 acceptance anchor.
+- [x] Record human acceptance in a separate GRV5 acceptance anchor.
 - [x] Keep core Read-Back blocked unless directional present-current-conditioned read and passive-null gates pass.
 
 ### P5.3 36-Point Acceptance Hardening
@@ -1148,6 +1149,23 @@ stage-matched `W`-only mediation control was not run, so their specific causal
 link remains unresolved. Finally, the post-step pair is an unchanged-runtime
 successor of a synthetic old-current intervention, not a state shown reachable
 from an accepted branch by unchanged runtime alone.
+
+GRV5 acceptance disposition:
+
+```text
+acceptance_status = accepted
+acceptance_role = experiment_owner
+accepted_result_revision = 317092e9e86bf618dac4d31ffc47f74d9fa270f6
+accepted_receipt_payload_sha256 = a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35
+acceptance_anchor = outputs/gates/grv5_acceptance_anchor.json
+accepted_maximum_local_rung = GRR2
+accepted_closeout_rung = GRV-C4
+GRV_C5_assigned = false
+GRV6_status = authorized_but_not_started_user_pause
+native_readback_supported = false
+writeback_supported = false
+closed_loop_supported = false
+```
 
 ## Iteration 7 - GRV6 Current Recurrence And Return Orbits
 

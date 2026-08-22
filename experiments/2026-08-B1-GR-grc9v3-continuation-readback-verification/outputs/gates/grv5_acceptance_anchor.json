@@ -1,0 +1,41 @@
+{
+  "acceptance_role": "experiment_owner",
+  "acceptance_signature_or_ref": "repository_authenticated_user_instruction:accept_iteration_6_but_do_not_proceed_to_iteration_7_yet",
+  "acceptance_status": "accepted",
+  "acceptance_timestamp": "2026-08-22T15:12:43Z",
+  "accepted_by": "Uros Jovanovic (urosj)",
+  "accepted_claim_ceiling": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_without_specific_transient_W_mediation_or_native_readback",
+  "blocked_claims": [
+    "transverse_branch_relative_retention",
+    "specific_transient_W_mediation_of_later_C",
+    "native_branch_only_reachability",
+    "GRR3_or_stronger",
+    "native_readback",
+    "writeback",
+    "closed_read_write_loop"
+  ],
+  "gate_id": "GRV5",
+  "receipt_payload_sha256": "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35",
+  "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+  "review_lineage": {
+    "P5_2": {
+      "result_payload_sha256": "494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a",
+      "receipt_payload_sha256": "5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a",
+      "result_revision": "2d8e2adc9c81bdcdaeec0b3bad1dac2900db8c62"
+    },
+    "P5_3": {
+      "input_execution_revision": "c2cc6668a2e4b8e8d3c8a08f82c4a8d0eb563203",
+      "result_payload_sha256": "1edb81949ad2094f29f321ed6037a562ecebe3411644d97f5a739a8383cfcaa3",
+      "review_audit_payload_sha256": "4dda2cd40d2e57b597387cfa38519f8853506dadb1f7599455496f7477ad624a",
+      "receipt_payload_sha256": "941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f"
+    },
+    "P5_4": {
+      "input_execution_revision": "83c2cbcf002bf5ab82198f6ed9827950ada1af6a",
+      "result_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+      "review_audit_payload_sha256": "5a4969ec251e9805ad70d7ef08cef7ac8df877c1807db05b4daff0b971778ba4",
+      "receipt_payload_sha256": "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35",
+      "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6"
+    }
+  },
+  "review_method": "human_review_of_P5_4_branch_relocation_transient_W_mediation_synthetic_successor_and_provenance_boundaries"
+}
