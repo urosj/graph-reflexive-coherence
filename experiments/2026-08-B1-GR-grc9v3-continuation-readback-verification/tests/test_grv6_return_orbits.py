@@ -113,12 +113,33 @@ class GRV6ReturnOrbitTest(unittest.TestCase):
         self.assertTrue(
             all(
                 item["quadratic_response_passed"]
+                and item["positive_seed_certification"][
+                    "certified_before_runtime"
+                ]
+                and item["negative_seed_certification"][
+                    "certified_before_runtime"
+                ]
                 and not item["budget_projection_changed_state"]
                 and not item["conductance_floor_active"]
                 and not item["events_or_topology_changed"]
                 for item in row["cycle_activity_amplitude_ladder"]
             )
         )
+        largest = row["cycle_activity_amplitude_ladder"][-1]
+        for sign in ("positive", "negative"):
+            certification = largest[f"{sign}_seed_certification"]
+            self.assertLessEqual(
+                certification["seed_divergence_l2"],
+                certification["seed_divergence_effective_tolerance"],
+            )
+            self.assertLessEqual(
+                certification["cycle_membership_reconstruction_l2"],
+                certification["cycle_membership_effective_tolerance"],
+            )
+            self.assertLessEqual(
+                certification["seed_divergence_relative_to_l2"],
+                self.config["edge_space"]["seed_divergence_relative_tolerance"],
+            )
 
     def test_exact_zero_symmetry_is_certified_only_on_F1_control(self) -> None:
         homogeneous = branch_current_control(

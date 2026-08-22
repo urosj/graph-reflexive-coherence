@@ -1032,6 +1032,9 @@ The load-bearing hardening adds:
    absolute measurements, without near-zero cycle fractions;
 3. full pre-runtime seed certification including cycle membership, current
    floor, matched state, topology, RNG, phase, and positive conductance;
+   high-amplitude synthetic seeds use frozen absolute-plus-relative seed
+   tolerances so floating-point residuals are judged against seed scale without
+   relaxing the underlying cycle-space requirement;
 4. public-method traces through every native stage that can read, write, or
    overwrite current, plus exact physical parity with `step()`;
 5. four preregistered activity amplitudes in both signs, with the native

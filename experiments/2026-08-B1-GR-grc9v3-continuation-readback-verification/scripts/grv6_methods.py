@@ -257,14 +257,20 @@ def seed_certification(
     seeded_state = seeded.get_state()
     control = config["current_controls"]
     edge = config["edge_space"]
+    divergence_effective_tolerance = float(edge["divergence_tolerance"]) + (
+        float(edge["seed_divergence_relative_tolerance"]) * seed_norm
+    )
+    cycle_reconstruction_effective_tolerance = float(edge["algebra_tolerance"]) + (
+        float(edge["seed_algebra_relative_tolerance"]) * seed_norm
+    )
     checks = {
         "divergence_gate_satisfied": (
-            divergence <= float(edge["divergence_tolerance"])
+            divergence <= divergence_effective_tolerance
             if require_divergence_free
             else True
         ),
         "cycle_membership_within_tolerance": (
-            cycle_reconstruction <= float(edge["algebra_tolerance"])
+            cycle_reconstruction <= cycle_reconstruction_effective_tolerance
             if require_cycle_membership
             else True
         ),
@@ -295,10 +301,15 @@ def seed_certification(
         "runtime_reached_seed": False,
         "seed_l2": seed_norm,
         "seed_divergence_l2": divergence,
+        "seed_divergence_relative_to_l2": divergence / max(seed_norm, 1e-30),
+        "seed_divergence_effective_tolerance": divergence_effective_tolerance,
         "measured_divergence_within_cycle_tolerance": divergence
-        <= float(edge["divergence_tolerance"]),
+        <= divergence_effective_tolerance,
         "require_divergence_free": require_divergence_free,
         "cycle_membership_reconstruction_l2": cycle_reconstruction,
+        "cycle_membership_reconstruction_relative_to_l2": cycle_reconstruction
+        / max(seed_norm, 1e-30),
+        "cycle_membership_effective_tolerance": cycle_reconstruction_effective_tolerance,
         "require_cycle_membership": require_cycle_membership,
         "checks": checks,
         "certified_before_runtime": all(checks.values()),

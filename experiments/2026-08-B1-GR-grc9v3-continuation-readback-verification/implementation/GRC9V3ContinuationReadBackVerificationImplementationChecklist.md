@@ -1321,6 +1321,9 @@ blocked until a separate GRV6 acceptance anchor is committed.
 - [x] Add `grv6_36_point_review_audit.json` and its schema.
 - [x] Add regression tests for seed certification, stage parity, amplitude
   response, projector conditions, and exact-zero classification.
+- [x] Freeze absolute-plus-relative divergence and cycle-membership tolerances
+  for high-amplitude synthetic seeds, recording both residual scales and the
+  effective per-seed bounds.
 - [ ] Commit the P6.1 method revision and rerun GRV6 from that clean revision.
 - [ ] Verify all 36 review points are accounted for with zero current-result
   acceptance blockers.
