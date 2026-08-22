@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_P6_3_mechanically_passed_awaiting_human_review
+status = grv6_P6_3_accepted_GRV7_authorized
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
+verification_closeout_ceiling = GRV-C5_pending_GRV7
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -374,9 +374,14 @@ is substantially lower on F2/F3 than F1, and the repeated round-robin allocation
 bias toward F1 is now explicit. All 865 blocked rows carry their numerical
 condition diagnostics. The 36-point audit accounts for 22 current-result
 requirements and 14 conditionally deferred positive-orbit requirements; it does
-not call the deferred requirements executed. Receipt `705b6967...` awaits human
-review. No GRV6 acceptance anchor exists, `GRV-C5` is not assigned, and GRV7
-remains blocked.
+not call the deferred requirements executed. Receipt `705b6967...` was emitted
+awaiting human review and did not itself assign `GRV-C5` or authorize GRV7.
+
+Human review accepted P6.3 at result revision `07cf6784`. The separate
+`outputs/gates/grv6_acceptance_anchor.json` binds that revision to receipt
+`705b6967...` and preserves every bounded claim above. GRV7 is now authorized.
+Acceptance does not assign `GRV-C5`; spatial, temporal, and continuation-
+threshold evidence remains required from GRV7.
 
 ## Central Question
 

@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_P6_3_mechanically_passed_awaiting_human_review
+status = grv6_P6_3_accepted_GRV7_authorized
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,10 +13,10 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_P6_3_scientific_review_pending
+current_gate = GRV7_authorized_not_started
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
+verification_closeout_ceiling = GRV-C5_pending_GRV7
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -1223,7 +1223,7 @@ runtime_change_authorized = false
 - [x] Classify potential-flow orbit, synchronous transport orbit, undetermined recurrence, or stationary cycle current.
 - [x] Emit `return_orbit_registry.json` and report.
 - [x] Emit and validate the GRV6 result receipt.
-- [ ] Emit the separate GRV6 acceptance anchor only after human scientific review.
+- [x] Emit the separate GRV6 acceptance anchor only after human scientific review.
 - [x] Do not relabel recurrent nonzero current as active circulation or Read-Back.
 
 Preliminary mechanically completed result, superseded for acceptance purposes
@@ -1534,8 +1534,17 @@ non-required cycle/divergence gates, while actual cycle seeds use `satisfied`.
 All 36 external-review points are accounted for: 22 current-result requirements
 are executed or satisfied and 14 positive-candidate requirements are deferred.
 The experiment-local suite passes `84` tests; `src/` and protected source/spec/
-test paths remain unchanged. Scientific acceptance, the GRV6 acceptance anchor,
-`GRV-C5`, and GRV7 remain pending.
+test paths remain unchanged. Human review accepted this bounded P6.3 result:
+
+```text
+scientific_acceptance = accepted
+accepted_result_revision = 07cf6784abe600eb2ad345e2cf9c1ed2e109be3d
+accepted_receipt_payload_sha256 = 705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3
+acceptance_anchor = outputs/gates/grv6_acceptance_anchor.json
+GRV7_authorized = true
+GRV_C5_assigned = false
+GRV_C5_status = pending_GRV7_threshold_evidence
+```
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

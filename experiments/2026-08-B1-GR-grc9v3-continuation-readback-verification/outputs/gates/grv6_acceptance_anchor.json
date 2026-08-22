@@ -1,0 +1,45 @@
+{
+  "acceptance_role": "experiment_owner",
+  "acceptance_signature_or_ref": "repository_authenticated_user_instruction:accepted_do_commit",
+  "acceptance_status": "accepted",
+  "acceptance_timestamp": "2026-08-22T18:25:50Z",
+  "accepted_by": "Uros Jovanovic (urosj)",
+  "accepted_claim_ceiling": "bounded_search_found_no_primitive_period_2_to_8_return_and_cycle_seeds_were_overwritten_without_global_nonexistence_claim",
+  "blocked_claims": [
+    "stationary_potential_flow_is_stationary_cycle_current",
+    "nonzero_current_is_active_circulation",
+    "recurrent_current_is_readback",
+    "recurrent_current_is_memory",
+    "recurrent_current_is_self_sustaining_identity",
+    "physical_projection_return_is_full_runtime_return",
+    "hybrid_return_has_ordinary_floquet_spectrum",
+    "global_return_orbit_nonexistence",
+    "relative_periodic_orbit_nonexistence",
+    "condition_blocked_rows_as_negative_orbit_evidence",
+    "GRV_C5_from_GRV6_alone"
+  ],
+  "gate_id": "GRV6",
+  "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+  "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+  "review_lineage": {
+    "P6_1": {
+      "method_revision": "50aa178",
+      "result_revision": "f664305",
+      "acceptance_status": "never_accepted_superseded_by_P6_2"
+    },
+    "P6_2": {
+      "method_revision": "d542330",
+      "result_revision": "117699e",
+      "acceptance_status": "never_accepted_superseded_by_P6_3"
+    },
+    "P6_3": {
+      "input_execution_revision": "1def2aeab3f2ec50bff411a5d89c2d391c586466",
+      "result_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+      "contract_audit_payload_sha256": "67b25560aef5cbd50597df05712571629c6483b69bbb4ff11e747d34d08c4dab",
+      "review_36_point_audit_payload_sha256": "3d7375eabe881916c9d03f23f4bf6f9639befb51f87544b70ad5c0a80c44ba28",
+      "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+      "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d"
+    }
+  },
+  "review_method": "human_review_of_P6_3_cycle_current_erasure_boundary_projection_state_search_conditioning_fixture_resolution_and_claim_boundaries"
+}
