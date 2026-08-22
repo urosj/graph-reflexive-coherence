@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv5_p5_package_manifest_v1",
-  "package_status": "P5_3_compact_evidence_representation_pending_clean_committed_execution",
+  "package_status": "P5_3_mediation_intervention_accuracy_pending_clean_committed_execution",
   "gate_id": "GRV5",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -87,6 +87,20 @@
     "receipt_payload_sha256": "bf7069a4b49d7b6b03968817ba4472f6f9de89d8b737a49f86a1bdd78d48355b",
     "supersession_reason": "full_administrative_state_was_repeated_in_every_probe_cell_creating_a_69_MB_artifact_without_additional_scientific_evidence",
     "compaction_rule": "retain_exact_C_W_J_carrier_vectors_digest_response_and_before_after_change_per_cell;_retain_full_admin_matching_once_per_probe_row",
+    "threshold_branch_scope_or_scientific_classification_changed": false,
+    "full_clean_rerun_required": true
+  },
+  "superseded_p5_3_compact_without_intervention_accuracy_execution": {
+    "input_revision": "54060875546d5a3667de5ebd36c3c0121b70273c",
+    "status": "mechanically_passed_pending_human_review",
+    "review_point_count": 36,
+    "all_review_points_mechanically_accounted_for": true,
+    "primary_numerical_projection_matches_P5_2": true,
+    "primary_numerical_projection_sha256": "d75de825ff29f6d9708fe2f13e03f270b96f90119ec0f643c5bb2d9631c5eccd",
+    "maximum_local_evidence_ladder_rung": "GRR2",
+    "receipt_payload_sha256": "55b69742fed7e221e0b9404556f25447f0abcf7d4953adff259d93e58941082a",
+    "human_acceptance_anchor_created": false,
+    "supersession_reason": "reset_swap_equal_response_controls_passed_but_their_W_intervention_accuracy_was_not_quantified_in_each_machine_row",
     "threshold_branch_scope_or_scientific_classification_changed": false,
     "full_clean_rerun_required": true
   },

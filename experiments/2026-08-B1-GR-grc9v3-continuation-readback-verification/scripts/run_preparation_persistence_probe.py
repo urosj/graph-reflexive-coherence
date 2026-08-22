@@ -597,6 +597,31 @@ def probe_matrix(
             control_amplitude = sweep[largest_index]["amplitude"]
             original = sweep[largest_index]["difference_in_differences"]
             reset_pair = reset_carrier(matched_first, matched_second, baseline)
+            baseline_w = conductance_vector(baseline)
+            reset_intervention_accuracy = {
+                "carrier_pair_W_difference_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(reset_pair[0])
+                        - conductance_vector(reset_pair[1]),
+                        ord=np.inf,
+                    )
+                ),
+                "first_to_baseline_W_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(reset_pair[0]) - baseline_w,
+                        ord=np.inf,
+                    )
+                ),
+                "second_to_baseline_W_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(reset_pair[1]) - baseline_w,
+                        ord=np.inf,
+                    )
+                ),
+                "surface_consistency": [
+                    conductance_surface_consistency(model) for model in reset_pair
+                ],
+            }
             reset_result = difference_in_differences(
                 reset_pair[0],
                 reset_pair[1],
@@ -607,6 +632,18 @@ def probe_matrix(
             equal_pair = equal_carrier_preserving_reached_state(
                 matched_first, matched_second
             )
+            equal_intervention_accuracy = {
+                "carrier_pair_W_difference_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(equal_pair[0])
+                        - conductance_vector(equal_pair[1]),
+                        ord=np.inf,
+                    )
+                ),
+                "surface_consistency": [
+                    conductance_surface_consistency(model) for model in equal_pair
+                ],
+            }
             equal_result = difference_in_differences(
                 equal_pair[0],
                 equal_pair[1],
@@ -615,6 +652,25 @@ def probe_matrix(
                 amplitude=control_amplitude,
             )
             swapped = swap_carrier(matched_first, matched_second)
+            swap_intervention_accuracy = {
+                "first_to_original_second_W_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(swapped[0])
+                        - conductance_vector(matched_second),
+                        ord=np.inf,
+                    )
+                ),
+                "second_to_original_first_W_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(swapped[1])
+                        - conductance_vector(matched_first),
+                        ord=np.inf,
+                    )
+                ),
+                "surface_consistency": [
+                    conductance_surface_consistency(model) for model in swapped
+                ],
+            }
             swap_result = difference_in_differences(
                 swapped[0],
                 swapped[1],
@@ -706,6 +762,7 @@ def probe_matrix(
                             "difference_in_differences_l2"
                         ]
                         <= tolerance,
+                        "carrier_reset_intervention_accuracy": reset_intervention_accuracy,
                         "equal_carrier_difference_in_differences_l2": equal_result[
                             "difference_in_differences_l2"
                         ],
@@ -713,8 +770,10 @@ def probe_matrix(
                             "difference_in_differences_l2"
                         ]
                         <= tolerance,
+                        "equal_carrier_intervention_accuracy": equal_intervention_accuracy,
                         "carrier_swap_sign_reversal_error_l2": swap_error,
                         "carrier_swap_passed": swap_error <= tolerance,
+                        "carrier_swap_intervention_accuracy": swap_intervention_accuracy,
                         "wrong_location_or_shuffled_carrier": wrong_location,
                         "graded_mediation_class": mediation_class,
                         "W_only_control_scope": (
@@ -1341,6 +1400,41 @@ def build_36_point_review_audit(
         if row["mediation_controls"]["wrong_location_or_shuffled_carrier"]["status"]
         == "executed_multi_edge_carrier_pattern_shift"
     ]
+    intervention_accuracy_floor = float(
+        config["p5_3_review_hardening"]["detection_contract"][
+            "reset_swap_accuracy_floor"
+        ]
+    )
+    mediation_intervention_accuracy_passed = all(
+        max(
+            control["carrier_reset_intervention_accuracy"][
+                "carrier_pair_W_difference_linf"
+            ],
+            control["carrier_reset_intervention_accuracy"]["first_to_baseline_W_linf"],
+            control["carrier_reset_intervention_accuracy"]["second_to_baseline_W_linf"],
+            control["equal_carrier_intervention_accuracy"][
+                "carrier_pair_W_difference_linf"
+            ],
+            control["carrier_swap_intervention_accuracy"][
+                "first_to_original_second_W_linf"
+            ],
+            control["carrier_swap_intervention_accuracy"][
+                "second_to_original_first_W_linf"
+            ],
+        )
+        <= intervention_accuracy_floor
+        and all(
+            surface["surfaces_consistent"]
+            for key in (
+                "carrier_reset_intervention_accuracy",
+                "equal_carrier_intervention_accuracy",
+                "carrier_swap_intervention_accuracy",
+            )
+            for surface in control[key]["surface_consistency"]
+        )
+        for row in all_probe_rows
+        for control in (row["mediation_controls"],)
+    )
 
     def point(
         point_id: int,
@@ -1406,7 +1500,11 @@ def build_36_point_review_audit(
                 "candidate_rows.*.persistence_activity_trace",
                 "candidate_rows.*.persistence_classification",
             ],
-            "passive, regenerated, transferred, and absent remain distinct",
+            (
+                "positive rows resolve as transferred;_any_future_activity_"
+                "associated_W_row_remains_maintained_vs_regenerated_unresolved_"
+                "until_stagewise_survival_is_identified"
+            ),
         ),
         point(
             5,
@@ -1716,7 +1814,8 @@ def build_36_point_review_audit(
         point(
             29,
             "controls_modify_authoritative_W_surface",
-            all(
+            mediation_intervention_accuracy_passed
+            and all(
                 all(
                     audit["surfaces_consistent"]
                     for audit in row["direct_W_metric_audit"][
@@ -1770,7 +1869,8 @@ def build_36_point_review_audit(
             33,
             "detection_floors_and_positive_control",
             all("detection_floor_audit" in row for row in rows)
-            and payload["summary"]["substrate_reduced_sensitivity_count"] > 0,
+            and payload["summary"]["substrate_reduced_sensitivity_count"] > 0
+            and mediation_intervention_accuracy_passed,
             "passed",
             [
                 "candidate_rows.*.detection_floor_audit",

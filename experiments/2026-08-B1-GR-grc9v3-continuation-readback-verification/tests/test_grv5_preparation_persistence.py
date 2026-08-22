@@ -23,10 +23,13 @@ from grv5_methods import (  # noqa: E402
     conductance_vector,
     difference_in_differences,
     direct_conductance_intervention,
+    equal_carrier_preserving_reached_state,
     match_C_and_J_preserving_W,
     matching_audit,
     old_current_intervention,
+    reset_carrier,
     signed_sweep_fit,
+    swap_carrier,
 )
 from run_preparation_persistence_probe import (  # noqa: E402
     build_36_point_review_audit,
@@ -187,6 +190,36 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertTrue(audit["passed"])
         self.assertTrue(
             conductance_surface_consistency(matched[0])["surfaces_consistent"]
+        )
+
+    def test_reset_swap_and_equal_controls_are_exact_on_authoritative_W(self) -> None:
+        amplitude = self.config["preparation"]["direct_conductance_relative_amplitude"]
+        first = direct_conductance_intervention(
+            self.nonuniform_model, signed_relative_amplitude=amplitude
+        )
+        second = direct_conductance_intervention(
+            self.nonuniform_model, signed_relative_amplitude=-amplitude
+        )
+        baseline_w = conductance_vector(self.nonuniform_model)
+        reset = reset_carrier(first, second, self.nonuniform_model)
+        self.assertTrue(np.array_equal(baseline_w, conductance_vector(reset[0])))
+        self.assertTrue(np.array_equal(baseline_w, conductance_vector(reset[1])))
+        swapped = swap_carrier(first, second)
+        self.assertTrue(
+            np.array_equal(conductance_vector(second), conductance_vector(swapped[0]))
+        )
+        self.assertTrue(
+            np.array_equal(conductance_vector(first), conductance_vector(swapped[1]))
+        )
+        equal = equal_carrier_preserving_reached_state(first, second)
+        self.assertTrue(
+            np.array_equal(conductance_vector(equal[0]), conductance_vector(equal[1]))
+        )
+        self.assertTrue(
+            all(
+                conductance_surface_consistency(model)["surfaces_consistent"]
+                for model in (*reset, *swapped, *equal)
+            )
         )
 
     def test_matched_pair_preserves_W_but_native_stage_reconstructs_it(self) -> None:
