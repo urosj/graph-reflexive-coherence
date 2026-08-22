@@ -1,0 +1,73 @@
+{
+  "schema_version": "b1_grv4_frozen_full_comparison_contract_v1",
+  "prerequisite": {
+    "gate_id": "GRV3",
+    "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+    "receipt_payload_sha256": "83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc",
+    "acceptance_anchor_commit": "8b82df4f077cecf3af780165e71bfb42b6bf5575"
+  },
+  "branch_scope": {
+    "source_registry_path": "outputs/fixed_branch_registry.json",
+    "source_registry_sha256": "56bd1857f892f187c6b99d6fcbd419ddd68ae0e17133b3a0bf7dda79b197e366",
+    "grv3_result_path": "outputs/complete_step_jacobians.json",
+    "grv3_result_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+    "selection_rule": "all_48_GRV2_certified_branches_in_committed_registry_order",
+    "expected_branch_count": 48,
+    "full_map_primary_comparison_rule": "every_branch_with_GRV3_admitted_C_transition_matrix",
+    "expected_primary_full_comparison_count": 32,
+    "zero_current_boundary_rows": "retain_as_frozen_comparator_rows_with_full_comparison_blocked",
+    "post_spectrum_selection_allowed": false
+  },
+  "sign_audit": {
+    "functional": "P_G=(kappa_c/2)C^T L_W C-sum_i(scale*C_i^2+mu*C_i)",
+    "potential_identity": "Phi=gradient_C(P_G)=kappa_c*L_W*C-(2*scale*C+mu)",
+    "mobility_identity": "M_W=eta*L_W",
+    "semidiscrete_identity": "dC/dt=M_W*gradient_C(P_G)",
+    "semidiscrete_sign_test": "dP_G/dt=gradient_C(P_G)^T*M_W*gradient_C(P_G)>=0",
+    "monotonicity_kind": "weak_nondecreasing_including_stationary_rows",
+    "tangent_direction_rule": "every_canonical_zero_sum_basis_column_with_both_signs",
+    "tangent_amplitudes": [0.001, 0.01],
+    "runtime_dt_multipliers": [0.125, 0.25, 0.5, 1.0, 2.0, 4.0],
+    "functional_delta_tolerance": 1e-12,
+    "runtime_stage_equivalence_linf_max": 1e-10,
+    "functional_formula_consistency_max": 1e-10,
+    "source_stage_sequence": ["compute_potential", "compute_flux", "apply_continuity"],
+    "excluded_runtime_stages": ["compute_base_conductance", "identity", "spark", "choice", "growth", "boundary", "budget", "final_refresh"]
+  },
+  "frozen_comparator": {
+    "basis_id": "canonical_zero_sum_identical_to_GRV3",
+    "fixed_topology": true,
+    "fixed_base_conductance": true,
+    "second_variation": "Q^T*(kappa_c*L_W-2*scale*I)*Q",
+    "mobility": "Q^T*(eta*L_W)*Q",
+    "semidiscrete_generator": "M_tangent*H_tangent",
+    "explicit_step_multiplier": "I+dt*M_tangent*H_tangent",
+    "analytical_comparator_is_runtime_state": false,
+    "branch_residual_linf_max": 1e-8
+  },
+  "full_map_comparison": {
+    "primary_coordinate": "C",
+    "secondary_coordinate": "C_W",
+    "secondary_coordinate_role": "diagnostic_evolving_conductance_comparison_without_joint_mode_claim",
+    "slow_subspace_minimum_multiplier_magnitude": 0.9,
+    "eigenvalue_set_error_max": 1e-6,
+    "principal_subspace_angle_max_radians": 1e-6,
+    "symmetry_spectrum_error_max": 1e-6,
+    "unstable_multiplier_slack": 1e-6,
+    "neutral_magnitude_tolerance": 1e-6,
+    "GRV3_blocked_temporal_interpretation_remains_blocked": true,
+    "post_result_coordinate_selection_allowed": false
+  },
+  "claim_boundary": {
+    "frozen_operator_class": "substrate_reduced",
+    "full_core_continuation_operator_claim_allowed": false,
+    "W_eliminability_claim_allowed": false,
+    "joint_C_W_mode_claim_allowed": false,
+    "continuation_claim_allowed": false,
+    "retention_claim_allowed": false,
+    "readback_claim_allowed": false,
+    "writeback_claim_allowed": false,
+    "strong_result_requires_verified_stability_or_slow_subspace_disagreement": true,
+    "agreement_is_valid_bounded_result": true
+  }
+}

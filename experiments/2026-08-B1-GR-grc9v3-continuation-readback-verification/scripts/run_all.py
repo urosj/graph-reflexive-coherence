@@ -7,6 +7,7 @@ from pathlib import Path
 
 from artifact_io import EXPERIMENT_ROOT, git, sha256_file, write_json
 from capture_repository_baseline import capture
+from compare_frozen_and_full_dynamics import run_grv4
 from compute_complete_step_jacobian import run_grv3
 from gate_receipts import finalize_receipt, validate_receipt
 from serialize_theory_contract import serialize
@@ -140,6 +141,15 @@ def main() -> None:
             )
         run_grv3()
         print("GRV3 mechanically validated; scientific acceptance anchor is pending.")
+        return
+    if args.gate == "GRV4":
+        anchor = prerequisite_anchor_path(args.gate)
+        if not anchor.exists():
+            raise SystemExit(
+                f"{args.gate} blocked: prerequisite accepted anchor is missing"
+            )
+        run_grv4()
+        print("GRV4 mechanically validated; scientific acceptance anchor is pending.")
         return
     if args.gate != "GRV0":
         anchor = prerequisite_anchor_path(args.gate)

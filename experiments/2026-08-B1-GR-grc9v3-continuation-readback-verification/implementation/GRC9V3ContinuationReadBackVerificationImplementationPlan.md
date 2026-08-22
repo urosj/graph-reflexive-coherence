@@ -672,6 +672,33 @@ runtime recurrence and determine where the two agree or diverge.
    multipliers, mode overlap, and stability class for each accepted branch.
 6. Record every assumption needed for elimination or reduction.
 
+### Frozen P4 Execution Contract
+
+P4 consumes the accepted bounded GRV3 result without selecting branches or
+coordinates after observing spectra. It constructs a standalone frozen-`W`
+comparator for all 48 accepted branches. The primary full-map relation is
+evaluated on exactly the 32 branches where GRV3 admitted the `C` transition;
+the 16 zero-current categorical-boundary rows remain explicit blocked
+comparisons. `C-W` is secondary diagnostic evidence only and inherits every
+GRV3 temporal-interpretation block.
+
+The sign audit freezes the graph functional, potential, mobility, and
+continuity identities before execution. It checks every canonical tangent
+direction in both signs at amplitudes `1e-3` and `1e-2`, over runtime timestep
+multipliers `0.125, 0.25, 0.5, 1, 2, 4`. The staged comparator calls the
+unchanged potential, flux, and continuity implementations while holding `W`
+fixed. Conductance reconstruction and semantic/topology stages are excluded by
+construction and recorded as reduction assumptions. Weak monotonicity includes
+stationary equality; it is not reported as strict increase.
+
+Frozen structural eigenvalues, semidiscrete rates, explicit-step multipliers,
+full-map multipliers, stability class, slow-subspace angle, and symmetry-orbit
+covariance use frozen thresholds and the same conserved tangent basis as GRV3.
+Agreement is a valid bounded result. A strong result requires a verified
+stability-class or slow-subspace disagreement, but absence of disagreement does
+not fail the gate. Neither outcome permits `W` elimination, a joint `C-W` mode,
+or a full core continuation operator claim.
+
 ### Required outputs
 
 ```text

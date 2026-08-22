@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv3_P3_4_1_bounded_result_accepted_GRV4_authorized
+status = grv4_P4_method_frozen_pending_clean_execution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_evidence_GRV4_pending
+verification_closeout_ceiling = GRV-C3_with_GRV4_method_frozen_execution_pending
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -214,6 +214,17 @@ accepted this bounded GRV3 result at revision `0dedbf9`. The acceptance does
 not upgrade any blocked full-state, stability, continuation, retention,
 read-back, or write-back interpretation. GRV4 is now authorized and remains
 required before `GRV-C4` can be considered.
+
+GRV4 P4 freezes the next comparison without changing `src/`. Every accepted
+branch receives a fixed-`W` structural comparator in the same conserved tangent
+basis used by GRV3. The primary relation to complete recurrence is evaluated
+only on the 32 branches whose `C` transition matrix GRV3 admitted; the 16
+zero-current categorical-boundary rows remain explicit blocked comparisons.
+The sign audit separates the semidiscrete identity, staged runtime behavior at
+the native timestep, and a preregistered timestep/amplitude sweep. Its staged
+path calls the existing potential, flux, and continuity implementations while
+holding `W` fixed, so it is a declared reduction rather than an alternative
+native `step()`.
 
 ## Central Question
 

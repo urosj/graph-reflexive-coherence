@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv3_P3_4_1_bounded_result_accepted_GRV4_authorized
+status = grv4_P4_method_frozen_pending_clean_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,7 +12,7 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV4_method_freeze
+current_gate = GRV4_clean_execution
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
 verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_evidence_GRV4_pending
@@ -651,6 +651,32 @@ and its exact result-receipt digest. GRV4 is authorized without upgrading any
 blocked full-state or continuation interpretation.
 
 ## Iteration 5 - GRV4 Frozen-Conductance Versus Full Recurrence
+
+### P4 Method Freeze
+
+```text
+branch_scope = all_48_certified_GRV2_rows
+standalone_frozen_comparator_scope = all_48_rows
+primary_full_map_comparison_scope = exactly_32_GRV3_admitted_C_rows
+zero_current_boundary_rows = retained_as_blocked_full_comparisons
+tangent_basis = canonical_zero_sum_identical_to_GRV3
+sign_probe_amplitudes = [0.001, 0.01]
+runtime_dt_multipliers = [0.125, 0.25, 0.5, 1.0, 2.0, 4.0]
+weak_monotonicity_includes_stationary_equality = true
+post_spectrum_branch_or_coordinate_selection = false
+frozen_operator_class = substrate_reduced
+W_elimination_claim = blocked
+joint_C_W_mode_claim = blocked
+full_core_continuation_operator_claim = blocked
+```
+
+The staged sign comparator consumes the unchanged `compute_potential`,
+`compute_flux`, and `apply_continuity` implementations while holding the
+accepted branch `W` fixed. It is not a replacement `step()`: conductance
+reconstruction, identity, spark, choice, growth, boundary, budget, and final
+refresh stages are excluded and recorded as reduction assumptions. The
+complete-step side is consumed from the accepted GRV3 matrices; P4 does not
+rerun or reinterpret blocked GRV3 derivatives.
 
 - [ ] Complete the runtime sign audit.
 - [ ] State whether `P_G`, `-P_G`, neither, or only a small-step limit is monotone.
