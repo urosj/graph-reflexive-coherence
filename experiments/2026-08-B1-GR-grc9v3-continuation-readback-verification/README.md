@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv3_P3_4_method_frozen_pending_clean_execution
+status = grv3_P3_4_1_mechanically_passed_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,7 @@ positive_retention_evidence_opened = false
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_GRV3_acceptance_blocked_pending_P3_4
+verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_candidate_awaiting_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -194,6 +194,23 @@ normalization, alternate-basis covariance, or symmetry conjugacy. P3.4 adds
 those checks without changing `src/`, GRV2 branches, fixtures, finite-difference
 steps, spectral thresholds, or the claim ceiling. Until its clean rerun is
 reviewed, P3.3 remains preliminary evidence and GRV4 is blocked.
+
+The report-complete P3.4.1 rerun from clean revision `b1c233b` passes
+mechanically. All 48 branches pass bounded causal closure and per-subfield
+omitted-state decomposition. All 64 reduced matrices pass derivative-level
+administrative-phase invariance and alternate-basis covariance, and all 32
+declared multirow symmetry comparisons pass. Decoder correction, RNG
+consumption equality, and branch-residual-to-step separation pass for every
+derivative attempt. The 61 previously interpretable reduced matrices remain
+interpretable; the same three `C-W` candidates remain blocked by frozen
+spectral/conditioning gates, while their separately frozen `C` candidates pass.
+
+Receipt `83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc`
+binds the current result. No full `(C,W,J)` classical derivative, joint `C-W`
+mode claim, global cache eliminability, continuation, retention, read-back, or
+write-back is supported. The complete-beat odd/even `J` response is unresolved
+and does not negate the GRV1 stage-local `J^2` path. GRV3 remains pending human
+scientific review; no acceptance anchor exists and GRV4 remains blocked.
 
 ## Central Question
 

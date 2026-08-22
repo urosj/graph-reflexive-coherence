@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv3_P3_4_method_frozen_pending_clean_execution
+status = grv3_P3_4_1_mechanically_passed_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -12,10 +12,10 @@ runtime_change_authorized = false
 src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_physical_branch_existence_only
-current_gate = GRV3_P3_4_execution
+current_gate = GRV3_scientific_review
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C3
-verification_closeout_ceiling = GRV-C3_with_GRV3_acceptance_blocked_pending_P3_4
+verification_closeout_ceiling = GRV-C3_with_bounded_GRV3_candidate_awaiting_acceptance
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -496,8 +496,8 @@ writeback = unsupported
 - [x] Freeze a declared branch-scale block metric, retain raw and normalized
   participation as diagnostic only, and block joint `C-W` mode claims.
 - [x] Freeze alternate zero-sum basis covariance and symmetry-orbit conjugacy.
-- [ ] Execute P3.4 from a clean committed input revision.
-- [ ] Confirm all P3.4 machine gates and classify any blocked matrices without
+- [x] Execute P3.4.1 from a clean committed input revision.
+- [x] Confirm all P3.4 machine gates and classify any blocked matrices without
   numerical repair.
 
 - [x] Freeze and test the branch-relative causal-state encoder and decoder.
@@ -602,6 +602,51 @@ overwritten by the complete step. These results constrain candidate-block
 interpretation; they do not establish global eliminability. The result opens no
 stability, continuation, retention, read-back, or write-back claim. GRV4 remains
 required before `GRV-C4` can be considered.
+
+### P3.4.1 Current Result
+
+```text
+input_execution_revision = b1c233be164c6e88d21f5386ae2483cb2e08ecad
+receipt_payload_sha256 = 83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+branches_audited = 48
+bounded_causal_closure_candidates = 48
+omitted_state_decomposition_pass_branches = 48
+full_C_W_J_square_jacobians = 0
+reduced_square_jacobians = 64
+phase_operator_pass_matrices = 64
+basis_covariance_pass_matrices = 64
+symmetry_covariance_pass_pairs = 32
+symmetry_covariance_failed_or_blocked_pairs = 0
+temporal_mode_interpretation_pass_matrices = 61
+response_convergence_pass_matrices = 64
+GRV_C4 = unsupported_pending_GRV4
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+P3.4.1 preserves the P3.3 matrix result while establishing why a fixed reduced
+operator is admissible on the tested envelope. All 64 reduced matrices pass the
+administrative-phase and alternate-basis covariance gates; all 32 declared
+multirow symmetry comparisons pass. All 48 branches pass the per-key omitted
+state audit, covering 1,536 reconstructed-or-inert cache rows and 96 absent
+placeholder rows without admitting the whole cache or claiming global
+eliminability. All 1,188 derivative-column attempts pass decoder and RNG
+controls. The maximum decoder correction divided by `h` is about `7.19e-12`,
+the maximum branch residual divided by `h` is about `5.47e-7` against the
+frozen `1e-3` ceiling, the maximum phase matrix error is about `2.02e-11`, and
+the maximum alternate-basis conjugacy error is about `2.20e-11`.
+
+The complete-beat odd/even `J` diagnostic is unresolved at the declared steps.
+This does not erase GRV1's stage-local sign-even `J^2` path, does not establish
+`J` eliminability, and does not reopen the non-smooth full-chart derivative.
+Raw and declared-scale participation remain diagnostic and no joint `C-W` mode
+claim is made. The same three `C-W` interpretations remain blocked as in P3.3;
+their separately frozen `C` candidates pass. No GRV3 acceptance anchor has
+been emitted.
 
 ## Iteration 5 - GRV4 Frozen-Conductance Versus Full Recurrence
 

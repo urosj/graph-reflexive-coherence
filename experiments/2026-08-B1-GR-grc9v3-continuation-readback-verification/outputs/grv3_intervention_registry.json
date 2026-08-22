@@ -1,0 +1,4189 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV3",
+    "reproducibility_class": "tolerance_reproducible"
+  },
+  "payload": {
+    "gate_id": "GRV3",
+    "rows": [
+      {
+        "branch_id": "grv2-f1-001",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-002",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-003",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-004",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-005",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-006",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-007",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-008",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-009",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-010",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-011",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-012",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-013",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-014",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-015",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f1-016",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-017",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-018",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-019",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.531308496145357e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.531308496145357e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.531308496145357e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.531308496145357e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-020",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.531308496145357e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.531308496145357e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.531308496145357e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.531308496145357e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-021",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-022",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-023",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-024",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-025",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-026",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 9.992007221626409e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 9.992007221626409e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-027",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-028",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 4.9960036108132044e-14,
+                "J": 2.2204460492422351e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 4.9960036108132044e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-029",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.0028423364237824e-13,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.0028423364237824e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.0028423364237824e-13,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.0028423364237824e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-030",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.0028423364237824e-13,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.0028423364237824e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.0028423364237824e-13,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.0028423364237824e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-031",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.0036416142611415e-13,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.0036416142611415e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.0036416142611415e-13,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.0036416142611415e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f2-032",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.0036416142611415e-13,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.0036416142611415e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.0036416142611415e-13,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.0036416142611415e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-033",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.7763568394002505e-15,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.7763568394002505e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.774758283725532e-14,
+                "J": 8.881784196936629e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.774758283725532e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.774758283725532e-14,
+                "J": 8.881784196936629e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.774758283725532e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-034",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.7763568394002505e-15,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.7763568394002505e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.730349362740526e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.730349362740526e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.730349362740526e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.730349362740526e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-035",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.4424906541753444e-15,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.4424906541753444e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-036",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 6.217248937900877e-15,
+                "J": 4.4408920984683144e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 6.217248937900877e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.865174681370263e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.865174681370263e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.865174681370263e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.865174681370263e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-037",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.1086244689504383e-15,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.1086244689504383e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.482903185973555e-14,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.482903185973555e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.482903185973555e-14,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.482903185973555e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-038",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.552713678800501e-15,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.552713678800501e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-039",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 5.10702591327572e-15,
+                "J": 1.7763568393873258e-15,
+                "W": 0.0
+              },
+              "maximum_l_inf": 5.10702591327572e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 1.7763568393937881e-15,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 1.7763568393937881e-15,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-040",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.2434497875801753e-14,
+                "J": 8.881784196985096e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.2434497875801753e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.752553823233029e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.752553823233029e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.752553823233029e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.752553823233029e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-041",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.1086244689504383e-15,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.1086244689504383e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.482903185973555e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.482903185973555e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.482903185973555e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.482903185973555e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-042",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.552713678800501e-15,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.552713678800501e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 4.4408920984844703e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-043",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 5.10702591327572e-15,
+                "J": 8.881784196936629e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 5.10702591327572e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-044",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.2434497875801753e-14,
+                "J": 4.440892098492548e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.2434497875801753e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.752553823233029e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.752553823233029e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.752553823233029e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.752553823233029e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-045",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 6.661338147750939e-15,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 6.661338147750939e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-046",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 6.439293542825908e-15,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 6.439293542825908e-15
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.5010215292932116e-13,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.5010215292932116e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-047",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 1.021405182655144e-14,
+                "J": 8.881784196968941e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 1.021405182655144e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.0020430585864233e-13,
+                "J": 1.7763568393937881e-15,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.0020430585864233e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 3.0020430585864233e-13,
+                "J": 1.7763568393937881e-15,
+                "W": 0.0
+              },
+              "maximum_l_inf": 3.0020430585864233e-13
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      },
+      {
+        "branch_id": "grv2-f3-048",
+        "clone_first": true,
+        "codec_interventions": [
+          "branch",
+          "C_positive",
+          "C_negative",
+          "W_positive",
+          "J_positive",
+          "J_negative"
+        ],
+        "counterfactual_rows": [
+          {
+            "amplitude": 0.01,
+            "block": "W",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CJ_different_W",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 2.4868995751603507e-14,
+                "J": 8.881784197001252e-16,
+                "W": 0.0
+              },
+              "maximum_l_inf": 2.4868995751603507e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_positive_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": -1.0,
+            "block": "J",
+            "constitutive_consistency": "not_established",
+            "intervention_id": "matched_CW_sign_reversed_J",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 7.505107646466058e-14,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 7.505107646466058e-14
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          },
+          {
+            "amplitude": 1.0,
+            "block": "Phi",
+            "constitutive_consistency": "failed_overwritten_by_complete_step",
+            "intervention_id": "branch_consistent_vs_perturbed_derived_Phi",
+            "output_delta": {
+              "block_l_inf": {
+                "C": 0.0,
+                "J": 0.0,
+                "W": 0.0
+              },
+              "maximum_l_inf": 0.0
+            },
+            "pair_class": "synthetic_valid_not_runtime_reached_pair",
+            "resolved_counterfactual_sensitivity": false,
+            "runtime_reachability": "not_established",
+            "structural_validity": "passed"
+          }
+        ],
+        "live_get_state_mutated": false
+      }
+    ]
+  },
+  "payload_sha256": "f75c469ea432b7d95f8275e81445a3fb494d376d1c5cad9458e6a203aa011f2f",
+  "schema_version": "b1_grv3_intervention_registry_v1"
+}
