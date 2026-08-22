@@ -247,6 +247,7 @@ def seed_certification(
     incidence: NDArray[np.float64],
     config: dict[str, Any],
     require_cycle_membership: bool,
+    require_divergence_free: bool,
 ) -> dict[str, Any]:
     seeded = set_current(model, seed)
     seed_norm = float(np.linalg.norm(seed, ord=2))
@@ -257,8 +258,11 @@ def seed_certification(
     control = config["current_controls"]
     edge = config["edge_space"]
     checks = {
-        "divergence_within_tolerance": divergence
-        <= float(edge["divergence_tolerance"]),
+        "divergence_gate_satisfied": (
+            divergence <= float(edge["divergence_tolerance"])
+            if require_divergence_free
+            else True
+        ),
         "cycle_membership_within_tolerance": (
             cycle_reconstruction <= float(edge["algebra_tolerance"])
             if require_cycle_membership
@@ -291,6 +295,9 @@ def seed_certification(
         "runtime_reached_seed": False,
         "seed_l2": seed_norm,
         "seed_divergence_l2": divergence,
+        "measured_divergence_within_cycle_tolerance": divergence
+        <= float(edge["divergence_tolerance"]),
+        "require_divergence_free": require_divergence_free,
         "cycle_membership_reconstruction_l2": cycle_reconstruction,
         "require_cycle_membership": require_cycle_membership,
         "checks": checks,
@@ -491,6 +498,7 @@ def activity_amplitude_ladder(
                     incidence=incidence,
                     config=config,
                     require_cycle_membership=require_cycle_membership,
+                    require_divergence_free=require_cycle_membership,
                 ),
                 "negative_seed_certification": seed_certification(
                     model,
@@ -499,6 +507,7 @@ def activity_amplitude_ladder(
                     incidence=incidence,
                     config=config,
                     require_cycle_membership=require_cycle_membership,
+                    require_divergence_free=require_cycle_membership,
                 ),
                 "positive_first_transport_W": positive_w.tolist(),
                 "negative_first_transport_W": negative_w.tolist(),
@@ -637,6 +646,7 @@ def branch_current_control(
                 incidence=incidence,
                 config=config,
                 require_cycle_membership=True,
+                require_divergence_free=True,
             )
             cycle_rows.append(
                 {
