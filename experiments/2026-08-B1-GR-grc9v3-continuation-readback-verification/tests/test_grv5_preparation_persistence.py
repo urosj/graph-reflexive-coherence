@@ -39,9 +39,18 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         )["payload"]
         cls.branch = registry["branches"][0]
         cls.model = GRC9V3.load(str(REPO_ROOT / cls.branch["state_snapshot_path"]))
+        cls.nonuniform_branch = next(
+            row for row in registry["branches"] if row["branch_id"] == "grv2-f2-017"
+        )
+        cls.nonuniform_model = GRC9V3.load(
+            str(REPO_ROOT / cls.nonuniform_branch["state_snapshot_path"])
+        )
 
     def test_method_is_all_branch_and_claim_bounded(self) -> None:
         self.assertEqual(48, self.config["source_scope"]["expected_branch_count"])
+        self.assertEqual(
+            144, self.config["source_scope"]["expected_candidate_row_count"]
+        )
         self.assertEqual(
             "all_certified_branches_no_post_outcome_selection",
             self.config["source_scope"]["branch_selection"],
@@ -134,6 +143,28 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertLessEqual(native["difference_in_differences_l2"], 1e-10)
         self.assertGreater(reduced["difference_in_differences_l2"], 1e-10)
         self.assertEqual("substrate_reduced", reduced["substrate_class"])
+
+    def test_complete_step_activity_lane_keeps_joint_C_consequence_separate_from_W(self) -> None:
+        amplitude = activity_amplitude_from_target(
+            self.nonuniform_model,
+            self.config["preparation"][
+                "activity_write_target_log_conductance_exponent"
+            ],
+        )
+        activity = old_current_intervention(
+            self.nonuniform_model, amplitude=amplitude
+        )
+        zero = old_current_intervention(self.nonuniform_model, amplitude=0.0)
+        activity.step()
+        zero.step()
+        self.assertGreater(
+            np.linalg.norm(coherence_vector(activity) - coherence_vector(zero)),
+            1e-6,
+        )
+        self.assertLessEqual(
+            np.linalg.norm(conductance_vector(activity) - conductance_vector(zero)),
+            1e-10,
+        )
 
     def test_review_artifact_remains_bounded_when_present(self) -> None:
         path = ROOT / "outputs/conductance_retention_probe.json"

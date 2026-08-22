@@ -172,6 +172,9 @@ def preparation_pairs(
     activity_initial = pair_separation(
         activity_pair[0], activity_pair[1], branch_scales=branch_scales(model)
     )
+    complete_initial = pair_separation(
+        full_activity, full_zero, branch_scales=branch_scales(model)
+    )
     pairs = [
         {
             "preparation_id": "P-W-direct-opposite",
@@ -186,6 +189,16 @@ def preparation_pairs(
             "provenance_class": "exact_native_stage_reached_from_synthetic_old_current_input",
             "write_status": "stage_local_activity_conditioned_conductance_write",
             "native_activity_write_supported": activity_initial["block_l2"]["W"]
+            > tolerance,
+        },
+        {
+            "preparation_id": "P-J-activity-complete-step-vs-zero",
+            "models": (full_activity, full_zero),
+            "provenance_class": "complete_native_step_reached_from_synthetic_old_current_input",
+            "write_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage",
+            "native_activity_write_supported": complete_initial[
+                "joint_block_scaled_l2"
+            ]
             > tolerance,
         },
     ]
@@ -654,6 +667,27 @@ def branch_result(
             "closed_loop_supported": False,
         }
         branch_rows.append(row)
+        if persisted:
+            possibility = "retention_without_read"
+            maximum_claim = (
+                "bounded_activity_conditioned_joint_state_persistence_without_"
+                "isolated_slow_cluster_or_native_read_effect"
+            )
+        elif write_supported:
+            possibility = "write_before_read"
+            maximum_claim = "stage_local_activity_conditioned_write_without_persistence"
+        else:
+            possibility = "ordinary_recurrent_geometry_or_authored_carrier"
+            maximum_claim = "direct_authored_geometry_carrier_diagnostic"
+        blocked_claims = [
+            "core_readback",
+            "orientation_retention",
+            "closed_read_write_loop",
+            "memory",
+            "learning",
+        ]
+        if not persisted:
+            blocked_claims.insert(0, "persistent_retention")
         causal_rows.append(
             {
                 "row_id": f"{branch['branch_id']}::{pair['preparation_id']}",
@@ -671,25 +705,10 @@ def branch_result(
                 ),
                 "write_effect_status": pair["write_status"],
                 "closed_loop_status": "not_supported",
-                "causal_possibility_class": (
-                    "write_before_read"
-                    if write_supported
-                    else "ordinary_recurrent_geometry_or_authored_carrier"
-                ),
+                "causal_possibility_class": possibility,
                 "local_evidence_ladder_rung": rung,
-                "maximum_claim": (
-                    "stage_local_activity_conditioned_write_without_persistence"
-                    if write_supported
-                    else "direct_authored_geometry_carrier_diagnostic"
-                ),
-                "blocked_claims": [
-                    "persistent_retention",
-                    "core_readback",
-                    "orientation_retention",
-                    "closed_read_write_loop",
-                    "memory",
-                    "learning",
-                ],
+                "maximum_claim": maximum_claim,
+                "blocked_claims": blocked_claims,
             }
         )
     return branch_rows, preparation_controls, causal_rows
@@ -707,6 +726,7 @@ def write_report(payload: dict[str, Any]) -> Path:
         f"mechanical_status = {summary['mechanical_status']}",
         f"branch_count = {summary['branch_count']}",
         f"activity_stage_write_count = {summary['activity_stage_write_count']}",
+        f"activity_complete_step_joint_write_count = {summary['activity_complete_step_joint_write_count']}",
         f"bounded_persistence_count = {summary['bounded_persistence_count']}",
         f"native_mediation_count = {summary['native_mediation_count']}",
         f"substrate_reduced_sensitivity_count = {summary['substrate_reduced_sensitivity_count']}",
@@ -718,9 +738,11 @@ def write_report(payload: dict[str, Any]) -> Path:
         "",
         "GRV5 resolves the four causal arrows separately. An experiment-authored",
         "old-current state changes conductance at the first exact native transport",
-        "reconstruction, but the unchanged complete step reconstructs current and",
-        "conductance again and does not preserve that inscription. Direct authored",
-        "conductance differences are likewise overwritten by native reconstruction.",
+        "reconstruction. The unchanged complete step reconstructs current and",
+        "conductance again and erases that conductance inscription, but the transient",
+        "write can leave a complete-step reached coherence/joint-state displacement.",
+        "GRV5 therefore tests that reached pair separately from the stage-local pair.",
+        "Direct authored conductance differences are overwritten by reconstruction.",
         "",
         "Frozen-conductance probes can expose carrier-conditioned transport response,",
         "but that lane is substrate-reduced and its carrier states are synthetic or",
@@ -729,14 +751,16 @@ def write_report(payload: dict[str, Any]) -> Path:
         "A baseline geometry-conditioned current difference is not counted as a read",
         "effect; every candidate row uses the full carrier-by-probe 2x2 contrast.",
         "",
-        "The maximum bounded result is stage-local write-before-read evidence. It does",
-        "not establish retained geometry, core Read-Back, orientation retention, or a",
-        "closed read/write loop.",
+        "The maximum bounded result is assigned from the complete-step reached pair,",
+        "its persistence horizons, and the independent slow-cluster/read gates. It",
+        "does not establish core Read-Back, orientation retention, or a closed",
+        "read/write loop.",
         "",
         "## Causal Boundaries",
         "",
         "- `P-W`: producer-authored conductance carrier; synthetic-valid only.",
         "- `P-J`: exact native stage response to a synthetic old-current input.",
+        "- `P-J complete`: complete-step reached joint-state consequence of that input.",
         "- `P-J-sign`: confirms the source-current-squared write is sign-even.",
         "- Native complete-step persistence: evaluated after forming input stops.",
         "- Frozen-`W` response: reduced diagnostic; cannot upgrade native evidence.",
@@ -794,6 +818,16 @@ def run_grv5() -> None:
     sign_controls_pass = all(
         row["sign_even_write_passed"] for row in preparation_controls
     )
+    expected_row_count = int(scope["expected_candidate_row_count"])
+    matrix_complete = bool(
+        len(branch_rows) == expected_row_count
+        and len(causal_rows) == expected_row_count
+        and all(
+            len(row["horizon_rows"])
+            == len(config["persistence"]["horizons_complete_steps_after_preparation"])
+            for row in branch_rows
+        )
+    )
     summary = {
         "mechanical_status": "passed",
         "branch_count": len(branches),
@@ -801,6 +835,13 @@ def run_grv5() -> None:
         "activity_stage_write_count": sum(
             row["write_status"] == "stage_local_activity_conditioned_conductance_write"
             and row["initial_separation"]["block_l2"]["W"]
+            > config["persistence"]["absolute_separation_tolerance"]
+            for row in branch_rows
+        ),
+        "activity_complete_step_joint_write_count": sum(
+            row["write_status"]
+            == "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
+            and row["initial_separation"]["joint_block_scaled_l2"]
             > config["persistence"]["absolute_separation_tolerance"]
             for row in branch_rows
         ),
@@ -815,6 +856,7 @@ def run_grv5() -> None:
         ),
         "required_replays_passed": required_replays_pass,
         "sign_reversal_controls_passed": sign_controls_pass,
+        "all_branch_preparation_horizon_matrix_complete": matrix_complete,
         "maximum_local_evidence_ladder_rung": maximum_rung,
         "retention_supported": any(
             row["bounded_persistence_supported"] for row in branch_rows
@@ -824,7 +866,7 @@ def run_grv5() -> None:
         "closed_loop_supported": False,
         "grv_c5_candidate_pending_human_review": True,
     }
-    if not required_replays_pass or not sign_controls_pass:
+    if not required_replays_pass or not sign_controls_pass or not matrix_complete:
         raise ValueError(f"GRV5 mechanical controls failed: {summary}")
     payload = {
         "gate_id": "GRV5",
@@ -840,7 +882,7 @@ def run_grv5() -> None:
             **config["assumption_statuses"],
             "A-PASSIVE-result": "native_external_present_current_unavailable_core_readback_blocked",
             "A-REACHABLE-result": "mixed_complete_step_reached_and_stage_local_or_synthetic_rows_separated",
-            "A-STATE-CLOSURE-result": "complete_step_authoritative_stage_local_write_not_persistent",
+            "A-STATE-CLOSURE-result": "complete_step_authoritative_stage_local_W_write_and_reached_joint_state_are_separate",
         },
         "present_current_convention": config["present_current_convention"],
         "preparation_controls": preparation_controls,
@@ -848,7 +890,12 @@ def run_grv5() -> None:
         "summary": summary,
         "claim_boundary": {
             **config["claim_boundary"],
-            "maximum_supported_claim": "stage_local_activity_conditioned_write_without_complete_step_persistence",
+            "maximum_supported_claim": (
+                "bounded_activity_conditioned_joint_state_persistence_without_"
+                "isolated_slow_cluster_or_native_readback"
+                if summary["retention_supported"]
+                else "stage_local_activity_conditioned_write_without_complete_step_persistence"
+            ),
             "frozen_W_sensitivity_does_not_upgrade_native": True,
             "GRV_C5_candidate_pending_human_review": True,
         },
@@ -912,7 +959,12 @@ def run_grv5() -> None:
             },
             "status": "awaiting_scientific_review",
             "blocked_gates": [f"GRV{index}" for index in range(6, 9)],
-            "claim_ceiling": "stage_local_write_without_complete_step_retention_or_native_readback_pending_human_review",
+            "claim_ceiling": (
+                "bounded_activity_conditioned_joint_state_persistence_without_"
+                "isolated_slow_cluster_or_native_readback_pending_human_review"
+                if summary["retention_supported"]
+                else "stage_local_write_without_complete_step_retention_or_native_readback_pending_human_review"
+            ),
             "prerequisite_acceptance_status": anchor4["acceptance_status"],
             "grv5_summary": summary,
         }

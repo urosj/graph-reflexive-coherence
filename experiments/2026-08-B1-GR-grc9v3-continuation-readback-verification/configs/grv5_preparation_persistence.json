@@ -6,6 +6,8 @@
     "grv3_result_path": "outputs/complete_step_jacobians.json",
     "grv4_result_path": "outputs/frozen_full_comparison.json",
     "expected_branch_count": 48,
+    "expected_preparation_pair_count_per_branch": 3,
+    "expected_candidate_row_count": 144,
     "branch_selection": "all_certified_branches_no_post_outcome_selection",
     "required_grv4_receipt_payload_sha256": "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10",
     "required_grv4_acceptance_anchor_commit": "53838f31c512fc8dd01bde8e99f34ceef7885f03"
