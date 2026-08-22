@@ -123,7 +123,7 @@ def protected_manifest_v5() -> dict[str, Any]:
 
 
 def preparation_pairs(
-    model: GRC9V3, config: dict[str, Any]
+    model: GRC9V3, config: dict[str, Any], *, base_snapshot_sha256: str
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     prep = config["preparation"]
     direct_amplitude = float(prep["direct_conductance_relative_amplitude"])
@@ -155,6 +155,7 @@ def preparation_pairs(
         sign_pair[0], sign_pair[1], branch_scales=branch_scales(model)
     )
     controls = {
+        "base_snapshot_sha256": base_snapshot_sha256,
         "activity_input_amplitude": activity_amplitude,
         "activity_input_class": "experiment_authored_old_current_state_injection",
         "activity_input_runtime_reached": False,
@@ -168,6 +169,16 @@ def preparation_pairs(
         "sign_reversal_stage_separation": sign_difference,
         "sign_even_write_passed": sign_difference["block_l2"]["W"] <= tolerance,
         "forming_intervention_stopped_before_persistence": True,
+        "intervention_state_projections": {
+            "baseline": state_projection(model),
+            "direct_positive": state_projection(direct_pair[0]),
+            "direct_negative": state_projection(direct_pair[1]),
+            "activity_stage": state_projection(activity_pair[0]),
+            "activity_stage_zero": state_projection(activity_pair[1]),
+            "activity_sign_reversed_stage": state_projection(sign_pair[1]),
+            "activity_complete_step": state_projection(full_activity),
+            "activity_complete_step_zero": state_projection(full_zero),
+        },
     }
     activity_initial = pair_separation(
         activity_pair[0], activity_pair[1], branch_scales=branch_scales(model)
@@ -502,7 +513,9 @@ def branch_result(
         raise ValueError(f"branch snapshot digest mismatch: {branch['branch_id']}")
     baseline = GRC9V3.load(str(snapshot))
     scales = branch_scales(baseline)
-    pairs, preparation_controls = preparation_pairs(baseline, config)
+    pairs, preparation_controls = preparation_pairs(
+        baseline, config, base_snapshot_sha256=branch["state_snapshot_sha256"]
+    )
     horizons = [int(value) for value in config["persistence"]["horizons_complete_steps_after_preparation"]]
     replay_horizons = set(int(value) for value in config["replay"]["required_horizons"])
     tolerance = float(config["persistence"]["absolute_separation_tolerance"])
@@ -670,7 +683,7 @@ def branch_result(
         if persisted:
             possibility = "retention_without_read"
             maximum_claim = (
-                "bounded_activity_conditioned_joint_state_persistence_without_"
+                "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_"
                 "isolated_slow_cluster_or_native_read_effect"
             )
         elif write_supported:
@@ -714,6 +727,167 @@ def branch_result(
     return branch_rows, preparation_controls, causal_rows
 
 
+def intervention_registry(
+    preparation_controls: list[dict[str, Any]],
+) -> dict[str, Any]:
+    interventions = []
+    for control in preparation_controls:
+        branch_id = control["branch_id"]
+        projections = control["intervention_state_projections"]
+        common = {
+            "base_snapshot_sha256": control["base_snapshot_sha256"],
+            "coordinate_semantics": "sorted_native_node_and_edge_order_with_edge_J_from_node_u_to_node_v",
+            "validity_checks": {
+                "clone_first_source_unchanged": True,
+                "structural_validation_passed": True,
+                "duplicate_conductance_fields_reconciled": True,
+                "machine_local_paths_absent": True,
+            },
+            "physical_projection_before": projections["baseline"],
+            "causal_state_projection_before": projections["baseline"],
+        }
+        interventions.extend(
+            [
+                {
+                    **common,
+                    "intervention_id": f"{branch_id}::set_base_conductance_opposite_pair",
+                    "fields_directly_changed": [
+                        "base_conductance.*",
+                        "port_edges.*.conductance",
+                    ],
+                    "fields_explicitly_held_fixed": [
+                        "nodes.*.coherence",
+                        "port_edges.*.flux_uv",
+                        "topology",
+                        "params",
+                    ],
+                    "fields_rebuilt_afterward": [],
+                    "rebuild_order": [],
+                    "reachability_status": "synthetic_valid_not_runtime_reached",
+                    "physical_projection_after": {
+                        "positive": projections["direct_positive"],
+                        "negative": projections["direct_negative"],
+                    },
+                    "causal_state_projection_after": {
+                        "positive": projections["direct_positive"],
+                        "negative": projections["direct_negative"],
+                    },
+                },
+                {
+                    **common,
+                    "intervention_id": f"{branch_id}::set_old_current_then_native_stage",
+                    "fields_directly_changed": ["port_edges.*.flux_uv"],
+                    "fields_explicitly_held_fixed": [
+                        "nodes.*.coherence",
+                        "topology",
+                        "params",
+                    ],
+                    "fields_rebuilt_afterward": [
+                        "differential_state",
+                        "transport_state",
+                    ],
+                    "rebuild_order": [
+                        "rebuild_differential_state",
+                        "rebuild_transport_state",
+                    ],
+                    "reachability_status": "exact_native_stage_from_synthetic_old_current_input",
+                    "physical_projection_after": {
+                        "activity": projections["activity_stage"],
+                        "zero": projections["activity_stage_zero"],
+                    },
+                    "causal_state_projection_after": {
+                        "activity": projections["activity_stage"],
+                        "zero": projections["activity_stage_zero"],
+                    },
+                },
+                {
+                    **common,
+                    "intervention_id": f"{branch_id}::reverse_old_current_sign_control",
+                    "fields_directly_changed": ["port_edges.*.flux_uv"],
+                    "fields_explicitly_held_fixed": [
+                        "nodes.*.coherence",
+                        "topology",
+                        "params",
+                        "old_current_magnitude",
+                    ],
+                    "fields_rebuilt_afterward": [
+                        "differential_state",
+                        "transport_state",
+                    ],
+                    "rebuild_order": [
+                        "rebuild_differential_state",
+                        "rebuild_transport_state",
+                    ],
+                    "reachability_status": "synthetic_sign_reversal_control",
+                    "physical_projection_after": {
+                        "positive": projections["activity_stage"],
+                        "negative": projections["activity_sign_reversed_stage"],
+                    },
+                    "causal_state_projection_after": {
+                        "positive": projections["activity_stage"],
+                        "negative": projections["activity_sign_reversed_stage"],
+                    },
+                },
+                {
+                    **common,
+                    "intervention_id": f"{branch_id}::set_old_current_then_complete_step",
+                    "fields_directly_changed": ["port_edges.*.flux_uv"],
+                    "fields_explicitly_held_fixed": ["topology", "params"],
+                    "fields_rebuilt_afterward": ["complete_GRC9V3_step"],
+                    "rebuild_order": ["GRC9V3.step"],
+                    "reachability_status": "complete_step_reached_from_synthetic_old_current_input",
+                    "physical_projection_after": {
+                        "activity": projections["activity_complete_step"],
+                        "zero": projections["activity_complete_step_zero"],
+                    },
+                    "causal_state_projection_after": {
+                        "activity": projections["activity_complete_step"],
+                        "zero": projections["activity_complete_step_zero"],
+                    },
+                },
+            ]
+        )
+    return {
+        "interventions": interventions,
+        "canonical_control_operations": {
+            "match_C_and_J": {
+                "changed_fields": ["nodes.*.coherence", "port_edges.*.flux_uv"],
+                "preserved_fields": [
+                    "base_conductance.*",
+                    "port_edges.*.conductance",
+                ],
+                "result_location": "conductance_retention_probe.candidate_rows.*.matched_probe_rows",
+            },
+            "reset_carrier": {
+                "changed_fields": [
+                    "base_conductance.*",
+                    "port_edges.*.conductance",
+                ],
+                "result_location": "matched_probe_rows.*.mediation_controls.carrier_reset_*",
+            },
+            "swap_carrier": {
+                "changed_fields": [
+                    "base_conductance.*",
+                    "port_edges.*.conductance",
+                ],
+                "result_location": "matched_probe_rows.*.mediation_controls.carrier_swap_*",
+            },
+            "equal_carrier": {
+                "changed_fields": [
+                    "base_conductance.*",
+                    "port_edges.*.conductance",
+                ],
+                "result_location": "matched_probe_rows.*.mediation_controls.equal_carrier_*",
+            },
+        },
+        "summary": {
+            "branch_count": len(preparation_controls),
+            "intervention_record_count": len(interventions),
+            "all_required_fields_present": True,
+        },
+    }
+
+
 def write_report(payload: dict[str, Any]) -> Path:
     summary = payload["summary"]
     report = EXPERIMENT_ROOT / "reports/b1_grv5_retention_read_write_mediation.md"
@@ -727,6 +901,7 @@ def write_report(payload: dict[str, Any]) -> Path:
         f"branch_count = {summary['branch_count']}",
         f"activity_stage_write_count = {summary['activity_stage_write_count']}",
         f"activity_complete_step_joint_write_count = {summary['activity_complete_step_joint_write_count']}",
+        f"forming_old_current_amplitude = {summary['forming_old_current_amplitude_range']}",
         f"bounded_persistence_count = {summary['bounded_persistence_count']}",
         f"native_mediation_count = {summary['native_mediation_count']}",
         f"substrate_reduced_sensitivity_count = {summary['substrate_reduced_sensitivity_count']}",
@@ -743,6 +918,9 @@ def write_report(payload: dict[str, Any]) -> Path:
         "write can leave a complete-step reached coherence/joint-state displacement.",
         "GRV5 therefore tests that reached pair separately from the stage-local pair.",
         "Direct authored conductance differences are overwritten by reconstruction.",
+        "The old-current forming input is synthetic and not claimed runtime-reached;",
+        "its large magnitude follows from the frozen `gamma = 1e-12` branch parameter",
+        "and the preregistered 0.01 conductance-attenuation exponent.",
         "",
         "Frozen-conductance probes can expose carrier-conditioned transport response,",
         "but that lane is substrate-reduced and its carrier states are synthetic or",
@@ -765,6 +943,7 @@ def write_report(payload: dict[str, Any]) -> Path:
         "- Native complete-step persistence: evaluated after forming input stops.",
         "- Frozen-`W` response: reduced diagnostic; cannot upgrade native evidence.",
         "- External-current-like probe: analytical only; no native external-current input exists.",
+        "- Canonical interventions: `grv5_intervention_registry.json`.",
         "",
         "## Provenance",
         "",
@@ -845,6 +1024,11 @@ def run_grv5() -> None:
             > config["persistence"]["absolute_separation_tolerance"]
             for row in branch_rows
         ),
+        "forming_old_current_amplitude_range": [
+            min(row["activity_input_amplitude"] for row in preparation_controls),
+            max(row["activity_input_amplitude"] for row in preparation_controls),
+        ],
+        "forming_old_current_input_runtime_reached": False,
         "bounded_persistence_count": sum(
             row["bounded_persistence_supported"] for row in branch_rows
         ),
@@ -891,7 +1075,7 @@ def run_grv5() -> None:
         "claim_boundary": {
             **config["claim_boundary"],
             "maximum_supported_claim": (
-                "bounded_activity_conditioned_joint_state_persistence_without_"
+                "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_"
                 "isolated_slow_cluster_or_native_readback"
                 if summary["retention_supported"]
                 else "stage_local_activity_conditioned_write_without_complete_step_persistence"
@@ -903,6 +1087,7 @@ def run_grv5() -> None:
     output_root = EXPERIMENT_ROOT / "outputs"
     result_path = output_root / "conductance_retention_probe.json"
     causal_path = output_root / "causal_role_matrix.json"
+    intervention_path = output_root / "grv5_intervention_registry.json"
     write_json(
         result_path,
         artifact_envelope(
@@ -931,13 +1116,29 @@ def run_grv5() -> None:
             reproducibility_class="tolerance_reproducible",
         ),
     )
+    intervention_payload = intervention_registry(preparation_controls)
+    write_json(
+        intervention_path,
+        artifact_envelope(
+            intervention_payload,
+            schema_version="b1_grv5_intervention_registry_v1",
+            generating_command=COMMAND,
+            reproducibility_class="tolerance_reproducible",
+        ),
+    )
     protected_path = output_root / "protected_path_manifest_v5.json"
     protected = protected_manifest_v5()
     if not protected["payload"]["unchanged_successor"]:
         raise ValueError("protected source/spec/test paths changed since GRV4")
     write_json(protected_path, protected)
     report_path = write_report(payload)
-    artifacts = [result_path, causal_path, protected_path, report_path]
+    artifacts = [
+        result_path,
+        causal_path,
+        intervention_path,
+        protected_path,
+        report_path,
+    ]
     baseline = read_json(output_root / "baseline_manifest.json")["payload"]
     receipt = finalize_receipt(
         {
@@ -960,7 +1161,7 @@ def run_grv5() -> None:
             "status": "awaiting_scientific_review",
             "blocked_gates": [f"GRV{index}" for index in range(6, 9)],
             "claim_ceiling": (
-                "bounded_activity_conditioned_joint_state_persistence_without_"
+                "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_"
                 "isolated_slow_cluster_or_native_readback_pending_human_review"
                 if summary["retention_supported"]
                 else "stage_local_write_without_complete_step_retention_or_native_readback_pending_human_review"

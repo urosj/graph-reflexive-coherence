@@ -36,6 +36,15 @@
     "threshold_or_branch_scope_changed": false,
     "full_clean_rerun_required": true
   },
+  "superseded_p5_1_execution": {
+    "input_revision": "41cab6467a00d528fdf33f9844990e85ff731079",
+    "status": "mechanically_passed_but_not_scientifically_accepted",
+    "scientific_result_retained_for_rerun": "32_nonuniform_complete_step_joint_carriers_reached_GRR2_candidate",
+    "provenance_gap": "GRV5_specific_canonical_intervention_registry_not_emitted",
+    "wording_gap": "synthetic_old_current_amplitude_and_non_native_input_reachability_not_prominent_enough",
+    "threshold_or_branch_scope_changed": false,
+    "full_clean_rerun_required": true
+  },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",
   "claim_ceiling": "bounded_retained_geometry_or_joint_retention_candidate_without_automatic_core_readback"
 }

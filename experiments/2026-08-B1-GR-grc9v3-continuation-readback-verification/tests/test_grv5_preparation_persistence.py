@@ -23,6 +23,10 @@ from grv5_methods import (  # noqa: E402
     match_C_and_J_preserving_W,
     old_current_intervention,
 )
+from run_preparation_persistence_probe import (  # noqa: E402
+    intervention_registry,
+    preparation_pairs,
+)
 from pygrc.models import GRC9V3  # noqa: E402
 
 
@@ -177,6 +181,35 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertFalse(payload["summary"]["closed_loop_supported"])
         self.assertTrue(
             payload["claim_boundary"]["frozen_W_sensitivity_does_not_upgrade_native"]
+        )
+
+    def test_grv5_intervention_registry_has_the_canonical_fields(self) -> None:
+        _, controls = preparation_pairs(
+            self.nonuniform_model,
+            self.config,
+            base_snapshot_sha256=self.nonuniform_branch["state_snapshot_sha256"],
+        )
+        registry = intervention_registry(
+            [{"branch_id": self.nonuniform_branch["branch_id"], **controls}]
+        )
+        required = {
+            "intervention_id",
+            "base_snapshot_sha256",
+            "coordinate_semantics",
+            "fields_directly_changed",
+            "fields_explicitly_held_fixed",
+            "fields_rebuilt_afterward",
+            "rebuild_order",
+            "validity_checks",
+            "reachability_status",
+            "physical_projection_before",
+            "physical_projection_after",
+            "causal_state_projection_before",
+            "causal_state_projection_after",
+        }
+        self.assertEqual(4, len(registry["interventions"]))
+        self.assertTrue(
+            all(required.issubset(row) for row in registry["interventions"])
         )
 
 
