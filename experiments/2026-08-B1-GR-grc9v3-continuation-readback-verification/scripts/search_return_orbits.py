@@ -419,10 +419,15 @@ def write_report(payload: dict[str, Any]) -> Any:
         f"cycle_control_branch_count = {summary['cycle_control_branch_count']}",
         f"cycle_seed_row_count = {summary['cycle_seed_row_count']}",
         f"cycle_seed_persistence_count = {summary['cycle_seed_persistence_count']}",
+        f"maximum_post_step_cycle_component_l2 = {summary['maximum_post_step_cycle_component_l2']}",
         f"orbit_search_row_count = {summary['orbit_search_row_count']}",
+        f"converged_search_candidate_count = {summary['converged_search_candidate_count']}",
+        f"return_jacobian_ill_conditioned_count = {summary['return_jacobian_ill_conditioned_count']}",
+        f"proper_divisor_rejected_count = {summary['proper_divisor_rejected_count']}",
+        f"converged_but_not_return_count = {summary['converged_but_not_return_count']}",
         f"primitive_return_orbit_count = {summary['primitive_return_orbit_count']}",
         f"ordinary_floquet_spectrum_count = {summary['ordinary_floquet_spectrum_count']}",
-        f"recurrence_evidence_opened = {summary['recurrence_evidence_opened']}",
+        f"recurrence_evidence_opened = {str(summary['recurrence_evidence_opened']).lower()}",
         "scientific_acceptance = awaiting_human_review",
         "```",
         "",
@@ -454,6 +459,17 @@ def write_report(payload: dict[str, Any]) -> Any:
         "return-residual minimization. Any period-p closure is rejected when period 1",
         "or another proper divisor also closes. Physical-only and categorical/hybrid",
         "returns have dedicated non-Floquet classifications.",
+        "",
+        f"Of the {summary['orbit_search_row_count']} rows, "
+        f"{summary['converged_search_candidate_count']} converge under the declared "
+        "unregularized residual method. "
+        f"{summary['proper_divisor_rejected_count']} are fixed points or lower-period "
+        "closures and "
+        f"{summary['converged_but_not_return_count']} fails the declared return "
+        "tolerance. The remaining "
+        f"{summary['return_jacobian_ill_conditioned_count']} rows are blocked by an "
+        "ill-conditioned return Jacobian under the no-silent-regularization rule; "
+        "they remain unresolved rather than counting as negative orbit evidence.",
         "",
         (
             "No primitive period-two-or-higher full causal-state return survives the "
@@ -519,6 +535,9 @@ def run_grv6() -> None:
             row["classification"] == "cycle_component_remains_after_one_complete_step"
             for row in cycle_rows
         ),
+        "maximum_post_step_cycle_component_l2": max(
+            row["trajectory"][1]["cycle_component_l2"] for row in cycle_rows
+        ),
         "all_cycle_seeds_certified": all(
             row["seed_certified_before_runtime"] for row in cycle_rows
         ),
@@ -541,6 +560,17 @@ def run_grv6() -> None:
             for row in current_controls
         ),
         "orbit_search_row_count": len(search_rows),
+        "converged_search_candidate_count": accounting["converged_candidate_count"],
+        "return_jacobian_ill_conditioned_count": accounting["status_counts"].get(
+            "return_jacobian_ill_conditioned_no_regularization", 0
+        ),
+        "proper_divisor_rejected_count": accounting["proper_divisor_rejected_count"],
+        "converged_but_not_return_count": sum(
+            row["evaluation"] is not None
+            and row["evaluation"]["classification"]
+            == "not_a_return_orbit_within_declared_tolerance"
+            for row in search_rows
+        ),
         "primitive_return_orbit_count": len(orbits),
         "full_causal_state_return_orbit_count": sum(
             row["classification"] == "full_causal_state_return_orbit_candidate"
