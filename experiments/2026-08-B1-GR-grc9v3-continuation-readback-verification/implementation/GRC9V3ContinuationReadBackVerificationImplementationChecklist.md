@@ -1467,24 +1467,24 @@ exists to trigger the 14 positive-orbit-only controls.
 
 - [x] Freeze selection of every converged reduced `(C,W)` root whose full-state
   admission fails primarily in old current.
-- [ ] Replay the beat-one complete full state locally, after snapshot/load, and
+- [x] Replay the beat-one complete full state locally, after snapshot/load, and
   in a fresh Python process.
-- [ ] Record complete-state residuals, categorical/RNG/administrative behavior,
+- [x] Record complete-state residuals, categorical/RNG/administrative behavior,
   pre-budget and post-budget coherence, correction vector, and current at each
   reconstruction stage.
-- [ ] Classify projection-, budget-, positivity-, or boundary-supported fixed
+- [x] Classify projection-, budget-, positivity-, or boundary-supported fixed
   states separately from return orbits and `T-A05` contradictions.
-- [ ] Serialize per-iteration return-Jacobian singular values, condition number,
+- [x] Serialize per-iteration return-Jacobian singular values, condition number,
   condition limit, finite-difference step, matrix digest, residual, and
   no-regularization status.
-- [ ] Add fixture- and period-stratified resolution and allocation accounting.
-- [ ] Disclose the repeated round-robin offset and F1 over-allocation rather
+- [x] Add fixture- and period-stratified resolution and allocation accounting.
+- [x] Disclose the repeated round-robin offset and F1 over-allocation rather
   than changing the preregistered search after outcome inspection.
-- [ ] Replace non-required divergence/cycle booleans with explicit
+- [x] Replace non-required divergence/cycle booleans with explicit
   `not_applicable`, `satisfied`, or `failed` statuses.
-- [ ] State that 36 review points are accounted for: 22 current-result
+- [x] State that 36 review points are accounted for: 22 current-result
   requirements satisfied and 14 positive-candidate requirements deferred.
-- [ ] Preserve the search claim as branch-relative `(C,W)` search with native
+- [x] Preserve the search claim as branch-relative `(C,W)` search with native
   current reconstruction and full-state admission, not a joint `(C,W,J)`
   nonexistence result.
 - [ ] Rerun GRV6 from a clean P6.3 method revision and verify all artifacts.

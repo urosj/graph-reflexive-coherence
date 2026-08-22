@@ -28,6 +28,7 @@ from gate_receipts import (
 )
 from grv6_methods import (
     branch_current_control,
+    diagnose_boundary_state_candidates,
     deterministic_seed_coordinate,
     evaluate_orbit,
     floquet_audit,
@@ -255,6 +256,9 @@ def execute_orbit_search(
         * int(search["search_budget_per_period"]),
         "executed_search_row_count": len(all_rows),
         "branch_allocation": search["branch_allocation"],
+        "branch_allocation_offset_policy": (
+            "candidate_index_mod_48_restarts_at_zero_for_every_period"
+        ),
         "parameter_envelope": {
             "dt": sorted({float(branch["params"]["dt"]) for branch in branches}),
             "eta": sorted(
@@ -292,6 +296,64 @@ def execute_orbit_search(
         "selected_orbit_count_after_deduplication": len(deduplicated),
         "global_nonexistence_claim_allowed": False,
     }
+    accounting["fixture_resolution"] = []
+    for fixture_id in sorted({row["fixture_id"] for row in all_rows}):
+        fixture_rows = [row for row in all_rows if row["fixture_id"] == fixture_id]
+        resolved = [
+            row for row in fixture_rows if row["status"] == "converged_candidate"
+        ]
+        blocked = [
+            row
+            for row in fixture_rows
+            if row["status"] == "return_jacobian_ill_conditioned_no_regularization"
+        ]
+        accounting["fixture_resolution"].append(
+            {
+                "fixture_id": fixture_id,
+                "search_row_count": len(fixture_rows),
+                "resolved_row_count": len(resolved),
+                "ill_conditioned_row_count": len(blocked),
+                "ill_conditioned_fraction": len(blocked) / len(fixture_rows),
+                "proper_divisor_rejected_count": sum(
+                    row["evaluation"] is not None
+                    and row["evaluation"]["classification"]
+                    == "rejected_proper_divisor_or_period_one_fixed_point"
+                    for row in fixture_rows
+                ),
+                "converged_but_not_return_count": sum(
+                    row["evaluation"] is not None
+                    and row["evaluation"]["classification"]
+                    == "not_a_return_orbit_within_declared_tolerance"
+                    for row in fixture_rows
+                ),
+            }
+        )
+    fixture_ids = sorted({row["fixture_id"] for row in all_rows})
+    accounting["fixture_allocation_by_period"] = [
+        {
+            "period": int(period),
+            "fixture_id": fixture_id,
+            "search_row_count": sum(
+                row["period"] == int(period) and row["fixture_id"] == fixture_id
+                for row in all_rows
+            ),
+        }
+        for period in search["periods"]
+        for fixture_id in fixture_ids
+    ]
+    accounting["per_branch_allocation"] = [
+        {
+            "branch_id": branch["branch_id"],
+            "fixture_id": branch["fixture_id"],
+            "search_row_count": sum(
+                row["branch_id"] == branch["branch_id"] for row in all_rows
+            ),
+        }
+        for branch in branches
+    ]
+    accounting["allocation_interpretation"] = (
+        "frozen_repeated_round_robin_start_allocates_36_rows_per_F1_branch_and_30_per_F2_F3_branch;_disclosed_not_retroactively_rotated"
+    )
     return all_rows, deduplicated, accounting
 
 
@@ -353,6 +415,22 @@ def build_contract_audit(
             == payload["search_accounting"]["executed_search_row_count"],
         ),
         (
+            "ill_conditioned_rows_have_return_jacobian_diagnostics",
+            summary["all_ill_conditioned_rows_have_jacobian_diagnostics"],
+        ),
+        (
+            "nonrequired_seed_gates_are_not_applicable",
+            summary["all_nonrequired_seed_gates_marked_not_applicable"],
+        ),
+        (
+            "boundary_state_candidates_replayed_and_classified",
+            summary["all_boundary_state_candidates_replayed_and_classified"],
+        ),
+        (
+            "fixture_search_resolution_disclosed",
+            len(payload["search_accounting"]["fixture_resolution"]) == 3,
+        ),
+        (
             "proper_divisor_gate_executed",
             all(
                 row["status"] != "converged_candidate"
@@ -398,7 +476,7 @@ def build_contract_audit(
     ]
     return {
         "gate_id": "GRV6",
-        "audit_id": "grv6_current_recurrence_contract_audit_v1",
+        "audit_id": "grv6_current_recurrence_contract_audit_v2",
         "review_point_count": len(rows),
         "all_review_points_passed": all(row["passed"] for row in rows),
         "review_points": rows,
@@ -428,46 +506,278 @@ def build_36_point_review_audit(
 
     conditional = "not_applicable_no_admitted_return_orbit_future_positive_gate"
     rows = [
-        row(1, "accepted_GRV5_prerequisite", "passed", "accepted anchor consumed", True),
-        row(2, "cycle_and_orbit_tests_independent", "passed", "separate summaries and claims", True),
-        row(3, "primary_cycle_metric_validated", "passed", "rank condition and projector diagnostics per branch", summary["all_edge_space_checks_passed"]),
-        row(4, "varying_W_orbit_metric_policy", conditional, "phase-local metric frozen; no orbit admitted", no_orbit),
-        row(5, "divergence_and_cycle_projection_separate", "passed", "absolute divergence and fixed/phase-local projections recorded", True),
-        row(6, "cycle_seed_certified_before_runtime", "passed", "full seed certification object per sign and ladder row", summary["all_cycle_seeds_certified"] and summary["all_activity_ladder_seeds_certified"]),
-        row(7, "cycle_seed_stage_trace", "passed", "source-current transport kernels recorded separately and matched to the public wrapper and complete step", summary["all_cycle_seed_stage_traces_match_complete_step"] and summary["all_cycle_transport_kernel_traces_match_public_wrapper"]),
-        row(8, "cycle_average_transport_classification", conditional, "required before positive orbit admission", no_orbit),
-        row(9, "T_A05_assumption_envelope", "passed", "closure mobility conservation and no constraint support recorded", summary["activity_ladder_constraint_supported_row_count"] == 0),
-        row(10, "seed_amplitude_ladders", "passed", "four preregistered activity levels with sign and quadratic controls", summary["all_activity_response_shape_controls_passed"]),
-        row(11, "synthetic_seed_provenance", "passed", "all injected seeds explicitly experiment-authored and not runtime-reached", True),
-        row(12, "genuine_exact_zero_symmetry", "passed", "F1 symmetry certified separately from nonsymmetric zero-input rows", summary["symmetric_exact_zero_control_count"] == summary["exact_zero_invariant_count"] == 16),
-        row(13, "administrative_phase_independence", conditional, "required before positive orbit admission", no_orbit),
-        row(14, "orbit_symmetry_phase_deduplication", conditional, "full symmetry quotient remains a positive-candidate gate", no_orbit),
-        row(15, "relative_periodic_orbit_classification", "bounded_scope_recorded", "not searched and not excluded", not summary["relative_periodic_orbit_search_executed"] and not payload["claim_boundary"]["no_exact_orbit_found_excludes_relative_periodic_orbits"]),
-        row(16, "minimal_period_per_state_block", conditional, "required before positive orbit admission", no_orbit),
-        row(17, "periodic_output_vs_current_state", conditional, "required before positive orbit admission", no_orbit),
-        row(18, "phase_point_current_reset_controls", conditional, "required before positive orbit admission", no_orbit),
-        row(19, "net_transport_over_cycle", conditional, "required before positive orbit admission", no_orbit),
-        row(20, "complete_native_map_and_proper_divisors", "passed", "C W J and categorical replay with every proper divisor", payload["search_accounting"]["executed_search_row_count"] == payload["search_accounting"]["expected_search_row_count"]),
-        row(21, "codec_revalidation_along_orbit", conditional, "required before positive orbit admission", no_orbit),
-        row(22, "canonical_search_state", "passed", "branch-relative C W chart with source J reconstruction and full-state evaluation", config["orbit_search"]["search_coordinate"] == "branch_relative_C_W_with_J_reset_to_source_snapshot"),
-        row(23, "search_freeze_and_confirmation", "passed", "all seeds roots statuses recorded; confirmation not applicable", no_orbit and len(payload["search_rows"]) == payload["search_accounting"]["executed_search_row_count"]),
-        row(24, "period_doubling_provenance", "passed", "no period-doubling claim made", True),
-        row(25, "synchronous_update_orbit_class", conditional, "classification frozen for any future candidate", no_orbit),
-        row(26, "internal_stage_periodicity", "passed_for_current_controls_orbit_conditional", "cycle seeds traced through native stages; orbit-phase trace deferred", summary["all_cycle_seed_stage_traces_match_complete_step"] and no_orbit),
-        row(27, "constraint_supported_recurrence", "passed", "budget floor event and topology support recorded; none active", summary["activity_ladder_constraint_supported_row_count"] == 0),
-        row(28, "eventful_or_topology_return_boundary", "passed", "categorical return classes frozen and controls clean", summary["all_topology_and_event_controls_passed"]),
-        row(29, "phase_local_floquet_map", conditional, "ordinary Floquet blocked without admitted orbit and stratum", no_orbit),
-        row(30, "no_discrete_phase_multiplier_assumption", conditional, "budget direction quotient frozen; no Floquet spectrum", no_orbit),
-        row(31, "nonnormal_and_uncertainty_controls", conditional, "required before positive Floquet classification", no_orbit),
-        row(32, "complex_pairs_as_real_planes", conditional, "required before positive complex Floquet classification", no_orbit),
-        row(33, "long_recurrence_claim_boundary", "passed", "no quasi-periodic or visual recurrence claim", True),
-        row(34, "field_current_full_equivalence_separated", "passed", "C W J categorical divergence and cycle surfaces kept distinct", True),
-        row(35, "GRV5_persistence_not_relabelled_memory", "passed", "readback memory and writeback flags remain false", not summary["readback_supported"] and not summary["writeback_supported"]),
-        row(36, "bounded_negative_result", "passed", "resolved and condition-blocked statuses separated; global and relative absence blocked", not payload["search_accounting"]["global_nonexistence_claim_allowed"] and not summary["condition_blocked_rows_count_as_negative_orbit_evidence"]),
+        row(
+            1, "accepted_GRV5_prerequisite", "passed", "accepted anchor consumed", True
+        ),
+        row(
+            2,
+            "cycle_and_orbit_tests_independent",
+            "passed",
+            "separate summaries and claims",
+            True,
+        ),
+        row(
+            3,
+            "primary_cycle_metric_validated",
+            "passed",
+            "rank condition and projector diagnostics per branch",
+            summary["all_edge_space_checks_passed"],
+        ),
+        row(
+            4,
+            "varying_W_orbit_metric_policy",
+            conditional,
+            "phase-local metric frozen; no orbit admitted",
+            no_orbit,
+        ),
+        row(
+            5,
+            "divergence_and_cycle_projection_separate",
+            "passed",
+            "absolute divergence and fixed/phase-local projections recorded",
+            True,
+        ),
+        row(
+            6,
+            "cycle_seed_certified_before_runtime",
+            "passed",
+            "required cycle gates are satisfied and nonrequired generic-seed gates are explicitly not_applicable",
+            summary["all_cycle_seeds_certified"]
+            and summary["all_activity_ladder_seeds_certified"]
+            and summary["all_nonrequired_seed_gates_marked_not_applicable"],
+        ),
+        row(
+            7,
+            "cycle_seed_stage_trace",
+            "passed",
+            "source-current transport kernels recorded separately and matched to the public wrapper and complete step",
+            summary["all_cycle_seed_stage_traces_match_complete_step"]
+            and summary["all_cycle_transport_kernel_traces_match_public_wrapper"],
+        ),
+        row(
+            8,
+            "cycle_average_transport_classification",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            9,
+            "T_A05_assumption_envelope",
+            "passed",
+            "authored cycle-current ladders preserve closure mobility and conservation without constraint support; the separate boundary candidate is explicitly outside the T-A05 envelope",
+            summary["activity_ladder_constraint_supported_row_count"] == 0
+            and all(
+                not item["T_A05_contradiction_candidate"]
+                for item in payload["boundary_state_diagnostic"]["rows"]
+            ),
+        ),
+        row(
+            10,
+            "seed_amplitude_ladders",
+            "passed",
+            "four preregistered activity levels with sign and quadratic controls",
+            summary["all_activity_response_shape_controls_passed"],
+        ),
+        row(
+            11,
+            "synthetic_seed_provenance",
+            "passed",
+            "all injected seeds explicitly experiment-authored and not runtime-reached",
+            True,
+        ),
+        row(
+            12,
+            "genuine_exact_zero_symmetry",
+            "passed",
+            "F1 symmetry certified separately from nonsymmetric zero-input rows",
+            summary["symmetric_exact_zero_control_count"]
+            == summary["exact_zero_invariant_count"]
+            == 16,
+        ),
+        row(
+            13,
+            "administrative_phase_independence",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            14,
+            "orbit_symmetry_phase_deduplication",
+            conditional,
+            "full symmetry quotient remains a positive-candidate gate",
+            no_orbit,
+        ),
+        row(
+            15,
+            "relative_periodic_orbit_classification",
+            "bounded_scope_recorded",
+            "not searched and not excluded",
+            not summary["relative_periodic_orbit_search_executed"]
+            and not payload["claim_boundary"][
+                "no_exact_orbit_found_excludes_relative_periodic_orbits"
+            ],
+        ),
+        row(
+            16,
+            "minimal_period_per_state_block",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            17,
+            "periodic_output_vs_current_state",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            18,
+            "phase_point_current_reset_controls",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            19,
+            "net_transport_over_cycle",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            20,
+            "complete_native_map_and_proper_divisors",
+            "passed",
+            "C W J and categorical replay with every proper divisor",
+            payload["search_accounting"]["executed_search_row_count"]
+            == payload["search_accounting"]["expected_search_row_count"],
+        ),
+        row(
+            21,
+            "codec_revalidation_along_orbit",
+            conditional,
+            "required before positive orbit admission",
+            no_orbit,
+        ),
+        row(
+            22,
+            "canonical_search_state",
+            "passed",
+            "branch-relative C W chart with source J reconstruction and full-state evaluation",
+            config["orbit_search"]["search_coordinate"]
+            == "branch_relative_C_W_with_J_reset_to_source_snapshot",
+        ),
+        row(
+            23,
+            "search_freeze_and_confirmation",
+            "passed",
+            "all seeds roots statuses and per-row return-Jacobian diagnostics recorded; confirmation not applicable",
+            no_orbit
+            and len(payload["search_rows"])
+            == payload["search_accounting"]["executed_search_row_count"]
+            and summary["all_ill_conditioned_rows_have_jacobian_diagnostics"],
+        ),
+        row(
+            24,
+            "period_doubling_provenance",
+            "passed",
+            "no period-doubling claim made",
+            True,
+        ),
+        row(
+            25,
+            "synchronous_update_orbit_class",
+            conditional,
+            "classification frozen for any future candidate",
+            no_orbit,
+        ),
+        row(
+            26,
+            "internal_stage_periodicity",
+            "passed_for_current_controls_orbit_conditional",
+            "cycle seeds traced through native stages; orbit-phase trace deferred",
+            summary["all_cycle_seed_stage_traces_match_complete_step"] and no_orbit,
+        ),
+        row(
+            27,
+            "constraint_supported_recurrence",
+            "passed",
+            "activity ladders are unconstrained; exceptional search row is separately replayed and classified as a non-orbit boundary state",
+            summary["activity_ladder_constraint_supported_row_count"] == 0
+            and summary["all_boundary_state_candidates_replayed_and_classified"],
+        ),
+        row(
+            28,
+            "eventful_or_topology_return_boundary",
+            "passed",
+            "categorical return classes frozen and controls clean",
+            summary["all_topology_and_event_controls_passed"],
+        ),
+        row(
+            29,
+            "phase_local_floquet_map",
+            conditional,
+            "ordinary Floquet blocked without admitted orbit and stratum",
+            no_orbit,
+        ),
+        row(
+            30,
+            "no_discrete_phase_multiplier_assumption",
+            conditional,
+            "budget direction quotient frozen; no Floquet spectrum",
+            no_orbit,
+        ),
+        row(
+            31,
+            "nonnormal_and_uncertainty_controls",
+            conditional,
+            "required before positive Floquet classification",
+            no_orbit,
+        ),
+        row(
+            32,
+            "complex_pairs_as_real_planes",
+            conditional,
+            "required before positive complex Floquet classification",
+            no_orbit,
+        ),
+        row(
+            33,
+            "long_recurrence_claim_boundary",
+            "passed",
+            "no quasi-periodic or visual recurrence claim",
+            True,
+        ),
+        row(
+            34,
+            "field_current_full_equivalence_separated",
+            "passed",
+            "C W J categorical divergence and cycle surfaces kept distinct",
+            True,
+        ),
+        row(
+            35,
+            "GRV5_persistence_not_relabelled_memory",
+            "passed",
+            "readback memory and writeback flags remain false",
+            not summary["readback_supported"] and not summary["writeback_supported"],
+        ),
+        row(
+            36,
+            "bounded_negative_result",
+            "passed",
+            "resolved and condition-blocked statuses are fixture-stratified; branch allocation and the branch-relative C W chart are disclosed; global and relative absence remain blocked",
+            not payload["search_accounting"]["global_nonexistence_claim_allowed"]
+            and not summary["condition_blocked_rows_count_as_negative_orbit_evidence"]
+            and len(payload["search_accounting"]["fixture_resolution"]) == 3,
+        ),
     ]
     return {
         "gate_id": "GRV6",
-        "audit_id": "grv6_external_36_point_review_audit_v1",
+        "audit_id": "grv6_external_36_point_review_audit_v2",
         "review_point_count": len(rows),
         "all_review_points_accounted_for": len(rows) == 36,
         "acceptance_blocker_count": sum(
@@ -479,13 +789,18 @@ def build_36_point_review_audit(
         "conditional_positive_orbit_gate_count": sum(
             item["disposition"] == conditional for item in rows
         ),
-        "interpretation": "conditional orbit-only controls are not treated as executed; they remain mandatory before any future positive orbit candidate can be accepted",
+        "current_result_executed_or_satisfied_count": sum(
+            item["disposition"] != conditional for item in rows
+        ),
+        "interpretation": "36 review points are accounted for: 22 current-result requirements are executed or satisfied and 14 orbit-only controls are conditionally deferred, not executed; every deferred control remains mandatory before a future positive orbit candidate can be accepted",
         "review_points": rows,
     }
 
 
-def write_report(payload: dict[str, Any]) -> Any:
+def write_report(payload: dict[str, Any], review_36_payload: dict[str, Any]) -> Any:
     summary = payload["summary"]
+    fixture_rows = payload["search_accounting"]["fixture_resolution"]
+    boundary_rows = payload["boundary_state_diagnostic"]["rows"]
     report = EXPERIMENT_ROOT / "reports/b1_grv6_current_recurrence_and_return_orbits.md"
     lines = [
         "# B1-GR GRV6 Current Recurrence And Return Orbits",
@@ -508,9 +823,14 @@ def write_report(payload: dict[str, Any]) -> Any:
         f"return_jacobian_ill_conditioned_count = {summary['return_jacobian_ill_conditioned_count']}",
         f"proper_divisor_rejected_count = {summary['proper_divisor_rejected_count']}",
         f"converged_but_not_return_count = {summary['converged_but_not_return_count']}",
+        f"boundary_state_candidate_count = {summary['boundary_state_candidate_count']}",
+        f"boundary_state_classifications = {summary['boundary_state_classifications']}",
         f"primitive_return_orbit_count = {summary['primitive_return_orbit_count']}",
         f"ordinary_floquet_spectrum_count = {summary['ordinary_floquet_spectrum_count']}",
         f"recurrence_evidence_opened = {str(summary['recurrence_evidence_opened']).lower()}",
+        f"review_points_accounted_for = {review_36_payload['review_point_count']}",
+        f"current_result_requirements_executed_or_satisfied = {review_36_payload['current_result_executed_or_satisfied_count']}",
+        f"positive_candidate_requirements_conditionally_deferred = {review_36_payload['conditional_positive_orbit_gate_count']}",
         "scientific_acceptance = awaiting_human_review",
         "```",
         "",
@@ -549,7 +869,11 @@ def write_report(payload: dict[str, Any]) -> Any:
         "",
         f"The bounded search records all `{summary['orbit_search_row_count']}` seeds",
         "and roots: 256 candidates for each period 2, 3, 4, 5, 6, and 8, allocated",
-        "round-robin across all 48 accepted branches. It combines the already frozen",
+        "round-robin across all 48 accepted branches. The frozen allocation restarts",
+        "at branch zero for each period: each F1 branch therefore receives 36 rows",
+        "and each F2/F3 branch receives 30. This modest bias toward the simplest",
+        "fixture is disclosed rather than changed after outcomes were observed.",
+        "The search combines the already frozen",
         "parameter envelope, GRV3 multiplier-continuation screening, and direct damped",
         "return-residual minimization. Any period-p closure is rejected when period 1",
         "or another proper divisor also closes. Physical-only and categorical/hybrid",
@@ -566,14 +890,76 @@ def write_report(payload: dict[str, Any]) -> Any:
         "ill-conditioned return Jacobian under the no-silent-regularization rule; "
         "they remain unresolved rather than counting as negative orbit evidence.",
         "",
+        "Fixture-stratified resolution is:",
+        "",
+        "| Fixture | Search rows | Resolved | Ill-conditioned | Blocked fraction |",
+        "| --- | ---: | ---: | ---: | ---: |",
+        *[
+            (
+                f"| `{row['fixture_id']}` | {row['search_row_count']} | "
+                f"{row['resolved_row_count']} | {row['ill_conditioned_row_count']} | "
+                f"{100.0 * row['ill_conditioned_fraction']:.1f}% |"
+            )
+            for row in fixture_rows
+        ],
+        "",
+        "The unresolved set is concentrated on F2/F3. The result therefore says",
+        "more about the F1 fixed-point neighborhood than recurrent dynamics on the",
+        "richer fixtures. Every ill-conditioned row carries its finite-difference",
+        "step, singular values, condition result and threshold, residual, Jacobian",
+        "digest, and explicit `regularization_applied = false` record.",
+        "",
         (
             "No primitive period-two-or-higher full causal-state return is admitted "
-            "among the resolved candidates in this bounded search. This is a "
+            "among the 671 resolved candidates in the preregistered branch-relative "
+            "`(C,W)` chart with native current reconstruction and full-state admission. "
+            "This is a "
             "search-envelope result, not a proof that recurrent orbits, including "
-            "relative periodic orbits not searched here, do not exist."
+            "relative periodic or old-`J`-dependent orbits not searched here, do not exist."
             if summary["primitive_return_orbit_count"] == 0
             else "At least one bounded primitive return candidate is retained with its row-local classification and replay record."
         ),
+        "",
+        "## Boundary-State Diagnostic",
+        "",
+        (
+            "The sole reduced-coordinate convergence with a full-state failure was "
+            "replayed from its beat-one complete state locally, after snapshot/load, "
+            "and in a fresh process. It is retained as a boundary-state diagnostic, "
+            "not a return orbit."
+            if boundary_rows
+            else "No row met the frozen boundary-state diagnostic selection rule."
+        ),
+        *(
+            [
+                "",
+                f"- Source row: `{boundary_rows[0]['source_search_id']}` on `{boundary_rows[0]['branch_id']}`",
+                f"- Classification: `{boundary_rows[0]['classification']}`",
+                f"- Budget projection active: `{str(boundary_rows[0]['detailed_stage_trace']['budget_projection_active']).lower()}`",
+                f"- Positivity boundary active: `{str(boundary_rows[0]['detailed_stage_trace']['positivity_boundary_active']).lower()}`",
+                f"- All replay modes equal: `{str(boundary_rows[0]['all_replay_modes_equal']).lower()}`",
+                f"- Old-current reset changes the next physical future: `{str(not boundary_rows[0]['old_current_reset_control']['old_current_reset_future_equal']).lower()}`",
+                f"- `T-A05` contradiction candidate: `{str(boundary_rows[0]['T_A05_contradiction_candidate']).lower()}`",
+                "",
+                "The row is a one-beat entry into a reproducible nonzero potential-current",
+                "state supported by the admissible coherence-simplex projection. Its old",
+                "current is overwritten by native reconstruction and is not admitted as an",
+                "independent causal coordinate. It does not satisfy the unconstrained",
+                "stationary-current envelope of `T-A05`, open recurrence evidence, or",
+                "retroactively expand the frozen search chart.",
+            ]
+            if boundary_rows
+            else []
+        ),
+        "",
+        "## Review Accounting",
+        "",
+        f"All {review_36_payload['review_point_count']} review points are accounted for. "
+        f"{review_36_payload['current_result_executed_or_satisfied_count']} current-result "
+        "requirements were executed or satisfied; "
+        f"{review_36_payload['conditional_positive_orbit_gate_count']} positive-candidate "
+        "requirements remain conditionally deferred because no orbit was admitted. "
+        "Deferred controls were not executed and remain mandatory for any future positive candidate.",
         "",
         "## Claim Boundary",
         "",
@@ -638,6 +1024,9 @@ def run_grv6() -> None:
         raise ValueError("GRV6 cycle seed certification failed")
 
     search_rows, orbits, accounting = execute_orbit_search(branches, charts, config)
+    boundary_state_diagnostic = diagnose_boundary_state_candidates(
+        search_rows, charts, config
+    )
     multiplier_audit = multiplier_continuation_audit(grv3, config)
     replay = held_out_replay(orbits, charts, config)
     summary = {
@@ -743,12 +1132,45 @@ def run_grv6() -> None:
         "return_jacobian_ill_conditioned_count": accounting["status_counts"].get(
             "return_jacobian_ill_conditioned_no_regularization", 0
         ),
+        "all_ill_conditioned_rows_have_jacobian_diagnostics": all(
+            row["last_return_jacobian_diagnostic"] is not None
+            and row["last_return_jacobian_diagnostic"]["condition_gate_result"]
+            == "blocked"
+            and not row["last_return_jacobian_diagnostic"]["regularization_applied"]
+            for row in search_rows
+            if row["status"] == "return_jacobian_ill_conditioned_no_regularization"
+        ),
         "proper_divisor_rejected_count": accounting["proper_divisor_rejected_count"],
         "converged_but_not_return_count": sum(
             row["evaluation"] is not None
             and row["evaluation"]["classification"]
             == "not_a_return_orbit_within_declared_tolerance"
             for row in search_rows
+        ),
+        "boundary_state_candidate_count": boundary_state_diagnostic["candidate_count"],
+        "all_boundary_state_candidates_replayed_and_classified": bool(
+            boundary_state_diagnostic["candidate_count"] > 0
+            and boundary_state_diagnostic[
+                "all_candidates_replayed_in_all_required_modes"
+            ]
+            and boundary_state_diagnostic["all_manual_stage_traces_match_complete_step"]
+            and all(
+                row["classification"]
+                in config["boundary_state_diagnostic"]["allowed_classifications"]
+                for row in boundary_state_diagnostic["rows"]
+            )
+        ),
+        "boundary_state_classifications": sorted(
+            {row["classification"] for row in boundary_state_diagnostic["rows"]}
+        ),
+        "all_nonrequired_seed_gates_marked_not_applicable": all(
+            certification["divergence_gate_status"] == "not_applicable"
+            and certification["cycle_membership_status"] == "not_applicable"
+            for item in finite_ladder_rows
+            for certification in (
+                item["positive_seed_certification"],
+                item["negative_seed_certification"],
+            )
         ),
         "primitive_return_orbit_count": len(orbits),
         "full_causal_state_return_orbit_count": sum(
@@ -797,6 +1219,7 @@ def run_grv6() -> None:
         "multiplier_continuation": multiplier_audit,
         "search_accounting": accounting,
         "search_rows": search_rows,
+        "boundary_state_diagnostic": boundary_state_diagnostic,
         "orbits": orbits,
         "held_out_validation": replay,
         "summary": summary,
@@ -827,7 +1250,7 @@ def run_grv6() -> None:
         registry_path,
         artifact_envelope(
             payload,
-            schema_version="b1_grv6_return_orbit_registry_v1",
+            schema_version="b1_grv6_return_orbit_registry_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -837,7 +1260,7 @@ def run_grv6() -> None:
         audit_path,
         artifact_envelope(
             audit_payload,
-            schema_version="b1_grv6_contract_audit_v1",
+            schema_version="b1_grv6_contract_audit_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -847,7 +1270,7 @@ def run_grv6() -> None:
         review_36_path,
         artifact_envelope(
             review_36_payload,
-            schema_version="b1_grv6_36_point_review_audit_v1",
+            schema_version="b1_grv6_36_point_review_audit_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -857,7 +1280,7 @@ def run_grv6() -> None:
     if not protected["payload"]["unchanged_successor"]:
         raise ValueError("protected source/spec/test paths changed since GRV5")
     write_json(protected_path, protected)
-    report_path = write_report(payload)
+    report_path = write_report(payload, review_36_payload)
     artifacts = [
         registry_path,
         audit_path,
@@ -894,9 +1317,7 @@ def run_grv6() -> None:
             "prerequisite_acceptance_status": anchor5["acceptance_status"],
             "grv6_summary": summary,
             "contract_audit_payload_sha256": semantic_digest(audit_payload),
-            "review_36_point_audit_payload_sha256": semantic_digest(
-                review_36_payload
-            ),
+            "review_36_point_audit_payload_sha256": semantic_digest(review_36_payload),
         }
     )
     validate_receipt(receipt)

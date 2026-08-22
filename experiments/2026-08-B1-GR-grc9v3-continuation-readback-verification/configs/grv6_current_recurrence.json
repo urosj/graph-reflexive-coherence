@@ -78,6 +78,25 @@
     "held_out_replay_required_for_selected_orbits": true,
     "fixed_points_are_rejected_by_period_one_proper_divisor": true
   },
+  "boundary_state_diagnostic": {
+    "selection_rule": "solver_converged_and_C_W_close_with_full_state_failure_dominated_by_J",
+    "selection_uses_only_preregistered_return_tolerance": true,
+    "beat_one_complete_state_replay_required": true,
+    "snapshot_load_replay_required": true,
+    "fresh_process_replay_required": true,
+    "manual_stage_vs_step_parity_tolerance": 1e-12,
+    "budget_correction_active_tolerance": 1e-12,
+    "positivity_boundary_tolerance": 1e-12,
+    "allowed_classifications": [
+      "constraint_supported_nonzero_current_fixed_state",
+      "budget_projection_supported_current_state",
+      "positivity_boundary_supported_current_state",
+      "physical_projection_fixed_only",
+      "not_reproducible_as_full_causal_state"
+    ],
+    "diagnostic_can_open_return_orbit_evidence": false,
+    "diagnostic_can_satisfy_T_A05": false
+  },
   "multiplier_continuation": {
     "source": "accepted_GRV3_reduced_coordinate_spectra",
     "minus_one_candidate_distance": 0.1,

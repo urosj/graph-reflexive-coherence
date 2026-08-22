@@ -4,14 +4,17 @@ from __future__ import annotations
 
 from copy import deepcopy
 from dataclasses import fields, replace
+import json
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 from typing import Any, Iterable
 
 import numpy as np
 from numpy.typing import NDArray
 
-from artifact_io import semantic_digest
+from artifact_io import REPO_ROOT, semantic_digest, sha256_file
 from edge_space import (
     cycle_basis,
     native_potential_flow_annihilation_error,
@@ -115,9 +118,7 @@ def edge_space_audit(model: GRC9V3, config: dict[str, Any]) -> dict[str, Any]:
         rank_tolerance=float(edge_config["rank_tolerance"]),
     )
     diagnostics = projector_diagnostics(incidence, conductance, projector)
-    basis = cycle_basis(
-        incidence, rank_tolerance=float(edge_config["rank_tolerance"])
-    )
+    basis = cycle_basis(incidence, rank_tolerance=float(edge_config["rank_tolerance"]))
     metric = np.diag(1.0 / conductance)
     projected_gram = basis.T @ metric @ basis
     incidence_rank = int(incidence.shape[1] - basis.shape[1])
@@ -265,7 +266,9 @@ def seed_certification(
     seeded_eligibility_model = clone_model(seeded)
     baseline_eligibility_model.rebuild_differential_state()
     seeded_eligibility_model.rebuild_differential_state()
-    baseline_spark_candidates = baseline_eligibility_model.detect_hybrid_spark_candidates()
+    baseline_spark_candidates = (
+        baseline_eligibility_model.detect_hybrid_spark_candidates()
+    )
     seeded_spark_candidates = seeded_eligibility_model.detect_hybrid_spark_candidates()
 
     def spark_candidate_digests(candidates: list[Any]) -> list[str]:
@@ -281,12 +284,8 @@ def seed_certification(
             for candidate in candidates
         ]
 
-    baseline_candidate_digests = spark_candidate_digests(
-        baseline_spark_candidates
-    )
-    seeded_candidate_digests = spark_candidate_digests(
-        seeded_spark_candidates
-    )
+    baseline_candidate_digests = spark_candidate_digests(baseline_spark_candidates)
+    seeded_candidate_digests = spark_candidate_digests(seeded_spark_candidates)
     state_field_names = {field.name for field in fields(type(state))}
     external_boundary_surface_names = {
         "boundary_current",
@@ -319,16 +318,6 @@ def seed_certification(
         float(edge["seed_algebra_relative_tolerance"]) * seed_norm
     )
     checks = {
-        "divergence_gate_satisfied": (
-            divergence <= divergence_effective_tolerance
-            if require_divergence_free
-            else True
-        ),
-        "cycle_membership_within_tolerance": (
-            cycle_reconstruction <= cycle_reconstruction_effective_tolerance
-            if require_cycle_membership
-            else True
-        ),
         "seed_above_current_floor": seed_norm
         > float(control["minimum_certified_seed_current_l2"]),
         "topology_unchanged_by_seed_insertion": categorical_projection(model)[
@@ -352,6 +341,17 @@ def seed_certification(
         "no_external_boundary_drive": not present_external_boundary_surfaces,
         "no_event_eligibility_crossing": no_event_eligibility_crossing,
     }
+    divergence_gate_status = (
+        "satisfied"
+        if require_divergence_free and divergence <= divergence_effective_tolerance
+        else ("failed" if require_divergence_free else "not_applicable")
+    )
+    cycle_membership_status = (
+        "satisfied"
+        if require_cycle_membership
+        and cycle_reconstruction <= cycle_reconstruction_effective_tolerance
+        else ("failed" if require_cycle_membership else "not_applicable")
+    )
     return {
         "provenance": "experiment_authored_synthetic_structurally_valid_seed",
         "runtime_reached_seed": False,
@@ -362,11 +362,13 @@ def seed_certification(
         "measured_divergence_within_cycle_tolerance": divergence
         <= divergence_effective_tolerance,
         "require_divergence_free": require_divergence_free,
+        "divergence_gate_status": divergence_gate_status,
         "cycle_membership_reconstruction_l2": cycle_reconstruction,
         "cycle_membership_reconstruction_relative_to_l2": cycle_reconstruction
         / max(seed_norm, 1e-30),
         "cycle_membership_effective_tolerance": cycle_reconstruction_effective_tolerance,
         "require_cycle_membership": require_cycle_membership,
+        "cycle_membership_status": cycle_membership_status,
         "event_eligibility_audit": {
             "baseline_hybrid_spark_candidate_digests": baseline_candidate_digests,
             "seeded_hybrid_spark_candidate_digests": seeded_candidate_digests,
@@ -380,7 +382,11 @@ def seed_certification(
             "no_event_eligibility_crossing": no_event_eligibility_crossing,
         },
         "checks": checks,
-        "certified_before_runtime": all(checks.values()),
+        "certified_before_runtime": bool(
+            all(checks.values())
+            and divergence_gate_status != "failed"
+            and cycle_membership_status != "failed"
+        ),
     }
 
 
@@ -593,9 +599,7 @@ def native_seed_stage_trace(
         "manual_stage_trace_matches_complete_step": bool(
             parity_maximum
             <= float(
-                config["current_controls"][
-                    "stage_trace_complete_step_parity_tolerance"
-                ]
+                config["current_controls"]["stage_trace_complete_step_parity_tolerance"]
             )
             and categorical_projection(manual) == categorical_projection(complete)
         ),
@@ -692,7 +696,10 @@ def activity_amplitude_ladder(
                 "positive_post_step": positive_complete["rows"][-1],
                 "negative_post_step": negative_complete["rows"][-1],
                 "budget_projection_changed_state": bool(
-                    abs(float(budget.get("budget_after", 0.0)) - float(budget.get("budget_before", 0.0)))
+                    abs(
+                        float(budget.get("budget_after", 0.0))
+                        - float(budget.get("budget_before", 0.0))
+                    )
                     > float(control["budget_tolerance"])
                     or abs(float(budget.get("negative_mass_correction", 0.0)))
                     > float(control["budget_tolerance"])
@@ -702,11 +709,19 @@ def activity_amplitude_ladder(
                     <= float(config["edge_space"]["minimum_positive_conductance"])
                 ),
                 "events_or_topology_changed": bool(
-                    categorical_projection(positive_complete["final_model"])["event_kinds"]
-                    or categorical_projection(negative_complete["final_model"])["event_kinds"]
-                    or categorical_projection(positive_complete["final_model"])["topology_nodes"]
+                    categorical_projection(positive_complete["final_model"])[
+                        "event_kinds"
+                    ]
+                    or categorical_projection(negative_complete["final_model"])[
+                        "event_kinds"
+                    ]
+                    or categorical_projection(positive_complete["final_model"])[
+                        "topology_nodes"
+                    ]
                     != categorical_projection(model)["topology_nodes"]
-                    or categorical_projection(negative_complete["final_model"])["topology_nodes"]
+                    or categorical_projection(negative_complete["final_model"])[
+                        "topology_nodes"
+                    ]
                     != categorical_projection(model)["topology_nodes"]
                 ),
             }
@@ -722,7 +737,10 @@ def exact_zero_symmetry_audit(
     conductance = conductance_vector(model)
     current = current_vector(model)
     potential = np.asarray(
-        [float(state.potential[node]) for node in sorted(state.topology.iter_live_node_ids())],
+        [
+            float(state.potential[node])
+            for node in sorted(state.topology.iter_live_node_ids())
+        ],
         dtype=float,
     )
     checks = {
@@ -902,9 +920,7 @@ def branch_current_control(
                 "phase_local_projection"
             ]["cycle_component_l2"],
             "orientation_overwritten_at_first_transport": bool(
-                positive_first_current["phase_local_projection"][
-                    "cycle_component_l2"
-                ]
+                positive_first_current["phase_local_projection"]["cycle_component_l2"]
                 <= float(config["edge_space"]["algebra_tolerance"])
                 and negative_first_current["phase_local_projection"][
                     "cycle_component_l2"
@@ -940,10 +956,9 @@ def branch_current_control(
     zero_post_current_maximum = max(
         (float(row["J_l2"]) for row in zero_row["rows"][1:]), default=0.0
     )
-    if (
-        zero_symmetry["full_orientation_relevant_symmetry_certified"]
-        and zero_post_current_maximum <= float(control["current_zero_band"])
-    ):
+    if zero_symmetry[
+        "full_orientation_relevant_symmetry_certified"
+    ] and zero_post_current_maximum <= float(control["current_zero_band"]):
         zero_classification = "exact_zero_invariant"
     elif zero_post_current_maximum > float(control["current_zero_band"]):
         zero_classification = "baseline_potential_flow_generated_from_zero"
@@ -1093,6 +1108,7 @@ def minimize_return_residual(
     coordinate = np.asarray(seed, dtype=float).copy()
     history: list[dict[str, Any]] = []
     status = "maximum_iterations_reached"
+    last_jacobian_diagnostic: dict[str, Any] | None = None
     for iteration in range(int(search["maximum_solver_iterations"]) + 1):
         try:
             residual, _ = return_residual(chart, coordinate, period)
@@ -1100,7 +1116,13 @@ def minimize_return_residual(
             status = "invalid_coordinate_or_runtime_state"
             break
         norm = float(np.linalg.norm(residual, ord=np.inf))
-        history.append({"iteration": iteration, "return_residual_linf": norm})
+        history.append(
+            {
+                "iteration": iteration,
+                "return_residual_linf": norm,
+                "return_jacobian_diagnostic": None,
+            }
+        )
         if norm <= float(search["return_residual_tolerance"]):
             status = "converged_candidate"
             break
@@ -1124,13 +1146,47 @@ def minimize_return_residual(
         if not valid:
             status = "finite_difference_probe_invalid"
             break
-        condition = float(np.linalg.cond(jacobian))
-        if not np.isfinite(condition) or condition > float(
-            search["jacobian_condition_limit"]
-        ):
+        singular_values = np.linalg.svd(jacobian, compute_uv=False)
+        maximum_singular_value = float(np.max(singular_values))
+        minimum_singular_value = float(np.min(singular_values))
+        condition = (
+            maximum_singular_value / minimum_singular_value
+            if minimum_singular_value > 0.0
+            else float("inf")
+        )
+        condition_limit = float(search["jacobian_condition_limit"])
+        condition_gate_blocked = (
+            not np.isfinite(condition) or condition > condition_limit
+        )
+        last_jacobian_diagnostic = {
+            "finite_difference_step": h,
+            "jacobian_shape": list(jacobian.shape),
+            "jacobian_sha256": semantic_digest(jacobian.tolist()),
+            "jacobian_frobenius_norm": float(np.linalg.norm(jacobian, ord="fro")),
+            "return_residual_l2_at_jacobian": float(np.linalg.norm(residual, ord=2)),
+            "return_residual_linf_at_jacobian": norm,
+            "singular_values_descending": singular_values.tolist(),
+            "maximum_singular_value": maximum_singular_value,
+            "minimum_singular_value": minimum_singular_value,
+            "condition_number": condition if np.isfinite(condition) else None,
+            "condition_number_status": (
+                "finite" if np.isfinite(condition) else "infinite_or_nonfinite"
+            ),
+            "condition_limit": condition_limit,
+            "condition_gate_result": (
+                "blocked" if condition_gate_blocked else "admitted"
+            ),
+            "regularization_applied": False,
+            "linear_solve_residual_l2": None,
+        }
+        history[-1]["return_jacobian_diagnostic"] = last_jacobian_diagnostic
+        if condition_gate_blocked:
             status = "return_jacobian_ill_conditioned_no_regularization"
             break
         update = np.linalg.lstsq(jacobian, -residual, rcond=None)[0]
+        last_jacobian_diagnostic["linear_solve_residual_l2"] = float(
+            np.linalg.norm(jacobian @ update + residual, ord=2)
+        )
         factor = 1.0
         accepted = False
         while factor >= float(search["minimum_backtracking_factor"]):
@@ -1153,6 +1209,7 @@ def minimize_return_residual(
         "root_coordinate": coordinate.tolist(),
         "root_coordinate_sha256": semantic_digest(coordinate.tolist()),
         "history": history,
+        "last_return_jacobian_diagnostic": last_jacobian_diagnostic,
         "final_return_residual_linf": history[-1]["return_residual_linf"]
         if history
         else None,
@@ -1246,6 +1303,301 @@ def evaluate_orbit(
             }
             for index, model in enumerate(trajectory)
         ],
+    }
+
+
+def fresh_step_replay_projection(
+    model: GRC9V3,
+    *,
+    current_zero_band: float,
+    fixed_state_tolerance: float,
+) -> dict[str, Any]:
+    start = clone_model(model)
+    end = clone_model(model)
+    result = end.step()
+    residual = block_residual(start, end)
+    start_signature = categorical_signature(start, current_zero_band=current_zero_band)
+    end_signature = categorical_signature(end, current_zero_band=current_zero_band)
+    state0 = start.get_state()
+    state1 = end.get_state()
+    expected_admin = bool(
+        state1.step_index == state0.step_index + 1
+        and abs(state1.time - (state0.time + float(start.get_params().dt))) <= 1e-12
+    )
+    rng_equal = state1.rng_state == state0.rng_state
+    categorical_equal = start_signature == end_signature
+    full_fixed = bool(
+        max(residual.values(), default=0.0) <= fixed_state_tolerance
+        and categorical_equal
+        and expected_admin
+        and rng_equal
+    )
+    return {
+        "input": {
+            "C": coherence_vector(start).tolist(),
+            "W": conductance_vector(start).tolist(),
+            "J": current_vector(start).tolist(),
+            "categorical_signature_sha256": semantic_digest(start_signature),
+            "step_index": int(state0.step_index),
+            "time": float(state0.time),
+            "rng_state_sha256": semantic_digest(state0.rng_state),
+        },
+        "output": {
+            "C": coherence_vector(end).tolist(),
+            "W": conductance_vector(end).tolist(),
+            "J": current_vector(end).tolist(),
+            "categorical_signature_sha256": semantic_digest(end_signature),
+            "step_index": int(state1.step_index),
+            "time": float(state1.time),
+            "rng_state_sha256": semantic_digest(state1.rng_state),
+        },
+        "block_linf": residual,
+        "maximum_block_linf": max(residual.values(), default=0.0),
+        "categorical_equal": categorical_equal,
+        "administrative_advancement_expected_only": expected_admin,
+        "rng_state_equal": rng_equal,
+        "emitted_event_count": len(result.events),
+        "emitted_event_kinds": [event.kind for event in result.events],
+        "step_trace": list(state1.cached_quantities.get("last_step_trace", ())),
+        "full_causal_state_fixed_under_expected_admin": full_fixed,
+        "fixed_state_tolerance": fixed_state_tolerance,
+    }
+
+
+def boundary_constraint_trace(
+    model: GRC9V3, *, config: dict[str, Any]
+) -> dict[str, Any]:
+    zero_band = float(config["current_controls"]["current_zero_band"])
+    policy = config["boundary_state_diagnostic"]
+    reference = clone_model(model)
+    manual = clone_model(model)
+    stages: list[dict[str, Any]] = []
+
+    def record(stage: str) -> None:
+        state = manual.get_state()
+        stages.append(
+            {
+                "stage": stage,
+                "C": coherence_vector(manual).tolist(),
+                "W": conductance_vector(manual).tolist(),
+                "J": current_vector(manual).tolist(),
+                "categorical_signature_sha256": semantic_digest(
+                    categorical_signature(manual, current_zero_band=zero_band)
+                ),
+                "step_index": int(state.step_index),
+                "time": float(state.time),
+            }
+        )
+
+    record("beat_one_complete_input")
+    manual.rebuild_differential_state()
+    record("after_pre_flux_differential_rebuild")
+    manual.rebuild_transport_state()
+    record("after_first_transport_reconstruction")
+    manual.rebuild_differential_state()
+    manual.rebuild_identity_state()
+    emitted_events = manual.apply_hybrid_sparks()
+    manual.rebuild_choice_state()
+    manual.apply_growth()
+    manual.apply_boundary_behavior()
+    record("before_continuity")
+    manual.apply_continuity()
+    record("after_continuity_before_budget")
+    pre_budget = coherence_vector(manual).copy()
+    budget_summary = manual.enforce_quadrature_budget()
+    post_budget = coherence_vector(manual).copy()
+    record("after_budget_enforcement")
+    manual.rebuild_differential_state()
+    manual.rebuild_transport_state()
+    record("after_final_transport_reconstruction")
+    manual.rebuild_differential_state()
+    manual.rebuild_identity_state()
+    record("after_final_identity_rebuild")
+
+    complete = clone_model(reference)
+    complete.step()
+    parity = block_residual(manual, complete)
+    parity_maximum = max(parity.values(), default=0.0)
+    categorical_parity = categorical_signature(
+        manual, current_zero_band=zero_band
+    ) == categorical_signature(complete, current_zero_band=zero_band)
+    correction = post_budget - pre_budget
+    budget_active = bool(
+        np.linalg.norm(correction, ord=np.inf)
+        > float(policy["budget_correction_active_tolerance"])
+    )
+    positivity_boundary_active = bool(
+        np.any(pre_budget < -float(policy["positivity_boundary_tolerance"]))
+        and np.any(
+            np.abs(post_budget) <= float(policy["positivity_boundary_tolerance"])
+        )
+    )
+    return {
+        "stages": stages,
+        "pre_budget_C": pre_budget.tolist(),
+        "post_budget_C": post_budget.tolist(),
+        "budget_correction_vector": correction.tolist(),
+        "budget_correction_linf": float(np.linalg.norm(correction, ord=np.inf)),
+        "budget_summary": budget_summary,
+        "budget_projection_active": budget_active,
+        "positivity_boundary_active": positivity_boundary_active,
+        "emitted_event_count": len(emitted_events),
+        "manual_vs_complete_step_block_linf": parity,
+        "manual_vs_complete_step_maximum_linf": parity_maximum,
+        "manual_vs_complete_step_categorical_equal": categorical_parity,
+        "manual_stage_trace_matches_complete_step": bool(
+            parity_maximum <= float(policy["manual_stage_vs_step_parity_tolerance"])
+            and categorical_parity
+        ),
+    }
+
+
+def diagnose_boundary_state_candidates(
+    search_rows: list[dict[str, Any]],
+    charts: dict[str, BranchCoordinateChart],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    search = config["orbit_search"]
+    policy = config["boundary_state_diagnostic"]
+    tolerance = float(search["return_residual_tolerance"])
+    selected = []
+    for row in search_rows:
+        evaluation = row.get("evaluation")
+        if row["status"] != "converged_candidate" or evaluation is None:
+            continue
+        errors = evaluation["block_return_residual_linf"]
+        if (
+            max(float(errors["C"]), float(errors["W"])) <= tolerance
+            and float(errors["J"]) > tolerance
+            and float(errors["J"]) == max(float(value) for value in errors.values())
+        ):
+            selected.append(row)
+
+    results = []
+    for row in selected:
+        chart = charts[row["branch_id"]]
+        root = chart.decode_model(np.asarray(row["root_coordinate"], dtype=float))
+        beat_one = advance(root, 1)[-1]
+        local_replay = fresh_step_replay_projection(
+            beat_one,
+            current_zero_band=float(config["current_controls"]["current_zero_band"]),
+            fixed_state_tolerance=tolerance,
+        )
+        detailed = boundary_constraint_trace(beat_one, config=config)
+        with tempfile.TemporaryDirectory(prefix="b1-grv6-boundary-") as directory:
+            snapshot_path = Path(directory) / "beat_one_boundary_state.json"
+            beat_one.save(str(snapshot_path))
+            snapshot_sha256 = sha256_file(snapshot_path)
+            loaded = GRC9V3.load(str(snapshot_path))
+            snapshot_replay = fresh_step_replay_projection(
+                loaded,
+                current_zero_band=float(
+                    config["current_controls"]["current_zero_band"]
+                ),
+                fixed_state_tolerance=tolerance,
+            )
+            worker = Path(__file__).with_name("grv6_boundary_replay_worker.py")
+            process = subprocess.run(
+                [
+                    sys.executable,
+                    str(worker),
+                    str(snapshot_path),
+                    str(config["current_controls"]["current_zero_band"]),
+                    str(tolerance),
+                ],
+                cwd=REPO_ROOT,
+                check=True,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            fresh_process_replay = json.loads(process.stdout)
+
+        reset = set_current(beat_one, np.zeros_like(current_vector(beat_one)))
+        reset_replay = fresh_step_replay_projection(
+            reset,
+            current_zero_band=float(config["current_controls"]["current_zero_band"]),
+            fixed_state_tolerance=tolerance,
+        )
+        reset_successor = clone_model(reset)
+        reset_successor.step()
+        ordinary_successor = clone_model(beat_one)
+        ordinary_successor.step()
+        reset_future_residual = block_residual(ordinary_successor, reset_successor)
+        reset_future_categorical_equal = categorical_signature(
+            ordinary_successor,
+            current_zero_band=float(config["current_controls"]["current_zero_band"]),
+        ) == categorical_signature(
+            reset_successor,
+            current_zero_band=float(config["current_controls"]["current_zero_band"]),
+        )
+        old_current_reset_future_equal = bool(
+            max(reset_future_residual.values(), default=0.0) <= tolerance
+            and reset_future_categorical_equal
+        )
+        replay_equal = bool(local_replay == snapshot_replay == fresh_process_replay)
+        full_fixed = local_replay["full_causal_state_fixed_under_expected_admin"]
+        if not replay_equal or not detailed["manual_stage_trace_matches_complete_step"]:
+            classification = "not_reproducible_as_full_causal_state"
+        elif full_fixed and detailed["budget_projection_active"]:
+            classification = "budget_projection_supported_current_state"
+        elif full_fixed and detailed["positivity_boundary_active"]:
+            classification = "positivity_boundary_supported_current_state"
+        elif full_fixed:
+            classification = "constraint_supported_nonzero_current_fixed_state"
+        else:
+            classification = "physical_projection_fixed_only"
+        if classification not in policy["allowed_classifications"]:
+            raise ValueError("unfrozen boundary-state classification")
+        constraint_support_active = bool(
+            detailed["budget_projection_active"]
+            or detailed["positivity_boundary_active"]
+        )
+        results.append(
+            {
+                "source_search_id": row["search_id"],
+                "branch_id": row["branch_id"],
+                "fixture_id": row["fixture_id"],
+                "period": row["period"],
+                "selection_reason": policy["selection_rule"],
+                "reduced_search_coordinate_converged": True,
+                "full_state_return_failed": True,
+                "beat_one_snapshot_sha256": snapshot_sha256,
+                "local_replay": local_replay,
+                "snapshot_load_replay": snapshot_replay,
+                "fresh_process_replay": fresh_process_replay,
+                "all_replay_modes_equal": replay_equal,
+                "detailed_stage_trace": detailed,
+                "old_current_reset_control": {
+                    "reset_input_and_successor": reset_replay,
+                    "ordinary_vs_reset_successor_block_linf": reset_future_residual,
+                    "ordinary_vs_reset_successor_categorical_equal": reset_future_categorical_equal,
+                    "old_current_reset_future_equal": old_current_reset_future_equal,
+                },
+                "classification": classification,
+                "constraint_support_active": constraint_support_active,
+                "T_A05_assumption_envelope_satisfied": not constraint_support_active,
+                "T_A05_contradiction_candidate": bool(
+                    full_fixed and not constraint_support_active
+                ),
+                "old_J_independent_causal_state_supported": not old_current_reset_future_equal,
+                "possible_off_branch_state_dimension_enlargement": not old_current_reset_future_equal,
+                "off_branch_decoder_canonicalization_debt": old_current_reset_future_equal,
+                "return_orbit_evidence_opened": False,
+            }
+        )
+    return {
+        "selection_rule": policy["selection_rule"],
+        "candidate_count": len(results),
+        "rows": results,
+        "all_candidates_replayed_in_all_required_modes": all(
+            row["all_replay_modes_equal"] for row in results
+        ),
+        "all_manual_stage_traces_match_complete_step": all(
+            row["detailed_stage_trace"]["manual_stage_trace_matches_complete_step"]
+            for row in results
+        ),
+        "return_orbit_evidence_opened": False,
     }
 
 
