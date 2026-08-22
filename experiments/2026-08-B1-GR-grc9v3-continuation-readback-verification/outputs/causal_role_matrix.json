@@ -15,13 +15,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-001::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -33,13 +42,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-001::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -51,13 +69,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-001::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -69,13 +96,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-002::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -87,13 +123,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-002::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -105,13 +150,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-002::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -123,13 +177,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-003::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -141,13 +204,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-003::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -159,13 +231,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-003::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -177,13 +258,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-004::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -195,13 +285,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-004::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -213,13 +312,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-004::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -231,13 +339,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-005::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -249,13 +366,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-005::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -267,13 +393,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-005::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -285,13 +420,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-006::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -303,13 +447,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-006::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -321,13 +474,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-006::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -339,13 +501,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-007::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -357,13 +528,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-007::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -375,13 +555,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-007::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -393,13 +582,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-008::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -411,13 +609,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-008::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -429,13 +636,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-008::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -447,13 +663,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-009::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -465,13 +690,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-009::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -483,13 +717,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-009::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -501,13 +744,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-010::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -519,13 +771,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-010::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -537,13 +798,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-010::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -555,13 +825,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-011::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -573,13 +852,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-011::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -591,13 +879,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-011::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -609,13 +906,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-012::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -627,13 +933,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-012::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -645,13 +960,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-012::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -663,13 +987,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-013::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -681,13 +1014,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-013::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -699,13 +1041,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-013::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -717,13 +1068,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-014::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -735,13 +1095,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-014::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -753,13 +1122,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-014::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -771,13 +1149,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-015::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -789,13 +1176,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-015::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -807,13 +1203,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-015::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -825,13 +1230,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-016::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -843,13 +1257,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-016::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -861,13 +1284,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_assessed",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
         "retention_status": "not_supported",
         "row_id": "grv2-f1-016::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -879,13 +1311,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-017::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -897,13 +1338,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-017::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -914,13 +1364,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-017::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -932,13 +1391,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-018::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -950,13 +1418,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-018::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -967,13 +1444,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-018::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -985,13 +1471,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-019::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1003,13 +1498,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-019::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1020,13 +1524,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-019::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1038,13 +1551,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-020::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1056,13 +1578,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-020::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1073,13 +1604,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-020::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1091,13 +1631,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-021::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1109,13 +1658,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-021::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1126,13 +1684,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-021::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1144,13 +1711,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-022::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1162,13 +1738,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-022::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1179,13 +1764,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-022::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1197,13 +1791,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-023::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1215,13 +1818,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-023::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1232,13 +1844,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-023::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1250,13 +1871,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-024::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1268,13 +1898,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-024::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1285,13 +1924,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-024::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1303,13 +1951,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-025::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1321,13 +1978,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-025::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1338,13 +2004,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-025::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1356,13 +2031,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-026::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1374,13 +2058,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-026::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1391,13 +2084,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-026::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1409,13 +2111,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-027::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1427,13 +2138,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-027::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1444,13 +2164,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-027::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1462,13 +2191,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-028::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1480,13 +2218,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-028::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1497,13 +2244,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-028::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1515,13 +2271,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-029::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1533,13 +2298,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-029::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1550,13 +2324,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-029::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1568,13 +2351,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-030::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1586,13 +2378,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-030::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1603,13 +2404,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-030::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1621,13 +2431,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-031::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1639,13 +2458,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-031::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1656,13 +2484,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-031::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1674,13 +2511,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-032::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1692,13 +2538,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f2-032::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1709,13 +2564,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f2-032::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1727,13 +2591,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-033::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1745,13 +2618,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-033::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1762,13 +2644,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-033::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1780,13 +2671,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-034::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1798,13 +2698,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-034::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1815,13 +2724,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-034::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1833,13 +2751,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-035::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1851,13 +2778,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-035::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1868,13 +2804,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-035::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1886,13 +2831,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-036::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1904,13 +2858,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-036::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1921,13 +2884,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-036::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1939,13 +2911,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-037::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -1957,13 +2938,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-037::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -1974,13 +2964,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-037::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -1992,13 +2991,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-038::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2010,13 +3018,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-038::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2027,13 +3044,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-038::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2045,13 +3071,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-039::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2063,13 +3098,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-039::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2080,13 +3124,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-039::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2098,13 +3151,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-040::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2116,13 +3178,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-040::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2133,13 +3204,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-040::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2151,13 +3231,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-041::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2169,13 +3258,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-041::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2186,13 +3284,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-041::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2204,13 +3311,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-042::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2222,13 +3338,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-042::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2239,13 +3364,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-042::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2257,13 +3391,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-043::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2275,13 +3418,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-043::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2292,13 +3444,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-043::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2310,13 +3471,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-044::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2328,13 +3498,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-044::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2345,13 +3524,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-044::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2363,13 +3551,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-045::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2381,13 +3578,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-045::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2398,13 +3604,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-045::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2416,13 +3631,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-046::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2434,13 +3658,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-046::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2451,13 +3684,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-046::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2469,13 +3711,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-047::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2487,13 +3738,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-047::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2504,13 +3764,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-047::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       },
       {
@@ -2522,13 +3791,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "ordinary_recurrent_geometry_or_authored_carrier",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR0",
         "maximum_claim": "direct_authored_geometry_carrier_diagnostic",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "producer_authored_synthetic_conductance_state",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-048::P-W-direct-opposite",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "producer_authored_conductance_difference"
       },
       {
@@ -2540,13 +3818,22 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "not_applicable_no_resolved_C_persistence",
         "causal_possibility_class": "write_before_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR1",
         "maximum_claim": "stage_local_activity_conditioned_write_without_persistence",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_exact_native_stage_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "substrate_reduced_only",
         "retention_status": "not_supported",
         "row_id": "grv2-f3-048::P-J-activity-stage-vs-zero",
+        "transient_W_mediation_status": "not_applicable",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "stage_local_activity_conditioned_conductance_write"
       },
       {
@@ -2557,23 +3844,32 @@
           "memory",
           "learning"
         ],
+        "branch_relocation_rival_status": "branch_relocation_rival_unresolved_not_excluded",
         "causal_possibility_class": "retention_without_read",
         "closed_loop_status": "not_supported",
         "local_evidence_ladder_rung": "GRR2",
-        "maximum_claim": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_read_effect",
+        "maximum_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_and_without_specific_transient_W_mediation_or_native_read_effect",
+        "reachability_classification": {
+          "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+          "post_intervention_state_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+          "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+          "runtime_reached_shorthand_allowed": false
+        },
         "read_effect_status": "not_supported",
-        "retention_status": "bounded_persistence_supported",
+        "retention_status": "C_dominated_neutral_direction_persistence_candidate_branch_relocation_rival_unresolved",
         "row_id": "grv2-f3-048::P-J-activity-complete-step-vs-zero",
+        "transient_W_mediation_status": "not_established",
+        "transverse_branch_relative_retention_supported": false,
         "write_effect_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage"
       }
     ],
-    "source_result_payload_sha256": "494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a",
+    "source_result_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
     "summary": {
       "closed_loop_row_count": 0,
       "maximum_local_evidence_ladder_rung": "GRR2",
       "row_count": 144
     }
   },
-  "payload_sha256": "0d09aae9ff0899c1801a304c6f15d54cefce08645f5e9f34ff209e34e7c34340",
-  "schema_version": "b1_grv5_causal_role_matrix_v1"
+  "payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
+  "schema_version": "b1_grv5_causal_role_matrix_v2"
 }

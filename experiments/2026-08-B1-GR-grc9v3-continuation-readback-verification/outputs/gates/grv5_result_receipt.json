@@ -4,21 +4,29 @@
     "GRV7",
     "GRV8"
   ],
-  "claim_ceiling": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_readback_pending_human_review",
+  "claim_ceiling": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_without_specific_transient_W_mediation_or_native_readback_pending_human_review",
   "gate_id": "GRV5",
   "grv5_summary": {
+    "P5_3_hardening_changed_primary_rung": false,
+    "P5_4_acceptance_clarification_changed_primary_rung": false,
     "activity_complete_step_joint_write_count": 32,
     "activity_stage_write_count": 48,
+    "all_36_review_points_mechanically_accounted_for": true,
     "all_branch_preparation_horizon_matrix_complete": true,
     "bounded_persistence_count": 32,
     "branch_count": 48,
+    "branch_relocation_rival_unresolved_GRR2_row_count": 32,
     "closed_loop_supported": false,
+    "complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
     "forming_old_current_amplitude_range": [
       141421.35623730952,
       141421.35623730952
     ],
     "forming_old_current_input_runtime_reached": false,
     "grv_c5_candidate_pending_human_review": true,
+    "later_C_mediation_specifically_by_transient_W_supported": false,
+    "maximum_GRR2_C_transition_jacobian_identity_error_linf": 2.7754282120629595e-11,
+    "maximum_GRR2_admitted_C_projection_residual_l2": 7.691850745540086e-16,
     "maximum_local_evidence_ladder_rung": "GRR2",
     "mechanical_status": "passed",
     "native_mediation_count": 0,
@@ -26,18 +34,22 @@
     "preparation_candidate_row_count": 144,
     "required_replays_passed": true,
     "retention_supported": true,
+    "review_point_count": 36,
     "sign_reversal_controls_passed": true,
     "substrate_reduced_sensitivity_count": 96,
+    "synthetic_complete_step_runtime_successor_row_count": 48,
+    "transverse_branch_relative_retention_supported": false,
     "writeback_supported": false
   },
-  "input_execution_revision": "319b523fcc5be379f3b80afd38251e62b07e4764",
-  "input_experiment_tree_sha256": "2358c784745b573d90411fa643050f466b59667007cf9b381697e1325b381b9b",
+  "input_execution_revision": "83c2cbcf002bf5ab82198f6ed9827950ada1af6a",
+  "input_experiment_tree_sha256": "2e6bc2f3e876477f8de912c150356419055a209bd7d9e39f512b236feb8ecbf8",
   "output_artifact_digests": {
-    "outputs/causal_role_matrix.json": "8366f1de013217125e329c8a1f5f79ecb6137476020e39c23ae770d4d145f134",
-    "outputs/conductance_retention_probe.json": "c8cf4c908ce1edbbafb8a68da49b67a038791efb36150b0e8c84fa4c64027ec4",
-    "outputs/grv5_intervention_registry.json": "0c1b66516f5f1507d08bb57b333f9de5bffe65f0378305de538556463d032c20",
+    "outputs/causal_role_matrix.json": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
+    "outputs/conductance_retention_probe.json": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+    "outputs/grv5_36_point_review_audit.json": "d3821dbb3f2734c3be124439eaf054bd5053dedaaad518a6d09f9734584ecd96",
+    "outputs/grv5_intervention_registry.json": "dc4f9b687b06cb1784c3c75fd8932fb0e237adb369aa6fc1c6e0581167c02d7b",
     "outputs/protected_path_manifest_v5.json": "9aa934e56f9f06171bd8ebcb1f172c7d9404fac4e0daf4127f6d73042c33aa34",
-    "reports/b1_grv5_retention_read_write_mediation.md": "9df60e02a3fff22f262aff6401ed73442ed1944c3328a6ae41c3cadb5f56feb3"
+    "reports/b1_grv5_retention_read_write_mediation.md": "00856699815353045319bed3737c149c70b8636b3afe48cbab2b5224582592c8"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -50,7 +62,7 @@
   "prerequisite_result_receipt_digests": [
     "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10"
   ],
-  "receipt_payload_sha256": "5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a",
+  "receipt_payload_sha256": "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv5_p5_package_manifest_v1",
-  "package_status": "P5_4_acceptance_clarification_pending_clean_committed_execution",
+  "package_status": "P5_4_mechanically_complete_pending_human_review",
   "gate_id": "GRV5",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -122,8 +122,9 @@
     "threshold_branch_scope_or_scientific_classification_changed": false,
     "full_clean_rerun_required": true
   },
-  "pending_p5_4_acceptance_clarification": {
-    "status": "method_frozen_pending_clean_committed_execution",
+  "latest_successful_execution": {
+    "input_revision": "83c2cbcf002bf5ab82198f6ed9827950ada1af6a",
+    "status": "mechanically_passed_pending_human_review",
     "may_upgrade_or_reclassify_existing_GRR_rung": false,
     "branch_scope_threshold_or_numerical_method_change_allowed": false,
     "required_machine_boundaries": [
@@ -132,8 +133,27 @@
       "unchanged_runtime_successor_of_synthetic_intervention_not_native_branch_reachability",
       "future_acceptance_anchor_binds_P5_2_and_superseding_P5_4"
     ],
+    "review_point_count": 36,
+    "all_review_points_mechanically_accounted_for": true,
+    "projection_to_complete_P5_2_candidate_schema_matches": true,
+    "projection_to_complete_P5_2_candidate_schema_sha256": "97f1fa6c65554f1fcdde85083654c6643730bb0051a64f9312c9a0f655baa71a",
+    "maximum_local_evidence_ladder_rung": "GRR2",
+    "GRR2_row_count": 32,
+    "branch_relocation_rival_unresolved_GRR2_row_count": 32,
+    "maximum_GRR2_admitted_C_projection_residual_l2": 7.691850745540086e-16,
+    "maximum_GRR2_C_transition_jacobian_identity_error_linf": 2.7754282120629595e-11,
+    "transverse_branch_relative_retention_supported": false,
+    "later_C_mediation_specifically_by_transient_W_supported": false,
+    "complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+    "result_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+    "causal_role_matrix_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
+    "intervention_registry_payload_sha256": "12a98e90ac9ba1023d44d2405ff1e1d81e8c0e451649260d6f52b5ff6fd40e12",
+    "review_audit_payload_sha256": "5a4969ec251e9805ad70d7ef08cef7ac8df877c1807db05b4daff0b971778ba4",
+    "protected_manifest_payload_sha256": "8374740696b6572effd66326cb72f8e24a95e367debef27c94e5e0b438fa692f",
+    "report_file_sha256": "00856699815353045319bed3737c149c70b8636b3afe48cbab2b5224582592c8",
+    "receipt_payload_sha256": "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35",
     "human_acceptance_anchor_created": false,
-    "full_clean_rerun_required": true
+    "full_clean_rerun_required": false
   },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",
   "claim_ceiling": "bounded_retained_geometry_or_joint_retention_candidate_without_automatic_core_readback"

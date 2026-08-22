@@ -1072,10 +1072,10 @@ and rung assignments remain frozen.
   result rather than only a predecessor.
 - [x] Freeze future acceptance-anchor provenance across the original P5.2
   result/receipt and the superseding P5.4 result/audit/receipt.
-- [ ] Execute P5.4 from a clean committed method revision.
-- [ ] Confirm all 36 hardened review points still pass.
-- [ ] Confirm the primary numerical projection and maximum rung are unchanged.
-- [ ] Record the P5.4 payload and receipt identities below.
+- [x] Execute P5.4 from a clean committed method revision.
+- [x] Confirm all 36 hardened review points still pass.
+- [x] Confirm the complete P5.2 candidate-schema projection and maximum rung are unchanged.
+- [x] Record the P5.4 payload and receipt identities below.
 
 Pre-execution disposition:
 
@@ -1097,6 +1097,57 @@ P5_3_review_audit_payload_sha256 = 4dda2cd40d2e57b597387cfa38519f8853506dadb1f75
 P5_3_receipt_payload_sha256 = 941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f
 scientific_acceptance = awaiting_clean_P5_4_execution_and_human_review
 ```
+
+Final mechanical result:
+
+```text
+input_execution_revision = 83c2cbcf002bf5ab82198f6ed9827950ada1af6a
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+P5_4_review_points_mechanically_accounted_for = 36/36
+P5_4_acceptance_clarification_changed_primary_rung = false
+branch_count = 48
+preparation_candidate_row_count = 144
+GRR0_row_count = 64
+GRR1_row_count = 48
+GRR2_row_count = 32
+GRR3_or_stronger_row_count = 0
+branch_relocation_rival_unresolved_GRR2_row_count = 32
+maximum_GRR2_admitted_C_projection_residual_l2 = 7.691850745540086e-16
+maximum_GRR2_C_transition_jacobian_identity_error_linf = 2.7754282120629595e-11
+maximum_GRR2_k0_to_h10_C_drift_state_a_l2 = 1.375579720867689e-10
+maximum_GRR2_k0_to_h10_C_drift_state_b_l2 = 1.3857589346646775e-10
+transverse_branch_relative_retention_supported = false
+later_C_mediation_specifically_by_transient_W_supported = false
+stage_matched_W_only_mediation_control_run = false
+complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone = false
+runtime_reached_shorthand_allowed = false
+native_mediation_count = 0
+native_readback_supported = false
+writeback_supported = false
+closed_loop_supported = false
+projection_to_complete_P5_2_candidate_schema_matches = true
+projection_to_complete_P5_2_candidate_schema_sha256 = 97f1fa6c65554f1fcdde85083654c6643730bb0051a64f9312c9a0f655baa71a
+conductance_retention_payload_sha256 = 0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989
+causal_role_matrix_payload_sha256 = 20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8
+intervention_registry_payload_sha256 = 12a98e90ac9ba1023d44d2405ff1e1d81e8c0e451649260d6f52b5ff6fd40e12
+review_audit_payload_sha256 = 5a4969ec251e9805ad70d7ef08cef7ac8df877c1807db05b4daff0b971778ba4
+protected_manifest_payload_sha256 = 8374740696b6572effd66326cb72f8e24a95e367debef27c94e5e0b438fa692f
+report_file_sha256 = 00856699815353045319bed3737c149c70b8636b3afe48cbab2b5224582592c8
+result_receipt_payload_sha256 = a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35
+B1_GR_tests = 74_passed
+ruff = passed
+src_files_changed_by_GRV5 = 0
+```
+
+The `GRR2` rows show persistent displacement in the already admitted zero-sum
+`C` coordinate. They do not establish that the displacement is transverse to a
+branch family because GRV3 did not separately identify that tangent. The native
+stage-local `W` write and later `C` consequence are both observed, but a
+stage-matched `W`-only mediation control was not run, so their specific causal
+link remains unresolved. Finally, the post-step pair is an unchanged-runtime
+successor of a synthetic old-current intervention, not a state shown reachable
+from an accepted branch by unchanged runtime alone.
 
 ## Iteration 7 - GRV6 Current Recurrence And Return Orbits
 
