@@ -5,9 +5,9 @@
   },
   "payload": {
     "all_review_points_passed": true,
-    "audit_id": "grv6_current_recurrence_contract_audit_v1",
+    "audit_id": "grv6_current_recurrence_contract_audit_v2",
     "gate_id": "GRV6",
-    "review_point_count": 34,
+    "review_point_count": 38,
     "review_points": [
       {
         "passed": true,
@@ -126,62 +126,82 @@
       },
       {
         "passed": true,
-        "point_id": "proper_divisor_gate_executed",
+        "point_id": "ill_conditioned_rows_have_return_jacobian_diagnostics",
         "point_index": 24
       },
       {
         "passed": true,
-        "point_id": "categorical_return_gate_recorded",
+        "point_id": "nonrequired_seed_gates_are_not_applicable",
         "point_index": 25
       },
       {
         "passed": true,
-        "point_id": "administrative_advancement_gate_recorded",
+        "point_id": "boundary_state_candidates_replayed_and_classified",
         "point_index": 26
       },
       {
         "passed": true,
-        "point_id": "physical_only_return_class_frozen",
+        "point_id": "fixture_search_resolution_disclosed",
         "point_index": 27
       },
       {
         "passed": true,
-        "point_id": "hybrid_return_class_frozen",
+        "point_id": "proper_divisor_gate_executed",
         "point_index": 28
       },
       {
         "passed": true,
-        "point_id": "floquet_stratum_gate_enforced",
+        "point_id": "categorical_return_gate_recorded",
         "point_index": 29
       },
       {
         "passed": true,
-        "point_id": "held_out_replay_accounted",
+        "point_id": "administrative_advancement_gate_recorded",
         "point_index": 30
       },
       {
         "passed": true,
-        "point_id": "nonzero_current_not_relabelled_active_circulation",
+        "point_id": "physical_only_return_class_frozen",
         "point_index": 31
       },
       {
         "passed": true,
-        "point_id": "readback_not_opened",
+        "point_id": "hybrid_return_class_frozen",
         "point_index": 32
       },
       {
         "passed": true,
-        "point_id": "runtime_unchanged",
+        "point_id": "floquet_stratum_gate_enforced",
         "point_index": 33
       },
       {
         "passed": true,
-        "point_id": "GRV_C5_not_assigned_by_GRV6_alone",
+        "point_id": "held_out_replay_accounted",
         "point_index": 34
+      },
+      {
+        "passed": true,
+        "point_id": "nonzero_current_not_relabelled_active_circulation",
+        "point_index": 35
+      },
+      {
+        "passed": true,
+        "point_id": "readback_not_opened",
+        "point_index": 36
+      },
+      {
+        "passed": true,
+        "point_id": "runtime_unchanged",
+        "point_index": 37
+      },
+      {
+        "passed": true,
+        "point_id": "GRV_C5_not_assigned_by_GRV6_alone",
+        "point_index": 38
       }
     ],
-    "source_result_payload_sha256": "ace2cbbc672ce85c9b0d4a90d818782d5e069c5064d0498e96e21c3879447655"
+    "source_result_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1"
   },
-  "payload_sha256": "e252f4907ed589af26979b5bcd06624c1d43203d667ff0d6eaeebed08e62ce89",
-  "schema_version": "b1_grv6_contract_audit_v1"
+  "payload_sha256": "67b25560aef5cbd50597df05712571629c6483b69bbb4ff11e747d34d08c4dab",
+  "schema_version": "b1_grv6_contract_audit_v2"
 }

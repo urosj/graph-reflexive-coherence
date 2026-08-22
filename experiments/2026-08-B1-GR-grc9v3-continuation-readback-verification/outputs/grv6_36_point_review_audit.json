@@ -7,10 +7,11 @@
     "acceptance_blocker_count": 0,
     "all_current_result_acceptance_requirements_satisfied": true,
     "all_review_points_accounted_for": true,
-    "audit_id": "grv6_external_36_point_review_audit_v1",
+    "audit_id": "grv6_external_36_point_review_audit_v2",
     "conditional_positive_orbit_gate_count": 14,
+    "current_result_executed_or_satisfied_count": 22,
     "gate_id": "GRV6",
-    "interpretation": "conditional orbit-only controls are not treated as executed; they remain mandatory before any future positive orbit candidate can be accepted",
+    "interpretation": "36 review points are accounted for: 22 current-result requirements are executed or satisfied and 14 orbit-only controls are conditionally deferred, not executed; every deferred control remains mandatory before a future positive orbit candidate can be accepted",
     "review_point_count": 36,
     "review_points": [
       {
@@ -51,7 +52,7 @@
       {
         "acceptance_requirement_satisfied": true,
         "disposition": "passed",
-        "evidence": "full seed certification object per sign and ladder row",
+        "evidence": "required cycle gates are satisfied and nonrequired generic-seed gates are explicitly not_applicable",
         "point_id": "cycle_seed_certified_before_runtime",
         "point_index": 6
       },
@@ -72,7 +73,7 @@
       {
         "acceptance_requirement_satisfied": true,
         "disposition": "passed",
-        "evidence": "closure mobility conservation and no constraint support recorded",
+        "evidence": "authored cycle-current ladders preserve closure mobility and conservation without constraint support; the separate boundary candidate is explicitly outside the T-A05 envelope",
         "point_id": "T_A05_assumption_envelope",
         "point_index": 9
       },
@@ -170,7 +171,7 @@
       {
         "acceptance_requirement_satisfied": true,
         "disposition": "passed",
-        "evidence": "all seeds roots statuses recorded; confirmation not applicable",
+        "evidence": "all seeds roots statuses and per-row return-Jacobian diagnostics recorded; confirmation not applicable",
         "point_id": "search_freeze_and_confirmation",
         "point_index": 23
       },
@@ -198,7 +199,7 @@
       {
         "acceptance_requirement_satisfied": true,
         "disposition": "passed",
-        "evidence": "budget floor event and topology support recorded; none active",
+        "evidence": "activity ladders are unconstrained; exceptional search row is separately replayed and classified as a non-orbit boundary state",
         "point_id": "constraint_supported_recurrence",
         "point_index": 27
       },
@@ -261,13 +262,13 @@
       {
         "acceptance_requirement_satisfied": true,
         "disposition": "passed",
-        "evidence": "resolved and condition-blocked statuses separated; global and relative absence blocked",
+        "evidence": "resolved and condition-blocked statuses are fixture-stratified; branch allocation and the branch-relative C W chart are disclosed; global and relative absence remain blocked",
         "point_id": "bounded_negative_result",
         "point_index": 36
       }
     ],
-    "source_result_payload_sha256": "ace2cbbc672ce85c9b0d4a90d818782d5e069c5064d0498e96e21c3879447655"
+    "source_result_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1"
   },
-  "payload_sha256": "24cecc3c326c525684a8ba4e56da87097bc10cffb655b61092adad855cafbcd7",
-  "schema_version": "b1_grv6_36_point_review_audit_v1"
+  "payload_sha256": "3d7375eabe881916c9d03f23f4bf6f9639befb51f87544b70ad5c0a80c44ba28",
+  "schema_version": "b1_grv6_36_point_review_audit_v2"
 }

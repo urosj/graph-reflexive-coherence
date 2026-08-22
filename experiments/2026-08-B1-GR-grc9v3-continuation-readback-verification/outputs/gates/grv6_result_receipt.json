@@ -4,7 +4,7 @@
     "GRV8"
   ],
   "claim_ceiling": "bounded_search_found_no_primitive_period_2_to_8_return_and_cycle_seeds_were_overwritten_without_global_nonexistence_claim_pending_human_review",
-  "contract_audit_payload_sha256": "e252f4907ed589af26979b5bcd06624c1d43203d667ff0d6eaeebed08e62ce89",
+  "contract_audit_payload_sha256": "67b25560aef5cbd50597df05712571629c6483b69bbb4ff11e747d34d08c4dab",
   "gate_id": "GRV6",
   "grv6_summary": {
     "GRV_C5_assigned": false,
@@ -13,14 +13,21 @@
     "activity_ladder_constraint_supported_row_count": 0,
     "all_activity_ladder_seeds_certified": true,
     "all_activity_response_shape_controls_passed": true,
+    "all_boundary_state_candidates_replayed_and_classified": true,
     "all_budget_controls_passed": true,
     "all_cycle_orientations_overwritten_at_first_transport": true,
     "all_cycle_seed_stage_traces_match_complete_step": true,
     "all_cycle_seeds_certified": true,
     "all_cycle_transport_kernel_traces_match_public_wrapper": true,
     "all_edge_space_checks_passed": true,
+    "all_ill_conditioned_rows_have_jacobian_diagnostics": true,
+    "all_nonrequired_seed_gates_marked_not_applicable": true,
     "all_sign_even_controls_passed": true,
     "all_topology_and_event_controls_passed": true,
+    "boundary_state_candidate_count": 1,
+    "boundary_state_classifications": [
+      "budget_projection_supported_current_state"
+    ],
     "condition_blocked_rows_count_as_negative_orbit_evidence": false,
     "conditional_positive_orbit_gate_status": "not_applicable_no_return_orbit_candidate",
     "converged_but_not_return_count": 1,
@@ -55,14 +62,14 @@
     "symmetric_exact_zero_control_count": 16,
     "writeback_supported": false
   },
-  "input_execution_revision": "d542330c03fbb255795e01acbaa9a531807d1668",
-  "input_experiment_tree_sha256": "59a1b9eee0a00a9dab7eca4ef4244fd574f00400c54d26e07de089d2ae9dccf4",
+  "input_execution_revision": "1def2aeab3f2ec50bff411a5d89c2d391c586466",
+  "input_experiment_tree_sha256": "cbfa2921ed7dce9e99cab2b76427b9449437dd0edd32f65c6b8f54ccc5af9b42",
   "output_artifact_digests": {
-    "outputs/grv6_36_point_review_audit.json": "f8076a101d0ac561a37d83bf8b516daf8247884a28106b2c0f64a273b7cb5bf3",
-    "outputs/grv6_contract_audit.json": "a959694bce3f868e496377e89c0ee86ee1145b4eda5edec120596f084d88e4d1",
+    "outputs/grv6_36_point_review_audit.json": "d67865e1fb8a781d1d990273146f842a6a91abfa3dba757f8fa04089e19e75b7",
+    "outputs/grv6_contract_audit.json": "0913ab6688c69dff211e64197655d0f903f419325138130a7ad21b99ad3b8651",
     "outputs/protected_path_manifest_v6.json": "a4de764bd3357b67793375cf41f210f124ba61fe73a7e06caaeb74d351be44c2",
-    "outputs/return_orbit_registry.json": "1e332296e6be5d1df7290120e31673d1adff0a7aba8c0b4041c18f7372912ea1",
-    "reports/b1_grv6_current_recurrence_and_return_orbits.md": "611c71cbf991a92f0dabc1c08094cee0b88964c8e196876ed8ebc33cf0b6fdc9"
+    "outputs/return_orbit_registry.json": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+    "reports/b1_grv6_current_recurrence_and_return_orbits.md": "6dcc2643aaf7d197d1603ea2531312e1ba075069f0ed8b8b9686bfd077104160"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -75,8 +82,8 @@
   "prerequisite_result_receipt_digests": [
     "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35"
   ],
-  "receipt_payload_sha256": "a714d35c4e3e59c081c7e4ef7bbfb11c67d1694806f6154b5c01ed341712b698",
-  "review_36_point_audit_payload_sha256": "24cecc3c326c525684a8ba4e56da87097bc10cffb655b61092adad855cafbcd7",
+  "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+  "review_36_point_audit_payload_sha256": "3d7375eabe881916c9d03f23f4bf6f9639befb51f87544b70ad5c0a80c44ba28",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }

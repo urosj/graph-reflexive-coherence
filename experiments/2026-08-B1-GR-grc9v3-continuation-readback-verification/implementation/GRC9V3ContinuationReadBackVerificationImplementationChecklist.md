@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_P6_3_boundary_state_and_search_diagnostics_pending
+status = grv6_P6_3_mechanically_passed_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_P6_3_clean_execution_pending
+current_gate = GRV6_P6_3_scientific_review_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
@@ -1487,8 +1487,55 @@ exists to trigger the 14 positive-orbit-only controls.
 - [x] Preserve the search claim as branch-relative `(C,W)` search with native
   current reconstruction and full-state admission, not a joint `(C,W,J)`
   nonexistence result.
-- [ ] Rerun GRV6 from a clean P6.3 method revision and verify all artifacts.
-- [ ] Commit P6.3 results for human acceptance; keep GRV7 blocked until then.
+- [x] Rerun GRV6 from a clean P6.3 method revision and verify all artifacts.
+- [x] Commit P6.3 results for human acceptance; keep GRV7 blocked until then.
+
+P6.3 executed from clean method revision
+`1def2aeab3f2ec50bff411a5d89c2d391c586466`. The expanded machine artifacts
+use versioned v2 schemas. Their semantic identities are:
+
+```text
+return_orbit_registry_payload_sha256 = 6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1
+contract_audit_payload_sha256 = 67b25560aef5cbd50597df05712571629c6483b69bbb4ff11e747d34d08c4dab
+review_36_point_audit_payload_sha256 = 3d7375eabe881916c9d03f23f4bf6f9639befb51f87544b70ad5c0a80c44ba28
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = 705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3
+```
+
+The search outcome remains numerically unchanged:
+
+```text
+search_rows = 1536
+resolved_rows = 671
+proper_divisor_rejections = 670
+converged_but_not_return_rows = 1
+ill_conditioned_unresolved_rows = 865
+primitive_return_orbits = 0
+
+F1 = 459 resolved / 117 ill-conditioned
+F2 = 116 resolved / 364 ill-conditioned
+F3 = 96 resolved / 384 ill-conditioned
+```
+
+The one exceptional row, `p08-s243`, is replayable as a
+`budget_projection_supported_current_state`. Its pre-budget coherence is
+approximately `(-0.8, 4.8)`, its post-projection coherence is `(0, 4)`, all
+three replay modes agree, and an old-current reset produces the same next
+physical future. It is therefore a useful boundary/projection result rather
+than a period-eight orbit, independent-old-current state, or `T-A05`
+contradiction. The frozen search remains a branch-relative `(C,W)` chart with
+native current reconstruction and full-state admission; it does not exclude
+old-`J`-dependent or relative periodic orbits outside that chart.
+
+All 865 condition-blocked rows now expose finite-difference step, singular
+values, condition number and limit, Jacobian digest, residual, and explicit
+no-regularization status. Generic activity seeds use `not_applicable` for
+non-required cycle/divergence gates, while actual cycle seeds use `satisfied`.
+All 36 external-review points are accounted for: 22 current-result requirements
+are executed or satisfied and 14 positive-candidate requirements are deferred.
+The experiment-local suite passes `84` tests; `src/` and protected source/spec/
+test paths remain unchanged. Scientific acceptance, the GRV6 acceptance anchor,
+`GRV-C5`, and GRV7 remain pending.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_P6_3_boundary_state_and_search_diagnostics_pending
+status = grv6_P6_3_mechanically_passed_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -355,8 +355,28 @@ missing per-row return-Jacobian diagnostics and several accounting/schema
 clarifications. P6.3 freezes a fresh-process replay of that beat-one state,
 condition and singular-value records for every solver Jacobian, fixture-local
 resolution/allocation tables, explicit `not_applicable` seed-gate statuses, and
-the exact `(C,W)` search-chart limitation. GRV6 remains unaccepted until a
-clean P6.3 execution binds those records.
+the exact `(C,W)` search-chart limitation.
+
+The clean P6.3 execution from revision `1def2ae` binds those records. It
+classifies `p08-s243` as a
+`budget_projection_supported_current_state`: local, snapshot/load, and fresh-
+process replays agree exactly; continuity first produces
+`C = (-0.8, 4.8)`, simplex projection restores `C = (0, 4)`, and native
+transport reconstruction restores the same nonzero potential current. Resetting
+old `J` does not change the next physical future, so old current is not admitted
+as an independent causal coordinate. The row is not a return orbit and does not
+satisfy the unconstrained `T-A05` envelope.
+
+The original bounded result remains unchanged: 671 of 1,536 search rows resolve,
+670 close on a proper divisor, no primitive return orbit is admitted, and 865
+rows remain unresolved under the no-regularization condition gate. Resolution
+is substantially lower on F2/F3 than F1, and the repeated round-robin allocation
+bias toward F1 is now explicit. All 865 blocked rows carry their numerical
+condition diagnostics. The 36-point audit accounts for 22 current-result
+requirements and 14 conditionally deferred positive-orbit requirements; it does
+not call the deferred requirements executed. Receipt `705b6967...` awaits human
+review. No GRV6 acceptance anchor exists, `GRV-C5` is not assigned, and GRV7
+remains blocked.
 
 ## Central Question
 
