@@ -1075,6 +1075,28 @@ create an alternative runtime step, authorize source changes, or make the
 experiment-authored seeds runtime-reached. They only expose the native wrapper's
 internal source semantics at the resolution required by the review.
 
+### P6.3 Boundary-State Replay And Search Diagnostics
+
+P6.2 review found one reduced `(C,W)` root that converges within the solver
+tolerance but fails full-state return because old current changes by about
+eight. P6.3 does not expand or retune the orbit search. It selects every row
+matching the preregistered diagnostic condition of reduced convergence plus
+full-state current failure, takes the beat-one complete state, and replays that
+state locally, through snapshot/load, and in a fresh process. Manual stage
+instrumentation must match `step()` while exposing continuity and budget
+corrections. The allowed classification distinguishes constraint-supported
+nonzero-current fixed state, budget-projection support, positivity-boundary
+support, physical-only fixed state, and failed reproduction.
+
+P6.3 also makes the existing solver gate auditable by serializing finite-
+difference Jacobian singular values, condition number, declared limit, matrix
+digest, residual, and no-regularization status. Search accounting is stratified
+by fixture and period, including the frozen repeated round-robin offset. Generic
+finite activity seeds receive explicit non-applicable divergence and cycle-
+membership statuses. Accepted wording must distinguish 22 executed current-
+result requirements from 14 deferred positive-orbit gates and preserve the
+branch-relative `(C,W)` search-chart scope.
+
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 
 ### Objective

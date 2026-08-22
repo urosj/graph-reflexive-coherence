@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_P6_2_transport_kernel_trace_pending_clean_execution
+status = grv6_P6_3_boundary_state_and_search_diagnostics_pending
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -337,10 +337,26 @@ requires separate conductance-formation, potential-reconstruction, and
 current-reconstruction observations. P6.2 therefore supersedes the P6.1 audit
 for acceptance: it invokes those same source-current kernels diagnostically,
 records each surface, proves exact parity with the public wrapper, and adds
-pre-runtime event-eligibility certification. A clean P6.2 rerun is pending; no
-GRV6 acceptance anchor exists, `GRV-C5` is not assigned, and GRV7 remains
-blocked. Active circulation, Read-Back, write-back, and self-sustaining
+pre-runtime event-eligibility certification.
+
+The clean P6.2 execution from revision `d542330` passes those gates on all 16
+cycle-capable branches. Every kernel trace matches the public wrapper exactly,
+every wrapper trace matches `step()`, and all seed-eligibility checks pass. The
+36-point audit again reports zero current-result acceptance blockers, now with
+point 7 bound to the separate source-kernel records. The scientific counts and
+bounded no-orbit result remain unchanged. Receipt `a714d35c...` awaits human
+review; no GRV6 acceptance anchor exists, `GRV-C5` is not assigned, and GRV7
+remains blocked. Active circulation, Read-Back, write-back, and self-sustaining
 identity remain unopened.
+
+Scientific review of P6.2 identified one converged reduced-coordinate row whose
+full-state failure enters a repeatable nonzero-current boundary state, plus
+missing per-row return-Jacobian diagnostics and several accounting/schema
+clarifications. P6.3 freezes a fresh-process replay of that beat-one state,
+condition and singular-value records for every solver Jacobian, fixture-local
+resolution/allocation tables, explicit `not_applicable` seed-gate statuses, and
+the exact `(C,W)` search-chart limitation. GRV6 remains unaccepted until a
+clean P6.3 execution binds those records.
 
 ## Central Question
 

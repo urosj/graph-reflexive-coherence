@@ -4,7 +4,7 @@
     "GRV8"
   ],
   "claim_ceiling": "bounded_search_found_no_primitive_period_2_to_8_return_and_cycle_seeds_were_overwritten_without_global_nonexistence_claim_pending_human_review",
-  "contract_audit_payload_sha256": "3c95381e039e4c7fe35bca4c1ed859429e5540a9a2d720fd77ed612b0f849072",
+  "contract_audit_payload_sha256": "e252f4907ed589af26979b5bcd06624c1d43203d667ff0d6eaeebed08e62ce89",
   "gate_id": "GRV6",
   "grv6_summary": {
     "GRV_C5_assigned": false,
@@ -17,6 +17,7 @@
     "all_cycle_orientations_overwritten_at_first_transport": true,
     "all_cycle_seed_stage_traces_match_complete_step": true,
     "all_cycle_seeds_certified": true,
+    "all_cycle_transport_kernel_traces_match_public_wrapper": true,
     "all_edge_space_checks_passed": true,
     "all_sign_even_controls_passed": true,
     "all_topology_and_event_controls_passed": true,
@@ -54,14 +55,14 @@
     "symmetric_exact_zero_control_count": 16,
     "writeback_supported": false
   },
-  "input_execution_revision": "50aa178cc4793e19cf60d899ac924484c33b8ea4",
-  "input_experiment_tree_sha256": "841c745c11f4fe386cd0167c3519b8ce6d89e4cb969dba7ac1ee21239eb90def",
+  "input_execution_revision": "d542330c03fbb255795e01acbaa9a531807d1668",
+  "input_experiment_tree_sha256": "59a1b9eee0a00a9dab7eca4ef4244fd574f00400c54d26e07de089d2ae9dccf4",
   "output_artifact_digests": {
-    "outputs/grv6_36_point_review_audit.json": "25e44e2f31b224a78528a6847e55bb681b05fe91eed265e262f91d96e75bf78b",
-    "outputs/grv6_contract_audit.json": "ace7f39bbdb0f7b2f2213f69aefba57f3c271e561429f6244a4a130559543dc2",
+    "outputs/grv6_36_point_review_audit.json": "f8076a101d0ac561a37d83bf8b516daf8247884a28106b2c0f64a273b7cb5bf3",
+    "outputs/grv6_contract_audit.json": "a959694bce3f868e496377e89c0ee86ee1145b4eda5edec120596f084d88e4d1",
     "outputs/protected_path_manifest_v6.json": "a4de764bd3357b67793375cf41f210f124ba61fe73a7e06caaeb74d351be44c2",
-    "outputs/return_orbit_registry.json": "70c017b9f0f717cf49916cc0422b0e6ca251b995bed7d0ad977d8eeaedf343d8",
-    "reports/b1_grv6_current_recurrence_and_return_orbits.md": "4ec137aba72898f2f865340c92b1dae47e8955350ac09175dfe9fa523ea8c45e"
+    "outputs/return_orbit_registry.json": "1e332296e6be5d1df7290120e31673d1adff0a7aba8c0b4041c18f7372912ea1",
+    "reports/b1_grv6_current_recurrence_and_return_orbits.md": "611c71cbf991a92f0dabc1c08094cee0b88964c8e196876ed8ebc33cf0b6fdc9"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -74,8 +75,8 @@
   "prerequisite_result_receipt_digests": [
     "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35"
   ],
-  "receipt_payload_sha256": "f9c8950628d7e68e4d01192f1596a1a5d45d7f90849d894478941b1165eeec46",
-  "review_36_point_audit_payload_sha256": "df1f4a4eedac863cdab227db4562ac00ce68341292fab4b5284f8e248614448a",
+  "receipt_payload_sha256": "a714d35c4e3e59c081c7e4ef7bbfb11c67d1694806f6154b5c01ed341712b698",
+  "review_36_point_audit_payload_sha256": "24cecc3c326c525684a8ba4e56da87097bc10cffb655b61092adad855cafbcd7",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }

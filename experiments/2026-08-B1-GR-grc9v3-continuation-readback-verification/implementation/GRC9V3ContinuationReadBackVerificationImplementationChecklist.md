@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_P6_2_transport_kernel_trace_pending_clean_execution
+status = grv6_P6_3_boundary_state_and_search_diagnostics_pending
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_P6_2_clean_execution_pending
+current_gate = GRV6_P6_3_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
@@ -1410,11 +1410,85 @@ P6.1 receipt remains unaccepted and is superseded for acceptance by P6.2.
   mode, and absence of an external-current state surface.
 - [x] Extend regression tests for kernel-stage presence, wrapper parity, and
   event-eligibility certification.
-- [ ] Commit the P6.2 method revision and rerun GRV6 from that clean revision.
-- [ ] Require the regenerated 36-point audit to bind kernel-stage parity at
+- [x] Commit the P6.2 method revision and rerun GRV6 from that clean revision.
+- [x] Require the regenerated 36-point audit to bind kernel-stage parity at
   review point 7 and report zero current-result acceptance blockers.
-- [ ] Commit the superseding P6.2 result artifacts for human review.
+- [x] Commit the superseding P6.2 result artifacts for human review.
 - [ ] Emit a GRV6 acceptance anchor only after human review of P6.2.
+
+Superseding P6.2 result awaiting human scientific review:
+
+```text
+input_execution_revision = d542330c03fbb255795e01acbaa9a531807d1668
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+current_control_branch_count = 48
+cycle_control_branch_count = 16
+cycle_seed_row_count = 32
+cycle_seed_persistence_count = 0
+maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+finite_activity_amplitude_ladder_row_count = 192
+cycle_activity_amplitude_ladder_row_count = 64
+all_activity_ladder_seeds_certified = true
+cycle_seed_stage_trace_pair_count = 16
+all_cycle_transport_kernel_traces_match_public_wrapper = true
+all_cycle_seed_stage_traces_match_complete_step = true
+all_cycle_orientations_overwritten_at_first_transport = true
+orbit_search_row_count = 1536
+converged_search_candidate_count = 671
+proper_divisor_rejected_count = 670
+converged_but_not_return_count = 1
+return_jacobian_ill_conditioned_no_regularization_count = 865
+primitive_return_orbit_count = 0
+relative_periodic_orbit_search_executed = false
+recurrence_evidence_opened = false
+GRV_C5_assigned = false
+external_review_point_count = 36
+external_review_acceptance_blocker_count = 0
+return_orbit_registry_payload_sha256 = ace2cbbc672ce85c9b0d4a90d818782d5e069c5064d0498e96e21c3879447655
+contract_audit_payload_sha256 = e252f4907ed589af26979b5bcd06624c1d43203d667ff0d6eaeebed08e62ce89
+review_36_point_audit_payload_sha256 = 24cecc3c326c525684a8ba4e56da87097bc10cffb655b61092adad855cafbcd7
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = a714d35c4e3e59c081c7e4ef7bbfb11c67d1694806f6154b5c01ed341712b698
+B1_GR_tests = 81_passed
+ruff = passed
+src_files_changed_by_GRV6 = 0
+```
+
+P6.2 preserves the P6.1 scientific outcome while resolving the stage-location
+ambiguity. The sign-even conductance write occurs during
+`compute_base_conductance`; the old cycle orientation remains present through
+potential reconstruction and is erased when `compute_flux` writes native
+potential flow. The experiment-authored seed is therefore consumed as an input
+to a structural write, not retained as current state. No accepted return orbit
+exists to trigger the 14 positive-orbit-only controls.
+
+### P6.3 Boundary State And Search-Diagnostic Hardening
+
+- [x] Freeze selection of every converged reduced `(C,W)` root whose full-state
+  admission fails primarily in old current.
+- [ ] Replay the beat-one complete full state locally, after snapshot/load, and
+  in a fresh Python process.
+- [ ] Record complete-state residuals, categorical/RNG/administrative behavior,
+  pre-budget and post-budget coherence, correction vector, and current at each
+  reconstruction stage.
+- [ ] Classify projection-, budget-, positivity-, or boundary-supported fixed
+  states separately from return orbits and `T-A05` contradictions.
+- [ ] Serialize per-iteration return-Jacobian singular values, condition number,
+  condition limit, finite-difference step, matrix digest, residual, and
+  no-regularization status.
+- [ ] Add fixture- and period-stratified resolution and allocation accounting.
+- [ ] Disclose the repeated round-robin offset and F1 over-allocation rather
+  than changing the preregistered search after outcome inspection.
+- [ ] Replace non-required divergence/cycle booleans with explicit
+  `not_applicable`, `satisfied`, or `failed` statuses.
+- [ ] State that 36 review points are accounted for: 22 current-result
+  requirements satisfied and 14 positive-candidate requirements deferred.
+- [ ] Preserve the search claim as branch-relative `(C,W)` search with native
+  current reconstruction and full-state admission, not a joint `(C,W,J)`
+  nonexistence result.
+- [ ] Rerun GRV6 from a clean P6.3 method revision and verify all artifacts.
+- [ ] Commit P6.3 results for human acceptance; keep GRV7 blocked until then.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

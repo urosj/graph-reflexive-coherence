@@ -78,7 +78,7 @@ is not Read-Back, memory, or self-sustaining identity. GRV6 cannot assign
 
 ## Provenance
 
-- Input execution revision: `50aa178cc4793e19cf60d899ac924484c33b8ea4`
+- Input execution revision: `d542330c03fbb255795e01acbaa9a531807d1668`
 - GRV5 receipt: `a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35`
 - GRV5 acceptance commit: `948db9b37069bc2a972f4bc2471287fa7140f677`
 - Runtime source/spec/test paths: unchanged under `protected_path_manifest_v6.json`

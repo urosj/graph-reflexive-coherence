@@ -180,8 +180,8 @@
         "point_index": 34
       }
     ],
-    "source_result_payload_sha256": "cd8eb857a28999e8000330656637f1e46397b6aa5416afbcb64f0a63dcaf58ff"
+    "source_result_payload_sha256": "ace2cbbc672ce85c9b0d4a90d818782d5e069c5064d0498e96e21c3879447655"
   },
-  "payload_sha256": "3c95381e039e4c7fe35bca4c1ed859429e5540a9a2d720fd77ed612b0f849072",
+  "payload_sha256": "e252f4907ed589af26979b5bcd06624c1d43203d667ff0d6eaeebed08e62ce89",
   "schema_version": "b1_grv6_contract_audit_v1"
 }

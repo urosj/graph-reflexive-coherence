@@ -58,7 +58,7 @@
       {
         "acceptance_requirement_satisfied": true,
         "disposition": "passed",
-        "evidence": "public native stage trace with complete-step parity",
+        "evidence": "source-current transport kernels recorded separately and matched to the public wrapper and complete step",
         "point_id": "cycle_seed_stage_trace",
         "point_index": 7
       },
@@ -266,8 +266,8 @@
         "point_index": 36
       }
     ],
-    "source_result_payload_sha256": "cd8eb857a28999e8000330656637f1e46397b6aa5416afbcb64f0a63dcaf58ff"
+    "source_result_payload_sha256": "ace2cbbc672ce85c9b0d4a90d818782d5e069c5064d0498e96e21c3879447655"
   },
-  "payload_sha256": "df1f4a4eedac863cdab227db4562ac00ce68341292fab4b5284f8e248614448a",
+  "payload_sha256": "24cecc3c326c525684a8ba4e56da87097bc10cffb655b61092adad855cafbcd7",
   "schema_version": "b1_grv6_36_point_review_audit_v1"
 }
