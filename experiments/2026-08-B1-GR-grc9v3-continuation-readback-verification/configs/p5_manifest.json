@@ -1,0 +1,33 @@
+{
+  "schema_version": "b1_grv5_p5_package_manifest_v1",
+  "package_status": "P5_method_frozen_pending_clean_committed_execution",
+  "gate_id": "GRV5",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV4",
+    "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+    "receipt_payload_sha256": "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10",
+    "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+    "acceptance_anchor_commit": "53838f31c512fc8dd01bde8e99f34ceef7885f03"
+  },
+  "gate_input_change_class": "scientific_method_completion_under_existing_GRV5_contract",
+  "protocol_readmission_required": false,
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "GRV4_result_mutation_authorized": false,
+    "core_readback_claim_opened_before_execution": false
+  },
+  "executable_surfaces": [
+    "scripts/interventions.py",
+    "scripts/grv5_methods.py",
+    "scripts/run_preparation_persistence_probe.py",
+    "scripts/run_all.py",
+    "tests/test_grv5_preparation_persistence.py"
+  ],
+  "execution_contract": "configs/grv5_preparation_persistence.json",
+  "branch_scope": "all_48_certified_rows_without_post_outcome_selection",
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",
+  "claim_ceiling": "bounded_retained_geometry_or_joint_retention_candidate_without_automatic_core_readback"
+}
