@@ -1,1 +1,43 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"b1/return_orbit_registry.schema.json","type":"object","required":["orbits","search_accounting","held_out_validation"],"properties":{"orbits":{"type":"array","items":{"type":"object","required":["orbit_id","period","stratum_status","return_residual","floquet_status"]}},"search_accounting":{"type":"object"},"held_out_validation":{"type":"object"}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/return_orbit_registry.schema.json",
+  "type": "object",
+  "required": ["schema_version", "metadata", "payload", "payload_sha256"],
+  "properties": {
+    "payload": {
+      "type": "object",
+      "required": [
+        "gate_id",
+        "source_contract",
+        "current_control_rows",
+        "multiplier_continuation",
+        "search_accounting",
+        "search_rows",
+        "orbits",
+        "held_out_validation",
+        "summary",
+        "claim_boundary"
+      ],
+      "properties": {
+        "gate_id": {"const": "GRV6"},
+        "orbits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "orbit_id",
+              "period",
+              "stratum_status",
+              "return_residual",
+              "classification",
+              "floquet_status"
+            ]
+          }
+        },
+        "search_accounting": {"type": "object"},
+        "search_rows": {"type": "array"},
+        "held_out_validation": {"type": "object"}
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ from compare_frozen_and_full_dynamics import run_grv4
 from compute_complete_step_jacobian import run_grv3
 from gate_receipts import finalize_receipt, validate_receipt
 from run_preparation_persistence_probe import run_grv5
+from search_return_orbits import run_grv6
 from serialize_theory_contract import serialize
 from solve_strong_fixed_branches import run_grv2
 from validate_instrumentation import run_grv1
@@ -160,6 +161,15 @@ def main() -> None:
             )
         run_grv5()
         print("GRV5 mechanically validated; scientific acceptance anchor is pending.")
+        return
+    if args.gate == "GRV6":
+        anchor = prerequisite_anchor_path(args.gate)
+        if not anchor.exists():
+            raise SystemExit(
+                f"{args.gate} blocked: prerequisite accepted anchor is missing"
+            )
+        run_grv6()
+        print("GRV6 mechanically validated; scientific acceptance anchor is pending.")
         return
     if args.gate != "GRV0":
         anchor = prerequisite_anchor_path(args.gate)

@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv5_scientifically_accepted_grv6_authorized_but_paused
+status = grv5_scientifically_accepted_grv6_method_frozen_pending_clean_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_authorized_but_not_started_user_pause
+current_gate = GRV6_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_and_GRV7
@@ -1168,6 +1168,27 @@ closed_loop_supported = false
 ```
 
 ## Iteration 7 - GRV6 Current Recurrence And Return Orbits
+
+Frozen execution scope:
+
+```text
+branch_scope = all_48_certified_GRV2_branches_in_registry_order
+current_control_scope = all_48_branches
+cycle_control_scope = all_16_F3_triangle_branches
+periods = [2, 3, 4, 5, 6, 8]
+search_budget_per_period = 256
+search_row_count = 1536
+search_coordinate = branch_relative_C_W_with_source_snapshot_J
+candidate_admission = complete_C_W_J_plus_categorical_causal_state
+proper_divisor_rejection = required
+ordinary_floquet = single_continuous_stratum_and_probe_stratum_only
+no_orbit_found_global_nonexistence_claim = blocked
+runtime_change_authorized = false
+```
+
+- [x] Freeze the GRV6 branch, cycle-topology, search-budget, and no-post-outcome-selection scope.
+- [x] Freeze direct rank-revealed cycle projection with no silent regularization or primary-projector pseudoinverse.
+- [x] Freeze full-state, proper-divisor, categorical, administrative, held-out replay, and Floquet admission gates.
 
 - [ ] Record closure, mobility, conservation, uniqueness, and orientation assumption statuses where required.
 - [ ] Freeze oriented edge order and node-by-edge incidence convention.

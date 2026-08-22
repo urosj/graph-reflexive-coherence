@@ -145,7 +145,7 @@ The named script-to-gate map is:
 | GRV3 | `compute_complete_step_jacobian.py`, `state_codec.py`, `tangent_basis.py`, `numerical_convergence.py`, `interventions.py` |
 | GRV4 | `compare_frozen_and_full_dynamics.py` |
 | GRV5 | `run_preparation_persistence_probe.py`, `interventions.py` |
-| GRV6 | `search_return_orbits.py`, `branch_continuation.py`, `edge_space.py` |
+| GRV6 | `search_return_orbits.py`, `grv6_methods.py`, `branch_continuation.py`, `edge_space.py` |
 | GRV7 | `sweep_temporal_and_spatial_thresholds.py`, `branch_continuation.py` |
 | GRV8 | `classify_claims_and_extensions.py`, `route_contradictions_and_theory_reopening.py`, `build_lgrc_handoff.py` |
 | orchestration | `run_all.py` |
@@ -976,10 +976,34 @@ survives the unchanged runtime and classify any return orbit precisely.
 12. Record the statuses of closure, mobility, conservation, uniqueness, and
    orientation assumptions before interpreting exclusions or selection.
 
+### Frozen GRV6 Execution Contract
+
+GRV6 consumes all 48 certified GRV2 branches in committed registry order. The
+current-control matrix runs on every branch, while stationary cycle-current
+controls run on all 16 `F3` triangle branches because only that admitted family
+has nonzero cycle-space dimension. This is topology scope, not post-outcome
+selection.
+
+The return search executes exactly 256 deterministic candidates for each
+preregistered period `2, 3, 4, 5, 6, 8`, allocated round-robin over all 48
+branches. Search coordinates are branch-relative `(C,W)` coordinates with `J`
+reset from the source snapshot; every resulting candidate is then judged in
+the complete physical `(C,W,J)` projection and categorical causal state.
+Period-one and all other proper divisors are tested before a primitive period
+is admitted. Failure to find an orbit is bounded search evidence, never a
+global nonexistence proof.
+
+The primary cycle projector is constructed directly from a rank-revealed basis
+of `ker(B)` and the native `W_*^-1` metric. The implementation does not silently
+regularize or pseudoinvert an ill-conditioned primary cycle Gram matrix.
+Ordinary Floquet analysis remains row-local and is blocked unless every orbit
+point and every finite-difference probe remains in one admitted causal stratum.
+
 ### Required outputs
 
 ```text
 outputs/return_orbit_registry.json
+outputs/grv6_contract_audit.json
 outputs/gates/grv6_result_receipt.json
 outputs/gates/grv6_acceptance_anchor.json
 reports/b1_grv6_current_recurrence_and_return_orbits.md

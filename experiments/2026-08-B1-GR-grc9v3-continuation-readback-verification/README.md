@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv5_scientifically_accepted_grv6_authorized_but_paused
+status = grv5_scientifically_accepted_grv6_method_frozen_pending_clean_execution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -288,7 +288,8 @@ branch without the synthetic intervention. Native read-back, write-back,
 The experiment owner accepted that bounded result in
 `outputs/gates/grv5_acceptance_anchor.json`. This authorizes GRV6 but does not
 assign `GRV-C5`, which also requires GRV6 recurrence and GRV7 threshold
-evidence. GRV6 is intentionally not started pending the requested review.
+evidence. The requested verification is complete; GRV6 now has a frozen
+experiment-local execution contract and remains pending clean execution.
 
 ## Central Question
 

@@ -157,7 +157,7 @@
     "accepted_result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
     "accepted_receipt_payload_sha256": "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35",
     "accepted_claim_ceiling": "bounded_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved_without_specific_transient_W_mediation_or_native_readback",
-    "GRV6_status": "authorized_but_not_started_user_pause",
+    "GRV6_status": "authorized_user_verification_complete_method_preparation_started",
     "full_clean_rerun_required": false
   },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",
