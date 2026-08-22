@@ -851,8 +851,8 @@ Finite-amplitude `J^2 -> W` effects remain open.
 - [x] Bind source v1 payload and receipt hashes in the corrected v2 artifacts.
 - [x] Verify that the correction changed no numerical leaf and performed no
   numerical recomputation.
-- [ ] Create no GRV4 acceptance anchor until human scientific review accepts the
-  corrected v2 result.
+- [x] Record human acceptance of the corrected v2 result in a separate GRV4
+  acceptance anchor binding revision `e99a8a3` and receipt `1e236ed3...`.
 
 Verification:
 

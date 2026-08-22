@@ -1,0 +1,11 @@
+{
+  "acceptance_role": "experiment_owner",
+  "acceptance_signature_or_ref": "repository_authenticated_user_instruction:accept_and_continue_with_iteration_6",
+  "acceptance_status": "accepted",
+  "acceptance_timestamp": "2026-08-22T11:16:56Z",
+  "accepted_by": "Uros Jovanovic (urosj)",
+  "gate_id": "GRV4",
+  "receipt_payload_sha256": "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10",
+  "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+  "review_method": "human_review_of_corrected_v2_artifact_semantics_and_bounded_GRV4_claim"
+}

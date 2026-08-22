@@ -269,8 +269,10 @@ no numerical recomputation and changed no classifier. Corrected result payload
 `34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3`
 and receipt `1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10`
 supersede the reviewed v1 schema while retaining its hashes in provenance.
-`GRV-C4` is still a review candidate only; an acceptance anchor has not been
-created.
+The corrected bounded result is accepted at revision `e99a8a3` by
+`outputs/gates/grv4_acceptance_anchor.json`, assigning `GRV-C4` without opening
+equivalence, continuation, retention, read-back, or write-back. GRV5 is now
+authorized.
 
 ## Central Question
 
