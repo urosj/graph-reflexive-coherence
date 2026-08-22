@@ -16,6 +16,7 @@ from grv6_methods import (  # noqa: E402
     branch_current_control,
     canonical_cycle_seed,
     evaluate_orbit,
+    multiplier_continuation_audit,
     oriented_incidence,
     proper_divisors,
 )
@@ -98,6 +99,19 @@ class GRV6ReturnOrbitTest(unittest.TestCase):
         )
         self.assertEqual([1], proper_divisors(2))
         self.assertEqual([1, 2, 4], proper_divisors(8))
+
+    def test_multiplier_audit_uses_json_null_for_empty_complex_set(self) -> None:
+        grv3 = json.loads(
+            (ROOT / "outputs/complete_step_jacobians.json").read_text(
+                encoding="utf-8"
+            )
+        )["payload"]
+        audit = multiplier_continuation_audit(grv3, self.config)
+        json.dumps(audit, allow_nan=False)
+        for row in audit["rows"]:
+            if row["complex_multiplier_eligible_count"] == 0:
+                self.assertIsNone(row["minimum_complex_unit_circle_distance"])
+                self.assertFalse(row["complex_unit_circle_continuation_candidate"])
 
 
 if __name__ == "__main__":

@@ -760,14 +760,16 @@ def multiplier_continuation_audit(
             minus_one_distance = min(
                 (abs(value + 1.0) for value in values), default=float("inf")
             )
-            complex_unit_distance = min(
-                (
-                    abs(abs(value) - 1.0)
-                    for value in values
-                    if abs(value.imag)
-                    >= float(policy["minimum_complex_imaginary_magnitude"])
-                ),
-                default=float("inf"),
+            eligible_complex_values = [
+                value
+                for value in values
+                if abs(value.imag)
+                >= float(policy["minimum_complex_imaginary_magnitude"])
+            ]
+            complex_unit_distance = (
+                min(abs(abs(value) - 1.0) for value in eligible_complex_values)
+                if eligible_complex_values
+                else None
             )
             rows.append(
                 {
@@ -784,10 +786,14 @@ def multiplier_continuation_audit(
                     ],
                     "minimum_minus_one_distance": minus_one_distance,
                     "minimum_complex_unit_circle_distance": complex_unit_distance,
+                    "complex_multiplier_eligible_count": len(eligible_complex_values),
                     "minus_one_continuation_candidate": minus_one_distance
                     <= float(policy["minus_one_candidate_distance"]),
-                    "complex_unit_circle_continuation_candidate": complex_unit_distance
-                    <= float(policy["complex_unit_circle_magnitude_distance"]),
+                    "complex_unit_circle_continuation_candidate": (
+                        complex_unit_distance is not None
+                        and complex_unit_distance
+                        <= float(policy["complex_unit_circle_magnitude_distance"])
+                    ),
                 }
             )
     return {
