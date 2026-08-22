@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV4",
-    "reproducibility_class": "tolerance_reproducible"
+    "artifact_correction_base_revision": "d1f7b6625a69e24826b142d891c6f81c238ef51b",
+    "correction_script_sha256": "d567978ab2550571386e553fb20fda8483a87fb3ce35ee9c4a905850f4b58844",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/clarify_grv4_artifact_semantics.py",
+    "numerical_execution_revision": "01389d9877bfdf68daa3e31786f832ab17742c86",
+    "numerical_recomputation_performed": false,
+    "reproducibility_class": "byte_reproducible_from_reviewed_v1_artifact",
+    "serializer_script_sha256": "ceac46caff23abe96bfe8ab23f3b8a29ef499068f4ad0d50e7afa4fd35b7c4b9",
+    "source_result_payload_sha256": "48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a"
   },
   "payload": {
+    "artifact_semantics_correction": {
+      "classification_algorithm_changed": false,
+      "correction_kind": "artifact_schema_and_interpretation_only",
+      "corrections": [
+        "rename evolution-generator eigenvalue field",
+        "replace agreement wording with no-resolved-difference wording",
+        "state explicitly that primary equivalence is unsupported",
+        "make accepted GRV3 anchor authoritative over historical receipt status"
+      ],
+      "numerical_recomputation_performed": false,
+      "numerical_values_changed": false,
+      "source_receipt_payload_sha256": "2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e",
+      "source_result_payload_sha256": "48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a",
+      "source_result_schema": "b1_grv4_frozen_full_comparison_v1"
+    },
     "branch_rows": [
       {
         "H_P_tangent": [
@@ -122,7 +143,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -1.9999999999959996
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 1.9999999999919993
@@ -479,7 +501,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -1.9999999999959996
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 3.9999999999839986
@@ -836,7 +859,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -1.9999999999959996
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 1.9999999999919993
@@ -1193,7 +1217,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -1.9999999999959996
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 3.9999999999839986
@@ -1550,7 +1575,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -0.9999999999959999
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 0.9999999999939997
@@ -1907,7 +1933,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -0.9999999999959999
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 1.9999999999879994
@@ -2264,7 +2291,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -0.9999999999959999
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 0.9999999999939997
@@ -2621,7 +2649,8 @@
         "frozen_restoring_structural_eigenvalues": [
           -0.9999999999959999
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": 1.9999999999879994
@@ -2978,7 +3007,8 @@
         "frozen_restoring_structural_eigenvalues": [
           3.999967547742785e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -3.999967547734784e-12
@@ -3335,7 +3365,8 @@
         "frozen_restoring_structural_eigenvalues": [
           3.999967547742785e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -7.999935095469568e-12
@@ -3692,7 +3723,8 @@
         "frozen_restoring_structural_eigenvalues": [
           3.999967547742785e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -3.999967547734784e-12
@@ -4049,7 +4081,8 @@
         "frozen_restoring_structural_eigenvalues": [
           3.999967547742785e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -7.999935095469568e-12
@@ -4406,7 +4439,8 @@
         "frozen_restoring_structural_eigenvalues": [
           1.0000000000040001
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.000000000002
@@ -4763,7 +4797,8 @@
         "frozen_restoring_structural_eigenvalues": [
           1.0000000000040001
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.000000000004
@@ -5120,7 +5155,8 @@
         "frozen_restoring_structural_eigenvalues": [
           1.0000000000040001
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.000000000002
@@ -5477,7 +5513,8 @@
         "frozen_restoring_structural_eigenvalues": [
           1.0000000000040001
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.000000000004
@@ -5834,7 +5871,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.0000151757005655e-11
@@ -5925,7 +5963,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -6070,7 +6108,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -6436,7 +6474,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.0000151757005655e-11
@@ -6527,7 +6566,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -6672,7 +6711,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -7038,7 +7077,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -7.999935095453568e-12
@@ -7129,7 +7169,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -7274,7 +7314,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -7640,7 +7680,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -7.999935095453568e-12
@@ -7731,7 +7772,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -7876,7 +7917,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -8242,7 +8283,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -4.000030351401131e-11
@@ -8333,7 +8375,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -8478,7 +8520,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -8844,7 +8886,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -4.000030351401131e-11
@@ -8935,7 +8978,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -9080,7 +9123,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -9446,7 +9489,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.5999870190907135e-11
@@ -9537,7 +9581,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -9682,7 +9726,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -10048,7 +10092,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.5999870190907135e-11
@@ -10139,7 +10184,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -10284,7 +10329,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -10650,7 +10695,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.0000151757005655e-11
@@ -10741,7 +10787,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -10886,7 +10932,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -11252,7 +11298,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.0000151757005655e-11
@@ -11343,7 +11390,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -11488,7 +11535,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -11854,7 +11901,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -7.999935095453568e-12
@@ -11945,7 +11993,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -12090,7 +12138,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -12456,7 +12504,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -7.999935095453568e-12
@@ -12547,7 +12596,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -12692,7 +12741,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -13058,7 +13107,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -4.000030351401131e-11
@@ -13149,7 +13199,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -13294,7 +13344,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -13660,7 +13710,8 @@
         "frozen_restoring_structural_eigenvalues": [
           2.000015175720566e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -4.000030351401131e-11
@@ -13751,7 +13802,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -13896,7 +13947,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -14262,7 +14313,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.5999870190907135e-11
@@ -14353,7 +14405,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -14498,7 +14550,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -14864,7 +14916,8 @@
         "frozen_restoring_structural_eigenvalues": [
           7.99993509548557e-12
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.5999870190907135e-11
@@ -14955,7 +15008,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -15100,7 +15153,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -15503,7 +15556,8 @@
           9.265801710192476e-12,
           1.6234393783385992e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.3898694140780094e-11
@@ -15651,7 +15705,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -15906,7 +15960,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -16503,7 +16557,8 @@
           9.26573392817467e-12,
           1.6234439748061293e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.389861221267514e-11
@@ -16651,7 +16706,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -16912,7 +16967,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -17515,7 +17570,8 @@
           9.265741607308236e-12,
           1.6234457032252353e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.3898610532644156e-11
@@ -17663,7 +17719,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -17924,7 +17980,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -18527,7 +18583,8 @@
           1.0914029338293942e-11,
           2.471079203478592e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.6371040913056543e-11
@@ -18675,7 +18732,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -19309,7 +19366,8 @@
           9.265801710192476e-12,
           1.6234393783385992e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.7797388281560188e-11
@@ -19457,7 +19515,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -20091,7 +20149,8 @@
           9.26573392817467e-12,
           1.6234439748061293e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.7797224425350275e-11
@@ -20239,7 +20298,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -20500,7 +20559,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -21103,7 +21162,8 @@
           9.265741607308236e-12,
           1.6234457032252353e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.779722106528831e-11
@@ -21251,7 +21311,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -21512,7 +21572,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -22115,7 +22175,8 @@
           1.0914029338293942e-11,
           2.471079203478592e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -3.2742081826113085e-11
@@ -22263,7 +22324,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -22524,7 +22585,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -23127,7 +23188,8 @@
           9.265801710192476e-12,
           1.6234393783385992e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.3898694140780094e-11
@@ -23275,7 +23337,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -23909,7 +23971,8 @@
           9.26573392817467e-12,
           1.6234439748061293e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.389861221267514e-11
@@ -24057,7 +24120,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -24318,7 +24381,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -24921,7 +24984,8 @@
           9.265741607308236e-12,
           1.6234457032252353e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.3898610532644156e-11
@@ -25069,7 +25133,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -25330,7 +25394,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -25933,7 +25997,8 @@
           1.0914029338293942e-11,
           2.471079203478592e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -1.6371040913056543e-11
@@ -26081,7 +26146,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -26342,7 +26407,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -26945,7 +27010,8 @@
           9.265801710192476e-12,
           1.6234393783385992e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.7797388281560188e-11
@@ -27093,7 +27159,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -27354,7 +27420,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -27957,7 +28023,8 @@
           9.26573392817467e-12,
           1.6234439748061293e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.7797224425350275e-11
@@ -28105,7 +28172,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -28366,7 +28433,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -28969,7 +29036,8 @@
           9.265741607308236e-12,
           1.6234457032252353e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -2.779722106528831e-11
@@ -29117,7 +29185,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -29378,7 +29446,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -29981,7 +30049,8 @@
           1.0914029338293942e-11,
           2.471079203478592e-11
         ],
-        "frozen_semidiscrete_rates": [
+        "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
+        "frozen_semidiscrete_generator_eigenvalues": [
           {
             "imag": 0.0,
             "real": -3.2742081826113085e-11
@@ -30129,7 +30198,7 @@
         },
         "primary_C_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "branch_admission_status": "causal_branch_accepted_and_square_transition_accepted",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C",
@@ -30390,7 +30459,7 @@
         },
         "secondary_C_W_full_recurrence_comparison": {
           "GRV3_temporal_interpretation_allowed": true,
-          "bounded_relation": "agreement",
+          "bounded_relation": "no_resolved_difference_within_uncertainty",
           "cluster_and_real_invariant_plane_policy_applied": true,
           "coordinate_name": "C_W",
           "deadbeat_or_overwrite_modes_excluded": true,
@@ -30848,6 +30917,7 @@
       "continuation_claim_allowed": false,
       "fast_slaving_claim_allowed": false,
       "first_order_local_only": true,
+      "frozen_full_equivalence_supported": false,
       "frozen_operator_class": "substrate_reduced",
       "full_core_continuation_operator_claim_allowed": false,
       "full_core_continuation_operator_supported": false,
@@ -95481,9 +95551,10 @@
       "negative_functional_delta_row_count": 0,
       "nonlinear_J_squared_conductance_effects_resolved": false,
       "positive_functional_delta_row_count": 288,
-      "primary_agreement_count": 32,
-      "primary_bounded_difference_count": 0,
+      "primary_equivalence_supported": false,
       "primary_full_comparison_count": 32,
+      "primary_no_resolved_difference_within_uncertainty_count": 32,
+      "primary_resolved_bounded_difference_count": 0,
       "projection_clipping_boundary_noop_audit_passed": true,
       "readback_supported": false,
       "retention_supported": false,
@@ -96445,6 +96516,6 @@
       "singleton_orbit_count": 20
     }
   },
-  "payload_sha256": "48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a",
-  "schema_version": "b1_grv4_frozen_full_comparison_v1"
+  "payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+  "schema_version": "b1_grv4_frozen_full_comparison_v2"
 }

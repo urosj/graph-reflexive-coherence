@@ -1,11 +1,18 @@
 {
+  "artifact_semantics_correction": {
+    "artifact_correction_base_revision": "d1f7b6625a69e24826b142d891c6f81c238ef51b",
+    "classification_algorithm_changed": false,
+    "numerical_recomputation_performed": false,
+    "source_receipt_payload_sha256": "2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e",
+    "source_result_payload_sha256": "48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a"
+  },
   "blocked_gates": [
     "GRV5",
     "GRV6",
     "GRV7",
     "GRV8"
   ],
-  "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_bounded_full_recurrence_relation_pending_human_review",
+  "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_no_resolved_difference_within_admitted_uncertainty_pending_human_review",
   "gate_id": "GRV4",
   "grv4_summary": {
     "branch_count": 48,
@@ -28,9 +35,10 @@
     "negative_functional_delta_row_count": 0,
     "nonlinear_J_squared_conductance_effects_resolved": false,
     "positive_functional_delta_row_count": 288,
-    "primary_agreement_count": 32,
-    "primary_bounded_difference_count": 0,
+    "primary_equivalence_supported": false,
     "primary_full_comparison_count": 32,
+    "primary_no_resolved_difference_within_uncertainty_count": 32,
+    "primary_resolved_bounded_difference_count": 0,
     "projection_clipping_boundary_noop_audit_passed": true,
     "readback_supported": false,
     "retention_supported": false,
@@ -47,9 +55,9 @@
   "input_execution_revision": "01389d9877bfdf68daa3e31786f832ab17742c86",
   "input_experiment_tree_sha256": "651d070c1ad63f81d9ce3b97acaa930923cd32e264663167449ea118e429be9d",
   "output_artifact_digests": {
-    "outputs/frozen_full_comparison.json": "35f14048d9748a645f0d6972c34c54e197c726315bf5d360ed952f3a60f21559",
+    "outputs/frozen_full_comparison.json": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
     "outputs/protected_path_manifest_v4.json": "d65120c4e4b6bcbcb0b9139f56aa7a8d05a17afe6700e9617e23965a262b2fcd",
-    "reports/b1_grv4_frozen_conductance_full_recurrence.md": "c38c879a869fbe6a555129a663714a458e9881c5a867f9850741c1697332f09d"
+    "reports/b1_grv4_frozen_conductance_full_recurrence.md": "f850f0c2f9c5c276640ac0ee7ab5914cbef91b7b6c03e47d184cd78115f427db"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -58,11 +66,11 @@
       "immutable_ref": "git:8b82df4f077cecf3af780165e71bfb42b6bf5575"
     }
   ],
-  "prerequisite_receipt_status": "awaiting_scientific_review",
+  "prerequisite_acceptance_status": "accepted",
   "prerequisite_result_receipt_digests": [
     "83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc"
   ],
-  "receipt_payload_sha256": "2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e",
+  "receipt_payload_sha256": "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }

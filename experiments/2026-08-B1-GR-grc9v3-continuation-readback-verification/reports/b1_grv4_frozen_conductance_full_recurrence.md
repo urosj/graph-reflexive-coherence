@@ -10,8 +10,9 @@ branches_audited = 48
 standalone_frozen_comparators = 48
 primary_full_map_comparisons = 32
 full_map_comparisons_blocked_by_GRV3 = 16
-primary_agreement_count = 32
-primary_bounded_difference_count = 0
+primary_no_resolved_difference_within_uncertainty_count = 32
+primary_resolved_bounded_difference_count = 0
+primary_equivalence_supported = false
 verified_strong_disagreement_count = 0
 runtime_sign_classification = P_G_increases_and_negative_P_G_decreases_weakly_over_tested_discrete_sweep
 GRV_C4_candidate = true
@@ -83,8 +84,10 @@ and every admitted full `C` map.
 ## Interpretation
 
 No verified branch changes stability class or slow-subspace identity within the admitted comparison envelope.
-Agreement is a bounded first-order local result, not proof that frozen conductance is the full
-core continuation operator. GRV4 opens no continuation, retention, read-back,
+The 32 primary rows show no resolved difference within the admitted first-order
+uncertainty envelope; this is not an equivalence result. The more structurally
+informative frozen stable/unstable cases remain among the 16 rows whose full
+GRV3 Jacobians are blocked. GRV4 opens no continuation, retention, read-back,
 or write-back claim and does not establish global `W` eliminability. Finite-
 amplitude `J^2 -> W` inscription remains open for later gates.
 

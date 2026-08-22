@@ -35,9 +35,7 @@ from grv4_hardening import (
     graph_connectivity,
     metric_subspace_comparison,
     positive_condition_number,
-    principal_angle,
     real_invariant_basis,
-    relative_matrix_error,
     robust_multiplier_rows,
     structural_temporal_diagnostics,
 )
@@ -506,9 +504,9 @@ def compare_temporal_operator(
         "deadbeat_or_overwrite_modes_excluded": True,
         "cluster_and_real_invariant_plane_policy_applied": True,
         "bounded_relation": (
-            "agreement"
+            "no_resolved_difference_within_uncertainty"
             if stability_agrees and eigenvalues_agree and subspace_agrees
-            else "bounded_difference"
+            else "resolved_bounded_difference"
         ),
     }
 
@@ -866,8 +864,11 @@ def write_report(payload: dict[str, Any]):
         f"standalone_frozen_comparators = {summary['standalone_frozen_comparator_count']}",
         f"primary_full_map_comparisons = {summary['primary_full_comparison_count']}",
         f"full_map_comparisons_blocked_by_GRV3 = {summary['full_comparison_blocked_count']}",
-        f"primary_agreement_count = {summary['primary_agreement_count']}",
-        f"primary_bounded_difference_count = {summary['primary_bounded_difference_count']}",
+        "primary_no_resolved_difference_within_uncertainty_count = "
+        f"{summary['primary_no_resolved_difference_within_uncertainty_count']}",
+        "primary_resolved_bounded_difference_count = "
+        f"{summary['primary_resolved_bounded_difference_count']}",
+        f"primary_equivalence_supported = {str(summary['primary_equivalence_supported']).lower()}",
         f"verified_strong_disagreement_count = {summary['verified_strong_disagreement_count']}",
         f"runtime_sign_classification = {summary['runtime_sign_classification']}",
         f"GRV_C4_candidate = {str(summary['grv_c4_candidate']).lower()}",
@@ -943,8 +944,10 @@ def write_report(payload: dict[str, Any]):
             if summary["verified_strong_disagreement_count"]
             else "No verified branch changes stability class or slow-subspace identity within the admitted comparison envelope."
         ),
-        "Agreement is a bounded first-order local result, not proof that frozen conductance is the full",
-        "core continuation operator. GRV4 opens no continuation, retention, read-back,",
+        "The 32 primary rows show no resolved difference within the admitted first-order",
+        "uncertainty envelope; this is not an equivalence result. The more structurally",
+        "informative frozen stable/unstable cases remain among the 16 rows whose full",
+        "GRV3 Jacobians are blocked. GRV4 opens no continuation, retention, read-back,",
         "or write-back claim and does not establish global `W` eliminability. Finite-",
         "amplitude `J^2 -> W` inscription remains open for later gates.",
         "",
@@ -1132,10 +1135,11 @@ def run_grv4() -> None:
                 "frozen_restoring_structural_eigenvalues": [
                     float(value) for value in structural_values
                 ],
-                "frozen_semidiscrete_rates": [
+                "frozen_semidiscrete_generator_eigenvalues": [
                     _complex_record(value)
                     for value in _ordered_eigenvalues(components["generator"])
                 ],
+                "frozen_semidiscrete_generator_definition": "-A_W_H_cont_equals_A_W_H_P",
                 "frozen_branch_velocity_linf": float(
                     np.linalg.norm(components["branch_velocity"], ord=np.inf)
                 ),
@@ -1210,7 +1214,11 @@ def run_grv4() -> None:
     disagreements = sum(
         row["verified_stability_or_slow_subspace_disagreement"] for row in primary_rows
     )
-    agreements = sum(row["bounded_relation"] == "agreement" for row in primary_rows)
+    no_resolved_differences = sum(
+        row["bounded_relation"]
+        == "no_resolved_difference_within_uncertainty"
+        for row in primary_rows
+    )
     source_stage_pass = bool(
         global_maxima["runtime_stage_equivalence_linf"]
         <= float(config["sign_audit"]["runtime_stage_equivalence_linf_max"])
@@ -1277,8 +1285,10 @@ def run_grv4() -> None:
         "standalone_frozen_comparator_count": len(branch_rows),
         "primary_full_comparison_count": primary_count,
         "full_comparison_blocked_count": blocked_count,
-        "primary_agreement_count": agreements,
-        "primary_bounded_difference_count": primary_count - agreements,
+        "primary_no_resolved_difference_within_uncertainty_count": no_resolved_differences,
+        "primary_resolved_bounded_difference_count": primary_count
+        - no_resolved_differences,
+        "primary_equivalence_supported": False,
         "verified_strong_disagreement_count": disagreements,
         "strong_result_supported": disagreements > 0,
         "runtime_sign_classification": sign_classification,
@@ -1341,6 +1351,7 @@ def run_grv4() -> None:
             **config["claim_boundary"],
             "GRV_C4_candidate_pending_human_review": mechanical_pass,
             "full_core_continuation_operator_supported": False,
+            "frozen_full_equivalence_supported": False,
         },
     }
     output_root = EXPERIMENT_ROOT / "outputs"
@@ -1349,7 +1360,7 @@ def run_grv4() -> None:
         result_path,
         artifact_envelope(
             payload,
-            schema_version="b1_grv4_frozen_full_comparison_v1",
+            schema_version="b1_grv4_frozen_full_comparison_v2",
             generating_command=COMMAND,
             reproducibility_class="tolerance_reproducible",
         ),
@@ -1383,7 +1394,7 @@ def run_grv4() -> None:
             "status": "awaiting_scientific_review",
             "blocked_gates": [f"GRV{index}" for index in range(5, 9)],
             "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_bounded_full_recurrence_relation_pending_human_review",
-            "prerequisite_receipt_status": receipt3["status"],
+            "prerequisite_acceptance_status": anchor3["acceptance_status"],
             "grv4_summary": summary,
         }
     )

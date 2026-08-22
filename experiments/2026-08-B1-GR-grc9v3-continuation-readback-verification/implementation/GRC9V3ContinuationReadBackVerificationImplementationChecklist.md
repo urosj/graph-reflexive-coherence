@@ -789,14 +789,17 @@ the full core continuation operator.
 
 ```text
 input_execution_revision = 01389d9877bfdf68daa3e31786f832ab17742c86
-receipt_payload_sha256 = 2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e
-result_payload_sha256 = 48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a
+source_v1_receipt_payload_sha256 = 2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e
+source_v1_result_payload_sha256 = 48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a
+corrected_v2_receipt_payload_sha256 = 1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10
+corrected_v2_result_payload_sha256 = 34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3
 mechanical_status = passed
 scientific_acceptance = awaiting_human_review
 branches_audited = 48
 primary_full_map_comparisons = 32
 blocked_full_map_comparisons = 16
-primary_bounded_agreement_count = 32
+primary_no_resolved_difference_within_uncertainty_count = 32
+primary_equivalence_supported = false
 verified_strong_disagreement_count = 0
 sign_audit_rows = 3072
 negative_functional_delta_rows = 0
@@ -827,10 +830,29 @@ relative Hessian error about `8.66e-11`.
 The result finds no robust stability-class or clustered slow-subspace
 disagreement between the whole-beat clamped-`W` comparator and the admitted full
 `C` recurrence in this envelope. All primary modes are marginal within the
-frozen `1e-6` uncertainty. This is bounded agreement, not proof of algebraic
-elimination, fast slaving, geometry-only or mobility-only causation, universal
-validity, retention, or the core continuation operator. Finite-amplitude
-`J^2 -> W` effects remain open.
+frozen `1e-6` uncertainty. This is no resolved difference under the admitted
+first-order uncertainty, not equivalence and not proof of algebraic elimination,
+fast slaving, geometry-only or mobility-only causation, universal validity,
+retention, or the core continuation operator. The 16 frozen rows with more
+informative stable/unstable structure still lack an admitted full GRV3 Jacobian.
+Finite-amplitude `J^2 -> W` effects remain open.
+
+### P4.1 Artifact-Semantics Correction
+
+- [x] Verify that stability classification consumes the correctly signed frozen
+  multiplier and relaxation operator, not the misnamed emitted rate field.
+- [x] Rename the emitted evolution-generator eigenvalue field without changing
+  its numerical values.
+- [x] Replace agreement wording with no-resolved-difference wording.
+- [x] Record `primary_equivalence_supported = false`.
+- [x] Preserve the 16 blocked full-map comparisons prominently.
+- [x] Replace the copied historical prerequisite receipt status with the
+  authoritative accepted GRV3 anchor status.
+- [x] Bind source v1 payload and receipt hashes in the corrected v2 artifacts.
+- [x] Verify that the correction changed no numerical leaf and performed no
+  numerical recomputation.
+- [ ] Create no GRV4 acceptance anchor until human scientific review accepts the
+  corrected v2 result.
 
 Verification:
 

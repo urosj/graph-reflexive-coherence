@@ -19,6 +19,8 @@ from compare_frozen_and_full_dynamics import (  # noqa: E402
     runtime_compatible_frozen_step,
     sign_audit_rows,
 )
+from artifact_io import assert_payload_digest  # noqa: E402
+from gate_receipts import validate_receipt  # noqa: E402
 from pygrc.models import GRC9V3  # noqa: E402
 from grv4_hardening import conjugacy_errors, real_invariant_basis  # noqa: E402
 
@@ -172,6 +174,73 @@ class GRV4FrozenFullTest(unittest.TestCase):
         self.assertEqual("H_cont=-H_P", structural["restoring_sign_relation"])
         self.assertIn("mode_mapping_rule", structural)
         self.assertIn("projector_mapping_rule", structural)
+
+    def test_semidiscrete_generator_has_the_opposite_relaxation_sign(self) -> None:
+        config = json.loads(
+            (ROOT / "configs/grv4_frozen_full_comparison.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        components = frozen_components(self.model, config["hardening"])
+        relaxation = (
+            components["mobility_tangent"] @ components["h_cont_tangent"]
+        )
+        self.assertTrue(np.allclose(components["generator"], -relaxation, atol=1e-12))
+        self.assertTrue(
+            np.allclose(
+                components["multiplier"],
+                np.eye(relaxation.shape[0]) - components["dt"] * relaxation,
+                atol=1e-12,
+            )
+        )
+
+    def test_reviewed_artifact_uses_unambiguous_generator_and_relation_names(self) -> None:
+        envelope = json.loads(
+            (ROOT / "outputs/frozen_full_comparison.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        assert_payload_digest(envelope)
+        self.assertEqual("b1_grv4_frozen_full_comparison_v2", envelope["schema_version"])
+        payload = envelope["payload"]
+        self.assertFalse(payload["summary"]["primary_equivalence_supported"])
+        self.assertNotIn("primary_agreement_count", payload["summary"])
+        for branch in payload["branch_rows"]:
+            self.assertNotIn("frozen_semidiscrete_rates", branch)
+            self.assertIn("frozen_semidiscrete_generator_eigenvalues", branch)
+            generator = np.asarray(branch["semidiscrete_generator"], dtype=float)
+            relaxation = np.asarray(
+                branch["structural_temporal_separation"][
+                    "temporal_relaxation_operator"
+                ],
+                dtype=float,
+            )
+            self.assertTrue(np.allclose(generator, -relaxation, atol=1e-14, rtol=0.0))
+            comparison = branch["primary_C_full_recurrence_comparison"]
+            if comparison["status"] == "compared":
+                self.assertIn(
+                    comparison["bounded_relation"],
+                    {
+                        "no_resolved_difference_within_uncertainty",
+                        "resolved_bounded_difference",
+                    },
+                )
+
+    def test_grv4_receipt_uses_the_accepted_prerequisite_anchor(self) -> None:
+        receipt = json.loads(
+            (ROOT / "outputs/gates/grv4_result_receipt.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        validate_receipt(receipt)
+        self.assertEqual("accepted", receipt["prerequisite_acceptance_status"])
+        self.assertNotIn("prerequisite_receipt_status", receipt)
+        self.assertEqual("awaiting_scientific_review", receipt["status"])
+        self.assertFalse(
+            receipt["artifact_semantics_correction"][
+                "numerical_recomputation_performed"
+            ]
+        )
 
     def test_near_real_conjugate_pair_remains_a_real_invariant_plane(self) -> None:
         matrix = np.asarray(

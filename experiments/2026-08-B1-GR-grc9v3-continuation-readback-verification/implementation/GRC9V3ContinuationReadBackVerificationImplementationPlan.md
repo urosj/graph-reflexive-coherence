@@ -715,10 +715,11 @@ conjugacy, not spectrum equality alone. A full-map timestep sweep is not used as
 continuous-time numerical convergence because the conductance recurrence does
 not share a demonstrated timestep scaling with continuity.
 
-Agreement is a valid bounded result. A strong result requires a verified
-stability-class or slow-subspace disagreement, but absence of disagreement does
-not fail the gate. Neither outcome permits `W` elimination, a joint `C-W` mode,
-or a full core continuation operator claim.
+No resolved difference within the admitted uncertainty is a valid bounded
+result. A strong result requires a verified stability-class or slow-subspace
+disagreement, but absence of a resolved difference does not fail the gate and
+does not establish equivalence. Neither outcome permits `W` elimination, a
+joint `C-W` mode, or a full core continuation operator claim.
 
 ### P4.1 Thirty-Point Review Disposition
 
@@ -751,7 +752,7 @@ or a full core continuation operator claim.
 | 25 | Retain the preregistered 48/32 branch scope without post-spectrum selection. |
 | 26 | Bind branch, parameters, ordering, tangent, metric, and timestep locally per row. |
 | 27 | Interpret robust disagreement only as conductance-recurrence dependence. |
-| 28 | Interpret agreement only as no detected load-bearing difference in the tested envelope. |
+| 28 | Interpret no resolved difference only within the tested uncertainty envelope; do not promote it to equivalence. |
 | 29 | Keep the gate first-order local; finite-amplitude `J^2 -> W` effects remain open. |
 | 30 | Open no preparation, persistence, retention, mediation, read-back, or write-back claim. |
 
@@ -763,6 +764,26 @@ a two-dimensional real invariant plane. P4.1a reuses the already frozen
 near-zero absolute Hessian criterion and preserves resolved conjugate planes.
 It changes neither branch scope nor scientific thresholds and requires another
 clean committed full rerun.
+
+### P4.1 Artifact-Semantics Correction
+
+The reviewed numerical execution remains revision `01389d9`. A later
+schema-only correction does not rerun the branch matrix and does not change the
+classifier or any numerical leaf. It:
+
+- renames `frozen_semidiscrete_rates` to
+  `frozen_semidiscrete_generator_eigenvalues`, because the values belong to
+  `-A_W H_cont = A_W H_P`, not to relaxation operator `A_W H_cont`;
+- replaces `agreement` with
+  `no_resolved_difference_within_uncertainty` and explicitly records that
+  equivalence is unsupported;
+- records the GRV3 immutable acceptance anchor as the prerequisite authority,
+  rather than copying the historical pre-acceptance result-receipt status; and
+- binds the source v1 result payload and receipt hashes inside the v2 artifacts.
+
+The correction is lifecycle and interpretation hardening. It neither opens
+`GRV-C4` nor changes the 48/32/16 branch scope, the 32 unresolved primary
+relations, the 16 blocked full-map comparisons, or any downstream claim.
 
 ### Required outputs
 

@@ -252,14 +252,25 @@ continuation, retention, read-back, write-back, joint `C-W`, or `W`
 eliminability claim is opened.
 
 The superseding P4.1 execution from revision `01389d9` passes all hardened
-mechanical controls. It preserves the 48/32/16 preregistered scope and finds
-bounded agreement on all 32 admitted primary rows under the GRV3 block metric,
+mechanical controls. It preserves the 48/32/16 preregistered scope. All 32
+admitted primary rows show no resolved difference under the GRV3 block metric,
 real invariant-cluster comparison, deadbeat exclusion, and a `1e-6`
-unit-circle uncertainty. All 48 clamps are fixed within `1.12e-11`; matrix-level
-symmetry covariance has no failed pair. Receipt
-`2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e`
-binds the result. `GRV-C4` is a review candidate only; an acceptance anchor has
-not been created.
+unit-circle uncertainty. This is not an equivalence result: all admitted
+primary modes are marginal within that uncertainty, while the more informative
+frozen stable/unstable cases are among the 16 rows whose full GRV3 Jacobians
+remain blocked. All 48 clamps are fixed within `1.12e-11`; matrix-level
+symmetry covariance has no failed pair.
+
+A post-run schema-only correction renamed the eigenvalues of
+`-A_W H_cont = A_W H_P` as semidiscrete **generator** eigenvalues, replaced
+the ambiguous agreement wording, and made the accepted GRV3 anchor
+authoritative over its historical pre-acceptance receipt status. It performed
+no numerical recomputation and changed no classifier. Corrected result payload
+`34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3`
+and receipt `1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10`
+supersede the reviewed v1 schema while retaining its hashes in provenance.
+`GRV-C4` is still a review candidate only; an acceptance anchor has not been
+created.
 
 ## Central Question
 
