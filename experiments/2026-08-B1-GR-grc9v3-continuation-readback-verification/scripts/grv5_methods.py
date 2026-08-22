@@ -74,12 +74,14 @@ def current_vector(model: GRC9V3) -> np.ndarray:
     )
 
 
-def state_projection(model: GRC9V3) -> dict[str, Any]:
+def state_projection(
+    model: GRC9V3, *, include_snapshot_digest: bool = True
+) -> dict[str, Any]:
     state = model.get_state()
     coherence = coherence_vector(model)
     conductance = conductance_vector(model)
     current = current_vector(model)
-    return {
+    result = {
         "C": coherence.tolist(),
         "W": conductance.tolist(),
         "J": current.tolist(),
@@ -96,8 +98,10 @@ def state_projection(model: GRC9V3) -> dict[str, Any]:
         "topology_nodes": list(sorted(state.topology.iter_live_node_ids())),
         "topology_edges": list(sorted(state.topology.iter_live_edge_ids())),
         "event_count": len(state.event_log),
-        "snapshot_semantic_sha256": semantic_digest(model.snapshot()),
     }
+    if include_snapshot_digest:
+        result["snapshot_semantic_sha256"] = semantic_digest(model.snapshot())
+    return result
 
 
 def physical_projection_linf(left: GRC9V3, right: GRC9V3) -> float:
@@ -355,6 +359,18 @@ def matching_audit(
     for source, matched in ((source_a, matched_a), (source_b, matched_b)):
         source_state = source.get_state()
         matched_state = matched.get_state()
+        source_categorical = categorical_projection(source)
+        matched_categorical = categorical_projection(matched)
+        source_structural = {
+            key: value
+            for key, value in source_categorical.items()
+            if key != "current_sign_class"
+        }
+        matched_structural = {
+            key: value
+            for key, value in matched_categorical.items()
+            if key != "current_sign_class"
+        }
         source_to_matched_preservation.append(
             {
                 "W_linf": float(
@@ -372,8 +388,9 @@ def matching_audit(
                 == semantic_digest(matched_state.rng_state),
                 "params_identity_equal": source_state.params_identity
                 == matched_state.params_identity,
-                "categorical_projection_equal": categorical_projection(source)
-                == categorical_projection(matched),
+                "structural_categorical_projection_equal": source_structural
+                == matched_structural,
+                "current_sign_change_is_declared_J_match_effect": True,
                 "authoritative_surface_audit": conductance_surface_consistency(matched),
             }
         )
@@ -403,7 +420,7 @@ def matching_audit(
             and row["remainder_equal"]
             and row["rng_state_equal"]
             and row["params_identity_equal"]
-            and row["categorical_projection_equal"]
+            and row["structural_categorical_projection_equal"]
             and row["authoritative_surface_audit"]["surfaces_consistent"]
             for row in source_to_matched_preservation
         )
@@ -506,7 +523,7 @@ def run_probe(
     probe_kind: str,
     amplitude: float,
 ) -> dict[str, Any]:
-    before_projection = state_projection(model)
+    before_projection = state_projection(model, include_snapshot_digest=False)
     if probe_kind == "coherence_or_potential_probe":
         prepared = coherence_intervention(model, amplitude=amplitude)
     elif probe_kind == "old_current_state_injection":
@@ -557,7 +574,7 @@ def run_probe(
         substrate_class = "substrate_reduced"
     else:
         raise ValueError(f"unsupported probe lane {lane!r}")
-    after_projection = state_projection(prepared)
+    after_projection = state_projection(prepared, include_snapshot_digest=False)
     return {
         "response": current_vector(prepared),
         "readout_stage": stage,

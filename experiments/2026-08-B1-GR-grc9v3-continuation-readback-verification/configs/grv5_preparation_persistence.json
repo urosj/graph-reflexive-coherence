@@ -128,6 +128,8 @@
       "target": "W_only_mediation",
       "accepted_noncarrier_continuous_fields": ["C", "J"],
       "administrative_and_categorical_fields_must_match": true,
+      "source_to_matched_current_sign_may_change_only_as_declared_J_matching_effect": true,
+      "undeclared_structural_categorical_fields_must_remain_unchanged": true,
       "matching_must_preserve_authoritative_W": true,
       "W_only_null_cannot_reject_joint_C_W_or_transferred_carrier": true,
       "opaque_derived_caches_are_not_promoted_to_independent_causal_state": true

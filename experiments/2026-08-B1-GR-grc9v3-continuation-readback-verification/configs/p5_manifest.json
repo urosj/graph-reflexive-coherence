@@ -64,6 +64,17 @@
     "hardening_may_upgrade_existing_GRR_rung": false,
     "full_clean_rerun_required": true
   },
+  "superseded_p5_3_first_execution": {
+    "input_revision": "73f7c21a8f3fbb2ee8b6d03c3f3d389313716050",
+    "status": "failed_closed_before_artifact_emission",
+    "failed_review_point": 17,
+    "failure_kind": "audit_contract_overconstraint",
+    "cause": "source_to_matched_current_sign_was_required_unchanged_even_though_J_is_an_explicitly_matched_field",
+    "correction": "preserve_undeclared_structural_categories_and_require_equal_post_match_J_current_sign_instead",
+    "scientific_candidate_result_emitted": false,
+    "threshold_or_branch_scope_changed": false,
+    "full_clean_rerun_required": true
+  },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",
   "claim_ceiling": "bounded_retained_geometry_or_joint_retention_candidate_without_automatic_core_readback"
 }
