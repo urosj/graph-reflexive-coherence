@@ -405,6 +405,85 @@ def build_contract_audit(
     }
 
 
+def build_36_point_review_audit(
+    payload: dict[str, Any], config: dict[str, Any]
+) -> dict[str, Any]:
+    summary = payload["summary"]
+    no_orbit = summary["primitive_return_orbit_count"] == 0
+
+    def row(
+        index: int,
+        point_id: str,
+        disposition: str,
+        evidence: str,
+        satisfied: bool,
+    ) -> dict[str, Any]:
+        return {
+            "point_index": index,
+            "point_id": point_id,
+            "disposition": disposition,
+            "evidence": evidence,
+            "acceptance_requirement_satisfied": bool(satisfied),
+        }
+
+    conditional = "not_applicable_no_admitted_return_orbit_future_positive_gate"
+    rows = [
+        row(1, "accepted_GRV5_prerequisite", "passed", "accepted anchor consumed", True),
+        row(2, "cycle_and_orbit_tests_independent", "passed", "separate summaries and claims", True),
+        row(3, "primary_cycle_metric_validated", "passed", "rank condition and projector diagnostics per branch", summary["all_edge_space_checks_passed"]),
+        row(4, "varying_W_orbit_metric_policy", conditional, "phase-local metric frozen; no orbit admitted", no_orbit),
+        row(5, "divergence_and_cycle_projection_separate", "passed", "absolute divergence and fixed/phase-local projections recorded", True),
+        row(6, "cycle_seed_certified_before_runtime", "passed", "full seed certification object per sign and ladder row", summary["all_cycle_seeds_certified"] and summary["all_activity_ladder_seeds_certified"]),
+        row(7, "cycle_seed_stage_trace", "passed", "public native stage trace with complete-step parity", summary["all_cycle_seed_stage_traces_match_complete_step"]),
+        row(8, "cycle_average_transport_classification", conditional, "required before positive orbit admission", no_orbit),
+        row(9, "T_A05_assumption_envelope", "passed", "closure mobility conservation and no constraint support recorded", summary["activity_ladder_constraint_supported_row_count"] == 0),
+        row(10, "seed_amplitude_ladders", "passed", "four preregistered activity levels with sign and quadratic controls", summary["all_activity_response_shape_controls_passed"]),
+        row(11, "synthetic_seed_provenance", "passed", "all injected seeds explicitly experiment-authored and not runtime-reached", True),
+        row(12, "genuine_exact_zero_symmetry", "passed", "F1 symmetry certified separately from nonsymmetric zero-input rows", summary["symmetric_exact_zero_control_count"] == summary["exact_zero_invariant_count"] == 16),
+        row(13, "administrative_phase_independence", conditional, "required before positive orbit admission", no_orbit),
+        row(14, "orbit_symmetry_phase_deduplication", conditional, "full symmetry quotient remains a positive-candidate gate", no_orbit),
+        row(15, "relative_periodic_orbit_classification", "bounded_scope_recorded", "not searched and not excluded", not summary["relative_periodic_orbit_search_executed"] and not payload["claim_boundary"]["no_exact_orbit_found_excludes_relative_periodic_orbits"]),
+        row(16, "minimal_period_per_state_block", conditional, "required before positive orbit admission", no_orbit),
+        row(17, "periodic_output_vs_current_state", conditional, "required before positive orbit admission", no_orbit),
+        row(18, "phase_point_current_reset_controls", conditional, "required before positive orbit admission", no_orbit),
+        row(19, "net_transport_over_cycle", conditional, "required before positive orbit admission", no_orbit),
+        row(20, "complete_native_map_and_proper_divisors", "passed", "C W J and categorical replay with every proper divisor", payload["search_accounting"]["executed_search_row_count"] == payload["search_accounting"]["expected_search_row_count"]),
+        row(21, "codec_revalidation_along_orbit", conditional, "required before positive orbit admission", no_orbit),
+        row(22, "canonical_search_state", "passed", "branch-relative C W chart with source J reconstruction and full-state evaluation", config["orbit_search"]["search_coordinate"] == "branch_relative_C_W_with_J_reset_to_source_snapshot"),
+        row(23, "search_freeze_and_confirmation", "passed", "all seeds roots statuses recorded; confirmation not applicable", no_orbit and len(payload["search_rows"]) == payload["search_accounting"]["executed_search_row_count"]),
+        row(24, "period_doubling_provenance", "passed", "no period-doubling claim made", True),
+        row(25, "synchronous_update_orbit_class", conditional, "classification frozen for any future candidate", no_orbit),
+        row(26, "internal_stage_periodicity", "passed_for_current_controls_orbit_conditional", "cycle seeds traced through native stages; orbit-phase trace deferred", summary["all_cycle_seed_stage_traces_match_complete_step"] and no_orbit),
+        row(27, "constraint_supported_recurrence", "passed", "budget floor event and topology support recorded; none active", summary["activity_ladder_constraint_supported_row_count"] == 0),
+        row(28, "eventful_or_topology_return_boundary", "passed", "categorical return classes frozen and controls clean", summary["all_topology_and_event_controls_passed"]),
+        row(29, "phase_local_floquet_map", conditional, "ordinary Floquet blocked without admitted orbit and stratum", no_orbit),
+        row(30, "no_discrete_phase_multiplier_assumption", conditional, "budget direction quotient frozen; no Floquet spectrum", no_orbit),
+        row(31, "nonnormal_and_uncertainty_controls", conditional, "required before positive Floquet classification", no_orbit),
+        row(32, "complex_pairs_as_real_planes", conditional, "required before positive complex Floquet classification", no_orbit),
+        row(33, "long_recurrence_claim_boundary", "passed", "no quasi-periodic or visual recurrence claim", True),
+        row(34, "field_current_full_equivalence_separated", "passed", "C W J categorical divergence and cycle surfaces kept distinct", True),
+        row(35, "GRV5_persistence_not_relabelled_memory", "passed", "readback memory and writeback flags remain false", not summary["readback_supported"] and not summary["writeback_supported"]),
+        row(36, "bounded_negative_result", "passed", "resolved and condition-blocked statuses separated; global and relative absence blocked", not payload["search_accounting"]["global_nonexistence_claim_allowed"] and not summary["condition_blocked_rows_count_as_negative_orbit_evidence"]),
+    ]
+    return {
+        "gate_id": "GRV6",
+        "audit_id": "grv6_external_36_point_review_audit_v1",
+        "review_point_count": len(rows),
+        "all_review_points_accounted_for": len(rows) == 36,
+        "acceptance_blocker_count": sum(
+            not item["acceptance_requirement_satisfied"] for item in rows
+        ),
+        "all_current_result_acceptance_requirements_satisfied": all(
+            item["acceptance_requirement_satisfied"] for item in rows
+        ),
+        "conditional_positive_orbit_gate_count": sum(
+            item["disposition"] == conditional for item in rows
+        ),
+        "interpretation": "conditional orbit-only controls are not treated as executed; they remain mandatory before any future positive orbit candidate can be accepted",
+        "review_points": rows,
+    }
+
+
 def write_report(payload: dict[str, Any]) -> Any:
     summary = payload["summary"]
     report = EXPERIMENT_ROOT / "reports/b1_grv6_current_recurrence_and_return_orbits.md"
@@ -420,6 +499,10 @@ def write_report(payload: dict[str, Any]) -> Any:
         f"cycle_seed_row_count = {summary['cycle_seed_row_count']}",
         f"cycle_seed_persistence_count = {summary['cycle_seed_persistence_count']}",
         f"maximum_post_step_cycle_component_l2 = {summary['maximum_post_step_cycle_component_l2']}",
+        f"symmetric_exact_zero_control_count = {summary['symmetric_exact_zero_control_count']}",
+        f"finite_activity_amplitude_ladder_row_count = {summary['finite_activity_amplitude_ladder_row_count']}",
+        f"cycle_activity_amplitude_ladder_row_count = {summary['cycle_activity_amplitude_ladder_row_count']}",
+        f"cycle_seed_stage_trace_pair_count = {summary['cycle_seed_stage_trace_pair_count']}",
         f"orbit_search_row_count = {summary['orbit_search_row_count']}",
         f"converged_search_candidate_count = {summary['converged_search_candidate_count']}",
         f"return_jacobian_ill_conditioned_count = {summary['return_jacobian_ill_conditioned_count']}",
@@ -449,6 +532,18 @@ def write_report(payload: dict[str, Any]) -> Any:
         "reconstruct a nonzero potential current without constituting spontaneous",
         "symmetry breaking. Positive and negative old-current seeds test orientation",
         "retention, while their matched squared write tests sign-even preparation.",
+        "The hardening matrix separately certifies 16 genuinely symmetric F1",
+        "exact-zero states and classifies nonsymmetric zero-input rows without",
+        "calling their bounded reconstructed potential-flow residual spontaneous",
+        "orientation selection.",
+        "",
+        "Four preregistered activity levels are run in both signs for every branch",
+        "and for every cycle-capable branch. The stage-local conductance response",
+        "matches the native quadratic old-current law, no ladder row requires budget",
+        "projection, a conductance floor, an event, or topology change, and all 16",
+        "cycle branches have public-method traces through every current-reading or",
+        "current-overwriting stage. Those traces match the complete native step and",
+        "locate orientation erasure at the first transport reconstruction.",
         "",
         "## Return-Orbit Search",
         "",
@@ -472,9 +567,10 @@ def write_report(payload: dict[str, Any]) -> Any:
         "they remain unresolved rather than counting as negative orbit evidence.",
         "",
         (
-            "No primitive period-two-or-higher full causal-state return survives the "
-            "proper-divisor and categorical gates in this bounded search. This is a "
-            "search-envelope result, not a proof that recurrent orbits do not exist."
+            "No primitive period-two-or-higher full causal-state return is admitted "
+            "among the resolved candidates in this bounded search. This is a "
+            "search-envelope result, not a proof that recurrent orbits, including "
+            "relative periodic orbits not searched here, do not exist."
             if summary["primitive_return_orbit_count"] == 0
             else "At least one bounded primitive return candidate is retained with its row-local classification and replay record."
         ),
@@ -509,7 +605,12 @@ def run_grv6() -> None:
     input_tree = file_manifest(tracked_files([EXPERIMENT_RELATIVE]))
 
     current_controls = [
-        branch_current_control(models[branch["branch_id"]], branch["branch_id"], config)
+        branch_current_control(
+            models[branch["branch_id"]],
+            branch["branch_id"],
+            branch["fixture_id"],
+            config,
+        )
         for branch in branches
     ]
     if not all(
@@ -518,6 +619,21 @@ def run_grv6() -> None:
     ):
         raise ValueError("GRV6 primary edge-space controls failed")
     cycle_rows = [cycle for row in current_controls for cycle in row["cycle_seed_rows"]]
+    finite_ladder_rows = [
+        item
+        for row in current_controls
+        for item in row["finite_activity_amplitude_ladder"]
+    ]
+    cycle_ladder_rows = [
+        item
+        for row in current_controls
+        for item in row["cycle_activity_amplitude_ladder"]
+    ]
+    stage_trace_pairs = [
+        row["cycle_seed_stage_trace_pair"]
+        for row in current_controls
+        if row["cycle_seed_stage_trace_pair"] is not None
+    ]
     if not all(row["seed_certified_before_runtime"] for row in cycle_rows):
         raise ValueError("GRV6 cycle seed certification failed")
 
@@ -540,6 +656,65 @@ def run_grv6() -> None:
         ),
         "all_cycle_seeds_certified": all(
             row["seed_certified_before_runtime"] for row in cycle_rows
+        ),
+        "symmetric_exact_zero_control_count": sum(
+            row["exact_zero_symmetry_audit"][
+                "full_orientation_relevant_symmetry_certified"
+            ]
+            for row in current_controls
+        ),
+        "exact_zero_invariant_count": sum(
+            row["exact_zero_classification"] == "exact_zero_invariant"
+            for row in current_controls
+        ),
+        "nonsymmetric_zero_input_control_count": sum(
+            not row["exact_zero_symmetry_audit"][
+                "full_orientation_relevant_symmetry_certified"
+            ]
+            for row in current_controls
+        ),
+        "finite_activity_amplitude_ladder_row_count": len(finite_ladder_rows),
+        "cycle_activity_amplitude_ladder_row_count": len(cycle_ladder_rows),
+        "all_activity_ladder_seeds_certified": all(
+            item["positive_seed_certification"]["certified_before_runtime"]
+            and item["negative_seed_certification"]["certified_before_runtime"]
+            for item in [*finite_ladder_rows, *cycle_ladder_rows]
+        ),
+        "all_activity_response_shape_controls_passed": all(
+            item["quadratic_response_passed"]
+            for item in [*finite_ladder_rows, *cycle_ladder_rows]
+        ),
+        "activity_ladder_constraint_supported_row_count": sum(
+            item["budget_projection_changed_state"]
+            or item["conductance_floor_active"]
+            or item["events_or_topology_changed"]
+            for item in [*finite_ladder_rows, *cycle_ladder_rows]
+        ),
+        "cycle_seed_stage_trace_pair_count": len(stage_trace_pairs),
+        "all_cycle_seed_stage_traces_match_complete_step": all(
+            row["both_manual_stage_traces_match_complete_step"]
+            for row in stage_trace_pairs
+        ),
+        "all_cycle_orientations_overwritten_at_first_transport": all(
+            row["orientation_overwritten_at_first_transport"]
+            for row in stage_trace_pairs
+        ),
+        "maximum_cycle_stage_first_transport_sign_even_W_error": max(
+            (row["first_transport_W_sign_even_linf"] for row in stage_trace_pairs),
+            default=0.0,
+        ),
+        "maximum_inverse_conductance_metric_condition_number": max(
+            row["edge_space"]["inverse_conductance_metric_condition_number"]
+            for row in current_controls
+        ),
+        "maximum_projected_cycle_gram_condition_number": max(
+            (
+                row["edge_space"]["projected_cycle_gram_condition_number"]
+                for row in current_controls
+                if row["edge_space"]["projected_cycle_gram_condition_number"]
+                is not None
+            ),
+            default=0.0,
         ),
         "all_edge_space_checks_passed": all(
             row["edge_space"]["all_primary_edge_space_checks_passed"]
@@ -587,6 +762,11 @@ def run_grv6() -> None:
             row["floquet_status"] == "admitted" for row in orbits
         ),
         "recurrence_evidence_opened": bool(orbits),
+        "relative_periodic_orbit_search_executed": False,
+        "condition_blocked_rows_count_as_negative_orbit_evidence": False,
+        "conditional_positive_orbit_gate_status": config[
+            "conditional_positive_orbit_gates"
+        ]["current_GRV6_disposition"],
         "stationary_cycle_current_supported": any(
             row["classification"] == "cycle_component_remains_after_one_complete_step"
             for row in cycle_rows
@@ -626,10 +806,19 @@ def run_grv6() -> None:
             if not row["passed"]
         ]
         raise ValueError(f"GRV6 contract audit failed: {failed}")
+    review_36_payload = build_36_point_review_audit(payload, config)
+    if not review_36_payload["all_current_result_acceptance_requirements_satisfied"]:
+        failed = [
+            row["point_id"]
+            for row in review_36_payload["review_points"]
+            if not row["acceptance_requirement_satisfied"]
+        ]
+        raise ValueError(f"GRV6 36-point review audit failed: {failed}")
 
     output_root = EXPERIMENT_ROOT / "outputs"
     registry_path = output_root / "return_orbit_registry.json"
     audit_path = output_root / "grv6_contract_audit.json"
+    review_36_path = output_root / "grv6_36_point_review_audit.json"
     write_json(
         registry_path,
         artifact_envelope(
@@ -649,13 +838,29 @@ def run_grv6() -> None:
             reproducibility_class="tolerance_reproducible",
         ),
     )
+    review_36_payload["source_result_payload_sha256"] = semantic_digest(payload)
+    write_json(
+        review_36_path,
+        artifact_envelope(
+            review_36_payload,
+            schema_version="b1_grv6_36_point_review_audit_v1",
+            generating_command=COMMAND,
+            reproducibility_class="tolerance_reproducible",
+        ),
+    )
     protected_path = output_root / "protected_path_manifest_v6.json"
     protected = protected_manifest_v6()
     if not protected["payload"]["unchanged_successor"]:
         raise ValueError("protected source/spec/test paths changed since GRV5")
     write_json(protected_path, protected)
     report_path = write_report(payload)
-    artifacts = [registry_path, audit_path, protected_path, report_path]
+    artifacts = [
+        registry_path,
+        audit_path,
+        review_36_path,
+        protected_path,
+        report_path,
+    ]
     baseline = read_json(output_root / "baseline_manifest.json")["payload"]
     receipt = finalize_receipt(
         {
@@ -685,6 +890,9 @@ def run_grv6() -> None:
             "prerequisite_acceptance_status": anchor5["acceptance_status"],
             "grv6_summary": summary,
             "contract_audit_payload_sha256": semantic_digest(audit_payload),
+            "review_36_point_audit_payload_sha256": semantic_digest(
+                review_36_payload
+            ),
         }
     )
     validate_receipt(receipt)

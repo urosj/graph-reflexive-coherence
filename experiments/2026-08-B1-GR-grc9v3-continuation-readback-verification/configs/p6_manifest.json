@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv6_p6_package_manifest_v1",
-  "package_status": "ready_for_clean_GRV6_execution",
+  "package_status": "P6_1_preacceptance_36_point_hardening_ready_for_clean_execution",
   "gate_id": "GRV6",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -11,7 +11,7 @@
     "acceptance_anchor_commit": "948db9b",
     "acceptance_anchor_payload_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41"
   },
-  "gate_input_change_class": "scientific_method_completion_under_existing_GRV6_contract",
+  "gate_input_change_class": "preacceptance_method_hardening_under_existing_GRV6_contract",
   "protocol_readmission_required": false,
   "protected_boundaries": {
     "runtime_change_authorized": false,
@@ -26,7 +26,8 @@
     "scripts/search_return_orbits.py",
     "scripts/run_all.py",
     "tests/test_edge_space.py",
-    "tests/test_grv6_return_orbits.py"
+    "tests/test_grv6_return_orbits.py",
+    "schemas/grv6_36_point_review_audit.schema.json"
   ],
   "execution_contract": "configs/grv6_current_recurrence.json",
   "branch_scope": "all_48_certified_rows_without_post_outcome_selection",

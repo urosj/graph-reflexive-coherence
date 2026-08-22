@@ -1004,6 +1004,7 @@ point and every finite-difference probe remains in one admitted causal stratum.
 ```text
 outputs/return_orbit_registry.json
 outputs/grv6_contract_audit.json
+outputs/grv6_36_point_review_audit.json
 outputs/gates/grv6_result_receipt.json
 outputs/gates/grv6_acceptance_anchor.json
 reports/b1_grv6_current_recurrence_and_return_orbits.md
@@ -1013,6 +1014,46 @@ reports/b1_grv6_current_recurrence_and_return_orbits.md
 
 Nonzero recurrent current is not automatically active circulation, Read-Back,
 or self-sustaining identity.
+
+### P6.1 Pre-Acceptance 36-Point Hardening
+
+The first mechanically complete GRV6 result remains unaccepted. A subsequent
+36-point review found that its bounded orbit-search accounting was intact, but
+that the current-control half needed stronger evidence before the phrase
+`cycle_seed_overwritten_by_native_potential_flow` could be accepted. P6.1
+therefore hardens the method without changing the runtime, branch envelope,
+periods, search budget, root method, or numerical thresholds.
+
+The load-bearing hardening adds:
+
+1. incidence rank, cycle dimension, inverse-conductance metric condition, and
+   projected cycle-Gram condition records;
+2. divergence and fixed-reference/phase-local cycle projections as separate
+   absolute measurements, without near-zero cycle fractions;
+3. full pre-runtime seed certification including cycle membership, current
+   floor, matched state, topology, RNG, phase, and positive conductance;
+4. public-method traces through every native stage that can read, write, or
+   overwrite current, plus exact physical parity with `step()`;
+5. four preregistered activity amplitudes in both signs, with the native
+   quadratic conductance response and budget/floor/event support audited;
+6. machine separation of genuinely symmetric F1 exact-zero controls from
+   nonsymmetric zero-input potential-flow residuals; and
+7. a 36-point audit artifact that distinguishes executed requirements from
+   controls that are conditional on an admitted positive orbit.
+
+No admitted orbit exists in the first result. Consequently, phase-shift and
+graph-symmetry deduplication, relative-periodic classification, per-block
+minimal periods, phase-point reset controls, cycle-averaged pumping, per-phase
+codec revalidation, fresh-process candidate replay, and full Floquet
+uncertainty analysis remain explicitly **not executed**. P6.1 treats them as
+mandatory positive-candidate gates rather than marking them passed. The bounded
+negative claim is also narrowed to exact causal-state returns in the declared
+search envelope; it does not exclude relative periodic orbits or count
+ill-conditioned search rows as negative evidence.
+
+The committed result at revision `1134009` remains historical preliminary
+evidence. A clean P6.1 rerun must supersede it before scientific acceptance can
+be considered.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

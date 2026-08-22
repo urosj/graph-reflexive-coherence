@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_mechanically_passed_awaiting_human_review
+status = grv6_P6_1_preacceptance_36_point_hardening_pending_clean_execution
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -306,11 +306,22 @@ orbit evidence. No primitive causal-state orbit, physical-only return,
 hybrid/categorical return, or ordinary Floquet spectrum is admitted. This is a
 bounded negative recurrence result, not a global nonexistence result.
 
-The GRV6 result receipt is `2d266835...` and remains
-`awaiting_scientific_review`. No GRV6 acceptance anchor exists yet, `GRV-C5`
-is not assigned, and GRV7 remains blocked. Stationary cycle-current persistence
-is unsupported in the tested triangle envelope; active circulation, Read-Back,
-write-back, and self-sustaining identity remain unopened.
+The preliminary GRV6 result receipt is `2d266835...` and remains unaccepted. A
+subsequent 36-point review preserved its bounded orbit-search accounting but
+required stronger current-control evidence before acceptance. P6.1 now freezes
+projector condition records, full cycle-seed certification, divergence and
+fixed/phase-local projections, public-method stage traces, four-level signed
+activity ladders, constraint-support checks, and machine-level exact-zero
+symmetry classifications.
+
+Orbit-only requirements such as full phase/symmetry deduplication,
+relative-periodic classification, cycle-averaged pumping, per-phase codec
+revalidation, dependency resets, fresh-process candidate replay, and extended
+Floquet controls were not executed because no orbit was admitted. They remain
+explicit positive-candidate gates rather than being marked passed. The P6.1
+clean rerun is pending; no GRV6 acceptance anchor exists, `GRV-C5` is not
+assigned, and GRV7 remains blocked. Active circulation, Read-Back, write-back,
+and self-sustaining identity remain unopened.
 
 ## Central Question
 

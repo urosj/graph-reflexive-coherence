@@ -32,6 +32,12 @@
   "current_controls": {
     "finite_seed_amplitude": 0.01,
     "cycle_seed_amplitude": 0.01,
+    "minimum_certified_seed_current_l2": 1e-8,
+    "structural_activity_target_exponent_ladder": [0.001, 0.003, 0.01, 0.03],
+    "stage_trace_target_exponent": 0.01,
+    "activity_response_shape_relative_error_max": 1e-8,
+    "state_symmetry_tolerance": 1e-12,
+    "stage_trace_complete_step_parity_tolerance": 1e-12,
     "current_zero_band": 1e-10,
     "required_seed_classes": [
       "exact_zero",
@@ -90,6 +96,26 @@
     "floquet_adjacent_matrix_relative_error_max": 0.01,
     "conserved_budget_multiplier_reported_separately": true
   },
+  "conditional_positive_orbit_gates": {
+    "phase_local_cycle_metric_required": true,
+    "cycle_averaged_transport_classification_required": true,
+    "administrative_phase_independence_required": true,
+    "cyclic_phase_shift_deduplication_required": true,
+    "graph_automorphism_deduplication_required": true,
+    "edge_reorientation_equivalence_required": true,
+    "relative_periodic_orbit_classification_required": true,
+    "per_block_minimal_period_required": true,
+    "current_reset_and_carrier_controls_required": true,
+    "per_phase_codec_revalidation_required": true,
+    "fresh_process_replay_required": true,
+    "internal_stage_periodicity_required": true,
+    "projection_floor_and_clipping_classification_required": true,
+    "direct_return_map_derivative_crosscheck_required": true,
+    "nonnormal_and_uncertainty_controls_required": true,
+    "complex_pair_real_invariant_plane_comparison_required": true,
+    "positive_candidate_admission_status": "blocked_until_all_conditional_gates_are_executed",
+    "current_GRV6_disposition": "not_applicable_no_return_orbit_candidate"
+  },
   "assumption_statuses": {
     "A-CLOSED": "required_recorded_per_topology",
     "A-MOBILITY": "required_recorded_per_branch",
@@ -109,6 +135,8 @@
     "physical_projection_return_is_full_runtime_return": false,
     "hybrid_return_has_ordinary_floquet_spectrum": false,
     "no_orbit_found_is_global_nonexistence_proof": false,
+    "no_exact_orbit_found_excludes_relative_periodic_orbits": false,
+    "condition_blocked_search_row_is_negative_orbit_evidence": false,
     "GRV6_can_assign_GRV_C5_alone": false,
     "runtime_change_authorized": false,
     "src_change_authorized": false,

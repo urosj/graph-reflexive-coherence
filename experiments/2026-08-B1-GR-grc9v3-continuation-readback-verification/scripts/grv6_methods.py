@@ -19,6 +19,7 @@ from edge_space import (
     weighted_cycle_projector,
 )
 from grv5_methods import (
+    activity_amplitude_from_target,
     categorical_projection,
     clone_model,
     coherence_vector,
@@ -108,6 +109,16 @@ def edge_space_audit(model: GRC9V3, config: dict[str, Any]) -> dict[str, Any]:
         rank_tolerance=float(edge_config["rank_tolerance"]),
     )
     diagnostics = projector_diagnostics(incidence, conductance, projector)
+    basis = cycle_basis(
+        incidence, rank_tolerance=float(edge_config["rank_tolerance"])
+    )
+    metric = np.diag(1.0 / conductance)
+    projected_gram = basis.T @ metric @ basis
+    incidence_rank = int(incidence.shape[1] - basis.shape[1])
+    metric_condition = float(np.linalg.cond(metric)) if metric.size else 1.0
+    projected_gram_condition = (
+        float(np.linalg.cond(projected_gram)) if projected_gram.size else None
+    )
     state = model.get_state()
     potential = np.asarray(
         [float(state.potential[node]) for node in nodes], dtype=float
@@ -147,7 +158,20 @@ def edge_space_audit(model: GRC9V3, config: dict[str, Any]) -> dict[str, Any]:
         ],
         "incidence": incidence.tolist(),
         "conductance": conductance.tolist(),
-        "cycle_dimension": int(round(float(np.trace(projector)))),
+        "minimum_conductance": float(np.min(conductance, initial=np.inf)),
+        "conductance_floor_margin": float(
+            np.min(conductance, initial=np.inf)
+            - float(edge_config["minimum_positive_conductance"])
+        ),
+        "incidence_rank": incidence_rank,
+        "cycle_dimension": int(basis.shape[1]),
+        "inverse_conductance_metric_condition_number": metric_condition,
+        "projected_cycle_gram_condition_number": projected_gram_condition,
+        "projected_cycle_gram_status": (
+            "admitted_within_condition_limit"
+            if projected_gram.size
+            else "not_applicable_zero_cycle_dimension"
+        ),
         "cycle_projector": projector.tolist(),
         "potential_projector": (np.eye(len(edges)) - projector).tolist(),
         "diagnostics": diagnostics,
@@ -165,13 +189,18 @@ def edge_space_audit(model: GRC9V3, config: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def current_projection(model: GRC9V3, projector: NDArray[np.float64]) -> dict[str, Any]:
+def current_projection(
+    model: GRC9V3,
+    projector: NDArray[np.float64],
+    incidence: NDArray[np.float64],
+) -> dict[str, Any]:
     current = current_vector(model)
     cycle = projector @ current
     potential = current - cycle
     return {
         "J": current.tolist(),
         "J_l2": float(np.linalg.norm(current)),
+        "divergence_l2": float(np.linalg.norm(incidence @ current, ord=2)),
         "cycle_component": cycle.tolist(),
         "cycle_component_l2": float(np.linalg.norm(cycle)),
         "potential_component": potential.tolist(),
@@ -185,6 +214,7 @@ def seeded_trajectory(
     *,
     steps: int,
     projector: NDArray[np.float64],
+    incidence: NDArray[np.float64],
 ) -> dict[str, Any]:
     candidate = set_current(model, seed)
     rows = []
@@ -200,7 +230,7 @@ def seeded_trajectory(
                     - float(candidate.get_state().budget_target)
                 ),
                 "W": conductance_vector(candidate).tolist(),
-                **current_projection(candidate, projector),
+                **current_projection(candidate, projector, incidence),
                 "categorical_state": categorical_projection(candidate),
             }
         )
@@ -209,11 +239,341 @@ def seeded_trajectory(
     return {"rows": rows, "final_model": candidate}
 
 
+def seed_certification(
+    model: GRC9V3,
+    seed: NDArray[np.float64],
+    *,
+    projector: NDArray[np.float64],
+    incidence: NDArray[np.float64],
+    config: dict[str, Any],
+    require_cycle_membership: bool,
+) -> dict[str, Any]:
+    seeded = set_current(model, seed)
+    seed_norm = float(np.linalg.norm(seed, ord=2))
+    divergence = float(np.linalg.norm(incidence @ seed, ord=2))
+    cycle_reconstruction = float(np.linalg.norm(projector @ seed - seed, ord=2))
+    state = model.get_state()
+    seeded_state = seeded.get_state()
+    control = config["current_controls"]
+    edge = config["edge_space"]
+    checks = {
+        "divergence_within_tolerance": divergence
+        <= float(edge["divergence_tolerance"]),
+        "cycle_membership_within_tolerance": (
+            cycle_reconstruction <= float(edge["algebra_tolerance"])
+            if require_cycle_membership
+            else True
+        ),
+        "seed_above_current_floor": seed_norm
+        > float(control["minimum_certified_seed_current_l2"]),
+        "topology_unchanged_by_seed_insertion": categorical_projection(model)[
+            "topology_nodes"
+        ]
+        == categorical_projection(seeded)["topology_nodes"]
+        and categorical_projection(model)["topology_edges"]
+        == categorical_projection(seeded)["topology_edges"],
+        "coherence_matched": np.array_equal(
+            coherence_vector(model), coherence_vector(seeded)
+        ),
+        "conductance_matched": np.array_equal(
+            conductance_vector(model), conductance_vector(seeded)
+        ),
+        "rng_matched": state.rng_state == seeded_state.rng_state,
+        "administrative_phase_matched": bool(
+            state.step_index == seeded_state.step_index
+            and state.time == seeded_state.time
+        ),
+        "positive_conductance": bool(np.all(conductance_vector(seeded) > 0.0)),
+        "no_external_boundary_drive": True,
+    }
+    return {
+        "provenance": "experiment_authored_synthetic_structurally_valid_seed",
+        "runtime_reached_seed": False,
+        "seed_l2": seed_norm,
+        "seed_divergence_l2": divergence,
+        "cycle_membership_reconstruction_l2": cycle_reconstruction,
+        "require_cycle_membership": require_cycle_membership,
+        "checks": checks,
+        "certified_before_runtime": all(checks.values()),
+    }
+
+
+def stage_projection(
+    model: GRC9V3,
+    reference: GRC9V3,
+    *,
+    stage: str,
+    fixed_projector: NDArray[np.float64],
+    incidence: NDArray[np.float64],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    fixed = current_projection(model, fixed_projector, incidence)
+    phase_projector = weighted_cycle_projector(
+        incidence,
+        conductance_vector(model),
+        condition_limit=float(config["edge_space"]["condition_limit"]),
+        rank_tolerance=float(config["edge_space"]["rank_tolerance"]),
+    )
+    phase_local = current_projection(model, phase_projector, incidence)
+    coherence = coherence_vector(model)
+    conductance = conductance_vector(model)
+    state = model.get_state()
+    return {
+        "stage": stage,
+        "C": coherence.tolist(),
+        "W": conductance.tolist(),
+        "fixed_reference_projection": fixed,
+        "phase_local_projection": phase_local,
+        "delta_C_linf_from_branch": float(
+            np.linalg.norm(coherence - coherence_vector(reference), ord=np.inf)
+        ),
+        "delta_W_linf_from_branch": float(
+            np.linalg.norm(conductance - conductance_vector(reference), ord=np.inf)
+        ),
+        "budget": float(np.sum(coherence)),
+        "budget_target": float(state.budget_target),
+        "budget_error": abs(float(np.sum(coherence)) - float(state.budget_target)),
+        "categorical_state": categorical_projection(model),
+    }
+
+
+def native_seed_stage_trace(
+    model: GRC9V3,
+    seed: NDArray[np.float64],
+    *,
+    fixed_projector: NDArray[np.float64],
+    incidence: NDArray[np.float64],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    reference = clone_model(model)
+    manual = set_current(model, seed)
+    stages = []
+
+    def record(stage: str) -> None:
+        stages.append(
+            stage_projection(
+                manual,
+                reference,
+                stage=stage,
+                fixed_projector=fixed_projector,
+                incidence=incidence,
+                config=config,
+            )
+        )
+
+    record("after_direct_old_current_input")
+    manual.rebuild_differential_state()
+    record("after_pre_flux_differential_rebuild")
+    manual.rebuild_transport_state()
+    record("after_first_transport_reconstruction")
+    manual.rebuild_differential_state()
+    record("after_post_flux_differential_refresh")
+    manual.rebuild_identity_state()
+    record("after_identity_rebuild")
+    manual.apply_hybrid_sparks()
+    record("after_hybrid_spark_stages")
+    manual.rebuild_choice_state()
+    record("after_choice_rebuild")
+    manual.apply_growth()
+    record("after_growth")
+    manual.apply_boundary_behavior()
+    record("after_boundary_behavior")
+    manual.apply_continuity()
+    record("after_continuity")
+    budget_summary = manual.enforce_quadrature_budget()
+    record("after_budget_enforcement")
+    manual.rebuild_differential_state()
+    record("after_final_differential_rebuild_1")
+    manual.rebuild_transport_state()
+    record("after_final_transport_reconstruction")
+    manual.rebuild_differential_state()
+    record("after_final_differential_rebuild_2")
+    manual.rebuild_identity_state()
+    record("after_final_identity_rebuild")
+
+    complete = set_current(model, seed)
+    complete.step()
+    complete_projection = stage_projection(
+        complete,
+        reference,
+        stage="after_complete_native_step",
+        fixed_projector=fixed_projector,
+        incidence=incidence,
+        config=config,
+    )
+    parity = block_residual(manual, complete)
+    parity_maximum = max(parity.values(), default=0.0)
+    return {
+        "stage_order": [row["stage"] for row in stages],
+        "stages": stages,
+        "after_complete_native_step": complete_projection,
+        "budget_enforcement_summary": budget_summary,
+        "manual_stage_vs_complete_step_block_linf": parity,
+        "manual_stage_vs_complete_step_maximum_linf": parity_maximum,
+        "manual_stage_vs_complete_step_categorical_equal": bool(
+            categorical_projection(manual) == categorical_projection(complete)
+        ),
+        "manual_stage_trace_matches_complete_step": bool(
+            parity_maximum
+            <= float(
+                config["current_controls"][
+                    "stage_trace_complete_step_parity_tolerance"
+                ]
+            )
+            and categorical_projection(manual) == categorical_projection(complete)
+        ),
+    }
+
+
+def first_transport_model(model: GRC9V3, seed: NDArray[np.float64]) -> GRC9V3:
+    candidate = set_current(model, seed)
+    candidate.rebuild_differential_state()
+    candidate.rebuild_transport_state()
+    return candidate
+
+
+def activity_amplitude_ladder(
+    model: GRC9V3,
+    direction: NDArray[np.float64],
+    *,
+    projector: NDArray[np.float64],
+    incidence: NDArray[np.float64],
+    config: dict[str, Any],
+    require_cycle_membership: bool,
+) -> list[dict[str, Any]]:
+    control = config["current_controls"]
+    gamma = float(model.get_params().evolution["gamma"])
+    zero_transport = first_transport_model(model, np.zeros_like(direction))
+    zero_w = conductance_vector(zero_transport)
+    rows = []
+    for target_exponent in control["structural_activity_target_exponent_ladder"]:
+        amplitude = abs(activity_amplitude_from_target(model, float(target_exponent)))
+        positive_seed = amplitude * direction
+        negative_seed = -positive_seed
+        positive_transport = first_transport_model(model, positive_seed)
+        negative_transport = first_transport_model(model, negative_seed)
+        positive_w = conductance_vector(positive_transport)
+        negative_w = conductance_vector(negative_transport)
+        expected_exponent = 0.5 * gamma * np.square(positive_seed)
+        observed_exponent = np.log(zero_w / positive_w)
+        response_error = float(
+            np.linalg.norm(observed_exponent - expected_exponent, ord=np.inf)
+        )
+        response_scale = max(
+            float(np.linalg.norm(expected_exponent, ord=np.inf)), 1e-30
+        )
+        relative_error = response_error / response_scale
+        positive_complete = seeded_trajectory(
+            model,
+            positive_seed,
+            steps=1,
+            projector=projector,
+            incidence=incidence,
+        )
+        negative_complete = seeded_trajectory(
+            model,
+            negative_seed,
+            steps=1,
+            projector=projector,
+            incidence=incidence,
+        )
+        positive_state = positive_complete["final_model"].get_state()
+        budget = positive_state.cached_quantities.get("last_quadrature_budget", {})
+        rows.append(
+            {
+                "target_activity_exponent": float(target_exponent),
+                "derived_seed_amplitude": amplitude,
+                "seed_provenance": "experiment_authored_synthetic_activity_ladder",
+                "positive_seed_certification": seed_certification(
+                    model,
+                    positive_seed,
+                    projector=projector,
+                    incidence=incidence,
+                    config=config,
+                    require_cycle_membership=require_cycle_membership,
+                ),
+                "negative_seed_certification": seed_certification(
+                    model,
+                    negative_seed,
+                    projector=projector,
+                    incidence=incidence,
+                    config=config,
+                    require_cycle_membership=require_cycle_membership,
+                ),
+                "positive_first_transport_W": positive_w.tolist(),
+                "negative_first_transport_W": negative_w.tolist(),
+                "sign_even_first_transport_W_linf": float(
+                    np.linalg.norm(positive_w - negative_w, ord=np.inf)
+                ),
+                "observed_activity_exponent_by_edge": observed_exponent.tolist(),
+                "expected_quadratic_activity_exponent_by_edge": expected_exponent.tolist(),
+                "quadratic_response_relative_error": relative_error,
+                "quadratic_response_passed": relative_error
+                <= float(control["activity_response_shape_relative_error_max"]),
+                "positive_post_step": positive_complete["rows"][-1],
+                "negative_post_step": negative_complete["rows"][-1],
+                "budget_projection_changed_state": bool(
+                    abs(float(budget.get("budget_after", 0.0)) - float(budget.get("budget_before", 0.0)))
+                    > float(control["budget_tolerance"])
+                    or abs(float(budget.get("negative_mass_correction", 0.0)))
+                    > float(control["budget_tolerance"])
+                ),
+                "conductance_floor_active": bool(
+                    min(positive_w.tolist() + negative_w.tolist())
+                    <= float(config["edge_space"]["minimum_positive_conductance"])
+                ),
+                "events_or_topology_changed": bool(
+                    categorical_projection(positive_complete["final_model"])["event_kinds"]
+                    or categorical_projection(negative_complete["final_model"])["event_kinds"]
+                    or categorical_projection(positive_complete["final_model"])["topology_nodes"]
+                    != categorical_projection(model)["topology_nodes"]
+                    or categorical_projection(negative_complete["final_model"])["topology_nodes"]
+                    != categorical_projection(model)["topology_nodes"]
+                ),
+            }
+        )
+    return rows
+
+
+def exact_zero_symmetry_audit(
+    model: GRC9V3, fixture_id: str, *, tolerance: float
+) -> dict[str, Any]:
+    state = model.get_state()
+    coherence = coherence_vector(model)
+    conductance = conductance_vector(model)
+    current = current_vector(model)
+    potential = np.asarray(
+        [float(state.potential[node]) for node in sorted(state.topology.iter_live_node_ids())],
+        dtype=float,
+    )
+    checks = {
+        "fixture_declared_symmetric": fixture_id == "F1",
+        "coherence_uniform": float(np.ptp(coherence)) <= tolerance,
+        "potential_uniform": float(np.ptp(potential)) <= tolerance,
+        "conductance_uniform": float(np.ptp(conductance)) <= tolerance,
+        "old_current_exact_zero": bool(np.all(current == 0.0)),
+        "two_node_single_edge_swap_topology": bool(
+            len(tuple(state.topology.iter_live_node_ids())) == 2
+            and len(tuple(state.topology.iter_live_edge_ids())) == 1
+        ),
+        "event_log_empty": not state.event_log,
+    }
+    return {
+        "checks": checks,
+        "full_orientation_relevant_symmetry_certified": all(checks.values()),
+        "certification_basis": "F1_two_node_swap_symmetry_plus_numeric_causal_fields",
+    }
+
+
 def branch_current_control(
-    model: GRC9V3, branch_id: str, config: dict[str, Any]
+    model: GRC9V3,
+    branch_id: str,
+    fixture_id: str,
+    config: dict[str, Any],
 ) -> dict[str, Any]:
     edge_audit = edge_space_audit(model, config)
     projector = np.asarray(edge_audit["cycle_projector"], dtype=float)
+    incidence = np.asarray(edge_audit["incidence"], dtype=float)
     control = config["current_controls"]
     finite = canonical_finite_seed(model) * float(control["finite_seed_amplitude"])
     zero = np.zeros_like(finite)
@@ -222,18 +582,21 @@ def branch_current_control(
         finite,
         steps=int(control["complete_step_count"]),
         projector=projector,
+        incidence=incidence,
     )
     negative = seeded_trajectory(
         model,
         -finite,
         steps=int(control["complete_step_count"]),
         projector=projector,
+        incidence=incidence,
     )
     zero_row = seeded_trajectory(
         model,
         zero,
         steps=int(control["complete_step_count"]),
         projector=projector,
+        incidence=incidence,
     )
     positive_w = np.asarray(positive["rows"][1]["W"], dtype=float)
     negative_w = np.asarray(negative["rows"][1]["W"], dtype=float)
@@ -252,6 +615,8 @@ def branch_current_control(
         model, rank_tolerance=float(config["edge_space"]["rank_tolerance"])
     )
     cycle_rows: list[dict[str, Any]] = []
+    cycle_activity_ladder: list[dict[str, Any]] = []
+    cycle_stage_trace_pair: dict[str, Any] | None = None
     if cycle_seed is not None:
         for sign in (1.0, -1.0):
             seed = sign * float(control["cycle_seed_amplitude"]) * cycle_seed
@@ -263,14 +628,25 @@ def branch_current_control(
                 seed,
                 steps=int(control["complete_step_count"]),
                 projector=projector,
+                incidence=incidence,
+            )
+            certification = seed_certification(
+                model,
+                seed,
+                projector=projector,
+                incidence=incidence,
+                config=config,
+                require_cycle_membership=True,
             )
             cycle_rows.append(
                 {
                     "sign": "positive" if sign > 0.0 else "negative",
                     "seed": seed.tolist(),
                     "seed_divergence_l2": divergence,
-                    "seed_certified_before_runtime": divergence
-                    <= float(config["edge_space"]["divergence_tolerance"]),
+                    "seed_certification": certification,
+                    "seed_certified_before_runtime": certification[
+                        "certified_before_runtime"
+                    ],
                     "trajectory": trace["rows"],
                     "classification": (
                         "cycle_seed_overwritten_by_native_potential_flow"
@@ -280,11 +656,113 @@ def branch_current_control(
                     ),
                 }
             )
+        cycle_activity_ladder = activity_amplitude_ladder(
+            model,
+            cycle_seed,
+            projector=projector,
+            incidence=incidence,
+            config=config,
+            require_cycle_membership=True,
+        )
+        stage_amplitude = abs(
+            activity_amplitude_from_target(
+                model, float(control["stage_trace_target_exponent"])
+            )
+        )
+        positive_stage_trace = native_seed_stage_trace(
+            model,
+            stage_amplitude * cycle_seed,
+            fixed_projector=projector,
+            incidence=incidence,
+            config=config,
+        )
+        negative_stage_trace = native_seed_stage_trace(
+            model,
+            -stage_amplitude * cycle_seed,
+            fixed_projector=projector,
+            incidence=incidence,
+            config=config,
+        )
+        positive_first_transport = next(
+            row
+            for row in positive_stage_trace["stages"]
+            if row["stage"] == "after_first_transport_reconstruction"
+        )
+        negative_first_transport = next(
+            row
+            for row in negative_stage_trace["stages"]
+            if row["stage"] == "after_first_transport_reconstruction"
+        )
+        cycle_stage_trace_pair = {
+            "target_activity_exponent": float(control["stage_trace_target_exponent"]),
+            "derived_seed_amplitude": stage_amplitude,
+            "positive": positive_stage_trace,
+            "negative": negative_stage_trace,
+            "first_transport_W_sign_even_linf": float(
+                np.linalg.norm(
+                    np.asarray(positive_first_transport["W"])
+                    - np.asarray(negative_first_transport["W"]),
+                    ord=np.inf,
+                )
+            ),
+            "positive_first_transport_cycle_component_l2": positive_first_transport[
+                "phase_local_projection"
+            ]["cycle_component_l2"],
+            "negative_first_transport_cycle_component_l2": negative_first_transport[
+                "phase_local_projection"
+            ]["cycle_component_l2"],
+            "orientation_overwritten_at_first_transport": bool(
+                positive_first_transport["phase_local_projection"][
+                    "cycle_component_l2"
+                ]
+                <= float(config["edge_space"]["algebra_tolerance"])
+                and negative_first_transport["phase_local_projection"][
+                    "cycle_component_l2"
+                ]
+                <= float(config["edge_space"]["algebra_tolerance"])
+            ),
+            "both_manual_stage_traces_match_complete_step": bool(
+                positive_stage_trace["manual_stage_trace_matches_complete_step"]
+                and negative_stage_trace["manual_stage_trace_matches_complete_step"]
+            ),
+        }
+    finite_activity_ladder = activity_amplitude_ladder(
+        model,
+        canonical_finite_seed(model),
+        projector=projector,
+        incidence=incidence,
+        config=config,
+        require_cycle_membership=False,
+    )
+    zero_symmetry = exact_zero_symmetry_audit(
+        model,
+        fixture_id,
+        tolerance=float(control["state_symmetry_tolerance"]),
+    )
+    zero_post_current_maximum = max(
+        (float(row["J_l2"]) for row in zero_row["rows"][1:]), default=0.0
+    )
+    if (
+        zero_symmetry["full_orientation_relevant_symmetry_certified"]
+        and zero_post_current_maximum <= float(control["current_zero_band"])
+    ):
+        zero_classification = "exact_zero_invariant"
+    elif zero_post_current_maximum > float(control["current_zero_band"]):
+        zero_classification = "baseline_potential_flow_generated_from_zero"
+    else:
+        zero_classification = (
+            "nonsymmetric_state_zero_input_with_bounded_potential_flow_residual"
+        )
     all_trajectory_rows = [
         *zero_row["rows"],
         *positive["rows"],
         *negative["rows"],
         *(beat for cycle in cycle_rows for beat in cycle["trajectory"]),
+        *(
+            row[key]
+            for row in [*finite_activity_ladder, *cycle_activity_ladder]
+            for key in ("positive_post_step", "negative_post_step")
+        ),
     ]
     maximum_budget_error = max(
         (float(row["budget_error"]) for row in all_trajectory_rows), default=0.0
@@ -299,7 +777,7 @@ def branch_current_control(
     )
     return {
         "branch_id": branch_id,
-        "fixture_id": "F3" if edge_audit["cycle_dimension"] else "noncycle_fixture",
+        "fixture_id": fixture_id,
         "edge_space": edge_audit,
         "assumption_statuses": {
             "A-CLOSED": "satisfied_closed_fixed_topology_no_boundary_drive",
@@ -313,6 +791,8 @@ def branch_current_control(
             "A-ORIENTATION": "sorted_edge_node_u_to_node_v_measurement_convention",
         },
         "exact_zero": zero_row["rows"],
+        "exact_zero_symmetry_audit": zero_symmetry,
+        "exact_zero_classification": zero_classification,
         "finite_positive": positive["rows"],
         "finite_negative": negative["rows"],
         "sign_even_magnitude_matched": {
@@ -334,6 +814,9 @@ def branch_current_control(
             ),
         },
         "cycle_seed_rows": cycle_rows,
+        "finite_activity_amplitude_ladder": finite_activity_ladder,
+        "cycle_activity_amplitude_ladder": cycle_activity_ladder,
+        "cycle_seed_stage_trace_pair": cycle_stage_trace_pair,
         "maximum_budget_error": maximum_budget_error,
         "budget_conservation_passed": maximum_budget_error
         <= float(control["budget_tolerance"]),

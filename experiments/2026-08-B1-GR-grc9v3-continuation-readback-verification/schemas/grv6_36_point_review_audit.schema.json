@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/grv6_36_point_review_audit.schema.json",
+  "type": "object",
+  "required": ["schema_version", "metadata", "payload", "payload_sha256"],
+  "properties": {
+    "payload": {
+      "type": "object",
+      "required": [
+        "gate_id",
+        "audit_id",
+        "review_point_count",
+        "all_review_points_accounted_for",
+        "acceptance_blocker_count",
+        "all_current_result_acceptance_requirements_satisfied",
+        "conditional_positive_orbit_gate_count",
+        "review_points",
+        "source_result_payload_sha256"
+      ],
+      "properties": {
+        "gate_id": {"const": "GRV6"},
+        "review_point_count": {"const": 36},
+        "all_review_points_accounted_for": {"const": true},
+        "acceptance_blocker_count": {"type": "integer", "minimum": 0},
+        "review_points": {
+          "type": "array",
+          "minItems": 36,
+          "maxItems": 36,
+          "items": {
+            "type": "object",
+            "required": [
+              "point_index",
+              "point_id",
+              "disposition",
+              "evidence",
+              "acceptance_requirement_satisfied"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ class SchemaCoverageTest(unittest.TestCase):
             "state_codec.schema.json", "fixed_branch_registry.schema.json",
             "complete_step_jacobians.schema.json", "intervention_registry.schema.json",
             "causal_role_matrix.schema.json", "return_orbit_registry.schema.json",
+            "grv6_36_point_review_audit.schema.json",
             "evidence_bundle_manifest.schema.json", "assumption_status_matrix.schema.json",
             "lgrc_handoff.schema.json",
         }

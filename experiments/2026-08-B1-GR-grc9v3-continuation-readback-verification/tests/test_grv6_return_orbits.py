@@ -71,7 +71,10 @@ class GRV6ReturnOrbitTest(unittest.TestCase):
 
     def test_cycle_seed_is_overwritten_and_sign_even_control_passes(self) -> None:
         row = branch_current_control(
-            self.triangle_model, self.triangle["branch_id"], self.config
+            self.triangle_model,
+            self.triangle["branch_id"],
+            self.triangle["fixture_id"],
+            self.config,
         )
         self.assertEqual(2, len(row["cycle_seed_rows"]))
         self.assertTrue(
@@ -86,6 +89,65 @@ class GRV6ReturnOrbitTest(unittest.TestCase):
         )
         self.assertTrue(row["budget_conservation_passed"])
         self.assertTrue(row["topology_and_noncurrent_categorical_state_clean"])
+        self.assertEqual(2, row["edge_space"]["incidence_rank"])
+        self.assertEqual(1, row["edge_space"]["cycle_dimension"])
+        self.assertLessEqual(
+            row["edge_space"]["projected_cycle_gram_condition_number"],
+            self.config["edge_space"]["condition_limit"],
+        )
+        self.assertTrue(
+            all(
+                cycle["seed_certification"]["certified_before_runtime"]
+                for cycle in row["cycle_seed_rows"]
+            )
+        )
+        stage_pair = row["cycle_seed_stage_trace_pair"]
+        self.assertIsNotNone(stage_pair)
+        assert stage_pair is not None
+        self.assertTrue(stage_pair["orientation_overwritten_at_first_transport"])
+        self.assertTrue(stage_pair["both_manual_stage_traces_match_complete_step"])
+        self.assertEqual(
+            4,
+            len(row["cycle_activity_amplitude_ladder"]),
+        )
+        self.assertTrue(
+            all(
+                item["quadratic_response_passed"]
+                and not item["budget_projection_changed_state"]
+                and not item["conductance_floor_active"]
+                and not item["events_or_topology_changed"]
+                for item in row["cycle_activity_amplitude_ladder"]
+            )
+        )
+
+    def test_exact_zero_symmetry_is_certified_only_on_F1_control(self) -> None:
+        homogeneous = branch_current_control(
+            self.homogeneous_model,
+            self.homogeneous["branch_id"],
+            self.homogeneous["fixture_id"],
+            self.config,
+        )
+        triangle = branch_current_control(
+            self.triangle_model,
+            self.triangle["branch_id"],
+            self.triangle["fixture_id"],
+            self.config,
+        )
+        self.assertEqual("exact_zero_invariant", homogeneous["exact_zero_classification"])
+        self.assertTrue(
+            homogeneous["exact_zero_symmetry_audit"][
+                "full_orientation_relevant_symmetry_certified"
+            ]
+        )
+        self.assertEqual(
+            "nonsymmetric_state_zero_input_with_bounded_potential_flow_residual",
+            triangle["exact_zero_classification"],
+        )
+        self.assertFalse(
+            triangle["exact_zero_symmetry_audit"][
+                "full_orientation_relevant_symmetry_certified"
+            ]
+        )
 
     def test_periodic_search_rejects_fixed_point_as_proper_divisor(self) -> None:
         chart = BranchCoordinateChart.from_model(self.homogeneous_model, ("C", "W"))

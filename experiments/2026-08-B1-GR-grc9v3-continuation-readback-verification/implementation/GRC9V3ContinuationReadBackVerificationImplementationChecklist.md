@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_mechanically_passed_awaiting_human_review
+status = grv6_P6_1_preacceptance_36_point_hardening_pending_clean_execution
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_scientific_review_pending
+current_gate = GRV6_P6_1_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
@@ -1226,7 +1226,8 @@ runtime_change_authorized = false
 - [ ] Emit the separate GRV6 acceptance anchor only after human scientific review.
 - [x] Do not relabel recurrent nonzero current as active circulation or Read-Back.
 
-Mechanically completed result:
+Preliminary mechanically completed result, superseded for acceptance purposes
+by the P6.1 hardening requirement below:
 
 ```text
 input_execution_revision = 69f1a11633a47bf7dc972f94bdd0c53aff6b15cb
@@ -1285,6 +1286,47 @@ recorded scale. This blocks stationary native cycle-current persistence on the
 boundary-driven through-flow, or a future explicitly added cycle-current
 mechanism. GRV6 opens neither active circulation nor Read-Back, and GRV7 remains
 blocked until a separate GRV6 acceptance anchor is committed.
+
+### P6.1 Pre-Acceptance 36-Point Hardening
+
+- [x] Map every external review point to executed, bounded-scope, or
+  positive-orbit-conditional evidence.
+- [x] Preserve the accepted GRV5 anchor and keep GRV5 arrows independent.
+- [x] Keep cycle-current controls independent from return-orbit search results.
+- [x] Add incidence rank, cycle dimension, metric condition, projected-Gram
+  condition, conductance minimum, and floor-margin records.
+- [x] Record divergence separately from fixed-reference and phase-local cycle
+  projection at every measured beat/stage.
+- [x] Certify cycle seeds before runtime for divergence, cycle membership,
+  current floor, matched `C/W`, RNG, administrative phase, topology, and
+  positive conductance.
+- [x] Add exact public-method stage traces from old-current input through first
+  transport, continuity, budget, final transport, and complete-step parity.
+- [x] Add four preregistered structural activity amplitudes for finite and cycle
+  directions in both signs.
+- [x] Verify sign-even and quadratic conductance response shape at every ladder
+  level.
+- [x] Record budget projection, conductance-floor, event, and topology support
+  for every ladder row.
+- [x] Separate F1 full-symmetry exact-zero controls from nonsymmetric zero-input
+  rows in machine artifacts.
+- [x] Record every synthetic seed as experiment-authored and not runtime-reached.
+- [x] Freeze relative-periodic-orbit absence as outside the negative claim.
+- [x] Freeze ill-conditioned solver rows as unresolved rather than negative
+  orbit evidence.
+- [x] Keep phase/symmetry deduplication, cycle-averaged pumping, per-block
+  periods, dependency resets, codec revalidation, fresh-process replay, and
+  advanced Floquet controls mandatory but not executed when no orbit is
+  admitted.
+- [x] Add `grv6_36_point_review_audit.json` and its schema.
+- [x] Add regression tests for seed certification, stage parity, amplitude
+  response, projector conditions, and exact-zero classification.
+- [ ] Commit the P6.1 method revision and rerun GRV6 from that clean revision.
+- [ ] Verify all 36 review points are accounted for with zero current-result
+  acceptance blockers.
+- [ ] Commit the superseding P6.1 result receipt and artifacts for human review.
+- [ ] Emit a GRV6 acceptance anchor only after human review of the superseding
+  result.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 
