@@ -815,6 +815,43 @@ def _symmetry_audit(
 
 def write_report(payload: dict[str, Any]):
     summary = payload["summary"]
+    branches = payload["branch_rows"]
+    primary = [
+        row["primary_C_full_recurrence_comparison"]
+        for row in branches
+        if row["primary_C_full_recurrence_comparison"]["status"] == "compared"
+    ]
+    secondary = [
+        row["secondary_C_W_full_recurrence_comparison"]
+        for row in branches
+        if row["secondary_C_W_full_recurrence_comparison"]["status"].startswith(
+            "compared"
+        )
+    ]
+    maximum_primary_angle = max(
+        (row["principal_subspace_angle_radians"] or 0.0 for row in primary),
+        default=0.0,
+    )
+    maximum_fixed_residual = max(
+        row["frozen_branch_map_residual"]["map_residual_linf"] for row in branches
+    )
+    maximum_commutator = max(
+        row["structural_temporal_separation"]["commutator_relative_norm"]
+        for row in branches
+    )
+    maximum_projector_error = max(
+        projector["physical_projector_idempotence_error_l2"]
+        for row in branches
+        for projector in row["structural_temporal_separation"]["mapped_projectors"]
+    )
+    primary_uncertainties = [
+        row["uncertainty_budget"]["combined_unit_circle_uncertainty"]
+        for row in primary
+    ]
+    secondary_deadbeat_count = sum(
+        row["metric_and_embedding_audit"]["deadbeat_or_overwrite_multiplier_count"]
+        for row in secondary
+    )
     report = EXPERIMENT_ROOT / "reports/b1_grv4_frozen_conductance_full_recurrence.md"
     lines = [
         "# B1-GR GRV4 Frozen-Conductance Versus Full Recurrence",
@@ -841,9 +878,10 @@ def write_report(payload: dict[str, Any]):
         "runtime_change_authorized = false",
         "```",
         "",
-        "GRV4 constructs an experiment-local fixed-conductance comparator. It does",
+        "GRV4 constructs an experiment-local whole-beat fixed-conductance clamp. It does",
         "not alter `GRC9V3.step()` and does not treat the comparator as native runtime",
-        "state. The runtime sign follows directly from the implemented equations:",
+        "state, algebraic elimination, or fast-slaved reduction. The runtime sign follows",
+        "directly from the implemented equations:",
         "`Phi = gradient(P_G)`, `J = -eta W grad(Phi)`, and continuity therefore",
         "gives `dC/dt = eta L_W gradient(P_G)`. Thus `P_G` is weakly",
         "nondecreasing in the semidiscrete fixed-`W` reduction and `-P_G` is weakly",
@@ -857,6 +895,29 @@ def write_report(payload: dict[str, Any]):
         "The audit calls the existing potential, flux, and continuity stages while",
         "holding the accepted branch conductance fixed; it excludes conductance",
         "reconstruction and every semantic/topology stage by declaration.",
+        "Canonical zero-sum, structural-eigenvector, and deterministic mixed directions",
+        "are probed in both signs. Positivity remains preserved and budget projection,",
+        "clipping, and boundary stages are absent from every comparator row.",
+        "",
+        "## Functional, Structural, And Temporal Separation",
+        "",
+        "`H_P` is checked against the finite-difference derivative of the runtime",
+        "potential. The restoring comparator is recorded separately as `H_cont=-H_P`.",
+        f"Maximum absolute tangent-Hessian error is `{summary['maximum_H_P_finite_difference_absolute_linf_error']:.6g}`; near-zero rows use the preregistered absolute gate.",
+        f"Maximum directional functional error is `{summary['maximum_directional_functional_error']:.6g}` and maximum site `V''` error is `{summary['maximum_site_V_second_error']:.6g}`.",
+        "Structural curvature, semidiscrete relaxation `A_W H_cont`, and discrete",
+        "multipliers `I-dt A_W H_cont` are classified separately. The mobility/Hessian",
+        f"commutator relative norm is at most `{maximum_commutator:.6g}` in this envelope.",
+        "The self-adjoint modes and projectors are mapped back through the declared",
+        "mobility square-root relation before physical `C` comparison; maximum mapped",
+        f"projector idempotence error is `{maximum_projector_error:.6g}`.",
+        "",
+        "## Branch, Conductance, And Fixed-Point Controls",
+        "",
+        "Every row consumes authoritative `base_conductance` from its accepted branch",
+        "snapshot and verifies exact duplicate port-edge consistency. All 48 weighted",
+        "graphs are connected and have positive-definite mobility on the GRV3 zero-sum",
+        f"tangent. Maximum exact frozen-map fixed-point residual is `{maximum_fixed_residual:.6g}`.",
         "",
         "## Frozen/Full Boundary",
         "",
@@ -867,6 +928,14 @@ def write_report(payload: dict[str, Any]):
         "secondary diagnostic of evolving-conductance recurrence and never supports",
         "a joint mode or conductance-eliminability claim.",
         "",
+        "The comparison uses the accepted GRV3 block metric, explicit `C` embedding and",
+        "projection, real invariant planes for complex pairs, clustered slow subspaces,",
+        "and uncertainty-aware unit-circle classes. Deadbeat overwrite modes are counted",
+        f"separately ({secondary_deadbeat_count} across {len(secondary)} admitted secondary rows) and excluded from slow disagreement.",
+        f"The primary unit-circle uncertainty range is `{min(primary_uncertainties):.6g}` to `{max(primary_uncertainties):.6g}`; maximum primary metric subspace angle is `{maximum_primary_angle:.6g}` radians.",
+        "Matrix-level symmetry conjugacy passes for `H_cont`, mobility, the frozen map,",
+        "and every admitted full `C` map.",
+        "",
         "## Interpretation",
         "",
         (
@@ -874,9 +943,10 @@ def write_report(payload: dict[str, Any]):
             if summary["verified_strong_disagreement_count"]
             else "No verified branch changes stability class or slow-subspace identity within the admitted comparison envelope."
         ),
-        "Agreement is a bounded result, not proof that frozen conductance is the full",
+        "Agreement is a bounded first-order local result, not proof that frozen conductance is the full",
         "core continuation operator. GRV4 opens no continuation, retention, read-back,",
-        "or write-back claim and does not establish global `W` eliminability.",
+        "or write-back claim and does not establish global `W` eliminability. Finite-",
+        "amplitude `J^2 -> W` inscription remains open for later gates.",
         "",
         "## Provenance",
         "",
@@ -1028,6 +1098,25 @@ def run_grv4() -> None:
                 "symmetry_orbit_id": branch["symmetry_orbit_id"],
                 "source_snapshot_path": branch["state_snapshot_path"],
                 "source_snapshot_sha256": branch["state_snapshot_sha256"],
+                "local_comparison_identity": {
+                    "same_branch_state": branch["branch_id"],
+                    "parameter_hash": branch["parameter_hash"],
+                    "site_potential_backend": "quadratic",
+                    "site_potential_parameters": {
+                        "scale": components["scale"],
+                        "mu": components["mu"],
+                    },
+                    "transport_parameters": {
+                        "kappa_c": components["kappa"],
+                        "eta": components["eta"],
+                        "dt": components["dt"],
+                    },
+                    "node_order": components["node_order"],
+                    "edge_order": components["edge_order"],
+                    "causal_stratum_source": "accepted_GRV3_branch_relative_coordinate_audit",
+                    "tangent_basis": config["frozen_comparator"]["basis_id"],
+                    "state_metric": config["full_map_comparison"]["state_metric"],
+                },
                 "node_order": components["node_order"],
                 "edge_order": components["edge_order"],
                 "basis_id": config["frozen_comparator"]["basis_id"],

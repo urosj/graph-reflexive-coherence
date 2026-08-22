@@ -774,8 +774,13 @@ the full core continuation operator.
 - [x] Execute P4.1 from that clean committed revision and fail closed before artifact emission.
 - [x] Record the near-zero relative-conjugacy and near-real invariant-plane representation defects.
 - [x] Correct those representations without changing branch scope or scientific thresholds.
-- [ ] Commit the P4.1a representation correction.
-- [ ] Execute P4.1a from that clean committed revision.
+- [x] Commit the P4.1a representation correction at `c276fcc`.
+- [x] Execute P4.1a from that clean committed revision.
+- [x] Record the mechanically passing `c276fcc` run without accepting it.
+- [x] Add explicit local comparison identity and mapped-projector records.
+- [x] Expand the generated report to expose the hardening controls and bounded result.
+- [ ] Commit the final artifact-schema/report completion.
+- [ ] Execute the final P4.1 full clean rerun.
 - [ ] Verify all mechanical controls and inspect every branch-level classification.
 - [ ] Emit a superseding GRV4 result receipt pending human scientific review.
 - [ ] Emit a GRV4 acceptance anchor only after that review.

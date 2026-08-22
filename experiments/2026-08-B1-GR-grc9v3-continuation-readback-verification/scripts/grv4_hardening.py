@@ -214,6 +214,21 @@ def structural_temporal_diagnostics(
     values_sym, vectors_sym = np.linalg.eigh(0.5 * (symmetrized + symmetrized.T))
     mapped_modes = square_root @ vectors_sym
     mapped_modes = orthonormal_columns(mapped_modes)
+    mapped_projectors = []
+    for index in range(vectors_sym.shape[1]):
+        vector = vectors_sym[:, index : index + 1]
+        projector_w = vector @ vector.T
+        projector_a = square_root @ projector_w @ inverse_square_root
+        mapped_projectors.append(
+            {
+                "mode_index": index,
+                "symmetrized_projector": projector_w.tolist(),
+                "physical_reduced_projector": projector_a.tolist(),
+                "physical_projector_idempotence_error_l2": float(
+                    np.linalg.norm(projector_a @ projector_a - projector_a)
+                ),
+            }
+        )
     similarity = inverse_square_root @ relaxation @ square_root
     structural_rows = []
     for index, value in enumerate(values_h):
@@ -271,6 +286,7 @@ def structural_temporal_diagnostics(
         "explicit_step_multiplier": multiplier.tolist(),
         "temporal_modes": temporal_rows,
         "mapped_physical_reduced_mode_basis": mapped_modes.tolist(),
+        "mapped_projectors": mapped_projectors,
         "mode_mapping_rule": "a=A_W^(1/2)w; u=Q_C*a",
         "projector_mapping_rule": "P_a=A_W^(1/2)P_w*A_W^(-1/2)",
         "similarity_reconstruction_relative_error": relative_matrix_error(

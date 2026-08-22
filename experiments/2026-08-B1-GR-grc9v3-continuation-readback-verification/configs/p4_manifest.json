@@ -47,6 +47,15 @@
     "branch_scope_or_scientific_threshold_changed": false,
     "full_clean_rerun_required": true
   },
+  "intermediate_mechanical_pass": {
+    "input_revision": "c276fcccf0a05cc7d6d511f15bffe69a58d2230c",
+    "mechanical_status": "passed",
+    "scientific_acceptance": "not_assigned",
+    "acceptance_anchor_created": false,
+    "supersession_reason": "add_explicit_local_comparison_identity_projector_records_and_complete_hardening_report",
+    "scientific_thresholds_or_branch_scope_changed": false,
+    "full_clean_rerun_required": true
+  },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV4",
   "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_bounded_relation_to_admitted_full_recurrence"
 }
