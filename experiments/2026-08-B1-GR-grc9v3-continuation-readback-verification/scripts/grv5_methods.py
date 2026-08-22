@@ -74,9 +74,7 @@ def current_vector(model: GRC9V3) -> np.ndarray:
     )
 
 
-def state_projection(
-    model: GRC9V3, *, include_snapshot_digest: bool = True
-) -> dict[str, Any]:
+def state_projection(model: GRC9V3) -> dict[str, Any]:
     state = model.get_state()
     coherence = coherence_vector(model)
     conductance = conductance_vector(model)
@@ -99,9 +97,17 @@ def state_projection(
         "topology_edges": list(sorted(state.topology.iter_live_edge_ids())),
         "event_count": len(state.event_log),
     }
-    if include_snapshot_digest:
-        result["snapshot_semantic_sha256"] = semantic_digest(model.snapshot())
+    result["snapshot_semantic_sha256"] = semantic_digest(model.snapshot())
     return result
+
+
+def probe_carrier_projection(model: GRC9V3) -> dict[str, Any]:
+    payload = {
+        "C": coherence_vector(model).tolist(),
+        "W": conductance_vector(model).tolist(),
+        "J": current_vector(model).tolist(),
+    }
+    return {**payload, "carrier_projection_sha256": semantic_digest(payload)}
 
 
 def physical_projection_linf(left: GRC9V3, right: GRC9V3) -> float:
@@ -523,7 +529,7 @@ def run_probe(
     probe_kind: str,
     amplitude: float,
 ) -> dict[str, Any]:
-    before_projection = state_projection(model, include_snapshot_digest=False)
+    before_projection = probe_carrier_projection(model)
     if probe_kind == "coherence_or_potential_probe":
         prepared = coherence_intervention(model, amplitude=amplitude)
     elif probe_kind == "old_current_state_injection":
@@ -574,7 +580,7 @@ def run_probe(
         substrate_class = "substrate_reduced"
     else:
         raise ValueError(f"unsupported probe lane {lane!r}")
-    after_projection = state_projection(prepared, include_snapshot_digest=False)
+    after_projection = probe_carrier_projection(prepared)
     return {
         "response": current_vector(prepared),
         "readout_stage": stage,
