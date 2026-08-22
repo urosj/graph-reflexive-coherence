@@ -30,22 +30,28 @@ from gate_receipts import (
 )
 from grv5_methods import (
     activity_amplitude_from_target,
+    activity_write_stage_trace,
     activity_write_stage,
     categorical_projection,
+    canonical_edge_direction,
+    carrier_alignment,
     clone_model,
     coherence_vector,
     conductance_vector,
+    conductance_surface_consistency,
     constitutive_consistency_audit,
     current_vector,
     difference_in_differences,
     direct_conductance_intervention,
     equal_carrier_preserving_reached_state,
     match_C_and_J_preserving_W,
+    matching_audit,
     old_current_intervention,
     pair_separation,
     physical_projection_linf,
     reset_carrier,
     signed_sweep_fit,
+    shuffle_carrier_pattern,
     state_projection,
     swap_carrier,
 )
@@ -154,6 +160,59 @@ def preparation_pairs(
     sign_difference = pair_separation(
         sign_pair[0], sign_pair[1], branch_scales=branch_scales(model)
     )
+    base_w = conductance_vector(model)
+    direct_distances = [
+        float(np.linalg.norm(conductance_vector(candidate) - base_w))
+        for candidate in direct_pair
+    ]
+    amplitude_ladder = []
+    for target in prep["activity_write_target_exponent_ladder"]:
+        target_value = float(target)
+        ladder_amplitude = activity_amplitude_from_target(model, target_value)
+        positive = activity_write_stage(model, amplitude=ladder_amplitude)
+        negative = activity_write_stage(model, amplitude=-ladder_amplitude)
+        zero = activity_write_stage(model, amplitude=0.0)
+        positive_log_ratio = np.log(
+            conductance_vector(positive) / conductance_vector(zero)
+        )
+        negative_log_ratio = np.log(
+            conductance_vector(negative) / conductance_vector(zero)
+        )
+        expected_log_ratio = -target_value * np.square(canonical_edge_direction(model))
+        amplitude_ladder.append(
+            {
+                "target_attenuation_exponent": target_value,
+                "executed_old_current_amplitude": ladder_amplitude,
+                "executed_old_current_amplitude_squared": ladder_amplitude**2,
+                "positive_log_W_ratio": positive_log_ratio.tolist(),
+                "negative_log_W_ratio": negative_log_ratio.tolist(),
+                "expected_log_W_ratio": expected_log_ratio.tolist(),
+                "sign_even_W_error_linf": float(
+                    np.linalg.norm(
+                        conductance_vector(positive) - conductance_vector(negative),
+                        ord=np.inf,
+                    )
+                ),
+                "expected_log_W_ratio_error_linf": float(
+                    np.linalg.norm(
+                        positive_log_ratio - expected_log_ratio,
+                        ord=np.inf,
+                    )
+                ),
+                "event_count_pair": [
+                    len(positive.get_state().event_log),
+                    len(negative.get_state().event_log),
+                ],
+                "topology_equal": categorical_projection(positive)["topology_edges"]
+                == categorical_projection(negative)["topology_edges"],
+            }
+        )
+    stage_trace_positive = activity_write_stage_trace(
+        model, amplitude=activity_amplitude
+    )
+    stage_trace_negative = activity_write_stage_trace(
+        model, amplitude=-activity_amplitude
+    )
     controls = {
         "base_snapshot_sha256": base_snapshot_sha256,
         "activity_input_amplitude": activity_amplitude,
@@ -168,6 +227,70 @@ def preparation_pairs(
         ),
         "sign_reversal_stage_separation": sign_difference,
         "sign_even_write_passed": sign_difference["block_l2"]["W"] <= tolerance,
+        "carrier_hypotheses": config["p5_3_review_hardening"]["carrier_hypotheses"],
+        "carrier_hypotheses_status": (
+            "revision_distinct_confirmatory_freeze_after_preliminary_P5_results_"
+            "cannot_upgrade_existing_rung"
+        ),
+        "direct_W_metric_audit": {
+            "metric": prep["direct_W_metric"],
+            "distance_positive": direct_distances[0],
+            "distance_negative": direct_distances[1],
+            "equal_distance_error": abs(direct_distances[0] - direct_distances[1]),
+            "minimum_prepared_W": min(
+                float(np.min(conductance_vector(candidate)))
+                for candidate in direct_pair
+            ),
+            "positivity_preserved": all(
+                np.all(conductance_vector(candidate) > 0.0) for candidate in direct_pair
+            ),
+            "authoritative_surface_consistency": [
+                conductance_surface_consistency(candidate) for candidate in direct_pair
+            ],
+        },
+        "activity_preparation_amplitude_ladder": amplitude_ladder,
+        "activity_preparation_amplitude_ladder_status": (
+            "confirmatory_response_shape_only_no_primary_rung_upgrade"
+        ),
+        "activity_stage_boundary_trace": {
+            "positive": stage_trace_positive,
+            "negative": stage_trace_negative,
+            "k0_definition": config["p5_3_review_hardening"]["preparation_boundary"][
+                "k0_definition"
+            ],
+            "k1_definition": config["p5_3_review_hardening"]["preparation_boundary"][
+                "k1_definition"
+            ],
+        },
+        "immediate_and_later_sign_audit": {
+            "immediate_W_sign_reversal_linf": sign_difference["block_l2"]["W"],
+            "complete_step_C_sign_reversal_linf": float(
+                np.linalg.norm(
+                    np.asarray(
+                        stage_trace_positive["after_complete_preparation_step"]["C"]
+                    )
+                    - np.asarray(
+                        stage_trace_negative["after_complete_preparation_step"]["C"]
+                    ),
+                    ord=np.inf,
+                )
+            ),
+            "complete_step_W_sign_reversal_linf": float(
+                np.linalg.norm(
+                    np.asarray(
+                        stage_trace_positive["after_complete_preparation_step"]["W"]
+                    )
+                    - np.asarray(
+                        stage_trace_negative["after_complete_preparation_step"]["W"]
+                    ),
+                    ord=np.inf,
+                )
+            ),
+            "interpretation": (
+                "immediate_direct_J_squared_write_and_standardized_complete_step_"
+                "history_are_reported_separately"
+            ),
+        },
         "forming_intervention_stopped_before_persistence": True,
         "intervention_state_projections": {
             "baseline": state_projection(model),
@@ -207,9 +330,7 @@ def preparation_pairs(
             "models": (full_activity, full_zero),
             "provenance_class": "complete_native_step_reached_from_synthetic_old_current_input",
             "write_status": "activity_conditioned_joint_C_state_after_transient_J_squared_to_W_stage",
-            "native_activity_write_supported": complete_initial[
-                "joint_block_scaled_l2"
-            ]
+            "native_activity_write_supported": complete_initial["joint_block_scaled_l2"]
             > tolerance,
         },
     ]
@@ -218,17 +339,51 @@ def preparation_pairs(
 
 def persistence_states(
     first: GRC9V3, second: GRC9V3, horizons: list[int]
-) -> dict[int, tuple[GRC9V3, GRC9V3]]:
+) -> tuple[dict[int, tuple[GRC9V3, GRC9V3]], list[dict[str, Any]]]:
     first_live = clone_model(first)
     second_live = clone_model(second)
     records: dict[int, tuple[GRC9V3, GRC9V3]] = {}
+    activity_trace = []
     for horizon in range(max(horizons) + 1):
+        before = [state_projection(first_live), state_projection(second_live)]
         if horizon in horizons:
             records[horizon] = (clone_model(first_live), clone_model(second_live))
         if horizon < max(horizons):
             first_live.step()
             second_live.step()
-    return records
+            after = [state_projection(first_live), state_projection(second_live)]
+            activity_trace.append(
+                {
+                    "transition_from_horizon": horizon,
+                    "transition_to_horizon": horizon + 1,
+                    "J_l2_before": [row["J_l2"] for row in before],
+                    "delta_C_l2": [
+                        float(
+                            np.linalg.norm(
+                                np.asarray(target["C"]) - np.asarray(source["C"])
+                            )
+                        )
+                        for source, target in zip(before, after, strict=True)
+                    ],
+                    "delta_W_l2": [
+                        float(
+                            np.linalg.norm(
+                                np.asarray(target["W"]) - np.asarray(source["W"])
+                            )
+                        )
+                        for source, target in zip(before, after, strict=True)
+                    ],
+                    "delta_J_l2": [
+                        float(
+                            np.linalg.norm(
+                                np.asarray(target["J"]) - np.asarray(source["J"])
+                            )
+                        )
+                        for source, target in zip(before, after, strict=True)
+                    ],
+                }
+            )
+    return records, activity_trace
 
 
 def slow_fast_projection(
@@ -262,12 +417,15 @@ def slow_fast_projection(
         subspace, _ = np.linalg.qr(vectors[:, indices])
         return float(np.linalg.norm(subspace.conj().T @ coordinate))
 
-    slow = [index for index, value in enumerate(values) if abs(value) >= minimum_magnitude]
-    fast = [index for index, value in enumerate(values) if abs(value) < minimum_magnitude]
+    slow = [
+        index for index, value in enumerate(values) if abs(value) >= minimum_magnitude
+    ]
+    fast = [
+        index for index, value in enumerate(values) if abs(value) < minimum_magnitude
+    ]
     clusters = audit["temporal_mode_diagnostics"].get("clusters", [])
     retention_allowed = bool(clusters) and all(
-        cluster.get("retention_interpretation_allowed", False)
-        for cluster in clusters
+        cluster.get("retention_interpretation_allowed", False) for cluster in clusters
     )
     return {
         "status": "descriptive_projection_computed",
@@ -334,7 +492,10 @@ def _probe_amplitudes(
             float(value)
             for value in probe["old_current_probe_signed_exponent_coordinates"]
         ]
-        values = [activity_amplitude_from_target(model, value) if value else 0.0 for value in targets]
+        values = [
+            activity_amplitude_from_target(model, value) if value else 0.0
+            for value in targets
+        ]
         return values, [
             {
                 "signed_input_coordinate": target,
@@ -357,6 +518,13 @@ def probe_matrix(
 ) -> list[dict[str, Any]]:
     matched_first, matched_second = match_C_and_J_preserving_W(first, second)
     tolerance = float(config["matched_probe"]["difference_in_differences_tolerance"])
+    match_receipt = matching_audit(
+        first,
+        second,
+        matched_first,
+        matched_second,
+        tolerance=tolerance,
+    )
     consistency = [
         constitutive_consistency_audit(model, tolerance=tolerance)
         for model in (matched_first, matched_second)
@@ -378,7 +546,10 @@ def probe_matrix(
     rows = []
     for lane in lanes:
         for probe_kind in probe_kinds:
-            if probe_kind == "external_current_like_analytical_probe" and lane != "frozen_W_probe":
+            if (
+                probe_kind == "external_current_like_analytical_probe"
+                and lane != "frozen_W_probe"
+            ):
                 continue
             amplitudes, amplitude_records = _probe_amplitudes(
                 baseline, probe_kind, config
@@ -404,9 +575,7 @@ def probe_matrix(
                     ]
                 ),
             )
-            maximum_effect = max(
-                row["difference_in_differences_l2"] for row in sweep
-            )
+            maximum_effect = max(row["difference_in_differences_l2"] for row in sweep)
             zero = next(row for row in sweep if row["amplitude"] == 0.0)
             effect_resolved = maximum_effect > tolerance
             if not effect_resolved:
@@ -459,6 +628,54 @@ def probe_matrix(
                     + np.asarray(original)
                 )
             )
+            shuffled = shuffle_carrier_pattern(matched_first, matched_second, baseline)
+            if shuffled is None:
+                wrong_location = {
+                    "status": "not_applicable_single_edge_or_invalid_positive_carrier",
+                    "route_selectivity_claim_allowed": False,
+                }
+            else:
+                shuffled_result = difference_in_differences(
+                    shuffled[0],
+                    shuffled[1],
+                    lane=lane,
+                    probe_kind=probe_kind,
+                    amplitude=control_amplitude,
+                )
+                location_delta = float(
+                    np.linalg.norm(
+                        np.asarray(shuffled_result["difference_in_differences"])
+                        - np.asarray(original)
+                    )
+                )
+                wrong_location = {
+                    "status": "executed_multi_edge_carrier_pattern_shift",
+                    "difference_in_differences_l2": shuffled_result[
+                        "difference_in_differences_l2"
+                    ],
+                    "response_pattern_change_l2": location_delta,
+                    "route_selectivity_resolved": location_delta > tolerance,
+                    "route_selectivity_claim_allowed": bool(
+                        effect_resolved
+                        and location_delta > tolerance
+                        and lane != "frozen_W_probe"
+                        and state_class == "constitutively_consistent"
+                    ),
+                }
+            reset_effect = reset_result["difference_in_differences_l2"]
+            equal_effect = equal_result["difference_in_differences_l2"]
+            if not effect_resolved:
+                mediation_class = "no_resolved_interaction"
+            elif reset_effect <= tolerance and equal_effect <= tolerance:
+                mediation_class = (
+                    "W_sufficient_for_observed_lane_interaction"
+                    if swap_error <= tolerance
+                    else "W_reset_sensitive_swap_unresolved"
+                )
+            elif reset_effect < maximum_effect or equal_effect < maximum_effect:
+                mediation_class = "partial_or_mixed_W_and_non_W_mediation"
+            else:
+                mediation_class = "no_identified_W_mediation"
             rows.append(
                 {
                     "lane": lane,
@@ -466,6 +683,7 @@ def probe_matrix(
                     "carrier_pair_provenance": provenance_class,
                     "carrier_pair_state_class": state_class,
                     "constitutive_consistency": consistency,
+                    "matching_intervention_receipt": match_receipt,
                     "sweep": sweep,
                     "signed_sweep_fit": fit,
                     "maximum_difference_in_differences_l2": maximum_effect,
@@ -497,10 +715,157 @@ def probe_matrix(
                         <= tolerance,
                         "carrier_swap_sign_reversal_error_l2": swap_error,
                         "carrier_swap_passed": swap_error <= tolerance,
+                        "wrong_location_or_shuffled_carrier": wrong_location,
+                        "graded_mediation_class": mediation_class,
+                        "W_only_control_scope": (
+                            "cannot_reject_joint_C_W_or_transferred_carrier"
+                        ),
                     },
                 }
             )
     return rows
+
+
+def causal_guard_audit(
+    first: GRC9V3,
+    second: GRC9V3,
+    *,
+    prepared_categorical: list[dict[str, Any]],
+    prepared_event_counts: list[int],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    hardening = config["p5_3_review_hardening"]["causal_guard_contract"]
+    projections = [state_projection(first), state_projection(second)]
+    categorical = [categorical_projection(first), categorical_projection(second)]
+    states = [first.get_state(), second.get_state()]
+    budget_residuals = [
+        abs(row["budget"] - row["budget_target"]) for row in projections
+    ]
+    event_deltas = [
+        len(model.get_state().event_log) - initial
+        for model, initial in zip((first, second), prepared_event_counts, strict=True)
+    ]
+    result = {
+        "positive_C_and_W": all(
+            row["minimum_C"] > 0.0 and row["minimum_W"] > 0.0 for row in projections
+        ),
+        "budget_residuals": budget_residuals,
+        "budget_valid": max(budget_residuals, default=0.0)
+        <= float(hardening["budget_tolerance"]),
+        "topology_unchanged": all(
+            current["topology_nodes"] == prepared["topology_nodes"]
+            and current["topology_edges"] == prepared["topology_edges"]
+            for current, prepared in zip(categorical, prepared_categorical, strict=True)
+        ),
+        "event_count_deltas": event_deltas,
+        "no_new_events": event_deltas == [0, 0],
+        "categorical_stratum_unchanged": all(
+            current == prepared
+            for current, prepared in zip(categorical, prepared_categorical, strict=True)
+        ),
+        "rng_state_pair_equal": projections[0]["rng_state_sha256"]
+        == projections[1]["rng_state_sha256"],
+        "params_identity_pair_equal": projections[0]["params_identity"]
+        == projections[1]["params_identity"],
+        "step_and_time_pair_equal": (
+            states[0].step_index == states[1].step_index
+            and states[0].time == states[1].time
+        ),
+    }
+    result["same_branch_causal_path_clean"] = bool(
+        result["positive_C_and_W"]
+        and result["budget_valid"]
+        and result["topology_unchanged"]
+        and result["no_new_events"]
+        and result["categorical_stratum_unchanged"]
+        and result["rng_state_pair_equal"]
+        and result["params_identity_pair_equal"]
+        and result["step_and_time_pair_equal"]
+    )
+    return result
+
+
+def classify_persistence(
+    *,
+    preparation_id: str,
+    horizon_rows: list[dict[str, Any]],
+    activity_trace: list[dict[str, Any]],
+    config: dict[str, Any],
+) -> dict[str, Any]:
+    tolerance = float(config["persistence"]["absolute_separation_tolerance"])
+    stability_tolerance = float(config["persistence"]["stability_ratio_tolerance"])
+    required_horizon = int(
+        config["persistence"]["required_bounded_persistence_horizon"]
+    )
+    initial = horizon_rows[0]
+    required = next(
+        row for row in horizon_rows if row["horizon_complete_steps"] == required_horizon
+    )
+    ratios = [row["persistence_ratio"] for row in horizon_rows]
+    signed = [
+        row["carrier_alignment"]["signed_projection_on_prepared_pattern"]
+        for row in horizon_rows
+    ]
+    if any(
+        not row["causal_guard_audit"]["same_branch_causal_path_clean"]
+        for row in horizon_rows
+    ):
+        stability_class = "categorical_or_stratum_crossing"
+    elif required["persistence_ratio"] > 1.0 + stability_tolerance:
+        stability_class = "growing_formative_displacement"
+    elif min(signed) < -stability_tolerance:
+        stability_class = "oscillatory_or_sign_reversing"
+    elif required["persistence_ratio"] < 1.0 - stability_tolerance:
+        stability_class = "stable_decaying_or_fast_overwrite"
+    else:
+        stability_class = "neutral_or_marginal_within_declared_ratio_tolerance"
+    maximum_activity = max(
+        (
+            max(row["J_l2_before"], default=0.0)
+            for row in activity_trace[:required_horizon]
+        ),
+        default=0.0,
+    )
+    initial_w = initial["separation"]["block_l2"]["W"]
+    required_w = required["separation"]["block_l2"]["W"]
+    initial_c = initial["separation"]["block_l2"]["C"]
+    required_c = required["separation"]["block_l2"]["C"]
+    if initial_w > tolerance and required_w <= tolerance and required_c > tolerance:
+        carrier_path = "W_overwritten_difference_transferred_into_C"
+    elif initial_w > tolerance and required_w <= tolerance:
+        carrier_path = "W_fast_overwrite_without_resolved_surviving_carrier"
+    elif initial_w <= tolerance and initial_c > tolerance and required_c > tolerance:
+        carrier_path = "post_write_C_dominated_joint_displacement_persists_without_W"
+    elif required_w > tolerance:
+        carrier_path = "W_difference_remains_present"
+    else:
+        carrier_path = "no_resolved_carrier"
+    if required["persistence_ratio"] < float(
+        config["persistence"]["minimum_persistence_ratio"]
+    ):
+        retention_class = "below_bounded_persistence_gate"
+    elif carrier_path == "W_difference_remains_present":
+        retention_class = (
+            "passive_W_candidate"
+            if maximum_activity
+            <= float(config["persistence"]["ongoing_activity_zero_tolerance"])
+            else "activity_maintained_or_regenerated_W_unresolved"
+        )
+    elif "C" in carrier_path:
+        retention_class = "transferred_C_dominated_persistence_candidate"
+    else:
+        retention_class = "no_persistence"
+    return {
+        "preparation_id": preparation_id,
+        "stability_class": stability_class,
+        "carrier_path": carrier_path,
+        "retention_class": retention_class,
+        "required_horizon": required_horizon,
+        "required_horizon_ratio": required["persistence_ratio"],
+        "ratio_range": [min(ratios), max(ratios)],
+        "maximum_activity_J_l2_through_required_horizon": maximum_activity,
+        "instability_is_stable_retention": False,
+    }
 
 
 def branch_result(
@@ -516,13 +881,22 @@ def branch_result(
     pairs, preparation_controls = preparation_pairs(
         baseline, config, base_snapshot_sha256=branch["state_snapshot_sha256"]
     )
-    horizons = [int(value) for value in config["persistence"]["horizons_complete_steps_after_preparation"]]
+    horizons = [
+        int(value)
+        for value in config["persistence"]["horizons_complete_steps_after_preparation"]
+    ]
     replay_horizons = set(int(value) for value in config["replay"]["required_horizons"])
     tolerance = float(config["persistence"]["absolute_separation_tolerance"])
     branch_rows = []
     causal_rows = []
+    grv3_cw_audit = grv3_row["coordinate_stratum_and_jacobian_audits"].get("C_W", {})
+    grv3_causal_status = grv3_cw_audit.get(
+        "square_transition_jacobian_status", "missing"
+    )
     for pair in pairs:
-        states = persistence_states(pair["models"][0], pair["models"][1], horizons)
+        states, activity_trace = persistence_states(
+            pair["models"][0], pair["models"][1], horizons
+        )
         prepared_categorical = [
             categorical_projection(states[0][0]),
             categorical_projection(states[0][1]),
@@ -531,9 +905,7 @@ def branch_result(
             len(states[0][0].get_state().event_log),
             len(states[0][1].get_state().event_log),
         ]
-        initial = pair_separation(
-            states[0][0], states[0][1], branch_scales=scales
-        )
+        initial = pair_separation(states[0][0], states[0][1], branch_scales=scales)
         initial_norm = initial["joint_block_scaled_l2"]
         horizon_rows = []
         read_rows = []
@@ -577,17 +949,31 @@ def branch_result(
                     (first, second), prepared_event_counts, strict=True
                 )
             ]
+            guard = causal_guard_audit(
+                first,
+                second,
+                prepared_categorical=prepared_categorical,
+                prepared_event_counts=prepared_event_counts,
+                config=config,
+            )
+            alignment = carrier_alignment(
+                initial,
+                separation,
+                branch_scales=scales,
+            )
             horizon_rows.append(
                 {
                     "horizon_complete_steps": horizon,
                     "separation": separation,
                     "persistence_ratio": ratio,
                     "slow_fast_projection": projection,
+                    "carrier_alignment": alignment,
                     "replay": replay,
                     "topology_unchanged_from_prepared_state": topology_unchanged,
                     "event_count_deltas_from_prepared_state": event_count_deltas,
                     "same_branch_persistence_path_clean": topology_unchanged
                     and event_count_deltas == [0, 0],
+                    "causal_guard_audit": guard,
                     "state_a": state_projection(first),
                     "state_b": state_projection(second),
                 }
@@ -628,10 +1014,16 @@ def branch_result(
             >= float(config["persistence"]["minimum_persistence_ratio"])
             and required["separation"]["topology_equal"]
             and all(
-                row["same_branch_persistence_path_clean"]
+                row["causal_guard_audit"]["same_branch_causal_path_clean"]
                 for row in horizon_rows
                 if row["horizon_complete_steps"] <= required_horizon
             )
+        )
+        persistence_classification = classify_persistence(
+            preparation_id=pair["preparation_id"],
+            horizon_rows=horizon_rows,
+            activity_trace=activity_trace,
+            config=config,
         )
         native_read = any(
             row["native_mediation_gate_passed"]
@@ -668,8 +1060,25 @@ def branch_result(
             "preparation_id": pair["preparation_id"],
             "preparation_provenance": pair["provenance_class"],
             "write_status": pair["write_status"],
+            "predeclared_carrier_hypothesis": {
+                "P-W-direct-opposite": "H-W",
+                "P-J-activity-stage-vs-zero": "H-W",
+                "P-J-activity-complete-step-vs-zero": "H-transfer",
+            }[pair["preparation_id"]],
+            "carrier_hypothesis_freeze_status": (
+                "revision_distinct_confirmatory_after_preliminary_P5_results_"
+                "cannot_upgrade_existing_rung"
+            ),
+            "GRV3_C_W_causal_status": grv3_causal_status,
+            "GRV3_branch_claim_ceiling": (
+                "causal_state_retention_and_mediation_eligible_if_all_GRV5_gates_pass"
+                if grv3_causal_status == "admitted"
+                else "physical_stage_and_bounded_overwrite_observation_only"
+            ),
             "initial_separation": initial,
             "horizon_rows": horizon_rows,
+            "persistence_activity_trace": activity_trace,
+            "persistence_classification": persistence_classification,
             "matched_probe_rows": read_rows,
             "bounded_persistence_supported": persisted,
             "native_mediation_supported": native_read,
@@ -678,6 +1087,27 @@ def branch_result(
             "local_evidence_ladder_rung": rung,
             "core_readback_supported": False,
             "closed_loop_supported": False,
+            "detection_floor_audit": {
+                "prepared_joint_amplitude": initial_norm,
+                "prepared_W_amplitude": initial["block_l2"]["W"],
+                "required_horizon_joint_amplitude": required["separation"][
+                    "joint_block_scaled_l2"
+                ],
+                "current_response_detection_floor": config["p5_3_review_hardening"][
+                    "detection_contract"
+                ]["current_response_floor"],
+                "carrier_detection_floor": config["p5_3_review_hardening"][
+                    "detection_contract"
+                ]["carrier_floor"],
+                "frozen_W_positive_control_observed": reduced_read,
+                "below_floor_interpretation": config["p5_3_review_hardening"][
+                    "detection_contract"
+                ]["below_floor_result"],
+            },
+            "joint_carrier_probe_scope": (
+                "W_only_matching_not_executed_when_W_erased;_joint_C_W_or_"
+                "transferred_C_candidate_not_rejected_by_W_only_null"
+            ),
         }
         branch_rows.append(row)
         if persisted:
@@ -705,16 +1135,14 @@ def branch_result(
             {
                 "row_id": f"{branch['branch_id']}::{pair['preparation_id']}",
                 "retention_status": (
-                    "bounded_persistence_supported" if persisted else "not_supported"
+                    persistence_classification["retention_class"]
+                    if persisted
+                    else "not_supported"
                 ),
                 "read_effect_status": (
                     "native_mediation_candidate"
                     if native_read
-                    else (
-                        "substrate_reduced_only"
-                        if reduced_read
-                        else "not_supported"
-                    )
+                    else ("substrate_reduced_only" if reduced_read else "not_supported")
                 ),
                 "write_effect_status": pair["write_status"],
                 "closed_loop_status": "not_supported",
@@ -888,6 +1316,518 @@ def intervention_registry(
     }
 
 
+def build_36_point_review_audit(
+    payload: dict[str, Any], config: dict[str, Any]
+) -> dict[str, Any]:
+    rows = payload["candidate_rows"]
+    controls = payload["preparation_controls"]
+    all_probe_rows = [
+        probe
+        for row in rows
+        for horizon in row["matched_probe_rows"]
+        for probe in horizon["rows"]
+    ]
+    ladder_rows = [
+        ladder
+        for control in controls
+        for ladder in control["activity_preparation_amplitude_ladder"]
+    ]
+    native_probe_rows = [
+        row for row in all_probe_rows if row["lane"] != "frozen_W_probe"
+    ]
+    multi_edge_probe_rows = [
+        row
+        for row in all_probe_rows
+        if row["mediation_controls"]["wrong_location_or_shuffled_carrier"]["status"]
+        == "executed_multi_edge_carrier_pattern_shift"
+    ]
+
+    def point(
+        point_id: int,
+        title: str,
+        passed: bool,
+        disposition: str,
+        evidence: list[str],
+        claim_effect: str,
+    ) -> dict[str, Any]:
+        return {
+            "point_id": point_id,
+            "title": title,
+            "mechanical_check_passed": bool(passed),
+            "disposition": disposition,
+            "evidence": evidence,
+            "claim_effect": claim_effect,
+        }
+
+    review_points = [
+        point(
+            1,
+            "carrier_fixed_before_confirmatory_reexecution",
+            all("predeclared_carrier_hypothesis" in row for row in rows),
+            "passed_with_revision_distinct_non_blind_status",
+            [
+                "candidate_rows.*.predeclared_carrier_hypothesis",
+                "preparation_controls.*.carrier_hypotheses_status",
+            ],
+            "P5.3 cannot upgrade the P5.2 rung",
+        ),
+        point(
+            2,
+            "GRV3_branch_classes_separated",
+            all("GRV3_C_W_causal_status" in row for row in rows),
+            "passed",
+            [
+                "candidate_rows.*.GRV3_C_W_causal_status",
+                "candidate_rows.*.GRV3_branch_claim_ceiling",
+            ],
+            "blocked GRV3 rows remain physical/stage observations only",
+        ),
+        point(
+            3,
+            "preparation_end_and_k0_defined",
+            all("activity_stage_boundary_trace" in row for row in controls),
+            "passed",
+            [
+                "preparation_controls.*.activity_stage_boundary_trace",
+                "p5_3_review_hardening.preparation_boundary",
+            ],
+            "k0 alone cannot support persistence",
+        ),
+        point(
+            4,
+            "ongoing_activity_distinguished_from_external_stop",
+            all(
+                "persistence_activity_trace" in row
+                and "persistence_classification" in row
+                for row in rows
+            ),
+            "passed",
+            [
+                "candidate_rows.*.persistence_activity_trace",
+                "candidate_rows.*.persistence_classification",
+            ],
+            "passive, regenerated, transferred, and absent remain distinct",
+        ),
+        point(
+            5,
+            "direct_W_does_not_establish_writeback",
+            all(
+                row["local_evidence_ladder_rung"] == "GRR0"
+                for row in rows
+                if row["preparation_id"] == "P-W-direct-opposite"
+            ),
+            "passed",
+            ["candidate_rows[P-W-direct-opposite]", "causal_role_matrix.json"],
+            "P-W remains synthetic carrier diagnostic",
+        ),
+        point(
+            6,
+            "synthetic_old_current_separated_from_reached_history",
+            payload["summary"]["forming_old_current_input_runtime_reached"] is False,
+            "passed",
+            [
+                "summary.forming_old_current_input_runtime_reached",
+                "preparation_controls.*.activity_input_class",
+            ],
+            "no naturally reached write claim",
+        ),
+        point(
+            7,
+            "direct_and_indirect_write_paths_staged",
+            all("activity_stage_boundary_trace" in row for row in controls),
+            "passed",
+            [
+                "activity_stage_boundary_trace.*.after_first_native_transport_write",
+                "activity_stage_boundary_trace.*.after_continuity_before_budget",
+                "activity_stage_boundary_trace.*.after_complete_preparation_step",
+            ],
+            "stage-local W write and later C consequence remain separate",
+        ),
+        point(
+            8,
+            "J_sign_comparisons_immediate_and_later",
+            all("immediate_and_later_sign_audit" in row for row in controls),
+            "passed",
+            ["preparation_controls.*.immediate_and_later_sign_audit"],
+            "sign-even W does not imply unexamined whole-beat sign retention",
+        ),
+        point(
+            9,
+            "preparation_amplitude_ladder",
+            len(ladder_rows) == 4 * len(controls)
+            and all(
+                row["sign_even_W_error_linf"] <= 1e-10
+                and row["expected_log_W_ratio_error_linf"] <= 1e-10
+                for row in ladder_rows
+            ),
+            "passed_confirmatory_only",
+            ["preparation_controls.*.activity_preparation_amplitude_ladder"],
+            "response shape cannot upgrade the primary rung",
+        ),
+        point(
+            10,
+            "direct_W_metric_symmetry_and_positivity",
+            all(
+                row["direct_W_metric_audit"]["equal_distance_error"] <= 1e-12
+                and row["direct_W_metric_audit"]["positivity_preserved"]
+                for row in controls
+            ),
+            "passed",
+            ["preparation_controls.*.direct_W_metric_audit"],
+            "no asymmetric-floor artifact",
+        ),
+        point(
+            11,
+            "carrier_vectors_and_alignment_recorded",
+            all(
+                "block_vectors" in row["initial_separation"]
+                and all(
+                    "carrier_alignment" in horizon for horizon in row["horizon_rows"]
+                )
+                for row in rows
+            ),
+            "passed",
+            [
+                "candidate_rows.*.initial_separation.block_vectors",
+                "candidate_rows.*.horizon_rows.*.carrier_alignment",
+            ],
+            "norm-only persistence is blocked",
+        ),
+        point(
+            12,
+            "branch_not_refit_during_persistence",
+            config["persistence"]["branch_refit_during_persistence_allowed"] is False,
+            "passed",
+            [
+                "persistence.branch_refit_during_persistence_allowed",
+                "candidate_rows.*.branch_id",
+            ],
+            "all horizons remain relative to the frozen GRV2 branch",
+        ),
+        point(
+            13,
+            "instability_not_called_stable_retention",
+            all(
+                row["persistence_classification"]["instability_is_stable_retention"]
+                is False
+                for row in rows
+            ),
+            "passed",
+            ["candidate_rows.*.persistence_classification.stability_class"],
+            "growing displacement cannot satisfy stable-retention wording",
+        ),
+        point(
+            14,
+            "only_accepted_slow_subspaces_interpreted",
+            all(
+                not row["slow_cluster_retention_interpretation_allowed"] for row in rows
+            ),
+            "passed_no_interpretable_slow_subspace",
+            [
+                "candidate_rows.*.horizon_rows.*.slow_fast_projection",
+                "candidate_rows.*.slow_cluster_retention_interpretation_allowed",
+            ],
+            "GRR3 remains blocked",
+        ),
+        point(
+            15,
+            "deadbeat_W_mediation_kept_distinct",
+            all(row["write_status"] != "retained_W" for row in rows),
+            "passed",
+            [
+                "candidate_rows.*.write_status",
+                "candidate_rows.*.persistence_classification.carrier_path",
+            ],
+            "one-beat W action is not W retention",
+        ),
+        point(
+            16,
+            "fresh_clone_per_horizon_and_probe_cell",
+            config["persistence"]["fresh_unprobed_clone_per_horizon"] is True
+            and config["p5_3_review_hardening"]["probe_contract"][
+                "separate_clone_for_each_cell_and_horizon_required"
+            ]
+            is True,
+            "passed_by_method_and_tests",
+            [
+                "persistence_states",
+                "difference_in_differences",
+                "tests/test_grv5_preparation_persistence.py",
+            ],
+            "probe writes cannot contaminate later horizons",
+        ),
+        point(
+            17,
+            "full_admitted_noncarrier_matching",
+            all(
+                probe["matching_intervention_receipt"]["passed"]
+                for probe in all_probe_rows
+            ),
+            "passed_with_GRV3_C_W_J_and_categorical_scope",
+            ["matched_probe_rows.*.matching_intervention_receipt"],
+            "opaque derived caches are not promoted to independent state",
+        ),
+        point(
+            18,
+            "matching_preserves_authoritative_W",
+            all(
+                probe["matching_intervention_receipt"][
+                    "carrier_difference_preservation_linf"
+                ]
+                <= 1e-10
+                for probe in all_probe_rows
+            ),
+            "passed",
+            [
+                "matching_intervention_receipt.carrier_difference_preservation_linf",
+                "matching_intervention_receipt.source_to_matched_preservation",
+            ],
+            "erased-carrier nulls are blocked",
+        ),
+        point(
+            19,
+            "W_matching_does_not_reject_joint_carrier",
+            all(
+                row["joint_carrier_probe_scope"].startswith("W_only_matching")
+                for row in rows
+            ),
+            "passed",
+            ["candidate_rows.*.joint_carrier_probe_scope"],
+            "joint/transferred persistence remains separate from W sufficiency",
+        ),
+        point(
+            20,
+            "probe_lanes_semantically_separate",
+            {row["lane"] for row in all_probe_rows}.issubset(
+                {
+                    "native_full_step_probe",
+                    "native_immediate_transport_stage_probe",
+                    "frozen_W_probe",
+                }
+            ),
+            "passed",
+            [
+                "matched_probe_rows.*.rows.*.lane",
+                "matched_probe_rows.*.rows.*.substrate_class",
+            ],
+            "frozen-W cannot upgrade native evidence",
+        ),
+        point(
+            21,
+            "present_current_convention_frozen",
+            payload["present_current_convention"][
+                "native_external_present_current_input_available"
+            ]
+            is False,
+            "passed",
+            ["present_current_convention"],
+            "coherence, old-J, and analytical probes retain distinct ceilings",
+        ),
+        point(
+            22,
+            "full_2x2_interaction",
+            all(
+                len(probe["sweep"][0]["cell_receipts"]) == 4 for probe in all_probe_rows
+            ),
+            "passed",
+            ["matched_probe_rows.*.rows.*.sweep.*.cell_receipts"],
+            "baseline geometry is not a read effect",
+        ),
+        point(
+            23,
+            "oriented_interaction_before_norm",
+            all(
+                isinstance(sweep["difference_in_differences"], list)
+                for probe in all_probe_rows
+                for sweep in probe["sweep"]
+            ),
+            "passed",
+            ["matched_probe_rows.*.rows.*.sweep.*.difference_in_differences"],
+            "edge orientation is preserved before scalar summaries",
+        ),
+        point(
+            24,
+            "zero_probe_baseline_classified_separately",
+            all(
+                probe["zero_present_probe_control"][
+                    "baseline_difference_is_read_effect"
+                ]
+                is False
+                for probe in all_probe_rows
+            ),
+            "passed",
+            ["matched_probe_rows.*.rows.*.zero_present_probe_control"],
+            "zero-probe baseline difference is ordinary recurrence",
+        ),
+        point(
+            25,
+            "probe_induced_carrier_write_recorded",
+            all(
+                "carrier_change_during_readout" in cell
+                for probe in all_probe_rows
+                for sweep in probe["sweep"]
+                for cell in sweep["cell_receipts"].values()
+            ),
+            "passed",
+            [
+                "matched_probe_rows.*.rows.*.sweep.*.cell_receipts.*.carrier_change_during_readout"
+            ],
+            "same-beat response and write remain distinguishable",
+        ),
+        point(
+            26,
+            "signed_sweep_and_odd_even_decomposition",
+            all(
+                "odd_even_decomposition" in probe["signed_sweep_fit"]
+                for probe in all_probe_rows
+            ),
+            "passed",
+            ["matched_probe_rows.*.rows.*.signed_sweep_fit"],
+            "linear language remains conditional on fit",
+        ),
+        point(
+            27,
+            "route_selectivity_requires_multi_edge_evidence",
+            len(multi_edge_probe_rows) > 0
+            and all(
+                not probe["mediation_controls"]["wrong_location_or_shuffled_carrier"][
+                    "route_selectivity_claim_allowed"
+                ]
+                for probe in native_probe_rows
+                if probe in multi_edge_probe_rows
+            ),
+            "passed_with_route_claim_blocked",
+            [
+                "matched_probe_rows.*.rows.*.mediation_controls.wrong_location_or_shuffled_carrier"
+            ],
+            "two-node scalar effects cannot establish route selectivity",
+        ),
+        point(
+            28,
+            "graded_mediation_controls",
+            all(
+                "graded_mediation_class" in probe["mediation_controls"]
+                for probe in all_probe_rows
+            ),
+            "passed",
+            ["matched_probe_rows.*.rows.*.mediation_controls"],
+            "reset/swap/equal/shuffle determine mediation class",
+        ),
+        point(
+            29,
+            "controls_modify_authoritative_W_surface",
+            all(
+                all(
+                    audit["surfaces_consistent"]
+                    for audit in row["direct_W_metric_audit"][
+                        "authoritative_surface_consistency"
+                    ]
+                )
+                for row in controls
+            ),
+            "passed",
+            [
+                "direct_W_metric_audit.authoritative_surface_consistency",
+                "grv5_intervention_registry.json",
+            ],
+            "non-authoritative-copy controls cannot pass",
+        ),
+        point(
+            30,
+            "write_occurrence_separate_from_retained_write",
+            all(
+                "write_status" in row and "persistence_classification" in row
+                for row in rows
+            ),
+            "passed",
+            [
+                "candidate_rows.*.write_status",
+                "candidate_rows.*.persistence_classification",
+            ],
+            "instantaneous write does not imply retained write",
+        ),
+        point(
+            31,
+            "closed_loop_requires_linked_chain",
+            payload["summary"]["closed_loop_supported"] is False,
+            "passed_as_blocked",
+            ["causal_role_matrix.json", "summary.closed_loop_supported"],
+            "unrelated positive arrows are not assembled into a loop",
+        ),
+        point(
+            32,
+            "response_and_later_write_use_separate_clones",
+            config["p5_3_review_hardening"]["probe_contract"][
+                "separate_response_and_later_write_clones_required_if_loop_gate_opens"
+            ]
+            is True
+            and payload["summary"]["closed_loop_supported"] is False,
+            "not_applicable_loop_gate_not_opened_policy_frozen",
+            ["p5_3_review_hardening.probe_contract", "summary.closed_loop_supported"],
+            "future loop probes must use independent clones",
+        ),
+        point(
+            33,
+            "detection_floors_and_positive_control",
+            all("detection_floor_audit" in row for row in rows)
+            and payload["summary"]["substrate_reduced_sensitivity_count"] > 0,
+            "passed",
+            [
+                "candidate_rows.*.detection_floor_audit",
+                "summary.substrate_reduced_sensitivity_count",
+            ],
+            "below-floor effects remain unresolved rather than absent",
+        ),
+        point(
+            34,
+            "all_preregistered_horizons_reported",
+            all(
+                [h["horizon_complete_steps"] for h in row["horizon_rows"]]
+                == config["persistence"]["horizons_complete_steps_after_preparation"]
+                for row in rows
+            ),
+            "passed",
+            ["candidate_rows.*.horizon_rows"],
+            "no best-horizon selection",
+        ),
+        point(
+            35,
+            "event_topology_stratum_and_budget_fail_closed",
+            all(
+                "causal_guard_audit" in horizon
+                for row in rows
+                for horizon in row["horizon_rows"]
+            ),
+            "passed_with_crossings_recorded_and_blocking",
+            ["candidate_rows.*.horizon_rows.*.causal_guard_audit"],
+            "unclean paths cannot support same-branch causal persistence",
+        ),
+        point(
+            36,
+            "positive_GRV5_is_not_automatic_core_readback",
+            payload["summary"]["native_readback_supported"] is False
+            and payload["claim_boundary"][
+                "frozen_W_sensitivity_does_not_upgrade_native"
+            ]
+            is True,
+            "passed",
+            ["summary.native_readback_supported", "claim_boundary"],
+            "maximum result remains bounded joint-state persistence without native Read-Back",
+        ),
+    ]
+    return {
+        "gate_id": "GRV5",
+        "audit_id": "P5.3_36_point_causal_identification_hardening",
+        "review_point_count": len(review_points),
+        "all_review_points_mechanically_accounted_for": all(
+            row["mechanical_check_passed"] for row in review_points
+        ),
+        "evidence_upgrade_allowed": False,
+        "branch_scope_or_primary_threshold_changed": False,
+        "review_points": review_points,
+    }
+
+
 def write_report(payload: dict[str, Any]) -> Path:
     summary = payload["summary"]
     report = EXPERIMENT_ROOT / "reports/b1_grv5_retention_read_write_mediation.md"
@@ -906,6 +1846,8 @@ def write_report(payload: dict[str, Any]) -> Path:
         f"native_mediation_count = {summary['native_mediation_count']}",
         f"substrate_reduced_sensitivity_count = {summary['substrate_reduced_sensitivity_count']}",
         f"maximum_local_rung = {summary['maximum_local_evidence_ladder_rung']}",
+        f"review_points_accounted_for = {summary['review_point_count']}/36",
+        f"P5_3_changed_primary_rung = {summary['P5_3_hardening_changed_primary_rung']}",
         "scientific_acceptance = awaiting_human_review",
         "```",
         "",
@@ -920,7 +1862,10 @@ def write_report(payload: dict[str, Any]) -> Path:
         "Direct authored conductance differences are overwritten by reconstruction.",
         "The old-current forming input is synthetic and not claimed runtime-reached;",
         "its large magnitude follows from the frozen `gamma = 1e-12` branch parameter",
-        "and the preregistered 0.01 conductance-attenuation exponent.",
+        "and the preregistered 0.01 amplitude-squared attenuation coordinate.",
+        "On multi-edge fixtures the realized per-edge log-conductance change is",
+        "that coordinate multiplied by the squared canonical edge direction; it",
+        "is not a uniform 0.01 attenuation on every edge.",
         "",
         "Frozen-conductance probes can expose carrier-conditioned transport response,",
         "but that lane is substrate-reduced and its carrier states are synthetic or",
@@ -933,6 +1878,11 @@ def write_report(payload: dict[str, Any]) -> Path:
         "its persistence horizons, and the independent slow-cluster/read gates. It",
         "does not establish core Read-Back, orientation retention, or a closed",
         "read/write loop.",
+        "The persistent F2/F3 displacement is neutral/marginal within the declared",
+        "finite-horizon ratio tolerance and C-dominated after W overwrite. It is",
+        "therefore recorded as bounded transferred joint-state persistence, not",
+        "stable W retention. P5.3 is a revision-distinct confirmatory audit after",
+        "the preliminary P5 results and cannot upgrade the existing GRR2 rung.",
         "",
         "## Causal Boundaries",
         "",
@@ -944,6 +1894,8 @@ def write_report(payload: dict[str, Any]) -> Path:
         "- Frozen-`W` response: reduced diagnostic; cannot upgrade native evidence.",
         "- External-current-like probe: analytical only; no native external-current input exists.",
         "- Canonical interventions: `grv5_intervention_registry.json`.",
+        "- Acceptance hardening: all 36 review points are mapped in",
+        "  `grv5_36_point_review_audit.json`.",
         "",
         "## Provenance",
         "",
@@ -979,9 +1931,7 @@ def run_grv5() -> None:
             branch, grv3_by_id[branch["branch_id"]], config
         )
         branch_rows.extend(rows)
-        preparation_controls.append(
-            {"branch_id": branch["branch_id"], **controls}
-        )
+        preparation_controls.append({"branch_id": branch["branch_id"], **controls})
         causal_rows.extend(roles)
     rung_order = {f"GRR{index}": index for index in range(6)}
     maximum_rung = max(
@@ -1084,10 +2034,26 @@ def run_grv5() -> None:
             "GRV_C5_candidate_pending_human_review": True,
         },
     }
+    review_audit_payload = build_36_point_review_audit(payload, config)
+    if review_audit_payload["review_point_count"] != int(
+        config["p5_3_review_hardening"]["required_review_point_count"]
+    ):
+        raise ValueError("GRV5 36-point review audit is incomplete")
+    if not review_audit_payload["all_review_points_mechanically_accounted_for"]:
+        failed = [
+            row["point_id"]
+            for row in review_audit_payload["review_points"]
+            if not row["mechanical_check_passed"]
+        ]
+        raise ValueError(f"GRV5 review hardening failed points: {failed}")
+    summary["review_point_count"] = review_audit_payload["review_point_count"]
+    summary["all_36_review_points_mechanically_accounted_for"] = True
+    summary["P5_3_hardening_changed_primary_rung"] = False
     output_root = EXPERIMENT_ROOT / "outputs"
     result_path = output_root / "conductance_retention_probe.json"
     causal_path = output_root / "causal_role_matrix.json"
     intervention_path = output_root / "grv5_intervention_registry.json"
+    review_audit_path = output_root / "grv5_36_point_review_audit.json"
     write_json(
         result_path,
         artifact_envelope(
@@ -1126,6 +2092,16 @@ def run_grv5() -> None:
             reproducibility_class="tolerance_reproducible",
         ),
     )
+    review_audit_payload["source_result_payload_sha256"] = semantic_digest(payload)
+    write_json(
+        review_audit_path,
+        artifact_envelope(
+            review_audit_payload,
+            schema_version="b1_grv5_36_point_review_audit_v1",
+            generating_command=COMMAND,
+            reproducibility_class="tolerance_reproducible",
+        ),
+    )
     protected_path = output_root / "protected_path_manifest_v5.json"
     protected = protected_manifest_v5()
     if not protected["payload"]["unchanged_successor"]:
@@ -1136,6 +2112,7 @@ def run_grv5() -> None:
         result_path,
         causal_path,
         intervention_path,
+        review_audit_path,
         protected_path,
         report_path,
     ]

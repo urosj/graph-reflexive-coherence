@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv5_p5_package_manifest_v1",
-  "package_status": "P5_1_complete_step_joint_carrier_hardening_pending_clean_committed_execution",
+  "package_status": "P5_3_36_point_causal_identification_hardening_pending_clean_committed_execution",
   "gate_id": "GRV5",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -43,6 +43,25 @@
     "provenance_gap": "GRV5_specific_canonical_intervention_registry_not_emitted",
     "wording_gap": "synthetic_old_current_amplitude_and_non_native_input_reachability_not_prominent_enough",
     "threshold_or_branch_scope_changed": false,
+    "full_clean_rerun_required": true
+  },
+  "superseded_p5_2_execution": {
+    "input_revision": "319b523fcc5be379f3b80afd38251e62b07e4764",
+    "result_revision": "2d8e2adc9c81bdcdaeec0b3bad1dac2900db8c62",
+    "status": "mechanically_passed_but_not_scientifically_accepted",
+    "scientific_result_retained_for_rerun": "32_nonuniform_complete_step_joint_carriers_reached_GRR2_candidate",
+    "review_gap": "36_point_acceptance_review_found_under_recorded_causal_identification_controls",
+    "hardening_scope": [
+      "preparation_amplitude_response_shape",
+      "stage_boundary_and_sign_path_receipts",
+      "vector_carrier_alignment_and_persistence_classification",
+      "full_matching_and_authoritative_surface_audits",
+      "probe_write_and_odd_even_records",
+      "graded_and_wrong_location_mediation_controls",
+      "detection_floor_and_causal_guard_audits"
+    ],
+    "threshold_or_branch_scope_changed": false,
+    "hardening_may_upgrade_existing_GRR_rung": false,
     "full_clean_rerun_required": true
   },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",

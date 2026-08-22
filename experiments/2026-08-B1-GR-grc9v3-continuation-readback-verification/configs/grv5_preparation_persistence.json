@@ -1,5 +1,5 @@
 {
-  "schema_version": "b1_grv5_preparation_persistence_v1",
+  "schema_version": "b1_grv5_preparation_persistence_v2",
   "gate_id": "GRV5",
   "source_scope": {
     "branch_registry_path": "outputs/fixed_branch_registry.json",
@@ -33,11 +33,17 @@
     "direct_conductance_relative_amplitude": 0.01,
     "activity_write_target_log_conductance_exponent": 0.01,
     "activity_write_amplitude_rule": "sqrt(2*target_exponent/gamma)",
-    "activity_write_realized_log_conductance_effect": "-abs(target_exponent)_because_native_gamma_J_squared_channel_is_attenuating_and_sign_even",
+    "activity_write_realized_log_conductance_effect": "-abs(target_exponent)*canonical_edge_direction_squared_per_edge_because_native_gamma_J_squared_channel_is_attenuating_and_sign_even",
     "activity_zero_control_current": 0.0,
     "canonical_edge_direction": "alternating_sign_by_sorted_edge_index_with_l2_unit_norm",
     "sign_reversal_required": true,
-    "forming_intervention_stops_after_one_complete_step": true
+    "forming_intervention_stops_after_one_complete_step": true,
+    "activity_write_target_exponent_ladder": [0.0005, 0.002, 0.005, 0.01],
+    "activity_ladder_is_confirmatory_after_preliminary_P5_results": true,
+    "activity_ladder_cannot_upgrade_primary_candidate_rung": true,
+    "direct_W_metric": "branch_scaled_additive_W_l2",
+    "direct_W_equal_metric_distance_required": true,
+    "direct_W_positivity_required": true
   },
   "persistence": {
     "horizons_complete_steps_after_preparation": [0, 1, 2, 5, 10, 20, 50, 100],
@@ -48,7 +54,14 @@
     "slow_projection_source": "accepted_GRV3_C_W_temporal_matrix_when_available",
     "slow_multiplier_minimum_magnitude": 0.9,
     "GRR3_requires_GRV3_retention_interpretation_allowed": true,
-    "events_or_topology_change": "record_and_block_same_branch_persistence_row"
+    "events_or_topology_change": "record_and_block_same_branch_persistence_row",
+    "stability_ratio_tolerance": 1e-06,
+    "ongoing_activity_zero_tolerance": 1e-10,
+    "branch_refit_during_persistence_allowed": false,
+    "carrier_vectors_required": true,
+    "carrier_alignment_and_orthogonal_leakage_required": true,
+    "fresh_unprobed_clone_per_horizon": true,
+    "horizon_selection_after_outcomes_allowed": false
   },
   "matched_probe": {
     "pairing_rule": "match_each_carrier_pair_to_componentwise_midpoint_C_and_J_while_preserving_each_W",
@@ -71,7 +84,9 @@
       "equal_carrier_with_reached_C_difference",
       "replay",
       "zero_present_probe",
-      "sign_reversal"
+      "sign_reversal",
+      "authoritative_surface",
+      "wrong_location_when_multi_edge"
     ],
     "GRR4_minimum_state_class": "constitutively_consistent",
     "synthetic_off_manifold_ceiling": "synthetic_counterfactual_carrier_interaction_diagnostic",
@@ -85,6 +100,62 @@
     "required_horizons": [0, 10, 100],
     "physical_projection_tolerance": 1e-12,
     "next_step_projection_tolerance": 1e-12
+  },
+  "p5_3_review_hardening": {
+    "status": "revision_distinct_confirmatory_hardening_after_preliminary_P5_1_and_P5_2",
+    "may_upgrade_existing_GRR_rung": false,
+    "branch_scope_or_primary_threshold_change_allowed": false,
+    "carrier_hypotheses": {
+      "H-W": "W_itself_is_the_candidate_carrier",
+      "H-CW": "predeclared_joint_C_W_coordinate_is_the_candidate_carrier",
+      "H-transfer": "W_is_an_initial_inscription_surface_and_the_surviving_difference_transfers_into_C_or_another_admitted_coordinate",
+      "H-none": "observed_difference_is_immediate_recurrence_or_overwrite_without_retention"
+    },
+    "preparation_boundary": {
+      "k0_definition": "first_recorded_state_after_the_forming_intervention_has_ended",
+      "k1_definition": "one_complete_unchanged_no_further_intervention_step_after_k0",
+      "k0_alone_can_support_persistence": false,
+      "required_stage_records": [
+        "before_preparation",
+        "after_direct_old_current_input",
+        "after_first_native_transport_write",
+        "after_continuity_before_budget",
+        "after_complete_preparation_step",
+        "after_forming_intervention_stopped"
+      ]
+    },
+    "matching_contract": {
+      "target": "W_only_mediation",
+      "accepted_noncarrier_continuous_fields": ["C", "J"],
+      "administrative_and_categorical_fields_must_match": true,
+      "matching_must_preserve_authoritative_W": true,
+      "W_only_null_cannot_reject_joint_C_W_or_transferred_carrier": true,
+      "opaque_derived_caches_are_not_promoted_to_independent_causal_state": true
+    },
+    "probe_contract": {
+      "full_2x2_cells_required": true,
+      "oriented_interaction_before_norm_required": true,
+      "carrier_before_and_after_readout_required": true,
+      "signed_odd_even_decomposition_required": true,
+      "separate_clone_for_each_cell_and_horizon_required": true,
+      "separate_response_and_later_write_clones_required_if_loop_gate_opens": true
+    },
+    "detection_contract": {
+      "current_response_floor": 1e-10,
+      "carrier_floor": 1e-10,
+      "reset_swap_accuracy_floor": 1e-10,
+      "frozen_W_positive_control_required": true,
+      "below_floor_result": "not_resolved_not_proven_absent"
+    },
+    "causal_guard_contract": {
+      "positivity_required": true,
+      "budget_tolerance": 1e-09,
+      "topology_and_event_stasis_required": true,
+      "matched_rng_params_and_environment_required": true,
+      "categorical_stratum_crossing_blocks_same_branch_causal_claim": true
+    },
+    "required_review_point_count": 36,
+    "required_audit_artifact": "outputs/grv5_36_point_review_audit.json"
   },
   "claim_boundary": {
     "maximum_gate_claim": "bounded_retained_geometry_or_joint_retention_candidate",

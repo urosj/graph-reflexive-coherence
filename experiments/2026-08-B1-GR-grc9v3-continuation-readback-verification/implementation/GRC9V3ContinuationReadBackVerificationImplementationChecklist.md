@@ -907,10 +907,54 @@ excluded from the reported run.
 - [x] Classify retention, read effect, write effect, and loop closure separately.
 - [x] Fill the causal possibility matrix.
 - [x] Emit `conductance_retention_probe.json`, `causal_role_matrix.json`,
-  `grv5_intervention_registry.json`, and report.
+  `grv5_intervention_registry.json`, `grv5_36_point_review_audit.json`, and
+  report.
 - [x] Emit and validate the GRV5 result receipt.
 - [ ] Record human acceptance in a separate GRV5 acceptance anchor.
 - [x] Keep core Read-Back blocked unless directional present-current-conditioned read and passive-null gates pass.
+
+### P5.3 36-Point Acceptance Hardening
+
+This is a revision-distinct confirmatory audit after P5.1/P5.2. It may block or
+demote the result, but cannot upgrade the existing rung. The final
+machine-readable dispositions live in `outputs/grv5_36_point_review_audit.json`.
+
+- [ ] 01. Freeze carrier hypotheses without retrospective rung promotion.
+- [ ] 02. Preserve separate GRV3-admitted and GRV3-blocked claim ceilings.
+- [ ] 03. Record preparation boundaries and exact `k=0`/`k=1` semantics.
+- [ ] 04. Measure endogenous activity and classify the persistence path.
+- [ ] 05. Keep direct experiment-authored `W` below write-back.
+- [ ] 06. Separate synthetic old-current input from reached current history.
+- [ ] 07. Stage direct `J^2 -> W` and indirect `J -> C -> W` effects.
+- [ ] 08. Compare `+J/-J` immediately and after the standardized full step.
+- [ ] 09. Run the fixed confirmatory preparation-amplitude ladder.
+- [ ] 10. Audit direct-`W` metric symmetry, positivity, and surfaces.
+- [ ] 11. Record carrier vectors, correlation, projection, and leakage.
+- [ ] 12. Keep the original branch fixed through all horizons.
+- [ ] 13. Separate growing displacement from stable retention.
+- [ ] 14. Use only accepted slow subspaces and allow no interpreted projection.
+- [ ] 15. Preserve transient/deadbeat mediation as its own class.
+- [ ] 16. Use fresh unprobed clones for horizons and `2x2` cells.
+- [ ] 17. Audit full admitted non-carrier and categorical matching.
+- [ ] 18. Prove matching preserves authoritative `W`.
+- [ ] 19. Keep `W`-only nulls from rejecting joint/transferred carriers.
+- [ ] 20. Keep full-step, immediate-stage, and frozen-`W` lanes separate.
+- [ ] 21. Preserve the preregistered present-current convention.
+- [ ] 22. Record the full carrier-by-probe `2x2` cells.
+- [ ] 23. Compute the oriented interaction vector before norms.
+- [ ] 24. Keep zero-probe baseline transport separate from read effect.
+- [ ] 25. Record carrier state before and after each probe readout.
+- [ ] 26. Record signed fits plus odd/even decomposition.
+- [ ] 27. Run wrong-location controls where a multi-edge route exists.
+- [ ] 28. Record graded reset/swap/equal/shuffle mediation.
+- [ ] 29. Verify authoritative and duplicate conductance surfaces.
+- [ ] 30. Separate instantaneous write from retained write.
+- [ ] 31. Require one linked chain before loop closure.
+- [ ] 32. Freeze separate response/later-write clone policy.
+- [ ] 33. Record detection floors and frozen-`W` positive sensitivity.
+- [ ] 34. Report all frozen horizons without post-hoc selection.
+- [ ] 35. Fail closed on event, topology, stratum, budget, RNG, or positivity debt.
+- [ ] 36. Keep core Read-Back below its independent directional gate.
 
 Result:
 

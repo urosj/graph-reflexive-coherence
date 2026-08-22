@@ -834,12 +834,66 @@ arrows.
 12. Assign local `GRR0`-`GRR5` only from satisfied gates.
 13. Fill the causal possibility matrix without requiring all arrows to agree.
 
+### P5.3 Acceptance Hardening
+
+The 36-point causal-identification review is a revision-distinct confirmatory
+pass after the preliminary P5.1/P5.2 results. It may demote or block a result,
+but it may not raise the existing rung merely by adding a better description.
+Branch selection, primary persistence thresholds, and the present-current
+convention remain unchanged.
+
+The clean P5.3 execution must account for every review point separately:
+
+1. freeze `H-W`, `H-CW`, `H-transfer`, and `H-none` carrier hypotheses;
+2. preserve GRV3-admitted and GRV3-blocked branch ceilings separately;
+3. record preparation stages and define `k=0`/`k=1` exactly;
+4. distinguish passive, activity-maintained, regenerated, transferred, and
+   absent persistence;
+5. keep direct `W` preparation below write-back;
+6. separate synthetic old-current input from reached current history;
+7. stage direct `J^2 -> W` and indirect `J -> C -> W` consequences;
+8. compare `+J/-J` both immediately and after the standardized full step;
+9. run a confirmatory preparation-amplitude ladder without adaptive selection;
+10. audit direct-`W` metric symmetry, positivity, and conductance floors;
+11. record signed carrier vectors, alignment, and orthogonal leakage;
+12. keep the original branch fixed throughout persistence;
+13. classify instability separately from stable retention;
+14. interpret only accepted GRV3 slow subspaces and permit no slow projection;
+15. retain the transient/deadbeat mediation category;
+16. use fresh unprobed clones for every horizon and probe cell;
+17. match all GRV3-admitted non-carrier state plus categorical/admin state;
+18. prove that matching preserves authoritative `W`;
+19. state that a `W`-only null cannot reject a joint/transferred carrier;
+20. keep full-step, immediate-stage, and frozen-`W` lanes separate;
+21. retain the preregistered present-current convention;
+22. retain all four carrier-by-probe cells;
+23. compute oriented vector interactions before norms;
+24. classify zero-probe baseline differences separately from read effects;
+25. record carrier state before and after every probe readout;
+26. report signed-sweep fit and odd/even response decomposition;
+27. require multi-edge wrong-location controls for route-selectivity language;
+28. classify reset/swap/equal/shuffle mediation outcomes by degree;
+29. verify that controls update authoritative and duplicate `W` surfaces;
+30. separate write occurrence from retained write;
+31. require one linked branch/clock/carrier chain for loop closure;
+32. require separate response and later-write clones if the loop gate opens;
+33. report detection floors, carrier amplitude, and positive-control sensitivity;
+34. report every frozen horizon without best-horizon selection;
+35. fail closed on positivity, budget, topology, event, RNG, or stratum failure;
+36. keep core Read-Back blocked without its independent directional relation.
+
+The machine-readable audit must record a disposition, evidence location, and
+claim effect for all 36 points. A blocked or out-of-scope point may be complete
+when the corresponding stronger claim is explicitly unavailable; it may not be
+silently marked as positive evidence.
+
 ### Required outputs
 
 ```text
 outputs/conductance_retention_probe.json
 outputs/causal_role_matrix.json
 outputs/grv5_intervention_registry.json
+outputs/grv5_36_point_review_audit.json
 outputs/gates/grv5_result_receipt.json
 outputs/gates/grv5_acceptance_anchor.json
 reports/b1_grv5_retention_read_write_mediation.md

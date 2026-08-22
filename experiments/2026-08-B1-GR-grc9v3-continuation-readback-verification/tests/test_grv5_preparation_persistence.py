@@ -15,15 +15,21 @@ sys.path.insert(0, str(REPO_ROOT / "src"))
 from artifact_io import assert_payload_digest  # noqa: E402
 from grv5_methods import (  # noqa: E402
     activity_amplitude_from_target,
+    activity_write_stage_trace,
     activity_write_stage,
+    canonical_edge_direction,
     coherence_vector,
+    conductance_surface_consistency,
     conductance_vector,
     difference_in_differences,
     direct_conductance_intervention,
     match_C_and_J_preserving_W,
+    matching_audit,
     old_current_intervention,
+    signed_sweep_fit,
 )
 from run_preparation_persistence_probe import (  # noqa: E402
+    build_36_point_review_audit,
     intervention_registry,
     preparation_pairs,
 )
@@ -64,9 +70,7 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
                 "native_external_present_current_input_available"
             ]
         )
-        self.assertFalse(
-            self.config["claim_boundary"]["native_readback_supported"]
-        )
+        self.assertFalse(self.config["claim_boundary"]["native_readback_supported"])
         self.assertFalse(
             self.config["claim_boundary"]["frozen_W_result_can_upgrade_native"]
         )
@@ -84,7 +88,9 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertFalse(np.array_equal(before_w, conductance_vector(changed)))
         self.assertTrue(np.array_equal(before_w, conductance_vector(self.model)))
 
-    def test_activity_write_is_stage_local_sign_even_and_not_complete_step_retained(self) -> None:
+    def test_activity_write_is_stage_local_sign_even_and_not_complete_step_retained(
+        self,
+    ) -> None:
         amplitude = activity_amplitude_from_target(
             self.model,
             self.config["preparation"][
@@ -119,6 +125,70 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
             )
         )
 
+    def test_activity_ladder_has_exact_per_edge_quadratic_shape(self) -> None:
+        direction_squared = np.square(canonical_edge_direction(self.nonuniform_model))
+        for target in self.config["preparation"][
+            "activity_write_target_exponent_ladder"
+        ]:
+            amplitude = activity_amplitude_from_target(self.nonuniform_model, target)
+            positive = activity_write_stage(self.nonuniform_model, amplitude=amplitude)
+            negative = activity_write_stage(self.nonuniform_model, amplitude=-amplitude)
+            zero = activity_write_stage(self.nonuniform_model, amplitude=0.0)
+            observed = np.log(conductance_vector(positive) / conductance_vector(zero))
+            self.assertTrue(
+                np.allclose(observed, -target * direction_squared, atol=1e-12)
+            )
+            self.assertTrue(
+                np.allclose(
+                    conductance_vector(positive),
+                    conductance_vector(negative),
+                    atol=1e-14,
+                )
+            )
+
+    def test_preparation_stage_trace_has_all_frozen_boundaries(self) -> None:
+        amplitude = activity_amplitude_from_target(
+            self.nonuniform_model,
+            self.config["preparation"][
+                "activity_write_target_log_conductance_exponent"
+            ],
+        )
+        trace = activity_write_stage_trace(self.nonuniform_model, amplitude=amplitude)
+        self.assertTrue(
+            set(
+                self.config["p5_3_review_hardening"]["preparation_boundary"][
+                    "required_stage_records"
+                ]
+            ).issubset(trace)
+        )
+        self.assertNotEqual(
+            trace["after_first_native_transport_write"]["W"],
+            trace["before_preparation"]["W"],
+        )
+
+    def test_matching_receipt_preserves_authoritative_W_and_noncarrier_state(
+        self,
+    ) -> None:
+        amplitude = self.config["preparation"]["direct_conductance_relative_amplitude"]
+        first = direct_conductance_intervention(
+            self.nonuniform_model, signed_relative_amplitude=amplitude
+        )
+        second = direct_conductance_intervention(
+            self.nonuniform_model, signed_relative_amplitude=-amplitude
+        )
+        matched = match_C_and_J_preserving_W(first, second)
+        audit = matching_audit(
+            first,
+            second,
+            matched[0],
+            matched[1],
+            tolerance=1e-10,
+        )
+        self.assertTrue(audit["passed"])
+        self.assertTrue(
+            conductance_surface_consistency(matched[0])["surfaces_consistent"]
+        )
+
     def test_matched_pair_preserves_W_but_native_stage_reconstructs_it(self) -> None:
         amplitude = self.config["preparation"]["direct_conductance_relative_amplitude"]
         first = direct_conductance_intervention(
@@ -128,8 +198,12 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
             self.model, signed_relative_amplitude=-amplitude
         )
         first, second = match_C_and_J_preserving_W(first, second)
-        self.assertTrue(np.array_equal(coherence_vector(first), coherence_vector(second)))
-        self.assertFalse(np.array_equal(conductance_vector(first), conductance_vector(second)))
+        self.assertTrue(
+            np.array_equal(coherence_vector(first), coherence_vector(second))
+        )
+        self.assertFalse(
+            np.array_equal(conductance_vector(first), conductance_vector(second))
+        )
         native = difference_in_differences(
             first,
             second,
@@ -147,17 +221,32 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertLessEqual(native["difference_in_differences_l2"], 1e-10)
         self.assertGreater(reduced["difference_in_differences_l2"], 1e-10)
         self.assertEqual("substrate_reduced", reduced["substrate_class"])
+        self.assertEqual(4, len(reduced["cell_receipts"]))
+        fit = signed_sweep_fit(
+            [
+                difference_in_differences(
+                    first,
+                    second,
+                    lane="frozen_W_probe",
+                    probe_kind="coherence_or_potential_probe",
+                    amplitude=value,
+                )
+                for value in (-0.002, -0.001, 0.0, 0.001, 0.002)
+            ],
+            tolerance=0.05,
+        )
+        self.assertEqual(2, len(fit["odd_even_decomposition"]))
 
-    def test_complete_step_activity_lane_keeps_joint_C_consequence_separate_from_W(self) -> None:
+    def test_complete_step_activity_lane_keeps_joint_C_consequence_separate_from_W(
+        self,
+    ) -> None:
         amplitude = activity_amplitude_from_target(
             self.nonuniform_model,
             self.config["preparation"][
                 "activity_write_target_log_conductance_exponent"
             ],
         )
-        activity = old_current_intervention(
-            self.nonuniform_model, amplitude=amplitude
-        )
+        activity = old_current_intervention(self.nonuniform_model, amplitude=amplitude)
         zero = old_current_intervention(self.nonuniform_model, amplitude=0.0)
         activity.step()
         zero.step()
@@ -182,6 +271,12 @@ class GRV5PreparationPersistenceTest(unittest.TestCase):
         self.assertTrue(
             payload["claim_boundary"]["frozen_W_sensitivity_does_not_upgrade_native"]
         )
+        if payload["summary"].get(
+            "all_36_review_points_mechanically_accounted_for", False
+        ):
+            audit = build_36_point_review_audit(payload, self.config)
+            self.assertEqual(36, audit["review_point_count"])
+            self.assertTrue(audit["all_review_points_mechanically_accounted_for"])
 
     def test_grv5_intervention_registry_has_the_canonical_fields(self) -> None:
         _, controls = preparation_pairs(
