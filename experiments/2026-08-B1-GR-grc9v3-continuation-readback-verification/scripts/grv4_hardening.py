@@ -334,7 +334,22 @@ def real_invariant_basis(
     for index, value in enumerate(values):
         if index in consumed or abs(value) < minimum_magnitude:
             continue
-        if abs(value.imag) > complex_tolerance:
+        has_conjugate_partner = any(
+            candidate != index
+            and candidate not in consumed
+            and abs(values[candidate] - value.conjugate()) <= max(
+                complex_tolerance, 10.0 * abs(value.imag)
+            )
+            for candidate in range(len(values))
+        )
+        complex_plane_is_resolved = bool(
+            has_conjugate_partner
+            and (
+                abs(value.imag) > 0.0
+                and float(np.linalg.norm(vectors[:, index].imag)) > complex_tolerance
+            )
+        )
+        if complex_plane_is_resolved:
             partner = min(
                 (
                     candidate
@@ -449,3 +464,16 @@ def conjugacy_error(
 ) -> float:
     inverse = np.linalg.inv(transport)
     return relative_matrix_error(target, transport @ source @ inverse)
+
+
+def conjugacy_errors(
+    source: np.ndarray, target: np.ndarray, transport: np.ndarray
+) -> dict[str, float]:
+    inverse = np.linalg.inv(transport)
+    transformed = transport @ source @ inverse
+    return {
+        "relative": relative_matrix_error(target, transformed),
+        "absolute_linf": float(np.linalg.norm(target - transformed, ord=np.inf)),
+        "source_norm_linf": float(np.linalg.norm(source, ord=np.inf)),
+        "target_norm_linf": float(np.linalg.norm(target, ord=np.inf)),
+    }

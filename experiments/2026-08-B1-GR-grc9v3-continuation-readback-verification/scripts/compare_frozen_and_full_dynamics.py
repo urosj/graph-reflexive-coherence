@@ -30,7 +30,7 @@ from gate_receipts import (
 )
 from grv4_hardening import (
     build_probe_directions,
-    conjugacy_error,
+    conjugacy_errors,
     finite_difference_potential_audit,
     graph_connectivity,
     metric_subspace_comparison,
@@ -725,6 +725,9 @@ def _symmetry_audit(
     branch_rows: list[dict[str, Any]],
     grv3_symmetry: dict[str, Any],
     tolerance: float,
+    *,
+    near_zero_threshold: float,
+    near_zero_absolute_max: float,
 ) -> dict[str, Any]:
     by_id = {row["branch_id"]: row for row in branch_rows}
     pair_rows = []
@@ -735,17 +738,17 @@ def _symmetry_audit(
         target = by_id[source_pair["target_branch_id"]]
         transport = np.asarray(source_pair["coordinate_transport"], dtype=float)
         errors = {
-            "H_cont_matrix_conjugacy_error": conjugacy_error(
+            "H_cont": conjugacy_errors(
                 np.asarray(source["H_cont_tangent"], dtype=float),
                 np.asarray(target["H_cont_tangent"], dtype=float),
                 transport,
             ),
-            "mobility_matrix_conjugacy_error": conjugacy_error(
+            "mobility": conjugacy_errors(
                 np.asarray(source["fixed_W_mobility"], dtype=float),
                 np.asarray(target["fixed_W_mobility"], dtype=float),
                 transport,
             ),
-            "frozen_multiplier_matrix_conjugacy_error": conjugacy_error(
+            "frozen_multiplier": conjugacy_errors(
                 np.asarray(source["frozen_explicit_multiplier"], dtype=float),
                 np.asarray(target["frozen_explicit_multiplier"], dtype=float),
                 transport,
@@ -754,15 +757,34 @@ def _symmetry_audit(
         source_primary = source["primary_C_full_recurrence_comparison"]
         target_primary = target["primary_C_full_recurrence_comparison"]
         if source_primary["status"] == "compared" and target_primary["status"] == "compared":
-            errors["full_C_matrix_conjugacy_error"] = conjugacy_error(
+            errors["full_C"] = conjugacy_errors(
                 np.asarray(source_primary["full_transition_matrix"], dtype=float),
                 np.asarray(target_primary["full_transition_matrix"], dtype=float),
                 transport,
             )
         else:
-            errors["full_C_matrix_conjugacy_error"] = None
-        numerical_errors = [value for value in errors.values() if value is not None]
-        passed = all(value <= tolerance for value in numerical_errors)
+            errors["full_C"] = None
+        component_pass = {}
+        for component, error in errors.items():
+            if error is None:
+                component_pass[component] = True
+                continue
+            near_zero = max(
+                error["source_norm_linf"], error["target_norm_linf"]
+            ) <= near_zero_threshold
+            component_pass[component] = bool(
+                error["relative"] <= tolerance
+                or (
+                    near_zero
+                    and error["absolute_linf"] <= near_zero_absolute_max
+                )
+            )
+            error["near_zero_absolute_policy_applied"] = near_zero
+            error["relative_maximum_allowed"] = tolerance
+            error["absolute_linf_maximum_allowed_when_near_zero"] = (
+                near_zero_absolute_max
+            )
+        passed = all(component_pass.values())
         pair_rows.append(
             {
                 "symmetry_orbit_id": source_pair["orbit_id"],
@@ -770,6 +792,7 @@ def _symmetry_audit(
                 "target_branch_id": source_pair["target_branch_id"],
                 "coordinate_transport": source_pair["coordinate_transport"],
                 "matrix_conjugacy_errors": errors,
+                "component_pass": component_pass,
                 "maximum_allowed": tolerance,
                 "passed": passed,
             }
@@ -1063,6 +1086,10 @@ def run_grv4() -> None:
         branch_rows,
         grv3["symmetry_covariance_audit"],
         float(policy["symmetry_matrix_conjugacy_error_max"]),
+        near_zero_threshold=float(config["hardening"]["h_p_near_zero_norm_threshold"]),
+        near_zero_absolute_max=float(
+            config["hardening"]["h_p_finite_difference_absolute_linf_error_max"]
+        ),
     )
     sign_tolerance = float(config["sign_audit"]["functional_delta_tolerance"])
     minimum_delta = min(

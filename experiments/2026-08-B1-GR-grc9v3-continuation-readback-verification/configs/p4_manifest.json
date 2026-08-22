@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv4_p4_package_manifest_v2_p4_1",
-  "package_status": "P4_1_hardening_method_pending_clean_committed_execution",
+  "package_status": "P4_1a_representation_correction_pending_clean_committed_execution",
   "gate_id": "GRV4",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -35,6 +35,17 @@
     "status": "useful_unaccepted_preliminary_evidence",
     "supersession_rule": "P4_1_requires_full_rerun_and_new_receipt_before_GRV4_can_be_reviewed",
     "GRV4_acceptance_anchor_exists": false
+  },
+  "failed_closed_execution": {
+    "input_revision": "69382c8",
+    "output_receipt_emitted": false,
+    "cause": [
+      "relative_matrix_conjugacy_was_ill_conditioned_for_near_zero_H_cont",
+      "near_real_complex_pair_was_not_preserved_as_two_dimensional_real_invariant_plane"
+    ],
+    "correction_scope": "representation_and_near_zero_normalization_only",
+    "branch_scope_or_scientific_threshold_changed": false,
+    "full_clean_rerun_required": true
   },
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV4",
   "claim_ceiling": "substrate_reduced_frozen_W_comparator_and_bounded_relation_to_admitted_full_recurrence"

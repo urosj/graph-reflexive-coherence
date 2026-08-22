@@ -770,8 +770,12 @@ the full core continuation operator.
 - [x] Add finite-difference, residual, conditioning, cluster, and unit-circle uncertainty records.
 - [x] Replace spectrum-only symmetry checks with matrix-level conjugacy checks.
 - [x] Preserve first-order-local, nonlinear-`J^2`, and no-retention boundaries.
-- [ ] Commit the complete P4.1 method revision.
-- [ ] Execute P4.1 from that clean committed revision.
+- [x] Commit the complete P4.1 method revision at `69382c8`.
+- [x] Execute P4.1 from that clean committed revision and fail closed before artifact emission.
+- [x] Record the near-zero relative-conjugacy and near-real invariant-plane representation defects.
+- [x] Correct those representations without changing branch scope or scientific thresholds.
+- [ ] Commit the P4.1a representation correction.
+- [ ] Execute P4.1a from that clean committed revision.
 - [ ] Verify all mechanical controls and inspect every branch-level classification.
 - [ ] Emit a superseding GRV4 result receipt pending human scientific review.
 - [ ] Emit a GRV4 acceptance anchor only after that review.

@@ -20,6 +20,7 @@ from compare_frozen_and_full_dynamics import (  # noqa: E402
     sign_audit_rows,
 )
 from pygrc.models import GRC9V3  # noqa: E402
+from grv4_hardening import conjugacy_errors, real_invariant_basis  # noqa: E402
 
 
 class GRV4FrozenFullTest(unittest.TestCase):
@@ -171,6 +172,26 @@ class GRV4FrozenFullTest(unittest.TestCase):
         self.assertEqual("H_cont=-H_P", structural["restoring_sign_relation"])
         self.assertIn("mode_mapping_rule", structural)
         self.assertIn("projector_mapping_rule", structural)
+
+    def test_near_real_conjugate_pair_remains_a_real_invariant_plane(self) -> None:
+        matrix = np.asarray(
+            [[1.0, 1.57009415e-12], [-9.06511601e-13, 1.0]], dtype=float
+        )
+        basis, records = real_invariant_basis(
+            matrix, minimum_magnitude=0.9, complex_tolerance=1e-10
+        )
+        self.assertEqual(2, basis.shape[1])
+        self.assertEqual(
+            "complex_conjugate_real_invariant_plane", records[0]["kind"]
+        )
+
+    def test_near_zero_conjugacy_retains_absolute_error(self) -> None:
+        source = np.asarray([[2e-11, 0.0], [0.0, -2e-11]])
+        transport = np.asarray([[0.0, -1.0], [1.0, 0.0]])
+        target = transport @ source @ np.linalg.inv(transport) + 1e-12 * np.eye(2)
+        errors = conjugacy_errors(source, target, transport)
+        self.assertGreater(errors["relative"], 1e-6)
+        self.assertLessEqual(errors["absolute_linf"], 1e-8)
 
 
 if __name__ == "__main__":

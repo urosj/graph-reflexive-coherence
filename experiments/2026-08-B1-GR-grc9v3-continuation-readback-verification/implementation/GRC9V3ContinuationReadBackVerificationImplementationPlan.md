@@ -755,6 +755,15 @@ or a full core continuation operator claim.
 | 29 | Keep the gate first-order local; finite-amplitude `J^2 -> W` effects remain open. |
 | 30 | Open no preparation, persistence, retention, mediation, read-back, or write-back claim. |
 
+The first clean hardening execution from revision `69382c8` failed closed
+before artifact emission. Two representation defects were identified: relative
+matrix-conjugacy error was ill-conditioned for near-zero `H_cont`, and a
+near-real conjugate pair was collapsed to one real direction instead of kept as
+a two-dimensional real invariant plane. P4.1a reuses the already frozen
+near-zero absolute Hessian criterion and preserves resolved conjugate planes.
+It changes neither branch scope nor scientific thresholds and requires another
+clean committed full rerun.
+
 ### Required outputs
 
 ```text

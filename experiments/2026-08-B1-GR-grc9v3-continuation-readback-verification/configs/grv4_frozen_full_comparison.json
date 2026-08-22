@@ -6,6 +6,14 @@
     "acceptance_anchor_created": false,
     "scientific_values_may_be_reused_without_rerun": false
   },
+  "p4_1_failed_closed_correction": {
+    "failed_input_revision": "69382c8",
+    "result_artifact_emitted": false,
+    "near_zero_symmetry_policy": "reuse_preregistered_H_P_near_zero_absolute_gate",
+    "near_real_complex_pair_policy": "preserve_as_real_invariant_plane_when_conjugate_pair_and_imaginary_vector_span_are_resolved",
+    "thresholds_changed": false,
+    "branch_scope_changed": false
+  },
   "prerequisite": {
     "gate_id": "GRV3",
     "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
