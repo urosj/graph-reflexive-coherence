@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_P6_1_preacceptance_36_point_hardening_pending_clean_execution
+status = grv6_P6_1_mechanically_passed_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -289,7 +289,8 @@ The experiment owner accepted that bounded result in
 `outputs/gates/grv5_acceptance_anchor.json`. This authorized GRV6 but did not
 assign `GRV-C5`, which also requires accepted GRV6 and GRV7 threshold evidence.
 
-GRV6 has now executed mechanically from clean revision `69f1a11`. All 48
+The preliminary GRV6 result executed mechanically from clean revision
+`69f1a11`. All 48
 certified branches receive exact-zero and signed finite-current controls; all
 16 triangle branches receive both orientations of a certified divergence-free
 cycle seed. None of the 32 cycle seeds persists after native potential-flow
@@ -306,7 +307,7 @@ orbit evidence. No primitive causal-state orbit, physical-only return,
 hybrid/categorical return, or ordinary Floquet spectrum is admitted. This is a
 bounded negative recurrence result, not a global nonexistence result.
 
-The preliminary GRV6 result receipt is `2d266835...` and remains unaccepted. A
+Its result receipt is `2d266835...` and remains superseded for acceptance. A
 subsequent 36-point review preserved its bounded orbit-search accounting but
 required stronger current-control evidence before acceptance. P6.1 now freezes
 projector condition records, full cycle-seed certification, divergence and
@@ -318,10 +319,20 @@ Orbit-only requirements such as full phase/symmetry deduplication,
 relative-periodic classification, cycle-averaged pumping, per-phase codec
 revalidation, dependency resets, fresh-process candidate replay, and extended
 Floquet controls were not executed because no orbit was admitted. They remain
-explicit positive-candidate gates rather than being marked passed. The P6.1
-clean rerun is pending; no GRV6 acceptance anchor exists, `GRV-C5` is not
-assigned, and GRV7 remains blocked. Active circulation, Read-Back, write-back,
-and self-sustaining identity remain unopened.
+explicit positive-candidate gates rather than being marked passed.
+
+The superseding P6.1 execution completed from clean method revision `50aa178`.
+Its scientific counts are unchanged from the preliminary result, while the
+stronger current controls add 256 signed amplitude-ladder rows, 16 exact native
+stage-trace pairs, scale-aware full seed certification, and explicit symmetric
+versus nonsymmetric exact-zero classification. The external-review audit
+accounts for all 36 points with 20 direct passes, 14 positive-orbit-conditional
+gates, one bounded-scope disposition, one current-pass/orbit-conditional
+disposition, and zero current-result acceptance blockers. Its receipt is
+`f9c89506...` and remains `awaiting_scientific_review`; no GRV6 acceptance
+anchor exists, `GRV-C5` is not assigned, and GRV7 remains blocked. Active
+circulation, Read-Back, write-back, and self-sustaining identity remain
+unopened.
 
 ## Central Question
 

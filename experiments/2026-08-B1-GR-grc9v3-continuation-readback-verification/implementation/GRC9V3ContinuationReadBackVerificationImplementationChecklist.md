@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_P6_1_preacceptance_36_point_hardening_pending_clean_execution
+status = grv6_P6_1_mechanically_passed_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV6_P6_1_clean_execution_pending
+current_gate = GRV6_P6_1_scientific_review_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_blocked_pending_GRV6_acceptance_and_GRV7
@@ -1324,12 +1324,69 @@ blocked until a separate GRV6 acceptance anchor is committed.
 - [x] Freeze absolute-plus-relative divergence and cycle-membership tolerances
   for high-amplitude synthetic seeds, recording both residual scales and the
   effective per-seed bounds.
-- [ ] Commit the P6.1 method revision and rerun GRV6 from that clean revision.
-- [ ] Verify all 36 review points are accounted for with zero current-result
+- [x] Commit the P6.1 method revision and rerun GRV6 from that clean revision.
+- [x] Verify all 36 review points are accounted for with zero current-result
   acceptance blockers.
 - [ ] Commit the superseding P6.1 result receipt and artifacts for human review.
 - [ ] Emit a GRV6 acceptance anchor only after human review of the superseding
   result.
+
+Superseding P6.1 result awaiting human scientific review:
+
+```text
+input_execution_revision = 50aa178cc4793e19cf60d899ac924484c33b8ea4
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+current_control_branch_count = 48
+cycle_control_branch_count = 16
+cycle_seed_row_count = 32
+cycle_seed_persistence_count = 0
+maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+symmetric_exact_zero_control_count = 16
+nonsymmetric_zero_input_control_count = 32
+finite_activity_amplitude_ladder_row_count = 192
+cycle_activity_amplitude_ladder_row_count = 64
+all_activity_ladder_seeds_certified = true
+all_activity_response_shape_controls_passed = true
+activity_ladder_constraint_supported_row_count = 0
+cycle_seed_stage_trace_pair_count = 16
+all_cycle_seed_stage_traces_match_complete_step = true
+all_cycle_orientations_overwritten_at_first_transport = true
+periods = [2, 3, 4, 5, 6, 8]
+orbit_search_row_count = 1536
+converged_search_candidate_count = 671
+proper_divisor_rejected_count = 670
+converged_but_not_return_count = 1
+return_jacobian_ill_conditioned_no_regularization_count = 865
+primitive_return_orbit_count = 0
+relative_periodic_orbit_search_executed = false
+recurrence_evidence_opened = false
+GRV_C5_assigned = false
+external_review_point_count = 36
+external_review_direct_pass_count = 20
+external_review_positive_orbit_conditional_count = 14
+external_review_bounded_scope_count = 1
+external_review_mixed_current_pass_orbit_conditional_count = 1
+external_review_acceptance_blocker_count = 0
+return_orbit_registry_payload_sha256 = cd8eb857a28999e8000330656637f1e46397b6aa5416afbcb64f0a63dcaf58ff
+contract_audit_payload_sha256 = 3c95381e039e4c7fe35bca4c1ed859429e5540a9a2d720fd77ed612b0f849072
+review_36_point_audit_payload_sha256 = df1f4a4eedac863cdab227db4562ac00ce68341292fab4b5284f8e248614448a
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = f9c8950628d7e68e4d01192f1596a1a5d45d7f90849d894478941b1165eeec46
+B1_GR_tests = 81_passed
+ruff = passed
+src_files_changed_by_GRV6 = 0
+```
+
+The P6.1 hardening changes evidence resolution, not the scientific outcome.
+The cycle-current controls now show across four synthetic structural-activity
+levels that old cycle orientation is consumed by the sign-even conductance
+write and erased at the first native transport reconstruction. Those seeds are
+experiment-authored structural probes, not runtime-reached currents. The orbit
+search remains bounded: 865 condition-blocked rows are unresolved, and relative
+periodic orbits were not searched. The result is ready for human acceptance as
+a bounded cycle-current overwrite and no-admitted-exact-return result, not as a
+global recurrence nonexistence claim.
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 

@@ -9,6 +9,10 @@ cycle_control_branch_count = 16
 cycle_seed_row_count = 32
 cycle_seed_persistence_count = 0
 maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+symmetric_exact_zero_control_count = 16
+finite_activity_amplitude_ladder_row_count = 192
+cycle_activity_amplitude_ladder_row_count = 64
+cycle_seed_stage_trace_pair_count = 16
 orbit_search_row_count = 1536
 converged_search_candidate_count = 671
 return_jacobian_ill_conditioned_count = 865
@@ -38,6 +42,18 @@ zero on symmetric homogeneous branches; a nonuniform coherence profile may
 reconstruct a nonzero potential current without constituting spontaneous
 symmetry breaking. Positive and negative old-current seeds test orientation
 retention, while their matched squared write tests sign-even preparation.
+The hardening matrix separately certifies 16 genuinely symmetric F1
+exact-zero states and classifies nonsymmetric zero-input rows without
+calling their bounded reconstructed potential-flow residual spontaneous
+orientation selection.
+
+Four preregistered activity levels are run in both signs for every branch
+and for every cycle-capable branch. The stage-local conductance response
+matches the native quadratic old-current law, no ladder row requires budget
+projection, a conductance floor, an event, or topology change, and all 16
+cycle branches have public-method traces through every current-reading or
+current-overwriting stage. Those traces match the complete native step and
+locate orientation erasure at the first transport reconstruction.
 
 ## Return-Orbit Search
 
@@ -51,7 +67,7 @@ returns have dedicated non-Floquet classifications.
 
 Of the 1536 rows, 671 converge under the declared unregularized residual method. 670 are fixed points or lower-period closures and 1 fails the declared return tolerance. The remaining 865 rows are blocked by an ill-conditioned return Jacobian under the no-silent-regularization rule; they remain unresolved rather than counting as negative orbit evidence.
 
-No primitive period-two-or-higher full causal-state return survives the proper-divisor and categorical gates in this bounded search. This is a search-envelope result, not a proof that recurrent orbits do not exist.
+No primitive period-two-or-higher full causal-state return is admitted among the resolved candidates in this bounded search. This is a search-envelope result, not a proof that recurrent orbits, including relative periodic orbits not searched here, do not exist.
 
 ## Claim Boundary
 
@@ -62,7 +78,7 @@ is not Read-Back, memory, or self-sustaining identity. GRV6 cannot assign
 
 ## Provenance
 
-- Input execution revision: `69f1a11633a47bf7dc972f94bdd0c53aff6b15cb`
+- Input execution revision: `50aa178cc4793e19cf60d899ac924484c33b8ea4`
 - GRV5 receipt: `a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35`
 - GRV5 acceptance commit: `948db9b37069bc2a972f4bc2471287fa7140f677`
 - Runtime source/spec/test paths: unchanged under `protected_path_manifest_v6.json`

@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV6",
+    "reproducibility_class": "tolerance_reproducible"
+  },
+  "payload": {
+    "acceptance_blocker_count": 0,
+    "all_current_result_acceptance_requirements_satisfied": true,
+    "all_review_points_accounted_for": true,
+    "audit_id": "grv6_external_36_point_review_audit_v1",
+    "conditional_positive_orbit_gate_count": 14,
+    "gate_id": "GRV6",
+    "interpretation": "conditional orbit-only controls are not treated as executed; they remain mandatory before any future positive orbit candidate can be accepted",
+    "review_point_count": 36,
+    "review_points": [
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "accepted anchor consumed",
+        "point_id": "accepted_GRV5_prerequisite",
+        "point_index": 1
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "separate summaries and claims",
+        "point_id": "cycle_and_orbit_tests_independent",
+        "point_index": 2
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "rank condition and projector diagnostics per branch",
+        "point_id": "primary_cycle_metric_validated",
+        "point_index": 3
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "phase-local metric frozen; no orbit admitted",
+        "point_id": "varying_W_orbit_metric_policy",
+        "point_index": 4
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "absolute divergence and fixed/phase-local projections recorded",
+        "point_id": "divergence_and_cycle_projection_separate",
+        "point_index": 5
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "full seed certification object per sign and ladder row",
+        "point_id": "cycle_seed_certified_before_runtime",
+        "point_index": 6
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "public native stage trace with complete-step parity",
+        "point_id": "cycle_seed_stage_trace",
+        "point_index": 7
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "cycle_average_transport_classification",
+        "point_index": 8
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "closure mobility conservation and no constraint support recorded",
+        "point_id": "T_A05_assumption_envelope",
+        "point_index": 9
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "four preregistered activity levels with sign and quadratic controls",
+        "point_id": "seed_amplitude_ladders",
+        "point_index": 10
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "all injected seeds explicitly experiment-authored and not runtime-reached",
+        "point_id": "synthetic_seed_provenance",
+        "point_index": 11
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "F1 symmetry certified separately from nonsymmetric zero-input rows",
+        "point_id": "genuine_exact_zero_symmetry",
+        "point_index": 12
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "administrative_phase_independence",
+        "point_index": 13
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "full symmetry quotient remains a positive-candidate gate",
+        "point_id": "orbit_symmetry_phase_deduplication",
+        "point_index": 14
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "bounded_scope_recorded",
+        "evidence": "not searched and not excluded",
+        "point_id": "relative_periodic_orbit_classification",
+        "point_index": 15
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "minimal_period_per_state_block",
+        "point_index": 16
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "periodic_output_vs_current_state",
+        "point_index": 17
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "phase_point_current_reset_controls",
+        "point_index": 18
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "net_transport_over_cycle",
+        "point_index": 19
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "C W J and categorical replay with every proper divisor",
+        "point_id": "complete_native_map_and_proper_divisors",
+        "point_index": 20
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive orbit admission",
+        "point_id": "codec_revalidation_along_orbit",
+        "point_index": 21
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "branch-relative C W chart with source J reconstruction and full-state evaluation",
+        "point_id": "canonical_search_state",
+        "point_index": 22
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "all seeds roots statuses recorded; confirmation not applicable",
+        "point_id": "search_freeze_and_confirmation",
+        "point_index": 23
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "no period-doubling claim made",
+        "point_id": "period_doubling_provenance",
+        "point_index": 24
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "classification frozen for any future candidate",
+        "point_id": "synchronous_update_orbit_class",
+        "point_index": 25
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed_for_current_controls_orbit_conditional",
+        "evidence": "cycle seeds traced through native stages; orbit-phase trace deferred",
+        "point_id": "internal_stage_periodicity",
+        "point_index": 26
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "budget floor event and topology support recorded; none active",
+        "point_id": "constraint_supported_recurrence",
+        "point_index": 27
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "categorical return classes frozen and controls clean",
+        "point_id": "eventful_or_topology_return_boundary",
+        "point_index": 28
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "ordinary Floquet blocked without admitted orbit and stratum",
+        "point_id": "phase_local_floquet_map",
+        "point_index": 29
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "budget direction quotient frozen; no Floquet spectrum",
+        "point_id": "no_discrete_phase_multiplier_assumption",
+        "point_index": 30
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive Floquet classification",
+        "point_id": "nonnormal_and_uncertainty_controls",
+        "point_index": 31
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "not_applicable_no_admitted_return_orbit_future_positive_gate",
+        "evidence": "required before positive complex Floquet classification",
+        "point_id": "complex_pairs_as_real_planes",
+        "point_index": 32
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "no quasi-periodic or visual recurrence claim",
+        "point_id": "long_recurrence_claim_boundary",
+        "point_index": 33
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "C W J categorical divergence and cycle surfaces kept distinct",
+        "point_id": "field_current_full_equivalence_separated",
+        "point_index": 34
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "readback memory and writeback flags remain false",
+        "point_id": "GRV5_persistence_not_relabelled_memory",
+        "point_index": 35
+      },
+      {
+        "acceptance_requirement_satisfied": true,
+        "disposition": "passed",
+        "evidence": "resolved and condition-blocked statuses separated; global and relative absence blocked",
+        "point_id": "bounded_negative_result",
+        "point_index": 36
+      }
+    ],
+    "source_result_payload_sha256": "cd8eb857a28999e8000330656637f1e46397b6aa5416afbcb64f0a63dcaf58ff"
+  },
+  "payload_sha256": "df1f4a4eedac863cdab227db4562ac00ce68341292fab4b5284f8e248614448a",
+  "schema_version": "b1_grv6_36_point_review_audit_v1"
+}
