@@ -839,6 +839,7 @@ arrows.
 ```text
 outputs/conductance_retention_probe.json
 outputs/causal_role_matrix.json
+outputs/grv5_intervention_registry.json
 outputs/gates/grv5_result_receipt.json
 outputs/gates/grv5_acceptance_anchor.json
 reports/b1_grv5_retention_read_write_mediation.md

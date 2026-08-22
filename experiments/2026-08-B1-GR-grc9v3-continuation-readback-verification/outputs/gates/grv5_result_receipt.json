@@ -1,0 +1,56 @@
+{
+  "blocked_gates": [
+    "GRV6",
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "bounded_synthetic_old_current_conditioned_joint_state_persistence_without_isolated_slow_cluster_or_native_readback_pending_human_review",
+  "gate_id": "GRV5",
+  "grv5_summary": {
+    "activity_complete_step_joint_write_count": 32,
+    "activity_stage_write_count": 48,
+    "all_branch_preparation_horizon_matrix_complete": true,
+    "bounded_persistence_count": 32,
+    "branch_count": 48,
+    "closed_loop_supported": false,
+    "forming_old_current_amplitude_range": [
+      141421.35623730952,
+      141421.35623730952
+    ],
+    "forming_old_current_input_runtime_reached": false,
+    "grv_c5_candidate_pending_human_review": true,
+    "maximum_local_evidence_ladder_rung": "GRR2",
+    "mechanical_status": "passed",
+    "native_mediation_count": 0,
+    "native_readback_supported": false,
+    "preparation_candidate_row_count": 144,
+    "required_replays_passed": true,
+    "retention_supported": true,
+    "sign_reversal_controls_passed": true,
+    "substrate_reduced_sensitivity_count": 96,
+    "writeback_supported": false
+  },
+  "input_execution_revision": "319b523fcc5be379f3b80afd38251e62b07e4764",
+  "input_experiment_tree_sha256": "2358c784745b573d90411fa643050f466b59667007cf9b381697e1325b381b9b",
+  "output_artifact_digests": {
+    "outputs/causal_role_matrix.json": "8366f1de013217125e329c8a1f5f79ecb6137476020e39c23ae770d4d145f134",
+    "outputs/conductance_retention_probe.json": "c8cf4c908ce1edbbafb8a68da49b67a038791efb36150b0e8c84fa4c64027ec4",
+    "outputs/grv5_intervention_registry.json": "0c1b66516f5f1507d08bb57b333f9de5bffe65f0378305de538556463d032c20",
+    "outputs/protected_path_manifest_v5.json": "9aa934e56f9f06171bd8ebcb1f172c7d9404fac4e0daf4127f6d73042c33aa34",
+    "reports/b1_grv5_retention_read_write_mediation.md": "9df60e02a3fff22f262aff6401ed73442ed1944c3328a6ae41c3cadb5f56feb3"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+      "gate_id": "GRV4",
+      "immutable_ref": "git:53838f31c512fc8dd01bde8e99f34ceef7885f03"
+    }
+  ],
+  "prerequisite_acceptance_status": "accepted",
+  "prerequisite_result_receipt_digests": [
+    "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10"
+  ],
+  "receipt_payload_sha256": "5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}

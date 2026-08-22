@@ -872,40 +872,112 @@ excluded from the reported run.
 
 ## Iteration 6 - GRV5 Preparation, Persistence, And Matched-Probe Mediation
 
-- [ ] Record `A-BRANCH`, `A-CLOCK`, `A-PASSIVE`, `A-REACHABLE`, and `A-STATE-CLOSURE` statuses.
-- [ ] Consume the preregistered present-current convention without outcome-driven redefinition.
-- [ ] Run direct-conductance preparation.
-- [ ] Run activity-mediated preparation.
-- [ ] Run sign-reversal preparation.
-- [ ] Stop forming intervention before persistence measurement.
-- [ ] Evaluate preregistered persistence horizons.
-- [ ] Project separation onto accepted slow/fast subspaces.
-- [ ] Run zero-present-probe passive-null control.
-- [ ] Match `C` and `J` while preserving candidate carrier differences.
-- [ ] Apply identical native full-step probes.
-- [ ] Apply identical native immediate-transport-stage probes.
-- [ ] Apply frozen-`W` probes only as `substrate_reduced` comparators.
-- [ ] Classify each probe as coherence/potential, old-current injection, or external-current-like analytical input.
-- [ ] Record the exact readout stage and causal path for each lane.
-- [ ] Run the complete carrier-by-probe `2x2` design for every candidate read row.
-- [ ] Record both no-probe baselines, both within-carrier probe increments, and
+- [x] Record `A-BRANCH`, `A-CLOCK`, `A-PASSIVE`, `A-REACHABLE`, and `A-STATE-CLOSURE` statuses.
+- [x] Consume the preregistered present-current convention without outcome-driven redefinition.
+- [x] Run direct-conductance preparation.
+- [x] Run activity-mediated preparation at the exact first native transport
+  stage and through one complete native step.
+- [x] Run sign-reversal preparation.
+- [x] Stop forming intervention before persistence measurement.
+- [x] Evaluate preregistered persistence horizons.
+- [x] Project separation onto accepted slow/fast subspaces.
+- [x] Run zero-present-probe passive-null control.
+- [x] Match `C` and `J` while preserving candidate carrier differences.
+- [x] Apply identical native full-step probes.
+- [x] Apply identical native immediate-transport-stage probes.
+- [x] Apply frozen-`W` probes only as `substrate_reduced` comparators.
+- [x] Classify each probe as coherence/potential, old-current injection, or external-current-like analytical input.
+- [x] Record the exact readout stage and causal path for each lane.
+- [x] Run the complete carrier-by-probe `2x2` design for every candidate read row.
+- [x] Record both no-probe baselines, both within-carrier probe increments, and
   the difference-in-differences with its tolerance.
-- [ ] Route baseline-only differences to ordinary geometry-conditioned recurrence.
-- [ ] Apply lane-specific claim ceilings to coherence, old-current, and analytical probes.
-- [ ] Run a preregistered signed amplitude sweep before using susceptibility,
+- [x] Route baseline-only differences to ordinary geometry-conditioned recurrence.
+- [x] Apply lane-specific claim ceilings to coherence, old-current, and analytical probes.
+- [x] Run a preregistered signed amplitude sweep before using susceptibility,
   gain, derivative, or linear-response language.
-- [ ] Run carrier reset control.
-- [ ] Run carrier swap control.
-- [ ] Run equal-carrier control with reached `C` differences preserved.
-- [ ] Separate reached-state and synthetic-valid evidence.
-- [ ] Keep off-manifold structurally valid rows below reached or
+- [x] Run carrier reset control.
+- [x] Run carrier swap control.
+- [x] Run equal-carrier control with reached `C` differences preserved.
+- [x] Separate reached-state and synthetic-valid evidence.
+- [x] Keep off-manifold structurally valid rows below reached or
   constitutively consistent causal claim ceilings.
-- [ ] Assign `GRR0`-`GRR5` only from complete gates.
-- [ ] Classify retention, read effect, write effect, and loop closure separately.
-- [ ] Fill the causal possibility matrix.
-- [ ] Emit `conductance_retention_probe.json`, `causal_role_matrix.json`, and report.
-- [ ] Emit and validate the GRV5 result receipt and separate acceptance anchor.
-- [ ] Keep core Read-Back blocked unless directional present-current-conditioned read and passive-null gates pass.
+- [x] Emit a GRV5-specific canonical intervention registry with all required
+  field, rebuild, validity, projection, and reachability records.
+- [x] Assign `GRR0`-`GRR5` only from complete gates.
+- [x] Classify retention, read effect, write effect, and loop closure separately.
+- [x] Fill the causal possibility matrix.
+- [x] Emit `conductance_retention_probe.json`, `causal_role_matrix.json`,
+  `grv5_intervention_registry.json`, and report.
+- [x] Emit and validate the GRV5 result receipt.
+- [ ] Record human acceptance in a separate GRV5 acceptance anchor.
+- [x] Keep core Read-Back blocked unless directional present-current-conditioned read and passive-null gates pass.
+
+Result:
+
+```text
+input_execution_revision = 319b523fcc5be379f3b80afd38251e62b07e4764
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+branch_count = 48
+preparation_candidate_row_count = 144
+GRR0_row_count = 64
+GRR1_row_count = 48
+GRR2_row_count = 32
+GRR3_or_stronger_row_count = 0
+activity_stage_write_count = 48
+activity_complete_step_joint_write_count = 32
+bounded_persistence_count = 32
+native_mediation_count = 0
+substrate_reduced_sensitivity_count = 96
+forming_old_current_amplitude = 141421.35623730952
+forming_old_current_input_runtime_reached = false
+maximum_local_evidence_ladder_rung = GRR2
+GRV_C5_candidate_pending_human_review = true
+native_readback_supported = false
+writeback_supported = false
+closed_loop_supported = false
+protected_path_manifest_unchanged = true
+```
+
+The 48 direct-`W` rows are authored carrier diagnostics and stop at `GRR0`.
+The 48 exact first-transport-stage rows show a sign-even `J^2 -> W` write and
+reach `GRR1`, but the conductance separation is overwritten by the next full
+step. The forming old-current value is a synthetic experiment input, not a
+runtime-reached native history; its magnitude follows from the frozen
+`gamma = 1e-12` and the preregistered `0.01` attenuation exponent.
+
+On the 32 nonuniform F2/F3 branches, the transient stage-local write leaves a
+complete-step reached, coherence-dominated joint-state displacement. That
+separation persists with approximately unit ratio through horizon 10 and
+passes snapshot/load plus equal-input replay, supporting bounded `GRR2` joint-
+state persistence. The 16 homogeneous F1 branches produce no such complete-
+step displacement and remain `GRR0` in this lane.
+
+No candidate occupies an accepted isolated slow cluster, so `GRR3` is blocked.
+All native full-step and immediate-stage carrier-by-probe interactions remain
+unresolved. The 192 resolved interactions occur only in frozen-`W` reduced
+comparators; reset, equal-carrier, swap, zero-probe, replay, event, and topology
+controls all pass. Thus the causal matrix closes as 32
+`retention_without_read`, 48 `write_before_read`, and 64 ordinary/authored
+carrier rows. It does not establish core Read-Back, orientation retention,
+write-back, memory, learning, or a closed read/write loop.
+
+Verification:
+
+```text
+B1_GR_tests = 68_passed
+ruff = passed
+required_replay_rows = 432_passed
+canonical_intervention_records = 192_complete
+candidate_rows_payload_sha256 = 97f1fa6c65554f1fcdde85083654c6643730bb0051a64f9312c9a0f655baa71a
+P5_1_to_P5_2_candidate_rows_unchanged = true
+conductance_retention_payload_sha256 = 494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a
+causal_role_matrix_payload_sha256 = 0d09aae9ff0899c1801a304c6f15d54cefce08645f5e9f34ff209e34e7c34340
+intervention_registry_payload_sha256 = 2b1bc150d8246279524bfa31df2164b11e131c37a0d038fe0390e6bc1ef5530b
+protected_manifest_payload_sha256 = 8374740696b6572effd66326cb72f8e24a95e367debef27c94e5e0b438fa692f
+result_receipt_payload_sha256 = 5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a
+src_files_changed_by_GRV5 = 0
+```
 
 ## Iteration 7 - GRV6 Current Recurrence And Return Orbits
 
