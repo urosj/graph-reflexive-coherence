@@ -1,0 +1,100 @@
+{
+  "schema_version": "b1_grv3_causal_state_contract_v2",
+  "branch_scope": {
+    "source_registry_path": "outputs/fixed_branch_registry.json",
+    "source_registry_sha256": "56bd1857f892f187c6b99d6fcbd419ddd68ae0e17133b3a0bf7dda79b197e366",
+    "selection_rule": "all_registry_rows_with_branch_certified_true_in_committed_registry_order",
+    "expected_selected_branch_count": 48,
+    "symmetry_reduction_for_execution": false,
+    "symmetry_orbits_are_interpretive_only": true,
+    "post_spectrum_branch_selection_allowed": false
+  },
+  "grv3_a": {
+    "initial_candidate_blocks": ["C", "W", "J"],
+    "candidate_reductions": [["C", "W"], ["C"]],
+    "evaluate_every_codec_admitted_reduction_under_grv3_b_and_grv3_c": true,
+    "post_result_primary_coordinate_selection_allowed": false,
+    "codec_horizons": [1, 2, 5, 10],
+    "audit_variants": ["branch", "C_positive", "C_negative", "W_positive", "J_positive", "J_negative"],
+    "causal_closure_claim": "bounded_horizon_only",
+    "round_trip_required": true,
+    "reached_state_canonicalization_required": true,
+    "transition_commutation_required": true,
+    "physical_blocks_compared_for_reductions": ["C", "W", "J"]
+  },
+  "grv3_b": {
+    "finite_difference_method": "two_sided_central_only_within_one_causal_stratum",
+    "finite_difference_steps": [0.0001, 0.00005, 0.000025],
+    "minimum_positive_stratum_margin": 1e-12,
+    "current_zero_band": 1e-10,
+    "require_same_pre_step_signature": true,
+    "require_same_post_step_signature": true,
+    "require_same_runtime_path": true,
+    "blocked_column_policy": "do_not_emit_classical_derivative_or_spectrum",
+    "partial_matrix_policy": "do_not_call_square_transition_jacobian"
+  },
+  "grv3_spectral": {
+    "unstable_multiplier_slack": 1e-6,
+    "neutral_magnitude_tolerance": 1e-6,
+    "stable_slow_minimum_magnitude": 0.9,
+    "eigenvalue_cluster_membership_tolerance": 1e-6,
+    "invariant_subspace_residual_max": 1e-8,
+    "threshold_source": "values_already_frozen_in_committed_P3_2_runner_before_execution",
+    "post_result_threshold_adjustment_allowed": false
+  },
+  "grv3_c": {
+    "smooth_response_surfaces": ["Phi", "G", "Hs", "Kcache"],
+    "categorical_surfaces": ["current_sign", "sink_set", "basins", "hierarchy", "spark_eligibility", "event_classes", "budget_active_set"],
+    "response_derivative_requires_admitted_grv3_b_input_column": true
+  },
+  "counterfactuals": {
+    "W_amplitude": 0.01,
+    "J_amplitude": 1.0,
+    "derived_surface_amplitude": 1.0,
+    "sensitivity_uses_declared_block_tolerances": true,
+    "synthetic_valid_is_not_runtime_reachable": true
+  },
+  "p3_4_hardening": {
+    "administrative_phase_offsets": [0, 1, 2, 4],
+    "phase_operator_relative_error_max": 1e-6,
+    "phase_invariance_required_for_temporal_interpretation": true,
+    "decoder_correction_over_h_max": 1e-8,
+    "rng_start_equality_required": true,
+    "rng_post_step_equality_required": true,
+    "rng_no_consumption_required_on_no_event_envelope": true,
+    "branch_residual_over_h_max": 0.001,
+    "omitted_state_horizons": [1, 2, 5, 10],
+    "omitted_cache_subfields_must_be_decomposed": true,
+    "unknown_placeholder_fields": ["node_values", "edge_values"],
+    "j_even_odd_step_sizes": [0.0001, 0.00005, 0.000025],
+    "j_even_odd_is_diagnostic_not_eigensystem_evidence": true,
+    "block_metric": {
+      "metric_id": "branch_rms_physical_scale_v1",
+      "scale_rule": "rms_absolute_branch_physical_block_with_declared_floor",
+      "scale_floors": {"C": 1e-12, "W": 1e-12, "J": 1.0},
+      "raw_euclidean_participation_is_diagnostic_only": true,
+      "normalized_participation_is_diagnostic_only": true,
+      "joint_C_W_mode_claim_allowed": false
+    },
+    "basis_covariance": {
+      "alternate_basis_rule": "fixed_sign_flip_for_dimension_1_else_fixed_pi_over_4_rotation_of_first_two_axes",
+      "relative_matrix_error_max": 1e-6,
+      "required_for_temporal_interpretation": true
+    },
+    "symmetry_covariance": {
+      "mapping_rule": "match_unique_coherence_values_then_transport_graph_edges",
+      "relative_conjugacy_error_max": 1e-6,
+      "required_for_temporal_interpretation_on_multirow_orbits": true,
+      "singleton_orbits": "not_applicable"
+    }
+  },
+  "claim_boundary": {
+    "grv3_a_may_upgrade_causal_strong_branch": true,
+    "grv3_b_may_be_blocked_when_grv3_a_passes": true,
+    "slow_mode_is_retention": false,
+    "continuation_supported": false,
+    "retention_supported": false,
+    "readback_supported": false,
+    "writeback_supported": false
+  }
+}

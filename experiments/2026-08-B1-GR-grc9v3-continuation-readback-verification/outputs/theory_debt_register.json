@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "GRV0_resolution_allowed": false,
+    "records": [
+      {
+        "Claim blocked": "No unique native read-back operator",
+        "Closure or reopening condition": "derive a constitutive class or accept realization-specific family",
+        "Debt ID": "D-R01",
+        "LGRC relevance": "event return map may realize delayed response",
+        "Open issue": "Exact nonlinear $\\mathfrak R_M$",
+        "Primary GRC decision route": "selectable extension only after role evidence",
+        "What may still be measured": "response classes, passive null, mediation, gains"
+      },
+      {
+        "Claim blocked": "No canonical runtime retained sector",
+        "Closure or reopening condition": "branch-, clock-, and horizon-specific criterion accepted",
+        "Debt ID": "D-R02",
+        "LGRC relevance": "clock and delay make selection harder",
+        "Open issue": "Exact retained projector and cutoff",
+        "Primary GRC decision route": "analysis-only until a carrier is justified",
+        "What may still be measured": "spatial, temporal, and joint candidate sectors"
+      },
+      {
+        "Claim blocked": "No canonical $\\alpha_n\\leftrightarrow\\beta_a$ or slow-mode-to-current map",
+        "Closure or reopening condition": "derive or specify a bridge satisfying the typed cochain contract",
+        "Debt ID": "D-R03",
+        "LGRC relevance": "packets preserve direction but may remain transport",
+        "Open issue": "Scalar or joint retained sector to oriented edge-current bridge",
+        "Primary GRC decision route": "oriented read extension only if Section 8.7 requirements are met",
+        "What may still be measured": "type, covariance, mode participation, and causal mediation"
+      },
+      {
+        "Claim blocked": "No universal stiffening, softening, or reinforcement claim",
+        "Closure or reopening condition": "branch-specific closure with tested sign and invariants",
+        "Debt ID": "D-G01",
+        "LGRC relevance": "topology and delay may add metric roles",
+        "Open issue": "Exact metric map $h[K]$ and sign of back-reaction",
+        "Primary GRC decision route": "clarify legacy mechanism or selectable geometry extension",
+        "What may still be measured": "branch-specific sensitivity"
+      },
+      {
+        "Claim blocked": "No clean attribution of $\\alpha$ versus $\\gamma$ when one carrier does both",
+        "Closure or reopening condition": "independent carriers or justified factorization",
+        "Debt ID": "D-G02",
+        "LGRC relevance": "LGRC adds clocks and delays but inherits GRC conflation",
+        "Open issue": "Geometry versus mobility relation",
+        "Primary GRC decision route": "geometry-mobility split if ambiguity is load-bearing",
+        "What may still be measured": "frozen/full comparisons and causal blocks"
+      },
+      {
+        "Claim blocked": "No automatic promotion of runtime Jacobian to core $\\mathscr H_*$",
+        "Closure or reopening condition": "derive the active branch object under declared closure",
+        "Debt ID": "D-C01",
+        "LGRC relevance": "event return map may be the temporal object",
+        "Open issue": "General active joint continuation object",
+        "Primary GRC decision route": "analysis-only or later extension",
+        "What may still be measured": "transition Jacobian, Floquet map, structural comparator"
+      },
+      {
+        "Claim blocked": "No universal merger of $\\alpha,\\gamma,\\beta,\\mu$",
+        "Closure or reopening condition": "derive a common generator under explicit assumptions",
+        "Debt ID": "D-C02",
+        "LGRC relevance": "LGRC requires return-map-specific rates",
+        "Open issue": "Unified temporal generator",
+        "Primary GRC decision route": "keep separate in GRC report",
+        "What may still be measured": "separate operators and bounded common reductions"
+      },
+      {
+        "Claim blocked": "No assumption that queues, delay, phase, or history are redundant",
+        "Closure or reopening condition": "matched present states with different futures identify missing state",
+        "Debt ID": "D-M01",
+        "LGRC relevance": "central LGRC question",
+        "Open issue": "Markov sufficiency",
+        "Primary GRC decision route": "enlarge state only when counterexample exists",
+        "What may still be measured": "closure tests on declared state"
+      },
+      {
+        "Claim blocked": "No unique active retained projector",
+        "Closure or reopening condition": "accepted horizon and constitutive-status rule",
+        "Debt ID": "D-M02",
+        "LGRC relevance": "event maps may be strongly non-normal",
+        "Open issue": "Non-normal persistence criterion",
+        "Primary GRC decision route": "analysis-only initially",
+        "What may still be measured": "Riesz clusters, propagators, singular directions"
+      },
+      {
+        "Claim blocked": "No unique active-current update",
+        "Closure or reopening condition": "derive or specify a temporal map with correct fixed and fast limits",
+        "Debt ID": "D-A01",
+        "LGRC relevance": "LGRC may realize event-driven current loops",
+        "Open issue": "Current-branch passage and temporal current law",
+        "Primary GRC decision route": "selectable GRC extension only if targeted",
+        "What may still be measured": "current Jacobian, seed amplification, return maps"
+      },
+      {
+        "Claim blocked": "No canonical continuation through refinement",
+        "Closure or reopening condition": "explicit interspace transport with invariants",
+        "Debt ID": "D-T01",
+        "LGRC relevance": "mandatory before LGRC topology claims",
+        "Open issue": "Topology-changing state and mode transport",
+        "Primary GRC decision route": "not a GRC fixed-topology issue",
+        "What may still be measured": "lineage and endpoint correspondences"
+      },
+      {
+        "Claim blocked": "No global identity theorem from local continuation",
+        "Closure or reopening condition": "local rules accepted or global theorem derived",
+        "Debt ID": "D-B01",
+        "LGRC relevance": "topology and events add branch jumps",
+        "Open issue": "Global branch tracking and branch intersections",
+        "Primary GRC decision route": "analysis-only",
+        "What may still be measured": "local fixed branches and tracking defects"
+      },
+      {
+        "Claim blocked": "No automatic use of dynamic slow sector as constitutive memory",
+        "Closure or reopening condition": "isolated cluster and fixed-point regularity established",
+        "Debt ID": "D-P01",
+        "LGRC relevance": "delayed return maps may create stronger circularity",
+        "Open issue": "Dynamic-projector/read-back fixed point",
+        "Primary GRC decision route": "defer unless runtime reads slow sector",
+        "What may still be measured": "sensitivity of operator to candidate projector"
+      }
+    ]
+  },
+  "payload_sha256": "2a425ee94377c7415f985381b0fb41a6674dfc6a143b83d7168a8a76e18f745f",
+  "schema_version": "b1_theory_debt_register_v1"
+}

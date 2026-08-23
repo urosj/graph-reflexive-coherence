@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "test_pass_is_scientific_acceptance"
+    ],
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_*.py",
+    "failed_or_error": 0,
+    "highest_supported_claim": "protected_repository_suite_passes_at_GRV8_input_revision",
+    "log_path": "outputs/logs/grv8_existing_tests.log",
+    "log_sha256": "627ff71a3a6344942f2ba80260416bd71c9a115397896bcdd3c947a52aabf3fe",
+    "status": "passed",
+    "tests_run": 1354
+  },
+  "payload_sha256": "b14f088136eb977feb023026ee8fb3a0d9abee0fd6c3e8225884b92a20e915bd",
+  "schema_version": "b1_grv8_existing_test_result_v1"
+}

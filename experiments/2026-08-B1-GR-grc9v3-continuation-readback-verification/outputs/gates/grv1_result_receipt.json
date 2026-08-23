@@ -1,0 +1,38 @@
+{
+  "blocked_gates": [
+    "GRV2",
+    "GRV3",
+    "GRV4",
+    "GRV5",
+    "GRV6",
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "GRV-C2_candidate_exact_runtime_dependency_and_orientation_semantics_only_pending_authorized_human_acceptance",
+  "gate_id": "GRV1",
+  "input_execution_revision": "416f49e9cc05a21a86aaa7c7765cd9d64690f709",
+  "input_experiment_tree_sha256": "fb8cb0577f3937dcbfec735d0d9dfabdaee87a2f38f97db0488ad3e9cdc40b5a",
+  "output_artifact_digests": {
+    "outputs/fixture_registry.json": "aa01943130ee51f9c0005733fd6a4787cc1f0fd7505a9673b5b9cfe5eb55b2a8",
+    "outputs/instrumentation_validation.json": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+    "outputs/intervention_registry.json": "6b80d89d66d3c1ceb373e2dc4f491a56ec80da8ce247ea471490cb7a3ec570c3",
+    "outputs/protected_path_manifest_v1.json": "8de0f59b7e875998bcfbb6ddf9a247f6f4349f89beb9b0aac5f966ae7a5796b1",
+    "outputs/surface_authority_map.json": "6c997644ca50618df229e9d8c6123d80925cd1bdda2f30eb2d7e8af76cb5b777",
+    "reports/b1_grv1_instrumentation_and_source_fidelity.md": "eba64930bdf48b998f14d87e15a70b54abd92a404b3c0d546835f40e8870fd33"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+      "gate_id": "GRV0",
+      "immutable_ref": "git:454b2c55d1682c3ead46f6036ed725445b37fc08"
+    }
+  ],
+  "prerequisite_result_receipt_digests": [
+    "a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df"
+  ],
+  "receipt_payload_sha256": "9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7",
+  "supersedes_candidate_receipt_sha256": "c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf",
+  "supersession_reason": "pre_acceptance_source_fidelity_review_strengthening"
+}

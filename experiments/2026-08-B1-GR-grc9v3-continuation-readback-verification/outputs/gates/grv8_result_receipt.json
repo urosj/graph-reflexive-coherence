@@ -1,0 +1,146 @@
+{
+  "accepted_gate_chain": [
+    {
+      "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+      "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
+      "gate_id": "GRV0",
+      "receipt_payload_sha256": "a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df",
+      "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+      "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+      "gate_id": "GRV1",
+      "receipt_payload_sha256": "9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a",
+      "result_revision": "3c43918b1051389c5943ae28f505e585a542c621"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv2_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "09210b1bd2b8ba409987e1c587cc840b5292198db2f04594702d25c2cdd638df",
+      "acceptance_anchor_sha256": "b832cc670c9c0b0a7e7edf6b8639e94710f0aea938a1420253873162b49c3193",
+      "gate_id": "GRV2",
+      "receipt_payload_sha256": "73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63",
+      "result_revision": "e1dc01f4948b7791c733eb62c15179d04619cd8e"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+      "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+      "gate_id": "GRV3",
+      "receipt_payload_sha256": "83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc",
+      "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+      "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+      "gate_id": "GRV4",
+      "receipt_payload_sha256": "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10",
+      "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+      "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+      "gate_id": "GRV5",
+      "receipt_payload_sha256": "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35",
+      "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+      "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+      "gate_id": "GRV6",
+      "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+      "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d"
+    },
+    {
+      "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+      "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+      "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+      "gate_id": "GRV7",
+      "receipt_payload_sha256": "2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb",
+      "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020"
+    }
+  ],
+  "blocked_gates": [
+    "GRV8_bundle_and_closeout",
+    "B1-L"
+  ],
+  "claim_ceiling": "bounded_unchanged_GRC9V3_classification_and_route_decision_pending_human_review_without_GRV_C6_or_LGRC_execution",
+  "gate_id": "GRV8",
+  "grv8_summary": {
+    "B1_L_execution_authorized": false,
+    "GRV_C6_assigned": false,
+    "assumption_count": 19,
+    "causal_role_count": 9,
+    "claim_count": 33,
+    "classification_complete_candidate": true,
+    "contradiction_route_count": 7,
+    "evidence_bundle_frozen": false,
+    "existing_tests_run": 1354,
+    "extension_decision_count": 6,
+    "object_count": 31,
+    "protected_paths_unchanged": true,
+    "successor_generated": false,
+    "theory_reopening_required": false,
+    "unaccepted_P8_candidate_superseded": true,
+    "unaccepted_candidate_count_superseded": 2
+  },
+  "input_execution_revision": "b66888e37e7ef2aca61df206124ddb7a3f0fef2d",
+  "input_experiment_tree_sha256": "102761a620c90b8979662548f8ed21c6e3c7eeadd58c87b57f82ed767460e27f",
+  "output_artifact_digests": {
+    "outputs/assumption_status_matrix.json": "2c346fc5ec7ca771a4bf191691a39c94dbe71b2a39b5c40670ac9f9d8601511b",
+    "outputs/equivalence_classification.json": "c05e3a6e1b383f6541ff4c755472ad156e5bcbda69a10f3370169631da8aa8d3",
+    "outputs/extension_decision.json": "51bf77e5329c4ff0e10fa5b7f0430d70f9646638d17c42a78d9a30167795c76e",
+    "outputs/final_causal_role_classification.json": "18a881f6d2a13f28dc59246c47ad07c208faa56cf03ebe6134bd868253f2c3e0",
+    "outputs/final_claim_classification.json": "f85d474daef7db7597f99d0d4afea2e242b4ca66b08a95b830496ae802f57d38",
+    "outputs/final_contradiction_routing.json": "b7552dcd7008d6ae5378951f7af704e459847eebb03166c7eeb59d0c8110c3a0",
+    "outputs/final_theory_debt_register.json": "e6d4f8fabb47dc667c341809a3e03387bc945dc1e772f7a02d0500ebf84bbdf2",
+    "outputs/final_theory_test_traceability.json": "e16e5c352ad7d833e769f49b1b639830bcbb3aa3a298ff2b02e1803587dde5f7",
+    "outputs/grv8_existing_test_result.json": "d95ac87a07a21bf1d41072eea3731ccd59ba158f866aa6e5189b6cd394d3cde9",
+    "outputs/logs/grv8_existing_tests.log": "627ff71a3a6344942f2ba80260416bd71c9a115397896bcdd3c947a52aabf3fe",
+    "outputs/protected_path_manifest_v8.json": "d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f298d406baf35db",
+    "outputs/superseded_exploratory_claims.json": "6daf135066f51d81ba78711b84510d77de27a6f4e80401c1bca1ca1045243a5b",
+    "outputs/theory_reopening_decision.json": "4a43dc3c50749a961602d2104daedeb4ea5787bd1ec92b65dbcfd23d8a33b337",
+    "reports/b1_grc9v3_verification_report.md": "186d692cd54585c77b5511f92304fb693e99eb5fe6e22e830ff8806cc86085d9"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+      "gate_id": "GRV7",
+      "immutable_ref": "git:3d11154abbf4b84f5f3199b54ed83237a9fa7630"
+    }
+  ],
+  "prerequisite_acceptance_status": "accepted",
+  "prerequisite_result_receipt_digests": [
+    "2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb"
+  ],
+  "receipt_payload_sha256": "1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7",
+  "superseded_unaccepted_result": {
+    "acceptance_anchor_existed": false,
+    "consumable_as_scientific_evidence": false,
+    "method_id": "P8_1",
+    "reason": "P8_2_traceability_transport_contradiction_and_L4_correction",
+    "receipt_payload_sha256": "24b30abc8b8db8134f0ecb335bd286f5866caef34e05b5fd5ecf459831cf5b8d",
+    "result_revision": "bb9be8d1cb1e510af504d32dfb8d3a470c8d662f"
+  },
+  "superseded_unaccepted_results": [
+    {
+      "consumable_as_scientific_evidence": false,
+      "method_id": "P8",
+      "receipt_payload_sha256": "0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714",
+      "result_revision": "144875709359d477c05ef7d47382bc76342223f5"
+    },
+    {
+      "consumable_as_scientific_evidence": false,
+      "method_id": "P8_1",
+      "receipt_payload_sha256": "24b30abc8b8db8134f0ecb335bd286f5866caef34e05b5fd5ecf459831cf5b8d",
+      "result_revision": "bb9be8d1cb1e510af504d32dfb8d3a470c8d662f"
+    }
+  ]
+}

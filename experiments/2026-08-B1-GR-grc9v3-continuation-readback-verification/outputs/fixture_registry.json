@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "F0_anchor_status": "passed",
+    "F0_source_path": "fixtures/two_node_transport.json",
+    "F0_source_sha256": "6124f224126de82f2e722498ebd2f77569022ba7eba7b8d765eb2c94ea794042",
+    "F3_scientific_candidate_consumed": false,
+    "F4_consumption_status": "not_consumed_full_triangle_control_family_deferred",
+    "F4_control_definitions_consumed": [
+      "edge_orientation_reversal_with_current_sign_change",
+      "sign_reversed_old_current_at_matched_C_W"
+    ],
+    "fixtures": [
+      {
+        "first_gate": "GRV1",
+        "fixture_id": "F0",
+        "path": "fixtures/two_node_transport.json",
+        "status": "canonical_existing_test_anchor"
+      },
+      {
+        "first_gate": "GRV2",
+        "fixture_id": "F1",
+        "path": "fixtures/two_node_homogeneous_branch.json",
+        "status": "canonical_family"
+      },
+      {
+        "first_gate": "GRV2",
+        "fixture_id": "F2",
+        "path": "fixtures/two_node_nonuniform_seed.json",
+        "status": "noncanonical_candidate_seed"
+      },
+      {
+        "first_gate": "GRV2",
+        "fixture_id": "F3",
+        "path": "fixtures/triangle_same_row_seed.json",
+        "status": "noncanonical_candidate_seed"
+      },
+      {
+        "first_gate": "GRV1",
+        "fixture_id": "F4",
+        "path": "fixtures/triangle_port_controls.json",
+        "status": "control_family"
+      }
+    ],
+    "grv1_consumed_fixture_ids": [
+      "F0"
+    ],
+    "new_scientific_evidence_opened": false,
+    "orientation_control_scope": "F0_derived_two_node_edge_coordinate_control_required_by_GRV1_D",
+    "source_registry_path": "configs/fixture_registry.json",
+    "source_registry_sha256": "44e42cabcc315149080e17913ced9bb2117e7bb9abd34e3b500632ac9b9908a6"
+  },
+  "payload_sha256": "8193464a88c09cf915eced2bbb5605c808bedabeae81ac81a8e197be91ce0762",
+  "schema_version": "b1_grv1_fixture_registry_v1"
+}

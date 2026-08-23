@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/common_artifact.schema.json",
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "relativePath": {"type": "string", "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"},
+    "artifactEnvelope": {"type": "object", "required": ["schema_version", "metadata", "payload", "payload_sha256"], "properties": {"schema_version": {"type": "string"}, "metadata": {"type": "object"}, "payload": {}, "payload_sha256": {"$ref": "#/$defs/sha256"}}, "additionalProperties": false},
+    "manifestFile": {"type": "object", "required": ["path", "sha256", "size_bytes"], "properties": {"path": {"$ref": "#/$defs/relativePath"}, "sha256": {"$ref": "#/$defs/sha256"}, "size_bytes": {"type": "integer", "minimum": 0}}},
+    "protectedPathManifest": {"type": "object", "required": ["manifest_id", "scope", "substrate_base_revision", "files", "tree_sha256"]},
+    "experimentPathManifest": {"type": "object", "required": ["manifest_id", "scope", "excluded", "files", "tree_sha256"]},
+    "theorySourceManifest": {"type": "object", "required": ["repository", "revision", "dirty", "sources"]},
+    "numericalEnvironment": {"type": "object", "required": ["python_executable", "python_version", "dependency_versions", "blas_lapack_provider", "thread_controls", "PYTHONHASHSEED", "locale", "float_info", "numerical_dependency_policy"]},
+    "contradictionRegister": {"type": "object", "required": ["entries", "allowed_routes"]},
+    "theoryReopeningDecision": {"type": "object", "required": ["decision_id", "claim_ids", "trigger", "route", "status"]},
+    "extensionDecision": {"type": "object", "required": ["decision_id", "target", "route", "source_evidence", "claim_ceiling"]},
+    "resultStatus": {"enum": ["generated", "mechanically_validated", "awaiting_scientific_review", "rejected", "blocked", "superseded"]},
+    "acceptanceStatus": {"enum": ["accepted", "rejected", "blocked", "superseded"]}
+  },
+  "$ref": "#/$defs/artifactEnvelope"
+}

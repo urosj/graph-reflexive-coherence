@@ -1,0 +1,66 @@
+{
+  "bundle_excluded_paths": [
+    "outputs/evidence_bundle_manifest.json",
+    "implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md",
+    "outputs/continuation_readback_next_route_handoff.json",
+    "outputs/gates/grv8_closeout_result_receipt.json",
+    "outputs/gates/grv8_closeout_acceptance_anchor.json"
+  ],
+  "claim_ceiling": "accepted_bounded_B1_GR_classification_and_next_route_contract_without_runtime_extension_readback_or_GRV_C6_closeout",
+  "handoff_id": "B1_GR_continuation_readback_next_route_v1",
+  "handoff_lanes": [
+    {
+      "lane_id": "GRC_UNCHANGED_CONSTRUCTIBILITY",
+      "lane_order": 1,
+      "role": "test_higher_retention_and_mediation_witnesses_before_selecting_an_extension",
+      "source_decision_ids": [
+        "EXT-UNCHANGED-CONSTRUCTIBILITY"
+      ],
+      "status": "eligible_first_grc_investigation",
+      "target": "GRR3_to_GRR5_witnesses_under_unchanged_GRC9V3"
+    },
+    {
+      "lane_id": "GRC_SELECTABLE_EXTENSIONS",
+      "lane_order": 2,
+      "role": "design_revision_distinct_GRC_extensions_only_after_a_target_contract_selects_the_missing_role",
+      "source_decision_ids": [
+        "EXT-CURRENT-TEMPORALIZATION",
+        "EXT-ORIENTED-CURRENT",
+        "EXT-GEOMETRY-MOBILITY",
+        "EXT-RETAINED-CARRIER"
+      ],
+      "status": "target_conditioned_no_extension_authorized_by_B1_GR",
+      "target": "current_temporalization_or_oriented_current_first_if_the_next_claim_requires_it"
+    },
+    {
+      "lane_id": "GRC_ANALYSIS_AND_IDENTIFIABILITY",
+      "lane_order": 3,
+      "role": "retain_analysis_only_and_unresolved_questions_without_converting_them_into_runtime_requirements",
+      "source_decision_ids": [
+        "EXT-K"
+      ],
+      "status": "open_analysis_and_theory_debt",
+      "target": "response_identifiability_branch_transport_and_diagnostic_K_questions"
+    },
+    {
+      "lane_id": "LGRC_SPECIFIC_INVESTIGATION",
+      "lane_order": 4,
+      "role": "test_event_delay_lineage_and_topology_changing_questions_on_an_explicitly_selected_GRC_base",
+      "source_decision_ids": [],
+      "status": "downstream_not_umbrella_handoff_not_authorized",
+      "target": "legacy_B1_L_or_future_LGRC_N_as_separate_investigations"
+    }
+  ],
+  "legacy_lgrc_handoff_disposition": "superseded_as_umbrella_by_general_next_route_handoff_retained_as_historical_schema_only",
+  "required_blocked_claims": [
+    "native_readback",
+    "native_writeback",
+    "closed_read_write_loop",
+    "runtime_extension_authorized_by_B1_GR",
+    "active_stationary_circulation",
+    "j_equals_J_C_declared_runtime_reduction",
+    "automatic_LGRC_inheritance",
+    "memory_learning_agency_or_life"
+  ],
+  "schema_version": "b1_grv8_closeout_policy_v1"
+}

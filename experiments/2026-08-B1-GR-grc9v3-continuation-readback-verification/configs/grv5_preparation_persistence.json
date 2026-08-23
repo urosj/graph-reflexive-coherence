@@ -1,0 +1,208 @@
+{
+  "schema_version": "b1_grv5_preparation_persistence_v3",
+  "gate_id": "GRV5",
+  "source_scope": {
+    "branch_registry_path": "outputs/fixed_branch_registry.json",
+    "grv3_result_path": "outputs/complete_step_jacobians.json",
+    "grv4_result_path": "outputs/frozen_full_comparison.json",
+    "expected_branch_count": 48,
+    "expected_preparation_pair_count_per_branch": 3,
+    "expected_candidate_row_count": 144,
+    "branch_selection": "all_certified_branches_no_post_outcome_selection",
+    "required_grv4_receipt_payload_sha256": "1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10",
+    "required_grv4_acceptance_anchor_commit": "53838f31c512fc8dd01bde8e99f34ceef7885f03"
+  },
+  "assumption_statuses": {
+    "A-BRANCH": "accepted_GRV2_branch_relative",
+    "A-CLOCK": "complete_GRC9V3_step",
+    "A-PASSIVE": "tested_under_preregistered_present_current_convention",
+    "A-REACHABLE": "reported_separately_for_runtime_reached_and_synthetic_valid",
+    "A-STATE-CLOSURE": "accepted_only_within_GRV3_bounded_horizon_and_stratum",
+    "A-SIGN-EVEN": "required_for_old_current_squared_conductance_write",
+    "A-ORIENTATION": "canonical_edge_order_and_explicit_sign_reversal"
+  },
+  "present_current_convention": {
+    "source": "configs/preregistration.json",
+    "coherence_or_potential_probe": "runtime_input_that_changes_C_or_potential_and_derives_current_through_native_transport",
+    "old_current_state_injection": "counterfactual_old_J_state_consumed_by_conductance_reconstruction_not_external_present_current",
+    "external_current_like_analytical_probe": "declared_edge_covector_applied_only_in_substrate_reduced_analysis",
+    "native_external_present_current_input_available": false,
+    "coherence_driven_current_is_external_present_current": false
+  },
+  "preparation": {
+    "direct_conductance_relative_amplitude": 0.01,
+    "activity_write_target_log_conductance_exponent": 0.01,
+    "activity_write_amplitude_rule": "sqrt(2*target_exponent/gamma)",
+    "activity_write_realized_log_conductance_effect": "-abs(target_exponent)*canonical_edge_direction_squared_per_edge_because_native_gamma_J_squared_channel_is_attenuating_and_sign_even",
+    "activity_zero_control_current": 0.0,
+    "canonical_edge_direction": "alternating_sign_by_sorted_edge_index_with_l2_unit_norm",
+    "sign_reversal_required": true,
+    "forming_intervention_stops_after_one_complete_step": true,
+    "activity_write_target_exponent_ladder": [0.0005, 0.002, 0.005, 0.01],
+    "activity_ladder_is_confirmatory_after_preliminary_P5_results": true,
+    "activity_ladder_cannot_upgrade_primary_candidate_rung": true,
+    "direct_W_metric": "branch_scaled_additive_W_l2",
+    "direct_W_equal_metric_distance_required": true,
+    "direct_W_positivity_required": true
+  },
+  "persistence": {
+    "horizons_complete_steps_after_preparation": [0, 1, 2, 5, 10, 20, 50, 100],
+    "required_bounded_persistence_horizon": 10,
+    "absolute_separation_tolerance": 1e-10,
+    "minimum_persistence_ratio": 0.5,
+    "norm": "block_scaled_l2_with_branch_rms_scales",
+    "slow_projection_source": "accepted_GRV3_C_W_temporal_matrix_when_available",
+    "slow_multiplier_minimum_magnitude": 0.9,
+    "GRR3_requires_GRV3_retention_interpretation_allowed": true,
+    "events_or_topology_change": "record_and_block_same_branch_persistence_row",
+    "stability_ratio_tolerance": 1e-06,
+    "ongoing_activity_zero_tolerance": 1e-10,
+    "branch_refit_during_persistence_allowed": false,
+    "carrier_vectors_required": true,
+    "carrier_alignment_and_orthogonal_leakage_required": true,
+    "fresh_unprobed_clone_per_horizon": true,
+    "horizon_selection_after_outcomes_allowed": false
+  },
+  "matched_probe": {
+    "pairing_rule": "match_each_carrier_pair_to_componentwise_midpoint_C_and_J_while_preserving_each_W",
+    "coherence_probe_amplitudes": [-0.002, -0.001, 0.0, 0.001, 0.002],
+    "old_current_probe_signed_exponent_coordinates": [-0.002, -0.0005, 0.0, 0.0005, 0.002],
+    "old_current_probe_realized_effect": "each_nonzero_coordinate_produces_log_conductance_attenuation_-abs(coordinate);_coordinate_sign_reverses_J_orientation_only",
+    "external_edge_covector_amplitudes": [-0.002, -0.001, 0.0, 0.001, 0.002],
+    "native_lanes": ["native_full_step_probe", "native_immediate_transport_stage_probe"],
+    "reduced_lanes": ["frozen_W_probe"],
+    "response_norm": "edge_l2",
+    "difference_in_differences_tolerance": 1e-10,
+    "signed_sweep_linear_fit_relative_residual_max": 0.05,
+    "finite_probe_wording_when_fit_fails": "finite_probe_carrier_by_probe_interaction",
+    "zero_probe_passive_null_required": true
+  },
+  "mediation_controls": {
+    "required": [
+      "carrier_reset",
+      "carrier_swap",
+      "equal_carrier_with_reached_C_difference",
+      "replay",
+      "zero_present_probe",
+      "sign_reversal",
+      "authoritative_surface",
+      "wrong_location_when_multi_edge"
+    ],
+    "GRR4_minimum_state_class": "constitutively_consistent",
+    "synthetic_off_manifold_ceiling": "synthetic_counterfactual_carrier_interaction_diagnostic",
+    "frozen_W_lane_ceiling": "substrate_reduced_carrier_conditioned_transport_response",
+    "coherence_probe_ceiling": "carrier_conditioned_susceptibility_or_transport_response_candidate",
+    "old_current_probe_ceiling": "current_recurrence_or_write_read_geometry_candidate",
+    "external_probe_ceiling": "analysis_only"
+  },
+  "replay": {
+    "method": "snapshot_save_load_then_equal_input_one_step",
+    "required_horizons": [0, 10, 100],
+    "physical_projection_tolerance": 1e-12,
+    "next_step_projection_tolerance": 1e-12
+  },
+  "p5_3_review_hardening": {
+    "status": "revision_distinct_confirmatory_hardening_after_preliminary_P5_1_and_P5_2",
+    "may_upgrade_existing_GRR_rung": false,
+    "branch_scope_or_primary_threshold_change_allowed": false,
+    "carrier_hypotheses": {
+      "H-W": "W_itself_is_the_candidate_carrier",
+      "H-CW": "predeclared_joint_C_W_coordinate_is_the_candidate_carrier",
+      "H-transfer": "W_is_an_initial_inscription_surface_and_the_surviving_difference_transfers_into_C_or_another_admitted_coordinate",
+      "H-none": "observed_difference_is_immediate_recurrence_or_overwrite_without_retention"
+    },
+    "preparation_boundary": {
+      "k0_definition": "first_recorded_state_after_the_forming_intervention_has_ended",
+      "k1_definition": "one_complete_unchanged_no_further_intervention_step_after_k0",
+      "k0_alone_can_support_persistence": false,
+      "required_stage_records": [
+        "before_preparation",
+        "after_direct_old_current_input",
+        "after_first_native_transport_write",
+        "after_continuity_before_budget",
+        "after_complete_preparation_step",
+        "after_forming_intervention_stopped"
+      ]
+    },
+    "matching_contract": {
+      "target": "W_only_mediation",
+      "accepted_noncarrier_continuous_fields": ["C", "J"],
+      "administrative_and_categorical_fields_must_match": true,
+      "source_to_matched_current_sign_may_change_only_as_declared_J_matching_effect": true,
+      "undeclared_structural_categorical_fields_must_remain_unchanged": true,
+      "matching_must_preserve_authoritative_W": true,
+      "W_only_null_cannot_reject_joint_C_W_or_transferred_carrier": true,
+      "opaque_derived_caches_are_not_promoted_to_independent_causal_state": true
+    },
+    "probe_contract": {
+      "full_2x2_cells_required": true,
+      "oriented_interaction_before_norm_required": true,
+      "carrier_before_and_after_readout_required": true,
+      "signed_odd_even_decomposition_required": true,
+      "separate_clone_for_each_cell_and_horizon_required": true,
+      "separate_response_and_later_write_clones_required_if_loop_gate_opens": true
+    },
+    "detection_contract": {
+      "current_response_floor": 1e-10,
+      "carrier_floor": 1e-10,
+      "reset_swap_accuracy_floor": 1e-10,
+      "frozen_W_positive_control_required": true,
+      "below_floor_result": "not_resolved_not_proven_absent"
+    },
+    "causal_guard_contract": {
+      "positivity_required": true,
+      "budget_tolerance": 1e-09,
+      "topology_and_event_stasis_required": true,
+      "matched_rng_params_and_environment_required": true,
+      "categorical_stratum_crossing_blocks_same_branch_causal_claim": true
+    },
+    "required_review_point_count": 36,
+    "required_audit_artifact": "outputs/grv5_36_point_review_audit.json"
+  },
+  "p5_4_acceptance_clarification": {
+    "status": "revision_distinct_non_upgrading_clarification_after_P5_3_review",
+    "may_upgrade_or_reclassify_existing_GRR_rung": false,
+    "branch_scope_threshold_or_numerical_method_change_allowed": false,
+    "branch_relocation_contract": {
+      "admitted_C_basis_source": "accepted_GRV3_candidate_reduction_audits.C.coherence_basis",
+      "separate_branch_tangent_required_for_transverse_retention_claim": true,
+      "unidentified_branch_tangent_disposition": "branch_relocation_rival_unresolved_not_excluded",
+      "allowed_GRR2_wording": "bounded_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved",
+      "transverse_branch_relative_retention_claim_allowed": false
+    },
+    "transient_W_mediation_contract": {
+      "stage_matched_W_only_mediation_control_run": false,
+      "specific_transient_W_mediation_claim_allowed": false,
+      "allowed_statement": "synthetic_old_current_preparation_produces_a_native_stage_local_W_write_and_a_later_C_dominated_consequence_but_specific_mediation_of_that_later_consequence_by_the_transient_W_write_is_not_established"
+    },
+    "reachability_contract": {
+      "forming_input_status": "synthetic_valid_not_native_runtime_reachable",
+      "complete_step_status": "produced_by_unchanged_runtime_from_synthetic_intervention",
+      "reachable_from_accepted_branch_by_unchanged_runtime_alone": false,
+      "runtime_reached_shorthand_allowed": false
+    },
+    "acceptance_provenance_contract": {
+      "P5_2_result_revision": "2d8e2adc9c81bdcdaeec0b3bad1dac2900db8c62",
+      "P5_2_result_payload_sha256": "494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a",
+      "P5_2_receipt_payload_sha256": "5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a",
+      "P5_3_result_revision": "c2cc6668a2e4b8e8d3c8a08f82c4a8d0eb563203",
+      "P5_3_result_payload_sha256": "1edb81949ad2094f29f321ed6037a562ecebe3411644d97f5a739a8383cfcaa3",
+      "P5_3_review_audit_payload_sha256": "4dda2cd40d2e57b597387cfa38519f8853506dadb1f7599455496f7477ad624a",
+      "P5_3_receipt_payload_sha256": "941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f",
+      "acceptance_anchor_must_bind_P5_2_and_superseding_P5_4": true
+    }
+  },
+  "claim_boundary": {
+    "maximum_gate_claim": "bounded_retained_geometry_or_joint_retention_candidate",
+    "core_readback_requires_native_present_current_conditioned_directional_relation": true,
+    "baseline_only_geometry_difference_is_readback": false,
+    "synthetic_W_counterfactual_can_satisfy_GRR4": false,
+    "frozen_W_result_can_upgrade_native": false,
+    "continuation_supported": false,
+    "native_readback_supported": false,
+    "orientation_retention_supported": false,
+    "writeback_supported_before_evidence": false,
+    "closed_loop_supported_before_evidence": false,
+    "runtime_change_authorized": false
+  }
+}

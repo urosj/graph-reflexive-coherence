@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/state_codec.schema.json",
+  "type": "object",
+  "required": [
+    "codec_id", "coordinate_order", "physical_projection", "causal_projection",
+    "round_trip_status", "reached_state_canonicalization_status",
+    "transition_commutation_status", "horizons", "stratum_policy",
+    "variant_rows", "bounded_causal_closure_passed",
+    "global_markov_sufficiency_claimed"
+  ],
+  "properties": {
+    "codec_id": {"type": "string"},
+    "coordinate_order": {"type": "array", "items": {"type": "string"}},
+    "physical_projection": {"type": "array", "items": {"type": "string"}},
+    "causal_projection": {"type": "array", "items": {"type": "string"}},
+    "round_trip_status": {"enum": ["passed", "failed"]},
+    "reached_state_canonicalization_status": {"enum": ["passed", "failed"]},
+    "transition_commutation_status": {"enum": ["passed", "failed"]},
+    "horizons": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+    "stratum_policy": {"type": "string"},
+    "variant_rows": {"type": "array", "minItems": 1},
+    "bounded_causal_closure_passed": {"type": "boolean"},
+    "global_markov_sufficiency_claimed": {"const": false}
+  }
+}

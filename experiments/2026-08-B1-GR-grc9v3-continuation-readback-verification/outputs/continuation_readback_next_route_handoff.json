@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/build_grv8_closeout_candidate.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "accepted_grv8_anchor": {
+      "path": "outputs/gates/grv8_acceptance_anchor.json",
+      "receipt_payload_sha256": "1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5",
+      "result_revision": "570f715a54b7235be81725907a71e4a4b461ece7",
+      "sha256": "efa57c08fbed5e87021533f0c06cd2eddef7263ec13921f2c8e62ee429b00687"
+    },
+    "blocked_claims": [
+      "native_readback",
+      "native_writeback",
+      "closed_read_write_loop",
+      "runtime_extension_authorized_by_B1_GR",
+      "active_stationary_circulation",
+      "j_equals_J_C_declared_runtime_reduction",
+      "automatic_LGRC_inheritance",
+      "memory_learning_agency_or_life"
+    ],
+    "evidence_bundle": {
+      "path": "outputs/evidence_bundle_manifest.json",
+      "payload_sha256": "2373541a0cd5102bda6ac1d1959edb9c3fcf57f93bebd4f8f43fb783deb4107c"
+    },
+    "grv_c6_assigned": false,
+    "handoff_id": "B1_GR_continuation_readback_next_route_v1",
+    "handoff_lanes": [
+      {
+        "lane_id": "GRC_UNCHANGED_CONSTRUCTIBILITY",
+        "lane_order": 1,
+        "role": "test_higher_retention_and_mediation_witnesses_before_selecting_an_extension",
+        "source_decision_ids": [
+          "EXT-UNCHANGED-CONSTRUCTIBILITY"
+        ],
+        "source_decisions": [
+          {
+            "claim_ceiling": "higher_retention_and_mediation_rungs_remain_unresolved_not_mechanically_impossible",
+            "decision_id": "EXT-UNCHANGED-CONSTRUCTIBILITY",
+            "route": "unchanged_runtime_constructibility_search_before_extension",
+            "target": "GRR3_to_GRR5_witnesses_under_unchanged_GRC9V3"
+          }
+        ],
+        "status": "eligible_first_grc_investigation",
+        "target": "GRR3_to_GRR5_witnesses_under_unchanged_GRC9V3"
+      },
+      {
+        "lane_id": "GRC_SELECTABLE_EXTENSIONS",
+        "lane_order": 2,
+        "role": "design_revision_distinct_GRC_extensions_only_after_a_target_contract_selects_the_missing_role",
+        "source_decision_ids": [
+          "EXT-CURRENT-TEMPORALIZATION",
+          "EXT-ORIENTED-CURRENT",
+          "EXT-GEOMETRY-MOBILITY",
+          "EXT-RETAINED-CARRIER"
+        ],
+        "source_decisions": [
+          {
+            "claim_ceiling": "native_current_is_stage_local_then_reconstructed_or_overwritten_but_B1_GR_does_not_select_a_temporal_current_law",
+            "decision_id": "EXT-CURRENT-TEMPORALIZATION",
+            "route": "conditionally_selectable_if_future_target_requires_independent_current_relaxation",
+            "target": "independent_synchronous_current_relaxation_or_branch_state"
+          },
+          {
+            "claim_ceiling": "baseline_identifies_missing_oriented_role_but_B1_GR_does_not_select_the_target",
+            "decision_id": "EXT-ORIENTED-CURRENT",
+            "route": "conditionally_selectable_if_future_target_requires_directional_readback_or_active_circulation",
+            "target": "oriented_read_or_cycle_current_channel"
+          },
+          {
+            "claim_ceiling": "W_role_conflation_remains_a_limitation_but_no_material_full_vs_frozen_difference_was_resolved",
+            "decision_id": "EXT-GEOMETRY-MOBILITY",
+            "route": "not_opened_trigger_not_met",
+            "target": "separate_structural_geometry_and_transport_mobility"
+          },
+          {
+            "claim_ceiling": "bounded_synthetic_C_dominated_neutral_persistence_with_branch_relocation_rival_open",
+            "decision_id": "EXT-RETAINED-CARRIER",
+            "route": "not_opened_native_mediation_and_reachability_not_established",
+            "target": "separate_persistent_retained_geometry_carrier"
+          }
+        ],
+        "status": "target_conditioned_no_extension_authorized_by_B1_GR",
+        "target": "current_temporalization_or_oriented_current_first_if_the_next_claim_requires_it"
+      },
+      {
+        "lane_id": "GRC_ANALYSIS_AND_IDENTIFIABILITY",
+        "lane_order": 3,
+        "role": "retain_analysis_only_and_unresolved_questions_without_converting_them_into_runtime_requirements",
+        "source_decision_ids": [
+          "EXT-K"
+        ],
+        "source_decisions": [
+          {
+            "claim_ceiling": "not_consumed_on_tested_fixed_topology_no_event_path_without_global_absence_claim",
+            "decision_id": "EXT-K",
+            "route": "remain_explicitly_diagnostic",
+            "target": "hybrid_node_tensor_K"
+          }
+        ],
+        "status": "open_analysis_and_theory_debt",
+        "target": "response_identifiability_branch_transport_and_diagnostic_K_questions"
+      },
+      {
+        "lane_id": "LGRC_SPECIFIC_INVESTIGATION",
+        "lane_order": 4,
+        "role": "test_event_delay_lineage_and_topology_changing_questions_on_an_explicitly_selected_GRC_base",
+        "source_decision_ids": [],
+        "source_decisions": [],
+        "status": "downstream_not_umbrella_handoff_not_authorized",
+        "target": "legacy_B1_L_or_future_LGRC_N_as_separate_investigations"
+      }
+    ],
+    "handoff_status": "candidate_pending_closeout_review",
+    "legacy_lgrc_handoff_disposition": "superseded_as_umbrella_by_general_next_route_handoff_retained_as_historical_schema_only",
+    "source_artifacts": [
+      "outputs/extension_decision.json",
+      "outputs/equivalence_classification.json",
+      "outputs/final_claim_classification.json",
+      "outputs/final_theory_debt_register.json",
+      "outputs/final_contradiction_routing.json",
+      "outputs/final_theory_test_traceability.json"
+    ],
+    "source_closeout_ceiling": "GRV-C5",
+    "source_closeout_target": "GRV-C6",
+    "source_experiment": "B1-GR",
+    "successor_specification": {
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md",
+      "sha256": "120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed"
+    }
+  },
+  "payload_sha256": "6ee469edcfdb88f53d465bf418211cf7d8f059ab1814312f0d026a81c6d61849",
+  "schema_version": "b1_continuation_readback_handoff_v1"
+}

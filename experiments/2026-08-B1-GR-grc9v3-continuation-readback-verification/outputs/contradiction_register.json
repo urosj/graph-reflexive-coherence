@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "allowed_routes": [
+      "substrate_nonrealization",
+      "candidate_graph_mapping_error",
+      "core_derived_claim_too_strong",
+      "core_assumption_incompatible_with_this_realization",
+      "construct_not_identifiable_with_available_interventions",
+      "numerical_or_instrumentation_failure",
+      "source_or_specification_mismatch"
+    ],
+    "entries": []
+  },
+  "payload_sha256": "689b42e47672557380bf32a0e93b3353411d7e9c90de7298563c3c8fc415b2c9",
+  "schema_version": "b1_contradiction_register_v1"
+}

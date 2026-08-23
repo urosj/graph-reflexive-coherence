@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV5",
+    "reproducibility_class": "tolerance_reproducible"
+  },
+  "payload": {
+    "P5_4_acceptance_clarification_changed_primary_rung": false,
+    "all_review_points_mechanically_accounted_for": true,
+    "audit_id": "P5.3_36_point_causal_identification_hardening_with_P5.4_acceptance_clarifications",
+    "branch_scope_or_primary_threshold_changed": false,
+    "evidence_upgrade_allowed": false,
+    "gate_id": "GRV5",
+    "review_point_count": 36,
+    "review_points": [
+      {
+        "claim_effect": "P5.3 cannot upgrade the P5.2 rung",
+        "disposition": "passed_with_revision_distinct_non_blind_status",
+        "evidence": [
+          "candidate_rows.*.predeclared_carrier_hypothesis",
+          "preparation_controls.*.carrier_hypotheses_status"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 1,
+        "title": "carrier_fixed_before_confirmatory_reexecution"
+      },
+      {
+        "claim_effect": "blocked GRV3 rows remain physical/stage observations only",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.GRV3_C_W_causal_status",
+          "candidate_rows.*.GRV3_branch_claim_ceiling"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 2,
+        "title": "GRV3_branch_classes_separated"
+      },
+      {
+        "claim_effect": "k0 alone cannot support persistence",
+        "disposition": "passed",
+        "evidence": [
+          "preparation_controls.*.activity_stage_boundary_trace",
+          "p5_3_review_hardening.preparation_boundary"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 3,
+        "title": "preparation_end_and_k0_defined"
+      },
+      {
+        "claim_effect": "GRR2_records_neutral_direction_persistence_with_branch_relocation_unresolved_not_transverse_branch_relative_retention",
+        "disposition": "passed_with_branch_relocation_rival_unresolved",
+        "evidence": [
+          "candidate_rows.*.persistence_activity_trace",
+          "candidate_rows.*.persistence_classification",
+          "candidate_rows.*.branch_relocation_audit"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 4,
+        "title": "ongoing_activity_distinguished_from_external_stop"
+      },
+      {
+        "claim_effect": "P-W remains synthetic carrier diagnostic",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows[P-W-direct-opposite]",
+          "causal_role_matrix.json"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 5,
+        "title": "direct_W_does_not_establish_writeback"
+      },
+      {
+        "claim_effect": "unchanged-runtime successor of synthetic intervention is not native branch reachability",
+        "disposition": "passed_with_conditional_runtime_successor_wording",
+        "evidence": [
+          "summary.forming_old_current_input_runtime_reached",
+          "preparation_controls.*.activity_input_class",
+          "candidate_rows.*.reachability_classification"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 6,
+        "title": "synthetic_old_current_separated_from_reached_history"
+      },
+      {
+        "claim_effect": "stage-local W write and later C consequence coexist without identified W-specific mediation",
+        "disposition": "passed_with_specific_transient_W_mediation_unresolved",
+        "evidence": [
+          "activity_stage_boundary_trace.*.after_first_native_transport_write",
+          "activity_stage_boundary_trace.*.after_continuity_before_budget",
+          "activity_stage_boundary_trace.*.after_complete_preparation_step",
+          "candidate_rows.*.transient_W_mediation_classification"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 7,
+        "title": "direct_and_indirect_write_paths_staged"
+      },
+      {
+        "claim_effect": "sign-even W does not imply unexamined whole-beat sign retention",
+        "disposition": "passed",
+        "evidence": [
+          "preparation_controls.*.immediate_and_later_sign_audit"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 8,
+        "title": "J_sign_comparisons_immediate_and_later"
+      },
+      {
+        "claim_effect": "response shape cannot upgrade the primary rung",
+        "disposition": "passed_confirmatory_only",
+        "evidence": [
+          "preparation_controls.*.activity_preparation_amplitude_ladder"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 9,
+        "title": "preparation_amplitude_ladder"
+      },
+      {
+        "claim_effect": "no asymmetric-floor artifact",
+        "disposition": "passed",
+        "evidence": [
+          "preparation_controls.*.direct_W_metric_audit"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 10,
+        "title": "direct_W_metric_symmetry_and_positivity"
+      },
+      {
+        "claim_effect": "norm-only persistence is blocked",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.initial_separation.block_vectors",
+          "candidate_rows.*.horizon_rows.*.carrier_alignment"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 11,
+        "title": "carrier_vectors_and_alignment_recorded"
+      },
+      {
+        "claim_effect": "all horizons remain relative to the frozen GRV2 branch",
+        "disposition": "passed",
+        "evidence": [
+          "persistence.branch_refit_during_persistence_allowed",
+          "candidate_rows.*.branch_id"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 12,
+        "title": "branch_not_refit_during_persistence"
+      },
+      {
+        "claim_effect": "growing displacement cannot satisfy stable-retention wording",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.persistence_classification.stability_class"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 13,
+        "title": "instability_not_called_stable_retention"
+      },
+      {
+        "claim_effect": "GRR3 remains blocked",
+        "disposition": "passed_no_interpretable_slow_subspace",
+        "evidence": [
+          "candidate_rows.*.horizon_rows.*.slow_fast_projection",
+          "candidate_rows.*.slow_cluster_retention_interpretation_allowed"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 14,
+        "title": "only_accepted_slow_subspaces_interpreted"
+      },
+      {
+        "claim_effect": "one-beat W action is not W retention",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.write_status",
+          "candidate_rows.*.persistence_classification.carrier_path"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 15,
+        "title": "deadbeat_W_mediation_kept_distinct"
+      },
+      {
+        "claim_effect": "probe writes cannot contaminate later horizons",
+        "disposition": "passed_by_method_and_tests",
+        "evidence": [
+          "persistence_states",
+          "difference_in_differences",
+          "tests/test_grv5_preparation_persistence.py"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 16,
+        "title": "fresh_clone_per_horizon_and_probe_cell"
+      },
+      {
+        "claim_effect": "opaque derived caches are not promoted to independent state",
+        "disposition": "passed_with_GRV3_C_W_J_and_categorical_scope",
+        "evidence": [
+          "matched_probe_rows.*.matching_intervention_receipt"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 17,
+        "title": "full_admitted_noncarrier_matching"
+      },
+      {
+        "claim_effect": "erased-carrier nulls are blocked",
+        "disposition": "passed",
+        "evidence": [
+          "matching_intervention_receipt.carrier_difference_preservation_linf",
+          "matching_intervention_receipt.source_to_matched_preservation"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 18,
+        "title": "matching_preserves_authoritative_W"
+      },
+      {
+        "claim_effect": "joint/transferred persistence remains separate from W sufficiency",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.joint_carrier_probe_scope"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 19,
+        "title": "W_matching_does_not_reject_joint_carrier"
+      },
+      {
+        "claim_effect": "frozen-W cannot upgrade native evidence",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.lane",
+          "matched_probe_rows.*.rows.*.substrate_class"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 20,
+        "title": "probe_lanes_semantically_separate"
+      },
+      {
+        "claim_effect": "coherence, old-J, and analytical probes retain distinct ceilings",
+        "disposition": "passed",
+        "evidence": [
+          "present_current_convention"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 21,
+        "title": "present_current_convention_frozen"
+      },
+      {
+        "claim_effect": "baseline geometry is not a read effect",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.sweep.*.cell_receipts"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 22,
+        "title": "full_2x2_interaction"
+      },
+      {
+        "claim_effect": "edge orientation is preserved before scalar summaries",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.sweep.*.difference_in_differences"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 23,
+        "title": "oriented_interaction_before_norm"
+      },
+      {
+        "claim_effect": "zero-probe baseline difference is ordinary recurrence",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.zero_present_probe_control"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 24,
+        "title": "zero_probe_baseline_classified_separately"
+      },
+      {
+        "claim_effect": "same-beat response and write remain distinguishable",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.sweep.*.cell_receipts.*.carrier_change_during_readout"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 25,
+        "title": "probe_induced_carrier_write_recorded"
+      },
+      {
+        "claim_effect": "linear language remains conditional on fit",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.signed_sweep_fit"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 26,
+        "title": "signed_sweep_and_odd_even_decomposition"
+      },
+      {
+        "claim_effect": "two-node scalar effects cannot establish route selectivity",
+        "disposition": "passed_with_route_claim_blocked",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.mediation_controls.wrong_location_or_shuffled_carrier"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 27,
+        "title": "route_selectivity_requires_multi_edge_evidence"
+      },
+      {
+        "claim_effect": "reset/swap/equal/shuffle determine mediation class",
+        "disposition": "passed",
+        "evidence": [
+          "matched_probe_rows.*.rows.*.mediation_controls"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 28,
+        "title": "graded_mediation_controls"
+      },
+      {
+        "claim_effect": "non-authoritative-copy controls cannot pass",
+        "disposition": "passed",
+        "evidence": [
+          "direct_W_metric_audit.authoritative_surface_consistency",
+          "grv5_intervention_registry.json"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 29,
+        "title": "controls_modify_authoritative_W_surface"
+      },
+      {
+        "claim_effect": "instantaneous write does not imply retained write",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.write_status",
+          "candidate_rows.*.persistence_classification"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 30,
+        "title": "write_occurrence_separate_from_retained_write"
+      },
+      {
+        "claim_effect": "unrelated positive arrows are not assembled into a loop",
+        "disposition": "passed_as_blocked",
+        "evidence": [
+          "causal_role_matrix.json",
+          "summary.closed_loop_supported"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 31,
+        "title": "closed_loop_requires_linked_chain"
+      },
+      {
+        "claim_effect": "future loop probes must use independent clones",
+        "disposition": "not_applicable_loop_gate_not_opened_policy_frozen",
+        "evidence": [
+          "p5_3_review_hardening.probe_contract",
+          "summary.closed_loop_supported"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 32,
+        "title": "response_and_later_write_use_separate_clones"
+      },
+      {
+        "claim_effect": "below-floor effects remain unresolved rather than absent",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.detection_floor_audit",
+          "summary.substrate_reduced_sensitivity_count"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 33,
+        "title": "detection_floors_and_positive_control"
+      },
+      {
+        "claim_effect": "no best-horizon selection",
+        "disposition": "passed",
+        "evidence": [
+          "candidate_rows.*.horizon_rows"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 34,
+        "title": "all_preregistered_horizons_reported"
+      },
+      {
+        "claim_effect": "unclean paths cannot support same-branch causal persistence",
+        "disposition": "passed_with_crossings_recorded_and_blocking",
+        "evidence": [
+          "candidate_rows.*.horizon_rows.*.causal_guard_audit"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 35,
+        "title": "event_topology_stratum_and_budget_fail_closed"
+      },
+      {
+        "claim_effect": "maximum result remains bounded joint-state persistence without native Read-Back",
+        "disposition": "passed",
+        "evidence": [
+          "summary.native_readback_supported",
+          "claim_boundary"
+        ],
+        "mechanical_check_passed": true,
+        "point_id": 36,
+        "title": "positive_GRV5_is_not_automatic_core_readback"
+      }
+    ],
+    "source_result_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989"
+  },
+  "payload_sha256": "5a4969ec251e9805ad70d7ef08cef7ac8df877c1807db05b4daff0b971778ba4",
+  "schema_version": "b1_grv5_36_point_review_audit_v2"
+}

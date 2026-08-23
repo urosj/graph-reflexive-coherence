@@ -1,0 +1,37 @@
+{
+  "schema_version": "b1_grv0_preregistration_v1",
+  "present_current_convention": {
+    "present_current_input": "declared external or independently intervened current-like input at the evaluated beat",
+    "old_current_state_intervention": "separate counterfactual state intervention, not automatically present-current input",
+    "potential_derived_current": "runtime-derived transport output, not direct read current",
+    "passive_null_requires_same_convention": true
+  },
+  "acceptance_authority": {
+    "authorized_acceptance_roles": ["experiment_owner", "designated_scientific_reviewer", "independent_reviewer"],
+    "authorized_acceptors_or_identity_rule": "repository-authenticated human named in the acceptance anchor",
+    "required_review_method_per_gate": {"GRV0": "artifact_and_baseline_review", "GRV1-GRV8": "gate_specific_scientific_review"},
+    "self_review_permitted": true,
+    "independent_review_required": false,
+    "mechanical_script_may_accept": false
+  },
+  "nonnormal_control": {
+    "allowed_modes": ["asymptotic_spectral", "finite_horizon"],
+    "asymptotic_condition_number_max": 1000000.0,
+    "finite_horizon_transient_amplification_max": 2.0,
+    "mode_selected_per_fixture_before_interpretation": true
+  },
+  "fast_slow_control": {
+    "allowed_measures": ["spectral_rate_ratio", "discrete_multiplier_effective_decay_ratio", "return_map_cluster_ratio", "validated_time_scale_ratio"],
+    "minimum_separation_ratio": 10.0,
+    "neutral_and_conserved_directions": "exclude_only_when_identified_and_reported",
+    "no_independent_current_sector_status": "not_applicable"
+  },
+  "gate_input_change_classes": {
+    "documentation_only": "may_proceed_without_readmission_if_no_contract_change",
+    "implementation_only_no_method_change": "may_proceed_without_readmission_if_tests_pass",
+    "scientific_method_change": "protocol_readmission_required",
+    "threshold_or_config_change": "protocol_readmission_required",
+    "fixture_change": "protocol_readmission_required",
+    "claim_envelope_change": "protocol_readmission_required"
+  }
+}

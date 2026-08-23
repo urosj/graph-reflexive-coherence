@@ -1,0 +1,1 @@
+{"fixture_id":"F3","status":"noncanonical_candidate_seed","topology":{"nodes":[0,1,2],"oriented_edges":[[0,1],[1,2],[2,0]],"ports":[[1,1],[2,1],[2,2]]},"seed_coherence":[1.0,2.0,3.0],"accepted_evidence":false,"certification_required_at":"GRV2"}

@@ -1,0 +1,106 @@
+{
+  "blocked_gates": [
+    "GRV4",
+    "GRV5",
+    "GRV6",
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "bounded_GRV3_A_causal_strong_branch_candidate_and_only_admitted_GRV3_B_C_temporal_mode_evidence_pending_human_review",
+  "gate_id": "GRV3",
+  "grv3_summary": {
+    "admitted_derivative_column_count": 816,
+    "admitted_reduced_symmetry_orbit_count": 16,
+    "all_branches_consumed_without_symmetry_reduction": true,
+    "all_cluster_interpretation_pass_matrix_count": 62,
+    "basis_covariance_pass_matrix_count": 64,
+    "blocked_derivative_column_count": 372,
+    "branch_count": 48,
+    "branches_with_admitted_reduced_temporal_coordinate": 32,
+    "branches_with_temporal_mode_evidence_after_all_gates": 32,
+    "branches_without_any_admitted_temporal_coordinate": 16,
+    "causal_closure_pass_count": 48,
+    "exact_zero_current_margin_branch_count": 16,
+    "finite_horizon_nonnormal_pass_matrix_count": 64,
+    "full_C_W_J_jacobian_admitted_count": 0,
+    "grv3_a_status": "bounded_candidate_passed",
+    "grv3_b_status": "partial_reduced_coordinate_temporal_mode_evidence",
+    "grv3_c_status": "partial_reduced_coordinate_response_evidence_and_full_categorical_surfaces",
+    "grv_c4_supported": false,
+    "individual_eigenvector_condition_block_matrix_count": 2,
+    "individual_eigenvector_condition_pass_matrix_count": 62,
+    "maximum_adjacent_column_relative_error": 1.7365802408834338e-11,
+    "maximum_finite_eigenvector_condition_number": 9.131969244570144e+38,
+    "maximum_finite_horizon_amplification": 1.00000000003973,
+    "maximum_response_jacobian_relative_error": 7.371484013387061e-11,
+    "maximum_spectral_convergence_error_or_angle": 3.942476676500724e-08,
+    "mechanical_status": "passed",
+    "omitted_state_decomposition_pass_branch_count": 48,
+    "phase_operator_pass_matrix_count": 64,
+    "reduced_coordinate_matrix_count": 64,
+    "response_convergence_pass_matrix_count": 64,
+    "spectral_convergence_pass_matrix_count": 61,
+    "symmetry_covariance_failed_or_blocked_pair_count": 0,
+    "symmetry_covariance_passed_pair_count": 32,
+    "temporal_mode_interpretation_blocked_matrix_rows": [
+      {
+        "administrative_phase_operator_passed": true,
+        "all_cluster_interpretations_passed": true,
+        "basis_covariance_passed": true,
+        "branch_id": "grv2-f3-036",
+        "coordinate_candidate": "C_W",
+        "finite_horizon_nonnormal_passed": true,
+        "individual_eigenvector_condition_passed": true,
+        "spectral_convergence_passed": false,
+        "symmetry_covariance_passed": true
+      },
+      {
+        "administrative_phase_operator_passed": true,
+        "all_cluster_interpretations_passed": false,
+        "basis_covariance_passed": true,
+        "branch_id": "grv2-f3-037",
+        "coordinate_candidate": "C_W",
+        "finite_horizon_nonnormal_passed": true,
+        "individual_eigenvector_condition_passed": false,
+        "spectral_convergence_passed": false,
+        "symmetry_covariance_passed": true
+      },
+      {
+        "administrative_phase_operator_passed": true,
+        "all_cluster_interpretations_passed": false,
+        "basis_covariance_passed": true,
+        "branch_id": "grv2-f3-041",
+        "coordinate_candidate": "C_W",
+        "finite_horizon_nonnormal_passed": true,
+        "individual_eigenvector_condition_passed": false,
+        "spectral_convergence_passed": false,
+        "symmetry_covariance_passed": true
+      }
+    ],
+    "temporal_mode_interpretation_pass_matrix_count": 61,
+    "unique_symmetry_orbit_count": 32
+  },
+  "input_execution_revision": "b1c233be164c6e88d21f5386ae2483cb2e08ecad",
+  "input_experiment_tree_sha256": "55ef94c466726bab44e8e5f232c766dde05a2a94175ddd70a55375f3e3668f6a",
+  "output_artifact_digests": {
+    "outputs/complete_step_jacobians.json": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+    "outputs/grv3_intervention_registry.json": "15fba80cd461a9478942241d4162abb9cdc396c699a22bbb35388fcd5fe58a19",
+    "outputs/protected_path_manifest_v3.json": "009a852469df68b1e0b952e406d85910af9fba612d6f22004cbe1a470a6f64ff",
+    "outputs/slow_cluster_registry.json": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+    "reports/b1_grv3_causal_state_and_transition_jacobian.md": "725be239fe6d37bc07e57e9fff6795a495dfc70fd3ab7945befb446a08ac338b"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "09210b1bd2b8ba409987e1c587cc840b5292198db2f04594702d25c2cdd638df",
+      "gate_id": "GRV2",
+      "immutable_ref": "git:b5506d9c5dcab787b602652549bfbf09054d53eb"
+    }
+  ],
+  "prerequisite_receipt_status": "awaiting_scientific_review",
+  "prerequisite_result_receipt_digests": [
+    "73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63"
+  ],
+  "receipt_payload_sha256": "83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}

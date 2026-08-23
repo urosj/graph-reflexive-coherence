@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"b1/causal_role_matrix.schema.json","type":"object","required":["rows"],"properties":{"rows":{"type":"array","items":{"type":"object","required":["row_id","retention_status","read_effect_status","write_effect_status","closed_loop_status","maximum_claim","blocked_claims"]}}}}

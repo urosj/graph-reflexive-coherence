@@ -1,0 +1,16 @@
+{
+  "schema_version": "b1_grv0_numerical_tolerances_v1",
+  "categorical_equality": "exact",
+  "identifier_equality": "exact",
+  "absolute_tolerances": {"C": 1e-10, "W": 1e-10, "J": 1e-10, "derived_surface": 1e-9},
+  "relative_tolerances": {"C": 1e-9, "W": 1e-9, "J": 1e-9, "derived_surface": 1e-8},
+  "codec_horizons": [1, 2, 5, 10],
+  "per_horizon_accumulated_error_rule": "block_error <= absolute + horizon * relative * max(1, reference_norm)",
+  "finite_difference_steps": [1e-4, 5e-5, 2.5e-5],
+  "adjacent_step_relative_column_error_max": 0.01,
+  "conditioning_limit": 10000000000.0,
+  "silent_regularization_allowed": false,
+  "rng_policy": "exact_serialized_state_for_seeded_or_replayed_rows",
+  "administrative_advancement_policy": "compare_separately_from_physical_projection",
+  "duplicate_surface_policy": "reconcile_before_admission_or_block"
+}

@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "allowed_statuses": [
+      "satisfied",
+      "failed",
+      "not_identifiable",
+      "not_applicable",
+      "deferred"
+    ],
+    "records": [
+      {
+        "Assumption ID": "A-PASSIVE",
+        "Decision use": "Required for explicit read-back and zero-background derivative claims.",
+        "GRV0_status": "deferred",
+        "Statement": "The passive null $\\mathfrak R_M(\\mathcal T,h;0)=0$ holds for every admissible retained structure and geometry under the same present-current convention."
+      },
+      {
+        "Assumption ID": "A-SMOOTH",
+        "Decision use": "$C^1$ for linearization; $C^2$ for perturbative-order and Hessian claims.",
+        "GRV0_status": "deferred",
+        "Statement": "The relevant constitutive, branch, projector, and transition maps possess the differentiability required by the stated derivative or second-variation claim."
+      },
+      {
+        "Assumption ID": "A-REGULAR-SLAVING",
+        "Decision use": "Distinguishes failure of regular elimination from failure of the whole theory.",
+        "GRV0_status": "deferred",
+        "Statement": "The local implicit-function or suitable Fredholm hypotheses hold for noncritical constitutive blocks."
+      },
+      {
+        "Assumption ID": "A-LOOP-INVERT",
+        "Decision use": "Required for local algebraic current slaving and bounded response.",
+        "GRV0_status": "deferred",
+        "Statement": "$I-\\mathcal B_{\\mathrm{eff},*}$ is boundedly invertible on the declared current space. The direct condition $I-\\zeta_C\\mathcal R_{M,*}$ is equivalent only in the explicitly frozen zero-background reduction where no additional first-order current-dependent path survives."
+      },
+      {
+        "Assumption ID": "A-ISOLATION",
+        "Decision use": "Required for individual-mode or Riesz-cluster continuation.",
+        "GRV0_status": "deferred",
+        "Statement": "The selected eigenvalue or spectral cluster is isolated, has constant algebraic dimension, and has controlled resolvent separation."
+      },
+      {
+        "Assumption ID": "A-MOBILITY",
+        "Decision use": "Required for gradient-flow dissipation and closed stationary-current exclusions.",
+        "GRV0_status": "deferred",
+        "Statement": "Mobility or conductance is positive and nondegenerate on the relevant constrained subspace, with any null sector declared."
+      },
+      {
+        "Assumption ID": "A-CLOSED",
+        "Decision use": "Required for closed stationary-current claims; boundary-driven flow is a different branch.",
+        "GRV0_status": "deferred",
+        "Statement": "The branch has no through-flow or external current injection across its declared boundary."
+      },
+      {
+        "Assumption ID": "A-UNIQUENESS",
+        "Decision use": "Required before exact symmetric zero is said to remain unable to choose an orientation.",
+        "GRV0_status": "deferred",
+        "Statement": "The deterministic transition/evolution is locally well posed and locally unique under the declared symmetry."
+      },
+      {
+        "Assumption ID": "A-BRANCH",
+        "Decision use": "Prevents retrospective branch fitting.",
+        "GRV0_status": "deferred",
+        "Statement": "The reference branch, parameter path, and branch gauge or modulation rule are declared before retained displacement is evaluated."
+      },
+      {
+        "Assumption ID": "A-CLOCK",
+        "Decision use": "Required for slow, retained, relaxation, Floquet, and finite-horizon claims.",
+        "GRV0_status": "deferred",
+        "Statement": "The temporal beat, physical or model clock, persistence horizon, and norm are declared."
+      },
+      {
+        "Assumption ID": "A-CONSERVE",
+        "Decision use": "Required for constrained Hessians and comparable transition spectra.",
+        "GRV0_status": "deferred",
+        "Statement": "The conserved quantity, node/volume measure, tangent constraint, and any budget correction are declared and controlled."
+      },
+      {
+        "Assumption ID": "A-ORIENTATION",
+        "Decision use": "Required for current-level equivalence and orientation-retention claims.",
+        "GRV0_status": "deferred",
+        "Statement": "Edge or one-form orientation, coordinate reversal, bundle identification, and covariance conventions are declared."
+      },
+      {
+        "Assumption ID": "A-TRANSPORT",
+        "Decision use": "Required for moving branches and all topology-changing continuation claims.",
+        "GRV0_status": "deferred",
+        "Statement": "An ambient state-space identification or explicit interspace transport is declared before states, projectors, currents, or modes at different branch points are compared. Fixed-topology GRC may use the canonical coordinate identity only under the conditions in Section 2.4.3."
+      },
+      {
+        "Assumption ID": "A-SIGN-EVEN",
+        "Decision use": "Required for the first-order read versus second-order inscription result.",
+        "GRV0_status": "deferred",
+        "Statement": "The structural channel under study depends on $j$ through $j\\otimes j$ or another even function, and no independent linear-$j$ term is included in that channel."
+      },
+      {
+        "Assumption ID": "A-FIXED-TOPOLOGY",
+        "Decision use": "Required for fixed-space GRC Jacobians and projector comparisons.",
+        "GRV0_status": "deferred",
+        "Statement": "Graph topology, support, state dimension, and edge/node ordering remain fixed during the tested transition family."
+      },
+      {
+        "Assumption ID": "A-REACHABLE",
+        "Decision use": "Prevents unreachable counterfactuals from being promoted into native branch claims.",
+        "GRV0_status": "deferred",
+        "Statement": "The tested state is runtime-reachable, or its synthetic-valid status and resulting lower claim ceiling are declared."
+      },
+      {
+        "Assumption ID": "A-NONNORMAL-CONTROL",
+        "Decision use": "Required before eigenvalue slowness is promoted under non-normal dynamics.",
+        "GRV0_status": "deferred",
+        "Statement": "The claimed asymptotic or finite-horizon interpretation satisfies one of the preregistered evidence modes in Section 2.4.1."
+      },
+      {
+        "Assumption ID": "A-FAST-SLOW",
+        "Decision use": "Required for algebraic read-back as a fast attracting limit; may be `not_applicable` if no independent current-relaxation sector exists.",
+        "GRV0_status": "deferred",
+        "Statement": "A preregistered quantitative separation between a separately identifiable current-relaxation sector and the slower coherence/retention/geometry sector is established on one declared branch and clock, as specified in Section 2.4.2."
+      },
+      {
+        "Assumption ID": "A-STATE-CLOSURE",
+        "Decision use": "Required for a positive Markov-sufficiency claim; physical equality and causal-state equality remain separate.",
+        "GRV0_status": "deferred",
+        "Statement": "The declared present state contains every serialized or reconstructed variable capable of affecting the next transition within the tested envelope. A field excluded from the physical fixed-point norm must be demonstrated causally inert or retained in the closure state."
+      }
+    ]
+  },
+  "payload_sha256": "5b3c2ef370c2f8399029e606afda88076be56cea831246bf063a31f3e95ca3bb",
+  "schema_version": "b1_theory_assumption_registry_v1"
+}

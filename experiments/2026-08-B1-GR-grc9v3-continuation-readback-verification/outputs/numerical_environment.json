@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "PYTHONHASHSEED": "unset",
+    "blas_lapack_provider": "scipy-openblas",
+    "dependency_versions": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.10.9",
+      "networkx": "3.6.1",
+      "numpy": "2.4.6",
+      "pytest": "9.1.1",
+      "pyvis": "0.3.2"
+    },
+    "float_info": {
+      "epsilon": 2.220446049250313e-16,
+      "mantissa_digits": 53,
+      "max": 1.7976931348623157e+308,
+      "min": 2.2250738585072014e-308
+    },
+    "implementation": "CPython",
+    "locale": "LC_CTYPE=C.UTF-8;LC_NUMERIC=C;LC_TIME=C;LC_COLLATE=C;LC_MONETARY=C;LC_MESSAGES=C;LC_PAPER=C;LC_NAME=C;LC_ADDRESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=C;LC_IDENTIFICATION=C",
+    "machine": "x86_64",
+    "numerical_dependency_policy": "repository_dependencies_only_no_experiment_addition",
+    "platform_release": "7.0.0-29-generic",
+    "platform_system": "Linux",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3",
+    "thread_controls": {
+      "MKL_NUM_THREADS": "unset",
+      "NUMEXPR_NUM_THREADS": "unset",
+      "OMP_NUM_THREADS": "unset",
+      "OPENBLAS_NUM_THREADS": "unset"
+    }
+  },
+  "payload_sha256": "bb82a6befb2b4bb726284462521128b36f0b311a7eb6f9638ac75e357fc0c379",
+  "schema_version": "b1_numerical_environment_v1"
+}

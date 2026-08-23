@@ -1,0 +1,9 @@
+{
+  "schema_version": "b1_grv0_persistence_protocol_v1",
+  "beats": [1, 2, 5, 10],
+  "clock": "complete_GRC9V3_step",
+  "physical_norm": "block_scaled_l2",
+  "preparation_probe_separation_required": true,
+  "matched_control_required": true,
+  "present_current_convention_source": "configs/preregistration.json"
+}

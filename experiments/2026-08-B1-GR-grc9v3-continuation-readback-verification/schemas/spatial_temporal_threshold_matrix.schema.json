@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pygrc.dev/schemas/b1/spatial-temporal-threshold-matrix.schema.json",
+  "title": "B1-GR GRV7 spatial-temporal threshold matrix",
+  "type": "object",
+  "required": ["schema_version", "metadata", "payload", "payload_sha256"],
+  "properties": {
+    "schema_version": {"const": "b1_grv7_spatial_temporal_threshold_matrix_v1"},
+    "metadata": {"type": "object"},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "payload": {
+      "type": "object",
+      "required": ["gate_id", "source_contract", "scientific_discriminator_priority", "operator_contract", "reduction_admissibility_contract", "path_rows", "counterexamples", "summary", "claim_boundary"],
+      "properties": {
+        "gate_id": {"const": "GRV7"},
+        "source_contract": {"type": "object"},
+        "scientific_discriminator_priority": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "operator_contract": {
+          "type": "object",
+          "required": ["H_row", "H_signed", "H_WLS", "H_cont_W_star", "A_W_H_cont_W_star", "A_full"]
+        },
+        "reduction_admissibility_contract": {"type": "object"},
+        "path_rows": {"type": "array", "minItems": 1},
+        "counterexamples": {"type": "array"},
+        "summary": {"type": "object"},
+        "claim_boundary": {"type": "object"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

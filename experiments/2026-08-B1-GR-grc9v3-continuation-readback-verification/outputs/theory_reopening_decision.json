@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "theory_globally_confirmed",
+      "future_reopening_forbidden"
+    ],
+    "decision": {
+      "claim_ids": [
+        "T-M01",
+        "T-C01",
+        "T-RW01",
+        "T-O01"
+      ],
+      "decision_id": "TR-GRV8-001",
+      "route": "no_theory_reopening_required",
+      "status": "closed_for_B1_GR_scope",
+      "trigger": "No accepted result independently contradicts the controlling theory after assumption, mapping, identifiability, and substrate-realization routing."
+    },
+    "gate_id": "GRV8",
+    "highest_supported_claim": "no_theory_reopening_required_after_bounded_routing"
+  },
+  "payload_sha256": "beeba6e4f8c65e074023261dae43e9e2a42477ba20bfa9ada531b3a52a791c03",
+  "schema_version": "b1_grv8_theory_reopening_decision_v1"
+}

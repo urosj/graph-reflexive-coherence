@@ -1,0 +1,80 @@
+{
+  "schema_version": "b1_grv2_p2_package_manifest_v1_3",
+  "package_status": "clean_P2_3_preacceptance_adversarial_hardening_when_contained_in_committed_revision",
+  "gate_id": "GRV2",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV1",
+    "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+    "receipt_payload_sha256": "9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a",
+    "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+    "acceptance_anchor_commit": "bc12787e885b9dcc7d939c98a7e2e3ea84f2d213"
+  },
+  "gate_input_change_class": "gate_local_implementation_of_sealed_GRV2_method",
+  "protocol_readmission_required": false,
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "continuation_evidence_opened": false,
+    "retention_evidence_opened": false,
+    "readback_evidence_opened": false,
+    "writeback_evidence_opened": false
+  },
+  "executable_surfaces": [
+    "scripts/solve_strong_fixed_branches.py",
+    "scripts/run_all.py",
+    "tests/test_strong_fixed_branches.py"
+  ],
+  "search_contract": "configs/branch_search.json",
+  "preacceptance_execution_corrections": [
+    {
+      "failed_input_revision": "5bf082d0dc34a4763b9deefc7100c733a13e1245",
+      "result_receipt_emitted": false,
+      "partial_branch_snapshots_admitted": false,
+      "failure": "triangle_closing_edge_load_recanonicalized_a_numerical_zero_current_and_exact_replay_gate_rejected_it",
+      "correction": "apply_existing_per_block_numerical_tolerances_to_save_load_replay_and_record_raw_representation_normalization_separately",
+      "method_changed": false,
+      "threshold_changed": false,
+      "fixture_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV2_reexecution_required": true
+    },
+    {
+      "failed_input_revision": "050639ad9652cae7225388eb8a39b0f132161dcb",
+      "result_receipt_emitted": false,
+      "partial_branch_snapshots_admitted": false,
+      "failure": "triangle_builder_topology_endpoint_order_disagreed_with_the_runtime_canonical_current_coordinate_on_the_closing_edge",
+      "correction": "canonicalize_topology_endpoints_and_port_edge_orientation_together_before_GRC9V3_construction",
+      "method_changed": false,
+      "threshold_changed": false,
+      "fixture_graph_changed": false,
+      "fixture_coordinate_orientation_corrected": true,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV2_reexecution_required": true
+    }
+  ],
+  "preacceptance_review_hardening": {
+    "superseded_unaccepted_result_revision": "d150a078da6d66f4a04da32b8e5ad0a2db44a206",
+    "result_receipt_emitted": true,
+    "scientific_acceptance_anchor_emitted": false,
+    "disposition": "superseded_before_acceptance_by_P2_3_adversarial_hardening",
+    "added_controls": [
+      "raw_candidate_to_canonical_load_bearing_delta",
+      "authoritative_zero_current_and_conductance_consistency",
+      "continuity_delta_and_budget_active_set",
+      "four_beat_unperturbed_administrative_phase_hold",
+      "explicit_symmetry_orbit_and_nonindependence_accounting"
+    ],
+    "search_grid_changed": false,
+    "solver_changed": false,
+    "fixture_changed": false,
+    "runtime_changed": false,
+    "claim_ceiling_changed": false,
+    "complete_GRV2_reexecution_required": true
+  },
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV2",
+  "claim_ceiling": "existence_and_local_source_identity_of_GRC_formed_fixed_branches_only"
+}

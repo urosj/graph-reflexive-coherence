@@ -1,0 +1,10 @@
+{
+  "schema_version": "b1_grv0_cycle_space_v1",
+  "primary_edge_metric": "native_inverse_conductance_W_star_inverse",
+  "incidence_convention": "tail_minus_one_head_plus_one",
+  "zero_conductance_policy": "blocks_primary_metric",
+  "condition_limit": 10000000000.0,
+  "regularization_policy": "no_silent_regularization",
+  "required_checks": ["projector_idempotence", "cycle_annihilation", "metric_self_adjointness", "edge_reorientation_covariance"],
+  "alternative_metrics_role": "sensitivity_only_until_alignment_is_proven"
+}

@@ -1,0 +1,1745 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "K_counterfactual": {
+      "amplitude_rows": [
+        {
+          "amplitude": 0.001,
+          "counterfactual_k_sha256": "792226eb8d1fdddb01b750c066d6670241883c65ae3a78025bf8cd8c509c8aef",
+          "differential_stage_overwrites_counterfactual_cache": true,
+          "full_step_current_runtime_state_equal": true,
+          "full_step_physical_max_delta": 0.0,
+          "input_tensor_structure_valid": true,
+          "transport_exact_numeric_equal": true,
+          "transport_max_delta": 0.0
+        },
+        {
+          "amplitude": 1.0,
+          "counterfactual_k_sha256": "52c3429911f5839ea553a07e8e3395c081edf502cda173671362bc31e337cf41",
+          "differential_stage_overwrites_counterfactual_cache": true,
+          "full_step_current_runtime_state_equal": true,
+          "full_step_physical_max_delta": 0.0,
+          "input_tensor_structure_valid": true,
+          "transport_exact_numeric_equal": true,
+          "transport_max_delta": 0.0
+        },
+        {
+          "amplitude": 100.0,
+          "counterfactual_k_sha256": "214393150ff68b4885ed59f2d1d66cdd8e8b1854293542b624594dc45d53d760",
+          "differential_stage_overwrites_counterfactual_cache": true,
+          "full_step_current_runtime_state_equal": true,
+          "full_step_physical_max_delta": 0.0,
+          "input_tensor_structure_valid": true,
+          "transport_exact_numeric_equal": true,
+          "transport_max_delta": 0.0
+        }
+      ],
+      "base_k_digest": "2a8d2719b7d3103afbd61ad6d0791944e137ad0e8e0be34d9c9cbcff08e2f3c4",
+      "checks": {
+        "all_counterfactual_caches_differ": true,
+        "all_counterfactuals_structurally_valid": true,
+        "all_full_step_current_states_equal": true,
+        "all_transport_outputs_exactly_equal": true,
+        "differential_stage_overwrites_every_counterfactual_cache": true
+      },
+      "classification": "diagnostic_only_not_consumed_on_tested_F0_fixed_topology_no_event_transport_path_and_overwritten_before_full_step_use",
+      "comparison_policy": "exact_numeric_equality_required_for_non_K_transport_outputs",
+      "global_causal_absence_claimed": false,
+      "intervened_surface": "cached_quantities.hybrid_node_tensors",
+      "status": "passed"
+    },
+    "checks": {
+      "K_counterfactual_passed": true,
+      "all_runtime_fields_classified": true,
+      "clone_and_replay_control_passed": true,
+      "current_sign_control_passed": true,
+      "edge_reorientation_control_passed": true,
+      "fresh_process_replay_passed": true,
+      "observation_noninterference_passed": true,
+      "public_stage_replay_passed": true,
+      "step_trace_and_fixed_topology_passed": true,
+      "surface_authority_map_passed": true,
+      "transition_environment_and_rng_passed": true,
+      "transport_anchor_passed": true
+    },
+    "claim_boundary": {
+      "continuation_supported": false,
+      "exact_orientation_semantics_supported": true,
+      "exact_runtime_dependency_semantics_supported": true,
+      "formed_branch_supported": false,
+      "readback_supported": false,
+      "retention_supported": false,
+      "runtime_change": false,
+      "writeback_supported": false
+    },
+    "clone_serialization_and_replay": {
+      "checks": {
+        "canonical_json_round_trip_exact": true,
+        "clone_first_source_unchanged": true,
+        "declared_path_changed": true,
+        "deep_clone_non_aliasing": true,
+        "nested_clone_isolation_passed": true,
+        "raw_snapshot_and_derived_projection_separate": true,
+        "runtime_snapshot_replay_physical_projection_exact": true
+      },
+      "derived_projection_sha256": "a633643ae1b8bf980c28f0531952b99553e4b5854ad5c49d5af9f8cdfb6fc1df",
+      "nested_clone_isolation": {
+        "rows": [
+          {
+            "clone_A_changed": true,
+            "clone_A_unchanged_after_B_mutation": true,
+            "clone_B_changed": true,
+            "clone_B_unchanged_after_A_mutation": true,
+            "source_unchanged": true,
+            "surface": "conductance_surfaces"
+          },
+          {
+            "clone_A_changed": true,
+            "clone_A_unchanged_after_B_mutation": true,
+            "clone_B_changed": true,
+            "clone_B_unchanged_after_A_mutation": true,
+            "source_unchanged": true,
+            "surface": "current_flux_surface"
+          },
+          {
+            "clone_A_changed": true,
+            "clone_A_unchanged_after_B_mutation": true,
+            "clone_B_changed": true,
+            "clone_B_unchanged_after_A_mutation": true,
+            "source_unchanged": true,
+            "surface": "cached_quantities"
+          },
+          {
+            "clone_A_changed": true,
+            "clone_A_unchanged_after_B_mutation": true,
+            "clone_B_changed": true,
+            "clone_B_unchanged_after_A_mutation": true,
+            "source_unchanged": true,
+            "surface": "hybrid_tensor_cache"
+          },
+          {
+            "clone_A_changed": true,
+            "clone_A_unchanged_after_B_mutation": true,
+            "clone_B_changed": true,
+            "clone_B_unchanged_after_A_mutation": true,
+            "source_unchanged": true,
+            "surface": "rng_state"
+          }
+        ],
+        "source_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+        "status": "passed"
+      },
+      "raw_snapshot_committed": false,
+      "raw_snapshot_sha256": "98b884f9459c09cab6ba63dcc56b5d1a2958b7ca4159a35403ef97fba16d51ca",
+      "runtime_snapshot_replay_max_delta": 0.0,
+      "status": "passed"
+    },
+    "comparison_policy": {
+      "K_unread_path": "exact_numeric_equality_required",
+      "categorical_and_identifier_fields": "exact_required",
+      "fresh_process_replay": "exact_canonical_current_state_digest_required",
+      "instrumented_vs_ordinary": "exact_complete_runtime_snapshot_required",
+      "public_stage_replay": "exact_stage_boundary_and_final_state_required",
+      "transport_anchor_literals": "declared_derived_surface_tolerance"
+    },
+    "current_sign_control": {
+      "J4_vs_J0_base_conductance_absolute_delta": 8.000045070843953e-12,
+      "checks": {
+        "both_complete_steps_remain_no_event": true,
+        "both_complete_steps_remain_positive": true,
+        "coherence_fixture_is_asymmetric": true,
+        "hybrid_tensor_channel_is_sign_even": true,
+        "matched_sign_reversal_full_step_outputs_equal": true,
+        "matched_sign_reversal_transport_outputs_equal": true,
+        "old_current_is_nondegenerate": true,
+        "old_current_magnitude_enters_conductance_exactly": true,
+        "pre_transport_net_flux_summary_tracks_sign": true,
+        "stagewise_conductance_is_sign_even": true,
+        "stagewise_current_is_reconstructed_equal": true,
+        "stagewise_potential_is_sign_even": true,
+        "stagewise_sign_is_visible_before_transport": true
+      },
+      "classification": {
+        "current_reconstructed_anew": true,
+        "magnitude_persistence": "direct_sign_even_input_to_next_conductance_but_F0_effect_below_declared_W_tolerance",
+        "orientation_persistence": "not_retained_across_transport_or_complete_step",
+        "transient_sign_summary": "reconstructed_pre_transport_then_overwritten_after_new_flux",
+        "unoriented_axis_persistence": "single_edge_sign_even_channel_only_not_distinct_from_magnitude"
+      },
+      "declared_W_absolute_tolerance": 1e-10,
+      "full_step_sign_pair_max_delta": 0.0,
+      "magnitude_effect_resolved_at_declared_tolerance": false,
+      "physical_reversal": "fixed_edge_coordinates_J_to_minus_J",
+      "stagewise_trace": [
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            4.0,
+            -4.0
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "ca36bd6e81ac5db41c149e903a128c2af98e36f9989574da7d02adcbdb4f23ef",
+          "net_flux_summary_pair": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "a551a0d9606f3eb85481ffa292153d61b48b1733c86283e97923e25f4830d022",
+          "potential_max_delta": 0.0,
+          "stage": "declared_old_current_input"
+        },
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            4.0,
+            -4.0
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "c8389d106d878068844fa57acbc507cbd91e1cf93d1e5cde72592287b013ce7d",
+          "net_flux_summary_pair": [
+            [
+              4.0,
+              0.0,
+              0.0
+            ],
+            [
+              -4.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "75d182aa85079cb15184ffbfb53e4750a16e346b787131ea213810e4f12b9f78",
+          "potential_max_delta": 0.0,
+          "stage": "after_pre_flux_differential_rebuild"
+        },
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            4.0,
+            -4.0
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "4409b128db5769c5c689e9640084f9735a02146dee669f2cd2ca4381449db372",
+          "net_flux_summary_pair": [
+            [
+              4.0,
+              0.0,
+              0.0
+            ],
+            [
+              -4.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "af495d86eb7788ce2b35236f1bc40e70056014a2177bd4418ac076a4b875a666",
+          "potential_max_delta": 0.0,
+          "stage": "after_base_conductance_formation"
+        },
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            4.0,
+            -4.0
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "cc09fab943c077e7ee826123cc28130fd78608304b5503954d81dd4eaa3f9d73",
+          "net_flux_summary_pair": [
+            [
+              4.0,
+              0.0,
+              0.0
+            ],
+            [
+              -4.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "a5352e00956f62665de756605f03faa32fda0ddcf0927622779a591ac84ba717",
+          "potential_max_delta": 0.0,
+          "stage": "after_potential_reconstruction"
+        },
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            3.9999999998559996,
+            3.9999999998559996
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "384847c7ca0b0cf887bf20c423f5186b8816ec9434e4960731ff012d58e4c37e",
+          "net_flux_summary_pair": [
+            [
+              4.0,
+              0.0,
+              0.0
+            ],
+            [
+              -4.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "cf5fa6b647776ce4ce6fc672027b667b277bdde67bdab91ee8690ed47f6b7369",
+          "potential_max_delta": 0.0,
+          "stage": "after_current_reconstruction"
+        },
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            3.9999999998559996,
+            3.9999999998559996
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "34382d34467fbef386cca4438fb3f1469aba6656aa878f896b72e7b82259f81f",
+          "net_flux_summary_pair": [
+            [
+              4.0,
+              0.0,
+              0.0
+            ],
+            [
+              -4.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "58a11e944fa23271456cbe3753c0d6cb08217721791c19e787aea45265679a13",
+          "potential_max_delta": 0.0,
+          "stage": "after_continuity"
+        },
+        {
+          "base_conductance_max_delta": 0.0,
+          "current_pair": [
+            5.599999999654784,
+            5.599999999654784
+          ],
+          "hybrid_tensor_pair_equal": true,
+          "negative_state_sha256": "835abbec1adc9ffd21383f27a2a9c36b9a2bc0cd8c4f4668a16506118dab536a",
+          "net_flux_summary_pair": [
+            [
+              5.599999999654784,
+              0.0,
+              0.0
+            ],
+            [
+              5.599999999654784,
+              0.0,
+              0.0
+            ]
+          ],
+          "positive_state_sha256": "835abbec1adc9ffd21383f27a2a9c36b9a2bc0cd8c4f4668a16506118dab536a",
+          "potential_max_delta": 0.0,
+          "stage": "after_complete_step"
+        }
+      ],
+      "status": "passed",
+      "transport_sign_pair_max_delta": 0.0
+    },
+    "edge_reorientation_control": {
+      "checks": {
+        "coordinate_transform_is_involution": true,
+        "current_coordinate_sign_mapped": true,
+        "inverse_identification_restores_raw_state": true,
+        "physical_transport_covariant": true,
+        "raw_coordinate_orientation_changed": true
+      },
+      "classification": "coordinate_covariance_passed_distinct_from_physical_current_reversal",
+      "control": "edge_coordinate_reorientation_with_J_sign_map",
+      "derived_orientation_surfaces_policy": "rebuild_from_consistently_transformed_primary_state_before_comparison",
+      "normal_raw_endpoints": {
+        "edge_id": 0,
+        "endpoint_a": {
+          "node_id": 0,
+          "slot": 0
+        },
+        "endpoint_b": {
+          "node_id": 1,
+          "slot": 0
+        },
+        "payload": {}
+      },
+      "orientation_dependent_surfaces_transformed": [
+        "topology.edges.0.endpoint_a",
+        "topology.edges.0.endpoint_b",
+        "port_edges.0.node_u",
+        "port_edges.0.port_u",
+        "port_edges.0.node_v",
+        "port_edges.0.port_v",
+        "port_edges.0.flux_uv"
+      ],
+      "reoriented_raw_endpoints": {
+        "edge_id": 0,
+        "endpoint_a": {
+          "node_id": 1,
+          "slot": 0
+        },
+        "endpoint_b": {
+          "node_id": 0,
+          "slot": 0
+        },
+        "payload": {}
+      },
+      "status": "passed",
+      "transport_max_delta": 0.0
+    },
+    "excluded_and_administrative_field_inventory": {
+      "all_runtime_fields_classified": true,
+      "extra_fields": [],
+      "grv3_closure_candidates": [
+        "topology",
+        "node_values",
+        "edge_values",
+        "step_index",
+        "budget_target",
+        "cached_quantities",
+        "rng_state",
+        "nodes",
+        "port_edges",
+        "hierarchy",
+        "expansion_registry",
+        "choice_registry",
+        "collapse_registry"
+      ],
+      "missing_fields": [],
+      "records": [
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "topology",
+          "grv3_closure_candidate": true,
+          "reason": "controls adjacency and port incidence"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "unknown",
+          "field": "node_values",
+          "grv3_closure_candidate": true,
+          "reason": "inherited family-neutral placeholder with no current GRC9V3 read; nonuse on F0 does not prove global inertness"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "unknown",
+          "field": "edge_values",
+          "grv3_closure_candidate": true,
+          "reason": "inherited family-neutral placeholder with no current GRC9V3 read; nonuse on F0 does not prove global inertness"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "causal_runtime_state",
+          "field": "step_index",
+          "grv3_closure_candidate": true,
+          "reason": "administratively advances and keys spark, growth, choice, and event state"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "deterministic_administrative_advancement",
+          "field": "time",
+          "grv3_closure_candidate": false,
+          "reason": "advances by dt and is not read by current transition decisions"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "budget_target",
+          "grv3_closure_candidate": true,
+          "reason": "sets the quadrature correction target"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "remainder",
+          "grv3_closure_candidate": false,
+          "reason": "recomputed by quadrature-budget enforcement"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "cached_quantities",
+          "grv3_closure_candidate": true,
+          "reason": "mixed cache; hessian history and growth-front records are read later while K is diagnostic-only"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "observer_only_state",
+          "field": "event_log",
+          "grv3_closure_candidate": false,
+          "reason": "append-only event history and current-step slicing surface"
+        },
+        {
+          "administratively_advancing": true,
+          "classification": "observer_only_state",
+          "field": "observables",
+          "grv3_closure_candidate": false,
+          "reason": "reported observer surface; no physical transition reads found"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "rng_state",
+          "grv3_closure_candidate": true,
+          "reason": "restores deterministic growth sampling state"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "params_identity",
+          "grv3_closure_candidate": false,
+          "reason": "restored from current parameter hash"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "nodes",
+          "grv3_closure_candidate": true,
+          "reason": "coherence is causal; differential and basin subfields are rebuilt or maintained"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "port_edges",
+          "grv3_closure_candidate": true,
+          "reason": "old flux enters next conductance through J squared; edge carrier is canonical"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "base_conductance",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt before potential and flux"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "geometric_length",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt analytic pre-flux edge label"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "temporal_delay",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt analytic post-flux edge label"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "flux_coupling",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt absolute-flux edge label"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "potential",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt from coherence and conductance"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "sink_set",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt from current flux topology"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "basins",
+          "grv3_closure_candidate": false,
+          "reason": "rebuilt from current flux topology"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "hierarchy",
+          "grv3_closure_candidate": true,
+          "reason": "persists completed child relations across steps"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "expansion_registry",
+          "grv3_closure_candidate": true,
+          "reason": "persists expansion schedules and topology-growth history"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "choice_registry",
+          "grv3_closure_candidate": true,
+          "reason": "previous choice state is read by choice/collapse update"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "causal_runtime_state",
+          "field": "collapse_registry",
+          "grv3_closure_candidate": true,
+          "reason": "persists collapse records"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "observer_only_state",
+          "field": "coarse_cache",
+          "grv3_closure_candidate": false,
+          "reason": "operator output cache invalidated on transport or topology change"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "edge_label_computation_mode",
+          "grv3_closure_candidate": false,
+          "reason": "derived from declared constitutive modes"
+        },
+        {
+          "administratively_advancing": false,
+          "classification": "reconstructed_state",
+          "field": "edge_label_params",
+          "grv3_closure_candidate": false,
+          "reason": "derived from declared parameters and label selection"
+        }
+      ],
+      "runtime_dataclass": "pygrc.models.grc_9_v3_state.GRC9V3State"
+    },
+    "fresh_process_replay": {
+      "checks": {
+        "fresh_instance_snapshot_load_replay_equal": true,
+        "fresh_python_process_equal": true,
+        "same_object_exact_input_replay_equal": true
+      },
+      "fresh_process_probe": {
+        "complete_step_state_sha256": "d1f86a20337a80ba24bf1699a5d5ee1c199c403cd1d28bf4d6db9ab1b77d036c",
+        "initial_state_sha256": "89119b25c26ca8dac8813f5a1e2e78a873969a971ba240bf6dca14b5cb1cde72",
+        "transport_projection": {
+          "base_conductance": {
+            "0": 0.99999999999
+          },
+          "flux_coupling": {
+            "0": 3.99999999992
+          },
+          "flux_uv": {
+            "0": 3.99999999992
+          },
+          "geometric_length": {
+            "0": 1.0000000000090001
+          },
+          "potential": {
+            "0": -1.99999999998,
+            "1": 1.99999999998
+          },
+          "temporal_delay": {
+            "0": 0.20000000000496002
+          }
+        }
+      },
+      "local_probe": {
+        "complete_step_state_sha256": "d1f86a20337a80ba24bf1699a5d5ee1c199c403cd1d28bf4d6db9ab1b77d036c",
+        "initial_state_sha256": "89119b25c26ca8dac8813f5a1e2e78a873969a971ba240bf6dca14b5cb1cde72",
+        "transport_projection": {
+          "base_conductance": {
+            "0": 0.99999999999
+          },
+          "flux_coupling": {
+            "0": 3.99999999992
+          },
+          "flux_uv": {
+            "0": 3.99999999992
+          },
+          "geometric_length": {
+            "0": 1.0000000000090001
+          },
+          "potential": {
+            "0": -1.99999999998,
+            "1": 1.99999999998
+          },
+          "temporal_delay": {
+            "0": 0.20000000000496002
+          }
+        }
+      },
+      "scope": "exact_same_declared_F0_input_not_uninterrupted_repeated_dynamics",
+      "status": "passed"
+    },
+    "gate_id": "GRV1",
+    "load_bearing_source_paths": [
+      "src/pygrc/core/__init__.py",
+      "src/pygrc/core/backends.py",
+      "src/pygrc/core/capabilities.py",
+      "src/pygrc/core/errors.py",
+      "src/pygrc/core/events.py",
+      "src/pygrc/core/graph.py",
+      "src/pygrc/core/ids.py",
+      "src/pygrc/core/interfaces.py",
+      "src/pygrc/core/mutations.py",
+      "src/pygrc/core/observables.py",
+      "src/pygrc/core/params.py",
+      "src/pygrc/core/serialization.py",
+      "src/pygrc/core/storage.py",
+      "src/pygrc/core/types.py",
+      "src/pygrc/models/grc_9_coarse.py",
+      "src/pygrc/models/grc_9_ports.py",
+      "src/pygrc/models/grc_9_state.py",
+      "src/pygrc/models/grc_9_v3.py",
+      "src/pygrc/models/grc_9_v3_choice.py",
+      "src/pygrc/models/grc_9_v3_runtime.py",
+      "src/pygrc/models/grc_9_v3_sparks.py",
+      "src/pygrc/models/grc_9_v3_state.py",
+      "src/pygrc/models/grc_v3_differential.py"
+    ],
+    "observation_noninterference": {
+      "checks": {
+        "artifact_hash_nonmutating": true,
+        "diagnostic_read_nonmutating": true,
+        "load_into_fresh_model_does_not_mutate_source": true,
+        "restored_current_state_exact": true,
+        "save_nonmutating": true,
+        "snapshot_capture_nonmutating": true
+      },
+      "input_runtime_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+      "post_operation_runtime_state_sha256": {
+        "artifact_hash": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+        "diagnostic_read": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+        "load_elsewhere": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+        "save": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+        "snapshot": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687"
+      },
+      "status": "passed"
+    },
+    "public_stage_replay": {
+      "administrative_closeout_fields_reproduced_from_current_step_source": [
+        "step_index",
+        "time",
+        "observables",
+        "params_identity",
+        "cached_quantities.last_step_trace",
+        "cached_quantities.current_step_events"
+      ],
+      "checks": {
+        "event_slice_equal": true,
+        "final_complete_runtime_state_equal": true,
+        "final_snapshot_equal": true,
+        "public_stage_call_order_and_multiplicity_equal": true,
+        "stage_boundary_records_equal": true
+      },
+      "harness_boundary": "validation_replay_not_replacement_runtime",
+      "native_call_counts": {
+        "apply_boundary_behavior": 1,
+        "apply_continuity": 1,
+        "apply_growth": 1,
+        "apply_hybrid_spark_stages": 1,
+        "compute_observables": 1,
+        "enforce_quadrature_budget": 1,
+        "rebuild_choice_state": 1,
+        "rebuild_differential_state": 4,
+        "rebuild_identity_state": 2,
+        "rebuild_transport_state": 2,
+        "refresh_coarse_cache": 1
+      },
+      "native_stage_records": [
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "89119b25c26ca8dac8813f5a1e2e78a873969a971ba240bf6dca14b5cb1cde72",
+          "method": "rebuild_differential_state",
+          "ordinal": 1,
+          "output_state_sha256": "f7d543c4d930925632453690bb10c647398032248813864e33abb45e3d6d1d25"
+        },
+        {
+          "changed_top_level_fields": [
+            "base_conductance",
+            "cached_quantities",
+            "edge_label_computation_mode",
+            "edge_label_params",
+            "flux_coupling",
+            "geometric_length",
+            "port_edges",
+            "potential",
+            "temporal_delay"
+          ],
+          "input_state_sha256": "f7d543c4d930925632453690bb10c647398032248813864e33abb45e3d6d1d25",
+          "method": "rebuild_transport_state",
+          "ordinal": 2,
+          "output_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+          "method": "rebuild_differential_state",
+          "ordinal": 3,
+          "output_state_sha256": "12eff3e336bbb9eeb167be866b9346baffbfdda818e3cd934d92f26ee3397bfd"
+        },
+        {
+          "changed_top_level_fields": [
+            "basins",
+            "cached_quantities",
+            "nodes",
+            "sink_set"
+          ],
+          "input_state_sha256": "12eff3e336bbb9eeb167be866b9346baffbfdda818e3cd934d92f26ee3397bfd",
+          "method": "rebuild_identity_state",
+          "ordinal": 4,
+          "output_state_sha256": "d856ea0c537f5722627b796b9dce00bc1d7f18a81e47d6670f57ed7abe198c2e"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "d856ea0c537f5722627b796b9dce00bc1d7f18a81e47d6670f57ed7abe198c2e",
+          "method": "apply_hybrid_spark_stages",
+          "ordinal": 5,
+          "output_state_sha256": "bcb38a0e6ae3b703ef4ae9934cbdc9d1b7e1b4571b0956c8da627f6cfdc6a99f"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "bcb38a0e6ae3b703ef4ae9934cbdc9d1b7e1b4571b0956c8da627f6cfdc6a99f",
+          "method": "rebuild_choice_state",
+          "ordinal": 6,
+          "output_state_sha256": "f3405385812aeae609700532c77c6a6bc7fc988633f033a91bf20e63b66b2deb"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "f3405385812aeae609700532c77c6a6bc7fc988633f033a91bf20e63b66b2deb",
+          "method": "apply_growth",
+          "ordinal": 7,
+          "output_state_sha256": "0b5a1cd678f2ec8a18ee9c33585217b57638304ced022d2c6cf2bbb6a3ecee29"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "0b5a1cd678f2ec8a18ee9c33585217b57638304ced022d2c6cf2bbb6a3ecee29",
+          "method": "apply_boundary_behavior",
+          "ordinal": 8,
+          "output_state_sha256": "476b57e8473964c08b20a8b207ef60bc07b9608851c144454e202795316b5f9a"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "476b57e8473964c08b20a8b207ef60bc07b9608851c144454e202795316b5f9a",
+          "method": "apply_continuity",
+          "ordinal": 9,
+          "output_state_sha256": "20fe44b258463f800b30b530fc2a197a944a016d2171878f2c46566130637733"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "20fe44b258463f800b30b530fc2a197a944a016d2171878f2c46566130637733",
+          "method": "enforce_quadrature_budget",
+          "ordinal": 10,
+          "output_state_sha256": "0349b3c7605c2b033014abb81b9a72650e7f2bdb362bddc8945e8b50cd9ea6f0"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "0349b3c7605c2b033014abb81b9a72650e7f2bdb362bddc8945e8b50cd9ea6f0",
+          "method": "rebuild_differential_state",
+          "ordinal": 11,
+          "output_state_sha256": "1dc114e9f790a49ceb6d49c0ba4b4b02915882fe0bbf089b0dfe57def02a9bc4"
+        },
+        {
+          "changed_top_level_fields": [
+            "base_conductance",
+            "cached_quantities",
+            "flux_coupling",
+            "geometric_length",
+            "port_edges",
+            "potential",
+            "temporal_delay"
+          ],
+          "input_state_sha256": "1dc114e9f790a49ceb6d49c0ba4b4b02915882fe0bbf089b0dfe57def02a9bc4",
+          "method": "rebuild_transport_state",
+          "ordinal": 12,
+          "output_state_sha256": "4e4876ed76b88707597a1f129f6c9422b049cd0de4a81aab9adf8f99425ff3ee"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "4e4876ed76b88707597a1f129f6c9422b049cd0de4a81aab9adf8f99425ff3ee",
+          "method": "rebuild_differential_state",
+          "ordinal": 13,
+          "output_state_sha256": "5fde049c5f79334a07ea0e9975fc64fa2133b549061c4f5962ec2434d23c31f9"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "5fde049c5f79334a07ea0e9975fc64fa2133b549061c4f5962ec2434d23c31f9",
+          "method": "rebuild_identity_state",
+          "ordinal": 14,
+          "output_state_sha256": "7b06fc867d7030408fc7895d8ce469785ed51eedc00fc0d6455fcc81bb5562ac"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "7b06fc867d7030408fc7895d8ce469785ed51eedc00fc0d6455fcc81bb5562ac",
+          "method": "refresh_coarse_cache",
+          "ordinal": 15,
+          "output_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86"
+        },
+        {
+          "changed_top_level_fields": [],
+          "input_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86",
+          "method": "compute_observables",
+          "ordinal": 16,
+          "output_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86"
+        }
+      ],
+      "public_replay_call_counts": {
+        "apply_boundary_behavior": 1,
+        "apply_continuity": 1,
+        "apply_growth": 1,
+        "apply_hybrid_spark_stages": 1,
+        "compute_observables": 1,
+        "enforce_quadrature_budget": 1,
+        "rebuild_choice_state": 1,
+        "rebuild_differential_state": 4,
+        "rebuild_identity_state": 2,
+        "rebuild_transport_state": 2,
+        "refresh_coarse_cache": 1
+      },
+      "public_replay_stage_records": [
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "89119b25c26ca8dac8813f5a1e2e78a873969a971ba240bf6dca14b5cb1cde72",
+          "method": "rebuild_differential_state",
+          "ordinal": 1,
+          "output_state_sha256": "f7d543c4d930925632453690bb10c647398032248813864e33abb45e3d6d1d25"
+        },
+        {
+          "changed_top_level_fields": [
+            "base_conductance",
+            "cached_quantities",
+            "edge_label_computation_mode",
+            "edge_label_params",
+            "flux_coupling",
+            "geometric_length",
+            "port_edges",
+            "potential",
+            "temporal_delay"
+          ],
+          "input_state_sha256": "f7d543c4d930925632453690bb10c647398032248813864e33abb45e3d6d1d25",
+          "method": "rebuild_transport_state",
+          "ordinal": 2,
+          "output_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+          "method": "rebuild_differential_state",
+          "ordinal": 3,
+          "output_state_sha256": "12eff3e336bbb9eeb167be866b9346baffbfdda818e3cd934d92f26ee3397bfd"
+        },
+        {
+          "changed_top_level_fields": [
+            "basins",
+            "cached_quantities",
+            "nodes",
+            "sink_set"
+          ],
+          "input_state_sha256": "12eff3e336bbb9eeb167be866b9346baffbfdda818e3cd934d92f26ee3397bfd",
+          "method": "rebuild_identity_state",
+          "ordinal": 4,
+          "output_state_sha256": "d856ea0c537f5722627b796b9dce00bc1d7f18a81e47d6670f57ed7abe198c2e"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "d856ea0c537f5722627b796b9dce00bc1d7f18a81e47d6670f57ed7abe198c2e",
+          "method": "apply_hybrid_spark_stages",
+          "ordinal": 5,
+          "output_state_sha256": "bcb38a0e6ae3b703ef4ae9934cbdc9d1b7e1b4571b0956c8da627f6cfdc6a99f"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "bcb38a0e6ae3b703ef4ae9934cbdc9d1b7e1b4571b0956c8da627f6cfdc6a99f",
+          "method": "rebuild_choice_state",
+          "ordinal": 6,
+          "output_state_sha256": "f3405385812aeae609700532c77c6a6bc7fc988633f033a91bf20e63b66b2deb"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "f3405385812aeae609700532c77c6a6bc7fc988633f033a91bf20e63b66b2deb",
+          "method": "apply_growth",
+          "ordinal": 7,
+          "output_state_sha256": "0b5a1cd678f2ec8a18ee9c33585217b57638304ced022d2c6cf2bbb6a3ecee29"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "0b5a1cd678f2ec8a18ee9c33585217b57638304ced022d2c6cf2bbb6a3ecee29",
+          "method": "apply_boundary_behavior",
+          "ordinal": 8,
+          "output_state_sha256": "476b57e8473964c08b20a8b207ef60bc07b9608851c144454e202795316b5f9a"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "476b57e8473964c08b20a8b207ef60bc07b9608851c144454e202795316b5f9a",
+          "method": "apply_continuity",
+          "ordinal": 9,
+          "output_state_sha256": "20fe44b258463f800b30b530fc2a197a944a016d2171878f2c46566130637733"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "20fe44b258463f800b30b530fc2a197a944a016d2171878f2c46566130637733",
+          "method": "enforce_quadrature_budget",
+          "ordinal": 10,
+          "output_state_sha256": "0349b3c7605c2b033014abb81b9a72650e7f2bdb362bddc8945e8b50cd9ea6f0"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "0349b3c7605c2b033014abb81b9a72650e7f2bdb362bddc8945e8b50cd9ea6f0",
+          "method": "rebuild_differential_state",
+          "ordinal": 11,
+          "output_state_sha256": "1dc114e9f790a49ceb6d49c0ba4b4b02915882fe0bbf089b0dfe57def02a9bc4"
+        },
+        {
+          "changed_top_level_fields": [
+            "base_conductance",
+            "cached_quantities",
+            "flux_coupling",
+            "geometric_length",
+            "port_edges",
+            "potential",
+            "temporal_delay"
+          ],
+          "input_state_sha256": "1dc114e9f790a49ceb6d49c0ba4b4b02915882fe0bbf089b0dfe57def02a9bc4",
+          "method": "rebuild_transport_state",
+          "ordinal": 12,
+          "output_state_sha256": "4e4876ed76b88707597a1f129f6c9422b049cd0de4a81aab9adf8f99425ff3ee"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "4e4876ed76b88707597a1f129f6c9422b049cd0de4a81aab9adf8f99425ff3ee",
+          "method": "rebuild_differential_state",
+          "ordinal": 13,
+          "output_state_sha256": "5fde049c5f79334a07ea0e9975fc64fa2133b549061c4f5962ec2434d23c31f9"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "5fde049c5f79334a07ea0e9975fc64fa2133b549061c4f5962ec2434d23c31f9",
+          "method": "rebuild_identity_state",
+          "ordinal": 14,
+          "output_state_sha256": "7b06fc867d7030408fc7895d8ce469785ed51eedc00fc0d6455fcc81bb5562ac"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "7b06fc867d7030408fc7895d8ce469785ed51eedc00fc0d6455fcc81bb5562ac",
+          "method": "refresh_coarse_cache",
+          "ordinal": 15,
+          "output_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86"
+        },
+        {
+          "changed_top_level_fields": [],
+          "input_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86",
+          "method": "compute_observables",
+          "ordinal": 16,
+          "output_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86"
+        }
+      ],
+      "scope": "F0_fixed_topology_no_event_complete_synchronous_beat",
+      "status": "passed",
+      "transition_stage_policy": "public_model_methods_only"
+    },
+    "specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+    "status": "passed",
+    "step_order_and_fixed_topology": {
+      "checks": {
+        "boundary_noop": true,
+        "call_multiplicity_recorded": true,
+        "emitted_trace_matches_frozen_order": true,
+        "every_call_has_input_output_digest": true,
+        "fixed_topology": true,
+        "instrumentation_noninterfering": true,
+        "instrumented_and_ordinary_runtime_snapshots_equal": true,
+        "no_events": true,
+        "observed_high_level_calls_match_runtime_structure": true,
+        "runtime_expected_trace_matches_frozen_order": true
+      },
+      "events": [],
+      "frozen_step_order": [
+        "compute_row_basis_gradient_pre_flux",
+        "compute_signed_hessian_row_basis_pre_flux",
+        "compute_net_flux_summary_pre_flux",
+        "compute_node_tensors",
+        "compute_base_conductance",
+        "compute_edge_labels_pre_flux",
+        "compute_potential",
+        "compute_flux",
+        "compute_edge_labels_post_flux",
+        "refresh_differential_summary_post_flux",
+        "detect_flux_topology_identities",
+        "validate_geometric_basin_seeds",
+        "compute_effective_basin_masses",
+        "detect_hybrid_spark_candidates",
+        "apply_mechanical_expansion",
+        "refresh_after_expansion",
+        "evaluate_child_basin_stabilization",
+        "register_completed_hybrid_sparks",
+        "update_hierarchy",
+        "update_choice_collapse_learning",
+        "apply_growth",
+        "apply_boundary_behavior",
+        "apply_continuity",
+        "enforce_quadrature_budget",
+        "refresh_runtime_state_final",
+        "refresh_or_invalidate_coarse_cache",
+        "compute_observables"
+      ],
+      "instrumented_and_ordinary_runtime_snapshots_equal": true,
+      "instrumented_vs_ordinary_max_delta": 0.0,
+      "observed_call_counts": {
+        "apply_boundary_behavior": 1,
+        "apply_continuity": 1,
+        "apply_growth": 1,
+        "apply_hybrid_spark_stages": 1,
+        "compute_observables": 1,
+        "enforce_quadrature_budget": 1,
+        "rebuild_choice_state": 1,
+        "rebuild_differential_state": 4,
+        "rebuild_identity_state": 2,
+        "rebuild_transport_state": 2,
+        "refresh_coarse_cache": 1
+      },
+      "observed_high_level_call_order": [
+        "rebuild_differential_state",
+        "rebuild_transport_state",
+        "rebuild_differential_state",
+        "rebuild_identity_state",
+        "apply_hybrid_spark_stages",
+        "rebuild_choice_state",
+        "apply_growth",
+        "apply_boundary_behavior",
+        "apply_continuity",
+        "enforce_quadrature_budget",
+        "rebuild_differential_state",
+        "rebuild_transport_state",
+        "rebuild_differential_state",
+        "rebuild_identity_state",
+        "refresh_coarse_cache",
+        "compute_observables"
+      ],
+      "observed_stage_records": [
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "89119b25c26ca8dac8813f5a1e2e78a873969a971ba240bf6dca14b5cb1cde72",
+          "method": "rebuild_differential_state",
+          "ordinal": 1,
+          "output_state_sha256": "f7d543c4d930925632453690bb10c647398032248813864e33abb45e3d6d1d25"
+        },
+        {
+          "changed_top_level_fields": [
+            "base_conductance",
+            "cached_quantities",
+            "edge_label_computation_mode",
+            "edge_label_params",
+            "flux_coupling",
+            "geometric_length",
+            "port_edges",
+            "potential",
+            "temporal_delay"
+          ],
+          "input_state_sha256": "f7d543c4d930925632453690bb10c647398032248813864e33abb45e3d6d1d25",
+          "method": "rebuild_transport_state",
+          "ordinal": 2,
+          "output_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "c4cfd5cfaeeb1bd161261aea4bf89a50a413dfb09f836b863a6609ebb490e687",
+          "method": "rebuild_differential_state",
+          "ordinal": 3,
+          "output_state_sha256": "12eff3e336bbb9eeb167be866b9346baffbfdda818e3cd934d92f26ee3397bfd"
+        },
+        {
+          "changed_top_level_fields": [
+            "basins",
+            "cached_quantities",
+            "nodes",
+            "sink_set"
+          ],
+          "input_state_sha256": "12eff3e336bbb9eeb167be866b9346baffbfdda818e3cd934d92f26ee3397bfd",
+          "method": "rebuild_identity_state",
+          "ordinal": 4,
+          "output_state_sha256": "d856ea0c537f5722627b796b9dce00bc1d7f18a81e47d6670f57ed7abe198c2e"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "d856ea0c537f5722627b796b9dce00bc1d7f18a81e47d6670f57ed7abe198c2e",
+          "method": "apply_hybrid_spark_stages",
+          "ordinal": 5,
+          "output_state_sha256": "bcb38a0e6ae3b703ef4ae9934cbdc9d1b7e1b4571b0956c8da627f6cfdc6a99f"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "bcb38a0e6ae3b703ef4ae9934cbdc9d1b7e1b4571b0956c8da627f6cfdc6a99f",
+          "method": "rebuild_choice_state",
+          "ordinal": 6,
+          "output_state_sha256": "f3405385812aeae609700532c77c6a6bc7fc988633f033a91bf20e63b66b2deb"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "f3405385812aeae609700532c77c6a6bc7fc988633f033a91bf20e63b66b2deb",
+          "method": "apply_growth",
+          "ordinal": 7,
+          "output_state_sha256": "0b5a1cd678f2ec8a18ee9c33585217b57638304ced022d2c6cf2bbb6a3ecee29"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "0b5a1cd678f2ec8a18ee9c33585217b57638304ced022d2c6cf2bbb6a3ecee29",
+          "method": "apply_boundary_behavior",
+          "ordinal": 8,
+          "output_state_sha256": "476b57e8473964c08b20a8b207ef60bc07b9608851c144454e202795316b5f9a"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "476b57e8473964c08b20a8b207ef60bc07b9608851c144454e202795316b5f9a",
+          "method": "apply_continuity",
+          "ordinal": 9,
+          "output_state_sha256": "20fe44b258463f800b30b530fc2a197a944a016d2171878f2c46566130637733"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "20fe44b258463f800b30b530fc2a197a944a016d2171878f2c46566130637733",
+          "method": "enforce_quadrature_budget",
+          "ordinal": 10,
+          "output_state_sha256": "0349b3c7605c2b033014abb81b9a72650e7f2bdb362bddc8945e8b50cd9ea6f0"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "0349b3c7605c2b033014abb81b9a72650e7f2bdb362bddc8945e8b50cd9ea6f0",
+          "method": "rebuild_differential_state",
+          "ordinal": 11,
+          "output_state_sha256": "1dc114e9f790a49ceb6d49c0ba4b4b02915882fe0bbf089b0dfe57def02a9bc4"
+        },
+        {
+          "changed_top_level_fields": [
+            "base_conductance",
+            "cached_quantities",
+            "flux_coupling",
+            "geometric_length",
+            "port_edges",
+            "potential",
+            "temporal_delay"
+          ],
+          "input_state_sha256": "1dc114e9f790a49ceb6d49c0ba4b4b02915882fe0bbf089b0dfe57def02a9bc4",
+          "method": "rebuild_transport_state",
+          "ordinal": 12,
+          "output_state_sha256": "4e4876ed76b88707597a1f129f6c9422b049cd0de4a81aab9adf8f99425ff3ee"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "4e4876ed76b88707597a1f129f6c9422b049cd0de4a81aab9adf8f99425ff3ee",
+          "method": "rebuild_differential_state",
+          "ordinal": 13,
+          "output_state_sha256": "5fde049c5f79334a07ea0e9975fc64fa2133b549061c4f5962ec2434d23c31f9"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities",
+            "nodes"
+          ],
+          "input_state_sha256": "5fde049c5f79334a07ea0e9975fc64fa2133b549061c4f5962ec2434d23c31f9",
+          "method": "rebuild_identity_state",
+          "ordinal": 14,
+          "output_state_sha256": "7b06fc867d7030408fc7895d8ce469785ed51eedc00fc0d6455fcc81bb5562ac"
+        },
+        {
+          "changed_top_level_fields": [
+            "cached_quantities"
+          ],
+          "input_state_sha256": "7b06fc867d7030408fc7895d8ce469785ed51eedc00fc0d6455fcc81bb5562ac",
+          "method": "refresh_coarse_cache",
+          "ordinal": 15,
+          "output_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86"
+        },
+        {
+          "changed_top_level_fields": [],
+          "input_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86",
+          "method": "compute_observables",
+          "ordinal": 16,
+          "output_state_sha256": "8a92a16f9a709e377511a716f00c3ee83ca8a7a77bc40afb8895db6c1744be86"
+        }
+      ],
+      "runtime_emitted_step_order": [
+        "compute_row_basis_gradient_pre_flux",
+        "compute_signed_hessian_row_basis_pre_flux",
+        "compute_net_flux_summary_pre_flux",
+        "compute_node_tensors",
+        "compute_base_conductance",
+        "compute_edge_labels_pre_flux",
+        "compute_potential",
+        "compute_flux",
+        "compute_edge_labels_post_flux",
+        "refresh_differential_summary_post_flux",
+        "detect_flux_topology_identities",
+        "validate_geometric_basin_seeds",
+        "compute_effective_basin_masses",
+        "detect_hybrid_spark_candidates",
+        "apply_mechanical_expansion",
+        "refresh_after_expansion",
+        "evaluate_child_basin_stabilization",
+        "register_completed_hybrid_sparks",
+        "update_hierarchy",
+        "update_choice_collapse_learning",
+        "apply_growth",
+        "apply_boundary_behavior",
+        "apply_continuity",
+        "enforce_quadrature_budget",
+        "refresh_runtime_state_final",
+        "refresh_or_invalidate_coarse_cache",
+        "compute_observables"
+      ],
+      "status": "passed",
+      "topology_after": {
+        "edges": [
+          0
+        ],
+        "nodes": [
+          0,
+          1
+        ]
+      },
+      "topology_before": {
+        "edges": [
+          0
+        ],
+        "nodes": [
+          0,
+          1
+        ]
+      }
+    },
+    "transition_environment_and_rng": {
+      "administrative_counters": [
+        "step_index",
+        "time"
+      ],
+      "checks": {
+        "fixed_envelope_has_no_events": true,
+        "fixed_envelope_rng_does_not_advance": true,
+        "params_identity_matches_runtime": true
+      },
+      "fixed_exogenous_transition_environment": {
+        "capabilities": [
+          "basin_attributes",
+          "choice_collapse_semantics",
+          "column_coarse_graining",
+          "hierarchy_tracking",
+          "intrinsic_frame",
+          "mechanical_refinement",
+          "multi_metric_edges",
+          "port_graph",
+          "quadrature_budget"
+        ],
+        "constitutive_semantic_modes": {
+          "backend_selections": {
+            "budget": {
+              "name": "simplex_projection",
+              "params": {
+                "quadrature_mode": "unit_measure"
+              }
+            },
+            "choice": {
+              "name": "disabled",
+              "params": {}
+            },
+            "curvature": {
+              "name": "none",
+              "params": {}
+            },
+            "geometry": {
+              "name": "fixed_port_chart",
+              "params": {}
+            },
+            "hessian": {
+              "name": "row_basis_diagonal",
+              "params": {}
+            },
+            "spark": {
+              "name": "saturation_signed_hessian",
+              "params": {
+                "column_h_sign_crossing_mode": "theory_product",
+                "enable_column_h_sign_crossing": false,
+                "enable_column_h_threshold": true,
+                "signed_crossing": false,
+                "spark_lane": "current_hybrid_signed_hessian"
+              }
+            }
+          },
+          "boundary_mode": "prune",
+          "budget_correction_method": "simplex_projection",
+          "choice_backend": "disabled",
+          "column_h_sign_crossing_mode": "theory_product",
+          "curvature_backend": "none",
+          "default_evolution_provenance": {
+            "D_eff_target": "GRC9 mechanical expansion default",
+            "alpha": "GRCV3 metric law default",
+            "alpha_seed": "GRC9 growth seed-transfer default",
+            "beta": "GRCV3 metric law default",
+            "compatibility_score_params": "GRCV3 choice/collapse defaults",
+            "delta": "GRCV3 metric law default",
+            "eps_column_h": "GRC9 column-H proxy threshold for opt-in GRC9V3 Lane B",
+            "eps_column_h_crossing_zero": "GRC9V3 Lane B optional column-H sign-crossing zero band",
+            "eps_gradient": "GRCV3 basin/spark semantic threshold",
+            "eps_hessian": "GRCV3 basin/spark semantic threshold",
+            "eps_spark": "GRCV3 signed-Hessian spark threshold",
+            "eps_tau": "GRCV3 temporal-label default",
+            "eta": "GRCV3 transport default",
+            "gamma": "GRCV3 metric law default",
+            "hessian_regularization": "GRCV3 weighted least-squares comparison backend",
+            "kappa_c": "GRCV3/GRC9 potential default",
+            "lambda_birth": "GRC9 growth default",
+            "lambda_c": "GRCV3 tensor default",
+            "rho": "GRCV3 temporal-label default",
+            "rng_seed": "GRC9 deterministic RNG default",
+            "site_potential_params": "GRCV3/GRC9 potential default",
+            "site_potential_selection": "GRCV3/GRC9 potential default",
+            "tau_instability": "GRC9 instability diagnostic threshold",
+            "v0": "GRCV3 temporal-label default",
+            "w_bond": "GRC9 expansion/growth bond default",
+            "xi_c": "GRCV3 tensor default",
+            "zeta_c": "GRCV3 tensor default"
+          },
+          "edge_label_selection": "all",
+          "enable_column_h_sign_crossing": false,
+          "enable_column_h_threshold": true,
+          "enable_near_saturation": false,
+          "expansion_distribution_mode": "equal",
+          "frame_mode": "fixed_port_chart",
+          "hessian_backend": "row_basis_diagonal",
+          "near_saturation_degree": 8,
+          "quadrature_mode": "unit_measure",
+          "require_active_degree_9": true,
+          "require_sink_for_column_h_spark": true,
+          "spark_lane": "current_hybrid_signed_hessian",
+          "spark_signed_crossing": false,
+          "store_previous_column_h": false
+        },
+        "dt": 0.1,
+        "evolution": {
+          "D_eff_target": 30,
+          "alpha": 1e-12,
+          "alpha_seed": 0.1,
+          "beta": 1e-12,
+          "compatibility_score_params": {
+            "epsilon_choice": 0.001,
+            "epsilon_collapse": 0.001
+          },
+          "delta": 1.0,
+          "eps_column_h": 0.001,
+          "eps_column_h_crossing_zero": 0.0,
+          "eps_gradient": 0.5,
+          "eps_hessian": 0.1,
+          "eps_spark": 0.001,
+          "eps_tau": 1e-12,
+          "eta": 1.0,
+          "gamma": 1e-12,
+          "hessian_regularization": 1e-09,
+          "kappa_c": 1.0,
+          "lambda_birth": 0.0,
+          "lambda_c": 1.0,
+          "rho": 1.0,
+          "rng_seed": 31000,
+          "site_potential_params": {
+            "mu": 0.0,
+            "scale": 0.0
+          },
+          "site_potential_selection": "quadratic",
+          "tau_instability": 0.5,
+          "v0": 1.0,
+          "w_bond": 1.0,
+          "xi_c": 1.0,
+          "zeta_c": 1.0
+        },
+        "raw_config_sha256": "a12ec2daad40c9bbdbf4261aaf0d4667265b774ac0e1efb4de707e9190077260",
+        "resolved_config": {
+          "constitutive_semantic_modes": {
+            "backend_selections": {
+              "budget": {
+                "name": "simplex_projection",
+                "params": {
+                  "quadrature_mode": "unit_measure"
+                }
+              },
+              "choice": {
+                "name": "disabled",
+                "params": {}
+              },
+              "curvature": {
+                "name": "none",
+                "params": {}
+              },
+              "geometry": {
+                "name": "fixed_port_chart",
+                "params": {}
+              },
+              "hessian": {
+                "name": "row_basis_diagonal",
+                "params": {}
+              },
+              "spark": {
+                "name": "saturation_signed_hessian",
+                "params": {
+                  "column_h_sign_crossing_mode": "theory_product",
+                  "enable_column_h_sign_crossing": false,
+                  "enable_column_h_threshold": true,
+                  "signed_crossing": false,
+                  "spark_lane": "current_hybrid_signed_hessian"
+                }
+              }
+            },
+            "boundary_mode": "prune",
+            "budget_correction_method": "simplex_projection",
+            "choice_backend": "disabled",
+            "column_h_sign_crossing_mode": "theory_product",
+            "curvature_backend": "none",
+            "default_evolution_provenance": {
+              "D_eff_target": "GRC9 mechanical expansion default",
+              "alpha": "GRCV3 metric law default",
+              "alpha_seed": "GRC9 growth seed-transfer default",
+              "beta": "GRCV3 metric law default",
+              "compatibility_score_params": "GRCV3 choice/collapse defaults",
+              "delta": "GRCV3 metric law default",
+              "eps_column_h": "GRC9 column-H proxy threshold for opt-in GRC9V3 Lane B",
+              "eps_column_h_crossing_zero": "GRC9V3 Lane B optional column-H sign-crossing zero band",
+              "eps_gradient": "GRCV3 basin/spark semantic threshold",
+              "eps_hessian": "GRCV3 basin/spark semantic threshold",
+              "eps_spark": "GRCV3 signed-Hessian spark threshold",
+              "eps_tau": "GRCV3 temporal-label default",
+              "eta": "GRCV3 transport default",
+              "gamma": "GRCV3 metric law default",
+              "hessian_regularization": "GRCV3 weighted least-squares comparison backend",
+              "kappa_c": "GRCV3/GRC9 potential default",
+              "lambda_birth": "GRC9 growth default",
+              "lambda_c": "GRCV3 tensor default",
+              "rho": "GRCV3 temporal-label default",
+              "rng_seed": "GRC9 deterministic RNG default",
+              "site_potential_params": "GRCV3/GRC9 potential default",
+              "site_potential_selection": "GRCV3/GRC9 potential default",
+              "tau_instability": "GRC9 instability diagnostic threshold",
+              "v0": "GRCV3 temporal-label default",
+              "w_bond": "GRC9 expansion/growth bond default",
+              "xi_c": "GRCV3 tensor default",
+              "zeta_c": "GRCV3 tensor default"
+            },
+            "edge_label_selection": "all",
+            "enable_column_h_sign_crossing": false,
+            "enable_column_h_threshold": true,
+            "enable_near_saturation": false,
+            "expansion_distribution_mode": "equal",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "near_saturation_degree": 8,
+            "quadrature_mode": "unit_measure",
+            "require_active_degree_9": true,
+            "require_sink_for_column_h_spark": true,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "spark_signed_crossing": false,
+            "store_previous_column_h": false
+          },
+          "dt": 0.1,
+          "evolution": {
+            "D_eff_target": 30,
+            "alpha": 1e-12,
+            "alpha_seed": 0.1,
+            "beta": 1e-12,
+            "compatibility_score_params": {
+              "epsilon_choice": 0.001,
+              "epsilon_collapse": 0.001
+            },
+            "delta": 1.0,
+            "eps_column_h": 0.001,
+            "eps_column_h_crossing_zero": 0.0,
+            "eps_gradient": 0.5,
+            "eps_hessian": 0.1,
+            "eps_spark": 0.001,
+            "eps_tau": 1e-12,
+            "eta": 1.0,
+            "gamma": 1e-12,
+            "hessian_regularization": 1e-09,
+            "kappa_c": 1.0,
+            "lambda_birth": 0.0,
+            "lambda_c": 1.0,
+            "rho": 1.0,
+            "rng_seed": 31000,
+            "site_potential_params": {
+              "mu": 0.0,
+              "scale": 0.0
+            },
+            "site_potential_selection": "quadratic",
+            "tau_instability": 0.5,
+            "v0": 1.0,
+            "w_bond": 1.0,
+            "xi_c": 1.0,
+            "zeta_c": 1.0
+          },
+          "numerical_backend": {}
+        },
+        "resolved_params_sha256": "d0696e850a65b37eded4689ebe1de9268237fdab147c1065b64897a50099d644"
+      },
+      "global_runtime_configuration": "repository_revision_and_numerical_environment_recorded_by_GRV0",
+      "observer_only_data": [
+        "event_log",
+        "observables",
+        "coarse_cache"
+      ],
+      "rng": {
+        "advanced": false,
+        "after_sha256": "e16bb1aad53c063e2ac6a1ac0b184fd373732e027d47250999d70b04714128f4",
+        "before_sha256": "e16bb1aad53c063e2ac6a1ac0b184fd373732e027d47250999d70b04714128f4",
+        "classification": "causal_runtime_state_even_when_unchanged_on_F0"
+      },
+      "serialized_dynamic_state": "complete_GRC9V3State_inventory",
+      "solver_or_warm_start_state": "not_present_on_GRV1_F0_path",
+      "status": "passed",
+      "transition_claim": "future_is_conditioned_on_complete_state_and_frozen_transition_environment"
+    },
+    "transport_anchor": {
+      "absolute_residuals": {
+        "base_conductance": 1.000000082740371e-11,
+        "flux_coupling": 8.000000661922968e-11,
+        "flux_uv": 8.000000661922968e-11,
+        "geometric_length": 9.000133971426294e-12,
+        "potential_0": 2.000000165480742e-11,
+        "potential_1": 2.000000165480742e-11,
+        "temporal_delay": 4.960004629239734e-12
+      },
+      "declared_tolerance": 1e-09,
+      "evidence_role": "canonical_existing_test_anchor_not_new_scientific_evidence",
+      "expected": {
+        "base_conductance": {
+          "0": 1.0
+        },
+        "flux_coupling": {
+          "0": 4.0
+        },
+        "flux_uv": {
+          "0": 4.0
+        },
+        "geometric_length": {
+          "0": 1.0
+        },
+        "potential": {
+          "0": -2.0,
+          "1": 2.0
+        },
+        "temporal_delay": {
+          "0": 0.2
+        }
+      },
+      "fixture_id": "F0",
+      "maximum_absolute_residual": 8.000000661922968e-11,
+      "observed": {
+        "base_conductance": {
+          "0": 0.99999999999
+        },
+        "flux_coupling": {
+          "0": 3.99999999992
+        },
+        "flux_uv": {
+          "0": 3.99999999992
+        },
+        "geometric_length": {
+          "0": 1.0000000000090001
+        },
+        "potential": {
+          "0": -1.99999999998,
+          "1": 1.99999999998
+        },
+        "temporal_delay": {
+          "0": 0.20000000000496002
+        }
+      },
+      "runtime_methods": [
+        "GRC9V3.rebuild_differential_state",
+        "GRC9V3.rebuild_transport_state"
+      ],
+      "source_test": "tests/models/test_grc_9_v3_transport.py::_two_node_state_and_transport_params",
+      "status": "passed"
+    }
+  },
+  "payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+  "schema_version": "b1_grv1_instrumentation_validation_v1"
+}

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "dirty": false,
+    "repository": "github.com/urosj/geometric-reflexive-coherence",
+    "revision": "5a8b01ae60165054da617db649c5a039755a18ec",
+    "sources": [
+      {
+        "git_blob": "6e3edec632b4dee892d300bb442e04790a0a7493",
+        "path": "core/2026-08-TheContinuationSpectrum.md",
+        "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5",
+        "source_role": "controlling_continuation_theory"
+      },
+      {
+        "git_blob": "f44c729318433fafd8ce674b8914098da462f4de",
+        "path": "core/2026-08-ReadBack.md",
+        "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2",
+        "source_role": "controlling_readback_theory"
+      }
+    ]
+  },
+  "payload_sha256": "5ba984e54a3fba47badaff0f24225c57aee4a93ccf5078e82bcf4b8fb00a8466",
+  "schema_version": "b1_theory_source_manifest_v1"
+}

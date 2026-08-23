@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/serialize_theory_contract.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "assumption_count": 19,
+    "claim_count": 33,
+    "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "debt_count": 13,
+    "part_i_and_appendix_a_sha256": "4c493ee1023a0cdfece4f0bdf02386fb795ff3b4e864f93312effc2ba7a36da5",
+    "proof_note_count": 12,
+    "traceability_row_count": 17
+  },
+  "payload_sha256": "0d60d38e34fe5ca0381f734f4f33be636160f7dcd7e15d07f1bfb523a5012fd5",
+  "schema_version": "b1_theory_contract_identity_v1"
+}

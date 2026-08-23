@@ -31,6 +31,19 @@ at `version = "0.1"`.
   and [closeout](implementation/corrections/PyGRC-ResetBaselinePersistenceCloseout.md),
   including explicit RCAE P2-I2 re-admission guidance.
 
+### Experiments And Evidence
+
+- **B1-GR: unchanged-GRC9V3 continuation and Read-Back verification.** Closed
+  the nine-gate foundational verification at `GRV-C6` without changing the
+  runtime. B1-GR accepts bounded formed branches, exact stage-local current
+  recurrence, bounded L3 causal closure, and synthetic `C`-dominated `GRR2`
+  neutral persistence while keeping native Read-Back, write-back, a closed
+  read/write loop, and unique retained-projector claims blocked. The accepted
+  [closeout](experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/reports/b1_grv8_closeout.md)
+  routes first to unchanged-GRC constructibility and selectable GRC
+  extensions, with analysis debt and LGRC-specific investigation kept
+  separate. No runtime extension or B1-L execution is authorized.
+
 ## Research Repository Milestone - 2026-07-12
 
 ### Runtime And Substrate

@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "checks": {
+      "J_oriented_cache_only_matches_control": true,
+      "J_port_edge_only_changes_conductance": true,
+      "J_port_edge_only_matches_both_consistent": true,
+      "K_multi_amplitude_fixed_path_control_passed": true,
+      "W_base_only_changes_consumer_output": true,
+      "W_base_only_matches_both_consistent": true,
+      "W_edge_copy_only_matches_control": true
+    },
+    "records": [
+      {
+        "authoritative_surface": "state.base_conductance",
+        "canonical_consumers": [
+          "grc_9_v3_runtime.compute_potential",
+          "grc_9_v3_runtime.compute_flux"
+        ],
+        "canonical_producer": "grc_9_v3_runtime.compute_base_conductance",
+        "duplicate_or_fallback_surfaces": [
+          "state.port_edges[*].conductance"
+        ],
+        "logical_quantity": "W_base_conductance",
+        "mismatch_control_outputs": {
+          "base_only": {
+            "potential": {
+              "0": -0.5,
+              "1": 0.5
+            },
+            "reconstructed_flux_uv": 0.25
+          },
+          "both_consistent": {
+            "potential": {
+              "0": -0.5,
+              "1": 0.5
+            },
+            "reconstructed_flux_uv": 0.25
+          },
+          "control": {
+            "potential": {
+              "0": -1.99999999998,
+              "1": 1.99999999998
+            },
+            "reconstructed_flux_uv": 3.99999999992
+          },
+          "edge_copy_only": {
+            "potential": {
+              "0": -1.99999999998,
+              "1": 1.99999999998
+            },
+            "reconstructed_flux_uv": 3.99999999992
+          }
+        },
+        "overwrite_stage": "rebuild_transport_state.compute_base_conductance",
+        "rebuild_stage": "rebuild_transport_state.compute_base_conductance",
+        "result": "base_conductance_is_authoritative_for_potential_and_flux_when_present",
+        "serialization_surfaces": [
+          "snapshot.edge_labels.base_conductance",
+          "snapshot.dynamics.state.base_conductance",
+          "snapshot.dynamics.state.port_edges[*].conductance"
+        ]
+      },
+      {
+        "authoritative_surface": "state.port_edges[*].flux_uv",
+        "canonical_consumers": [
+          "grc_9_v3_runtime.compute_net_flux_summary_rows",
+          "grc_9_v3_runtime.compute_base_conductance",
+          "GRC9V3.apply_continuity"
+        ],
+        "canonical_producer": "grc_9_v3_runtime.compute_flux",
+        "duplicate_or_derived_surfaces": [
+          "state.cached_quantities.oriented_flux",
+          "state.nodes[*].net_flux_summary",
+          "state.flux_coupling"
+        ],
+        "logical_quantity": "J_signed_edge_current",
+        "mismatch_control_outputs": {
+          "both_consistent": 0.999999499990125,
+          "control": 0.999999999982,
+          "oriented_cache_only": 0.999999999982,
+          "port_edge_only": 0.999999499990125
+        },
+        "overwrite_stage": "rebuild_transport_state.compute_flux",
+        "rebuild_stage": "rebuild_transport_state.compute_flux",
+        "result": "port_edge_flux_is_authoritative_old_current_input",
+        "serialization_surfaces": [
+          "snapshot.dynamics.state.port_edges[*].flux_uv",
+          "snapshot.dynamics.state.cached_quantities.oriented_flux"
+        ]
+      },
+      {
+        "authoritative_surface": "not_identified_as_a_consumer_input_on_tested_path",
+        "canonical_consumers": [],
+        "canonical_producer": "grc_9_v3_runtime.rebuild_grc9v3_differential_state",
+        "duplicate_or_derived_surfaces": [
+          "state.cached_quantities.hybrid_node_tensors"
+        ],
+        "global_causal_absence_claimed": false,
+        "logical_quantity": "K_hybrid_node_tensor",
+        "mismatch_control_outputs": [
+          {
+            "amplitude": 0.001,
+            "counterfactual_k_sha256": "792226eb8d1fdddb01b750c066d6670241883c65ae3a78025bf8cd8c509c8aef",
+            "differential_stage_overwrites_counterfactual_cache": true,
+            "full_step_current_runtime_state_equal": true,
+            "full_step_physical_max_delta": 0.0,
+            "input_tensor_structure_valid": true,
+            "transport_exact_numeric_equal": true,
+            "transport_max_delta": 0.0
+          },
+          {
+            "amplitude": 1.0,
+            "counterfactual_k_sha256": "52c3429911f5839ea553a07e8e3395c081edf502cda173671362bc31e337cf41",
+            "differential_stage_overwrites_counterfactual_cache": true,
+            "full_step_current_runtime_state_equal": true,
+            "full_step_physical_max_delta": 0.0,
+            "input_tensor_structure_valid": true,
+            "transport_exact_numeric_equal": true,
+            "transport_max_delta": 0.0
+          },
+          {
+            "amplitude": 100.0,
+            "counterfactual_k_sha256": "214393150ff68b4885ed59f2d1d66cdd8e8b1854293542b624594dc45d53d760",
+            "differential_stage_overwrites_counterfactual_cache": true,
+            "full_step_current_runtime_state_equal": true,
+            "full_step_physical_max_delta": 0.0,
+            "input_tensor_structure_valid": true,
+            "transport_exact_numeric_equal": true,
+            "transport_max_delta": 0.0
+          }
+        ],
+        "overwrite_stage": "next_rebuild_differential_state",
+        "rebuild_stage": "rebuild_differential_state.compute_node_tensors",
+        "result": "not_consumed_on_tested_F0_fixed_topology_no_event_path",
+        "serialization_surfaces": [
+          "snapshot.dynamics.state.cached_quantities.hybrid_node_tensors"
+        ]
+      }
+    ],
+    "schema_scope": "current_GRC9V3_F0_fixed_topology_no_event_path",
+    "status": "passed"
+  },
+  "payload_sha256": "1a97e98452e1d13750c12979962d18c1f82b0e20443bf619f14dd63c85948436",
+  "schema_version": "b1_grv1_surface_authority_map_v1"
+}

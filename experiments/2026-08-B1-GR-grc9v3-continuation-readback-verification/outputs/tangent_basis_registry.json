@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "ambient_identification": "canonical_fixed_topology_coordinate_identity",
+    "metric_transport_rule": "declare_fixed_reference_representation_when_inner_product_varies",
+    "records": [
+      {
+        "basis": [
+          [
+            0.7071067811865475
+          ],
+          [
+            -0.7071067811865475
+          ]
+        ],
+        "node_order": [
+          0,
+          1
+        ],
+        "orthonormality_error": 2.220446049250313e-16,
+        "topology_order_family": "2_node_canonical_order",
+        "zero_sum_error": 0.0
+      },
+      {
+        "basis": [
+          [
+            0.7071067811865475,
+            0.4082482904638631
+          ],
+          [
+            -0.7071067811865475,
+            0.4082482904638631
+          ],
+          [
+            0.0,
+            -0.8164965809277261
+          ]
+        ],
+        "node_order": [
+          0,
+          1,
+          2
+        ],
+        "orthonormality_error": 2.23393723959888e-16,
+        "topology_order_family": "3_node_canonical_order",
+        "zero_sum_error": 0.0
+      }
+    ]
+  },
+  "payload_sha256": "e342f074f90d68c05428ef7aa8a443e021a88072151e24f98bae9eda8e5ed4fd",
+  "schema_version": "b1_tangent_basis_registry_v1"
+}

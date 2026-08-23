@@ -1,0 +1,33 @@
+{
+  "schema_version": "b1_grv8_traceability_correction_policy_v1",
+  "gate_id": "GRV8",
+  "replacement_method_id": "P8_2_traceability_transport_contradiction_and_L4_correction",
+  "source_matrix_preserved": true,
+  "default_assumption_source": "source_row.Required assumptions",
+  "default_claim_and_debt_source": "source_row.Claim or debt",
+  "row_corrections": {
+    "TR-01": {
+      "claim_ids": ["T-S02"],
+      "debt_ids": [],
+      "assumption_ids": ["A-BRANCH", "A-CLOCK", "A-CONSERVE"],
+      "primary_routes": ["unchanged_grc_interpretation"],
+      "corrected_source_fields": {
+        "Claim or debt": "`T-S02`",
+        "Required assumptions": "`A-BRANCH`, `A-CLOCK`, `A-CONSERVE`",
+        "GRC extension route": "none; bounded runtime classification only",
+        "LGRC route": "not applicable to T-S02 alone"
+      },
+      "reason": "The controlling traceability row conflates the T-S02 runtime-state distinction with D-M01 Markov-sufficiency debt. Final classification assigns T-S02 its claim-ledger assumptions and leaves D-M01 solely with TR-17; the controlling source row remains embedded unchanged."
+    }
+  },
+  "required_debt_ownership": {
+    "D-M01": ["TR-17"]
+  },
+  "accepted_evidence_deduplication_key": [
+    "source_gate",
+    "result_revision",
+    "artifact_path",
+    "exact_field_or_row",
+    "consumed_value_semantic_sha256"
+  ]
+}

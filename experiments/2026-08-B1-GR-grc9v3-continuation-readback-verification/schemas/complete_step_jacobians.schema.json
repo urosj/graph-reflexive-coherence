@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/complete_step_jacobians.schema.json",
+  "type": "object",
+  "required": ["schema_version", "metadata", "payload", "payload_sha256"],
+  "properties": {
+    "schema_version": {"const": "b1_grv3_complete_step_jacobians_v1_2"},
+    "metadata": {"type": "object"},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "payload": {
+      "type": "object",
+      "required": [
+        "gate_id", "source_contract", "branch_selection", "causal_field_inventory",
+        "branches", "summary", "claim_boundary"
+      ],
+      "properties": {
+        "gate_id": {"const": "GRV3"},
+        "branches": {"type": "array", "minItems": 48, "maxItems": 48},
+        "summary": {
+          "type": "object",
+          "required": [
+            "branch_count", "causal_closure_pass_count",
+            "full_C_W_J_jacobian_admitted_count", "reduced_coordinate_matrix_count",
+            "admitted_reduced_symmetry_orbit_count",
+            "branches_with_admitted_reduced_temporal_coordinate",
+            "branches_without_any_admitted_temporal_coordinate",
+            "spectral_convergence_pass_matrix_count",
+            "response_convergence_pass_matrix_count",
+            "finite_horizon_nonnormal_pass_matrix_count",
+            "individual_eigenvector_condition_pass_matrix_count",
+            "individual_eigenvector_condition_block_matrix_count",
+            "all_cluster_interpretation_pass_matrix_count",
+            "temporal_mode_interpretation_pass_matrix_count",
+            "temporal_mode_interpretation_blocked_matrix_rows",
+            "all_branches_consumed_without_symmetry_reduction"
+          ]
+        }
+      }
+    }
+  }
+}

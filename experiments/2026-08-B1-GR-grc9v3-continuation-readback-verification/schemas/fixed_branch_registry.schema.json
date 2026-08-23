@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/fixed_branch_registry.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "metadata",
+    "payload",
+    "payload_sha256"
+  ],
+  "properties": {
+    "payload": {
+      "type": "object",
+      "required": [
+        "branches",
+        "selection_accounting",
+        "held_out_validation",
+        "bounded_search_evidence",
+        "symmetry_and_port_controls",
+        "adversarial_hardening_audit",
+        "claim_boundary"
+      ],
+      "properties": {
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "branch_id",
+              "fixture_id",
+              "parameter_hash",
+              "state_snapshot_path",
+              "state_snapshot_sha256",
+              "canonical_branch_signature",
+              "nonuniformity",
+              "full_step_residual",
+              "internal_stage_residuals",
+              "budget_residual",
+              "canonicalization_admission",
+              "authoritative_surface_assertions",
+              "constraint_and_projection_controls",
+              "administrative_phase_hold",
+              "event_and_topology_assertions",
+              "symmetry_class",
+              "solver_record",
+              "continuity_and_budget_states",
+              "solver_converged",
+              "branch_certified",
+              "branch_class",
+              "distance_from_non_smooth_boundaries",
+              "grv3_causal_branch_upgrade_status",
+              "replay_validation"
+            ]
+          }
+        },
+        "selection_accounting": {"type": "object"},
+        "held_out_validation": {"type": "object"},
+        "bounded_search_evidence": {"type": "object"},
+        "symmetry_and_port_controls": {"type": "object"},
+        "adversarial_hardening_audit": {"type": "object"},
+        "claim_boundary": {"type": "object"}
+      }
+    }
+  }
+}

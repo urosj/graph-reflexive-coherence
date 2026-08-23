@@ -1,0 +1,1 @@
+{"fixture_id":"F4","status":"control_family","base_fixture":"F3","controls":["edge_orientation_reversal_with_current_sign_change","row_preserving_port_permutation","column_changing_port_permutation","degree_preserving_port_relabeling","sign_reversed_old_current_at_matched_C_W"],"first_executable_gate":"GRV1"}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "b1_grv1_p1_package_manifest_v1_1",
+  "package_status": "clean_P1_1_strengthened_input_when_contained_in_committed_revision",
+  "gate_id": "GRV1",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV0",
+    "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
+    "receipt_payload_sha256": "a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df",
+    "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+    "acceptance_anchor_commit": "454b2c55d1682c3ead46f6036ed725445b37fc08"
+  },
+  "superseded_candidate_result": {
+    "result_revision": "45435c8e2da28908fabe58ba93c2c1af4b08930c",
+    "receipt_payload_sha256": "c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf",
+    "acceptance_status": "never_accepted",
+    "reason": "pre_acceptance_source_fidelity_review_strengthening"
+  },
+  "gate_input_change_class": "instrumentation_strengthening_preserving_specification_and_claim_ceiling",
+  "protocol_readmission_required": false,
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "positive_evidence_opened": false
+  },
+  "executable_surfaces": [
+    "scripts/validate_instrumentation.py",
+    "scripts/run_all.py",
+    "tests/test_instrumentation.py"
+  ],
+  "strengthened_controls": [
+    "observation_noninterference",
+    "nested_clone_isolation",
+    "surface_authority_map",
+    "valid_multi_amplitude_K_counterfactual",
+    "stagewise_J_sign_trace",
+    "involutive_coordinate_reorientation",
+    "public_stage_replay",
+    "call_multiplicity_and_boundary_digests",
+    "transition_environment_and_RNG_audit",
+    "fresh_process_replay"
+  ],
+  "additional_output": "outputs/surface_authority_map.json",
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV1",
+  "claim_ceiling": "exact_runtime_dependency_and_orientation_semantics_only"
+}

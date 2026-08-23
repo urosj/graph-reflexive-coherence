@@ -1,0 +1,57 @@
+{
+  "schema_version": "b1_grv0_p0_package_manifest_v1",
+  "package_status": "clean_P0_2_preacceptance_corrections_when_contained_in_committed_revision",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "controlling_specification_path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+  "controlling_specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+  "executable_gate": "GRV0",
+  "deferred_gate_scripts": {
+    "GRV1": ["validate_instrumentation.py"],
+    "GRV2": ["solve_strong_fixed_branches.py"],
+    "GRV3": ["compute_complete_step_jacobian.py"],
+    "GRV4": ["compare_frozen_and_full_dynamics.py"],
+    "GRV5": ["run_preparation_persistence_probe.py"],
+    "GRV6": ["search_return_orbits.py"],
+    "GRV7": ["sweep_temporal_and_spatial_thresholds.py"],
+    "GRV8": ["classify_claims_and_extensions.py", "route_contradictions_and_theory_reopening.py", "build_lgrc_handoff.py"]
+  },
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "scientific_evidence_opened": false
+  },
+  "GRV0_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV0",
+  "acceptance_policy": "mechanical_receipt_then_separate_authorized_human_anchor",
+  "preacceptance_correction": {
+    "classification": "bug_fix_preserving_protocol",
+    "unaccepted_result_revision_to_supersede_after_successful_reexecution": "05fc8f61eb45a6a2ceb62d90215028780dbf3186",
+    "unaccepted_receipt_payload_sha256_to_supersede_after_successful_reexecution": "79588424b3021a10d81330d2ff6b16ea86b8b9ade7b45eb19a02aa0e722f5bf2",
+    "defect": "baseline_manifest_missing_explicit_specification_id",
+    "experiment_artifact_contract_changed": true,
+    "experiment_generator_changed": true,
+    "experiment_local_test_changed": true,
+    "method_changed": false,
+    "threshold_changed": false,
+    "fixture_changed": false,
+    "runtime_changed": false,
+    "theory_contract_changed": false,
+    "claim_envelope_changed": false,
+    "protocol_readmission_required": false,
+    "complete_GRV0_reexecution_required": true,
+    "p0_1_rerun_discovery": {
+      "input_execution_revision": "431dcf85fb3e116b531747043e208627e171ae0f",
+      "result_admitted": false,
+      "defect": "existing_unaccepted_receipt_included_in_replacement_receipt_output_digests",
+      "validator_result": "failed_closed_receipt_self_reference_rejected",
+      "experiment_artifact_enumeration_changed": true,
+      "method_changed": false,
+      "threshold_changed": false,
+      "fixture_changed": false,
+      "runtime_changed": false,
+      "theory_contract_changed": false,
+      "claim_envelope_changed": false,
+      "complete_GRV0_reexecution_required": true
+    }
+  }
+}

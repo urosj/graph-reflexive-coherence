@@ -1,0 +1,2093 @@
+# B1-GR GRC9V3 Continuation And Read-Back Verification Implementation Checklist
+
+## Current Status
+
+```text
+branch = experiment-B1-continuation-readback
+status = grv8_P8_1_unaccepted_candidate_superseded_P8_2_method_correction
+controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
+controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
+runtime_under_test = unchanged_GRC9V3
+runtime_change_authorized = false
+src_change_authorized = false
+existing_test_change_authorized = false
+positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
+positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
+current_gate = GRV8_P8_2_clean_execution_pending
+verification_closeout_ladder_rung_assigned = true
+verification_closeout_rung = GRV-C5
+verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
+B1_L_execution_authorized = false
+N32_selected = false
+l04_selected = false
+```
+
+## Initialization
+
+- [x] Create a dedicated B1 experiment branch.
+- [x] Create the B1-GR experiment directory.
+- [x] Integrate Draft 3.2 as the experiment-local intake specification.
+- [x] Preserve the accepted Draft 3.2 intake beside the controlling revision.
+- [x] Advance the controlling specification to Draft 3.3 for pre-execution hardening.
+- [x] Preserve Draft 3.3 beside the controlling revision.
+- [x] Advance the controlling specification to Draft 3.4 for identification,
+  codec, causal-inference, and evidence-lifecycle hardening.
+- [x] Preserve Draft 3.4 beside the controlling revision.
+- [x] Advance the controlling specification to Draft 3.4.1 for mathematical
+  correctness and execution sealing.
+- [x] Add the B1-GR README.
+- [x] Add the B1-GR implementation plan.
+- [x] Add the B1-GR implementation checklist.
+- [x] Map Iterations 1-9 one-to-one to GRV0-GRV8.
+- [x] Document the accepted B1-GR path and implementation-file name corrections.
+- [x] Preserve unchanged-runtime, no-`src/`, and no-existing-test-change boundaries.
+- [x] Keep N32 unselected.
+- [x] Create B1-L as a deferred provenance/prerequisite record only.
+- [x] Review and accept the B1-GR specification, plan, and checklist before GRV0.
+
+## Global Execution Rules
+
+- [ ] Execute GRV gates serially and consume accepted prerequisite digests.
+- [ ] Consume prerequisite result digests for provenance and accepted-anchor
+  digests/references for authorization; never treat a receipt alone as acceptance.
+- [ ] Commit each gate's executable experiment code in its clean input revision
+  before running that gate.
+- [ ] Classify every gate-input code/config/fixture change and require protocol
+  readmission for scientific-method, threshold/config, fixture, or
+  claim-envelope changes.
+- [ ] Start each gate from a clean accepted input revision.
+- [ ] Write and validate a non-self-referential result receipt before committing gate results.
+- [ ] Record scientific acceptance in a separate authority-bearing acceptance anchor.
+- [ ] Record result revision, receipt payload digest, accepting identity and
+  role, review method and timestamp, acceptance status, and immutable
+  signature/reference in every acceptance anchor.
+- [ ] Refuse to cross a missing, rejected, blocked, or superseded prerequisite acceptance anchor.
+- [ ] Preregister authorized human acceptors/roles, review methods, self-review,
+  and independent-review requirements before outcomes.
+- [ ] Run Python commands through `.venv`.
+- [ ] Use repository-relative paths in committed artifacts.
+- [ ] Hash canonical semantic payloads without self-reference or volatile metadata.
+- [ ] Declare byte, tolerance, or seeded-search reproducibility per artifact.
+- [ ] Keep raw snapshots separate from derived matrices and reports.
+- [ ] Declare thresholds, norms, clocks, and horizons before outcome inspection.
+- [ ] Record reached-state and synthetic-valid counterfactuals separately.
+- [ ] Record failed searches and blocked gates rather than omitting them.
+- [ ] Keep `alpha`, `gamma`, `beta`, transition multipliers, and spatial Hessians distinct.
+- [ ] Keep retention, read effect, write effect, and closed-loop evidence distinct.
+- [ ] Keep field, current, axis, orientation, and full-reflexive equivalence distinct.
+- [ ] Keep assumptions failed or unidentifiable separate from falsified claims.
+- [ ] Verify protected GRC source/spec/test paths remain unchanged after each gate.
+- [ ] Route any post-GRV1 protected-path discovery as
+  `source_or_specification_mismatch`; never silently amend manifest v1.
+- [ ] Bind every result to substrate revision, protected-manifest digest,
+  experiment input revision/tree digest, and accepted prerequisite anchors.
+- [ ] Supersede or block the complete transitive downstream acceptance graph
+  when a revision-distinct baseline is admitted.
+- [ ] Keep generic positive evidence false through GRV1 and open it only from an
+  accepted GRV2+ source-current scientific row; keep role flags separate.
+- [ ] Keep B1-L unopened until accepted GRV-C6 and handoff admission.
+- [ ] Keep preserved Drafts 3.2, 3.3, and 3.4 and controlling Draft 3.4.1 immutable during execution.
+
+## Iteration 1 - GRV0 Specification And Baseline Admission
+
+- [x] Accept Draft 3.4.1 as the exact controlling specification version.
+- [x] Materialize GRV0 package surfaces and commit the clean `P0`
+  package-preparation revision before execution.
+- [x] Record exact graph repository revision.
+- [x] Record exact geometric-theory repository revision.
+- [x] Digest both controlling core papers.
+- [x] Record both paper paths, roles, blob identities where available, and
+  SHA-256 digests in `theory_source_manifest.json`.
+- [x] Freeze `protected_path_manifest_v0` for GRC source/spec/test paths.
+- [x] Freeze `experiment_path_manifest.json` and the exact non-self-referential experiment-tree digest scope.
+- [x] Include every discovered load-bearing source in the protected manifest.
+- [x] Record substrate base and experiment execution revisions separately.
+- [x] Verify a clean execution checkout.
+- [x] Run the complete existing test suite in `.venv`.
+- [x] Record test command, environment, duration, pass/fail/skip counts, and logs.
+- [x] Serialize the theory claim ledger.
+- [x] Serialize the theory assumption registry.
+- [x] Serialize the derivation-status appendix.
+- [x] Serialize the theory debt register.
+- [x] Serialize proof-note and traceability records.
+- [x] Serialize the gate dependency map.
+- [x] Materialize all six normative `hypotheses/` views.
+- [x] Materialize and map all normative scripts to GRV gates.
+- [x] Freeze contradiction and theory-reopening schemas.
+- [x] Freeze canonical JSON, semantic digest, path, artifact, result-receipt, and acceptance-anchor schemas.
+- [x] Verify dedicated schema or named `$defs` coverage for every required
+  manifest and final decision artifact.
+- [x] Add experiment-local schema, state-codec, tangent-basis, intervention, receipt, and convergence tests.
+- [x] Add and pass `test_edge_space.py` for projector algebra and covariance.
+- [x] Add and pass `test_spec_propagation.py` against the current specification
+  ID/digest, README, plan, checklist, gate/artifact names, and GRV0 obligations.
+- [x] Freeze experiment-local numerical dependency policy.
+- [x] Emit the complete numerical environment record.
+- [x] Preregister the `A-NONNORMAL-CONTROL` evidence mode and threshold.
+- [x] Preregister the `A-FAST-SLOW` measure and threshold where applicable.
+- [x] Preregister the present-current convention and acceptance authority/review policy.
+- [x] Serialize the complete fixed-topology envelope implementation for GRV0 emission.
+- [x] Validate every specification-name to exact runtime-parameter mapping in the envelope implementation.
+- [x] Freeze orthonormal zero-sum coherence tangent bases.
+- [x] Freeze ambient coordinate identification and branch-dependent metric transport.
+- [x] Freeze block-specific causal-equivalence tolerances, RNG treatment,
+  administrative advancement, duplicate-surface reconciliation, and
+  per-horizon accumulated-error rules.
+- [x] Freeze gate-input revision-change classifications and protocol-readmission rules.
+- [x] Verify no `src/` or existing-test diff during P0 preparation.
+- [x] Emit GRV0 JSON artifacts and report.
+- [x] Emit and validate the GRV0 result receipt.
+- [x] Record GRV0 scientific acceptance in a separate accepted anchor before GRV1.
+- [x] Assign `GRV-C1` only if exact baseline and tests are admitted.
+- [x] Keep all scientific evidence flags false.
+
+GRV0 mechanical result:
+
+```text
+clean_input_revision = 5f9297378a26b8093f523cd11f8cb9f0f0aef723
+result_revision = 97a9a6bf9cd20ca6c1adcc0feee26712df9569fb
+substrate_base_revision = 589f933e5649c34d3ad54a5f8dbdba2a20e968d7
+theory_revision = 5a8b01ae60165054da617db649c5a039755a18ec
+protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2
+experiment_tree_sha256 = f132c8917da074118b47563c1d8d4020e20243a93dd7fb6c471f9cdb79783c8d
+receipt_payload_sha256 = a583d763b2d5e72af3f3e2ad5401aca8c143eff1aa73427404c2f8286e1ed9df
+existing_tests = 1354_passed_0_failed_0_skipped
+mechanical_status = passed
+receipt_status = awaiting_scientific_review
+scientific_acceptance = accepted_anchor_commit_454b2c55d1682c3ead46f6036ed725445b37fc08
+positive_evidence_opened = false
+```
+
+Stop condition:
+
+```text
+dirty_or_failing_baseline or missing_exact_source_identity stops execution
+```
+
+## Iteration 2 - GRV1 Instrumentation And Source Fidelity
+
+- [x] Reproduce the existing two-node transport anchor.
+- [x] Capture and verify complete canonical `step()` order.
+- [x] Verify fixed topology and no-event envelope.
+- [x] Run separate transport-stage and full-step materialized-`K` counterfactuals.
+- [x] Classify direct use, overwrite-before-use, diagnostic status, or unknown; route source mismatch separately.
+- [x] Run physical `J -> -J` controls.
+- [x] Run edge-coordinate reorientation/covariance controls separately.
+- [x] Classify magnitude, axis, orientation, and reconstruction separately.
+- [x] Inventory every excluded or administratively advancing field.
+- [x] Carry causal and unknown excluded fields into GRV3 closure candidates.
+- [x] Validate canonical deep-clone intervention and rebuild behavior.
+- [x] Validate raw snapshot and derived-artifact separation.
+- [x] Validate replay tolerances and canonical serialization.
+- [x] Emit `protected_path_manifest_v1` with only source-base-matching additions,
+  or as an explicit unchanged successor when GRV1 discovers no added path.
+- [x] Freeze the post-GRV1 contradiction route for any later protected-path discovery.
+- [x] Emit `instrumentation_validation.json`, `fixture_registry.json`, and report.
+- [x] Emit and validate the GRV1 result receipt.
+- [x] Record GRV1 scientific acceptance in a separate accepted anchor before GRV2.
+- [x] Assign no branch, continuation, retention, or read-back claim.
+
+GRV1 mechanical result:
+
+```text
+clean_input_revision = cbe52fe454c82c8cb10ad3f66175c711bc0c803e
+substrate_base_revision = 589f933e5649c34d3ad54a5f8dbdba2a20e968d7
+input_experiment_tree_sha256 = d4ae404c001c08e755f2a8f20f93775f34f750b8f5d0da2ce4bf9361bb331bfe
+protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2
+protected_file_count = 379
+receipt_payload_sha256 = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
+mechanical_status = passed
+scientific_acceptance = never_accepted_superseded_by_P1.1
+candidate_closeout_ceiling = GRV-C2
+positive_evidence_opened = false
+```
+
+Bounded interpretation:
+
+```text
+K cache = diagnostic-only for transport and overwritten before full-step use
+old J magnitude = exact sign-even J^2 source path, unresolved at the F0 W tolerance
+old J orientation = not retained across transport or the complete step
+edge-coordinate reversal plus J sign mapping = covariant
+current = reconstructed anew by transport
+formed branch / continuation / retention / read-back / write-back = unsupported
+```
+
+Pre-acceptance review disposition:
+
+```text
+candidate_result_revision = 45435c8e2da28908fabe58ba93c2c1af4b08930c
+candidate_receipt_payload_sha256 = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
+acceptance_status = never_accepted
+disposition = superseded_by_P1_1_source_fidelity_strengthening
+specification_change = false
+claim_ceiling_change = false
+```
+
+GRV1 P1.1 hardening:
+
+- [x] Prove snapshot, diagnostic read, hashing, save, and load observation are nonmutating.
+- [x] Prove nested clone isolation for conductance, current, caches, K, and RNG state.
+- [x] Emit and validate the W/J/K duplicated-surface authority map.
+- [x] Replace arbitrary K perturbation with structurally valid small, moderate,
+  and large fixed-path counterfactuals.
+- [x] Record stagewise `J -> -J` use, sign erasure, and overwrite boundaries.
+- [x] Verify coordinate reorientation is involutive and compare after inverse identification.
+- [x] Prove native `step()` and exact public-stage replay agree at every captured boundary.
+- [x] Record call ordinal, multiplicity, input/output digests, and changed fields.
+- [x] Record fixed transition environment and explicit RNG before/after status.
+- [x] Reproduce the F0 result under same-input object reuse, fresh instance,
+  snapshot/load, and a fresh Python process.
+- [x] Expand the confirmed load-bearing source map without altering the protected tree.
+- [x] Keep all scientific evidence flags false and preserve the GRV1 claim ceiling.
+
+GRV1 P1.1 mechanical result:
+
+```text
+clean_input_revision = 416f49e9cc05a21a86aaa7c7765cd9d64690f709
+substrate_base_revision = 589f933e5649c34d3ad54a5f8dbdba2a20e968d7
+input_experiment_tree_sha256 = fb8cb0577f3937dcbfec735d0d9dfabdaee87a2f38f97db0488ad3e9cdc40b5a
+protected_tree_sha256 = 4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2
+protected_file_count = 379
+receipt_payload_sha256 = 9535c80100c6813b69a327cfa80f0180f2288ee7e87e6e550c3168261353855a
+superseded_candidate_receipt = c8f51f4cc1f816726aa65d56e9165809ba54a5d47f4259e4e3f3318712f5b1bf
+mechanical_status = passed
+receipt_status = awaiting_scientific_review
+scientific_acceptance = accepted_anchor_commit_bc12787e885b9dcc7d939c98a7e2e3ea84f2d213
+candidate_closeout_ceiling = GRV-C2
+positive_evidence_opened = false
+```
+
+P1.1 strengthening outcome:
+
+```text
+instrumentation / ordinary complete state = exact
+native step / public-stage boundary trace = exact
+observation mutation = none detected
+nested clone aliasing = none detected
+W authority = state.base_conductance
+J authority = state.port_edges[*].flux_uv
+K consumer on tested F0 path = not identified
+K global causal absence = not claimed
+old J sign = visible pre-transport, erased by current reconstruction
+coordinate reorientation = involutive and covariant
+RNG = causal state, unchanged in lambda-birth-zero F0
+fresh-process replay = exact
+node_values / edge_values = unknown and carried into GRV3 closure
+```
+
+## Iteration 3 - GRV2 Strong Formed Branches
+
+- [x] Certify a homogeneous two-node zero-current branch.
+- [x] Search for a nonuniform two-node branch and certify every accepted result.
+- [x] Search for and classify nonuniform triangle branches and certify every accepted result.
+- [x] Preserve bounded negative search evidence when no nonuniform branch is
+  found; do not infer global nonexistence or fail a valid homogeneous result.
+- [x] Run symmetry controls.
+- [x] Run port-relabel controls.
+- [x] Record full-step residuals.
+- [x] Record per-block `C/W/J/Phi/G/identity/budget` internal-stage residuals,
+  including budget-correction no-op status.
+- [x] Record pre-continuity, pre-budget, budget-correction, post-budget, and final-refresh states.
+- [x] Require budget correction to be a numerical no-op for an unqualified strong branch.
+- [x] Classify provisional physical strong, projection-supported,
+  step-boundary-only, and internally periodic alternatives explicitly.
+- [x] Defer `causal_strong_branch` upgrade until the GRV3 closure audit passes.
+- [x] Verify event and topology assertions.
+- [x] Save, load, and replay every accepted branch.
+- [x] Record solver seeds, tolerance, convergence, and rejected searches.
+- [x] Record the complete search space/budget, all accepted and rejected roots,
+  deduplication, continuation lineage, selection rule, and held-out replay for
+  each selected branch.
+- [x] Record distance from positivity, conductance-floor, spark, basin/sink, growth, and event boundaries.
+- [x] Emit `fixed_branch_registry.json` and report.
+- [x] Emit and validate the GRV2 result receipt.
+- [x] Record the GRV2 acceptance decision in a separate human anchor after review.
+- [x] State explicitly that branch existence is not continuation or retention.
+
+### P2.2 provisional result, never accepted
+
+```text
+input_revision = d224a10302bfa030da817105dbf65c2a23f41483
+mechanical_status = passed
+scientific_acceptance = never_accepted_superseded_by_P2_3_adversarial_hardening
+receipt_payload_sha256 = 967f1adc5d8b36c2cdf0fb5c0153ac43b37e14f5fd6c0f1bcb76d92f38f43c94
+search_rows = 144
+accepted_provisional_physical_strong_branches = 48
+F1_homogeneous_branches = 16
+F2_nonuniform_branches = 16_at_site_potential_scale_1.0
+F3_nonuniform_branches = 16_at_site_potential_scale_1.5
+rejected_nonuniform_rows = 96_homogeneous_roots_outside_target
+maximum_full_step_l_inf = 1.6344259279321705e-10
+maximum_internal_stage_l_inf = 1.6344259279321705e-10
+maximum_budget_correction_l_inf = 2.220446049250313e-16
+save_load_replay = 48_of_48_passed
+symmetry_and_port_controls = 9_of_9_passed
+held_out_fresh_process_replay = 3_of_3_passed
+protected_runtime_spec_root_test_tree = unchanged
+branch_class = provisional_physical_strong_branch
+causal_strong_branch = deferred_to_GRV3
+candidate_closeout_ceiling = GRV-C3
+positive_evidence_opened = true_bounded_physical_branch_existence_only
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+The accepted candidate rows show that the current unchanged GRC9V3 runtime has
+bounded homogeneous and nonuniform formed fixed branches under the committed
+near-neutral transport envelope. The F2/F3 scale localization is evidence from
+the declared grid, not a global branch theorem. Every zero-current row remains
+on a basin/sink identity boundary, so GRV3 must still determine whether the
+excluded and administrative fields admit a closed causal state before any
+`causal_strong_branch` upgrade or transition-Jacobian interpretation.
+
+### P2.3 preacceptance adversarial hardening
+
+- [x] Preserve the exact P2.2 search grid, solver, fixtures, runtime, thresholds,
+  and claim ceiling.
+- [x] Record raw-candidate to canonical `C/W/J` deltas and require load-bearing
+  canonicalization admission.
+- [x] Require authoritative old-current zero and authoritative conductance-surface
+  consistency within declared tolerances.
+- [x] Record continuity delta, budget correction, active-set identity, clipping,
+  and active-set margin per branch.
+- [x] Add a four-beat unperturbed physical hold across advancing `step_index` and time.
+- [x] Keep cache refresh and complete causal-state closure explicitly deferred to GRV3.
+- [x] Record full canonical branch signatures, symmetry-orbit counts, and row-count
+  nonindependence.
+- [x] Add experiment-local regression tests for the new controls.
+- [x] Commit the clean P2.3 input revision before execution.
+- [x] Rerun all 144 rows from the clean P2.3 input.
+- [x] Regenerate and validate every branch snapshot, registry, ledger, report,
+  protected manifest, and GRV2 receipt.
+- [x] Record the superseding P2.3 result and keep scientific acceptance pending
+  a separate authorized human anchor.
+
+Adversarial-review disposition:
+
+- [x] Require complete-step and internal-stage certification; classify internal
+  excursion/cycle and projection-supported alternatives separately.
+- [x] Require numerical-no-op budget correction, unchanged active set, no
+  clipping, and positive active-set margin.
+- [x] Record the representable nonsmooth margin vector and carry the intrinsic
+  zero-current sink/basin boundary into GRV3 rather than rejecting GRV2.
+- [x] Canonicalize through native reconstruction, quantify raw-to-canonical
+  load-bearing deltas, and exclude reconstructed fields from solver coordinates.
+- [x] Require authoritative old `J` to be zero within tolerance and authoritative
+  conductance surfaces to agree.
+- [x] Hold every accepted physical branch for four unperturbed complete beats;
+  do not promote this to stability, retention, or causal-state closure.
+- [x] Keep solver convergence and independent branch certification separate.
+- [x] Require absolute and relative blockwise residuals for `C/W/J/Phi/G`,
+  identity, and budget surfaces.
+- [x] Require explicit nonuniform contrast and distance from the homogeneous
+  branch for F2/F3.
+- [x] Preserve raw branch IDs, full canonical signatures, symmetry-orbit IDs,
+  nontrivial F2/F3 controls, opposite seed directions, and row-count
+  nonindependence.
+- [x] Keep exploratory values as seeds only and emit new solved-state digests and
+  certificates.
+- [x] Keep complete bounded-search accounting and classify numerical failures as
+  unresolved rather than negative branch evidence.
+- [x] Preserve the committed parameter grid and fixed exogenous parameters.
+- [x] Treat the complete double-refresh beat as authoritative without claiming
+  that its second refresh is causally necessary.
+- [x] Use the runtime canonical potential gauge.
+- [x] Require save/load replay for every branch and selected fresh-process replay.
+- [x] Record that a solver-tolerance sweep is not part of sealed GRV2 and make no
+  numerical-tolerance-robustness claim.
+
+P2.3 result:
+
+```text
+input_revision = 228e1d4f1f13af7ab7ff464dca592d4decd609f9
+mechanical_status = passed
+scientific_acceptance = accepted_anchor_pending_commit_reference
+receipt_payload_sha256 = 73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63
+search_rows = 144
+accepted_provisional_physical_strong_branch_rows = 48
+unique_canonical_symmetry_orbits = 32
+rejected_nonuniform_rows = 96_homogeneous_roots_outside_target
+administrative_phase_hold_beats_per_branch = 4
+administrative_phase_hold_rows = 192
+maximum_four_beat_cumulative_physical_l_inf = 6.537703711728682e-10
+maximum_authoritative_current_l_inf = 6.117240047785867e-11
+minimum_budget_active_set_margin = 1.0000000000020002
+all_canonicalization_admissions = passed
+all_authoritative_surface_assertions = passed
+all_budget_active_set_and_no_clipping_controls = passed
+all_four_beat_physical_holds = passed
+all_noncache_excluded_state_exact = true
+cache_refresh_observed = 48_of_48_branches
+cache_and_complete_causal_state_status = deferred_to_GRV3
+causal_strong_branch = deferred_to_GRV3
+candidate_closeout_ceiling = GRV-C3
+positive_evidence_opened = false_pending_authorized_human_acceptance
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+GRV2 acceptance disposition:
+
+```text
+acceptance_status = accepted
+acceptance_role = experiment_owner
+accepted_result_revision = e1dc01f4948b7791c733eb62c15179d04619cd8e
+accepted_receipt_payload_sha256 = 73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63
+accepted_closeout_rung = GRV-C3
+physical_formed_branch_existence = accepted_bounded_candidate_evidence
+causal_strong_branch = deferred_to_GRV3
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+## Iteration 4 - GRV3 Causal State And Complete Transition Jacobian
+
+### Pre-Execution Contract
+
+- [x] Bind GRV3 to the exact accepted GRV2 registry, receipt, and acceptance anchor.
+- [x] Freeze execution over all 48 accepted branch rows before spectra.
+- [x] Keep all 32 symmetry-orbit labels as dependence metadata, not branch selection.
+- [x] Forbid post-spectrum branch selection.
+- [x] Freeze `GRV3-A -> GRV3-B -> GRV3-C` execution order.
+- [x] Permit GRV3-A to pass while GRV3-B is blocked on a non-smooth stratum.
+- [x] Require positive two-sided stratum margin for every classical derivative column.
+- [x] Classify a failed stratum gate as blocked, not unconverged.
+- [x] Freeze the `(C,W,J)` candidate chart, bounded reductions, horizons, step sizes,
+  categorical surfaces, and claim ceiling in `configs/grv3_causal_state.json`.
+- [x] Keep runtime, `src/`, and pre-existing tests unchanged.
+- [x] Supersede the unaccepted P3 execution because the runner audited reduced
+  codecs but did not apply GRV3-B/C to codec-admitted reductions.
+- [x] Preserve branches, fixtures, thresholds, reduction definitions, and claim ceiling.
+- [x] Apply GRV3-B/C to every codec-admitted `C-W` and `C` candidate in P3.1.
+- [x] Forbid outcome-driven selection of one primary reduced coordinate.
+- [x] Supersede unaccepted P3.1 because spectral/subspace, response, and
+  ill-conditioned-eigenvector diagnostics were not yet complete machine gates.
+- [x] Preserve the exact P3.1 branch scope, fixtures, coordinate candidates,
+  finite-difference steps, thresholds, runtime, and claim ceiling in P3.2.
+- [x] Require eigenvalue-set and invariant-subspace convergence before temporal
+  mode evidence, and response-surface convergence before response evidence.
+- [x] Apply the preregistered nonnormal condition and finite-horizon bounds;
+  block individual eigenvector interpretation when conditioning fails.
+- [x] Require a full-rank, low-residual cluster span before using a cluster as
+  the fallback interpretation object.
+- [x] Surface the unchanged P3.2 spectral window, cluster, and residual values
+  in the explicit P3.3 method config before scientific acceptance.
+- [x] Record every otherwise admitted but interpretation-blocked matrix by
+  branch and coordinate in the final machine summary.
+- [x] Supersede unaccepted P3.3 after adversarial review identified missing
+  phase, omitted-state, decoder, RNG, residual, nonlinear-current, metric, and
+  covariance admission gates.
+- [x] Preserve the P3.3 branch scope, fixtures, runtime, coordinate candidates,
+  finite-difference steps, spectral thresholds, and claim ceiling in P3.4.
+- [x] Freeze derivative-level administrative phase offsets and require phase
+  invariance before fixed-operator spectral interpretation.
+- [x] Freeze per-cache-key and placeholder-field omission audits over the
+  declared codec horizons; forbid whole-cache admission.
+- [x] Freeze decoder-correction-over-`h`, RNG-consumption, and
+  branch-residual-over-`h` gates for every derivative column.
+- [x] Freeze separate odd first-order and even quadratic `J` diagnostics without
+  using either as eigensystem or eliminability evidence.
+- [x] Freeze a declared branch-scale block metric, retain raw and normalized
+  participation as diagnostic only, and block joint `C-W` mode claims.
+- [x] Freeze alternate zero-sum basis covariance and symmetry-orbit conjugacy.
+- [x] Execute P3.4.1 from a clean committed input revision.
+- [x] Confirm all P3.4 machine gates and classify any blocked matrices without
+  numerical repair.
+
+- [x] Freeze and test the branch-relative causal-state encoder and decoder.
+- [x] Require coordinate round trip `E_X(D_X(x)) ~= x`.
+- [x] Require reached-state canonicalization `D_X(E_X(S)) ~causal S`.
+- [x] Require transition commutation `E_X(F(S)) ~= F_X(E_X(S))`.
+- [x] Require preregistered bounded-horizon commutation for every codec horizon.
+- [x] Report bounded-horizon causal closure without promoting it to global Markov sufficiency.
+- [x] Apply exact categorical/identifier equality and block-specific numerical
+  tolerances with declared per-horizon accumulated-error bounds.
+- [x] Admit a continuous square causal-state coordinate before eigenanalysis.
+- [x] Represent causally relevant categorical state as a discrete stratum and
+  differentiate only within a fixed stratum.
+- [x] Record positive two-sided stratum margins and matching runtime paths for every derivative column.
+- [x] Run matched `C,J` with differing valid `W` through canonical interventions.
+- [x] Run matched `C,W` with differing `J`.
+- [x] Run matched `C,W` with sign-reversed `J`.
+- [x] Compare branch-consistent and perturbed derived surfaces.
+- [x] Separate reachable-history and synthetic-valid pairs.
+- [x] Audit every excluded physical/administrative field for causal relevance.
+- [x] Classify synthetic states as structurally valid, constitutively consistent, and runtime reachable separately.
+- [x] Freeze admitted causal coordinate and zero-sum tangent order.
+- [x] Freeze interior-safe `W`, `J`, and zero-coordinate perturbation policies.
+- [x] Compute square complete-step causal-transition Jacobians only for admitted charts.
+- [x] Compute smooth derived response Jacobians separately.
+- [x] Record categorical/event surfaces as margins and threshold records, not eigensystem rows.
+- [x] Verify relative column, matrix norm, eigenvalue-cluster, and subspace-angle convergence.
+- [x] Record `C/W/J` blocks and residuals.
+- [x] Record left/right eigensystems and conditioning.
+- [x] Record conservation, gauge, and branch-tangent identification statuses.
+- [x] Apply the preregistered nonnormal evidence mode.
+- [x] Apply the preregistered fast/slow rule where applicable.
+- [x] Classify stable slow, neutral, oscillatory, and unstable clusters.
+- [x] Classify counterfactual sensitivity, constitutive independence,
+  runtime-causal independence, and eliminability separately for each candidate block.
+- [x] Enforce distinct structural-validity, constitutive-consistency,
+  runtime-reachability, and runtime-causal-independence admission gates.
+- [x] Test bounded C-only and joint C-W reductions.
+- [x] Gate `causal_strong_branch` candidate status on codec and closure admission;
+  leave the scientific upgrade pending human review.
+- [x] Emit `complete_step_jacobians.json`, `slow_cluster_registry.json`, and report.
+- [x] Emit and validate the GRV3 result receipt.
+- [x] Emit a separate GRV3 acceptance anchor only after human scientific review.
+- [x] Do not equate a slow joint mode with core retention.
+
+### Iteration 4 Result
+
+P3.3 is retained as superseded preliminary evidence. It has no scientific
+acceptance anchor and cannot authorize GRV4. The P3.4 result will replace the
+block below after clean execution.
+
+```text
+result_status = superseded_unaccepted_by_P3_4_method_completion
+input_execution_revision = 0a323d2d5920b3bedaef052fd193777942add9be
+receipt_payload_sha256 = 7cf749fa8a46f6b219a27515504e4ad671a386144b2ef8626fb14e63a4fb104d
+mechanical_status = passed
+scientific_acceptance = never_accepted_superseded_by_P3_4
+branches_audited = 48
+bounded_C_W_J_codec_closure_candidates = 48
+full_C_W_J_square_jacobians = 0
+reduced_square_jacobians = 64
+reduced_branch_rows = 32
+reduced_symmetry_orbits = 16
+temporal_mode_interpretation_pass_matrices = 61
+response_convergence_pass_matrices = 64
+finite_horizon_nonnormal_pass_matrices = 64
+individual_eigenvector_condition_block_matrices = 2
+cluster_fallback_block_matrices = 2
+branches_with_at_least_one_temporal_candidate = 32
+GRV_C4 = unsupported_pending_GRV4
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+Every full `(C,W,J)` chart is blocked at the classical derivative gate by at
+least one non-smooth current/sink/basin stratum column. This does not undo the
+48 bounded codec-closure candidates. The two frozen reductions admit 64
+matrices: `C-W` and `C` on each of 32 F2/F3 branch rows. Sixty-one matrices pass
+the complete temporal interpretation gate. `grv2-f3-036/C-W` is blocked by a
+fast-subspace dimension change across the step sweep;
+`grv2-f3-037/C-W` and `grv2-f3-041/C-W` are additionally blocked by the frozen
+eigenvector-condition and full-cluster fallback gates. The separately frozen
+`C` chart passes on all three rows, so no branch was retained through post-hoc
+coordinate selection.
+
+All 64 admitted matrices pass response convergence and the finite-horizon
+nonnormal bound; maximum amplification is about `1.00000000004` against the
+frozen ceiling `2.0`. Maximum adjacent derivative-column error is about
+`1.74e-11`; maximum response error is about `7.38e-11`. The two ill-conditioned
+`C-W` eigensystems reach condition number about `9.13e38`, so their individual
+eigenvectors are diagnostic only and their unresolved cluster spans do not
+rescue interpretation. The fast/slow current assumption is `not_applicable` on
+all admitted matrices because no separate current-relaxation sector or two
+finite decaying clusters were identified.
+
+The 192 counterfactual rows are structurally valid synthetic pairs, not reached
+history pairs. `W` and `J` changes produce no resolved next-step physical
+sensitivity in this bounded test, and the derived-potential perturbation is
+overwritten by the complete step. These results constrain candidate-block
+interpretation; they do not establish global eliminability. The result opens no
+stability, continuation, retention, read-back, or write-back claim. GRV4 remains
+required before `GRV-C4` can be considered.
+
+### P3.4.1 Current Result
+
+```text
+input_execution_revision = b1c233be164c6e88d21f5386ae2483cb2e08ecad
+receipt_payload_sha256 = 83a2650f57fe3d1a814155bf6e8621881d01468b36cde0f1b460af02339b92cc
+mechanical_status = passed
+scientific_acceptance = accepted_bounded_result_at_revision_0dedbf9
+branches_audited = 48
+bounded_causal_closure_candidates = 48
+omitted_state_decomposition_pass_branches = 48
+full_C_W_J_square_jacobians = 0
+reduced_square_jacobians = 64
+phase_operator_pass_matrices = 64
+basis_covariance_pass_matrices = 64
+symmetry_covariance_pass_pairs = 32
+symmetry_covariance_failed_or_blocked_pairs = 0
+temporal_mode_interpretation_pass_matrices = 61
+response_convergence_pass_matrices = 64
+GRV_C4 = unsupported_pending_GRV4
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+P3.4.1 preserves the P3.3 matrix result while establishing why a fixed reduced
+operator is admissible on the tested envelope. All 64 reduced matrices pass the
+administrative-phase and alternate-basis covariance gates; all 32 declared
+multirow symmetry comparisons pass. All 48 branches pass the per-key omitted
+state audit, covering 1,536 reconstructed-or-inert cache rows and 96 absent
+placeholder rows without admitting the whole cache or claiming global
+eliminability. All 1,188 derivative-column attempts pass decoder and RNG
+controls. The maximum decoder correction divided by `h` is about `7.19e-12`,
+the maximum branch residual divided by `h` is about `5.47e-7` against the
+frozen `1e-3` ceiling, the maximum phase matrix error is about `2.02e-11`, and
+the maximum alternate-basis conjugacy error is about `2.20e-11`.
+
+The complete-beat odd/even `J` diagnostic is unresolved at the declared steps.
+This does not erase GRV1's stage-local sign-even `J^2` path, does not establish
+`J` eliminability, and does not reopen the non-smooth full-chart derivative.
+Raw and declared-scale participation remain diagnostic and no joint `C-W` mode
+claim is made. The same three `C-W` interpretations remain blocked as in P3.3;
+their separately frozen `C` candidates pass. The experiment owner accepted the
+bounded result at revision `0dedbf9`; the acceptance anchor binds that revision
+and its exact result-receipt digest. GRV4 is authorized without upgrading any
+blocked full-state or continuation interpretation.
+
+## Iteration 5 - GRV4 Frozen-Conductance Versus Full Recurrence
+
+### P4 Method Freeze
+
+```text
+branch_scope = all_48_certified_GRV2_rows
+standalone_frozen_comparator_scope = all_48_rows
+primary_full_map_comparison_scope = exactly_32_GRV3_admitted_C_rows
+zero_current_boundary_rows = retained_as_blocked_full_comparisons
+tangent_basis = canonical_zero_sum_identical_to_GRV3
+sign_probe_amplitudes = [0.001, 0.01]
+runtime_dt_multipliers = [0.125, 0.25, 0.5, 1.0, 2.0, 4.0]
+weak_monotonicity_includes_stationary_equality = true
+post_spectrum_branch_or_coordinate_selection = false
+frozen_operator_class = substrate_reduced_clamped_counterfactual_only
+H_P = runtime_functional_second_variation
+H_cont = -H_P
+temporal_operator = A_W_H_cont_not_H_cont_alone
+state_metric = accepted_GRV3_branch_metric
+mode_matching = clustered_real_invariant_subspaces
+unit_circle_decisions = uncertainty_aware
+symmetry_check = matrix_conjugacy
+W_elimination_claim = blocked
+fast_slaving_claim = blocked
+geometry_only_or_mobility_only_attribution = blocked
+joint_C_W_mode_claim = blocked
+full_core_continuation_operator_claim = blocked
+```
+
+The staged sign comparator consumes the unchanged `compute_potential`,
+`compute_flux`, and `apply_continuity` implementations while holding the
+accepted branch `W` fixed. It is not a replacement `step()`: conductance
+reconstruction, identity, spark, choice, growth, boundary, budget, and final
+refresh stages are excluded and recorded as reduction assumptions. The
+complete-step side is consumed from the accepted GRV3 matrices; P4 does not
+rerun or reinterpret blocked GRV3 derivatives.
+
+- [x] Complete the runtime sign audit.
+- [x] State whether `P_G`, `-P_G`, neither, or only a small-step limit is monotone.
+- [x] Separate analytic semidiscrete sign, runtime-timestep behavior, and timestep sweep.
+- [x] Construct the frozen-`W` constrained comparator outside `src/`.
+- [x] Use the same conserved tangent basis as GRV3.
+- [x] Construct the declared mobility, semidiscrete, and explicit-step comparators.
+- [x] Label analytical comparator objects as non-runtime state.
+- [x] Compare frozen spectra with complete-step multipliers.
+- [x] Compare modes/subspaces and stability classifications.
+- [x] Record every reduction and elimination assumption.
+- [x] Emit `frozen_full_comparison.json` and report.
+- [x] Emit and validate the GRV4 result receipt.
+- [ ] Emit a separate GRV4 acceptance anchor only after human scientific review.
+- [x] Do not claim the full core continuation operator.
+
+### Preliminary P4 Result Superseded Before Acceptance
+
+```text
+input_execution_revision = e21ec2cd9f3dcfdacb2b707d707b6480ce856bf0
+receipt_payload_sha256 = 46420b14840bda5258d415463e7376bbc929557a907055b10f4d2fb23b4fc3fc
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+review_disposition = unaccepted_preliminary_evidence_superseded_by_P4_1
+acceptance_anchor_exists = false
+branches_audited = 48
+standalone_frozen_comparators = 48
+primary_full_map_comparisons = 32
+blocked_full_map_comparisons = 16
+primary_agreement_count = 32
+primary_bounded_difference_count = 0
+secondary_C_W_comparison_count = 29
+secondary_C_W_GRV3_block_count = 3
+verified_strong_disagreement_count = 0
+sign_audit_rows = 1536
+positive_functional_delta_rows = 288
+stationary_within_tolerance_rows = 1248
+negative_functional_delta_rows = 0
+runtime_sign = P_G_weakly_increases_and_negative_P_G_weakly_decreases
+GRV_C4 = candidate_pending_human_review
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+GRV4 supports a bounded agreement result rather than the stronger disagreement
+case. Across the 32 GRV3-admitted primary `C` comparisons, the maximum slow
+multiplier-set error is about `2.27e-11`, the maximum slow-subspace angle is
+about `2.59e-8` radians, and no stability classification changes. The
+secondary evolving-conductance diagnostic agrees on 29 rows; the same three
+`C-W` rows blocked by GRV3 remain diagnostic-only and are not rescued here.
+
+The sign audit separates the exact semidiscrete identity from finite explicit
+steps. Across both tangent signs, two amplitudes, and six timestep multipliers,
+the minimum computed functional change is about `-6.39e-15`, inside the frozen
+`1e-12` tolerance. Maximum staged-runtime equivalence error is about
+`1.78e-15`; the potential and flux identities agree to about `8.89e-16` and
+`2.23e-15`. The result therefore uses weak monotonicity, including stationary
+equality, and makes no strict-increase claim.
+
+The 16 exact-zero-current boundary rows still receive frozen structural
+comparators, but their full-map relation remains blocked by GRV3 coordinate
+admission. Agreement on the other rows does not make the analytical comparator
+native runtime state, eliminate `W`, identify a joint `C-W` mode, or establish
+the full core continuation operator.
+
+### P4.1 Thirty-Point Hardening
+
+- [x] Preserve the P4 result at commit `1c18bda` as preliminary evidence.
+- [x] Keep GRV4 unaccepted and create no acceptance anchor.
+- [x] Freeze whole-beat clamped-`W` semantics separately from elimination and slaving.
+- [x] Freeze `H_P`, restoring `H_cont = -H_P`, `A_W H_cont`, and explicit-map roles.
+- [x] Add runtime-potential directional derivatives and finite-difference Hessian/site checks.
+- [x] Add canonical, structural, and deterministic mixed directions.
+- [x] Add exact frozen-map branch residual and projection/clipping/boundary no-op checks.
+- [x] Add conductance authority, duplicate consistency, connectivity, floor, nullity, and conditioning records.
+- [x] Add the self-adjoint representative and physical mode/projector mapping rules.
+- [x] Reuse the GRV3 state metric with explicit embedding/projection diagnostics.
+- [x] Compare complex pairs and near-degenerate modes as real invariant subspaces.
+- [x] Exclude deadbeat overwrite modes from slow-subspace disagreement.
+- [x] Add finite-difference, residual, conditioning, cluster, and unit-circle uncertainty records.
+- [x] Replace spectrum-only symmetry checks with matrix-level conjugacy checks.
+- [x] Preserve first-order-local, nonlinear-`J^2`, and no-retention boundaries.
+- [x] Commit the complete P4.1 method revision at `69382c8`.
+- [x] Execute P4.1 from that clean committed revision and fail closed before artifact emission.
+- [x] Record the near-zero relative-conjugacy and near-real invariant-plane representation defects.
+- [x] Correct those representations without changing branch scope or scientific thresholds.
+- [x] Commit the P4.1a representation correction at `c276fcc`.
+- [x] Execute P4.1a from that clean committed revision.
+- [x] Record the mechanically passing `c276fcc` run without accepting it.
+- [x] Add explicit local comparison identity and mapped-projector records.
+- [x] Expand the generated report to expose the hardening controls and bounded result.
+- [x] Commit the final artifact-schema/report completion at `01389d9`.
+- [x] Execute the final P4.1 full clean rerun.
+- [x] Verify all mechanical controls and inspect every branch-level classification.
+- [x] Emit a superseding GRV4 result receipt pending human scientific review.
+- [ ] Emit a GRV4 acceptance anchor only after that review.
+
+### Final P4.1 Review Candidate
+
+```text
+input_execution_revision = 01389d9877bfdf68daa3e31786f832ab17742c86
+source_v1_receipt_payload_sha256 = 2554b83c03b89cb7621297af959ef4310836f6944d1f3b7fa9995c96b3b26f6e
+source_v1_result_payload_sha256 = 48f9193407772f34f2aefb113f20461312112255ed7381d370d13e85059c993a
+corrected_v2_receipt_payload_sha256 = 1e236ed3ee7407125ba166157401712e76ca6337c09990ba0bfc6121c0b96c10
+corrected_v2_result_payload_sha256 = 34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+branches_audited = 48
+primary_full_map_comparisons = 32
+blocked_full_map_comparisons = 16
+primary_no_resolved_difference_within_uncertainty_count = 32
+primary_equivalence_supported = false
+verified_strong_disagreement_count = 0
+sign_audit_rows = 3072
+negative_functional_delta_rows = 0
+maximum_frozen_map_fixed_point_residual = 1.11609e-11
+maximum_H_P_absolute_finite_difference_error = 9.28939e-10
+maximum_directional_functional_error = 7.07858e-09
+maximum_site_V_second_error = 1.30751e-09
+maximum_primary_metric_subspace_angle_radians = 2.10734e-08
+primary_unit_circle_uncertainty = 1e-6
+secondary_deadbeat_overwrite_modes_excluded = 55
+matrix_symmetry_failed_pair_count = 0
+reduction_classification = clamped_counterfactual_only
+GRV_C4 = candidate_pending_human_review
+continuation = unsupported
+retention = unsupported
+readback = unsupported
+writeback = unsupported
+```
+
+All 48 weighted graphs are connected and their reduced mobility is positive
+definite. Authoritative branch conductance and duplicate port-edge surfaces
+agree exactly. The potential, flux, functional, site derivative, restoring
+sign, mobility/Hessian, mapped projector, state-metric, cluster, deadbeat,
+uncertainty, and matrix-symmetry controls pass. Thirty-six near-zero `H_P` rows
+use the frozen absolute finite-difference gate; the 12 nonzero rows have maximum
+relative Hessian error about `8.66e-11`.
+
+The result finds no robust stability-class or clustered slow-subspace
+disagreement between the whole-beat clamped-`W` comparator and the admitted full
+`C` recurrence in this envelope. All primary modes are marginal within the
+frozen `1e-6` uncertainty. This is no resolved difference under the admitted
+first-order uncertainty, not equivalence and not proof of algebraic elimination,
+fast slaving, geometry-only or mobility-only causation, universal validity,
+retention, or the core continuation operator. The 16 frozen rows with more
+informative stable/unstable structure still lack an admitted full GRV3 Jacobian.
+Finite-amplitude `J^2 -> W` effects remain open.
+
+### P4.1 Artifact-Semantics Correction
+
+- [x] Verify that stability classification consumes the correctly signed frozen
+  multiplier and relaxation operator, not the misnamed emitted rate field.
+- [x] Rename the emitted evolution-generator eigenvalue field without changing
+  its numerical values.
+- [x] Replace agreement wording with no-resolved-difference wording.
+- [x] Record `primary_equivalence_supported = false`.
+- [x] Preserve the 16 blocked full-map comparisons prominently.
+- [x] Replace the copied historical prerequisite receipt status with the
+  authoritative accepted GRV3 anchor status.
+- [x] Bind source v1 payload and receipt hashes in the corrected v2 artifacts.
+- [x] Verify that the correction changed no numerical leaf and performed no
+  numerical recomputation.
+- [x] Record human acceptance of the corrected v2 result in a separate GRV4
+  acceptance anchor binding revision `e99a8a3` and receipt `1e236ed3...`.
+
+Verification:
+
+```text
+B1_GR_and_GRC9V3_model_tests = 181_passed_122_subtests_passed
+repository_wide_suite = 1858_passed_26_failed_1041_subtests_passed
+repository_wide_failure_scope = 25_ignored_output_fixture_dependencies_plus_1_unrelated_telemetry_snapshot_digest_mismatch
+src_files_changed_by_GRV4 = 0
+protected_path_manifest_unchanged = true
+```
+
+The repository-wide failures are not promoted to GRV4 failures: the discovery
+and cross-family telemetry tests depend on ignored session artifacts absent
+from this checkout, and the remaining representative-telemetry digest mismatch
+is outside the B1-GR surfaces. They remain visible rather than being repaired or
+excluded from the reported run.
+
+## Iteration 6 - GRV5 Preparation, Persistence, And Matched-Probe Mediation
+
+- [x] Record `A-BRANCH`, `A-CLOCK`, `A-PASSIVE`, `A-REACHABLE`, and `A-STATE-CLOSURE` statuses.
+- [x] Consume the preregistered present-current convention without outcome-driven redefinition.
+- [x] Run direct-conductance preparation.
+- [x] Run activity-mediated preparation at the exact first native transport
+  stage and through one complete native step.
+- [x] Run sign-reversal preparation.
+- [x] Stop forming intervention before persistence measurement.
+- [x] Evaluate preregistered persistence horizons.
+- [x] Project separation onto accepted slow/fast subspaces.
+- [x] Run zero-present-probe passive-null control.
+- [x] Match `C` and `J` while preserving candidate carrier differences.
+- [x] Apply identical native full-step probes.
+- [x] Apply identical native immediate-transport-stage probes.
+- [x] Apply frozen-`W` probes only as `substrate_reduced` comparators.
+- [x] Classify each probe as coherence/potential, old-current injection, or external-current-like analytical input.
+- [x] Record the exact readout stage and causal path for each lane.
+- [x] Run the complete carrier-by-probe `2x2` design for every candidate read row.
+- [x] Record both no-probe baselines, both within-carrier probe increments, and
+  the difference-in-differences with its tolerance.
+- [x] Route baseline-only differences to ordinary geometry-conditioned recurrence.
+- [x] Apply lane-specific claim ceilings to coherence, old-current, and analytical probes.
+- [x] Run a preregistered signed amplitude sweep before using susceptibility,
+  gain, derivative, or linear-response language.
+- [x] Run carrier reset control.
+- [x] Run carrier swap control.
+- [x] Run equal-carrier control with reached `C` differences preserved.
+- [x] Separate reached-state and synthetic-valid evidence.
+- [x] Keep off-manifold structurally valid rows below reached or
+  constitutively consistent causal claim ceilings.
+- [x] Emit a GRV5-specific canonical intervention registry with all required
+  field, rebuild, validity, projection, and reachability records.
+- [x] Assign `GRR0`-`GRR5` only from complete gates.
+- [x] Classify retention, read effect, write effect, and loop closure separately.
+- [x] Fill the causal possibility matrix.
+- [x] Emit `conductance_retention_probe.json`, `causal_role_matrix.json`,
+  `grv5_intervention_registry.json`, `grv5_36_point_review_audit.json`, and
+  report.
+- [x] Emit and validate the GRV5 result receipt.
+- [x] Record human acceptance in a separate GRV5 acceptance anchor.
+- [x] Keep core Read-Back blocked unless directional present-current-conditioned read and passive-null gates pass.
+
+### P5.3 36-Point Acceptance Hardening
+
+This is a revision-distinct confirmatory audit after P5.1/P5.2. It may block or
+demote the result, but cannot upgrade the existing rung. The final
+machine-readable dispositions live in `outputs/grv5_36_point_review_audit.json`.
+
+- [x] 01. Freeze carrier hypotheses without retrospective rung promotion.
+- [x] 02. Preserve separate GRV3-admitted and GRV3-blocked claim ceilings.
+- [x] 03. Record preparation boundaries and exact `k=0`/`k=1` semantics.
+- [x] 04. Measure endogenous activity and classify the persistence path.
+- [x] 05. Keep direct experiment-authored `W` below write-back.
+- [x] 06. Separate synthetic old-current input from reached current history.
+- [x] 07. Stage direct `J^2 -> W` and indirect `J -> C -> W` effects.
+- [x] 08. Compare `+J/-J` immediately and after the standardized full step.
+- [x] 09. Run the fixed confirmatory preparation-amplitude ladder.
+- [x] 10. Audit direct-`W` metric symmetry, positivity, and surfaces.
+- [x] 11. Record carrier vectors, correlation, projection, and leakage.
+- [x] 12. Keep the original branch fixed through all horizons.
+- [x] 13. Separate growing displacement from stable retention.
+- [x] 14. Use only accepted slow subspaces and allow no interpreted projection.
+- [x] 15. Preserve transient/deadbeat mediation as its own class.
+- [x] 16. Use fresh unprobed clones for horizons and `2x2` cells.
+- [x] 17. Audit full admitted non-carrier and categorical matching.
+- [x] 18. Prove matching preserves authoritative `W`.
+- [x] 19. Keep `W`-only nulls from rejecting joint/transferred carriers.
+- [x] 20. Keep full-step, immediate-stage, and frozen-`W` lanes separate.
+- [x] 21. Preserve the preregistered present-current convention.
+- [x] 22. Record the full carrier-by-probe `2x2` cells.
+- [x] 23. Compute the oriented interaction vector before norms.
+- [x] 24. Keep zero-probe baseline transport separate from read effect.
+- [x] 25. Record carrier state before and after each probe readout.
+- [x] 26. Record signed fits plus odd/even decomposition.
+- [x] 27. Run wrong-location controls where a multi-edge route exists.
+- [x] 28. Record graded reset/swap/equal/shuffle mediation.
+- [x] 29. Verify authoritative and duplicate conductance surfaces.
+- [x] 30. Separate instantaneous write from retained write.
+- [x] 31. Require one linked chain before loop closure.
+- [x] 32. Freeze separate response/later-write clone policy.
+- [x] 33. Record detection floors and frozen-`W` positive sensitivity.
+- [x] 34. Report all frozen horizons without post-hoc selection.
+- [x] 35. Fail closed on event, topology, stratum, budget, RNG, or positivity debt.
+- [x] 36. Keep core Read-Back below its independent directional gate.
+
+Result:
+
+```text
+input_execution_revision = c2cc6668a2e4b8e8d3c8a08f82c4a8d0eb563203
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+P5_3_review_points_mechanically_accounted_for = 36/36
+P5_3_hardening_changed_primary_rung = false
+branch_count = 48
+preparation_candidate_row_count = 144
+GRR0_row_count = 64
+GRR1_row_count = 48
+GRR2_row_count = 32
+GRR3_or_stronger_row_count = 0
+activity_stage_write_count = 48
+activity_complete_step_joint_write_count = 32
+bounded_persistence_count = 32
+native_mediation_count = 0
+substrate_reduced_sensitivity_count = 96
+forming_old_current_amplitude = 141421.35623730952
+forming_old_current_input_runtime_reached = false
+maximum_local_evidence_ladder_rung = GRR2
+GRV_C5_candidate_pending_human_review = true
+native_readback_supported = false
+writeback_supported = false
+closed_loop_supported = false
+matching_failure_count = 0
+authoritative_W_reset_equal_swap_maximum_error = 0.0
+authoritative_W_surface_inconsistency_count = 0
+multi_edge_wrong_location_control_count = 224
+current_sign_stratum_blocked_horizon_row_count = 224
+event_failure_count = 0
+topology_failure_count = 0
+budget_failure_count = 0
+preparation_amplitude_ladder_row_count = 192
+maximum_sign_even_W_error = 0.0
+maximum_per_edge_response_shape_error = 1.0495077029659683e-16
+maximum_direct_W_metric_symmetry_error = 1.9081958235744878e-16
+minimum_direct_prepared_W = 0.9899999999901
+protected_path_manifest_unchanged = true
+```
+
+The 48 direct-`W` rows are authored carrier diagnostics and stop at `GRR0`.
+The 48 exact first-transport-stage rows show a sign-even `J^2 -> W` write and
+reach `GRR1`, but the conductance separation is overwritten by the next full
+step. The forming old-current value is a synthetic experiment input, not a
+runtime-reached native history; its magnitude follows from the frozen
+`gamma = 1e-12` and the preregistered `0.01` global amplitude-squared
+attenuation coordinate. On a multi-edge carrier, each edge receives that
+coordinate multiplied by its squared canonical carrier-direction component;
+the intervention is not a uniform `0.01` edgewise attenuation.
+
+On the 32 nonuniform F2/F3 branches, the transient stage-local write leaves a
+complete-step reached, coherence-dominated joint-state displacement. That
+separation persists with approximately unit ratio through horizon 10 and
+passes snapshot/load plus equal-input replay, supporting bounded `GRR2` joint-
+state persistence. The 16 homogeneous F1 branches produce no such complete-
+step displacement and remain `GRR0` in this lane.
+
+No candidate occupies an accepted isolated slow cluster, so `GRR3` is blocked.
+The 32 `GRR2` rows are neutral/marginal, coherence-dominated transferred
+joint-state persistence candidates after `W` is overwritten; they are not
+stable conductance-retention rows. All 224 horizon rows that cross a current-
+sign categorical stratum belong to the stage-local `P-J` preparation and are
+retained as blocked `GRR1` evidence rather than being treated as persistence.
+All native full-step and immediate-stage carrier-by-probe interactions remain
+unresolved. The 192 resolved interactions occur only in frozen-`W` reduced
+comparators; reset, equal-carrier, swap, zero-probe, replay, event, and topology
+controls all pass. Reset, equalization, and swap modify the authoritative `W`
+surface with maximum recorded intervention error `0.0`; all duplicate
+conductance surfaces agree. Thus the causal matrix closes as 32
+`retention_without_read`, 48 `write_before_read`, and 64 ordinary/authored
+carrier rows. It does not establish core Read-Back, orientation retention,
+write-back, memory, learning, or a closed read/write loop.
+
+Verification:
+
+```text
+B1_GR_tests = 72_passed
+ruff = passed
+required_replay_rows = 432_passed
+canonical_intervention_records = 192_complete
+P5_2_complete_candidate_schema_projection_sha256 = 27f560a221898401d59b80a046334d9e20ee95a9edbc39348eaabbfd76745f94
+P5_3_complete_candidate_schema_projection_sha256 = 27f560a221898401d59b80a046334d9e20ee95a9edbc39348eaabbfd76745f94
+P5_3_primary_numerical_projection_sha256 = d75de825ff29f6d9708fe2f13e03f270b96f90119ec0f643c5bb2d9631c5eccd
+conductance_retention_payload_sha256 = 1edb81949ad2094f29f321ed6037a562ecebe3411644d97f5a739a8383cfcaa3
+causal_role_matrix_payload_sha256 = 7c7196db7be1d6a6a76ad057719d8a0151d7332d1e0a5873b453743f7d7963d1
+intervention_registry_payload_sha256 = 2909c5432989d45ac11aca052bc6b0338ddf48f3402387996a2f0c24cd54d57a
+review_audit_payload_sha256 = 4dda2cd40d2e57b597387cfa38519f8853506dadb1f7599455496f7477ad624a
+protected_manifest_payload_sha256 = 8374740696b6572effd66326cb72f8e24a95e367debef27c94e5e0b438fa692f
+result_receipt_payload_sha256 = 941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f
+src_files_changed_by_GRV5 = 0
+```
+
+### P5.4 Acceptance Clarification
+
+The P5.3 acceptance review retained `GRR2` but identified three boundaries that
+must be explicit in every machine and report surface before acceptance. This is
+a non-upgrading clarification; branch scope, thresholds, numerical methods,
+and rung assignments remain frozen.
+
+- [x] Quantify each `GRR2` displacement against the admitted GRV3 zero-sum `C`
+  basis and its source branch.
+- [x] Record that GRV3 did not separately identify a branch tangent.
+- [x] Keep branch relocation as an unresolved rival and block transverse
+  branch-relative retention wording.
+- [x] Separate the native stage-local `W` write from the later `C` consequence.
+- [x] Record that no stage-matched `W`-only mediation control was run and that
+  specific transient-`W` mediation is not established.
+- [x] Distinguish an unchanged-runtime successor of a synthetic intervention
+  from a state reachable from an accepted branch by unchanged runtime alone.
+- [x] Prohibit unqualified `runtime-reached` shorthand for that successor.
+- [x] Verify that the P5.3 review audit source digest binds the current source
+  result rather than only a predecessor.
+- [x] Freeze future acceptance-anchor provenance across the original P5.2
+  result/receipt and the superseding P5.4 result/audit/receipt.
+- [x] Execute P5.4 from a clean committed method revision.
+- [x] Confirm all 36 hardened review points still pass.
+- [x] Confirm the complete P5.2 candidate-schema projection and maximum rung are unchanged.
+- [x] Record the P5.4 payload and receipt identities below.
+
+Pre-execution disposition:
+
+```text
+P5_4_status = method_frozen_pending_clean_committed_execution
+P5_4_may_upgrade_or_reclassify_GRR2 = false
+branch_scope_changed = false
+thresholds_changed = false
+numerical_method_changed = false
+GRR2_allowed_wording = bounded_C_dominated_neutral_direction_persistence_with_branch_relocation_rival_unresolved
+transverse_branch_relative_retention_supported = false
+later_C_mediation_specifically_by_transient_W_supported = false
+complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone = false
+runtime_reached_shorthand_allowed = false
+P5_2_result_payload_sha256 = 494cfe1cb1d6254519114682bba10dd7634086e614271a2b01b701d81223ed5a
+P5_2_receipt_payload_sha256 = 5eaefdc228293ee5f1f1a1ad66c07b0138b6a960d6586044bc7f7035aa45d95a
+P5_3_result_payload_sha256 = 1edb81949ad2094f29f321ed6037a562ecebe3411644d97f5a739a8383cfcaa3
+P5_3_review_audit_payload_sha256 = 4dda2cd40d2e57b597387cfa38519f8853506dadb1f7599455496f7477ad624a
+P5_3_receipt_payload_sha256 = 941ad5d5196a12dcaf5d636a0f57fbf44d918cdf18d8a2310bf3805b3d1ccd8f
+scientific_acceptance = awaiting_clean_P5_4_execution_and_human_review
+```
+
+Final mechanical result:
+
+```text
+input_execution_revision = 83c2cbcf002bf5ab82198f6ed9827950ada1af6a
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+P5_4_review_points_mechanically_accounted_for = 36/36
+P5_4_acceptance_clarification_changed_primary_rung = false
+branch_count = 48
+preparation_candidate_row_count = 144
+GRR0_row_count = 64
+GRR1_row_count = 48
+GRR2_row_count = 32
+GRR3_or_stronger_row_count = 0
+branch_relocation_rival_unresolved_GRR2_row_count = 32
+maximum_GRR2_admitted_C_projection_residual_l2 = 7.691850745540086e-16
+maximum_GRR2_C_transition_jacobian_identity_error_linf = 2.7754282120629595e-11
+maximum_GRR2_k0_to_h10_C_drift_state_a_l2 = 1.375579720867689e-10
+maximum_GRR2_k0_to_h10_C_drift_state_b_l2 = 1.3857589346646775e-10
+transverse_branch_relative_retention_supported = false
+later_C_mediation_specifically_by_transient_W_supported = false
+stage_matched_W_only_mediation_control_run = false
+complete_step_state_reachable_from_accepted_branch_by_unchanged_runtime_alone = false
+runtime_reached_shorthand_allowed = false
+native_mediation_count = 0
+native_readback_supported = false
+writeback_supported = false
+closed_loop_supported = false
+projection_to_complete_P5_2_candidate_schema_matches = true
+projection_to_complete_P5_2_candidate_schema_sha256 = 97f1fa6c65554f1fcdde85083654c6643730bb0051a64f9312c9a0f655baa71a
+conductance_retention_payload_sha256 = 0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989
+causal_role_matrix_payload_sha256 = 20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8
+intervention_registry_payload_sha256 = 12a98e90ac9ba1023d44d2405ff1e1d81e8c0e451649260d6f52b5ff6fd40e12
+review_audit_payload_sha256 = 5a4969ec251e9805ad70d7ef08cef7ac8df877c1807db05b4daff0b971778ba4
+protected_manifest_payload_sha256 = 8374740696b6572effd66326cb72f8e24a95e367debef27c94e5e0b438fa692f
+report_file_sha256 = 00856699815353045319bed3737c149c70b8636b3afe48cbab2b5224582592c8
+result_receipt_payload_sha256 = a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35
+B1_GR_tests = 74_passed
+ruff = passed
+src_files_changed_by_GRV5 = 0
+```
+
+The `GRR2` rows show persistent displacement in the already admitted zero-sum
+`C` coordinate. They do not establish that the displacement is transverse to a
+branch family because GRV3 did not separately identify that tangent. The native
+stage-local `W` write and later `C` consequence are both observed, but a
+stage-matched `W`-only mediation control was not run, so their specific causal
+link remains unresolved. Finally, the post-step pair is an unchanged-runtime
+successor of a synthetic old-current intervention, not a state shown reachable
+from an accepted branch by unchanged runtime alone.
+
+GRV5 acceptance disposition:
+
+```text
+acceptance_status = accepted
+acceptance_role = experiment_owner
+accepted_result_revision = 317092e9e86bf618dac4d31ffc47f74d9fa270f6
+accepted_receipt_payload_sha256 = a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35
+acceptance_anchor = outputs/gates/grv5_acceptance_anchor.json
+accepted_maximum_local_rung = GRR2
+accepted_closeout_rung = GRV-C4
+GRV_C5_assigned = false
+GRV6_status = mechanically_passed_awaiting_human_review
+native_readback_supported = false
+writeback_supported = false
+closed_loop_supported = false
+```
+
+## Iteration 7 - GRV6 Current Recurrence And Return Orbits
+
+Frozen execution scope:
+
+```text
+branch_scope = all_48_certified_GRV2_branches_in_registry_order
+current_control_scope = all_48_branches
+cycle_control_scope = all_16_F3_triangle_branches
+periods = [2, 3, 4, 5, 6, 8]
+search_budget_per_period = 256
+search_row_count = 1536
+search_coordinate = branch_relative_C_W_with_source_snapshot_J
+candidate_admission = complete_C_W_J_plus_categorical_causal_state
+proper_divisor_rejection = required
+ordinary_floquet = single_continuous_stratum_and_probe_stratum_only
+no_orbit_found_global_nonexistence_claim = blocked
+runtime_change_authorized = false
+```
+
+- [x] Freeze the GRV6 branch, cycle-topology, search-budget, and no-post-outcome-selection scope.
+- [x] Freeze direct rank-revealed cycle projection with no silent regularization or primary-projector pseudoinverse.
+- [x] Freeze full-state, proper-divisor, categorical, administrative, held-out replay, and Floquet admission gates.
+
+- [x] Record closure, mobility, conservation, uniqueness, and orientation assumption statuses where required.
+- [x] Freeze oriented edge order and node-by-edge incidence convention.
+- [x] Freeze `W_*^-1` as the primary native conductance-compatible edge metric,
+  or prove that another primary metric annihilates native potential-flow cycle projection.
+- [x] Preregister minimum conductance, `W_*` and projected-Gram condition limits,
+  singularity/rejection thresholds, and a no-silent-regularization policy.
+- [x] Freeze cycle-space and potential-complement projectors, branch/orbit
+  metric policy, plus rank and divergence tolerances.
+- [x] Verify projector idempotence, metric orthogonality, and decomposition reconstruction.
+- [x] Verify native weighted potential-flow annihilation under the primary projector.
+- [x] Verify edge-reorientation covariance of incidence, current, metric, and cycle projection.
+- [x] Certify each cycle seed against the declared incidence/orientation convention.
+- [x] Run a stationary divergence-free cycle-current control.
+- [x] Test exact-zero current.
+- [x] Test positive and negative finite current seeds.
+- [x] Test sign-even magnitude-matched preparations.
+- [x] Test cycle-space seeds where topology permits.
+- [x] Record initial cycle content, conductance inscription, reconstructed current, and remaining cycle projection.
+- [x] Search period-two return orbits.
+- [x] Search higher-period and possible complex-unit-circle return behavior.
+- [x] Record complete orbit search space/budget, all seeds and roots,
+  rejection/deduplication rules, continuation lineage, selection rule, and
+  held-out replay for selected orbits.
+- [x] Require causal-state return and reject all proper divisors in causal coordinates.
+- [x] Require one continuous causal stratum at every intermediate orbit point and derivative probe before assigning Floquet multipliers.
+- [x] Compute the monodromy product only from admitted causal-map derivatives; no orbit met the prerequisite, so no spectrum was emitted.
+- [x] Record stratum-crossing cycles as hybrid/categorical returns without an ordinary Floquet spectrum; none were admitted.
+- [x] Require causally relevant categorical event-state equality at return.
+- [x] Classify physical-only closure as `physical_projection_return`; none were admitted.
+- [x] Replay every accepted return orbit from snapshots; held-out replay is explicitly not applicable because no orbit was admitted.
+- [x] Classify potential-flow orbit, synchronous transport orbit, undetermined recurrence, or stationary cycle current.
+- [x] Emit `return_orbit_registry.json` and report.
+- [x] Emit and validate the GRV6 result receipt.
+- [x] Emit the separate GRV6 acceptance anchor only after human scientific review.
+- [x] Do not relabel recurrent nonzero current as active circulation or Read-Back.
+
+Preliminary mechanically completed result, superseded for acceptance purposes
+by the P6.1 hardening requirement below:
+
+```text
+input_execution_revision = 69f1a11633a47bf7dc972f94bdd0c53aff6b15cb
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+current_control_branch_count = 48
+cycle_control_branch_count = 16
+cycle_seed_row_count = 32
+cycle_seed_persistence_count = 0
+maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+all_edge_space_checks_passed = true
+all_sign_even_controls_passed = true
+all_budget_controls_passed = true
+maximum_budget_error = 1.7763568394002505e-15
+all_topology_and_event_controls_passed = true
+periods = [2, 3, 4, 5, 6, 8]
+search_budget_per_period = 256
+orbit_search_row_count = 1536
+all_48_branches_consumed_each_period = true
+converged_search_candidate_count = 671
+proper_divisor_rejected_count = 670
+converged_but_not_return_count = 1
+return_jacobian_ill_conditioned_no_regularization_count = 865
+primitive_return_orbit_count = 0
+physical_projection_return_count = 0
+hybrid_or_categorical_return_count = 0
+ordinary_floquet_spectrum_count = 0
+stationary_cycle_current_supported = false
+recurrence_evidence_opened = false
+active_circulation_supported = false
+readback_supported = false
+writeback_supported = false
+GRV_C5_assigned = false
+return_orbit_registry_payload_sha256 = 451a06b660796433bcc9d81417b76e3bf44b1d149bd6895dcc7a66bf41a51c31
+contract_audit_payload_sha256 = 075bd85712ed59a19544481d9e7186b92b1db9247b3786c916b2be91ce8182a2
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = 2d266835b7bc4e06f53c92dcaaaa7dfc6d8e787f044dd52e57116494711cac55
+B1_GR_tests = 80_passed
+ruff = passed
+src_files_changed_by_GRV6 = 0
+```
+
+The resolved search rows do not contain an admitted primitive period-two-or-
+higher causal-state return: 670 numerical candidates reduce to period one or
+another proper divisor, while one misses the declared return tolerance. The
+865 condition-blocked rows are unresolved under the preregistered
+no-silent-regularization rule and are not counted as orbit-absence evidence.
+Accordingly, this is a bounded negative recurrence result, not a global
+nonexistence result.
+
+The current controls are stronger within their declared topology envelope.
+All signed divergence-free cycle seeds are overwritten by native potential-flow
+reconstruction, and the post-step cycle projection is numerical zero at the
+recorded scale. This blocks stationary native cycle-current persistence on the
+16 tested triangle branches. It does not block every possible recurrent orbit,
+boundary-driven through-flow, or a future explicitly added cycle-current
+mechanism. GRV6 opens neither active circulation nor Read-Back, and GRV7 remains
+blocked until a separate GRV6 acceptance anchor is committed.
+
+### P6.1 Pre-Acceptance 36-Point Hardening
+
+- [x] Map every external review point to executed, bounded-scope, or
+  positive-orbit-conditional evidence.
+- [x] Preserve the accepted GRV5 anchor and keep GRV5 arrows independent.
+- [x] Keep cycle-current controls independent from return-orbit search results.
+- [x] Add incidence rank, cycle dimension, metric condition, projected-Gram
+  condition, conductance minimum, and floor-margin records.
+- [x] Record divergence separately from fixed-reference and phase-local cycle
+  projection at every measured beat/stage.
+- [x] Certify cycle seeds before runtime for divergence, cycle membership,
+  current floor, matched `C/W`, RNG, administrative phase, topology, and
+  positive conductance.
+- [x] Add exact public-method stage traces from old-current input through first
+  transport, continuity, budget, final transport, and complete-step parity.
+- [x] Add four preregistered structural activity amplitudes for finite and cycle
+  directions in both signs.
+- [x] Verify sign-even and quadratic conductance response shape at every ladder
+  level.
+- [x] Record budget projection, conductance-floor, event, and topology support
+  for every ladder row.
+- [x] Separate F1 full-symmetry exact-zero controls from nonsymmetric zero-input
+  rows in machine artifacts.
+- [x] Record every synthetic seed as experiment-authored and not runtime-reached.
+- [x] Freeze relative-periodic-orbit absence as outside the negative claim.
+- [x] Freeze ill-conditioned solver rows as unresolved rather than negative
+  orbit evidence.
+- [x] Keep phase/symmetry deduplication, cycle-averaged pumping, per-block
+  periods, dependency resets, codec revalidation, fresh-process replay, and
+  advanced Floquet controls mandatory but not executed when no orbit is
+  admitted.
+- [x] Add `grv6_36_point_review_audit.json` and its schema.
+- [x] Add regression tests for seed certification, stage parity, amplitude
+  response, projector conditions, and exact-zero classification.
+- [x] Freeze absolute-plus-relative divergence and cycle-membership tolerances
+  for high-amplitude synthetic seeds, recording both residual scales and the
+  effective per-seed bounds.
+- [x] Commit the P6.1 method revision and rerun GRV6 from that clean revision.
+- [x] Verify all 36 review points are accounted for with zero current-result
+  acceptance blockers.
+- [ ] Commit the superseding P6.1 result receipt and artifacts for human review.
+- [ ] Emit a GRV6 acceptance anchor only after human review of the superseding
+  result.
+
+Superseding P6.1 result awaiting human scientific review:
+
+```text
+input_execution_revision = 50aa178cc4793e19cf60d899ac924484c33b8ea4
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+current_control_branch_count = 48
+cycle_control_branch_count = 16
+cycle_seed_row_count = 32
+cycle_seed_persistence_count = 0
+maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+symmetric_exact_zero_control_count = 16
+nonsymmetric_zero_input_control_count = 32
+finite_activity_amplitude_ladder_row_count = 192
+cycle_activity_amplitude_ladder_row_count = 64
+all_activity_ladder_seeds_certified = true
+all_activity_response_shape_controls_passed = true
+activity_ladder_constraint_supported_row_count = 0
+cycle_seed_stage_trace_pair_count = 16
+all_cycle_seed_stage_traces_match_complete_step = true
+all_cycle_orientations_overwritten_at_first_transport = true
+periods = [2, 3, 4, 5, 6, 8]
+orbit_search_row_count = 1536
+converged_search_candidate_count = 671
+proper_divisor_rejected_count = 670
+converged_but_not_return_count = 1
+return_jacobian_ill_conditioned_no_regularization_count = 865
+primitive_return_orbit_count = 0
+relative_periodic_orbit_search_executed = false
+recurrence_evidence_opened = false
+GRV_C5_assigned = false
+external_review_point_count = 36
+external_review_direct_pass_count = 20
+external_review_positive_orbit_conditional_count = 14
+external_review_bounded_scope_count = 1
+external_review_mixed_current_pass_orbit_conditional_count = 1
+external_review_acceptance_blocker_count = 0
+return_orbit_registry_payload_sha256 = cd8eb857a28999e8000330656637f1e46397b6aa5416afbcb64f0a63dcaf58ff
+contract_audit_payload_sha256 = 3c95381e039e4c7fe35bca4c1ed859429e5540a9a2d720fd77ed612b0f849072
+review_36_point_audit_payload_sha256 = df1f4a4eedac863cdab227db4562ac00ce68341292fab4b5284f8e248614448a
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = f9c8950628d7e68e4d01192f1596a1a5d45d7f90849d894478941b1165eeec46
+B1_GR_tests = 81_passed
+ruff = passed
+src_files_changed_by_GRV6 = 0
+```
+
+The P6.1 hardening changes evidence resolution, not the scientific outcome.
+The cycle-current controls now show across four synthetic structural-activity
+levels that old cycle orientation is consumed by the sign-even conductance
+write and erased at the first native transport reconstruction. Those seeds are
+experiment-authored structural probes, not runtime-reached currents. The orbit
+search remains bounded: 865 condition-blocked rows are unresolved, and relative
+periodic orbits were not searched. The generated P6.1 interpretation classified
+the result as ready for human acceptance as a bounded cycle-current overwrite
+and no-admitted-exact-return result, not as a global recurrence nonexistence
+claim. The source-level correction below supersedes that readiness decision.
+
+The generated P6.1 audit initially marked review point 7 passed from the public
+transport-wrapper trace. Direct source inspection showed that this was not
+granular enough for the external requirement to observe conductance formation,
+potential reconstruction, and native current reconstruction separately. The
+P6.1 receipt remains unaccepted and is superseded for acceptance by P6.2.
+
+### P6.2 Transport-Kernel And Event-Eligibility Hardening
+
+- [x] Trace `compute_base_conductance`, pre-flux edge labels,
+  `compute_potential`, `compute_flux`, and post-flux edge labels separately for
+  both first and final transport reconstructions.
+- [x] Keep `rebuild_transport_state()` authoritative and prove the diagnostic
+  kernel sequence matches its physical and transport surfaces.
+- [x] Preserve complete-step parity after both diagnostic kernel traces.
+- [x] Locate sign-even conductance writing at conductance formation and cycle
+  orientation erasure at native current reconstruction.
+- [x] Compare hybrid-spark eligibility before and after seed insertion.
+- [x] Record disabled choice, zero growth rate, non-isolated topology, boundary
+  mode, and absence of an external-current state surface.
+- [x] Extend regression tests for kernel-stage presence, wrapper parity, and
+  event-eligibility certification.
+- [x] Commit the P6.2 method revision and rerun GRV6 from that clean revision.
+- [x] Require the regenerated 36-point audit to bind kernel-stage parity at
+  review point 7 and report zero current-result acceptance blockers.
+- [x] Commit the superseding P6.2 result artifacts for human review.
+- [ ] Emit a GRV6 acceptance anchor only after human review of P6.2.
+
+Superseding P6.2 result awaiting human scientific review:
+
+```text
+input_execution_revision = d542330c03fbb255795e01acbaa9a531807d1668
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+current_control_branch_count = 48
+cycle_control_branch_count = 16
+cycle_seed_row_count = 32
+cycle_seed_persistence_count = 0
+maximum_post_step_cycle_component_l2 = 1.3498100806892346e-26
+finite_activity_amplitude_ladder_row_count = 192
+cycle_activity_amplitude_ladder_row_count = 64
+all_activity_ladder_seeds_certified = true
+cycle_seed_stage_trace_pair_count = 16
+all_cycle_transport_kernel_traces_match_public_wrapper = true
+all_cycle_seed_stage_traces_match_complete_step = true
+all_cycle_orientations_overwritten_at_first_transport = true
+orbit_search_row_count = 1536
+converged_search_candidate_count = 671
+proper_divisor_rejected_count = 670
+converged_but_not_return_count = 1
+return_jacobian_ill_conditioned_no_regularization_count = 865
+primitive_return_orbit_count = 0
+relative_periodic_orbit_search_executed = false
+recurrence_evidence_opened = false
+GRV_C5_assigned = false
+external_review_point_count = 36
+external_review_acceptance_blocker_count = 0
+return_orbit_registry_payload_sha256 = ace2cbbc672ce85c9b0d4a90d818782d5e069c5064d0498e96e21c3879447655
+contract_audit_payload_sha256 = e252f4907ed589af26979b5bcd06624c1d43203d667ff0d6eaeebed08e62ce89
+review_36_point_audit_payload_sha256 = 24cecc3c326c525684a8ba4e56da87097bc10cffb655b61092adad855cafbcd7
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = a714d35c4e3e59c081c7e4ef7bbfb11c67d1694806f6154b5c01ed341712b698
+B1_GR_tests = 81_passed
+ruff = passed
+src_files_changed_by_GRV6 = 0
+```
+
+P6.2 preserves the P6.1 scientific outcome while resolving the stage-location
+ambiguity. The sign-even conductance write occurs during
+`compute_base_conductance`; the old cycle orientation remains present through
+potential reconstruction and is erased when `compute_flux` writes native
+potential flow. The experiment-authored seed is therefore consumed as an input
+to a structural write, not retained as current state. No accepted return orbit
+exists to trigger the 14 positive-orbit-only controls.
+
+### P6.3 Boundary State And Search-Diagnostic Hardening
+
+- [x] Freeze selection of every converged reduced `(C,W)` root whose full-state
+  admission fails primarily in old current.
+- [x] Replay the beat-one complete full state locally, after snapshot/load, and
+  in a fresh Python process.
+- [x] Record complete-state residuals, categorical/RNG/administrative behavior,
+  pre-budget and post-budget coherence, correction vector, and current at each
+  reconstruction stage.
+- [x] Classify projection-, budget-, positivity-, or boundary-supported fixed
+  states separately from return orbits and `T-A05` contradictions.
+- [x] Serialize per-iteration return-Jacobian singular values, condition number,
+  condition limit, finite-difference step, matrix digest, residual, and
+  no-regularization status.
+- [x] Add fixture- and period-stratified resolution and allocation accounting.
+- [x] Disclose the repeated round-robin offset and F1 over-allocation rather
+  than changing the preregistered search after outcome inspection.
+- [x] Replace non-required divergence/cycle booleans with explicit
+  `not_applicable`, `satisfied`, or `failed` statuses.
+- [x] State that 36 review points are accounted for: 22 current-result
+  requirements satisfied and 14 positive-candidate requirements deferred.
+- [x] Preserve the search claim as branch-relative `(C,W)` search with native
+  current reconstruction and full-state admission, not a joint `(C,W,J)`
+  nonexistence result.
+- [x] Rerun GRV6 from a clean P6.3 method revision and verify all artifacts.
+- [x] Commit P6.3 results for human acceptance; keep GRV7 blocked until then.
+
+P6.3 executed from clean method revision
+`1def2aeab3f2ec50bff411a5d89c2d391c586466`. The expanded machine artifacts
+use versioned v2 schemas. Their semantic identities are:
+
+```text
+return_orbit_registry_payload_sha256 = 6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1
+contract_audit_payload_sha256 = 67b25560aef5cbd50597df05712571629c6483b69bbb4ff11e747d34d08c4dab
+review_36_point_audit_payload_sha256 = 3d7375eabe881916c9d03f23f4bf6f9639befb51f87544b70ad5c0a80c44ba28
+protected_manifest_payload_sha256 = bcdc1f3b7930c11ae1d319ae86fc5162312a66151c2168afb04aa2538d444f36
+result_receipt_payload_sha256 = 705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3
+```
+
+The search outcome remains numerically unchanged:
+
+```text
+search_rows = 1536
+resolved_rows = 671
+proper_divisor_rejections = 670
+converged_but_not_return_rows = 1
+ill_conditioned_unresolved_rows = 865
+primitive_return_orbits = 0
+
+F1 = 459 resolved / 117 ill-conditioned
+F2 = 116 resolved / 364 ill-conditioned
+F3 = 96 resolved / 384 ill-conditioned
+```
+
+The one exceptional row, `p08-s243`, is replayable as a
+`budget_projection_supported_current_state`. Its pre-budget coherence is
+approximately `(-0.8, 4.8)`, its post-projection coherence is `(0, 4)`, all
+three replay modes agree, and an old-current reset produces the same next
+physical future. It is therefore a useful boundary/projection result rather
+than a period-eight orbit, independent-old-current state, or `T-A05`
+contradiction. The frozen search remains a branch-relative `(C,W)` chart with
+native current reconstruction and full-state admission; it does not exclude
+old-`J`-dependent or relative periodic orbits outside that chart.
+
+All 865 condition-blocked rows now expose finite-difference step, singular
+values, condition number and limit, Jacobian digest, residual, and explicit
+no-regularization status. Generic activity seeds use `not_applicable` for
+non-required cycle/divergence gates, while actual cycle seeds use `satisfied`.
+All 36 external-review points are accounted for: 22 current-result requirements
+are executed or satisfied and 14 positive-candidate requirements are deferred.
+The experiment-local suite passes `84` tests; `src/` and protected source/spec/
+test paths remain unchanged. Human review accepted this bounded P6.3 result:
+
+```text
+scientific_acceptance = accepted
+accepted_result_revision = 07cf6784abe600eb2ad345e2cf9c1ed2e109be3d
+accepted_receipt_payload_sha256 = 705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3
+acceptance_anchor = outputs/gates/grv6_acceptance_anchor.json
+GRV7_authorized = true
+GRV_C5_assigned = false
+GRV_C5_status = pending_GRV7_threshold_evidence
+```
+
+## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
+
+- [x] Prioritize operator identity, branch identity, reduction validity,
+  critical-subspace identity, uncertainty separation, and categorical boundaries
+  as the load-bearing scientific discriminator.
+- [x] Type every compared operator by domain, metric, sign convention, and
+  threshold rule; forbid sorted-eigenvalue cross-operator pairing.
+- [x] Record raw WLS design rank, declared regularization, conditioning, and
+  threshold-identifiability status before including WLS in CE1 wording.
+- [x] Select admitted homogeneous and nonuniform branch families.
+- [x] Map all seven selected source branches to their primary or symmetry roles
+  across all six parameter paths.
+- [x] Preregister branch matching, cluster matching, maximum step, and bifurcation restart rules.
+- [x] Preregister parameter sweeps and threshold rules.
+- [x] Fail closed when a reduced comparator or complete-step stratum is
+  inadmissible; do not classify a blocked comparison as threshold disagreement.
+- [x] Record that the frozen-`W` comparator uses no current slaving or
+  `I-B_eff` loop inverse.
+- [x] Compare the actual critical subspace where a decisive threshold relation
+  is claimed, including physical support and symmetry character.
+- [x] Audit admitted complete-step `+1` clusters for conservation, gauge,
+  branch-tangent, block participation, conditioning, and unit-circle uncertainty.
+- [x] Separate reduced non-equivalence from runtime-spatial/full-temporal
+  non-equivalence in the machine summary and receipt.
+- [x] Require threshold witnesses and off-threshold brackets separated from
+  preregistered uncertainty.
+- [x] Sweep `+1`, stable-interior, `-1`, and classify available complex crossings.
+- [x] Record complete-step multipliers.
+- [x] Record frozen-`W` comparator spectrum.
+- [x] Record row-basis unsigned Hessian.
+- [x] Record signed Hessian.
+- [x] Record WLS comparison Hessian.
+- [x] Record event, sink, basin, collapse, and spark evidence separately.
+- [x] Search for a strong temporal/spatial non-equivalence counterexample.
+- [x] Record bounded correlations without universalizing them.
+- [x] Emit `spatial_temporal_threshold_matrix.json` and report.
+- [x] Emit and validate the GRV7 result receipt.
+- [x] Accept GRV7 and emit the separate acceptance anchor.
+
+The initial unaccepted GRV7 result from method revision `0f9d0de` is retained in
+history and superseded. Scientific-discriminator hardening made the six
+load-bearing checks machine-readable without changing branch selection,
+parameter paths, thresholds, or claim ceiling. A first hardened preliminary
+result then exposed an audit-only error: the CE1 bracket named the nearest
+off-threshold witnesses but computed headroom from the farthest endpoints. The
+acceptance-scope hardening then made WLS identifiability, complete-step `+1`
+nontriviality, reduced/full claim separation, and source-branch role accounting
+explicit. The final GRV7 rerun executed from clean corrected method revision
+`47589bff66e6f720da428dc98bc7b71e2166c3f0`.
+
+The frozen scope retains all 48 GRV2 branches in source accounting and selects
+seven source/symmetry branches before spectra for six continuation paths. The
+run records 27 primary points and 51 points including graph-symmetry partners.
+Every point passes the same-branch invariant, declared parameter-step maximum,
+native stage canonicalization, branch residual, event, topology, and categorical
+gates. The maximum full-step branch residual is `1.085265211031583e-10`; the
+maximum parameter-canonicalization physical `(C,W,J)` delta is
+`2.0000001654607423e-11`.
+
+All six branch-sheet audits pass. Exact branch-state digest identity is not
+required because parameter continuation may change constitutive `W/J` or move
+`C` within the preregistered branch tolerance; source sheet, ordered topology,
+adjacent `C`, total coherence, and categorical identity remain load-bearing.
+All frozen comparators pass the positive-mobility gate. They are clamped-`W`
+zero-sum-`C` constructions, not current-slaving reductions, so `I-B_eff`
+invertibility is explicitly not applicable. The 11 F1 complete-step rows remain
+blocked by the GRV3 categorical-stratum gate and are not counted as threshold
+disagreements.
+
+The homogeneous F1 scale path supplies the first bounded counterexample. Its
+runtime row-basis unsigned and signed diagnostics have one digest over all five
+points, while the analytical constrained second variation has five digests and
+covers negative, zero, and positive eigenvalue signs. The frozen-`W` multiplier
+reaches unstable exterior, `+1`, and stable interior. The WLS comparison is
+reproducible but non-identifying: each node has one sample for a six-feature
+quadratic fit, raw design rank is one, regularization is declared as `1e-9`, and
+threshold interpretation is forbidden. CE1 is therefore a failure of cross-
+object identification, not disagreement among three admitted runtime thresholds.
+
+The CE1 analytical zero residual is `4.000e-12`, its frozen `+1` residual is
+`8.000e-13`, and the nearest off-threshold separation margin is
+`0.999999998996`. CE2 keeps `H_cont` at least `1.000000000004` from zero,
+reaches `-1` within `4.000e-12`, and has minimum stable/exterior separation
+margin `0.999998999998`. Both use the exact one-dimensional two-node zero-sum
+`C` critical subspace with zero principal angle and projector distance; no
+sorted eigenvalue-index pairing is used. Runtime local Hessian subspaces are
+not falsely identified with that `C`-tangent operator.
+
+The homogeneous F1 timestep path supplies the second bounded counterexample.
+Both its runtime spatial-diagnostic digest and analytical continuation-Hessian
+digest remain constant over six points, while the frozen-`W` multiplier moves
+from `0.9` through the stable interior to approximately `-1` at `dt = 1.0` and
+then to `-2`. A spatial Hessian alone therefore does not identify the discrete
+flip threshold without the timestep and mobility. Both F1 results remain
+clamped-counterfactual evidence: all 11 primary F1 complete-step Jacobians are
+blocked at the zero-current sink/basin identity stratum, not treated as
+unconverged and not promoted to full-map counterexamples.
+
+All 16 primary F2/F3 points, and 40 points including symmetry partners, admit
+complete-step spectra with finite-difference convergence, alternate-basis
+covariance, administrative-phase invariance, and graph-symmetry covariance.
+Their multipliers remain within `2.603e-11` of `+1`; this is a bounded spatial/
+temporal correlation at the solved nonuniform branch condition, not a universal
+threshold identity. The zero-sum basis removes the conservation mode and no
+gauge is declared, but branch-tangent overlap is not separately identified;
+all 16 are admitted near-unit clusters with nontriviality unresolved, not
+informative nontrivial `+1` thresholds. Every available real-invariant cluster match passes. The
+maximum symmetry conjugacy error is `1.697e-11`; the maximum adjacent cluster-
+centroid distance is `1.000000000002`, below the preregistered `1.1` limit.
+
+No complex unit-circle crossing is reached. The real self-adjoint frozen
+comparator cannot supply one in this scope, and the admitted complete-step paths
+remain at `+1`. This is recorded as unavailable in the preregistered envelope,
+not as global nonexistence evidence. Event, sink, basin, collapse, spark, and
+topology surfaces remain separately recorded for every point.
+
+The seven selected branches are fully accounted for across six paths. F1 branches
+`grv2-f1-004` and `grv2-f1-014` each provide one primary path. F2 branches
+`grv2-f2-017` and `grv2-f2-018` provide primary/symmetry roles on both `dt` and
+`eta` paths. F3 branches `grv2-f3-033`, `grv2-f3-034`, and `grv2-f3-035` provide
+one primary and two symmetry roles on both `dt` and `eta` paths. No selected
+branch is omitted.
+
+The matrix payload digest is
+`cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1`.
+Receipt `2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb`
+binds all outputs and is awaiting human review. The experiment-local suite
+passes `95` tests, protected source/spec/root-test tree
+`4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2`
+is unchanged. In this immutable pre-acceptance result, `GRV-C5` remains a
+candidate and GRV8 remains blocked pending a separate GRV7 acceptance anchor.
+
+```text
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+non_equivalence_scope = clamped_W_reduced_spatial_continuation_and_discrete_threshold_only
+reduced_spatial_continuation_temporal_non_equivalence_supported = true
+runtime_spatial_vs_full_temporal_non_equivalence_supported = false
+full_map_non_equivalence_supported = false
+all_frozen_continuation_comparator_points_admitted = true
+selected_source_branches_fully_accounted = true
+complete_step_informative_nontrivial_temporal_classes_reached = []
+all_branch_identity_audits_passed = true
+frozen_reduction_or_admissibility_blocked_points = 0
+decisive_uncertainty_separated_counterexamples = 2
+frozen_plus_one_reached = true
+frozen_stable_interior_reached = true
+frozen_minus_one_reached = true
+complex_unit_circle_crossing_reached = false
+complete_step_primary_points_admitted = 16
+complete_step_primary_points_blocked = 11
+GRV_C5_candidate = true
+GRV_C5_assigned = false
+GRV8_authorized = false
+```
+
+Human review accepted this immutable result at revision
+`60d045ddf5b523e0922d17f18f3a94c3de5cd020`. The separate GRV7 acceptance
+anchor binds receipt
+`2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb`
+and preserves the reduced-comparator claim ceiling. Its review record confirms
+that WLS is non-identifying, complete-step `+1` nontriviality is unresolved, and
+all seven selected branches are accounted for across six paths. The result
+block above remains the immutable pre-acceptance machine state; the accepted
+current lifecycle state is `GRV-C5` assigned and GRV8 authorized but not started.
+
+## Iteration 9 - GRV8 Classification, Route Decision, And Next-Route Handoff
+
+GRV8 is deliberately split at the human-review boundary. The first execution
+may emit only the classification/routing artifacts, protected-path successor,
+complete-suite result, report, and result receipt. It must stop at
+`awaiting_scientific_review`. The evidence bundle, successor specification,
+next-route handoff, closeout anchor, and `GRV-C6` remain blocked until a separate
+acceptance anchor binds that result receipt. This prevents the classification
+from accepting itself or manufacturing its own closeout.
+
+- [x] Assign every required assumption status first.
+- [x] Mark claims with failed/unidentifiable assumptions as not admitted unless independently contradicted.
+- [x] Assign one of the six implementation statuses to every tested object.
+- [x] Assign L0-L5 correspondence levels.
+- [x] Bind claim, debt, assumption, proof-note, and source IDs.
+- [x] State maximum supported and blocked claims for every result.
+- [x] Complete contradiction routing.
+- [x] Complete theory-reopening decision.
+- [x] Decide geometry/mobility separation route.
+- [x] Decide retained-carrier route.
+- [x] Decide oriented-current route.
+- [x] Decide `K` route.
+- [x] Exclude mapping, theory-strength, identifiability, numerical, and source-fidelity explanations before recommending an extension.
+- [x] Produce extension decisions without implementing them.
+- [x] Produce the versioned evidence-grounded successor specification.
+- [x] Preserve Drafts 3.2, 3.3, and 3.4 and the accepted controlling Draft 3.4.1 unchanged.
+- [x] Emit `equivalence_classification.json` with the complete scientific classification candidate.
+- [x] Accept the GRV8 scientific classification through a separate acceptance anchor.
+- [x] Freeze `evidence_bundle_manifest.json` only after GRV8 scientific acceptance and before successor generation.
+- [x] Exclude the evidence-bundle manifest, successor, and later closeout anchor from the bundle payload.
+- [x] Emit and accept `outputs/gates/grv8_closeout_acceptance_anchor.json`
+  before assigning `GRV-C6`.
+- [x] Record predecessor/evidence digests and changed claim/assumption/debt rows.
+- [x] Emit `superseded_exploratory_claims.json`.
+- [x] Complete every theory-to-test traceability row with assumption statuses, result, and route.
+- [x] Freeze the unchanged-GRC evidence bundle.
+- [x] Produce `continuation_readback_next_route_handoff.json` with GRC-first,
+  analysis/debt, and LGRC-specific lanes plus positive and negative boundaries.
+- [x] Rerun and record the complete existing suite from the GRV8 clean input revision.
+- [x] Verify all protected paths remain unchanged.
+- [x] Emit and validate the GRV8 result receipt.
+- [x] Emit the separate GRV8 scientific acceptance anchor after human review.
+- [x] Assign `GRV-C6` only when classification and routing are complete.
+- [x] Keep B1-L unopened unless its complete entry contract is accepted.
+
+## Final Claim Audit
+
+- [x] Do not claim full core Read-Back without direct evidence.
+- [x] Do not claim a unique retained projector.
+- [x] Do not combine `alpha`, `gamma`, and `beta` into one spectrum.
+- [x] Do not equate temporal marginality with spark or basin birth.
+- [x] Do not claim active stationary circulation from recurrent transport alone.
+- [x] Do not claim LGRC retention or Read-Back.
+- [x] Do not select N32 through B1-GR bookkeeping.
+- [x] Do not claim memory, learning, agency, organism, or life.
+- [x] Treat a negative, blocked, mixed, or no-extension result as a valid closeout when source-backed.
+
+### Iteration 9 P8 Stage 1 Superseded Result
+
+```text
+input_execution_revision = 7d039408f845400cf3ab0ad2b4b2ad0585dfb95d
+result_revision = 144875709359d477c05ef7d47382bc76342223f5
+grv8_result_receipt_payload_sha256 = 0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714
+mechanical_status = passed
+scientific_acceptance = superseded_unaccepted
+assumption_count = 19
+claim_count = 33
+tested_object_count = 19
+theory_debt_count = 13
+traceability_row_count = 17
+contradiction_route_count = 6
+extension_decision_count = 4
+repository_tests = 1354_passed
+experiment_tests = 105_passed
+protected_paths_unchanged = true
+theory_reopening_required = false
+geometry_mobility_extension_opened = false
+retained_carrier_extension_opened = false
+oriented_current_extension_selected = false
+K_decision = remains_explicitly_diagnostic
+native_readback_supported = false
+native_writeback_supported = false
+closed_read_write_loop_supported = false
+evidence_bundle_frozen = false
+successor_generated = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+```
+
+The classification distinguishes exact bounded runtime results, declared
+simplifying limits, analogical implementations, diagnostic measurements,
+substrate absences, and theory-open objects. It does not turn missing native
+Read-Back into theory falsification or an automatic extension requirement. The
+oriented-current route remains conditional because B1-GR identifies the missing
+directional role but does not select a future target that requires it.
+
+All 13 emitted artifacts match the GRV8 receipt. Every JSON payload digest and
+the receipt payload digest validate, all 98 artifacts bound by accepted
+GRV0-GRV7 receipts remain exact, and no machine-local path marker is present.
+The evidence bundle, evidence-grounded successor, LGRC handoff,
+`grv8_acceptance_anchor.json`, `grv8_closeout_acceptance_anchor.json`, and
+`GRV-C6` are deliberately absent pending human review.
+
+Review did not accept this candidate. It found that the broad route decisions
+were useful but the machine classification was too coarse: object rows lacked
+exact accepted-field provenance and per-envelope qualifiers, current recurrence
+was not separated from the `j = J_C` mapping, causal roles were not serialized
+arrow by arrow, and the LGRC route partition was not explicit. The candidate is
+historical input to P8.1 only and cannot support Stage 2.
+
+### Iteration 9 P8.1 Hardening
+
+The external 27-point review maps to P8.1 as follows:
+
+1. [x] Gate admission binds accepted GRV7, explicit `GRV-C5`, and a clean input revision.
+2. [x] Cross-gate facts bind accepted result revisions, anchors, artifact digests, and exact fields.
+3. [x] Every object records fixture/branch envelope, runtime stage, and continuous stratum.
+4. [x] Every object has one primary status plus bounded secondary qualifiers.
+5. [x] The controlling L0-L5 definitions are serialized unchanged and cross-checked.
+6. [x] Nine causal arrows are classified independently.
+7. [x] Synthetic-valid formation is distinct from natural unchanged-runtime reachability.
+8. [x] GRR2 keeps branch relocation and ordinary persistent-state rivals open.
+9. [x] Baseline geometry-conditioned transport is distinct from carrier-mediated reading.
+10. [x] `j = J_C` is tested as a mapping and demoted to analogy, not inferred from variable reuse.
+11. [x] Current is classified as stage-local input and reconstructed/overwritten output, not independent temporal state.
+12. [x] Magnitude, edge-axis/channel, historical orientation, present directional response, and cycle orientation are separate.
+13. [x] Cycle-current and orbit nulls remain bounded; unresolved and relative-orbit rows stay open.
+14. [x] Reduced Hessian/threshold non-equivalence is separate from unsupported full-map non-equivalence.
+15. [x] `K` remains diagnostic only on the tested fixed-topology/no-event path.
+16. [x] Geometry/mobility conflation is recorded without opening a split absent a blocked observable.
+17. [x] Current carrier absence, target-conditioned carrier need, and `W` versus new-`M` choice are separate.
+18. [x] Directional read response, historical orientation, and cycle current are separate extension questions.
+19. [x] GRR3-GRR5 remain eligible for unchanged-runtime constructibility search before extension selection.
+20. [x] Contradictions record one primary cause, secondary alternatives, rejected routes, and next action.
+21. [x] Cross-gate synthesis cannot create a positive causal arrow.
+22. [x] Superseded claims retain source, reason, disposition, replacement, and evidence.
+23. [x] The Stage 1 LGRC boundary candidate is two-sided; the final handoff remains blocked.
+24. [x] Legacy B1-L and future LGRC-N are distinct investigations over distinct bases.
+25. [x] All final prohibited claims remain explicit.
+26. [x] Classification acceptance precedes bundle, successor, closeout anchor, and `GRV-C6`.
+27. [x] Replacement clean execution, complete-suite rerun, and protected-path successor pass.
+
+- [x] Preserve the unaccepted P8 candidate and record its supersession reason.
+- [x] Expand the object atlas from 19 broad rows to 31 role-specific rows.
+- [x] Classify native current recurrence exactly and demote `j = J_C` to analogy.
+- [x] Add fixture/branch envelope, runtime stage, stratum, qualifiers, and outside-envelope status per object.
+- [x] Bind exact accepted artifact fields and consumed-value digests per object and claim.
+- [x] Serialize the controlling L0-L5 definitions unchanged.
+- [x] Add nine arrow-by-arrow causal-role classifications with a GRR2 ceiling.
+- [x] Preserve synthetic-input provenance and the branch-relocation rival.
+- [x] Add target-conditioned current-temporalization and unchanged-runtime constructibility routes.
+- [x] Distinguish B1-L over legacy GRC9V3 from future LGRC-N over a revised kernel.
+- [x] Add negative LGRC relabel boundaries without emitting the final handoff.
+- [x] Add primary cause, alternatives, rejected routes, and next action to contradiction rows.
+- [x] Add reason, disposition, and supporting artifacts to superseded claims.
+- [x] Commit the P8.1 method revision.
+- [x] Execute replacement GRV8 from the clean P8.1 revision.
+- [x] Validate the replacement receipt, artifacts, protected paths, and complete suite.
+- [x] Submit the replacement candidate for human scientific review.
+- [x] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.
+
+P8.1 replacement candidate awaiting human scientific review:
+
+```text
+input_execution_revision = bfb3de100deee6c86b98d839d0b6d89fde8e0f59
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+accepted_prerequisite_gate_count = 8
+verification_closeout_rung = GRV-C5
+classified_assumption_count = 19
+classified_claim_count = 33
+classified_object_count = 31
+classified_causal_role_count = 9
+contradiction_route_count = 6
+extension_decision_count = 6
+maximum_retention_ladder_rung = GRR2
+native_current_recurrence = exact_native_mechanism_distinct_from_core_readback
+j_equals_J_C_runtime_mapping = analogy_only_candidate_mapping_rejected
+native_readback_supported = false
+native_writeback_supported = false
+closed_read_write_loop_supported = false
+theory_reopening_required = false
+evidence_bundle_frozen = false
+successor_generated = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+repository_tests = 1354_passed
+post_generation_B1_GR_tests = 111_passed
+protected_path_count = 379
+protected_paths_unchanged = true
+grv8_result_receipt_payload_sha256 = 24b30abc8b8db8134f0ecb335bd286f5866caef34e05b5fd5ecf459831cf5b8d
+equivalence_classification_sha256 = a03aa372942ec68100c6c847b4c355b8294a1c931ffc485ff97858dde8a9dfe5
+final_causal_role_classification_sha256 = 18a881f6d2a13f28dc59246c47ad07c208faa56cf03ebe6134bd868253f2c3e0
+final_claim_classification_sha256 = 65b9f4543d57b60d558998d693f62a3bb11f64f81e92027aaa456b45dd639883
+extension_decision_sha256 = 51bf77e5329c4ff0e10fa5b7f0430d70f9646638d17c42a78d9a30167795c76e
+protected_manifest_sha256 = d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f298d406baf35db
+```
+
+The replacement preserves the accepted GRV0-GRV7 chain and the mixed B1-GR
+result. Native current recurrence is an exact stage-local GRC9V3 mechanism,
+but it is not core Read-Back and does not establish the declared `j = J_C`
+reduction. The strongest retention result remains synthetic-input,
+`C`-dominated `GRR2` persistence with branch relocation unresolved. Reduced
+clamped-`W` non-equivalence remains supported while full-map non-equivalence,
+native mediation, durable carrier retention, directional Read-Back,
+write-back, and closed-loop claims remain blocked.
+
+The Stage 1 LGRC boundary candidate is now explicit but is not a handoff.
+Legacy B1-L over unchanged GRC9V3 and future LGRC-N over a revised
+constitutive kernel are separate investigations. Human acceptance of this
+replacement classification is required before the evidence bundle, successor,
+final handoff, closeout anchor, or `GRV-C6` may be emitted.
+
+Review did not accept P8.1. The candidate remains useful non-consumable
+history, but its final traceability assumptions do not agree with eight source
+rows, fixed-topology `A-TRANSPORT` is misclassified as not applicable,
+stationary cycle-current nonrealization is conflated with unresolved orbit
+constructibility, and the sole declared-simplifying-limit row lacks a commuting
+core-reduction derivation.
+
+### Iteration 9 P8.2 Classification Correction
+
+- [x] Preserve P8 and P8.1 as unaccepted, non-consumable result revisions.
+- [x] Preserve the controlling traceability source rows inside the corrected artifact.
+- [x] Split `TR-01` into `T-S02` only and leave `D-M01` ownership solely with `TR-17`.
+- [x] Bind `TR-01` to `A-BRANCH`, `A-CLOCK`, and `A-CONSERVE` with an explicit adjustment record.
+- [x] Derive all other final traceability assumption IDs from their own source rows.
+- [x] Deduplicate exact accepted evidence records in every traceability row.
+- [x] Classify fixed-topology canonical-coordinate `A-TRANSPORT` as satisfied.
+- [x] Keep topology-changing interspace transport untested under `D-T01` and `T-B04`.
+- [x] Split stationary cycle-space current into bounded substrate nonrealization.
+- [x] Split period-2-to-8 return orbits into unresolved constructibility evidence.
+- [x] Audit the bounded-runtime causal-state L4 correspondence.
+- [x] Record that no no-current, frozen-current, or smoothly slaved-current commuting reduction was derived.
+- [x] Narrow bounded runtime causal closure to exact L3 without weakening the runtime result.
+- [x] Add regression coverage for all four correction families.
+- [x] Commit the P8.2 method revision.
+- [x] Execute replacement GRV8 from the clean P8.2 revision.
+- [x] Validate corrected artifacts, complete suite, and protected paths.
+- [x] Submit the P8.2 candidate for human scientific review.
+- [x] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.
+
+P8.2 corrected candidate awaiting human scientific review:
+
+```text
+input_execution_revision = b66888e37e7ef2aca61df206124ddb7a3f0fef2d
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+accepted_prerequisite_gate_count = 8
+verification_closeout_rung = GRV-C5
+classified_assumption_count = 19
+assumption_status_counts = 15_satisfied_3_not_applicable_1_not_identifiable
+classified_claim_count = 33
+classified_object_count = 31
+classified_causal_role_count = 9
+contradiction_route_count = 7
+extension_decision_count = 6
+traceability_source_row_adjustment_count = 1
+traceability_evidence_records_deduplicated = true
+fixed_topology_A_TRANSPORT = satisfied
+topology_changing_interspace_transport = not_tested_D_T01
+bounded_runtime_causal_state = exact_L3_constitutive_realization
+declared_commuting_core_reduction_derived = false
+stationary_cycle_current_route = bounded_substrate_nonrealization
+period_2_to_8_orbit_route = construct_not_identifiable_with_available_interventions
+maximum_retention_ladder_rung = GRR2
+native_readback_supported = false
+native_writeback_supported = false
+closed_read_write_loop_supported = false
+theory_reopening_required = false
+evidence_bundle_frozen = false
+successor_generated = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+repository_tests = 1354_passed
+post_generation_B1_GR_tests = 115_passed
+protected_path_count = 379
+protected_paths_unchanged = true
+grv8_result_receipt_payload_sha256 = 1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5
+assumption_status_matrix_sha256 = 2c346fc5ec7ca771a4bf191691a39c94dbe71b2a39b5c40670ac9f9d8601511b
+equivalence_classification_sha256 = c05e3a6e1b383f6541ff4c755472ad156e5bcbda69a10f3370169631da8aa8d3
+final_claim_classification_sha256 = f85d474daef7db7597f99d0d4afea2e242b4ca66b08a95b830496ae802f57d38
+final_contradiction_routing_sha256 = b7552dcd7008d6ae5378951f7af704e459847eebb03166c7eeb59d0c8110c3a0
+final_theory_test_traceability_sha256 = e16e5c352ad7d833e769f49b1b639830bcbb3aa3a298ff2b02e1803587dde5f7
+protected_manifest_sha256 = d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f298d406baf35db
+```
+
+P8.2 preserves both earlier GRV8 candidates as non-consumable historical
+results. It changes classification propagation and interpretation only: no
+accepted GRV0-GRV7 artifact, fixture, threshold, runtime behavior, or claim
+ceiling was reopened. The corrected receipt was the sole candidate eligible
+for human scientific review and is the result bound by the acceptance anchor
+below. No evidence bundle, successor specification, routed handoff, closeout
+anchor, or `GRV-C6` assignment existed at classification acceptance time.
+
+P8.2 classification acceptance:
+
+```text
+acceptance_status = accepted
+accepted_result_revision = 570f715a54b7235be81725907a71e4a4b461ece7
+accepted_receipt_payload_sha256 = 1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5
+acceptance_anchor = outputs/gates/grv8_acceptance_anchor.json
+stage_2_authorized = true
+evidence_bundle_frozen = false
+successor_generated = false
+route_handoff_generated = false
+closeout_anchor_emitted = false
+GRV_C6_assigned = false
+```
+
+The accepted classification routes first to unchanged-GRC constructibility and
+conditional GRC extension work where the evidence selects those lanes. LGRC
+event, delay, lineage, and topology-changing questions remain a distinct
+downstream lane. Stage 2 therefore requires a general continuation/read-back
+route handoff rather than an LGRC-only umbrella handoff.
+
+### Iteration 9 Stage 2 Closeout Candidate
+
+```text
+input_execution_revision = b82aab63cd90e8877eb87ead6272bf8a98dc03cd
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+accepted_GRV8_classification = true
+accepted_gate_count = 9
+accepted_anchor_count = 9
+evidence_bundle_artifact_count = 130
+superseded_or_replaced_bundle_artifact_count = 0
+evidence_bundle_payload_sha256 = 2373541a0cd5102bda6ac1d1959edb9c3fcf57f93bebd4f8f43fb783deb4107c
+successor_sha256 = 120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed
+route_handoff_payload_sha256 = 6ee469edcfdb88f53d465bf418211cf7d8f059ab1814312f0d026a81c6d61849
+closeout_receipt_payload_sha256 = bbd78c9e5bdfe30b1fd6c8c0f2b9e18243021b76761e5d5a7e98fbb8b180ffbf
+post_generation_B1_GR_tests = 119_passed
+preexecution_specification_referenced_by_exact_path_and_digest = true
+preexecution_specification_copied_or_rewritten = false
+handoff_lane_1 = GRC_UNCHANGED_CONSTRUCTIBILITY
+handoff_lane_2 = GRC_SELECTABLE_EXTENSIONS
+handoff_lane_3 = GRC_ANALYSIS_AND_IDENTIFIABILITY
+handoff_lane_4 = LGRC_SPECIFIC_INVESTIGATION
+legacy_lgrc_handoff_is_umbrella = false
+runtime_change_authorized = false
+closeout_anchor_emitted = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+```
+
+The bundle was frozen before the successor and excludes itself, the successor,
+the generalized handoff, the Stage 2 receipt, and the later closeout anchor.
+The successor records all final assumption, claim, debt, extension,
+contradiction, and superseded-statement rows while retaining the accepted
+predecessor as an immutable external reference. The Stage 2 receipt is a
+candidate for separate human closeout review; it cannot accept itself or
+authorize any GRC/LGRC implementation.
+
+### Iteration 9 Final Closeout Acceptance
+
+```text
+scientific_acceptance = accepted
+accepted_stage_2_result_revision = d6b57e1e973eb2c6232af0e0693599a3f51abe01
+closeout_acceptance_anchor = outputs/gates/grv8_closeout_acceptance_anchor.json
+closeout_receipt_payload_sha256 = bbd78c9e5bdfe30b1fd6c8c0f2b9e18243021b76761e5d5a7e98fbb8b180ffbf
+evidence_bundle_payload_sha256 = 2373541a0cd5102bda6ac1d1959edb9c3fcf57f93bebd4f8f43fb783deb4107c
+successor_sha256 = 120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed
+route_handoff_payload_sha256 = 6ee469edcfdb88f53d465bf418211cf7d8f059ab1814312f0d026a81c6d61849
+verification_closeout_rung = GRV-C6
+experiment_status = closed
+runtime_change_authorized = false
+B1_L_execution_authorized = false
+N32_selected = false
+l04_selected = false
+```
+
+The acceptance anchor binds the immutable Stage 2 candidate rather than
+rewriting its pre-acceptance receipt or generated artifacts. `GRV-C6` closes
+the verification and route-classification lifecycle; it does not raise the
+scientific claim ceiling beyond the accepted bounded classification. The
+general handoff remains GRC-first: unchanged-runtime constructibility,
+selectable GRC extensions, analysis/identifiability debt, and then
+LGRC-specific investigation. Closing the branch selects no implementation
+route and does not start B1-L.

@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "partial_readback",
+      "GRR3_or_stronger",
+      "native_retained_carrier",
+      "closed_read_write_loop"
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "arrow_by_arrow_GRR2_bounded_role_classification_without_partial_readback_relabel",
+    "rows": [
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/activity_stage_write_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "naturally_reached_write",
+          "persistent_write",
+          "writeback"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/activity_stage_write_count"
+        ],
+        "maximum_supported_claim": "synthetic_valid_old_current_is_consumed_by_the_exact_native_sign_even_J_squared_to_W_stage",
+        "role_id": "activity_to_W_write",
+        "status": "supported_exact_stage_local"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
+            "exact_field_or_row": "/payload/summary/activity_complete_step_joint_write_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "naturally_reached_regime",
+          "retained_sector_identified"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/activity_complete_step_joint_write_count"
+        ],
+        "maximum_supported_claim": "unchanged_runtime_produces_a_later_C_dominated_joint_state_difference_after_the_synthetic_valid_formation_input",
+        "role_id": "activity_to_complete_step_C_or_joint_consequence",
+        "status": "supported_bounded_after_synthetic_intervention"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b1a805c7628f78d7db4938a37ca1549f201740c007a983d425d0ebb47ef47fda",
+            "exact_field_or_row": "/payload/summary/maximum_local_evidence_ladder_rung",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
+            "exact_field_or_row": "/payload/summary/branch_relocation_rival_unresolved_GRR2_row_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "GRR3",
+          "durable_W_carrier",
+          "branch_relative_retained_sector"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/maximum_local_evidence_ladder_rung",
+          "outputs/conductance_retention_probe.json#/payload/summary/branch_relocation_rival_unresolved_GRR2_row_count"
+        ],
+        "maximum_supported_claim": "bounded_C_dominated_neutral_coordinate_persistence_with_branch_relocation_rival_unresolved",
+        "role_id": "post_activity_persistence",
+        "status": "supported_bounded_GRR2"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "d39c0338d0b3f3be10219a8b047a2e1bd8f98878671be572690af6f46f29d560",
+            "exact_field_or_row": "/payload/summary/maximum_GRR2_admitted_C_projection_residual_l2",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "c32bf7738863c8e7e059fb99041dff5525308f09ca47d4f0ed604a307d890341",
+            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_blocked_matrix_rows",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          }
+        ],
+        "blocked_claims": [
+          "isolated_retained_slow_cluster",
+          "growing_formative_retention"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/maximum_GRR2_admitted_C_projection_residual_l2",
+          "outputs/complete_step_jacobians.json#/payload/summary/temporal_mode_interpretation_blocked_matrix_rows"
+        ],
+        "maximum_supported_claim": "the_GRR2_candidate_occupies_a_neutral_C_dominated_coordinate_while_broader_temporal_clusters_remain_branch_and_conditioning_bounded",
+        "role_id": "stable_neutral_growing_classification",
+        "status": "partial_neutral_only_for_retention_candidate"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/later_C_mediation_specifically_by_transient_W_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "native_W_mediation",
+          "readback"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/later_C_mediation_specifically_by_transient_W_supported"
+        ],
+        "maximum_supported_claim": "substrate_reduced_frozen_W_sensitivity_only",
+        "role_id": "W_mediated_later_response",
+        "status": "unsupported_in_tested_native_path"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/native_mediation_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "joint_retained_carrier",
+          "GRR4",
+          "readback"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/native_mediation_count"
+        ],
+        "maximum_supported_claim": "bounded_joint_state_difference_without_identified_later_probe_mediation",
+        "role_id": "joint_state_mediated_later_response",
+        "status": "unresolved_not_identified"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/present_current_convention/native_external_present_current_input_available",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "passive_null_identified",
+          "directional_readback"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/present_current_convention/native_external_present_current_input_available"
+        ],
+        "maximum_supported_claim": "baseline_potential_flow_current_only",
+        "role_id": "distinct_read_current",
+        "status": "absent_from_tested_native_runtime"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/writeback_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "writeback",
+          "reflexive_update"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/conductance_retention_probe.json#/payload/summary/writeback_supported"
+        ],
+        "maximum_supported_claim": "no_native_probe_read_then_later_write_arrow",
+        "role_id": "probe_induced_later_write",
+        "status": "unsupported_in_tested_native_path"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/causal_role_matrix.json",
+            "artifact_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
+            "artifact_sha256": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/closed_loop_row_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          }
+        ],
+        "blocked_claims": [
+          "core_readback_loop",
+          "memory",
+          "learning"
+        ],
+        "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+        "evidence_pointers": [
+          "outputs/causal_role_matrix.json#/payload/summary/closed_loop_row_count"
+        ],
+        "maximum_supported_claim": "no_closed_loop_row",
+        "role_id": "closed_read_write_loop",
+        "status": "unsupported_in_tested_native_path"
+      }
+    ],
+    "summary": {
+      "branch_relocation_rival_unresolved": true,
+      "closed_loop_supported": false,
+      "cross_gate_synthesis_creates_positive_arrow": false,
+      "maximum_retention_ladder_rung": "GRR2",
+      "native_mediation_supported": false,
+      "native_readback_supported": false,
+      "native_writeback_supported": false,
+      "role_count": 9,
+      "synthetic_input_provenance_preserved": true
+    }
+  },
+  "payload_sha256": "f9e56ec10c5abd9a955aeb643205a2368ee002a5f3e30f2e84f579b03c9c3654",
+  "schema_version": "b1_grv8_final_causal_role_classification_v1"
+}

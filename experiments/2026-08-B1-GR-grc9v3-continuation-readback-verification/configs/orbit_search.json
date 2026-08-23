@@ -1,0 +1,11 @@
+{
+  "schema_version": "b1_grv0_orbit_search_v1",
+  "seed": 31006,
+  "periods": [2, 3, 4, 5, 6, 8],
+  "search_budget_per_period": 256,
+  "return_residual_tolerance": 1e-8,
+  "single_continuous_stratum_required_for_floquet": true,
+  "hybrid_crossing_classification": "hybrid_or_categorical_return_orbit_no_ordinary_floquet_spectrum",
+  "complete_selection_accounting_required": true,
+  "held_out_validation_required": true
+}

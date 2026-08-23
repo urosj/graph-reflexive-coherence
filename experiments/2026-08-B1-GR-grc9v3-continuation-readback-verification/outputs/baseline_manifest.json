@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-08-21T15:15:21.331764+00:00",
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "assumption_registry_sha256": "5b3c2ef370c2f8399029e606afda88076be56cea831246bf063a31f3e95ca3bb",
+    "branch_name": "experiment-B1-continuation-readback",
+    "dependency_hashes": {
+      "pyproject.toml": "b96f7e82c3e398502d12037548701e88aaf82b5b7c47f7153306fcea747a6d8b",
+      "requirements-dev.txt": "c8a8b1bf3d2b25ac085dc45f84750614b1204fa5f483c1a2eee530da1b528802",
+      "requirements.txt": "0cac0e472eba3359aa79e9674ff11a5fd0484b9c465fc1cb774c30938edcc5d7",
+      "uv.lock": "8935f5c29dd72daf9755b5c495be6e1af5fbbd933e9ce9c6f226a02027c3d3f7"
+    },
+    "dirty": false,
+    "existing_test_change_authorized": false,
+    "experiment_execution_revision": "5f9297378a26b8093f523cd11f8cb9f0f0aef723",
+    "experiment_path_manifest_path": "outputs/experiment_path_manifest.json",
+    "experiment_tree_sha256": "f132c8917da074118b47563c1d8d4020e20243a93dd7fb6c471f9cdb79783c8d",
+    "positive_continuation_evidence_opened": false,
+    "positive_evidence_opened": false,
+    "positive_readback_evidence_opened": false,
+    "positive_retention_evidence_opened": false,
+    "positive_writeback_evidence_opened": false,
+    "protected_path_manifest_v0_path": "outputs/protected_path_manifest_v0.json",
+    "protected_path_manifest_v1_expected_path": "outputs/protected_path_manifest_v1.json",
+    "protected_tree_sha256": "4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2",
+    "python_version": "3.12.3",
+    "repository": "github.com/urosj/graph-reflexive-coherence",
+    "runtime_change_authorized": false,
+    "specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+    "specification_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+    "src_change_authorized": false,
+    "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7",
+    "test_command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_*.py",
+    "test_counts": {
+      "failed_or_error": 0,
+      "passed": 1354,
+      "run": 1354,
+      "skipped": 0
+    },
+    "test_duration_seconds": 278.9966329730014,
+    "test_log_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/logs/grv0_existing_tests.log",
+    "test_result": "passed",
+    "theory_contract_sha256": "4c493ee1023a0cdfece4f0bdf02386fb795ff3b4e864f93312effc2ba7a36da5",
+    "theory_repository": "github.com/urosj/geometric-reflexive-coherence",
+    "theory_revision": "5a8b01ae60165054da617db649c5a039755a18ec",
+    "theory_source_manifest_path": "outputs/theory_source_manifest.json"
+  },
+  "payload_sha256": "d8eb90f8cb554502e7d740b3100d2cb894f26b4facffcd4b104b66ab7bcb0446",
+  "schema_version": "b1_grc9v3_verification_v3_4_1"
+}

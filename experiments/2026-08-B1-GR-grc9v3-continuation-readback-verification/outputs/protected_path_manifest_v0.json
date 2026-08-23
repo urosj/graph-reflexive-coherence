@@ -1,0 +1,1911 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/capture_repository_baseline.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "files": [
+      {
+        "path": "specs/grc-9-spec.md",
+        "sha256": "abb32d9481146036da33df730e6d2ae07d72ec9bc49ef6c47926cafe0865accc",
+        "size_bytes": 9063
+      },
+      {
+        "path": "specs/grc-9-v3-spec.md",
+        "sha256": "c3b26e02ec894649cf43606bada9194b2f5dde8792491ae493aa2e59c7cb68f9",
+        "size_bytes": 10665
+      },
+      {
+        "path": "src/pygrc/__init__.py",
+        "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40",
+        "size_bytes": 1583
+      },
+      {
+        "path": "src/pygrc/causal_pathways/__init__.py",
+        "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e",
+        "size_bytes": 3110
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/__init__.py",
+        "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34",
+        "size_bytes": 3272
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+        "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59",
+        "size_bytes": 36932
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/authority.py",
+        "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2",
+        "size_bytes": 26982
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/candidates.py",
+        "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9",
+        "size_bytes": 67046
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/effects.py",
+        "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90",
+        "size_bytes": 11213
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/identity.py",
+        "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23",
+        "size_bytes": 16092
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/scopes.py",
+        "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c",
+        "size_bytes": 54202
+      },
+      {
+        "path": "src/pygrc/causal_pathways/binding/session.py",
+        "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972",
+        "size_bytes": 56257
+      },
+      {
+        "path": "src/pygrc/cli/__init__.py",
+        "sha256": "6351fe1e42fd9b3cfc17f32937e9999896f061004813deabfbcca1c8e0af9a19",
+        "size_bytes": 59
+      },
+      {
+        "path": "src/pygrc/cli/grc9_landscape_visuals.py",
+        "sha256": "609d59738d44681878acd12523118255ee00715508a6610229e91b7af210f914",
+        "size_bytes": 3591
+      },
+      {
+        "path": "src/pygrc/cli/grc9_representative_visuals.py",
+        "sha256": "f95b9b870eb0ca212f745abb0c5af65b763d332eab7c39b2a75e457b602b088a",
+        "size_bytes": 3629
+      },
+      {
+        "path": "src/pygrc/cli/grc9v3_representative_visuals.py",
+        "sha256": "87c699f5d872842dbb653124cdc907eef05ef3d385b736a9b8d9453bfb33e3e2",
+        "size_bytes": 3484
+      },
+      {
+        "path": "src/pygrc/cli/grcv2_representative_experiment.py",
+        "sha256": "b1d2e9625ecc1b357467dc9d5bf86cdcdbd3ea2840de37dcafb826dda9172c62",
+        "size_bytes": 3420
+      },
+      {
+        "path": "src/pygrc/cli/grcv2_representative_graphs.py",
+        "sha256": "23194a64e4eaf11b7a77ab1b1cc38aa584d34f3a22578f198ecb500acdc29d41",
+        "size_bytes": 2476
+      },
+      {
+        "path": "src/pygrc/cli/grcv2_representative_visuals.py",
+        "sha256": "62fe30cdb298322e540bc462c4823625658345b13771e0f3610180c753b62b4b",
+        "size_bytes": 3585
+      },
+      {
+        "path": "src/pygrc/cli/grcv3_landscape_visuals.py",
+        "sha256": "8e7bce03d43c1ecb72ea4942cfe44abe4ba4014dbcd0849409a4efea9a7c64e6",
+        "size_bytes": 3094
+      },
+      {
+        "path": "src/pygrc/cli/grcv3_representative_visuals.py",
+        "sha256": "a4748ee0d0e173f330c86bf3f0c92391c202b4661caebb37686632bb2f86e887",
+        "size_bytes": 3665
+      },
+      {
+        "path": "src/pygrc/core/__init__.py",
+        "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+        "size_bytes": 7109
+      },
+      {
+        "path": "src/pygrc/core/backends.py",
+        "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+        "size_bytes": 8618
+      },
+      {
+        "path": "src/pygrc/core/capabilities.py",
+        "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+        "size_bytes": 5641
+      },
+      {
+        "path": "src/pygrc/core/digests.py",
+        "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+        "size_bytes": 761
+      },
+      {
+        "path": "src/pygrc/core/errors.py",
+        "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+        "size_bytes": 890
+      },
+      {
+        "path": "src/pygrc/core/events.py",
+        "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+        "size_bytes": 362
+      },
+      {
+        "path": "src/pygrc/core/graph.py",
+        "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+        "size_bytes": 5261
+      },
+      {
+        "path": "src/pygrc/core/ids.py",
+        "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+        "size_bytes": 4647
+      },
+      {
+        "path": "src/pygrc/core/interfaces.py",
+        "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+        "size_bytes": 3118
+      },
+      {
+        "path": "src/pygrc/core/mutations.py",
+        "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+        "size_bytes": 1674
+      },
+      {
+        "path": "src/pygrc/core/observables.py",
+        "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+        "size_bytes": 356
+      },
+      {
+        "path": "src/pygrc/core/params.py",
+        "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+        "size_bytes": 4249
+      },
+      {
+        "path": "src/pygrc/core/serialization.py",
+        "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+        "size_bytes": 33524
+      },
+      {
+        "path": "src/pygrc/core/storage.py",
+        "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+        "size_bytes": 18006
+      },
+      {
+        "path": "src/pygrc/core/types.py",
+        "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+        "size_bytes": 1016
+      },
+      {
+        "path": "src/pygrc/discovery/__init__.py",
+        "sha256": "18f56eea2a0a8529027e3fd21fed21a9aeea76cd939b5795b8267bcfbcb5fa50",
+        "size_bytes": 15965
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_checkpoint_visual_index.py",
+        "sha256": "cde80b4f0cc1707e30d2c527d77a159e578ebd4ed61acbee3b1c92a7cbd52066",
+        "size_bytes": 21569
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_corrected_growth_catalog.py",
+        "sha256": "85ce35a6b48dd165a3cfe25e0bd6dd918a096f2e8ddd4e02281078437f6e59be",
+        "size_bytes": 21011
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_discovery_runner.py",
+        "sha256": "59c7e3a1a8c1e102eed9cc061b416f9ce3fadeb06989e15ac8f6c1452f304b2c",
+        "size_bytes": 57582
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_grcl9_handoff.py",
+        "sha256": "b38491571733916827912162cc0ba9cfdb3883afa5253f68b3ca06b4b8111cd3",
+        "size_bytes": 19863
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_hypothesis_catalog.py",
+        "sha256": "33f3753f9d4354937766f33fd4d1003db12aa4adfe8c38145535e5fe2febe423",
+        "size_bytes": 32508
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_manifest.py",
+        "sha256": "92e2c25bf9ef54eb6f91c6a30f4637ad8b1ae9802cae4bd289d37f1593274318",
+        "size_bytes": 29929
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_mechanism_ledger.py",
+        "sha256": "cc6732c6f080fa0ebaae62b24f8287f056f471ceeb2c54d81b146cfe0ff38d80",
+        "size_bytes": 25884
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_reviewed_motif_catalog.py",
+        "sha256": "2f1601e96b4caf0600c114bb64d6f7e2ee805b0e4f1ac8f6ba2b1f3d87f718a1",
+        "size_bytes": 24998
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_seed_generator.py",
+        "sha256": "13619efd6b079730904d16c3872bf69aef09c2c6544f5b6b152289d2593d0aa2",
+        "size_bytes": 100886
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_selector_feedback.py",
+        "sha256": "0820a9295455e92f2dc8cf7457b7dac688b6afd1ea698f490085d9c693d11e29",
+        "size_bytes": 15716
+      },
+      {
+        "path": "src/pygrc/discovery/grc9_selector_validation.py",
+        "sha256": "213077e5b3ddb2c6c5d4f61a5091e359f4c42b6952273d01469c3003ac9df6dc",
+        "size_bytes": 52093
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_catalog_breadth_expansion.py",
+        "sha256": "fd526c8a68faae9fa56278f49f350205f5455d01081dcfbff03ab0fb69e2351c",
+        "size_bytes": 25230
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_discovery_runner.py",
+        "sha256": "bb8279fe05856ae44c702c5a41eafaac6ca25d4ae8e38b5372cf0a4795047834",
+        "size_bytes": 60703
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_hessian_comparator_review.py",
+        "sha256": "6f5b9c96ce40f89f9b2a5faf23e25b0af28044ae75ebebf73f060d3581adf15d",
+        "size_bytes": 28622
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_hypothesis_catalog.py",
+        "sha256": "60fcfc76fecef70d86ee96db718a31bcdc6a420c67da5364d5cdaacaccf7ce29",
+        "size_bytes": 38648
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_mechanism_ledger.py",
+        "sha256": "c56d2f500615cbde39eba2febadcda1e1515317b71000e2fda7c5f59573eeba4",
+        "size_bytes": 44033
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_reviewed_motif_catalog.py",
+        "sha256": "7ea66982c110b7f26cd3b00b0a34a4b20904b45877b902dbe6875065c580f793",
+        "size_bytes": 31219
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_seed_generator.py",
+        "sha256": "b1742fadad209bc88e74c27886f6d536a5197f4dbdfbf72ce43ecaaf8aee1549",
+        "size_bytes": 53505
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_selector_validation.py",
+        "sha256": "b30295a706af8f18554bbe080eb5de27967f1e352bf92eb23b26b125ccfcf4a4",
+        "size_bytes": 68986
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_source_handoff.py",
+        "sha256": "f6670dc9f3dd93e39dfa40aaa524ad9f79b4c27a21e7d2a8a24b894db38e6219",
+        "size_bytes": 20873
+      },
+      {
+        "path": "src/pygrc/discovery/grc9v3_visual_review.py",
+        "sha256": "cd72703f7184671f261b1c17edf480b18c8e9bec3345497c57cad9e1f9d7bfab",
+        "size_bytes": 28636
+      },
+      {
+        "path": "src/pygrc/integrations/__init__.py",
+        "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237",
+        "size_bytes": 596
+      },
+      {
+        "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+        "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d",
+        "size_bytes": 2725
+      },
+      {
+        "path": "src/pygrc/landscapes/__init__.py",
+        "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53",
+        "size_bytes": 13888
+      },
+      {
+        "path": "src/pygrc/landscapes/equivalence.py",
+        "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff",
+        "size_bytes": 32622
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/__init__.py",
+        "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34",
+        "size_bytes": 10393
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+        "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8",
+        "size_bytes": 4627
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+        "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9",
+        "size_bytes": 106807
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+        "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218",
+        "size_bytes": 10960
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+        "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942",
+        "size_bytes": 33550
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+        "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed",
+        "size_bytes": 38374
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+        "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d",
+        "size_bytes": 6383
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+        "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf",
+        "size_bytes": 69206
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+        "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df",
+        "size_bytes": 20291
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+        "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6",
+        "size_bytes": 58541
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+        "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10",
+        "size_bytes": 47857
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+        "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a",
+        "size_bytes": 3454
+      },
+      {
+        "path": "src/pygrc/landscapes/extensions/grcv3.py",
+        "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8",
+        "size_bytes": 85385
+      },
+      {
+        "path": "src/pygrc/landscapes/inference.py",
+        "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32",
+        "size_bytes": 19466
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_basin.py",
+        "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7",
+        "size_bytes": 13468
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_compare.py",
+        "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f",
+        "size_bytes": 19630
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_junction.py",
+        "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789",
+        "size_bytes": 19788
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_kg.py",
+        "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d",
+        "size_bytes": 12723
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_loader.py",
+        "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df",
+        "size_bytes": 13530
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_pheromone.py",
+        "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c",
+        "size_bytes": 25178
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_revival.py",
+        "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8",
+        "size_bytes": 14606
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_ridge.py",
+        "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5",
+        "size_bytes": 16415
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_substrate.py",
+        "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d",
+        "size_bytes": 38200
+      },
+      {
+        "path": "src/pygrc/landscapes/inference_valley.py",
+        "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b",
+        "size_bytes": 28372
+      },
+      {
+        "path": "src/pygrc/landscapes/io.py",
+        "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd",
+        "size_bytes": 9243
+      },
+      {
+        "path": "src/pygrc/landscapes/motion.py",
+        "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452",
+        "size_bytes": 34432
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_boundary.py",
+        "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef",
+        "size_bytes": 22938
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_catalog.py",
+        "sha256": "6d5c57baaa5da0b02684bc226331c83b8907f318481147ee1cbb77e8682f249c",
+        "size_bytes": 29863
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_coherence.py",
+        "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c",
+        "size_bytes": 20751
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_examples.py",
+        "sha256": "99ecc0d81f6db5409a45fc0d72df71fae5739ce221f7b88c7967c64ea767a586",
+        "size_bytes": 34625
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_identity.py",
+        "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c",
+        "size_bytes": 41008
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_interpretation.py",
+        "sha256": "7d9a331e954f511a8daae285017877349540128ed708793456e0e21a6cb1098b",
+        "size_bytes": 49450
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_landscape_bridge.py",
+        "sha256": "eb40c0aaeac07a48e13aae34002b498d62249a9695ea50b6f7ae3e9d6cc0af5c",
+        "size_bytes": 18985
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_loader.py",
+        "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977",
+        "size_bytes": 18684
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_representative.py",
+        "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9",
+        "size_bytes": 19230
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_seed_examples.py",
+        "sha256": "6d02cd7859cb94c743294396d307ef750ecb61e9b633bee1de0d9d1f47f4943a",
+        "size_bytes": 60732
+      },
+      {
+        "path": "src/pygrc/landscapes/motion_topological.py",
+        "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de",
+        "size_bytes": 18783
+      },
+      {
+        "path": "src/pygrc/landscapes/pde_translation.py",
+        "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f",
+        "size_bytes": 30027
+      },
+      {
+        "path": "src/pygrc/landscapes/seed.py",
+        "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2",
+        "size_bytes": 7003
+      },
+      {
+        "path": "src/pygrc/landscapes/validation.py",
+        "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b",
+        "size_bytes": 16870
+      },
+      {
+        "path": "src/pygrc/models/__init__.py",
+        "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+        "size_bytes": 49389
+      },
+      {
+        "path": "src/pygrc/models/_base.py",
+        "sha256": "e5e2a310def994b0583ba0185e3243253095a5a919804da2fce860df1911eeff",
+        "size_bytes": 7208
+      },
+      {
+        "path": "src/pygrc/models/grc_9.py",
+        "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+        "size_bytes": 120105
+      },
+      {
+        "path": "src/pygrc/models/grc_9_checkpoints.py",
+        "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+        "size_bytes": 11234
+      },
+      {
+        "path": "src/pygrc/models/grc_9_coarse.py",
+        "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+        "size_bytes": 4795
+      },
+      {
+        "path": "src/pygrc/models/grc_9_expansion.py",
+        "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+        "size_bytes": 2555
+      },
+      {
+        "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+        "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+        "size_bytes": 29093
+      },
+      {
+        "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+        "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+        "size_bytes": 2046
+      },
+      {
+        "path": "src/pygrc/models/grc_9_landscape.py",
+        "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+        "size_bytes": 22883
+      },
+      {
+        "path": "src/pygrc/models/grc_9_ports.py",
+        "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+        "size_bytes": 2730
+      },
+      {
+        "path": "src/pygrc/models/grc_9_state.py",
+        "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+        "size_bytes": 2205
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3.py",
+        "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+        "size_bytes": 82103
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3_choice.py",
+        "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+        "size_bytes": 17103
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+        "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+        "size_bytes": 42821
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+        "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+        "size_bytes": 2210
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3_runtime.py",
+        "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+        "size_bytes": 39116
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3_sparks.py",
+        "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+        "size_bytes": 48651
+      },
+      {
+        "path": "src/pygrc/models/grc_9_v3_state.py",
+        "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+        "size_bytes": 2092
+      },
+      {
+        "path": "src/pygrc/models/grc_v2.py",
+        "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+        "size_bytes": 87302
+      },
+      {
+        "path": "src/pygrc/models/grc_v2_checkpoints.py",
+        "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+        "size_bytes": 6799
+      },
+      {
+        "path": "src/pygrc/models/grc_v2_landscape.py",
+        "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+        "size_bytes": 52742
+      },
+      {
+        "path": "src/pygrc/models/grc_v2_state.py",
+        "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+        "size_bytes": 1123
+      },
+      {
+        "path": "src/pygrc/models/grc_v3.py",
+        "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+        "size_bytes": 150481
+      },
+      {
+        "path": "src/pygrc/models/grc_v3_checkpoints.py",
+        "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+        "size_bytes": 14499
+      },
+      {
+        "path": "src/pygrc/models/grc_v3_differential.py",
+        "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+        "size_bytes": 15898
+      },
+      {
+        "path": "src/pygrc/models/grc_v3_landscape.py",
+        "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+        "size_bytes": 199214
+      },
+      {
+        "path": "src/pygrc/models/grc_v3_landscape_native.py",
+        "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+        "size_bytes": 21404
+      },
+      {
+        "path": "src/pygrc/models/grc_v3_state.py",
+        "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+        "size_bytes": 1845
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3.py",
+        "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+        "size_bytes": 642
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+        "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+        "size_bytes": 18683
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+        "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+        "size_bytes": 350411
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+        "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+        "size_bytes": 32472
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+        "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+        "size_bytes": 91991
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+        "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+        "size_bytes": 17738
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+        "size_bytes": 429891
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+        "size_bytes": 32596
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+        "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+        "size_bytes": 47570
+      },
+      {
+        "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+        "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+        "size_bytes": 151443
+      },
+      {
+        "path": "src/pygrc/telemetry/__init__.py",
+        "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3",
+        "size_bytes": 25537
+      },
+      {
+        "path": "src/pygrc/telemetry/_experiment_defaults.py",
+        "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75",
+        "size_bytes": 8194
+      },
+      {
+        "path": "src/pygrc/telemetry/_experiment_results.py",
+        "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628",
+        "size_bytes": 3636
+      },
+      {
+        "path": "src/pygrc/telemetry/_grc9_extensions.py",
+        "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f",
+        "size_bytes": 45632
+      },
+      {
+        "path": "src/pygrc/telemetry/_grc9v3_extensions.py",
+        "sha256": "4ddeeda6b376cce190c5dae8ba6d224688e2491d60c65dd637f271e22c51ae69",
+        "size_bytes": 34501
+      },
+      {
+        "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+        "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425",
+        "size_bytes": 48979
+      },
+      {
+        "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+        "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73",
+        "size_bytes": 26936
+      },
+      {
+        "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+        "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e",
+        "size_bytes": 22015
+      },
+      {
+        "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+        "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c",
+        "size_bytes": 9126
+      },
+      {
+        "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+        "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3",
+        "size_bytes": 23263
+      },
+      {
+        "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+        "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f",
+        "size_bytes": 36622
+      },
+      {
+        "path": "src/pygrc/telemetry/_telemetry_utils.py",
+        "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb",
+        "size_bytes": 602
+      },
+      {
+        "path": "src/pygrc/telemetry/compare.py",
+        "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11",
+        "size_bytes": 3350
+      },
+      {
+        "path": "src/pygrc/telemetry/experiments.py",
+        "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92",
+        "size_bytes": 88986
+      },
+      {
+        "path": "src/pygrc/telemetry/grc9_contract.py",
+        "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf",
+        "size_bytes": 61504
+      },
+      {
+        "path": "src/pygrc/telemetry/grc9_grcl9_growth_record_classification.py",
+        "sha256": "5e3116ce1883397bdddeec96bb1d2611d311e861ebe65c779c7c013046837642",
+        "size_bytes": 19326
+      },
+      {
+        "path": "src/pygrc/telemetry/grc9_grcl9_growth_supersession_summary.py",
+        "sha256": "ae70535cca16decdb5d01517feaf989f09695ebc3c6734df4cb181a0a9bc0b03",
+        "size_bytes": 16976
+      },
+      {
+        "path": "src/pygrc/telemetry/grc9v3_contract.py",
+        "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a",
+        "size_bytes": 55189
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9_corrected_growth_catalog.py",
+        "sha256": "5805f6c2bad8049949dc17caaeb8f2133ff586d06d742e3344adaff717a87851",
+        "size_bytes": 24115
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9_lowered_motif_catalog.py",
+        "sha256": "9f00dbef7eb8f97a15f84764112f2de8e3c650da98979196c94396d34c1e4191",
+        "size_bytes": 30835
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9_replay.py",
+        "sha256": "33db3c2f6765f2d4bfc9578e22c9c456fca9d31494a78124e9767014c390a7c3",
+        "size_bytes": 63837
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9_selector_validation.py",
+        "sha256": "ed9baeafca9b8fc3d5ab541d9b2578b59affc6d61e440a70715b63b5ea109f53",
+        "size_bytes": 30524
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9v3_lowered_motif_catalog.py",
+        "sha256": "833fb0c7f982f908919a1670c34cfe43c218b30955105839cb9ffdf34eb8e849",
+        "size_bytes": 37392
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9v3_replay.py",
+        "sha256": "c1c28f6d1b30cfcb9fd85e4a4e325f04e13ce826accc6f516655dfe9b76d5352",
+        "size_bytes": 89083
+      },
+      {
+        "path": "src/pygrc/telemetry/grcl9v3_selector_validation.py",
+        "sha256": "7553c7f9bcb4325bdb3c20d0c687f5a944cd583a9d8837571c2f58605685346c",
+        "size_bytes": 50206
+      },
+      {
+        "path": "src/pygrc/telemetry/grcv3_contract.py",
+        "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4",
+        "size_bytes": 27131
+      },
+      {
+        "path": "src/pygrc/telemetry/grcv3_pressure_boundary_evidence.py",
+        "sha256": "8988226e7a38a31c691ff5ef94bdccec693c35a48446cad2a4debeec9a361a5c",
+        "size_bytes": 19654
+      },
+      {
+        "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+        "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb",
+        "size_bytes": 3826
+      },
+      {
+        "path": "src/pygrc/telemetry/io.py",
+        "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929",
+        "size_bytes": 43277
+      },
+      {
+        "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+        "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+        "size_bytes": 54436
+      },
+      {
+        "path": "src/pygrc/telemetry/pressure_boundary_complex_source_comparison.py",
+        "sha256": "b27b1f21b08ed90154a38d60de603e24829f3f7725e48fdc43307b8f3833eec8",
+        "size_bytes": 16626
+      },
+      {
+        "path": "src/pygrc/telemetry/pressure_boundary_cross_family.py",
+        "sha256": "f0dd089af6b53c92ec78a96a617c8e3b27f4a8933e228e41f3cb6ef9187e05c8",
+        "size_bytes": 12006
+      },
+      {
+        "path": "src/pygrc/telemetry/recorder.py",
+        "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613",
+        "size_bytes": 12648
+      },
+      {
+        "path": "src/pygrc/telemetry/reports.py",
+        "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556",
+        "size_bytes": 6321
+      },
+      {
+        "path": "src/pygrc/telemetry/schema.py",
+        "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc",
+        "size_bytes": 20348
+      },
+      {
+        "path": "src/pygrc/utils/__init__.py",
+        "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16",
+        "size_bytes": 46
+      },
+      {
+        "path": "src/pygrc/visualization/__init__.py",
+        "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb",
+        "size_bytes": 7766
+      },
+      {
+        "path": "src/pygrc/visualization/graph_render.py",
+        "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f",
+        "size_bytes": 50536
+      },
+      {
+        "path": "src/pygrc/visualization/grcl9_lowering.py",
+        "sha256": "53a0d2bdb7e8e5b980ab6e8eb6481c9df97a77d5a46b5e561cfd552fcbcfe2de",
+        "size_bytes": 48521
+      },
+      {
+        "path": "src/pygrc/visualization/grcl9v3_lowering.py",
+        "sha256": "2699f9d1a7d3d8173f1f07eab0a88dd6a964a3e81e8871d3c2368efb038fffd4",
+        "size_bytes": 43420
+      },
+      {
+        "path": "src/pygrc/visualization/layout.py",
+        "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b",
+        "size_bytes": 7203
+      },
+      {
+        "path": "src/pygrc/visualization/motion.py",
+        "sha256": "2790d3fdb0792cecadcb777aa6e1f58cd2732cb8f018c20c530c17d441bddf0b",
+        "size_bytes": 55219
+      },
+      {
+        "path": "src/pygrc/visualization/render.py",
+        "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340",
+        "size_bytes": 26986
+      },
+      {
+        "path": "src/pygrc/visualization/representative.py",
+        "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e",
+        "size_bytes": 31012
+      },
+      {
+        "path": "src/pygrc/visualization/representative_graphs.py",
+        "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef",
+        "size_bytes": 22341
+      },
+      {
+        "path": "tests/__init__.py",
+        "sha256": "b8c1c2c06b79a3cda0ddac97e383a7023ef0b2901a0866925d7b96699a562434",
+        "size_bytes": 48
+      },
+      {
+        "path": "tests/core/__init__.py",
+        "sha256": "76f41a0df27e45fc87349b67be016b1fd1802633a11b13a7eb7ed4bbc0717c7a",
+        "size_bytes": 35
+      },
+      {
+        "path": "tests/core/test_backends.py",
+        "sha256": "bc8edd6986a8851d503a75dd2239fff50d225c43cc34c04a9c120581949969b6",
+        "size_bytes": 7680
+      },
+      {
+        "path": "tests/core/test_canonical_serialization.py",
+        "sha256": "552193d59b10a3ef293fa7629a78f51e59fb947587428527721d1d0942407ffc",
+        "size_bytes": 1873
+      },
+      {
+        "path": "tests/core/test_capabilities.py",
+        "sha256": "f9d0f142c1d8ce89ffa28f7cc0ce71620571b23abf064d2f03489340ba42665a",
+        "size_bytes": 2674
+      },
+      {
+        "path": "tests/core/test_digests_and_persistence.py",
+        "sha256": "64f1931ea13456865343b156b779a8df1127568729d2b27495fa365605b94103",
+        "size_bytes": 5719
+      },
+      {
+        "path": "tests/core/test_events_observables_errors.py",
+        "sha256": "95f322b2d9782175831c47b8ff7b1043c7f066f3a403fc4414d7e5448a18bd0c",
+        "size_bytes": 1464
+      },
+      {
+        "path": "tests/core/test_graph_protocols.py",
+        "sha256": "99095399a15ba96dccfd8ebedd2661ea7366f50071fdfb91c9c2eba56878ff01",
+        "size_bytes": 4870
+      },
+      {
+        "path": "tests/core/test_ids.py",
+        "sha256": "1b20380ad8c41324b7f0cdf576fbb0c07e978b74a78933e27b7fc70e8534e932",
+        "size_bytes": 3085
+      },
+      {
+        "path": "tests/core/test_import_smoke.py",
+        "sha256": "27987b2cc5d8c6acf57b6df16201181cce4c0a8c9897496e24f3d72a2b2a8c65",
+        "size_bytes": 935
+      },
+      {
+        "path": "tests/core/test_interfaces.py",
+        "sha256": "702c67b6cc8d98c8ae87e586f7270e5afab65d8c2178527b651a14effbc98e69",
+        "size_bytes": 4079
+      },
+      {
+        "path": "tests/core/test_module_imports.py",
+        "sha256": "aa2df40e620432997c167a2c19cdd9340f79c77dffffae2b6b13d5b1e8dc19c2",
+        "size_bytes": 1489
+      },
+      {
+        "path": "tests/core/test_mutations_and_invalidation.py",
+        "sha256": "306cc0912a0ad0d28797425b2829454e47f75a891fed0e4b2dfbcd4881e656a0",
+        "size_bytes": 4854
+      },
+      {
+        "path": "tests/core/test_params.py",
+        "sha256": "3e2ab26bb32cf9409c0dae4622380c608d5be5ab486ff0129eac6c52c67518fb",
+        "size_bytes": 2884
+      },
+      {
+        "path": "tests/core/test_port_graph_backend.py",
+        "sha256": "b04b1e2c94372b66d482357023c7264fa5b265aa3d662e88b62fd75212368113",
+        "size_bytes": 7396
+      },
+      {
+        "path": "tests/core/test_serialization_contract.py",
+        "sha256": "f19f762830853ed35d243ab7390dc3e7337ee1c7fb05922b0c2742f3062c7bcc",
+        "size_bytes": 18918
+      },
+      {
+        "path": "tests/core/test_types.py",
+        "sha256": "df71e51295540f25b4cc135193c6558986ba462633460bd29ab3684d9b8b1869",
+        "size_bytes": 1517
+      },
+      {
+        "path": "tests/core/test_weighted_graph_backend.py",
+        "sha256": "98dc7d67f64ed80db808900179ac5f90e257304cf8ab80fc2c98799979fb51e6",
+        "size_bytes": 5441
+      },
+      {
+        "path": "tests/discovery/test_grc9_checkpoint_visual_index.py",
+        "sha256": "9c6aa0b95d9b300fd9fae305782406125efd65966de5c7deec9774a0c08f8286",
+        "size_bytes": 3560
+      },
+      {
+        "path": "tests/discovery/test_grc9_corrected_growth_catalog.py",
+        "sha256": "c8f0f3be64c0c1e847422b31cd9824ad2fbeb61a136d8582026d48df56a347e0",
+        "size_bytes": 9209
+      },
+      {
+        "path": "tests/discovery/test_grc9_grcl9_handoff.py",
+        "sha256": "1dafd6a3e9559b1e6c327ffbd99c7a0eb3baffd77a41695c584a2e758c8db9d5",
+        "size_bytes": 4333
+      },
+      {
+        "path": "tests/discovery/test_grc9_hypothesis_catalog.py",
+        "sha256": "47b91d8ab23e0e422dcc5d0e4641c447687f4009933acff7e23f0eae7874dcf7",
+        "size_bytes": 5412
+      },
+      {
+        "path": "tests/discovery/test_grc9_manifest.py",
+        "sha256": "9182ba45febddbaad65a34bd77d90aafd66ac082b4047686fb4aee83ddbf6ddd",
+        "size_bytes": 10973
+      },
+      {
+        "path": "tests/discovery/test_grc9_mechanism_ledger.py",
+        "sha256": "f91c48bb34ccaa50e6145cc406c6cb33f6daa2218f18418ad0715e19fe40e1cb",
+        "size_bytes": 5261
+      },
+      {
+        "path": "tests/discovery/test_grc9_reviewed_motif_catalog.py",
+        "sha256": "7db60949f3f0a28857bf809aa8bc064030070b9007200cbf6f99dbe3aa3176e4",
+        "size_bytes": 9194
+      },
+      {
+        "path": "tests/discovery/test_grc9_seed_generator.py",
+        "sha256": "2f1ddf2068685dc1184ef5f962bc918e3529eb115e38da7a8f325b29a9db2005",
+        "size_bytes": 36429
+      },
+      {
+        "path": "tests/discovery/test_grc9_selector_feedback.py",
+        "sha256": "330ff2a6b6e2055939649bc66bb6fee52439a03a533fa1e1a1677c5b78e9d017",
+        "size_bytes": 2291
+      },
+      {
+        "path": "tests/discovery/test_grc9_selector_validation.py",
+        "sha256": "94d654e1f0ca0678515b912a43d1b9b101fe773836a5c53dc6fb16b1b926bcbf",
+        "size_bytes": 5159
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_catalog_breadth_expansion.py",
+        "sha256": "108dacbcf5c324a0362b9425ca068887d3faa6d09f5b1bbd1a83bc6fac654451",
+        "size_bytes": 3508
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_discovery_runner.py",
+        "sha256": "36150611c18fc83e203ee456b295fd379619d95631907e8c4e501e69d1c0b715",
+        "size_bytes": 15667
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_hessian_comparator_review.py",
+        "sha256": "d4539929391f299b67866c5369131e22de323097264bd4afae6b8497f20c1796",
+        "size_bytes": 2814
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_hypothesis_catalog.py",
+        "sha256": "1543559c91ff3ceb7ba0243b651fa576d90d9a9341c03efdc7bd34d2008181c8",
+        "size_bytes": 7530
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_mechanism_ledger.py",
+        "sha256": "972c003732e2550f84e754ac6b0c32bc2a719974bfe21ae1600bebf80befd903",
+        "size_bytes": 7861
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_reviewed_motif_catalog.py",
+        "sha256": "27db88cf81c15ef3ba8dd8227acb9f505a01437a7212dec1823136616cd34357",
+        "size_bytes": 4560
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_seed_generator.py",
+        "sha256": "59323d443f45a049f0341da1e2ecbfcc9f4c72eea58073e6473baf8e98512184",
+        "size_bytes": 11000
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_selector_validation.py",
+        "sha256": "c2ee0c27753aaa69f0cc6b3acef1b088e268b78cd2f9bd2dfdb94b02baf3ae9a",
+        "size_bytes": 10421
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_source_handoff.py",
+        "sha256": "2e826ad43f71a02e58ffd505743eddbb8559f92254f3da9be47b46bf32783b34",
+        "size_bytes": 5564
+      },
+      {
+        "path": "tests/discovery/test_grc9v3_visual_review.py",
+        "sha256": "2fb751b7555fa70c8254e28a33e8fee151b1de3d3e97983ea694c2e67b1540aa",
+        "size_bytes": 4755
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_cmp05_distinct_mechanism_evidence.json",
+        "sha256": "cc1a4c6a8519c6ad4e988215a2972e6aa08ab06920376880ddcda27d83d0b608",
+        "size_bytes": 963
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_cmp05_nonnull_default_evidence.json",
+        "sha256": "2fcb45179fc8e34d26943237a20d1153bbd266d5b3c5597bfb64c5a757b096ff",
+        "size_bytes": 968
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_cmp05_source_noop_evidence.json",
+        "sha256": "0e07a11595483f715a1b0d959b0bd5c9ad67f0e7bb8be95ed5fc25247bf072e4",
+        "size_bytes": 956
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_cmp05_synonym_noop_evidence.json",
+        "sha256": "8f33be8ee4fb6e16a073ef73e7a0e36ebe9c1f0f9db7c5e4abab946848d75f73",
+        "size_bytes": 956
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_cmp05_tuple_default_evidence.json",
+        "sha256": "e002e3435ffbdf726f03c8d91e04d7e1a56b9a632d7d70242de525edefa44d9c",
+        "size_bytes": 962
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_mechanism_evidence.json",
+        "sha256": "0ff1e5c0d636564b06d687a461b7e6de1040dd0845cd021f95c6d47766e5c017",
+        "size_bytes": 930
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_mechanisms.py",
+        "sha256": "3898ef4d747db32ea6f51e8f73547fb1b2c5ef2aa4ef1d0b21def496cd443475",
+        "size_bytes": 970
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_candidate_metadata_only_evidence.json",
+        "sha256": "720081c58a6819104bba254c1bfe67b6f871554672c5fcca701c16222566db90",
+        "size_bytes": 324
+      },
+      {
+        "path": "tests/fixtures/causal_pathway_cmp05_candidate_mechanisms.py",
+        "sha256": "f049c8bcfe323d8bdf58727c6a644e6f675e3e5e1cf7cc09932ca4b82d3336bd",
+        "size_bytes": 2103
+      },
+      {
+        "path": "tests/integrations/__init__.py",
+        "sha256": "b67c3c521a1eb52aee6b362637f12df1c18a837a8a2f01a929338066b89bef9b",
+        "size_bytes": 42
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding.py",
+        "sha256": "87a79a645152d0271b9b3cb75381769fbe2c5263b387a013f93547c8b7328c0f",
+        "size_bytes": 101847
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_conformance.py",
+        "sha256": "a49897c91f5fe1cfb6183c9f6ff880e0f08f683ebbd6addb9da9709d57f119a0",
+        "size_bytes": 56615
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i116.py",
+        "sha256": "504f388b3a0579e843e08ac3dfb6e26acb466001c989f384e0fcfe59f6fe49b8",
+        "size_bytes": 3720
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i118.py",
+        "sha256": "44bef00e190b3bb09d3fd3cf24117a6b410dbe73400300055e005b5548903da4",
+        "size_bytes": 3892
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i119.py",
+        "sha256": "69870d90391156330b155f24ef141a07010579d27703ae51b578d5277cc99a30",
+        "size_bytes": 4547
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i120.py",
+        "sha256": "dac303fbccd7317914a1d775d6cacaf8815afd6ec5a2c9de3322bd4297270078",
+        "size_bytes": 7494
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i121.py",
+        "sha256": "16f7727feea493c808a835cace107fc487527facc155d28a6505ff7187e19db7",
+        "size_bytes": 8026
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i122.py",
+        "sha256": "7fb6b6e024022e4f31d0aa2f897e693e03d0831751f305852ee55af3f8afa66a",
+        "size_bytes": 10753
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i123.py",
+        "sha256": "db9f2e6a029f6080682398d0678470816f99efe4103ff8a5d1a1dfc817f9cb81",
+        "size_bytes": 10933
+      },
+      {
+        "path": "tests/integrations/test_causal_pathway_binding_i124.py",
+        "sha256": "3bd80c51451f83012dea9e4f1f8e912a9fdf200b879780b8d95b5e4ba24e46ac",
+        "size_bytes": 7216
+      },
+      {
+        "path": "tests/integrations/test_graph_adapter_boundary.py",
+        "sha256": "415863c9ed267c598efcbe36f6b375835048c840f28d00ee32d9e879514bf4cc",
+        "size_bytes": 2260
+      },
+      {
+        "path": "tests/landscapes/__init__.py",
+        "sha256": "3dbaa4f121afc41b0dbf3d8e4ca70e4f1ab1482d437372790b90fefa3aa313b6",
+        "size_bytes": 30
+      },
+      {
+        "path": "tests/landscapes/pde_source_examples.py",
+        "sha256": "2b27888cb40b7a18d7d6d7d96bcd49ad92c731d6bef60295396de8b8d5b85be8",
+        "size_bytes": 23667
+      },
+      {
+        "path": "tests/landscapes/test_fixture_alignment.py",
+        "sha256": "0015fc10be089c09c8d2e983c0e4a74e7311d18f536658839638edd449fc17c0",
+        "size_bytes": 2204
+      },
+      {
+        "path": "tests/landscapes/test_grcl9_examples.py",
+        "sha256": "5f0bb0db8390fdb0a7096291b759988940709c6f423dd36af8a493275e0d684b",
+        "size_bytes": 14412
+      },
+      {
+        "path": "tests/landscapes/test_grcl9_fixtures.py",
+        "sha256": "dd4c4db2c8a400a6fbd35a7f33947ee9237482fbd4f19d64733f011d96d7e367",
+        "size_bytes": 4644
+      },
+      {
+        "path": "tests/landscapes/test_grcl9_manifest.py",
+        "sha256": "6326191acbceabadbc2b951b4803c9bf39b6bd47d762c806a148b391915f502c",
+        "size_bytes": 7259
+      },
+      {
+        "path": "tests/landscapes/test_grcl9_schema.py",
+        "sha256": "5a110cc7c0ea04d09bb1658354eed07e8c7b768ab5fd786dd20d8842b95d9b28",
+        "size_bytes": 12813
+      },
+      {
+        "path": "tests/landscapes/test_grcl9_seed_examples.py",
+        "sha256": "5dc32e7a763c823731f2ab02841ccec7601da304ebb1e4882c1b89a322b49796",
+        "size_bytes": 20612
+      },
+      {
+        "path": "tests/landscapes/test_grcl9v3_examples.py",
+        "sha256": "afc4a453cccd313b44d4cada2ea7e427862c80ae85bf6ad498274cc7e7d9d0b4",
+        "size_bytes": 16712
+      },
+      {
+        "path": "tests/landscapes/test_grcl9v3_fixtures.py",
+        "sha256": "aff350feba49b73fdce719afe0dfda2f2f3757377e721735bf7cec50dac8c3c4",
+        "size_bytes": 7612
+      },
+      {
+        "path": "tests/landscapes/test_grcl9v3_manifest.py",
+        "sha256": "f5d295b409bcb02a44c2d65785fd47824eb3fffa14f566c09f34ad5904975f34",
+        "size_bytes": 11792
+      },
+      {
+        "path": "tests/landscapes/test_grcl9v3_schema.py",
+        "sha256": "e619654b528849c58bf3e829d6eee3dc1759dc263db3217c9fff8ff24b9c7962",
+        "size_bytes": 21561
+      },
+      {
+        "path": "tests/landscapes/test_grcv3_extensions.py",
+        "sha256": "db5ee5ea514e4e4c6a24f7e868e433b8d21952d817c277caf9caa70aa4daacd6",
+        "size_bytes": 64815
+      },
+      {
+        "path": "tests/landscapes/test_import_smoke.py",
+        "sha256": "0f0b2086e1ce4168f773a3ba7115aa8a6fe3371e3fec65edf7f99e8b011360f0",
+        "size_bytes": 2159
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_basin.py",
+        "sha256": "f6731df3c683bffe4a14fed88f710f26dad10e83476bbf8a09fd829386e63670",
+        "size_bytes": 10913
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_compare.py",
+        "sha256": "49bcb0580be28fe969fd0a5adb5d29b7d3b66112c119f66e9fdf1227fd5a0d7c",
+        "size_bytes": 5487
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_contract.py",
+        "sha256": "c734b22f0cd76988cb016f442a8c62c357b23fa5b2ccd4bf0a6935739e7b8240",
+        "size_bytes": 6038
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_junction.py",
+        "sha256": "e07cdf3347091a7da622fbc15cf0b774cecced8acfd4bbe92729097aefd67482",
+        "size_bytes": 11022
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_kg.py",
+        "sha256": "3dcfe9915e917daaed70cbdb4da8f0bfb91b5dffbda62011926bc3cabcd3c832",
+        "size_bytes": 3476
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_loader.py",
+        "sha256": "d4386cfd6f4ac29e01d756f6c635b6193d09878517a1ed03d3a375f51187c622",
+        "size_bytes": 7983
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_pheromone.py",
+        "sha256": "e34b46f53189208f659fc4f49f4d15a063bc86972dbfda2fa16b27551e103249",
+        "size_bytes": 9576
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_revival.py",
+        "sha256": "b90a9f8eebd0d5926e32c9d7dcb9c4f4eab2c9fbf27e31d6da46f956bc73931f",
+        "size_bytes": 7122
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_ridge.py",
+        "sha256": "271bef08ca8acf17c03ac772a4f33ab5e9edd878f36c55d986355d34b462f8f3",
+        "size_bytes": 10381
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_substrate.py",
+        "sha256": "a7ca0fb8e059497a7833baf2623c8752ccc453fcecf777bff2ff9fa5e69fe5dd",
+        "size_bytes": 10880
+      },
+      {
+        "path": "tests/landscapes/test_landscape_inference_valley.py",
+        "sha256": "787cdbfdb45eca60a182ba45a27382378567257540c6313c39367a137a477dd4",
+        "size_bytes": 13562
+      },
+      {
+        "path": "tests/landscapes/test_motion_boundary.py",
+        "sha256": "cfdf89e80ced2326b3007f976835bfbf8f37b32e9edda399c05ad9c4d7ec413f",
+        "size_bytes": 14122
+      },
+      {
+        "path": "tests/landscapes/test_motion_catalog.py",
+        "sha256": "307384452009357862bb655f0fedb1cf9c39ddb9a735836604a495e6d89682a9",
+        "size_bytes": 6195
+      },
+      {
+        "path": "tests/landscapes/test_motion_coherence.py",
+        "sha256": "d1792bfb3236dd8a167c10a797be056b2c1c78fa7b546828c316703cfdeee2d6",
+        "size_bytes": 10226
+      },
+      {
+        "path": "tests/landscapes/test_motion_contract.py",
+        "sha256": "a92a3acc00d7687e0595f6f0664be2bd313d648b8ee83c4a699c69fab7a73ef5",
+        "size_bytes": 10546
+      },
+      {
+        "path": "tests/landscapes/test_motion_examples.py",
+        "sha256": "3e2023caa36ebd9cc67277355314cfd8104f1b9b505352f739733b2b9bc31065",
+        "size_bytes": 6026
+      },
+      {
+        "path": "tests/landscapes/test_motion_identity.py",
+        "sha256": "7ed8eb02d32572dc19dae044d28f8e9ff2bdcbf3e95a24b9f6d14749bdee344d",
+        "size_bytes": 24003
+      },
+      {
+        "path": "tests/landscapes/test_motion_interpretation.py",
+        "sha256": "61f4f187a78cdcf293ab314f4af9c98c0a93469fa4941b289ac69ac06e99a6e5",
+        "size_bytes": 17806
+      },
+      {
+        "path": "tests/landscapes/test_motion_landscape_bridge.py",
+        "sha256": "b09a22443409dc212ff7b29aef14e46b8b2f2470d804f238b3fa59ca4155dd2a",
+        "size_bytes": 3925
+      },
+      {
+        "path": "tests/landscapes/test_motion_loader.py",
+        "sha256": "be31bbba0312a9e8e2265408eff019eaf20eff22c5a807e53a937d115cedeab8",
+        "size_bytes": 13166
+      },
+      {
+        "path": "tests/landscapes/test_motion_representative.py",
+        "sha256": "bba3f71e9d507c9ec5adc6bfd3f6320f8873a66ac8cf9407254d21c8cf411584",
+        "size_bytes": 12385
+      },
+      {
+        "path": "tests/landscapes/test_motion_seed_examples.py",
+        "sha256": "64d408eda1b839b8d69bd5607fa71cc9c60e09823f9635fe29943a17d7555e99",
+        "size_bytes": 11229
+      },
+      {
+        "path": "tests/landscapes/test_motion_topological.py",
+        "sha256": "4c64e31e8d29d0f31c6ef619ddb6e4acb65bdbf36d5e3efa86a36abb439688ed",
+        "size_bytes": 15162
+      },
+      {
+        "path": "tests/landscapes/test_pde_equivalence.py",
+        "sha256": "c289a2d8aa75ee3c6bb53bd48c5828db44fd371f094bcfadeab55fe5602598da",
+        "size_bytes": 3300
+      },
+      {
+        "path": "tests/landscapes/test_pde_translation.py",
+        "sha256": "bfe6924f272ec62351db4eb7a4f3e0db61e79fea504a8c830ff8f1935505cd57",
+        "size_bytes": 13101
+      },
+      {
+        "path": "tests/landscapes/test_seed_io.py",
+        "sha256": "fff4e4494068f69644d056f39cfab217e0ee0e4beabec9d6b3f4515ae26e3222",
+        "size_bytes": 4402
+      },
+      {
+        "path": "tests/landscapes/test_seed_types.py",
+        "sha256": "afe110774bf8d78bd66fbd97633ea324d465ff9336d078ac749d535af8723345",
+        "size_bytes": 4345
+      },
+      {
+        "path": "tests/landscapes/test_seed_validation.py",
+        "sha256": "5c622014d313c41051868da43c19da7c70d21dd0edb03b6a2acd0c7d6b08116c",
+        "size_bytes": 6875
+      },
+      {
+        "path": "tests/models/__init__.py",
+        "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+        "size_bytes": 43
+      },
+      {
+        "path": "tests/models/test_family_stubs.py",
+        "sha256": "68693ccd01da4760a6d099d9cd5e4e52a6d5084b03b684eee1847fe972fa9c9d",
+        "size_bytes": 6055
+      },
+      {
+        "path": "tests/models/test_grc_9_coarse.py",
+        "sha256": "6d6552d1381ecc5bd41b77b479d619853f9e75306dec089f642fd2441eaaabc8",
+        "size_bytes": 9232
+      },
+      {
+        "path": "tests/models/test_grc_9_expansion.py",
+        "sha256": "de1e080fa26b841ab46089269b71394160a94c15730edb621dae643ef8c63eb3",
+        "size_bytes": 20794
+      },
+      {
+        "path": "tests/models/test_grc_9_grcl9_lowering.py",
+        "sha256": "3b4345e29661324acb48a2d7b99f8e3fa8603e3dce74e062a37984b6ab25845c",
+        "size_bytes": 11135
+      },
+      {
+        "path": "tests/models/test_grc_9_landscape.py",
+        "sha256": "1d5cbca650e6fcea4c7c106dff5bf24067445dadceb9eb5ece32e2f5076650a5",
+        "size_bytes": 2113
+      },
+      {
+        "path": "tests/models/test_grc_9_runtime.py",
+        "sha256": "3df5f4c98ac18e43266511246e21e3ba62926beb34570090ffdac87481ec3ae0",
+        "size_bytes": 8851
+      },
+      {
+        "path": "tests/models/test_grc_9_sparks.py",
+        "sha256": "b33b02efecfca729d72715de08c3a6248ccd690a9d3498bfdc0ff3cd0ed74447",
+        "size_bytes": 8131
+      },
+      {
+        "path": "tests/models/test_grc_9_state.py",
+        "sha256": "1dbdb68d8c9b78539c667e6a548c4673d7a27d86f02f24faa5dc216584919d9a",
+        "size_bytes": 12101
+      },
+      {
+        "path": "tests/models/test_grc_9_step.py",
+        "sha256": "962d266938a06c1894361e9f3d97cdea59ba048ba8a8c6e43cc5832c001a9e05",
+        "size_bytes": 15326
+      },
+      {
+        "path": "tests/models/test_grc_9_tensor.py",
+        "sha256": "cc8ce248febbec9d6ef24db28e3a2a40241ebe2d5aa1e6bd4cd987a23a13c191",
+        "size_bytes": 10010
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_choice_budget.py",
+        "sha256": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9",
+        "size_bytes": 7927
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_coarse.py",
+        "sha256": "36945571d4d9bdcee8fa24d07119a0f47f83b015524ec0f370e9da5a28187841",
+        "size_bytes": 10992
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_column_h_assisted.py",
+        "sha256": "11216319f7bd26b38316d0fa0b1b0ad5dd482eafeabda0e97e10efb411228858",
+        "size_bytes": 49391
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_differential.py",
+        "sha256": "6db9601146e851e686c96bafb1fa8bb972fe117ef9e02c2ccceade9b6049b906",
+        "size_bytes": 7396
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_grcl9v3_lowering.py",
+        "sha256": "a94250d721c479475a39d014c43494b5fc5e204b2b32d076526deeb6f476ed29",
+        "size_bytes": 23149
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_hessian_readiness.py",
+        "sha256": "c1ed11fe4fcab3d83ce29caf9457a0999e110857e486385dd7d157289a282936",
+        "size_bytes": 27879
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_representative_runtime.py",
+        "sha256": "0c841de19954f98019dbedb90174bd53cac731862e8b503e3a161464e7347b00",
+        "size_bytes": 3986
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_sparks.py",
+        "sha256": "53b6337b50ffa97bfa4cbe34676b5817837fd6864cbe5870c5ed0acf256b310b",
+        "size_bytes": 11835
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_state.py",
+        "sha256": "fd1bf3f4fe3752c416fdc419f39d1a85bac608d194b5c434634a3602f7f74246",
+        "size_bytes": 12310
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_step.py",
+        "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+        "size_bytes": 5728
+      },
+      {
+        "path": "tests/models/test_grc_9_v3_transport.py",
+        "sha256": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd",
+        "size_bytes": 7709
+      },
+      {
+        "path": "tests/models/test_grc_v2_budget_observables.py",
+        "sha256": "2510fc8efd36b2c927edbbb15fea27b5d6c97d16e124a10fa2019350faef43d6",
+        "size_bytes": 5262
+      },
+      {
+        "path": "tests/models/test_grc_v2_construction.py",
+        "sha256": "09d9ff8cd56dbd6cc646b19bfcaa2d038b315ed7b5f7635486f7c78f4b3dc5d3",
+        "size_bytes": 7927
+      },
+      {
+        "path": "tests/models/test_grc_v2_landscape_blueprint.py",
+        "sha256": "dc0bb21973a0571b8c4ccefc059e477498b2cc05ce8e9f85250ef834d84bc942",
+        "size_bytes": 8210
+      },
+      {
+        "path": "tests/models/test_grc_v2_landscape_import.py",
+        "sha256": "b4d4e3ee60db84769b0b9dc023bdff56a38164898fdc715b1cf139e755288ce7",
+        "size_bytes": 6533
+      },
+      {
+        "path": "tests/models/test_grc_v2_landscape_runtime.py",
+        "sha256": "0de21b5d85afecbcbd93ee040ab372f5c23feda6eac3af6e6948d8075705891f",
+        "size_bytes": 14154
+      },
+      {
+        "path": "tests/models/test_grc_v2_metric_labels.py",
+        "sha256": "072031927ba95ac478c1900ee4ec31bf540480fc6ff7f9778f23faa913d5b4d7",
+        "size_bytes": 10407
+      },
+      {
+        "path": "tests/models/test_grc_v2_runtime_persistence.py",
+        "sha256": "29d3016512f8bf75f9c318c382a6c9f11a689f17ffabd3e7788f9d238bbb319e",
+        "size_bytes": 5564
+      },
+      {
+        "path": "tests/models/test_grc_v2_sparks.py",
+        "sha256": "b41c5c7170fb41fa5fd675246aa0cd3d5b09878bc961820f27fed1ee775cab2c",
+        "size_bytes": 4994
+      },
+      {
+        "path": "tests/models/test_grc_v2_step_skeleton.py",
+        "sha256": "09b8144dcf540f4a5d1680834f58e26fb4fc464ce9150728a156f5df8ca88842",
+        "size_bytes": 7320
+      },
+      {
+        "path": "tests/models/test_grc_v2_topology_events.py",
+        "sha256": "d7181153112da5d56e82dec448c0171df9f7c2ca215b150ca89b8888fdf15966",
+        "size_bytes": 6472
+      },
+      {
+        "path": "tests/models/test_grc_v2_validation_matrix.py",
+        "sha256": "6814ad6aec6a4743a1666ba3c4ff4f47055a203f6afce33f2ddf161682f6ff45",
+        "size_bytes": 4440
+      },
+      {
+        "path": "tests/models/test_grc_v3_choice.py",
+        "sha256": "3fa092c6f4d9b65b35173a219537b82d1176d38f9772576c9e41e2f222d8a240",
+        "size_bytes": 9600
+      },
+      {
+        "path": "tests/models/test_grc_v3_differential.py",
+        "sha256": "148a9422b2a84040b4716a9a1ab4d508f35020a22ad4aac67aa296ab8ba88aea",
+        "size_bytes": 6443
+      },
+      {
+        "path": "tests/models/test_grc_v3_frontier_birth.py",
+        "sha256": "5078ff981c5cd0b07f08b16fe4c55263a07ab18ff84450322c5bf05381db10e7",
+        "size_bytes": 8510
+      },
+      {
+        "path": "tests/models/test_grc_v3_hierarchy.py",
+        "sha256": "c40c383d6504986e2353a296c873b137a03a65581454896fd0d7e62cdb4d94a2",
+        "size_bytes": 7518
+      },
+      {
+        "path": "tests/models/test_grc_v3_landscape_runtime.py",
+        "sha256": "5b09f3e05794480472c58b72016ff055c5957f9c1f0318d7f03fcdb43a1e22be",
+        "size_bytes": 105309
+      },
+      {
+        "path": "tests/models/test_grc_v3_metric_labels.py",
+        "sha256": "18705d2e29498e83181aea8d6d1b1e348e0e3404d12ed2585bdf17cd7beb2f1e",
+        "size_bytes": 6798
+      },
+      {
+        "path": "tests/models/test_grc_v3_runtime.py",
+        "sha256": "3dbc5bc167404d70f21a53ed582edd2b0f1371eaa92fd112d9a126790af3fb07",
+        "size_bytes": 4635
+      },
+      {
+        "path": "tests/models/test_grc_v3_serialization.py",
+        "sha256": "86701f465a94a0eacdde146f5294c61bc1f6db3aec2b4591c66d6e66ca0e356a",
+        "size_bytes": 7933
+      },
+      {
+        "path": "tests/models/test_grc_v3_sparks.py",
+        "sha256": "32d5fffe5174379f6cb8bf73e3791e403aad0d9979174e0887aac7ed9e944d83",
+        "size_bytes": 7636
+      },
+      {
+        "path": "tests/models/test_grc_v3_state.py",
+        "sha256": "f3c66862b1ff7c3f9aaf931a94e3abe17c990c18c065d42222d448d81e8d010c",
+        "size_bytes": 7617
+      },
+      {
+        "path": "tests/models/test_grc_v3_step.py",
+        "sha256": "cec289512df7f33a21c80ed6f46d23f0d34be6208524b4b2ee1a4dddcd2864e2",
+        "size_bytes": 5645
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+        "sha256": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17",
+        "size_bytes": 25609
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_construction.py",
+        "sha256": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+        "size_bytes": 3654
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_contract.py",
+        "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+        "size_bytes": 202098
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_module_split.py",
+        "sha256": "50e920647cb35aa824a1a2a15bdd6176e2b9bbcf0f8a4ac864be14caee6a54bb",
+        "size_bytes": 1569
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+        "sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+        "size_bytes": 13320
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py",
+        "sha256": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd",
+        "size_bytes": 26934
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py",
+        "sha256": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd",
+        "size_bytes": 11586
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+        "sha256": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+        "size_bytes": 23744
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_restoration.py",
+        "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+        "size_bytes": 15177
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+        "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+        "size_bytes": 17927
+      },
+      {
+        "path": "tests/models/test_lgrc_9_v3_runtime.py",
+        "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+        "size_bytes": 328654
+      },
+      {
+        "path": "tests/models/test_reset_baseline_persistence.py",
+        "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+        "size_bytes": 8933
+      },
+      {
+        "path": "tests/smoke/smoke_tests_phase3.py",
+        "sha256": "71eecdee822251748d4574fad65822ae463f573067f997186f0dc4b8f32e98c2",
+        "size_bytes": 8159
+      },
+      {
+        "path": "tests/smoke/smoke_tests_phase3_deep.py",
+        "sha256": "44b7a3abca06ac88d2df46c7c1e6b24a7df7a57ea446d2d162f63103f01958b1",
+        "size_bytes": 11612
+      },
+      {
+        "path": "tests/smoke/smoke_tests_phase4_grcv2.py",
+        "sha256": "55a63fd26ef73a3bb153a39909759d24fd5f6df5b3ba0b5f2179ebe89b0e6a24",
+        "size_bytes": 5182
+      },
+      {
+        "path": "tests/smoke/smoke_tests_phase4_grcv2_paper_alignment.py",
+        "sha256": "2ec19a0d76ef10db384f1eceb3ec4b658725c9b8203656ec20c3e892c69b7a27",
+        "size_bytes": 10377
+      },
+      {
+        "path": "tests/smoke/test_quickstart.py",
+        "sha256": "a90145f706b82d80c6642b57e3888ff4f2bb74e7d62f7e32fe794c6a91db4f41",
+        "size_bytes": 2104
+      },
+      {
+        "path": "tests/telemetry/_experiments_test_support.py",
+        "sha256": "c64a7c170f76dc2cf2a5a54e9ee496b1d18c36c5b40dea8fde6b4a90add87d66",
+        "size_bytes": 12272
+      },
+      {
+        "path": "tests/telemetry/test_checkpoints.py",
+        "sha256": "ac11296a8ddb128afcd06f9dbf3a1222adf106bc145252b5e2b6083f2f14b5fc",
+        "size_bytes": 23280
+      },
+      {
+        "path": "tests/telemetry/test_cli_representative_experiment.py",
+        "sha256": "dec5101c0c71e4a56b669ae9028d84109085bc10fbb32a982863abc68efd7d89",
+        "size_bytes": 1533
+      },
+      {
+        "path": "tests/telemetry/test_experiments.py",
+        "sha256": "bf7e46ce365b6774966bbb4a9b3ae0861cd958c602953208d319728730494d11",
+        "size_bytes": 118927
+      },
+      {
+        "path": "tests/telemetry/test_grc9_contract.py",
+        "sha256": "83436b85399476a9976868a3f4952950b7c4ee23f7e5d5c86ec1d0085b11397d",
+        "size_bytes": 21290
+      },
+      {
+        "path": "tests/telemetry/test_grc9_extensions.py",
+        "sha256": "d9c217cf9a30bcc778843b5bac5db59f90662283ab28fa650619244696556631",
+        "size_bytes": 20664
+      },
+      {
+        "path": "tests/telemetry/test_grc9v3_contract.py",
+        "sha256": "02f7125232fb43fb21b78bc4e08884b5a434a7eec510c4082ef10f775162502b",
+        "size_bytes": 16815
+      },
+      {
+        "path": "tests/telemetry/test_grc9v3_extensions.py",
+        "sha256": "9d3b6ce25442786dd05850b7c0d25764770b77c720c70f2b2477b245518d00d9",
+        "size_bytes": 28558
+      },
+      {
+        "path": "tests/telemetry/test_grc9v3_representative_telemetry.py",
+        "sha256": "bdc7add5aa03b0b52dd048cbbf0c203a3f176f14802b73c20afc7681458f0d8e",
+        "size_bytes": 9858
+      },
+      {
+        "path": "tests/telemetry/test_grcl9_corrected_growth_catalog.py",
+        "sha256": "c689fbf84a2dc08c75de331f1f3f04ebe82a609dea6f76e85d185d88e02b1f13",
+        "size_bytes": 11231
+      },
+      {
+        "path": "tests/telemetry/test_grcl9_lowered_motif_catalog.py",
+        "sha256": "76dd1e036be5c9283268091137a1a535b1b2460ed0ea3414f4854cdfe2881759",
+        "size_bytes": 7745
+      },
+      {
+        "path": "tests/telemetry/test_grcl9_replay.py",
+        "sha256": "eabd26cd8a5523c90bbf14040c18a16f96d5e23a8c8244503ec16c4cc9f7c034",
+        "size_bytes": 17205
+      },
+      {
+        "path": "tests/telemetry/test_grcl9_selector_validation.py",
+        "sha256": "4e1eafad1d9ce476ff3a4689cdf0b5e411c6de966042b242e27cbf55136c8479",
+        "size_bytes": 12336
+      },
+      {
+        "path": "tests/telemetry/test_grcl9v3_lowered_motif_catalog.py",
+        "sha256": "e2762764160f0416796b9076f1b3d3dbd6af43cb0abfa298fdf0f7e37c91fe8c",
+        "size_bytes": 5115
+      },
+      {
+        "path": "tests/telemetry/test_grcl9v3_replay.py",
+        "sha256": "62ccec9eccab9a1820e1fb44d7a0d360e39ff6c4659e1b059f93ceb9345c1f1a",
+        "size_bytes": 24698
+      },
+      {
+        "path": "tests/telemetry/test_grcl9v3_selector_validation.py",
+        "sha256": "ea6c66aa2ab7ed0101c65448d48fb79e40bb3ab81a955881c126ba4a8969692e",
+        "size_bytes": 18234
+      },
+      {
+        "path": "tests/telemetry/test_grcv3_contract.py",
+        "sha256": "000732c8bdec601b1bf7165814625bd01ae559d6c8a6a81044a0a71756121273",
+        "size_bytes": 12648
+      },
+      {
+        "path": "tests/telemetry/test_grcv3_frontier_birth_telemetry.py",
+        "sha256": "a8a4e5a33aeef8dec64c39135b5690ef3a4540deb145806c9886d7cc0400a2d2",
+        "size_bytes": 6071
+      },
+      {
+        "path": "tests/telemetry/test_grcv3_pressure_boundary_evidence.py",
+        "sha256": "5f7df5117094bcf57529729291a02615057ca18f6935718d278b6fcea4458d87",
+        "size_bytes": 2498
+      },
+      {
+        "path": "tests/telemetry/test_growth_record_classification.py",
+        "sha256": "5c0cdb18bfc0d72ecb783a6e0827c5f08dd712bd4f4f0fedbad91b5325a95644",
+        "size_bytes": 7011
+      },
+      {
+        "path": "tests/telemetry/test_growth_supersession_summary.py",
+        "sha256": "0ddc8fc3da12a841a3aa854060d0e605771d69c91d85b734464a0fa280764450",
+        "size_bytes": 7033
+      },
+      {
+        "path": "tests/telemetry/test_io.py",
+        "sha256": "6a23c58a6bd5a35d528b52d17382276fd5eaa45b0359e352febed7554c98bc2f",
+        "size_bytes": 11030
+      },
+      {
+        "path": "tests/telemetry/test_lgrc9v3_contract.py",
+        "sha256": "6331bf72bc41fc3545f5f6cef4b8a8bfc767a89b9c5d9d426b013ffc75884a2c",
+        "size_bytes": 26434
+      },
+      {
+        "path": "tests/telemetry/test_pressure_boundary_complex_source_comparison.py",
+        "sha256": "4f36f40b88a91f7c56dad83ef6e71a3166c02e3b1382137f63ed8bb6c9258b6b",
+        "size_bytes": 2515
+      },
+      {
+        "path": "tests/telemetry/test_pressure_boundary_cross_family.py",
+        "sha256": "08f71645fc195819b9a99a0c0e5934431e9bd4d73ff4462e39dff4507c261dc5",
+        "size_bytes": 1658
+      },
+      {
+        "path": "tests/telemetry/test_recorder.py",
+        "sha256": "6d1dbbfe9de0de17e32aff3e0b23700546f160b42e938b653b9d87a134108b03",
+        "size_bytes": 7577
+      },
+      {
+        "path": "tests/telemetry/test_reports.py",
+        "sha256": "5c5441b221d6d717f77ea3dac5f72419c41ff0a1343b6baeaec16f7b54918808",
+        "size_bytes": 7291
+      },
+      {
+        "path": "tests/telemetry/test_schema.py",
+        "sha256": "044401fcf91b6f843771d1ae161d6e051bc113e98a41ed98daeff0529b4d79b4",
+        "size_bytes": 7558
+      },
+      {
+        "path": "tests/visualization/test_grcl9_lowering.py",
+        "sha256": "bbf0effdc4ecb07fa1a2367ef63d5cc4e1fab78898502366ca259586af5a7b1b",
+        "size_bytes": 11710
+      },
+      {
+        "path": "tests/visualization/test_grcl9v3_lowering.py",
+        "sha256": "fbd27838e038ea99332033b44d364259f32693481f38ac33c957c7dff200547b",
+        "size_bytes": 5777
+      },
+      {
+        "path": "tests/visualization/test_motion.py",
+        "sha256": "c911857f565ed1678f2f4f2e0e4ababeda9147acbe00bc628b28dc317361cf50",
+        "size_bytes": 9449
+      },
+      {
+        "path": "tests/visualization/test_visualization.py",
+        "sha256": "4989acf0758049edac897bb1702d0358c4afed89ae9b4e031faa505babd137b3",
+        "size_bytes": 120199
+      }
+    ],
+    "manifest_id": "protected_path_manifest_v0",
+    "scope": "all_tracked_PyGRC_source_existing_tests_and_GRC9_specs",
+    "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7",
+    "tree_sha256": "4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2"
+  },
+  "payload_sha256": "c71a1ce24abc597fa132cba30f056061e7ea1a92854ffa28668929209140e956",
+  "schema_version": "b1_protected_path_manifest_v0"
+}

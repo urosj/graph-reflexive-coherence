@@ -1,0 +1,89 @@
+{
+  "blocked_gates": [
+    "GRV7",
+    "GRV8"
+  ],
+  "claim_ceiling": "bounded_search_found_no_primitive_period_2_to_8_return_and_cycle_seeds_were_overwritten_without_global_nonexistence_claim_pending_human_review",
+  "contract_audit_payload_sha256": "67b25560aef5cbd50597df05712571629c6483b69bbb4ff11e747d34d08c4dab",
+  "gate_id": "GRV6",
+  "grv6_summary": {
+    "GRV_C5_assigned": false,
+    "GRV_C5_status": "blocked_pending_GRV7_even_if_GRV6_recurrence_candidate_exists",
+    "active_circulation_supported": false,
+    "activity_ladder_constraint_supported_row_count": 0,
+    "all_activity_ladder_seeds_certified": true,
+    "all_activity_response_shape_controls_passed": true,
+    "all_boundary_state_candidates_replayed_and_classified": true,
+    "all_budget_controls_passed": true,
+    "all_cycle_orientations_overwritten_at_first_transport": true,
+    "all_cycle_seed_stage_traces_match_complete_step": true,
+    "all_cycle_seeds_certified": true,
+    "all_cycle_transport_kernel_traces_match_public_wrapper": true,
+    "all_edge_space_checks_passed": true,
+    "all_ill_conditioned_rows_have_jacobian_diagnostics": true,
+    "all_nonrequired_seed_gates_marked_not_applicable": true,
+    "all_sign_even_controls_passed": true,
+    "all_topology_and_event_controls_passed": true,
+    "boundary_state_candidate_count": 1,
+    "boundary_state_classifications": [
+      "budget_projection_supported_current_state"
+    ],
+    "condition_blocked_rows_count_as_negative_orbit_evidence": false,
+    "conditional_positive_orbit_gate_status": "not_applicable_no_return_orbit_candidate",
+    "converged_but_not_return_count": 1,
+    "converged_search_candidate_count": 671,
+    "current_control_branch_count": 48,
+    "cycle_activity_amplitude_ladder_row_count": 64,
+    "cycle_control_branch_count": 16,
+    "cycle_seed_persistence_count": 0,
+    "cycle_seed_row_count": 32,
+    "cycle_seed_stage_trace_pair_count": 16,
+    "exact_zero_invariant_count": 16,
+    "finite_activity_amplitude_ladder_row_count": 192,
+    "full_causal_state_return_orbit_count": 0,
+    "hybrid_or_categorical_return_count": 0,
+    "maximum_budget_error": 1.7763568394002505e-15,
+    "maximum_cycle_stage_first_transport_sign_even_W_error": 0.0,
+    "maximum_inverse_conductance_metric_condition_number": 1.00000000000775,
+    "maximum_post_step_cycle_component_l2": 1.3498100806892346e-26,
+    "maximum_projected_cycle_gram_condition_number": 1.0,
+    "mechanical_status": "passed",
+    "nonsymmetric_zero_input_control_count": 32,
+    "orbit_search_row_count": 1536,
+    "ordinary_floquet_spectrum_count": 0,
+    "physical_projection_return_count": 0,
+    "primitive_return_orbit_count": 0,
+    "proper_divisor_rejected_count": 670,
+    "readback_supported": false,
+    "recurrence_evidence_opened": false,
+    "relative_periodic_orbit_search_executed": false,
+    "return_jacobian_ill_conditioned_count": 865,
+    "stationary_cycle_current_supported": false,
+    "symmetric_exact_zero_control_count": 16,
+    "writeback_supported": false
+  },
+  "input_execution_revision": "1def2aeab3f2ec50bff411a5d89c2d391c586466",
+  "input_experiment_tree_sha256": "cbfa2921ed7dce9e99cab2b76427b9449437dd0edd32f65c6b8f54ccc5af9b42",
+  "output_artifact_digests": {
+    "outputs/grv6_36_point_review_audit.json": "d67865e1fb8a781d1d990273146f842a6a91abfa3dba757f8fa04089e19e75b7",
+    "outputs/grv6_contract_audit.json": "0913ab6688c69dff211e64197655d0f903f419325138130a7ad21b99ad3b8651",
+    "outputs/protected_path_manifest_v6.json": "a4de764bd3357b67793375cf41f210f124ba61fe73a7e06caaeb74d351be44c2",
+    "outputs/return_orbit_registry.json": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+    "reports/b1_grv6_current_recurrence_and_return_orbits.md": "6dcc2643aaf7d197d1603ea2531312e1ba075069f0ed8b8b9686bfd077104160"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+      "gate_id": "GRV5",
+      "immutable_ref": "git:948db9b37069bc2a972f4bc2471287fa7140f677"
+    }
+  ],
+  "prerequisite_acceptance_status": "accepted",
+  "prerequisite_result_receipt_digests": [
+    "a42ccda9772f5fa28e2e4681c2b5c6883a65499eaeab2badcc00ad31bb67ac35"
+  ],
+  "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+  "review_36_point_audit_payload_sha256": "3d7375eabe881916c9d03f23f4bf6f9639befb51f87544b70ad5c0a80c44ba28",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "b1_grv3_p3_package_manifest_v1_4_1",
+  "package_status": "clean_P3_4_1_report_complete_admission_hardening_when_contained_in_committed_revision",
+  "gate_id": "GRV3",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV2",
+    "result_revision": "e1dc01f4948b7791c733eb62c15179d04619cd8e",
+    "receipt_payload_sha256": "73450d2a445770fc3f4b0f2871d3d10c865e097fdd305d97945e41dd7b707c63",
+    "acceptance_anchor_path": "outputs/gates/grv2_acceptance_anchor.json",
+    "acceptance_anchor_commit": "b5506d9c5dcab787b602652549bfbf09054d53eb"
+  },
+  "gate_input_change_class": "gate_local_implementation_of_sealed_GRV3_method",
+  "protocol_readmission_required": false,
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "continuation_evidence_opened": false,
+    "retention_evidence_opened": false,
+    "readback_evidence_opened": false,
+    "writeback_evidence_opened": false
+  },
+  "executable_surfaces": [
+    "scripts/compute_complete_step_jacobian.py",
+    "scripts/state_codec.py",
+    "scripts/run_all.py",
+    "tests/test_grv3_causal_state.py",
+    "tests/test_state_codec.py"
+  ],
+  "execution_contract": "configs/grv3_causal_state.json",
+  "branch_scope": "all_48_accepted_GRV2_registry_rows_without_symmetry_reduction",
+  "preacceptance_execution_corrections": [
+    {
+      "superseded_input_revision": "78585000600a545130f2cce1e153f074d45361cd",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "runner_applied_GRV3_B_only_to_the_full_C_W_J_chart_even_when_frozen_C_W_or_C_reduction_codecs_passed",
+      "correction": "apply_the_existing_stratum_convergence_response_and_mode_gates_to_every_codec_admitted_frozen_reduction_without_selecting_a_primary_coordinate",
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    },
+    {
+      "superseded_input_revision": "49bdae13ebaed30cdedec5f74b4d346955b281f3",
+      "superseded_result_receipt_payload_sha256": "d560ede2fa0516d0df1fe817196d100028a4fff1206f718e3bba36805371a033",
+      "superseded_result_payload_sha256": "b77a44aeb3e4de561f15260e90761aad4fa93281b31a17731c25ce11430e1ebf",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "P3_1_recorded_matrix_level_convergence_and_nonnormal_diagnostics_but_did_not_machine_gate_per_column_eigenvalue_subspace_response_convergence_or_ill_conditioned_individual_eigenvectors",
+      "correction": "apply_the_preregistered_nonnormal_and_fast_slow_controls_and_require_column_spectral_invariant_subspace_and_response_convergence_before_temporal_or_response_evidence_is_supported",
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    },
+    {
+      "superseded_input_revision": "8db3975bc21a5fa692b8d33d617e5219d243a15b",
+      "superseded_result_receipt_payload_sha256": "83a6a10abd2b45f7671bdce84c05f9535336ea2ee2345e30b5e62fb850efa3d6",
+      "superseded_result_payload_sha256": "3e26c8c7bb36a97bdd36dec00cb03dd78313b8347b453b75186fb0b58e77f64b",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "P3_2_froze_spectral_window_cluster_and_residual_thresholds_in_committed_code_but_did_not_surface_the_unchanged_values_in_the_explicit_GRV3_method_contract",
+      "correction": "move_the_already_frozen_0_9_1e_6_and_1e_8_values_into_grv3_causal_state_config_without_changing_values_and_record_final_per_matrix_interpretation_blocks",
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    },
+    {
+      "superseded_input_revision": "0a323d2d5920b3bedaef052fd193777942add9be",
+      "superseded_result_receipt_payload_sha256": "7cf749fa8a46f6b219a27515504e4ad671a386144b2ef8626fb14e63a4fb104d",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "P3_3_did_not_machine_gate_administrative_phase_derivative_invariance_omitted_state_decomposition_decoder_correction_rng_consumption_branch_residual_J_even_odd_response_or_basis_and_symmetry_covariance",
+      "correction": "freeze_and_execute_P3_4_validity_gates_before_any_temporal_operator_or_causal_strong_branch_acceptance",
+      "change_classification": "preacceptance_method_completion_required_by_the_sealed_causal_closure_and_covariance_contract",
+      "protocol_readmission_required": false,
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    },
+    {
+      "superseded_input_revision": "03f3581b0beafbfa4bf4528f09cfeef091dbe832",
+      "superseded_result_receipt_payload_sha256": "8401388a1945a7b22107268af5edec7e63742ad1b0592dbdca03142596380b6d",
+      "result_receipt_emitted": true,
+      "scientific_acceptance_anchor_emitted": false,
+      "failure": "P3_4_machine_artifact_contained_the_hardening_results_but_the_generated_Markdown_report_did_not_surface_the_new_validity_gates",
+      "correction": "generate_the_GRV3_report_with_phase_omitted_state_decoder_RNG_residual_J_basis_metric_and_symmetry_results",
+      "change_classification": "report_completeness_fix_preserving_the_P3_4_method_and_results",
+      "protocol_readmission_required": false,
+      "branch_scope_changed": false,
+      "thresholds_changed": false,
+      "fixtures_changed": false,
+      "runtime_changed": false,
+      "claim_ceiling_changed": false,
+      "complete_GRV3_reexecution_required": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV3",
+  "claim_ceiling": "bounded_causal_state_and_temporal_mode_evidence_only"
+}

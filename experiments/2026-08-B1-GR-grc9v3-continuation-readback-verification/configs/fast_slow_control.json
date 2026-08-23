@@ -1,0 +1,8 @@
+{
+  "schema_version": "b1_grv0_fast_slow_control_v1",
+  "primary_measure": "discrete_multiplier_effective_decay_ratio",
+  "minimum_separation_ratio": 10.0,
+  "same_branch_state_beat_and_clock_required": true,
+  "neutral_conserved_direction_policy": "identify_and_exclude_with_record",
+  "no_separate_current_relaxation_sector": "not_applicable"
+}

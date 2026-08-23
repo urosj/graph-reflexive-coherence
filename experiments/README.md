@@ -74,6 +74,8 @@ machine-local state.
 | [N29 agentic ecology convergence bridge](2026-06-N29-lgrc-agentic-ecology-convergence-bridge/README.md) | Closed bridge experiment at EB6/N29-C6: source-backed ecology demand model, capability/debt atlas, bridge motif library, prototype atlas, and first probe contracts for `reflexive-coherence-agentic-ecology`, with N30+ primitive/component naturalization targets recorded. Executed ecology runtime, native ant/colony agency, resource economy, cooperation/exploitation, native support, sentience, organism/life, and Phase 8 completion remain blocked. | README, I18 closeout handoff, Phase D probe contracts, prototype atlas, demand/supply coverage matrix, motif library, implementation checklist, and hypotheses. |
 | [N30 minimal shared-medium participation](2026-07-N30-lgrc-minimal-shared-medium-participation/README.md) | Closed first N30+ experiment at N30-C6: bounded artifact-level minimal shared-medium participation candidate with participant continuity, non-private medium-surface perturbation, source-current trace/surface change, and later eligibility/susceptibility dependence under replay/control validation. Shared-medium coordination, communication, cooperation, agency, ecology regime, native shared-medium organization, and fixed N31 selection remain blocked. | README, I8 closeout and spiral handoff, I7 replay/control matrix, medium-debt artifacts, implementation checklist, and hypotheses. |
 | [N31 derived decay and primitive semantics](2026-07-N31-lgrc9v3-derived-decay-and-primitive-semantics/README.md) | Closed graph-side downward-discovery experiment at N31-C6: native D0a formation/persistence remains DR2 without autonomous weakening; exact-derived D0b reaches DR3 as an observable; producer-mediated B-R and C.2 reach executed DR5 and receive separate DR6 contract-only return semantics. Cross-context reuse, native decay, trail/stigmergy, memory, communication, agency, and automatic RCAE adoption remain blocked. | README, I12 machine return and report, B-R/C.2 reusable contracts, I11 conditional-frontier classification, I10 replay/control matrix, implementation checklist, and hypotheses. |
+| [B1-GR GRC9V3 continuation and read-back verification](2026-08-B1-GR-grc9v3-continuation-readback-verification/README.md) | Closed foundational verification experiment at GRV-C6 over unchanged GRC9V3. It accepts bounded fixed-topology formed branches, exact stage-local current recurrence, bounded L3 causal closure, and synthetic C-dominated GRR2 neutral persistence while keeping native Read-Back, write-back, closed-loop, unique-projector, runtime-extension, and automatic downstream-execution claims blocked. | README, GRV8 closeout report and acceptance anchor, evidence-grounded successor specification, nine-gate evidence bundle, general GRC-first next-route handoff, implementation checklist, and gate reports. |
+| [B1-L LGRC9V3 continuation/read-back delta](2026-08-B1-L-lgrc9v3-continuation-readback-delta/README.md) | Deferred downstream experiment identity originating from the B1-GR specification. Accepted B1-GR GRV-C6 makes later route admission possible, but does not authorize B1-L execution or make it the umbrella handoff. | Scaffold README only; consume the accepted B1-GR general handoff and admit an explicit GRC base before any execution. |
 
 ## Current Roadmap State
 
@@ -621,6 +623,15 @@ B-R conservative-coherence-redistribution and C.2 effective-susceptibility contr
 The next recommended step is explicit revision-bound RCAE P2-I3
 provider-contract re-admission and fresh ecology-side execution. N31 positive
 evidence is not re-admitted. N32 remains unselected.
+
+Outside the N-series catalog, B1-GR has closed the foundational unchanged-
+`GRC9V3` continuation and Read-Back verification line at `GRV-C6`. The result
+supports bounded branch, causal-closure, stage-local recurrence, and `GRR2`
+neutral-persistence facts, but no native Read-Back, write-back, retained
+projector, or closed read/write loop. Its accepted handoff routes first to GRC
+unchanged-runtime constructibility and selectable GRC extensions, keeps
+analysis/identifiability debt separate, and places LGRC-specific work last.
+B1-L remains a deferred scaffold and has not been authorized.
 
 Roadmap-level context:
 

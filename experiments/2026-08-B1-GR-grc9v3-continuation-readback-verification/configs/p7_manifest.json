@@ -1,0 +1,30 @@
+{
+  "schema_version": "b1_grv7_p7_package_manifest_v1",
+  "package_status": "P7_method_frozen_ready_for_clean_execution",
+  "gate_id": "GRV7",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV6",
+    "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+    "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+    "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+    "acceptance_anchor_commit": "9606f2466769d89e10145e112ed5136704a5ad79"
+  },
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "GRV6_result_mutation_authorized": false,
+    "post_spectrum_path_selection_authorized": false
+  },
+  "executable_surfaces": [
+    "scripts/branch_continuation.py",
+    "scripts/sweep_temporal_and_spatial_thresholds.py",
+    "scripts/run_all.py",
+    "tests/test_grv7_spatial_temporal_thresholds.py",
+    "schemas/spatial_temporal_threshold_matrix.schema.json"
+  ],
+  "execution_contract": "configs/grv7_spatial_temporal_thresholds.json",
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV7",
+  "claim_ceiling": "bounded_spatial_temporal_and_continuation_threshold_non_equivalence_without_universal_noncorrelation_or_readback_claim"
+}
