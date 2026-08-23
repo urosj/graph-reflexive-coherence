@@ -478,32 +478,73 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 - [x] Apply I2 empty-path semantics: zero confirmed I4 candidates makes I5-I7 positive lanes not applicable and routes to bounded closeout.
 - [x] Serialize and validate every attempt in transient shards, then retain only digests, batch/count matrices, branch coverage, all clean bounded-negative rows, and compact outlier evidence.
 
-- [ ] Execute only the preregistered search algorithms, budgets, seeds, and stopping rules.
-- [ ] Start every positive candidate through declared ancestry from an accepted B1-GR branch.
-- [ ] Use unchanged runtime evolution for every positive preparation path.
-- [ ] Act only through an admitted upstream driver for positive candidate preparation.
-- [ ] Require driver and candidate carrier to satisfy the frozen separation policy.
-- [ ] Return any parameter-history preparation to its frozen evaluation parameter vector before measuring retention or mediation.
-- [ ] Define `k=0` as the first state after driver exhaustion and restoration of all frozen evaluation surfaces.
-- [ ] Record forming input, exhaustion, reached-state, and continuation provenance.
-- [ ] Separate synthetic-only and off-manifold controls from positive candidates.
-- [ ] Separate eventful histories from the fixed-topology/event-free primary lane.
-- [ ] Require positive admissibility margins and no load-bearing clipping or budget projection.
-- [ ] Classify overwritten, nonpersistent, unmatched, unresolved, invalid, duplicate, and outside-envelope rows distinctly.
-- [ ] Preserve branch-relocation as open until Iteration 5 resolves it.
+- [x] Execute only the preregistered search algorithms, budgets, seeds, and stopping rules.
+- [x] Start every attempted positive path through declared ancestry from an accepted B1-GR branch.
+- [x] Use unchanged runtime evolution for every attempted positive preparation path.
+- [x] Act only through an admitted upstream driver for attempted positive candidate preparation.
+- [x] Require driver and candidate carrier to satisfy the frozen separation policy.
+- [x] Return every parameter-history preparation to its frozen evaluation parameter vector before measuring retention or mediation.
+- [x] Define `k=0` as the first state after driver exhaustion and restoration of all frozen evaluation surfaces.
+- [x] Record forming input, exhaustion, reached-state, and continuation provenance.
+- [x] Separate synthetic-only and off-manifold controls from attempted positive candidates.
+- [x] Separate eventful histories from the fixed-topology/event-free primary lane.
+- [x] Require positive admissibility margins and no load-bearing clipping or budget projection.
+- [x] Classify overwritten, nonpersistent, unmatched, unresolved, invalid, duplicate, and outside-envelope rows distinctly.
+- [x] Preserve branch-relocation as unresolved when no runtime-reached candidate exists for Iteration 5 analysis.
 - [ ] Freeze the accepted discovery candidate set and acceptance anchor before Iteration 5.
-- [ ] Fresh-process reconstruct every discovered candidate from its source B1 branch before `B2-C3` acceptance.
-- [ ] Assign no GRR rung; freeze only runtime-reached post-driver candidates pending I5 `GRR2` qualification.
-- [ ] Mark the frozen candidate result `B2-C3-ready`; assign `B2-C3` only through human-reviewed acceptance.
+- [x] Fresh-process reconstruct every discovered candidate from its source B1 branch before `B2-C3` acceptance; the discovered candidate set is empty, so no confirmation row was eligible to run.
+- [x] Assign no GRR rung; no runtime-reached post-driver candidate exists for I5 `GRR2` qualification.
+- [x] Mark the empty candidate result `B2-C3-ready`; assign `B2-C3` only through human-reviewed acceptance.
 
 Expected artifacts:
 
 ```text
 outputs/b2_i4_native_preparation_reachability.json
 outputs/gates/b2_i4_result_receipt.json
-outputs/gates/b2_i4_acceptance_anchor.json
 reports/b2_i4_native_preparation_reachability.md
+
+conditional after human acceptance:
+outputs/gates/b2_i4_acceptance_anchor.json
 ```
+
+### Iteration 4 Result - Awaiting Scientific Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = dbc24f5d202920aa2a8d65581b128b04a918965b
+batch_count = 12
+attempted_count = 9648
+resolved_count = 9648
+primary_search_native_steps = 45696
+source_reconstruction_failure_count = 0
+unresolved_count = 0
+discovery_candidate_count = 0
+confirmed_candidate_count = 0
+bounded_negative_count = 27
+formation_entirely_authored_or_unidentifiable_count = 1706
+outside_envelope_count = 7915
+clean_primary_lane_accessible_branch_count = 26/48
+inaccessible_under_frozen_preparation_family_count = 22/48
+candidate_set_status = empty_no_runtime_reached_candidate
+claim_ceiling = bounded_negative_unchanged_runtime_search_no_runtime_reached_candidate_within_frozen_envelope
+GRR_rung_assigned = false
+B2_closeout_ceiling = B2-C3-ready
+ready_for_I5 = false
+ready_for_I8_bounded_closeout = true
+I5_to_I7_positive_lane_status = not_applicable_empty_I4_candidate_set
+artifact_payload_sha256 = 334ae6907c3241b44b4d22720e8f356561773091b7d51109b4872091e8b7fe2c
+receipt_payload_sha256 = f198c36122df9e4c28b8767b56bd13d5b7471164ab8d1dfee4b51ebbc908f06d
+acceptance_anchor_created = false
+```
+
+Interpretation:
+
+- The 12 frozen batches exhausted all 9,648 allocated attempts without early stopping, budget migration, cross-stratum optimizer state, source reconstruction failure, or unresolved row.
+- No attempt produced a runtime-reached post-driver candidate. The result therefore assigns no GRR rung and cannot open the I5-I7 positive qualification lanes.
+- The 27 clean bounded-negative rows are evidence only inside the frozen branch, preparation, parameter, history-length, and carrier envelope. The 22 inaccessible branches are coverage debt, not negative constructibility evidence.
+- All attempt rows were serialized and validated during execution. The repository retains the attempt-population and aggregate-ledger digests, per-batch identities and counts, all clean bounded-negative rows, branch coverage, the classification matrix, and compact outlier groups. The approximately 40 MB transient shard set is not retained evidence.
+- Human acceptance may freeze this empty candidate set at `B2-C3` and route B2 directly to bounded I8 closeout. Until then, the current result remains `B2-C3-ready` and no acceptance anchor exists.
 
 ## Iteration 5 - Slow-Cluster And Branch-Transversality Matrix
 
@@ -593,6 +634,12 @@ reports/b2_i7_control_replay_stress.md
 
 ## Iteration 8 - Classification And Closeout
 
+- [ ] Consume the accepted empty I4 candidate set without manufacturing diagnostic candidates for I5-I7.
+- [ ] Emit separate machine-readable lifecycle records for the skipped positive lanes:
+  `I5 = not_applicable_empty_I4_candidate_set`,
+  `I6 = not_applicable_no_GRR3_lineage`, and
+  `I7 = not_applicable_no_GRR4_lineage`.
+- [ ] Record zero eligible candidate rows in each non-applicable lane without treating non-execution as failure, evidence, or a completed positive gate.
 - [ ] Classify the maximum supported GRR rung per row and globally.
 - [ ] Classify retention, read effect, write effect, and loop evidence separately.
 - [ ] Preserve search envelope, failed searches, rivals, and uncertainty.
@@ -602,6 +649,7 @@ reports/b2_i7_control_replay_stress.md
 - [ ] Preserve `mediation_without_GRR3` and `persistence_without_mediation` as causal-role outcomes.
 - [ ] Require `global_max_GRR = max(row_local_max_GRR)` on one row/lineage rather than synthesized arrows.
 - [ ] Decide whether unchanged-runtime constructibility remains open.
+- [ ] Keep zero confirmed I4 candidates from becoming global impossibility, retained-carrier necessity, or automatic extension selection.
 - [ ] Select no extension unless a target claim and missing role are both explicit.
 - [ ] If selected, name exactly one target-specific extension contract or justify a split.
 - [ ] Keep extension implementation and specification outside B2-GR.
