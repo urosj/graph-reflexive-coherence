@@ -1,0 +1,31 @@
+{
+  "schema_version": "b2_i8_empty_path_audit_contract_v1",
+  "audit_id": "B2-I8-empty-path-audit",
+  "source_i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+  "source_i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+  "attribution_split": {
+    "authored_within_numerical_uncertainty_ceiling": 1e-12,
+    "carrier_separation_floor": 1e-10,
+    "formation_admission_floor": 1e-9,
+    "classes": [
+      "apparent_carrier_authored_within_numerical_uncertainty",
+      "runtime_residual_above_uncertainty_below_separation_floor",
+      "runtime_residual_above_separation_below_formation_floor"
+    ],
+    "numerically_unresolved_rows_are_not_reclassified": true,
+    "split_changes_i4_admission": false
+  },
+  "effective_stratum_dimensions": [
+    "source_branch_id",
+    "preparation_family",
+    "history_length",
+    "parameter_variant_id",
+    "amplitude_fraction"
+  ],
+  "near_miss_sample_limit": 20,
+  "retention_or_mediation_adjudication_allowed": false,
+  "candidate_set_reopening_allowed": false,
+  "full_attempt_rows_retained": false,
+  "runtime_change_authorized": false,
+  "spec_extension_authorized": false
+}
