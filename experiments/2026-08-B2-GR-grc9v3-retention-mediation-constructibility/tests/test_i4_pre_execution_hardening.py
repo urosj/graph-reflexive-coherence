@@ -29,6 +29,7 @@ from b2_i4_methods import (  # noqa: E402
 from pygrc.models import GRC9V3  # noqa: E402
 from run_i4_discovery_batch import (  # noqa: E402
     CONFIG_PATH,
+    _compact_preparation_history,
     batch_registry,
     validate_prerequisites,
 )
@@ -301,6 +302,30 @@ class I4PreExecutionHardeningTests(unittest.TestCase):
         self.assertTrue(routing["ready_for_iteration_5"])
         self.assertFalse(routing["ready_for_iteration_8_bounded_closeout"])
         self.assertFalse(routing["empty_path_semantics_applied"])
+
+    def test_attempt_history_is_compact_and_digest_bound(self) -> None:
+        history = {
+            "family": "test",
+            "history_length": 1,
+            "pulse_amount": 0.1,
+            "pulse_edge_id": 0,
+            "pulse_source_node": 0,
+            "pulse_destination_node": 1,
+            "parameter_variant_id": "evaluation_parameters",
+            "parameter_name": None,
+            "parameter_multiplier": None,
+            "state_production_parameter_vector": {"dt": 0.1, "eta": 0.5},
+            "current_evaluation_parameter_vector": {"dt": 0.1, "eta": 0.5},
+            "driver_exhaustion_boundary": "after_history",
+            "first_post_driver_transition": "k0_to_k1",
+            "unplanned_washout_step_used": False,
+        }
+        compact = _compact_preparation_history(history)
+        self.assertNotIn("state_production_parameter_vector", compact)
+        self.assertNotIn("current_evaluation_parameter_vector", compact)
+        self.assertIn("state_production_parameter_vector_digest", compact)
+        self.assertIn("current_evaluation_parameter_vector_digest", compact)
+        self.assertIn("full_history_digest", compact)
 
 if __name__ == "__main__":
     unittest.main()

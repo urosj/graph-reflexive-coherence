@@ -14,6 +14,7 @@ from b2_artifact_io import (
     git,
     read_json,
     repo_relative,
+    semantic_digest,
     sha256_file,
     write_json,
 )
@@ -28,6 +29,33 @@ CONFIG_PATH = EXPERIMENT_ROOT / "configs/b2_i4_native_preparation_contract.json"
 I1_PATH = EXPERIMENT_ROOT / "outputs/b2_i1_source_handoff_inventory.json"
 I2_PATH = EXPERIMENT_ROOT / "outputs/b2_i2_constructibility_schema.json"
 CALIBRATION_PATH = EXPERIMENT_ROOT / "outputs/b2_i3_threshold_calibration.json"
+
+
+def _compact_preparation_history(history: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "family": history["family"],
+        "history_length": history["history_length"],
+        "pulse_amount": history["pulse_amount"],
+        "pulse_edge_id": history["pulse_edge_id"],
+        "pulse_source_node": history["pulse_source_node"],
+        "pulse_destination_node": history["pulse_destination_node"],
+        "parameter_variant_id": history["parameter_variant_id"],
+        "parameter_name": history["parameter_name"],
+        "parameter_multiplier": history["parameter_multiplier"],
+        "state_production_parameter_vector_digest": semantic_digest(
+            history["state_production_parameter_vector"]
+        ),
+        "current_evaluation_parameter_vector_digest": semantic_digest(
+            history["current_evaluation_parameter_vector"]
+        ),
+        "driver_exhaustion_boundary": history["driver_exhaustion_boundary"],
+        "first_post_driver_transition": history["first_post_driver_transition"],
+        "unplanned_washout_step_used": history["unplanned_washout_step_used"],
+        "full_history_digest": semantic_digest(history),
+        "full_parameter_vectors_reconstructible_from": (
+            "accepted_source_snapshot_plus_frozen_parameter_variant"
+        ),
+    }
 
 
 def batch_registry() -> dict[str, dict[str, Any]]:
@@ -188,7 +216,9 @@ def build_batch(batch_id: str) -> dict[str, Any]:
                 "amplitude_fraction": row["preparation_spec"]["amplitude_fraction"],
                 "parameter_variant_id": row["preparation_spec"]["parameter_variant_id"],
             },
-            "preparation_history": row["preparation_history"],
+            "preparation_history": _compact_preparation_history(
+                row["preparation_history"]
+            ),
             "seed_or_rng_state_digest": (
                 row["positive_k0_state"]["rng_state_sha256"]
                 if "positive_k0_state" in row
@@ -319,7 +349,7 @@ def build_batch(batch_id: str) -> dict[str, Any]:
         raise ValueError("batch payload contains absolute paths")
     return envelope(
         payload,
-        schema_version="b2_i4_discovery_batch_v1",
+        schema_version="b2_i4_discovery_batch_v2",
         command=COMMAND.format(batch_id=batch_id),
     )
 

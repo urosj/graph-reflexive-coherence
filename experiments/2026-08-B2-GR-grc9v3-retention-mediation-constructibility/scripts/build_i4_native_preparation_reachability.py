@@ -365,7 +365,22 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
             "cross_stratum_optimizer_state_exists": False,
             "resume_or_shard_order_changes_attempt_population": False,
         },
-        "attempt_ledger": attempts,
+        "attempt_ledger_storage": {
+            "mode": "sharded_discovery_batch_artifacts",
+            "attempt_count": len(attempts),
+            "batch_count": len(batch_records),
+            "batch_paths_and_digests": [
+                {
+                    "batch_id": row["batch_id"],
+                    "path": row["discovery_path"],
+                    "sha256": row["discovery_sha256"],
+                    "payload_sha256": row["discovery_payload_sha256"],
+                }
+                for row in batch_records
+            ],
+            "aggregate_attempt_ledger_digest": semantic_digest(attempts),
+            "aggregate_does_not_duplicate_attempt_rows": True,
+        },
         "branch_primary_lane_coverage": branch_coverage,
         "branch_accessibility_summary": {
             "accepted_source_branch_count": len(branch_coverage),
@@ -494,6 +509,17 @@ def render_report(payload: dict[str, Any]) -> str:
         "outside-envelope rows remain classified by their recorded full-path failure",
         "modes rather than being promoted from a clean endpoint.",
         "",
+        "The exact outside-envelope mode counts are:",
+        "",
+        *[
+            f"- `{mode}`: `{count}`"
+            for mode, count in accounting["full_path_failure_mode_counts"].items()
+        ],
+        "",
+        "Attempt rows live once in the 12 digest-bound discovery shards. The aggregate",
+        "stores their paths, hashes, total count, and one aggregate ledger digest rather",
+        "than duplicating the complete ledger.",
+        "",
         "The I2 empty-path rule therefore makes I5-I7 positive lanes not applicable",
         "and routes the accepted empty candidate set to bounded I8 closeout. This is",
         "not an impossibility claim outside the frozen branch, preparation, parameter,",
@@ -513,7 +539,7 @@ def render_report(payload: dict[str, Any]) -> str:
 
 def main() -> None:
     payload, batch_paths = build_payload()
-    artifact = envelope(payload, "b2_i4_native_preparation_reachability_v1", COMMAND)
+    artifact = envelope(payload, "b2_i4_native_preparation_reachability_v2", COMMAND)
     write_json(OUTPUT_PATH, artifact)
     REPORT_PATH.write_text(render_report(payload), encoding="utf-8")
     receipt = finalize_receipt(
