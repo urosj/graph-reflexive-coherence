@@ -76,6 +76,15 @@ REQUIRED_CANDIDATE_FIELDS = (
     "formation_attribution_rule",
     "forming_intervention_status",
     "forming_intervention_exhausted",
+    "sham_preparation_id",
+    "sham_preparation_trace_digest",
+    "sham_k0_state_digest",
+    "formation_contrast_vector",
+    "formation_contrast_norm",
+    "formation_contrast_margin",
+    "native_write_status",
+    "runtime_generated_carrier_above_formation_floor",
+    "full_path_cleanliness_result",
     "load_bearing_clipping",
     "load_bearing_budget_projection",
     "post_driver_k0_state_digest",
@@ -102,6 +111,11 @@ REQUIRED_CANDIDATE_FIELDS = (
     "carrier_at_probe_digest",
     "carrier_alignment_across_phases",
     "carrier_transport_rule",
+    "carrier_causal_eligibility_class",
+    "carrier_equivalence_class_id",
+    "carrier_nesting_relation",
+    "carrier_overlap_measure",
+    "primary_carrier_attribution",
     "branch_tangent_rule",
     "tangent_component_norm",
     "transverse_component_norm",
@@ -112,6 +126,14 @@ REQUIRED_CANDIDATE_FIELDS = (
     "parameter_family_tangent_component",
     "branch_relation_class",
     "branch_relocation_rejected",
+    "branch_search_radius",
+    "branch_search_continuation_directions",
+    "branch_search_solver_seed_count",
+    "branch_search_residual_threshold",
+    "branch_search_coverage_fraction",
+    "branch_search_boundary_coverage",
+    "branch_search_condition_number",
+    "branch_search_sufficiency",
     "temporal_metric",
     "temporal_operator_id",
     "temporal_operator_domain",
@@ -119,6 +141,11 @@ REQUIRED_CANDIDATE_FIELDS = (
     "carrier_observation_map",
     "carrier_projection_of_slow_cluster",
     "slow_cluster_rule",
+    "slow_mode_class",
+    "slow_cluster_exists",
+    "slow_cluster_occupancy_ratio",
+    "formation_specific_occupancy_excess",
+    "formation_specific_occupancy_margin",
     "slow_projector_reference_state",
     "slow_projector_transport_rule",
     "projector_overlap_by_horizon",
@@ -129,10 +156,16 @@ REQUIRED_CANDIDATE_FIELDS = (
     "persistence_horizons",
     "persistence_ratio",
     "probe_kind",
+    "probe_provenance_class",
     "probe_amplitude_sweep",
     "no_probe_baselines",
     "zero_probe_control",
     "carrier_by_probe_interaction",
+    "oriented_interaction_vector",
+    "interaction_vector_uncertainty",
+    "interaction_margin",
+    "interaction_direction_consistency",
+    "interaction_linearity_status",
     "noncarrier_match_provenance",
     "noncarrier_match_norm",
     "noncarrier_match_margin",
@@ -163,14 +196,25 @@ REQUIRED_CANDIDATE_FIELDS = (
     "search_phase",
     "search_row_id",
     "search_budget_id",
+    "search_stratum_id",
+    "discovery_feature_record",
+    "adjudication_feature_accessed_during_discovery",
+    "attempt_status",
+    "rejection_reason",
+    "budget_consumed",
+    "resolved_status",
     "symmetry_orbit_id",
     "candidate_deduplication_id",
+    "duplicate_class",
+    "carrier_equivalent_witness_id",
     "fresh_process_confirmation_result",
     "fresh_process_confirmation_digest",
     "maximum_GRR_rung",
     "row_decision",
     "claim_ceiling",
     "blocked_relabels",
+    "primary_demotion_reason",
+    "secondary_demotion_reasons",
 )
 
 
@@ -185,32 +229,50 @@ BOOLEAN_FIELDS = {
     "event_free",
     "same_causal_stratum",
     "forming_intervention_exhausted",
+    "runtime_generated_carrier_above_formation_floor",
     "load_bearing_clipping",
     "load_bearing_budget_projection",
     "carrier_predeclared_before_candidate_search",
     "carrier_is_independent_causal_coordinate",
     "branch_relocation_rejected",
+    "branch_search_boundary_coverage",
+    "slow_cluster_exists",
+    "adjudication_feature_accessed_during_discovery",
     "budget_projection_noop",
 }
 
 NUMBER_FIELDS = {
     "carrier_separation_norm",
     "carrier_separation_margin",
+    "formation_contrast_norm",
+    "formation_contrast_margin",
+    "carrier_overlap_measure",
     "tangent_component_norm",
     "transverse_component_norm",
     "unresolved_component_norm",
     "fixed_config_branch_distance",
     "fixed_config_tangent_component",
     "parameter_family_tangent_component",
+    "branch_search_radius",
+    "branch_search_solver_seed_count",
+    "branch_search_residual_threshold",
+    "branch_search_coverage_fraction",
+    "branch_search_condition_number",
+    "slow_cluster_occupancy_ratio",
+    "formation_specific_occupancy_excess",
+    "formation_specific_occupancy_margin",
     "slow_cluster_isolation_margin",
     "cluster_condition_number",
     "cluster_uncertainty_bound",
     "persistence_ratio",
+    "interaction_margin",
+    "interaction_direction_consistency",
     "noncarrier_match_norm",
     "noncarrier_match_margin",
     "event_margin",
     "positivity_margin",
     "conductance_floor_margin",
+    "budget_consumed",
 }
 
 ARRAY_FIELDS = {
@@ -218,19 +280,24 @@ ARRAY_FIELDS = {
     "artifact_manifest",
     "preparation_parameter_history",
     "preparation_driver_history",
+    "formation_contrast_vector",
     "native_activity_history",
     "carrier_vector",
+    "branch_search_continuation_directions",
     "carrier_state_fields",
     "projector_overlap_by_horizon",
     "projector_conditioning_by_horizon",
     "persistence_horizons",
     "probe_amplitude_sweep",
+    "oriented_interaction_vector",
+    "interaction_vector_uncertainty",
     "no_probe_baselines",
     "control_applicability_results",
     "replay_results",
     "active_null_results",
     "control_results",
     "blocked_relabels",
+    "secondary_demotion_reasons",
 }
 
 OBJECT_FIELDS = {
@@ -254,6 +321,7 @@ OBJECT_FIELDS = {
     "validity_margin_bundle",
     "witness_validity",
     "fresh_process_confirmation_result",
+    "discovery_feature_record",
 }
 
 
@@ -295,6 +363,21 @@ ACTIVE_NULLS = (
     "bypass_implemented_by_skipping_native_runtime_stage",
     "single_pathological_zero_margin_witness_treated_as_clean_constructibility",
     "failure_to_generalize_across_branches_relabelled_as_witness_failure",
+    "no_matched_sham_as_native_formation",
+    "ordinary_drift_against_original_branch_as_native_write",
+    "eventful_preparation_as_clean_primary_lane",
+    "search_budget_migrated_after_outcome",
+    "discovery_optimized_on_future_gate_adjudication_score",
+    "slow_cluster_exists_without_formation_specific_excess_occupancy",
+    "overlapping_carrier_representations_as_independent_witnesses",
+    "serialized_diagnostic_surface_as_causal_carrier",
+    "insufficient_branch_manifold_coverage_as_relocation_rejected",
+    "synthetic_internal_probe_as_native_GRR4",
+    "response_norm_difference_without_oriented_interaction",
+    "unrelated_state_residual_as_reset_swap_or_bypass_failure",
+    "control_null_false_or_missing_collapsed_into_status",
+    "budget_consumed_as_resolved_coverage",
+    "distinct_histories_same_state_as_independent_retention_witnesses",
 )
 
 
@@ -383,10 +466,62 @@ def field_schema() -> dict[str, dict[str, Any]]:
         "runtime_realized_from_upstream_preparation",
         "synthetic_internal_state",
     ]
+    schema["native_write_status"]["allowed_values"] = [
+        "native_write_supported",
+        "runtime_reached_without_native_write",
+        "initial_condition_only",
+        "formation_not_identifiable",
+        "not_run",
+    ]
+    schema["full_path_cleanliness_result"]["allowed_values"] = [
+        "passed_clean_primary_lane",
+        "eventful_history_persistence",
+        "constraint_supported_history",
+        "failed",
+        "not_run",
+    ]
     schema["carrier_class"]["allowed_values"] = [
         "C_sector",
         "W_sector",
         "joint_C_W_sector",
+    ]
+    schema["carrier_causal_eligibility_class"]["allowed_values"] = [
+        "independent_complete_step_causal_coordinate",
+        "stage_local_load_bearing_surface",
+        "derived_causal_observable",
+        "mixed_nested_representation",
+        "diagnostic_only_surface",
+        "administrative_state",
+    ]
+    schema["branch_search_sufficiency"]["allowed_values"] = [
+        "sufficient",
+        "insufficient_unresolved",
+        "not_run",
+    ]
+    schema["slow_mode_class"]["allowed_values"] = [
+        "positive_decaying",
+        "negative_oscillatory_decaying",
+        "complex_decaying_pair",
+        "marginal",
+        "unstable",
+        "deadbeat",
+        "defective_or_ill_conditioned",
+        "nonnormal_transient",
+        "not_run",
+    ]
+    schema["probe_provenance_class"]["allowed_values"] = [
+        "native_exposed_probe",
+        "runtime_realized_probe_from_upstream_input",
+        "synthetic_internal_probe",
+        "reduced_or_analytical_probe",
+        "not_run",
+    ]
+    schema["duplicate_class"]["allowed_values"] = [
+        "not_duplicate",
+        "state_duplicate",
+        "history_distinct_same_state",
+        "symmetry_duplicate",
+        "carrier_equivalent_duplicate",
     ]
     schema["noncarrier_match_provenance"]["allowed_values"] = [
         "naturally_matched_pair",
@@ -416,7 +551,9 @@ def field_schema() -> dict[str, dict[str, Any]]:
         "bounded_negative",
         "search_unresolved",
         "numerical_failure",
+        "source_or_provenance_failure",
         "required_assumption_failed",
+        "required_control_failed",
         "required_control_not_identifiable",
         "invalid_candidate",
         "duplicate_candidate",
@@ -501,6 +638,21 @@ def grr_ladder(i1_payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def rung_contracts(
+    i1_payload: dict[str, Any], contract: dict[str, Any]
+) -> dict[str, dict[str, Any]]:
+    inherited = i1_payload["GRR_ladder_definition"]["rungs"]
+    hardening = contract["rung_admission_hardening"]
+    result: dict[str, dict[str, Any]] = {}
+    for rung in [f"GRR{i}" for i in range(6)]:
+        result[rung] = {
+            "inherited_semantic_definition": inherited[rung],
+            "B2_operational_admission_criteria": deepcopy(hardening[rung]),
+            "B2_redefines_inherited_meaning": False,
+        }
+    return result
+
+
 def closeout_ladder() -> dict[str, str]:
     return {
         "B2-C0": "accepted source and unchanged-runtime admission",
@@ -559,6 +711,20 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
         "GRR0_through_GRR5_frozen": list(grr)
         == ["GRR0", "GRR1", "GRR2", "GRR3", "GRR4", "GRR5"],
         "GRR_meanings_not_redefined": payload["GRR_ladder"]["redefined_by_B2"] is False,
+        "rung_contracts_separate_meaning_from_hardening": all(
+            row["inherited_semantic_definition"] == grr[rung]
+            and row["B2_redefines_inherited_meaning"] is False
+            and set(row["B2_operational_admission_criteria"])
+            == {
+                "required_predecessor_rung",
+                "required_assumptions",
+                "required_validity_controls",
+                "optional_hardening_controls",
+                "allowed_positive_wording",
+                "blocked_relabels",
+            }
+            for rung, row in payload["GRR_rung_contracts"].items()
+        ),
         "B2_C0_through_B2_C6_frozen": list(closeout) == [f"B2-C{i}" for i in range(7)],
         "ladders_separate": payload["GRR_ladder"]["rungs"]
         != payload["B2_closeout_ladder"],
@@ -585,13 +751,55 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
         ]["total"]
         == payload["search_envelope"]["maximum_discovery_rows"]
         == 9648,
+        "search_allocation_stratified_and_nonmigrating": sum(
+            row["allocated_attempts"]
+            for row in payload["search_envelope"]["stratified_allocation"]
+        )
+        == 9648
+        and payload["search_envelope"][
+            "budget_migration_between_strata_after_outcome_allowed"
+        ]
+        is False,
+        "primary_grid_has_no_success_based_early_stop": payload["search_envelope"][
+            "early_stopping_after_confirmed_witness_allowed"
+        ]
+        is False,
+        "discovery_excludes_future_gate_scores": not set(
+            payload["search_envelope"]["discovery_feature_whitelist"]
+        ).intersection(
+            payload["search_envelope"]["future_gate_adjudication_feature_blacklist"]
+        ),
+        "attempt_ledger_separates_budget_from_resolution": payload[
+            "search_attempt_ledger_schema"
+        ]["every_attempt_serialized"]
+        and payload["search_attempt_ledger_schema"][
+            "budget_consumed_true_implies_resolved"
+        ]
+        is False,
         "primary_lane_fixed_topology_event_free": payload["primary_lane"][
             "fixed_topology"
         ]
         and payload["primary_lane"]["event_free"],
+        "primary_lane_cleanliness_covers_full_ancestry": payload["primary_lane"][
+            "cleanliness_interval"
+        ][0]
+        == "accepted_source_branch"
+        and payload["primary_lane"]["cleanliness_interval"][-1]
+        == "required_control_windows",
+        "native_formation_requires_matched_sham": payload["formation_schema"][
+            "matched_sham_required"
+        ]
+        and payload["formation_schema"][
+            "original_source_snapshot_is_not_automatic_sham"
+        ],
         "same_configuration_separate_from_parameter_tangent": payload[
             "branch_relation_schema"
         ]["parameter_continuation_tangent_recorded_separately"],
+        "branch_relocation_requires_sufficient_manifold_coverage": payload[
+            "branch_relation_schema"
+        ]["failed_bounded_search_implies_no_branch"]
+        is False
+        and payload["branch_relation_schema"]["minimum_resolved_seed_fraction"] == 0.95,
         "carrier_set_finite": carrier_ids
         == ["C_ZERO_SUM_V1", "W_EDGE_CONDUCTANCE_OBSERVATION_V1", "JOINT_C_W_BLOCK_V1"],
         "no_open_ended_other_carrier": len(carrier_ids) == 3
@@ -600,6 +808,32 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
             "independent_causal_coordinate"
         ]
         is False,
+        "carrier_eligibility_and_equivalence_frozen": all(
+            "causal_eligibility_class" in row
+            and "carrier_equivalence_class_id" in row
+            and "primary_carrier_attribution_rule" in row
+            and "inherited_GRR_effect_requirement" in row
+            for row in payload["carrier_schema"]
+        )
+        and payload["carrier_equivalence_schema"][
+            "same_equivalence_class_counts_as_independent_replication"
+        ]
+        is False,
+        "slow_mode_and_formation_occupancy_split_frozen": set(
+            payload["slow_mode_schema"]["classes"]
+        )
+        == {
+            "positive_decaying",
+            "negative_oscillatory_decaying",
+            "complex_decaying_pair",
+            "marginal",
+            "unstable",
+            "deadbeat",
+            "defective_or_ill_conditioned",
+            "nonnormal_transient",
+        }
+        and payload["slow_mode_schema"]["GRR3_requires"][-1]
+        == "formation_specific_excess_occupancy_above_calibrated_floor",
         "temporal_operator_is_admitted_complete_step_C": payload[
             "temporal_operator_schema"
         ]["domain"].startswith("fixed_total_zero_sum_C"),
@@ -628,11 +862,21 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
         "read_before_rewrite_required": payload["probe_schema"][
             "read_before_rewrite_required"
         ],
+        "synthetic_internal_probe_cannot_open_native_GRR4": payload["probe_schema"][
+            "probe_provenance_classes"
+        ]["synthetic_internal_probe"]
+        == "diagnostic_only_not_native_GRR4"
+        and payload["probe_schema"]["probe_classes"][1]["native_full_step_allowed"]
+        is False,
+        "oriented_GRR4_interaction_precedes_norm_reduction": payload["probe_schema"][
+            "GRR4_effect_statistic"
+        ]["orientation_must_be_tested_before_norm_reduction"],
         "reduced_frozen_W_is_diagnostic": "reduced_frozen_W_diagnostic"
         in payload["probe_schema"]["lanes"],
         "control_statuses_closed": set(payload["control_statuses"])
         == {
             "passed",
+            "failed",
             "failed_closed",
             "failed_open",
             "not_run",
@@ -641,10 +885,16 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
         },
         "bypass_does_not_silently_strengthen_GRR5": "specific_mediation_claim_only"
         in payload["control_applicability_schema"]["all_carriers"]["bypass"],
+        "control_expected_effects_and_truth_table_frozen": set(
+            payload["control_expected_effects"]
+        )
+        == {"reset", "swap", "bypass"}
+        and payload["control_truth_table"]["null_false_or_missing_alias_allowed"]
+        is False,
         "persistence_classes_frozen": len(payload["persistence_classes"]) == 5,
         "external_maintenance_separate": payload["persistence_classes"][-1]
         == "externally_maintained_difference",
-        "result_statuses_closed": len(payload["result_statuses"]) == 9,
+        "result_statuses_closed": len(payload["result_statuses"]) == 11,
         "witness_and_robustness_separate": payload["validity_and_robustness_schema"][
             "robustness_failure_invalidates_clean_witness"
         ]
@@ -658,6 +908,16 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
         "thresholds_predeclared": payload["threshold_schema"][
             "declared_before_positive_search"
         ],
+        "I3_calibration_recipes_frozen_with_maxima": len(
+            payload["threshold_schema"]["calibration_recipes"]
+        )
+        == 4
+        and all(
+            row["maximum_permitted_threshold"] > 0
+            and row["rounding_rule"] == "round_up_to_12_decimal_places"
+            for row in payload["threshold_schema"]["calibration_recipes"]
+        )
+        and payload["threshold_schema"]["I3_may_change_recipe_after_results"] is False,
         "row_threshold_artifact_fields_explicit": all(
             name in fields
             for name in [
@@ -676,6 +936,14 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
             "snapshot_load_replay",
             "duplicate_replay",
             "fresh_process_replay",
+        ],
+        "duplicate_classes_frozen": payload["duplicate_policy"]["classes"]
+        == [
+            "not_duplicate",
+            "state_duplicate",
+            "history_distinct_same_state",
+            "symmetry_duplicate",
+            "carrier_equivalent_duplicate",
         ],
         "artifact_roles_closed": len(
             payload["artifact_admissibility_schema"]["allowed_artifact_roles"]
@@ -715,6 +983,27 @@ def build_payload(input_revision: str) -> dict[str, Any]:
     ]["source_total_oriented_edge_count"]
     if oriented_edge_count != expected_oriented_edge_count:
         raise ValueError("I2 search-envelope oriented-edge count does not match I1")
+    source_strata: dict[str, dict[str, int]] = {}
+    for row in i1_payload["B1_branch_crosswalk"]["rows"]:
+        fixture_id = row["fixture_id"]
+        stratum = source_strata.setdefault(
+            fixture_id, {"branch_count": 0, "oriented_edge_count": 0}
+        )
+        stratum["branch_count"] += 1
+        stratum["oriented_edge_count"] += 2 * len(row["edge_order"])
+    configured_strata = {
+        row["stratum_id"].split("_", 1)[0]: {
+            "branch_count": row["branch_count"],
+            "oriented_edge_count": row["oriented_edge_count"],
+        }
+        for row in contract["search_envelope"]["stratified_allocation"]
+    }
+    if source_strata != configured_strata:
+        raise ValueError("I2 stratified search allocation does not match I1 branches")
+    if contract["search_envelope"]["carrier_adjudication_slots"] != contract[
+        "search_envelope"
+    ]["maximum_discovery_rows"] * len(contract["carrier_definitions"]):
+        raise ValueError("I2 carrier adjudication-slot arithmetic mismatch")
     carrier_schema = deepcopy(contract["carrier_definitions"])
     for row in carrier_schema:
         row["driver_carrier_overlap_effect"] = row.pop("direct_C_driver_overlap_effect")
@@ -724,6 +1013,8 @@ def build_payload(input_revision: str) -> dict[str, Any]:
         "status": "passed",
         "acceptance_state": "awaiting_scientific_review",
         "schema_instantiation_only": True,
+        "contract_schema_version": contract["schema_version"],
+        "supersession": deepcopy(contract["supersession"]),
         "source_contract": {
             "I1_acceptance_anchor_path": I1_ANCHOR_RELATIVE,
             "I1_acceptance_anchor_sha256": sha256_file(REPO_ROOT / I1_ANCHOR_RELATIVE),
@@ -755,12 +1046,16 @@ def build_payload(input_revision: str) -> dict[str, Any]:
             "fields": field_schema(),
         },
         "GRR_ladder": grr_ladder(i1_payload),
+        "GRR_rung_contracts": rung_contracts(i1_payload, contract),
         "B2_closeout_ladder": closeout_ladder(),
         "provenance_schema": deepcopy(contract["provenance_classes"]),
         "primary_lane": deepcopy(contract["primary_lane"]),
+        "formation_schema": deepcopy(contract["formation_contract"]),
         "search_envelope": deepcopy(contract["search_envelope"]),
         "threshold_schema": deepcopy(contract["thresholds"]),
         "carrier_schema": carrier_schema,
+        "carrier_equivalence_schema": deepcopy(contract["carrier_equivalence"]),
+        "slow_mode_schema": deepcopy(contract["slow_mode_taxonomy"]),
         "carrier_lineage_schema": {
             "required_phases": [
                 "runtime_written",
@@ -780,6 +1075,7 @@ def build_payload(input_revision: str) -> dict[str, Any]:
         "control_statuses": deepcopy(contract["control_statuses"]),
         "control_status_meanings": {
             "passed": "required control executed and its acceptance condition passed",
+            "failed": "required positive-row control executed and its expected-effect condition failed",
             "failed_closed": "false-positive condition triggered and the dependent claim was correctly rejected",
             "failed_open": "blocker triggered but the dependent claim remained admitted; candidate invalid",
             "not_run": "required control absent; dependent rung blocked",
@@ -787,6 +1083,8 @@ def build_payload(input_revision: str) -> dict[str, Any]:
             "not_applicable_with_reason": "outside frozen control scope with reason and affected-rung record",
         },
         "control_applicability_schema": deepcopy(contract["control_applicability"]),
+        "control_expected_effects": deepcopy(contract["control_expected_effects"]),
+        "control_truth_table": deepcopy(contract["control_truth_table"]),
         "persistence_classes": deepcopy(contract["persistence_classes"]),
         "persistence_qualification": {
             "passive_retention": "eligible_for_GRR2_or_stronger",
@@ -796,6 +1094,8 @@ def build_payload(input_revision: str) -> dict[str, Any]:
             "externally_maintained_difference": "blocks_post_input_GRR2_or_stronger",
         },
         "result_statuses": deepcopy(contract["result_statuses"]),
+        "search_attempt_ledger_schema": deepcopy(contract["search_attempt_ledger"]),
+        "duplicate_policy": deepcopy(contract["duplicate_policy"]),
         "validity_and_robustness_schema": {
             "witness_validity_gates": [
                 "artifact_admissibility",
@@ -841,17 +1141,12 @@ def build_payload(input_revision: str) -> dict[str, Any]:
             "missing_artifact_blocks_dependent_rung": True,
             "derived_report_only_blocks_positive_support": True,
         },
-        "demotion_precedence": [
-            "invalid_candidate",
-            "required_assumption_failed",
-            "numerical_failure",
-            "required_control_not_identifiable",
-            "outside_envelope",
-            "duplicate_candidate",
-            "search_unresolved",
-            "bounded_negative",
-            "positive_witness",
-        ],
+        "demotion_precedence": deepcopy(contract["demotion_precedence"]),
+        "demotion_recording_rule": {
+            "exactly_one_primary_status_required": True,
+            "all_other_applicable_reasons_retained_as_secondary": True,
+            "primary_precedence_source": "config.demotion_precedence",
+        },
         "empty_path_semantics": {
             "zero_I4_runtime_reached_candidates": "I5_to_I7_positive_lanes_not_applicable_then_bounded_closeout",
             "zero_I5_GRR3_rows": "I6_diagnostics_may_run_but_GRR4_cannot_open",
@@ -896,6 +1191,7 @@ def render_report(artifact: dict[str, Any]) -> str:
         f"candidate_required_field_count = {payload['candidate_row_schema']['required_field_count']}",
         f"carrier_definition_count = {len(payload['carrier_schema'])}",
         f"active_null_count = {len(payload['active_null_schema'])}",
+        f"supersedes_result_revision = {payload['supersession']['supersedes_result_revision']}",
         "B2_positive_evidence_opened = false",
         "GRR_rung_assigned = false",
         "B2_closeout_ceiling = B2-C1-ready",
@@ -907,17 +1203,23 @@ def render_report(artifact: dict[str, Any]) -> str:
         "",
         "The primary lane is fixed-topology, event-free, same-stratum unchanged GRC9V3. All 48 accepted B1 branches remain in the deterministic search envelope without branch ranking or symmetry reduction.",
         "",
-        "A directly authored carrier component cannot earn native-write or retention credit. One carrier lineage must connect runtime formation, persistence, matched-probe mediation, and controls; arrows cannot be composed across rows or lanes.",
+        "Native formation is a carrier-projected positive-versus-matched-sham contrast. The sham has the same source branch, native-step timing, evaluation configuration, and causal administrative/RNG state. A directly authored carrier component cannot earn native-write or retention credit. The fixed-topology, event-free, no-load-bearing-constraint requirement covers the complete path from source branch through preparation, persistence, probe, and controls.",
+        "",
+        "The 9,648-row deterministic primary grid is allocated before outcomes across F1, F2, and F3 as 1,936, 1,936, and 5,776 attempts. Budget cannot migrate after outcomes, success cannot stop the primary grid early, every attempt remains in the ledger, and consumed budget is reported separately from resolved coverage.",
         "",
         "## Retention And Mediation",
         "",
-        "Slow-cluster evidence is defined only on the admitted complete-step `C` causal operator with a fixed-reference projector. `W` and joint `C-W` carriers participate through preregistered observation/lift maps.",
+        "Slow-cluster evidence is defined only on the admitted complete-step `C` causal operator with a fixed-reference projector. GRR3 requires an eligible slow cluster, candidate occupancy, and formation-specific excess occupancy over sham/null. Positive, negative oscillatory, complex-plane, marginal, unstable, deadbeat, defective, and nonnormal cases have distinct frozen classifications.",
         "",
-        "GRR4 requires carrier-by-probe difference-in-differences, a zero-probe baseline, complete non-carrier state matching, positive carrier separation, and proof that the retained carrier is read before the probe rewrites it. The zero-probe control is not the stronger core Read-Back passive-null condition.",
+        "`C`, `W`, and joint `C-W` are finite preregistered representations with explicit causal eligibility, nesting, overlap, and primary-attribution rules. Equivalent or symmetry-related representations do not create independent witnesses. `W` remains a stage-local load-bearing observation/lift rather than an independently invented complete-step coordinate.",
+        "",
+        "GRR4 requires a signed, oriented carrier-by-probe difference-in-differences vector before norm reduction, a zero-probe baseline, complete non-carrier state matching, positive carrier separation, and proof that the retained carrier is read before the probe rewrites it. Direct internal `C` or old-`J` probes are diagnostic-only; only native-exposed or runtime-realized upstream probes can open native GRR4. The zero-probe control is not the stronger core Read-Back passive-null condition.",
         "",
         "## Controls And Claims",
         "",
-        "Artifact, snapshot/load, duplicate, and fresh-process replay are all required. Reset and swap retain their inherited GRR5 role where structurally identifiable. Bypass is required only for a specific mediation claim with a structurally neutralizable mediator, so B2 does not silently redefine GRR5.",
+        "Artifact, snapshot/load, duplicate, and fresh-process replay are all required. Reset targets the carrier contrast/interaction, swap asks whether the interaction follows the carrier, and bypass targets only the claimed mediator-dependent interaction. Their truth table distinguishes pass, fail-closed, fail-open, not-run, not-identifiable, and scoped not-applicable states. These B2 controls harden admission without redefining inherited GRR5.",
+        "",
+        "I3 must instantiate four preregistered calibration recipes without changing their formulas. A missing null population or a value above its frozen maximum blocks I4 and requires a revised, reaccepted I2.",
         "",
         "Iteration 2 freezes protocol only. It assigns no GRR rung, opens no candidate evidence, selects no extension, and leaves core Read-Back, write-back, loop, memory, learning, identity, and agency blocked.",
         "",
@@ -941,7 +1243,7 @@ def execute(output_root: Path, report_root: Path) -> dict[str, Any]:
     payload["generating_script_sha256"] = sha256_file(Path(__file__))
     payload["config_path"] = CONFIG_RELATIVE
     payload["config_sha256"] = sha256_file(REPO_ROOT / CONFIG_RELATIVE)
-    artifact = envelope(payload, "b2_i2_constructibility_schema_v1", COMMAND)
+    artifact = envelope(payload, "b2_i2_constructibility_schema_v2", COMMAND)
 
     artifact_path = output_root / "b2_i2_constructibility_schema.json"
     report_path = report_root / "b2_i2_constructibility_schema.md"
@@ -982,6 +1284,7 @@ def execute(output_root: Path, report_root: Path) -> dict[str, Any]:
                 repo_relative(report_path): sha256_file(report_path),
             },
             "output_payload_sha256": artifact["payload_sha256"],
+            "supersession": deepcopy(payload["supersession"]),
             "status": "awaiting_scientific_review"
             if payload["status"] == "passed"
             else "blocked",

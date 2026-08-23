@@ -1,10 +1,69 @@
 {
-  "schema_version": "b2_i2_constructibility_schema_contract_v1",
+  "schema_version": "b2_i2_constructibility_schema_contract_v2",
   "source_gate": {
     "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i1_acceptance_anchor.json",
     "required_acceptance_status": "accepted",
     "required_closeout_rung": "B2-C0",
     "required_ready_for_iteration_2": true
+  },
+  "supersession": {
+    "supersedes_result_revision": "e7506641043f699858971e0609536b908b199a81",
+    "supersedes_artifact_payload_sha256": "5b21d2d4feb2dc10ecfb943b8dbbebc31785f5aa4bffefe34eb84f4f0c89fed1",
+    "supersedes_receipt_payload_sha256": "e2856763213bff2d20debef38877992f88c153a8efdeace55c8db46a7121e057",
+    "prior_acceptance_state": "awaiting_scientific_review",
+    "prior_acceptance_anchor_created": false,
+    "supersession_reason": "constitutional_review_identified_pre_positive_machine_contract_gaps"
+  },
+  "rung_admission_hardening": {
+    "rule": "B2_admission_controls_may_narrow_admission_but_do_not_redefine_inherited_GRR_meaning",
+    "GRR0": {
+      "required_predecessor_rung": "none",
+      "required_assumptions": [],
+      "required_validity_controls": ["artifact_admissibility", "provenance_classification"],
+      "optional_hardening_controls": [],
+      "allowed_positive_wording": "no_attributable_conductance_or_joint_carrier",
+      "blocked_relabels": ["global_impossibility", "extension_necessity"]
+    },
+    "GRR1": {
+      "required_predecessor_rung": "none",
+      "required_assumptions": ["matched_sham_identifiable", "full_path_clean_primary_lane"],
+      "required_validity_controls": ["native_formation_contrast", "driver_carrier_separation", "inherited_conductance_or_joint_state_effect"],
+      "optional_hardening_controls": ["formation_amplitude_shape"],
+      "allowed_positive_wording": "native_runtime_formation_or_write_candidate",
+      "blocked_relabels": ["memory", "retention", "read_back"]
+    },
+    "GRR2": {
+      "required_predecessor_rung": "GRR1",
+      "required_assumptions": ["forming_intervention_exhausted", "same_carrier_lineage"],
+      "required_validity_controls": ["matched_sham_persistence", "driver_absence"],
+      "optional_hardening_controls": ["wider_horizon_persistence"],
+      "allowed_positive_wording": "post_formation_carrier_persistence_candidate",
+      "blocked_relabels": ["memory", "learning", "slow_cluster"]
+    },
+    "GRR3": {
+      "required_predecessor_rung": "GRR2",
+      "required_assumptions": ["admitted_temporal_operator", "branch_relation_resolved"],
+      "required_validity_controls": ["slow_cluster_exists", "candidate_occupies_cluster", "formation_specific_excess_occupancy"],
+      "optional_hardening_controls": ["basis_covariance", "symmetry_covariance", "nonnormal_transient_characterization"],
+      "allowed_positive_wording": "isolated_slow_cluster_retention_candidate",
+      "blocked_relabels": ["memory", "learning", "asymptotic_stability_from_finite_horizon_gain"]
+    },
+    "GRR4": {
+      "required_predecessor_rung": "GRR3",
+      "required_assumptions": ["native_or_runtime_realized_probe", "full_noncarrier_match", "read_before_rewrite"],
+      "required_validity_controls": ["oriented_difference_in_differences", "zero_probe_baseline", "positive_interaction_margin"],
+      "optional_hardening_controls": ["amplitude_linearity", "direction_consistency"],
+      "allowed_positive_wording": "matched_later_probe_depends_on_candidate_carrier",
+      "blocked_relabels": ["core_ReadBack", "closed_loop", "agency"]
+    },
+    "GRR5": {
+      "required_predecessor_rung": "GRR4",
+      "required_assumptions": ["same_carrier_lineage_across_all_phases"],
+      "required_validity_controls": ["reset", "swap", "all_required_replay", "applicable_bypass"],
+      "optional_hardening_controls": ["additional_branch_families", "wider_parameter_neighborhood"],
+      "allowed_positive_wording": "controlled_retention_mediation_candidate",
+      "blocked_relabels": ["core_ReadBack", "write_back", "closed_loop", "memory", "learning", "agency"]
+    }
   },
   "provenance_classes": {
     "evidence_classes": {
@@ -31,7 +90,43 @@
     "same_causal_stratum_required_for_derivative_or_projector_evidence": true,
     "load_bearing_clipping_allowed": false,
     "load_bearing_budget_projection_allowed": false,
+    "cleanliness_interval": [
+      "accepted_source_branch",
+      "preparation_history",
+      "post_driver_k0",
+      "persistence_windows",
+      "probe_window",
+      "required_control_windows"
+    ],
+    "all_interval_segments_must_remain_fixed_topology": true,
+    "all_interval_segments_must_remain_event_free": true,
+    "all_interval_segments_must_avoid_load_bearing_clipping_or_projection": true,
     "eventful_history_role": "separate_nonupgrading_eventful_history_persistence"
+  },
+  "formation_contract": {
+    "contrast": "P_carrier(X_driver_k0_minus_X_matched_sham_k0)",
+    "matched_sham_required": true,
+    "matched_fields": [
+      "accepted_source_branch_id",
+      "native_step_count_and_timing",
+      "evaluation_parameter_vector_at_k0",
+      "rng_state_where_causal",
+      "administrative_phase_where_causal",
+      "topology_and_port_orientation"
+    ],
+    "positive_required_conditions": [
+      "forming_driver_absent_at_k0",
+      "driver_authored_carrier_component_excluded",
+      "runtime_generated_carrier_component_above_calibrated_formation_floor",
+      "full_path_cleanliness_passed"
+    ],
+    "closed_statuses": [
+      "native_write_supported",
+      "runtime_reached_without_native_write",
+      "initial_condition_only",
+      "formation_not_identifiable"
+    ],
+    "original_source_snapshot_is_not_automatic_sham": true
   },
   "search_envelope": {
     "source_branch_rule": "all_48_accepted_B1_branches_without_ranking_or_symmetry_reduction",
@@ -90,8 +185,68 @@
     "maximum_discovery_native_steps": 50000,
     "maximum_fresh_process_confirmations": 9600,
     "search_algorithm": "deterministic_lexicographic_exhaustive_grid",
-    "stopping_rule": "complete_grid_or_budget_exhaustion_with_all_unexecuted_rows_search_unresolved",
-    "deduplication_rule": "same_runtime_state_digest_same_lineage_same_provenance_is_duplicate_but_alias_rows_remain_accounted",
+    "stopping_rule": "complete_entire_primary_grid_without_success_based_early_stopping",
+    "early_stopping_after_confirmed_witness_allowed": false,
+    "stratified_allocation": [
+      {
+        "stratum_id": "F1_all_branches_all_preparations",
+        "branch_count": 16,
+        "oriented_edge_count": 32,
+        "spontaneous_attempts": 16,
+        "base_pulse_attempts": 384,
+        "parameter_history_attempts": 1536,
+        "allocated_attempts": 1936
+      },
+      {
+        "stratum_id": "F2_all_branches_all_preparations",
+        "branch_count": 16,
+        "oriented_edge_count": 32,
+        "spontaneous_attempts": 16,
+        "base_pulse_attempts": 384,
+        "parameter_history_attempts": 1536,
+        "allocated_attempts": 1936
+      },
+      {
+        "stratum_id": "F3_all_branches_all_preparations",
+        "branch_count": 16,
+        "oriented_edge_count": 96,
+        "spontaneous_attempts": 16,
+        "base_pulse_attempts": 1152,
+        "parameter_history_attempts": 4608,
+        "allocated_attempts": 5776
+      }
+    ],
+    "stratum_attempt_total": 9648,
+    "carrier_adjudication_slots": 28944,
+    "budget_migration_between_strata_after_outcome_allowed": false,
+    "unused_budget_rule": "record_unconsumed_in_originating_stratum_without_reallocation",
+    "discovery_feature_whitelist": [
+      "runtime_reachability",
+      "state_validity",
+      "formation_contrast_norm",
+      "finite_horizon_persistence_magnitude"
+    ],
+    "future_gate_adjudication_feature_blacklist": [
+      "slow_cluster_isolation_margin",
+      "formation_specific_occupancy_excess",
+      "GRR4_oriented_interaction_margin",
+      "reset_swap_or_bypass_outcome",
+      "final_GRR_classification"
+    ],
+    "complete_attempt_ledger_required": true,
+    "budget_consumed_is_not_resolved_coverage": true,
+    "resolved_coverage_fields": [
+      "allocated_attempts",
+      "attempted_count",
+      "budget_consumed_fraction",
+      "resolved_count",
+      "resolved_fraction",
+      "positive_count",
+      "bounded_negative_count",
+      "numerical_failure_count",
+      "unresolved_count"
+    ],
+    "deduplication_rule": "classify_state_history_symmetry_and_carrier_equivalent_duplicates_separately_and_retain_all_attempt_rows",
     "symmetry_rule": "execute_all_48_branches_and_use_symmetry_orbits_for_characterization_only",
     "discovery_confirmation_split": "discover_then_freeze_history_then_fresh_process_reconstruct_before_I4_acceptance"
   },
@@ -118,6 +273,58 @@
     "persistence_ratio_required_horizons": [8, 16, 32],
     "probe_amplitude_fraction_of_total_C": [0.0001, 0.001, 0.01],
     "probe_parameter_relative_amplitudes": [-0.1, -0.05, -0.01, 0.01, 0.05, 0.1],
+    "calibration_recipes": [
+      {
+        "threshold_id": "formation_contrast_floor_v1",
+        "metric": "carrier_projected_driver_minus_matched_sham_norm_normalized_by_reference_carrier_scale",
+        "null_population": "I3_matched_sham_and_no_forming_action_rows",
+        "error_rule": "maximum_observed_null_plus_10_times_null_numerical_uncertainty",
+        "minimum_absolute_floor": 1e-10,
+        "maximum_permitted_threshold": 0.001,
+        "safety_multiplier": 10.0,
+        "rounding_rule": "round_up_to_12_decimal_places"
+      },
+      {
+        "threshold_id": "formation_specific_occupancy_excess_floor_v1",
+        "metric": "candidate_slow_occupancy_minus_matched_sham_or_amplitude_matched_null_occupancy",
+        "null_population": "I3_ordinary_slow_mode_and_sham_occupancy_rows",
+        "error_rule": "maximum_observed_null_plus_10_times_null_numerical_uncertainty",
+        "minimum_absolute_floor": 0.0001,
+        "maximum_permitted_threshold": 0.05,
+        "safety_multiplier": 10.0,
+        "rounding_rule": "round_up_to_12_decimal_places"
+      },
+      {
+        "threshold_id": "oriented_interaction_component_floor_v1",
+        "metric": "maximum_absolute_component_of_signed_carrier_by_probe_interaction_normalized_by_probe_scale",
+        "null_population": "I3_zero_probe_synthetic_probe_and_noncarrier_mismatch_rows",
+        "error_rule": "maximum_observed_null_plus_10_times_null_numerical_uncertainty",
+        "minimum_absolute_floor": 1e-10,
+        "maximum_permitted_threshold": 0.001,
+        "safety_multiplier": 10.0,
+        "rounding_rule": "round_up_to_12_decimal_places"
+      },
+      {
+        "threshold_id": "control_target_residual_ceiling_v1",
+        "metric": "normalized_claim_target_residual_after_control",
+        "null_population": "I3_structurally_valid_reset_swap_and_bypass_null_rows",
+        "error_rule": "maximum_observed_control_null_plus_10_times_null_numerical_uncertainty",
+        "minimum_absolute_floor": 1e-10,
+        "maximum_permitted_threshold": 0.01,
+        "safety_multiplier": 10.0,
+        "rounding_rule": "round_up_to_12_decimal_places"
+      }
+    ],
+    "calibration_output_required_fields": [
+      "threshold_id",
+      "instantiated_value",
+      "null_population_digest",
+      "recipe_digest",
+      "calibration_status",
+      "declared_before_positive_search"
+    ],
+    "unusable_calibration_rule": "value_above_maximum_or_missing_null_population_blocks_I4_and_requires_revised_reaccepted_I2",
+    "I3_may_change_recipe_after_results": false,
     "zero_margin_witness_allowed": false,
     "threshold_equality_witness_allowed": false,
     "post_hoc_threshold_change_allowed": false
@@ -131,6 +338,12 @@
       "projector": "orthogonal_projection_off_all_ones_conservation_direction",
       "complement": "complete_admitted_state_except_projected_zero_sum_C_component",
       "independent_causal_coordinate": true,
+      "causal_eligibility_class": "independent_complete_step_causal_coordinate",
+      "maximum_native_claim_role": "complete_step_retention_and_mediation_candidate",
+      "inherited_GRR_effect_requirement": "runtime_generated_conductance_or_joint_state_effect_required_for_GRR1_or_stronger",
+      "carrier_equivalence_class_id": "C_CAUSAL_STATE_WITH_W_LIFT_V1",
+      "carrier_nesting_relation": "primary_independent_coordinate",
+      "primary_carrier_attribution_rule": "attribute_to_C_when_joint_or_W_witness_is_entirely_explained_by_the_same_C_mode_lift",
       "temporal_observation_map": "identity_on_admitted_complete_step_C_state",
       "direct_C_driver_overlap_effect": "authored_component_cannot_count_as_native_write_or_GRR3_carrier"
     },
@@ -142,6 +355,12 @@
       "projector": "identity_on_sorted_edge_conductance_observation_block",
       "complement": "complete_admitted_state_except_W_observation_block",
       "independent_causal_coordinate": false,
+      "causal_eligibility_class": "stage_local_load_bearing_surface",
+      "maximum_native_claim_role": "immediate_stage_mediation_or_observation_lift_not_independent_complete_step_retention",
+      "inherited_GRR_effect_requirement": "runtime_generated_W_effect_satisfies_conductance_surface_role_subject_to_stage_and_lineage_gates",
+      "carrier_equivalence_class_id": "C_CAUSAL_STATE_WITH_W_LIFT_V1",
+      "carrier_nesting_relation": "derived_stage_local_lift_of_C",
+      "primary_carrier_attribution_rule": "do_not_count_as_independent_witness_when_same_C_mode_and_declared_lift_explain_W",
       "temporal_observation_map": "D_C_W_lift_of_admitted_complete_step_C_slow_subspace",
       "direct_C_driver_overlap_effect": "eligible_only_for_runtime_generated_W_component_after_driver_exhaustion"
     },
@@ -156,10 +375,52 @@
       "projector": "direct_sum_of_C_ZERO_SUM_V1_and_W_EDGE_CONDUCTANCE_OBSERVATION_V1",
       "complement": "complete_admitted_state_except_joint_C_W_block",
       "independent_causal_coordinate": false,
+      "causal_eligibility_class": "mixed_nested_representation",
+      "maximum_native_claim_role": "claim_ceiling_of_load_bearing_primary_component",
+      "inherited_GRR_effect_requirement": "runtime_generated_joint_C_W_effect_must_include_load_bearing_W_or_conductance_component",
+      "carrier_equivalence_class_id": "C_CAUSAL_STATE_WITH_W_LIFT_V1",
+      "carrier_nesting_relation": "contains_C_primary_coordinate_and_its_W_observation_lift",
+      "primary_carrier_attribution_rule": "one_physical_witness_with_broader_representation_not_independent_replication",
       "temporal_observation_map": "C_identity_plus_D_C_W_lift_of_same_admitted_slow_subspace",
       "direct_C_driver_overlap_effect": "authored_C_component_excluded_and_runtime_generated_joint_component_required"
     }
   ],
+  "carrier_equivalence": {
+    "overlap_measure": "squared_canonical_subspace_overlap_under_frozen_block_normalization",
+    "equivalent_overlap_floor": 0.99,
+    "nested_overlap_floor": 0.9,
+    "same_equivalence_class_counts_as_independent_replication": false,
+    "symmetry_orbit_copies_count_as_independent_replication": false,
+    "mixed_representation_claim_ceiling_rule": "minimum_ceiling_of_load_bearing_components",
+    "diagnostic_or_administrative_surface_positive_eligible": false
+  },
+  "slow_mode_taxonomy": {
+    "operator_kind": "discrete_complete_step",
+    "decay_time_formula": "tau_equals_minus_dt_over_log_abs_mu_when_0_less_abs_mu_less_1",
+    "classes": {
+      "positive_decaying": "0_less_mu_less_1",
+      "negative_oscillatory_decaying": "minus_1_less_mu_less_0",
+      "complex_decaying_pair": "complex_conjugate_pair_with_abs_mu_less_1_represented_as_real_invariant_plane",
+      "marginal": "abs_mu_uncertainty_overlaps_1",
+      "unstable": "abs_mu_minus_uncertainty_greater_than_1",
+      "deadbeat": "abs_mu_at_or_below_numerical_zero_floor",
+      "defective_or_ill_conditioned": "eigenspace_condition_exceeds_declared_maximum",
+      "nonnormal_transient": "finite_horizon_amplification_without_asymptotic_slow_cluster_membership"
+    },
+    "GRR3_eligible_classes": [
+      "positive_decaying",
+      "negative_oscillatory_decaying",
+      "complex_decaying_pair"
+    ],
+    "complex_pair_representation": "real_invariant_plane",
+    "marginal_or_unstable_role": "separate_diagnostic_not_retained_decaying_slow_cluster",
+    "nonnormal_gain_is_not_slow_cluster": true,
+    "GRR3_requires": [
+      "slow_cluster_exists",
+      "candidate_displacement_occupies_cluster",
+      "formation_specific_excess_occupancy_above_calibrated_floor"
+    ]
+  },
   "temporal_operator": {
     "temporal_operator_id": "B1_GRV3_ADMITTED_COMPLETE_STEP_C_OPERATOR_V1",
     "domain": "fixed_total_zero_sum_C_tangent_on_admitted_smooth_complete_step_stratum",
@@ -179,9 +440,17 @@
   "branch_relation": {
     "same_configuration_rule": "compare_at_exact_source_topology_port_orientation_and_evaluation_parameter_vector",
     "fixed_configuration_sheet_estimator": "preregistered_local_solution_seed_panel_plus_SVD_tangent_estimate",
-    "local_seed_count_minimum": 8,
+    "local_seed_count_minimum": 16,
     "local_seed_radius_rule": "minimum_of_0.1_times_candidate_displacement_and_positive_stratum_margin_half_width",
+    "continuation_direction_rule": "all_preregistered_SVD_tangent_directions_plus_candidate_displacement_direction_and_fixed_symmetry_orbit_directions",
     "svd_rank_threshold_rule": "maximum_of_10_times_solver_residual_and_10_times_row_numerical_uncertainty",
+    "solver_residual_threshold_rule": "accepted_B1_solved_branch_residual_rule_without_relaxation",
+    "minimum_resolved_seed_fraction": 0.95,
+    "condition_number_maximum": 100000000.0,
+    "boundary_coverage_required": true,
+    "all_preregistered_directions_executed_required": true,
+    "insufficient_coverage_result": "unresolved_branch_relation",
+    "failed_bounded_search_implies_no_branch": false,
     "symmetry_quotient": "declared_graph_automorphism_orbit_from_B1",
     "parameter_continuation_tangent_recorded_separately": true,
     "primary_positive_class": "same_branch_transverse_retention_candidate",
@@ -202,10 +471,18 @@
       "runtime_constructed_matched_pair"
     ],
     "pair_provenance_diagnostic_only": ["synthetic_counterfactual_match"],
+    "probe_provenance_classes": {
+      "native_exposed_probe": "native_GRR4_eligible",
+      "runtime_realized_probe_from_upstream_input": "native_GRR4_eligible_subject_to_full_path_and_matching_gates",
+      "synthetic_internal_probe": "diagnostic_only_not_native_GRR4",
+      "reduced_or_analytical_probe": "diagnostic_only_not_native_GRR4"
+    },
+    "current_unchanged_runtime_native_exposed_probe_status": "not_exposed_by_current_GRC9V3_step_API",
     "probe_classes": [
       {
         "probe_id": "SITE_POTENTIAL_SCALE_PARAMETER_PROBE_V1",
         "kind": "temporary_evaluation_parameter_probe",
+        "provenance_class": "runtime_realized_probe_from_upstream_input",
         "relative_amplitudes_source": "thresholds.probe_parameter_relative_amplitudes",
         "native_full_step_allowed": true,
         "native_immediate_stage_allowed": true,
@@ -218,14 +495,27 @@
       {
         "probe_id": "BUDGET_PRESERVING_C_PAIR_PROBE_V1",
         "kind": "zero_sum_C_probe",
+        "provenance_class": "synthetic_internal_probe",
         "amplitudes_source": "thresholds.probe_amplitude_fraction_of_total_C",
-        "native_full_step_allowed": true,
-        "native_immediate_stage_allowed": true,
+        "native_full_step_allowed": false,
+        "native_immediate_stage_allowed": false,
+        "diagnostic_sensitivity_allowed": true,
         "clean_C_sector_mediation_allowed": false,
         "clean_W_sector_mediation_requires_preexisting_W_consumed_before_conductance_reconstruction": true,
         "clean_joint_C_W_mediation_allowed": false
       }
     ],
+    "GRR4_effect_statistic": {
+      "definition": "oriented_vector_difference_in_differences_equals_response_carrier_a_probe_minus_response_carrier_a_zero_minus_response_carrier_b_probe_plus_response_carrier_b_zero",
+      "response_basis": "frozen_sorted_oriented_edge_basis_or_preregistered_readout_basis",
+      "orientation_must_be_tested_before_norm_reduction": true,
+      "componentwise_admission_required": true,
+      "uncertainty_rule": "componentwise_maximum_of_replay_pairing_basis_and_finite_precision_errors",
+      "minimum_margin_rule": "strictly_above_I3_oriented_interaction_component_floor",
+      "direction_consistency_rule": "probe_sign_normalized_interaction_vectors_have_cosine_at_least_0.99_for_claimed_consistent_direction",
+      "linearity_wording_rule": "allowed_only_if_weighted_fit_R_squared_at_least_0.99_and_max_relative_fit_residual_at_most_0.05",
+      "linearity_not_required_for_bounded_GRR4": true
+    },
     "lanes": [
       "native_full_step",
       "native_immediate_stage",
@@ -251,6 +541,7 @@
   },
   "control_statuses": [
     "passed",
+    "failed",
     "failed_closed",
     "failed_open",
     "not_run",
@@ -288,6 +579,47 @@
       }
     ]
   },
+  "control_expected_effects": {
+    "reset": {
+      "target_statistic": "carrier_contrast_and_carrier_by_probe_interaction",
+      "expected_direction": "both_removed_or_below_calibrated_control_residual_ceiling",
+      "unrelated_state_required_to_return_to_baseline": false,
+      "failed_effect": "required_control_failed"
+    },
+    "swap": {
+      "target_statistic": "oriented_carrier_by_probe_interaction_under_matched_complement",
+      "expected_direction": "interaction_follows_swapped_carrier_with_direction_and_magnitude_inside_calibrated_uncertainty",
+      "every_state_variable_required_to_follow_swap": false,
+      "failed_effect": "required_control_failed"
+    },
+    "bypass": {
+      "target_statistic": "claimed_mediator_dependent_oriented_interaction",
+      "expected_direction": "interaction_removed_or_attenuated_below_calibrated_control_residual_ceiling",
+      "all_system_dynamics_required_to_cease": false,
+      "failed_effect": "specific_mediation_claim_failed"
+    }
+  },
+  "control_truth_table": {
+    "required_control": {
+      "passed": "dependent_rung_may_proceed",
+      "failed": "dependent_mechanism_or_rung_fails",
+      "failed_closed": "active_null_or_blocker_correctly_rejected_the_claim_and_candidate_rung_is_blocked",
+      "failed_open": "candidate_invalid",
+      "not_identifiable": "dependent_rung_blocked_without_mechanism_falsification",
+      "not_run": "gate_incomplete_and_dependent_rung_blocked",
+      "not_applicable_with_reason": "may_proceed_only_when_frozen_applicability_matrix_marks_not_applicable"
+    },
+    "optional_hardening_control": {
+      "passed": "robustness_may_strengthen",
+      "failed": "robustness_or_scope_narrows_without_automatic_rung_demotion",
+      "failed_closed": "optional_false_positive_path_correctly_rejected_without_automatic_rung_demotion",
+      "failed_open": "candidate_invalid_if_false_positive_remains_admitted",
+      "not_identifiable": "robustness_scope_narrows",
+      "not_run": "optional_hardening_unresolved",
+      "not_applicable_with_reason": "no_rung_effect"
+    },
+    "null_false_or_missing_alias_allowed": false
+  },
   "persistence_classes": [
     "passive_retention",
     "activity_maintained_retention",
@@ -300,12 +632,68 @@
     "bounded_negative",
     "search_unresolved",
     "numerical_failure",
+    "source_or_provenance_failure",
     "required_assumption_failed",
+    "required_control_failed",
     "required_control_not_identifiable",
     "invalid_candidate",
     "duplicate_candidate",
     "outside_envelope"
   ],
+  "demotion_precedence": [
+    "invalid_candidate",
+    "outside_envelope",
+    "source_or_provenance_failure",
+    "required_assumption_failed",
+    "numerical_failure",
+    "required_control_failed",
+    "required_control_not_identifiable",
+    "duplicate_candidate",
+    "search_unresolved",
+    "bounded_negative",
+    "positive_witness"
+  ],
+  "search_attempt_ledger": {
+    "every_attempt_serialized": true,
+    "required_fields": [
+      "attempt_id",
+      "search_stratum_id",
+      "source_branch_id",
+      "branch_family_id",
+      "carrier_definition_id",
+      "preparation_family",
+      "preparation_parameter_vector",
+      "preparation_history",
+      "seed_or_rng_state_digest",
+      "attempted",
+      "budget_consumed",
+      "solver_or_runtime_status",
+      "resolved_status",
+      "candidate_status",
+      "primary_demotion_reason",
+      "secondary_demotion_reasons",
+      "rejection_reason",
+      "duplicate_class",
+      "artifact_manifest"
+    ],
+    "budget_consumed_true_implies_resolved": false,
+    "unexecuted_attempt_status": "search_unresolved",
+    "numerical_failure_is_resolved_scientific_negative": false
+  },
+  "duplicate_policy": {
+    "classes": [
+      "not_duplicate",
+      "state_duplicate",
+      "history_distinct_same_state",
+      "symmetry_duplicate",
+      "carrier_equivalent_duplicate"
+    ],
+    "state_identity_basis": "complete_admitted_causal_k0_state_digest",
+    "history_distinct_same_state_role": "formation_robustness_only_not_independent_retained_state_witness",
+    "symmetry_duplicate_role": "one_witness_orbit_with_characterization_aliases",
+    "carrier_equivalent_duplicate_role": "one_physical_witness_with_multiple_representations",
+    "duplicate_attempt_rows_retained": true
+  },
   "artifact_roles": [
     "source_branch_snapshot",
     "preparation_trace",

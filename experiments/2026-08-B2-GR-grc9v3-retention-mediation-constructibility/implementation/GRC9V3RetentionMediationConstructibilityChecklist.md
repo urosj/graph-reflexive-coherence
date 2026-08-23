@@ -116,6 +116,26 @@ Interpretation:
 - [x] Freeze artifact path/digest admissibility and `derived_report_only` blockers.
 - [x] Freeze demotion precedence and extension-selection constraints.
 - [x] Assign no positive GRR rung; mark only `B2-C1-ready` before human review.
+- [x] Freeze a rung-contract table separating inherited meaning from B2 admission hardening.
+- [x] Freeze native formation/write as a carrier-projected positive-versus-sham contrast.
+- [x] Freeze matched sham histories with equal beats, phase, RNG, and evaluation configuration.
+- [x] Apply fixed-topology, event-free, no-load-bearing-constraint rules across the complete ancestry path.
+- [x] Freeze nonmigrating search allocation by branch, preparation, history, and carrier strata.
+- [x] Freeze discovery-feature whitelist and future-gate adjudication-feature blacklist.
+- [x] Separate slow-cluster existence, candidate occupancy, and formation-specific excess occupancy.
+- [x] Freeze positive, negative, complex, marginal, unstable, deadbeat, defective, and nonnormal mode handling.
+- [x] Freeze carrier equivalence, nesting, overlap, primary attribution, and symmetry-orbit accounting.
+- [x] Freeze carrier causal-eligibility classes and per-class claim ceilings.
+- [x] Freeze branch-manifold coverage sufficiency before relocation may be rejected.
+- [x] Freeze native, runtime-realized, synthetic, and reduced probe provenance classes.
+- [x] Freeze signed/oriented GRR4 interaction vector, uncertainty, margin, direction, and linearity rules.
+- [x] Freeze target statistic and expected effect for reset, swap, and bypass controls.
+- [x] Freeze required/optional control truth tables without null/false/missing aliases.
+- [x] Freeze I3 threshold-calibration recipes, permitted maxima, and unusable-calibration blocker.
+- [x] Freeze complete search-attempt ledger fields and primary/secondary demotion reasons.
+- [x] Separate resolved coverage from consumed budget and numerical-failure count.
+- [x] Freeze no-early-stopping policy for the exhaustive primary grid.
+- [x] Freeze state, history, symmetry, and carrier-equivalence duplicate classes.
 
 Expected artifacts:
 
@@ -126,11 +146,11 @@ outputs/gates/b2_i2_acceptance_anchor.json
 reports/b2_i2_constructibility_schema.md
 ```
 
-### Iteration 2 Result - Awaiting Human Review
+### Iteration 2 Preliminary Result - Superseded Before Human Review
 
 ```text
 status = passed
-acceptance_state = awaiting_scientific_review
+acceptance_state = superseded_before_scientific_review
 input_execution_revision = 25032915cbea55c837fc703dc381db3ab0bf91bb
 checks = 51/51 passed
 failed_checks = []
@@ -146,6 +166,7 @@ GRR_rung_assigned = false
 B2_closeout_rung_assigned = false
 B2_closeout_ceiling = B2-C1-ready
 ready_for_I3 = false_pending_I2_acceptance
+superseded_by = I2_constitutional_hardening_revision
 ```
 
 Interpretation:
@@ -156,7 +177,9 @@ Interpretation:
 - All 48 accepted B1 branches remain in the deterministic 9,648-row maximum discovery envelope without branch ranking or symmetry reduction. The row-count arithmetic is bound to the 160 oriented source edges in the accepted I1 crosswalk.
 - A single carrier lineage must connect runtime formation, persistence, matched-probe mediation, and controls. Directly authored carrier components and cross-lineage rung composition fail closed.
 - The GRR4 zero-probe baseline remains distinct from the stronger core Read-Back passive-null condition, and bypass does not silently strengthen inherited GRR5.
-- Iteration 2 is schema-only. It opens no candidate evidence, assigns no GRR rung, and selects no extension. Human acceptance may assign `B2-C1` and open Iteration 3.
+- This preliminary result opened no candidate evidence, assigned no GRR rung, created no acceptance anchor, and is retained only as a superseded evidence record.
+- The constitutional review identified machine-contract gaps before acceptance. The revised I2 package adds matched-sham formation attribution, full-path cleanliness, stratified nonmigrating search, discovery/adjudication separation, formation-specific slow occupancy, carrier equivalence and causal eligibility, branch-search sufficiency, probe provenance, oriented GRR4 effects, control truth tables, calibration recipes, and explicit ledger/duplicate semantics.
+- Iteration 3 remains blocked until the revised I2 package is executed and accepted.
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 

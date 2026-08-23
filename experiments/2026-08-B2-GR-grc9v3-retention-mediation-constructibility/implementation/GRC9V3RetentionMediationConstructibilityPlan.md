@@ -424,6 +424,233 @@ claim relies on a mediator that can be structurally neutralized; otherwise it
 is hardening or an explicit identifiability boundary. B2 does not silently
 redefine the inherited GRR5 ladder by making every bypass universally mandatory.
 
+### 4.14 Inherited rung meaning versus B2 admission hardening
+
+Every `GRR0-GRR5` rung has two machine-readable layers:
+
+```text
+inherited_semantic_definition
+B2_operational_admission_criteria
+```
+
+The operational record also names the predecessor rung, assumptions, validity
+controls, optional hardening controls, allowed positive wording, and blocked
+relabels. B2 may narrow admission to a rung, but it cannot rewrite the inherited
+meaning. Any deliberately stronger variant must receive a distinct name and may
+not masquerade as historical `GRR5`.
+
+### 4.15 Native formation and matched sham
+
+Runtime reachability does not by itself establish a native write. Every proposed
+formation arrow compares a positive preparation with a matched sham:
+
+```text
+Delta_CARRIER_form = P_CARRIER(X_driver_k0 - X_sham_k0)
+```
+
+The pair starts from the same accepted B1 branch and uses the same number and
+timing of native beats, evaluation configuration at `k=0`, causal RNG state, and
+administrative phase. The sham omits the forming action while retaining its
+matched schedule. Both paths have exhausted the forming driver at `k=0`.
+
+The directly authored carrier component is excluded before the formation
+contrast is tested. A positive native write requires the remaining
+runtime-generated carrier component to exceed the preregistered formation floor.
+Rows are classified separately as:
+
+```text
+native_write_supported
+runtime_reached_without_native_write
+initial_condition_only
+formation_not_identifiable
+```
+
+A row may remain useful at a lower or diagnostic rung without native write, but
+it cannot satisfy the write arrow required by `GRR5`.
+
+### 4.16 Full-path cleanliness
+
+For primary `GRR3-GRR5` evidence, the complete ancestry interval must remain:
+
+```text
+accepted source branch
+-> positive and sham preparation
+-> k=0
+-> persistence horizons
+-> probe
+-> controls and replay
+```
+
+Throughout that interval topology and port orientation remain fixed, no events
+occur, and no load-bearing clipping or budget projection occurs. Same-stratum
+membership is additionally required wherever derivative or projector evidence is
+used. A history that violates this interval is retained as
+`eventful_history_persistence` or `constraint_supported_history`, never promoted
+to the clean primary lane merely because the event or constraint is absent after
+`k=0`.
+
+### 4.17 Discovery/adjudication separation and stratified allocation
+
+Iteration 4 discovery may use only preregistered reachability, state-validity,
+post-driver carrier magnitude, and finite-horizon persistence features. It may
+not inspect slow-cluster isolation, GRR4 carrier-by-probe interaction, GRR5
+control outcomes, or final claim classification.
+
+The deterministic grid is allocated before outcomes by source fixture family,
+preparation family, history length, and carrier adjudication lane. Budget does
+not migrate between strata after outcomes are observed. Every attempted row is
+serialized. Budget consumption and resolved coverage are distinct quantities;
+numerical failure does not resolve a stratum. Early stopping after a witness is
+not allowed in the primary frozen grid.
+
+### 4.18 Formation-specific slow occupancy and mode taxonomy
+
+GRR3 requires three separate facts:
+
+```text
+an admitted slow cluster exists
+the candidate displacement occupies it
+formation creates excess occupancy relative to matched sham/null preparation
+```
+
+The primary occupancy statistic is:
+
+```text
+r_occ = norm(P_slow Delta_X_history) / norm(Delta_X_history)
+```
+
+and the formation-specific statistic is the oriented candidate-minus-sham
+occupancy excess under the same fixed-reference projector. Ordinary branch slow
+modes do not become history-specific carriers merely because an arbitrary
+perturbation projects onto them.
+
+Discrete complete-step modes are classified before use as positive decaying,
+negative oscillatory decaying, complex-pair decaying, unit-circle/marginal,
+unstable, deadbeat, defective/ill-conditioned, or nonnormal finite-horizon
+amplification. Where defined:
+
+```text
+tau(mu) = -dt / log(abs(mu))
+```
+
+`mu = 0` is deadbeat; uncertainty-overlapping `abs(mu) = 1` is marginal rather
+than finite decay; `abs(mu) > 1` is unstable; complex pairs use a real invariant
+plane; defective or ill-conditioned subspaces block membership; and nonnormal
+transient amplification is reported separately from asymptotic slow membership.
+
+### 4.19 Carrier equivalence and causal eligibility
+
+The finite carrier representations are not independent replications by default.
+Every row records carrier equivalence class, nesting, overlap, and primary
+attribution. A joint `C-W` result explained by its `C` component is one witness
+with a broader representation, not a second mechanism. Symmetry copies likewise
+form one witness orbit while remaining separate execution rows.
+
+Each carrier is classified as one of:
+
+```text
+independent_complete_step_causal_coordinate
+stage_local_load_bearing_surface
+derived_causal_observable
+diagnostic_only_surface
+administrative_state
+```
+
+Only an independent complete-step coordinate can carry its own temporal
+eigensystem. A stage-local surface may support a bounded immediate-stage
+mediation claim when it is consumed before reconstruction. A derived observable
+may report participation through a frozen lift but cannot be relabelled as an
+independent retained state. Diagnostic and administrative surfaces cannot support
+positive GRR evidence.
+
+This eligibility registry does not broaden the inherited rung ontology. A
+`C`-sector primary coordinate can support GRR1 or stronger only when the same
+runtime-generated lineage also has the inherited causal conductance or joint
+state effect. A `C` displacement with no such consequence remains a lower-level
+causal-state diagnostic rather than a GRR witness.
+
+### 4.20 Branch-search sufficiency
+
+Failure to locate a nearby same-configuration branch is not enough to reject
+branch relocation. The branch-manifold record freezes search radius,
+continuation directions, solver seeds, symmetry quotient, residual threshold,
+coverage fraction, boundary coverage, and conditioning. Only a search meeting
+all sufficiency gates may set `branch_relocation_rejected = true`; otherwise the
+row is `unresolved_branch_relation`.
+
+### 4.21 Probe provenance and oriented GRR4 statistic
+
+Probe provenance is classified as:
+
+```text
+native_exposed_probe
+runtime_realized_probe_from_upstream_input
+synthetic_internal_probe
+reduced_or_analytical_probe
+```
+
+Only the first two can upgrade native GRR4, and the current unchanged GRC9V3
+profile may legitimately have no `native_exposed_probe`. Direct old-`J`, carrier,
+cache, or hidden-state authorship remains synthetic.
+
+The GRR4 statistic is the signed/oriented vector:
+
+```text
+I_vector = [J(CARRIER_a, p) - J(CARRIER_a, 0)]
+         - [J(CARRIER_b, p) - J(CARRIER_b, 0)]
+```
+
+under the frozen edge orientation and response basis. Componentwise uncertainty
+and direction are tested before any norm is derived. A norm-only difference or
+probe main effect cannot establish mediation. Signed multi-amplitude sweeps must
+meet the frozen directional-consistency rule; linearity is claimed only when a
+separate linear-fit gate passes.
+
+### 4.22 Control expected effects and truth table
+
+Control mechanics and expected effects are both frozen. Reset tests removal of
+the proposed carrier contrast and its attributed interaction, not total future
+state equality. Swap tests whether the attributed response follows the swapped
+carrier under the matched complement. Bypass tests attenuation of the named
+mediator-dependent interaction, not cessation of unrelated dynamics.
+
+For a required control:
+
+```text
+passed -> dependent rung may proceed
+failed -> positive-row control misses its expected effect; mechanism/rung fails
+failed_closed -> active null/blocker correctly rejects the claim; rung is blocked
+failed_open -> candidate claim is invalid
+not_identifiable -> dependent rung blocked; mechanism not falsified
+not_run -> gate incomplete and dependent rung blocked
+not_applicable_with_reason -> may proceed only when frozen applicability permits
+```
+
+For optional hardening, `not_identifiable` narrows robustness or mechanism detail
+without automatically demoting an otherwise valid rung. Missing, `null`, and
+`false` cannot substitute for these statuses.
+
+### 4.23 Threshold calibration and duplicate semantics
+
+I2 freezes threshold calibration recipes before I3 nulls are run. Each recipe
+names metric, null population, error/quantile rule, minimum absolute floor,
+maximum permitted threshold, safety multiplier, and rounding rule. I3 may only
+instantiate those recipes. If a recipe exceeds its permitted maximum or proves
+unusable, I2 must be revisioned and reaccepted before positive search.
+
+Search records distinguish:
+
+```text
+state_duplicate
+history_distinct_same_state
+symmetry_duplicate
+carrier_equivalent_duplicate
+```
+
+Different histories that converge to the same complete causal `k=0` state may
+support formation robustness, but they are not independent retained-state
+witnesses.
+
 ## 5. Frozen Search Envelope
 
 Iteration 2 must freeze, before Iteration 4 discovery:
@@ -439,11 +666,25 @@ search algorithms, seeds, and stopping rules
 candidate deduplication and symmetry quotient
 discovery, frozen-candidate, and confirmation phases
 unresolved-search status policy
+stratified allocation by branch family, preparation family, history length, and carrier lane
+nonmigrating per-stratum attempt and confirmation budgets
+discovery-feature whitelist and future-gate adjudication-feature blacklist
+complete attempt-ledger schema
+budget-consumed versus resolved-coverage accounting
+early-stopping policy
+duplicate-state, duplicate-history, symmetry, and carrier-equivalence policy
 ```
 
 The primary search requires ancestry to an accepted B1 branch through a declared
 branch or history continuation. Arbitrary unrelated topologies are outside the
 initial B2 envelope.
+
+The I2 primary grid is exhaustive within its declared 9,648 preparation
+attempts. Early stopping after a witness is not allowed, and unused budget cannot
+migrate after outcomes are observed. Every valid reached state is adjudicated
+against all three frozen carrier representations, but representation overlap is
+deduplicated through the carrier-equivalence policy rather than counted as
+independent search attempts or replication.
 
 ## 6. Scope And Change Boundary
 
@@ -480,9 +721,19 @@ Every positive or bounded-negative candidate row should record at least:
 candidate_id
 source_iteration
 source_current_inputs
+evidence_provenance_class
+positive_evidence_admissible
+unchanged_runtime_identity_id
+runtime_unchanged
 artifact_manifest
+artifact_digest_algorithm
 artifact_sha256_status
+all_artifact_sha256_match_file_contents
+artifact_paths_equal_manifest_paths
 derived_report_only
+threshold_record_path
+threshold_record_sha256
+row_specific_thresholds_declared_before_use
 accepted_B1_branch_id
 source_B1_branch_id
 candidate_branch_id
@@ -493,7 +744,10 @@ runtime_parameter_vector
 evaluation_runtime_parameter_vector
 preparation_parameter_history
 topology_digest
+fixed_topology
+event_free
 causal_stratum_id
+same_causal_stratum
 runtime_revision
 runtime_config_digest
 seed_or_pairing_rule
@@ -507,6 +761,17 @@ runtime_generated_carrier_component
 formation_attribution_rule
 forming_intervention_status
 forming_intervention_exhausted
+sham_preparation_id
+sham_preparation_trace_digest
+sham_k0_state_digest
+formation_contrast_vector
+formation_contrast_norm
+formation_contrast_margin
+native_write_status
+runtime_generated_carrier_above_formation_floor
+full_path_cleanliness_result
+load_bearing_clipping
+load_bearing_budget_projection
 post_driver_k0_state_digest
 runtime_reached_state
 native_activity_history
@@ -532,6 +797,11 @@ carrier_at_probe_digest
 carrier_alignment_across_phases
 carrier_transport_rule
 rung_lane_id
+carrier_causal_eligibility_class
+carrier_equivalence_class_id
+carrier_nesting_relation
+carrier_overlap_measure
+primary_carrier_attribution
 branch_tangent_rule
 tangent_component_norm
 transverse_component_norm
@@ -542,6 +812,14 @@ fixed_config_tangent_component
 parameter_family_tangent_component
 branch_relation_class
 branch_relocation_rejected
+branch_search_radius
+branch_search_continuation_directions
+branch_search_solver_seed_count
+branch_search_residual_threshold
+branch_search_coverage_fraction
+branch_search_boundary_coverage
+branch_search_condition_number
+branch_search_sufficiency
 temporal_metric
 temporal_operator_id
 temporal_operator_domain
@@ -549,6 +827,11 @@ carrier_is_independent_causal_coordinate
 carrier_observation_map
 carrier_projection_of_slow_cluster
 slow_cluster_rule
+slow_mode_class
+slow_cluster_exists
+slow_cluster_occupancy_ratio
+formation_specific_occupancy_excess
+formation_specific_occupancy_margin
 slow_projector_reference_state
 slow_projector_transport_rule
 projector_overlap_by_horizon
@@ -559,10 +842,16 @@ cluster_uncertainty_bound
 persistence_horizons
 persistence_ratio
 probe_kind
+probe_provenance_class
 probe_amplitude_sweep
 no_probe_baselines
 zero_probe_control
 carrier_by_probe_interaction
+oriented_interaction_vector
+interaction_vector_uncertainty
+interaction_margin
+interaction_direction_consistency
+interaction_linearity_status
 noncarrier_match_provenance
 noncarrier_match_norm
 noncarrier_match_margin
@@ -577,6 +866,7 @@ carrier_at_read_stage
 reset_result
 swap_result
 bypass_result
+control_results
 control_applicability_results
 control_identifiability
 replay_results
@@ -592,14 +882,25 @@ robustness_class
 search_phase
 search_row_id
 search_budget_id
+search_stratum_id
+discovery_feature_record
+adjudication_feature_accessed_during_discovery
+attempt_status
+rejection_reason
+budget_consumed
+resolved_status
 symmetry_orbit_id
 candidate_deduplication_id
+duplicate_class
+carrier_equivalent_witness_id
 fresh_process_confirmation_result
 fresh_process_confirmation_digest
 maximum_GRR_rung
 row_decision
 claim_ceiling
 blocked_relabels
+primary_demotion_reason
+secondary_demotion_reasons
 ```
 
 Thresholds and selection rules must be committed before the corresponding
@@ -647,6 +948,21 @@ synthetic_reset_or_swap_outside_constitutive_manifold_treated_as_native_control
 bypass_implemented_by_skipping_native_runtime_stage
 single_pathological_zero_margin_witness_treated_as_clean_constructibility
 failure_to_generalize_across_branches_relabelled_as_witness_failure
+no_matched_sham_as_native_formation
+ordinary_drift_against_original_branch_as_native_write
+eventful_preparation_as_clean_primary_lane
+search_budget_migrated_after_outcome
+discovery_optimized_on_future_gate_adjudication_score
+slow_cluster_exists_without_formation_specific_excess_occupancy
+overlapping_carrier_representations_as_independent_witnesses
+serialized_diagnostic_surface_as_causal_carrier
+insufficient_branch_manifold_coverage_as_relocation_rejected
+synthetic_internal_probe_as_native_GRR4
+response_norm_difference_without_oriented_interaction
+unrelated_state_residual_as_reset_swap_or_bypass_failure
+control_null_false_or_missing_collapsed_into_status
+budget_consumed_as_resolved_coverage
+distinct_histories_same_state_as_independent_retention_witnesses
 ```
 
 Each null must fail closed and assign no positive rung.
