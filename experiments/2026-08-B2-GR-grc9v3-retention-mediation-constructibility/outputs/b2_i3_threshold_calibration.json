@@ -7,7 +7,7 @@
     "all_calibrations_usable": true,
     "calibration_role": "pre_positive_admission_floor_not_source_current_runtime_measurement",
     "gate_id": "B2-I3-threshold-calibration",
-    "input_execution_revision": "1e623e68a062bbaaccd25f144de9601b15e05e98",
+    "input_execution_revision": "e33f43da6f015e275eb8e53699d50842005c00d3",
     "positive_search_must_also_apply_row_numerical_uncertainty": true,
     "positive_search_opened": false,
     "records": [
@@ -108,6 +108,6 @@
     "source_I2_payload_sha256": "bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28",
     "source_current_evidence_opened": false
   },
-  "payload_sha256": "c71388f43c5e16718aa0405bca5d383343193055363e0d6220592d2d6e7a55fa",
-  "schema_version": "b2_i3_threshold_calibration_v1"
+  "payload_sha256": "5fd452312900680bb0374f02b29e28d33157642818f1a1b9af64280caa9e3324",
+  "schema_version": "b2_i3_threshold_calibration_v2"
 }

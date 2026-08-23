@@ -295,9 +295,9 @@ Interpretation:
 - [x] Add partial authored-carrier, lineage transport, representation-change, and synthetic-probe pressure.
 - [x] Add numerical/projector, full-history cleanliness, duplicate-accounting, search, aggregation, and extension-selection audits.
 - [x] Keep every validator fixture outside B2 positive evidence, search coverage, branch prevalence, and extension triggers.
-- [ ] Execute the hardened package from a clean committed revision.
-- [ ] Verify every atomic, sentinel, compound, and focused boundary case against the shared adjudicator.
-- [ ] Produce the superseding artifact, report, threshold calibration, and receipt.
+- [x] Execute the hardened package from a clean committed revision.
+- [x] Verify every atomic, sentinel, compound, and focused boundary case against the shared adjudicator.
+- [x] Produce the superseding artifact, report, threshold calibration, and receipt.
 - [ ] Obtain human acceptance before assigning `B2-C2` or opening I4.
 
 The hardened I3 package distinguishes validator specificity from permissiveness:
@@ -312,6 +312,52 @@ nearby all-gates-pass sentinel
 compound violation
   -> frozen primary disposition plus retained secondary reasons
 ```
+
+### Iteration 3 Hardened Result - Awaiting Human Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = e33f43da6f015e275eb8e53699d50842005c00d3
+checks = 48/48 passed
+failed_checks = []
+validator_case_count = 162
+atomic_null_count = 52
+pass_through_sentinel_count = 52
+compound_precedence_count = 4
+threshold_boundary_audit_count = 12
+control_truth_table_count = 14
+partial_overlap_audit_count = 3
+lineage_transport_audit_count = 5
+numerical_structural_audit_count = 11
+search_closeout_semantic_audit_count = 9
+failed_closed_row_count = 52
+failed_open_row_count = 0
+artifact_payload_sha256 = 52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4
+threshold_calibration_payload_sha256 = 5fd452312900680bb0374f02b29e28d33157642818f1a1b9af64280caa9e3324
+receipt_payload_sha256 = 36dc10d022799e8e3f88e3bcaa6b42006096c7ee2a12388a405cdf3a0e4f67fe
+adjudicator_schema_version = b2_constructibility_adjudicator_v1
+adjudicator_sha256 = 4ffc3208bfd8caa77e7c6b9486e126014df1fc96e716a5f252384ece65b68e84
+acceptance_anchor_created = false
+B2_positive_evidence_opened = false
+GRR_rung_assigned = false
+B2_closeout_rung_assigned = false
+B2_closeout_ceiling = B2-C2-ready
+ready_for_I4 = false_pending_I3_acceptance
+```
+
+Interpretation:
+
+- Every atomic null differs from the all-gates-pass rule vector at exactly one frozen I2 rule, reaches that target gate, receives its preregistered typed disposition, and records no unexpected blocker.
+- Every frozen rule also has a pass-through sentinel under the same adjudicator. Sentinels prove non-pathological permissiveness but remain fixture-only and cannot count as a candidate, search attempt, witness, or GRR evidence.
+- Alternative mechanisms remain typed instead of being erased: eventful-history persistence, regenerated carrier from retained state, ordinary slow relaxation, branch relocation, conservation/gauge modes, and other bounded interpretations survive while their prohibited stronger relabels fail closed.
+- Compound cases preserve deterministic primary and secondary demotion reasons. Exact threshold equality is nonpositive; just-inside and just-outside held-out twins behave as frozen.
+- Required and optional control states remain distinct. `not_identifiable` blocks a required rung without falsifying the mechanism; `not_run`, `not_applicable_with_reason`, `failed`, `failed_open`, and missing status do not collapse.
+- Partial authorship is subtracted before formation admission. Carrier identity may survive a valid declared transport without becoming byte identity, while reused IDs, silent representation broadening, and invalid transport fail closed.
+- NaN/Inf, dimension/rank/projector inconsistency, zero or uncertainty-straddling margins, and orientation mismatch remain numerical failures rather than scientific negatives.
+- Events or clipping anywhere in preparation remain outside the clean primary lane even if absent by `k=0`. Duplicate histories/states, exhausted-but-unresolved search, and cross-row rung assembly cannot select an extension.
+- I4-I8 must consume the exact shared adjudicator digest above. An adjudicator implementation change requires an I3 rerun; a scientific rule change requires an I2 revision and human reacceptance.
+- I3 remains control evidence only. Human acceptance may assign `B2-C2` and open I4; this result does neither automatically.
 
 ## Iteration 4 - Native Preparation And Reachability Search
 

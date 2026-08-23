@@ -1,4 +1,7 @@
 {
+  "adjudicator_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/b2_adjudicator.py",
+  "adjudicator_schema_version": "b2_constructibility_adjudicator_v1",
+  "adjudicator_sha256": "4ffc3208bfd8caa77e7c6b9486e126014df1fc96e716a5f252384ece65b68e84",
   "blocked_gates": [
     "B2-I4",
     "B2-I5",
@@ -8,17 +11,17 @@
   ],
   "claim_ceiling": "B2-C2-ready_active_nulls_only_no_positive_constructibility_evidence",
   "config_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/configs/b2_i3_active_null_contract.json",
-  "config_sha256": "45e0eadf12eb800763ea39d440c6b0192b16aa582710391b503d8dec130c14d8",
+  "config_sha256": "642063d7628bec240f2090cebf2e7e9e35bb3d2b13f0970b2a0f6925d22b5f6f",
   "gate_id": "B2-I3",
   "generating_script_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i3_active_nulls.py",
-  "generating_script_sha256": "b4a9ac51246794e89b669c7c0d001a795168aafcca4f0d85c75f80f482c1a8b8",
-  "input_execution_revision": "1e623e68a062bbaaccd25f144de9601b15e05e98",
+  "generating_script_sha256": "ca7e58efe06fa544dabbaf6c10f3bbdacc1c61b6ce2995a2241fa7e823075bd4",
+  "input_execution_revision": "e33f43da6f015e275eb8e53699d50842005c00d3",
   "output_artifact_digests": {
-    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_active_nulls.json": "54c98dd6e779bca52800f5f7a641de01931bcbd705c16e065de26ed5acbd19a1",
-    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_threshold_calibration.json": "5847627a9d0ac2304c1d4d124f55182865bc66d5ed11e7dcd472bcbe9de62ca5",
-    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_i3_active_nulls.md": "f3ec5009b59d25d780e207a7d3371564a40aa116dca078459fac806936cf2e11"
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_active_nulls.json": "1ecb6a0c1f456343da9642648679953fa0b2617c00d20bbdac8f986d9fbb0254",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_threshold_calibration.json": "621f5da5251487b88c7adea77d7c344b2b3f8186515588ac3169864e94d8f940",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_i3_active_nulls.md": "945fb59df41d9f5e30e708aace6fdd1e7c30a70682a2afe14746f3e0ee44fbfc"
   },
-  "output_payload_sha256": "7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b",
+  "output_payload_sha256": "52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4",
   "prerequisite_acceptance_anchors": [
     {
       "acceptance_status": "accepted",
@@ -35,7 +38,9 @@
       "sha256": "f02ada12ffd2d8ed0d97214a053b0996a7da7c986ccb54bfc843fdca04fab2c6"
     }
   ],
-  "receipt_payload_sha256": "340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a",
+  "receipt_payload_sha256": "36dc10d022799e8e3f88e3bcaa6b42006096c7ee2a12388a405cdf3a0e4f67fe",
   "status": "awaiting_scientific_review",
-  "threshold_calibration_payload_sha256": "c71388f43c5e16718aa0405bca5d383343193055363e0d6220592d2d6e7a55fa"
+  "supersedes_artifact_payload_sha256": "7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b",
+  "supersedes_result_revision": "99e814ffb03d4f71fe590f9842938605ba617a0e",
+  "threshold_calibration_payload_sha256": "5fd452312900680bb0374f02b29e28d33157642818f1a1b9af64280caa9e3324"
 }
