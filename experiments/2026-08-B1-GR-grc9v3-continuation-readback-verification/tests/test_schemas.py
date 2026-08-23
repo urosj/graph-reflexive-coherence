@@ -16,6 +16,7 @@ class SchemaCoverageTest(unittest.TestCase):
             "complete_step_jacobians.schema.json", "intervention_registry.schema.json",
             "causal_role_matrix.schema.json", "return_orbit_registry.schema.json",
             "grv6_36_point_review_audit.schema.json",
+            "spatial_temporal_threshold_matrix.schema.json",
             "evidence_bundle_manifest.schema.json", "assumption_status_matrix.schema.json",
             "lgrc_handoff.schema.json",
         }

@@ -1,0 +1,156 @@
+{
+  "schema_version": "b1_grv7_spatial_temporal_threshold_contract_v1",
+  "prerequisite": {
+    "gate_id": "GRV6",
+    "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+    "receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
+    "acceptance_anchor_commit": "9606f2466769d89e10145e112ed5136704a5ad79",
+    "acceptance_anchor_payload_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe"
+  },
+  "source_scope": {
+    "branch_registry_path": "outputs/fixed_branch_registry.json",
+    "branch_registry_file_sha256": "56bd1857f892f187c6b99d6fcbd419ddd68ae0e17133b3a0bf7dda79b197e366",
+    "branch_registry_payload_sha256": "ba0d72ecb9af2cbd739bcf0da943478284daf14d50fdb676f41d06f15d7f0908",
+    "grv3_result_path": "outputs/complete_step_jacobians.json",
+    "grv3_result_file_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+    "grv3_result_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+    "grv4_result_path": "outputs/frozen_full_comparison.json",
+    "grv4_result_file_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+    "grv4_result_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+    "expected_source_branch_count": 48,
+    "source_branch_selection": "all_48_retained_for_accounting_with_frozen_path_seeds_selected_before_GRV7_spectra",
+    "post_spectrum_branch_or_path_selection_allowed": false
+  },
+  "continuation_contract": {
+    "state_invariant": "same_ordered_topology_same_total_coherence_and_nearest_pre_step_coherence_state",
+    "maximum_coherence_state_l2": 1e-8,
+    "maximum_total_coherence_delta": 1e-10,
+    "maximum_parameter_step_by_axis": {
+      "dt": 0.5,
+      "eta": 1.0,
+      "site_potential_scale": 0.5
+    },
+    "full_step_branch_residual_l_inf_max": 1e-8,
+    "branch_matching_uses_post_step_state": false,
+    "categorical_change_stops_path": true,
+    "event_or_topology_change_stops_path": true,
+    "failed_branch_residual_stops_path": true,
+    "restart_rule": "restart_only_from_separately_certified_source_branch_under_a_new_preregistered_path",
+    "automatic_restart_after_stop": false,
+    "unreached_threshold_is_negative_evidence": false
+  },
+  "cluster_matching": {
+    "method": "real_invariant_clusters_minimum_total_centroid_distance_with_dimension_preservation",
+    "complex_pair_tolerance": 1e-8,
+    "maximum_centroid_distance_per_adjacent_step": 1.1,
+    "eigenvector_index_matching_allowed": false,
+    "unresolved_complex_mode_is_complex_crossing_evidence": false
+  },
+  "thresholds": {
+    "discrete_multiplier_tolerance": 1e-6,
+    "complex_imaginary_floor": 1e-8,
+    "spatial_zero_tolerance": 1e-9,
+    "runtime_hessian_invariance_l_inf_max": 1e-12,
+    "analytical_hessian_invariance_l_inf_max": 1e-10,
+    "strong_counterexample_requires_preregistered_path": true,
+    "full_map_counterexample_requires_admitted_complete_step_jacobian": true,
+    "frozen_counterexample_does_not_upgrade_full_map_evidence": true
+  },
+  "paths": [
+    {
+      "path_id": "F1_scale_structural_path",
+      "fixture_id": "F1",
+      "source_branch_id": "grv2-f1-004",
+      "symmetry_partner_source_branch_ids": [],
+      "axis": "site_potential_scale",
+      "fixed_parameters": {"dt": 0.1, "eta": 1.0},
+      "values": [0.0, 0.5, 1.0, 1.5, 2.0],
+      "intended_surface": "analytical_continuation_Hessian_zero_and_frozen_plus_one",
+      "full_map_expectation": "retain_GRV3_zero_current_stratum_block_if_present"
+    },
+    {
+      "path_id": "F1_dt_flip_path",
+      "fixture_id": "F1",
+      "source_branch_id": "grv2-f1-014",
+      "symmetry_partner_source_branch_ids": [],
+      "axis": "dt",
+      "fixed_parameters": {"site_potential_scale": 1.5, "eta": 1.0},
+      "values": [0.05, 0.1, 0.25, 0.5, 1.0, 1.5],
+      "intended_surface": "frozen_stable_interior_minus_one_and_unstable_exterior_at_fixed_spatial_Hessians",
+      "full_map_expectation": "retain_GRV3_zero_current_stratum_block_if_present"
+    },
+    {
+      "path_id": "F2_dt_nonuniform_path",
+      "fixture_id": "F2",
+      "source_branch_id": "grv2-f2-017",
+      "symmetry_partner_source_branch_ids": ["grv2-f2-018"],
+      "axis": "dt",
+      "fixed_parameters": {"site_potential_scale": 1.0, "eta": 0.5},
+      "values": [0.05, 0.1, 0.2, 0.4],
+      "intended_surface": "admitted_complete_step_nonuniform_temporal_comparison",
+      "full_map_expectation": "compute_when_GRV3_stratum_gate_remains_admitted"
+    },
+    {
+      "path_id": "F2_eta_nonuniform_path",
+      "fixture_id": "F2",
+      "source_branch_id": "grv2-f2-017",
+      "symmetry_partner_source_branch_ids": ["grv2-f2-018"],
+      "axis": "eta",
+      "fixed_parameters": {"site_potential_scale": 1.0, "dt": 0.05},
+      "values": [0.5, 1.0, 1.5, 2.0],
+      "intended_surface": "admitted_complete_step_nonuniform_mobility_comparison",
+      "full_map_expectation": "compute_when_GRV3_stratum_gate_remains_admitted"
+    },
+    {
+      "path_id": "F3_dt_nonuniform_path",
+      "fixture_id": "F3",
+      "source_branch_id": "grv2-f3-033",
+      "symmetry_partner_source_branch_ids": ["grv2-f3-034", "grv2-f3-035"],
+      "axis": "dt",
+      "fixed_parameters": {"site_potential_scale": 1.5, "eta": 0.5},
+      "values": [0.05, 0.1, 0.2, 0.4],
+      "intended_surface": "admitted_complete_step_triangle_temporal_comparison",
+      "full_map_expectation": "compute_when_GRV3_stratum_gate_remains_admitted"
+    },
+    {
+      "path_id": "F3_eta_nonuniform_path",
+      "fixture_id": "F3",
+      "source_branch_id": "grv2-f3-033",
+      "symmetry_partner_source_branch_ids": ["grv2-f3-034", "grv2-f3-035"],
+      "axis": "eta",
+      "fixed_parameters": {"site_potential_scale": 1.5, "dt": 0.05},
+      "values": [0.5, 1.0, 1.5, 2.0],
+      "intended_surface": "admitted_complete_step_triangle_mobility_comparison",
+      "full_map_expectation": "compute_when_GRV3_stratum_gate_remains_admitted"
+    }
+  ],
+  "spatial_diagnostics": {
+    "record_row_basis_unsigned_hessian": true,
+    "record_signed_hessian": true,
+    "record_weighted_least_squares_hessian": true,
+    "record_analytical_constrained_second_variation_separately": true,
+    "runtime_hessian_is_analytical_continuation_hessian": false,
+    "weighted_least_squares_is_comparison_backend_only": true
+  },
+  "categorical_surfaces": [
+    "event_status",
+    "sink_set",
+    "basins",
+    "collapse_registry",
+    "spark_candidate_count",
+    "topology"
+  ],
+  "claim_boundary": {
+    "bounded_spatial_temporal_non_equivalence_may_be_supported": true,
+    "universal_threshold_identity_may_be_supported": false,
+    "spatial_hessians_never_correlate_with_temporal_transitions": false,
+    "frozen_comparator_is_complete_step_map": false,
+    "blocked_classical_derivative_is_unconverged_derivative": false,
+    "complex_crossing_absence_is_global_nonexistence": false,
+    "continuation_supported": false,
+    "retention_supported": false,
+    "readback_supported": false,
+    "writeback_supported": false,
+    "memory_learning_agency_or_life_claim_allowed": false
+  }
+}
