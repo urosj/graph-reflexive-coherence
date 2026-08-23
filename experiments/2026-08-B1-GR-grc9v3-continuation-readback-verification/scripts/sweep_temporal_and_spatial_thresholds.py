@@ -41,7 +41,11 @@ from gate_receipts import (
     validate_acceptance_anchor,
     validate_receipt,
 )
-from solve_strong_fixed_branches import block_projection, residual_metrics
+from solve_strong_fixed_branches import (
+    block_projection,
+    canonicalize_branch,
+    residual_metrics,
+)
 from state_codec import BranchCoordinateChart, categorical_signature
 
 SRC_ROOT = REPO_ROOT / "src"
@@ -170,14 +174,39 @@ def _plain_config(value: Any) -> Any:
 
 def _apply_parameters(
     model: GRC9V3, parameters: dict[str, float]
-) -> GRC9V3:
+) -> tuple[GRC9V3, dict[str, Any]]:
     params = _plain_config(model.get_params().raw_config)
     params["dt"] = float(parameters["dt"])
     params["evolution"]["eta"] = float(parameters["eta"])
     params["evolution"]["site_potential_params"]["scale"] = float(
         parameters["site_potential_scale"]
     )
-    return GRC9V3.from_state(deepcopy(model.get_state()), params)
+    candidate = GRC9V3.from_state(deepcopy(model.get_state()), params)
+    canonicalization = canonicalize_branch(candidate)
+    physical_rows = canonicalization["raw_to_canonical_per_block_residuals"]
+    physical_maximum = max(
+        float(physical_rows[block]["l_inf"]) for block in ("C", "W", "J")
+    )
+    summary = {
+        "method": "native_stage_canonicalization_after_parameter_change",
+        "physical_C_W_J_l_inf_max": physical_maximum,
+        "derived_surface_refresh_is_expected": True,
+        "event_kinds": canonicalization["events"],
+        "event_log_delta": canonicalization["event_log_delta"],
+        "budget_correction_l_inf": max(
+            (
+                abs(float(value))
+                for value in canonicalization["budget_correction_vector"]
+            ),
+            default=0.0,
+        ),
+        "passed": bool(
+            physical_maximum <= 1e-8
+            and not canonicalization["events"]
+            and canonicalization["event_log_delta"] == 0
+        ),
+    }
+    return candidate, summary
 
 
 def _ordered_complex(matrix: np.ndarray) -> list[complex]:
@@ -377,6 +406,7 @@ def _point_record(
     source_branch_id: str,
     point_index: int,
     parameters: dict[str, float],
+    parameter_canonicalization: dict[str, Any],
     previous_model: GRC9V3 | None,
     config: dict[str, Any],
     grv3_config: dict[str, Any],
@@ -477,8 +507,12 @@ def _point_record(
         "parameter_step_within_declared_maximum": step_passed,
         "branch_match": match,
         "branch_certification": certification,
+        "parameter_canonicalization": parameter_canonicalization,
         "path_point_admitted": bool(
-            match["passed"] and step_passed and certification["passed"]
+            match["passed"]
+            and step_passed
+            and parameter_canonicalization["passed"]
+            and certification["passed"]
         ),
         "spatial_diagnostics": spatial,
         "analytical_continuation_hessian": {
@@ -789,13 +823,16 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
                 zip(source_ids, base_models, strict=True)
             ):
                 source_for_state = previous_models[variant_index] or base_model
-                model = _apply_parameters(source_for_state, parameters)
+                model, parameter_canonicalization = _apply_parameters(
+                    source_for_state, parameters
+                )
                 row, matrix = _point_record(
                     model,
                     path=path,
                     source_branch_id=source_id,
                     point_index=point_index,
                     parameters=parameters,
+                    parameter_canonicalization=parameter_canonicalization,
                     previous_model=previous_models[variant_index],
                     config=config,
                     grv3_config=grv3_config,
