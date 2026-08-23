@@ -32,6 +32,9 @@ from run_i4_discovery_batch import (  # noqa: E402
     batch_registry,
     validate_prerequisites,
 )
+from build_i4_native_preparation_reachability import (  # noqa: E402
+    _continuation_routing,
+)
 
 
 class I4PreExecutionHardeningTests(unittest.TestCase):
@@ -279,16 +282,25 @@ class I4PreExecutionHardeningTests(unittest.TestCase):
         ):
             self.assertNotIn(forbidden, source)
 
-    def test_no_I4_result_artifact_is_created_by_pre_execution_tests(self) -> None:
-        self.assertFalse(
-            (
-                EXPERIMENT_ROOT / "outputs/b2_i4_native_preparation_reachability.json"
-            ).exists()
+    def test_empty_candidate_set_routes_to_bounded_closeout(self) -> None:
+        routing = _continuation_routing(
+            execution_complete=True, confirmed_candidate_count=0
         )
-        self.assertFalse(
-            (EXPERIMENT_ROOT / "outputs/gates/b2_i4_result_receipt.json").exists()
+        self.assertFalse(routing["ready_for_iteration_5"])
+        self.assertTrue(routing["ready_for_iteration_8_bounded_closeout"])
+        self.assertTrue(routing["empty_path_semantics_applied"])
+        self.assertEqual(
+            routing["I5_to_I7_positive_lane_status"],
+            "not_applicable_empty_I4_candidate_set",
         )
 
+    def test_nonempty_candidate_set_routes_to_iteration_5(self) -> None:
+        routing = _continuation_routing(
+            execution_complete=True, confirmed_candidate_count=1
+        )
+        self.assertTrue(routing["ready_for_iteration_5"])
+        self.assertFalse(routing["ready_for_iteration_8_bounded_closeout"])
+        self.assertFalse(routing["empty_path_semantics_applied"])
 
 if __name__ == "__main__":
     unittest.main()

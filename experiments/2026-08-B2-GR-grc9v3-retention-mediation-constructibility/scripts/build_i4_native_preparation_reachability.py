@@ -235,6 +235,27 @@ def _branch_coverage(attempts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return records
 
 
+def _continuation_routing(
+    *, execution_complete: bool, confirmed_candidate_count: int
+) -> dict[str, Any]:
+    has_candidates = confirmed_candidate_count > 0
+    empty_path = execution_complete and not has_candidates
+    return {
+        "ready_for_iteration_5": execution_complete and has_candidates,
+        "ready_for_iteration_8_bounded_closeout": empty_path,
+        "I5_to_I7_positive_lane_status": (
+            "not_applicable_empty_I4_candidate_set"
+            if empty_path
+            else (
+                "eligible_after_I4_acceptance"
+                if execution_complete
+                else "blocked_by_incomplete_I4_execution"
+            )
+        ),
+        "empty_path_semantics_applied": empty_path,
+    }
+
+
 def build_payload() -> tuple[dict[str, Any], list[Path]]:
     config = read_json(CONFIG_PATH)
     validate_prerequisites(config)
@@ -296,10 +317,25 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
     future_feature_access = any(
         row["adjudication_feature_accessed_during_discovery"] for row in attempts
     )
-    ready = all_resolved and all_confirmed and not future_feature_access
+    execution_complete = all_resolved and all_confirmed and not future_feature_access
+    routing = _continuation_routing(
+        execution_complete=execution_complete,
+        confirmed_candidate_count=len(confirmed),
+    )
+    failure_mode_counts = Counter(
+        failure_mode
+        for row in attempts
+        for failure_mode in row.get("full_path_failure_modes", [])
+    )
+    branch_coverage = _branch_coverage(attempts)
+    accessible_branch_count = sum(
+        row["primary_lane_accessibility"]
+        == "searched_and_resolved_inside_clean_primary_lane"
+        for row in branch_coverage
+    )
     payload = {
         "gate_id": "B2-I4",
-        "status": "passed" if ready else "blocked",
+        "status": "passed" if execution_complete else "blocked",
         "acceptance_state": "awaiting_scientific_review",
         "input_execution_revision": git("rev-parse", "HEAD"),
         "config_path": repo_relative(CONFIG_PATH),
@@ -319,6 +355,10 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
                 for record in batch_records
             ),
             "status_counts": dict(sorted(status_counts.items())),
+            "full_path_failure_mode_counts": dict(sorted(failure_mode_counts.items())),
+            "source_reconstruction_failure_count": sum(
+                row["source_reconstruction_status"] != "passed" for row in attempts
+            ),
             "early_stopping_used": False,
             "budget_migrated": False,
             "search_order_affects_attempt_population": False,
@@ -326,7 +366,17 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
             "resume_or_shard_order_changes_attempt_population": False,
         },
         "attempt_ledger": attempts,
-        "branch_primary_lane_coverage": _branch_coverage(attempts),
+        "branch_primary_lane_coverage": branch_coverage,
+        "branch_accessibility_summary": {
+            "accepted_source_branch_count": len(branch_coverage),
+            "searched_and_resolved_inside_clean_primary_lane_count": (
+                accessible_branch_count
+            ),
+            "not_accessible_under_frozen_preparation_family_count": (
+                len(branch_coverage) - accessible_branch_count
+            ),
+            "not_accessible_is_negative_constructibility_evidence": False,
+        },
         "discovery_candidate_count": len(confirmations),
         "confirmed_candidate_count": len(confirmed),
         "failed_confirmation_count": failed_confirmation_count,
@@ -349,10 +399,25 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
         ),
         "maximum_GRR_rung": "not_assigned",
         "GRR_rung_assigned": False,
-        "B2_closeout_ceiling": "B2-C3-ready" if ready else "B2-C2",
+        "B2_closeout_ceiling": (
+            "B2-C3-ready" if execution_complete else "B2-C2"
+        ),
         "B2_closeout_rung_assigned": False,
-        "ready_for_iteration_5": ready,
-        "claim_ceiling": "runtime_reached_post_driver_candidate_set_not_retention_or_mediation",
+        **routing,
+        "candidate_set_status": (
+            "empty_no_runtime_reached_candidate"
+            if execution_complete and not confirmed
+            else (
+                "nonempty_confirmed_runtime_reached_candidate_set"
+                if execution_complete
+                else "not_frozen_incomplete_execution"
+            )
+        ),
+        "claim_ceiling": (
+            "bounded_negative_unchanged_runtime_search_no_runtime_reached_candidate_within_frozen_envelope"
+            if execution_complete and not confirmed
+            else "runtime_reached_post_driver_candidate_set_not_retention_or_mediation"
+        ),
         "blocked_relabels": [
             "retained_sector",
             "slow_cluster",
@@ -386,6 +451,7 @@ def render_report(payload: dict[str, Any]) -> str:
         f"- Confirmed candidates: `{payload['confirmed_candidate_count']}`",
         f"- Failed confirmations: `{payload['failed_confirmation_count']}`",
         f"- GRR rung assigned: `{payload['GRR_rung_assigned']}`",
+        f"- Candidate set: `{payload['candidate_set_status']}`",
         "",
         "## Interpretation",
         "",
@@ -407,12 +473,39 @@ def render_report(payload: dict[str, Any]) -> str:
         "authored C-direction content is excluded before the formation floor is",
         "tested.",
         "",
+        "## Search Outcome",
+        "",
+        "The frozen search resolved all 9,648 attempts without a source-reconstruction",
+        "failure, numerical failure, unresolved row, or positive candidate. Its",
+        "nonpositive surface is preserved rather than collapsed into `no candidate`:",
+        "",
+        *[
+            f"- `{status}`: `{count}`"
+            for status, count in accounting["status_counts"].items()
+        ],
+        "",
+        f"`{payload['branch_accessibility_summary']['searched_and_resolved_inside_clean_primary_lane_count']}` of "
+        f"`{payload['branch_accessibility_summary']['accepted_source_branch_count']}` accepted branches had at least one nontrivial resolved clean-lane attempt. "
+        f"The remaining `{payload['branch_accessibility_summary']['not_accessible_under_frozen_preparation_family_count']}` are inaccessible under the frozen preparation family and do not count as negative constructibility evidence.",
+        "",
+        "The 27 clean bounded-negative rows generated no attributable carrier above",
+        "the formation and separation floors. The 1,706 authorship rows contained an",
+        "apparent carrier but no identifiable runtime-generated component. The 7,915",
+        "outside-envelope rows remain classified by their recorded full-path failure",
+        "modes rather than being promoted from a clean endpoint.",
+        "",
+        "The I2 empty-path rule therefore makes I5-I7 positive lanes not applicable",
+        "and routes the accepted empty candidate set to bounded I8 closeout. This is",
+        "not an impossibility claim outside the frozen branch, preparation, parameter,",
+        "history-length, and carrier envelope.",
+        "",
         "## Claim Boundary",
         "",
         f"`{payload['claim_ceiling']}`",
         "",
-        "No GRR rung is assigned in I4. Branch relation and full persistence remain",
-        "open for I5.",
+        "No GRR rung is assigned in I4. With no runtime-reached candidate, branch",
+        "relation, slow-cluster, and mediation qualification have no positive row to",
+        "consume; the next applicable step is bounded closeout, not I5 promotion.",
         "",
     ]
     return "\n".join(lines)
@@ -441,17 +534,29 @@ def main() -> None:
             "assigned_GRR_rung": "not_assigned",
             "B2_closeout_ceiling": payload["B2_closeout_ceiling"],
             "ready_for_iteration_5": payload["ready_for_iteration_5"],
+            "ready_for_iteration_8_bounded_closeout": payload[
+                "ready_for_iteration_8_bounded_closeout"
+            ],
+            "I5_to_I7_positive_lane_status": payload[
+                "I5_to_I7_positive_lane_status"
+            ],
             "blocked_gates": (
-                ["B2-I5", "B2-I6", "B2-I7", "B2-I8"]
-                if payload["ready_for_iteration_5"]
-                else ["B2-I4-acceptance", "B2-I5", "B2-I6", "B2-I7", "B2-I8"]
+                ["B2-I4-acceptance", "B2-I8"]
+                if payload["ready_for_iteration_8_bounded_closeout"]
+                else ["B2-I5", "B2-I6", "B2-I7", "B2-I8"]
+            ),
+            "not_applicable_gates": (
+                ["B2-I5", "B2-I6", "B2-I7"]
+                if payload["ready_for_iteration_8_bounded_closeout"]
+                else []
             ),
         }
     )
     write_json(RECEIPT_PATH, receipt)
     print(
         f"I4: {payload['confirmed_candidate_count']} confirmed candidates; "
-        f"ready_for_I5={payload['ready_for_iteration_5']}"
+        f"ready_for_I5={payload['ready_for_iteration_5']}; "
+        f"ready_for_bounded_closeout={payload['ready_for_iteration_8_bounded_closeout']}"
     )
 
 

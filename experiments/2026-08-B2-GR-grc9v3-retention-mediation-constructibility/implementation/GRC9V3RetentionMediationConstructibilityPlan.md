@@ -1170,6 +1170,15 @@ recomputed from the snapshot coordinate is diagnostic only. The preliminary F1
 and F2 batch files are superseded and all batches restart from the corrected,
 committed execution revision; no inspected candidate result informed the change.
 
+The first complete aggregation then exposed two trace/lifecycle conformance bugs,
+without changing any candidate classification: nonpositive attempt rows omitted
+their exact `full_path_failure_modes`, and the empty candidate set was routed to
+I5 despite I2's frozen empty-path rule. The corrected batch ledger preserves the
+full modes for every attempt. A complete search with zero confirmed candidates
+freezes an empty `B2-C3-ready` set, marks I5-I7 positive lanes `not_applicable`,
+and routes to bounded I8 closeout. All batches are rerun from the corrected,
+committed revision so their execution identity remains coherent.
+
 I4 uses only reachability, state validity, formation contrast, and its declared
 one-transition persistence magnitude. It does not inspect slow clusters,
 branch-transverse projectors, or future GRR classifications. I4 assigns no GRR

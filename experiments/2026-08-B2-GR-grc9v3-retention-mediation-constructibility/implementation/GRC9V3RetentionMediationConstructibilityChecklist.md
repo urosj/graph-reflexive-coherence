@@ -474,6 +474,8 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 - [x] Correct the preliminary exact-coordinate source audit to consume B1's frozen `C` tolerance before any F2 scientific attempt or F3 execution.
 - [x] Keep the accepted registry/crosswalk signature authoritative and the snapshot-coordinate signature diagnostic only.
 - [x] Add an F2 nonuniform-branch regression test and supersede all preliminary batch files before restarting the search.
+- [x] Preserve exact full-path failure modes on nonpositive attempt-ledger rows rather than collapsing them into a generic cleanliness failure.
+- [x] Apply I2 empty-path semantics: zero confirmed I4 candidates makes I5-I7 positive lanes not applicable and routes to bounded closeout.
 
 - [ ] Execute only the preregistered search algorithms, budgets, seeds, and stopping rules.
 - [ ] Start every positive candidate through declared ancestry from an accepted B1-GR branch.

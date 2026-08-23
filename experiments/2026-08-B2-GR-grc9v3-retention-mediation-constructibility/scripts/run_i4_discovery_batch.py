@@ -210,6 +210,10 @@ def build_batch(batch_id: str) -> dict[str, Any]:
             "primary_demotion_reason": row["primary_demotion_reason"],
             "secondary_demotion_reasons": row["secondary_demotion_reasons"],
             "rejection_reason": row["primary_demotion_reason"],
+            "full_path_cleanliness_result": row.get(
+                "full_path_cleanliness_result", "source_reconstruction_not_admitted"
+            ),
+            "full_path_failure_modes": row.get("full_path_failure_modes", []),
             "duplicate_class": "not_adjudicated_until_global_aggregation",
             "source_reconstruction_status": row.get(
                 "source_reconstruction_status", "source_replay_failure"
