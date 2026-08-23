@@ -4,11 +4,13 @@
     "reproducibility_class": "byte_reproducible"
   },
   "payload": {
+    "accepted_evidence_records_deduplicated": true,
     "blocked_claims": [
       "traceability_row_is_independent_evidence"
     ],
+    "controlling_source_matrix_preserved": true,
     "gate_id": "GRV8",
-    "highest_supported_claim": "completed_claim_assumption_result_and_route_traceability",
+    "highest_supported_claim": "source_preserving_corrected_claim_assumption_result_and_route_traceability",
     "results_pending": false,
     "rows": [
       {
@@ -32,11 +34,28 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
           }
+        ],
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-CONSERVE"
         ],
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
@@ -46,19 +65,7 @@
         "claim_ids": [
           "T-S02"
         ],
-        "debt_ids": [
-          "D-M01"
-        ],
-        "evidence_refs": [
-          "outputs/complete_step_jacobians.json"
-        ],
-        "primary_routes": [
-          "lgrc_specific_investigation"
-        ],
-        "result_dispositions": {
-          "T-S02": "bounded_supported_distinction"
-        },
-        "source_row": {
+        "controlling_source_row": {
           "Claim or debt": "T-S02`, `D-M01",
           "GRC extension route": "enlarge state only if closure fails",
           "LGRC route": "test queue, delay, phase, proper-time state",
@@ -69,154 +76,45 @@
           "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
           "Required control": "matched-state closure tests; reached and synthetic states separated"
         },
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-S02": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "`T-S02`",
+          "GRC extension route": "none; bounded runtime classification only",
+          "LGRC route": "not applicable to T-S02 alone",
+          "Maximum positive claim": "branch-specific runtime causal state",
+          "Negative or ambiguous result means": "smaller state may suffice, assumption fails, or state is unidentifiable",
+          "Primary gate": "GRV3",
+          "Reopen condition": "same accepted present state, different future",
+          "Required assumptions": "`A-BRANCH`, `A-CLOCK`, `A-CONSERVE`",
+          "Required control": "matched-state closure tests; reached and synthetic states separated"
+        },
+        "source_row_adjusted": true,
+        "source_row_adjustment": {
+          "original_assumption_ids": [
+            "A-REACHABLE",
+            "A-STATE-CLOSURE"
+          ],
+          "original_claim_ids": [
+            "T-S02"
+          ],
+          "original_debt_ids": [
+            "D-M01"
+          ],
+          "reason": "The controlling traceability row conflates the T-S02 runtime-state distinction with D-M01 Markov-sufficiency debt. Final classification assigns T-S02 its claim-ledger assumptions and leaves D-M01 solely with TR-17; the controlling source row remains embedded unchanged."
+        },
         "traceability_row_id": "TR-01"
       },
       {
         "accepted_evidence_records": [
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/causal_role_matrix.json",
-            "artifact_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
-            "artifact_sha256": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/closed_loop_row_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/claim_boundary/branch_relocation_rival_must_remain_open",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
-            "exact_field_or_row": "/payload/summary/bounded_persistence_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "b1a805c7628f78d7db4938a37ca1549f201740c007a983d425d0ebb47ef47fda",
-            "exact_field_or_row": "/payload/summary/maximum_local_evidence_ladder_rung",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/native_mediation_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/causal_role_matrix.json",
-            "artifact_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
-            "artifact_sha256": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/closed_loop_row_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/claim_boundary/branch_relocation_rival_must_remain_open",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
-            "exact_field_or_row": "/payload/summary/activity_stage_write_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
-            "exact_field_or_row": "/payload/summary/bounded_persistence_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/forming_old_current_input_runtime_reached",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "b1a805c7628f78d7db4938a37ca1549f201740c007a983d425d0ebb47ef47fda",
-            "exact_field_or_row": "/payload/summary/maximum_local_evidence_ladder_rung",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/native_mediation_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
           {
             "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
@@ -350,15 +248,32 @@
             "source_gate": "GRV5"
           }
         ],
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-REACHABLE"
+        ],
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
-          "A-CLOCK": "satisfied"
+          "A-CLOCK": "satisfied",
+          "A-REACHABLE": "satisfied"
         },
         "claim_ids": [
           "T-RW01",
           "T-RW06",
           "T-RW11"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-RW01`, `T-RW06`, `T-RW11",
+          "GRC extension route": "carrier or read extension only for missing role",
+          "LGRC route": "separate transit, retention, and native read",
+          "Maximum positive claim": "bounded arrow or closed-loop evidence",
+          "Negative or ambiguous result means": "absence of one arrow does not erase others",
+          "Primary gate": "GRV5`, `GRV8",
+          "Reopen condition": "causal-role matrix cannot classify outcome",
+          "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-REACHABLE",
+          "Required control": "retention, read, write, reset, swap, and authorship evaluated separately"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/causal_role_matrix.json",
@@ -384,57 +299,59 @@
           "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-REACHABLE",
           "Required control": "retention, read, write, reset, swap, and authorship evaluated separately"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-02"
       },
       {
         "accepted_evidence_records": [
           {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "02688fb9f7b538181d8d6eb40e13d8a24a5f55dacccde538b4e05b44f61e5785",
-            "exact_field_or_row": "/payload/assumption_statuses/A-PASSIVE-result",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/exact_orientation_semantics_supported",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/present_current_convention/native_external_present_current_input_available",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "559532ad927252eed5d9b6687d55203a96b956d822055f4570f196a93a42bece",
+            "exact_field_or_row": "/payload/transport_anchor/status",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/native_mediation_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/surface_authority_map.json",
+            "artifact_payload_sha256": "1a97e98452e1d13750c12979962d18c1f82b0e20443bf619f14dd63c85948436",
+            "artifact_sha256": "6c997644ca50618df229e9d8c6123d80925cd1bdda2f30eb2d7e8af76cb5b777",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/checks/W_base_only_changes_consumer_output",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/native_readback_supported",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
+            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
           },
           {
             "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
@@ -507,55 +424,12 @@
             "exact_field_or_row": "/payload/summary/substrate_reduced_sensitivity_count",
             "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
             "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
-            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/instrumentation_validation.json",
-            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
-            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/claim_boundary/exact_orientation_semantics_supported",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/instrumentation_validation.json",
-            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
-            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
-            "consumed_value_semantic_sha256": "559532ad927252eed5d9b6687d55203a96b956d822055f4570f196a93a42bece",
-            "exact_field_or_row": "/payload/transport_anchor/status",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/surface_authority_map.json",
-            "artifact_payload_sha256": "1a97e98452e1d13750c12979962d18c1f82b0e20443bf619f14dd63c85948436",
-            "artifact_sha256": "6c997644ca50618df229e9d8c6123d80925cd1bdda2f30eb2d7e8af76cb5b777",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/checks/W_base_only_changes_consumer_output",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
           }
+        ],
+        "assumption_ids": [
+          "A-LOOP-INVERT",
+          "A-PASSIVE",
+          "A-SMOOTH"
         ],
         "assumption_statuses": {
           "A-LOOP-INVERT": "not_applicable",
@@ -566,6 +440,17 @@
           "T-RW02",
           "T-RW07"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-RW02`, `T-RW07",
+          "GRC extension route": "oriented read extension only if target requires it",
+          "LGRC route": "event-driven native read test",
+          "Maximum positive claim": "passive retained-conditioned response candidate",
+          "Negative or ambiguous result means": "generic geometry-conditioned transport, failed null, or no read path",
+          "Primary gate": "GRV5",
+          "Reopen condition": "passive-null convention cannot be implemented",
+          "Required assumptions": "`A-PASSIVE`, `A-SMOOTH`; `A-LOOP-INVERT` for slaving",
+          "Required control": "zero-present-probe and matched-retained-state controls"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/causal_role_matrix.json",
@@ -591,34 +476,12 @@
           "Required assumptions": "`A-PASSIVE`, `A-SMOOTH`; `A-LOOP-INVERT` for slaving",
           "Required control": "zero-present-probe and matched-retained-state controls"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-03"
       },
       {
         "accepted_evidence_records": [
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
-            "exact_field_or_row": "/payload/summary/activity_stage_write_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/forming_old_current_input_runtime_reached",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
           {
             "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
@@ -690,7 +553,36 @@
             "exact_field_or_row": "/payload/current_sign_control/classification/unoriented_axis_persistence",
             "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
             "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/activity_stage_write_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/forming_old_current_input_runtime_reached",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
           }
+        ],
+        "assumption_ids": [
+          "A-PASSIVE",
+          "A-SIGN-EVEN",
+          "A-SMOOTH"
         ],
         "assumption_statuses": {
           "A-PASSIVE": "not_identifiable",
@@ -700,6 +592,17 @@
         "claim_ids": [
           "T-RW08"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-RW08",
+          "GRC extension route": "no extension unless target needs missing order",
+          "LGRC route": "packet orientation may preserve first-order state",
+          "Maximum positive claim": "first- versus second-order channel separation",
+          "Negative or ambiguous result means": "assumption failure, channel conflation, or different mechanism",
+          "Primary gate": "GRV1`, `GRV5",
+          "Reopen condition": "source contradicts perturbative classification",
+          "Required assumptions": "A-PASSIVE`, `A-SMOOTH`, `A-SIGN-EVEN",
+          "Required control": "linear current perturbation and quadratic sign-even write compared"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/conductance_retention_probe.json",
@@ -722,6 +625,8 @@
           "Required assumptions": "A-PASSIVE`, `A-SMOOTH`, `A-SIGN-EVEN",
           "Required control": "linear current perturbation and quadratic sign-even write compared"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-04"
       },
       {
@@ -799,6 +704,10 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_ids": [
+          "A-ORIENTATION",
+          "A-SIGN-EVEN"
+        ],
         "assumption_statuses": {
           "A-ORIENTATION": "satisfied",
           "A-SIGN-EVEN": "satisfied"
@@ -806,6 +715,17 @@
         "claim_ids": [
           "T-RW09"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-RW09",
+          "GRC extension route": "oriented one-form/cycle channel",
+          "LGRC route": "packet/route orientation investigation",
+          "Maximum positive claim": "magnitude, axis, or orientation semantics",
+          "Negative or ambiguous result means": "orientation is reconstructed, erased, or convention is invalid",
+          "Primary gate": "GRV1-D`, `GRV5`, `GRV6",
+          "Reopen condition": "sign control changes through hidden state",
+          "Required assumptions": "A-ORIENTATION`, `A-SIGN-EVEN",
+          "Required control": "$J$ versus $-J$ and cycle-orientation controls"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/conductance_retention_probe.json",
@@ -829,10 +749,24 @@
           "Required assumptions": "A-ORIENTATION`, `A-SIGN-EVEN",
           "Required control": "$J$ versus $-J$ and cycle-orientation controls"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-05"
       },
       {
         "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
+            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
           {
             "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
@@ -868,27 +802,32 @@
             "exact_field_or_row": "/payload/summary/substrate_reduced_sensitivity_count",
             "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
             "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
-            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
           }
+        ],
+        "assumption_ids": [
+          "A-CONSERVE",
+          "A-ORIENTATION",
+          "A-TRANSPORT"
         ],
         "assumption_statuses": {
           "A-CONSERVE": "satisfied",
-          "A-ORIENTATION": "satisfied"
+          "A-ORIENTATION": "satisfied",
+          "A-TRANSPORT": "satisfied"
         },
         "claim_ids": [
           "T-RW10"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-RW10",
+          "GRC extension route": "cycle-current extension only if required",
+          "LGRC route": "return-map/current equivalence",
+          "Maximum positive claim": "field-, current-, or full-level equivalence",
+          "Negative or ambiguous result means": "field match is insufficient",
+          "Primary gate": "GRV6",
+          "Reopen condition": "equivalence level cannot be isolated",
+          "Required assumptions": "`A-ORIENTATION`, `A-CONSERVE`, `A-TRANSPORT` where needed",
+          "Required control": "compare divergence, current, geometry, and future state"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/causal_role_matrix.json",
@@ -913,10 +852,36 @@
           "Required assumptions": "`A-ORIENTATION`, `A-CONSERVE`, `A-TRANSPORT` where needed",
           "Required control": "compare divergence, current, geometry, and future state"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-06"
       },
       {
         "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "559532ad927252eed5d9b6687d55203a96b956d822055f4570f196a93a42bece",
+            "exact_field_or_row": "/payload/transport_anchor/status",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/surface_authority_map.json",
+            "artifact_payload_sha256": "1a97e98452e1d13750c12979962d18c1f82b0e20443bf619f14dd63c85948436",
+            "artifact_sha256": "6c997644ca50618df229e9d8c6123d80925cd1bdda2f30eb2d7e8af76cb5b777",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/checks/W_base_only_changes_consumer_output",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
           {
             "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
@@ -964,18 +929,6 @@
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
-            "exact_field_or_row": "/payload/summary/substrate_reduced_sensitivity_count",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
           },
           {
             "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
@@ -1038,64 +991,16 @@
             "source_gate": "GRV4"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/instrumentation_validation.json",
-            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
-            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
-            "consumed_value_semantic_sha256": "559532ad927252eed5d9b6687d55203a96b956d822055f4570f196a93a42bece",
-            "exact_field_or_row": "/payload/transport_anchor/status",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
-            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
-            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
-            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
-            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/full_map_non_equivalence_supported",
-            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
-            "source_gate": "GRV7"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
-            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
-            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
-            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
-            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/summary/reduced_spatial_continuation_temporal_non_equivalence_supported",
-            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
-            "source_gate": "GRV7"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
-            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
-            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
-            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
-            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/runtime_spatial_vs_full_temporal_non_equivalence_supported",
-            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
-            "source_gate": "GRV7"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/surface_authority_map.json",
-            "artifact_payload_sha256": "1a97e98452e1d13750c12979962d18c1f82b0e20443bf619f14dd63c85948436",
-            "artifact_sha256": "6c997644ca50618df229e9d8c6123d80925cd1bdda2f30eb2d7e8af76cb5b777",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/checks/W_base_only_changes_consumer_output",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
+            "exact_field_or_row": "/payload/summary/substrate_reduced_sensitivity_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
           },
           {
             "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
@@ -1134,11 +1039,31 @@
             "source_gate": "GRV7"
           }
         ],
-        "assumption_statuses": {},
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-CONSERVE"
+        ],
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied",
+          "A-CONSERVE": "satisfied"
+        },
         "claim_ids": [
           "T-C01",
           "T-M01"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-M01`, `T-C01",
+          "GRC extension route": "analysis comparator only",
+          "LGRC route": "preserve same distinction",
+          "Maximum positive claim": "bounded relation or non-equivalence",
+          "Negative or ambiguous result means": "no universal identification",
+          "Primary gate": "GRV4`, `GRV7",
+          "Reopen condition": "verified universal relation contradicts boundary",
+          "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-CONSERVE",
+          "Required control": "spatial, frozen structural, and full temporal operators compared"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/complete_step_jacobians.json",
@@ -1166,10 +1091,24 @@
           "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-CONSERVE",
           "Required control": "spatial, frozen structural, and full temporal operators compared"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-07"
       },
       {
         "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+            "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
+            "artifact_path": "outputs/fixed_topology_envelope.json",
+            "artifact_payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
+            "artifact_sha256": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/fixed_topology",
+            "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
+            "source_gate": "GRV0"
+          },
           {
             "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
@@ -1217,42 +1156,6 @@
             "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_pass_matrix_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/later_C_mediation_specifically_by_transient_W_supported",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
-            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
-            "artifact_path": "outputs/conductance_retention_probe.json",
-            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
-            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/transverse_branch_relative_retention_supported",
-            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
-            "source_gate": "GRV5"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
-            "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
-            "artifact_path": "outputs/fixed_topology_envelope.json",
-            "artifact_payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
-            "artifact_sha256": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/fixed_topology",
-            "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
-            "source_gate": "GRV0"
           },
           {
             "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
@@ -1279,75 +1182,57 @@
             "source_gate": "GRV3"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
             "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/claim_boundary/full_C_W_J_transition_jacobian_supported",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
+            "exact_field_or_row": "/payload/summary/later_C_mediation_specifically_by_transient_W_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
-            "exact_field_or_row": "/payload/summary/branches_with_temporal_mode_evidence_after_all_gates",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "c32bf7738863c8e7e059fb99041dff5525308f09ca47d4f0ed604a307d890341",
-            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_blocked_matrix_rows",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "d029fa3a95e174a19934857f535eb9427d967218a36ea014b70ad704bc6c8d1c",
-            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_pass_matrix_count",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/slow_cluster_registry.json",
-            "artifact_payload_sha256": "dda4acee042731d63e8a4e9e07ad6f9c68728dd2eab0ea2d516ae66830ef4004",
-            "artifact_sha256": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
             "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/retention_claim_allowed",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
+            "exact_field_or_row": "/payload/summary/transverse_branch_relative_retention_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
           }
+        ],
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-ISOLATION",
+          "A-NONNORMAL-CONTROL"
         ],
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-CLOCK": "satisfied",
-          "A-TRANSPORT": "not_applicable"
+          "A-ISOLATION": "satisfied",
+          "A-NONNORMAL-CONTROL": "satisfied"
         },
         "claim_ids": [
           "T-M02",
           "T-M03"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-M02`, `T-M03`, `D-M02",
+          "GRC extension route": "analysis first; constitutive carrier later",
+          "LGRC route": "return-map slow sector",
+          "Maximum positive claim": "branch- and clock-specific slow cluster",
+          "Negative or ambiguous result means": "growth, staging, delay, or non-normal transient",
+          "Primary gate": "GRV3`, `GRV5`, `GRV6",
+          "Reopen condition": "no declared clock explains result",
+          "Required assumptions": "`A-BRANCH`, `A-CLOCK`, `A-ISOLATION`, `A-NONNORMAL-CONTROL` as applicable",
+          "Required control": "stable/neutral/unstable classification and finite-horizon controls"
+        },
         "debt_ids": [
           "D-M02"
         ],
@@ -1377,154 +1262,12 @@
           "Required assumptions": "`A-BRANCH`, `A-CLOCK`, `A-ISOLATION`, `A-NONNORMAL-CONTROL` as applicable",
           "Required control": "stable/neutral/unstable classification and finite-horizon controls"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-08"
       },
       {
         "accepted_evidence_records": [
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/claim_boundary/joint_C_W_mode_claim_allowed",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
-            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/claim_boundary/geometry_only_attribution_claim_allowed",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/claim_boundary/mobility_only_attribution_claim_allowed",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
-            "exact_field_or_row": "/payload/summary/primary_no_resolved_difference_within_uncertainty_count",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/verified_strong_disagreement_count",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
-            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
-            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
-            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
-            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/full_map_non_equivalence_supported",
-            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
-            "source_gate": "GRV7"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
-            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
-            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
-            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
-            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/summary/reduced_spatial_continuation_temporal_non_equivalence_supported",
-            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
-            "source_gate": "GRV7"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
-            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
-            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
-            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
-            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/runtime_spatial_vs_full_temporal_non_equivalence_supported",
-            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
-            "source_gate": "GRV7"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
-            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
-            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
-            "artifact_path": "outputs/frozen_full_comparison.json",
-            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
-            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
-            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
-            "exact_field_or_row": "/payload/summary/primary_no_resolved_difference_within_uncertainty_count",
-            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
-            "source_gate": "GRV4"
-          },
           {
             "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
@@ -1572,7 +1315,132 @@
             "exact_field_or_row": "/payload/checks/W_base_only_changes_consumer_output",
             "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
             "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/joint_C_W_mode_claim_allowed",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
+            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/geometry_only_attribution_claim_allowed",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/mobility_only_attribution_claim_allowed",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
+            "exact_field_or_row": "/payload/summary/primary_no_resolved_difference_within_uncertainty_count",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/verified_strong_disagreement_count",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
+            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
+            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/full_map_non_equivalence_supported",
+            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+            "source_gate": "GRV7"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
+            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
+            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/summary/reduced_spatial_continuation_temporal_non_equivalence_supported",
+            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+            "source_gate": "GRV7"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
+            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
+            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/runtime_spatial_vs_full_temporal_non_equivalence_supported",
+            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+            "source_gate": "GRV7"
           }
+        ],
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CONSERVE",
+          "A-SMOOTH"
         ],
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
@@ -1583,6 +1451,17 @@
           "T-C02",
           "T-C03"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-C02`, `T-C03",
+          "GRC extension route": "geometry/mobility or branch extension",
+          "LGRC route": "inherit accepted baseline",
+          "Maximum positive claim": "reduced structural comparator and dynamic branch classification",
+          "Negative or ambiguous result means": "reduction fails or branch is not dynamically formed",
+          "Primary gate": "GRV2`, `GRV4",
+          "Reopen condition": "source-level sign or branch assumptions fail",
+          "Required assumptions": "A-BRANCH`, `A-SMOOTH`, `A-CONSERVE",
+          "Required control": "strong branch, fixed-$W$, and full-map comparison"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/complete_step_jacobians.json",
@@ -1610,10 +1489,24 @@
           "Required assumptions": "A-BRANCH`, `A-SMOOTH`, `A-CONSERVE",
           "Required control": "strong branch, fixed-$W$, and full-map comparison"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-09"
       },
       {
         "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+            "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
+            "artifact_path": "outputs/fixed_topology_envelope.json",
+            "artifact_payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
+            "artifact_sha256": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/fixed_topology",
+            "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
+            "source_gate": "GRV0"
+          },
           {
             "acceptance_anchor_path": "outputs/gates/grv2_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "09210b1bd2b8ba409987e1c587cc840b5292198db2f04594702d25c2cdd638df",
@@ -1663,18 +1556,6 @@
             "source_gate": "GRV3"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
-            "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
-            "artifact_path": "outputs/fixed_topology_envelope.json",
-            "artifact_payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
-            "artifact_sha256": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/fixed_topology",
-            "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
-            "source_gate": "GRV0"
-          },
-          {
             "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
             "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
@@ -1699,16 +1580,31 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-ISOLATION",
+          "A-TRANSPORT"
+        ],
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-ISOLATION": "satisfied",
-          "A-NONNORMAL-CONTROL": "satisfied",
-          "A-TRANSPORT": "not_applicable"
+          "A-TRANSPORT": "satisfied"
         },
         "claim_ids": [
           "T-B02",
           "T-B03"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-B02`, `T-B03",
+          "GRC extension route": "analysis transport only",
+          "LGRC route": "needed for event return maps",
+          "Maximum positive claim": "branch-relative mode or subspace evidence",
+          "Negative or ambiguous result means": "labels are non-invariant or branch fit is retrospective",
+          "Primary gate": "GRV2`, `GRV3`, `GRV6",
+          "Reopen condition": "results depend on retrospective branch fit",
+          "Required assumptions": "A-BRANCH`, `A-ISOLATION`, `A-TRANSPORT",
+          "Required control": "branch rule fixed before spectrum; cluster-level matching"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/complete_step_jacobians.json",
@@ -1734,6 +1630,8 @@
           "Required assumptions": "A-BRANCH`, `A-ISOLATION`, `A-TRANSPORT",
           "Required control": "branch rule fixed before spectrum; cluster-level matching"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-10"
       },
       {
@@ -1763,12 +1661,26 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_ids": [
+          "A-TRANSPORT"
+        ],
         "assumption_statuses": {
-          "A-TRANSPORT": "not_applicable"
+          "A-TRANSPORT": "satisfied"
         },
         "claim_ids": [
           "T-B04"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-B04`, `D-T01",
+          "GRC extension route": "none in fixed GRC",
+          "LGRC route": "mandatory LGRC gate",
+          "Maximum positive claim": "topology-relative continuation candidate",
+          "Negative or ambiguous result means": "lineage is identity bookkeeping only",
+          "Primary gate": "Part III only",
+          "Reopen condition": "topology claim attempted without transport",
+          "Required assumptions": "A-TRANSPORT",
+          "Required control": "explicit interspace map and lineage null"
+        },
         "debt_ids": [
           "D-T01"
         ],
@@ -1793,34 +1705,12 @@
           "Required assumptions": "A-TRANSPORT",
           "Required control": "explicit interspace map and lineage null"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-11"
       },
       {
         "accepted_evidence_records": [
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "892fa0dae0c4e61c96daff5f89e6c01f24a37decc45616be47c80a83474788b1",
-            "exact_field_or_row": "/payload/causal_field_inventory",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
-            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
-            "artifact_path": "outputs/return_orbit_registry.json",
-            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
-            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/summary/all_cycle_orientations_overwritten_at_first_transport",
-            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
-            "source_gate": "GRV6"
-          },
           {
             "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
@@ -1870,6 +1760,12 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_ids": [
+          "A-FAST-SLOW",
+          "A-LOOP-INVERT",
+          "A-REGULAR-SLAVING",
+          "A-SMOOTH"
+        ],
         "assumption_statuses": {
           "A-FAST-SLOW": "not_applicable",
           "A-LOOP-INVERT": "not_applicable",
@@ -1880,6 +1776,17 @@
           "T-A01",
           "T-A02"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-A01`, `T-A02`, `D-A01",
+          "GRC extension route": "selectable temporal/current extension if targeted",
+          "LGRC route": "event-cycle return map",
+          "Maximum positive claim": "temporal current semantics of unchanged GRC",
+          "Negative or ambiguous result means": "current is overwritten, sign-even, potential-derived, or assumptions fail",
+          "Primary gate": "GRV3`, `GRV6",
+          "Reopen condition": "algebraic fast-limit interpretation contradicted",
+          "Required assumptions": "`A-SMOOTH`, `A-REGULAR-SLAVING`, `A-LOOP-INVERT`, `A-FAST-SLOW` as applicable",
+          "Required control": "current Jacobian, seed, saturation, fixed/return map"
+        },
         "debt_ids": [
           "D-A01"
         ],
@@ -1907,6 +1814,8 @@
           "Required assumptions": "`A-SMOOTH`, `A-REGULAR-SLAVING`, `A-LOOP-INVERT`, `A-FAST-SLOW` as applicable",
           "Required control": "current Jacobian, seed, saturation, fixed/return map"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-12"
       },
       {
@@ -1922,6 +1831,18 @@
             "exact_field_or_row": "/payload/current_sign_control/classification/orientation_persistence",
             "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
             "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "892fa0dae0c4e61c96daff5f89e6c01f24a37decc45616be47c80a83474788b1",
+            "exact_field_or_row": "/payload/causal_field_inventory",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
           },
           {
             "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
@@ -2006,67 +1927,11 @@
             "exact_field_or_row": "/payload/summary/stationary_cycle_current_supported",
             "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
             "source_gate": "GRV6"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
-            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
-            "artifact_path": "outputs/complete_step_jacobians.json",
-            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
-            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
-            "consumed_value_semantic_sha256": "892fa0dae0c4e61c96daff5f89e6c01f24a37decc45616be47c80a83474788b1",
-            "exact_field_or_row": "/payload/causal_field_inventory",
-            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
-            "source_gate": "GRV3"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
-            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
-            "artifact_path": "outputs/return_orbit_registry.json",
-            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
-            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/summary/all_cycle_orientations_overwritten_at_first_transport",
-            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
-            "source_gate": "GRV6"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
-            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
-            "artifact_path": "outputs/return_orbit_registry.json",
-            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
-            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
-            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-            "exact_field_or_row": "/payload/summary/primitive_return_orbit_count",
-            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
-            "source_gate": "GRV6"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
-            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
-            "artifact_path": "outputs/return_orbit_registry.json",
-            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
-            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
-            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-            "exact_field_or_row": "/payload/summary/relative_periodic_orbit_search_executed",
-            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
-            "source_gate": "GRV6"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
-            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
-            "artifact_path": "outputs/return_orbit_registry.json",
-            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
-            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
-            "consumed_value_semantic_sha256": "8b6cd7c429e83373dbd412f43d7422c0c4a127d93d0f2ad15909f0c2a3e7b320",
-            "exact_field_or_row": "/payload/summary/return_jacobian_ill_conditioned_count",
-            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
-            "source_gate": "GRV6"
           }
+        ],
+        "assumption_ids": [
+          "A-ORIENTATION",
+          "A-UNIQUENESS"
         ],
         "assumption_statuses": {
           "A-ORIENTATION": "satisfied",
@@ -2076,6 +1941,17 @@
           "T-A03",
           "T-A04"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-A03`, `T-A04",
+          "GRC extension route": "do not add selection unless target requires it",
+          "LGRC route": "producer/event asymmetry distinguished",
+          "Maximum positive claim": "seed amplification or threshold separation",
+          "Negative or ambiguous result means": "no autonomous ignition claim",
+          "Primary gate": "GRV6`, `GRV8",
+          "Reopen condition": "exact zero leaves under satisfied symmetry assumptions",
+          "Required assumptions": "A-UNIQUENESS`, `A-ORIENTATION",
+          "Required control": "exact-zero, finite-seed, sign, spark/collapse exclusion"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/complete_step_jacobians.json",
@@ -2101,6 +1977,8 @@
           "Required assumptions": "A-UNIQUENESS`, `A-ORIENTATION",
           "Required control": "exact-zero, finite-seed, sign, spark/collapse exclusion"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-13"
       },
       {
@@ -2190,6 +2068,11 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_ids": [
+          "A-CLOSED",
+          "A-CONSERVE",
+          "A-MOBILITY"
+        ],
         "assumption_statuses": {
           "A-CLOSED": "satisfied",
           "A-CONSERVE": "satisfied",
@@ -2198,6 +2081,17 @@
         "claim_ids": [
           "T-A05"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-A05",
+          "GRC extension route": "cycle-current extension only if targeted",
+          "LGRC route": "packet through-flow separated from closed circulation",
+          "Maximum positive claim": "exclusion of regular gradient stationary circulation",
+          "Negative or ambiguous result means": "boundary or null-sector alternative remains",
+          "Primary gate": "GRV6",
+          "Reopen condition": "nonzero closed gradient current under satisfied assumptions",
+          "Required assumptions": "A-CLOSED`, `A-MOBILITY`, `A-CONSERVE",
+          "Required control": "closed cycle-current and boundary-drive controls"
+        },
         "debt_ids": [],
         "evidence_refs": [
           "outputs/return_orbit_registry.json"
@@ -2219,10 +2113,36 @@
           "Required assumptions": "A-CLOSED`, `A-MOBILITY`, `A-CONSERVE",
           "Required control": "closed cycle-current and boundary-drive controls"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-14"
       },
       {
         "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/exact_orientation_semantics_supported",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "ccad3f4371f5e7079e45fc4efcc1955b89f2f849fe50a1b13ae693d3ed03b420",
+            "exact_field_or_row": "/payload/current_sign_control/classification/orientation_persistence",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
           {
             "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
@@ -2284,30 +2204,6 @@
             "source_gate": "GRV5"
           },
           {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/instrumentation_validation.json",
-            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
-            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
-            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
-            "exact_field_or_row": "/payload/claim_boundary/exact_orientation_semantics_supported",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
-          },
-          {
-            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
-            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
-            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
-            "artifact_path": "outputs/instrumentation_validation.json",
-            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
-            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
-            "consumed_value_semantic_sha256": "ccad3f4371f5e7079e45fc4efcc1955b89f2f849fe50a1b13ae693d3ed03b420",
-            "exact_field_or_row": "/payload/current_sign_control/classification/orientation_persistence",
-            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
-            "source_gate": "GRV1"
-          },
-          {
             "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
             "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
             "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
@@ -2332,12 +2228,28 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_ids": [
+          "A-ORIENTATION",
+          "A-PASSIVE"
+        ],
         "assumption_statuses": {
-          "A-ORIENTATION": "satisfied"
+          "A-ORIENTATION": "satisfied",
+          "A-PASSIVE": "not_identifiable"
         },
         "claim_ids": [
           "T-O01"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-O01`, `D-R03",
+          "GRC extension route": "oriented read extension only after evidence",
+          "LGRC route": "packet direction remains transit until mediation shown",
+          "Maximum positive claim": "operational bridge candidate",
+          "Negative or ambiguous result means": "no canonical read channel",
+          "Primary gate": "GRV5`, `GRV8",
+          "Reopen condition": "a unique bridge is derived",
+          "Required assumptions": "A-ORIENTATION`, `A-PASSIVE",
+          "Required control": "Section 8.7 typed scalar/joint-to-edge mediation"
+        },
         "debt_ids": [
           "D-R03"
         ],
@@ -2364,14 +2276,28 @@
           "Required assumptions": "A-ORIENTATION`, `A-PASSIVE",
           "Required control": "Section 8.7 typed scalar/joint-to-edge mediation"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-15"
       },
       {
         "accepted_evidence_records": [],
+        "assumption_ids": [],
         "assumption_statuses": {},
         "claim_ids": [
           "T-O02"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-O02`, `D-C02",
+          "GRC extension route": "no unified API or runtime label",
+          "LGRC route": "return-map-specific generator",
+          "Maximum positive claim": "bounded common reduction",
+          "Negative or ambiguous result means": "keep objects separate",
+          "Primary gate": "GRV3`, `GRV4`, `GRV6",
+          "Reopen condition": "one generator derived and validated",
+          "Required assumptions": "branch-specific",
+          "Required control": "separate spectra and full-map comparison"
+        },
         "debt_ids": [
           "D-C02"
         ],
@@ -2395,6 +2321,8 @@
           "Required assumptions": "branch-specific",
           "Required control": "separate spectra and full-map comparison"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-16"
       },
       {
@@ -2418,18 +2346,46 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
           }
         ],
+        "assumption_ids": [
+          "A-REACHABLE",
+          "A-STATE-CLOSURE"
+        ],
         "assumption_statuses": {
+          "A-REACHABLE": "satisfied",
           "A-STATE-CLOSURE": "satisfied"
         },
         "claim_ids": [
           "T-O03"
         ],
+        "controlling_source_row": {
+          "Claim or debt": "T-O03`, `D-M01",
+          "GRC extension route": "add state only if synchronous GRC needs it",
+          "LGRC route": "central LGRC admission question",
+          "Maximum positive claim": "bounded Markov sufficiency",
+          "Negative or ambiguous result means": "missing history or phase",
+          "Primary gate": "`GRV3`, `GRV5`, Part III",
+          "Reopen condition": "future differs under identical accepted state",
+          "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
+          "Required control": "matched present-state counterfactuals"
+        },
         "debt_ids": [
           "D-M01"
         ],
@@ -2453,10 +2409,13 @@
           "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
           "Required control": "matched present-state counterfactuals"
         },
+        "source_row_adjusted": false,
+        "source_row_adjustment": null,
         "traceability_row_id": "TR-17"
       }
-    ]
+    ],
+    "source_row_adjustment_count": 1
   },
-  "payload_sha256": "09200aa6e4bde83e159989933505ed37486621c0c472efdc71730b10feece7ba",
-  "schema_version": "b1_grv8_final_theory_test_traceability_v2"
+  "payload_sha256": "d716504391ccad121401157d0667e4280dd38c09116f62b11fff44807838e127",
+  "schema_version": "b1_grv8_final_theory_test_traceability_v3"
 }

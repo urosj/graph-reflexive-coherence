@@ -986,6 +986,18 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
@@ -1490,6 +1502,6 @@
       }
     ]
   },
-  "payload_sha256": "d6c83199c955ab144ac3b929c25199a35bfbf31cb36e687f99868b452217de07",
+  "payload_sha256": "502dcfe549d4435e0edbcec8fb2b7270a6d4e4fa88990493b8556f585a9dab44",
   "schema_version": "b1_grv8_final_theory_debt_register_v2"
 }

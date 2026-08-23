@@ -10,7 +10,7 @@ classified_assumption_count = 19
 classified_claim_count = 33
 classified_object_count = 31
 classified_causal_role_count = 9
-contradiction_route_count = 6
+contradiction_route_count = 7
 extension_decision_count = 6
 theory_reopening_required = false
 GRV_C6_assigned = false
@@ -21,14 +21,17 @@ GRV8 classifies the accepted unchanged-`GRC9V3` evidence. It does not
 retroactively upgrade reduced, synthetic, diagnostic, or blocked rows.
 The classification result must be accepted before the evidence bundle,
 evidence-grounded successor, LGRC handoff, or `GRV-C6` closeout can exist.
-This P8.1 result supersedes the unaccepted P8 candidate at revision
-`1448757`; it does not alter any accepted GRV0-GRV7 result.
+This P8.2 result supersedes the unaccepted P8 and P8.1 candidates. It
+does not alter any accepted GRV0-GRV7 result or rerun a scientific gate.
 
 ## Main Classification
 
 - Formed fixed-topology branches are exact bounded runtime results.
-- The synchronous causal closure is a bounded simplifying limit with `C`
-  independent and `W/J` reconstructed or stage-dependent.
+- The synchronous `C/W/J` causal closure is an exact bounded runtime
+  realization. `C` is admitted as an independent derivative coordinate
+  while `W/J` are reconstructed or stage-dependent. No no-current,
+  frozen-current, or smoothly slaved-current reduction was derived, so
+  this row is L3 rather than a declared L4 simplifying limit.
 - Native current recurrence is an exact stage sequence: old `J` informs a
   sign-even `J^2 -> W` write, then potential flow reconstructs current and
   advances `C`. This is a real reflexive mechanism, not core Read-Back.
@@ -81,17 +84,20 @@ circulation. B1-GR selects neither target.
 
 ## Assumption And Contradiction Discipline
 
-Assumption statuses: `{'not_applicable': 4, 'not_identifiable': 1, 'satisfied': 14}`.
+Assumption statuses: `{'not_applicable': 3, 'not_identifiable': 1, 'satisfied': 15}`.
 A failed or unidentifiable required assumption cannot become a positive
 runtime claim. The native Read-Back passive null remains unidentifiable
-because no distinct native read operator was admitted. Fixed-topology
-transport is not applicable rather than silently generalized to LGRC.
+because no distinct native read operator was admitted. `A-TRANSPORT`
+is satisfied only by the canonical coordinate identity in fixed
+topology; topology-changing interspace transport remains untested and
+routed to LGRC under `D-T01`.
 
 - `CR-GRV8-001` routes `native_GRC9V3_readback` to `substrate_nonrealization`; theory contradiction = `false`.
 - `CR-GRV8-002` routes `unique_retained_projector` to `construct_not_identifiable_with_available_interventions`; theory contradiction = `false`.
 - `CR-GRV8-003` routes `runtime_local_Hessian_as_continuation_or_temporal_threshold` to `candidate_graph_mapping_error`; theory contradiction = `false`.
 - `CR-GRV8-004` routes `transient_W_as_specific_retention_mediator` to `construct_not_identifiable_with_available_interventions`; theory contradiction = `false`.
-- `CR-GRV8-005` routes `active_stationary_or_short_period_cycle_current` to `substrate_nonrealization`; theory contradiction = `false`.
+- `CR-GRV8-005A` routes `stationary_cycle_space_current` to `substrate_nonrealization`; theory contradiction = `false`.
+- `CR-GRV8-005B` routes `primitive_period_2_to_8_return_orbit_constructibility` to `construct_not_identifiable_with_available_interventions`; theory contradiction = `false`.
 - `CR-GRV8-006` routes `algebraic_fast_current_readback_limit` to `required_assumption_not_identifiable`; theory contradiction = `false`.
 
 ## Verification

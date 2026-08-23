@@ -308,10 +308,10 @@
           "outputs/fixed_topology_envelope.json",
           "outputs/fixed_branch_registry.json"
         ],
-        "maximum_supported_use": "fixed_topology_B1_GR_only",
-        "rationale": "Canonical coordinate identity suffices in this fixed-topology experiment; interspace transport remains an LGRC handoff debt.",
-        "scope": "fixed_topology_B1_GR_only",
-        "status": "not_applicable"
+        "maximum_supported_use": "fixed_topology_B1_GR_canonical_coordinate_identification_only",
+        "rationale": "The declared canonical serialized chart supplies the coordinate-identity ambient identification for fixed topology. This does not satisfy topology-changing interspace transport, which remains untested under D-T01.",
+        "scope": "fixed_topology_B1_GR_canonical_coordinate_identification_only",
+        "status": "satisfied"
       },
       {
         "affected_claim_ids": [
@@ -343,11 +343,11 @@
       }
     },
     "summary": {
-      "not_applicable": 4,
+      "not_applicable": 3,
       "not_identifiable": 1,
-      "satisfied": 14
+      "satisfied": 15
     }
   },
-  "payload_sha256": "81a28b5c3767d8de26e342bd07b4491f0a652a69723da977212d9edd6831c0e0",
-  "schema_version": "b1_grv8_assumption_status_matrix_v1"
+  "payload_sha256": "73f5b1cfd73feaccde3bbf1a0eb499cff4c8f52a075613c975db6743d832506e",
+  "schema_version": "b1_grv8_assumption_status_matrix_v2"
 }

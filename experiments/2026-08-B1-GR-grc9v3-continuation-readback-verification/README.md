@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_P8_1_unaccepted_candidate_superseded_P8_2_method_correction
+status = grv8_P8_2_classification_candidate_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -470,8 +470,18 @@ nonrealization from unresolved orbit constructibility, and narrows bounded
 runtime causal closure to exact L3 because no commuting no-current,
 frozen-current, or smoothly slaved-current reduction was derived.
 
-The corrected candidate remains the first of two GRV8 review stages. The evidence bundle,
-evidence-grounded successor, LGRC handoff, GRV8 acceptance anchors, and
+P8.2 executed from clean method revision `b66888e` and emitted corrected
+classification receipt `1884c2f7...`. The receipt records `15` satisfied,
+`3` not-applicable, and `1` not-identifiable assumptions; `33` classified
+claims; `31` classified objects; `9` causal roles; `7` contradiction routes;
+and `6` extension decisions. All receipt-listed file and semantic payload
+digests validate independently, the complete repository suite remains at
+`1,354` passing tests, the post-generation experiment suite passes `115`
+tests, and the unchanged 379-path protected manifest remains exact.
+
+The corrected candidate remains the first of two GRV8 review stages. The
+evidence bundle, evidence-grounded successor, LGRC handoff, GRV8 acceptance
+anchors, and
 `GRV-C6` remain absent until the classification receipt is reviewed and
 accepted.
 

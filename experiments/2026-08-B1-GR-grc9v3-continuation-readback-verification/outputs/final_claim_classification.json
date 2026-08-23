@@ -46,12 +46,25 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-STATE-CLOSURE": "satisfied"
         },
@@ -76,8 +89,8 @@
             "object_id": "active_joint_C_J_continuation"
           },
           {
-            "correspondence_level": "L4_derived_reduced_limit",
-            "implementation_status": "implemented_as_declared_simplifying_limit",
+            "correspondence_level": "L3_constitutive_realization",
+            "implementation_status": "already_implemented_exactly",
             "object_id": "bounded_runtime_causal_state"
           }
         ],
@@ -114,12 +127,25 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-CLOCK": "satisfied",
@@ -140,8 +166,8 @@
         "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
         "object_correspondences": [
           {
-            "correspondence_level": "L4_derived_reduced_limit",
-            "implementation_status": "implemented_as_declared_simplifying_limit",
+            "correspondence_level": "L3_constitutive_realization",
+            "implementation_status": "already_implemented_exactly",
             "object_id": "bounded_runtime_causal_state"
           }
         ],
@@ -222,6 +248,7 @@
             "source_gate": "GRV5"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -310,6 +337,7 @@
             "source_gate": "GRV5"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-PASSIVE": "not_identifiable"
         },
@@ -416,6 +444,7 @@
             "source_gate": "GRV1"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-ORIENTATION": "satisfied"
         },
@@ -501,6 +530,7 @@
             "source_gate": "GRV5"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -595,6 +625,7 @@
             "source_gate": "GRV5"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-STATE-CLOSURE": "satisfied"
         },
@@ -749,6 +780,7 @@
             "source_gate": "GRV1"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -920,6 +952,7 @@
             "source_gate": "GRV1"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-LOOP-INVERT": "not_applicable",
           "A-SMOOTH": "satisfied"
@@ -1087,6 +1120,7 @@
             "source_gate": "GRV1"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-PASSIVE": "not_identifiable",
           "A-SIGN-EVEN": "satisfied",
@@ -1219,6 +1253,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-ORIENTATION": "satisfied",
           "A-SIGN-EVEN": "satisfied"
@@ -1323,6 +1358,7 @@
             "source_gate": "GRV4"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-CONSERVE": "satisfied",
           "A-ORIENTATION": "satisfied"
@@ -1481,6 +1517,7 @@
             "source_gate": "GRV5"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-CLOCK": "satisfied"
@@ -1576,6 +1613,7 @@
             "source_gate": "GRV7"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -1721,10 +1759,11 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-CLOCK": "satisfied",
-          "A-TRANSPORT": "not_applicable"
+          "A-TRANSPORT": "satisfied"
         },
         "blocked_claims": [
           "unbounded_generalization",
@@ -1846,6 +1885,7 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-CLOCK": "satisfied"
         },
@@ -1927,6 +1967,7 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-CLOCK": "satisfied",
           "A-NONNORMAL-CONTROL": "satisfied",
@@ -2154,6 +2195,7 @@
             "source_gate": "GRV1"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -2351,6 +2393,7 @@
             "source_gate": "GRV7"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-CONSERVE": "satisfied",
@@ -2485,6 +2528,7 @@
             "source_gate": "GRV1"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied"
         },
@@ -2563,6 +2607,7 @@
             "source_gate": "GRV2"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied"
         },
@@ -2625,6 +2670,7 @@
             "source_gate": "GRV2"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied"
         },
@@ -2723,10 +2769,11 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-ISOLATION": "satisfied",
           "A-NONNORMAL-CONTROL": "satisfied",
-          "A-TRANSPORT": "not_applicable"
+          "A-TRANSPORT": "satisfied"
         },
         "blocked_claims": [
           "unbounded_generalization",
@@ -2800,8 +2847,11 @@
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {
+          "A-TRANSPORT": "satisfied only for the fixed-topology canonical coordinate identity; topology-changing interspace transport remains untested and T-B04 remains outside B1-GR scope"
+        },
         "assumption_statuses": {
-          "A-TRANSPORT": "not_applicable"
+          "A-TRANSPORT": "satisfied"
         },
         "blocked_claims": [
           "unbounded_generalization",
@@ -2867,6 +2917,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-FAST-SLOW": "not_applicable",
           "A-LOOP-INVERT": "not_applicable",
@@ -2962,6 +3013,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-REGULAR-SLAVING": "not_applicable",
           "A-SMOOTH": "satisfied"
@@ -3110,6 +3162,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-ORIENTATION": "satisfied",
           "A-UNIQUENESS": "satisfied"
@@ -3230,6 +3283,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -3355,6 +3409,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-CLOSED": "satisfied",
           "A-CONSERVE": "satisfied",
@@ -3410,6 +3465,7 @@
       },
       {
         "accepted_evidence_records": [],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-BRANCH": "satisfied",
           "A-CLOCK": "satisfied",
@@ -3556,6 +3612,7 @@
             "source_gate": "GRV6"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-ORIENTATION": "satisfied"
         },
@@ -3623,6 +3680,7 @@
       },
       {
         "accepted_evidence_records": [],
+        "assumption_scope_notes": {},
         "assumption_statuses": {},
         "blocked_claims": [
           "unbounded_generalization",
@@ -3671,12 +3729,25 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
             "source_gate": "GRV3"
           }
         ],
+        "assumption_scope_notes": {},
         "assumption_statuses": {
           "A-STATE-CLOSURE": "satisfied"
         },
@@ -3697,8 +3768,8 @@
         "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
         "object_correspondences": [
           {
-            "correspondence_level": "L4_derived_reduced_limit",
-            "implementation_status": "implemented_as_declared_simplifying_limit",
+            "correspondence_level": "L3_constitutive_realization",
+            "implementation_status": "already_implemented_exactly",
             "object_id": "bounded_runtime_causal_state"
           }
         ],
@@ -3737,6 +3808,6 @@
       "theory_open_no_native_realization": 1
     }
   },
-  "payload_sha256": "5bbe02d10a193fa0bdb5fd240401cdb2a44dddcf1fb3c7e71bff42deda11b583",
-  "schema_version": "b1_grv8_final_claim_classification_v2"
+  "payload_sha256": "cd280683e07738e7e96fa5372003240ec8438d89b1ed54acb58766f075928b8e",
+  "schema_version": "b1_grv8_final_claim_classification_v3"
 }

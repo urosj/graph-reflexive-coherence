@@ -1947,8 +1947,61 @@ core-reduction derivation.
 - [x] Record that no no-current, frozen-current, or smoothly slaved-current commuting reduction was derived.
 - [x] Narrow bounded runtime causal closure to exact L3 without weakening the runtime result.
 - [x] Add regression coverage for all four correction families.
-- [ ] Commit the P8.2 method revision.
-- [ ] Execute replacement GRV8 from the clean P8.2 revision.
-- [ ] Validate corrected artifacts, complete suite, and protected paths.
-- [ ] Submit the P8.2 candidate for human scientific review.
+- [x] Commit the P8.2 method revision.
+- [x] Execute replacement GRV8 from the clean P8.2 revision.
+- [x] Validate corrected artifacts, complete suite, and protected paths.
+- [x] Submit the P8.2 candidate for human scientific review.
 - [x] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.
+
+P8.2 corrected candidate awaiting human scientific review:
+
+```text
+input_execution_revision = b66888e37e7ef2aca61df206124ddb7a3f0fef2d
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+accepted_prerequisite_gate_count = 8
+verification_closeout_rung = GRV-C5
+classified_assumption_count = 19
+assumption_status_counts = 15_satisfied_3_not_applicable_1_not_identifiable
+classified_claim_count = 33
+classified_object_count = 31
+classified_causal_role_count = 9
+contradiction_route_count = 7
+extension_decision_count = 6
+traceability_source_row_adjustment_count = 1
+traceability_evidence_records_deduplicated = true
+fixed_topology_A_TRANSPORT = satisfied
+topology_changing_interspace_transport = not_tested_D_T01
+bounded_runtime_causal_state = exact_L3_constitutive_realization
+declared_commuting_core_reduction_derived = false
+stationary_cycle_current_route = bounded_substrate_nonrealization
+period_2_to_8_orbit_route = construct_not_identifiable_with_available_interventions
+maximum_retention_ladder_rung = GRR2
+native_readback_supported = false
+native_writeback_supported = false
+closed_read_write_loop_supported = false
+theory_reopening_required = false
+evidence_bundle_frozen = false
+successor_generated = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+repository_tests = 1354_passed
+post_generation_B1_GR_tests = 115_passed
+protected_path_count = 379
+protected_paths_unchanged = true
+grv8_result_receipt_payload_sha256 = 1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5
+assumption_status_matrix_sha256 = 2c346fc5ec7ca771a4bf191691a39c94dbe71b2a39b5c40670ac9f9d8601511b
+equivalence_classification_sha256 = c05e3a6e1b383f6541ff4c755472ad156e5bcbda69a10f3370169631da8aa8d3
+final_claim_classification_sha256 = f85d474daef7db7597f99d0d4afea2e242b4ca66b08a95b830496ae802f57d38
+final_contradiction_routing_sha256 = b7552dcd7008d6ae5378951f7af704e459847eebb03166c7eeb59d0c8110c3a0
+final_theory_test_traceability_sha256 = e16e5c352ad7d833e769f49b1b639830bcbb3aa3a298ff2b02e1803587dde5f7
+protected_manifest_sha256 = d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f298d406baf35db
+```
+
+P8.2 preserves both earlier GRV8 candidates as non-consumable historical
+results. It changes classification propagation and interpretation only: no
+accepted GRV0-GRV7 artifact, fixture, threshold, runtime behavior, or claim
+ceiling was reopened. The corrected receipt is now the sole candidate eligible
+for human scientific review. Until that review accepts it, no GRV8 acceptance
+anchor, evidence bundle, successor specification, LGRC handoff, closeout
+anchor, or `GRV-C6` assignment may be produced.

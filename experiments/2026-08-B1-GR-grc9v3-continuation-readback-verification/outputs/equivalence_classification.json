@@ -125,6 +125,18 @@
             "artifact_path": "outputs/complete_step_jacobians.json",
             "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
             "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/causal_closure_pass_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
             "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
             "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
             "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
@@ -138,6 +150,7 @@
           "A-STATE-CLOSURE"
         ],
         "blocked_claims": [
+          "declared_no_current_frozen_or_smoothly_slaved_core_reduction",
           "universal_C_J_primitive_identity",
           "LGRC_state_closure"
         ],
@@ -148,7 +161,7 @@
         ],
         "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
         "continuous_stratum": "F2_F3_admitted_smooth_strata_with_F1_identity_boundary_blocked",
-        "correspondence_level": "L4_derived_reduced_limit",
+        "correspondence_level": "L3_constitutive_realization",
         "debt_ids": [
           "D-M01"
         ],
@@ -156,15 +169,26 @@
           "outputs/complete_step_jacobians.json"
         ],
         "fixture_branch_envelope": "48_GRV2_branches_with_row_local_derivative_admission",
-        "implementation_status": "implemented_as_declared_simplifying_limit",
-        "maximum_supported_claim": "branch_and_stratum_relative_synchronous_GRC_causal_closure_with_C_independent_and_W_J_reconstructed",
+        "implementation_status": "already_implemented_exactly",
+        "maximum_supported_claim": "branch_and_stratum_relative_bounded_C_W_J_runtime_causal_closure_with_C_admitted_as_an_independent_derivative_coordinate_and_W_J_reconstructed_or_stage_dependent",
         "object_id": "bounded_runtime_causal_state",
         "primary_decision_route": "lgrc_specific_investigation",
         "proof_note_ids": [],
+        "reduction_mapping_audit": {
+          "candidate_limits_checked": [
+            "no_current",
+            "frozen_current",
+            "smoothly_slaved_current"
+          ],
+          "complete_beat_commuting_reduction_derived": false,
+          "decision": "narrow_runtime_fact_to_exact_L3_without_L4_core_reduction_claim",
+          "declared_core_limit_identified": false
+        },
         "runtime_stage": "complete_synchronous_transition",
         "secondary_qualifiers": [
           "analysis_only",
           "branch_relative",
+          "exact_runtime_closure_not_declared_core_reduction",
           "stratum_relative",
           "unknown_outside_envelope"
         ],
@@ -2372,8 +2396,8 @@
         "L0_analogy": 5,
         "L1_representability": 5,
         "L2_operational_signature": 11,
-        "L3_constitutive_realization": 7,
-        "L4_derived_reduced_limit": 2,
+        "L3_constitutive_realization": 8,
+        "L4_derived_reduced_limit": 1,
         "L5_robust_realization": 1
       },
       "current_recurrence_classification": "exact_native_mechanism_distinct_from_core_readback",
@@ -2381,8 +2405,7 @@
       "geometry_mobility_extension_opened": false,
       "implementation_status_counts": {
         "absent_from_substrate": 11,
-        "already_implemented_exactly": 7,
-        "implemented_as_declared_simplifying_limit": 1,
+        "already_implemented_exactly": 8,
         "implemented_only_analogically": 2,
         "measurable_from_existing_state_but_not_constitutive": 8,
         "theoretically_underdetermined_open": 2
@@ -2398,6 +2421,6 @@
       "runtime_spatial_vs_full_temporal_non_equivalence_supported": false
     }
   },
-  "payload_sha256": "c381cc8c493863ef55fdb5b226ed9cbc6fadf198f5b4e5c66c6b423e2b5c4ea3",
-  "schema_version": "b1_grv8_equivalence_classification_v2"
+  "payload_sha256": "c3358bb899affa49cd4a3bd1d7641080ead4367528efd6e3523accf7fc5a0fbf",
+  "schema_version": "b1_grv8_equivalence_classification_v3"
 }
