@@ -1,0 +1,40 @@
+{
+  "blocked_gates": [
+    "B2-I3",
+    "B2-I4",
+    "B2-I5",
+    "B2-I6",
+    "B2-I7",
+    "B2-I8"
+  ],
+  "claim_ceiling": "B2-C1-ready_schema_only_no_positive_constructibility_evidence",
+  "config_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/configs/b2_i2_constructibility_schema_contract.json",
+  "config_sha256": "4b89eb2e29e8fd702bfb113ce02e140ac24180894291c0d2af46452a23de8e2c",
+  "gate_id": "B2-I2",
+  "generating_script_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i2_constructibility_schema.py",
+  "generating_script_sha256": "6a3e82888fd5cc6dffe1d84c5a3782f3cfd69f6eeba57733f257d299f1681cf1",
+  "input_execution_revision": "25032915cbea55c837fc703dc381db3ab0bf91bb",
+  "output_artifact_digests": {
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i2_constructibility_schema.json": "cad077947257adeefd59ff5f2320d89202a228fd8d0b04a1cff8ea083bb8a8c3",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_i2_constructibility_schema.md": "58ea12ab631c43a676be30182ea500d8f0dad2204628049e0121df773a59dc5b"
+  },
+  "output_payload_sha256": "5b21d2d4feb2dc10ecfb943b8dbbebc31785f5aa4bffefe34eb84f4f0c89fed1",
+  "prerequisite_acceptance_anchors": [
+    {
+      "acceptance_status": "accepted",
+      "assigned_closeout_rung": "B2-C0",
+      "path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i1_acceptance_anchor.json",
+      "result_revision": "ff2fe054b14aab7f9ac058464a880c185d8977d5",
+      "sha256": "0d4bdf9e64277448f928699eedea9d1ca83c0e2c1d5126ffbfe7d090c44e3a03"
+    }
+  ],
+  "prerequisite_result_receipt_digests": [
+    {
+      "path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i1_result_receipt.json",
+      "receipt_payload_sha256": "13583b4f29d80becd5d1876437f07146b77dbcbabef3c4cd0a5fe4dd6997bce2",
+      "sha256": "56ddf2882c972febee001b687c6584e4e999302c61457bc2ee099f41b8bfc99c"
+    }
+  ],
+  "receipt_payload_sha256": "e2856763213bff2d20debef38877992f88c153a8efdeace55c8db46a7121e057",
+  "status": "awaiting_scientific_review"
+}

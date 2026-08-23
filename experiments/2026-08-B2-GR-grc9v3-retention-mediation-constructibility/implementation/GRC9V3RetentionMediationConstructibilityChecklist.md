@@ -82,40 +82,40 @@ Interpretation:
 
 ## Iteration 2 - Constructibility Schema Freeze
 
-- [ ] Freeze the complete candidate-row schema.
-- [ ] Freeze `GRR0-GRR5` without redefining B1-GR meanings.
-- [ ] Freeze `B2-C0-B2-C6` as a process ladder separate from GRR evidence.
-- [ ] Freeze runtime-reached, synthetic-valid, reduced, and diagnostic provenance classes.
-- [ ] Freeze allowed upstream preparation drivers and block direct internal-state authorship from positive evidence.
-- [ ] Freeze B1 branch ancestry, topology, parameter, preparation, amplitude, history, search-budget, seed, stopping, deduplication, and symmetry envelopes.
-- [ ] Freeze a fixed-topology, event-free, same-stratum primary evidence lane.
-- [ ] Freeze same-configuration branch relation separately from parameter-continuation geometry.
-- [ ] Freeze primary slow-cluster metric/projector and separate secondary sensitivity metrics.
-- [ ] Freeze isolation, conditioning, uncertainty, horizon, and nonzero admissibility-margin rules.
-- [ ] Freeze carrier classes without privileging `W`.
-- [ ] Freeze driver-carrier overlap policy; direct carrier authorship cannot count as native write.
-- [ ] Freeze exact carrier definitions; permit no open-ended post-I2 `other` carrier.
-- [ ] Freeze carrier projector/complement and minimum carrier-separation margin.
-- [ ] Freeze carrier-lineage continuity and prohibit cross-row or cross-lane rung composition.
-- [ ] Freeze temporal operator domain and carrier observation/lift rules.
-- [ ] Freeze fixed-reference versus transported slow-projector policy.
-- [ ] Freeze cumulative row-local `GRR3 -> GRR4 -> GRR5` dependency.
-- [ ] Freeze matched carrier-by-probe difference-in-differences.
-- [ ] Freeze natural, runtime-constructed, and synthetic matched-pair provenance.
-- [ ] Freeze full non-carrier causal-state matching by state block.
-- [ ] Freeze probe-input classes and GRR4 zero-probe versus core passive-null semantics.
-- [ ] Freeze native full-step, native immediate-stage, and frozen-`W` lane boundaries.
-- [ ] Freeze structurally valid reset/swap controls and full-stage mediator-neutralization bypass semantics.
-- [ ] Freeze `not_identifiable` as blocking a dependent rung without counting as mechanism failure.
-- [ ] Freeze per-carrier reset/swap/bypass applicability matrix without silently strengthening inherited GRR5.
-- [ ] Freeze passive, activity-maintained, regenerated, transferred, and externally maintained persistence classes.
-- [ ] Freeze witness-validity gates separately from robustness-characterization gates.
-- [ ] Freeze positive, bounded-negative, unresolved, numerical-failure, assumption-failure, non-identifiable, invalid, duplicate, and outside-envelope statuses.
-- [ ] Freeze replay and active-null semantics.
-- [ ] Freeze row-local thresholds before use and post-hoc selection blockers.
-- [ ] Freeze artifact path/digest admissibility and `derived_report_only` blockers.
-- [ ] Freeze demotion precedence and extension-selection constraints.
-- [ ] Assign no positive GRR rung; mark only `B2-C1-ready` before human review.
+- [x] Freeze the complete candidate-row schema.
+- [x] Freeze `GRR0-GRR5` without redefining B1-GR meanings.
+- [x] Freeze `B2-C0-B2-C6` as a process ladder separate from GRR evidence.
+- [x] Freeze runtime-reached, synthetic-valid, reduced, and diagnostic provenance classes.
+- [x] Freeze allowed upstream preparation drivers and block direct internal-state authorship from positive evidence.
+- [x] Freeze B1 branch ancestry, topology, parameter, preparation, amplitude, history, search-budget, seed, stopping, deduplication, and symmetry envelopes.
+- [x] Freeze a fixed-topology, event-free, same-stratum primary evidence lane.
+- [x] Freeze same-configuration branch relation separately from parameter-continuation geometry.
+- [x] Freeze primary slow-cluster metric/projector and separate secondary sensitivity metrics.
+- [x] Freeze isolation, conditioning, uncertainty, horizon, and nonzero admissibility-margin rules.
+- [x] Freeze carrier classes without privileging `W`.
+- [x] Freeze driver-carrier overlap policy; direct carrier authorship cannot count as native write.
+- [x] Freeze exact carrier definitions; permit no open-ended post-I2 `other` carrier.
+- [x] Freeze carrier projector/complement and minimum carrier-separation margin.
+- [x] Freeze carrier-lineage continuity and prohibit cross-row or cross-lane rung composition.
+- [x] Freeze temporal operator domain and carrier observation/lift rules.
+- [x] Freeze fixed-reference versus transported slow-projector policy.
+- [x] Freeze cumulative row-local `GRR3 -> GRR4 -> GRR5` dependency.
+- [x] Freeze matched carrier-by-probe difference-in-differences.
+- [x] Freeze natural, runtime-constructed, and synthetic matched-pair provenance.
+- [x] Freeze full non-carrier causal-state matching by state block.
+- [x] Freeze probe-input classes and GRR4 zero-probe versus core passive-null semantics.
+- [x] Freeze native full-step, native immediate-stage, and frozen-`W` lane boundaries.
+- [x] Freeze structurally valid reset/swap controls and full-stage mediator-neutralization bypass semantics.
+- [x] Freeze `not_identifiable` as blocking a dependent rung without counting as mechanism failure.
+- [x] Freeze per-carrier reset/swap/bypass applicability matrix without silently strengthening inherited GRR5.
+- [x] Freeze passive, activity-maintained, regenerated, transferred, and externally maintained persistence classes.
+- [x] Freeze witness-validity gates separately from robustness-characterization gates.
+- [x] Freeze positive, bounded-negative, unresolved, numerical-failure, assumption-failure, non-identifiable, invalid, duplicate, and outside-envelope statuses.
+- [x] Freeze replay and active-null semantics.
+- [x] Freeze row-local thresholds before use and post-hoc selection blockers.
+- [x] Freeze artifact path/digest admissibility and `derived_report_only` blockers.
+- [x] Freeze demotion precedence and extension-selection constraints.
+- [x] Assign no positive GRR rung; mark only `B2-C1-ready` before human review.
 
 Expected artifacts:
 
@@ -125,6 +125,38 @@ outputs/gates/b2_i2_result_receipt.json
 outputs/gates/b2_i2_acceptance_anchor.json
 reports/b2_i2_constructibility_schema.md
 ```
+
+### Iteration 2 Result - Awaiting Human Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = 25032915cbea55c837fc703dc381db3ab0bf91bb
+checks = 51/51 passed
+failed_checks = []
+candidate_required_field_count = 139
+carrier_definition_count = 3
+active_null_definition_count = 37
+maximum_discovery_rows = 9648
+artifact_payload_sha256 = 5b21d2d4feb2dc10ecfb943b8dbbebc31785f5aa4bffefe34eb84f4f0c89fed1
+receipt_payload_sha256 = e2856763213bff2d20debef38877992f88c153a8efdeace55c8db46a7121e057
+acceptance_anchor_created = false
+B2_positive_evidence_opened = false
+GRR_rung_assigned = false
+B2_closeout_rung_assigned = false
+B2_closeout_ceiling = B2-C1-ready
+ready_for_I3 = false_pending_I2_acceptance
+```
+
+Interpretation:
+
+- The schema consumes the accepted I1 anchor and live-verifies the unchanged-runtime protected manifest.
+- The finite carrier set is `C_ZERO_SUM_V1`, `W_EDGE_CONDUCTANCE_OBSERVATION_V1`, and `JOINT_C_W_BLOCK_V1`; there is no post-I2 open-ended carrier category.
+- Slow-cluster evidence is restricted to the admitted complete-step zero-sum `C` operator. `W` and joint `C-W` participate through frozen observation/lift maps, not an invented independent `W/J` temporal state.
+- All 48 accepted B1 branches remain in the deterministic 9,648-row maximum discovery envelope without branch ranking or symmetry reduction. The row-count arithmetic is bound to the 160 oriented source edges in the accepted I1 crosswalk.
+- A single carrier lineage must connect runtime formation, persistence, matched-probe mediation, and controls. Directly authored carrier components and cross-lineage rung composition fail closed.
+- The GRR4 zero-probe baseline remains distinct from the stronger core Read-Back passive-null condition, and bypass does not silently strengthen inherited GRR5.
+- Iteration 2 is schema-only. It opens no candidate evidence, assigns no GRR rung, and selects no extension. Human acceptance may assign `B2-C1` and open Iteration 3.
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
