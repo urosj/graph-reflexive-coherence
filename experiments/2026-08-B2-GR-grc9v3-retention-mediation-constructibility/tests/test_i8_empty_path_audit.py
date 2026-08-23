@@ -68,5 +68,46 @@ def test_generated_audit_is_bounded_when_present() -> None:
     assert sum(
         row["attempt_count"] for row in payload["formation_attribution_split"]
     ) == 1706
+    split = {
+        row["attribution_class"]: row
+        for row in payload["formation_attribution_split"]
+    }
+    assert split[
+        "apparent_carrier_authored_within_numerical_uncertainty"
+    ]["attempt_count"] == 1705
+    assert split[
+        "runtime_residual_above_uncertainty_below_separation_floor"
+    ]["attempt_count"] == 1
+    assert split[
+        "runtime_residual_above_separation_below_formation_floor"
+    ]["attempt_count"] == 0
+    top = payload["near_miss_audit"]["top_subthreshold_runtime_residual_rows"][0]
+    assert top["formation_floor_fraction"] < 0.0011
+    assert payload["near_miss_audit"]["delayed_post_driver_formation_count"] == 0
+    assert payload["near_miss_audit"]["internal_stage_only_candidate_count"] == 0
+    assert payload["near_miss_audit"][
+        "overwritten_or_nonpersistent_candidate_count"
+    ] == 0
+    outside = payload["outside_envelope_mechanisms"]
+    assert outside["eventful_attempt_count"] == 0
+    assert outside["topology_mutating_attempt_count"] == 0
+    assert outside["all_attempts_were_inside_frozen_proposal_grid"] is True
+    uniqueness = payload["bounded_negative_uniqueness"]
+    assert uniqueness["attempt_count"] == 27
+    assert uniqueness["unique_source_branch_count"] == 27
+    assert uniqueness["unique_preparation_family_count"] == 1
+    assert {
+        row["preparation_family"] for row in uniqueness["rows"]
+    } == {"native_spontaneous_no_driver"}
+    confirmation = payload["candidate_confirmation_accounting"]
+    assert confirmation == {
+        "confirmed_candidate_count": 0,
+        "discovery_candidate_count_before_confirmation": 0,
+        "fresh_confirmation_attempt_count": 0,
+        "fresh_confirmation_failure_count": 0,
+    }
+    assert all(
+        row["allocation_complete"] for row in payload["branch_allocation_audit"]
+    )
     assert payload["scientific_boundary"]["I4_candidate_set_reopened"] is False
     assert payload["scientific_boundary"]["full_attempt_rows_retained"] is False
