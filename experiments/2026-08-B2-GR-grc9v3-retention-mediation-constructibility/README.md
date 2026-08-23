@@ -9,7 +9,7 @@ or specified.
 
 ```text
 experiment_id = B2-GR
-status = iteration_3_active_nulls_passed_awaiting_human_review
+status = iteration_3_adjudicator_hardening_package_prepared
 source_experiment = B1-GR
 source_closeout = accepted_GRV-C6
 source_maximum_retention_rung = GRR2
@@ -51,7 +51,9 @@ iteration_3_all_threshold_calibrations_usable = true
 iteration_3_artifact_payload_sha256 = 7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b
 iteration_3_threshold_payload_sha256 = c71388f43c5e16718aa0405bca5d383343193055363e0d6220592d2d6e7a55fa
 iteration_3_receipt_payload_sha256 = 340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a
-iteration_3_execution = passed_awaiting_human_review
+iteration_3_preliminary_execution = superseded_before_human_review
+iteration_3_preliminary_result_revision = 99e814ffb03d4f71fe590f9842938605ba617a0e
+iteration_3_hardened_execution = not_run_pending_clean_committed_package
 iteration_3_acceptance_anchor_created = false
 ready_for_iteration_4 = false_pending_I3_execution_and_acceptance
 extension_target_selected = false

@@ -247,7 +247,7 @@ outputs/gates/b2_i3_acceptance_anchor.json
 reports/b2_i3_active_nulls.md
 ```
 
-### Iteration 3 Result - Awaiting Human Review
+### Iteration 3 Preliminary Result - Superseded Before Human Review
 
 ```text
 status = passed
@@ -274,12 +274,44 @@ ready_for_I4 = false_pending_I3_acceptance
 
 Interpretation:
 
-- Every null frozen by accepted I2 is instantiated exactly once and rejects its false-positive path. `failed_closed` means the blocker worked; no positive control was executed or failed.
+- This preliminary result instantiated every frozen I2 null, but it did not prove that each null reached its intended gate or that nearby admissible fixtures passed. It was never accepted and created no acceptance anchor.
+- The result is superseded by the I3 adjudicator-hardening revision. Its artifact and receipt remain immutable provenance, not current gate evidence.
 - Nulls are fixture/report-only and contain no source-current inputs or positive artifacts. They can reject invalid evidence paths but cannot support GRR formation, persistence, slow-cluster, mediation, controls, or replay.
 - The seven control families cover slow/temporal admission, branch relation, formation/full-path provenance, probe mediation, reset/swap/bypass, carrier lineage/equivalence, and search/claim governance.
 - The four threshold values are preregistered admission floors derived from inherited tolerance bases or the frozen dimensionless floor. They are not empirical noise estimates or runtime evidence.
 - Later positive rows must apply both these floors and their row-local numerical uncertainty. Any unusable calibration would have blocked I4; none did.
-- I3 supports only the false-positive-control portion of B2. Human acceptance may assign `B2-C2` and open the I4 unchanged-runtime preparation search.
+- This preliminary result cannot assign `B2-C2` or open I4.
+
+### Iteration 3 Adjudicator-Hardening Revision
+
+- [x] Supersede the unaccepted preliminary result without creating an acceptance anchor.
+- [x] Freeze an experiment-local adjudicator schema, disposition precedence, and downstream digest-binding rule.
+- [x] Make every atomic null minimally wrong and require its intended gate to be reached without unexpected blockers.
+- [x] Pair every frozen I2 rule with a non-evidence pass-through sentinel.
+- [x] Preserve typed alternative classifications while rejecting prohibited stronger relabels.
+- [x] Add compound-null precedence cases.
+- [x] Separate calibration fixtures from held-out equality/inside/outside threshold audits.
+- [x] Add required/optional control-status truth-table cases.
+- [x] Add partial authored-carrier, lineage transport, representation-change, and synthetic-probe pressure.
+- [x] Add numerical/projector, full-history cleanliness, duplicate-accounting, search, aggregation, and extension-selection audits.
+- [x] Keep every validator fixture outside B2 positive evidence, search coverage, branch prevalence, and extension triggers.
+- [ ] Execute the hardened package from a clean committed revision.
+- [ ] Verify every atomic, sentinel, compound, and focused boundary case against the shared adjudicator.
+- [ ] Produce the superseding artifact, report, threshold calibration, and receipt.
+- [ ] Obtain human acceptance before assigning `B2-C2` or opening I4.
+
+The hardened I3 package distinguishes validator specificity from permissiveness:
+
+```text
+atomic target rule fails
+  -> intended typed disposition, no unrelated blocker
+
+nearby all-gates-pass sentinel
+  -> pass_through_fixture, no scientific evidence
+
+compound violation
+  -> frozen primary disposition plus retained secondary reasons
+```
 
 ## Iteration 4 - Native Preparation And Reachability Search
 

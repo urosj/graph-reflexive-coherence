@@ -47,6 +47,157 @@ class I3ActiveNullTests(unittest.TestCase):
             self.assertEqual(row["artifact_manifest"], [])
             self.assertEqual(row["maximum_GRR_rung"], "not_assigned")
             self.assertFalse(row["GRR_rung_assigned"])
+            self.assertTrue(row["target_rule_reached"])
+            self.assertEqual(row["unexpected_blockers"], [])
+            self.assertEqual(
+                row["observed_disposition"],
+                row["expected_primary_disposition"],
+            )
+            self.assertEqual(row["validator_result"], "passed")
+
+    def test_every_rule_has_a_passing_nearby_sentinel(self) -> None:
+        required = self.payload["source_schema_contract"]["required_null_ids"]
+        sentinels = self.payload["pass_through_sentinel_rows"]
+        coverage = self.payload["rule_coverage_matrix"]
+        self.assertEqual(len(sentinels), 52)
+        self.assertEqual(
+            [row["i2_rule_ids_exercised"][0] for row in sentinels], required
+        )
+        self.assertTrue(
+            all(
+                row["observed_disposition"] == "pass_through_fixture"
+                and row["result"] == "passed"
+                and not row["positive_evidence_eligible"]
+                for row in sentinels
+            )
+        )
+        self.assertEqual([row["I2_rule_id"] for row in coverage], required)
+        self.assertTrue(
+            all(
+                len(row["atomic_null_case_ids"]) == 1
+                and len(row["pass_through_sentinel_case_ids"]) == 1
+                for row in coverage
+            )
+        )
+
+    def test_alternative_classifications_survive_precise_rejection(self) -> None:
+        rows = {row["null_id"]: row for row in self.payload["active_null_rows"]}
+        expected = {
+            "regenerated_W_from_retained_C_relabelled_as_durable_W_carrier": "regenerated_carrier_from_retained_state",
+            "event_or_topology_change_relabelled_as_fixed_topology_retention": "eventful_history_persistence",
+            "ordinary_slow_C_relaxation_relabelled_as_history_specific_carrier": "ordinary_branch_slow_relaxation",
+            "branch_tangent_relocation_as_retained_carrier": "branch_tangent_neutral_displacement",
+        }
+        for null_id, alternative in expected.items():
+            self.assertIn(
+                alternative, rows[null_id]["preserved_alternative_classifications"]
+            )
+
+    def test_compound_precedence_and_control_truth_table(self) -> None:
+        compounds = self.payload["compound_precedence_rows"]
+        self.assertEqual(len(compounds), 4)
+        self.assertTrue(
+            all(
+                row["result"] == "passed"
+                and row["target_rule_reached"]
+                and row["unexpected_blockers"] == []
+                for row in compounds
+            )
+        )
+        controls = self.payload["control_truth_table_rows"]
+        self.assertEqual(len(controls), 14)
+        self.assertTrue(all(row["result"] == "passed" for row in controls))
+        by_case = {row["case_id"]: row for row in controls}
+        self.assertEqual(
+            by_case["b2_i3_control_truth_required_not_identifiable"][
+                "observed_disposition"
+            ],
+            "required_control_not_identifiable",
+        )
+        self.assertFalse(
+            by_case["b2_i3_control_truth_required_not_identifiable"][
+                "mechanism_falsified"
+            ]
+        )
+
+    def test_calibration_and_held_out_threshold_audits_are_distinct(self) -> None:
+        audits = self.payload["threshold_boundary_audit_rows"]
+        self.assertEqual(len(audits), 12)
+        self.assertTrue(
+            all(
+                row["threshold_calibration_role"]
+                == "held_out_boundary_audit_not_calibration"
+                and row["result"] == "passed"
+                for row in audits
+            )
+        )
+        equality = [
+            row for row in audits if row["boundary_variant"] == "exact_equality"
+        ]
+        self.assertEqual(len(equality), 4)
+        self.assertTrue(
+            all(
+                row["observed_disposition"] == "bounded_negative"
+                and row["threshold_equality_is_positive"] is False
+                for row in equality
+            )
+        )
+
+    def test_overlap_lineage_and_numerical_boundaries_are_typed(self) -> None:
+        overlap = self.payload["partial_driver_carrier_overlap_rows"]
+        self.assertEqual(len(overlap), 3)
+        self.assertTrue(
+            all(
+                row["authored_component_excluded"]
+                and not row["full_apparent_carrier_used_for_formation"]
+                and row["result"] == "passed"
+                for row in overlap
+            )
+        )
+        lineage = self.payload["carrier_lineage_transport_rows"]
+        self.assertEqual(len(lineage), 5)
+        self.assertTrue(all(row["result"] == "passed" for row in lineage))
+        numerical = self.payload["numerical_structural_boundary_rows"]
+        self.assertEqual(len(numerical), 11)
+        self.assertEqual(
+            sum(
+                row["observed_disposition"] == "numerical_failure" for row in numerical
+            ),
+            10,
+        )
+        self.assertTrue(all(row["result"] == "passed" for row in numerical))
+
+    def test_search_closeout_and_full_history_semantics_stay_bounded(self) -> None:
+        rows = self.payload["search_and_closeout_semantic_rows"]
+        self.assertEqual(len(rows), 9)
+        self.assertTrue(
+            all(
+                row["result"] == "passed" and row["extension_selected"] is False
+                for row in rows
+            )
+        )
+        by_scenario = {row["scenario"]: row for row in rows}
+        self.assertEqual(
+            by_scenario["preparation_event_disappears_by_k0"]["observed_disposition"],
+            "outside_envelope",
+        )
+        self.assertEqual(
+            by_scenario["preparation_clipping_disappears_by_k0"][
+                "observed_disposition"
+            ],
+            "outside_envelope",
+        )
+
+    def test_shared_adjudicator_is_bound_for_downstream_reuse(self) -> None:
+        binding = self.payload["adjudicator_binding"]
+        contract = self.payload["adjudicator_contract"]
+        self.assertEqual(binding["schema_version"], contract["required_schema_version"])
+        self.assertEqual(len(binding["sha256"]), 64)
+        self.assertTrue(contract["later_iterations_must_use_same_adjudicator_digest"])
+        self.assertTrue(contract["adjudicator_change_requires_I3_rerun"])
+        self.assertTrue(
+            contract["scientific_rule_change_requires_I2_revision_and_reacceptance"]
+        )
 
     def test_control_results_use_explicit_failed_closed_semantics(self) -> None:
         expected_fields = {
@@ -120,6 +271,7 @@ class I3ActiveNullTests(unittest.TestCase):
         self.assertFalse(boundary["extension_target_selected"])
 
     def test_mechanical_checks_and_serialization_pass(self) -> None:
+        self.assertEqual(self.payload["validator_case_count"], 162)
         self.assertEqual(self.payload["status"], "passed")
         self.assertEqual(self.payload["failed_checks"], [])
         self.assertEqual(

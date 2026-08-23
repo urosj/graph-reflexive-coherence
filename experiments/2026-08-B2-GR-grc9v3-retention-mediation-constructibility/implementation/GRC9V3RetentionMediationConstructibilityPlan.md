@@ -1037,6 +1037,31 @@ control families for temporal/spectral admission, branch relation, formation
 provenance and full-path cleanliness, probe mediation, reset/swap/bypass,
 carrier lineage/equivalence, and search/claim governance.
 
+I3 validates the adjudicator rather than only demonstrating that a list of
+fixtures can be rejected. Every frozen I2 rule receives an atomic null whose
+other rule-vector entries pass and a nearby pass-through sentinel under the
+same adjudicator. The atomic row is valid only when it reaches the intended
+gate, receives the preregistered primary disposition, records no unexpected
+blocker, and preserves any scientifically meaningful alternative
+classification. Sentinels remain fixture-only and cannot contribute candidate
+counts, search coverage, extension triggers, or a GRR rung.
+
+Compound fixtures verify deterministic primary/secondary demotion precedence.
+Focused audits cover strict threshold equality/inside/outside behavior,
+required and optional control statuses, partial driver/carrier overlap,
+carrier-lineage transport and representation changes, malformed numerical and
+projector surfaces, full-history cleanliness, duplicate accounting, search
+resolution, cross-row rung aggregation, and extension-selection boundaries.
+Numerical failure is not a bounded scientific negative; a required control that
+is not identifiable blocks its dependent rung without falsifying the mechanism.
+
+The experiment-local adjudicator is frozen by path, schema version, and file
+digest in the I3 artifact and receipt. I4-I8 must consume that exact
+implementation. A later implementation change invalidates the corresponding
+I3 validation and requires an I3 rerun. A change to an I2 scientific rule,
+threshold recipe, control applicability, or demotion meaning requires an I2
+revision and human reacceptance rather than an I3 patch.
+
 Instantiate the four frozen I2 threshold-calibration recipes from committed
 deterministic null fixtures before any I4 search. These values are admission
 floors, not runtime measurements. Every later row must still apply its own
