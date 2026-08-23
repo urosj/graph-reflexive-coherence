@@ -119,6 +119,113 @@ def family_registry(contract: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return registry
 
 
+def resolved_rule_registry(contract: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    rules = deepcopy(contract["rule_dispositions"])
+    families = family_registry(contract)
+    scope_contract = contract["effect_scope_contract"]
+    scope_lists = {
+        "claim_only_blocker": scope_contract["claim_only_blocker_rules"],
+        "robustness_only": scope_contract["robustness_only_rules"],
+        "route_only": scope_contract["route_only_rules"],
+        "lane_specific_blocker": scope_contract["lane_specific_blocker_rules"],
+        "duplicate_only": scope_contract["duplicate_only_rules"],
+    }
+    assigned: dict[str, str] = {}
+    for scope, rule_ids in scope_lists.items():
+        for rule_id in rule_ids:
+            if rule_id not in rules:
+                raise ValueError(f"unknown effect-scope rule: {rule_id}")
+            if rule_id in assigned:
+                raise ValueError(f"effect-scope lists overlap at: {rule_id}")
+            assigned[rule_id] = scope
+
+    for rule_id, rule in rules.items():
+        scope = assigned.get(rule_id, scope_contract["default_scope"])
+        family_rungs = deepcopy(families[rule_id]["blocked_rungs"])
+        if scope == "rung_blocker":
+            effects = {
+                "effect_scope": scope,
+                "candidate_disposition": "dependent_rung_blocked",
+                "underlying_witness_preserved": False,
+                "rung_effect": "dependent_rungs_blocked",
+                "blocked_rungs": family_rungs,
+                "lane_blocked_rungs": [],
+                "claim_effect": "prohibited_interpretation_rejected",
+                "robustness_effect": "not_assessable",
+                "route_effect": "no_route_effect",
+                "duplicate_effect": "no_duplicate_effect",
+            }
+        elif scope == "claim_only_blocker":
+            effects = {
+                "effect_scope": scope,
+                "candidate_disposition": "underlying_witness_preserved",
+                "underlying_witness_preserved": True,
+                "rung_effect": "no_rung_demotion",
+                "blocked_rungs": [],
+                "lane_blocked_rungs": [],
+                "claim_effect": "prohibited_relabel_rejected",
+                "robustness_effect": "unchanged",
+                "route_effect": "no_route_effect",
+                "duplicate_effect": "no_duplicate_effect",
+            }
+        elif scope == "robustness_only":
+            effects = {
+                "effect_scope": scope,
+                "candidate_disposition": "underlying_witness_preserved",
+                "underlying_witness_preserved": True,
+                "rung_effect": "no_rung_demotion",
+                "blocked_rungs": [],
+                "lane_blocked_rungs": [],
+                "claim_effect": "no_claim_effect",
+                "robustness_effect": "scope_narrowed_without_witness_failure",
+                "route_effect": "no_route_effect",
+                "duplicate_effect": "no_duplicate_effect",
+            }
+        elif scope == "route_only":
+            effects = {
+                "effect_scope": scope,
+                "candidate_disposition": "underlying_witness_not_invalidated",
+                "underlying_witness_preserved": True,
+                "rung_effect": "no_rung_demotion",
+                "blocked_rungs": [],
+                "lane_blocked_rungs": [],
+                "claim_effect": "no_witness_claim_effect",
+                "robustness_effect": "unchanged",
+                "route_effect": "route_or_closeout_inference_blocked",
+                "duplicate_effect": "no_duplicate_effect",
+            }
+        elif scope == "lane_specific_blocker":
+            effects = {
+                "effect_scope": scope,
+                "candidate_disposition": "alternative_lane_or_classification_preserved",
+                "underlying_witness_preserved": True,
+                "rung_effect": "claimed_lane_only_blocked_no_global_rung_demotion",
+                "blocked_rungs": [],
+                "lane_blocked_rungs": family_rungs,
+                "claim_effect": "claimed_lane_relabel_rejected",
+                "robustness_effect": "unchanged",
+                "route_effect": "alternative_lane_only",
+                "duplicate_effect": "no_duplicate_effect",
+            }
+        elif scope == "duplicate_only":
+            effects = {
+                "effect_scope": scope,
+                "candidate_disposition": "underlying_witness_preserved_not_independent",
+                "underlying_witness_preserved": True,
+                "rung_effect": "no_rung_demotion",
+                "blocked_rungs": [],
+                "lane_blocked_rungs": [],
+                "claim_effect": "independent_witness_claim_rejected",
+                "robustness_effect": "unchanged",
+                "route_effect": "no_route_effect",
+                "duplicate_effect": "collapse_to_existing_physical_witness",
+            }
+        else:
+            raise ValueError(f"unsupported effect scope: {scope}")
+        rule["candidate_effects"] = effects
+    return rules
+
+
 def calibrate_thresholds(
     contract: dict[str, Any], i2_payload: dict[str, Any], input_revision: str
 ) -> dict[str, Any]:
@@ -160,6 +267,12 @@ def calibrate_thresholds(
                 "null_population_digest": semantic_digest(fixture),
                 "recipe_digest": semantic_digest(recipe),
                 "calculation": "max(minimum_absolute_floor, maximum_absolute_fixture_value_plus_safety_multiplier_times_fixture_uncertainty)",
+                "minimum_absolute_floor": recipe["minimum_absolute_floor"],
+                "safety_multiplier": recipe["safety_multiplier"],
+                "comparison_operator": (
+                    "<" if threshold_id == "control_target_residual_ceiling_v1" else ">"
+                ),
+                "strictness": "strict_equality_is_not_positive",
                 "unrounded_value": float(floored_value),
                 "instantiated_value": float(rounded_value),
                 "instantiated_value_decimal": format(rounded_value, "f"),
@@ -186,7 +299,7 @@ def calibrate_thresholds(
         ),
         "positive_search_opened": False,
     }
-    return envelope(payload, "b2_i3_threshold_calibration_v2", COMMAND)
+    return envelope(payload, "b2_i3_threshold_calibration_v3", COMMAND)
 
 
 def build_null_rows(
@@ -194,7 +307,7 @@ def build_null_rows(
 ) -> list[dict[str, Any]]:
     required = [row["null_id"] for row in i2_payload["active_null_schema"]]
     registry = family_registry(contract)
-    rule_registry = contract["rule_dispositions"]
+    rule_registry = resolved_rule_registry(contract)
     if set(required) != set(registry):
         missing = sorted(set(required) - set(registry))
         extra = sorted(set(registry) - set(required))
@@ -210,6 +323,7 @@ def build_null_rows(
         control_id = f"{null_id}_control"
         gate_results = {rule_id: True for rule_id in required}
         gate_results[null_id] = False
+        reference_gate_results = {rule_id: True for rule_id in required}
         rule = rule_registry[null_id]
         case = {
             "case_id": f"b2_i3_atomic_{index:02d}_{null_id}",
@@ -240,6 +354,10 @@ def build_null_rows(
                     "mutated_gate_value": False,
                     "all_other_gate_values": True,
                 },
+                "reference_gate_vector_digest": semantic_digest(reference_gate_results),
+                "tested_gate_vector_digest": semantic_digest(gate_results),
+                "target_gate_value": False,
+                "changed_rule_count": 1,
                 "expected_preconditions_pass": True,
                 "expected_primary_disposition": case["expected_primary_disposition"],
                 "allowed_secondary_dispositions": [],
@@ -255,8 +373,26 @@ def build_null_rows(
                 "preserved_alternative_classifications": observed[
                     "preserved_alternative_classifications"
                 ],
+                "effect_scope": observed["candidate_effects"]["effect_scope"],
+                "candidate_disposition": observed["candidate_effects"][
+                    "candidate_disposition"
+                ],
+                "underlying_witness_preserved": observed["candidate_effects"][
+                    "underlying_witness_preserved"
+                ],
+                "rung_effect": observed["candidate_effects"]["rung_effect"],
+                "claim_effect": observed["candidate_effects"]["claim_effect"],
+                "robustness_effect": observed["candidate_effects"]["robustness_effect"],
+                "route_effect": observed["candidate_effects"]["route_effect"],
+                "duplicate_effect": observed["candidate_effects"]["duplicate_effect"],
                 "blocked_gate_family": family["blocked_gate_family"],
-                "blocked_rungs": deepcopy(family["blocked_rungs"]),
+                "family_dependent_rungs": deepcopy(family["blocked_rungs"]),
+                "blocked_rungs": deepcopy(
+                    observed["candidate_effects"]["blocked_rungs"]
+                ),
+                "lane_blocked_rungs": deepcopy(
+                    observed["candidate_effects"]["lane_blocked_rungs"]
+                ),
                 "expected_result": "failed_closed",
                 "actual_result": "failed_open" if failed_open else "failed_closed",
                 "control_status": "failed_open" if failed_open else "failed_closed",
@@ -269,14 +405,14 @@ def build_null_rows(
                             "failed_open" if failed_open else "failed_closed"
                         ),
                         "blocked_condition": null_id,
-                        "expected_result": "claim_rejected",
+                        "expected_result": "prohibited_interpretation_rejected",
                         "actual_result": (
-                            "claim_not_rejected_for_expected_reason"
+                            "prohibited_interpretation_not_rejected_for_expected_reason"
                             if failed_open
-                            else "claim_rejected"
+                            else "prohibited_interpretation_rejected"
                         ),
                         "claim_allowed_when_control_triggers": False,
-                        "rung_effect": "all_listed_dependent_rungs_blocked",
+                        "rung_effect": observed["candidate_effects"]["rung_effect"],
                     }
                 ],
                 "observation_source": "pre_positive_active_null_fixture",
@@ -291,7 +427,14 @@ def build_null_rows(
                 "artifact_paths_equal_manifest_paths": "not_applicable_active_null_fixture",
                 "maximum_GRR_rung": fixture["maximum_GRR_rung"],
                 "GRR_rung_assigned": False,
-                "row_decision": "rejected_failed_closed_active_null",
+                "row_decision": {
+                    "rung_blocker": "dependent_rung_rejected_failed_closed_active_null",
+                    "claim_only_blocker": "claim_rejected_witness_preserved_active_null",
+                    "robustness_only": "robustness_narrowed_witness_preserved_active_null",
+                    "route_only": "route_inference_blocked_witness_not_invalidated_active_null",
+                    "lane_specific_blocker": "claimed_lane_rejected_alternative_preserved_active_null",
+                    "duplicate_only": "duplicate_independence_rejected_witness_preserved_active_null",
+                }[observed["candidate_effects"]["effect_scope"]],
                 "claim_ceiling": "active_null_admission_control_only",
                 "threshold_calibration_role": "held_out_audit_null_not_calibration",
                 "validator_result": observed["result"],
@@ -304,7 +447,7 @@ def build_pass_through_sentinels(
     contract: dict[str, Any], i2_payload: dict[str, Any]
 ) -> list[dict[str, Any]]:
     required = [row["null_id"] for row in i2_payload["active_null_schema"]]
-    rules = contract["rule_dispositions"]
+    rules = resolved_rule_registry(contract)
     baseline = {rule_id: True for rule_id in required}
     rows = []
     for index, rule_id in enumerate(required, 1):
@@ -318,17 +461,28 @@ def build_pass_through_sentinels(
             "expected_alternative_classification": "none",
         }
         observed = evaluate_rule_case(case, rules)
+        paired_atomic = deepcopy(baseline)
+        paired_atomic[rule_id] = False
         rows.append(
             {
                 "case_id": case["case_id"],
                 "case_kind": case["case_kind"],
                 "i2_rule_ids_exercised": [rule_id],
                 "mutation_from_reference": "none_nearby_fixture_remains_inside_target_gate",
+                "reference_gate_vector_digest": semantic_digest(baseline),
+                "tested_gate_vector_digest": semantic_digest(baseline),
+                "paired_atomic_gate_vector_digest": semantic_digest(paired_atomic),
+                "target_gate_value": True,
+                "changed_rule_count": 0,
                 "positive_evidence_eligible": False,
                 "expected_primary_disposition": "pass_through_fixture",
                 "observed_disposition": observed["observed_disposition"],
                 "target_rule_reached": observed["target_rule_reached"],
                 "unexpected_blockers": observed["unexpected_blockers"],
+                "candidate_disposition": observed["candidate_effects"][
+                    "candidate_disposition"
+                ],
+                "rung_effect": observed["candidate_effects"]["rung_effect"],
                 "result": observed["result"],
             }
         )
@@ -336,7 +490,7 @@ def build_pass_through_sentinels(
 
 
 def build_compound_cases(contract: dict[str, Any]) -> list[dict[str, Any]]:
-    rules = contract["rule_dispositions"]
+    rules = resolved_rule_registry(contract)
     baseline = {rule_id: True for rule_id in rules}
     specs = [
         {
@@ -409,6 +563,8 @@ def build_compound_cases(contract: dict[str, Any]) -> list[dict[str, Any]]:
                 ],
                 "target_rule_reached": observed["target_rule_reached"],
                 "unexpected_blockers": observed["unexpected_blockers"],
+                "primary_candidate_effects": observed["candidate_effects"],
+                "secondary_candidate_effects": observed["secondary_candidate_effects"],
                 "result": observed["result"],
             }
         )
@@ -427,6 +583,7 @@ def build_threshold_audits(
             if record["threshold_id"] == "control_target_residual_ceiling_v1"
             else "strictly_above"
         )
+        comparison_operator = "<" if direction == "strictly_below" else ">"
         pass_value = (
             threshold - delta if direction == "strictly_below" else threshold + delta
         )
@@ -448,6 +605,11 @@ def build_threshold_audits(
                 "expected_primary_disposition": expected,
             }
             observed = evaluate_threshold_boundary(case)
+            signed_margin = (
+                threshold - value
+                if direction == "strictly_below"
+                else value - threshold
+            )
             rows.append(
                 {
                     "case_id": case["case_id"],
@@ -455,6 +617,11 @@ def build_threshold_audits(
                     "threshold_id": record["threshold_id"],
                     "threshold_calibration_role": "held_out_boundary_audit_not_calibration",
                     "boundary_variant": variant,
+                    "test_value": value,
+                    "threshold_value": threshold,
+                    "comparison_operator": comparison_operator,
+                    "admission_direction": direction,
+                    "signed_margin": signed_margin,
                     "positive_evidence_eligible": False,
                     "expected_primary_disposition": expected,
                     "observed_disposition": observed["observed_disposition"],
@@ -469,13 +636,21 @@ def build_threshold_audits(
 
 def build_control_truth_cases() -> list[dict[str, Any]]:
     specs = [
-        ("required_passed", "required", "applicable", "passed", "pass_through_fixture"),
+        (
+            "required_passed",
+            "required",
+            "applicable",
+            "passed",
+            "pass_through_fixture",
+            "control_passed",
+        ),
         (
             "required_failed",
             "required",
             "applicable",
             "failed",
             "required_control_failed",
+            "dependent_mechanism_or_rung_failed",
         ),
         (
             "required_not_identifiable",
@@ -483,6 +658,7 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "applicable",
             "not_identifiable",
             "required_control_not_identifiable",
+            "dependent_rung_blocked_without_mechanism_falsification",
         ),
         (
             "required_not_run",
@@ -490,6 +666,7 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "applicable",
             "not_run",
             "required_assumption_failed",
+            "gate_incomplete_required_control_not_run",
         ),
         (
             "required_inapplicable_but_marked_NA",
@@ -497,6 +674,7 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "not_applicable",
             "not_applicable_with_reason",
             "pass_through_fixture",
+            "no_effect_frozen_not_applicable",
         ),
         (
             "required_applicable_but_marked_NA",
@@ -504,23 +682,47 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "applicable",
             "not_applicable_with_reason",
             "required_assumption_failed",
+            "applicable_control_incorrectly_marked_not_applicable",
         ),
-        ("optional_passed", "optional", "applicable", "passed", "pass_through_fixture"),
-        ("optional_failed", "optional", "applicable", "failed", "bounded_negative"),
+        (
+            "optional_passed",
+            "optional",
+            "applicable",
+            "passed",
+            "pass_through_fixture",
+            "control_passed",
+        ),
+        (
+            "optional_failed",
+            "optional",
+            "applicable",
+            "failed",
+            "pass_through_fixture",
+            "optional_robustness_or_scope_narrowed",
+        ),
         (
             "optional_not_identifiable",
             "optional",
             "applicable",
             "not_identifiable",
             "pass_through_fixture",
+            "optional_robustness_scope_narrowed",
         ),
-        ("optional_not_run", "optional", "applicable", "not_run", "bounded_negative"),
+        (
+            "optional_not_run",
+            "optional",
+            "applicable",
+            "not_run",
+            "pass_through_fixture",
+            "optional_hardening_unresolved",
+        ),
         (
             "optional_inapplicable_but_marked_NA",
             "optional",
             "not_applicable",
             "not_applicable_with_reason",
             "pass_through_fixture",
+            "no_effect_frozen_not_applicable",
         ),
         (
             "optional_failed_open",
@@ -528,6 +730,7 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "applicable",
             "failed_open",
             "invalid_candidate",
+            "false_positive_remained_admitted",
         ),
         (
             "required_failed_open",
@@ -535,11 +738,19 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "applicable",
             "failed_open",
             "invalid_candidate",
+            "false_positive_remained_admitted",
         ),
-        ("missing_status", "required", "applicable", "missing", "invalid_test_fixture"),
+        (
+            "missing_status",
+            "required",
+            "applicable",
+            "missing",
+            "invalid_test_fixture",
+            "missing_control_status_invalid_fixture",
+        ),
     ]
     rows = []
-    for case_id, requirement, applicability, status, expected in specs:
+    for case_id, requirement, applicability, status, expected, expected_effect in specs:
         case = {
             "case_id": f"b2_i3_control_truth_{case_id}",
             "case_kind": "control_truth_table_audit",
@@ -549,6 +760,12 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
             "expected_primary_disposition": expected,
         }
         observed = evaluate_control_status(case)
+        result = (
+            "passed"
+            if observed["result"] == "passed"
+            and observed["control_effect_status"] == expected_effect
+            else "failed_open"
+        )
         rows.append(
             {
                 "case_id": case["case_id"],
@@ -558,10 +775,14 @@ def build_control_truth_cases() -> list[dict[str, Any]]:
                 "control_status": status,
                 "positive_evidence_eligible": False,
                 "expected_primary_disposition": expected,
+                "expected_control_effect_status": expected_effect,
                 "observed_disposition": observed["observed_disposition"],
+                "control_effect_status": observed["control_effect_status"],
+                "candidate_disposition": observed["candidate_disposition"],
+                "robustness_effect": observed["robustness_effect"],
                 "mechanism_falsified": observed["mechanism_falsified"],
                 "rung_blocked": observed["rung_blocked"],
-                "result": observed["result"],
+                "result": result,
             }
         )
     return rows
@@ -851,6 +1072,48 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
             in row["preserved_alternative_classifications"]
             for row in rows
         ),
+        "atomic_effect_scopes_are_explicit_and_frozen": {
+            row["effect_scope"] for row in rows
+        }
+        == set(payload["effect_scope_contract"]["allowed_scopes"]),
+        "claim_only_guards_preserve_witness_and_rung": all(
+            row["underlying_witness_preserved"]
+            and row["rung_effect"] == "no_rung_demotion"
+            and row["blocked_rungs"] == []
+            and row["claim_effect"] == "prohibited_relabel_rejected"
+            for row in rows
+            if row["effect_scope"] == "claim_only_blocker"
+        ),
+        "robustness_guards_do_not_invalidate_witness": all(
+            row["underlying_witness_preserved"]
+            and row["rung_effect"] == "no_rung_demotion"
+            and row["robustness_effect"] == "scope_narrowed_without_witness_failure"
+            for row in rows
+            if row["effect_scope"] == "robustness_only"
+        ),
+        "route_guards_do_not_demote_existing_witness": all(
+            row["underlying_witness_preserved"]
+            and row["rung_effect"] == "no_rung_demotion"
+            and row["route_effect"] == "route_or_closeout_inference_blocked"
+            for row in rows
+            if row["effect_scope"] == "route_only"
+        ),
+        "lane_specific_guards_preserve_typed_alternative": all(
+            row["underlying_witness_preserved"]
+            and row["rung_effect"]
+            == "claimed_lane_only_blocked_no_global_rung_demotion"
+            and row["blocked_rungs"] == []
+            and row["lane_blocked_rungs"]
+            for row in rows
+            if row["effect_scope"] == "lane_specific_blocker"
+        ),
+        "duplicate_guards_preserve_one_physical_witness": all(
+            row["underlying_witness_preserved"]
+            and row["rung_effect"] == "no_rung_demotion"
+            and row["duplicate_effect"] == "collapse_to_existing_physical_witness"
+            for row in rows
+            if row["effect_scope"] == "duplicate_only"
+        ),
         "failed_open_row_count_zero": not any(row["failed_open"] for row in rows),
         "one_pass_through_sentinel_per_I2_rule": len(sentinels) == len(required) == 52
         and [row["i2_rule_ids_exercised"][0] for row in sentinels] == required,
@@ -859,6 +1122,21 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
             and row["result"] == "passed"
             and row["unexpected_blockers"] == []
             for row in sentinels
+        ),
+        "sentinel_gate_vectors_and_atomic_pairs_are_bound": all(
+            len(row["reference_gate_vector_digest"]) == 64
+            and len(row["tested_gate_vector_digest"]) == 64
+            and len(row["paired_atomic_gate_vector_digest"]) == 64
+            and row["target_gate_value"] is True
+            and row["changed_rule_count"] == 0
+            for row in sentinels
+        )
+        and all(
+            len(row["reference_gate_vector_digest"]) == 64
+            and len(row["tested_gate_vector_digest"]) == 64
+            and row["target_gate_value"] is False
+            and row["changed_rule_count"] == 1
+            for row in rows
         ),
         "compound_precedence_is_deterministic": len(compounds) == 4
         and all(
@@ -888,8 +1166,29 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
             for row in threshold_audits
             if row["boundary_variant"] == "exact_equality"
         ),
+        "threshold_boundary_values_are_reconstructible": all(
+            isinstance(row["test_value"], float)
+            and isinstance(row["threshold_value"], float)
+            and row["comparison_operator"] in {"<", ">"}
+            and isinstance(row["signed_margin"], float)
+            for row in threshold_audits
+        ),
         "control_status_truth_table_passes": len(control_cases) == 14
         and all(row["result"] == "passed" for row in control_cases),
+        "optional_control_outcomes_preserve_rung_and_mechanism": all(
+            row["rung_blocked"] is False and row["mechanism_falsified"] is False
+            for row in control_cases
+            if row["control_requirement"] == "optional"
+            and row["control_status"] in {"failed", "not_identifiable", "not_run"}
+        ),
+        "required_not_run_is_gate_incomplete_not_mechanism_failure": all(
+            row["control_effect_status"] == "gate_incomplete_required_control_not_run"
+            and row["candidate_disposition"] == "gate_incomplete_dependent_rung_blocked"
+            and row["mechanism_falsified"] is False
+            for row in control_cases
+            if row["control_requirement"] == "required"
+            and row["control_status"] == "not_run"
+        ),
         "partial_authorship_excluded_before_formation_test": len(overlap_cases) == 3
         and all(
             row["authored_component_excluded"]
@@ -979,6 +1278,13 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
             for row in rows
         ),
         "all_four_I2_calibration_recipes_instantiated": len(calibrations) == 4,
+        "calibration_records_are_self_contained": all(
+            "minimum_absolute_floor" in row
+            and "safety_multiplier" in row
+            and row["comparison_operator"] in {"<", ">"}
+            and row["strictness"] == "strict_equality_is_not_positive"
+            for row in calibrations
+        ),
         "all_calibration_recipe_digests_bound": all(
             len(row["recipe_digest"]) == 64 for row in calibrations
         ),
@@ -1063,7 +1369,9 @@ def build_payload(
         "acceptance_state": "awaiting_scientific_review",
         "schema_instantiation_only": True,
         "supersession": deepcopy(contract["supersession"]),
+        "supersession_history": deepcopy(contract["supersession_history"]),
         "adjudicator_contract": deepcopy(contract["adjudicator_contract"]),
+        "effect_scope_contract": deepcopy(contract["effect_scope_contract"]),
         "adjudicator_binding": {
             "path": ADJUDICATOR_RELATIVE,
             "schema_version": ADJUDICATOR_SCHEMA_VERSION,
@@ -1165,7 +1473,7 @@ def render_report(artifact: dict[str, Any]) -> str:
         "",
         "## Admission Boundary",
         "",
-        "All 52 frozen I2 false-positive paths are instantiated exactly once as atomic rule-vector mutations. Every mutation reaches its intended gate with all other frozen rule gates passing. `failed_closed` means the blocker triggered and the dependent claim was rejected; it does not mean that a positive scientific control failed. These rows are deterministic admission fixtures, not runtime measurements, source-current candidate evidence, or replay evidence.",
+        "All 52 frozen I2 false-positive paths are instantiated exactly once as atomic rule-vector mutations. Every mutation reaches its intended gate with all other frozen rule gates passing. `failed_closed` means the prohibited interpretation was rejected with a typed effect; it does not imply that an underlying witness or positive scientific control failed. These rows are deterministic admission fixtures, not runtime measurements, source-current candidate evidence, or replay evidence.",
         "",
         "The null surface covers temporal/spectral relabels, branch relation and search coverage, formation provenance and full-path cleanliness, probe provenance and matched mediation, reset/swap/bypass semantics, carrier lineage/equivalence, and selection/threshold/claim governance.",
         "",
@@ -1173,11 +1481,13 @@ def render_report(artifact: dict[str, Any]) -> str:
         "",
         "The 52 atomic nulls are paired with 52 pass-through sentinels under the same adjudicator. The sentinels assign no evidence; they prove that a nearby fixture with all frozen gates satisfied is not rejected. Four compound cases verify deterministic primary/secondary demotion precedence. Alternative classifications such as eventful-history persistence, regenerated carrier, ordinary slow relaxation, and branch relocation remain visible while the prohibited stronger relabel is rejected.",
         "",
+        "Every atomic result separates `candidate_disposition`, `rung_effect`, `claim_effect`, `robustness_effect`, `route_effect`, and `duplicate_effect`. Claim-only, robustness-only, route-only, and duplicate-only guards preserve the underlying witness and do not demote its rung. Lane-specific blockers reject only the claimed lane while retaining its typed alternative. Only true rung blockers demote the dependent GRR surface.",
+        "",
         "The same experiment-local adjudicator is bound by path, schema version, and SHA-256. I4-I8 must consume that exact digest. An adjudicator implementation change requires rerunning I3; a scientific rule or applicability change requires revision and human reacceptance of I2.",
         "",
         "## Focused Boundary Audits",
         "",
-        "Held-out exact/inside/outside threshold twins, the complete required/optional control-state truth table, partial authored-carrier subtraction, lineage transport and representation changes, malformed numerical/projector cases, and search/closeout semantics all pass their preregistered expectations. Numerical failures remain numerical failures, duplicate witnesses remain duplicates, unresolved searches remain unresolved, and no fixture can select an extension.",
+        "Held-out exact/inside/outside threshold twins serialize their tested values, comparators, and signed margins. Pass-through sentinels bind their reference, tested, and paired-atomic rule-vector digests. The complete required/optional control-state truth table preserves the I2 distinction between gate incompleteness, mechanism failure, and optional robustness debt. Partial authored-carrier subtraction, lineage transport and representation changes, malformed numerical/projector cases, and search/closeout semantics all pass their preregistered expectations.",
         "",
         "## Threshold Calibration",
         "",
@@ -1220,7 +1530,7 @@ def execute(output_root: Path, report_root: Path) -> dict[str, Any]:
     payload["generating_script_sha256"] = sha256_file(Path(__file__))
     payload["config_path"] = CONFIG_RELATIVE
     payload["config_sha256"] = sha256_file(REPO_ROOT / CONFIG_RELATIVE)
-    artifact = envelope(payload, "b2_i3_active_nulls_v2", COMMAND)
+    artifact = envelope(payload, "b2_i3_active_nulls_v3", COMMAND)
 
     artifact_path = output_root / "b2_i3_active_nulls.json"
     report_path = report_root / "b2_i3_active_nulls.md"

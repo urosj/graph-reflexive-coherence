@@ -1,5 +1,5 @@
 {
-  "schema_version": "b2_i3_active_null_contract_v2",
+  "schema_version": "b2_i3_active_null_contract_v3",
   "source_gate": {
     "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i2_acceptance_anchor.json",
     "required_acceptance_status": "accepted",
@@ -7,13 +7,27 @@
     "required_ready_for_iteration_3": true
   },
   "supersession": {
-    "supersedes_result_revision": "99e814ffb03d4f71fe590f9842938605ba617a0e",
-    "supersedes_artifact_payload_sha256": "7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b",
-    "supersedes_receipt_payload_sha256": "340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a",
+    "supersedes_result_revision": "b27d89ab5b0e022b77c61ec71dcbfa1608052ac5",
+    "supersedes_artifact_payload_sha256": "52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4",
+    "supersedes_receipt_payload_sha256": "36dc10d022799e8e3f88e3bcaa6b42006096c7ee2a12388a405cdf3a0e4f67fe",
     "prior_acceptance_state": "awaiting_scientific_review",
     "prior_acceptance_anchor_created": false,
-    "supersession_reason": "validator_review_found_reject_all_specificity_and_adjudicator_binding_gaps"
+    "supersession_reason": "validator_review_found_claim_rung_robustness_route_and_duplicate_effect_conflation"
   },
+  "supersession_history": [
+    {
+      "result_revision": "99e814ffb03d4f71fe590f9842938605ba617a0e",
+      "artifact_payload_sha256": "7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b",
+      "receipt_payload_sha256": "340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a",
+      "reason": "reject_all_specificity_and_adjudicator_binding_gaps"
+    },
+    {
+      "result_revision": "b27d89ab5b0e022b77c61ec71dcbfa1608052ac5",
+      "artifact_payload_sha256": "52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4",
+      "receipt_payload_sha256": "36dc10d022799e8e3f88e3bcaa6b42006096c7ee2a12388a405cdf3a0e4f67fe",
+      "reason": "claim_rung_robustness_route_and_duplicate_effect_conflation"
+    }
+  ],
   "fixture_semantics": {
     "schema_instantiation_only": true,
     "derived_report_only": true,
@@ -26,10 +40,53 @@
     "maximum_GRR_rung": "not_assigned"
   },
   "adjudicator_contract": {
-    "required_schema_version": "b2_constructibility_adjudicator_v1",
+    "required_schema_version": "b2_constructibility_adjudicator_v2",
     "later_iterations_must_use_same_adjudicator_digest": true,
     "adjudicator_change_requires_I3_rerun": true,
     "scientific_rule_change_requires_I2_revision_and_reacceptance": true
+  },
+  "effect_scope_contract": {
+    "allowed_scopes": [
+      "rung_blocker",
+      "claim_only_blocker",
+      "robustness_only",
+      "route_only",
+      "lane_specific_blocker",
+      "duplicate_only"
+    ],
+    "default_scope": "rung_blocker",
+    "claim_only_blocker_rules": [
+      "label_only_readback",
+      "retention_as_memory_or_learning",
+      "zero_probe_control_relabelled_as_core_passive_null",
+      "unrelated_state_residual_as_reset_swap_or_bypass_failure"
+    ],
+    "robustness_only_rules": [
+      "failure_to_generalize_across_branches_relabelled_as_witness_failure"
+    ],
+    "route_only_rules": [
+      "failed_search_as_impossibility",
+      "extension_selected_by_missing_symbol",
+      "search_budget_migrated_after_outcome",
+      "discovery_optimized_on_future_gate_adjudication_score",
+      "budget_consumed_as_resolved_coverage"
+    ],
+    "lane_specific_blocker_rules": [
+      "branch_tangent_relocation_as_retained_carrier",
+      "frozen_W_sensitivity_as_native_full_step_mediation",
+      "parameter_continuation_tangent_relabelled_as_same_configuration_branch_relocation",
+      "regenerated_W_from_retained_C_relabelled_as_durable_W_carrier",
+      "event_or_topology_change_relabelled_as_fixed_topology_retention",
+      "budget_projection_or_clipping_supported_persistence",
+      "eventful_preparation_as_clean_primary_lane",
+      "synthetic_internal_probe_as_native_GRR4"
+    ],
+    "duplicate_only_rules": [
+      "overlapping_carrier_representations_as_independent_witnesses",
+      "distinct_histories_same_state_as_independent_retention_witnesses"
+    ],
+    "scope_lists_must_be_disjoint": true,
+    "unlisted_rules_use_default_scope": true
   },
   "rule_dispositions": {
     "finite_horizon_persistence_as_slow_cluster": {"failure_disposition": "bounded_negative", "alternative_classification": "finite_horizon_persistence_only"},

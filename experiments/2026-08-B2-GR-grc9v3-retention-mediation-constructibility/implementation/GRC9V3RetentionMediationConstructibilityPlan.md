@@ -1046,14 +1046,27 @@ blocker, and preserves any scientifically meaningful alternative
 classification. Sentinels remain fixture-only and cannot contribute candidate
 counts, search coverage, extension triggers, or a GRR rung.
 
+Rejecting a prohibited interpretation is not automatically a demotion of the
+underlying witness. Each atomic case records a load-bearing `effect_scope` and
+separate `candidate_disposition`, `rung_effect`, `claim_effect`,
+`robustness_effect`, `route_effect`, and `duplicate_effect`. The allowed scopes
+are `rung_blocker`, `claim_only_blocker`, `robustness_only`, `route_only`,
+`lane_specific_blocker`, and `duplicate_only`. Claim, robustness, route, and
+duplicate guards cannot globally demote a valid witness. Lane-specific guards
+may block the claimed lane while preserving an independently valid typed
+alternative. Only a true rung blocker may demote the dependent GRR surface.
+
 Compound fixtures verify deterministic primary/secondary demotion precedence.
-Focused audits cover strict threshold equality/inside/outside behavior,
+Focused audits serialize and cover strict threshold equality/inside/outside behavior,
 required and optional control statuses, partial driver/carrier overlap,
 carrier-lineage transport and representation changes, malformed numerical and
 projector surfaces, full-history cleanliness, duplicate accounting, search
 resolution, cross-row rung aggregation, and extension-selection boundaries.
 Numerical failure is not a bounded scientific negative; a required control that
 is not identifiable blocks its dependent rung without falsifying the mechanism.
+Required `not_run` means gate incompleteness, not a failed assumption or
+falsified mechanism. Optional `failed`, `not_identifiable`, or `not_run` narrows
+robustness or leaves hardening unresolved without automatic rung demotion.
 
 The experiment-local adjudicator is frozen by path, schema version, and file
 digest in the I3 artifact and receipt. I4-I8 must consume that exact

@@ -313,7 +313,7 @@ compound violation
   -> frozen primary disposition plus retained secondary reasons
 ```
 
-### Iteration 3 Hardened Result - Awaiting Human Review
+### Iteration 3 Hardened Result - Superseded Before Human Review
 
 ```text
 status = passed
@@ -348,6 +348,7 @@ ready_for_I4 = false_pending_I3_acceptance
 
 Interpretation:
 
+- This result fixed reject-all specificity and bound the shared adjudicator, but human review found that its family-level rung effects conflated claim, robustness, route, lane, duplicate, and true witness demotion. It was never accepted and created no acceptance anchor.
 - Every atomic null differs from the all-gates-pass rule vector at exactly one frozen I2 rule, reaches that target gate, receives its preregistered typed disposition, and records no unexpected blocker.
 - Every frozen rule also has a pass-through sentinel under the same adjudicator. Sentinels prove non-pathological permissiveness but remain fixture-only and cannot count as a candidate, search attempt, witness, or GRR evidence.
 - Alternative mechanisms remain typed instead of being erased: eventful-history persistence, regenerated carrier from retained state, ordinary slow relaxation, branch relocation, conservation/gauge modes, and other bounded interpretations survive while their prohibited stronger relabels fail closed.
@@ -357,7 +358,26 @@ Interpretation:
 - NaN/Inf, dimension/rank/projector inconsistency, zero or uncertainty-straddling margins, and orientation mismatch remain numerical failures rather than scientific negatives.
 - Events or clipping anywhere in preparation remain outside the clean primary lane even if absent by `k=0`. Duplicate histories/states, exhausted-but-unresolved search, and cross-row rung assembly cannot select an extension.
 - I4-I8 must consume the exact shared adjudicator digest above. An adjudicator implementation change requires an I3 rerun; a scientific rule change requires an I2 revision and human reacceptance.
-- I3 remains control evidence only. Human acceptance may assign `B2-C2` and open I4; this result does neither automatically.
+- This superseded result cannot assign `B2-C2` or open I4.
+
+### Iteration 3 Effect-Scope Semantic Hardening
+
+- [x] Preserve the accepted I2 scientific contract and revise only I3 adjudication semantics.
+- [x] Freeze `rung_blocker`, `claim_only_blocker`, `robustness_only`, `route_only`, `lane_specific_blocker`, and `duplicate_only` effect scopes.
+- [x] Separate `candidate_disposition`, `rung_effect`, `claim_effect`, `robustness_effect`, `route_effect`, and `duplicate_effect` on every atomic null.
+- [x] Prevent memory/learning, core passive-null, and unrelated-state-residual relabel guards from demoting an otherwise valid GRR witness.
+- [x] Prevent cross-branch generalization debt from invalidating a clean single witness.
+- [x] Prevent missing-symbol and unresolved-search route guards from demoting an independently valid witness or selecting an extension.
+- [x] Preserve retained-`C`, eventful-history, reduced diagnostic, and other typed alternatives when only the claimed lane fails.
+- [x] Preserve one physical witness while collapsing duplicate representations or histories.
+- [x] Record required `not_run` as gate incompleteness without mechanism falsification.
+- [x] Record optional `failed`, `not_identifiable`, and `not_run` as robustness debt without automatic rung demotion.
+- [x] Serialize sentinel reference/test/paired-atomic gate-vector digests.
+- [x] Serialize threshold test values, threshold values, comparators, and signed margins.
+- [x] Make calibration rows self-contained with floors, multipliers, comparators, and strictness.
+- [ ] Execute the semantic-hardening package from a clean committed revision.
+- [ ] Produce and verify the superseding I3 artifact, report, calibration, and receipt.
+- [ ] Obtain human acceptance before assigning `B2-C2` or opening I4.
 
 ## Iteration 4 - Native Preparation And Reachability Search
 

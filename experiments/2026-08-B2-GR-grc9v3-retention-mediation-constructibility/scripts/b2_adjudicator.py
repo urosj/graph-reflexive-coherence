@@ -8,7 +8,7 @@ import math
 from typing import Any
 
 
-ADJUDICATOR_SCHEMA_VERSION = "b2_constructibility_adjudicator_v1"
+ADJUDICATOR_SCHEMA_VERSION = "b2_constructibility_adjudicator_v2"
 
 DISPOSITION_PRECEDENCE = (
     "invalid_candidate",
@@ -30,6 +30,7 @@ class RuleResult:
     rule_id: str
     disposition: str
     alternative_classification: str
+    candidate_effects: dict[str, Any]
 
 
 def evaluate_rule_case(
@@ -53,6 +54,7 @@ def evaluate_rule_case(
             alternative_classification=rule_registry[rule_id].get(
                 "alternative_classification", "none"
             ),
+            candidate_effects=rule_registry[rule_id]["candidate_effects"],
         )
         for rule_id, passed in gate_results.items()
         if passed is False
@@ -66,6 +68,18 @@ def evaluate_rule_case(
         primary = "pass_through_fixture"
         secondary: list[str] = []
         alternatives: list[str] = []
+        candidate_effects = {
+            "effect_scope": "none",
+            "candidate_disposition": "pass_through_fixture",
+            "underlying_witness_preserved": True,
+            "rung_effect": "no_rung_effect",
+            "blocked_rungs": [],
+            "lane_blocked_rungs": [],
+            "claim_effect": "no_claim_effect",
+            "robustness_effect": "no_robustness_effect",
+            "route_effect": "no_route_effect",
+            "duplicate_effect": "no_duplicate_effect",
+        }
     else:
         order = {name: index for index, name in enumerate(DISPOSITION_PRECEDENCE)}
         violations.sort(key=lambda row: (order[row.disposition], row.rule_id))
@@ -78,6 +92,7 @@ def evaluate_rule_case(
                 if row.alternative_classification != "none"
             }
         )
+        candidate_effects = violations[0].candidate_effects
 
     expected_primary = case["expected_primary_disposition"]
     allowed_secondary = set(case.get("allowed_secondary_dispositions", []))
@@ -102,6 +117,10 @@ def evaluate_rule_case(
         "missing_target_violations": missing_target,
         "preserved_alternative_classifications": alternatives,
         "alternative_classification_preserved": alternative_preserved,
+        "candidate_effects": candidate_effects,
+        "secondary_candidate_effects": [
+            {"rule_id": row.rule_id, **row.candidate_effects} for row in violations[1:]
+        ],
         "result": "passed" if passed else "failed_open",
     }
 
@@ -135,27 +154,82 @@ def evaluate_control_status(case: dict[str, Any]) -> dict[str, Any]:
     applicable = case["applicability"] == "applicable"
     if status in {None, False, "missing"}:
         observed = "invalid_test_fixture"
+        control_effect = "missing_control_status_invalid_fixture"
+        candidate_disposition = "invalid_test_fixture"
+        robustness_effect = "not_assessable"
     elif status == "passed":
         observed = "pass_through_fixture"
+        control_effect = "control_passed"
+        candidate_disposition = "dependent_rung_may_proceed"
+        robustness_effect = "may_strengthen" if not required else "unchanged"
     elif status in {"failed", "failed_closed"}:
-        observed = "required_control_failed" if required else "bounded_negative"
+        observed = "required_control_failed" if required else "pass_through_fixture"
+        control_effect = (
+            "dependent_mechanism_or_rung_failed"
+            if required
+            else "optional_robustness_or_scope_narrowed"
+        )
+        candidate_disposition = (
+            "dependent_rung_blocked" if required else "underlying_witness_preserved"
+        )
+        robustness_effect = "narrowed"
     elif status == "failed_open":
         observed = "invalid_candidate"
+        control_effect = "false_positive_remained_admitted"
+        candidate_disposition = "candidate_invalid"
+        robustness_effect = "not_assessable"
     elif status == "not_identifiable":
         observed = (
             "required_control_not_identifiable" if required else "pass_through_fixture"
         )
+        control_effect = (
+            "dependent_rung_blocked_without_mechanism_falsification"
+            if required
+            else "optional_robustness_scope_narrowed"
+        )
+        candidate_disposition = (
+            "dependent_rung_blocked" if required else "underlying_witness_preserved"
+        )
+        robustness_effect = "narrowed"
     elif status == "not_run":
-        observed = "required_assumption_failed" if required else "bounded_negative"
+        observed = "required_assumption_failed" if required else "pass_through_fixture"
+        control_effect = (
+            "gate_incomplete_required_control_not_run"
+            if required
+            else "optional_hardening_unresolved"
+        )
+        candidate_disposition = (
+            "gate_incomplete_dependent_rung_blocked"
+            if required
+            else "underlying_witness_preserved"
+        )
+        robustness_effect = "uncharacterized"
     elif status == "not_applicable_with_reason":
         observed = (
             "pass_through_fixture" if not applicable else "required_assumption_failed"
         )
+        control_effect = (
+            "no_effect_frozen_not_applicable"
+            if not applicable
+            else "applicable_control_incorrectly_marked_not_applicable"
+        )
+        candidate_disposition = (
+            "dependent_rung_may_proceed"
+            if not applicable
+            else "gate_incomplete_dependent_rung_blocked"
+        )
+        robustness_effect = "unchanged" if not applicable else "not_assessable"
     else:
         observed = "invalid_test_fixture"
+        control_effect = "unknown_control_status_invalid_fixture"
+        candidate_disposition = "invalid_test_fixture"
+        robustness_effect = "not_assessable"
     return {
         "observed_disposition": observed,
-        "mechanism_falsified": status in {"failed", "failed_closed"},
+        "control_effect_status": control_effect,
+        "candidate_disposition": candidate_disposition,
+        "robustness_effect": robustness_effect,
+        "mechanism_falsified": required and status in {"failed", "failed_closed"},
         "rung_blocked": observed
         in {
             "required_control_failed",

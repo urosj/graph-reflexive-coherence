@@ -68,6 +68,10 @@ class I3ActiveNullTests(unittest.TestCase):
                 row["observed_disposition"] == "pass_through_fixture"
                 and row["result"] == "passed"
                 and not row["positive_evidence_eligible"]
+                and len(row["reference_gate_vector_digest"]) == 64
+                and len(row["tested_gate_vector_digest"]) == 64
+                and len(row["paired_atomic_gate_vector_digest"]) == 64
+                and row["target_gate_value"] is True
                 for row in sentinels
             )
         )
@@ -92,6 +96,52 @@ class I3ActiveNullTests(unittest.TestCase):
             self.assertIn(
                 alternative, rows[null_id]["preserved_alternative_classifications"]
             )
+
+    def test_claim_robustness_route_and_duplicate_guards_preserve_witness(self) -> None:
+        rows = {row["null_id"]: row for row in self.payload["active_null_rows"]}
+        claim_only = [
+            "retention_as_memory_or_learning",
+            "zero_probe_control_relabelled_as_core_passive_null",
+            "unrelated_state_residual_as_reset_swap_or_bypass_failure",
+        ]
+        for null_id in claim_only:
+            row = rows[null_id]
+            self.assertEqual(row["effect_scope"], "claim_only_blocker")
+            self.assertTrue(row["underlying_witness_preserved"])
+            self.assertEqual(row["rung_effect"], "no_rung_demotion")
+            self.assertEqual(row["blocked_rungs"], [])
+        robustness = rows[
+            "failure_to_generalize_across_branches_relabelled_as_witness_failure"
+        ]
+        self.assertEqual(robustness["effect_scope"], "robustness_only")
+        self.assertTrue(robustness["underlying_witness_preserved"])
+        self.assertEqual(robustness["rung_effect"], "no_rung_demotion")
+        route = rows["extension_selected_by_missing_symbol"]
+        self.assertEqual(route["effect_scope"], "route_only")
+        self.assertEqual(route["route_effect"], "route_or_closeout_inference_blocked")
+        duplicate = rows[
+            "distinct_histories_same_state_as_independent_retention_witnesses"
+        ]
+        self.assertEqual(duplicate["effect_scope"], "duplicate_only")
+        self.assertTrue(duplicate["underlying_witness_preserved"])
+
+    def test_lane_specific_guards_preserve_alternative_lane(self) -> None:
+        rows = {row["null_id"]: row for row in self.payload["active_null_rows"]}
+        regenerated = rows[
+            "regenerated_W_from_retained_C_relabelled_as_durable_W_carrier"
+        ]
+        self.assertEqual(regenerated["effect_scope"], "lane_specific_blocker")
+        self.assertTrue(regenerated["underlying_witness_preserved"])
+        self.assertEqual(
+            regenerated["rung_effect"],
+            "claimed_lane_only_blocked_no_global_rung_demotion",
+        )
+        self.assertEqual(regenerated["blocked_rungs"], [])
+        self.assertTrue(regenerated["lane_blocked_rungs"])
+        self.assertIn(
+            "regenerated_carrier_from_retained_state",
+            regenerated["preserved_alternative_classifications"],
+        )
 
     def test_compound_precedence_and_control_truth_table(self) -> None:
         compounds = self.payload["compound_precedence_rows"]
@@ -119,6 +169,28 @@ class I3ActiveNullTests(unittest.TestCase):
                 "mechanism_falsified"
             ]
         )
+        required_not_run = by_case["b2_i3_control_truth_required_not_run"]
+        self.assertEqual(
+            required_not_run["control_effect_status"],
+            "gate_incomplete_required_control_not_run",
+        )
+        self.assertFalse(required_not_run["mechanism_falsified"])
+        optional_failed = by_case["b2_i3_control_truth_optional_failed"]
+        self.assertEqual(
+            optional_failed["observed_disposition"], "pass_through_fixture"
+        )
+        self.assertEqual(
+            optional_failed["robustness_effect"],
+            "narrowed",
+        )
+        self.assertFalse(optional_failed["rung_blocked"])
+        self.assertFalse(optional_failed["mechanism_falsified"])
+        optional_not_run = by_case["b2_i3_control_truth_optional_not_run"]
+        self.assertEqual(
+            optional_not_run["control_effect_status"],
+            "optional_hardening_unresolved",
+        )
+        self.assertFalse(optional_not_run["rung_blocked"])
 
     def test_calibration_and_held_out_threshold_audits_are_distinct(self) -> None:
         audits = self.payload["threshold_boundary_audit_rows"]
@@ -128,6 +200,15 @@ class I3ActiveNullTests(unittest.TestCase):
                 row["threshold_calibration_role"]
                 == "held_out_boundary_audit_not_calibration"
                 and row["result"] == "passed"
+                for row in audits
+            )
+        )
+        self.assertTrue(
+            all(
+                isinstance(row["test_value"], float)
+                and isinstance(row["threshold_value"], float)
+                and row["comparison_operator"] in {"<", ">"}
+                and isinstance(row["signed_margin"], float)
                 for row in audits
             )
         )
@@ -213,8 +294,12 @@ class I3ActiveNullTests(unittest.TestCase):
             result = row["control_results"][0]
             self.assertEqual(set(result), expected_fields)
             self.assertEqual(result["control_status"], "failed_closed")
-            self.assertEqual(result["expected_result"], "claim_rejected")
-            self.assertEqual(result["actual_result"], "claim_rejected")
+            self.assertEqual(
+                result["expected_result"], "prohibited_interpretation_rejected"
+            )
+            self.assertEqual(
+                result["actual_result"], "prohibited_interpretation_rejected"
+            )
             self.assertFalse(result["claim_allowed_when_control_triggers"])
 
     def test_calibration_recipes_are_instantiated_without_runtime_claim(self) -> None:
@@ -241,6 +326,15 @@ class I3ActiveNullTests(unittest.TestCase):
         )
         self.assertTrue(
             all(row["fixture_uncertainty_basis"] for row in calibration["records"])
+        )
+        self.assertTrue(
+            all(
+                "minimum_absolute_floor" in row
+                and "safety_multiplier" in row
+                and row["comparison_operator"] in {"<", ">"}
+                and row["strictness"] == "strict_equality_is_not_positive"
+                for row in calibration["records"]
+            )
         )
         occupancy = next(
             row
