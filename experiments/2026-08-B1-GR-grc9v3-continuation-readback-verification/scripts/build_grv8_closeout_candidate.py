@@ -203,7 +203,6 @@ def render_successor(
     superseded = envelope(
         EXPERIMENT_ROOT / "outputs/superseded_exploratory_claims.json"
     )["payload"]["records"]
-    predecessor = PREDECESSOR_SPEC_PATH.read_text(encoding="utf-8")
     predecessor_digest = sha256_file(PREDECESSOR_SPEC_PATH)
 
     lines = [
@@ -333,12 +332,16 @@ def render_successor(
     lines.extend(
         [
             "",
-            "## Preserved Pre-Execution Specification",
+            "## Preserved Pre-Execution Specification Reference",
             "",
-            "The following text is preserved verbatim from the accepted predecessor",
-            "and remains the controlling account of the executed protocol.",
+            "The accepted predecessor remains unchanged at:",
             "",
-            predecessor.rstrip(),
+            f"- Path: `{repo_relative(PREDECESSOR_SPEC_PATH)}`",
+            f"- SHA-256: `{predecessor_digest}`",
+            "",
+            "This successor does not copy or rewrite the predecessor. The referenced",
+            "file remains the controlling account of the executed protocol; this",
+            "document adds only the evidence-grounded classification and route layer.",
             "",
         ]
     )
@@ -443,6 +446,8 @@ def write_report(
             "The Stage 2 candidate does not use LGRC as the umbrella destination.",
             "It records GRC constructibility and selectable-extension work first,",
             "then preserves LGRC-specific questions as a separate downstream lane.",
+            "The successor references the immutable predecessor by path and digest",
+            "instead of duplicating or rewriting it.",
             "A separate human closeout acceptance is required before `GRV-C6`.",
             "",
         ]

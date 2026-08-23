@@ -75,15 +75,16 @@ class GRV8CloseoutCandidateTest(unittest.TestCase):
         )
         self.assertFalse(payload["grv_c6_assigned"])
 
-    def test_successor_preserves_the_preexecution_spec_and_route_boundary(self) -> None:
+    def test_successor_references_the_preexecution_spec_and_route_boundary(self) -> None:
         successor = render_successor(self.policy, self.bundle, self.anchor)
-        self.assertIn("## Preserved Pre-Execution Specification", successor)
+        self.assertIn("## Preserved Pre-Execution Specification Reference", successor)
         self.assertIn("The first downstream work is GRC-side", successor)
         self.assertIn("GRV_C6_assigned = false", successor)
         self.assertIn(
-            "# GRC9V3 Continuation And Read-Back Verification Specification",
+            "GRC9V3ContinuationReadBackVerificationSpecification.md",
             successor,
         )
+        self.assertIn("This successor does not copy or rewrite the predecessor", successor)
 
 
 if __name__ == "__main__":
